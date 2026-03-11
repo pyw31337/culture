@@ -83,7 +83,7 @@ async function generate() {
             // Exclude Overseas Content
             if (isOverseas(p)) return false;
 
-            if (!p.date) return false; // No date = active? No, safety first.
+            if (!p.date || p.date.trim() === '') return true; // Treat as active if no date (Museums/Activities)
 
             try {
                 let endDate: Date | null = null;
@@ -91,17 +91,19 @@ async function generate() {
 
                 if (d.includes('~')) {
                     const parts = d.split('~');
-                    let endStr = parts[1].trim();
-                    // Clean up junk like "]" or " ("
-                    endStr = endStr.split('[')[0].split('(')[0].trim();
+                    if (parts.length >= 2) {
+                        let endStr = parts[1].trim();
+                        // Clean up junk like "]" or " ("
+                        endStr = endStr.split('[')[0].split('(')[0].trim();
 
-                    // Handle "2026-01-04" or "26-01-04"
-                    if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
-                        endStr = '20' + endStr;
+                        // Handle "2026-01-04" or "26-01-04"
+                        if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
+                            endStr = '20' + endStr;
+                        }
+
+                        endDate = new Date(endStr);
                     }
-
-                    endDate = new Date(endStr);
-                } else {
+                } else if (d.trim() !== '') {
                     let endStr = d.trim();
                     endStr = endStr.split('[')[0].split('(')[0].trim();
                     if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
@@ -120,13 +122,22 @@ async function generate() {
                 if (p.genre === 'movie') return true;
 
                 const isActive = endDate >= today;
-                if (!isActive) dateCount++;
+                if (!isActive) {
+                    dateCount++;
+                    if (p.source === 'museum') console.log(`[DEBUG] Museum ${p.title} filtered by date: ${p.date} (EndDate: ${endDate.toISOString()})`);
+                }
                 return isActive;
 
             } catch (e) {
+                if (p.source === 'museum') console.log(`[DEBUG] Museum ${p.title} error in date parsing:`, e);
                 return true;
             }
         });
+
+        if (performances.some(p => p.source === 'museum')) {
+             const museumRemained = activePerformances.filter(p => p.source === 'museum').length;
+             console.log(`[DEBUG] Museum Items: Total ${performances.filter(p => p.source === 'museum').length}, Remaining After Filter: ${museumRemained}`);
+        }
 
         console.log(`[Filtering Stats]`);
         console.log(`- Movies Filtered: ${movieCount}`);
@@ -144,6 +155,7 @@ async function generate() {
             // Also prune empty arrays/objects to save bytes
             if (Array.isArray(rest.cast) && rest.cast.length === 0) delete rest.cast;
             if (Array.isArray(rest.platforms) && rest.platforms.length === 0) delete rest.platforms;
+            rest.source = p.source; // Keep the source for statistics
             return rest;
         });
 

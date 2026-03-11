@@ -215,6 +215,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     },
                                     { icon: Calendar, text: formatUnifiedDate(p.date), color: 'text-blue-500', label: '날짜' },
                                     { icon: Clock, text: p.runningTime, color: 'text-purple-500', label: '시간' },
+                                    { icon: Tag, text: p.age || p.ageRating, color: 'text-rose-500', label: '연령' },
                                     { 
                                         icon: Users, 
                                         text: p.director, 
@@ -251,13 +252,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                              {hasCast && mode === 'standalone' && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
-                                    {p.cast!.slice(0, 7).map((c, idx) => {
+                                    <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">출연진</span>
+                                    {p.cast!.slice(0, 10).map((c, idx) => {
                                         const name = typeof c === 'string' ? c : c.name;
                                         let url = typeof c === 'string' ? undefined : (c as any).url;
                                         
-                                        // Auto-generate Naver search link for movies if missing URL
-                                        if (!url && p.genre === 'movie') {
-                                            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`;
+                                        // Auto-generate Naver search link for any performance type if missing URL
+                                        if (!url) {
+                                            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${name} ${p.title}`)}`;
                                         }
 
                                          const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
@@ -281,6 +283,29 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     })}
                                 </motion.div>
                             )}
+
+                             {p.crew && p.crew.length > 0 && mode === 'standalone' && (
+                                <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-white/5 mt-2">
+                                    <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">제작진</span>
+                                    {p.crew!.slice(0, 5).map((c, idx) => {
+                                        const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${c} ${p.title}`)}`;
+                                        const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors text-blue-500";
+                                        return (
+                                            <a 
+                                                key={idx} 
+                                                href={url} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                className={`${castClasses} hover:bg-gray-100 dark:hover:bg-white/10`}
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                {c}
+                                            </a>
+                                        );
+                                    })}
+                                </motion.div>
+                            )}
+
                         </div>
 
                         {/* Actions Block */}

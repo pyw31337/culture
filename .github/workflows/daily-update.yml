@@ -13,6 +13,8 @@ permissions:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    env:
+      SKIP_EXECUTION: 'false'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -97,7 +99,9 @@ jobs:
 
       - name: Prune Stale Data (Strict Retention)
         if: env.SKIP_EXECUTION != 'true'
-        run: npx tsx scripts/prune-data.ts
+        run: |
+          npx tsx scripts/prune-expired-data.ts
+          npx tsx scripts/prune-data.ts
 
       - name: Commit and Push changes
         if: env.SKIP_EXECUTION != 'true'

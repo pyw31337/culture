@@ -31,6 +31,10 @@ interface KopisPerformance {
     address?: string;
     source: 'kopis';
     isFestival?: boolean;
+    cast?: string[];
+    crew?: string[];
+    runtime?: string;
+    age?: string;
 }
 
 interface VenueInfo {
@@ -76,13 +80,16 @@ async function scrapeKopis() {
     }
 
     // Optimized Date Logic: Rolling Window
-    const threeMonthsAgo = new Date();
-    threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+    // Capture long-running open-runs by setting start date to 6 months ago
+    const today = new Date();
+    const sixMonthsAgo = new Date();
+    sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
     const futureLimit = new Date();
-    futureLimit.setMonth(futureLimit.getMonth() + 3);
+    futureLimit.setFullYear(futureLimit.getFullYear() + 1);
 
     const fmtDate = (d: Date) => d.toISOString().split('T')[0].replace(/-/g, '');
-    const stdate = fmtDate(threeMonthsAgo); 
+    
+    const stdate = fmtDate(sixMonthsAgo); 
     const eddate = fmtDate(futureLimit);
 
     // Load existing items for incremental skip
@@ -124,6 +131,18 @@ async function scrapeKopis() {
             for (const item of list) {
                 const mt20id = item.mt20id;
                 const fullId = `kopis_${mt20id}`;
+                const prfpdfrom = item.prfpdfrom;
+                const prfpdto = item.prfpdto;
+
+                // Skip ONLY if BOTH start and end dates exist AND end date is past
+                if (prfpdfrom && prfpdto) {
+                    const endDate = new Date(prfpdto.replace(/\./g, '-'));
+                    const yesterday = new Date();
+                    yesterday.setDate(yesterday.getDate() - 1);
+                    if (endDate < yesterday) {
+                        continue;
+                    }
+                }
 
                 // Incremental Skip: Only fetch details if new
                 if (existingIds.has(fullId)) {
@@ -140,6 +159,9 @@ async function scrapeKopis() {
                     const db = detailObj.dbs?.db;
 
                     if (db) {
+                        const cast = db.prfcast ? db.prfcast.split(',').map((s: string) => s.trim()).filter(Boolean) : undefined;
+                        const crew = db.prfcrew ? db.prfcrew.split(',').map((s: string) => s.trim()).filter(Boolean) : undefined;
+
                         const perf: KopisPerformance = {
                             id: `kopis_${mt20id}`,
                             title: db.prfnm,
@@ -153,7 +175,11 @@ async function scrapeKopis() {
                             time: db.dtguidance,
                             region: db.area,
                             source: 'kopis',
-                            isFestival
+                            isFestival,
+                            cast: cast?.length ? cast : undefined,
+                            crew: crew?.length ? crew : undefined,
+                            runtime: db.prfruntime && db.prfruntime !== ' ' ? db.prfruntime : undefined,
+                            age: db.prfage && db.prfage !== ' ' ? db.prfage : undefined
                         };
                         allItems.push(perf);
                         if (db.mt10id) uniqueVenueIds.add(db.mt10id);

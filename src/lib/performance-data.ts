@@ -7,7 +7,6 @@ import kovoData from '@/data/kovo.json';
 import kblData from '@/data/kbl.json';
 import kboData from '@/data/kbo.json';
 import festivalsData from '@/data/festivals.json';
-import yes24Data from '@/data/yes24.json';
 import timeticketData from '@/data/timeticket.json';
 import moviesData from '@/data/movies.json';
 import kidsData from '@/data/myrealtrip-kids.json';
@@ -20,13 +19,14 @@ import kleagueData from '@/data/kleague.json';
 // import hockeyData from '@/data/hockey.json'; 
 import umclassData from '@/data/umclass.json';
 import seoulData from '@/data/seoul-culture.json';
+import culturePortalData from '@/data/culture-portal.json';
 
 import mochaclassData from '@/data/mochaclass.json';
 import mommomData from '@/data/mommom.json';
+import mommomActivityData from '@/data/mommom-activities.json';
 import mommomProductData from '@/data/mommom-products.json';
 import museumData from '@/data/museum.json';
 // import musicalData from '@/data/musical.json';
-import yes24ExclusiveData from '@/data/yes24-exclusive.json';
 import kopisData from '@/data/kopis-performances.json';
 import venueData from '@/data/venues.json';
 
@@ -34,7 +34,7 @@ const venues = venueData as Record<string, { address: string; lat?: number | nul
 const cinemas = cinemaData as { name: string; address: string; lat: number; lng: number }[];
 
 function isPerformanceActive(dateStr: string, today: Date): boolean {
-    if (!dateStr) return false;
+    if (!dateStr || dateStr.trim() === '') return true; // Lenient: Treat items without dates as active (e.g., Museums)
 
     try {
         let targetDate: Date | null = null;
@@ -85,25 +85,25 @@ export function getAllPerformances() {
 
     // 1. Load and Transform all data sources
     const allSources: { data: any, source?: string }[] = [
-        { data: interparkData },
-        { data: yes24Data },
-        { data: timeticketData },
-        { data: festivalsData },
-        { data: kovoData },
-        { data: kblData },
-        { data: kboData },
-        { data: handballData },
-        { data: kleagueData },
+        { data: interparkData, source: 'interpark' },
+        { data: timeticketData, source: 'timeticket' },
+        { data: festivalsData, source: 'festival' },
+        { data: kovoData, source: 'volleyball' },
+        { data: kblData, source: 'basketball' },
+        { data: kboData, source: 'baseball' },
+        { data: handballData, source: 'handball' },
+        { data: kleagueData, source: 'football' },
         { data: moviesData, source: 'movie' },
-        { data: kidsData },
-        { data: classData },
-        { data: umclassData },
-        { data: mochaclassData },
+        { data: kidsData, source: 'myrealtrip-kids' },
+        { data: classData, source: 'sssd-class' },
+        { data: umclassData, source: 'umclass' },
+        { data: mochaclassData, source: 'mochaclass' },
         { data: seoulData, source: 'seoul' },
-        { data: mommomData },
-        { data: mommomProductData },
-        { data: museumData },
-        { data: yes24ExclusiveData, source: 'yes24_exclusive' },
+        { data: culturePortalData, source: 'culture-portal' },
+        { data: mommomData, source: 'mommom' },
+        { data: mommomActivityData, source: 'mommom-activity' },
+        { data: mommomProductData, source: 'mommom-product' },
+        { data: museumData, source: 'museum' },
         { data: kopisData, source: 'kopis' },
     ];
 
@@ -131,7 +131,6 @@ export function getAllPerformances() {
             }
         }
 
-        // Date Check (Enforced for everything else)
         if (p.genre !== 'movie' && !isPerformanceActive(p.date, now)) return false;
 
 
@@ -158,14 +157,33 @@ export function getAllPerformances() {
         // Everything else MUST have a valid geolocation to be displayed.
         if (p.genre !== 'movie') {
             const v = venues[p.venue];
-            // If venue data is missing, or address is invalid, or lat/lng is missing/invalid
-            if (!v || !v.address || v.address === '정보 없음' || !v.lat || !v.lng) {
+
+            // 1. Prefer inherent geodata if available (New: Fix for MomMom/Museum)
+            const parseCoord = (val: any) => {
+                if (typeof val === 'number') return val;
+                if (typeof val === 'string') return parseFloat(val);
+                return 0;
+            };
+            const lat = parseCoord(p.lat || p.latitude);
+            const lng = parseCoord(p.lng || p.longitude);
+            const hasInherentGeo = lat !== 0 && lng !== 0 && !isNaN(lat) && !isNaN(lng);
+            const hasAddress = p.address && p.address !== '정보 없음' && p.address !== '';
+
+            if (hasInherentGeo) {
+                // Attach for consistent usage
+                p.lat = lat;
+                p.lng = lng;
+                // If address is missing but we have coordinates, use venue as fallback address
+                if (!hasAddress) p.address = p.venue || '주소 정보 없음';
+            } else if (v && v.address && v.address !== '정보 없음' && v.lat && v.lng) {
+                // 2. Use Venue DB
+                p.lat = v.lat as number;
+                p.lng = v.lng as number;
+                p.address = v.address;
+            } else {
+                // 3. Reject if neither exists
                 return false;
             }
-            // Attach venue data for interactive links
-            p.lat = v.lat as number;
-            p.lng = v.lng as number;
-            p.address = v.address;
         }
 
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;

@@ -265,7 +265,7 @@ function normalizeVenueName(rawVenue: string, homeTeam?: string, genre?: string)
 export function transformPerformance(raw: RawPerformance, source?: string): Performance {
     // 1. Source-specific field normalization
     let title = raw.title || '';
-    let rawVenue = raw.venue || raw.place || '';
+    let rawVenue = raw.venue || raw.place || raw.title || '';
     let image = raw.image || raw.poster || raw.posterUrl || '';
     let price = raw.price || raw.cost || '';
     let date = raw.date || '';
@@ -273,6 +273,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let genre = (raw.genre as Genre) || 'activity';
     let venue = normalizeVenueName(rawVenue, raw.homeTeam, genre);
     if (!venue) venue = rawVenue;
+
+    // Additional detailed fields
+    let cast = raw.cast;
+    let crew = raw.crew;
+    let runningTime = raw.runtime || raw.runningTime;
+    let age = raw.age || raw.rating;
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -361,13 +367,20 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         ...raw,
         id: String(raw.id),
         title: cleanTitle(title),
+        link: raw.link || '',
         image: image,
         venue: venue.trim(),
         date: formatUnifiedDate(date),
         region: mappedRegion,
         genre,
+        source: source,
         homeTeamLogo: homeLogo,
-        awayTeamLogo: awayLogo
+        awayTeamLogo: awayLogo,
+        price,
+        cast,
+        crew,
+        runningTime,
+        age
     } as Performance;
 }
 

@@ -8,7 +8,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=d80cfb61-617b-4647-8196-98995001f079",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:34.731Z"
+    "lastEnriched": "2026-03-10T15:11:34.731Z",
+    "lat": 36.0362143638241,
+    "lng": 126.718640924183,
+    "address": "충남 서천군 마서면 금강로 1210"
   },
   {
     "id": "86e5f381-79ef-4581-8676-a1e5b1610f35",
@@ -19,7 +22,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=86e5f381-79ef-4581-8676-a1e5b1610f35",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:34.905Z"
+    "lastEnriched": "2026-03-10T15:11:34.905Z",
+    "lat": 36.64365288708248,
+    "lng": 126.64919732986195,
+    "address": "충남 홍성군 홍북읍 상하리 산 1-2"
   },
   {
     "id": "cbac674e-f76a-45f9-9955-21e3726aa0c8",
@@ -41,7 +47,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=05b53e45-cc6e-4309-ae29-2cb2ad710910",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:35.707Z"
+    "lastEnriched": "2026-03-10T15:11:35.707Z",
+    "lat": 35.29367500800736,
+    "lng": 127.53210019974368,
+    "address": "전남 구례군 토지면 문수리 산 17"
   },
   {
     "id": "87dfeda1-084e-41a9-b76e-09f2d502443a",
@@ -52,7 +61,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=87dfeda1-084e-41a9-b76e-09f2d502443a",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:36.324Z"
+    "lastEnriched": "2026-03-10T15:11:36.324Z",
+    "lat": 36.2028371904063,
+    "lng": 127.252505439303,
+    "address": "충남 논산시 벌곡면 황룡재로 480-113"
   },
   {
     "id": "019edf5d-ed47-47ff-82a3-627852996c9a",
@@ -63,7 +75,10 @@
     "region": "jeju",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=019edf5d-ed47-47ff-82a3-627852996c9a",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:36.340Z"
+    "lastEnriched": "2026-03-10T15:11:36.340Z",
+    "lat": 33.51976662322369,
+    "lng": 126.49355499979052,
+    "address": "제주특별자치도 제주시 용담삼동 2292-2"
   },
   {
     "id": "53ad5cbd-9241-4efa-8366-49c919001862",
@@ -74,7 +89,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=53ad5cbd-9241-4efa-8366-49c919001862",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:36.779Z"
+    "lastEnriched": "2026-03-10T15:11:36.779Z",
+    "lat": 37.5328127891601,
+    "lng": 127.315829778049,
+    "address": "경기 양평군 양서면 양수리"
   },
   {
     "id": "82795fb1-3ab3-47f8-81d3-09251001b3e1",
@@ -96,7 +114,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=d3820ad5-b618-47d9-a14d-a11b643a7030",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:37.559Z"
+    "lastEnriched": "2026-03-10T15:11:37.559Z",
+    "lat": 36.5986693176069,
+    "lng": 129.410719158274,
+    "address": "경북 영덕군 병곡면 병곡리 58-26"
   },
   {
     "id": "ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
@@ -107,7 +128,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ecf68d54-808a-4ef0-8b64-122a4fc90f0f",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:38.263Z"
+    "lastEnriched": "2026-03-10T15:11:38.263Z",
+    "lat": 35.8125034386128,
+    "lng": 128.43031364165,
+    "address": "경북 고령군 다산면 좌학리 969"
   },
   {
     "id": "43c334af-9024-4c3f-8742-39f57db887f6",
@@ -118,7 +142,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=43c334af-9024-4c3f-8742-39f57db887f6",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:38.560Z"
+    "lastEnriched": "2026-03-10T15:11:38.560Z",
+    "lat": 35.07712259000571,
+    "lng": 128.5870460366396,
+    "address": "경남 창원시 마산합포구 구산면 로봇랜드로 250"
   },
   {
     "id": "f6c40fcf-7dd2-4701-a2f6-657bb88f155c",
@@ -129,7 +156,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=f6c40fcf-7dd2-4701-a2f6-657bb88f155c",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:38.937Z"
+    "lastEnriched": "2026-03-10T15:11:38.937Z",
+    "lat": 34.7445973535257,
+    "lng": 127.766287676838,
+    "address": "전남 여수시 수정동"
   },
   {
     "id": "3e3a192e-538d-4443-9673-3a14dd5dcc75",
@@ -140,7 +170,10 @@
     "region": "incheon",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=3e3a192e-538d-4443-9673-3a14dd5dcc75",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:39.075Z"
+    "lastEnriched": "2026-03-10T15:11:39.075Z",
+    "lat": 37.3908644068249,
+    "lng": 126.638869485458,
+    "address": "인천 연수구 테크노파크로 180"
   },
   {
     "id": "57f40d56-52e8-446b-8ac3-7cac4ed176f3",
@@ -151,7 +184,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=57f40d56-52e8-446b-8ac3-7cac4ed176f3",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:39.812Z"
+    "lastEnriched": "2026-03-10T15:11:39.812Z",
+    "lat": 37.19507109548797,
+    "lng": 127.44596994574883,
+    "address": "경기 이천시 모가면 사실로 984"
   },
   {
     "id": "2cb00a28-28c3-4b78-bb04-9216cd382a0c",
@@ -184,7 +220,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=2a22365d-3e1f-4069-8e02-c1e1ef6fbc85",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:40.894Z"
+    "lastEnriched": "2026-03-10T15:11:40.894Z",
+    "lat": 37.5328127891601,
+    "lng": 127.315829778049,
+    "address": "경기 양평군 양서면 양수리"
   },
   {
     "id": "89d1d005-fcc5-49e3-9191-6d92cc9e7125",
@@ -195,7 +234,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=89d1d005-fcc5-49e3-9191-6d92cc9e7125",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:41.190Z"
+    "lastEnriched": "2026-03-10T15:11:41.190Z",
+    "lat": 34.76660309417432,
+    "lng": 126.70403104911117,
+    "address": "전남 영암군 영암읍 개신리 산 89-2"
   },
   {
     "id": "a962b6e4-9f5d-489d-88ed-a93ce7ddc476",
@@ -206,7 +248,10 @@
     "region": "seoul",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=a962b6e4-9f5d-489d-88ed-a93ce7ddc476",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:41.191Z"
+    "lastEnriched": "2026-03-10T15:11:41.191Z",
+    "lat": 37.5250892160129,
+    "lng": 126.947545050571,
+    "address": "서울 영등포구 여의도동"
   },
   {
     "id": "df17f696-4b9f-4097-9c46-615ade39068a",
@@ -217,7 +262,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=df17f696-4b9f-4097-9c46-615ade39068a",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:41.350Z"
+    "lastEnriched": "2026-03-10T15:11:41.350Z",
+    "lat": 37.04492374579673,
+    "lng": 126.52461545756205,
+    "address": "충남 당진시 석문면 왜목길 15-5"
   },
   {
     "id": "5c298491-4a02-45a5-aca7-c4302a8d43df",
@@ -239,7 +287,10 @@
     "region": "gangwon",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ba03d3b0-906c-487e-8d6b-cbccaab916ec",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:42.442Z"
+    "lastEnriched": "2026-03-10T15:11:42.442Z",
+    "lat": 37.198329239614836,
+    "lng": 128.48678249137436,
+    "address": "강원 영월군 영월읍 영흥리 154-3"
   },
   {
     "id": "e6b3596c-3769-41a2-9090-84a7585db5e0",
@@ -250,7 +301,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=e6b3596c-3769-41a2-9090-84a7585db5e0",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:42.769Z"
+    "lastEnriched": "2026-03-10T15:11:42.769Z",
+    "lat": 34.4663734250738,
+    "lng": 126.308532597986,
+    "address": "전남 진도군 의신면 운림산방로 315"
   },
   {
     "id": "66c274f6-33f7-4f25-94f8-96496c852cf0",
@@ -261,7 +315,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=66c274f6-33f7-4f25-94f8-96496c852cf0",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:42.873Z"
+    "lastEnriched": "2026-03-10T15:11:42.873Z",
+    "lat": 37.5328127891601,
+    "lng": 127.315829778049,
+    "address": "경기 양평군 양서면 양수리"
   },
   {
     "id": "9cd48059-8bb6-4ea6-9a5b-126a9c1f671b",
@@ -272,7 +329,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9cd48059-8bb6-4ea6-9a5b-126a9c1f671b",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:43.484Z"
+    "lastEnriched": "2026-03-10T15:11:43.484Z",
+    "lat": 37.19507109548797,
+    "lng": 127.44596994574883,
+    "address": "경기 이천시 모가면 사실로 984"
   },
   {
     "id": "6995b351-4b45-4c86-947e-f44a07e087f8",
@@ -283,7 +343,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=6995b351-4b45-4c86-947e-f44a07e087f8",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:43.873Z"
+    "lastEnriched": "2026-03-10T15:11:43.873Z",
+    "lat": 35.0867797818998,
+    "lng": 126.441184549571,
+    "address": "전남 함평군 함평읍 석성리 523-1"
   },
   {
     "id": "c1152db9-0f84-498c-9e85-e97775ade5b0",
@@ -294,7 +357,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c1152db9-0f84-498c-9e85-e97775ade5b0",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:44.116Z"
+    "lastEnriched": "2026-03-10T15:11:44.116Z",
+    "lat": 36.766116555005155,
+    "lng": 126.8859566277033,
+    "address": "충남 아산시 선장면 도고온천로 176-1"
   },
   {
     "id": "31a0fb6b-c075-402b-9cf7-a79e16451aab",
@@ -305,7 +371,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=31a0fb6b-c075-402b-9cf7-a79e16451aab",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:44.292Z"
+    "lastEnriched": "2026-03-10T15:11:44.292Z",
+    "lat": 35.4039187841942,
+    "lng": 127.379781364826,
+    "address": "전북 남원시 요천로 1447"
   },
   {
     "id": "9faeba7b-68fe-4a78-94ab-a97faae2fc0d",
@@ -316,7 +385,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9faeba7b-68fe-4a78-94ab-a97faae2fc0d",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:44.642Z"
+    "lastEnriched": "2026-03-10T15:11:44.642Z",
+    "lat": 35.32783714533351,
+    "lng": 126.98593088715316,
+    "address": "전남 담양군 담양읍 향교리 산 44"
   },
   {
     "id": "79a118fc-7a02-4262-be71-030a1fc3d815",
@@ -327,7 +399,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=79a118fc-7a02-4262-be71-030a1fc3d815",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:45.166Z"
+    "lastEnriched": "2026-03-10T15:11:45.166Z",
+    "lat": 36.7619075850083,
+    "lng": 128.07668565475,
+    "address": "경북 문경시 문경읍 새재로 932"
   },
   {
     "id": "e1722a18-5bc9-41f2-8dd8-53befb8ef89f",
@@ -349,7 +424,10 @@
     "region": "ulsan",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=65fb2a2a-3ff3-4ef5-b28e-ebcc54fdddad",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:45.840Z"
+    "lastEnriched": "2026-03-10T15:11:45.840Z",
+    "lat": 35.38538320619063,
+    "lng": 129.3472909232229,
+    "address": "울산 울주군 서생면 진하해변길 51"
   },
   {
     "id": "fefc8ae8-2979-4bdc-b76c-7fe6f2078f47",
@@ -360,7 +438,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=fefc8ae8-2979-4bdc-b76c-7fe6f2078f47",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:46.120Z"
+    "lastEnriched": "2026-03-10T15:11:46.120Z",
+    "lat": 34.7159597989524,
+    "lng": 127.077901795169,
+    "address": "전남 보성군 보성읍 녹차로 763-67"
   },
   {
     "id": "563e1356-cddd-4feb-a41f-e800bca34a88",
@@ -371,7 +452,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=563e1356-cddd-4feb-a41f-e800bca34a88",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:46.715Z"
+    "lastEnriched": "2026-03-10T15:11:46.715Z",
+    "lat": 35.1555906084513,
+    "lng": 127.688100367243,
+    "address": "경남 하동군 악양면 평사리길 66-7"
   },
   {
     "id": "5720706a-565b-4fe9-a988-592e664e8ef2",
@@ -382,7 +466,11 @@
     "region": "seoul",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=5720706a-565b-4fe9-a988-592e664e8ef2",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:47.018Z"
+    "lastEnriched": "2026-03-10T15:11:47.018Z",
+    "lat": 37.52788904096764,
+    "lng": 126.8627825817472,
+    "address": "서울 양천구 신정동 1068",
+    "district": "양천구"
   },
   {
     "id": "0404dd7d-69d7-4396-80ed-0066a0c84ec7",
@@ -404,7 +492,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=09b23de6-e3cc-4ea0-b102-91fe01a17e4a",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:47.839Z"
+    "lastEnriched": "2026-03-10T15:11:47.839Z",
+    "lat": 36.9256206705394,
+    "lng": 128.580202883743,
+    "address": "경북 영주시 순흥면 소백로 2740"
   },
   {
     "id": "62846e12-8274-40ef-b5f6-489c08a6240d",
@@ -415,7 +506,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=62846e12-8274-40ef-b5f6-489c08a6240d",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:48.246Z"
+    "lastEnriched": "2026-03-10T15:11:48.246Z",
+    "lat": 38.07693251670516,
+    "lng": 127.1433657083957,
+    "address": "경기 연천군 연천읍 부곡리 산 235"
   },
   {
     "id": "23b8642c-8c00-4278-a76b-2f7bd579c97a",
@@ -426,7 +520,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=23b8642c-8c00-4278-a76b-2f7bd579c97a",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:48.652Z"
+    "lastEnriched": "2026-03-10T15:11:48.652Z",
+    "lat": 35.4915645571851,
+    "lng": 128.755078087927,
+    "address": "경남 밀양시 중앙로 324"
   },
   {
     "id": "11c0c030-bbf8-4544-95a3-3c21862626bc",
@@ -437,7 +534,11 @@
     "region": "seoul",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=11c0c030-bbf8-4544-95a3-3c21862626bc",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:48.873Z"
+    "lastEnriched": "2026-03-10T15:11:48.873Z",
+    "lat": 37.577613288258206,
+    "lng": 126.97689786832184,
+    "address": "서울 종로구 사직로 161",
+    "district": "종로구"
   },
   {
     "id": "dfe9d368-1df3-491a-8643-db0dd0055422",
@@ -448,7 +549,10 @@
     "region": "busan",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=dfe9d368-1df3-491a-8643-db0dd0055422",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:49.237Z"
+    "lastEnriched": "2026-03-10T15:11:49.237Z",
+    "lat": 35.1585232170784,
+    "lng": 129.159854668484,
+    "address": "부산 해운대구 우동"
   },
   {
     "id": "bdc9682d-15ef-42cd-a59a-a9069d84296d",
@@ -459,7 +563,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=bdc9682d-15ef-42cd-a59a-a9069d84296d",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:49.951Z"
+    "lastEnriched": "2026-03-10T15:11:49.951Z",
+    "lat": 37.1722091969137,
+    "lng": 126.624022794909,
+    "address": "경기 화성시 만세구 서신면 제부리"
   },
   {
     "id": "86c83f48-8750-4de0-81e5-a8a257507bcd",
@@ -470,7 +577,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=86c83f48-8750-4de0-81e5-a8a257507bcd",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:50.302Z"
+    "lastEnriched": "2026-03-10T15:11:50.302Z",
+    "lat": 36.9256206705394,
+    "lng": 128.580202883743,
+    "address": "경북 영주시 순흥면 소백로 2740"
   },
   {
     "id": "6976e484-75c5-447b-ad8f-33f44cc37ac4",
@@ -481,7 +591,10 @@
     "region": "gangwon",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=6976e484-75c5-447b-ad8f-33f44cc37ac4",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:50.406Z"
+    "lastEnriched": "2026-03-10T15:11:50.406Z",
+    "lat": 37.79144074509299,
+    "lng": 127.52521014329739,
+    "address": "강원특별자치도 춘천시 남산면 남이섬길 1"
   },
   {
     "id": "c337383f-787b-4583-a7ac-76890f105113",
@@ -492,7 +605,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c337383f-787b-4583-a7ac-76890f105113",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:50.853Z"
+    "lastEnriched": "2026-03-10T15:11:50.853Z",
+    "lat": 36.957451320743,
+    "lng": 127.609828811228,
+    "address": "충북 음성군 금왕읍 백야로 461-97"
   },
   {
     "id": "42dddaa8-352f-4846-90a3-3732c08f2830",
@@ -503,7 +619,10 @@
     "region": "busan",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=42dddaa8-352f-4846-90a3-3732c08f2830",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:51.651Z"
+    "lastEnriched": "2026-03-10T15:11:51.651Z",
+    "lat": 35.1531932736837,
+    "lng": 129.118976093583,
+    "address": "부산 수영구 광안해변로 219"
   },
   {
     "id": "b15ef85e-ffd0-4757-8897-52c9616dd3ba",
@@ -514,7 +633,10 @@
     "region": "ulsan",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=b15ef85e-ffd0-4757-8897-52c9616dd3ba",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:52.087Z"
+    "lastEnriched": "2026-03-10T15:11:52.087Z",
+    "lat": 35.5480699197143,
+    "lng": 129.297046216516,
+    "address": "울산 중구 태화동 107"
   },
   {
     "id": "8cce3f5b-180a-4a84-8680-ba27d8a70b3e",
@@ -525,7 +647,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=8cce3f5b-180a-4a84-8680-ba27d8a70b3e",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:52.152Z"
+    "lastEnriched": "2026-03-10T15:11:52.152Z",
+    "lat": 36.0362143638241,
+    "lng": 126.718640924183,
+    "address": "충남 서천군 마서면 금강로 1210"
   },
   {
     "id": "fc491eba-6273-4ae0-a6bd-aee54fcac631",
@@ -536,7 +661,10 @@
     "region": "daegu",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=fc491eba-6273-4ae0-a6bd-aee54fcac631",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:52.630Z"
+    "lastEnriched": "2026-03-10T15:11:52.630Z",
+    "lat": 35.854605222773095,
+    "lng": 128.5611667344503,
+    "address": "대구 달서구 두류공원로 200"
   },
   {
     "id": "910bb144-bf74-4eee-9e91-8fbcbaf302ac",
@@ -558,7 +686,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9df157f4-4547-4672-92b6-56f92e9e06e0",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:53.563Z"
+    "lastEnriched": "2026-03-10T15:11:53.563Z",
+    "lat": 34.668118858958,
+    "lng": 126.933782282922,
+    "address": "전남 장흥군 장흥읍 우드랜드길 180"
   },
   {
     "id": "0e803334-1e3d-4c57-9005-e4ec9c87657f",
@@ -569,7 +700,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=0e803334-1e3d-4c57-9005-e4ec9c87657f",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:54.144Z"
+    "lastEnriched": "2026-03-10T15:11:54.144Z",
+    "lat": 35.88851653063101,
+    "lng": 127.74493399003994,
+    "address": "전북특별자치도 무주군 설천면 만선로 185"
   },
   {
     "id": "8c369704-303d-41fa-b6fa-f63bf8c5e96b",
@@ -580,7 +714,10 @@
     "region": "gangwon",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=8c369704-303d-41fa-b6fa-f63bf8c5e96b",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:54.494Z"
+    "lastEnriched": "2026-03-10T15:11:54.494Z",
+    "lat": 37.64405741078855,
+    "lng": 128.67891991885864,
+    "address": "강원 평창군 대관령면 올림픽로 715"
   },
   {
     "id": "2387725a-dc4a-4b19-8d5d-2a4d954d00d7",
@@ -591,7 +728,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=2387725a-dc4a-4b19-8d5d-2a4d954d00d7",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:55.191Z"
+    "lastEnriched": "2026-03-10T15:11:55.191Z",
+    "lat": 35.5981778971439,
+    "lng": 127.530668536115,
+    "address": "전북특별자치도 장수군 번암면 방화동로 778"
   },
   {
     "id": "e0472596-c5c1-4360-af80-bcb9f22630ce",
@@ -602,7 +742,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=e0472596-c5c1-4360-af80-bcb9f22630ce",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:55.331Z"
+    "lastEnriched": "2026-03-10T15:11:55.331Z",
+    "lat": 34.826880707575086,
+    "lng": 128.4252739118599,
+    "address": "경남 통영시 발개로 205"
   },
   {
     "id": "883fb3cd-8ce1-482b-9e57-02947b44f038",
@@ -613,7 +756,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=883fb3cd-8ce1-482b-9e57-02947b44f038",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:55.439Z"
+    "lastEnriched": "2026-03-10T15:11:55.439Z",
+    "lat": 37.49993803783584,
+    "lng": 126.74413516539293,
+    "address": "경기 부천시 원미구 조마루로 2"
   },
   {
     "id": "fdb11408-6de8-46ea-b051-faac6fc020a7",
@@ -624,7 +770,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=fdb11408-6de8-46ea-b051-faac6fc020a7",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:56.536Z"
+    "lastEnriched": "2026-03-10T15:11:56.536Z",
+    "lat": 35.76055047155393,
+    "lng": 127.41150004564342,
+    "address": "전북 진안군 마령면 동촌리 산 18"
   },
   {
     "id": "644495a7-65e3-42ef-8993-e18e2e71a8bd",
@@ -635,7 +784,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=644495a7-65e3-42ef-8993-e18e2e71a8bd",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:56.878Z"
+    "lastEnriched": "2026-03-10T15:11:56.878Z",
+    "lat": 36.5389828267328,
+    "lng": 128.518141153901,
+    "address": "경북 안동시 풍천면 하회리 1176-1"
   },
   {
     "id": "1fc75427-81f0-42bf-946b-d81e9a32aca5",
@@ -646,7 +798,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=1fc75427-81f0-42bf-946b-d81e9a32aca5",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:57.124Z"
+    "lastEnriched": "2026-03-10T15:11:57.124Z",
+    "lat": 36.75733017653705,
+    "lng": 127.22409504460624,
+    "address": "충남 천안시 동남구 성남면 소노로 1"
   },
   {
     "id": "52c26e05-2f86-4332-8181-ca3f68edb064",
@@ -657,7 +812,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=52c26e05-2f86-4332-8181-ca3f68edb064",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:57.344Z"
+    "lastEnriched": "2026-03-10T15:11:57.344Z",
+    "lat": 35.7547934636796,
+    "lng": 126.853749381112,
+    "address": "전북 김제시 부량면 벽골제로 442"
   },
   {
     "id": "98cca56b-209b-44a7-9a41-a89629ef0242",
@@ -668,7 +826,10 @@
     "region": "gangwon",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=98cca56b-209b-44a7-9a41-a89629ef0242",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:57.513Z"
+    "lastEnriched": "2026-03-10T15:11:57.513Z",
+    "lat": 37.21172623085641,
+    "lng": 128.82167478430762,
+    "address": "강원특별자치도 정선군 사북읍 하이원길 265"
   },
   {
     "id": "e7f655b5-b2d3-4923-90ba-6d7ce678b381",
@@ -679,7 +840,10 @@
     "region": "incheon",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=e7f655b5-b2d3-4923-90ba-6d7ce678b381",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:58.657Z"
+    "lastEnriched": "2026-03-10T15:11:58.657Z",
+    "lat": 37.4941629743516,
+    "lng": 126.724277577653,
+    "address": "인천 부평구 광장로 6"
   },
   {
     "id": "b530def8-d159-4853-8434-c98212e985e6",
@@ -690,7 +854,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=b530def8-d159-4853-8434-c98212e985e6",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:59.117Z"
+    "lastEnriched": "2026-03-10T15:11:59.117Z",
+    "lat": 36.99131661871017,
+    "lng": 127.19351655765155,
+    "address": "경기 안성시 공도읍 대신두길 28"
   },
   {
     "id": "933425f6-3f59-4de2-9d0d-39cbfb478d8e",
@@ -701,7 +868,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=933425f6-3f59-4de2-9d0d-39cbfb478d8e",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:59.157Z"
+    "lastEnriched": "2026-03-10T15:11:59.157Z",
+    "lat": 36.11478807284895,
+    "lng": 127.59592144827683,
+    "address": "충남 금산군 제원면 천내리 168-5"
   },
   {
     "id": "83e1c0ed-fc26-49df-9364-6bc7729d14b6",
@@ -712,7 +882,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=83e1c0ed-fc26-49df-9364-6bc7729d14b6",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:59.622Z"
+    "lastEnriched": "2026-03-10T15:11:59.622Z",
+    "lat": 35.44123917870172,
+    "lng": 127.82930539116249,
+    "address": "경남 산청군 금서면 동의보감로555번길 45-6"
   },
   {
     "id": "95d65f28-6c8f-4226-9697-a5a4e9edc801",
@@ -723,7 +896,10 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=95d65f28-6c8f-4226-9697-a5a4e9edc801",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:59.695Z"
+    "lastEnriched": "2026-03-10T15:11:59.695Z",
+    "lat": 37.2869569586225,
+    "lng": 127.011795743342,
+    "address": "경기 수원시 장안구 영화동 320-2"
   },
   {
     "id": "7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
@@ -734,7 +910,11 @@
     "region": "gwangju",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=7d2cf1b1-9e46-470d-bfa9-4e2b8272802b",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:00.739Z"
+    "lastEnriched": "2026-03-10T15:12:00.739Z",
+    "lat": 35.1474913380556,
+    "lng": 126.919801652795,
+    "address": "광주 동구 금남로1가 12-7",
+    "district": "동구"
   },
   {
     "id": "9baec2f1-84c7-4b70-aa3e-b8f6fe76b0c1",
@@ -745,7 +925,10 @@
     "region": "sejong",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=9baec2f1-84c7-4b70-aa3e-b8f6fe76b0c1",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:01.026Z"
+    "lastEnriched": "2026-03-10T15:12:01.026Z",
+    "lat": 36.5249862,
+    "lng": 127.3329621,
+    "address": "세종 합강동"
   },
   {
     "id": "53d646d1-9565-4c14-8888-81359ac8867a",
@@ -756,7 +939,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=53d646d1-9565-4c14-8888-81359ac8867a",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:01.186Z"
+    "lastEnriched": "2026-03-10T15:12:01.186Z",
+    "lat": 35.44683806294865,
+    "lng": 126.45036100941324,
+    "address": "전북 고창군 상하면 상하농원길 23"
   },
   {
     "id": "c3d27433-8ec5-44a1-afa4-47a43f92e8d8",
@@ -767,7 +953,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=c3d27433-8ec5-44a1-afa4-47a43f92e8d8",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:01.502Z"
+    "lastEnriched": "2026-03-10T15:12:01.502Z",
+    "lat": 35.63311508767043,
+    "lng": 127.30122678617481,
+    "address": "전북특별자치도 임실군 성수면 도인2길 50"
   },
   {
     "id": "93088689-2d3f-4616-a90a-23be68e300d1",
@@ -778,7 +967,10 @@
     "region": "seoul",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=93088689-2d3f-4616-a90a-23be68e300d1",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:01.828Z"
+    "lastEnriched": "2026-03-10T15:12:01.828Z",
+    "lat": 37.56115706317155,
+    "lng": 127.13208335774334,
+    "address": "서울 강동구 암사동 138"
   },
   {
     "id": "78db2649-69d9-4710-a0d3-3c8f91c26720",
@@ -789,7 +981,10 @@
     "region": "busan",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=78db2649-69d9-4710-a0d3-3c8f91c26720",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:02.199Z"
+    "lastEnriched": "2026-03-10T15:12:02.199Z",
+    "lat": 35.22109550998741,
+    "lng": 129.08269838808098,
+    "address": "부산 동래구 온천장로107번길 32"
   },
   {
     "id": "47010e81-432c-42b0-a5f7-aaac7a07dbc2",
@@ -800,7 +995,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=47010e81-432c-42b0-a5f7-aaac7a07dbc2",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:02.740Z"
+    "lastEnriched": "2026-03-10T15:12:02.740Z",
+    "lat": 34.79939591645109,
+    "lng": 126.37002142434952,
+    "address": "전남 목포시 해양대학로 240"
   },
   {
     "id": "f3026b60-0634-49ef-9ccb-8fb68d0e09a5",
@@ -811,7 +1009,10 @@
     "region": "jeonbuk",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=f3026b60-0634-49ef-9ccb-8fb68d0e09a5",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:03.048Z"
+    "lastEnriched": "2026-03-10T15:12:03.048Z",
+    "lat": 35.40884512614031,
+    "lng": 127.0671549051217,
+    "address": "전북특별자치도 순창군 팔덕면 청계리 981"
   },
   {
     "id": "a212b550-67bf-422e-a110-7bb742e84672",
@@ -822,7 +1023,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=a212b550-67bf-422e-a110-7bb742e84672",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:03.468Z"
+    "lastEnriched": "2026-03-10T15:12:03.468Z",
+    "lat": 34.933673255724024,
+    "lng": 128.0531441950692,
+    "address": "경남 사천시 사천대로 18"
   },
   {
     "id": "85a1dd0a-7a8b-4074-bf97-45bf0631db1a",
@@ -833,7 +1037,10 @@
     "region": "gwangju",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=85a1dd0a-7a8b-4074-bf97-45bf0631db1a",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:03.635Z"
+    "lastEnriched": "2026-03-10T15:12:03.635Z",
+    "lat": 35.14809509172891,
+    "lng": 126.85472231359499,
+    "address": "광주 서구 쌍촌동 869-9"
   },
   {
     "id": "54ffde37-3298-4de1-8f42-fccc2e79cb15",
@@ -844,7 +1051,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=54ffde37-3298-4de1-8f42-fccc2e79cb15",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:03.802Z"
+    "lastEnriched": "2026-03-10T15:12:03.802Z",
+    "lat": 36.1372925494309,
+    "lng": 128.09281729199557,
+    "address": "경북 김천시 교동 820-2"
   },
   {
     "id": "e0645258-25e5-4f3e-9bdb-96987101bed3",
@@ -866,7 +1076,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=5c6f720a-dd3e-4e54-bd2e-0ed7a72147ee",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:05.922Z"
+    "lastEnriched": "2026-03-10T15:12:05.922Z",
+    "lat": 36.09178603992931,
+    "lng": 128.30022515965544,
+    "address": "경북 구미시 남통동 산 33"
   },
   {
     "id": "1a7b7f32-e5a4-47b1-9e35-4a87499eccd8",
@@ -877,7 +1090,10 @@
     "region": "etc",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=1a7b7f32-e5a4-47b1-9e35-4a87499eccd8",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:06.205Z"
+    "lastEnriched": "2026-03-10T15:12:06.205Z",
+    "lat": 36.0780561712913,
+    "lng": 129.56973687334,
+    "address": "경북 포항시 남구 호미곶면 대보리"
   },
   {
     "id": "ff5813ad-14b6-43bc-a415-14c8074dd377",
@@ -888,6 +1104,9 @@
     "region": "gyeonggi",
     "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=ff5813ad-14b6-43bc-a415-14c8074dd377",
     "genre": "festival",
-    "lastEnriched": "2026-03-10T15:12:06.888Z"
+    "lastEnriched": "2026-03-10T15:12:06.888Z",
+    "lat": 37.4015773307539,
+    "lng": 127.461425889641,
+    "address": "경기 여주시 산북면 금품1로 177"
   }
 ]

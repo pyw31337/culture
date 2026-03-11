@@ -23,6 +23,8 @@ export type Performance = {
     awayTeamLogo?: string;
     runningTime?: string;
     ageRating?: string;
+    age?: string;
+    crew?: string[];
     originalTitle?: string;
     productionCountry?: string;
     productionYear?: string;
@@ -37,4 +39,5 @@ export type Performance = {
     lng?: number;
     address?: string;
     district?: string;
+    source?: string;
 };

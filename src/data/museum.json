@@ -17,7 +17,7 @@
     "link": "https://mom-mom.net/travel/places/64648715cd2e90e42f0657b7",
     "description": "분당 율동공원에 위치한 어린이안전체험관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 실내 아이와 갈만한 곳 <분당어린이안전체험관> 율동공원 B주차장",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -28,9 +28,11 @@
     "link": "https://mom-mom.net/travel/places/646c286b59651ba15770d436",
     "description": "오랜 역사가 담긴 등잔이 모인 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 용인시 처인구 모현읍 능곡로56번길 8",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.33658645,
+    "lng": 127.1778809
   },
   {
     "id": "museum_국토발전전시관",
@@ -39,9 +41,11 @@
     "link": "https://mom-mom.net/travel/places/647995186a510a72019606cc",
     "description": "재미있게 미리 배울 수 있는 교과 과정 사회 공부",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 중구 정동길 18",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.56681018,
+    "lng": 126.970081
   },
   {
     "id": "museum_한국만화박물관",
@@ -50,9 +54,11 @@
     "link": "https://mom-mom.net/travel/places/6461a49acd2e90e42f0657a8",
     "description": "만화에 담긴 문화·예술적 가치를 아이와 함께 알아가자",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 부천시 원미구 길주로1",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.512942,
+    "lng": 126.748747
   },
   {
     "id": "museum_용산역사박물관",
@@ -61,9 +67,11 @@
     "link": "https://mom-mom.net/travel/places/646d817827695e662cc7ee85",
     "description": "각양각색의 체험을 통해 알아가는 용산의 역사",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 용산구 한강대로14길 35-29",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.52557465,
+    "lng": 126.9656016
   },
   {
     "id": "museum_안양박물관",
@@ -72,9 +80,11 @@
     "link": "https://mom-mom.net/travel/places/64705e47ad9764f1ef624184",
     "description": "박물관, 카페, 식당까지 한 번에!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 안양시 만안구 예술공원로103번길 4",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.418386,
+    "lng": 126.918316
   },
   {
     "id": "museum_노원기차마을_스위스관",
@@ -83,9 +93,11 @@
     "link": "https://mom-mom.net/travel/places/646d9e3649265c3161b43d38",
     "description": "미니어처로 한눈에 보는 스위스",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 노원구 화랑로 622 (공릉동)",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.6219463,
+    "lng": 127.0984187
   },
   {
     "id": "museum_북촌동양문화박물관",
@@ -94,9 +106,11 @@
     "link": "https://mom-mom.net/travel/places/647848a6307d5677335164e1",
     "description": "북촌 최고의 전망대에서 즐기는 차 한 잔",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 종로구 북촌로11길 76(삼청동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.583986,
+    "lng": 126.9833708
   },
   {
     "id": "museum_오마이갤러리_세계명화_트릭아트전시관",
@@ -105,7 +119,7 @@
     "link": "https://mom-mom.net/travel/places/646dc52e27695e662cc7f058",
     "description": "세계의 명작을 한 눈에 볼 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "문의 및 안내041-673-6343주소충청남도 태안군 안면읍 안면대로 3171-6",
     "genre": "museum",
     "lastCollected": "2026-03-04T15:42:49.441Z"
   },
@@ -116,9 +130,11 @@
     "link": "https://mom-mom.net/travel/places/646d780e27695e662cc7ed78",
     "description": "백제왕의 보물을 열어라! 게임과 애니로 배우는 역사?!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청남도 부여군 규암면 백제문로 386-6",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.3050755,
+    "lng": 126.899019
   },
   {
     "id": "museum_화성3_1운동만세길방문자센터",
@@ -138,9 +154,11 @@
     "link": "https://mom-mom.net/travel/places/64647a13935285b6b2a1c024",
     "description": "히어로들이 가득한 피규어 세상! 아이도 엄빠도 즐거워!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 안덕면 한창로 243",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.28190379,
+    "lng": 126.3553569
   },
   {
     "id": "museum_활판인쇄박물관",
@@ -149,9 +167,11 @@
     "link": "https://mom-mom.net/travel/places/6461d79155753627b1eebd68",
     "description": "옛 인쇄 과정을 한눈에 보고 체험하며 배워요!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 파주시 회동길 145 (문발동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.7082498,
+    "lng": 126.6867208
   },
   {
     "id": "museum_덕소자연사박물관",
@@ -160,9 +180,11 @@
     "link": "https://mom-mom.net/travel/places/646485c5cd2e90e42f0657b6",
     "description": "공룡마니아 아이가 가볼 만한 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 남양주시 와부읍 석실로 46-11",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.58001247,
+    "lng": 127.2300461
   },
   {
     "id": "museum_심장박물관",
@@ -171,9 +193,11 @@
     "link": "https://mom-mom.net/travel/places/66b18d56e149d08f057a46aa",
     "description": "우리 몸의 중심인 심장에 대해 알 수 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 계양구 계양문화로 7",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.53150103,
+    "lng": 126.735834
   },
   {
     "id": "museum_계량박물관",
@@ -215,9 +239,11 @@
     "link": "https://mom-mom.net/travel/places/66c3f3fd54c8f570ab30c0a2",
     "description": "한국종의 우수한 가치와 예술성을 듣다",
     "usageStat": "",
-    "address": "",
+    "address": "충청북도 진천군 진천읍 백곡로 1504-12",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.87002892,
+    "lng": 127.4131749
   },
   {
     "id": "museum_중구생활사전시관",
@@ -226,7 +252,7 @@
     "link": "https://mom-mom.net/travel/places/6375a5315a24c706c9168f27",
     "description": "할머니, 할아버지와 함께 떠나는 추억 여행",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "우대표한돈1인분300g 19000원돼지고기구이인천광역시 중구 우현로67번길 68-4 1층영업 전리뷰 1,202광고",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -237,7 +263,7 @@
     "link": "https://mom-mom.net/travel/places/637b2146fa02b9b77fde148c",
     "description": "자연관찰과 생태체험을 통해 기르는 환경 보전의식",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "구스시대구에서 판초밥 제일잘하는집초밥,롤대구광역시 수성구 청솔로2길 29-2 1층 구스시영업 전리뷰 1,660광고",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -248,7 +274,7 @@
     "link": "https://mom-mom.net/travel/places/637db83b10d56a487e89eb6b",
     "description": "곤충들을 직접 보고 만지며 궁금증을 해결해봐요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 광주 퇴촌 산들나비체험장 숲놀이체험",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -259,9 +285,11 @@
     "link": "https://mom-mom.net/travel/places/637d8ad110d56a487e89eab0",
     "description": "아이가 좋아하는 티라노와 사진도 찍고 체험도 하고",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 태안군 남면 곰섬로 37-20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.60929425,
+    "lng": 126.310712
   },
   {
     "id": "museum_대구창의융합교육원",
@@ -270,7 +298,7 @@
     "link": "https://mom-mom.net/travel/places/6376006efa02b9b77fde13e1",
     "description": "다양한 체험을 하며 창의성을 길러요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대구광역시blog.naver.com›daegu_news",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -281,7 +309,7 @@
     "link": "https://mom-mom.net/travel/places/63734a7dfa02b9b77fde11a0",
     "description": "기상과학을 쉽고 재미있게 배울 수 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "삼문동면돈판모밀에 진심인 밀양 찐맛집한식경상남도 밀양시 미리벌중앙로1길 28영업 전리뷰 2,450광고",
     "genre": "museum",
     "lastCollected": "2026-03-04T15:42:49.441Z"
   },
@@ -292,7 +320,7 @@
     "link": "https://mom-mom.net/travel/places/636cc51efa02b9b77fde0cd7",
     "description": "사과에 대한 모든 것을 보고 느끼는 체험 전시공간",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "문의 및 안내055-940-8782주소경상남도 거창군 거창읍 거함대로 3372-60",
     "genre": "museum",
     "lastCollected": "2026-03-01T15:12:19.168Z"
   },
@@ -303,7 +331,7 @@
     "link": "https://mom-mom.net/travel/places/6601203d6af0c1300504b469",
     "description": "실제 전투기와 헬기를 눈 앞에서 볼 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도개발공사blog.naver.com›gbdc04",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -314,7 +342,7 @@
     "link": "https://mom-mom.net/travel/places/636daca85a24c706c9168758",
     "description": "우주를 온몸으로 느껴봐요!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "문의 및 안내070-4693-5470주소경상남도 거창군 덕유월성로 1312-96 거창군월성청소년수련원",
     "genre": "museum",
     "lastCollected": "2026-03-01T15:12:19.168Z"
   },
@@ -325,9 +353,11 @@
     "link": "https://mom-mom.net/travel/places/636df781fa02b9b77fde0da3",
     "description": "터치 안되는 휴대전화는 처음 봐요!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 여주시 강변유원지길 105",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 37.29306214,
+    "lng": 127.666904
   },
   {
     "id": "museum_문화역서울284",
@@ -336,7 +366,7 @@
     "link": "https://mom-mom.net/travel/places/64464b82bd7d750d63dcfb4f",
     "description": "역대급 무료 전시, 구 서울역사의 모습까지 한눈에!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대보정 서울시청역점전좌석룸식당, 콜키지프리육류,고기요리서울특별시 중구 세종대로9길 41 지하1층 4호영업 전리뷰 2,308광고",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -347,7 +377,7 @@
     "link": "https://mom-mom.net/travel/places/66a99d40f24354583a023a24",
     "description": "아이와 함께 자연으로 떠나는 생태 여행",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "주소충청북도 충주시 동량면 지등로 260문의043-856-3620",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -369,9 +399,11 @@
     "link": "https://mom-mom.net/travel/places/6449cfb9bd7d750d63dcff48",
     "description": "실제 고인돌 유적도 보고 선사시대 체험도 하고",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "전북특별자치도 고창군 고창읍 고인돌공원길 74",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.44169795,
+    "lng": 126.6524975
   },
   {
     "id": "museum_백제문화단지",
@@ -380,7 +412,7 @@
     "link": "https://mom-mom.net/travel/places/644884dd6b75b6cef98869d0",
     "description": "궁, 무덤까지 백제 역사의 모든 것",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "문의 및 안내041-408-7290주소충청남도 부여군 규암면 백제문로 455",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -391,9 +423,11 @@
     "link": "https://mom-mom.net/travel/places/643e103ff1fb287709b15f5c",
     "description": "놀면서 배우는 백제의 역사",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 부여군 부여읍 금성로 5",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.27564277,
+    "lng": 126.9178933
   },
   {
     "id": "museum_서울_약령시_한의약_박물관",
@@ -402,9 +436,11 @@
     "link": "https://mom-mom.net/travel/places/6434ea117c7edc66fb0e529e",
     "description": "허준을 따라서! 우리 아이 의관, 의녀 체험!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 동대문구 약령중앙로 26",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.58060041,
+    "lng": 127.0375866
   },
   {
     "id": "museum_워터월드_제주",
@@ -446,9 +482,11 @@
     "link": "https://mom-mom.net/travel/places/634e3eead81f396db51e96e0",
     "description": "즐겁게 체험하며 전쟁역사를 배워요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 용산구 이태원로 29",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.53731288,
+    "lng": 126.9784661
   },
   {
     "id": "museum_한국금융사박물관",
@@ -457,9 +495,11 @@
     "link": "https://mom-mom.net/travel/places/6357374c28b1afee9391f022",
     "description": "요즘은 어릴 때부터 경제교육이 대세",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 중구 세종대로 135-5",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.568592,
+    "lng": 126.97643
   },
   {
     "id": "museum_대한민국역사박물관",
@@ -468,9 +508,11 @@
     "link": "https://mom-mom.net/travel/places/63562c8f841ee427a45ac3cd",
     "description": "역사교육의 현장으로 떠날 준비 되셨나요?!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 세종대로 198",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57371316,
+    "lng": 126.9783379
   },
   {
     "id": "museum_울진곤충여행관",
@@ -501,9 +543,11 @@
     "link": "https://mom-mom.net/travel/places/634cb98c12c319c264efc95e",
     "description": "오감 발달에 좋은 체험형 미술관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 양주시 장흥면 권율로 117",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.72583554,
+    "lng": 126.9493324
   },
   {
     "id": "museum_부평안전체험관",
@@ -523,7 +567,7 @@
     "link": "https://mom-mom.net/travel/places/633bfef07c4f1b6552988f67",
     "description": "달콤한 꿀은 어떻게 만들어질까?",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "주소경상북도 칠곡군 석적읍 강변대로 1580-1문의054-979-8315~9",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -534,9 +578,11 @@
     "link": "https://mom-mom.net/travel/places/65fb8da49a493ce8bfcce3d0",
     "description": "유네스코에 등재된 제주 해녀에 대해 배울 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 제주시 구좌읍 해녀박물관길 26",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.52360988,
+    "lng": 126.8634256
   },
   {
     "id": "museum_곤충생태전시관",
@@ -556,7 +602,7 @@
     "link": "https://mom-mom.net/travel/places/6307158a41219352b0249473",
     "description": "화폐로 세계여행 떠나요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "시설 기본 정보 ; 시설명 : 코버월드, 주소(도로명) : 경기도 포천시 군내면 청성로 72, 주소(지번) : 경기도 포천시 군내면 하성북리 556-14, 홈페이지 : 바로가기",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -600,7 +646,7 @@
     "link": "https://mom-mom.net/travel/places/63082f0ef5abfc5fd3c428d5",
     "description": "쌀과 농업을 테마로 할 수 있는 모든 것",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "주소경기도 이천시 모가면 공원로 48문의전화031-632-6607",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -611,9 +657,11 @@
     "link": "https://mom-mom.net/travel/places/63045e4980659f4193b257a6",
     "description": "자연 속에서 뛰놀며 푸른 마음을 길러요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 제주시 조천읍 번영로 1278-169",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.45534851,
+    "lng": 126.6688528
   },
   {
     "id": "museum_위봉함676",
@@ -655,7 +703,7 @@
     "link": "https://mom-mom.net/travel/places/6930149f3647688459a10a5e",
     "description": "근대 건물 속에서 만나는 역사와 예술",
     "usageStat": "",
-    "address": "",
+    "address": "전라북도 여행지 추천 군산 시내 근대화거리 볼거리 근대미술관 주차 1박2일 여행",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -666,7 +714,7 @@
     "link": "https://mom-mom.net/travel/places/6943c99016442c4b402040b6",
     "description": "80~90년대의 아날로그 감성을 담은 레트로카페",
     "usageStat": "",
-    "address": "",
+    "address": "호돌이 다방(커피숍)은 경기도 성남시 소재 음식점이다. 주소, 업종, 영업상태 등 상세정보를 제공하며, 카카오맵 지도와 로드뷰로 정확한 위치를 확인할 수 있다.",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -688,7 +736,7 @@
     "link": "https://mom-mom.net/travel/places/65f3a2f1d32bd394a5f519b7",
     "description": "발명에 대해 재미있게 공부하고 뛰어놀 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "분류인문(문화/예술/역사) > 체험관광지 > 이색체험위치대전광역시 유성구 과학로 82 (가정동)출처원문보기대한민국구석구석 원문보기",
     "genre": "museum",
     "lastCollected": "2026-03-04T15:42:49.441Z"
   },
@@ -699,9 +747,11 @@
     "link": "https://mom-mom.net/travel/places/6302fbd489407f1035206d07",
     "description": "창의력을 키울 수 있는 과학 테마전시관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 강화군 불은면 강화동로 403",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 37.67414288,
+    "lng": 126.4873082
   },
   {
     "id": "museum_김천녹색미래과학관",
@@ -721,9 +771,11 @@
     "link": "https://mom-mom.net/travel/places/65ee63ed1125833a155dba73",
     "description": "동아시아의 다양한 미술품을 만날 수 있는 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "서울특별시 종로구 평창8길 3(평창동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.604561,
+    "lng": 126.9660819
   },
   {
     "id": "museum_진도국민해양안전관",
@@ -754,9 +806,11 @@
     "link": "https://mom-mom.net/travel/places/62cd19302718fee95297e153",
     "description": "공룡 발자국과 화석을 볼 수 있는 공룡 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전라남도 해남군 황산면 공룡박물관길 234",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.58908867,
+    "lng": 126.4428321
   },
   {
     "id": "museum_김해시_수도박물관",
@@ -765,9 +819,11 @@
     "link": "https://mom-mom.net/travel/places/65f79b795533ba314df0bc45",
     "description": "집까지 오는 수돗물, 어디가 시작일까?",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 김해시 한림면 김해대로 1029-20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.2949807,
+    "lng": 128.7932939
   },
   {
     "id": "museum_영천전투메모리얼파크",
@@ -787,7 +843,7 @@
     "link": "https://mom-mom.net/travel/places/664d463ec3f836aef14438ce",
     "description": "공룡 덕후 아이가 좋아할 자연사 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대전광역시 유성구 대덕대로 481",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -831,7 +887,7 @@
     "link": "https://mom-mom.net/travel/places/63c78f391a14e0fcf7ceb3f7",
     "description": "주남저수지와 습지, 철새에 대해 배울 수 있는 전시관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "주소경상남도 창원시 의창구 동읍 주남로101번길 26문의055-225-2798",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -842,9 +898,11 @@
     "link": "https://mom-mom.net/travel/places/664aaa0f7dd47f890aaae2bd",
     "description": "나만의 신문을 만들어요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 세종대로 152",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.56986758,
+    "lng": 126.9776553
   },
   {
     "id": "museum_네이처에코리움",
@@ -864,7 +922,7 @@
     "link": "https://mom-mom.net/travel/places/63c7a5fd1a14e0fcf7ceb49e",
     "description": "다양한 전시가 열리는 쾌적한 전시관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "주소서울특별시 송파구 충민로 17 (문정동)문의1588-3588",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -886,9 +944,11 @@
     "link": "https://mom-mom.net/travel/places/62cd18772718fee95297ddcb",
     "description": "예쁜 보석과 공룡테마공원이 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전북특별자치도 익산시 왕궁면 호반로 8",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.99061351,
+    "lng": 127.102548
   },
   {
     "id": "museum_자연생태박물관",
@@ -897,9 +957,11 @@
     "link": "https://mom-mom.net/travel/places/62cd18942718fee95297de5c",
     "description": "자연 생태와 공룡을 탐구해봐요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 문경시 문경읍 새재1길 45",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.75251619,
+    "lng": 128.0764842
   },
   {
     "id": "museum_예천곤충생태원",
@@ -908,7 +970,7 @@
     "link": "https://mom-mom.net/travel/places/62cd184a2718fee95297dcd2",
     "description": "알고보면 놀이터 맛집인 곤충 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "[경상북도 예천군] 자녀들과 교육적으로 놀 수 있는 곳 '예천 곤충생태원'",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -919,7 +981,7 @@
     "link": "https://mom-mom.net/travel/places/62cd184f2718fee95297dceb",
     "description": "미니어처 세상으로 떠나는 테마파크",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "문의 및 안내031-8036-7979주소경기도 오산시 북삼미로 12 (내삼미동)",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -930,7 +992,7 @@
     "link": "https://mom-mom.net/travel/places/62cd184e2718fee95297dce8",
     "description": "어디서도 경험하지 못한 색다른 체험",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "문의 및 안내0507-1446-0746주소충청북도 충주시 앙성면 가곡로 1434",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -952,7 +1014,7 @@
     "link": "https://mom-mom.net/travel/places/62cd18182718fee95297dbe7",
     "description": "영유아존과 체험공간이 결합된 어린이 박물관",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "주소서울특별시 마포구 월드컵로 386 (상암동) 상암동, 박정희 대통령 기념도서관문의070-4443-1228 02)716-9345",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -996,9 +1058,11 @@
     "link": "https://mom-mom.net/travel/places/63b7f045ac9068bb14069df5",
     "description": "철도, 우편, 전화기 통신의 모든 역사를 볼 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 중구 신포로23번길 89",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.47331374,
+    "lng": 126.6203311
   },
   {
     "id": "museum_노사평화의_전당",
@@ -1007,7 +1071,7 @@
     "link": "https://mom-mom.net/travel/places/63aba9dc576d3cf16f497c47",
     "description": "이름에 부담갖지 마세요 직업체험 하는곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "주소대구광역시 달성군 구지면 국가산단대로52길 6문의053-803-8754",
     "genre": "museum",
     "lastCollected": "2026-03-10T16:00:16.584Z"
   },
@@ -1029,9 +1093,11 @@
     "link": "https://mom-mom.net/travel/places/63b3e2b2b16682aafc6829e9",
     "description": "타임머신 타고 과거여행을 떠나요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 부여군 규암면 백제문로 553",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.3065313,
+    "lng": 126.9169635
   },
   {
     "id": "museum_용평_공룡해양랜드",
@@ -1051,9 +1117,11 @@
     "link": "https://mom-mom.net/travel/places/63aaa0d0576d3cf16f49793a",
     "description": "곤충부터 파충류까지! 생생한 곤충박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 여주시 명성로 114-146",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.25955987,
+    "lng": 127.6633506
   },
   {
     "id": "museum_한국근대문학관",
@@ -1062,9 +1130,11 @@
     "link": "https://mom-mom.net/travel/places/646ebbc6bb9f4f3e5023c449",
     "description": "문학의 꿈을 기를 수 있는 시간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 중구 신포로15번길 76",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.47260955,
+    "lng": 126.6210155
   },
   {
     "id": "museum_유리섬박물관",
@@ -1084,9 +1154,11 @@
     "link": "https://mom-mom.net/travel/places/64782c98307d5677335164cf",
     "description": "한국의 전기역사를 공부하고 소중함을 깨닫기",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 서초구 효령로 72길 60",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.48560466,
+    "lng": 127.0280788
   },
   {
     "id": "museum_경기도자박물관",
@@ -1095,9 +1167,11 @@
     "link": "https://mom-mom.net/travel/places/63aa8008356e0caa7ac3adbc",
     "description": "체험을 통해 우리나라 도자기 역사를 배울 수 있는 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 광주시 곤지암읍 경충대로 727",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.35028278,
+    "lng": 127.3347855
   },
   {
     "id": "museum_서대문자연사박물관",
@@ -1106,9 +1180,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17b92718fee95297da24",
     "description": "호기심 유발하는 공룡 친구들 가득",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 서대문구 연희로 32길 51",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57675199,
+    "lng": 126.937836
   },
   {
     "id": "museum_떡박물관",
@@ -1117,9 +1193,11 @@
     "link": "https://mom-mom.net/travel/places/65e678fea842edd830db30c9",
     "description": "떡 만들기 체험이 있는 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 돈화문로 71(와룡동)",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.57489958,
+    "lng": 126.9906359
   },
   {
     "id": "museum_돈화문갤러리",
@@ -1183,9 +1261,11 @@
     "link": "https://mom-mom.net/travel/places/62cd16e52718fee95297d60b",
     "description": "역사와 전통문화를 경험할 수 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 송파구 올림픽로 240",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51130961,
+    "lng": 127.0981418
   },
   {
     "id": "museum_백제왕궁박물관",
@@ -1194,9 +1274,11 @@
     "link": "https://mom-mom.net/travel/places/65de965957241c384023441c",
     "description": "직접 발굴까지 해요! 무료 역사박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전북특별자치도 익산시 왕궁면 궁성로 666",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.97155978,
+    "lng": 127.0558096
   },
   {
     "id": "museum_의열체험관",
@@ -1227,9 +1309,11 @@
     "link": "https://mom-mom.net/travel/places/645b540c4bf4fe481a902b9f",
     "description": "웅장한 분위기에서 전시를 관람할 수 있는 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 중구 칠패로 5",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 37.56057,
+    "lng": 126.968866
   },
   {
     "id": "museum_중국어마을문화체험관",
@@ -1315,9 +1399,11 @@
     "link": "https://mom-mom.net/travel/places/66b03b06209892a8839efb3a",
     "description": "전통 문화와 첨단 디지털 기술의 조화",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상북도 안동시 서동문로 203",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.566284,
+    "lng": 128.733987
   },
   {
     "id": "museum_경기도어린이식품안전체험관_이천센터",
@@ -1337,9 +1423,11 @@
     "link": "https://mom-mom.net/travel/places/66ab563d10b13abad8bb04aa",
     "description": "미니 연탄 만들기를 할 수 있는 석탄 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청남도 보령시 성주산로 508",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.32612387,
+    "lng": 126.6527142
   },
   {
     "id": "museum_목인박물관_목석원",
@@ -1348,9 +1436,11 @@
     "link": "https://mom-mom.net/travel/places/644b89c4e9e36e0b1ce8f042",
     "description": "만나기 힘든 목인, 석인들이 한 자리에",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "서울특별시 종로구 인사동11길 20(견지동)",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.573871,
+    "lng": 126.9836492
   },
   {
     "id": "museum_목포어린이바다과학관",
@@ -1381,9 +1471,11 @@
     "link": "https://mom-mom.net/travel/places/644646986b75b6cef9886763",
     "description": "체험으로 알아보는 공연예술, 남산둘레길 산책까지!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 중구 장충단로 59",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.55199491,
+    "lng": 126.9992673
   },
   {
     "id": "museum_이사부독도기념관",
@@ -1403,9 +1495,11 @@
     "link": "https://mom-mom.net/travel/places/6448b75c6b75b6cef9886a89",
     "description": "공룡과 미디어파사드부터 살아있는 물고기들과의 만남까지",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전라남도 목포시 남농로 135",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.79372717,
+    "lng": 126.421075
   },
   {
     "id": "museum_서울우리소리박물관",
@@ -1414,9 +1508,11 @@
     "link": "https://mom-mom.net/travel/places/6448bebc6b75b6cef9886ade",
     "description": "보고 듣고 두드려보며 알게 되는 우리 소리의 매력",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 율곡로 96",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57715793,
+    "lng": 126.989622
   },
   {
     "id": "museum_국립기상박물관",
@@ -1425,9 +1521,11 @@
     "link": "https://mom-mom.net/travel/places/644666846b75b6cef988680c",
     "description": "근대 건축물과 계절별 표준목! 아름다운 풍경과 전시가 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구송월길 52",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57022174,
+    "lng": 126.9662042
   },
   {
     "id": "museum_강원도산림박물관",
@@ -1436,9 +1534,11 @@
     "link": "https://mom-mom.net/travel/places/68c94722c87fe0a76951c53b",
     "description": "배우고 체험하고 즐기는 힐링 숲 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "강원특별자치도 춘천시 화목원길 24",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.92264687,
+    "lng": 127.7251595
   },
   {
     "id": "museum_서울퓨처랩",
@@ -1469,9 +1569,11 @@
     "link": "https://mom-mom.net/travel/places/68d1377863fe589047247234",
     "description": "다양한 우표를 한눈에 볼 수 있는 공간",
     "usageStat": "",
-    "address": "",
+    "address": "전라남도 담양군 대전면 대치9길 16",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.27663482,
+    "lng": 126.8895788
   },
   {
     "id": "museum_강원경찰박물관",
@@ -1480,9 +1582,11 @@
     "link": "https://mom-mom.net/travel/places/68c9463f155faa248913546e",
     "description": "배우고 체험하며 사진도 남길 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "강원특별자치도 춘천시 신북읍 신샘밭로 361",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.92530023,
+    "lng": 127.7499325
   },
   {
     "id": "museum_인천상회",
@@ -1502,9 +1606,11 @@
     "link": "https://mom-mom.net/travel/places/68b819ab2781d5b9347e7f08",
     "description": "역사 속에서 재미를 찾을 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "경상남도 의령군 의령읍 충익로 1-25",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.31468769,
+    "lng": 128.259435
   },
   {
     "id": "museum_통영수산과학관",
@@ -1524,9 +1630,11 @@
     "link": "https://mom-mom.net/travel/places/641acf7381db68fbefe8f06c",
     "description": "아이에게 역사를 가르치고 싶다면? 역사 교육 필수코스",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 용산구 서빙고로 137",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.52470233,
+    "lng": 126.9777412
   },
   {
     "id": "museum_울산기후위기대응센터",
@@ -1568,9 +1676,11 @@
     "link": "https://mom-mom.net/travel/places/6563ee18467df1e41ea53adb",
     "description": "도산 안창호 선생의 애국정신을 기리며",
     "usageStat": "",
-    "address": "",
+    "address": "서울특별시 강남구 도산대로45길 20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.5239121,
+    "lng": 127.0356029
   },
   {
     "id": "museum_부평역사박물관",
@@ -1579,9 +1689,11 @@
     "link": "https://mom-mom.net/travel/places/65668db407fffef02e9cf650",
     "description": "부평의 역사를 알 수 있는 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 부평구 굴포로 151",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.512195,
+    "lng": 126.737918
   },
   {
     "id": "museum_반딧불이생태관",
@@ -1612,9 +1724,11 @@
     "link": "https://mom-mom.net/travel/places/6556d39e7befcfe324f21dcf",
     "description": "역사를 배우는 자연 속 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "전라남도 화순군 이서면 백아로 3109",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.110024,
+    "lng": 127.079964
   },
   {
     "id": "museum_얼라이브_하트",
@@ -1645,9 +1759,11 @@
     "link": "https://mom-mom.net/travel/places/655c03277befcfe324f236b6",
     "description": "함양의 역사를 경험할 수 있는 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "경상남도 함양군 함양읍 필봉산길 55",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.52471022,
+    "lng": 127.722269
   },
   {
     "id": "museum_인천어린이박물관",
@@ -1656,9 +1772,11 @@
     "link": "https://mom-mom.net/travel/places/63fc5342631c778269726d43",
     "description": "과학, 문화, 공룡, 미술까지 어린이 맞춤 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 미추홀구 매소홀로 618",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.43654516,
+    "lng": 126.6864606
   },
   {
     "id": "museum_성주과일어린이과학체험관",
@@ -1678,9 +1796,11 @@
     "link": "https://mom-mom.net/travel/places/63edd338631c778269726631",
     "description": "무료로 즐기는 동두천 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 동두천시 평화로 2910번길 96-63",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.94250187,
+    "lng": 127.0660561
   },
   {
     "id": "museum_이주홍어린이문학관",
@@ -1733,9 +1853,11 @@
     "link": "https://mom-mom.net/travel/places/6653df6c6f085175300f52ed",
     "description": "유관순 열사의 애국심을 느껴보며",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 중구 정동길 26",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.566178,
+    "lng": 126.971324
   },
   {
     "id": "museum_키즈플라자_오사카",
@@ -1832,9 +1954,11 @@
     "link": "https://mom-mom.net/travel/places/653081cfad38f0df639706f7",
     "description": "우표, 작은 네모 속 커다란 세상",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "전라남도 담양군 대전면 대치9길 16",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.276612,
+    "lng": 126.8895788
   },
   {
     "id": "museum_넥스트레벨",
@@ -1865,9 +1989,11 @@
     "link": "https://mom-mom.net/travel/places/653080f2ad38f0df639706f5",
     "description": "산업이 역사가 되는 순간 속으로",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 구로구 디지털로26길 38",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.4798477,
+    "lng": 126.8953185
   },
   {
     "id": "museum_지리산역사문화관",
@@ -1898,9 +2024,11 @@
     "link": "https://mom-mom.net/travel/places/65517f867befcfe324f1d11b",
     "description": "어린이 체험실이 있는 한의학 전문 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 강서구 허준로 87",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.56787281,
+    "lng": 126.8510301
   },
   {
     "id": "museum_고려대학교_서울캠퍼스_박물관_크림슨스토어",
@@ -1964,9 +2092,11 @@
     "link": "https://mom-mom.net/travel/places/6507a72e53e91cf1df2b57f9",
     "description": "커다란 향유고래 뼈가 있는 자연사박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 강화군 하점면 강화대로 994-33",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.77459672,
+    "lng": 126.4347214
   },
   {
     "id": "museum_추억의달동네",
@@ -1986,9 +2116,11 @@
     "link": "https://mom-mom.net/travel/places/64f684fbc401c623d8d85ff8",
     "description": "국내 최초의 짜장 테마 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 중구 차이나타운로 56-14",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.4748153,
+    "lng": 126.618197
   },
   {
     "id": "museum_한국교원대학교_교육박물관",
@@ -1997,9 +2129,11 @@
     "link": "https://mom-mom.net/travel/places/64fff3d16fdeebd5b7f27942",
     "description": "아이와 옛 시절로 떠나는 여행",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청북도 청주시 흥덕구 강내면 태성탑연로 250",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.6056652,
+    "lng": 127.3573247
   },
   {
     "id": "museum_대전선사박물관",
@@ -2008,9 +2142,11 @@
     "link": "https://mom-mom.net/travel/places/6510eda87b6f8db33b8dfcb7",
     "description": "구석기시대부터 철기까지 역사탐방하기",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "대전광역시 유성구 노은동로 126",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.3719118,
+    "lng": 127.323866
   },
   {
     "id": "museum_성북선잠박물관",
@@ -2019,9 +2155,11 @@
     "link": "https://mom-mom.net/travel/places/650b9e40e1869c9fff0b5874",
     "description": "선조들의 양잠생활을 볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "서울특별시 성북구 성북로 96",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.5932329,
+    "lng": 126.9982198
   },
   {
     "id": "museum_진남관",
@@ -2052,9 +2190,11 @@
     "link": "https://mom-mom.net/travel/places/64f531e0c401c623d8d85847",
     "description": "특별한 체험이 있는 역사박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 부천시 오정구 소사로 638",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.513641,
+    "lng": 126.801745
   },
   {
     "id": "museum_공주한옥마을_전통문화체험관",
@@ -2074,9 +2214,11 @@
     "link": "https://mom-mom.net/travel/places/64f53039c401c623d8d8583a",
     "description": "멋진 뷰가 보이는, 차 한 잔 즐기며 전시 보기 좋은 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 남양주시 고산로 126번길 15-2",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.59266233,
+    "lng": 127.180616
   },
   {
     "id": "museum_국립여수해양기상과학관",
@@ -2096,9 +2238,11 @@
     "link": "https://mom-mom.net/travel/places/6814a3a1e234f9aaa3a8908b",
     "description": "무려 6가지 체험을 무료로 할 수 있는 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 연수구 청량로160번길 26",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.42070925,
+    "lng": 126.6531798
   },
   {
     "id": "museum_오아르미술관",
@@ -2162,9 +2306,11 @@
     "link": "https://mom-mom.net/travel/places/6630513c4b1eb749ac117c83",
     "description": "여러 가지 실감 영상을 관람할 수 있는 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 논산시 부적면 충곡로 311-54",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.1923914,
+    "lng": 127.1815925
   },
   {
     "id": "museum_하림치킨로드투어",
@@ -2239,9 +2385,11 @@
     "link": "https://mom-mom.net/travel/places/63a53d4bdb8152deffc3dda3",
     "description": "썰매 타기부터 동물 먹이주기 체험까지 박물관에서",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청북도 청주시 흥덕구 강내면 청주역로 213-52",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.63936808,
+    "lng": 127.3822358
   },
   {
     "id": "museum_제주4_3어린이체험관",
@@ -2283,9 +2431,11 @@
     "link": "https://mom-mom.net/travel/places/67e3809d133a10b5f8f6f94d",
     "description": "체험으로 배우는 우리의 전통놀이와 문화",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청북도 증평군 증평읍 둔덕길 89",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.7638886,
+    "lng": 127.5955694
   },
   {
     "id": "museum_백범김구기념관",
@@ -2294,9 +2444,11 @@
     "link": "https://mom-mom.net/travel/places/67e4f84199911dc101d99e46",
     "description": "효창공원에 역사체험하러 가자!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 용산구 임정로 26",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.54427794,
+    "lng": 126.9592546
   },
   {
     "id": "museum_그대_나의_뮤즈_반고흐_to_마티스",
@@ -2338,9 +2490,11 @@
     "link": "https://mom-mom.net/travel/places/67cac86f537f9db594e2650e",
     "description": "가족 나들이로 좋은 문화 공간",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 안성시 보개면 남사당로 198-11",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.03497838,
+    "lng": 127.3108743
   },
   {
     "id": "museum_넷마블게임박물관",
@@ -2371,9 +2525,11 @@
     "link": "https://mom-mom.net/travel/places/677cc2ec56c51cf7f7483ae4",
     "description": "아이와 즐길 체험 프로그램이 많은 무료 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 안산시 단원구 화랑로 265",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.32308895,
+    "lng": 126.8161874
   },
   {
     "id": "museum_충무공이순신기념관",
@@ -2382,9 +2538,11 @@
     "link": "https://mom-mom.net/travel/places/67b8503136e7625ec2dcf938",
     "description": "미디어아트와 4D 영상을 통해 이순신 장군을 만나자",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청남도 아산시 염치읍 현충사길 126",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.806513,
+    "lng": 127.0311988
   },
   {
     "id": "museum_보보의_집",
@@ -2415,9 +2573,11 @@
     "link": "https://mom-mom.net/travel/places/677376906f7a5e66598db91d",
     "description": "다양한 체험과 함께 우리 땅 독도를 공부하자!",
     "usageStat": "",
-    "address": "",
+    "address": "서울특별시 영등포구 영중로 15",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51723326,
+    "lng": 126.903716
   },
   {
     "id": "museum_울진과학체험관",
@@ -2437,9 +2597,11 @@
     "link": "https://mom-mom.net/travel/places/67761dcd6f7a5e66598dbfe9",
     "description": "아이와 가볼 만한 청도의 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "경상북도 청도군 이서면 이서로 567",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.69424466,
+    "lng": 128.6865955
   },
   {
     "id": "museum_제주세계자연유산센터",
@@ -2448,9 +2610,11 @@
     "link": "https://mom-mom.net/travel/places/677376e47407464ebfdb8ec6",
     "description": "제주의 자연의 숨결을 느끼고 경험할 수 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "제주특별자치도 제주시 조천읍 선교로 569-36",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.45691987,
+    "lng": 126.7147521
   },
   {
     "id": "museum_안성맞춤박물관",
@@ -2459,9 +2623,11 @@
     "link": "https://mom-mom.net/travel/places/677384ae7407464ebfdb8ed0",
     "description": "안성의 풍부한 문화유산을 함께 접할 수 있는 테마 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 안성시 대덕면 서동대로 4726-15",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.011318,
+    "lng": 127.228354
   },
   {
     "id": "museum_국립충주기상과학관",
@@ -2481,9 +2647,11 @@
     "link": "https://mom-mom.net/travel/places/67736f226f7a5e66598db8d8",
     "description": "놀이터가 있는 대규모 체험관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전북특별자치도 전주시 완산구 바람쐬는길 21",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.81159258,
+    "lng": 127.1625872
   },
   {
     "id": "museum_수원시기후변화체험교육관",
@@ -2525,9 +2693,11 @@
     "link": "https://mom-mom.net/travel/places/676d280e7407464ebfdb833c",
     "description": "우리나라의 농경 역사를 한눈에 볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "전북특별자치도 김제시 부량면 벽골제로 442",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.7546256,
+    "lng": 126.8531043
   },
   {
     "id": "museum_부산광역시교육청유아교육진흥원",
@@ -2591,9 +2761,11 @@
     "link": "https://mom-mom.net/travel/places/636c88c3fa02b9b77fde0aa6",
     "description": "경북의 문화유산에 대해 배우고 체험도 가능한 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대구광역시 수성구 청호로 321",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.84557453,
+    "lng": 128.6383419
   },
   {
     "id": "museum_한수원_홍보관",
@@ -2613,9 +2785,11 @@
     "link": "https://mom-mom.net/travel/places/6466f2138d5c34cc9393619a",
     "description": "인천으로 떠나는 중국 여행",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 중구 제물량로 238",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.4735399,
+    "lng": 126.6187688
   },
   {
     "id": "museum_돌하르방미술관",
@@ -2624,9 +2798,11 @@
     "link": "https://mom-mom.net/travel/places/646726e91fe3f2441e28a8de",
     "description": "원데이클래스와 숲놀이터가 있는 미술관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 제주시 조천읍 북촌서1길 70",
     "genre": "museum",
-    "lastCollected": "2026-03-02T15:37:27.137Z"
+    "lastCollected": "2026-03-02T15:37:27.137Z",
+    "lat": 33.5388475,
+    "lng": 126.6888123
   },
   {
     "id": "museum_강원종합박물관",
@@ -2635,9 +2811,11 @@
     "link": "https://mom-mom.net/travel/places/6466e4598d5c34cc93936104",
     "description": "인별에서 핫한 종유석 폭포에서 남기는 인생샷",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "강원특별자치도 삼척시 신기면 강원남부로 3016",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.35140608,
+    "lng": 129.0841439
   },
   {
     "id": "museum_미메시스_아트_뮤지엄",
@@ -2646,9 +2824,11 @@
     "link": "https://mom-mom.net/travel/places/6462e3ece23edef9810acf66",
     "description": "멋진 건축, 서정적인 야외 공간 그리고 전시와 책",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 파주시 문발로 253",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.7166492275,
+    "lng": 126.6890971601
   },
   {
     "id": "museum_국립춘천박물관",
@@ -2657,9 +2837,11 @@
     "link": "https://mom-mom.net/travel/places/6463346de23edef9810ad1b5",
     "description": "아이와 하루 종일 놀기 좋은 미디어 아트 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "강원특별자치도 춘천시 우석로 70",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.86401877,
+    "lng": 127.7521907
   },
   {
     "id": "museum_벨포레_미디어아트센터",
@@ -2701,9 +2883,11 @@
     "link": "https://mom-mom.net/travel/places/633d3b520885b7f4df49f812",
     "description": "소리를 듣고 만져보는 시간을 가져요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청북도 영동군 심천면 국악로 9",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.210131,
+    "lng": 127.7049504
   },
   {
     "id": "museum_전곡선사박물관",
@@ -2712,9 +2896,11 @@
     "link": "https://mom-mom.net/travel/places/633e3a9e285428b051abbcb0",
     "description": "선사시대 생활을 경험해 볼 공간",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 연천군 전곡읍 평화로443번길 2",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 38.0114268829,
+    "lng": 127.0636178267
   },
   {
     "id": "museum_청도소싸움미디어체험관",
@@ -2745,9 +2931,11 @@
     "link": "https://mom-mom.net/travel/places/6426ada627ff3489e0e02858",
     "description": "은은한 고려청자의 매력 속으로!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전라남도 강진군 대구면 청자촌길 33",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 34.50866203,
+    "lng": 126.800843
   },
   {
     "id": "museum_에코누리_구미시_탄소제로교육관",
@@ -2767,9 +2955,11 @@
     "link": "https://mom-mom.net/travel/places/669898dbb1f6949f1ad06f56",
     "description": "아이의 감성을 자극하는 다양한 작품 관람 시간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대전광역시 서구 둔산대로 157",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.366898,
+    "lng": 127.387019
   },
   {
     "id": "museum_군산근대역사박물관",
@@ -2778,9 +2968,11 @@
     "link": "https://mom-mom.net/travel/places/6433c87a1c922a345566b68b",
     "description": "통합권 한 장으로 군산의 근대 역사, 미술, 건축을 체험하기",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전북특별자치도 군산시 해망로 240",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.99081903,
+    "lng": 126.7119523
   },
   {
     "id": "museum_서구로봇체험관",
@@ -2800,9 +2992,11 @@
     "link": "https://mom-mom.net/travel/places/668c916a0f901685ffa01b8a",
     "description": "차에 대해 알아볼 수 있는 무료 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 성북구 정릉로 77",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.61028784,
+    "lng": 126.9985206
   },
   {
     "id": "museum_수원박물관",
@@ -2811,9 +3005,11 @@
     "link": "https://mom-mom.net/travel/places/641d04faca4d18d6ca38eff0",
     "description": "수원의 역사와 문화 체험",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경기도 수원시 영통구 창룡대로 265",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.297646,
+    "lng": 127.035631
   },
   {
     "id": "museum_검단선사박물관",
@@ -2822,9 +3018,11 @@
     "link": "https://mom-mom.net/travel/places/642548bf27ff3489e0e026d1",
     "description": "인천에도 있는 선사박물관!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 서구 고산후로121번길 7",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.59444584,
+    "lng": 126.6986824
   },
   {
     "id": "museum_아스카_게임박물관",
@@ -2866,9 +3064,11 @@
     "link": "https://mom-mom.net/travel/places/66876956b1c28a971f8680b2",
     "description": "산림부터 생태계까지 볼 수 있는 산림 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 포천시 소흘읍 광릉수목원로 509",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.75952331,
+    "lng": 127.1689953
   },
   {
     "id": "museum_울산중구어린이역사과학체험관",
@@ -2899,9 +3099,11 @@
     "link": "https://mom-mom.net/travel/places/62cd19312718fee95297e159",
     "description": "책을 주제로 한 어린이 미술관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 성남시 분당구 판교역로 146번길 20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.392794,
+    "lng": 127.112088
   },
   {
     "id": "museum_조명박물관",
@@ -2910,9 +3112,11 @@
     "link": "https://mom-mom.net/travel/places/62cd19302718fee95297e144",
     "description": "반짝반짝 빛의 세상과 소극장 공연",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 양주시 광적면 광적로 235-48",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.83609614,
+    "lng": 126.9675329
   },
   {
     "id": "museum_국립전주어린이박물관",
@@ -2965,9 +3169,11 @@
     "link": "https://mom-mom.net/travel/places/664fe943a584242ec0c2b26f",
     "description": "줄다리기의 유래와 역사를 배울 수 있는 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 당진시 송악읍 안틀모시길11",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.89616228,
+    "lng": 126.6947633
   },
   {
     "id": "museum_오산버드파크",
@@ -3020,9 +3226,11 @@
     "link": "https://mom-mom.net/travel/places/63be827708f3207c63d7e269",
     "description": "무료 클라이밍도 해보는 국립산악박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 도봉구 도봉산길 86",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.68748,
+    "lng": 127.03408
   },
   {
     "id": "museum_스미스_평화관",
@@ -3064,9 +3272,11 @@
     "link": "https://mom-mom.net/travel/places/63bd24423ae7d5e1f9e23107",
     "description": "클래식카와 다양한 자동차를 한공간에서",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 경주시 보문로 132-22",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.85210632,
+    "lng": 129.2685489
   },
   {
     "id": "museum_속초시립박물관",
@@ -3075,9 +3285,11 @@
     "link": "https://mom-mom.net/travel/places/63b7792fac9068bb14069c4c",
     "description": "포토존과 체험거리가 많은 알찬 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "강원특별자치도 속초시 신흥2길16",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 38.20105323,
+    "lng": 128.5382041
   },
   {
     "id": "museum_애니메이션_박물관_토이로봇관",
@@ -3086,9 +3298,11 @@
     "link": "https://mom-mom.net/travel/places/63bbbb733d76117a2c9f1880",
     "description": "애니메이션과 로봇을 한 번에 볼 수 있는 동심저격 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "강원특별자치도 춘천시 서면 박사로 854",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.893017,
+    "lng": 127.6919244
   },
   {
     "id": "museum_경산수학체험센터",
@@ -3108,9 +3322,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17c42718fee95297da5a",
     "description": "오감놀이와 재미있는 실험으로 상상력 +1",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 광진구 능동로 216",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.54957179,
+    "lng": 127.0810408
   },
   {
     "id": "museum_서울하수도과학관",
@@ -3141,9 +3357,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17c42718fee95297da5c",
     "description": "서울 발전사를 공부하고 체험할 수 있는 공간",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "서울특별시 노원구 동일로 174길 27",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.62017392,
+    "lng": 127.0769362
   },
   {
     "id": "museum_서울시립과학관",
@@ -3163,9 +3381,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17b42718fee95297da09",
     "description": "빠방이 러버들의 성지",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 용인시 처인구 포곡읍 에버랜드로 376번길 171",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.30037229,
+    "lng": 127.2169538
   },
   {
     "id": "museum_시화조력문화관",
@@ -3185,9 +3405,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17912718fee95297d97d",
     "description": "로봇 좋아하는 아이들의 놀이터",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 부천시 원미구 평천로 655",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51761,
+    "lng": 126.764051
   },
   {
     "id": "museum_밀양시립박물관",
@@ -3196,9 +3418,11 @@
     "link": "https://mom-mom.net/travel/places/6392d36c010dc45da8bad437",
     "description": "다양한 체험을 통해 즐겁게 역사를 배워봐요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 밀양시 밀양대공원로 100",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.50296509,
+    "lng": 128.7593641
   },
   {
     "id": "museum_안성맞춤천문과학관",
@@ -3273,9 +3497,11 @@
     "link": "https://mom-mom.net/travel/places/660a2640738cc897ddeddee3",
     "description": "기차의 역사를 직접 보고 체험할 수 있는 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 의왕시 철도박물관로 142",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.3140471,
+    "lng": 126.9512975
   },
   {
     "id": "museum_경상북도교육청_메이커교육관_맹글마루",
@@ -3339,9 +3565,11 @@
     "link": "https://mom-mom.net/travel/places/62cd16042718fee95297d1a8",
     "description": "비행기를 좋아하는 아이라면 꼭 방문해야 하는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 강서구 하늘길 177",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.55686977,
+    "lng": 126.8088723
   },
   {
     "id": "museum_국립해양박물관",
@@ -3350,9 +3578,11 @@
     "link": "https://mom-mom.net/travel/places/62cd16042718fee95297d1a9",
     "description": "세상의 모든 바다이야기가 시작되는 곳",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "부산광역시 영도구 해양로301번길 45",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.07856342,
+    "lng": 129.0802449
   },
   {
     "id": "museum_국립어린이과학관",
@@ -3372,9 +3602,11 @@
     "link": "https://mom-mom.net/travel/places/62cd15fb2718fee95297d173",
     "description": "알찬 어린이 체험물로 가득한 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 삼청로 37",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57590409,
+    "lng": 126.9768421
   },
   {
     "id": "museum_국립생물자원관",
@@ -3438,9 +3670,11 @@
     "link": "https://mom-mom.net/travel/places/62cd15dd2718fee95297d0c9",
     "description": "경찰에 관심 많은 아이들이 직접 경찰이 되어보는 특별한 시간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 종로구 새문안로 41",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.56887613,
+    "lng": 126.9687094
   },
   {
     "id": "museum_예술정원1999_자연예술테마파크",
@@ -3526,9 +3760,11 @@
     "link": "https://mom-mom.net/travel/places/6316f42ba184d723bad628d1",
     "description": "보고 배우고 즐길 거리가 넘치는 생태박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 상주시 도남2길 137",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.44559196,
+    "lng": 128.2554155
   },
   {
     "id": "museum_한독의약박물관",
@@ -3537,9 +3773,11 @@
     "link": "https://mom-mom.net/travel/places/634650fa59ace6effce64080",
     "description": "미션 하며 즐겁게 배워보는 의학과 약학",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청북도 음성군 대소면 대풍산단로 78",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.97056729,
+    "lng": 127.465316
   },
   {
     "id": "museum_부평_굴포누리_기후변화체험관",
@@ -3592,9 +3830,11 @@
     "link": "https://mom-mom.net/travel/places/63083f230c89c06a70dc4235",
     "description": "어린이는 지금 당장 놀아야 한다",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 동두천시 평화로 2910번길 46",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.94467141,
+    "lng": 127.0644512
   },
   {
     "id": "museum_헌법재판소_도서관",
@@ -3614,9 +3854,11 @@
     "link": "https://mom-mom.net/travel/places/655315cb7befcfe324f1ed2a",
     "description": "한탄강의 역사를 체험으로 배워보자!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 포천시 영북면 비둘기낭길 55",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 38.07322174,
+    "lng": 127.2246653
   },
   {
     "id": "museum_궁산땅굴역사전시관",
@@ -3636,9 +3878,11 @@
     "link": "https://mom-mom.net/travel/places/654301116702b6172b914485",
     "description": "자동차, 피아노 관람과 동물 먹이주기 체험까지!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 안덕면 중산간서로 1610",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.28294238,
+    "lng": 126.3490104
   },
   {
     "id": "museum_광명시자원회수시설_홍보관",
@@ -3658,9 +3902,11 @@
     "link": "https://mom-mom.net/travel/places/6549f579c2d2b67bbd03f53b",
     "description": "여러 탈의 역사도 알고 체험도 하고!",
     "usageStat": "",
-    "address": "",
+    "address": "경상북도 안동시 풍천면 전서로 206",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.548962,
+    "lng": 128.527489
   },
   {
     "id": "museum_양평친환경농업박물관",
@@ -3669,9 +3915,11 @@
     "link": "https://mom-mom.net/travel/places/654840e7c2d2b67bbd03cca5",
     "description": "농업 문화와 역사를 배우는 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 양평군 용문면 용문산로 670",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.54760453,
+    "lng": 127.5812266
   },
   {
     "id": "museum_한국은행_화폐박물관",
@@ -3680,9 +3928,11 @@
     "link": "https://mom-mom.net/travel/places/62cd19302718fee95297e14e",
     "description": "오늘은 화폐에 대해서 배워볼까요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 파주시 탄현면 헤이리마을길 93-89",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.7908049099,
+    "lng": 126.6973144693
   },
   {
     "id": "museum_디자인씽킹뮤지엄",
@@ -3691,9 +3941,11 @@
     "link": "https://mom-mom.net/travel/places/6908781449f3a3ebe64753f1",
     "description": "감성과 영감이 머무는 강릉의 숨은 아트스팟",
     "usageStat": "",
-    "address": "",
+    "address": "강원특별자치도 강릉시 구정면 정등로 130",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.72922013,
+    "lng": 128.8741651
   },
   {
     "id": "museum_오이도_박물관",
@@ -3702,9 +3954,11 @@
     "link": "https://mom-mom.net/travel/places/62cd18532718fee95297dd06",
     "description": "서해바다를 한 눈에 볼 수 있는 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 시흥시 오이도로 332",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.33518527,
+    "lng": 126.6912532
   },
   {
     "id": "museum_울산수학문화관",
@@ -3724,9 +3978,11 @@
     "link": "https://mom-mom.net/travel/places/62cd18b62718fee95297df03",
     "description": "비행기와 우주선을 좋아한다면 바로 여기",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 안덕면 녹차분재로 218",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.3042074,
+    "lng": 126.2996615
   },
   {
     "id": "museum_의성조문국박물관",
@@ -3735,9 +3991,11 @@
     "link": "https://mom-mom.net/travel/places/62cd18b92718fee95297df16",
     "description": "역사 공부도 하고, 키카 부럽지 않은 놀이터도 즐기고!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 의성군 금성면 초전1길 83",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.27668498,
+    "lng": 128.6693604
   },
   {
     "id": "museum_인천도시역사관",
@@ -3746,9 +4004,11 @@
     "link": "https://mom-mom.net/travel/places/651cce0dcaa4390924c21f36",
     "description": "근대 도시 인천의 역사를 배워요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 연수구 인천타워대로 238",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.39281282,
+    "lng": 126.6358893
   },
   {
     "id": "museum_시립_반석산_에코스쿨",
@@ -3779,9 +4039,11 @@
     "link": "https://mom-mom.net/travel/places/6510df357b6f8db33b8dfbba",
     "description": "자동차를 좋아하는 아이들의 최고의 놀이터",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경기도 용인시 처인구 포곡읍 에버랜드로376번길 171",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.300383,
+    "lng": 127.2169538
   },
   {
     "id": "museum_군산근대건축관",
@@ -3801,9 +4063,11 @@
     "link": "https://mom-mom.net/travel/places/62eb9b73301a77a5a3e6f137",
     "description": "경기도민이라면? 가성비 좋은 체험 해볼까",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경기도 용인시 기흥구 상갈로 6",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.2681702,
+    "lng": 127.1088507
   },
   {
     "id": "museum_여주산림박물관",
@@ -3812,9 +4076,11 @@
     "link": "https://mom-mom.net/travel/places/693013a6253f4220956c757d",
     "description": "자연을 느끼고 배우는 공간",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 여주시 황학산수목원길 73",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.27875343,
+    "lng": 127.6470365
   },
   {
     "id": "museum_대전_신세계_넥스페리움",
@@ -3845,9 +4111,11 @@
     "link": "https://mom-mom.net/travel/places/62cd16af2718fee95297d51d",
     "description": "핑크퐁말고 둘리는 어때? 라떼는…",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "서울특별시 도봉구 시루봉로1길 6",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.65242986,
+    "lng": 127.027674
   },
   {
     "id": "museum_동탄아트스페이스",
@@ -3889,9 +4157,11 @@
     "link": "https://mom-mom.net/travel/places/65e05539a842edd830db2a38",
     "description": "아이들과 즐길거리 많은 무료 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 천안시 동남구 천안대로 412",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.78478709,
+    "lng": 127.165631
   },
   {
     "id": "museum_서울한방진흥센터",
@@ -3911,9 +4181,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17c02718fee95297da4b",
     "description": "우리나라 교육의 역사를 체험하고 싶다면",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 북촌로5길 48(화동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.58126437,
+    "lng": 126.9838695
   },
   {
     "id": "museum_서울공예박물관",
@@ -3922,9 +4194,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17c02718fee95297da4a",
     "description": "우리 아이가 공예가가 되는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 율곡로3길 4",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57664817,
+    "lng": 126.9835334
   },
   {
     "id": "museum_서울물재생체험관",
@@ -3944,9 +4218,11 @@
     "link": "https://mom-mom.net/travel/places/65d3fca3492c156da9e4bd87",
     "description": "전국 최초 공립 철도박물관에서 기관사 체험",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 김해시 진영읍 진영로 145-1",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.303587,
+    "lng": 128.7304017
   },
   {
     "id": "museum_청주랜드_신재생에너지체험관",
@@ -3977,9 +4253,11 @@
     "link": "https://mom-mom.net/travel/places/653f645b6702b6172b90f5d6",
     "description": "신기한 종이 작품도 구경하고 체험도 해볼 수 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 중구 장충단로 166",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.559646,
+    "lng": 127.006151
   },
   {
     "id": "museum_오산에코리움",
@@ -3999,9 +4277,11 @@
     "link": "https://mom-mom.net/travel/places/6527bbf5ad38f0df6396dd5d",
     "description": "키즈카페보다 재미있는 체험형 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "울산광역시 남구 두왕로 277",
     "genre": "museum",
-    "lastCollected": "2026-03-02T15:37:27.137Z"
+    "lastCollected": "2026-03-02T15:37:27.137Z",
+    "lat": 35.52713607,
+    "lng": 129.3086925
   },
   {
     "id": "museum_보라매안전체험관",
@@ -4087,9 +4367,11 @@
     "link": "https://mom-mom.net/travel/places/64fe684463fbd7b77b117da4",
     "description": "옛 한양의 중심을 가로지르는 청계천의 역사와 문화",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 성동구 청계천로 530",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.5712267,
+    "lng": 127.0350281
   },
   {
     "id": "museum_웅진역사관",
@@ -4120,9 +4402,11 @@
     "link": "https://mom-mom.net/travel/places/64f53180c401c623d8d85844",
     "description": "문화의 다양성을 배울 수 있는 시간",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 부천시 소사구 성주로214번길 61",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.475502,
+    "lng": 126.781706
   },
   {
     "id": "museum_신두리_사구센터",
@@ -4142,9 +4426,11 @@
     "link": "https://mom-mom.net/travel/places/64f531a1c401c623d8d85845",
     "description": "활 쏘기 체험 하며 역사도 공부하기!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 부천시 원미구 소사로 482",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.502565,
+    "lng": 126.799025
   },
   {
     "id": "museum_이화여자대학교_자연사박물관",
@@ -4153,9 +4439,11 @@
     "link": "https://mom-mom.net/travel/places/64e6ad8cc05477a0da8e97ed",
     "description": "본격적으로 동식물 표본 보며 자연과 친해져보자",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 서대문구 이화여대길 52",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.56446452,
+    "lng": 126.9502888
   },
   {
     "id": "museum_개구리생태공원_개구리생태관",
@@ -4186,9 +4474,11 @@
     "link": "https://mom-mom.net/travel/places/6826d9774e114cfae19fb0cb",
     "description": "무료 미술관으로 탈바꿈한 폐교",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 서산시 부석면 무학로 152-13",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.63887544,
+    "lng": 126.3774755
   },
   {
     "id": "museum_국립공원공단_국립공원야생생물보전원_남부보전센터",
@@ -4219,9 +4509,11 @@
     "link": "https://mom-mom.net/travel/places/67ff65cc8764030395d6a674",
     "description": "복합문화공간에서 예술 탐방하기",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 세종대로 175",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57184786,
+    "lng": 126.9761683
   },
   {
     "id": "museum_충청남도역사박물관",
@@ -4230,9 +4522,11 @@
     "link": "https://mom-mom.net/travel/places/680608d68764030395d6ada6",
     "description": "역사와 놀이, 자연까지 한 번에 즐기는 박물관!",
     "usageStat": "",
-    "address": "",
+    "address": "충청남도 공주시 국고개길 24",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.45308825,
+    "lng": 127.1273866
   },
   {
     "id": "museum_서유리공룡발자국화석산지",
@@ -4285,9 +4579,11 @@
     "link": "https://mom-mom.net/travel/places/67f60918671b8bb3a7ba8f79",
     "description": "생태에 대해 공부도 하고, 키즈존에서 놀이도 하고!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 문경시 문경읍 새재1길 45",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.75251619,
+    "lng": 128.0764842
   },
   {
     "id": "museum_율곡기념관",
@@ -4318,9 +4614,11 @@
     "link": "https://mom-mom.net/travel/places/67d8cfdb6bfb76830e9ef553",
     "description": "강화도의 역사를 한눈에 볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "인천광역시 강화군 하점면 강화대로 994-19",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.77370952,
+    "lng": 126.4353365
   },
   {
     "id": "museum_국립대한민국임시정부기념관",
@@ -4329,9 +4627,11 @@
     "link": "https://mom-mom.net/travel/places/67cea8a93b96777818d9b64e",
     "description": "아이가 꼭 알아야 할 대한민국 역사 교육의 산실",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 서대문구 통일로 279-24",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.57624246,
+    "lng": 126.9546507
   },
   {
     "id": "museum_대한항공_A300_항공기_체험",
@@ -4428,9 +4728,11 @@
     "link": "https://mom-mom.net/travel/places/6584feb6fa26e821dd98ddd8",
     "description": "선사시대 전시와 체험장이 더해진 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "강원특별자치도 양양군 손양면 학포길 33",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 38.085895,
+    "lng": 128.660472
   },
   {
     "id": "museum_와_상상나라_어린이_상상_스페이스",
@@ -4494,9 +4796,11 @@
     "link": "https://mom-mom.net/travel/places/68b161c0820efd058a3b590a",
     "description": "바다거북과 악어를 만날 수 있는 베트남 최대 규모 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "부산광역시 영도구 해양로301번길 45",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.07856342,
+    "lng": 129.0802449
   },
   {
     "id": "museum_맑은물상상누리",
@@ -4538,9 +4842,11 @@
     "link": "https://mom-mom.net/travel/places/6890741b372c73dabc965b4a",
     "description": "직접 만지고 체험할 수 있는 어린이 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 수원시 영통구 광교로 182",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.296351,
+    "lng": 127.051421
   },
   {
     "id": "museum_김포시독립운동기념관",
@@ -4549,9 +4855,11 @@
     "link": "https://mom-mom.net/travel/places/68a30d42abc6bae6ac20c67b",
     "description": "100년 전 함성이 되살아나는 역사 놀이터",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 김포시 양촌읍 양곡2로 30번길 46",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.65335898,
+    "lng": 126.629642
   },
   {
     "id": "museum_한국자연사박물관",
@@ -4560,9 +4868,11 @@
     "link": "https://mom-mom.net/travel/places/689094f8372c73dabc965bc8",
     "description": "거대한 공룡과 동물들을 만나며 배워가는 공간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 공주시 반포면 임금봉길 49-25",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.36640091,
+    "lng": 127.2448239
   },
   {
     "id": "museum_LED_SQUARE_CAFE",
@@ -4582,9 +4892,11 @@
     "link": "https://mom-mom.net/travel/places/689b1d7ad4bf6ec8be05068d",
     "description": "체험을 통해 알아보는 철의 역사",
     "usageStat": "",
-    "address": "",
+    "address": "충청북도 음성군 감곡면 영산로 360",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.09116101,
+    "lng": 127.6497515
   },
   {
     "id": "museum_국립고궁박물관",
@@ -4593,9 +4905,11 @@
     "link": "https://mom-mom.net/travel/places/644737a4bd7d750d63dcfc80",
     "description": "역사 속 조선왕실로 떠나요!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 효자로 12",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.57659207,
+    "lng": 126.9749771
   },
   {
     "id": "museum_람사르_고양_장항습지생태관",
@@ -4670,9 +4984,11 @@
     "link": "https://mom-mom.net/travel/places/686cf5b691c8a4b9cf3e018b",
     "description": "과학과 수학을 놀면서 체험하는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "인천광역시 중구 신포로23번길83",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.47310867,
+    "lng": 126.6208354
   },
   {
     "id": "museum_강화화문석문화관",
@@ -4714,9 +5030,11 @@
     "link": "https://mom-mom.net/travel/places/683007cb8fc3fb53eccab22e",
     "description": "한국 과학기술 발전에 기여한 역사 속 인물들 알아가기",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 남양주시 조안면 다산로 747번길 16",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51599953,
+    "lng": 127.3006354
   },
   {
     "id": "museum_송파책박물관_북키움",
@@ -4725,9 +5043,11 @@
     "link": "https://mom-mom.net/travel/places/683520131bb30e5ca11232c5",
     "description": "일곱 개의 동화 나라를 체험해봐요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 송파구 송파대로37길 77",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.49888418,
+    "lng": 127.1043834
   },
   {
     "id": "museum_세리박with용인",
@@ -4747,9 +5067,11 @@
     "link": "https://mom-mom.net/travel/places/683d371a08605c4592ba94db",
     "description": "우리 땅 독도에 대해 공부하는 시간",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 영등포구 영중로 15",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51723326,
+    "lng": 126.903716
   },
   {
     "id": "museum_수창청춘맨숀",
@@ -4802,9 +5124,11 @@
     "link": "https://mom-mom.net/travel/places/65b214a166391ae58a373752",
     "description": "우리나라 치의학 역사를 배워봐요.",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 대학로 101",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.58045239,
+    "lng": 126.9971964
   },
   {
     "id": "museum_국립민속박물관_파주_어린이체험실",
@@ -4813,9 +5137,11 @@
     "link": "https://mom-mom.net/travel/places/65af10afc50bcdc2d26b71fe",
     "description": "신체놀이를 하며 내가 얼마나 소중한지 발견하고 기록해요!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 삼청로 37",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57590409,
+    "lng": 126.9768421
   },
   {
     "id": "museum_서울대학교병원_의학박물관",
@@ -4824,9 +5150,11 @@
     "link": "https://mom-mom.net/travel/places/65b1ddfe48b2d35db70eac14",
     "description": "우리나라 최초의 서양식 병원을 만나다!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 대학로 101",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 37.58045239,
+    "lng": 126.9971964
   },
   {
     "id": "museum_제주융합과학연구원_제주과학탐구체험관",
@@ -4901,9 +5229,11 @@
     "link": "https://mom-mom.net/travel/places/659fbc1e2c3bd5a09f49d55e",
     "description": "180년된 한의약 명문가에서 배워보는 다양한 체험",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 돈화문로9길 27",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57150054,
+    "lng": 126.9902421
   },
   {
     "id": "museum_구미어린이과학체험관",
@@ -4978,9 +5308,11 @@
     "link": "https://mom-mom.net/travel/places/68a5adbaee2892a6b878d495",
     "description": "보고 만지며 즐겁게 수원을 알아가는 놀이체험 공간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 수원시 영통구 창룡대로 265",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.297646,
+    "lng": 127.035631
   },
   {
     "id": "museum_파주나비나라박물관",
@@ -4989,9 +5321,11 @@
     "link": "https://mom-mom.net/travel/places/68aee2b05417fdde48e50a10",
     "description": "체험 가득! 나비와 한 몸 되어 떠나는 여행",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 파주시 광인사길 161",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.7148520478,
+    "lng": 126.6869123589
   },
   {
     "id": "museum_경북대학교_자연사박물관",
@@ -5000,9 +5334,11 @@
     "link": "https://mom-mom.net/travel/places/63e3760560a199fc0917283e",
     "description": "자연과학과 생물에 관심을 길러주는 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대구광역시 군위군 효령면 경북대로 2228",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.12173194,
+    "lng": 128.5766028
   },
   {
     "id": "museum_광명에디슨뮤지엄",
@@ -5033,9 +5369,11 @@
     "link": "https://mom-mom.net/travel/places/63e20655efa917ab6ab97c65",
     "description": "1세대 건축가의 이야기를 볼 수 있는 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 안양시 만안구 예술공원로103번길 4",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.418386,
+    "lng": 126.918316
   },
   {
     "id": "museum_향촌문화관",
@@ -5055,9 +5393,11 @@
     "link": "https://mom-mom.net/travel/places/66625eefb0b27693bda378eb",
     "description": "테디베어와 전세계를 여행하고 문화를 배워보는 시간",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 중문관광로110번길 31",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.25030323,
+    "lng": 126.4121588
   },
   {
     "id": "museum_안성_3_1운동_기념관",
@@ -5066,9 +5406,11 @@
     "link": "https://mom-mom.net/travel/places/63db83b08a5a475109413ca3",
     "description": "만세의 의미를 새겨볼 수 있는 기념관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 안성시 원곡면 만세로 868",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.06278466,
+    "lng": 127.1752952
   },
   {
     "id": "museum_괌_피시아이_수중_전망대",
@@ -5132,9 +5474,11 @@
     "link": "https://mom-mom.net/travel/places/68665e0e4f33f268e4e887e8",
     "description": "다양한 콘셉트의 테디베어를 만날 수 있는 테마 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 중문관광로110번길 31",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.25030323,
+    "lng": 126.4121588
   },
   {
     "id": "museum_가천이길여산부인과기념관",
@@ -5154,9 +5498,11 @@
     "link": "https://mom-mom.net/travel/places/684916aae10556c7f1dfdec7",
     "description": "자동차 특화 리조트에서 만나는 다양한 올드카",
     "usageStat": "",
-    "address": "",
+    "address": "강원특별자치도 인제군 기린면 상하답로 130",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 38.00150768,
+    "lng": 128.2919109
   },
   {
     "id": "museum_천안박물관_어린이박물관",
@@ -5165,9 +5511,11 @@
     "link": "https://mom-mom.net/travel/places/68512e94860ed4d300c50222",
     "description": "실내 체험 가득한 어린이 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 천안시 동남구 천안삼거리길 27",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.78669474,
+    "lng": 127.1633299
   },
   {
     "id": "museum_DMZ_야생화체험관",
@@ -5187,9 +5535,11 @@
     "link": "https://mom-mom.net/travel/places/6863454a617dbb59a0f19d41",
     "description": "중국 문화를 배우고 체험할 수 있는 전시관",
     "usageStat": "",
-    "address": "",
+    "address": "인천광역시 중구 제물량로 238",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.4735399,
+    "lng": 126.6187688
   },
   {
     "id": "museum_나주목문화관_나주목사내아",
@@ -5242,9 +5592,11 @@
     "link": "https://mom-mom.net/travel/places/64e59b7ced38876c477603c3",
     "description": "아이들을 위한 체험거리가 많은 평화기념관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 칠곡군 석적읍 강변대로 1580",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.0179177,
+    "lng": 128.404032
   },
   {
     "id": "museum_정림사지박물관",
@@ -5253,9 +5605,11 @@
     "link": "https://mom-mom.net/travel/places/64ec78aeecdbfe8d291ff074",
     "description": "화려했던 백제 사비시기를 만나요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청남도 부여군 부여읍 정림로 83",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.27902527,
+    "lng": 126.9128806
   },
   {
     "id": "museum_영종역사관",
@@ -5264,9 +5618,11 @@
     "link": "https://mom-mom.net/travel/places/64c780d55765bdf90e97d821",
     "description": "영종도의 역사와 가치를 담은 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 중구 구읍로 63",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.48907002,
+    "lng": 126.5777135
   },
   {
     "id": "museum_안양천생태이야기관",
@@ -5286,9 +5642,11 @@
     "link": "https://mom-mom.net/travel/places/64d2f0b4d6eb41bb4f202245",
     "description": "인공 소나기 체험하며 비 맞고 놀자",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 양평군 서종면 소나기마을길 24",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.59491786,
+    "lng": 127.3778854
   },
   {
     "id": "museum_한양도성박물관",
@@ -5308,9 +5666,11 @@
     "link": "https://mom-mom.net/travel/places/64e40fafed38876c4775f7df",
     "description": "국악의 고장 영동 난계국악박물관",
     "usageStat": "",
-    "address": "",
+    "address": "충청북도 영동군 심천면 국악로 9",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.210131,
+    "lng": 127.7049504
   },
   {
     "id": "museum_이봉창_역사울림관",
@@ -5330,8 +5690,10 @@
     "link": "https://mom-mom.net/travel/places/64d97da3067b0031e512b418",
     "description": "세계 문화를 다양하게 즐길 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "서울특별시 은평구 불광로 135지도보기",
-    "genre": "museum"
+    "address": "서울특별시 은평구 불광로 135",
+    "genre": "museum",
+    "lat": 37.6187179,
+    "lng": 126.9325323
   },
   {
     "id": "museum_대불호텔전시관",
@@ -5340,9 +5702,11 @@
     "link": "https://mom-mom.net/travel/places/64d97e1d067b0031e512b41c",
     "description": "우리나라 최초의 호텔을 가보다!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 중구 신포로23번길 101",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.47354683,
+    "lng": 126.6199636
   },
   {
     "id": "museum_서울기록원",
@@ -5362,9 +5726,11 @@
     "link": "https://mom-mom.net/travel/places/64c77fcf5deb7355b661fce6",
     "description": "백제의 첫 수도에서 배우는 역사",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 송파구 위례성대로71, 한성백제박물관",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51542872,
+    "lng": 127.1208007
   },
   {
     "id": "museum_해우재",
@@ -5406,9 +5772,11 @@
     "link": "https://mom-mom.net/travel/places/64bdeaabc72cc5ffd76c28bb",
     "description": "우주와 비행기에 대한 아이들의 호기심을 해결해 줄 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 안덕면 녹차분재로 218",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.3042074,
+    "lng": 126.2996615
   },
   {
     "id": "museum_피노파밀리아",
@@ -5450,9 +5818,11 @@
     "link": "https://mom-mom.net/travel/places/6498e6ef62fddc8d1dd7f867",
     "description": "대한민국 최대 규모 민화들이 한자리에",
     "usageStat": "",
-    "address": "",
+    "address": "전라남도 강진군 대구면 청자촌길 61-5",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.50867534,
+    "lng": 126.8041628
   },
   {
     "id": "museum_광나루안전체험관",
@@ -5472,9 +5842,11 @@
     "link": "https://mom-mom.net/travel/places/6491021f236b4a53258b74fe",
     "description": "은평의 역사와 문화, 한옥의 미래가 머무르는 공간",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "서울특별시 은평구 연서로50길 8",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.6403687,
+    "lng": 126.9380375
   },
   {
     "id": "museum_목포_근대역사관_1관",
@@ -5483,9 +5855,11 @@
     "link": "https://mom-mom.net/travel/places/6493f806708f4534dbb2d0ee",
     "description": "아름다운 건물 속에 묻어 있는 우리의 역사",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전라남도 목포시 영산로 29번길 6",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.78769578,
+    "lng": 126.3817942
   },
   {
     "id": "museum_춘천_막국수체험박물관",
@@ -5494,9 +5868,11 @@
     "link": "https://mom-mom.net/travel/places/6493c1266516e01cd7ec462b",
     "description": "아이가 직접 막국수를 만들어 먹어 볼 수 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "강원특별자치도 춘천시 신북읍 신북로 264",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.94879306,
+    "lng": 127.7497799
   },
   {
     "id": "museum_프라움악기박물관",
@@ -5505,9 +5881,11 @@
     "link": "https://mom-mom.net/travel/places/648ff950236b4a53258b7358",
     "description": "여러 악기를 접하고 체험해볼 수 있는 악기 박물관",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경기도 남양주시 와부읍 경강로 756",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.56850845,
+    "lng": 127.2270492
   },
   {
     "id": "museum_안산어촌민속박물관",
@@ -5516,9 +5894,11 @@
     "link": "https://mom-mom.net/travel/places/649503b4caa623b82a64214b",
     "description": "대부도 갯벌 생태계와 어촌 히스토리를 볼 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 안산시 단원구 대부황금로7",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.192583,
+    "lng": 126.6461205
   },
   {
     "id": "museum_인천학생과학관",
@@ -5538,9 +5918,11 @@
     "link": "https://mom-mom.net/travel/places/64892574cd6f0c2d9ae3dea8",
     "description": "할머니 할아버지가 살아온 시간은 말이야",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 파주시 탄현면 헤이리마을길 59-85",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.7908727117,
+    "lng": 126.695201947
   },
   {
     "id": "museum_서울역사박물관",
@@ -5549,9 +5931,11 @@
     "link": "https://mom-mom.net/travel/places/648fb44a236b4a53258b6edc",
     "description": "박물관, 미디어아트, 야외카페, 산책을 한번에",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 종로구 새문안로 55",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57176907,
+    "lng": 126.9679849
   },
   {
     "id": "museum_타임뮤지엄",
@@ -5570,9 +5954,11 @@
     "link": "https://mom-mom.net/travel/places/648926e7cd6f0c2d9ae3deac",
     "description": "라떼는 말야~ 추억의 7080 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전북특별자치도 전주시 완산구 동문길 33-20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.81853922,
+    "lng": 127.1525553
   },
   {
     "id": "museum_중남미문화원",
@@ -5581,9 +5967,11 @@
     "link": "https://mom-mom.net/travel/places/648a7bd3cd6f0c2d9ae3e522",
     "description": "서울 근교에서 즐기는 중남미 여행",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 고양시 덕양구 대양로 285번길 33-15",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.70358397,
+    "lng": 126.8953482
   },
   {
     "id": "museum_충청북도자연과학교육원",
@@ -5614,9 +6002,11 @@
     "link": "https://mom-mom.net/travel/places/6482800ddccc2df49fa8188e",
     "description": "100년이 넘는 한국영화의 역사를 담은 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 마포구 월드컵북로 400",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.58045107,
+    "lng": 126.8898935
   },
   {
     "id": "museum_독도체험관",
@@ -5625,9 +6015,11 @@
     "link": "https://mom-mom.net/travel/places/648692fd42a25370083f004a",
     "description": "무료로 배우는 아름다운 우리땅, 독도",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 영등포구 영중로 15",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51723326,
+    "lng": 126.903716
   },
   {
     "id": "museum_영양산촌생활박물관",
@@ -5636,9 +6028,11 @@
     "link": "https://mom-mom.net/travel/places/676227db66abfdc72efaa677",
     "description": "옛날 산골 생활을 알아볼 수 있는 전통공간",
     "usageStat": "",
-    "address": "",
+    "address": "경상북도 영양군 입암면 영양로 963",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.6158078,
+    "lng": 129.0846956
   },
   {
     "id": "museum_김유정문학촌",
@@ -5757,9 +6151,11 @@
     "link": "https://mom-mom.net/travel/places/670dd79d09116c1e3477a640",
     "description": "다양한 약재를 한눈에 볼 수 있는 공간",
     "usageStat": "",
-    "address": "",
+    "address": "경상남도 산청군 금서면 동의보감로555번길 45-6",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.441066,
+    "lng": 127.829361
   },
   {
     "id": "museum_생각하는박물관",
@@ -5801,9 +6197,11 @@
     "link": "https://mom-mom.net/travel/places/66f0f9c2235adb18e334bf36",
     "description": "어린이 전시실이 있는 화성시 독립운동 기념관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 화성시 만세구 향남읍 제암고주로 34",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.12567679,
+    "lng": 126.8910932
   },
   {
     "id": "museum_소래역사관",
@@ -5812,9 +6210,11 @@
     "link": "https://mom-mom.net/travel/places/66d97ad151b153a599d9bcad",
     "description": "소래의 역사와 문화를 알 수 있는 시간 여행 장소",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 남동구 아암대로 1605",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.39816437,
+    "lng": 126.7375999
   },
   {
     "id": "museum_금강미래체험관",
@@ -5834,9 +6234,11 @@
     "link": "https://mom-mom.net/travel/places/66f0dd185d76893811f40ffd",
     "description": "산성에 대해 배울 수 있는 산성 전문 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 계양구 계양산로 101",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.548054,
+    "lng": 126.727032
   },
   {
     "id": "museum_웅천도요지전시관",
@@ -5845,9 +6247,11 @@
     "link": "https://mom-mom.net/travel/places/66f6683f9a5ba4cd8509222d",
     "description": "만 원으로 물레 체험이 가능한 도자기 전시관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 창원시 진해구 두동도요로198",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.127379,
+    "lng": 128.8155995
   },
   {
     "id": "museum_오두산_통일전망대",
@@ -5889,9 +6293,11 @@
     "link": "https://mom-mom.net/travel/places/66e38e7c73ec0792b9a8a40f",
     "description": "다양하게 동굴을 보고 느낄 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "강원특별자치도 영월군 김삿갓면 영월동로 1121-15",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.13035675,
+    "lng": 128.5367419
   },
   {
     "id": "museum_제천한방엑스포공원한방생명과학관",
@@ -5922,9 +6328,11 @@
     "link": "https://mom-mom.net/travel/places/65d2ac18492c156da9e4b98a",
     "description": "민속놀이 체험이 가능한 문화 예술공간",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 창원시 의창구 창이대로397번길 25",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.245081,
+    "lng": 128.6808222
   },
   {
     "id": "museum_기흥성_뮤지엄",
@@ -5977,9 +6385,11 @@
     "link": "https://mom-mom.net/travel/places/65ded9daee5a340c83341082",
     "description": "곤충과 파충류를 직접 보고 체험하는 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전라남도 영암군 영암읍 기찬랜드로 41",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.79032075,
+    "lng": 126.6851242
   },
   {
     "id": "museum_일호광장진주역",
@@ -6021,9 +6431,11 @@
     "link": "https://mom-mom.net/travel/places/65b99cde0b9d17f0c81346ef",
     "description": "생생한 해양동물을 체험할 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 성산읍 서성일로 689-21",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 33.42948623,
+    "lng": 126.8551274
   },
   {
     "id": "museum_제주안전체험관",
@@ -6054,9 +6466,11 @@
     "link": "https://mom-mom.net/travel/places/65b84b24b3baa6ca16eaea21",
     "description": "영화의 모든 것을 보고, 느끼고, 즐기는 공간",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "부산광역시 중구 대청로126번길 12",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.10169228,
+    "lng": 129.033592
   },
   {
     "id": "museum_제주별빛누리공원",
@@ -6109,9 +6523,11 @@
     "link": "https://mom-mom.net/travel/places/680b4f348764030395d6bd67",
     "description": "불교의 역사와 문화를 보존하고 있는 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "서울특별시 종로구 우정국로 55",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57389395,
+    "lng": 126.9818833
   },
   {
     "id": "museum_이이서가",
@@ -6197,9 +6613,11 @@
     "link": "https://mom-mom.net/travel/places/687786a829c84adaf8a5aedf",
     "description": "우리나라 최초의 이민사 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "인천광역시 중구 월미로 329",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.470334805,
+    "lng": 126.5974803708
   },
   {
     "id": "museum_화성시역사박물관",
@@ -6208,9 +6626,11 @@
     "link": "https://mom-mom.net/travel/places/6874e06129c84adaf8a5a475",
     "description": "역사문화도시인 화성에 대해 공부하기",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 화성시 만세구 향남읍 행정동로 96",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.13261278,
+    "lng": 126.928001
   },
   {
     "id": "museum_와일드벅스_곤충탐험대",
@@ -6230,9 +6650,11 @@
     "link": "https://mom-mom.net/travel/places/6875e14d80aeaeae7b317cef",
     "description": "체험과 전시를 통해 알게 되는 여주의 역사",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 여주시 신륵사길 6-12",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.29965313,
+    "lng": 127.6533791
   },
   {
     "id": "museum_국립나주박물관",
@@ -6241,9 +6663,11 @@
     "link": "https://mom-mom.net/travel/places/64dc6193067b0031e512ca09",
     "description": "재미있고 유익하기까지 한 최고의 어린이 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전라남도 나주시 반남면 고분로 747",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.914852,
+    "lng": 126.6589031
   },
   {
     "id": "museum_울산대공원생태여행관",
@@ -6263,9 +6687,11 @@
     "link": "https://mom-mom.net/travel/places/64dc7ed9067b0031e512ce71",
     "description": "아이에게 대한민국의 역사를 직접 체험하고 느끼게 해줄 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 천안시 동남구 목천읍 독립기념관로 1",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.781872,
+    "lng": 127.2303981
   },
   {
     "id": "museum_연세대학교신촌캠퍼스_박물관",
@@ -6318,9 +6744,11 @@
     "link": "https://mom-mom.net/travel/places/65b99ebc0b9d17f0c81346fc",
     "description": "코딩 꿈나무들과 게임 덕후들의 놀이터",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "제주특별자치도 제주시 1100로 3198-8",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.47211995,
+    "lng": 126.4857998
   },
   {
     "id": "museum_조안베어뮤지엄",
@@ -6329,9 +6757,11 @@
     "link": "https://mom-mom.net/travel/places/64c1c32b5deb7355b661f396",
     "description": "귀여운 곰인형이 가득한 제주도 박물관",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 대포로 113",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.24025015,
+    "lng": 126.4341101
   },
   {
     "id": "museum_한국광고박물관",
@@ -6340,9 +6770,11 @@
     "link": "https://mom-mom.net/travel/places/64c77fe55deb7355b661fce7",
     "description": "한국 근현대 광고를 한 눈에 볼 수 있는 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 송파구 올림픽로35길 137",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.51592726,
+    "lng": 127.0996432
   },
   {
     "id": "museum_경기도_업사이클플라자",
@@ -6362,9 +6794,11 @@
     "link": "https://mom-mom.net/travel/places/6493bdeb6516e01cd7ec4594",
     "description": "해양생물, 특히 고래를 좋아하는 아이라면 강추!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 서천군 장항읍 장산로101번길 75",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.01724498,
+    "lng": 126.6698206
   },
   {
     "id": "museum_서울로봇인공지능과학관",
@@ -6384,9 +6818,11 @@
     "link": "https://mom-mom.net/travel/places/67244062b11dd75b82b97b9e",
     "description": "국내 최초 공립 화석 전문 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대구광역시 달성군 유가읍 테크노대로6길 66",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.68436487,
+    "lng": 128.4622782
   },
   {
     "id": "museum_유류피해극복기념관",
@@ -6395,9 +6831,11 @@
     "link": "https://mom-mom.net/travel/places/672974718fecbb765e143285",
     "description": "서해안 기름 유출 사건 극복 과정에 대해 알 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "충청남도 태안군 소원면 천리포1길 120",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.79263915,
+    "lng": 126.1483302
   },
   {
     "id": "museum_벅스리움",
@@ -6428,9 +6866,11 @@
     "link": "https://mom-mom.net/travel/places/64a21ebaa3e18d1dedb9097b",
     "description": "비행기의 모든 것을 배우고 경험하자",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상남도 사천시 사남면 공단1로 78",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.07146644,
+    "lng": 128.0629051
   },
   {
     "id": "museum_오두산_통일전망대_어린이체험관",
@@ -6472,9 +6912,11 @@
     "link": "https://mom-mom.net/travel/places/64950bedcaa623b82a64220c",
     "description": "김치에 대한 모든 것",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 인사동길 35-4(관훈동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.573514,
+    "lng": 126.9848673
   },
   {
     "id": "museum_익산교도소세트장",
@@ -6494,9 +6936,11 @@
     "link": "https://mom-mom.net/travel/places/66d676f3856f166b2f582e32",
     "description": "전통놀이를 체험할 수 있는 무료 놀이터",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대전광역시 유성구 도안대로 398",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.33686038,
+    "lng": 127.3353396
   },
   {
     "id": "museum_경기도해양수산자원연구소민물고기생태학습관",
@@ -6516,9 +6960,11 @@
     "link": "https://mom-mom.net/travel/places/66ce9584f35c8a23bad8f961",
     "description": "아이와 함께 역사 속으로",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 중구 소월로 91",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.55347,
+    "lng": 126.980406
   },
   {
     "id": "museum_천안홍대용과학관",
@@ -6538,9 +6984,11 @@
     "link": "https://mom-mom.net/travel/places/66dfe7c2621d8b7da0df7b12",
     "description": "무료로 체험할 수 있는 실내 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 진주시 충의로 19",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.17824568,
+    "lng": 128.146167
   },
   {
     "id": "museum_강원특별자치도_탄광문화촌",
@@ -6549,9 +6997,11 @@
     "link": "https://mom-mom.net/travel/places/66c8405d7f4e21eff4fba057",
     "description": "영월 마차리 탄광촌의 흔적",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "강원특별자치도 영월군 북면 밤재로 351",
     "genre": "museum",
-    "lastCollected": "2026-03-02T15:37:27.137Z"
+    "lastCollected": "2026-03-02T15:37:27.137Z",
+    "lat": 37.2631059,
+    "lng": 128.4669049
   },
   {
     "id": "museum_괴강토종어류체험관",
@@ -6593,9 +7043,11 @@
     "link": "https://mom-mom.net/travel/places/6719a633cf0db8bd2f858f9f",
     "description": "애민정신을 느낄 수 있는 역사관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 여주시 세종대왕면 영릉로 269-10",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.30525352,
+    "lng": 127.6131005
   },
   {
     "id": "museum_석인정태진기념관",
@@ -6626,9 +7078,11 @@
     "link": "https://mom-mom.net/travel/places/66f0f72e5d76893811f41005",
     "description": "국내 최초, 유일의 기생충 전문 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 강서구 화곡로 333",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.55362014,
+    "lng": 126.850748
   },
   {
     "id": "museum_남원다움관",
@@ -6648,9 +7102,11 @@
     "link": "https://mom-mom.net/travel/places/6814a6eee234f9aaa3a8909f",
     "description": "직접 만지며 배우는 어린이 체험 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 안산시 상록구 성호로 131",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.32864894,
+    "lng": 126.858676
   },
   {
     "id": "museum_매헌윤봉길의사기념관",
@@ -6659,9 +7115,11 @@
     "link": "https://mom-mom.net/travel/places/689ae456d4bf6ec8be05032d",
     "description": "이번 광복절에는 이곳에 방문해 보시면 어떨까요?",
     "usageStat": "",
-    "address": "",
+    "address": "서울특별시 서초구 매헌로99",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.4730498,
+    "lng": 127.0369771
   },
   {
     "id": "museum_달서디지털별빛관",
@@ -6692,9 +7150,11 @@
     "link": "https://mom-mom.net/travel/places/677376ca6f7a5e66598db91f",
     "description": "제주 옛 교육의 흐름과 놀이를 엿볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "제주특별자치도 제주시 오복4길 25",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.49439315,
+    "lng": 126.5382962
   },
   {
     "id": "museum_삼척_어린이과학놀이체험관",
@@ -6714,9 +7174,11 @@
     "link": "https://mom-mom.net/travel/places/667cbd1e793f57664254d98b",
     "description": "공주 여행 시 꼭 가봐야 할 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청남도 공주시 관광단지길 34",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.46552912,
+    "lng": 127.1121799
   },
   {
     "id": "museum_홀로세생태보존연구소",
@@ -6736,9 +7198,11 @@
     "link": "https://mom-mom.net/travel/places/66be95aa77e8fe564e71918d",
     "description": "국민학교 체험을 통해 부모의 추억을 아이와 공유하는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 김포시 대곶면 덕포진로 103번길 90",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.65065352,
+    "lng": 126.5387223
   },
   {
     "id": "museum_보령문화의전당",
@@ -6747,9 +7211,11 @@
     "link": "https://mom-mom.net/travel/places/66b31250dcaa636b742089b3",
     "description": "박물관과 과학관, 도서관까지 모두 무료로?!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 보령시 대흥로 63",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.35071294,
+    "lng": 126.5905262
   },
   {
     "id": "museum_이순신영상관",
@@ -6769,9 +7235,11 @@
     "link": "https://mom-mom.net/travel/places/6951fe7f669da585e5e7301d",
     "description": "조선의 유배문학과 남해의 역사를 엿볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "경상남도 남해군 남해읍 남해대로 2745",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.83195858,
+    "lng": 127.899138
   },
   {
     "id": "museum_천적생태과학관",
@@ -6791,9 +7259,11 @@
     "link": "https://mom-mom.net/travel/places/661f233af9480f9696c264d4",
     "description": "대나무에 대해 배우고 산책할 수 있는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "전라남도 담양군 담양읍 죽향문화로35",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.30934367,
+    "lng": 126.9764088
   },
   {
     "id": "museum_대구섬유박물관",
@@ -6802,9 +7272,11 @@
     "link": "https://mom-mom.net/travel/places/638561321befbbe575033077",
     "description": "즐겁게 체험하며 옷과 섬유에 대해 배워요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "대구광역시 동구 팔공로 227",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.9190995,
+    "lng": 128.640295
   },
   {
     "id": "museum_국립무형유산원_디지털체험관",
@@ -6813,9 +7285,11 @@
     "link": "https://mom-mom.net/travel/places/663045c8526e51fd72a62b3c",
     "description": "전주한옥마을과 함께 즐기는 작지만 알찬 미디어아트",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "전북특별자치도 전주시 완산구 서학로95",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.80986195,
+    "lng": 127.1596492
   },
   {
     "id": "museum_남강댐_물_문화관",
@@ -6835,9 +7309,11 @@
     "link": "https://mom-mom.net/travel/places/695200cc37c398078ec533d7",
     "description": "25년 말 리뉴얼하여 재개장한 제주의 무료 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "제주특별자치도 제주시 일주동로 17",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.51379671,
+    "lng": 126.5479096
   },
   {
     "id": "museum_드림닥터_의사직업체험_이마트_서수원점",
@@ -6934,9 +7410,11 @@
     "link": "https://mom-mom.net/travel/places/69001bf0741b984dcec45694",
     "description": "도자기를 공부하고 체험까지 할 수 있는 공간",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "인천광역시 서구 도요지로 54",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.55820777,
+    "lng": 126.6562577
   },
   {
     "id": "museum_봉수산_곤충생태관",
@@ -6956,9 +7434,11 @@
     "link": "https://mom-mom.net/travel/places/68c151c6968b1dea49b29d60",
     "description": "가상의 국회의원이 되어 법을 만들어보는 의정체험",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 영등포구 의사당대로 1",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.53291197,
+    "lng": 126.9164039
   },
   {
     "id": "museum_드림닥터_의사직업체험_인천점",
@@ -6978,9 +7458,11 @@
     "link": "https://mom-mom.net/travel/places/687e191398d3947ee3477bdc",
     "description": "한지를 직접 만들어볼 수 있는 체험형 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "전북특별자치도 전주시 덕진구 팔복로 59",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.84512928,
+    "lng": 127.0967046
   },
   {
     "id": "museum_강릉메타버스체험관",
@@ -7121,9 +7603,11 @@
     "link": "https://mom-mom.net/travel/places/66c3f05fd58c65d39b9108c0",
     "description": "시간 여행을 떠나는 듯한 흥미진진한 석기 이야기",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 연천군 전곡읍 평화로443번길 2",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 38.0114268829,
+    "lng": 127.0636178267
   },
   {
     "id": "museum_아모레퍼시픽_팩토리_투어",
@@ -7165,9 +7649,11 @@
     "link": "https://mom-mom.net/travel/places/6408031b882c40b05d3822b2",
     "description": "열차 운전체험도 해보고 철도 모형 디오라마쇼까지!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상남도 김해시 진영읍 진영로 145-1",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.303587,
+    "lng": 128.7304017
   },
   {
     "id": "museum_양평곤충박물관",
@@ -7176,9 +7662,11 @@
     "link": "https://mom-mom.net/travel/places/640fd0182c47ebdbd44f9fbc",
     "description": "애벌레도 직접 만져볼 수 있는 곤충박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 양평군 옥천면 경강로 1496",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.50920003,
+    "lng": 127.4491461
   },
   {
     "id": "museum_북촌박물관",
@@ -7187,9 +7675,11 @@
     "link": "https://mom-mom.net/travel/places/6679190434fe7cc0a87d8924",
     "description": "조선시대 목가구의 격조와 문방 문화를 담은 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 종로구 북촌로 39",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.58043197,
+    "lng": 126.9847663
   },
   {
     "id": "museum_성읍민속마을",
@@ -7220,9 +7710,11 @@
     "link": "https://mom-mom.net/travel/places/6406f4be7b0279143a707ded",
     "description": "가야의 역사를 알 수 있는 어린이 체험 박물관",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경상남도 김해시 가야의길 190",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.243528,
+    "lng": 128.8725848
   },
   {
     "id": "museum_경남도립미술관",
@@ -7231,9 +7723,11 @@
     "link": "https://mom-mom.net/travel/places/6679225634fe7cc0a87d892c",
     "description": "미술작품도 관람하고 체험도 하고!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 창원시 의창구 용지로 296(경남도립미술관)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.23946503,
+    "lng": 128.6908555
   },
   {
     "id": "museum_제주수학체험관",
@@ -7330,9 +7824,11 @@
     "link": "https://mom-mom.net/travel/places/6960a37b7880a80c9f0fe1b0",
     "description": "초등학생 자녀와 가기 좋은 신상 어린이박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 새문안로 55",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.57176907,
+    "lng": 126.9679849
   },
   {
     "id": "museum_신전뮤지엄",
@@ -7352,9 +7848,11 @@
     "link": "https://mom-mom.net/travel/places/69547bd7d59ec6020ad1f22d",
     "description": "풀짚공예 작품을 보고 체험까지 할 수 있는 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 광주시 오포읍 문형산길 76(신현리, 초고빌라)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.36419832,
+    "lng": 127.1651088
   },
   {
     "id": "museum_롤링볼뮤지엄",
@@ -7396,9 +7894,11 @@
     "link": "https://mom-mom.net/travel/places/68ece061b71d5aeee14c2f25",
     "description": "한과에 대해 배우고, 전통문화도 체험하는 유익한 시간",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 포천시 영북면 산정호수로322번길 26-9",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 38.0683561,
+    "lng": 127.3037294
   },
   {
     "id": "museum_오미자테마공원",
@@ -7418,9 +7918,11 @@
     "link": "https://mom-mom.net/travel/places/68d1375163fe589047247232",
     "description": "아이와 함께 놀고 배우는 즐거운 공간",
     "usageStat": "",
-    "address": "",
+    "address": "강원특별자치도 춘천시 우석로 70",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.86401877,
+    "lng": 127.7521907
   },
   {
     "id": "museum_한국가사문학관",
@@ -7440,9 +7942,11 @@
     "link": "https://mom-mom.net/travel/places/663dc80e0949c0cb3a5562a8",
     "description": "한국전쟁에 대해 공부할 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 오산시 경기대로 742",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.18461015,
+    "lng": 127.0490157
   },
   {
     "id": "museum_신라대종",
@@ -7462,9 +7966,11 @@
     "link": "https://mom-mom.net/travel/places/6639826b204b87c6002bea4b",
     "description": "작지만 알찬 무료 어린이 미술관",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "광주광역시 북구 하서로 52",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.1832330525,
+    "lng": 126.8857357552
   },
   {
     "id": "museum_섬진강수달생태공원트리타워전망대",
@@ -7495,9 +8001,11 @@
     "link": "https://mom-mom.net/travel/places/66175e9a660f0d040f0ed1d7",
     "description": "아이들이 좋아하는 실내, 실외 체험형 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상남도 진주시 대평면 호반로 1353",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.22438491,
+    "lng": 127.961967
   },
   {
     "id": "museum_국립충남기상과학관",
@@ -7528,9 +8036,11 @@
     "link": "https://mom-mom.net/travel/places/66f675b0be785a6d0942fca7",
     "description": "7세 이하 어린이는 무료로 관람할 수 있는 미술관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "대구광역시 수성구 미술관로 70",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.82702862,
+    "lng": 128.6743408
   },
   {
     "id": "museum_충주커피박물관",
@@ -7583,9 +8093,11 @@
     "link": "https://mom-mom.net/travel/places/6389caa5cf3680bdf0103e87",
     "description": "교육을 주제로 체험활동을 할 수 있는 곳",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "대구광역시 북구 대동로1길 40",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.8973687,
+    "lng": 128.6118383
   },
   {
     "id": "museum_키자니아_서울",
@@ -7616,9 +8128,11 @@
     "link": "https://mom-mom.net/travel/places/636b13418fd7c8f1dcaacd6b",
     "description": "어린이를 위한 어린이에 의한 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 용산구 서빙고로 137",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.52470233,
+    "lng": 126.9777412
   },
   {
     "id": "museum_낙동강역사이야기관",
@@ -7660,9 +8174,11 @@
     "link": "https://mom-mom.net/travel/places/6360b4a9a784973b9fcddfff",
     "description": "놀면서 자연스레 익히는 법과 민주주의",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 영등포구 의사당대로 1",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.53291197,
+    "lng": 126.9164039
   },
   {
     "id": "museum_경산시립박물관",
@@ -7671,9 +8187,11 @@
     "link": "https://mom-mom.net/travel/places/6368a9ee94baf0f2c37c8ddc",
     "description": "다양한 체험을 하며 즐겁게 배워요",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경상북도 경산시 박물관로 46,경산시립박물관",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.8153127,
+    "lng": 128.7619175
   },
   {
     "id": "museum_장생포고래박물관",
@@ -7682,9 +8200,11 @@
     "link": "https://mom-mom.net/travel/places/6364a09d8f9c7493170651c1",
     "description": "우영우도 울고 갈 고래박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "울산광역시 남구 장생포고래로 244",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.50273782,
+    "lng": 129.3807899594
   },
   {
     "id": "museum_나비생태원",
@@ -7704,9 +8224,11 @@
     "link": "https://mom-mom.net/travel/places/63579acc28b1afee9391f088",
     "description": "체험과 놀이를 통해 역사를 배울 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 경주시 일정로 186",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.82943009,
+    "lng": 129.2286819
   },
   {
     "id": "museum_하이커_그라운드",
@@ -7726,9 +8248,11 @@
     "link": "https://mom-mom.net/travel/places/6357913b0adc1a8ac9efe9c8",
     "description": "호미곶 근처 국내유일 등대박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 포항시 남구 호미곶면 해맞이로150번길 20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.07783791,
+    "lng": 129.5682565
   },
   {
     "id": "museum_국립경주박물관",
@@ -7737,9 +8261,11 @@
     "link": "https://mom-mom.net/travel/places/655ad5d57befcfe324f22e5c",
     "description": "신라 천년 수도 경주의 모든 역사를 한 눈에",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 경주시 일정로 186",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.82943009,
+    "lng": 129.2286819
   },
   {
     "id": "museum_의정부천문대",
@@ -7759,9 +8285,11 @@
     "link": "https://mom-mom.net/travel/places/63049150caff53a39b459284",
     "description": "박물관 들렀다가 유아숲 체험원도 가요",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 양주시 회암사길 11",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.841241,
+    "lng": 127.102912
   },
   {
     "id": "museum_대구_환경사랑홍보교육관",
@@ -7803,9 +8331,11 @@
     "link": "https://mom-mom.net/travel/places/652c8f4cad38f0df6396e865",
     "description": "무료체험이 가득한 어린이 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청북도 청주시 상당구 명암로 143",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 36.64966894,
+    "lng": 127.5120091
   },
   {
     "id": "museum_세계민속악기박물관",
@@ -7814,9 +8344,11 @@
     "link": "https://mom-mom.net/travel/places/652c8e41ad38f0df6396e85e",
     "description": "개관 20주년 된 우리나라 최초 악기박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 파주시 탄현면 헤이리마을길 63-26",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 37.7895075879,
+    "lng": 126.699378269
   },
   {
     "id": "museum_케이컬처뮤지엄",
@@ -7858,9 +8390,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17fd2718fee95297db5a",
     "description": "우리 아이 물박사 만들어주는 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경상남도 김해시 한림면 김해대로 1029-20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.2949807,
+    "lng": 128.7932939
   },
   {
     "id": "museum_아르떼뮤지엄_여수",
@@ -7891,9 +8425,11 @@
     "link": "https://mom-mom.net/travel/places/62cd173e2718fee95297d7d4",
     "description": "실바니안과 테디베어가 만든 뮤지엄",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경상북도 경주시 보문로 280-34",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.85189357,
+    "lng": 129.2734577
   },
   {
     "id": "museum_순창발효테마파크",
@@ -7924,9 +8460,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17062718fee95297d6bc",
     "description": "병원 가기 싫어하는 아이와 병원 놀이하기",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 대학로 101",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.58045239,
+    "lng": 126.9971964
   },
   {
     "id": "museum_울산과학관",
@@ -7957,9 +8495,11 @@
     "link": "https://mom-mom.net/travel/places/64b9da6ec72cc5ffd76c22f7",
     "description": "테디베어와 함께 세계여행! 포토존 가득한 테디베어뮤지엄",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 중문관광로110번길 31",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.25030323,
+    "lng": 126.4121588
   },
   {
     "id": "museum_추억의_청춘뮤지엄",
@@ -8001,9 +8541,11 @@
     "link": "https://mom-mom.net/travel/places/6426a9c427ff3489e0e02811",
     "description": "타임머신 타고 6~70년대 추억의 거리 속으로!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 삼청로 37",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.57590409,
+    "lng": 126.9768421
   },
   {
     "id": "museum_세종이야기_충무공이야기",
@@ -8023,9 +8565,11 @@
     "link": "https://mom-mom.net/travel/places/66b03457b14fed3a7c41a215",
     "description": "밤하늘의 비밀을 풀어주는 특별한 공간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청북도 충주시 중앙탑면 묘곡내동길 100",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.040354,
+    "lng": 127.848417
   },
   {
     "id": "museum_서대문형무소역사관",
@@ -8034,9 +8578,11 @@
     "link": "https://mom-mom.net/travel/places/640168407b0279143a707a22",
     "description": "잊지 말아야 할 역사의 산실",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 서대문구 통일로 251",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.57460851,
+    "lng": 126.9556118
   },
   {
     "id": "museum_서귀포감귤박물관",
@@ -8045,9 +8591,11 @@
     "link": "https://mom-mom.net/travel/places/6682091f794985bc0e778ff7",
     "description": "감귤에 대한 모든 것을 보고 느끼고 체험할 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 효돈순환로 441",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.27159304,
+    "lng": 126.6074285
   },
   {
     "id": "museum_안동문화관광단지유교랜드",
@@ -8111,9 +8659,11 @@
     "link": "https://mom-mom.net/travel/places/699baedd64348012490bc681",
     "description": "국내 유일 지도박물관",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 수원시 영통구 월드컵로 92",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.27577145,
+    "lng": 127.0549634
   },
   {
     "id": "museum_대전교통문화연수원",
@@ -8210,9 +8760,11 @@
     "link": "https://mom-mom.net/travel/places/68f8b075d2c619eff1e6d3aa",
     "description": "TV에서만 본 전투기, 탱크, 전투함 모두 여기 있다!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 용산구 이태원로 29",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.53731288,
+    "lng": 126.9784661
   },
   {
     "id": "museum_안양그린마루",
@@ -8265,9 +8817,11 @@
     "link": "https://mom-mom.net/travel/places/6719b76f0a77e308187d1503",
     "description": "그 시절 현대사로 돌아가 보는 무료 체험형 놀이터",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 종로구 세종대로 198",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.57371316,
+    "lng": 126.9783379
   },
   {
     "id": "museum_DMZ_생생누리",
@@ -8287,9 +8841,11 @@
     "link": "https://mom-mom.net/travel/places/64bf8d519a932e075a1d8870",
     "description": "체험을 통해 배우는 다양한 문자의 역사",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "인천광역시 연수구 센트럴로 217",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.394639,
+    "lng": 126.6381068
   },
   {
     "id": "museum_창원과학체험관",
@@ -8342,9 +8898,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17732718fee95297d8f3",
     "description": "안도타다오가 건축한 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 안덕면 산록남로762번길 69",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.30395481,
+    "lng": 126.3925683
   },
   {
     "id": "museum_부산해양자연사박물관",
@@ -8353,9 +8911,11 @@
     "link": "https://mom-mom.net/travel/places/62cd178e2718fee95297d96e",
     "description": "다양한 해양 생물들을 볼 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "부산광역시 동래구 우장춘로 175(온천동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.22196011,
+    "lng": 129.0756476
   },
   {
     "id": "museum_올드타임",
@@ -8419,9 +8979,11 @@
     "link": "https://mom-mom.net/travel/places/62cd16782718fee95297d3f2",
     "description": "바닥에 마음껏 그림을 그려보고 싶다면!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "충청남도 아산시 송악면 외암로 1182번길 34-19",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.742747,
+    "lng": 127.018673
   },
   {
     "id": "museum_대구어린이교통랜드",
@@ -8441,9 +9003,11 @@
     "link": "https://mom-mom.net/travel/places/62cd15f82718fee95297d15e",
     "description": "전래동화를 직접 체험할 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 종로구 삼청로 37",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.57590409,
+    "lng": 126.9768421
   },
   {
     "id": "museum_119부산안전체험관",
@@ -8496,9 +9060,11 @@
     "link": "https://mom-mom.net/travel/places/67a050a4008db9011392c0c7",
     "description": "좋은 전시를 무료로 감상하자!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "부산광역시 사하구 낙동남로 1191",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.10933193,
+    "lng": 128.9426936
   },
   {
     "id": "museum_양주시_VR체험관",
@@ -8551,9 +9117,11 @@
     "link": "https://mom-mom.net/travel/places/67a029277b2f2993b4f4438b",
     "description": "하남의 역사와 문화를 알 수 있는 하남시 대표 박물관",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "경기도 하남시 덕풍동로 30",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.54546042,
+    "lng": 127.206024
   },
   {
     "id": "museum_부산근현대역사관_본관",
@@ -8573,9 +9141,11 @@
     "link": "https://mom-mom.net/travel/places/6512696c3069134fb42d6e4e",
     "description": "태권도의 역사를 한 눈에 볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "전북특별자치도 무주군 설천면 무설로 1482",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 36.00931149,
+    "lng": 127.7786624
   },
   {
     "id": "museum_영천메타버스체험관",
@@ -8606,9 +9176,11 @@
     "link": "https://mom-mom.net/travel/places/651cc5e7caa4390924c21e94",
     "description": "역사와 인권에 대한 메시지를 느낄 수 있어요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "서울특별시 마포구 월드컵북로11길 20",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.560093,
+    "lng": 126.9148871
   },
   {
     "id": "museum_충북안전체험관",
@@ -8650,9 +9222,11 @@
     "link": "https://mom-mom.net/travel/places/651cdb15caa4390924c21fe5",
     "description": "여러 가지 체험하면서 배우는 역사",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "경기도 성남시 분당구 판교로 191",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.401083,
+    "lng": 127.095548
   },
   {
     "id": "museum_태백석탄박물관",
@@ -8661,9 +9235,11 @@
     "link": "https://mom-mom.net/travel/places/677388907407464ebfdb8ed3",
     "description": "탄광촌의 과거를 느껴볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "강원특별자치도 태백시 천제단길 195",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.1185773888,
+    "lng": 128.9505642
   },
   {
     "id": "museum_태백고생대자연사박물관",
@@ -8672,9 +9248,11 @@
     "link": "https://mom-mom.net/travel/places/6773880e6f7a5e66598dba2e",
     "description": "과거로 여행을 떠나는 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "강원특별자치도 태백시 태백로 2249",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.0948919,
+    "lng": 129.0396125
   },
   {
     "id": "museum_드림닥터_의사직업체험_일산점",
@@ -8694,9 +9272,11 @@
     "link": "https://mom-mom.net/travel/places/676227cd66abfdc72efaa676",
     "description": "체험거리가 가득한 무료 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전북특별자치도 정읍시 내장산로 370-12",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.52784502,
+    "lng": 126.8943859
   },
   {
     "id": "museum_벽골제농경사주제관",
@@ -8716,9 +9296,11 @@
     "link": "https://mom-mom.net/travel/places/676d27df7407464ebfdb833a",
     "description": "숨겨진 청양 속 백제역사!",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "충청남도 청양군 대치면 장곡길 43-24",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.40606642,
+    "lng": 126.8454702
   },
   {
     "id": "museum_국립해양과학관",
@@ -8760,9 +9342,11 @@
     "link": "https://mom-mom.net/travel/places/64df00b6ed38876c4775d35c",
     "description": "지구에서 제일 큰 동물 대왕고래 뼈가 있어요",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "전라남도 해남군 송지면 땅끝마을길 89",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.30129216,
+    "lng": 126.5296515
   },
   {
     "id": "museum_충주다목적댐_물_문화관",
@@ -8815,9 +9399,11 @@
     "link": "https://mom-mom.net/travel/places/65dec6ca57241c38402345cd",
     "description": "백제 미륵사를 다양한 체험을 통해 배워보기",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "전북특별자치도 익산시 금마면 미륵사지로 362",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.01155117,
+    "lng": 127.0287139
   },
   {
     "id": "museum_진해해양공원",
@@ -8848,9 +9434,11 @@
     "link": "https://mom-mom.net/travel/places/65c0397a46489bc932e2af9a",
     "description": "설봉공원에 위치한 아이와 가기 좋은 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 이천시 경충대로2697번길 172",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 37.2748184,
+    "lng": 127.4273361
   },
   {
     "id": "museum_꿈키움동산_어린이농촌테마체험관_물놀이터",
@@ -8870,9 +9458,11 @@
     "link": "https://mom-mom.net/travel/places/65b99e6c0b9d17f0c81346f9",
     "description": "영화와 만화를 사랑하는 모든 아이들을 위한 곳",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "제주특별자치도 서귀포시 안덕면 한창로 243",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 33.28190379,
+    "lng": 126.3553569
   },
   {
     "id": "museum_국립김해박물관",
@@ -8881,9 +9471,11 @@
     "link": "https://mom-mom.net/travel/places/65b6fa2e67a2df7173b8f9bc",
     "description": "가야의 역사를 경험할 수 있는 곳",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상남도 김해시 가야의길 190",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.243528,
+    "lng": 128.8725848
   },
   {
     "id": "museum_제주민속자연사박물관",
@@ -8892,9 +9484,11 @@
     "link": "https://mom-mom.net/travel/places/65b99d590b9d17f0c81346f2",
     "description": "자연을 존중하고 제주의 숨결을 간직한 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "제주특별자치도 제주시 삼성로 40",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 33.50563037,
+    "lng": 126.5317241
   },
   {
     "id": "museum_영덕신재생에너지전시관",
@@ -8925,9 +9519,11 @@
     "link": "https://mom-mom.net/travel/places/66948b6ee0d1a650a11f2a2f",
     "description": "서울시에서 운영하는 무료 어린이 체험실",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 노원구 동일로 174길 27",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.62017392,
+    "lng": 127.0769362
   },
   {
     "id": "museum_송대말등대_빛체험전시관",
@@ -9013,9 +9609,11 @@
     "link": "https://mom-mom.net/travel/places/663981f57c451c61345b3596",
     "description": "다양한 체험과 학습을 할 수 있는 곳",
     "usageStat": "12 ~ 24개월 인기",
-    "address": "",
+    "address": "광주광역시 북구 하서로110",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.18965658,
+    "lng": 126.8839515
   },
   {
     "id": "museum_남도향토음식박물관",
@@ -9024,9 +9622,11 @@
     "link": "https://mom-mom.net/travel/places/6639829c204b87c6002bea4d",
     "description": "남도 지역 음식들을 알아갈 수 있는 음식 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "광주광역시 북구 설죽로 477",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.201777,
+    "lng": 126.8986732
   },
   {
     "id": "museum_전주농업과학관어린이체험관",
@@ -9068,9 +9668,11 @@
     "link": "https://mom-mom.net/travel/places/65f0fdd6036036f470479374",
     "description": "어린이 문화 체험실있는 시립 박물관",
     "usageStat": "",
-    "address": "",
+    "address": "경상북도 김천시 대항면 직지사길 130",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.11709325,
+    "lng": 128.0081803
   },
   {
     "id": "museum_순천곤충박물관",
@@ -9167,9 +9769,11 @@
     "link": "https://mom-mom.net/travel/places/62cd17fd2718fee95297db59",
     "description": "오감으로 동화책을 체험할 수 있는 공간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "서울특별시 송파구 송파대로37길 77",
     "genre": "museum",
-    "lastCollected": "2026-03-03T15:34:42.501Z"
+    "lastCollected": "2026-03-03T15:34:42.501Z",
+    "lat": 37.49888418,
+    "lng": 127.1043834
   },
   {
     "id": "museum_고양어린이박물관",
@@ -9178,9 +9782,11 @@
     "link": "https://mom-mom.net/travel/places/62cd15e22718fee95297d0e5",
     "description": "다양한 프로그램을 즐길 수 있는 어린이 맞춤 박물관",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경기도 고양시 덕양구 화중로 26",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 37.62948069,
+    "lng": 126.8309509
   },
   {
     "id": "museum_국립광주과학관",
@@ -9211,9 +9817,11 @@
     "link": "https://mom-mom.net/travel/places/678da7be646b58884aa9bf3d",
     "description": "아이에게 바다의 자원과 환경에 대한 교육을 시켜줄 공간",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "울산광역시 울주군 서생면 해맞이로 1251",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 35.36165466,
+    "lng": 129.3546962
   },
   {
     "id": "museum_밀양_아리랑전시관",
@@ -9233,9 +9841,11 @@
     "link": "https://mom-mom.net/travel/places/6736d43d1680608f441285ed",
     "description": "자전거 박물관 관람과 자전거 타기 체험까지!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "경상북도 상주시 용마로 415",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.4544380263,
+    "lng": 128.2544540767
   },
   {
     "id": "museum_경기도교육청_학생건강증진센터",
@@ -9321,9 +9931,11 @@
     "link": "https://mom-mom.net/travel/places/69675669a635b9e792dd9090",
     "description": "세계 최초 금속활자본 '직지'와 인쇄 역사를 알아볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "충청북도 청주시 흥덕구 직지대로 713(운천동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.6439736,
+    "lng": 127.4714597
   },
   {
     "id": "museum_백두숨길관",
@@ -9354,9 +9966,11 @@
     "link": "https://mom-mom.net/travel/places/6814a475e234f9aaa3a89091",
     "description": "전라북도 선사부터 조선 왕실 문화까지 한눈에!",
     "usageStat": "24 ~ 48개월 인기",
-    "address": "",
+    "address": "전북특별자치도 전주시 완산구 쑥고개로 249",
     "genre": "museum",
-    "lastCollected": "2026-03-04T15:42:49.441Z"
+    "lastCollected": "2026-03-04T15:42:49.441Z",
+    "lat": 35.80103866,
+    "lng": 127.0883735
   },
   {
     "id": "museum_수도국산달동네박물관",
@@ -9365,9 +9979,11 @@
     "link": "https://mom-mom.net/travel/places/699bebb864348012490bc71c",
     "description": "한국의 달동네 생활상을 주제로 한 전시 및 체험 공간",
     "usageStat": "",
-    "address": "",
+    "address": "인천광역시 동구 솔빛로 51(송현동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.47777345,
+    "lng": 126.639225
   },
   {
     "id": "museum_청주백제유물전시관",
@@ -9376,9 +9992,11 @@
     "link": "https://mom-mom.net/travel/places/6967564ca635b9e792dd908e",
     "description": "청주 백제 유물을 한 눈에 볼 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "충청북도 청주시 흥덕구 1순환로 438번길 9(신봉동)",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.652175,
+    "lng": 127.4690007
   },
   {
     "id": "museum_윤동주문학관",
@@ -9398,9 +10016,11 @@
     "link": "https://mom-mom.net/travel/places/645cb40ee23edef9810acaa4",
     "description": "우리나라의 농업 발달 과정을 한눈에 볼 수 있는 박물관",
     "usageStat": "48개월 이상 인기",
-    "address": "",
+    "address": "전라남도 영암군 삼호읍 녹색로 653-11",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 34.776157,
+    "lng": 126.457776
   },
   {
     "id": "museum_성주참외체험형테마공원",
@@ -9464,9 +10084,11 @@
     "link": "https://mom-mom.net/travel/places/699beccd9758c6fa8898496b",
     "description": "세계 유산 수원화성에 대한 모든 것",
     "usageStat": "",
-    "address": "",
+    "address": "경기도 수원시 팔달구 창룡대로 21",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 37.282591,
+    "lng": 127.018985
   },
   {
     "id": "museum_대청호자연생태관",
@@ -9486,9 +10108,11 @@
     "link": "https://mom-mom.net/travel/places/698300cc83e1733bb09125bf",
     "description": "드론과 AI 로봇을 무료 체험할 수 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "충청남도 논산시 부적면 충곡로 311-54",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.1923914,
+    "lng": 127.1815925
   },
   {
     "id": "museum_부천천문과학관",
@@ -9508,8 +10132,10 @@
     "link": "https://mom-mom.net/travel/places/69af6cd03566f864e4ee7519",
     "description": "공룡 화석과 지구의 역사가 있는 곳",
     "usageStat": "",
-    "address": "",
+    "address": "대전광역시 유성구 과학로 124",
     "genre": "museum",
-    "lastCollected": "2026-03-10T16:00:16.584Z"
+    "lastCollected": "2026-03-10T16:00:16.584Z",
+    "lat": 36.38105757,
+    "lng": 127.3573584
   }
 ]

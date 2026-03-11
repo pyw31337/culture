@@ -5926,7 +5926,10 @@
     "rate": 63,
     "discount": "63%",
     "platform": "mommom",
-    "description": ""
+    "description": "",
+    "lat": 37.241,
+    "lng": 127.1775,
+    "district": "용인시"
   },
   {
     "id": "mommom_shop_울산캐니언파크입장권",
