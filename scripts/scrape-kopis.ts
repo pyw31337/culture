@@ -62,6 +62,12 @@ async function fetchWithRetry(url: string, params: any, retries = 3): Promise<an
     }
 }
 
+function safeWrite(filePath: string, data: any) {
+    const tmpPath = `${filePath}.tmp`;
+    fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2));
+    fs.renameSync(tmpPath, filePath);
+}
+
 // --- Main Logic ---
 async function scrapeKopis() {
     console.log("🚀 Starting Elaborate KOPIS Scraper (Performances & Festivals)...");
@@ -103,6 +109,11 @@ async function scrapeKopis() {
 
     let allItems: KopisPerformance[] = existingItems;
     const uniqueVenueIds = new Set<string>();
+    existingItems.forEach(it => {
+        if (it.venueId && (!venues[it.venue] || !venues[it.venue].lat)) {
+            uniqueVenueIds.add(it.venueId);
+        }
+    });
 
     const fetchList = async (endpoint: string, isFestival = false) => {
         // Optimization: For performances, we only care about Running (02) and Upcoming (01).
@@ -117,7 +128,7 @@ async function scrapeKopis() {
                 const xmlData = await fetchWithRetry(`${BASE_URL}/${endpoint}`, {
                     service: API_KEY,
                     stdate, 
-                    eddate: state === '01' ? fmtDate(new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000)) : eddate,
+                    eddate, // Removed the 30-day restriction for state 01 so distant upcoming items are captured.
                     cpage: page,
                     rows: 100,
                     prfstate: state
@@ -159,8 +170,9 @@ async function scrapeKopis() {
                     const db = detailObj.dbs?.db;
 
                     if (db) {
-                        const cast = db.prfcast ? db.prfcast.split(',').map((s: string) => s.trim()).filter(Boolean) : undefined;
-                        const crew = db.prfcrew ? db.prfcrew.split(',').map((s: string) => s.trim()).filter(Boolean) : undefined;
+                        const isUseless = (s: string) => !s || s.trim() === '' || s.includes('해당정보') || s === '없음';
+                        const cast = db.prfcast ? db.prfcast.split(',').map((s: string) => s.trim()).filter((s: string) => !isUseless(s)) : undefined;
+                        const crew = db.prfcrew ? db.prfcrew.split(',').map((s: string) => s.trim()).filter((s: string) => !isUseless(s)) : undefined;
 
                         const perf: KopisPerformance = {
                             id: `kopis_${mt20id}`,
@@ -171,15 +183,15 @@ async function scrapeKopis() {
                             venueId: db.mt10id,
                             link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
                             genre: db.genrenm,
-                            price: db.pcseguidance || '정보없음',
+                            price: isUseless(db.pcseguidance) ? '정보없음' : db.pcseguidance,
                             time: db.dtguidance,
                             region: db.area,
                             source: 'kopis',
                             isFestival,
                             cast: cast?.length ? cast : undefined,
                             crew: crew?.length ? crew : undefined,
-                            runtime: db.prfruntime && db.prfruntime !== ' ' ? db.prfruntime : undefined,
-                            age: db.prfage && db.prfage !== ' ' ? db.prfage : undefined
+                            runtime: !isUseless(db.prfruntime) ? db.prfruntime : undefined,
+                            age: !isUseless(db.prfage) ? db.prfage : undefined
                         };
                         allItems.push(perf);
                         if (db.mt10id) uniqueVenueIds.add(db.mt10id);
@@ -192,8 +204,8 @@ async function scrapeKopis() {
             if (list.length < 100 || page > 50) hasMore = false;
             else page++;
             
-            // Iterative save
-            fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allItems, null, 2));
+            // Iterative safe save
+            safeWrite(OUTPUT_FILE, allItems);
             } // Added missing closing brace for while loop
         } // Added missing closing brace for for loop
     };
@@ -245,8 +257,8 @@ async function scrapeKopis() {
         return item;
     });
 
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(enrichedItems, null, 2));
-    fs.writeFileSync(VENUE_FILE, JSON.stringify(venues, null, 2));
+    safeWrite(OUTPUT_FILE, enrichedItems);
+    safeWrite(VENUE_FILE, venues);
     
     console.log(`\n🎉 Final result: ${enrichedItems.length} items saved to ${OUTPUT_FILE}`);
 }

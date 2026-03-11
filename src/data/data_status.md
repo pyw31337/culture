@@ -4,7 +4,7 @@
 |---|---|---|--:|--:|---|---|
 | culture-portal.json | 문화포털 | `scrape-culture-portal.ts` | **5,100** | **2,363** | 2026. 03. 11. PM 12:06 | 46.3% 노출 |
 | interpark.json | 인터파크 | `scrape-interpark.ts` | **3,076** | **2,780** | 2026. 03. 11. PM 01:35 | 90.4% 노출 |
-| kopis-performances.json | KOPIS | `scrape-kopis.ts` | **3,045** | **2,160** | 2026. 03. 11. PM 01:35 | 70.9% 노출 |
+| kopis-performances.json | KOPIS | `scrape-kopis.ts` | **3,091** | **3,043** | 2026. 03. 11. PM 05:40 | 98.4% 노출 |
 | mochaclass.json | 모카클래스 | `scrape-mochaclass.ts` | **1,193** | **939** | 2026. 03. 11. AM 11:36 | 78.7% 노출 |
 | museum.json | 박물관 (전국공공포털) | `scrape-museum.ts` | **865** | **199** | 2026. 03. 11. AM 11:37 | 23.0% 노출 |
 | kbo.json | 스포츠 | `scrape-sports.ts` | **735** | **735** | 2026. 03. 11. AM 11:36 | 100.0% 노출 |

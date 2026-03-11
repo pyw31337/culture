@@ -204,43 +204,85 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                             {/* Info List - 1 Column Narrow Style */}
                             <motion.div variants={itemVariants} className="space-y-2.5">
-                                {[
-                                    { 
-                                        icon: p.genre === 'movie' ? Film : MapPin, 
-                                        text: p.district ? `${p.venue} (${p.district})` : p.venue, 
-                                        color: 'text-emerald-500', 
-                                        label: '장소',
-                                        isLink: !!(p.lat && p.lng),
-                                        onClick: handleVenueClick
-                                    },
-                                    { icon: Calendar, text: formatUnifiedDate(p.date), color: 'text-blue-500', label: '날짜' },
-                                    { icon: Clock, text: p.runningTime, color: 'text-purple-500', label: '시간' },
-                                    { icon: Tag, text: p.age || p.ageRating, color: 'text-rose-500', label: '연령' },
-                                    { 
-                                        icon: Users, 
-                                        text: p.director, 
-                                        color: 'text-indigo-500', 
-                                        label: '감독',
-                                        isLink: p.genre === 'movie',
-                                        onClick: () => window.open(`https://search.naver.com/search.naver?query=${encodeURIComponent(p.director || '')}`, '_blank')
-                                    },
-                                    { icon: Ticket, text: p.price, color: 'text-amber-500', label: '가격' }
-                                ].filter(item => item.text).map((item, idx) => (
-                                     <div key={idx} className="flex items-center gap-4 py-1 border-b border-gray-50 dark:border-white/5 last:border-0">
-                                        <item.icon className={`w-4 h-4 ${item.color} shrink-0 opacity-80`} />
-                                        {item.isLink ? (
-                                            <button 
-                                                onClick={item.onClick}
-                                                className="text-[13.5px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1.5"
-                                            >
-                                                <span>{item.text}</span>
-                                                <ExternalLink className="w-3 h-3 opacity-50" />
-                                            </button>
-                                        ) : (
-                                            <p className="text-[13.5px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
-                                        )}
-                                    </div>
-                                ))}
+                                {(() => {
+                                    const isMovie = p.genre === 'movie';
+                                    let movieRating = p.ageRating || p.age || p.venue || '';
+                                    if (movieRating) {
+                                        if (movieRating.includes('전체')) movieRating = '전체 관람가';
+                                        else if (movieRating.includes('12')) movieRating = '12세 이상 관람가';
+                                        else if (movieRating.includes('15')) movieRating = '15세 이상 관람가';
+                                        else if (movieRating.includes('18') || movieRating.includes('청소년') || movieRating.includes('불가') || movieRating.includes('청불')) movieRating = '청소년 관람불가';
+                                    }
+
+                                    const infoItems = [];
+
+                                    if (isMovie && movieRating) {
+                                        infoItems.push({ icon: Film, label: '등급', text: movieRating, color: 'text-emerald-500' });
+                                    } else if (!isMovie && p.venue) {
+                                        infoItems.push({ 
+                                            icon: MapPin, 
+                                            label: '장소', 
+                                            text: p.venue, 
+                                            rightText: p.district,
+                                            color: 'text-emerald-500', 
+                                            isLink: !!(p.lat && p.lng), 
+                                            onClick: handleVenueClick 
+                                        });
+                                    }
+
+                                    const dateText = formatUnifiedDate(p.date);
+                                    if (dateText) {
+                                        infoItems.push({ icon: Calendar, label: isMovie ? '개봉' : '일정', text: dateText, color: 'text-blue-500' });
+                                    }
+
+                                    if (p.runningTime) {
+                                        infoItems.push({ icon: Clock, label: '시간', text: p.runningTime, color: 'text-purple-500' });
+                                    }
+
+                                    if (!isMovie && (p.age || p.ageRating)) {
+                                        infoItems.push({ icon: Tag, label: '연령', text: p.age || p.ageRating, color: 'text-rose-500' });
+                                    }
+
+                                    if (p.director) {
+                                        infoItems.push({ 
+                                            icon: Users, 
+                                            label: '감독', 
+                                            text: p.director, 
+                                            color: 'text-indigo-500', 
+                                            isLink: isMovie, 
+                                            onClick: () => window.open(`https://search.naver.com/search.naver?query=${encodeURIComponent(p.director || '')}`, '_blank') 
+                                        });
+                                    }
+
+                                    if (p.price) {
+                                        infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-amber-500' });
+                                    }
+
+                                    return infoItems.map((item, idx) => (
+                                        <div key={idx} className="flex items-center justify-between gap-4 py-1.5 border-b border-gray-50 dark:border-white/5 last:border-0">
+                                            <div className="flex items-center gap-3 min-w-0 flex-1">
+                                                <div className="flex items-center gap-1.5 w-14 shrink-0">
+                                                    <item.icon className={`w-4 h-4 ${item.color} opacity-80`} />
+                                                    <span className="text-[12px] font-bold text-gray-500 dark:text-gray-400">{item.label}</span>
+                                                </div>
+                                                {item.isLink ? (
+                                                    <button 
+                                                        onClick={item.onClick!}
+                                                        className="text-[13.5px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1.5"
+                                                    >
+                                                        <span className="truncate">{item.text}</span>
+                                                        <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
+                                                    </button>
+                                                ) : (
+                                                    <p className="text-[13.5px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
+                                                )}
+                                            </div>
+                                            {item.rightText && (
+                                                <span className="text-[12px] font-bold text-gray-400 dark:text-gray-500 shrink-0">{item.rightText}</span>
+                                            )}
+                                        </div>
+                                    ));
+                                })()}
                             </motion.div>
 
                             {/* Description */}

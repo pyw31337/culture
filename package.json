@@ -19,7 +19,7 @@
   "dependencies": {
     "@types/sharp": "^0.31.1",
     "axios": "^1.13.2",
-    "cheerio": "^1.1.2",
+    "cheerio": "^1.2.0",
     "clsx": "^2.1.1",
     "csv-stringify": "^6.6.0",
     "date-fns": "^4.1.0",
