@@ -140,7 +140,7 @@ export default function KakaoMapModal({
             // For movie mode, all cinemas currently play the top KOBIS movies.
             // We pass the top 10 movies from the parsed performances to each cinema.
             const moviePerformances = performances.filter(p => p.genre === 'movie');
-            const topMovies = moviePerformances.slice(0, 10);
+            const topMovies = moviePerformances.length > 0 ? moviePerformances.slice(0, 10) : [];
 
             for (let i = 0; i < cinemas.length; i++) {
                 const cinema = cinemas[i];
@@ -187,7 +187,7 @@ export default function KakaoMapModal({
         allVenuesList.current = processedData.list;
 
         // Show more venues initially for specific categories to ensure immediate list appearance
-        const initialCount = selectedGenre !== 'all' ? 300 : 50;
+        const initialCount = selectedGenre !== 'all' ? 200 : 50;
         setVisibleVenues(processedData.list.slice(0, initialCount));
     }, [processedData, selectedGenre]);
 

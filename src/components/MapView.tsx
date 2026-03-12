@@ -52,6 +52,9 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const [geoCenter, setGeoCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
     const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
     const [selectedMapGenre, setSelectedMapGenre] = useState<string>('all');
+    
+    // Independent search center for the map - triggers marker reloading
+    const [mapSearchCenter, setMapSearchCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
 
     // Sync selectedMapGenre with URL on initial load only? No, user said "비연동" (independent).
     // But let's start with all if genre=all, or just the URL genre if specified.
@@ -92,9 +95,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             return { lat: paramLat, lng: paramLng, name: centerName };
         }
         if (geoCenter) return geoCenter;
-        // Fallback while waiting for geo response
         return { ...SEOUL_STATION, name: '서울역' };
     }, [paramLat, paramLng, centerName, geoCenter, SEOUL_STATION]);
+
+    // Update mapSearchCenter when initial centerLocation is resolved
+    useEffect(() => {
+        if (centerLocation && !mapSearchCenter) {
+            setMapSearchCenter(centerLocation);
+        }
+    }, [centerLocation]);
 
     // Load full data client-side
     const { allPerformances, cinemas: clientCinemas } = usePerformanceData({ initialPerformances });
@@ -109,16 +118,16 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             genre: 'all', // We handle manual filtering below
             search: searchMode === 'keyword' ? searchText : '',
             searchMode,
-            lat: centerLocation?.lat || undefined,
-            lng: centerLocation?.lng || undefined,
-            radius: 9999 // Expanding to nationwide for map markers
+            lat: mapSearchCenter?.lat || undefined,
+            lng: mapSearchCenter?.lng || undefined,
+            radius: 20 // Balanced 20km radius for markers
         }).filter(p => {
             if (selectedMapGenre === 'all') return true;
             // The data stores genre IDs (English), but we were comparing with Korean labels.
             // Fix: Compare directly with the selected ID.
             return p.genre === selectedMapGenre;
         });
-    }, [allPerformances, searchMode, searchText, centerLocation, selectedMapGenre]);
+    }, [allPerformances, searchMode, searchText, mapSearchCenter, selectedMapGenre]);
 
     // === Map State ===
     const mapRef = useRef<HTMLDivElement>(null);
@@ -207,12 +216,12 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         let list = Array.from(groupsMap.values()).filter(v => v.lat && v.lng);
         list.sort((a, b) => (a.firstAppearanceIndex ?? 99999) - (b.firstAppearanceIndex ?? 99999));
 
-        if (centerLocation && !isNaN(centerLocation.lat) && !isNaN(centerLocation.lng)) {
-            const cLat = centerLocation.lat;
-            const cLng = centerLocation.lng;
+        if (mapSearchCenter && !isNaN(mapSearchCenter.lat) && !isNaN(mapSearchCenter.lng)) {
+            const cLat = mapSearchCenter.lat;
+            const cLng = mapSearchCenter.lng;
             list.sort((a, b) => {
-                if (a.venueName === centerLocation.name) return -1;
-                if (b.venueName === centerLocation.name) return 1;
+                if (a.venueName === mapSearchCenter.name) return -1;
+                if (b.venueName === mapSearchCenter.name) return 1;
                 return getDistanceFromLatLonInKm(cLat, cLng, a.lat, a.lng) - getDistanceFromLatLonInKm(cLat, cLng, b.lat, b.lng);
             });
         }
@@ -245,9 +254,18 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         setVisibleVenues(visible.slice(0, isMovieMode ? 50 : 200));
         // Keep the search button visible after search (user may want to search again)
-    }, [selectedMapGenre]);
+    }, [selectedMapGenre, mapSearchCenter]);
 
-    const handleSearchHere = () => handleSearchHereInternal(mapInstance, true);
+    const handleSearchHere = () => {
+        if (!mapInstance) return;
+        const center = mapInstance.getCenter();
+        setMapSearchCenter({
+            lat: center.getLat(),
+            lng: center.getLng(),
+            name: '현 위치'
+        });
+        handleSearchHereInternal(mapInstance, true);
+    };
 
     // SEOUL_STATION is defined above at component level
 
@@ -306,13 +324,18 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         mapOverlaysRef.current.forEach(o => o.setMap(null));
         mapOverlaysRef.current = [];
 
-        if (centerLocation) {
-            const loc = new k.LatLng(centerLocation.lat, centerLocation.lng);
-            map.panTo(loc);
+        if (mapSearchCenter) {
+            const loc = new k.LatLng(mapSearchCenter.lat, mapSearchCenter.lng);
+            // We only pan if it's the initial center (to avoid fighting manual dragging)
+            // if (hasPannedOnce.current === false) ... - but let's just use mapSearchCenter
+            
+            if (mapSearchCenter.name !== '현 위치') {
+                map.panTo(loc);
+            }
 
             const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
                 <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
-                    ${centerLocation.name || '검색 위치'}
+                    ${mapSearchCenter.name || '검색 위치'}
                 </div>
                 <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
                     <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
@@ -328,7 +351,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5); // Level 5-6 is good for nationwide clusters
             setSelectedVenue(first.venueName);
         }
-    }, [mapInstance, isMapReady, centerLocation, selectedMapGenre]);
+    }, [mapInstance, isMapReady, mapSearchCenter, selectedMapGenre]);
 
     // --- Markers & Clusterer ---
     const clustererRef = useRef<any>(null);
@@ -545,6 +568,9 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 setVisibleVenues(sorted.slice(0, selectedMapGenre === 'movie' ? 100 : 300));
                 setShowSearchHereBtn(false);
                 setIsLocating(false);
+                
+                // Update search center to my location
+                setMapSearchCenter({ lat: latitude, lng: longitude, name: '내 위치' });
             },
             (err) => {
                 setIsLocating(false);
@@ -552,7 +578,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             },
             { enableHighAccuracy: true, timeout: 10000 }
         );
-    }, [mapInstance, isMapReady, selectedMapGenre]);
+    }, [mapInstance, isMapReady, selectedMapGenre, allVenuesList]);
 
     return (
         <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
@@ -757,11 +783,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                 const isSelected = selectedVenue === v.venueName;
 
                                 let distanceLabel = '';
-                                const hasCenter = centerLocation && !isNaN(centerLocation.lat) && !isNaN(centerLocation.lng);
+                                const hasCenter = mapSearchCenter && !isNaN(mapSearchCenter.lat) && !isNaN(mapSearchCenter.lng);
                                 const hasVenueCoords = v.lat && v.lng && !isNaN(v.lat) && !isNaN(v.lng);
 
                                 if (hasCenter && hasVenueCoords) {
-                                    const dist = getDistanceFromLatLonInKm(centerLocation!.lat, centerLocation!.lng, v.lat, v.lng);
+                                    const dist = getDistanceFromLatLonInKm(mapSearchCenter!.lat, mapSearchCenter!.lng, v.lat, v.lng);
                                     distanceLabel = `${dist.toFixed(1)}km`;
                                 }
 
