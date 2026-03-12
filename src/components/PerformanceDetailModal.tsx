@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'; // Verified: Naver Link Enforced
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, MapPin, Share2, ExternalLink, Download, Clock } from 'lucide-react';
+import { X, Calendar, MapPin, Share2, ExternalLink, Download, Clock, Ticket, Tag } from 'lucide-react';
 import { Performance } from '@/types';
 import ImageWithFallback from './ImageWithFallback';
 import { getOptimizedUrl, getDistrictFromAddress } from '@/lib/utils';
@@ -182,12 +182,35 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                     </div>
 
                                     <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                                        <Clock className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
-                                        <div>
+                                        <Ticket className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
+                                        <div className="flex-1">
                                             <p className="text-xs text-gray-400 mb-0.5">가격</p>
-                                            <p className="text-sm text-gray-200 font-bold">{performance.price || '무료'}</p>
+                                            <p className="text-sm text-gray-200 font-bold whitespace-pre-wrap">{performance.price || '무료'}</p>
                                         </div>
                                     </div>
+
+                                    {(performance.runningTime || performance.ageRating) && (
+                                        <div className="grid grid-cols-2 gap-4">
+                                            {performance.runningTime && (
+                                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+                                                    <Clock className="w-5 h-5 text-purple-400 mt-0.5 shrink-0" />
+                                                    <div>
+                                                        <p className="text-xs text-gray-400 mb-0.5">관람시간</p>
+                                                        <p className="text-sm text-gray-200 font-bold">{performance.runningTime}</p>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {performance.ageRating && (
+                                                <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+                                                    <Tag className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
+                                                    <div>
+                                                        <p className="text-xs text-gray-400 mb-0.5">관람연령</p>
+                                                        <p className="text-sm text-gray-200 font-bold">{performance.ageRating}</p>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Detailed Metadata Section: Director, Cast, Provider, Info */}

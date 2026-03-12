@@ -322,7 +322,11 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                             const text = item.querySelector('.infoText')?.textContent?.trim() || '';
 
                             if (label.includes('공연시간') || label.includes('관람시간')) runningTime = text;
-                            if (label.includes('관람연령') || label.includes('이용등급')) ageRating = text;
+                            if (label.includes('관람연령') || label.includes('이용등급')) {
+                                ageRating = text;
+                                // Clean up age rating if it has extra junk
+                                if (ageRating.includes('\n')) ageRating = ageRating.split('\n')[0].trim();
+                            }
                         });
                     }
 
@@ -424,25 +428,44 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         if (!bestItem && validPriceItems.length > 0) bestItem = validPriceItems[0];
 
                         if (bestItem) {
-                            // Structure 1: .sale, .original, .rate
-                            const sale = bestItem.querySelector('.sale')?.textContent?.trim() || '';
-                            const priceVal = bestItem.querySelector('.price')?.textContent?.trim() || ''; // Can be original price in discount context
-                            const rate = bestItem.querySelector('.rate')?.textContent?.trim() || '';
+                            // Collect ALL prices found in the price list to show full breakdown (e.g. 전석 30,000원, 할인석 20,000원)
+                            const allPriceElements = Array.from(bestItem.querySelectorAll('.priceItem, .priceUnit, .priceCell, li'));
+                            const priceParts: string[] = [];
+                            
+                            validPriceItems.forEach(item => {
+                                const label = item.querySelector('.priceLabel, .name, .type')?.textContent?.trim() || '';
+                                const sale = item.querySelector('.sale')?.textContent?.trim() || '';
+                                const priceVal = item.querySelector('.price')?.textContent?.trim() || '';
+                                
+                                const finalPrice = sale || priceVal;
+                                if (finalPrice && /[0-9]/.test(finalPrice)) {
+                                    if (label) {
+                                        priceParts.push(`${label} ${finalPrice}`);
+                                    } else {
+                                        priceParts.push(finalPrice);
+                                    }
+                                }
+                            });
+
+                            if (priceParts.length > 0) {
+                                price = priceParts.join(', ');
+                            }
+
+                            // Still try to get single best price/discount for metadata fields
+                            const primary = bestItem;
+                            const sale = primary.querySelector('.sale')?.textContent?.trim() || '';
+                            const priceVal = primary.querySelector('.price')?.textContent?.trim() || '';
+                            const rate = primary.querySelector('.rate')?.textContent?.trim() || '';
 
                             if (sale && priceVal && rate) {
-                                // Discount Case
-                                price = sale;
+                                // Discount Case (keep for metadata, but 'price' above is richer)
+                                if (!price) price = sale;
                                 originalPrice = priceVal;
                                 discount = rate;
-                            } else if (sale) {
+                            } else if (sale && !price) {
                                 price = sale;
-                            } else if (priceVal) {
+                            } else if (priceVal && !price) {
                                 price = priceVal;
-                            } else {
-                                // Fallback: try capturing any number with '원' from text content if structure fails
-                                const text = bestItem.textContent || '';
-                                const match = text.match(/([0-9,]+원)/);
-                                if (match) price = match[1];
                             }
                         }
                     }

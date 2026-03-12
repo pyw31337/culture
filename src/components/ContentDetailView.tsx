@@ -276,7 +276,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                         <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
                                                     </button>
                                                 ) : (
-                                                    <p className="text-[13.5px] text-gray-700 dark:text-gray-300 font-bold truncate leading-none">{item.text}</p>
+                                                    <p className="text-[13.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap">{item.text}</p>
                                                 )}
                                             </div>
                                             {item.rightText && (
