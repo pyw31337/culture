@@ -185,11 +185,11 @@ async function scrapeKopis() {
 
                         const cleanPrice = (s: string) => {
                             if (isUseless(s)) return '정보없음';
-                            // Normalize all characters to standard ones
-                            const res = s.replace(/[\s\u00A0\t\n\r]+/g, ' ').replace(/[\uff0c\u3001]/g, ',').replace(/\s*,\s*/g, ',');
+                            // Aggressively strip everything that isn't a standard character we expect
+                            const stripped = s.replace(/[^0-9,가-힣석원A-Z\s\(\)\.]/g, ' ');
+                            const res = stripped.replace(/\s+/g, ' ').replace(/\s*,\s*/g, ',');
                             let finalized = '';
                             for (let i = 0; i < res.length; i++) {
-                                // Split by comma only if NOT followed by a digit
                                 if (res[i] === ',' && i + 1 < res.length && !/[0-9]/.test(res[i + 1])) {
                                     finalized += '\n';
                                 } else {
