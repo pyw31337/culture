@@ -94,6 +94,42 @@ export function cleanTitle(title: string): string {
     return cleaned === '' ? title : cleaned;
 }
 
+// Extract city and district (e.g., "대전 동구") from raw address
+export function getDistrictFromAddress(address?: string): string | null {
+    if (!address) return null;
+    
+    // Pattern to catch: [City/Province] [Gu/Gun/Si]
+    // e.g., "대전광역시 동구 ...", "서울 중구 ...", "경기도 성남시 ..."
+    const parts = address.split(' ').filter(p => p.length > 0);
+    if (parts.length < 2) return null;
+    
+    const city = parts[0];
+    const gu = parts[1];
+    
+    // Normalize city names
+    let normalizedCity = city;
+    if (city.startsWith('서울')) normalizedCity = '서울';
+    else if (city.startsWith('인천')) normalizedCity = '인천';
+    else if (city.startsWith('부산')) normalizedCity = '부산';
+    else if (city.startsWith('대전')) normalizedCity = '대전';
+    else if (city.startsWith('대구')) normalizedCity = '대구';
+    else if (city.startsWith('광주')) normalizedCity = '광주';
+    else if (city.startsWith('울산')) normalizedCity = '울산';
+    else if (city.startsWith('경기')) normalizedCity = '경기';
+    else if (city.startsWith('강원')) normalizedCity = '강원';
+    else if (city.startsWith('충청북도') || city.startsWith('충북')) normalizedCity = '충북';
+    else if (city.startsWith('충청남도') || city.startsWith('충남')) normalizedCity = '충남';
+    else if (city.startsWith('전라북도') || city.startsWith('전북')) normalizedCity = '전북';
+    else if (city.startsWith('전라남도') || city.startsWith('전남')) normalizedCity = '전남';
+    else if (city.startsWith('경상북도') || city.startsWith('경북')) normalizedCity = '경북';
+    else if (city.startsWith('경상남도') || city.startsWith('경남')) normalizedCity = '경남';
+    else if (city.startsWith('제주')) normalizedCity = '제주';
+    else if (city.startsWith('세종')) normalizedCity = '세종';
+
+    // Return e.g., "대전 동구" or "경기 성남시"
+    return `${normalizedCity} ${gu}`;
+}
+
 export function getLowResUrl(url: string): string | null {
     if (!url) return null;
     if (url.startsWith('/')) return null; // Local images handled by Next.js
@@ -193,9 +229,16 @@ function formatSingleDateInternal(str: string): string {
     if (!str) return '';
 
     // Normalize dots to dashes for parsing
-    let parseStr = str.replace(/\./g, '-');
+    let parseStr = str.replace(/\./g, '-').trim();
 
-    // Handle "YYYY-MM-DD HH:mm:ss" or "YYYY-MM-DD HH:mm"
+    // Handle "YYYYMMDD" (8 digits)
+    if (/^\d{8}$/.test(parseStr)) {
+        const y = parseStr.substring(0, 4);
+        const m = parseStr.substring(4, 6);
+        const d = parseStr.substring(6, 8);
+        parseStr = `${y}-${m}-${d}`;
+    }
+
     let parsedDate = new Date(parseStr);
 
     if (!isValid(parsedDate)) {

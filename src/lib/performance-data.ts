@@ -37,13 +37,16 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr || dateStr.trim() === '') return true; // Lenient: Treat items without dates as active (e.g., Museums)
 
     try {
+        // Strip day-of-week suffixes (e.g., "(목)") to prevent Invalid Date errors
+        let cleanDate = dateStr.replace(/\s*\([가-힣]\)/g, '').trim();
         let targetDate: Date | null = null;
 
         // Type 1: Range "YYYY.MM.DD ~ YYYY.MM.DD"
-        if (dateStr.includes('~')) {
-            const parts = dateStr.split('~');
+        if (cleanDate.includes('~')) {
+            const parts = cleanDate.split('~');
             const endStr = parts[1].trim();
-            const [y, m, d] = endStr.split('.').map(Number);
+            // Support both dots and dashes in ranges
+            const [y, m, d] = endStr.split(/[-.]/).map(Number);
             targetDate = new Date(y, m - 1, d);
             targetDate.setHours(23, 59, 59, 999);
         }

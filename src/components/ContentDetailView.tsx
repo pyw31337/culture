@@ -4,7 +4,7 @@ import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
-import { getOptimizedUrl, formatUnifiedDate } from '@/lib/utils';
+import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -226,7 +226,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             icon: MapPin, 
                                             label: '장소', 
                                             text: p.venue, 
-                                            rightText: p.district,
+                                            rightText: p.district || getDistrictFromAddress(p.address),
                                             color: 'text-emerald-500', 
                                             isLink: !!(p.lat && p.lng), 
                                             onClick: handleVenueClick 

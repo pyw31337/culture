@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, MapPin, Share2, ExternalLink, Download, Clock } from 'lucide-react';
 import { Performance } from '@/types';
 import ImageWithFallback from './ImageWithFallback';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, getDistrictFromAddress } from '@/lib/utils';
 import Image from 'next/image';
 import Portal from './ui/Portal';
 
@@ -170,9 +170,14 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
 
                                     <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
                                         <MapPin className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
-                                        <div>
-                                            <p className="text-xs text-gray-400 mb-0.5">장소</p>
-                                            <p className="text-sm text-gray-200 font-bold">{performance.venue}</p>
+                                        <div className="flex-1 flex items-center justify-between gap-4">
+                                            <div>
+                                                <p className="text-xs text-gray-400 mb-0.5">장소</p>
+                                                <p className="text-sm text-gray-200 font-bold">{performance.venue}</p>
+                                            </div>
+                                            <span className="text-xs font-bold text-gray-500 shrink-0">
+                                                {performance.district || getDistrictFromAddress(performance.address)}
+                                            </span>
                                         </div>
                                     </div>
 

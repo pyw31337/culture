@@ -58,6 +58,16 @@ async function fetchWithRetry(url: string, params: any, retries = 3): Promise<an
     }
 }
 
+function mapGenre(s: string): string {
+    if (!s) return 'exhibition';
+    if (s.includes('뮤지컬')) return 'musical';
+    if (s.includes('연극')) return 'play';
+    if (s.includes('클래식') || s.includes('오악') || s.includes('음악') || s.includes('국악')) return 'classic_tradition';
+    if (s.includes('축제') || s.includes('페스티벌')) return 'festival';
+    if (s.includes('교육') || s.includes('체험')) return 'activity';
+    return 'exhibition';
+}
+
 // Extract detail metadata securely using Cheerios
 async function enrichDetails(item: CulturePerformance): Promise<CulturePerformance> {
     if (!item.link || !item.link.includes('mcst.go.kr')) return item;
@@ -69,12 +79,30 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
 
         const isUseless = (s: string) => !s || s.trim() === '' || s.includes('해당정보') || s === '없음';
 
+        // New logic for dt/dd pairs - broadening selector for resilience
+        $('dl dt, .view_info dt, .view_info_list dt').each((_, el) => {
+            const label = $(el).text().trim();
+            const value = $(el).next('dd').text().trim();
+            
+            if (isUseless(value)) return; // Skip if value is useless
+
+            if (label.includes('시간')) {
+                item.time = value;
+            } else if (label.includes('요금') || label.includes('정가')) {
+                item.price = value;
+            } else if (label.includes('문의')) {
+                item.contact = value;
+            } else if (label.includes('분야')) {
+                item.genre = mapGenre(value);
+            }
+        });
+
+        // Existing logic for li elements, now focusing on fields not covered by dt/dd
         $('.view_info_list li').each((_, el) => {
             const text = $(el).text();
-            if (text.includes('정가')) {
-                const p = $(el).find('span.data').text().trim();
-                if (!isUseless(p)) item.price = p;
-            } else if (text.includes('관람연령')) {
+            // Fields already covered by dt/dd: price, time, contact, genre
+            // Keep age, runtime, cast, crew
+            if (text.includes('관람연령')) {
                 const a = $(el).find('span.data').text().trim();
                 if (!isUseless(a)) item.age = a;
             } else if (text.includes('관람소요시간')) {
@@ -86,9 +114,17 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
             } else if (text.includes('제작진')) {
                 const cr = $(el).find('span.data').text().trim();
                 if (!isUseless(cr)) item.crew = cr.split(',').map(s => s.trim()).filter(Boolean);
-            } else if (text.includes('기타안내')) {
+            } else if (text.includes('기타안내') || text.includes('시간')) {
                 const t = $(el).find('span.data').text().trim();
                 if (!isUseless(t)) item.time = t;
+            } else if (text.includes('문의')) {
+                const contact = $(el).find('span.data').text().trim();
+                if (!isUseless(contact)) item.contact = contact;
+            } else if (text.includes('분야')) {
+                const genreStr = $(el).find('span.data').text().trim();
+                if (!isUseless(genreStr)) {
+                    item.genre = mapGenre(genreStr);
+                }
             }
         });
 
@@ -281,13 +317,20 @@ async function scrapeCulturePortal() {
     let enrichedCount = 0;
 
     const tasks = toEnrich.map((item, idx) => limit(async () => {
-        const enriched = await enrichDetails(item);
-        // Replace in original list
+        const enriched = await enrichDetails({ ...item });
+        
+        if (enriched.price || enriched.time || enriched.contact) {
+            console.log(`[DEBUG] Enriched: ${item.title} | Price: ${enriched.price} | Time: ${enriched.time}`);
+        }
+
+        // Find the index in the actual newList to update it
         const origIdx = newList.findIndex(i => i.id === item.id);
-        if (origIdx !== -1) newList[origIdx] = enriched;
+        if (origIdx !== -1) {
+            newList[origIdx] = { ...newList[origIdx], ...enriched };
+        }
         
         enrichedCount++;
-        if (enrichedCount % 50 === 0) {
+        if (enrichedCount % 10 === 0) {
             console.log(`Enriched ${enrichedCount} / ${toEnrich.length}...`);
             safeWrite(OUTPUT_FILE, newList); // Incremental safe save
         }
