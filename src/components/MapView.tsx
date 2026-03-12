@@ -114,10 +114,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             radius: 10
         }).filter(p => {
             if (selectedMapGenre === 'all') return true;
-            const genreLabel = GENRES.find(g => g.id === selectedMapGenre)?.label;
-            return p.genre === genreLabel;
+            // The data stores genre IDs (English), but we were comparing with Korean labels.
+            // Fix: Compare directly with the selected ID.
+            return p.genre === selectedMapGenre;
         });
-    }, [allPerformances, selectedGenre, searchMode, searchText, centerLocation, selectedMapGenre]);
+    }, [allPerformances, searchMode, searchText, centerLocation, selectedMapGenre]);
 
     // === Map State ===
     const mapRef = useRef<HTMLDivElement>(null);
@@ -161,8 +162,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
     // --- Data Processing ---
     const processedData = useMemo(() => {
-        const isMovieMode = selectedGenre === 'movie';
-        const isAllMode = selectedGenre === 'all' || !selectedGenre;
+        const isMovieMode = selectedMapGenre === 'movie';
+        const isAllMode = selectedMapGenre === 'all' || !selectedMapGenre;
         const groupsMap = new Map<string, any>();
 
         if (!isMovieMode || isAllMode) {
@@ -222,15 +223,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     useEffect(() => {
         allVenueGroups.current = processedData.groups;
         allVenuesList.current = processedData.list;
-        const initialCount = selectedGenre !== 'all' ? 200 : 20;
+        const initialCount = selectedMapGenre !== 'all' ? 200 : 20;
         setVisibleVenues(processedData.list.slice(0, initialCount));
-    }, [processedData, selectedGenre]);
+    }, [processedData, selectedMapGenre]);
 
     const handleSearchHereInternal = useCallback((map: any, isUserClick = false) => {
         if (!map || !window.kakao?.maps?.LatLng) return;
         const bounds = map.getBounds();
         const center = map.getCenter();
-        const isMovieMode = selectedGenre === 'movie';
+        const isMovieMode = selectedMapGenre === 'movie';
 
         let visible = allVenuesList.current.filter(v => {
             if (!v.kakaoLatLng) v.kakaoLatLng = new window.kakao.maps.LatLng(v.lat, v.lng);
@@ -267,11 +268,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
                 if (centerLocation) {
                     initialCenter = { lat: centerLocation.lat, lng: centerLocation.lng };
-                    initialLevel = selectedGenre === 'movie' ? 6 : 5;
+                    initialLevel = selectedMapGenre === 'movie' ? 6 : 5;
                 } else if (allVenuesList.current.length > 0) {
                     const first = allVenuesList.current[0];
                     initialCenter = { lat: first.lat, lng: first.lng };
-                    initialLevel = SPORTS_GENRES.includes(selectedGenre) ? 6 : 5;
+                    initialLevel = SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5;
                 }
 
                 const options = { center: new k.LatLng(initialCenter.lat, initialCenter.lng), level: initialLevel };
@@ -324,7 +325,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         } else if (allVenuesList.current.length > 0) {
             const first = allVenuesList.current[0];
             map.panTo(new k.LatLng(first.lat, first.lng));
-            map.setLevel(SPORTS_GENRES.includes(selectedGenre) ? 6 : 5);
+            map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5);
             setSelectedVenue(first.venueName);
         }
     }, [mapInstance, isMapReady, centerLocation, selectedGenre]);
@@ -373,7 +374,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         const markers: any[] = [];
         allVenuesList.current.forEach(venue => {
-            const primaryGenre = venue.performances[0]?.genre || selectedGenre || 'all';
+            const primaryGenre = venue.performances[0]?.genre || selectedMapGenre || 'all';
             const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
             const text = venue.performances.length.toString();
@@ -489,8 +490,19 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const handleZoomOut = () => { if (mapInstance) mapInstance.setLevel(mapInstance.getLevel() + 1, { animate: true }); };
 
     const handleClose = () => {
-        if (window.history.length > 1) router.back();
-        else router.push('/');
+        // Navigate to the list view matching the currently selected category on the map
+        const genrePath = (selectedMapGenre && selectedMapGenre !== 'all') ? `/${selectedMapGenre}` : '/';
+        
+        // Preserve other search params if they exist (mode, q, lat, lng, etc.)
+        const params = new URLSearchParams(searchParams.toString());
+        // We don't need the 'genre' param if we use the path, but 'all' is the root path
+        if (selectedMapGenre === 'all') {
+            params.delete('genre');
+        } else {
+            params.set('genre', selectedMapGenre);
+        }
+        
+        router.push(`${genrePath}?${params.toString()}`);
     };
 
     // My Location
@@ -529,7 +541,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 const sorted = [...allVenuesList.current].sort((a, b) =>
                     getDistanceFromLatLonInKm(latitude, longitude, a.lat, a.lng) - getDistanceFromLatLonInKm(latitude, longitude, b.lat, b.lng)
                 );
-                setVisibleVenues(sorted.slice(0, selectedGenre === 'movie' ? 50 : 200));
+                setVisibleVenues(sorted.slice(0, selectedMapGenre === 'movie' ? 50 : 200));
                 setShowSearchHereBtn(false);
                 setIsLocating(false);
             },
@@ -630,8 +642,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                     )}
                                                 >
                                                     <div className="flex items-center gap-3">
-                                                        <div className={clsx("transition-transform group-active:scale-90", isSel ? "text-blue-600" : "text-gray-300 dark:text-gray-600")}>
-                                                            {isSel ? <CircleDot className="w-5 h-5" /> : <Circle className="w-5 h-5" />}
+                                                    <div className={clsx("transition-transform group-active:scale-90", isSel ? "text-blue-600" : "text-gray-300 dark:text-gray-600")}>
+                                                            {isSel ? (
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+                                                                    <circle cx="12" cy="12" r="6.3" fill="currentColor" />
+                                                                </svg>
+                                                            ) : (
+                                                                <circle className="w-5 h-5" />
+                                                            )}
                                                         </div>
                                                         <span>{genre.label}</span>
                                                     </div>
@@ -684,7 +703,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                     params.set('lng', String(selectedVenueData.lng));
                                                     params.set('venue', selectedVenue);
 
-                                                    const basePath = (selectedGenre && selectedGenre !== 'all') ? `/${selectedGenre}` : '/';
+                                                    const basePath = (selectedMapGenre && selectedMapGenre !== 'all') ? `/${selectedMapGenre}` : '/';
                                                     router.push(`${basePath}?${params.toString()}`);
                                                 }}
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
@@ -745,7 +764,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     distanceLabel = `${dist.toFixed(1)}km`;
                                 }
 
-                                const primaryGenre = v.performances[0]?.genre || selectedGenre || 'all';
+                                const primaryGenre = v.performances[0]?.genre || selectedMapGenre || 'all';
                                 const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
                                 const isCinemaObj = v.type === 'cinema';
                                 const bgClass = isCinemaObj ? 'bg-indigo-600' : style.twBg.replace('bg-', 'bg-');
