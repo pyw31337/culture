@@ -185,9 +185,10 @@ async function scrapeKopis() {
 
                         const cleanPrice = (s: string) => {
                             if (isUseless(s)) return '정보없음';
-                            // Normalize whitespaces and handle common KOPIS formatting quirks
-                            const normalized = s.replace(/\s+/g, ' ').replace(/\s*,\s*/g, ',');
-                            return normalized.split(/,(?!\d)/).map(p => p.trim()).join('\n');
+                            // Normalize all weird whitespaces and unify comma-like characters
+                            const normalized = s.replace(/[\s\u00A0\t\n\r]+/g, ' ').replace(/[\uff0c\u3001]/g, ',').replace(/\s*,\s*/g, ',');
+                            // Split by comma NOT followed by a digit (this preserves numeric commas)
+                            return normalized.split(/,(?!\d)/).map(p => p.trim()).filter(p => p).join('\n');
                         };
 
                         const perf: KopisPerformance & { production?: string } = {
