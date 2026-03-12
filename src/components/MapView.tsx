@@ -114,7 +114,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             radius: 10
         }).filter(p => {
             if (selectedMapGenre === 'all') return true;
-            return p.genre === selectedMapGenre;
+            const genreLabel = GENRES.find(g => g.id === selectedMapGenre)?.label;
+            return p.genre === genreLabel;
         });
     }, [allPerformances, selectedGenre, searchMode, searchText, centerLocation, selectedMapGenre]);
 

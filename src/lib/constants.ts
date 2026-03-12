@@ -28,21 +28,21 @@ export const GENRES = [
 ];
 
 export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: string, twBorder: string, twActivebg: string }> = {
-    'movie': { hex: '#0891b2', twText: 'text-cyan-600', twBg: 'bg-cyan-600', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-500' },
-    'musical': { hex: '#e11d48', twText: 'text-rose-600', twBg: 'bg-rose-600', twBorder: 'border-rose-500', twActivebg: 'bg-rose-500' },
-    'concert': { hex: '#2563eb', twText: 'text-blue-600', twBg: 'bg-blue-600', twBorder: 'border-blue-500', twActivebg: 'bg-blue-500' },
-    'play': { hex: '#16a34a', twText: 'text-green-600', twBg: 'bg-green-600', twBorder: 'border-green-500', twActivebg: 'bg-green-500' },
-    'classic_tradition': { hex: '#ca8a04', twText: 'text-yellow-600', twBg: 'bg-yellow-600', twBorder: 'border-yellow-500', twActivebg: 'bg-yellow-500' },
-    'exhibition': { hex: '#9333ea', twText: 'text-purple-600', twBg: 'bg-purple-600', twBorder: 'border-purple-500', twActivebg: 'bg-purple-500' },
-    'activity': { hex: '#0d9488', twText: 'text-teal-600', twBg: 'bg-teal-600', twBorder: 'border-teal-500', twActivebg: 'bg-teal-500' },
-    'class': { hex: '#7c3aed', twText: 'text-violet-600', twBg: 'bg-violet-600', twBorder: 'border-violet-500', twActivebg: 'bg-violet-500' },
-    'museum': { hex: '#059669', twText: 'text-emerald-600', twBg: 'bg-emerald-600', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-500' },
-    'volleyball': { hex: '#84cc16', twText: 'text-lime-600', twBg: 'bg-lime-600', twBorder: 'border-lime-500', twActivebg: 'bg-lime-500' },
+    'movie': { hex: '#0ea5e9', twText: 'text-sky-600', twBg: 'bg-sky-600', twBorder: 'border-sky-500', twActivebg: 'bg-sky-500' },
+    'musical': { hex: '#f43f5e', twText: 'text-rose-600', twBg: 'bg-rose-600', twBorder: 'border-rose-500', twActivebg: 'bg-rose-500' },
+    'concert': { hex: '#3b82f6', twText: 'text-blue-600', twBg: 'bg-blue-600', twBorder: 'border-blue-500', twActivebg: 'bg-blue-500' },
+    'play': { hex: '#22c55e', twText: 'text-green-600', twBg: 'bg-green-600', twBorder: 'border-green-500', twActivebg: 'bg-green-500' },
+    'classic_tradition': { hex: '#eab308', twText: 'text-yellow-600', twBg: 'bg-yellow-600', twBorder: 'border-yellow-500', twActivebg: 'bg-yellow-500' },
+    'exhibition': { hex: '#a855f7', twText: 'text-purple-600', twBg: 'bg-purple-600', twBorder: 'border-purple-500', twActivebg: 'bg-purple-500' },
+    'activity': { hex: '#14b8a6', twText: 'text-teal-600', twBg: 'bg-teal-600', twBorder: 'border-teal-500', twActivebg: 'bg-teal-500' },
+    'class': { hex: '#6366f1', twText: 'text-indigo-600', twBg: 'bg-indigo-600', twBorder: 'border-indigo-500', twActivebg: 'bg-indigo-500' },
+    'museum': { hex: '#10b981', twText: 'text-emerald-600', twBg: 'bg-emerald-600', twBorder: 'border-emerald-500', twActivebg: 'bg-emerald-500' },
+    'volleyball': { hex: '#bef264', twText: 'text-lime-600', twBg: 'bg-lime-600', twBorder: 'border-lime-500', twActivebg: 'bg-lime-500' },
     'basketball': { hex: '#f97316', twText: 'text-orange-500', twBg: 'bg-orange-500', twBorder: 'border-orange-400', twActivebg: 'bg-orange-400' },
-    'baseball': { hex: '#4f46e5', twText: 'text-indigo-600', twBg: 'bg-indigo-600', twBorder: 'border-indigo-500', twActivebg: 'bg-indigo-500' },
-    'soccer': { hex: '#dc2626', twText: 'text-red-600', twBg: 'bg-red-600', twBorder: 'border-red-500', twActivebg: 'bg-red-500' },
-    'handball': { hex: '#d97706', twText: 'text-amber-600', twBg: 'bg-amber-600', twBorder: 'border-amber-500', twActivebg: 'bg-amber-500' },
-    'all': { hex: '#4b5563', twText: 'text-gray-600', twBg: 'bg-gray-700', twBorder: 'border-gray-500', twActivebg: 'bg-gray-600' },
+    'baseball': { hex: '#1e40af', twText: 'text-blue-900', twBg: 'bg-blue-900', twBorder: 'border-blue-800', twActivebg: 'bg-blue-800' },
+    'soccer': { hex: '#ef4444', twText: 'text-red-600', twBg: 'bg-red-600', twBorder: 'border-red-500', twActivebg: 'bg-red-500' },
+    'handball': { hex: '#f59e0b', twText: 'text-amber-600', twBg: 'bg-amber-600', twBorder: 'border-amber-500', twActivebg: 'bg-amber-500' },
+    'all': { hex: '#6b7280', twText: 'text-gray-600', twBg: 'bg-gray-700', twBorder: 'border-gray-500', twActivebg: 'bg-gray-600' },
 };
 
 export const REGIONS = [

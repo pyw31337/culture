@@ -192,8 +192,8 @@ async function scrapeKopis() {
                                        .replace(/\s*,\s*/g, ',');
                             // 2. Strip only truly illegal characters
                             res = res.replace(/[^0-9,가-힣석원A-Z\s\(\)\.\-]/g, '');
-                            // 3. Final split/join logic to ensure newlines between price categories
-                            return res.split(/,(?!\d)/).map(p => p.trim()).filter(p => p).join('\n');
+                            // 3. Final split/join logic: Split at ',' only if it follows '원' (optionally with spaces)
+                            return res.split(/(?<=원)\s*,\s*/).map(p => p.trim()).filter(p => p).join('\n');
                         };
 
                         const perf: KopisPerformance & { production?: string } = {
