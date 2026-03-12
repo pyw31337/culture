@@ -6,12 +6,24 @@ import { GENRES, GENRE_STYLES, SPORTS_GENRES } from '@/lib/constants';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CheckCircle2, Circle, CircleDot } from 'lucide-react';
+import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CheckCircle2, Circle, CircleDot, CloudSun, Calendar, Thermometer, Droplets, Wind, Navigation } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
 import Portal from './ui/Portal';
+
+// Weather interface
+interface DailyWeather {
+    date: string;
+    maxTemp: number;
+    minTemp: number;
+    avgTemp: number;
+    pop: number; // probability of precipitation
+    rain: number;
+    snow: number;
+    weatherCode: number;
+}
 
 interface Cinema {
     name: string;
@@ -55,6 +67,12 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     
     // Independent search center for the map - triggers marker reloading
     const [mapSearchCenter, setMapSearchCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
+
+    // Weather State
+    const [isWeatherOpen, setIsWeatherOpen] = useState(false);
+    const [weatherData, setWeatherData] = useState<DailyWeather[]>([]);
+    const [weatherAddress, setWeatherAddress] = useState<string>('');
+    const [isWeatherLoading, setIsWeatherLoading] = useState(false);
 
     // Sync selectedMapGenre with URL on initial load only? No, user said "비연동" (independent).
     // But let's start with all if genre=all, or just the URL genre if specified.
@@ -580,6 +598,59 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         );
     }, [mapInstance, isMapReady, selectedMapGenre, allVenuesList]);
 
+    // Weather Fetching Logic
+    const fetchWeather = useCallback(async () => {
+        if (!mapInstance) return;
+        const center = mapInstance.getCenter();
+        const lat = center.getLat();
+        const lng = center.getLng();
+
+        setIsWeatherLoading(true);
+        setIsWeatherOpen(true);
+
+        try {
+            // 1. Get Address using Kakao Geocoder
+            const geocoder = new window.kakao.maps.services.Geocoder();
+            geocoder.coord2Address(lng, lat, (result: any, status: any) => {
+                if (status === window.kakao.maps.services.Status.OK) {
+                    const addr = result[0].road_address?.address_name || result[0].address.address_name;
+                    setWeatherAddress(addr);
+                }
+            });
+
+            // 2. Fetch Weather from Open-Meteo
+            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_probability_max,rain_sum,snowfall_sum&timezone=auto`);
+            const data = await response.json();
+
+            if (data.daily) {
+                const forecast: DailyWeather[] = data.daily.time.map((time: string, idx: number) => ({
+                    date: time,
+                    maxTemp: data.daily.temperature_2m_max[idx],
+                    minTemp: data.daily.temperature_2m_min[idx],
+                    avgTemp: data.daily.temperature_2m_mean[idx],
+                    pop: data.daily.precipitation_probability_max[idx],
+                    rain: data.daily.rain_sum[idx],
+                    snow: data.daily.snowfall_sum[idx],
+                    weatherCode: data.daily.weather_code[idx]
+                }));
+                setWeatherData(forecast);
+            }
+        } catch (error) {
+            console.error('Weather fetch error:', error);
+        } finally {
+            setIsWeatherLoading(false);
+        }
+    }, [mapInstance]);
+
+    const getWeatherIcon = (code: number) => {
+        if (code <= 3) return <CloudSun className="w-6 h-6 text-yellow-500" />;
+        if (code <= 48) return <div className="w-6 h-6 text-gray-400">☁️</div>;
+        if (code <= 67) return <Droplets className="w-6 h-6 text-blue-500" />;
+        if (code <= 77) return <div className="w-6 h-6 text-blue-200">❄️</div>;
+        if (code <= 82) return <Droplets className="w-6 h-6 text-blue-600" />;
+        return <div className="w-6 h-6 text-gray-500">⛈️</div>;
+    };
+
     return (
         <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
             <div className="relative w-full h-full bg-white dark:bg-black overflow-hidden shadow-2xl flex flex-col">
@@ -608,6 +679,13 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                         )} title="내 위치">
                         <Locate className="w-5 h-5" />
                     </button>
+                    {/* Weather Button */}
+                    <button onClick={() => isWeatherOpen ? setIsWeatherOpen(false) : fetchWeather()}
+                        className={clsx("p-2.5 rounded-full shadow-md transition bg-white dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
+                            isWeatherOpen && "ring-2 ring-blue-500"
+                        )} title="날씨 확인">
+                        <CloudSun className="w-5 h-5" />
+                    </button>
                 </div>
 
                 {showSearchHereBtn && isMapReady && (
@@ -634,65 +712,141 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                 isCategoryMenuOpen && "ring-2 ring-blue-500"
                             )}
                         >
-                            <Filter className="w-4 h-4" />
+                        <Filter className="w-4 h-4" />
                             카테고리 ({GENRES.find(g => g.id === selectedMapGenre)?.label || '전체'})
                         </button>
 
                         {isCategoryMenuOpen && (
                             <div className="absolute top-full left-0 mt-2 w-56 max-h-[70vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 p-2 animate-fade-in-down pointer-events-auto custom-scrollbar">
                                 <div className="space-y-1">
-                                    {/* Order: All, Movie, Musical, Concert, Then others */}
-                                    {(() => {
-                                        const priority = ['all', 'movie', 'musical', 'concert'];
-                                        const sortedGenres = [...GENRES].sort((a, b) => {
-                                            const idxA = priority.indexOf(a.id);
-                                            const idxB = priority.indexOf(b.id);
-                                            if (idxA !== -1 && idxB !== -1) return idxA - idxB;
-                                            if (idxA !== -1) return -1;
-                                            if (idxB !== -1) return 1;
-                                            return a.label.localeCompare(b.label);
-                                        });
-
-                                        return sortedGenres.map(genre => {
-                                            const isSel = selectedMapGenre === genre.id;
-                                            const style = (GENRE_STYLES as any)[genre.id] || (GENRE_STYLES as any)['all'];
-                                            return (
-                                                <button
-                                                    key={genre.id}
-                                                    onClick={() => {
-                                                        setSelectedMapGenre(genre.id);
-                                                        setIsCategoryMenuOpen(false);
-                                                    }}
-                                                    className={clsx(
-                                                        "flex items-center justify-between w-full px-3 py-2.5 rounded-xl transition-all text-sm group",
-                                                        isSel ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold" : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
-                                                    )}
-                                                >
-                                                    <div className="flex items-center gap-3">
-                                                    <div className={clsx("transition-transform group-active:scale-90", isSel ? "text-blue-600" : "text-gray-300 dark:text-gray-600")}>
-                                                            {isSel ? (
-                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
-                                                                    <circle cx="12" cy="12" r="6.3" fill="currentColor" />
-                                                                </svg>
-                                                            ) : (
-                                                                <circle className="w-5 h-5" />
-                                                            )}
-                                                        </div>
-                                                        <span>{genre.label}</span>
+                                    {/* Categoriy Order matching GENRES list in constants.ts */}
+                                    {GENRES.map(genre => {
+                                        const isSel = selectedMapGenre === genre.id;
+                                        const style = (GENRE_STYLES as any)[genre.id] || (GENRE_STYLES as any)['all'];
+                                        return (
+                                            <button
+                                                key={genre.id}
+                                                onClick={() => {
+                                                    setSelectedMapGenre(genre.id);
+                                                    setIsCategoryMenuOpen(false);
+                                                }}
+                                                className={clsx(
+                                                    "flex items-center justify-between w-full px-3 py-2.5 rounded-xl transition-all text-sm group",
+                                                    isSel ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold" : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                                                )}
+                                            >
+                                                <div className="flex items-center gap-3">
+                                                <div className={clsx("transition-transform group-active:scale-90", isSel ? "text-blue-600" : "text-gray-300 dark:text-gray-600")}>
+                                                        {isSel ? (
+                                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+                                                                <circle cx="12" cy="12" r="6.3" fill="currentColor" />
+                                                            </svg>
+                                                        ) : (
+                                                            <div className="w-5 h-5 rounded-full border-2 border-current opacity-30" />
+                                                        )}
                                                     </div>
-                                                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: style.hex }} />
-                                                </button>
-                                            );
-                                        });
-                                    })()}
+                                                    <span>{genre.label}</span>
+                                                </div>
+                                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: style.hex }} />
+                                            </button>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         )}
                     </div>
                 </div>
 
-                <div className="absolute inset-0 pointer-events-none z-[110]">
+                {/* Weather Popup */}
+                {isWeatherOpen && (
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[200] w-[90%] max-w-md bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 overflow-hidden animate-fade-in-up pointer-events-auto">
+                        <div className="p-5 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                            <div className="flex items-center gap-2">
+                                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-xl">
+                                    <CloudSun className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                </div>
+                                <h3 className="font-extrabold text-gray-900 dark:text-white">주변 날씨 정보</h3>
+                            </div>
+                            <button onClick={() => setIsWeatherOpen(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition">
+                                <X className="w-5 h-5 text-gray-500" />
+                            </button>
+                        </div>
+                        
+                        <div className="p-5">
+                            <div className="mb-6 px-1">
+                                <div className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 text-[10px] mb-1">
+                                    <Navigation className="w-3 h-3" />
+                                    <span>현재 지도 중앙 위치</span>
+                                </div>
+                                <div className="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 leading-snug">
+                                    {weatherAddress || '위치 정보를 가져오는 중...'}
+                                </div>
+                            </div>
+
+                            {isWeatherLoading ? (
+                                <div className="flex flex-col items-center py-10 gap-3">
+                                    <RotateCw className="w-8 h-8 text-blue-500 animate-spin" />
+                                    <span className="text-sm text-gray-500">날씨 데이터를 가져오고 있습니다...</span>
+                                </div>
+                            ) : (
+                                <div className="space-y-3 max-h-[40vh] overflow-y-auto custom-scrollbar pr-1">
+                                    {weatherData.map((day, idx) => {
+                                        const d = new Date(day.date);
+                                        const dayName = d.toLocaleDateString('ko-KR', { weekday: 'short' });
+                                        const dateStr = d.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
+                                        
+                                        return (
+                                            <div key={day.date} className={clsx(
+                                                "flex items-center justify-between p-3 rounded-2xl border transition-colors",
+                                                idx === 0 ? "bg-blue-50/50 dark:bg-blue-900/20 border-blue-200/50 dark:border-blue-800/50" : "bg-gray-50/30 dark:bg-gray-800/20 border-transparent"
+                                            )}>
+                                                <div className="w-16">
+                                                    <div className="text-xs font-bold text-gray-500 dark:text-gray-400">{idx === 0 ? '오늘' : dayName}</div>
+                                                    <div className="text-[10px] text-gray-400">{dateStr}</div>
+                                                </div>
+                                                
+                                                <div className="flex-1 flex items-center justify-center gap-4">
+                                                    <div className="flex flex-col items-center">
+                                                        {getWeatherIcon(day.weatherCode)}
+                                                    </div>
+                                                    
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="flex flex-col items-center">
+                                                            <div className="text-sm font-black text-gray-900 dark:text-white">{day.maxTemp.toFixed(0)}°</div>
+                                                            <div className="text-[9px] text-rose-500 font-bold leading-none">MAX</div>
+                                                        </div>
+                                                        <div className="flex flex-col items-center border-x border-gray-100 dark:border-gray-800 px-2.5">
+                                                            <div className="text-sm font-black text-gray-700 dark:text-gray-300">{day.avgTemp.toFixed(1)}°</div>
+                                                            <div className="text-[9px] text-gray-400 font-bold leading-none">AVG</div>
+                                                        </div>
+                                                        <div className="flex flex-col items-center">
+                                                            <div className="text-sm font-black text-gray-500 dark:text-gray-400">{day.minTemp.toFixed(0)}°</div>
+                                                            <div className="text-[9px] text-blue-500 font-bold leading-none">MIN</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div className="w-16 text-right">
+                                                    <div className="flex items-center justify-end gap-1 text-[10px] font-extrabold text-blue-600 dark:text-blue-400">
+                                                        <Droplets className="w-2.5 h-2.5" />
+                                                        {day.pop}%
+                                                    </div>
+                                                    {(day.rain > 0 || day.snow > 0) && (
+                                                        <div className="text-[9px] text-gray-400 mt-0.5">
+                                                            {day.rain > 0 && `비 ${day.rain}mm`}
+                                                            {day.snow > 0 && `눈 ${day.snow}cm`}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
                     {selectedVenue && selectedVenueData && popupContainerRef && (
                         <Portal customContainer={popupContainerRef}>
                             <div className="flex flex-col items-center" style={{
@@ -770,7 +924,6 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             </div>
                         </Portal>
                     )}
-                </div>
 
                 <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-gray-900 via-white/80 dark:via-gray-900/80 to-transparent pt-16 pb-4 px-4 sm:px-6">
                     {visibleVenues.length > 0 && (
