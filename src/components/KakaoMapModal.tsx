@@ -187,7 +187,7 @@ export default function KakaoMapModal({
         allVenuesList.current = processedData.list;
 
         // Show more venues initially for specific categories to ensure immediate list appearance
-        const initialCount = selectedGenre !== 'all' ? 200 : 20;
+        const initialCount = selectedGenre !== 'all' ? 300 : 50;
         setVisibleVenues(processedData.list.slice(0, initialCount));
     }, [processedData, selectedGenre]);
 
@@ -199,7 +199,7 @@ export default function KakaoMapModal({
 
         let visible = allVenuesList.current.filter(v => {
             if (!v.kakaoLatLng) v.kakaoLatLng = new window.kakao.maps.LatLng(v.lat, v.lng);
-            // Movie mode skips bounding box check to show all cinemas nationwide
+            // In Modal mode, we also allow seeing nationwide markers if zoomed out
             if (isMovieMode) return true;
             return bounds.contain(v.kakaoLatLng);
         });
@@ -253,7 +253,7 @@ export default function KakaoMapModal({
                     // Always try to focus the top item of the sorted list
                     const first = allVenuesList.current[0];
                     initialCenter = { lat: first.lat, lng: first.lng };
-                    initialLevel = SPORTS_GENRES.includes(selectedGenre) ? 6 : 5;
+                    initialLevel = SPORTS_GENRES.includes(selectedGenre) ? 7 : 6;
                 }
 
                 const options = { center: new k.LatLng(initialCenter.lat, initialCenter.lng), level: initialLevel };

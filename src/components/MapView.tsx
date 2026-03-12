@@ -111,7 +111,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             searchMode,
             lat: centerLocation?.lat || undefined,
             lng: centerLocation?.lng || undefined,
-            radius: 10
+            radius: 9999 // Expanding to nationwide for map markers
         }).filter(p => {
             if (selectedMapGenre === 'all') return true;
             // The data stores genre IDs (English), but we were comparing with Korean labels.
@@ -169,7 +169,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         if (!isMovieMode || isAllMode) {
             for (let i = 0; i < performances.length; i++) {
                 const perf = performances[i];
-                if (!isAllMode && perf.genre !== selectedGenre) continue;
+                if (!isAllMode && perf.genre !== selectedMapGenre) continue;
                 const vName = perf.venue;
                 const venueMeta = venues[vName];
                 if (vName.includes('투어패스') && venueMeta?.lat && venueMeta?.lng && venueMeta.lat > 37.4 && venueMeta.lng > 130.8) continue;
@@ -218,7 +218,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         }
 
         return { groups: Object.fromEntries(groupsMap), list };
-    }, [performances, cinemas, centerLocation, selectedGenre]);
+    }, [performances, cinemas, centerLocation, selectedMapGenre]);
 
     useEffect(() => {
         allVenueGroups.current = processedData.groups;
@@ -245,7 +245,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         setVisibleVenues(visible.slice(0, isMovieMode ? 50 : 200));
         // Keep the search button visible after search (user may want to search again)
-    }, [selectedGenre]);
+    }, [selectedMapGenre]);
 
     const handleSearchHere = () => handleSearchHereInternal(mapInstance, true);
 
@@ -268,11 +268,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
                 if (centerLocation) {
                     initialCenter = { lat: centerLocation.lat, lng: centerLocation.lng };
-                    initialLevel = selectedMapGenre === 'movie' ? 6 : 5;
+                    initialLevel = selectedMapGenre === 'movie' ? 7 : 6;
                 } else if (allVenuesList.current.length > 0) {
                     const first = allVenuesList.current[0];
                     initialCenter = { lat: first.lat, lng: first.lng };
-                    initialLevel = SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5;
+                    initialLevel = SPORTS_GENRES.includes(selectedMapGenre) ? 7 : 6;
                 }
 
                 const options = { center: new k.LatLng(initialCenter.lat, initialCenter.lng), level: initialLevel };
@@ -325,10 +325,10 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         } else if (allVenuesList.current.length > 0) {
             const first = allVenuesList.current[0];
             map.panTo(new k.LatLng(first.lat, first.lng));
-            map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5);
+            map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5); // Level 5-6 is good for nationwide clusters
             setSelectedVenue(first.venueName);
         }
-    }, [mapInstance, isMapReady, centerLocation, selectedGenre]);
+    }, [mapInstance, isMapReady, centerLocation, selectedMapGenre]);
 
     // --- Markers & Clusterer ---
     const clustererRef = useRef<any>(null);
@@ -541,7 +541,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 const sorted = [...allVenuesList.current].sort((a, b) =>
                     getDistanceFromLatLonInKm(latitude, longitude, a.lat, a.lng) - getDistanceFromLatLonInKm(latitude, longitude, b.lat, b.lng)
                 );
-                setVisibleVenues(sorted.slice(0, selectedMapGenre === 'movie' ? 50 : 200));
+                // Show more venues when locating
+                setVisibleVenues(sorted.slice(0, selectedMapGenre === 'movie' ? 100 : 300));
                 setShowSearchHereBtn(false);
                 setIsLocating(false);
             },
@@ -551,7 +552,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             },
             { enableHighAccuracy: true, timeout: 10000 }
         );
-    }, [mapInstance, isMapReady, selectedGenre]);
+    }, [mapInstance, isMapReady, selectedMapGenre]);
 
     return (
         <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
@@ -708,7 +709,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                 }}
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
                                                 <ExternalLink size={12} />
-                                                {SPORTS_GENRES.includes(selectedGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                                {SPORTS_GENRES.includes(selectedMapGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
                                             </button>
                                         </div>
                                     ) : null}
