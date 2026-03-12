@@ -28,12 +28,15 @@ interface Performance {
     region: string;
     genre: string;
     // New fields
+    address?: string;
     runningTime?: string;
     ageRating?: string;
     price?: string;
     originalPrice?: string;
     discount?: string;
-    address?: string;
+    priceList?: { label: string; price: string; discount?: string }[];
+    ageDetail?: string;
+    bookingNotice?: string;
     lastEnriched?: string; // ISO Date string
 }
 
@@ -622,10 +625,48 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         }
                     }
 
-                    return { runningTime, ageRating, price, originalPrice, discount, address };
+                    // 5. Booking Notice (New: Search in prdGuide or special notice areas)
+                    let bookingNotice = '';
+                    const guideItems = Array.from(document.querySelectorAll('.prdGuide strong'));
+                    guideItems.forEach(strong => {
+                        const title = strong.textContent?.trim() || '';
+                        if (title.includes('티켓수령') || title.includes('예매취소') || title.includes('안내')) {
+                            const parent = strong.parentElement;
+                            if (parent) {
+                                // Just get first few lines as a meaningful notice
+                                bookingNotice = parent.innerText.split('\n').slice(0, 5).join('\n').trim();
+                            }
+                        }
+                    });
+
+                    // 6. Detailed Age Rule Extraction
+                    let ageDetail = '';
+                    const ageItems = Array.from(document.querySelectorAll('.prdGuide strong'));
+                    ageItems.forEach(strong => {
+                        if (strong.textContent?.includes('입장') || strong.textContent?.includes('관람')) {
+                            const parent = strong.parentElement;
+                            if (parent) {
+                                ageDetail = parent.innerText.split('\n').slice(0, 3).join('\n').trim();
+                            }
+                        }
+                    });
+
+                    // 7. Structured Price List
+                    const priceList: { label: string, price: string, discount?: string }[] = [];
+                    const pItems = Array.from(document.querySelectorAll('.infoPriceList .infoPriceItem, .priceList .priceItem'));
+                    pItems.forEach(item => {
+                        const label = item.querySelector('.name, .type, .priceLabel')?.textContent?.trim() || '';
+                        const priceV = item.querySelector('.price, .sale')?.textContent?.trim() || '';
+                        const disc = item.querySelector('.rate, .discount')?.textContent?.trim() || '';
+                        if (label && priceV) {
+                            priceList.push({ label, price: priceV, discount: disc || undefined });
+                        }
+                    });
+
+                    return { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice };
                 });
 
-                let { runningTime, ageRating, price, originalPrice, discount, address } = basicInfo;
+                let { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice } = basicInfo;
 
                 // 3. Click "Venue Info" Layer if address is missing
                 if (!address) {
@@ -705,6 +746,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     originalPrice,
                     discount,
                     address,
+                    priceList,
+                    ageDetail,
+                    bookingNotice,
                     lastEnriched: new Date().toISOString()
                 };
 

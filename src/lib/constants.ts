@@ -20,12 +20,12 @@ export const GENRES = [
     { id: 'activity', label: '액티비티' },
     { id: 'class', label: '클래스' },
     { id: 'museum', label: '박물관/체험관' },
+    { id: 'tourism', label: '관광/여행' },
     { id: 'volleyball', label: '배구' },
     { id: 'basketball', label: '농구' },
     { id: 'baseball', label: '야구' },
     { id: 'soccer', label: '축구' },
     { id: 'handball', label: '핸드볼' },
-    { id: 'tourism', label: '관광/여행' },
 
 ];
 

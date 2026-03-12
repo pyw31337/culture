@@ -292,6 +292,9 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let planner = raw.planner || '';
     let producer = raw.producer || '';
     let sponsor = raw.sponsor || '';
+    let priceList = raw.priceList;
+    let ageDetail = raw.ageDetail;
+    let bookingNotice = raw.bookingNotice;
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -406,7 +409,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         organizer,
         planner,
         producer,
-        sponsor
+        sponsor,
+        priceList,
+        ageDetail,
+        bookingNotice
     } as Performance;
 }
 

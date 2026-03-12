@@ -761,7 +761,16 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                 </div>
                                 <div className="flex flex-col gap-0.5">
                                     <h3 className="text-[15px] font-black text-gray-900 dark:text-white leading-tight">
-                                        <span className="text-blue-600 dark:text-blue-400">{weatherAddress || '위치 정보'}</span> 날씨 정보
+                                        <span className="text-blue-600 dark:text-blue-400">
+                                            {(() => {
+                                                if (!weatherAddress) return '위치 정보';
+                                                // Remove house numbers/digits and stop at Dong level
+                                                const parts = weatherAddress.split(' ');
+                                                const dongIdx = parts.findIndex(p => p.endsWith('동') || p.endsWith('가') || p.endsWith('로'));
+                                                if (dongIdx !== -1) return parts.slice(0, dongIdx + 1).join(' ');
+                                                return weatherAddress;
+                                            })()}
+                                        </span> 날씨 정보
                                     </h3>
                                     <div className="flex items-center gap-1.5 text-gray-400 dark:text-gray-500 text-[10px]">
                                         <Navigation className="w-2.5 h-2.5" />
@@ -807,15 +816,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                     </div>
                                                     
                                                     <div className="flex items-center gap-2">
-                                                        <div className="flex flex-col items-center">
+                                                        <div className="flex flex-col items-center px-4">
                                                             <div className="text-[13px] font-black text-gray-900 dark:text-white">{day.maxTemp.toFixed(0)}°</div>
                                                             <div className="text-[8px] text-rose-500 font-bold leading-none">MAX</div>
                                                         </div>
-                                                        <div className="flex flex-col items-center border-x border-gray-100 dark:border-gray-800 px-2">
-                                                            <div className="text-[13px] font-black text-gray-700 dark:text-gray-300">{day.avgTemp.toFixed(1)}°</div>
-                                                            <div className="text-[8px] text-gray-400 font-bold leading-none">AVG</div>
-                                                        </div>
-                                                        <div className="flex flex-col items-center">
+                                                        <div className="flex flex-col items-center px-4">
                                                             <div className="text-[13px] font-black text-gray-500 dark:text-gray-400">{day.minTemp.toFixed(0)}°</div>
                                                             <div className="text-[8px] text-blue-500 font-bold leading-none">MIN</div>
                                                         </div>

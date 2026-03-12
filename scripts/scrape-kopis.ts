@@ -41,6 +41,9 @@ interface KopisPerformance {
     planner?: string;
     producer?: string;
     sponsor?: string;
+    priceList?: { label: string; price: string; discount?: string }[];
+    ageDetail?: string;
+    bookingNotice?: string;
 }
 
 interface VenueInfo {
@@ -220,12 +223,18 @@ async function scrapeKopis() {
                             crew: crew?.length ? crew : undefined,
                             runtime: !isUseless(db.prfruntime) ? db.prfruntime : undefined,
                             age: !isUseless(db.prfage) ? db.prfage : undefined,
+                            ageDetail: !isUseless(db.prfage) ? db.prfage : undefined,
                             production: production,
                             host: !isUseless(db.entrpsnmA) ? db.entrpsnmA.trim() : undefined,
                             organizer: !isUseless(db.entrpsnmH) ? db.entrpsnmH.trim() : undefined,
                             planner: !isUseless(db.entrpsnmP) ? db.entrpsnmP.trim() : undefined,
                             producer: !isUseless(db.entrpsnm) ? db.entrpsnm.trim() : undefined,
                             sponsor: !isUseless(db.entrpsnmS) ? db.entrpsnmS.trim() : undefined,
+                            priceList: db.pcseguidance && !isUseless(db.pcseguidance) ? 
+                                cleanPrice(db.pcseguidance).split('\n').map(line => {
+                                    const match = line.match(/(.*?)\s*([0-9,]+원)/);
+                                    return match ? { label: match[1].trim() || '일반', price: match[2] } : { label: '일반', price: line };
+                                }) : undefined,
                         };
                         allItems = allItems.filter(it => it.id !== fullId);
                         allItems.push(perf as KopisPerformance);

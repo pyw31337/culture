@@ -268,3 +268,42 @@ function formatSingleDateInternal(str: string): string {
 
     return str;
 }
+
+/**
+ * Convert desktop URLs to mobile-optimized versions for specific platforms
+ * - Naver Search: search.naver.com -> m.search.naver.com
+ * - Yes24 Ticket: ticket.yes24.com -> m.ticket.yes24.com
+ */
+export function toMobileUrl(url: string | undefined): string {
+    if (!url) return '';
+    
+    try {
+        // Only convert if it's an absolute URL
+        if (!url.startsWith('http')) return url;
+
+        const urlObj = new URL(url);
+        
+        // Naver Search
+        if (urlObj.hostname === 'search.naver.com') {
+            urlObj.hostname = 'm.search.naver.com';
+            return urlObj.toString();
+        }
+        
+        // Yes24 Ticket
+        if (urlObj.hostname === 'ticket.yes24.com') {
+            urlObj.hostname = 'm.ticket.yes24.com';
+            return urlObj.toString();
+        }
+
+        // YouTube
+        if (urlObj.hostname === 'www.youtube.com' || urlObj.hostname === 'youtube.com') {
+            urlObj.hostname = 'm.youtube.com';
+            return urlObj.toString();
+        }
+
+        // Interpark, KOPIS, and others are already responsive or handle redirects
+        return url;
+    } catch {
+        return url || '';
+    }
+}

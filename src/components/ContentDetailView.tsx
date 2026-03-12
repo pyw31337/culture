@@ -2,11 +2,10 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone } from 'lucide-react';
-import { useState, useRef, useEffect } from 'react';
-import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress } from '@/lib/utils';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 interface ContentDetailViewProps {
@@ -17,18 +16,50 @@ interface ContentDetailViewProps {
 
 export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
     const router = useRouter();
-    const containerRef = useRef<HTMLDivElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const ua = navigator.userAgent || navigator.vendor || (window as any).opera || '';
+        const mobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua.toLowerCase());
+        if (mobile !== isMobile) {
+            setIsMobile(mobile);
+        }
+    }, [isMobile]);
+
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
 
     const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
     const hasTeams = p.homeTeam && p.awayTeam;
 
-    const hasDiscount = p.discount && p.originalPrice;
     const hasCast = p.cast && p.cast.length > 0;
     const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
+    
+    // Unified Booking Link Logic with Fallback for Missing Data
+    const bookingUrl = useMemo(() => {
+        let url = p.link;
+        const isMissingLink = !url || url.trim() === '';
+
+        // Case 1: Genre-specific search fallback (Movies)
+        if (p.genre === 'movie') {
+            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 상영시간표')}`;
+        } 
+        // Case 2: Platform-specific search fallback for missing links
+        else if (isMissingLink) {
+            if (p.source === 'mommom-activity' || p.source === 'mommom' || p.source === 'mommom-product') {
+                // Mommom search fallback
+                url = `https://mom-mom.net/search?q=${encodeURIComponent(p.title)}`;
+            } else {
+                // Generic Naver search fallback
+                url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 예매')}`;
+            }
+        }
+
+        return isMobile ? toMobileUrl(url) : url;
+    }, [p.link, p.title, p.genre, p.source, isMobile]);
 
     const handleShare = async (e?: React.MouseEvent) => {
         if (e) e.stopPropagation();
@@ -141,7 +172,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 <motion.a
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
-                                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`}
+                                    href={isMobile ? toMobileUrl(`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`) : `https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-16 h-16 rounded-full bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white shadow-2xl transition-all hover:bg-black/70"
@@ -180,8 +211,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                     {/* Main Content Area */}
                     <div className={mode === 'standalone' 
-                        ? "p-6 md:p-8 lg:p-12 pt-14 md:pt-14 space-y-5 flex-1 md:overflow-y-auto md:h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
-                        : "p-6 sm:p-8 lg:p-12 lg:pt-14 pt-4 sm:pt-6 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full scrollbar-hide"}>
+                        ? "p-6 md:p-8 lg:p-12 space-y-5 flex-1 md:overflow-y-auto md:h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
+                        : "p-6 sm:p-8 lg:p-12 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full scrollbar-hide"}>
                         
                         <div className="space-y-4">
                             <motion.div variants={itemVariants} className="space-y-3">
@@ -253,7 +284,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             text: p.director, 
                                             color: 'text-indigo-500', 
                                             isLink: isMovie, 
-                                            onClick: () => window.open(`https://search.naver.com/search.naver?query=${encodeURIComponent(p.director || '')}`, '_blank') 
+                                            onClick: () => {
+                                                const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.director || '')}`;
+                                                window.open(isMobile ? toMobileUrl(url) : url, '_blank');
+                                            }
                                         });
                                     }
 
@@ -305,8 +339,12 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Phone, label: '문의', text: p.contact, color: 'text-emerald-400' });
                                     }
 
-                                    if (p.price) {
+                                    if (p.price && !p.priceList) {
                                         infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
+                                    }
+
+                                    if (p.ageRating) {
+                                        infoItems.push({ icon: Info, label: '관람연령', text: p.ageRating, color: 'text-blue-400', rightText: p.ageDetail ? '상세안내 참조' : undefined });
                                     }
 
                                     return infoItems.map((item, idx) => (
@@ -340,10 +378,59 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 })()}
                             </motion.div>
 
+                            {/* Enhanced Price List (Table style) */}
+                            {p.priceList && p.priceList.length > 0 && (
+                                <motion.div variants={itemVariants} className="mt-4 bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-black/5 dark:border-white/5">
+                                    <h4 className="text-[13px] font-bold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-1.5">
+                                        <Coins className="w-4 h-4 text-orange-400" />
+                                        상세 가격 정보
+                                    </h4>
+                                    <div className="space-y-1.5">
+                                        {p.priceList.map((item, idx) => (
+                                            <div key={idx} className="flex items-center justify-between text-[13.5px]">
+                                                <span className="text-gray-500 dark:text-gray-400 font-medium">{item.label}</span>
+                                                <div className="flex items-center gap-2">
+                                                    {item.discount && <span className="text-[11px] font-bold text-rose-500 bg-rose-500/10 px-1.5 py-0.5 rounded">{item.discount}</span>}
+                                                    <span className="text-gray-900 dark:text-white font-extrabold">{item.price}</span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {/* Detailed Notices & Age Rules */}
+                            {(p.ageDetail || p.bookingNotice) && (
+                                <motion.div variants={itemVariants} className="mt-4 space-y-3">
+                                    {p.ageDetail && (
+                                        <div className="bg-blue-50/50 dark:bg-blue-500/5 rounded-xl p-4 border border-blue-500/10">
+                                            <h4 className="text-[13px] font-bold text-blue-600 dark:text-blue-400 mb-1.5 flex items-center gap-1.5">
+                                                <Info className="w-4 h-4" />
+                                                관람/입장 연령 안내
+                                            </h4>
+                                            <p className="text-[13px] text-blue-800/80 dark:text-blue-300/80 leading-relaxed whitespace-pre-line font-medium">
+                                                {p.ageDetail}
+                                            </p>
+                                        </div>
+                                    )}
+                                    {p.bookingNotice && (
+                                        <div className="bg-amber-50/50 dark:bg-amber-500/5 rounded-xl p-4 border border-amber-500/10">
+                                            <h4 className="text-[13px] font-bold text-amber-600 dark:text-amber-400 mb-1.5 flex items-center gap-1.5">
+                                                <AlertCircle className="w-4 h-4" />
+                                                예매시 유의사항
+                                            </h4>
+                                            <p className="text-[13px] text-amber-800/80 dark:text-amber-300/80 leading-relaxed whitespace-pre-line font-medium">
+                                                {p.bookingNotice}
+                                            </p>
+                                        </div>
+                                    )}
+                                </motion.div>
+                            )}
+
                             {/* Description - Short version for all modes */}
                             {p.description && (
                                 <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
-                                    "{p.description}"
+                                    &quot;{p.description}&quot;
                                 </motion.p>
                             )}
 
@@ -365,7 +452,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">출연진</span>
                                     {p.cast!.slice(0, 10).map((c, idx) => {
                                         const name = typeof c === 'string' ? c : c.name;
-                                        let url = typeof c === 'string' ? undefined : (c as any).url;
+                                        let url = typeof c === 'string' ? undefined : (c as { url?: string }).url;
                                         
                                         // Auto-generate Naver search link for any performance type if missing URL
                                         if (!url) {
@@ -377,7 +464,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         return url ? (
                                             <a 
                                                 key={idx} 
-                                                href={url} 
+                                                href={isMobile ? toMobileUrl(url) : url} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer" 
                                                 className={`${castClasses} hover:bg-gray-100 dark:hover:bg-white/10 text-emerald-500`}
@@ -403,7 +490,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         return (
                                             <a 
                                                 key={idx} 
-                                                href={url} 
+                                                href={isMobile ? toMobileUrl(url) : url} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer" 
                                                 className={`${castClasses} hover:bg-gray-100 dark:hover:bg-white/10`}
@@ -432,9 +519,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                  <motion.a
                                     whileHover={{ scale: 1.01 }}
                                     whileTap={{ scale: 0.99 }}
-                                    href={p.genre === 'movie' 
-                                        ? `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 상영시간표')}`
-                                        : p.link}
+                                    href={bookingUrl}
                                     target="_blank"
                                      rel="noopener noreferrer"
                                     className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-2xl text-white font-black text-base ${genreStyle.twBg} shadow-lg relative overflow-hidden group`}
@@ -453,7 +538,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             <motion.a
                                                 whileHover={{ scale: 1.02 }}
                                                 whileTap={{ scale: 0.98 }}
-                                                href={p.versusLink}
+                                                href={isMobile ? toMobileUrl(p.versusLink) : p.versusLink}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold text-sm transition-all hover:bg-purple-500/20 dark:hover:bg-purple-500/30"
@@ -467,7 +552,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             <motion.a
                                                 whileHover={{ scale: 1.02 }}
                                                 whileTap={{ scale: 0.98 }}
-                                                href={p.highlightsLink}
+                                                href={isMobile ? toMobileUrl(p.highlightsLink) : p.highlightsLink}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-sky-500/10 dark:bg-sky-500/20 text-sky-600 dark:text-sky-400 border border-sky-500/20 font-bold text-sm transition-all hover:bg-sky-500/20 dark:hover:bg-sky-500/30"

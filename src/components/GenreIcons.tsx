@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { LayoutGrid, Music } from 'lucide-react'; // Default icon
+import { LayoutGrid, Music, CableCar } from 'lucide-react'; // Default icon
 import { clsx } from 'clsx'; // Ensure clsx is imported if not already
 
 export const CloverIcon = ({ className, size = 16, strokeWidth = 2 }: { className?: string; size?: number; strokeWidth?: number }) => (
@@ -186,6 +186,7 @@ export const getGenreIcon = (id: string, size = 16) => {
         case 'soccer': return <FootballIcon size={size} />;
         case 'handball': return <HandballIcon size={size} />;
         case 'museum': return <MuseumIcon size={size} />;
+        case 'tourism': return <CableCar size={size} />;
 
         default: return <LayoutGrid size={size} />;
     }
