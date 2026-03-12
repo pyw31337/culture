@@ -269,9 +269,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
     }
 
     // Concurrency: Reduced to 5 to prevent timeouts on CI
-    const CONCURRENCY = 2;
+    const CONCURRENCY = 5;
     for (let i = 0; i < todo.length; i += CONCURRENCY) {
-        const chunk = todo.slice(i, i + CONCURRENCY);
+        const chunk = todo.slice(0, 50).slice(i, i + CONCURRENCY);
 
         const promises = chunk.map(async (item) => {
             const page = await browser.newPage();

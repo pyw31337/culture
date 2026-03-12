@@ -71,8 +71,8 @@ async function scrapeProducts() {
         console.log('Page loaded.');
 
         // Scroll to load all items
-        await page.evaluate(async () => {
-            const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+        await page.evaluate(`(async () => {
+            const delay = (ms) => new Promise(res => setTimeout(res, ms));
             let lastHeight = 0;
             let noChange = 0;
 
@@ -94,20 +94,19 @@ async function scrapeProducts() {
 
                 if (noChange > 5) break;
             }
-        });
+        })()`);
 
         // Extract Items with full details from list page
-        const listItems = await page.evaluate(() => {
-            const results: any[] = [];
+        const listItems = await page.evaluate(`(() => {
+            const results = [];
             const seenTitles = new Set();
 
-            // Use class selector for product cards (more specific)
-            const cards = document.querySelectorAll('div[class*="sc-fd2f9237"]');
-            console.log('Found cards:', cards.length);
+            // Use class selector for product cards (updated to match current site)
+            const cards = document.querySelectorAll('div[class*="sc-3ec5fbe4-30"]');
 
             cards.forEach(card => {
-                // Get title from h4
-                const h4 = card.querySelector('h4');
+                // Get title from h4 (updated class)
+                const h4 = card.querySelector('h4.product-name, h4');
                 if (!h4) return;
 
                 const title = h4.textContent?.trim() || '';
@@ -122,24 +121,20 @@ async function scrapeProducts() {
                 const brandEl = card.querySelector('.brand-name');
                 const brand = brandEl?.textContent?.trim() || '';
 
-                // Get prices - look for spans with discount and price
+                // Get prices
                 let discount = '';
                 let price = '';
                 let originalPrice = '';
 
                 // Find p element containing price info
-                const priceContainer = card.querySelector('p');
+                const priceContainer = card.querySelector('p, .price');
                 if (priceContainer) {
-                    const spans = priceContainer.querySelectorAll('span');
-                    spans.forEach(span => {
-                        const text = span.textContent?.trim() || '';
-                        if (text.includes('%')) {
-                            discount = text; // e.g., "35%"
-                        } else if (text.includes('원')) {
-                            if (!price) price = text; // First price is discounted price
-                            else originalPrice = text;
-                        }
-                    });
+                    const priceText = priceContainer.textContent || '';
+                    const rateMatch = priceText.match(/(\\d+)%/);
+                    if (rateMatch) discount = rateMatch[0];
+
+                    const priceMatch = priceText.match(/([\\d,]+원)/);
+                    if (priceMatch) price = priceMatch[0];
                 }
 
                 // Also check for del element (original price struck through)
@@ -149,8 +144,8 @@ async function scrapeProducts() {
                 }
 
                 // Generate ID from title
-                const safeTitle = title.replace(/[^\w가-힣]/g, '').slice(0, 20);
-                const id = `mommom_shop_${safeTitle}`;
+                const safeTitle = title.replace(/[^\\w가-힣]/g, '').slice(0, 20);
+                const id = "mommom_shop_" + safeTitle;
 
                 results.push({
                     id,
@@ -163,7 +158,7 @@ async function scrapeProducts() {
                 });
             });
             return results;
-        });
+        })()`);
 
         console.log(`Found ${listItems.length} products to process.`);
 
@@ -223,15 +218,15 @@ async function scrapeProducts() {
                         await searchPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
 
                         // Try to extract address and coordinates from Naver
-                        const result = await searchPage.evaluate(() => {
+                        const result = await searchPage.evaluate(`(() => {
                             // Method 1: Look for __APOLLO_STATE__ JSON
                             const scripts = Array.from(document.querySelectorAll('script'));
                             for (const script of scripts) {
                                 const text = script.textContent || '';
                                 if (text.includes('__APOLLO_STATE__')) {
-                                    const match = text.match(/"roadAddress"\s*:\s*"([^"]+)"/);
-                                    const latMatch = text.match(/"y"\s*:\s*"?([\d.]+)"?/);
-                                    const lngMatch = text.match(/"x"\s*:\s*"?([\d.]+)"?/);
+                                    const match = text.match(/"roadAddress"\\s*:\\s*"([^"]+)"/);
+                                    const latMatch = text.match(/"y"\\s*:\\s*"?([\\d.]+)"?/);
+                                    const lngMatch = text.match(/"x"\\s*:\\s*"?([\\d.]+)"?/);
 
                                     if (match && latMatch && lngMatch) {
                                         return {
@@ -245,7 +240,7 @@ async function scrapeProducts() {
 
                             // Method 2: Look for address in visible text
                             const addrPatterns = [
-                                /([가-힣]+(?:시|도)\s+[가-힣]+(?:시|구|군)\s+[가-힣0-9\s\-]+)/
+                                /([가-힣]+(?:시|도)\\s+[가-힣]+(?:시|구|군)\\s+[가-힣0-9\\s\\-]+)/
                             ];
                             const bodyText = document.body.innerText;
                             for (const pattern of addrPatterns) {
@@ -258,9 +253,9 @@ async function scrapeProducts() {
                             // Method 3: Look for map link with coordinates
                             const mapLinks = Array.from(document.querySelectorAll('a[href*="map.naver"]'));
                             for (const link of mapLinks) {
-                                const href = (link as HTMLAnchorElement).href;
-                                const latMatch = href.match(/lat=([\d.]+)/);
-                                const lngMatch = href.match(/lng=([\d.]+)/);
+                                const href = (link).href;
+                                const latMatch = href.match(/lat=([\\d.]+)/);
+                                const lngMatch = href.match(/lng=([\\d.]+)/);
                                 if (latMatch && lngMatch) {
                                     return {
                                         address: '',
@@ -271,7 +266,7 @@ async function scrapeProducts() {
                             }
 
                             return null;
-                        });
+                        })()`);
 
                         if (result && (result.address || result.lat)) {
                             if (result.address) newItem.address = result.address;

@@ -915,6 +915,12 @@ async function scrapeMovies() {
                 ];
 
                 const TARGET_POSTERS: Record<string, string> = {
+                    "왕과 사는 남자": "https://www.kobis.or.kr/common/mast/movie/2026/02/0987da5282ff417ca513de6c66d2c288.jpg",
+                    "호퍼스": "https://www.kobis.or.kr/common/mast/movie/2026/03/bd950ad6493c45d2b7771dbebbe0696c.jpg",
+                    "삼악도": "https://www.kobis.or.kr/common/mast/movie/2026/02/37d6a89d527e4932a7f30cfa3466614a.jpg",
+                    "휴민트": "https://www.kobis.or.kr/common/mast/movie/2026/02/d2ed41a25d874f51881a78014403baec.jpg",
+                    "매드 댄스 오피스": "https://www.kobis.or.kr/common/mast/movie/2026/02/faab2f8d5d8b4ee685b88c89920f72f1.jpg",
+                    "초속 5센티미터": "https://www.kobis.or.kr/common/mast/movie/2026/01/667f737e50294996bf44797e272232de.jpg",
                     "김~치!": "https://www.kobis.or.kr/common/mast/movie/2026/03/08cf3dbe09c349c29e5d38ac6c805501.jpg",
                     "열여덟 청춘": "https://www.kobis.or.kr/common/mast/movie/2026/03/215a8ae8859341fc9c01de40e6ba7f61.jpg",
                     "장수탕 선녀님": "https://www.kobis.or.kr/common/mast/movie/2026/03/1f04f7eb91c343a899881cfa5a829027.jpg",

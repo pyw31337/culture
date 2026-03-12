@@ -6,7 +6,7 @@ import path from 'path';
 import { Performance } from '../src/types';
 import pLimit from 'p-limit';
 
-const DATA_FILE = path.join(process.cwd(), 'src/data/performances.json');
+const DATA_FILE = path.join(process.cwd(), 'src/data/tourism.json');
 const baseApiUrl = 'https://korean.visitkorea.or.kr';
 const baseImageURL = 'https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=';
 
@@ -15,7 +15,7 @@ const AREA_MAP: Record<string, string> = {
     '31': '경기', '32': '강원', '33': '충북', '34': '충남', '35': '경북', '36': '경남', '37': '전북', '38': '전남', '39': '제주'
 };
 
-const limit = pLimit(3); // Conservative limit to avoid overloading
+const limit = pLimit(3); 
 
 /**
  * Clean string by removing extra whitespace and newlines
@@ -33,31 +33,41 @@ async function fetchDetails(cotId: string) {
             },
             timeout: 10000
         });
-        const $ = cheerio.load(response.data);
+        const html = response.data;
+        const $ = cheerio.load(html);
 
-        // Intro: #detailGo > div:nth-child(2) > div > div.inr_wrap > div > p
-        let description = clean($('#detailGo > div:nth-child(2) > div > div.inr_wrap > div > p').text());
-        if (!description) {
-            description = clean($('.inr_wrap .char_cont p').first().text());
-        }
+        // 1. Improved Introduction Selectors
+        let description = clean($('.inr_wrap .inr p, .char_cont p, .detail_cont, #detailinfoview .inr_wrap p').first().text());
         
-        // Detailed info
+        // 2. Info List processing (ul.detail_info li)
         const infoList: Record<string, string> = {};
-        $('.detail_info li').each((_, el) => {
+        $('.detail_info li, .detail_info_list li').each((_, el) => {
             const label = $(el).find('strong').text().trim().replace(':', '');
-            const value = $(el).find('span').text().trim();
+            // For values, favor span but fall back to direct text concatenation
+            const value = $(el).find('span').text().trim() || $(el).text().replace(label, '').replace(':', '').trim();
             if (label && value) infoList[label] = value;
         });
 
-        const contact = infoList['문의 및 안내'] || infoList['전화번호'] || '';
-        const price = infoList['이용요금'] || infoList['입장료'] || '';
-        const time = infoList['이용시간'] || '';
+        // 3. Robust field mapping
+        const contact = infoList['문의 및 안내'] || infoList['전화번호'] || infoList['문의'] || '';
+        const price = infoList['이용요금'] || infoList['입장료'] || infoList['관람료'] || '';
+        const time = infoList['이용시간'] || infoList['운영시간'] || '';
+        const address = infoList['주소'] || '';
+        const holiday = infoList['휴일'] || infoList['쉬는날'] || '';
+
+        // Case for missing data via Cheerio -> Usually means JS-only rendering
+        if (!description && !contact && !time) {
+            console.log(`[DEBUG] No details for ${cotId} via Cheerio. Trying Puppeteer fallback...`);
+            return await fetchDetailsWithPuppeteer(url);
+        }
 
         return {
             description,
             contact,
             price,
-            time
+            time,
+            address,
+            holiday
         };
     } catch (error: any) {
         console.error(`Error fetching details for ${cotId}:`, error.message);
@@ -65,7 +75,76 @@ async function fetchDetails(cotId: string) {
     }
 }
 
-async function scrapeVisitKoreaPlaces(maxPages = 10) {
+// Global browser instance for detail fetching (reusable)
+let _browser: any = null;
+
+async function fetchDetailsWithPuppeteer(url: string) {
+    const puppeteer = require('puppeteer-extra');
+    const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+    puppeteer.use(StealthPlugin());
+
+    if (!_browser) {
+        _browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
+    }
+
+    const page = await _browser.newPage();
+    // Shim for tsx/esbuild injected __name helper
+    await page.evaluateOnNewDocument(() => {
+        (window as any).__name = (f: any) => f;
+    });
+    try {
+        await page.setViewport({ width: 1280, height: 800 });
+        await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+        
+        // Wait for potential dynamic content
+        await page.waitForSelector('.inr_wrap', { timeout: 15000 }).catch(() => {});
+        
+        // Scroll slightly to trigger lazy loads
+        await page.evaluate(() => window.scrollBy(0, 1000));
+        await new Promise(r => setTimeout(r, 2000));
+
+        const data = await page.evaluate(() => {
+            // Description
+            const descEl = document.querySelector('.inr_wrap .inr p, .char_cont p, .detail_cont, #detailinfoview .inr_wrap p');
+            const description = descEl ? descEl.textContent?.replace(/\s+/g, ' ').trim() || '' : '';
+
+            // Info items
+            const info: Record<string, string> = {};
+            document.querySelectorAll('.detail_info li').forEach(li => {
+                const strong = li.querySelector('strong');
+                const label = (strong ? strong.textContent?.replace(/\s+/g, ' ').trim() : '')?.replace(':', '') || '';
+                const span = li.querySelector('span');
+                let value = span ? span.textContent?.replace(/\s+/g, ' ').trim() : '';
+                
+                if (!value && label) {
+                    value = li.textContent?.replace(label, '').replace(':', '').trim() || '';
+                }
+                if (label) info[label] = value || '';
+            });
+
+            return {
+                description,
+                contact: info['문의 및 안내'] || info['전화번호'] || info['문의'] || '',
+                price: info['이용요금'] || info['입장료'] || '',
+                time: info['이용시간'] || info['운영시간'] || '',
+                address: info['주소'] || '',
+                holiday: info['휴일'] || info['쉬는날'] || ''
+            };
+        });
+
+        return data;
+    } catch (e: any) {
+        console.warn(`[Puppeteer WARN] ${url}: ${e.message}`);
+        return null;
+    } finally {
+        await page.close();
+    }
+}
+
+async function scrapeVisitKoreaPlaces(maxPages = 25) {
     console.log(`Starting VisitKorea Expanded Scraper (Max Pages: ${maxPages})...`);
     const endpoint = `${baseApiUrl}/api/v2/hot-place/place/list`;
     const results: Performance[] = [];
@@ -99,7 +178,7 @@ async function scrapeVisitKoreaPlaces(maxPages = 10) {
                     const region = AREA_MAP[areaCode] || '전국';
                     
                     const perf: Performance = {
-                        id: `vk_place_${item.cotId}`,
+                        id: `visitkorea_${item.cotId}`,
                         title: item.title,
                         venue: item.title,
                         region: region,
@@ -117,6 +196,8 @@ async function scrapeVisitKoreaPlaces(maxPages = 10) {
                         price: details?.price || '무료',
                         performanceTime: details?.time || '',
                         contact: details?.contact || '',
+                        address: details?.address || item.detailDatabase?.addr1 || '',
+                        bookingNotice: details?.holiday ? `휴무: ${details.holiday}` : '',
                         source: 'VisitKorea',
                         lat: item.detailDatabase?.mapCoords?.latitude,
                         lng: item.detailDatabase?.mapCoords?.longitude
@@ -135,11 +216,17 @@ async function scrapeVisitKoreaPlaces(maxPages = 10) {
             break;
         }
     }
+
+    if (_browser) {
+        await _browser.close();
+        _browser = null;
+    }
+
     return results;
 }
 
 async function main() {
-    const results = await scrapeVisitKoreaPlaces(15); // Start with 15 pages (approx 225 items)
+    const results = await scrapeVisitKoreaPlaces(25); // Increased to 25 pages
     
     // Deduplicate
     const uniqueMap = new Map();
@@ -153,12 +240,12 @@ async function main() {
         existingData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
     }
 
-    // Replace VK place entries
-    const filteredData = existingData.filter(p => !p.id.startsWith('vk_place_'));
+    // Replace VK entries in existing tourism data
+    const filteredData = existingData.filter(p => !p.id.startsWith('visitkorea_'));
     const finalData = [...filteredData, ...uniqueResults];
 
     fs.writeFileSync(DATA_FILE, JSON.stringify(finalData, null, 2), 'utf-8');
-    console.log('Saved data to performances.json');
+    console.log(`Saved ${uniqueResults.length} unique VisitKorea items to tourism.json`);
 }
 
 main();

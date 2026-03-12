@@ -82,33 +82,64 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
     if (!item.link || !item.link.includes('mcst.go.kr')) return item;
 
     try {
-        const response = await axios.get(item.link, { timeout: 15000, maxRedirects: 3 });
+        const response = await axios.get(item.link, { 
+            timeout: 15000, 
+            maxRedirects: 3,
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            }
+        });
         const html = response.data;
         const $ = cheerio.load(html);
 
-        const isUseless = (s: string) => !s || s.trim() === '' || s.includes('해당정보') || s === '없음';
+        const isUseless = (s: string) => !s || s.trim() === '' || s.includes('해당정보') || s === '없음' || s === '010-0000-0000';
 
-        // Detail board processing (li with tit/data spans)
+        // 1. DL/DT/DD processing (Modern MCST Layout)
+        $('.board_detail dl dt, .view_info_list dl dt, .view_info dt, dl.board_detail dt, .view-detail dl dt').each((_, el) => {
+            const label = $(el).text().trim();
+            const value = $(el).next('dd').text().trim();
+            
+            if (isUseless(value)) return;
+
+            if (label.includes('시간')) {
+                item.time = value;
+            } else if (label.includes('요금') || label.includes('가격') || label.includes('관람료')) {
+                item.price = value;
+            } else if (label.includes('문의') || label.includes('연락처')) {
+                // Priority for '문의' labels
+                item.contact = value;
+            } else if (label.includes('전화') && !item.contact) {
+                item.contact = value;
+            } else if (label.includes('장소')) {
+                if (value.length > item.venue.length) item.venue = value;
+            } else if (label.includes('관람연령')) {
+                item.age = value;
+            } else if (label.includes('소요시간')) {
+                item.runtime = value;
+            } else if (label.includes('등   급')) {
+                item.ageRating = value;
+            }
+        });
+
+        // 2. Board detail processing (li with tit/data spans - Fallback)
         $('.board_detail li, .view_info_list li').each((_, el) => {
             const label = $(el).find('.tit').text().trim();
             const value = $(el).find('.data').text().trim();
             
             if (isUseless(value)) return;
 
-            if (label.includes('시간')) {
+            if (label.includes('시간') && !item.time) {
                 item.time = value;
-            } else if (label.includes('요금') || label.includes('가격')) {
+            } else if ((label.includes('요금') || label.includes('가격')) && !item.price) {
                 item.price = value;
-            } else if (label.includes('문의') || label.includes('연락처')) {
+            } else if (label.includes('문의') && !item.contact) {
                 item.contact = value;
             } else if (label.includes('주최') || label.includes('주관')) {
                 item.host = value;
             } else if (label.includes('후원') || label.includes('협찬')) {
                 item.sponsor = value;
-            } else if (label.includes('관람연령')) {
+            } else if (label.includes('관람연령') && !item.age) {
                 item.age = value;
-            } else if (label.includes('소요시간')) {
-                item.runtime = value;
             } else if (label.includes('출연진')) {
                 item.cast = value.split(',').map(s => s.trim()).filter(Boolean);
             } else if (label.includes('제작진')) {
@@ -116,25 +147,19 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
             }
         });
 
-        // dt/dd processing for older or alternative layouts
-        $('dl dt, .view_info dt').each((_, el) => {
-            const label = $(el).text().trim();
-            const value = $(el).next('dd').text().trim();
-            if (isUseless(value)) return;
-
-            if (label.includes('시간') && !item.time) item.time = value;
-            if ((label.includes('요금') || label.includes('가격')) && !item.price) item.price = value;
-            if (label.includes('문의') && !item.contact) item.contact = value;
-        });
-
-        // Exhibition Introduction
-        const intro = $('#content > div.contentWrap > div.view-detail > div.view_con > p:nth-child(2)').text().trim();
-        if (intro && intro.length > 10) {
-            item.description = intro;
+        // 3. Exhibition Introduction (Broadened)
+        const introContainer = $('.view_con, #content .view-detail .view_con, .view_con_area');
+        if (introContainer.length > 0) {
+            const clone = introContainer.clone();
+            clone.find('script, style, .btn_area, h3.title02, h3.board_tit').remove();
+            const fullText = clone.text().trim();
+            if (fullText.length > 10) {
+                item.description = fullText.replace(/\s+/g, ' ').substring(0, 2000); 
+            }
         }
 
-        // Booking Link: mcst gives a goPage script tag generally or a href
-        const goLinkStr = $('a.btn_detail_blue').attr('href');
+        // 4. Booking Link
+        const goLinkStr = $('a.btn_detail_blue, a.btn_blue').attr('href');
         if (goLinkStr && goLinkStr.includes('goPage(')) {
             const match = goLinkStr.match(/goPage\('([^']+)'\)/);
             if (match && match[1]) {
@@ -143,10 +168,12 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
                     item.bookingLink = actualLink;
                 }
             }
+        } else if (goLinkStr && goLinkStr.startsWith('http')) {
+            item.bookingLink = goLinkStr;
         }
 
     } catch (e: any) {
-        // Ignore errors, return un-enriched item
+        console.warn(`[WARN] Failed to enrich details for ${item.link}: ${e.message}`);
     }
     return item;
 }
