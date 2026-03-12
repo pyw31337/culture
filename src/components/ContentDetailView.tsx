@@ -85,7 +85,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     };
 
     const containerClasses = mode === 'standalone'
-        ? "w-full max-w-[380px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
+        ? "w-full max-w-[380px] md:max-w-[1000px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
         : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-white/20 holo-effect";
 
     return (
@@ -100,23 +100,22 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                 className={containerClasses}
             >
                 {/* Close Button UI - Moved to container level to stay fixed */}
-                {mode === 'modal' && (
-                    <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={handleClose}
-                        className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors shadow-xl"
-                    >
-                        <X className="w-6 h-6" />
-                    </motion.button>
-                )}
+                {/* Close Button UI - Stay fixed in top-right */}
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={handleClose}
+                    className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors shadow-xl"
+                >
+                    <X className="w-6 h-6" />
+                </motion.button>
 
-                <div className={`overflow-y-auto lg:overflow-hidden overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] lg:max-h-none md:max-h-none'} scrollbar-hide`}>
-                    <div className={mode === 'standalone' ? "flex flex-col" : "flex flex-col lg:flex-row lg:h-[85vh] lg:min-h-[600px]"}>
+                <div className={`overflow-y-auto md:overflow-hidden overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] lg:max-h-none md:max-h-none'} scrollbar-hide`}>
+                    <div className="flex flex-col md:flex-row md:min-h-[600px] lg:h-[85vh]">
                     {/* Hero / Poster Section */}
                     {imgSrc && (
                         <div className={mode === 'standalone' 
-                            ? "relative w-full aspect-[3/4] shrink-0 group cursor-default overflow-hidden" 
+                            ? "relative w-full md:w-[42%] aspect-[3/4] md:aspect-auto shrink-0 group cursor-default overflow-hidden" 
                             : "relative h-60 sm:h-[450px] lg:h-full lg:w-[42%] w-full group cursor-default overflow-hidden shrink-0"}>
                             <motion.img
                                 initial={{ scale: 1.05 }}
@@ -181,7 +180,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                     {/* Main Content Area */}
                     <div className={mode === 'standalone' 
-                        ? "p-6 pt-5 space-y-5 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
+                        ? "p-6 md:p-8 lg:p-12 pt-14 md:pt-14 space-y-5 flex-1 md:overflow-y-auto md:h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
                         : "p-6 sm:p-8 lg:p-12 lg:pt-14 pt-4 sm:pt-6 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full scrollbar-hide"}>
                         
                         <div className="space-y-4">
