@@ -6,7 +6,7 @@ import { GENRES, GENRE_STYLES, SPORTS_GENRES } from '@/lib/constants';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate } from 'lucide-react';
+import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CheckCircle2, Circle } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
@@ -50,6 +50,34 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     // Default center: try user's GPS first, fall back to Seoul Station
     const SEOUL_STATION = useMemo(() => ({ lat: 37.554648, lng: 126.972559 }), []);
     const [geoCenter, setGeoCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
+    const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
+    const [selectedMapGenres, setSelectedMapGenres] = useState<string[]>([]);
+
+    // Sync selectedMapGenres with URL on initial load only? No, user said "비연동" (independent).
+    // But let's start with all if genre=all, or just the URL genre if specified.
+    useEffect(() => {
+        if (selectedGenre === 'all') {
+            setSelectedMapGenres([]); // Empty means "all" in our filter logic, or we can list all.
+        } else {
+            setSelectedMapGenres([selectedGenre]);
+        }
+    }, [selectedGenre]);
+
+    const toggleMapGenre = (genreId: string) => {
+        setSelectedMapGenres(prev => {
+            if (prev.includes(genreId)) {
+                return prev.filter(g => g !== genreId);
+            } else {
+                return [...prev, genreId];
+            }
+        });
+    };
+
+    const isGenreSelected = (genreId: string) => {
+        if (selectedMapGenres.length === 0) return true; // Default all when nothing selected
+        return selectedMapGenres.includes(genreId);
+    };
+
     const geoAttempted = useRef(false);
 
     // Request geolocation on mount (only if no explicit lat/lng in URL)
@@ -93,12 +121,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     // Filter performances based on URL params
     const performances = useMemo(() => {
         return filterPerformances(allPerformances, {
-            genre: selectedGenre,
+            genre: 'all', // We handle manual filtering below
             search: searchMode === 'keyword' ? searchText : '',
             searchMode,
             lat: centerLocation?.lat || undefined,
             lng: centerLocation?.lng || undefined,
             radius: 10
+        }).filter(p => {
+            if (selectedMapGenres.length === 0) return true;
+            return selectedMapGenres.includes(p.genre);
         });
     }, [allPerformances, selectedGenre, searchMode, searchText, centerLocation]);
 
@@ -567,6 +598,91 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
 
                 <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
+
+                {/* Left Controls: Category Filter */}
+                <div className="absolute top-4 left-4 z-[110] flex flex-col gap-2">
+                    <div className="relative">
+                        <button
+                            onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
+                            className={clsx(
+                                "flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md border border-gray-200 dark:border-gray-800 font-bold text-sm",
+                                isCategoryMenuOpen && "ring-2 ring-blue-500"
+                            )}
+                        >
+                            <Filter className="w-4 h-4" />
+                            카테고리
+                            {selectedMapGenres.length > 0 && (
+                                <span className="flex items-center justify-center w-5 h-5 bg-blue-600 text-white text-[10px] rounded-full">
+                                    {selectedMapGenres.length}
+                                </span>
+                            )}
+                        </button>
+
+                        {isCategoryMenuOpen && (
+                            <div className="absolute top-full left-0 mt-2 w-56 max-h-[70vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 p-2 animate-fade-in-down pointer-events-auto custom-scrollbar">
+                                <div className="space-y-1">
+                                    {GENRES.filter(g => g.id !== 'all').map(genre => {
+                                        const isSel = selectedMapGenres.includes(genre.id);
+                                        const style = (GENRE_STYLES as any)[genre.id] || (GENRE_STYLES as any)['all'];
+                                        return (
+                                            <button
+                                                key={genre.id}
+                                                onClick={() => toggleMapGenre(genre.id)}
+                                                className={clsx(
+                                                    "flex items-center justify-between w-full px-3 py-2.5 rounded-xl transition-all text-sm group",
+                                                    isSel ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold" : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                                                )}
+                                            >
+                                                <div className="flex items-center gap-3">
+                                                    <div className={clsx("transition-transform group-active:scale-90", isSel ? "text-blue-600" : "text-gray-300 dark:text-gray-600")}>
+                                                        {isSel ? <CheckCircle2 className="w-5 h-5" /> : <Circle className="w-5 h-5" />}
+                                                    </div>
+                                                    <span>{genre.label}</span>
+                                                </div>
+                                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: style.hex }} />
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                                {selectedMapGenres.length > 0 && (
+                                    <button
+                                        onClick={() => setSelectedMapGenres([])}
+                                        className="w-full mt-2 py-2 text-[11px] text-gray-500 hover:text-blue-600 font-bold border-t border-gray-50 dark:border-gray-800 transition-colors"
+                                    >
+                                        필터 초기화
+                                    </button>
+                                )}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Selected Tags Below Button */}
+                    {selectedMapGenres.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 max-w-[200px] animate-fade-in">
+                            {selectedMapGenres.map(gid => {
+                                const genre = GENRES.find(g => g.id === gid);
+                                const style = (GENRE_STYLES as any)[gid] || (GENRE_STYLES as any)['all'];
+                                return (
+                                    <div
+                                        key={gid}
+                                        className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-sm border border-gray-100 dark:border-gray-700 pointer-events-auto"
+                                    >
+                                        <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: style.hex }} />
+                                        <span className="text-[10px] font-bold text-gray-700 dark:text-gray-300">
+                                            {genre?.label || gid}
+                                        </span>
+                                        <button
+                                            onClick={() => toggleMapGenre(gid)}
+                                            className="ml-0.5 text-gray-400 hover:text-red-500"
+                                        >
+                                            <X className="w-2.5 h-2.5" />
+                                        </button>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                </div>
 
                 <div className="absolute inset-0 pointer-events-none z-[110]">
                     {selectedVenue && selectedVenueData && popupContainerRef && (

@@ -265,6 +265,25 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                 </div>
                                             )
                                         }
+                                        {/* Crew / Creators */}
+                                        {performance.crew && performance.crew.length > 0 && (
+                                            <div>
+                                                <h3 className="text-gray-400 text-xs font-black mb-2">창작자</h3>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {performance.crew.map((person: string, idx: number) => (
+                                                        <a
+                                                            key={idx}
+                                                            href={`https://search.naver.com/search.naver?query=${encodeURIComponent(person.trim())}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors text-sm text-gray-200"
+                                                        >
+                                                            {person.trim()}
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
 
                                         {/* Movie Info (Genre/Runtime/Rating) */}
                                         {
@@ -277,6 +296,16 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                 </div>
                                             )
                                         }
+                                        {/* Production Info (KOPIS) */}
+                                        {performance.production && (
+                                            <div>
+                                                <h3 className="text-gray-400 text-xs font-black mb-2">제작</h3>
+                                                <div className="text-sm text-gray-300 leading-relaxed bg-white/5 p-3 rounded-xl border border-white/5">
+                                                    {performance.production}
+                                                </div>
+                                            </div>
+                                        )}
+
                                         {/* Description (MomMom) */}
                                         {
                                             performance.description && (

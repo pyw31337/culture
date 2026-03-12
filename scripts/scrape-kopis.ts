@@ -155,8 +155,11 @@ async function scrapeKopis() {
                     }
                 }
 
-                // Incremental Skip: Only fetch details if new
-                if (existingIds.has(fullId)) {
+                // Incremental Skip: Only fetch details if new OR missing detailed data
+                const existing = existingItems.find(it => it.id === fullId);
+                const hasDetailedInfo = existing && existing.cast && existing.runtime && existing.age && (existing as any).production;
+                
+                if (existing && hasDetailedInfo) {
                     process.stdout.write(`s`);
                     continue;
                 }
@@ -170,11 +173,24 @@ async function scrapeKopis() {
                     const db = detailObj.dbs?.db;
 
                     if (db) {
-                        const isUseless = (s: string) => !s || s.trim() === '' || s.includes('해당정보') || s === '없음';
-                        const cast = db.prfcast ? db.prfcast.split(',').map((s: string) => s.trim()).filter((s: string) => !isUseless(s)) : undefined;
-                        const crew = db.prfcrew ? db.prfcrew.split(',').map((s: string) => s.trim()).filter((s: string) => !isUseless(s)) : undefined;
+                        const isUseless = (s: string) => !s || typeof s !== 'string' || s.trim() === '' || s.includes('해당정보') || s === '없음';
+                        const cast = db.prfcast && typeof db.prfcast === 'string' ? db.prfcast.split(',').map((s: string) => s.trim()).filter((s: string) => !isUseless(s)) : undefined;
+                        const crew = db.prfcrew && typeof db.prfcrew === 'string' ? db.prfcrew.split(',').map((s: string) => s.trim()).filter((s: string) => !isUseless(s)) : undefined;
 
-                        const perf: KopisPerformance = {
+                        // Combine production info
+                        const prods = [db.entrpsnm, db.entrpsnmP, db.entrpsnmA, db.entrpsnmH]
+                            .filter(s => !isUseless(s))
+                            .map(s => s.trim());
+                        const production = prods.length > 0 ? Array.from(new Set(prods)).join(', ') : undefined;
+
+                        const cleanPrice = (s: string) => {
+                            if (isUseless(s)) return '정보없음';
+                            // Normalize whitespaces and handle common KOPIS formatting quirks
+                            const normalized = s.replace(/\s+/g, ' ').replace(/\s*,\s*/g, ',');
+                            return normalized.split(/,(?!\d)/).map(p => p.trim()).join('\n');
+                        };
+
+                        const perf: KopisPerformance & { production?: string } = {
                             id: `kopis_${mt20id}`,
                             title: db.prfnm,
                             image: db.poster,
@@ -183,7 +199,7 @@ async function scrapeKopis() {
                             venueId: db.mt10id,
                             link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
                             genre: db.genrenm,
-                            price: isUseless(db.pcseguidance) ? '정보없음' : db.pcseguidance,
+                            price: cleanPrice(db.pcseguidance),
                             time: db.dtguidance,
                             region: db.area,
                             source: 'kopis',
@@ -191,9 +207,11 @@ async function scrapeKopis() {
                             cast: cast?.length ? cast : undefined,
                             crew: crew?.length ? crew : undefined,
                             runtime: !isUseless(db.prfruntime) ? db.prfruntime : undefined,
-                            age: !isUseless(db.prfage) ? db.prfage : undefined
+                            age: !isUseless(db.prfage) ? db.prfage : undefined,
+                            production: production
                         };
-                        allItems.push(perf);
+                        allItems = allItems.filter(it => it.id !== fullId);
+                        allItems.push(perf as KopisPerformance);
                         if (db.mt10id) uniqueVenueIds.add(db.mt10id);
                     }
                 } catch (e: any) {

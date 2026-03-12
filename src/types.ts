@@ -42,6 +42,7 @@ export type Performance = {
     address?: string;
     district?: string;
     source?: string;
+    production?: string;
     versusLink?: string;
     highlightsLink?: string;
 };
