@@ -46,4 +46,5 @@ export type Performance = {
     versusLink?: string;
     highlightsLink?: string;
     bracketRegion?: string;
+    performanceTime?: string;
 };

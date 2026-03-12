@@ -256,8 +256,16 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         });
                                     }
 
+                                    if (p.performanceTime) {
+                                        infoItems.push({ icon: Clock, label: '일정/시간', text: p.performanceTime, color: 'text-cyan-500' });
+                                    }
+
+                                    if (p.production) {
+                                        infoItems.push({ icon: Sparkles, label: '제작/기획', text: p.production, color: 'text-amber-500' });
+                                    }
+
                                     if (p.price) {
-                                        infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-amber-500' });
+                                        infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
                                     }
 
                                     return infoItems.map((item, idx) => (

@@ -269,6 +269,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let image = raw.image || raw.poster || raw.posterUrl || '';
     let price = raw.price || raw.cost || '';
     let date = raw.date || '';
+    let performanceTime = raw.time || raw.performanceTime || '';
     let region = raw.region || '';
     let genre = (raw.genre as Genre) || 'activity';
     
@@ -285,6 +286,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let crew = raw.crew;
     let runningTime = raw.runtime || raw.runningTime;
     let age = raw.age || raw.rating;
+    let production = raw.production || '';
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -385,9 +387,11 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         price,
         cast,
         crew,
-        runningTime,
-        age,
-        bracketRegion
+        age: age || '',
+        ageRating: age || '',
+        bracketRegion,
+        performanceTime,
+        production
     } as Performance;
 }
 
