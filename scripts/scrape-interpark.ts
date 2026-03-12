@@ -448,7 +448,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                             });
 
                             if (priceParts.length > 0) {
-                                price = priceParts.join(', ');
+                                price = priceParts.join('\n');
                             }
 
                             // Still try to get single best price/discount for metadata fields
