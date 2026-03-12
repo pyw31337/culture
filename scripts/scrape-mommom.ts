@@ -235,9 +235,13 @@ async function scrapeMomMom() {
         bar.start(listItems.length, 0);
 
         // Batch processing to respect resources
-        const CHUNK_SIZE = 10;
+        const CHUNK_SIZE = 3;
         for (let i = 0; i < listItems.length; i += CHUNK_SIZE) {
             const chunk = listItems.slice(i, i + CHUNK_SIZE);
+            if (i > 0) {
+                console.log(`Waiting 1s before next chunk...`);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
             const promises = chunk.map(async (item) => {
                 // Filter existing items based on criteria:
                 const existing = existingData[item.link];

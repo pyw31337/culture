@@ -263,7 +263,7 @@ async function scrapeUmClass() {
     if (todo.length > 0) {
         const progressBar = new ProgressBar(todo.length);
         let processedCount = 0;
-        const CONCURRENCY = 5;
+        const CONCURRENCY = 3;
 
         // Trap SIGINT
         process.on('SIGINT', () => {

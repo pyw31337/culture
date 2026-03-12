@@ -371,7 +371,7 @@ async function fetchJWDetail(page: any, url: string) {
     console.log(`Merged Total: ${finalItems.length} items (Existing: ${existingData.length}, Valid New: ${Object.values(aggregated).length}).`);
 
     // 3. Enrichment Loop (Concurrent)
-    const limit = pLimit(5); // 5 concurrent pages
+    const limit = pLimit(3); // 3 concurrent pages
     const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     progressBar.start(finalItems.length, 0);
 
