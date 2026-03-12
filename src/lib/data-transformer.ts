@@ -271,6 +271,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let date = raw.date || '';
     let region = raw.region || '';
     let genre = (raw.genre as Genre) || 'activity';
+    
+    // Extract bracketed region [창원], [제주] etc.
+    const titleMatch = title.match(/\[([가-힣]+)\]/);
+    const venueMatch = rawVenue.match(/\[([가-힣]+)\]/);
+    const bracketRegion = titleMatch ? titleMatch[1] : (venueMatch ? venueMatch[1] : undefined);
+
     let venue = normalizeVenueName(rawVenue, raw.homeTeam, genre);
     if (!venue) venue = rawVenue;
 
@@ -380,7 +386,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         cast,
         crew,
         runningTime,
-        age
+        age,
+        bracketRegion
     } as Performance;
 }
 

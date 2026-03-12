@@ -167,7 +167,27 @@ export function getAllPerformances() {
         // Only allow 'movie' to bypass location check.
         // Everything else MUST have a valid geolocation to be displayed.
         if (p.genre !== 'movie') {
-            const v = venues[p.venue];
+            let v = venues[p.venue];
+
+            // Disambiguation for regional tags [창원], [제주] etc.
+            if (p.bracketRegion) {
+                const bRegion = p.bracketRegion;
+                // If current venue is missing or address doesn't match the bracket region, search for a better one
+                if (!v || (v.address && !v.address.includes(bRegion))) {
+                    const venueKeys = Object.keys(venues);
+                    const cleanName = p.venue.replace(/홀$|센터$|관$|장$/, '').trim();
+                    // Search for a venue that matches both the name and the bracketed region
+                    const bestMatchKey = venueKeys.find(k => k.includes(p.venue) && k.includes(bRegion)) ||
+                                       venueKeys.find(k => k.includes(cleanName) && k.includes(bRegion)) ||
+                                       venueKeys.find(k => k.includes(p.venue) && (venues[k] as any).address.includes(bRegion)) ||
+                                       venueKeys.find(k => k.includes(cleanName) && (venues[k] as any).address.includes(bRegion)) ||
+                                       venueKeys.find(k => (venues[k] as any).address.includes(p.venue) && (venues[k] as any).address.includes(bRegion));
+                    
+                    if (bestMatchKey) {
+                        v = venues[bestMatchKey];
+                    }
+                }
+            }
 
             // 1. Prefer inherent geodata if available (New: Fix for MomMom/Museum)
             const parseCoord = (val: any) => {

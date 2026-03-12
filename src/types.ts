@@ -45,4 +45,5 @@ export type Performance = {
     production?: string;
     versusLink?: string;
     highlightsLink?: string;
+    bracketRegion?: string;
 };
