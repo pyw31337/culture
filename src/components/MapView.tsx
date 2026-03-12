@@ -116,7 +116,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             if (selectedMapGenre === 'all') return true;
             return p.genre === selectedMapGenre;
         });
-    }, [allPerformances, selectedGenre, searchMode, searchText, centerLocation]);
+    }, [allPerformances, selectedGenre, searchMode, searchText, centerLocation, selectedMapGenre]);
 
     // === Map State ===
     const mapRef = useRef<HTMLDivElement>(null);
