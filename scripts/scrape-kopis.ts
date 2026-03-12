@@ -185,18 +185,14 @@ async function scrapeKopis() {
 
                         const cleanPrice = (s: string) => {
                             if (isUseless(s)) return '정보없음';
-                            // Aggressively strip everything that isn't a standard character we expect
-                            const stripped = s.replace(/[^0-9,가-힣석원A-Z\s\(\)\.]/g, ' ');
-                            const res = stripped.replace(/\s+/g, ' ').replace(/\s*,\s*/g, ',');
-                            let finalized = '';
-                            for (let i = 0; i < res.length; i++) {
-                                if (res[i] === ',' && i + 1 < res.length && !/[0-9]/.test(res[i + 1])) {
-                                    finalized += '\n';
-                                } else {
-                                    finalized += res[i];
-                                }
-                            }
-                            return finalized.trim();
+                            // 1. Normalize all comma-like characters and whitespaces BEFORE stripping
+                            let res = s.replace(/[\uff0c\u3001]/g, ',')
+                                       .replace(/[\s\u00A0\t\n\r]+/g, ' ')
+                                       .replace(/\s*,\s*/g, ',');
+                            // 2. Strip only truly illegal characters
+                            res = res.replace(/[^0-9,가-힣석원A-Z\s\(\)\.\-]/g, '');
+                            // 3. Final split/join logic to ensure newlines between price categories
+                            return res.split(/,(?!\d)/).map(p => p.trim()).filter(p => p).join('\n');
                         };
 
                         const perf: KopisPerformance & { production?: string } = {
