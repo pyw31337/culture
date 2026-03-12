@@ -68,11 +68,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     // Independent search center for the map - triggers marker reloading
     const [mapSearchCenter, setMapSearchCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
 
-    // Weather State
-    const [isWeatherOpen, setIsWeatherOpen] = useState(false);
     const [weatherData, setWeatherData] = useState<DailyWeather[]>([]);
-    const [weatherAddress, setWeatherAddress] = useState<string>('');
     const [isWeatherLoading, setIsWeatherLoading] = useState(false);
+    const [isWeatherOpen, setIsWeatherOpen] = useState(false);
+    const [weatherAddress, setWeatherAddress] = useState<string>('');
+    const [showExtendedForecast, setShowExtendedForecast] = useState(false);
 
     // Sync selectedMapGenre with URL on initial load only? No, user said "비연동" (independent).
     // But let's start with all if genre=all, or just the URL genre if specified.
@@ -607,6 +607,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         setIsWeatherLoading(true);
         setIsWeatherOpen(true);
+        setShowExtendedForecast(false);
 
         try {
             // 1. Get Address using Kakao Geocoder
@@ -618,8 +619,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 }
             });
 
-            // 2. Fetch Weather from Open-Meteo
-            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_probability_max,rain_sum,snowfall_sum&timezone=auto`);
+            // 2. Fetch Weather from Open-Meteo (14 days)
+            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_probability_max,rain_sum,snowfall_sum&timezone=auto&forecast_days=14`);
             const data = await response.json();
 
             if (data.daily) {
@@ -790,8 +791,12 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     <span className="text-sm text-gray-500">날씨 데이터를 가져오고 있습니다...</span>
                                 </div>
                             ) : (
-                                <div className="space-y-3 max-h-[40vh] overflow-y-auto custom-scrollbar pr-1">
-                                    {weatherData.map((day, idx) => {
+                                <>
+                                    <div className={clsx(
+                                        "space-y-3 custom-scrollbar pr-1 transition-all duration-500 ease-in-out",
+                                        showExtendedForecast ? "max-h-[520px] overflow-y-auto" : "max-h-none overflow-visible"
+                                    )}>
+                                        {weatherData.slice(0, showExtendedForecast ? 14 : 7).map((day, idx) => {
                                         const d = new Date(day.date);
                                         const dayName = d.toLocaleDateString('ko-KR', { weekday: 'short' });
                                         const dateStr = d.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
@@ -842,7 +847,18 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                             </div>
                                         );
                                     })}
-                                </div>
+                                    </div>
+
+                                    {!showExtendedForecast && weatherData.length > 7 && (
+                                        <button
+                                            onClick={() => setShowExtendedForecast(true)}
+                                            className="mt-4 w-full py-3 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-bold rounded-2xl border border-gray-100 dark:border-gray-800 transition-all flex items-center justify-center gap-2 group"
+                                        >
+                                            <Calendar className="w-4 h-4 transition-transform group-hover:scale-110" />
+                                            날씨 더보기 (다음 일주일)
+                                        </button>
+                                    )}
+                                </>
                             )}
                         </div>
                     </div>
