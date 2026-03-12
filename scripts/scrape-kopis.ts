@@ -157,9 +157,10 @@ async function scrapeKopis() {
 
                 // Incremental Skip: Only fetch details if new OR missing detailed data
                 const existing = existingItems.find(it => it.id === fullId);
-                const hasDetailedInfo = existing && existing.cast && existing.runtime && existing.age && (existing as any).production;
+                const hasDetailedInfo = existing && existing.cast && existing.runtime && existing.ageRating && (existing as any).production;
+                const isPriceBroken = existing?.price && /\d\r?\n\d/.test(existing.price); // Catch cases like 180\n000
                 
-                if (existing && hasDetailedInfo) {
+                if (existing && hasDetailedInfo && !isPriceBroken) {
                     process.stdout.write(`s`);
                     continue;
                 }
