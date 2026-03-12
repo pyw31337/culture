@@ -47,4 +47,9 @@ export type Performance = {
     highlightsLink?: string;
     bracketRegion?: string;
     performanceTime?: string;
+    host?: string;
+    organizer?: string;
+    planner?: string;
+    producer?: string;
+    sponsor?: string;
 };

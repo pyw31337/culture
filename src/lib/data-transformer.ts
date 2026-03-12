@@ -287,6 +287,11 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let runningTime = raw.runtime || raw.runningTime;
     let age = raw.age || raw.rating;
     let production = raw.production || '';
+    let host = raw.host || '';
+    let organizer = raw.organizer || '';
+    let planner = raw.planner || '';
+    let producer = raw.producer || '';
+    let sponsor = raw.sponsor || '';
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -391,7 +396,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         ageRating: age || '',
         bracketRegion,
         performanceTime,
-        production
+        production,
+        host,
+        organizer,
+        planner,
+        producer,
+        sponsor
     } as Performance;
 }
 

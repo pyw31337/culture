@@ -260,8 +260,44 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Clock, label: '일정/시간', text: p.performanceTime, color: 'text-cyan-500' });
                                     }
 
-                                    if (p.production) {
-                                        infoItems.push({ icon: Sparkles, label: '제작/기획', text: p.production, color: 'text-amber-500' });
+                                    // Advanced KOPIS metadata with deduplication
+                                    const dedupeJoin = (items: { val?: string, label: string }[]) => {
+                                        const valid = items.filter(i => i.val && i.val.trim() !== '');
+                                        if (valid.length === 0) return '';
+                                        
+                                        // Group by identical values
+                                        const groups: Record<string, string[]> = {};
+                                        valid.forEach(i => {
+                                            if (!groups[i.val!]) groups[i.val!] = [];
+                                            groups[i.val!].push(i.label);
+                                        });
+
+                                        return Object.entries(groups).map(([val, labels]) => 
+                                            `${val}(${labels.join('/')})`
+                                        ).join(', ');
+                                    };
+
+                                    const hostOrg = dedupeJoin([
+                                        { val: p.host, label: '주최' },
+                                        { val: p.organizer, label: '주관' }
+                                    ]);
+                                    if (hostOrg) {
+                                        infoItems.push({ icon: Users, label: '주최/주관', text: hostOrg, color: 'text-indigo-400' });
+                                    }
+
+                                    const planProd = dedupeJoin([
+                                        { val: p.planner, label: '기획' },
+                                        { val: p.producer, label: '제작' }
+                                    ]);
+                                    
+                                    if (planProd) {
+                                        infoItems.push({ icon: Sparkles, label: '기획/제작', text: planProd, color: 'text-amber-400' });
+                                    } else if (p.production && !hostOrg.includes(p.production)) {
+                                        infoItems.push({ icon: Sparkles, label: '제작/기획', text: p.production, color: 'text-amber-400' });
+                                    }
+
+                                    if (p.sponsor) {
+                                        infoItems.push({ icon: Star, label: '후원', text: p.sponsor, color: 'text-yellow-400' });
                                     }
 
                                     if (p.price) {

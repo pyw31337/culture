@@ -35,6 +35,12 @@ interface KopisPerformance {
     crew?: string[];
     runtime?: string;
     age?: string;
+    production?: string;
+    host?: string;
+    organizer?: string;
+    planner?: string;
+    producer?: string;
+    sponsor?: string;
 }
 
 interface VenueInfo {
@@ -157,7 +163,7 @@ async function scrapeKopis() {
 
                 // Incremental Skip: Only fetch details if new OR missing detailed data
                 const existing = existingItems.find(it => it.id === fullId);
-                const hasDetailedInfo = existing && existing.cast && existing.runtime && existing.age && (existing as any).production;
+                const hasDetailedInfo = existing && existing.cast && existing.runtime && existing.age && (existing as any).host;
                 const isPriceBroken = existing?.price && /\d\r?\n\d/.test(existing.price); // Catch cases like 180\n000
                 
                 if (existing && hasDetailedInfo && !isPriceBroken) {
@@ -214,7 +220,12 @@ async function scrapeKopis() {
                             crew: crew?.length ? crew : undefined,
                             runtime: !isUseless(db.prfruntime) ? db.prfruntime : undefined,
                             age: !isUseless(db.prfage) ? db.prfage : undefined,
-                            production: production
+                            production: production,
+                            host: !isUseless(db.entrpsnmA) ? db.entrpsnmA.trim() : undefined,
+                            organizer: !isUseless(db.entrpsnmH) ? db.entrpsnmH.trim() : undefined,
+                            planner: !isUseless(db.entrpsnmP) ? db.entrpsnmP.trim() : undefined,
+                            producer: !isUseless(db.entrpsnm) ? db.entrpsnm.trim() : undefined,
+                            sponsor: !isUseless(db.entrpsnmS) ? db.entrpsnmS.trim() : undefined,
                         };
                         allItems = allItems.filter(it => it.id !== fullId);
                         allItems.push(perf as KopisPerformance);
