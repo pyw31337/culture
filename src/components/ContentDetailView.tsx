@@ -2,7 +2,7 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation } from 'lucide-react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -186,15 +186,16 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                         <div className="space-y-4">
                             <motion.div variants={itemVariants} className="space-y-3">
                                 {/* Genre badge next to title */}
-                                <div className="flex items-center gap-2">
+                                {/* Category badge above title */}
+                                <div className="flex flex-col gap-2.5">
                                      <motion.span
                                         initial={{ scale: 0.8, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
-                                        className={`px-3 py-1 rounded-md text-[10px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 shrink-0`}
+                                        className={`px-3 py-1 rounded-md text-[10px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 w-fit`}
                                     >
                                         {genreLabel}
                                     </motion.span>
-                                    <h2 className="text-xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
+                                    <h2 className="text-[22px] md:text-2xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
                                         {p.title}
                                     </h2>
                                 </div>
@@ -300,42 +301,63 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Star, label: '후원', text: p.sponsor, color: 'text-yellow-400' });
                                     }
 
+                                    if (p.contact) {
+                                        infoItems.push({ icon: Phone, label: '문의', text: p.contact, color: 'text-emerald-400' });
+                                    }
+
                                     if (p.price) {
                                         infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
                                     }
 
                                     return infoItems.map((item, idx) => (
-                                        <div key={idx} className="flex items-center justify-between gap-4 py-1.5 border-b border-gray-50 dark:border-white/5 last:border-0">
-                                            <div className="flex items-center gap-3 min-w-0 flex-1">
-                                                <div className="flex items-center gap-1.5 w-14 shrink-0">
+                                        <div key={idx} className="flex items-start justify-between gap-4 py-2 border-b border-gray-50 dark:border-white/5 last:border-0">
+                                            <div className="flex items-start gap-3 min-w-0 flex-1">
+                                                <div className="flex items-center gap-1.5 w-14 shrink-0 mt-[2px]">
                                                     <item.icon className={`w-4 h-4 ${item.color} opacity-80`} />
                                                     <span className="text-[12px] font-bold text-gray-500 dark:text-gray-400">{item.label}</span>
                                                 </div>
-                                                {item.isLink ? (
-                                                    <button 
-                                                        onClick={item.onClick!}
-                                                        className="text-[13.5px] text-emerald-600 dark:text-emerald-400 font-black truncate leading-none hover:underline flex items-center gap-1.5"
-                                                    >
-                                                        <span className="truncate">{item.text}</span>
-                                                        <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
-                                                    </button>
-                                                ) : (
-                                                    <p className="text-[13.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap">{item.text}</p>
-                                                )}
+                                                <div className="flex flex-col gap-1 flex-1 min-w-0">
+                                                    {item.isLink ? (
+                                                        <button 
+                                                            onClick={item.onClick!}
+                                                            className="text-[14.5px] text-emerald-600 dark:text-emerald-400 font-extrabold text-left hover:underline flex items-center gap-1.5"
+                                                        >
+                                                            <span className="break-all">{item.text}</span>
+                                                            <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
+                                                        </button>
+                                                    ) : (
+                                                        <p className="text-[14.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap">{item.text}</p>
+                                                    )}
+                                                    {item.rightText && (
+                                                        <span className="text-[12px] font-bold text-gray-400 dark:text-gray-500">
+                                                            {item.rightText}
+                                                        </span>
+                                                    )}
+                                                </div>
                                             </div>
-                                            {item.rightText && (
-                                                <span className="text-[12px] font-bold text-gray-400 dark:text-gray-500 shrink-0">{item.rightText}</span>
-                                            )}
                                         </div>
                                     ));
                                 })()}
                             </motion.div>
 
-                            {/* Description */}
-                              {p.description && mode === 'standalone' && (
+                            {/* Description - Short version for all modes */}
+                            {p.description && (
                                 <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
                                     "{p.description}"
                                 </motion.p>
+                            )}
+
+                            {/* Long Description for Standalone or if quite long */}
+                            {p.description && p.description.length > 150 && (
+                                <motion.div variants={itemVariants} className="mt-8 bg-black/5 dark:bg-white/5 rounded-2xl p-6 border border-black/5 dark:border-white/10">
+                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                                        <Sparkles className="w-5 h-5 text-amber-500" />
+                                        {p.genre === 'exhibition' ? '전시 소개' : p.genre === 'tourism' ? '여행지 정보' : '상세 설명'}
+                                    </h3>
+                                    <p className="text-gray-600 dark:text-gray-400 text-[14.5px] leading-relaxed whitespace-pre-line">
+                                        {p.description}
+                                    </p>
+                                </motion.div>
                             )}
 
                              {hasCast && mode === 'standalone' && (

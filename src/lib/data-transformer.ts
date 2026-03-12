@@ -302,12 +302,17 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     } else if (source === 'movie') {
         genre = 'movie';
     } else if (source === 'kopis' && raw.genre) {
-        // KOPIS specific normalization if needed
-        if (raw.genre === '뮤지컬') genre = 'musical';
-        else if (raw.genre === '연극') genre = 'play';
-        else if (raw.genre.includes('클래식') || raw.genre.includes('오케스트라')) genre = 'classic_tradition';
-        else if (raw.genre.includes('전시') || raw.genre.includes('미술')) genre = 'exhibition';
-        else if (raw.genre.includes('축제')) genre = 'festival';
+        // KOPIS specific normalization
+        const kg = raw.genre;
+        if (kg === '뮤지컬') genre = 'musical';
+        else if (kg === '연극') genre = 'play';
+        else if (kg === '대중음악' || kg === '대중무용') genre = 'concert';
+        else if (kg.includes('클래식') || kg.includes('서양음악') || kg.includes('한국음악') || kg.includes('국악') || kg.includes('무용')) {
+            genre = 'classic_tradition';
+        }
+        else if (kg.includes('전시') || kg.includes('미술')) genre = 'exhibition';
+        else if (kg.includes('서커스') || kg.includes('마술') || kg === '복합') genre = 'activity';
+        else if (kg.includes('축제')) genre = 'festival';
     }
 
     // 2. Genre Refinement Logic

@@ -52,4 +52,5 @@ export type Performance = {
     planner?: string;
     producer?: string;
     sponsor?: string;
+    contact?: string;
 };

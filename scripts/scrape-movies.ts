@@ -920,7 +920,11 @@ async function scrapeMovies() {
                     "장수탕 선녀님": "https://www.kobis.or.kr/common/mast/movie/2026/03/1f04f7eb91c343a899881cfa5a829027.jpg",
                     "내 이름은": "https://www.kobis.or.kr/common/mast/movie/2026/01/68ed6cf505d24ee68f4d4f0a44ee0457.jpg",
                     "굿윌 헌팅": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg",
-                    "신의악단": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg"
+                    "신의악단": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
+                    "F1 더 무비": "https://www.kobis.or.kr/common/mast/movie/2025/06/0f17cb591080467199ecda80d7113f6a.jpg",
+                    "오만과 편견": "https://www.kobis.or.kr/common/mast/movie/2026/02/b407380977ea4452b093821831987026.jpg",
+                    "아르코": "https://www.kobis.or.kr/common/mast/movie/2026/02/105771cca46f4064a4be49148e7c1184.jpg",
+                    "너자 2": "https://www.kobis.or.kr/common/mast/movie/2026/01/7b01b099bb15481687ce3bbef1692bc4.jpg"
                 };
 
                 let selectedPoster = '';

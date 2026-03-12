@@ -318,38 +318,43 @@ export default function PerformanceList({
                     setActiveSearchSource={setActiveSearchSource} setIsDropdownOpen={setIsDropdownOpen} handleSearch={() => { }}
                     handleSelectResult={(res: any) => {
                         setSearchText(res.name);
-                        let loc = null;
-                        if (searchMode === 'location' && res.lat && res.lng) {
-                            loc = { lat: res.lat, lng: res.lng, name: res.name };
-                            setSearchLocation(loc);
-                        }
+                        
+                        // Reset all filters for a clean keyword search
+                        setSelectedGenre('all');
+                        setSelectedRegion('all');
+                        setSelectedDistrict('all');
+                        setSelectedVenue('all');
+                        setSearchLocation(null);
+                        setSearchMode('keyword');
+
                         setIsDropdownOpen(false);
-                        if (selectedGenre !== 'all') {
-                            setSelectedGenre('all');
-                            syncSearchToUrl(res.name, searchMode, loc, 'all');
-                        } else {
-                            syncSearchToUrl(res.name, searchMode, loc);
-                        }
+                        syncSearchToUrl(res.name, 'keyword', null, 'all');
                     }}
                     handleKeyDown={(e: React.KeyboardEvent) => {
                         if (e.key === 'Enter') {
-                            if (selectedGenre !== 'all') {
-                                setSelectedGenre('all');
-                                syncSearchToUrl(searchText, searchMode, searchLocation, 'all');
-                            } else {
-                                syncSearchToUrl(searchText, searchMode, searchLocation);
-                            }
+                            // Reset all filters for a clean keyword search
+                            setSelectedGenre('all');
+                            setSelectedRegion('all');
+                            setSelectedDistrict('all');
+                            setSelectedVenue('all');
+                            setSearchLocation(null);
+                            setSearchMode('keyword');
+
+                            syncSearchToUrl(searchText, 'keyword', null, 'all');
                         }
                     }} handleCurrentLocationClick={() => { setUserLocation(null); setSearchLocation(null); }}
                     availableVenues={availableVenues} districts={districts} recentKeywords={savedKeywords}
                     onKeywordSelect={(k) => {
                         setSearchText(k);
-                        if (selectedGenre !== 'all') {
-                            setSelectedGenre('all');
-                            syncSearchToUrl(k, searchMode, searchLocation, 'all');
-                        } else {
-                            syncSearchToUrl(k, searchMode, searchLocation);
-                        }
+                        // Reset all filters for a clean keyword search
+                        setSelectedGenre('all');
+                        setSelectedRegion('all');
+                        setSelectedDistrict('all');
+                        setSelectedVenue('all');
+                        setSearchLocation(null);
+                        setSearchMode('keyword');
+
+                        syncSearchToUrl(k, 'keyword', null, 'all');
                     }} onRemoveRecent={removeKeyword} onClearRecent={() => setSavedKeywords([])}
                     searchMode={searchMode} onSearchModeChange={(m) => {
                         setSearchMode(m);

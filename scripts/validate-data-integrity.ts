@@ -100,7 +100,7 @@ async function validate() {
                 }
 
                 // 날짜 포맷 검사 (간단한 체크)
-                if (item.date && item.date !== '상시' && !item.date.includes('.') && !item.date.includes('-')) {
+                if (item.date && item.date !== '상시' && item.date !== 'OPEN RUN' && !item.date.includes('.') && !item.date.includes('-')) {
                     invalidDateCount++;
                 }
             });

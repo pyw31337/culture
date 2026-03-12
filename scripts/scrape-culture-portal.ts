@@ -88,54 +88,50 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
 
         const isUseless = (s: string) => !s || s.trim() === '' || s.includes('해당정보') || s === '없음';
 
-        // New logic for dt/dd pairs - broadening selector for resilience
-        $('dl dt, .view_info dt, .view_info_list dt').each((_, el) => {
-            const label = $(el).text().trim();
-            const value = $(el).next('dd').text().trim();
+        // Detail board processing (li with tit/data spans)
+        $('.board_detail li, .view_info_list li').each((_, el) => {
+            const label = $(el).find('.tit').text().trim();
+            const value = $(el).find('.data').text().trim();
             
-            if (isUseless(value)) return; // Skip if value is useless
+            if (isUseless(value)) return;
 
             if (label.includes('시간')) {
                 item.time = value;
-            } else if (label.includes('요금') || label.includes('정가')) {
+            } else if (label.includes('요금') || label.includes('가격')) {
                 item.price = value;
-            } else if (label.includes('문의')) {
+            } else if (label.includes('문의') || label.includes('연락처')) {
                 item.contact = value;
-            } else if (label.includes('분야')) {
-                item.genre = mapGenre(value);
+            } else if (label.includes('주최') || label.includes('주관')) {
+                item.host = value;
+            } else if (label.includes('후원') || label.includes('협찬')) {
+                item.sponsor = value;
+            } else if (label.includes('관람연령')) {
+                item.age = value;
+            } else if (label.includes('소요시간')) {
+                item.runtime = value;
+            } else if (label.includes('출연진')) {
+                item.cast = value.split(',').map(s => s.trim()).filter(Boolean);
+            } else if (label.includes('제작진')) {
+                item.crew = value.split(',').map(s => s.trim()).filter(Boolean);
             }
         });
 
-        // Existing logic for li elements, now focusing on fields not covered by dt/dd
-        $('.view_info_list li').each((_, el) => {
-            const text = $(el).text();
-            // Fields already covered by dt/dd: price, time, contact, genre
-            // Keep age, runtime, cast, crew
-            if (text.includes('관람연령')) {
-                const a = $(el).find('span.data').text().trim();
-                if (!isUseless(a)) item.age = a;
-            } else if (text.includes('관람소요시간')) {
-                const r = $(el).find('span.data').text().trim();
-                if (!isUseless(r)) item.runtime = r;
-            } else if (text.includes('출연진')) {
-                const c = $(el).find('span.data').text().trim();
-                if (!isUseless(c)) item.cast = c.split(',').map(s => s.trim()).filter(Boolean);
-            } else if (text.includes('제작진')) {
-                const cr = $(el).find('span.data').text().trim();
-                if (!isUseless(cr)) item.crew = cr.split(',').map(s => s.trim()).filter(Boolean);
-            } else if (text.includes('기타안내') || text.includes('시간')) {
-                const t = $(el).find('span.data').text().trim();
-                if (!isUseless(t)) item.time = t;
-            } else if (text.includes('문의')) {
-                const contact = $(el).find('span.data').text().trim();
-                if (!isUseless(contact)) item.contact = contact;
-            } else if (text.includes('분야')) {
-                const genreStr = $(el).find('span.data').text().trim();
-                if (!isUseless(genreStr)) {
-                    item.genre = mapGenre(genreStr);
-                }
-            }
+        // dt/dd processing for older or alternative layouts
+        $('dl dt, .view_info dt').each((_, el) => {
+            const label = $(el).text().trim();
+            const value = $(el).next('dd').text().trim();
+            if (isUseless(value)) return;
+
+            if (label.includes('시간') && !item.time) item.time = value;
+            if ((label.includes('요금') || label.includes('가격')) && !item.price) item.price = value;
+            if (label.includes('문의') && !item.contact) item.contact = value;
         });
+
+        // Exhibition Introduction
+        const intro = $('#content > div.contentWrap > div.view-detail > div.view_con > p:nth-child(2)').text().trim();
+        if (intro && intro.length > 10) {
+            item.description = intro;
+        }
 
         // Booking Link: mcst gives a goPage script tag generally or a href
         const goLinkStr = $('a.btn_detail_blue').attr('href');

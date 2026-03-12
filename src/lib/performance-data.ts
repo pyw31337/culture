@@ -28,6 +28,7 @@ import mommomProductData from '@/data/mommom-products.json';
 import museumData from '@/data/museum.json';
 // import musicalData from '@/data/musical.json';
 import kopisData from '@/data/kopis-performances.json';
+import tourismData from '@/data/tourism.json';
 import venueData from '@/data/venues.json';
 
 const venues = venueData as Record<string, { address: string; lat?: number | null; lng?: number | null }>;
@@ -116,11 +117,14 @@ export function getAllPerformances() {
         { data: mommomProductData, source: 'mommom-product' },
         { data: museumData, source: 'museum' },
         { data: kopisData, source: 'kopis' },
+        { data: tourismData, source: 'tourism' },
     ];
 
-    const allPerformances = allSources.flatMap(({ data, source }) =>
-        safeArray<any>(data).map(p => transformPerformance(p, source))
-    );
+    const allPerformances = allSources.flatMap(({ data, source }) => {
+        const rawItems = safeArray<any>(data);
+        console.log(`[DEBUG] Source: ${source}, Raw items: ${rawItems.length}`);
+        return rawItems.map(p => transformPerformance(p, source));
+    });
 
     // 3. Filter
     const now = new Date();
@@ -220,6 +224,13 @@ export function getAllPerformances() {
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
         return true;
     });
+
+    console.log(`[DEBUG] Total performances after filter: ${filtered.length}`);
+    const sourceCounts: Record<string, number> = {};
+    filtered.forEach(p => {
+        sourceCounts[p.source || 'unknown'] = (sourceCounts[p.source || 'unknown'] || 0) + 1;
+    });
+    console.log(`[DEBUG] Source breakdown after filter:`, sourceCounts);
 
     // 4. Deduplication & Stable ID Logic (Unified via Utility)
     const stablePerformances = processAndMergePerformances(filtered);

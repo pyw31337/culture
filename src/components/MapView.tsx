@@ -689,15 +689,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     </button>
                 </div>
 
-                {showSearchHereBtn && isMapReady && (
-                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-[100]">
-                        <button onClick={handleSearchHere}
-                            className="px-4 py-2 bg-blue-600 text-white rounded-full font-bold shadow-lg hover:bg-blue-700 transition flex items-center gap-2 text-sm animate-fade-in-up">
-                            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                            현 위치에서 검색
-                        </button>
-                    </div>
-                )}
+                {/* Search Here Button relocated to bottom for better mobile UX */}
 
 
 
@@ -762,29 +754,27 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 {/* Weather Popup */}
                 {isWeatherOpen && (
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[200] w-[90%] max-w-md bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 overflow-hidden animate-fade-in-up pointer-events-auto">
-                        <div className="p-5 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
-                            <div className="flex items-center gap-2">
-                                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-xl">
+                        <div className="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-start">
+                            <div className="flex gap-3 flex-1 pr-2">
+                                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-xl shrink-0 mt-0.5">
                                     <CloudSun className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                                 </div>
-                                <h3 className="font-extrabold text-gray-900 dark:text-white">주변 날씨 정보</h3>
+                                <div className="flex flex-col gap-0.5">
+                                    <h3 className="text-[15px] font-black text-gray-900 dark:text-white leading-tight">
+                                        <span className="text-blue-600 dark:text-blue-400">{weatherAddress || '위치 정보'}</span> 날씨 정보
+                                    </h3>
+                                    <div className="flex items-center gap-1.5 text-gray-400 dark:text-gray-500 text-[10px]">
+                                        <Navigation className="w-2.5 h-2.5" />
+                                        <span>현재 지도 중앙 위치</span>
+                                    </div>
+                                </div>
                             </div>
-                            <button onClick={() => setIsWeatherOpen(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition">
-                                <X className="w-5 h-5 text-gray-500" />
+                            <button onClick={() => setIsWeatherOpen(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0 -mt-1 -mr-1">
+                                <X className="w-5 h-5 text-gray-400" />
                             </button>
                         </div>
                         
-                        <div className="p-5">
-                            <div className="mb-6 px-1">
-                                <div className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 text-[10px] mb-1">
-                                    <Navigation className="w-3 h-3" />
-                                    <span>현재 지도 중앙 위치</span>
-                                </div>
-                                <div className="text-sm font-bold text-gray-800 dark:text-gray-200 line-clamp-2 leading-snug">
-                                    {weatherAddress || '위치 정보를 가져오는 중...'}
-                                </div>
-                            </div>
-
+                        <div className="p-3">
                             {isWeatherLoading ? (
                                 <div className="flex flex-col items-center py-10 gap-3">
                                     <RotateCw className="w-8 h-8 text-blue-500 animate-spin" />
@@ -793,41 +783,41 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             ) : (
                                 <>
                                     <div className={clsx(
-                                        "space-y-3 custom-scrollbar pr-1 transition-all duration-500 ease-in-out",
+                                        "space-y-2 custom-scrollbar pr-1 transition-all duration-500 ease-in-out",
                                         showExtendedForecast ? "max-h-[520px] overflow-y-auto" : "max-h-none overflow-visible"
                                     )}>
                                         {weatherData.slice(0, showExtendedForecast ? 14 : 7).map((day, idx) => {
                                         const d = new Date(day.date);
                                         const dayName = d.toLocaleDateString('ko-KR', { weekday: 'short' });
-                                        const dateStr = d.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
+                                        const dateStr = `${d.getMonth() + 1}.${d.getDate()}`;
                                         
                                         return (
                                             <div key={day.date} className={clsx(
-                                                "flex items-center justify-between p-3 rounded-2xl border transition-colors",
+                                                "flex items-center justify-between p-2.5 rounded-2xl border transition-colors",
                                                 idx === 0 ? "bg-blue-50/50 dark:bg-blue-900/20 border-blue-200/50 dark:border-blue-800/50" : "bg-gray-50/30 dark:bg-gray-800/20 border-transparent"
                                             )}>
-                                                <div className="w-16">
-                                                    <div className="text-xs font-bold text-gray-500 dark:text-gray-400">{idx === 0 ? '오늘' : dayName}</div>
-                                                    <div className="text-[10px] text-gray-400">{dateStr}</div>
+                                                <div className="w-12 shrink-0">
+                                                    <div className="text-[11px] font-black text-gray-600 dark:text-gray-300">{idx === 0 ? '오늘' : dayName}</div>
+                                                    <div className="text-[10px] text-gray-400 font-medium">{dateStr}</div>
                                                 </div>
                                                 
-                                                <div className="flex-1 flex items-center justify-center gap-4">
-                                                    <div className="flex flex-col items-center">
+                                                <div className="flex-1 flex items-center justify-center gap-3">
+                                                    <div className="flex flex-col items-center scale-90">
                                                         {getWeatherIcon(day.weatherCode)}
                                                     </div>
                                                     
-                                                    <div className="flex items-center gap-3">
+                                                    <div className="flex items-center gap-2">
                                                         <div className="flex flex-col items-center">
-                                                            <div className="text-sm font-black text-gray-900 dark:text-white">{day.maxTemp.toFixed(0)}°</div>
-                                                            <div className="text-[9px] text-rose-500 font-bold leading-none">MAX</div>
+                                                            <div className="text-[13px] font-black text-gray-900 dark:text-white">{day.maxTemp.toFixed(0)}°</div>
+                                                            <div className="text-[8px] text-rose-500 font-bold leading-none">MAX</div>
                                                         </div>
-                                                        <div className="flex flex-col items-center border-x border-gray-100 dark:border-gray-800 px-2.5">
-                                                            <div className="text-sm font-black text-gray-700 dark:text-gray-300">{day.avgTemp.toFixed(1)}°</div>
-                                                            <div className="text-[9px] text-gray-400 font-bold leading-none">AVG</div>
+                                                        <div className="flex flex-col items-center border-x border-gray-100 dark:border-gray-800 px-2">
+                                                            <div className="text-[13px] font-black text-gray-700 dark:text-gray-300">{day.avgTemp.toFixed(1)}°</div>
+                                                            <div className="text-[8px] text-gray-400 font-bold leading-none">AVG</div>
                                                         </div>
                                                         <div className="flex flex-col items-center">
-                                                            <div className="text-sm font-black text-gray-500 dark:text-gray-400">{day.minTemp.toFixed(0)}°</div>
-                                                            <div className="text-[9px] text-blue-500 font-bold leading-none">MIN</div>
+                                                            <div className="text-[13px] font-black text-gray-500 dark:text-gray-400">{day.minTemp.toFixed(0)}°</div>
+                                                            <div className="text-[8px] text-blue-500 font-bold leading-none">MIN</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -942,6 +932,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     )}
 
                 <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-gray-900 via-white/80 dark:via-gray-900/80 to-transparent pt-16 pb-4 px-4 sm:px-6">
+                    {showSearchHereBtn && isMapReady && (
+                        <div className="absolute top-3 left-1/2 transform -translate-x-1/2 z-[100] w-full flex justify-center pointer-events-none">
+                            <button onClick={handleSearchHere}
+                                className="px-5 py-2.5 bg-blue-600/90 backdrop-blur-sm text-white rounded-full font-black shadow-xl hover:bg-blue-700 transition flex items-center gap-2.5 text-sm animate-fade-in-up border border-white/20 pointer-events-auto">
+                                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                                현 위치에서 검색
+                            </button>
+                        </div>
+                    )}
                     {visibleVenues.length > 0 && (
                         <div id="venue-scroll-container" ref={scrollRef}
                             className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}

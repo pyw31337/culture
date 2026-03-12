@@ -5,6 +5,7 @@ export const GENRE_GROUPS = [
     { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
     { id: 'experience', label: '체험/액티비티', genres: ['activity', 'class'] },
     { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
+    { id: 'tourism', label: '관광/여행', genres: ['tourism'] },
 ];
 
 export const GENRES = [
@@ -24,6 +25,7 @@ export const GENRES = [
     { id: 'baseball', label: '야구' },
     { id: 'soccer', label: '축구' },
     { id: 'handball', label: '핸드볼' },
+    { id: 'tourism', label: '관광/여행' },
 
 ];
 
@@ -42,6 +44,7 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
     'baseball': { hex: '#1e40af', twText: 'text-blue-900', twBg: 'bg-blue-900', twBorder: 'border-blue-800', twActivebg: 'bg-blue-800' },
     'soccer': { hex: '#ef4444', twText: 'text-red-600', twBg: 'bg-red-600', twBorder: 'border-red-500', twActivebg: 'bg-red-500' },
     'handball': { hex: '#f59e0b', twText: 'text-amber-600', twBg: 'bg-amber-600', twBorder: 'border-amber-500', twActivebg: 'bg-amber-500' },
+    'tourism': { hex: '#06b6d4', twText: 'text-cyan-600', twBg: 'bg-cyan-600', twBorder: 'border-cyan-500', twActivebg: 'bg-cyan-500' },
     'all': { hex: '#6b7280', twText: 'text-gray-600', twBg: 'bg-gray-700', twBorder: 'border-gray-500', twActivebg: 'bg-gray-600' },
 };
 
@@ -84,7 +87,7 @@ export const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 
 export const VALID_GENRE_SLUGS = [
     'movie', 'musical', 'theater', 'play', 'concert', 'classic_tradition', 'exhibition',
     'activity', 'class', 'museum',
-    'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball'
+    'volleyball', 'basketball', 'baseball', 'soccer', 'sports', 'handball', 'tourism'
 ];
 
 
