@@ -229,7 +229,7 @@ async function scrapeMochaClass() {
             const last = new Date(ex.lastEnriched);
             const now = new Date();
             const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
-            return false; // Force re-enrichment for all items to fix addresses
+            return diffDays < 7; // Only re-enrich if older than 7 days
         } catch (e) { return false; }
     };
 
@@ -254,7 +254,7 @@ async function scrapeMochaClass() {
     if (todo.length > 0) {
         const progressBar = new ProgressBar(todo.length);
         let processedCount = 0;
-        const CONCURRENCY = 10;
+        const CONCURRENCY = 3; // Reduced from 10 to stabilize system load
 
         for (let i = 0; i < todo.length; i += CONCURRENCY) {
             const chunk = todo.slice(i, i + CONCURRENCY);
@@ -436,6 +436,9 @@ async function scrapeMochaClass() {
             progressBar.update(processedCount);
 
             if (i % 20 === 0) saveData(allItems);
+            
+            // Small stabilizer delay between chunks
+            await new Promise(r => setTimeout(r, 1000));
         }
         progressBar.finish();
     }
