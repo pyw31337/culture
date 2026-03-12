@@ -58,14 +58,22 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
             targetDate.setHours(23, 59, 59, 999);
         }
         // Type 3: Simple "YYYY-MM-DD" (Mommom/General)
-        else if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
-            const [y, m, d] = dateStr.split('-').map(Number);
+        else if (/^\d{4}-\d{2}-\d{2}$/.test(cleanDate)) {
+            const [y, m, d] = cleanDate.split('-').map(Number);
+            targetDate = new Date(y, m - 1, d);
+            targetDate.setHours(23, 59, 59, 999);
+        }
+        // Type 4: Numeric "YYYYMMDD"
+        else if (/^\d{8}$/.test(cleanDate)) {
+            const y = parseInt(cleanDate.substring(0, 4));
+            const m = parseInt(cleanDate.substring(4, 6));
+            const d = parseInt(cleanDate.substring(6, 8));
             targetDate = new Date(y, m - 1, d);
             targetDate.setHours(23, 59, 59, 999);
         }
         // Fallback
         else {
-            targetDate = new Date(dateStr);
+            targetDate = new Date(cleanDate);
             if (targetDate && !isNaN(targetDate.getTime())) {
                 targetDate.setHours(23, 59, 59, 999);
             }

@@ -68,6 +68,15 @@ function mapGenre(s: string): string {
     return 'exhibition';
 }
 
+function normalizeDate(s: string): string {
+    if (!s) return '';
+    // Handle "20260313 ~ 20260313" -> "2026.03.13 ~ 2026.03.13"
+    // Handle "20260313" -> "2026.03.13"
+    return s.replace(/\d{8}/g, (match) => {
+        return `${match.substring(0, 4)}.${match.substring(4, 6)}.${match.substring(6, 8)}`;
+    });
+}
+
 // Extract detail metadata securely using Cheerios
 async function enrichDetails(item: CulturePerformance): Promise<CulturePerformance> {
     if (!item.link || !item.link.includes('mcst.go.kr')) return item;
@@ -226,7 +235,7 @@ async function scrapeCulturePortal() {
                         id: `culture_portal_${title.replace(/\s/g, '').substring(0,20)}_${pageNo}_${Math.floor(Math.random() * 1000)}`,
                         title: title,
                         image: item.imageObject || '',
-                        date: item.eventPeriod || '',
+                        date: normalizeDate(item.eventPeriod || ''),
                         venue: rawVenue,
                         link: item.url || '',
                         genre: genre,

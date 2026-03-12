@@ -101,7 +101,15 @@ async function generate() {
                             endStr = '20' + endStr;
                         }
 
-                        endDate = new Date(endStr);
+                        // Robust parsing for YYYYMMDD
+                        if (endStr.match(/^\d{8}$/)) {
+                            const y = parseInt(endStr.substring(0, 4));
+                            const m = parseInt(endStr.substring(4, 6));
+                            const dParts = parseInt(endStr.substring(6, 8));
+                            endDate = new Date(y, m - 1, dParts);
+                        } else {
+                            endDate = new Date(endStr);
+                        }
                     }
                 } else if (d.trim() !== '') {
                     let endStr = d.trim();
@@ -109,7 +117,15 @@ async function generate() {
                     if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
                         endStr = '20' + endStr;
                     }
-                    endDate = new Date(endStr);
+
+                    if (endStr.match(/^\d{8}$/)) {
+                        const y = parseInt(endStr.substring(0, 4));
+                        const m = parseInt(endStr.substring(4, 6));
+                        const dParts = parseInt(endStr.substring(6, 8));
+                        endDate = new Date(y, m - 1, dParts);
+                    } else {
+                        endDate = new Date(endStr);
+                    }
                 }
 
                 if (!endDate || isNaN(endDate.getTime())) {
