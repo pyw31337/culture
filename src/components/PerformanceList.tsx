@@ -134,6 +134,28 @@ export default function PerformanceList({
         return allPerformances.slice(0, 10);
     }, [allPerformances]);
 
+    // --- Search Synchronization Helper ---
+    const syncSearchToUrl = useCallback((
+        q: string,
+        mode: 'keyword' | 'location',
+        loc: { lat: number, lng: number, name: string } | null,
+        genre: string = selectedGenre
+    ) => {
+        const path = genre === 'all' ? '/' : `/${genre === 'play' ? 'theater' : genre}`;
+        const params = new URLSearchParams();
+        
+        if (q.trim()) params.set('q', q.trim());
+        params.set('mode', mode);
+
+        if (mode === 'location' && loc) {
+            params.set('lat', String(loc.lat));
+            params.set('lng', String(loc.lng));
+            params.set('venue', loc.name);
+        }
+
+        router.push(`${path}?${params.toString()}`);
+    }, [router, selectedGenre]);
+
     // --- Handlers ---
     const handleDetailOpen = useCallback((perf: Performance) => {
         router.push(`/p/${perf.id}/`);
@@ -179,24 +201,10 @@ export default function PerformanceList({
     const handleGenreSelect = useCallback((g: string) => {
         setSelectedGenre(g);
         if (g !== 'movie') setShuffleSeed(Date.now());
-        // Remove calendar-view guard since calendar is now a separate page
         if (viewMode === 'likes-perf') setViewMode('grid');
 
-        const path = g === 'all' ? '/' : `/${g === 'play' ? 'theater' : g}`;
-        if (searchMode === 'location' && searchLocation) {
-            const params = new URLSearchParams();
-            if (searchText) params.set('q', searchText);
-            params.set('mode', 'location');
-            params.set('lat', String(searchLocation.lat));
-            params.set('lng', String(searchLocation.lng));
-            params.set('venue', searchLocation.name);
-            router.push(`${path}?${params.toString()}`);
-        } else if (searchText) {
-            router.push(`${path}?q=${encodeURIComponent(searchText)}`);
-        } else {
-            router.push(path);
-        }
-    }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, router, searchText, searchMode, searchLocation]);
+        syncSearchToUrl(searchText, searchMode, searchLocation, g);
+    }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, syncSearchToUrl, searchText, searchMode, searchLocation]);
 
     const handleLikePerfClick = useCallback(() => {
         if (viewMode === 'likes-perf') {
@@ -310,23 +318,43 @@ export default function PerformanceList({
                     setActiveSearchSource={setActiveSearchSource} setIsDropdownOpen={setIsDropdownOpen} handleSearch={() => { }}
                     handleSelectResult={(res: any) => {
                         setSearchText(res.name);
+                        let loc = null;
                         if (searchMode === 'location' && res.lat && res.lng) {
-                            setSearchLocation({ lat: res.lat, lng: res.lng, name: res.name });
+                            loc = { lat: res.lat, lng: res.lng, name: res.name };
+                            setSearchLocation(loc);
                         }
                         setIsDropdownOpen(false);
-                        if (selectedGenre !== 'all') handleGenreSelect('all');
+                        if (selectedGenre !== 'all') {
+                            setSelectedGenre('all');
+                            syncSearchToUrl(res.name, searchMode, loc, 'all');
+                        } else {
+                            syncSearchToUrl(res.name, searchMode, loc);
+                        }
                     }}
                     handleKeyDown={(e: React.KeyboardEvent) => {
                         if (e.key === 'Enter') {
-                            if (selectedGenre !== 'all') handleGenreSelect('all');
+                            if (selectedGenre !== 'all') {
+                                setSelectedGenre('all');
+                                syncSearchToUrl(searchText, searchMode, searchLocation, 'all');
+                            } else {
+                                syncSearchToUrl(searchText, searchMode, searchLocation);
+                            }
                         }
                     }} handleCurrentLocationClick={() => { setUserLocation(null); setSearchLocation(null); }}
                     availableVenues={availableVenues} districts={districts} recentKeywords={savedKeywords}
                     onKeywordSelect={(k) => {
                         setSearchText(k);
-                        if (selectedGenre !== 'all') handleGenreSelect('all');
+                        if (selectedGenre !== 'all') {
+                            setSelectedGenre('all');
+                            syncSearchToUrl(k, searchMode, searchLocation, 'all');
+                        } else {
+                            syncSearchToUrl(k, searchMode, searchLocation);
+                        }
                     }} onRemoveRecent={removeKeyword} onClearRecent={() => setSavedKeywords([])}
-                    searchMode={searchMode} onSearchModeChange={setSearchMode}
+                    searchMode={searchMode} onSearchModeChange={(m) => {
+                        setSearchMode(m);
+                        syncSearchToUrl(searchText, m, searchLocation);
+                    }}
                 />
             </ErrorBoundary>
 
