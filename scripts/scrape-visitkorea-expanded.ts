@@ -56,19 +56,20 @@ async function fetchDetails(cotId: string) {
 
         // 3. Robust field mapping
         const contact = infoList['문의 및 안내'] || infoList['전화번호'] || infoList['문의'] || '';
-        const price = infoList['이용요금'] || infoList['입장료'] || infoList['관람료'] || '';
-        const time = infoList['이용시간'] || infoList['운영시간'] || '';
+        const priceDetail = infoList['입장료'] || infoList['이용요금'] || infoList['관람료'] || '';
+        const operatingHours = infoList['이용시간'] || infoList['운영시간'] || '';
         const address = infoList['주소'] || '';
-        const holiday = infoList['휴일'] || infoList['쉬는날'] || '';
+        const closedDays = infoList['휴일'] || infoList['쉬는날'] || '';
         const website = infoList['홈페이지'] || '';
         const parking = infoList['주차'] || '';
-        const parkingFee = infoList['주차 요금'] || infoList['주차비'] || '';
+        const parkingFee = infoList['주차요금'] || infoList['주차 요금'] || infoList['주차비'] || '';
+        const status = infoList['지정현황'] || '';
         const ageDetail = infoList['체험가능 연령'] || infoList['관람소요시간'] || '';
         const facilities = infoList['주요시설'] || '';
         const restrooms = infoList['화장실'] || '';
 
         // Case for missing data via Cheerio -> Usually means JS-only rendering
-        if (!description && !contact && !time && !address) {
+        if (!description && !contact && !operatingHours && !address) {
             console.log(`[DEBUG] No details for ${cotId} via Cheerio. Trying Puppeteer fallback...`);
             return await fetchDetailsWithPuppeteer(url);
         }
@@ -76,13 +77,14 @@ async function fetchDetails(cotId: string) {
         return {
             description,
             contact,
-            price,
-            time,
+            priceDetail,
+            operatingHours,
             address,
-            holiday,
+            closedDays,
             website,
             parking,
             parkingFee,
+            status,
             ageDetail,
             facilities,
             restrooms
@@ -131,7 +133,7 @@ async function fetchDetailsWithPuppeteer(url: string) {
 
             // Info items
             const info: Record<string, string> = {};
-            document.querySelectorAll('.detail_info li').forEach(li => {
+            document.querySelectorAll('#detailinfoview li, .detail_info li').forEach(li => {
                 const strong = li.querySelector('strong');
                 const label = (strong ? strong.textContent?.replace(/\s+/g, ' ').trim() : '')?.replace(':', '') || '';
                 const span = li.querySelector('span');
@@ -146,13 +148,14 @@ async function fetchDetailsWithPuppeteer(url: string) {
             return {
                 description,
                 contact: info['문의 및 안내'] || info['전화번호'] || info['문의'] || '',
-                price: info['이용요금'] || info['입장료'] || '',
-                time: info['이용시간'] || info['운영시간'] || '',
+                priceDetail: info['입장료'] || info['이용요금'] || info['관람료'] || '',
+                operatingHours: info['이용시간'] || info['운영시간'] || '',
                 address: info['주소'] || '',
-                holiday: info['휴일'] || info['쉬는날'] || '',
+                closedDays: info['휴일'] || info['쉬는날'] || '',
                 website: info['홈페이지'] || '',
                 parking: info['주차'] || '',
-                parkingFee: info['주차 요금'] || info['주차비'] || '',
+                parkingFee: info['주차요금'] || info['주차 요금'] || info['주차비'] || '',
+                status: info['지정현황'] || '',
                 ageDetail: info['체험가능 연령'] || '',
                 facilities: info['주요시설'] || '',
                 restrooms: info['화장실'] || ''
@@ -217,14 +220,16 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                         genre: 'tourism',
                         category: '관광/여행',
                         description: details?.description || '',
-                        price: details?.price || '무료',
-                        performanceTime: details?.time || '',
+                        price: (details?.priceDetail || '').includes('무료') ? '무료' : (details?.priceDetail || '무료'),
+                        priceDetail: details?.priceDetail || '',
+                        operatingHours: details?.operatingHours || '',
                         contact: details?.contact || '',
                         address: details?.address || item.detailDatabase?.addr1 || '',
-                        bookingNotice: details?.holiday ? `휴무: ${details.holiday}` : '',
+                        closedDays: details?.closedDays || '',
                         website: details?.website || '',
                         parking: details?.parking || '',
                         parkingFee: details?.parkingFee || '',
+                        status: details?.status || '',
                         ageDetail: details?.ageDetail || '',
                         facilities: details?.facilities || '',
                         restrooms: details?.restrooms || '',

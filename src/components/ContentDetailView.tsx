@@ -263,6 +263,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         });
                                     }
 
+                                    if (p.genre === 'tourism' && p.status) {
+                                        infoItems.push({ icon: Star, label: '상태', text: p.status, color: 'text-amber-500' });
+                                    }
+
                                     if (p.address && p.address.trim() !== '') {
                                         infoItems.push({ 
                                             icon: MapPin, 
@@ -274,12 +278,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     const dateText = formatUnifiedDate(p.date);
-                                    if (dateText) {
+                                    if (dateText && p.genre !== 'tourism') {
                                         infoItems.push({ icon: Calendar, label: isMovie ? '개봉' : '일정', text: dateText, color: 'text-blue-500' });
                                     }
 
-                                    if (p.runningTime || (p as any).runtime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: p.runningTime || `${(p as any).runtime}분`, color: 'text-purple-500' });
+                                    if (p.operatingHours || p.performanceTime) {
+                                        infoItems.push({ icon: Clock, label: '시간', text: p.operatingHours || p.performanceTime, color: 'text-purple-500' });
+                                    } else if ((p as any).runtime) {
+                                        infoItems.push({ icon: Clock, label: '시간', text: `${(p as any).runtime}분`, color: 'text-purple-500' });
                                     }
                                     
                                     if (isMovie) {
@@ -498,8 +504,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 </motion.div>
                             )}
 
-                            {/* Description - Short version for all modes */}
-                            {p.description && (
+                            {/* Description - Short version for all modes (Hidden for tourism to avoid redundancy) */}
+                            {p.description && p.genre !== 'tourism' && (
                                 <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
                                     &quot;{p.description}&quot;
                                 </motion.p>
