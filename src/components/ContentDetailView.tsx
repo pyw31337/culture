@@ -265,14 +265,20 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     if (p.address && p.address.trim() !== '' && p.address !== p.venue) {
-                                        infoItems.push({ 
-                                            icon: MapPin, 
-                                            label: '주소', 
-                                            text: p.address, 
-                                            color: 'text-gray-400',
-                                            isLink: !!(p.lat && p.lng),
-                                            onClick: handleVenueClick
-                                        });
+                                        // Only show full address if it's significantly different from venue name
+                                        // and not already just the same as venue
+                                        const cleanVenue = p.venue?.replace(/\s+/g, '');
+                                        const cleanAddr = p.address?.replace(/\s+/g, '');
+                                        if (cleanAddr !== cleanVenue) {
+                                            infoItems.push({ 
+                                                icon: MapPin, 
+                                                label: '주소', 
+                                                text: p.address, 
+                                                color: 'text-gray-400',
+                                                isLink: !!(p.lat && p.lng),
+                                                onClick: handleVenueClick
+                                            });
+                                        }
                                     }
 
                                     const dateText = formatUnifiedDate(p.date);
@@ -285,7 +291,9 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     if (!isMovie && (p.age || p.ageRating)) {
-                                        infoItems.push({ icon: Tag, label: '연령', text: p.age || p.ageRating, color: 'text-rose-500' });
+                                        const ageText = p.age || p.ageRating;
+                                        // Prevent showing the exact same text twice (e.g. if age and ageRating are same)
+                                        infoItems.push({ icon: Tag, label: '연령', text: ageText, color: 'text-rose-500' });
                                     }
 
                                     if (p.director) {

@@ -15,7 +15,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -34,7 +34,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.02.28_2_김해_vs_안산",
@@ -52,7 +52,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.02.28_1_김천_vs_포항",
@@ -70,7 +70,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.02.28_2_수원_vs_서울E",
@@ -88,7 +88,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -107,7 +107,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.03.01_2_용인_vs_천안",
@@ -125,7 +125,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -144,7 +144,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.03.01_2_충북청주_vs_수원FC",
@@ -162,7 +162,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.03.01_1_제주_vs_광주",
@@ -198,7 +198,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.03.02_1_대전_vs_안양",
@@ -216,7 +216,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.03.02_2_충남아산_vs_파주",
@@ -234,7 +234,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.03.02_2_부산_vs_성남",
@@ -252,7 +252,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -271,7 +271,7 @@
     "awayTeamLogo": "/images/logos/kleague/강원.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261",
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261",
     "district": "포항시"
   },
   {
@@ -290,7 +290,7 @@
     "awayTeamLogo": "/images/logos/kleague/서울E.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1",
+    "address": "울산광역시 남구 무거동 옥현로 1",
     "district": "남구"
   },
   {
@@ -309,7 +309,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -328,7 +328,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -347,7 +347,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -366,7 +366,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -385,7 +385,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.03.07_2_수원FC_vs_용인",
@@ -403,7 +403,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -422,7 +422,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.03.08_2_안산_vs_부산",
@@ -440,7 +440,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -459,7 +459,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -478,7 +478,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -497,7 +497,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.03.08_2_화성_vs_김해",
@@ -515,7 +515,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -534,7 +534,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -553,7 +553,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.03.14_2_서울E_vs_부산",
@@ -571,7 +571,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -590,7 +590,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -609,7 +609,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.03.14_2_용인_vs_김포",
@@ -627,7 +627,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -646,7 +646,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.03.15_1_부천_vs_울산",
@@ -664,7 +664,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -701,7 +701,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.03.15_2_안산_vs_파주",
@@ -719,7 +719,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -738,7 +738,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.03.15_1_포항_vs_인천",
@@ -756,7 +756,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.03.15_2_화성_vs_천안",
@@ -774,7 +774,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -793,7 +793,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.03.18_1_부천_vs_강원",
@@ -811,7 +811,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -830,7 +830,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -867,7 +867,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.03.18_1_포항_vs_서울",
@@ -885,7 +885,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.03.21_1_대전_vs_전북",
@@ -903,7 +903,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.03.21_2_성남_vs_충남아산",
@@ -921,7 +921,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -940,7 +940,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -959,7 +959,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.03.21_2_천안_vs_서울E",
@@ -977,7 +977,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.03.21_2_충북청주_vs_안산",
@@ -995,7 +995,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.03.22_1_서울_vs_광주",
@@ -1013,7 +1013,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -1032,7 +1032,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.03.22_2_화성_vs_용인",
@@ -1050,7 +1050,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -1069,7 +1069,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -1088,7 +1088,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -1107,7 +1107,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.03.22_1_포항_vs_부천",
@@ -1125,7 +1125,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.03.22_2_경남_vs_김포",
@@ -1143,7 +1143,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.03.28_2_용인_vs_수원",
@@ -1161,7 +1161,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -1180,7 +1180,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.03.28_1_포항_vs_강원",
@@ -1198,7 +1198,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.03.28_2_성남_vs_김포",
@@ -1216,7 +1216,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -1235,7 +1235,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.03.28_2_안산_vs_경남",
@@ -1253,7 +1253,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -1272,7 +1272,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.03.29_2_수원FC_vs_파주",
@@ -1290,7 +1290,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -1309,7 +1309,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.04.04_1_제주_vs_부천",
@@ -1345,7 +1345,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.04.04_2_용인_vs_전남",
@@ -1363,7 +1363,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -1382,7 +1382,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -1401,7 +1401,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.04.04_1_강원_vs_광주",
@@ -1419,7 +1419,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.04.04_2_화성_vs_성남",
@@ -1437,7 +1437,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -1456,7 +1456,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.04.05_1_안양_vs_서울",
@@ -1474,7 +1474,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -1493,7 +1493,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.04.05_2_수원_vs_충북청주",
@@ -1511,7 +1511,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -1530,7 +1530,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -1549,7 +1549,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -1568,7 +1568,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -1587,7 +1587,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.04.11_1_서울_vs_전북",
@@ -1605,7 +1605,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -1624,7 +1624,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -1643,7 +1643,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -1662,7 +1662,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -1681,7 +1681,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -1700,7 +1700,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -1719,7 +1719,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -1738,7 +1738,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.04.12_2_수원_vs_김포",
@@ -1756,7 +1756,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -1775,7 +1775,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.04.12_1_김천_vs_안양",
@@ -1793,7 +1793,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.04.12_2_성남_vs_안산",
@@ -1811,7 +1811,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -1830,7 +1830,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.04.18_1_강원_vs_전북",
@@ -1848,7 +1848,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.04.18_1_서울_vs_대전",
@@ -1866,7 +1866,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -1885,7 +1885,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -1904,7 +1904,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.04.18_1_제주_vs_김천",
@@ -1940,7 +1940,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -1959,7 +1959,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.04.18_2_충북청주_vs_김해",
@@ -1977,7 +1977,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.04.19_1_울산_vs_광주",
@@ -1995,7 +1995,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.04.19_2_안산_vs_서울E",
@@ -2013,7 +2013,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -2032,7 +2032,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -2051,7 +2051,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.04.19_2_화성_vs_김포",
@@ -2069,7 +2069,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -2088,7 +2088,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.04.21_1_김천_vs_강원",
@@ -2106,7 +2106,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.04.21_1_서울_vs_부천",
@@ -2124,7 +2124,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -2143,7 +2143,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.04.22_1_대전_vs_제주",
@@ -2161,7 +2161,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.04.22_1_안양_vs_울산",
@@ -2179,7 +2179,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -2198,7 +2198,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.04.25_1_강원_vs_서울",
@@ -2216,7 +2216,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.04.25_2_수원_vs_부산",
@@ -2234,7 +2234,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -2253,7 +2253,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -2272,7 +2272,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -2291,7 +2291,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -2310,7 +2310,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.04.25_2_안산_vs_전남",
@@ -2328,7 +2328,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -2347,7 +2347,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.04.26_2_수원FC_vs_김포",
@@ -2365,7 +2365,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -2384,7 +2384,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -2403,7 +2403,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -2422,7 +2422,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.04.26_2_충북청주_vs_충남아산",
@@ -2440,7 +2440,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.04.26_2_용인_vs_김해",
@@ -2458,7 +2458,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -2477,7 +2477,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -2496,7 +2496,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.05.02_1_인천_vs_강원",
@@ -2514,7 +2514,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -2551,7 +2551,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -2570,7 +2570,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -2589,7 +2589,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.05.03_2_화성_vs_안산",
@@ -2607,7 +2607,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -2626,7 +2626,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -2645,7 +2645,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.05.03_2_파주_vs_충북청주",
@@ -2663,7 +2663,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -2682,7 +2682,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.05.03_2_용인_vs_성남",
@@ -2700,7 +2700,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -2719,7 +2719,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -2738,7 +2738,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.05.05_1_부천_vs_제주",
@@ -2756,7 +2756,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -2775,7 +2775,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.05.05_1_대전_vs_인천",
@@ -2793,7 +2793,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.05.05_1_강원_vs_포항",
@@ -2811,7 +2811,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.05.05_1_서울_vs_안양",
@@ -2829,7 +2829,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -2866,7 +2866,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.05.09_2_화성_vs_수원FC",
@@ -2884,7 +2884,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -2903,7 +2903,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.05.09_1_광주_vs_강원",
@@ -2921,7 +2921,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -2940,7 +2940,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -2959,7 +2959,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.05.09_1_대전_vs_포항",
@@ -2977,7 +2977,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.05.10_1_울산_vs_부천",
@@ -2995,7 +2995,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.05.10_2_성남_vs_전남",
@@ -3013,7 +3013,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -3032,7 +3032,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -3051,7 +3051,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -3070,7 +3070,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -3089,7 +3089,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.05.12_1_강원_vs_대전",
@@ -3107,7 +3107,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.05.12_1_광주_vs_서울",
@@ -3125,7 +3125,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -3144,7 +3144,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -3163,7 +3163,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.05.13_1_안양_vs_김천",
@@ -3181,7 +3181,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -3200,7 +3200,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -3219,7 +3219,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.05.16_2_서울E_vs_용인",
@@ -3237,7 +3237,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -3256,7 +3256,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.05.16_1_인천_vs_광주",
@@ -3274,7 +3274,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -3293,7 +3293,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.05.16_2_안산_vs_김포",
@@ -3311,7 +3311,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -3330,7 +3330,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.05.17_1_제주_vs_안양",
@@ -3366,7 +3366,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -3385,7 +3385,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.05.17_2_화성_vs_부산",
@@ -3403,7 +3403,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -3422,7 +3422,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.05.17_1_부천_vs_포항",
@@ -3440,7 +3440,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -3459,7 +3459,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -3478,7 +3478,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.05.23_2_경남_vs_수원FC",
@@ -3496,7 +3496,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.05.23_2_충북청주_vs_화성",
@@ -3514,7 +3514,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.05.24_2_용인_vs_충남아산",
@@ -3532,7 +3532,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -3551,7 +3551,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.05.24_2_서울E_vs_성남",
@@ -3569,7 +3569,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -3588,7 +3588,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -3607,7 +3607,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -3626,7 +3626,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -3645,7 +3645,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.05.30_2_용인_vs_대구",
@@ -3663,7 +3663,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -3682,7 +3682,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.05.30_2_수원FC_vs_성남",
@@ -3700,7 +3700,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -3719,7 +3719,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -3738,7 +3738,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.05.31_2_안산_vs_천안",
@@ -3756,7 +3756,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -3775,7 +3775,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.06.05_2_부산_vs_충남아산",
@@ -3793,7 +3793,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -3812,7 +3812,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -3831,7 +3831,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.06.06_2_화성_vs_수원",
@@ -3849,7 +3849,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -3868,7 +3868,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.06.07_2_서울E_vs_충북청주",
@@ -3886,7 +3886,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -3905,7 +3905,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -3924,7 +3924,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.07.04_1_대전_vs_부천",
@@ -3942,7 +3942,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.07.04_1_안양_vs_포항",
@@ -3960,7 +3960,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -3979,7 +3979,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.07.04_2_안산_vs_수원FC",
@@ -3997,7 +3997,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -4016,7 +4016,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -4035,7 +4035,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -4054,7 +4054,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -4073,7 +4073,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.07.05_1_광주_vs_울산",
@@ -4091,7 +4091,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -4110,7 +4110,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.07.05_2_김포_vs_충남아산",
@@ -4128,7 +4128,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -4147,7 +4147,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.07.05_2_전남_vs_부산",
@@ -4165,7 +4165,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.07.10_2_수원FC_vs_전남",
@@ -4183,7 +4183,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -4202,7 +4202,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.07.11_1_울산_vs_전북",
@@ -4220,7 +4220,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.07.11_1_김천_vs_부천",
@@ -4238,7 +4238,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.07.11_1_광주_vs_포항",
@@ -4256,7 +4256,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -4275,7 +4275,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -4294,7 +4294,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.07.11_2_화성_vs_파주",
@@ -4312,7 +4312,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -4331,7 +4331,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -4368,7 +4368,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -4387,7 +4387,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -4406,7 +4406,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.07.12_2_부산_vs_김포",
@@ -4424,7 +4424,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -4443,7 +4443,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.07.18_1_강원_vs_김천",
@@ -4461,7 +4461,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.07.18_1_인천_vs_전북",
@@ -4479,7 +4479,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -4516,7 +4516,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.07.18_2_김포_vs_대구",
@@ -4534,7 +4534,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -4553,7 +4553,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -4572,7 +4572,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -4591,7 +4591,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -4610,7 +4610,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -4629,7 +4629,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.07.19_2_수원_vs_파주",
@@ -4647,7 +4647,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -4666,7 +4666,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.07.19_2_용인_vs_화성",
@@ -4684,7 +4684,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -4721,7 +4721,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.07.21_1_전북_vs_대전",
@@ -4739,7 +4739,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.07.22_1_부천_vs_안양",
@@ -4757,7 +4757,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -4776,7 +4776,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -4795,7 +4795,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -4814,7 +4814,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -4833,7 +4833,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.07.25_1_포항_vs_전북",
@@ -4851,7 +4851,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.07.25_1_김천_vs_대전",
@@ -4869,7 +4869,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.07.25_2_부산_vs_수원",
@@ -4887,7 +4887,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -4906,7 +4906,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.07.25_2_전남_vs_경남",
@@ -4924,7 +4924,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.07.25_2_화성_vs_충남아산",
@@ -4942,7 +4942,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -4961,7 +4961,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -4980,7 +4980,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -4999,7 +4999,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -5018,7 +5018,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -5037,7 +5037,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -5056,7 +5056,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -5075,7 +5075,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.08.01_1_전북_vs_서울",
@@ -5093,7 +5093,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.08.01_1_포항_vs_김천",
@@ -5111,7 +5111,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.08.01_2_충남아산_vs_성남",
@@ -5129,7 +5129,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.08.01_2_천안_vs_용인",
@@ -5147,7 +5147,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.08.01_2_충북청주_vs_수원",
@@ -5165,7 +5165,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.08.01_2_화성_vs_대구",
@@ -5183,7 +5183,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -5202,7 +5202,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.08.02_1_대전_vs_광주",
@@ -5220,7 +5220,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.08.02_1_제주_vs_인천",
@@ -5256,7 +5256,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -5275,7 +5275,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -5294,7 +5294,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.08.02_2_안산_vs_김해",
@@ -5312,7 +5312,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -5331,7 +5331,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.08.07_2_김포_vs_충북청주",
@@ -5349,7 +5349,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -5368,7 +5368,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.08.07_2_화성_vs_서울E",
@@ -5386,7 +5386,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -5405,7 +5405,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -5424,7 +5424,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -5443,7 +5443,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -5462,7 +5462,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -5481,7 +5481,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.08.08_1_김천_vs_서울",
@@ -5499,7 +5499,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.08.08_1_전북_vs_제주",
@@ -5517,7 +5517,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.08.08_1_포항_vs_울산",
@@ -5535,7 +5535,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.08.08_2_파주_vs_수원FC",
@@ -5553,7 +5553,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -5572,7 +5572,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -5591,7 +5591,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -5628,7 +5628,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -5647,7 +5647,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.08.15_2_김해_vs_경남",
@@ -5665,7 +5665,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.08.15_2_수원_vs_수원FC",
@@ -5683,7 +5683,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -5702,7 +5702,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -5721,7 +5721,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -5740,7 +5740,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -5759,7 +5759,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.08.16_2_서울E_vs_안산",
@@ -5777,7 +5777,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -5796,7 +5796,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.08.16_2_김포_vs_천안",
@@ -5814,7 +5814,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -5833,7 +5833,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -5852,7 +5852,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -5871,7 +5871,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.08.22_1_포항_vs_부천",
@@ -5889,7 +5889,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.08.22_1_제주_vs_김천",
@@ -5925,7 +5925,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.08.22_2_수원FC_vs_김해",
@@ -5943,7 +5943,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -5962,7 +5962,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.08.22_2_안산_vs_성남",
@@ -5980,7 +5980,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -5999,7 +5999,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.08.23_1_광주_vs_인천",
@@ -6017,7 +6017,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -6036,7 +6036,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.08.23_2_충남아산_vs_용인",
@@ -6054,7 +6054,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.08.23_2_충북청주_vs_경남",
@@ -6072,7 +6072,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.08.23_2_서울E_vs_파주",
@@ -6090,7 +6090,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -6109,7 +6109,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -6128,7 +6128,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.08.25_1_제주_vs_포항",
@@ -6164,7 +6164,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -6183,7 +6183,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.08.26_1_강원_vs_광주",
@@ -6201,7 +6201,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.08.28_2_안산_vs_대구",
@@ -6219,7 +6219,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -6238,7 +6238,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.08.29_1_울산_vs_김천",
@@ -6256,7 +6256,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.08.29_1_부천_vs_안양",
@@ -6274,7 +6274,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -6293,7 +6293,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -6312,7 +6312,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.08.29_2_화성_vs_충북청주",
@@ -6330,7 +6330,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.1352,
     "lng": 126.9038,
-    "address": "경기 화성시 향남읍 향남로 470",
+    "address": "경기도 화성시 향남읍 향남로 470",
     "district": "화성시"
   },
   {
@@ -6349,7 +6349,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -6368,7 +6368,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -6387,7 +6387,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -6424,7 +6424,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.08.30_2_김해_vs_용인",
@@ -6442,7 +6442,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.08.30_2_수원FC_vs_부산",
@@ -6460,7 +6460,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -6479,7 +6479,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.09.04_2_파주_vs_대구",
@@ -6497,7 +6497,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -6516,7 +6516,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -6535,7 +6535,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -6554,7 +6554,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.09.05_1_제주_vs_울산",
@@ -6590,7 +6590,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -6609,7 +6609,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.09.05_2_용인_vs_수원FC",
@@ -6627,7 +6627,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -6646,7 +6646,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.09.06_1_안양_vs_강원",
@@ -6664,7 +6664,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -6683,7 +6683,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.09.06_2_수원_vs_충남아산",
@@ -6701,7 +6701,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -6720,7 +6720,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -6739,7 +6739,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.09.08_1_인천_vs_부천",
@@ -6757,7 +6757,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -6776,7 +6776,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.09.09_1_강원_vs_전북",
@@ -6794,7 +6794,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.09.09_1_광주_vs_제주",
@@ -6812,7 +6812,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -6831,7 +6831,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.09.12_1_전북_vs_서울",
@@ -6849,7 +6849,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.09.12_1_울산_vs_인천",
@@ -6867,7 +6867,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.09.12_1_부천_vs_제주",
@@ -6885,7 +6885,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -6904,7 +6904,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.09.12_2_서울E_vs_수원",
@@ -6922,7 +6922,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -6941,7 +6941,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.09.12_2_안산_vs_화성",
@@ -6959,7 +6959,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -6978,7 +6978,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.09.13_1_김천_vs_강원",
@@ -6996,7 +6996,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.09.13_2_경남_vs_성남",
@@ -7014,7 +7014,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.09.13_2_전남_vs_김포",
@@ -7032,7 +7032,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.09.13_1_광주_vs_안양",
@@ -7050,7 +7050,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -7069,7 +7069,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -7088,7 +7088,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -7107,7 +7107,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -7126,7 +7126,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.09.19_2_충남아산_vs_천안",
@@ -7144,7 +7144,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.09.19_1_안양_vs_울산",
@@ -7162,7 +7162,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -7181,7 +7181,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -7200,7 +7200,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -7219,7 +7219,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.09.20_1_전북_vs_광주",
@@ -7237,7 +7237,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.09.20_2_안산_vs_충북청주",
@@ -7255,7 +7255,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.3204,
     "lng": 126.8166,
-    "address": "경기 안산시 단원구 화랑로 260",
+    "address": "경기도 안산시 단원구 화랑로 260",
     "district": "안산시"
   },
   {
@@ -7274,7 +7274,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -7293,7 +7293,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -7312,7 +7312,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.09.20_2_김해_vs_파주",
@@ -7330,7 +7330,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.09.20_2_성남_vs_화성",
@@ -7348,7 +7348,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -7367,7 +7367,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.10.09_2_수원FC_vs_화성",
@@ -7385,7 +7385,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -7404,7 +7404,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.10.09_1_인천_vs_포항",
@@ -7422,7 +7422,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -7441,7 +7441,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.10.09_2_김포_vs_서울E",
@@ -7459,7 +7459,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -7478,7 +7478,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -7497,7 +7497,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.10.10_2_파주_vs_부산",
@@ -7515,7 +7515,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -7534,7 +7534,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.10.10_2_천안_vs_경남",
@@ -7552,7 +7552,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.10.10_2_김해_vs_충남아산",
@@ -7570,7 +7570,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.10.11_1_광주_vs_울산",
@@ -7588,7 +7588,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K01.png",
     "lat": 35.133682,
     "lng": 126.874895,
-    "address": "광주 서구 금화로 240",
+    "address": "광주광역시 서구 금화로 240",
     "district": "서구"
   },
   {
@@ -7607,7 +7607,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -7626,7 +7626,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -7645,7 +7645,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.10.17_2_성남_vs_수원FC",
@@ -7663,7 +7663,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -7682,7 +7682,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K26.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.10.17_2_용인_vs_안산",
@@ -7700,7 +7700,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -7719,7 +7719,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -7738,7 +7738,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.10.18_1_대전_vs_광주",
@@ -7756,7 +7756,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 36.365171,
     "lng": 127.325139,
-    "address": "대전 유성구 월드컵대로 32"
+    "address": "대전광역시 유성구 월드컵대로 32"
   },
   {
     "id": "kleague_2026.10.18_1_전북_vs_제주",
@@ -7774,7 +7774,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 35.8778,
     "lng": 127.0645,
-    "address": "전북 전주시 덕진구 반월동 기린대로 1055"
+    "address": "전북특별자치도 전주시 덕진구 반월동 기린대로 1055"
   },
   {
     "id": "kleague_2026.10.18_2_수원_vs_화성",
@@ -7792,7 +7792,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -7811,7 +7811,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -7830,7 +7830,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K18.png",
     "lat": 37.773561,
     "lng": 128.897503,
-    "address": "강원 강릉시 종합운동장길 69"
+    "address": "강원특별자치도 강릉시 종합운동장길 69"
   },
   {
     "id": "kleague_2026.10.18_1_포항_vs_안양",
@@ -7848,7 +7848,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K27.png",
     "lat": 35.9977,
     "lng": 129.3872,
-    "address": "경북 포항시 남구 괴동동 동해안로 6261"
+    "address": "경상북도 포항시 남구 괴동동 동해안로 6261"
   },
   {
     "id": "kleague_2026.10.18_2_부산_vs_전남",
@@ -7866,7 +7866,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -7885,7 +7885,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K03.png",
     "lat": 35.535,
     "lng": 129.2595,
-    "address": "울산 남구 무거동 옥현로 1"
+    "address": "울산광역시 남구 무거동 옥현로 1"
   },
   {
     "id": "kleague_2026.10.24_1_안양_vs_전북",
@@ -7903,7 +7903,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
     "lat": 37.4034,
     "lng": 126.9515,
-    "address": "경기 안양시 동안구 비산동 1023",
+    "address": "경기도 안양시 동안구 비산동 1023",
     "district": "안양시"
   },
   {
@@ -7922,7 +7922,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K22.png",
     "lat": 37.5033,
     "lng": 126.7975,
-    "address": "경기 부천시 원미구 소사로 482",
+    "address": "경기도 부천시 원미구 소사로 482",
     "district": "부천시"
   },
   {
@@ -7941,7 +7941,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K10.png",
     "lat": 36.1423,
     "lng": 128.0837,
-    "address": "경북 김천시 운동장길 1"
+    "address": "경상북도 김천시 운동장길 1"
   },
   {
     "id": "kleague_2026.10.24_1_인천_vs_제주",
@@ -7959,7 +7959,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K04.png",
     "lat": 37.4661,
     "lng": 126.6433,
-    "address": "인천 중구 도원동 참외전로 246",
+    "address": "인천광역시 중구 도원동 참외전로 246",
     "district": "중구"
   },
   {
@@ -7978,7 +7978,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K21.png",
     "lat": 37.5683,
     "lng": 126.8972,
-    "address": "서울 마포구 성산동 515",
+    "address": "서울특별시 마포구 성산동 515",
     "district": "마포구"
   },
   {
@@ -7997,7 +7997,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.10.24_2_김포_vs_김해",
@@ -8015,7 +8015,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -8034,7 +8034,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -8053,7 +8053,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.10.25_2_부산_vs_경남",
@@ -8071,7 +8071,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -8090,7 +8090,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.10.25_2_충북청주_vs_용인",
@@ -8108,7 +8108,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.10.25_2_파주_vs_화성",
@@ -8126,7 +8126,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -8145,7 +8145,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.10.31_2_용인_vs_서울E",
@@ -8163,7 +8163,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -8182,7 +8182,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.10.31_2_대구_vs_수원",
@@ -8200,7 +8200,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.11.01_2_수원FC_vs_안산",
@@ -8218,7 +8218,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -8237,7 +8237,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.11.01_2_충북청주_vs_파주",
@@ -8255,7 +8255,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 36.6358,
     "lng": 127.4725,
-    "address": "충북 청주시 서원구 사직동 19-3"
+    "address": "충청북도 청주시 서원구 사직동 19-3"
   },
   {
     "id": "kleague_2026.11.01_2_김해_vs_천안",
@@ -8273,7 +8273,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.11.07_2_성남_vs_대구",
@@ -8291,7 +8291,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -8310,7 +8310,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   },
   {
@@ -8329,7 +8329,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -8348,7 +8348,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.11.07_2_서울E_vs_전남",
@@ -8366,7 +8366,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -8385,7 +8385,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -8404,7 +8404,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.11.08_2_파주_vs_충남아산",
@@ -8422,7 +8422,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -8441,7 +8441,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
     "lat": 37.2862,
     "lng": 127.0368,
-    "address": "경기 수원시 팔달구 월드컵로 310",
+    "address": "경기도 수원시 팔달구 월드컵로 310",
     "district": "수원시"
   },
   {
@@ -8460,7 +8460,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 35.1165,
     "lng": 129.0203,
-    "address": "부산 서구 망양로 33",
+    "address": "부산광역시 서구 망양로 33",
     "district": "서구"
   },
   {
@@ -8479,7 +8479,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -8498,7 +8498,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
     "lat": 37.4103,
     "lng": 127.1265,
-    "address": "경기 성남시 분당구 야탑로 5",
+    "address": "경기도 성남시 분당구 야탑로 5",
     "district": "성남시"
   },
   {
@@ -8517,7 +8517,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
     "lat": 35.8813,
     "lng": 128.5883,
-    "address": "대구 북구 고성동3가 고성로 191"
+    "address": "대구광역시 북구 고성동3가 고성로 191"
   },
   {
     "id": "kleague_2026.11.22_2_전남_vs_안산",
@@ -8535,7 +8535,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.11.22_2_파주_vs_천안",
@@ -8553,7 +8553,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
     "lat": 37.757,
     "lng": 126.7797,
-    "address": "경기 파주시 중앙로 160",
+    "address": "경기도 파주시 중앙로 160",
     "district": "파주시"
   },
   {
@@ -8572,7 +8572,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
     "lat": 37.5302,
     "lng": 126.8811,
-    "address": "서울 양천구 안양천로 939",
+    "address": "서울특별시 양천구 안양천로 939",
     "district": "양천구"
   },
   {
@@ -8591,7 +8591,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
     "lat": 37.2435,
     "lng": 127.1511,
-    "address": "경기 용인시 처인구 삼가동 28-6",
+    "address": "경기도 용인시 처인구 삼가동 28-6",
     "district": "용인시"
   },
   {
@@ -8610,7 +8610,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "lat": 36.7661,
     "lng": 127.0253,
-    "address": "충남 아산시 풍기동 315-1"
+    "address": "충청남도 아산시 풍기동 315-1"
   },
   {
     "id": "kleague_2026.11.29_2_천안_vs_대구",
@@ -8628,7 +8628,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
     "lat": 36.8227,
     "lng": 127.1189,
-    "address": "충남 천안시 서북구 번영로 208"
+    "address": "충청남도 천안시 서북구 번영로 208"
   },
   {
     "id": "kleague_2026.11.29_2_김해_vs_성남",
@@ -8646,7 +8646,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
     "lat": 35.253,
     "lng": 128.878,
-    "address": "경남 김해시 가야로 245"
+    "address": "경상남도 김해시 가야로 245"
   },
   {
     "id": "kleague_2026.11.29_2_김포_vs_화성",
@@ -8664,7 +8664,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
     "lat": 37.6444,
     "lng": 126.6389,
-    "address": "경기 김포시 마산동 642-1",
+    "address": "경기도 김포시 마산동 642-1",
     "district": "김포시"
   },
   {
@@ -8683,7 +8683,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K09.png",
     "lat": 35.2185,
     "lng": 128.6978,
-    "address": "경남 창원시 성산구 비음로 97"
+    "address": "경상남도 창원시 성산구 비음로 97"
   },
   {
     "id": "kleague_2026.11.29_2_전남_vs_수원",
@@ -8701,7 +8701,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "lat": 34.935102,
     "lng": 127.701149,
-    "address": "전남 광양시 금호동 717"
+    "address": "전라남도 광양시 금호동 717"
   },
   {
     "id": "kleague_2026.11.29_2_수원FC_vs_충북청주",
@@ -8719,7 +8719,7 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
     "lat": 37.2996,
     "lng": 127.0104,
-    "address": "경기 수원시 장안구 경수대로 893",
+    "address": "경기도 수원시 장안구 경수대로 893",
     "district": "수원시"
   }
 ]

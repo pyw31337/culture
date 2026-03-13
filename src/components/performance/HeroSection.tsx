@@ -303,7 +303,7 @@ export default function HeroSection({
     return (
         <div className={clsx(
             "relative max-w-7xl 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 flex flex-col lg:flex-row justify-between lg:items-center gap-8",
-            (!(isDropdownOpen && activeSearchSource === 'hero')) && "overflow-hidden",
+            (!(isDropdownOpen && activeSearchSource === 'hero')) && "overflow-visible",
             (isDropdownOpen && activeSearchSource === 'hero') ? "z-[100]" : "z-[30]"
         )}>
             <div className="text-left flex-1 min-w-0 z-10">

@@ -61,4 +61,7 @@ export type Performance = {
     parkingFee?: string;
     facilities?: string;
     restrooms?: string;
+    targetAudience?: string;
+    operatingHours?: string;
+    priceDetail?: string;
 };

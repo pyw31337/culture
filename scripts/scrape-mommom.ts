@@ -99,6 +99,11 @@ interface MomMomItem {
     platform: string;
     description?: string;
     closedDay?: string;
+    targetAudience?: string;
+    operatingHours?: string;
+    priceDetail?: string;
+    facilities?: string;
+    website?: string;
 }
 
 async function scrapeMomMom() {
@@ -285,262 +290,126 @@ async function scrapeMomMom() {
 
                     await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 30000 });
 
-                    // Wait for dynamic content to hydrate
-                    await detailPage.waitForSelector('p.value', { timeout: 5000 }).catch(() => { });
+                    // Wait for dynamic content
+                    await detailPage.waitForSelector('.toggle-title', { timeout: 10000 }).catch(() => { });
+
+                    // Click all toggles to reveal hidden content
+                    await detailPage.evaluate(async () => {
+                        const toggles = Array.from(document.querySelectorAll('.toggle-title'));
+                        for (const toggle of toggles) {
+                            (toggle as HTMLElement).click();
+                            await new Promise(res => setTimeout(res, 300));
+                        }
+                    });
 
                     // Scrape Details using correct selectors
                     const details = await detailPage.evaluate(() => {
-                        // Title from H1/H2
+                        const allKeyElements = Array.from(document.querySelectorAll('p.key, th, dt, span.key'));
+                        const allPs = Array.from(document.querySelectorAll('p, li, article div, span'));
+                        // 1. Title
                         const pageTitle = document.querySelector('h1')?.textContent?.trim() ||
                             document.querySelector('h2')?.textContent?.trim() || '';
 
-                        // Address: Find p.key with "주소" and get its sibling p.value
+                        // 2. Address
                         let address = '';
-                        const allKeyElements = Array.from(document.querySelectorAll('p.key'));
                         const addressKey = allKeyElements.find(el => el.textContent?.trim() === '주소');
                         if (addressKey) {
-                            // Try nextElementSibling first
                             let valueEl = addressKey.nextElementSibling;
-                            if (valueEl && valueEl.classList.contains('value')) {
+                            if (valueEl && (valueEl.classList.contains('value') || valueEl.tagName === 'P')) {
                                 address = valueEl.textContent?.trim() || '';
                             }
-                            // Fallback: check parent for p.value
                             if (!address && addressKey.parentElement) {
-                                const parentValue = addressKey.parentElement.querySelector('p.value');
-                                if (parentValue) {
-                                    address = parentValue.textContent?.trim() || '';
-                                }
-                            }
-                            // Clean common artifacts
-                            address = address.replace('지도보기', '').trim();
-                        }
-
-                        // Fallback: Look for address pattern in page content
-                        if (!address) {
-                            const allText = document.body.innerText;
-                            const addrMatch = allText.match(/([가-힣]+(시|도)\s+[가-힣]+(시|군|구)\s+[가-힣0-9\s\-]+)/);
-                            if (addrMatch) {
-                                address = addrMatch[1].split('\n')[0].trim();
+                                const parentValue = addressKey.parentElement.querySelector('.value, p:last-child');
+                                if (parentValue) address = parentValue.textContent?.trim() || '';
                             }
                         }
 
-                        // Operating Hours: Find p.key with "영업시간" and get content
-                        let closedDay = '';
-                        let hasHoliday = false;
-                        let daysWithHours = 0;
-                        const hoursKey = allKeyElements.find(el => el.textContent?.trim() === '영업시간');
-                        if (hoursKey && hoursKey.parentElement) {
-                            const hoursContainer = hoursKey.parentElement;
-                            const hoursText = hoursContainer.textContent || '';
+                        // 3. Website
+                        let website = '';
+                        const webKey = allKeyElements.find(el => el.textContent?.includes('홈페이지'));
+                        if (webKey) {
+                            const linkEl = webKey.parentElement?.querySelector('a') || webKey.nextElementSibling?.querySelector('a');
+                            if (linkEl) website = linkEl.href;
+                        }
 
-                            // Count how many days have operating hours
-                            const dayPatterns = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
-                            dayPatterns.forEach(day => {
-                                if (hoursText.includes(day)) {
-                                    // Check if this day has hours (not just "정기휴무")
-                                    const dayIndex = hoursText.indexOf(day);
-                                    const afterDay = hoursText.substring(dayIndex, dayIndex + 30);
-                                    if (afterDay.includes(':') && !afterDay.includes('정기휴무')) {
-                                        daysWithHours++;
-                                    }
-                                }
+                        // 4. Target Audience (Popular Age)
+                        let targetAudience = '';
+                        // Identify by grey help icon + text pattern
+                        const greyIcons = Array.from(document.querySelectorAll('.icon-help-grey'));
+                        greyIcons.forEach(icon => {
+                            const parent = icon.parentElement;
+                            if (parent && parent.textContent?.includes('인기 연령')) {
+                                const infoEl = parent.nextElementSibling;
+                                if (infoEl) targetAudience = infoEl.textContent?.trim() || '';
+                            }
+                        });
+                        // Fallback target extraction
+                        if (!targetAudience) {
+                            const targetEl = allPs.find(el => {
+                                const text = el.textContent || '';
+                                return (text.includes('인기') && text.includes('개월')) ||
+                                    (text.includes('세') && text.includes('이상'));
                             });
+                            if (targetEl) targetAudience = targetEl.textContent?.trim() || '';
+                        }
 
-                            // Check for holiday patterns
-                            if (hoursText.includes('정기휴무')) {
-                                hasHoliday = true;
-                                // Extract day names that have 정기휴무
-                                const dayMatches = hoursText.match(/([월화수목금토일]요일)\s*정기휴무/g);
-                                if (dayMatches) {
-                                    // Extract just the day names
-                                    const days = dayMatches.map(m => m.replace('정기휴무', '').trim());
-                                    closedDay = days.join('/') + ' 정기휴무';
-                                } else {
-                                    closedDay = '정기휴무';
-                                }
-                            }
+                        // 5. Operating Hours & Price Detail (Check Toggles)
+                        let priceDetail = '';
+                        let operatingHours = '';
+                        let closedDay = '';
 
-                            // If no holiday and we found days with hours, it's "연중무휴"
-                            if (!hasHoliday && daysWithHours >= 5) {
-                                closedDay = '연중무휴';
+                        // Loop through toggles to find price and hours
+                        const toggles = Array.from(document.querySelectorAll('.toggle-title'));
+                        toggles.forEach(toggle => {
+                            const text = toggle.textContent || '';
+                            const content = toggle.nextElementSibling?.textContent?.trim() || '';
+
+                            if (text.includes('입장료') || text.includes('요금')) {
+                                priceDetail = content || toggle.parentElement?.textContent?.split(']')[1]?.trim() || '';
                             }
-                            // Also check for "매일" pattern
-                            if (!hasHoliday && hoursText.includes('매일')) {
-                                closedDay = '연중무휴';
+                            if (text.includes('관람 시간') || text.includes('이용 시간')) {
+                                operatingHours = content || '';
+                            }
+                        });
+
+                        // Standard extraction if toggles failed
+                        if (!operatingHours) {
+                            const hoursKey = allKeyElements.find(el => el.textContent?.trim() === '영업시간');
+                            if (hoursKey && hoursKey.parentElement) {
+                                operatingHours = hoursKey.parentElement.textContent?.replace('영업시간', '').trim() || '';
                             }
                         }
 
-                        // Price: Enhanced extraction with regex patterns
-                        let price = '';
-
-                        // Helper: Extract the actual price number from text
-                        // Handles: "성인(20세이상): 9,000원" -> extracts "9,000원"
-                        const extractPrice = (text: string): string | null => {
-                            // Remove parenthetical content first to avoid matching ages
-                            const cleaned = text.replace(/\([^)]*\)/g, '');
-
-                            // Pattern 1: Number followed by 원 at end or with space
-                            const priceMatch = cleaned.match(/([\d,]+)\s*원/);
-                            if (priceMatch) {
-                                const numStr = priceMatch[1].replace(/,/g, '');
-                                const num = parseInt(numStr, 10);
-                                // Validate: Prices below 500원 are suspicious (except for free)
-                                if (num >= 500 || text.includes('무료')) {
-                                    return priceMatch[1] + '원';
-                                }
-                            }
-                            return null;
-                        };
-
-                        // Method 1: Find section with h2 containing "요금"
-                        const sections = Array.from(document.querySelectorAll('section'));
-                        for (const section of sections) {
-                            const h2 = section.querySelector('h2');
-                            if (h2 && h2.textContent?.includes('요금')) {
-                                const listItems = Array.from(section.querySelectorAll('li'));
-                                for (const li of listItems) {
-                                    const text = li.textContent?.trim() || '';
-                                    if (text === '[요금]') continue;
-
-                                    // Check for 무료 first
-                                    if (text.includes('무료') && !text.includes('이상')) {
-                                        price = text;
-                                        break;
-                                    }
-
-                                    // Extract price using helper
-                                    const extracted = extractPrice(text);
-                                    if (extracted) {
-                                        // Include context (adult/child label) if available
-                                        const labelMatch = text.match(/^([가-힣]+)\s*[\(\-:]/);
-                                        if (labelMatch) {
-                                            price = labelMatch[1] + ': ' + extracted;
-                                        } else {
-                                            price = extracted;
-                                        }
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
+                        // 6. Facilities
+                        let facilities = '';
+                        const facKey = allKeyElements.find(el => el.textContent?.includes('편의시설') || el.textContent?.includes('시설'));
+                        if (facKey && facKey.parentElement) {
+                            facilities = facKey.parentElement.textContent?.replace(/편의시설|시설/g, '').trim() || '';
                         }
 
-                        // Method 2: Look for price patterns in page content
-                        if (!price) {
-                            const bodyText = document.body.innerText;
-                            // Pattern: "성인: 17,000원" or "일반 - 12,500원"
-                            const pricePatterns = [
-                                /성인[^:]*[:\-]\s*([\d,]+원)/,
-                                /일반[^:]*[:\-]\s*([\d,]+원)/,
-                                /입장[료권][^:]*[:\-]\s*([\d,]+원)/,
-                                /대소공통[^:]*[:\-]\s*([\d,]+원)/,
-                                /어른[^:]*[:\-]\s*([\d,]+원)/
-                            ];
-                            for (const pattern of pricePatterns) {
-                                const match = bodyText.match(pattern);
-                                if (match && match[1]) {
-                                    const numStr = match[1].replace(/[^0-9]/g, '');
-                                    const num = parseInt(numStr, 10);
-                                    if (num >= 500) {
-                                        price = match[1];
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-
-                        // Method 3: Look for 무료
-                        if (!price) {
-                            const bodyText = document.body.innerText;
-                            if (bodyText.includes('입장료: 무료') || bodyText.includes('입장료 무료') || bodyText.includes('무료 이용')) {
-                                price = '무료';
-                            }
-                        }
-
-                        // Image from og:image or swiper
+                        // 7. Image
                         let detailImage = '';
                         const ogImg = document.querySelector('meta[property="og:image"]');
                         if (ogImg) detailImage = ogImg.getAttribute('content') || '';
-                        if (!detailImage) {
-                            const firstImg = document.querySelector('.swiper-slide img, img');
-                            if (firstImg) detailImage = (firstImg as HTMLImageElement).src;
-                        }
 
-                        // === NEW: Extract 특징, 대상, 운영 for detailed description ===
-
-                        // 특징 (Feature): Use class .item-description if available
-                        let feature = '';
-                        const descP = document.querySelector('p.item-description');
-                        if (descP) {
-                            feature = descP.textContent?.trim() || '';
-                        }
-                        if (!feature) {
-                            // Fallback to first paragraph in article div
-                            const articleP = document.querySelector('article > div > p');
-                            if (articleP) feature = articleP.textContent?.trim() || '';
-                        }
-
-                        // 대상 (Target Audience): Look for paragraphs containing indicators
-                        let target = '';
-                        const allPs = Array.from(document.querySelectorAll('article p'));
-                        const targetEl = allPs.find(el => {
-                            const text = el.textContent || '';
-                            return (text.includes('인기') && text.includes('개월')) ||
-                                (text.includes('세') && text.includes('이상')) ||
-                                (text.includes('모두') && text.includes('추천'));
-                        });
-
-                        if (targetEl) {
-                            target = targetEl.textContent?.replace(/\n/g, ' ').trim() || '';
-                            // Remove "YYYY.MM.DD 업데이트" suffix if it somehow got attached (though unlikely if separate p)
-                            target = target.replace(/\d{4}\.\d{2}\.\d{2}.*업데이트.*/, '').trim();
-                        }
-
-                        // 운영 (Operating Hours Summary): From the hours section
-                        let operatingHours = '';
-                        if (hoursKey && hoursKey.parentElement) {
-                            const hoursContainer = hoursKey.parentElement;
-                            // Extract abbreviated operating hours
-                            const hourLines: string[] = [];
-                            const dayPatterns = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
-                            const hoursText = hoursContainer.textContent || '';
-
-                            // Try to extract first day with hours as sample
-                            for (const day of dayPatterns) {
-                                const idx = hoursText.indexOf(day);
-                                if (idx !== -1) {
-                                    const afterDay = hoursText.substring(idx);
-                                    const timeMatch = afterDay.match(/(\d{1,2}:\d{2}\s*~\s*\d{1,2}:\d{2})/);
-                                    if (timeMatch) {
-                                        const timeStr = timeMatch[1];
-                                        // Check if it's the same for all days (simplified)
-                                        const dayAbbrev = day.replace('요일', '');
-                                        hourLines.push(`${dayAbbrev}: ${timeStr}`);
-                                        break; // Take the first one found as representative
-                                    }
-                                }
-                            }
-
-                            // Simplified operating hours string
-                            if (hourLines.length > 0) {
-                                if (daysWithHours >= 7) {
-                                    operatingHours = `매일 ${hourLines[0].split(': ')[1]}`;
-                                } else if (daysWithHours >= 5) { // Assuming mostly weekdays+
-                                    operatingHours = `월-일 ${hourLines[0].split(': ')[1]}`; // User example style
-                                } else {
-                                    operatingHours = hourLines.join(', ');
-                                }
-                            }
-                        }
-
-                        // Build description combining all fields
+                        // 8. Description (Legacy fallback)
                         let description = '';
-                        if (feature) description += `[특징] ${feature}\n`;
-                        if (target) description += `[대상] ${target}\n`;
-                        if (operatingHours) description += `[운영] ${operatingHours}`;
-                        description = description.trim();
+                        const descP = document.querySelector('p.item-description');
+                        if (descP) description = descP.textContent?.trim() || '';
 
-                        return { address, closedDay, price, pageTitle, detailImage, description };
+                        return {
+                            address,
+                            closedDay,
+                            price: priceDetail ? priceDetail.split('\n')[0] : '', // Main price summary
+                            pageTitle,
+                            detailImage,
+                            description,
+                            targetAudience,
+                            priceDetail,
+                            operatingHours,
+                            facilities,
+                            website
+                        };
                     });
 
                     // Resolve Title
@@ -599,7 +468,12 @@ async function scrapeMomMom() {
                         originalPrice: '', // No distinct original price scraped yet
                         price: r.price || '무료',
                         rate: 0,
-                        platform: 'mommom'
+                        platform: 'mommom',
+                        targetAudience: r.targetAudience,
+                        operatingHours: r.operatingHours,
+                        priceDetail: r.priceDetail,
+                        facilities: r.facilities,
+                        website: r.website
                     });
                 }
             });

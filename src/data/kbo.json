@@ -14,7 +14,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -32,7 +32,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260328_롯데_vs_삼성",
@@ -49,7 +49,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -67,7 +67,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -85,7 +85,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -103,7 +103,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -121,7 +121,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260329_롯데_vs_삼성",
@@ -138,7 +138,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -156,7 +156,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -174,7 +174,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -192,7 +192,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -210,7 +210,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260331_두산_vs_삼성",
@@ -227,7 +227,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -245,7 +245,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -263,7 +263,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -281,7 +281,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -299,7 +299,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260401_두산_vs_삼성",
@@ -316,7 +316,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -334,7 +334,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -352,7 +352,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -370,7 +370,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -388,7 +388,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260402_두산_vs_삼성",
@@ -405,7 +405,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -423,7 +423,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -441,7 +441,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -459,7 +459,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -477,7 +477,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -495,7 +495,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -513,7 +513,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -549,7 +549,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -567,7 +567,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -585,7 +585,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -603,7 +603,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -639,7 +639,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -657,7 +657,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -675,7 +675,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -693,7 +693,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -729,7 +729,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -747,7 +747,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260407_KT_vs_롯데",
@@ -764,7 +764,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -782,7 +782,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -800,7 +800,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -818,7 +818,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -836,7 +836,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260408_KT_vs_롯데",
@@ -853,7 +853,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -871,7 +871,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -889,7 +889,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -907,7 +907,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -925,7 +925,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260409_KT_vs_롯데",
@@ -942,7 +942,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -960,7 +960,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -978,7 +978,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -996,7 +996,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1014,7 +1014,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1032,7 +1032,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1068,7 +1068,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -1086,7 +1086,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1104,7 +1104,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1122,7 +1122,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1158,7 +1158,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -1176,7 +1176,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1194,7 +1194,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1212,7 +1212,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1248,7 +1248,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -1266,7 +1266,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1284,7 +1284,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260414_KT_vs_NC",
@@ -1301,7 +1301,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -1319,7 +1319,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -1337,7 +1337,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -1355,7 +1355,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1373,7 +1373,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260415_KT_vs_NC",
@@ -1390,7 +1390,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -1408,7 +1408,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -1426,7 +1426,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -1444,7 +1444,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1462,7 +1462,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260416_KT_vs_NC",
@@ -1479,7 +1479,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -1497,7 +1497,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -1515,7 +1515,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -1533,7 +1533,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1551,7 +1551,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -1569,7 +1569,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1587,7 +1587,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -1605,7 +1605,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1623,7 +1623,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1641,7 +1641,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -1659,7 +1659,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1677,7 +1677,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -1695,7 +1695,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1713,7 +1713,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1731,7 +1731,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -1749,7 +1749,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1767,7 +1767,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -1785,7 +1785,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1803,7 +1803,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1821,7 +1821,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -1839,7 +1839,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1857,7 +1857,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1893,7 +1893,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -1911,7 +1911,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -1929,7 +1929,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -1947,7 +1947,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -1983,7 +1983,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2001,7 +2001,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -2019,7 +2019,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -2037,7 +2037,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -2073,7 +2073,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2091,7 +2091,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260424_롯데_vs_KIA",
@@ -2108,7 +2108,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -2144,7 +2144,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -2162,7 +2162,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2180,7 +2180,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260425_롯데_vs_KIA",
@@ -2197,7 +2197,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -2233,7 +2233,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -2251,7 +2251,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2269,7 +2269,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260426_롯데_vs_KIA",
@@ -2286,7 +2286,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -2322,7 +2322,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -2340,7 +2340,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2358,7 +2358,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -2376,7 +2376,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -2394,7 +2394,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -2412,7 +2412,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -2430,7 +2430,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2448,7 +2448,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -2466,7 +2466,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -2484,7 +2484,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -2502,7 +2502,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -2520,7 +2520,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2538,7 +2538,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -2556,7 +2556,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -2574,7 +2574,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -2592,7 +2592,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -2610,7 +2610,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2628,7 +2628,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260501_한화_vs_삼성",
@@ -2645,7 +2645,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -2663,7 +2663,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -2699,7 +2699,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2717,7 +2717,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260502_한화_vs_삼성",
@@ -2734,7 +2734,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -2752,7 +2752,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -2788,7 +2788,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2806,7 +2806,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260503_한화_vs_삼성",
@@ -2823,7 +2823,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -2841,7 +2841,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -2877,7 +2877,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2895,7 +2895,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260505_키움_vs_삼성",
@@ -2912,7 +2912,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -2930,7 +2930,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -2948,7 +2948,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -2966,7 +2966,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -2984,7 +2984,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260506_키움_vs_삼성",
@@ -3001,7 +3001,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -3019,7 +3019,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3037,7 +3037,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -3055,7 +3055,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3073,7 +3073,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260507_키움_vs_삼성",
@@ -3090,7 +3090,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -3108,7 +3108,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3126,7 +3126,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -3144,7 +3144,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3162,7 +3162,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -3180,7 +3180,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -3216,7 +3216,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -3234,7 +3234,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3252,7 +3252,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -3270,7 +3270,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -3306,7 +3306,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -3324,7 +3324,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3342,7 +3342,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -3360,7 +3360,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -3396,7 +3396,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -3414,7 +3414,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3432,7 +3432,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -3450,7 +3450,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3468,7 +3468,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -3504,7 +3504,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3522,7 +3522,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -3540,7 +3540,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3558,7 +3558,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -3594,7 +3594,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3612,7 +3612,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -3630,7 +3630,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3648,7 +3648,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -3684,7 +3684,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3702,7 +3702,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260515_KIA_vs_삼성",
@@ -3719,7 +3719,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -3737,7 +3737,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -3755,7 +3755,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3773,7 +3773,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3791,7 +3791,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260516_KIA_vs_삼성",
@@ -3808,7 +3808,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -3826,7 +3826,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -3844,7 +3844,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3862,7 +3862,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3880,7 +3880,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260517_KIA_vs_삼성",
@@ -3897,7 +3897,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -3915,7 +3915,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -3933,7 +3933,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -3951,7 +3951,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -3969,7 +3969,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -3987,7 +3987,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -4023,7 +4023,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4041,7 +4041,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4059,7 +4059,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -4077,7 +4077,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -4113,7 +4113,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4131,7 +4131,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4149,7 +4149,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -4167,7 +4167,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -4203,7 +4203,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4221,7 +4221,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4239,7 +4239,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -4257,7 +4257,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -4275,7 +4275,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -4293,7 +4293,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4311,7 +4311,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4329,7 +4329,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -4347,7 +4347,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -4365,7 +4365,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -4383,7 +4383,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4401,7 +4401,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4419,7 +4419,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -4437,7 +4437,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -4455,7 +4455,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -4473,7 +4473,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4491,7 +4491,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4509,7 +4509,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260526_LG_vs_롯데",
@@ -4526,7 +4526,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -4544,7 +4544,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -4580,7 +4580,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4598,7 +4598,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260527_LG_vs_롯데",
@@ -4615,7 +4615,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -4633,7 +4633,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -4669,7 +4669,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4687,7 +4687,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260528_LG_vs_롯데",
@@ -4704,7 +4704,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -4722,7 +4722,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -4758,7 +4758,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4776,7 +4776,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -4794,7 +4794,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -4830,7 +4830,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4848,7 +4848,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4866,7 +4866,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -4884,7 +4884,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -4920,7 +4920,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -4938,7 +4938,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -4956,7 +4956,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -4974,7 +4974,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -5010,7 +5010,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -5028,7 +5028,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5046,7 +5046,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260602_NC_vs_삼성",
@@ -5063,7 +5063,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -5081,7 +5081,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5099,7 +5099,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -5117,7 +5117,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5135,7 +5135,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260603_NC_vs_삼성",
@@ -5152,7 +5152,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -5170,7 +5170,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5188,7 +5188,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -5206,7 +5206,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5224,7 +5224,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260604_NC_vs_삼성",
@@ -5241,7 +5241,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -5259,7 +5259,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5277,7 +5277,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -5295,7 +5295,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5313,7 +5313,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260605_한화_vs_롯데",
@@ -5330,7 +5330,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -5348,7 +5348,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -5366,7 +5366,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -5384,7 +5384,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5402,7 +5402,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260606_한화_vs_롯데",
@@ -5419,7 +5419,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -5437,7 +5437,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -5455,7 +5455,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -5473,7 +5473,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5491,7 +5491,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260607_한화_vs_롯데",
@@ -5508,7 +5508,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -5526,7 +5526,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -5544,7 +5544,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -5562,7 +5562,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5580,7 +5580,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -5598,7 +5598,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5634,7 +5634,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -5652,7 +5652,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5670,7 +5670,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -5688,7 +5688,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5724,7 +5724,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -5742,7 +5742,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5760,7 +5760,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -5778,7 +5778,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5814,7 +5814,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -5832,7 +5832,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5850,7 +5850,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -5868,7 +5868,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5886,7 +5886,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -5922,7 +5922,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -5940,7 +5940,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -5958,7 +5958,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -5976,7 +5976,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -6030,7 +6030,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6048,7 +6048,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -6066,7 +6066,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -6084,7 +6084,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -6102,7 +6102,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6120,7 +6120,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260616_키움_vs_삼성",
@@ -6137,7 +6137,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -6155,7 +6155,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -6173,7 +6173,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -6191,7 +6191,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6209,7 +6209,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260617_키움_vs_삼성",
@@ -6226,7 +6226,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -6244,7 +6244,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -6262,7 +6262,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -6280,7 +6280,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6298,7 +6298,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260618_키움_vs_삼성",
@@ -6315,7 +6315,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -6333,7 +6333,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -6351,7 +6351,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -6369,7 +6369,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6387,7 +6387,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -6405,7 +6405,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -6441,7 +6441,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -6459,7 +6459,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6477,7 +6477,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -6495,7 +6495,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -6531,7 +6531,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -6567,7 +6567,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6585,7 +6585,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -6603,7 +6603,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -6621,7 +6621,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -6639,7 +6639,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6657,7 +6657,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -6675,7 +6675,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -6711,7 +6711,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -6729,7 +6729,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6747,7 +6747,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -6765,7 +6765,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -6801,7 +6801,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -6819,7 +6819,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6837,7 +6837,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -6855,7 +6855,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -6891,7 +6891,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -6909,7 +6909,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -6927,7 +6927,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260626_LG_vs_롯데",
@@ -6944,7 +6944,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -6962,7 +6962,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -6980,7 +6980,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -6998,7 +6998,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7016,7 +7016,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260627_LG_vs_롯데",
@@ -7033,7 +7033,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -7051,7 +7051,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -7069,7 +7069,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -7087,7 +7087,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7105,7 +7105,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260628_LG_vs_롯데",
@@ -7122,7 +7122,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -7140,7 +7140,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -7158,7 +7158,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -7176,7 +7176,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7194,7 +7194,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -7212,7 +7212,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -7248,7 +7248,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -7266,7 +7266,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7284,7 +7284,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -7302,7 +7302,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -7338,7 +7338,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -7356,7 +7356,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7374,7 +7374,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -7392,7 +7392,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -7428,7 +7428,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -7446,7 +7446,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7464,7 +7464,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260703_롯데_vs_KT",
@@ -7481,7 +7481,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -7499,7 +7499,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -7535,7 +7535,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7553,7 +7553,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260704_롯데_vs_KT",
@@ -7570,7 +7570,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -7588,7 +7588,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -7642,7 +7642,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7660,7 +7660,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260705_롯데_vs_KT",
@@ -7677,7 +7677,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -7695,7 +7695,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -7713,7 +7713,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7731,7 +7731,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -7749,7 +7749,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -7767,7 +7767,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -7785,7 +7785,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -7803,7 +7803,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7821,7 +7821,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -7839,7 +7839,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -7857,7 +7857,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -7875,7 +7875,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -7893,7 +7893,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -7911,7 +7911,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -7929,7 +7929,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -7947,7 +7947,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -7965,7 +7965,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -7983,7 +7983,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8001,7 +8001,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260716_롯데_vs_삼성",
@@ -8018,7 +8018,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -8036,7 +8036,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -8054,7 +8054,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8072,7 +8072,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8090,7 +8090,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260717_롯데_vs_삼성",
@@ -8107,7 +8107,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -8125,7 +8125,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -8143,7 +8143,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8161,7 +8161,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8179,7 +8179,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260718_롯데_vs_삼성",
@@ -8196,7 +8196,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -8214,7 +8214,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -8232,7 +8232,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8250,7 +8250,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8268,7 +8268,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260719_롯데_vs_삼성",
@@ -8285,7 +8285,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -8303,7 +8303,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -8321,7 +8321,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8339,7 +8339,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8357,7 +8357,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -8375,7 +8375,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -8393,7 +8393,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -8429,7 +8429,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8447,7 +8447,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -8465,7 +8465,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -8483,7 +8483,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -8519,7 +8519,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8537,7 +8537,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -8555,7 +8555,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -8573,7 +8573,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -8609,7 +8609,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8627,7 +8627,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260724_KT_vs_롯데",
@@ -8644,7 +8644,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -8662,7 +8662,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -8680,7 +8680,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8698,7 +8698,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8716,7 +8716,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260725_KT_vs_롯데",
@@ -8733,7 +8733,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -8751,7 +8751,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -8769,7 +8769,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8787,7 +8787,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8805,7 +8805,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260726_KT_vs_롯데",
@@ -8822,7 +8822,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -8840,7 +8840,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -8858,7 +8858,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8876,7 +8876,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8894,7 +8894,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260728_KIA_vs_삼성",
@@ -8911,7 +8911,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -8929,7 +8929,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -8947,7 +8947,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -8965,7 +8965,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -8983,7 +8983,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260729_KIA_vs_삼성",
@@ -9000,7 +9000,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9018,7 +9018,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9036,7 +9036,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -9054,7 +9054,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9072,7 +9072,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260730_KIA_vs_삼성",
@@ -9089,7 +9089,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9107,7 +9107,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9125,7 +9125,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -9143,7 +9143,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9161,7 +9161,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -9179,7 +9179,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9197,7 +9197,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -9233,7 +9233,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9251,7 +9251,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -9269,7 +9269,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9287,7 +9287,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -9341,7 +9341,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9359,7 +9359,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -9377,7 +9377,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9395,7 +9395,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -9413,7 +9413,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9431,7 +9431,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260804_키움_vs_롯데",
@@ -9448,7 +9448,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -9466,7 +9466,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9484,7 +9484,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -9502,7 +9502,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9520,7 +9520,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260805_키움_vs_롯데",
@@ -9537,7 +9537,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -9555,7 +9555,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9573,7 +9573,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -9591,7 +9591,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9609,7 +9609,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260806_키움_vs_롯데",
@@ -9626,7 +9626,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -9644,7 +9644,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9662,7 +9662,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -9680,7 +9680,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9698,7 +9698,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9716,7 +9716,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9734,7 +9734,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -9752,7 +9752,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -9770,7 +9770,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9788,7 +9788,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9806,7 +9806,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9824,7 +9824,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -9842,7 +9842,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -9860,7 +9860,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9878,7 +9878,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -9896,7 +9896,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -9914,7 +9914,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -9932,7 +9932,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -9950,7 +9950,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -9968,7 +9968,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260811_KT_vs_NC",
@@ -9985,7 +9985,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10003,7 +10003,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -10039,7 +10039,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10057,7 +10057,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260812_KT_vs_NC",
@@ -10074,7 +10074,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10092,7 +10092,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -10128,7 +10128,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10146,7 +10146,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260813_KT_vs_NC",
@@ -10163,7 +10163,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10181,7 +10181,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -10217,7 +10217,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10235,7 +10235,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -10253,7 +10253,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -10271,7 +10271,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -10289,7 +10289,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -10307,7 +10307,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10325,7 +10325,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -10343,7 +10343,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -10361,7 +10361,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -10379,7 +10379,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -10397,7 +10397,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10415,7 +10415,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -10433,7 +10433,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -10451,7 +10451,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -10469,7 +10469,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -10487,7 +10487,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10505,7 +10505,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -10523,7 +10523,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -10541,7 +10541,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10559,7 +10559,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -10577,7 +10577,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10595,7 +10595,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -10613,7 +10613,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -10631,7 +10631,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10649,7 +10649,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -10667,7 +10667,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10685,7 +10685,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -10703,7 +10703,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -10721,7 +10721,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10739,7 +10739,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -10757,7 +10757,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10775,7 +10775,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260821_삼성_vs_NC",
@@ -10792,7 +10792,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10828,7 +10828,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -10846,7 +10846,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10864,7 +10864,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260822_삼성_vs_NC",
@@ -10881,7 +10881,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -10917,7 +10917,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -10953,7 +10953,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -10971,7 +10971,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260823_삼성_vs_NC",
@@ -10988,7 +10988,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -11006,7 +11006,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -11024,7 +11024,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11042,7 +11042,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260825_두산_vs_KT",
@@ -11059,7 +11059,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -11077,7 +11077,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -11113,7 +11113,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11131,7 +11131,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260826_두산_vs_KT",
@@ -11148,7 +11148,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -11166,7 +11166,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -11202,7 +11202,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11220,7 +11220,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260827_두산_vs_KT",
@@ -11237,7 +11237,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -11255,7 +11255,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -11291,7 +11291,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11309,7 +11309,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -11327,7 +11327,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -11345,7 +11345,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -11363,7 +11363,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -11381,7 +11381,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11399,7 +11399,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -11417,7 +11417,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -11435,7 +11435,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -11453,7 +11453,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -11471,7 +11471,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11489,7 +11489,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -11507,7 +11507,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -11525,7 +11525,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -11543,7 +11543,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -11561,7 +11561,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11579,7 +11579,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -11597,7 +11597,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -11615,7 +11615,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -11651,7 +11651,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11669,7 +11669,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -11687,7 +11687,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -11705,7 +11705,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -11741,7 +11741,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11759,7 +11759,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -11777,7 +11777,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -11795,7 +11795,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -11831,7 +11831,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11849,7 +11849,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260904_한화_vs_롯데",
@@ -11866,7 +11866,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -11884,7 +11884,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -11920,7 +11920,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -11938,7 +11938,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260905_한화_vs_롯데",
@@ -11955,7 +11955,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -11973,7 +11973,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -12009,7 +12009,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -12027,7 +12027,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260906_한화_vs_롯데",
@@ -12044,7 +12044,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12062,7 +12062,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -12098,7 +12098,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12116,7 +12116,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.3318726993928,
     "lng": 127.457020616947,
-    "address": "경기 이천시 백사면 원적로 668",
+    "address": "경기도 이천시 백사면 원적로 668",
     "district": "이천시"
   },
   {
@@ -12134,7 +12134,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12152,7 +12152,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -12170,7 +12170,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12188,7 +12188,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12206,7 +12206,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.3318726993928,
     "lng": 127.457020616947,
-    "address": "경기 이천시 백사면 원적로 668",
+    "address": "경기도 이천시 백사면 원적로 668",
     "district": "이천시"
   },
   {
@@ -12224,7 +12224,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12242,7 +12242,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -12260,7 +12260,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12278,7 +12278,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.3318726993928,
     "lng": 127.457020616947,
-    "address": "경기 이천시 백사면 원적로 668",
+    "address": "경기도 이천시 백사면 원적로 668",
     "district": "이천시"
   },
   {
@@ -12296,7 +12296,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12314,7 +12314,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12332,7 +12332,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -12350,7 +12350,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12368,7 +12368,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.3318726993928,
     "lng": 127.457020616947,
-    "address": "경기 이천시 백사면 원적로 668",
+    "address": "경기도 이천시 백사면 원적로 668",
     "district": "이천시"
   },
   {
@@ -12386,7 +12386,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12404,7 +12404,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12422,7 +12422,7 @@
     "awayTeamLogo": "/images/logos/kbo/kia.svg",
     "lat": 35.1682116,
     "lng": 126.8891068,
-    "address": "광주 북구 서림로 10 무등종합경기장",
+    "address": "광주광역시 북구 서림로 10 무등종합경기장",
     "district": "북구"
   },
   {
@@ -12440,7 +12440,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12458,7 +12458,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260316_키움_vs_롯데",
@@ -12475,7 +12475,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12493,7 +12493,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12511,7 +12511,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -12529,7 +12529,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12547,7 +12547,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260317_키움_vs_롯데",
@@ -12564,7 +12564,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12582,7 +12582,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12600,7 +12600,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -12618,7 +12618,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12636,7 +12636,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260319_두산_vs_롯데",
@@ -12653,7 +12653,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12671,7 +12671,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12689,7 +12689,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -12707,7 +12707,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12725,7 +12725,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260320_두산_vs_롯데",
@@ -12742,7 +12742,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12760,7 +12760,7 @@
     "awayTeamLogo": "/images/logos/kbo/nc.svg",
     "lat": 35.2224951,
     "lng": 128.5825537,
-    "address": "경남 창원시 마산회원구 삼호로 63",
+    "address": "경상남도 창원시 마산회원구 삼호로 63",
     "district": "창원시"
   },
   {
@@ -12778,7 +12778,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -12796,7 +12796,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -12814,7 +12814,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -12832,7 +12832,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260321_한화_vs_롯데",
@@ -12849,7 +12849,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12867,7 +12867,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -12885,7 +12885,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -12903,7 +12903,7 @@
     "awayTeamLogo": "/images/logos/kbo/doosan.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -12921,7 +12921,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260322_한화_vs_롯데",
@@ -12938,7 +12938,7 @@
     "awayTeamLogo": "/images/logos/kbo/lotte.svg",
     "lat": 35.1931684,
     "lng": 129.0615852,
-    "address": "부산 동래구 사직로 55-32",
+    "address": "부산광역시 동래구 사직로 55-32",
     "district": "동래구"
   },
   {
@@ -12956,7 +12956,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -12974,7 +12974,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -12992,7 +12992,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -13010,7 +13010,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260323_KIA_vs_삼성",
@@ -13027,7 +13027,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -13045,7 +13045,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -13063,7 +13063,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   },
   {
@@ -13081,7 +13081,7 @@
     "awayTeamLogo": "/images/logos/kbo/lg.svg",
     "lat": 37.5119858,
     "lng": 127.0718388,
-    "address": "서울 송파구 올림픽로 19-2 서울종합운동장",
+    "address": "서울특별시 송파구 올림픽로 19-2 서울종합운동장",
     "district": "송파구"
   },
   {
@@ -13099,7 +13099,7 @@
     "awayTeamLogo": "/images/logos/kbo/ssg.svg",
     "lat": 37.436998685442084,
     "lng": 126.69327612453377,
-    "address": "인천 미추홀구 매소홀로 618"
+    "address": "인천광역시 미추홀구 매소홀로 618"
   },
   {
     "id": "kbo_20260324_KIA_vs_삼성",
@@ -13116,7 +13116,7 @@
     "awayTeamLogo": "/images/logos/kbo/samsung.svg",
     "lat": 35.8410706,
     "lng": 128.6817523,
-    "address": "대구 수성구 야구전설로 1 대구삼성라이온즈파크",
+    "address": "대구광역시 수성구 야구전설로 1 대구삼성라이온즈파크",
     "district": "수성구"
   },
   {
@@ -13134,7 +13134,7 @@
     "awayTeamLogo": "/images/logos/kbo/kt.svg",
     "lat": 37.300096,
     "lng": 127.0096588,
-    "address": "경기 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
+    "address": "경기도 수원시 장안구 경수대로 893 수원종합운동장(주경기장)",
     "district": "수원시"
   },
   {
@@ -13152,7 +13152,7 @@
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg",
     "lat": 36.317,
     "lng": 127.4292,
-    "address": "대전 중구 대종로 373",
+    "address": "대전광역시 중구 대종로 373",
     "district": "중구"
   }
 ]

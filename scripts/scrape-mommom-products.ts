@@ -105,26 +105,30 @@ async function scrapeProducts() {
         // Extract Items with full details from list page
         const listItems = await page.evaluate((): any[] => {
             const results: any[] = [];
-            const seenTitles = new Set();
+            const seenLinks = new Set();
 
             // Use class selector for product cards (updated to match current site)
             const cards = document.querySelectorAll('div[class*="sc-3ec5fbe4-30"]');
 
             cards.forEach(card => {
+                // Find anchor that points to a product
+                const anchor = card.querySelector('a[href*="/shop/products/"]') as HTMLAnchorElement;
+                if (!anchor) return;
+
+                const link = anchor.href;
+                if (!link || seenLinks.has(link)) return;
+                seenLinks.add(link);
+
                 // Get title from h4 (updated class)
                 const h4 = card.querySelector('h4.product-name, h4');
-                if (!h4) return;
-
-                const title = h4.textContent?.trim() || '';
-                if (!title || seenTitles.has(title)) return;
-                seenTitles.add(title);
+                const title = h4?.textContent?.trim() || '';
 
                 // Get image
                 const imgEl = card.querySelector('img');
                 const image = imgEl?.src || '';
 
                 // Get brand name
-                const brandEl = card.querySelector('.brand-name');
+                const brandEl = card.querySelector('.brand-name, div[class*="sc-"] p:first-child');
                 const brand = brandEl?.textContent?.trim() || '';
 
                 // Get prices
@@ -132,8 +136,8 @@ async function scrapeProducts() {
                 let price = '';
                 let originalPrice = '';
 
-                // Find p element containing price info
-                const priceContainer = card.querySelector('p, .price');
+                // Find element containing price info
+                const priceContainer = card.querySelector('p[class*="product-price"], div[class*="price"]');
                 if (priceContainer) {
                     const priceText = priceContainer.textContent || '';
                     const rateMatch = priceText.match(/(\d+)%/);
@@ -149,15 +153,16 @@ async function scrapeProducts() {
                     originalPrice = delEl.textContent.trim();
                 }
 
-                // Generate ID from title
-                const safeTitle = title.replace(/[^\w가-힣]/g, '').slice(0, 20);
-                const id = "mommom_shop_" + safeTitle;
+                // Generate ID from link ID
+                const idMatch = link.match(/products\/(\d+)/);
+                const id = idMatch ? "mommom_product_" + idMatch[1] : "mommom_shop_" + Math.random().toString(36).substr(2, 9);
 
                 results.push({
                     id,
                     title,
                     brand,
                     image,
+                    link,
                     price,
                     originalPrice,
                     discount
@@ -186,7 +191,7 @@ async function scrapeProducts() {
                 id: item.id,
                 title: item.title,
                 image: item.image,
-                link: `https://mom-mom.net/shop/categories/1102241`, // Link to category page
+                link: item.link,
                 date: '상시운영',
                 genre: classifyGenre(item.title),
                 region: extractRegion(item.title + ' ' + item.brand),
