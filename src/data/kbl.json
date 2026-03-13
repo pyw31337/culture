@@ -1,26 +1,9 @@
 [
   {
-    "id": "kbl_20260311_창원_LG_vs_고양_소노",
-    "title": "창원 LG vs 고양 소노",
-    "image": "/images/kbl_poster.png",
-    "date": "2026.03.11 (수) 19:00",
-    "venue": "창원체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "창원 LG",
-    "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경상남도 창원시 성산구 원이대로 450"
-  },
-  {
     "id": "kbl_20260302_현대모비스_vs_한국가스공사",
     "title": "현대모비스 vs 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.02 (월) 13:00",
+    "date": "2026-03-02 13:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -28,17 +11,13 @@
     "homeTeam": "현대모비스",
     "awayTeam": "한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260302_소노_vs_SK",
     "title": "소노 vs SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.02 (월) 15:00",
+    "date": "2026-03-02 15:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -46,17 +25,13 @@
     "homeTeam": "소노",
     "awayTeam": "SK",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260303_정관장_vs_한국가스공사",
     "title": "정관장 vs 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.03 (화) 13:00",
+    "date": "2026-03-03 13:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -64,17 +39,13 @@
     "homeTeam": "정관장",
     "awayTeam": "한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260303_DB_vs_LG",
     "title": "DB vs LG",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.03 (화) 15:00",
+    "date": "2026-03-03 15:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -82,17 +53,13 @@
     "homeTeam": "DB",
     "awayTeam": "LG",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260304_삼성_vs_SK",
     "title": "삼성 vs SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.04 (수) 13:00",
+    "date": "2026-03-04 13:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -100,17 +67,13 @@
     "homeTeam": "삼성",
     "awayTeam": "SK",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260304_LG_vs_현대모비스",
     "title": "LG vs 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.04 (수) 15:00",
+    "date": "2026-03-04 15:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -118,17 +81,13 @@
     "homeTeam": "LG",
     "awayTeam": "현대모비스",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260305_고양_소노_vs_안양_정관장",
     "title": "고양 소노 vs 안양 정관장",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.05 (목) 19:00",
+    "date": "2026-03-05 19:00",
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -136,17 +95,13 @@
     "homeTeam": "고양 소노",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기도 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260305_원주_DB_vs_부산_KCC",
     "title": "원주 DB vs 부산 KCC",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.05 (목) 19:00",
+    "date": "2026-03-05 19:00",
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -154,16 +109,13 @@
     "homeTeam": "원주 DB",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원특별자치도 원주시 서원대로 281"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260306_창원_LG_vs_울산_현대모비스",
     "title": "창원 LG vs 울산 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.06 (금) 19:00",
+    "date": "2026-03-06 19:00",
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -171,16 +123,13 @@
     "homeTeam": "창원 LG",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경상남도 창원시 성산구 원이대로 450"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260306_수원_KT_vs_서울_SK",
     "title": "수원 KT vs 서울 SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.06 (금) 19:00",
+    "date": "2026-03-06 19:00",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -188,17 +137,13 @@
     "homeTeam": "수원 KT",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기도 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260307_원주_DB_vs_고양_소노",
     "title": "원주 DB vs 고양 소노",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.07 (토) 14:00",
+    "date": "2026-03-07 14:00",
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -206,16 +151,13 @@
     "homeTeam": "원주 DB",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원특별자치도 원주시 서원대로 281"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260307_서울_삼성_vs_부산_KCC",
     "title": "서울 삼성 vs 부산 KCC",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.07 (토) 14:00",
+    "date": "2026-03-07 14:00",
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -223,17 +165,13 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260307_안양_정관장_vs_대구_한국가스공사",
     "title": "안양 정관장 vs 대구 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.07 (토) 16:30",
+    "date": "2026-03-07 16:30",
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -241,17 +179,13 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기도 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260308_창원_LG_vs_서울_SK",
     "title": "창원 LG vs 서울 SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.08 (일) 14:00",
+    "date": "2026-03-08 14:00",
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -259,16 +193,13 @@
     "homeTeam": "창원 LG",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경상남도 창원시 성산구 원이대로 450"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260308_울산_현대모비스_vs_수원_KT",
     "title": "울산 현대모비스 vs 수원 KT",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.08 (일) 14:00",
+    "date": "2026-03-08 14:00",
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -276,16 +207,13 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산광역시 북구 고래로 54"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260308_원주_DB_vs_대구_한국가스공사",
     "title": "원주 DB vs 대구 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.08 (일) 16:30",
+    "date": "2026-03-08 16:30",
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -293,16 +221,13 @@
     "homeTeam": "원주 DB",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원특별자치도 원주시 서원대로 281"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260309_서울_삼성_vs_안양_정관장",
     "title": "서울 삼성 vs 안양 정관장",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.09 (월) 19:00",
+    "date": "2026-03-09 19:00",
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -310,17 +235,13 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260310_KT_vs_DB",
     "title": "KT vs DB",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.10 (화) 13:00",
+    "date": "2026-03-10 13:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -328,17 +249,13 @@
     "homeTeam": "KT",
     "awayTeam": "DB",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260310_한국가스공사_vs_상무",
     "title": "한국가스공사 vs 상무",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.10 (화) 15:00",
+    "date": "2026-03-10 15:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -346,17 +263,13 @@
     "homeTeam": "한국가스공사",
     "awayTeam": "상무",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg",
-    "lat": 37.2424001,
-    "lng": 127.0813337,
-    "address": "경기도 용인시 기흥구 덕영대로 1732 ...",
-    "district": "용인시"
+    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20260310_부산_KCC_vs_울산_현대모비스",
     "title": "부산 KCC vs 울산 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.10 (화) 19:00",
+    "date": "2026-03-10 19:00",
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
@@ -364,16 +277,27 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+  },
+  {
+    "id": "kbl_20260311_창원_LG_vs_고양_소노",
+    "title": "창원 LG vs 고양 소노",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-03-11 19:00",
+    "venue": "창원체육관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "창원 LG",
+    "awayTeam": "고양 소노",
+    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260312_서울_SK_vs_원주_DB",
     "title": "서울 SK vs 원주 DB",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.12 (목) 19:00",
+    "date": "2026-03-12 19:00",
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -381,17 +305,13 @@
     "homeTeam": "서울 SK",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260313_창원_LG_vs_서울_삼성",
     "title": "창원 LG vs 서울 삼성",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.13 (금) 19:00",
+    "date": "2026-03-13 19:00",
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -399,16 +319,13 @@
     "homeTeam": "창원 LG",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경상남도 창원시 성산구 원이대로 450"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260314_수원_KT_vs_서울_SK",
     "title": "수원 KT vs 서울 SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.14 (토) 14:00",
+    "date": "2026-03-14 14:00",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -416,17 +333,13 @@
     "homeTeam": "수원 KT",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기도 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260314_부산_KCC_vs_안양_정관장",
     "title": "부산 KCC vs 안양 정관장",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.14 (토) 14:00",
+    "date": "2026-03-14 14:00",
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
@@ -434,16 +347,13 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260314_대구_한국가스공사_vs_울산_현대모비스",
     "title": "대구 한국가스공사 vs 울산 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.14 (토) 16:30",
+    "date": "2026-03-14 16:30",
     "venue": "대구실내체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -451,16 +361,13 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구광역시 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260315_원주_DB_vs_창원_LG",
     "title": "원주 DB vs 창원 LG",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.15 (일) 14:00",
+    "date": "2026-03-15 14:00",
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -468,16 +375,13 @@
     "homeTeam": "원주 DB",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원특별자치도 원주시 서원대로 281"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260315_고양_소노_vs_서울_삼성",
     "title": "고양 소노 vs 서울 삼성",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.15 (일) 14:00",
+    "date": "2026-03-15 14:00",
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -485,17 +389,13 @@
     "homeTeam": "고양 소노",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기도 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260315_울산_현대모비스_vs_부산_KCC",
     "title": "울산 현대모비스 vs 부산 KCC",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.15 (일) 16:30",
+    "date": "2026-03-15 16:30",
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -503,16 +403,13 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산광역시 북구 고래로 54"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260316_대구_한국가스공사_vs_안양_정관장",
     "title": "대구 한국가스공사 vs 안양 정관장",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.16 (월) 19:00",
+    "date": "2026-03-16 19:00",
     "venue": "대구실내체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -520,16 +417,13 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구광역시 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260318_수원_KT_vs_원주_DB",
     "title": "수원 KT vs 원주 DB",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.18 (수) 19:00",
+    "date": "2026-03-18 19:00",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -537,17 +431,41 @@
     "homeTeam": "수원 KT",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기도 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+  },
+  {
+    "id": "kbl_20260318_LG_vs_삼성",
+    "title": "LG vs 삼성",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-03-18 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "LG",
+    "awayTeam": "삼성",
+    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+  },
+  {
+    "id": "kbl_20260318_현대모비스_vs_정관장",
+    "title": "현대모비스 vs 정관장",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-03-18 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "현대모비스",
+    "awayTeam": "정관장",
+    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260319_고양_소노_vs_부산_KCC",
     "title": "고양 소노 vs 부산 KCC",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.19 (목) 19:00",
+    "date": "2026-03-19 19:00",
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -555,17 +473,13 @@
     "homeTeam": "고양 소노",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기도 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260320_수원_KT_vs_대구_한국가스공사",
     "title": "수원 KT vs 대구 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.20 (금) 19:00",
+    "date": "2026-03-20 19:00",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -573,17 +487,13 @@
     "homeTeam": "수원 KT",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기도 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260321_고양_소노_vs_울산_현대모비스",
     "title": "고양 소노 vs 울산 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.21 (토) 14:00",
+    "date": "2026-03-21 14:00",
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -591,17 +501,13 @@
     "homeTeam": "고양 소노",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기도 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260321_부산_KCC_vs_서울_삼성",
     "title": "부산 KCC vs 서울 삼성",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.21 (토) 16:30",
+    "date": "2026-03-21 16:30",
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
@@ -609,16 +515,13 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260322_안양_정관장_vs_수원_KT",
     "title": "안양 정관장 vs 수원 KT",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.22 (일) 14:00",
+    "date": "2026-03-22 14:00",
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -626,17 +529,13 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기도 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260322_원주_DB_vs_대구_한국가스공사",
     "title": "원주 DB vs 대구 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.22 (일) 16:30",
+    "date": "2026-03-22 16:30",
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -644,16 +543,13 @@
     "homeTeam": "원주 DB",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원특별자치도 원주시 서원대로 281"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260323_서울_삼성_vs_울산_현대모비스",
     "title": "서울 삼성 vs 울산 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.23 (월) 19:00",
+    "date": "2026-03-23 19:00",
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -661,17 +557,13 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260324_원주_DB_vs_안양_정관장",
     "title": "원주 DB vs 안양 정관장",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.24 (화) 19:00",
+    "date": "2026-03-24 19:00",
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -679,16 +571,13 @@
     "homeTeam": "원주 DB",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원특별자치도 원주시 서원대로 281"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260325_서울_SK_vs_고양_소노",
     "title": "서울 SK vs 고양 소노",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.25 (수) 19:00",
+    "date": "2026-03-25 19:00",
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -696,17 +585,41 @@
     "homeTeam": "서울 SK",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+  },
+  {
+    "id": "kbl_20260325_KT_vs_미정",
+    "title": "KT vs 미정",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-03-25 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "KT",
+    "awayTeam": "미정",
+    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbl_20260325_상무_vs_미정",
+    "title": "상무 vs 미정",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-03-25 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "상무",
+    "awayTeam": "미정",
+    "homeTeamLogo": "/images/logos/kbl/sangmu.svg",
+    "awayTeamLogo": ""
   },
   {
     "id": "kbl_20260326_대구_한국가스공사_vs_창원_LG",
     "title": "대구 한국가스공사 vs 창원 LG",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.26 (목) 19:00",
+    "date": "2026-03-26 19:00",
     "venue": "대구실내체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -714,16 +627,13 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구광역시 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260327_부산_KCC_vs_수원_KT",
     "title": "부산 KCC vs 수원 KT",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.27 (금) 19:00",
+    "date": "2026-03-27 19:00",
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
@@ -731,16 +641,13 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260328_울산_현대모비스_vs_서울_SK",
     "title": "울산 현대모비스 vs 서울 SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.28 (토) 14:00",
+    "date": "2026-03-28 14:00",
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -748,16 +655,13 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산광역시 북구 고래로 54"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260328_고양_소노_vs_원주_DB",
     "title": "고양 소노 vs 원주 DB",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.28 (토) 14:00",
+    "date": "2026-03-28 14:00",
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -765,17 +669,13 @@
     "homeTeam": "고양 소노",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기도 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260328_서울_삼성_vs_안양_정관장",
     "title": "서울 삼성 vs 안양 정관장",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.28 (토) 16:30",
+    "date": "2026-03-28 16:30",
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -783,17 +683,13 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260329_창원_LG_vs_서울_SK",
     "title": "창원 LG vs 서울 SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.29 (일) 14:00",
+    "date": "2026-03-29 14:00",
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -801,16 +697,13 @@
     "homeTeam": "창원 LG",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경상남도 창원시 성산구 원이대로 450"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260329_대구_한국가스공사_vs_부산_KCC",
     "title": "대구 한국가스공사 vs 부산 KCC",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.29 (일) 14:00",
+    "date": "2026-03-29 14:00",
     "venue": "대구실내체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -818,16 +711,13 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구광역시 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260329_서울_삼성_vs_수원_KT",
     "title": "서울 삼성 vs 수원 KT",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.29 (일) 16:30",
+    "date": "2026-03-29 16:30",
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -835,17 +725,13 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "수원 KT",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20260330_울산_현대모비스_vs_원주_DB",
     "title": "울산 현대모비스 vs 원주 DB",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.30 (월) 19:00",
+    "date": "2026-03-30 19:00",
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -853,16 +739,13 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산광역시 북구 고래로 54"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260331_안양_정관장_vs_창원_LG",
     "title": "안양 정관장 vs 창원 LG",
     "image": "/images/kbl_poster.png",
-    "date": "2026.03.31 (화) 19:00",
+    "date": "2026-03-31 19:00",
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -870,17 +753,13 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기도 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260401_부산_KCC_vs_서울_SK",
     "title": "부산 KCC vs 서울 SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.01 (수) 19:00",
+    "date": "2026-04-01 19:00",
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
@@ -888,16 +767,27 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+  },
+  {
+    "id": "kbl_20260401_미정_vs_미정",
+    "title": "미정 vs 미정",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-04-01 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "미정",
+    "awayTeam": "미정",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   },
   {
     "id": "kbl_20260402_대구_한국가스공사_vs_고양_소노",
     "title": "대구 한국가스공사 vs 고양 소노",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.02 (목) 19:00",
+    "date": "2026-04-02 19:00",
     "venue": "대구실내체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -905,16 +795,13 @@
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 35.8934361897145,
-    "lng": 128.603454695703,
-    "address": "대구광역시 북구 대구체육관로 39"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260403_수원_KT_vs_창원_LG",
     "title": "수원 KT vs 창원 LG",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.03 (금) 19:00",
+    "date": "2026-04-03 19:00",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -922,17 +809,13 @@
     "homeTeam": "수원 KT",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기도 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260404_안양_정관장_vs_울산_현대모비스",
     "title": "안양 정관장 vs 울산 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.04 (토) 14:00",
+    "date": "2026-04-04 14:00",
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -940,17 +823,13 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기도 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260404_원주_DB_vs_서울_삼성",
     "title": "원주 DB vs 서울 삼성",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.04 (토) 14:00",
+    "date": "2026-04-04 14:00",
     "venue": "원주DB프로미아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -958,16 +837,13 @@
     "homeTeam": "원주 DB",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 37.3390619,
-    "lng": 127.941915,
-    "address": "강원특별자치도 원주시 서원대로 281"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260404_서울_SK_vs_대구_한국가스공사",
     "title": "서울 SK vs 대구 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.04 (토) 16:30",
+    "date": "2026-04-04 16:30",
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -975,17 +851,13 @@
     "homeTeam": "서울 SK",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20260405_창원_LG_vs_부산_KCC",
     "title": "창원 LG vs 부산 KCC",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.05 (일) 14:00",
+    "date": "2026-04-05 14:00",
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -993,16 +865,13 @@
     "homeTeam": "창원 LG",
     "awayTeam": "부산 KCC",
     "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "lat": 35.2327195,
-    "lng": 128.6662755,
-    "address": "경상남도 창원시 성산구 원이대로 450"
+    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20260405_고양_소노_vs_안양_정관장",
     "title": "고양 소노 vs 안양 정관장",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.05 (일) 14:00",
+    "date": "2026-04-05 14:00",
     "venue": "고양소노아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -1010,17 +879,13 @@
     "homeTeam": "고양 소노",
     "awayTeam": "안양 정관장",
     "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "lat": 37.6746181,
-    "lng": 126.7418265,
-    "address": "경기도 고양시 일산서구 중앙로 1601 고양종합운동장",
-    "district": "고양시"
+    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20260405_수원_KT_vs_울산_현대모비스",
     "title": "수원 KT vs 울산 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.05 (일) 16:30",
+    "date": "2026-04-05 16:30",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -1028,17 +893,13 @@
     "homeTeam": "수원 KT",
     "awayTeam": "울산 현대모비스",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기도 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20260406_서울_SK_vs_서울_삼성",
     "title": "서울 SK vs 서울 삼성",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.06 (월) 19:00",
+    "date": "2026-04-06 19:00",
     "venue": "잠실학생",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -1046,17 +907,13 @@
     "homeTeam": "서울 SK",
     "awayTeam": "서울 삼성",
     "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "lat": 37.5120839,
-    "lng": 127.0753895,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20260408_울산_현대모비스_vs_창원_LG",
     "title": "울산 현대모비스 vs 창원 LG",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.08 (수) 19:00",
+    "date": "2026-04-08 19:00",
     "venue": "울산동천",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
@@ -1064,16 +921,13 @@
     "homeTeam": "울산 현대모비스",
     "awayTeam": "창원 LG",
     "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "lat": 35.6327798821215,
-    "lng": 129.338851290874,
-    "address": "울산광역시 북구 고래로 54"
+    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20260408_수원_KT_vs_고양_소노",
     "title": "수원 KT vs 고양 소노",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.08 (수) 19:00",
+    "date": "2026-04-08 19:00",
     "venue": "수원 KT 소닉붐 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -1081,17 +935,13 @@
     "homeTeam": "수원 KT",
     "awayTeam": "고양 소노",
     "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "lat": 37.276297,
-    "lng": 126.9483162,
-    "address": "경기도 수원시 권선구 서수원로577번길 171",
-    "district": "수원시"
+    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20260408_안양_정관장_vs_서울_SK",
     "title": "안양 정관장 vs 서울 SK",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.08 (수) 19:00",
+    "date": "2026-04-08 19:00",
     "venue": "안양 정관장 아레나",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "gyeonggi",
@@ -1099,17 +949,13 @@
     "homeTeam": "안양 정관장",
     "awayTeam": "서울 SK",
     "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "lat": 37.405047,
-    "lng": 126.9484472,
-    "address": "경기도 안양시 동안구 평촌대로 389",
-    "district": "안양시"
+    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20260408_부산_KCC_vs_원주_DB",
     "title": "부산 KCC vs 원주 DB",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.08 (수) 19:00",
+    "date": "2026-04-08 19:00",
     "venue": "부산사직",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "busan",
@@ -1117,16 +963,13 @@
     "homeTeam": "부산 KCC",
     "awayTeam": "원주 DB",
     "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg",
-    "lat": 35.199021,
-    "lng": 129.061866,
-    "address": "부산광역시"
+    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20260408_서울_삼성_vs_대구_한국가스공사",
     "title": "서울 삼성 vs 대구 한국가스공사",
     "image": "/images/kbl_poster.png",
-    "date": "2026.04.08 (수) 19:00",
+    "date": "2026-04-08 19:00",
     "venue": "잠실실내",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "seoul",
@@ -1134,10 +977,6 @@
     "homeTeam": "서울 삼성",
     "awayTeam": "대구 한국가스공사",
     "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "lat": 37.5161638,
-    "lng": 127.0759328,
-    "address": "서울특별시 송파구 올림픽로 25",
-    "district": "송파구"
+    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
   }
 ]
