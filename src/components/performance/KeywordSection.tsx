@@ -229,6 +229,9 @@ export default function KeywordSection({ keywordItems, onLocationClick, onToggle
                                     {/* Info Overlay (Detail View) */}
                                     <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-20">
                                         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
+                                        <p className="text-gray-300 text-[10px] mb-3 line-clamp-3 px-2 italic font-medium opacity-80">
+                                            {perf.synopsis || perf.description}
+                                        </p>
                                         <p className="text-gray-300 text-sm mb-4 font-bold tracking-wider">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </p>

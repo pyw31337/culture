@@ -104,6 +104,7 @@ interface MomMomItem {
     priceDetail?: string;
     facilities?: string;
     website?: string;
+    feesAndPrograms?: string;
 }
 
 async function scrapeMomMom() {
@@ -268,7 +269,7 @@ async function scrapeMomMom() {
                         existing.date.includes('매일') ||
                         !existing.date.match(/\d{4}\.\d{2}\.\d{2}/);
 
-                    if (isPermanent) {
+                    if (isPermanent && existing.feesAndPrograms) {
                         // Ensure list data (title/image) is synced
                         return {
                             ...existing,
@@ -372,6 +373,24 @@ async function scrapeMomMom() {
                             }
                         });
 
+                        // 5.5 Extract "요금 및 프로그램" section specifically
+                        let feesAndPrograms = '';
+                        // User provided selector
+                        const userSelector = 'body > div.container > main > div:nth-child(1) > article > div.main-container > div:nth-child(5) > section.sc-6ddc6fb7-0.gcLybS';
+                        const userEl = document.querySelector(userSelector);
+                        if (userEl) {
+                            feesAndPrograms = (userEl as HTMLElement).innerText?.trim() || '';
+                        }
+                        
+                        // Fallback: search for header content
+                        if (!feesAndPrograms) {
+                            const sections = Array.from(document.querySelectorAll('section'));
+                            const feeSection = sections.find(s => s.innerText?.includes('요금 및 프로그램'));
+                            if (feeSection) {
+                                feesAndPrograms = (feeSection as HTMLElement).innerText?.trim() || '';
+                            }
+                        }
+
                         // Standard extraction if toggles failed
                         if (!operatingHours) {
                             const hoursKey = allKeyElements.find(el => el.textContent?.trim() === '영업시간');
@@ -408,7 +427,8 @@ async function scrapeMomMom() {
                             priceDetail,
                             operatingHours,
                             facilities,
-                            website
+                            website,
+                            feesAndPrograms
                         };
                     });
 
@@ -473,11 +493,15 @@ async function scrapeMomMom() {
                         operatingHours: r.operatingHours,
                         priceDetail: r.priceDetail,
                         facilities: r.facilities,
-                        website: r.website
+                        website: r.website,
+                        feesAndPrograms: r.feesAndPrograms
                     });
                 }
             });
             bar.increment(chunk.length);
+            
+            // Incremental Save
+            fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
         }
         bar.stop();
 

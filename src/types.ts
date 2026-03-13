@@ -65,4 +65,5 @@ export type Performance = {
     operatingHours?: string;
     priceDetail?: string;
     closedDays?: string;
+    feesAndPrograms?: string;
 };

@@ -198,7 +198,8 @@ async function scrapeMovies() {
                 director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
                 cast: tmdb?.credits?.cast?.slice(0, 5).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 5).map((a: any) => a.peopleNm) || existing?.cast,
                 venue: kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정',
-                runtime: tmdb?.runtime || existing?.runtime,
+                venue: kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정',
+                runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || existing?.runtime ? `${existing?.runtime}분` : ''),
                 budget: tmdb?.budget || existing?.budget,
                 revenue: tmdb?.revenue || existing?.revenue,
                 budgetKRW: tmdb?.budget ? Math.round(tmdb.budget * 1400) : existing?.budgetKRW,
@@ -218,14 +219,19 @@ async function scrapeMovies() {
             const posterUrl = tmdbPoster || existing?.posterUrl;
             
             if (posterUrl) {
-                const localImage = await processImage(posterUrl, item.id.replace('movie_', ''), 'posters/movies');
+                // Use a clean filename based on ID to avoid truncation or special char issues
+                const cleanId = item.id.replace('movie_', '');
+                const localImage = await processImage(posterUrl, cleanId, 'posters/movies');
                 if (localImage) {
                     item.image = localImage;
                     item.posterUrl = posterUrl;
                 }
             }
 
-            if (!item.image) item.image = `/images/posters/movies/${item.id.replace('movie_', '')}.webp`;
+            if (!item.image) {
+                const cleanId = item.id.replace('movie_', '');
+                item.image = `/images/posters/movies/${cleanId}.webp`;
+            }
 
             finalMovies.push(item);
 

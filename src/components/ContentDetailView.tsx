@@ -278,8 +278,25 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Calendar, label: isMovie ? '개봉' : '일정', text: dateText, color: 'text-blue-500' });
                                     }
 
-                                    if (p.runningTime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: p.runningTime, color: 'text-purple-500' });
+                                    if (p.runningTime || (p as any).runtime) {
+                                        infoItems.push({ icon: Clock, label: '시간', text: p.runningTime || `${(p as any).runtime}분`, color: 'text-purple-500' });
+                                    }
+                                    
+                                    if (isMovie) {
+                                        if (p.reservationRate) {
+                                            infoItems.push({ icon: BarChart3, label: '예매율', text: p.reservationRate, color: 'text-rose-500' });
+                                        }
+                                        if (p.audienceCount) {
+                                            infoItems.push({ icon: Users, label: '관객수', text: p.audienceCount, color: 'text-blue-400' });
+                                        }
+                                        if ((p as any).budgetKRW) {
+                                            const formatted = new Intl.NumberFormat('ko-KR').format((p as any).budgetKRW);
+                                            infoItems.push({ icon: Coins, label: '제작비', text: `₩${formatted} (약 ${Math.round((p as any).budgetKRW / 100000000)}억원)`, color: 'text-amber-500' });
+                                        }
+                                        if ((p as any).revenueKRW) {
+                                            const formatted = new Intl.NumberFormat('ko-KR').format((p as any).revenueKRW);
+                                            infoItems.push({ icon: Wallet, label: '수익', text: `₩${formatted} (약 ${Math.round((p as any).revenueKRW / 100000000)}억원)`, color: 'text-emerald-500' });
+                                        }
                                     }
 
                                     if (!isMovie && (p.age || p.ageRating)) {
@@ -440,6 +457,19 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 </motion.div>
                             )}
 
+                            {/* Mommom Specific: Fees and Programs */}
+                            {p.feesAndPrograms && (
+                                <motion.div variants={itemVariants} className="mt-4 bg-purple-50/50 dark:bg-purple-500/5 rounded-xl p-4 border border-purple-500/10">
+                                    <h4 className="text-[13px] font-bold text-purple-600 dark:text-purple-400 mb-2 flex items-center gap-1.5">
+                                        <Presentation className="w-4 h-4" />
+                                        요금 및 프로그램
+                                    </h4>
+                                    <p className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line font-medium">
+                                        {p.feesAndPrograms}
+                                    </p>
+                                </motion.div>
+                            )}
+
                             {/* Detailed Notices & Age Rules */}
                             {(p.ageDetail || p.bookingNotice) && (
                                 <motion.div variants={itemVariants} className="mt-4 space-y-3">
@@ -483,7 +513,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         {p.genre === 'exhibition' ? '전시 소개' : p.genre === 'tourism' ? '여행지 정보' : '상세 설명'}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400 text-[14.5px] leading-relaxed whitespace-pre-line">
-                                        {p.description}
+                                        {(p as any).synopsis || p.description}
                                     </p>
                                 </motion.div>
                             )}
@@ -497,7 +527,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         
                                         // Auto-generate Naver search link for any performance type if missing URL
                                         if (!url) {
-                                            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${name} ${p.title}`)}`;
+                                            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`;
                                         }
 
                                          const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
