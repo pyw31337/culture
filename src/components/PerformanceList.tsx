@@ -430,6 +430,12 @@ export default function PerformanceList({
 
                 // Location Mode Integration: Intercept venue selection to trigger location search
                 if (v !== 'all' && venues[v] && venues[v].lat && venues[v].lng) {
+                    // [RESET ALL FILTERS] As requested, reset existing filtering related parts
+                    setSelectedGenre('all');
+                    setSelectedRegion('all');
+                    setSelectedDistrict('all');
+                    setSavedKeywords([]); // Reset saved keywords if applicable
+                    
                     setSearchMode('location');
                     setSearchLocation({ lat: venues[v].lat, lng: venues[v].lng, name: v });
                     setSearchText(v);
@@ -437,12 +443,9 @@ export default function PerformanceList({
 
                     // Force UI adjustments
                     setActiveBottomMenu(null); // Close the bottom sheet immediately
-                    if (selectedGenre === 'movie') {
-                        handleGenreSelect('all'); // Hide movies from location search
-                    } else {
-                        // Reset pagination/scroll if staying in same genre
-                        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 10);
-                    }
+                    
+                    // Reset pagination/scroll
+                    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 10);
                 }
             }} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={searchResults} onResultSelect={(res) => {
                 setSearchText(res.name);

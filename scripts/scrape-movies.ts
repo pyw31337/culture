@@ -365,19 +365,8 @@ async function scrapeMovies() {
                 console.warn('Timeout waiting for rows, trying to proceed anyway (might be empty or slow).');
             }
 
-            // Load More (Click twice to get 30+ items)
-            const loadMoreBtn = await kobisPage.$('#btn_0');
-            if (loadMoreBtn) {
-                try {
-                    await loadMoreBtn.click();
-                    await sleep(1500);
-                    const loadMoreBtn2 = await kobisPage.$('#btn_0');
-                    if (loadMoreBtn2) {
-                        await loadMoreBtn2.click();
-                        await sleep(1500);
-                    }
-                } catch (e) { }
-            }
+            // Box Office: Top 10 normally visible on load. No need to click "Load More" per user request.
+            console.log('Collecting Top 10 Box Office...');
             const progressBar = new cliProgress.SingleBar({
                 format: 'KOBIS 수집 | {bar} | {percentage}% | {value}/{total} | {movie}',
                 hideCursor: true
@@ -388,7 +377,7 @@ async function scrapeMovies() {
                 const rows = document.querySelectorAll('#tbody_0 > tr');
                 const list = [];
                 rows.forEach((row, idx) => {
-                    if (idx >= 30) return; // Top 30 for Box Office
+                    if (idx >= 10) return; // Exactly Top 10 for Box Office
                     const titleLink = row.querySelector('td.tal > span.ellip.per90 > a');
                     if (titleLink) {
                         let title = titleLink.textContent?.trim() || '';
@@ -726,18 +715,9 @@ async function scrapeMovies() {
             let existing = existingMap.get(m.title);
             const hasFallbackPoster = existing?.posterFallback === true;
 
-            // Year Mismatch detection
-            const existingYear = existing?.date?.match(/\d{4}/)?.[0];
-            const kobisYear = m.dateRaw?.match(/\d{4}/)?.[0];
-            const yearMismatch = existingYear && kobisYear && existingYear !== kobisYear;
+            // Simplified Preservation: Do not clear data unless the title changes significantly
 
-            if (yearMismatch && existing) {
-                console.log(`[Year Mismatch] ${m.title}: Clearing old data (${existingYear} -> ${kobisYear})`);
-                // Clear existing data to avoid mixing with new release
-                existing = { id: existing.id, title: existing.title };
-            }
-
-            if (existing && existing.venue && existing.image && existing.cast && existing.director && !hasFallbackPoster && !yearMismatch) {
+            if (existing && existing.venue && existing.image && existing.cast && existing.director && !hasFallbackPoster) {
                 // Skip if it has good data AND a real (non-fallback) poster AND years match.
                 if (m.rank) {
                     existing.rank = parseInt(m.rank);
@@ -1017,19 +997,16 @@ async function scrapeMovies() {
 
             // Update with NEW data
             // STRICT POLICY: Only keep movies that are currently in KOBIS Top 10 ranking OR Upcoming
-            const synchronizedMovies: any[] = [];
-
-            // NEW RETENTION POLICY: 
-            // 1. Keep all newly scraped movies.
-            // 2. Keep existing movies if their release date is in the future (today or later).
-            const todayStr = new Date().toISOString().split('T')[0].replace(/-/g, '.');
-
+            // NEW SIMPLIFIED RETENTION POLICY: 
+            // 1. Keep everything that was just scraped (Top 10 + Upcoming).
+            // 2. Keep existing data if it has rich info (image/cast/director) to prevent loss.
+            // 3. The sorting will handle pushing past movies down.
             const processedTitles = new Set();
 
             for (const newMovie of finalMovies) {
                 const existing = movieMap.get(newMovie.title);
                 
-                // DATA PRESERVATION: Only overwrite if new data is meaningful
+                // DATA PRESERVATION: Merge and keep existing rich data if new scrape is missing it
                 const merged = {
                     ...existing,
                     ...newMovie,
@@ -1039,6 +1016,7 @@ async function scrapeMovies() {
                         : (newMovie.venue || existing?.venue || '등급 미정'),
                     director: (newMovie.director || existing?.director),
                     cast: (newMovie.cast && newMovie.cast.length > 0) ? newMovie.cast : existing?.cast,
+                    image: (newMovie.image || existing?.image),
                     lastCollected: now
                 };
                 
@@ -1046,15 +1024,14 @@ async function scrapeMovies() {
                 processedTitles.add(newMovie.title);
             }
 
-            // Retention: Keep existing future movies
+            // Keep existing movies that were NOT in the current scrape but have good data
             for (const [title, existing] of movieMap.entries()) {
                 if (processedTitles.has(title)) continue;
 
-                // If it's a future movie, keep it even if not in current scrape
-                const releaseDate = existing.date || '';
-                if (releaseDate >= todayStr) {
-                    console.log(`[Retaining Future Movie] ${title} (${releaseDate})`);
+                // If it has basic info and a poster, keep it (prevents loss when KOBIS/Naver briefly drops an item)
+                if (existing.image && (existing.director || existing.cast)) {
                     synchronizedMovies.push(existing);
+                    processedTitles.add(title);
                 }
             }
 
