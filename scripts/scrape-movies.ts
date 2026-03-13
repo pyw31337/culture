@@ -803,181 +803,44 @@ async function scrapeMovies() {
             };
 
             try {
-                await page.goto(searchUrl, { waitUntil: 'domcontentloaded' });
-                await sleep(500 + Math.random() * 500); // Throttling
+                console.log(`[Enriching] ${m.title} ...`);
+                
+                await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
+                await sleep(1000);
 
-                // Initial Extraction
-                let detail: any = await page.evaluate(`(${extractMetadataStr})()`);
-                Object.assign(item, detail);
+                const meta = await page.evaluate(`(${extractMetadataStr})()`) as any;
 
-                // Tab Click Fallback (Basic Info) - for Age/ReleaseDate
-                if (!item.ageRating || !item.releaseDate) {
-                    try {
-                        const clicked = await page.evaluate(() => {
-                            const tabs = Array.from(document.querySelectorAll('a, div[role="tab"], span[role="button"]'));
-                            const t = tabs.find(el => {
-                                const txt = el.textContent?.trim();
-                                return txt === '기본정보' || txt === '정보';
-                            });
-                            if (t) { (t as HTMLElement).click(); return true; }
-                            return false;
-                        });
-                        if (clicked) {
-                            await page.waitForTimeout(1000);
-                            const newDetail: any = await page.evaluate(`(${extractMetadataStr})()`);
-                            if (newDetail.ageRating) item.ageRating = newDetail.ageRating;
-                            if (newDetail.releaseDate) item.releaseDate = newDetail.releaseDate;
-                            if (newDetail.runningTime) item.runningTime = newDetail.runningTime;
-                            if (newDetail.director) item.director = newDetail.director;
-                            if (newDetail.cast) item.cast = newDetail.cast;
-                            if (newDetail.poster && !item.poster) item.poster = newDetail.poster;
-                        }
-                    } catch (e) { }
-                }
-
-                // Tab Click Fallback (Cast) - for Cast/Director
-                if (!item.cast || item.cast.length === 0) {
-                    try {
-                        const clicked = await page.evaluate(() => {
-                            const tabs = Array.from(document.querySelectorAll('a, div[role="tab"]'));
-                            const t = tabs.find(el => {
-                                const txt = el.textContent?.trim() || '';
-                                return txt.includes('출연') || txt.includes('등장인물');
-                            });
-                            if (t) { (t as HTMLElement).click(); return true; }
-                            return false;
-                        });
-                        if (clicked) {
-                            await page.waitForTimeout(1000);
-                            const newDetail: any = await page.evaluate(`(${extractMetadataStr})()`);
-                            if (newDetail.director) item.director = newDetail.director;
-                            if (newDetail.cast) item.cast = newDetail.cast;
-
-                            // Try for poster again if missing
-                            if (!item.poster) {
-                                const newDetail2: any = await page.evaluate(`(\${extractMetadataStr})()`);
-                                if (newDetail2.poster) item.poster = newDetail2.poster;
-                            }
-                        }
-                    } catch (e) { }
-                }
-
-                // Final Data Mapping
-                if (item.releaseDate) item.date = item.releaseDate; // Prefer precise release date
-
-                // CRITICAL: If country is missing but it's a Top Rank movie, default to '한국'
-                // if it looks like a Korean title. This prevents aggressive drama filtering.
-                if (!item.productionCountry && item.title.match(/[가-힣]/)) {
-                    if (item.rank && item.rank <= 5) item.productionCountry = '한국';
-                }
-
-                // Map ageRating to venue (standard convention in this project)
-                if (item.ageRating) {
-                    if (item.ageRating.includes('전체')) item.venue = '전체 관람가';
-                    else if (item.ageRating.includes('12')) item.venue = '12세 관람가';
-                    else if (item.ageRating.includes('15')) item.venue = '15세 관람가';
-                    else if (item.ageRating.includes('청소년')) item.venue = '청소년 관람불가';
-                    else item.venue = item.ageRating;
-                } else {
-                    item.venue = '등급 미정';
-                }
-
-                // Poster Selection: Prioritize high-res KOBIS, then Naver, then fallbacks
-                const FALLBACK_PATTERNS = [
-                    'no_img_people',
-                    'sstatic.naver.net/people/',
-                    'static.naver.net/people/',
-                    'no_img_movie',
-                    'placeholder',
-                    'default_image'
-                ];
-
-                const TARGET_POSTERS: Record<string, string> = {
-                    "왕과 사는 남자": "https://www.kobis.or.kr/common/mast/movie/2026/02/0987da5282ff417ca513de6c66d2c288.jpg",
-                    "호퍼스": "https://www.kobis.or.kr/common/mast/movie/2026/03/bd950ad6493c45d2b7771dbebbe0696c.jpg",
-                    "삼악도": "https://www.kobis.or.kr/common/mast/movie/2026/02/37d6a89d527e4932a7f30cfa3466614a.jpg",
-                    "휴민트": "https://www.kobis.or.kr/common/mast/movie/2026/02/d2ed41a25d874f51881a78014403baec.jpg",
-                    "매드 댄스 오피스": "https://www.kobis.or.kr/common/mast/movie/2026/02/faab2f8d5d8b4ee685b88c89920f72f1.jpg",
-                    "초속 5센티미터": "https://www.kobis.or.kr/common/mast/movie/2026/01/667f737e50294996bf44797e272232de.jpg",
-                    "김~치!": "https://www.kobis.or.kr/common/mast/movie/2026/03/08cf3dbe09c349c29e5d38ac6c805501.jpg",
-                    "열여덟 청춘": "https://www.kobis.or.kr/common/mast/movie/2026/03/215a8ae8859341fc9c01de40e6ba7f61.jpg",
-                    "장수탕 선녀님": "https://www.kobis.or.kr/common/mast/movie/2026/03/1f04f7eb91c343a899881cfa5a829027.jpg",
-                    "내 이름은": "https://www.kobis.or.kr/common/mast/movie/2026/01/68ed6cf505d24ee68f4d4f0a44ee0457.jpg",
-                    "굿윌 헌팅": "https://www.kobis.or.kr/common/mast/movie/2026/01/170a4a8d3e234327bd7e77ae0357609a.jpg",
-                    "신의악단": "https://www.kobis.or.kr/common/mast/movie/2025/11/46f981246f3442068ddcdde8e2a2ff06.jpg",
-                    "F1 더 무비": "https://www.kobis.or.kr/common/mast/movie/2025/06/0f17cb591080467199ecda80d7113f6a.jpg",
-                    "오만과 편견": "https://www.kobis.or.kr/common/mast/movie/2026/02/b407380977ea4452b093821831987026.jpg",
-                    "아르코": "https://www.kobis.or.kr/common/mast/movie/2026/02/105771cca46f4064a4be49148e7c1184.jpg",
-                    "너자 2": "https://www.kobis.or.kr/common/mast/movie/2026/01/7b01b099bb15481687ce3bbef1692bc4.jpg"
-                };
-
-                let selectedPoster = '';
-                let isFallback = true;
-
-                // 0. Priority: User-provided explicit high-res targets
-                const targetKey = Object.keys(TARGET_POSTERS).find(k => item.title.includes(k) || k.includes(item.title));
-                if (targetKey) {
-                    selectedPoster = TARGET_POSTERS[targetKey];
-                    isFallback = false;
-                    console.log(`[Target Poster] Using user-provided poster for ${item.title}`);
-                }
-                // 1. Legitimate KOBIS high-res (explicitly mentioned by user)
-                else if (m.kobisPoster && m.kobisPoster.includes('/common/mast/movie/')) {
-                    selectedPoster = m.kobisPoster;
-                    isFallback = false;
-                    console.log(`[High-Res KOBIS] Using official poster for ${item.title}`);
-                }
-                // 2. Naver Poster (if not fallback)
-                else if (item.poster && !FALLBACK_PATTERNS.some(p => item.poster.includes(p))) {
-                    selectedPoster = item.poster;
-                    isFallback = false;
-                }
-                // 3. KOBIS Thumbnail cleaned
-                else if (m.kobisPoster) {
-                    selectedPoster = m.kobisPoster;
-                    isFallback = false;
-                }
-                // 4. Naver Fallback
-                else if (item.poster) {
-                    selectedPoster = item.poster;
-                    isFallback = true;
-                }
-
-                if (selectedPoster) {
-                    item.posterUrl = selectedPoster;
-                    item.poster = selectedPoster;
-                    item.backupPoster = selectedPoster;
-                    item.posterFallback = isFallback;
-
-                    if (isFallback) {
-                        console.log(`[Fallback Poster] ${item.title}: ${item.poster.substring(0, 80)}...`);
+                if (meta) {
+                    item.director = meta.director || item.director;
+                    item.cast = meta.cast || item.cast;
+                    item.productionCountry = meta.productionCountry || item.productionCountry;
+                    item.venue = meta.ageRating || item.venue || '등급 미정';
+                    if (meta.poster) item.posterUrl = meta.poster;
+                    if (meta.releaseDate) {
+                        item.date = meta.releaseDate.replace(/-/g, '.') + '.';
+                        item.dateRaw = meta.releaseDate;
                     }
-
-                    const safeTitle = item.title.replace(/[^a-zA-Z0-9가-힣]/g, '');
-                    const stableFilename = `movie_${safeTitle}`;
-                    const localPath = await processImage(item.poster, stableFilename, 'posters/movies');
-                    if (localPath) item.image = localPath;
-                } else {
-                    item.image = '';
-                    item.posterFallback = true; // No poster at all = fallback
                 }
-
-                // Cleanup internal fields (keep posterUrl and posterFallback for re-check)
-                delete item.poster;
-                delete item.releaseDate;
-                delete item.originalTitle;
-                delete item.ageRating;     // Mapped to venue
-
+                
+                // Final item assembly
+                item.link = searchUrl;
+                item.image = `/images/posters/movies/${item.id.replace('movie_', '')}.webp`;
+                item.lastCollected = new Date().toISOString();
+                
                 finalMovies.push(item);
-                await sleep(300);
-
-            } catch (e) {
-                console.error(`Error processing ${m.title}:`, e);
-                finalMovies.push(item); // Push basic info even if failed
+            } catch (err) {
+                console.error(`[Error] Failed to enrich ${m.title}:`, err.message);
+                // Still push the basic info if we have some KOBIS data
+                finalMovies.push({
+                    ...item,
+                    venue: item.venue || '등급 미정',
+                    lastCollected: new Date().toISOString()
+                });
             } finally {
-                await page.close();
-                enrichBar.increment();
+                await page.close(); // More aggressive resource cleanup
             }
+            
+            enrichBar.increment();
         }
         enrichBar.stop();
 
@@ -1002,6 +865,7 @@ async function scrapeMovies() {
             // 2. Keep existing data if it has rich info (image/cast/director) to prevent loss.
             // 3. The sorting will handle pushing past movies down.
             const processedTitles = new Set();
+            const synchronizedMovies: any[] = [];
 
             for (const newMovie of finalMovies) {
                 const existing = movieMap.get(newMovie.title);
@@ -1037,20 +901,15 @@ async function scrapeMovies() {
 
             const allMovies = synchronizedMovies;
 
-            // Sort: Ranked items (1-10) first, then by date descending
+            // 3. Sort: Ranked items (1-10) first, then by date descending
             allMovies.sort((a, b) => {
                 const rankA = a.rank ? parseInt(a.rank) : 999;
                 const rankB = b.rank ? parseInt(b.rank) : 999;
 
-                // Both are top ranked (1-10)
                 if (rankA <= 10 && rankB <= 10) return rankA - rankB;
-                // Only A is top ranked
                 if (rankA <= 10) return -1;
-                // Only B is top ranked
                 if (rankB <= 10) return 1;
 
-                // Neither are top ranked: Sort by Release Date (date) descending
-                // date format is "YYYY.MM.DD."
                 const dateA = a.date || '0000.00.00.';
                 const dateB = b.date || '0000.00.00.';
 
@@ -1061,24 +920,46 @@ async function scrapeMovies() {
                 return new Date(b.lastCollected || 0).getTime() - new Date(a.lastCollected || 0).getTime();
             });
 
-            // Atomic Write
-            const tempFile = `${OUTPUT_FILE}.tmp`;
-            fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
-            fs.renameSync(tempFile, OUTPUT_FILE);
+            // [SAFETY] Check threshold to avoid data loss from crashes (e.g., only 10 box office movies found)
+            const MIN_THRESHOLD = 50; 
+            const isEmergency = process.env.FORCE_SAVE === 'true';
 
-            console.log(`Saved ${allMovies.length} movies (merged). New/Updated: ${finalMovies.length}.`);
+            if (allMovies.length < MIN_THRESHOLD && !isEmergency) {
+                console.error(`\n[CRITICAL] Collected only ${allMovies.length} movies, which is below the safe threshold of ${MIN_THRESHOLD}.`);
+                console.error(`[CRITICAL] To avoid corrupting movies.json, the write operation is ABORTED.`);
+                console.error(`[CRITICAL] If this is intended, run with FORCE_SAVE=true`);
+                
+                // Save to temporary file for inspection instead
+                const tempFile = path.join(DATA_DIR, 'movies.error.json');
+                fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
+                console.log(`[INFO] Partial data saved to ${tempFile} for debugging.`);
+            } else {
+                // Atomic Save with Backup
+                if (fs.existsSync(OUTPUT_FILE)) {
+                    const backupFile = OUTPUT_FILE + '.bak';
+                    fs.copyFileSync(OUTPUT_FILE, backupFile);
+                    console.log(`[INFO] Created backup of movies.json at ${backupFile}`);
+                }
 
-            // Perform Cleanup
-            cleanupOldMovieImages(allMovies);
+                const tempFile = `${OUTPUT_FILE}.tmp`;
+                fs.writeFileSync(tempFile, JSON.stringify(allMovies, null, 2));
+                fs.renameSync(tempFile, OUTPUT_FILE);
 
-            // Copy to public/data for frontend access
-            const publicFile = path.resolve(process.cwd(), 'public/data/movies.json');
-            const publicDir = path.dirname(publicFile);
-            if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+                console.log(`\nSuccessfully saved ${allMovies.length} movies to ${OUTPUT_FILE}`);
 
-            fs.copyFileSync(OUTPUT_FILE, publicFile);
-            console.log(`Copied to ${publicFile}`);
+                // Perform Cleanup
+                cleanupOldMovieImages(allMovies);
 
+                // Copy to public/data for frontend access
+                const publicFile = path.resolve(process.cwd(), 'public/data/movies.json');
+                const publicDir = path.dirname(publicFile);
+                if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+
+                fs.copyFileSync(OUTPUT_FILE, publicFile);
+                console.log(`Copied to ${publicFile}`);
+            }
+
+            }
         } else {
             console.warn('Scraper found 0 movies. Aborting save.');
         }
