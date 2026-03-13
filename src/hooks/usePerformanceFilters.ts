@@ -153,14 +153,14 @@ export function usePerformanceFilters({
         }
 
         const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
-        if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre)) {
+        if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre) && !debouncedSearchText) {
             return filtered
                 .map(value => ({ value, sort: Math.sin(shuffleSeed + value.id.length) * 10000 }))
                 .sort((a, b) => a.sort - b.sort)
                 .map(({ value }) => value);
         }
 
-        return sortPerformances(filtered, selectedGenre);
+        return sortPerformances(filtered, selectedGenre, debouncedSearchText);
     }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, shuffleSeed]);
 
     // Pagination

@@ -45,8 +45,12 @@ export function filterPerformances(performances: Performance[], options: FilterO
     // 1. Base Filter: Strict Address Integrity
     // Exclude any physical event that doesn't have a record in venues.json or has an empty address.
     // Digital content (OTT/Movie) is exempt from physical address requirement.
+    // [FIX] Also allow items that ALREADY have inherent coordinates (Museum/Tourism/Mommom)
     filtered = filtered.filter(p => {
         if (p.genre === 'movie') return true;
+
+        // If it already has geodata, it is valid regardless of venues.json
+        if (p.lat && p.lng && p.lat !== 0 && p.lng !== 0) return true;
 
         const venueInfo = venues[p.venue];
         if (!venueInfo || !venueInfo.address || venueInfo.address.trim() === '') {
@@ -171,9 +175,10 @@ export function filterPerformances(performances: Performance[], options: FilterO
     return filtered;
 }
 
-export function sortPerformances(performances: Performance[], genre: string, keywords: string[] = []): Performance[] {
+export function sortPerformances(performances: Performance[], genre: string, searchText: string = ''): Performance[] {
     // 1. Sort copies of array
     let sorted = [...performances];
+    const cleanSearch = searchText.replace(/\s+/g, '').toLowerCase().normalize('NFC');
 
     // Sports: Strict Date DESC Sort (Newest First)
     const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
@@ -201,18 +206,46 @@ export function sortPerformances(performances: Performance[], genre: string, key
         });
     }
 
-    // Default: Sort by Random (seeded by keywords context) + Priority?
-    // Current Logic in PerformanceList was: Random Shuffle using Seed.
-    // We can't easily reproduce complex seeded shuffle on server for EVERY page identically without passing seed.
-    // For Infinite Scroll, consistent sorting is CRITICAL.
-    // Recommendation: Sort by ID or Date DESC as safe default, to ensure pagination works.
-    // Otherwise, Page 1 might have Item A, and Page 2 reshuffles and has Item A again.
+    // 2. SEARCH RELEVANCE SORTING (Highest Priority if keyword provided)
+    if (cleanSearch) {
+        return sorted.sort((a, b) => {
+            const getScore = (p: Performance) => {
+                let score = 0;
+                const titleNoSpace = p.title.replace(/\s+/g, '').toLowerCase().normalize('NFC');
+                const venueNoSpace = p.venue.replace(/\s+/g, '').toLowerCase().normalize('NFC');
+                const castStr = Array.isArray(p.cast) ? p.cast.join('') : (p.cast || '');
+                const castNoSpace = castStr.replace(/\s+/g, '').toLowerCase().normalize('NFC');
 
-    // We will stick to Date sorting (Ascending for most, effectively?) or simple ID sort?
-    // Actually, "Random" feeling is desired.
-    // To enable consistent pagination with random order, the client must generate a seed, or simply we sort by Date.
-    // Let's standardise on Date Ascending (Upcoming) for general events, as that's most useful.
+                // A. Title Match (Max 100)
+                if (titleNoSpace === cleanSearch) score += 100;
+                else if (titleNoSpace.startsWith(cleanSearch)) score += 90;
+                else if (titleNoSpace.includes(cleanSearch)) score += 80;
 
+                // B. Cast Match (Max 40)
+                if (castNoSpace.includes(cleanSearch)) score += 40;
+
+                // C. Venue Match (Max 20)
+                if (venueNoSpace.includes(cleanSearch)) score += 20;
+
+                return score;
+            };
+
+            const scoreA = getScore(a);
+            const scoreB = getScore(b);
+
+            if (scoreA !== scoreB) return scoreB - scoreA; // High score first
+
+            // If scores equal, sort by Date
+            const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
+            const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
+            const dateCompare = dateA.localeCompare(dateB);
+            if (dateCompare !== 0) return dateCompare;
+
+            return a.id.localeCompare(b.id);
+        });
+    }
+
+    // Default: Sort by Date Ascending (Upcoming)
     return sorted.sort((a, b) => {
         const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
         const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
@@ -221,7 +254,6 @@ export function sortPerformances(performances: Performance[], genre: string, key
         const dateCompare = dateA.localeCompare(dateB);
         if (dateCompare !== 0) return dateCompare;
 
-        // Fallback to ID for stability
         return a.id.localeCompare(b.id);
     });
 }

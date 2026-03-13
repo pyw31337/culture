@@ -13,6 +13,12 @@ puppeteer.use(StealthPlugin());
 const TARGET_URL = 'https://mom-mom.net/shop/categories/1102241';
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/mommom-products.json');
 
+interface NaverSearchResult {
+    address: string;
+    lat: number;
+    lng: number;
+}
+
 // Smart genre classification based on title keywords
 function classifyGenre(title: string): string {
     const t = title.toLowerCase();
@@ -71,8 +77,8 @@ async function scrapeProducts() {
         console.log('Page loaded.');
 
         // Scroll to load all items
-        await page.evaluate(`(async () => {
-            const delay = (ms) => new Promise(res => setTimeout(res, ms));
+        await page.evaluate(async () => {
+            const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
             let lastHeight = 0;
             let noChange = 0;
 
@@ -94,11 +100,11 @@ async function scrapeProducts() {
 
                 if (noChange > 5) break;
             }
-        })()`);
+        });
 
         // Extract Items with full details from list page
-        const listItems = await page.evaluate(`(() => {
-            const results = [];
+        const listItems = await page.evaluate((): any[] => {
+            const results: any[] = [];
             const seenTitles = new Set();
 
             // Use class selector for product cards (updated to match current site)
@@ -130,10 +136,10 @@ async function scrapeProducts() {
                 const priceContainer = card.querySelector('p, .price');
                 if (priceContainer) {
                     const priceText = priceContainer.textContent || '';
-                    const rateMatch = priceText.match(/(\\d+)%/);
+                    const rateMatch = priceText.match(/(\d+)%/);
                     if (rateMatch) discount = rateMatch[0];
 
-                    const priceMatch = priceText.match(/([\\d,]+원)/);
+                    const priceMatch = priceText.match(/([\d,]+원)/);
                     if (priceMatch) price = priceMatch[0];
                 }
 
@@ -144,7 +150,7 @@ async function scrapeProducts() {
                 }
 
                 // Generate ID from title
-                const safeTitle = title.replace(/[^\\w가-힣]/g, '').slice(0, 20);
+                const safeTitle = title.replace(/[^\w가-힣]/g, '').slice(0, 20);
                 const id = "mommom_shop_" + safeTitle;
 
                 results.push({
@@ -158,7 +164,7 @@ async function scrapeProducts() {
                 });
             });
             return results;
-        })()`);
+        });
 
         console.log(`Found ${listItems.length} products to process.`);
 
@@ -218,15 +224,15 @@ async function scrapeProducts() {
                         await searchPage.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
 
                         // Try to extract address and coordinates from Naver
-                        const result = await searchPage.evaluate(`(() => {
+                        const result = await searchPage.evaluate((): NaverSearchResult | null => {
                             // Method 1: Look for __APOLLO_STATE__ JSON
                             const scripts = Array.from(document.querySelectorAll('script'));
                             for (const script of scripts) {
                                 const text = script.textContent || '';
                                 if (text.includes('__APOLLO_STATE__')) {
-                                    const match = text.match(/"roadAddress"\\s*:\\s*"([^"]+)"/);
-                                    const latMatch = text.match(/"y"\\s*:\\s*"?([\\d.]+)"?/);
-                                    const lngMatch = text.match(/"x"\\s*:\\s*"?([\\d.]+)"?/);
+                                    const match = text.match(/"roadAddress"\s*:\s*"([^"]+)"/);
+                                    const latMatch = text.match(/"y"\s*:\s*"?([\d.]+)"?/);
+                                    const lngMatch = text.match(/"x"\s*:\s*"?([\d.]+)"?/);
 
                                     if (match && latMatch && lngMatch) {
                                         return {
@@ -240,7 +246,7 @@ async function scrapeProducts() {
 
                             // Method 2: Look for address in visible text
                             const addrPatterns = [
-                                /([가-힣]+(?:시|도)\\s+[가-힣]+(?:시|구|군)\\s+[가-힣0-9\\s\\-]+)/
+                                /([가-힣]+(?:시|도)\s+[가-힣]+(?:시|구|군)\s+[가-힣0-9\s\-]+)/
                             ];
                             const bodyText = document.body.innerText;
                             for (const pattern of addrPatterns) {
@@ -253,9 +259,9 @@ async function scrapeProducts() {
                             // Method 3: Look for map link with coordinates
                             const mapLinks = Array.from(document.querySelectorAll('a[href*="map.naver"]'));
                             for (const link of mapLinks) {
-                                const href = (link).href;
-                                const latMatch = href.match(/lat=([\\d.]+)/);
-                                const lngMatch = href.match(/lng=([\\d.]+)/);
+                                const href = (link as HTMLAnchorElement).href;
+                                const latMatch = href.match(/lat=([\d.]+)/);
+                                const lngMatch = href.match(/lng=([\d.]+)/);
                                 if (latMatch && lngMatch) {
                                     return {
                                         address: '',
@@ -266,7 +272,7 @@ async function scrapeProducts() {
                             }
 
                             return null;
-                        })()`);
+                        });
 
                         if (result && (result.address || result.lat)) {
                             if (result.address) newItem.address = result.address;
