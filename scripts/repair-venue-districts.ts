@@ -28,7 +28,7 @@ const SIDO_MAP: Record<string, string> = {
 
 let fixedCount = 0;
 
-for (const [id, venue] of Object.entries(venueDict as any)) {
+for (const [id, venue] of Object.entries(venueDict as Record<string, any>)) {
     if (!venue.district || venue.district === '') {
         const address = venue.address || '';
         const parts = address.split(/\s+/);
