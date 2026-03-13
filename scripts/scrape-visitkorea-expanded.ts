@@ -39,12 +39,18 @@ async function fetchDetails(cotId: string) {
         // 1. Improved Introduction Selectors
         let description = clean($('.inr_wrap .inr p, .char_cont p, .detail_cont, #detailinfoview .inr_wrap p').first().text());
         
-        // 2. Info List processing (ul.detail_info li)
+        // 2. Info List processing (improved to find items even without .detail_info class)
         const infoList: Record<string, string> = {};
-        $('.detail_info li, .detail_info_list li').each((_, el) => {
+        $('#detailinfoview li').each((_, el) => {
             const label = $(el).find('strong').text().trim().replace(':', '');
-            // For values, favor span but fall back to direct text concatenation
-            const value = $(el).find('span').text().trim() || $(el).text().replace(label, '').replace(':', '').trim();
+            // For values, look for span, a, or direct text nodes excluding the label
+            let value = '';
+            const aTag = $(el).find('a');
+            if (aTag.length && (label.includes('홈페이지') || label.includes('예매'))) {
+                value = aTag.attr('href') || aTag.text().trim();
+            } else {
+                value = $(el).find('span').text().trim() || $(el).text().replace(label, '').replace(':', '').trim();
+            }
             if (label && value) infoList[label] = value;
         });
 
@@ -54,9 +60,15 @@ async function fetchDetails(cotId: string) {
         const time = infoList['이용시간'] || infoList['운영시간'] || '';
         const address = infoList['주소'] || '';
         const holiday = infoList['휴일'] || infoList['쉬는날'] || '';
+        const website = infoList['홈페이지'] || '';
+        const parking = infoList['주차'] || '';
+        const parkingFee = infoList['주차 요금'] || infoList['주차비'] || '';
+        const ageDetail = infoList['체험가능 연령'] || infoList['관람소요시간'] || '';
+        const facilities = infoList['주요시설'] || '';
+        const restrooms = infoList['화장실'] || '';
 
         // Case for missing data via Cheerio -> Usually means JS-only rendering
-        if (!description && !contact && !time) {
+        if (!description && !contact && !time && !address) {
             console.log(`[DEBUG] No details for ${cotId} via Cheerio. Trying Puppeteer fallback...`);
             return await fetchDetailsWithPuppeteer(url);
         }
@@ -67,7 +79,13 @@ async function fetchDetails(cotId: string) {
             price,
             time,
             address,
-            holiday
+            holiday,
+            website,
+            parking,
+            parkingFee,
+            ageDetail,
+            facilities,
+            restrooms
         };
     } catch (error: any) {
         console.error(`Error fetching details for ${cotId}:`, error.message);
@@ -131,7 +149,13 @@ async function fetchDetailsWithPuppeteer(url: string) {
                 price: info['이용요금'] || info['입장료'] || '',
                 time: info['이용시간'] || info['운영시간'] || '',
                 address: info['주소'] || '',
-                holiday: info['휴일'] || info['쉬는날'] || ''
+                holiday: info['휴일'] || info['쉬는날'] || '',
+                website: info['홈페이지'] || '',
+                parking: info['주차'] || '',
+                parkingFee: info['주차 요금'] || info['주차비'] || '',
+                ageDetail: info['체험가능 연령'] || '',
+                facilities: info['주요시설'] || '',
+                restrooms: info['화장실'] || ''
             };
         });
 
@@ -198,6 +222,12 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                         contact: details?.contact || '',
                         address: details?.address || item.detailDatabase?.addr1 || '',
                         bookingNotice: details?.holiday ? `휴무: ${details.holiday}` : '',
+                        website: details?.website || '',
+                        parking: details?.parking || '',
+                        parkingFee: details?.parkingFee || '',
+                        ageDetail: details?.ageDetail || '',
+                        facilities: details?.facilities || '',
+                        restrooms: details?.restrooms || '',
                         source: 'VisitKorea',
                         lat: item.detailDatabase?.mapCoords?.latitude,
                         lng: item.detailDatabase?.mapCoords?.longitude

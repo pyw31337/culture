@@ -167,7 +167,7 @@ async function generate() {
 
         // [New: Data Pruning for payload optimization]
         const pruned = sorted.map((p: any) => {
-            const { posterUrl, description, ...rest } = p;
+            const { posterUrl, ...rest } = p;
             // Also prune empty arrays/objects to save bytes
             if (Array.isArray(rest.cast) && rest.cast.length === 0) delete rest.cast;
             if (Array.isArray(rest.platforms) && rest.platforms.length === 0) delete rest.platforms;

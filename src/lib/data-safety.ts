@@ -78,6 +78,16 @@ export function safePerformance(data: any): Performance | null {
         lng: typeof data.lng === 'number' ? data.lng : undefined,
         address: typeof data.address === 'string' ? data.address : undefined,
         source: typeof data.source === 'string' ? data.source : undefined,
+
+        // Tourism & Enhanced Metadata
+        website: typeof data.website === 'string' ? data.website : undefined,
+        parking: typeof data.parking === 'string' ? data.parking : undefined,
+        parkingFee: typeof data.parkingFee === 'string' ? data.parkingFee : undefined,
+        facilities: typeof data.facilities === 'string' ? data.facilities : undefined,
+        restrooms: typeof data.restrooms === 'string' ? data.restrooms : undefined,
+        performanceTime: typeof data.performanceTime === 'string' ? data.performanceTime : undefined,
+        bookingNotice: typeof data.bookingNotice === 'string' ? data.bookingNotice : undefined,
+        ageDetail: typeof data.ageDetail === 'string' ? data.ageDetail : undefined,
     };
 }
 

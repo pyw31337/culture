@@ -56,4 +56,9 @@ export type Performance = {
     priceList?: { label: string; price: string; discount?: string }[];
     ageDetail?: string;
     bookingNotice?: string;
+    website?: string;
+    parking?: string;
+    parkingFee?: string;
+    facilities?: string;
+    restrooms?: string;
 };

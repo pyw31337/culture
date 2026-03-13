@@ -28,7 +28,10 @@ import mommomProductData from '@/data/mommom-products.json';
 import museumData from '@/data/museum.json';
 // import musicalData from '@/data/musical.json';
 import kopisData from '@/data/kopis-performances.json';
-import tourismData from '@/data/tourism.json';
+import fs from 'fs';
+import path from 'path';
+// import tourismData from '@/data/tourism.json';
+const tourismData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src/data/tourism.json'), 'utf8'));
 import venueData from '@/data/venues.json';
 
 const venues = venueData as Record<string, { address: string; lat?: number | null; lng?: number | null }>;

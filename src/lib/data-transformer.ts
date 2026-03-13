@@ -295,6 +295,11 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let priceList = raw.priceList;
     let ageDetail = raw.ageDetail;
     let bookingNotice = raw.bookingNotice;
+    let website = raw.website;
+    let parking = raw.parking;
+    let parkingFee = raw.parkingFee;
+    let facilities = raw.facilities;
+    let restrooms = raw.restrooms;
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -384,6 +389,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     homeLogo = addBP(homeLogo);
     awayLogo = addBP(awayLogo);
 
+    if (title.includes('외옹치')) {
+        console.log(`[DEBUG-TRANSFORM] 외옹치 raw.contact: ${raw.contact}, website: ${raw.website}`);
+    }
+
     return {
         ...raw,
         id: String(raw.id),
@@ -412,7 +421,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         sponsor,
         priceList,
         ageDetail,
-        bookingNotice
+        bookingNotice,
+        website,
+        parking,
+        parkingFee,
+        facilities,
+        restrooms
     } as Performance;
 }
 

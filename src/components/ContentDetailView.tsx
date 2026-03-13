@@ -2,7 +2,7 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins } from 'lucide-react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -345,6 +345,36 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                                     if (p.ageRating) {
                                         infoItems.push({ icon: Info, label: '관람연령', text: p.ageRating, color: 'text-blue-400', rightText: p.ageDetail ? '상세안내 참조' : undefined });
+                                    }
+
+                                    if (p.website) {
+                                        infoItems.push({ 
+                                            icon: Globe, 
+                                            label: '홈페이지', 
+                                            text: p.website.replace(/^https?:\/\//, ''), 
+                                            color: 'text-cyan-400', 
+                                            isLink: true, 
+                                            onClick: () => {
+                                                const url = p.website!.startsWith('http') ? p.website! : `https://${p.website}`;
+                                                window.open(isMobile ? toMobileUrl(url) : url, '_blank');
+                                            }
+                                        });
+                                    }
+
+                                    if (p.parking) {
+                                        infoItems.push({ icon: ParkingCircle, label: '주차', text: p.parking, color: 'text-blue-500' });
+                                    }
+
+                                    if (p.parkingFee) {
+                                        infoItems.push({ icon: Wallet, label: '주차요금', text: p.parkingFee, color: 'text-orange-400' });
+                                    }
+
+                                    if (p.facilities) {
+                                        infoItems.push({ icon: Layers, label: '주요시설', text: p.facilities, color: 'text-teal-400' });
+                                    }
+
+                                    if (p.restrooms) {
+                                        infoItems.push({ icon: Bath, label: '화장실', text: p.restrooms, color: 'text-blue-300' });
                                     }
 
                                     return infoItems.map((item, idx) => (
