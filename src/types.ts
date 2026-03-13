@@ -72,6 +72,6 @@ export type Performance = {
     revenue?: number | string;
     budgetKRW?: string | number;
     revenueKRW?: string | number;
-    synopsis?: string;
+    roi?: string | number;
     status?: string;
 };

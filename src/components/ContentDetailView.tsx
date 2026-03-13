@@ -303,6 +303,9 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             const formatted = new Intl.NumberFormat('ko-KR').format((p as any).revenueKRW);
                                             infoItems.push({ icon: Wallet, label: '수익', text: `₩${formatted} (약 ${Math.round((p as any).revenueKRW / 100000000)}억원)`, color: 'text-emerald-500' });
                                         }
+                                        if ((p as any).roi) {
+                                            infoItems.push({ icon: Presentation, label: '수익률', text: (p as any).roi, color: 'text-purple-400' });
+                                        }
                                     }
 
                                     if (!isMovie && (p.age || p.ageRating)) {

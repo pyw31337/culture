@@ -318,6 +318,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let revenueKRW = raw.revenueKRW;
     let synopsis = raw.synopsis;
     let trailer = raw.trailer;
+    let roi = raw.roi;
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -465,7 +466,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         budgetKRW,
         revenueKRW,
         synopsis,
-        trailer
+        trailer,
+        roi
     } as Performance;
 }
 

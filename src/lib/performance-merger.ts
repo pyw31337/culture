@@ -114,6 +114,7 @@ function mergeItems(a: any, b: any): any {
     if (!merged.budgetKRW && loser.budgetKRW) merged.budgetKRW = loser.budgetKRW;
     if (!merged.revenueKRW && loser.revenueKRW) merged.revenueKRW = loser.revenueKRW;
     if (!merged.synopsis && loser.synopsis) merged.synopsis = loser.synopsis;
+    if (!merged.roi && loser.roi) merged.roi = loser.roi;
     if (!merged.trailer && loser.trailer) merged.trailer = loser.trailer;
 
     // Poster/Image

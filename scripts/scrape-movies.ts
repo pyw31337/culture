@@ -54,8 +54,16 @@ async function fetchKobisDetail(movieCd: string) {
 async function fetchTmdbData(title: string, year: string) {
     try {
         const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&language=ko-KR&primary_release_year=${year.substring(0, 4)}`;
-        const searchRes = await axios.get(searchUrl);
-        const results = searchRes.data.results;
+        let searchRes = await axios.get(searchUrl);
+        let results = searchRes.data.results;
+        
+        // Fallback: If no results with year, try without year
+        if (!results || results.length === 0) {
+            const fallbackUrl = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&language=ko-KR`;
+            searchRes = await axios.get(fallbackUrl);
+            results = searchRes.data.results;
+        }
+
         if (!results || results.length === 0) return null;
 
         const movieId = results[0].id;
@@ -233,6 +241,9 @@ async function scrapeMovies() {
                 synopsis: chartData?.synopsis || tmdb?.overview || existing?.synopsis,
                 reservationRate: chartData?.resRate || existing?.reservationRate,
                 audienceCount: chartData?.audience || existing?.audienceCount,
+                roi: (tmdb?.budget && tmdb?.revenue && tmdb.budget > 0) 
+                    ? Math.round(((tmdb.revenue - tmdb.budget) / tmdb.budget) * 100) + '%'
+                    : existing?.roi,
                 lastCollected: new Date().toISOString()
             };
 
