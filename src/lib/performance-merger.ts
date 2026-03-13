@@ -107,6 +107,14 @@ function mergeItems(a: any, b: any): any {
     if (!merged.productionYear && loser.productionYear) merged.productionYear = loser.productionYear;
     if (!merged.subGenre && loser.subGenre) merged.subGenre = loser.subGenre;
     if (!merged.rank && loser.rank) merged.rank = loser.rank;
+    if (!merged.reservationRate && loser.reservationRate) merged.reservationRate = loser.reservationRate;
+    if (!merged.audienceCount && loser.audienceCount) merged.audienceCount = loser.audienceCount;
+    if (!merged.budget && loser.budget) merged.budget = loser.budget;
+    if (!merged.revenue && loser.revenue) merged.revenue = loser.revenue;
+    if (!merged.budgetKRW && loser.budgetKRW) merged.budgetKRW = loser.budgetKRW;
+    if (!merged.revenueKRW && loser.revenueKRW) merged.revenueKRW = loser.revenueKRW;
+    if (!merged.synopsis && loser.synopsis) merged.synopsis = loser.synopsis;
+    if (!merged.trailer && loser.trailer) merged.trailer = loser.trailer;
 
     // Poster/Image
     // If winner has no valid image, try loser's

@@ -309,6 +309,15 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let parkingFee = raw.parkingFee;
     let facilities = raw.facilities;
     let restrooms = raw.restrooms;
+    let rank = raw.rank;
+    let reservationRate = raw.reservationRate;
+    let audienceCount = raw.audienceCount;
+    let budget = raw.budget;
+    let revenue = raw.revenue;
+    let budgetKRW = raw.budgetKRW;
+    let revenueKRW = raw.revenueKRW;
+    let synopsis = raw.synopsis;
+    let trailer = raw.trailer;
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -447,7 +456,16 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         parking,
         parkingFee,
         facilities,
-        restrooms
+        restrooms,
+        rank,
+        reservationRate,
+        audienceCount,
+        budget,
+        revenue,
+        budgetKRW,
+        revenueKRW,
+        synopsis,
+        trailer
     } as Performance;
 }
 

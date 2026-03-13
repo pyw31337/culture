@@ -161,9 +161,28 @@ async function scrapeMovies() {
         progressBar.update({ movie: m.title.substring(0, 15) });
         
         const existing = existingMap.get(m.title);
+
+        // Adult/Erotic Filter
+        const BAD_KEYWORDS = ['청소년관람불가', '청불', '에로', '성인', '포르노'];
+        const isAdultRating = (rating: string) => BAD_KEYWORDS.some(k => rating?.includes(k));
+        const hasBadTitle = BAD_KEYWORDS.some(k => m.title.includes(k));
+
+        if (hasBadTitle) {
+            console.log(`[FILTER] Skipping bad title: ${m.title}`);
+            progressBar.increment();
+            continue;
+        }
+
         // Optimization: Only skip if we have EVERYTHING (including new fields)
         if (existing && existing.image && existing.cast && existing.director && 
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && existing.reservationRate && !existing.posterFallback) {
+            
+            if (isAdultRating(existing.venue)) {
+                console.log(`[FILTER] Skipping existing adult movie: ${m.title}`);
+                progressBar.increment();
+                continue;
+            }
+
             existing.rank = m.rank; // Update rank if current
             finalMovies.push(existing);
             progressBar.increment();
@@ -185,6 +204,13 @@ async function scrapeMovies() {
                 await page.close();
             }
 
+            const rating = kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정';
+            if (isAdultRating(rating)) {
+                console.log(`[FILTER] Skipping newly discovered adult movie: ${m.title} (${rating})`);
+                progressBar.increment();
+                continue;
+            }
+
             const item: any = {
                 id: existing?.id || `movie_${slugify(m.title)}`,
                 title: m.title,
@@ -196,9 +222,10 @@ async function scrapeMovies() {
                 genre: 'movie',
                 rank: m.rank,
                 director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
-                cast: tmdb?.credits?.cast?.slice(0, 5).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 5).map((a: any) => a.peopleNm) || existing?.cast,
-                venue: kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정',
-                runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || existing?.runtime ? `${existing?.runtime}분` : ''),
+                cast: tmdb?.credits?.cast?.slice(0, 10).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 10).map((a: any) => a.peopleNm) || existing?.cast,
+                venue: rating,
+                ageRating: rating,
+                runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || existing?.runtime ? `${existing?.runtime || existing?.runtime}분` : ''),
                 budget: tmdb?.budget || existing?.budget,
                 revenue: tmdb?.revenue || existing?.revenue,
                 budgetKRW: tmdb?.budget ? Math.round(tmdb.budget * 1400) : existing?.budgetKRW,
@@ -218,9 +245,8 @@ async function scrapeMovies() {
             const posterUrl = tmdbPoster || existing?.posterUrl;
             
             if (posterUrl) {
-                // Use a clean filename based on ID to avoid truncation or special char issues
-                const cleanId = item.id.replace('movie_', '');
-                const localImage = await processImage(posterUrl, cleanId, 'posters/movies');
+                const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
+                const localImage = await processImage(posterUrl, `movie_${cleanId}`, 'posters/movies');
                 if (localImage) {
                     item.image = localImage;
                     item.posterUrl = posterUrl;
@@ -228,8 +254,8 @@ async function scrapeMovies() {
             }
 
             if (!item.image) {
-                const cleanId = item.id.replace('movie_', '');
-                item.image = `/images/posters/movies/${cleanId}.webp`;
+                const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
+                item.image = `/images/posters/movies/movie_${cleanId}.webp`;
             }
 
             finalMovies.push(item);

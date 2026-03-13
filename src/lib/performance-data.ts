@@ -213,6 +213,43 @@ export function getAllPerformances() {
     // 4. Deduplication & Stable ID Logic (Unified via Utility)
     const stablePerformances = processAndMergePerformances(filtered);
 
-    cachedPerformances = safePerformanceList(stablePerformances);
+    // 5. Custom Movie Sorting
+    // Current Rule: Top 10 Ranked first, then Upcoming releases by date, then others.
+    const movieItems = stablePerformances.filter(p => p.genre === 'movie');
+    const otherItems = stablePerformances.filter(p => p.genre !== 'movie');
+
+    movieItems.sort((a, b) => {
+        const rankA = a.rank || 999;
+        const rankB = b.rank || 999;
+        
+        // Priority 1: Ranked 1-10
+        if (rankA <= 10 || rankB <= 10) {
+            if (rankA !== rankB) return rankA - rankB;
+        }
+
+        // Priority 2: Upcoming/Active (Date >= Today)
+        const dateA = new Date((a.dateRaw || '00000000').replace(/-/g, '').replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')).getTime();
+        const dateB = new Date((b.dateRaw || '00000000').replace(/-/g, '').replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')).getTime();
+        const today = new Date().setHours(0, 0, 0, 0);
+
+        const isActiveA = dateA >= today;
+        const isActiveB = dateB >= today;
+
+        if (isActiveA && !isActiveB) return -1;
+        if (!isActiveA && isActiveB) return 1;
+        
+        // If both are active/upcoming, sort by date (soonest first)
+        if (isActiveA && isActiveB) {
+            if (dateA !== dateB) return dateA - dateB;
+        }
+
+        // Tie-breaker: Rank (even if > 10) or Alphabetical
+        if (rankA !== rankB) return rankA - rankB;
+        return a.title.localeCompare(b.title);
+    });
+
+    const finalResult = [...otherItems, ...movieItems];
+
+    cachedPerformances = safePerformanceList(finalResult);
     return cachedPerformances;
 }
