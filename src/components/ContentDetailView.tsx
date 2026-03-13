@@ -2,7 +2,7 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath } from 'lucide-react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -254,31 +254,23 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Film, label: '등급', text: movieRating, color: 'text-emerald-500' });
                                     } else if (!isMovie && p.venue) {
                                         infoItems.push({ 
-                                            icon: MapPin, 
+                                            icon: Building2, 
                                             label: '장소', 
                                             text: p.venue, 
-                                            rightText: p.district || getDistrictFromAddress(p.address),
                                             color: 'text-emerald-500', 
                                             isLink: !!(p.lat && p.lng), 
                                             onClick: handleVenueClick 
                                         });
                                     }
 
-                                    if (p.address && p.address.trim() !== '' && p.address !== p.venue) {
-                                        // Only show full address if it's significantly different from venue name
-                                        // and not already just the same as venue
-                                        const cleanVenue = p.venue?.replace(/\s+/g, '');
-                                        const cleanAddr = p.address?.replace(/\s+/g, '');
-                                        if (cleanAddr !== cleanVenue) {
-                                            infoItems.push({ 
-                                                icon: MapPin, 
-                                                label: '주소', 
-                                                text: p.address, 
-                                                color: 'text-gray-400',
-                                                isLink: !!(p.lat && p.lng),
-                                                onClick: handleVenueClick
-                                            });
-                                        }
+                                    if (p.address && p.address.trim() !== '') {
+                                        infoItems.push({ 
+                                            icon: MapPin, 
+                                            label: '주소', 
+                                            text: p.address, 
+                                            color: 'text-gray-400',
+                                            isLink: false
+                                        });
                                     }
 
                                     const dateText = formatUnifiedDate(p.date);
@@ -311,7 +303,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     if (p.performanceTime) {
-                                        infoItems.push({ icon: Clock, label: '일정/시간', text: p.performanceTime, color: 'text-cyan-500' });
+                                        infoItems.push({ icon: Clock, label: '시간', text: p.performanceTime, color: 'text-cyan-500' });
                                     }
 
                                     // Advanced KOPIS metadata with deduplication
@@ -362,8 +354,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
                                     }
 
-                                    if (p.ageRating) {
-                                        infoItems.push({ icon: Info, label: '관람연령', text: p.ageRating, color: 'text-blue-400', rightText: p.ageDetail ? '상세안내 참조' : undefined });
+                                    if (p.closedDays) {
+                                        infoItems.push({ icon: Info, label: '휴무일', text: p.closedDays, color: 'text-rose-400' });
                                     }
 
                                     if (p.website) {
@@ -396,7 +388,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Bath, label: '화장실', text: p.restrooms, color: 'text-blue-300' });
                                     }
 
-                                    return infoItems.map((item, idx) => (
+                                    return infoItems.map((item: any, idx: number) => (
                                         <div key={idx} className="flex items-start justify-between gap-4 py-2 border-b border-gray-50 dark:border-white/5 last:border-0">
                                             <div className="flex items-start gap-3 min-w-0 flex-1">
                                                 <div className="flex items-center gap-1.5 w-14 shrink-0 mt-[2px]">

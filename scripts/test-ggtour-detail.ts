@@ -27,4 +27,5 @@ async function testGGTourDetailApi(id: string) {
     }
 }
 
-testGGTourDetailApi('121');
+const testId = process.argv[2] || '121';
+testGGTourDetailApi(testId);

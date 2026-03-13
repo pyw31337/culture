@@ -39,10 +39,14 @@ async function fetchGGTDetail(cotId: string) {
         if (response.data?.code === 0 && response.data?.data) {
             const d = response.data.data;
             return {
-                description: cleanHtml(d.intro),
+                description: cleanHtml(d.overview || d.intro),
                 price: cleanHtml(d.additionalDetail?.useFee || d.additionalDetail?.parkingFee),
                 time: cleanHtml(d.additionalDetail?.useTime),
-                contact: d.tel || ''
+                contact: d.tel || '',
+                address: d.addr1 || '',
+                website: cleanHtml(d.homepage),
+                closedDays: cleanHtml(d.additionalDetail?.restDate),
+                parking: cleanHtml(d.additionalDetail?.parkingInfo)
             };
         }
     } catch (error: any) {
@@ -101,6 +105,10 @@ async function scrapeGGTour(maxPages = 230) {
                         price: details?.price || '무료',
                         performanceTime: details?.time || '',
                         contact: details?.contact || '',
+                        address: details?.address || '',
+                        website: details?.website || '',
+                        closedDays: details?.closedDays || '',
+                        parking: details?.parking || '',
                         source: 'GGTour',
                         lat: item.coordinate?.mapY,
                         lng: item.coordinate?.mapX

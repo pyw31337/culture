@@ -721,9 +721,7 @@ async function scrapeMovies() {
         const finalMovies: any[] = [];
 
         for (const m of allMoviesToProcess) {
-            // DEBUG: Only process Top 10 Box Office
-            if (m.rank && parseInt(m.rank) > 10) continue;
-            if (!m.rank) continue; // Skip upcoming for debug
+            // Process all movies (removed debug Top 10 limit)
 
             let existing = existingMap.get(m.title);
             const hasFallbackPoster = existing?.posterFallback === true;
@@ -1030,11 +1028,20 @@ async function scrapeMovies() {
 
             for (const newMovie of finalMovies) {
                 const existing = movieMap.get(newMovie.title);
+                
+                // DATA PRESERVATION: Only overwrite if new data is meaningful
                 const merged = {
                     ...existing,
                     ...newMovie,
+                    // Restore original fields if new ones are empty/placeholder
+                    venue: (newMovie.venue === '등급 미정' && existing?.venue && existing.venue !== '등급 미정') 
+                        ? existing.venue 
+                        : (newMovie.venue || existing?.venue || '등급 미정'),
+                    director: (newMovie.director || existing?.director),
+                    cast: (newMovie.cast && newMovie.cast.length > 0) ? newMovie.cast : existing?.cast,
                     lastCollected: now
                 };
+                
                 synchronizedMovies.push(merged);
                 processedTitles.add(newMovie.title);
             }

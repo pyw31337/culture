@@ -8,12 +8,14 @@
     "rank": 1,
     "link": "https://search.naver.com/search.naver?query=%EC%99%95%EA%B3%BC%20%EC%82%AC%EB%8A%94%20%EB%82%A8%EC%9E%90%202026%EB%85%84%20%EC%98%81%ED%99%94",
     "productionCountry": "한국",
-    "venue": "등급 미정",
+    "venue": "12세 관람가",
     "image": "/images/posters/movies/movie_왕과사는남자.webp",
     "posterFallback": false,
-    "lastCollected": "2026-03-12T21:40:26.443Z",
+    "lastCollected": "2026-03-13T13:10:00.000Z",
     "posterUrl": "https://www.kobis.or.kr/common/mast/movie/2026/02/0987da5282ff417ca513de6c66d2c288.jpg",
-    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/0987da5282ff417ca513de6c66d2c288.jpg"
+    "backupPoster": "https://www.kobis.or.kr/common/mast/movie/2026/02/0987da5282ff417ca513de6c66d2c288.jpg",
+    "director": "장항준",
+    "cast": ["유해진", "박지훈", "유지태", "전미도", "김민"]
   },
   {
     "id": "movie_호퍼스",

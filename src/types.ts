@@ -64,4 +64,5 @@ export type Performance = {
     targetAudience?: string;
     operatingHours?: string;
     priceDetail?: string;
+    closedDays?: string;
 };
