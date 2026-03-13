@@ -138,7 +138,7 @@ const extractMetadataStr = `() => {
                 const urlObj = new URL(src, 'https://search.naver.com');
                 const realSrc = urlObj.searchParams.get('src');
                 if (realSrc) src = decodeURIComponent(realSrc);
-            } catch (e) { }
+            } catch (e: any) { }
         }
         res.poster = src;
     }
@@ -306,7 +306,7 @@ function cleanupOldMovieImages(validMovies: any[]) {
                 fs.unlinkSync(path.join(posterDir, file));
                 // console.log(`Deleted orphan image: ${file}`);
                 deletedCount++;
-            } catch (e) {
+            } catch (e: any) {
                 console.error(`Failed to delete ${file}:`, e);
             }
         }
@@ -340,7 +340,7 @@ async function scrapeMovies() {
                 const loaded = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
                 loaded.forEach((m: any) => existingMap.set(m.title, m));
                 console.log(`Loaded ${loaded.length} existing movies.`);
-            } catch (e) {
+            } catch (e: any) {
                 console.error('Failed to load existing movies:', e);
             }
         }
@@ -361,7 +361,7 @@ async function scrapeMovies() {
             await kobisPage.waitForSelector('.rst_sch', { timeout: 30000 });
             try {
                 await kobisPage.waitForSelector('#tbody_0 > tr', { timeout: 10000 });
-            } catch (e) {
+            } catch (e: any) {
                 console.warn('Timeout waiting for rows, trying to proceed anyway (might be empty or slow).');
             }
 
@@ -408,7 +408,7 @@ async function scrapeMovies() {
 
             console.log(`Found ${movies.length} movies from KOBIS.`);
 
-        } catch (e) {
+        } catch (e: any) {
             console.error('KOBIS Scraping Error:', e);
             return;
         } finally {
@@ -520,7 +520,7 @@ async function scrapeMovies() {
                                     if (detail.cast && detail.cast.length > 0) m.cast = detail.cast;
                                     if (detail.titleEn) m.titleEn = detail.titleEn;
                                 }
-                            } catch (e) {
+                            } catch (e: any) {
                                 console.warn(`Failed detail for ${m.title}: ${e}`);
                             }
                             await sleep(500);
@@ -584,7 +584,7 @@ async function scrapeMovies() {
             upcomingMovies = Array.from(uniqueUpcoming.values());
             console.log(`Unique upcoming movies to enrich: ${upcomingMovies.length}`);
 
-        } catch (e) {
+        } catch (e: any) {
             console.error('KOBIS Upcoming Scraping Error:', e);
         }
 
@@ -672,7 +672,7 @@ async function scrapeMovies() {
                     });
 
                     naverUpcoming.push(...pageMovies);
-                } catch (e) {
+                } catch (e: any) {
                     // Continue with other URLs
                 }
             }
@@ -695,7 +695,7 @@ async function scrapeMovies() {
                 }
             }
             console.log(`Added ${naverNewCount} new movies from Naver (not in KOBIS).`);
-        } catch (e) {
+        } catch (e: any) {
             console.error('Naver Upcoming Scraping Error:', e);
         }
 
@@ -828,7 +828,7 @@ async function scrapeMovies() {
                 item.lastCollected = new Date().toISOString();
                 
                 finalMovies.push(item);
-            } catch (err) {
+            } catch (err: any) {
                 console.error(`[Error] Failed to enrich ${m.title}:`, err.message);
                 // Still push the basic info if we have some KOBIS data
                 finalMovies.push({
@@ -958,8 +958,6 @@ async function scrapeMovies() {
                 fs.copyFileSync(OUTPUT_FILE, publicFile);
                 console.log(`Copied to ${publicFile}`);
             }
-
-            }
         } else {
             console.warn('Scraper found 0 movies. Aborting save.');
         }
@@ -970,7 +968,7 @@ async function scrapeMovies() {
 
 scrapeMovies().then(() => {
     process.exit(0);
-}).catch(err => {
+}).catch((err: any) => {
     console.error(err);
     process.exit(1);
 });

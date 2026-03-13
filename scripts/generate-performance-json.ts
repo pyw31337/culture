@@ -144,7 +144,7 @@ async function generate() {
                 }
                 return isActive;
 
-            } catch (e) {
+            } catch (e: any) {
                 if (p.source === 'museum') console.log(`[DEBUG] Museum ${p.title} error in date parsing:`, e);
                 return true;
             }
@@ -223,7 +223,7 @@ async function generate() {
             }
         });
 
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error generating performance data:', error);
         process.exit(1);
     }
