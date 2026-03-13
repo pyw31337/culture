@@ -260,6 +260,15 @@ function normalizeVenueName(rawVenue: string, homeTeam?: string, genre?: string)
 }
 
 /**
+ * Extracts numeric value from a price string (e.g. "40,000원" -> 40000)
+ */
+function getNumericPrice(priceStr: string | undefined): number | null {
+    if (!priceStr) return null;
+    const numeric = priceStr.replace(/[^0-9]/g, '');
+    return numeric ? parseInt(numeric, 10) : null;
+}
+
+/**
  * Normalizes any raw performance object into a strict Performance interface.
  */
 export function transformPerformance(raw: RawPerformance, source?: string): Performance {
@@ -389,6 +398,16 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     homeLogo = addBP(homeLogo);
     awayLogo = addBP(awayLogo);
 
+    // 7. Discount Integrity Fix
+    let discount = raw.discount;
+    const nPrice = getNumericPrice(price);
+    const nOriginal = getNumericPrice(raw.originalPrice);
+
+    if (nPrice !== null && nOriginal !== null && nPrice >= nOriginal) {
+        // If price is same or higher than original, it's not a discount
+        discount = undefined;
+    }
+
     if (title.includes('외옹치')) {
         console.log(`[DEBUG-TRANSFORM] 외옹치 raw.contact: ${raw.contact}, website: ${raw.website}`);
     }
@@ -407,6 +426,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         homeTeamLogo: homeLogo,
         awayTeamLogo: awayLogo,
         price,
+        discount, // Use validated discount
+        originalPrice: raw.originalPrice,
         cast,
         crew,
         age: age || '',

@@ -264,6 +264,17 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         });
                                     }
 
+                                    if (p.address && p.address.trim() !== '' && p.address !== p.venue) {
+                                        infoItems.push({ 
+                                            icon: MapPin, 
+                                            label: '주소', 
+                                            text: p.address, 
+                                            color: 'text-gray-400',
+                                            isLink: !!(p.lat && p.lng),
+                                            onClick: handleVenueClick
+                                        });
+                                    }
+
                                     const dateText = formatUnifiedDate(p.date);
                                     if (dateText) {
                                         infoItems.push({ icon: Calendar, label: isMovie ? '개봉' : '일정', text: dateText, color: 'text-blue-500' });

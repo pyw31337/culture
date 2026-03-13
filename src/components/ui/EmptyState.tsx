@@ -3,6 +3,7 @@
 import React from 'react';
 import { Search, Compass, Sparkles, RefreshCw } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 interface EmptyStateProps {
     type?: 'search' | 'filter' | 'error';
@@ -21,6 +22,7 @@ export default function EmptyState({
     onReset,
     suggestions = []
 }: EmptyStateProps) {
+    const router = useRouter();
     const getContent = () => {
         switch (type) {
             case 'search':
@@ -113,7 +115,7 @@ export default function EmptyState({
                     <div className="flex flex-wrap justify-center gap-2">
                         {(suggestions.length > 0 ? suggestions : defaultSuggestions.map(s => ({
                             label: s.label,
-                            onClick: () => window.location.href = `./${s.genre}`
+                            onClick: () => router.push(`/${s.genre}/`)
                         }))).map((suggestion, idx) => (
                             <button
                                 key={idx}
