@@ -373,9 +373,13 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Phone, label: '문의', text: p.contact, color: 'text-emerald-400' });
                                     }
 
-                                    if (p.price && !p.priceList) {
-                                        infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
-                                    }
+                                     if (p.price && !p.priceList) {
+                                         infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
+                                     }
+
+                                     if (p.genre === 'tourism' && p.priceDetail) {
+                                         infoItems.push({ icon: Coins, label: '상세 요금', text: p.priceDetail, color: 'text-amber-500' });
+                                     }
 
                                     if (p.closedDays) {
                                         infoItems.push({ icon: Info, label: '휴무일', text: p.closedDays, color: 'text-rose-400' });

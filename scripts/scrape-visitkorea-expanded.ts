@@ -15,7 +15,26 @@ const AREA_MAP: Record<string, string> = {
     '31': '경기', '32': '강원', '33': '충북', '34': '충남', '35': '경북', '36': '경남', '37': '전북', '38': '전남', '39': '제주'
 };
 
-const limit = pLimit(3); 
+const limit = pLimit(5);
+
+function parseTourismPrice(priceDetail: string): string {
+    if (!priceDetail) return '무료';
+    if (priceDetail.trim() === '무료') return '무료';
+
+    // Look for prices like "3,000원", "10,000원"
+    const priceRegex = /(\d{1,3}(,\d{3})*원)/g;
+    const matches = priceDetail.match(priceRegex);
+
+    if (matches && matches.length > 0) {
+        // Find the maximum price found (usually Adult/Individual price)
+        const numericPrices = matches.map(m => parseInt(m.replace(/[^0-9]/g, ''), 10));
+        const maxPrice = Math.max(...numericPrices);
+        return `${maxPrice.toLocaleString()}원`;
+    }
+
+    if (priceDetail.includes('무료')) return '무료';
+    return priceDetail; // Fallback to raw string if no numeric price found
+}
 
 /**
  * Clean string by removing extra whitespace and newlines
@@ -220,7 +239,7 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                         genre: 'tourism',
                         category: '관광/여행',
                         description: details?.description || '',
-                        price: (details?.priceDetail || '').includes('무료') ? '무료' : (details?.priceDetail || '무료'),
+                        price: parseTourismPrice(details?.priceDetail || ''),
                         priceDetail: details?.priceDetail || '',
                         operatingHours: details?.operatingHours || '',
                         contact: details?.contact || '',
@@ -261,7 +280,7 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
 }
 
 async function main() {
-    const results = await scrapeVisitKoreaPlaces(25); // Increased to 25 pages
+    const results = await scrapeVisitKoreaPlaces(25); // Set to 25 pages for full coverage
     
     // Deduplicate
     const uniqueMap = new Map();
