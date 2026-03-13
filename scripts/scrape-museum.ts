@@ -26,6 +26,12 @@ interface MuseumItem {
     link: string;
     address: string;
     genre: string;
+    hours?: string;
+    website?: string;
+    parking?: string;
+    parkingFee?: string;
+    fees?: string;
+    facilities?: string;
 }
 
 async function scrapeMuseum() {
@@ -163,20 +169,31 @@ async function scrapeMuseum() {
                     // Selector: body > div.container > main > div:nth-child(1) > article > div.main-container > section > ul > li:nth-child(1) > p.value
                     // Try generic "li > p.label" contains "주소"? Or just the specific path provided.
                     address = await detailPage.evaluate(() => {
-                        // User said: section > ul > li:nth-child(1) > p.value
-                        // Let's try finding the element directly first
-                        const addrEl = document.querySelector('section > ul > li:nth-child(1) > p.value');
-                        if (addrEl) return addrEl.textContent?.trim() || '';
-
-                        // Fallback: search by label
+                        const results: any = {};
                         const labels = document.querySelectorAll('section > ul > li > p.label');
-                        for (const label of labels) {
-                            if (label.textContent?.includes('주소')) {
-                                const value = label.parentElement?.querySelector('p.value');
-                                return value?.textContent?.trim() || '';
-                            }
+                        
+                        labels.forEach(label => {
+                            const key = label.textContent?.trim() || '';
+                            const valueEl = label.parentElement?.querySelector('p.value, div.value');
+                            const value = valueEl?.textContent?.trim() || '';
+
+                            if (key.includes('주소')) results.address = value;
+                            if (key.includes('전화')) results.contact = value;
+                            if (key.includes('영업시간')) results.hours = value;
+                            if (key.includes('시설')) results.facilities = value;
+                        });
+
+                        // Website
+                        const webBtn = document.querySelector('div.reservation-buttons > a');
+                        if (webBtn) results.website = (webBtn as HTMLAnchorElement).href;
+
+                        // Fees
+                        const feesSection = Array.from(document.querySelectorAll('section')).find(s => s.textContent?.includes('요금'));
+                        if (feesSection) {
+                            results.fees = feesSection.querySelector('ul')?.textContent?.trim() || '';
                         }
-                        return '';
+
+                        return results;
                     });
                 } catch (e) {
                     console.error(`Failed to scrape details for ${item.title}:`, e);
@@ -189,7 +206,7 @@ async function scrapeMuseum() {
                 finalItems.push({
                     id,
                     ...item,
-                    address,
+                    ...(typeof address === 'string' ? { address } : address),
                     genre: 'museum'
                 });
 

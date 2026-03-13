@@ -122,28 +122,28 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
         });
 
         // 2. Board detail processing (li with tit/data spans - Fallback)
-        $('.board_detail li, .view_info_list li').each((_, el) => {
-            const label = $(el).find('.tit').text().trim();
-            const value = $(el).find('.data').text().trim();
+        $('.board_detail li, .view_info_list li, .view-detail li').each((_, el) => {
+            const label = $(el).find('.tit, strong, b').first().text().trim();
+            const value = $(el).find('.data, span').last().text().trim();
             
             if (isUseless(value)) return;
 
             if (label.includes('시간') && !item.time) {
                 item.time = value;
-            } else if ((label.includes('요금') || label.includes('가격')) && !item.price) {
+            } else if ((label.includes('요금') || label.includes('가격') || label.includes('관람료')) && !item.price) {
                 item.price = value;
-            } else if (label.includes('문의') && !item.contact) {
+            } else if ((label.includes('문의') || label.includes('전화')) && !item.contact) {
                 item.contact = value;
             } else if (label.includes('주최') || label.includes('주관')) {
                 item.host = value;
-            } else if (label.includes('후원') || label.includes('협찬')) {
-                item.sponsor = value;
+            } else if (label.includes('홈페이지') || label.includes('웹사이트')) {
+                item.website = value;
+            } else if (label.includes('주차')) {
+                item.parking = value;
             } else if (label.includes('관람연령') && !item.age) {
                 item.age = value;
             } else if (label.includes('출연진')) {
                 item.cast = value.split(',').map(s => s.trim()).filter(Boolean);
-            } else if (label.includes('제작진')) {
-                item.crew = value.split(',').map(s => s.trim()).filter(Boolean);
             }
         });
 
