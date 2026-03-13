@@ -170,10 +170,17 @@ async function scrapeMovies() {
         
         const existing = existingMap.get(m.title);
 
-        // Adult/Erotic Filter
-        const BAD_KEYWORDS = ['청소년관람불가', '청불', '에로', '성인', '포르노'];
-        const isAdultRating = (rating: string) => BAD_KEYWORDS.some(k => rating?.includes(k));
-        const hasBadTitle = BAD_KEYWORDS.some(k => m.title.includes(k));
+        // Content Filter Configuration
+        // We only filter if title contains dirty keywords or if genre is explicitly "에로"
+        const DIRTY_KEYWORDS = [
+            '에로', '성인', '포르노', '섹스', '정사', '유부녀', '사모님', '정원사',
+            '여대생', '박음', '새엄마', '여사친', '꼭지', '공략', '구멍', '젖었다',
+            '거유', '침대', '속옷', '치마', '빨간', '비밀', '은밀한', '관음', '교사',
+            '며느리', '시아버지', '장모', '사위', '형수', '처제', '조이는', '넣어',
+            '만지', '벌려', '빨아', '맛본', '절륜', '섹파', '조건', '만남', '여관',
+            '가정부', '번식', '노천탕', '도우미', '동창', '여직원', '몸매', '가슴'
+        ];
+        const hasBadTitle = DIRTY_KEYWORDS.some(k => m.title.includes(k));
 
         if (hasBadTitle) {
             console.log(`[FILTER] Skipping bad title: ${m.title}`);
@@ -185,13 +192,9 @@ async function scrapeMovies() {
         if (existing && existing.image && existing.cast && existing.director && 
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && existing.reservationRate && !existing.posterFallback) {
             
-            if (isAdultRating(existing.venue)) {
-                console.log(`[FILTER] Skipping existing adult movie: ${m.title}`);
-                progressBar.increment();
-                continue;
-            }
-
-            existing.rank = m.rank; // Update rank if current
+            // If it's already in the data, just update rank and move on
+            // (Unless it's a dirty title, which we should have filtered above)
+            existing.rank = m.rank;
             finalMovies.push(existing);
             progressBar.increment();
             continue;
@@ -213,8 +216,15 @@ async function scrapeMovies() {
             }
 
             const rating = kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정';
-            if (isAdultRating(rating)) {
-                console.log(`[FILTER] Skipping newly discovered adult movie: ${m.title} (${rating})`);
+            const kobisGenres = kobisDetail?.genres?.map((g: any) => g.genreNm) || [];
+            
+            // Refined Filter: 18+ is OK unless it's "에로" genre or TMDB marks it as adult
+            const isEroticGenre = kobisGenres.some((g: string) => g.includes('에로')) || 
+                                DIRTY_KEYWORDS.some(k => m.title.includes(k)) ||
+                                tmdb?.adult === true;
+
+            if (isEroticGenre) {
+                console.log(`[FILTER] Skipping erotic movie: ${m.title} (Genres: ${kobisGenres.join(',')}, TMDB Adult: ${tmdb?.adult})`);
                 progressBar.increment();
                 continue;
             }
@@ -228,6 +238,7 @@ async function scrapeMovies() {
                 dateRaw: m.dateRaw,
                 region: '전국',
                 genre: 'movie',
+                subGenre: kobisGenres.join(', '),
                 rank: m.rank,
                 director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
                 cast: tmdb?.credits?.cast?.slice(0, 10).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 10).map((a: any) => a.peopleNm) || existing?.cast,
