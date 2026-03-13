@@ -1,114 +1,86 @@
 
 import fs from 'fs';
 import path from 'path';
-
-// VALIDATION RULES
-// 1. Check for 'OTT' in subGenre/Genre (should be actual genre)
-// 2. Check for Age Rating that looks like Runtime
-// 3. Check for 404 Images (optional, HEAD check) - Skipped for now to avoid ban, just check structure.
-// 4. Report stats.
+import { cleanTitle, cleanVenueName, formatUnifiedDate, loadJson, saveJson } from './utils/scraper-utils';
 
 const DATA_DIR = path.resolve(process.cwd(), 'src/data');
 
-const load = (f: string) => {
-    try {
-        return JSON.parse(fs.readFileSync(path.join(DATA_DIR, f), 'utf-8'));
-    } catch { return []; }
-};
+async function validateAll() {
+    console.log('🚀 Starting Comprehensive Data Audit...\n');
 
-const save = (f: string, data: any[]) => {
-    fs.writeFileSync(path.join(DATA_DIR, f), JSON.stringify(data, null, 2));
-};
+    const files = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json') && !f.includes('venue') && !f.includes('cinema') && !f.includes('backup'));
+    
+    let totalItems = 0;
+    let totalIssues = 0;
+    let totalCleaned = 0;
 
-async function validate() {
-    console.log('Starting Data Validation...');
-
-    // 1. OTT Data
-    const ott = load('ott.json');
-    console.log(`Loaded ${ott.length} OTT items.`);
-    let modified = 0;
-
-    const newOtt = ott.map((item: any) => {
-        let changed = false;
-
-        // Rule 1: 'OTT' in subGenre
-        if (item.subGenre === 'OTT') {
-            // console.log(`[Fix] Removing 'OTT' subGenre from ${item.title}`);
-            delete item.subGenre;
-            changed = true;
+    for (const file of files) {
+        console.log(`\n--- Auditing ${file} ---`);
+        const data = loadJson(file);
+        if (!Array.isArray(data)) {
+            console.log(`Skipping ${file} (not an array)`);
+            continue;
         }
 
-        // Rule 2: Age Rating looks like Runtime or '42분'
-        if (item.ageRating && (item.ageRating.includes('분') || item.ageRating.includes('min') || item.ageRating.match(/^\d+$/))) {
-            console.log(`[Fix] Invalid Age Rating '${item.ageRating}' for ${item.title}. Clearing.`);
-            // Optionally move to runningTime if runningTime is empty
-            if (!item.runningTime && item.ageRating.includes('분')) {
-                item.runningTime = item.ageRating;
+        let fileModified = false;
+        const cleanedData = data.map((item: any) => {
+            let itemModified = false;
+            totalItems++;
+
+            // 1. Title Cleansing
+            const newTitle = cleanTitle(item.title || '');
+            if (newTitle !== item.title) {
+                item.title = newTitle;
+                itemModified = true;
             }
-            delete item.ageRating;
-            changed = true;
+
+            // 2. Venue Cleansing
+            const newVenue = cleanVenueName(item.venue || item.place || '');
+            if (newVenue !== (item.venue || item.place)) {
+                if (item.venue) item.venue = newVenue;
+                if (item.place) item.place = newVenue;
+                itemModified = true;
+            }
+
+            // 3. Date Normalization
+            if (item.date) {
+                const newDate = formatUnifiedDate(item.date);
+                if (newDate !== item.date) {
+                    item.date = newDate;
+                    itemModified = true;
+                }
+            }
+
+            // 4. Missing Coordinate Flagging
+            if (!item.lat || !item.lng) {
+                // totalIssues++;
+                // console.warn(`[Missing Geo] ${item.title} (${item.venue})`);
+            }
+
+            // 5. Image Check
+            if (!item.image || item.image === '정보 없음') {
+                totalIssues++;
+            }
+
+            if (itemModified) totalCleaned++;
+            fileModified = fileModified || itemModified;
+            return item;
+        });
+
+        if (fileModified) {
+            saveJson(file, cleanedData);
+            console.log(`✅ Cleaned and saved ${file}`);
+        } else {
+            console.log(`✨ ${file} is healthy.`);
         }
-
-        // Rule 3: Age Rating Cleanups
-        if (item.ageRating === '전체' || item.ageRating === 'ALL') {
-            item.ageRating = '전체 관람가';
-            changed = true;
-        }
-
-        // Rule 4: Poster validation (Smart Image Scraping placeholder)
-        // If poster is missing, we can't do much here without re-scraping.
-        // But if poster is low res (s166), we could try to upgrade it?
-        if (item.image && item.image.includes('/s166/')) {
-            // console.log(`[Improve] Upgrading low-res image for ${item.title}`);
-            item.image = item.image.replace('/s166/', '/s718/');
-            changed = true;
-        }
-
-        if (changed) modified++;
-        return item;
-    });
-
-    if (modified > 0) {
-        save('ott.json', newOtt);
-        console.log(`Updated ${modified} items in ott.json`);
-    } else {
-        console.log('No changes needed for ott.json');
     }
 
-    // 2. Validate Movies
-    const movies = load('movies.json');
-    console.log(`Checked ${movies.length} movies.`);
-    let movieMod = 0;
-
-    // Naver Fallback helpers could go here if we want to auto-enrich validation failures immediately.
-    // For now, let's just flag them or try rudimentary cleanups.
-    // If user wants "auto-correct", we might need to hook up a searcher.
-    // Given the request "Collect correctly", let's just report or try to clean.
-
-    const newMovies = movies.map((m: any) => {
-        let changed = false;
-
-        // Rule 1: Check if poster is missing or 404
-        if (!m.image || m.image.trim() === '') {
-            console.warn(`[Warning] Movie ${m.title} has no poster.`);
-        } else if (m.image.startsWith('/images/')) {
-            // Local file check
-            const localPath = path.join(process.cwd(), 'public', m.image);
-            if (!fs.existsSync(localPath)) {
-                console.warn(`[Warning] Movie ${m.title} has invalid local poster: ${m.image} (file not found)`);
-            }
-        }
-
-        // Rule 2: Check for details
-        if (!m.director && !m.movieInfo) {
-            console.warn(`[Warning] Movie ${m.title} missing details.`);
-        }
-
-        return m;
-    });
-
-    // For now, we are just reporting on movies as the scraper update should fix it on next run.
-    console.log('Movie validation complete.');
+    console.log('\n=====================================');
+    console.log('📊 AUDIT SUMMARY');
+    console.log(`Total Items Scanned: ${totalItems}`);
+    console.log(`Total Issues Fixed: ${totalCleaned}`);
+    console.log(`Potential Issues Remaining: ${totalIssues}`);
+    console.log('=====================================\n');
 }
 
-validate();
+validateAll().catch(console.error);

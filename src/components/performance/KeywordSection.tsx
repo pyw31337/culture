@@ -20,7 +20,7 @@ interface KeywordSectionProps {
     onShare?: (id: string, e?: React.MouseEvent) => void;
 }
 
-export default function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
+function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [randomRecs, setRandomRecs] = useState<any[]>(keywordItems || []);
@@ -279,3 +279,5 @@ export default function KeywordSection({ keywordItems, onLocationClick, onToggle
         </section>
     );
 }
+
+export default React.memo(KeywordSection);

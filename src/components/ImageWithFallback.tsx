@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, memo } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { getOptimizedUrl, getLowResUrl } from '@/lib/utils';
 import { clsx } from 'clsx';
@@ -10,7 +10,7 @@ interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
     optimizationWidth?: number;
 }
 
-export default function ImageWithFallback({
+function ImageWithFallback({
     src,
     backupSrc, // Destructure backupSrc
     fallbackSrc = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4=',
@@ -27,15 +27,15 @@ export default function ImageWithFallback({
     const [isLoaded, setIsLoaded] = useState(false);
     const [lowResSrc, setLowResSrc] = useState<string | null>(null);
 
+    const optimizedSrc = useMemo(() => getOptimizedUrl(src, optimizationWidth), [src, optimizationWidth]);
+    const lowRes = useMemo(() => getLowResUrl(src), [src]);
+
     useEffect(() => {
-        // Reset state when src changes
-        setErrorStage(0);
         setIsLoaded(false);
-        // Start with optimized URL or local path
-        setImgSrc(getOptimizedUrl(src, optimizationWidth));
-        // Generate Low Res URL
-        setLowResSrc(getLowResUrl(src));
-    }, [src, optimizationWidth]);
+        setErrorStage(0);
+        setImgSrc(optimizedSrc);
+        setLowResSrc(lowRes);
+    }, [optimizedSrc, lowRes]);
 
     const handleError = () => {
         if (errorStage === 0) {
@@ -94,3 +94,5 @@ export default function ImageWithFallback({
         </>
     );
 }
+
+export default memo(ImageWithFallback);

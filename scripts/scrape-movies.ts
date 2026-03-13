@@ -198,7 +198,6 @@ async function scrapeMovies() {
                 director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
                 cast: tmdb?.credits?.cast?.slice(0, 5).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 5).map((a: any) => a.peopleNm) || existing?.cast,
                 venue: kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정',
-                venue: kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정',
                 runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || existing?.runtime ? `${existing?.runtime}분` : ''),
                 budget: tmdb?.budget || existing?.budget,
                 revenue: tmdb?.revenue || existing?.revenue,

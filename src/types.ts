@@ -66,4 +66,11 @@ export type Performance = {
     priceDetail?: string;
     closedDays?: string;
     feesAndPrograms?: string;
+    reservationRate?: string;
+    audienceCount?: string;
+    budget?: number | string;
+    revenue?: number | string;
+    budgetKRW?: string | number;
+    revenueKRW?: string | number;
+    synopsis?: string;
 };
