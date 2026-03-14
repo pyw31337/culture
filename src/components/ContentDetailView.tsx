@@ -518,15 +518,15 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 </motion.p>
                             )}
 
-                            {/* Long Description for Standalone or if quite long */}
-                            {p.description && p.description.length > 150 && (
+                            {/* Long Description for Standalone or if quite long (Non-movie) */}
+                            {p.description && p.description.length > 150 && p.genre !== 'movie' && (
                                 <motion.div variants={itemVariants} className="mt-8 bg-black/5 dark:bg-white/5 rounded-2xl p-6 border border-black/5 dark:border-white/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                                         <Sparkles className="w-5 h-5 text-amber-500" />
                                         {p.genre === 'exhibition' ? '전시 소개' : p.genre === 'tourism' ? '여행지 정보' : '상세 설명'}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400 text-[14.5px] leading-relaxed whitespace-pre-line">
-                                        {(p as any).synopsis || p.description}
+                                        {p.description}
                                     </p>
                                 </motion.div>
                             )}
@@ -584,6 +584,19 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             </a>
                                         );
                                     })}
+                                </motion.div>
+                            )}
+
+                            {/* Movie Synopsis Section - Dedicated below cast for movies */}
+                            {p.genre === 'movie' && (p.synopsis || p.description) && (
+                                <motion.div variants={itemVariants} className="mt-8 bg-indigo-50/30 dark:bg-indigo-500/5 rounded-2xl p-6 border border-indigo-500/10">
+                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
+                                        <Film className="w-5 h-5 text-indigo-500" />
+                                        시놉시스
+                                    </h3>
+                                    <p className="text-gray-600 dark:text-gray-300 text-[14.5px] leading-relaxed whitespace-pre-line font-medium">
+                                        {p.synopsis || p.description}
+                                    </p>
                                 </motion.div>
                             )}
 
