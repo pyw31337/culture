@@ -37,7 +37,7 @@ async function fetchKobisBoxOffice() {
 }
 
 async function fetchKobisUpcoming() {
-    // Fetch a large list of recent/upcoming movies
+    // Fetch a broad list of potential upcoming movies
     const currentYear = new Date().getFullYear();
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${KOBIS_API_KEY}&itemPerPage=500&prdtStartYear=${currentYear - 1}`;
     const res = await axios.get(url);
@@ -138,6 +138,16 @@ async function scrapeMovies() {
         } catch (e) { }
     }
 
+    const now = new Date();
+    const startYear = now.getFullYear();
+    const startMonth = now.getMonth() + 1;
+    const openStartDtNum = parseInt(`${startYear}${String(startMonth).padStart(2, '0')}01`);
+    
+    const endYear = startYear + 1;
+    const openEndDtNum = parseInt(`${endYear}${String(startMonth).padStart(2, '0')}31`);
+
+    console.log(`Enforcing range: ${openStartDtNum} to ${openEndDtNum}`);
+
     const discoveryList: any[] = [];
     try {
         console.log('Discovery Phase: Fetching KOBIS...');
@@ -147,10 +157,26 @@ async function scrapeMovies() {
         const up = await fetchKobisUpcoming();
         up.forEach((m: any) => {
             if (!discoveryList.find(d => d.title === m.movieNm)) {
-                discoveryList.push({ title: m.movieNm, movieCd: m.movieCd, dateRaw: m.openDt, type: 'upcoming' });
+                // Filter upcoming movies by the requested 1-year window
+                const odt = parseInt(m.openDt || '0');
+                if (odt >= openStartDtNum && odt <= openEndDtNum) {
+                    discoveryList.push({ title: m.movieNm, movieCd: m.movieCd, dateRaw: m.openDt, type: 'upcoming' });
+                }
             }
         });
-        console.log(`Discovered ${discoveryList.length} movies.`);
+        
+        // Also add existing upcoming movies if they are still within the window and not already in discovery
+        existingList.forEach((e: any) => {
+            if (e.genre === 'movie' && !discoveryList.find(d => d.title === e.title)) {
+                const odt = parseInt(e.dateRaw?.replace(/-/g, '') || '0');
+                if (odt >= openStartDtNum && odt <= openEndDtNum) {
+                    // Keep it as upcoming
+                    discoveryList.push({ title: e.title, movieCd: e.movieCd, dateRaw: e.dateRaw?.replace(/-/g, ''), type: 'upcoming' });
+                }
+            }
+        });
+
+        console.log(`Discovered ${discoveryList.length} movies in range.`);
     } catch (e: any) {
         console.error('Discovery failed:', e.message);
         return;
