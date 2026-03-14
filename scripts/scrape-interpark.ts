@@ -37,6 +37,9 @@ interface Performance {
     priceList?: { label: string; price: string; discount?: string }[];
     ageDetail?: string;
     bookingNotice?: string;
+    synopsis?: string;
+    description?: string;
+    synopsisImages?: string[];
     lastEnriched?: string; // ISO Date string
 }
 
@@ -246,9 +249,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             // 1. Has important details (MUST have a REAL price to be considered fully enriched)
             // 2. Was checked recently (lastEnriched < 7 days), preventing infinite retry of empty items
             const hasBadPrice = !ex.price || ex.price === '무료/이벤트' || ex.price === '이벤트' || ex.price === '가격정보없음';
-            const hasCompleteData = !hasBadPrice && (ex.runningTime || ex.ageRating);
+            const hasCompleteData = !hasBadPrice && (ex.runningTime || ex.ageRating) && ex.synopsis;
 
-            if (hasCompleteData || (isRecentlyEnriched(ex) && !hasBadPrice)) {
+            if (hasCompleteData || (isRecentlyEnriched(ex) && !hasBadPrice && ex.synopsis)) {
                 alreadyDone.push({ ...c, ...ex });
             } else {
                 todo.push(c);
@@ -663,10 +666,13 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         }
                     });
 
-                    return { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice };
+                    const synopsis = document.querySelector('.prdContents.detail .content .contentDetailText, .prdContents.detail .content .contentDetail')?.textContent?.trim();
+                    const synopsisImages = Array.from(document.querySelectorAll('.prdContents.detail .content .contentDetail img')).map(img => (img as HTMLImageElement).src);
+
+                    return { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages };
                 });
 
-                let { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice } = basicInfo;
+                let { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages } = basicInfo;
 
                 // 3. Click "Venue Info" Layer if address is missing
                 if (!address) {
@@ -749,6 +755,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     priceList,
                     ageDetail,
                     bookingNotice,
+                    synopsis,
+                    description: synopsis,
+                    synopsisImages,
                     lastEnriched: new Date().toISOString()
                 };
 
