@@ -100,13 +100,13 @@ export function safePerformance(data: any): Performance | null {
         // Movie & Meta Stats
         synopsis: typeof data.synopsis === 'string' ? data.synopsis : undefined,
         trailer: typeof data.trailer === 'string' ? data.trailer : undefined,
-        roi: typeof data.roi === 'string' ? data.roi : undefined,
+        roi: typeof data.roi === 'string' || typeof data.roi === 'number' ? String(data.roi) : undefined,
         reservationRate: typeof data.reservationRate === 'string' ? data.reservationRate : undefined,
         audienceCount: typeof data.audienceCount === 'string' ? data.audienceCount : undefined,
-        budget: typeof data.budget === 'string' ? data.budget : undefined,
-        revenue: typeof data.revenue === 'string' ? data.revenue : undefined,
-        budgetKRW: typeof data.budgetKRW === 'string' ? data.budgetKRW : undefined,
-        revenueKRW: typeof data.revenueKRW === 'string' ? data.revenueKRW : undefined,
+        budget: typeof data.budget === 'string' || typeof data.budget === 'number' ? String(data.budget) : undefined,
+        revenue: typeof data.revenue === 'string' || typeof data.revenue === 'number' ? String(data.revenue) : undefined,
+        budgetKRW: typeof data.budgetKRW === 'string' || typeof data.budgetKRW === 'number' ? String(data.budgetKRW) : undefined,
+        revenueKRW: typeof data.revenueKRW === 'string' || typeof data.revenueKRW === 'number' ? String(data.revenueKRW) : undefined,
     };
 }
 

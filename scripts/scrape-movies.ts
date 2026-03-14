@@ -37,8 +37,9 @@ async function fetchKobisBoxOffice() {
 }
 
 async function fetchKobisUpcoming() {
+    // Fetch a large list of recent/upcoming movies
     const currentYear = new Date().getFullYear();
-    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${KOBIS_API_KEY}&openStartDt=${currentYear}&itemPerPage=100`;
+    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${KOBIS_API_KEY}&itemPerPage=500&prdtStartYear=${currentYear - 1}`;
     const res = await axios.get(url);
     return res.data.movieListResult?.movieList || [];
 }
@@ -189,11 +190,12 @@ async function scrapeMovies() {
         }
 
         // Optimization: Only skip if we have EVERYTHING (including new fields)
+        // Optimization: Skip if we have ALL metrics
         if (existing && existing.image && existing.cast && existing.director && 
-            existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && existing.reservationRate && !existing.posterFallback) {
+            existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
+            existing.reservationRate && existing.audienceCount && !existing.posterFallback) {
             
             // If it's already in the data, just update rank and move on
-            // (Unless it's a dirty title, which we should have filtered above)
             existing.rank = m.rank;
             finalMovies.push(existing);
             progressBar.increment();
@@ -229,6 +231,9 @@ async function scrapeMovies() {
                 continue;
             }
 
+            const finalBudget = tmdb?.budget || existing?.budget;
+            const finalRevenue = tmdb?.revenue || existing?.revenue;
+
             const item: any = {
                 id: existing?.id || `movie_${slugify(m.title)}`,
                 title: m.title,
@@ -245,15 +250,15 @@ async function scrapeMovies() {
                 venue: rating,
                 ageRating: rating,
                 runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || existing?.runtime ? `${existing?.runtime || existing?.runtime}분` : ''),
-                budget: tmdb?.budget || existing?.budget,
-                revenue: tmdb?.revenue || existing?.revenue,
-                budgetKRW: tmdb?.budget ? Math.round(tmdb.budget * 1400) : existing?.budgetKRW,
-                revenueKRW: tmdb?.revenue ? Math.round(tmdb.revenue * 1400) : existing?.revenueKRW,
+                budget: finalBudget,
+                revenue: finalRevenue,
+                budgetKRW: finalBudget ? Math.round(finalBudget * 1400) : existing?.budgetKRW,
+                revenueKRW: finalRevenue ? Math.round(finalRevenue * 1400) : existing?.revenueKRW,
                 synopsis: chartData?.synopsis || tmdb?.overview || existing?.synopsis,
                 reservationRate: chartData?.resRate || existing?.reservationRate,
                 audienceCount: chartData?.audience || existing?.audienceCount,
-                roi: (tmdb?.budget && tmdb?.revenue && tmdb.budget > 0) 
-                    ? Math.round(((tmdb.revenue - tmdb.budget) / tmdb.budget) * 100) + '%'
+                roi: (finalBudget && finalRevenue && finalBudget > 0) 
+                    ? Math.round(((finalRevenue - finalBudget) / finalBudget) * 100) + '%'
                     : existing?.roi,
                 lastCollected: new Date().toISOString()
             };
