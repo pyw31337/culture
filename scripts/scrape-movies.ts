@@ -36,10 +36,10 @@ async function fetchKobisBoxOffice() {
     return res.data.boxOfficeResult?.dailyBoxOfficeList || [];
 }
 
-async function fetchKobisUpcoming() {
+async function fetchKobisUpcoming(page = 1) {
     // Fetch a broad list of potential upcoming movies
     const currentYear = new Date().getFullYear();
-    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${KOBIS_API_KEY}&itemPerPage=500&prdtStartYear=${currentYear - 1}`;
+    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${KOBIS_API_KEY}&itemPerPage=100&prdtStartYear=${currentYear - 1}&curPage=${page}`;
     const res = await axios.get(url);
     return res.data.movieListResult?.movieList || [];
 }
@@ -150,36 +150,36 @@ async function scrapeMovies() {
 
     const discoveryList: any[] = [];
     try {
-        console.log('Discovery Phase: Fetching KOBIS...');
+        console.log('Discovery Phase: Fetching KOBIS API (Box Office + 20 pages of Upcoming)...');
         const bo = await fetchKobisBoxOffice();
         bo.slice(0, 10).forEach((m: any) => discoveryList.push({ title: m.movieNm, movieCd: m.movieCd, rank: parseInt(m.rank), dateRaw: m.openDt, type: 'boxoffice' }));
         
-        const up = await fetchKobisUpcoming();
-        up.forEach((m: any) => {
-            if (!discoveryList.find(d => d.title === m.movieNm)) {
-                // Filter upcoming movies by the requested 1-year window
+        // Fetch 20 pages (2000 items) to ensure we reach far-future major titles like Avengers
+        for (let p = 1; p <= 20; p++) {
+            const up = await fetchKobisUpcoming(p);
+            up.forEach((m: any) => {
                 const odt = parseInt(m.openDt || '0');
-                if (odt >= openStartDtNum && odt <= openEndDtNum) {
-                    discoveryList.push({ title: m.movieNm, movieCd: m.movieCd, dateRaw: m.openDt, type: 'upcoming' });
-                }
-            }
-        });
-        
-        // Also add existing upcoming movies if they are still within the window and not already in discovery
-        Array.from(existingMap.values()).forEach((e: any) => {
-            if (e.genre === 'movie' && !discoveryList.find(d => d.title === e.title)) {
-                const odt = parseInt(e.dateRaw?.replace(/-/g, '') || '0');
-                if (odt >= openStartDtNum && odt <= openEndDtNum) {
-                    // Keep it as upcoming
-                    discoveryList.push({ title: e.title, movieCd: e.movieCd, dateRaw: e.dateRaw?.replace(/-/g, ''), type: 'upcoming' });
-                }
-            }
-        });
+                const prdtYear = parseInt(m.prdtYear || '0');
+                // Include if date is in range OR if date is missing but status is upcoming for current/future year
+                const isLikelyFuture = (m.prdtStatNm === '개봉예정' || m.prdtStatNm === '개봉준비') && prdtYear >= startYear;
 
-        console.log(`Discovered ${discoveryList.length} movies in range.`);
+                if (!discoveryList.find(d => d.movieCd === m.movieCd)) {
+                    if ((odt >= openStartDtNum && odt <= openEndDtNum) || (odt === 0 && isLikelyFuture)) {
+                        discoveryList.push({ 
+                            title: m.movieNm, 
+                            movieCd: m.movieCd, 
+                            dateRaw: m.openDt, 
+                            prdtYear: m.prdtYear,
+                            type: 'upcoming' 
+                        });
+                    }
+                }
+            });
+            if (up.length < 100) break; // End of results
+        }
+        console.log(`Discovered ${discoveryList.length} movies via API.`);
     } catch (e: any) {
-        console.error('Discovery failed:', e.message);
-        return;
+        console.error('API Discovery failed:', e.message);
     }
 
     const browser = await chromium.launch({ headless: process.env.HEADLESS !== 'false' });
@@ -230,7 +230,7 @@ async function scrapeMovies() {
 
         try {
             // A. TMDB API (Base Metadata + Global Visuals)
-            const tmdb = await fetchTmdbData(m.title, m.dateRaw || '');
+            const tmdb = await fetchTmdbData(m.title, m.dateRaw || m.prdtYear || '');
             
             // B. KOBIS Detail API (Official Rating)
             const kobisDetail = await fetchKobisDetail(m.movieCd);
@@ -260,13 +260,15 @@ async function scrapeMovies() {
             const finalBudget = tmdb?.budget || existing?.budget;
             const finalRevenue = tmdb?.revenue || existing?.revenue;
 
+            const finalDateRaw = tmdb?.release_date?.replace(/-/g, '') || m.dateRaw || existing?.dateRaw || '';
+
             const item: any = {
                 id: existing?.id || `movie_${slugify(m.title)}`,
                 title: m.title,
-                date: (m.dateRaw && m.dateRaw.length === 8) 
-                    ? `${m.dateRaw.substring(0, 4)}.${m.dateRaw.substring(4, 6)}.${m.dateRaw.substring(6, 8)}.` 
-                    : (existing?.date || ''),
-                dateRaw: m.dateRaw,
+                date: (finalDateRaw && finalDateRaw.length === 8) 
+                    ? `${finalDateRaw.substring(0, 4)}.${finalDateRaw.substring(4, 6)}.${finalDateRaw.substring(6, 8)}.` 
+                    : (finalDateRaw && finalDateRaw.length === 4 ? `${finalDateRaw} 예정` : (existing?.date || '')),
+                dateRaw: finalDateRaw,
                 region: '전국',
                 genre: 'movie',
                 subGenre: kobisGenres.join(', '),
