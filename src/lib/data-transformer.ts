@@ -307,7 +307,6 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let website = raw.website;
     let parking = raw.parking;
     let parkingFee = raw.parkingFee;
-    let facilities = raw.facilities;
     let restrooms = raw.restrooms;
     let rank = raw.rank;
     let reservationRate = raw.reservationRate;
@@ -319,6 +318,13 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let synopsis = raw.synopsis;
     let trailer = raw.trailer;
     let roi = raw.roi;
+    let feesAndPrograms = raw.feesAndPrograms || '';
+    let targetAudience = raw.targetAudience || '';
+    let operatingHours = raw.operatingHours || '';
+    let priceDetail = raw.priceDetail || '';
+    let facilities = raw.facilities || '';
+    let closedDays = raw.closedDays || '';
+    let contact = raw.contact || '';
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -456,7 +462,6 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         website,
         parking,
         parkingFee,
-        facilities,
         restrooms,
         rank,
         reservationRate,
@@ -467,7 +472,14 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         revenueKRW,
         synopsis,
         trailer,
-        roi
+        roi,
+        feesAndPrograms,
+        targetAudience,
+        operatingHours,
+        priceDetail,
+        facilities,
+        closedDays,
+        contact
     } as Performance;
 }
 

@@ -375,14 +375,22 @@ async function scrapeMomMom() {
 
                         // 5.5 Extract "요금 및 프로그램" section specifically
                         let feesAndPrograms = '';
-                        // User provided selector
-                        const userSelector = 'body > div.container > main > div:nth-child(1) > article > div.main-container > div:nth-child(5) > section.sc-6ddc6fb7-0.gcLybS';
-                        const userEl = document.querySelector(userSelector);
-                        if (userEl) {
-                            feesAndPrograms = (userEl as HTMLElement).innerText?.trim() || '';
+                        
+                        // Strategy: Find the H2/H3 header and get its parent section
+                        const allHeadings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, dt, span, b, p'));
+                        const feeHeader = allHeadings.find(h => h.textContent?.includes('요금 및 프로그램'));
+                        
+                        if (feeHeader) {
+                            // Find the closest section or parent div that contains the content
+                            const section = feeHeader.closest('section') || feeHeader.parentElement?.closest('div');
+                            if (section) {
+                                feesAndPrograms = (section as HTMLElement).innerText?.trim() || '';
+                            } else {
+                                feesAndPrograms = feeHeader.parentElement?.innerText?.trim() || '';
+                            }
                         }
                         
-                        // Fallback: search for header content
+                        // Fallback: search for header content in any section
                         if (!feesAndPrograms) {
                             const sections = Array.from(document.querySelectorAll('section'));
                             const feeSection = sections.find(s => s.innerText?.includes('요금 및 프로그램'));

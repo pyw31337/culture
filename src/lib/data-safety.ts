@@ -88,6 +88,25 @@ export function safePerformance(data: any): Performance | null {
         performanceTime: typeof data.performanceTime === 'string' ? data.performanceTime : undefined,
         bookingNotice: typeof data.bookingNotice === 'string' ? data.bookingNotice : undefined,
         ageDetail: typeof data.ageDetail === 'string' ? data.ageDetail : undefined,
+        
+        // MomMom & Detailed Metadata
+        feesAndPrograms: typeof data.feesAndPrograms === 'string' ? data.feesAndPrograms : undefined,
+        targetAudience: typeof data.targetAudience === 'string' ? data.targetAudience : undefined,
+        operatingHours: typeof data.operatingHours === 'string' ? data.operatingHours : undefined,
+        priceDetail: typeof data.priceDetail === 'string' ? data.priceDetail : undefined,
+        closedDays: typeof data.closedDays === 'string' ? data.closedDays : undefined,
+        contact: typeof data.contact === 'string' ? data.contact : undefined,
+        
+        // Movie & Meta Stats
+        synopsis: typeof data.synopsis === 'string' ? data.synopsis : undefined,
+        trailer: typeof data.trailer === 'string' ? data.trailer : undefined,
+        roi: typeof data.roi === 'string' ? data.roi : undefined,
+        reservationRate: typeof data.reservationRate === 'string' ? data.reservationRate : undefined,
+        audienceCount: typeof data.audienceCount === 'string' ? data.audienceCount : undefined,
+        budget: typeof data.budget === 'string' ? data.budget : undefined,
+        revenue: typeof data.revenue === 'string' ? data.revenue : undefined,
+        budgetKRW: typeof data.budgetKRW === 'string' ? data.budgetKRW : undefined,
+        revenueKRW: typeof data.revenueKRW === 'string' ? data.revenueKRW : undefined,
     };
 }
 

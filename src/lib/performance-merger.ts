@@ -117,6 +117,22 @@ function mergeItems(a: any, b: any): any {
     if (!merged.roi && loser.roi) merged.roi = loser.roi;
     if (!merged.trailer && loser.trailer) merged.trailer = loser.trailer;
 
+    // MomMom & Detailed Metadata
+    if (!merged.feesAndPrograms && loser.feesAndPrograms) merged.feesAndPrograms = loser.feesAndPrograms;
+    if (!merged.targetAudience && loser.targetAudience) merged.targetAudience = loser.targetAudience;
+    if (!merged.operatingHours && loser.operatingHours) merged.operatingHours = loser.operatingHours;
+    if (!merged.priceDetail && loser.priceDetail) merged.priceDetail = loser.priceDetail;
+    if (!merged.facilities && loser.facilities) merged.facilities = loser.facilities;
+    if (!merged.website && loser.website) merged.website = loser.website;
+    if (!merged.parking && loser.parking) merged.parking = loser.parking;
+    if (!merged.parkingFee && loser.parkingFee) merged.parkingFee = loser.parkingFee;
+    if (!merged.restrooms && loser.restrooms) merged.restrooms = loser.restrooms;
+    if (!merged.closedDays && loser.closedDays) merged.closedDays = loser.closedDays;
+    if (!merged.address && loser.address) merged.address = loser.address;
+    if (!merged.latitude && loser.latitude) merged.latitude = loser.latitude;
+    if (!merged.longitude && loser.longitude) merged.longitude = loser.longitude;
+    if (!merged.contact && loser.contact) merged.contact = loser.contact;
+
     // Poster/Image
     // If winner has no valid image, try loser's
     if ((!merged.image || merged.image.includes('default') || merged.image === '') && (loser.image && !loser.image.includes('default'))) {

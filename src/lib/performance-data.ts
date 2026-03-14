@@ -190,10 +190,13 @@ export function getAllPerformances() {
                 p.lat = lat;
                 p.lng = lng;
                 if (!hasAddress) p.address = p.venue || '주소 정보 없음';
-            } else if (v && v.address && v.address !== '정보 없음' && v.lat && v.lng) {
-                p.lat = v.lat as number;
-                p.lng = v.lng as number;
+            } else if (v && v.address && v.address !== '정보 없음' && (v.lat || v.latitude) && (v.lng || v.longitude)) {
+                p.lat = (v.lat || v.latitude) as number;
+                p.lng = (v.lng || v.longitude) as number;
                 p.address = v.address;
+            } else if (p.source?.startsWith('mommom')) {
+                // Keep MomMom items even if geo fails (Fallback to Seoul/Central or just don't filter)
+                if (!p.address) p.address = p.venue;
             } else {
                 return false;
             }
