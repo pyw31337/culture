@@ -52668,7 +52668,6 @@
     "name": "https://www.sssd.co.kr/m/class/detail/10559",
     "address": "정보 없음",
     "district": "",
-    "mapped_region_id": "",
     "lat": 0,
     "lng": 0
   },
@@ -52699,7 +52698,6 @@
     "name": "https://www.sssd.co.kr/m/class/detail/51299",
     "address": "정보 없음",
     "district": "",
-    "mapped_region_id": "",
     "lat": 0,
     "lng": 0
   },
@@ -74876,6 +74874,48 @@
   },
   "삼악산케이블카": {
     "name": "삼악산케이블카",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울특별시 중구 세종대로 99 덕수궁 (덕수궁 입장 후 오른쪽 벤치)": {
+    "name": "서울특별시 중구 세종대로 99 덕수궁 (덕수궁 입장 후 오른쪽 벤치)",
+    "address": "정보 없음",
+    "district": "중구",
+    "lat": 37.5637,
+    "lng": 126.9975
+  },
+  "https://www.sssd.co.kr/m/class/detail/39525": {
+    "name": "https://www.sssd.co.kr/m/class/detail/39525",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/52483": {
+    "name": "https://www.sssd.co.kr/m/class/detail/52483",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/48051": {
+    "name": "https://www.sssd.co.kr/m/class/detail/48051",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/50712": {
+    "name": "https://www.sssd.co.kr/m/class/detail/50712",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/54381": {
+    "name": "https://www.sssd.co.kr/m/class/detail/54381",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/53715": {
+    "name": "https://www.sssd.co.kr/m/class/detail/53715",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/54489": {
+    "name": "https://www.sssd.co.kr/m/class/detail/54489",
     "address": "정보 없음",
     "district": ""
   }
