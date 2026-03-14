@@ -98,15 +98,15 @@ export function safePerformance(data: any): Performance | null {
         contact: typeof data.contact === 'string' ? data.contact : undefined,
         
         // Movie & Meta Stats
-        synopsis: typeof data.synopsis === 'string' ? data.synopsis : undefined,
-        trailer: typeof data.trailer === 'string' ? data.trailer : undefined,
-        roi: typeof data.roi === 'string' || typeof data.roi === 'number' ? String(data.roi) : undefined,
-        reservationRate: typeof data.reservationRate === 'string' ? data.reservationRate : undefined,
-        audienceCount: typeof data.audienceCount === 'string' ? data.audienceCount : undefined,
-        budget: typeof data.budget === 'string' || typeof data.budget === 'number' ? String(data.budget) : undefined,
-        revenue: typeof data.revenue === 'string' || typeof data.revenue === 'number' ? String(data.revenue) : undefined,
-        budgetKRW: typeof data.budgetKRW === 'string' || typeof data.budgetKRW === 'number' ? String(data.budgetKRW) : undefined,
-        revenueKRW: typeof data.revenueKRW === 'string' || typeof data.revenueKRW === 'number' ? String(data.revenueKRW) : undefined,
+        synopsis: data.synopsis ? String(data.synopsis) : undefined,
+        trailer: data.trailer ? String(data.trailer) : undefined,
+        roi: (data.roi !== undefined && data.roi !== null) ? String(data.roi) : undefined,
+        reservationRate: data.reservationRate ? String(data.reservationRate) : undefined,
+        audienceCount: data.audienceCount ? String(data.audienceCount) : undefined,
+        budget: (data.budget !== undefined && data.budget !== null) ? String(data.budget) : undefined,
+        revenue: (data.revenue !== undefined && data.revenue !== null) ? String(data.revenue) : undefined,
+        budgetKRW: (data.budgetKRW !== undefined && data.budgetKRW !== null) ? String(data.budgetKRW) : undefined,
+        revenueKRW: (data.revenueKRW !== undefined && data.revenueKRW !== null) ? String(data.revenueKRW) : undefined,
     };
 }
 

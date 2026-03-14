@@ -166,7 +166,7 @@ async function scrapeMovies() {
         });
         
         // Also add existing upcoming movies if they are still within the window and not already in discovery
-        existingList.forEach((e: any) => {
+        Array.from(existingMap.values()).forEach((e: any) => {
             if (e.genre === 'movie' && !discoveryList.find(d => d.title === e.title)) {
                 const odt = parseInt(e.dateRaw?.replace(/-/g, '') || '0');
                 if (odt >= openStartDtNum && odt <= openEndDtNum) {
@@ -219,7 +219,7 @@ async function scrapeMovies() {
         // Optimization: Skip if we have ALL metrics
         if (existing && existing.image && existing.cast && existing.director && 
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
-            existing.reservationRate && existing.audienceCount && !existing.posterFallback) {
+            existing.reservationRate && existing.audienceCount && existing.roi && !existing.posterFallback) {
             
             // If it's already in the data, just update rank and move on
             existing.rank = m.rank;
