@@ -25,6 +25,10 @@ function slugify(text: string): string {
 
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
+function getLastDayOfMonth(year: number, month: number): number {
+    return new Date(year, month, 0).getDate();
+}
+
 // --- Source Clients ---
 
 async function fetchKobisBoxOffice() {
@@ -184,6 +188,16 @@ async function scrapeMovies() {
             });
             if (up.length < 100) break; // End of results
         }
+        
+        // Manual Discovery for confirmed re-releases if not found in KOBIS
+        const RECONFIRMED_TITLES = ['오만과 편견', '킬 빌: 더 홀 블러디 어페어'];
+        for (const title of RECONFIRMED_TITLES) {
+            if (!discoveryList.find(d => d.title.includes(title))) {
+                console.log(`[DISCOVERY] Manually adding reconfirmed title: ${title}`);
+                discoveryList.push({ title, movieCd: '', type: 'manual' });
+            }
+        }
+
         console.log(`Discovered ${discoveryList.length} movies via API.`);
     } catch (e: any) {
         console.error('API Discovery failed:', e.message);
@@ -245,7 +259,9 @@ async function scrapeMovies() {
 
         try {
             // A. TMDB API (Base Metadata + Global Visuals)
-            const tmdb = await fetchTmdbData(m.title, m.dateRaw || m.prdtYear || '');
+            // Use 2026 as preferred year for reconfirmation discovery
+            const searchYear = m.dateRaw || m.prdtYear || (m.type === 'manual' ? '2026' : '');
+            const tmdb = await fetchTmdbData(m.title, searchYear);
             
             // B. KOBIS Detail API (Official Rating)
             const kobisDetail = await fetchKobisDetail(m.movieCd);
@@ -274,15 +290,30 @@ async function scrapeMovies() {
 
             const finalBudget = tmdb?.budget || existing?.budget;
             const finalRevenue = tmdb?.revenue || existing?.revenue;
-            const finalDateRaw = (m.dateRaw || kobisDetail?.openDt || tmdb?.release_date?.replace(/-/g, '') || existing?.dateRaw || '').replace(/-/g, '');
+            
+            // Refined Date Logic: Prioritize KOBIS openDt (theatrical) over TMDB (production/global)
+            // If date is only YYYYMM, append the last day of that month.
+            // For manual discovery like Pride and Prejudice, override with known re-release date if stale.
+            let rawDate = (kobisDetail?.openDt || m.dateRaw || tmdb?.release_date?.replace(/-/g, '') || existing?.dateRaw || '').replace(/-/g, '');
+            
+            if (m.title.includes('오만과 편견') && (!rawDate || parseInt(rawDate) < 20260101)) {
+                rawDate = '20260311'; // Confirmed re-release date
+            }
+
+            if (rawDate.length === 6) {
+                const y = parseInt(rawDate.substring(0, 4));
+                const mIdx = parseInt(rawDate.substring(4, 6));
+                const lastDay = getLastDayOfMonth(y, mIdx);
+                rawDate = `${rawDate}${String(lastDay).padStart(2, '0')}`;
+            }
 
             const item: any = {
                 id: existing?.id || `movie_${slugify(m.title)}`,
                 title: m.title,
-                date: (finalDateRaw && finalDateRaw.length === 8) 
-                    ? `${finalDateRaw.substring(0, 4)}.${finalDateRaw.substring(4, 6)}.${finalDateRaw.substring(6, 8)}.` 
-                    : (finalDateRaw && finalDateRaw.length === 4 ? `${finalDateRaw} 예정` : (existing?.date || m.dateRaw || '')),
-                dateRaw: finalDateRaw,
+                date: (rawDate && rawDate.length === 8) 
+                    ? `${rawDate.substring(0, 4)}.${rawDate.substring(4, 6)}.${rawDate.substring(6, 8)}.` 
+                    : (rawDate && rawDate.length === 4 ? `${rawDate} 예정` : (existing?.date || m.dateRaw || '')),
+                dateRaw: rawDate,
                 region: '전국',
                 genre: 'movie',
                 subGenre: kobisGenres.join(', ') || existing?.subGenre || '영화',
@@ -353,7 +384,10 @@ async function scrapeMovies() {
         finalMovies.sort((a, b) => {
             const rankA = a.rank || 999;
             const rankB = b.rank || 999;
-            if (rankA !== rankB) return rankA - rankB;
+            // Prioritize rank for top 10, then sort others by date DESC (recent/future first)
+            if (rankA <= 10 || rankB <= 10) {
+                if (rankA !== rankB) return rankA - rankB;
+            }
             return (b.dateRaw || '').localeCompare(a.dateRaw || '');
         });
 
