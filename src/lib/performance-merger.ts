@@ -26,7 +26,7 @@ export function processAndMergePerformances(items: any[]): any[] {
 
         // Exception for Sports: Include Date in key to allow same teams playing on different days
         if (SPORTS_GENRES.includes(p.genre)) {
-            const dateOnly = p.date?.split(' ')[0].replace(/-/g, '') || '00000000';
+            const dateOnly = p.date?.split(' ')[0].replace(/[-.]/g, '') || '00000000';
             key = `${p.genre}_${dateOnly}_${safeTitle}`;
         }
 
@@ -61,7 +61,7 @@ export function processAndMergePerformances(items: any[]): any[] {
         let stableId = `${prefix}_${safeTitle}`;
 
         if (SPORTS_GENRES.includes(category)) {
-            const dateOnly = p.date?.split(' ')[0].replace(/-/g, '') || '00000000';
+            const dateOnly = p.date?.split(' ')[0].replace(/[-.]/g, '') || '00000000';
             stableId = `${category}_${dateOnly}_${safeTitle}`;
         }
 

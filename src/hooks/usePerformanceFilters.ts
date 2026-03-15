@@ -154,10 +154,14 @@ export function usePerformanceFilters({
 
         const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
         if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre) && !debouncedSearchText) {
-            return filtered
-                .map(value => ({ value, sort: Math.sin(shuffleSeed + value.id.length) * 10000 }))
-                .sort((a, b) => a.sort - b.sort)
-                .map(({ value }) => value);
+            // Standardize on stable chronological sort to prevent list shuffling
+            return filtered.sort((a, b) => {
+                const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
+                const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
+                const dateCompare = dateA.localeCompare(dateB);
+                if (dateCompare !== 0) return dateCompare;
+                return a.title.localeCompare(b.title);
+            });
         }
 
         return sortPerformances(filtered, selectedGenre, debouncedSearchText);
