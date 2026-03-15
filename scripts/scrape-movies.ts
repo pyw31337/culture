@@ -146,7 +146,14 @@ async function scrapeMovies() {
     const endYear = startYear + 1;
     const openEndDtNum = parseInt(`${endYear}${String(startMonth).padStart(2, '0')}31`);
 
-    console.log(`Enforcing range: ${openStartDtNum} to ${openEndDtNum}`);
+    // Strict Valid Range for final output (Allow current - 2 months to current + 1 year)
+    const prevMonth = new Date();
+    prevMonth.setMonth(prevMonth.getMonth() - 2);
+    const validStartDtNum = parseInt(`${prevMonth.getFullYear()}${String(prevMonth.getMonth() + 1).padStart(2, '0')}01`);
+    const validEndDtNum = openEndDtNum;
+
+    console.log(`Enforcing discovery range: ${openStartDtNum} to ${openEndDtNum}`);
+    console.log(`Strict validation range: ${validStartDtNum} to ${validEndDtNum}`);
 
     const discoveryList: any[] = [];
     try {
@@ -221,7 +228,15 @@ async function scrapeMovies() {
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
             existing.reservationRate && existing.audienceCount && existing.roi && !existing.posterFallback) {
             
-            // If it's already in the data, just update rank and move on
+            // --- DATA VALIDITY CHECK ---
+            const movieDt = parseInt(existing.dateRaw?.replace(/-/g, '') || '0');
+            if (movieDt > 0 && (movieDt < validStartDtNum || movieDt > validEndDtNum)) {
+                console.log(`[VALIDITY] Removing stale existing movie: ${existing.title} (${existing.date})`);
+                progressBar.increment();
+                continue;
+            }
+
+            // If it's already in the data and valid, just update rank and move on
             existing.rank = m.rank;
             finalMovies.push(existing);
             progressBar.increment();
@@ -259,25 +274,24 @@ async function scrapeMovies() {
 
             const finalBudget = tmdb?.budget || existing?.budget;
             const finalRevenue = tmdb?.revenue || existing?.revenue;
-
-            const finalDateRaw = tmdb?.release_date?.replace(/-/g, '') || m.dateRaw || existing?.dateRaw || '';
+            const finalDateRaw = (m.dateRaw || kobisDetail?.openDt || tmdb?.release_date?.replace(/-/g, '') || existing?.dateRaw || '').replace(/-/g, '');
 
             const item: any = {
                 id: existing?.id || `movie_${slugify(m.title)}`,
                 title: m.title,
                 date: (finalDateRaw && finalDateRaw.length === 8) 
                     ? `${finalDateRaw.substring(0, 4)}.${finalDateRaw.substring(4, 6)}.${finalDateRaw.substring(6, 8)}.` 
-                    : (finalDateRaw && finalDateRaw.length === 4 ? `${finalDateRaw} 예정` : (existing?.date || '')),
+                    : (finalDateRaw && finalDateRaw.length === 4 ? `${finalDateRaw} 예정` : (existing?.date || m.dateRaw || '')),
                 dateRaw: finalDateRaw,
                 region: '전국',
                 genre: 'movie',
-                subGenre: kobisGenres.join(', '),
+                subGenre: kobisGenres.join(', ') || existing?.subGenre || '영화',
                 rank: m.rank,
                 director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
                 cast: tmdb?.credits?.cast?.slice(0, 10).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 10).map((a: any) => a.peopleNm) || existing?.cast,
                 venue: rating,
                 ageRating: rating,
-                runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || existing?.runtime ? `${existing?.runtime || existing?.runtime}분` : ''),
+                runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || (kobisDetail?.showTm ? `${kobisDetail.showTm}분` : '')),
                 budget: finalBudget,
                 revenue: finalRevenue,
                 budgetKRW: finalBudget ? Math.round(finalBudget * 1400) : existing?.budgetKRW,
@@ -290,6 +304,14 @@ async function scrapeMovies() {
                     : existing?.roi,
                 lastCollected: new Date().toISOString()
             };
+
+            // --- DATA VALIDITY CHECK ---
+            const movieDt = parseInt(item.dateRaw || '0');
+            if (movieDt > 0 && (movieDt < validStartDtNum || movieDt > validEndDtNum)) {
+                console.log(`[VALIDITY] Skipping stale new movie: ${item.title} (${item.date})`);
+                progressBar.increment();
+                continue;
+            }
 
             // Hybrid Trailers
             const tmdbTrailer = tmdb?.videos?.results?.find((v: any) => v.type === 'Trailer' && v.site === 'YouTube');
