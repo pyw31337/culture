@@ -1653,25 +1653,6 @@
     "district": "서대문구"
   },
   {
-    "id": "kopis_PF282480",
-    "title": "제10회 모자이크 페스티벌: NO LIMIT, 현실도피자",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282480_260102_105756.jpg",
-    "date": "2026.02.09 (월) ~ 2026.02.11 (수)",
-    "venue": "연희예술극장 (연희예술극장)",
-    "venueId": "FC001852",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282480",
-    "genre": "연극",
-    "price": "전석 25,000원",
-    "time": "월요일 ~ 화요일(19:30), 수요일(15:00,19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": true,
-    "lat": 37.565633222642724,
-    "lng": 126.9285586508086,
-    "address": "서울 서대문구 연희맛로 2-3",
-    "district": "서대문구"
-  },
-  {
     "id": "kopis_PF282406",
     "title": "낙동아트센터 개관 페스티벌, 킹스 싱어즈 내한공연: CLOSE HARMONY",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282406_251230_133139.jpg",
@@ -2689,25 +2670,6 @@
     "genre": "연극",
     "price": "전석 20,000원",
     "time": "금요일(20:00), 토요일(14:00,18:00), 일요일(14:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": true,
-    "lat": 37.565633222642724,
-    "lng": 126.9285586508086,
-    "address": "서울 서대문구 연희맛로 2-3",
-    "district": "서대문구"
-  },
-  {
-    "id": "kopis_PF282480",
-    "title": "제10회 모자이크 페스티벌: NO LIMIT, 현실도피자",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282480_260102_105756.jpg",
-    "date": "2026.02.09 (월) ~ 2026.02.11 (수)",
-    "venue": "연희예술극장 (연희예술극장)",
-    "venueId": "FC001852",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282480",
-    "genre": "연극",
-    "price": "전석 25,000원",
-    "time": "월요일 ~ 화요일(19:30), 수요일(15:00,19:30)",
     "region": "서울특별시",
     "source": "kopis",
     "isFestival": true,
@@ -23125,6 +23087,42 @@
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF282880_202602040543010930.jpg",
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF282880_202602040543011011.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF284568",
+    "title": "크레디아클래식클럽 봄 페스티벌, 서촌마치: Be Boptists! 김대호 트리오",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284568_260206_100654.gif",
+    "date": "2026.03.14 ~ 2026.03.14",
+    "venue": "크레디아 클래식 클럽 (STUDIO (B1) )",
+    "venueId": "FC004136",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284568",
+    "genre": "대중음악",
+    "price": "전석 50,000원",
+    "time": "토요일(17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": true,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF284568_202602061006547780.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF282521",
+    "title": "지브리 & 디즈니 영화음악 FESTA [수원]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282521_260122_164429.gif",
+    "date": "2026.03.14 ~ 2026.03.14",
+    "venue": "경기아트센터(구. 경기도문화의전당) (대극장)",
+    "venueId": "FC000017",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282521",
+    "genre": "서양음악(클래식)",
+    "price": "VIP석 100,000원\nR석 80,000원\nS석 60,000원\nA석 50,000원",
+    "time": "토요일(14:00,18:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": true,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF282521_202601220444296940.jpg"
     ]
   },
   {
@@ -65397,24 +65395,6 @@
     ]
   },
   {
-    "id": "kopis_PF284568",
-    "title": "크레디아클래식클럽 봄 페스티벌, 서촌마치: Be Boptists! 김대호 트리오",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284568_260206_100654.gif",
-    "date": "2026.03.14 ~ 2026.03.14",
-    "venue": "크레디아 클래식 클럽 (STUDIO (B1) )",
-    "venueId": "FC004136",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284568",
-    "genre": "대중음악",
-    "price": "전석 50,000원",
-    "time": "토요일(17:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": true,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF284568_202602061006547780.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF284257",
     "title": "제2회 심야연극제 #08, 완벽한 타인",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284257_260202_135004.gif",
@@ -65732,24 +65712,6 @@
     "isFestival": true,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF282654_202601061045445470.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF282521",
-    "title": "지브리 & 디즈니 영화음악 FESTA [수원]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282521_260122_164429.gif",
-    "date": "2026.03.14 ~ 2026.03.14",
-    "venue": "경기아트센터(구. 경기도문화의전당) (대극장)",
-    "venueId": "FC000017",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF282521",
-    "genre": "서양음악(클래식)",
-    "price": "VIP석 100,000원\nR석 80,000원\nS석 60,000원\nA석 50,000원",
-    "time": "토요일(14:00,18:00)",
-    "region": "경기도",
-    "source": "kopis",
-    "isFestival": true,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF282521_202601220444296940.jpg"
     ]
   },
   {
