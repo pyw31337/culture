@@ -180,12 +180,13 @@ export default function PerformanceList({
     }, [router, setPreserveFlag]);
 
     const handleLanguageToggle = useCallback(() => {
-        const nextLocale = locale === 'ko' ? 'en' : 'ko';
+        const supportedLocales = ['ko', 'en', 'zh', 'ja'];
+        const currentIndex = supportedLocales.indexOf(locale);
+        const nextLocale = supportedLocales[(currentIndex + 1) % supportedLocales.length];
         const currentPathname = window.location.pathname;
         
         // Replace current locale prefix with the next one
-        // e.g., /ko/some-path -> /en/some-path
-        const newPathname = currentPathname.replace(/^\/(ko|en)/, `/${nextLocale}`);
+        const newPathname = currentPathname.replace(/^\/(ko|en|zh|ja)/, `/${nextLocale}`);
         
         router.push(newPathname + window.location.search);
     }, [locale, router]);

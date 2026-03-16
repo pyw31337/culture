@@ -43,7 +43,7 @@ async function testDetail(url: string) {
                         marker: text,
                         parentTag: parent?.tagName,
                         parentText: parent?.innerText,
-                        allContent: parent?.closest('section, div[class*="content"], article')?.innerText
+                        allContent: (parent?.closest('section, div[class*="content"], article') as any)?.innerText
                     });
                 }
             }
