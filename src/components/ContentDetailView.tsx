@@ -330,10 +330,6 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         });
                                     }
 
-                                    if (p.performanceTime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: p.performanceTime, color: 'text-cyan-500' });
-                                    }
-
                                     // Advanced KOPIS metadata with deduplication
                                     const dedupeJoin = (items: { val?: any, label: string }[]) => {
                                         const valid = items.filter(i => typeof i.val === 'string' && i.val.trim() !== '');

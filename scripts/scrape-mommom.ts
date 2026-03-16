@@ -12,7 +12,16 @@ const __dirname = path.dirname(__filename);
 
 puppeteer.use(StealthPlugin());
 
-const TARGET_URL = 'https://mom-mom.net/search?q=%EB%B0%95%EB%AC%BC%EA%B4%80/%EC%B2%B4%ED%97%98%EA%B4%80&hl=places'; // Search: 박물관/체험관
+const SEARCH_QUERIES = [
+    '박물관/체험관',
+    '체험관',
+    '과학관',
+    '미술관',
+    '어린이체험'
+];
+const EXTRA_URLS = [
+    'https://mom-mom.net/travel/places/6507a66e53e91cf1df2b57f2' // hy팩토리+
+];
 const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/mommom.json');
 
 // Helper to clean address
@@ -109,10 +118,11 @@ interface MomMomItem {
 
 async function scrapeMomMom() {
     console.log('Starting Mom-Mom Scraper (Detail Mode)...');
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+        const browser = await puppeteer.launch({
+            headless: 'new',
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+            timeout: 60000
+        });
 
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
@@ -120,100 +130,62 @@ async function scrapeMomMom() {
     await page.evaluateOnNewDocument(() => { (window as any).__name = (f: any) => f; });
 
     try {
-        await page.goto(TARGET_URL, { waitUntil: ['domcontentloaded', 'networkidle2'], timeout: 60000 });
+        // Discovery via Search Queries
+        const listItems: { title: string, link: string, image: string }[] = [];
+        const seenUrls = new Set<string>();
 
-        // Infinite Scroll
-        console.log('Loading list...');
-        await page.evaluate(async () => {
-            await new Promise<void>((resolve) => {
-                let totalHeight = 0;
-                let noChangeCount = 0;
-                const distance = 500;
-                const timer = setInterval(() => {
-                    const scrollHeight = document.body.scrollHeight;
-                    window.scrollBy(0, distance);
-                    totalHeight += distance;
+        for (const query of SEARCH_QUERIES) {
+            console.log(`Searching for: ${query}...`);
+            const searchUrl = `https://mom-mom.net/search?q=${encodeURIComponent(query)}&hl=places`;
+            await page.goto(searchUrl, { waitUntil: ['domcontentloaded', 'networkidle2'], timeout: 60000 });
 
-                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
-                        // Reached bottom
-                        if (document.body.scrollHeight > scrollHeight) {
-                            noChangeCount = 0;
-                        } else {
-                            noChangeCount++;
+            console.log('Loading list...');
+            await page.evaluate(async () => {
+                await new Promise<void>((resolve) => {
+                    let totalHeight = 0;
+                    const distance = 800;
+                    const timer = setInterval(() => {
+                        const scrollHeight = document.body.scrollHeight;
+                        window.scrollBy(0, distance);
+                        totalHeight += distance;
+                        if (totalHeight > 20000) { // Limit depth for efficiency
+                            clearInterval(timer);
+                            resolve();
                         }
-                    } else {
-                        // Still scrolling
-                        noChangeCount = 0;
-                    }
-
-                    // Stop if no change for 50 ticks (5 seconds) or extremely long scroll
-                    if (noChangeCount > 50 || totalHeight > 500000) {
-                        clearInterval(timer);
-                        resolve();
-                    }
-                }, 100);
+                    }, 200);
+                });
             });
-        });
 
-        // Debug: Screenshot
-        await page.screenshot({ path: 'debug_mommom.png' });
+            const queryItems = await page.evaluate(() => {
+                const results: { title: string, link: string, image: string }[] = [];
+                const anchors = Array.from(document.querySelectorAll('a[href*="/travel/places/"]'));
+                anchors.forEach((a: any) => {
+                    let title = '';
+                    let image = '';
+                    const titleEl = a.querySelector('h4') || a.closest('div')?.querySelector('h4');
+                    if (titleEl) title = titleEl.textContent?.trim() || '';
+                    if (!title) title = 'Pending';
+                    const imgTag = a.querySelector('img') || a.closest('div')?.querySelector('img');
+                    if (imgTag) image = imgTag.src;
+                    results.push({ title, link: a.href, image });
+                });
+                return results;
+            });
 
-        // Debug: Log all links
-        const allLinks = await page.evaluate(() => {
-            return Array.from(document.querySelectorAll('a')).map(a => a.href).slice(0, 20);
-        });
-        console.log('Sample Links:', allLinks);
-
-        // Extract Links (Robust: Look for /travel/places/ URLs)
-        const listItems = await page.evaluate(() => {
-            const results: { title: string, link: string, image: string }[] = [];
-
-            // Debug: Log all links
-            const DEBUG_anchors = Array.from(document.querySelectorAll('a'));
-            // console.log('DEBUG: Total anchors found:', DEBUG_anchors.length);
-
-            // Find all anchors pointing to places
-            // TRY RELATIVE PATH MATCH TOO just in case href gives full path issues (unlikely for selector but good for manually checking)
-            const anchors = Array.from(document.querySelectorAll('a[href*="/travel/places/"], a[href*="places"]'));
-
-            // Deduplicate by href
-            const seen = new Set();
-
-            anchors.forEach((a: any) => {
-                if (seen.has(a.href)) return;
-                seen.add(a.href);
-
-                // Try to find title & image relative to anchor
-                // Usually the anchor wraps the card or is inside it
-                // Strategy: 
-                // 1. Look for H4 nearby or inside
-                // 2. Look for Image inside
-
-                let title = '';
-                let image = '';
-
-                // Title
-                const titleEl = a.querySelector('h4') || a.closest('div')?.querySelector('h4');
-                if (titleEl) title = titleEl.textContent?.trim() || '';
-
-                // If no title found, use placeholder causing detail scrape to fill it
-                if (!title) title = 'Pending';
-
-                // Image
-                const imgTag = a.querySelector('img') || a.closest('div')?.querySelector('img');
-                if (imgTag) image = imgTag.src;
-                else {
-                    const bgDiv = a.querySelector('div[style*="background-image"]');
-                    if (bgDiv) {
-                        const style = window.getComputedStyle(bgDiv);
-                        const urlMatch = style.backgroundImage.match(/url\("?(.+?)"?\)/);
-                        if (urlMatch) image = urlMatch[1];
-                    }
+            queryItems.forEach(it => {
+                if (!seenUrls.has(it.link)) {
+                    seenUrls.add(it.link);
+                    listItems.push(it);
                 }
-
-                results.push({ title, link: a.href, image });
             });
-            return results;
+        }
+
+        // Add Extra URLs
+        EXTRA_URLS.forEach(link => {
+            if (!seenUrls.has(link)) {
+                seenUrls.add(link);
+                listItems.push({ title: 'Pending', link, image: '' });
+            }
         });
 
         console.log(`Found ${listItems.length} items to process.`);
@@ -261,7 +233,7 @@ async function scrapeMomMom() {
                     // fall through
                 }
                 // Case 3: Permanent/OpenRun items -> Skip (Efficiency)
-                // If date suggests permanence and we have good description, skip.
+                // If date suggests permanence and we have good description AND clean feesAndPrograms, skip.
                 else {
                     const isPermanent = existing.date.includes('오픈런') ||
                         existing.date.includes('상시') ||
@@ -269,7 +241,11 @@ async function scrapeMomMom() {
                         existing.date.includes('매일') ||
                         !existing.date.match(/\d{4}\.\d{2}\.\d{2}/);
 
-                    if (isPermanent && existing.feesAndPrograms) {
+                    const isClean = existing.feesAndPrograms && 
+                                    !existing.feesAndPrograms.includes('저장') && 
+                                    !existing.feesAndPrograms.includes('서울더보기');
+
+                    if (isPermanent && existing.feesAndPrograms && isClean) {
                         // Ensure list data (title/image) is synced
                         return {
                             ...existing,
@@ -289,7 +265,7 @@ async function scrapeMomMom() {
                         else req.continue();
                     });
 
-                    await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 30000 });
+                    await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 60000 }); // Increase timeout here
 
                     // Wait for dynamic content
                     await detailPage.waitForSelector('.toggle-title', { timeout: 10000 }).catch(() => { });
@@ -373,52 +349,40 @@ async function scrapeMomMom() {
                             }
                         });
 
-                        // 5.5 Extract "요금 및 프로그램" section specifically
-                        let feesAndPrograms = '';
+                        // 5.5 Extract "요금 및 프로그램" section specifically (SURGICAL)
+                        let feesAndProgramsArr: string[] = [];
+
+                        // 1. Surgical attempt: Target the specific UL container commonly found in detail pages
+                        const feeSection = Array.from(document.querySelectorAll('section')).find(s => 
+                            s.textContent?.includes('요금 및 프로그램') && s.querySelector('ul')
+                        );
                         
-                        // Strategy: Find the H2/H3 header and get its parent section
-                        const allHeadings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, dt, span, b, p'));
-                        const feeHeader = allHeadings.find(h => h.textContent?.includes('요금 및 프로그램'));
-                        
-                        if (feeHeader) {
-                            // Find the closest section or parent div that contains the content
-                            const section = feeHeader.closest('section') || feeHeader.parentElement?.closest('div');
-                            if (section) {
-                                // Extract structured data from LI items
-                                const items = Array.from(section.querySelectorAll('li')).map(li => li.innerText.trim());
-                                if (items.length > 0) {
-                                    feesAndPrograms = items.join('\n');
-                                    
-                                    // Specifically extract price from [요금] if present in this section
-                                    const feeIndex = items.findIndex(it => it.includes('[요금]'));
-                                    if (feeIndex !== -1 && items[feeIndex + 1]) {
-                                        priceDetail = items[feeIndex + 1];
-                                    }
-                                    
-                                    // Specifically extract hours from [이용안내] if present
-                                    const hoursIndex = items.findIndex(it => it.includes('[이용안내]'));
-                                    if (hoursIndex !== -1 && items[hoursIndex + 1]) {
-                                        operatingHours = items[hoursIndex + 1];
-                                    }
-                                } else {
-                                    feesAndPrograms = (section as HTMLElement).innerText?.trim() || '';
+                        if (feeSection) {
+                            const items = Array.from(feeSection.querySelectorAll('li')).map(li => {
+                                return li.innerText.trim();
+                            }).filter(t => t.length > 0 && !t.includes('업데이트') && !t.includes('사진 보기'));
+                            
+                            feesAndProgramsArr = Array.from(new Set(items));
+                        }
+
+                        // 2. Fallback: If surgical fails, look for markers in text (more careful than innerText)
+                        if (feesAndProgramsArr.length === 0) {
+                            const allElements = Array.from(document.querySelectorAll('li, p, div.sc-'));
+                            let foundMarker = false;
+                            for (const el of allElements) {
+                                const t = el.textContent?.trim() || '';
+                                if (t.includes('요금 및 프로그램') && t.length < 50) {
+                                    foundMarker = true;
+                                    continue;
+                                }
+                                if (foundMarker) {
+                                    if (t.includes('꿀팁') || t.includes('주소') || t.includes('예약')) break;
+                                    if (t.length > 1 && t.length < 200) feesAndProgramsArr.push(t);
                                 }
                             }
                         }
-                        
-                        // Fallback: search for header content in any section if header not found specifically
-                        if (!feesAndPrograms) {
-                            const sections = Array.from(document.querySelectorAll('section'));
-                            const feeSection = sections.find(s => s.innerText?.includes('요금 및 프로그램'));
-                            if (feeSection) {
-                                const items = Array.from(feeSection.querySelectorAll('li')).map(li => li.innerText.trim());
-                                if (items.length > 0) {
-                                    feesAndPrograms = items.join('\n');
-                                } else {
-                                    feesAndPrograms = (feeSection as HTMLElement).innerText?.trim() || '';
-                                }
-                            }
-                        }
+
+                        let feesAndPrograms = Array.from(new Set(feesAndProgramsArr)).join('\n');
 
                         // Standard extraction if toggles failed
                         if (!operatingHours) {

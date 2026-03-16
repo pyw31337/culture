@@ -240,6 +240,8 @@ async function scrapeKopis() {
                                 region: db.area,
                                 source: 'kopis',
                                 isFestival,
+                                age: !isUseless(db.prfage) ? db.prfage : undefined,
+                                ageDetail: !isUseless(db.prfage) ? db.prfage : undefined,
                                 synopsis: !isUseless(db.sty) ? db.sty : undefined,
                                 description: !isUseless(db.sty) ? db.sty : undefined,
                                 synopsisImages: db.styurls?.styurl ? (Array.isArray(db.styurls.styurl) ? db.styurls.styurl : [db.styurls.styurl]) : undefined,
