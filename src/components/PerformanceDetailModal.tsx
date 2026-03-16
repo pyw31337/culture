@@ -321,6 +321,18 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                 </div>
                                             )
                                         }
+
+                                        {/* Fees and Programs (MomMom) */}
+                                        {
+                                            performance.feesAndPrograms && (
+                                                <div className="mt-6">
+                                                    <h3 className="text-gray-400 text-xs font-black mb-2">{t('fees_and_programs') || (locale === 'ko' ? '요금 및 프로그램' : 'Fees & Programs')}</h3>
+                                                    <div className="text-sm text-gray-300 leading-relaxed whitespace-pre-line bg-indigo-500/5 p-4 rounded-xl border border-indigo-500/20">
+                                                        {performance.feesAndPrograms}
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
                                     </div >
                                 )}
 

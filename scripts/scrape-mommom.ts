@@ -384,18 +384,39 @@ async function scrapeMomMom() {
                             // Find the closest section or parent div that contains the content
                             const section = feeHeader.closest('section') || feeHeader.parentElement?.closest('div');
                             if (section) {
-                                feesAndPrograms = (section as HTMLElement).innerText?.trim() || '';
-                            } else {
-                                feesAndPrograms = feeHeader.parentElement?.innerText?.trim() || '';
+                                // Extract structured data from LI items
+                                const items = Array.from(section.querySelectorAll('li')).map(li => li.innerText.trim());
+                                if (items.length > 0) {
+                                    feesAndPrograms = items.join('\n');
+                                    
+                                    // Specifically extract price from [요금] if present in this section
+                                    const feeIndex = items.findIndex(it => it.includes('[요금]'));
+                                    if (feeIndex !== -1 && items[feeIndex + 1]) {
+                                        priceDetail = items[feeIndex + 1];
+                                    }
+                                    
+                                    // Specifically extract hours from [이용안내] if present
+                                    const hoursIndex = items.findIndex(it => it.includes('[이용안내]'));
+                                    if (hoursIndex !== -1 && items[hoursIndex + 1]) {
+                                        operatingHours = items[hoursIndex + 1];
+                                    }
+                                } else {
+                                    feesAndPrograms = (section as HTMLElement).innerText?.trim() || '';
+                                }
                             }
                         }
                         
-                        // Fallback: search for header content in any section
+                        // Fallback: search for header content in any section if header not found specifically
                         if (!feesAndPrograms) {
                             const sections = Array.from(document.querySelectorAll('section'));
                             const feeSection = sections.find(s => s.innerText?.includes('요금 및 프로그램'));
                             if (feeSection) {
-                                feesAndPrograms = (feeSection as HTMLElement).innerText?.trim() || '';
+                                const items = Array.from(feeSection.querySelectorAll('li')).map(li => li.innerText.trim());
+                                if (items.length > 0) {
+                                    feesAndPrograms = items.join('\n');
+                                } else {
+                                    feesAndPrograms = (feeSection as HTMLElement).innerText?.trim() || '';
+                                }
                             }
                         }
 

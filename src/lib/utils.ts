@@ -55,10 +55,10 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
         return { label: null, price: '무료' };
     }
 
-    // Try to match pattern: "XX석 NUMBER원" or "전석 NUMBER원"
-    const match = priceStr.match(/([가-힣A-Z]+석?)\s*([\d,]+)원?/);
+    // Try to match pattern: "XX석 NUMBER원", "전석 NUMBER원", or "입장료: NUMBER원"
+    const match = priceStr.match(/([가-힣A-Z]+석?|입장료[:\s]*)\s*([\d,]+)원?/);
     if (match) {
-        return { label: match[1], price: match[2] };
+        return { label: match[1]?.replace(/[:\s]/g, '') || null, price: match[2] };
     }
 
     // Fallback: just extract first number
