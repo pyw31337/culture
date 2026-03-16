@@ -1,0 +1,66 @@
+{
+    "Common": {
+        "title": "Culture Flow",
+        "description": "Unified Culture Search"
+    },
+    "Categories": {
+        "all": "All",
+        "all_content_list": "All Content List",
+        "genre_content_list": "{genre} List",
+        "category": "Category",
+        "movie": "Movie",
+        "musical": "Musical",
+        "concert": "Concert",
+        "play": "Theater",
+        "classic_tradition": "Classic/Tradition",
+        "exhibition": "Exhibition/Event",
+        "activity": "Activity",
+        "class": "Class",
+        "museum": "Museum/Experience",
+        "tourism": "Tourism/Travel",
+        "sports": "Sports",
+        "volleyball": "Volleyball",
+        "basketball": "Basketball",
+        "baseball": "Baseball",
+        "soccer": "Soccer",
+        "handball": "Handball"
+    },
+    "Regions": {
+        "all": "All Regions",
+        "seoul": "Seoul",
+        "gyeonggi": "Gyeonggi",
+        "incheon": "Incheon",
+        "busan": "Busan",
+        "daegu": "Daegu",
+        "gwangju": "Gwangju",
+        "daejeon": "Daejeon",
+        "ulsan": "Ulsan",
+        "sejong": "Sejong",
+        "gangwon": "Gangwon",
+        "chungbuk": "Chungbuk",
+        "chungnam": "Chungnam",
+        "jeonbuk": "Jeonbuk",
+        "jeonnam": "Jeonnam",
+        "gyeongbuk": "Gyeongbuk",
+        "gyeongnam": "Gyeongnam",
+        "jeju": "Jeju"
+    },
+    "Search": {
+        "placeholder": "Search by performance, location, or venue...",
+        "no_results": "No results found.",
+        "radius": "{radius}km Radius",
+        "all_radius": "All Radius",
+        "near_me": "My Location",
+        "location_nearby": "Around Location",
+        "keyword_search": "Keyword Search"
+    },
+    "Actions": {
+        "book": "Book Now",
+        "share": "Share",
+        "map": "Map View",
+        "calendar": "Calendar",
+        "back": "Back",
+        "more": "Load More",
+        "likes": "Likes"
+    }
+}

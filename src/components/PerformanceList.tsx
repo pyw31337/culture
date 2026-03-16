@@ -5,10 +5,10 @@ import { Performance } from '@/types';
 import { MapPin, Bell, Sun, Moon, Loader2 } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
@@ -51,6 +51,11 @@ export default function PerformanceList({
     categoryLabel
 }: PerformanceListProps) {
     const router = useRouter();
+    const t = useTranslations();
+    const tc = useTranslations('Categories');
+    const tr = useTranslations('Regions');
+    const ts = useTranslations('Search');
+    const ta = useTranslations('Actions');
 
     // --- Custom Hooks (Modular Logic) ---
     const {
@@ -72,6 +77,11 @@ export default function PerformanceList({
         userLocation, setUserLocation, userAddress, radius, setRadius, isDropdownOpen, setIsDropdownOpen,
         highlightedIndex, setHighlightedIndex, searchResults
     } = useSearchLogic({ allPerformances, initialSearchText: initialQuery });
+
+    const localizedSelectedGenreLabel = useMemo(() => {
+        const genre = GENRES.find(g => g.id === initialGenre);
+        return genre ? (tc.has(genre.id) ? tc(genre.id) : genre.label) : tc('all');
+    }, [initialGenre, tc]);
 
     const {
         selectedGenre, setSelectedGenre, selectedRegion, setSelectedRegion,

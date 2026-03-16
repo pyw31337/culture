@@ -1,10 +1,9 @@
 'use client';
 
-import React from 'react';
-import { Layout, LayoutGrid, LayoutList, MapPin, Heart, Star, Search, Map as MapIcon, CalendarDays } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES } from '@/lib/constants';
 import { getGenreIcon, CloverIcon } from '@/components/GenreIcons';
+import { useTranslations } from 'next-intl';
 
 export type BottomMenuType = 'view' | 'category' | 'location' | 'venue-detail' | null;
 
@@ -47,10 +46,13 @@ export const ListDetailsIcon = ({ className, size = 24 }: { className?: string; 
 );
 
 export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, onLikePerfClick, onMapClick, onCalendarClick, likeCount = 0, venueCount = 0, selectedGenre = 'all', searchMode = 'keyword' }: BottomNavProps) {
+    const t = useTranslations('Actions');
+    const tc = useTranslations('Categories');
+
     // Determine Category Label
     const categoryLabel = (selectedGenre && selectedGenre !== 'all')
-        ? (GENRES.find(g => g.id === selectedGenre)?.label || '카테고리')
-        : '카테고리';
+        ? (tc.has(selectedGenre) ? tc(selectedGenre) : (GENRES.find(g => g.id === selectedGenre)?.label || tc('category')))
+        : tc('category');
 
     // Determine Category Icon
     const CategoryIcon = (selectedGenre && selectedGenre !== 'all')
@@ -65,7 +67,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
     const leftItems = [
         {
             id: 'likes-perf',
-            label: '좋아요',
+            label: t('likes', { fallback: 'Likes' }),
             icon: Heart,
             action: () => {
                 onMenuClick(null);
@@ -81,7 +83,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
     const rightItems = [
         {
             id: 'map',
-            label: '지도보기',
+            label: t('map'),
             icon: MapIcon,
             action: () => {
                 onMenuClick(null);
@@ -90,7 +92,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
         },
         {
             id: 'calendar',
-            label: '달력보기',
+            label: t('calendar'),
             icon: CalendarDays,
             action: () => {
                 onMenuClick(null);

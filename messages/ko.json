@@ -1,0 +1,66 @@
+{
+    "Common": {
+        "title": "Culture Flow",
+        "description": "전국 통합 문화 검색"
+    },
+    "Categories": {
+        "all": "전체",
+        "all_content_list": "전체 컨텐츠 목록",
+        "genre_content_list": "{genre} 목록",
+        "category": "카테고리",
+        "movie": "영화",
+        "musical": "뮤지컬",
+        "concert": "콘서트",
+        "play": "연극",
+        "classic_tradition": "클래식/전통",
+        "exhibition": "전시/행사",
+        "activity": "액티비티",
+        "class": "클래스",
+        "museum": "박물관/체험관",
+        "tourism": "관광/여행",
+        "sports": "스포츠",
+        "volleyball": "배구",
+        "basketball": "농구",
+        "baseball": "야구",
+        "soccer": "축구",
+        "handball": "핸드볼"
+    },
+    "Regions": {
+        "all": "전국",
+        "seoul": "서울",
+        "gyeonggi": "경기",
+        "incheon": "인천",
+        "busan": "부산",
+        "daegu": "대구",
+        "gwangju": "광주",
+        "daejeon": "대전",
+        "ulsan": "울산",
+        "sejong": "세종",
+        "gangwon": "강원",
+        "chungbuk": "충북",
+        "chungnam": "충남",
+        "jeonbuk": "전북",
+        "jeonnam": "전남",
+        "gyeongbuk": "경북",
+        "gyeongnam": "경남",
+        "jeju": "제주"
+    },
+    "Search": {
+        "placeholder": "공연, 지역, 장소 검색...",
+        "no_results": "검색 결과가 없습니다.",
+        "radius": "{radius}km 반경",
+        "all_radius": "전체 반경",
+        "near_me": "내 위치",
+        "location_nearby": "위치 주변",
+        "keyword_search": "키워드 검색"
+    },
+    "Actions": {
+        "book": "예매하기 이동",
+        "share": "공유하기",
+        "map": "지도 보기",
+        "calendar": "캘린더",
+        "back": "뒤로가기",
+        "more": "더 보기",
+        "likes": "좋아요"
+    }
+}

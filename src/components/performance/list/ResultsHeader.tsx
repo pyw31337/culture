@@ -1,7 +1,6 @@
-import React from 'react';
-import { MapPin, Search, RotateCcw, ChevronDown } from 'lucide-react';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
+import { useTranslations } from 'next-intl';
 
 interface ResultsHeaderProps {
     viewMode: string;
@@ -16,18 +15,13 @@ interface ResultsHeaderProps {
     onRadiusChange: (val: number) => void;
 }
 
-export const ResultsHeader = ({
-    viewMode,
-    activeLocation,
-    searchLocation,
-    searchText,
-    searchMode,
-    selectedGenre,
-    filteredCount,
     radius,
     onResetFilters,
     onRadiusChange
 }: ResultsHeaderProps) => {
+    const t = useTranslations('Search');
+    const tc = useTranslations('Categories');
+
     if (viewMode === 'likes-perf') return null;
 
     return (
@@ -38,8 +32,8 @@ export const ResultsHeader = ({
                         {(searchMode === 'location' && activeLocation) ? (
                             <>
                                 <MapPin className="text-emerald-500 w-5 h-5" />
-                                <span className="truncate max-w-[150px] sm:max-w-xs">{searchLocation ? `'${searchLocation.name}'` : '내 위치'}</span>
-                                <span className="text-base sm:text-xl shrink-0">위치 주변 ({filteredCount})</span>
+                                <span className="truncate max-w-[150px] sm:max-w-xs">{searchLocation ? `'${searchLocation.name}'` : t('near_me', { fallback: 'My Location' })}</span>
+                                <span className="text-base sm:text-xl shrink-0"> {t('location_nearby')} ({filteredCount})</span>
                                 <button
                                     onClick={onResetFilters}
                                     className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 group/reload"
@@ -57,14 +51,19 @@ export const ResultsHeader = ({
                                 )}
                                 <span className="truncate max-w-[120px] sm:max-w-xs">'{searchText}'</span>
                                 <span className="text-base sm:text-xl shrink-0">
-                                    {searchMode === 'location' ? '위치 주변' : '키워드 검색'} ({filteredCount})
+                                    {searchMode === 'location' ? t('location_nearby') : t('keyword_search')} ({filteredCount})
                                 </span>
                             </>
                         ) : (
                             <>
                                 <span className="flex items-center gap-2">
                                     {getGenreIcon(selectedGenre, 28)}
-                                    {selectedGenre === 'all' ? '전체 컨텐츠 목록' : `${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'} 목록`}
+                                    {selectedGenre === 'all' 
+                                        ? tc('all_content_list', { fallback: 'All Content List' }) 
+                                        : tc('genre_content_list', { 
+                                            genre: tc.has(selectedGenre) ? tc(selectedGenre) : selectedGenre,
+                                            fallback: `${GENRES.find(g => g.id === selectedGenre)?.label || 'Content'} List` 
+                                        })}
                                 </span>
                                 <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({filteredCount})</span>
                             </>
@@ -81,7 +80,7 @@ export const ResultsHeader = ({
                                     >
                                         {RADIUS_OPTIONS.map(r => (
                                             <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
-                                                {r.label}
+                                                {r.value === 9999 ? t('all_radius') : t('radius', { radius: r.value })}
                                             </option>
                                         ))}
                                     </select>
