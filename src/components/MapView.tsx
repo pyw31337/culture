@@ -12,6 +12,7 @@ import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
 import Portal from './ui/Portal';
+import { useTranslations } from 'next-intl';
 
 // Weather interface
 interface DailyWeather {
@@ -50,6 +51,10 @@ interface MapViewProps {
 export default function MapView({ initialPerformances, initialCinemas = [] }: MapViewProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
+    const t = useTranslations('Actions');
+    const tc = useTranslations('Categories');
+    const ts = useTranslations('Search');
+    const tw = useTranslations('Weather');
 
     // Self-contained state from URL params
     const selectedGenre = searchParams.get('genre') || 'all';
@@ -92,16 +97,16 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         geoAttempted.current = true;
 
         if (!navigator.geolocation) {
-            setGeoCenter({ ...SEOUL_STATION, name: '서울역' });
+            setGeoCenter({ ...SEOUL_STATION, name: ts('seoul_station') });
             return;
         }
 
         navigator.geolocation.getCurrentPosition(
             (pos) => {
-                setGeoCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude, name: '내 위치' });
+                setGeoCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude, name: ts('near_me') });
             },
             () => {
-                setGeoCenter({ ...SEOUL_STATION, name: '서울역' });
+                setGeoCenter({ ...SEOUL_STATION, name: ts('seoul_station') });
             },
             { enableHighAccuracy: false, timeout: 5000, maximumAge: 300000 }
         );
@@ -113,8 +118,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             return { lat: paramLat, lng: paramLng, name: centerName };
         }
         if (geoCenter) return geoCenter;
-        return { ...SEOUL_STATION, name: '서울역' };
-    }, [paramLat, paramLng, centerName, geoCenter, SEOUL_STATION]);
+        return { ...SEOUL_STATION, name: ts('seoul_station') };
+    }, [paramLat, paramLng, centerName, geoCenter, SEOUL_STATION, ts]);
 
     // Update mapSearchCenter when initial centerLocation is resolved
     useEffect(() => {
@@ -280,7 +285,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         setMapSearchCenter({
             lat: center.getLat(),
             lng: center.getLng(),
-            name: '현 위치'
+            name: ts('current_map_center')
         });
         handleSearchHereInternal(mapInstance, true);
     };
@@ -347,13 +352,13 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             // We only pan if it's the initial center (to avoid fighting manual dragging)
             // if (hasPannedOnce.current === false) ... - but let's just use mapSearchCenter
             
-            if (mapSearchCenter.name !== '현 위치') {
+            if (mapSearchCenter.name !== ts('near_me')) {
                 map.panTo(loc);
             }
 
             const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
                 <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
-                    ${mapSearchCenter.name || '검색 위치'}
+                    ${mapSearchCenter.name || ts('search_location')}
                 </div>
                 <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
                     <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
@@ -552,7 +557,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
     const handleMyLocation = useCallback(() => {
         if (!mapInstance || !isMapReady) return;
-        if (!navigator.geolocation) { alert('이 브라우저에서는 위치 서비스를 지원하지 않습니다.'); return; }
+        if (!navigator.geolocation) { alert(ts('geo_not_supported')); return; }
 
         setIsLocating(true);
         navigator.geolocation.getCurrentPosition(
@@ -569,7 +574,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 if (myLocationOverlayRef.current) { myLocationOverlayRef.current.setMap(null); }
 
                 const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-50%);">
-                    <div class="bg-blue-500 text-white px-2 py-0.5 rounded-lg text-[10px] font-extrabold shadow-md mb-1 whitespace-nowrap border border-blue-400 font-sans">내 위치</div>
+                    <div class="bg-blue-500 text-white px-2 py-0.5 rounded-lg text-[10px] font-extrabold shadow-md mb-1 whitespace-nowrap border border-blue-400 font-sans">${ts('near_me')}</div>
                     <div class="w-4 h-4 bg-blue-500 border-2 border-white rounded-full shadow-lg relative">
                         <div class="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-50"></div>
                     </div>
@@ -588,11 +593,11 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 setIsLocating(false);
                 
                 // Update search center to my location
-                setMapSearchCenter({ lat: latitude, lng: longitude, name: '내 위치' });
+                setMapSearchCenter({ lat: latitude, lng: longitude, name: ts('near_me') });
             },
             (err) => {
                 setIsLocating(false);
-                alert('위치를 가져올 수 없습니다. 위치 권한을 확인해주세요.');
+                alert(ts('geo_error'));
             },
             { enableHighAccuracy: true, timeout: 10000 }
         );
@@ -658,16 +663,16 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 {/* Controls */}
                 <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2">
                     <button onClick={handleClose}
-                        className="p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md" title="닫기">
+                        className="p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md" title={t('close')}>
                         <X className="w-6 h-6" />
                     </button>
                     <div className="flex flex-col bg-white/80 dark:bg-black/50 rounded-full shadow-md overflow-hidden">
                         <button onClick={handleZoomIn}
-                            className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition border-b border-gray-200 dark:border-gray-800" title="확대">
+                            className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition border-b border-gray-200 dark:border-gray-800" title={tw('zoom_in')}>
                             <Plus className="w-5 h-5" />
                         </button>
                         <button onClick={handleZoomOut}
-                            className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition" title="축소">
+                            className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition" title={tw('zoom_out')}>
                             <Minus className="w-5 h-5" />
                         </button>
                     </div>
@@ -677,21 +682,17 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             isLocating
                                 ? "bg-blue-500 text-white animate-pulse"
                                 : "bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-black dark:hover:bg-gray-100"
-                        )} title="내 위치">
+                        )} title={ts('near_me')}>
                         <Locate className="w-5 h-5" />
                     </button>
                     {/* Weather Button */}
                     <button onClick={() => isWeatherOpen ? setIsWeatherOpen(false) : fetchWeather()}
                         className={clsx("p-2.5 rounded-full shadow-md transition bg-white dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
                             isWeatherOpen && "ring-2 ring-blue-500"
-                        )} title="날씨 확인">
+                        )} title={tw('check_weather')}>
                         <CloudSun className="w-5 h-5" />
                     </button>
                 </div>
-
-                {/* Search Here Button relocated to bottom for better mobile UX */}
-
-
 
                 <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
@@ -706,7 +707,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             )}
                         >
                         <Filter className="w-4 h-4" />
-                            카테고리 ({GENRES.find(g => g.id === selectedMapGenre)?.label || '전체'})
+                            {tc('category')} ({tc.has(selectedMapGenre) ? tc(selectedMapGenre) : (GENRES.find(g => g.id === selectedMapGenre)?.label || tc('all'))})
                         </button>
 
                         {isCategoryMenuOpen && (
@@ -739,7 +740,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                             <div className="w-5 h-5 rounded-full border-2 border-current opacity-30" />
                                                         )}
                                                     </div>
-                                                    <span>{genre.label}</span>
+                                                    <span>{tc.has(genre.id) ? tc(genre.id) : genre.label}</span>
                                                 </div>
                                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: style.hex }} />
                                             </button>
@@ -763,18 +764,18 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     <h3 className="text-[15px] font-black text-gray-900 dark:text-white leading-tight">
                                         <span className="text-blue-600 dark:text-blue-400">
                                             {(() => {
-                                                if (!weatherAddress) return '위치 정보';
+                                                if (!weatherAddress) return tw('location_info');
                                                 // Remove house numbers/digits and stop at Dong level
                                                 const parts = weatherAddress.split(' ');
-                                                const dongIdx = parts.findIndex(p => p.endsWith('동') || p.endsWith('가') || p.endsWith('로'));
+                                                const dongIdx = parts.findIndex(p => p.endsWith('동') || p.endsWith('가') || p.endsWith('로') || p.endsWith('Road') || p.endsWith('St'));
                                                 if (dongIdx !== -1) return parts.slice(0, dongIdx + 1).join(' ');
                                                 return weatherAddress;
                                             })()}
-                                        </span> 날씨 정보
+                                        </span> {tw('weather_info')}
                                     </h3>
                                     <div className="flex items-center gap-1.5 text-gray-400 dark:text-gray-500 text-[10px]">
                                         <Navigation className="w-2.5 h-2.5" />
-                                        <span>현재 지도 중앙 위치</span>
+                                        <span>{tw('current_center')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -787,7 +788,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             {isWeatherLoading ? (
                                 <div className="flex flex-col items-center py-10 gap-3">
                                     <RotateCw className="w-8 h-8 text-blue-500 animate-spin" />
-                                    <span className="text-sm text-gray-500">날씨 데이터를 가져오고 있습니다...</span>
+                                    <span className="text-sm text-gray-500">{tw('loading_weather')}</span>
                                 </div>
                             ) : (
                                 <>
@@ -797,7 +798,9 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     )}>
                                         {weatherData.slice(0, showExtendedForecast ? 14 : 7).map((day, idx) => {
                                         const d = new Date(day.date);
-                                        const dayName = d.toLocaleDateString('ko-KR', { weekday: 'short' });
+                                        const dateLocale = tc.has('ko') ? 'ko-KR' : 'en-US';
+                                        const dayName = d.toLocaleDateString(dateLocale, { weekday: 'short' });
+                                        const isToday = idx === 0;
                                         const dateStr = `${d.getMonth() + 1}.${d.getDate()}`;
                                         
                                         return (
@@ -806,7 +809,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                 idx === 0 ? "bg-blue-50/50 dark:bg-blue-900/20 border-blue-200/50 dark:border-blue-800/50" : "bg-gray-50/30 dark:bg-gray-800/20 border-transparent"
                                             )}>
                                                 <div className="w-12 shrink-0">
-                                                    <div className="text-[11px] font-black text-gray-600 dark:text-gray-300">{idx === 0 ? '오늘' : dayName}</div>
+                                                    <div className="text-[11px] font-black text-gray-600 dark:text-gray-300">{isToday ? tw('today') : dayName}</div>
                                                     <div className="text-[10px] text-gray-400 font-medium">{dateStr}</div>
                                                 </div>
                                                 
@@ -850,7 +853,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                             className="mt-4 w-full py-3 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-bold rounded-2xl border border-gray-100 dark:border-gray-800 transition-all flex items-center justify-center gap-2 group"
                                         >
                                             <Calendar className="w-4 h-4 transition-transform group-hover:scale-110" />
-                                            날씨 더보기 (다음 일주일)
+                                            {tw('show_more')}
                                         </button>
                                     )}
                                 </>
@@ -937,12 +940,15 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     )}
 
                 <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-gray-900 via-white/80 dark:via-gray-900/80 to-transparent pt-16 pb-4 px-4 sm:px-6">
-                    {showSearchHereBtn && isMapReady && (
-                        <div className="absolute top-3 left-1/2 transform -translate-x-1/2 z-[100] w-full flex justify-center pointer-events-none">
-                            <button onClick={handleSearchHere}
-                                className="px-5 py-2.5 bg-blue-600/90 backdrop-blur-sm text-white rounded-full font-black shadow-xl hover:bg-blue-700 transition flex items-center gap-2.5 text-sm animate-fade-in-up border border-white/20 pointer-events-auto">
-                                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                                현 위치에서 검색
+                    {/* Search Here Button relocated to bottom for better mobile UX */}
+                    {showSearchHereBtn && (
+                        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-40 animate-fade-in-up">
+                            <button
+                                onClick={handleSearchHere}
+                                className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full shadow-2xl hover:scale-105 transition-all font-black text-sm tracking-tight border border-white/20 dark:border-black/10 group active:scale-95"
+                            >
+                                <RotateCw className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
+                                {ts('search_this_area')}
                             </button>
                         </div>
                     )}

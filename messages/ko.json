@@ -8,6 +8,7 @@
         "all_content_list": "전체 컨텐츠 목록",
         "genre_content_list": "{genre} 목록",
         "category": "카테고리",
+        "movie_rank": "영화 #{rank}위",
         "movie": "영화",
         "musical": "뮤지컬",
         "concert": "콘서트",
@@ -52,7 +53,17 @@
         "all_radius": "전체 반경",
         "near_me": "내 위치",
         "location_nearby": "위치 주변",
-        "keyword_search": "키워드 검색"
+        "keyword_search": "키워드 검색",
+        "nearby": "주변 추천",
+        "no_title": "제목 없음",
+        "free": "무료",
+        "won": "원",
+        "seoul_station": "서울역",
+        "current_map_center": "현 위치",
+        "search_this_area": "이 지역 재검색",
+        "search_location": "검색 위치",
+        "geo_not_supported": "이 브라우저에서는 위치 서비스를 지원하지 않습니다.",
+        "geo_error": "위치를 가져올 수 없습니다. 위치 권한을 확인해주세요."
     },
     "Actions": {
         "book": "예매하기 이동",
@@ -61,6 +72,38 @@
         "calendar": "캘린더",
         "back": "뒤로가기",
         "more": "더 보기",
-        "likes": "좋아요"
+        "likes": "좋아요",
+        "alert": "알림",
+        "saved_venue": "찜한공연장",
+        "copied": "복사됨",
+        "view_detail": "자세히 보기",
+        "close": "닫기"
+    },
+    "Weather": {
+        "location_info": "위치 정보",
+        "weather_info": "날씨 정보",
+        "current_center": "현재 지도 중앙 위치",
+        "loading_weather": "날씨 데이터를 가져오고 있습니다...",
+        "today": "오늘",
+        "show_more": "14일 예보 보기",
+        "zoom_in": "확대",
+        "zoom_out": "축소",
+        "check_weather": "날씨 확인",
+        "rain": "비",
+        "snow": "눈",
+        "cinema_timetable": "실시간 상영시간표 확인하기",
+        "more_matches": "경기 더보기",
+        "more_performances": "공연 더보기",
+        "content_count": "개 컨텐츠"
+    },
+    "MovieMetadata": {
+        "always": "상시",
+        "rating_label": "등급",
+        "subgenre": "장르",
+        "country": "제작국가",
+        "year": "제작년도",
+        "director": "감독",
+        "cast": "출연",
+        "runtime": "플레이타임"
     }
 }

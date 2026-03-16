@@ -4,10 +4,11 @@
         "description": "Unified Culture Search"
     },
     "Categories": {
-        "all": "All",
-        "all_content_list": "All Content List",
-        "genre_content_list": "{genre} List",
-        "category": "Category",
+        "all": "전체",
+        "all_content_list": "전체 컨텐츠 목록",
+        "genre_content_list": "{genre} 목록",
+        "category": "카테고리",
+        "movie_rank": "영화 #{rank}위",
         "movie": "Movie",
         "musical": "Musical",
         "concert": "Concert",
@@ -52,7 +53,17 @@
         "all_radius": "All Radius",
         "near_me": "My Location",
         "location_nearby": "Around Location",
-        "keyword_search": "Keyword Search"
+        "keyword_search": "Keyword Search",
+        "nearby": "Nearby",
+        "no_title": "No Title",
+        "free": "Free",
+        "won": "KRW",
+        "seoul_station": "Seoul Station",
+        "current_map_center": "Current Map Center",
+        "search_this_area": "Search This Area",
+        "search_location": "Search Location",
+        "geo_not_supported": "Geolocation is not supported by this browser.",
+        "geo_error": "Could not get your location. Please check your permissions."
     },
     "Actions": {
         "book": "Book Now",
@@ -61,6 +72,38 @@
         "calendar": "Calendar",
         "back": "Back",
         "more": "Load More",
-        "likes": "Likes"
+        "likes": "Likes",
+        "alert": "Alert",
+        "saved_venue": "Saved Venue",
+        "copied": "Copied",
+        "view_detail": "View Detail",
+        "close": "Close"
+    },
+    "Weather": {
+        "location_info": "Location Info",
+        "weather_info": "Weather Info",
+        "current_center": "Current Map Center",
+        "loading_weather": "Fetching weather data...",
+        "today": "Today",
+        "show_more": "14-day Forecast",
+        "zoom_in": "Zoom In",
+        "zoom_out": "Zoom Out",
+        "check_weather": "Weather",
+        "rain": "Rain",
+        "snow": "Snow",
+        "cinema_timetable": "Cinema Timetable",
+        "more_matches": "More Matches",
+        "more_performances": "More Performances",
+        "content_count": " Contents"
+    },
+    "MovieMetadata": {
+        "always": "Always",
+        "rating_label": "Rating",
+        "subgenre": "Genre",
+        "country": "Country",
+        "year": "Year",
+        "director": "Director",
+        "cast": "Cast",
+        "runtime": "Runtime"
     }
 }
