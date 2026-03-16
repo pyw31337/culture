@@ -12,11 +12,18 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
     const performances = await getAllPerformances();
-    return performances
-        .filter(p => p && p.id)
-        .map((p) => ({
-            id: String(p.id),
-        }));
+    const locales = ['en', 'ko'];
+    const params: { locale: string; id: string }[] = [];
+
+    locales.forEach(locale => {
+        performances
+            .filter(p => p && p.id)
+            .forEach(p => {
+                params.push({ locale, id: String(p.id) });
+            });
+    });
+
+    return params;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

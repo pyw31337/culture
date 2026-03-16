@@ -150,17 +150,25 @@ async function generate() {
             }
         });
 
+        const genreCounts: Record<string, number> = {};
+        activePerformances.forEach(p => {
+            genreCounts[p.genre] = (genreCounts[p.genre] || 0) + 1;
+        });
+
+        console.log('[DEBUG] Genre Breakdown after filtering:');
+        Object.entries(genreCounts).forEach(([genre, count]) => {
+            console.log(`  - ${genre}: ${count}`);
+        });
+
         if (performances.some(p => p.source === 'museum')) {
              const museumRemained = activePerformances.filter(p => p.source === 'museum').length;
-             console.log(`[DEBUG] Museum Items: Total ${performances.filter(p => p.source === 'museum').length}, Remaining After Filter: ${museumRemained}`);
+             console.log(`[DEBUG] Museum Source Items: Total ${performances.filter(p => p.source === 'museum').length}, Remaining After Filter: ${museumRemained}`);
         }
 
         console.log(`[Filtering Stats]`);
         console.log(`- Movies Filtered: ${movieCount}`);
         console.log(`- OTT Filtered: ${ottCount}`);
         console.log(`- Expired/Date Filtered: ${dateCount}`);
-
-        console.log(`Filtered ${performances.length - activePerformances.length} items (Expired or Duplicate Type).`);
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformances(activePerformances, 'all');

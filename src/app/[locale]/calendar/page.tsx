@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     description: '전국 문화 공연/행사 달력 보기. 일간, 주간, 월간 보기로 문화 일정을 확인하세요.',
 };
 
+export async function generateStaticParams() {
+    return [{ locale: 'en' }, { locale: 'ko' }];
+}
+
 export default async function CalendarPage() {
     const allPerformances = getAllPerformances();
 

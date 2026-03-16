@@ -209,9 +209,9 @@ export function getAllPerformances() {
                 p.lat = (v.lat || v.latitude) as number;
                 p.lng = (v.lng || v.longitude) as number;
                 p.address = v.address;
-            } else if (p.source?.startsWith('mommom')) {
-                // Keep MomMom items even if geo fails (Fallback to Seoul/Central or just don't filter)
-                if (!p.address) p.address = p.venue;
+            } else if (p.source?.startsWith('mommom') || p.source === 'museum') {
+                // Keep MomMom and Museum items even if geo fails (Fallback to address-only)
+                if (!p.address || p.address === '정보 없음') p.address = p.venue || '주소 정보 없음';
             } else {
                 return false;
             }

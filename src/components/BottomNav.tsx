@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { GENRES } from '@/lib/constants';
 import { getGenreIcon, CloverIcon } from '@/components/GenreIcons';
 import { useTranslations } from 'next-intl';
+import { Heart, Map as MapIcon, CalendarDays, Search, MapPin } from 'lucide-react';
 
 export type BottomMenuType = 'view' | 'category' | 'location' | 'venue-detail' | null;
 
