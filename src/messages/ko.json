@@ -86,7 +86,10 @@
         "saved_venue": "찜한공연장",
         "copied": "복사됨",
         "view_detail": "자세히 보기",
-        "close": "닫기"
+        "close": "닫기",
+        "language_change": "언어변경",
+        "mode_change": "모드전환",
+        "keyword_settings": "키워드설정"
     },
     "Weather": {
         "location_info": "위치 정보",

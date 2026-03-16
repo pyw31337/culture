@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { Performance } from '@/types';
-import { MapPin, Bell, Sun, Moon, Loader2 } from 'lucide-react';
+import { MapPin, Bell, Sun, Moon, Loader2, Languages } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
@@ -179,6 +179,17 @@ export default function PerformanceList({
         router.push(`/p/${perf.id}/`);
     }, [router, setPreserveFlag]);
 
+    const handleLanguageToggle = useCallback(() => {
+        const nextLocale = locale === 'ko' ? 'en' : 'ko';
+        const currentPathname = window.location.pathname;
+        
+        // Replace current locale prefix with the next one
+        // e.g., /ko/some-path -> /en/some-path
+        const newPathname = currentPathname.replace(/^\/(ko|en)/, `/${nextLocale}`);
+        
+        router.push(newPathname + window.location.search);
+    }, [locale, router]);
+
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
         await navigator.clipboard.writeText(url);
@@ -308,10 +319,25 @@ export default function PerformanceList({
                     </Link>
 
                     <div className="flex items-center gap-1">
-                        <button onClick={toggleTheme} className="p-2 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black">
+                        <button 
+                            onClick={handleLanguageToggle} 
+                            className="p-2 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black transition-colors"
+                            title={t('language_change')}
+                        >
+                            <Languages size={24} />
+                        </button>
+                        <button 
+                            onClick={toggleTheme} 
+                            className="p-2 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black"
+                            title={t('mode_change')}
+                        >
                             {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
                         </button>
-                        <button onClick={() => setIsAlarmOpen(!isAlarmOpen)} className={clsx("p-2 rounded-full", isAlarmOpen ? "text-purple-300" : "text-gray-400")}>
+                        <button 
+                            onClick={() => setIsAlarmOpen(!isAlarmOpen)} 
+                            className={clsx("p-2 rounded-full", isAlarmOpen ? "text-purple-300" : "text-gray-400")}
+                            title={t('keyword_settings')}
+                        >
                             <Bell size={24} className={clsx(isAlarmOpen && "animate-pulse")} />
                         </button>
                     </div>

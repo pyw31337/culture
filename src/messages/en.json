@@ -13,11 +13,11 @@
         "last_updated": "Last updated: {time}"
     },
     "Categories": {
-        "all": "전체",
-        "all_content_list": "전체 컨텐츠 목록",
-        "genre_content_list": "{genre} 목록",
-        "category": "카테고리",
-        "movie_rank": "영화 #{rank}위",
+        "all": "All",
+        "all_content_list": "All Content List",
+        "genre_content_list": "{genre} List",
+        "category": "Category",
+        "movie_rank": "Movie #{rank}",
         "movie": "Movie",
         "musical": "Musical",
         "concert": "Concert",
@@ -86,7 +86,10 @@
         "saved_venue": "Saved Venue",
         "copied": "Copied",
         "view_detail": "View Detail",
-        "close": "Close"
+        "close": "Close",
+        "language_change": "Change Language",
+        "mode_change": "Switch Mode",
+        "keyword_settings": "Keyword Settings"
     },
     "Weather": {
         "location_info": "Location Info",
