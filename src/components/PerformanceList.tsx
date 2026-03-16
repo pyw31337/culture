@@ -1,14 +1,15 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
+import dynamic from 'next/dynamic';
 import { Performance } from '@/types';
 import { MapPin, Bell, Sun, Moon, Loader2 } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/navigation';
+import { useSearchParams } from 'next/navigation';
+import { useRouter, Link, usePathname } from '@/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
@@ -51,6 +52,8 @@ export default function PerformanceList({
     categoryLabel
 }: PerformanceListProps) {
     const router = useRouter();
+    const locale = useLocale();
+    const searchParams = useSearchParams();
     const t = useTranslations();
     const tc = useTranslations('Categories');
     const tr = useTranslations('Regions');
@@ -64,8 +67,6 @@ export default function PerformanceList({
     } = useUserPreferences();
 
     const { allPerformances, setAllPerformances, cinemas, venues, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
-
-    const searchParams = useSearchParams();
     const initialQuery = searchParams.get('q') || '';
     const urlMode = searchParams.get('mode') as 'keyword' | 'location' | null;
     const urlLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
@@ -434,7 +435,7 @@ export default function PerformanceList({
                     {!isDataFullyLoaded && (
                         <div className="flex justify-center py-12">
                             <Loader2 className="animate-spin text-purple-500" />
-                            <span className="ml-3 text-gray-400">데이터를 불러오는 중...</span>
+                            <span className="ml-3 text-gray-400">{locale === 'ko' ? '데이터를 불러오는 중...' : 'Loading data...'}</span>
                         </div>
                     )}
                 </div>

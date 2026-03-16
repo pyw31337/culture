@@ -1,7 +1,16 @@
 {
+    "Metadata": {
+        "home_title": "Culture Flow | Real-time Culture & Sports Info",
+        "home_description": "Check out musicals, concerts, exhibitions, and sports matches at a glance. We provide real-time updates and booking links for all cultural events.",
+        "genre_title": "{genre} Info & Booking | Culture Flow",
+        "genre_description": "Check out {count} {genre} events available for booking/viewing. Compare prices, schedules, and rankings at a glance.",
+        "genre_sports": "Sports (All)",
+        "not_found": "Page Not Found | Culture Flow"
+    },
     "Common": {
         "title": "Culture Flow",
-        "description": "Unified Culture Search"
+        "description": "Unified Culture Search",
+        "last_updated": "Last updated: {time}"
     },
     "Categories": {
         "all": "전체",

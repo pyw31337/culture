@@ -6,6 +6,10 @@ import ProgressBarProvider from "@/components/ProgressBarProvider";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import InstallApp from "@/components/InstallApp";
 import ScrollToTop from "@/components/ScrollToTop";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next-intl/navigation';
+import { locales } from '@/navigation';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,13 +62,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  // Ensure that the incoming `locale` is valid
+  if (!locales.includes(locale as any)) {
+      notFound();
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -97,11 +114,13 @@ export default function RootLayout({
           `}
         </Script>
         <ProgressBarProvider>
-          <ErrorBoundary>
-            {children}
-            <InstallApp />
-            <ScrollToTop />
-          </ErrorBoundary>
+          <NextIntlClientProvider messages={messages}>
+            <ErrorBoundary>
+              {children}
+              <InstallApp />
+              <ScrollToTop />
+            </ErrorBoundary>
+          </NextIntlClientProvider>
         </ProgressBarProvider>
         <Script
           id="kakao-map-script"

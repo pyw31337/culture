@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { VALID_GENRE_SLUGS, SPORTS_GENRES, GENRES } from '@/lib/constants';
 import { getAllPerformances } from '@/lib/performance-data';
+import { getTranslations } from 'next-intl/server';
 
 // Map URL slugs to actual genre IDs (some differ)
 const SLUG_TO_GENRE: Record<string, string> = {
@@ -18,8 +19,6 @@ async function getPerformances(genreFilter: string | string[] | null) {
     const filtered = allStable.filter(p => {
         if (!genreFilter) return true;
 
-
-
         if (Array.isArray(genreFilter)) {
             return genreFilter.includes(p.genre);
         }
@@ -30,39 +29,44 @@ async function getPerformances(genreFilter: string | string[] | null) {
     return filtered;
 }
 
-// Generate static params for all valid genre slugs
+// Generate static params for all valid genre slugs and locales
 export async function generateStaticParams() {
-    return VALID_GENRE_SLUGS.map(genre => ({
-        genre: genre,
-    }));
+    const locales = ['en', 'ko'];
+    const params: { locale: string; genre: string }[] = [];
+
+    locales.forEach(locale => {
+        VALID_GENRE_SLUGS.forEach(genre => {
+            params.push({ locale, genre });
+        });
+    });
+
+    return params;
 }
 
 interface PageProps {
-    params: Promise<{ genre: string }>;
+    params: Promise<{ locale: string; genre: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-    const { genre } = await params;
+    const { locale, genre } = await params;
+    const mt = await getTranslations({ locale, namespace: 'Metadata' });
+    const tc = await getTranslations({ locale, namespace: 'Categories' });
+
+    if (!VALID_GENRE_SLUGS.includes(genre)) {
+        return {
+            title: mt('not_found'),
+        };
+    }
 
     // Resolve Genre Logic
     let genreFilter: string | string[];
-    let genreLabel: string = genre;
+    let genreLabel: string = tc(genre);
 
     // Map slug to internal ID for label lookup
     const internalGenre = SLUG_TO_GENRE[genre] || genre;
 
-    // Find label
-    const matchedGenre = GENRES.find(g => g.id === internalGenre);
-    if (matchedGenre) genreLabel = matchedGenre.label;
-
     // Custom Label for Sports aggregate
-    if (genre === 'sports') genreLabel = '스포츠 (전체)';
-
-    if (!VALID_GENRE_SLUGS.includes(genre)) {
-        return {
-            title: '페이지를 찾을 수 없습니다 - CultureFlow',
-        };
-    }
+    if (genre === 'sports') genreLabel = mt('genre_sports');
 
     if (genre === 'sports') {
         genreFilter = SPORTS_GENRES;
@@ -74,8 +78,8 @@ export async function generateMetadata({ params }: PageProps) {
     const performances = await getPerformances(genreFilter);
     const count = performances.length;
 
-    const title = `${genreLabel} 정보 및 예매 (${count}건) | CultureFlow`;
-    const description = `현재 예매/관람 가능한 ${genreLabel} 콘텐츠 ${count}개를 확인하세요. 최저가, 일정, 인기 순위를 한눈에 비교할 수 있습니다.`;
+    const title = mt('genre_title', { genre: genreLabel });
+    const description = mt('genre_description', { genre: genreLabel, count });
 
     return {
         title,
@@ -86,10 +90,10 @@ export async function generateMetadata({ params }: PageProps) {
             type: 'website',
             images: [
                 {
-                    url: '/culture/images/og-default.png', // Fallback or dynamic if possible
+                    url: '/culture/images/og-default.png',
                     width: 1200,
                     height: 630,
-                    alt: `${genreLabel} 목록`,
+                    alt: genreLabel,
                 },
             ],
         },
@@ -97,7 +101,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function GenrePage({ params }: PageProps) {
-    const { genre } = await params;
+    const { locale, genre } = await params;
+    const t = await getTranslations({ locale, namespace: 'Common' });
 
     if (!VALID_GENRE_SLUGS.includes(genre)) {
         notFound();
@@ -117,9 +122,9 @@ export default async function GenrePage({ params }: PageProps) {
 
     const performances = await getPerformances(genreFilter);
 
-    // Date formatting (Same as page.tsx)
+    // Date formatting using dynamic locale
     const now = new Date();
-    const formatter = new Intl.DateTimeFormat('ko-KR', {
+    const formatter = new Intl.DateTimeFormat(locale === 'ko' ? 'ko-KR' : 'en-US', {
         timeZone: 'Asia/Seoul',
         year: 'numeric',
         month: '2-digit',
@@ -140,10 +145,13 @@ export default async function GenrePage({ params }: PageProps) {
     const hour = getPart('hour');
     const minute = getPart('minute');
 
-    const lastUpdated = `${year}.${month}.${day}.(${weekday}) ${hour}:${minute} `;
+    const formattedTime = locale === 'ko' 
+        ? `${year}.${month}.${day}.(${weekday}) ${hour}:${minute}`
+        : `${month}/${day}/${year} (${weekday}) ${hour}:${minute}`;
 
-    // JSON-LD Structured Data (ItemList with Events)
-    // Limit to top 20 to avoid excessive HTML size
+    const lastUpdated = t('last_updated', { time: formattedTime });
+
+    // JSON-LD Structured Data
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
@@ -153,11 +161,11 @@ export default async function GenrePage({ params }: PageProps) {
             'item': {
                 '@type': 'Event',
                 'name': p.title,
-                'startDate': p.date, // Needs proper ISO formatting if possible, but string is okay for now
+                'startDate': p.date, 
                 'location': {
                     '@type': 'Place',
                     'name': p.venue,
-                    'address': (p as any).address || p.venue // Fallback
+                    'address': (p as any).address || p.venue 
                 },
                 'image': p.image,
                 'offers': {

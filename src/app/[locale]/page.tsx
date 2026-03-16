@@ -1,23 +1,39 @@
 import { getAllPerformances } from '@/lib/performance-data';
 import PerformanceList from '@/components/PerformanceList';
 import { Suspense } from 'react';
+import { getTranslations } from 'next-intl/server';
 
 // This function runs at build time on the server
 async function getPerformances() {
     return getAllPerformances();
 }
 
-export default async function Home() {
+interface PageProps {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+    return {
+        title: t('home_title'),
+        description: t('home_description'),
+    };
+}
+
+export default async function Home({ params }: PageProps) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Common' });
     const allPerformances = await getPerformances();
+    
     // Optimization: Only pass the first 24 items to the client for initial render
-    // The rest will be fetched via Infinite Scroll API
-    // We sort by Date Ascending (Upcoming) by default for consistency with API default
     const performaceFilter = await import('@/lib/performance-filter');
     const sorted = performaceFilter.sortPerformances(allPerformances, 'all');
     const performances = sorted.slice(0, 24);
 
     const now = new Date();
-    const formatter = new Intl.DateTimeFormat('ko-KR', {
+    const formatter = new Intl.DateTimeFormat(locale === 'ko' ? 'ko-KR' : 'en-US', {
         timeZone: 'Asia/Seoul',
         year: 'numeric',
         month: '2-digit',
@@ -38,7 +54,11 @@ export default async function Home() {
     const hour = getPart('hour');
     const minute = getPart('minute');
 
-    const lastUpdated = `${year}.${month}.${day}.(${weekday}) ${hour}:${minute} `;
+    const formattedTime = locale === 'ko' 
+        ? `${year}.${month}.${day}.(${weekday}) ${hour}:${minute}`
+        : `${month}/${day}/${year} (${weekday}) ${hour}:${minute}`;
+
+    const lastUpdated = t('last_updated', { time: formattedTime });
 
     return (
         <main className="min-h-screen bg-gray-900 light:bg-white pb-20">
