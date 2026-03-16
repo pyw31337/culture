@@ -28,15 +28,19 @@ const nextConfig: any = {
   env: {
     NEXT_PUBLIC_BASE_PATH: process.env.NODE_ENV === 'production' ? '/culture' : '',
   },
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development',
+  // Limit workers to prevent memory exhaustion during massive static generation
+  experimental: {
+    cpus: 4,
+    workerThreads: false,
   },
-  turbopack: {},
 };
 
-const withPWA = require('next-pwa');
+// Disable PWA temporarily due to compatibility issues with Next.js 16
+// const withPWA = require('next-pwa')({
+//   dest: 'public',
+//   register: true,
+//   skipWaiting: true,
+//   disable: process.env.NODE_ENV === 'development',
+// });
 
-export default withNextIntl(withPWA(nextConfig));
+export default withNextIntl(nextConfig);
