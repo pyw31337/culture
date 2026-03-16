@@ -195,36 +195,6 @@
     "cost": "무료"
   },
   {
-    "id": "perf_서울시립교향악단_2026_서울시향_니콜라이_루간스키의_쇼팽_피아노_협주곡_1번",
-    "title": "2026 서울시향 니콜라이 루간스키의 쇼팽 피아노 협주곡 1번 ①, ②",
-    "date": "2026.02.12 (목) ~ 2026.02.13 (금)",
-    "place": "예술의 전당",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=86fa4c1838204f3eb11fee223bd08ef1&thumb=Y",
-    "genre": "unknown",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156450&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=21",
-    "lastEnriched": "2026-02-03T17:01:12.315Z",
-    "runningTime": "[시간] 19:30",
-    "ageRating": "초등학생이상 관람가",
-    "price": "R 100,000 S 80,000 A 50,000 B 30,000 C 10,000",
-    "cost": "R 100,000 S 80,000 A 50,000 B 30,000 C 10,000"
-  },
-  {
-    "id": "perf_연극_방랑자",
-    "title": "연극 [방랑자]",
-    "date": "2026.02.05 (목) ~ 2026.02.13 (금)",
-    "place": "국립정동극장 세실",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=a6fa28fa30954a8d989c05312e15a948&thumb=Y",
-    "genre": "theater",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156578&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=21",
-    "lastEnriched": "2026-02-02T15:13:53.857Z",
-    "runningTime": "[시간] 월-화(19:30), 수(15:00,19:30), 목-금(19:30), 일(14:00,18:00)",
-    "ageRating": "만 15세이상",
-    "price": "전석 30,000원",
-    "cost": "전석 30,000원"
-  },
-  {
     "id": "perf_라율_영재_영아티스트_이윤하_바이올린_독주회",
     "title": "이윤하 바이올린 독주회",
     "date": "2026.03.14 (토) ~ 2026.02.14 (토)",
