@@ -10,6 +10,8 @@ import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { useSearchParams } from 'next/navigation';
 import { useRouter, Link, usePathname } from '@/navigation';
 import { useLocale, useTranslations } from 'next-intl';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, X as CloseIcon, Globe } from 'lucide-react';
 
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
@@ -52,6 +54,7 @@ export default function PerformanceList({
     categoryLabel
 }: PerformanceListProps) {
     const router = useRouter();
+    const pathname = usePathname();
     const locale = useLocale();
     const searchParams = useSearchParams();
     const t = useTranslations();
@@ -108,6 +111,7 @@ export default function PerformanceList({
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
     const [sharedPerf, setSharedPerf] = useState<Performance | null>(null);
+    const [showLanguageSheet, setShowLanguageSheet] = useState(false);
     const observerTarget = useRef<HTMLDivElement>(null);
     const deepLinkHandled = useRef(false);
 
@@ -180,13 +184,8 @@ export default function PerformanceList({
     }, [router, setPreserveFlag]);
 
     const handleLanguageToggle = useCallback(() => {
-        const supportedLocales = ['ko', 'en', 'zh', 'ja'];
-        const currentIndex = supportedLocales.indexOf(locale);
-        const nextLocale = supportedLocales[(currentIndex + 1) % supportedLocales.length];
-        
-        // Using the router from '@/navigation' which handles the locale prefix automatically
-        router.push(pathname, { locale: nextLocale });
-    }, [locale, router, pathname]);
+        setShowLanguageSheet(true);
+    }, []);
 
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
@@ -496,6 +495,95 @@ export default function PerformanceList({
                     setSearchLocation({ lat: res.lat, lng: res.lng, name: res.name });
                 }
             }} />
+
+            {/* Language Selection Sheet */}
+            <AnimatePresence>
+                {showLanguageSheet && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setShowLanguageSheet(false)}
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[6000]"
+                        />
+
+                        {/* Sheet */}
+                        <motion.div
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "100%" }}
+                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                            className="fixed bottom-0 left-0 right-0 z-[6010] bg-white dark:bg-[#121212] border-t border-black/5 dark:border-white/10 rounded-t-[32px] overflow-hidden flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.3)] touch-none"
+                        >
+                            {/* Header / Handle */}
+                            <div className="w-full flex flex-col items-center pt-3 pb-2 shrink-0">
+                                <div className="w-12 h-1.5 bg-gray-200 dark:bg-gray-800 rounded-full mb-4" />
+                                <div className="w-full px-6 flex items-center justify-between mb-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="p-2 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                                            <Globe size={20} />
+                                        </div>
+                                        <h3 className="text-xl font-black text-gray-900 dark:text-white">Language / 언어 설정</h3>
+                                    </div>
+                                    <button 
+                                        onClick={() => setShowLanguageSheet(false)}
+                                        className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+                                    >
+                                        <CloseIcon size={20} />
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="px-6 pb-12 pt-2 flex flex-col gap-3">
+                                {[
+                                    { id: 'ko', label: '한국어', sub: 'Korean', flag: '🇰🇷' },
+                                    { id: 'en', label: 'English', sub: '영어', flag: '🇺🇸' },
+                                    { id: 'zh', label: '简体中文', sub: 'Chinese', flag: '🇨🇳' },
+                                    { id: 'ja', label: '日本語', sub: 'Japanese', flag: '🇯🇵' }
+                                ].map((lang) => {
+                                    const isSelected = locale === lang.id;
+                                    return (
+                                        <button
+                                            key={lang.id}
+                                            onClick={() => {
+                                                router.push(pathname, { locale: lang.id as any });
+                                                setShowLanguageSheet(false);
+                                            }}
+                                            className={clsx(
+                                                "w-full flex items-center justify-between p-4 rounded-2xl border transition-all duration-200 group relative overflow-hidden",
+                                                isSelected 
+                                                    ? "bg-purple-50 dark:bg-purple-900/20 border-purple-200 dark:border-purple-800/50" 
+                                                    : "bg-gray-50 dark:bg-white/5 border-transparent hover:border-gray-200 dark:hover:border-white/10"
+                                            )}
+                                        >
+                                            <div className="flex items-center gap-4">
+                                                <span className="text-2xl">{lang.flag}</span>
+                                                <div className="flex flex-col text-left">
+                                                    <span className={clsx(
+                                                        "text-base font-bold transition-colors",
+                                                        isSelected ? "text-purple-600 dark:text-purple-400" : "text-gray-900 dark:text-gray-200"
+                                                    )}>
+                                                        {lang.label}
+                                                    </span>
+                                                    <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">{lang.sub}</span>
+                                                </div>
+                                            </div>
+                                            {isSelected && (
+                                                <div className="w-6 h-6 rounded-full bg-purple-600 dark:bg-purple-500 flex items-center justify-center text-white">
+                                                    <Check size={14} strokeWidth={4} />
+                                                </div>
+                                            )}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
 
             {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { setPreserveFlag(); router.push(`/map?genre=${selectedGenre}&lat=${venues[name]?.lat || 0}&lng=${venues[name]?.lng || 0}&venue=${encodeURIComponent(name)}`); }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
