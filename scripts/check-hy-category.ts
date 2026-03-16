@@ -17,7 +17,7 @@ async function checkCategory(url: string) {
             const crumbs = Array.from(document.querySelectorAll('.breadcrumb, [class*="category"], [class*="tag"]'));
             return {
                 text: document.body.innerText.includes('박물관/체험관'),
-                allTags: Array.from(document.querySelectorAll('span, a')).map(el => el.innerText.trim()).filter(t => t.length > 0 && t.length < 20).slice(0, 50)
+                allTags: Array.from(document.querySelectorAll('span, a')).map(el => (el as any).innerText.trim()).filter(t => t.length > 0 && t.length < 20).slice(0, 50)
             };
         });
         console.log(JSON.stringify(info, null, 2));
