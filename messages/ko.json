@@ -104,6 +104,54 @@
         "year": "제작년도",
         "director": "감독",
         "cast": "출연",
-        "runtime": "플레이타임"
+        "running_time": "관람시간"
+    },
+    "Calendar": {
+        "daily": "일간",
+        "weekly": "주간",
+        "monthly": "월간",
+        "today": "오늘",
+        "no_events": "일정이 없습니다",
+        "loading_more": "데이터를 더 불러오는 중...",
+        "more_events": "외 {count}건 더보기..."
+    },
+    "Detail": {
+        "schedule": "일정",
+        "location": "장소",
+        "venue": "장소",
+        "price": "가격",
+        "free": "무료",
+        "running_time": "관람시간",
+        "age_rating": "관람연령",
+        "director": "감독",
+        "cast": "출연",
+        "creators": "창작자",
+        "info": "정보",
+        "details": "상세 정보",
+        "production": "제작",
+        "share": "공유하기",
+        "save_calendar": "캘린더 저장",
+        "go_booking": "예매처 바로가기",
+        "data_source": "데이터 출처: {source} 외"
+    },
+    "EmptyState": {
+        "no_results": "검색 결과가 없습니다 😢",
+        "no_keyword_in_category": "'{keyword}' 키워드의 컨텐츠가 {category} 카테고리에서 발견되지 않았습니다.",
+        "no_upcoming_games": "예정된 경기 일정이 없습니다 🏖️",
+        "no_results_match_criteria": "조건에 맞는 결과가 없네요 😢",
+        "try_other_category_or_keyword": "전체 카테고리로 이동하거나 다른 검색어로 시도해보세요.",
+        "no_results_for_keyword": "'{keyword}'에 대한 검색 결과가 없습니다.",
+        "change_filters_or_try_other_keyword": "필터 조건을 변경하거나 다른 검색어로 시도해보세요.",
+        "clear_filters": "필터 초기화"
+    },
+    "Errors": {
+        "unexpected": "죄송합니다. 페이지를 불러오는 중 예기치 않은 오류가 발생했습니다.",
+        "critical": "시스템에 심각한 문제가 발생하여 앱을 불러올 수 없습니다.",
+        "retry": "다시 시도",
+        "home": "홈으로",
+        "not_found_title": "요청하신 페이지를 찾을 수 없습니다.",
+        "not_found_desc": "존재하지 않거나 삭제된 공연 정보일 수 있습니다.",
+        "go_home": "Culture Flow 홈으로 이동",
+        "temporary_error": "일시적인 오류가 발생했습니다. 다시 시도해 주세요."
     }
 }

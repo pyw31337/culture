@@ -8,6 +8,7 @@ import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
+import { useTranslations } from 'next-intl';
 
 interface PerformanceCardProps {
     perf: any;
@@ -53,7 +54,11 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
 
 HighlightText.displayName = 'HighlightText';
 
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = 'Recommended', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
+    const t = useTranslations('Actions');
+    const tc = useTranslations('Categories');
+    const ts = useTranslations('Search');
+
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false);
 
@@ -244,20 +249,20 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     </div>
                                 )}
 
-                                <div
-                                    className={clsx(
-                                        "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
-                                        variant === 'yellow'
-                                            ? "bg-black/80 text-yellow-500 border-yellow-500/30"
-                                            : variant === 'pink'
-                                                ? "bg-black/80 text-pink-500 border-pink-500/30"
-                                                : "bg-black/80 text-emerald-500 border-emerald-500/30"
-                                    )}
-                                    style={{ transform: 'translateZ(20px)' }}
-                                >
-                                    {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
-                                    {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
-                                </div>
+                                    <div
+                                        className={clsx(
+                                            "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
+                                            variant === 'yellow'
+                                                ? "bg-black/80 text-yellow-500 border-yellow-500/30"
+                                                : variant === 'pink'
+                                                    ? "bg-black/80 text-pink-500 border-pink-500/30"
+                                                    : "bg-black/80 text-emerald-500 border-emerald-500/30"
+                                        )}
+                                        style={{ transform: 'translateZ(20px)' }}
+                                    >
+                                        {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
+                                        {variant === 'yellow' ? t('alert') : variant === 'pink' ? t('likes') : t('saved_venue')}
+                                    </div>
 
                                 {enableActions && (
                                     <div className={clsx(
@@ -279,7 +284,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         >
                                             <Share2 className="w-5 h-5" />
                                             {isCopied && (
-                                                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-xs px-2 py-1 rounded">복사됨</div>
+                                                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-xs px-2 py-1 rounded">{t('copied')}</div>
                                             )}
                                         </button>
                                         <button
@@ -289,7 +294,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             }}
                                             className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
                                         >
-                                            자세히 보기
+                                            {t('view_detail')}
                                             <Search className="w-4 h-4" />
                                         </button>
                                     </div>
@@ -319,7 +324,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 <div className="mt-auto pt-2 border-t border-black/10 flex justify-between items-center text-black">
                                     <span className="text-white text-[10px] font-extrabold bg-black px-2 py-0.5 rounded">
-                                        {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
+                                        {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : perf.genre)}
                                     </span>
                                     {dDay && <span className="text-white text-[10px] font-black border border-white/30 px-2 rounded-full">{dDay}</span>}
                                     <span className="text-[12px] font-extrabold opacity-70">{formatUnifiedDate(perf.date)}</span>
@@ -375,14 +380,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             "px-3 py-1 rounded-full text-[10px] font-black backdrop-blur-md border shadow-sm transition-all text-white",
                                             GENRE_STYLES[perf.genre]?.twBg || (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
                                         )}>
-                                            {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
+                                            {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : perf.genre)}
                                         </span>
                                         {dDay && <span className="px-2 rounded-full text-[10px] font-black border border-white/30 text-white bg-transparent h-[24px] flex items-center">{dDay}</span>}
                                         <span className="text-[11px] text-gray-300 font-semibold">{formatUnifiedDate(perf.date)}</span>
                                     </div>
 
                                     <h2 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg">
-                                        <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
+                                        <HighlightText text={cleanTitle(perf.title) || ts('no_title')} keyword={searchText} />
                                     </h2>
 
                                     <div className="flex items-center gap-1 text-gray-300 text-xs font-semibold mt-1">
@@ -409,12 +414,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     return (
                                                         <div className="leading-none text-right">
                                                             {extracted.price === '무료' ? (
-                                                                <span className="text-xl font-black">무료</span>
+                                                                <span className="text-xl font-black">{ts('free')}</span>
                                                             ) : (
                                                                 <>
                                                                     {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
                                                                     <span className="text-xl font-black">{extracted.price}</span>
-                                                                    <span className="text-xs font-bold ml-0.5">원</span>
+                                                                    <span className="text-xs font-bold ml-0.5">{ts('won')}</span>
                                                                 </>
                                                             )}
                                                         </div>
@@ -441,13 +446,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             className="w-[20%] bg-white/5 hover:bg-white/20 text-white border border-white/10 py-3 rounded-[15px] flex items-center justify-center transition-all shadow-lg h-[50px] relative"
                                         >
                                             <Share2 className="w-5 h-5" />
-                                            {isCopied && <div className="absolute -top-10 bg-black text-xs px-2 py-1 rounded">복사됨</div>}
+                                            {isCopied && <div className="absolute -top-10 bg-black text-xs px-2 py-1 rounded">{t('copied')}</div>}
                                         </button>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); onDetail?.(perf); }}
                                             className="flex-1 bg-white ring-1 ring-white/20 text-black hover:bg-gray-200 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
                                         >
-                                            자세히 보기
+                                            {t('view_detail')}
                                             <Search className="w-4 h-4" />
                                         </button>
                                     </div>

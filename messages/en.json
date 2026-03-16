@@ -101,9 +101,56 @@
         "rating_label": "Rating",
         "subgenre": "Genre",
         "country": "Country",
-        "year": "Year",
         "director": "Director",
         "cast": "Cast",
-        "runtime": "Runtime"
+        "running_time": "Running Time"
+    },
+    "Calendar": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "today": "Today",
+        "no_events": "No events found",
+        "loading_more": "Loading more data...",
+        "more_events": "and {count} more..."
+    },
+    "Detail": {
+        "schedule": "Schedule",
+        "location": "Location",
+        "venue": "Venue",
+        "price": "Price",
+        "free": "Free",
+        "running_time": "Running Time",
+        "age_rating": "Age Rating",
+        "director": "Director",
+        "cast": "Cast",
+        "creators": "Creators",
+        "info": "Info",
+        "details": "Details",
+        "production": "Production",
+        "share": "Share",
+        "save_calendar": "Save to Calendar",
+        "go_booking": "Go to Booking",
+        "data_source": "Data Source: {source} and others"
+    },
+    "EmptyState": {
+        "no_results": "No results found 😢",
+        "no_keyword_in_category": "No content found for '{keyword}' in {category} category.",
+        "no_upcoming_games": "No upcoming games scheduled 🏖️",
+        "no_results_match_criteria": "No results match your criteria 😢",
+        "try_other_category_or_keyword": "Try other categories or different search terms.",
+        "no_results_for_keyword": "No results found for '{keyword}'.",
+        "change_filters_or_try_other_keyword": "Change filters or try different search terms.",
+        "clear_filters": "Clear Filters"
+    },
+    "Errors": {
+        "unexpected": "Sorry, an unexpected error occurred while loading the page.",
+        "critical": "A critical system error occurred and the app cannot be loaded.",
+        "retry": "Retry",
+        "home": "Go Home",
+        "not_found_title": "Page Not Found",
+        "not_found_desc": "The performance information may not exist or has been deleted.",
+        "go_home": "Go to Culture Flow Home",
+        "temporary_error": "A temporary error occurred. Please try again."
     }
 }

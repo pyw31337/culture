@@ -6,6 +6,7 @@ import ImageWithFallback from './ImageWithFallback';
 import { getOptimizedUrl, getDistrictFromAddress } from '@/lib/utils';
 import Image from 'next/image';
 import Portal from './ui/Portal';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface PerformanceDetailModalProps {
     performance: Performance;
@@ -18,6 +19,9 @@ interface PerformanceDetailModalProps {
 export default function PerformanceDetailModal({ performance, isOpen, onClose, onShare, onBooking }: PerformanceDetailModalProps) {
     if (!isOpen) return null;
 
+    const t = useTranslations('Detail');
+    const tc = useTranslations('Categories');
+    const locale = useLocale();
 
 
     // Helper to generate ICS file content
@@ -142,7 +146,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                 <div className="flex justify-between items-start mb-6">
                                     <div>
                                         <span className="inline-block px-2 py-1 rounded-md bg-white/10 text-white/70 text-xs font-black mb-3 border border-white/5">
-                                            {performance.genre.toUpperCase()}
+                                            {tc(performance.genre).toUpperCase()}
                                         </span>
                                         <h2 className="text-2xl md:text-3xl font-black text-white leading-tight mb-2 break-keep">
                                             {performance.title}
@@ -163,7 +167,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                     <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
                                         <Calendar className="w-5 h-5 text-indigo-400 mt-0.5 shrink-0" />
                                         <div>
-                                            <p className="text-xs text-gray-400 mb-0.5">일정</p>
+                                            <p className="text-xs text-gray-400 mb-0.5">{t('schedule')}</p>
                                             <p className="text-sm text-gray-200 font-bold">{performance.date}</p>
                                         </div>
                                     </div>
@@ -172,7 +176,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         <MapPin className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
                                         <div className="flex-1 flex items-center justify-between gap-4">
                                             <div>
-                                                <p className="text-xs text-gray-400 mb-0.5">장소</p>
+                                                <p className="text-xs text-gray-400 mb-0.5">{t('location')}</p>
                                                 <p className="text-sm text-gray-200 font-bold">{performance.venue}</p>
                                             </div>
                                             <span className="text-xs font-bold text-gray-500 shrink-0">
@@ -184,8 +188,8 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                     <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
                                         <Ticket className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
                                         <div className="flex-1">
-                                            <p className="text-xs text-gray-400 mb-0.5">가격</p>
-                                            <p className="text-sm text-gray-200 font-bold whitespace-pre-wrap">{performance.price || '무료'}</p>
+                                            <p className="text-xs text-gray-400 mb-0.5">{t('price')}</p>
+                                            <p className="text-sm text-gray-200 font-bold whitespace-pre-wrap">{performance.price || t('free')}</p>
                                         </div>
                                     </div>
 
@@ -195,7 +199,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                 <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
                                                     <Clock className="w-5 h-5 text-purple-400 mt-0.5 shrink-0" />
                                                     <div>
-                                                        <p className="text-xs text-gray-400 mb-0.5">관람시간</p>
+                                                        <p className="text-xs text-gray-400 mb-0.5">{t('running_time')}</p>
                                                         <p className="text-sm text-gray-200 font-bold">{performance.runningTime}</p>
                                                     </div>
                                                 </div>
@@ -204,7 +208,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                                 <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
                                                     <Tag className="w-5 h-5 text-rose-400 mt-0.5 shrink-0" />
                                                     <div>
-                                                        <p className="text-xs text-gray-400 mb-0.5">관람연령</p>
+                                                        <p className="text-xs text-gray-400 mb-0.5">{t('age_rating')}</p>
                                                         <p className="text-sm text-gray-200 font-bold">{performance.ageRating}</p>
                                                     </div>
                                                 </div>
@@ -219,7 +223,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {/* Director */}
                                         {performance.director && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-black mb-2">감독</h3>
+                                                <h3 className="text-gray-400 text-xs font-black mb-2">{t('director')}</h3>
                                                 <div className="flex flex-wrap gap-2">
                                                     <a
                                                         href={`https://search.naver.com/search.naver?query=${encodeURIComponent(performance.director.replace('더보기', '').trim())}`}
@@ -237,7 +241,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {
                                             performance.cast && performance.cast.length > 0 && (
                                                 <div>
-                                                    <h3 className="text-gray-400 text-xs font-black mb-2">출연</h3>
+                                                    <h3 className="text-gray-400 text-xs font-black mb-2">{t('cast')}</h3>
                                                     <div className="flex flex-wrap gap-2">
                                                         {performance.cast.map((actor: string | { name: string; url?: string }, idx: number) => {
                                                             const isObj = typeof actor === 'object';
@@ -268,7 +272,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {/* Crew / Creators */}
                                         {performance.crew && performance.crew.length > 0 && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-black mb-2">창작자</h3>
+                                                <h3 className="text-gray-400 text-xs font-black mb-2">{t('creators')}</h3>
                                                 <div className="flex flex-wrap gap-2">
                                                     {performance.crew.map((person: string, idx: number) => (
                                                         <a
@@ -289,7 +293,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {
                                             performance.movieInfo && (
                                                 <div>
-                                                    <h3 className="text-gray-400 text-xs font-black mb-2">정보</h3>
+                                                    <h3 className="text-gray-400 text-xs font-black mb-2">{t('info')}</h3>
                                                     <p className="text-sm text-gray-300 leading-relaxed">
                                                         {performance.movieInfo}
                                                     </p>
@@ -299,7 +303,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {/* Production Info (KOPIS) */}
                                         {performance.production && (
                                             <div>
-                                                <h3 className="text-gray-400 text-xs font-black mb-2">제작</h3>
+                                                <h3 className="text-gray-400 text-xs font-black mb-2">{t('production')}</h3>
                                                 <div className="text-sm text-gray-300 leading-relaxed bg-white/5 p-3 rounded-xl border border-white/5">
                                                     {performance.production}
                                                 </div>
@@ -310,7 +314,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         {
                                             performance.description && (
                                                 <div>
-                                                    <h3 className="text-gray-400 text-xs font-black mb-2">상세 정보</h3>
+                                                    <h3 className="text-gray-400 text-xs font-black mb-2">{t('details')}</h3>
                                                     <div className="text-sm text-gray-300 leading-relaxed whitespace-pre-line bg-white/5 p-4 rounded-xl border border-white/5">
                                                         {performance.description}
                                                     </div>
@@ -327,27 +331,27 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-bold hover:bg-white/10 transition-colors border border-white/10"
                                     >
                                         <Share2 size={18} />
-                                        공유하기
+                                        {t('share')}
                                     </button>
                                     <button
                                         onClick={generateICS}
                                         className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/5 text-white font-bold hover:bg-white/10 transition-colors border border-white/10"
                                     >
                                         <Download size={18} />
-                                        캘린더 저장
+                                        {t('save_calendar')}
                                     </button>
                                     <button
                                         onClick={onBooking}
                                         className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-indigo-600 text-white font-black hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20"
                                     >
                                         <ExternalLink size={20} />
-                                        예매처 바로가기
+                                        {t('go_booking')}
                                     </button>
                                 </div>
 
                                 {/* Footer Info */}
                                 <div className="mt-6 text-center text-[10px] text-gray-500">
-                                    데이터 출처: {performance.link.includes('interpark') ? '인터파크' : '서울문화포털'} 외
+                                    {t('data_source', { source: performance.link.includes('interpark') ? (locale === 'ko' ? '인터파크' : 'Interpark') : (locale === 'ko' ? '서울문화포털' : 'Seoul Culture Portal') })}
                                 </div>
                             </div >
                         </motion.div >

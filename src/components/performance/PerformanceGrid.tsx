@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import PerformanceCard from './PerformanceCard';
 import PerformanceListItem from './PerformanceListItem';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 
 interface PerformanceGridProps {
     items: any[];
@@ -48,6 +49,7 @@ export default function PerformanceGrid({
     searchMode = 'keyword',
     searchText
 }: PerformanceGridProps) {
+    const t = useTranslations('Search');
 
     return (
         <div
@@ -100,7 +102,7 @@ export default function PerformanceGrid({
                                 onToggleLike={onToggleLike}
                                 // Show ribbon for Nearby items
                                 showRibbon={isNearby}
-                                ribbonText="Nearby"
+                                ribbonText={t('nearby', { fallback: 'Nearby' })}
                                 isGradient={isNearby || (selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue')}
                                 enableActions={true}
                                 onShare={copyItemShareUrl}

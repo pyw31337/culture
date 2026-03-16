@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { Heart, Star, Search, Filter, Calendar, Zap, MapPin } from 'lucide-react';
 import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
@@ -33,6 +34,8 @@ export default function EmptyState({
     searchText
 }: EmptyStateProps) {
     const router = useRouter();
+    const t = useTranslations('EmptyState');
+    const tc = useTranslations('Categories');
 
     // Floating Animation Variant
     const floatVariant = {
@@ -126,20 +129,23 @@ export default function EmptyState({
                     <h3 className="text-2xl font-black text-white light:text-gray-900 mb-2">
                         {searchText ? (
                             selectedGenre !== 'all'
-                                ? <><span className="text-purple-400">'{searchText}'</span> 키워드의 컨텐츠가 <span className="text-emerald-400">{GENRES.find(g => g.id === selectedGenre)?.label || selectedGenre}</span> 카테고리에서 발견되지 않았습니다.</>
-                                : '검색 결과가 없습니다 😢'
+                                ? <>{t.rich('no_keyword_in_category', {
+                                    keyword: (chunks: any) => <span className="text-purple-400">'{searchText}'</span>,
+                                    category: (chunks: any) => <span className="text-emerald-400">{tc(selectedGenre)}</span>
+                                })}</>
+                                : t('no_results')
                         ) : (selectedGenre === 'baseball' || selectedGenre === 'soccer') ? (
-                            '예정된 경기 일정이 없습니다 🏖️'
+                            t('no_upcoming_games')
                         ) : (
-                            '조건에 맞는 결과가 없네요 😢'
+                            t('no_results_match_criteria')
                         )}
                     </h3>
                     <p className="text-gray-400 light:text-gray-500 mb-8 text-sm">
                         {searchText
                             ? selectedGenre !== 'all'
-                                ? '전체 카테고리로 이동하거나 다른 검색어로 시도해보세요.'
-                                : `'${searchText}'에 대한 검색 결과가 없습니다.`
-                            : '필터 조건을 변경하거나 다른 검색어로 시도해보세요.'}
+                                ? t('try_other_category_or_keyword')
+                                : t('no_results_for_keyword', { keyword: searchText })
+                            : t('change_filters_or_try_other_keyword')}
                     </p>
 
                     <div className="flex gap-3 mb-12">
@@ -150,7 +156,7 @@ export default function EmptyState({
                             setUserLocation(null);
                         }} className="px-6 py-2.5 rounded-full bg-gray-800 light:bg-white text-gray-300 light:text-gray-700 font-extrabold border border-gray-700 light:border-gray-300 hover:border-blue-500 hover:text-blue-400 light:hover:text-blue-600 transition-all flex items-center gap-2">
                             <Zap size={16} />
-                            필터 초기화
+                            {t('clear_filters')}
                         </button>
                     </div>
                 </>

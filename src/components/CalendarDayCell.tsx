@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslations } from 'next-intl';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
 import { GENRE_STYLES } from '@/lib/constants';
@@ -12,6 +13,7 @@ interface CalendarDayCellProps {
 }
 
 const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: CalendarDayCellProps) => {
+    const tc = useTranslations('Categories');
     const isCurrentMonth = isSameMonth(day, currentMonth);
     const isToday = isSameDay(day, new Date());
     const hasEvents = dayEvents.length > 0;
@@ -57,7 +59,7 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                     >
                         <span className={clsx("w-1.5 h-1.5 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
                         <span className="text-[11px] font-bold text-gray-900 dark:text-white truncate">
-                            {perf.title}
+                            {tc(perf.genre)} · {perf.title}
                         </span>
                     </a>
                 ))}

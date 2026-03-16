@@ -3,7 +3,8 @@
 import { useState, useRef, useMemo, useEffect } from 'react';
 import { Performance } from '@/types';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, addMonths, subMonths, addWeeks, subWeeks, addDays, subDays } from 'date-fns';
-import { ko } from 'date-fns/locale';
+import { ko, enUS } from 'date-fns/locale';
+import { useTranslations, useLocale } from 'next-intl';
 import { X, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
@@ -23,6 +24,11 @@ interface CalendarViewProps {
 type CalendarView = 'daily' | 'weekly' | 'monthly';
 
 export default function CalendarView({ performances: initialPerformances }: CalendarViewProps) {
+    const t = useTranslations('Calendar');
+    const tc = useTranslations('Categories');
+    const ta = useTranslations('Actions');
+    const locale = useLocale();
+    const dateLocale = locale === 'ko' ? ko : enUS;
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -227,19 +233,19 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                             else setCurrentMonth(subDays(currentMonth, 1));
                         }} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0"><ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" /></button>
 
-                        <span className="hidden sm:inline cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title="오늘로 이동">
+                        <span className="hidden sm:inline cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title={t('today')}>
                             {calendarView === 'daily'
-                                ? format(currentMonth, 'yyyy년 M월 d일 (eee)', { locale: ko })
+                                ? format(currentMonth, locale === 'ko' ? 'yyyy년 M월 d일 (eee)' : 'EEE, MMM d, yyyy', { locale: dateLocale })
                                 : calendarView === 'weekly'
                                     ? `${format(startOfWeek(currentMonth), 'M/d')} ~ ${format(endOfWeek(currentMonth), 'M/d')}`
-                                    : format(currentMonth, 'yyyy년 M월', { locale: ko })}
+                                    : format(currentMonth, locale === 'ko' ? 'yyyy년 M월' : 'MMM yyyy', { locale: dateLocale })}
                         </span>
-                        <span className="sm:hidden text-base truncate cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title="오늘로 이동">
+                        <span className="sm:hidden text-base truncate cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title={t('today')}>
                             {calendarView === 'daily'
-                                ? format(currentMonth, 'yy.MM.dd', { locale: ko })
+                                ? format(currentMonth, 'yy.MM.dd', { locale: dateLocale })
                                 : calendarView === 'weekly'
                                     ? `${format(startOfWeek(currentMonth), 'M/d')}~${format(endOfWeek(currentMonth), 'M/d')}`
-                                    : format(currentMonth, 'yy.MM', { locale: ko })}
+                                    : format(currentMonth, 'yy.MM', { locale: dateLocale })}
                         </span>
 
                         <button onClick={() => {
@@ -260,7 +266,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                         : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
                                 )}
                             >
-                                {v === 'daily' ? '일간' : v === 'weekly' ? '주간' : '월간'}
+                                {v === 'daily' ? t('daily') : v === 'weekly' ? t('weekly') : t('monthly')}
                             </button>
                         ))}
                         <button onClick={handleClose} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition ml-0 sm:ml-2 shrink-0">
@@ -322,7 +328,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                     <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 text-gray-400">
                                         <X size={32} />
                                     </div>
-                                    <p className="text-gray-500 text-lg font-bold">일정이 없습니다</p>
+                                    <p className="text-gray-500 text-lg font-bold">{t('no_events')}</p>
                                 </div>
                             );
                             return (
@@ -339,7 +345,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                             <div className="min-w-0 flex-1 flex flex-col justify-center">
                                                 <div className="flex items-center gap-2 mb-1.5">
                                                     <span className={clsx("px-2 py-0.5 rounded text-[10px] font-black tracking-wider text-white uppercase", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
-                                                        {GENRES.find(g => g.id === perf.genre)?.label}
+                                                        {tc(perf.genre)}
                                                     </span>
                                                     <span className="text-[11px] text-gray-500 font-bold truncate">{perf.venue}</span>
                                                 </div>
@@ -412,7 +418,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                             "text-[10px] sm:text-xs font-black uppercase tracking-tighter",
                                             idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-500 dark:text-gray-400"
                                         )}>
-                                            {format(day, 'eee', { locale: ko })}
+                                            {format(day, 'eee', { locale: dateLocale })}
                                         </span>
                                         <span className="text-xl sm:text-3xl font-black text-gray-900 dark:text-white leading-none mt-1">
                                             {format(day, 'd')}
@@ -441,10 +447,10 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                                 </a>
                                             ))}
                                             {dayEvents.length > 10 && (
-                                                <div className="text-[10px] text-gray-500 font-bold italic pl-4">외 {dayEvents.length - 10}건 더보기...</div>
+                                                <div className="text-[10px] text-gray-500 font-bold italic pl-4">{t('more_events', { count: dayEvents.length - 10 })}</div>
                                             )}
                                             {dayEvents.length === 0 && (
-                                                <div className="h-full flex items-center justify-center text-gray-300 dark:text-gray-700 font-black italic uppercase tracking-widest text-[10px]">No Events</div>
+                                                <div className="h-full flex items-center justify-center text-gray-300 dark:text-gray-700 font-black italic uppercase tracking-widest text-[10px]">{t('no_events')}</div>
                                             )}
                                         </div>
                                         <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0">
@@ -463,11 +469,14 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                 {calendarView === 'monthly' && (
                     <>
                         <div className="grid grid-cols-7 border-b border-gray-100 dark:border-gray-900 bg-gray-50 dark:bg-gray-950/50 shrink-0">
-                            {['일', '월', '화', '수', '목', '금', '토'].map((day, idx) => (
-                                <div key={day} className={clsx("py-3 text-center text-xs font-black uppercase tracking-widest", idx === 0 ? "text-red-500/80" : idx === 6 ? "text-blue-500/80" : "text-gray-400 dark:text-gray-500")}>
-                                    {day}
-                                </div>
-                            ))}
+                            {[0, 1, 2, 3, 4, 5, 6].map((dayIdx) => {
+                                const date = addDays(startOfWeek(new Date(), { weekStartsOn: 0 }), dayIdx);
+                                return (
+                                    <div key={dayIdx} className={clsx("py-3 text-center text-xs font-black uppercase tracking-widest", dayIdx === 0 ? "text-red-500/80" : dayIdx === 6 ? "text-blue-500/80" : "text-gray-400 dark:text-gray-500")}>
+                                        {format(date, 'eee', { locale: dateLocale })}
+                                    </div>
+                                );
+                            })}
                         </div>
 
                         <div className="grid grid-cols-7 flex-grow overflow-y-auto auto-rows-fr bg-gray-100 dark:bg-gray-900/50 gap-[1px]">

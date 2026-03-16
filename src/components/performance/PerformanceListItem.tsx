@@ -7,6 +7,7 @@ import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
+import { useTranslations } from 'next-intl';
 
 interface PerformanceListItemProps {
     perf: any;
@@ -49,6 +50,11 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
 HighlightText.displayName = 'HighlightText';
 
 function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceListItemProps) {
+    const t = useTranslations('Actions');
+    const tc = useTranslations('Categories');
+    const ts = useTranslations('Search');
+    const tm = useTranslations('MovieMetadata');
+
     const genreStyle = useMemo(() => GENRE_STYLES[perf.genre] || {}, [perf.genre]);
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -227,7 +233,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 exit={{ opacity: 0, scale: 0.8, y: 10 }}
                                 className="absolute bottom-8 left-1 bg-black/90 text-white text-[10px] font-extrabold px-2 py-1 round-md whitespace-nowrap border border-white/20 z-[200] shadow-xl"
                             >
-                                복사됨!
+                                {t('copied')}
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -251,7 +257,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 variant === 'yellow' ? "text-gray-400 light:text-black light:font-extrabold" : "text-gray-400 light:text-black"
                             )}>
                                 <Calendar className="w-3 h-3" />
-                                {perf.date ? perf.date.split('~')[0].trim() : '상시'}
+                                {perf.date ? perf.date.split('~')[0].trim() : tm('always')}
                             </span>
                         </div>
 
@@ -261,7 +267,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 searchMode === 'location' ? "group-hover/link:text-emerald-400" : "group-hover/link:text-[#a78bfa]",
                                 variant === 'yellow' ? "text-white light:text-black light:font-black" : "text-white light:text-black"
                             )}>
-                                <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
+                                <HighlightText text={cleanTitle(perf.title) || ts('no_title')} keyword={searchText} />
                             </h3>
                         </a>
 
@@ -272,7 +278,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
                                     ) : (
                                         <>
-                                            <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">등급</span>
+                                            <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">{tm('rating_label')}</span>
                                             {perf.grade || (typeof perf.venue === 'string' && perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim()) || perf.venue}
                                         </>
                                     )}
@@ -306,19 +312,19 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             <div className="flex flex-col gap-0.5 text-xs text-gray-400">
                                                 {perf.subGenre && (
                                                     <div>
-                                                        <span className="text-gray-500 light:text-gray-600 mr-1">장르:</span>
+                                                        <span className="text-gray-500 light:text-gray-600 mr-1">{tm('subgenre')}:</span>
                                                         <span className="text-gray-400 light:text-gray-900">{perf.subGenre}</span>
                                                     </div>
                                                 )}
                                                 {perf.productionCountry && (
                                                     <div>
-                                                        <span className="text-gray-500 light:text-gray-600 mr-1">제작국가:</span>
+                                                        <span className="text-gray-500 light:text-gray-600 mr-1">{tm('country')}:</span>
                                                         <span className="light:text-gray-900">{perf.productionCountry}</span>
                                                     </div>
                                                 )}
                                                 {perf.productionYear && (
                                                     <div>
-                                                        <span className="text-gray-500 light:text-gray-600 mr-1">제작년도:</span>
+                                                        <span className="text-gray-500 light:text-gray-600 mr-1">{tm('year')}:</span>
                                                         <span className="light:text-gray-900">{perf.productionYear}</span>
                                                     </div>
                                                 )}
@@ -327,7 +333,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
                                         {perf.director && (
                                             <div className="flex items-start gap-1">
-                                                <span className="text-gray-500 light:text-gray-600 min-w-[24px]">감독</span>
+                                                <span className="text-gray-500 light:text-gray-600 min-w-[24px]">{tm('director')}</span>
                                                 <span className="text-gray-300 light:text-black line-clamp-1">
                                                     {perf.director.split(',').map((d: string, i: number, arr: string[]) => (
                                                         <span key={i}>
@@ -349,7 +355,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
                                         {((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) && (
                                             <div className="flex items-start gap-1">
-                                                <span className="text-gray-500 light:text-gray-600 min-w-[24px]">출연</span>
+                                                <span className="text-gray-500 light:text-gray-600 min-w-[24px]">{tm('cast')}</span>
                                                 <span className="text-gray-300 light:text-black line-clamp-1">
                                                     {(perf.castWithLinks || perf.cast).map((c: any, i: number, arr: any[]) => {
                                                         const isObj = typeof c === 'object' && c !== null;
@@ -381,7 +387,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         {perf.runningTime && (
                                             <div className="flex flex-col gap-0.5 text-xs text-gray-400">
                                                 <div>
-                                                    <span className="text-gray-500 light:text-gray-600 mr-1">플레이타임:</span>
+                                                    <span className="text-gray-500 light:text-gray-600 mr-1">{tm('runtime')}:</span>
                                                     <span className="light:text-black">{perf.runningTime}</span>
                                                 </div>
                                             </div>
@@ -405,12 +411,12 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             return (
                                                 <div className="text-white light:text-black drop-shadow-md leading-none text-right">
                                                     {extracted.price === '무료' ? (
-                                                        <span className="text-lg font-black">무료</span>
+                                                        <span className="text-lg font-black">{ts('free')}</span>
                                                     ) : (
                                                         <>
                                                             {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
                                                             <span className="text-lg font-black">{extracted.price}</span>
-                                                            <span className="text-xs font-normal ml-0.5">원</span>
+                                                            <span className="text-xs font-normal ml-0.5">{ts('won')}</span>
                                                         </>
                                                     )}
                                                 </div>
@@ -430,7 +436,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     "light:border-0 light:bg-gray-100 light:text-gray-600 light:font-extrabold light:hover:bg-gray-200 light:hover:text-black"
                                 )}
                             >
-                                자세히 보기
+                                {t('view_detail')}
                                 <ChevronDown className="-rotate-90 w-3 h-3" />
                             </button>
                         </div>
