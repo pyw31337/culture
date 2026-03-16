@@ -12,7 +12,7 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
     const performances = await getAllPerformances();
-    const locales = ['en', 'ko'];
+    const locales = ['ko', 'en', 'zh', 'ja'];
     const params: { locale: string; id: string }[] = [];
 
     locales.forEach(locale => {

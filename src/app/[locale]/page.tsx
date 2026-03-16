@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-    return [{ locale: 'en' }, { locale: 'ko' }];
+    return [{ locale: 'ko' }, { locale: 'en' }, { locale: 'zh' }, { locale: 'ja' }];
 }
 
 export default async function Home({ params }: PageProps) {

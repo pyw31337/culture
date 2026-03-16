@@ -324,7 +324,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 <div className="mt-auto pt-2 border-t border-black/10 flex justify-between items-center text-black">
                                     <span className="text-white text-[10px] font-extrabold bg-black px-2 py-0.5 rounded">
-                                        {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : perf.genre)}
+                                        {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
                                     </span>
                                     {dDay && <span className="text-white text-[10px] font-black border border-white/30 px-2 rounded-full">{dDay}</span>}
                                     <span className="text-[12px] font-extrabold opacity-70">{formatUnifiedDate(perf.date)}</span>
@@ -380,7 +380,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             "px-3 py-1 rounded-full text-[10px] font-black backdrop-blur-md border shadow-sm transition-all text-white",
                                             GENRE_STYLES[perf.genre]?.twBg || (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
                                         )}>
-                                            {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : perf.genre)}
+                                            {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
                                         </span>
                                         {dDay && <span className="px-2 rounded-full text-[10px] font-black border border-white/30 text-white bg-transparent h-[24px] flex items-center">{dDay}</span>}
                                         <span className="text-[11px] text-gray-300 font-semibold">{formatUnifiedDate(perf.date)}</span>

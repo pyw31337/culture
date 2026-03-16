@@ -183,13 +183,10 @@ export default function PerformanceList({
         const supportedLocales = ['ko', 'en', 'zh', 'ja'];
         const currentIndex = supportedLocales.indexOf(locale);
         const nextLocale = supportedLocales[(currentIndex + 1) % supportedLocales.length];
-        const currentPathname = window.location.pathname;
         
-        // Replace current locale prefix with the next one
-        const newPathname = currentPathname.replace(/^\/(ko|en|zh|ja)/, `/${nextLocale}`);
-        
-        router.push(newPathname + window.location.search);
-    }, [locale, router]);
+        // Using the router from '@/navigation' which handles the locale prefix automatically
+        router.push(pathname, { locale: nextLocale });
+    }, [locale, router, pathname]);
 
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;

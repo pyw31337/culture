@@ -31,7 +31,7 @@ async function getPerformances(genreFilter: string | string[] | null) {
 
 // Generate static params for all valid genre slugs and locales
 export async function generateStaticParams() {
-    const locales = ['en', 'ko'];
+    const locales = ['ko', 'en', 'zh', 'ja'];
     const params: { locale: string; genre: string }[] = [];
 
     locales.forEach(locale => {
