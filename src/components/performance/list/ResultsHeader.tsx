@@ -1,6 +1,7 @@
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
 import { useTranslations } from 'next-intl';
+import { MapPin, Search, RotateCcw, ChevronDown } from 'lucide-react';
 
 interface ResultsHeaderProps {
     viewMode: string;
@@ -14,7 +15,14 @@ interface ResultsHeaderProps {
     onResetFilters: () => void;
     onRadiusChange: (val: number) => void;
 }
-
+const ResultsHeader = ({
+    viewMode,
+    activeLocation,
+    searchLocation,
+    searchText,
+    searchMode,
+    selectedGenre,
+    filteredCount,
     radius,
     onResetFilters,
     onRadiusChange

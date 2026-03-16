@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { AlertTriangle, Home, RefreshCcw } from 'lucide-react';
-import './globals.css'; // Attempt to load global styles if possible, otherwise rely on inline classes or basic Tailwind
+import './[locale]/globals.css'; // Attempt to load global styles if possible, otherwise rely on inline classes or basic Tailwind
 
 export default function GlobalError({
     error,
