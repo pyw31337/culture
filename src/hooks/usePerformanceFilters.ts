@@ -49,12 +49,30 @@ export function usePerformanceFilters({
         } catch { return 'all'; }
     });
     const [shuffleSeed, setShuffleSeed] = useState<number>(() => {
-        if (typeof window === 'undefined') return Date.now();
+        if (typeof window === 'undefined') return 0;
         try {
+            // Check if we are returning from a detail/map/calendar view
+            const shouldPreserve = sessionStorage.getItem('cf_preserve_order') === 'true';
+            
             const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).seed || Date.now() : Date.now()) as number;
+            const savedState = saved ? JSON.parse(saved) : null;
+
+            if (shouldPreserve && savedState?.seed) {
+                return savedState.seed;
+            }
+            
+            // Default: New seed for fresh entries/category changes
+            return Date.now();
         } catch { return Date.now(); }
     });
+
+    useEffect(() => {
+        // Clear the preserve flag after it has been consumed for initialization
+        if (typeof window !== 'undefined') {
+            sessionStorage.removeItem('cf_preserve_order');
+        }
+    }, []);
+
     const [visibleCount, setVisibleCount] = useState<number>(() => {
         if (typeof window === 'undefined') return 24;
         try {
@@ -154,18 +172,12 @@ export function usePerformanceFilters({
 
         const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
         if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre) && !debouncedSearchText) {
-            // Standardize on stable chronological sort to prevent list shuffling
-            return filtered.sort((a, b) => {
-                const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
-                const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
-                const dateCompare = dateA.localeCompare(dateB);
-                if (dateCompare !== 0) return dateCompare;
-                return a.title.localeCompare(b.title);
-            });
+            // Use seeded shuffle for general lists to provide "Discovery" experience
+            return sortPerformances(filtered, selectedGenre, debouncedSearchText, shuffleSeed);
         }
 
         return sortPerformances(filtered, selectedGenre, debouncedSearchText);
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, shuffleSeed]);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, shuffleSeed, venues]);
 
     // Pagination
     const displayPerformances = useMemo(() => {

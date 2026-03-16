@@ -12,9 +12,11 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
     const performances = await getAllPerformances();
-    return performances.map((p) => ({
-        id: p.id,
-    }));
+    return performances
+        .filter(p => p && p.id)
+        .map((p) => ({
+            id: String(p.id),
+        }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

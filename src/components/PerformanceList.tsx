@@ -156,10 +156,17 @@ export default function PerformanceList({
         router.push(`${path}?${params.toString()}`);
     }, [router, selectedGenre]);
 
+    const setPreserveFlag = useCallback(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('cf_preserve_order', 'true');
+        }
+    }, []);
+
     // --- Handlers ---
     const handleDetailOpen = useCallback((perf: Performance) => {
+        setPreserveFlag();
         router.push(`/p/${perf.id}/`);
-    }, [router]);
+    }, [router, setPreserveFlag]);
 
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
@@ -255,13 +262,14 @@ export default function PerformanceList({
     }, [allPerformances]);
 
     const handleOpenMap = useCallback(() => {
+        setPreserveFlag();
         if (searchMode === 'location' && activeLocation) {
             const venueName = 'name' in activeLocation ? (activeLocation as any).name : '내 위치';
             router.push(`/map?genre=${selectedGenre}&mode=location&lat=${activeLocation.lat}&lng=${activeLocation.lng}&venue=${encodeURIComponent(venueName)}`);
         } else {
             router.push(`/map?genre=${selectedGenre}`);
         }
-    }, [searchMode, activeLocation, selectedGenre, router]);
+    }, [searchMode, activeLocation, selectedGenre, router, setPreserveFlag]);
 
     return (
         <div className="min-h-screen bg-transparent text-white light:text-black">
@@ -386,7 +394,7 @@ export default function PerformanceList({
                         <LikedSections
                             viewMode={viewMode} allPerformances={allPerformances} likedIds={likedIds} favoriteVenues={favoriteVenues}
                             venues={venues} onToggleLike={toggleLike} onDetailOpen={handleDetailOpen} onSetSearchLocation={setSearchLocation}
-                            onVenuePreview={(loc) => { router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }} setIsMapOpen={handleOpenMap}
+                            onVenuePreview={(loc) => { setPreserveFlag(); router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }} setIsMapOpen={handleOpenMap}
                             copyItemShareUrl={copyItemShareUrl} selectedGenre={selectedGenre} searchMode={searchMode} searchText={searchText}
                             setShowFavoriteListModal={setShowFavoriteListModal} layoutMode={layoutMode}
                         />
@@ -403,7 +411,7 @@ export default function PerformanceList({
                             onToggleLike={toggleLike}
                             handleDetailOpen={handleDetailOpen}
                             setSearchLocation={setSearchLocation}
-                            onVenuePreview={(loc) => { router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }}
+                            onVenuePreview={(loc) => { setPreserveFlag(); router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }}
                             setIsMapOpen={handleOpenMap}
                             copyItemShareUrl={copyItemShareUrl}
                             selectedGenre={selectedGenre}
@@ -423,7 +431,7 @@ export default function PerformanceList({
             </main>
 
             {/* 4. Navigation & Modals */}
-            <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={() => { router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
+            <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={() => { setPreserveFlag(); router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
 
             <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} onVenueSelect={(v) => {
                 setSelectedVenue(v);
@@ -454,7 +462,7 @@ export default function PerformanceList({
                 }
             }} />
 
-            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { router.push(`/map?genre=${selectedGenre}&lat=${venues[name]?.lat || 0}&lng=${venues[name]?.lng || 0}&venue=${encodeURIComponent(name)}`); }} />}
+            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { setPreserveFlag(); router.push(`/map?genre=${selectedGenre}&lat=${venues[name]?.lat || 0}&lng=${venues[name]?.lng || 0}&venue=${encodeURIComponent(name)}`); }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
         </div>
     );

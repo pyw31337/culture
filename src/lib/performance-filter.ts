@@ -175,7 +175,23 @@ export function filterPerformances(performances: Performance[], options: FilterO
     return filtered;
 }
 
-export function sortPerformances(performances: Performance[], genre: string, searchText: string = ''): Performance[] {
+// Helper for seeded random to ensure consistent shuffling within a session
+function seededRandom(seed: number) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+}
+
+function shuffleWithSeed<T>(array: T[], seed: number): T[] {
+    const shuffled = [...array];
+    let s = seed;
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(seededRandom(s++) * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+export function sortPerformances(performances: Performance[], genre: string, searchText: string = '', shuffleSeed?: number): Performance[] {
     // 1. Sort copies of array
     let sorted = [...performances];
     const cleanSearch = searchText.replace(/\s+/g, '').toLowerCase().normalize('NFC');
@@ -186,7 +202,7 @@ export function sortPerformances(performances: Performance[], genre: string, sea
         return sorted.sort((a, b) => {
             const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
             const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
-            return dateB.localeCompare(dateA);
+            return dateB.localeCompare(dateA) || a.title.localeCompare(b.title);
         });
     }
 
@@ -202,7 +218,7 @@ export function sortPerformances(performances: Performance[], genre: string, sea
             // Normalize formats: "2026.03.04." vs "2026-12-31" -> "20260304" vs "20261231"
             const dateA = (a.dateRaw || a.date || '99991231').replace(/\D/g, '').padEnd(8, '0');
             const dateB = (b.dateRaw || b.date || '99991231').replace(/\D/g, '').padEnd(8, '0');
-            return dateA.localeCompare(dateB);
+            return dateA.localeCompare(dateB) || a.title.localeCompare(b.title);
         });
     }
 
@@ -241,8 +257,13 @@ export function sortPerformances(performances: Performance[], genre: string, sea
             const dateCompare = dateA.localeCompare(dateB);
             if (dateCompare !== 0) return dateCompare;
 
-            return a.id.localeCompare(b.id);
+            return a.title.localeCompare(b.title);
         });
+    }
+
+    // 3. SHUFFLE LOGIC (Default for generic lists if seed provided)
+    if (shuffleSeed !== undefined && shuffleSeed !== 0) {
+        return shuffleWithSeed(sorted, shuffleSeed);
     }
 
     // Default: Sort by Date Ascending (Upcoming)
@@ -254,6 +275,6 @@ export function sortPerformances(performances: Performance[], genre: string, sea
         const dateCompare = dateA.localeCompare(dateB);
         if (dateCompare !== 0) return dateCompare;
 
-        return a.id.localeCompare(b.id);
+        return a.title.localeCompare(b.title);
     });
 }

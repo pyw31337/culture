@@ -241,11 +241,13 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 {(() => {
                                     const isMovie = p.genre === 'movie';
                                     let movieRating = p.ageRating || p.age || p.venue || '';
-                                    if (movieRating) {
+                                    if (movieRating && typeof movieRating === 'string') {
                                         if (movieRating.includes('전체')) movieRating = '전체 관람가';
                                         else if (movieRating.includes('12')) movieRating = '12세 이상 관람가';
                                         else if (movieRating.includes('15')) movieRating = '15세 이상 관람가';
                                         else if (movieRating.includes('18') || movieRating.includes('청소년') || movieRating.includes('불가') || movieRating.includes('청불')) movieRating = '청소년 관람불가';
+                                    } else {
+                                        movieRating = '';
                                     }
 
                                     const infoItems = [];
@@ -333,15 +335,16 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     // Advanced KOPIS metadata with deduplication
-                                    const dedupeJoin = (items: { val?: string, label: string }[]) => {
-                                        const valid = items.filter(i => i.val && i.val.trim() !== '');
+                                    const dedupeJoin = (items: { val?: any, label: string }[]) => {
+                                        const valid = items.filter(i => typeof i.val === 'string' && i.val.trim() !== '');
                                         if (valid.length === 0) return '';
                                         
                                         // Group by identical values
                                         const groups: Record<string, string[]> = {};
                                         valid.forEach(i => {
-                                            if (!groups[i.val!]) groups[i.val!] = [];
-                                            groups[i.val!].push(i.label);
+                                            const v = String(i.val).trim();
+                                            if (!groups[v]) groups[v] = [];
+                                            groups[v].push(i.label);
                                         });
 
                                         return Object.entries(groups).map(([val, labels]) => 

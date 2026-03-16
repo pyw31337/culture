@@ -56,8 +56,8 @@ export function safePerformance(data: any): Performance | null {
         productionYear: typeof data.productionYear === 'string' || typeof data.productionYear === 'number' ? String(data.productionYear) : undefined,
 
         // Arrays
-
-        cast: Array.isArray(data.cast) ? data.cast.filter((c: any) => typeof c === 'string') : [],
+        cast: Array.isArray(data.cast) ? data.cast.map((c: any) => (typeof c === 'string' ? c : (c?.name ? String(c.name) : ''))).filter(Boolean) : [],
+        crew: Array.isArray(data.crew) ? data.crew.map((c: any) => String(c)).filter(Boolean) : [],
 
         // Other optionals
         director: typeof data.director === 'string' ? data.director : undefined,
@@ -107,6 +107,21 @@ export function safePerformance(data: any): Performance | null {
         revenue: (data.revenue !== undefined && data.revenue !== null) ? String(data.revenue) : undefined,
         budgetKRW: (data.budgetKRW !== undefined && data.budgetKRW !== null) ? String(data.budgetKRW) : undefined,
         revenueKRW: (data.revenueKRW !== undefined && data.revenueKRW !== null) ? String(data.revenueKRW) : undefined,
+
+        // Organizations
+        host: typeof data.host === 'string' ? data.host : undefined,
+        organizer: typeof data.organizer === 'string' ? data.organizer : undefined,
+        planner: typeof data.planner === 'string' ? data.planner : undefined,
+        producer: typeof data.producer === 'string' ? data.producer : undefined,
+        production: typeof data.production === 'string' ? data.production : undefined,
+        sponsor: typeof data.sponsor === 'string' ? data.sponsor : undefined,
+
+        // Price List
+        priceList: Array.isArray(data.priceList) ? data.priceList.map((item: any) => ({
+            label: typeof item.label === 'string' ? item.label : String(item.label || ''),
+            price: typeof item.price === 'string' ? item.price : String(item.price || ''),
+            discount: typeof item.discount === 'string' ? item.discount : undefined
+        })).filter((i: any) => i.label || i.price) : undefined,
     };
 }
 

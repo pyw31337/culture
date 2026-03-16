@@ -90,6 +90,21 @@ export function getAllPerformances() {
     const venues = cachedVenues;
     const cinemas = cachedCinemas;
 
+    // 0. Primary Optimization: Load pre-generated static data if available
+    const staticPath = path.join(process.cwd(), 'public/data/performances.json');
+    if (fs.existsSync(staticPath)) {
+        try {
+            const staticContent = fs.readFileSync(staticPath, 'utf8');
+            cachedPerformances = JSON.parse(staticContent);
+            console.log(`[STABILITY] Loaded ${cachedPerformances?.length} items from static cache: ${staticPath}`);
+            return cachedPerformances!;
+        } catch (e) {
+            console.warn(`[STABILITY] Failed to load static performances.json from ${staticPath}, falling back to merge.`, e);
+        }
+    } else {
+        console.log(`[STABILITY] Static cache not found at ${staticPath}. Proceeding with data merge...`);
+    }
+
     // 1. Load and Transform all data sources
     const allSources: { file: string, source?: string }[] = [
         { file: 'interpark.json', source: 'interpark' },
