@@ -5,7 +5,7 @@ import { Heart, Star, MapPin, Calendar, Share2, Search, Film } from 'lucide-reac
 import BuildingStadium from '../BuildingStadium';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
+import { extractFirstPrice, cleanTitle, formatUnifiedDate, translateContent } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { useTranslations } from 'next-intl';
@@ -58,6 +58,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const t = useTranslations('Actions');
     const tc = useTranslations('Categories');
     const ts = useTranslations('Search');
+    const td = useTranslations('Data');
 
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false);
@@ -306,7 +307,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500"
                             )}>
                                 <h3 className="font-extrabold text-lg text-black mb-1 line-clamp-2">
-                                    <HighlightText text={cleanTitle(perf.title)} keyword={searchText} />
+                                    <HighlightText text={translateContent(cleanTitle(perf.title), td)} keyword={searchText} />
                                 </h3>
 
                                 <div className="text-gray-800 text-sm flex items-center gap-1 mb-2">
@@ -318,7 +319,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         }}
                                         className="truncate hover:underline"
                                     >
-                                        <HighlightText text={perf.venue} keyword={searchText} />
+                                        <HighlightText text={translateContent(perf.venue, td)} keyword={searchText} />
                                     </button>
                                 </div>
 
@@ -327,7 +328,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
                                     </span>
                                     {dDay && <span className="text-white text-[10px] font-black border border-white/30 px-2 rounded-full">{dDay}</span>}
-                                    <span className="text-[12px] font-extrabold opacity-70">{formatUnifiedDate(perf.date)}</span>
+                                    <span className="text-[12px] font-extrabold opacity-70">{formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}</span>
                                 </div>
                             </div>
                         </>
@@ -383,11 +384,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
                                         </span>
                                         {dDay && <span className="px-2 rounded-full text-[10px] font-black border border-white/30 text-white bg-transparent h-[24px] flex items-center">{dDay}</span>}
-                                        <span className="text-[11px] text-gray-300 font-semibold">{formatUnifiedDate(perf.date)}</span>
+                                        <span className="text-[11px] text-gray-300 font-semibold">{formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}</span>
                                     </div>
 
                                     <h2 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg">
-                                        <HighlightText text={cleanTitle(perf.title) || ts('no_title')} keyword={searchText} />
+                                        <HighlightText text={translateContent(cleanTitle(perf.title), td) || ts('no_title')} keyword={searchText} />
                                     </h2>
 
                                     <div className="flex items-center gap-1 text-gray-300 text-xs font-semibold mt-1">
@@ -397,7 +398,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             <MapPin className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
                                         )}
                                         <button onClick={(e) => { e.stopPropagation(); onLocationClick?.({ lat: venueInfo?.lat, lng: venueInfo?.lng, name: perf.venue }); }} className="truncate hover:underline">
-                                            <HighlightText text={perf.venue || 'Online'} keyword={searchText} />
+                                            <HighlightText text={translateContent(perf.venue, td) || 'Online'} keyword={searchText} />
                                         </button>
                                     </div>
 

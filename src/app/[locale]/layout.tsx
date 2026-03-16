@@ -114,7 +114,7 @@ export default async function RootLayout({
           `}
         </Script>
         <ProgressBarProvider>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
             <ErrorBoundary>
               {children}
               <InstallApp />

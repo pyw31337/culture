@@ -170,7 +170,7 @@ export function getLowResUrl(url: string): string | null {
 }
 
 // Unified Date Formatter: YYYY.MM.DD (E) HH:mm or YYYY.MM.DD (E) for ranges
-export function formatUnifiedDate(dateStr: string): string {
+export function formatUnifiedDate(dateStr: string, locale: string = 'ko'): string {
     if (!dateStr) return '';
     try {
         let cleanStr = dateStr;
@@ -185,38 +185,19 @@ export function formatUnifiedDate(dateStr: string): string {
         if (cleanStr.includes('~')) {
             const parts = cleanStr.split('~').map(s => s.trim()).filter(Boolean);
             if (parts.length > 1) {
-                const formattedParts = parts.map(p => formatSingleDateInternal(p));
+                const formattedParts = parts.map(p => formatSingleDateInternal(p, locale));
 
                 if (formattedParts[0] === formattedParts[1]) {
                     return formattedParts[0];
                 }
 
-                const dateMatch0 = formattedParts[0].match(/^(\d{4}\.\d{2}\.\d{2} \([가-힣]\))(?: (\d{2}:\d{2}))?$/);
-                const dateMatch1 = formattedParts[1].match(/^(\d{4}\.\d{2}\.\d{2} \([가-힣]\))(?: (\d{2}:\d{2}))?$/);
-
-                if (dateMatch0 && dateMatch1 && dateMatch0[1] === dateMatch1[1]) {
-                    const baseDate = dateMatch0[1];
-                    const time0 = dateMatch0[2];
-                    const time1 = dateMatch1[2];
-
-                    if (time0 && time1) {
-                        return `${baseDate} ${time0} ~ ${time1}`;
-                    } else if (time0) {
-                        return `${baseDate} ${time0}`;
-                    } else if (time1) {
-                        return `${baseDate} ${time1}`;
-                    } else {
-                        return baseDate;
-                    }
-                }
-
                 return formattedParts.join(' ~ ');
             } else if (parts.length === 1 && cleanStr.startsWith('~')) {
-                return `~ ${formatSingleDateInternal(parts[0])}`;
+                return `~ ${formatSingleDateInternal(parts[0], locale)}`;
             }
         }
 
-        return formatSingleDateInternal(cleanStr);
+        return formatSingleDateInternal(cleanStr, locale);
     } catch {
         return dateStr;
     }
@@ -225,7 +206,7 @@ export function formatUnifiedDate(dateStr: string): string {
 /**
  * Internal helper to format a single date string (used for ranges too)
  */
-function formatSingleDateInternal(str: string): string {
+function formatSingleDateInternal(str: string, localeCode: string): string {
     if (!str) return '';
 
     // Normalize dots to dashes for parsing
@@ -258,11 +239,12 @@ function formatSingleDateInternal(str: string): string {
 
     if (isValid(parsedDate)) {
         const hasTime = str.includes(':');
+        const dateLocale = localeCode === 'en' ? undefined : (localeCode === 'ja' ? require('date-fns/locale').ja : (localeCode === 'zh' ? require('date-fns/locale').zhCN : require('date-fns/locale').ko));
+        
         if (hasTime) {
-            return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: ko });
+            return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: dateLocale });
         } else {
-            // No time in original string -> omit HH:mm
-            return format(parsedDate, 'yyyy.MM.dd (E)', { locale: ko });
+            return format(parsedDate, 'yyyy.MM.dd (E)', { locale: dateLocale });
         }
     }
 
@@ -306,4 +288,42 @@ export function toMobileUrl(url: string | undefined): string {
     } catch {
         return url || '';
     }
+}
+
+/**
+ * Simple content translation helper using Data namespace mappings
+ */
+export function translateContent(text: string, tData: any): string {
+    if (!text || !tData) return text;
+
+    let translated = text;
+    
+    // Mapping keys from Data namespace
+    const mapping: Record<string, string> = {
+        '서울': 'seoul',
+        '경기': 'gyeonggi',
+        '박물관': 'museum',
+        '아트홀': 'art_hall',
+        '콘서트홀': 'concert_hall',
+        '극장': 'theater',
+        '경기장': 'stadium',
+        '센터': 'center',
+        '예술의전당': 'arts_center',
+        '무료': 'free',
+        '원': 'won'
+    };
+
+    // Replace based on mapping
+    Object.entries(mapping).forEach(([kr, key]) => {
+        try {
+            if (tData.has(key)) {
+                const regex = new RegExp(kr, 'g');
+                translated = translated.replace(regex, tData(key));
+            }
+        } catch (e) {
+            // Ignore errors for specific items
+        }
+    });
+
+    return translated;
 }

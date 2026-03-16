@@ -33,7 +33,8 @@
         "basketball": "篮球",
         "baseball": "棒球",
         "soccer": "足球",
-        "handball": "手球"
+        "handball": "手球",
+        "theater": "话剧"
     },
     "Regions": {
         "all": "全国",
@@ -166,5 +167,18 @@
         "not_found_desc": "演出信息可能不存在或已被删除。",
         "go_home": "前往 Culture Flow 首页",
         "temporary_error": "发生临时错误。请稍后重试。"
+    },
+    "Data": {
+        "museum": "博物馆",
+        "art_hall": "艺术厅",
+        "concert_hall": "音乐厅",
+        "theater": "剧院",
+        "stadium": "体育场",
+        "center": "中心",
+        "arts_center": "艺术中心",
+        "seoul": "首尔",
+        "gyeonggi": "京畿",
+        "free": "免费",
+        "won": "韩元"
     }
 }

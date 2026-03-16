@@ -33,7 +33,8 @@
         "basketball": "バスケットボール",
         "baseball": "野球",
         "soccer": "サッカー",
-        "handball": "ハンドボール"
+        "handball": "ハンドボール",
+        "theater": "演劇"
     },
     "Regions": {
         "all": "全国",
@@ -166,5 +167,18 @@
         "not_found_desc": "存在しないか、削除された公演情報の可能性があります。",
         "go_home": "Culture Flow ホームへ移動",
         "temporary_error": "一時的なエラーが発生しました。もう一度お試しください。"
+    },
+    "Data": {
+        "museum": "博物館",
+        "art_hall": "アートホール",
+        "concert_hall": "コンサートホール",
+        "theater": "劇場",
+        "stadium": "スタジアム",
+        "center": "センター",
+        "arts_center": "芸術の殿堂",
+        "seoul": "ソウル",
+        "gyeonggi": "京畿",
+        "free": "無料",
+        "won": "ウォン"
     }
 }

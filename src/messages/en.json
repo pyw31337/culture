@@ -33,7 +33,8 @@
         "basketball": "Basketball",
         "baseball": "Baseball",
         "soccer": "Soccer",
-        "handball": "Handball"
+        "handball": "Handball",
+        "theater": "Theater"
     },
     "Regions": {
         "all": "All Regions",
@@ -165,5 +166,18 @@
         "not_found_desc": "The performance information may not exist or has been deleted.",
         "go_home": "Go to Culture Flow Home",
         "temporary_error": "A temporary error occurred. Please try again."
+    },
+    "Data": {
+        "museum": "Museum",
+        "art_hall": "Art Hall",
+        "concert_hall": "Concert Hall",
+        "theater": "Theater",
+        "stadium": "Stadium",
+        "center": "Center",
+        "arts_center": "Arts Center",
+        "seoul": "Seoul",
+        "gyeonggi": "Gyeonggi",
+        "free": "Free",
+        "won": "Won"
     }
 }

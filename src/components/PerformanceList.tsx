@@ -458,7 +458,7 @@ export default function PerformanceList({
                     {!isDataFullyLoaded && (
                         <div className="flex justify-center py-12">
                             <Loader2 className="animate-spin text-purple-500" />
-                            <span className="ml-3 text-gray-400">{locale === 'ko' ? '데이터를 불러오는 중...' : 'Loading data...'}</span>
+                            <span className="ml-3 text-gray-400">{locale === 'ko' ? '데이터를 불러오는 중...' : (locale === 'ja' ? 'データを読み込んでいます...' : (locale === 'zh' ? '正在加载数据...' : 'Loading data...'))}</span>
                         </div>
                     )}
                 </div>
@@ -549,6 +549,7 @@ export default function PerformanceList({
                                         <button
                                             key={lang.id}
                                             onClick={() => {
+                                                // Ensure the pathname is clean (next-intl should handle this, but explicit is safer)
                                                 router.push(pathname, { locale: lang.id as any });
                                                 setShowLanguageSheet(false);
                                             }}
