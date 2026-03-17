@@ -525,7 +525,7 @@ export default function PerformanceList({
                                         <div className="p-2 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
                                             <Globe size={20} />
                                         </div>
-                                        <h3 className="text-xl font-black text-gray-900 dark:text-white">Language / 언어 설정</h3>
+                                        <h3 className="text-xl font-black text-gray-900 dark:text-white">{ta('language_change')}</h3>
                                     </div>
                                     <button 
                                         onClick={() => setShowLanguageSheet(false)}

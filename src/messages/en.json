@@ -73,7 +73,8 @@
         "search_this_area": "Search This Area",
         "search_location": "Search Location",
         "geo_not_supported": "Geolocation is not supported by this browser.",
-        "geo_error": "Could not get your location. Please check your permissions."
+        "geo_error": "Could not get your location. Please check your permissions.",
+        "reset_filter_title": "Reset filter"
     },
     "Actions": {
         "book": "Book Now",
@@ -114,6 +115,7 @@
         "rating_label": "Rating",
         "subgenre": "Genre",
         "country": "Country",
+        "year": "Year",
         "director": "Director",
         "cast": "Cast",
         "running_time": "Running Time"
@@ -155,7 +157,13 @@
         "try_other_category_or_keyword": "Try other categories or different search terms.",
         "no_results_for_keyword": "No results found for '{keyword}'.",
         "change_filters_or_try_other_keyword": "Change filters or try different search terms.",
-        "clear_filters": "Clear Filters"
+        "clear_filters": "Clear Filters",
+        "no_likes": "No liked content",
+        "no_likes_desc": "Tap the heart icon when you find content or exhibitions you like.\nCreate your own cultural list! 💝",
+        "browse_performances": "Browse Performances",
+        "no_favorite_venues": "No favorite venues",
+        "no_favorite_venues_desc": "Add your favorite venues or places you visit often.\nCheck nearby restaurants and ticket news faster. 🏟️",
+        "browse_contents": "Browse Contents"
     },
     "Errors": {
         "unexpected": "Sorry, an unexpected error occurred while loading the page.",

@@ -17,6 +17,7 @@
     "validate:images": "npx tsx scripts/validate-images.ts"
   },
   "dependencies": {
+    "@iamtraction/google-translate": "^2.0.1",
     "@types/sharp": "^0.31.1",
     "axios": "^1.13.2",
     "cheerio": "^1.2.0",
@@ -32,7 +33,7 @@
     "next-intl": "^4.8.3",
     "next-nprogress-bar": "^2.4.7",
     "next-pwa": "^2.0.2",
-    "p-limit": "^7.2.0",
+    "p-limit": "^4.0.0",
     "puppeteer": "^19.8.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",

@@ -73,7 +73,8 @@
         "search_this_area": "在该区域重新搜索",
         "search_location": "搜索位置",
         "geo_not_supported": "此浏览器不支持地理位置服务。",
-        "geo_error": "无法获取位置。请检查位置权限。"
+        "geo_error": "无法获取位置。请检查位置权限。",
+        "reset_filter_title": "重置筛选"
     },
     "Actions": {
         "book": "前往预订",
@@ -156,7 +157,13 @@
         "try_other_category_or_keyword": "移动到全部类别或尝试其他搜索词。",
         "no_results_for_keyword": "没有关于 '{keyword}' 的搜索结果。",
         "change_filters_or_try_other_keyword": "更改筛选条件或尝试其他搜索词。",
-        "clear_filters": "重置筛选"
+        "clear_filters": "重置筛选",
+        "no_likes": "没有喜欢的内​​容",
+        "no_likes_desc": "如果您发现喜欢的内容或展览，请按下心形图标。\n创建您自己的文化列表！💝",
+        "browse_performances": "浏览演出",
+        "no_favorite_venues": "没有收藏的场馆",
+        "no_favorite_venues_desc": "为您最喜欢的场所或经常访问的地方添加书签。\n更快地查看附近的餐厅和门票新闻。🏟️",
+        "browse_contents": "浏览内容"
     },
     "Errors": {
         "unexpected": "抱歉，加载页面时发生了意外错误。",

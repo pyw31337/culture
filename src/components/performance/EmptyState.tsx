@@ -79,13 +79,12 @@ export default function EmptyState({
                         <Heart className="w-12 h-12 text-pink-500/60 fill-pink-500/10" />
                         <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-pink-500 animate-pulse" />
                     </motion.div>
-                    <h3 className="text-2xl font-extrabold text-pink-500 mb-2">좋아요한 컨텐츠가 없어요</h3>
+                    <h3 className="text-2xl font-extrabold text-pink-500 mb-2">{t('no_likes')}</h3>
                     <p className="text-gray-400 light:text-gray-600 mb-6 font-semibold">
-                        마음에 드는 컨텐츠나 전시를 발견하면 하트를 눌러보세요.<br />
-                        나만의 문화 리스트가 만들어집니다! 💝
+                        {t.rich('no_likes_desc', { br: () => <br /> })}
                     </p>
                     <Link href="/" className="px-8 py-3 rounded-xl bg-pink-500 text-white font-extrabold hover:bg-pink-600 transition-all shadow-lg hover:shadow-pink-500/30">
-                        공연 둘러보기
+                        {t('browse_performances')}
                     </Link>
                 </>
             ) : viewMode === 'likes-venue' ? (
@@ -98,16 +97,15 @@ export default function EmptyState({
                         <Star className="w-12 h-12 text-emerald-500/60 fill-emerald-500/10" />
                         <div className="absolute top-0 left-0 w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
                     </motion.div>
-                    <h3 className="text-2xl font-extrabold text-emerald-500 mb-2">찜한 공연장이 없어요</h3>
+                    <h3 className="text-2xl font-extrabold text-emerald-500 mb-2">{t('no_favorite_venues')}</h3>
                     <p className="text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed">
-                        자주 가는 공연장이나 관심 있는 장소를 찜해보세요.<br />
-                        주변 맛집이나 티켓 오픈 소식을 더 빠르게 확인할 수 있습니다. 🏟️
+                        {t.rich('no_favorite_venues_desc', { br: () => <br /> })}
                     </p>
                     <button
                         onClick={() => { setSelectedRegion('all'); setSelectedDistrict('all'); setSearchText(''); }}
                         className="bg-purple-600/20 text-purple-400 light:bg-purple-600 light:text-white px-6 py-3 rounded-xl hover:bg-purple-500/30 font-extrabold transition-all border border-purple-500/30"
                     >
-                        컨텐츠 둘러보기
+                        {t('browse_contents')}
                     </button>
                 </>
             ) : (

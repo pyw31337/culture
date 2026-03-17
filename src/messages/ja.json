@@ -73,7 +73,8 @@
         "search_this_area": "このエリアで再検索",
         "search_location": "検索場所",
         "geo_not_supported": "このブラウザは位置情報サービスをサポートしていません。",
-        "geo_error": "位置情報を取得できません。位置情報の権限を確認してください。"
+        "geo_error": "位置情報を取得できません。位置情報の権限を確認してください。",
+        "reset_filter_title": "検索条件をリセット"
     },
     "Actions": {
         "book": "予約サイトへ",
@@ -156,7 +157,13 @@
         "try_other_category_or_keyword": "全カテゴリーに移動するか、別のキーワードで検索してください。",
         "no_results_for_keyword": "'{keyword}' に対する検索結果がありません。",
         "change_filters_or_try_other_keyword": "フィルター条件を変更するか、別のキーワードで検索してください。",
-        "clear_filters": "フィルター解除"
+        "clear_filters": "フィルター解除",
+        "no_likes": "いいねしたコンテンツがありません",
+        "no_likes_desc": "お気に入りのコンテンツや展示を見つけたら、ハートを押してみてください。\nあなただけの文化リストが作られます！💝",
+        "browse_performances": "公演を見る",
+        "no_favorite_venues": "お気に入り会場がありません",
+        "no_favorite_venues_desc": "よく行く会場や気になる場所をお気に入りに追加してみてください。\n周辺の飲食店やチケットの情報をより速く確認できます。🏟️",
+        "browse_contents": "コンテンツを見る"
     },
     "Errors": {
         "unexpected": "申し訳ありません。ページの読み込み中に予期しないエラーが発生しました。",

@@ -45,7 +45,7 @@ const ResultsHeader = ({
                                 <button
                                     onClick={onResetFilters}
                                     className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 group/reload"
-                                    title="지역 설정 초기화"
+                                    title={t('reset_filter_title')}
                                 >
                                     <RotateCcw className="w-4 h-4" />
                                 </button>
