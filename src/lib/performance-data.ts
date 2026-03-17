@@ -4,6 +4,7 @@ import { transformPerformance } from '@/lib/data-transformer';
 
 import fs from 'fs';
 import path from 'path';
+import { cleanAddress } from '../../scripts/utils/data-cleaner';
 
 function loadJSON(filename: string, defaultValue: any = []) {
     try {
@@ -136,14 +137,20 @@ export function getAllPerformances(locale: string = 'ko', forceFresh: boolean = 
         { file: 'tourism.json', source: 'tourism' },
     ];
 
-    const allPerformances = allSources.flatMap(({ file, source }) => {
-        const data = loadJSON(file);
-        const rawItems = safeArray<any>(data);
-        if (rawItems.length > 0) {
-            console.log(`[DEBUG] Source: ${source}, Raw items: ${rawItems.length}`);
+const allPerformances = allSources.flatMap(({ file, source }) => {
+    const data = loadJSON(file);
+    const rawItems = safeArray<any>(data);
+    if (rawItems.length > 0) {
+        console.log(`[DEBUG] Source: ${source}, Raw items: ${rawItems.length}`);
+    }
+    return rawItems.map(p => {
+        const transformed = transformPerformance(p, source);
+        if (transformed.address) {
+            transformed.address = cleanAddress(transformed.address);
         }
-        return rawItems.map(p => transformPerformance(p, source));
+        return transformed;
     });
+});
 
     // 3. Filter
     const now = new Date();

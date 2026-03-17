@@ -8,6 +8,7 @@ puppeteer.use(StealthPlugin());
 
 const MOMMOM_PATH = path.resolve(process.cwd(), 'src/data/mommom.json');
 const MUSEUM_PATH = path.resolve(process.cwd(), 'src/data/museum.json');
+const MOCHA_PATH = path.resolve(process.cwd(), 'src/data/mochaclass.json');
 
 async function geocode(address: string, browser: any) {
     const page = await browser.newPage();
@@ -89,6 +90,26 @@ async function main() {
         }
         if (count > 0) fs.writeFileSync(MUSEUM_PATH, JSON.stringify(data, null, 2));
         console.log(`Geocoded ${count} items in museum.json`);
+    }
+
+    // Process MochaClass
+    if (fs.existsSync(MOCHA_PATH)) {
+        const data = JSON.parse(fs.readFileSync(MOCHA_PATH, 'utf8'));
+        let count = 0;
+        for (let item of data) {
+            if ((!item.latitude || item.latitude === 0 || !item.lat || item.lat === 0) && item.address && item.address.length > 5 && !item.address.includes('미국')) {
+                console.log(`Geocoding MochaClass: ${item.title} (${item.address})`);
+                const coords = await geocode(item.address, browser);
+                if (coords) {
+                    item.latitude = coords.lat;
+                    item.longitude = coords.lng;
+                    count++;
+                }
+                await new Promise(r => setTimeout(r, 1000));
+            }
+        }
+        if (count > 0) fs.writeFileSync(MOCHA_PATH, JSON.stringify(data, null, 2));
+        console.log(`Geocoded ${count} items in mochaclass.json`);
     }
 
     await browser.close();
