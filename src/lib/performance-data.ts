@@ -19,7 +19,7 @@ function loadJSON(filename: string, defaultValue: any = []) {
 }
 
 // Global cache to prevent Next.js from parsing massive JSON files 12,000 times during static build
-let cachedPerformances: any[] | null = null;
+let cachedPerformancesByLocale: Record<string, any[] | null> = {};
 let cachedVenues: any = null;
 let cachedCinemas: any = null;
 
@@ -80,8 +80,8 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
 
 
 
-export function getAllPerformances() {
-    if (cachedPerformances) return cachedPerformances;
+export function getAllPerformances(locale: string = 'ko', forceFresh: boolean = false) {
+    if (cachedPerformancesByLocale[locale] && !forceFresh) return cachedPerformancesByLocale[locale];
 
     // Load static data for filtering
     if (!cachedVenues) cachedVenues = loadJSON('venues.json', {});
@@ -91,18 +91,24 @@ export function getAllPerformances() {
     const cinemas = cachedCinemas;
 
     // 0. Primary Optimization: Load pre-generated static data if available
-    const staticPath = path.join(process.cwd(), 'public/data/performances.json');
-    if (fs.existsSync(staticPath)) {
+    const dataFile = locale === 'ko' ? 'performances.json' : `performances-${locale}.json`;
+    const staticPath = path.join(process.cwd(), 'public/data', dataFile);
+
+    if (fs.existsSync(staticPath) && !forceFresh) {
         try {
             const staticContent = fs.readFileSync(staticPath, 'utf8');
-            cachedPerformances = JSON.parse(staticContent);
-            console.log(`[STABILITY] Loaded ${cachedPerformances?.length} items from static cache: ${staticPath}`);
-            return cachedPerformances!;
+            const data = JSON.parse(staticContent);
+            cachedPerformancesByLocale[locale] = data;
+            console.log(`[STABILITY] Loaded ${data?.length} items from static cache: ${staticPath}`);
+            return data;
         } catch (e) {
-            console.warn(`[STABILITY] Failed to load static performances.json from ${staticPath}, falling back to merge.`, e);
+            console.warn(`[STABILITY] Failed to load static ${dataFile} from ${staticPath}, falling back.`, e);
         }
     } else {
-        console.log(`[STABILITY] Static cache not found at ${staticPath}. Proceeding with data merge...`);
+        console.log(`[STABILITY] Static cache not found at ${staticPath}.`);
+        if (locale !== 'ko') {
+            return getAllPerformances('ko');
+        }
     }
 
     // 1. Load and Transform all data sources
@@ -268,6 +274,6 @@ export function getAllPerformances() {
 
     const finalResult = [...otherItems, ...movieItems];
 
-    cachedPerformances = safePerformanceList(finalResult);
-    return cachedPerformances;
+    cachedPerformancesByLocale[locale] = safePerformanceList(finalResult);
+    return cachedPerformancesByLocale[locale];
 }
