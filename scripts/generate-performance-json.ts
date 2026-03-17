@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { getAllPerformances } from '../src/lib/performance-data';
 import { sortPerformances } from '../src/lib/performance-filter';
-import { translateText, saveCache, translateBatch } from './utils/translator';
+import { translateText, saveCache, translateBatch, getFromCache } from './utils/translator';
+import { normalizeAddressWithMeta, isExpired, cleanAddress, REGION_MAP } from './utils/data-cleaner';
 
 // Batch processor for translations
 async function batchTranslate(items: any[], locale: string) {
@@ -12,7 +13,7 @@ async function batchTranslate(items: any[], locale: string) {
     
     const fields = ['title', 'venue', 'address', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail'];
     const translatedItems = [...items];
-    const CHUNK_SIZE = 50; // Larger chunk size for items
+    const CHUNK_SIZE = 40; 
     
     for (let i = 0; i < translatedItems.length; i += CHUNK_SIZE) {
         const chunk = translatedItems.slice(i, i + CHUNK_SIZE);
@@ -21,20 +22,44 @@ async function batchTranslate(items: any[], locale: string) {
         const stringsToTranslate: { itemIdx: number, field: string, text: string }[] = [];
         chunk.forEach((item, idx) => {
             fields.forEach(field => {
-                if (item[field] && typeof item[field] === 'string' && item[field].trim().length > 0) {
-                    stringsToTranslate.push({ itemIdx: i + idx, field, text: item[field] });
+                const text = item[field];
+                if (text && typeof text === 'string' && text.trim().length > 0) {
+                    // Smart Cache Lookup for Address
+                    if (field === 'address' && item.originalAddress && item.prefixAdded) {
+                        const originalTranslation = getFromCache(item.originalAddress, locale);
+                        const prefixTranslation = REGION_MAP[item.prefixAdded]?.[locale];
+                        
+                        if (originalTranslation && prefixTranslation) {
+                            // Synthesize translation!
+                            item[field] = prefixTranslation + originalTranslation;
+                            return; // Skip adding to translate list
+                        }
+                    }
+
+                    // Standard Cache check
+                    const cached = getFromCache(text, locale);
+                    if (cached) {
+                        item[field] = cached;
+                    } else {
+                        stringsToTranslate.push({ itemIdx: i + idx, field, text });
+                    }
                 }
             });
         });
 
         if (stringsToTranslate.length > 0) {
             const textsOnly = stringsToTranslate.map(s => s.text);
-            const translatedTexts = await translateBatch(textsOnly, locale);
-            
-            translatedTexts.forEach((translated, idx) => {
-                const { itemIdx, field } = stringsToTranslate[idx];
-                translatedItems[itemIdx][field] = translated;
-            });
+            try {
+                // If it's a huge list, it might be safer to skip if we know we're blocked
+                const translatedTexts = await translateBatch(textsOnly, locale);
+                translatedTexts.forEach((translated, idx) => {
+                    const { itemIdx, field } = stringsToTranslate[idx];
+                    translatedItems[itemIdx][field] = translated;
+                });
+            } catch (e) {
+                console.error(`[Translate] Batch failed for ${locale}, using original text for this chunk.`);
+                // Fallback: Use original text already in translatedItems[itemIdx][field]
+            }
         }
         
         if (i % 200 === 0 && i > 0) {
@@ -50,25 +75,26 @@ async function batchTranslate(items: any[], locale: string) {
 
 async function generate() {
     console.log('Generating static performance data...');
+    if (process.env.SKIP_TRANSLATION === 'true') {
+        console.warn('[Build] SKIP_TRANSLATION is set. Localized files will contain original Korean text for untranslated fields.');
+    }
     try {
         const performances = await getAllPerformances('ko', true);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
 
         // [Data Quality Override]
-        // Manual fixes for specific items requested by user
         performances.forEach((p: any) => {
-            // 1. Hardcode specific festival posters
-            if (p.title.includes('양평빙송어축제')) {
-                p.posterUrl = '/images/posters/festivals/yangpyeong_ice_trout.png';
-            } else if (p.title.includes('온천천 빛 축제')) {
-                p.posterUrl = '/images/posters/festivals/oncheoncheon_light.png';
-            } else if (p.title.includes('포천백운계곡 동장군축제')) {
-                p.posterUrl = '/images/posters/festivals/pocheon_dongjanggun.jpg';
-            }
-
-            // 2. Fix Category for National Dance Company 2026 Festival
+            // Fix Category for National Dance Company 2026 Festival
             if (p.title.includes('국립무용단 [2026 축제]')) {
                 p.genre = '무용';
             }
+
+            // Normalize Address and keep track of changes for smart translation
+            const { normalized, prefixAdded } = normalizeAddressWithMeta(p);
+            p.originalAddress = cleanAddress(p.address);
+            p.address = normalized;
+            p.prefixAdded = prefixAdded;
         });
 
         // Overseas Filtering Logic (User Request)
@@ -87,9 +113,6 @@ async function generate() {
             return false;
         };
 
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
         let movieCount = 0;
         let ottCount = 0;
         let dateCount = 0;
@@ -100,54 +123,14 @@ async function generate() {
                 return false;
             }
             if (isOverseas(p)) return false;
-            if (!p.date || p.date.trim() === '') return true; 
-
-            try {
-                let endDate: Date | null = null;
-                const d = p.date.replace(/\./g, '-'); 
-
-                if (d.includes('~')) {
-                    const parts = d.split('~');
-                    if (parts.length >= 2) {
-                        let endStr = parts[1].trim();
-                        endStr = endStr.split('[')[0].split('(')[0].trim();
-                        if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
-                            endStr = '20' + endStr;
-                        }
-                        if (endStr.match(/^\d{8}$/)) {
-                            const y = parseInt(endStr.substring(0, 4));
-                            const m = parseInt(endStr.substring(4, 6));
-                            const dParts = parseInt(endStr.substring(6, 8));
-                            endDate = new Date(y, m - 1, dParts);
-                        } else {
-                            endDate = new Date(endStr);
-                        }
-                    }
-                } else if (d.trim() !== '') {
-                    let endStr = d.trim();
-                    endStr = endStr.split('[')[0].split('(')[0].trim();
-                    if (endStr.match(/^\d{2}-\d{2}-\d{2}$/)) {
-                        endStr = '20' + endStr;
-                    }
-                    if (endStr.match(/^\d{8}$/)) {
-                        const y = parseInt(endStr.substring(0, 4));
-                        const m = parseInt(endStr.substring(4, 6));
-                        const dParts = parseInt(endStr.substring(6, 8));
-                        endDate = new Date(y, m - 1, dParts);
-                    } else {
-                        endDate = new Date(endStr);
-                    }
-                }
-
-                if (!endDate || isNaN(endDate.getTime())) return true;
-                endDate.setHours(23, 59, 59, 999);
-                if (p.genre === 'movie') return true;
-                const isActive = endDate >= today;
-                if (!isActive) dateCount++;
-                return isActive;
-            } catch (e: any) {
-                return true;
+            
+            // Apply Expiration AND Status-based filtering (User Request)
+            if (isExpired(p, today)) {
+                dateCount++;
+                return false;
             }
+
+            return true;
         });
 
         // Sort by default (Date Ascending)
@@ -171,7 +154,11 @@ async function generate() {
             
             // Deep copy pruned data for translation
             const sourceData = JSON.parse(JSON.stringify(pruned));
-            const localizedData = await batchTranslate(sourceData, locale);
+            let localizedData = sourceData;
+            
+            if (process.env.SKIP_TRANSLATION !== 'true') {
+                localizedData = await batchTranslate(sourceData, locale);
+            }
             
             const outputPath = path.join(dataDir, locale === 'ko' ? 'performances.json' : `performances-${locale}.json`);
             fs.writeFileSync(outputPath, JSON.stringify(localizedData));

@@ -48,8 +48,8 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
 
     if (stringsToTranslate.length === 0) return results;
 
-    // Split into smaller sub-batches to avoid payload limits (e.g., 25 strings at a time)
-    const SUB_BATCH_SIZE = 25;
+    // Reduced sub-batch size to be more gentle
+    const SUB_BATCH_SIZE = 10; // Even smaller for safety
     for (let i = 0; i < stringsToTranslate.length; i += SUB_BATCH_SIZE) {
         const currentBatch = stringsToTranslate.slice(i, i + SUB_BATCH_SIZE);
         const joined = currentBatch.join(DELIMITER);
@@ -58,6 +58,16 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
         const maxAttempts = 3;
         while (attempts < maxAttempts) {
             try {
+                // Check if we already have it in cache (could happen if interrupted and resumed)
+                if (currentBatch.every(s => cache[s] && cache[s][to])) {
+                    currentBatch.forEach((original, idx) => {
+                        const translated = cache[original][to];
+                        const originalIdx = toTranslateIndices[i + idx];
+                        results[originalIdx] = translated;
+                    });
+                    break;
+                }
+
                 const res = await translate(joined, { from: 'ko', to: target });
                 const translatedJoined = res.text;
                 const translatedStrings = translatedJoined.split(DELIMITER).map(s => s.trim());
@@ -68,26 +78,31 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
                         const originalIdx = toTranslateIndices[i + idx];
                         results[originalIdx] = translated;
                         
-                        // Update cache
                         if (!cache[original]) cache[original] = {};
                         cache[original][to] = translated;
                     });
                     hasChanges = true;
+                    saveCache();
+                    // Increased sleep after successful batch
+                    await new Promise(r => setTimeout(r, 3000)); 
                     break;
                 } else {
-                    throw new Error(`Batch translation count mismatch: sent ${currentBatch.length}, got ${translatedStrings.length}`);
+                    throw new Error(`Batch count mismatch: expected ${currentBatch.length}, got ${translatedStrings.length}`);
                 }
             } catch (e: any) {
                 attempts++;
-                const wait = Math.pow(2, attempts) * 1000;
-                console.warn(`[Translator] Batch Error (Attempt ${attempts}/${maxAttempts}): ${e.message}. waiting ${wait}ms...`);
+                const wait = Math.pow(4, attempts) * 1000; // More aggressive backoff
+                console.warn(`[Translator] ${to} Batch Error (${attempts}/${maxAttempts}): ${e.message.substring(0, 50)}... waiting ${wait}ms...`);
                 await new Promise(r => setTimeout(r, wait));
+                
                 if (attempts === maxAttempts) {
-                    // Final fallback: translate individually
+                    console.warn(`[Translator] ${to} Batch failed after ${maxAttempts} attempts. Moving to individual translation.`);
+                    // Final fallback: translate individually with significant delay
                     for (let idx = 0; idx < currentBatch.length; idx++) {
                         const original = currentBatch[idx];
                         const originalIdx = toTranslateIndices[i + idx];
                         results[originalIdx] = await translateText(original, to);
+                        await new Promise(r => setTimeout(r, 2000)); // Very slow fallback
                     }
                 }
             }
@@ -101,16 +116,13 @@ export async function translateText(text: string, to: string): Promise<string> {
     if (!text || text.trim() === '') return '';
     const cleanText = text.trim();
     
-    // Normalize target locale (mapping next-intl zh to zh-cn for google translate)
     const target = to === 'zh' ? 'zh-cn' : to;
     if (target === 'ko') return cleanText;
 
-    // Check cache
     if (cache[cleanText] && cache[cleanText][to]) {
         return cache[cleanText][to];
     }
 
-    // Rate limiting & Retry logic
     let attempts = 0;
     const maxAttempts = 3;
     
@@ -122,22 +134,27 @@ export async function translateText(text: string, to: string): Promise<string> {
             if (!cache[cleanText]) cache[cleanText] = {};
             cache[cleanText][to] = translatedText;
             hasChanges = true;
+            saveCache();
             
             return translatedText;
         } catch (e: any) {
             attempts++;
-            if (e.status === 429) {
-                const wait = Math.pow(2, attempts) * 1000;
-                console.warn(`[Translator] Rate limited. Waiting ${wait}ms...`);
-                await new Promise(r => setTimeout(r, wait));
-            } else {
-                console.error(`[Translator] Error translating "${cleanText.substring(0, 20)}..." to ${to}:`, e.message);
-                break;
-            }
+            const wait = Math.pow(3, attempts) * 1000;
+            console.warn(`[Translator] Retry (${attempts}/${maxAttempts}) for "${cleanText.substring(0, 20)}...": ${e.message}`);
+            await new Promise(r => setTimeout(r, wait));
+            if (attempts === maxAttempts) break;
         }
     }
 
     return cleanText; // Fallback
+}
+
+export function getFromCache(text: string, to: string): string | null {
+    const clean = text.trim();
+    if (cache[clean] && cache[clean][to]) {
+        return cache[clean][to];
+    }
+    return null;
 }
 
 export function saveCache() {
