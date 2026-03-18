@@ -80,7 +80,8 @@ const translations: Record<string, { en: string, ja: string, zh: string }> = {
     "휴관": { en: "Closed", ja: "休館", zh: "闭馆" },
     "공연 없음": { en: "No Performance", ja: "公演なし", zh: "无演出" },
     "예매가능시간": { en: "Booking Availability", ja: "予約可能時間", zh: "预订可用时间" },
-    "인터파크 티켓": { en: "Interpark Ticket", ja: "インターパークチケット", zh: "Interpark票务" }
+    "인터파크 티켓": { en: "Interpark Ticket", ja: "インターパークチケット", zh: "Interpark票务" },
+    "유료 (매표소/예매처 확인)": { en: "Paid (Check Ticket Office/Booking Site)", ja: "有料 (チケット売り场/予約サイト确认)", zh: "收费 (确认售票处/预订网站)" }
 };
 
 async function manualInject() {

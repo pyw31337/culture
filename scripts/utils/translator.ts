@@ -95,22 +95,23 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
 
     if (stringsToTranslate.length === 0) return results;
 
-    // Process chunk by chunk
+    // Process sub-batches in chunks
     const SUB_BATCH_SIZE = 20; 
     for (let i = 0; i < stringsToTranslate.length; i += SUB_BATCH_SIZE) {
         const currentBatch = stringsToTranslate.slice(i, i + SUB_BATCH_SIZE);
         
-        // Try Professional APIs first (one by one for now to ensure reliability)
-        for (let idx = 0; idx < currentBatch.length; idx++) {
-            const original = currentBatch[idx];
-            const originalIdx = toTranslateIndices[i + idx];
-            
-            let translated = await translateText(original, to);
+        // Parallelize translations within the sub-batch for speed
+        const promises = currentBatch.map(async (original, idxInSub) => {
+            const originalIdx = toTranslateIndices[i + idxInSub];
+            const translated = await translateText(original, to);
             results[originalIdx] = translated;
-        }
+        });
         
-        saveCache();
+        await Promise.all(promises);
     }
+
+    // Save cache once after the whole batch is processed
+    saveCache();
 
     return results;
 }

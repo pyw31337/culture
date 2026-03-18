@@ -115,6 +115,16 @@ export function isExpired(item: any, referenceDate: Date = new Date()): boolean 
     const endDate = new Date(normalizedDate);
     if (!isNaN(endDate.getTime())) {
       endDate.setHours(23, 59, 59, 999);
+      
+      // Special handling for movies: release date is in the past, but movie is still active
+      if (item.genre === 'movie') {
+        if (item.rank && item.rank <= 10) return false; // Keep box office top 10
+        
+        // Allow 60 days grace period for movies from their release date
+        const gracePeriod = 60 * 24 * 60 * 60 * 1000;
+        return endDate.getTime() + gracePeriod < referenceDate.getTime();
+      }
+
       return endDate < referenceDate;
     }
   } catch (e) {

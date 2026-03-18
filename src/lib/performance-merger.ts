@@ -1,8 +1,20 @@
 function slugify(text: string): string {
-    return text
-        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
+    const slug = text
+        .replace(/[^a-zA-Z0-9]/g, '_')
         .replace(/_+/g, '_')
         .replace(/^_|_$/g, '');
+    
+    // If slug is too short or empty (common for Korean-only titles), 
+    // we need to ensure uniqueness by adding a simple hash-like suffix
+    if (slug.length < 3) {
+        let hash = 0;
+        for (let i = 0; i < text.length; i++) {
+            hash = (hash << 5) - hash + text.charCodeAt(i);
+            hash |= 0;
+        }
+        return (slug || 'perf') + '_' + Math.abs(hash).toString(36);
+    }
+    return slug;
 }
 
 export function processAndMergePerformances(items: any[]): any[] {
@@ -159,10 +171,11 @@ function getRichnessScore(item: any): number {
     if (item.cast && (Array.isArray(item.cast) ? item.cast.length > 0 : !!item.cast)) score += 3;
     if (item.director) score += 2;
     if (item.runningTime) score += 1;
-    if (item.ageRating) score += 1;
+    if (item.ageRating || item.age) score += 1;
     if (item.originalTitle) score += 1;
+    if (item.rank) score += 5; // HIGH Priority for ranked movies
 
-    // Price is good, but shouldn't override metadata (unless metadata is equal)
+    // Price is good
     if (item.price) score += 1;
 
     // Prefer items with real posters over placeholders

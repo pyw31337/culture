@@ -334,9 +334,22 @@ function normalizeAddress(address: string | undefined, region: string | undefine
 
 /**
  * Cleans price strings, removing redundant qualifiers.
+ * Genre-aware to avoid false 'Free' labels for sports.
  */
-function cleanPrice(price: string): string {
-    if (!price) return '무료';
+function cleanPrice(price: string, genre?: string): string {
+    const sports = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'];
+    const lowerGenre = genre?.toLowerCase() || '';
+
+    if (!price || price === '정보 없음' || price === '상세페이지 참조') {
+        if (sports.includes(lowerGenre)) {
+            return '유료 (매표소/예매처 확인)';
+        }
+        if (lowerGenre === 'movie') {
+            return ''; // Remove price data for movies as requested
+        }
+        return '무료';
+    }
+    
     let p = price.trim();
     if (p === '0' || p === '0원') return '무료';
     return p;
@@ -351,15 +364,15 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let rawVenue = raw.venue || raw.place || raw.title || '';
     let image = raw.image || raw.poster || raw.posterUrl || '';
     
-    // Unified Price Logic
-    let priceRaw = raw.price || raw.cost || raw.admissionFee || raw.priceDetail || raw.feesAndPrograms || '';
-    if (priceRaw === '정보 없음' || priceRaw === '상세페이지 참조') priceRaw = '';
-    let price = cleanPrice(priceRaw);
-    
     let date = raw.date || '';
     let performanceTime = raw.time || raw.performanceTime || '';
     let region = raw.region || '';
     let genre = (raw.genre as Genre) || 'activity';
+
+    // Unified Price Logic
+    let priceRaw = raw.price || raw.cost || raw.admissionFee || raw.priceDetail || raw.feesAndPrograms || '';
+    if (priceRaw === '정보 없음' || priceRaw === '상세페이지 참조') priceRaw = '';
+    let price = cleanPrice(priceRaw, genre);
     
     // Venue Address Override
     let manualAddress = VENUE_ADDRESS_OVERRIDES[rawVenue];
