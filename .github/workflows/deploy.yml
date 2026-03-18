@@ -41,6 +41,7 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /culture
           NODE_OPTIONS: '--max-old-space-size=4096'
+          SKIP_TRANSLATION: 'true'
         run: npm run build
 
       - name: Deploy to GitHub Pages

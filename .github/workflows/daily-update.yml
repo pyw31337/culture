@@ -103,6 +103,13 @@ jobs:
           npx tsx scripts/prune-expired-data.ts
           npx tsx scripts/prune-data.ts
 
+      - name: Generate Localized Data (Translation)
+        if: env.SKIP_EXECUTION != 'true'
+        env:
+          SKIP_TRANSLATION: 'false'
+          NODE_OPTIONS: '--max-old-space-size=4096'
+        run: npm run generate-data
+
       - name: Commit and Push changes
         if: env.SKIP_EXECUTION != 'true'
         run: |
