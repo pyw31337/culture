@@ -23,7 +23,7 @@ export function processAndMergePerformances(items: any[]): any[] {
 
     items.forEach(p => {
         // 1. Generate Merge Key
-        const safeTitle = slugify(p.title);
+        const safeTitle = slugify(p.originalTitle || p.title);
         let category = p.genre;
 
         // Grouping for Merge: 
@@ -53,7 +53,7 @@ export function processAndMergePerformances(items: any[]): any[] {
 
     // 2. Final ID Generation
     return Array.from(uniqueMap.values()).map(p => {
-        const safeTitle = slugify(p.title);
+        const safeTitle = slugify(p.originalTitle || p.title);
         let category = p.genre;
 
         // Map internal genres to public shared link prefixes
