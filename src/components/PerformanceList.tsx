@@ -203,11 +203,10 @@ export default function PerformanceList({
         } else {
             // If cleared manually, remove from URL
             if (searchParams.has('q')) {
-                const path = window.location.pathname;
-                router.replace(path);
+                router.replace(pathname);
             }
         }
-    }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, searchParams, router]);
+    }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, searchParams, router, pathname]);
 
     const resetHome = useCallback(() => {
         setSelectedGenre('all');
