@@ -281,6 +281,7 @@ const allPerformances = allSources.flatMap(({ file, source }) => {
 
     const finalResult = [...otherItems, ...movieItems];
 
-    cachedPerformancesByLocale[locale] = safePerformanceList(finalResult);
+    const result = safePerformanceList(finalResult);
+    cachedPerformancesByLocale[locale] = result || [];
     return cachedPerformancesByLocale[locale];
 }

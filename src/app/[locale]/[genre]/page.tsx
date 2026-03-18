@@ -14,7 +14,7 @@ const SLUG_TO_GENRE: Record<string, string> = {
     Helper to filter merged data set by genre.
 */
 async function getPerformances(genreFilter: string | string[] | null) {
-    const allStable = getAllPerformances();
+    const allStable = getAllPerformances() || [];
 
     const filtered = allStable.filter(p => {
         if (!genreFilter) return true;
