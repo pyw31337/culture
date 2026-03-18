@@ -168,6 +168,11 @@ const OFFICIAL_SPORTS_VENUES: Record<string, string | Record<string, string>> = 
     '삼척 시민체육관': '삼척 시민체육관'
 };
 
+const VENUE_ADDRESS_OVERRIDES: Record<string, string> = {
+    '지혜샘어린이도서관': '경기도 수원시 권선구 세지로 3번길 17',
+    '지해샘어린이도서관': '경기도 수원시 권선구 세지로 3번길 17'
+};
+
 const REGION_MAP: Record<string, string> = {
     '서울': 'seoul', '경기': 'gyeonggi', '인천': 'incheon',
     '부산': 'busan', '대구': 'daegu', '광주': 'gwangju',
@@ -269,6 +274,75 @@ function getNumericPrice(priceStr: string | undefined): number | null {
 }
 
 /**
+ * Sanitize URL strings, removing junk prefixes and ensuring protocols.
+ */
+function sanitizeUrl(rawUrl: string | undefined): string {
+    if (!rawUrl) return '';
+    let url = rawUrl.trim();
+    
+    // Remove known garbage prefixes
+    url = url.replace(/^(강원관광|홈페이지|지도보기|공식홈페이지|사이트|바로가기)\s*/, '');
+    
+    // If it starts with www, prepend https://
+    if (url.startsWith('www.')) {
+        url = 'https://' + url;
+    }
+    
+    // Basic protocol check
+    if (url && !url.startsWith('http')) {
+        // If it looks like a domain, prepend https://
+        if (url.includes('.') && !url.includes(' ')) {
+            url = 'https://' + url;
+        } else {
+            return ''; // Invalid URL
+        }
+    }
+    return url;
+}
+
+/**
+ * Normalizes address by adding missing Sido/Sigungu prefixes based on region.
+ */
+function normalizeAddress(address: string | undefined, region: string | undefined, venue: string): string {
+    if (!address || address === '정보 없음' || address === 'undefined') {
+        // If address is missing, try to use venue name as a fallback if it's reputable, 
+        // but generally we'll return a placeholder to be caught by geocoding
+        return ''; 
+    }
+    
+    let cleaned = address.trim();
+    const SIDO_LIST = ['서울', '경기', '인천', '강원', '충북', '충남', '대전', '경북', '경남', '대구', '울산', '부산', '전북', '전남', '광주', '세종', '제주'];
+    const startsWithSido = SIDO_LIST.some(sido => cleaned.startsWith(sido));
+
+    if (!startsWithSido && region) {
+        // Find the full Sido name from REGION_MAP keys
+        const sidoName = Object.keys(REGION_MAP).find(k => REGION_MAP[k] === region);
+        if (sidoName) {
+            // Mapping short names to long official names if necessary
+            const longSido: Record<string, string> = {
+                '서울': '서울특별시', '경기': '경기도', '인천': '인천광역시',
+                '부산': '부산광역시', '대구': '대구광역시', '광주': '광주광역시',
+                '대전': '대전광역시', '울산': '울산광역시', '세종': '세종특별자치시',
+                '제주': '제주특별자치도'
+            };
+            const prefix = longSido[sidoName] || sidoName;
+            cleaned = `${prefix} ${cleaned}`;
+        }
+    }
+    return cleaned;
+}
+
+/**
+ * Cleans price strings, removing redundant qualifiers.
+ */
+function cleanPrice(price: string): string {
+    if (!price) return '무료';
+    let p = price.trim();
+    if (p === '0' || p === '0원') return '무료';
+    return p;
+}
+
+/**
  * Normalizes any raw performance object into a strict Performance interface.
  */
 export function transformPerformance(raw: RawPerformance, source?: string): Performance {
@@ -276,12 +350,20 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let title = raw.title || '';
     let rawVenue = raw.venue || raw.place || raw.title || '';
     let image = raw.image || raw.poster || raw.posterUrl || '';
-    let price = raw.price || raw.cost || '';
+    
+    // Unified Price Logic
+    let priceRaw = raw.price || raw.cost || raw.admissionFee || raw.priceDetail || raw.feesAndPrograms || '';
+    if (priceRaw === '정보 없음' || priceRaw === '상세페이지 참조') priceRaw = '';
+    let price = cleanPrice(priceRaw);
+    
     let date = raw.date || '';
     let performanceTime = raw.time || raw.performanceTime || '';
     let region = raw.region || '';
     let genre = (raw.genre as Genre) || 'activity';
     
+    // Venue Address Override
+    let manualAddress = VENUE_ADDRESS_OVERRIDES[rawVenue];
+
     // Extract bracketed region [창원], [제주] etc.
     const titleMatch = title.match(/\[([가-힣]+)\]/);
     const venueMatch = rawVenue.match(/\[([가-힣]+)\]/);
@@ -304,7 +386,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let priceList = raw.priceList;
     let ageDetail = raw.ageDetail;
     let bookingNotice = raw.bookingNotice;
-    let website = raw.website;
+    let website = sanitizeUrl(raw.website || raw.link || '');
     let parking = raw.parking;
     let parkingFee = raw.parkingFee;
     let restrooms = raw.restrooms;
@@ -393,11 +475,27 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         const aTeam = normalizeTeam(raw.awayTeam);
 
         // Only override logos when data doesn't provide them
-        if (!homeLogo && hTeam && FUTURES_TEAM_LOGOS[hTeam]) {
-            homeLogo = FUTURES_TEAM_LOGOS[hTeam];
+        if (!homeLogo && hTeam) {
+            let lookupKey = hTeam;
+            if (genre === 'baseball') lookupKey = `${hTeam}(야구)`;
+            if (genre === 'basketball') lookupKey = `${hTeam}(농구)`;
+            
+            if (FUTURES_TEAM_LOGOS[lookupKey]) {
+                homeLogo = FUTURES_TEAM_LOGOS[lookupKey];
+            } else if (FUTURES_TEAM_LOGOS[hTeam]) {
+                homeLogo = FUTURES_TEAM_LOGOS[hTeam];
+            }
         }
-        if (!awayLogo && aTeam && FUTURES_TEAM_LOGOS[aTeam]) {
-            awayLogo = FUTURES_TEAM_LOGOS[aTeam];
+        if (!awayLogo && aTeam) {
+            let lookupKey = aTeam;
+            if (genre === 'baseball') lookupKey = `${aTeam}(야구)`;
+            if (genre === 'basketball') lookupKey = `${aTeam}(농구)`;
+            
+            if (FUTURES_TEAM_LOGOS[lookupKey]) {
+                awayLogo = FUTURES_TEAM_LOGOS[lookupKey];
+            } else if (FUTURES_TEAM_LOGOS[aTeam]) {
+                awayLogo = FUTURES_TEAM_LOGOS[aTeam];
+            }
         }
     }
 
@@ -435,6 +533,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         link: raw.link || '',
         image: image,
         venue: venue.trim(),
+        address: normalizeAddress(manualAddress || raw.address, mappedRegion, venue),
         date: formatUnifiedDate(date),
         region: mappedRegion,
         genre,

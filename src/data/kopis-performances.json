@@ -1463,25 +1463,6 @@
     "district": "달서구"
   },
   {
-    "id": "kopis_PF283596",
-    "title": "제1회 사이연극제, 너를 보내며",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283596_260121_131305.jpg",
-    "date": "2026.02.12 (목) ~ 2026.02.14 (토)",
-    "venue": "예술도서관 (예술도서관)",
-    "venueId": "FC004758",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283596",
-    "genre": "연극",
-    "price": "전석 5,000원",
-    "time": "목요일 ~ 금요일(15:00,19:00), 토요일(19:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": true,
-    "lat": 35.80951104508219,
-    "lng": 127.15067483551537,
-    "address": "전북특별자치도 전주시 완산구 서학로 12-1",
-    "district": "서초구"
-  },
-  {
     "id": "kopis_PF283450",
     "title": "제16회 페스티벌 판을 열다, 테라씨의 여행",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283450_260119_140202.gif",
@@ -2487,25 +2468,6 @@
     "lng": 128.558450708297,
     "address": "대구 달서구 공원순환로 201",
     "district": "달서구"
-  },
-  {
-    "id": "kopis_PF283596",
-    "title": "제1회 사이연극제, 너를 보내며",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283596_260121_131305.jpg",
-    "date": "2026.02.12 (목) ~ 2026.02.14 (토)",
-    "venue": "예술도서관 (예술도서관)",
-    "venueId": "FC004758",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283596",
-    "genre": "연극",
-    "price": "전석 5,000원",
-    "time": "목요일 ~ 금요일(15:00,19:00), 토요일(19:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": true,
-    "lat": 35.80951104508219,
-    "lng": 127.15067483551537,
-    "address": "전북특별자치도 전주시 완산구 서학로 12-1",
-    "district": "서초구"
   },
   {
     "id": "kopis_PF283450",

@@ -48,26 +48,18 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
 
     if (stringsToTranslate.length === 0) return results;
 
-    // Reduced sub-batch size to be more gentle
-    const SUB_BATCH_SIZE = 10; // Even smaller for safety
+    // Forced individual translation for reliability in case of 429
+    const SUB_BATCH_SIZE = 5; 
     for (let i = 0; i < stringsToTranslate.length; i += SUB_BATCH_SIZE) {
         const currentBatch = stringsToTranslate.slice(i, i + SUB_BATCH_SIZE);
         const joined = currentBatch.join(DELIMITER);
         
         let attempts = 0;
         const maxAttempts = 3;
-        while (attempts < maxAttempts) {
-            try {
-                // Check if we already have it in cache (could happen if interrupted and resumed)
-                if (currentBatch.every(s => cache[s] && cache[s][to])) {
-                    currentBatch.forEach((original, idx) => {
-                        const translated = cache[original][to];
-                        const originalIdx = toTranslateIndices[i + idx];
-                        results[originalIdx] = translated;
-                    });
-                    break;
-                }
+        let success = false;
 
+        while (attempts < maxAttempts && !success) {
+            try {
                 const res = await translate(joined, { from: 'ko', to: target });
                 const translatedJoined = res.text;
                 const translatedStrings = translatedJoined.split(DELIMITER).map(s => s.trim());
@@ -83,28 +75,27 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
                     });
                     hasChanges = true;
                     saveCache();
-                    // Increased sleep after successful batch
+                    success = true;
                     await new Promise(r => setTimeout(r, 3000)); 
-                    break;
                 } else {
-                    throw new Error(`Batch count mismatch: expected ${currentBatch.length}, got ${translatedStrings.length}`);
+                    throw new Error(`Batch mismatch: expected ${currentBatch.length}, got ${translatedStrings.length}`);
                 }
             } catch (e: any) {
                 attempts++;
-                const wait = Math.pow(4, attempts) * 1000; // More aggressive backoff
+                const isHtml = e.message.includes('<HTML') || e.message.includes('<!DOCTYPE');
+                const wait = isHtml ? 60000 : Math.pow(4, attempts) * 1000;
                 console.warn(`[Translator] ${to} Batch Error (${attempts}/${maxAttempts}): ${e.message.substring(0, 50)}... waiting ${wait}ms...`);
                 await new Promise(r => setTimeout(r, wait));
-                
-                if (attempts === maxAttempts) {
-                    console.warn(`[Translator] ${to} Batch failed after ${maxAttempts} attempts. Moving to individual translation.`);
-                    // Final fallback: translate individually with significant delay
-                    for (let idx = 0; idx < currentBatch.length; idx++) {
-                        const original = currentBatch[idx];
-                        const originalIdx = toTranslateIndices[i + idx];
-                        results[originalIdx] = await translateText(original, to);
-                        await new Promise(r => setTimeout(r, 2000)); // Very slow fallback
-                    }
-                }
+            }
+        }
+
+        if (!success) {
+            console.warn(`[Translator] ${to} Batch failed. Moving to individual translation for this chunk.`);
+            for (let idx = 0; idx < currentBatch.length; idx++) {
+                const original = currentBatch[idx];
+                const originalIdx = toTranslateIndices[i + idx];
+                results[originalIdx] = await translateText(original, to);
+                await new Promise(r => setTimeout(r, 5000)); 
             }
         }
     }
@@ -139,8 +130,9 @@ export async function translateText(text: string, to: string): Promise<string> {
             return translatedText;
         } catch (e: any) {
             attempts++;
-            const wait = Math.pow(3, attempts) * 1000;
-            console.warn(`[Translator] Retry (${attempts}/${maxAttempts}) for "${cleanText.substring(0, 20)}...": ${e.message}`);
+            const isHtml = e.message.includes('<HTML') || e.message.includes('<!DOCTYPE');
+            const wait = isHtml ? 120000 : Math.pow(3, attempts) * 1000; // 2 minute wait if 429/HTML
+            console.warn(`[Translator] Retry (${attempts}/${maxAttempts}) for "${cleanText.substring(0, 20)}...": ${e.message.substring(0, 50)}... waiting ${wait}ms...`);
             await new Promise(r => setTimeout(r, wait));
             if (attempts === maxAttempts) break;
         }

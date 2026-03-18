@@ -107,19 +107,19 @@ export const FUTURES_TEAM_LOGOS: Record<string, string> = {
     "KT": `${_BP}/images/logos/kbo/kt.svg`,
     "NC": `${_BP}/images/logos/kbo/nc.svg`,
     "롯데": `${_BP}/images/logos/kbo/lotte.svg`,
-    "삼성": `${_BP}/images/logos/kbo/samsung.svg`,
+    "삼성(야구)": `${_BP}/images/logos/kbo/samsung.svg`,
     "KIA": `${_BP}/images/logos/kbo/kia.svg`,
 
     // K-League
-    "울산": `${_BP}/images/logos/kleague/울산.svg`,
-    "전북": `${_BP}/images/logos/kleague/전북.svg`,
+    "울산": `${_BP}/images/logos/kleague/울산.png`,
+    "전북": `${_BP}/images/logos/kleague/전북.png`,
     "포항": `${_BP}/images/logos/kleague/포항.png`,
     "광주": `${_BP}/images/logos/kleague/광주.png`,
     "대구": `${_BP}/images/logos/kleague/대구.png`,
     "인천": `${_BP}/images/logos/kleague/인천.png`,
     "서울": `${_BP}/images/logos/kleague/서울.png`,
     "대전": `${_BP}/images/logos/kleague/대전.png`,
-    "제주": `${_BP}/images/logos/kleague/제주.svg`,
+    "제주": `${_BP}/images/logos/kleague/제주.png`,
     "강원": `${_BP}/images/logos/kleague/강원.png`,
     "수원": `${_BP}/images/logos/kleague/수원.png`,
     "수원FC": `${_BP}/images/logos/kleague/수원FC.png`,
@@ -128,11 +128,13 @@ export const FUTURES_TEAM_LOGOS: Record<string, string> = {
     "DB": `${_BP}/images/logos/kbl/db.svg`,
     "KCC": `${_BP}/images/logos/kbl/kcc.svg`,
     "SK": `${_BP}/images/logos/kbl/sk.svg`,
-    "KGC": `${_BP}/images/logos/kbl/kgc.svg`, // Anyang Jung Kwan Jang
+    "KGC": `${_BP}/images/logos/kbl/kgc.svg`,
     "정관장": `${_BP}/images/logos/kbl/kgc.svg`,
     "현대모비스": `${_BP}/images/logos/kbl/mobis.svg`,
     "한국가스공사": `${_BP}/images/logos/kbl/kogas.svg`,
     "소노": `${_BP}/images/logos/kbl/sono.svg`,
+    "삼성(농구)": `${_BP}/images/logos/kbl/samsung.svg`,
+    "LG(농구)": `${_BP}/images/logos/kbl/lg.svg`,
 
     // V-League (KOVO)
     "대한항공": `${_BP}/images/logos/kovo/jumbos.svg`,

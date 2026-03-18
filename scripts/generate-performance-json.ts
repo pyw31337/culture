@@ -7,8 +7,7 @@ import { normalizeAddressWithMeta, isExpired, cleanAddress, REGION_MAP } from '.
 
 // Batch processor for translations
 async function batchTranslate(items: any[], locale: string) {
-    if (locale === 'ko') return items;
-    
+    // We allow Korean translation if there's English content that needs to be "Korean-ified"
     console.log(`[Translate] Starting translation to ${locale} for ${items.length} items...`);
     
     const fields = ['title', 'venue', 'address', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail'];
@@ -41,7 +40,15 @@ async function batchTranslate(items: any[], locale: string) {
                     if (cached) {
                         item[field] = cached;
                     } else {
-                        stringsToTranslate.push({ itemIdx: i + idx, field, text });
+                        // For Korean locale, only translate if it looks like English/Foreign text
+                        if (locale === 'ko') {
+                            const isMostlyEnglish = /^[A-Za-z0-9\s.,!?'"&\(\)\[\]\-]+$/.test(text);
+                            if (isMostlyEnglish && text.length > 3) {
+                                stringsToTranslate.push({ itemIdx: i + idx, field, text });
+                            }
+                        } else {
+                            stringsToTranslate.push({ itemIdx: i + idx, field, text });
+                        }
                     }
                 }
             });

@@ -32,7 +32,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 당산로",
+    "address": "서울 영등포구 당산로",
     "lastEnriched": "2026-03-17T03:46:02.349Z"
   },
   {
@@ -104,7 +104,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 녹사평대로26가길",
+    "address": "서울 용산구 녹사평대로26가길",
     "lastEnriched": "2026-03-17T03:46:02.357Z"
   },
   {
@@ -158,7 +158,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:02.672Z"
   },
   {
@@ -176,7 +176,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:46:02.333Z"
   },
   {
@@ -194,7 +194,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:46:02.358Z"
   },
   {
@@ -230,7 +230,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:14.411Z"
   },
   {
@@ -248,7 +248,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로8길",
+    "address": "서울 마포구 포은로8길",
     "lastEnriched": "2026-03-17T03:46:14.410Z"
   },
   {
@@ -284,7 +284,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:14.411Z"
   },
   {
@@ -302,7 +302,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 굴레방로1길",
+    "address": "서울 마포구 굴레방로1길",
     "lastEnriched": "2026-03-17T00:23:32.683Z"
   },
   {
@@ -374,7 +374,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 영통구",
+    "address": "경기도 수원시 영통구",
     "lastEnriched": "2026-03-17T03:46:14.408Z"
   },
   {
@@ -392,7 +392,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 영통구",
+    "address": "경기도 수원시 영통구",
     "lastEnriched": "2026-03-12T06:45:57.964Z"
   },
   {
@@ -428,7 +428,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:46:14.411Z"
   },
   {
@@ -464,7 +464,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 하남시 · 미사강변중앙로",
+    "address": "경기도 하남시 미사강변중앙로",
     "lastEnriched": "2026-03-17T03:46:24.667Z"
   },
   {
@@ -482,8 +482,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 도림로",
-    "lastEnriched": "2026-03-17T03:46:24.667Z"
+    "address": "서울 영등포구 도림로",
+    "lastEnriched": "2026-03-17T03:46:24.667Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_비기너_뚝딱이_힙합댄스_클래스_원데이",
@@ -500,7 +502,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:24.677Z"
   },
   {
@@ -518,7 +520,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:46:24.667Z"
   },
   {
@@ -536,7 +538,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 어울마당로",
+    "address": "서울 마포구 어울마당로",
     "lastEnriched": "2026-03-17T03:46:24.672Z"
   },
   {
@@ -572,7 +574,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:24.664Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -628,7 +630,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로",
+    "address": "서울 강남구 논현로",
     "lastEnriched": "2026-03-17T03:46:24.654Z"
   },
   {
@@ -646,7 +648,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:33.566Z"
   },
   {
@@ -664,7 +666,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:33.562Z"
   },
   {
@@ -682,7 +684,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 오금동",
+    "address": "서울 송파구 오금동",
     "lastEnriched": "2026-03-17T03:46:33.566Z"
   },
   {
@@ -718,7 +720,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:46:33.567Z"
   },
   {
@@ -736,7 +738,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:46:33.567Z"
   },
   {
@@ -772,7 +774,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "강원특별자치도 · 원주시 · 능라동길",
+    "address": "강원특별자치도 원주시 능라동길",
     "lastEnriched": "2026-03-17T03:46:33.566Z"
   },
   {
@@ -790,7 +792,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 팔달구",
+    "address": "경기도 수원시 팔달구",
     "lastEnriched": "2026-03-17T03:46:33.801Z"
   },
   {
@@ -808,7 +810,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 이화여대1길",
+    "address": "서울 서대문구 이화여대1길",
     "lastEnriched": "2026-03-17T03:46:43.697Z"
   },
   {
@@ -844,7 +846,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 삼일대로26길",
+    "address": "서울 종로구 삼일대로26길",
     "lastEnriched": "2026-03-17T03:46:43.701Z"
   },
   {
@@ -862,7 +864,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 하남시 · 미사강변서로",
+    "address": "경기도 하남시 미사강변서로",
     "lastEnriched": "2026-03-17T03:46:43.701Z"
   },
   {
@@ -916,7 +918,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:46:43.701Z"
   },
   {
@@ -934,7 +936,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:46:43.702Z"
   },
   {
@@ -952,7 +954,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성북구 · 보문로34길",
+    "address": "서울 성북구 보문로34길",
     "lastEnriched": "2026-03-17T00:24:34.981Z"
   },
   {
@@ -970,7 +972,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 오금동",
+    "address": "서울 송파구 오금동",
     "lastEnriched": "2026-03-17T00:24:35.643Z"
   },
   {
@@ -988,7 +990,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 학동로43길",
+    "address": "서울 강남구 학동로43길",
     "lastEnriched": "2026-03-17T00:24:34.971Z"
   },
   {
@@ -1006,7 +1008,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 광명시 · 구름산로",
+    "address": "경기도 광명시 구름산로",
     "lastEnriched": "2026-03-17T00:24:34.976Z"
   },
   {
@@ -1042,7 +1044,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:46:43.702Z"
   },
   {
@@ -1060,7 +1062,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 동작구 · 서달로",
+    "address": "서울 동작구 서달로",
     "lastEnriched": "2026-03-17T03:46:43.701Z"
   },
   {
@@ -1078,7 +1080,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 김포시 · 구래동",
+    "address": "경기도 김포시 구래동",
     "lastEnriched": "2026-03-12T06:46:35.233Z"
   },
   {
@@ -1096,7 +1098,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 하남시 · 미사강변서로",
+    "address": "경기도 하남시 미사강변서로",
     "lastEnriched": "2026-03-17T03:46:55.467Z"
   },
   {
@@ -1114,7 +1116,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:52.680Z"
   },
   {
@@ -1150,7 +1152,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 의정부시 · 의정로",
+    "address": "경기도 의정부시 의정로",
     "lastEnriched": "2026-03-17T00:24:56.339Z"
   },
   {
@@ -1168,7 +1170,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 의정부시 · 의정로",
+    "address": "경기도 의정부시 의정로",
     "lastEnriched": "2026-03-17T03:46:52.632Z"
   },
   {
@@ -1276,7 +1278,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:46:55.663Z"
   },
   {
@@ -1294,7 +1296,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 노해로7길",
+    "address": "서울 강북구 노해로7길",
     "lastEnriched": "2026-03-17T03:46:52.463Z"
   },
   {
@@ -1312,7 +1314,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:46:52.607Z"
   },
   {
@@ -1330,7 +1332,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T03:47:01.994Z"
   },
   {
@@ -1348,7 +1350,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 노해로7길",
+    "address": "서울 강북구 노해로7길",
     "lastEnriched": "2026-03-17T03:47:01.989Z"
   },
   {
@@ -1366,8 +1368,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 도림로",
-    "lastEnriched": "2026-03-17T03:47:01.886Z"
+    "address": "서울 영등포구 도림로",
+    "lastEnriched": "2026-03-17T03:47:01.886Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_한국_K말차_수업_나만의_격불말차_말차라떼_말차에이드diy_티우드_말차_다락방",
@@ -1384,7 +1388,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:47:01.988Z"
   },
   {
@@ -1420,7 +1424,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:47:03.624Z"
   },
   {
@@ -1474,8 +1478,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 동대문구 · 답십리로",
-    "lastEnriched": "2026-03-17T00:25:25.302Z"
+    "address": "서울 동대문구 답십리로",
+    "lastEnriched": "2026-03-17T00:25:25.302Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_에바폼_자이언트플라워_자격증_클래스",
@@ -1492,8 +1498,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 동대문구 · 답십리로",
-    "lastEnriched": "2026-03-17T00:25:25.442Z"
+    "address": "서울 동대문구 답십리로",
+    "lastEnriched": "2026-03-17T00:25:25.442Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_하바리움_무드등_원데이_클래스",
@@ -1510,7 +1518,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 학동로43길",
+    "address": "서울 강남구 학동로43길",
     "lastEnriched": "2026-03-17T00:25:25.372Z"
   },
   {
@@ -1582,7 +1590,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 이화여대1길",
+    "address": "서울 서대문구 이화여대1길",
     "lastEnriched": "2026-03-17T00:25:25.699Z"
   },
   {
@@ -1636,7 +1644,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:47:03.627Z"
   },
   {
@@ -1672,7 +1680,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T03:47:13.607Z"
   },
   {
@@ -1690,7 +1698,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 상왕십리동",
+    "address": "서울 성동구 상왕십리동",
     "lastEnriched": "2026-03-17T03:47:13.617Z"
   },
   {
@@ -1708,7 +1716,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 학동로43길",
+    "address": "서울 강남구 학동로43길",
     "lastEnriched": "2026-03-17T03:47:13.600Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -1766,7 +1774,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 동작구 · 서달로8길",
+    "address": "서울 동작구 서달로8길",
     "lastEnriched": "2026-03-17T00:25:45.221Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -1786,7 +1794,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:25:45.379Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -1806,8 +1814,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로",
-    "lastEnriched": "2026-03-17T00:25:45.374Z"
+    "address": "서울 강남구 논현로",
+    "lastEnriched": "2026-03-17T00:25:45.374Z",
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_자개공예_멸종_위기종_키링_만들기",
@@ -1844,7 +1854,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 구미시 · 구미중앙로21길",
+    "address": "경상북도 구미시 구미중앙로21길",
     "lastEnriched": "2026-03-17T00:25:53.801Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -1884,7 +1894,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:25:54.301Z"
   },
   {
@@ -1902,7 +1912,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 황학교.텐즈힐몰 ·",
+    "address": "서울 황학교.텐즈힐몰",
     "lastEnriched": "2026-03-17T00:25:53.813Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -1922,7 +1932,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 올림픽로32길",
+    "address": "서울 송파구 올림픽로32길",
     "lastEnriched": "2026-03-17T03:47:13.597Z"
   },
   {
@@ -1980,7 +1990,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:47:14.482Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2000,7 +2010,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 동탄영천로",
+    "address": "경기도 화성시 동탄영천로",
     "lastEnriched": "2026-03-17T03:47:14.481Z"
   },
   {
@@ -2018,7 +2028,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:26:11.917Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2132,7 +2142,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 올림픽로",
+    "address": "서울 송파구 올림픽로",
     "lastEnriched": "2026-03-17T00:26:21.357Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2152,7 +2162,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 군포시 · 대야1로11번길",
+    "address": "경기도 군포시 대야1로11번길",
     "lastEnriched": "2026-03-17T00:26:21.480Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2172,7 +2182,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T00:26:21.170Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2192,7 +2202,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T00:26:21.307Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2212,7 +2222,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T00:26:29.706Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2232,7 +2242,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T00:26:29.941Z"
   },
   {
@@ -2270,10 +2280,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 사임당로",
+    "address": "서울 서초구 사임당로",
     "lastEnriched": "2026-03-17T00:26:30.163Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_MY_PET_인형만들기",
@@ -2290,10 +2302,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로",
+    "address": "서울 성동구 왕십리로",
     "lastEnriched": "2026-03-17T00:26:29.982Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_모루플라워_클래스",
@@ -2310,7 +2324,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T00:26:38.639Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2348,7 +2362,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 이화여대1길",
+    "address": "서울 서대문구 이화여대1길",
     "lastEnriched": "2026-03-17T00:26:39.165Z"
   },
   {
@@ -2384,10 +2398,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 도림로",
+    "address": "서울 영등포구 도림로",
     "lastEnriched": "2026-03-17T00:26:38.973Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_원데이쿠킹_내가_만드는_요리_한식_양식_일식_동남아_퓨전요리",
@@ -2404,7 +2420,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 종로2가",
+    "address": "서울 종로구 종로2가",
     "lastEnriched": "2026-03-17T00:26:48.569Z"
   },
   {
@@ -2494,7 +2510,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 노원구 · 동일로178길",
+    "address": "서울 노원구 동일로178길",
     "lastEnriched": "2026-03-17T00:26:58.064Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2514,7 +2530,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 노원구 · 동일로178길",
+    "address": "서울 노원구 동일로178길",
     "lastEnriched": "2026-03-17T00:26:58.191Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2534,7 +2550,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:26:58.372Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2554,7 +2570,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 노원구 · 동일로178길",
+    "address": "서울 노원구 동일로178길",
     "lastEnriched": "2026-03-17T00:26:57.694Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2630,7 +2646,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:47:24.747Z"
   },
   {
@@ -2648,7 +2664,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 관악구 · 봉천동",
+    "address": "서울 관악구 봉천동",
     "lastEnriched": "2026-03-17T03:47:24.749Z"
   },
   {
@@ -2666,7 +2682,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 관악구 · 봉천동",
+    "address": "서울 관악구 봉천동",
     "lastEnriched": "2026-03-17T03:47:24.737Z"
   },
   {
@@ -2684,7 +2700,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 은평구 · 진관2로",
+    "address": "서울 은평구 진관2로",
     "lastEnriched": "2026-03-17T03:47:24.748Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2744,7 +2760,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:47:29.949Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -2824,7 +2840,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 상동",
+    "address": "경기도 부천시 상동",
     "lastEnriched": "2026-03-17T00:27:26.534Z"
   },
   {
@@ -2842,7 +2858,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 상동",
+    "address": "경기도 부천시 상동",
     "lastEnriched": "2026-03-17T03:47:33.169Z"
   },
   {
@@ -2860,7 +2876,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:27:26.511Z"
   },
   {
@@ -2896,7 +2912,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:47:33.149Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3024,7 +3040,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:27:45.170Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3044,7 +3060,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:47:40.787Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3064,7 +3080,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:27:53.639Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3084,7 +3100,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:27:53.466Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3104,7 +3120,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:27:53.532Z"
   },
   {
@@ -3122,7 +3138,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 주교동",
+    "address": "서울 중구 주교동",
     "lastEnriched": "2026-03-17T00:27:52.802Z"
   },
   {
@@ -3140,7 +3156,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로15길",
+    "address": "서울 마포구 동교로15길",
     "lastEnriched": "2026-03-17T00:27:53.277Z"
   },
   {
@@ -3178,7 +3194,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상남도 · 거제시 · 옥포중앙로",
+    "address": "경상남도 거제시 옥포중앙로",
     "lastEnriched": "2026-03-17T00:28:04.208Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3198,7 +3214,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 청계동",
+    "address": "경기도 화성시 청계동",
     "lastEnriched": "2026-03-17T00:28:04.179Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3218,7 +3234,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 청계동",
+    "address": "경기도 화성시 청계동",
     "lastEnriched": "2026-03-17T00:28:03.592Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3238,7 +3254,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 아차산로17길",
+    "address": "서울 성동구 아차산로17길",
     "lastEnriched": "2026-03-17T00:28:03.694Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3276,7 +3292,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강동구 · 상암로",
+    "address": "서울 강동구 상암로",
     "lastEnriched": "2026-03-17T03:47:40.899Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3314,7 +3330,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상남도 · 거제시 · 옥포중앙로",
+    "address": "경상남도 거제시 옥포중앙로",
     "lastEnriched": "2026-03-17T03:47:44.270Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3334,7 +3350,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로",
+    "address": "서울 강남구 논현로",
     "lastEnriched": "2026-03-17T03:47:44.271Z"
   },
   {
@@ -3352,7 +3368,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로50길",
+    "address": "서울 서초구 서초대로50길",
     "lastEnriched": "2026-03-17T03:47:49.146Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3372,7 +3388,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로50길",
+    "address": "서울 서초구 서초대로50길",
     "lastEnriched": "2026-03-17T03:47:49.134Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3392,7 +3408,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로50길",
+    "address": "서울 서초구 서초대로50길",
     "lastEnriched": "2026-03-17T03:47:49.149Z"
   },
   {
@@ -3410,8 +3426,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로",
-    "lastEnriched": "2026-03-17T03:47:49.139Z"
+    "address": "서울 강남구 논현로",
+    "lastEnriched": "2026-03-17T03:47:49.139Z",
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_강남_역삼_전통적인_한국문양_단청그리기_원데이클래스_세라듀_CERADU",
@@ -3428,8 +3446,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로",
-    "lastEnriched": "2026-03-17T03:47:49.149Z"
+    "address": "서울 강남구 논현로",
+    "lastEnriched": "2026-03-17T03:47:49.149Z",
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_무료각인_나만의_카드_명함지갑_만들기_원데이클래스",
@@ -3484,7 +3504,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:47:53.776Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3504,10 +3524,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 양천구 · 목동동로",
+    "address": "서울 양천구 목동동로",
     "lastEnriched": "2026-03-17T03:47:56.639Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_화과자만들기7pcs_리뷰시2pcs증정_화과자로_만드는_한입_예술",
@@ -3524,10 +3546,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 양천구 · 목동동로",
+    "address": "서울 양천구 목동동로",
     "lastEnriched": "2026-03-17T03:47:57.378Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_시한드로잉모임",
@@ -3544,7 +3568,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:47:57.070Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3564,7 +3588,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 이화여대1길",
+    "address": "서울 서대문구 이화여대1길",
     "lastEnriched": "2026-03-17T03:47:57.069Z"
   },
   {
@@ -3582,7 +3606,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 남양주시 · 다산순환로",
+    "address": "경기도 남양주시 다산순환로",
     "lastEnriched": "2026-03-17T03:47:57.377Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3602,7 +3626,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 은평구 · 갈현로",
+    "address": "서울 은평구 갈현로",
     "lastEnriched": "2026-03-17T03:47:57.378Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3642,7 +3666,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:03.136Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3662,7 +3686,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:48:06.232Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3740,7 +3764,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:29:21.369Z"
   },
   {
@@ -3758,7 +3782,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T00:29:21.263Z"
   },
   {
@@ -3776,7 +3800,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 독막로18길",
+    "address": "서울 마포구 독막로18길",
     "lastEnriched": "2026-03-17T00:29:21.263Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3816,7 +3840,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T00:29:21.160Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3836,7 +3860,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 군포시 · 산본로323번길",
+    "address": "경기도 군포시 산본로323번길",
     "lastEnriched": "2026-03-17T03:48:06.431Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3876,10 +3900,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 관악구 · 남부순환로",
+    "address": "서울 관악구 남부순환로",
     "lastEnriched": "2026-03-17T03:48:10.974Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 9
   },
   {
     "id": "class_플라워_취미반_클래스",
@@ -3916,7 +3942,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:13.820Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3936,7 +3962,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:48:13.821Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3956,7 +3982,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:48:13.824Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -3996,7 +4022,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:13.910Z"
   },
   {
@@ -4014,7 +4040,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로50길",
+    "address": "서울 서초구 서초대로50길",
     "lastEnriched": "2026-03-17T03:48:15.951Z"
   },
   {
@@ -4072,7 +4098,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:20.016Z"
   },
   {
@@ -4090,7 +4116,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:48:20.120Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4170,7 +4196,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:20.306Z"
   },
   {
@@ -4208,10 +4234,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 양화로",
+    "address": "서울 마포구 양화로",
     "lastEnriched": "2026-03-17T03:48:23.866Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_위스키클래스_칵테일클래스",
@@ -4228,7 +4256,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:48:24.075Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4248,7 +4276,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 신촌로4길",
+    "address": "서울 마포구 신촌로4길",
     "lastEnriched": "2026-03-17T03:48:28.096Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4268,7 +4296,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:28.076Z"
   },
   {
@@ -4286,7 +4314,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 강남대로101길",
+    "address": "서울 서초구 강남대로101길",
     "lastEnriched": "2026-03-17T03:48:28.097Z"
   },
   {
@@ -4304,7 +4332,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 위례성대로20길",
+    "address": "서울 송파구 위례성대로20길",
     "lastEnriched": "2026-03-17T03:48:28.098Z"
   },
   {
@@ -4342,7 +4370,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:31.164Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4362,7 +4390,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강동구 · 상암로39길",
+    "address": "서울 강동구 상암로39길",
     "lastEnriched": "2026-03-17T03:48:31.434Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4402,7 +4430,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로27길",
+    "address": "서울 마포구 동교로27길",
     "lastEnriched": "2026-03-17T03:48:31.108Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4462,7 +4490,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T03:48:35.486Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4502,7 +4530,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 평택시 · 고덕갈평6길",
+    "address": "경기도 평택시 고덕갈평6길",
     "lastEnriched": "2026-03-17T03:48:38.191Z"
   },
   {
@@ -4556,7 +4584,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 삼성로85길",
+    "address": "서울 강남구 삼성로85길",
     "lastEnriched": "2026-03-17T03:48:38.018Z"
   },
   {
@@ -4574,7 +4602,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:37.956Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4594,7 +4622,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:40.856Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4614,7 +4642,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:40.900Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4634,7 +4662,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 이수역-사당역",
+    "address": "서울 서초구 이수역-사당역",
     "lastEnriched": "2026-03-17T03:48:40.952Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4694,7 +4722,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 연세로7안길",
+    "address": "서울 서대문구 연세로7안길",
     "lastEnriched": "2026-03-17T03:48:46.223Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4714,7 +4742,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 연세로7안길",
+    "address": "서울 서대문구 연세로7안길",
     "lastEnriched": "2026-03-17T03:48:46.229Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4734,8 +4762,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강서구 · 양천로",
-    "lastEnriched": "2026-03-17T03:48:46.224Z"
+    "address": "서울 강서구 양천로",
+    "lastEnriched": "2026-03-17T03:48:46.224Z",
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_mbti_퍼스널_향수_만들기",
@@ -4772,7 +4802,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:48:50.706Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4792,7 +4822,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 이화여대길",
+    "address": "서울 서대문구 이화여대길",
     "lastEnriched": "2026-03-17T03:48:49.564Z"
   },
   {
@@ -4810,7 +4840,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:53.370Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4830,7 +4860,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:53.359Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4870,7 +4900,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강서구 · 마곡중앙로",
+    "address": "서울 강서구 마곡중앙로",
     "lastEnriched": "2026-03-17T03:48:53.360Z"
   },
   {
@@ -4888,7 +4918,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:48:53.360Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4908,7 +4938,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:48:55.884Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -4946,7 +4976,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 이화여대1길",
+    "address": "서울 서대문구 이화여대1길",
     "lastEnriched": "2026-03-17T03:49:01.120Z"
   },
   {
@@ -4964,7 +4994,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:49:04.875Z"
   },
   {
@@ -4982,7 +5012,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 금천구 · 가산동",
+    "address": "서울 금천구 가산동",
     "lastEnriched": "2026-03-17T03:49:04.874Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5002,7 +5032,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "충청북도 · 청주시 · 흥덕구",
+    "address": "충청북도 청주시 흥덕구",
     "lastEnriched": "2026-03-17T03:49:04.878Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5042,7 +5072,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강동구 · 올림픽로98길",
+    "address": "서울 강동구 올림픽로98길",
     "lastEnriched": "2026-03-17T03:49:04.867Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5062,7 +5092,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 군포시 · 대야1로11번길",
+    "address": "경기도 군포시 대야1로11번길",
     "lastEnriched": "2026-03-17T03:49:05.537Z"
   },
   {
@@ -5098,7 +5128,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 하남시 · 미사강변서로",
+    "address": "경기도 하남시 미사강변서로",
     "lastEnriched": "2026-03-17T03:49:10.394Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5118,7 +5148,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "강원특별자치도 · 원주시 · 능라동길",
+    "address": "강원특별자치도 원주시 능라동길",
     "lastEnriched": "2026-03-17T03:49:13.259Z"
   },
   {
@@ -5214,7 +5244,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:49:14.323Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5234,7 +5264,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:49:14.319Z"
   },
   {
@@ -5272,10 +5302,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 신흥로",
+    "address": "경기도 부천시 신흥로",
     "lastEnriched": "2026-03-17T03:49:23.003Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_필라테스_원데이클래스_무료강습_선착순_모집중",
@@ -5292,7 +5324,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:49:23.016Z"
   },
   {
@@ -5310,7 +5342,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 팔달구",
+    "address": "경기도 수원시 팔달구",
     "lastEnriched": "2026-03-17T03:49:23.006Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5366,10 +5398,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로",
+    "address": "서울 강남구 논현로",
     "lastEnriched": "2026-03-17T03:49:23.015Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_가죽공예_양면_카드지갑_만들기",
@@ -5424,7 +5458,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:49:23.217Z"
   },
   {
@@ -5462,7 +5496,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T03:49:31.533Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5542,8 +5576,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 한강대로",
-    "lastEnriched": "2026-03-17T03:49:31.535Z"
+    "address": "서울 용산구 한강대로",
+    "lastEnriched": "2026-03-17T03:49:31.535Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_광주광역시_나만의_실링왁스_원데이클래스",
@@ -5580,7 +5616,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:49:31.558Z"
   },
   {
@@ -5598,7 +5634,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:49:34.153Z"
   },
   {
@@ -5616,7 +5652,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 군포시 · 군포로735번길",
+    "address": "경기도 군포시 군포로735번길",
     "lastEnriched": "2026-03-17T03:49:38.834Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5656,7 +5692,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강서구 · 화곡로31길",
+    "address": "서울 강서구 화곡로31길",
     "lastEnriched": "2026-03-17T03:49:38.834Z"
   },
   {
@@ -5734,7 +5770,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 강남대로53길",
+    "address": "서울 서초구 강남대로53길",
     "lastEnriched": "2026-03-17T03:49:38.835Z"
   },
   {
@@ -5770,7 +5806,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:49:50.873Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5790,7 +5826,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 팔달구",
+    "address": "경기도 수원시 팔달구",
     "lastEnriched": "2026-03-17T03:49:50.869Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5810,7 +5846,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:49:50.874Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5830,7 +5866,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:49:50.872Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5850,7 +5886,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:49:50.874Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5870,7 +5906,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 포은로",
+    "address": "서울 마포구 포은로",
     "lastEnriched": "2026-03-17T03:49:50.506Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -5890,7 +5926,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 군포시 · 대야1로11번길",
+    "address": "경기도 군포시 대야1로11번길",
     "lastEnriched": "2026-03-17T03:49:50.879Z"
   },
   {
@@ -5908,7 +5944,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:49:51.003Z"
   },
   {
@@ -5926,7 +5962,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:50:03.034Z"
   },
   {
@@ -5944,7 +5980,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T03:50:03.034Z"
   },
   {
@@ -5962,7 +5998,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 노원구 · 동일로182길",
+    "address": "서울 노원구 동일로182길",
     "lastEnriched": "2026-03-17T03:50:03.034Z"
   },
   {
@@ -6019,7 +6055,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 계동",
+    "address": "서울 종로구 계동",
     "lastEnriched": "2026-03-17T03:50:03.034Z"
   },
   {
@@ -6037,7 +6073,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 청운동",
+    "address": "서울 종로구 청운동",
     "lastEnriched": "2026-03-17T03:50:03.237Z"
   },
   {
@@ -6055,10 +6091,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 사직로",
+    "address": "서울 종로구 사직로",
     "lastEnriched": "2026-03-17T03:50:03.034Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_홍대_내가_원하는_디자인으로_제작하는_나만의_반려식물_테라리움_원데이클래스",
@@ -6113,10 +6151,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 노원구 · 노원로",
+    "address": "서울 노원구 노원로",
     "lastEnriched": "2026-03-17T03:50:14.486Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_친환경_클레이로_만드는_나만의_웜아트_소품",
@@ -6133,7 +6173,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중랑구 · 봉화산로1길",
+    "address": "서울 중랑구 봉화산로1길",
     "lastEnriched": "2026-03-17T03:50:14.486Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6173,7 +6213,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:50:14.479Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6211,10 +6251,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 천호대로",
+    "address": "서울 광진구 천호대로",
     "lastEnriched": "2026-03-17T03:50:14.485Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 10
   },
   {
     "id": "class_펀치니들_은방울꽃_액자_만들기",
@@ -6231,7 +6273,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:50:14.485Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6269,7 +6311,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 도림로126길",
+    "address": "서울 영등포구 도림로126길",
     "lastEnriched": "2026-03-17T03:50:21.475Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6289,7 +6331,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 도림로126길",
+    "address": "서울 영등포구 도림로126길",
     "lastEnriched": "2026-03-17T03:50:24.705Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6327,7 +6369,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 강남대로53길",
+    "address": "서울 서초구 강남대로53길",
     "lastEnriched": "2026-03-17T03:50:24.704Z"
   },
   {
@@ -6345,7 +6387,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:50:24.688Z"
   },
   {
@@ -6363,7 +6405,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:50:24.699Z"
   },
   {
@@ -6381,7 +6423,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:50:24.706Z"
   },
   {
@@ -6399,7 +6441,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:50:29.252Z"
   },
   {
@@ -6417,7 +6459,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 월드컵로30길",
+    "address": "서울 마포구 월드컵로30길",
     "lastEnriched": "2026-03-17T03:50:29.249Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6437,7 +6479,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 월드컵로30길",
+    "address": "서울 마포구 월드컵로30길",
     "lastEnriched": "2026-03-17T03:50:33.050Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6457,7 +6499,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:50:33.057Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6517,7 +6559,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 광주시 · 중대동",
+    "address": "경기도 광주시 중대동",
     "lastEnriched": "2026-03-12T06:47:19.276Z"
   },
   {
@@ -6535,7 +6577,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:50:33.056Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6591,7 +6633,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T03:50:36.786Z"
   },
   {
@@ -6609,7 +6651,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:50:36.786Z"
   },
   {
@@ -6627,7 +6669,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 강남대로53길",
+    "address": "서울 서초구 강남대로53길",
     "lastEnriched": "2026-03-17T03:50:36.786Z"
   },
   {
@@ -6645,10 +6687,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 백범로",
+    "address": "서울 마포구 백범로",
     "lastEnriched": "2026-03-17T03:50:39.816Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_강남_나에게_어울리는_컬러향수만들기_원데이클래스_시그널센트_조향수업",
@@ -6665,7 +6709,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:50:39.866Z"
   },
   {
@@ -6703,7 +6747,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로4길",
+    "address": "서울 성동구 왕십리로4길",
     "lastEnriched": "2026-03-17T03:50:39.863Z"
   },
   {
@@ -6761,7 +6805,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 이화여대1길",
+    "address": "서울 서대문구 이화여대1길",
     "lastEnriched": "2026-03-17T03:50:43.309Z"
   },
   {
@@ -6797,8 +6841,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로",
-    "lastEnriched": "2026-03-17T03:50:48.248Z"
+    "address": "서울 마포구 동교로",
+    "lastEnriched": "2026-03-17T03:50:48.248Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_나만의_작은우주_테라리움_원데이클래스",
@@ -6875,7 +6921,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:50:51.193Z"
   },
   {
@@ -6893,7 +6939,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 황학교.텐즈힐몰 ·",
+    "address": "서울 황학교.텐즈힐몰",
     "lastEnriched": "2026-03-17T03:50:51.194Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6913,7 +6959,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 삼성로96길",
+    "address": "서울 강남구 삼성로96길",
     "lastEnriched": "2026-03-17T03:50:51.194Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -6933,10 +6979,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로",
+    "address": "서울 성동구 왕십리로",
     "lastEnriched": "2026-03-17T03:50:51.193Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_knit_악세사리_만들기",
@@ -6953,10 +7001,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로",
+    "address": "서울 성동구 왕십리로",
     "lastEnriched": "2026-03-17T03:50:51.194Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_힐링심리원예_플라워_가드닝_클래스",
@@ -6973,7 +7023,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:50:55.807Z"
   },
   {
@@ -6991,7 +7041,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 월드컵북로4길",
+    "address": "서울 마포구 월드컵북로4길",
     "lastEnriched": "2026-03-17T03:50:55.806Z"
   },
   {
@@ -7049,7 +7099,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:51:01.869Z"
   },
   {
@@ -7127,7 +7177,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 신흥로20길",
+    "address": "서울 용산구 신흥로20길",
     "lastEnriched": "2026-03-17T03:51:06.286Z"
   },
   {
@@ -7145,7 +7195,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:51:06.276Z"
   },
   {
@@ -7183,10 +7233,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로",
+    "address": "서울 서초구 서초대로",
     "lastEnriched": "2026-03-17T03:51:12.517Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_근접전투술_크라브마가_자기방어_클래스",
@@ -7223,7 +7275,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:51:12.487Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7301,7 +7353,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:51:15.620Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7321,7 +7373,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 이화동",
+    "address": "서울 종로구 이화동",
     "lastEnriched": "2026-03-17T03:51:16.644Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7341,7 +7393,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:51:22.297Z"
   },
   {
@@ -7415,7 +7467,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:51:22.349Z"
   },
   {
@@ -7451,7 +7503,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 한강로2가",
+    "address": "서울 용산구 한강로2가",
     "lastEnriched": "2026-03-17T03:51:25.687Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7471,10 +7523,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 백범로",
+    "address": "서울 마포구 백범로",
     "lastEnriched": "2026-03-17T03:51:26.004Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_성수_공방_크리스마스_루돌푸_모루_인형_앤티_키링_만들기",
@@ -7491,7 +7545,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:51:28.884Z"
   },
   {
@@ -7509,7 +7563,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로4길",
+    "address": "서울 성동구 왕십리로4길",
     "lastEnriched": "2026-03-17T03:51:28.977Z"
   },
   {
@@ -7527,7 +7581,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 강남대로122길",
+    "address": "서울 강남구 강남대로122길",
     "lastEnriched": "2026-03-17T03:51:28.986Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7657,10 +7711,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강동구 · 상암로",
+    "address": "서울 강동구 상암로",
     "lastEnriched": "2026-03-17T03:51:36.512Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_필라테스와_헌대무용의_콜라보_필라탄츠",
@@ -7677,7 +7733,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:51:36.517Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7697,7 +7753,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 신당동",
+    "address": "서울 중구 신당동",
     "lastEnriched": "2026-03-17T03:51:36.512Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7737,7 +7793,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 신당동",
+    "address": "서울 중구 신당동",
     "lastEnriched": "2026-03-17T03:51:36.512Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7757,7 +7813,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 신당동",
+    "address": "서울 중구 신당동",
     "lastEnriched": "2026-03-17T03:51:42.038Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7777,7 +7833,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:51:42.047Z"
   },
   {
@@ -7834,7 +7890,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 강남대로53길",
+    "address": "서울 서초구 강남대로53길",
     "lastEnriched": "2026-03-17T03:51:45.348Z"
   },
   {
@@ -7852,7 +7908,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T03:51:45.352Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7946,7 +8002,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:51:50.591Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -7966,10 +8022,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 연세로",
+    "address": "서울 서대문구 연세로",
     "lastEnriched": "2026-03-17T03:51:50.588Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 14
   },
   {
     "id": "class_힙치로_MZ_탱고_댄스_동호회_학원_tango_살사_스윙댄스_스포츠_댄스_스포츠_학원",
@@ -7986,7 +8044,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 충무로4가",
+    "address": "서울 중구 충무로4가",
     "lastEnriched": "2026-03-17T03:51:55.043Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8006,7 +8064,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:51:55.042Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8062,7 +8120,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:51:55.041Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8082,7 +8140,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:51:58.497Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8102,7 +8160,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:51:58.515Z"
   },
   {
@@ -8140,7 +8198,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:04.154Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8200,7 +8258,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T03:52:04.117Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8258,7 +8316,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T03:52:07.851Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8278,7 +8336,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:07.836Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8378,7 +8436,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:52:14.792Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8518,7 +8576,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:21.624Z"
   },
   {
@@ -8536,7 +8594,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:52:21.635Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8556,7 +8614,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:52:24.802Z"
   },
   {
@@ -8574,7 +8632,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:52:24.807Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8674,7 +8732,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T03:52:28.603Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8694,7 +8752,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:28.601Z"
   },
   {
@@ -8730,7 +8788,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:52:32.225Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -8770,7 +8828,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:32.215Z"
   },
   {
@@ -8788,7 +8846,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:36.510Z"
   },
   {
@@ -8884,7 +8942,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현동",
+    "address": "서울 강남구 논현동",
     "lastEnriched": "2026-03-17T03:52:40.116Z"
   },
   {
@@ -8942,7 +9000,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:52:39.926Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9022,7 +9080,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 권선구",
+    "address": "경기도 수원시 권선구",
     "lastEnriched": "2026-03-17T03:52:43.183Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9042,7 +9100,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:47.095Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9062,7 +9120,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 충무로4가",
+    "address": "서울 중구 충무로4가",
     "lastEnriched": "2026-03-17T03:52:47.015Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9122,7 +9180,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:50.577Z"
   },
   {
@@ -9140,7 +9198,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 도화2안길",
+    "address": "서울 마포구 도화2안길",
     "lastEnriched": "2026-03-17T03:52:50.536Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9160,10 +9218,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로",
+    "address": "서울 강남구 논현로",
     "lastEnriched": "2026-03-17T03:52:50.581Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_수제약과_만들기",
@@ -9240,7 +9300,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:53.955Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9260,7 +9320,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:52:53.944Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9280,7 +9340,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:52:58.292Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9380,7 +9440,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:53:03.752Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9420,7 +9480,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:53:03.751Z"
   },
   {
@@ -9458,7 +9518,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:53:06.853Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9478,7 +9538,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 광주시 · 태전로",
+    "address": "경기도 광주시 태전로",
     "lastEnriched": "2026-03-17T03:53:06.853Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9578,7 +9638,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:53:09.646Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9618,7 +9678,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 금천구 · 가산동",
+    "address": "서울 금천구 가산동",
     "lastEnriched": "2026-03-17T03:53:12.517Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9658,7 +9718,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:53:12.461Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9696,7 +9756,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:53:15.393Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9716,7 +9776,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:53:16.594Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9736,7 +9796,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:53:19.510Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9796,7 +9856,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 의정부시 · 의정부동",
+    "address": "경기도 의정부시 의정부동",
     "lastEnriched": "2026-03-17T03:53:19.515Z"
   },
   {
@@ -9912,7 +9972,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:53:25.579Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -9932,7 +9992,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 은평구 · 갈현동",
+    "address": "서울 은평구 갈현동",
     "lastEnriched": "2026-03-17T03:53:25.576Z"
   },
   {
@@ -10008,7 +10068,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 구미시 · 형곡로",
+    "address": "경상북도 구미시 형곡로",
     "lastEnriched": "2026-03-17T03:53:28.575Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10066,7 +10126,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:53:31.801Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10122,7 +10182,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:53:31.800Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10142,7 +10202,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:53:36.555Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10202,7 +10262,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:53:40.410Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10222,7 +10282,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:53:40.410Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10262,7 +10322,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:53:40.402Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10372,7 +10432,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 양주시 · 고암동",
+    "address": "경기도 양주시 고암동",
     "lastEnriched": "2026-03-17T03:53:49.891Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10392,7 +10452,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 양주시 · 고암동",
+    "address": "경기도 양주시 고암동",
     "lastEnriched": "2026-03-17T03:53:49.891Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10528,7 +10588,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 태평로1가",
+    "address": "서울 중구 태평로1가",
     "lastEnriched": "2026-03-17T03:53:57.209Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10548,7 +10608,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 방배로42길",
+    "address": "서울 서초구 방배로42길",
     "lastEnriched": "2026-03-17T03:53:57.209Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10604,7 +10664,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:02.153Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10664,7 +10724,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:05.344Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10684,7 +10744,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 구로구 · 구로동",
+    "address": "서울 구로구 구로동",
     "lastEnriched": "2026-03-17T03:54:05.262Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10744,7 +10804,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로",
+    "address": "서울 마포구 동교로",
     "lastEnriched": "2026-03-17T03:54:05.282Z"
   },
   {
@@ -10782,7 +10842,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:54:10.034Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10820,7 +10880,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:13.164Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10880,7 +10940,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 팔달구",
+    "address": "경기도 수원시 팔달구",
     "lastEnriched": "2026-03-17T03:54:13.101Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10900,7 +10960,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:13.168Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -10960,7 +11020,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:54:19.520Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11020,7 +11080,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초대로77길",
+    "address": "서울 서초구 서초대로77길",
     "lastEnriched": "2026-03-17T03:54:23.184Z"
   },
   {
@@ -11038,8 +11098,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 한강대로",
-    "lastEnriched": "2026-03-17T03:54:23.183Z"
+    "address": "서울 용산구 한강대로",
+    "lastEnriched": "2026-03-17T03:54:23.183Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_너무_특별해_터프팅_거울_터프팅_원데이클래스",
@@ -11116,8 +11178,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로",
-    "lastEnriched": "2026-03-17T03:54:28.293Z"
+    "address": "서울 마포구 동교로",
+    "lastEnriched": "2026-03-17T03:54:28.293Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_나만의_향수만들기_네이처페어리",
@@ -11154,7 +11218,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:31.489Z"
   },
   {
@@ -11172,7 +11236,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T03:54:31.485Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11270,7 +11334,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:35.061Z"
   },
   {
@@ -11288,7 +11352,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 후암동",
+    "address": "서울 용산구 후암동",
     "lastEnriched": "2026-03-17T03:54:38.472Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11308,8 +11372,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로",
-    "lastEnriched": "2026-03-17T03:54:38.472Z"
+    "address": "서울 마포구 동교로",
+    "lastEnriched": "2026-03-17T03:54:38.472Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_나만의_색을_찾아보는_페인팅_원데이_클래스",
@@ -11346,7 +11412,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:54:38.473Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11386,7 +11452,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강서구 · 마곡동",
+    "address": "서울 강서구 마곡동",
     "lastEnriched": "2026-03-17T03:54:41.748Z"
   },
   {
@@ -11404,7 +11470,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:41.744Z"
   },
   {
@@ -11422,7 +11488,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강서구 · 마곡동",
+    "address": "서울 강서구 마곡동",
     "lastEnriched": "2026-03-17T03:54:42.148Z"
   },
   {
@@ -11460,7 +11526,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:48.684Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11640,7 +11706,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:54:57.200Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11660,7 +11726,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:54:57.201Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11700,7 +11766,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:55:01.089Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11720,7 +11786,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:55:01.152Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11740,7 +11806,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 팔달구",
+    "address": "경기도 수원시 팔달구",
     "lastEnriched": "2026-03-17T03:55:01.152Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11760,7 +11826,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:55:04.589Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11816,7 +11882,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로4길",
+    "address": "서울 성동구 왕십리로4길",
     "lastEnriched": "2026-03-17T03:55:04.585Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11836,7 +11902,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:55:04.583Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11856,7 +11922,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:55:08.668Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11956,7 +12022,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 중동",
+    "address": "경기도 부천시 중동",
     "lastEnriched": "2026-03-17T03:55:11.483Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11976,7 +12042,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:11.649Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -11996,7 +12062,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 후암동",
+    "address": "서울 용산구 후암동",
     "lastEnriched": "2026-03-17T03:55:11.649Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12016,7 +12082,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:16.080Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12036,7 +12102,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:55:16.080Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12076,7 +12142,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 중동",
+    "address": "경기도 부천시 중동",
     "lastEnriched": "2026-03-17T03:55:19.498Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12096,7 +12162,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:55:19.498Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12116,7 +12182,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 당산로",
+    "address": "서울 영등포구 당산로",
     "lastEnriched": "2026-03-17T03:55:19.498Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12216,7 +12282,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 원효로1가",
+    "address": "서울 용산구 원효로1가",
     "lastEnriched": "2026-03-17T03:55:23.609Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12236,7 +12302,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:28.498Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12296,7 +12362,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 구로구 · 구로동",
+    "address": "서울 구로구 구로동",
     "lastEnriched": "2026-03-17T03:55:28.497Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12316,7 +12382,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:28.490Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12336,7 +12402,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "충청북도 · 청주시 · 상당구",
+    "address": "충청북도 청주시 상당구",
     "lastEnriched": "2026-03-17T03:55:33.687Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12356,7 +12422,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "충청북도 · 청주시 · 상당구",
+    "address": "충청북도 청주시 상당구",
     "lastEnriched": "2026-03-17T03:55:33.688Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12376,7 +12442,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "충청북도 · 청주시 · 상당구",
+    "address": "충청북도 청주시 상당구",
     "lastEnriched": "2026-03-17T03:55:33.687Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12396,7 +12462,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "충청북도 · 청주시 · 상당구",
+    "address": "충청북도 청주시 상당구",
     "lastEnriched": "2026-03-17T03:55:36.774Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12416,7 +12482,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:36.773Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12456,7 +12522,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:36.773Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12514,7 +12580,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:55:41.791Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12534,7 +12600,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:41.790Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12572,7 +12638,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:44.771Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12610,7 +12676,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T03:55:44.772Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12630,7 +12696,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:55:44.773Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12650,7 +12716,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T03:55:47.909Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12710,7 +12776,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T03:55:51.308Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12770,7 +12836,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 중동",
+    "address": "경기도 부천시 중동",
     "lastEnriched": "2026-03-17T03:55:51.311Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12826,7 +12892,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:55.280Z"
   },
   {
@@ -12904,7 +12970,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 구로구 · 디지털로32가길",
+    "address": "서울 구로구 디지털로32가길",
     "lastEnriched": "2026-03-17T03:55:58.362Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -12924,7 +12990,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:58.368Z"
   },
   {
@@ -12942,7 +13008,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:55:58.363Z"
   },
   {
@@ -13000,7 +13066,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 영천동",
+    "address": "경기도 화성시 영천동",
     "lastEnriched": "2026-03-17T03:56:02.076Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13040,7 +13106,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:56:06.226Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13196,7 +13262,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:56:14.071Z"
   },
   {
@@ -13232,10 +13298,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강서구 · 양천로",
+    "address": "서울 강서구 양천로",
     "lastEnriched": "2026-03-17T03:56:14.073Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 11
   },
   {
     "id": "class_어보브_모던한_라탄_미니도어벨_만들기",
@@ -13272,7 +13340,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:56:16.300Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13330,7 +13398,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:56:19.712Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13408,7 +13476,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 적선동",
+    "address": "서울 종로구 적선동",
     "lastEnriched": "2026-03-17T03:56:20.882Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13502,7 +13570,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 오산시 · 경기대로",
+    "address": "경기도 오산시 경기대로",
     "lastEnriched": "2026-03-17T03:56:27.506Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13522,7 +13590,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 오산시 · 경기대로",
+    "address": "경기도 오산시 경기대로",
     "lastEnriched": "2026-03-17T03:56:27.289Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13542,7 +13610,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:56:27.506Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13722,7 +13790,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 성수동2가",
+    "address": "서울 성동구 성수동2가",
     "lastEnriched": "2026-03-17T03:56:35.208Z"
   },
   {
@@ -13778,7 +13846,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 오산시 · 경기대로",
+    "address": "경기도 오산시 경기대로",
     "lastEnriched": "2026-03-17T03:56:39.190Z"
   },
   {
@@ -13836,7 +13904,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:56:43.152Z"
   },
   {
@@ -13934,7 +14002,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 소사본동",
+    "address": "경기도 부천시 소사본동",
     "lastEnriched": "2026-03-17T03:56:44.733Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -13974,7 +14042,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 돈의동",
+    "address": "서울 종로구 돈의동",
     "lastEnriched": "2026-03-17T03:56:53.006Z"
   },
   {
@@ -13992,7 +14060,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울트별 · 강남구 · 논현로152길",
+    "address": "서울트별 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:56:52.886Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14032,7 +14100,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:56:52.841Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14112,7 +14180,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:01.801Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14132,7 +14200,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:57:05.019Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14152,7 +14220,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 소사본동",
+    "address": "경기도 부천시 소사본동",
     "lastEnriched": "2026-03-17T03:57:05.032Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14172,7 +14240,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 양주시 · 고암동",
+    "address": "경기도 양주시 고암동",
     "lastEnriched": "2026-03-17T03:57:05.018Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14270,8 +14338,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로",
-    "lastEnriched": "2026-03-17T03:57:09.795Z"
+    "address": "서울 마포구 동교로",
+    "lastEnriched": "2026-03-17T03:57:09.795Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_강아지_노오븐_수제간식_취미반",
@@ -14288,7 +14358,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T03:57:14.152Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14308,7 +14378,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:14.156Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14348,7 +14418,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 중구 · 태평로1가",
+    "address": "서울 중구 태평로1가",
     "lastEnriched": "2026-03-17T03:57:14.152Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14369,7 +14439,9 @@
     "ageLimit": "전체",
     "casting": "",
     "address": "부산광역시 수영구 망미",
-    "lastEnriched": "2026-03-17T03:57:14.168Z"
+    "lastEnriched": "2026-03-17T03:57:14.168Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_이끼테라리움_원데이클래스",
@@ -14386,7 +14458,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:14.160Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14506,7 +14578,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:21.675Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14546,8 +14618,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로3가 · 종로3가",
-    "lastEnriched": "2026-03-17T03:57:21.708Z"
+    "address": "서울 종로3가 종로3가",
+    "lastEnriched": "2026-03-17T03:57:21.708Z",
+    "latitude": 0,
+    "longitude": 14
   },
   {
     "id": "class_광명_Focus_on_me_흙과_함께하는_시간",
@@ -14682,7 +14756,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:31.854Z"
   },
   {
@@ -14700,7 +14774,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강서구 · 마곡동",
+    "address": "서울 강서구 마곡동",
     "lastEnriched": "2026-03-17T03:57:31.431Z"
   },
   {
@@ -14718,7 +14792,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:35.730Z"
   },
   {
@@ -14876,7 +14950,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T03:57:43.850Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -14896,8 +14970,10 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 동교로",
-    "lastEnriched": "2026-03-17T03:57:44.249Z"
+    "address": "서울 마포구 동교로",
+    "lastEnriched": "2026-03-17T03:57:44.249Z",
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_프리미엄_도마_만들기_원데이클래스",
@@ -15030,7 +15106,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T03:57:50.411Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15050,7 +15126,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:57:51.138Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15090,7 +15166,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:54.426Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15110,7 +15186,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:54.415Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15130,7 +15206,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:54.427Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15150,7 +15226,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:54.428Z"
   },
   {
@@ -15168,7 +15244,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:57:54.414Z"
   },
   {
@@ -15186,7 +15262,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:58:00.118Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15206,7 +15282,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 적선동",
+    "address": "서울 종로구 적선동",
     "lastEnriched": "2026-03-17T03:58:00.118Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15366,7 +15442,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T03:58:07.495Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15386,7 +15462,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:58:07.494Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15406,7 +15482,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:58:10.598Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15446,7 +15522,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:58:10.686Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15466,7 +15542,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "제주도 · 제주시 · 애월읍",
+    "address": "제주도 제주시 애월읍",
     "lastEnriched": "2026-03-17T03:58:15.303Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15729,7 +15805,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:58:22.833Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15749,7 +15825,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:58:22.838Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15789,7 +15865,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 도화2안길",
+    "address": "서울 마포구 도화2안길",
     "lastEnriched": "2026-03-17T03:58:22.833Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15829,7 +15905,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T03:58:25.659Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -15867,7 +15943,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 광명시 · 일직동",
+    "address": "경기도 광명시 일직동",
     "lastEnriched": "2026-03-17T03:58:29.810Z"
   },
   {
@@ -15945,10 +16021,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 마포대로",
+    "address": "서울 마포구 마포대로",
     "lastEnriched": "2026-03-17T03:58:29.789Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_이대_신촌_홍대_노래에_대한_모든_꿀팁_쉽고_재밌게_알려드립니다",
@@ -16063,7 +16141,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 동탄기흥로",
+    "address": "경기도 화성시 동탄기흥로",
     "lastEnriched": "2026-03-17T03:58:38.369Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16083,7 +16161,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T03:58:38.373Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16103,7 +16181,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T03:58:39.434Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16141,7 +16219,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 당산로",
+    "address": "서울 영등포구 당산로",
     "lastEnriched": "2026-03-17T03:58:41.388Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16161,7 +16239,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 동탄기흥로",
+    "address": "경기도 화성시 동탄기흥로",
     "lastEnriched": "2026-03-17T03:58:44.159Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16201,7 +16279,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:46.938Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16221,7 +16299,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:47.034Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16241,7 +16319,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:46.939Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16261,7 +16339,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:58:46.950Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16281,7 +16359,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:58:49.538Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16301,7 +16379,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:49.536Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16321,7 +16399,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:50.883Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16361,7 +16439,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:54.450Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16401,7 +16479,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:54.450Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16421,7 +16499,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:54.451Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16441,7 +16519,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:58.030Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16461,7 +16539,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:58.029Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16481,7 +16559,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:58:58.030Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16521,7 +16599,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 청암동",
+    "address": "서울 용산구 청암동",
     "lastEnriched": "2026-03-17T03:59:01.419Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16581,7 +16659,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강동구 · 길동",
+    "address": "서울 강동구 길동",
     "lastEnriched": "2026-03-17T03:59:01.420Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16745,7 +16823,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 강남대로2길",
+    "address": "서울 서초구 강남대로2길",
     "lastEnriched": "2026-03-17T03:59:14.334Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16765,7 +16843,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 안산시 · 단원구",
+    "address": "경기도 안산시 단원구",
     "lastEnriched": "2026-03-17T03:59:14.505Z"
   },
   {
@@ -16783,7 +16861,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:59:14.504Z"
   },
   {
@@ -16801,7 +16879,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 안산시 · 단원구",
+    "address": "경기도 안산시 단원구",
     "lastEnriched": "2026-03-17T03:59:14.505Z"
   },
   {
@@ -16819,7 +16897,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 북촌로12길",
+    "address": "서울 종로구 북촌로12길",
     "lastEnriched": "2026-03-17T03:59:17.762Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16839,7 +16917,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 종로구 · 북촌로12길",
+    "address": "서울 종로구 북촌로12길",
     "lastEnriched": "2026-03-17T03:59:17.759Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16859,7 +16937,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T03:59:17.795Z"
   },
   {
@@ -16935,7 +17013,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:59:23.784Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -16955,7 +17033,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 방배로42길",
+    "address": "서울 서초구 방배로42길",
     "lastEnriched": "2026-03-17T03:59:23.745Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17035,7 +17113,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:59:29.964Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17055,7 +17133,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:59:40.743Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17075,7 +17153,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:59:40.946Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17095,7 +17173,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 청두곶길",
+    "address": "서울 서초구 청두곶길",
     "lastEnriched": "2026-03-17T03:59:43.919Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17207,7 +17285,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 우면동",
+    "address": "서울 서초구 우면동",
     "lastEnriched": "2026-03-17T03:59:47.369Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17227,7 +17305,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 방배천로6길",
+    "address": "서울 서초구 방배천로6길",
     "lastEnriched": "2026-03-17T03:59:47.373Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17247,7 +17325,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T03:59:54.606Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17267,7 +17345,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T03:59:55.991Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17307,7 +17385,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 도화2안길",
+    "address": "서울 마포구 도화2안길",
     "lastEnriched": "2026-03-17T03:59:55.987Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17347,7 +17425,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T03:59:55.988Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17367,7 +17445,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 방배천로4안길",
+    "address": "서울 서초구 방배천로4안길",
     "lastEnriched": "2026-03-17T03:59:57.492Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17387,7 +17465,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 방배천로6길",
+    "address": "서울 서초구 방배천로6길",
     "lastEnriched": "2026-03-17T03:59:57.493Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17407,7 +17485,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T04:00:09.046Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17427,7 +17505,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:09.272Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17447,7 +17525,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:09.266Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17467,7 +17545,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:09.272Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17487,7 +17565,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 서교동",
+    "address": "서울 마포구 서교동",
     "lastEnriched": "2026-03-17T04:00:09.271Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17507,7 +17585,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 서교동",
+    "address": "서울 마포구 서교동",
     "lastEnriched": "2026-03-17T04:00:09.272Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17530,7 +17608,9 @@
     "address": "인천광역시 연수구 송도1동 해돋이로 112 105호",
     "lastEnriched": "2026-03-17T04:00:09.904Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_반려동물_수제간식_댕런볼_만들기",
@@ -17567,7 +17647,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T04:00:21.138Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17587,7 +17667,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:21.157Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17607,7 +17687,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T04:00:21.133Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17627,7 +17707,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:00:21.146Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17667,7 +17747,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:21.143Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17687,7 +17767,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:21.158Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17707,7 +17787,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:21.147Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17727,7 +17807,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:00:30.428Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17747,7 +17827,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:00:30.398Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17787,7 +17867,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:00:30.434Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17807,7 +17887,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:00:30.432Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17847,7 +17927,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:00:30.429Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17887,7 +17967,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:00:45.089Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17907,7 +17987,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:00:45.047Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17927,7 +18007,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강동구 · 양재대로",
+    "address": "서울 강동구 양재대로",
     "lastEnriched": "2026-03-17T04:00:45.036Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17947,7 +18027,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T04:00:45.025Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17967,7 +18047,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T04:00:45.035Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -17987,7 +18067,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 관악구 · 봉천동",
+    "address": "서울 관악구 봉천동",
     "lastEnriched": "2026-03-17T04:00:45.016Z"
   },
   {
@@ -18005,7 +18085,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:00:45.036Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18045,7 +18125,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:01:03.588Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18085,10 +18165,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 거북골로",
+    "address": "서울 서대문구 거북골로",
     "lastEnriched": "2026-03-17T04:01:03.604Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_힐링_향_인센스_만들기_원데이클래스",
@@ -18105,7 +18187,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:01:03.583Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18125,7 +18207,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T04:01:03.593Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18165,7 +18247,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:01:03.605Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18205,7 +18287,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T04:01:14.390Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18225,10 +18307,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서대문구 · 거북골로",
+    "address": "서울 서대문구 거북골로",
     "lastEnriched": "2026-03-17T04:01:14.402Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_스테인드글라스_정규클래스",
@@ -18265,7 +18349,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:01:14.265Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18285,7 +18369,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:01:14.414Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18305,7 +18389,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T04:01:14.386Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18563,7 +18647,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 수원시 · 장안구",
+    "address": "경기도 수원시 장안구",
     "lastEnriched": "2026-03-17T04:01:26.861Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18603,7 +18687,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T04:01:26.949Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18623,7 +18707,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T04:01:26.861Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18643,7 +18727,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T04:01:26.943Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18683,10 +18767,12 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 부천시 · 신흥로",
+    "address": "경기도 부천시 신흥로",
     "lastEnriched": "2026-03-17T04:01:39.327Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 12
   },
   {
     "id": "class_원데이가_아쉽다면_수제비누_취미반클래스",
@@ -18703,7 +18789,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 우면동",
+    "address": "서울 서초구 우면동",
     "lastEnriched": "2026-03-17T04:01:39.332Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18723,7 +18809,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:01:39.316Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18743,7 +18829,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "제주특별자치도 · 제주시 · 연동",
+    "address": "제주특별자치도 제주시 연동",
     "lastEnriched": "2026-03-17T04:01:39.330Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18763,7 +18849,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "제주특별자치도 · 제주시 · 연동",
+    "address": "제주특별자치도 제주시 연동",
     "lastEnriched": "2026-03-17T04:01:39.327Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18783,7 +18869,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T04:01:39.332Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18803,7 +18889,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:01:39.331Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18823,7 +18909,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:01:53.807Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18863,7 +18949,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:01:54.271Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18923,7 +19009,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:01:53.804Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18961,7 +19047,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T04:01:54.271Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -18981,7 +19067,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T04:02:08.080Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19021,7 +19107,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T04:02:08.080Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19041,7 +19127,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T04:02:08.083Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19121,7 +19207,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:02:08.045Z"
   },
   {
@@ -19239,7 +19325,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:02:17.757Z"
   },
   {
@@ -19297,7 +19383,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 수노을중앙로",
+    "address": "경기도 화성시 수노을중앙로",
     "lastEnriched": "2026-03-17T04:02:20.781Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19317,7 +19403,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 수노을중앙로",
+    "address": "경기도 화성시 수노을중앙로",
     "lastEnriched": "2026-03-17T04:02:20.781Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19337,7 +19423,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 수노을중앙로",
+    "address": "경기도 화성시 수노을중앙로",
     "lastEnriched": "2026-03-17T04:02:23.597Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19357,7 +19443,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 수노을중앙로",
+    "address": "경기도 화성시 수노을중앙로",
     "lastEnriched": "2026-03-17T04:02:25.903Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19377,7 +19463,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 화성시 · 수노을중앙로",
+    "address": "경기도 화성시 수노을중앙로",
     "lastEnriched": "2026-03-17T04:02:31.322Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19417,7 +19503,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:02:27.195Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19437,7 +19523,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:02:26.009Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19457,7 +19543,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:02:31.511Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19557,7 +19643,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T04:02:35.672Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19657,7 +19743,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 송파구 · 방이동",
+    "address": "서울 송파구 방이동",
     "lastEnriched": "2026-03-17T04:02:40.289Z"
   },
   {
@@ -19675,7 +19761,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 양재1동",
+    "address": "서울 서초구 양재1동",
     "lastEnriched": "2026-03-17T04:02:42.816Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19695,7 +19781,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 마포구 · 연남동",
+    "address": "서울 마포구 연남동",
     "lastEnriched": "2026-03-17T04:02:42.814Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -19873,7 +19959,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T04:02:52.185Z"
   },
   {
@@ -19989,7 +20075,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 반포대로7길",
+    "address": "서울 서초구 반포대로7길",
     "lastEnriched": "2026-03-17T04:03:01.186Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20029,7 +20115,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:01.192Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20049,7 +20135,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 광주시 · 송정동",
+    "address": "경기도 광주시 송정동",
     "lastEnriched": "2026-03-17T04:03:01.195Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20069,7 +20155,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 광주시 · 송정동",
+    "address": "경기도 광주시 송정동",
     "lastEnriched": "2026-03-17T04:03:01.195Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20149,7 +20235,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:11.160Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20169,7 +20255,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "제주도 · 제주시 · 이도2동",
+    "address": "제주도 제주시 이도2동",
     "lastEnriched": "2026-03-17T04:03:11.161Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20209,7 +20295,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:11.150Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20232,7 +20318,9 @@
     "address": "서울특별시 강서구 방화동 금낭화로",
     "lastEnriched": "2026-03-17T04:03:11.165Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 13
   },
   {
     "id": "class_양모펠트로_반려견키링_만들기",
@@ -20249,7 +20337,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T04:03:11.161Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20289,7 +20377,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강북구 · 미아동",
+    "address": "서울 강북구 미아동",
     "lastEnriched": "2026-03-17T04:03:15.989Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20329,7 +20417,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 금천구 · 시흥동",
+    "address": "서울 금천구 시흥동",
     "lastEnriched": "2026-03-17T04:03:21.591Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20349,7 +20437,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 안성시 · 가사동",
+    "address": "경기도 안성시 가사동",
     "lastEnriched": "2026-03-17T04:03:21.591Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20369,7 +20457,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:21.592Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20389,7 +20477,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "제주특별자치도 · 제주시 · 연동",
+    "address": "제주특별자치도 제주시 연동",
     "lastEnriched": "2026-03-17T04:03:21.592Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20409,7 +20497,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:21.583Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20429,7 +20517,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "제주특별자치도 · 제주시 · 연동",
+    "address": "제주특별자치도 제주시 연동",
     "lastEnriched": "2026-03-17T04:03:21.591Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20449,7 +20537,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:25.469Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20469,7 +20557,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "제주특별자치도 · 제주시 · 연동",
+    "address": "제주특별자치도 제주시 연동",
     "lastEnriched": "2026-03-17T04:03:30.630Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20547,7 +20635,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:30.630Z"
   },
   {
@@ -20565,7 +20653,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:03:30.615Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20585,7 +20673,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 안성시 · 가사동",
+    "address": "경기도 안성시 가사동",
     "lastEnriched": "2026-03-17T04:03:30.620Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20743,7 +20831,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T04:03:39.478Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20763,7 +20851,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:03:46.418Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20821,7 +20909,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 역삼동",
+    "address": "서울 강남구 역삼동",
     "lastEnriched": "2026-03-17T04:03:49.866Z"
   },
   {
@@ -20839,7 +20927,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 양주시 · 고암길",
+    "address": "경기도 양주시 고암길",
     "lastEnriched": "2026-03-17T04:03:49.865Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20879,7 +20967,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 금천구 · 시흥동",
+    "address": "서울 금천구 시흥동",
     "lastEnriched": "2026-03-17T04:03:49.864Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -20919,7 +21007,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경상북도 · 경산시 · 진량읍",
+    "address": "경상북도 경산시 진량읍",
     "lastEnriched": "2026-03-17T04:03:56.093Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -21153,7 +21241,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초동",
+    "address": "서울 서초구 서초동",
     "lastEnriched": "2026-03-17T04:04:07.509Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -21393,7 +21481,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:04:18.043Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -21453,7 +21541,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "전라남도 · 광양시 · 광장로",
+    "address": "전라남도 광양시 광장로",
     "lastEnriched": "2026-03-17T04:04:22.149Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -21493,7 +21581,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 신길동",
+    "address": "서울 영등포구 신길동",
     "lastEnriched": "2026-03-17T04:04:22.145Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -21883,7 +21971,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 구로구 · 개봉동",
+    "address": "서울 구로구 개봉동",
     "lastEnriched": "2026-03-17T04:04:39.588Z"
   },
   {
@@ -22159,7 +22247,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 서초구 · 서초2동",
+    "address": "서울 서초구 서초2동",
     "lastEnriched": "2026-03-17T04:04:49.601Z"
   },
   {
@@ -22255,7 +22343,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 강남구 · 논현로152길",
+    "address": "서울 강남구 논현로152길",
     "lastEnriched": "2026-03-17T04:04:53.253Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -22355,7 +22443,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 영등포구 · 신길동",
+    "address": "서울 영등포구 신길동",
     "lastEnriched": "2026-03-17T04:04:57.341Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -22375,7 +22463,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로4길",
+    "address": "서울 성동구 왕십리로4길",
     "lastEnriched": "2026-03-17T04:04:57.791Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -22395,7 +22483,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "경기도 · 하남시 · 미사강변중앙로31번길15",
+    "address": "경기도 하남시 미사강변중앙로31번길15",
     "lastEnriched": "2026-03-17T04:04:58.520Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -22665,7 +22753,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 성동구 · 왕십리로4길",
+    "address": "서울 성동구 왕십리로4길",
     "lastEnriched": "2026-03-17T04:05:10.233Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -22688,7 +22776,9 @@
     "address": "서울특별시 송파구 올림픽로 25 서울종합운동장 5m 잠수풀",
     "lastEnriched": "2026-03-17T04:05:10.479Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 14
   },
   {
     "id": "class_팝아트_초상화_원데이클래스",
@@ -22808,7 +22898,9 @@
     "address": "부산광역시 수영구 망미번영로 69-1 비콘그라운드 SH107호",
     "lastEnriched": "2026-03-17T04:05:16.201Z",
     "lat": 37.56661,
-    "lng": 126.978388
+    "lng": 126.978388,
+    "latitude": 0,
+    "longitude": 14
   },
   {
     "id": "class_기초_요가",
@@ -22825,7 +22917,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 용산구 · 장문로",
+    "address": "서울 용산구 장문로",
     "lastEnriched": "2026-03-17T04:05:15.789Z",
     "lat": 37.56661,
     "lng": 126.978388
@@ -22905,7 +22997,7 @@
     "runningTime": "예약페이지 참조",
     "ageLimit": "전체",
     "casting": "",
-    "address": "서울 · 광진구 · 구의1동",
+    "address": "서울 광진구 구의1동",
     "lastEnriched": "2026-03-17T04:05:19.719Z",
     "lat": 37.56661,
     "lng": 126.978388
