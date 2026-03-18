@@ -15,8 +15,8 @@ const SLUG_TO_GENRE: Record<string, string> = {
 /*
     Helper to filter merged data set by genre.
 */
-async function getPerformances(genreFilter: string | string[] | null) {
-    const allStable = safeArray<Performance>(getAllPerformances());
+async function getPerformances(genreFilter: string | string[] | null, locale: string = 'ko') {
+    const allStable = safeArray<Performance>(getAllPerformances(locale));
 
     const filtered = allStable.filter(p => {
         if (!genreFilter) return true;
@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: PageProps) {
         genreFilter = internalGenre;
     }
 
-    const performances = await getPerformances(genreFilter);
+    const performances = await getPerformances(genreFilter, locale);
     const count = performances.length;
 
     const title = mt('genre_title', { genre: genreLabel });
@@ -122,7 +122,7 @@ export default async function GenrePage({ params }: PageProps) {
         initialGenre = internalGenre;
     }
 
-    const performances = await getPerformances(genreFilter);
+    const performances = await getPerformances(genreFilter, locale);
 
     // Date formatting using dynamic locale
     const now = new Date();

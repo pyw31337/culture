@@ -12,8 +12,9 @@ export async function generateStaticParams() {
     return [{ locale: 'ko' }, { locale: 'en' }, { locale: 'zh' }, { locale: 'ja' }];
 }
 
-export default async function MapPage() {
-    const allPerformances = getAllPerformances();
+export default async function MapPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const allPerformances = getAllPerformances(locale);
 
     // Load cinemas data if available
     let cinemas: any[] = [];

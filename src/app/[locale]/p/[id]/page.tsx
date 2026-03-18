@@ -27,9 +27,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const { id } = await params;
+    const { id, locale } = await params as any; // Next.js params will include locale based on folder structure
     const decodedId = decodeURIComponent(id);
-    const performances = await getAllPerformances();
+    const performances = await getAllPerformances(locale);
     const p = performances.find((perf) => perf.id === decodedId);
 
     if (!p) {
@@ -107,9 +107,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function PerformanceSharePage({ params }: PageProps) {
-    const { id } = await params;
+    const { id, locale } = await params as any;
     const decodedId = decodeURIComponent(id);
-    const performances = await getAllPerformances();
+    const performances = await getAllPerformances(locale);
     const p = performances.find((perf) => perf.id === decodedId);
 
     if (!p) return <ShareRedirect id={decodedId} />;

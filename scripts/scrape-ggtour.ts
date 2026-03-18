@@ -5,7 +5,7 @@ import path from 'path';
 import { Performance } from '../src/types';
 import pLimit from 'p-limit';
 
-const DATA_FILE = path.join(process.cwd(), 'src/data/performances.json');
+const DATA_FILE = path.join(process.cwd(), 'src/data/tourism.json');
 const BASE_URL = 'https://www.ggtour.or.kr';
 const LIST_API = `${BASE_URL}/api/v1/travel-info/tourism-info`;
 const DETAIL_API = `${BASE_URL}/api/v1/travel-info/tourism-info/`;

@@ -4,8 +4,8 @@ import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
 
 // This function runs at build time on the server
-async function getPerformances() {
-    return getAllPerformances();
+async function getPerformances(locale: string = 'ko') {
+    return getAllPerformances(locale);
 }
 
 interface PageProps {
@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 export default async function Home({ params }: PageProps) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'Common' });
-    const allPerformances = await getPerformances();
+    const allPerformances = await getPerformances(locale);
     
     // Optimization: Only pass the first 24 items to the client for initial render
     const performaceFilter = await import('@/lib/performance-filter');

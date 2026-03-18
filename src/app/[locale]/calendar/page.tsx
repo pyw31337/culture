@@ -12,8 +12,9 @@ export async function generateStaticParams() {
     return [{ locale: 'ko' }, { locale: 'en' }, { locale: 'zh' }, { locale: 'ja' }];
 }
 
-export default async function CalendarPage() {
-    const allPerformances = getAllPerformances();
+export default async function CalendarPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const allPerformances = getAllPerformances(locale);
 
     return (
         <main className="min-h-screen bg-gray-900 light:bg-white">
