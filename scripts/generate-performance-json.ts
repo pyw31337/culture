@@ -10,7 +10,7 @@ async function batchTranslate(items: any[], locale: string) {
     // We allow Korean translation if there's English content that needs to be "Korean-ified"
     console.log(`[Translate] Starting translation to ${locale} for ${items.length} items...`);
     
-    const fields = ['title', 'venue', 'address', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail'];
+    const fields = ['title', 'venue', 'address', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail', 'petFriendly'];
     const translatedItems = [...items];
     const CHUNK_SIZE = 100; // Larger chunks for better overhead management
     

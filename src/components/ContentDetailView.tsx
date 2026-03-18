@@ -2,7 +2,7 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2 } from 'lucide-react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, Dog } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -401,9 +401,13 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         });
                                     }
 
-                                    if (p.parking) {
-                                        infoItems.push({ icon: ParkingCircle, label: '주차', text: p.parking, color: 'text-blue-500' });
-                                    }
+                                     if (p.parking) {
+                                         infoItems.push({ icon: ParkingCircle, label: '주차', text: p.parking, color: 'text-blue-500' });
+                                     }
+                                     
+                                     if (p.petFriendly) {
+                                         infoItems.push({ icon: Dog, label: '반려동물', text: p.petFriendly, color: 'text-amber-600' });
+                                     }
 
                                     if (p.parkingFee) {
                                         infoItems.push({ icon: Wallet, label: '주차요금', text: p.parkingFee, color: 'text-orange-400' });

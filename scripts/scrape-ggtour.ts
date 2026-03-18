@@ -46,7 +46,8 @@ async function fetchGGTDetail(cotId: string) {
                 address: d.addr1 || '',
                 website: cleanHtml(d.homepage),
                 closedDays: cleanHtml(d.additionalDetail?.restDate),
-                parking: cleanHtml(d.additionalDetail?.parkingInfo)
+                parking: cleanHtml(d.additionalDetail?.parkingInfo),
+                petFriendly: cleanHtml(d.additionalDetail?.petInfo)
             };
         }
     } catch (error: any) {
@@ -98,7 +99,7 @@ async function scrapeGGTour(maxPages = 230) {
                         date: '상시',
                         image: item.image ? (item.image.startsWith('http') ? item.image : `${BASE_URL}${item.image}`) : '',
                         poster: item.image ? (item.image.startsWith('http') ? item.image : `${BASE_URL}${item.image}`) : '',
-                        link: `${BASE_URL}/travel-info/tourism-info/${item.contentId}`,
+                        link: `${BASE_URL}/travel-info/tourism-info/${item.cotId}`,
                         genre: 'tourism',
                         category: '관광/여행',
                         description: details?.description || '',
@@ -109,10 +110,16 @@ async function scrapeGGTour(maxPages = 230) {
                         website: details?.website || '',
                         closedDays: details?.closedDays || '',
                         parking: details?.parking || '',
+                        petFriendly: details?.petFriendly || '',
                         source: 'GGTour',
                         lat: item.coordinate?.mapY,
                         lng: item.coordinate?.mapX
                     };
+
+                    // Specific Override for Jihyesaeme Children's Library
+                    if (item.title.includes('지혜샘어린이도서관')) {
+                        perf.address = '경기도 수원시 권선구 동탄원천로 818 지혜샘도서관';
+                    }
 
                     return perf;
                 })));
