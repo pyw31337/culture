@@ -82,7 +82,7 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
 
 
 export function getAllPerformances(locale: string = 'ko', forceFresh: boolean = false) {
-    if (cachedPerformancesByLocale[locale] && !forceFresh) return cachedPerformancesByLocale[locale];
+    if (cachedPerformancesByLocale[locale] && !forceFresh) return safeArray(cachedPerformancesByLocale[locale]);
 
     // Load static data for filtering
     if (!cachedVenues) cachedVenues = loadJSON('venues.json', {});
@@ -98,9 +98,9 @@ export function getAllPerformances(locale: string = 'ko', forceFresh: boolean = 
     if (fs.existsSync(staticPath) && !forceFresh) {
         try {
             const staticContent = fs.readFileSync(staticPath, 'utf8');
-            const data = JSON.parse(staticContent);
+            const data = safeArray(JSON.parse(staticContent));
             cachedPerformancesByLocale[locale] = data;
-            console.log(`[STABILITY] Loaded ${data?.length} items from static cache: ${staticPath}`);
+            console.log(`[STABILITY] Loaded ${data.length} items from static cache: ${staticPath}`);
             return data;
         } catch (e) {
             console.warn(`[STABILITY] Failed to load static ${dataFile} from ${staticPath}, falling back.`, e);

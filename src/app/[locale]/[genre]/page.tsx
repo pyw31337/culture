@@ -1,8 +1,10 @@
 import PerformanceList from '@/components/PerformanceList';
+import { Performance } from '@/types';
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { VALID_GENRE_SLUGS, SPORTS_GENRES, GENRES } from '@/lib/constants';
 import { getAllPerformances } from '@/lib/performance-data';
+import { safeArray } from '@/lib/data-safety';
 import { getTranslations } from 'next-intl/server';
 
 // Map URL slugs to actual genre IDs (some differ)
@@ -14,7 +16,7 @@ const SLUG_TO_GENRE: Record<string, string> = {
     Helper to filter merged data set by genre.
 */
 async function getPerformances(genreFilter: string | string[] | null) {
-    const allStable = getAllPerformances() || [];
+    const allStable = safeArray<Performance>(getAllPerformances());
 
     const filtered = allStable.filter(p => {
         if (!genreFilter) return true;
