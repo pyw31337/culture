@@ -48,8 +48,8 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
 
     if (stringsToTranslate.length === 0) return results;
 
-    // Forced individual translation for reliability in case of 429
-    const SUB_BATCH_SIZE = 5; 
+    // Increased batch size for performance
+    const SUB_BATCH_SIZE = 20; 
     for (let i = 0; i < stringsToTranslate.length; i += SUB_BATCH_SIZE) {
         const currentBatch = stringsToTranslate.slice(i, i + SUB_BATCH_SIZE);
         const joined = currentBatch.join(DELIMITER);
@@ -62,6 +62,7 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
             try {
                 const res = await translate(joined, { from: 'ko', to: target });
                 const translatedJoined = res.text;
+                // Use regex split to be more robust against minor formatting changes by the API
                 const translatedStrings = translatedJoined.split(DELIMITER).map(s => s.trim());
 
                 if (translatedStrings.length === currentBatch.length) {
@@ -74,17 +75,18 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
                         cache[original][to] = translated;
                     });
                     hasChanges = true;
-                    saveCache();
+                    // Save cache periodically instead of every sub-batch
                     success = true;
-                    await new Promise(r => setTimeout(r, 3000)); 
+                    // Reduced wait, will increase on 429
+                    await new Promise(r => setTimeout(r, 1000)); 
                 } else {
                     throw new Error(`Batch mismatch: expected ${currentBatch.length}, got ${translatedStrings.length}`);
                 }
             } catch (e: any) {
                 attempts++;
-                const isHtml = e.message.includes('<HTML') || e.message.includes('<!DOCTYPE');
-                const wait = isHtml ? 60000 : Math.pow(4, attempts) * 1000;
-                console.warn(`[Translator] ${to} Batch Error (${attempts}/${maxAttempts}): ${e.message.substring(0, 50)}... waiting ${wait}ms...`);
+                const isRateLimit = e.message.includes('429') || e.message.includes('<HTML') || e.message.includes('<!DOCTYPE');
+                const wait = isRateLimit ? 120000 : Math.pow(5, attempts) * 1000;
+                console.warn(`[Translator] ${to} Batch Error (${attempts}/${maxAttempts}): ${e.message.substring(0, 100)}... waiting ${Math.round(wait/1000)}s...`);
                 await new Promise(r => setTimeout(r, wait));
             }
         }
@@ -95,9 +97,13 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
                 const original = currentBatch[idx];
                 const originalIdx = toTranslateIndices[i + idx];
                 results[originalIdx] = await translateText(original, to);
-                await new Promise(r => setTimeout(r, 5000)); 
+                // Keep individual wait slightly higher to be safe
+                await new Promise(r => setTimeout(r, 2000)); 
             }
         }
+        
+        // Save cache after each significant sub-batch
+        saveCache();
     }
 
     return results;

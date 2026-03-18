@@ -12,7 +12,7 @@ async function batchTranslate(items: any[], locale: string) {
     
     const fields = ['title', 'venue', 'address', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail'];
     const translatedItems = [...items];
-    const CHUNK_SIZE = 40; 
+    const CHUNK_SIZE = 100; // Larger chunks for better overhead management
     
     for (let i = 0; i < translatedItems.length; i += CHUNK_SIZE) {
         const chunk = translatedItems.slice(i, i + CHUNK_SIZE);
@@ -29,9 +29,8 @@ async function batchTranslate(items: any[], locale: string) {
                         const prefixTranslation = REGION_MAP[item.prefixAdded]?.[locale];
                         
                         if (originalTranslation && prefixTranslation) {
-                            // Synthesize translation!
-                            item[field] = prefixTranslation + originalTranslation;
-                            return; // Skip adding to translate list
+                            item[field] = prefixTranslation + (originalTranslation.startsWith(' ') ? '' : ' ') + originalTranslation;
+                            return; 
                         }
                     }
 
@@ -42,8 +41,8 @@ async function batchTranslate(items: any[], locale: string) {
                     } else {
                         // For Korean locale, only translate if it looks like English/Foreign text
                         if (locale === 'ko') {
-                            const isMostlyEnglish = /^[A-Za-z0-9\s.,!?'"&\(\)\[\]\-]+$/.test(text);
-                            if (isMostlyEnglish && text.length > 3) {
+                            const isMostlyEnglish = /^[A-Za-z0-9\s.,!?'"&\(\)\[\]\-]{4,}$/.test(text);
+                            if (isMostlyEnglish) {
                                 stringsToTranslate.push({ itemIdx: i + idx, field, text });
                             }
                         } else {
@@ -55,27 +54,27 @@ async function batchTranslate(items: any[], locale: string) {
         });
 
         if (stringsToTranslate.length > 0) {
+            console.log(`[Translate] ${locale}: Translating batch of ${stringsToTranslate.length} strings (Progress: ${i}/${translatedItems.length})...`);
             const textsOnly = stringsToTranslate.map(s => s.text);
             try {
-                // If it's a huge list, it might be safer to skip if we know we're blocked
                 const translatedTexts = await translateBatch(textsOnly, locale);
                 translatedTexts.forEach((translated, idx) => {
-                    const { itemIdx, field } = stringsToTranslate[idx];
-                    translatedItems[itemIdx][field] = translated;
+                    if (idx < stringsToTranslate.length) {
+                        const { itemIdx, field } = stringsToTranslate[idx];
+                        translatedItems[itemIdx][field] = translated;
+                    }
                 });
             } catch (e) {
-                console.error(`[Translate] Batch failed for ${locale}, using original text for this chunk.`);
-                // Fallback: Use original text already in translatedItems[itemIdx][field]
+                console.error(`[Translate] CHUNK Batch failed for ${locale}, items will remain in original language.`);
             }
         }
         
         if (i % 200 === 0 && i > 0) {
-            console.log(`[Translate] ${locale}: Processed ${i}/${translatedItems.length} items...`);
             saveCache();
         }
     }
     
-    console.log(`[Translate] Finished ${locale} translation.`);
+    console.log(`[Translate] Finished ${locale} translation totally.`);
     saveCache();
     return translatedItems;
 }
