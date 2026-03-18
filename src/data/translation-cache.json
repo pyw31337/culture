@@ -730,7 +730,9 @@
     "en": "481 Daedeok-daero, Yuseong-gu, Daejeon"
   },
   "국립중앙박물관": {
-    "en": "National Museum of Korea"
+    "en": "National Museum of Korea",
+    "ja": "国立中央博物館",
+    "zh": "国立中央博物馆"
   },
   "서울특별시 용산구 서빙고로 137": {
     "en": "137 Seobinggo-ro, Yongsan-gu, Seoul"
@@ -1537,7 +1539,9 @@
     "en": "mismatch"
   },
   "12세이상관람가": {
-    "en": "Suitable for ages 12 and older"
+    "en": "12 years and older",
+    "ja": "12歳以上観覧可",
+    "zh": "12岁以上可看"
   },
   "“내가 책임질게 됐지?” 매번 큰소리만 뻥뻥! 사업 실패, 직장 해고까지 무능력한 가장 봉수 회사에서도 집안에서도 기를 펴지 못하고 살아가던 어느 날! 불의의 사고를 겪게 되는데… 몸은 멀쩡한데… 머릿속은 백지장?! “여긴 어디? 난, 누구?” 어제의 나도, 가족의 얼굴도 모두 새로 시작하게 된 봉수의 인생 리부트! 과연 봉수는 잃어버린 기억을 되찾고 가족의 재결합을 할 수 있을까?": {
     "en": "“I’m in charge, right?” It makes a loud noise every time! One day, when I was the incompetent head of the family, from failing in business to being fired from my job, I was unable to show off my courage at work or at home! I experience an unexpected accident... My body is fine... Your mind is blank?! “Where am I? Who am I?” A reboot of Bongsu's life, starting anew with both me and my family from yesterday! Will Bongsu be able to regain his lost memories and reunite his family?"
@@ -5128,7 +5132,9 @@
     "en": "Reservation available time: Until 17:00 the day before (for viewing on Mondays - Saturdays)/Until 11:00 the previous day (for viewing on Sundays)*February\nFebruary 28 (Sat) 11:30\n\n*March\nSaturday, March 21st 11:30\nSaturday, March 28th 11:30"
   },
   "뮤지컬 〈빨래〉": {
-    "en": "Musical 〈Laundry〉"
+    "en": "Musical <Laundry>",
+    "ja": "ミュージカル「パルレ(洗濯)」",
+    "zh": "音乐剧《洗衣服》"
   },
   "NOL 유니플렉스 2관": {
     "en": "NOL Uniplex Building 2"
@@ -5758,7 +5764,9 @@
     "en": "Saturday luxury goods"
   },
   "국립국악원 우면당": {
-    "en": "National Gugak Center Umyeondang"
+    "en": "National Gugak Center Umyeondang",
+    "ja": "国立国楽院 牛眠堂",
+    "zh": "国立国乐院牛眠堂"
   },
   "서울 서초구 남부순환로 2364": {
     "en": "2364 Nambusunhwan-ro, Seocho-gu, Seoul"
@@ -6307,7 +6315,9 @@
     "en": "musical anna karenina"
   },
   "세종문화회관 대극장": {
-    "en": "Sejong Center for the Performing Arts Grand Theater"
+    "en": "Sejong Center Grand Theater",
+    "ja": "世宗文化会館 大劇場",
+    "zh": "世宗文化会馆大剧场"
   },
   "예매가능시간: 관람 2시간 전까지2026년 2월 20일(금) ~ 3월 29일(일)\n화,목,금 오후 7시 30분 / 수 오후 2시30분, 7시30분 / 토 오후 2시, 7시 / 일 및 공휴일 오후 1시, 6시 / 월 공연 없음": {
     "en": "Reservation available time: 2 hours before viewing. February 20, 2026 (Fri) ~ March 29, 2026 (Sun)\nTuesday, Thursday, Friday 7:30 PM / Wednesday 2:30 PM, 7:30 PM / Saturday 2:00 PM, 7:00 PM / Sunday and public holidays 1:00 PM, 6:00 PM / Monday No performance"
@@ -6448,7 +6458,9 @@
     "en": "organ odyssey"
   },
   "롯데콘서트홀": {
-    "en": "Lotte Concert Hall"
+    "en": "Lotte Concert Hall",
+    "ja": "ロッテコンサートホール",
+    "zh": "乐天音乐厅"
   },
   "서울특별시 송파구 올림픽로 300 (신천동) 롯데월드몰 8층 롯데문화재단": {
     "en": "Lotte Cultural Foundation, 8th floor, Lotte World Mall, 300 Olympic-ro, Songpa-gu, Seoul (Sincheon-dong)"
@@ -7678,13 +7690,17 @@
     "en": "GS Caltex Seoul KIXX vs Hillstate"
   },
   "장충체육관": {
-    "en": "Jangchung Gymnasium"
+    "en": "Jangchung Gymnasium",
+    "ja": "奨忠体育館",
+    "zh": "奖忠体育馆"
   },
   "서울특별시 중구 동호로 241 (장충동2가)": {
     "en": "241 Dongho-ro, Jung-gu, Seoul (Jangchung-dong 2-ga)"
   },
   "LG vs 삼성": {
-    "en": "LG vs Samsung"
+    "en": "LG vs Samsung",
+    "ja": "LG vs サムスン",
+    "zh": "LG vs 三星"
   },
   "경희대 선승관": {
     "en": "Kyunghee University Seonseunggwan"
@@ -7708,7 +7724,9 @@
     "en": "hours at the theater"
   },
   "전체관람가": {
-    "en": "All admission price"
+    "en": "All ages",
+    "ja": "全年齢対象",
+    "zh": "全年龄段"
   },
   "[침팬지] “영화는 오랜 친구와 같은 것이다” 2000년 광화문. 고도, 모모, 제제는 영화를 사랑한다는 공통점으로 단짝이 된다. 헌책방에서 신기한 침팬지 이야기를 발견한 세 사람은 그 이야기에 빠져든다. 2025년, 영화감독이 된 고도는 홀로 광화문을 걷다가 다시 침팬지 이야기를 만난다. [자연스럽게] “자, 편안하고 자연스럽게! 레디…액션!” 무더운 여름의 영화 촬영 현장. 어린이 배우들은 동네 곳곳을 뛰어다니며 신나게 노는 장면을 연기 중이다. 그런데 감독은 계속 더 자연스럽게 연기해달라고 말하고, 배우와 스탭들은 고민에 빠진다. “도대체 자연스러운 연기란 뭘까?” [영화의 시간] “너야말로 안 변했네. 그 시절 얼굴이 그대로야” 춘천에 사는 영화는 오랜만에 광화문을 찾는다. 홀로 정동과 광화문 곳곳을 걷다가 우연히 들어간 극장에서 수십 년 만에 여고 동창과 재회한다. 영화는 그곳에서 일하는 동창의 배려로 한여름의 꿈 같은 영화 한 편을 만난다.": {
     "en": "[Chimpanzee] “Movies are like old friends.” Gwanghwamun, 2000. Godo, Momo, and Zeze become best friends because they have one thing in common: a love of movies. Three people discover a fascinating story about a chimpanzee in a used bookstore and fall in love with it. In 2025, Godo, who has become a film director, walks alone through Gwanghwamun and encounters the story of a chimpanzee again. [Naturally] “Now, comfortably and naturally! Ready…Action!” A movie filming location on a hot summer day. Child actors are performing scenes where they are running around the neighborhood and having fun. However, the director keeps telling them to act more naturally, and the actors and staff are worried. “What on earth is natural acting?” [Movie Time] “You really haven’t changed. Your face is the same as back then.” Yeonghwa, who lives in Chuncheon, visits Gwanghwamun for the first time in a long time. While walking alone through Jeong-dong and Gwanghwamun, I stumbled upon a theater and reunited with my high school classmate for the first time in decades. The movie is like a midsummer dream thanks to the consideration of an alumnus who works there."
@@ -7816,7 +7834,9 @@
     "en": "Aram Classic, Inmo Yang & Salzburg Mozarteum [Goyang]"
   },
   "고양아람누리 아람음악당": {
-    "en": "Goyang Aram Nuri Aram Music Hall"
+    "en": "Goyang Aram Nuri Aram Music Hall",
+    "ja": "高陽アラムヌリ アラム音楽堂",
+    "zh": "高阳阿람누리音乐厅"
   },
   "경기 고양시 일산동구 중앙로 1286": {
     "en": "1286 Jungang-ro, Ilsandong-gu, Goyang-si, Gyeonggi-do"
@@ -7858,7 +7878,9 @@
     "en": "87th Seoul Oratorio Regular Concert: A concert that touches the soul"
   },
   "예술의전당 콘서트홀": {
-    "en": "Seoul Arts Center Concert Hall"
+    "en": "Seoul Arts Center Concert Hall",
+    "ja": "芸術の殿堂 コンサートホール",
+    "zh": "艺术堂音乐厅"
   },
   "커피콘서트 1. 홍진호 & 고상지 & 최문석: 탱고 브리즈 (Tango Breeze)": {
     "en": "Coffee Concert 1. Hong Jin-ho & Ko Sang-ji & Choi Moon-seok: Tango Breeze"
@@ -7924,7 +7946,9 @@
     "en": "Ham In-ah Piano Recital"
   },
   "예술의전당 리사이틀홀": {
-    "en": "예술의전당 리사이틀홀"
+    "en": "Seoul Arts Center Recital Hall",
+    "ja": "芸術の殿堂 リサイトルホール",
+    "zh": "艺术堂演奏厅"
   },
   "현대모비스 vs 정관장": {
     "en": "현대모비스 vs 정관장"
@@ -8182,7 +8206,9 @@
     "en": "Seongnam Arts Center Matinee Concert: Forest of Music, Germany"
   },
   "성남아트센터 콘서트홀": {
-    "en": "Seongnam Arts Center Concert Hall"
+    "en": "Seongnam Arts Center Concert Hall",
+    "ja": "城南アートセンター コンサート홀",
+    "zh": "城南艺术中心音乐厅"
   },
   "경기도 성남시 분당구 성남대로 808": {
     "en": "808 Seongnam-daero, Bundang-gu, Seongnam-si, Gyeonggi-do"
@@ -8728,7 +8754,9 @@
     "en": "Naena Violin Recital: Beethoven Violin Sonatas Series II"
   },
   "금호아트홀 연세": {
-    "en": "Kumho Art Hall Yonsei"
+    "en": "Kumho Art Hall Yonsei",
+    "ja": "クムホアートホール延世",
+    "zh": "锦湖艺术厅延世"
   },
   "서울 서대문구 연세로 50": {
     "en": "50 Yonsei-ro, Seodaemun-gu, Seoul"
@@ -9049,7 +9077,9 @@
     "en": "〈Mr. Trot 3〉 TOP7 Seoul Concert"
   },
   "올림픽공원 올림픽홀": {
-    "en": "Olympic Park Olympic Hall"
+    "en": "Olympic Park Olympic Hall",
+    "ja": "オリンピック公園 オリンピックホール",
+    "zh": "奥林匹克公园奥林匹克厅"
   },
   "예매가능시간: 관람 3시간 전까지2026년 3월 21일(토) 오후 1시, 6시\n2026년 3월 22일(일) 오후 1시, 6시": {
     "en": "Reservation available time: 3 hours before viewing 1:00 PM, 6:00 PM, Saturday, March 21, 2026\nSunday, March 22, 2026 1:00 PM, 6:00 PM"
@@ -9334,7 +9364,9 @@
     "en": "Frozen: Winter Story [Mokpo]"
   },
   "목포시민문화체육센터 소공연장": {
-    "en": "Mokpo Citizen Culture and Sports Center Small Performance Hall"
+    "en": "Mokpo Citizens Cultural & Sports Center Small Hall",
+    "ja": "木浦市民文化体育センター 小劇場",
+    "zh": "木浦市民文化体育中心小剧场"
   },
   "경남개발공사 vs 인천광역시청": {
     "en": "Gyeongnam Development Corporation vs. Incheon Metropolitan City Hall"
@@ -9544,7 +9576,9 @@
     "en": "Korean Traditional Dance Festival Regular Performance: The Story of Gwonbeonchum"
   },
   "국립국악원 예악당": {
-    "en": "National Gugak Center Yeakdang"
+    "en": "National Gugak Center Yeakdang",
+    "ja": "国立国楽院 礼楽堂",
+    "zh": "国立国乐院礼乐堂"
   },
   "도비비: 또 잠금해제": {
     "en": "Dobby: Unlocked again"
@@ -10570,7 +10604,9 @@
     "en": "Frozen & Large Laser Show [Jeonju]"
   },
   "덕진예술회관": {
-    "en": "Deokjin Arts Center"
+    "en": "Deokjin Arts Center",
+    "ja": "徳津芸術会館",
+    "zh": "德津艺术会馆"
   },
   "전라북도 전주시 덕진구 권삼득로 407 (덕진동2가)": {
     "en": "407 Gwonsamdeuk-ro, Deokjin-gu, Jeonju-si, Jeollabuk-do (Deokjin-dong 2-ga)"
@@ -10780,7 +10816,9 @@
     "en": "4th Now Piano Research Society Regular Concert"
   },
   "영산아트홀": {
-    "en": "Youngsan Art Hall"
+    "en": "Youngsan Art Hall",
+    "ja": "ヨンサンアートホール",
+    "zh": "灵山艺术厅"
   },
   "제5회 부산시민교향악단 정기연주회: Spirit of Beethoven Ⅲ": {
     "en": "5th Busan Citizen Symphony Orchestra Regular Concert: Spirit of Beethoven Ⅲ"
@@ -10849,7 +10887,9 @@
     "en": "Seoul Samsung vs Ulsan Hyundai Mobis"
   },
   "잠실실내체육관": {
-    "en": "Jamsil Indoor Gymnasium"
+    "en": "Jamsil Interior Gymnasium",
+    "ja": "蚕室室内体育館",
+    "zh": "蚕室室内体育馆"
   },
   "서울 송파구 잠실2동 잠실동 백제고분로 잠실체육관": {
     "en": "Jamsil Gymnasium, Baekje Gobun-ro, Jamsil-dong, Jamsil 2-dong, Songpa-gu, Seoul"
@@ -10975,7 +11015,9 @@
     "en": "A humanities trip with opera, Opera Tosca"
   },
   "해운대문화회관 해운홀": {
-    "en": "Haeundae Cultural Center Haeun Hall"
+    "en": "Haeundae Cultural Center Haeun Hall",
+    "ja": "海雲台文化会館 海雲ホール",
+    "zh": "海云台文化会馆海云厅"
   },
   "[프로그램]\n\nGiacomo Puccini (1858~1924)\nOpera Tosca 오페라 토스카\n\nConcert Guide 김성민\nPiano 김경미\n\nRecondita armonia 오묘한 조화\nTenor 이태흠\n\nMario, Mario!.. son qui! 마리오, 마리오!.. 여기 있소!\nSoprano 김유진 Tenor 이태흠\n\nTe Deum 테 데움\nBaritone 안세범\n\nVissi d’arte, vissi d’amore 예술에 살고, 사랑에 살고\nSoprano 김유진\n\nIo tenni la promessa 나는 약속을 지켰소\nSoprano 김유진 Baritone 안세범\n\nE lucevan le stelle 별은 빛나건만\nTenor 이태흠\n\nE non giungono 아직이군요\nSoprano 김유진 Tenor 이태흠": {
     "en": "[Program]\n\nGiacomo Puccini (1858-1924)\nOpera Tosca Opera Tosca\n\nConcert Guide Seongmin Kim\nPiano Kim Kyung-mi\n\nRecondita armonia A mysterious harmony\nTenor Lee Tae-heum\n\nMario, Mario!.. son qui! Mario, Mario!.. Here you are!\nSoprano Kim Yu-jin Tenor Lee Tae-heum\n\nTe Deum\nBaritone Sebeom Ahn\n\nVissi d’arte, vissi d’amore live in art, live in love\nSoprano Yujin Kim\n\nIo tenni la promessa I kept my promise\nSoprano Yujin Kim Baritone Sebeom Ahn\n\nE lucevan le stelle Although the stars shine\nTenor Lee Tae-heum\n\nE non giungono not yet\nSoprano Kim Yu-jin Tenor Lee Tae-heum"
@@ -11807,5 +11849,403 @@
   },
   "[프로그램]\n\nF. Mendelssohn The Hebrides, Op. 26 “Fingal's Cave Overture”\n멘델스존 핑갈의 동굴 서곡, Op. 26\n\nB. Britten Piano Concerto in D Major, Op. 13 (Rev. 1945)\n브리튼 피아노 협주곡 D장조, Op. 13 (1945년 개정판)\n\nINTERMISSION\n\nJ. Brahms Symphony No. 2 in D Major, Op. 73\n브람스 교향곡 제2번 D장조, Op. 73\n\n*프로그램은 연주자의 사정에 의해 사전 예고 없이 변경될 수 있습니다.": {
     "en": "[Program]\n\nF. Mendelssohn The Hebrides, Op. 26 “Fingal’s Cave Overture”\nMendelssohn Overture to Fingal's Cave, Op. 26\n\nB. Britten Piano Concerto in D Major, Op. 13 (Rev. 1945)\nBritten's Piano Concerto in D major, Op. 13 (1945 revised edition)\n\nINTERMISSION\n\nJ. Brahms Symphony No. 2 in D Major, Op. 73\nBrahms Symphony No. 2 in D major, Op. 73\n\n*The program may change without prior notice depending on the performer’s circumstances."
+  },
+  "서울": {
+    "en": "Seoul",
+    "ja": "ソウル",
+    "zh": "首尔"
+  },
+  "경기": {
+    "en": "Gyeonggi",
+    "ja": "京畿",
+    "zh": "京畿"
+  },
+  "인천": {
+    "en": "Incheon",
+    "ja": "仁川",
+    "zh": "仁川"
+  },
+  "부산": {
+    "en": "Busan",
+    "ja": "釜山",
+    "zh": "釜山"
+  },
+  "대구": {
+    "en": "Daegu",
+    "ja": "大邱",
+    "zh": "大邱"
+  },
+  "광주": {
+    "en": "Gwangju",
+    "ja": "光州",
+    "zh": "光州"
+  },
+  "대전": {
+    "en": "Daejeon",
+    "ja": "大田",
+    "zh": "大田"
+  },
+  "울산": {
+    "en": "Ulsan",
+    "ja": "蔚山",
+    "zh": "蔚山"
+  },
+  "세종": {
+    "en": "Sejong",
+    "ja": "世宗",
+    "zh": "世宗"
+  },
+  "강원": {
+    "en": "Gangwon",
+    "ja": "江原",
+    "zh": "江原"
+  },
+  "충북": {
+    "en": "Chungbuk",
+    "ja": "忠北",
+    "zh": "忠北"
+  },
+  "충남": {
+    "en": "Chungnam",
+    "ja": "忠南",
+    "zh": "忠南"
+  },
+  "전북": {
+    "en": "Jeonbuk",
+    "ja": "全北",
+    "zh": "全北"
+  },
+  "전남": {
+    "en": "Jeonnam",
+    "ja": "全南",
+    "zh": "全南"
+  },
+  "경북": {
+    "en": "Gyeongbuk",
+    "ja": "慶北",
+    "zh": "庆北"
+  },
+  "경남": {
+    "en": "Gyeongnam",
+    "ja": "慶南",
+    "zh": "庆南"
+  },
+  "제주": {
+    "en": "Jeju",
+    "ja": "済州",
+    "zh": "济州"
+  },
+  "무료": {
+    "en": "Free",
+    "ja": "無料",
+    "zh": "免费"
+  },
+  "전석 10,000원": {
+    "en": "All seats 10,000 KRW",
+    "ja": "全席 10,000ウォン",
+    "zh": "全席 10,000韩元"
+  },
+  "전석 20,000원": {
+    "en": "All seats 20,000 KRW",
+    "ja": "全席 20,000ウォン",
+    "zh": "全席 20,000韩元"
+  },
+  "8세이상": {
+    "en": "8 years and older",
+    "ja": "8歳以上",
+    "zh": "8岁以上"
+  },
+  "예술의전당 IBK챔버홀": {
+    "en": "Seoul Arts Center IBK Chamber Hall",
+    "ja": "芸術の殿堂 IBKチャンバーホール",
+    "zh": "艺术堂IBK室内乐厅"
+  },
+  "세종문화회관 체임버홀": {
+    "en": "Sejong Center Chamber Hall",
+    "ja": "世宗文化会館 チェンバーホール",
+    "zh": "世宗文化会馆室内乐厅"
+  },
+  "경기아트센터 대공연장": {
+    "en": "Gyeonggi Arts Center Grand Theater",
+    "ja": "京畿アートセンター 大劇場",
+    "zh": "京畿艺术中心大剧场"
+  },
+  "수원SK아트리움 대공연장": {
+    "en": "Suwon SK Atrium Grand Theater",
+    "ja": "水原SKアートリウム 大劇場",
+    "zh": "水原SK艺术场大剧场"
+  },
+  "롯데 vs 삼성": {
+    "en": "Lotte vs Samsung",
+    "ja": "ロッテ vs サムスン",
+    "zh": "乐天 vs 三星"
+  },
+  "두산 vs NC": {
+    "en": "Doosan vs NC",
+    "ja": "斗山 vs NC",
+    "zh": "斗山 vs NC"
+  },
+  "키움 vs 한화": {
+    "en": "Kiwoom vs Hanwha",
+    "ja": "キウム vs ハンファ",
+    "zh": "Kiwoom vs 韩华"
+  },
+  "KIA vs LG": {
+    "zh": "起亚 vs LG"
+  },
+  "한화 vs 두산": {
+    "en": "Hanwha vs Doosan",
+    "ja": "ハンファ vs 斗山",
+    "zh": "韩华 vs 斗山"
+  },
+  "한화 vs 후산": {
+    "en": "Hanwha vs Doosan",
+    "ja": "ハンファ vs 斗山",
+    "zh": "韩华 vs 斗山"
+  },
+  "고척스카이돔": {
+    "en": "Gocheok Sky Dome",
+    "ja": "高尺スカイドーム",
+    "zh": "高尺天空巨蛋"
+  },
+  "예술의전당 자유소극장": {
+    "en": "Seoul Arts Center Jayu Theater",
+    "ja": "芸術の殿堂 自由小劇場",
+    "zh": "艺术之殿自由小剧场"
+  },
+  "K-Art홀": {
+    "en": "K-Art Hall",
+    "ja": "K-Artホール",
+    "zh": "K-Art厅"
+  },
+  "KBS홀": {
+    "en": "KBS Hall",
+    "ja": "KBSホール",
+    "zh": "KBS大厅"
+  },
+  "재) 영화의전당 (하늘연극장)": {
+    "en": "Busan Cinema Center (Haneulyeon Theater)",
+    "ja": "映画の殿堂 (ハヌリョン劇場)",
+    "zh": "电影之殿堂 (Haneulyeon剧场)"
+  },
+  "양천문화회관 대극장": {
+    "en": "Yangcheon Cultural Center Grand Theater",
+    "ja": "陽川文化会館 大劇場",
+    "zh": "阳川文化会馆大剧场"
+  },
+  "종로아이들극장": {
+    "en": "Jongno Children's Theater",
+    "ja": "鍾路子供劇場",
+    "zh": "钟路儿童剧场"
+  },
+  "원주백운아트홀": {
+    "en": "Wonju Baekun Art Hall",
+    "ja": "原州白雲アートホール",
+    "zh": "原州白云艺术厅"
+  },
+  "청라복합문화센터 블루노바홀 공연장": {
+    "en": "Cheongna Complex Cultural Center Blue Nova Hall",
+    "ja": "青羅複合文化センター ブルーノバホール",
+    "zh": "青罗复合文化中心Blue Nova厅"
+  },
+  "영등포아트홀": {
+    "en": "Yeongdeungpo Art Hall",
+    "ja": "永登浦アートホール",
+    "zh": "永登浦艺术厅"
+  },
+  "서울 · 종로구 · 종로1.2.3.4가동": {
+    "en": "Jongno-gu, Seoul",
+    "ja": "ソウル・鍾路区",
+    "zh": "首尔钟路区"
+  },
+  "서울 · 구로구 · 고척1동": {
+    "en": "Guro-gu, Seoul",
+    "ja": "ソウル・九老区",
+    "zh": "首尔九老区"
+  },
+  "서울 · 서초구 · 서초3동": {
+    "en": "Seocho-gu, Seoul",
+    "ja": "ソウル・瑞草区",
+    "zh": "首尔瑞草区"
+  },
+  "서울 · 송파구 · 방이동": {
+    "en": "Songpa-gu, Seoul",
+    "ja": "ソウル・松坡区",
+    "zh": "首尔松坡区"
+  },
+  "서울 · 중구 · 장충동2가": {
+    "en": "Jung-gu, Seoul",
+    "ja": "ソウル・中区",
+    "zh": "首尔中区"
+  },
+  "부산 · 해운대구 · 좌동": {
+    "en": "Haeundae-gu, Busan",
+    "ja": "釜山・海雲台区",
+    "zh": "釜山海云台区"
+  },
+  "충무아트센터 대극장": {
+    "en": "Chungmu Arts Center Grand Theater",
+    "ja": "忠武アートセンター 大劇場",
+    "zh": "忠武艺术中心大剧场"
+  },
+  "광림아트센터 BBCH홀": {
+    "en": "Kwanglim Arts Center BBCH Hall",
+    "ja": "クァンリムアートセンター BBCHホール",
+    "zh": "光林艺术中心BBCH厅"
+  },
+  "월": {
+    "en": "Mon",
+    "ja": "月",
+    "zh": "周一"
+  },
+  "화": {
+    "en": "Tue",
+    "ja": "火",
+    "zh": "周二"
+  },
+  "수": {
+    "en": "Wed",
+    "ja": "水",
+    "zh": "周三"
+  },
+  "목": {
+    "en": "Thu",
+    "ja": "木",
+    "zh": "周四"
+  },
+  "금": {
+    "en": "Fri",
+    "ja": "金",
+    "zh": "周五"
+  },
+  "토": {
+    "en": "Sat",
+    "ja": "土",
+    "zh": "周六"
+  },
+  "일": {
+    "en": "Sun",
+    "ja": "日",
+    "zh": "周日"
+  },
+  "휴관": {
+    "en": "Closed",
+    "ja": "休館",
+    "zh": "闭馆"
+  },
+  "공연 없음": {
+    "en": "No Performance",
+    "ja": "公演なし",
+    "zh": "无演出"
+  },
+  "예매가능시간": {
+    "en": "Booking Availability",
+    "ja": "予約可能時間",
+    "zh": "预订可用时间"
+  },
+  "인터파크 티켓": {
+    "en": "Interpark Ticket",
+    "ja": "インターパークチケット",
+    "zh": "Interpark票务"
+  },
+  "뮤지컬 〈스윙 데이즈_암호명 A〉": {
+    "en": "Musical <Swing Days: Code Name A>",
+    "ja": "ミュージカル「スイング・デイズ：暗号名A」",
+    "zh": "音乐剧《摇摆节：代号A》"
+  },
+  "뮤지컬 〈어서 오세요, 휴남동 서점입니다〉 - 서울(4월)": {
+    "en": "Musical <Welcome to the Hyunam-dong Bookshop> - Seoul (April)",
+    "ja": "ミュージカル「ようこそ、ヒュナムドン書店へ」 - ソウル(4月)",
+    "zh": "音乐剧《欢迎光临，休南洞书店》 - 首尔(4月)"
+  },
+  "연극 〈라이어 1탄〉": {
+    "en": "Play <Liar vol.1>",
+    "ja": "演劇「ライアー 1弾」",
+    "zh": "话剧《说谎者 1》"
+  },
+  "연극 〈늘근도둑이야기〉": {
+    "en": "Play <The Story of Old Thieves>",
+    "ja": "演劇「老いた泥棒の物語」",
+    "zh": "话剧《老小偷的故事》"
+  },
+  "뮤지컬 〈광화문연가〉": {
+    "en": "Musical <Gwanghwamun Sonata>",
+    "ja": "ミュージカル「光化門恋歌」",
+    "zh": "音乐剧《光化门恋歌》"
+  },
+  "연극 〈쉬어매드니스〉": {
+    "en": "Play <Shear Madness>",
+    "ja": "演劇「シアマドネス」",
+    "zh": "话剧《剪刀手爱德华》"
+  },
+  "서커스 〈쿠자〉": {
+    "en": "Circus <Kooza>",
+    "ja": "サーカス「クザ」",
+    "zh": "杂技《Kooza》"
+  },
+  "어린이 공연 〈옥토넛〉": {
+    "en": "Kids Show <Octonauts>",
+    "ja": "子供向け公演「オクトノーツ」",
+    "zh": "儿童剧《海底小纵队》"
+  },
+  "예술의전당 11시 콘서트": {
+    "en": "Seoul Arts Center 11am Concert",
+    "ja": "芸術の殿堂 11時コンサート",
+    "zh": "艺术之殿11点音乐会"
+  },
+  "발레 〈호두까기 인형〉": {
+    "en": "Ballet <The Nutcracker>",
+    "ja": "バレエ「くるみ割り人形」",
+    "zh": "芭蕾舞剧《胡桃夹子》"
+  },
+  "2024 서울 세계 불꽃 축제": {
+    "en": "2024 Seoul International Fireworks Festival",
+    "ja": "2024 ソウル世界花火フェスティバル",
+    "zh": "2024 首尔世界烟花节"
+  },
+  "롯데월드 어드벤처": {
+    "en": "Lotte World Adventure",
+    "ja": "ロッテワールド・アドベンチャー",
+    "zh": "乐天世界冒险乐园"
+  },
+  "에버랜드": {
+    "en": "Everland",
+    "ja": "エバーランド",
+    "zh": "爱宝乐园"
+  },
+  "남산서울타워": {
+    "en": "Namsan Seoul Tower",
+    "ja": "南山ソウルタワー",
+    "zh": "南山首尔塔"
+  },
+  "경복궁": {
+    "en": "Gyeongbokgung Palace",
+    "ja": "景福宮",
+    "zh": "景福宫"
+  },
+  "창덕궁": {
+    "en": "Changdeokgung Palace",
+    "ja": "昌徳宮",
+    "zh": "昌德宫"
+  },
+  "덕수궁": {
+    "en": "Deoksugung Palace",
+    "ja": "徳寿宮",
+    "zh": "德寿宫"
+  },
+  "기획전시": {
+    "en": "Special Exhibition",
+    "ja": "企画展示",
+    "zh": "策划展览"
+  },
+  "상설전시": {
+    "en": "Permanent Exhibition",
+    "ja": "常設展示",
+    "zh": "常设展览"
+  },
+  "어린이 박물관": {
+    "en": "Children's Museum",
+    "ja": "子供博物館",
+    "zh": "儿童博物馆"
   }
 }
