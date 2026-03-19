@@ -7,7 +7,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -20,6 +20,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const t = useTranslations('Detail');
     const tm = useTranslations('MovieMetadata');
     const tc = useTranslations('Categories');
+    const locale = useLocale();
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -47,9 +48,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         let url = p.link;
         const isMissingLink = !url || url.trim() === '';
 
-        // Case 1: Genre-specific search fallback (Movies)
-        if (p.genre === 'movie') {
-            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 상영시간표')}`;
+        // Case 1: Genre-specific search fallback (Movies) - Only if link is missing
+        if (p.genre === 'movie' && isMissingLink) {
+            const suffix = locale === 'ko' ? ' 상영시간표' : ' showtimes';
+            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + suffix)}`;
         } 
         // Case 2: Platform-specific search fallback for missing links
         else if (isMissingLink) {
@@ -58,7 +60,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                 url = `https://mom-mom.net/search?q=${encodeURIComponent(p.title)}`;
             } else {
                 // Generic Naver search fallback
-                url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 예매')}`;
+                const suffix = locale === 'ko' ? ' 예매' : ' booking';
+                url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + suffix)}`;
             }
         }
 
@@ -68,6 +71,20 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const handleShare = async (e?: React.MouseEvent) => {
         if (e) e.stopPropagation();
         const url = `${window.location.origin}${window.location.pathname}${mode === 'modal' ? `#p=${p.id}` : ''}`;
+        
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: p.title,
+                    text: p.description || p.title,
+                    url: url,
+                });
+                return;
+            } catch (err) {
+                console.warn('Web Share API failed', err);
+            }
+        }
+        
         await navigator.clipboard.writeText(url);
     };
 

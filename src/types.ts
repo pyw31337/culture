@@ -13,10 +13,13 @@ export type Performance = {
     discount?: string;
     originalPrice?: string;
     price?: string;
+    grade?: string;
     gradeIcon?: string;
     cast?: (string | { name: string; url?: string })[];
+    castWithLinks?: { name: string; url?: string }[];
     director?: string;
     movieInfo?: string;
+    platforms?: { name: string; url?: string }[];
     homeTeam?: string;
     awayTeam?: string;
     homeTeamLogo?: string;

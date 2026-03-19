@@ -9,11 +9,12 @@ import { extractFirstPrice, cleanTitle, formatUnifiedDate, translateContent } fr
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { useTranslations } from 'next-intl';
+import { Performance } from '@/types';
 
 interface PerformanceCardProps {
-    perf: any;
+    perf: Performance;
     distLabel: string | null;
-    venueInfo: any;
+    venueInfo: { lat?: number; lng?: number; region?: string; district?: string } | null;
     onLocationClick: (loc: any) => void;
     variant?: 'default' | 'yellow' | 'pink' | 'emerald';
     isLiked?: boolean;
@@ -42,7 +43,9 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
         return (
             <>
                 {parts.map((part, i) =>
-                    regex.test(part) ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> : part
+                    part.toLowerCase() === cleanKeyword.toLowerCase()
+                        ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span>
+                        : part
                 )}
             </>
         );
@@ -414,7 +417,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     if (!extracted) return <span className="text-lg font-black">{perf.price}</span>;
                                                     return (
                                                         <div className="leading-none text-right">
-                                                            {extracted.price === '무료' ? (
+                                                            {extracted.price === '__FREE__' ? (
                                                                 <span className="text-xl font-black">{ts('free')}</span>
                                                             ) : (
                                                                 <>

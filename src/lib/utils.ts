@@ -1,5 +1,12 @@
 import { format, isValid, parse } from 'date-fns';
-import { ko } from 'date-fns/locale';
+import { ko, ja, zhCN } from 'date-fns/locale';
+
+const DATE_LOCALES: Record<string, any> = {
+    ko,
+    ja,
+    zh: zhCN,
+    en: undefined // date-fns uses English as default if undefined
+};
 
 export const getOptimizedUrl = (url: string, width: number = 400) => {
     if (!url) return '';
@@ -52,7 +59,7 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
 
     // Check for free
     if (priceStr.includes('무료') || priceStr === '0') {
-        return { label: null, price: '무료' };
+        return { label: null, price: '__FREE__' }; // Return sentinel for i18n handling
     }
 
     // Try to match pattern: "XX석 NUMBER원", "전석 NUMBER원", or "입장료: NUMBER원"
@@ -239,7 +246,7 @@ function formatSingleDateInternal(str: string, localeCode: string): string {
 
     if (isValid(parsedDate)) {
         const hasTime = str.includes(':');
-        const dateLocale = localeCode === 'en' ? undefined : (localeCode === 'ja' ? require('date-fns/locale').ja : (localeCode === 'zh' ? require('date-fns/locale').zhCN : require('date-fns/locale').ko));
+        const dateLocale = DATE_LOCALES[localeCode] || undefined;
         
         if (hasTime) {
             return format(parsedDate, 'yyyy.MM.dd (E) HH:mm', { locale: dateLocale });
@@ -274,6 +281,27 @@ export function toMobileUrl(url: string | undefined): string {
         // Yes24 Ticket
         if (urlObj.hostname === 'ticket.yes24.com') {
             urlObj.hostname = 'm.ticket.yes24.com';
+            return urlObj.toString();
+        }
+
+        // Interpark (Main & Ticket)
+        if (urlObj.hostname === 'ticket.interpark.com' || urlObj.hostname === 'www.interpark.com') {
+            // Interpark usually redirects automatically, but m.ticket.interpark.com is the mobile entry
+            if (urlObj.hostname === 'ticket.interpark.com') {
+                urlObj.hostname = 'm.ticket.interpark.com';
+            }
+            return urlObj.toString();
+        }
+
+        // Melon Ticket
+        if (urlObj.hostname === 'ticket.melon.com') {
+            urlObj.hostname = 'm.ticket.melon.com';
+            return urlObj.toString();
+        }
+
+        // Ticketlink
+        if (urlObj.hostname === 'www.ticketlink.co.kr' || urlObj.hostname === 'ticketlink.co.kr') {
+            urlObj.hostname = 'm.ticketlink.co.kr';
             return urlObj.toString();
         }
 

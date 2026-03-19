@@ -26,37 +26,24 @@ export function usePerformanceFilters({
 }: UsePerformanceFiltersProps) {
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
     
-    // Lazy State Initializers for Persistence
-    const [selectedRegion, setSelectedRegion] = useState<string>(() => {
-        if (typeof window === 'undefined') return 'all';
+    // Lazy State Initializers for Persistence - Consolidated Parsing
+    const savedState = useMemo(() => {
+        if (typeof window === 'undefined') return null;
         try {
             const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).region || 'all' : 'all') as string;
-        } catch { return 'all'; }
-    });
-    const [selectedDistrict, setSelectedDistrict] = useState<string>(() => {
-        if (typeof window === 'undefined') return 'all';
-        try {
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).district || 'all' : 'all') as string;
-        } catch { return 'all'; }
-    });
-    const [selectedVenue, setSelectedVenue] = useState<string>(() => {
-        if (typeof window === 'undefined') return 'all';
-        try {
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).venue || 'all' : 'all') as string;
-        } catch { return 'all'; }
-    });
+            return saved ? JSON.parse(saved) : null;
+        } catch { return null; }
+    }, [initialGenre]);
+
+    const [selectedRegion, setSelectedRegion] = useState<string>(() => savedState?.region || 'all');
+    const [selectedDistrict, setSelectedDistrict] = useState<string>(() => savedState?.district || 'all');
+    const [selectedVenue, setSelectedVenue] = useState<string>(() => savedState?.venue || 'all');
     const [shuffleSeed, setShuffleSeed] = useState<number>(() => {
         if (typeof window === 'undefined') return 0;
         try {
             // Check if we are returning from a detail/map/calendar view
             const shouldPreserve = sessionStorage.getItem('cf_preserve_order') === 'true';
             
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            const savedState = saved ? JSON.parse(saved) : null;
-
             if (shouldPreserve && savedState?.seed) {
                 return savedState.seed;
             }
@@ -128,7 +115,7 @@ export function usePerformanceFilters({
             relevantVenues = relevantVenues.filter(v => venues[v].district === selectedDistrict);
         }
         return relevantVenues.sort();
-    }, [selectedRegion, selectedDistrict]);
+    }, [selectedRegion, selectedDistrict, venues]);
 
     // Main Filtering Logic
     const filteredPerformances = useMemo(() => {

@@ -58,7 +58,7 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
         const isDeepLink = typeof window !== 'undefined' && window.location.hash.startsWith('#p=');
         const timer = setTimeout(() => {
             loadAllData();
-        }, isDeepLink ? 0 : 500);
+        }, isDeepLink ? 0 : 50); // Reduced delay for faster initial load
 
         return () => clearTimeout(timer);
     }, [locale]); // Reload if locale changes

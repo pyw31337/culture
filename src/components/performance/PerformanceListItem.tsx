@@ -8,11 +8,12 @@ import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { useTranslations } from 'next-intl';
+import { Performance } from '@/types';
 
 interface PerformanceListItemProps {
-    perf: any;
+    perf: Performance;
     distLabel: string | null;
-    venueInfo: any;
+    venueInfo: { lat?: number; lng?: number; region?: string; district?: string } | null;
     onLocationClick: (loc: any) => void;
     isLiked?: boolean;
     onToggleLike?: (id: string, e: React.MouseEvent) => void;
@@ -37,7 +38,9 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
         return (
             <>
                 {parts.map((part, i) =>
-                    regex.test(part) ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> : part
+                    part.toLowerCase() === cleanKeyword.toLowerCase() 
+                        ? <span key={i} className="bg-yellow-300 text-red-600 font-extrabold">{part}</span> 
+                        : part
                 )}
             </>
         );
@@ -410,7 +413,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             if (!extracted) return <span className="text-white light:text-black font-black text-xl tracking-tighter">{perf.price}</span>;
                                             return (
                                                 <div className="text-white light:text-black drop-shadow-md leading-none text-right">
-                                                    {extracted.price === '무료' ? (
+                                                    {extracted.price === '__FREE__' ? (
                                                         <span className="text-lg font-black">{ts('free')}</span>
                                                     ) : (
                                                         <>

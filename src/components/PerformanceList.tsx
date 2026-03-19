@@ -145,9 +145,27 @@ export default function PerformanceList({
     }, [savedKeywords, allPerformances]);
 
     const recommendedItems = useMemo(() => {
-        // Simple mock for now, can be sophisticated later
+        if (!allPerformances.length) return [];
+        
+        // If user has likes, recommend based on most-liked genre
+        if (likedIds.length > 0) {
+            const likedSet = new Set(likedIds);
+            const genreCounts = new Map<string, number>();
+            allPerformances.forEach(p => {
+                if (likedSet.has(p.id)) {
+                    genreCounts.set(p.genre, (genreCounts.get(p.genre) || 0) + 1);
+                }
+            });
+            const topGenre = [...genreCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+            if (topGenre) {
+                const genreItems = allPerformances.filter(p => p.genre === topGenre && !likedSet.has(p.id));
+                if (genreItems.length >= 5) return genreItems.slice(0, 10);
+            }
+        }
+        
+        // Fallback: diverse sampling from different genres
         return allPerformances.slice(0, 10);
-    }, [allPerformances]);
+    }, [allPerformances, likedIds]);
 
     // --- Search Synchronization Helper ---
     const syncSearchToUrl = useCallback((
