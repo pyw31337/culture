@@ -151,55 +151,91 @@ export default function HeroSection({
         const isWeekend = day === 0 || day === 6;
         const isFriday = day === 5;
 
-        // Dynamic title messages for likes-perf
-        const likesPerfMessages: any[] = isKo ? [
-            { line1: "평소에", line2Pre: "좋아요로 Pick 한 ", highlight: "컨텐츠들", suffix: "을 살펴볼까요?" },
-            { line1: "당신의", line2Pre: "마음을 사로잡은 ", highlight: "컨텐츠", suffix: "들이에요." },
-            { line1: "하트를 눌렀던", line2Pre: "그 순간을 ", highlight: "다시", suffix: " 만나보세요." },
-            { line1: "찜해둔", line2Pre: "컨텐츠 중에 ", highlight: "오늘", suffix: " 볼만한 건 뭐가 있을까요?" },
-            { line1: "좋아요 리스트,", line2Pre: "당신만의 ", highlight: "컬렉션", suffix: "이에요." },
-            { line1: "설렘이 담긴", line2Pre: "컨텐츠 ", highlight: "리스트", suffix: "를 확인해볼게요." },
-            { line1: "기억해둔", line2Pre: "그 컨텐츠들, ", highlight: "지금", suffix: " 확인해보세요." },
-            { line1: "마음에 담아둔", line2Pre: "컨텐츠 ", highlight: "목록", suffix: "이에요." },
-            { line1: "좋아요 버튼,", line2Pre: "진심을 담아 누른 ", highlight: "컨텐츠", suffix: "들이죠." },
-            { line1: "당신의 취향이", line2Pre: "반영된 ", highlight: "컨텐츠들", suffix: "을 모아봤어요." }
-        ] : [
-            { line1: "Your picks,", line2Pre: "Let's explore the ", highlight: "content", suffix: " you've liked!" },
-            { line1: "Handpicked by you,", line2Pre: "Content that captured your ", highlight: "heart", suffix: "." },
-            { line1: "Remember tapping ♥?", line2Pre: "Revisit those ", highlight: "special moments", suffix: "." },
-            { line1: "From your favorites,", line2Pre: "Anything worth ", highlight: "watching today", suffix: "?" },
-            { line1: "Your likes list,", line2Pre: "Your personal ", highlight: "collection", suffix: "." },
-            { line1: "Full of excitement,", line2Pre: "Check your content ", highlight: "wishlist", suffix: "." },
-            { line1: "Saved for later,", line2Pre: "Take a look at them ", highlight: "now", suffix: "." },
-            { line1: "Close to your heart,", line2Pre: "Your curated content ", highlight: "lineup", suffix: "." },
-            { line1: "Every like counts,", line2Pre: "Content you truly ", highlight: "loved", suffix: "." },
-            { line1: "Reflecting your taste,", line2Pre: "We've gathered your ", highlight: "favorites", suffix: "." }
-        ];
+        // Dynamic title messages for likes-perf (locale-aware)
+        const likesPerfByLocale: Record<string, any[]> = {
+            ko: [
+                { line1: "평소에", line2Pre: "좋아요로 Pick 한 ", highlight: "컨텐츠들", suffix: "을 살펴볼까요?" },
+                { line1: "당신의", line2Pre: "마음을 사로잡은 ", highlight: "컨텐츠", suffix: "들이에요." },
+                { line1: "하트를 눌렀던", line2Pre: "그 순간을 ", highlight: "다시", suffix: " 만나보세요." },
+                { line1: "찜해둔", line2Pre: "컨텐츠 중에 ", highlight: "오늘", suffix: " 볼만한 건 뭐가 있을까요?" },
+                { line1: "좋아요 리스트,", line2Pre: "당신만의 ", highlight: "컬렉션", suffix: "이에요." },
+                { line1: "설렘이 담긴", line2Pre: "컨텐츠 ", highlight: "리스트", suffix: "를 확인해볼게요." },
+                { line1: "기억해둔", line2Pre: "그 컨텐츠들, ", highlight: "지금", suffix: " 확인해보세요." },
+                { line1: "마음에 담아둔", line2Pre: "컨텐츠 ", highlight: "목록", suffix: "이에요." },
+                { line1: "좋아요 버튼,", line2Pre: "진심을 담아 누른 ", highlight: "컨텐츠", suffix: "들이죠." },
+                { line1: "당신의 취향이", line2Pre: "반영된 ", highlight: "컨텐츠들", suffix: "을 모아봤어요." }
+            ],
+            en: [
+                { line1: "Your picks,", line2Pre: "Let's explore the ", highlight: "content", suffix: " you've liked!" },
+                { line1: "Handpicked by you,", line2Pre: "Content that captured your ", highlight: "heart", suffix: "." },
+                { line1: "Remember tapping ♥?", line2Pre: "Revisit those ", highlight: "special moments", suffix: "." },
+                { line1: "From your favorites,", line2Pre: "Anything worth ", highlight: "watching today", suffix: "?" },
+                { line1: "Your likes list,", line2Pre: "Your personal ", highlight: "collection", suffix: "." },
+                { line1: "Full of excitement,", line2Pre: "Check your content ", highlight: "wishlist", suffix: "." },
+                { line1: "Saved for later,", line2Pre: "Take a look at them ", highlight: "now", suffix: "." },
+                { line1: "Close to your heart,", line2Pre: "Your curated content ", highlight: "lineup", suffix: "." },
+                { line1: "Every like counts,", line2Pre: "Content you truly ", highlight: "loved", suffix: "." },
+                { line1: "Reflecting your taste,", line2Pre: "We've gathered your ", highlight: "favorites", suffix: "." }
+            ],
+            zh: [
+                { line1: "您收藏的", line2Pre: "一起来看看喜欢的", highlight: "内容", suffix: "吧！" },
+                { line1: "精心挑选,", line2Pre: "打动您心的", highlight: "精彩内容", suffix: "。" },
+                { line1: "还记得点赞吗?", line2Pre: "重温那些", highlight: "特别的时刻", suffix: "。" },
+                { line1: "从您的收藏中,", line2Pre: "今天有什么", highlight: "值得一看", suffix: "?" },
+                { line1: "点赞清单,", line2Pre: "属于您的", highlight: "专属合集", suffix: "。" }
+            ],
+            ja: [
+                { line1: "あなたのお気に入り,", line2Pre: "いいねした", highlight: "コンテンツ", suffix: "を見てみましょう！" },
+                { line1: "厳選された,", line2Pre: "心を掴んだ", highlight: "コンテンツ", suffix: "です。" },
+                { line1: "♥を押した瞬間,", line2Pre: "あの", highlight: "特別な瞬間", suffix: "をもう一度。" },
+                { line1: "お気に入りから,", line2Pre: "今日", highlight: "見る価値", suffix: "のあるものは?" },
+                { line1: "いいねリスト,", line2Pre: "あなただけの", highlight: "コレクション", suffix: "です。" }
+            ]
+        };
+        const likesPerfMessages = likesPerfByLocale[locale] || likesPerfByLocale.en;
 
-        // Dynamic title messages for likes-venue
-        const likesVenueMessages: any[] = isKo ? [
-            { line1: "찜한 공연장에서", line2Pre: "오늘 어떤 ", highlight: "컨텐츠", suffix: "가 열리고 있을까요?" },
-            { line1: "자주 찾는", line2Pre: "공연장의 ", highlight: "일정", suffix: "을 확인해보세요." },
-            { line1: "좋아하는 공연장,", line2Pre: "그곳의 ", highlight: "무대", suffix: "가 기다리고 있어요." },
-            { line1: "마음에 든 공연장의", line2Pre: "오늘의 ", highlight: "라인업", suffix: "은 뭘까요?" },
-            { line1: "찜한 공연장에서", line2Pre: "새로운 ", highlight: "컨텐츠", suffix: "를 발견해보세요." },
-            { line1: "익숙한 그 공연장,", line2Pre: "특별한 ", highlight: "오늘", suffix: "이 될 수도 있어요." },
-            { line1: "당신이 사랑하는", line2Pre: "공연장의 ", highlight: "소식", suffix: "을 전해드릴게요." },
-            { line1: "공연장 Pick,", line2Pre: "거기서 뭐 ", highlight: "하고 있나", suffix: " 볼까요?" },
-            { line1: "찜한 공연장 어때요?", line2Pre: "오늘의 ", highlight: "무대", suffix: "를 확인해보세요." },
-            { line1: "자주 가는 그곳,", line2Pre: "새 ", highlight: "컨텐츠", suffix: "가 기다리고 있을지도요." }
-        ] : [
-            { line1: "At your saved venue,", line2Pre: "What ", highlight: "events", suffix: " are happening today?" },
-            { line1: "Your favorite spot,", line2Pre: "Check the ", highlight: "schedule", suffix: "." },
-            { line1: "A venue you love,", line2Pre: "The ", highlight: "stage", suffix: " is waiting for you." },
-            { line1: "At your fave venue,", line2Pre: "What's today's ", highlight: "lineup", suffix: "?" },
-            { line1: "At your saved venue,", line2Pre: "Discover ", highlight: "new content", suffix: "." },
-            { line1: "That familiar place,", line2Pre: "It could be a ", highlight: "special day", suffix: "." },
-            { line1: "The venue you love,", line2Pre: "Here's the latest ", highlight: "news", suffix: "." },
-            { line1: "Venue pick,", line2Pre: "Let's see what's ", highlight: "happening there", suffix: "." },
-            { line1: "How about your saved venue?", line2Pre: "Check today's ", highlight: "shows", suffix: "." },
-            { line1: "Your go-to spot,", line2Pre: "New ", highlight: "content", suffix: " might be waiting." }
-        ];
+        // Dynamic title messages for likes-venue (locale-aware)
+        const likesVenueByLocale: Record<string, any[]> = {
+            ko: [
+                { line1: "찜한 공연장에서", line2Pre: "오늘 어떤 ", highlight: "컨텐츠", suffix: "가 열리고 있을까요?" },
+                { line1: "자주 찾는", line2Pre: "공연장의 ", highlight: "일정", suffix: "을 확인해보세요." },
+                { line1: "좋아하는 공연장,", line2Pre: "그곳의 ", highlight: "무대", suffix: "가 기다리고 있어요." },
+                { line1: "마음에 든 공연장의", line2Pre: "오늘의 ", highlight: "라인업", suffix: "은 뭘까요?" },
+                { line1: "찜한 공연장에서", line2Pre: "새로운 ", highlight: "컨텐츠", suffix: "를 발견해보세요." },
+                { line1: "익숙한 그 공연장,", line2Pre: "특별한 ", highlight: "오늘", suffix: "이 될 수도 있어요." },
+                { line1: "당신이 사랑하는", line2Pre: "공연장의 ", highlight: "소식", suffix: "을 전해드릴게요." },
+                { line1: "공연장 Pick,", line2Pre: "거기서 뭐 ", highlight: "하고 있나", suffix: " 볼까요?" },
+                { line1: "찜한 공연장 어때요?", line2Pre: "오늘의 ", highlight: "무대", suffix: "를 확인해보세요." },
+                { line1: "자주 가는 그곳,", line2Pre: "새 ", highlight: "컨텐츠", suffix: "가 기다리고 있을지도요." }
+            ],
+            en: [
+                { line1: "At your saved venue,", line2Pre: "What ", highlight: "events", suffix: " are happening today?" },
+                { line1: "Your favorite spot,", line2Pre: "Check the ", highlight: "schedule", suffix: "." },
+                { line1: "A venue you love,", line2Pre: "The ", highlight: "stage", suffix: " is waiting for you." },
+                { line1: "At your fave venue,", line2Pre: "What's today's ", highlight: "lineup", suffix: "?" },
+                { line1: "At your saved venue,", line2Pre: "Discover ", highlight: "new content", suffix: "." },
+                { line1: "That familiar place,", line2Pre: "It could be a ", highlight: "special day", suffix: "." },
+                { line1: "The venue you love,", line2Pre: "Here's the latest ", highlight: "news", suffix: "." },
+                { line1: "Venue pick,", line2Pre: "Let's see what's ", highlight: "happening there", suffix: "." },
+                { line1: "How about your saved venue?", line2Pre: "Check today's ", highlight: "shows", suffix: "." },
+                { line1: "Your go-to spot,", line2Pre: "New ", highlight: "content", suffix: " might be waiting." }
+            ],
+            zh: [
+                { line1: "在您收藏的场馆,", line2Pre: "今天有什么", highlight: "活动", suffix: "?" },
+                { line1: "您常去的场馆,", line2Pre: "查看", highlight: "日程", suffix: "吧。" },
+                { line1: "喜欢的演出场馆,", line2Pre: "", highlight: "舞台", suffix: "在等着您。" },
+                { line1: "收藏场馆的", line2Pre: "今天的", highlight: "节目单", suffix: "是什么?" },
+                { line1: "在收藏的场馆,", line2Pre: "发现", highlight: "新内容", suffix: "吧。" }
+            ],
+            ja: [
+                { line1: "お気に入りの会場で,", line2Pre: "今日はどんな", highlight: "イベント", suffix: "が?" },
+                { line1: "よく行く会場,", line2Pre: "", highlight: "スケジュール", suffix: "をチェック。" },
+                { line1: "好きな会場,", line2Pre: "", highlight: "ステージ", suffix: "が待っています。" },
+                { line1: "お気に入り会場の", line2Pre: "今日の", highlight: "ラインナップ", suffix: "は?" },
+                { line1: "登録した会場で,", line2Pre: "新しい", highlight: "コンテンツ", suffix: "を見つけよう。" }
+            ]
+        };
+        const likesVenueMessages = likesVenueByLocale[locale] || likesVenueByLocale.en;
 
         const perfMsg = likesPerfMessages[minuteSeed % likesPerfMessages.length];
         const venueMsg = likesVenueMessages[minuteSeed % likesVenueMessages.length];

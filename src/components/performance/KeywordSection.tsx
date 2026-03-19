@@ -7,6 +7,7 @@ import { cleanTitle } from '@/lib/utils';
 import { getGenreIcon } from '../GenreIcons';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
+import { useTranslations } from 'next-intl';
 
 const venues = venueData as Record<string, any>;
 
@@ -21,6 +22,9 @@ interface KeywordSectionProps {
 }
 
 function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
+    const td = useTranslations('Data');
+    const tc = useTranslations('Categories');
+    const ta = useTranslations('Actions');
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [randomRecs, setRandomRecs] = useState<any[]>(keywordItems || []);
@@ -125,7 +129,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                 <div className="flex items-center gap-2">
                     <Bell className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-400 fill-emerald-400/20" : "text-purple-400 fill-purple-400/20")} />
                     <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
-                        키워드 컨텐츠 <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r text-sm", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>New</span>
+                        {td('keyword_content')} <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r text-sm", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>New</span>
                     </h2>
                 </div>
             </div>
@@ -187,11 +191,11 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                     {/* Category Badge */}
                                     <div className="absolute top-3 left-3 z-30 flex gap-1.5 pointer-events-none">
                                         <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
-                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                            {tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                         </div>
                                         {perf.category === '독점공연' && (
                                             <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
-                                                단독
+                                                {td('exclusive') || 'Exclusive'}
                                             </div>
                                         )}
                                     </div>
@@ -233,10 +237,10 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                             {perf.synopsis || perf.description}
                                         </p>
                                         <p className="text-gray-300 text-sm mb-4 font-bold tracking-wider">
-                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                            {tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                         </p>
                                         <div className="px-5 py-2.5 bg-white text-black font-extrabold text-xs rounded-full shadow-xl">
-                                            자세히 보기
+                                            {ta('view_detail')}
                                         </div>
                                     </div>
 
@@ -250,7 +254,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                                 onShare?.(perf.id, e);
                                             }}
                                             className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white backdrop-blur-md pointer-events-auto transition-all shrink-0 border border-white/10"
-                                            title="공유하기"
+                                            title={ta('share')}
                                         >
                                             <ChevronRight size={20} />
                                         </button>
