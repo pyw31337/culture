@@ -92,6 +92,12 @@ jobs:
           npx tsx scripts/scrape-seoul-culture.ts || true
           npx tsx scripts/build-venues.ts || true
           npx tsx scripts/verify-links.ts || true
+          
+      - name: MochaClass Geocoding Cleanup
+        if: env.SKIP_EXECUTION != 'true'
+        env:
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+        run: npx tsx scripts/reclaim-mochaclass-v2.ts || true
 
       - name: Validate Data Integrity (Pre-Commit Check)
         if: env.SKIP_EXECUTION != 'true'

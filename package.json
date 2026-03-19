@@ -14,7 +14,8 @@
     "scrape:kbo": "npx tsx scripts/scrape-kbo.ts",
     "scrape:yes24": "npx tsx scripts/scrape-yes24-exclusive.ts",
     "scrape:sssd": "npx tsx scripts/scrape-sssd.ts",
-    "validate:images": "npx tsx scripts/validate-images.ts"
+    "validate:images": "npx tsx scripts/validate-images.ts",
+    "fix:mochaclass": "npx tsx scripts/reclaim-mochaclass-v2.ts"
   },
   "dependencies": {
     "@iamtraction/google-translate": "^2.0.1",
