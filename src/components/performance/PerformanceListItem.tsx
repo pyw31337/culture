@@ -162,10 +162,10 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
                 <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden isolate z-0 h-full">
                     <ImageWithFallback
-                        src={perf.image || perf.poster}
+                        src={perf.image || perf.poster || ''}
                         backupSrc={perf.backupPoster}
                         optimizationWidth={400}
-                        alt={perf.title}
+                        alt={perf.title || ''}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 640px) 128px, 192px"
@@ -360,7 +360,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             <div className="flex items-start gap-1">
                                                 <span className="text-gray-500 light:text-gray-600 min-w-[24px]">{tm('cast')}</span>
                                                 <span className="text-gray-300 light:text-black line-clamp-1">
-                                                    {(perf.castWithLinks || perf.cast).map((c: any, i: number, arr: any[]) => {
+                                                    {(perf.castWithLinks || perf.cast || []).map((c: any, i: number, arr: any[]) => {
                                                         const isObj = typeof c === 'object' && c !== null;
                                                         const name = isObj ? c.name : c;
                                                         const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name.replace('더보기', '').trim())}`;

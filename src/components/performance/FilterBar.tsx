@@ -4,6 +4,7 @@ import { Filter } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, REGIONS } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
+import { useTranslations } from 'next-intl';
 
 // Reusable Dropdown Component
 interface FilterDropdownProps {
@@ -90,6 +91,9 @@ export default function FilterBar({
     totalCount,
     isLoading
 }: FilterBarProps) {
+    const td = useTranslations('Data');
+    const tc = useTranslations('Categories');
+    const tr = useTranslations('Regions');
 
     // Sort Genres for Dropdown (Same as PerformanceList logic?)
     // Usually standard GENRES list.
@@ -110,12 +114,12 @@ export default function FilterBar({
                             : "bg-gray-800/80 text-gray-300 border-white/10 hover:bg-gray-700 light:bg-white light:text-gray-700 light:border-gray-200 light:shadow-sm"
                     )}>
                         {getGenreIcon(selectedGenre, 14)}
-                        <span>{selectedGenre === 'all' ? '전체 장르' : GENRES.find(g => g.id === selectedGenre)?.label}</span>
+                        <span>{selectedGenre === 'all' ? td('all_genres') : (tc.has(selectedGenre) ? tc(selectedGenre) : GENRES.find(g => g.id === selectedGenre)?.label)}</span>
                     </button>
                     {/* Dropdown */}
                     <div className="absolute top-full left-0 mt-2 w-40 bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden z-50 hidden group-hover:block">
                         <div className="p-1 max-h-[300px] overflow-y-auto custom-scrollbar">
-                            <button onClick={() => onGenreChange('all')} className="w-full text-left px-3 py-2 text-xs text-gray-400 hover:bg-white/5 rounded-lg mb-1">전체 보기</button>
+                            <button onClick={() => onGenreChange('all')} className="w-full text-left px-3 py-2 text-xs text-gray-400 hover:bg-white/5 rounded-lg mb-1">{td('view_all')}</button>
                             {GENRES.map(g => (
                                 <button
                                     key={g.id}
@@ -128,7 +132,7 @@ export default function FilterBar({
                                     )}
                                 >
                                     {getGenreIcon(g.id, 14)}
-                                    {g.label}
+                                    {tc.has(g.id) ? tc(g.id) : g.label}
                                 </button>
                             ))}
                         </div>
@@ -144,12 +148,12 @@ export default function FilterBar({
                             : "bg-gray-800/80 text-gray-300 border-white/10 hover:bg-gray-700 light:bg-white light:text-gray-700 light:border-gray-200 light:shadow-sm"
                     )}>
                         <Filter size={12} />
-                        <span>{selectedRegion === 'all' ? '전체 지역' : REGIONS.find(r => r.id === selectedRegion)?.label}</span>
+                        <span>{selectedRegion === 'all' ? td('all_regions') : (tr.has(selectedRegion) ? tr(selectedRegion) : REGIONS.find(r => r.id === selectedRegion)?.label)}</span>
                     </button>
                     {/* Dropdown */}
                     <div className="absolute top-full left-0 mt-2 w-32 bg-gray-900 light:bg-white border border-white/10 light:border-gray-200 rounded-xl shadow-2xl overflow-hidden z-50 hidden group-hover:block">
                         <div className="p-1">
-                            <button onClick={() => onRegionChange('all')} className="w-full text-left px-3 py-2 text-xs text-gray-400 hover:bg-white/5 rounded-lg mb-1">전체 지역</button>
+                            <button onClick={() => onRegionChange('all')} className="w-full text-left px-3 py-2 text-xs text-gray-400 hover:bg-white/5 rounded-lg mb-1">{td('all_regions')}</button>
                             {REGIONS.map(r => (
                                 <button
                                     key={r.id}
@@ -161,7 +165,7 @@ export default function FilterBar({
                                             : "text-gray-300 hover:bg-white/5 light:text-gray-700 light:hover:bg-gray-100"
                                     )}
                                 >
-                                    {r.label}
+                                    {tr.has(r.id) ? tr(r.id) : r.label}
                                 </button>
                             ))}
                         </div>
@@ -175,7 +179,7 @@ export default function FilterBar({
                     <span className="animate-pulse">Loading...</span>
                 ) : (
                     <>
-                        <span>총 <span className="text-white light:text-black">{totalCount}</span>개</span>
+                        <span>{td('total_count', { count: totalCount })}</span>
                     </>
                 )}
             </div>

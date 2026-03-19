@@ -223,10 +223,10 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             <div className="relative aspect-[3/4] overflow-hidden shrink-0">
                                 <div className="absolute inset-0 z-0">
                                     <ImageWithFallback
-                                        src={perf.image || perf.poster}
+                                        src={perf.image || perf.poster || ''}
                                         backupSrc={perf.backupPoster}
                                         optimizationWidth={1000}
-                                        alt={perf.title}
+                                        alt={perf.title || ''}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
@@ -338,10 +338,10 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     ) : (
                         <div className="relative aspect-[3/4] w-full overflow-hidden">
                             <ImageWithFallback
-                                src={perf.image || perf.poster}
+                                src={perf.image || perf.poster || ''}
                                 backupSrc={perf.backupPoster}
                                 optimizationWidth={1000}
-                                alt={perf.title}
+                                alt={perf.title || ''}
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -413,7 +413,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
                                             <div className="flex items-baseline gap-1 text-white">
                                                 {(() => {
-                                                    const extracted = extractFirstPrice(perf.price);
+                                                    const extracted = extractFirstPrice(perf.price || '');
                                                     if (!extracted) return <span className="text-lg font-black">{perf.price}</span>;
                                                     return (
                                                         <div className="leading-none text-right">

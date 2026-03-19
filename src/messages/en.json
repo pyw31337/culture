@@ -113,7 +113,10 @@
         "close": "Close",
         "language_change": "Change Language",
         "mode_change": "Switch Mode",
-        "keyword_settings": "Keyword Settings"
+        "keyword_settings": "Keyword Settings",
+        "install_app": "Install App",
+        "install_app_desc": "Enjoy faster and easier access!",
+        "install": "Install"
     },
     "Weather": {
         "location_info": "Location Info",
@@ -201,7 +204,12 @@
         "go_booking": "Book Now",
         "vs_compare": "VS Stats",
         "highlights": "Highlights & Details",
-        "data_source": "Data Source: {source} and others"
+        "data_source": "Data Source: {source} and others",
+        "host": "Host",
+        "organizer": "Organizer",
+        "planner": "Planner",
+        "exclusive": "Exclusive",
+        "minutes": "min"
     },
     "EmptyState": {
         "no_results": "No results found 😢",
@@ -227,7 +235,9 @@
         "not_found_title": "Page Not Found",
         "not_found_desc": "The performance information may not exist or has been deleted.",
         "go_home": "Go to Culture Flow Home",
-        "temporary_error": "A temporary error occurred. Please try again."
+        "temporary_error": "A temporary error occurred. Please try again.",
+        "something_went_wrong": "Something went wrong",
+        "refresh": "Refresh"
     },
     "Data": {
         "museum": "Museum",
@@ -240,6 +250,13 @@
         "seoul": "Seoul",
         "gyeonggi": "Gyeonggi",
         "free": "Free",
-        "won": "Won"
+        "won": "Won",
+        "all_genres": "All Genres",
+        "all_regions": "All Regions",
+        "view_all": "View All",
+        "total_count": "{count} Total",
+        "keyword_content": "Keyword Content",
+        "interpark": "Interpark",
+        "seoul_culture_portal": "Seoul Culture Portal"
     }
 }

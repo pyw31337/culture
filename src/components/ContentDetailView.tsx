@@ -308,7 +308,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     if (p.operatingHours || p.performanceTime) {
                                         infoItems.push({ icon: Clock, label: t('running_time'), text: p.operatingHours || p.performanceTime, color: 'text-purple-500' });
                                     } else if ((p as any).runtime) {
-                                        infoItems.push({ icon: Clock, label: t('running_time'), text: `${(p as any).runtime}분`, color: 'text-purple-500' });
+                                        infoItems.push({ icon: Clock, label: t('running_time'), text: `${(p as any).runtime}${t('minutes')}`, color: 'text-purple-500' });
                                     }
                                     
                                     if (isMovie) {
@@ -370,16 +370,16 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     };
 
                                     const hostOrg = dedupeJoin([
-                                        { val: p.host, label: '주최' },
-                                        { val: p.organizer, label: '주관' }
+                                        { val: p.host, label: t('host') },
+                                        { val: p.organizer, label: t('organizer') }
                                     ]);
                                     if (hostOrg) {
                                         infoItems.push({ icon: Users, label: t('host_organizer'), text: hostOrg, color: 'text-indigo-400' });
                                     }
 
                                     const planProd = dedupeJoin([
-                                        { val: p.planner, label: '기획' },
-                                        { val: p.producer, label: '제작' }
+                                        { val: p.planner, label: t('planner') },
+                                        { val: p.producer, label: t('production') }
                                     ]);
                                     
                                     if (planProd) {

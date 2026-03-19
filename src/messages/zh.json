@@ -113,7 +113,10 @@
         "close": "关闭",
         "language_change": "更改语言",
         "mode_change": "切换模式",
-        "keyword_settings": "关键词设置"
+        "keyword_settings": "关键词设置",
+        "install_app": "安装应用",
+        "install_app_desc": "更快更方便地享受吧!",
+        "install": "安装"
     },
     "Weather": {
         "location_info": "位置信息",
@@ -201,7 +204,12 @@
         "go_booking": "前往预订网站",
         "vs_compare": "战力对比",
         "highlights": "观战看点/详细结果",
-        "data_source": "数据来源: {source} 等"
+        "data_source": "数据来源: {source} 等",
+        "host": "主办",
+        "organizer": "承办",
+        "planner": "策划",
+        "exclusive": "独家",
+        "minutes": "分钟"
     },
     "EmptyState": {
         "no_results": "没有搜索结果 😢",
@@ -227,7 +235,9 @@
         "not_found_title": "找不到请求的页面。",
         "not_found_desc": "演出信息可能不存在或已被删除。",
         "go_home": "前往 Culture Flow 首页",
-        "temporary_error": "发生临时错误。请稍后重试。"
+        "temporary_error": "发生临时错误。请稍后重试。",
+        "something_went_wrong": "发生了问题",
+        "refresh": "刷新"
     },
     "Data": {
         "museum": "博物馆",
@@ -240,6 +250,13 @@
         "seoul": "首尔",
         "gyeonggi": "京畿",
         "free": "免费",
-        "won": "韩元"
+        "won": "韩元",
+        "all_genres": "全部类型",
+        "all_regions": "全部地区",
+        "view_all": "查看全部",
+        "total_count": "共 {count} 个",
+        "keyword_content": "关键词内容",
+        "interpark": "Interpark",
+        "seoul_culture_portal": "首尔文化门户"
     }
 }

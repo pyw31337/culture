@@ -113,7 +113,10 @@
         "close": "閉じる",
         "language_change": "言語変更",
         "mode_change": "モード切替",
-        "keyword_settings": "キーワード設定"
+        "keyword_settings": "キーワード設定",
+        "install_app": "アプリをインストール",
+        "install_app_desc": "より快適にお楽しみください！",
+        "install": "インストール"
     },
     "Weather": {
         "location_info": "位置情報",
@@ -201,7 +204,12 @@
         "go_booking": "予約サイトへ",
         "vs_compare": "戦力比較",
         "highlights": "観戦ポイント/詳細結果",
-        "data_source": "データ出所: {source} 外"
+        "data_source": "データ出所: {source} 外",
+        "host": "主催",
+        "organizer": "主管",
+        "planner": "企画",
+        "exclusive": "独占",
+        "minutes": "分"
     },
     "EmptyState": {
         "no_results": "検索結果がありません 😢",
@@ -227,7 +235,9 @@
         "not_found_title": "要求されたページが見つかりません。",
         "not_found_desc": "存在しないか、削除された公演情報の可能性があります。",
         "go_home": "Culture Flow ホームへ移動",
-        "temporary_error": "一時的なエラーが発生しました。もう一度お試しください。"
+        "temporary_error": "一時的なエラーが発生しました。もう一度お試しください。",
+        "something_went_wrong": "問題が発生しました",
+        "refresh": "再読み込み"
     },
     "Data": {
         "museum": "博物館",
@@ -240,6 +250,13 @@
         "seoul": "ソウル",
         "gyeonggi": "京畿",
         "free": "無料",
-        "won": "ウォン"
+        "won": "ウォン",
+        "all_genres": "全ジャンル",
+        "all_regions": "全地域",
+        "view_all": "全て見る",
+        "total_count": "合計 {count} 件",
+        "keyword_content": "キーワードコンテンツ",
+        "interpark": "Interpark",
+        "seoul_culture_portal": "ソウル文化ポータル"
     }
 }

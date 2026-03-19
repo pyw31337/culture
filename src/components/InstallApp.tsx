@@ -3,8 +3,10 @@
 import { useState, useEffect } from 'react';
 import { Download, X } from 'lucide-react';
 import { safeStorage } from '@/lib/safeStorage';
+import { useTranslations } from 'next-intl';
 
 export default function InstallApp() {
+    const t = useTranslations('Actions');
     const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -58,8 +60,8 @@ export default function InstallApp() {
                         <Download size={20} />
                     </div>
                     <div>
-                        <h4 className="text-sm font-extrabold text-white">앱 설치하기</h4>
-                        <p className="text-xs text-gray-400">더 빠르고 편하게 즐겨보세요!</p>
+                        <h4 className="text-sm font-extrabold text-white">{t('install_app')}</h4>
+                        <p className="text-xs text-gray-400">{t('install_app_desc')}</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -67,7 +69,7 @@ export default function InstallApp() {
                         onClick={handleInstallClick}
                         className="px-3 py-1.5 bg-[#a78bfa] hover:bg-[#9061f9] text-white text-xs font-extrabold rounded-lg transition-colors"
                     >
-                        설치
+                        {t('install')}
                     </button>
                     <button
                         onClick={handleDismiss}
