@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bell, X } from 'lucide-react';
 import { clsx } from 'clsx';
+import { useTranslations } from 'next-intl';
 
 interface AlarmPanelProps {
     isOpen: boolean;
@@ -21,6 +22,9 @@ export const AlarmPanel = ({
     savedKeywords,
     onRemoveKeyword
 }: AlarmPanelProps) => {
+    const t = useTranslations('Alarm');
+    const ta = useTranslations('Actions');
+
     return (
         <div className={clsx(
             "absolute top-16 sm:top-20 left-0 right-0 bg-[#1a0b2e]/95 light:bg-white/95 backdrop-blur-3xl border-b border-purple-500/20 light:border-black/5 shadow-2xl transition-all duration-300 ease-out overflow-hidden origin-top z-40",
@@ -30,7 +34,7 @@ export const AlarmPanel = ({
                 <div className="flex justify-between items-center mb-4">
                     <h3 className="text-lg font-extrabold text-white light:text-black flex items-center gap-2">
                         <Bell size={18} className="text-purple-400 light:text-purple-600" />
-                        <span className="text-purple-100 light:text-gray-800">키워드 알림</span>
+                        <span className="text-purple-100 light:text-gray-800">{t('title')}</span>
                     </h3>
                     <button
                         onClick={onClose}
@@ -53,7 +57,7 @@ export const AlarmPanel = ({
                         type="text"
                         value={keywordInput}
                         onChange={(e) => onKeywordInputChange(e.target.value)}
-                        placeholder="키워드 추가 (예: 아이유)"
+                        placeholder={t('placeholder')}
                         className="flex-1 bg-gray-900/80 light:bg-gray-100 border border-white/10 light:border-black/10 rounded-lg px-3 py-2 text-sm text-white light:text-black focus:outline-none focus:border-purple-500/50 transition-colors"
                     />
                     <button
@@ -61,15 +65,15 @@ export const AlarmPanel = ({
                         disabled={!keywordInput.trim()}
                         className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-extrabold hover:bg-purple-500 disabled:opacity-50 transition-all font-semibold"
                     >
-                        추가
+                        {ta('add')}
                     </button>
                 </form>
                 {/* Keyword List */}
                 <div className="space-y-2">
-                    <label className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wider">등록된 키워드</label>
+                    <label className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wider">{t('registered')}</label>
                     {savedKeywords.length === 0 ? (
                         <div className="text-center py-6 text-gray-500 bg-gray-800/30 rounded-xl border border-dashed border-white/5 text-xs">
-                            키워드를 등록해보세요.
+                            {t('empty')}
                         </div>
                     ) : (
                         <div className="flex flex-wrap gap-2 max-h-[120px] overflow-y-auto custom-scrollbar">

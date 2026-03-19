@@ -22,6 +22,8 @@ interface KeywordSectionProps {
 }
 
 function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
+    const t = useTranslations('Common');
+    const tAlarm = useTranslations('Alarm');
     const td = useTranslations('Data');
     const tc = useTranslations('Categories');
     const ta = useTranslations('Actions');
@@ -129,7 +131,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                 <div className="flex items-center gap-2">
                     <Bell className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-400 fill-emerald-400/20" : "text-purple-400 fill-purple-400/20")} />
                     <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
-                        {td('keyword_content')} <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r text-sm", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>New</span>
+                        {tAlarm('title')} <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r text-sm", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>{ta('new')}</span>
                     </h2>
                 </div>
             </div>
@@ -195,7 +197,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                         </div>
                                         {perf.category === '독점공연' && (
                                             <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
-                                                {td('exclusive') || 'Exclusive'}
+                                                {t('exclusive')}
                                             </div>
                                         )}
                                     </div>

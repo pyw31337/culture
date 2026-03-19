@@ -1,6 +1,7 @@
 import { getAllPerformances } from '@/lib/performance-data';
 import ShareRedirect from '@/components/ShareRedirect';
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import ContentDetailView from '@/components/ContentDetailView';
 import RainbowBackground from '@/components/ui/RainbowBackground';
 
@@ -79,13 +80,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ? `${productionHost}${posterUrl}`
             : `${productionHost}${basePath}${cleanPosterPath}`;
 
+    const tCommon = await getTranslations({ locale, namespace: 'Common' });
+    const siteDescription = tCommon('description');
+
     return {
         title: `${p.title} - Culture Flow`,
-        description: `${p.date} | ${p.venue} | 전국 통합 문화 검색 Culture Flow`,
+        description: `${p.date} | ${p.venue} | ${siteDescription} Culture Flow`,
         openGraph: {
             title: `${p.title} - Culture Flow`,
-            description: `${p.date} | ${p.venue} | 전국 통합 문화 검색 Culture Flow`,
-            url: `${productionHost}${basePath}/p/${id}/`,
+            description: `${p.date} | ${p.venue} | ${siteDescription} Culture Flow`,
+            url: `${productionHost}${basePath}/${locale}/p/${id}/`,
             siteName: 'Culture Flow',
             images: [
                 {
@@ -96,11 +100,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
                 },
             ],
             type: 'article',
+            locale: locale,
         },
         twitter: {
             card: 'summary_large_image',
             title: `${p.title} - Culture Flow`,
-            description: `${p.date} | ${p.venue} | 전국 통합 문화 검색 Culture Flow`,
+            description: `${p.date} | ${p.venue} | ${siteDescription} Culture Flow`,
             images: absolutePosterUrl,
         },
     };

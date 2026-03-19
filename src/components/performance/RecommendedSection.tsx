@@ -34,6 +34,9 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     // Motion value for x-axis scroll
     const x = useMotionValue(0);
 
+    const t = useTranslations('Common');
+    const ta = useTranslations('Actions');
+    const tc = useTranslations('Categories');
     const { activity } = useUserActivity();
 
     // Deterministic Random Score Generator
@@ -145,7 +148,9 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                 <div className="flex items-center gap-2">
                     <Sparkles className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-400 fill-emerald-400/20" : "text-purple-400 fill-purple-400/20")} />
                     <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
-                        실시간 인기 <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>TOP 9</span>
+                        {t.rich('trending_top_9', {
+                            top: (chunks) => <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>TOP 9</span>
+                        })}
                     </h2>
                 </div>
             </div>
@@ -217,11 +222,11 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     {/* Category Badge */}
                                     <div className="absolute top-3 left-3 z-30 flex gap-1.5 pointer-events-none">
                                         <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
-                                            {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                            {tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                         </div>
                                         {perf.category === '독점공연' && (
                                             <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
-                                                단독
+                                                {t('exclusive')}
                                             </div>
                                         )}
                                     </div>
@@ -262,7 +267,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </p>
                                         <div className="px-5 py-2.5 bg-white text-black font-extrabold text-xs rounded-full shadow-xl">
-                                            자세히 보기
+                                            {ta('view_detail')}
                                         </div>
                                     </div>
 
@@ -276,7 +281,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                                 onShare?.(perf.id, e);
                                             }}
                                             className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white backdrop-blur-md pointer-events-auto transition-all shrink-0 border border-white/10"
-                                            title="공유하기"
+                                            title={ta('share')}
                                         >
                                             <ChevronRight size={20} />
                                         </button>

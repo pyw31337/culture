@@ -49,7 +49,7 @@ const FilterDropdown = ({ label, value, options, onChange, icon, color = "purple
                                 : "text-gray-400 light:text-gray-600 hover:bg-gray-800 light:hover:bg-gray-100"
                         )}
                     >
-                        전체
+                        {label}
                     </button>
                     {options.map(opt => (
                         <button
@@ -94,6 +94,7 @@ export default function FilterBar({
     const td = useTranslations('Data');
     const tc = useTranslations('Categories');
     const tr = useTranslations('Regions');
+    const ta = useTranslations('Actions');
 
     // Sort Genres for Dropdown (Same as PerformanceList logic?)
     // Usually standard GENRES list.
@@ -176,7 +177,7 @@ export default function FilterBar({
             {/* Right: Count */}
             <div className="shrink-0 text-xs font-bold text-gray-500 light:text-gray-400 flex items-center gap-2">
                 {isLoading ? (
-                    <span className="animate-pulse">Loading...</span>
+                    <span className="animate-pulse">{tc('loading')}</span>
                 ) : (
                     <>
                         <span>{td('total_count', { count: totalCount })}</span>

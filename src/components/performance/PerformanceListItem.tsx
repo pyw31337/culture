@@ -252,7 +252,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 "px-2 py-0.5 rounded text-[10px] sm:text-xs font-extrabold border whitespace-nowrap",
                                 genreStyle.twBg ? `${genreStyle.twBg} text-white border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
                             )}>
-                                {tc(perf.genre as any) || perf.genre}
+                                {tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                             </span>
 
                             <span className={clsx(
@@ -282,7 +282,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     ) : (
                                         <>
                                             <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">{tm('rating_label')}</span>
-                                            {perf.grade || (typeof perf.venue === 'string' && perf.venue.split('|').find((s: string) => s.includes('관람') || s.includes('Age'))?.trim()) || perf.venue}
+                                            {(() => {
+                                                const grade = perf.grade || (typeof perf.venue === 'string' && perf.venue.split('|').find((s: string) => s.includes('관람') || s.includes('Age'))?.trim()) || perf.venue;
+                                                if (grade === '전체 관람가') return tm('rating_all');
+                                                if (grade === '12세 이상 관람가') return tm('rating_12');
+                                                if (grade === '15세 이상 관람가') return tm('rating_15');
+                                                if (grade === '청소년 관람불가') return tm('rating_18');
+                                                return grade;
+                                            })()}
                                         </>
                                     )}
                                 </div>

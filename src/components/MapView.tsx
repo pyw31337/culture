@@ -12,7 +12,7 @@ import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
 import Portal from './ui/Portal';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 // Weather interface
 interface DailyWeather {
@@ -51,10 +51,12 @@ interface MapViewProps {
 export default function MapView({ initialPerformances, initialCinemas = [] }: MapViewProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
+    const locale = useLocale();
     const t = useTranslations('Actions');
     const tc = useTranslations('Categories');
     const ts = useTranslations('Search');
     const tw = useTranslations('Weather');
+    const tl = useTranslations('Likes');
 
     // Self-contained state from URL params
     const selectedGenre = searchParams.get('genre') || 'all';
@@ -798,7 +800,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     )}>
                                         {weatherData.slice(0, showExtendedForecast ? 14 : 7).map((day, idx) => {
                                         const d = new Date(day.date);
-                                        const dateLocale = tc.has('ko') ? 'ko-KR' : 'en-US';
+                                        const dateLocale = locale === 'ko' ? 'ko-KR' : 'en-US';
                                         const dayName = d.toLocaleDateString(dateLocale, { weekday: 'short' });
                                         const isToday = idx === 0;
                                         const dateStr = `${d.getMonth() + 1}.${d.getDate()}`;
@@ -837,8 +839,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                     </div>
                                                     {(day.rain > 0 || day.snow > 0) && (
                                                         <div className="text-[9px] text-gray-400 mt-0.5">
-                                                            {day.rain > 0 && `비 ${day.rain}mm`}
-                                                            {day.snow > 0 && `눈 ${day.snow}cm`}
+                                                        {day.rain > 0 && `${tw('rain')} ${day.rain}mm`}
+                                                        {day.snow > 0 && `${tw('snow')} ${day.snow}cm`}
                                                         </div>
                                                     )}
                                                 </div>
@@ -885,7 +887,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                             <a href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
                                                 target="_blank" rel="noopener noreferrer"
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
-                                                <RotateCw size={12} /> 실시간 상영시간표 확인하기
+                                                <RotateCw size={12} /> {tw('cinema_timetable')}
                                             </a>
                                         </div>
                                     ) : selectedVenueData.lat && selectedVenueData.lng ? (
@@ -903,7 +905,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                 }}
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
                                                 <ExternalLink size={12} />
-                                                {SPORTS_GENRES.includes(selectedMapGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                                {SPORTS_GENRES.includes(selectedMapGenre) ? tw('more_matches') : tw('more_performances')} · {tw('content_count', { count: selectedVenueData.performances?.length || 0 })}
                                             </button>
                                         </div>
                                     ) : null}
@@ -922,7 +924,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                 <div className="flex-1 min-w-0">
                                                     <div className="flex items-center gap-1.5 mb-0.5">
                                                         <span className={clsx("px-1 py-[1px] rounded-[3px] text-[9px] font-extrabold text-white leading-none", (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600')}>
-                                                            {GENRES.find(g => g.id === p.genre)?.label}
+                                                            {tc.has(p.genre) ? tc(p.genre) : (GENRES.find(g => g.id === p.genre)?.label || p.genre)}
                                                         </span>
                                                         <span className="text-[9px] text-gray-500">{p.date}</span>
                                                     </div>
@@ -1018,7 +1020,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                         <span className={clsx("text-[10px] truncate", isSelected ? "text-white/80" : "text-gray-500 dark:text-gray-400")}>{v.address}</span>
                                         <div className="mt-auto flex items-center justify-between text-xs">
                                             <span className={clsx("font-bold shrink-0", isSelected ? "text-white" : "text-emerald-600 dark:text-emerald-400")}>
-                                                {v.performances.length}개 컨텐츠
+                                                {tw('content_count', { count: v.performances.length })}
                                             </span>
                                         </div>
                                     </button>
@@ -1029,7 +1031,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     {visibleVenues.length === 0 && isMapReady && (
                         <div className="flex items-center justify-center py-6 pointer-events-auto">
                             <span className="text-sm text-gray-500 dark:text-gray-400 font-medium bg-white/80 dark:bg-gray-800/80 backdrop-blur px-4 py-2 rounded-full shadow">
-                                주변 공연장이 없습니다.
+                                {tl('no_current_events')}
                             </span>
                         </div>
                     )}

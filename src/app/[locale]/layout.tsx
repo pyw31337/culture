@@ -7,7 +7,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import InstallApp from "@/components/InstallApp";
 import ScrollToTop from "@/components/ScrollToTop";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/navigation';
 
@@ -28,39 +28,45 @@ export const viewport: Viewport = {
   themeColor: "#0a0a0a",
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://pyw31337.github.io/culture"),
-  title: "Culture Flow - 전국 통합 문화 검색",
-  description: "전국 모든 문화 정보를 한눈에 확인하세요.",
-  openGraph: {
-    title: "Culture Flow",
-    siteName: "Culture Flow",
-    url: "https://pyw31337.github.io/culture/",
-    description: "전국 모든 문화 정보를 한눈에 확인하세요.",
-    images: [
-      {
-        url: "/culture/images/og-image.jpg",
-        width: 1200,
-        height: 600,
-        alt: "Culture Flow Preview",
-      },
-    ],
-    type: "website",
-  },
-  icons: {
-    icon: '/culture/favicon.png',
-    apple: '/culture/icon.png',
-  },
-  manifest: '/culture/manifest.json',
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'black-translucent',
-    title: 'Culture Flow',
-  },
-  formatDetection: {
-    telephone: false,
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    metadataBase: new URL("https://pyw31337.github.io/culture"),
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: "Culture Flow",
+      siteName: "Culture Flow",
+      url: `https://pyw31337.github.io/culture/${locale}`,
+      description: t('description'),
+      images: [
+        {
+          url: "/culture/images/og-image.jpg",
+          width: 1200,
+          height: 600,
+          alt: "Culture Flow Preview",
+        },
+      ],
+      type: "website",
+      locale: locale,
+    },
+    icons: {
+      icon: '/culture/favicon.png',
+      apple: '/culture/icon.png',
+    },
+    manifest: '/culture/manifest.json',
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: 'black-translucent',
+      title: 'Culture Flow',
+    },
+    formatDetection: {
+      telephone: false,
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -100,32 +106,18 @@ export default async function RootLayout({
             `,
           }}
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-5GWFPEPEW5');
-          `}
-        </Script>
-        <ProgressBarProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ProgressBarProvider>
             <ErrorBoundary>
               {children}
-              <InstallApp />
               <ScrollToTop />
+              <InstallApp />
             </ErrorBoundary>
-          </NextIntlClientProvider>
-        </ProgressBarProvider>
+          </ProgressBarProvider>
+        </NextIntlClientProvider>
         <Script
-          id="kakao-map-script"
-          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_JS_KEY}&autoload=false&libraries=services,clusterer`}
-          strategy="afterInteractive"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&libraries=services,clusterer&autoload=false`}
+          strategy="beforeInteractive"
         />
       </body>
     </html>

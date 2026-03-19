@@ -3,6 +3,7 @@ import { Heart, MapPin } from 'lucide-react';
 import PerformanceGrid from '../PerformanceGrid';
 import ImageWithFallback from '../../ImageWithFallback';
 import { Performance } from '@/types';
+import { useTranslations } from 'next-intl';
 
 interface LikedSectionsProps {
     viewMode: string;
@@ -41,6 +42,10 @@ export const LikedSections = ({
     setShowFavoriteListModal,
     layoutMode
 }: LikedSectionsProps) => {
+    const t = useTranslations('Likes');
+    const ta = useTranslations('Actions');
+    const tc = useTranslations('Common');
+
     if (viewMode !== 'likes-perf') return null;
 
     const likedPerformances = React.useMemo(() => {
@@ -56,7 +61,7 @@ export const LikedSections = ({
             {/* 좋아요한 컨텐츠 Section */}
             <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3 mb-6">
                 <Heart className="text-pink-400 light:text-pink-500 w-6 h-6 fill-pink-500 light:fill-pink-500" />
-                좋아요한 컨텐츠 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({likedPerformances.length})</span>
+                {t('content_title')} <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({likedPerformances.length})</span>
             </h3>
             {likedPerformances.length > 0 ? (
                 <PerformanceGrid
@@ -82,8 +87,8 @@ export const LikedSections = ({
             ) : (
                 <div className="text-center py-12 text-gray-400 light:text-gray-800">
                     <Heart className="w-12 h-12 mx-auto mb-4 text-gray-600 light:text-gray-400" />
-                    <p className="text-lg font-semibold text-white light:text-black">좋아요한 컨텐츠가 없습니다</p>
-                    <p className="text-sm mt-1 text-gray-500 light:text-gray-600">마음에 드는 공연/전시를 좋아요 해보세요!</p>
+                    <p className="text-lg font-semibold text-white light:text-black">{t('no_content')}</p>
+                    <p className="text-sm mt-1 text-gray-500 light:text-gray-600">{t('no_content_desc')}</p>
                 </div>
             )}
 
@@ -92,13 +97,13 @@ export const LikedSections = ({
                 <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl sm:text-2xl font-black text-white light:text-black flex items-center gap-3">
                         <MapPin className="text-pink-400 light:text-pink-500 w-6 h-6" />
-                        좋아요한 공연장 <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({favoriteVenues.length})</span>
+                        {t('venue_title')} <span className="text-pink-400 light:text-pink-600 text-lg sm:text-xl">({favoriteVenues.length})</span>
                     </h3>
                     <button
                         onClick={() => setShowFavoriteListModal(true)}
                         className="px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-400 hover:bg-pink-500/20 hover:text-pink-300 transition-all text-sm font-semibold border border-pink-500/20"
                     >
-                        공연장 편집
+                        {ta('edit_venue')}
                     </button>
                 </div>
                 {favoriteVenues.length > 0 ? (
@@ -117,7 +122,7 @@ export const LikedSections = ({
                                     >
                                         <MapPin size={14} />
                                         <span className="font-semibold text-sm">{venueName}</span>
-                                        <span className="text-xs text-gray-500">({venuePerfs.length}건)</span>
+                                        <span className="text-xs text-gray-500">({tc('count_unit', { count: venuePerfs.length })})</span>
                                     </button>
                                     {venuePerfs.length > 0 ? (
                                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -140,7 +145,7 @@ export const LikedSections = ({
                                                         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/venue:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center z-20">
                                                             <h4 className="text-white font-bold text-xs sm:text-sm mb-2 line-clamp-2">{perf.title}</h4>
                                                             <div className="px-3 py-1.5 bg-white text-black font-extrabold text-[10px] sm:text-xs rounded-full shadow-xl">
-                                                                자세히 보기
+                                                                {ta('view_detail')}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,7 +153,7 @@ export const LikedSections = ({
                                             ))}
                                         </div>
                                     ) : (
-                                        <p className="text-sm text-gray-500 ml-6">현재 진행중인 공연이 없습니다</p>
+                                        <p className="text-sm text-gray-500 ml-6">{t('no_current_events')}</p>
                                     )}
                                 </div>
                             );
@@ -156,7 +161,7 @@ export const LikedSections = ({
                     </div>
                 ) : (
                     <div className="text-center py-4 text-sm text-gray-500 light:text-black font-medium">
-                        좋아요한 공연장이 없습니다. 지도에서 공연장을 좋아요 해보세요!
+                        {t('no_venue')}
                     </div>
                 )}
             </div>

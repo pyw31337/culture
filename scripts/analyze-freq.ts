@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getAllPerformances } from '../src/lib/performance-data';
+import { progressLogger } from './utils/progress-logger';
 
 const CACHE_FILE = path.join(process.cwd(), 'src/data/translation-cache.json');
 const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
@@ -10,7 +11,9 @@ async function analyzeFrequency() {
     const fields = ['venue', 'address', 'title']; // Top priorities
     const freq: Record<string, number> = {};
 
-    performances.forEach((p: any) => {
+    const bar = progressLogger.createBar('analyze', performances.length, 'Analyzing performance data...');
+
+    performances.forEach((p: any, idx: number) => {
         fields.forEach(field => {
             const text = p[field];
             if (text && typeof text === 'string') {
@@ -22,7 +25,10 @@ async function analyzeFrequency() {
                 }
             }
         });
+        progressLogger.update('analyze', idx + 1, `Analyzed ${idx + 1}/${performances.length}: ${p.title?.slice(0, 20)}...`);
     });
+
+    progressLogger.stop();
 
     const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]);
     const top200 = sorted.slice(0, 200).map(item => item[0]);

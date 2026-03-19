@@ -21,6 +21,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
 
     const t = useTranslations('Detail');
     const tc = useTranslations('Categories');
+    const td = useTranslations('Data');
     const locale = useLocale();
 
 
@@ -363,7 +364,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
 
                                 {/* Footer Info */}
                                 <div className="mt-6 text-center text-[10px] text-gray-500">
-                                    {t('data_source', { source: performance.link.includes('interpark') ? (locale === 'ko' ? '인터파크' : 'Interpark') : (locale === 'ko' ? '서울문화포털' : 'Seoul Culture Portal') })}
+                                    {t('data_source', { source: performance.link.includes('interpark') ? td('interpark') : td('seoul_culture_portal') })}
                                 </div>
                             </div >
                         </motion.div >

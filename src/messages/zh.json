@@ -1,16 +1,26 @@
 {
-    "Metadata": {
-        "home_title": "Culture Flow | 实时文化/体育信息",
-        "home_description": "一目了然地查看音乐剧、演唱会、展览和体育赛事。我们提供实时更新和预订链接。",
-        "genre_title": "{genre} 信息及预订 | Culture Flow",
-        "genre_description": "查看当前可预订/观看的 {count} 个 {genre} 活动。一目了然地比较价格、日程和排名。",
-        "genre_sports": "体育 (全部)",
-        "not_found": "找不到页面 | Culture Flow"
-    },
+  "Metadata": {
+    "title": "Culture Flow - 全国综合文化搜索",
+    "description": "一网打尽全国所有文化信息。",
+    "calendar_title": "日历视图 | Culture Flow",
+    "calendar_description": "查看全国文化演出/活动日历。通过日、周、月视图掌握文化日程。",
+    "map_title": "地图视图 | Culture Flow",
+    "map_description": "在地图上确认全国文化演出/活动。周边演出场馆、电影院、体育场一目了然。",
+    "home_title": "Culture Flow - 全国综合文化搜索",
+    "home_description": "一网打尽全国所有文化信息。",
+    "genre_title": "{genre} 信息与预订 | Culture Flow",
+    "genre_description": "查看当前可预订的 {count} 个 {genre} 内容。对比价格、日程和排名。",
+    "not_found": "页面未找到 | Culture Flow"
+  },
     "Common": {
         "title": "Culture Flow",
         "description": "全国统一文化搜索",
-        "last_updated": "最近更新: {time}"
+        "last_updated": "最近更新: {time}",
+        "count_unit": "{count}件",
+        "loading": "加载中...",
+        "no_data": "找不到数据。",
+        "dark": "深色",
+        "light": "浅色"
     },
     "Categories": {
         "all": "全部",
@@ -96,27 +106,62 @@
         "keyword": "关键词",
         "geo_not_supported": "此浏览器不支持地理位置服务。",
         "geo_error": "无法获取位置。请检查位置权限。",
-        "reset_filter_title": "重置筛选"
+        "reset_filter_title": "重置筛选",
+        "enter_venue_name": "请输入场馆名称",
+        "enter_keyword": "请输入关键词",
+        "location_placeholder": "搜索地区、地点...",
+        "keyword_placeholder": "搜索标题、地点、演职人员..."
     },
     "Actions": {
         "book": "前往预订",
-        "share": "共享",
-        "map": "查看地图",
+        "share": "分享",
+        "map": "地图查找",
         "calendar": "日历",
         "back": "返回",
-        "more": "加载更多",
-        "likes": "点赞",
+        "more": "查看更多",
+        "likes": "喜欢",
         "alert": "提醒",
         "saved_venue": "收藏场馆",
         "copied": "已复制",
         "view_detail": "查看详情",
+        "new": "新",
         "close": "关闭",
-        "language_change": "更改语言",
-        "mode_change": "切换模式",
+        "language_change": "语言设置",
+        "mode_change": "模式切换",
         "keyword_settings": "关键词设置",
         "install_app": "安装应用",
         "install_app_desc": "更快更方便地享受吧!",
-        "install": "安装"
+        "install": "安装",
+        "add": "添加",
+        "edit_venue": "场馆编辑",
+        "all": "全部",
+        "view_mode": "视图模式",
+        "view_grid": "网格视图",
+        "view_list": "列表视图",
+        "view_calendar": "日历视图",
+        "view_map": "地图视图",
+        "view_grid_desc": "海报中心",
+        "view_list_desc": "信息中心",
+        "view_calendar_desc": "按日期",
+        "view_map_desc": "基于位置",
+        "location_search": "位置搜索",
+        "search_and_location": "位置与搜索"
+    },
+    "Alarm": {
+        "title": "关键词提醒",
+        "placeholder": "添加关键词 (例: IU)",
+        "registered": "已注册关键词",
+        "empty": "尝试注册关键词。",
+        "settings": "关键词设置"
+    },
+    "Likes": {
+        "title": "喜欢",
+        "content_title": "喜欢的内容",
+        "venue_title": "收藏的场馆",
+        "no_content": "没有喜欢的内容",
+        "no_content_desc": "为您喜欢的演出或展览点赞！",
+        "no_venue": "没有收藏的场馆。请在地图上收藏场馆！",
+        "no_current_events": "当前没有正在进行的活动"
     },
     "Weather": {
         "location_info": "位置信息",
@@ -133,7 +178,7 @@
         "cinema_timetable": "查看影院实时排片表",
         "more_matches": "更多比赛",
         "more_performances": "更多演出",
-        "content_count": "个内容"
+        "content_count": "{count} 个内容"
     },
     "MovieMetadata": {
         "always": "常设",
@@ -210,7 +255,10 @@
         "planner": "策划",
         "standard": "截至",
         "exclusive": "独家",
-        "minutes": "分钟"
+        "minutes": "分钟",
+        "no_current_events": "目前该场馆没有正在进行的演出",
+        "movie_search_suffix": " 播放时间表",
+        "booking_search_suffix": " 预订"
     },
     "EmptyState": {
         "no_results": "没有搜索结果 😢",
@@ -229,16 +277,19 @@
         "browse_contents": "浏览内容"
     },
     "Errors": {
-        "unexpected": "抱歉，加载页面时发生了意外错误。",
-        "critical": "系统出现严重问题，无法加载应用。",
-        "retry": "重试",
-        "home": "首页",
+        "unexpected": "发生问题",
+        "something_went_wrong": "抱歉，加载页面时发生了意外错误。",
+        "try_again": "重试",
+        "go_home": "返回首页",
+        "refresh": "刷新",
         "not_found_title": "找不到请求的页面。",
-        "not_found_desc": "演出信息可能不存在或已被删除。",
-        "go_home": "前往 Culture Flow 首页",
-        "temporary_error": "发生临时错误。请稍后重试。",
-        "something_went_wrong": "发生了问题",
-        "refresh": "刷新"
+        "not_found_desc": "信息可能不存在或已被删除。请返回首页查看最新文化信息。",
+        "restart_app": "重启应用",
+        "force_home": "强制返回首页",
+        "fatal_error": "致命错误发生",
+        "fatal_desc": "系统发生严重问题，无法加载应用。请咨询管理员或刷新页面。",
+        "retry": "重试",
+        "temporary_error": "发生临时错误。请稍后重试。"
     },
     "Data": {
         "museum": "博物馆",

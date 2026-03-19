@@ -9,6 +9,7 @@ import { Performance } from '@/types';
 import { X, Heart, RotateCw, Film, Plus, Minus, ExternalLink } from 'lucide-react';
 import Portal from './ui/Portal';
 import { SPORTS_GENRES } from '@/lib/constants';
+import { useTranslations } from 'next-intl';
 
 interface Cinema {
     name: string;
@@ -54,6 +55,11 @@ export default function KakaoMapModal({
     searchText = '',
     onMapSearchHere
 }: KakaoMapModalProps) {
+    const t = useTranslations('Actions');
+    const ts = useTranslations('Search');
+    const tw = useTranslations('Weather');
+    const tc = useTranslations('Categories');
+
     const mapRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<any>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
@@ -298,8 +304,8 @@ export default function KakaoMapModal({
 
             // Add search marker
             const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
-                <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
-                    ${centerLocation.name || '검색 위치'}
+                <div className="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
+                    ${centerLocation.name || ts('search_location')}
                 </div>
                 <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
                     <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
@@ -546,7 +552,7 @@ export default function KakaoMapModal({
                         <button
                             onClick={onClose}
                             className="p-2 bg-white/80 dark:bg-black/50 text-gray-900 dark:text-white rounded-full hover:bg-white dark:hover:bg-black/70 transition shadow-md"
-                            title="닫기"
+                            title={t('close')}
                         >
                             <X className="w-6 h-6" />
                         </button>
@@ -555,14 +561,14 @@ export default function KakaoMapModal({
                             <button
                                 onClick={handleZoomIn}
                                 className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition border-b border-gray-200 dark:border-gray-800"
-                                title="확대"
+                                title={tw('zoom_in')}
                             >
                                 <Plus className="w-5 h-5" />
                             </button>
                             <button
                                 onClick={handleZoomOut}
                                 className="p-2.5 text-gray-900 dark:text-white hover:bg-white dark:hover:bg-black/70 transition"
-                                title="축소"
+                                title={tw('zoom_out')}
                             >
                                 <Minus className="w-5 h-5" />
                             </button>
@@ -576,7 +582,7 @@ export default function KakaoMapModal({
                                 className="px-4 py-2 bg-blue-600 text-white rounded-full font-bold shadow-lg hover:bg-blue-700 transition flex items-center gap-2 text-sm animate-fade-in-up"
                             >
                                 <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                                현 위치에서 검색
+                                {ts('search_this_area')}
                             </button>
                         </div>
                     )}
@@ -614,7 +620,7 @@ export default function KakaoMapModal({
                                                     className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
                                                 >
                                                     <RotateCw size={12} />
-                                                    실시간 상영시간표 확인하기
+                                                    {tw('cinema_timetable')}
                                                 </a>
                                             </div>
                                         ) : selectedVenueData.lat && selectedVenueData.lng && onVenueLocationChange ? (
@@ -626,7 +632,7 @@ export default function KakaoMapModal({
                                                     className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
                                                 >
                                                     <ExternalLink size={12} />
-                                                    {SPORTS_GENRES.includes(selectedGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                                    {SPORTS_GENRES.includes(selectedGenre) ? tw('more_matches') : tw('more_performances')} · {tw('content_count', { count: selectedVenueData.performances?.length || 0 })}
                                                 </button>
                                             </div>
                                         ) : null}
@@ -655,7 +661,7 @@ export default function KakaoMapModal({
                                                                 "px-1 py-[1px] rounded-[3px] text-[9px] font-extrabold text-white leading-none",
                                                                 (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
                                                             )}>
-                                                                {GENRES.find(g => g.id === p.genre)?.label}
+                                                                {tc.has(p.genre) ? tc(p.genre) : (GENRES.find(g => g.id === p.genre)?.label || p.genre)}
                                                             </span>
                                                             <span className="text-[9px] text-gray-500">{p.date}</span>
                                                         </div>
@@ -769,7 +775,7 @@ export default function KakaoMapModal({
                                             <span className={clsx("text-[10px] truncate", isSelected ? "text-white/80" : "text-gray-500 dark:text-gray-400")}>{v.address}</span>
                                             <div className="mt-auto flex items-center justify-between text-xs">
                                                 <span className={clsx("font-bold shrink-0", isSelected ? "text-white" : "text-emerald-600 dark:text-emerald-400")}>
-                                                    {v.performances.length}개 컨텐츠
+                                                    {tw('content_count', { count: v.performances.length })}
                                                 </span>
                                             </div>
                                         </button>

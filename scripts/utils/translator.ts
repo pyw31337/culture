@@ -2,6 +2,7 @@ import translate from '@iamtraction/google-translate';
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
+import { progressLogger } from './progress-logger';
 
 const CACHE_FILE = path.join(process.cwd(), 'src/data/translation-cache.json');
 
@@ -95,6 +96,9 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
 
     if (stringsToTranslate.length === 0) return results;
 
+    const barId = `translate-${to}`;
+    progressLogger.createBar(barId, stringsToTranslate.length, `Translating to ${to.toUpperCase()}...`);
+
     // Process sub-batches in chunks
     const SUB_BATCH_SIZE = 20; 
     for (let i = 0; i < stringsToTranslate.length; i += SUB_BATCH_SIZE) {
@@ -102,9 +106,11 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
         
         // Parallelize translations within the sub-batch for speed
         const promises = currentBatch.map(async (original, idxInSub) => {
-            const originalIdx = toTranslateIndices[i + idxInSub];
+            const batchIdx = i + idxInSub;
+            const originalIdx = toTranslateIndices[batchIdx];
             const translated = await translateText(original, to);
             results[originalIdx] = translated;
+            progressLogger.increment(barId, 1, `Translating to ${to.toUpperCase()}: ${original.slice(0, 20)}...`);
         });
         
         await Promise.all(promises);

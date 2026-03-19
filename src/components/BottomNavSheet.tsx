@@ -7,6 +7,8 @@ import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 import { safeStorage } from '@/lib/safeStorage';
 import { Performance } from '@/types';
 import { getOptimizedUrl } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
+
 
 interface BottomNavSheetProps {
     activeMenu: BottomMenuType;
@@ -72,7 +74,14 @@ export default function BottomNavSheet({
     venuePerformances = [],
     hasBackdrop = true
 }: BottomNavSheetProps) {
+    const t = useTranslations('Actions');
+    const ts = useTranslations('Search');
+    const tc = useTranslations('Categories');
+    const tcm = useTranslations('Common');
+    const tem = useTranslations('EmptyState');
+
     const [isVisible, setIsVisible] = useState(false);
+
     const [keywordInput, setKeywordInput] = useState('');
     // Default to true (Light) as that is now the CSS default
     const [isLight, setIsLight] = useState(true);
@@ -209,7 +218,7 @@ export default function BottomNavSheet({
                         <div className="space-y-6">
                             <h3 className="text-xl font-extrabold text-white light:text-black mb-4 px-1 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
-                                    <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 보기 방식
+                                    <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> {t('view_mode')}
                                 </div>
 
                                 {/* Theme Toggle */}
@@ -222,7 +231,7 @@ export default function BottomNavSheet({
                                         )}
                                     >
                                         <Moon size={14} />
-                                        <span className="text-xs font-extrabold">다크</span>
+                                        <span className="text-xs font-extrabold">{tcm('dark')}</span>
                                     </button>
                                     <button
                                         onClick={toggleTheme}
@@ -232,16 +241,16 @@ export default function BottomNavSheet({
                                         )}
                                     >
                                         <Sun size={14} />
-                                        <span className="text-xs font-extrabold">라이트</span>
+                                        <span className="text-xs font-extrabold">{tcm('light')}</span>
                                     </button>
                                 </div>
                             </h3>
                             <div className="grid grid-cols-2 gap-4">
                                 {[
-                                    { id: 'grid', label: '썸네일 보기', desc: '포스터 중심', icon: LayoutGrid, color: 'text-purple-400' },
-                                    { id: 'list', label: '리스트 보기', desc: '정보 중심', icon: ListDetailsIcon, color: 'text-blue-400' },
-                                    { id: 'calendar', label: '달력 보기', desc: '일자별 일정', icon: CalendarDays, color: 'text-green-400' },
-                                    { id: 'map', label: '지도 보기', desc: '위치 기반', icon: Map, color: 'text-orange-400' }
+                                    { id: 'grid', label: t('view_grid'), desc: t('view_grid_desc'), icon: LayoutGrid, color: 'text-purple-400' },
+                                    { id: 'list', label: t('view_list'), desc: t('view_list_desc'), icon: ListDetailsIcon, color: 'text-blue-400' },
+                                    { id: 'calendar', label: t('view_calendar'), desc: t('view_calendar_desc'), icon: CalendarDays, color: 'text-green-400' },
+                                    { id: 'map', label: t('view_map'), desc: t('view_map_desc'), icon: Map, color: 'text-orange-400' }
                                 ].map((mode) => {
                                     const isSelected = viewMode === mode.id;
                                     // Use icon from config (Clover for list/grid)
@@ -288,7 +297,7 @@ export default function BottomNavSheet({
                     {activeMenu === 'category' && (
                         <div className="space-y-4">
                             <h3 className="text-lg font-extrabold text-white light:text-black px-1 flex items-center gap-2">
-                                <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 카테고리
+                                <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> {tc('category')}
                             </h3>
                             <div className="grid grid-cols-2 lg:grid-cols-6 gap-2">
                                 {/* All */}
@@ -304,7 +313,7 @@ export default function BottomNavSheet({
                                     )}
                                 >
                                     <CloverIcon className="w-4 h-4" />
-                                    <span className="text-sm font-semibold">전체</span>
+                                    <span className="text-sm font-semibold">{tc('all')}</span>
                                 </button>
 
                                 {GENRES.filter(g => g.id !== 'all').map(genre => {
@@ -323,7 +332,7 @@ export default function BottomNavSheet({
                                             )}
                                         >
                                             {getGenreIcon(genre.id, 16)}
-                                            <span className="text-sm font-semibold truncate">{genre.label}</span>
+                                            <span className="text-sm font-semibold truncate">{tc.has(genre.id) ? tc(genre.id) : genre.label}</span>
                                         </button>
                                     );
                                 })}
@@ -335,9 +344,9 @@ export default function BottomNavSheet({
                     {/* LOCATION MENU */}
                     {activeMenu === 'location' && (
                         <div className="space-y-4">
-                            <h3 className="text-xl font-extrabold text-white light:text-black px-1 flex items-center justify-between gap-2 mb-2">
+                             <h3 className="text-xl font-extrabold text-white light:text-black px-1 flex items-center justify-between gap-2 mb-2">
                                 <div className="flex items-center gap-2">
-                                    <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> 위치 및 검색
+                                    <span className={clsx(searchMode === 'location' ? "text-emerald-400" : "text-purple-400")}>#</span> {t('search_and_location')}
                                 </div>
 
                                 {/* Search Mode Toggle (New Location) */}
@@ -350,7 +359,7 @@ export default function BottomNavSheet({
                                         )}
                                     >
                                         <MapPin size={14} className={clsx(searchMode === 'location' ? "text-white light:text-emerald-600" : "")} />
-                                        <span className="text-xs font-extrabold">위치검색</span>
+                                        <span className="text-xs font-extrabold">{t('location_search')}</span>
                                     </button>
                                     <button
                                         onClick={() => onSearchModeChange && onSearchModeChange('keyword')}
@@ -360,7 +369,7 @@ export default function BottomNavSheet({
                                         )}
                                     >
                                         <Search size={14} className={clsx(searchMode === 'keyword' ? "text-white light:text-purple-600" : "")} />
-                                        <span className="text-xs font-extrabold">키워드</span>
+                                        <span className="text-xs font-extrabold">{ts('keyword')}</span>
                                     </button>
                                 </div>
                             </h3>
@@ -387,7 +396,7 @@ export default function BottomNavSheet({
                                                     if (!isSearchDropdownOpen) setIsSearchDropdownOpen(true);
                                                 }}
                                                 onKeyDown={handleKeyDown}
-                                                placeholder={searchMode === 'location' ? "지역, 장소 검색..." : "컨텐츠명, 장소, 출연진 검색..."}
+                                                placeholder={searchMode === 'location' ? ts('location_placeholder') : ts('keyword_placeholder')}
                                                 className="bg-transparent border-none text-white light:text-black text-base font-extrabold px-4 py-3 w-full focus:outline-none placeholder-gray-600 light:placeholder-gray-400"
                                             />
                                             {searchText && (
@@ -471,13 +480,13 @@ export default function BottomNavSheet({
                                     ) : (
                                         <div className="py-8 text-center text-gray-500 text-sm">
                                             {searchText.trim().length === 0
-                                                ? (searchMode === 'location' ? "찾으시는 장소를 입력해주세요" : "검색어를 입력해주세요")
+                                                ? (searchMode === 'location' ? ts('enter_venue_name') : ts('enter_keyword'))
                                                 : (
                                                     <div className="flex flex-col items-center justify-center py-10 text-gray-400 light:text-gray-500 gap-3">
                                                         <div className="text-sm font-semibold">
                                                             <strong className={searchMode === 'location' ? "text-emerald-500" : "text-purple-500"}>
-                                                                {searchMode === 'location' ? '위치' : '키워드'}
-                                                            </strong> 검색 결과가 없습니다 😢
+                                                                {searchMode === 'location' ? ts('location') : ts('keyword')}
+                                                            </strong> {ts('no_search_results')}
                                                         </div>
                                                         <button onClick={() => {
                                                             if (onSearchModeChange) onSearchModeChange(searchMode === 'location' ? 'keyword' : 'location');
@@ -486,7 +495,7 @@ export default function BottomNavSheet({
                                                             : 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-500/20'
                                                             }`}>
                                                             {searchMode === 'location' ? <Search size={14} /> : <MapPin size={14} />}
-                                                            {searchMode === 'location' ? '키워드 검색 전환' : '위치 검색 전환'}
+                                                            {searchMode === 'location' ? ts('switch_to_keyword') : ts('switch_to_location')}
                                                         </button>
                                                     </div>
                                                 )
@@ -524,7 +533,7 @@ export default function BottomNavSheet({
                                         <MapPin className="text-emerald-500 w-5 h-5" />
                                         {selectedVenue}
                                         <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-900/50 text-emerald-300 border border-emerald-800">
-                                            {venuePerformances.length}건
+                                            {tcm('count_unit', { count: venuePerformances.length })}
                                         </span>
                                     </h3>
                                     {/* Address removed or can be passed if needed, defaulting to keeping it simple for now */}
@@ -534,7 +543,7 @@ export default function BottomNavSheet({
                             <div className="overflow-y-auto space-y-3 custom-scrollbar flex-1 pb-safe">
                                 {venuePerformances.length === 0 ? (
                                     <div className="text-center py-8 text-gray-500">
-                                        공연 정보가 없습니다.
+                                        {tem('no_results')}
                                     </div>
                                 ) : (
                                     venuePerformances.map((p) => (
@@ -560,7 +569,7 @@ export default function BottomNavSheet({
                                                         "px-1.5 py-0.5 rounded text-[10px] font-extrabold text-white",
                                                         (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600'
                                                     )}>
-                                                        {GENRES.find(g => g.id === p.genre)?.label}
+                                                        {tc.has(p.genre) ? tc(p.genre) : GENRES.find(g => g.id === p.genre)?.label}
                                                     </span>
                                                     <span className="text-[10px] text-gray-500">{p.date}</span>
                                                 </div>

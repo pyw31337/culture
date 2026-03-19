@@ -1,16 +1,28 @@
 {
-    "Metadata": {
-        "home_title": "Culture Flow | Real-time Culture & Sports Info",
-        "home_description": "Check out musicals, concerts, exhibitions, and sports matches at a glance. We provide real-time updates and booking links for all cultural events.",
-        "genre_title": "{genre} Info & Booking | Culture Flow",
-        "genre_description": "Check out {count} {genre} events available for booking/viewing. Compare prices, schedules, and rankings at a glance.",
-        "genre_sports": "Sports (All)",
-        "not_found": "Page Not Found | Culture Flow"
-    },
+  "Metadata": {
+    "title": "Culture Flow - National Culture Search",
+    "description": "Discover all cultural information at a glance.",
+    "calendar_title": "Calendar | Culture Flow",
+    "calendar_description": "Check the schedule of cultural performances/events nationwide.",
+    "map_title": "Map | Culture Flow",
+    "map_description": "Check cultural performances/events on the map.",
+    "home_title": "Culture Flow | Integrated Culture Search",
+    "home_description": "Check musicals, concerts, exhibitions, and sports games at a glance.",
+    "genre_title": "{genre} Info & Booking | Culture Flow",
+    "genre_description": "Check {count} {genre} contents currently available. Compare prices, schedules, and rankings.",
+    "not_found": "Page Not Found | Culture Flow"
+  },
     "Common": {
         "title": "Culture Flow",
-        "description": "Unified Culture Search",
-        "last_updated": "Last updated: {time}"
+        "description": "Unified National Culture Search",
+        "last_updated": "Last updated: {time}",
+        "count_unit": "{count} item(s)",
+        "loading": "Loading...",
+        "no_data": "No data found.",
+        "dark": "Dark",
+        "light": "Light",
+        "exclusive": "Exclusive",
+        "trending_top_9": "Trending {top}"
     },
     "Categories": {
         "all": "All",
@@ -71,11 +83,11 @@
         "won": "KRW",
         "seoul_station": "Seoul Station",
         "current_map_center": "Current Map Center",
-        "search_this_area": "Search This Area",
-        "search_location": "Search Location",
-        "search_keyword": "Search Content",
         "search_results": "Search Results",
         "no_search_results": "No results found 😢",
+        "search_this_area": "Search this area",
+        "search_location": "Search Location",
+        "search_keyword": "Search Content",
         "switch_to_keyword": "Switch to Keyword",
         "switch_to_location": "Switch to Location",
         "recent_searches": "Recent Searches",
@@ -96,7 +108,11 @@
         "keyword": "Keyword",
         "geo_not_supported": "Geolocation is not supported by this browser.",
         "geo_error": "Could not get your location. Please check your permissions.",
-        "reset_filter_title": "Reset filter"
+        "reset_filter_title": "Reset filter",
+        "enter_venue_name": "Please enter a venue name",
+        "enter_keyword": "Please enter a keyword",
+        "location_placeholder": "Search for region, place...",
+        "keyword_placeholder": "Search for title, place, cast..."
     },
     "Actions": {
         "book": "Book Now",
@@ -110,13 +126,44 @@
         "saved_venue": "Saved Venue",
         "copied": "Copied",
         "view_detail": "View Detail",
+        "new": "New",
         "close": "Close",
         "language_change": "Change Language",
         "mode_change": "Switch Mode",
         "keyword_settings": "Keyword Settings",
         "install_app": "Install App",
         "install_app_desc": "Enjoy faster and easier access!",
-        "install": "Install"
+        "install": "Install",
+        "add": "Add",
+        "edit_venue": "Edit Venue",
+        "all": "All",
+        "view_mode": "View Mode",
+        "view_grid": "Grid View",
+        "view_list": "List View",
+        "view_calendar": "Calendar View",
+        "view_map": "Map View",
+        "view_grid_desc": "Poster Focus",
+        "view_list_desc": "Info Focus",
+        "view_calendar_desc": "By Date",
+        "view_map_desc": "Location Based",
+        "location_search": "Location Search",
+        "search_and_location": "Location & Search"
+    },
+    "Alarm": {
+        "title": "Keyword Alerts",
+        "placeholder": "Add keyword (e.g. IU)",
+        "registered": "Registered Keywords",
+        "empty": "Try registering a keyword.",
+        "settings": "Keyword Settings"
+    },
+    "Likes": {
+        "title": "Likes",
+        "content_title": "Liked Content",
+        "venue_title": "Favorite Venues",
+        "no_content": "No liked content",
+        "no_content_desc": "Like your favorite performances or exhibitions!",
+        "no_venue": "No favorite venues. Like a venue on the map!",
+        "no_current_events": "No current events available"
     },
     "Weather": {
         "location_info": "Location Info",
@@ -130,10 +177,10 @@
         "check_weather": "Weather",
         "rain": "Rain",
         "snow": "Snow",
-        "cinema_timetable": "Cinema Timetable",
         "more_matches": "More Matches",
         "more_performances": "More Performances",
-        "content_count": " Contents"
+        "content_count": "{count} Contents",
+        "cinema_timetable": "Check real-time cinema timetable"
     },
     "MovieMetadata": {
         "always": "Always",
@@ -210,7 +257,10 @@
         "planner": "Planner",
         "standard": "As of",
         "exclusive": "Exclusive",
-        "minutes": "min"
+        "minutes": "min",
+        "no_current_events": "No current events at this venue",
+        "movie_search_suffix": " showtimes",
+        "booking_search_suffix": " booking"
     },
     "EmptyState": {
         "no_results": "No results found 😢",
@@ -229,16 +279,19 @@
         "browse_contents": "Browse Contents"
     },
     "Errors": {
-        "unexpected": "Sorry, an unexpected error occurred while loading the page.",
-        "critical": "A critical system error occurred and the app cannot be loaded.",
-        "retry": "Retry",
-        "home": "Go Home",
+        "unexpected": "Something went wrong",
+        "something_went_wrong": "Sorry, an unexpected error occurred while loading the page.",
+        "try_again": "Try Again",
+        "go_home": "Go to Home",
+        "refresh": "Refresh",
         "not_found_title": "Page Not Found",
-        "not_found_desc": "The performance information may not exist or has been deleted.",
-        "go_home": "Go to Culture Flow Home",
-        "temporary_error": "A temporary error occurred. Please try again.",
-        "something_went_wrong": "Something went wrong",
-        "refresh": "Refresh"
+        "not_found_desc": "The page might have been removed or moved. Return to home to check latest info.",
+        "restart_app": "Restart App",
+        "force_home": "Force Home",
+        "fatal_error": "Fatal Error",
+        "fatal_desc": "A serious problem occurred and the app could not be loaded. Please contact admin or refresh.",
+        "retry": "Retry",
+        "temporary_error": "A temporary error occurred. Please try again."
     },
     "Data": {
         "museum": "Museum",

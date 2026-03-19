@@ -51,7 +51,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
         // Case 1: Genre-specific search fallback (Movies) - Only if link is missing
         if (p.genre === 'movie' && isMissingLink) {
-            const suffix = locale === 'ko' ? ' 상영시간표' : ' showtimes';
+            const suffix = t('movie_search_suffix');
             url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + suffix)}`;
         } 
         // Case 2: Platform-specific search fallback for missing links
@@ -61,7 +61,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                 url = `https://mom-mom.net/search?q=${encodeURIComponent(p.title)}`;
             } else {
                 // Generic Naver search fallback
-                const suffix = locale === 'ko' ? ' 예매' : ' booking';
+                const suffix = t('booking_search_suffix');
                 url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + suffix)}`;
             }
         }
@@ -317,10 +317,21 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             const match = lastUpdated.match(/(\d{2,4})-(\d{2})-(\d{2})/);
                                             if (match) {
                                                 const [, y, m, d] = match;
-                                                return ` <${y.slice(-2)}.${m}.${d} ${t('standard')}>`;
+                                                const YY = y.slice(-2);
+                                                return locale === 'en' 
+                                                    ? ` <${t('standard')} ${YY}.${m}.${d}>`
+                                                    : ` <${YY}.${m}.${d} ${t('standard')}>`;
                                             }
                                             return '';
-                                        })() : ` <${new Date().toLocaleDateString('ko-KR', { year: '2-digit', month: '2-digit', day: '2-digit' }).replace(/\s/g, '').replace(/\.$/, '')} ${t('standard')}>`;
+                                        })() : (() => {
+                                            const now = new Date();
+                                            const YY = String(now.getFullYear()).slice(-2);
+                                            const MM = String(now.getMonth() + 1).padStart(2, '0');
+                                            const DD = String(now.getDate()).padStart(2, '0');
+                                            return locale === 'en'
+                                                ? ` <${t('standard')} ${YY}.${MM}.${DD}>`
+                                                : ` <${YY}.${MM}.${DD} ${t('standard')}>`;
+                                        })();
 
                                         if (p.reservationRate) {
                                             infoItems.push({ icon: BarChart3, label: tm('reservation_rate'), text: `${p.reservationRate}${dateLabel}`, color: 'text-rose-500' });
@@ -329,15 +340,15 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             infoItems.push({ icon: Users, label: tm('audience_count'), text: `${p.audienceCount}${dateLabel}`, color: 'text-blue-400' });
                                         }
                                         if ((p as any).budgetKRW) {
-                                            const formatted = new Intl.NumberFormat('ko-KR').format((p as any).budgetKRW);
+                                            const formatted = new Intl.NumberFormat(locale === 'ko' ? 'ko-KR' : 'en-US').format((p as any).budgetKRW);
                                             infoItems.push({ icon: Coins, label: tm('budget'), text: `₩${formatted}`, color: 'text-amber-500' });
                                         }
                                         if ((p as any).revenueKRW) {
-                                            const formatted = new Intl.NumberFormat('ko-KR').format((p as any).revenueKRW);
-                                            infoItems.push({ icon: Wallet, label: tm('revenue'), text: `₩${formatted}`, color: 'text-emerald-500' });
+                                            const formatted = new Intl.NumberFormat(locale === 'ko' ? 'ko-KR' : 'en-US').format((p as any).revenueKRW);
+                                            infoItems.push({ icon: Wallet, label: tm('revenue'), text: `₩${formatted}${dateLabel}`, color: 'text-emerald-500' });
                                         }
                                         if ((p as any).roi) {
-                                            infoItems.push({ icon: Presentation, label: tm('roi'), text: (p as any).roi, color: 'text-purple-400' });
+                                            infoItems.push({ icon: Presentation, label: tm('roi'), text: `${(p as any).roi}${dateLabel}`, color: 'text-purple-400' });
                                         }
                                     }
 
