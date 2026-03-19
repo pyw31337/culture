@@ -10,6 +10,7 @@ import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { useTranslations } from 'next-intl';
 import { Performance } from '@/types';
+import { isMovie, isSports } from '@/lib/type-guards';
 
 interface PerformanceCardProps {
     perf: Performance;
@@ -70,7 +71,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const glareRef = useRef<HTMLDivElement>(null);
 
     const dDay = useMemo(() => {
-        if (perf.genre !== 'movie' || (!perf.date && !perf.dateRaw)) return null;
+        if (!isMovie(perf) || (!perf.date && !perf.dateRaw)) return null;
         try {
             const dateStr = perf.dateRaw || perf.date;
             // Extract core date part: "2026.04.01(수)" -> "2026-04-01"
@@ -237,7 +238,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-[1]" />
                                 </div>
 
-                                {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                {isSports(perf) && perf.homeTeam && perf.awayTeam && (
                                     <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
                                         <img
                                             src={FUTURES_TEAM_LOGOS[perf.homeTeam] || perf.homeTeamLogo}
@@ -328,10 +329,17 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 <div className="mt-auto pt-2 border-t border-black/10 flex justify-between items-center text-black">
                                     <span className="text-white text-[10px] font-extrabold bg-black px-2 py-0.5 rounded">
-                                        {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
+                                        {isMovie(perf) && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
                                     </span>
-                                    {dDay && <span className="text-white text-[10px] font-black border border-white/30 px-2 rounded-full">{dDay}</span>}
-                                    <span className="text-[12px] font-extrabold opacity-70">{formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}</span>
+                                    <div className="flex items-center gap-2 ml-auto">
+                                        {dDay && <span className="text-white text-[10px] font-black border border-white/30 px-2 rounded-full">{dDay}</span>}
+                                        <span className={clsx(
+                                            "text-[12px] opacity-70",
+                                            isMovie(perf) ? "font-normal" : "font-extrabold"
+                                        )}>
+                                            {formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </>
@@ -351,7 +359,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-[1]" />
 
-                            {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                             {isSports(perf) && perf.homeTeam && perf.awayTeam && (
                                 <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
                                     <img
                                         src={FUTURES_TEAM_LOGOS[perf.homeTeam] || perf.homeTeamLogo}
@@ -379,15 +387,22 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 enableActions ? (showActions ? "translate-y-0" : "translate-y-[82px] group-hover:translate-y-0") : "translate-y-0"
                             )}>
                                 <div className="relative z-30 w-full p-4 pb-4">
-                                    <div className="flex flex-wrap gap-2 mb-1.5 items-center">
+                                    <div className="flex flex-wrap gap-2 mb-1.5 items-center w-full">
                                         <span className={clsx(
                                             "px-3 py-1 rounded-full text-[10px] font-black backdrop-blur-md border shadow-sm transition-all text-white",
                                             GENRE_STYLES[perf.genre]?.twBg || (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
                                         )}>
-                                            {perf.genre === 'movie' && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
+                                             {isMovie(perf) && perf.rank ? tc('movie_rank', { rank: perf.rank }) : (tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre))}
                                         </span>
-                                        {dDay && <span className="px-2 rounded-full text-[10px] font-black border border-white/30 text-white bg-transparent h-[24px] flex items-center">{dDay}</span>}
-                                        <span className="text-[11px] text-gray-300 font-semibold">{formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}</span>
+                                        <div className="flex items-center gap-2 ml-auto">
+                                            {dDay && <span className="px-2 rounded-full text-[10px] font-black border border-white/30 text-white bg-transparent h-[24px] flex items-center">{dDay}</span>}
+                                            <span className={clsx(
+                                                "text-[11px] text-gray-300",
+                                                isMovie(perf) ? "font-normal" : "font-semibold"
+                                            )}>
+                                                {formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <h2 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg">

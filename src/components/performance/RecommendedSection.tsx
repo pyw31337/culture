@@ -3,6 +3,9 @@ import { Sparkles, ChevronLeft, ChevronRight, Share2 } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
 import venueData from '@/data/venues.json';
 import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
+import { useTranslations } from 'next-intl';
+import { Performance } from '@/types';
+import { isSports } from '@/lib/type-guards';
 import { cleanTitle } from '@/lib/utils';
 import { getGenreIcon } from '../GenreIcons';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
@@ -12,11 +15,11 @@ import { clsx } from 'clsx';
 const venues = venueData as Record<string, any>;
 
 interface RecommendedSectionProps {
-    recommendedItems: any[];
+    recommendedItems: Performance[];
     onLocationClick: (loc: any) => void;
     onToggleLike: (id: string, e: React.MouseEvent) => void;
     likedIds: Set<string>;
-    onDetail: (perf: any) => void;
+    onDetail: (perf: Performance) => void;
     searchMode?: 'keyword' | 'location';
     onShare?: (id: string, e?: React.MouseEvent) => void;
 }
@@ -24,7 +27,7 @@ interface RecommendedSectionProps {
 export default function RecommendedSection({ recommendedItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: RecommendedSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [randomRecs, setRandomRecs] = useState<any[]>([]);
+    const [randomRecs, setRandomRecs] = useState<Performance[]>([]);
     const [constraints, setConstraints] = useState({ left: 0, right: 0 });
     const [isDragging, setIsDragging] = useState(false);
     const lastDragEndTime = useRef<number>(0);
@@ -245,7 +248,7 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90" />
 
                                     {/* VS Badge for Sports */}
-                                    {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                    {isSports(perf) && perf.homeTeam && perf.awayTeam && (
                                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-20 pointer-events-none">
                                             {/* Background Decorative Icon */}
                                             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.1] text-white pointer-events-none z-[-1]">

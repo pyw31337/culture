@@ -1,12 +1,15 @@
 function slugify(text: string): string {
+    // Better regex: Allow Alphanumeric and CJK (Korean, Japanese, Chinese)
+    // \u3130-\u318F: Hangul Compatibility Jamo
+    // \uAC00-\uD7AF: Hangul Syllables
+    // \u3040-\u30FF: Hiragana & Katakana
+    // \u4E00-\u9FFF: CJK Unified Ideographs
     const slug = text
-        .replace(/[^a-zA-Z0-9]/g, '_')
+        .replace(/[^\w\u3130-\u318F\uAC00-\uD7AF\u3040-\u30FF\u4E00-\u9FFF]/g, '_')
         .replace(/_+/g, '_')
         .replace(/^_|_$/g, '');
     
-    // If slug is too short or empty (common for Korean-only titles), 
-    // we need to ensure uniqueness by adding a simple hash-like suffix
-    if (slug.length < 3) {
+    if (slug.length < 2) {
         let hash = 0;
         for (let i = 0; i < text.length; i++) {
             hash = (hash << 5) - hash + text.charCodeAt(i);
@@ -21,55 +24,47 @@ export function processAndMergePerformances(items: any[]): any[] {
     const uniqueMap = new Map<string, any>();
     const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'];
 
+    // Consistency: Any category that shares a prefix should share a merge key
+    const prefixMap: Record<string, string> = {
+        'musical': 'perf',
+        'play': 'perf',
+        'classic_tradition': 'perf',
+        'exhibition': 'perf',
+        'concert': 'perf',
+        'activity': 'perf',
+        'leisure': 'perf',
+        'movie': 'movie',
+        'festival': 'fest'
+    };
+
     items.forEach(p => {
         // 1. Generate Merge Key
         const safeTitle = slugify(p.originalTitle || p.title);
-        let category = p.genre;
+        const category = p.genre || 'activity';
+        const prefix = prefixMap[category] || category;
 
-        // Grouping for Merge: 
-        // We want to merge the same title if they are in similar categories
-        // e.g. 'musical' vs 'performance' (historical)
-        let mergeCategory = category;
-        if (['musical', 'play', 'classic', 'classic_tradition', 'opera', 'concert', 'exhibition', 'dance'].includes(category)) {
-            mergeCategory = 'live';
-        }
+        let key = `${prefix}_${safeTitle}`;
 
-        let key = `${mergeCategory}_${safeTitle}`;
-
-        // Exception for Sports: Include Date in key to allow same teams playing on different days
-        if (SPORTS_GENRES.includes(p.genre)) {
+        // Exception for Sports: Include Date in key
+        if (SPORTS_GENRES.includes(category)) {
             const dateOnly = p.date?.split(' ')[0].replace(/[-.]/g, '') || '00000000';
-            key = `${p.genre}_${dateOnly}_${safeTitle}`;
+            key = `${category}_${dateOnly}_${safeTitle}`;
         }
 
         if (uniqueMap.has(key)) {
             const existing = uniqueMap.get(key);
-            const merged = mergeItems(existing, p);
-            uniqueMap.set(key, merged);
+            uniqueMap.set(key, mergeItems(existing, p));
         } else {
-            uniqueMap.set(key, p);
+            uniqueMap.set(key, { ...p });
         }
     });
 
     // 2. Final ID Generation
     return Array.from(uniqueMap.values()).map(p => {
         const safeTitle = slugify(p.originalTitle || p.title);
-        let category = p.genre;
-
-        // Map internal genres to public shared link prefixes
-        const prefixMap: Record<string, string> = {
-            'musical': 'perf',
-            'play': 'perf',
-            'classic_tradition': 'perf',
-            'exhibition': 'perf',
-            'concert': 'perf',
-            'activity': 'perf',
-            'leisure': 'perf',
-            'movie': 'movie',
-            'festival': 'fest'
-        };
-
+        const category = p.genre || 'activity';
         const prefix = prefixMap[category] || category;
+        
         let stableId = `${prefix}_${safeTitle}`;
 
         if (SPORTS_GENRES.includes(category)) {
@@ -80,7 +75,7 @@ export function processAndMergePerformances(items: any[]): any[] {
         return {
             ...p,
             id: stableId,
-            originalId: p.id // Keep original for reference
+            originalId: p.id
         };
     });
 }

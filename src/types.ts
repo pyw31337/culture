@@ -1,6 +1,6 @@
 export type Genre = string;
 
-export type Performance = {
+export interface BasePerformance {
     id: string;
     title: string;
     date: string;
@@ -8,36 +8,13 @@ export type Performance = {
     image: string;
     link: string;
     region: string;
-    genre: string;
+    genre: Genre;
     description?: string;
     discount?: string;
     originalPrice?: string;
     price?: string;
     grade?: string;
     gradeIcon?: string;
-    cast?: (string | { name: string; url?: string })[];
-    castWithLinks?: { name: string; url?: string }[];
-    director?: string;
-    movieInfo?: string;
-    platforms?: { name: string; url?: string }[];
-    homeTeam?: string;
-    awayTeam?: string;
-    homeTeamLogo?: string;
-    awayTeamLogo?: string;
-    runningTime?: string;
-    ageRating?: string;
-    age?: string;
-    crew?: string[];
-    originalTitle?: string;
-    productionCountry?: string;
-    productionYear?: string;
-    subGenre?: string;
-    backupPoster?: string; // Original remote URL for fallback
-    posterUrl?: string; // Manual override for missing images
-    category?: string; // High-level category override
-    poster?: string; // Original remote URL for OTT/Movies
-    rank?: number;
-    dateRaw?: string; // Original parsed date used for sorting upcoming releases
     lat?: number;
     lng?: number;
     latitude?: number | string;
@@ -45,18 +22,61 @@ export type Performance = {
     address?: string;
     district?: string;
     source?: string;
-    production?: string;
+    backupPoster?: string;
+    posterUrl?: string;
+    category?: string;
+    poster?: string;
+    rank?: number;
+    dateRaw?: string;
+    status?: string;
+    priceList?: { label: string; price: string; discount?: string }[];
+}
+
+export interface MoviePerformance extends BasePerformance {
+    genre: 'movie';
+    ageRating?: string;
+    subGenre?: string;
+    runningTime?: string;
+    director?: string;
+    originalTitle?: string;
+    productionCountry?: string;
+    productionYear?: string;
+    movieInfo?: string;
+    crew?: string[];
+    synopsis?: string;
+    synopsisImages?: string[];
+    trailer?: string;
+    budget?: number | string;
+    revenue?: number | string;
+    budgetKRW?: string | number;
+    revenueKRW?: string | number;
+    roi?: string | number;
+    reservationRate?: string;
+    audienceCount?: string;
+}
+
+export interface SportsPerformance extends BasePerformance {
+    genre: 'sports' | 'baseball' | 'football' | 'basketball' | 'volleyball' | 'soccer';
+    homeTeam?: string;
+    awayTeam?: string;
+    homeTeamLogo?: string;
+    awayTeamLogo?: string;
     versusLink?: string;
     highlightsLink?: string;
-    bracketRegion?: string;
-    performanceTime?: string;
+}
+
+export interface ClassPerformance extends BasePerformance {
+    genre: 'class';
+    cast?: (string | { name: string; url?: string })[];
+    castWithLinks?: { name: string; url?: string }[];
+    platforms?: { name: string; url?: string }[];
+    production?: string;
     host?: string;
     organizer?: string;
     planner?: string;
     producer?: string;
     sponsor?: string;
     contact?: string;
-    priceList?: { label: string; price: string; discount?: string }[];
     ageDetail?: string;
     bookingNotice?: string;
     website?: string;
@@ -69,16 +89,14 @@ export type Performance = {
     priceDetail?: string;
     closedDays?: string;
     feesAndPrograms?: string;
-    reservationRate?: string;
-    audienceCount?: string;
-    budget?: number | string;
-    revenue?: number | string;
-    budgetKRW?: string | number;
-    revenueKRW?: string | number;
-    roi?: string | number;
-    synopsis?: string;
-    synopsisImages?: string[];
-    trailer?: string;
-    status?: string;
     petFriendly?: string;
-};
+}
+
+export interface MuseumPerformance extends BasePerformance {
+    genre: 'exhibition' | 'museum';
+    operatingHours?: string;
+    closedDays?: string;
+    feesAndPrograms?: string;
+}
+
+export type Performance = MoviePerformance | SportsPerformance | ClassPerformance | MuseumPerformance | BasePerformance;

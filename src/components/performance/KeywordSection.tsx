@@ -8,15 +8,17 @@ import { getGenreIcon } from '../GenreIcons';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
+import { Performance } from '@/types';
+import { isSports, isMovie } from '@/lib/type-guards';
 
 const venues = venueData as Record<string, any>;
 
 interface KeywordSectionProps {
-    keywordItems: any[];
+    keywordItems: Performance[];
     onLocationClick: (loc: any) => void;
     onToggleLike: (id: string, e: React.MouseEvent) => void;
     likedIds: Set<string>;
-    onDetail: (perf: any) => void;
+    onDetail: (perf: Performance) => void;
     searchMode?: 'keyword' | 'location';
     onShare?: (id: string, e?: React.MouseEvent) => void;
 }
@@ -29,7 +31,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
     const ta = useTranslations('Actions');
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [randomRecs, setRandomRecs] = useState<any[]>(keywordItems || []);
+    const [randomRecs, setRandomRecs] = useState<Performance[]>(keywordItems || []);
     const [constraints, setConstraints] = useState({ left: 0, right: 0 });
     const [isDragging, setIsDragging] = useState(false);
     const lastDragEndTime = useRef<number>(0);
@@ -217,7 +219,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90 z-5" />
 
                                     {/* VS Badge for Sports */}
-                                    {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                    {isSports(perf) && perf.homeTeam && perf.awayTeam && (
                                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none">
                                             {/* Background Decorative Icon */}
                                             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.1] text-white pointer-events-none z-[-1]">
@@ -236,7 +238,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                     <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-20">
                                         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
                                         <p className="text-gray-300 text-[10px] mb-3 line-clamp-3 px-2 italic font-medium opacity-80">
-                                            {perf.synopsis || perf.description}
+                                            {(isMovie(perf) && perf.synopsis) || perf.description}
                                         </p>
                                         <p className="text-gray-300 text-sm mb-4 font-bold tracking-wider">
                                             {tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}

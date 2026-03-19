@@ -7,7 +7,8 @@ import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
 import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CheckCircle2, Circle, CircleDot, CloudSun, Calendar, Thermometer, Droplets, Wind, Navigation } from 'lucide-react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
+import { useRouter } from '@/navigation';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
@@ -550,6 +551,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             params.set('genre', selectedMapGenre);
         }
         
+        // localized router.push handles locale prefixing
         router.push(`${genrePath}?${params.toString()}`);
     };
 

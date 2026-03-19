@@ -1,7 +1,7 @@
-
+```
 import React, { useState, useRef, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
-import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from 'lucide-react';
+import { MapPin, Calendar, Heart, Share2, ExternalLink, Ticket, Trophy, Clock, User, Users, Info, Building, Star, Phone, Globe, Lock, Map, ParkingCircle, InfoIcon, ShieldCheck, ChevronDown, Check, Plane } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
@@ -9,6 +9,7 @@ import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { useTranslations } from 'next-intl';
 import { Performance } from '@/types';
+import { isSports, isMovie, isClass } from '@/lib/type-guards';
 
 interface PerformanceListItemProps {
     perf: Performance;
@@ -120,7 +121,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                 setTimeout(() => setIsCopied(false), 2000);
             }
         }
-    }, [onShare]);
+    }, [onShare, perf.id]);
 
     const handleLocationClick = useCallback((e: React.MouseEvent) => {
         e.stopPropagation();
@@ -175,7 +176,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-5" />
 
-                    {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                    {isSports(perf) && perf.homeTeam && perf.awayTeam && (
                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 items-center z-10 pointer-events-none">
                             {/* Background Decorative Icon */}
                             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.12] text-white pointer-events-none z-[-1]">
@@ -275,7 +276,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         </a>
 
                         <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-400 light:text-black mt-1">
-                            {perf.genre === 'movie' ? (
+                            {isMovie(perf) ? (
                                 <div className="text-gray-400 text-xs flex items-center gap-1 mb-2 truncate">
                                     {perf.gradeIcon ? (
                                         <img src={perf.gradeIcon} alt="Grade" className="h-[18px] w-auto object-contain" />
@@ -311,12 +312,12 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             )}
                         </div>
 
-                        {perf.genre === 'movie' && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
+                        {isMovie(perf) && (perf.cast || perf.director || perf.movieInfo || perf.originalTitle || perf.productionCountry || perf.productionYear || perf.subGenre) && (
                             <div className="mt-2 text-xs text-gray-400 light:text-gray-900 space-y-0.5 border-t border-white/10 light:border-black/10 pt-2">
                                 {perf.originalTitle && perf.originalTitle !== perf.title && (
                                     <div className="text-gray-500 italic mb-1">{perf.originalTitle}</div>
                                 )}
-                                {(perf.subGenre || perf.director || perf.cast) && (
+                                {(perf.subGenre || perf.director || perf.crew) && (
                                     <div className="mt-2 space-y-1 text-xs text-gray-400">
                                         {(perf.productionCountry || perf.productionYear || perf.subGenre) && (
                                             <div className="flex flex-col gap-0.5 text-xs text-gray-400">
@@ -391,21 +392,41 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         )}
                                     </div>
                                 )}
-
-                                {(perf.runningTime || perf.ageRating || perf.price) && (
-                                    <div className="text-gray-400 light:text-gray-900 mt-1.5 space-y-1">
-                                        {perf.runningTime && (
-                                            <div className="flex flex-col gap-0.5 text-xs text-gray-400">
-                                                <div>
-                                                    <span className="text-gray-500 light:text-gray-600 mr-1">{tm('running_time')}:</span>
-                                                    <span className="light:text-black">{perf.runningTime}</span>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
                             </div>
                         )}
+
+                        <div className="mt-2 text-xs text-gray-400 light:text-gray-900 space-y-0.5">
+                            {isClass(perf) && perf.cast && perf.cast.length > 0 && (
+                                <div className="flex items-start gap-1">
+                                    <span className="text-gray-500 light:text-gray-600 min-w-[24px]">{tm('cast')}</span>
+                                    <span className="text-gray-300 light:text-black line-clamp-1">
+                                        {perf.cast.map((c: any, i: number, arr: any[]) => {
+                                            const isObj = typeof c === 'object' && c !== null;
+                                            const name = isObj ? c.name : c;
+                                            return (
+                                                <span key={i}>
+                                                    {name.trim()}
+                                                    {i < arr.length - 1 && ', '}
+                                                </span>
+                                            );
+                                        })}
+                                    </span>
+                                </div>
+                            )}
+
+                            {(isMovie(perf) || isSports(perf) || perf.price) && (
+                                <div className="flex items-center gap-1.5 min-w-0">
+                                    {isMovie(perf) && perf.runningTime && (
+                                        <div className="flex flex-col gap-0.5 text-xs text-gray-400">
+                                            <div>
+                                                <span className="text-gray-500 light:text-gray-600 mr-1">{tm('running_time')}:</span>
+                                                <span className="light:text-black">{perf.runningTime}</span>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
 
                         {(perf.price || perf.discount) && (
                             <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 light:border-black/5 pt-2">
@@ -460,3 +481,4 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 PerformanceListItem.displayName = 'PerformanceListItem';
 
 export default memo(PerformanceListItem);
+```
