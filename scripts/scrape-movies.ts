@@ -199,6 +199,24 @@ async function scrapeMovies() {
         }
 
         console.log(`Discovered ${discoveryList.length} movies via API.`);
+
+        // [New] Megahit tracking: Ensure big hits are updated even if off-chart
+        existingMap.forEach((m: any, title: string) => {
+            const countStr = m.audienceCount || '0';
+            const count = parseInt(countStr.replace(/[^0-9]/g, '')) || 0;
+            const isFresh = m.lastCollected && (new Date().getTime() - new Date(m.lastCollected).getTime() < 1000 * 60 * 60 * 24 * 7);
+            
+            if (count > 1000000 && !discoveryList.find(d => d.title === title)) {
+                // If it's a megahit and hasn't been updated recently, force discovery
+                console.log(`[DISCOVERY] Forcing update for megahit: ${title} (${countStr})`);
+                discoveryList.push({ 
+                    title, 
+                    movieCd: m.movieCd || '', 
+                    dateRaw: m.dateRaw, 
+                    type: 'megahit' 
+                });
+            }
+        });
     } catch (e: any) {
         console.error('API Discovery failed:', e.message);
     }
@@ -268,7 +286,7 @@ async function scrapeMovies() {
 
             // C. MovieChart (Specific Metrics for Top 10 / Box Office)
             let chartData = null;
-            if (m.rank || m.type === 'boxoffice' || !m.dateRaw) {
+            if (m.rank || m.type === 'boxoffice' || m.type === 'megahit' || !m.dateRaw) {
                 const page = await context.newPage();
                 chartData = await scrapeMovieChart(page, m.title);
                 await page.close();
