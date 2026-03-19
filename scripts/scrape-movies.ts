@@ -6,8 +6,8 @@ import axios from 'axios';
 import cliProgress from 'cli-progress';
 
 // API Keys
-const KOBIS_API_KEY = process.env.KOBIS_API_KEY || '1225e1bd404fa561ed37a396619860aa';
-const TMDB_API_KEY = process.env.TMDB_API_KEY || '9544743f9acc5bb30f74830ea89b2c7b';
+const KOBIS_API_KEY = process.env.KOBIS_API_KEY || '';
+const TMDB_API_KEY = process.env.TMDB_API_KEY || '';
 
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'movies.json');

@@ -3,7 +3,7 @@ import path from 'path';
 import axios from 'axios';
 
 const VENUES_FILE = path.join(process.cwd(), 'src/data/venues.json');
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
+const KAKAO_API_KEY = process.env.KAKAO_REST_API_KEY || '';
 
 interface VenueData {
     name: string;

@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 // --- Configuration ---
-const API_KEY = process.env.KOPIS_API_KEY || 'ba7dc8feda8a4e66a90e43fcdb03c35a'; // Fallback for local run without .env
+const API_KEY = process.env.KOPIS_API_KEY || '';
 const BASE_URL = 'http://www.kopis.or.kr/openApi/restful';
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const VENUE_FILE = path.join(DATA_DIR, 'venues.json');

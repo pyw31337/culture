@@ -6,7 +6,7 @@ import cliProgress from 'cli-progress';
 
 // Configuration
 const VENUES_PATH = path.join(process.cwd(), 'src/data/venues.json');
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71'; // Using REST API Key from fix-venues.ts
+const KAKAO_API_KEY = process.env.KAKAO_REST_API_KEY || ''; // Using REST API Key from fix-venues.ts
 
 interface Venue {
     name: string;

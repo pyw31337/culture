@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
+const KAKAO_API_KEY = process.env.KAKAO_REST_API_KEY || '';
 
 const INTERPARK_PATH = path.join(process.cwd(), 'src/data/interpark.json');
 const VENUES_PATH = path.join(process.cwd(), 'src/data/venues.json');

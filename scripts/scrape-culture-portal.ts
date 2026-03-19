@@ -5,7 +5,7 @@ import { XMLParser } from 'fast-xml-parser';
 import * as cheerio from 'cheerio';
 import pLimit from 'p-limit';
 
-const API_KEY = 'da895f03-f155-420f-a63d-ab4e21782334';
+const API_KEY = process.env.KCISA_API_KEY || '';
 const BASE_URL = 'https://api.kcisa.kr/openapi/CNV_060/request';
 const DATA_DIR = path.resolve(process.cwd(), 'src/data');
 const OUTPUT_FILE = path.resolve(DATA_DIR, 'culture-portal.json');

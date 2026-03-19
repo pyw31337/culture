@@ -4,7 +4,7 @@ import path from 'path';
 import axios from 'axios';
 import pLimit from 'p-limit';
 
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
+const KAKAO_API_KEY = process.env.KAKAO_REST_API_KEY || '';
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const VENUES_PATH = path.join(DATA_DIR, 'venues.json');
 
