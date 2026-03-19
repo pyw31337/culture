@@ -10,19 +10,23 @@ async function batchTranslate(items: any[], locale: string) {
     // We allow Korean translation if there's English content that needs to be "Korean-ified"
     console.log(`[Translate] Starting translation to ${locale} for ${items.length} items...`);
     
-    const fields = ['title', 'venue', 'address', 'price', 'description', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail', 'petFriendly'];
+    const fields = ['title', 'venue', 'address', 'price', 'description', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail', 'petFriendly', 'subgenre', 'director', 'cast', 'crew'];
     const translatedItems = [...items];
-    const CHUNK_SIZE = 100; // Larger chunks for better overhead management
+    const CHUNK_SIZE = 100;
     
     for (let i = 0; i < translatedItems.length; i += CHUNK_SIZE) {
         const chunk = translatedItems.slice(i, i + CHUNK_SIZE);
         
-        // Collect all strings that need translation in this chunk
-        const stringsToTranslate: { itemIdx: number, field: string, text: string }[] = [];
+        // Collect all strings that need translation
+        // stringsToTranslate now tracks if it's an array element
+        const stringsToTranslate: { itemIdx: number, field: string, text: string, arrayIdx?: number }[] = [];
+        
         chunk.forEach((item, idx) => {
             fields.forEach(field => {
-                const text = item[field];
-                if (text && typeof text === 'string' && text.trim().length > 0) {
+                const val = item[field];
+                if (!val) return;
+
+                if (typeof val === 'string' && val.trim().length > 0) {
                     // Smart Cache Lookup for Address
                     if (field === 'address' && item.originalAddress && item.prefixAdded) {
                         const originalTranslation = getFromCache(item.originalAddress, locale);
@@ -35,20 +39,32 @@ async function batchTranslate(items: any[], locale: string) {
                     }
 
                     // Standard Cache check
-                    const cached = getFromCache(text, locale);
+                    const cached = getFromCache(val, locale);
                     if (cached) {
                         item[field] = cached;
                     } else {
                         // For Korean locale, only translate if it looks like English/Foreign text
                         if (locale === 'ko') {
-                            const isMostlyEnglish = /^[A-Za-z0-9\s.,!?'"&\(\)\[\]\-]{4,}$/.test(text);
+                            const isMostlyEnglish = /^[A-Za-z0-9\s.,!?'"&\(\)\[\]\-]{4,}$/.test(val);
                             if (isMostlyEnglish) {
-                                stringsToTranslate.push({ itemIdx: i + idx, field, text });
+                                stringsToTranslate.push({ itemIdx: i + idx, field, text: val });
                             }
                         } else {
-                            stringsToTranslate.push({ itemIdx: i + idx, field, text });
+                            stringsToTranslate.push({ itemIdx: i + idx, field, text: val });
                         }
                     }
+                } else if (Array.isArray(val)) {
+                    // Handle array fields like cast, crew
+                    val.forEach((text, arrayIdx) => {
+                        if (typeof text !== 'string' || text.trim().length === 0) return;
+                        
+                        const cached = getFromCache(text, locale);
+                        if (cached) {
+                            item[field][arrayIdx] = cached;
+                        } else {
+                            stringsToTranslate.push({ itemIdx: i + idx, field, text, arrayIdx });
+                        }
+                    });
                 }
             });
         });
@@ -60,8 +76,12 @@ async function batchTranslate(items: any[], locale: string) {
                 const translatedTexts = await translateBatch(textsOnly, locale);
                 translatedTexts.forEach((translated, idx) => {
                     if (idx < stringsToTranslate.length) {
-                        const { itemIdx, field } = stringsToTranslate[idx];
-                        translatedItems[itemIdx][field] = translated;
+                        const { itemIdx, field, arrayIdx } = stringsToTranslate[idx];
+                        if (arrayIdx !== undefined) {
+                            translatedItems[itemIdx][field][arrayIdx] = translated;
+                        } else {
+                            translatedItems[itemIdx][field] = translated;
+                        }
                     }
                 });
             } catch (e) {

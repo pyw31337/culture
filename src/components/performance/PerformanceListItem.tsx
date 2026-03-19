@@ -249,7 +249,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 "px-2 py-0.5 rounded text-[10px] sm:text-xs font-extrabold border whitespace-nowrap",
                                 genreStyle.twBg ? `${genreStyle.twBg} text-white border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
                             )}>
-                                {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
+                                {tc(perf.genre as any) || perf.genre}
                             </span>
 
                             <span className={clsx(
@@ -279,7 +279,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     ) : (
                                         <>
                                             <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">{tm('rating_label')}</span>
-                                            {perf.grade || (typeof perf.venue === 'string' && perf.venue.split('|').find((s: string) => s.includes('관람'))?.trim()) || perf.venue}
+                                            {perf.grade || (typeof perf.venue === 'string' && perf.venue.split('|').find((s: string) => s.includes('관람') || s.includes('Age'))?.trim()) || perf.venue}
                                         </>
                                     )}
                                 </div>
@@ -387,7 +387,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                         {perf.runningTime && (
                                             <div className="flex flex-col gap-0.5 text-xs text-gray-400">
                                                 <div>
-                                                    <span className="text-gray-500 light:text-gray-600 mr-1">{tm('runtime')}:</span>
+                                                    <span className="text-gray-500 light:text-gray-600 mr-1">{tm('running_time')}:</span>
                                                     <span className="light:text-black">{perf.runningTime}</span>
                                                 </div>
                                             </div>

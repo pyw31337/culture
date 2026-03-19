@@ -282,7 +282,7 @@ export default function PerformanceList({
     const handleOpenMap = useCallback(() => {
         setPreserveFlag();
         if (searchMode === 'location' && activeLocation) {
-            const venueName = 'name' in activeLocation ? (activeLocation as any).name : '내 위치';
+            const venueName = 'name' in activeLocation ? (activeLocation as any).name : ts('near_me');
             router.push(`/map?genre=${selectedGenre}&mode=location&lat=${activeLocation.lat}&lng=${activeLocation.lng}&venue=${encodeURIComponent(venueName)}`);
         } else {
             router.push(`/map?genre=${selectedGenre}`);
@@ -346,11 +346,11 @@ export default function PerformanceList({
             />
 
             {/* 2. Hero Section */}
-            <ErrorBoundary fallback={<div>Hero Error</div>}>
+            <ErrorBoundary fallback={<div>{t('Errors.unexpected')}</div>}>
                 <HeroSection
                     heroText={heroText} onCycle={selectNextTemplate} isHeroVisible={isHeroVisible} viewMode={viewMode} selectedGenre={selectedGenre}
                     selectedRegion={selectedRegion} selectedDistrict={selectedDistrict} selectedVenue={selectedVenue}
-                    activeLocation={activeLocation ? { name: searchLocation?.name || '내 위치' } : null}
+                    activeLocation={activeLocation ? { name: ('name' in activeLocation) ? (activeLocation as any).name : ts('near_me') } : null}
                     userAddress={userAddress} radius={radius} lastUpdated={lastUpdated} searchLocation={searchLocation} searchText={searchText}
                     searchResults={searchResults} isDropdownOpen={isDropdownOpen} activeSearchSource={activeSearchSource} highlightedIndex={highlightedIndex}
                     setIsHeroFilterExpanded={setIsHeroFilterExpanded} isHeroFilterExpanded={isHeroFilterExpanded} setSelectedRegion={setSelectedRegion}
@@ -457,7 +457,7 @@ export default function PerformanceList({
                     {!isDataFullyLoaded && (
                         <div className="flex justify-center py-12">
                             <Loader2 className="animate-spin text-purple-500" />
-                            <span className="ml-3 text-gray-400">{locale === 'ko' ? '데이터를 불러오는 중...' : (locale === 'ja' ? 'データを読み込んでいます...' : (locale === 'zh' ? '正在加载数据...' : 'Loading data...'))}</span>
+                            <span className="ml-3 text-gray-400">{t('Calendar.loading_more')}</span>
                         </div>
                     )}
                 </div>

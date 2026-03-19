@@ -7,6 +7,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -16,6 +17,9 @@ interface ContentDetailViewProps {
 
 export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
     const router = useRouter();
+    const t = useTranslations('Detail');
+    const tm = useTranslations('MovieMetadata');
+    const tc = useTranslations('Categories');
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -28,7 +32,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     }, [isMobile]);
 
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
-    const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
+    const genreLabel = tc(p.genre as any) || p.genre;
 
     const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
     const hasTeams = p.homeTeam && p.awayTeam;
@@ -172,7 +176,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 <motion.a
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
-                                    href={isMobile ? toMobileUrl(`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`) : `https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`}
+                                    href={isMobile ? toMobileUrl(`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' ' + tm('synopsis') : ''))}`) : `https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' ' + tm('synopsis') : ''))}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-16 h-16 rounded-full bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white shadow-2xl transition-all hover:bg-black/70"
@@ -242,10 +246,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     const isMovie = p.genre === 'movie';
                                     let movieRating = p.ageRating || p.age || p.venue || '';
                                     if (movieRating && typeof movieRating === 'string') {
-                                        if (movieRating.includes('전체')) movieRating = '전체 관람가';
-                                        else if (movieRating.includes('12')) movieRating = '12세 이상 관람가';
-                                        else if (movieRating.includes('15')) movieRating = '15세 이상 관람가';
-                                        else if (movieRating.includes('18') || movieRating.includes('청소년') || movieRating.includes('불가') || movieRating.includes('청불')) movieRating = '청소년 관람불가';
+                                        if (movieRating.includes('전체')) movieRating = tm('rating_all');
+                                        else if (movieRating.includes('12')) movieRating = tm('rating_12');
+                                        else if (movieRating.includes('15')) movieRating = tm('rating_15');
+                                        else if (movieRating.includes('18') || movieRating.includes('청소년') || movieRating.includes('불가') || movieRating.includes('청불')) movieRating = tm('rating_18');
                                     } else {
                                         movieRating = '';
                                     }
@@ -253,11 +257,11 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     const infoItems = [];
 
                                     if (isMovie && movieRating) {
-                                        infoItems.push({ icon: Film, label: '등급', text: movieRating, color: 'text-emerald-500' });
+                                        infoItems.push({ icon: Film, label: tm('rating_label'), text: movieRating, color: 'text-emerald-500' });
                                     } else if (!isMovie && p.venue) {
                                         infoItems.push({ 
                                             icon: Building2, 
-                                            label: '장소', 
+                                            label: t('venue'), 
                                             text: p.venue, 
                                             color: 'text-emerald-500', 
                                             isLink: !!(p.lat && p.lng), 
@@ -266,13 +270,13 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     if (p.genre === 'tourism' && p.status) {
-                                        infoItems.push({ icon: Star, label: '상태', text: p.status, color: 'text-amber-500' });
+                                        infoItems.push({ icon: Star, label: t('info'), text: p.status, color: 'text-amber-500' });
                                     }
 
                                     if (p.address && p.address.trim() !== '') {
                                         infoItems.push({ 
                                             icon: MapPin, 
-                                            label: '주소', 
+                                            label: t('location'), 
                                             text: p.address, 
                                             color: 'text-gray-400',
                                             isLink: false
@@ -281,45 +285,45 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                                     const dateText = formatUnifiedDate(p.date);
                                     if (dateText && p.genre !== 'tourism') {
-                                        infoItems.push({ icon: Calendar, label: isMovie ? '개봉' : '일정', text: dateText, color: 'text-blue-500' });
+                                        infoItems.push({ icon: Calendar, label: isMovie ? t('schedule') : t('schedule'), text: dateText, color: 'text-blue-500' });
                                     }
 
                                     if (p.operatingHours || p.performanceTime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: p.operatingHours || p.performanceTime, color: 'text-purple-500' });
+                                        infoItems.push({ icon: Clock, label: t('running_time'), text: p.operatingHours || p.performanceTime, color: 'text-purple-500' });
                                     } else if ((p as any).runtime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: `${(p as any).runtime}분`, color: 'text-purple-500' });
+                                        infoItems.push({ icon: Clock, label: t('running_time'), text: `${(p as any).runtime}분`, color: 'text-purple-500' });
                                     }
                                     
                                     if (isMovie) {
                                         if (p.reservationRate) {
-                                            infoItems.push({ icon: BarChart3, label: '예매율', text: p.reservationRate, color: 'text-rose-500' });
+                                            infoItems.push({ icon: BarChart3, label: tm('reservation_rate'), text: p.reservationRate, color: 'text-rose-500' });
                                         }
                                         if (p.audienceCount) {
-                                            infoItems.push({ icon: Users, label: '관객수', text: p.audienceCount, color: 'text-blue-400' });
+                                            infoItems.push({ icon: Users, label: tm('audience_count'), text: p.audienceCount, color: 'text-blue-400' });
                                         }
                                         if ((p as any).budgetKRW) {
                                             const formatted = new Intl.NumberFormat('ko-KR').format((p as any).budgetKRW);
-                                            infoItems.push({ icon: Coins, label: '제작비', text: `₩${formatted} (약 ${Math.round((p as any).budgetKRW / 100000000)}억원)`, color: 'text-amber-500' });
+                                            infoItems.push({ icon: Coins, label: tm('budget'), text: `₩${formatted}`, color: 'text-amber-500' });
                                         }
                                         if ((p as any).revenueKRW) {
                                             const formatted = new Intl.NumberFormat('ko-KR').format((p as any).revenueKRW);
-                                            infoItems.push({ icon: Wallet, label: '수익', text: `₩${formatted} (약 ${Math.round((p as any).revenueKRW / 100000000)}억원)`, color: 'text-emerald-500' });
+                                            infoItems.push({ icon: Wallet, label: tm('revenue'), text: `₩${formatted}`, color: 'text-emerald-500' });
                                         }
                                         if ((p as any).roi) {
-                                            infoItems.push({ icon: Presentation, label: '수익률', text: (p as any).roi, color: 'text-purple-400' });
+                                            infoItems.push({ icon: Presentation, label: tm('roi'), text: (p as any).roi, color: 'text-purple-400' });
                                         }
                                     }
 
                                     if (!isMovie && (p.age || p.ageRating)) {
                                         const ageText = p.age || p.ageRating;
                                         // Prevent showing the exact same text twice (e.g. if age and ageRating are same)
-                                        infoItems.push({ icon: Tag, label: '연령', text: ageText, color: 'text-rose-500' });
+                                        infoItems.push({ icon: Tag, label: t('age_label'), text: ageText, color: 'text-rose-500' });
                                     }
 
                                     if (p.director) {
                                         infoItems.push({ 
                                             icon: Users, 
-                                            label: '감독', 
+                                            label: t('director'), 
                                             text: p.director, 
                                             color: 'text-indigo-500', 
                                             isLink: isMovie, 
@@ -353,7 +357,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         { val: p.organizer, label: '주관' }
                                     ]);
                                     if (hostOrg) {
-                                        infoItems.push({ icon: Users, label: '주최/주관', text: hostOrg, color: 'text-indigo-400' });
+                                        infoItems.push({ icon: Users, label: t('host_organizer'), text: hostOrg, color: 'text-indigo-400' });
                                     }
 
                                     const planProd = dedupeJoin([
@@ -362,35 +366,35 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     ]);
                                     
                                     if (planProd) {
-                                        infoItems.push({ icon: Sparkles, label: '기획/제작', text: planProd, color: 'text-amber-400' });
+                                        infoItems.push({ icon: Sparkles, label: t('planner_producer'), text: planProd, color: 'text-amber-400' });
                                     } else if (p.production && !hostOrg.includes(p.production)) {
-                                        infoItems.push({ icon: Sparkles, label: '제작/기획', text: p.production, color: 'text-amber-400' });
+                                        infoItems.push({ icon: Sparkles, label: t('production'), text: p.production, color: 'text-amber-400' });
                                     }
 
                                     if (p.sponsor) {
-                                        infoItems.push({ icon: Star, label: '후원', text: p.sponsor, color: 'text-yellow-400' });
+                                        infoItems.push({ icon: Star, label: t('sponsor'), text: p.sponsor, color: 'text-yellow-400' });
                                     }
 
                                     if (p.contact) {
-                                        infoItems.push({ icon: Phone, label: '문의', text: p.contact, color: 'text-emerald-400' });
+                                        infoItems.push({ icon: Phone, label: t('contact'), text: p.contact, color: 'text-emerald-400' });
                                     }
 
                                      if (p.price && !p.priceList) {
-                                         infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
+                                         infoItems.push({ icon: Ticket, label: t('price'), text: p.price, color: 'text-orange-500' });
                                      }
 
                                      if (p.genre === 'tourism' && p.priceDetail) {
-                                         infoItems.push({ icon: Coins, label: '상세 요금', text: p.priceDetail, color: 'text-amber-500' });
+                                         infoItems.push({ icon: Coins, label: t('price_detail'), text: p.priceDetail, color: 'text-amber-500' });
                                      }
 
                                     if (p.closedDays) {
-                                        infoItems.push({ icon: Info, label: '휴무일', text: p.closedDays, color: 'text-rose-400' });
+                                        infoItems.push({ icon: Info, label: t('closed_days'), text: p.closedDays, color: 'text-rose-400' });
                                     }
 
                                     if (p.website) {
                                         infoItems.push({ 
                                             icon: Globe, 
-                                            label: '홈페이지', 
+                                            label: t('homepage'), 
                                             text: p.website.replace(/^https?:\/\//, ''), 
                                             color: 'text-cyan-400', 
                                             isLink: true, 
@@ -402,23 +406,23 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                      if (p.parking) {
-                                         infoItems.push({ icon: ParkingCircle, label: '주차', text: p.parking, color: 'text-blue-500' });
+                                         infoItems.push({ icon: ParkingCircle, label: t('parking'), text: p.parking, color: 'text-blue-500' });
                                      }
                                      
                                      if (p.petFriendly) {
-                                         infoItems.push({ icon: Dog, label: '반려동물', text: p.petFriendly, color: 'text-amber-600' });
+                                         infoItems.push({ icon: Dog, label: t('pet_friendly'), text: p.petFriendly, color: 'text-amber-600' });
                                      }
 
                                     if (p.parkingFee) {
-                                        infoItems.push({ icon: Wallet, label: '주차요금', text: p.parkingFee, color: 'text-orange-400' });
+                                        infoItems.push({ icon: Wallet, label: t('parking_fee'), text: p.parkingFee, color: 'text-orange-400' });
                                     }
 
                                     if (p.facilities) {
-                                        infoItems.push({ icon: Layers, label: '주요시설', text: p.facilities, color: 'text-teal-400' });
+                                        infoItems.push({ icon: Layers, label: t('facilities'), text: p.facilities, color: 'text-teal-400' });
                                     }
 
                                     if (p.restrooms) {
-                                        infoItems.push({ icon: Bath, label: '화장실', text: p.restrooms, color: 'text-blue-300' });
+                                        infoItems.push({ icon: Bath, label: t('restrooms'), text: p.restrooms, color: 'text-blue-300' });
                                     }
 
                                     return infoItems.map((item: any, idx: number) => (
@@ -457,7 +461,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 <motion.div variants={itemVariants} className="mt-4 bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-black/5 dark:border-white/5">
                                     <h4 className="text-[13px] font-bold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-1.5">
                                         <Coins className="w-4 h-4 text-orange-400" />
-                                        상세 가격 정보
+                                        {t('price_detail')}
                                     </h4>
                                     <div className="space-y-1.5">
                                         {p.priceList.map((item, idx) => (
@@ -478,7 +482,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 <motion.div variants={itemVariants} className="mt-4 bg-purple-50/50 dark:bg-purple-500/5 rounded-xl p-4 border border-purple-500/10">
                                     <h4 className="text-[13px] font-bold text-purple-600 dark:text-purple-400 mb-2 flex items-center gap-1.5">
                                         <Presentation className="w-4 h-4" />
-                                        요금 및 프로그램
+                                        {t('fees_and_programs')}
                                     </h4>
                                     <p className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line font-medium">
                                         {p.feesAndPrograms}
@@ -493,7 +497,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         <div className="bg-blue-50/50 dark:bg-blue-500/5 rounded-xl p-4 border border-blue-500/10">
                                             <h4 className="text-[13px] font-bold text-blue-600 dark:text-blue-400 mb-1.5 flex items-center gap-1.5">
                                                 <Info className="w-4 h-4" />
-                                                관람/입장 연령 안내
+                                                {t('age_guide')}
                                             </h4>
                                             <p className="text-[13px] text-blue-800/80 dark:text-blue-300/80 leading-relaxed whitespace-pre-line font-medium">
                                                 {p.ageDetail}
@@ -504,7 +508,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         <div className="bg-amber-50/50 dark:bg-amber-500/5 rounded-xl p-4 border border-amber-500/10">
                                             <h4 className="text-[13px] font-bold text-amber-600 dark:text-amber-400 mb-1.5 flex items-center gap-1.5">
                                                 <AlertCircle className="w-4 h-4" />
-                                                예매시 유의사항
+                                                {t('booking_notice')}
                                             </h4>
                                             <p className="text-[13px] text-amber-800/80 dark:text-amber-300/80 leading-relaxed whitespace-pre-line font-medium">
                                                 {p.bookingNotice}
@@ -526,7 +530,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 <motion.div variants={itemVariants} className="mt-8 bg-black/5 dark:bg-white/5 rounded-2xl p-6 border border-black/5 dark:border-white/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                                         <Sparkles className="w-5 h-5 text-amber-500" />
-                                        {p.genre === 'exhibition' ? '전시 소개' : p.genre === 'tourism' ? '여행지 정보' : '상세 설명'}
+                                        {p.genre === 'exhibition' ? t('description_exhibition') : p.genre === 'tourism' ? t('description_tourism') : t('description_common')}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400 text-[14.5px] leading-relaxed whitespace-pre-line">
                                         {p.description}
@@ -536,7 +540,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                              {hasCast && mode === 'standalone' && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
-                                    <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">출연진</span>
+                                    <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">{t('cast')}</span>
                                     {p.cast!.slice(0, 10).map((c, idx) => {
                                         const name = typeof c === 'string' ? c : c.name;
                                         let url = typeof c === 'string' ? undefined : (c as { url?: string }).url;
@@ -570,7 +574,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                              {p.crew && p.crew.length > 0 && mode === 'standalone' && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-white/5 mt-2">
-                                    <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">제작진</span>
+                                    <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">{t('crew')}</span>
                                     {p.crew!.slice(0, 5).map((c, idx) => {
                                         const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${c} ${p.title}`)}`;
                                         const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors text-blue-500";
@@ -595,7 +599,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 <motion.div variants={itemVariants} className="mt-8 bg-indigo-50/30 dark:bg-indigo-500/5 rounded-2xl p-6 border border-indigo-500/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Film className="w-5 h-5 text-indigo-500" />
-                                        시놉시스
+                                        {tm('synopsis')}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-300 text-[14.5px] leading-relaxed whitespace-pre-line font-medium">
                                         {p.synopsis || p.description}
@@ -626,7 +630,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     <ExternalLink className="w-5 h-5" />
-                                    <span>예매하기 이동</span>
+                                    <span>{t('go_booking')}</span>
                                 </motion.a>
                             </motion.div>
 
@@ -645,7 +649,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 <BarChart3 className="w-4 h-4" />
-                                                <span>전력비교</span>
+                                                <span>{t('vs_compare')}</span>
                                             </motion.a>
                                         )}
                                         {p.highlightsLink && (
@@ -659,7 +663,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 <Presentation className="w-4 h-4" />
-                                                <span>관전포인트/상세결과</span>
+                                                <span>{t('highlights')}</span>
                                             </motion.a>
                                         )}
                                     </div>
