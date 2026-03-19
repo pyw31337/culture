@@ -75,7 +75,8 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 onLikePerfClick();
             },
             isActive: currentViewMode === 'likes-perf',
-            badgeCount: likeCount + venueCount
+            badgeCount: likeCount,
+            secondBadgeCount: venueCount
         },
         { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick(activeMenu === 'category' ? null : 'category') },
     ];
@@ -111,6 +112,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
         action: () => void;
         isActive?: boolean;
         badgeCount?: number;
+        secondBadgeCount?: number;
     }
 
     const renderNavItem = (item: NavItem) => {
@@ -149,10 +151,16 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                         )}
                         strokeWidth={isActive ? 2.5 : 2}
                     />
-                    {/* Badge Count */}
+                    {/* Badge Count - Primary (Pink) */}
                     {item.badgeCount !== undefined && item.badgeCount > 0 && (
                         <span className="absolute -top-2 -right-2.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-extrabold rounded-full flex items-center justify-center shadow-lg shadow-pink-500/30 border border-white/20">
                             {item.badgeCount > 99 ? '99+' : item.badgeCount}
+                        </span>
+                    )}
+                    {/* Badge Count - Secondary (Emerald, venue favorites) */}
+                    {item.secondBadgeCount !== undefined && item.secondBadgeCount > 0 && (
+                        <span className="absolute -bottom-1 -right-2.5 min-w-[16px] h-[16px] px-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-[9px] font-extrabold rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30 border border-white/20">
+                            {item.secondBadgeCount > 99 ? '99+' : item.secondBadgeCount}
                         </span>
                     )}
                 </div>

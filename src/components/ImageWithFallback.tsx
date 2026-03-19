@@ -38,21 +38,15 @@ function ImageWithFallback({
     }, [optimizedSrc, lowRes]);
 
     const handleError = () => {
-        if (errorStage === 0) {
-            // First failure
-            if (backupSrc && backupSrc !== src) {
-                // Try Backup URL (Remote)
-                setImgSrc(backupSrc);
-                setErrorStage(1);
-            } else {
-                // No backup, go straight to fallback
-                setImgSrc(fallbackSrc);
-                setErrorStage(2);
-            }
-        } else if (errorStage === 1) {
-            // Backup failed, show placeholder
+        if (errorStage === 0 && backupSrc && backupSrc !== src) {
+            // Try Backup URL (Remote) once
+            setImgSrc(backupSrc);
+            setErrorStage(1);
+        } else {
+            // Go straight to placeholder on any failure
             setImgSrc(fallbackSrc);
             setErrorStage(2);
+            setIsLoaded(true); // Show placeholder immediately
         }
     };
 
