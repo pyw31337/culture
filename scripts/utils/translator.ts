@@ -126,6 +126,9 @@ export async function translateText(text: string, to: string): Promise<string> {
         return cache[cleanText][to];
     }
 
+    if (process.env.SKIP_TRANSLATION === 'true') {
+        return cleanText;
+    }
     // 1. Try DeepL
     let translated = await translateWithDeepL(cleanText, to);
     

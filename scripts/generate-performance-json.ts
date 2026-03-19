@@ -10,7 +10,7 @@ async function batchTranslate(items: any[], locale: string) {
     // We allow Korean translation if there's English content that needs to be "Korean-ified"
     console.log(`[Translate] Starting translation to ${locale} for ${items.length} items...`);
     
-    const fields = ['title', 'venue', 'address', 'price', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail', 'petFriendly'];
+    const fields = ['title', 'venue', 'address', 'price', 'description', 'synopsis', 'feesAndPrograms', 'operatingHours', 'priceDetail', 'petFriendly'];
     const translatedItems = [...items];
     const CHUNK_SIZE = 100; // Larger chunks for better overhead management
     
@@ -162,9 +162,7 @@ async function generate() {
             const sourceData = JSON.parse(JSON.stringify(pruned));
             let localizedData = sourceData;
             
-            if (process.env.SKIP_TRANSLATION !== 'true') {
-                localizedData = await batchTranslate(sourceData, locale);
-            }
+            localizedData = await batchTranslate(sourceData, locale);
             
             const outputPath = path.join(dataDir, locale === 'ko' ? 'performances.json' : `performances-${locale}.json`);
             fs.writeFileSync(outputPath, JSON.stringify(localizedData));
