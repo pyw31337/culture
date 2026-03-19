@@ -208,6 +208,7 @@
         "host": "Host",
         "organizer": "Organizer",
         "planner": "Planner",
+        "standard": "As of",
         "exclusive": "Exclusive",
         "minutes": "min"
     },

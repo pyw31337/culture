@@ -11,9 +11,10 @@ import ContentDetailView from './ContentDetailView';
 interface SharedDetailModalProps {
     performance: Performance;
     onClose: () => void;
+    lastUpdated?: string;
 }
 
-export default function SharedDetailModal({ performance: p, onClose }: SharedDetailModalProps) {
+export default function SharedDetailModal({ performance: p, onClose, lastUpdated }: SharedDetailModalProps) {
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const hex = genreStyle.hex;
 
@@ -115,7 +116,7 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                             <X className="w-5 h-5" />
                         </button>
 
-                        <ContentDetailView performance={p} mode="modal" onClose={onClose} />
+                        <ContentDetailView performance={p} mode="modal" onClose={onClose} lastUpdated={lastUpdated} />
                     </motion.div>
                 </motion.div>
             </AnimatePresence>

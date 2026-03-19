@@ -13,9 +13,10 @@ interface ContentDetailViewProps {
     performance: Performance;
     mode?: 'modal' | 'standalone';
     onClose?: () => void;
+    lastUpdated?: string;
 }
 
-export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
+export default function ContentDetailView({ performance: p, mode = 'modal', onClose, lastUpdated }: ContentDetailViewProps) {
     const router = useRouter();
     const t = useTranslations('Detail');
     const tm = useTranslations('MovieMetadata');
@@ -312,11 +313,20 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
                                     
                                     if (isMovie) {
+                                        const dateLabel = lastUpdated ? (() => {
+                                            const match = lastUpdated.match(/(\d{2,4})-(\d{2})-(\d{2})/);
+                                            if (match) {
+                                                const [, y, m, d] = match;
+                                                return ` <${y.slice(-2)}.${m}.${d} ${t('standard')}>`;
+                                            }
+                                            return '';
+                                        })() : ` <${new Date().toLocaleDateString('ko-KR', { year: '2-digit', month: '2-digit', day: '2-digit' }).replace(/\s/g, '').replace(/\.$/, '')} ${t('standard')}>`;
+
                                         if (p.reservationRate) {
-                                            infoItems.push({ icon: BarChart3, label: tm('reservation_rate'), text: p.reservationRate, color: 'text-rose-500' });
+                                            infoItems.push({ icon: BarChart3, label: tm('reservation_rate'), text: `${p.reservationRate}${dateLabel}`, color: 'text-rose-500' });
                                         }
                                         if (p.audienceCount) {
-                                            infoItems.push({ icon: Users, label: tm('audience_count'), text: p.audienceCount, color: 'text-blue-400' });
+                                            infoItems.push({ icon: Users, label: tm('audience_count'), text: `${p.audienceCount}${dateLabel}`, color: 'text-blue-400' });
                                         }
                                         if ((p as any).budgetKRW) {
                                             const formatted = new Intl.NumberFormat('ko-KR').format((p as any).budgetKRW);

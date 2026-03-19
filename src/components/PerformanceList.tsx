@@ -482,7 +482,28 @@ export default function PerformanceList({
             </main>
 
             {/* 4. Navigation & Modals */}
-            <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={() => { setPreserveFlag(); router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
+            {(() => {
+                const directLikedIds = new Set(likedIds);
+                const venueLikedIds = new Set(allPerformances
+                    .filter(p => favoriteVenues.includes(p.venue || ''))
+                    .map(p => p.id)
+                );
+                const totalLikeCount = new Set([...Array.from(directLikedIds), ...Array.from(venueLikedIds)]).size;
+
+                return (
+                    <BottomNav 
+                        activeMenu={activeBottomMenu} 
+                        currentViewMode={viewMode} 
+                        onMenuClick={setActiveBottomMenu} 
+                        onLikePerfClick={handleLikePerfClick} 
+                        onMapClick={handleOpenMap} 
+                        onCalendarClick={() => { setPreserveFlag(); router.push(`/calendar?genre=${selectedGenre}`); }} 
+                        likeCount={totalLikeCount} 
+                        selectedGenre={selectedGenre} 
+                        searchMode={searchMode} 
+                    />
+                );
+            })()}
 
             <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} onVenueSelect={(v) => {
                 setSelectedVenue(v);
@@ -604,7 +625,7 @@ export default function PerformanceList({
             </AnimatePresence>
 
             {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { setPreserveFlag(); router.push(`/map?genre=${selectedGenre}&lat=${venues[name]?.lat || 0}&lng=${venues[name]?.lng || 0}&venue=${encodeURIComponent(name)}`); }} />}
-            {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
+            {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} lastUpdated={lastUpdated} />}
         </div>
     );
 }

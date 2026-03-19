@@ -43,7 +43,13 @@ export const LikedSections = ({
 }: LikedSectionsProps) => {
     if (viewMode !== 'likes-perf') return null;
 
-    const likedPerformances = allPerformances.filter(p => likedIds.includes(p.id));
+    const likedPerformances = React.useMemo(() => {
+        const directLikes = allPerformances.filter(p => likedIds.includes(p.id));
+        const venueLikes = allPerformances.filter(p => 
+            favoriteVenues.includes(p.venue || '') && !likedIds.includes(p.id)
+        );
+        return [...directLikes, ...venueLikes];
+    }, [allPerformances, likedIds, favoriteVenues]);
 
     return (
         <>
