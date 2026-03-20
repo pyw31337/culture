@@ -76,6 +76,14 @@ export interface BasePerformance {
     awayTeamLogo?: string;
     versusLink?: string;
     highlightsLink?: string;
+    
+    // UI-accessed fields across components (Consolidated for Build Stability)
+    runningTime?: string;
+    movieInfo?: string;
+    productionCountry?: string;
+    productionYear?: string;
+    castWithLinks?: { name: string; url?: string }[];
+    platforms?: { name: string; url?: string }[];
 }
 
 export interface MoviePerformance extends BasePerformance {
