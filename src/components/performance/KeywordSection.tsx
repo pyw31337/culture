@@ -208,7 +208,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                     </div>
 
                                     <ImageWithFallback
-                                        src={perf.image || perf.poster}
+                                        src={perf.image || perf.poster || ''}
                                         backupSrc={perf.backupPoster}
                                         alt={perf.title || ''}
                                         fill
