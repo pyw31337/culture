@@ -211,7 +211,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             initial={{ x: -30, opacity: 0, rotate: -10 }}
                                             animate={{ x: 0, opacity: 1, rotate: 0 }}
                                             transition={{ delay: 0.5, type: 'spring' }}
-                                            src={p.genre === 'baseball' && p.homeTeam && (FUTURES_TEAM_LOGOS as any)[p.homeTeam] ? (FUTURES_TEAM_LOGOS as any)[p.homeTeam] : p.homeTeamLogo}
+                                            src={p.genre === 'baseball' && p.homeTeam && (FUTURES_TEAM_LOGOS as any)[p.homeTeam] ? (FUTURES_TEAM_LOGOS as any)[p.homeTeam] : (p.homeTeamLogo || '')}
                                             alt={p.homeTeam}
                                             className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
                                         />
@@ -220,7 +220,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             initial={{ x: 30, opacity: 0, rotate: 10 }}
                                             animate={{ x: 0, opacity: 1, rotate: 0 }}
                                             transition={{ delay: 0.5, type: 'spring' }}
-                                            src={p.genre === 'baseball' && p.awayTeam && (FUTURES_TEAM_LOGOS as any)[p.awayTeam] ? (FUTURES_TEAM_LOGOS as any)[p.awayTeam] : p.awayTeamLogo}
+                                            src={p.genre === 'baseball' && p.awayTeam && (FUTURES_TEAM_LOGOS as any)[p.awayTeam] ? (FUTURES_TEAM_LOGOS as any)[p.awayTeam] : (p.awayTeamLogo || '')}
                                             alt={p.awayTeam}
                                             className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
                                         />
