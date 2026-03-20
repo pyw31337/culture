@@ -1,0 +1,125 @@
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import Script from 'next/script';
+import ProgressBarProvider from "@/components/ProgressBarProvider";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import InstallApp from "@/components/InstallApp";
+import ScrollToTop from "@/components/ScrollToTop";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { locales } from '@/navigation';
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#0a0a0a",
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    metadataBase: new URL("https://pyw31337.github.io/culture"),
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: "Culture Flow",
+      siteName: "Culture Flow",
+      url: `https://pyw31337.github.io/culture/${locale}`,
+      description: t('description'),
+      images: [
+        {
+          url: "/culture/images/og-image.jpg",
+          width: 1200,
+          height: 600,
+          alt: "Culture Flow Preview",
+        },
+      ],
+      type: "website",
+      locale: locale,
+    },
+    icons: {
+      icon: '/culture/favicon.png',
+      apple: '/culture/icon.png',
+    },
+    manifest: '/culture/manifest.json',
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: 'black-translucent',
+      title: 'Culture Flow',
+    },
+    formatDetection: {
+      telephone: false,
+    },
+  };
+}
+
+export default async function RootLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  // Ensure that the incoming `locale` is valid
+  if (!locales.includes(locale as any)) {
+      notFound();
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale} suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var localTheme = localStorage.getItem('theme');
+                  // Default is Light (:root). We only add .dark if explicitly set.
+                  if (localTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ProgressBarProvider>
+            <ErrorBoundary>
+              {children}
+              <ScrollToTop />
+              <InstallApp />
+            </ErrorBoundary>
+          </ProgressBarProvider>
+        </NextIntlClientProvider>
+        <Script
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&libraries=services,clusterer&autoload=false`}
+          strategy="beforeInteractive"
+        />
+      </body>
+    </html>
+  );
+}
