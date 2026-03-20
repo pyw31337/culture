@@ -189,13 +189,13 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             </div>
 
                             <img
-                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[sportsPerf.homeTeam] ? FUTURES_TEAM_LOGOS[sportsPerf.homeTeam] : sportsPerf.homeTeamLogo}
+                                src={(perf.genre === 'baseball' && sportsPerf.homeTeam && FUTURES_TEAM_LOGOS[sportsPerf.homeTeam]) ? FUTURES_TEAM_LOGOS[sportsPerf.homeTeam] : (sportsPerf.homeTeamLogo || '')}
                                 alt={sportsPerf.homeTeam}
                                 className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
                             />
                             <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded backdrop-blur-[2px] border border-white/10">VS</div>
                             <img
-                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[sportsPerf.awayTeam] ? FUTURES_TEAM_LOGOS[sportsPerf.awayTeam] : sportsPerf.awayTeamLogo}
+                                src={(perf.genre === 'baseball' && sportsPerf.awayTeam && FUTURES_TEAM_LOGOS[sportsPerf.awayTeam]) ? FUTURES_TEAM_LOGOS[sportsPerf.awayTeam] : (sportsPerf.awayTeamLogo || '')}
                                 alt={sportsPerf.awayTeam}
                                 className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
                             />
