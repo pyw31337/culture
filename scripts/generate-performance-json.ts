@@ -5,6 +5,9 @@ import { sortPerformances } from '../src/lib/performance-filter';
 import { translateText, saveCache, translateBatch, getFromCache } from './utils/translator';
 import { normalizeAddressWithMeta, isExpired, cleanAddress, REGION_MAP } from './utils/data-cleaner';
 
+const START_TIME = Date.now();
+const MAX_TRANSLATION_TIME = 50 * 60 * 1000; // 50 minutes hard limit
+
 // Batch processor for translations
 async function batchTranslate(items: any[], locale: string) {
     // We allow Korean translation if there's English content that needs to be "Korean-ified"
@@ -87,6 +90,13 @@ async function batchTranslate(items: any[], locale: string) {
             } catch (e) {
                 console.error(`[Translate] CHUNK Batch failed for ${locale}, items will remain in original language.`);
             }
+        }
+        
+        // --- TIME LIMIT CHECK ---
+        if (Date.now() - START_TIME > MAX_TRANSLATION_TIME) {
+            console.warn(`[Translate] Total runtime exceeded 50m. Stopping translation for ${locale} and saving progress...`);
+            saveCache();
+            return translatedItems; 
         }
         
         if (i % 200 === 0 && i > 0) {
@@ -205,6 +215,10 @@ async function generate() {
         // Process locales in parallel batches of 2 (to balance speed vs cache race)
         const localeChunks = [['ko', 'en'], ['zh', 'ja']];
         for (const chunk of localeChunks) {
+            if (Date.now() - START_TIME > MAX_TRANSLATION_TIME) {
+                console.warn('[Build] Global time limit reached before processing all locales. Skipping remaining.');
+                break;
+            }
             await Promise.all(chunk.map(async (locale) => {
                 console.log(`[Build] Generating data for locale: ${locale}`);
                 // Deep copy pruned data for translation

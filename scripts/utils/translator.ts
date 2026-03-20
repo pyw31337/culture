@@ -100,7 +100,7 @@ export async function translateBatch(texts: string[], to: string): Promise<strin
     progressLogger.createBar(barId, stringsToTranslate.length, `Translating to ${to.toUpperCase()}...`);
 
     // Process sub-batches in chunks
-    const SUB_BATCH_SIZE = 20; 
+    const SUB_BATCH_SIZE = 50; 
     for (let i = 0; i < stringsToTranslate.length; i += SUB_BATCH_SIZE) {
         const currentBatch = stringsToTranslate.slice(i, i + SUB_BATCH_SIZE);
         
