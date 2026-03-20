@@ -8,8 +8,8 @@ import { normalizeAddressWithMeta, isExpired, cleanAddress, REGION_MAP } from '.
 const START_TIME = Date.now();
 const MAX_TRANSLATION_TIME = 50 * 60 * 1000; // 50 minutes hard limit
 
-// Batch processor for translations
-async function batchTranslate(items: any[], locale: string) {
+// Batch processor for translations for a single locale
+async function translateByLocale(items: any[], locale: string) {
     // We allow Korean translation if there's English content that needs to be "Korean-ified"
     console.log(`[Translate] Starting translation to ${locale} for ${items.length} items...`);
     
@@ -212,21 +212,21 @@ async function generate() {
         const dataDir = path.join(process.cwd(), 'public', 'data');
         if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
-        // Process locales in parallel batches of 2 (to balance speed vs cache race)
-        const localeChunks = [['ko', 'en'], ['zh', 'ja']];
-        for (const chunk of localeChunks) {
+        // Process locales sequentially (Safe for cache writes & CI memory)
+        for (const locale of locales) {
             if (Date.now() - START_TIME > MAX_TRANSLATION_TIME) {
-                console.warn('[Build] Global time limit reached before processing all locales. Skipping remaining.');
+                console.warn('[Build] Global time limit reached. Skipping remaining locales.');
                 break;
             }
-            await Promise.all(chunk.map(async (locale) => {
-                console.log(`[Build] Generating data for locale: ${locale}`);
-                // Deep copy pruned data for translation
-                const localizedData = await batchTranslate(JSON.parse(JSON.stringify(pruned)), locale);
-                const outputPath = path.join(dataDir, locale === 'ko' ? 'performances.json' : `performances-${locale}.json`);
-                fs.writeFileSync(outputPath, JSON.stringify(localizedData));
-                console.log(`Successfully generated ${localizedData.length} items to ${outputPath}`);
-            }));
+            console.log(`[Build] Generating data for locale: ${locale}`);
+            // Deep copy pruned data for translation
+            const sourceData = JSON.parse(JSON.stringify(pruned));
+            const localizedData = await translateByLocale(sourceData, locale);
+            
+            const outputPath = path.join(dataDir, locale === 'ko' ? 'performances.json' : `performances-${locale}.json`);
+            fs.writeFileSync(outputPath, JSON.stringify(localizedData));
+            console.log(`Successfully generated ${localizedData.length} items to ${outputPath}`);
+            
             saveCache(); 
         }
 

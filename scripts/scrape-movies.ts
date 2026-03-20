@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
-import { processImage } from './utils/image-processor.js';
+import { processImage } from './utils/image-processor';
 import axios from 'axios';
 import cliProgress from 'cli-progress';
 import { withErrorHandling } from './utils/scraper-utils';
