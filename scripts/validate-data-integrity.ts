@@ -46,8 +46,23 @@ async function validate() {
         }
 
         try {
+            const fileStats = fs.statSync(filePath);
             const content = fs.readFileSync(filePath, 'utf-8');
             
+            // --- STALENESS CHECK (48h) ---
+            const now = new Date();
+            const lastModified = fileStats.mtime;
+            const diffHours = (now.getTime() - lastModified.getTime()) / (1000 * 60 * 60);
+
+            if (diffHours > 48) {
+                const msg = `⚠️ [${target.name}] 데이터가 너무 오래됨: ${Math.round(diffHours)}시간 경과 (최근 수정: ${lastModified.toLocaleString('ko-KR')})`;
+                if (diffHours > 72) {
+                    errors.push(`❌ ${msg.replace('⚠️', '심각')}`);
+                } else {
+                    warnings.push(msg);
+                }
+            }
+
             if (target.type === 'code') {
                 if (content.length > 0) {
                     console.log(`✅ [${target.name}] 통과 (코드 파일 확인)`);

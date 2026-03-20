@@ -132,16 +132,37 @@ async function getRegions() {
 
 async function fetchPerformances(regionCode: string, regionName: string): Promise<Performance[]> {
     const url = `https://ticket.interpark.com/TiKi/Special/TPRegionReserve.asp?Region=${regionCode}`;
+    const mobileUrl = `https://m.ticket.interpark.com/TiKi/Special/TPRegionReserve.asp?Region=${regionCode}`;
 
+    let html = '';
     try {
         const response = await axios.get(url, {
             responseType: 'arraybuffer',
-            headers: { 'User-Agent': 'Mozilla/5.0' },
-            timeout: 10000,
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+            timeout: 15000,
         });
+        html = iconv.decode(response.data, 'euc-kr');
+    } catch (e) {
+        console.warn(`[Interpark] Desktop discovery failed for ${regionName}(${regionCode}), trying mobile...`);
+        try {
+            const mResponse = await axios.get(mobileUrl, {
+                responseType: 'arraybuffer',
+                headers: { 'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1' },
+                timeout: 11000,
+            });
+            const buffer = mResponse.data;
+            html = buffer.toString('utf-8');
+            if (html.includes('charset=euc-kr') || html.includes('charset="euc-kr"')) {
+                html = iconv.decode(buffer, 'euc-kr');
+            }
+        } catch (me) {
+            console.error(`[Interpark] Discovery failed for ${regionName}: ${me.message}`);
+            return [];
+        }
+    }
 
-        const decoded = iconv.decode(response.data, 'euc-kr');
-        const $ = cheerio.load(decoded);
+    try {
+        const $ = cheerio.load(html);
         const performances: Performance[] = [];
 
         $('.obj').each((_, obj) => {
