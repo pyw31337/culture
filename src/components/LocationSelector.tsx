@@ -5,7 +5,7 @@ import { ChevronDown, MapPin, Check, Search, X, GripHorizontal, ChevronUp } from
 import { REGIONS } from '@/lib/constants';
 import { getChoseong } from '@/lib/hangul';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 
@@ -52,10 +52,8 @@ interface LocationSelectorProps {
     referenceLocation?: { lat: number, lng: number } | null;
 }
 
-const CHOSEONG_LIST = [
-    'ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ',
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-];
+const KOREAN_CHOSEONG = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+const ENGLISH_ALPHABET = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 import { HorizontalScroll } from '@/components/ui/HorizontalScroll';
 
@@ -77,6 +75,13 @@ export function LocationSelector({
     const t = useTranslations('Search');
     const tr = useTranslations('Regions');
     const tc = useTranslations('Categories');
+    const td = useTranslations('Districts');
+    const locale = useLocale();
+
+    const CHOSEONG_LIST = useMemo(() => {
+        if (locale === 'ko') return [...KOREAN_CHOSEONG, ...ENGLISH_ALPHABET];
+        return [...ENGLISH_ALPHABET, ...KOREAN_CHOSEONG];
+    }, [locale]);
 
     // UI Constants
     const baseButtonClass = "rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-1.5 whitespace-nowrap"; // Reduced padding/text size slightly
@@ -194,7 +199,7 @@ export function LocationSelector({
 
     const selectedRegionLabel = useMemo(() => {
         if (selectedRegion === 'all') return t('nationwide');
-        return tr.has(selectedRegion) ? tr(selectedRegion) : (REGIONS.find(r => r.id === selectedRegion)?.label || '');
+        return tr.has(selectedRegion) ? tr(selectedRegion) : selectedRegion;
     }, [selectedRegion, t, tr]);
 
     return (
@@ -229,7 +234,7 @@ export function LocationSelector({
                                 {selectedDistrict !== 'all' && (
                                     <>
                                         <span className="opacity-40 text-[9px]">•</span>
-                                        <span>{selectedDistrict}</span>
+                                        <span>{td.has(selectedDistrict) ? td(selectedDistrict) : selectedDistrict}</span>
                                     </>
                                 )}
                             </div>
@@ -287,7 +292,7 @@ export function LocationSelector({
                                                     : "rounded-xl bg-gray-800/30 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50 mb-1"
                                             )}
                                         >
-                                            {tr.has(r.id) ? tr(r.id) : r.label}
+                                            {tr.has(r.id) ? tr(r.id) : r.id}
                                         </button>
                                     );
                                 })}
@@ -332,7 +337,7 @@ export function LocationSelector({
                                                             : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
                                                     )}
                                                 >
-                                                    {d}
+                                                    {td.has(d) ? td(d) : d}
                                                 </button>
                                             ))}
                                         </HorizontalScroll>
@@ -461,7 +466,7 @@ export function LocationSelector({
                                                     {/* Location Tag (Full Region + District) */}
                                                     {(venues[v]?.mapped_region_id || venues[v]?.district) && (
                                                         <span className="text-[10px] sm:text-xs text-gray-400 light:text-gray-500 border border-white/5 light:border-gray-200 px-2 py-0.5 rounded bg-black/40 light:bg-gray-100 italic">
-                                                            {[tr.has(venues[v].mapped_region_id) ? tr(venues[v].mapped_region_id) : REGIONS.find(r => r.id === venues[v].mapped_region_id)?.label, venues[v].district].filter(Boolean).join(' ')}
+                                                            {[tr.has(venues[v].mapped_region_id) ? tr(venues[v].mapped_region_id) : venues[v].mapped_region_id, td.has(venues[v].district) ? td(venues[v].district) : venues[v].district].filter(Boolean).join(' ')}
                                                         </span>
                                                     )}
                                                     {selectedVenue === v && <Check className={clsx("w-3.5 h-3.5", isLoc ? "text-emerald-500" : "text-purple-500")} />}

@@ -1,31 +1,31 @@
 export const GENRE_GROUPS = [
-    { id: 'all', label: '전체', genres: ['all'] },
-    { id: 'movie', label: '영화', genres: ['movie'] },
-    { id: 'performance', label: '공연', genres: ['musical', 'concert', 'play', 'classic_tradition'] },
-    { id: 'exhibition', label: '전시', genres: ['exhibition', 'museum'] },
-    { id: 'experience', label: '체험/액티비티', genres: ['activity', 'class'] },
-    { id: 'sports', label: '스포츠', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
-    { id: 'tourism', label: '관광/여행', genres: ['tourism'] },
+    { id: 'all', label: 'all', genres: ['all'] },
+    { id: 'movie', label: 'movie', genres: ['movie'] },
+    { id: 'performance', label: 'performance', genres: ['musical', 'concert', 'play', 'classic_tradition'] },
+    { id: 'exhibition', label: 'exhibition', genres: ['exhibition', 'museum'] },
+    { id: 'experience', label: 'experience', genres: ['activity', 'class'] },
+    { id: 'sports', label: 'sports', genres: ['baseball', 'soccer', 'basketball', 'volleyball', 'handball'] },
+    { id: 'tourism', label: 'tourism', genres: ['tourism'] },
 ];
 
 export const GENRES = [
-    { id: 'all', label: '전체' },
-    { id: 'movie', label: '영화' },
+    { id: 'all', label: 'all' },
+    { id: 'movie', label: 'movie' },
 
-    { id: 'musical', label: '뮤지컬' },
-    { id: 'concert', label: '콘서트' },
-    { id: 'play', label: '연극' },
-    { id: 'classic_tradition', label: '클래식' },
-    { id: 'exhibition', label: '전시/행사' },
-    { id: 'activity', label: '액티비티' },
-    { id: 'class', label: '클래스' },
-    { id: 'museum', label: '박물관/체험관' },
-    { id: 'tourism', label: '관광/여행' },
-    { id: 'volleyball', label: '배구' },
-    { id: 'basketball', label: '농구' },
-    { id: 'baseball', label: '야구' },
-    { id: 'soccer', label: '축구' },
-    { id: 'handball', label: '핸드볼' },
+    { id: 'musical', label: 'musical' },
+    { id: 'concert', label: 'concert' },
+    { id: 'play', label: 'play' },
+    { id: 'classic_tradition', label: 'classic_tradition' },
+    { id: 'exhibition', label: 'exhibition' },
+    { id: 'activity', label: 'activity' },
+    { id: 'class', label: 'class' },
+    { id: 'museum', label: 'museum' },
+    { id: 'tourism', label: 'tourism' },
+    { id: 'volleyball', label: 'volleyball' },
+    { id: 'basketball', label: 'basketball' },
+    { id: 'baseball', label: 'baseball' },
+    { id: 'soccer', label: 'soccer' },
+    { id: 'handball', label: 'handball' },
 
 ];
 
@@ -49,35 +49,35 @@ export const GENRE_STYLES: Record<string, { hex: string, twText: string, twBg: s
 };
 
 export const REGIONS = [
-    { id: 'all', label: '전체' },
-    { id: 'seoul', label: '서울' },
-    { id: 'gyeonggi', label: '경기' },
-    { id: 'incheon', label: '인천' },
-    { id: 'busan', label: '부산' },
-    { id: 'daegu', label: '대구' },
-    { id: 'gwangju', label: '광주' },
-    { id: 'daejeon', label: '대전' },
-    { id: 'ulsan', label: '울산' },
-    { id: 'sejong', label: '세종' },
-    { id: 'gangwon', label: '강원' },
-    { id: 'chungbuk', label: '충북' },
-    { id: 'chungnam', label: '충남' },
-    { id: 'jeonbuk', label: '전북' },
-    { id: 'jeonnam', label: '전남' },
-    { id: 'gyeongbuk', label: '경북' },
-    { id: 'gyeongnam', label: '경남' },
-    { id: 'jeju', label: '제주' },
+    { id: 'all', label: 'all' },
+    { id: 'seoul', label: 'seoul' },
+    { id: 'gyeonggi', label: 'gyeonggi' },
+    { id: 'incheon', label: 'incheon' },
+    { id: 'busan', label: 'busan' },
+    { id: 'daegu', label: 'daegu' },
+    { id: 'gwangju', label: 'gwangju' },
+    { id: 'daejeon', label: 'daejeon' },
+    { id: 'ulsan', label: 'ulsan' },
+    { id: 'sejong', label: 'sejong' },
+    { id: 'gangwon', label: 'gangwon' },
+    { id: 'chungbuk', label: 'chungbuk' },
+    { id: 'chungnam', label: 'chungnam' },
+    { id: 'jeonbuk', label: 'jeonbuk' },
+    { id: 'jeonnam', label: 'jeonnam' },
+    { id: 'gyeongbuk', label: 'gyeongbuk' },
+    { id: 'gyeongnam', label: 'gyeongnam' },
+    { id: 'jeju', label: 'jeju' },
 ];
 
 // Alias for backward compatibility if needed, though we will update usage.
 export const NATIONWIDE_REGIONS = REGIONS;
 
 export const RADIUS_OPTIONS = [
-    { value: 9999, label: '전체 반경' },
-    { value: 5, label: '5km 반경' },
-    { value: 10, label: '10km 반경' },
-    { value: 15, label: '15km 반경' },
-    { value: 20, label: '20km 반경' },
+    { value: 9999, label: 'val_9999' },
+    { value: 5, label: 'val_5' },
+    { value: 10, label: 'val_10' },
+    { value: 15, label: 'val_15' },
+    { value: 20, label: 'val_20' },
 ];
 
 // Sports genres for composite /sports URL

@@ -318,35 +318,67 @@ export function toMobileUrl(url: string | undefined): string {
     }
 }
 
-/**
- * Simple content translation helper using Data namespace mappings
- */
 export function translateContent(text: string, tData: any): string {
     if (!text || !tData) return text;
 
     let translated = text;
     
-    // Mapping keys from Data namespace
+    // Comprehensive mapping keys from Data namespace
     const mapping: Record<string, string> = {
+        // Regions
         '서울': 'seoul',
         '경기': 'gyeonggi',
+        '인천': 'incheon',
+        '강원': 'gangwon',
+        '충북': 'chungbuk',
+        '충남': 'chungnam',
+        '대전': 'daejeon',
+        '세종': 'sejong',
+        '전북': 'jeonbuk',
+        '전남': 'jeonnam',
+        '광주': 'gwangju',
+        '경북': 'gyeongbuk',
+        '경남': 'gyeongnam',
+        '대구': 'daegu',
+        '울산': 'ulsan',
+        '부산': 'busan',
+        '제주': 'jeju',
+        
+        // Venues & Common terms
         '박물관': 'museum',
+        '미술관': 'gallery',
         '아트홀': 'art_hall',
         '콘서트홀': 'concert_hall',
         '극장': 'theater',
         '경기장': 'stadium',
         '센터': 'center',
         '예술의전당': 'arts_center',
+        '공원': 'park',
+        '광장': 'square',
+        '홀': 'hall',
         '무료': 'free',
-        '원': 'won'
+        '원': 'won',
+
+        // Address System (주소체계)
+        '시': 'city',
+        '구': 'district',
+        '로': 'road',
+        '길': 'street'
     };
 
     // Replace based on mapping
-    Object.entries(mapping).forEach(([kr, key]) => {
+    // We sort keys by length descending to avoid partial matches (e.g., '예술의전당' before '전당')
+    const sortedKeys = Object.keys(mapping).sort((a, b) => b.length - a.length);
+
+    sortedKeys.forEach((kr) => {
+        const key = mapping[kr];
         try {
             if (tData.has(key)) {
+                const localized = tData(key);
+                // Use word boundary check if possible, but for Korean it's tricky.
+                // For now, literal global replace is safer for fragments.
                 const regex = new RegExp(kr, 'g');
-                translated = translated.replace(regex, tData(key));
+                translated = translated.replace(regex, localized);
             }
         } catch (e) {
             // Ignore errors for specific items

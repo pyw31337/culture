@@ -88,7 +88,7 @@ const ResultsHeader = ({
                                     >
                                         {RADIUS_OPTIONS.map(r => (
                                             <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
-                                                {r.value === 9999 ? t('all_radius') : t('radius', { radius: r.value })}
+                                                {t(`Radius.val_${r.value}`)}
                                             </option>
                                         ))}
                                     </select>

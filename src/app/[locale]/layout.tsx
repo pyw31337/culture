@@ -86,9 +86,9 @@ export default async function RootLayout({
   // side is the easiest way to get started
   let messages;
   try {
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    messages = (await import(`@/messages/ko.json`)).default;
+    messages = (await import(`../../messages/ko.json`)).default;
   }
 
   return (

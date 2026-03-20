@@ -57,6 +57,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     const tc = useTranslations('Categories');
     const ts = useTranslations('Search');
     const tm = useTranslations('MovieMetadata');
+    const td = useTranslations('Data');
     
     const sportsPerf = isSports(perf) ? perf : null;
     const moviePerf = isMovie(perf) ? perf : null;
@@ -256,7 +257,9 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 "px-2 py-0.5 rounded text-[10px] sm:text-xs font-extrabold border whitespace-nowrap",
                                 genreStyle.twBg ? `${genreStyle.twBg} text-white border-white/10` : 'bg-gray-800 text-gray-400 border-gray-700'
                             )}>
-                                {tc.has(perf.genre) ? tc(perf.genre) : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
+                                {tc.has(perf.genre) 
+                                    ? tc(perf.genre) 
+                                    : (GENRES.find(g => g.id === perf.genre || g.label === perf.genre)?.label || perf.genre)}
                             </span>
 
                             <span className={clsx(
@@ -274,7 +277,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 searchMode === 'location' ? "group-hover/link:text-emerald-400" : "group-hover/link:text-[#a78bfa]",
                                 variant === 'yellow' ? "text-white light:text-black light:font-black" : "text-white light:text-black"
                             )}>
-                                <HighlightText text={cleanTitle(perf.title) || ts('no_title')} keyword={searchText} />
+                                <HighlightText text={translateContent(cleanTitle(perf.title), td) || ts('no_title')} keyword={searchText} />
                             </h3>
                         </a>
 
@@ -288,10 +291,10 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                             <span className="text-cyan-400 font-extrabold border border-cyan-400/30 px-1 rounded text-[10px]">{tm('rating_label')}</span>
                                             {(() => {
                                                 const grade = moviePerf.grade || (typeof moviePerf.venue === 'string' && moviePerf.venue.split('|').find((s: string) => s.includes('관람') || s.includes('Age'))?.trim()) || moviePerf.venue;
-                                                if (grade === '전체 관람가') return tm('rating_all');
-                                                if (grade === '12세 이상 관람가') return tm('rating_12');
-                                                if (grade === '15세 이상 관람가') return tm('rating_15');
-                                                if (grade === '청소년 관람불가') return tm('rating_18');
+                                                if (grade.includes('전체') || grade.includes('All')) return tm('rating_all');
+                                                if (grade.includes('12')) return tm('rating_12');
+                                                if (grade.includes('15')) return tm('rating_15');
+                                                if (grade.includes('18') || grade.includes('청불')) return tm('rating_18');
                                                 return grade;
                                             })()}
                                         </>
@@ -301,7 +304,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 <div className="text-gray-400 light:text-black text-xs flex flex-col gap-0.5 mb-2 truncate">
                                     <div className="flex items-center gap-1 font-extrabold text-sky-400">
                                         <Plane className="w-3 h-3" />
-                                        {perf.venue.split('|')[0]?.trim()}
+                                        {translateContent(perf.venue.split('|')[0]?.trim(), td)}
                                     </div>
                                 </div>
                             ) : (
@@ -310,7 +313,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     className="hover:text-white light:hover:text-purple-600 hover:underline truncate text-gray-400 light:text-black text-xs flex items-center gap-1 mb-2"
                                 >
                                     <MapPin className="w-3 h-3 flex-shrink-0" />
-                                    <span className={clsx("truncate", variant === 'yellow' && "light:font-extrabold")}><HighlightText text={perf.venue} keyword={searchText} /></span>
+                                    <span className={clsx("truncate", variant === 'yellow' && "light:font-extrabold")}><HighlightText text={translateContent(perf.venue, td)} keyword={searchText} /></span>
                                 </button>
                             )}
                         </div>
