@@ -44,7 +44,6 @@ const VENUE_MAP: Record<string, string> = {
     '포항': '포항야구장',
     '울산': '울산문수야구장',
     '청주': '청주야구장',
-    // Futures/Exhibition might have others
     '이천': '이천',
     '마산': '마산',
     '상동': '상동야구장',
@@ -70,7 +69,7 @@ function classifyRegion(venue: string): string {
 async function scrapeKBO() {
     console.log(`Starting KBO Scraper...`);
     const browser = await puppeteer.launch({
-        headless: true, // Run headless
+        headless: true,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -90,59 +89,22 @@ async function scrapeKBO() {
         const allPerformances: Performance[] = [];
         const seenIds = new Set<string>();
 
-        // 2026 Year
-        const TARGET_YEAR = '2026';
-        // Series: 1 (Exhibition), 0,9,6 (Regular - catch all?), 3,4,5,7 (Post)
-        // Actually, looking at KBO logic, '0,9,6' is typically regular season + etc.
-        // The dropdown values might be distinct.
-        // Let's iterate months first, then check if we need to switch series?
-        // Actually, KBO page behavior: Year -> Month -> Series.
-        // If we select Month, it updates. Series usually defaults or persists.
-        // We should try to scrape distinct Series batches.
-        // Series IDs to iterate:
-        // Regular: '0,9,6'
-        // Exhibition: '1'
-        // Post: '3,4,5,7'
+        const TARGET_YEAR = '2025'; // UPDATED TO 2025 as it is current/upcoming season
         const SERIES_LIST = [
             { id: '1', name: 'Exhibition' },
             { id: '0,9,6', name: 'Regular' },
             { id: '3,4,5,7', name: 'Post' }
         ];
+        const MONTHS = ['03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
-        // Months 01 - 12
-        const MONTHS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
-
-        // Helper to select dropdown and wait for update
         async function selectOption(selector: string, value: string) {
-            const currentVal = await page.$eval(selector, el => (el as HTMLSelectElement).value);
-            if (currentVal === value) return; // Already selected
-
+            const currentVal = await page.$eval(selector, (el) => (el as HTMLSelectElement).value);
+            if (currentVal === value) return;
             console.log(`Selecting ${selector} = ${value}`);
-            // KBO triggers postback on change
-            // We catch the navigation or ajax
-            // Promise.all to ensure we don't miss the event
-            // Note: Sometimes it hangs if we wait for navigation that doesn't happen (AJAX)
-            // KBO uses ASP.NET UpdatePanel mostly? Or full postback?
-            // Let's try waiting for networkidle first.
-
-            await Promise.all([
-                // page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 5000 }).catch(() => {}), // catch timeout if it's just ajax
-                // actually, better to wait for a known element to stabilize or disappear/reappear
-                // simple sleep might be safer if unsure
-                page.select(selector, value)
-            ]);
-            // Give time for update
-            await new Promise(r => setTimeout(r, 2000));
+            await page.select(selector, value);
+            await new Promise((r) => setTimeout(r, 2000));
         }
 
-        // Set Year First
-        try {
-            await selectOption('#ddlYear', TARGET_YEAR);
-        } catch (e: any) {
-            console.error(`Error selecting year ${TARGET_YEAR}: ${e}`);
-        }
-
-        // Team Logo Map (Local Assets)
         const TEAM_LOGOS: Record<string, string> = {
             "LG": "/images/logos/kbo/lg.svg",
             "한화": "/images/logos/kbo/hanwha.svg",
@@ -156,283 +118,119 @@ async function scrapeKBO() {
             "키움": "/images/logos/kbo/kiwoom.svg"
         };
 
-        // Futures League Team Logos (emblemF versions)
-        const FUTURES_TEAM_LOGOS: Record<string, string> = {
-            "한화": "/images/logos/kbo/hanwha_f.png",
-            "LG": "/images/logos/kbo/lg_f.png",
-            "SSG": "/images/logos/kbo/ssg_f.png",
-            "두산": "/images/logos/kbo/doosan_f.png",
-            "고양": "/images/logos/kbo/goyang_f.png",
-            "상무": "/images/logos/kbo/sangmu_f.png",
-            "KT": "/images/logos/kbo/kt_f.png",
-            "NC": "/images/logos/kbo/nc_f.png",
-            "롯데": "/images/logos/kbo/lotte_f.png",
-            "KIA": "/images/logos/kbo/kia_f.png",
-            "삼성": "/images/logos/kbo/samsung_f.png",
-            "춘천": "/images/logos/kbo/chuncheon_f.png"
-        };
-        try {
-            console.log('Fetching Futures League Logos...');
-            const FUTURES_URL = 'https://www.koreabaseball.com/Futures/Schedule/GameList.aspx';
-            await page.goto(FUTURES_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+        console.log(`\nPhase 1: Collecting KBO games for ${TARGET_YEAR}...`);
 
-            const futuresLogos = await page.evaluate(() => {
-                const ul = document.querySelector('#cphContents_cphContents_cphContents_udpRecord > ul');
-                if (!ul) return [];
-
-                return Array.from(ul.querySelectorAll('li')).map(li => {
-                    const img = li.querySelector('img');
-                    const span = li.querySelector('span');
-                    if (!img || !span) return null;
-                    const name = span.textContent?.trim() || '';
-                    const src = img.src;
-                    if (name === '전체') return null;
-                    return { name, src };
-                }).filter(Boolean) as { name: string, src: string }[];
-            });
-
-            console.log(`Found ${futuresLogos.length} Futures teams.`);
-            futuresLogos.forEach(item => {
-                // "고양" replaces "Goyang" etc.
-                if (!TEAM_LOGOS[item.name]) {
-                    TEAM_LOGOS[item.name] = item.src;
-                    console.log(`Added logo for ${item.name}`);
-                } else {
-                    // Update existing if needed? KBO logos might differ for Futures (e.g. "emblemF_HH.png")
-                    // User said "put logos... here". Maybe overwrite? 
-                    // Regular logos are usually preferred for main teams.
-                    // Let's keep Regular unless missing.
-                }
-            });
-
-        } catch (e) {
-            console.error('Failed to fetch futures logos:', e);
-        }
-
-        // Navigate back to Standard Schedule for main scraping
-        console.log('Navigating back to Regular Schedule...');
-        await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
-
-        for (const series of SERIES_LIST) {
-            console.log(`\n--- Scraping Series: ${series.name} (${series.id}) ---`);
-
-            try {
-                await selectOption('#ddlSeries', series.id);
-            } catch (e: any) {
-                console.log(`Skipping series ${series.name} (maybe unavailable): ${e.message}`);
-                continue;
-            }
-
-            for (const month of MONTHS) {
-                // console.log(`  Checking Month: ${month}`);
+        for (const month of MONTHS) {
+            for (const series of SERIES_LIST) {
                 try {
-                    // Select Month
+                    await selectOption('#ddlYear', TARGET_YEAR);
                     await selectOption('#ddlMonth', month);
+                    await selectOption('#ddlSeries', series.id);
 
-                    // Scrape Table
-                    // Selector: #tblScheduleList > tbody > tr
-                    const rows = await page.$$eval('#tblScheduleList > tbody > tr', (trs) => {
-                        return trs.map(tr => {
-                            // Check empty/no schedule
-                            if ((tr as HTMLElement).innerText.includes('데이터가 없습니다')) return null;
+                    const hasData = await page.evaluate(() => {
+                        const trs = document.querySelectorAll('#tblScheduleList tbody tr');
+                        if (trs.length === 0) return false;
+                        const firstTr = trs[0] as HTMLElement;
+                        if (firstTr.innerText.includes('데이터가 없습니다')) return false;
+                        return true;
+                    });
 
-                            // Columns:
-                            // 1: day (e.g. "03.09(토)") - NOTE: "day" class might be on the TD
-                            // 2: time (e.g. "13:00")
-                            // 3: play (e.g. "LG vs 한화")
-                            // ...
-                            // 8: venue (e.g. "잠실")
+                    if (!hasData) continue;
 
-                            const dayEl = tr.querySelector('.day');
-                            const timeEl = tr.querySelector('.time');
-                            const playEl = tr.querySelector('.play');
-                            // Venue is 8th td? OR 7th?
-                            // Let's get all TDs
-                            const tds = Array.from(tr.querySelectorAll('td'));
-                            // Usually: Day, Time, Play, Relay, ... , Venue, ...
-                            // Venue is often near the end.
-                            // User says: nth-child(8) -> index 7
-                            const venueEl = tds[7];
+                    const results = await page.evaluate((targetYear) => {
+                        const trs = document.querySelectorAll('#tblScheduleList tbody tr');
+                        const games: any[] = [];
+                        let currentDate = '';
 
-                            if (!dayEl || !timeEl || !playEl || !venueEl) return null;
+                        trs.forEach((tr) => {
+                            const cells = tr.querySelectorAll('td');
+                            if (cells.length < 8) return;
 
-                            return {
-                                day: dayEl.textContent?.trim(),
-                                time: timeEl.textContent?.trim(),
-                                play: playEl.textContent?.trim(),
-                                venue: venueEl.textContent?.trim()
-                            };
+                            let timeIdx = 1;
+                            let matchupIdx = 2;
+                            let venueIdx = 7;
+
+                            if (cells.length === 9 || cells[0].classList.contains('day')) {
+                                const dateRaw = cells[0].textContent?.trim() || '';
+                                const match = dateRaw.match(/(\d{2})\.(\d{2})/);
+                                if (match) {
+                                    currentDate = `${targetYear}-${match[1]}-${match[2]}`;
+                                }
+                            } else {
+                                timeIdx = 0;
+                                matchupIdx = 1;
+                                venueIdx = 6;
+                            }
+
+                            if (!currentDate) return;
+
+                            const time = cells[timeIdx].textContent?.trim() || '';
+                            const matchup = cells[matchupIdx].textContent?.trim() || '';
+                            const venue = cells[venueIdx].textContent?.trim() || '';
+
+                            if (matchup.includes('vs')) {
+                                games.push({
+                                    date: currentDate,
+                                    time,
+                                    matchup,
+                                    venue
+                                });
+                            }
                         });
-                    });
+                        return games;
+                    }, TARGET_YEAR);
 
-                    // Process Rows
-                    let currentDay = ''; // The 'day' col sometimes merges rows? KBO usually repeats or matches
-                    // Actually KBO site structure:
-                    // If multiple games on same day, "day" cell might assume rowspan?
-                    // Let's inspect user description: "#tblScheduleList > tbody > tr:nth-child(1) > td.day"
-                    // Puppeteer $$eval iterates TRs. If rowspan is used, subsequent TRs might miss the 'day' column if it's physically missing in DOM structure (only in first TR).
-                    // But typically `td.day` exists?
-                    // Wait, if rowspan is used, subsequent trs will have fewer TDs and NO day td.
-                    // We need to handle rowspan logic.
-                    // Or simplified: KBO schedule usually shows date for every game?
-                    // Let's check logic: if day is empty/null, use previous?
-                    // But if rowspan is used, the 'row' object from eval won't have the day text if the element is not there.
-                    // ACTUALLY: `page.$$eval` runs on the distinct TR elements.
-                    // If `td.day` has `rowspan="5"`, the next 4 trs will NOT have that `td` as a child.
-                    // So `tr.querySelector('.day')` will be null for them.
+                    console.log(`  Found ${results.length} games for ${series.name} in ${month}.`);
 
-                    // We need to reconstruct the data carefully.
-                    // Better to grab raw text of ALL tds and logic it out?
-                    // Or just do a client-side iteration in evaluate that handles state.
+                    for (const item of results) {
+                        const isoDate = item.date;
+                        const safeMatchup = slugify(item.matchup);
+                        const id = `kbo_${isoDate.replace(/-/g, '')}_${safeMatchup}`;
 
-                } catch (e) {
-                    // console.error(`Error scraping ${month}: ${e}`);
-                }
-            }
-        }
+                        if (seenIds.has(id)) continue;
+                        seenIds.add(id);
 
-        // Redoing extraction logic with rowspans in mind
-        // Reset page to initial state? No, iterate again properly.
-        // Actually, let's just push the logic into the evaluate function.
-
-        // We need to iterate again with the "Robust" evaluate
-        console.log("Starting Main Extraction Loop...");
-
-        for (const series of SERIES_LIST) {
-            // Force refresh series selection to be safe
-            console.log(`Series: ${series.name}`);
-            await selectOption('#ddlSeries', series.id);
-
-            for (const month of MONTHS) {
-                console.log(`  Month: ${month}`);
-                await selectOption('#ddlMonth', month);
-
-                const results = await page.evaluate((targetYear) => {
-                    const rows = Array.from(document.querySelectorAll('#tblScheduleList > tbody > tr'));
-                    const scraped = [];
-                    let lastDate = '';
-
-                    for (const tr of rows) {
-                        if ((tr as HTMLElement).innerText.includes('데이터가 없습니다')) continue;
-
-                        const tds = Array.from(tr.querySelectorAll('td'));
-
-                        // Handle Rowspan / Missing Date Column
-                        // If rowspan was active, this row has fewer cells?
-                        // First col is Day. Second is Time.
-                        // If Day is present (className='day'), update lastDate.
-                        // If not present, use lastDate.
-
-                        let dayText = '';
-                        let timeText = '';
-                        let playText = '';
-                        let venueText = '';
-
-                        // Check if first cell has class 'day'
-                        const firstTd = tds[0];
-                        if (firstTd && firstTd.classList.contains('day')) {
-                            dayText = firstTd.innerText.trim();
-                            lastDate = dayText; // Update current date
-
-                            // If day is present, Time is next (index 1), Play (2), ... Venue (7 / index 7 if 0-based?)
-                            // User said venue is nth-child(8) -> index 7.
-                            // Day(1), Time(2), Play(3), Relay(4), TV(5), Radio(6), Mobile(7), Venue(8) -> Index 7
-                            timeText = tds[1]?.innerText.trim() || '';
-                            playText = tds[2]?.innerText.trim() || '';
-                            venueText = tds[7]?.innerText.trim() || '';
-                        } else {
-                            // Date column is missing due to rowspan in previous row
-                            // So columns shift left by 1
-                            // Time(0), Play(1), ... Venue(6)
-                            dayText = lastDate;
-                            timeText = tds[0]?.innerText.trim() || '';
-                            playText = tds[1]?.innerText.trim() || '';
-                            venueText = tds[6]?.innerText.trim() || '';
+                        const mappedVenue = mapVenue(item.venue);
+                        const parts = item.matchup.split('vs');
+                        let homeTeam = '';
+                        let awayTeam = '';
+                        if (parts.length === 2) {
+                            awayTeam = parts[0].trim();
+                            homeTeam = parts[1].trim();
                         }
 
-                        if (playText && venueText) {
-                            scraped.push({
-                                dateStr: dayText, // "01.01(금)"
-                                time: timeText,   // "18:30"
-                                title: playText.replace('vs', ' vs '), // "LG vs KT"
-                                venue: venueText,
-                                year: targetYear
-                            });
-                        }
+                        allPerformances.push({
+                            id,
+                            title: item.matchup,
+                            image: THUMBNAIL_PATH,
+                            date: `${isoDate} ${item.time}`,
+                            venue: mappedVenue,
+                            link: TARGET_URL,
+                            region: classifyRegion(mappedVenue),
+                            genre: 'baseball',
+                            homeTeam,
+                            awayTeam,
+                            homeTeamLogo: TEAM_LOGOS[homeTeam] || '',
+                            awayTeamLogo: TEAM_LOGOS[awayTeam] || ''
+                        });
                     }
-                    return scraped;
-                }, TARGET_YEAR);
-
-                // Process results
-                for (const item of results) {
-                    // Parse date "03.09(토)" -> "2026-03-09"
-                    // Remove day of week
-                    const datePart = item.dateStr.split('(')[0]; // "03.09"
-                    const isoDate = `${item.year}-${datePart.replace('.', '-')}`; // "2026-03-09"
-
-                    // Construct ID
-                    // kbo_20260309_LG_vs_KT
-                    const safeMatchup = slugify(item.title);
-                    const id = `kbo_${isoDate.replace(/-/g, '')}_${safeMatchup}`;
-
-                    if (seenIds.has(id)) continue;
-                    seenIds.add(id);
-
-                    const mappedVenue = mapVenue(item.venue);
-
-                    // Parse Teams (Assuming standard "Away vs Home" schedule format)
-                    // e.g. "한화 vs LG" (at Jamsil) -> Hanwha(Away), LG(Home)
-                    const parts = item.title.split('vs');
-                    let homeTeam = '';
-                    let awayTeam = '';
-                    let homeTeamLogo = '';
-                    let awayTeamLogo = '';
-
-                    if (parts.length === 2) {
-                        homeTeam = parts[0].trim();
-                        awayTeam = parts[1].trim();
-
-                        homeTeamLogo = TEAM_LOGOS[homeTeam] || '';
-                        awayTeamLogo = TEAM_LOGOS[awayTeam] || '';
-                    }
-
-                    allPerformances.push({
-                        id,
-                        title: item.title,
-                        image: THUMBNAIL_PATH,
-                        date: `${isoDate} ${item.time}`,
-                        venue: mappedVenue,
-                        link: TARGET_URL, // Link to schedule page
-                        region: classifyRegion(mappedVenue),
-                        genre: 'baseball',
-                        homeTeam,
-                        awayTeam,
-                        homeTeamLogo,
-                        awayTeamLogo
-                    });
+                } catch (e: any) {
+                    console.error(`Error scraping ${series.name} in ${month}: ${e.message}`);
                 }
             }
         }
 
         console.log(`Total collected: ${allPerformances.length}`);
 
-        // Load existing data for persistence
         let existingItems: any[] = [];
         if (fs.existsSync(OUTPUT_PATH)) {
             try {
-                const fileContent = fs.readFileSync(OUTPUT_PATH, 'utf-8');
-                existingItems = JSON.parse(fileContent);
-                console.log(`Loaded ${existingItems.length} existing items for merging.`);
-            } catch (e) {
-                console.error('Error loading existing data:', e);
-            }
+                existingItems = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf-8'));
+            } catch (e) {}
         }
 
-        // Create a map of existing items by ID
         const itemMap = new Map<string, any>();
         existingItems.forEach(item => itemMap.set(item.id, item));
-
-        // Merge new items: Existing items take precedence to preserve manual edits
         allPerformances.forEach(newItem => {
             if (itemMap.has(newItem.id)) {
                 itemMap.set(newItem.id, { ...newItem, ...itemMap.get(newItem.id) });
@@ -443,7 +241,8 @@ async function scrapeKBO() {
 
         const finalItems = Array.from(itemMap.values());
         fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalItems, null, 2));
-        console.log(`Saved ${finalItems.length} items to ${OUTPUT_PATH} (Merged with existing data)`);
+        console.log(`Saved ${finalItems.length} items to ${OUTPUT_PATH}`);
+
     } finally {
         await browser.close();
     }

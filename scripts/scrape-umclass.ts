@@ -1,6 +1,8 @@
 
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 import fs from 'fs';
 import path from 'path';
 
@@ -111,108 +113,87 @@ async function scrapeUmClass() {
 
     let pendingItems: { link: string, title: string, image: string, discount: string, price: string }[] = [];
 
-    // Scrape "All" list from main class page
-    // URL provided by user: https://www.umclass.com/class?page=1
+    // Phase 1: Collect all classes
+    console.log(`\nPhase 1: Collecting all classes (All Regions / All Categories)...`);
+    
     let currentPage = 1;
     let hasNextPage = true;
-    const MAX_PAGES = 100; // Increased limit for full scrape
+    const MAX_PAGES = 50; 
 
-    console.log(`\nPhase 1: Collecting all classes (All Regions / All Categories)...`);
+    // Header settings for Korean context
+    const headers = {
+        'Accept-Language': 'ko-KR,ko;q=0.9',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    };
 
     while (hasNextPage && currentPage <= MAX_PAGES) {
         const url = `https://www.umclass.com/class?page=${currentPage}`;
         console.log(`  Visiting Page ${currentPage}: ${url}`);
 
         try {
-            await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-            // Wait for list container - selector might differ on main class page vs plan page
-            // Plan page used .classPlan-contents-list. Main class page might use .class-list-wrapper or similar.
-            // Let's use a generic wait or check if the previous selector works.
-            // If the user says https://www.umclass.com/class?page=1, checking generic list items.
-            try {
-                await page.waitForSelector('a[href*="/classInfo/"]', { timeout: 5000 });
-            } catch (e) {
-                console.log(`    No items found on page ${currentPage} (Timeout). Ending.`);
+            const response = await axios.get(url, { headers, timeout: 15000 });
+            const html = response.data;
+            const $ = cheerio.load(html);
+
+            const items = $('a[href*="/classInfo/"]');
+            
+            if (items.length === 0) {
+                console.log(`    No items found on page ${currentPage}. Stopping.`);
+                hasNextPage = false;
                 break;
             }
 
-            const pageItems = await page.evaluate(() => {
-                const anchors = document.querySelectorAll('a[href*="/classInfo/"]');
-                const results: any[] = [];
+            let newItemsCount = 0;
+            items.each((_: number, anchor: any) => {
+                const link = $(anchor).attr('href');
+                if (!link || !link.includes('/classInfo/')) return;
+                
+                const fullLink = link.startsWith('http') ? link : `https://www.umclass.com${link}`;
+                
+                const titleElem = $(anchor).find('.class-lis-itm-name');
+                const title = titleElem.text().trim();
+                if (!title) return;
 
-                anchors.forEach((anchor) => {
-                    const link = (anchor as HTMLAnchorElement).href;
-                    if (!link.includes('/classInfo/')) return;
+                // Image extraction
+                let image = '';
+                const imgDiv = $(anchor).find('.class-lis-img');
+                const style = imgDiv.attr('style') || '';
+                const bgMatch = style.match(/url\(['"]?([^'"]+)['"]?\)/);
+                if (bgMatch) {
+                    image = bgMatch[1];
+                } else if (imgDiv.attr('data-original')) {
+                    image = imgDiv.attr('data-original') || '';
+                }
 
-                    // Updated selectors from audit
-                    const titleElem = anchor.querySelector('.class-lis-itm-name');
-                    let title = titleElem ? titleElem.textContent?.trim() : '';
-                    if (!title) return;
+                // Price/Discount
+                const priceElem = $(anchor).find('.class-lis-mony-txt');
+                let price = '';
+                let discount = '';
 
-                    // Image extraction from div.class-lis-img background-image
-                    let image = '';
-                    const imgDiv = anchor.querySelector('.class-lis-img');
-                    if (imgDiv) {
-                        const style = window.getComputedStyle(imgDiv);
-                        const bgImage = style.backgroundImage;
-                        if (bgImage && bgImage !== 'none') {
-                            image = bgImage.slice(4, -1).replace(/"/g, '');
-                        }
-                    }
+                priceElem.each((_: number, el: any) => {
+                    const text = $(el).text().trim();
+                    if (text.endsWith('%')) discount = text;
+                    if (text.endsWith('원')) price = text;
+                });
 
-                    // Price/Discount extraction from .class-lis-mony-txt
-                    // Usually contains both discount % and price
-                    const priceElem = anchor.querySelector('.class-lis-mony-txt');
-                    let price = '';
-                    let discount = '';
-
-                    if (priceElem) {
-                        const text = priceElem.textContent || '';
-                        // Extract % for discount
-                        const discMatch = text.match(/(\d+)%/);
-                        if (discMatch) discount = discMatch[1] + '%';
-
-                        // Extract "원" for price
-                        const priceMatch = text.match(/([\d,]+)원/);
-                        if (priceMatch) price = priceMatch[1] + '원';
-                    }
-
-                    results.push({
+                if (!seenTitles.has(title)) {
+                    seenTitles.add(title);
+                    pendingItems.push({
                         title,
-                        link,
+                        link: fullLink,
                         image,
                         price,
                         discount
                     });
-                });
-                return results;
+                    newItemsCount++;
+                }
             });
 
-            if (pageItems.length === 0) {
-                console.log(`    No items found on page ${currentPage}. Stopping.`);
-                hasNextPage = false;
-            } else {
-                let newItems = 0;
-                for (const item of pageItems) {
-                    if (!seenTitles.has(item.title)) {
-                        seenTitles.add(item.title);
-                        pendingItems.push(item);
-                        newItems++;
-                    }
-                }
-                console.log(`    Found ${pageItems.length} items (${newItems} new).`);
+            console.log(`    Found ${items.length} items (${newItemsCount} new).`);
+            currentPage++;
 
-                // If page had items but all were duplicates, we still continue because order isn't guaranteed unique across pages?
-                // Or maybe we stop? Safer to continue a bit.
-                if (pageItems.length < 5) {
-                    // Start calling it quits if very few items
-                }
-
-                currentPage++;
-            }
-
-        } catch (e) {
-            console.error(`    Error on page ${currentPage}: ${e}`);
+        } catch (e: any) {
+            console.error(`    Error on page ${currentPage}: ${e.message}`);
             hasNextPage = false;
         }
     }
