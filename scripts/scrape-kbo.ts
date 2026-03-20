@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+import { withErrorHandling, getBrowserConfig, getCurrentYear } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -68,17 +69,8 @@ function classifyRegion(venue: string): string {
 
 async function scrapeKBO() {
     console.log(`Starting KBO Scraper...`);
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu',
-            '--window-size=1280,1024'
-        ],
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
-    });
+    const browserConfig = await getBrowserConfig();
+    const browser = await puppeteer.launch(browserConfig);
 
     try {
         const page = await browser.newPage();
@@ -89,7 +81,7 @@ async function scrapeKBO() {
         const allPerformances: Performance[] = [];
         const seenIds = new Set<string>();
 
-        const TARGET_YEAR = '2025'; // UPDATED TO 2025 as it is current/upcoming season
+        const TARGET_YEAR = getCurrentYear(); // Use dynamic year (replaces hardcoded 2025)
         const SERIES_LIST = [
             { id: '1', name: 'Exhibition' },
             { id: '0,9,6', name: 'Regular' },
@@ -248,9 +240,4 @@ async function scrapeKBO() {
     }
 }
 
-scrapeKBO().then(() => {
-    process.exit(0);
-}).catch(err => {
-    console.error(err);
-    process.exit(1);
-});
+withErrorHandling('kbo', scrapeKBO);

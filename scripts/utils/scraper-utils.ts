@@ -124,6 +124,13 @@ export async function getBrowserConfig() {
 }
 
 /**
+ * Helper to get current year for sports/event scrapers
+ */
+export function getCurrentYear(): string {
+    return new Date().getFullYear().toString();
+}
+
+/**
  * Standardized wrapper for scrapers with error reporting.
  */
 export async function withErrorHandling(scraperName: string, fn: () => Promise<void>) {

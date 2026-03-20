@@ -5,6 +5,7 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import fs from 'fs';
 import path from 'path';
+import { withErrorHandling, getBrowserConfig } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -76,17 +77,8 @@ function slugify(text: string): string {
 async function scrapeUmClass() {
     console.log(`Starting UmClass Scraper...`);
 
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu',
-            '--window-size=1280,800'
-        ],
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
-    });
+    const browserConfig = await getBrowserConfig();
+    const browser = await puppeteer.launch(browserConfig);
 
     // Load existing items
     const existingMap = new Map<string, UmClassItem>();
@@ -410,4 +402,4 @@ async function scrapeUmClass() {
     saveData(allItems);
 }
 
-scrapeUmClass().catch(console.error);
+withErrorHandling('umclass', scrapeUmClass);

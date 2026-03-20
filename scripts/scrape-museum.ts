@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+import { withErrorHandling, getBrowserConfig } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -36,10 +37,8 @@ interface MuseumItem {
 
 async function scrapeMuseum() {
     console.log('Starting Museum/Experience Scraper...');
-    const browser = await puppeteer.launch({
-        headless: process.env.HEADLESS !== 'false',
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+    const browserConfig = await getBrowserConfig();
+    const browser = await puppeteer.launch(browserConfig);
 
     try {
         const page = await browser.newPage();
@@ -129,13 +128,7 @@ async function scrapeMuseum() {
         });
 
         if (listItems.length === 0) {
-            console.error('Museum scraper found 0 items. Creating error marker.');
-            fs.writeFileSync(path.join(process.cwd(), 'src/data/museum.error'), 'Museum scraper found 0 items. Check selector: div.contents > a');
-            await browser.close();
-            return;
-        } else {
-            const errFile = path.join(process.cwd(), 'src/data/museum.error');
-            if (fs.existsSync(errFile)) fs.unlinkSync(errFile);
+            throw new Error('Museum scraper found 0 items. Check selector: div.contents > a');
         }
 
         console.log(`Found ${listItems.length} items. Starting detail scraping...`);
@@ -255,4 +248,4 @@ async function scrapeMuseum() {
     }
 }
 
-scrapeMuseum();
+withErrorHandling('museum', scrapeMuseum);

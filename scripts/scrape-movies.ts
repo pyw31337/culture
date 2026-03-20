@@ -4,6 +4,7 @@ import path from 'path';
 import { processImage } from './utils/image-processor.js';
 import axios from 'axios';
 import cliProgress from 'cli-progress';
+import { withErrorHandling } from './utils/scraper-utils';
 
 // API Keys
 const KOBIS_API_KEY = process.env.KOBIS_API_KEY || '';
@@ -415,4 +416,4 @@ async function scrapeMovies() {
     }
 }
 
-scrapeMovies().then(() => process.exit(0)).catch(e => process.exit(1));
+withErrorHandling('movies', scrapeMovies);
