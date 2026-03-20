@@ -3,17 +3,16 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Trigger on push to main (UI/Code changes)
+      - main
   workflow_run:
     workflows: ["Daily Data Update"]
     types:
       - completed
-  workflow_call: # Allow calling from other workflows (like daily-update)
+  workflow_call:
 
 permissions:
   contents: write
 
-# Prevent overlapping deployments
 concurrency:
   group: pages-deploy
   cancel-in-progress: true
@@ -45,6 +44,7 @@ jobs:
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
           npm install
+          npm install -g tsx
 
       - name: Build Website
         env:
