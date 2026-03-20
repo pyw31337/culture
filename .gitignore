@@ -29,6 +29,18 @@ Untitled-*.psd
 *.zip
 *.log
 *.txt
+*.csv
+
+# AI & Internal Tools
+.agent/
+.agents/
+.npm_cache/
+QUALITY_REPORT.json
+REMEDIATION.md
+RESUME_GUIDE.md
+geospatial_audit_report.md
+test-results/
+favicon_io/
 
 # screenshots & debug images
 debug-*.png
@@ -56,7 +68,8 @@ missing_venues.txt
 # sensitive keys
 oracle_key
 .env*
-!.env.example
+public/sw*.js
+public/precache.*.js
 
 # debug & temp artifacts
 debug_*
