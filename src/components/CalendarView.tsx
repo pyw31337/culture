@@ -8,7 +8,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { X, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, translateContent } from '@/lib/utils';
 import CalendarDayCell from './CalendarDayCell';
 import venueData from '@/data/venues.json';
 import { MapPin } from 'lucide-react';
@@ -27,6 +27,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
     const t = useTranslations('Calendar');
     const tc = useTranslations('Categories');
     const ta = useTranslations('Actions');
+    const td = useTranslations('Data');
     const locale = useLocale();
     const dateLocale = locale === 'ko' ? ko : enUS;
     const router = useRouter();
@@ -347,9 +348,9 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                                     <span className={clsx("px-2 py-0.5 rounded text-[10px] font-black tracking-wider text-white uppercase", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
                                                         {tc(perf.genre)}
                                                     </span>
-                                                    <span className="text-[11px] text-gray-500 font-bold truncate">{perf.venue}</span>
+                                                    <span className="text-[11px] text-gray-500 font-bold truncate">{translateContent(perf.venue, td)}</span>
                                                 </div>
-                                                <h4 className="text-sm sm:text-base font-black text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
+                                                <h4 className="text-sm sm:text-base font-black text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{translateContent(perf.title, td)}</h4>
                                                 {(() => {
                                                     const v = venues[perf.venue];
                                                     const addr = v?.address || '';

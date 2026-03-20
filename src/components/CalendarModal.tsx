@@ -7,11 +7,13 @@ import { ko } from 'date-fns/locale';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, translateContent } from '@/lib/utils';
 import Portal from './ui/Portal';
 import CalendarDayCell from './CalendarDayCell';
 import venueData from '@/data/venues.json';
 import { MapPin } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import { ko, enUS } from 'date-fns/locale';
 
 const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string }>;
 
@@ -25,6 +27,12 @@ interface CalendarModalProps {
 type CalendarView = 'daily' | 'weekly' | 'monthly';
 
 export default function CalendarModal({ performances, onClose, selectedGenre = 'all', onGenreSelect }: CalendarModalProps) {
+    const t = useTranslations('Calendar');
+    const tc = useTranslations('Categories');
+    const td = useTranslations('Data');
+    const locale = useLocale();
+    const dateLocale = locale === 'ko' ? ko : enUS;
+
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [calendarView, setCalendarView] = useState<CalendarView>('monthly');
     const [localGenre, setLocalGenre] = useState(selectedGenre);
@@ -201,19 +209,19 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                 else setCurrentMonth(subDays(currentMonth, 1));
                             }} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0"><ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" /></button>
 
-                            <span className="hidden sm:inline cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title="오늘로 이동">
+                            <span className="hidden sm:inline cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title={t('today')}>
                                 {calendarView === 'daily'
-                                    ? format(currentMonth, 'yyyy년 M월 d일 (eee)', { locale: ko })
+                                    ? format(currentMonth, locale === 'ko' ? 'yyyy년 M월 d일 (eee)' : 'EEE, MMM d, yyyy', { locale: dateLocale })
                                     : calendarView === 'weekly'
                                         ? `${format(startOfWeek(currentMonth), 'M/d')} ~ ${format(endOfWeek(currentMonth), 'M/d')}`
-                                        : format(currentMonth, 'yyyy년 M월', { locale: ko })}
+                                        : format(currentMonth, locale === 'ko' ? 'yyyy년 M월' : 'MMM yyyy', { locale: dateLocale })}
                             </span>
-                            <span className="sm:hidden text-base truncate cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title="오늘로 이동">
+                            <span className="sm:hidden text-base truncate cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors" onClick={() => setCurrentMonth(new Date())} title={t('today')}>
                                 {calendarView === 'daily'
-                                    ? format(currentMonth, 'yy.MM.dd', { locale: ko })
+                                    ? format(currentMonth, 'yy.MM.dd', { locale: dateLocale })
                                     : calendarView === 'weekly'
                                         ? `${format(startOfWeek(currentMonth), 'M/d')}~${format(endOfWeek(currentMonth), 'M/d')}`
-                                        : format(currentMonth, 'yy.MM', { locale: ko })}
+                                        : format(currentMonth, 'yy.MM', { locale: dateLocale })}
                             </span>
 
                             <button onClick={() => {
@@ -234,7 +242,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                             : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
                                     )}
                                 >
-                                    {v === 'daily' ? '일간' : v === 'weekly' ? '주간' : '월간'}
+                                    {v === 'daily' ? t('daily') : v === 'weekly' ? t('weekly') : t('monthly')}
                                 </button>
                             ))}
                             <button onClick={onClose} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition ml-0 sm:ml-2 shrink-0">
@@ -297,7 +305,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                         <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 text-gray-400">
                                             <X size={32} />
                                         </div>
-                                        <p className="text-gray-500 text-lg font-bold">일정이 없습니다</p>
+                                        <p className="text-gray-500 text-lg font-bold">{t('no_events')}</p>
                                     </div>
                                 );
                                 return (
@@ -314,11 +322,11 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                                 <div className="min-w-0 flex-1 flex flex-col justify-center">
                                                     <div className="flex items-center gap-2 mb-1.5">
                                                         <span className={clsx("px-2 py-0.5 rounded text-[10px] font-black tracking-wider text-white uppercase", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
-                                                            {GENRES.find(g => g.id === perf.genre)?.label}
+                                                            {tc(perf.genre)}
                                                         </span>
-                                                        <span className="text-[11px] text-gray-500 font-bold truncate">{perf.venue}</span>
+                                                        <span className="text-[11px] text-gray-500 font-bold truncate">{translateContent(perf.venue, td)}</span>
                                                     </div>
-                                                    <h4 className="text-sm sm:text-base font-black text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
+                                                    <h4 className="text-sm sm:text-base font-black text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{translateContent(perf.title, td)}</h4>
                                                     {/* Mobile: location below title */}
                                                     {(() => {
                                                         const v = venues[perf.venue];
@@ -389,7 +397,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                                 "text-[10px] sm:text-xs font-black uppercase tracking-tighter",
                                                 idx === 0 ? "text-red-500" : idx === 6 ? "text-blue-500" : "text-gray-500 dark:text-gray-400"
                                             )}>
-                                                {format(day, 'eee', { locale: ko })}
+                                                {format(day, 'eee', { locale: dateLocale })}
                                             </span>
                                             <span className="text-xl sm:text-3xl font-black text-gray-900 dark:text-white leading-none mt-1">
                                                 {format(day, 'd')}
@@ -440,9 +448,9 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                     {calendarView === 'monthly' && (
                         <>
                             <div className="grid grid-cols-7 border-b border-gray-100 dark:border-gray-900 bg-gray-50 dark:bg-gray-950/50 shrink-0">
-                                {['일', '월', '화', '수', '목', '금', '토'].map((day, idx) => (
-                                    <div key={day} className={clsx("py-3 text-center text-xs font-black uppercase tracking-widest", idx === 0 ? "text-red-500/80" : idx === 6 ? "text-blue-500/80" : "text-gray-400 dark:text-gray-500")}>
-                                        {day}
+                                {(['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'] as const).map((dayKey, idx) => (
+                                    <div key={dayKey} className={clsx("py-3 text-center text-xs font-black uppercase tracking-widest", idx === 0 ? "text-red-500/80" : idx === 6 ? "text-blue-500/80" : "text-gray-400 dark:text-gray-500")}>
+                                        {t(dayKey)}
                                     </div>
                                 ))}
                             </div>

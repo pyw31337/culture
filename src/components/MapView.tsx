@@ -58,6 +58,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const ts = useTranslations('Search');
     const tw = useTranslations('Weather');
     const tl = useTranslations('Likes');
+    const td = useTranslations('Data');
 
     // Self-contained state from URL params
     const selectedGenre = searchParams.get('genre') || 'all';
@@ -330,7 +331,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 window.kakao.maps.event.addListener(map, 'zoom_changed', () => setShowSearchHereBtn(true));
 
                 setIsMapReady(true);
-                setTimeout(() => { map.relayout(); map.relayout(); }, 500);
+                setTimeout(() => { map.relayout(); }, 200);
             });
         };
 
@@ -361,7 +362,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
             const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
                 <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
-                    ${mapSearchCenter.name || ts('search_location')}
+                    ${translateContent(mapSearchCenter.name, td) || ts('search_location')}
                 </div>
                 <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
                     <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
@@ -662,8 +663,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     };
 
     return (
-        <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-            <div className="relative w-full h-full bg-white dark:bg-black overflow-hidden shadow-2xl flex flex-col">
+        <div className="fixed inset-0 z-[999999] bg-black/80 backdrop-blur-sm p-0 m-0">
+            <div className="absolute inset-0 bg-white dark:bg-black overflow-hidden shadow-2xl flex flex-col">
                 {/* Controls */}
                 <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2">
                     <button onClick={handleClose}
@@ -698,7 +699,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     </button>
                 </div>
 
-                <div ref={mapRef} className="flex-1 w-full bg-gray-200 dark:bg-gray-800 relative z-0" />
+                <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
                 {/* Left Controls: Category Filter */}
                 <div className="absolute top-4 left-4 z-[110] flex flex-col gap-2">
@@ -876,8 +877,8 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                 <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
                                     <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
                                         <div className="min-w-0 flex-1">
-                                            <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
-                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address}</p>
+                                            <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{translateContent(selectedVenue, td)}</h3>
+                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{translateContent(selectedVenueData.address, td)}</p>
                                         </div>
                                         <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
                                             <X size={16} />
@@ -931,7 +932,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                         <span className="text-[9px] text-gray-500">{p.date}</span>
                                                     </div>
                                                     <h4 className="text-[12px] font-bold text-gray-900 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 line-clamp-2 leading-tight">
-                                                        {p.title}
+                                                        {translateContent(p.title, td)}
                                                     </h4>
                                                 </div>
                                             </a>
@@ -1005,7 +1006,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                 : "bg-white/90 dark:bg-gray-800/90 backdrop-blur border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:scale-[1.01]"
                                         )}>
                                         <div className="flex justify-between items-start w-full">
-                                            <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-white" : "text-gray-900 dark:text-white")}>{v.venueName}</h4>
+                                            <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-white" : "text-gray-900 dark:text-white")}>{translateContent(v.venueName, td)}</h4>
                                             <button onClick={(e) => { e.stopPropagation(); toggleFavoriteVenue(v.venueName); }}
                                                 className={clsx("ml-2 p-1 rounded-full transition-colors",
                                                     isFavorite ? (isSelected ? "bg-white/20 hover:bg-white/30" : "hover:bg-pink-100 dark:hover:bg-pink-900/50")
@@ -1019,7 +1020,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                 {distanceLabel}
                                             </div>
                                         )}
-                                        <span className={clsx("text-[10px] truncate", isSelected ? "text-white/80" : "text-gray-500 dark:text-gray-400")}>{v.address}</span>
+                                        <span className={clsx("text-[10px] truncate", isSelected ? "text-white/80" : "text-gray-500 dark:text-gray-400")}>{translateContent(v.address, td)}</span>
                                         <div className="mt-auto flex items-center justify-between text-xs">
                                             <span className={clsx("font-bold shrink-0", isSelected ? "text-white" : "text-emerald-600 dark:text-emerald-400")}>
                                                 {tw('content_count', { count: v.performances.length })}

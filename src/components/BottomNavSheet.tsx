@@ -6,7 +6,7 @@ import { CloverIcon } from './GenreIcons';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 import { safeStorage } from '@/lib/safeStorage';
 import { Performance } from '@/types';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, translateContent } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 
 
@@ -79,6 +79,7 @@ export default function BottomNavSheet({
     const tc = useTranslations('Categories');
     const tcm = useTranslations('Common');
     const tem = useTranslations('EmptyState');
+    const td = useTranslations('Data');
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -531,7 +532,7 @@ export default function BottomNavSheet({
                                 <div>
                                     <h3 className="text-xl font-bold text-white light:text-black flex items-center gap-2">
                                         <MapPin className="text-emerald-500 w-5 h-5" />
-                                        {selectedVenue}
+                                        {translateContent(selectedVenue, td)}
                                         <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-900/50 text-emerald-300 border border-emerald-800">
                                             {tcm('count_unit', { count: venuePerformances.length })}
                                         </span>
@@ -574,7 +575,7 @@ export default function BottomNavSheet({
                                                     <span className="text-[10px] text-gray-500">{p.date}</span>
                                                 </div>
                                                 <h4 className="text-sm font-bold text-gray-100 light:text-black line-clamp-2 leading-tight">
-                                                    {p.title}
+                                                    {translateContent(p.title, td)}
                                                 </h4>
                                             </div>
                                         </a>
