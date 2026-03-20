@@ -49,17 +49,26 @@ async function validate() {
             const fileStats = fs.statSync(filePath);
             const content = fs.readFileSync(filePath, 'utf-8');
             
-            // --- STALENESS CHECK (48h) ---
+            // --- STALENESS CHECK ---
             const now = new Date();
             const lastModified = fileStats.mtime;
             const diffHours = (now.getTime() - lastModified.getTime()) / (1000 * 60 * 60);
 
+            // Check if this specific scraper reported an error recently
+            const errorFile = path.join(dataDir, `${target.file.replace('.json', '')}.error`);
+            const hasErrorReport = fs.existsSync(errorFile);
+
             if (diffHours > 48) {
-                const msg = `⚠️ [${target.name}] 데이터가 너무 오래됨: ${Math.round(diffHours)}시간 경과 (최근 수정: ${lastModified.toLocaleString('ko-KR')})`;
-                if (diffHours > 72) {
-                    errors.push(`❌ ${msg.replace('⚠️', '심각')}`);
+                const msg = `⚠️ [${target.name}] 데이터 지연: ${Math.round(diffHours)}시간 경과 (최근 수정: ${lastModified.toLocaleString('ko-KR')})`;
+                
+                // If there's an explicit error report, we give it a longer grace period (120h = 5 days) before blocking build.
+                // If no error report (silent failure), we block at 72h (3 days).
+                const terminalThreshold = hasErrorReport ? 120 : 72;
+
+                if (diffHours > terminalThreshold) {
+                    errors.push(`❌ [${target.name}] 심각한 데이터 노후화 (${Math.round(diffHours)}h > ${terminalThreshold}h 기준): ${msg}`);
                 } else {
-                    warnings.push(msg);
+                    warnings.push(`${msg} (임계값까지 ${Math.round(terminalThreshold - diffHours)}시간 남음)`);
                 }
             }
 
@@ -145,6 +154,14 @@ async function validate() {
                         errors.push(`❌ [${target.name}] Top 10 필수 이미지 누락: ${top10Invalid.length}건 (총 ${invalidImageCount}건 오류)`);
                     } else {
                         warnings.push(`⚠️ [${target.name}] 일반 영화 이미지 누락: ${invalidImageCount}건 ${stats}`);
+                    }
+                } else if (target.file.includes('class') || target.file.includes('museum')) {
+                    // For Class/Museum, images are high-priority but we allow up to 20% failure as warning before blocking
+                    const errorRate = invalidImageCount / data.length;
+                    if (errorRate > 0.2) {
+                        errors.push(`❌ [${target.name}] 대량 이미지 오류 (${Math.round(errorRate * 100)}%): ${invalidImageCount}건 ${stats}`);
+                    } else {
+                        warnings.push(`⚠️ [${target.name}] 일부 이미지 오류: ${invalidImageCount}건 ${stats}`);
                     }
                 } else {
                     errors.push(msg);

@@ -8,6 +8,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import crypto from 'crypto';
 import cliProgress from 'cli-progress';
+import { withErrorHandling, getBrowserConfig } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -155,7 +156,7 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
             if (html.includes('charset=euc-kr') || html.includes('charset="euc-kr"')) {
                 html = iconv.decode(buffer, 'euc-kr');
             }
-        } catch (me) {
+        } catch (me: any) {
             console.error(`[Interpark] Discovery failed for ${regionName}: ${me.message}`);
             return [];
         }
@@ -844,11 +845,8 @@ const runScraper = async () => {
     console.log(`Found ${uniqueItems.length} total items. Enriching Items...`);
 
     // 2. Enrich Details
-    const browser = await puppeteer.launch({
-        headless: true,
-        protocolTimeout: 60000,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
-    });
+    const browserConfig = await getBrowserConfig();
+    const browser = await puppeteer.launch(browserConfig);
 
     try {
         const finalItems = await scrapeDetails(browser, uniqueItems, existingMap);
@@ -862,9 +860,4 @@ const runScraper = async () => {
     }
 };
 
-runScraper().then(() => {
-    process.exit(0);
-}).catch(err => {
-    console.error(err);
-    process.exit(1);
-});
+withErrorHandling('interpark', runScraper);

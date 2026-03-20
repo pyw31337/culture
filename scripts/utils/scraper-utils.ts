@@ -3,6 +3,10 @@ import fs from 'fs';
 import path from 'path';
 import { cleanTitle as libCleanTitle, formatUnifiedDate as libFormatUnifiedDate } from '../../src/lib/utils';
 import { Performance } from '../../src/types';
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
+
+puppeteer.use(StealthPlugin());
 
 /**
  * Shared Scraper Utilities for CultureFlow
@@ -78,4 +82,58 @@ export function loadJson(filename: string, defaultValue: any = []) {
 export function cleanPrice(price: string): string {
     if (!price) return '정보 없음';
     return price.trim().replace(/\s+/g, ' ');
+}
+
+/**
+ * Standardize error reporting for scrapers.
+ * Writes a .error file that the validator can pick up.
+ */
+export function reportError(scraperName: string, error: any) {
+    const errorMsg = error instanceof Error ? error.stack || error.message : String(error);
+    const filePath = path.join(process.cwd(), 'src/data', `${scraperName}.error`);
+    fs.writeFileSync(filePath, `[${new Date().toISOString()}] ${errorMsg}`, 'utf8');
+    console.error(`\n🚨 [${scraperName}] Critical Error Reported:`, errorMsg);
+}
+
+/**
+ * Remove an existing error file if the scraper succeeds.
+ */
+export function clearError(scraperName: string) {
+    const filePath = path.join(process.cwd(), 'src/data', `${scraperName}.error`);
+    if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+    }
+}
+
+/**
+ * Centralized Puppeteer configuration for CI/CD and Local stability.
+ */
+export async function getBrowserConfig() {
+    return {
+        headless: true,
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--window-size=1280,800',
+            '--hide-scrollbars'
+        ],
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
+    };
+}
+
+/**
+ * Standardized wrapper for scrapers with error reporting.
+ */
+export async function withErrorHandling(scraperName: string, fn: () => Promise<void>) {
+    try {
+        console.log(`\n🚀 Starting Scraper: ${scraperName}`);
+        await fn();
+        clearError(scraperName);
+        console.log(`\n✨ Scraper Finished Successfully: ${scraperName}`);
+    } catch (error) {
+        reportError(scraperName, error);
+        // We don't rethrow because we want the daily update workflow to continue with other scrapers.
+    }
 }

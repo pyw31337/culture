@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+import { withErrorHandling, getBrowserConfig } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -73,17 +74,8 @@ function slugify(text: string): string {
 async function scrapeMochaClass() {
     console.log(`Starting MochaClass Scraper...`);
 
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu',
-            '--window-size=1280,800'
-        ],
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
-    });
+    const browserConfig = await getBrowserConfig();
+    const browser = await puppeteer.launch(browserConfig);
 
     // Load existing items
     const existingMap = new Map<string, MochaClassItem>();
@@ -449,4 +441,4 @@ async function scrapeMochaClass() {
     saveData(allItems);
 }
 
-scrapeMochaClass().catch(console.error);
+withErrorHandling('mochaclass', scrapeMochaClass);
