@@ -42,7 +42,6 @@ async function fetchKobisBoxOffice() {
 }
 
 async function fetchKobisUpcoming(page = 1) {
-    // Fetch a broad list of potential upcoming movies
     const currentYear = new Date().getFullYear();
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${KOBIS_API_KEY}&itemPerPage=100&prdtStartYear=${currentYear - 1}&curPage=${page}`;
     const res = await axios.get(url);
@@ -50,6 +49,7 @@ async function fetchKobisUpcoming(page = 1) {
 }
 
 async function fetchKobisDetail(movieCd: string) {
+    if (!movieCd) return null;
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=${KOBIS_API_KEY}&movieCd=${movieCd}`;
     try {
         const res = await axios.get(url);
@@ -58,12 +58,12 @@ async function fetchKobisDetail(movieCd: string) {
 }
 
 async function fetchTmdbData(title: string, year: string) {
+    if (!TMDB_API_KEY) return null;
     try {
         const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&language=ko-KR&primary_release_year=${year.substring(0, 4)}`;
         let searchRes = await axios.get(searchUrl);
         let results = searchRes.data.results;
         
-        // Fallback: If no results with year, try without year
         if (!results || results.length === 0) {
             const fallbackUrl = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&language=ko-KR`;
             searchRes = await axios.get(fallbackUrl);
@@ -79,9 +79,6 @@ async function fetchTmdbData(title: string, year: string) {
     } catch (e) { return null; }
 }
 
-/**
- * MovieChart Crawler for Reservation Rate / Audience Count
- */
 async function scrapeMovieChart(page: any, title: string) {
     try {
         const searchUrl = `https://m.moviechart.co.kr/rank/realtime/index/image`;
@@ -91,7 +88,6 @@ async function scrapeMovieChart(page: any, title: string) {
             const items = Array.from(document.querySelectorAll('.movieBox-item'));
             const match = items.find(item => {
                 const itemTitle = item.querySelector('.movie-title a')?.textContent?.trim() || '';
-                // Flexible match for varying title formats
                 const cleanT = t.replace(/\s+/g, '');
                 const cleanItemT = itemTitle.replace(/\s+/g, '');
                 return cleanItemT.includes(cleanT) || cleanT.includes(cleanItemT);
@@ -130,11 +126,10 @@ async function scrapeMovieChart(page: any, title: string) {
 // --- Main Scraper ---
 
 async function scrapeMovies() {
-    console.log('Starting Multi-Source Enrichment Scraper (KOBIS + TMDB + MovieChart)...');
+    console.log('Starting Optimized Multi-Source Enrichment Scraper...');
 
     if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
-    // Load Existing Data
     const existingMap = new Map<string, any>();
     if (fs.existsSync(OUTPUT_FILE)) {
         try {
@@ -151,73 +146,32 @@ async function scrapeMovies() {
     const endYear = startYear + 1;
     const openEndDtNum = parseInt(`${endYear}${String(startMonth).padStart(2, '0')}31`);
 
-    // Strict Valid Range for final output (Allow current - 2 months to current + 1 year)
     const prevMonth = new Date();
     prevMonth.setMonth(prevMonth.getMonth() - 2);
     const validStartDtNum = parseInt(`${prevMonth.getFullYear()}${String(prevMonth.getMonth() + 1).padStart(2, '0')}01`);
     const validEndDtNum = openEndDtNum;
 
-    console.log(`Enforcing discovery range: ${openStartDtNum} to ${openEndDtNum}`);
-    console.log(`Strict validation range: ${validStartDtNum} to ${validEndDtNum}`);
-
     const discoveryList: any[] = [];
     try {
-        console.log('Discovery Phase: Fetching KOBIS API (Box Office + 20 pages of Upcoming)...');
+        console.log('Discovery Phase: Fetching KOBIS API (Box Office + 5 pages of Upcoming)...');
         const bo = await fetchKobisBoxOffice();
         bo.slice(0, 10).forEach((m: any) => discoveryList.push({ title: m.movieNm, movieCd: m.movieCd, rank: parseInt(m.rank), dateRaw: m.openDt, type: 'boxoffice' }));
         
-        // Fetch 20 pages (2000 items) to ensure we reach far-future major titles like Avengers
-        for (let p = 1; p <= 20; p++) {
+        for (let p = 1; p <= 5; p++) {
             const up = await fetchKobisUpcoming(p);
             up.forEach((m: any) => {
                 const odt = parseInt(m.openDt || '0');
                 const prdtYear = parseInt(m.prdtYear || '0');
-                // Include if date is in range OR if date is missing but status is upcoming for current/future year
                 const isLikelyFuture = (m.prdtStatNm === '개봉예정' || m.prdtStatNm === '개봉준비') && prdtYear >= startYear;
 
                 if (!discoveryList.find(d => d.movieCd === m.movieCd)) {
                     if ((odt >= openStartDtNum && odt <= openEndDtNum) || (odt === 0 && isLikelyFuture)) {
-                        discoveryList.push({ 
-                            title: m.movieNm, 
-                            movieCd: m.movieCd, 
-                            dateRaw: m.openDt, 
-                            prdtYear: m.prdtYear,
-                            type: 'upcoming' 
-                        });
+                        discoveryList.push({ title: m.movieNm, movieCd: m.movieCd, dateRaw: m.openDt, prdtYear: m.prdtYear, type: 'upcoming' });
                     }
                 }
             });
-            if (up.length < 100) break; // End of results
+            if (up.length < 100) break;
         }
-        
-        // Manual Discovery for confirmed re-releases if not found in KOBIS
-        const RECONFIRMED_TITLES = ['오만과 편견', '킬 빌: 더 홀 블러디 어페어'];
-        for (const title of RECONFIRMED_TITLES) {
-            if (!discoveryList.find(d => d.title.includes(title))) {
-                console.log(`[DISCOVERY] Manually adding reconfirmed title: ${title}`);
-                discoveryList.push({ title, movieCd: '', type: 'manual' });
-            }
-        }
-
-        console.log(`Discovered ${discoveryList.length} movies via API.`);
-
-        // [New] Megahit tracking: Ensure big hits are updated even if off-chart
-        existingMap.forEach((m: any, title: string) => {
-            const countStr = m.audienceCount || '0';
-            const count = parseInt(countStr.replace(/[^0-9]/g, '')) || 0;
-            const isFresh = m.lastCollected && (new Date().getTime() - new Date(m.lastCollected).getTime() < 1000 * 60 * 60 * 24 * 7);
-            
-            if (count > 1000000 && !discoveryList.find(d => d.title === title)) {
-                // If it's a megahit and hasn't been updated recently, force discovery
-                console.log(`[DISCOVERY] Forcing update for megahit: ${title} (${countStr})`);
-                discoveryList.push({ 
-                    title, 
-                    movieCd: m.movieCd || '', 
-                    dateRaw: m.dateRaw, 
-                    type: 'megahit' 
-                });
-            }
-        });
     } catch (e: any) {
         console.error('API Discovery failed:', e.message);
     }
@@ -232,184 +186,136 @@ async function scrapeMovies() {
 
     progressBar.start(discoveryList.length, 0, { movie: '시작' });
     const finalMovies: any[] = [];
-    for (const m of discoveryList) {
-        progressBar.update({ movie: m.title.substring(0, 15) });
-        
-        const existing = existingMap.get(m.title);
+    const CONCURRENCY = 5;
+    const DIRTY_KEYWORDS = ['에로', '성인', '포르노', '섹스', '정사', '유부녀', '사모님', '정원사', '여대생', '박음', '새엄마', '여사친', '꼭지', '공략', '구멍', '젖었다', '거유', '침대', '속옷', '치마', '빨간', '비밀', '은밀한', '관음', '교사', '며느리', '시아버지', '장모', '사위', '형수', '처제', '조이는', '넣어', '만지', '벌려', '빨아', '맛본', '절륜', '섹파', '조건', '만남', '여관', '가정부', '번식', '노천탕', '도우미', '동창', '여직원', '몸매', '가슴'];
 
-        // Content Filter Configuration
-        // We only filter if title contains dirty keywords or if genre is explicitly "에로"
-        const DIRTY_KEYWORDS = [
-            '에로', '성인', '포르노', '섹스', '정사', '유부녀', '사모님', '정원사',
-            '여대생', '박음', '새엄마', '여사친', '꼭지', '공략', '구멍', '젖었다',
-            '거유', '침대', '속옷', '치마', '빨간', '비밀', '은밀한', '관음', '교사',
-            '며느리', '시아버지', '장모', '사위', '형수', '처제', '조이는', '넣어',
-            '만지', '벌려', '빨아', '맛본', '절륜', '섹파', '조건', '만남', '여관',
-            '가정부', '번식', '노천탕', '도우미', '동창', '여직원', '몸매', '가슴'
-        ];
-        const hasBadTitle = DIRTY_KEYWORDS.some(k => m.title.includes(k));
+    for (let i = 0; i < discoveryList.length; i += CONCURRENCY) {
+        const chunk = discoveryList.slice(i, i + CONCURRENCY);
+        await Promise.all(chunk.map(async (m) => {
+            progressBar.update({ movie: m.title.substring(0, 15) });
+            const existing = existingMap.get(m.title);
 
-        if (hasBadTitle) {
-            console.log(`[FILTER] Skipping bad title: ${m.title}`);
-            progressBar.increment();
-            continue;
-        }
-
-        // Optimization: Only skip if we have EVERYTHING (including new fields)
-        // Optimization: Skip if we have ALL metrics
-        if (existing && existing.image && existing.cast && existing.director && 
-            existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
-            existing.reservationRate && existing.audienceCount && existing.roi && !existing.posterFallback) {
-            
-            // --- DATA VALIDITY CHECK ---
-            const movieDt = parseInt(existing.dateRaw?.replace(/-/g, '') || '0');
-            if (movieDt > 0 && (movieDt < validStartDtNum || movieDt > validEndDtNum)) {
-                console.log(`[VALIDITY] Removing stale existing movie: ${existing.title} (${existing.date})`);
-                progressBar.increment();
-                continue;
-            }
-
-            // If it's already in the data and valid, just update rank and move on
-            existing.rank = m.rank;
-            finalMovies.push(existing);
-            progressBar.increment();
-            continue;
-        }
-
-        try {
-            // A. TMDB API (Base Metadata + Global Visuals)
-            // Use 2026 as preferred year for reconfirmation discovery
-            const searchYear = m.dateRaw || m.prdtYear || (m.type === 'manual' ? '2026' : '');
-            const tmdb = await fetchTmdbData(m.title, searchYear);
-            
-            // B. KOBIS Detail API (Official Rating)
-            const kobisDetail = await fetchKobisDetail(m.movieCd);
-
-            // C. MovieChart (Specific Metrics for Top 10 / Box Office)
-            let chartData = null;
-            if (m.rank || m.type === 'boxoffice' || m.type === 'megahit' || !m.dateRaw) {
-                const page = await context.newPage();
-                chartData = await scrapeMovieChart(page, m.title);
-                await page.close();
-            }
-
-            const rating = kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정';
-            const kobisGenres = kobisDetail?.genres?.map((g: any) => g.genreNm) || [];
-            
-            // Refined Filter: 18+ is OK unless it's "에로" genre or TMDB marks it as adult
-            const isEroticGenre = kobisGenres.some((g: string) => g.includes('에로')) || 
-                                DIRTY_KEYWORDS.some(k => m.title.includes(k)) ||
-                                tmdb?.adult === true;
-
-            if (isEroticGenre) {
-                console.log(`[FILTER] Skipping erotic movie: ${m.title} (Genres: ${kobisGenres.join(',')}, TMDB Adult: ${tmdb?.adult})`);
-                progressBar.increment();
-                continue;
-            }
-
-            const finalBudget = tmdb?.budget || existing?.budget;
-            const finalRevenue = tmdb?.revenue || existing?.revenue;
-            
-            // Refined Date Logic: Prioritize KOBIS openDt (theatrical) over TMDB (production/global)
-            // If date is only YYYYMM, append the last day of that month.
-            // For manual discovery like Pride and Prejudice, override with known re-release date if stale.
-            let rawDate = (kobisDetail?.openDt || m.dateRaw || tmdb?.release_date?.replace(/-/g, '') || existing?.dateRaw || '').replace(/-/g, '');
-            
-            if (m.title.includes('오만과 편견') && (!rawDate || parseInt(rawDate) < 20260101)) {
-                rawDate = '20260311'; // Confirmed re-release date
-            }
-
-            if (rawDate.length === 6) {
-                const y = parseInt(rawDate.substring(0, 4));
-                const mIdx = parseInt(rawDate.substring(4, 6));
-                const lastDay = getLastDayOfMonth(y, mIdx);
-                rawDate = `${rawDate}${String(lastDay).padStart(2, '0')}`;
-            }
-
-            const item: any = {
-                id: existing?.id || `movie_${slugify(m.title)}`,
-                title: m.title,
-                date: (rawDate && rawDate.length === 8) 
-                    ? `${rawDate.substring(0, 4)}.${rawDate.substring(4, 6)}.${rawDate.substring(6, 8)}.` 
-                    : (rawDate && rawDate.length === 4 ? `${rawDate} 예정` : (existing?.date || m.dateRaw || '')),
-                dateRaw: rawDate,
-                region: '전국',
-                genre: 'movie',
-                subGenre: kobisGenres.join(', ') || existing?.subGenre || '영화',
-                rank: m.rank,
-                director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
-                cast: tmdb?.credits?.cast?.slice(0, 10).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 10).map((a: any) => a.peopleNm) || existing?.cast,
-                venue: rating,
-                ageRating: rating,
-                runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || (kobisDetail?.showTm ? `${kobisDetail.showTm}분` : '')),
-                budget: finalBudget,
-                revenue: finalRevenue,
-                budgetKRW: finalBudget ? Math.round(finalBudget * 1400) : existing?.budgetKRW,
-                revenueKRW: finalRevenue ? Math.round(finalRevenue * 1400) : existing?.revenueKRW,
-                synopsis: chartData?.synopsis || tmdb?.overview || existing?.synopsis,
-                reservationRate: chartData?.resRate || existing?.reservationRate,
-                audienceCount: chartData?.audience || existing?.audienceCount,
-                roi: (finalBudget && finalRevenue && finalBudget > 0) 
-                    ? Math.round(((finalRevenue - finalBudget) / finalBudget) * 100) + '%'
-                    : existing?.roi,
-                lastCollected: new Date().toISOString()
-            };
-
-            // --- DATA VALIDITY CHECK ---
-            const movieDt = parseInt(item.dateRaw || '0');
-            if (movieDt > 0 && (movieDt < validStartDtNum || movieDt > validEndDtNum)) {
-                console.log(`[VALIDITY] Skipping stale new movie: ${item.title} (${item.date})`);
-                progressBar.increment();
-                continue;
-            }
-
-            // Hybrid Trailers
-            const tmdbTrailer = tmdb?.videos?.results?.find((v: any) => v.type === 'Trailer' && v.site === 'YouTube');
-            item.trailer = chartData?.trailer || (tmdbTrailer ? `https://www.youtube.com/watch?v=${tmdbTrailer.key}` : existing?.trailer);
-
-            // Poster Processing
-            const tmdbPoster = tmdb?.poster_path ? `https://image.tmdb.org/t/p/original${tmdb?.poster_path}` : null;
-            const posterUrl = tmdbPoster || existing?.posterUrl;
-            
-            if (posterUrl) {
-                const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
-                const localImage = await processImage(posterUrl, `movie_${cleanId}`, 'posters/movies');
-                if (localImage) {
-                    item.image = localImage;
-                    item.posterUrl = posterUrl;
+            if (existing && existing.image && existing.cast && existing.director && 
+                existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
+                existing.reservationRate && existing.audienceCount && existing.roi && !existing.posterFallback) {
+                
+                const movieDt = parseInt(existing.dateRaw?.replace(/-/g, '') || '0');
+                if (movieDt > 0 && (movieDt < validStartDtNum || movieDt > validEndDtNum)) {
+                    progressBar.increment();
+                    return;
                 }
+                existing.rank = m.rank;
+                finalMovies.push(existing);
+                progressBar.increment();
+                return;
             }
 
-            if (!item.image) {
-                const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
-                item.image = `/images/posters/movies/movie_${cleanId}.webp`;
+            if (DIRTY_KEYWORDS.some(k => m.title.includes(k))) {
+                progressBar.increment();
+                return;
             }
 
-            finalMovies.push(item);
+            try {
+                const searchYear = m.dateRaw || m.prdtYear || (m.type === 'manual' ? '2026' : '');
+                const tmdb = await fetchTmdbData(m.title, searchYear);
+                const kobisDetail = await fetchKobisDetail(m.movieCd);
+                let chartData = null;
+                if (m.rank || m.type === 'boxoffice' || m.type === 'megahit' || !m.dateRaw) {
+                    const page = await context.newPage();
+                    chartData = await scrapeMovieChart(page, m.title);
+                    await page.close();
+                }
 
-        } catch (e: any) {
-            console.error(`[Enrich Error] ${m.title}: ${e.message}`);
-            if (existing) finalMovies.push(existing);
-        }
+                const rating = kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정';
+                const kobisGenres = kobisDetail?.genres?.map((g: any) => g.genreNm) || [];
+                const isEroticGenre = kobisGenres.some((g: string) => g.includes('에로')) || tmdb?.adult === true;
 
-        progressBar.increment();
+                if (isEroticGenre) {
+                    progressBar.increment();
+                    return;
+                }
+
+                const finalBudget = tmdb?.budget || existing?.budget;
+                const finalRevenue = tmdb?.revenue || existing?.revenue;
+                let rawDate = (kobisDetail?.openDt || m.dateRaw || tmdb?.release_date?.replace(/-/g, '') || existing?.dateRaw || '').replace(/-/g, '');
+                
+                if (m.title.includes('오만과 편견') && (!rawDate || parseInt(rawDate) < 20260101)) rawDate = '20260311';
+
+                if (rawDate.length === 6) {
+                    const y = parseInt(rawDate.substring(0, 4));
+                    const mIdx = parseInt(rawDate.substring(4, 6));
+                    const lastDay = getLastDayOfMonth(y, mIdx);
+                    rawDate = `${rawDate}${String(lastDay).padStart(2, '0')}`;
+                }
+
+                const item: any = {
+                    id: existing?.id || `movie_${slugify(m.title)}`,
+                    title: m.title,
+                    date: (rawDate && rawDate.length === 8) 
+                        ? `${rawDate.substring(0, 4)}.${rawDate.substring(4, 6)}.${rawDate.substring(6, 8)}.` 
+                        : (rawDate && rawDate.length === 4 ? `${rawDate} 예정` : (existing?.date || m.dateRaw || '')),
+                    dateRaw: rawDate,
+                    region: '전국',
+                    genre: 'movie',
+                    subGenre: kobisGenres.join(', ') || existing?.subGenre || '영화',
+                    rank: m.rank,
+                    director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
+                    cast: tmdb?.credits?.cast?.slice(0, 10).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 10).map((a: any) => a.peopleNm) || existing?.cast,
+                    venue: rating,
+                    ageRating: rating,
+                    runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || (kobisDetail?.showTm ? `${kobisDetail.showTm}분` : '')),
+                    budget: finalBudget,
+                    revenue: finalRevenue,
+                    budgetKRW: finalBudget ? Math.round(finalBudget * 1400) : existing?.budgetKRW,
+                    revenueKRW: finalRevenue ? Math.round(finalRevenue * 1400) : existing?.revenueKRW,
+                    synopsis: chartData?.synopsis || tmdb?.overview || existing?.synopsis,
+                    reservationRate: chartData?.resRate || existing?.reservationRate,
+                    audienceCount: chartData?.audience || existing?.audienceCount,
+                    roi: (finalBudget && finalRevenue && finalBudget > 0) ? Math.round(((finalRevenue - finalBudget) / finalBudget) * 100) + '%' : existing?.roi,
+                    lastCollected: new Date().toISOString()
+                };
+
+                const movieDtCheck = parseInt(item.dateRaw || '0');
+                if (movieDtCheck > 0 && (movieDtCheck < validStartDtNum || movieDtCheck > validEndDtNum)) {
+                    progressBar.increment();
+                    return;
+                }
+
+                const tmdbTrailer = tmdb?.videos?.results?.find((v: any) => v.type === 'Trailer' && v.site === 'YouTube');
+                item.trailer = chartData?.trailer || (tmdbTrailer ? `https://www.youtube.com/watch?v=${tmdbTrailer.key}` : existing?.trailer);
+
+                const tmdbPoster = tmdb?.poster_path ? `https://image.tmdb.org/t/p/original${tmdb?.poster_path}` : null;
+                const posterUrl = tmdbPoster || existing?.posterUrl;
+                if (posterUrl) {
+                    const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
+                    const localImage = await processImage(posterUrl, `movie_${cleanId}`, 'posters/movies');
+                    if (localImage) { item.image = localImage; item.posterUrl = posterUrl; }
+                }
+
+                if (!item.image) {
+                    const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
+                    item.image = `/images/posters/movies/movie_${cleanId}.webp`;
+                }
+
+                finalMovies.push(item);
+            } catch (e: any) {
+                console.error(`[Enrich Error] ${m.title}: ${e.message}`);
+                if (existing) finalMovies.push(existing);
+            }
+            progressBar.increment();
+        }));
     }
 
     progressBar.stop();
     await browser.close();
 
-    // 4. Sort and Save
-    if (finalMovies.length >= 20) {
+    if (finalMovies.length >= 10) {
         finalMovies.sort((a, b) => {
             const rankA = a.rank || 999;
             const rankB = b.rank || 999;
-            // Prioritize rank for top 10, then sort others by date DESC (recent/future first)
-            if (rankA <= 10 || rankB <= 10) {
-                if (rankA !== rankB) return rankA - rankB;
-            }
+            if (rankA <= 10 || rankB <= 10) { if (rankA !== rankB) return rankA - rankB; }
             return (b.dateRaw || '').localeCompare(a.dateRaw || '');
         });
-
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalMovies, null, 2));
         fs.copyFileSync(OUTPUT_FILE, path.resolve(process.cwd(), 'public/data/movies.json'));
         console.log(`Saved ${finalMovies.length} movies.`);

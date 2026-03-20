@@ -202,20 +202,18 @@ async function generate() {
         const dataDir = path.join(process.cwd(), 'public', 'data');
         if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
-        for (const locale of locales) {
-            console.log(`[Build] Generating data for locale: ${locale}`);
-            
-            // Deep copy pruned data for translation
-            const sourceData = JSON.parse(JSON.stringify(pruned));
-            let localizedData = sourceData;
-            
-            localizedData = await batchTranslate(sourceData, locale);
-            
-            const outputPath = path.join(dataDir, locale === 'ko' ? 'performances.json' : `performances-${locale}.json`);
-            fs.writeFileSync(outputPath, JSON.stringify(localizedData));
-            console.log(`Successfully generated ${localizedData.length} items to ${outputPath}`);
-            
-            saveCache(); // Save cache after each locale
+        // Process locales in parallel batches of 2 (to balance speed vs cache race)
+        const localeChunks = [['ko', 'en'], ['zh', 'ja']];
+        for (const chunk of localeChunks) {
+            await Promise.all(chunk.map(async (locale) => {
+                console.log(`[Build] Generating data for locale: ${locale}`);
+                // Deep copy pruned data for translation
+                const localizedData = await batchTranslate(JSON.parse(JSON.stringify(pruned)), locale);
+                const outputPath = path.join(dataDir, locale === 'ko' ? 'performances.json' : `performances-${locale}.json`);
+                fs.writeFileSync(outputPath, JSON.stringify(localizedData));
+                console.log(`Successfully generated ${localizedData.length} items to ${outputPath}`);
+            }));
+            saveCache(); 
         }
 
         // [New: Sync critical data files to public/data]
