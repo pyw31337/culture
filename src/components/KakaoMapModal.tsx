@@ -274,7 +274,7 @@ export default function KakaoMapModal({
                 window.kakao.maps.event.addListener(map, 'zoom_changed', () => setShowSearchHereBtn(true));
 
                 setIsMapReady(true);
-                setTimeout(() => { map.relayout(); }, 200);
+                setTimeout(() => { map.relayout(); map.relayout(); }, 500);
             });
         };
 
@@ -587,7 +587,7 @@ export default function KakaoMapModal({
                         </div>
                     )}
 
-                    <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
+                    <div ref={mapRef} className="flex-1 w-full bg-gray-200 dark:bg-gray-800 relative z-0" />
 
                     <div className="absolute inset-0 pointer-events-none z-[110]">
                         {selectedVenue && selectedVenueData && popupContainerRef && (

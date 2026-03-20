@@ -330,7 +330,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 window.kakao.maps.event.addListener(map, 'zoom_changed', () => setShowSearchHereBtn(true));
 
                 setIsMapReady(true);
-                setTimeout(() => { map.relayout(); }, 200);
+                setTimeout(() => { map.relayout(); map.relayout(); }, 500);
             });
         };
 
@@ -698,7 +698,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                     </button>
                 </div>
 
-                <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
+                <div ref={mapRef} className="flex-1 w-full bg-gray-200 dark:bg-gray-800 relative z-0" />
 
                 {/* Left Controls: Category Filter */}
                 <div className="absolute top-4 left-4 z-[110] flex flex-col gap-2">
