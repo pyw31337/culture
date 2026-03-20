@@ -1,4 +1,3 @@
-```
 import React, { useState, useRef, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
 import { MapPin, Calendar, Heart, Share2, ExternalLink, Ticket, Trophy, Clock, User, Users, Info, Building, Star, Phone, Globe, Lock, Map, ParkingCircle, InfoIcon, ShieldCheck, ChevronDown, Check, Plane } from 'lucide-react';
@@ -481,4 +480,3 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 PerformanceListItem.displayName = 'PerformanceListItem';
 
 export default memo(PerformanceListItem);
-```
