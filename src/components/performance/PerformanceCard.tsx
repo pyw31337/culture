@@ -8,7 +8,7 @@ import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle, formatUnifiedDate, translateContent } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Performance } from '@/types';
 import { isMovie, isSports } from '@/lib/type-guards';
 
@@ -63,6 +63,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const tc = useTranslations('Categories');
     const ts = useTranslations('Search');
     const td = useTranslations('Data');
+    const locale = useLocale();
 
     const [isCopied, setIsCopied] = useState(false);
     const [showActions, setShowActions] = useState(false);
@@ -87,11 +88,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             const diffTime = target.getTime() - now.getTime();
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-            if (diffDays === 0) return 'D-Day';
-            if (diffDays > 0) return `D-${diffDays}`;
+            if (diffDays === 0) return ts('d_day');
+            if (diffDays > 0) return ts('d_minus', { days: diffDays });
             if (diffDays < 0) {
                 if (diffDays < -100) return null;
-                return `D+${Math.abs(diffDays)}`;
+                return ts('d_plus', { days: Math.abs(diffDays) });
             }
             return null;
         } catch (e) {
@@ -127,17 +128,26 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
-    const hasOtherDetails = useMemo(() => !!(
-        (perf.originalTitle && perf.originalTitle !== perf.title) ||
-        perf.productionCountry ||
-        perf.productionYear ||
-        perf.subGenre ||
-        perf.runningTime ||
-        (perf.ageRating && !['movie'].includes(perf.genre)) ||
-        perf.director ||
-        ((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) ||
-        (perf.platforms && perf.platforms.length > 0)
-    ), [perf.originalTitle, perf.title, perf.productionCountry, perf.productionYear, perf.subGenre, perf.runningTime, perf.ageRating, perf.genre, perf.director, perf.castWithLinks, perf.cast, perf.platforms]);
+    const hasOtherDetails = useMemo(() => {
+        if (isMovie(perf)) {
+            return !!(
+                (perf.originalTitle && perf.originalTitle !== perf.title) ||
+                perf.productionCountry ||
+                perf.productionYear ||
+                perf.subGenre ||
+                perf.runningTime ||
+                perf.director
+            );
+        }
+        if (isClass(perf)) {
+            return !!(
+                (perf.castWithLinks && perf.castWithLinks.length > 0) ||
+                (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0) ||
+                (perf.platforms && perf.platforms.length > 0)
+            );
+        }
+        return false;
+    }, [perf]);
 
     return (
         <div
@@ -337,7 +347,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             "text-[12px] opacity-70",
                                             isMovie(perf) ? "font-normal" : "font-extrabold"
                                         )}>
-                                            {formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}
+                                            {formatUnifiedDate(perf.date, locale)}
                                         </span>
                                     </div>
                                 </div>
@@ -400,7 +410,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 "text-[11px] text-gray-300",
                                                 isMovie(perf) ? "font-normal" : "font-semibold"
                                             )}>
-                                                {formatUnifiedDate(perf.date, tc.has('ko') ? (tc.has('en') ? 'en' : 'ko') : 'ko')}
+                                                {formatUnifiedDate(perf.date, locale)}
                                             </span>
                                         </div>
                                     </div>

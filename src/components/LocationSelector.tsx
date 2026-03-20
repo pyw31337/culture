@@ -5,6 +5,7 @@ import { ChevronDown, MapPin, Check, Search, X, GripHorizontal, ChevronUp } from
 import { REGIONS } from '@/lib/constants';
 import { getChoseong } from '@/lib/hangul';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 
@@ -73,6 +74,9 @@ export function LocationSelector({
     searchMode = 'keyword',
     referenceLocation
 }: LocationSelectorProps) {
+    const t = useTranslations('Search');
+    const tr = useTranslations('Regions');
+    const tc = useTranslations('Categories');
 
     // UI Constants
     const baseButtonClass = "rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-1.5 whitespace-nowrap"; // Reduced padding/text size slightly
@@ -189,9 +193,9 @@ export function LocationSelector({
     };
 
     const selectedRegionLabel = useMemo(() => {
-        if (selectedRegion === 'all') return '전국';
-        return REGIONS.find(r => r.id === selectedRegion)?.label || '';
-    }, [selectedRegion]);
+        if (selectedRegion === 'all') return t('nationwide');
+        return tr.has(selectedRegion) ? tr(selectedRegion) : (REGIONS.find(r => r.id === selectedRegion)?.label || '');
+    }, [selectedRegion, t, tr]);
 
     return (
         <div className="flex flex-col gap-5 w-full">
@@ -209,7 +213,7 @@ export function LocationSelector({
                             <MapPin className={clsx("w-4 h-4", accentTextClass)} strokeWidth={2.5} />
                         </div>
                         <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-wider cursor-pointer">
-                            지역 설정
+                            {t('region_settings')}
                         </label>
                     </div>
 
@@ -258,7 +262,7 @@ export function LocationSelector({
                                             : inactiveClass
                                     )}
                                 >
-                                    전국
+                                    {t('nationwide')}
                                 </button>
 
                                 {REGIONS.filter(r => r.id !== 'all').map(r => {
@@ -283,7 +287,7 @@ export function LocationSelector({
                                                     : "rounded-xl bg-gray-800/30 light:bg-white text-gray-400 light:text-gray-600 border-white/5 light:border-gray-200 hover:bg-gray-800 light:hover:bg-gray-50 mb-1"
                                             )}
                                         >
-                                            {r.label}
+                                            {tr.has(r.id) ? tr(r.id) : r.label}
                                         </button>
                                     );
                                 })}
@@ -313,7 +317,7 @@ export function LocationSelector({
                                                         : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
                                                 )}
                                             >
-                                                전체
+                                                {tc('all')}
                                             </button>
                                             {districts.map(d => (
                                                 <button
@@ -335,7 +339,7 @@ export function LocationSelector({
                                     ) : (
                                         <div className="flex items-center gap-2 text-gray-500 light:text-gray-400 text-xs font-semibold py-2">
                                             <X size={14} className="text-gray-600" />
-                                            해당 지역에 컨텐츠가 없습니다
+                                            {t('no_results_in_region')}
                                         </div>
                                     )}
                                 </div>
@@ -354,7 +358,7 @@ export function LocationSelector({
                             <StadiumIcon className={clsx("w-3.5 h-3.5", accentTextClass)} />
                         </div>
                         <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-wider">
-                            공연장 선택 <span className={clsx("ml-1", accentTextClass)}>({availableVenues.length})</span>
+                            {t('search_location')} <span className={clsx("ml-1", accentTextClass)}>({availableVenues.length})</span>
                         </label>
                     </div>
 
@@ -371,7 +375,7 @@ export function LocationSelector({
                         >
                             <span className="truncate">
                                 {selectedVenue === 'all'
-                                    ? '전체 공연장 보기'
+                                    ? t('view_all_venues')
                                     : selectedVenue}
                             </span>
                             <ChevronDown className={clsx("w-4 h-4 text-gray-400 transition-transform", isVenueOpen && "rotate-180")} />
@@ -397,7 +401,7 @@ export function LocationSelector({
                                                     : "text-gray-400 light:text-gray-600 bg-gray-700/50 light:bg-white border border-transparent light:border-gray-200 hover:bg-white/10 light:hover:bg-gray-100"
                                             )}
                                         >
-                                            전체
+                                            {tc('all')}
                                         </button>
                                         {CHOSEONG_LIST.map(cho => (
                                             <button
@@ -427,13 +431,13 @@ export function LocationSelector({
                                                 : "text-gray-300 light:text-gray-700 hover:bg-white/5 light:hover:bg-gray-100"
                                         )}
                                     >
-                                        <span>전체 공연장</span>
+                                        <span>{t('all_venues')}</span>
                                         {selectedVenue === 'all' && <Check className="w-3.5 h-3.5" />}
                                     </button>
 
                                     {filteredVenues.length === 0 ? (
                                         <div className="py-8 text-center text-xs text-gray-500">
-                                            해당 초성의 공연장이 없습니다.
+                                            {t('no_venues_for_choseong')}
                                         </div>
                                     ) : (
                                         filteredVenues.map(v => (
@@ -457,7 +461,7 @@ export function LocationSelector({
                                                     {/* Location Tag (Full Region + District) */}
                                                     {(venues[v]?.mapped_region_id || venues[v]?.district) && (
                                                         <span className="text-[10px] sm:text-xs text-gray-400 light:text-gray-500 border border-white/5 light:border-gray-200 px-2 py-0.5 rounded bg-black/40 light:bg-gray-100 italic">
-                                                            {[REGIONS.find(r => r.id === venues[v].mapped_region_id)?.label, venues[v].district].filter(Boolean).join(' ')}
+                                                            {[tr.has(venues[v].mapped_region_id) ? tr(venues[v].mapped_region_id) : REGIONS.find(r => r.id === venues[v].mapped_region_id)?.label, venues[v].district].filter(Boolean).join(' ')}
                                                         </span>
                                                     )}
                                                     {selectedVenue === v && <Check className={clsx("w-3.5 h-3.5", isLoc ? "text-emerald-500" : "text-purple-500")} />}

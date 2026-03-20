@@ -112,7 +112,15 @@
         "enter_venue_name": "찾으시는 장소를 입력해주세요",
         "enter_keyword": "검색어를 입력해주세요",
         "location_placeholder": "지역, 장소 검색...",
-        "keyword_placeholder": "컨텐츠명, 장소, 출연진 검색..."
+        "keyword_placeholder": "컨텐츠명, 장소, 출연진 검색...",
+        "region_settings": "지역 설정",
+        "no_results_in_region": "해당 지역에 컨텐츠가 없습니다",
+        "view_all_venues": "전체 공연장 보기",
+        "no_venues_for_choseong": "해당 초성의 공연장이 없습니다",
+        "all_venues": "전체 공연장",
+        "d_day": "D-Day",
+        "d_minus": "D-{days}",
+        "d_plus": "D+{days}"
     },
     "Actions": {
         "book": "예매하기 이동",

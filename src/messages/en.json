@@ -112,7 +112,15 @@
         "enter_venue_name": "Please enter a venue name",
         "enter_keyword": "Please enter a keyword",
         "location_placeholder": "Search for region, place...",
-        "keyword_placeholder": "Search for title, place, cast..."
+        "keyword_placeholder": "Search for title, place, cast...",
+        "region_settings": "Region Settings",
+        "no_results_in_region": "No content found in this region",
+        "view_all_venues": "View All Venues",
+        "no_venues_for_choseong": "No venues found for this initial",
+        "all_venues": "All Venues",
+        "d_day": "D-Day",
+        "d_minus": "D-{days}",
+        "d_plus": "D+{days}"
     },
     "Actions": {
         "book": "Book Now",

@@ -20,7 +20,9 @@
         "loading": "加载中...",
         "no_data": "找不到数据。",
         "dark": "深色",
-        "light": "浅色"
+        "light": "浅色",
+        "exclusive": "独家",
+        "trending_top_9": "实时人气 {top}"
     },
     "Categories": {
         "all": "全部",
@@ -110,7 +112,15 @@
         "enter_venue_name": "请输入场馆名称",
         "enter_keyword": "请输入关键词",
         "location_placeholder": "搜索地区、地点...",
-        "keyword_placeholder": "搜索标题、地点、演职人员..."
+        "keyword_placeholder": "搜索标题、地点、演职人员...",
+        "region_settings": "地区设置",
+        "no_results_in_region": "该地区没有内容",
+        "view_all_venues": "查看全部场馆",
+        "no_venues_for_choseong": "没有该初声的场馆。",
+        "all_venues": "全部场馆",
+        "d_day": "D-Day",
+        "d_minus": "D-{days}",
+        "d_plus": "D+{days}"
     },
     "Actions": {
         "book": "前往预订",
