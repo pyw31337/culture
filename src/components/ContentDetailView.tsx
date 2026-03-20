@@ -37,7 +37,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const genreLabel = tc(p.genre as any) || p.genre;
 
     const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
-    const hasTeams = p.homeTeam && p.awayTeam;
+    const hasTeams = (p as any).homeTeam && (p as any).awayTeam;
 
     const hasCast = p.cast && p.cast.length > 0;
     const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
