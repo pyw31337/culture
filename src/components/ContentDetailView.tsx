@@ -39,10 +39,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
     const hasTeams = (p as any).homeTeam && (p as any).awayTeam;
 
-    const hasCast = p.cast && p.cast.length > 0;
-    const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
+    const hasCast = (p as any).cast && (p as any).cast.length > 0;
+    const rawImg = (p as any).image || (p as any).poster || (p as any).backupPoster || (p as any).posterUrl || '';
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
-    const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
+    const fallbackImg = (p as any).backupPoster || (p as any).posterUrl || (p as any).poster || '';
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(() => {
