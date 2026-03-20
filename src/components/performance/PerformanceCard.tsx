@@ -10,7 +10,7 @@ import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { useTranslations, useLocale } from 'next-intl';
 import { Performance } from '@/types';
-import { isMovie, isSports } from '@/lib/type-guards';
+import { isMovie, isSports, isClass } from '@/lib/type-guards';
 
 interface PerformanceCardProps {
     perf: Performance;
