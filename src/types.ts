@@ -31,31 +31,55 @@ export interface BasePerformance {
     status?: string;
     priceList?: { label: string; price: string; discount?: string }[];
     bracketRegion?: string;
+    
+    // Shared metadata across different scrapers
+    ageRating?: string;
+    age?: string;
+    ageDetail?: string;
+    operatingHours?: string;
+    performanceTime?: string;
+    priceDetail?: string;
+    closedDays?: string;
+    contact?: string;
+    website?: string;
+    parking?: string;
+    parkingFee?: string;
+    facilities?: string;
+    restrooms?: string;
+    petFriendly?: string;
+    feesAndPrograms?: string;
+    bookingNotice?: string;
+    
+    // Organization / Production
+    host?: string;
+    organizer?: string;
+    planner?: string;
+    producer?: string;
+    sponsor?: string;
+    production?: string;
+    
+    // Movie specific
+    originalTitle?: string;
+    synopsis?: string;
+    reservationRate?: string;
+    audienceCount?: string;
+    runtime?: number | string;
+    director?: string;
+    cast?: (string | { name: string; url?: string })[];
+    crew?: string[];
+    subGenre?: string;
+    
+    // Sports specific
+    homeTeam?: string;
+    awayTeam?: string;
+    homeTeamLogo?: string;
+    awayTeamLogo?: string;
+    versusLink?: string;
+    highlightsLink?: string;
 }
 
 export interface MoviePerformance extends BasePerformance {
     genre: 'movie';
-    ageRating?: string;
-    subGenre?: string;
-    runningTime?: string;
-    director?: string;
-    originalTitle?: string;
-    productionCountry?: string;
-    productionYear?: string;
-    movieInfo?: string;
-    crew?: string[];
-    cast?: (string | { name: string; url?: string })[];
-    castWithLinks?: { name: string; url?: string }[];
-    synopsis?: string;
-    synopsisImages?: string[];
-    trailer?: string;
-    budget?: number | string;
-    revenue?: number | string;
-    budgetKRW?: string | number;
-    revenueKRW?: string | number;
-    roi?: string | number;
-    reservationRate?: string;
-    audienceCount?: string;
 }
 
 export interface SportsPerformance extends BasePerformance {
@@ -70,36 +94,11 @@ export interface SportsPerformance extends BasePerformance {
 
 export interface ClassPerformance extends BasePerformance {
     genre: 'class';
-    cast?: (string | { name: string; url?: string })[];
-    castWithLinks?: { name: string; url?: string }[];
     platforms?: { name: string; url?: string }[];
-    production?: string;
-    host?: string;
-    organizer?: string;
-    planner?: string;
-    producer?: string;
-    sponsor?: string;
-    contact?: string;
-    ageDetail?: string;
-    bookingNotice?: string;
-    website?: string;
-    parking?: string;
-    parkingFee?: string;
-    facilities?: string;
-    restrooms?: string;
-    targetAudience?: string;
-    operatingHours?: string;
-    priceDetail?: string;
-    closedDays?: string;
-    feesAndPrograms?: string;
-    petFriendly?: string;
 }
 
 export interface MuseumPerformance extends BasePerformance {
     genre: 'exhibition' | 'museum';
-    operatingHours?: string;
-    closedDays?: string;
-    feesAndPrograms?: string;
 }
 
 export type Performance = MoviePerformance | SportsPerformance | ClassPerformance | MuseumPerformance | BasePerformance;
