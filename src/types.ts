@@ -77,13 +77,20 @@ export interface BasePerformance {
     versusLink?: string;
     highlightsLink?: string;
     
-    // UI-accessed fields across components (Consolidated for Build Stability)
+    // Consolidated UI-accessed & Data Safety fields
     runningTime?: string;
     movieInfo?: string;
     productionCountry?: string;
     productionYear?: string;
     castWithLinks?: { name: string; url?: string }[];
     platforms?: { name: string; url?: string }[];
+    targetAudience?: string;
+    trailer?: string;
+    roi?: string;
+    budget?: string;
+    revenue?: string;
+    budgetKRW?: string;
+    revenueKRW?: string;
 }
 
 export interface MoviePerformance extends BasePerformance {
