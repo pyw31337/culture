@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-          npm ci
+          npm install
 
       - name: Build Website
         env:
