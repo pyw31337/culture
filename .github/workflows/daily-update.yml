@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-          npm ci
+          npm install
 
       - name: Install Playwright and System Dependencies
         if: env.SKIP_EXECUTION != 'true'
