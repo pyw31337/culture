@@ -116,7 +116,7 @@ export default async function RootLayout({
           </ProgressBarProvider>
         </NextIntlClientProvider>
         <Script
-          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_JS_KEY || process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&libraries=services,clusterer&autoload=false`}
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&libraries=services,clusterer&autoload=false`}
           strategy="beforeInteractive"
         />
       </body>
