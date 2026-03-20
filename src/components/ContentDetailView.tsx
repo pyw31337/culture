@@ -56,7 +56,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         } 
         // Case 2: Platform-specific search fallback for missing links
         else if (isMissingLink) {
-            if (p.source === 'mommom-activity' || p.source === 'mommom' || p.source === 'mommom-product') {
+            if ((p as any).source === 'mommom-activity' || (p as any).source === 'mommom' || (p as any).source === 'mommom-product') {
                 // Mommom search fallback
                 url = `https://mom-mom.net/search?q=${encodeURIComponent(p.title)}`;
             } else {
@@ -67,7 +67,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         }
 
         return isMobile ? toMobileUrl(url) : url;
-    }, [p.link, p.title, p.genre, p.source, isMobile]);
+    }, [p.link, p.title, p.genre, (p as any).source, isMobile]);
 
     const handleShare = async (e?: React.MouseEvent) => {
         if (e) e.stopPropagation();
@@ -77,7 +77,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
             try {
                 await navigator.share({
                     title: p.title,
-                    text: p.description || p.title,
+                    text: (p as any).description || p.title,
                     url: url,
                 });
                 return;
@@ -212,8 +212,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             initial={{ x: -30, opacity: 0, rotate: -10 }}
                                             animate={{ x: 0, opacity: 1, rotate: 0 }}
                                             transition={{ delay: 0.5, type: 'spring' }}
-                                            src={p.genre === 'baseball' && p.homeTeam && FUTURES_TEAM_LOGOS[p.homeTeam] ? FUTURES_TEAM_LOGOS[p.homeTeam] : p.homeTeamLogo}
-                                            alt={p.homeTeam}
+                                            src={p.genre === 'baseball' && (p as any).homeTeam && FUTURES_TEAM_LOGOS[(p as any).homeTeam] ? FUTURES_TEAM_LOGOS[(p as any).homeTeam] : (p as any).homeTeamLogo}
+                                            alt={(p as any).homeTeam}
                                             className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
                                         />
                                         <div className="text-white text-xl font-black italic bg-black/40 px-4 py-1 rounded-full backdrop-blur-md border border-white/10 shadow-lg">VS</div>
@@ -221,8 +221,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             initial={{ x: 30, opacity: 0, rotate: 10 }}
                                             animate={{ x: 0, opacity: 1, rotate: 0 }}
                                             transition={{ delay: 0.5, type: 'spring' }}
-                                            src={p.genre === 'baseball' && p.awayTeam && FUTURES_TEAM_LOGOS[p.awayTeam] ? FUTURES_TEAM_LOGOS[p.awayTeam] : p.awayTeamLogo}
-                                            alt={p.awayTeam}
+                                            src={p.genre === 'baseball' && (p as any).awayTeam && FUTURES_TEAM_LOGOS[(p as any).awayTeam] ? FUTURES_TEAM_LOGOS[(p as any).awayTeam] : (p as any).awayTeamLogo}
+                                            alt={(p as any).awayTeam}
                                             className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
                                         />
                                     </div>
@@ -253,8 +253,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     </h2>
                                 </div>
                                 
-                                 {p.originalTitle && (
-                                    <p className="text-[12px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-4px]">{p.originalTitle}</p>
+                                 {(p as any).originalTitle && (
+                                    <p className="text-[12px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-4px]">{(p as any).originalTitle}</p>
                                 )}
                             </motion.div>
 
@@ -358,15 +358,15 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Tag, label: t('age_label'), text: ageText, color: 'text-rose-500' });
                                     }
 
-                                    if (p.director) {
+                                    if ((p as any).director) {
                                         infoItems.push({ 
                                             icon: Users, 
                                             label: t('director'), 
-                                            text: p.director, 
+                                            text: (p as any).director, 
                                             color: 'text-indigo-500', 
                                             isLink: isMovie, 
                                             onClick: () => {
-                                                const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.director || '')}`;
+                                                const url = `https://search.naver.com/search.naver?query=${encodeURIComponent((p as any).director || '')}`;
                                                 window.open(isMobile ? toMobileUrl(url) : url, '_blank');
                                             }
                                         });
@@ -413,8 +413,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Star, label: t('sponsor'), text: p.sponsor, color: 'text-yellow-400' });
                                     }
 
-                                    if (p.contact) {
-                                        infoItems.push({ icon: Phone, label: t('contact'), text: p.contact, color: 'text-emerald-400' });
+                                    if ((p as any).contact) {
+                                        infoItems.push({ icon: Phone, label: t('contact'), text: (p as any).contact, color: 'text-emerald-400' });
                                     }
 
                                      if (p.price && !p.priceList) {
@@ -429,15 +429,15 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Info, label: t('closed_days'), text: p.closedDays, color: 'text-rose-400' });
                                     }
 
-                                    if (p.website) {
+                                    if ((p as any).website) {
                                         infoItems.push({ 
                                             icon: Globe, 
                                             label: t('homepage'), 
-                                            text: p.website.replace(/^https?:\/\//, ''), 
+                                            text: (p as any).website.replace(/^https?:\/\//, ''), 
                                             color: 'text-cyan-400', 
                                             isLink: true, 
                                             onClick: () => {
-                                                const url = p.website!.startsWith('http') ? p.website! : `https://${p.website}`;
+                                                const url = (p as any).website!.startsWith('http') ? (p as any).website! : `https://${(p as any).website}`;
                                                 window.open(isMobile ? toMobileUrl(url) : url, '_blank');
                                             }
                                         });
@@ -557,21 +557,21 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             )}
 
                             {/* Description - Short version for all modes (Hidden for tourism to avoid redundancy) */}
-                            {p.description && p.genre !== 'tourism' && (
+                            {(p as any).description && p.genre !== 'tourism' && (
                                 <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
-                                    &quot;{p.description}&quot;
+                                    &quot;{(p as any).description}&quot;
                                 </motion.p>
                             )}
 
                             {/* Long Description for Standalone or if quite long (Non-movie) */}
-                            {p.description && p.description.length > 150 && p.genre !== 'movie' && (
+                            {(p as any).description && (p as any).description.length > 150 && p.genre !== 'movie' && (
                                 <motion.div variants={itemVariants} className="mt-8 bg-black/5 dark:bg-white/5 rounded-2xl p-6 border border-black/5 dark:border-white/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                                         <Sparkles className="w-5 h-5 text-amber-500" />
                                         {p.genre === 'exhibition' ? t('description_exhibition') : p.genre === 'tourism' ? t('description_tourism') : t('description_common')}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400 text-[14.5px] leading-relaxed whitespace-pre-line">
-                                        {p.description}
+                                        {(p as any).description}
                                     </p>
                                 </motion.div>
                             )}
@@ -579,7 +579,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                              {hasCast && mode === 'standalone' && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
                                     <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">{t('cast')}</span>
-                                    {p.cast!.slice(0, 10).map((c, idx) => {
+                                    {(p as any).cast!.slice(0, 10).map((c, idx) => {
                                         const name = typeof c === 'string' ? c : c.name;
                                         let url = typeof c === 'string' ? undefined : (c as { url?: string }).url;
                                         
@@ -610,10 +610,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 </motion.div>
                             )}
 
-                             {p.crew && p.crew.length > 0 && mode === 'standalone' && (
+                             {(p as any).crew && (p as any).crew.length > 0 && mode === 'standalone' && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-white/5 mt-2">
                                     <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">{t('crew')}</span>
-                                    {p.crew!.slice(0, 5).map((c, idx) => {
+                                    {(p as any).crew!.slice(0, 5).map((c, idx) => {
                                         const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${c} ${p.title}`)}`;
                                         const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors text-blue-500";
                                         return (
@@ -633,14 +633,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             )}
 
                             {/* Movie Synopsis Section - Dedicated below cast for movies */}
-                            {p.genre === 'movie' && (p.synopsis || p.description) && (
+                            {p.genre === 'movie' && (p.synopsis || (p as any).description) && (
                                 <motion.div variants={itemVariants} className="mt-8 bg-indigo-50/30 dark:bg-indigo-500/5 rounded-2xl p-6 border border-indigo-500/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Film className="w-5 h-5 text-indigo-500" />
                                         {tm('synopsis')}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-300 text-[14.5px] leading-relaxed whitespace-pre-line font-medium">
-                                        {p.synopsis || p.description}
+                                        {p.synopsis || (p as any).description}
                                     </p>
                                 </motion.div>
                             )}
