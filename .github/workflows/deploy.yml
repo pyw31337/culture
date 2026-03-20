@@ -49,6 +49,7 @@ jobs:
       - name: Build Website
         env:
           NEXT_PUBLIC_BASE_PATH: /culture
+          NEXT_PUBLIC_KAKAO_JS_KEY: ${{ secrets.KAKAO_JS_KEY }}
           NODE_OPTIONS: '--max-old-space-size=4096'
           SKIP_TRANSLATION: 'true'
         run: npm run build

@@ -336,7 +336,7 @@ export default function PerformanceList({
                         <button 
                             onClick={handleLanguageToggle} 
                             className="p-1 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black transition-colors group/lang"
-                            title={t('language_change')}
+                            title={ta('language_change')}
                         >
                             <div className={clsx(
                                 "flex items-center justify-center w-7 h-7 rounded-[7px] border-2 border-gray-400 light:border-gray-500 group-hover/lang:border-white light:group-hover/lang:border-black transition-colors",
@@ -348,14 +348,14 @@ export default function PerformanceList({
                         <button 
                             onClick={toggleTheme} 
                             className="p-2 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black"
-                            title={t('mode_change')}
+                            title={ta('mode_change')}
                         >
                             {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
                         </button>
                         <button 
                             onClick={() => setIsAlarmOpen(!isAlarmOpen)} 
                             className={clsx("p-2 rounded-full", isAlarmOpen ? "text-purple-300" : "text-gray-400")}
-                            title={t('keyword_settings')}
+                            title={ta('keyword_settings')}
                         >
                             <Bell size={24} className={clsx(isAlarmOpen && "animate-pulse")} />
                         </button>
