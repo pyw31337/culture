@@ -335,10 +335,15 @@ export default function PerformanceList({
                     <div className="flex items-center gap-1">
                         <button 
                             onClick={handleLanguageToggle} 
-                            className="p-2 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black transition-colors"
+                            className="p-1 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black transition-colors group/lang"
                             title={t('language_change')}
                         >
-                            <Languages size={24} />
+                            <div className={clsx(
+                                "flex items-center justify-center w-7 h-7 rounded-[7px] border-2 border-gray-400 light:border-gray-500 group-hover/lang:border-white light:group-hover/lang:border-black transition-colors",
+                                "text-[9px] font-black leading-none uppercase"
+                            )}>
+                                {locale === 'ko' ? 'KR' : locale === 'en' ? 'EN' : locale === 'zh' ? 'CN' : 'JP'}
+                            </div>
                         </button>
                         <button 
                             onClick={toggleTheme} 
