@@ -1,0 +1,94 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/tsconfig.tsbuildinfo
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+Untitled-*.psd
+*.zip
+*.log
+*.txt
+
+# screenshots & debug images
+debug-*.png
+debug-*.html
+error_row_*.png
+naver_debug*.png
+*.webp
+!public/images/posters/**/*.webp
+!public/images/logos/**/*.webp
+
+# data/cache
+venue_cache.json
+venue_report.*
+venue_audit.csv
+venue_export.csv
+venue_validation_log.txt
+missing_venues.txt
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# sensitive keys
+oracle_key
+.env*
+!.env.example
+
+# debug & temp artifacts
+debug_*
+error_row_*
+*.log
+*.psd
+*.zip
+tmp-*
+server*.log
+venue_*.csv
+*_debug.*
+=
+0
+1200x600.jpg
+256x256.jpg
+interpark_*screenshot.png
+kovo.js
+*.rtf
+build_log.txt
+server_log.txt
+timeticket_item_dump.html
+venue_page_v2.html
+venue_validation_log.txt
+venue_coordinate_mismatches.csv
+venue_audit.csv
+venue_report*
+venue_export*
+missing_venues.txt
+missing_venues_report.json
+mochaclass_debug.json
+unmatched_sports_venues.json
+venue_cache.json
+out/
+.next/
+node_modules/

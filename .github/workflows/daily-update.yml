@@ -1,0 +1,169 @@
+name: Daily Data Update
+
+on:
+  schedule:
+    - cron: '0 14 * * *' # 23:00 KST (14:00 UTC) - Main daily run
+    - cron: '0 10 * * *' # 19:00 KST (10:00 UTC) - Retry if previous run failed
+  workflow_dispatch:
+
+permissions:
+  contents: write # Needed to push changes
+  actions: read   # Needed to check previous run status
+
+# Prevent multiple data updates from running concurrently
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    env:
+      SKIP_EXECUTION: 'false'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        id: npm-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: |
+          export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+          npm install
+
+      - name: Install Playwright and System Dependencies
+        if: env.SKIP_EXECUTION != 'true'
+        run: |
+          npx playwright install chromium --with-deps
+          sudo apt-get update
+          sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2t64 libpangocairo-1.0-0 libatk1.0-0 libgtk-3-0
+
+      - name: Check Retry Condition (Skip 19:00 KST run if previous 23:00 KST run was successful)
+        id: check_retry
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          current_hour=$(date -u +%H)
+          # 10 UTC is 19:00 KST (retry time)
+          if [ "$current_hour" -eq "10" ]; then
+            echo "Time is 19:00 KST (10:00 UTC). Checking if previous run succeeded..."
+            # Get status of the last COMPLETED run for this workflow
+            last_status=$(gh run list --workflow daily-update.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion')
+            echo "Last run status: $last_status"
+            
+            if [ "$last_status" == "success" ]; then
+              echo "Previous run was successful. Skipping this retry execution."
+              echo "SKIP_EXECUTION=true" >> $GITHUB_ENV
+            else
+              echo "Previous run failed or unknown ($last_status). Proceeding with retry."
+              echo "SKIP_EXECUTION=false" >> $GITHUB_ENV
+            fi
+          else
+            echo "Regular schedule (23:00 KST). Proceeding."
+            echo "SKIP_EXECUTION=false" >> $GITHUB_ENV
+          fi
+
+      - name: Run Scrapers
+        if: env.SKIP_EXECUTION != 'true'
+        timeout-minutes: 240 # Total max for all scrapers
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+        run: |
+          npx tsx scripts/scrape-interpark.ts || true
+          npx tsx scripts/scrape-kovo.ts || true
+          npx tsx scripts/scrape-kbl.ts || true
+          npx tsx scripts/scrape-handball.ts || true
+          npx tsx scripts/scrape-festival.ts || true
+          npx tsx scripts/scrape-kbo.ts || true
+          npx tsx scripts/scrape-kleague.ts || true
+          npx tsx scripts/scrape-yes24-exclusive.ts || true
+          npx tsx scripts/scrape-kopis.ts || true
+          npx tsx scripts/scrape-timeticket.ts || true
+          npx tsx scripts/scrape-movies.ts || true
+          npx tsx scripts/scrape-cinemas.ts || true
+          node scripts/scrape-myrealtrip.js || true
+          npx tsx scripts/scrape-umclass.ts || true
+          npx tsx scripts/scrape-sssd.ts || true
+          npx tsx scripts/scrape-mochaclass.ts || true
+          npx tsx scripts/scrape-museum.ts || true
+          npx tsx scripts/scrape-mommom.ts || true
+          npx tsx scripts/scrape-mommom-activities.ts || true
+          npx tsx scripts/scrape-mommom-exhibitions.ts || true
+          npx tsx scripts/scrape-mommom-products.ts || true
+          npx tsx scripts/scrape-seoul-culture.ts || true
+          npx tsx scripts/build-venues.ts || true
+          npx tsx scripts/verify-links.ts || true
+          
+      - name: MochaClass Geocoding Cleanup
+        if: env.SKIP_EXECUTION != 'true'
+        env:
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+        run: npx tsx scripts/reclaim-mochaclass-v2.ts || true
+
+      - name: Validate Data Integrity (Pre-Commit Check)
+        if: env.SKIP_EXECUTION != 'true'
+        run: npx tsx scripts/validate-data-integrity.ts
+
+      - name: Prune Stale Data (Strict Retention)
+        if: env.SKIP_EXECUTION != 'true'
+        run: |
+          npx tsx scripts/prune-expired-data.ts
+          npx tsx scripts/prune-data.ts
+
+      - name: Generate Localized Data (Translation)
+        if: env.SKIP_EXECUTION != 'true'
+        env:
+          SKIP_TRANSLATION: 'false'
+          NODE_OPTIONS: '--max-old-space-size=4096'
+        run: npm run generate-data
+
+      - name: Commit and Push changes
+        if: env.SKIP_EXECUTION != 'true'
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add src/data/*.json
+          git add public/data/*.json
+          git add public/images/posters/*.webp
+          # Only commit if there are changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update daily data" && git push)
+
+      - name: Log Error to Tracker
+        if: failure()
+        run: |
+          echo "### 🚨 CI Action Runtime Failure" >> ERROR_TRACKER.md
+          echo "- **Date**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> ERROR_TRACKER.md
+          echo "- **GitHub Run ID**: [${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> ERROR_TRACKER.md
+          echo "- **Note**: A scraper or validation step failed during the daily data update. Please check the Action logs via the link above." >> ERROR_TRACKER.md
+          echo "" >> ERROR_TRACKER.md
+
+      - name: Commit Error Tracker
+        if: failure()
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add ERROR_TRACKER.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: Log CI failure to ERROR_TRACKER [skip ci]" && git push)
+
+  trigger-deploy:
+    needs: update-data
+    if: always() && needs.update-data.result == 'success'
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+
+
+

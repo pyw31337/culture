@@ -1,0 +1,61 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to main (UI/Code changes)
+  workflow_run:
+    workflows: ["Daily Data Update"]
+    types:
+      - completed
+  workflow_call: # Allow calling from other workflows (like daily-update)
+
+permissions:
+  contents: write
+
+# Prevent overlapping deployments
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-nextjs-
+
+      - name: Install dependencies
+        run: |
+          export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+          npm install
+
+      - name: Build Website
+        env:
+          NEXT_PUBLIC_BASE_PATH: /culture
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          SKIP_TRANSLATION: 'true'
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          force_orphan: true
