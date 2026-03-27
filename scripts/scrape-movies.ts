@@ -82,15 +82,16 @@ async function fetchTmdbData(title: string, year: string) {
  * MovieChart Crawler for Reservation Rate / Audience Count
  */
 async function scrapeMovieChart(page: any, title: string) {
+    // Skip if page is null or Playwright is unavailable
+    if (!page) return null;
     try {
         const searchUrl = `https://m.moviechart.co.kr/rank/realtime/index/image`;
-        await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
+        await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
         
         const metrics = await page.evaluate((t: string) => {
             const items = Array.from(document.querySelectorAll('.movieBox-item'));
             const match = items.find(item => {
                 const itemTitle = item.querySelector('.movie-title a')?.textContent?.trim() || '';
-                // Flexible match for varying title formats
                 const cleanT = t.replace(/\s+/g, '');
                 const cleanItemT = itemTitle.replace(/\s+/g, '');
                 return cleanItemT.includes(cleanT) || cleanT.includes(cleanItemT);
@@ -104,7 +105,7 @@ async function scrapeMovieChart(page: any, title: string) {
         }, title);
 
         if (metrics && metrics.detailLink) {
-            await page.goto(metrics.detailLink, { waitUntil: 'domcontentloaded', timeout: 20000 });
+            await page.goto(metrics.detailLink, { waitUntil: 'domcontentloaded', timeout: 15000 });
             return await page.evaluate(() => {
                 const infoItems = Array.from(document.querySelectorAll('.movie_info_renew23 li'));
                 let resRate = '';
@@ -122,7 +123,9 @@ async function scrapeMovieChart(page: any, title: string) {
                 return { resRate, audience, synopsis, trailer };
             });
         }
-    } catch (e) { }
+    } catch (e) {
+        console.warn(`[WARN] MovieChart scrape failed for ${title}:`, (e as any).message);
+    }
     return null;
 }
 
@@ -163,7 +166,14 @@ async function scrapeMovies() {
     try {
         console.log('Discovery Phase: Fetching KOBIS API (Box Office + 20 pages of Upcoming)...');
         const bo = await fetchKobisBoxOffice();
-        bo.slice(0, 10).forEach((m: any) => discoveryList.push({ title: m.movieNm, movieCd: m.movieCd, rank: parseInt(m.rank), dateRaw: m.openDt, type: 'boxoffice' }));
+        bo.slice(0, 10).forEach((m: any) => discoveryList.push({ 
+            title: m.movieNm, 
+            movieCd: m.movieCd, 
+            rank: parseInt(m.rank), 
+            dateRaw: m.openDt, 
+            audiAcc: m.audiAcc,
+            type: 'boxoffice' 
+        }));
         
         // Fetch 20 pages (2000 items) to ensure we reach far-future major titles like Avengers
         for (let p = 1; p <= 20; p++) {
@@ -203,8 +213,15 @@ async function scrapeMovies() {
         console.error('API Discovery failed:', e.message);
     }
 
-    const browser = await chromium.launch({ headless: process.env.HEADLESS !== 'false' });
-    const context = await browser.newContext();
+    let browser: any = null;
+    let context: any = null;
+    try {
+        browser = await chromium.launch({ headless: process.env.HEADLESS !== 'false' });
+        context = await browser.newContext();
+        console.log('[INFO] Playwright launched successfully for enrichment.');
+    } catch (e) {
+        console.warn('[WARN] Playwright launch failed (common in sandbox). Skipping MovieChart enrichment step.');
+    }
 
     const progressBar = new cliProgress.SingleBar({
         format: '영화 정보 보강 | {bar} | {percentage}% | {value}/{total} | {movie}',
@@ -269,9 +286,9 @@ async function scrapeMovies() {
             // C. MovieChart (Specific Metrics for Top 10 / Box Office)
             let chartData = null;
             if (m.rank || m.type === 'boxoffice' || !m.dateRaw) {
-                const page = await context.newPage();
+                const page = context ? await context.newPage() : null;
                 chartData = await scrapeMovieChart(page, m.title);
-                await page.close();
+                await page?.close();
             }
 
             const rating = kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정';
@@ -329,7 +346,11 @@ async function scrapeMovies() {
                 revenueKRW: finalRevenue ? Math.round(finalRevenue * 1400) : existing?.revenueKRW,
                 synopsis: chartData?.synopsis || tmdb?.overview || existing?.synopsis,
                 reservationRate: chartData?.resRate || existing?.reservationRate,
-                audienceCount: chartData?.audience || existing?.audienceCount,
+                audienceCount: m.audiAcc 
+                    ? (parseInt(m.audiAcc) > 10000 
+                        ? (parseInt(m.audiAcc) / 10000).toFixed(1) + '만' 
+                        : parseInt(m.audiAcc).toLocaleString())
+                    : (chartData?.audience || existing?.audienceCount),
                 roi: (finalBudget && finalRevenue && finalBudget > 0) 
                     ? Math.round(((finalRevenue - finalBudget) / finalBudget) * 100) + '%'
                     : existing?.roi,

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.EXiLRg1x1TO9YjMLaKIo-.675148f3d1e32900bb3f5be906315006.js"
+  "/culture/_next/precache.gGdrfm75uGMR5vOzlGIEh.48a6460d69f8294fee6c24fe87f0c9ae.js"
 );
 
 workbox.core.skipWaiting();
@@ -41,7 +41,7 @@ self.__precacheManifest = [
   },
   {
     "url": "/data/venues.json",
-    "revision": "9f65ee8d754c2e0c823b1eb02638bf6e"
+    "revision": "3ea3aaee57c04e45d20a3cbf3d8f4e90"
   },
   {
     "url": "/favicon.png",

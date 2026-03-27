@@ -1,0 +1,554 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e5]:
+        - link "Icon Culture Flow" [ref=e6] [cursor=pointer]:
+          - /url: /en/
+          - img "Icon" [ref=e8]
+          - heading "Culture Flow" [level=1] [ref=e9]
+        - generic [ref=e10]:
+          - button "language_change" [ref=e11]:
+            - img [ref=e12]
+          - button "mode_change" [ref=e16]:
+            - img [ref=e17]
+          - button "keyword_settings" [ref=e23]:
+            - img [ref=e24]
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - heading "키워드 알림" [level=3] [ref=e30]:
+            - img [ref=e31]
+            - generic [ref=e34]: 키워드 알림
+          - button [ref=e35]:
+            - img [ref=e36]
+        - generic [ref=e39]:
+          - 'textbox "키워드 추가 (예: 아이유)" [ref=e40]'
+          - button "추가" [disabled] [ref=e41]
+        - generic [ref=e42]:
+          - text: 등록된 키워드
+          - generic [ref=e43]: 키워드를 등록해보세요.
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - paragraph [ref=e46]:
+            - button "현재위치 :" [ref=e47]:
+              - img [ref=e48]
+              - generic [ref=e51]: "현재위치 :"
+            - generic [ref=e52] [cursor=pointer]: 전국
+            - button "지역 설정 열기" [ref=e53]:
+              - img [ref=e54]
+          - heading "특별한 오늘, 당신을 위한" [level=2] [ref=e57]:
+            - text: 특별한 오늘,
+            - text: 당신을 위한
+        - generic [ref=e61]:
+          - button "위치 검색으로 변경" [ref=e62]:
+            - img [ref=e63]
+          - textbox "컨텐츠 검색" [ref=e67]
+      - main [ref=e68]:
+        - generic [ref=e69]:
+          - heading "전체 컨텐츠 목록 (24)" [level=2] [ref=e73]:
+            - generic [ref=e74]:
+              - img [ref=e75]
+              - text: 전체 컨텐츠 목록
+            - generic [ref=e82]: (24)
+          - generic [ref=e83]:
+            - generic [ref=e87]:
+              - button [ref=e88]:
+                - img [ref=e89]
+              - generic [ref=e91]:
+                - img "가야산역사신화공원테마관" [ref=e92]
+                - generic [ref=e94]:
+                  - generic [ref=e95]:
+                    - generic [ref=e97]: 박물관/체험관
+                    - heading "가야산역사신화공원테마관" [level=2] [ref=e98]
+                    - generic [ref=e99]:
+                      - img [ref=e100]
+                      - button "가야산역사신화공원테마관" [ref=e103]
+                    - generic [ref=e107]: 무료
+                  - generic [ref=e108]:
+                    - button [ref=e109]:
+                      - img [ref=e110]
+                    - button "자세히 보기" [ref=e116]:
+                      - text: 자세히 보기
+                      - img [ref=e117]
+            - generic [ref=e123]:
+              - button [ref=e124]:
+                - img [ref=e125]
+              - generic [ref=e127]:
+                - img "G밸리산업박물관" [ref=e128]
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - generic [ref=e133]: 박물관/체험관
+                    - heading "G밸리산업박물관" [level=2] [ref=e134]
+                    - generic [ref=e135]:
+                      - img [ref=e136]
+                      - button "G밸리산업박물관" [ref=e139]
+                    - generic [ref=e143]: 무료
+                  - generic [ref=e144]:
+                    - button [ref=e145]:
+                      - img [ref=e146]
+                    - button "자세히 보기" [ref=e152]:
+                      - text: 자세히 보기
+                      - img [ref=e153]
+            - generic [ref=e159]:
+              - button [ref=e160]:
+                - img [ref=e161]
+              - generic [ref=e163]:
+                - img "Park1538" [ref=e164]
+                - generic [ref=e166]:
+                  - generic [ref=e167]:
+                    - generic [ref=e169]: 박물관/체험관
+                    - heading "Park1538" [level=2] [ref=e170]
+                    - generic [ref=e171]:
+                      - img [ref=e172]
+                      - button "Park1538" [ref=e175]
+                    - generic [ref=e179]: 무료
+                  - generic [ref=e180]:
+                    - button [ref=e181]:
+                      - img [ref=e182]
+                    - button "자세히 보기" [ref=e188]:
+                      - text: 자세히 보기
+                      - img [ref=e189]
+            - generic [ref=e195]:
+              - button [ref=e196]:
+                - img [ref=e197]
+              - generic [ref=e199]:
+                - img "LED SQUARE CAFE" [ref=e200]
+                - generic [ref=e202]:
+                  - generic [ref=e203]:
+                    - generic [ref=e205]: 박물관/체험관
+                    - heading "LED SQUARE CAFE" [level=2] [ref=e206]
+                    - generic [ref=e207]:
+                      - img [ref=e208]
+                      - button "LED SQUARE CAFE" [ref=e211]
+                    - generic [ref=e215]: 무료
+                  - generic [ref=e216]:
+                    - button [ref=e217]:
+                      - img [ref=e218]
+                    - button "자세히 보기" [ref=e224]:
+                      - text: 자세히 보기
+                      - img [ref=e225]
+            - generic [ref=e231]:
+              - button [ref=e232]:
+                - img [ref=e233]
+              - generic [ref=e235]:
+                - img "가천이길여산부인과기념관" [ref=e236]
+                - generic [ref=e238]:
+                  - generic [ref=e239]:
+                    - generic [ref=e241]: 박물관/체험관
+                    - heading "가천이길여산부인과기념관" [level=2] [ref=e242]
+                    - generic [ref=e243]:
+                      - img [ref=e244]
+                      - button "가천이길여산부인과기념관" [ref=e247]
+                    - generic [ref=e251]: 무료
+                  - generic [ref=e252]:
+                    - button [ref=e253]:
+                      - img [ref=e254]
+                    - button "자세히 보기" [ref=e260]:
+                      - text: 자세히 보기
+                      - img [ref=e261]
+            - generic [ref=e267]:
+              - button [ref=e268]:
+                - img [ref=e269]
+              - generic [ref=e271]:
+                - img "YDP곤충체험학습관" [ref=e272]
+                - generic [ref=e274]:
+                  - generic [ref=e275]:
+                    - generic [ref=e277]: 박물관/체험관
+                    - heading "YDP곤충체험학습관" [level=2] [ref=e278]
+                    - generic [ref=e279]:
+                      - img [ref=e280]
+                      - button "YDP곤충체험학습관" [ref=e283]
+                    - generic [ref=e287]: 무료
+                  - generic [ref=e288]:
+                    - button [ref=e289]:
+                      - img [ref=e290]
+                    - button "자세히 보기" [ref=e296]:
+                      - text: 자세히 보기
+                      - img [ref=e297]
+            - generic [ref=e303]:
+              - button [ref=e304]:
+                - img [ref=e305]
+              - generic [ref=e307]:
+                - img "강원경찰박물관" [ref=e308]
+                - generic [ref=e310]:
+                  - generic [ref=e311]:
+                    - generic [ref=e313]: 박물관/체험관
+                    - heading "강원경찰박물관" [level=2] [ref=e314]
+                    - generic [ref=e315]:
+                      - img [ref=e316]
+                      - button "강원경찰박물관" [ref=e319]
+                    - generic [ref=e323]: 무료
+                  - generic [ref=e324]:
+                    - button [ref=e325]:
+                      - img [ref=e326]
+                    - button "자세히 보기" [ref=e332]:
+                      - text: 자세히 보기
+                      - img [ref=e333]
+            - generic [ref=e339]:
+              - button [ref=e340]:
+                - img [ref=e341]
+              - generic [ref=e343]:
+                - img "강릉메타버스체험관" [ref=e344]
+                - generic [ref=e346]:
+                  - generic [ref=e347]:
+                    - generic [ref=e349]: 박물관/체험관
+                    - heading "강릉메타버스체험관" [level=2] [ref=e350]
+                    - generic [ref=e351]:
+                      - img [ref=e352]
+                      - button "강릉메타버스체험관" [ref=e355]
+                    - generic [ref=e359]: 무료
+                  - generic [ref=e360]:
+                    - button [ref=e361]:
+                      - img [ref=e362]
+                    - button "자세히 보기" [ref=e368]:
+                      - text: 자세히 보기
+                      - img [ref=e369]
+            - generic [ref=e375]:
+              - button [ref=e376]:
+                - img [ref=e377]
+              - generic [ref=e379]:
+                - img "Wake up 국제청소년센터" [ref=e380]
+                - generic [ref=e382]:
+                  - generic [ref=e383]:
+                    - generic [ref=e385]: 박물관/체험관
+                    - heading "Wake up 국제청소년센터" [level=2] [ref=e386]
+                    - generic [ref=e387]:
+                      - img [ref=e388]
+                      - button "Wake up 국제청소년센터" [ref=e391]
+                    - generic [ref=e395]: 무료
+                  - generic [ref=e396]:
+                    - button [ref=e397]:
+                      - img [ref=e398]
+                    - button "자세히 보기" [ref=e404]:
+                      - text: 자세히 보기
+                      - img [ref=e405]
+            - generic [ref=e411]:
+              - button [ref=e412]:
+                - img [ref=e413]
+              - generic [ref=e415]:
+                - img "25/26 곤지암리조트 리프트권/렌탈PKG" [ref=e416]
+                - generic [ref=e418]:
+                  - generic [ref=e419]:
+                    - generic [ref=e420]:
+                      - generic [ref=e421]: 액티비티
+                      - generic [ref=e422]: ~ 26.03.02 리프트권 주중 리프트권 주말 리프트권+스키렌탈PKG 주중 리프트권+스키렌탈PKG 주말 리프트권+보드렌탈PKG 주중 리프트권+보드렌탈PKG 주말
+                    - heading "25/26 곤지암리조트 리프트권/렌탈PKG" [level=2] [ref=e423]
+                    - generic [ref=e424]:
+                      - img [ref=e425]
+                      - button "곤지암리조트" [ref=e428]
+                    - generic [ref=e432]: 61,000원
+                  - generic [ref=e433]:
+                    - button [ref=e434]:
+                      - img [ref=e435]
+                    - button "자세히 보기" [ref=e441]:
+                      - text: 자세히 보기
+                      - img [ref=e442]
+            - generic [ref=e448]:
+              - button [ref=e449]:
+                - img [ref=e450]
+              - generic [ref=e452]:
+                - img "119부산안전체험관" [ref=e453]
+                - generic [ref=e455]:
+                  - generic [ref=e456]:
+                    - generic [ref=e458]: 박물관/체험관
+                    - heading "119부산안전체험관" [level=2] [ref=e459]
+                    - generic [ref=e460]:
+                      - img [ref=e461]
+                      - button "119부산안전체험관" [ref=e464]
+                    - generic [ref=e468]: 무료
+                  - generic [ref=e469]:
+                    - button [ref=e470]:
+                      - img [ref=e471]
+                    - button "자세히 보기" [ref=e477]:
+                      - text: 자세히 보기
+                      - img [ref=e478]
+            - generic [ref=e484]:
+              - button [ref=e485]:
+                - img [ref=e486]
+              - generic [ref=e488]:
+                - img "DMZ 야생화체험관" [ref=e489]
+                - generic [ref=e491]:
+                  - generic [ref=e492]:
+                    - generic [ref=e494]: 박물관/체험관
+                    - heading "DMZ 야생화체험관" [level=2] [ref=e495]
+                    - generic [ref=e496]:
+                      - img [ref=e497]
+                      - button "DMZ 야생화체험관" [ref=e500]
+                    - generic [ref=e504]: 무료
+                  - generic [ref=e505]:
+                    - button [ref=e506]:
+                      - img [ref=e507]
+                    - button "자세히 보기" [ref=e513]:
+                      - text: 자세히 보기
+                      - img [ref=e514]
+            - generic [ref=e520]:
+              - button [ref=e521]:
+                - img [ref=e522]
+              - generic [ref=e524]:
+                - img "DMZ 생생누리" [ref=e525]
+                - generic [ref=e527]:
+                  - generic [ref=e528]:
+                    - generic [ref=e530]: 박물관/체험관
+                    - heading "DMZ 생생누리" [level=2] [ref=e531]
+                    - generic [ref=e532]:
+                      - img [ref=e533]
+                      - button "DMZ 생생누리" [ref=e536]
+                    - generic [ref=e540]: 무료
+                  - generic [ref=e541]:
+                    - button [ref=e542]:
+                      - img [ref=e543]
+                    - button "자세히 보기" [ref=e549]:
+                      - text: 자세히 보기
+                      - img [ref=e550]
+            - generic [ref=e556]:
+              - button [ref=e557]:
+                - img [ref=e558]
+              - generic [ref=e560]:
+                - img "강원특별자치도자연환경연구공원" [ref=e561]
+                - generic [ref=e563]:
+                  - generic [ref=e564]:
+                    - generic [ref=e566]: 박물관/체험관
+                    - heading "강원특별자치도자연환경연구공원" [level=2] [ref=e567]
+                    - generic [ref=e568]:
+                      - img [ref=e569]
+                      - button "강원특별자치도자연환경연구공원" [ref=e572]
+                    - generic [ref=e576]: 무료
+                  - generic [ref=e577]:
+                    - button [ref=e578]:
+                      - img [ref=e579]
+                    - button "자세히 보기" [ref=e585]:
+                      - text: 자세히 보기
+                      - img [ref=e586]
+            - generic [ref=e592]:
+              - button [ref=e593]:
+                - img [ref=e594]
+              - generic [ref=e596]:
+                - img "강원도산림박물관" [ref=e597]
+                - generic [ref=e599]:
+                  - generic [ref=e600]:
+                    - generic [ref=e602]: 박물관/체험관
+                    - heading "강원도산림박물관" [level=2] [ref=e603]
+                    - generic [ref=e604]:
+                      - img [ref=e605]
+                      - button "강원도산림박물관" [ref=e608]
+                    - generic [ref=e612]: 무료
+                  - generic [ref=e613]:
+                    - button [ref=e614]:
+                      - img [ref=e615]
+                    - button "자세히 보기" [ref=e621]:
+                      - text: 자세히 보기
+                      - img [ref=e622]
+            - generic [ref=e628]:
+              - button [ref=e629]:
+                - img [ref=e630]
+              - generic [ref=e632]:
+                - img "365세이프타운" [ref=e633]
+                - generic [ref=e635]:
+                  - generic [ref=e636]:
+                    - generic [ref=e638]: 박물관/체험관
+                    - heading "365세이프타운" [level=2] [ref=e639]
+                    - generic [ref=e640]:
+                      - img [ref=e641]
+                      - button "365세이프타운" [ref=e644]
+                    - generic [ref=e648]: 무료
+                  - generic [ref=e649]:
+                    - button [ref=e650]:
+                      - img [ref=e651]
+                    - button "자세히 보기" [ref=e657]:
+                      - text: 자세히 보기
+                      - img [ref=e658]
+            - generic [ref=e664]:
+              - button [ref=e665]:
+                - img [ref=e666]
+              - generic [ref=e668]:
+                - img "강원종합박물관" [ref=e669]
+                - generic [ref=e671]:
+                  - generic [ref=e672]:
+                    - generic [ref=e674]: 박물관/체험관
+                    - heading "강원종합박물관" [level=2] [ref=e675]
+                    - generic [ref=e676]:
+                      - img [ref=e677]
+                      - button "강원종합박물관" [ref=e680]
+                    - generic [ref=e684]: 무료
+                  - generic [ref=e685]:
+                    - button [ref=e686]:
+                      - img [ref=e687]
+                    - button "자세히 보기" [ref=e693]:
+                      - text: 자세히 보기
+                      - img [ref=e694]
+            - generic [ref=e700]:
+              - button [ref=e701]:
+                - img [ref=e702]
+              - generic [ref=e704]:
+                - img "가평탑랜드 번지점프" [ref=e705]
+                - generic [ref=e707]:
+                  - generic [ref=e708]:
+                    - generic [ref=e709]:
+                      - generic [ref=e710]: 액티비티
+                      - generic [ref=e711]: ~ 2026.06.30 (화)
+                    - heading "가평탑랜드 번지점프" [level=2] [ref=e712]
+                    - generic [ref=e713]:
+                      - img [ref=e714]
+                      - button "가평탑랜드" [ref=e717]
+                    - generic [ref=e721]: 30,000원
+                  - generic [ref=e722]:
+                    - button [ref=e723]:
+                      - img [ref=e724]
+                    - button "자세히 보기" [ref=e730]:
+                      - text: 자세히 보기
+                      - img [ref=e731]
+            - generic [ref=e737]:
+              - button [ref=e738]:
+                - img [ref=e739]
+              - generic [ref=e741]:
+                - img "K-water 소양강댐 물문화관" [ref=e742]
+                - generic [ref=e744]:
+                  - generic [ref=e745]:
+                    - generic [ref=e747]: 박물관/체험관
+                    - heading "K-water 소양강댐 물문화관" [level=2] [ref=e748]
+                    - generic [ref=e749]:
+                      - img [ref=e750]
+                      - button "K-water 소양강댐 물문화관" [ref=e753]
+                    - generic [ref=e757]: 무료
+                  - generic [ref=e758]:
+                    - button [ref=e759]:
+                      - img [ref=e760]
+                    - button "자세히 보기" [ref=e766]:
+                      - text: 자세히 보기
+                      - img [ref=e767]
+            - generic [ref=e773]:
+              - button [ref=e774]:
+                - img [ref=e775]
+              - generic [ref=e777]:
+                - img "OPCI" [ref=e778]
+                - generic [ref=e780]:
+                  - generic [ref=e781]:
+                    - generic [ref=e782]:
+                      - generic [ref=e783]: 전시/행사
+                      - generic [ref=e784]: ~ 2026.06.30 (화)
+                    - heading "OPCI" [level=2] [ref=e785]
+                    - generic [ref=e786]:
+                      - img [ref=e787]
+                      - button "타임스퀘어 B1 GATE 11 밖" [ref=e790]
+                    - generic [ref=e794]: 9,100원
+                  - generic [ref=e795]:
+                    - button [ref=e796]:
+                      - img [ref=e797]
+                    - button "자세히 보기" [ref=e803]:
+                      - text: 자세히 보기
+                      - img [ref=e804]
+            - generic [ref=e810]:
+              - button [ref=e811]:
+                - img [ref=e812]
+              - generic [ref=e814]:
+                - img "강릉올림픽뮤지엄" [ref=e815]
+                - generic [ref=e817]:
+                  - generic [ref=e818]:
+                    - generic [ref=e820]: 박물관/체험관
+                    - heading "강릉올림픽뮤지엄" [level=2] [ref=e821]
+                    - generic [ref=e822]:
+                      - img [ref=e823]
+                      - button "강릉올림픽뮤지엄" [ref=e826]
+                    - generic [ref=e830]: 무료
+                  - generic [ref=e831]:
+                    - button [ref=e832]:
+                      - img [ref=e833]
+                    - button "자세히 보기" [ref=e839]:
+                      - text: 자세히 보기
+                      - img [ref=e840]
+            - generic [ref=e846]:
+              - button [ref=e847]:
+                - img [ref=e848]
+              - generic [ref=e850]:
+                - img "hy팩토리+" [ref=e851]
+                - generic [ref=e853]:
+                  - generic [ref=e854]:
+                    - generic [ref=e856]: 박물관/체험관
+                    - heading "hy팩토리+" [level=2] [ref=e857]
+                    - generic [ref=e858]:
+                      - img [ref=e859]
+                      - button "hy팩토리+" [ref=e862]
+                    - generic [ref=e866]: 무료
+                  - generic [ref=e867]:
+                    - button [ref=e868]:
+                      - img [ref=e869]
+                    - button "자세히 보기" [ref=e875]:
+                      - text: 자세히 보기
+                      - img [ref=e876]
+            - generic [ref=e882]:
+              - button [ref=e883]:
+                - img [ref=e884]
+              - generic [ref=e886]:
+                - img "UX스튜디오 서울" [ref=e887]
+                - generic [ref=e889]:
+                  - generic [ref=e890]:
+                    - generic [ref=e892]: 박물관/체험관
+                    - heading "UX스튜디오 서울" [level=2] [ref=e893]
+                    - generic [ref=e894]:
+                      - img [ref=e895]
+                      - button "UX스튜디오 서울" [ref=e898]
+                    - generic [ref=e902]: 무료
+                  - generic [ref=e903]:
+                    - button [ref=e904]:
+                      - img [ref=e905]
+                    - button "자세히 보기" [ref=e911]:
+                      - text: 자세히 보기
+                      - img [ref=e912]
+            - generic [ref=e918]:
+              - button [ref=e919]:
+                - img [ref=e920]
+              - generic [ref=e922]:
+                - img "강원특별자치도 탄광문화촌" [ref=e923]
+                - generic [ref=e925]:
+                  - generic [ref=e926]:
+                    - generic [ref=e928]: 박물관/체험관
+                    - heading "강원특별자치도 탄광문화촌" [level=2] [ref=e929]
+                    - generic [ref=e930]:
+                      - img [ref=e931]
+                      - button "강원특별자치도 탄광문화촌" [ref=e934]
+                    - generic [ref=e938]: 무료
+                  - generic [ref=e939]:
+                    - button [ref=e940]:
+                      - img [ref=e941]
+                    - button "자세히 보기" [ref=e947]:
+                      - text: 자세히 보기
+                      - img [ref=e948]
+          - generic [ref=e951]:
+            - img [ref=e952]
+            - generic [ref=e954]: Loading data...
+      - navigation [ref=e955]:
+        - generic [ref=e956]:
+          - button [ref=e958]:
+            - img [ref=e959]
+          - generic [ref=e963]:
+            - generic [ref=e964]:
+              - button "좋아요" [ref=e965]:
+                - img [ref=e967]
+                - generic [ref=e969]: 좋아요
+              - button "카테고리" [ref=e970]:
+                - img [ref=e972]
+                - generic [ref=e979]: 카테고리
+            - generic [ref=e980]:
+              - button "지도 보기" [ref=e981]:
+                - img [ref=e983]
+                - generic [ref=e985]: 지도 보기
+              - button "캘린더" [ref=e986]:
+                - img [ref=e988]
+                - generic [ref=e990]: 캘린더
+  - generic [ref=e995] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e996]:
+      - img [ref=e997]
+    - generic [ref=e1000]:
+      - button "Open issues overlay" [ref=e1001]:
+        - generic [ref=e1002]:
+          - generic [ref=e1003]: "3"
+          - generic [ref=e1004]: "4"
+        - generic [ref=e1005]:
+          - text: Issue
+          - generic [ref=e1006]: s
+      - button "Collapse issues badge" [ref=e1007]:
+        - img [ref=e1008]
+  - alert [ref=e1010]
+```

@@ -1,0 +1,748 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e5]:
+        - link "Icon Culture Flow" [ref=e6] [cursor=pointer]:
+          - /url: /ja/
+          - img "Icon" [ref=e8]
+          - heading "Culture Flow" [level=1] [ref=e9]
+        - generic [ref=e10]:
+          - button "language_change" [ref=e11]:
+            - img [ref=e12]
+          - button "mode_change" [ref=e16]:
+            - img [ref=e17]
+          - button "keyword_settings" [ref=e23]:
+            - img [ref=e24]
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - heading "키워드 알림" [level=3] [ref=e30]:
+            - img [ref=e31]
+            - generic [ref=e34]: 키워드 알림
+          - button [ref=e35]:
+            - img [ref=e36]
+        - generic [ref=e39]:
+          - 'textbox "키워드 추가 (예: 아이유)" [ref=e40]'
+          - button "추가" [disabled] [ref=e41]
+        - generic [ref=e42]:
+          - text: 등록된 키워드
+          - generic [ref=e43]: 키워드를 등록해보세요.
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - paragraph [ref=e46]:
+            - button "현재위치 :" [ref=e47]:
+              - img [ref=e48]
+              - generic [ref=e51]: "현재위치 :"
+            - generic [ref=e52] [cursor=pointer]: 전국
+            - button "지역 설정 열기" [ref=e53]:
+              - img [ref=e54]
+          - heading "이름만 대면" [level=2] [ref=e57]: 이름만 대면
+        - generic [ref=e61]:
+          - button "위치 검색으로 변경" [ref=e62]:
+            - img [ref=e63]
+          - textbox "컨텐츠 검색" [ref=e67]
+      - generic [ref=e69]:
+        - generic [ref=e71]:
+          - img [ref=e72]
+          - heading "실시간 인기 TOP 9" [level=2] [ref=e75]
+        - generic [ref=e76]:
+          - button [ref=e77]:
+            - img [ref=e78]
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - generic:
+                - generic: "1"
+              - generic [ref=e83]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "hy팩토리+"
+                - generic [ref=e85]:
+                  - heading "hy팩토리+" [level=3] [ref=e86]
+                  - paragraph [ref=e87]: 박물관/체험관
+                  - generic [ref=e88]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e89]:
+                    - img [ref=e90]
+                  - generic:
+                    - generic: hy팩토리+
+                    - generic: 경기도 평택시 진위면
+            - generic [ref=e92]:
+              - generic:
+                - generic: "2"
+              - generic [ref=e93]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "K-water 소양강댐 물문화관"
+                - generic [ref=e95]:
+                  - heading "K-water 소양강댐 물문화관" [level=3] [ref=e96]
+                  - paragraph [ref=e97]: 박물관/체험관
+                  - generic [ref=e98]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e99]:
+                    - img [ref=e100]
+                  - generic:
+                    - generic: K-water 소양강댐 물문화관
+                    - generic: 강원 춘천시 신북읍
+            - generic [ref=e102]:
+              - generic:
+                - generic: "3"
+              - generic [ref=e103]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "DMZ 생생누리"
+                - generic [ref=e105]:
+                  - heading "DMZ 생생누리" [level=3] [ref=e106]
+                  - paragraph [ref=e107]: 박물관/체험관
+                  - generic [ref=e108]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e109]:
+                    - img [ref=e110]
+                  - generic:
+                    - generic: DMZ 생생누리
+                    - generic: 경기 파주시 문산읍
+            - generic [ref=e112]:
+              - generic:
+                - generic: "4"
+              - generic [ref=e113]:
+                - generic:
+                  - generic: 액티비티
+                - img "25/26 곤지암리조트 리프트권/렌탈PKG"
+                - generic [ref=e115]:
+                  - heading "25/26 곤지암리조트 리프트권/렌탈PKG" [level=3] [ref=e116]
+                  - paragraph [ref=e117]: 액티비티
+                  - generic [ref=e118]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e119]:
+                    - img [ref=e120]
+                  - generic:
+                    - generic: 25/26 곤지암리조트 리프트권/렌탈PKG
+                    - generic: 경기 광주시 도척면
+            - generic [ref=e122]:
+              - generic:
+                - generic: "5"
+              - generic [ref=e123]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "365세이프타운"
+                - generic [ref=e125]:
+                  - heading "365세이프타운" [level=3] [ref=e126]
+                  - paragraph [ref=e127]: 박물관/체험관
+                  - generic [ref=e128]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e129]:
+                    - img [ref=e130]
+                  - generic:
+                    - generic: 365세이프타운
+                    - generic: 강원 태백시 평화길
+            - generic [ref=e132]:
+              - generic:
+                - generic: "6"
+              - generic [ref=e133]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "DMZ 야생화체험관"
+                - generic [ref=e135]:
+                  - heading "DMZ 야생화체험관" [level=3] [ref=e136]
+                  - paragraph [ref=e137]: 박물관/체험관
+                  - generic [ref=e138]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e139]:
+                    - img [ref=e140]
+                  - generic:
+                    - generic: DMZ 야생화체험관
+                    - generic: 경기도 파주시 금정로
+            - generic [ref=e142]:
+              - generic:
+                - generic: "7"
+              - generic [ref=e143]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "LED SQUARE CAFE"
+                - generic [ref=e145]:
+                  - heading "LED SQUARE CAFE" [level=3] [ref=e146]
+                  - paragraph [ref=e147]: 박물관/체험관
+                  - generic [ref=e148]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e149]:
+                    - img [ref=e150]
+                  - generic:
+                    - generic: LED SQUARE CAFE
+                    - generic: 경기 파주시 회동길
+            - generic [ref=e152]:
+              - generic:
+                - generic: "8"
+              - generic [ref=e153]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "G밸리산업박물관"
+                - generic [ref=e155]:
+                  - heading "G밸리산업박물관" [level=3] [ref=e156]
+                  - paragraph [ref=e157]: 박물관/체험관
+                  - generic [ref=e158]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e159]:
+                    - img [ref=e160]
+                  - generic:
+                    - generic: G밸리산업박물관
+                    - generic: 서울특별시 구로구 디지털로26길
+            - generic [ref=e162]:
+              - generic:
+                - generic: "9"
+              - generic [ref=e163]:
+                - generic:
+                  - generic: 박물관/체험관
+                - img "119부산안전체험관"
+                - generic [ref=e165]:
+                  - heading "119부산안전체험관" [level=3] [ref=e166]
+                  - paragraph [ref=e167]: 박물관/체험관
+                  - generic [ref=e168]: 자세히 보기
+                - generic:
+                  - button "공유하기" [ref=e169]:
+                    - img [ref=e170]
+                  - generic:
+                    - generic: 119부산안전체험관
+                    - generic: 부산 동래구 우장춘로
+      - main [ref=e172]:
+        - generic [ref=e173]:
+          - heading "전체 컨텐츠 목록 (6828)" [level=2] [ref=e177]:
+            - generic [ref=e178]:
+              - img [ref=e179]
+              - text: 전체 컨텐츠 목록
+            - generic [ref=e186]: (6828)
+          - generic [ref=e187]:
+            - generic [ref=e191]:
+              - button [ref=e192]:
+                - img [ref=e193]
+              - generic [ref=e195]:
+                - img "서초문화재단 & 서초교향악단 공동기획, 모차르트 피아노 협주곡 전곡 시리즈 4" [ref=e196]
+                - generic [ref=e198]:
+                  - generic [ref=e199]:
+                    - generic [ref=e200]:
+                      - generic [ref=e201]: 클래식/전통
+                      - generic [ref=e202]: 2026.03.26 (목)
+                    - heading "서초문화재단 & 서초교향악단 공동기획, 모차르트 피아노 협주곡 전곡 시리즈 4" [level=2] [ref=e203]
+                    - generic [ref=e204]:
+                      - img [ref=e205]
+                      - button "반포심산아트홀" [ref=e208]
+                    - generic [ref=e212]: R석20,000원
+                  - generic [ref=e213]:
+                    - button [ref=e214]:
+                      - img [ref=e215]
+                    - button "자세히 보기" [ref=e221]:
+                      - text: 자세히 보기
+                      - img [ref=e222]
+            - generic [ref=e228]:
+              - button [ref=e229]:
+                - img [ref=e230]
+              - generic [ref=e232]:
+                - img "통영국제음악제, 카운터테너 야쿠프 유제프 오를린스키 리사이틀" [ref=e233]
+                - generic [ref=e235]:
+                  - generic [ref=e236]:
+                    - generic [ref=e237]:
+                      - generic [ref=e238]: 클래식/전통
+                      - generic [ref=e239]: 2026.04.04 (토)
+                    - heading "통영국제음악제, 카운터테너 야쿠프 유제프 오를린스키 리사이틀" [level=2] [ref=e240]
+                    - generic [ref=e241]:
+                      - img [ref=e242]
+                      - button "통영국제음악당 콘서트홀" [ref=e245]
+                    - generic [ref=e249]: S석80,000원
+                  - generic [ref=e250]:
+                    - button [ref=e251]:
+                      - img [ref=e252]
+                    - button "자세히 보기" [ref=e258]:
+                      - text: 자세히 보기
+                      - img [ref=e259]
+            - generic [ref=e265]:
+              - button [ref=e266]:
+                - img [ref=e267]
+              - generic [ref=e269]:
+                - img "NC vs 삼성" [ref=e270]
+                - generic:
+                  - img "NC"
+                  - generic: VS
+                  - img "삼성"
+                - generic [ref=e272]:
+                  - generic [ref=e273]:
+                    - generic [ref=e274]:
+                      - generic [ref=e275]: 야구
+                      - generic [ref=e276]: 2026.06.04 (목) 18:30
+                    - heading "NC vs 삼성" [level=2] [ref=e277]
+                    - generic [ref=e278]:
+                      - img [ref=e279]
+                      - button "대구삼성라이온즈파크" [ref=e282]
+                  - generic [ref=e284]:
+                    - button [ref=e285]:
+                      - img [ref=e286]
+                    - button "자세히 보기" [ref=e292]:
+                      - text: 자세히 보기
+                      - img [ref=e293]
+            - generic [ref=e299]:
+              - button [ref=e300]:
+                - img [ref=e301]
+              - generic [ref=e303]:
+                - img "대불호텔전시관" [ref=e304]
+                - generic [ref=e306]:
+                  - generic [ref=e307]:
+                    - generic [ref=e309]: 박물관/체험관
+                    - heading "대불호텔전시관" [level=2] [ref=e310]
+                    - generic [ref=e311]:
+                      - img [ref=e312]
+                      - button "대불호텔전시관" [ref=e315]
+                  - generic [ref=e317]:
+                    - button [ref=e318]:
+                      - img [ref=e319]
+                    - button "자세히 보기" [ref=e325]:
+                      - text: 자세히 보기
+                      - img [ref=e326]
+            - generic [ref=e332]:
+              - button [ref=e333]:
+                - img [ref=e334]
+              - generic [ref=e336]:
+                - img "율곡수목원" [ref=e337]
+                - generic [ref=e339]:
+                  - generic [ref=e340]:
+                    - generic [ref=e341]:
+                      - generic [ref=e342]: 관광/여행
+                      - generic [ref=e343]: 상시
+                    - heading "율곡수목원" [level=2] [ref=e344]
+                    - generic [ref=e345]:
+                      - img [ref=e346]
+                      - button "율곡수목원" [ref=e349]
+                    - generic [ref=e353]: 무료
+                  - generic [ref=e354]:
+                    - button [ref=e355]:
+                      - img [ref=e356]
+                    - button "자세히 보기" [ref=e362]:
+                      - text: 자세히 보기
+                      - img [ref=e363]
+            - generic [ref=e369]:
+              - button [ref=e370]:
+                - img [ref=e371]
+              - generic [ref=e373]:
+                - img "SPOT THE GIG by Wanderloch, I Don't Like Mondays" [ref=e374]
+                - generic [ref=e376]:
+                  - generic [ref=e377]:
+                    - generic [ref=e378]:
+                      - generic [ref=e379]: 콘서트
+                      - generic [ref=e380]: 2026.04.10 (금)
+                    - heading "SPOT THE GIG by Wanderloch, I Don't Like Mondays" [level=2] [ref=e381]
+                    - generic [ref=e382]:
+                      - img [ref=e383]
+                      - button "예스24 원더로크홀" [ref=e386]
+                    - generic [ref=e390]: VIP석88,000원
+                  - generic [ref=e391]:
+                    - button [ref=e392]:
+                      - img [ref=e393]
+                    - button "자세히 보기" [ref=e399]:
+                      - text: 자세히 보기
+                      - img [ref=e400]
+            - generic [ref=e406]:
+              - button [ref=e407]:
+                - img [ref=e408]
+              - generic [ref=e410]:
+                - img "프린세스 캐치! 티니핑 [용인]" [ref=e411]
+                - generic [ref=e413]:
+                  - generic [ref=e414]:
+                    - generic [ref=e415]:
+                      - generic [ref=e416]: 뮤지컬
+                      - generic [ref=e417]: 2026.05.03 (일) ~ 2026.05.05 (화)
+                    - heading "프린세스 캐치! 티니핑 [용인]" [level=2] [ref=e418]
+                    - generic [ref=e419]:
+                      - img [ref=e420]
+                      - button "용인포은아트홀" [ref=e423]
+                    - generic [ref=e427]: R석70,000원
+                  - generic [ref=e428]:
+                    - button [ref=e429]:
+                      - img [ref=e430]
+                    - button "자세히 보기" [ref=e436]:
+                      - text: 자세히 보기
+                      - img [ref=e437]
+            - generic [ref=e443]:
+              - button [ref=e444]:
+                - img [ref=e445]
+              - generic [ref=e447]:
+                - img "어버이날 기념 주현미 孝 콘서트 [거제]" [ref=e448]
+                - generic [ref=e450]:
+                  - generic [ref=e451]:
+                    - generic [ref=e452]:
+                      - generic [ref=e453]: 콘서트
+                      - generic [ref=e454]: 2026.05.09 (토)
+                    - heading "어버이날 기념 주현미 孝 콘서트 [거제]" [level=2] [ref=e455]
+                    - generic [ref=e456]:
+                      - img [ref=e457]
+                      - button "거제문화예술회관 대극장" [ref=e460]
+                    - generic [ref=e464]: R석77,000원
+                  - generic [ref=e465]:
+                    - button [ref=e466]:
+                      - img [ref=e467]
+                    - button "자세히 보기" [ref=e473]:
+                      - text: 자세히 보기
+                      - img [ref=e474]
+            - generic [ref=e480]:
+              - button [ref=e481]:
+                - img [ref=e482]
+              - generic [ref=e484]:
+                - img "소리산" [ref=e485]
+                - generic [ref=e487]:
+                  - generic [ref=e488]:
+                    - generic [ref=e489]:
+                      - generic [ref=e490]: 관광/여행
+                      - generic [ref=e491]: 상시
+                    - heading "소리산" [level=2] [ref=e492]
+                    - generic [ref=e493]:
+                      - img [ref=e494]
+                      - button "양평 소리산" [ref=e497]
+                    - generic [ref=e501]: 무료
+                  - generic [ref=e502]:
+                    - button [ref=e503]:
+                      - img [ref=e504]
+                    - button "자세히 보기" [ref=e510]:
+                      - text: 자세히 보기
+                      - img [ref=e511]
+            - generic [ref=e517]:
+              - button [ref=e518]:
+                - img [ref=e519]
+              - generic [ref=e521]:
+                - img "청주고인쇄박물관" [ref=e522]
+                - generic [ref=e524]:
+                  - generic [ref=e525]:
+                    - generic [ref=e527]: 박물관/체험관
+                    - heading "청주고인쇄박물관" [level=2] [ref=e528]
+                    - generic [ref=e529]:
+                      - img [ref=e530]
+                      - button "청주고인쇄박물관" [ref=e533]
+                  - generic [ref=e535]:
+                    - button [ref=e536]:
+                      - img [ref=e537]
+                    - button "자세히 보기" [ref=e543]:
+                      - text: 자세히 보기
+                      - img [ref=e544]
+            - generic [ref=e550]:
+              - button [ref=e551]:
+                - img [ref=e552]
+              - generic [ref=e554]:
+                - img "강남구 / 서울원데이[서울/강남] 원데이 반려동물 목걸이 펫 클래스(0)70,000원" [ref=e555]
+                - generic [ref=e557]:
+                  - generic [ref=e558]:
+                    - generic [ref=e559]:
+                      - generic [ref=e560]: 클래스
+                      - generic [ref=e561]: OPEN RUN
+                    - heading "강남구 / 서울원데이[서울/강남] 원데이 반려동물 목걸이 펫 클래스(0)70,000원" [level=2] [ref=e562]
+                    - generic [ref=e563]:
+                      - img [ref=e564]
+                      - button "서울 강남구 강남대로110길 38 (역삼동) 1층 프랑꼬아트랩" [ref=e567]
+                  - generic [ref=e569]:
+                    - button [ref=e570]:
+                      - img [ref=e571]
+                    - button "자세히 보기" [ref=e577]:
+                      - text: 자세히 보기
+                      - img [ref=e578]
+            - generic [ref=e584]:
+              - button [ref=e585]:
+                - img [ref=e586]
+              - generic [ref=e588]:
+                - 'img "GS칼텍스 예울마루 실내악 페스티벌: 실내악, 그 이상의 세계 [여수]" [ref=e589]'
+                - generic [ref=e591]:
+                  - generic [ref=e592]:
+                    - generic [ref=e593]:
+                      - generic [ref=e594]: 클래식/전통
+                      - generic [ref=e595]: 2026.04.16 (목) ~ 2026.04.19 (일)
+                    - 'heading "GS칼텍스 예울마루 실내악 페스티벌: 실내악, 그 이상의 세계 [여수]" [level=2] [ref=e596]'
+                    - generic [ref=e597]:
+                      - img [ref=e598]
+                      - button "GS칼텍스 예울마루 대극장" [ref=e601]
+                    - generic [ref=e605]: R석50,000원
+                  - generic [ref=e606]:
+                    - button [ref=e607]:
+                      - img [ref=e608]
+                    - button "자세히 보기" [ref=e614]:
+                      - text: 자세히 보기
+                      - img [ref=e615]
+            - generic [ref=e621]:
+              - button [ref=e622]:
+                - img [ref=e623]
+              - generic [ref=e625]:
+                - img "보자기 아트 하루수업" [ref=e626]
+                - generic [ref=e628]:
+                  - generic [ref=e629]:
+                    - generic [ref=e630]:
+                      - generic [ref=e631]: 클래스
+                      - generic [ref=e632]: OPEN RUN
+                    - heading "보자기 아트 하루수업" [level=2] [ref=e633]
+                    - generic [ref=e634]:
+                      - img [ref=e635]
+                      - button "경기도 · 부천시 · 신흥로" [ref=e638]
+                    - generic [ref=e642]: 70,000원
+                  - generic [ref=e643]:
+                    - button [ref=e644]:
+                      - img [ref=e645]
+                    - button "자세히 보기" [ref=e651]:
+                      - text: 자세히 보기
+                      - img [ref=e652]
+            - generic [ref=e658]:
+              - button [ref=e659]:
+                - img [ref=e660]
+              - generic [ref=e662]:
+                - img "요즘 HOT!한 힙팟 클래스(수료증 과정)" [ref=e663]
+                - generic [ref=e665]:
+                  - generic [ref=e666]:
+                    - generic [ref=e667]:
+                      - generic [ref=e668]: 클래스
+                      - generic [ref=e669]: OPEN RUN
+                    - heading "요즘 HOT!한 힙팟 클래스(수료증 과정)" [level=2] [ref=e670]
+                    - generic [ref=e671]:
+                      - img [ref=e672]
+                      - button "부산광역시 북구 구포동 896-29 1층" [ref=e675]
+                    - generic [ref=e679]: 267,000원
+                  - generic [ref=e680]:
+                    - button [ref=e681]:
+                      - img [ref=e682]
+                    - button "자세히 보기" [ref=e688]:
+                      - text: 자세히 보기
+                      - img [ref=e689]
+            - generic [ref=e695]:
+              - button [ref=e696]:
+                - img [ref=e697]
+              - generic [ref=e699]:
+                - img "SSG vs NC" [ref=e700]
+                - generic:
+                  - img "SSG"
+                  - generic: VS
+                  - img "NC"
+                - generic [ref=e702]:
+                  - generic [ref=e703]:
+                    - generic [ref=e704]:
+                      - generic [ref=e705]: 야구
+                      - generic [ref=e706]: 2026.08.08 (토) 18:00
+                    - heading "SSG vs NC" [level=2] [ref=e707]
+                    - generic [ref=e708]:
+                      - img [ref=e709]
+                      - button "창원NC파크" [ref=e712]
+                  - generic [ref=e714]:
+                    - button [ref=e715]:
+                      - img [ref=e716]
+                    - button "자세히 보기" [ref=e722]:
+                      - text: 자세히 보기
+                      - img [ref=e723]
+            - generic [ref=e729]:
+              - button [ref=e730]:
+                - img [ref=e731]
+              - generic [ref=e733]:
+                - img "멜론 심포니 오케스트라 (MelON) , 지브리 & 뮤지컬 갈라 오케스트라 콘서트" [ref=e734]
+                - generic [ref=e736]:
+                  - generic [ref=e737]:
+                    - generic [ref=e738]:
+                      - generic [ref=e739]: 클래식/전통
+                      - generic [ref=e740]: 2026.04.04 (토)
+                    - heading "멜론 심포니 오케스트라 (MelON) , 지브리 & 뮤지컬 갈라 오케스트라 콘서트" [level=2] [ref=e741]
+                    - generic [ref=e742]:
+                      - img [ref=e743]
+                      - button "부산시민회관 대극장" [ref=e746]
+                    - generic [ref=e750]: VIP석100,000원
+                  - generic [ref=e751]:
+                    - button [ref=e752]:
+                      - img [ref=e753]
+                    - button "자세히 보기" [ref=e759]:
+                      - text: 자세히 보기
+                      - img [ref=e760]
+            - generic [ref=e766]:
+              - button [ref=e767]:
+                - img [ref=e768]
+              - generic [ref=e770]:
+                - img "레메이에르 시나몬캔들 원데이클래스" [ref=e771]
+                - generic [ref=e773]:
+                  - generic [ref=e774]:
+                    - generic [ref=e775]:
+                      - generic [ref=e776]: 클래스
+                      - generic [ref=e777]: OPEN RUN
+                    - heading "레메이에르 시나몬캔들 원데이클래스" [level=2] [ref=e778]
+                    - generic [ref=e779]:
+                      - img [ref=e780]
+                      - button "찾으시려는 페이지의 주소가 정확한지 다시 한번 확인해 주세요" [ref=e783]
+                    - generic [ref=e787]: 50,000원
+                  - generic [ref=e788]:
+                    - button [ref=e789]:
+                      - img [ref=e790]
+                    - button "자세히 보기" [ref=e796]:
+                      - text: 자세히 보기
+                      - img [ref=e797]
+            - generic [ref=e803]:
+              - button [ref=e804]:
+                - img [ref=e805]
+              - generic [ref=e807]:
+                - img "무료 괄사 홈케어 마사지 클래스" [ref=e808]
+                - generic [ref=e810]:
+                  - generic [ref=e811]:
+                    - generic [ref=e812]:
+                      - generic [ref=e813]: 클래스
+                      - generic [ref=e814]: OPEN RUN
+                    - heading "무료 괄사 홈케어 마사지 클래스" [level=2] [ref=e815]
+                    - generic [ref=e816]:
+                      - img [ref=e817]
+                      - button "서울 · 노원구 · 노원로" [ref=e820]
+                    - generic [ref=e824]: 20,000원
+                  - generic [ref=e825]:
+                    - button [ref=e826]:
+                      - img [ref=e827]
+                    - button "자세히 보기" [ref=e833]:
+                      - text: 자세히 보기
+                      - img [ref=e834]
+            - generic [ref=e840]:
+              - button [ref=e841]:
+                - img [ref=e842]
+              - generic [ref=e844]:
+                - img "양인모 & 잘츠부르크 모차르테움 오케스트라 [서울 서초구]" [ref=e845]
+                - generic [ref=e847]:
+                  - generic [ref=e848]:
+                    - generic [ref=e849]:
+                      - generic [ref=e850]: 클래식/전통
+                      - generic [ref=e851]: 2026.03.17 (화)
+                    - heading "양인모 & 잘츠부르크 모차르테움 오케스트라 [서울 서초구]" [level=2] [ref=e852]
+                    - generic [ref=e853]:
+                      - img [ref=e854]
+                      - button "예술의전당 콘서트홀" [ref=e857]
+                    - generic [ref=e861]: R석180,000원
+                  - generic [ref=e862]:
+                    - button [ref=e863]:
+                      - img [ref=e864]
+                    - button "자세히 보기" [ref=e870]:
+                      - text: 자세히 보기
+                      - img [ref=e871]
+            - generic [ref=e877]:
+              - button [ref=e878]:
+                - img [ref=e879]
+              - generic [ref=e881]:
+                - img "남양주 어린이비전센터" [ref=e882]
+                - generic [ref=e884]:
+                  - generic [ref=e885]:
+                    - generic [ref=e887]: 박물관/체험관
+                    - heading "남양주 어린이비전센터" [level=2] [ref=e888]
+                    - generic [ref=e889]:
+                      - img [ref=e890]
+                      - button "남양주 어린이비전센터" [ref=e893]
+                  - generic [ref=e895]:
+                    - button [ref=e896]:
+                      - img [ref=e897]
+                    - button "자세히 보기" [ref=e903]:
+                      - text: 자세히 보기
+                      - img [ref=e904]
+            - generic [ref=e910]:
+              - button [ref=e911]:
+                - img [ref=e912]
+              - generic [ref=e914]:
+                - img "리스트 x 박종훈, 순례의 해 [화성]" [ref=e915]
+                - generic [ref=e917]:
+                  - generic [ref=e918]:
+                    - generic [ref=e919]:
+                      - generic [ref=e920]: 클래식/전통
+                      - generic [ref=e921]: 2026.03.21 (토)
+                    - heading "리스트 x 박종훈, 순례의 해 [화성]" [level=2] [ref=e922]
+                    - generic [ref=e923]:
+                      - img [ref=e924]
+                      - button "남양성모성지 대성당" [ref=e927]
+                    - generic [ref=e931]: 전석20,000원
+                  - generic [ref=e932]:
+                    - button [ref=e933]:
+                      - img [ref=e934]
+                    - button "자세히 보기" [ref=e940]:
+                      - text: 자세히 보기
+                      - img [ref=e941]
+            - generic [ref=e947]:
+              - button [ref=e948]:
+                - img [ref=e949]
+              - generic [ref=e951]:
+                - img "극단Y ＜디사이딩 세트＞- 2025 창작산실 올해의신작 연극" [ref=e952]
+                - generic [ref=e954]:
+                  - generic [ref=e955]:
+                    - generic [ref=e956]:
+                      - generic [ref=e957]: 연극
+                      - generic [ref=e958]: 2026.03.13 (금) ~ 2026.03.22 (일)
+                    - heading "극단Y ＜디사이딩 세트＞- 2025 창작산실 올해의신작 연극" [level=2] [ref=e959]
+                    - generic [ref=e960]:
+                      - img [ref=e961]
+                      - button "서울 | 아르코예술극장 소극장" [ref=e964]
+                    - generic [ref=e968]: 균일석50,000원
+                  - generic [ref=e969]:
+                    - button [ref=e970]:
+                      - img [ref=e971]
+                    - button "자세히 보기" [ref=e977]:
+                      - text: 자세히 보기
+                      - img [ref=e978]
+            - generic [ref=e984]:
+              - button [ref=e985]:
+                - img [ref=e986]
+              - generic [ref=e988]:
+                - img "대흥사(해남)" [ref=e989]
+                - generic [ref=e991]:
+                  - generic [ref=e992]:
+                    - generic [ref=e993]:
+                      - generic [ref=e994]: 관광/여행
+                      - generic [ref=e995]: 상시
+                    - heading "대흥사(해남)" [level=2] [ref=e996]
+                    - generic [ref=e997]:
+                      - img [ref=e998]
+                      - button "대흥사 해남" [ref=e1001]
+                    - generic [ref=e1005]: 무료
+                  - generic [ref=e1006]:
+                    - button [ref=e1007]:
+                      - img [ref=e1008]
+                    - button "자세히 보기" [ref=e1014]:
+                      - text: 자세히 보기
+                      - img [ref=e1015]
+            - generic [ref=e1021]:
+              - button [ref=e1022]:
+                - img [ref=e1023]
+              - generic [ref=e1025]:
+                - img "그랑블루요트 선셋투어" [ref=e1026]
+                - generic [ref=e1028]:
+                  - generic [ref=e1029]:
+                    - generic [ref=e1030]:
+                      - generic [ref=e1031]: 박물관/체험관
+                      - generic [ref=e1032]: 상시운영
+                    - heading "그랑블루요트 선셋투어" [level=2] [ref=e1033]
+                    - generic [ref=e1034]:
+                      - img [ref=e1035]
+                      - button "그랑블루요트" [ref=e1038]
+                    - generic [ref=e1042]: 28,000원
+                  - generic [ref=e1043]:
+                    - button [ref=e1044]:
+                      - img [ref=e1045]
+                    - button "자세히 보기" [ref=e1051]:
+                      - text: 자세히 보기
+                      - img [ref=e1052]
+      - navigation [ref=e1057]:
+        - generic [ref=e1058]:
+          - button [ref=e1060]:
+            - img [ref=e1061]
+          - generic [ref=e1065]:
+            - generic [ref=e1066]:
+              - button "좋아요" [ref=e1067]:
+                - img [ref=e1069]
+                - generic [ref=e1071]: 좋아요
+              - button "카테고리" [ref=e1072]:
+                - img [ref=e1074]
+                - generic [ref=e1081]: 카테고리
+            - generic [ref=e1082]:
+              - button "지도 보기" [ref=e1083]:
+                - img [ref=e1085]
+                - generic [ref=e1087]: 지도 보기
+              - button "캘린더" [ref=e1088]:
+                - img [ref=e1090]
+                - generic [ref=e1092]: 캘린더
+  - generic [ref=e1097] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e1098]:
+      - img [ref=e1099]
+    - generic [ref=e1102]:
+      - button "Open issues overlay" [ref=e1103]:
+        - generic [ref=e1104]:
+          - generic [ref=e1105]: "3"
+          - generic [ref=e1106]: "4"
+        - generic [ref=e1107]:
+          - text: Issue
+          - generic [ref=e1108]: s
+      - button "Collapse issues badge" [ref=e1109]:
+        - img [ref=e1110]
+  - alert [ref=e1112]
+```

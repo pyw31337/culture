@@ -186,7 +186,7 @@ export function sortPerformances(performances: Performance[], genre: string, sea
         return sorted.sort((a, b) => {
             const dateA = (a.date || '').split('(')[0].split('~')[0].trim();
             const dateB = (b.date || '').split('(')[0].split('~')[0].trim();
-            return dateB.localeCompare(dateA);
+            return dateA.localeCompare(dateB);
         });
     }
 

@@ -72,7 +72,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 onLikePerfClick();
             },
             isActive: currentViewMode === 'likes-perf',
-            badgeCount: likeCount + venueCount
+            badgeCount: likeCount
         },
         { id: 'category', label: categoryLabel, icon: CategoryIcon, action: () => onMenuClick(activeMenu === 'category' ? null : 'category') },
     ];
