@@ -1,16 +1,5 @@
 [
   {
-    "id": "museum_부안누에타운",
-    "title": "부안누에타운",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ4ODE1YjNkNzFlZDZjZjA0ZjNkY2RiIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64784475307d5677335164d8",
-    "description": "누에에 대한 모든 체험을 할 수 있는 곤충 박물관",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_분당어린이안전체험관",
     "title": "분당어린이안전체험관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjg2Mzc1MWU0Y2MwM2QxMDk0MGE5ZTQwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -392,30 +381,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_싱가포르_사이언스_센터",
-    "title": "싱가포르 사이언스 센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZhOWVhNjRiYmE5NGNhM2U4YWIxYmM5LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/66aa01a9c45e6368544a8b66",
-    "description": "아이와 꼭 가볼 만한 세계 10대 과학관",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_고창고인돌박물관",
-    "title": "고창고인돌박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjQ0OWNmYjZiZDdkNzUwZDYzZGNmZjNlIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6449cfb9bd7d750d63dcff48",
-    "description": "실제 고인돌 유적도 보고 선사시대 체험도 하고",
-    "usageStat": "48개월 이상 인기",
-    "address": "전북특별자치도 고창군 고창읍 고인돌공원길 74",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 35.44169795,
-    "lng": 126.6524975
-  },
-  {
     "id": "museum_백제문화단지",
     "title": "백제문화단지",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjQ0ODg0ZDY2Yjc1YjZjZWY5ODg2OWI0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -486,72 +451,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_한국금융사박물관",
-    "title": "한국금융사박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1NzM3NDUyOGIxYWZlZTkzOTFmMDE0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6357374c28b1afee9391f022",
-    "description": "요즘은 어릴 때부터 경제교육이 대세",
-    "usageStat": "48개월 이상 인기",
-    "address": "서울특별시 중구 세종대로 135-5",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.568592,
-    "lng": 126.97643
-  },
-  {
-    "id": "museum_대한민국역사박물관",
-    "title": "대한민국역사박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1NjJjODI4NDFlZTQyN2E0NWFjM2IzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63562c8f841ee427a45ac3cd",
-    "description": "역사교육의 현장으로 떠날 준비 되셨나요?!",
-    "usageStat": "48개월 이상 인기",
-    "address": "서울특별시 종로구 세종대로 198",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.57371316,
-    "lng": 126.9783379,
-    "website": "http://www.much.go.kr/",
-    "fees": "4개의 상설 전시실에서는 대한민국 역사를 네 개의 큰 시기로 나누어 소개하고 있습니다.\n\n대한민국의 태동 (1876~1948년): 개항과 독립운동, 임시정부 등 나라의 시작과 관련된 이야기\n대한민국의 기초 확립 (1948~1961년): 대한민국 정부 수립과 전쟁 등의 역사\n대한민국의 성장과 발전 (1961~1987년): 경제 발전과 산업화, 국민 생활 변화\n대한민국의 선진화, 세계로의 도약 (1987년~현재): 민주화 운동, 세계 속의 대한민국\n\n\n어린이 체험 공간: 어린이박물관과 ‘말랑말랑 현대사 놀이터’, ‘우리 역사 보물창고’ 등 아이들이 손으로 만지고 직접 참여하면서 근현대사를 자연스럽게 배울 수 있는 체험형 공간이 마련되어 있습니다.\n\n기증관/주제관: 다양한 시민이 기증한 소중한 자료와, 근현대사의 주요 주제를 깊이 있게 다루는 특별전시도 만날 수 있습니다."
-  },
-  {
-    "id": "museum_울진곤충여행관",
-    "title": "울진곤충여행관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1NjMwNjI3M2ZhNDYwNWFiNjQ3MWY3IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6356306b73fa4605ab647207",
-    "description": "신비로운 곤충세상으로 여행가요!",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "fees": "1층에서는 움직이는 대형 장수풍뎅이 모형이 아이들을 반갑게 맞이합니다.\n곤충의 역사관, 탐구관, 기획전시관이 마련되어 있으며, 터치스크린과 다양한 패널을 통해 우리나라 및 세계 여러 곤충에 대해 직접 배우고 체험할 수 있습니다.\n미디어 파사드실에서는 실제 살아있는 곤충의 모습을 실감나는 영상으로 감상할 수 있습니다."
-  },
-  {
-    "id": "museum_경상북도교육청과학원",
-    "title": "경상북도교육청과학원",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1MjA3OWY5MDhhZDc3NDc1YzQ5MTIwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/635207af908ad77475c49138",
-    "description": "우주와 바다 모두를 교육할 수 있는 공간",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "http://www.gsei.kr/",
-    "fees": "점심시간: 12:20~13:30관람료 및 입장료: 무료 <천체투영실>운영시간(40분)평일: 10:40, 11:40, 14:00, 15:00일요일: 11:20, 15:00토요일 미운영6세 이상 입장, 5명 이상 운영<4D극장>운영시간(12~18분)평일(화~금요일) : 13:40, 14:40토,일 : 10:20, 11:00, 13:40, 14:405세 이상 입장, 5명 이상 상영홈페이지 사전예약 필수<로봇팔 쇼>매일: 10:50, 11:30, 13:50, 16:00<유아체험마당(60분)>주말: 11:00, 14:00 개인은 주말에만 관람 가능, 7세이하 입장 가능"
-  },
-  {
-    "id": "museum_가나아트파크",
-    "title": "가나아트파크",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM0Y2I5ODgxMmMzMTljMjY0ZWZjOTUyIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/634cb98c12c319c264efc95e",
-    "description": "오감 발달에 좋은 체험형 미술관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경기도 양주시 장흥면 권율로 117",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.72583554,
-    "lng": 126.9493324
-  },
-  {
     "id": "museum_부평안전체험관",
     "title": "부평안전체험관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjMwZGRkYWNmNWFiZmM1ZmQzYzQyOGY5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -561,19 +460,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_꿀벌나라테마공원",
-    "title": "꿀벌나라테마공원",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY1ZDU4ZjZiMmY1MzM5MmZlZTRlY2QyLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/633bfef07c4f1b6552988f67",
-    "description": "달콤한 꿀은 어떻게 만들어질까?",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경상북도 칠곡군 석적읍 강변대로 1580-1문의054-979-8315~9",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.chilgok.go.kr/honeybee/main.do",
-    "fees": "꿀벌나라테마공원에서 어떤 체험 프로그램을 아이와 함께 즐길 수 있나요?공원 입장료와 체험 프로그램 이용 요금은 어떻게 되나요?아이와 이용 가능한 편의시설에는 어떤 것들이 있나요?체험 프로그램 참여 시 사전 예약이 꼭 필요한가요? 현장 접수도 가능한가요?운영시간, 휴무일, 주차 등 방문 전 알아야 할 주요 정보는 무엇인가요?공원에서 안전에 유의해야 할 사항이 있나요?"
   },
   {
     "id": "museum_제주해녀박물관",
@@ -790,17 +676,6 @@
     "lng": 126.9660819
   },
   {
-    "id": "museum_진도국민해양안전관",
-    "title": "진도국민해양안전관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlOTI5MjYwYjBjZmY3ZDM5NzZhNDQyLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/65ea65e01125833a155db828",
-    "description": "해양, 재난 안전을 배우고 체험하는 어린이 체험관",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_오키나와_어린이나라_원더뮤지엄",
     "title": "오키나와 어린이나라 원더뮤지엄",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlODk0YzI5MGQ0MTlmZjNlOWE3MGRjLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -873,17 +748,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_고령어린이과학체험관",
-    "title": "고령어린이과학체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY0YmI0MmE0ZGE4NDg1OGM1MWM5NWVhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/664bf7007e8c1e71568e69db",
-    "description": "과학 원리를 놀이로 배워보는 과학놀이 체험공간!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_영천민속관",
     "title": "영천민속관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY0OTdiMTIwOGE2ODgyOTdhZjZhNjM0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -895,17 +759,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "website": "https://www.yc.go.kr/toursub/yctc/contents.do?mId=0102000000",
     "fees": "[요금]무료[이용안내]브레이크 타임: 12시~13시"
-  },
-  {
-    "id": "museum_람사르문화관",
-    "title": "람사르문화관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNjNzhmMzExYTE0ZTBmY2Y3Y2ViM2ViIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63c78f391a14e0fcf7ceb3f7",
-    "description": "주남저수지와 습지, 철새에 대해 배울 수 있는 전시관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경상남도 창원시 의창구 동읍 주남로101번길 26문의055-225-2798",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_신문박물관PRESSEUM",
@@ -930,17 +783,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_래미안갤러리",
-    "title": "래미안갤러리",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNjN2E1ZjYxYTE0ZTBmY2Y3Y2ViNDhlIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63c7a5fd1a14e0fcf7ceb49e",
-    "description": "다양한 전시가 열리는 쾌적한 전시관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "서울특별시 송파구 충민로 17 (문정동)문의1588-3588",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_충북산림과학박물관",
@@ -1013,30 +855,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_구리어린이천문대",
-    "title": "구리어린이천문대",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhmMDRhMDRiYmUzOTI4ZmI5YzQ5ZmU2LkpQRyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/690873c649f3a3ebe64753dc",
-    "description": "가족과 어린이를 위한 다양한 천문 프로그램이 있는 곳",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_전라북도_어린이창의체험관",
-    "title": "전라북도 어린이창의체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM2M2M2OTU4NzMzNGZiMDFhNTUzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd18262718fee95297dc2d",
-    "description": "창의력이 샘솟는 체험과 즐거운 놀이터",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.jbchild.kr/",
-    "fees": "다양한 연령별 체험실: 영유아 전용 공간, 36개월 이하 아이들만 출입 가능한 실내 놀이터부터 어린이가 직접 체험할 수 있는 미용실, 사진관, 차량 정비 놀이 등 역할놀이 공간이 있습니다.\n4차산업 체험관: VR, AR 등 최첨단 기술을 체험할 수 있어 미래산업에 대한 호기심을 높일 수 있습니다.\n무장애·통합 놀이터: 아이들은 물론 장애를 가진 친구들도 함께 참여할 수 있도록 설계된 놀이 공간(무장애 놀이터, 휠체어 이용 가능한 미끄럼틀 등)이 있어 모두가 안전하게 함께 놀 수 있습니다.\n실내외 체험시설: 실내체험 외에도 아이들이 마음껏 뛰어놀 수 있는 야외놀이터가 있어, 에어바운싱돔, 비행기·탱크 조형물 등 실외에도 볼거리와 놀이시설이 마련되어 있습니다."
-  },
-  {
     "id": "museum_인천개항박물관",
     "title": "인천개항박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNiN2YwMzJhYzkwNjhiYjE0MDY5ZGQ3IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -1049,17 +867,6 @@
     "lat": 37.47331374,
     "lng": 126.6203311,
     "fees": "위치: 인천광역시 중구 신포로23번길 89\n관람시간: 09:00 ~ 18:00 (매주 월요일 휴관)\n교통: 1호선 인천역에서 도보 5~10분, 차이나타운 인근 위치"
-  },
-  {
-    "id": "museum_노사평화의_전당",
-    "title": "노사평화의 전당",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNhYmE5Y2M1NzZkM2NmMTZmNDk3YzFmIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63aba9dc576d3cf16f497c47",
-    "description": "이름에 부담갖지 마세요 직업체험 하는곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "대구광역시 달성군 구지면 국가산단대로52길 6문의053-803-8754",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_의정부과학도서관_어린이과학체험실",
@@ -1095,19 +902,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_여주곤충박물관",
-    "title": "여주곤충박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNhYWEwYmM1NzZkM2NmMTZmNDk3OTEwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63aaa0d0576d3cf16f49793a",
-    "description": "곤충부터 파충류까지! 생생한 곤충박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경기도 여주시 명성로 114-146",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.25955987,
-    "lng": 127.6633506
   },
   {
     "id": "museum_한국근대문학관",
@@ -1175,17 +969,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.57489958,
     "lng": 126.9906359
-  },
-  {
-    "id": "museum_돈화문갤러리",
-    "title": "돈화문갤러리",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlNDIzOGE5ZjZlNTZiYmYxMjUwNjJiLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/65e67a0ea842edd830db30cd",
-    "description": "예술 작품 속으로 떠나는 여행",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_부산과학체험관",
@@ -1413,17 +1196,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.573871,
     "lng": 126.9836492
-  },
-  {
-    "id": "museum_싱가포르_kidsSTOP",
-    "title": "싱가포르 kidsSTOP",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZhOWYxYjY1ZDdhY2RiMTE4ZDdhZDI1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/66aa016a7f3f26eed002d770",
-    "description": "예약 필수! 싱가포르에서 인기많은 어린이 체험관",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_국립극장공연예술박물관",
@@ -1805,17 +1577,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_솔로몬로파크",
-    "title": "솔로몬로파크",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRlNDIzYWZjOWYzYmZkOWFlNTAwNTU5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63c763435c3cf62ddbe66c03",
-    "description": "법무부에서 운영하는 법 테마파크",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_이화박물관",
     "title": "이화박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY1MmMyNTk0ZDI4ZTU5OWVmMGVmMDk0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -1936,17 +1697,6 @@
     "fees": "넥스트레벨의 대표적인 체험 프로그램은 무엇인가요?영업시간과 방문 가능한 날짜는 어떻게 되나요?예약 방법과 예약 오픈일은 어떻게 되나요?이용 요금과 주요 편의시설(주차, 음수 등)은 어떻게 되나요?방문 전 준비사항이나 주의할 점이 있나요?"
   },
   {
-    "id": "museum_아차산_고구려역사문화홍보관",
-    "title": "아차산 고구려역사문화홍보관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUyY2NjM2ZmZjY3OWUxN2NiYjc5ZjNlLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/652e24f6ad38f0df6396fe0e",
-    "description": "아차산을 배경으로 펼쳐졌던 역사를 만나볼 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_G밸리산업박물관",
     "title": "G밸리산업박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUyZjhhMDQwNzBmZWUwZWQ0YmU3YWU0LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -1958,28 +1708,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.4798477,
     "lng": 126.8953185
-  },
-  {
-    "id": "museum_지리산역사문화관",
-    "title": "지리산역사문화관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1NDJiMjY2OTgwMzc3ZWNkYTVkZDA4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/65542b307befcfe324f1f753",
-    "description": "역사 공부와 놀이 시설이 함께 있는 박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_청주랜드_어린이회관_제2관_어린이체험관",
-    "title": "청주랜드 어린이회관 제2관(어린이체험관)",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU0MDNhYWM4ZWNmNTkzZWVjODM0Nzg1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/654057e16702b6172b90feaa",
-    "description": "다양한 과학체험이 가능한 체험관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_허준박물관",
@@ -2004,17 +1732,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_버그밀_곤충체험관",
-    "title": "버그밀 곤충체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUwZjk0NDExNWMyMjkzYzBkNzI0ZTdiIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6510dd707b6f8db33b8dfbb7",
-    "description": "동물과 교감하고 곤충 표본도 제작해 보는 이색체험관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_강서별빛우주과학관",
@@ -2093,21 +1810,6 @@
     "lng": 126.618197
   },
   {
-    "id": "museum_한국교원대학교_교육박물관",
-    "title": "한국교원대학교 교육박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRmOTMwMzExMTNlZDI0MmI5YzdkMGM4IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64fff3d16fdeebd5b7f27942",
-    "description": "아이와 옛 시절로 떠나는 여행",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "충청북도 청주시 흥덕구 강내면 태성탑연로 250",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.6056652,
-    "lng": 127.3573247,
-    "website": "https://museum.knue.ac.kr/smain.html",
-    "fees": "선사시대부터 현대에 이르는 교육의 변천사를 다루는 ‘한국교육사실’\n교육과 관련된 다양한 주제를 담아낸 ‘교육테마실’\n학교의 변천과 교원대의 역사를 보여주는 ‘학교사실’\n상상력 가득한 프로그램이 펼쳐지는 ‘상상존’ 등 총 5개의 상설 전시실과 기획전시실이 준비되어 있습니다."
-  },
-  {
     "id": "museum_대전선사박물관",
     "title": "대전선사박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUwZjZmYWNmNWY1NDMyYzc3MTIyMTU1IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -2158,21 +1860,6 @@
     "fees": "[입장료]무료[주차]동대문구체육관 주차장 이용 시간 09:00-18:000-30분 무료 / 30분-1시간 1,000원*일요일: 입,출차는 동대문구체육관 지상에만 가능*다둥이 카드 (두자녀) 30%할인, (세자녀) 50%할인"
   },
   {
-    "id": "museum_부천시립박물관",
-    "title": "부천시립박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRmNDc3NTU0ZDJjMmE5YzdhNTA5N2M0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64f531e0c401c623d8d85847",
-    "description": "특별한 체험이 있는 역사박물관",
-    "usageStat": "48개월 이상 인기",
-    "address": "경기도 부천시 오정구 소사로 638",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.513641,
-    "lng": 126.801745,
-    "website": "http://www.bcmuseum.or.kr/",
-    "fees": "[요금]무료"
-  },
-  {
     "id": "museum_공주한옥마을_전통문화체험관",
     "title": "공주한옥마을 전통문화체험관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgxOWEzZGM3ZDAyODU5N2FkZTNhMDgyLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -2195,17 +1882,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.59266233,
     "lng": 127.180616
-  },
-  {
-    "id": "museum_국립여수해양기상과학관",
-    "title": "국립여수해양기상과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgxODk0ZmM2MzJmMTMyMTFmNTI2ZDhlLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/68241359ed83134d289ef6e3",
-    "description": "과학 체험을 통해 바다와 기후를 공부하는 뜻깊은 시간",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_인천광역시립박물관",
@@ -2241,17 +1917,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_구례_백두대간_생태교육장",
-    "title": "구례 백두대간 생태교육장",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgxOGMzMDg2YThmNjQ5NGY1MTY4NDUyLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/68216a11287cb8b7b18a8065",
-    "description": "체험으로 생생하게 배우는 백두대간의 생태",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_팀랩_플래닛_도쿄",
@@ -2313,18 +1978,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_섬진강기차마을생태학습관",
-    "title": "섬진강기차마을생태학습관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYyMGQwYWIwMmFlOGExYWM4MTA0ZTJkLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/6621cf3bf97490ec21dfac9b",
-    "description": "곤충에 대해 공부하고 체험할 수 있는 곳",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "fees": "[요금]대인 - 5,000원소인, 경로우대자 - 4,500원곡성국민, 국가유공자, 장애인 - 무료48개월 미만 - 무료"
-  },
-  {
     "id": "museum_국립대구과학관",
     "title": "국립대구과학관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNhM2NlOGMzNDM5NDcxYzhiODRlYjA5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -2338,19 +1991,6 @@
     "fees": "상설전시관\n\n1관부터 4관까지 자연과학, 미래과학, 생명과학, 과학문명 등 각기 다른 테마로 구성되어 있어 폭넓은 과학 체험이 가능합니다.\n국내 최대 규모의 체험전시물과 세계 최대 물시계, 무게중심 공중자전거, SOS지구환경관, 라이프 코스터 등 230여 점의 전시품이 있어 아이들의 호기심을 자극합니다.\n\n\n특별전시 및 4D영상관\n\n기후변화, 동물, 스포츠 등 다양한 주제로 기획전시가 열리며, 4D상영관에서는 짜릿하고 생생한 과학 콘텐츠를 관람할 수 있습니다.\n4D 영상관은 키 110cm 이상인 아이만 입장 가능합니다.\n\n\n천체투영관 및 천체관측소\n\n별과 우주의 비밀을 생생하게 체험할 수 있는 교육 프로그램과 관측 체험이 준비되어 있습니다.\n천체투영관은 보호자 동반 시 5세 이상 아이만 입장 가능합니다.\n\n\n어린이 맞춤 꿈나무과학관\n\n어린이를 위한 맞춤형 과학 활동과 인공지능·자동화와 관련된 체험이 마련되어 있습니다.\n\n\n야외 과학마당\n\n과학 놀이터, 풋살장, 농구장 등 야외 체험 및 휴식 공간이 마련되어 있어 날씨 좋은 날에도 즐겁게 뛰어놀 수 있습니다.\n야외놀이터와 넓은 광장도 있어 아이들이 킥보드를 타기에도 좋습니다."
   },
   {
-    "id": "museum_KBS수원센터",
-    "title": "KBS수원센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNhNDE5NzAzNDM5NDcxYzhiODRlYzQ1IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63a419743439471c8b84ec4f",
-    "description": "텔레~비전에 내가 나왔으면~ 정말 좋겠네~",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://office.kbs.co.kr/suwon/",
-    "fees": "경기도 수원시 팔달구 인계로 123 KBS수원방송센타는 국내 최대 규모의 종합 영상제작 단지입니다.\n뉴스, 드라마 촬영 스튜디오 등 제작 시설 중심으로 현장 견학을 할 수 있습니다."
-  },
-  {
     "id": "museum_장사상륙작전전승기념관",
     "title": "장사상륙작전전승기념관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNhM2Y1NDE3NTliYzgzZDNjNTA5NjQ0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -2362,54 +2002,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "website": "https://stay.yd.go.kr/jangsa/pages/index.htm",
     "fees": "바다 위에 세워진, 배(문산호) 모양의 독특한 건물에서 체험이 시작됩니다.\n기념관은 총 5층으로 구성되어 있습니다."
-  },
-  {
-    "id": "museum_한국잠사플레이팜_한국잠사박물관",
-    "title": "한국잠사플레이팜 한국잠사박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNhNTNkNDRkYjgxNTJkZWZmYzNkZDhkIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63a53d4bdb8152deffc3dda3",
-    "description": "썰매 타기부터 동물 먹이주기 체험까지 박물관에서",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "충청북도 청주시 흥덕구 강내면 청주역로 213-52",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.63936808,
-    "lng": 127.3822358,
-    "website": "https://m.booking.naver.com/booking/5/bizes/784618",
-    "fees": "한국잠사플레이팜 한국잠사박물관에서 아이와 함께 할 수 있는 대표 체험 활동은 무엇인가요?입장료와 체험 프로그램 별도 요금은 어떻게 되나요?운영시간과 쉬는 날, 그리고 주차는 어떻게 되나요?24개월 미만 유아의 입장은 어떻게 되나요?편의시설은 어떤 것이 있나요? 유모차 대여, 수유실, 아기의자 등은 제공되나요?디지털 키즈카페는 언제 운영되며 어떤 놀이가 가능한가요?"
-  },
-  {
-    "id": "museum_제주4_3어린이체험관",
-    "title": "제주4.3어린이체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdlOGIwYTI2MTdmODNhZjhlY2I0NmZhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/67ea5e5a82b5458a8438e356",
-    "description": "역사를 쉽고 재미있게 배울 수 있는 체험 공간",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_전태일기념관",
-    "title": "전태일기념관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdjZjkxOGQxZmI1ODM5YmY1OWU3NTdhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/67d8d06875fa1a4213da4983",
-    "description": "한국 근현대사에서 빼놓을 수 없는 전태일",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_초막골_생태_전시관",
-    "title": "초막골 생태 전시관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdlNjA5M2JhZGM0ZWNjMjZiNmY2YmIwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/67ea2ec899911dc101d9a126",
-    "description": "무료로 생태 전시도 보고, 놀이터에서도 실컷 놀고!",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_증평민속체험박물관",
@@ -2436,17 +2028,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.54427794,
     "lng": 126.9592546
-  },
-  {
-    "id": "museum_그대_나의_뮤즈_반고흐_to_마티스",
-    "title": "그대 나의 뮤즈 반고흐 to 마티스",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdkOTQzYjdiN2U5ZTJiNDc4YTk4ZDY5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/67d94a8dbbd51ff47e4f3cc3",
-    "description": "거장들의 명작을 생생한 미디어아트로 감상하자",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_김포장릉역사문화관",
@@ -2545,19 +2126,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 35.69424466,
     "lng": 128.6865955
-  },
-  {
-    "id": "museum_제주세계자연유산센터",
-    "title": "제주세계자연유산센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI2NzY0OTIyM2UwNzVlZGMzMTU0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/677376e47407464ebfdb8ec6",
-    "description": "제주의 자연의 숨결을 느끼고 경험할 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "제주특별자치도 제주시 조천읍 선교로 569-36",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 33.45691987,
-    "lng": 126.7147521
   },
   {
     "id": "museum_안성맞춤박물관",
@@ -2717,21 +2285,6 @@
     "lng": 126.6187688
   },
   {
-    "id": "museum_돌하르방미술관",
-    "title": "돌하르방미술관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY1OTI5Mjk3YTdjYjlkNmVmNmMxYzc0LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/646726e91fe3f2441e28a8de",
-    "description": "원데이클래스와 숲놀이터가 있는 미술관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "제주특별자치도 제주시 조천읍 북촌서1길 70",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 33.5388475,
-    "lng": 126.6888123,
-    "website": "https://m.booking.naver.com/booking/5/bizes/352203/",
-    "fees": "돌하르방미술관에서는 아이들이 어떤 체험을 할 수 있나요?미술관의 관람시간과 휴관일, 이용 요금은 어떻게 되나요?아이와 함께 방문할 때 이용할 수 있는 편의시설은 무엇이 있나요?입장료 할인이나 원데이 클래스 등은 어떻게 예약하나요?방문 시 참고하면 좋은 꿀팁이 있나요?"
-  },
-  {
     "id": "museum_강원종합박물관",
     "title": "강원종합박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjQ3OTdiMDE3MWEzMmI1OTk2ZjZkYTk3IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -2806,21 +2359,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_국악박물관",
-    "title": "국악박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjQ2NzFkNzUxZmUzZjI0NDFlMjhhODljIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/633d3b520885b7f4df49f812",
-    "description": "소리를 듣고 만져보는 시간을 가져요",
-    "usageStat": "48개월 이상 인기",
-    "address": "충청북도 영동군 심천면 국악로 9",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.210131,
-    "lng": 127.7049504,
-    "website": "https://academy.gugak.go.kr/usrs/eduRegMgnt/selectOffEduCrsRegList.do",
-    "fees": "[요금]무료[이용안내]입장 마감 시간: 17:30[시설]국악뜰(1F), 악기실 및 소리품(2F), 문헌실(2F), 아카이브실(2F), 명인실(2F), 체험실(2F), 야외체험장(민속놀이, 사물놀이)[전시해설 프로그램]기간: 2022.04.01~2022.12.31시간: 매주 토요일 13시 30분, 15시 30분 (2회)매달 첫째날, 다음 달 전시해설프로그램 예약창 오픈[몰입형 영상 체험 진연]상영 시간: 10:00~18:00 (10시 반부터 매 시간 30분에 영상 시작)미디어 가이드: 안내데스크 문의 및 접수 후 사용가능"
-  },
-  {
     "id": "museum_전곡선사박물관",
     "title": "전곡선사박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjMzZTNhOTgyODU0MjhiMDUxYWJiY2E0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -2834,17 +2372,6 @@
     "lng": 127.0636178267,
     "website": "https://members.ggcf.kr/",
     "fees": "전곡선사박물관의 관람 요금과 주차비, 예약이 필요한가요?박물관의 운영 시간과 휴관일은 언제인가요?아이와 함께 꼭 체험해볼 만한 활동이나 체험 공간에는 어떤 것이 있나요?전곡선사박물관에서 이용 가능한 편의시설(유모차 대여, 수유실, 물품 보관소 등)은 무엇인가요?전곡선사박물관의 전시는 아이들에게 어떤 교육적 경험을 제공하나요?"
-  },
-  {
-    "id": "museum_청도소싸움미디어체험관",
-    "title": "청도소싸움미디어체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjMzZmJmMTY1MjI5YzU4ZTUzZmY0NzdjIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/633fbf285229c58e53ff479a",
-    "description": "엄마, 내가 그린 소가 움직여요!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_백제오감체험관",
@@ -3044,32 +2571,6 @@
     "lng": 127.112088
   },
   {
-    "id": "museum_조명박물관",
-    "title": "조명박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM4ZWI1ODAwMTBkYzQ1ZGE4YmFkMDRhIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd19302718fee95297e144",
-    "description": "반짝반짝 빛의 세상과 소극장 공연",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경기도 양주시 광적면 광적로 235-48",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.83609614,
-    "lng": 126.9675329,
-    "website": "https://m.booking.naver.com/booking/12/bizes/116960/",
-    "fees": "[요금]하절기 대인(2월~11월) - 8,000원하절기 소인(2월~11월) - 7,000원65세이상 : 동절기 - 6,500원 / 하절기 - 9,500원24개월미만(단체X) - 무료공연관람(별도) - 8,000원조명만들기(체험) - 4,000원~12,000원동절기 소인(11월~1월) - 10,000원동절기 대인(11월~1월) - 12,000원[이용안내]입장마감 - 16시휴관일 - 신정, 설날·추석 연휴, KH Feelux 창립기념일(6.20.)[프로그램]스스로 체험학습실 - 3세 이상 / 10시 ~ 16시30분 / 무료, 유료 만들기"
-  },
-  {
-    "id": "museum_국립전주어린이박물관",
-    "title": "국립전주어린이박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlYjI2MTVjMzg2MTYzMTZmYjEyN2VlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/65ee61f11125833a155dba6f",
-    "description": "다양한 전시와 체험이 있는 어린이 박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_한국잡월드",
     "title": "한국잡월드",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM4N2Q2OTU4NzMzNGZiMDFhZjgzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -3079,17 +2580,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_호남기후변화체험관",
-    "title": "호남기후변화체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlZDYxYjdjMzg2MTYzMTZmYjQwODUwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/65ee695b1125833a155dbb35",
-    "description": "어린이 눈높이에 맞는 놀이형 과학 체험공간",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_경기도_어린이식품안전체험관_부천센터",
@@ -3103,20 +2593,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "website": "http://www.bcfoodsafety.or.kr/",
     "fees": "[요금]무료[이용안내]단체 - 10시, 11시, 13시, 14시 (55분)개인 - 15시 ~ 17시"
-  },
-  {
-    "id": "museum_기지시줄다리기박물관",
-    "title": "기지시줄다리기박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY0ZTlmZDFhZDEyNWMzOTk3YmZhYTUxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/664fe943a584242ec0c2b26f",
-    "description": "줄다리기의 유래와 역사를 배울 수 있는 박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "충청남도 당진시 송악읍 안틀모시길11",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.89616228,
-    "lng": 126.6947633,
-    "fees": "아이들이 직접 참여할 수 있는 체험 프로그램에는 어떤 것이 있나요?박물관 관람 시간과 휴관일은 어떻게 되나요?주차 및 아이 동반을 위한 편의시설은 어떻게 되어 있나요?박물관에서 어떤 전시와 특별한 공간을 볼 수 있나요?입장료와 이용 요금은 어떻게 되나요?기지시줄다리기 축제는 언제 열리며, 방문 시 어떤 점이 좋은가요?"
   },
   {
     "id": "museum_오산버드파크",
@@ -3154,17 +2630,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_독도_상설전시관",
-    "title": "독도 상설전시관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY0OTc4MGMyYzIzNzBhNjk4OGNjNjdlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/664aaaa17e8c1e71568e63ee",
-    "description": "광화문에서 독도를 만나볼 수 있는 무료 전시관",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_국립산악박물관",
     "title": "국립산악박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNiZTgyNjMwOGYzMjA3YzYzZDdlMjQ1IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -3176,28 +2641,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.68748,
     "lng": 127.03408
-  },
-  {
-    "id": "museum_스미스_평화관",
-    "title": "스미스 평화관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY0NmUxZmI3YWFmOWU1NWU1NTUwNzBjLkpQRyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/664aa43113f2be67bf31f349",
-    "description": "6·25전쟁에 대해 배워볼 수 있는 박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_테라크랩팜",
-    "title": "테라크랩팜",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNiZjZlYTMzYWU3ZDVlMWY5ZTIzMzhmIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63bf6ebc3ae7d5e1f9e233b5",
-    "description": "게와 두꺼비 먹이도 주고 관찰도 해요",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_국립대구기상과학관",
@@ -3274,17 +2717,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.54957179,
     "lng": 127.0810408
-  },
-  {
-    "id": "museum_서울하수도과학관",
-    "title": "서울하수도과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1OTA2OTU4NzMzNGZiMDFhMjE1IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd17cd2718fee95297da83",
-    "description": "하수도 탐험가가 되는 이색 경험",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_서울새활용플라자",
@@ -3383,19 +2815,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_홍천생명건강과학관",
-    "title": "홍천생명건강과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM5ODRhNGRjZjM2ODBiZGYwMTA0OWQ5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63984a58cf3680bdf01049f5",
-    "description": "즐겁게 체험하며 우리 몸 속을 탐험해봐요",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.hongcheon.go.kr/sciencecenter/index.do",
-    "fees": "[요금]성인: 1,500원청소년 및 어린이: 1,000원미취학 아동, 만65세 이상: 무료홍천군민 50% 할인 입장 가능[이용안내]휴무일: 매주 월요일(월요일이 법정 공휴일인 경우 그 다음날), 설 연휴, 추석 연휴입장마감: 17시"
-  },
-  {
     "id": "museum_대구시민안전테마파크",
     "title": "대구시민안전테마파크",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM5NmEwNzBjZjM2ODBiZGYwMTA0NzExIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -3418,30 +2837,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_번개맨체험관",
-    "title": "번개맨체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM4MDhiMTYxYmVmYmJlNTc1MDMyZjFhIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63808b291befbbe575032f3c",
-    "description": "번개맨이 되어 우주선도 타 보고 미로도 탈출해요",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_도쿄_사이타마_철도박물관",
-    "title": "도쿄 사이타마 철도박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYwNjFkMmFlYzE3MDc4MjNmM2FkZWViLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/660a2640738cc897ddeddee3",
-    "description": "기차의 역사를 직접 보고 체험할 수 있는 박물관",
-    "usageStat": "",
-    "address": "경기도 의왕시 철도박물관로 142",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.3140471,
-    "lng": 126.9512975
-  },
-  {
     "id": "museum_경상북도교육청_메이커교육관_맹글마루",
     "title": "경상북도교육청 메이커교육관 맹글마루",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM5MWI5YjJjZjM2ODBiZGYwMTA0NTE0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -3453,17 +2848,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "website": "http://www.gbe.kr/makercenter/cm/cntnts/cntntsView.do?mi=8422&cntntsId=7657",
     "fees": "[요금]무료[이용안내]휴관일: 매주 월요일, 근로자의 날, 법정공휴일(어린이날 제외), 대체공휴일, 임시공휴일, 자체 점검일"
-  },
-  {
-    "id": "museum_이효석_문학관",
-    "title": "이효석 문학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYyYjQ4MTY5MmQ1Zjk0NjRhOTc3OGQ0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/660f574e833b44fd6b1f169e",
-    "description": "문학 공부를 하며 메밀꽃밭을 산책하기 좋은 곳",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_담양곤충박물관",
@@ -3630,17 +3014,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_사천항공우주과학관",
-    "title": "사천항공우주과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVkMmNlZWI5ZDNjYzUxN2MxN2M5NTBiLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/65d40121492c156da9e4bd92",
-    "description": "블랙이글스 전투기를 타볼 수 있는 과학관",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_경상남도교육청_경남수학문화관",
     "title": "경상남도교육청 경남수학문화관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVmYmNjNmIyODFhMDQ2MzJhNWZhOWMwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -3676,21 +3049,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 36.44559196,
     "lng": 128.2554155
-  },
-  {
-    "id": "museum_한독의약박물관",
-    "title": "한독의약박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM0NjUwZjg1OWFjZTZlZmZjZTY0MDdhIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/634650fa59ace6effce64080",
-    "description": "미션 하며 즐겁게 배워보는 의학과 약학",
-    "usageStat": "48개월 이상 인기",
-    "address": "충청북도 음성군 대소면 대풍산단로 78",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.97056729,
-    "lng": 127.465316,
-    "website": "https://www.handokmuseum.com/",
-    "fees": "1F: 국제전시실, 생명갤러리, 한독역사실, 제석홀\n한국관: 우리나라 전통 의약의 발자취와 문화재(국가 지정 보물 6점, 시·도 지정문화재 2점) 및 다양한 의서, 옛 한의원의 모습을 만날 수 있습니다.\n국제관: 독일, 영국, 미국, 중국, 일본 등 동서양의 의약 역사가 함께 전시되며, 19세기 독일약국과 플레밍 박사 연구실도 재현되어 있습니다.\n한독사료실: 한독의 기업 역사와 성장 과정을 다양한 자료로 소개합니다.\n제석홀: 창업주 김신권 명예회장의 기증품들이 전시되어 있습니다.\n생명갤러리: 현대미술과 생명을 주제로 한 예술작품도 감상할 수 있습니다.\n\n\n2F: 한국전시실, 일산문고, 영상실"
   },
   {
     "id": "museum_부평_굴포누리_기후변화체험관",
@@ -3766,21 +3124,6 @@
     "fees": "헌법재판소 도서관의 운영 시간은 어떻게 되나요?헌법재판소 도서관에 아이와 함께 방문할 때 알아야 할 점이 있나요?헌법재판소 도서관에서는 아이와 어떤 체험을 할 수 있나요?헌법재판소 도서관을 이용할 때 이용할 수 있는 편의시설이 있나요?헌법재판소 도서관의 요금과 이용 방식은 어떻게 되나요?헌법재판소 도서관 방문 시 받을 수 있는 특별한 혜택이 있나요?"
   },
   {
-    "id": "museum_한탄강세계지질공원센터",
-    "title": "한탄강세계지질공원센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1MzExN2U3YzNhMDg4YWE3M2UxMmExLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/655315cb7befcfe324f1ed2a",
-    "description": "한탄강의 역사를 체험으로 배워보자!",
-    "usageStat": "48개월 이상 인기",
-    "address": "경기도 포천시 영북면 비둘기낭길 55",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 38.07322174,
-    "lng": 127.2246653,
-    "website": "http://geoparkcenter.kr/",
-    "fees": "[요금]무료(2023년 기준)[이용안내]지질 생태체험관 - 키 100~140cm 아이만 이용 가능, 보호자 1인 동반 입장 가능협곡 탈출 - 4D 라이딩 영상 관람"
-  },
-  {
     "id": "museum_궁산땅굴역사전시관",
     "title": "궁산땅굴역사전시관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1MGMzMTk4NjE4MzZjYTYwZmFkMTBlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -3828,34 +3171,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 36.548962,
     "lng": 128.527489
-  },
-  {
-    "id": "museum_양평친환경농업박물관",
-    "title": "양평친환경농업박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU0ODJmMjc0OWU3ZGE4NmQyN2E4ZDhiLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/654840e7c2d2b67bbd03cca5",
-    "description": "농업 문화와 역사를 배우는 박물관",
-    "usageStat": "",
-    "address": "경기도 양평군 용문면 용문산로 670",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.54760453,
-    "lng": 127.5812266
-  },
-  {
-    "id": "museum_한국은행_화폐박물관",
-    "title": "한국은행 화폐박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJlMjQwMGJlM2RlMzI4M2Q4NTZjZmZkIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd19302718fee95297e14e",
-    "description": "오늘은 화폐에 대해서 배워볼까요",
-    "usageStat": "48개월 이상 인기",
-    "address": "경기도 파주시 탄현면 헤이리마을길 93-89",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.7908049099,
-    "lng": 126.6973144693,
-    "website": "https://www.bok.or.kr/museum/main/main.do",
-    "fees": "[요금]무료[이용안내]입장 마감: 16시 40분"
   },
   {
     "id": "museum_디자인씽킹뮤지엄",
@@ -3925,19 +3240,6 @@
     "lng": 128.6693604
   },
   {
-    "id": "museum_인천도시역사관",
-    "title": "인천도시역사관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxNjlmNWE1OTY3YTFjNDA5NTE2NGJlIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/651cce0dcaa4390924c21f36",
-    "description": "근대 도시 인천의 역사를 배워요",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "인천광역시 연수구 인천타워대로 238",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.39281282,
-    "lng": 126.6358893
-  },
-  {
     "id": "museum_시립_반석산_에코스쿨",
     "title": "시립 반석산 에코스쿨",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUyOGY4Mjg0Njk0MjJmNjc2NThkMTdmLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -3982,21 +3284,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_경기도어린이박물관",
-    "title": "경기도어린이박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJlYjliNmYzMDFhNzdhNWEzZTZmMTJkIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62eb9b73301a77a5a3e6f137",
-    "description": "경기도민이라면? 가성비 좋은 체험 해볼까",
-    "usageStat": "12 ~ 24개월 인기",
-    "address": "경기도 용인시 기흥구 상갈로 6",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.2681702,
-    "lng": 127.1088507,
-    "website": "https://gcm.ggcf.kr/pages/ticketing",
-    "fees": "9개 이상의 상설전시실과 여러 특별전시실이 마련되어 있으며, 각 전시실은 어린이의 발달 단계와 관심사를 고려해 꾸며져 있습니다.\n대표 전시로는 다음과 같은 테마가 있습니다.\n튼튼 놀이터: 14m 높이의 클라이머(21세기 잭과 콩나무)가 있어 도전정신과 용기를 기를 수 있습니다.\n자연 놀이터: 48개월 미만의 영유아를 위한 감각놀이 공간.\n우리 몸은 어떻게?: 인체에 관한 호기심 해결.\n바람의 나라: 자연과 환경을 다룬 체험.\n도전! 어린이 건축가: 창의적인 건축 체험.\n다문화 존: 다문화 가족, 공동체 이해를 돕는 ‘내 친구를 소개합니다’.\n동화 속 보물찾기: 전래동화를 테마로 한 체험.\n미디어 체험존(컬러풀 정글), 에코 아틀리에 등.\n\n\n다양한 연령별 맞춤 체험이 가능해, 12개월 미만 영아부터 초등학생까지 모두 즐길 수 있습니다.\n전시 외에도 어린이 교육 프로그램, 워크숍, 공연, 영화 상영 등 계절별·테마별로 다양한 특별 행사가 진행됩니다."
   },
   {
     "id": "museum_대전_신세계_넥스페리움",
@@ -4067,19 +3354,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_천안흥타령관",
-    "title": "천안흥타령관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlMDJhNzZmNGFhMGY2MTEzMjc2OWRhLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/65e05539a842edd830db2a38",
-    "description": "아이들과 즐길거리 많은 무료 박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "충청남도 천안시 동남구 천안대로 412",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.78478709,
-    "lng": 127.165631
-  },
-  {
     "id": "museum_서울교육박물관",
     "title": "서울교육박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1NmY2OTU4NzMzNGZiMDFhMTg3IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -4093,19 +3367,6 @@
     "lng": 126.9838695,
     "website": "http://edumuseum.sen.go.kr/",
     "fees": "무료 관람매달 1, 3번째 수요일 휴무"
-  },
-  {
-    "id": "museum_서울물재생체험관",
-    "title": "서울물재생체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1NzU2OTU4NzMzNGZiMDFhMWEzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd17c02718fee95297da4d",
-    "description": "물의 소중함에 대해 교육할 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://yeyak.seoul.go.kr/web/main.do",
-    "fees": "[요금]무료[이용안내]운영 시간 - 1회차: 10시~12시 / 2회차: 12시 30분~14시 30분 / 3회차: 15시~17시휴게 시간: 12시~12시 30분 / 14시 30분~15시휴관일: 매주 월요일, 법정공휴일, 공단이 지정한 날[프로그램]전시해설 프로그램신청방법: 현장 선착순 접수(1층 안내데스크)신청대상: 개인 관람객참여인원: 최대 10명소요시간: 약 40분시작 시간: 10시 40분, 15시 20분운영요일: 화~일요일"
   },
   {
     "id": "museum_진영역철도박물관",
@@ -4132,30 +3393,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_종이나라박물관",
-    "title": "종이나라박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUzZjNlYzRiN2U1YjI5MzIyNWJjODk0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/653f645b6702b6172b90f5d6",
-    "description": "신기한 종이 작품도 구경하고 체험도 해볼 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "서울특별시 중구 장충단로 166",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.559646,
-    "lng": 127.006151
-  },
-  {
-    "id": "museum_보라매안전체험관",
-    "title": "보라매안전체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxMzdiNDhkYjNlYTZmNDIyZjVlZDAwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/651cc26dcaa4390924c21e18",
-    "description": "재난대처 요령과 안전의 소중함을 배워볼 수 있는 공간",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_소창체험관",
     "title": "소창체험관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUwYTczY2ZkMDJlY2EwNDhkMGZkNmUwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -4179,17 +3416,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_키즈오토파크_서울",
-    "title": "키즈오토파크 서울",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUwNWE1YWI1ZmNlOWZlZDc3Y2U5MmQ5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6507a91f53e91cf1df2b5804",
-    "description": "교통안전을 신나게 배울 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_한국사찰음식문화체험관",
     "title": "한국사찰음식문화체험관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRmNjZmM2EzYTFkMmFkZTJlN2JkZmY5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -4199,30 +3425,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_hy팩토리",
-    "title": "hy팩토리+",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY2ZmRjOWIyMTE5M2Y2NjVjOTZiN2Y4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/6507a66e53e91cf1df2b57f2",
-    "description": "야쿠르트로 이렇게 많은 체험을 할 수 있다니!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_청계천박물관",
-    "title": "청계천박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRmYmRkODlkMTYzMmU4NTBmYzVlMTMwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64fe684463fbd7b77b117da4",
-    "description": "옛 한양의 중심을 가로지르는 청계천의 역사와 문화",
-    "usageStat": "48개월 이상 인기",
-    "address": "서울특별시 성동구 청계천로 530",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.5712267,
-    "lng": 127.0350281
   },
   {
     "id": "museum_웅진역사관",
@@ -4271,19 +3473,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_부천활박물관",
-    "title": "부천활박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRmNDc1M2E0ZDJjMmE5YzdhNTA4ZGUzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64f531a1c401c623d8d85845",
-    "description": "활 쏘기 체험 하며 역사도 공부하기!",
-    "usageStat": "48개월 이상 인기",
-    "address": "경기도 부천시 원미구 소사로 482",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.502565,
-    "lng": 126.799025
   },
   {
     "id": "museum_이화여자대학교_자연사박물관",
@@ -4347,21 +3536,6 @@
     "fees": "월요일: 정기휴무\n화요일~일요일: 10:00~16:00\n휴게시간: 12:00~13:00"
   },
   {
-    "id": "museum_세종문화회관_미술관",
-    "title": "세종문화회관 미술관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdmYjg0ZTY3MTM3MWYxNjgyY2UzMjRkLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/67ff65cc8764030395d6a674",
-    "description": "복합문화공간에서 예술 탐방하기",
-    "usageStat": "48개월 이상 인기",
-    "address": "서울특별시 종로구 세종대로 175",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.57184786,
-    "lng": 126.9761683,
-    "website": "https://m.booking.naver.com/booking/12/bizes/1352019/",
-    "fees": "[요금]무료"
-  },
-  {
     "id": "museum_충청남도역사박물관",
     "title": "충청남도역사박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdmYjg4NTdlOTg5ZjVhNGExODBjNzJiLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -4373,17 +3547,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 36.45308825,
     "lng": 127.1273866
-  },
-  {
-    "id": "museum_서유리공룡발자국화석산지",
-    "title": "서유리공룡발자국화석산지",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdmYzk4YjkxMTk1OTA2N2EzOTcyYjc4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/680608b78764030395d6ada5",
-    "description": "진짜 공룡 발자국을 볼 수 있는 곳",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_순환도시_친환경세상_순환자원홍보관",
@@ -4419,19 +3582,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_문경자연생태박물관",
-    "title": "문경자연생태박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdmNDg2ODMwYmM5MmQ0YjUwZmYxYmQ1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/67f60918671b8bb3a7ba8f79",
-    "description": "생태에 대해 공부도 하고, 키즈존에서 놀이도 하고!",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경상북도 문경시 문경읍 새재1길 45",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.75251619,
-    "lng": 128.0764842
-  },
-  {
     "id": "museum_율곡기념관",
     "title": "율곡기념관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdmMzI1ZDRjYmQxNjQyMmFmY2EwYTg3LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -4442,18 +3592,6 @@
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "fees": "[요금]어른: 1,000원아이: 500원"
-  },
-  {
-    "id": "museum_안산별망어촌문화관",
-    "title": "안산별망어촌문화관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdmNDkwNTFmOTRiNDYwNTFiZDA1MTI1LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/67f71bbd974dea57f18a4b9f",
-    "description": "사라져가는 어촌 문화를 체험해보는 체험형 전시관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "fees": "[요금]무료[이용안내]입장마감: 17시 30분휴관일: 월요일, 설·추석 당일"
   },
   {
     "id": "museum_강화역사박물관",
@@ -4517,17 +3655,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_광명시영유아체험센터",
-    "title": "광명시영유아체험센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdiYzQ2N2Y3ZDM3YzQwMmExY2EwZjI3LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/67bea98f2943dc6e2f0a334b",
-    "description": "체험과 학습, 놀이가 모두 가능한 공간",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_경상북도교육청_발명체험교육관_도전혜윰관",
     "title": "경상북도교육청 발명체험교육관 도전혜윰관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdhMzEyOTk2YjZmOTBkYWQ5YzQ2ODhkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -4537,28 +3664,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_동광직물_생활문화센터",
-    "title": "동광직물 생활문화센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdhZjFlZWQ0MjJjNDMwYzJlZDFlMjZhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/67b2dd19481bed22d4161a11",
-    "description": "초등학생 이상의 아이라면 무료로 직조 체험 가능",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_원효대사깨달음체험관",
-    "title": "원효대사깨달음체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdiMTk3MzJhN2QzZTc2NTM0MmEzMTFiLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/67b5454236e7625ec2dce70a",
-    "description": "무료로 역사를 공부하고 체험할 수 있는 공간",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_매향리평화기념관",
@@ -4609,30 +3714,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_구리시안전체험관",
-    "title": "구리시안전체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU3ZDg2M2VhZjc2MWY1MWVkNWZkMWJlLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/657f9c48e5184f4372f47543",
-    "description": "몸으로 느끼며 배우는 안전 체험",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.guri.go.kr/www/contents.do?key=3465",
-    "fees": "구리시 안전체험관에서는 어떤 체험 프로그램을 할 수 있나요?체험관 이용 시 예약은 꼭 해야 하나요?운영시간, 휴관일, 체험 가능 연령 및 이용 시간은 어떻게 되나요?구리시 안전체험관에 주차장이 있나요? 접근 방법은?이용요금과 준비해야 할 것이 있나요?"
-  },
-  {
-    "id": "museum_진도해양생태관",
-    "title": "진도해양생태관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhhYWJjNjkyNzBkYTEzNDAxMWQ4ODg1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/68ac3463ca795b20d1869bd0",
-    "description": "바다 향기 가득한 조개들과 해양 동물들 알아보기",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_나트랑_국립해양박물관",
     "title": "나트랑 국립해양박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhiMDQzNWExNzc2YTNhMGUxNTcwY2Y4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -4646,17 +3727,6 @@
     "lng": 129.0802449
   },
   {
-    "id": "museum_맑은물상상누리",
-    "title": "맑은물상상누리",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhhMjMwNWU5ODNjY2QzMDk2ZWNkOTMyLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/68a5acd1abc6bae6ac20ccd6",
-    "description": "하수 처리 과정을 통해 배우는 물의 소중함",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_스페이스아날로그",
     "title": "스페이스아날로그",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhhZDFjOTc4YTZkMGNmYzYwYzZiNzMzLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -4666,17 +3736,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_케네디_스페이스_센터",
-    "title": "케네디 스페이스 센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjg4Yjg2ZTRkMjJkNTI2MmFmNGEyZTlmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/688c96d7c0f684817b6fc1e8",
-    "description": "NASA 기지에서 공부하는 우주",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_김포시독립운동기념관",
@@ -5090,43 +4149,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_서산류방택천문기상과학관",
-    "title": "서산류방택천문기상과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjg5YzM2NDA5ZWFkY2YzMzdkMzU4YWNjLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/689dc5d1abc6bae6ac20bfad",
-    "description": "과학에 대한 아이의 호기심과 흥미를 키워줄 공간",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_수원박물관_어린이체험실",
-    "title": "수원박물관 어린이체험실",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhhMzVjYzU4MGJmZDk0ODk5YWNmZDk5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/68a5adbaee2892a6b878d495",
-    "description": "보고 만지며 즐겁게 수원을 알아가는 놀이체험 공간",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경기도 수원시 영통구 창룡대로 265",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.297646,
-    "lng": 127.035631
-  },
-  {
-    "id": "museum_파주나비나라박물관",
-    "title": "파주나비나라박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhhZGJiYWE1MTA4NTZkY2RhY2ExZTY1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/68aee2b05417fdde48e50a10",
-    "description": "체험 가득! 나비와 한 몸 되어 떠나는 여행",
-    "usageStat": "",
-    "address": "경기도 파주시 광인사길 161",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.7148520478,
-    "lng": 126.6869123589
-  },
-  {
     "id": "museum_경북대학교_자연사박물관",
     "title": "경북대학교 자연사박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNlMzc1Zjg2MGExOTlmYzA5MTcyODJhIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -5537,19 +4559,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_국립수산과학원수산과학관",
-    "title": "국립수산과학원수산과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRiMzdlYWY0ODRlMTlkNmJiNDM1YjcwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64b4a21043cc41558394eb24",
-    "description": "수산생물에 대한 모든 것을 체험하고 배울 수 있는 곳",
-    "usageStat": "12 ~ 24개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.fsm.go.kr/kr/",
-    "fees": "[요금]무료[이용안내]입장 마감: 17시 30분월요일이 공휴일인 경우 정상 개관"
-  },
-  {
     "id": "museum_디피랑",
     "title": "디피랑",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRjMjBiYzFlYzc2NWJlMWI5ODUwMDMxIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -5588,17 +4597,6 @@
     "fees": "피노파밀리아는 총 3동(A동, B동, C동)으로 이루어진 복합 체험 공간입니다.\n실내에는 피노키오 인형과 다양한 테마존이 마련되어 있으며, 아이들이 직접 만지고 놀 수 있는 블록, 자석, 애니메이션 감상 공간, 증강현실 색칠 놀이 등 다채로운 프로그램이 준비되어 있습니다.\nA동에서는 음악에 맞춰 춤추는 로봇 공연 등 흥미로운 무대도 관람할 수 있어 아이들에게 특별한 추억을 선사합니다.\n최근에는 ‘월드피노’라는 이름의 어린이 직업놀이 체험관으로 새롭게 단장하여, 소방관, 제빵사, 경찰, 과학자 등 20여 종의 직업 체험존이 운영되고 있습니다. 다양한 소품과 장난감, 교육자료를 활용해 아이들이 자연스럽게 여러 직업을 경험해볼 수 있습니다.\n외부에는 미니 기차, 미니 풋살장, 루프탑 카페, 여름철 물놀이 풀장 등 계절별로 색다른 놀이 시설이 마련되어 있습니다. 피노키오 캐릭터 포토존도 있어 가족사진을 남기기에도 좋습니다."
   },
   {
-    "id": "museum_너나들이센터",
-    "title": "너나들이센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ5MDgxMzM3MmY5NzA0ZWRjNzhmZDMzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64910231236b4a53258b74ff",
-    "description": "무료로 한복체험과 재밌는 전시까지 한번에!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_최무선과학관",
     "title": "최무선과학관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ5MTYzODhhMjU3MmRlNjhhNWYzMjQzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -5627,19 +4625,6 @@
     "fees": "민화 그리기부터 가방 만들기까지 다양한 체험들을 할 수 있어요.\n1층 전시실은 전문 해설사 분의 설명과 함께 관람하는데, 너무 어린 아이들은 지루할 수 있으니 입구의 민화 관련 영상을 보고 전시실을 둘러보면 좋아요.\n2층 전시들은 조금 더 현대적이고 다양한 접근의 젊은 작가들 전시가 열려요.\n2층에는 포토존도 만들어 둬서 아이들과 사진 찍기도 좋아요.\n(춘화전시는 아이들 입장 금지)\n아이들이 재밌어하는 4D/VR체험도 할 수 있어요.\n청자박물관디지털박물관, 청자박물관과 함께 둘러보기 좋아요.\n놀이터도 있고 야외 공간도 넓어서 산책하기에도 좋아요.\n주차장이 넓어서 주차 걱정은 안 하셔도 돼요."
   },
   {
-    "id": "museum_광나루안전체험관",
-    "title": "광나루안전체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRhYzBiMDUwMzYwYmQ2MzQzNmFiYTgzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64acc20d0f284628233a2c50",
-    "description": "재난안전에 대해 설명도 듣고 체험도 할 수 있는 곳",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://fire.seoul.go.kr/gwangnaru/main/main.do",
-    "fees": "광나루안전체험관에는 어떤 체험 프로그램이 있나요?체험관 이용 시 꼭 지켜야 하는 예약 방법과 복장 규정이 있나요?운영시간과 휴관일은 언제인가요?주차장, 대중교통 등 교통편과 체험관 내 편의시설은 무엇인가요?체험관 이용 요금은 얼마인가요?방문 시 챙기면 좋은 준비물과 이용 팁이 있나요?"
-  },
-  {
     "id": "museum_은평역사한옥박물관",
     "title": "은평역사한옥박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ5MDdkY2ZhMjU3MmRlNjhhNWQ3OTMxIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -5651,34 +4636,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.6403687,
     "lng": 126.9380375
-  },
-  {
-    "id": "museum_목포_근대역사관_1관",
-    "title": "목포 근대역사관 1관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ5YjkxY2EyMGJhMWJkNjAyOTFkNjA5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6493f806708f4534dbb2d0ee",
-    "description": "아름다운 건물 속에 묻어 있는 우리의 역사",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "전라남도 목포시 영산로 29번길 6",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 34.78769578,
-    "lng": 126.3817942
-  },
-  {
-    "id": "museum_춘천_막국수체험박물관",
-    "title": "춘천 막국수체험박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ5M2JkZDU1NDNmZTg1ZTEzM2ZjYmNkIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6493c1266516e01cd7ec462b",
-    "description": "아이가 직접 막국수를 만들어 먹어 볼 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "강원특별자치도 춘천시 신북읍 신북로 264",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.94879306,
-    "lng": 127.7497799,
-    "website": "https://makkuksu.modoo.at/",
-    "fees": "1층 전시관에서는 막국수와 메밀의 유래, 전통, 효능, 그리고 다양한 메밀 음식에 대한 입체적인 전시가 이루어집니다.\n선조들이 사용하던 디딜방아, 맷돌 등 전통 도구도 직접 볼 수 있어, 아이들이 옛 조리법과 문화를 쉽게 이해할 수 있습니다.\n문화해설사의 설명을 듣는 프로그램도 운영되어 가족 단위 방문객에게 알찬 교육이 가능합니다."
   },
   {
     "id": "museum_프라움악기박물관",
@@ -5717,32 +4674,6 @@
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "fees": "[요금]무료"
-  },
-  {
-    "id": "museum_한국근현대사박물관",
-    "title": "한국근현대사박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ4OTIxMjI1M2VjNzY5YjE1NDI0MWViIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64892574cd6f0c2d9ae3dea8",
-    "description": "할머니 할아버지가 살아온 시간은 말이야",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경기도 파주시 탄현면 헤이리마을길 59-85",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.7908727117,
-    "lng": 126.695201947
-  },
-  {
-    "id": "museum_서울역사박물관",
-    "title": "서울역사박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ4ZjljNjg3MmY5NzA0ZWRjNzYwMjY1IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/648fb44a236b4a53258b6edc",
-    "description": "박물관, 미디어아트, 야외카페, 산책을 한번에",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "서울특별시 종로구 새문안로 55",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.57176907,
-    "lng": 126.9679849
   },
   {
     "id": "museum_타임뮤지엄",
@@ -5816,21 +4747,6 @@
     "lng": 126.8898935,
     "website": "https://www.instagram.com/koreanfilmarchive/",
     "fees": "[요금]무료"
-  },
-  {
-    "id": "museum_독도체험관",
-    "title": "독도체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ4NDFlYmIzYzkyNmEwZDdlMGU3NzA3IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/648692fd42a25370083f004a",
-    "description": "무료로 배우는 아름다운 우리땅, 독도",
-    "usageStat": "48개월 이상 인기",
-    "address": "서울특별시 영등포구 영중로 15",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.51723326,
-    "lng": 126.903716,
-    "website": "http://dokdomuseum.nahf.or.kr/",
-    "fees": "독도체험관에서 아이가 직접 해볼 수 있는 체험 프로그램에는 무엇이 있나요?관람료가 있나요? 예약이 필요한가요?관람 소요 시간은 어느 정도 걸리고, 어떤 동선으로 관람하나요?유아 동반 시 편의시설(유모차 대여, 수유실, 기저귀 교환대, 물품 보관함 등)은 어떻게 이용할 수 있나요?주차는 어디에서 할 수 있고, 요금은 얼마인가요?독도체험관 관람 후 함께 둘러볼 만한 장소가 있나요?"
   },
   {
     "id": "museum_영양산촌생활박물관",
@@ -5949,19 +4865,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_고양시_현충전시관",
-    "title": "고양시 현충전시관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcwYmZjNmEyNWYyM2ZiOWVlMDA1YWVmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/670c70346a0bb2186343b5a8",
-    "description": "역사를 기억하고, 평화를 소망하는 공간",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.goyang.go.kr/visitgoyang/www/tourRsrcView.do?key=86&tourRsrcNo=1052",
-    "fees": "고양시 현충전시관에서는 아이와 함께 어떤 전시와 체험 활동을 할 수 있나요?관람료와 주차 요금은 얼마이며, 주차는 어떻게 이용하나요?관람 시간과 휴관일은 어떻게 되나요?해설 프로그램 및 단체 관람은 어떻게 신청하나요?기저귀 교환대, 수유실, 유모차 대여 등의 유아동 편의시설이 있나요?인근에 아이와 함께 둘러보기 좋은 다른 볼거리나 시설이 있나요?"
-  },
-  {
     "id": "museum_산청한의학박물관",
     "title": "산청한의학박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcwNmEyMWU4ODRkMzA1MDU4YzBjMTUwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -6047,19 +4950,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_계양산성박물관",
-    "title": "계양산성박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZlZDIzYjNkYjMzMWI0OTY3OWIzMjE5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/66f0dd185d76893811f40ffd",
-    "description": "산성에 대해 배울 수 있는 산성 전문 박물관",
-    "usageStat": "48개월 이상 인기",
-    "address": "인천광역시 계양구 계양산로 101",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.548054,
-    "lng": 126.727032
-  },
-  {
     "id": "museum_웅천도요지전시관",
     "title": "웅천도요지전시관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZmM2NjMjZhMTVmMGU4MGZiYjNjNjljLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -6099,17 +4989,6 @@
     "fees": "[요금]무료[이용안내]입장마감: 16시휴관일: 매주 월요일, 1월 1일, 설·추석[프로그램]문화해설사시간: 10시~17시(동절기는 16시까지)체험 프로그램: 소앙의 꿈, 삼균주의를 찾아서일시: 2024년 6월~9월 기간 중 총 4회(6월 6일, 7월 6일, 8월 15일, 9월 21일)시간: 10시~16시"
   },
   {
-    "id": "museum_고성다이노플레이센터",
-    "title": "고성다이노플레이센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZjYzFjY2YxNTQ1MmZmNzYzOGEyMzlkLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/66cc1e28b9dc94baaeefd202",
-    "description": "무료 공룡 미디어아트관!",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_영월동굴생태관",
     "title": "영월동굴생태관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZkYzRlZmQwODM4ZjIxNmEyNjk4MjkwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -6143,21 +5022,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_창원역사민속관",
-    "title": "창원역사민속관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVkMjExODQ5ZDNjYzUxN2MxN2MwMjUxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/65d2ac18492c156da9e4b98a",
-    "description": "민속놀이 체험이 가능한 문화 예술공간",
-    "usageStat": "48개월 이상 인기",
-    "address": "경상남도 창원시 의창구 창이대로397번길 25",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 35.245081,
-    "lng": 128.6808222,
-    "website": "https://www.cwcf.or.kr/facility/facility_history.asp",
-    "fees": "[요금]무료[이용안내]창원역사민속관 - 09:00 ~ 18:00창원의집 - 09:00 ~ 18:00"
   },
   {
     "id": "museum_기흥성_뮤지엄",
@@ -6194,17 +5058,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "website": "https://gnse.gne.go.kr/gnse/main.do",
     "fees": "[이용안내]무료입장, 무료주차점심시간 12:00~13:00(부분 관람 가능)월요일, 공휴일 휴무[시간 안내]인간 vs 로봇체험오전 10:30-50, 11:30-50오후 14:00-14:20, 15:00-15:20춤추는 로봇오전 10:30,11:30 오후 14:30,15:30[층별 안내]지하1층 자연사관1층 과학체험1관, 화석문화재전시관2층 과학체험 2관3층 곤충표본관4층 천체체험관 , 독도체험관,천체투영관, 3D영상관5층 천체관측실"
-  },
-  {
-    "id": "museum_진주남강유등전시관",
-    "title": "진주남강유등전시관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVjMDNiNDEwMDkyMThhYWE0NTNiMjdhLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/65c1dc5f637865c40029219f",
-    "description": "나만의 소망등을 만들어볼 수 있는 전시관",
-    "usageStat": "12 ~ 24개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_영암곤충박물관",
@@ -6300,17 +5153,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_청주랜드_어린이회관_제3관",
-    "title": "청주랜드 어린이회관 제3관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdmYTQ4MjM3MTcxNDY4MWRhOGEyNDkzLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/681027f9dc6874e8895c0aa0",
-    "description": "공룡과 나비에 대해 배워볼 수 있는 무료 박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_불교중앙박물관",
@@ -6439,19 +5281,6 @@
     "lng": 126.6589031,
     "website": "https://naju.museum.go.kr/prog/edu/kor/sub03_02_01/list.do",
     "fees": "[요금]무료"
-  },
-  {
-    "id": "museum_울산대공원생태여행관",
-    "title": "울산대공원생태여행관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRhZmI5YmEzMmNhYTYyNGJmYzY1OTQwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64ab5aa5b8c7c66ecc41271c",
-    "description": "자연을 모티브로한 생태체험관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.uic.or.kr/ulsanpark/institution/institution01_5.do",
-    "fees": "[요금]어른: 2,000원청소년(14세~19세): 1,000원어린이(36개월~13세): 500원36개월 미만, 만65세 이상: 무료[이용안내]입장 마감: 운영 종료 30분 전하절기(4월~10월) - 09시 30분~18시동절기(11월~3월) - 09시 30분~17시주차요금 - 최소 30분: 500원 / 1시간: 1000원 / 초과요금 10분당 200원"
   },
   {
     "id": "museum_독립기념관",
@@ -6730,34 +5559,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_안중근의사기념관",
-    "title": "안중근의사기념관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZjYzlmMGY5OWFkZDFjZTExM2I0YjIxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/66ce9584f35c8a23bad8f961",
-    "description": "아이와 함께 역사 속으로",
-    "usageStat": "48개월 이상 인기",
-    "address": "서울특별시 중구 소월로 91",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.55347,
-    "lng": 126.980406,
-    "website": "https://www.ahnjunggeun.or.kr/index.html",
-    "fees": "안중근의사기념관은 1970년에 개관하여 2010년 새로운 건축으로 재탄생했습니다.\n기념관의 외관은 12개의 유리 기둥이 모여 있는 독특한 디자인을 가지고 있는데, 이는 안중근 의사와 동지 12명이 독립을 맹세했던 단지동맹을 상징합니다.\n내부에는 안중근 의사의 생애, 가족, 독립운동 과정, 시대적 배경, 그리고 그가 남긴 유물과 사진, 저서 등이 체계적으로 전시되어 있습니다.\n안중근 의사의 마지막 유언, 독립운동가로서의 업적과 정신을 알 수 있는 공간, 그리고 어린이도 이해하기 쉽게 정리된 다양한 전시물들이 준비되어 있습니다."
-  },
-  {
-    "id": "museum_천안홍대용과학관",
-    "title": "천안홍대용과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZjY2E3YWE5OWFkZDFjZTExM2I0ZmRhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/66ce95e1f35c8a23bad8f963",
-    "description": "무중력을 경험해 보는 어린이 천문관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.cheonan.go.kr/damheon.do",
-    "fees": "충청남도 천안시 동남구 수신면 장산서길 113에 위치한 천안홍대용과학관은 조선시대 과학사상가이자 실학자인 담헌 홍대용 선생의 업적을 기리기 위해 2014년에 개관한 과학관입니다.\n과학관은 4층 규모로, 다양한 전시관과 체험시설을 갖추고 있어 아이들과 함께 과학과 우주를 즐겁게 경험할 수 있습니다."
-  },
-  {
     "id": "museum_토지주택박물관",
     "title": "토지주택박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZkYTkwOTQ2YjM3YjVjMWE4YWYwNjFjLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -6967,17 +5768,6 @@
     "lng": 127.1121799
   },
   {
-    "id": "museum_홀로세생태보존연구소",
-    "title": "홀로세생태보존연구소",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY4YjZmNTliZDkwYzk3YzQxMmFkYTEzLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/668b7fc7cc998aa7bf5e5e30",
-    "description": "멸종위기 곤충들을 만나고, 드넓은 숲에서 자유롭게 놀자!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_덕포진교육박물관",
     "title": "덕포진교육박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZiZGEwMjA5NmM3NjNjOWQyNDExNDdkLkpQRUciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -7112,19 +5902,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_우리1899",
-    "title": "우리1899",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjk2MjQzMjJmZjdjZGNlNmU0NmQ5YTc5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/6965a4d86e5181c1a1890ba7",
-    "description": "대한민국 금융의 역사를 살펴볼 수 있는 전시관",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.woorimuseum.com/wbm/main.do",
-    "fees": "[요금]무료[이용안내]입장마감: 17시 30분"
-  },
-  {
     "id": "museum_충청북도유아교육진흥원",
     "title": "충청북도유아교육진흥원",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjhlYjg0M2JkMjA2OWNiOWRkODI0OTA1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -7158,19 +5935,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_꿈두레도서관",
-    "title": "꿈두레도서관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjk0Mjc0NWNlMDk4YzkwNDNkODFlNzgxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/694a45a5457b67482535b690",
-    "description": "아이들을 위한 공간으로 가득한 도서관",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.osanlibrary.go.kr/kkumdure/main.do",
-    "fees": "[요금]무료[운영시간]자료실 - 09:00~22:00일반열람실 - 08:00~22:00유아열람실 - 월~금: 09:00~22:00 / 토,일: 09:00~18:00정기 휴무: 매달 1, 3번째 월요일, 1월 1일"
   },
   {
     "id": "museum_녹청자박물관",
@@ -7278,17 +6042,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_로봇체험관",
-    "title": "로봇체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjQ3ZGVlMmU3MDU3MmEzYjUwMWQ0MjRiIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/648163516a510a72019606dc",
-    "description": "로봇을 좋아하는 아이들의 지상낙원",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_구리시곤충생태관",
@@ -7411,19 +6164,6 @@
     "lng": 128.7304017
   },
   {
-    "id": "museum_양평곤충박물관",
-    "title": "양평곤충박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjQ2NzA1NDE4ZDVjMzRjYzkzOTM2MTliIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/640fd0182c47ebdbd44f9fbc",
-    "description": "애벌레도 직접 만져볼 수 있는 곤충박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "경기도 양평군 옥천면 경강로 1496",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.50920003,
-    "lng": 127.4491461
-  },
-  {
     "id": "museum_북촌박물관",
     "title": "북촌박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY3N2RlMjJjYjk4OWFhNmZlYmJlMjJjLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -7532,17 +6272,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_대전곤충생태관",
-    "title": "대전곤충생태관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNjNzY2ZDI1YzNjZjYyZGRiZTY2YzZmIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63c766e05c3cf62ddbe66c83",
-    "description": "실제로 보고 만질 수 있는 곤충생태관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_국립농업박물관",
     "title": "국립농업박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNhZDI1ZTgzNTZlMGNhYTdhYzNiN2I1IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -7552,19 +6281,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_계룡병영체험관",
-    "title": "계룡병영체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjk3ZWE1ZjMzN2U3NTk1NmI3NGU2ZDc0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/6981575cacc21ddc94ea25d3",
-    "description": "VR체험을 통해 나라를 지키는 군인이 되어보는 순간!",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.gcfct.org/vr_application",
-    "fees": "[요금]가상모의전투(약 15분/12세 이상): 4,000원VR체험존(육군, 해군, 공군/10세 이상): 각 3,000원VR체험존(롤러코스터/5세 이상): 3,000원밀리터리아케이드(약 30분/8세 이상): 2,000원패키지(가상모의전투+VR체험): 15,000원계룡시민, 장애인, 기초생활수급자, 국가유공자 및 배우나: 20% 할인[운영시간]1회: 10:00~10:502회: 11:00~11:503회: 13:00~13:504회: 14:00~14:505회: 15:00~15:506회: 16:00~16:50[이용안내]점심시간: 12:00~13:00"
   },
   {
     "id": "museum_서울역사박물관_어린이박물관",
@@ -7578,19 +6294,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "lat": 37.57176907,
     "lng": 126.9679849
-  },
-  {
-    "id": "museum_신전뮤지엄",
-    "title": "신전뮤지엄",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcyYWM5NjQ4ZDNhOGVkZGU0NGE2YjczLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/63ab9dfa576d3cf16f497b5b",
-    "description": "떡볶이를 좋아하는 아이라면 꼭 가야 하는 곳",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://sinjeon-museum.com/index.php",
-    "fees": "운영시간: 수요일~일요일 10:00 ~ 17:30 (입장 마감 16:30)\n휴관일: 매주 월·화요일 (공휴일 정상영업)\n입장요금: 성인 10,000원 / 청소년(중,고등학생) 8,000원 / 어린이(36개월 이상) 7,000원 (36개월 미만 어린이 무료)\n주차: 지하 주차장 약 150대 가능 (평일 무료, 주말·공휴일 2시간 30분 무료, 이후 10분당 1천 원)"
   },
   {
     "id": "museum_풀짚공예박물관",
@@ -7700,19 +6403,6 @@
     "lng": 126.8857357552
   },
   {
-    "id": "museum_섬진강수달생태공원트리타워전망대",
-    "title": "섬진강수달생태공원트리타워전망대",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYwYTE5Y2FlYzE3MDc4MjNmNDE1OGZiLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/660a41b1494c7712272b86c0",
-    "description": "자연환경과 미디어가 함께하는 자연생태체험 휴식공간",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://gurye.go.kr/tour/detail.do?tourId=TOUR_0000000124&menuNo=101001017000",
-    "fees": "[요금]24년 4월 기준: 무료 (추후 유료화 예정)[이용안내]수달전시관 입장마감: 17:30"
-  },
-  {
     "id": "museum_용인시기후변화체험교육센터",
     "title": "용인시기후변화체험교육센터",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYxMzUxNDAyMzkzZTZkMWI4ZDVlNDNmLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -7785,19 +6475,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_한국코미디타운",
-    "title": "한국코미디타운",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM5MWFkMjNjZjM2ODBiZGYwMTA0NGM4IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6391ad2ccf3680bdf01044e2",
-    "description": "한국 코미디 역사를 배우고 체험도 할 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "http://www.kcomedytown.co.kr/",
-    "fees": "한국 코미디의 역사를 총 5개 존(ZONE)으로 구분해, 재담·만담·악극·방송 코미디 등 다양한 분야의 자료와 유물을 전시하고 있어 아이들에게 자연스럽게 웃음 문화의 흐름과 변화를 알려줄 수 있습니다.\n직접 체험할 수 있는 전시물이 많아, 아이들이 코미디에 직접 참여하며 즐거운 경험을 할 수 있습니다.\n코미디 공연장이 마련되어 있어 주말에는 가족 단위로 방문해 현장감 넘치는 코미디 공연도 관람할 수 있습니다."
   },
   {
     "id": "museum_개구리생태공원_개구리전시관",
@@ -7968,17 +6645,6 @@
     "lng": 129.2286819
   },
   {
-    "id": "museum_하이커_그라운드",
-    "title": "하이커 그라운드",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1ZjgzZTRhNTE5MDhmODZmYmZmZjY5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/635f83eba51908f86fbfff77",
-    "description": "전국 힙아가들 모여라",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_국립경주박물관",
     "title": "국립경주박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1OWFkYTcwMjc2MWM3N2QxNzhlZTI3LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
@@ -8088,43 +6754,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_엄마아빠어렸을적에",
-    "title": "엄마아빠어렸을적에",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM2NGE2OTU4NzMzNGZiMDFhNTliIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd182d2718fee95297dc52",
-    "description": "엄마아빠와 떠나는 추억 여행⠀",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_수도박물관",
-    "title": "수도박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1Y2M2OTU4NzMzNGZiMDFhMzJiIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd17fd2718fee95297db5a",
-    "description": "우리 아이 물박사 만들어주는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "경상남도 김해시 한림면 김해대로 1029-20",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 35.2949807,
-    "lng": 128.7932939
-  },
-  {
-    "id": "museum_아르떼뮤지엄_여수",
-    "title": "아르떼뮤지엄 여수",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1ZmI2OTU4NzMzNGZiMDFhNDFkIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd18022718fee95297db7b",
-    "description": "아이가 좋아하는 실감형 미디어아트 전시관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://mom-mom.net/shop/products/131884471",
-    "fees": "위치: 전남 여수시 박람회길 1 국제관 A동 3층\n운영시간: 월~일 10:00~20:00\n연락처: 1899-5008"
-  },
-  {
     "id": "museum_인천국민안전체험관_리틀인천안전시티",
     "title": "인천국민안전체험관 리틀인천안전시티",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM0MWI2OTU4NzMzNGZiMDE5YjIxIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -8219,39 +6848,6 @@
     "lng": 126.4121588
   },
   {
-    "id": "museum_추억의_청춘뮤지엄",
-    "title": "추억의 청춘뮤지엄",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRhNTAzNTdlNWYzM2NiNTc2YTQ1YzYwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64a50c3d12830d7123be071d",
-    "description": "세대 불문 모두가 빠져드는 레트로 박물관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_토속어류생태체험관",
-    "title": "토속어류생태체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRhZjUzODRkZTAxMDhlY2U2NGJmOWUxIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64af9e790a27d49441c99e5b",
-    "description": "민물고기의 본고장에서 즐기는 다양한 체험",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_스위트파크_롯데_어린이_식품체험관",
-    "title": "스위트파크 롯데 어린이 식품체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRhOTEzYmE2YmU4YWVkNjRkNTJkMDQ2IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64ab5b91b8c7c66ecc412723",
-    "description": "먹거리 가득한 달콤한 공원에서 다양한 무료 체험을!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_국립민속박물관_7080추억의거리",
     "title": "국립민속박물관 7080추억의거리",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRkZDhmOTcxYjYzYmQ3MjUzYTg2YTk1IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -8343,17 +6939,6 @@
     "fees": "[요금]무료"
   },
   {
-    "id": "museum_전라남도해양수산과학관",
-    "title": "전라남도해양수산과학관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY2MmEwODdlYzVlM2IwMWQzMWEyZGYzLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/6662d12566b3e9963b55cc6b",
-    "description": "남해안의 어종과 생물들이 전시된 수산과학관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_장생포_고래생태체험관",
     "title": "장생포 고래생태체험관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjY1NmMyYjkyZDk3ZDg4YTVhODM3ZDA2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -8378,30 +6963,6 @@
     "fees": "[요금]현장 구매(일반): 23.95달러+tax사전 구매(일반): 19.95달러+tax1세 미만: 무료"
   },
   {
-    "id": "museum_대전교통문화연수원",
-    "title": "대전교통문화연수원",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNjNzgyNzQxOWE4YjBmM2ViNjg4ZjBlIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/63c7828219a8b0f3eb688f24",
-    "description": "아이에게 재미있게 교통안전을 알려줄 수 있는 곳",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_서울영화센터",
-    "title": "서울영화센터",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjk2YjE0ZGQzNjI4MTZkODMyYTVmMzEwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/696f21c471ce8303b0a218c1",
-    "description": "한국영화의 역사가 고스란히 담겨 있는 공간",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.seoulfilmcenter.com/index.do",
-    "fees": "[요금]입장료: 무료(~26년 5월)"
-  },
-  {
     "id": "museum_밀양한천테마파크",
     "title": "밀양한천테마파크",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjNjMTI0MDcxMzUxNGE5NGUwNzk2Zjc3IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -8411,28 +6972,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_괌_박물관",
-    "title": "괌 박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjk1YjUwY2EyZTdlMjQ5OGVhMjI3NzA2LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/695f83047880a80c9f0fe10b",
-    "description": "괌의 역사를 한눈에 볼 수 있는 박물관",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_국립중원문화유산연구소_어린이_발굴체험장",
-    "title": "국립중원문화유산연구소 어린이 발굴체험장",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjk1N2MwMWExMjg5YjNmY2I4MTZmMjYwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/695b8f06cb0585774aecb8e1",
-    "description": "고고학자가 되어보는 시간",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_수퍼빈_아이엠팩토리_화성",
@@ -8554,19 +7093,6 @@
     "lng": 126.6381068
   },
   {
-    "id": "museum_창원과학체험관",
-    "title": "창원과학체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1OWRmNjk4NDFlZTQyN2E0NWFjNTAxIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6359df73841ee427a45ac51f",
-    "description": "과학 어렵지 않게 즐기면서 배워요!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "website": "https://www.cwsc.go.kr/main/main.php",
-    "fees": "창원과학체험관은 경상남도 창원시 성산구에 위치한 경남 유일의 과학체험 공간입니다.\n지하 1층부터 지상 3층까지 다양한 과학 전시와 체험, 교육 프로그램이 가득합니다.\n하이테크적 건축물이 인상적이며, 로비에는 안내데스크, 과학작은도서관, 다목적 강당이 갖춰져 있습니다."
-  },
-  {
     "id": "museum_또봇정크아트뮤지엄",
     "title": "또봇정크아트뮤지엄",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1OWU1MTgwYWRjMWE4YWM5ZWZlYTdlIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -8578,17 +7104,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "website": "https://m.booking.naver.com/booking/5/bizes/114292/",
     "fees": "[요금]또봇정크아트+엑스포공원 이용권 성인: 12,000원 24개월~36개월 미만: 9,900원 24개월 미만: 무료 입장(증빙 서류 지참)[이용 안내]또봇정크아트뮤지엄: 10시 ~ 17시 (마감 16시)경주엑스포대공원: 10시 ~ 18시 (마감 17시) 무료이용가능 컨텐츠BIG5: 경주타워, 타임리스 미디어아트, 비움명상길(화랑숲), 솔거미술관, 엑스포기념관살롱헤리티지, 화랑아놀자(8세까지 입장 가능), 우리놀이터경주, 자연사 박물관, 이스탄불 홍보관, 3D영상관, 새마을관, 아사달 조각공원"
-  },
-  {
-    "id": "museum_글로벌스페이스_체험교육",
-    "title": "글로벌스페이스 체험교육",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRhOGZmMWU2YmU4YWVkNjRkNTI4MWMyIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64ab5b4fb8c7c66ecc41271f",
-    "description": "동심의 세계가 현실이 되는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_새마을운동테마공원",
@@ -8663,17 +7178,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_xr버스1795행",
-    "title": "xr버스1795행",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjM1OWVhNjM4NDFlZTQyN2E0NWFjNTQ4IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6359ea6a841ee427a45ac558",
-    "description": "국내 최초 미디어 버스로 정조에 대해 배워봐요!",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_국가유산_방문_캠페인_인천공항_홍보관",
@@ -8844,42 +7348,6 @@
     "fees": "[요금]무료"
   },
   {
-    "id": "museum_국립태권도박물관",
-    "title": "국립태권도박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxMTI5NzI2MmE3ODBjOGI1Mjg5NTZjIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/6512696c3069134fb42d6e4e",
-    "description": "태권도의 역사를 한 눈에 볼 수 있는 곳",
-    "usageStat": "",
-    "address": "전북특별자치도 무주군 설천면 무설로 1482",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 36.00931149,
-    "lng": 127.7786624
-  },
-  {
-    "id": "museum_영천메타버스체험관",
-    "title": "영천메타버스체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc5OTI2ODgzZjlmMzI1NDRjNDQzNDhmLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/679c3eac008db9011392bb85",
-    "description": "아이가 즐겁게 미래를 경험해 볼 수 있는 곳",
-    "usageStat": "48개월 이상 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "fees": "[요금]무료"
-  },
-  {
-    "id": "museum_태권도원체험관",
-    "title": "태권도원체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxMTMwZWJjNDI1NGQ5OWU2NWUwNTRhIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/651269cf3069134fb42d6e82",
-    "description": "태권도를 재미있게 체험하고 배워보는 공간",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_전쟁과여성인권박물관",
     "title": "전쟁과여성인권박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxNGM5OGNhMzI5MTA1Mjk4ZDY5MWIwIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -8893,28 +7361,6 @@
     "lng": 126.9148871
   },
   {
-    "id": "museum_충북안전체험관",
-    "title": "충북안전체험관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc5M2I2MDFmZDRkMDc3ODY2NzcyOTRhLkpQRyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/679c2df07b2f2993b4f43f98",
-    "description": "안전에 관한 여러 체험을 할 수 있는 곳",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_판교환경생태학습원",
-    "title": "판교환경생태학습원",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxOTc1NTBmOWVjYzAxMzNjNzQ4MmQ4IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/651cdbf9caa4390924c21fe7",
-    "description": "생태계 보전의 중요성과 생명의 소중함을 배워봐요",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_배다리성냥마을박물관",
     "title": "배다리성냥마을박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxYWIwZGJjOGQ2ZTJiNzAzZTJiM2YzIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -8924,19 +7370,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_판교박물관",
-    "title": "판교박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjUxOTczNjM2Y2NjYTJlZTM0MTQ3ZDcxIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/651cdb15caa4390924c21fe5",
-    "description": "여러 가지 체험하면서 배우는 역사",
-    "usageStat": "48개월 이상 인기",
-    "address": "경기도 성남시 분당구 판교로 191",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z",
-    "lat": 37.401083,
-    "lng": 127.095548
   },
   {
     "id": "museum_태백석탄박물관",
@@ -9107,17 +7540,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z",
     "website": "https://www.cwsisul.or.kr/_jhmapark/",
     "fees": "해양솔라타워\n\n전망대가 있는 타워동과 북카페, 야외 테라스, 실내정원 대롱숲이 있는 전시동이 있습니다. 전망대에서 진해 앞바다를 한눈에 감상할 수 있습니다.\n\n\n어류생태학습관\n\n3층: 해양 전망대, 태양광 발전관\n2층: 터치풀(물고기 직접 체험)\n1층: 바다생태관, 어류 안정실, 미디어촌, 낚시 놀이터\n\n\n해전사체험관\n\n우리나라 해전의 역사를 배울 수 있는 공간입니다. 여러 종류의 교구와 볼거리가 있으며, 그 옆 매점이 있는 건물에 수유실과 고객휴게실이 있습니다.\n\n\n해양생물테마파크\n\n1층: 유영생물 전시실\n2층: 저생물 전시실\n3층: 디오라마 전시실, 체험실, 영상실, 기획전시관\n\n\n해변 산책로 & 포토존\n\n바다를 따라 조성된 산책로와 곳곳에 마련된 포토존에서 가족들과 추억을 남길 수 있습니다."
-  },
-  {
-    "id": "museum_트릭아트스토리",
-    "title": "트릭아트스토리",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVkOTg0YzE3MDJmMWViNTY2OGMxNzVmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/65dbf0ff2fd27d17773464e7",
-    "description": "동화 속 주인공이 될 수 있는 공간!",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_이천시립박물관",
@@ -9320,17 +7742,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_완도군해양생태전시관",
-    "title": "완도군해양생태전시관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVmNDBjY2RmZmU2NzhjODM2NjEyZjNkLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/65f41702b1da306faf782256",
-    "description": "작지만 생동감 있는 해양 전시관",
-    "usageStat": "",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_마한유적체험관",
     "title": "마한유적체험관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVmMWIwNDFiYjNkMjIzM2IwYTY1ZTQ5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
@@ -9436,17 +7847,6 @@
     "lastCollected": "2026-03-14T15:15:10.447Z"
   },
   {
-    "id": "museum_아르떼뮤지엄_강릉",
-    "title": "아르떼뮤지엄 강릉",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkZTRhNGNhNzI3YjUzMjM1NzY3ZjJlIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/62cd18022718fee95297db7a",
-    "description": "아이가 좋아하는 실감형 미디어아트 전시관",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
     "id": "museum_송파책박물관",
     "title": "송파책박물관",
     "image": "https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1Y2E2OTU4NzMzNGZiMDFhMzFkIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
@@ -9541,28 +7941,6 @@
     "address": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_충청남도교육청과학교육원",
-    "title": "충청남도교육청과학교육원",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjViYjE1OTgwYWZlNDA4ODY4MzQzODM5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19",
-    "link": "https://mom-mom.net/travel/places/65bc5a00cdb0749af68de332",
-    "description": "걸리버 몸 속 탐험을 통해 우리 몸의 기관 알기!",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_세계문화박물관",
-    "title": "세계문화박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjRkODI5ZmY2YWYzYzkwZmFhOTRkNDI2IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=",
-    "link": "https://mom-mom.net/travel/places/64d97da3067b0031e512b418",
-    "description": "세계 문화를 다양하게 즐길 수 있는 곳",
-    "usageStat": "24 ~ 48개월 인기",
-    "address": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_누치마스_소금공장",
@@ -9837,26 +8215,6 @@
     "usageStat": "",
     "genre": "museum",
     "lastCollected": "2026-03-14T15:15:10.447Z"
-  },
-  {
-    "id": "museum_한국잡월드_미래직업관",
-    "title": "한국잡월드 미래직업관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjk5ZmYyODlhMDVlNWI2MjM1NDdmODgxLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/6997fcc727e7ba5060368db2",
-    "description": "18가지 미래 직업 체험이 가능한 곳",
-    "usageStat": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
-  },
-  {
-    "id": "museum_서울공예박물관_어린이박물관",
-    "title": "서울공예박물관 어린이박물관",
-    "image": "https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjliM2Q0NDgxMTVkZDgwMDQ4OTU4MzEzLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==",
-    "link": "https://mom-mom.net/travel/places/69b3b23e09fbb11855c0e8a1",
-    "description": "공예의 즐거움을 체험하는 자율 창작 놀이터",
-    "usageStat": "",
-    "genre": "museum",
-    "lastCollected": "2026-03-13T15:44:19.028Z"
   },
   {
     "id": "museum_구리시인창도서관천문대",

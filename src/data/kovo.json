@@ -4096,22 +4096,6 @@
     "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=258&season=022&league=201&gender=1"
   },
   {
-    "id": "kovo_20260330_힐스테이트_vs_GS칼텍스",
-    "title": "[배구] 힐스테이트 vs GS칼텍스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-03-30 19:00",
-    "venue": "수원체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "gyeonggi",
-    "genre": "volleyball",
-    "homeTeam": "힐스테이트",
-    "awayTeam": "GS칼텍스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=022&gender=2&league=201&round=1&homeTeam=2001&awayTeam=2005",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=259&season=022&league=201&gender=2"
-  },
-  {
     "id": "kovo_20260331_스카이워커스_vs_우리WON",
     "title": "[배구] 스카이워커스 vs 우리WON",
     "image": "/images/volleyball_poster.png",
