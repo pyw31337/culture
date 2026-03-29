@@ -76,41 +76,6 @@
     "posterUrl": "https://image.tmdb.org/t/p/original/qqGpVVZk2KD1lAvccgTU4Z6nh1H.jpg"
   },
   {
-    "id": "movie_명탐정코난_세기말의마술사",
-    "title": "명탐정 코난: 세기말의 마술사",
-    "date": "2026.03.27.",
-    "dateRaw": "20260327",
-    "region": "전국",
-    "genre": "movie",
-    "subGenre": "애니메이션",
-    "rank": 3,
-    "director": "こだま兼嗣",
-    "cast": [
-      "타카야마 미나미",
-      "야마구치 캇페이",
-      "야마자키 와카나",
-      "카미야 아키라",
-      "챠후린",
-      "시오자와 카네토",
-      "타카기 와타루",
-      "이시즈카 운쇼",
-      "田中信夫",
-      "오가타 켄이치"
-    ],
-    "venue": "12세이상관람가",
-    "ageRating": "12세이상관람가",
-    "runningTime": "100분",
-    "revenue": 22951145,
-    "revenueKRW": 32131603000,
-    "synopsis": "러시아 로마노프 왕조의 유산인 파베르제의 달걀 중 세기말 최후의 보물 ‘메모리즈 에그’가 발견되고, 이를 노리는 괴도 키드의 예고장이 도착한다. 그를 막기 위해 괴도 키드 특별 수사팀과 코난 일행, 서쪽의 고등학생 탐정 핫토리까지 합류한다. 신출귀몰한 괴도 키드는 모두를 따돌리며 ‘메모리즈 에그’를 훔치는 데 성공하지만, 정체불명의 누군가에게 저격당해 행방불명된다. 무사히 달걀을 되찾은 코난은 ‘메모리즈 에그’에 담긴 수수께끼를 발견한다. 달걀의 비밀을 풀기 위해 크루즈를 타고 도쿄로 향하는 코난 일행, 그러나 배 안에서 의문의 살인 사건이 발생하고 진실은 미궁에 빠지는데…",
-    "reservationRate": "4위 3.50%",
-    "audienceCount": "2.1만",
-    "lastCollected": "2026-03-28T15:08:13.909Z",
-    "trailer": "https://www.youtube.com/watch?v=Tzehle954lQ",
-    "image": "/images/posters/movies/movie_명탐정_코난_세기말의_마술사.webp",
-    "posterUrl": "https://image.tmdb.org/t/p/original/mGBjQkACdChVakczn92CfaqWQJH.jpg"
-  },
-  {
     "id": "movie_호퍼스",
     "title": "호퍼스",
     "date": "2026.03.04 (수)",
@@ -118,7 +83,7 @@
     "region": "전국",
     "genre": "movie",
     "subGenre": "애니메이션",
-    "rank": 5,
+    "rank": 3,
     "director": "다니엘 총",
     "cast": [
       "Piper Curda",
@@ -149,6 +114,76 @@
     "posterUrl": "https://image.tmdb.org/t/p/original/vJu9THzQ26Q5sWOVnhOkuRH5M1P.jpg"
   },
   {
+    "id": "movie_명탐정코난_세기말의마술사",
+    "title": "명탐정 코난: 세기말의 마술사",
+    "date": "2026.03.27.",
+    "dateRaw": "20260327",
+    "region": "전국",
+    "genre": "movie",
+    "subGenre": "애니메이션",
+    "rank": 4,
+    "director": "こだま兼嗣",
+    "cast": [
+      "타카야마 미나미",
+      "야마구치 캇페이",
+      "야마자키 와카나",
+      "카미야 아키라",
+      "챠후린",
+      "시오자와 카네토",
+      "타카기 와타루",
+      "이시즈카 운쇼",
+      "田中信夫",
+      "오가타 켄이치"
+    ],
+    "venue": "12세이상관람가",
+    "ageRating": "12세이상관람가",
+    "runningTime": "100분",
+    "revenue": 22951145,
+    "revenueKRW": 32131603000,
+    "synopsis": "러시아 로마노프 왕조의 유산인 파베르제의 달걀 중 세기말 최후의 보물 ‘메모리즈 에그’가 발견되고, 이를 노리는 괴도 키드의 예고장이 도착한다. 그를 막기 위해 괴도 키드 특별 수사팀과 코난 일행, 서쪽의 고등학생 탐정 핫토리까지 합류한다. 신출귀몰한 괴도 키드는 모두를 따돌리며 ‘메모리즈 에그’를 훔치는 데 성공하지만, 정체불명의 누군가에게 저격당해 행방불명된다. 무사히 달걀을 되찾은 코난은 ‘메모리즈 에그’에 담긴 수수께끼를 발견한다. 달걀의 비밀을 풀기 위해 크루즈를 타고 도쿄로 향하는 코난 일행, 그러나 배 안에서 의문의 살인 사건이 발생하고 진실은 미궁에 빠지는데…",
+    "reservationRate": "6위 2.80%",
+    "audienceCount": "3.8만",
+    "lastCollected": "2026-03-29T15:08:20.282Z",
+    "trailer": "https://www.youtube.com/watch?v=Tzehle954lQ",
+    "image": "/images/posters/movies/movie_명탐정_코난_세기말의_마술사.webp",
+    "posterUrl": "https://image.tmdb.org/t/p/original/mGBjQkACdChVakczn92CfaqWQJH.jpg"
+  },
+  {
+    "id": "movie_펫_트레인",
+    "title": "펫 트레인",
+    "date": "2026.03.28.",
+    "dateRaw": "20260328",
+    "region": "전국",
+    "genre": "movie",
+    "subGenre": "애니메이션",
+    "rank": 7,
+    "director": "Benoît Daffis",
+    "cast": [
+      "Damien Ferrette",
+      "Hervé Jolly",
+      "Kaycie Chase",
+      "Frantz Confiac",
+      "Emmanuel Garijo",
+      "Nicolas Marié",
+      "Stéphane Ronchewski",
+      "Sébastien Desjours",
+      "Théo Frilet",
+      "Emmanuel Curtil"
+    ],
+    "venue": "전체관람가",
+    "ageRating": "전체관람가",
+    "runningTime": "87분",
+    "revenue": 12035687,
+    "revenueKRW": 16849961800,
+    "synopsis": "도심 속 동물 평화를 수호하는 정의의 너구리 ‘팔콘’! 배고픈 동물 친구들을 위해 열차에 오르는 순간, 복수심에 불타는 오소리 ‘한스’에 의해 반려동물들만 탑승한 열차가 브레이크 없이 폭주하기 시작한다. 정면 충돌까지 남은 시간은 단 몇 분! 일촉즉발의 위기 속에서 ‘팔콘’은 새로 만난 친구들과 힘을 합쳐 생존을 위한 스릴 만점의 탈출 작전에 나서는데…",
+    "reservationRate": "8위 1.10%",
+    "audienceCount": "6,212",
+    "lastCollected": "2026-03-29T15:08:26.147Z",
+    "trailer": "https://www.youtube.com/watch?v=N8E_0wQdOCg",
+    "image": "/images/posters/movies/movie_펫_트레인.webp",
+    "posterUrl": "https://image.tmdb.org/t/p/original/8GIxRi789MUuF77rV98OK48qnJQ.jpg"
+  },
+  {
     "id": "movie_프로텍터",
     "title": "프로텍터",
     "date": "2026.03.25.",
@@ -156,7 +191,7 @@
     "region": "전국",
     "genre": "movie",
     "subGenre": "액션",
-    "rank": 7,
+    "rank": 8,
     "director": "Adrian Grünberg",
     "cast": [
       "밀라 요보비치",
@@ -174,74 +209,64 @@
     "ageRating": "15세이상관람가",
     "runningTime": "90분",
     "synopsis": "미 특수부대에서 뛰어난 활약상을 보이며 국가를 위해 헌신했던 니키는 딸의 어린 시절을 함께 보내지 못했다. 남편이 사망한 후, 그녀는 딸 클로이 곁으로 돌아온다. 그러나 떨어져 지냈던 시간의 공백만큼 두 모녀 사이의 틈은 좁혀질 기미가 보이지 않는다. 클로이는 16번째 생일날 외출을 했다가 납치를 당하고, 니키는 거대 조직에 맞서 72시간 안에 딸을 되찾아야 하는 위험천만한 상황에 처한다. 경찰과 군대는 니키를 표적으로 삼고, 시간은 잔인하게 흐른다.",
-    "reservationRate": "9위 1.10%",
-    "audienceCount": "1.3만",
-    "lastCollected": "2026-03-28T15:08:19.215Z",
+    "reservationRate": "9위 1.00%",
+    "audienceCount": "1.6만",
+    "lastCollected": "2026-03-29T15:08:28.272Z",
     "trailer": "https://www.youtube.com/watch?v=B7IOJhtWrkc",
     "image": "/images/posters/movies/movie_프로텍터.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/kJvFZt7x3VWOtMQwANwXGD59ArJ.jpg"
   },
   {
-    "id": "movie_메소드연기",
-    "title": "메소드연기",
-    "date": "2026.03.18.",
-    "dateRaw": "20260318",
+    "id": "movie_뮤지컬_장수탕_선녀님",
+    "title": "뮤지컬 장수탕 선녀님",
+    "date": "2026.03.26.",
+    "dateRaw": "20260326",
     "region": "전국",
     "genre": "movie",
-    "subGenre": "드라마, 코미디",
+    "subGenre": "뮤지컬, 공연",
     "rank": 9,
-    "director": "이기혁",
-    "cast": [
-      "이동휘",
-      "윤경호",
-      "강찬희",
-      "김금순",
-      "윤병희",
-      "공민정",
-      "오아연"
-    ],
-    "venue": "12세이상관람가",
-    "ageRating": "12세이상관람가",
-    "runningTime": "93분",
-    "synopsis": "코미디 알계인으로 뜨고 알계인으로 기억되는 배우 이동휘. 더 이상 웃기는 연기가 하기 싫은 그는 모든 활동을 중단한 채 연기 변신의 기회만을 기다린다. 오랜 공백 끝, 톱스타 정태민의 차기작 사극 경화수월에 임금 역으로 캐스팅된 이동휘는 메소드 연기를 보여주겠다는 각오를 다지며 공개 금식까지 단행한다. 하지만 첫 촬영부터 NG 연발, 바지 속에 숨겨둔 삼각김밥이 들통나는 굴욕이 이어지고 설상가상 매니저 대신 따라온 형 이동태의 현장 난입과 정태민과의 기싸움 그리고 무리한 대본 수정까지 겹치며 촬영 현장은 점점 통제 불능 상태로 치닫는데…",
-    "audienceCount": "5.5만",
-    "lastCollected": "2026-03-28T15:08:22.150Z",
-    "trailer": "https://www.youtube.com/watch?v=pT26trX2IeM",
-    "image": "/images/posters/movies/movie_메소드연기.webp",
-    "posterUrl": "https://image.tmdb.org/t/p/original/qbZitRjnObttv0rgI3I4HMpjWgN.jpg"
+    "director": "조윤수",
+    "cast": [],
+    "venue": "전체관람가",
+    "ageRating": "전체관람가",
+    "runningTime": "65분",
+    "synopsis": "백희나 작가의 스테디셀러 그림책을 원작으로 오랜 시간 사랑받아온 가족 뮤지컬 '장수탕 선녀님'이 무대 위 에너지에 영화적 연출을 더해 대형 스크린에서 새롭게 펼쳐진다. 웃음과 따뜻함, 그리고 추억이 만나는 순간! 아이와 어른이 함께 공감하는 신비로운 장수탕의 이야기가 다시 시작된다.",
+    "reservationRate": "12위 0.50%",
+    "audienceCount": "4,905",
+    "lastCollected": "2026-03-29T15:08:30.081Z",
+    "trailer": "https://www.youtube.com/watch?v=u4Z5L9QLDGM",
+    "image": "/images/posters/movies/movie_뮤지컬_장수탕_선녀님.webp",
+    "posterUrl": "https://image.tmdb.org/t/p/original/rszzeXaj3A3yyEPhmh9440mIy3p.jpg"
   },
   {
-    "id": "movie_연지구디오리지널4K",
-    "title": "연지구 디 오리지널 4K",
-    "date": "2026.03.25.",
-    "dateRaw": "20260325",
+    "id": "movie_살목지",
+    "title": "살목지",
+    "date": "2026.04.08.",
+    "dateRaw": "20260408",
     "region": "전국",
     "genre": "movie",
-    "subGenre": "판타지, 멜로/로맨스",
+    "subGenre": "공포(호러), 스릴러",
     "rank": 10,
-    "director": "관금붕",
+    "director": "이상민",
     "cast": [
-      "매염방",
-      "장국영",
-      "만자량",
-      "주보의",
-      "溫碧霞",
-      "譚倩紅",
-      "Chu Shui-Tong",
-      "汪禹",
-      "유가영",
-      "혜영홍"
+      "김혜윤",
+      "이종원",
+      "김준한",
+      "김영성",
+      "오동민",
+      "윤재찬",
+      "장다아"
     ],
     "venue": "15세이상관람가",
     "ageRating": "15세이상관람가",
-    "runningTime": "90분",
-    "synopsis": "1934년 홍콩, 부유한 가문의 자제 진진방과 기생 여화는 신분을 초월한 사랑을 하지만, 가문의 반대에 부딪히자 저승에서의 재회를 약속하며 동반 자살을 선택한다. 50년 후, 약속한 시간이 지나도 오지 않는 연인을 찾기 위해 여화는 유령이 되어 1980년대 홍콩을 다시 찾아오는데…",
-    "reservationRate": "14위 0.50%",
-    "audienceCount": "4,730",
-    "lastCollected": "2026-03-28T15:08:24.909Z",
-    "trailer": "https://www.youtube.com/watch?v=JFRt3zE8sBE",
-    "image": "/images/posters/movies/movie_연지구_디_오리지널_4K.webp",
-    "posterUrl": "https://image.tmdb.org/t/p/original/cC6U0pVzlkZcV6htkdEl8xlz3iG.jpg"
+    "runningTime": "96분",
+    "synopsis": "기이한 소문이 끊이지 않는 저수지 살목지의 로드뷰 화면에 촬영한 적 없는 정체불명의 형체가 포착된다. 오늘 안에 반드시 재촬영을 끝내야 하는 상황 속에 살목지로 향한 PD 수인과 촬영팀. 촬영이 시작되자 행방이 묘연했던 선배 교식이 등장하고, 설명되지 않는 일들이 연달아 벌어지며 촬영팀은 점점 아비규환에 빠진다. 휘몰아치는 공포 속 기태는 수인을 향해 내달리지만 빠져나오려 할수록 이들은 점점 더 깊은 곳으로 끌려 들어가게 되는데…",
+    "reservationRate": "5위 3.30%",
+    "audienceCount": "5,458",
+    "lastCollected": "2026-03-29T15:08:32.102Z",
+    "trailer": "https://www.youtube.com/watch?v=46fcD067Qwo",
+    "image": "/images/posters/movies/movie_살목지.webp",
+    "posterUrl": "https://image.tmdb.org/t/p/original/uVJyWlSPCWftRUXRM6lxTqOzPY6.jpg"
   },
   {
     "id": "movie_듄_파트3",
@@ -267,7 +292,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:09:09.477Z",
+    "lastCollected": "2026-03-29T15:09:16.901Z",
     "trailer": "https://www.youtube.com/watch?v=TZONHjWv5XQ",
     "image": "/images/posters/movies/movie_듄_파트_3.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/4T1R3wQPBk4zAldOb70YJfnsFQK.jpg"
@@ -296,7 +321,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:09:41.100Z",
+    "lastCollected": "2026-03-29T15:09:45.727Z",
     "trailer": "https://www.youtube.com/watch?v=Wkg430JD9Yo",
     "image": "/images/posters/movies/movie_어벤져스_둠스데이.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/qbguX4ENXLoQ0K5cSYLhEItwHib.jpg"
@@ -325,7 +350,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:08:50.366Z",
+    "lastCollected": "2026-03-29T15:08:57.091Z",
     "image": "/images/posters/movies/movie_스파이더맨_브랜드_뉴_데이.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/ucQ0QBXXQPSxeUmWfh4YQenIuB9.jpg"
   },
@@ -356,7 +381,7 @@
     "budget": 250000000,
     "budgetKRW": 350000000000,
     "synopsis": "현시대 영화계 최고의 거장 크리스토퍼 놀란 감독 최초의 시대극. 영화 전편을 IMAX 필름 카메라로 촬영한 최초의 영화. 호메로스의 고전이 전세계를 배경으로 한 신화적인 액션 대서사시로 다시 탄생하다.",
-    "lastCollected": "2026-03-28T15:09:07.956Z",
+    "lastCollected": "2026-03-29T15:09:15.281Z",
     "trailer": "https://www.youtube.com/watch?v=_n2UiOqW0ZQ",
     "image": "/images/posters/movies/movie_오디세이.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/6SIaFQosjJm09Vbk40TgWylU9Bm.jpg"
@@ -380,7 +405,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:08:53.286Z",
+    "lastCollected": "2026-03-29T15:09:00.135Z",
     "trailer": "https://www.youtube.com/watch?v=UvL5swhTLRU",
     "image": "/images/posters/movies/movie_모아나.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/etJXeoQovaAcQD8gG0vebtoIlMH.jpg"
@@ -409,7 +434,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:09:37.880Z",
+    "lastCollected": "2026-03-29T15:09:42.794Z",
     "trailer": "https://www.youtube.com/watch?v=aztHgcPCqE4",
     "image": "/images/posters/movies/movie_미니언즈__몬스터즈.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/8uvgppq5obV06X9X8SogQiU79Kd.jpg"
@@ -439,7 +464,7 @@
     "ageRating": "등급 미정",
     "runningTime": "",
     "synopsis": "무자비한 적의 등장으로 인해 뜻밖의 동반자와 힘을 합치는 '슈퍼걸'의 이야기를 그린 액션 블록버스터",
-    "lastCollected": "2026-03-28T15:09:42.673Z",
+    "lastCollected": "2026-03-29T15:09:47.191Z",
     "trailer": "https://www.youtube.com/watch?v=fCfmpyxEGf0",
     "image": "/images/posters/movies/movie_슈퍼걸_.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/vj1NGMUBwqPd1vDcs1iqt6bELqt.jpg"
@@ -468,7 +493,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:09:33.102Z",
+    "lastCollected": "2026-03-29T15:09:38.134Z",
     "trailer": "https://www.youtube.com/watch?v=xZmN1QPwE9s",
     "image": "/images/posters/movies/movie_토이_스토리_5.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/mdO13jadwg9HlJpGy010uhfAnCn.jpg"
@@ -497,7 +522,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:09:18.595Z",
+    "lastCollected": "2026-03-29T15:09:25.568Z",
     "trailer": "https://www.youtube.com/watch?v=aIufozQ0lmY",
     "image": "/images/posters/movies/movie_디스클로저_데이.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/86EdVHOEFjFNPeE0sWjpCqcUORj.jpg"
@@ -529,7 +554,7 @@
     "budget": 166400000,
     "budgetKRW": 232960000000,
     "synopsis": "은하계를 누비는 현상금 사냥꾼 ‘딘 자린’ & 치명적인 귀여움의 ‘그로구’",
-    "lastCollected": "2026-03-28T15:09:34.437Z",
+    "lastCollected": "2026-03-29T15:09:39.498Z",
     "trailer": "https://www.youtube.com/watch?v=3GN7DfLqUKM",
     "image": "/images/posters/movies/movie_만달로리안과_그로구.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/1b0GhlMV0gYeFYZkkjNG71GCm8v.jpg"
@@ -552,7 +577,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:08:54.836Z",
+    "lastCollected": "2026-03-29T15:09:01.754Z",
     "trailer": "https://www.youtube.com/watch?v=7LwgZNbfbrc",
     "image": "/images/posters/movies/movie_빌리_아일리시__히트_미_하드_앤드_소프트_더_투어.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/c4WWethl0Jk60kB7ry1LrLmWuaQ.jpg"
@@ -582,7 +607,7 @@
     "ageRating": "전체관람가",
     "runningTime": "99분",
     "synopsis": "브루클린의 배관공에서 세계를 구한 히어로로 레벨업한 형제 ‘마리오’와 ‘루이지’는 모래 왕국에서 임무를 수행하던 중, 길을 잃은 ‘요시’를 구출하며 특별한 우정을 쌓게 된다. 한편, 무너진 ‘쿠파’ 가문의 명예를 되찾기 위해 악의 왕자 ‘쿠파주니어’는 은하계의 수호자이자 치코들의 엄마 ‘로젤리나’를 납치하고, 버섯 왕국에 잡힌 아빠 ‘쿠파’를 되찾기 위해 왕국을 습격한다. 다시 찾아온 위기 속에서 마리오와 루이지, 피치, 키노피오 그리고 새로 합류한 요시까지 로젤리나도 구하고, 쿠파주니어의 비범한 계획을 막기 위해 넓은 갤럭시로 뛰어들게 되는데…",
-    "lastCollected": "2026-03-28T15:08:38.217Z",
+    "lastCollected": "2026-03-29T15:08:46.327Z",
     "trailer": "https://www.youtube.com/watch?v=K4BZpoafQqA",
     "image": "/images/posters/movies/movie_슈퍼_마리오_갤럭시.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/knaXOBDBecVBWZVup3zXaOoy23v.jpg"
@@ -611,7 +636,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "120분",
-    "lastCollected": "2026-03-28T15:09:19.951Z",
+    "lastCollected": "2026-03-29T15:09:27.200Z",
     "trailer": "https://www.youtube.com/watch?v=U_31mOUGbf0",
     "image": "/images/posters/movies/movie_악마는_프라다를_입는다_2.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/28A1VUDML1RzENYNtIU1WkBLT9V.jpg"
@@ -635,7 +660,7 @@
     "ageRating": "전체관람가",
     "runningTime": "118분",
     "synopsis": "<원 오크 록 디톡스 투어 인 시네마>는 2025년 일본 가나가와 닛산 스타디움에서 열린 원 오크 록의 레전드 공연을 담은 콘서트 영화다. 약 3년 만에 발표한 정규 앨범 ‘DETOX’는 보다 강렬하고 직선적인 록 사운드로 밴드의 새로운 챕터를 열었다. 이를 중심으로 진행된 ‘DETOX WORLD TOUR’는 북미와 유럽, 아시아를 거치며 이어졌고 그 여정의 정점이 바로 닛산 스타디움 공연이었다. 2005년 작은 라이브하우스에서 시작한 원 오크 록은 지금까지 일본을 넘어 전 세계 무대에서 활동하며 글로벌 팬덤을 구축해 왔다. 타카의 폭발적인 보컬과 밴드의 강렬한 연주, 그리고 공연장을 가득 채운 관객의 함성은 그들이 걸어온 시간과 현재의 에너지를 고스란히 보여준다. 이 영화는 그날 밤 공연의 열기와 감정을 스크린에 담아낸다. 무대 위의 치열한 퍼포먼스와 순간순간 터져 나오는 관객의 반응, 그리고 밴드와 팬이 하나가 되는 공연의 순간들이 이어진다. SCREENX와 4DX 포맷으로 상영되는 이번 작품은 스타디움 공연의 스케일과 현장의 열기를 극장 공간으로 확장시켜 관객이 공연의 중심에 서 있는 듯한 몰입감을 선사한다.",
-    "lastCollected": "2026-03-28T15:08:26.290Z",
+    "lastCollected": "2026-03-29T15:08:34.163Z",
     "image": "/images/posters/movies/movie_원_오크_록_디톡스_투어_인_시네마.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/AqlcUdVgXywN2kQFtHDY6kZmGyk.jpg"
   },
@@ -655,7 +680,7 @@
     "ageRating": "12세이상관람가",
     "runningTime": "97분",
     "synopsis": "2024년 12월 3일 밤, 윤석열 대통령의 기습적인 비상계엄 선포로 평화로웠던 일상이 깨졌다. 다시 반복된 과거의 그날처럼, 무장한 군 병력은 헌법 기관을 무력화하려 하고 계엄에 반대하여 민주주의를 지키려는 시민과 국회의원들은 국회로 몰려간다. 분초를 다투는 상황 속, 이들의 숨 막히는 싸움이 벌어지는데…",
-    "lastCollected": "2026-03-28T15:08:28.816Z",
+    "lastCollected": "2026-03-29T15:08:36.368Z",
     "trailer": "https://www.youtube.com/watch?v=JOV41OKIXBM",
     "image": "/images/posters/movies/movie_란_123.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/kcPVvy5t6iuoW2guh6IM1tthjF9.jpg"
@@ -684,7 +709,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "96분",
     "synopsis": "배우가 되고 싶어 서울 자취러가 된 부산 사나이 짱구. 전기세도 못 낼 만큼 팍팍한 서울살이 속에서 되는 일은 좀처럼 없다. 대사는 꼬이고, 서울말은 더 꼬이고, 연애도 밀당에 밀린다. 하지만 짱구는 넘어지면 털고 일어나고 쪽팔리면 더 크게 웃는다. 인생이 뜻대로 안 풀릴 때 이렇게 버티는 방법도 있다. 무겁지 않다. 그렇다고 가볍지도 않다. 웃기면서 뜨겁다.",
-    "lastCollected": "2026-03-28T15:08:39.990Z",
+    "lastCollected": "2026-03-29T15:08:48.111Z",
     "image": "/images/posters/movies/movie_짱구.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/svXWaQAqjLPG3iQeK2uCAw5YYsU.jpg"
   },
@@ -714,7 +739,7 @@
     "runningTime": "127분",
     "budget": 155000000,
     "budgetKRW": 217000000000,
-    "lastCollected": "2026-03-28T15:09:39.692Z",
+    "lastCollected": "2026-03-29T15:09:44.232Z",
     "trailer": "https://www.youtube.com/watch?v=D5Wbzgi6Ivs",
     "image": "/images/posters/movies/movie_마이클.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/piMZqtd0gGS7OgkhDwiQ7vVViBQ.jpg"
@@ -739,7 +764,7 @@
     "ageRating": "등급 미정",
     "runningTime": "111분",
     "synopsis": "토게나시 토게아리를 결성한 니나는 버려 두었던 고향과 마주한다. 모모카는 버려 두었던 밴드인 '다이아몬드 더스트'와 마주한다. 각자의 과거를 극복한 두 사람에게 자극받아 과거를 넘어서 프로 데뷔를 목표로 했지만, 사회의 논리에 적응하지 못해 프로를 그만두고 인디 밴드로서 살아가기로 결심한다.",
-    "lastCollected": "2026-03-28T15:08:38.805Z",
+    "lastCollected": "2026-03-29T15:08:46.884Z",
     "image": "/images/posters/movies/movie_극장판_총집편_걸즈_밴드_크라이_있잖아_미래.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/muigQVrx1QjkmjDQxYmI32Yd0HG.jpg"
   },
@@ -767,7 +792,7 @@
     "revenue": 5058441,
     "revenueKRW": 7081817400,
     "synopsis": "2024년 1월 29일, 가자지구에 대피 명령이 떨어진 날. 6살 소녀로부터 1통의 신고가 접수된다. “나한테 총을 쏘고 있어요, 제발 데리러 와 주세요” 적신월사는 구조대와 단 8분 거리에 있는 ‘힌드’를 구하기 위해 조정 절차를 이어가지만 구조 작전은 무려 5시간 동안 이어지는데...",
-    "lastCollected": "2026-03-28T15:08:35.218Z",
+    "lastCollected": "2026-03-29T15:08:43.359Z",
     "trailer": "https://www.youtube.com/watch?v=gHT94hQd6Ys",
     "image": "/images/posters/movies/movie_힌드의_목소리.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/rHYvGIEBHnAzkQsg1xiX5MJy7td.jpg"
@@ -797,7 +822,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "113분",
     "synopsis": "기억할 수도, 기억하기도 싫었던 그 때의 제주가 내 아들에게 찾아왔다. 촌스러운 이름이 인생 최대 고민인 영옥. 어쩌다 서울서 전학 온 경태의 눈에 들어, 절친 민수를 밀어내고 난생처음 반장이 된다. 하지만 자리가 무색하게, 경태의 꼭두각시가 되어 교실 안 폭력을 방관한다. 지독하게 아픈 봄이었수다, 우리 어멍의 1949년은. 손자뻘 아들 영옥을 홀로 키워온 정순. 서울서 새로 온 의사와 함께, 까맣게 지워진 어린 시절의 기억을 되찾아보려 한다. 분홍색 선글라스를 쓰고 하얀 차를 몰고 제주 곳곳을 누빌수록, 50년 전 그날의 숨겨진 약속이 떠오르는데…",
-    "lastCollected": "2026-03-28T15:08:42.710Z",
+    "lastCollected": "2026-03-29T15:08:50.653Z",
     "trailer": "https://www.youtube.com/watch?v=cnpCDRKEguM",
     "image": "/images/posters/movies/movie_내_이름은.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/X0D88gIv47L4kpdvSvF1NsLPtL.jpg"
@@ -827,7 +852,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "148분",
     "synopsis": "독일 대학의 한 식물원에는 1832년부터 인간을 바라보며 뿌리내린 장엄한 한 그루의 은행나무가 서있다. 1908년 대학 최초의 여학생. 1972년 식물과 사랑을 동시에 키우는 청년. 2020년 고독한 신경과학자. 한 세기가 넘는 시간 동안 이 은행나무는 세 사람들의 삶 속으로 고요히 가지를 뻗어 하나로 연결되기 시작한다.",
-    "lastCollected": "2026-03-28T15:08:45.570Z",
+    "lastCollected": "2026-03-29T15:08:52.774Z",
     "trailer": "https://www.youtube.com/watch?v=N9Hc-zqtFfs",
     "image": "/images/posters/movies/movie_침묵의_친구.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/5YxIvLizm9MisC4kRJo4ElPmsLl.jpg"
@@ -857,7 +882,7 @@
     "ageRating": "등급 미정",
     "runningTime": "136분",
     "synopsis": "한 기자의 어린 딸이 흔적도 없이 사막으로 사라진다. 그리고 8년 후, 산산이 부서진 가족은 그녀가 다시 돌아왔다는 소식에 충격을 받는다. 하지만 기쁨으로 가득해야 할 재회는 곧 살아 있는 악몽으로 변해간다.",
-    "lastCollected": "2026-03-28T15:08:47.905Z",
+    "lastCollected": "2026-03-29T15:08:54.860Z",
     "trailer": "https://www.youtube.com/watch?v=Kf2GYV2jG1o",
     "image": "/images/posters/movies/movie_리_크로닌의_미이라.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/zXlwtzXP80yc3X0VokdxvmsFQfw.jpg"
@@ -892,37 +917,10 @@
     "revenueKRW": 67408044200,
     "synopsis": "등대에 홀로 숨어살던 한 남자. 그 앞에 홀로 나타난 한 소녀. 이제 소녀를 지키기 위해, 그 남자의 숨겨왔던 액션 본능이 깨어난다!",
     "roi": "-4%",
-    "lastCollected": "2026-03-28T15:08:48.860Z",
+    "lastCollected": "2026-03-29T15:08:55.650Z",
     "trailer": "https://www.youtube.com/watch?v=42S2FJbZBUs",
     "image": "/images/posters/movies/movie_쉘터.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/tS3UZlVfESO4z8inIZXGiHNgDfE.jpg"
-  },
-  {
-    "id": "movie_살목지",
-    "title": "살목지",
-    "date": "2026.04.08.",
-    "dateRaw": "20260408",
-    "region": "전국",
-    "genre": "movie",
-    "subGenre": "공포(호러), 스릴러",
-    "director": "이상민",
-    "cast": [
-      "김혜윤",
-      "이종원",
-      "김준한",
-      "김영성",
-      "오동민",
-      "윤재찬",
-      "장다아"
-    ],
-    "venue": "15세이상관람가",
-    "ageRating": "15세이상관람가",
-    "runningTime": "96분",
-    "synopsis": "기이한 소문이 끊이지 않는 저수지 살목지의 로드뷰 화면에 촬영한 적 없는 정체불명의 형체가 포착된다. 오늘 안에 반드시 재촬영을 끝내야 하는 상황 속에 살목지로 향한 PD 수인과 촬영팀. 촬영이 시작되자 행방이 묘연했던 선배 교식이 등장하고, 설명되지 않는 일들이 연달아 벌어지며 촬영팀은 점점 아비규환에 빠진다. 휘몰아치는 공포 속 기태는 수인을 향해 내달리지만 빠져나오려 할수록 이들은 점점 더 깊은 곳으로 끌려 들어가게 되는데…",
-    "lastCollected": "2026-03-28T15:08:28.278Z",
-    "trailer": "https://www.youtube.com/watch?v=46fcD067Qwo",
-    "image": "/images/posters/movies/movie_살목지.webp",
-    "posterUrl": "https://image.tmdb.org/t/p/original/uVJyWlSPCWftRUXRM6lxTqOzPY6.jpg"
   },
   {
     "id": "movie_크라임_101",
@@ -954,7 +952,7 @@
     "revenueKRW": 94450144600,
     "synopsis": "101번 국도를 따라 흔적도 없이 사라지는 보석들. 전설적인 절도범 ‘데이비스’는 자신만의 규칙 아래 완벽한 범죄를 설계한다. 모두가 혼란에 빠진 사이, 원칙과 집념의 형사 ‘루’만이 범인의 실체를 포착하며 포위망을 좁혀간다. 거대한 보험금을 노린 ‘데이비스’는 보험중개인 ‘샤론’에게 위험한 거래를 제안하고 완벽했던 계획과 정교한 수사는 예상치 못한 국면으로 치닫는데…",
     "roi": "-25%",
-    "lastCollected": "2026-03-28T15:08:57.039Z",
+    "lastCollected": "2026-03-29T15:09:03.982Z",
     "trailer": "https://www.youtube.com/watch?v=7FeyFlppceM",
     "image": "/images/posters/movies/movie_크라임_101.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/77ggpowGO0ORQY9x33NeBIPajm1.jpg"
@@ -972,7 +970,7 @@
     "venue": "전체관람가",
     "ageRating": "전체관람가",
     "runningTime": "53분",
-    "lastCollected": "2026-03-28T15:08:57.614Z",
+    "lastCollected": "2026-03-29T15:09:04.778Z",
     "image": "/images/posters/movies/movie_엔하이픈__이머전_인_시네마.webp"
   },
   {
@@ -1000,7 +998,7 @@
     "ageRating": "12세이상관람가",
     "runningTime": "79분",
     "synopsis": "“축하드립니다. 당신은 ‘우르드 헌트’의 참가 자격을 얻었습니다.” 화성과의 개척 경쟁에서 패배하고 죄인들의 유배지로 전락한 변방 행성, 금성. 그곳의 라도니차 콜로니에서 나고 자란 소년 위스타리오 아팜은 척박한 고향의 현실을 바꾸고 싶다는 열망을 품고 살아간다. 어느 날, 위스타리오의 앞에 정체불명의 소녀 코르날 코사가 나타나고 그는 콜로니 전체를 살 수 있을 만큼 막대한 상금이 걸린 의문의 레이스 ‘우르드 헌트’에 초대받게 된다. 고향의 운명을 바꾸기 위해, 소년은 전설의 기체 ‘건담 하지로보시’와 함께 한 치 앞도 알 수 없는 거대한 격전의 소용돌이 속으로 뛰어든다.",
-    "lastCollected": "2026-03-28T15:09:12.799Z",
+    "lastCollected": "2026-03-29T15:09:19.772Z",
     "image": "/images/posters/movies/movie_특별편집판_기동전사_건담_철혈의_오펀스_우르드_헌트_작은_도전자의_궤적.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/421VGMl4eDmdI4EdElnSuSCVX62.jpg"
   },
@@ -1023,7 +1021,7 @@
     "ageRating": "전체관람가",
     "runningTime": "121분",
     "synopsis": "2025년 초여름, 일본을 열광시킨 오피셜히게단디즘의 첫 스타디움 투어. 25만 명이 함께 느꼈던 환희와 전율이 스크린에서 되살아난다! 후지하라 사토시, 오자사 다이스케, 나라자키 마코토, 마츠우라 마사키. 네 사람이 만들어내는 압도적인 밴드 사운드와 감정을 파고드는 음악은 스타디움을 가득 채웠던 그날의 열기와 울림을 생생하게 불러온다. 데뷔 10주년을 맞이한 네 사람의 지난 여정과 음악을 향한 진심, 그리고 팬들과 이어져 온 시간들이 비로소 하나의 이야기로 완성되는 기록.",
-    "lastCollected": "2026-03-28T15:08:29.528Z",
+    "lastCollected": "2026-03-29T15:08:37.037Z",
     "trailer": "https://www.youtube.com/watch?v=wZP7_aZ-Pns",
     "image": "/images/posters/movies/movie_오피셜히게단디즘_라이브_앳_스타디움_2025.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/g4Y9OrdmssvUsxawfGb1zOVwTeL.jpg"
@@ -1058,7 +1056,7 @@
     "revenueKRW": 272579948200,
     "synopsis": "시드니 프레스콧이 새롭게 정착한 조용한 마을에 새로운 고스트페이스가 등장한다. 그녀의 딸, 테이텀이 다음 표적이 되면서 우려했던 공포가 현실이 되고, 가족을 지키기 위해 시드니는 과거의 공포와 맞서 피의 학살을 영원히 끝내기로 결심하는데…",
     "roi": "333%",
-    "lastCollected": "2026-03-28T15:08:27.336Z",
+    "lastCollected": "2026-03-29T15:08:35.298Z",
     "trailer": "https://www.youtube.com/watch?v=LIZqpm8bfPc",
     "image": "/images/posters/movies/movie_스크림_7.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/gqgBqxyr8tGQGJCFrRWAzfA7Cml.jpg"
@@ -1086,7 +1084,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "118분",
     "synopsis": "스탈린 시기의 소련, 자신이 하는 일에 갈등을 느끼는 한 젊은 검사의 이야기. 게오르기 데미도프의 중편을 각색한 작품.",
-    "lastCollected": "2026-03-28T15:08:34.728Z",
+    "lastCollected": "2026-03-29T15:08:42.673Z",
     "trailer": "https://www.youtube.com/watch?v=P2lVfclXDFA",
     "image": "/images/posters/movies/movie_두_검사.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/wau82xY0mui2JXLCZK9sti3TioS.jpg"
@@ -1108,7 +1106,7 @@
     "ageRating": "전체관람가",
     "runningTime": "97분",
     "synopsis": "전자음악의 선구자이자 영화음악 거장, 환경과 평화를 외치는 운동가로 활약해온 전방위의 아티스트 류이치 사카모토. 2020년 12월, 그는 자신의 시간이 얼마 남지 않았다는 것을 알게 되고 일상을 기록하기 시작한다. 마지막까지 음악으로 살아있던 류이치 사카모토의 모든 순간.",
-    "lastCollected": "2026-03-28T15:08:46.353Z",
+    "lastCollected": "2026-03-29T15:08:53.402Z",
     "trailer": "https://www.youtube.com/watch?v=5YtYiU6C3IM",
     "image": "/images/posters/movies/movie_류이치_사카모토_다이어리.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/m82qaGFsfORJNbMM4aY0EvBJM1G.jpg"
@@ -1134,7 +1132,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "90분",
     "synopsis": "주먹 하나로 학교를 평정한 여고생, 이번엔‘추리닝’입고 돌아왔다! 강한 의협심과 맷집을 지닌‘민아’는 어릴 적 사고로 부모를 잃고 이모집에서 자란, 좀 과하게 정의로운 소녀다. ‘다시는 싸우지 않겠다’는 약속으로 고등학교에 입학한 민아는 평범한 새 출발을 꿈꾸지만, 첫날부터 잘생기고 괜히 정의로워보아는 짝꿍‘민기’에게 꽂힌다. 문제는 민기를 노리는 불량 일진서클의 우두머리‘세혁’. 민기를 괴롭히는 세혁의 패거리를 본 민아는 참다못해‘얼굴가린추리닝차림’으로 민기를 구출해버린다. 이날 이후 학교는 추리닝남의 정체를 찾기 위해 들썩이고, 민기는 구세주를 찾기 위한 본격 추리(?)에 나선다. 한편 민기를 사이에 둔 민아-혜리-세혁의 삼각전투구도에 불이 붙고, 민아는 자신의 정체를 숨기며 평범한척+불한측+사랑에 빠진 척 삼중생활을 하기된다. 그러나 정의감 폭발에 다혈질까지 얹힌 민아에게 그게 가능 할리가? 사랑은 꼬이고, 정체는 탄로날 위기, 싸움은 점점 커지는데…",
-    "lastCollected": "2026-03-28T15:08:51.089Z",
+    "lastCollected": "2026-03-29T15:08:57.856Z",
     "image": "/images/posters/movies/movie_소녀심판.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/mFD8LuQ6XVHhJt0knkdx7k5quLs.jpg"
   },
@@ -1155,7 +1153,7 @@
     "ageRating": "12세이상관람가",
     "runningTime": "118분",
     "synopsis": "유난히 눈에 띄지 않는 소년 ‘하루토’와 유난히 빛나는 소녀 ‘아야네’. 글을 읽고 쓰는 데 어려움이 있는 소녀를 대신해 소년은 시를 쓰고, 그 시는 노래가 되어 소녀의 목소리로 세상에 울려 퍼진다. 둘만의 비밀, 오직 둘만의 언어. 말보다 음악이 먼저 닿은 순간, 설렘으로 시작되는 가장 찬란한 청춘 로맨스!",
-    "lastCollected": "2026-03-28T15:09:13.591Z",
+    "lastCollected": "2026-03-29T15:09:20.338Z",
     "trailer": "https://www.youtube.com/watch?v=IKjpAIHqBPI",
     "image": "/images/posters/movies/movie_네가_마지막으로_남긴_노래.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/sOGzrv0BM5ezVOz1xP8leVPMZzh.jpg"
@@ -1190,61 +1188,10 @@
     "revenueKRW": 8128836800,
     "synopsis": "23년 만에 공개되는 완전판, 275분 동안 펼쳐지는 완벽한 복수의 향연! 최고의 암살자였던 키도는 빌과 그의 조직인 데들리 바이퍼스로 인해, 끔찍한 피의 결혼식을 겪게 된다. 그리고 4년 후, 이제 그녀에게 남은 것은 자비 없는 복수뿐. 빌을 죽여라!",
     "roi": "-89%",
-    "lastCollected": "2026-03-28T15:09:20.810Z",
+    "lastCollected": "2026-03-29T15:09:27.952Z",
     "trailer": "https://www.youtube.com/watch?v=0fT1F6WqYpw",
     "image": "/images/posters/movies/movie_킬_빌_더_홀_블러디_어페어.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/je5CQCCvXoAhWAwi6MoCai8IFwC.jpg"
-  },
-  {
-    "id": "movie_펫_트레인",
-    "title": "펫 트레인",
-    "date": "2026.03.28.",
-    "dateRaw": "20260328",
-    "region": "전국",
-    "genre": "movie",
-    "subGenre": "애니메이션",
-    "director": "Benoît Daffis",
-    "cast": [
-      "Damien Ferrette",
-      "Hervé Jolly",
-      "Kaycie Chase",
-      "Frantz Confiac",
-      "Emmanuel Garijo",
-      "Nicolas Marié",
-      "Stéphane Ronchewski",
-      "Sébastien Desjours",
-      "Théo Frilet",
-      "Emmanuel Curtil"
-    ],
-    "venue": "전체관람가",
-    "ageRating": "전체관람가",
-    "runningTime": "87분",
-    "revenue": 12035687,
-    "revenueKRW": 16849961800,
-    "synopsis": "도심 속 동물 평화를 수호하는 정의의 너구리 ‘팔콘’! 배고픈 동물 친구들을 위해 열차에 오르는 순간, 복수심에 불타는 오소리 ‘한스’에 의해 반려동물들만 탑승한 열차가 브레이크 없이 폭주하기 시작한다. 정면 충돌까지 남은 시간은 단 몇 분! 일촉즉발의 위기 속에서 ‘팔콘’은 새로 만난 친구들과 힘을 합쳐 생존을 위한 스릴 만점의 탈출 작전에 나서는데…",
-    "lastCollected": "2026-03-28T15:08:44.904Z",
-    "trailer": "https://www.youtube.com/watch?v=N8E_0wQdOCg",
-    "image": "/images/posters/movies/movie_펫_트레인.webp",
-    "posterUrl": "https://image.tmdb.org/t/p/original/8GIxRi789MUuF77rV98OK48qnJQ.jpg"
-  },
-  {
-    "id": "movie_뮤지컬_장수탕_선녀님",
-    "title": "뮤지컬 장수탕 선녀님",
-    "date": "2026.03.26.",
-    "dateRaw": "20260326",
-    "region": "전국",
-    "genre": "movie",
-    "subGenre": "뮤지컬, 공연",
-    "director": "조윤수",
-    "cast": [],
-    "venue": "전체관람가",
-    "ageRating": "전체관람가",
-    "runningTime": "65분",
-    "synopsis": "백희나 작가의 스테디셀러 그림책을 원작으로 오랜 시간 사랑받아온 가족 뮤지컬 '장수탕 선녀님'이 무대 위 에너지에 영화적 연출을 더해 대형 스크린에서 새롭게 펼쳐진다. 웃음과 따뜻함, 그리고 추억이 만나는 순간! 아이와 어른이 함께 공감하는 신비로운 장수탕의 이야기가 다시 시작된다.",
-    "lastCollected": "2026-03-28T15:08:31.139Z",
-    "trailer": "https://www.youtube.com/watch?v=u4Z5L9QLDGM",
-    "image": "/images/posters/movies/movie_뮤지컬_장수탕_선녀님.webp",
-    "posterUrl": "https://image.tmdb.org/t/p/original/rszzeXaj3A3yyEPhmh9440mIy3p.jpg"
   },
   {
     "id": "movie_파이_굽는_엄마",
@@ -1255,12 +1202,18 @@
     "genre": "movie",
     "subGenre": "다큐멘터리",
     "director": "이종은",
-    "cast": [],
+    "cast": [
+      "Kim Chu-ri",
+      "Kim Yo-han"
+    ],
     "venue": "전체관람가",
     "ageRating": "전체관람가",
-    "runningTime": "74분",
-    "lastCollected": "2026-03-28T15:08:31.835Z",
-    "image": "/images/posters/movies/movie_파이_굽는_엄마.webp"
+    "runningTime": "75분",
+    "synopsis": "김요한 목사는 매주 월요일,두 시간 반 거리에 있는 수원 어머님 집을 찾는다. 그의 어머니는 중앙기독유치원의 원장을 지낸 트루디(85세. 한국이름: 김추리)여사. 2006년 혈액암의 일종인 다발성 골수종으로 척추 수술을 받은 후 10년 전 암이 재발하여 항암치료를 받던 중 치매 증상까지 겹쳐 모든 외부활동을 접고 휠체어 생활을 하고 있다. 이민 1세대로 사회적 편견을 극복하고 3남매를 훌륭히 키워낸 김추리 여사는 1979년 중앙기독유치원을 설립하고 장애인 통합교육을 실천, 15년간 수원여자교도소에서 영어를 가르치고 최근까지 장애인들을 돕기 위해 파이가게를 운영하는 등 약자들을 위해 평생을 살아왔다.",
+    "lastCollected": "2026-03-29T15:08:39.405Z",
+    "trailer": "https://www.youtube.com/watch?v=sOFOQhh0dJE",
+    "image": "/images/posters/movies/movie_파이_굽는_엄마.webp",
+    "posterUrl": "https://image.tmdb.org/t/p/original/mSt2VLGwBUuFLZX7jul2wMPeTiu.jpg"
   },
   {
     "id": "movie_왜_더_카르텔",
@@ -1281,7 +1234,7 @@
     "ageRating": "12세이상관람가",
     "runningTime": "90분",
     "synopsis": "<왜(歪): 더 카르텔>은 2020년 4.15 총선에서 드러난 각종 통계적·물적 증거를 심도 있게 분석한 충격적인 부정선거 다큐멘터리 영화로 배우 겸 성우 윤주상 님이 내레이션을 맡았습니다. 믿기지 않고 믿고 싶지도 않은 끔찍한 부정선거는 비단 4.15 총선뿐만이 아니라 정권이 바뀐 후에도 여전히 계속되고 있습니다. 부디 이 작품을 통해 천인공노할 충격적인 부정선거의 실상이 널리 알려지기를 기원합니다.",
-    "lastCollected": "2026-03-28T15:08:37.471Z",
+    "lastCollected": "2026-03-29T15:08:45.707Z",
     "trailer": "https://www.youtube.com/watch?v=rSFfeR7YCC0",
     "image": "/images/posters/movies/movie_왜_더_카르텔.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/2SlDNGoIFNIR8B80cVwHL8LelWv.jpg"
@@ -1305,7 +1258,7 @@
     "ageRating": "12세이상관람가",
     "runningTime": "108분",
     "synopsis": "퇴직과 이별로 마음의 자리를 잃어버린 ‘민경’은 작은 시골마을로 내려와 조용히 사진을 찍으며 지내기 시작한다. 사람보다 풍경을, 감정보다 거리를 두던 그녀의 카메라에 어느 날 한 노인이 들어온다. 치매를 앓고 있는 베트남 참전용사 ‘덕구’. 손녀를 교통사고로 잃은 뒤 기억이 조금씩 희미해지고 있는 그는, 매일 아침 집 앞에 앉아서 죽은 손녀를 향해 손을 흔드는 치매를 앓고있지만,. 사진을 찍는 순간만큼은 누구보다 또렷한 눈빛으로 카메라를 바라본다. 우연처럼 시작된 기록은 점점 ‘민경’의 하루가 되고, 덕구가족의 사연을 알게 되고 덕구의 잃어가는 기억을 붙잡아주려는 시간은 어느새 민경 자신의 상처를 어루만지고 치유받는 시간이 된다. 기억을 잃어가는 사람과, 삶의 방향을 잃어버린 사람. 서로 다른 상처를 가진 두 사람이 사진을 교감으로 미소를 되찾고 조금씩 마음을 나누기 시작한다. 그리고 마침내, 덕구가 민경의 마음속에 들어와 가장 환하게 울려 퍼지는 한마디. “김~치!” 그 한 장의 사진처럼, 두 사람의 시간도 다시 또렷해진다.",
-    "lastCollected": "2026-03-28T15:08:39.453Z",
+    "lastCollected": "2026-03-29T15:08:47.631Z",
     "trailer": "https://www.youtube.com/watch?v=qXu6vridr8A",
     "image": "/images/posters/movies/movie_김치.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/bg9GrjrN8cXb7gF5lcglcwKlwYk.jpg"
@@ -1335,7 +1288,7 @@
     "ageRating": "전체관람가",
     "runningTime": "95분",
     "synopsis": "[침팬지] “영화는 오랜 친구와 같은 것이다” 2000년 광화문. 고도, 모모, 제제는 영화를 사랑한다는 공통점으로 단짝이 된다. 헌책방에서 신기한 침팬지 이야기를 발견한 세 사람은 그 이야기에 빠져든다. 2025년, 영화감독이 된 고도는 홀로 광화문을 걷다가 다시 침팬지 이야기를 만난다. [자연스럽게] “자, 편안하고 자연스럽게! 레디…액션!” 무더운 여름의 영화 촬영 현장. 어린이 배우들은 동네 곳곳을 뛰어다니며 신나게 노는 장면을 연기 중이다. 그런데 감독은 계속 더 자연스럽게 연기해달라고 말하고, 배우와 스탭들은 고민에 빠진다. “도대체 자연스러운 연기란 뭘까?” [영화의 시간] “너야말로 안 변했네. 그 시절 얼굴이 그대로야” 춘천에 사는 영화는 오랜만에 광화문을 찾는다. 홀로 정동과 광화문 곳곳을 걷다가 우연히 들어간 극장에서 수십 년 만에 여고 동창과 재회한다. 영화는 그곳에서 일하는 동창의 배려로 한여름의 꿈 같은 영화 한 편을 만난다.",
-    "lastCollected": "2026-03-28T15:08:34.276Z",
+    "lastCollected": "2026-03-29T15:08:41.882Z",
     "trailer": "https://www.youtube.com/watch?v=JnfLXs3PXLU",
     "image": "/images/posters/movies/movie_극장의_시간들.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/y1A3QozphXefSNjkPdby9K6mZ9v.jpg"
@@ -1367,7 +1320,7 @@
     "revenue": 9608021,
     "revenueKRW": 13451229400,
     "synopsis": "1978년 베트남, 다낭에서 출발한 여객기가 이륙 직후 무장 괴한들에게 점령당한다. 납치범들의 수장은 비행기를 돌릴 것을 요구하며 승객들을 인질로 잡고 기내를 공포로 몰아넣는다. 30,000피트 상공, 폐쇄된 기내, 한정된 연료. 목표는 하나. 무사히 착륙해야 한다!",
-    "lastCollected": "2026-03-28T15:09:10.646Z",
+    "lastCollected": "2026-03-29T15:09:17.796Z",
     "image": "/images/posters/movies/movie_하이재킹_메이데이.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/xxY2tRUkDGrAIAw6RV7umX1kwhx.jpg"
   },
@@ -1398,7 +1351,7 @@
     "revenue": 1550000,
     "revenueKRW": 2170000000,
     "synopsis": "거절할 수 없는 제안을 받아들이고 영문도 모른 채 소원을 비는 녹나무의 파수꾼이 된 레이토. 그는 초승달과 보름달이 뜨는 날 나무를 찾아오는 심야의 방문객들을 만나며 녹나무에는 세상에 알려지지 않은 특별한 힘이 있다는 것을 알게 된다. 오래된 예약 장부를 정리하던 레이토는 이곳을 찾는 사람들과 녹나무의 연결 고리를 발견하고 자신이 파수꾼이 된 이유와 녹나무에 얽힌 놀라운 진실에 다가가게 되는데...",
-    "lastCollected": "2026-03-28T15:09:11.072Z",
+    "lastCollected": "2026-03-29T15:09:18.430Z",
     "trailer": "https://www.youtube.com/watch?v=ghFV7JIjxig",
     "image": "/images/posters/movies/movie_녹나무의_파수꾼.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/iS2nH80GEv2OsDAJ48OrqojPVIU.jpg"
@@ -1465,7 +1418,7 @@
     "ageRating": "청소년관람불가",
     "runningTime": "99분",
     "synopsis": "멕시코 출신의 젊고 매력적인 무용수 ‘페르난도’는 성공한 자선사업가이자 연인인 미국인 ‘제니퍼’와 함께할 아메리칸 드림을 꿈꾸며 불법 입국을 감행한다. 그러나, 제니퍼는 미국 상류사회에서 자신의 자리를 지키기 위해 페르난도와 연인임을 숨기게 되고, 두 사람 사이에 서서히 균열이 생기기 시작하는데…",
-    "lastCollected": "2026-03-28T15:09:11.935Z",
+    "lastCollected": "2026-03-29T15:09:19.157Z",
     "trailer": "https://www.youtube.com/watch?v=b4cm1yCD_HA",
     "image": "/images/posters/movies/movie_드림스.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/HSSJhvMayrfXap4QIzokzNsjwU.jpg"
@@ -1495,7 +1448,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "110분",
     "synopsis": "\"목표는 핵심 인물 암살, 특기는 살인, 임무는 댄스 대회 챌린지?!” 스페셜한 목표를 가진 5명의 킬러들의 죽여주는 전대미문의 댄스 액션 무비",
-    "lastCollected": "2026-03-28T15:09:17.059Z",
+    "lastCollected": "2026-03-29T15:09:23.965Z",
     "image": "/images/posters/movies/movie_스페셜즈.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/bDr7PyYyK5mRp1da2ZOsJYyj81A.jpg"
   },
@@ -1517,7 +1470,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "92분",
     "synopsis": "2004년 2월 14일, 하청노동자 박일수의 죽음은 한 인간의 죽음이자 뜨거웠던 민주노조운동의 죽음이었다. 패배한 혁명의 그 날로부터 20여 년이 지난 지금, 그가 간절히 바랐던 세상을 꿈꾸며 예술을 이어가는 두 사람이 있다. 노동에서 생태로, 여성으로, 그리고 우리 삶의 위태로운 구석구석으로 패배한 과거의 혁명을 시와 노래로 이어가고 있다. 두 개의 영상, 중첩되는 사운드, 과거와 현재... 분할된 기록의 틈새 속에서 새로운 혁명의 모습을 찾아낸다.",
-    "lastCollected": "2026-03-28T15:09:21.710Z",
+    "lastCollected": "2026-03-29T15:09:28.439Z",
     "trailer": "https://www.youtube.com/watch?v=MjRCp8gyfwE",
     "image": "/images/posters/movies/movie_오_발렌타인.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/wcep9u6PjHJBungbaIM7uV3ebJr.jpg"
@@ -1552,7 +1505,7 @@
     "revenueKRW": 6398249200,
     "synopsis": "2075년, 자연이 너무 위험해져 아이들은 돔 안에서 생활하고, 부모 없이 로봇에 의해 양육된다. 열 살 소녀 아이리스는 어느 날, 자신이 2932년 미래에서 왔으며 무지개를 타고 하늘을 날 수 있다고 말하는 동갑내기 소년 아르코를 만나며 희망의 빛을 발견하게 된다.",
     "roi": "-54%",
-    "lastCollected": "2026-03-28T15:09:22.385Z",
+    "lastCollected": "2026-03-29T15:09:28.911Z",
     "trailer": "https://www.youtube.com/watch?v=Ala7lZqoDFQ",
     "image": "/images/posters/movies/movie_아르코.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/452fi4x08vqfaFpIEI9fsK7Zs4D.jpg"
@@ -1580,7 +1533,7 @@
     "synopsis": "일제강점기, 집단 자살 사건 이후 흔적 없이 사라진 사이비 종교 ‘삼선도’. 사회 고발 프로그램 PD 채소연(조윤서)은 일본 나고야TV 기자 마츠다로부터 ‘피의 예언’만 남긴 채 사라진 이 종교에 대한 제보를 받는다. 한 외딴 마을에서 '삼선도'가 여전히 살아 있으며, 예언을 막기 위한 법사들의 봉인 의식이 진행되고 있었다는 것. 마을에 도착한 취재팀은 그곳에서 이미 ‘피의 예언’이 시작되고 있음을 깨닫게 되는데…",
     "reservationRate": "14위 0.50%",
     "audienceCount": "8.7만",
-    "lastCollected": "2026-03-28T15:09:22.883Z",
+    "lastCollected": "2026-03-29T15:09:29.361Z",
     "trailer": "https://www.youtube.com/watch?v=a0FCV7OCBMY",
     "image": "/images/posters/movies/movie_삼악도.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/pOW3ioalNbTjApWkuDvg3DBcdzp.jpg"
@@ -1615,7 +1568,7 @@
     "revenueKRW": 174446083000,
     "synopsis": "베넷 가의 다섯 자매 중 둘째인 엘리자베스는 사랑하는 사람과의 결혼을 믿는 자존심 강하고 영리한 소녀이다. 부유하고 명망있는 가문의 신사 빙리와 그의 친구 다아시가 여름 동안 대저택에 머물게 되고, 댄스 파티에서 처음 만난 엘리자베스와 다아시는 서로에게서 눈을 떼지 못한다. 다아시는 아름답고 지적인 그녀의 매력에 점점 빠져들고, 폭우가 쏟아지는 날 비바람이 몰아치는 언덕에서 가슴 속 깊은 곳에 담아둔 뜨거운 사랑을 그녀에게 고백한다. 하지만 다아시가 빙리와 제인의 결혼을 제인이 명망있는 가문 출신이 아니라는 이유로 반대한 것을 알게 되자, 그를 오만하고 편견에 가득 찬 속물로 여기며 외면하는데...",
     "roi": "345%",
-    "lastCollected": "2026-03-28T15:09:44.254Z",
+    "lastCollected": "2026-03-29T15:09:48.721Z",
     "trailer": "https://www.youtube.com/watch?v=dy7Ta9IfBQQ",
     "image": "/images/posters/movies/movie_오만과_편견.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/rgKfvG0PgJBIPR6cNICukRnfMga.jpg"
@@ -1650,7 +1603,7 @@
     "revenueKRW": 10868277000,
     "synopsis": "전설적인 가수, 아벨은 이별로 무너진다. 그런 아벨 앞에 나타난 의문의 여성, 애니. 무대 뒤에서 진짜 이야기가 시작된다!",
     "roi": "-48%",
-    "lastCollected": "2026-03-28T15:09:27.320Z",
+    "lastCollected": "2026-03-29T15:09:33.868Z",
     "trailer": "https://www.youtube.com/watch?v=K9EKEG6mUU8",
     "image": "/images/posters/movies/movie_허리_업_투모로우.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/tIalVuhgwImlTdJ7lbP6pHxrZCD.jpg"
@@ -1674,7 +1627,7 @@
     "ageRating": "12세이상관람가",
     "runningTime": "100분",
     "synopsis": "중학교 졸업이 얼마 남지 않은 날, ‘여울’은 소꿉친구 ‘호수’에게 갑작스러운 고백공격을 받았다! 친구 이상으로 생각할 수 없기에, 단칼에 거절했는데… 그녀석을 고등학교에서 다시 만날 줄이야! ‘여울’은 ‘호수’를 볼 때마다, 마음 한구석이 불편하다. 다시는 예전처럼 돌아갈 수 없게 되었다는 것도, 짜증이 난다. 그러던 중, ‘여울’은 홧김에 농구부 선배에게 고백을 저질러버리고 그들의 첫사랑은 점점 더 혼란에 빠지고 마는데…",
-    "lastCollected": "2026-03-28T15:09:26.604Z",
+    "lastCollected": "2026-03-29T15:09:33.254Z",
     "trailer": "https://www.youtube.com/watch?v=NnoD8LBMnAs",
     "image": "/images/posters/movies/movie_우리는_매일매일.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/AqHIHvAxs5dKG1rW19rqevEdBSB.jpg"
@@ -1692,7 +1645,7 @@
     "venue": "전체관람가",
     "ageRating": "전체관람가",
     "runningTime": "58분",
-    "lastCollected": "2026-03-28T15:09:28.086Z",
+    "lastCollected": "2026-03-29T15:09:34.282Z",
     "image": "/images/posters/movies/movie_투어스_브이알_콘서트__러쉬로드.webp"
   },
   {
@@ -1721,7 +1674,7 @@
     "revenue": 638800,
     "revenueKRW": 894320000,
     "synopsis": "좀비 아이돌 프랑슈슈의 만국박람회 무대로 인류를 위협하는 정체불명의 존재가 다가오고, 전무후무한 갤럭시 페스티벌이 시작된다.",
-    "lastCollected": "2026-03-28T15:09:28.853Z",
+    "lastCollected": "2026-03-29T15:09:34.776Z",
     "trailer": "https://www.youtube.com/watch?v=1ICQCmmYhcM",
     "image": "/images/posters/movies/movie_좀비_랜드_사가_유메긴가_파라다이스.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/fm2q4fIDnxhO9KNKVBwJ8TCjD8K.jpg"
@@ -1756,7 +1709,7 @@
     "revenueKRW": 32540225200,
     "synopsis": "1930년대 미국, 죽음에서 깨어난 브라이드와 그녀를 사랑하게 된 프랑켄슈타인. 어느 날, 끔찍한 사건을 저지르고 위험천만한 도주를 시작한다. 세상의 모든 규범을 깨부순 브라이드와 프랑켄슈타인의 파격적인 행보는 미국 전역을 뒤흔들고 그들의 운명은 걷잡을 수 없는 방향으로 치닫는데…",
     "roi": "-71%",
-    "lastCollected": "2026-03-28T15:09:29.582Z",
+    "lastCollected": "2026-03-29T15:09:35.365Z",
     "trailer": "https://www.youtube.com/watch?v=Cj4qcphX5nw",
     "image": "/images/posters/movies/movie_브라이드.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/ftIYdV8IEE4n8odMv7FLam9VDVy.jpg"
@@ -1788,7 +1741,7 @@
     "revenue": 11745933,
     "revenueKRW": 16444306200,
     "synopsis": "미친 듯이 사랑했던 그레이스와 잭슨에게 아기가 생긴다. 불처럼 타오르던 두 사람의 사랑은 서서히 꺼져가고 섹스마저 말라붙는다. 외로움이 깊어진 그레이스는 작가로서의 글쓰기도 불가능해지고, 점점 자신을 파괴하기 시작한다. 그 모든 붕괴를 곁에서 지켜보는 잭슨은 이 사랑을 다시 되돌릴 수 없을지도 모른다는 두려움에 사로잡힌다.",
-    "lastCollected": "2026-03-28T15:09:30.178Z",
+    "lastCollected": "2026-03-29T15:09:36.159Z",
     "trailer": "https://www.youtube.com/watch?v=kyglq-yyTRk",
     "image": "/images/posters/movies/movie_다이_마이_러브.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/p2HjLmgZ7PNjlkkKPx5va17EKkX.jpg"
@@ -1817,7 +1770,7 @@
     "venue": "12세이상관람가",
     "ageRating": "12세이상관람가",
     "runningTime": "71분",
-    "lastCollected": "2026-03-28T15:09:31.409Z",
+    "lastCollected": "2026-03-29T15:09:36.774Z",
     "image": "/images/posters/movies/movie_결혼해줄래.webp"
   },
   {
@@ -1843,7 +1796,7 @@
     "ageRating": "15세이상관람가",
     "runningTime": "84분",
     "synopsis": "결혼 후 연기를 안 하게 되었고, 이혼 후 다시 일을 하기 위해 독립영화를 한 편 찍었다. 오늘 그 찍은 영화의 개봉을 위해 인터뷰를 한다. 중년의 나이가 돼서 아주 오랜만에 세상에 배우로 얼굴을 내미는 날이다. 세 번의 인터뷰가 삼 십분 간격으로 이어지고 여자는 질문들에 최선을 다해서 답한다. 인터뷰 후에 새로 시작한 연기수업에 가게 된다. 거기서 연기 선생은 오늘 있은 인터뷰를 다시 재현해보라고 한다. 인터뷰 중에 가장 중요한 부분에 다다르면 여자는 왠일인지 기억이 전혀 나지 않는 것 같다. 피곤하고 집으로 빨리 돌아가고 싶다. 딸이 기다리고 있다.",
-    "lastCollected": "2026-03-28T15:09:24.266Z",
+    "lastCollected": "2026-03-29T15:09:30.946Z",
     "image": "/images/posters/movies/movie_그녀가_돌아온_날.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/18Ba4BbB9AgDVBTAPw0DNXSJXTr.jpg"
   },
@@ -1868,7 +1821,7 @@
     "revenue": 14989173,
     "revenueKRW": 20984842200,
     "synopsis": "‘샤아의 반란’이라 불린 제2차 네오지온 항쟁이 끝난 후 12년. 우주세기 105년. 지구 환경은 계속해서 악화되고, 지구연방정부는 지구를 보존한다는 명목 아래 민간인을 강제로 우주로 이주시키는 ‘인간 사냥’ 정책까지 자행하며 부패의 극에 달한다. 이러한 현실에 맞서 고위 관료 암살을 통해 저항을 시작한 반정부 조직 ‘마프티’. ‘샤아의 환생’이라 불리며 조직을 이끄는 리더 마프티 나비유 에린의 정체는, 과거 브라이트 노아의 아들이자 전쟁을 겪은 청년 하사웨이 노아였다. 신비한 힘을 지닌 소녀 기기 안달루시아를 만난 이후, 하사웨이는 잊고 있던 과거와 마주하며 깊은 혼란에 빠진다. 그럼에도 그는 ‘마프티’의 이상을 위해 지구연방 고위 관료들이 집결하는 애들레이드 회의 습격 작전을 준비한다. 한편, 지구연방군의 젊은 지휘관 케네스 슬렉 대령 역시 애들레이드 회의를 방어하는 동시에 ‘마프티’의 섬멸을 목표로 움직이기 시작한다. 기기 또한 자신에게 주어진 신비한 운명에 이끌리듯 홍콩으로 향한다. 애들레이드 회의를 앞두고, 에어즈록을 무대로 서로 다른 신념이 충돌하는 운명의 결전이 시작된다. 과연, ‘마프티’와 ‘키르케 부대’ 중 행운의 여신은 누구의 편에 설 것인가.",
-    "lastCollected": "2026-03-28T15:08:33.209Z",
+    "lastCollected": "2026-03-29T15:08:41.032Z",
     "image": "/images/posters/movies/movie_기동전사_건담_섬광의_하사웨이_키르케의_마녀.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/8JklX7JAE3vVPKxbx6y6cBnHv9K.jpg"
   },
@@ -1893,7 +1846,7 @@
     "ageRating": "12세이상관람가",
     "runningTime": "101분",
     "synopsis": "“내가 책임질게 됐지?” 매번 큰소리만 뻥뻥! 사업 실패, 직장 해고까지 무능력한 가장 봉수 회사에서도 집안에서도 기를 펴지 못하고 살아가던 어느 날! 불의의 사고를 겪게 되는데… 몸은 멀쩡한데… 머릿속은 백지장?! “여긴 어디? 난, 누구?” 어제의 나도, 가족의 얼굴도 모두 새로 시작하게 된 봉수의 인생 리부트! 과연 봉수는 잃어버린 기억을 되찾고 가족의 재결합을 할 수 있을까?",
-    "lastCollected": "2026-03-28T15:08:44.355Z",
+    "lastCollected": "2026-03-29T15:08:52.051Z",
     "image": "/images/posters/movies/movie_미스매치.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/pZkc2T8ZFTf9Euxj32M2jDREl2g.jpg"
   },
@@ -1910,7 +1863,7 @@
     "venue": "전체관람가",
     "ageRating": "전체관람가",
     "runningTime": "60분",
-    "lastCollected": "2026-03-28T15:08:56.462Z",
+    "lastCollected": "2026-03-29T15:09:03.199Z",
     "image": "/images/posters/movies/movie_르세라핌_브이알_콘서트__인비테이션.webp"
   },
   {
@@ -1925,7 +1878,7 @@
     "venue": "등급 미정",
     "ageRating": "등급 미정",
     "runningTime": "",
-    "lastCollected": "2026-03-28T15:09:05.064Z",
+    "lastCollected": "2026-03-29T15:09:12.265Z",
     "image": "/images/posters/movies/movie_더_뮤지션.webp"
   },
   {
@@ -1945,7 +1898,7 @@
     "ageRating": "등급 미정",
     "runningTime": "",
     "synopsis": "고래가 품은 보석의 비밀을 찾아 바다로 떠난 로미와 하츄핑의 기적 같은 모험을 그린 판타지 애니메이션",
-    "lastCollected": "2026-03-28T15:09:25.824Z",
+    "lastCollected": "2026-03-29T15:09:32.326Z",
     "image": "/images/posters/movies/movie_사랑의_하츄핑_고래보석의_전설.webp",
     "posterUrl": "https://image.tmdb.org/t/p/original/w8M8aRXGvk3j3rYqotr5BjqTnT9.jpg"
   }

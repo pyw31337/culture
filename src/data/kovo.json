@@ -4094,21 +4094,5 @@
     "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
     "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=022&gender=1&league=201&round=1&homeTeam=1009&awayTeam=1005",
     "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=258&season=022&league=201&gender=1"
-  },
-  {
-    "id": "kovo_20260331_스카이워커스_vs_우리WON",
-    "title": "[배구] 스카이워커스 vs 우리WON",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-03-31 19:00",
-    "venue": "천안유관순체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "chungcheong",
-    "genre": "volleyball",
-    "homeTeam": "스카이워커스",
-    "awayTeam": "우리WON",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=022&gender=1&league=201&round=1&homeTeam=1005&awayTeam=1009",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=260&season=022&league=201&gender=1"
   }
 ]
