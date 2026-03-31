@@ -765,25 +765,6 @@
     "district": "종로구"
   },
   {
-    "id": "perf_담배가게_아가씨",
-    "title": "담배가게 아가씨",
-    "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6706/6706-00-251124b4-255x357.jpg",
-    "date": "2025.12.20 (토) ~ 2026.02.28 (토)",
-    "venue": "대학로 하마씨어터",
-    "link": "https://timeticket.co.kr/product/6706",
-    "region": "seoul",
-    "genre": "musical",
-    "price": "38,000원",
-    "originalPrice": "38,000원",
-    "runningTime": "110분",
-    "ageLimit": "만 12세 이상",
-    "casting": "",
-    "address": "서울특별시 종로구 대학로10길 15",
-    "lat": 37.5822601398146,
-    "lng": 127.002771477123,
-    "district": "종로구"
-  },
-  {
     "id": "perf_스위치",
     "title": "스위치",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2022/01/27/1643250182-82-0_wonbon_N_7_255x357_70_2.jpg",
@@ -1278,25 +1259,6 @@
     "lat": 37.6381563,
     "lng": 126.9180204,
     "district": "은평구"
-  },
-  {
-    "id": "perf_하이_서울_크루즈_서울크루즈",
-    "title": "하이! 서울, 크루즈 ＜서울크루즈＞",
-    "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6800/6806/6806-00-25123130-255x357.jpg",
-    "date": "2026.01.01 (목) ~ 2026.02.28 (토)",
-    "venue": "현대유람선",
-    "link": "https://timeticket.co.kr/product/6806",
-    "region": "seoul",
-    "genre": "activity",
-    "price": "17,000원",
-    "originalPrice": "17,000원",
-    "runningTime": "",
-    "ageLimit": "전체이용가",
-    "casting": "",
-    "address": "서울특별시 영등포구 여의도한강공원길 231 , 여의도유람선터미널",
-    "lat": 37.5295789729413,
-    "lng": 126.933696084898,
-    "district": "영등포구"
   },
   {
     "id": "perf_궁궐야행_창경궁",
