@@ -28673,7 +28673,9 @@
     "district": "",
     "lat": 37.1717664810035,
     "lng": 128.988062876327,
-    "mapped_region_id": "gangwon"
+    "mapped_region_id": "gangwon",
+    "phone": "033-552-1360",
+    "homepage": "http://www.taebaek.go.kr/www/contents.do?key=495"
   },
   "백제문화전당 고마홀": {
     "name": "백제문화전당 고마홀",
@@ -59045,10 +59047,12 @@
   },
   "태백문화예술회관": {
     "name": "태백문화예술회관",
-    "address": "강원특별자치도 태백시 고원로 203",
+    "address": "강원특별자치도 태백시 고원로 203 (황지동)",
     "lat": 37.1719185,
     "lng": 128.9880057,
-    "district": ""
+    "district": "",
+    "phone": "033-552-1360",
+    "homepage": "http://www.taebaek.go.kr/www/contents.do?key=495"
   },
   "인제하늘내린센터": {
     "name": "인제하늘내린센터",
@@ -78901,5 +78905,20 @@
     "lat": 37.4995772,
     "lng": 127.4769158,
     "district": "양평군"
+  },
+  "Vel.R 벨르 (구. 벨로주 [홍대], (구. 왓에버))": {
+    "name": "Vel.R 벨르 (구. 벨로주 [홍대], (구. 왓에버))",
+    "address": "서울특별시 마포구 잔다리로 46 (서교동)",
+    "lat": 37.5524309,
+    "lng": 126.9188172,
+    "district": "마포구"
+  },
+  "스튜디오 아르카나": {
+    "name": "스튜디오 아르카나",
+    "address": "서울특별시 동작구 동작대로9길 72-12 (사당동)",
+    "lat": 37.4812333,
+    "lng": 126.9775754,
+    "district": "동작구",
+    "homepage": "https://onetablemagic.modoo.at/"
   }
 }
