@@ -1,24 +1,5 @@
 [
   {
-    "id": "perf_100층짜리_집",
-    "title": "100층짜리 집",
-    "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6600/6670/6670-00-251110a0-255x357.jpg",
-    "date": "2026.01.09 (금) ~ 2026.03.02 (월)",
-    "venue": "성균관대학교",
-    "link": "https://timeticket.co.kr/product/6670",
-    "region": "seoul",
-    "genre": "kids",
-    "price": "31,680원",
-    "originalPrice": "23,100원",
-    "runningTime": "65분",
-    "ageLimit": "20개월 이상",
-    "casting": "",
-    "address": "서울특별시 종로구 성균관로 25-2",
-    "lat": 37.5874408,
-    "lng": 126.9945693,
-    "district": "종로구"
-  },
-  {
     "id": "perf_북극곰_예술여행",
     "title": "북극곰 예술여행",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/09/25/1727228915-74-3_wonbon_N_7_255x357_70_2.jpg",
@@ -743,25 +724,6 @@
     "address": "서울특별시 종로구 동숭길 145",
     "lat": 37.5831701538168,
     "lng": 127.002275627788,
-    "district": "종로구"
-  },
-  {
-    "id": "perf_투모로우_모닝",
-    "title": "투모로우 모닝",
-    "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6705/6705-00-251124d1-255x357.jpg",
-    "date": "2025.12.03 (수) ~ 2026.03.02 (월)",
-    "venue": "큐씨어터",
-    "link": "https://timeticket.co.kr/product/6705",
-    "region": "seoul",
-    "genre": "musical",
-    "price": "20,000원",
-    "originalPrice": "20,000원",
-    "runningTime": "90분",
-    "ageLimit": "8세(초등생) 이상",
-    "casting": "",
-    "address": "서울특별시 종로구 대학로8가길 79",
-    "lat": 37.5824943778166,
-    "lng": 127.003532285831,
     "district": "종로구"
   },
   {
