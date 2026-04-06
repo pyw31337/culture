@@ -1080,36 +1080,6 @@
     "cost": "전석 2만원"
   },
   {
-    "id": "perf_서울우리소리박물관_2026_상반기_온라인_학교_연계_프로그램_우리소리_꾸러미",
-    "title": "2026 상반기 온라인 학교 연계 프로그램 [우리소리 꾸러미]",
-    "date": "2026.02.23 (월) ~ 2026.03.06 (금)",
-    "place": "서울우리소리박물관",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2fce4de52d5042a6b229d6b15973cd0b&thumb=Y",
-    "genre": "exhibition",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156814&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=35",
-    "lastEnriched": "2026-02-23T15:12:55.827Z",
-    "runningTime": "[시간] 각 기관 별 상이",
-    "ageRating": "유아 및 어린이 단체",
-    "price": "무료",
-    "cost": "무료"
-  },
-  {
-    "id": "perf_세종대_미래교육원_2026_방학특별강좌_관현악_그룹레슨",
-    "title": "2026 방학특별강좌 관현악 그룹레슨",
-    "date": "2026.01.12 (월) ~ 2026.03.06 (금)",
-    "place": "세종대학교 새날관",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3da6bd59852a428d9f8ca65cd3a9e2f8&thumb=Y",
-    "genre": "class",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156339&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=35",
-    "lastEnriched": "2026-02-23T15:12:55.494Z",
-    "runningTime": "[시간] 프로그램별 상이",
-    "ageRating": "성인이상 누구나",
-    "price": "320,000원",
-    "cost": "320,000원"
-  },
-  {
     "id": "perf_라율_영재_영아티스트_장서연_바이올린_독주회",
     "title": "장서연 바이올린 독주회",
     "date": "2026.03.07 (토)",
