@@ -1170,21 +1170,6 @@
     "cost": "R석 50,000원"
   },
   {
-    "id": "perf_두산아트랩_전시_2026",
-    "title": "두산아트랩 전시 2026",
-    "date": "2026.01.28 (수) ~ 2026.03.07 (토)",
-    "place": "두산갤러리",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=76e0164fe96c4098b738607be0e30629&thumb=Y",
-    "genre": "exhibition",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156625&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=35",
-    "lastEnriched": "2026-02-20T19:03:38.587Z",
-    "runningTime": "[시간] 화-토 11:00 ~ 19:00 (일, 월, 설 연휴 휴관)",
-    "ageRating": "누구나",
-    "price": "무료",
-    "cost": "무료"
-  },
-  {
     "id": "perf_피아니스트_김진석_베토벤_시리즈_9_김진석_피아노_독주회",
     "title": "피아니스트 김진석 베토벤 시리즈 9 - 김진석 피아노 독주회",
     "date": "2026.03.08 (일)",
