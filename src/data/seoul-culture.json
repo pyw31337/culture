@@ -1215,21 +1215,6 @@
     "cost": "무료"
   },
   {
-    "id": "perf_뮤지컬_안나_카레니나",
-    "title": "뮤지컬 [안나 카레니나]",
-    "date": "2026.02.20 (금) ~ 2026.03.09 (월)",
-    "place": "세종문화회관",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0bd918e6e9144815a827f0551e5622ec&thumb=Y",
-    "genre": "musical",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156572&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=36",
-    "lastEnriched": "2026-02-23T15:12:58.483Z",
-    "runningTime": "[시간] 월 14:00 / 화,목,금 19:30 / 수 14:30, 19:30 / 토 14:00, 19:00 / 일 13:00, 18:00",
-    "ageRating": "7세 이상 관람 가능 (2019년 이전 출생자)",
-    "price": "VIP석 170,000원 R석 150,000원 S석 120,000원 A석 90,000원 B석 70,000원",
-    "cost": "VIP석 170,000원 R석 150,000원 S석 120,000원 A석 90,000원 B석 70,000원"
-  },
-  {
     "id": "perf_송파문화재단_2026_송파_신춘음악회",
     "title": "2026 송파 신춘음악회",
     "date": "2026.03.10 (화)",
