@@ -58262,10 +58262,12 @@
   },
   "학산소극장": {
     "name": "학산소극장",
-    "address": "인천광역시 남구 인하로 126",
+    "address": "인천광역시 남구 인하로 126 (용현동)",
     "lat": 37.4494551,
     "lng": 126.661876,
-    "district": ""
+    "district": "",
+    "phone": "032-866-3970",
+    "homepage": "http://www.haksanculture.or.kr/theatre/haksantheater.php"
   },
   "재즈엑스오버": {
     "name": "재즈엑스오버",
@@ -59335,10 +59337,11 @@
   },
   "동서대학교 민석 소극장": {
     "name": "동서대학교 민석 소극장",
-    "address": "부산광역시 해운대구 센텀중앙로 55",
+    "address": "부산광역시 해운대구 센텀중앙로 55 (우동)",
     "lat": 35.1730462,
     "lng": 129.127655,
-    "district": ""
+    "district": "",
+    "homepage": "https://uni.dongseo.ac.kr/acting/index.php?pCode=MN7000071"
   },
   "H-스테이지": {
     "name": "H-스테이지",
@@ -66713,7 +66716,9 @@
     "address": "대전 서구 계룡로553번길 38",
     "district": "서구",
     "lat": 36.3446140279522,
-    "lng": 127.385563179589
+    "lng": 127.385563179589,
+    "phone": "042-488-5474",
+    "homepage": "http://www.sgcc.or.kr/"
   },
   "동래문화회관 소극장": {
     "name": "동래문화회관 소극장",
@@ -79169,5 +79174,56 @@
     "district": "금천구",
     "phone": "070-8812-2020",
     "homepage": "https://suscoop.modoo.at/"
+  },
+  "대전서구문화원": {
+    "name": "대전서구문화원",
+    "address": "대전광역시 서구 계룡로553번길 38 (탄방동)",
+    "lat": 36.3445855,
+    "lng": 127.38557230000004,
+    "district": "서구",
+    "phone": "042-488-5474",
+    "homepage": "http://www.sgcc.or.kr/"
+  },
+  "크레스트72(CREST72)": {
+    "name": "크레스트72(CREST72)",
+    "address": "서울특별시 중구 장충단로 72 (장충동2가)",
+    "lat": 37.5514172,
+    "lng": 127.0025216,
+    "district": "중구",
+    "homepage": "https://crest72.co.kr/"
+  },
+  "로비 바이 컨템포러리 테일즈": {
+    "name": "로비 바이 컨템포러리 테일즈",
+    "address": "서울특별시 종로구 대학로14길 26-1 (혜화동)",
+    "lat": 37.584528,
+    "lng": 127.002688,
+    "district": "종로구",
+    "homepage": "https://www.instagram.com/contem_lobby/"
+  },
+  "마이너스윙 스튜디오 (구. 글로리어겐 스튜디오)": {
+    "name": "마이너스윙 스튜디오 (구. 글로리어겐 스튜디오)",
+    "address": "경기도 용인시 수지구 신수로 767 (동천동)",
+    "lat": 37.3383158,
+    "lng": 127.1017203,
+    "district": "용인시",
+    "phone": "031-778-6280",
+    "homepage": "https://www.minorswing.co.kr/"
+  },
+  "롯데백화점 [영등포]": {
+    "name": "롯데백화점 [영등포]",
+    "address": "서울특별시 영등포구 경인로 846 (영등포동 618-496)",
+    "lat": 37.5648082,
+    "lng": 126.9810886,
+    "district": "영등포구",
+    "phone": "02-771-2500",
+    "homepage": "https://www.lotteshopping.com/branchShopGuide/storeInfoSub?cstrCd=0010&brndCd=B220104&cstrShopNo=SHP00000000000000030&flrCd=10"
+  },
+  "IAM센터": {
+    "name": "IAM센터",
+    "address": "경기도 수원시 영통구 월드컵로 76(원천동)",
+    "lat": 37.2743643,
+    "lng": 127.0557142,
+    "district": "수원시",
+    "phone": "070-8801-1520"
   }
 }
