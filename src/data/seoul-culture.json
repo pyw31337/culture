@@ -1395,21 +1395,6 @@
     "cost": "전석 30,000원"
   },
   {
-    "id": "perf_세종문화회관_세종시즌_명작시리즈_I_언제라도_봄",
-    "title": "세종시즌 [명작시리즈 I 언제라도, 봄]",
-    "date": "2026.03.12 (목) ~ 2026.03.13 (금)",
-    "place": "세종문화회관",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=df2c2cefe8ed475a95aad8451dd82a5f&thumb=Y",
-    "genre": "unknown",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156390&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=37",
-    "lastEnriched": "2026-02-23T15:13:04.544Z",
-    "runningTime": "[시간] 19:30",
-    "ageRating": "7세 이상 관람 가능 (2019년 이전 출생자)",
-    "price": "R석 40,000원 S석 30,000원",
-    "cost": "R석 40,000원 S석 30,000원"
-  },
-  {
     "id": "perf_소프라노_김미주_독창회_고전과_낭만_사이",
     "title": "소프라노 김미주 독창회 [고전과 낭만 사이]",
     "date": "2026.03.14 (토)",
