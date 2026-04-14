@@ -3036,24 +3036,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_박소형개인전_1_120",
-    "title": "박소형 개인전",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/ac79a3dfe77f495a82f1b5c4378d8270.jpg",
-    "date": "2026.03.06 (금) ~ 2026.03.14 (토)",
-    "venue": "서울 | 예술의전당(한가람디자인미술관)",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=66356",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.4798913174868,
-    "lng": 127.012703344017,
-    "address": "서울특별시 서초구 남부순환로 2406",
-    "time": "10:00 ~ 19:00 (※ 매주 월요일 휴관)",
-    "price": "무료",
-    "contact": "1668-1352",
-    "description": "PARK, SO HYOUNG2026 SOLO EXHIBITION Re: Curtain Call Layers of Light, Fields of Color Phenomena in Layers 은 빛과 지각에 대한 탐구를 색과 공간의 구조로 확장하는 작업이다. 이전 전시가 빛의 현상 자체에 주목했다면, 이번 전시는 빛과 색이 공간 속에서 어떻게 겹쳐지고 분절되며 나타나는지, 그 ‘층위 속의 현상’을 다룬다. 이는 단순한 반복이 아니라, 지각이 형성되는 방식을 다시 구성하려는 시도이다.전시장에 수직으로 드리워진 노방은 하나의 직물이 아니라 공간을 조직하는 장치로 작동한다. 반투명한 소재는 빛을 투과시키며 그레이, 블루, 그린, 옐로우, 레드의 색 구획을 만들어낸다. 각 색은 독립된 영역처럼 보이지만, 경계에서 서로 스며들고 겹치며 하나의 연속적인 스펙트럼을 이루어낸다.이 과정에서 현상은 하나의 표면 위에서 완결되지 않는다. 빛은 필터링되고, 색은 확산되며, 층위는 간극을 통해 새로운 관계를 생성한다. 지오메트리적 배열은 질서를 제안하지만, 관람자의 이동에 따라 색의 밀도와 공간의 깊이는 끊임없이 변화한다. 작품은 고정된 형상을 제시하기보다, 현상이 겹쳐지고 변형되는 과정을 경험하게 한다. ‘Re’는 단순한 반복이 아니라 다시 열림이자 재구성의 의미를 지닌다. 커튼콜이 공연의 끝에서 또 다른 시작을 알리듯, 은 빛과 색이 공간 속에서 다시 등장하며 새로운 관계를 만들어내는 감각의 장을 제안한다. 이번 전시는 물성과 색, 빛과 구조가 상호작용하는 공간을 통해 관람자가 스스로 장면의 일부가 되는 경험을 제시한다.Exhibition Sections-Grey Strata-Blue Transition- Green Interval-Luminous Field-Saturated PulseArtist Biography현재 중앙대학교 예술대학 디자인학부 공예전공 교수로 재직 중이다. 공예가이자 텍스타일 디자이너로서 소재의 물성과 색의 구조를 중심으로 공간적 감각을 탐구해 왔으며, 산업체 협업과 브랜드 프로젝트를 통해 조형 언어를 확장해 왔다. 국내외 개인전과 기획전을 통해 빛과 색, 층위와 공간의 관계를 실험하며 물성과 컬러가 지닌 조형적 가능성을 확장해 오고 있다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_불냥한녀인들_1_893",
     "title": "불냥한 녀인들",
     "image": "http://www.culture.go.kr/upload/rdf/26/03/rdf_2026030521172866272.jpg",
@@ -5102,24 +5084,6 @@
     "time": "토요일(11:00,13:00,15:00)",
     "price": "전석 50,000원",
     "contact": "-",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[서산]들꽃찾아_2_597",
-    "title": "들꽃찾아",
-    "image": "http://www.culture.go.kr/upload/rdf/26/03/rdf_2026030421172800394.gif",
-    "date": "2026.03.12 (목) ~ 2026.03.14 (토)",
-    "venue": "충남 | 서산시문화회관 소공연장",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=66231",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 36.7863391672639,
-    "lng": 126.448625104196,
-    "address": "충청남도 서산시 문화로 52",
-    "time": "목요일(19:30), 금요일(16:00,19:30), 토요일(15:00)",
-    "price": "전석 10,000원",
-    "contact": "041-661-8031",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
@@ -7379,24 +7343,6 @@
     "description": "[PROGRAM] Robert Schumann (1810-1856) <Myrthen Op.25> Widmung Der Nussbaum Lied der Sulieka Die Lotosblume Du bist wie eine Blume Clara Schumann (1819-1896) Ich stand in dunklen Träumen Er ist gekommen in Sturm und Regen Liebst du um Schönheit Loreley Intermission Robert Schumann (1810-1856) <Frauen-Liebe und Leben Op.42> Seit ich ihn gesehen Er, der Herrlichste von allen Ich kann's nicht fassen, nicht glauben Du Ring an meinem Finger Helft mir, ihr Schwestern Süßer Freund, du blickest mich verwundert an An meinem Herzen, an meiner Brust Nun hast du mir den ersten Schmerz getan 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[용인]YBREMASTERED3.0:_4_855",
-    "title": "YB REMASTERED 3.0: Odyssey",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_202602122123154923.gif",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "경기 | 용인포은아트홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=66058",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.3256631,
-    "lng": 127.10469480000006,
-    "address": "경기도 용인시 수지구 포은대로 499 (죽전동)",
-    "time": "금요일(19:30), 토요일(17:00)",
-    "price": "SR석 143,000원, R석 132,000원",
-    "contact": "NOL티켓 1544-1555",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[창원]추리스릴러연극원:죄_4_456",
     "title": "추리스릴러 연극 원: 죄",
     "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026022621173312155.jpg",
@@ -7413,24 +7359,6 @@
     "price": "전석 45,000원",
     "contact": "-",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 진짜 스릴러연극의 귀환 서울 대학로를 시작으로 창원에서 새롭게 선보일 추리스릴러 연극 <원죄> 배우들의 치열한 연기가 시작된다! 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[평택]피가로의결혼_4_678",
-    "title": "피가로의 결혼",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026021221203591075.gif",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "경기 | 평택아트센터",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=66057",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.039462,
-    "lng": 127.033968,
-    "address": "경기도 평택시 고덕로 310 (고덕동)",
-    "time": "금요일(19:30), 토요일(15:00)",
-    "price": "R석 80,000원, S석 60,000원, A석 30,000원, BL석  10,000원",
-    "contact": "031-8053-3528",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_[서울]ZEROBASEONEWORLD_4_47",
@@ -7699,24 +7627,6 @@
     "time": "수요일(19:30)",
     "price": "전석 5,000원",
     "contact": "부산문화회관 051-607-6000",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[오산]그때도오늘2:꽃신_4_416",
-    "title": "그때도 오늘2: 꽃신",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026021121171918142.gif",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "경기 | 오산문화예술회관 대공연장",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=66046",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.1595171490519,
-    "lng": 127.07689693335,
-    "address": "경기도 오산시 경기동로 51",
-    "time": "금요일(19:30), 토요일(16:00)",
-    "price": "R석 50,000원, S석 30,000원",
-    "contact": "031-379-9999",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
@@ -8039,24 +7949,6 @@
     "price": "전석 55,000원",
     "contact": "070-8018-8473",
     "description": "'가장 작지만 위대한 무대' 가 펼쳐진다. 소리꾼 고영열이 마이크를 놓고, 오직 목소리와 피아노로 들려주는 단 하나의 소리. 단 40석, 숨결까지 함께 느껴지는 거리에서 그의 음악은 더없이 선명하게 다가온다. 음향 장치 없이도 무대를 가득 채우는 소리는, 전통의 깊이와 현대의 감각이 맞닿은 고영열만의 울림이다. 피아노 건반 위로 흐르는 섬세한 손놀림, 그리고 거기에 실리는 목소리는 인위적인 확성 없이도 충분히 웅장하고도 섬세하다. 이 작은 공간에서 완성되는 진짜 소리의 풍경은, '최고의 음향은 음향을 하지 않는 것' 이라는 말을 낯설지 않게 만든다. 소박하지만 그 안에 담긴 열정과 진정성은, 정말로 '가장 작지만 위대한 무대' 가 가능함을 증명해내려 한다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[대구]난쟁이들_4_912",
-    "title": "난쟁이들",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026021121172193582.png",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "대구 | 대덕문화전당",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=66060",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 35.8314679,
-    "lng": 128.57711470000004,
-    "address": "대구광역시 남구 앞산순환로 478 (대명동)",
-    "time": "금요일(19:30), 토요일(15:00,19:00)",
-    "price": "전석 60,000원, 시야방해석   40,000원",
-    "contact": "티켓링크 1588-7890",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_WhatHoldsUs|우리를붙드는것_4_364",
@@ -8911,24 +8803,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[대구]수성아트피아명품시리즈Ⅲ,국립발_5_164",
-    "title": "수성아트피아 명품시리즈Ⅲ, 국립발레단: 백조의 호수",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026021221191453457.jpg",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "대구 | 수성아트피아",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65987",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 35.8295426,
-    "lng": 128.62841500000002,
-    "address": "대구광역시 수성구 무학로 180 (지산동)",
-    "time": "금요일(19:30), 토요일(15:00)",
-    "price": "R석 100,000원, S석 80,000원, A석 60,000원, B석 30,000원",
-    "contact": "053-668-1800",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[당진]프린세스캐치!티니핑_4_208",
     "title": "프린세스 캐치! 티니핑",
     "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026021221223411271.gif",
@@ -9715,24 +9589,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[인천]강아지똥_5_887",
-    "title": "강아지똥",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026022321172403711.jpeg",
-    "date": "2026.03.02 (월) ~ 2026.03.14 (토)",
-    "venue": "인천 | 아띠홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65909",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5336658,
-    "lng": 126.6557291,
-    "address": "인천광역시 서구 청라에메랄드로 99 (청라동)",
-    "time": "토요일(13:00,15:00), HOL(13:00,15:00)",
-    "price": "전석 22,900원",
-    "contact": "032-623-4222",
-    "description": "민들레를 만나기 전까지 강아지똥은 단지 버려진 쓸모없는 똥이다. 자신의 존재의 이유를 찾기 위해 기꺼이 어린 병아리들의 먹이가 되겠다고 다짐했지만 영양가 없는 존재로 취급당하여 좌절한다. 그러나 곧 자신의 존재를 알아주는 민들레를 만나게 되고...... 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[부천]웰컴투뉴욕_5_766",
     "title": "웰컴 투 뉴욕",
     "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026022321171443378.jpg",
@@ -10273,24 +10129,6 @@
     "description": "이강하미술관에서는 관람객의 이해를 돕기 위해 도슨트 프로그램을 운영하고 있습니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[당진]힐링코미디연극<사돈언니>_5_507",
-    "title": "힐링코미디 연극 <사돈언니>",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_202602122117517713.png",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "충남 | 당진문예의전당 소공연장",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65951",
-    "genre": "play",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 36.8897,
-    "lng": 126.6295,
-    "address": "충청남도 당진시 당진중앙2로 69",
-    "time": "금요일(19:00), 토요일(15:00)",
-    "price": "전석 20,000원",
-    "contact": "-",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_QuartetS제9회정기연주회_5_666",
     "title": "Quartet S 제9회 정기연주회",
     "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026021921171783485.gif",
@@ -10417,24 +10255,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_장단은점에서시작한다_5_651",
-    "title": "장단은 점에서 시작한다",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_202602242117861384.jpeg",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "서울 | 연희예술극장",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65956",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5656012,
-    "lng": 126.92854110000007,
-    "address": "서울특별시 서대문구 연희맛로 2-3 (연희동)",
-    "time": "금요일(20:00), 토요일(16:00)",
-    "price": "전석 30,000원",
-    "contact": "-",
-    "description": "시간에 소리로 점을 찍으면 박이 되며 선을 그으면 선율이 된다. 헌기태는 전통 장단을 실험대 위에 올려놓고 분해하고 해체하고 새로 살을 입히며 전통도 아닌 그렇게 양음악도 아닌, 전통과 외래음악 사이의 프랑켄슈타인을 탄생시켰다. 점, 봄, 달, 별, 산, 늪 ... 등 한 글자로 지어진 제목에서 그들이 추구하는 미니멀리즘의 철학을 엿볼 수 있다. 거창한 서사나 기교 없이 그들이 추구하는 그 단순한 아름다움을 어찌 말로 다 설명하리. 찾아와 마음 열고 귀 기울이는 수밖에. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_영도문화예술회관신춘음악회:카운터테너이_5_748",
     "title": "영도문화예술회관 신춘음악회: 카운터테너 이동규와 소프라노 이해원의 화이트데이 콘서트",
     "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026022021172229535.jpg",
@@ -10451,24 +10271,6 @@
     "price": "전석 30,000원",
     "contact": "영도문화예술회관 051-419-5571",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_재연을부탁해,포스:마찰_6_137",
-    "title": "재연을 부탁해, 포스: 마찰",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_202602202117938720.jpg",
-    "date": "2026.03.12 (목) ~ 2026.03.14 (토)",
-    "venue": "서울 | 서울문화재단 대학로극장 쿼드",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65946",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5836908906524,
-    "lng": 127.003740659991,
-    "address": "서울특별시 종로구 동숭길 122",
-    "time": "목요일 ~ 금요일(19:30), 토요일(15:00)",
-    "price": "초이스관람료 40000 40,000원, 초이스관람료 30000 30,000원, 초이스관람료 25000 25,000원, 초이스관람료 20000 20,000원, 초이스관람료 15000 15,000원, 초이스관람료 10000 10,000원, 초이스관람료 5000 5,000원",
-    "contact": "대학로극장 쿼드 1577-0369",
-    "description": "저항 위에서 드러나는 움직임 굴러가는 것은 결국 멈춘다. 움직이는 모든 물체는 마찰을 만나고, 마찰은 운동을 방해하는 동시에 새로운 움직임을 만들어낸다. 우리는 마찰을 흔히 저항이나 장애물로 인식하지만, 마찰은 실생활에서 매우 중요한 역할을 한다. 자동차가 앞으로 나아가고, 손으로 물건을 쥘 수 있는 것도 모두 마찰 덕분이다. 스케이트나 스키처럼 마찰을 최소화해 속도를 극대화하는 움직임도 존재한다. 이 공연은 마찰을 단순한 저항이 아닌, 움직임을 조율하고 방향을 결정짓는 본질적인 요소로 탐구한다. 신체와 공간, 도구가 맞닿는 순간 발생하는 마찰을 통해 균형과 에너지를 표현하고, 그 속에서 탄생하는 새로운 움직임으로 마찰의 역설적인 본질을 무대 위에 구현한다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_자동주행하는투명버스_6_579",
@@ -10615,24 +10417,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_나의땅은어디인가_6_156",
-    "title": "나의 땅은 어디인가",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026021021183139216.gif",
-    "date": "2026.03.12 (목) ~ 2026.03.14 (토)",
-    "venue": "서울 | 두산아트센터 Space111",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65950",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5716608710148,
-    "lng": 127.000941806432,
-    "address": "서울특별시 종로구 종로33길 15",
-    "time": "목요일 ~ 금요일(19:30), 토요일(15:00)",
-    "price": "전석 10,000원",
-    "contact": "02-708-5001",
-    "description": "아티스트 토크 3.14.(토) 공연 종료 후 진윤선(작·연출), 배소현(드라마터그), 박예리(출연), 진행 신가은(두산아트센터 프로듀서) 실황 영상 촬영 3.13.(금) 7시 30분 공연 해당 일시에 공연 실황 영상 촬영이 진행됩니다. 예매 및 관람 시 참고 부탁드립니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_제2회S&G어린이무용단정기발표회:춤의_6_321",
     "title": "제2회 S&G 어린이무용단 정기발표회: 춤의 비상",
     "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026022421171975139.jpg",
@@ -10754,24 +10538,6 @@
     "price": "전석 30,000원",
     "contact": "영산아트홀 02-6181-5260, 5263",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_창작스튜디오10기입주작가결과보고전《블_6_104",
-    "title": "창작스튜디오 10기 입주작가 결과보고전 《블랙홀 스파게티 Black Hole Spaghetti》",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/4ea405f98c2140d89c7c8693cbb68e4a.jpg",
-    "date": "2026.03.04 (수) ~ 2026.03.14 (토)",
-    "venue": "서울 | 한국예술종합학교 석관동캠퍼스",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65977",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.60656959296795,
-    "lng": 127.05697079689453,
-    "address": "서울특별시 성북구 화랑로32길 146-37",
-    "time": "월-토 10:00-19:00 / 공휴일 휴관",
-    "price": "무료",
-    "contact": "한국예술종합학교 창작스튜디오 02-746-9670",
-    "description": "한국예술종합학교 미술원 창작스튜디오에서 10기 입주작가 결과보고전을 개최한다. 스파게티화(spaghettification)는 블랙홀이 가지는 아주 강한 중력의 기울기 때문에 블랙홀에 접근한 물체의 각 부분에 서로 다른 중력이 작용해 물체의 길이가 길게 늘어나는 현상을 말한다. 블랙홀에 가까워질수록 이러한 조석력(tidal force)의 차이가 극단적으로 커져 블랙홀의 중력에 닿은 물체는 국수처럼 가늘고 길게 늘어나게 된다. 모두가 알다시피, 시공간이라는 것은 언제나 상대성의 찌꺼기들이 뒤죽박죽으로 섞여있는 상태이고 과정이다. 다만 우리가 잠시나마 공유한 시공간에서 벌어진 얽힘과 섞임의 상태에 주목해보고자 한다. 그럼, 맛있게 드시길! 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_창작단막극축제:뿔난이들_6_606",
@@ -10982,24 +10748,6 @@
     "price": "전석 30,000원",
     "contact": "예인예술기획 02-586-0945",
     "description": "PROGRAM W. Lutosławski ... Dance Preludes P. Reade ... Suite from The Victorian Kitchen Garden for Clarinet and Harp A. Messager ... Solo de Concours J. Brahms ... Clarinet Sonata in f minor, Op. 120, No. 1 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[공주]백제문화전당개관기념,BeatI_6_449",
-    "title": "백제문화전당 개관기념, Beat In the Mirror: BIM (비트 인 더 미러: 빔)",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/rdf_202602232117904827.gif",
-    "date": "2026.02.27 (금) ~ 2026.03.14 (토)",
-    "venue": "충남 | 백제문화전당 고마홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65880",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 36.46410041135219,
-    "lng": 127.10607764730935,
-    "address": "충청남도 공주시 고마나루길 73",
-    "time": "금요일(16:00), 금요일 ~ 토요일(14:00)",
-    "price": "전석 40,000원",
-    "contact": "공주문화관광재단 041-854-3271",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_문신연대기MoonShinChronol_6_810",
@@ -13498,24 +13246,6 @@
     "description": "'나에게 악보는 이 삶이다.' '나에게 주어진 이 생(生)이라는 유일한 악보를 연주한다.' 70분간 멈추지 않는 솔로 피아노 즉흥연주. [ ETERNITY ] '에너지는 사라지지 않고 형태만 바꾼다'는 물리적 진리가, 예술가의 심장을 거쳐 '사랑은 영원하다(Eternity)'라는 선언이 된다. [ 2026년 오프닝 3부작 ] 1부 <전야제>가 어둠 속에서 빛을 머금는 응축이었다면, 2부 <Eternity>는 그 응축된 사유가 마침내 소리로 터져 나오는 폭발이다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_2026CUPID_8_216",
-    "title": "2026 CUPID",
-    "image": "http://www.culture.go.kr/upload/rdf/26/02/show_2026021421255675179.jpg",
-    "date": "2026.02.14 (토) ~ 2026.03.14 (토)",
-    "venue": "대구 | 키다리 갤러리",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65696",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 35.87736535995135,
-    "lng": 128.72379046045796,
-    "address": "대구광역시 동구 신서로21길 3-5",
-    "time": "-",
-    "price": "무료",
-    "contact": "070-7566-5995",
-    "description": "키다리갤러리가 오는 2월 14일부터 3월 14일까지 러브테마 기획전 '2026 큐피트'를 개최한다. 큐피트 전시는 매년 발렌타인데이와 화이트데이 시즌을 기념해 사랑을 주제로 한 작품들을 전시하며 관람객들에게 '사랑'의 정의에 대한 생각과 메시지를 전하는 테마 전시로 올해 12회째를 맞이한다. '사랑'이라는 보편적인 주제를 예술적인 시각으로 꾸준히 재해석하며 관람객에게 따뜻한 감동을 전해줄 수 있는 작가의 작품들로 선정하여 전시 공간을 꾸미는 올해 큐피트 전시에는 테즈킴, 김은주 작가가 참여하며 각기 다른 온도의 사랑과 관계에 대한 이야기를 펼쳐낸다. ﾠ 테즈킴 작가는 과학과 이성의 시대에서 사랑이라는 위치를 냉철하면서도 따뜻한 시선으로 바라본다. 작가는 사랑이 종족 번식을 위한 유전적 명령이나 호르몬의 작용이라는 과학적 사실의 낭만적 해석이라는 것을 부정하지 않는다. 그는 그럼에도 불구하고 인간이 이러한 생물학적 메커니즘 위에 무조건적이고 이타적인 사랑이라는 숭고함을 예술을 통해 덧입히는 행위에 집중한다. 작가는 존재하지 않는 것을 믿고 가치를 부여하는 인간의 상상력이야말로 가장 인간적인 행위라고 정의한다. 또한 사랑이라는 허구적 판타지를 공유하고 믿음으로써 그것을 현실로 만들어가는 과정을 통해 비로소 인간적임이라는 말이 사랑스럽다는 말과 동격이 되는 시대가 올 것이라 믿으며 그런 마음을 작품에 담아냈다. 김은주 작가의 작품에는 마법소녀가 등장하는데 이 소녀들은 영웅적인 상징보다는 결핍과 욕망, 취약함과 차이를 지닌 채 세계와 관계를 맺는 존재에 가깝다. 신화적 서사와 자연의 이미지는 개인의 내면과 동시대의 정서를 연결하는 매개로 작동하며, 그 연결은 완결이 아닌 진행형으로 남는다. 이번 전시에서 작가는 사랑을 달콤한 결말로 표현하기보단 타인에게 닿고자 하는 마음이 만들어내는 방향과 거리, 그리고 그 사이의 망설임과 충돌에 주목한다. 큐피트의 화살은 상처를 내기보다는 관계가 시작되는 순간 생겨나는 균열과 감각의 통로처럼 보이기도 한다. 'Red Thread' 연작에서는 화면을 가로지르는 붉은 선을 통해 연결과 긴장이라는 감정을 시각화하며, 사랑은 때로는 매끄럽게 이어지기보단 다른 감각과 위치가 한 장면 안에 공존할 때 드러나는 어긋남의 결로 남는다. 'Sea Constellation' 연작에서는 같은 하늘 아래 다른 방향을 보는 개인들이 서로의 별이 될 수 있음을 보여준다. 작가는 타인을 바라보는 시선, 자신을 확인하는 시선, 그리고 눈을 감고 감각으로 이동하는 세 가지 태도를 통해 사랑이 지닌 여러 방식으로 지속되는 관계의 형식에 대해 이야기한다. 이번 전시를 기획하고, 작가를 선정한 키다리 갤러리 김민석 대표는 '2026 큐피트'전의 전시 기간이 발런타인데이에 시작해서 화이트데이에 끝나는 설정처럼 사랑의 큐피트 화살이 양방향으로 오고가서 서로의 마음이 전해지며 가슴 따뜻하고, 설레이는 관람 공간이 될 수 있기를 바란다고 전했다. 이번 큐피트 전시에는 닮은 듯하면서도 다른 테즈킴, 김은주 두 작가의 회화 작품 총 14점이 전시된다. KIDARI GALLERY will host the love-themed exhibition “2026 Cupid” from 14 February to 14 March. The Cupid exhibition, now in its twelfth year, is a themed display held annually to commemorate the Valentine's Day and White Day season. It showcases works centred on love, conveying thoughts and messages about the definition of “love” to visitors. This year's Cupid exhibition, which consistently reinterprets the universal theme of “love” through an artistic lens and curates works by artists capable of"
-  },
-  {
     "id": "culture_portal_2026자유소극장연극<뼈의기록>_8_963",
     "title": "2026 자유소극장 연극 <뼈의 기록>",
     "image": "http://www.culture.go.kr/upload/ucms/rlyPerfInfo/2026/202602/cc7d71ee4836426cbe1ecedb1f44df86.jpg",
@@ -15272,24 +15002,6 @@
     "price": "R석 60,000원 / S석 40,000원",
     "contact": "02-941-5855",
     "description": "생존을 위해 제주를 떠난 해녀이자 한 여성의 삶. 가족을 지키려 버텨온 시간과 단절된 세대를 잇는 그리움을 마주한다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[서울남산국악당]서울교방6인전:공화(_9_917",
-    "title": "서울교방 6인전 : 공화(空花)-허공에 핀 꽃",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/8e7beab165cb405ba85ebcb653e60790.jpg",
-    "date": "2026.03.13 (금) ~ 2026.03.14 (토)",
-    "venue": "서울 | 남산골한옥마을 서울남산국악당 크라운해태홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=65578",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.55850074144988,
-    "lng": 126.99342209598498,
-    "address": "서울특별시 중구 퇴계로34길 28",
-    "time": "금 19:30, 토 17:00",
-    "price": "전석 50,000원",
-    "contact": "서울남산국악당 02-6358-5500",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_[수원]DroptheNEWBEAT:N_9_664",
@@ -27821,24 +27533,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[대구]택시안에서_18_688",
-    "title": "택시안에서",
-    "image": "http://www.culture.go.kr/upload/rdf/26/01/rdf_2026012021171103913.gif",
-    "date": "2026.02.13 (금) ~ 2026.03.14 (토)",
-    "venue": "대구 | 문화예술전용극장CT",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=64660",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 35.868322,
-    "lng": 128.59401389999994,
-    "address": "대구광역시 중구 중앙대로 394 (남일동)",
-    "time": "화요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00,18:00), HOL(15:00)",
-    "price": "전석 40,000원",
-    "contact": "053-252-5733",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[대전]리얼스트릿쇼케이스vol.15_18_818",
     "title": "리얼스트릿 쇼케이스 vol.15",
     "image": "http://www.culture.go.kr/upload/rdf/26/01/rdf_2026012121171030883.png",
@@ -31731,24 +31425,6 @@
     "time": "수요일(20:00)",
     "price": "전석 30,000원",
     "contact": "[홈페이지 참고]",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_요한계시록_21_775",
-    "title": "요한계시록",
-    "image": "http://www.culture.go.kr/upload/rdf/26/01/rdf_2026010621172294305.jpeg",
-    "date": "2026.01.31 (토) ~ 2026.03.14 (토)",
-    "venue": "서울 | 광야아트센터",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=64305",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5238653,
-    "lng": 127.0396166,
-    "address": "서울특별시 강남구 선릉로 806 (청담동)",
-    "time": "월요일(19:30), 토요일(14:00,18:00), HOL(14:00,18:00)",
-    "price": "토요일, 공휴일 50,000원, 평일 40,000원",
-    "contact": "광야아트센터 02-741-9182",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
