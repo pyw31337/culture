@@ -58419,7 +58419,9 @@
     "address": "서울특별시 중구 청계천로 40",
     "lat": 37.5684894,
     "lng": 126.98161340000001,
-    "district": "중구"
+    "district": "중구",
+    "phone": "02-6441-3951",
+    "homepage": "https://venture.ckl.or.kr/stage/main.do"
   },
   "대전평생학습관": {
     "name": "대전평생학습관",
@@ -60297,10 +60299,10 @@
   },
   "XSCALA(엑스칼라)": {
     "name": "XSCALA(엑스칼라)",
-    "address": "서울 중구 남대문시장10길 2",
-    "district": "중구",
-    "lat": 37.5603750366103,
-    "lng": 126.979591236097
+    "address": "서울특별시 중구 남대문시장10길 2 (회현동1가)",
+    "lat": 37.560373,
+    "lng": 126.979601,
+    "district": "중구"
   },
   "LION SUPER CLUB": {
     "name": "LION SUPER CLUB",
@@ -66024,7 +66026,8 @@
     "address": "서울 성북구 동소문로20길 37-13",
     "district": "성북구",
     "lat": 37.5911426622697,
-    "lng": 127.017516276944
+    "lng": 127.017516276944,
+    "homepage": "https://nutc-studio.qshop.ai/"
   },
   "동강사진박물관": {
     "name": "동강사진박물관",
@@ -68046,10 +68049,12 @@
   },
   "영월군문화예술회관": {
     "name": "영월군문화예술회관",
-    "address": "강원특별자치도 영월군 영월읍 단종로 24",
+    "address": "강원도 영월군 영월읍 단종로 24",
+    "lat": 37.1859101,
+    "lng": 128.46849029999998,
     "district": "",
-    "lat": 37.1861081350053,
-    "lng": 128.468172813521
+    "phone": "033-375-6353",
+    "homepage": "http://www.ywcf.or.kr/bbs/board.php?bo_table=sub2_1_1&wr_id=1"
   },
   "영천 별무리아트센터": {
     "name": "영천 별무리아트센터",
@@ -79282,5 +79287,13 @@
     "district": "중구",
     "phone": "052-244-2007",
     "homepage": "munhwa21.org"
+  },
+  "신세계 스튜디오": {
+    "name": "신세계 스튜디오",
+    "address": "서울특별시 성북구 동소문로20길 37-13 (동선동1가)",
+    "lat": 37.591142,
+    "lng": 127.017516,
+    "district": "성북구",
+    "homepage": "https://nutc-studio.qshop.ai/"
   }
 }

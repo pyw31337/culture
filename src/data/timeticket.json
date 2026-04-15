@@ -650,26 +650,6 @@
     "district": "종로구"
   },
   {
-    "id": "perf_미드나잇_액터뮤지션",
-    "title": "미드나잇 : 액터뮤지션",
-    "image": "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6700/6769/6769-00-251210a2-255x357.jpg",
-    "date": "2025.12.13 (토) ~ 2026.03.15 (일)",
-    "venue": "예스24 아트원",
-    "link": "https://timeticket.co.kr/product/6769",
-    "region": "seoul",
-    "genre": "musical",
-    "price": "29,900원",
-    "originalPrice": "33,000원",
-    "discount": "55%",
-    "runningTime": "100분",
-    "ageLimit": "중학생 이상 관람가",
-    "casting": "",
-    "address": "서울특별시 종로구 대학로12길 83 , 예스24 아트원 2관",
-    "lat": 37.5802682775819,
-    "lng": 127.004006760831,
-    "district": "종로구"
-  },
-  {
     "id": "perf_라이어_1탄",
     "title": "라이어 1탄",
     "image": "https://timeticket.co.kr/wys2/file_attach_thumb/2024/12/17/1734412288-15-3_wonbon_N_7_255x357_70_2.jpg",

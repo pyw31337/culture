@@ -445,31 +445,6 @@
     "lastEnriched": "2026-03-14T12:38:45.793Z"
   },
   {
-    "id": "perf_2026_가족뮤지컬_엄마까투리_유치원도_도시도_처음이야",
-    "title": "2026. 가족뮤지컬 〈엄마까투리 - 유치원도,도시도 처음이야〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018004_p.gif",
-    "date": "2026.03.14 ~ 2026.03.15",
-    "venue": "양천문화회관 대극장",
-    "link": "https://tickets.interpark.com/goods/25018004",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "70분",
-    "ageRating": "20개월이상 관람가능",
-    "price": "66,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 3월 14일(토) ~ 3월 15일(일) 11시, 2시, 4시30분",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 3월 14일(토) ~ 3월 15일(일) 11시, 2시, 4시30분",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/25/25018004-01.jpg"
-    ],
-    "lastEnriched": "2026-03-14T12:38:41.392Z"
-  },
-  {
     "id": "perf_가족뮤지컬_꼬마버스_타요_소원을_들어주는_요술_지팡이_대소동_강동",
     "title": "가족뮤지컬 〈꼬마버스 타요 - 소원을 들어주는 요술 지팡이 대소동〉 - 강동",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26002995_p.gif",
@@ -672,50 +647,6 @@
       "https://ticketimage.interpark.com/Play/image/etc/26/26003014-02.jpg"
     ],
     "lastEnriched": "2026-03-14T12:39:07.872Z"
-  },
-  {
-    "id": "perf_가족뮤지컬_정승제의_수학대모험_수포자의_비밀_서울",
-    "title": "가족뮤지컬 〈정승제의 수학대모험 : 수포자의 비밀〉 - 서울",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25015884_p.gif",
-    "date": "2026.01.24 ~ 2026.03.15",
-    "venue": "광림아트센터 BBCH홀",
-    "link": "https://tickets.interpark.com/goods/25015884",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "80분",
-    "ageRating": "전체관람가",
-    "price": "VIP석 70,000원\nR석 60,000원\nS석 50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "70,000원"
-      },
-      {
-        "label": "R석",
-        "price": "60,000원"
-      },
-      {
-        "label": "S석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "■ 관람 및 객석 안내",
-    "bookingNotice": "■ 관람 및 객석 안내",
-    "synopsis": "예매가능시간: 관람 2시간 전까지평일 16시 / 주말 및 공휴일 14시, 16시 30분 / 월,화 공연없음 / 3월 평일 공연없음\n* 3월 2일(월) 14시 / 3월 15일(일) 14시",
-    "description": "예매가능시간: 관람 2시간 전까지평일 16시 / 주말 및 공휴일 14시, 16시 30분 / 월,화 공연없음 / 3월 평일 공연없음\n* 3월 2일(월) 14시 / 3월 15일(일) 14시",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/2/2026021913362155.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2025/11/2025111017363106.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/1/2026012913303674.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/25015884-13.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/25/25015884-03.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/25015884-18.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/25015884-19.jpg"
-    ],
-    "lastEnriched": "2026-03-14T12:39:31.184Z"
   },
   {
     "id": "perf_가족뮤지컬_누가_내_머리에_똥_쌌어_서울_강북",
@@ -2090,88 +2021,6 @@
     "lastEnriched": "2026-03-14T12:55:49.654Z"
   },
   {
-    "id": "perf_뮤지컬_은하철도의_밤",
-    "title": "뮤지컬 〈은하철도의 밤〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016899_p.gif",
-    "date": "2025.12.23 ~ 2026.03.15",
-    "venue": "예스24스테이지 1관",
-    "link": "https://tickets.interpark.com/goods/25016899",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "100분",
-    "ageRating": "중학생이상 관람가",
-    "price": "R석 77,000원\nS석 55,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "77,000원"
-      },
-      {
-        "label": "S석",
-        "price": "55,000원"
-      }
-    ],
-    "ageDetail": "※예매자는 본페이지 모든 내용을 숙지/동의한 것으로 간주합니다.\n-티켓 예매/수령/증빙(차액), 관람 연령, 공연 장소, 교통, 좌석, 지연 입장에 따른 안내 미숙지는 관람자 본인에게 책임이 있으며, 해당 사유로 인한 예매 티켓의 변경/취소/환불은 불가합니다.",
-    "bookingNotice": "※예매자는 본페이지 모든 내용을 숙지/동의한 것으로 간주합니다.\n-티켓 예매/수령/증빙(차액), 관람 연령, 공연 장소, 교통, 좌석, 지연 입장에 따른 안내 미숙지는 관람자 본인에게 책임이 있으며, 해당 사유로 인한 예매 티켓의 변경/취소/환불은 불가합니다.\n\n[공연 장소 안내]\n※본 공연은 예스24스테이지 1관(서울특별시 종로구 대학로12길 21)에서 진행되는 공연으로 공연장 위치 착오로 인한 혼선이 없도록 주의 부탁드립니다.",
-    "synopsis": "예매가능시간: 관람 3시간 전까지화.목.금 8시 / 수 4시, 8시 / 토 3시, 7시 / 일,공휴일 2시, 6시 / 월 공연 없음* 3월 2일(월) 14시, 3월 2일(월) 18시, 3월 6일(금) 20시 공연은 전관으로 판매 마감되었습니다.",
-    "description": "예매가능시간: 관람 3시간 전까지화.목.금 8시 / 수 4시, 8시 / 토 3시, 7시 / 일,공휴일 2시, 6시 / 월 공연 없음* 3월 2일(월) 14시, 3월 2일(월) 18시, 3월 6일(금) 20시 공연은 전관으로 판매 마감되었습니다.",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/250168992025/11/19/61e6750f.jpg",
-      "https://ticketimage.interpark.com/250168992026/03/10/4b74f9d4.jpg",
-      "https://ticketimage.interpark.com/250168992026/03/10/ffd623d9.jpg",
-      "https://ticketimage.interpark.com/250168992026/03/10/6349cd6e.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/2/2026022411215210.jpg",
-      "https://ticketimage.interpark.com/250168992025/11/19/934089eb.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/25/25016899-04.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/25016899-11.jpg"
-    ],
-    "lastEnriched": "2026-03-14T12:55:45.282Z"
-  },
-  {
-    "id": "perf_뮤지컬_이터니티",
-    "title": "뮤지컬 〈이터니티〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016942_p.gif",
-    "date": "2025.12.27 ~ 2026.03.15",
-    "venue": "NOL 유니플렉스 1관",
-    "link": "https://tickets.interpark.com/goods/25016942",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "100분",
-    "ageRating": "14세 이상 관람가",
-    "price": "R석 88,000원\nS석 66,000원\nA석 55,000원",
-    "originalPrice": "88,000원",
-    "discount": "56%",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "88,000원"
-      },
-      {
-        "label": "S석",
-        "price": "66,000원"
-      },
-      {
-        "label": "A석",
-        "price": "55,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "예매가능시간: 관람 2시간 전까지화, 수, 목, 금 오후 8시 | 토, 일, 공휴일 오후 2시, 6시 (월 공연 없음)*2/20(금) 오후 4시·8시 (2회 공연)*2/25(수), 2/26(목), 2/27(금) 오후 4시·8시 (2회 공연)*2/28(토) 오후 6시 (1회 공연), 3/2(월) 공연 없음*3/4(수), 3/6(금), 3/11(수), 3/13(금) 오후 4시·8시 (2회 공연)",
-    "description": "예매가능시간: 관람 2시간 전까지화, 수, 목, 금 오후 8시 | 토, 일, 공휴일 오후 2시, 6시 (월 공연 없음)*2/20(금) 오후 4시·8시 (2회 공연)*2/25(수), 2/26(목), 2/27(금) 오후 4시·8시 (2회 공연)*2/28(토) 오후 6시 (1회 공연), 3/2(월) 공연 없음*3/4(수), 3/6(금), 3/11(수), 3/13(금) 오후 4시·8시 (2회 공연)",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/250169422025/12/18/b78ab648.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/2/2026020318240986.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/25/25016942-04.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/25016942-09.jpg"
-    ],
-    "lastEnriched": "2026-03-14T12:56:20.134Z"
-  },
-  {
     "id": "perf_뮤지컬_적토",
     "title": "뮤지컬 〈적토〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26001578_p.gif",
@@ -3227,58 +3076,6 @@
     "lastEnriched": "2026-03-14T12:58:09.516Z"
   },
   {
-    "id": "perf_로터리_티켓_마지막_뮤지컬_비틀쥬스",
-    "title": "［로터리 티켓 - 마지막］ 뮤지컬 〈비틀쥬스〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002957_p.gif",
-    "date": "2026.03.10 ~ 2026.03.15",
-    "venue": "LG아트센터 서울 LG SIGNATURE 홀",
-    "link": "https://tickets.interpark.com/goods/26002957",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "150분(인터미션 20분 포함)",
-    "ageRating": "14세 이상 관람가",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "※ 신용카드 결제만 가능한 상품입니다.\n※ 응모하신 로터리 티켓은 중복 당첨될 수 있습니다.\n※ 로터리 티켓 신청 마감 후에는 취소/환불이 불가합니다. 당첨자 선정 후, 낙첨자에 한해 전액 환불처리 진행됩니다.",
-    "description": "※ 신용카드 결제만 가능한 상품입니다.\n※ 응모하신 로터리 티켓은 중복 당첨될 수 있습니다.\n※ 로터리 티켓 신청 마감 후에는 취소/환불이 불가합니다. 당첨자 선정 후, 낙첨자에 한해 전액 환불처리 진행됩니다.",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002957-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002957-02.jpg"
-    ],
-    "lastEnriched": "2026-03-14T13:34:21.065Z"
-  },
-  {
-    "id": "perf_로터리_티켓_뮤지컬_데스노트_The_Musical_Death_Note",
-    "title": "［로터리 티켓］ 뮤지컬 데스노트(The Musical Death Note)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002593_p.gif",
-    "date": "2026.02.27 ~ 2026.03.15",
-    "venue": "디큐브 링크아트센터",
-    "link": "https://tickets.interpark.com/goods/26002593",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "160분(인터미션 20분 포함)",
-    "ageRating": "14세 이상 관람가",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "※ 신용카드 결제만 가능한 상품입니다.\n※ 응모하신 로터리 티켓은 중복 당첨될 수 있습니다.\n※ 로터리 티켓 신청 마감 후에는 취소/환불이 불가합니다. 당첨자 선정 후, 낙첨자에 한해 전액 환불처리 진행됩니다.",
-    "description": "※ 신용카드 결제만 가능한 상품입니다.\n※ 응모하신 로터리 티켓은 중복 당첨될 수 있습니다.\n※ 로터리 티켓 신청 마감 후에는 취소/환불이 불가합니다. 당첨자 선정 후, 낙첨자에 한해 전액 환불처리 진행됩니다.",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002593-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002593-03.jpg"
-    ],
-    "lastEnriched": "2026-03-14T13:34:21.110Z"
-  },
-  {
     "id": "perf_만원의행복_2026가족뮤지컬_신데렐라_서울_노원",
     "title": "［만원의행복］ 2026가족뮤지컬 〈신데렐라〉 - 서울 노원",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26003453_p.gif",
@@ -3374,32 +3171,6 @@
     "lastEnriched": "2026-03-14T13:34:22.511Z"
   },
   {
-    "id": "perf_만원의행복_2026어린이서커스쇼_서울_서대문",
-    "title": "［만원의행복］2026어린이서커스쇼 - 서울 서대문",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000459_p.gif",
-    "date": "2026.03.15 ~ 2026.03.15",
-    "venue": "서대문문화체육회관 대극장",
-    "link": "https://tickets.interpark.com/goods/26000459",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "60분",
-    "ageRating": "24개월이상 관람가능",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 3월 15일(일) 오전 11시, 오후 1시, 3시",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 3월 15일(일) 오전 11시, 오후 1시, 3시",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Detail/2026/1/2026010817594077.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26000459-01.jpg"
-    ],
-    "lastEnriched": "2026-03-14T13:34:33.010Z"
-  },
-  {
     "id": "perf_서초_뮤지컬_한글용사_아이야_새로운_이야기_달라도_친구야",
     "title": "［서초］ 뮤지컬 한글용사 아이야 새로운 이야기〈달라도 친구야!〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26003798_p.gif",
@@ -3472,38 +3243,6 @@
       "https://ticketimage.interpark.com/260036462026/03/12/b25ccb23.jpg"
     ],
     "lastEnriched": "2026-03-14T13:34:34.938Z"
-  },
-  {
-    "id": "perf_2025_뮤지컬_미드나잇_액터뮤지션_비지정석",
-    "title": "2025 뮤지컬 〈미드나잇:액터뮤지션〉 - 비지정석",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018134_p.gif",
-    "date": "2025.12.19 ~ 2026.03.15",
-    "venue": "예스24아트원 1관",
-    "link": "https://tickets.interpark.com/goods/25018134",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "100분",
-    "ageRating": "중학생이상 관람가",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지- 공연 시간: 화, 목, 금 20시 | 수 16시, 20시 | 토 15시, 19시 | 일, 공휴일 14시, 18시 | 월 쉼\n            단, 12월 24일, 12월 31일 15시, 19시, 22시 20분",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지- 공연 시간: 화, 목, 금 20시 | 수 16시, 20시 | 토 15시, 19시 | 일, 공휴일 14시, 18시 | 월 쉼\n            단, 12월 24일, 12월 31일 15시, 19시, 22시 20분",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Detail/2025/12/2025121416340523.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Detail/2025/12/2025121416342033.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/2/2026020215025632.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/1/2026012820523067.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/2/2026020215022808.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/2/2026020215023668.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/25/25018134-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/25018134-08.jpg"
-    ],
-    "lastEnriched": "2026-03-14T13:34:32.971Z"
   },
   {
     "id": "perf_2026_가족퍼포먼스쇼_아쿠아쇼_바닷속버블왕국",
@@ -3825,31 +3564,6 @@
       "https://ticketimage.interpark.com/Play/image/etc/26/26003490-05.jpg"
     ],
     "lastEnriched": "2026-03-14T13:34:59.770Z"
-  },
-  {
-    "id": "perf_뮤지컬_하모니",
-    "title": "뮤지컬 〈하모니〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002759_p.gif",
-    "date": "2026.03.07 ~ 2026.03.15",
-    "venue": "열린극장",
-    "link": "https://tickets.interpark.com/goods/26002759",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "105분",
-    "ageRating": "전체관람가",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지3월 7일(토) / 3월 8일(일) / 3월 14일(토) / 3월 15일(일)  오후 2시, 6시",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지3월 7일(토) / 3월 8일(일) / 3월 14일(토) / 3월 15일(일)  오후 2시, 6시",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002759-02.jpg"
-    ],
-    "lastEnriched": "2026-03-14T13:35:11.778Z"
   },
   {
     "id": "perf_뮤지컬_The_Face",
@@ -4244,16 +3958,6 @@
     "lastEnriched": "2026-03-14T13:35:32.305Z"
   },
   {
-    "id": "perf_이어진",
-    "title": "이어진,",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26003057_p.gif",
-    "date": "2026.03.11 ~ 2026.03.15",
-    "venue": "플랫폼74",
-    "link": "https://tickets.interpark.com/goods/26003057",
-    "region": "서울",
-    "genre": "musical"
-  },
-  {
     "id": "perf_인사이드_미",
     "title": "인사이드 미",
     "image": "https://ticketimage.interpark.com/Play/image/large/23/23018498_p.gif",
@@ -4319,34 +4023,6 @@
       "https://ticketimage.interpark.com/Play/image/etc/26/26003264-03.jpg"
     ],
     "lastEnriched": "2026-03-14T13:36:46.977Z"
-  },
-  {
-    "id": "perf_집사TV_대저택_문의_비밀_part_1_서울_광진",
-    "title": "집사TV 〈대저택 문의 비밀〉 : part.1 - 서울(광진)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000259_p.gif",
-    "date": "2026.03.14 ~ 2026.03.15",
-    "venue": "나루아트센터 대공연장",
-    "link": "https://tickets.interpark.com/goods/26000259",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "70분",
-    "ageRating": "24개월이상 관람가능",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "2026년 3월 14일(토) 11시 14시 16시30분\n2026년 3월 15일(일) 11시 14시",
-    "description": "2026년 3월 14일(토) 11시 14시 16시30분\n2026년 3월 15일(일) 11시 14시",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Detail/2026/1/2026010613370938.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Detail/2026/1/2026010613381520.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26000259-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26000259-02.jpg"
-    ],
-    "lastEnriched": "2026-03-14T13:36:43.997Z"
   },
   {
     "id": "perf_집사TV_대저택_문의_비밀_part_1",
@@ -4767,35 +4443,5 @@
       "https://ticketimage.interpark.com/Play/image/etc/26/26002399-02.jpg"
     ],
     "lastEnriched": "2026-03-14T13:37:08.474Z"
-  },
-  {
-    "id": "perf_2026_03_과학을_보다_BODA_토크_콘서트_서울",
-    "title": "［2026.03］ 과학을 보다(BODA) 토크 콘서트 - 서울",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002281_p.gif",
-    "date": "2026.03.14 ~ 2026.03.15",
-    "venue": "광운대학교 동해문화예술관 대극장",
-    "link": "https://tickets.interpark.com/goods/26002281",
-    "region": "서울",
-    "genre": "concert",
-    "runningTime": "180분(인터미션 20분 포함)",
-    "ageRating": "전체관람가",
-    "price": "전석 45,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "광운대학교 동해문화예술관 대극장(자세히)",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "45,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "예매가능시간: 관람일 15시까지관람시간 : 오후 2시 ~ 오후 5시\n입장마감 : 오후 1시 45분",
-    "description": "예매가능시간: 관람일 15시까지관람시간 : 오후 2시 ~ 오후 5시\n입장마감 : 오후 1시 45분",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002281-03.jpg"
-    ],
-    "lastEnriched": "2026-03-14T13:37:07.658Z"
   }
 ]
