@@ -59363,7 +59363,8 @@
     "address": "경상북도 포항시 북구 흥해읍 해안로 1374",
     "lat": 36.1323527,
     "lng": 129.3970124,
-    "district": ""
+    "district": "",
+    "homepage": "http://www.chilpojazz.com/main/main.php"
   },
   "플라멩코델서울": {
     "name": "플라멩코델서울",
@@ -59907,7 +59908,7 @@
     "lng": 127.1144693,
     "district": "",
     "phone": "063-223-5323",
-    "homepage": "http://www.erumart.co.kr/"
+    "homepage": "https://arterum.imweb.me/"
   },
   "예전아트센터": {
     "name": "예전아트센터",
@@ -79347,5 +79348,57 @@
     "district": "",
     "phone": "062-670-5060",
     "homepage": "http://www.nglcc.kr/"
+  },
+  "포스코광양백운아트홀": {
+    "name": "포스코광양백운아트홀",
+    "address": "전라남도 광양시 금호로 215 (금호동)",
+    "lat": 34.9430494,
+    "lng": 127.7258084,
+    "district": "",
+    "phone": "061-790-6020",
+    "homepage": "https://www.posco.co.kr/homepage/docs/kor6/jsp/common/posco/s91a1000031c.jsp"
+  },
+  "프로젝트 스페이스 큐": {
+    "name": "프로젝트 스페이스 큐",
+    "address": "서울특별시 성동구 성수이로16길 46-1 (성수동2가)",
+    "lat": 37.539641,
+    "lng": 127.061363,
+    "district": "성동구"
+  },
+  "cafe 메리캐리 [대전]": {
+    "name": "cafe 메리캐리 [대전]",
+    "address": "대전광역시 동구 백룡로5번길 80 (자양동)",
+    "lat": 36.339517,
+    "lng": 127.449646,
+    "district": "동구"
+  },
+  "cafe 바른청년 [대구]": {
+    "name": "cafe 바른청년 [대구]",
+    "address": "대구광역시 중구 약령길 59 (수동)",
+    "lat": 35.869049,
+    "lng": 128.589247,
+    "district": "중구"
+  },
+  "마스커피랩 남포점": {
+    "name": "마스커피랩 남포점",
+    "address": "부산광역시 중구 광복중앙로 13 (신창동1가)",
+    "lat": 35.100601,
+    "lng": 129.030902,
+    "district": "중구",
+    "homepage": "https://www.instagram.com/marscoffee.np"
+  },
+  "cafe 이재 [천안]": {
+    "name": "cafe 이재 [천안]",
+    "address": "충청남도 천안시 동남구 샛골길 1-8 (삼룡동)",
+    "lat": 36.78589,
+    "lng": 127.168378,
+    "district": ""
+  },
+  "cafe 슬로우캣 [전주]": {
+    "name": "cafe 슬로우캣 [전주]",
+    "address": "전북특별자치도 전주시 덕진구 만성남5길 8-19 (만성동)",
+    "lat": 35.840322,
+    "lng": 127.073754,
+    "district": ""
   }
 }
