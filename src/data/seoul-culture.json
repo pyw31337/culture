@@ -1575,36 +1575,6 @@
     "cost": "R 150,000 S 120,000 A 80,000 B 40,000 C 10,000"
   },
   {
-    "id": "perf_2025_아뜰리에_광화_겨울_전시_신진작가_공모전",
-    "title": "2025 아뜰리에 광화 겨울 전시 [신진작가 공모전]",
-    "date": "2025.12.21 (일) ~ 2026.03.19 (목)",
-    "place": "광화문광장해치마당",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=53bb9aa29f27442aa947486d42b2eb2d&thumb=Y",
-    "genre": "exhibition",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156380&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=38",
-    "lastEnriched": "2026-02-23T15:13:12.583Z",
-    "runningTime": "[시간] 18:00 ~ 23:00",
-    "ageRating": "누구나",
-    "price": "무료",
-    "cost": "무료"
-  },
-  {
-    "id": "perf_2025_서울로미디어캔버스_겨울_전시_숨결",
-    "title": "2025 서울로미디어캔버스 겨울 전시 [숨결]",
-    "date": "2025.12.21 (일) ~ 2026.03.19 (목)",
-    "place": "서울로미디어캔버스",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fb70732218d2453d911050561e0c1d51&thumb=Y",
-    "genre": "exhibition",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156364&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=38",
-    "lastEnriched": "2026-02-23T15:13:12.281Z",
-    "runningTime": "[시간] 18:00 ~ 23:00",
-    "ageRating": "누구나",
-    "price": "무료",
-    "cost": "무료"
-  },
-  {
     "id": "perf_동작문화재단_2026_본동어울마당_아트홀_상반기_정기_기획공연_본동_세레나데_3회차_라피나토의_소리로_그린_풍경",
     "title": "[동작문화재단] 2026 본동어울마당 아트홀 상반기 정기 기획공연 본동 세레나데 3회차 [라피나토의 소리로 그린 풍경]",
     "date": "2026-03-20 ~ 2026-03-20",

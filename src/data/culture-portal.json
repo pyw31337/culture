@@ -2694,24 +2694,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_제26회국민일보영산아트홀신인음악회_1_198",
-    "title": "제26회 국민일보 영산아트홀 신인음악회",
-    "image": "http://www.culture.go.kr/upload/rdf/26/03/rdf_2026030621171206050.jpg",
-    "date": "2026.03.17 (화) ~ 2026.03.19 (목)",
-    "venue": "서울 | 영산아트홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=66372",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5292309,
-    "lng": 126.92487210000002,
-    "address": "서울특별시 영등포구 여의공원로 101 (여의도동)",
-    "time": "화요일(19:00)",
-    "price": "전석 20,000원",
-    "contact": "영산아트홀 02-6181-5260,5263",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_제25회광양매화축제맞이2026신춘음악_1_387",
     "title": "제25회 광양매화축제 맞이 2026 신춘 음악회",
     "image": "http://www.culture.go.kr/upload/rdf/26/03/rdf_2026030621171265187.jpg",
@@ -35653,24 +35635,6 @@
     "time": "토요일(18:00)",
     "price": "전석무료",
     "contact": "-",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_2025아뜰리에광화겨울전시<영원>_26_26",
-    "title": "2025 아뜰리에 광화 겨울 전시 <영원>",
-    "image": "http://www.culture.go.kr/upload/rdf/25/12/rdf_202512292122937890.jpg",
-    "date": "2025.12.21 (일) ~ 2026.03.19 (목)",
-    "venue": "서울 | 세종문화회관",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=63867",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5725254,
-    "lng": 126.97564290000003,
-    "address": "서울특별시 종로구 세종대로 175 (세종로)",
-    "time": "18:00 ~ 23:00",
-    "price": "무료",
-    "contact": "세종문화티켓 02-399-1000",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
