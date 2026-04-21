@@ -1605,21 +1605,6 @@
     "cost": "R 50,000원, S 30,000원, A 20,000원"
   },
   {
-    "id": "perf_그루버김밴드_Smooth_Jazz_Concert",
-    "title": "[그루버김밴드] Smooth Jazz Concert",
-    "date": "2026-03-21 ~ 2026-03-21",
-    "place": "재즈클럽 그루브",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=61aec295bcc346d4ac5d317b2b7b22aa&thumb=Y",
-    "genre": "unknown",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156993&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=42",
-    "lastEnriched": "2026-03-13T16:31:11.635Z",
-    "runningTime": "[시간] 20:00 ~ 22:00",
-    "ageRating": "누구나",
-    "price": "입장료 10,000원",
-    "cost": "입장료 10,000원"
-  },
-  {
     "id": "perf_서울아트책보고_봄_시즌_상설공연_처음_만나는_세계",
     "title": "봄 시즌 상설공연 [처음 만나는 세계]",
     "date": "2026.03.21 (토)",
@@ -1753,51 +1738,6 @@
     "ageRating": "5세 이상 입장",
     "price": "전석 40,000원",
     "cost": "전석 40,000원"
-  },
-  {
-    "id": "perf_노원문화재단_이태호_석좌교수_초청_특강_인상파_찬란한_순간들_전시_연계_특별_강연",
-    "title": "[노원문화재단] 이태호 석좌교수 초청 특강 [인상파, 찬란한 순간들] 전시 연계 특별 강연",
-    "date": "2026-03-14 ~ 2026-03-21",
-    "place": "노원문화예술회관",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1c24bcda236c49a283bb385d5780d51d&thumb=Y",
-    "genre": "exhibition",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156984&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=43",
-    "lastEnriched": "2026-03-13T16:31:11.978Z",
-    "runningTime": "[시간] 3/14, 21(토) 15:00~17:00",
-    "ageRating": "당일 전시 티켓 소지자에 한해 누구나 자율참여",
-    "price": "무료",
-    "cost": "무료"
-  },
-  {
-    "id": "perf_창밖의_비창_IAN_KIM_피아노_리사이틀",
-    "title": "IAN KIM 피아노 리사이틀",
-    "date": "2026.03.14 (토) ~ 2026.03.21 (토)",
-    "place": "서울숲 스튜디오301",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=99d2822310744b4bbad3f55bfa959cfd&thumb=Y",
-    "genre": "classic",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156745&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=43",
-    "lastEnriched": "2026-03-10T16:21:35.473Z",
-    "runningTime": "[시간] 16:00 ~ 17:15",
-    "ageRating": "성인 및 청소년",
-    "price": "성인 30,000원 | 청소년 25,000원 | 예술인패스 25,000원",
-    "cost": "성인 30,000원 | 청소년 25,000원 | 예술인패스 25,000원"
-  },
-  {
-    "id": "perf_세종문화회관_26세종시즌_더블_빌_Bliss_Jakie",
-    "title": "26세종시즌 [더블 빌 Bliss & Jakie]",
-    "date": "2026.03.14 (토) ~ 2026.03.21 (토)",
-    "place": "세종문화회관",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6a197c9186914e23845f3cbf0327f60d&thumb=Y",
-    "genre": "unknown",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156440&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=38",
-    "lastEnriched": "2026-02-20T19:03:51.342Z",
-    "runningTime": "[시간] 1회차 14:00 2회차 18:00",
-    "ageRating": "13세 이상 관람 가능 (2013년 이전 출생자)",
-    "price": "R석 60,000원 S석 40,000원",
-    "cost": "R석 60,000원 S석 40,000원"
   },
   {
     "id": "perf_서울역사박물관_한_불_수교_140주년_기념_어린이_아뜰리에_이야기를_들려줘",

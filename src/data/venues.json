@@ -32997,7 +32997,8 @@
     "address": "제주 제주시 조천읍 북촌9길 31 북촌리어촌계지도보기",
     "district": "",
     "lat": 33.5498682802124,
-    "lng": 126.6934323933
+    "lng": 126.6934323933,
+    "homepage": "http://www.haenyeo.space/"
   },
   "강경불고기 송추점": {
     "name": "강경불고기 송추점",
@@ -65691,7 +65692,9 @@
     "address": "경북 경산시 계양로 28",
     "district": "",
     "lat": 35.8182327198273,
-    "lng": 128.747792077122
+    "lng": 128.747792077122,
+    "phone": "053-804-7243",
+    "homepage": "http://www.gyeongsan.go.kr/special/civic/index.do"
   },
   "충북문화관": {
     "name": "충북문화관",
@@ -79475,5 +79478,37 @@
     "district": "",
     "phone": "055-641-2622",
     "homepage": "http://www.tongyeong.go.kr/citizen.web"
+  },
+  "해녀의부엌": {
+    "name": "해녀의부엌",
+    "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 2265",
+    "lat": 33.4978223,
+    "lng": 126.9121785,
+    "district": "",
+    "homepage": "http://www.haenyeo.space/"
+  },
+  "경산시민회관": {
+    "name": "경산시민회관",
+    "address": "경상북도 경산시 계양로 28 (계양동)",
+    "lat": 35.8181935,
+    "lng": 128.74785610000004,
+    "district": "",
+    "phone": "053-804-7243",
+    "homepage": "http://www.gyeongsan.go.kr/special/civic/index.do"
+  },
+  "푸투라 서울": {
+    "name": "푸투라 서울",
+    "address": "서울특별시 종로구 북촌로 61 (가회동)",
+    "lat": 37.5822562,
+    "lng": 126.9847659,
+    "district": "종로구",
+    "homepage": "https://futuraseoul.org/"
+  },
+  "고라니 특공대": {
+    "name": "고라니 특공대",
+    "address": "서울특별시 마포구 토정로 136(상수동)",
+    "lat": 37.5452785,
+    "lng": 126.9263242,
+    "district": "마포구"
   }
 }
