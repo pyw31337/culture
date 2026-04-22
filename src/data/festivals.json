@@ -14,20 +14,6 @@
     "address": "충청남도 홍성군 홍북읍 상하리 산 1-2"
   },
   {
-    "id": "05b53e45-cc6e-4309-ae29-2cb2ad710910",
-    "title": "구례산수유꽃축제",
-    "image": "https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/05b53e45-cc6e-4309-ae29-2cb2ad710910_80.jpg",
-    "date": "2026.03.14 (토) ~ 2026.03.22 (일)",
-    "venue": "전라남도 구례군",
-    "region": "etc",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=05b53e45-cc6e-4309-ae29-2cb2ad710910",
-    "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:35.707Z",
-    "lat": 35.29367500800736,
-    "lng": 127.53210019974368,
-    "address": "전라남도 구례군 토지면 문수리 산 17"
-  },
-  {
     "id": "d80cfb61-617b-4647-8196-98995001f079",
     "title": "서천 동백꽃 주꾸미 축제",
     "image": null,
@@ -40,20 +26,6 @@
     "lat": 36.0362143638241,
     "lng": 126.718640924183,
     "address": "충청남도 서천군 마서면 금강로 1210"
-  },
-  {
-    "id": "53ad5cbd-9241-4efa-8366-49c919001862",
-    "title": "양평 단월 고로쇠축제",
-    "image": null,
-    "date": "2026.03.21 (토) ~ 2026.03.22 (일)",
-    "venue": "경기도 양평군",
-    "region": "gyeonggi",
-    "link": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=53ad5cbd-9241-4efa-8366-49c919001862",
-    "genre": "festival",
-    "lastEnriched": "2026-03-10T15:11:36.779Z",
-    "lat": 37.5328127891601,
-    "lng": 127.315829778049,
-    "address": "경기도 양평군 양서면 양수리"
   },
   {
     "id": "87dfeda1-084e-41a9-b76e-09f2d502443a",

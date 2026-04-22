@@ -27896,7 +27896,9 @@
     "district": "성북구",
     "lat": 37.5925012614127,
     "lng": 127.018157474027,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-921-5080",
+    "homepage": "https://blog.naver.com/theatre-uex"
   },
   "동숭무대 소극장": {
     "name": "동숭무대 소극장",
@@ -58029,10 +58031,12 @@
   },
   "꿈나무극장": {
     "name": "꿈나무극장",
-    "address": "서울특별시 구로구 구로동로26길 54",
+    "address": "서울특별시 구로구 구로동로26길 54 (구로동)",
     "lat": 37.4898684,
     "lng": 126.88724649999995,
-    "district": "구로구"
+    "district": "구로구",
+    "phone": "02-830-2562",
+    "homepage": "https://www.guroartsvalley.or.kr/user/overall/overallArt5.do"
   },
   "서경대학교 문예관": {
     "name": "서경대학교 문예관",
@@ -58361,7 +58365,8 @@
     "address": "경상북도 울진군 울진읍 연호로 47",
     "lat": 36.994688,
     "lng": 129.4064616,
-    "district": ""
+    "district": "",
+    "phone": "054-789-5483"
   },
   "파주 임진각 평화누리": {
     "name": "파주 임진각 평화누리",
@@ -59429,10 +59434,12 @@
   },
   "유니버설아트센터": {
     "name": "유니버설아트센터",
-    "address": "서울특별시 광진구 천호대로 664",
+    "address": "서울특별시 광진구 천호대로 664 (능동)",
     "lat": 37.5505555,
     "lng": 127.08826240000008,
-    "district": "광진구"
+    "district": "광진구",
+    "phone": "070-7124-1740",
+    "homepage": "http://www.uac.co.kr/"
   },
   "현장아트홀": {
     "name": "현장아트홀",
@@ -63381,10 +63388,12 @@
   },
   "뜻밖의 극장(구. 해우소소극장)": {
     "name": "뜻밖의 극장(구. 해우소소극장)",
-    "address": "서울 성북구 동소문로20나길 27",
+    "address": "서울특별시 성북구 동소문로20나길 27 (동선동1가)",
+    "lat": 37.59245,
+    "lng": 127.0181255,
     "district": "성북구",
-    "lat": 37.5925012614127,
-    "lng": 127.018157474027
+    "phone": "02-921-5080",
+    "homepage": "https://blog.naver.com/theatre-uex"
   },
   "모스크바홀": {
     "name": "모스크바홀",
@@ -79510,5 +79519,38 @@
     "lat": 37.5452785,
     "lng": 126.9263242,
     "district": "마포구"
+  },
+  "지포캣(G4CAT)": {
+    "name": "지포캣(G4CAT)",
+    "address": "서울특별시 중구 창경궁로1길 23 (충무로4가)",
+    "lat": 37.56254,
+    "lng": 126.996989,
+    "district": "중구"
+  },
+  "딜리스 [서울 성북]": {
+    "name": "딜리스 [서울 성북]",
+    "address": "서울특별시 성북구 고려대로1길 94 (삼선동5가)",
+    "lat": 37.589191,
+    "lng": 127.017274,
+    "district": "성북구",
+    "homepage": "https://www.instagram.com/dyllis_coffee"
+  },
+  "산청문화예술회관": {
+    "name": "산청문화예술회관",
+    "address": "경상남도 산청군 금서면 친환경로2631번길 12",
+    "lat": 35.4200512,
+    "lng": 127.87305990000004,
+    "district": "",
+    "phone": "055-970-6481",
+    "homepage": "https://www.sancheong.go.kr/www/contents.do?key=232"
+  },
+  "대덕구문예회관 (구. 대덕구평생학습센터)": {
+    "name": "대덕구문예회관 (구. 대덕구평생학습센터)",
+    "address": "대전광역시 대덕구 대전로 1348 (읍내동)",
+    "lat": 36.3741119,
+    "lng": 127.4206198,
+    "district": "",
+    "phone": "042-608-6491",
+    "homepage": "https://lll.daedeok.go.kr/lms/contents/dms/main.jsp"
   }
 }
