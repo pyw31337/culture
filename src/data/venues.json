@@ -4636,11 +4636,12 @@
   },
   "세라믹팔레스홀": {
     "name": "세라믹팔레스홀",
-    "address": "서울 강남구 일원로 90",
-    "lat": 37.4923272,
-    "lng": 127.0801611,
+    "address": "서울특별시 강남구 일원로 90 (일원동)",
+    "lat": 37.4859079,
+    "lng": 127.08221000000003,
     "district": "강남구",
-    "mapped_region_id": "seoul"
+    "phone": "02-3411-4668",
+    "homepage": "http://www.cphall.org/"
   },
   "옐레드 노원상계점": {
     "name": "옐레드 노원상계점",
@@ -57641,10 +57642,12 @@
   },
   "골목실험극장": {
     "name": "골목실험극장",
-    "address": "대구광역시 남구 계명중앙1길 39-4",
+    "address": "대구광역시 남구 계명중앙1길 39-4 (대명동)",
     "lat": 35.8561262,
     "lng": 128.5821888,
-    "district": ""
+    "district": "",
+    "phone": "010-6533-2985",
+    "homepage": "https://blog.naver.com/dpas17125/221423484160"
   },
   "AG아트홀 [청주]": {
     "name": "AG아트홀 [청주]",
@@ -79552,5 +79555,45 @@
     "district": "",
     "phone": "042-608-6491",
     "homepage": "https://lll.daedeok.go.kr/lms/contents/dms/main.jsp"
+  },
+  "인천굴포초등학교": {
+    "name": "인천굴포초등학교",
+    "address": "인천광역시 부평구 충선로234번길 19 (삼산동)",
+    "lat": 37.510867,
+    "lng": 126.737033,
+    "district": "부평구",
+    "phone": "032-511-3870",
+    "homepage": "https://gulpo.icees.kr/main.do"
+  },
+  "KBS홀 [별관]": {
+    "name": "KBS홀 [별관]",
+    "address": "서울특별시 영등포구 여의대방로 359 (여의도동)",
+    "lat": 37.518713,
+    "lng": 126.9294188,
+    "district": "영등포구"
+  },
+  "광주서구문화센터": {
+    "name": "광주서구문화센터",
+    "address": "광주광역시 서구 마재로 3 (금호동)",
+    "lat": 35.130799,
+    "lng": 126.86026800000002,
+    "district": "서구",
+    "phone": "062-654-4300",
+    "homepage": "http://www.ymcakwangju.or.kr/"
+  },
+  "동대문구 아르코(DDM ARCO)": {
+    "name": "동대문구 아르코(DDM ARCO)",
+    "address": "서울특별시 동대문구 왕산로 200 (전농동)",
+    "lat": 37.579875,
+    "lng": 127.046368,
+    "district": "동대문구",
+    "homepage": "https://www.ddmac.or.kr/sub01/sub12.php"
+  },
+  "루비살롱": {
+    "name": "루비살롱",
+    "address": "인천광역시 중구 신포로35번길 17 (관동3가)",
+    "lat": 37.472383,
+    "lng": 126.624759,
+    "district": "중구"
   }
 }
