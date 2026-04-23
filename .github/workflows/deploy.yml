@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: deploy-to-github-pages
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -35,13 +39,22 @@ jobs:
       - name: Install dependencies
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-          npm ci
+          npm ci --prefer-offline --no-audit --fund=false
 
       - name: Build Website
         env:
           NEXT_PUBLIC_BASE_PATH: /culture
           NODE_OPTIONS: '--max-old-space-size=4096'
         run: npm run build
+
+      - name: Verify Static Artifacts
+        run: |
+          test -f out/data/performances.json
+          test -f out/data/build-info.json
+          test -f out/images/og-image.jpg
+          test -f out/version.txt
+          test -f out/robots.txt
+          test -f out/sitemap.xml
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
