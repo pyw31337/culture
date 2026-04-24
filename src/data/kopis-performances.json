@@ -5214,59 +5214,6 @@
     "address": "서울 송파구 올림픽로 300"
   },
   {
-    "id": "kopis_PF286139",
-    "title": "제14회 아니마 체임버 정기연주회: 봄이 오는 길목에서, 낭만이 피어나다",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286139_260303_150409.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "예술의전당 [서울] (IBK챔버홀)",
-    "venueId": "FC000001",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286139",
-    "genre": "서양음악(클래식)",
-    "price": "R석 50,000원\nS석 30,000원\nA석 20,000원",
-    "time": "화요일(19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "조영미",
-      "이승연",
-      "이민경",
-      "임채연",
-      "김호정",
-      "이영현",
-      "김은영 등"
-    ],
-    "crew": [
-      "조영미 등"
-    ],
-    "runtime": "1시간 30분",
-    "age": "만 7세 이상",
-    "ageDetail": "만 7세 이상",
-    "production": "케이클래식스테이지(K-CLASSIC STAGE), Anima Chamber(아니마챔버)",
-    "host": "케이클래식스테이지(K-CLASSIC STAGE)",
-    "organizer": "Anima Chamber(아니마챔버)",
-    "sponsor": "케이클래식스테이지(K-CLASSIC STAGE)",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "30,000원"
-      },
-      {
-        "label": "A석",
-        "price": "20,000원"
-      }
-    ],
-    "synopsis": "[공연소개]\n제14회 아니마 체임버 정기연주회는 〈봄이 오는 길목에서, 낭만이 피어나다〉라는 부제 아래 새로운 계절의 감성과 낭만을 음악으로 담아냅니다.\n조영미 교수님의 리드로 오랜 시간 호흡을 맞춰온 연주자들이 깊이 있는 앙상블과 섬세한 음악적 교감을 무대에서 보여줄 예정입니다.\n슈베르트의 Quartettsatz로 시작해, 윤도영의 협연으로 연주되는 Rondo in A Major가 섬세한 음악적 대화를, \n2부에서는 그리그의 String Quartet in g minor가 체임버 오케스트라 사운드로 재해석되어 보다 풍성한 울림을 선사할 것입니다.\n\n[PROGRAM]\nF. Schubert - Quartettsatz in C minor, D.703 arranged for String Orchestra\n\nF. Schubert - Rondo in A major D.438 for Violin & String Orchestra \n협연ㅣVn. 윤도영\n\n       INTERMISSION\n\nE. Grieg  - Quartet in G minor op.27 arranged for String Orchestra",
-    "description": "[공연소개]\n제14회 아니마 체임버 정기연주회는 〈봄이 오는 길목에서, 낭만이 피어나다〉라는 부제 아래 새로운 계절의 감성과 낭만을 음악으로 담아냅니다.\n조영미 교수님의 리드로 오랜 시간 호흡을 맞춰온 연주자들이 깊이 있는 앙상블과 섬세한 음악적 교감을 무대에서 보여줄 예정입니다.\n슈베르트의 Quartettsatz로 시작해, 윤도영의 협연으로 연주되는 Rondo in A Major가 섬세한 음악적 대화를, \n2부에서는 그리그의 String Quartet in g minor가 체임버 오케스트라 사운드로 재해석되어 보다 풍성한 울림을 선사할 것입니다.\n\n[PROGRAM]\nF. Schubert - Quartettsatz in C minor, D.703 arranged for String Orchestra\n\nF. Schubert - Rondo in A major D.438 for Violin & String Orchestra \n협연ㅣVn. 윤도영\n\n       INTERMISSION\n\nE. Grieg  - Quartet in G minor op.27 arranged for String Orchestra",
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286139_202603030304092590.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF286089",
     "title": "제208회 국립합창단 정기연주회: 하이든 천지창조",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286089_260303_132106.gif",
@@ -7345,50 +7292,6 @@
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF284357_202602030117578620.jpg"
     ]
-  },
-  {
-    "id": "kopis_PF284211",
-    "title": "피터 야블론스키 & 김정원 피아노 듀오 리사이틀 [청주]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284211_260202_111004.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "청주아트홀 (구. 청주시민회관) (청주아트홀 (구. 청주시민회관) )",
-    "venueId": "FC001258",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284211",
-    "genre": "서양음악(클래식)",
-    "price": "R석 50,000원\nS석 30,000원",
-    "time": "화요일(19:30)",
-    "region": "충청북도",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "피터 야블론스키",
-      "김정원"
-    ],
-    "runtime": "2시간",
-    "age": "만 7세 이상",
-    "ageDetail": "만 7세 이상",
-    "production": "이즈아트홀, 프리마앙상블",
-    "host": "이즈아트홀",
-    "organizer": "프리마앙상블",
-    "sponsor": "클래식 아트컴퍼니(Classic Art Company)",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "30,000원"
-      }
-    ],
-    "synopsis": "[공연소개]\n‘스타’라는 개념을 클래식계에 새롭게 각인시킨 두 피아니스트,\n피터 야블론스키와 김정원.\n데뷔 당시 아이돌을 연상케 하는 외모와 카리스마, 그리고 그에 걸맞는\n실력과 음악적 깊이로 각자의 길에서 독보적인 궤적을 그려온 두 아티스트.\n15 년 전 예술의전당에서의 첫 듀오 무대를 기억하시나요?\n그 후 계속 이어온 음악적 교류와 우정 속에서 거장으로 향해 걷고 있는\n두 사람은, 더욱 원숙해진 해석과 눈빛만으로도 통하는 호흡으로,\n단순한 협연을 넘어 시대를 관통하는 음악적 대화를 들려줄 것입니다.\n\n피아니스트 피터 야블론스키와 김정원은 나란히 1990년대와 2000년대를 대표하는 클래식계의 스타 아이콘으로 데뷔해, 깊이 있는 음악성과 폭넓은 대중적 사랑을 동시에 받아온 연주자들입니다. 이번 듀오 리사이틀에서는 대중이 가장 사랑하는 교향곡 중 하나인 베토벤의 교향곡 9번을, ‘피아노의 마술사’ 프란츠 리스트가 두 대의 피아노를 위해 편곡한 특별한 버전으로 선보입니다.\n그 외에도 두 대의 피아노, 네 개의 손이 만들어내는 다채롭고 환상적인 프로그램을 통해 두 연주자의 섬세한 감성과 탁월한 호흡을 조명하며, 한 시대를 함께 걸어온 예술가들만이 나눌 수 있는 깊이 있는 음악적 대화를 무대 위에 펼쳐냅니다.\n\n[PROGRAM]\nM. Ravel - Rapsodie Espagnole\n\nWitold Lutosławski – Variations on a Theme by Paganini for Two Pianos\n\nL.V. Beethoven – Symphony No. 9 in d minor, Op. 125 “Choral” (arr. F. Liszt)",
-    "description": "[공연소개]\n‘스타’라는 개념을 클래식계에 새롭게 각인시킨 두 피아니스트,\n피터 야블론스키와 김정원.\n데뷔 당시 아이돌을 연상케 하는 외모와 카리스마, 그리고 그에 걸맞는\n실력과 음악적 깊이로 각자의 길에서 독보적인 궤적을 그려온 두 아티스트.\n15 년 전 예술의전당에서의 첫 듀오 무대를 기억하시나요?\n그 후 계속 이어온 음악적 교류와 우정 속에서 거장으로 향해 걷고 있는\n두 사람은, 더욱 원숙해진 해석과 눈빛만으로도 통하는 호흡으로,\n단순한 협연을 넘어 시대를 관통하는 음악적 대화를 들려줄 것입니다.\n\n피아니스트 피터 야블론스키와 김정원은 나란히 1990년대와 2000년대를 대표하는 클래식계의 스타 아이콘으로 데뷔해, 깊이 있는 음악성과 폭넓은 대중적 사랑을 동시에 받아온 연주자들입니다. 이번 듀오 리사이틀에서는 대중이 가장 사랑하는 교향곡 중 하나인 베토벤의 교향곡 9번을, ‘피아노의 마술사’ 프란츠 리스트가 두 대의 피아노를 위해 편곡한 특별한 버전으로 선보입니다.\n그 외에도 두 대의 피아노, 네 개의 손이 만들어내는 다채롭고 환상적인 프로그램을 통해 두 연주자의 섬세한 감성과 탁월한 호흡을 조명하며, 한 시대를 함께 걸어온 예술가들만이 나눌 수 있는 깊이 있는 음악적 대화를 무대 위에 펼쳐냅니다.\n\n[PROGRAM]\nM. Ravel - Rapsodie Espagnole\n\nWitold Lutosławski – Variations on a Theme by Paganini for Two Pianos\n\nL.V. Beethoven – Symphony No. 9 in d minor, Op. 125 “Choral” (arr. F. Liszt)",
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF284211_202602021110041350.jpg"
-    ],
-    "lat": 36.6369790638301,
-    "lng": 127.469399939702,
-    "address": "충북 청주시 서원구 예체로 118-1"
   },
   {
     "id": "kopis_PF284025",
@@ -10047,51 +9950,6 @@
     "address": "서울 종로구 동숭길 94"
   },
   {
-    "id": "kopis_PF284218",
-    "title": "제35회 (사) 한국페스티발앙상블 현대음악축제",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284218_260202_112933.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "예술의전당 [서울] (리사이틀홀)",
-    "venueId": "FC000001",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284218",
-    "genre": "서양음악(클래식)",
-    "price": "전석 30,000원",
-    "time": "화요일(19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": true,
-    "cast": [
-      "정유진",
-      "윤염광",
-      "이상효",
-      "박성희",
-      "김경란",
-      "이길재",
-      "이주희 등"
-    ],
-    "crew": [
-      "임종우"
-    ],
-    "runtime": "1시간 40분",
-    "age": "만 7세 이상",
-    "ageDetail": "만 7세 이상",
-    "production": "(사)한국페스티발앙상블",
-    "host": "(사)한국페스티발앙상블",
-    "organizer": "(사)한국페스티발앙상블",
-    "sponsor": "(사)한국페스티발앙상블",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "synopsis": "[PROGRAM]\n\nK. Saariaho ... NoaNoa for flute and electronics\n* Fl.이인 E(전자음악)\n\n이정혜 ... Chronoresonance\n* Pf.이민정 E(전자음악)\n\n최지연 ... Orient\n* Fl.이인 Vc.이길재 Pf.임재한 video. E(전자음악)\n\n- INTERMISSION -\n\nP. Jodolowski ... In & Out\n* Vn.정유진 Vc.이길재 video. E(전자음악)\n\nS. Gubaidulina ... String Quartet No. 4\n* Vns.윤염광,이상효 Va.박성희 Vc.김경란 (조명)\n\nT. Murail ... Winter fragments\nFl.이주희 Cl.이창희 Vn.정유진 Vc.김경란 Pf.이민정\nmidi keyboard & E(전자음악)\n\n*프로그램 및 출연자는 사정에 따라 변경될 수 있습니다.",
-    "description": "[PROGRAM]\n\nK. Saariaho ... NoaNoa for flute and electronics\n* Fl.이인 E(전자음악)\n\n이정혜 ... Chronoresonance\n* Pf.이민정 E(전자음악)\n\n최지연 ... Orient\n* Fl.이인 Vc.이길재 Pf.임재한 video. E(전자음악)\n\n- INTERMISSION -\n\nP. Jodolowski ... In & Out\n* Vn.정유진 Vc.이길재 video. E(전자음악)\n\nS. Gubaidulina ... String Quartet No. 4\n* Vns.윤염광,이상효 Va.박성희 Vc.김경란 (조명)\n\nT. Murail ... Winter fragments\nFl.이주희 Cl.이창희 Vn.정유진 Vc.김경란 Pf.이민정\nmidi keyboard & E(전자음악)\n\n*프로그램 및 출연자는 사정에 따라 변경될 수 있습니다.",
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF284218_202602021129335070.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF282876",
     "title": "DCH앙상블페스티벌, 카메라타 전남 [대구]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282876_260109_141248.gif",
@@ -10994,43 +10852,6 @@
     ]
   },
   {
-    "id": "kopis_PF287074",
-    "title": "쌀롱드무지끄: 사랑, 웃음, 그리고 눈물",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF287074_260313_155353.jpg",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "쌀롱드무지끄 (쌀롱드무지끄)",
-    "venueId": "FC002062",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF287074",
-    "genre": "서양음악(클래식)",
-    "price": "전석 33,000원",
-    "time": "화요일(20:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "노연수",
-      "김은교",
-      "박정연",
-      "전지호"
-    ],
-    "runtime": "1시간",
-    "age": "만 7세 이상",
-    "ageDetail": "만 7세 이상",
-    "production": "쌀롱드무지끄",
-    "organizer": "쌀롱드무지끄",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "33,000원"
-      }
-    ],
-    "synopsis": "[PROGRAM]\n\n* Gaetano Donizetti 가에타노 도니제티\n\n- 사랑 - \nOpera <l'elisir d'amore> 사랑의 묘약 \nPreludio (4 Hands Piano) 서곡 (포핸즈 피아노) \nCaro elisir... esulti pur la barbara 사랑스런 묘약이여!... 그녀가 기뻐하겠지 \nUna furtiva lagrima 남몰래 흐르는 눈물 \nPrendi per me sei libero 이 종이를 받아요, 이제 당신은 자유에요 \n\n- 웃음 -\nOpera <Don Pasquale> 돈 파스콸레 \nPreludio (4 Hands Piano) 서곡 (포핸즈 피아노) \nQuel guardo il cavaliere 그 눈빛에 기사도 반했죠 \nCom'e gentil 얼마나 아름다운가 3\nTornami a dir che m'ami 다시 말해줘요, 나를 사랑한다고 \n\n- 눈물 -\nOpera <Lucia di Lammermoor> 람메르무어의 루치아 \nPreludio (4 Hands Piano) 서곡 (포핸즈 피아노) \nRegnava nel silenzio 적막이 흐르던 밤에 \nSulla tomba che riserra 무덤 위에서 맹세했죠 \nFra poco a me ricovero 곧 나는 무덤으로 가겠지",
-    "description": "[PROGRAM]\n\n* Gaetano Donizetti 가에타노 도니제티\n\n- 사랑 - \nOpera <l'elisir d'amore> 사랑의 묘약 \nPreludio (4 Hands Piano) 서곡 (포핸즈 피아노) \nCaro elisir... esulti pur la barbara 사랑스런 묘약이여!... 그녀가 기뻐하겠지 \nUna furtiva lagrima 남몰래 흐르는 눈물 \nPrendi per me sei libero 이 종이를 받아요, 이제 당신은 자유에요 \n\n- 웃음 -\nOpera <Don Pasquale> 돈 파스콸레 \nPreludio (4 Hands Piano) 서곡 (포핸즈 피아노) \nQuel guardo il cavaliere 그 눈빛에 기사도 반했죠 \nCom'e gentil 얼마나 아름다운가 3\nTornami a dir che m'ami 다시 말해줘요, 나를 사랑한다고 \n\n- 눈물 -\nOpera <Lucia di Lammermoor> 람메르무어의 루치아 \nPreludio (4 Hands Piano) 서곡 (포핸즈 피아노) \nRegnava nel silenzio 적막이 흐르던 밤에 \nSulla tomba che riserra 무덤 위에서 맹세했죠 \nFra poco a me ricovero 곧 나는 무덤으로 가겠지",
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF287074_202603130354407040.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF286998",
     "title": "봄날은 간다",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286998_260313_130734.png",
@@ -11346,42 +11167,6 @@
     "description": "[공연소개]\n대한민국 펑크록의 아이콘 크라잉 넛과 레전드 록밴드 부활이 한 무대에서 만나는 레전드 록 공연",
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286416_202603061021482900.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF286243",
-    "title": "사물놀이 몰개, 길: The Way [충주]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286243_260304_130407.png",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "충주시문화회관 (충주시문화회관)",
-    "venueId": "FC000405",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286243",
-    "genre": "한국음악(국악)",
-    "price": "전석 10,000원",
-    "time": "화요일(19:30)",
-    "region": "충청북도",
-    "source": "kopis",
-    "isFestival": false,
-    "crew": [
-      "이영광",
-      "김성태 등"
-    ],
-    "runtime": "1시간 30분",
-    "age": "전체 관람가",
-    "ageDetail": "전체 관람가",
-    "production": "사물놀이몰개",
-    "organizer": "사물놀이몰개",
-    "sponsor": "사물놀이몰개",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "10,000원"
-      }
-    ],
-    "synopsis": "[공연소개]\n세계적으로 독창적인 구조와 작품성을 인정받은 판소리,\n역동적 울림과 장단의 사물놀이, 또 다른 恨(한)의 소리 재즈!\n한 편의 드라마가 펼쳐지는 ‘길’의 아름다운 여정 위에 여러분을 초대합니다.\n초행, 님의노래, 일곱 갈래 길, 꽃비, 경천동지, 씻김, 이바디 등",
-    "description": "[공연소개]\n세계적으로 독창적인 구조와 작품성을 인정받은 판소리,\n역동적 울림과 장단의 사물놀이, 또 다른 恨(한)의 소리 재즈!\n한 편의 드라마가 펼쳐지는 ‘길’의 아름다운 여정 위에 여러분을 초대합니다.\n초행, 님의노래, 일곱 갈래 길, 꽃비, 경천동지, 씻김, 이바디 등",
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286243_202603040104076010.png"
     ]
   },
   {
@@ -12304,49 +12089,6 @@
     "description": "[공연소개]\n2023년 [문턱]의 시작을 알렸던 무대에 김단비밴드 래인이 있었다.\n그로부터 3년 문턱은 새로운 호흡으로 나아가고 래인은 다시 시작의 자리에 선다.\n\n<새로운 시작, 래인>은 [문턱]과 김단비밴드 래인 모두에게 각자의 의미를 새롭게 다듬는 출발점이다.\n\n[문턱]은 그동안 쌓아온 경험을 바탕으로 공연의 완성도를 더욱 높이고, 음악을 중심으로 다양한 예술을 품으며 공연이 닿을 수 있는 영역을 넓혀간다.\n\n래인은 팀 이름의 의미를 위로의 '래인'에서 다가오는 맑음의 '래인(來潾)'으로 다시 정의한다.\n\n언제나 맑은 소리가 흐르고(來潾), 사람 찾아오는 소리가 끊이지 않을(來人) 자리를 꿈꾸며, 이 공연은 시작이 가진 설렘과 기대, 약간의 두려움과 그럼에도 경쾌하게 뛰는 심장박동을 음악으로 나눈다.\n\n김단비의 깊이 있는 해설과 재치 있고 위트 있는 진행을 따라 연주와 이야기는 자연스럽게 이어지고, 관객은 음악을 듣는 동시에 새로운 시작의 시간을 함께 건너게 된다.\n\n<새로운 시작, 래인>.\n다시 처음 앞에 선 자리에서 소리와 사람이 만난다.",
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF284785_202602090255449120.png"
-    ]
-  },
-  {
-    "id": "kopis_PF284707",
-    "title": "오페라와 떠나는 인문여행, 오페라 토스카",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF284707_260209_115039.jpg",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "해운대문화회관 (해운홀)",
-    "venueId": "FC000832",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284707",
-    "genre": "서양음악(클래식)",
-    "price": "R석 20,000원\nS석 10,000원",
-    "time": "화요일(19:30)",
-    "region": "부산광역시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "김유진",
-      "이태흠",
-      "안세범",
-      "김경미",
-      "김성민"
-    ],
-    "runtime": "1시간 30분",
-    "age": "만 7세 이상",
-    "ageDetail": "만 7세 이상",
-    "production": "해운대문화회관",
-    "organizer": "해운대문화회관",
-    "sponsor": "예술기획 젬마",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "20,000원"
-      },
-      {
-        "label": "S석",
-        "price": "10,000원"
-      }
-    ],
-    "synopsis": "[프로그램]\n\nGiacomo Puccini (1858~1924)\nOpera Tosca 오페라 토스카\n\nConcert Guide 김성민\nPiano 김경미\n\nRecondita armonia 오묘한 조화\nTenor 이태흠\n\nMario, Mario!.. son qui! 마리오, 마리오!.. 여기 있소!\nSoprano 김유진 Tenor 이태흠\n\nTe Deum 테 데움\nBaritone 안세범\n\nVissi d’arte, vissi d’amore 예술에 살고, 사랑에 살고\nSoprano 김유진\n\nIo tenni la promessa 나는 약속을 지켰소\nSoprano 김유진 Baritone 안세범\n\nE lucevan le stelle 별은 빛나건만\nTenor 이태흠\n\nE non giungono 아직이군요\nSoprano 김유진 Tenor 이태흠",
-    "description": "[프로그램]\n\nGiacomo Puccini (1858~1924)\nOpera Tosca 오페라 토스카\n\nConcert Guide 김성민\nPiano 김경미\n\nRecondita armonia 오묘한 조화\nTenor 이태흠\n\nMario, Mario!.. son qui! 마리오, 마리오!.. 여기 있소!\nSoprano 김유진 Tenor 이태흠\n\nTe Deum 테 데움\nBaritone 안세범\n\nVissi d’arte, vissi d’amore 예술에 살고, 사랑에 살고\nSoprano 김유진\n\nIo tenni la promessa 나는 약속을 지켰소\nSoprano 김유진 Baritone 안세범\n\nE lucevan le stelle 별은 빛나건만\nTenor 이태흠\n\nE non giungono 아직이군요\nSoprano 김유진 Tenor 이태흠",
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF284707_202602091150395450.jpg"
     ]
   },
   {
@@ -13442,28 +13184,6 @@
     ]
   },
   {
-    "id": "kopis_PF286851",
-    "title": "KARINA B-day PARTY: MEMORY BOX",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286851_260311_140526.jpg",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "예스24 라이브홀 (구. 악스코리아) (예스24 라이브홀 (구. 악스코리아))",
-    "venueId": "FC000205",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286851",
-    "genre": "대중음악",
-    "price": "전석 77,000원",
-    "time": "화요일(20:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286851_202603110205266264.jpg",
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286851_202603110205265993.jpg",
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286851_202603110205265522.jpg",
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286851_202603110205265141.jpg",
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286851_202603110205265050.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF286841",
     "title": "제3회 Quartet EINS 정기연주회: 삶, 그리고 그 너머 (Life and Beyond)",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286841_260311_133855.png",
@@ -13500,24 +13220,6 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286801_202603111041153860.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF286742",
-    "title": "제206회 국립합창단 정기연주회: 어느 봄날의 꿈",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286742_260310_104549.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "예술의전당 [서울] (콘서트홀)",
-    "venueId": "FC000001",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286742",
-    "genre": "서양음악(클래식)",
-    "price": "R석 70,000원\nS석 50,000원\nA석 30,000원",
-    "time": "화요일(19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286742_202603101045491780.jpg"
     ]
   },
   {
@@ -13594,24 +13296,6 @@
     ]
   },
   {
-    "id": "kopis_PF286555",
-    "title": "사랑의 가능성, 2%",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286555_260309_124733.jpg",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "스페이스한강 (스페이스한강)",
-    "venueId": "FC003254",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286555",
-    "genre": "대중음악",
-    "price": "전석 33,000원",
-    "time": "화요일(20:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286555_202603091247333140.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF286542",
     "title": "제200회 창원시립합창단 정기연주회: 모차르트 탄생 270주년 기념 오페라 갈라콘서트 [창원]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286542_260309_113506.jpg",
@@ -13627,25 +13311,6 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286542_202603091135065200.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF286531",
-    "title": "제7회 동초제 판소리 감상회 정기공연: 춘향가",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286531_260309_111223.jpg",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "국립국악원 (풍류사랑방)",
-    "venueId": "FC000009",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286531",
-    "genre": "한국음악(국악)",
-    "price": "전석 20,000원",
-    "time": "화요일(16:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286531_202603091112238631.jpg",
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286531_202603091112238590.jpg"
     ]
   },
   {
@@ -13682,43 +13347,6 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286425_202603061036543770.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF286386",
-    "title": "LIVE in SETi vol.79",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286386_260305_132900.png",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "세티 라이브홀 (SETI LIVE HALL) (세티 라이브홀 (SETI LIVE HALL) )",
-    "venueId": "FC004237",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286386",
-    "genre": "대중음악",
-    "price": "현장판매 25,000원\n사전예약 20,000원",
-    "time": "화요일(18:50)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286386_202603050129009981.png",
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286386_202603050129009780.png"
-    ]
-  },
-  {
-    "id": "kopis_PF286379",
-    "title": "이소영 크리틱뮤지킹 5. 작곡가 초청시리즈, 이신우: 성스러운 봄",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286379_260305_130913.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "예술의전당 [서울] (인춘아트홀)",
-    "venueId": "FC000001",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286379",
-    "genre": "서양음악(클래식)",
-    "price": "전석 30,000원",
-    "time": "화요일(19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286379_202603050109132190.jpg"
     ]
   },
   {
@@ -14003,24 +13631,6 @@
     ]
   },
   {
-    "id": "kopis_PF285887",
-    "title": "아트 온 스크린, 엘렌 그리모: 숲의 땅과 그 저편 (영상화) [울산]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285887_260226_133012.jpg",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "울산중구문화의전당 (함월홀 (2층) )",
-    "venueId": "FC001328",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285887",
-    "genre": "서양음악(클래식)",
-    "price": "전석무료",
-    "time": "화요일(19:30)",
-    "region": "울산광역시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285887_202602260129230550.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF285880",
     "title": "롤링 31주년 기념공연, 김늑 단독 콘서트: 우리는 어디로 가는가",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285880_260226_131444.jpg",
@@ -14095,24 +13705,6 @@
     ]
   },
   {
-    "id": "kopis_PF285363",
-    "title": "아가페컬처광주 창립기념음악회 [광주]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285363_260219_152448.jpg",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "광주 예술의 전당 (대극장)",
-    "venueId": "FC000233",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285363",
-    "genre": "서양음악(클래식)",
-    "price": "R석 100,000원\nS석 80,000원\nA석 50,000원",
-    "time": "화요일(19:30)",
-    "region": "광주광역시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285363_202602190324481720.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF285334",
     "title": "김시라의 품바: Original [밀양]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285334_260219_140324.jpg",
@@ -14128,24 +13720,6 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285334_202602190203247400.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF285316",
-    "title": "이현지 바이올린 독주회",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285316_260219_130612.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "금호아트홀 연세 (금호아트홀 연세)",
-    "venueId": "FC001556",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285316",
-    "genre": "서양음악(클래식)",
-    "price": "전석 20,000원",
-    "time": "화요일(19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285316_202602190106123480.jpg"
     ]
   },
   {
@@ -14428,24 +14002,6 @@
     ]
   },
   {
-    "id": "kopis_PF283466",
-    "title": "사카리 오라모 & BBC 심포니 오케스트라 with 손열음 [부산]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF283466_260119_143647.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "부산콘서트홀 (콘서트홀)",
-    "venueId": "FC004296",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF283466",
-    "genre": "서양음악(클래식)",
-    "price": "VIP석 220,000원\nR석 190,000원\nS석 160,000원\nA석 130,000원\nB석 100,000원\nC석 50,000원\n시야제한석 R석 112,000원\n시야제한석 A석 91,000원\n시야제한석 B석 70,000원\n시야제한석 C석 35,000원",
-    "time": "화요일(19:30)",
-    "region": "부산광역시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF283466_202601190236474680.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF282757",
     "title": "윈튼 마살리스 & 재즈 앳 링컨센터 오케스트라 [서울 강서]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF282757_260122_162434.jpg",
@@ -14559,24 +14115,6 @@
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285809_202602250500432312.jpg",
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285809_202602250500431921.jpg",
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285809_202602250500431710.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF285689",
-    "title": "제5회 더파란 연극제: 오늘의 내일, 내일의 어제 [대구]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285689_260224_124703.gif",
-    "date": "2026.03.24 ~ 2026.03.24",
-    "venue": "소극장 길 (소극장 길)",
-    "venueId": "FC001553",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285689",
-    "genre": "연극",
-    "price": "전석 30,000원",
-    "time": "화요일(16:00,19:30)",
-    "region": "대구광역시",
-    "source": "kopis",
-    "isFestival": true,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285689_202602241247035820.jpg"
     ]
   },
   {
@@ -48124,6 +47662,81 @@
     ]
   },
   {
+    "id": "kopis_PF286271",
+    "title": "온가족이 함께하는 대구한국일보 孝콘서트: 신성 & 배아현 孝콘서트 [대구]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286271_260304_141334.gif",
+    "date": "2026.05.09 ~ 2026.05.09",
+    "venue": "엑스코(exco) (컨벤션홀 (5층))",
+    "venueId": "FC001366",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286271",
+    "genre": "대중음악",
+    "price": "VIP석 132,000원\nR석 110,000원\nS석 99,000원",
+    "time": "토요일(15:00,19:00)",
+    "region": "대구광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286271_202603040213349700.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF285063",
+    "title": "아프스프링 대구 페스티벌, DAC 탱고 앙상블: Milonga de D [대구]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285063_260212_130838.gif",
+    "date": "2026.04.23 ~ 2026.04.23",
+    "venue": "대구문화예술회관 (비슬홀)",
+    "venueId": "FC000191",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285063",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "목요일(19:30)",
+    "region": "대구광역시",
+    "source": "kopis",
+    "isFestival": true,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285063_202604030422317910.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290064",
+    "title": "김민지 피아노 독주회",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290064_260424_123445.gif",
+    "date": "2026.04.24 ~ 2026.04.24",
+    "venue": "예술의전당 [서울] (인춘아트홀)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290064",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290064_202604241234450351.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290064_202604241234450260.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290059",
+    "title": "김대욱 트럼펫 독주회",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290059_260424_115243.gif",
+    "date": "2026.04.24 ~ 2026.04.24",
+    "venue": "영산아트홀 (영산아트홀)",
+    "venueId": "FC000384",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290059",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290059_202604241152432962.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290059_202604241152432901.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290059_202604241152432840.jpg"
+    ]
+  },
+  {
     "id": "kopis_PF289980",
     "title": "싸움터의 산책 [부산]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF289980_260423_111913.gif",
@@ -52694,7 +52307,7 @@
     "id": "kopis_PF278194",
     "title": "남주를 부탁해",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF278194_251105_103707.gif",
-    "date": "2025.11.15 ~ 2026.05.02",
+    "date": "2025.11.15 ~ 2026.05.31",
     "venue": "스케치홀 (구.소극장 선물 1관) (스케치홀 (구.소극장 선물 1관) )",
     "venueId": "FC003462",
     "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF278194",
@@ -54424,6 +54037,1100 @@
     ]
   },
   {
+    "id": "kopis_PF290115",
+    "title": "히스테릭 케이크",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290115_260424_153753.png",
+    "date": "2026.05.12 ~ 2026.05.17",
+    "venue": "탈영역우정국 (탈영역우정국)",
+    "venueId": "FC002215",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290115",
+    "genre": "연극",
+    "price": "전석 10,000원",
+    "time": "화요일 ~ 금요일(19:30), 토요일(15:00,19:30), 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290115_202604240337537670.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290112",
+    "title": "회색공기가 피어오르는 곳 [대학로]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290112_260424_152128.gif",
+    "date": "2026.05.14 ~ 2026.05.24",
+    "venue": "소극장 플랫폼74 (소극장 플랫폼74)",
+    "venueId": "FC002677",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290112",
+    "genre": "연극",
+    "price": "전석 28,000원",
+    "time": "목요일 ~ 금요일(19:30), 토요일 ~ 일요일(13:30,19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290112_202604240321286283.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290112_202604240321286062.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290112_202604240321285961.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290112_202604240321285800.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290111",
+    "title": "고시원 사람들 [대학로]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290111_260424_151824.jpg",
+    "date": "2026.05.14 ~ 2026.05.24",
+    "venue": "JS아트홀 (구. 고스트씨어터 구.다소니씨어터) (JS아트홀 (구. 고스트씨어터 구.다소니씨어터) )",
+    "venueId": "FC001859",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290111",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "월요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290111_202604240318248720.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290109",
+    "title": "드오 콘서트: The Origin &",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290109_260424_150610.gif",
+    "date": "2026.07.08 ~ 2026.07.08",
+    "venue": "예술의전당 [서울] (인춘아트홀)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290109",
+    "genre": "복합",
+    "price": "전석 30,000원",
+    "time": "수요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[프로그램]\n\n신혜린 – 탄\n\nClaude Debussy – Clair de lune (De O Cover)\n\n신혜린 – 달무리\n\n김지후 – insolate\n\n신혜린 – 무상의 파동\n\n김지후 – 음의 기원\n\n신혜린 – 푸름에 놀량 (재연)\n\n신혜린 – 초록\n\n김지후 – 불티\n\n김지후 – 애&\n\n※ Debussy ‘Clair de lune’를 제외한 전곡 드오 창작곡",
+    "description": "[프로그램]\n\n신혜린 – 탄\n\nClaude Debussy – Clair de lune (De O Cover)\n\n신혜린 – 달무리\n\n김지후 – insolate\n\n신혜린 – 무상의 파동\n\n김지후 – 음의 기원\n\n신혜린 – 푸름에 놀량 (재연)\n\n신혜린 – 초록\n\n김지후 – 불티\n\n김지후 – 애&\n\n※ Debussy ‘Clair de lune’를 제외한 전곡 드오 창작곡",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290109_202604240306103910.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290106",
+    "title": "위험한 사람들: 보잉보잉 10년 후 [대학로]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290106_260424_145556.gif",
+    "date": "2026.06.05 ~ 2026.07.26",
+    "venue": "대학로 스타릿홀 (공연장)",
+    "venueId": "FC004589",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290106",
+    "genre": "연극",
+    "price": "전석 50,000원",
+    "time": "수요일 ~ 금요일(17:00), 토요일(14:00,17:00), 일요일(15:30), HOL(14:00,17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290106_202604240255568320.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290104",
+    "title": "제2회 앙상블코르부스코락스 정기연주회: My Spring [수원]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290104_260424_145345.png",
+    "date": "2026.04.25 ~ 2026.04.25",
+    "venue": "에보니홀 (에보니홀)",
+    "venueId": "FC002087",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290104",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "토요일(17:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290104_202604240253451413.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290104_202604240253451362.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290104_202604240253451141.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290104_202604240253451070.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290103",
+    "title": "제6회 앙상블 보아즈 정기연주회: NO. 6 [대구]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290103_260424_144825.gif",
+    "date": "2026.05.08 ~ 2026.05.08",
+    "venue": "수성아트피아 (소극장 (소공연장) )",
+    "venueId": "FC000204",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290103",
+    "genre": "서양음악(클래식)",
+    "price": "전석 10,000원",
+    "time": "금요일(19:00)",
+    "region": "대구광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290103_202604240248258182.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290103_202604240248258131.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290103_202604240248258090.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290101",
+    "title": "서빛마루문예회관 기획공연 무대공감 콘서트 #1: 5월, 노래로 이어지다! [광주]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290101_260424_143704.jpg",
+    "date": "2026.05.16 ~ 2026.05.16",
+    "venue": "서빛마루문화예술회관 (서빛마루문화예술회관)",
+    "venueId": "FC003465",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290101",
+    "genre": "서양음악(클래식)",
+    "price": "전석무료",
+    "time": "토요일(15:00)",
+    "region": "광주광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290101_202604240237048850.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290100",
+    "title": "제52회 사단법인 고양필하모닉오케스트라 정기연주회 [고양]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290100_260424_143704.jpg",
+    "date": "2026.06.12 ~ 2026.06.12",
+    "venue": "고양아람누리 (아람음악당)",
+    "venueId": "FC000127",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290100",
+    "genre": "서양음악(클래식)",
+    "price": "VIP석 70,000원\nR석 50,000원\nS석 30,000원",
+    "time": "금요일(19:30)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290100_202604240237042040.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290099",
+    "title": "누구나 클래식 with KBS교향악단",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290099_260424_143306.png",
+    "date": "2026.05.19 ~ 2026.05.19",
+    "venue": "세종문화회관 (세종대극장)",
+    "venueId": "FC000020",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290099",
+    "genre": "서양음악(클래식)",
+    "price": "관람료 선택제 1,000원\n관람료 선택제 3,000원\n관람료 선택제 5,000원\n관람료 선택제 10,000원",
+    "time": "화요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290099_202604240233066931.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290099_202604240233066520.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290098",
+    "title": "I AM 피노키오 [인천]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290098_260424_142957.jpg",
+    "date": "2026.05.16 ~ 2026.05.16",
+    "venue": "학산소극장 (학산소극장)",
+    "venueId": "FC000300",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290098",
+    "genre": "연극",
+    "price": "전석 10,000원",
+    "time": "토요일(11:00,14:00)",
+    "region": "인천광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290098_202604240229577582.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290098_202604240229577521.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290098_202604240229577460.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290097",
+    "title": "Awesome Stage: N.Flying [부산]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290097_260424_142840.jpg",
+    "date": "2026.06.06 ~ 2026.06.07",
+    "venue": "벡스코 (BEXCO) (오디토리움)",
+    "venueId": "FC001345",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290097",
+    "genre": "대중음악",
+    "price": "R석 132,000원\nS석 121,000원\nA석 110,000원",
+    "time": "토요일(17:00), 일요일(16:00)",
+    "region": "부산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290097_202604240228402520.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290096",
+    "title": "박노훈 피아노 독주회",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290096_260424_142047.gif",
+    "date": "2026.06.07 ~ 2026.06.07",
+    "venue": "금호아트홀 연세 (금호아트홀 연세)",
+    "venueId": "FC001556",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290096",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290096_202604240220479210.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290095",
+    "title": "김동현 바이올린 리사이틀",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290095_260424_141908.gif",
+    "date": "2026.07.16 ~ 2026.07.16",
+    "venue": "예술의전당 [서울] (IBK챔버홀)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290095",
+    "genre": "서양음악(클래식)",
+    "price": "R석 50,000원\nS석 30,000원\nA석 20,000원",
+    "time": "목요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290095_202604240219082600.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290094",
+    "title": "은혜로운 찬양으로 위로를 전화는 고정민 토요음악회",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290094_260424_141239.png",
+    "date": "2026.05.09 ~ 2026.05.09",
+    "venue": "영락교회 (선교관)",
+    "venueId": "FC001878",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290094",
+    "genre": "대중음악",
+    "price": "전석무료",
+    "time": "토요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[공연소개]\n\n지친 일상 속에서 잠시 멈춰 서고 싶은 토요일,\n\n가수 고정민의 따뜻한 목소리로 전하는 위로의 시간을 준비했습니다.\n\n은혜로운 찬양과 진심을 담은 이야기로 마음을 어루만지는 특별한 순간을 선물합니다.\n\n가족과 친구, 사랑하는 사람과 함께 편안한 쉼과 감동을 느껴보세요.",
+    "description": "[공연소개]\n\n지친 일상 속에서 잠시 멈춰 서고 싶은 토요일,\n\n가수 고정민의 따뜻한 목소리로 전하는 위로의 시간을 준비했습니다.\n\n은혜로운 찬양과 진심을 담은 이야기로 마음을 어루만지는 특별한 순간을 선물합니다.\n\n가족과 친구, 사랑하는 사람과 함께 편안한 쉼과 감동을 느껴보세요.",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290094_202604240212399890.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290093",
+    "title": "목요예술무대 Ⅰ. 우리동네 명작극장, 파우스트 엔딩 (영상화)",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290093_260424_141239.jpg",
+    "date": "2026.06.25 ~ 2026.06.25",
+    "venue": "강동아트센터 (소극장 드림)",
+    "venueId": "FC000028",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290093",
+    "genre": "연극",
+    "price": "전석무료",
+    "time": "목요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[공연소개]\n\n순간아 멈춰라, 너는 아름답구나.\n\n죽음은 망각한 채로 더 많은 것을 욕심내고, 파괴하고, 욕망하는 것. 그리하여 결국 계속해서 앞으로 나가는 것을 멈추지 않는 것. 그것이 우리이며 파우스트이다. 인류의 역사, 철학, 종교 등을 대변하는 깊이를 보여주며 고전 중의 고전으로 여겨지는 괴테의 ‘파우스트’가 <파우스트 엔딩>으로 태어난다. 다시는 볼 수 없을, 이 시대의 파우스트가 선택하는 새로운 결말을 맞이한다.",
+    "description": "[공연소개]\n\n순간아 멈춰라, 너는 아름답구나.\n\n죽음은 망각한 채로 더 많은 것을 욕심내고, 파괴하고, 욕망하는 것. 그리하여 결국 계속해서 앞으로 나가는 것을 멈추지 않는 것. 그것이 우리이며 파우스트이다. 인류의 역사, 철학, 종교 등을 대변하는 깊이를 보여주며 고전 중의 고전으로 여겨지는 괴테의 ‘파우스트’가 <파우스트 엔딩>으로 태어난다. 다시는 볼 수 없을, 이 시대의 파우스트가 선택하는 새로운 결말을 맞이한다.",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290093_202604240212392971.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290093_202604240212392910.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290092",
+    "title": "인어공주 [서울 양천]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290092_260424_140514.jpg",
+    "date": "2026.07.01 ~ 2026.08.02",
+    "venue": "한국방송회관 코바코홀 (구. 브로드홀) (한국방송회관 코바코홀 (구. 브로드홀))",
+    "venueId": "FC001107",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290092",
+    "genre": "뮤지컬",
+    "price": "전석 40,000원",
+    "time": "토요일(11:00,13:00,15:00), 일요일(11:00,14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290092_202604240205145720.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290091",
+    "title": "클래식크림 듀오 리사이틀, 보야지: 프랑스",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290091_260424_140513.gif",
+    "date": "2026.06.23 ~ 2026.06.23",
+    "venue": "예술의전당 [서울] (인춘아트홀)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290091",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "화요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290091_202604240205139480.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290090",
+    "title": "클래식시리즈 2. 프랑스 오베르뉴론알프 국립 오케스트라 with 심준호",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290090_260424_140124.png",
+    "date": "2026.05.22 ~ 2026.05.22",
+    "venue": "인천문화예술회관 (대공연장)",
+    "venueId": "FC000013",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290090",
+    "genre": "서양음악(클래식)",
+    "price": "R석 70,000원\nS석 40,000원\nA석 20,000원",
+    "time": "금요일(19:30)",
+    "region": "인천광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290090_202604240201247690.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290089",
+    "title": "먼데이프로젝트 X 숲세권 MONDAY: SOOP, 택우 단독 콘서트",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290089_260424_140123.jpg",
+    "date": "2026.05.13 ~ 2026.05.13",
+    "venue": "숲세권 라이브 (숲세권 라이브)",
+    "venueId": "FC003092",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290089",
+    "genre": "대중음악",
+    "price": "전석 55,000원",
+    "time": "수요일(20:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290089_202604240201239170.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290088",
+    "title": "미녀와 야수 [부천]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290088_260424_135932.png",
+    "date": "2026.05.16 ~ 2026.05.17",
+    "venue": "현대백화점 문화홀 [중동] (현대백화점 문화홀 [중동])",
+    "venueId": "FC001824",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290088",
+    "genre": "뮤지컬",
+    "price": "전석 35,000원",
+    "time": "토요일 ~ 일요일(11:00,14:00,16:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290088_202604240159327380.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290087",
+    "title": "민속악단 기획공연: 인생, 노래로 흐르다",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290087_260424_135523.png",
+    "date": "2026.05.20 ~ 2026.05.21",
+    "venue": "국립국악원 (풍류사랑방)",
+    "venueId": "FC000009",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290087",
+    "genre": "한국음악(국악)",
+    "price": "전석 30,000원",
+    "time": "목요일 ~ 금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290087_202604240155238000.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290086",
+    "title": "천탈쌀롱, 탈춤은 어떻게 오늘이 되는가? (4월)",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290086_260424_135341.gif",
+    "date": "2026.04.28 ~ 2026.04.28",
+    "venue": "천하제일탈공작소 (천탈공간)",
+    "venueId": "FC004395",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290086",
+    "genre": "한국음악(국악)",
+    "price": "전석 20,000원",
+    "time": "화요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290086_202604240153418423.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290086_202604240153418292.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290086_202604240153418121.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290086_202604240153417940.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290085",
+    "title": "마리아 슈나이더 오케스트라 첫 내한공연",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290085_260424_135122.gif",
+    "date": "2026.07.31 ~ 2026.07.31",
+    "venue": "롯데콘서트홀 (롯데콘서트홀)",
+    "venueId": "FC001513",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290085",
+    "genre": "대중음악",
+    "price": "R석 170,000원\nS석 140,000원\nA석 110,000원\nB석 80,000원",
+    "time": "금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290085_202604240151221290.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290084",
+    "title": "시소 단독 공연: Send Love, Hurt Less [서울]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290084_260424_134924.png",
+    "date": "2026.05.31 ~ 2026.05.31",
+    "venue": "KT&G 상상마당 라이브홀 [마포] (KT&G 상상마당 라이브홀 [마포] )",
+    "venueId": "FC000328",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290084",
+    "genre": "대중음악",
+    "price": "전석 66,000원",
+    "time": "일요일(17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290084_202604240149243470.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290082",
+    "title": "시소 단독 공연: Send Love, Hurt Less [부산]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290082_260424_134444.png",
+    "date": "2026.05.23 ~ 2026.05.23",
+    "venue": "KT&G 상상마당 라이브홀 [부산] (라이브홀)",
+    "venueId": "FC002785",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290082",
+    "genre": "대중음악",
+    "price": "전석 66,000원",
+    "time": "토요일(18:00)",
+    "region": "부산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290082_202604240144443970.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290081",
+    "title": "로데아트센터 개관 2주년 기념 FRIENDS 시리즈: Clarinet & Friends",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290081_260424_134226.gif",
+    "date": "2026.05.25 ~ 2026.05.25",
+    "venue": "로데아트센터 (콘서트홀)",
+    "venueId": "FC003861",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290081",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "월요일(19:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290081_202604240142262320.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290080",
+    "title": "이영현 콘서트: 나의 노래가 필요한 너에게 - 숨 [제주]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290080_260424_134027.jpg",
+    "date": "2026.06.13 ~ 2026.06.13",
+    "venue": "한라아트홀 (대극장)",
+    "venueId": "FC000724",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290080",
+    "genre": "대중음악",
+    "price": "R석 154,000원\nS석 132,000원",
+    "time": "토요일(18:00)",
+    "region": "제주특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290080_202604240140272390.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290079",
+    "title": "제194회 수원시립합창단 정기연주회",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290079_260424_133853.png",
+    "date": "2026.05.21 ~ 2026.05.21",
+    "venue": "수원SK아트리움 (대공연장)",
+    "venueId": "FC001438",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290079",
+    "genre": "서양음악(클래식)",
+    "price": "R석 20,000원\nS석 10,000원",
+    "time": "목요일(19:30)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290079_202604240138535242.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290079_202604240138535101.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290079_202604240138535020.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290078",
+    "title": "불세출 사라져가는 것에 대하여 시리즈 part.2, 밤쩌: 동해안 오구굿의 장단을 국악기로 풀어내다 [대전]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290078_260424_133423.jpg",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "대전시립연정국악원 (작은마당)",
+    "venueId": "FC001415",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290078",
+    "genre": "한국음악(국악)",
+    "price": "전석 10,000원",
+    "time": "금요일(19:30)",
+    "region": "대전광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290078_202604240134231960.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290077",
+    "title": "라 트라비아타 & 루치아 디 람메르무어: 두 여인의 초상 [대구]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290077_260424_133422.jpg",
+    "date": "2026.06.02 ~ 2026.06.02",
+    "venue": "수성아트피아 (대극장 (대공연장) )",
+    "venueId": "FC000204",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290077",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "화요일(19:30)",
+    "region": "대구광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290077_202604240134225004.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290077_202604240134224933.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290077_202604240134224872.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290077_202604240134224801.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290077_202604240134224710.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290076",
+    "title": "송휘석 이영주의 Classy Classic [성남]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290076_260424_132335.gif",
+    "date": "2026.05.07 ~ 2026.05.07",
+    "venue": "성남아트센터 (앙상블씨어터)",
+    "venueId": "FC000016",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290076",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "목요일(19:30)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[Program]\n\nE. Grieg                     Peer Gynt Suite for Four Hands No.1, 3, 4  (11 min.)\n\nJ. Brahms                Hungarian Dances for Four Hands No. 1, 4, 5 (10 min.) \n\nW. Lutoslawski      Paganini Variations for Two Pianos (6 min.)\n\n                 \n                      INTERMISSION  \n\nA. Dvorak                Slavonic Dances for Four Hands op. 72-2, op. 46-8 (10 min.)\n\nA. Piazolla               Libertango for Two Pianos (7 min.)\n\nP. Tchaikovsky      The Nutcracker for Two Pianos No.1, 2, 3, 8 (13 min.)",
+    "description": "[Program]\n\nE. Grieg                     Peer Gynt Suite for Four Hands No.1, 3, 4  (11 min.)\n\nJ. Brahms                Hungarian Dances for Four Hands No. 1, 4, 5 (10 min.) \n\nW. Lutoslawski      Paganini Variations for Two Pianos (6 min.)\n\n                 \n                      INTERMISSION  \n\nA. Dvorak                Slavonic Dances for Four Hands op. 72-2, op. 46-8 (10 min.)\n\nA. Piazolla               Libertango for Two Pianos (7 min.)\n\nP. Tchaikovsky      The Nutcracker for Two Pianos No.1, 2, 3, 8 (13 min.)",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290076_202604240126013550.gif",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290076_202604240123356140.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290074",
+    "title": "소프라노 서보란 독창회",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290074_260424_131604.gif",
+    "date": "2026.06.03 ~ 2026.06.03",
+    "venue": "금호아트홀 연세 (금호아트홀 연세)",
+    "venueId": "FC001556",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290074",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "수요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[Program]\n\n[Italian Song]\n\nS. Donaudy (1879-1925)\nFreschi luoghi, prati aulenti\nO del mio amato ben\nVorrei poterti odiare\n\n[German Song]\n\nG. Mahler (1860-1911)\n“Rückert-Lieder” 중\nIch atmet' einen linden Duft\nLiebst du um Schönheit\nIch bin der Welt abhanden gekommen\n\n[Czech Song]\n\nA. Dvorák (1841-1904)\nM?sí?ku na nebi hlubokém\nfrom Opera \"Rusalka\"\n\nIntermission\n\n[Britsh art song]\n\nR. Quilter (1877-1953)\n“3 Shakespeare songs” Op.6\nCome away, death\nO mistress mine\nBlow, blow, thou winter wind\n\n[French song]\n\nH. Berlioz (1803-1869)\n“Les Nuits d'été” 중\nLe spectre de la rose\nAbsence\nL'île inconnue\n\n[Spanish song]\n\nF. Obradors (1897-1945)\nCon amores, la mi madre\nDos cantares populares\nEl vito",
+    "description": "[Program]\n\n[Italian Song]\n\nS. Donaudy (1879-1925)\nFreschi luoghi, prati aulenti\nO del mio amato ben\nVorrei poterti odiare\n\n[German Song]\n\nG. Mahler (1860-1911)\n“Rückert-Lieder” 중\nIch atmet' einen linden Duft\nLiebst du um Schönheit\nIch bin der Welt abhanden gekommen\n\n[Czech Song]\n\nA. Dvorák (1841-1904)\nM?sí?ku na nebi hlubokém\nfrom Opera \"Rusalka\"\n\nIntermission\n\n[Britsh art song]\n\nR. Quilter (1877-1953)\n“3 Shakespeare songs” Op.6\nCome away, death\nO mistress mine\nBlow, blow, thou winter wind\n\n[French song]\n\nH. Berlioz (1803-1869)\n“Les Nuits d'été” 중\nLe spectre de la rose\nAbsence\nL'île inconnue\n\n[Spanish song]\n\nF. Obradors (1897-1945)\nCon amores, la mi madre\nDos cantares populares\nEl vito",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290074_202604240116047980.gif"
+    ]
+  },
+  {
+    "id": "kopis_PF290073",
+    "title": "라움 마티네 콘서트, Guitarra Elegante: 여섯 줄이 그리는 우아한 선율 (5월)",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290073_260424_131603.gif",
+    "date": "2026.05.26 ~ 2026.05.26",
+    "venue": "소셜베뉴 라움 (체임버홀)",
+    "venueId": "FC001705",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290073",
+    "genre": "서양음악(클래식)",
+    "price": "전석 150,000원",
+    "time": "화요일(11:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290073_202604240116040241.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290073_202604240116040140.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290072",
+    "title": "세 번째 전쟁 [광주]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290072_260424_131156.jpg",
+    "date": "2026.05.29 ~ 2026.05.30",
+    "venue": "국립아시아문화전당 (극장1)",
+    "venueId": "FC001270",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290072",
+    "genre": "서양음악(클래식)",
+    "price": "R석 40,000원\nS석 30,000원\nA석 20,000원",
+    "time": "금요일(19:30), 토요일(14:00)",
+    "region": "광주광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290072_202604240111567580.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290070",
+    "title": "다른 사막 도시들 [대학로]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290070_260424_130608.gif",
+    "date": "2026.05.22 ~ 2026.05.24",
+    "venue": "연우소극장 (연우소극장)",
+    "venueId": "FC000526",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290070",
+    "genre": "연극",
+    "price": "전석 15,000원",
+    "time": "금요일(19:30), 토요일 ~ 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290070_202604240106085410.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290067",
+    "title": "김효린 정규 앨범 발매 단독 콘서트: See You, Evergreen",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290067_260424_124804.jpg",
+    "date": "2026.05.30 ~ 2026.05.30",
+    "venue": "Vel.R 벨르 (구. 벨로주 [홍대]) (Vel.R 벨르 (구. 벨로주 [홍대]))",
+    "venueId": "FC002035",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290067",
+    "genre": "대중음악",
+    "price": "전석 55,000원",
+    "time": "토요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290067_202604241248043870.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290066",
+    "title": "G삼선 50회 특별 기념 공연, 끝날때까지는 끝난게 아니다!: 무한리필의 꿈",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290066_260424_124530.jpg",
+    "date": "2026.05.22 ~ 2026.05.22",
+    "venue": "BUNKER1 (벙커1) (BUNKER1 (벙커1))",
+    "venueId": "FC004857",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290066",
+    "genre": "대중음악",
+    "price": "사전예약 55,000원\n현장판매 60,000원",
+    "time": "금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290066_202604241245306520.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290063",
+    "title": "신예의 밤, 피아니스트 명일호 (5월)",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290063_260424_122711.gif",
+    "date": "2026.05.17 ~ 2026.05.17",
+    "venue": "갤러리 디 아르테 청담 (공연장 (B1) )",
+    "venueId": "FC003951",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290063",
+    "genre": "서양음악(클래식)",
+    "price": "전석 10,000원",
+    "time": "일요일(20:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290063_202604241227117621.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290063_202604241227117560.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290062",
+    "title": "국립민속국악원 어린이날 기획공연: 별이와 무지개다리 [남원]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290062_260424_122031.jpg",
+    "date": "2026.05.05 ~ 2026.05.05",
+    "venue": "국립민속국악원 (예원당)",
+    "venueId": "FC001316",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290062",
+    "genre": "뮤지컬",
+    "price": "전석무료",
+    "time": "화요일(15:00)",
+    "region": "전북특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290062_202604241220315030.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290061",
+    "title": "DJR: BACK ON STAGE [서울 (앵콜) ]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290061_260424_121203.jpg",
+    "date": "2026.05.09 ~ 2026.05.09",
+    "venue": "H-스테이지 (H-스테이지)",
+    "venueId": "FC003003",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290061",
+    "genre": "대중음악",
+    "price": "전석 77,000원",
+    "time": "토요일(14:00,18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290061_202604241212033030.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290060",
+    "title": "1457, 소년 잠들다 [의정부]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290060_260424_120402.gif",
+    "date": "2026.05.16 ~ 2026.05.16",
+    "venue": "의정부예술의전당 (대극장)",
+    "venueId": "FC000019",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290060",
+    "genre": "뮤지컬",
+    "price": "전석 20,000원",
+    "time": "토요일(16:00,19:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290060_202604241204024423.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290060_202604241204024352.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290060_202604241204024311.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290060_202604241204024240.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290055",
+    "title": "곁에 두는 음악 Series 9. 곁에 두는 한국 가곡 콘서트: 노래로 건너는 계절",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290055_260424_113248.jpg",
+    "date": "2026.05.23 ~ 2026.05.23",
+    "venue": "음악의집 (음악의집)",
+    "venueId": "FC004816",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290055",
+    "genre": "서양음악(클래식)",
+    "price": "전석 25,000원",
+    "time": "토요일(16:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290055_202604241132488392.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290055_202604241132488281.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290055_202604241132488230.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290054",
+    "title": "파랑새 [예산]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290054_260424_112116.gif",
+    "date": "2026.05.09 ~ 2026.05.09",
+    "venue": "충남도청 문예회관 (충남도청 문예회관)",
+    "venueId": "FC001536",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290054",
+    "genre": "뮤지컬",
+    "price": "전석 10,000원",
+    "time": "토요일(14:00)",
+    "region": "충청남도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290054_202604241121166930.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290053",
+    "title": "전철 타고 온 붓다 [대학로]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290053_260424_111839.gif",
+    "date": "2026.05.16 ~ 2026.05.25",
+    "venue": "한예극장 (한예극장)",
+    "venueId": "FC003249",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290053",
+    "genre": "연극",
+    "price": "VIP석 50,000원\nR석 40,000원\nS석 30,000원",
+    "time": "월요일 ~ 금요일(19:30), 토요일 ~ 일요일(15:00,18:00), HOL(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290053_202604241118393990.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290052",
+    "title": "강릉시립합창단 특별기획연주: 그물에 걸리지 않는 바람처럼 [강릉]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290052_260424_111556.jpg",
+    "date": "2026.05.22 ~ 2026.05.23",
+    "venue": "강릉아트센터 (구. 강릉문화예술관) (사임당홀 (대공연장) )",
+    "venueId": "FC001787",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290052",
+    "genre": "서양음악(클래식)",
+    "price": "R석 20,000원\nS석 10,000원",
+    "time": "금요일(19:30), 토요일(16:00)",
+    "region": "강원특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290052_202604241115560651.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290052_202604241115560580.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290051",
+    "title": "사랑해 엄마 [제주]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290051_260424_110907.jpg",
+    "date": "2026.05.16 ~ 2026.05.16",
+    "venue": "서귀포예술의전당 (대극장)",
+    "venueId": "FC001231",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290051",
+    "genre": "연극",
+    "price": "R석 30,000원\nA석 20,000원\nB석 10,000원",
+    "time": "토요일(13:00,17:00)",
+    "region": "제주특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290051_202604241109071761.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290051_202604241109071720.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290050",
+    "title": "갈매기 과정공유회",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290050_260424_110643.jpeg",
+    "date": "2026.05.01 ~ 2026.05.02",
+    "venue": "서울문화재단 대학로극장 쿼드 (예술청) (렉처룸(아고라))",
+    "venueId": "FC003018",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290050",
+    "genre": "연극",
+    "price": "전석무료",
+    "time": "금요일(19:00), 토요일(14:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290050_202604241106436410.jpeg"
+    ]
+  },
+  {
+    "id": "kopis_PF290048",
+    "title": "광주예술의전당 기획공연, 그랜드스테이지: 슈퍼 클래식 몬스터",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290048_260424_105737.jpg",
+    "date": "2026.05.24 ~ 2026.05.24",
+    "venue": "광주 예술의 전당 (대극장)",
+    "venueId": "FC000233",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290048",
+    "genre": "서양음악(클래식)",
+    "price": "R석 50,000원\nS석 40,000원\nA석 30,000원",
+    "time": "일요일(15:00)",
+    "region": "광주광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290048_202604241057375040.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290047",
+    "title": "아트리움 클래식 시리즈, 임선혜 & 이동규 Love Duet",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290047_260424_105736.gif",
+    "date": "2026.06.27 ~ 2026.06.27",
+    "venue": "성남아트리움 (구. 성남시민회관) (대극장)",
+    "venueId": "FC001217",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290047",
+    "genre": "서양음악(클래식)",
+    "price": "R석 60,000원\nS석 40,000원\n시야제한석 20,000원",
+    "time": "토요일(17:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290047_202604241057367920.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290044",
+    "title": "긴긴밤 [대학로]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290044_260424_104734.gif",
+    "date": "2026.05.15 ~ 2026.05.24",
+    "venue": "업스테이지 (UP Stage) (업스테이지 (UP Stage) )",
+    "venueId": "FC002072",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290044",
+    "genre": "뮤지컬",
+    "price": "전석 20,000원",
+    "time": "금요일(20:00), 토요일(12:30,16:00,19:30), 일요일(14:00,18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290044_202604241047343840.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290043",
+    "title": "이상한 나라의 앨리스: 완다랜드 [울산]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290043_260424_104040.jpg",
+    "date": "2026.05.05 ~ 2026.05.05",
+    "venue": "울산광역시학생교육문화회관 (대공연장(소원홀))",
+    "venueId": "FC003382",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290043",
+    "genre": "뮤지컬",
+    "price": "전석무료",
+    "time": "화요일(11:00,16:00)",
+    "region": "울산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[공연소개]\n\n첨단 가상기술과 가상환경과 나안 홀로그램, 인터랙티브 가상 배우 시스템을 결합해 ‘눈앞에서 살아 움직이는 동화’를 구현한 초대형 버라이어티 가족뮤지컬입니다. 루이스 캐럴 원작을 현대적으로 재해석하여 서커스, 아크로바틱, 오케스트라, 탭댄스 등 다양한 장르의 예술을 통합한 영화적 무대미학을 선보입니다. 앨리스가 환상 세계에서 성장과 자아 발견을 이루는 이야기를 통해 교육적 메시지와 시각적 스펙터클을 동시에 담아낸 작품입니다.",
+    "description": "[공연소개]\n\n첨단 가상기술과 가상환경과 나안 홀로그램, 인터랙티브 가상 배우 시스템을 결합해 ‘눈앞에서 살아 움직이는 동화’를 구현한 초대형 버라이어티 가족뮤지컬입니다. 루이스 캐럴 원작을 현대적으로 재해석하여 서커스, 아크로바틱, 오케스트라, 탭댄스 등 다양한 장르의 예술을 통합한 영화적 무대미학을 선보입니다. 앨리스가 환상 세계에서 성장과 자아 발견을 이루는 이야기를 통해 교육적 메시지와 시각적 스펙터클을 동시에 담아낸 작품입니다.",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290043_202604241040409370.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290042",
+    "title": "천안어린이꿈누리터 어린이날 기획행사: 폴짝폴짝! 꿈 속 서커스 [천안]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290042_260424_103919.png",
+    "date": "2026.05.05 ~ 2026.05.05",
+    "venue": "천안어린이꿈누리터 (구. 천안시 어린이 회관) (꿈누리대공연장)",
+    "venueId": "FC002779",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290042",
+    "genre": "서커스/마술",
+    "price": "전석무료",
+    "time": "화요일(11:00,15:00)",
+    "region": "충청남도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290042_202604241039195250.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290041",
+    "title": "TONE STUDIO LIVE: Snake Chicken Soup",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290041_260424_102709.jpg",
+    "date": "2026.05.16 ~ 2026.05.16",
+    "venue": "톤스튜디오 서울 (A ROOM)",
+    "venueId": "FC001975",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290041",
+    "genre": "대중음악",
+    "price": "전석 55,000원",
+    "time": "토요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290041_202604241027095000.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290040",
+    "title": "씨엘오페라단, 우리아빠: 아낌없이 주는 나무 [충주]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290040_260424_102439.png",
+    "date": "2026.05.23 ~ 2026.05.23",
+    "venue": "충주시문화회관 (충주시문화회관)",
+    "venueId": "FC000405",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290040",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "토요일(16:00)",
+    "region": "충청북도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[공연 소개]\n\n<창작의도>\n아빠, 아버지. 당신은 아낌없이 주는 나무입니다.\n새벽같이 집을 나서는 당신은 사랑하는 자녀가 행여나 깰까, 까치발로\n거실을 지나갑니다. 언제 어디서나 웃음을 잃지 않아야 하는 우리 아빠.\n가장이라는 무거운 짐으로 육신은 아프고 힘이 들지만 어느 누구에게도\n내색하지 않고 홀로 울었던 우리 아빠.\n이 시대를 살고 있는 모든 아빠를 응원하기 위해 이 작품을 만듭니다.\n\n\n<주제>\n사랑하지만 사랑을 표현하지 못하는 이 시대의 가족들.\n가족 간의 유대가 없어져 가는 안타까운 현실에서 집안의 가장이자 홀로\n아이들을 키우며 아낌없이 주는 나무인 아버지의 사랑을 이야기해본다.",
+    "description": "[공연 소개]\n\n<창작의도>\n아빠, 아버지. 당신은 아낌없이 주는 나무입니다.\n새벽같이 집을 나서는 당신은 사랑하는 자녀가 행여나 깰까, 까치발로\n거실을 지나갑니다. 언제 어디서나 웃음을 잃지 않아야 하는 우리 아빠.\n가장이라는 무거운 짐으로 육신은 아프고 힘이 들지만 어느 누구에게도\n내색하지 않고 홀로 울었던 우리 아빠.\n이 시대를 살고 있는 모든 아빠를 응원하기 위해 이 작품을 만듭니다.\n\n\n<주제>\n사랑하지만 사랑을 표현하지 못하는 이 시대의 가족들.\n가족 간의 유대가 없어져 가는 안타까운 현실에서 집안의 가장이자 홀로\n아이들을 키우며 아낌없이 주는 나무인 아버지의 사랑을 이야기해본다.",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290040_202604241024390390.png"
+    ]
+  },
+  {
+    "id": "kopis_PF290039",
+    "title": "샌드아트와 해설이 있는 어린이 오페라, 신데렐라의 모래이야기 [합천]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290039_260424_101827.gif",
+    "date": "2026.05.12 ~ 2026.05.12",
+    "venue": "합천군문화예술회관 (대공연장)",
+    "venueId": "FC000586",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290039",
+    "genre": "서양음악(클래식)",
+    "price": "전석 10,000원",
+    "time": "화요일(19:00)",
+    "region": "경상남도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290039_202604241018278590.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290038",
+    "title": "제2회 앙상블 모스트 정기연주회: 봄을 그리는 오중주 [울산]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290038_260424_100931.jpg",
+    "date": "2026.05.09 ~ 2026.05.09",
+    "venue": "울산문화예술회관 (소공연장)",
+    "venueId": "FC000081",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290038",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "토요일(15:00)",
+    "region": "울산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[공연소개]\n\n제2회 앙상블 모스트 정기연주회: 봄을 그리는 오중주\n\n'다섯 가지 빛깔로 그려내는 따스한 봄의 선율'\n\n싱그러운 5월, 앙상블 모스트가 두 번째 정기연주회로 여러분을 초대합니다. 플루트와 현악기, 피아노가 어우러진 풍성한 오중주로 봄의 생명력을 노래합니다. \n요한 슈트라우스부터 슈베르트의 '송어'까지, 앙상블 모스트가 선사하는 봄날의 감동적인 무대를 함께해 주세요.",
+    "description": "[공연소개]\n\n제2회 앙상블 모스트 정기연주회: 봄을 그리는 오중주\n\n'다섯 가지 빛깔로 그려내는 따스한 봄의 선율'\n\n싱그러운 5월, 앙상블 모스트가 두 번째 정기연주회로 여러분을 초대합니다. 플루트와 현악기, 피아노가 어우러진 풍성한 오중주로 봄의 생명력을 노래합니다. \n요한 슈트라우스부터 슈베르트의 '송어'까지, 앙상블 모스트가 선사하는 봄날의 감동적인 무대를 함께해 주세요.",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290038_202604241009318691.jpg",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290038_202604241009318490.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290037",
+    "title": "오즈의 마법사 [울산]",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290037_260424_100044.png",
+    "date": "2026.05.01 ~ 2026.05.25",
+    "venue": "아트홀 마당 (아트홀 마당)",
+    "venueId": "FC003387",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290037",
+    "genre": "뮤지컬",
+    "price": "전석 20,000원",
+    "time": "화요일 ~ 금요일(10:20,11:20), 토요일 ~ 일요일(12:00,14:00,16:00), HOL(12:00,14:00,16:00)",
+    "region": "울산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290037_202604241000442530.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290037_202604241003130100.png",
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290037_202604241003515350.png"
+    ]
+  },
+  {
     "id": "kopis_PF290035",
     "title": "김진욱 피아노 독주회",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290035_260423_155025.gif",
@@ -55092,7 +55799,7 @@
   {
     "id": "kopis_PF289986",
     "title": "돈키호테 [영주]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF289986_260423_113932.jpg",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF289986_260424_145607.jpg",
     "date": "2026.05.02 ~ 2026.05.02",
     "venue": "영주문화예술회관 (까치홀)",
     "venueId": "FC000050",
@@ -57501,6 +58208,26 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF289785_202604200314015750.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF289784",
+    "title": "제95회 끌로드 살롱콘서트: 현, 국경을 넘다: 이호찬, 팅슈오 창 듀오 리사이틀",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF289784_260420_151239.jpg",
+    "date": "2026.05.08 ~ 2026.05.08",
+    "venue": "끌로드아트홀 (끌로드아트홀)",
+    "venueId": "FC002105",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF289784",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "금요일(19:30)",
+    "region": "제주특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[PROGRAM]\n\nM. Ravel - Sonata for Violin and Cello, M. 73\n라벨 - 바이올린과 첼로를 위한 소나타, M. 73\n\nI. Allegro\nII. Très vif\nIII. Lent\nIV. Vif, avec entrain\n\n\n\nR. Glière - 8 Pieces for Violin and Cello, Op. 39\n글리에르 - 바이올린과 첼로를 위한 8개의 작품, Op. 39\n\nI. Prelude\nII. Gavotte\nIII. Berceuse\nIV. Canzonetta\nV. Intermezzo\nVI. Impromptu\nVII. Scherzo\nVIII. Etude\n\n\nINTERMISSION\n\n\nZ. Kodaly - Duo for Violin and Cello, Op. 7\n코다이 - 바이올린과 첼로를 위한 듀오, Op. 7\n\nI. Allegro serioso, non troppo\nII. Adagio - Andante\nIII. Maestoso e largamente, ma non troppo lento - Presto",
+    "description": "[PROGRAM]\n\nM. Ravel - Sonata for Violin and Cello, M. 73\n라벨 - 바이올린과 첼로를 위한 소나타, M. 73\n\nI. Allegro\nII. Très vif\nIII. Lent\nIV. Vif, avec entrain\n\n\n\nR. Glière - 8 Pieces for Violin and Cello, Op. 39\n글리에르 - 바이올린과 첼로를 위한 8개의 작품, Op. 39\n\nI. Prelude\nII. Gavotte\nIII. Berceuse\nIV. Canzonetta\nV. Intermezzo\nVI. Impromptu\nVII. Scherzo\nVIII. Etude\n\n\nINTERMISSION\n\n\nZ. Kodaly - Duo for Violin and Cello, Op. 7\n코다이 - 바이올린과 첼로를 위한 듀오, Op. 7\n\nI. Allegro serioso, non troppo\nII. Adagio - Andante\nIII. Maestoso e largamente, ma non troppo lento - Presto",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF289784_202604200312394980.jpg"
     ]
   },
   {
@@ -61837,7 +62564,7 @@
   },
   {
     "id": "kopis_PF289407",
-    "title": "라움 마티네콘서트, 뮤지컬 하이라이트: 브로드웨이 명곡 (4월)",
+    "title": "라움 마티네 콘서트, 뮤지컬 하이라이트: 브로드웨이 명곡 (4월)",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF289407_260415_130100.gif",
     "date": "2026.04.28 ~ 2026.04.28",
     "venue": "소셜베뉴 라움 (체임버홀)",
@@ -64407,6 +65134,24 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF289169_202604131052093190.png"
+    ]
+  },
+  {
+    "id": "kopis_PF289167",
+    "title": "제19회 폴인기타앙상블 정기연주회, 재발견: 새로운 울림",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF289167_260424_174107.png",
+    "date": "2026.06.20 ~ 2026.06.20",
+    "venue": "영산아트홀 (영산아트홀)",
+    "venueId": "FC000384",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF289167",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "토요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF289167_202604240541073170.png"
     ]
   },
   {
@@ -67678,7 +68423,7 @@
   },
   {
     "id": "kopis_PF288865",
-    "title": "더 보컬 (THE VOCAL) [대구]",
+    "title": "더 보컬 [대구]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF288865_260408_100422.jpg",
     "date": "2026.06.13 ~ 2026.06.13",
     "venue": "대구보건대 인당아트홀 (대구보건대 인당아트홀)",
@@ -68098,7 +68843,7 @@
   },
   {
     "id": "kopis_PF288825",
-    "title": "더 보컬 (THE VOCAL) [서울]",
+    "title": "더 보컬 [서울]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF288825_260407_113141.jpg",
     "date": "2026.05.30 ~ 2026.05.30",
     "venue": "스카이아트홀 (스카이아트홀)",
@@ -68439,6 +69184,26 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF288803_202604071048233060.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF288802",
+    "title": "제200회 대전시립연정국악단 정기공연, 한국무용의 밤: 연록의 춤, 시간을 잇다",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF288802_260424_173622.gif",
+    "date": "2026.05.15 ~ 2026.05.15",
+    "venue": "대전시립연정국악원 (큰마당)",
+    "venueId": "FC001415",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF288802",
+    "genre": "무용(서양/한국무용)",
+    "price": "R석 30,000원\nS석 20,000원\nA석 10,000원",
+    "time": "금요일(19:30)",
+    "region": "대전광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[공연소개]\n\n봄, 그리고 인생의 푸르름을 춤추다.\n\n5월 가정의 달을 맞아 가족의 시간과 소중한 인연을 되새기며,\n대전시립연정국악단 제200회 정기공연 한국무용의 밤\n[연록의 춤 – 시간을 잇다]가 펼쳐진다.\n\n궁중정재의 우아함을 담은 ‘박접무’와 ‘춘무’\n흥과 생명력을 전하는 ‘강강술래’\n희망찬 울림으로 전통의 맥을 잇는 ‘장구놀이’, ‘소고춤’까지\n다채로운 전통춤의 깊이와 아름다움을 한 무대에 담아낸다.\n\n연녹(連綠)의 푸르름처럼 가장 빛나는 순간을 그려내는 이번 공연은\n봄날의 화사함 속에서 삶과 시간의 흐름을 춤으로 풀어내며,\n관객들에게 따뜻한 공감과 여운을 전한다.\n\n곁에 있는 소중한 사람들과 함께\n우리의 삶과 자연이 이어주는 의미를 되새기는 시간\n\n가정의 달에 어울리는 품격 있는 선물로\n한국무용의 정수를 담은 특별한 무대를 선사한다.\n\n\n[프로그램]\n\nⅠ. 축(祝) - 평안을 잇다.\n 1. 궁중정재 [박접무] \n\nⅡ. 청춘(靑春) - 희망을 잇다.\n 1. 춘무 - 靑春\n 2. 푸른 꿈\n 3. 강강술래\n\nⅢ. 판(昄) - 혼을 잇다.\n 1. 무애(無碍)춤\n 2. 연희 장구놀이\n 3. 태평 소고춤\n\n※프로그램은 변경될 수 있습니다.",
+    "description": "[공연소개]\n\n봄, 그리고 인생의 푸르름을 춤추다.\n\n5월 가정의 달을 맞아 가족의 시간과 소중한 인연을 되새기며,\n대전시립연정국악단 제200회 정기공연 한국무용의 밤\n[연록의 춤 – 시간을 잇다]가 펼쳐진다.\n\n궁중정재의 우아함을 담은 ‘박접무’와 ‘춘무’\n흥과 생명력을 전하는 ‘강강술래’\n희망찬 울림으로 전통의 맥을 잇는 ‘장구놀이’, ‘소고춤’까지\n다채로운 전통춤의 깊이와 아름다움을 한 무대에 담아낸다.\n\n연녹(連綠)의 푸르름처럼 가장 빛나는 순간을 그려내는 이번 공연은\n봄날의 화사함 속에서 삶과 시간의 흐름을 춤으로 풀어내며,\n관객들에게 따뜻한 공감과 여운을 전한다.\n\n곁에 있는 소중한 사람들과 함께\n우리의 삶과 자연이 이어주는 의미를 되새기는 시간\n\n가정의 달에 어울리는 품격 있는 선물로\n한국무용의 정수를 담은 특별한 무대를 선사한다.\n\n\n[프로그램]\n\nⅠ. 축(祝) - 평안을 잇다.\n 1. 궁중정재 [박접무] \n\nⅡ. 청춘(靑春) - 희망을 잇다.\n 1. 춘무 - 靑春\n 2. 푸른 꿈\n 3. 강강술래\n\nⅢ. 판(昄) - 혼을 잇다.\n 1. 무애(無碍)춤\n 2. 연희 장구놀이\n 3. 태평 소고춤\n\n※프로그램은 변경될 수 있습니다.",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF288802_202604240536223920.jpg"
     ]
   },
   {
@@ -70585,6 +71350,24 @@
     ]
   },
   {
+    "id": "kopis_PF288575",
+    "title": "베니스의 상인",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF288575_260403_102924.gif",
+    "date": "2026.07.08 ~ 2026.08.09",
+    "venue": "국립극장 (해오름극장)",
+    "venueId": "FC000003",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF288575",
+    "genre": "연극",
+    "price": "VIP석 110,000원\nOP석 99,000원\nR석 88,000원\nS석 66,000원\nA석 44,000원",
+    "time": "화요일(19:30), 수요일(15:00), 목요일 ~ 금요일(19:30), 토요일 ~ 일요일(14:00), HOL(14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF288575_202604240531205930.jpg"
+    ]
+  },
+  {
     "id": "kopis_PF288573",
     "title": "매직키즈 서커스쇼 [창원 진해]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF288573_260403_102844.jpg",
@@ -72463,7 +73246,7 @@
   },
   {
     "id": "kopis_PF288363",
-    "title": "더 보컬 (THE VOCAL) [전주]",
+    "title": "더 보컬 [전주]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF288363_260331_124147.jpg",
     "date": "2026.05.16 ~ 2026.05.16",
     "venue": "전주교육문화회관(전북교육문화회관) (공연장)",
@@ -76282,7 +77065,7 @@
   },
   {
     "id": "kopis_PF287893",
-    "title": "더 보컬 (THE VOCAL) [청주]",
+    "title": "더 보컬 [청주]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF287893_260324_112710.jpg",
     "date": "2026.05.09 ~ 2026.05.09",
     "venue": "CJB미디어센터 (에덴아트홀)",
@@ -85290,24 +86073,6 @@
     ]
   },
   {
-    "id": "kopis_PF286271",
-    "title": "온가족이 함께하는 대구한국일보 孝콘서트: 신성 & 배아현 孝콘서트 [대구]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286271_260304_141334.gif",
-    "date": "2026.05.09 ~ 2026.05.09",
-    "venue": "엑스코(exco) (컨벤션홀 (5층))",
-    "venueId": "FC001366",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF286271",
-    "genre": "대중음악",
-    "price": "VIP석 132,000원\nR석 110,000원\nS석 99,000원",
-    "time": "토요일(15:00,19:00)",
-    "region": "대구광역시",
-    "source": "kopis",
-    "isFestival": false,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF286271_202603040213349700.jpg"
-    ]
-  },
-  {
     "id": "kopis_PF286264",
     "title": "현역가왕3 전국투어 콘서트 [수원]",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF286264_260304_135552.gif",
@@ -88964,6 +89729,26 @@
     "isFestival": false,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285109_202602120232525620.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF285107",
+    "title": "국립오페라단, 피터 그라임스",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285107_260424_174804.gif",
+    "date": "2026.06.18 ~ 2026.06.21",
+    "venue": "예술의전당 [서울] (오페라극장)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285107",
+    "genre": "서양음악(클래식)",
+    "price": "R석 150,000원\nS석 120,000원\nA석 90,000원\nB석 60,000원\nC석 40,000원\nD석 20,000원",
+    "time": "목요일 ~ 금요일(18:30), 토요일 ~ 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "synopsis": "[공연소개]\n\n그는 살인자인가, 인간 사냥에 내몰린 희생양인가\n외딴 마을에서 발생한 소년의 죽음, 스릴러 오페라의 대표작\n\n국립오페라단은 2026년 정기공연의 두 번째 작품으로 벤자민 브리튼의 오페라 〈피터 그라임스〉를 무대에 올린다. 총 3막으로 구성된 이 작품은 조지 크래브의 시집 『자치구(The Borough)』에서 영감을 받아 탄생한 오페라로, 1945년 영국 초연 이후 현대 영어 오페라를 대표하는 걸작으로 자리해왔다. 외딴 어촌 마을에서 발생한 소년의 죽음, 그리고 그를 둘러싼 끊임없는 의혹이 인간 소외의 문제와 인간 사냥에 휘말려 죽음으로 내몰리는 과정을 보여준다. 지휘는 영국의 피아니스트이자 지휘자인 알렉산더 조엘이 맡아, 브리튼 특유의 긴장감 넘치는 거친 바다의 풍경과 서늘한 긴장감을 풀어낸다. 연출은 2024년 <죽음의 도시>에서 절제된 미학과 섬세함으로 주목받은 줄리앙 샤바즈가 참여해, 폐쇄적인 공동체와 그 안에서 붕괴되어 가는 인간의 초상을 긴장감 있는 무대로 구현한다.\n\n\n[시놉시스]\n\n‘사람들은 내게 누명을 뒤집어 씌우겠죠.\n지금부터 내가 하는 증언은 모두 사실입니다.’\n\n외딴 어촌 마을. 어부 피터 그라임스는 견습 소년의 죽음과 관련해 법정에 서지만, 명확한 증거 없이 풀려난다. 소년을 고용하지 말라는 판사의 권고에도 불구하고 그는 언젠가 마을 사람들에게 인정받겠다는 집요한 집념으로 또다시 새로운 견습 소년을 맞이한다. 폭풍우가 몰아치는 밤, 소년이 벼랑에서 떨어져 죽는 사고가 발생하고 이 사건을 계기로 마을 사람들은 피터를 추적한다. 엘렌과 발스트로드 선장은 피터를 발견하지만 고립과 죄책감, 집단의 적대 속에서 피터의 정신은 급속히 붕괴된다. 그는 끝내 자신이 누구인지, 무엇을 잘못했는지조차 분간하지 못한 채 바다와 하나가 된 듯한 마지막을 선택한다.",
+    "description": "[공연소개]\n\n그는 살인자인가, 인간 사냥에 내몰린 희생양인가\n외딴 마을에서 발생한 소년의 죽음, 스릴러 오페라의 대표작\n\n국립오페라단은 2026년 정기공연의 두 번째 작품으로 벤자민 브리튼의 오페라 〈피터 그라임스〉를 무대에 올린다. 총 3막으로 구성된 이 작품은 조지 크래브의 시집 『자치구(The Borough)』에서 영감을 받아 탄생한 오페라로, 1945년 영국 초연 이후 현대 영어 오페라를 대표하는 걸작으로 자리해왔다. 외딴 어촌 마을에서 발생한 소년의 죽음, 그리고 그를 둘러싼 끊임없는 의혹이 인간 소외의 문제와 인간 사냥에 휘말려 죽음으로 내몰리는 과정을 보여준다. 지휘는 영국의 피아니스트이자 지휘자인 알렉산더 조엘이 맡아, 브리튼 특유의 긴장감 넘치는 거친 바다의 풍경과 서늘한 긴장감을 풀어낸다. 연출은 2024년 <죽음의 도시>에서 절제된 미학과 섬세함으로 주목받은 줄리앙 샤바즈가 참여해, 폐쇄적인 공동체와 그 안에서 붕괴되어 가는 인간의 초상을 긴장감 있는 무대로 구현한다.\n\n\n[시놉시스]\n\n‘사람들은 내게 누명을 뒤집어 씌우겠죠.\n지금부터 내가 하는 증언은 모두 사실입니다.’\n\n외딴 어촌 마을. 어부 피터 그라임스는 견습 소년의 죽음과 관련해 법정에 서지만, 명확한 증거 없이 풀려난다. 소년을 고용하지 말라는 판사의 권고에도 불구하고 그는 언젠가 마을 사람들에게 인정받겠다는 집요한 집념으로 또다시 새로운 견습 소년을 맞이한다. 폭풍우가 몰아치는 밤, 소년이 벼랑에서 떨어져 죽는 사고가 발생하고 이 사건을 계기로 마을 사람들은 피터를 추적한다. 엘렌과 발스트로드 선장은 피터를 발견하지만 고립과 죄책감, 집단의 적대 속에서 피터의 정신은 급속히 붕괴된다. 그는 끝내 자신이 누구인지, 무엇을 잘못했는지조차 분간하지 못한 채 바다와 하나가 된 듯한 마지막을 선택한다.",
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285107_202604240548049980.jpg"
     ]
   },
   {
@@ -94419,6 +95204,42 @@
     ]
   },
   {
+    "id": "kopis_PF290107",
+    "title": "제47회 서울연극제, 화성에서의 나날",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290107_260424_150347.gif",
+    "date": "2026.05.22 ~ 2026.05.31",
+    "venue": "대학로예술극장 (대극장)",
+    "venueId": "FC002633",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290107",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": true,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290107_202604240303470280.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF290083",
+    "title": "인천펜타포트 락 페스티벌",
+    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290083_260424_134747.gif",
+    "date": "2026.07.31 ~ 2026.08.02",
+    "venue": "송도달빛축제공원 (송도달빛축제공원)",
+    "venueId": "FC002007",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF290083",
+    "genre": "대중음악",
+    "price": "블라인드 티켓 (3일권) 168,000원",
+    "time": "금요일(11:00), 토요일 ~ 일요일(11:00)",
+    "region": "인천광역시",
+    "source": "kopis",
+    "isFestival": true,
+    "synopsisImages": [
+      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290083_202604240147476000.jpg"
+    ]
+  },
+  {
     "id": "kopis_PF290030",
     "title": "제9회 힉엣눙크! 뮤직 페스티벌, 줄리아드 교수 이소연 피아노 리사이틀",
     "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF290030_260423_151218.gif",
@@ -97466,24 +98287,6 @@
     "isFestival": true,
     "synopsisImages": [
       "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285098_202602120211236940.jpg"
-    ]
-  },
-  {
-    "id": "kopis_PF285063",
-    "title": "아프스프링 대구 페스티벌, DAC 탱고 앙상블: Milonga de D [대구]",
-    "image": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF285063_260212_130838.gif",
-    "date": "2026.04.23 ~ 2026.04.23",
-    "venue": "대구문화예술회관 (비슬홀)",
-    "venueId": "FC000191",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285063",
-    "genre": "서양음악(클래식)",
-    "price": "전석 20,000원",
-    "time": "목요일(19:30)",
-    "region": "대구광역시",
-    "source": "kopis",
-    "isFestival": true,
-    "synopsisImages": [
-      "http://www.kopis.or.kr/upload/pfmIntroImage/PF_PF285063_202604030422317910.png"
     ]
   },
   {
