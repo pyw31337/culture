@@ -36,12 +36,16 @@ export function safePerformance(data: any): Performance | null {
         date: typeof data.date === 'string' ? data.date : '날짜 미정',
         venue: typeof data.venue === 'string' ? data.venue : '정보 없음', // "venue" is critical for filtering
         image: typeof data.image === 'string' ? data.image : '', // Fallback to empty string, UI handles fallback
-        link: typeof data.link === 'string' ? data.link : '#',
+        link: typeof data.link === 'string' && data.link.trim()
+            ? data.link
+            : (typeof data.website === 'string' && data.website.trim() ? data.website : '#'),
         region: typeof data.region === 'string' ? data.region : 'etc', // Default to 'etc' if unknown
         genre: typeof data.genre === 'string' ? data.genre : 'other',
 
         // Optional safe defaults
-        description: typeof data.description === 'string' ? data.description : undefined,
+        description: typeof data.description === 'string' && data.description.trim()
+            ? data.description
+            : (data.synopsis ? String(data.synopsis) : undefined),
         discount: typeof data.discount === 'string' ? data.discount : undefined,
         originalPrice: typeof data.originalPrice === 'string' ? data.originalPrice : undefined,
         price: typeof data.price === 'string' ? data.price : undefined,
@@ -66,6 +70,9 @@ export function safePerformance(data: any): Performance | null {
         awayTeam: typeof data.awayTeam === 'string' ? data.awayTeam : undefined,
         homeTeamLogo: typeof data.homeTeamLogo === 'string' ? data.homeTeamLogo : undefined,
         awayTeamLogo: typeof data.awayTeamLogo === 'string' ? data.awayTeamLogo : undefined,
+        backupPoster: typeof data.backupPoster === 'string'
+            ? data.backupPoster
+            : (typeof data.posterUrl === 'string' ? data.posterUrl : undefined),
         posterUrl: typeof data.posterUrl === 'string' ? data.posterUrl : undefined,
         category: typeof data.category === 'string' ? data.category : undefined,
 

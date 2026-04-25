@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Performance } from '@/types';
+import type { CinemaData, VenueData } from '@/lib/performance-data';
 
 interface UsePerformanceDataProps {
     initialPerformances: Performance[];
@@ -7,8 +8,8 @@ interface UsePerformanceDataProps {
 
 export function usePerformanceData({ initialPerformances }: UsePerformanceDataProps) {
     const [allPerformances, setAllPerformances] = useState<Performance[]>(initialPerformances);
-    const [cinemas, setCinemas] = useState<any[]>([]);
-    const [venues, setVenues] = useState<Record<string, any>>({});
+    const [cinemas, setCinemas] = useState<CinemaData[]>([]);
+    const [venues, setVenues] = useState<Record<string, VenueData>>({});
     const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(false);
 
     useEffect(() => {
@@ -50,12 +51,13 @@ export function usePerformanceData({ initialPerformances }: UsePerformanceDataPr
         };
 
         const isDeepLink = typeof window !== 'undefined' && window.location.hash.startsWith('#p=');
+        const shouldPrioritizeFetch = isDeepLink || initialPerformances.length === 0;
         const timer = setTimeout(() => {
             loadAllData();
-        }, isDeepLink ? 0 : 500);
+        }, shouldPrioritizeFetch ? 0 : 500);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [initialPerformances.length]);
 
     return {
         allPerformances,

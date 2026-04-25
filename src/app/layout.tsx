@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-5GWFPEPEW5';
+const kakaoJsKey = process.env.NEXT_PUBLIC_KAKAO_JS_KEY;
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -35,13 +38,19 @@ export const metadata: Metadata = {
     description: "전국 모든 문화 정보를 한눈에 확인하세요.",
     images: [
       {
-        url: "/culture/images/og-image.jpg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 600,
         alt: "Culture Flow Preview",
       },
     ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Culture Flow",
+    description: "전국 모든 문화 정보를 한눈에 확인하세요.",
+    images: ["/images/og-image.jpg"],
   },
   icons: {
     icon: '/culture/favicon.png',
@@ -83,19 +92,23 @@ export default function RootLayout({
             `,
           }}
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        {gaMeasurementId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-            gtag('config', 'G-5GWFPEPEW5');
-          `}
-        </Script>
+                gtag('config', '${gaMeasurementId}');
+              `}
+            </Script>
+          </>
+        )}
         <ProgressBarProvider>
           <ErrorBoundary>
             {children}
@@ -103,11 +116,13 @@ export default function RootLayout({
             <ScrollToTop />
           </ErrorBoundary>
         </ProgressBarProvider>
-        <Script
-          id="kakao-map-script"
-          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0236cfffa7cfef34abacd91a6d7c73c0&autoload=false&libraries=services,clusterer"
-          strategy="afterInteractive"
-        />
+        {kakaoJsKey && (
+          <Script
+            id="kakao-map-script"
+            src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false&libraries=services,clusterer`}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

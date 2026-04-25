@@ -7,6 +7,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { getExternalContentLink } from '@/lib/performance-links';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -39,27 +40,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
     
     // Unified Booking Link Logic with Fallback for Missing Data
-    const bookingUrl = useMemo(() => {
-        let url = p.link;
-        const isMissingLink = !url || url.trim() === '';
-
-        // Case 1: Genre-specific search fallback (Movies)
-        if (p.genre === 'movie') {
-            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 상영시간표')}`;
-        } 
-        // Case 2: Platform-specific search fallback for missing links
-        else if (isMissingLink) {
-            if (p.source === 'mommom-activity' || p.source === 'mommom' || p.source === 'mommom-product') {
-                // Mommom search fallback
-                url = `https://mom-mom.net/search?q=${encodeURIComponent(p.title)}`;
-            } else {
-                // Generic Naver search fallback
-                url = `https://search.naver.com/search.naver?query=${encodeURIComponent(p.title + ' 예매')}`;
-            }
-        }
-
-        return isMobile ? toMobileUrl(url) : url;
-    }, [p.link, p.title, p.genre, p.source, isMobile]);
+    const bookingUrl = useMemo(
+        () => getExternalContentLink(p, { mobile: isMobile }),
+        [p, isMobile]
+    );
 
     const handleShare = async (e?: React.MouseEvent) => {
         if (e) e.stopPropagation();

@@ -1,13 +1,14 @@
 import PerformanceList from '@/components/PerformanceList';
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
-import { VALID_GENRE_SLUGS, SPORTS_GENRES, GENRES } from '@/lib/constants';
-import { getAllPerformances } from '@/lib/performance-data';
+import { VALID_GENRE_SLUGS, GENRES } from '@/lib/constants';
+import { getAllPerformances, getDataBuildInfo, getLastUpdatedLabel } from '@/lib/performance-data';
+import { buildGenreCounts, getAvailableGenreSlugs, getGenreCount, getGenreFilterFromSlug, isGenreAvailable } from '@/lib/genre-availability';
 
-// Map URL slugs to actual genre IDs (some differ)
-const SLUG_TO_GENRE: Record<string, string> = {
-    'theater': 'play', // URL uses 'theater', internal uses 'play'
-};
+function getGenreCounts() {
+    const buildInfo = getDataBuildInfo();
+    return buildInfo?.genreCounts ?? buildGenreCounts(getAllPerformances());
+}
 
 /*
     Helper to filter merged data set by genre.
@@ -32,7 +33,10 @@ async function getPerformances(genreFilter: string | string[] | null) {
 
 // Generate static params for all valid genre slugs
 export async function generateStaticParams() {
-    return VALID_GENRE_SLUGS.map(genre => ({
+    const genreCounts = getGenreCounts();
+    const availableSlugs = getAvailableGenreSlugs(genreCounts);
+
+    return availableSlugs.map(genre => ({
         genre: genre,
     }));
 }
@@ -43,36 +47,28 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
     const { genre } = await params;
+    const genreCounts = getGenreCounts();
 
     // Resolve Genre Logic
-    let genreFilter: string | string[];
     let genreLabel: string = genre;
 
-    // Map slug to internal ID for label lookup
-    const internalGenre = SLUG_TO_GENRE[genre] || genre;
+    const genreFilter = getGenreFilterFromSlug(genre);
+    const internalGenre = Array.isArray(genreFilter) ? genre : genreFilter;
 
     // Find label
     const matchedGenre = GENRES.find(g => g.id === internalGenre);
     if (matchedGenre) genreLabel = matchedGenre.label;
 
     // Custom Label for Sports aggregate
-    if (genre === 'sports') genreLabel = '스포츠 (전체)';
+    if (genre === 'sports') genreLabel = '스포츠';
 
-    if (!VALID_GENRE_SLUGS.includes(genre)) {
+    if (!VALID_GENRE_SLUGS.includes(genre) || !isGenreAvailable(genreCounts, genre)) {
         return {
             title: '페이지를 찾을 수 없습니다 - CultureFlow',
         };
     }
 
-    if (genre === 'sports') {
-        genreFilter = SPORTS_GENRES;
-    } else {
-        const internalGenre = SLUG_TO_GENRE[genre] || genre;
-        genreFilter = internalGenre;
-    }
-
-    const performances = await getPerformances(genreFilter);
-    const count = performances.length;
+    const count = getGenreCount(genreCounts, genre);
 
     const title = `${genreLabel} 정보 및 예매 (${count}건) | CultureFlow`;
     const description = `현재 예매/관람 가능한 ${genreLabel} 콘텐츠 ${count}개를 확인하세요. 최저가, 일정, 인기 순위를 한눈에 비교할 수 있습니다.`;
@@ -86,9 +82,9 @@ export async function generateMetadata({ params }: PageProps) {
             type: 'website',
             images: [
                 {
-                    url: '/culture/images/og-default.png', // Fallback or dynamic if possible
+                    url: '/images/og-image.jpg',
                     width: 1200,
-                    height: 630,
+                    height: 600,
                     alt: `${genreLabel} 목록`,
                 },
             ],
@@ -98,49 +94,28 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function GenrePage({ params }: PageProps) {
     const { genre } = await params;
+    const genreCounts = getGenreCounts();
+    const buildInfo = getDataBuildInfo();
 
-    if (!VALID_GENRE_SLUGS.includes(genre)) {
+    if (!VALID_GENRE_SLUGS.includes(genre) || !isGenreAvailable(genreCounts, genre)) {
         notFound();
     }
 
-    let genreFilter: string | string[];
+    const genreFilter = getGenreFilterFromSlug(genre);
     let initialGenre: string;
 
-    if (genre === 'sports') {
-        genreFilter = SPORTS_GENRES;
+    if (Array.isArray(genreFilter)) {
         initialGenre = 'all';
     } else {
-        const internalGenre = SLUG_TO_GENRE[genre] || genre;
-        genreFilter = internalGenre;
-        initialGenre = internalGenre;
+        initialGenre = genreFilter;
     }
 
     const performances = await getPerformances(genreFilter);
+    if (performances.length === 0) {
+        notFound();
+    }
 
-    // Date formatting (Same as page.tsx)
-    const now = new Date();
-    const formatter = new Intl.DateTimeFormat('ko-KR', {
-        timeZone: 'Asia/Seoul',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        weekday: 'short',
-        hour12: false
-    });
-
-    const parts = formatter.formatToParts(now);
-    const getPart = (type: string) => parts.find(p => p.type === type)?.value;
-
-    const year = getPart('year');
-    const month = getPart('month');
-    const day = getPart('day');
-    const weekday = getPart('weekday');
-    const hour = getPart('hour');
-    const minute = getPart('minute');
-
-    const lastUpdated = `${year}.${month}.${day}.(${weekday}) ${hour}:${minute} `;
+    const lastUpdated = getLastUpdatedLabel();
 
     // JSON-LD Structured Data (ItemList with Events)
     // Limit to top 20 to avoid excessive HTML size
@@ -157,7 +132,7 @@ export default async function GenrePage({ params }: PageProps) {
                 'location': {
                     '@type': 'Place',
                     'name': p.venue,
-                    'address': (p as any).address || p.venue // Fallback
+                    'address': p.address || p.venue // Fallback
                 },
                 'image': p.image,
                 'offers': {
@@ -181,6 +156,8 @@ export default async function GenrePage({ params }: PageProps) {
                     initialPerformances={performances}
                     lastUpdated={lastUpdated}
                     initialGenre={initialGenre}
+                    initialGenreCounts={genreCounts}
+                    buildInfo={buildInfo}
                     isCategoryPage={true}
                 />
             </Suspense>

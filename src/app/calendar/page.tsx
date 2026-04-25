@@ -1,7 +1,7 @@
-import { getAllPerformances } from '@/lib/performance-data';
 import CalendarView from '@/components/CalendarView';
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import { getDataBuildInfo, getLastUpdatedLabel } from '@/lib/performance-data';
 
 export const metadata: Metadata = {
     title: '달력 보기 | Culture Flow',
@@ -9,12 +9,18 @@ export const metadata: Metadata = {
 };
 
 export default async function CalendarPage() {
-    const allPerformances = getAllPerformances();
-
+    const buildInfo = getDataBuildInfo();
+    const genreCounts = buildInfo?.genreCounts ?? {};
+    const lastUpdated = getLastUpdatedLabel();
     return (
         <main className="min-h-screen bg-gray-900 light:bg-white">
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading Calendar...</div>}>
-                <CalendarView performances={allPerformances} />
+                <CalendarView
+                    performances={[]}
+                    initialGenreCounts={genreCounts}
+                    buildInfo={buildInfo}
+                    lastUpdated={lastUpdated}
+                />
             </Suspense>
         </main>
     );

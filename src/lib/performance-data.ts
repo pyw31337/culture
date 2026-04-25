@@ -1,13 +1,34 @@
+import type { Performance } from '@/types';
 import { safeArray, safePerformanceList } from '@/lib/data-safety';
+import type { DataBuildInfo, DataQualitySummary } from '@/lib/build-info';
 import { processAndMergePerformances } from '@/lib/performance-merger';
-import { transformPerformance } from '@/lib/data-transformer';
+import { transformPerformance, type RawPerformance } from '@/lib/data-transformer';
 
 import fs from 'fs';
 import path from 'path';
 
-function loadJSON(filename: string, defaultValue: any = []) {
+const SOURCE_DATA_DIR = ['src', 'data'];
+const PUBLIC_DATA_DIR = ['public', 'data'];
+
+export interface CinemaData {
+    name: string;
+    address: string;
+    lat: number;
+    lng: number;
+    brand: string;
+}
+
+export interface VenueData {
+    address?: string;
+    lat?: number;
+    lng?: number;
+    latitude?: number | string;
+    longitude?: number | string;
+}
+
+function loadJSONFrom(baseDir: string[], filename: string, defaultValue: unknown = []) {
     try {
-        const filePath = path.join(process.cwd(), 'src/data', filename);
+        const filePath = path.join(process.cwd(), ...baseDir, filename);
         if (fs.existsSync(filePath)) {
             const content = fs.readFileSync(filePath, 'utf8');
             return JSON.parse(content);
@@ -18,17 +39,63 @@ function loadJSON(filename: string, defaultValue: any = []) {
     return defaultValue;
 }
 
+function loadSourceJSON(filename: string, defaultValue: unknown = []) {
+    return loadJSONFrom(SOURCE_DATA_DIR, filename, defaultValue);
+}
+
+function loadPublicJSON(filename: string, defaultValue: unknown = null) {
+    return loadJSONFrom(PUBLIC_DATA_DIR, filename, defaultValue);
+}
+
 // Global cache to prevent Next.js from parsing massive JSON files 12,000 times during static build
-let cachedPerformances: any[] | null = null;
-let cachedVenues: any = null;
-let cachedCinemas: any = null;
+let cachedRawPerformances: Performance[] | null = null;
+let cachedPublicPerformances: Performance[] | null = null;
+let cachedBuildInfo: DataBuildInfo | null = null;
+let cachedVenues: Record<string, VenueData> | null = null;
+let cachedCinemas: CinemaData[] | null = null;
+let attemptedPublicPerformancesLoad = false;
+let attemptedBuildInfoLoad = false;
+
+function normalizeCountMap(value: unknown): Record<string, number> {
+    if (!value || typeof value !== 'object') return {};
+
+    return Object.entries(value as Record<string, unknown>).reduce<Record<string, number>>((acc, [key, entry]) => {
+        if (typeof entry === 'number' && Number.isFinite(entry)) {
+            acc[key] = entry;
+        }
+        return acc;
+    }, {});
+}
+
+function normalizeQualitySummary(value: unknown): DataQualitySummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<DataQualitySummary>;
+
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        status: candidate.status === 'warn' ? 'warn' : 'pass',
+        missingLinkCount: typeof candidate.missingLinkCount === 'number' ? candidate.missingLinkCount : 0,
+        missingDescriptionCount: typeof candidate.missingDescriptionCount === 'number' ? candidate.missingDescriptionCount : 0,
+        missingImageCount: typeof candidate.missingImageCount === 'number' ? candidate.missingImageCount : 0,
+        brokenLocalImageCount: typeof candidate.brokenLocalImageCount === 'number' ? candidate.brokenLocalImageCount : 0,
+        movieMissingLinkCount: typeof candidate.movieMissingLinkCount === 'number' ? candidate.movieMissingLinkCount : 0,
+        movieMissingDescriptionCount: typeof candidate.movieMissingDescriptionCount === 'number' ? candidate.movieMissingDescriptionCount : 0,
+        movieBrokenImageCount: typeof candidate.movieBrokenImageCount === 'number' ? candidate.movieBrokenImageCount : 0,
+        warningsByGenre: {
+            missingLinks: normalizeCountMap(candidate.warningsByGenre?.missingLinks),
+            missingDescriptions: normalizeCountMap(candidate.warningsByGenre?.missingDescriptions),
+            missingImages: normalizeCountMap(candidate.warningsByGenre?.missingImages),
+        },
+    };
+}
 
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr || dateStr.trim() === '') return true; // Lenient: Treat items without dates as active (e.g., Museums)
 
     try {
         // Strip day-of-week suffixes (e.g., "(목)") to prevent Invalid Date errors
-        let cleanDate = dateStr.replace(/\s*\([가-힣]\)/g, '').trim();
+        const cleanDate = dateStr.replace(/\s*\([가-힣]\)/g, '').trim();
         let targetDate: Date | null = null;
 
         // Type 1: Range "YYYY.MM.DD ~ YYYY.MM.DD"
@@ -73,19 +140,94 @@ function isPerformanceActive(dateStr: string, today: Date): boolean {
 
         return targetDate.getTime() >= today.getTime();
 
-    } catch (e) {
+    } catch {
         return true;
     }
 }
 
+function getPrebuiltPerformances(): Performance[] | null {
+    if (attemptedPublicPerformancesLoad) return cachedPublicPerformances;
 
+    attemptedPublicPerformancesLoad = true;
+    const data = loadPublicJSON('performances.json', null);
+    if (data === null) {
+        cachedPublicPerformances = null;
+        return null;
+    }
 
-export function getAllPerformances() {
-    if (cachedPerformances) return cachedPerformances;
+    cachedPublicPerformances = safePerformanceList(safeArray<Performance>(data));
+    return cachedPublicPerformances;
+}
+
+export function getDataBuildInfo(): DataBuildInfo | null {
+    if (attemptedBuildInfoLoad) return cachedBuildInfo;
+
+    attemptedBuildInfoLoad = true;
+    const data = loadPublicJSON('build-info.json', null);
+    if (!data || typeof data !== 'object') {
+        cachedBuildInfo = null;
+        return null;
+    }
+
+    const candidate = data as Partial<DataBuildInfo>;
+    cachedBuildInfo = {
+        generatedAt: typeof candidate.generatedAt === 'string' ? candidate.generatedAt : new Date().toISOString(),
+        version: typeof candidate.version === 'string' ? candidate.version : 'unknown',
+        itemCount: typeof candidate.itemCount === 'number' ? candidate.itemCount : 0,
+        sourceCounts: normalizeCountMap(candidate.sourceCounts),
+        genreCounts: normalizeCountMap(candidate.genreCounts),
+        qualitySummary: normalizeQualitySummary(candidate.qualitySummary),
+    };
+    return cachedBuildInfo;
+}
+
+export function formatLastUpdatedLabel(generatedAt?: string | null): string {
+    const baseDate = generatedAt ? new Date(generatedAt) : new Date();
+    const safeDate = Number.isNaN(baseDate.getTime()) ? new Date() : baseDate;
+    const formatter = new Intl.DateTimeFormat('ko-KR', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        weekday: 'short',
+        hour12: false
+    });
+
+    const parts = formatter.formatToParts(safeDate);
+    const getPart = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
+
+    return `${getPart('year')}.${getPart('month')}.${getPart('day')}.(${getPart('weekday')}) ${getPart('hour')}:${getPart('minute')} `;
+}
+
+export function getLastUpdatedLabel(): string {
+    return formatLastUpdatedLabel(getDataBuildInfo()?.generatedAt ?? null);
+}
+
+export function getAllCinemas(): CinemaData[] {
+    if (cachedCinemas) return cachedCinemas;
+    const publicCinemas = safeArray<CinemaData>(loadPublicJSON('cinemas.json', []));
+    if (publicCinemas.length > 0) {
+        cachedCinemas = publicCinemas;
+        return cachedCinemas;
+    }
+
+    cachedCinemas = safeArray<CinemaData>(loadSourceJSON('cinemas.json', []));
+    return cachedCinemas;
+}
+
+export function getAllPerformances(options: { preferPublicData?: boolean } = {}) {
+    const { preferPublicData = true } = options;
+    if (preferPublicData) {
+        const prebuiltPerformances = getPrebuiltPerformances();
+        if (prebuiltPerformances) return prebuiltPerformances;
+    }
+    if (cachedRawPerformances) return cachedRawPerformances;
 
     // Load static data for filtering
-    if (!cachedVenues) cachedVenues = loadJSON('venues.json', {});
-    if (!cachedCinemas) cachedCinemas = loadJSON('cinemas.json', []);
+    if (!cachedVenues) cachedVenues = loadSourceJSON('venues.json', {}) as Record<string, VenueData>;
+    if (!cachedCinemas) cachedCinemas = safeArray<CinemaData>(loadSourceJSON('cinemas.json', []));
     
     const venues = cachedVenues;
     const cinemas = cachedCinemas;
@@ -116,8 +258,8 @@ export function getAllPerformances() {
     ];
 
     const allPerformances = allSources.flatMap(({ file, source }) => {
-        const data = loadJSON(file);
-        const rawItems = safeArray<any>(data);
+        const data = loadSourceJSON(file);
+        const rawItems = safeArray<RawPerformance>(data);
         if (rawItems.length > 0) {
             console.log(`[DEBUG] Source: ${source}, Raw items: ${rawItems.length}`);
         }
@@ -126,8 +268,6 @@ export function getAllPerformances() {
 
     // 3. Filter
     const now = new Date();
-    // Valid regions including broad ones
-    const validRegions = ['seoul', 'gyeonggi', 'incheon', 'busan', 'daegu', 'gwangju', 'etc'];
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
@@ -136,7 +276,7 @@ export function getAllPerformances() {
 
         // Always show specific genres (Bypass Date & Region)
         if (p.genre === 'movie') {
-            const cinema = cinemas.find((c: any) => c.name === p.venue);
+            const cinema = cinemas.find((c) => c.name === p.venue);
             if (cinema && cinema.lat && cinema.lng) {
                 p.lat = cinema.lat;
                 p.lng = cinema.lng;
@@ -156,7 +296,7 @@ export function getAllPerformances() {
 
         // Address/Location Validation (Strict Policy)
         if (p.genre !== 'movie') {
-            let v = venues[p.venue];
+            let v: VenueData | undefined = venues[p.venue];
 
             // Disambiguation for regional tags [창원], [제주] etc.
             if (p.bracketRegion) {
@@ -166,9 +306,9 @@ export function getAllPerformances() {
                     const cleanName = p.venue.replace(/홀$|센터$|관$|장$/, '').trim();
                     const bestMatchKey = venueKeys.find(k => k.includes(p.venue) && k.includes(bRegion)) ||
                                        venueKeys.find(k => k.includes(cleanName) && k.includes(bRegion)) ||
-                                       venueKeys.find(k => k.includes(p.venue) && (venues[k] as any).address.includes(bRegion)) ||
-                                       venueKeys.find(k => k.includes(cleanName) && (venues[k] as any).address.includes(bRegion)) ||
-                                       venueKeys.find(k => (venues[k] as any).address.includes(p.venue) && (venues[k] as any).address.includes(bRegion));
+                                       venueKeys.find(k => venues[k]?.address?.includes(bRegion) && k.includes(p.venue)) ||
+                                       venueKeys.find(k => venues[k]?.address?.includes(bRegion) && k.includes(cleanName)) ||
+                                       venueKeys.find(k => venues[k]?.address?.includes(bRegion) && venues[k]?.address?.includes(p.venue));
                     
                     if (bestMatchKey) {
                         v = venues[bestMatchKey];
@@ -176,7 +316,7 @@ export function getAllPerformances() {
                 }
             }
 
-            const parseCoord = (val: any) => {
+            const parseCoord = (val: unknown) => {
                 if (typeof val === 'number') return val;
                 if (typeof val === 'string') return parseFloat(val);
                 return 0;
@@ -253,6 +393,6 @@ export function getAllPerformances() {
 
     const finalResult = [...otherItems, ...movieItems];
 
-    cachedPerformances = safePerformanceList(finalResult);
-    return cachedPerformances;
+    cachedRawPerformances = safePerformanceList(finalResult);
+    return cachedRawPerformances;
 }

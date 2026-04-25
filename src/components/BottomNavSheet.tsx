@@ -6,7 +6,8 @@ import { CloverIcon } from './GenreIcons';
 import { GENRES, GENRE_STYLES, REGIONS } from '@/lib/constants';
 import { safeStorage } from '@/lib/safeStorage';
 import { Performance } from '@/types';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getExternalContentLink } from '@/lib/performance-links';
+import ImageWithFallback from './ImageWithFallback';
 
 interface BottomNavSheetProps {
     activeMenu: BottomMenuType;
@@ -15,6 +16,7 @@ interface BottomNavSheetProps {
     viewMode: string;
     onViewModeChange: (mode: string) => void;
     selectedGenre: string;
+    availableGenres?: { id: string; label: string }[];
     onGenreSelect: (genre: string) => void;
     searchText: string;
     onSearchChange: (text: string) => void;
@@ -49,6 +51,7 @@ export default function BottomNavSheet({
     viewMode,
     onViewModeChange,
     selectedGenre,
+    availableGenres = GENRES,
     onGenreSelect,
     searchText,
     onSearchChange,
@@ -307,7 +310,7 @@ export default function BottomNavSheet({
                                     <span className="text-sm font-semibold">전체</span>
                                 </button>
 
-                                {GENRES.filter(g => g.id !== 'all').map(genre => {
+                                {availableGenres.filter(g => g.id !== 'all').map(genre => {
                                     const isSelected = selectedGenre === genre.id;
                                     return (
                                         <button
@@ -540,14 +543,22 @@ export default function BottomNavSheet({
                                     venuePerformances.map((p) => (
                                         <a
                                             key={p.id}
-                                            href={p.link}
+                                            href={getExternalContentLink(p)}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex gap-3 bg-gray-800/50 light:bg-gray-100 p-2 rounded-lg hover:bg-gray-800 light:hover:bg-gray-200 transition border border-gray-800 light:border-gray-200 hover:border-emerald-500/30"
                                         >
                                             <div className="relative w-12 h-16 shrink-0 rounded bg-gray-900 overflow-hidden">
                                                 {p.image ? (
-                                                    <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-full h-full object-cover" />
+                                                    <ImageWithFallback
+                                                        src={p.image || p.poster || p.backupPoster || p.posterUrl || ''}
+                                                        backupSrc={p.backupPoster || p.posterUrl || p.poster}
+                                                        optimizationWidth={80}
+                                                        alt={p.title}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="48px"
+                                                    />
                                                 ) : (
                                                     <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">
                                                         <Star size={12} />

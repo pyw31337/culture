@@ -7,6 +7,7 @@ import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
+import { getExternalContentLink } from '@/lib/performance-links';
 
 interface PerformanceListItemProps {
     perf: any;
@@ -50,6 +51,7 @@ HighlightText.displayName = 'HighlightText';
 
 function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceListItemProps) {
     const genreStyle = useMemo(() => GENRE_STYLES[perf.genre] || {}, [perf.genre]);
+    const externalLink = useMemo(() => getExternalContentLink(perf), [perf]);
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
@@ -255,7 +257,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             </span>
                         </div>
 
-                        <a href={perf.link} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
+                        <a href={externalLink} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
                             <h3 className={clsx(
                                 "text-lg sm:text-xl font-extrabold leading-tight mb-1 transition-colors line-clamp-2",
                                 searchMode === 'location' ? "group-hover/link:text-emerald-400" : "group-hover/link:text-[#a78bfa]",

@@ -294,7 +294,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let cast = raw.cast;
     let crew = raw.crew;
     let runningTime = raw.runtime || raw.runningTime;
-    let age = raw.age || raw.rating;
+    let age = raw.age || raw.ageRating || raw.rating;
+    let description = raw.description || raw.synopsis || '';
     let production = raw.production || '';
     let host = raw.host || '';
     let organizer = raw.organizer || '';
@@ -308,6 +309,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let parking = raw.parking;
     let parkingFee = raw.parkingFee;
     let restrooms = raw.restrooms;
+    let originalTitle = raw.originalTitle;
+    let productionCountry = raw.productionCountry;
+    let productionYear = raw.productionYear;
+    let movieInfo = raw.movieInfo;
     let rank = raw.rank;
     let reservationRate = raw.reservationRate;
     let audienceCount = raw.audienceCount;
@@ -325,6 +330,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let facilities = raw.facilities || '';
     let closedDays = raw.closedDays || '';
     let contact = raw.contact || '';
+    let backupPoster = raw.backupPoster
+        || raw.posterUrl
+        || raw.poster
+        || (typeof raw.image === 'string' && raw.image.startsWith('http') ? raw.image : undefined);
 
     // Specific Source Overrides
     if (source === 'seoul') {
@@ -358,7 +367,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         genre = 'classic_tradition';
     } else if (genre === 'theater') {
         genre = 'play';
-    } else if (genre === 'kids' || genre === 'leisure' || genre === 'activity' || genre === 'festival') {
+    } else if (genre === 'kids' || genre === 'leisure' || genre === 'activity' || genre === 'festival' || genre === 'travel') {
         const t = (title + ' ' + venue).toLowerCase();
         if (t.includes('뮤지컬') || t.includes('티니핑') || t.includes('핑크퐁') || t.includes('오페라') || t.includes('싱어롱')) {
             genre = 'musical';
@@ -413,6 +422,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     image = addBP(image) || image;
     homeLogo = addBP(homeLogo);
     awayLogo = addBP(awayLogo);
+    backupPoster = addBP(backupPoster) || backupPoster;
 
     // 7. Discount Integrity Fix
     let discount = raw.discount;
@@ -432,13 +442,14 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         ...raw,
         id: String(raw.id),
         title: cleanTitle(title),
-        link: raw.link || '',
+        link: raw.link || raw.website || '',
         image: image,
         venue: venue.trim(),
         date: formatUnifiedDate(date),
         region: mappedRegion,
         genre,
         source: source,
+        description,
         homeTeamLogo: homeLogo,
         awayTeamLogo: awayLogo,
         price,
@@ -460,6 +471,11 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         ageDetail,
         bookingNotice,
         website,
+        originalTitle,
+        productionCountry,
+        productionYear,
+        movieInfo,
+        backupPoster,
         parking,
         parkingFee,
         restrooms,

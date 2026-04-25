@@ -3,15 +3,20 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES, SPORTS_GENRES } from '@/lib/constants';
-import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
+import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
-import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CheckCircle2, Circle, CircleDot, CloudSun, Calendar, Thermometer, Droplets, Wind, Navigation } from 'lucide-react';
+import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CloudSun, Calendar, Droplets, Navigation } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
+import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
+import type { DataBuildInfo } from '@/lib/build-info';
+import { getExternalContentLink } from '@/lib/performance-links';
 import Portal from './ui/Portal';
+import ImageWithFallback from './ImageWithFallback';
+import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
 
 // Weather interface
 interface DailyWeather {
@@ -40,14 +45,111 @@ interface Venue {
     district?: string;
     refined_name?: string;
 }
+
+type MapSearchCenter = {
+    lat: number;
+    lng: number;
+    name: string;
+};
+
+type VenueGroup = Venue & {
+    venueName: string;
+    address?: string;
+    lat: number;
+    lng: number;
+    brand?: string;
+    type: 'performance' | 'cinema';
+    performances: Performance[];
+    kakaoLatLng: KakaoLatLng | null;
+    firstAppearanceIndex: number;
+};
+
+type GenreStyle = (typeof GENRE_STYLES)[keyof typeof GENRE_STYLES];
+
+interface KakaoLatLng {
+    getLat(): number;
+    getLng(): number;
+}
+
+interface KakaoBounds {
+    contain(latlng: KakaoLatLng): boolean;
+    extend(latlng: KakaoLatLng): void;
+}
+
+interface KakaoMap {
+    getBounds(): KakaoBounds;
+    getCenter(): KakaoLatLng;
+    panTo(latlng: KakaoLatLng): void;
+    setCenter(latlng: KakaoLatLng): void;
+    setLevel(level: number, options?: { animate?: boolean }): void;
+    getLevel(): number;
+    setBounds(bounds: KakaoBounds, top?: number, right?: number, bottom?: number, left?: number): void;
+    relayout(): void;
+}
+
+interface KakaoOverlay {
+    setMap(map: KakaoMap | null): void;
+}
+
+interface KakaoMarker {
+    setMap(map: KakaoMap | null): void;
+    setImage(image: unknown): void;
+    setZIndex(zIndex: number): void;
+    getZIndex(): number;
+    _venueName?: string;
+    _color?: string;
+    _text?: string;
+}
+
+interface KakaoClusterer {
+    clear(): void;
+    addMarkers(markers: KakaoMarker[]): void;
+}
+
+interface KakaoGeocoderAddressResult {
+    road_address?: {
+        address_name?: string;
+    };
+    address: {
+        address_name: string;
+    };
+}
+
+interface WeatherApiResponse {
+    daily?: {
+        time: string[];
+        temperature_2m_max: number[];
+        temperature_2m_min: number[];
+        temperature_2m_mean: number[];
+        precipitation_probability_max: number[];
+        rain_sum: number[];
+        snowfall_sum: number[];
+        weather_code: number[];
+    };
+}
+
+const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
 const venues = venueData as unknown as Record<string, Venue>;
+
+function getGenreStyle(genreId?: string): GenreStyle {
+    return GENRE_STYLES[genreId as keyof typeof GENRE_STYLES] ?? GENRE_STYLES.all;
+}
 
 interface MapViewProps {
     initialPerformances: Performance[];
     initialCinemas?: Cinema[];
+    initialGenreCounts?: GenreCounts;
+    buildInfo?: DataBuildInfo | null;
+    lastUpdated: string;
 }
 
-export default function MapView({ initialPerformances, initialCinemas = [] }: MapViewProps) {
+export default function MapView({
+    initialPerformances,
+    initialCinemas = [],
+    initialGenreCounts,
+    buildInfo,
+    lastUpdated
+}: MapViewProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -60,13 +162,12 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const centerName = searchParams.get('venue') || '';
 
     // Default center: try user's GPS first, fall back to Seoul Station
-    const SEOUL_STATION = useMemo(() => ({ lat: 37.554648, lng: 126.972559 }), []);
-    const [geoCenter, setGeoCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
+    const [geoCenter, setGeoCenter] = useState<MapSearchCenter | null>(null);
     const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
     const [selectedMapGenre, setSelectedMapGenre] = useState<string>('all');
     
     // Independent search center for the map - triggers marker reloading
-    const [mapSearchCenter, setMapSearchCenter] = useState<{ lat: number; lng: number; name: string } | null>(null);
+    const [mapSearchCenter, setMapSearchCenter] = useState<MapSearchCenter | null>(null);
 
     const [weatherData, setWeatherData] = useState<DailyWeather[]>([]);
     const [isWeatherLoading, setIsWeatherLoading] = useState(false);
@@ -79,10 +180,6 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     useEffect(() => {
         setSelectedMapGenre(selectedGenre);
     }, [selectedGenre]);
-
-    const isGenreSelected = (genreId: string) => {
-        return selectedMapGenre === genreId;
-    };
 
     const geoAttempted = useRef(false);
 
@@ -105,7 +202,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             },
             { enableHighAccuracy: false, timeout: 5000, maximumAge: 300000 }
         );
-    }, [paramLat, SEOUL_STATION]);
+    }, [paramLat]);
 
     // Resolve center: URL params > GPS > Seoul Station
     const centerLocation = useMemo(() => {
@@ -114,21 +211,38 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         }
         if (geoCenter) return geoCenter;
         return { ...SEOUL_STATION, name: '서울역' };
-    }, [paramLat, paramLng, centerName, geoCenter, SEOUL_STATION]);
+    }, [paramLat, paramLng, centerName, geoCenter]);
 
     // Update mapSearchCenter when initial centerLocation is resolved
     useEffect(() => {
-        if (centerLocation && !mapSearchCenter) {
-            setMapSearchCenter(centerLocation);
-        }
+        setMapSearchCenter((previousCenter) => previousCenter ?? centerLocation);
     }, [centerLocation]);
 
     // Load full data client-side
-    const { allPerformances, cinemas: clientCinemas } = usePerformanceData({ initialPerformances });
+    const { allPerformances, cinemas: clientCinemas, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
     const cinemas = clientCinemas.length > 0 ? clientCinemas : initialCinemas;
+    const genreCounts = useMemo(() => {
+        if (isDataFullyLoaded) return buildGenreCounts(allPerformances);
+        if (initialGenreCounts && Object.keys(initialGenreCounts).length > 0) return initialGenreCounts;
+        return buildGenreCounts(allPerformances);
+    }, [allPerformances, initialGenreCounts, isDataFullyLoaded]);
+    const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
+    const totalItemCount = useMemo(() => {
+        if (buildInfo?.itemCount) return buildInfo.itemCount;
+        return Object.values(genreCounts).reduce((sum, count) => sum + count, 0);
+    }, [buildInfo?.itemCount, genreCounts]);
+    const availableGenreCount = useMemo(() => {
+        return availableGenres.filter((genre) => genre.id !== 'all').length;
+    }, [availableGenres]);
 
     // Self-contained user preferences
     const { favoriteVenues, toggleFavoriteVenue } = useUserPreferences();
+
+    useEffect(() => {
+        if (selectedMapGenre !== 'all' && !isGenreAvailable(genreCounts, selectedMapGenre)) {
+            setSelectedMapGenre('all');
+        }
+    }, [genreCounts, selectedMapGenre]);
 
     // Filter performances based on URL params
     const performances = useMemo(() => {
@@ -149,17 +263,19 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
     // === Map State ===
     const mapRef = useRef<HTMLDivElement>(null);
-    const [mapInstance, setMapInstance] = useState<any>(null);
+    const [mapInstance, setMapInstance] = useState<KakaoMap | null>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
-    const [visibleVenues, setVisibleVenues] = useState<any[]>([]);
+    const [visibleVenues, setVisibleVenues] = useState<VenueGroup[]>([]);
     const [showSearchHereBtn, setShowSearchHereBtn] = useState(false);
     const [isMapReady, setIsMapReady] = useState(false);
-    const markersRef = useRef<any[]>([]);
-    const mapOverlaysRef = useRef<any[]>([]);
-    const popupOverlayRef = useRef<any>(null);
+    const markersRef = useRef<KakaoMarker[]>([]);
+    const mapOverlaysRef = useRef<KakaoOverlay[]>([]);
+    const popupOverlayRef = useRef<KakaoOverlay | null>(null);
 
-    const allVenueGroups = useRef<Record<string, any>>({});
-    const allVenuesList = useRef<any[]>([]);
+    const allVenueGroups = useRef<Record<string, VenueGroup>>({});
+    const allVenuesList = useRef<VenueGroup[]>([]);
+    const centerLocationRef = useRef<MapSearchCenter>(centerLocation);
+    const selectedMapGenreRef = useRef(selectedMapGenre);
 
     // Drag scroll for venue list
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -191,7 +307,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
     const processedData = useMemo(() => {
         const isMovieMode = selectedMapGenre === 'movie';
         const isAllMode = selectedMapGenre === 'all' || !selectedMapGenre;
-        const groupsMap = new Map<string, any>();
+        const groupsMap = new Map<string, VenueGroup>();
 
         if (!isMovieMode || isAllMode) {
             for (let i = 0; i < performances.length; i++) {
@@ -204,9 +320,14 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 let group = groupsMap.get(vName);
                 if (!group) {
                     group = {
-                        ...venueMeta, venueName: vName, performances: [],
-                        lat: venueMeta?.lat || 0, lng: venueMeta?.lng || 0,
-                        type: 'performance', kakaoLatLng: null, firstAppearanceIndex: i
+                        ...venueMeta,
+                        venueName: vName,
+                        performances: [],
+                        lat: venueMeta?.lat || 0,
+                        lng: venueMeta?.lng || 0,
+                        type: 'performance',
+                        kakaoLatLng: null,
+                        firstAppearanceIndex: i
                     };
                     groupsMap.set(vName, group);
                 }
@@ -219,19 +340,24 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             const topMovies = moviePerformances.slice(0, 10);
 
             for (let i = 0; i < cinemas.length; i++) {
-                const cinema = cinemas[i] as Cinema;
+                const cinema = cinemas[i];
                 if (!groupsMap.has(cinema.name)) {
                     groupsMap.set(cinema.name, {
-                        venueName: cinema.name, address: cinema.address,
-                        lat: cinema.lat, lng: cinema.lng, brand: (cinema as any).brand,
-                        type: 'cinema', performances: topMovies,
-                        kakaoLatLng: null, firstAppearanceIndex: i
+                        venueName: cinema.name,
+                        address: cinema.address,
+                        lat: cinema.lat,
+                        lng: cinema.lng,
+                        brand: cinema.brand,
+                        type: 'cinema',
+                        performances: topMovies,
+                        kakaoLatLng: null,
+                        firstAppearanceIndex: i
                     });
                 }
             }
         }
 
-        let list = Array.from(groupsMap.values()).filter(v => v.lat && v.lng);
+        const list = Array.from(groupsMap.values()).filter((venue) => venue.lat && venue.lng);
         list.sort((a, b) => (a.firstAppearanceIndex ?? 99999) - (b.firstAppearanceIndex ?? 99999));
 
         if (mapSearchCenter && !isNaN(mapSearchCenter.lat) && !isNaN(mapSearchCenter.lng)) {
@@ -245,7 +371,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         }
 
         return { groups: Object.fromEntries(groupsMap), list };
-    }, [performances, cinemas, centerLocation, selectedMapGenre]);
+    }, [performances, cinemas, mapSearchCenter, selectedMapGenre]);
 
     useEffect(() => {
         allVenueGroups.current = processedData.groups;
@@ -254,16 +380,23 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         setVisibleVenues(processedData.list.slice(0, initialCount));
     }, [processedData, selectedMapGenre]);
 
-    const handleSearchHereInternal = useCallback((map: any, isUserClick = false) => {
+    useEffect(() => {
+        centerLocationRef.current = centerLocation;
+        selectedMapGenreRef.current = selectedMapGenre;
+    }, [centerLocation, selectedMapGenre]);
+
+    const handleSearchHereInternal = useCallback((map: KakaoMap) => {
         if (!map || !window.kakao?.maps?.LatLng) return;
         const bounds = map.getBounds();
         const center = map.getCenter();
         const isMovieMode = selectedMapGenre === 'movie';
 
-        let visible = allVenuesList.current.filter(v => {
-            if (!v.kakaoLatLng) v.kakaoLatLng = new window.kakao.maps.LatLng(v.lat, v.lng);
+        const visible = allVenuesList.current.filter((venue) => {
+            if (!venue.kakaoLatLng) {
+                venue.kakaoLatLng = new window.kakao.maps.LatLng(venue.lat, venue.lng) as KakaoLatLng;
+            }
             if (isMovieMode) return true;
-            return bounds.contain(v.kakaoLatLng);
+            return bounds.contain(venue.kakaoLatLng);
         });
 
         if (isMovieMode && center) {
@@ -272,7 +405,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         setVisibleVenues(visible.slice(0, isMovieMode ? 50 : 200));
         // Keep the search button visible after search (user may want to search again)
-    }, [selectedMapGenre, mapSearchCenter]);
+    }, [selectedMapGenre]);
 
     const handleSearchHere = () => {
         if (!mapInstance) return;
@@ -282,14 +415,14 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             lng: center.getLng(),
             name: '현 위치'
         });
-        handleSearchHereInternal(mapInstance, true);
+        handleSearchHereInternal(mapInstance);
     };
 
     // SEOUL_STATION is defined above at component level
 
     // --- Map Init ---
     useEffect(() => {
-        let checkInterval: any;
+        let checkInterval: ReturnType<typeof setInterval> | null = null;
         let cancelled = false;
 
         const initializeMap = () => {
@@ -301,18 +434,20 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
                 let initialCenter = SEOUL_STATION;
                 let initialLevel = 8;
+                const nextCenterLocation = centerLocationRef.current;
+                const nextGenre = selectedMapGenreRef.current;
 
-                if (centerLocation) {
-                    initialCenter = { lat: centerLocation.lat, lng: centerLocation.lng };
-                    initialLevel = selectedMapGenre === 'movie' ? 7 : 6;
+                if (nextCenterLocation) {
+                    initialCenter = { lat: nextCenterLocation.lat, lng: nextCenterLocation.lng };
+                    initialLevel = nextGenre === 'movie' ? 7 : 6;
                 } else if (allVenuesList.current.length > 0) {
                     const first = allVenuesList.current[0];
                     initialCenter = { lat: first.lat, lng: first.lng };
-                    initialLevel = SPORTS_GENRES.includes(selectedMapGenre) ? 7 : 6;
+                    initialLevel = SPORTS_GENRES.includes(nextGenre) ? 7 : 6;
                 }
 
                 const options = { center: new k.LatLng(initialCenter.lat, initialCenter.lng), level: initialLevel };
-                const map = new k.Map(mapRef.current, options);
+                const map = new k.Map(mapRef.current, options) as KakaoMap;
 
                 mapOverlaysRef.current.forEach(o => o.setMap(null));
                 mapOverlaysRef.current = [];
@@ -327,10 +462,18 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         };
 
         checkInterval = setInterval(() => {
-            if (window.kakao?.maps) { clearInterval(checkInterval); initializeMap(); }
+            if (window.kakao?.maps && checkInterval) {
+                clearInterval(checkInterval);
+                initializeMap();
+            }
         }, 100);
 
-        return () => { cancelled = true; clearInterval(checkInterval); };
+        return () => {
+            cancelled = true;
+            if (checkInterval) {
+                clearInterval(checkInterval);
+            }
+        };
     }, []);
 
     // --- Reactive Map Updates ---
@@ -369,10 +512,10 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5); // Level 5-6 is good for nationwide clusters
             setSelectedVenue(first.venueName);
         }
-    }, [mapInstance, isMapReady, mapSearchCenter, selectedMapGenre]);
+    }, [handleSearchHereInternal, isMapReady, mapInstance, mapSearchCenter, selectedMapGenre]);
 
     // --- Markers & Clusterer ---
-    const clustererRef = useRef<any>(null);
+    const clustererRef = useRef<KakaoClusterer | null>(null);
     const iconCache = useRef<Record<string, string>>({});
 
     const getMarkerIcon = useCallback((text: string, color: string, isSelected: boolean) => {
@@ -394,12 +537,34 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         return iconUrl;
     }, []);
 
+    const updateMarkerSelection = useCallback((nextSelectedVenue: string | null) => {
+        if (!mapInstance || !isMapReady) return;
+        const k = window.kakao.maps;
+
+        markersRef.current.forEach((marker) => {
+            if (!marker._text || !marker._color || !marker._venueName) return;
+
+            const isSelected = marker._venueName === nextSelectedVenue;
+            const wasSelected = marker.getZIndex() === 100;
+            if (!isSelected && !wasSelected) return;
+
+            const iconUrl = getMarkerIcon(marker._text, marker._color, isSelected);
+            const size = isSelected ? 44 : 36;
+            const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
+            marker.setImage(markerImage);
+            marker.setZIndex(isSelected ? 100 : 10);
+        });
+    }, [getMarkerIcon, isMapReady, mapInstance]);
+
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
         const k = window.kakao.maps;
 
         if (clustererRef.current) clustererRef.current.clear();
-        markersRef.current.forEach(m => { m.setMap(null); k.event.removeListener(m, 'click'); });
+        markersRef.current.forEach((marker) => {
+            marker.setMap(null);
+            k.event.removeListener(marker, 'click');
+        });
         markersRef.current = [];
 
         const clusterer = new k.MarkerClusterer({
@@ -413,55 +578,42 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
         });
         clustererRef.current = clusterer;
 
-        const markers: any[] = [];
-        allVenuesList.current.forEach(venue => {
+        const markers: KakaoMarker[] = [];
+        allVenuesList.current.forEach((venue) => {
             const primaryGenre = venue.performances[0]?.genre || selectedMapGenre || 'all';
-            const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
+            const style = getGenreStyle(primaryGenre);
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
             const text = venue.performances.length.toString();
-            const isSelected = venue.venueName === selectedVenue;
 
-            const iconUrl = getMarkerIcon(text, color, isSelected);
-            const size = isSelected ? 44 : 36;
+            const iconUrl = getMarkerIcon(text, color, false);
+            const size = 36;
             const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
 
             const marker = new k.Marker({
                 position: new k.LatLng(venue.lat, venue.lng), image: markerImage,
-                zIndex: isSelected ? 100 : 10
-            });
+                zIndex: 10
+            }) as KakaoMarker;
 
             k.event.addListener(marker, 'click', () => {
                 setSelectedVenue(venue.venueName);
                 mapInstance.panTo(new k.LatLng(venue.lat, venue.lng));
             });
 
-            (marker as any)._venueName = venue.venueName;
-            (marker as any)._color = color;
-            (marker as any)._text = text;
+            marker._venueName = venue.venueName;
+            marker._color = color;
+            marker._text = text;
             markers.push(marker);
             markersRef.current.push(marker);
         });
 
         clusterer.addMarkers(markers);
-    }, [mapInstance, isMapReady, processedData]);
+        updateMarkerSelection(selectedVenue);
+    }, [getMarkerIcon, isMapReady, mapInstance, processedData, selectedMapGenre, selectedVenue, updateMarkerSelection]);
 
     // Selection update
     useEffect(() => {
-        if (!mapInstance || !isMapReady) return;
-        const k = window.kakao.maps;
-        markersRef.current.forEach(marker => {
-            const vName = marker._venueName;
-            const isSelected = vName === selectedVenue;
-            const wasSelected = marker.getZIndex() === 100;
-            if (isSelected || wasSelected) {
-                const iconUrl = getMarkerIcon(marker._text, marker._color, isSelected);
-                const size = isSelected ? 44 : 36;
-                const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
-                marker.setImage(markerImage);
-                marker.setZIndex(isSelected ? 100 : 10);
-            }
-        });
-    }, [selectedVenue]);
+        updateMarkerSelection(selectedVenue);
+    }, [selectedVenue, updateMarkerSelection]);
 
     // Search auto-bounding
     useEffect(() => {
@@ -548,7 +700,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
     // My Location
     const [isLocating, setIsLocating] = useState(false);
-    const myLocationOverlayRef = useRef<any>(null);
+    const myLocationOverlayRef = useRef<KakaoOverlay | null>(null);
 
     const handleMyLocation = useCallback(() => {
         if (!mapInstance || !isMapReady) return;
@@ -559,7 +711,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
             (pos) => {
                 const { latitude, longitude } = pos.coords;
                 const k = window.kakao.maps;
-                const loc = new k.LatLng(latitude, longitude);
+                const loc = new k.LatLng(latitude, longitude) as KakaoLatLng;
 
                 // Use setCenter + setLevel (no animation) to avoid panTo conflict
                 mapInstance.setCenter(loc);
@@ -574,7 +726,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                         <div class="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-50"></div>
                     </div>
                 </div>`;
-                const overlay = new k.CustomOverlay({ map: mapInstance, position: loc, content, zIndex: 99 });
+                const overlay = new k.CustomOverlay({ map: mapInstance, position: loc, content, zIndex: 99 }) as KakaoOverlay;
                 myLocationOverlayRef.current = overlay;
                 mapOverlaysRef.current.push(overlay);
 
@@ -590,13 +742,13 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                 // Update search center to my location
                 setMapSearchCenter({ lat: latitude, lng: longitude, name: '내 위치' });
             },
-            (err) => {
+            () => {
                 setIsLocating(false);
                 alert('위치를 가져올 수 없습니다. 위치 권한을 확인해주세요.');
             },
             { enableHighAccuracy: true, timeout: 10000 }
         );
-    }, [mapInstance, isMapReady, selectedMapGenre, allVenuesList]);
+    }, [isMapReady, mapInstance, selectedMapGenre]);
 
     // Weather Fetching Logic
     const fetchWeather = useCallback(async () => {
@@ -611,8 +763,14 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
         try {
             // 1. Get Address using Kakao Geocoder
-            const geocoder = new window.kakao.maps.services.Geocoder();
-            geocoder.coord2Address(lng, lat, (result: any, status: any) => {
+            const geocoder = new window.kakao.maps.services.Geocoder() as {
+                coord2Address: (
+                    lng: number,
+                    lat: number,
+                    callback: (result: KakaoGeocoderAddressResult[], status: string) => void
+                ) => void;
+            };
+            geocoder.coord2Address(lng, lat, (result, status) => {
                 if (status === window.kakao.maps.services.Status.OK) {
                     const addr = result[0].road_address?.address_name || result[0].address.address_name;
                     setWeatherAddress(addr);
@@ -621,18 +779,19 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
             // 2. Fetch Weather from Open-Meteo (14 days)
             const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,temperature_2m_mean,precipitation_probability_max,rain_sum,snowfall_sum&timezone=auto&forecast_days=14`);
-            const data = await response.json();
+            const data = await response.json() as WeatherApiResponse;
 
-            if (data.daily) {
-                const forecast: DailyWeather[] = data.daily.time.map((time: string, idx: number) => ({
+            const dailyForecast = data.daily;
+            if (dailyForecast) {
+                const forecast: DailyWeather[] = dailyForecast.time.map((time: string, idx: number) => ({
                     date: time,
-                    maxTemp: data.daily.temperature_2m_max[idx],
-                    minTemp: data.daily.temperature_2m_min[idx],
-                    avgTemp: data.daily.temperature_2m_mean[idx],
-                    pop: data.daily.precipitation_probability_max[idx],
-                    rain: data.daily.rain_sum[idx],
-                    snow: data.daily.snowfall_sum[idx],
-                    weatherCode: data.daily.weather_code[idx]
+                    maxTemp: dailyForecast.temperature_2m_max[idx],
+                    minTemp: dailyForecast.temperature_2m_min[idx],
+                    avgTemp: dailyForecast.temperature_2m_mean[idx],
+                    pop: dailyForecast.precipitation_probability_max[idx],
+                    rain: dailyForecast.rain_sum[idx],
+                    snow: dailyForecast.snowfall_sum[idx],
+                    weatherCode: dailyForecast.weather_code[idx]
                 }));
                 setWeatherData(forecast);
             }
@@ -691,7 +850,24 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
 
                 {/* Search Here Button relocated to bottom for better mobile UX */}
 
+                {!isDataFullyLoaded && allPerformances.length === 0 && (
+                    <div className="absolute inset-x-0 top-20 z-[120] flex justify-center px-4 pointer-events-none">
+                        <div className="pointer-events-auto rounded-full bg-black/70 px-4 py-2 text-sm font-bold text-white shadow-lg backdrop-blur-md">
+                            지도 데이터를 불러오는 중...
+                        </div>
+                    </div>
+                )}
 
+                <div className="pointer-events-none absolute left-4 right-4 top-20 z-[115] hidden md:flex justify-center">
+                    <div className="pointer-events-auto rounded-3xl border border-white/15 bg-black/55 px-4 py-3 text-white shadow-2xl backdrop-blur-md light:border-black/10 light:bg-white/90 light:text-black max-w-3xl">
+                        <ServiceStatusStrip
+                            lastUpdated={lastUpdated}
+                            totalItemCount={totalItemCount}
+                            availableGenreCount={availableGenreCount}
+                            qualitySummary={buildInfo?.qualitySummary}
+                        />
+                    </div>
+                </div>
 
                 <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 
@@ -706,16 +882,16 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             )}
                         >
                         <Filter className="w-4 h-4" />
-                            카테고리 ({GENRES.find(g => g.id === selectedMapGenre)?.label || '전체'})
+                            카테고리 ({availableGenres.find(g => g.id === selectedMapGenre)?.label || '전체'})
                         </button>
 
                         {isCategoryMenuOpen && (
                             <div className="absolute top-full left-0 mt-2 w-56 max-h-[70vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 p-2 animate-fade-in-down pointer-events-auto custom-scrollbar">
                                 <div className="space-y-1">
                                     {/* Categoriy Order matching GENRES list in constants.ts */}
-                                    {GENRES.map(genre => {
+                                    {availableGenres.map(genre => {
                                         const isSel = selectedMapGenre === genre.id;
-                                        const style = (GENRE_STYLES as any)[genre.id] || (GENRE_STYLES as any)['all'];
+                                        const style = getGenreStyle(genre.id);
                                         return (
                                             <button
                                                 key={genre.id}
@@ -870,7 +1046,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
                                         <div className="min-w-0 flex-1">
                                             <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
-                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address}</p>
+                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address || '주소 정보 없음'}</p>
                                         </div>
                                         <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
                                             <X size={16} />
@@ -906,11 +1082,21 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                     ) : null}
 
                                     <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2" onScroll={handlePerfScroll}>
-                                        {selectedVenueData.performances.slice(0, perfVisibleCount).map((p: any) => (
-                                            <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer"
+                                        {selectedVenueData.performances.slice(0, perfVisibleCount).map((p) => (
+                                            <a key={p.id} href={getExternalContentLink(p)} target="_blank" rel="noopener noreferrer"
                                                 className="flex gap-2 bg-gray-50 dark:bg-gray-800/50 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 group">
                                                 {p.image ? (
-                                                    <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-200 dark:bg-gray-950 shrink-0" />
+                                                    <div className="relative h-14 w-10 shrink-0 overflow-hidden rounded bg-gray-200 dark:bg-gray-950">
+                                                        <ImageWithFallback
+                                                            src={p.image || p.poster || p.backupPoster || p.posterUrl || ''}
+                                                            backupSrc={p.backupPoster || p.posterUrl || p.poster}
+                                                            alt={p.title}
+                                                            fill
+                                                            optimizationWidth={80}
+                                                            sizes="40px"
+                                                            className="object-cover"
+                                                        />
+                                                    </div>
                                                 ) : (
                                                     <div className="w-10 h-14 bg-gray-200 dark:bg-gray-800 rounded flex items-center justify-center shrink-0">
                                                         <Heart size={10} className="text-gray-400 dark:text-gray-600" />
@@ -918,7 +1104,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                                 )}
                                                 <div className="flex-1 min-w-0">
                                                     <div className="flex items-center gap-1.5 mb-0.5">
-                                                        <span className={clsx("px-1 py-[1px] rounded-[3px] text-[9px] font-extrabold text-white leading-none", (GENRE_STYLES as any)[p.genre]?.twBg || 'bg-gray-600')}>
+                                                        <span className={clsx("px-1 py-[1px] rounded-[3px] text-[9px] font-extrabold text-white leading-none", getGenreStyle(p.genre).twBg || 'bg-gray-600')}>
                                                             {GENRES.find(g => g.id === p.genre)?.label}
                                                         </span>
                                                         <span className="text-[9px] text-gray-500">{p.date}</span>
@@ -951,7 +1137,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                             className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
                             style={{ WebkitOverflowScrolling: 'touch', overscrollBehaviorX: 'contain' }}
                             onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove}>
-                            {visibleVenues.map((v: any) => {
+                            {visibleVenues.map((v) => {
                                 const isFavorite = favoriteVenues.includes(v.venueName);
                                 const isSelected = selectedVenue === v.venueName;
 
@@ -965,7 +1151,7 @@ export default function MapView({ initialPerformances, initialCinemas = [] }: Ma
                                 }
 
                                 const primaryGenre = v.performances[0]?.genre || selectedMapGenre || 'all';
-                                const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
+                                const style = getGenreStyle(primaryGenre);
                                 const isCinemaObj = v.type === 'cinema';
                                 const bgClass = isCinemaObj ? 'bg-indigo-600' : style.twBg.replace('bg-', 'bg-');
 

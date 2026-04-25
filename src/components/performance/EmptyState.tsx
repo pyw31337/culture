@@ -1,10 +1,7 @@
 import React from 'react';
-import { Heart, Star, Search, Filter, Calendar, Zap, MapPin } from 'lucide-react';
-import { clsx } from 'clsx';
+import { Heart, Star, Search, Filter, Calendar, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { GENRES } from '@/lib/constants';
-import { getGenreIcon } from '@/components/GenreIcons';
-import { useRouter } from 'next/navigation';
+import { GENRES, SPORTS_GENRES } from '@/lib/constants';
 import Link from 'next/link';
 
 interface EmptyStateProps {
@@ -13,8 +10,8 @@ interface EmptyStateProps {
     setSelectedRegion: (val: string) => void;
     setSelectedDistrict: (val: string) => void;
     setSearchText: (val: string) => void;
-    setUserLocation: (val: any) => void;
-    setIsMapOpen: (val: boolean) => void;
+    setUserLocation: (val: { lat: number; lng: number } | null) => void;
+    setIsMapOpen?: (val: boolean) => void;
     searchMode?: 'keyword' | 'location';
     setSearchMode?: (val: 'keyword' | 'location') => void;
     searchText?: string;
@@ -27,12 +24,9 @@ export default function EmptyState({
     setSelectedDistrict,
     setSearchText,
     setUserLocation,
-    setIsMapOpen,
-    searchMode,
-    setSearchMode,
     searchText
 }: EmptyStateProps) {
-    const router = useRouter();
+    const isSportsGenre = SPORTS_GENRES.includes(selectedGenre as typeof SPORTS_GENRES[number]);
 
     // Floating Animation Variant
     const floatVariant = {
@@ -44,24 +38,6 @@ export default function EmptyState({
                 ease: "easeInOut" as const
             }
         }
-    };
-
-    const RecommendationChip = ({ icon, label, onClick }: { icon: React.ReactNode, label: string, onClick: () => void }) => (
-        <button
-            onClick={onClick}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gray-800/50 light:bg-gray-100 hover:bg-gray-700 light:hover:bg-gray-200 border border-gray-700 light:border-gray-300 transition-all transform hover:scale-105"
-        >
-            <span className="text-purple-400 light:text-purple-600 flex items-center justify-center">
-                {icon}
-            </span>
-            <span className="text-sm font-extrabold text-gray-300 light:text-gray-700">{label}</span>
-        </button>
-    );
-
-    const handleRedirect = (genre: string) => {
-        // Simple redirect via router push
-        // Next.js automatically handles basePath
-        router.push(`/${genre}`);
     };
 
     return (
@@ -116,7 +92,7 @@ export default function EmptyState({
                     >
                         {searchText ? (
                             <Search className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
-                        ) : selectedGenre === 'baseball' || selectedGenre === 'soccer' ? (
+                        ) : isSportsGenre ? (
                             <Calendar className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
                         ) : (
                             <Filter className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
@@ -126,9 +102,9 @@ export default function EmptyState({
                     <h3 className="text-2xl font-black text-white light:text-gray-900 mb-2">
                         {searchText ? (
                             selectedGenre !== 'all'
-                                ? <><span className="text-purple-400">'{searchText}'</span> 키워드의 컨텐츠가 <span className="text-emerald-400">{GENRES.find(g => g.id === selectedGenre)?.label || selectedGenre}</span> 카테고리에서 발견되지 않았습니다.</>
+                                ? <><span className="text-purple-400">&lsquo;{searchText}&rsquo;</span> 키워드의 컨텐츠가 <span className="text-emerald-400">{GENRES.find(g => g.id === selectedGenre)?.label || selectedGenre}</span> 카테고리에서 발견되지 않았습니다.</>
                                 : '검색 결과가 없습니다 😢'
-                        ) : (selectedGenre === 'baseball' || selectedGenre === 'soccer') ? (
+                        ) : isSportsGenre ? (
                             '예정된 경기 일정이 없습니다 🏖️'
                         ) : (
                             '조건에 맞는 결과가 없네요 😢'

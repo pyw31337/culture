@@ -29,6 +29,36 @@ function getLastDayOfMonth(year: number, month: number): number {
     return new Date(year, month, 0).getDate();
 }
 
+function buildMovieDescription(params: {
+    title: string;
+    genreText?: string;
+    dateText?: string;
+    director?: string;
+    cast?: string[];
+}) {
+    const parts: string[] = [];
+
+    if (params.genreText) {
+        parts.push(`${params.title}은 ${params.genreText} 장르 작품입니다.`);
+    } else {
+        parts.push(`${params.title}은 현재 상영 정보를 수집 중인 영화입니다.`);
+    }
+
+    if (params.dateText) {
+        parts.push(`${params.dateText} 개봉 예정입니다.`);
+    }
+
+    if (params.director) {
+        parts.push(`감독은 ${params.director}입니다.`);
+    }
+
+    if (params.cast && params.cast.length > 0) {
+        parts.push(`주요 출연진은 ${params.cast.slice(0, 3).join(', ')}입니다.`);
+    }
+
+    return parts.join(' ');
+}
+
 // --- Source Clients ---
 
 async function fetchKobisBoxOffice() {
@@ -257,7 +287,8 @@ async function scrapeMovies() {
         // Optimization: Skip if we have ALL metrics
         if (existing && existing.image && existing.cast && existing.director && 
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
-            existing.reservationRate && existing.audienceCount && existing.roi && !existing.posterFallback) {
+            existing.reservationRate && existing.audienceCount && existing.roi &&
+            existing.description && existing.link && !existing.posterFallback) {
             
             // --- DATA VALIDITY CHECK ---
             const movieDt = parseInt(existing.dateRaw?.replace(/-/g, '') || '0');
@@ -307,6 +338,9 @@ async function scrapeMovies() {
 
             const finalBudget = tmdb?.budget || existing?.budget;
             const finalRevenue = tmdb?.revenue || existing?.revenue;
+            const movieSearchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 상영시간표`)}`;
+            const productionCountries = tmdb?.production_countries?.map((country: any) => country.name)?.filter(Boolean);
+            const productionYear = kobisDetail?.prdtYear || tmdb?.release_date?.slice(0, 4) || existing?.productionYear;
             
             // Refined Date Logic: Prioritize KOBIS openDt (theatrical) over TMDB (production/global)
             // If date is only YYYYMM, append the last day of that month.
@@ -324,6 +358,22 @@ async function scrapeMovies() {
                 rawDate = `${rawDate}${String(lastDay).padStart(2, '0')}`;
             }
 
+            const directorName = tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director;
+            const castNames = tmdb?.credits?.cast?.slice(0, 10).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 10).map((a: any) => a.peopleNm) || existing?.cast || [];
+            const movieDescription = chartData?.synopsis
+                || tmdb?.overview
+                || existing?.description
+                || existing?.synopsis
+                || buildMovieDescription({
+                    title: m.title,
+                    genreText: kobisGenres.join(', ') || existing?.subGenre,
+                    dateText: (rawDate && rawDate.length === 8)
+                        ? `${rawDate.substring(0, 4)}년 ${rawDate.substring(4, 6)}월 ${rawDate.substring(6, 8)}일`
+                        : undefined,
+                    director: directorName,
+                    cast: castNames
+                });
+
             const item: any = {
                 id: existing?.id || `movie_${slugify(m.title)}`,
                 title: m.title,
@@ -335,8 +385,8 @@ async function scrapeMovies() {
                 genre: 'movie',
                 subGenre: kobisGenres.join(', ') || existing?.subGenre || '영화',
                 rank: m.rank,
-                director: tmdb?.credits?.crew?.find((c: any) => c.job === 'Director')?.name || kobisDetail?.directors?.[0]?.peopleNm || existing?.director,
-                cast: tmdb?.credits?.cast?.slice(0, 10).map((c: any) => c.name) || kobisDetail?.actors?.slice(0, 10).map((a: any) => a.peopleNm) || existing?.cast,
+                director: directorName,
+                cast: castNames,
                 venue: rating,
                 ageRating: rating,
                 runningTime: tmdb?.runtime ? `${tmdb.runtime}분` : (existing?.runningTime || (kobisDetail?.showTm ? `${kobisDetail.showTm}분` : '')),
@@ -344,7 +394,14 @@ async function scrapeMovies() {
                 revenue: finalRevenue,
                 budgetKRW: finalBudget ? Math.round(finalBudget * 1400) : existing?.budgetKRW,
                 revenueKRW: finalRevenue ? Math.round(finalRevenue * 1400) : existing?.revenueKRW,
-                synopsis: chartData?.synopsis || tmdb?.overview || existing?.synopsis,
+                description: movieDescription,
+                synopsis: chartData?.synopsis || tmdb?.overview || existing?.synopsis || movieDescription,
+                link: existing?.link || movieSearchUrl,
+                website: tmdb?.homepage || existing?.website,
+                originalTitle: tmdb?.original_title && tmdb.original_title !== m.title ? tmdb.original_title : existing?.originalTitle,
+                productionCountry: productionCountries?.join(', ') || existing?.productionCountry,
+                productionYear,
+                movieInfo: existing?.movieInfo,
                 reservationRate: chartData?.resRate || existing?.reservationRate,
                 audienceCount: m.audiAcc 
                     ? (parseInt(m.audiAcc) > 10000 
@@ -371,7 +428,7 @@ async function scrapeMovies() {
 
             // Poster Processing
             const tmdbPoster = tmdb?.poster_path ? `https://image.tmdb.org/t/p/original${tmdb?.poster_path}` : null;
-            const posterUrl = tmdbPoster || existing?.posterUrl;
+            const posterUrl = tmdbPoster || existing?.posterUrl || existing?.backupPoster;
             
             if (posterUrl) {
                 const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
@@ -379,12 +436,16 @@ async function scrapeMovies() {
                 if (localImage) {
                     item.image = localImage;
                     item.posterUrl = posterUrl;
+                    item.backupPoster = posterUrl;
+                    item.posterFallback = false;
                 }
             }
 
             if (!item.image) {
-                const cleanId = m.title.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9가-힣_]/g, '');
-                item.image = `/images/posters/movies/movie_${cleanId}.webp`;
+                item.image = posterUrl || existing?.image || '';
+                item.posterUrl = posterUrl || existing?.posterUrl;
+                item.backupPoster = posterUrl || existing?.backupPoster;
+                item.posterFallback = !!posterUrl;
             }
 
             finalMovies.push(item);
@@ -398,7 +459,8 @@ async function scrapeMovies() {
     }
 
     progressBar.stop();
-    await browser.close();
+    await context?.close();
+    await browser?.close();
 
     // 4. Sort and Save
     if (finalMovies.length >= 20) {

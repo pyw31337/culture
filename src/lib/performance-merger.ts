@@ -5,6 +5,14 @@ function slugify(text: string): string {
         .replace(/^_|_$/g, '');
 }
 
+function hasUsableLink(value: unknown): value is string {
+    return typeof value === 'string' && value.trim() !== '' && value.trim() !== '#';
+}
+
+function hasUsableImage(value: unknown): value is string {
+    return typeof value === 'string' && value.trim() !== '' && !value.includes('default');
+}
+
 export function processAndMergePerformances(items: any[]): any[] {
     const uniqueMap = new Map<string, any>();
     const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'];
@@ -91,6 +99,8 @@ function mergeItems(a: any, b: any): any {
         if (!merged.originalPrice) merged.originalPrice = loser.originalPrice;
         if (!merged.discount) merged.discount = loser.discount;
     }
+    if (!hasUsableLink(merged.link) && hasUsableLink(loser.link)) merged.link = loser.link;
+    if (!hasUsableLink(merged.website) && hasUsableLink(loser.website)) merged.website = loser.website;
 
     // Platforms
     if ((!merged.platforms || merged.platforms.length === 0) && (loser.platforms && loser.platforms.length > 0)) {
@@ -105,6 +115,7 @@ function mergeItems(a: any, b: any): any {
     if (!merged.originalTitle && loser.originalTitle) merged.originalTitle = loser.originalTitle;
     if (!merged.productionCountry && loser.productionCountry) merged.productionCountry = loser.productionCountry;
     if (!merged.productionYear && loser.productionYear) merged.productionYear = loser.productionYear;
+    if (!merged.movieInfo && loser.movieInfo) merged.movieInfo = loser.movieInfo;
     if (!merged.subGenre && loser.subGenre) merged.subGenre = loser.subGenre;
     if (!merged.rank && loser.rank) merged.rank = loser.rank;
     if (!merged.reservationRate && loser.reservationRate) merged.reservationRate = loser.reservationRate;
@@ -113,6 +124,7 @@ function mergeItems(a: any, b: any): any {
     if (!merged.revenue && loser.revenue) merged.revenue = loser.revenue;
     if (!merged.budgetKRW && loser.budgetKRW) merged.budgetKRW = loser.budgetKRW;
     if (!merged.revenueKRW && loser.revenueKRW) merged.revenueKRW = loser.revenueKRW;
+    if (!merged.description && loser.description) merged.description = loser.description;
     if (!merged.synopsis && loser.synopsis) merged.synopsis = loser.synopsis;
     if (!merged.roi && loser.roi) merged.roi = loser.roi;
     if (!merged.trailer && loser.trailer) merged.trailer = loser.trailer;
@@ -123,7 +135,7 @@ function mergeItems(a: any, b: any): any {
     if (!merged.operatingHours && loser.operatingHours) merged.operatingHours = loser.operatingHours;
     if (!merged.priceDetail && loser.priceDetail) merged.priceDetail = loser.priceDetail;
     if (!merged.facilities && loser.facilities) merged.facilities = loser.facilities;
-    if (!merged.website && loser.website) merged.website = loser.website;
+    if (!hasUsableLink(merged.website) && hasUsableLink(loser.website)) merged.website = loser.website;
     if (!merged.parking && loser.parking) merged.parking = loser.parking;
     if (!merged.parkingFee && loser.parkingFee) merged.parkingFee = loser.parkingFee;
     if (!merged.restrooms && loser.restrooms) merged.restrooms = loser.restrooms;
@@ -135,11 +147,19 @@ function mergeItems(a: any, b: any): any {
 
     // Poster/Image
     // If winner has no valid image, try loser's
-    if ((!merged.image || merged.image.includes('default') || merged.image === '') && (loser.image && !loser.image.includes('default'))) {
+    if (!hasUsableImage(merged.image) && hasUsableImage(loser.image)) {
         merged.image = loser.image;
     }
-    if ((!merged.poster || merged.poster.includes('default') || merged.poster === '') && (loser.poster && !loser.poster.includes('default'))) {
+    if (!hasUsableImage(merged.poster) && hasUsableImage(loser.poster)) {
         merged.poster = loser.poster;
+    }
+    if (!merged.backupPoster && loser.backupPoster) merged.backupPoster = loser.backupPoster;
+    if (!merged.posterUrl && loser.posterUrl) merged.posterUrl = loser.posterUrl;
+    if (!merged.backupPoster && typeof loser.image === 'string' && loser.image.startsWith('http')) {
+        merged.backupPoster = loser.image;
+    }
+    if (!hasUsableLink(merged.link) && hasUsableLink(merged.website)) {
+        merged.link = merged.website;
     }
 
     // Venue
@@ -166,7 +186,7 @@ function getRichnessScore(item: any): number {
     if (item.price) score += 1;
 
     // Prefer items with real posters over placeholders
-    if (item.image && !item.image.includes('default') && item.image.startsWith('http')) score += 1;
+    if (hasUsableImage(item.image) && item.image.startsWith('http')) score += 1;
 
     return score;
 }

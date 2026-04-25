@@ -1,34 +1,59 @@
 'use client';
 
-import { useState, useRef, useMemo, useEffect } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { Performance } from '@/types';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, addMonths, subMonths, addWeeks, subWeeks, addDays, subDays } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { X, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { getOptimizedUrl } from '@/lib/utils';
+import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
+import type { DataBuildInfo } from '@/lib/build-info';
+import { getExternalContentLink } from '@/lib/performance-links';
 import CalendarDayCell from './CalendarDayCell';
 import venueData from '@/data/venues.json';
 import { MapPin } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
+import ImageWithFallback from './ImageWithFallback';
+import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
 
 const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string }>;
 
 interface CalendarViewProps {
     performances: Performance[];
+    initialGenreCounts?: GenreCounts;
+    buildInfo?: DataBuildInfo | null;
+    lastUpdated: string;
 }
 
 type CalendarView = 'daily' | 'weekly' | 'monthly';
 
-export default function CalendarView({ performances: initialPerformances }: CalendarViewProps) {
+export default function CalendarView({
+    performances: initialPerformances,
+    initialGenreCounts,
+    buildInfo,
+    lastUpdated
+}: CalendarViewProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
 
     // Load full data client-side (server provides initial subset, client fetches full)
-    const { allPerformances } = usePerformanceData({ initialPerformances });
+    const { allPerformances, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
     const performances = allPerformances;
+    const genreCounts = useMemo(() => {
+        if (isDataFullyLoaded) return buildGenreCounts(performances);
+        if (initialGenreCounts && Object.keys(initialGenreCounts).length > 0) return initialGenreCounts;
+        return buildGenreCounts(performances);
+    }, [initialGenreCounts, isDataFullyLoaded, performances]);
+    const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
+    const totalItemCount = useMemo(() => {
+        if (buildInfo?.itemCount) return buildInfo.itemCount;
+        return Object.values(genreCounts).reduce((sum, count) => sum + count, 0);
+    }, [buildInfo?.itemCount, genreCounts]);
+    const availableGenreCount = useMemo(() => {
+        return availableGenres.filter((genre) => genre.id !== 'all').length;
+    }, [availableGenres]);
 
     // Read initial state from URL params
     const initialGenre = searchParams.get('genre') || 'all';
@@ -44,6 +69,12 @@ export default function CalendarView({ performances: initialPerformances }: Cale
     });
     const [calendarView, setCalendarView] = useState<CalendarView>(initialView);
     const [localGenre, setLocalGenre] = useState(initialGenre);
+
+    useEffect(() => {
+        if (localGenre !== 'all' && !isGenreAvailable(genreCounts, localGenre)) {
+            setLocalGenre('all');
+        }
+    }, [genreCounts, localGenre]);
 
     const startDate = startOfWeek(startOfMonth(currentMonth));
     const endDate = endOfWeek(endOfMonth(currentMonth));
@@ -89,7 +120,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                     if (!map.has(dayStr)) map.set(dayStr, []);
                                     map.get(dayStr)!.push(perf);
                                 });
-                            } catch (e) { }
+                            } catch { }
                         }
                     }
                 }
@@ -155,11 +186,12 @@ export default function CalendarView({ performances: initialPerformances }: Cale
         return currentViewTotalEvents.filter(p => p.genre === localGenre);
     }, [currentViewTotalEvents, localGenre]);
 
-    const [visibleCount, setVisibleCount] = useState(20);
-
-    useEffect(() => {
-        setVisibleCount(20);
-    }, [currentMonth, localGenre, calendarView]);
+    const visibleCountKey = useMemo(
+        () => `${calendarView}-${localGenre}-${format(currentMonth, 'yyyy-MM-dd')}`,
+        [calendarView, currentMonth, localGenre]
+    );
+    const [visibleCountState, setVisibleCountState] = useState({ key: '', count: 20 });
+    const visibleCount = visibleCountState.key === visibleCountKey ? visibleCountState.count : 20;
 
     // Drag to scroll logic
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -195,7 +227,10 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                     ? currentViewEvents.length
                     : currentViewEvents.filter(p => p.genre === localGenre).length;
                 if (visibleCount < totalFiltered) {
-                    setVisibleCount(prev => prev + 20);
+                    setVisibleCountState(prev => ({
+                        key: visibleCountKey,
+                        count: (prev.key === visibleCountKey ? prev.count : 20) + 20,
+                    }));
                 }
             }
         }
@@ -213,7 +248,7 @@ export default function CalendarView({ performances: initialPerformances }: Cale
     const handleSelectDay = useMemo(() => (d: Date) => {
         setCurrentMonth(d);
         setCalendarView('daily');
-    }, [router]); // Stable setter
+    }, []); // Stable setter
 
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
@@ -269,11 +304,22 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                     </div>
                 </div>
 
+                <div className="border-b border-gray-200 bg-gray-50/80 px-4 py-3 dark:border-gray-800 dark:bg-gray-950/60">
+                    <div className="mx-auto max-w-5xl">
+                        <ServiceStatusStrip
+                            lastUpdated={lastUpdated}
+                            totalItemCount={totalItemCount}
+                            availableGenreCount={availableGenreCount}
+                            qualitySummary={buildInfo?.qualitySummary}
+                        />
+                    </div>
+                </div>
+
                 {/* Category Nav Header */}
                 <div className="w-full px-4 py-3 bg-gray-100/30 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab z-10"
                     onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
                     <div className="flex gap-2 w-max">
-                        {GENRES.map((genre) => {
+                        {availableGenres.map((genre) => {
                             const isSelected = localGenre === genre.id;
                             const count = genre.id === 'all'
                                 ? currentViewTotalEvents.length
@@ -304,6 +350,13 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                 </div>
 
                 {/* Unified Day View Pane */}
+                {!isDataFullyLoaded && performances.length === 0 && (
+                    <div className="flex flex-col items-center justify-center gap-3 border-b border-gray-200 bg-gray-50 px-4 py-6 text-center dark:border-gray-800 dark:bg-gray-950/60">
+                        <div className="text-sm font-black text-gray-900 dark:text-white">달력 데이터를 불러오는 중...</div>
+                        <div className="text-xs font-semibold text-gray-500 dark:text-gray-400">초기 진입 속도를 위해 캘린더 데이터는 클라이언트에서 바로 이어서 내려받습니다.</div>
+                    </div>
+                )}
+
                 {calendarView === 'daily' && (
                     <div
                         ref={listRef}
@@ -328,17 +381,25 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                             return (
                                 <div className="space-y-3 max-w-4xl mx-auto w-full">
                                     {displayedDailyEvents.map((perf, i) => (
-                                        <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
+                                        <a key={`${perf.id}-${i}`} href={getExternalContentLink(perf)} target="_blank" rel="noopener noreferrer"
                                             className="flex gap-4 p-4 bg-white dark:bg-gray-800/50 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-100 dark:border-gray-800 transition-all group shadow-sm hover:shadow-md active:scale-[0.98]"
                                         >
                                             {perf.image && (
                                                 <div className="relative w-14 h-20 shrink-0 shadow-lg group-hover:scale-105 transition-transform">
-                                                    <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-full h-full object-cover rounded-lg bg-gray-100 dark:bg-gray-700" referrerPolicy="no-referrer" />
+                                                    <ImageWithFallback
+                                                        src={perf.image || perf.poster || perf.backupPoster || perf.posterUrl || ''}
+                                                        backupSrc={perf.backupPoster || perf.posterUrl || perf.poster}
+                                                        alt={perf.title}
+                                                        fill
+                                                        optimizationWidth={80}
+                                                        sizes="56px"
+                                                        className="object-cover rounded-lg bg-gray-100 dark:bg-gray-700"
+                                                    />
                                                 </div>
                                             )}
                                             <div className="min-w-0 flex-1 flex flex-col justify-center">
                                                 <div className="flex items-center gap-2 mb-1.5">
-                                                    <span className={clsx("px-2 py-0.5 rounded text-[10px] font-black tracking-wider text-white uppercase", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-600')}>
+                                                    <span className={clsx("px-2 py-0.5 rounded text-[10px] font-black tracking-wider text-white uppercase", GENRE_STYLES[perf.genre as keyof typeof GENRE_STYLES]?.twBg || 'bg-gray-600')}>
                                                         {GENRES.find(g => g.id === perf.genre)?.label}
                                                     </span>
                                                     <span className="text-[11px] text-gray-500 font-bold truncate">{perf.venue}</span>
@@ -430,13 +491,13 @@ export default function CalendarView({ performances: initialPerformances }: Cale
                                             {dayEvents.slice(0, 10).map((perf, i) => (
                                                 <a
                                                     key={`${perf.id}-${i}`}
-                                                    href={perf.link}
+                                                    href={getExternalContentLink(perf)}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     onClick={(e) => e.stopPropagation()}
                                                     className="flex items-center gap-2 text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                                                 >
-                                                    <span className={clsx("w-2 h-2 rounded-full shrink-0", (GENRE_STYLES as any)[perf.genre]?.twBg || 'bg-gray-400')} />
+                                                    <span className={clsx("w-2 h-2 rounded-full shrink-0", GENRE_STYLES[perf.genre as keyof typeof GENRE_STYLES]?.twBg || 'bg-gray-400')} />
                                                     <span className="truncate">{perf.title}</span>
                                                 </a>
                                             ))}
