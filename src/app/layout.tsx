@@ -6,6 +6,8 @@ import ProgressBarProvider from "@/components/ProgressBarProvider";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import InstallApp from "@/components/InstallApp";
 import ScrollToTop from "@/components/ScrollToTop";
+import VersionUpdateBanner from "@/components/VersionUpdateBanner";
+import { getDataBuildInfo } from "@/lib/performance-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,6 +74,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const buildInfo = getDataBuildInfo();
+
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
@@ -113,6 +117,10 @@ export default function RootLayout({
           <ErrorBoundary>
             {children}
             <InstallApp />
+            <VersionUpdateBanner
+              currentVersion={buildInfo?.version ?? null}
+              currentGeneratedAt={buildInfo?.generatedAt ?? null}
+            />
             <ScrollToTop />
           </ErrorBoundary>
         </ProgressBarProvider>

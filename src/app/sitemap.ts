@@ -27,6 +27,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'daily' as const,
             priority: 1,
         },
+        {
+            url: `${BASE_URL}/map`,
+            lastModified,
+            changeFrequency: 'daily' as const,
+            priority: 0.7,
+        },
+        {
+            url: `${BASE_URL}/calendar`,
+            lastModified,
+            changeFrequency: 'daily' as const,
+            priority: 0.7,
+        },
+        {
+            url: `${BASE_URL}/status`,
+            lastModified,
+            changeFrequency: 'daily' as const,
+            priority: 0.6,
+        },
     ];
 
     return [...staticRoutes, ...genreRoutes];

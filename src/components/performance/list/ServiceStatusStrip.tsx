@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { Activity, Clock3, Database, LayoutGrid, ShieldAlert, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Activity, ArrowUpRight, Clock3, Database, LayoutGrid, ShieldAlert, ShieldCheck } from 'lucide-react';
 import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
 import { getQualityIssueCount, getQualityStatusLabel, getSourceHealthStatusLabel } from '@/lib/build-info';
 
@@ -18,12 +19,13 @@ function StatPill({
 }: {
     icon: ReactNode;
     children: ReactNode;
-    tone?: 'default' | 'good' | 'warn';
+    tone?: 'default' | 'good' | 'warn' | 'muted';
 }) {
     const toneClassName = {
         default: 'border-white/10 bg-white/5 text-gray-300 light:border-black/10 light:bg-black/5 light:text-gray-700',
         good: 'border-emerald-500/25 bg-emerald-500/10 text-emerald-200 light:border-emerald-500/20 light:bg-emerald-50 light:text-emerald-700',
         warn: 'border-amber-500/30 bg-amber-500/10 text-amber-100 light:border-amber-500/25 light:bg-amber-50 light:text-amber-700',
+        muted: 'border-sky-500/25 bg-sky-500/10 text-sky-100 light:border-sky-500/20 light:bg-sky-50 light:text-sky-700',
     }[tone];
 
     return (
@@ -73,6 +75,11 @@ export default function ServiceStatusStrip({
                 {getQualityStatusLabel(qualitySummary)}
                 {qualitySummary?.status === 'warn' && issueCount > 0 ? ` · ${issueCount}건` : ''}
             </StatPill>
+            <Link href="/status/" className="inline-flex">
+                <StatPill icon={<ArrowUpRight className="h-3.5 w-3.5" />} tone="muted">
+                    상태 페이지
+                </StatPill>
+            </Link>
         </div>
     );
 }

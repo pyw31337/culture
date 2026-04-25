@@ -6,13 +6,132 @@ const isProd = process.env.NODE_ENV === 'production';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const createWithPWA = require('next-pwa');
 
+type RuntimeCachingEntry = {
+  urlPattern: RegExp;
+  handler: 'CacheFirst' | 'StaleWhileRevalidate' | 'NetworkFirst';
+  options?: Record<string, unknown>;
+};
+
+const runtimeCaching: RuntimeCachingEntry[] = [
+  {
+    urlPattern: /\/version\.txt(?:\?.*)?$/i,
+    handler: 'NetworkFirst',
+    options: {
+      cacheName: 'version-check',
+      networkTimeoutSeconds: 2,
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 4,
+        maxAgeSeconds: 60,
+      },
+    },
+  },
+  {
+    urlPattern: /\/data\/build-info\.json(?:\?.*)?$/i,
+    handler: 'NetworkFirst',
+    options: {
+      cacheName: 'build-info',
+      networkTimeoutSeconds: 2,
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 4,
+        maxAgeSeconds: 60,
+      },
+    },
+  },
+  {
+    urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'google-fonts',
+      expiration: {
+        maxEntries: 4,
+        maxAgeSeconds: 365 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /^https:\/\/use\.fontawesome\.com\/releases\/.*/i,
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'font-awesome',
+      expiration: {
+        maxEntries: 1,
+        maxAgeSeconds: 365 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
+    handler: 'StaleWhileRevalidate',
+    options: {
+      cacheName: 'static-font-assets',
+      expiration: {
+        maxEntries: 4,
+        maxAgeSeconds: 7 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
+    handler: 'StaleWhileRevalidate',
+    options: {
+      cacheName: 'static-image-assets',
+      expiration: {
+        maxEntries: 64,
+        maxAgeSeconds: 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /\.(?:js)$/i,
+    handler: 'StaleWhileRevalidate',
+    options: {
+      cacheName: 'static-js-assets',
+      expiration: {
+        maxEntries: 16,
+        maxAgeSeconds: 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /\.(?:css|less)$/i,
+    handler: 'StaleWhileRevalidate',
+    options: {
+      cacheName: 'static-style-assets',
+      expiration: {
+        maxEntries: 16,
+        maxAgeSeconds: 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /.*/i,
+    handler: 'NetworkFirst',
+    options: {
+      cacheName: 'others',
+      networkTimeoutSeconds: 3,
+      expiration: {
+        maxEntries: 16,
+        maxAgeSeconds: 60 * 60,
+      },
+    },
+  },
+];
+
 const pwaOptions = {
   dest: 'public',
   register: true,
   skipWaiting: true,
   disable: !isProd,
+  runtimeCaching,
   globIgnores: [
     'public/data/**/*.json',
+    'public/version.txt',
     'public/images/posters/**/*',
     'public/sw *.js',
     'public/.DS_Store',

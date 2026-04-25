@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.clfpaQ9bRtljdPL0haw5f.b9a9451aa689d719331a719261d61cb2.js"
+  "/culture/_next/precache.ObM8vwRPLtBdAcdCR4Qoa.a6f5910bde25824333af2c4866997420.js"
 );
 
 workbox.core.skipWaiting();
@@ -736,10 +736,6 @@ self.__precacheManifest = [
     "revision": "c0af2f507b369b085b35ef4bbe3bcf1e"
   },
   {
-    "url": "/version.txt",
-    "revision": "144b05112b4e109e300f56967af3d700"
-  },
-  {
     "url": "/window.svg",
     "revision": "a2760511c65806022ad20adf74370ff3"
   },
@@ -752,10 +748,12 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.precaching.cleanupOutdatedCaches();
 
+workbox.routing.registerRoute(/\/version\.txt(?:\?.*)?$/i, new workbox.strategies.NetworkFirst({ "cacheName":"version-check","networkTimeoutSeconds":2, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 60, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute(/\/data\/build-info\.json(?:\?.*)?$/i, new workbox.strategies.NetworkFirst({ "cacheName":"build-info","networkTimeoutSeconds":2, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 60, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"google-fonts", plugins: [new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 31536000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"font-awesome", plugins: [new workbox.expiration.Plugin({ maxEntries: 1, maxAgeSeconds: 31536000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-font-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 604800, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-image-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 64, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:js)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-js-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 16, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:css|less)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-style-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 16, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
-workbox.routing.registerRoute(/.*/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"others", plugins: [new workbox.expiration.Plugin({ maxEntries: 16, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute(/.*/i, new workbox.strategies.NetworkFirst({ "cacheName":"others","networkTimeoutSeconds":3, plugins: [new workbox.expiration.Plugin({ maxEntries: 16, maxAgeSeconds: 3600, purgeOnQuotaError: false })] }), 'GET');

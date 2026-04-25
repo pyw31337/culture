@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { execFileSync } from 'child_process';
 import { getAllPerformances } from '../src/lib/performance-data';
 import type {
     DataSourceFreshness,
@@ -153,13 +154,43 @@ function getSourceAgeDays(updatedAt: Date) {
     return Math.max(0, Math.floor(ageMs / (1000 * 60 * 60 * 24)));
 }
 
-function getSourceFreshness(updatedAt: Date | null, itemCount: number, seasonal: boolean): DataSourceFreshness {
+function getTrackedFileUpdatedAt(relativePath: string) {
+    const absolutePath = path.join(process.cwd(), relativePath);
+    if (!fs.existsSync(absolutePath)) return null;
+
+    try {
+        const gitUpdatedAt = execFileSync('git', ['log', '-1', '--format=%cI', '--', relativePath], {
+            cwd: process.cwd(),
+            encoding: 'utf8',
+            stdio: ['ignore', 'pipe', 'ignore'],
+        }).trim();
+
+        if (gitUpdatedAt) {
+            const parsed = new Date(gitUpdatedAt);
+            if (!Number.isNaN(parsed.getTime())) {
+                return parsed;
+            }
+        }
+    } catch {
+        // Fall through to filesystem mtime when git metadata is unavailable.
+    }
+
+    return fs.statSync(absolutePath).mtime;
+}
+
+function getSourceFreshness(
+    updatedAt: Date | null,
+    itemCount: number,
+    seasonal: boolean,
+    freshDays = SOURCE_FRESH_DAYS,
+    staleDays = SOURCE_STALE_DAYS,
+): DataSourceFreshness {
     if (seasonal && itemCount === 0) return 'offseason';
     if (!updatedAt) return 'unknown';
 
     const ageDays = getSourceAgeDays(updatedAt);
-    if (ageDays <= SOURCE_FRESH_DAYS) return 'fresh';
-    if (ageDays <= SOURCE_STALE_DAYS) return 'aging';
+    if (ageDays <= freshDays) return 'fresh';
+    if (ageDays <= staleDays) return 'aging';
     return 'stale';
 }
 
@@ -169,8 +200,7 @@ function buildSourceSummaries(sourceCounts: Record<string, number>): {
 } {
     const sourceSummaries = SOURCE_REGISTRY
         .map<DataSourceSummary>((entry) => {
-            const absolutePath = path.join(process.cwd(), 'src', 'data', entry.file);
-            const updatedAt = fs.existsSync(absolutePath) ? fs.statSync(absolutePath).mtime : null;
+            const updatedAt = getTrackedFileUpdatedAt(path.join('src', 'data', entry.file));
             const itemCount = sourceCounts[entry.key] || 0;
 
             return {
@@ -180,7 +210,13 @@ function buildSourceSummaries(sourceCounts: Record<string, number>): {
                 itemCount,
                 updatedAt: updatedAt ? updatedAt.toISOString() : null,
                 ageDays: updatedAt ? getSourceAgeDays(updatedAt) : null,
-                freshness: getSourceFreshness(updatedAt, itemCount, entry.seasonal === true),
+                freshness: getSourceFreshness(
+                    updatedAt,
+                    itemCount,
+                    entry.seasonal === true,
+                    entry.freshDays,
+                    entry.staleDays,
+                ),
                 seasonal: entry.seasonal === true,
             };
         })
@@ -210,10 +246,9 @@ function buildSourceSummaries(sourceCounts: Record<string, number>): {
 
 function getLatestSourceUpdatedAt() {
     return SOURCE_REGISTRY.reduce<Date | null>((latest, entry) => {
-        const absolutePath = path.join(process.cwd(), 'src', 'data', entry.file);
-        if (!fs.existsSync(absolutePath)) return latest;
+        const updatedAt = getTrackedFileUpdatedAt(path.join('src', 'data', entry.file));
+        if (!updatedAt) return latest;
 
-        const updatedAt = fs.statSync(absolutePath).mtime;
         if (!latest || updatedAt.getTime() > latest.getTime()) {
             return updatedAt;
         }

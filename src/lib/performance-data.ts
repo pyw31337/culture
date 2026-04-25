@@ -7,6 +7,7 @@ import type {
     DataSourceHealthSummary,
     DataSourceSummary
 } from '@/lib/build-info';
+import { formatKoreanDateTime } from '@/lib/build-info';
 import { processAndMergePerformances } from '@/lib/performance-merger';
 import { transformPerformance, type RawPerformance } from '@/lib/data-transformer';
 import { SOURCE_REGISTRY } from '@/lib/source-registry';
@@ -237,23 +238,8 @@ export function getDataBuildInfo(): DataBuildInfo | null {
 }
 
 export function formatLastUpdatedLabel(generatedAt?: string | null): string {
-    const baseDate = generatedAt ? new Date(generatedAt) : new Date();
-    const safeDate = Number.isNaN(baseDate.getTime()) ? new Date() : baseDate;
-    const formatter = new Intl.DateTimeFormat('ko-KR', {
-        timeZone: 'Asia/Seoul',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        weekday: 'short',
-        hour12: false
-    });
-
-    const parts = formatter.formatToParts(safeDate);
-    const getPart = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
-
-    return `${getPart('year')}.${getPart('month')}.${getPart('day')}.(${getPart('weekday')}) ${getPart('hour')}:${getPart('minute')} `;
+    const fallbackLabel = formatKoreanDateTime(new Date().toISOString(), '정보 없음');
+    return `${formatKoreanDateTime(generatedAt, fallbackLabel)} `;
 }
 
 export function getLastUpdatedLabel(): string {

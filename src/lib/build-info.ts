@@ -52,6 +52,29 @@ export function getAvailableGenreCount(genreCounts?: Record<string, number>) {
     return Object.values(genreCounts ?? {}).filter((count) => typeof count === 'number' && count > 0).length;
 }
 
+export function formatKoreanDateTime(value?: string | null, fallback = '정보 없음') {
+    if (!value) return fallback;
+
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return fallback;
+
+    const formatter = new Intl.DateTimeFormat('ko-KR', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        weekday: 'short',
+        hour12: false,
+    });
+
+    const parts = formatter.formatToParts(date);
+    const getPart = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
+
+    return `${getPart('year')}.${getPart('month')}.${getPart('day')}.(${getPart('weekday')}) ${getPart('hour')}:${getPart('minute')}`;
+}
+
 export function getQualityIssueCount(summary?: DataQualitySummary | null) {
     if (!summary) return 0;
 
@@ -88,4 +111,34 @@ export function getSourceHealthStatusLabel(summary?: DataSourceHealthSummary | n
     }
 
     return '수집 소스 정보 준비 중';
+}
+
+export function getSourceFreshnessLabel(freshness: DataSourceFreshness) {
+    switch (freshness) {
+        case 'fresh':
+            return '최신';
+        case 'aging':
+            return '관찰';
+        case 'stale':
+            return '점검 필요';
+        case 'offseason':
+            return '비시즌';
+        default:
+            return '확인 필요';
+    }
+}
+
+export function getSourceFreshnessTone(freshness: DataSourceFreshness) {
+    switch (freshness) {
+        case 'fresh':
+            return 'good';
+        case 'aging':
+            return 'default';
+        case 'offseason':
+            return 'muted';
+        case 'stale':
+        case 'unknown':
+        default:
+            return 'warn';
+    }
 }
