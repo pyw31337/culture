@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "generate-data": "npx tsx scripts/generate-performance-json.ts",
+    "build:site": "next build --webpack",
     "build": "npm run generate-data && npm run validate:content && next build --webpack",
     "start": "next start",
     "lint": "eslint",
