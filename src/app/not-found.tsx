@@ -1,10 +1,24 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import RainbowBackground from '@/components/ui/RainbowBackground';
 import { Home } from 'lucide-react';
 
 export default function NotFound() {
+    useEffect(() => {
+        const match = window.location.pathname.match(/\/p\/([^/]+)\/?$/);
+        if (!match) return;
+
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const decodedId = decodeURIComponent(match[1]);
+        const timer = setTimeout(() => {
+            window.location.replace(`${basePath}/#p=${encodeURIComponent(decodedId)}`);
+        }, 300);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-900 text-white">
             <RainbowBackground />
@@ -13,7 +27,7 @@ export default function NotFound() {
                 <h1 className="text-9xl font-black mb-4 opacity-20">404</h1>
                 <h2 className="text-3xl font-bold mb-6">요청하신 페이지를 찾을 수 없습니다.</h2>
                 <p className="text-gray-400 mb-10 max-w-md mx-auto">
-                    존재하지 않거나 삭제된 공연 정보일 수 있습니다.<br />
+                    존재하지 않거나 아직 정적 페이지가 생성되지 않은 공연 정보일 수 있습니다.<br />
                     홈으로 돌아가 최신 문화 정보를 확인해보세요.
                 </p>
                 

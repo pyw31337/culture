@@ -18,7 +18,6 @@ interface HeroSectionProps {
     activeLocation: { lat?: number, lng?: number, name: string } | null;
     userAddress: string | null;
     radius: number;
-    lastUpdated: string;
     searchLocation?: any;
     searchText: string;
     searchResults: any[];
@@ -71,7 +70,6 @@ export default function HeroSection({
     activeLocation,
     userAddress,
     radius,
-    lastUpdated,
     searchLocation,
     searchText,
     searchResults,

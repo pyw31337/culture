@@ -23,6 +23,8 @@ import RainbowBackground from './ui/RainbowBackground';
 import ErrorBoundary from './ErrorBoundary';
 import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
+import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
+import type { DataBuildInfo } from '@/lib/build-info';
 
 // Custom Hooks
 import { useUserPreferences } from '@/hooks/useUserPreferences';
@@ -39,6 +41,8 @@ interface PerformanceListProps {
     initialPerformances: Performance[];
     lastUpdated: string;
     initialGenre?: string;
+    initialGenreCounts?: GenreCounts;
+    buildInfo?: DataBuildInfo | null;
     isCategoryPage?: boolean;
     categoryLabel?: string;
 }
@@ -47,6 +51,8 @@ export default function PerformanceList({
     initialPerformances,
     lastUpdated,
     initialGenre = 'all',
+    initialGenreCounts,
+    buildInfo,
     isCategoryPage = false,
     categoryLabel
 }: PerformanceListProps) {
@@ -102,6 +108,19 @@ export default function PerformanceList({
 
     // --- Derived State ---
     const activeLocation = searchLocation || userLocation;
+    const genreCounts = useMemo(() => {
+        if (isDataFullyLoaded) return buildGenreCounts(allPerformances);
+        if (initialGenreCounts && Object.keys(initialGenreCounts).length > 0) return initialGenreCounts;
+        return buildGenreCounts(allPerformances);
+    }, [allPerformances, initialGenreCounts, isDataFullyLoaded]);
+    const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
+    const totalItemCount = useMemo(() => {
+        if (buildInfo?.itemCount) return buildInfo.itemCount;
+        return Object.values(genreCounts).reduce((sum, count) => sum + count, 0);
+    }, [buildInfo?.itemCount, genreCounts]);
+    const availableGenreCount = useMemo(() => {
+        return availableGenres.filter((genre) => genre.id !== 'all').length;
+    }, [availableGenres]);
 
     // Initialize from URL params (e.g., from map '공연 더보기' button or venue links)
     const lastUrlKey = useRef<string>('');
@@ -133,6 +152,12 @@ export default function PerformanceList({
         // Simple mock for now, can be sophisticated later
         return allPerformances.slice(0, 10);
     }, [allPerformances]);
+
+    useEffect(() => {
+        if (selectedGenre !== 'all' && !isGenreAvailable(genreCounts, selectedGenre)) {
+            setSelectedGenre('all');
+        }
+    }, [genreCounts, selectedGenre, setSelectedGenre]);
 
     // --- Search Synchronization Helper ---
     const syncSearchToUrl = useCallback((
@@ -310,7 +335,7 @@ export default function PerformanceList({
                     heroText={heroText} onCycle={selectNextTemplate} isHeroVisible={isHeroVisible} viewMode={viewMode} selectedGenre={selectedGenre}
                     selectedRegion={selectedRegion} selectedDistrict={selectedDistrict} selectedVenue={selectedVenue}
                     activeLocation={activeLocation ? { name: searchLocation?.name || '내 위치' } : null}
-                    userAddress={userAddress} radius={radius} lastUpdated={lastUpdated} searchLocation={searchLocation} searchText={searchText}
+                    userAddress={userAddress} radius={radius} searchLocation={searchLocation} searchText={searchText}
                     searchResults={searchResults} isDropdownOpen={isDropdownOpen} activeSearchSource={activeSearchSource} highlightedIndex={highlightedIndex}
                     setIsHeroFilterExpanded={setIsHeroFilterExpanded} isHeroFilterExpanded={isHeroFilterExpanded} setSelectedRegion={setSelectedRegion}
                     setSelectedDistrict={setSelectedDistrict} setSelectedVenue={setSelectedVenue} setUserLocation={setUserLocation}
@@ -377,6 +402,10 @@ export default function PerformanceList({
                     <ResultsHeader
                         viewMode={viewMode} activeLocation={activeLocation} searchLocation={searchLocation} searchText={searchText}
                         searchMode={searchMode} selectedGenre={selectedGenre} filteredCount={filteredPerformances.length} radius={radius}
+                        lastUpdated={lastUpdated}
+                        totalItemCount={totalItemCount}
+                        availableGenreCount={availableGenreCount}
+                        qualitySummary={buildInfo?.qualitySummary}
                         onResetFilters={() => { setSearchLocation(null); handleSearchChange(''); }} onRadiusChange={setRadius}
                     />
 
@@ -425,7 +454,7 @@ export default function PerformanceList({
             {/* 4. Navigation & Modals */}
             <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={() => { router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
 
-            <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} onVenueSelect={(v) => {
+            <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} availableGenres={availableGenres} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} onVenueSelect={(v) => {
                 setSelectedVenue(v);
 
                 // Location Mode Integration: Intercept venue selection to trigger location search

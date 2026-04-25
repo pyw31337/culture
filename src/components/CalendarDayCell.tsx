@@ -3,6 +3,7 @@ import { clsx } from 'clsx';
 import { Performance } from '@/types';
 import { GENRE_STYLES } from '@/lib/constants';
 import { format, isSameMonth, isSameDay } from 'date-fns';
+import { getExternalContentLink } from '@/lib/performance-links';
 
 interface CalendarDayCellProps {
     day: Date;
@@ -48,7 +49,7 @@ const CalendarDayCell = memo(({ day, currentMonth, dayEvents, onSelectDay }: Cal
                 {dayEvents.slice(0, 5).map((perf, i) => (
                     <a
                         key={`${perf.id}-${i}`}
-                        href={perf.link}
+                        href={getExternalContentLink(perf)}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}

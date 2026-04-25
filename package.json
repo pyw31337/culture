@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "generate-data": "npx tsx scripts/generate-performance-json.ts",
-    "build": "npm run generate-data && next build --webpack",
+    "build": "npm run generate-data && npm run validate:content && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "scrape:movies": "npx tsx scripts/scrape-movies.ts",
@@ -14,7 +14,8 @@
     "scrape:kbo": "npx tsx scripts/scrape-kbo.ts",
     "scrape:yes24": "npx tsx scripts/scrape-yes24-exclusive.ts",
     "scrape:sssd": "npx tsx scripts/scrape-sssd.ts",
-    "validate:images": "npx tsx scripts/validate-images.ts"
+    "validate:images": "npx tsx scripts/validate-images.ts",
+    "validate:content": "npx tsx scripts/validate-content-quality.ts"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",

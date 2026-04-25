@@ -7,11 +7,13 @@ import { ko } from 'date-fns/locale';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { getOptimizedUrl } from '@/lib/utils';
+import { buildGenreCounts, getAvailableGenres, isGenreAvailable } from '@/lib/genre-availability';
+import { getExternalContentLink } from '@/lib/performance-links';
 import Portal from './ui/Portal';
 import CalendarDayCell from './CalendarDayCell';
 import venueData from '@/data/venues.json';
 import { MapPin } from 'lucide-react';
+import ImageWithFallback from './ImageWithFallback';
 
 const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string }>;
 
@@ -28,6 +30,8 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [calendarView, setCalendarView] = useState<CalendarView>('monthly');
     const [localGenre, setLocalGenre] = useState(selectedGenre);
+    const genreCounts = useMemo(() => buildGenreCounts(performances), [performances]);
+    const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
 
     const startDate = startOfWeek(startOfMonth(currentMonth));
     const endDate = endOfWeek(endOfMonth(currentMonth));
@@ -148,6 +152,12 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
         setVisibleCount(20);
     }, [currentMonth, localGenre, calendarView]);
 
+    useEffect(() => {
+        if (localGenre !== 'all' && !isGenreAvailable(genreCounts, localGenre)) {
+            setLocalGenre('all');
+        }
+    }, [genreCounts, localGenre]);
+
     // Drag to scroll logic
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -247,7 +257,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                     <div className="w-full px-4 py-3 bg-gray-100/30 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab z-10"
                         onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
                         <div className="flex gap-2 w-max">
-                            {GENRES.map((genre) => {
+                            {availableGenres.map((genre) => {
                                 const isSelected = localGenre === genre.id;
                                 const count = genre.id === 'all'
                                     ? currentViewTotalEvents.length
@@ -303,12 +313,20 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                 return (
                                     <div className="space-y-3 max-w-4xl mx-auto w-full">
                                         {displayedDailyEvents.map((perf, i) => (
-                                            <a key={`${perf.id}-${i}`} href={perf.link} target="_blank" rel="noopener noreferrer"
+                                            <a key={`${perf.id}-${i}`} href={getExternalContentLink(perf)} target="_blank" rel="noopener noreferrer"
                                                 className="flex gap-4 p-4 bg-white dark:bg-gray-800/50 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-100 dark:border-gray-800 transition-all group shadow-sm hover:shadow-md active:scale-[0.98]"
                                             >
                                                 {perf.image && (
                                                     <div className="relative w-14 h-20 shrink-0 shadow-lg group-hover:scale-105 transition-transform">
-                                                        <img src={getOptimizedUrl(perf.image)} alt={perf.title} className="w-full h-full object-cover rounded-lg bg-gray-100 dark:bg-gray-700" referrerPolicy="no-referrer" />
+                                                        <ImageWithFallback
+                                                            src={perf.image || perf.poster || perf.backupPoster || perf.posterUrl || ''}
+                                                            backupSrc={perf.backupPoster || perf.posterUrl || perf.poster}
+                                                            optimizationWidth={80}
+                                                            alt={perf.title}
+                                                            fill
+                                                            sizes="56px"
+                                                            className="object-cover rounded-lg bg-gray-100 dark:bg-gray-700"
+                                                        />
                                                     </div>
                                                 )}
                                                 <div className="min-w-0 flex-1 flex flex-col justify-center">
@@ -407,7 +425,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                                 {dayEvents.slice(0, 10).map((perf, i) => (
                                                     <a
                                                         key={`${perf.id}-${i}`}
-                                                        href={perf.link}
+                                                        href={getExternalContentLink(perf)}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         onClick={(e) => e.stopPropagation()}

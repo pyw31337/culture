@@ -3,7 +3,21 @@ import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const withPWA = require('next-pwa');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const createWithPWA = require('next-pwa');
+
+const pwaOptions = {
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: !isProd,
+  globIgnores: [
+    'public/data/**/*.json',
+    'public/images/posters/**/*',
+    'public/sw *.js',
+    'public/.DS_Store',
+  ],
+};
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -54,16 +68,41 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: isProd ? '/culture' : '',
   },
-  // @ts-ignore - Silence Turbopack warning when custom webpack is used
   turbopack: {},
-  // PWA configuration (Shadowwalker style)
-  // @ts-ignore
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development',
+};
+
+type NextWebpack = NonNullable<NextConfig['webpack']>;
+type WebpackConfiguration = Parameters<NextWebpack>[0];
+type WebpackConfigContext = Parameters<NextWebpack>[1];
+
+const nextPwaConfig = createWithPWA({
+  ...nextConfig,
+  pwa: pwaOptions,
+});
+
+const nextPwaConfigWithTypes = nextPwaConfig as NextConfig & {
+  pwa?: typeof pwaOptions;
+  webpack?: (config: WebpackConfiguration, context: WebpackConfigContext) => WebpackConfiguration;
+};
+const nextPwaWebpack = nextPwaConfigWithTypes.webpack;
+delete nextPwaConfigWithTypes.pwa;
+const validatedConfig = nextPwaConfigWithTypes;
+
+const finalConfig: NextConfig = {
+  ...validatedConfig,
+  webpack(config, context) {
+    if (!nextPwaWebpack) return config;
+
+    const nextPwaContext = {
+      ...context,
+      config: {
+        ...context.config,
+        pwa: pwaOptions,
+      },
+    } as WebpackConfigContext;
+
+    return nextPwaWebpack(config, nextPwaContext);
   },
 };
 
-export default withPWA(nextConfig);
+export default finalConfig;

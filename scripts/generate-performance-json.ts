@@ -2,22 +2,208 @@
 import fs from 'fs';
 import path from 'path';
 import { getAllPerformances } from '../src/lib/performance-data';
+import { getExternalContentLink } from '../src/lib/performance-links';
 import { sortPerformances } from '../src/lib/performance-filter';
+import type { Performance } from '../src/types';
+import { analyzeContentQuality } from './utils/content-quality';
 
-// Helper to ensure directory exists
-const ensureDirectoryExistence = (filePath: string) => {
-    const dirname = path.dirname(filePath);
-    if (fs.existsSync(dirname)) {
-        return true;
-    }
-    ensureDirectoryExistence(dirname);
-    fs.mkdirSync(dirname);
+type PrunablePerformance = Performance & {
+    platforms?: string[];
 };
+
+type PrunedPerformance = Omit<PrunablePerformance, 'posterUrl'>;
+
+type VenueRecord = {
+    name?: string;
+} & Record<string, unknown>;
+
+const GENRE_LABELS: Record<string, string> = {
+    movie: '영화',
+    musical: '뮤지컬',
+    concert: '콘서트',
+    play: '연극',
+    classic_tradition: '공연',
+    exhibition: '전시',
+    museum: '박물관/체험',
+    activity: '체험',
+    class: '클래스',
+    tourism: '관광지',
+    baseball: '야구 경기',
+    basketball: '농구 경기',
+    volleyball: '배구 경기',
+    soccer: '축구 경기',
+    handball: '핸드볼 경기',
+};
+
+const FALLBACK_IMAGES: Record<string, string> = {
+    soccer: '/images/soccer_poster.png',
+    baseball: '/images/fallbacks/baseball.jpg',
+    basketball: '/images/fallbacks/basketball.jpg',
+    volleyball: '/images/fallbacks/volleyball.jpg',
+    handball: '/images/fallbacks/handball.jpg',
+    museum: '/images/fallbacks/museum.jpg',
+    exhibition: '/images/fallbacks/exhibition.jpg',
+    classic_tradition: '/images/fallbacks/classic.jpg',
+    activity: '/images/fallbacks/activity.jpg',
+    movie: '/images/kbo-thumbnail.png',
+    default: '/images/placeholder.png'
+};
+
+function compactText(value?: string) {
+    return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function shortenText(value?: string, maxLength = 80) {
+    const text = compactText(value);
+    if (!text) return '';
+    return text.length > maxLength ? `${text.slice(0, maxLength - 1)}…` : text;
+}
+
+function hasUsableLink(value?: string) {
+    return Boolean(value && value.trim() && value.trim() !== '#');
+}
+
+function getRemoteImageCandidate(performance: Performance) {
+    const candidates = [performance.backupPoster, performance.posterUrl, performance.image];
+    return candidates.find((candidate) => typeof candidate === 'string' && candidate.startsWith('http'));
+}
+
+function getSiblingQualityScore(performance: Performance) {
+    let score = 0;
+
+    if (hasUsableLink(performance.link)) score += 3;
+    if (hasUsableLink(performance.website)) score += 2;
+    if (getRemoteImageCandidate(performance)) score += 3;
+    if (compactText(performance.description) || compactText(performance.synopsis)) score += 1;
+    if (compactText(performance.address)) score += 1;
+
+    return score;
+}
+
+function enrichFromSiblingItems(items: Performance[]) {
+    const donorByTitle = new Map<string, Performance>();
+
+    items.forEach((performance) => {
+        const key = compactText(performance.title);
+        if (!key) return;
+
+        const currentDonor = donorByTitle.get(key);
+        if (!currentDonor || getSiblingQualityScore(performance) > getSiblingQualityScore(currentDonor)) {
+            donorByTitle.set(key, performance);
+        }
+    });
+
+    items.forEach((performance) => {
+        const donor = donorByTitle.get(compactText(performance.title));
+        if (!donor || donor === performance) return;
+
+        if (!hasUsableLink(performance.link) && hasUsableLink(donor.link)) {
+            performance.link = donor.link;
+        }
+        if (!hasUsableLink(performance.website) && hasUsableLink(donor.website)) {
+            performance.website = donor.website;
+        }
+        if (!compactText(performance.description) && compactText(donor.description)) {
+            performance.description = donor.description;
+        }
+
+        const donorImage = getRemoteImageCandidate(donor);
+        if (!performance.backupPoster && donorImage) {
+            performance.backupPoster = donorImage;
+        }
+    });
+}
+
+function repairBrokenLocalImages(items: Performance[]) {
+    items.forEach((performance) => {
+        if (!performance.image || !performance.image.startsWith('/')) return;
+
+        const normalized = performance.image.replace(/^\/+/, '');
+        const absolutePath = path.join(process.cwd(), 'public', normalized);
+        if (fs.existsSync(absolutePath)) return;
+
+        const remoteCandidate = getRemoteImageCandidate(performance);
+        if (remoteCandidate) {
+            performance.image = remoteCandidate;
+            return;
+        }
+
+        performance.image = FALLBACK_IMAGES[performance.genre] || FALLBACK_IMAGES.default;
+    });
+}
+
+function repairMissingLinks(items: Performance[]) {
+    items.forEach((performance) => {
+        if (hasUsableLink(performance.link)) return;
+        performance.link = getExternalContentLink(performance);
+    });
+}
+
+function buildFallbackDescription(performance: Performance) {
+    const genreLabel = GENRE_LABELS[performance.genre] || '콘텐츠';
+    const title = compactText(performance.title);
+    const venue = shortenText(performance.venue, 50);
+    const date = shortenText(performance.date, 60);
+    const address = shortenText(performance.address, 60);
+    const audience = shortenText(performance.targetAudience, 40);
+    const operatingHours = shortenText(performance.operatingHours, 40);
+    const contact = shortenText(performance.contact, 30);
+    const facilities = shortenText(performance.facilities, 40);
+    const closedDays = shortenText(performance.closedDays, 30);
+    const fees = shortenText(performance.priceDetail || performance.feesAndPrograms || performance.price, 40);
+    const subGenre = shortenText(performance.subGenre, 30);
+
+    const parts: string[] = [];
+
+    if (['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(performance.genre) && performance.homeTeam && performance.awayTeam) {
+        parts.push(`${performance.homeTeam}와 ${performance.awayTeam}의 ${genreLabel}입니다.`);
+    } else if (performance.genre === 'class') {
+        parts.push(`${title}는 ${venue || '지정 장소'}에서 진행되는 ${genreLabel}입니다.`);
+    } else if (performance.genre === 'activity') {
+        parts.push(`${title}는 ${venue || '현장'}에서 즐길 수 있는 ${genreLabel}입니다.`);
+    } else if (performance.genre === 'museum' || performance.genre === 'exhibition') {
+        parts.push(`${title}는 ${venue || '전시 공간'}에서 만날 수 있는 ${genreLabel}입니다.`);
+    } else if (performance.genre === 'tourism') {
+        parts.push(`${title}는 방문을 고려해볼 만한 ${genreLabel}입니다.`);
+    } else {
+        parts.push(`${title}는 ${venue || '현장'}에서 진행되는 ${genreLabel}입니다.`);
+    }
+
+    if (subGenre && performance.genre !== 'movie') {
+        parts.push(`분류는 ${subGenre}입니다.`);
+    }
+    if (date && !['상시', 'OPEN RUN'].includes(date)) {
+        parts.push(`일정은 ${date} 기준입니다.`);
+    }
+    if (address) {
+        parts.push(`위치는 ${address}입니다.`);
+    }
+    if (audience) {
+        parts.push(`추천 대상은 ${audience}입니다.`);
+    }
+    if (operatingHours) {
+        parts.push(`운영 시간은 ${operatingHours}입니다.`);
+    }
+    if (closedDays) {
+        parts.push(`휴무 정보는 ${closedDays}입니다.`);
+    }
+    if (facilities) {
+        parts.push(`현장 편의 정보는 ${facilities}입니다.`);
+    }
+    if (fees) {
+        parts.push(`이용 정보는 ${fees} 기준입니다.`);
+    }
+    if (contact) {
+        parts.push(`문의는 ${contact}에서 확인할 수 있습니다.`);
+    }
+
+    return parts.join(' ');
+}
 
 async function generate() {
     console.log('Generating static performance data...');
     try {
-        const performances = await getAllPerformances();
+        const performances = await getAllPerformances({ preferPublicData: false });
 
         // [Data Quality Override]
         // Manual fixes for specific items requested by user
@@ -43,7 +229,7 @@ async function generate() {
         const KR_LNG_MIN = 124.0;
         const KR_LNG_MAX = 132.0;
 
-        const isOverseas = (p: any) => {
+        const isOverseas = (p: Performance) => {
             // 1. Specific title exclusion
             if (p.title.includes('일본 스페이스 일일캠프') || p.title.includes('JAXA츠크바우주센터')) return true;
 
@@ -67,7 +253,7 @@ async function generate() {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        let movieCount = 0;
+        const movieCount = 0;
         let ottCount = 0;
         let dateCount = 0;
 
@@ -144,8 +330,8 @@ async function generate() {
                 }
                 return isActive;
 
-            } catch (e: any) {
-                if (p.source === 'museum') console.log(`[DEBUG] Museum ${p.title} error in date parsing:`, e);
+            } catch (error: unknown) {
+                if (p.source === 'museum') console.log(`[DEBUG] Museum ${p.title} error in date parsing:`, error);
                 return true;
             }
         });
@@ -162,17 +348,27 @@ async function generate() {
 
         console.log(`Filtered ${performances.length - activePerformances.length} items (Expired or Duplicate Type).`);
 
+        activePerformances.forEach((performance) => {
+            if (!compactText(performance.description) && !compactText(performance.synopsis)) {
+                performance.description = buildFallbackDescription(performance);
+            }
+        });
+        enrichFromSiblingItems(activePerformances);
+        repairMissingLinks(activePerformances);
+        repairBrokenLocalImages(activePerformances);
+
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformances(activePerformances, 'all');
 
         // [New: Data Pruning for payload optimization]
-        const pruned = sorted.map((p: any) => {
-            const { posterUrl, ...rest } = p;
+        const pruned: PrunedPerformance[] = sorted.map((p) => {
+            const rest = { ...(p as PrunablePerformance) };
+            delete rest.posterUrl;
             // Also prune empty arrays/objects to save bytes
             if (Array.isArray(rest.cast) && rest.cast.length === 0) delete rest.cast;
             if (Array.isArray(rest.platforms) && rest.platforms.length === 0) delete rest.platforms;
             rest.source = p.source; // Keep the source for statistics
-            return rest;
+            return rest as PrunedPerformance;
         });
 
         const outputPath = path.join(process.cwd(), 'public', 'data', 'performances.json');
@@ -186,6 +382,41 @@ async function generate() {
         fs.writeFileSync(outputPath, JSON.stringify(pruned));
         console.log(`Successfully generated ${pruned.length} items to ${outputPath}`);
 
+        const versionPath = path.join(process.cwd(), 'public', 'version.txt');
+        const version = process.env.GITHUB_SHA?.slice(0, 12) || `${Math.floor(Date.now() / 1000)}`;
+        fs.writeFileSync(versionPath, `Version: ${version}\n`);
+        console.log(`Updated version.txt to ${versionPath}`);
+
+        const buildInfoPath = path.join(dir, 'build-info.json');
+        const sourceCounts = pruned.reduce<Record<string, number>>((acc, performance) => {
+            const source = performance.source || 'unknown';
+            acc[source] = (acc[source] || 0) + 1;
+            return acc;
+        }, {});
+        const genreCounts = pruned.reduce<Record<string, number>>((acc, performance) => {
+            const genre = performance.genre || 'unknown';
+            acc[genre] = (acc[genre] || 0) + 1;
+            return acc;
+        }, {});
+        const qualitySummary = analyzeContentQuality(pruned, {
+            checkedAt: new Date().toISOString(),
+            hasLocalAsset: (assetPath) => {
+                if (!assetPath || !assetPath.startsWith('/')) return false;
+                const normalized = assetPath.replace(/^\/+/, '');
+                return fs.existsSync(path.join(process.cwd(), 'public', normalized));
+            },
+        });
+        const buildInfo = {
+            generatedAt: new Date().toISOString(),
+            version,
+            itemCount: pruned.length,
+            sourceCounts,
+            genreCounts,
+            qualitySummary,
+        };
+        fs.writeFileSync(buildInfoPath, JSON.stringify(buildInfo));
+        console.log(`Updated build-info.json to ${buildInfoPath}`);
+
         // [New: Sync critical data files to public/data]
         const dataDir = path.join(process.cwd(), 'src', 'data');
         const filesToSync = ['cinemas.json', 'movies.json', 'ott.json', 'venues.json'];
@@ -197,11 +428,11 @@ async function generate() {
             if (fs.existsSync(srcPath)) {
                 if (filename === 'venues.json') {
                     // Smart Pruning for venues.json
-                    const venues = JSON.parse(fs.readFileSync(srcPath, 'utf8'));
+                    const venues = JSON.parse(fs.readFileSync(srcPath, 'utf8')) as Record<string, VenueRecord>;
                     const usedVenueNames = new Set(pruned.map(p => p.venue));
-                    const prunedVenues: Record<string, any> = {};
+                    const prunedVenues: Record<string, VenueRecord> = {};
 
-                    Object.entries(venues).forEach(([key, v]: [string, any]) => {
+                    Object.entries(venues).forEach(([key, v]) => {
                         if (usedVenueNames.has(key)) {
                             const { name, ...rest } = v;
                             // Only keep name if it differs from the key
@@ -223,7 +454,7 @@ async function generate() {
             }
         });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Error generating performance data:', error);
         process.exit(1);
     }

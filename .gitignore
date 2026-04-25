@@ -29,6 +29,7 @@ Untitled-*.psd
 *.zip
 *.log
 *.txt
+!public/version.txt
 
 # screenshots & debug images
 debug-*.png

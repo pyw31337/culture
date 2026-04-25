@@ -120,6 +120,9 @@ jobs:
       - name: Generate Public Data Artifacts
         run: npm run generate-data
 
+      - name: Validate Content Quality
+        run: npm run validate:content
+
       - name: Commit and Push changes
         run: |
           git config --global user.name 'GitHub Actions Bot'
