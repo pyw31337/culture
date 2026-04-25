@@ -2,8 +2,14 @@
 import fs from 'fs';
 import path from 'path';
 import { getAllPerformances } from '../src/lib/performance-data';
+import type {
+    DataSourceFreshness,
+    DataSourceHealthSummary,
+    DataSourceSummary
+} from '../src/lib/build-info';
 import { getExternalContentLink } from '../src/lib/performance-links';
 import { sortPerformances } from '../src/lib/performance-filter';
+import { SOURCE_REGISTRY } from '../src/lib/source-registry';
 import type { Performance } from '../src/types';
 import { analyzeContentQuality } from './utils/content-quality';
 
@@ -48,6 +54,9 @@ const FALLBACK_IMAGES: Record<string, string> = {
     movie: '/images/kbo-thumbnail.png',
     default: '/images/placeholder.png'
 };
+
+const SOURCE_FRESH_DAYS = 3;
+const SOURCE_STALE_DAYS = 30;
 
 function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
@@ -139,6 +148,110 @@ function repairMissingLinks(items: Performance[]) {
     });
 }
 
+function getSourceAgeDays(updatedAt: Date) {
+    const ageMs = Date.now() - updatedAt.getTime();
+    return Math.max(0, Math.floor(ageMs / (1000 * 60 * 60 * 24)));
+}
+
+function getSourceFreshness(updatedAt: Date | null, itemCount: number, seasonal: boolean): DataSourceFreshness {
+    if (seasonal && itemCount === 0) return 'offseason';
+    if (!updatedAt) return 'unknown';
+
+    const ageDays = getSourceAgeDays(updatedAt);
+    if (ageDays <= SOURCE_FRESH_DAYS) return 'fresh';
+    if (ageDays <= SOURCE_STALE_DAYS) return 'aging';
+    return 'stale';
+}
+
+function buildSourceSummaries(sourceCounts: Record<string, number>): {
+    sourceSummaries: DataSourceSummary[];
+    sourceHealthSummary: DataSourceHealthSummary;
+} {
+    const sourceSummaries = SOURCE_REGISTRY
+        .map<DataSourceSummary>((entry) => {
+            const absolutePath = path.join(process.cwd(), 'src', 'data', entry.file);
+            const updatedAt = fs.existsSync(absolutePath) ? fs.statSync(absolutePath).mtime : null;
+            const itemCount = sourceCounts[entry.key] || 0;
+
+            return {
+                key: entry.key,
+                label: entry.label,
+                file: entry.file,
+                itemCount,
+                updatedAt: updatedAt ? updatedAt.toISOString() : null,
+                ageDays: updatedAt ? getSourceAgeDays(updatedAt) : null,
+                freshness: getSourceFreshness(updatedAt, itemCount, entry.seasonal === true),
+                seasonal: entry.seasonal === true,
+            };
+        })
+        .filter((summary) => summary.itemCount > 0 || summary.seasonal);
+
+    const sourceHealthSummary = sourceSummaries.reduce<DataSourceHealthSummary>((acc, summary) => {
+        acc.totalSources += 1;
+
+        if (summary.freshness === 'fresh') acc.freshCount += 1;
+        else if (summary.freshness === 'aging') acc.agingCount += 1;
+        else if (summary.freshness === 'stale') acc.staleCount += 1;
+        else if (summary.freshness === 'offseason') acc.offseasonCount += 1;
+        else acc.unknownCount += 1;
+
+        return acc;
+    }, {
+        totalSources: 0,
+        freshCount: 0,
+        agingCount: 0,
+        staleCount: 0,
+        offseasonCount: 0,
+        unknownCount: 0,
+    });
+
+    return { sourceSummaries, sourceHealthSummary };
+}
+
+function getLatestSourceUpdatedAt() {
+    return SOURCE_REGISTRY.reduce<Date | null>((latest, entry) => {
+        const absolutePath = path.join(process.cwd(), 'src', 'data', entry.file);
+        if (!fs.existsSync(absolutePath)) return latest;
+
+        const updatedAt = fs.statSync(absolutePath).mtime;
+        if (!latest || updatedAt.getTime() > latest.getTime()) {
+            return updatedAt;
+        }
+
+        return latest;
+    }, null);
+}
+
+function getPublicBuildGeneratedAt() {
+    const buildInfoPath = path.join(process.cwd(), 'public', 'data', 'build-info.json');
+    if (!fs.existsSync(buildInfoPath)) return null;
+
+    try {
+        const parsed = JSON.parse(fs.readFileSync(buildInfoPath, 'utf8')) as { generatedAt?: string };
+        if (!parsed.generatedAt) return null;
+
+        const generatedAt = new Date(parsed.generatedAt);
+        return Number.isNaN(generatedAt.getTime()) ? null : generatedAt;
+    } catch {
+        return null;
+    }
+}
+
+function shouldPreferPublicBaseline() {
+    if (process.env.FORCE_SOURCE_REBUILD === '1') return false;
+
+    const publicPerformancesPath = path.join(process.cwd(), 'public', 'data', 'performances.json');
+    if (!fs.existsSync(publicPerformancesPath)) return false;
+
+    const publicGeneratedAt = getPublicBuildGeneratedAt();
+    const latestSourceUpdatedAt = getLatestSourceUpdatedAt();
+
+    if (!publicGeneratedAt) return false;
+    if (!latestSourceUpdatedAt) return true;
+
+    return publicGeneratedAt.getTime() >= latestSourceUpdatedAt.getTime();
+}
+
 function buildFallbackDescription(performance: Performance) {
     const genreLabel = GENRE_LABELS[performance.genre] || '콘텐츠';
     const title = compactText(performance.title);
@@ -203,7 +316,9 @@ function buildFallbackDescription(performance: Performance) {
 async function generate() {
     console.log('Generating static performance data...');
     try {
-        const performances = await getAllPerformances({ preferPublicData: false });
+        const preferPublicData = shouldPreferPublicBaseline();
+        console.log(`[Build Strategy] Input baseline: ${preferPublicData ? 'public/data' : 'src/data raw sources'}`);
+        const performances = await getAllPerformances({ preferPublicData });
 
         // [Data Quality Override]
         // Manual fixes for specific items requested by user
@@ -406,6 +521,7 @@ async function generate() {
                 return fs.existsSync(path.join(process.cwd(), 'public', normalized));
             },
         });
+        const { sourceSummaries, sourceHealthSummary } = buildSourceSummaries(sourceCounts);
         const buildInfo = {
             generatedAt: new Date().toISOString(),
             version,
@@ -413,6 +529,8 @@ async function generate() {
             sourceCounts,
             genreCounts,
             qualitySummary,
+            sourceSummaries,
+            sourceHealthSummary,
         };
         fs.writeFileSync(buildInfoPath, JSON.stringify(buildInfo));
         console.log(`Updated build-info.json to ${buildInfoPath}`);

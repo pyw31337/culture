@@ -865,6 +865,7 @@ export default function MapView({
                             totalItemCount={totalItemCount}
                             availableGenreCount={availableGenreCount}
                             qualitySummary={buildInfo?.qualitySummary}
+                            sourceHealthSummary={buildInfo?.sourceHealthSummary}
                         />
                     </div>
                 </div>

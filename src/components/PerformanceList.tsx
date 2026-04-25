@@ -406,6 +406,7 @@ export default function PerformanceList({
                         totalItemCount={totalItemCount}
                         availableGenreCount={availableGenreCount}
                         qualitySummary={buildInfo?.qualitySummary}
+                        sourceHealthSummary={buildInfo?.sourceHealthSummary}
                         onResetFilters={() => { setSearchLocation(null); handleSearchChange(''); }} onRadiusChange={setRadius}
                     />
 
