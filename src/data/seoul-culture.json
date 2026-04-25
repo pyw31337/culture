@@ -1755,21 +1755,6 @@
     "cost": "전석 30,000원"
   },
   {
-    "id": "perf_광진문화재단_나루아티스트와_함께하는_문화가_있는_날_살롱음악회_3월",
-    "title": "[광진문화재단] 나루아티스트와 함께하는 '문화가 있는 날' [살롱음악회] (3월)",
-    "date": "2026-03-25 ~ 2026-03-25",
-    "place": "나루아트센터",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6c244a05e1f548458c22dbb4750407b4&thumb=Y",
-    "genre": "classic",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=157048&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=45",
-    "lastEnriched": "2026-03-13T16:31:14.007Z",
-    "runningTime": "[시간] 19:30",
-    "ageRating": "미취학아동이상",
-    "price": "전석 1,000원",
-    "cost": "전석 1,000원"
-  },
-  {
     "id": "perf_2026_까망돌어울마당_아트홀_상반기_정기_기획공연_까망돌_칸타빌레_3회차_모어바운스의_More_Bounce_Unbound",
     "title": "2026 까망돌어울마당 아트홀 상반기 정기 기획공연 [까망돌 칸타빌레] 3회차 모어바운스의 [More Bounce, Unbound]",
     "date": "2026.03.25 (수)",
@@ -1813,36 +1798,6 @@
     "ageRating": "8세이상 관람가능(미취학아동입장불가)",
     "price": "전석 20,000원[패키지권 구매 시 20% 할인]",
     "cost": "전석 20,000원[패키지권 구매 시 20% 할인]"
-  },
-  {
-    "id": "perf_구립증산도서관_3월_테마전시체험전_테마로_즐기는_도서관_나홀로_버스",
-    "title": "[구립증산도서관] 3월 테마전시체험전 - 테마로 즐기는 도서관 [나홀로 버스]",
-    "date": "2026-03-16 ~ 2026-03-25",
-    "place": "구립증산도서관",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=12a1b46651fe4c9a92a7e06c05c76e7e&thumb=Y",
-    "genre": "exhibition",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=157006&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=45",
-    "lastEnriched": "2026-03-13T16:31:14.138Z",
-    "runningTime": "[시간] 운영시간내",
-    "ageRating": "누구나",
-    "price": "무료",
-    "cost": "무료"
-  },
-  {
-    "id": "perf_아라타_미노_개인전_조용한_생활과_사소한_점유",
-    "title": "아라타 미노 개인전 [조용한 생활과 사소한 점유]",
-    "date": "2026-03-05 ~ 2026-03-25",
-    "place": "인가희갤러리",
-    "poster": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=7d485be49e34421e9747bfd24d9d8442&thumb=Y",
-    "genre": "exhibition",
-    "source": "seoul-culture",
-    "link": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=156994&menuNo=200110&searchDist=&searchCost=&searchField=&searchAge=&sdate=2026-01-01&edate=2026-12-31&searchStr=&pageIndex=45",
-    "lastEnriched": "2026-03-13T16:31:13.509Z",
-    "runningTime": "[시간] 수 - 토요일 13:00 ~ 18:00",
-    "ageRating": "누구나",
-    "price": "무료",
-    "cost": "무료"
   },
   {
     "id": "perf_서초문화재단_모차르트_피아노_협주곡_전곡_시리즈_IV",
