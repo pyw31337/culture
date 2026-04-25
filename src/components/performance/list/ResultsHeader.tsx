@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Search, RotateCcw, ChevronDown } from 'lucide-react';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
-import type { DataQualitySummary } from '@/lib/build-info';
+import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
 import ServiceStatusStrip from './ServiceStatusStrip';
 
 interface ResultsHeaderProps {
@@ -18,6 +18,7 @@ interface ResultsHeaderProps {
     totalItemCount: number;
     availableGenreCount: number;
     qualitySummary?: DataQualitySummary | null;
+    sourceHealthSummary?: DataSourceHealthSummary | null;
     onResetFilters: () => void;
     onRadiusChange: (val: number) => void;
 }
@@ -35,6 +36,7 @@ export const ResultsHeader = ({
     totalItemCount,
     availableGenreCount,
     qualitySummary,
+    sourceHealthSummary,
     onResetFilters,
     onRadiusChange
 }: ResultsHeaderProps) => {
@@ -110,6 +112,7 @@ export const ResultsHeader = ({
                 totalItemCount={totalItemCount}
                 availableGenreCount={availableGenreCount}
                 qualitySummary={qualitySummary}
+                sourceHealthSummary={sourceHealthSummary}
             />
         </div>
     );

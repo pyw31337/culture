@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react';
-import { Clock3, Database, LayoutGrid, ShieldAlert, ShieldCheck } from 'lucide-react';
-import type { DataQualitySummary } from '@/lib/build-info';
-import { getQualityIssueCount, getQualityStatusLabel } from '@/lib/build-info';
+import { Activity, Clock3, Database, LayoutGrid, ShieldAlert, ShieldCheck } from 'lucide-react';
+import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
+import { getQualityIssueCount, getQualityStatusLabel, getSourceHealthStatusLabel } from '@/lib/build-info';
 
 interface ServiceStatusStripProps {
     lastUpdated: string;
     totalItemCount: number;
     availableGenreCount: number;
     qualitySummary?: DataQualitySummary | null;
+    sourceHealthSummary?: DataSourceHealthSummary | null;
 }
 
 function StatPill({
@@ -37,10 +38,16 @@ export default function ServiceStatusStrip({
     lastUpdated,
     totalItemCount,
     availableGenreCount,
-    qualitySummary
+    qualitySummary,
+    sourceHealthSummary
 }: ServiceStatusStripProps) {
     const issueCount = getQualityIssueCount(qualitySummary);
     const qualityTone = qualitySummary?.status === 'warn' ? 'warn' : 'good';
+    const sourceIssueCount = (sourceHealthSummary?.staleCount || 0) + (sourceHealthSummary?.unknownCount || 0);
+    const sourceTone = sourceIssueCount > 0 ? 'warn' : sourceHealthSummary?.agingCount ? 'default' : 'good';
+    const sourceSuffix = sourceHealthSummary?.offseasonCount
+        ? ` · 비시즌 ${sourceHealthSummary.offseasonCount}개`
+        : '';
 
     return (
         <div className="flex flex-wrap items-center gap-2 pt-3">
@@ -52,6 +59,10 @@ export default function ServiceStatusStrip({
             </StatPill>
             <StatPill icon={<LayoutGrid className="h-3.5 w-3.5" />}>
                 운영 카테고리 {availableGenreCount}개
+            </StatPill>
+            <StatPill icon={<Activity className="h-3.5 w-3.5" />} tone={sourceTone}>
+                {getSourceHealthStatusLabel(sourceHealthSummary)}
+                {sourceSuffix}
             </StatPill>
             <StatPill
                 icon={qualitySummary?.status === 'warn'

@@ -1,8 +1,15 @@
 import type { Performance } from '@/types';
 import { safeArray, safePerformanceList } from '@/lib/data-safety';
-import type { DataBuildInfo, DataQualitySummary } from '@/lib/build-info';
+import type {
+    DataBuildInfo,
+    DataQualitySummary,
+    DataSourceFreshness,
+    DataSourceHealthSummary,
+    DataSourceSummary
+} from '@/lib/build-info';
 import { processAndMergePerformances } from '@/lib/performance-merger';
 import { transformPerformance, type RawPerformance } from '@/lib/data-transformer';
+import { SOURCE_REGISTRY } from '@/lib/source-registry';
 
 import fs from 'fs';
 import path from 'path';
@@ -87,6 +94,52 @@ function normalizeQualitySummary(value: unknown): DataQualitySummary | null {
             missingDescriptions: normalizeCountMap(candidate.warningsByGenre?.missingDescriptions),
             missingImages: normalizeCountMap(candidate.warningsByGenre?.missingImages),
         },
+    };
+}
+
+function normalizeSourceFreshness(value: unknown): DataSourceFreshness {
+    if (value === 'fresh' || value === 'aging' || value === 'stale' || value === 'offseason') {
+        return value;
+    }
+
+    return 'unknown';
+}
+
+function normalizeSourceSummaries(value: unknown): DataSourceSummary[] {
+    if (!Array.isArray(value)) return [];
+
+    return value.reduce<DataSourceSummary[]>((acc, entry) => {
+        if (!entry || typeof entry !== 'object') return acc;
+
+        const candidate = entry as Partial<DataSourceSummary>;
+        if (typeof candidate.key !== 'string' || typeof candidate.file !== 'string') return acc;
+
+        acc.push({
+            key: candidate.key,
+            label: typeof candidate.label === 'string' ? candidate.label : candidate.key,
+            file: candidate.file,
+            itemCount: typeof candidate.itemCount === 'number' ? candidate.itemCount : 0,
+            updatedAt: typeof candidate.updatedAt === 'string' ? candidate.updatedAt : null,
+            ageDays: typeof candidate.ageDays === 'number' ? candidate.ageDays : null,
+            freshness: normalizeSourceFreshness(candidate.freshness),
+            seasonal: candidate.seasonal === true,
+        });
+
+        return acc;
+    }, []);
+}
+
+function normalizeSourceHealthSummary(value: unknown): DataSourceHealthSummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<DataSourceHealthSummary>;
+    return {
+        totalSources: typeof candidate.totalSources === 'number' ? candidate.totalSources : 0,
+        freshCount: typeof candidate.freshCount === 'number' ? candidate.freshCount : 0,
+        agingCount: typeof candidate.agingCount === 'number' ? candidate.agingCount : 0,
+        staleCount: typeof candidate.staleCount === 'number' ? candidate.staleCount : 0,
+        offseasonCount: typeof candidate.offseasonCount === 'number' ? candidate.offseasonCount : 0,
+        unknownCount: typeof candidate.unknownCount === 'number' ? candidate.unknownCount : 0,
     };
 }
 
@@ -177,6 +230,8 @@ export function getDataBuildInfo(): DataBuildInfo | null {
         sourceCounts: normalizeCountMap(candidate.sourceCounts),
         genreCounts: normalizeCountMap(candidate.genreCounts),
         qualitySummary: normalizeQualitySummary(candidate.qualitySummary),
+        sourceSummaries: normalizeSourceSummaries(candidate.sourceSummaries),
+        sourceHealthSummary: normalizeSourceHealthSummary(candidate.sourceHealthSummary),
     };
     return cachedBuildInfo;
 }
@@ -233,29 +288,7 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
     const cinemas = cachedCinemas;
 
     // 1. Load and Transform all data sources
-    const allSources: { file: string, source?: string }[] = [
-        { file: 'interpark.json', source: 'interpark' },
-        { file: 'timeticket.json', source: 'timeticket' },
-        { file: 'festivals.json', source: 'festival' },
-        { file: 'kovo.json', source: 'volleyball' },
-        { file: 'kbl.json', source: 'basketball' },
-        { file: 'kbo.json', source: 'baseball' },
-        { file: 'handball.json', source: 'handball' },
-        { file: 'kleague.json', source: 'football' },
-        { file: 'movies.json', source: 'movie' },
-        { file: 'myrealtrip-kids.json', source: 'myrealtrip-kids' },
-        { file: 'sssd-class.json', source: 'sssd-class' },
-        { file: 'umclass.json', source: 'umclass' },
-        { file: 'mochaclass.json', source: 'mochaclass' },
-        { file: 'seoul-culture.json', source: 'seoul' },
-        { file: 'culture-portal.json', source: 'culture-portal' },
-        { file: 'mommom.json', source: 'mommom' },
-        { file: 'mommom-activities.json', source: 'mommom-activity' },
-        { file: 'mommom-products.json', source: 'mommom-product' },
-        { file: 'museum.json', source: 'museum' },
-        { file: 'kopis-performances.json', source: 'kopis' },
-        { file: 'tourism.json', source: 'tourism' },
-    ];
+    const allSources = SOURCE_REGISTRY.map(({ file, key }) => ({ file, source: key }));
 
     const allPerformances = allSources.flatMap(({ file, source }) => {
         const data = loadSourceJSON(file);
