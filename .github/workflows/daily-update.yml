@@ -15,6 +15,9 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    outputs:
+      data_changed: ${{ steps.commit_changes.outputs.data_changed }}
+      deployed_sha: ${{ steps.commit_changes.outputs.deployed_sha }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -124,15 +127,26 @@ jobs:
         run: npm run validate:content
 
       - name: Commit and Push changes
+        id: commit_changes
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
-          git add src/data/*.json
-          git add public/data/*.json
+          git add src/data
+          git add public/data
           git add public/version.txt
-          git add public/images/posters/*.webp
-          # Only commit if there are changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update daily data" && git push)
+          git add public/images/posters
+
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "data_changed=false" >> "$GITHUB_OUTPUT"
+            echo "deployed_sha=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git commit -m "chore: update daily data"
+          git push
+
+          echo "data_changed=true" >> "$GITHUB_OUTPUT"
+          echo "deployed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Log Error to Tracker
         if: failure()
@@ -157,6 +171,9 @@ jobs:
 
   trigger-deploy:
     needs: update-data
-    if: always() && needs.update-data.result == 'success'
+    if: always() && needs.update-data.result == 'success' && needs.update-data.outputs.data_changed == 'true'
     uses: ./.github/workflows/deploy.yml
+    with:
+      checkout-sha: ${{ needs.update-data.outputs.deployed_sha }}
+      prebuilt-data: true
     secrets: inherit

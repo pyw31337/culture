@@ -5,6 +5,14 @@ on:
     branches:
       - main # Trigger on push to main (UI/Code changes)
   workflow_call: # Allow calling from other workflows (like daily-update)
+    inputs:
+      checkout-sha:
+        required: false
+        type: string
+      prebuilt-data:
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -19,6 +27,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.checkout-sha != '' && inputs.checkout-sha || github.sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -45,7 +55,12 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /culture
           NODE_OPTIONS: '--max-old-space-size=4096'
-        run: npm run build
+        run: |
+          if [ "${{ inputs.prebuilt-data }}" = "true" ]; then
+            npm run build:site
+          else
+            npm run build
+          fi
 
       - name: Verify Static Artifacts
         run: |
