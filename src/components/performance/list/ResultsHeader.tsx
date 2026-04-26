@@ -5,10 +5,16 @@ import { getGenreIcon } from '@/components/GenreIcons';
 import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
 import ServiceStatusStrip from './ServiceStatusStrip';
 
+interface HeaderLocation {
+    lat?: number;
+    lng?: number;
+    name?: string;
+}
+
 interface ResultsHeaderProps {
     viewMode: string;
-    activeLocation: any;
-    searchLocation: any;
+    activeLocation: HeaderLocation | null;
+    searchLocation: HeaderLocation | null;
     searchText: string;
     searchMode: string;
     selectedGenre: string;
@@ -51,7 +57,9 @@ export const ResultsHeader = ({
                             {(searchMode === 'location' && activeLocation) ? (
                                 <>
                                     <MapPin className="text-emerald-500 w-5 h-5" />
-                                    <span className="truncate max-w-[150px] sm:max-w-xs">{searchLocation ? `'${searchLocation.name}'` : '내 위치'}</span>
+                                    <span className="truncate max-w-[150px] sm:max-w-xs">
+                                        {searchLocation?.name ? <>&apos;{searchLocation.name}&apos;</> : '내 위치'}
+                                    </span>
                                     <span className="text-base sm:text-xl shrink-0">위치 주변 ({filteredCount})</span>
                                     <button
                                         onClick={onResetFilters}
@@ -68,7 +76,7 @@ export const ResultsHeader = ({
                                     ) : (
                                         <Search className="text-purple-500 w-5 h-5" />
                                     )}
-                                    <span className="truncate max-w-[120px] sm:max-w-xs">'{searchText}'</span>
+                                    <span className="truncate max-w-[120px] sm:max-w-xs">&apos;{searchText}&apos;</span>
                                     <span className="text-base sm:text-xl shrink-0">
                                         {searchMode === 'location' ? '위치 주변' : '키워드 검색'} ({filteredCount})
                                     </span>
@@ -83,6 +91,14 @@ export const ResultsHeader = ({
                                 </>
                             )}
                         </h2>
+                        <ServiceStatusStrip
+                            lastUpdated={lastUpdated}
+                            totalItemCount={totalItemCount}
+                            availableGenreCount={availableGenreCount}
+                            qualitySummary={qualitySummary}
+                            sourceHealthSummary={sourceHealthSummary}
+                            className="shrink-0"
+                        />
                         {(searchMode === 'location' && activeLocation) && (
                             <div className="flex items-center gap-2 ml-auto">
                                 <div className="flex items-center bg-gray-800/50 light:bg-white border border-emerald-500/50 light:border-emerald-400 rounded-full pl-3 pr-1 py-1 group hover:border-emerald-400 transition-all shadow-sm">
@@ -106,14 +122,6 @@ export const ResultsHeader = ({
                     </div>
                 </div>
             </div>
-
-            <ServiceStatusStrip
-                lastUpdated={lastUpdated}
-                totalItemCount={totalItemCount}
-                availableGenreCount={availableGenreCount}
-                qualitySummary={qualitySummary}
-                sourceHealthSummary={sourceHealthSummary}
-            />
         </div>
     );
 };

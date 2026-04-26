@@ -846,6 +846,15 @@ export default function MapView({
                         )} title="날씨 확인">
                         <CloudSun className="w-5 h-5" />
                     </button>
+                    <ServiceStatusStrip
+                        lastUpdated={lastUpdated}
+                        totalItemCount={totalItemCount}
+                        availableGenreCount={availableGenreCount}
+                        qualitySummary={buildInfo?.qualitySummary}
+                        sourceHealthSummary={buildInfo?.sourceHealthSummary}
+                        className="self-end"
+                        buttonClassName="h-10 w-10 border-gray-200 bg-white/80 text-gray-900 shadow-md hover:bg-white dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+                    />
                 </div>
 
                 {/* Search Here Button relocated to bottom for better mobile UX */}
@@ -857,18 +866,6 @@ export default function MapView({
                         </div>
                     </div>
                 )}
-
-                <div className="pointer-events-none absolute left-4 right-4 top-20 z-[115] hidden md:flex justify-center">
-                    <div className="pointer-events-auto rounded-3xl border border-white/15 bg-black/55 px-4 py-3 text-white shadow-2xl backdrop-blur-md light:border-black/10 light:bg-white/90 light:text-black max-w-3xl">
-                        <ServiceStatusStrip
-                            lastUpdated={lastUpdated}
-                            totalItemCount={totalItemCount}
-                            availableGenreCount={availableGenreCount}
-                            qualitySummary={buildInfo?.qualitySummary}
-                            sourceHealthSummary={buildInfo?.sourceHealthSummary}
-                        />
-                    </div>
-                </div>
 
                 <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
 

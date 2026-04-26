@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { Performance } from '@/types';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, addMonths, subMonths, addWeeks, subWeeks, addDays, subDays } from 'date-fns';
 import { ko } from 'date-fns/locale';
@@ -50,7 +50,7 @@ export default function CalendarView({
     const totalItemCount = useMemo(() => {
         if (buildInfo?.itemCount) return buildInfo.itemCount;
         return Object.values(genreCounts).reduce((sum, count) => sum + count, 0);
-    }, [buildInfo?.itemCount, genreCounts]);
+    }, [buildInfo, genreCounts]);
     const availableGenreCount = useMemo(() => {
         return availableGenres.filter((genre) => genre.id !== 'all').length;
     }, [availableGenres]);
@@ -69,11 +69,9 @@ export default function CalendarView({
     });
     const [calendarView, setCalendarView] = useState<CalendarView>(initialView);
     const [localGenre, setLocalGenre] = useState(initialGenre);
-
-    useEffect(() => {
-        if (localGenre !== 'all' && !isGenreAvailable(genreCounts, localGenre)) {
-            setLocalGenre('all');
-        }
+    const effectiveGenre = useMemo(() => {
+        if (localGenre === 'all') return 'all';
+        return isGenreAvailable(genreCounts, localGenre) ? localGenre : 'all';
     }, [genreCounts, localGenre]);
 
     const startDate = startOfWeek(startOfMonth(currentMonth));
@@ -139,8 +137,8 @@ export default function CalendarView({
     const getPerformancesForDay = (day: Date) => {
         const dayStr = format(day, 'yyyy-MM-dd');
         const allEvents = performancesByDate.get(dayStr) || [];
-        if (localGenre === 'all') return allEvents;
-        return allEvents.filter(p => p.genre === localGenre);
+        if (effectiveGenre === 'all') return allEvents;
+        return allEvents.filter(p => p.genre === effectiveGenre);
     };
 
     // Calculate Counts for the focused view context
@@ -182,13 +180,13 @@ export default function CalendarView({
     }, [calendarView, currentMonth, performancesByDate]);
 
     const currentViewEvents = useMemo(() => {
-        if (localGenre === 'all') return currentViewTotalEvents;
-        return currentViewTotalEvents.filter(p => p.genre === localGenre);
-    }, [currentViewTotalEvents, localGenre]);
+        if (effectiveGenre === 'all') return currentViewTotalEvents;
+        return currentViewTotalEvents.filter(p => p.genre === effectiveGenre);
+    }, [currentViewTotalEvents, effectiveGenre]);
 
     const visibleCountKey = useMemo(
-        () => `${calendarView}-${localGenre}-${format(currentMonth, 'yyyy-MM-dd')}`,
-        [calendarView, currentMonth, localGenre]
+        () => `${calendarView}-${effectiveGenre}-${format(currentMonth, 'yyyy-MM-dd')}`,
+        [calendarView, currentMonth, effectiveGenre]
     );
     const [visibleCountState, setVisibleCountState] = useState({ key: '', count: 20 });
     const visibleCount = visibleCountState.key === visibleCountKey ? visibleCountState.count : 20;
@@ -223,9 +221,9 @@ export default function CalendarView({
         if (listRef.current) {
             const { scrollTop, scrollHeight, clientHeight } = listRef.current;
             if (scrollTop + clientHeight >= scrollHeight - 50) {
-                const totalFiltered = localGenre === 'all'
+                const totalFiltered = effectiveGenre === 'all'
                     ? currentViewEvents.length
-                    : currentViewEvents.filter(p => p.genre === localGenre).length;
+                    : currentViewEvents.filter(p => p.genre === effectiveGenre).length;
                 if (visibleCount < totalFiltered) {
                     setVisibleCountState(prev => ({
                         key: visibleCountKey,
@@ -282,6 +280,16 @@ export default function CalendarView({
                             else if (calendarView === 'weekly') setCurrentMonth(addWeeks(currentMonth, 1));
                             else setCurrentMonth(addDays(currentMonth, 1));
                         }} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0"><ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" /></button>
+
+                        <ServiceStatusStrip
+                            lastUpdated={lastUpdated}
+                            totalItemCount={totalItemCount}
+                            availableGenreCount={availableGenreCount}
+                            qualitySummary={buildInfo?.qualitySummary}
+                            sourceHealthSummary={buildInfo?.sourceHealthSummary}
+                            className="ml-1 shrink-0"
+                            buttonClassName="h-8 w-8 sm:h-9 sm:w-9 border-gray-200 bg-gray-100 text-gray-500 hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-300"
+                        />
                     </h2>
                     <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                         {(['daily', 'weekly', 'monthly'] as CalendarView[]).map(v => (
@@ -304,24 +312,12 @@ export default function CalendarView({
                     </div>
                 </div>
 
-                <div className="border-b border-gray-200 bg-gray-50/80 px-4 py-3 dark:border-gray-800 dark:bg-gray-950/60">
-                    <div className="mx-auto max-w-5xl">
-                        <ServiceStatusStrip
-                            lastUpdated={lastUpdated}
-                            totalItemCount={totalItemCount}
-                            availableGenreCount={availableGenreCount}
-                            qualitySummary={buildInfo?.qualitySummary}
-                            sourceHealthSummary={buildInfo?.sourceHealthSummary}
-                        />
-                    </div>
-                </div>
-
                 {/* Category Nav Header */}
                 <div className="w-full px-4 py-3 bg-gray-100/30 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab z-10"
                     onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
                     <div className="flex gap-2 w-max">
                         {availableGenres.map((genre) => {
-                            const isSelected = localGenre === genre.id;
+                            const isSelected = effectiveGenre === genre.id;
                             const count = genre.id === 'all'
                                 ? currentViewTotalEvents.length
                                 : currentViewTotalEvents.filter(p => p.genre === genre.id).length;
@@ -365,9 +361,9 @@ export default function CalendarView({
                         className="flex-grow overflow-y-auto p-4 space-y-3 bg-white dark:bg-gray-900 custom-scrollbar"
                     >
                         {(() => {
-                            const filteredEvents = localGenre === 'all'
+                            const filteredEvents = effectiveGenre === 'all'
                                 ? currentViewEvents
-                                : currentViewEvents.filter(p => p.genre === localGenre);
+                                : currentViewEvents.filter(p => p.genre === effectiveGenre);
 
                             const displayedDailyEvents = filteredEvents.slice(0, visibleCount);
 

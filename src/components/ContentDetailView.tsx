@@ -3,11 +3,12 @@
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2 } from 'lucide-react';
-import { useState, useEffect, useMemo } from 'react';
-import { getOptimizedUrl, formatUnifiedDate, getDistrictFromAddress, toMobileUrl } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useMemo } from 'react';
+import { getOptimizedUrl, formatUnifiedDate, toMobileUrl } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
+import { getDdayLabel } from '@/lib/dday';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -17,16 +18,10 @@ interface ContentDetailViewProps {
 
 export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
     const router = useRouter();
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-        const ua = navigator.userAgent || navigator.vendor || (window as any).opera || '';
-        const mobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua.toLowerCase());
-        if (mobile !== isMobile) {
-            setIsMobile(mobile);
-        }
-    }, [isMobile]);
+    const isMobile = useMemo(() => {
+        if (typeof navigator === 'undefined') return false;
+        return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test((navigator.userAgent || '').toLowerCase());
+    }, []);
 
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
@@ -38,6 +33,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
+    const dDayLabel = getDdayLabel(p);
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -203,13 +199,20 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 {/* Genre badge next to title */}
                                 {/* Category badge above title */}
                                 <div className="flex flex-col gap-2.5">
-                                     <motion.span
-                                        initial={{ scale: 0.8, opacity: 0 }}
-                                        animate={{ scale: 1, opacity: 1 }}
-                                        className={`px-3 py-1 rounded-md text-[10px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 w-fit`}
-                                    >
-                                        {genreLabel}
-                                    </motion.span>
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        <motion.span
+                                            initial={{ scale: 0.8, opacity: 0 }}
+                                            animate={{ scale: 1, opacity: 1 }}
+                                            className={`px-3 py-1 rounded-md text-[10px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 w-fit`}
+                                        >
+                                            {genreLabel}
+                                        </motion.span>
+                                        {dDayLabel && (
+                                            <span className="inline-flex items-center rounded-full border border-black/10 bg-black/5 px-3 py-1 text-[10px] font-black tracking-[0.16em] text-gray-600 dark:border-white/15 dark:bg-white/5 dark:text-gray-200">
+                                                {dDayLabel}
+                                            </span>
+                                        )}
+                                    </div>
                                     <h2 className="text-[22px] md:text-2xl font-black leading-[1.2] tracking-tighter drop-shadow-sm">
                                         {p.title}
                                     </h2>

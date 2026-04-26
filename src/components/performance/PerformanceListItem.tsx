@@ -8,6 +8,7 @@ import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { getExternalContentLink } from '@/lib/performance-links';
+import { getDdayLabel } from '@/lib/dday';
 
 interface PerformanceListItemProps {
     perf: any;
@@ -52,6 +53,7 @@ HighlightText.displayName = 'HighlightText';
 function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceListItemProps) {
     const genreStyle = useMemo(() => GENRE_STYLES[perf.genre] || {}, [perf.genre]);
     const externalLink = useMemo(() => getExternalContentLink(perf), [perf]);
+    const dDay = getDdayLabel(perf);
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
@@ -113,7 +115,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                 setTimeout(() => setIsCopied(false), 2000);
             }
         }
-    }, [onShare]);
+    }, [onShare, perf.id]);
 
     const handleLocationClick = useCallback((e: React.MouseEvent) => {
         e.stopPropagation();
@@ -247,6 +249,12 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             )}>
                                 {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                             </span>
+
+                            {dDay && (
+                                <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-black border border-white/20 bg-white/5 text-white light:border-slate-300 light:bg-slate-100 light:text-slate-700">
+                                    {dDay}
+                                </span>
+                            )}
 
                             <span className={clsx(
                                 "text-[10px] sm:text-xs flex items-center gap-1 ml-auto sm:ml-0",
