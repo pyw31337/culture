@@ -5,9 +5,6 @@ on:
     - cron: '0 14 * * *' # 23:00 KST (14:00 UTC) - Single daily refresh
   workflow_dispatch:
 
-permissions:
-  contents: write # Needed to push changes
-
 concurrency:
   group: daily-data-update
   cancel-in-progress: false
@@ -15,6 +12,8 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       data_changed: ${{ steps.commit_changes.outputs.data_changed }}
       deployed_sha: ${{ steps.commit_changes.outputs.deployed_sha }}
@@ -172,6 +171,10 @@ jobs:
   trigger-deploy:
     needs: update-data
     if: always() && needs.update-data.result == 'success' && needs.update-data.outputs.data_changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     uses: ./.github/workflows/deploy.yml
     with:
       checkout-sha: ${{ needs.update-data.outputs.deployed_sha }}
