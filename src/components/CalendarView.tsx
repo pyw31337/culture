@@ -39,7 +39,11 @@ export default function CalendarView({
     const searchParams = useSearchParams();
 
     // Load full data client-side (server provides initial subset, client fetches full)
-    const { allPerformances, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
+    const { allPerformances, isDataFullyLoaded } = usePerformanceData({
+        initialPerformances,
+        performanceLoadPolicy: 'full',
+        backgroundLoadPriority: 'immediate',
+    });
     const performances = allPerformances;
     const genreCounts = useMemo(() => {
         if (isDataFullyLoaded) return buildGenreCounts(performances);

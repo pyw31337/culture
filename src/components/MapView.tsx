@@ -219,7 +219,12 @@ export default function MapView({
     }, [centerLocation]);
 
     // Load full data client-side
-    const { allPerformances, cinemas: clientCinemas, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
+    const { allPerformances, cinemas: clientCinemas, isDataFullyLoaded } = usePerformanceData({
+        initialPerformances,
+        performanceLoadPolicy: 'full',
+        backgroundLoadPriority: 'immediate',
+        loadCinemas: true,
+    });
     const cinemas = clientCinemas.length > 0 ? clientCinemas : initialCinemas;
     const genreCounts = useMemo(() => {
         if (isDataFullyLoaded) return buildGenreCounts(allPerformances);

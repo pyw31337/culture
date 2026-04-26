@@ -190,7 +190,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
-                                        optimizationWidth={1000}
+                                        optimizationWidth={560}
                                         alt={perf.title}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -305,7 +305,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             <ImageWithFallback
                                 src={perf.image || perf.poster}
                                 backupSrc={perf.backupPoster}
-                                optimizationWidth={1000}
+                                optimizationWidth={560}
                                 alt={perf.title}
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"

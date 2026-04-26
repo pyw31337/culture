@@ -159,7 +159,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     <ImageWithFallback
                         src={perf.image || perf.poster}
                         backupSrc={perf.backupPoster}
-                        optimizationWidth={400}
+                        optimizationWidth={320}
                         alt={perf.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"

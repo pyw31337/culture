@@ -64,7 +64,12 @@ export default function PerformanceList({
         toggleLike, toggleFavoriteVenue, addKeyword, removeKeyword
     } = useUserPreferences();
 
-    const { allPerformances, setAllPerformances, cinemas, venues, isDataFullyLoaded } = usePerformanceData({ initialPerformances });
+    const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
+        initialPerformances,
+        performanceLoadPolicy: isCategoryPage ? 'initial-only' : 'full',
+        backgroundLoadPriority: 'deferred',
+        loadVenues: true,
+    });
 
     const searchParams = useSearchParams();
     const initialQuery = searchParams.get('q') || '';
