@@ -1,0 +1,123 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","perf_%ED%8C%8C%EA%B0%9C%EA%B7%B8%EB%8B%88%EB%8B%88_%EB%82%B4%ED%95%9C%EA%B3%B5%EC%97%B0_%EA%B3%B5%EC%A3%BC",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","perf_%ED%8C%8C%EA%B0%9C%EA%B7%B8%EB%8B%88%EB%8B%88_%EB%82%B4%ED%95%9C%EA%B3%B5%EC%97%B0_%EA%B3%B5%EC%A3%BC","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:Ta11,[공연소개]
+
+클래식이 지루하다고 누가 말했는가? 상상 초월! 웃느라 정신없는 코믹 현악 4중주!
+ 
+스페인 공연 전문 프로덕션 YLLANA Production이 제작한 현악 4중주 '파개그니니'는 심각하고 엄숙하기만 한 클래식 콘서트의 틀을 깬 독특한 코믹 퍼포먼스이다.
+재치있는 유머와 감성을 자극하는 아름다운 음악 메들리로 관객을 사로잡으며, 특히 천재 음악가 파가니니의 복잡한 작곡법과 무모한 성격, 음악적 해석을 이야기
+속에 반영한다. 이 공연은 우아한 연주 기술을 가진 4명의 뛰어난 연주자들이 선보이는 '클래식 컨템포러리 음악'이라는 새로운 장르로, 일반 관객뿐만 아니라
+음악에 박식한 까다로운 관객들로부터도 찬사를 받았다. 남녀노소 국적 상관없이 전 세계 관객이 즐길 수 있으며, 2008년 영국 에든버러 프린지 페스티벌
+'최우수 작품상'을 비롯해 다수의 국제 페스티벌에서 수상하며 작품성을 인정 받았다. 부산국제연극제 개막작으로 초청되어 매진을 기록하기도 했으며,
+2026년에는 더욱 업그레이드된 유머와 아이러니로 관객들이 웃음을 통해 무대와 교감할 수 있도록 만들 것이다.
+
+
+[Program]
+ 
+P. Sarasate – Carmen Fantasie, Op. 25
+파블로 사라사테 카르멘 환상곡, 작품번호 25
+ 
+M. de Falla – Spanish Dance from La vida breve
+마누엘 데 파야 오페라 <짧은 인생> 중 스페인 무곡
+ 
+L. Boccherini – Minuet in E Major, Op. 13 No. 5
+루이지 보케리니 미뉴에트 E장조, 작품번호 13-5
+ 
+J. Pachelbel – Canon in D Major, T. 337
+요한 파헬벨 캐논 D장조
+ 
+Pagagnini Quartet – Rhapsody No. 3, Op. 1
+파가그니니 콰르텟 랩소디 제3번, 작품번호 1
+ 
+S. Umebayashi – “Yumeji’s Theme” from In the Mood for Love
+우메바야시 시게루 영화 <화양연화> OST 중 ‘유메지의 테마’
+ 
+W. A. Mozart – Violin Concerto No. 3 in G Major, K. 216
+볼프강 아마데우스 모차르트 바이올린 협주곡 제3번 G장조, 작품번호 216
+ 
+U2 – “With or Without You”
+유투 ‘당신이 함께이거나 아니거나’
+ 
+S. Gainsbourg – “La Javanaise”
+세르주 갱스부르 ‘라 자바네즈’
+ 
+N. Paganini – Caprice No. 24, Op. 1
+니콜로 파가니니 카프리스 제24번, 작품번호 1
+ 
+A. Vivaldi – The Four Seasons
+안토니오 비발디 사계
+ 
+* 상기 프로그램은 출연진의 사정에 의해 변경될 수 있습니다.18:Ta11,[공연소개]
+
+클래식이 지루하다고 누가 말했는가? 상상 초월! 웃느라 정신없는 코믹 현악 4중주!
+ 
+스페인 공연 전문 프로덕션 YLLANA Production이 제작한 현악 4중주 '파개그니니'는 심각하고 엄숙하기만 한 클래식 콘서트의 틀을 깬 독특한 코믹 퍼포먼스이다.
+재치있는 유머와 감성을 자극하는 아름다운 음악 메들리로 관객을 사로잡으며, 특히 천재 음악가 파가니니의 복잡한 작곡법과 무모한 성격, 음악적 해석을 이야기
+속에 반영한다. 이 공연은 우아한 연주 기술을 가진 4명의 뛰어난 연주자들이 선보이는 '클래식 컨템포러리 음악'이라는 새로운 장르로, 일반 관객뿐만 아니라
+음악에 박식한 까다로운 관객들로부터도 찬사를 받았다. 남녀노소 국적 상관없이 전 세계 관객이 즐길 수 있으며, 2008년 영국 에든버러 프린지 페스티벌
+'최우수 작품상'을 비롯해 다수의 국제 페스티벌에서 수상하며 작품성을 인정 받았다. 부산국제연극제 개막작으로 초청되어 매진을 기록하기도 했으며,
+2026년에는 더욱 업그레이드된 유머와 아이러니로 관객들이 웃음을 통해 무대와 교감할 수 있도록 만들 것이다.
+
+
+[Program]
+ 
+P. Sarasate – Carmen Fantasie, Op. 25
+파블로 사라사테 카르멘 환상곡, 작품번호 25
+ 
+M. de Falla – Spanish Dance from La vida breve
+마누엘 데 파야 오페라 <짧은 인생> 중 스페인 무곡
+ 
+L. Boccherini – Minuet in E Major, Op. 13 No. 5
+루이지 보케리니 미뉴에트 E장조, 작품번호 13-5
+ 
+J. Pachelbel – Canon in D Major, T. 337
+요한 파헬벨 캐논 D장조
+ 
+Pagagnini Quartet – Rhapsody No. 3, Op. 1
+파가그니니 콰르텟 랩소디 제3번, 작품번호 1
+ 
+S. Umebayashi – “Yumeji’s Theme” from In the Mood for Love
+우메바야시 시게루 영화 <화양연화> OST 중 ‘유메지의 테마’
+ 
+W. A. Mozart – Violin Concerto No. 3 in G Major, K. 216
+볼프강 아마데우스 모차르트 바이올린 협주곡 제3번 G장조, 작품번호 216
+ 
+U2 – “With or Without You”
+유투 ‘당신이 함께이거나 아니거나’
+ 
+S. Gainsbourg – “La Javanaise”
+세르주 갱스부르 ‘라 자바네즈’
+ 
+N. Paganini – Caprice No. 24, Op. 1
+니콜로 파가니니 카프리스 제24번, 작품번호 1
+ 
+A. Vivaldi – The Four Seasons
+안토니오 비발디 사계
+ 
+* 상기 프로그램은 출연진의 사정에 의해 변경될 수 있습니다.c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"perf_파개그니니_내한공연_공주","title":"파개그니니 내한공연 [공주]","date":"2026.08.22 (토)","venue":"공주문예회관 대공연장","image":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF284553_260205_142020.gif","link":"https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF284553","region":"etc","genre":"classic_tradition","description":"$17","discount":"$undefined","originalPrice":"$undefined","price":"R석 50,000원\nS석 30,000원\nA석 20,000원\nB석 10,000원","gradeIcon":"$undefined","ageRating":"만 7세 이상","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":["에두아르도 오르테가 에헤아","페르난도 클레멘테 로페즈","토마스 포티롱","게오르기 포르나예프 디미트로프"],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF284553_260205_142020.gif","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":36.4601770026339,"lng":127.111721755751,"address":"충남 공주시 고마나루길 5","source":"kopis","website":"$undefined","parking":"$undefined","parkingFee":"$undefined","facilities":"","restrooms":"$undefined","performanceTime":"토요일(17:00)","bookingNotice":"$undefined","ageDetail":"만 7세 이상","feesAndPrograms":"","targetAudience":"","operatingHours":"","priceDetail":"","closedDays":"","contact":"","synopsis":"$18","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L19"]}]
+1a:Td30,{"@context":"https://schema.org","@type":"Event","name":"파개그니니 내한공연 [공주]","startDate":"2026.08.22 (토)","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"공주문예회관 대공연장","address":{"@type":"PostalAddress","streetAddress":"공주문예회관 대공연장","addressLocality":"Seoul","addressCountry":"KR"}},"image":["http://www.kopis.or.kr/upload/pfmPoster/PF_PF284553_260205_142020.gif"],"description":"[공연소개]\n\n클래식이 지루하다고 누가 말했는가? 상상 초월! 웃느라 정신없는 코믹 현악 4중주!\n \n스페인 공연 전문 프로덕션 YLLANA Production이 제작한 현악 4중주 '파개그니니'는 심각하고 엄숙하기만 한 클래식 콘서트의 틀을 깬 독특한 코믹 퍼포먼스이다.\n재치있는 유머와 감성을 자극하는 아름다운 음악 메들리로 관객을 사로잡으며, 특히 천재 음악가 파가니니의 복잡한 작곡법과 무모한 성격, 음악적 해석을 이야기\n속에 반영한다. 이 공연은 우아한 연주 기술을 가진 4명의 뛰어난 연주자들이 선보이는 '클래식 컨템포러리 음악'이라는 새로운 장르로, 일반 관객뿐만 아니라\n음악에 박식한 까다로운 관객들로부터도 찬사를 받았다. 남녀노소 국적 상관없이 전 세계 관객이 즐길 수 있으며, 2008년 영국 에든버러 프린지 페스티벌\n'최우수 작품상'을 비롯해 다수의 국제 페스티벌에서 수상하며 작품성을 인정 받았다. 부산국제연극제 개막작으로 초청되어 매진을 기록하기도 했으며,\n2026년에는 더욱 업그레이드된 유머와 아이러니로 관객들이 웃음을 통해 무대와 교감할 수 있도록 만들 것이다.\n\n\n[Program]\n \nP. Sarasate – Carmen Fantasie, Op. 25\n파블로 사라사테 카르멘 환상곡, 작품번호 25\n \nM. de Falla – Spanish Dance from La vida breve\n마누엘 데 파야 오페라 <짧은 인생> 중 스페인 무곡\n \nL. Boccherini – Minuet in E Major, Op. 13 No. 5\n루이지 보케리니 미뉴에트 E장조, 작품번호 13-5\n \nJ. Pachelbel – Canon in D Major, T. 337\n요한 파헬벨 캐논 D장조\n \nPagagnini Quartet – Rhapsody No. 3, Op. 1\n파가그니니 콰르텟 랩소디 제3번, 작품번호 1\n \nS. Umebayashi – “Yumeji’s Theme” from In the Mood for Love\n우메바야시 시게루 영화 <화양연화> OST 중 ‘유메지의 테마’\n \nW. A. Mozart – Violin Concerto No. 3 in G Major, K. 216\n볼프강 아마데우스 모차르트 바이올린 협주곡 제3번 G장조, 작품번호 216\n \nU2 – “With or Without You”\n유투 ‘당신이 함께이거나 아니거나’\n \nS. Gainsbourg – “La Javanaise”\n세르주 갱스부르 ‘라 자바네즈’\n \nN. Paganini – Caprice No. 24, Op. 1\n니콜로 파가니니 카프리스 제24번, 작품번호 1\n \nA. Vivaldi – The Four Seasons\n안토니오 비발디 사계\n \n* 상기 프로그램은 출연진의 사정에 의해 변경될 수 있습니다.","offers":{"@type":"Offer","priceCurrency":"KRW","url":"https://pyw31337.github.io/culture/p/perf_%ED%8C%8C%EA%B0%9C%EA%B7%B8%EB%8B%88%EB%8B%88_%EB%82%B4%ED%95%9C%EA%B3%B5%EC%97%B0_%EA%B3%B5%EC%A3%BC/"}}19:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1a"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1b:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"파개그니니 내한공연 [공주] - Culture Flow"}],["$","meta","1",{"name":"description","content":"2026.08.22 (토) | 공주문예회관 대공연장 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"파개그니니 내한공연 [공주] - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"2026.08.22 (토) | 공주문예회관 대공연장 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/perf_%ED%8C%8C%EA%B0%9C%EA%B7%B8%EB%8B%88%EB%8B%88_%EB%82%B4%ED%95%9C%EA%B3%B5%EC%97%B0_%EA%B3%B5%EC%A3%BC/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF284553_260205_142020.gif"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"파개그니니 내한공연 [공주]"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"파개그니니 내한공연 [공주] - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"2026.08.22 (토) | 공주문예회관 대공연장 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF284553_260205_142020.gif"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1b","22",{}]]

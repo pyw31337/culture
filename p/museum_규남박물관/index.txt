@@ -1,0 +1,118 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EA%B7%9C%EB%82%A8%EB%B0%95%EB%AC%BC%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EA%B7%9C%EB%82%A8%EB%B0%95%EB%AC%BC%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T20c6,주소전라남도 화순군 이서면 백아로 3109지도보기전화070-4233-9060시설주차예약현장 방문예약하기영업시간월요일정기휴무화요일정기휴무수요일10:00 ~ 16:30목요일정기휴무금요일정기휴무토요일10:00 ~ 16:30일요일10:00 ~ 16:30인기 급상승 장소 전라더보기급상승안녕, 고래실내 키즈놀이터가 매력적인 키즈풀빌라 전남 담양군24 ~ 48개월 인기60,000원 혜택받기숙박급상승제이키즈클럽600평 규모의 스포츠 놀이형 키즈카페 전북 전주시24 ~ 48개월 인기키즈카페급상승완산벙커 더 스페이스25년 개관한 화려한 미디어아트 체험관 전북 전주시공연/전시/축제박물관/체험관급상승국립전주어린이박물관다양한 전시와 체험이 있는 어린이 박물관 전북 전주시24 ~ 48개월 인기박물관/체험관급상승전주자연생태관놀이터가 있는 대규모 체험관 전북 전주시24 ~ 48개월 인기박물관/체험관
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        자세히 알아보기화순적벽 자연보호구역금호리조트 화순아쿠아나서유리공룡발자국화석산지화순적벽규남 박물관압록상상스쿨어린이와 함께 만나는 살아있는 실학의 현장, 규남박물관
+장소 소개
+전라남도 화순군 이서면 백아로 3109에 위치한 규남박물관은 조선 후기 호남의 대표적인 실학자 하백원 선생을 기리기 위해 세워진 곳입니다. 한옥 양식이 아름답게 어우러진 아담한 분위기의 박물관으로, 아이들과 함께 우리의 역사와 실용 학문을 가까이에서 경험할 수 있는 특별한 장소입니다.
+주요 전시와 볼거리
+
+전라남도 유형문화재 ‘하백원의 만국전도와 동국지도’를 포함해 약 940점의 소중한 유물
+지도, 서화, 전적, 인장, 친척과 스승·제자의 편지 등 다양한 전시물을 통해 하백원 선생과 조선 후기 실학의 발자취를 생생하게 만날 수 있습니다.
+
+
+조선 후기 실생활에 도움을 주었던 발명품(자승차, 자명종, 계영배, 방적기 등) 소개
+아이들과 함께 옛 선조들의 창의적인 발명 아이디어를 직접 확인할 수 있습니다.
+
+
+상설 전시관과 특별 전시관, 하백원 선생의 영정이 모셔진 사당(영당)
+매년 4월에는 하백원 선생을 추모하는 ‘규남제’도 이곳에서 봉행됩니다.
+
+
+
+아이와 가족이 즐기기 좋은 이유
+
+직접 보고 듣는 교육적 경험
+우리 역사와 전통, 그리고 과학적 발명정신까지 한 자리에서 만날 수 있어 아이들의 호기심과 탐구심을 자극합니다.
+
+
+한옥 건물과 아름다운 주변 자연 환경
+무등산과 가까워 산책이나 야외활동과 함께 방문하기 좋고, 인근에는 화순적벽, 야사리 은행나무 등 아이들과 이어서 즐길 만한 명소가 많아 가족 나들이에 추천됩니다.
+
+
+
+관람 및 이용 안내
+
+운영기간4월 1일 ~ 11월 30일(운영 요일: 수요일, 토요일, 일요일만 개관)
+운영시간오전 10:00 ~ 오후 4:30
+관람료와 주차무료
+휴관 안내월·화·목·금요일은 휴관하니 방문 전 꼭 일정을 확인하세요.
+전시해설아이와 함께 깊이 있는 관람을 원한다면, 전화로 미리 해설 예약이 가능합니다.
+
+방문 팁
+
+한옥 마당과 전시실이 깔끔하게 마련되어 있어 아이들과 사진을 남기기 좋습니다.
+자녀가 역사와 발명, 조선 후기 인물에 관심이 있다면 흥미로운 체험이 될 것입니다.
+인근의 자연 명소와 연계해 하루 코스로도 충분히 알차게 즐길 수 있습니다.
+
+이런 가족에게 추천해요
+
+아이가 한국사, 지도, 옛날 발명품 등 호기심이 많거나 직접 보고 체험하며 배우는 것을 좋아한다면
+한적하고 조용한 분위기 속에서 전통문화 체험을 원하는 가족이라면
+
+"규남박물관에서 아이와 함께 조선 실학자의 탐구정신을 느껴보고, 소중한 가족 추억을 만들어 보세요!"
+규남박물관 FAQ규남박물관의 운영 기간과 시간, 휴관일은 언제인가요?규남박물관은 매년 4월 1일부터 11월 30일까지 운영합니다. 수요일, 토요일, 일요일에만 개관하며, 운영 시간은 오전 10시부터 오후 4시 30분까지입니다. 월요일, 화요일, 목요일, 금요일은 휴관일이며, 12월부터 3월까지 겨울철에는 박물관이 문을 닫습니다.규남박물관의 입장료와 주차 이용은 어떻게 되나요?규남박물관은 입장료가 무료입니다. 박물관 내에 주차장이 마련되어 있어 차량을 이용하는 방문객도 편리하게 이용할 수 있습니다.규남박물관에서 식사는 할 수 있나요? 음식 반입이 가능한가요?박물관 내에는 음식물 반입이 금지되어 있습니다. 식사는 박물관 외부에서 하시는 것을 추천드립니다.아이와 함께 방문할 때 박물관 내 편의시설은 어떤 것이 있나요?규남박물관에는 주차장 외에 아기의자, 수유실, 기저귀교환대, 유모차 대여 등은 제공되지 않습니다.박물관에서 전시 해설을 받을 수 있나요?네, 미리 전화를 통해 전시 해설을 신청하실 수 있습니다. 전시 설명을 원하실 경우 사전에 박물관에 연락해 주세요.박물관 주변에 아이와 함께 쉴 수 있는 공간이 있나요?네, 박물관 앞에 야외 정원이 마련되어 있어 아이들이 자유롭게 뛰어놀 수 있으며 가족이 힐링하며 쉬기에도 좋습니다.규남박물관 요금 및 프로그램[요금]무료[영업 안내]매년 4월 1일부터 11월 30일까지 개관봄, 여름, 가을만 개관을 하고 있습니다규남박물관을 위한 세상 유용한 꿀팁미리 전화를 해서 전시 해설을 신청할 수 있어요.박물관 내에 음식 반입은 할 수 없어요.박물관 앞에 야외 정원이 있어서 쉬면서 힐링을 할 수도 있고, 아이들이 뛰어놀기도 좋아요.규남박물관의 주소전라남도 화순군 이서면 백아로 3109주소 복사길 찾기규남박물관을 예약하려면?현장 방문홈페이지규남박물관과 비슷한 아이와 가볼 만한 곳 더보기금호화순스파리조트물놀이를 즐길 수 있는 최고의 휴양지 전남 화순군24 ~ 48개월 인기숙박화순 아쿠아나신나는 물놀이로 스트레스 해소! 전남 화순군48개월 이상 인기워터파크/스파서유리공룡발자국화석산지진짜 공룡 발자국을 볼 수 있는 곳 전남 화순군박물관/체험관
+            
+              
+            
+        
+            
+                
+            
+        규남박물관 N블로그 후기 규남박물관예쁘고 박물관이 궁금해서 들어와 규남하백원선생의 지도나 자승차, 그림 등을 보고 우리 지역에 이런 분이 계셨다는 것을 알고 뿌듯해하며 돌아간답니다. 규남박물관은 자연경관이 수려하기로 유명한...규남박물관(하백원 선생)~햇살좋은 편안한 화순여행지있습니다 규남 하백원 선생은 여암 신경준, 존재 위백규, 이재 황윤식과 함께 조선 후기 호남의 4대... 있습니다 규남박물관의 유물과 당산제에 관한 자료 등을 천천히 읽어보고~ 햇살 좋은 마루에 앉아 바라보는...전라남도. 화순- 규남박물관저건 뭐지?하고 가 보았더니 규남 박물관. 안내소가 없어서, 아이들이 조금 무서워 했다 윤호: 엄마... 네이버 지식백과 박물관을 둘러보고 아이들이 꿈을 가지고 목표를 가지고, 열심히 나아가, 세상을 보고...규남박물관 방문리뷰 전체보기 (25)규남박물관이 포함된 플레이리스트⛰️전라남도 화순에서 아이와 가볼 만한 곳 Best 10🎉
+            
+              
+            
+        
+            
+                
+            
+        ⛰️전라남도 화순에서 아이와 가볼 만한 곳 Best 10🎉
+          
+            
+          
+        
+          
+            
+          
+        저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_규남박물관","title":"규남박물관","date":"연중무휴","venue":"규남박물관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1NmQzOTFkZjdhYTkxYWY1YTI3OTAwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","link":"https://mom-mom.net/travel/places/6556d39e7befcfe324f21dcf","region":"etc","genre":"museum","description":"규남박물관는 규남박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 전라남도 화순군 이서면 백아로 3109입니다. 추천 대상은 주소전라남도 화순군 이서면 백아로 3109지도보기전화070-4233-9…입니다. 운영 시간은 월요일정기휴무화요일정기휴무수요일10:00 ~ 16:30목요일정기휴무금요…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 규남박물관은 입장료가 무료입니다. 박물관 내에 주차장이 마련되어 있어 … 기준입니다.","discount":"$undefined","originalPrice":"","price":"규남박물관은 입장료가 무료입니다. 박물관 내에 주차장이 마련되어 있어 차량을 이용하는 방문객도 편리하게 이용할 수 있습니다.","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1NmQzOTFkZjdhYTkxYWY1YTI3OTAwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":35.110024,"lng":127.079964,"address":"전라남도 화순군 이서면 백아로 3109","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"규남박물관 요금 및 프로그램\n[요금]\n무료\n[영업 안내]\n매년 4월 1일부터 11월 30일까지 개관\n봄, 여름, 가을만 개관을 하고 있습니다","targetAudience":"$17","operatingHours":"월요일정기휴무화요일정기휴무수요일10:00 ~ 16:30목요일정기휴무금요일정기휴무토요일10:00 ~ 16:30일요일10:00 ~ 16:30","priceDetail":"규남박물관은 입장료가 무료입니다. 박물관 내에 주차장이 마련되어 있어 차량을 이용하는 방문객도 편리하게 이용할 수 있습니다.","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"규남박물관\",\"startDate\":\"연중무휴\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"location\":{\"@type\":\"Place\",\"name\":\"규남박물관\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"규남박물관\",\"addressLocality\":\"Seoul\",\"addressCountry\":\"KR\"}},\"image\":[\"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1NmQzOTFkZjdhYTkxYWY1YTI3OTAwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19\"],\"description\":\"규남박물관는 규남박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 전라남도 화순군 이서면 백아로 3109입니다. 추천 대상은 주소전라남도 화순군 이서면 백아로 3109지도보기전화070-4233-9…입니다. 운영 시간은 월요일정기휴무화요일정기휴무수요일10:00 ~ 16:30목요일정기휴무금요…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 규남박물관은 입장료가 무료입니다. 박물관 내에 주차장이 마련되어 있어 … 기준입니다.\",\"offers\":{\"@type\":\"Offer\",\"priceCurrency\":\"KRW\",\"url\":\"https://pyw31337.github.io/culture/p/museum_%EA%B7%9C%EB%82%A8%EB%B0%95%EB%AC%BC%EA%B4%80/\"}}"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+19:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"규남박물관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 규남박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"규남박물관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 규남박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EA%B7%9C%EB%82%A8%EB%B0%95%EB%AC%BC%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1NmQzOTFkZjdhYTkxYWY1YTI3OTAwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"규남박물관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"규남박물관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 규남박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjU1NmQzOTFkZjdhYTkxYWY1YTI3OTAwLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L19","22",{}]]

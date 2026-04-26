@@ -1,0 +1,127 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EC%A0%9C%EC%A3%BC%EA%B5%90%EC%9C%A1%EB%B0%95%EB%AC%BC%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EC%A0%9C%EC%A3%BC%EA%B5%90%EC%9C%A1%EB%B0%95%EB%AC%BC%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T2c89,주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주교육박물관지도보기전화064-720-9114시설수유실, 기저귀교환대, 유모차대여, 주차예약당일 방문 및 현장 접수 (예약 불가)예약하기영업시간월요일정기휴무화요일09:00 ~ 18:00수요일09:00 ~ 18:00목요일09:00 ~ 18:00금요일09:00 ~ 18:00토요일09:00 ~ 18:00일요일09:00 ~ 18:00인기 급상승 장소 제주더보기급상승하리보 해피월드 인 제주매니아들을 위한 하리보의 첫 초대형 미디어 체험 전시 제주 제주시24 ~ 48개월 인기20% 할인받기공연/전시/축제급상승제주 에코랜드 테마파크기차 타고 떠나는 동화같은 숲속 여행 제주 제주시24 ~ 48개월 인기최대 3,000원 할인받기테마파크급상승제주홀릭뮤지엄제주 컨셉의 다양한 포토존이 있는 이색 전시관 제주 제주시12 ~ 24개월 인기2,000원 할인받기공연/전시/축제급상승길갈 팜 랜드3만 평 규모의 자연 동물 휴양림 제주 제주시24 ~ 48개월 인기20% 할인받기동식물친구들
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        _nanii._.luv아이와 함께 시간 여행, 제주교육박물관
+제주특별자치도 제주시 오복4길 25에 위치한 제주교육박물관은 아이들과 가족이 함께 제주 교육의 어제와 오늘을 한눈에 경험할 수 있는 특별한 공간입니다. 제주도의 교육 역사를 알기 쉽게 전시하고, 다양한 체험 프로그램과 놀이 문화까지 즐길 수 있어 아이와 방문하기에 매우 좋은 장소로 손꼽힙니다.
+제주교육박물관의 주요 특징
+
+시대별 제주교육의 흐름을 한눈에
+
+고대부터 현대까지 제주교육의 역사가 4개의 주요 전시실에 체계적으로 전시되어 있으며, 다양한 유물을 만날 수 있습니다.
+전시실마다 시대별 교육 현장이 디오라마와 미니어처, 영상 전시 등으로 재현되어 있어 아이들이 쉽고 재미있게 제주 교육의 변천을 이해할 수 있습니다.
+
+
+아이들을 위한 체험 공간
+
+전통 교육 현장의 놀이, 교수학습 자료, 옛날 학교 생활을 재현한 구역, 제주 전통 방언을 직접 들어볼 수 있는 체험 전시 등이 마련되어 있습니다.
+어린이 도서관이 작게 마련되어 있어 잠시 책을 읽거나 쉴 수 있습니다.
+
+
+야외 전시장과 제주 전통문화 체험
+
+박물관 야외에는 제주 전통 초가와 다양한 생활용구, 석조 유물 등이 전시되어 제주 옛 생활상을 간접적으로 경험할 수 있습니다.
+
+
+무료 입장 및 관람 안내
+
+누구나 무료로 입장할 수 있으며, 전시 해설 프로그램이 운영되어 아이들과 함께 전시를 더욱 깊이 이해할 수 있습니다.
+
+
+
+전시실 안내
+
+제1전시실
+
+‘제주교육의 태동’을 주제로 고대에서 일제강점기까지의 교육 자료 및 역사적 유물을 전시합니다.
+
+
+제2전시실
+
+‘제주교육의 성장’으로 광복 이후 이상적인 학교 교실, 천막 교실, 유엔 재건단의 지원 자료 등 시대별 변화상을 확인할 수 있습니다.
+
+
+제3전시실
+
+‘제주교육의 얼’에서는 제주 어린이의 놀이문화, 각종 교수 자료, 사무기기, 도시락, 교육 음반, 제주 방언 등을 디오라마와 함께 만날 수 있습니다.
+
+
+제4전시실
+
+‘제주교육의 변천’은 시대별 교과서, 제주만의 충·효·열 정신, 입학·졸업식 풍경, 독특한 교육문화를 소개합니다.
+
+
+
+관람 팁과 참고사항
+
+관람 시간은 오전 9시부터 오후 6시까지이며, 매주 월요일과 1월 1일에는 휴관합니다.
+마지막 입장은 오후 5시 30분까지 가능합니다.
+건물 외벽은 제주 현무암으로 마감되어 제주다운 분위기가 느껴집니다.
+자가용 이용 시 주차장은 제주독도체험관과 함께 사용되므로 협소할 수 있어 대중교통 이용도 고려하면 좋습니다.
+2층 로비에서는 옛 교실을 재현한 "추억의 교실"과 옹기, 생활 도구, 교지, 옛 화폐 등 다양한 전시물을 감상할 수 있습니다.
+제주교육박물관 주변에는 제주독도체험관과 다양한 교육 관련 시설이 밀집해 있어 연계 방문이 가능합니다.
+
+이런 분께 추천해요
+
+아이가 제주도의 역사나 교육에 호기심이 많을 때
+비가 오는 날 또는 실내에서 안전하게 놀고 싶은 날
+가족 나들이로 유익하게 보내고 싶을 때
+
+""피그말리온 편지" 프로그램은 25년 1월 현재 진행 중이며, "교가노래방"은 1층 로비에 위치하고 있습니다. 아이와 함께 제주교육박물관을 방문해 옛 추억을 떠올리며 다양한 체험을 통해 특별한 하루를 보낼 수 있습니다."
+제주교육박물관 FAQ제주교육박물관은 아이와 함께 방문하기에 어떤 점이 좋나요?제주교육박물관은 제주 교육의 역사를 아이들과 쉽게 체험하고 배울 수 있도록 다양한 전시기법(디오라마, 미니어처, 영상 등)으로 꾸며져 있어요. 4개의 상설 전시장과 기획 및 체험 전시실에서 볼거리가 많으며, '교과서 퍼즐 맞추기', '도자기 그리기', '직조체험', '익선관/정자관/유건 만들기', '딱지 접기', '십이간지 도장 찍기' 등 아이와 함께 직접 체험할 수 있는 프로그램이 풍부합니다.아이들이 직접 체험하거나 참여할 수 있는 프로그램이 있나요?네, 체험 프로그램에는 1960년대 교과서 퍼즐 맞추기, 도자기 그리기, 직조체험, 익선관/정자관/유건 만들기, 딱지 접기, 십이간지 도장 찍기 등 다양하며, '피그말리온 편지'와 같은 특별 프로그램도 진행돼요. 추억의 교실, 옛 만화방과 문방구에서는 장군 옷, 옛날 교복 등을 입고 사진도 찍을 수 있습니다.관람 시간과 휴관일, 입장료는 어떻게 되나요?관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 오후 5시 30분에 마감합니다. 매주 월요일과 1월 1일은 휴관이며, 박물관 관람과 전시 해설 모두 무료로 제공됩니다.박물관 내에 어떤 편의시설이 있나요?박물관 내에는 수유실, 기저귀 교환대가 갖추어져 있고, 유모차 대여도 가능합니다. 주차장은 제주독도체험관과 함께 사용하며, 아기의자와 예약 서비스는 지원되지 않습니다.박물관에서 전시 해설을 들을 수 있나요?네, 전시 해설은 무료로 제공되며, 오전 9시 30분부터 오후 5시 30분까지 진행됩니다. 더 깊이 있고 재미있는 관람을 원하신다면 현장에서 신청할 수 있습니다.주변에 함께 들를 만한 장소가 있나요?박물관 바로 옆의 제주독도체험관과 연계 방문을 추천합니다. 제주독도체험관을 함께 방문하면 교육적 체험이 더욱 풍성해져 가족 나들이에 좋아요.제주교육박물관 요금 및 프로그램[요금]관람료: 무료전시 해설: 무료[이용안내]휴무일: 매주 월요일, 1월 1일마지막 입장: 17시 30분전시 해설 진행시간: 09시 30분~17시 30분제주교육박물관을 위한 세상 유용한 꿀팁제주교육박물관은 제주 교육의 태동에서부터 현대에 이르기까지의 변천과 자료를 체계적으로 전시하고 있어요.자유롭게 관람이 가능하며, 입장료가 무료예요. 전시 해설도 무료로 진행되니 좀 더 깊이 알고 싶다면 신청해 보세요.4개의 상설 전시장과 기획 및 체험 전시실로 되어 있어 볼 수 있는 것들이 많아요.1960년대의 교과서 퍼즐 맞추기, 도자기 그리기, 직조체험, 익선관/정자관/유건 만들기, 딱지 접기, 십이간지 도장 찍기 등 아이와 함께 체험할 수 있는 것들이 많아요.25년 1월 현재 10년 후의 나에게 보내는 편지인 피그말리온 편지 프로그램이 진행 중이에요.1층 로비에는 제주도 내 학교의 교가, 응원가, 민요를 부를 수 있는 교가노래방이 있어요.2층 로비에서는 옛 교실을 재현한 추억의 교실과 옹기, 생활 도구, 교지, 옛 화폐 등 다양한 전시물을 감상할 수 있어요1960년대 학교 앞 거리를 재현한 옛 만화방과 문방구에는 장군 옷과 옛날 교복이 비치되어 있어 아이와 사진을 남기기 좋아요.수유실과 기저귀 교환대가 있고, 유모차 대여가 가능해요.주차장은 제주독도체험관과 함께 사용하고 있어요.바로 옆 건물인 제주독도체험관과 함께 들르면 더 유익한 시간을 보낼 수 있어요.제주교육박물관의 주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주교육박물관주소 복사길 찾기제주교육박물관을 예약하려면?당일 방문 및 현장 접수 (예약 불가)홈페이지근처의 인기 티켓하리보월드하리보 해피월드 인 제주 (HARIBO Happy World in jeju)맘맘특가10% 11,700원 히어로플레이파크[전국] 히어로플레이파크 이용권맘맘특가7,000원 카페패스[제주] 카페패스 3일 프리미엄맘맘특가10% 13,410원 
+            
+              
+            
+        
+            
+                
+            
+        제주교육박물관과 비슷한 아이와 가볼 만한 곳 더보기제주독도체험관다양한 체험과 함께 우리 땅 독도를 공부하자! 제주 제주시박물관/체험관제주민속자연사박물관자연을 존중하고 제주의 숨결을 간직한 박물관 제주 제주시24 ~ 48개월 인기박물관/체험관국립제주박물관 어린이박물관25년 말 리뉴얼하여 재개장한 제주의 무료 박물관 제주 제주시박물관/체험관넥슨컴퓨터박물관코딩 꿈나무들과 게임 덕후들의 놀이터 제주 제주시48개월 이상 인기박물관/체험관
+            
+              
+            
+        
+            
+                
+            
+        제주교육박물관 N블로그 후기 제주교육박물관있는 교육청주차장을 이용했는데 아마 주말이라 교육청주차장은 자리가 있었던 거 같다 현재 “제주의... 제주교육박물관 #제주교육박물관 #제주도박물관 #제주갈만한곳 #제주아이와실내...아기랑 제주교육박물관 교육에서 놀이까지 무료 박물관 솔직 후기가보았습니다 제주교육박물관 제주시 무료 박물관 ➜ 영업시간 am 9:00 - pm 6:00 ➜ 월요일 off day ➜ 주차장 0 ➜ 입장료 무료  064-720-9114 ➜ 남/녀 화장실 구분, 단체 이용 가능, 무선 인터넷 ➜ 위치 : 제주 제주시...제주 교육박물관 체험실에서 아이랑 다양한 활동을가까운 제주시에는 교육박물관이 있어요 지난번에 이곳의 일부 내용을 포스팅했었는데, 전체적인... 쓰면 제주 교육 박물관에서 10년 뒤 주소지로 보내준다고 해요 긍정의 기운과 의지를 담아! 대신 10년 뒤에도...제주교육박물관 방문리뷰 전체보기 (83)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_제주교육박물관","title":"제주교육박물관","date":"연중무휴","venue":"제주교육박물관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI1NWE2ZDFhYTljZjE1NWZiNmZjLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","link":"https://mom-mom.net/travel/places/677376ca6f7a5e66598db91f","region":"etc","genre":"museum","description":"제주교육박물관는 제주교육박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 제주특별자치도 제주시 오복4길 25 제주교육박물관 제주교육박물관지도보기입니다. 추천 대상은 주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주교육박물관지도…입니다. 운영 시간은 관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 …입니다. 현장 편의 정보는 수유실, 기저귀교환대, 유모차대여, 주차입니다. 이용 정보는 관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 … 기준입니다.","discount":"$undefined","originalPrice":"","price":"관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 오후 5시 30분에 마감합니다. 매주 월요일과 1월 1일은 휴관이며, 박물관 관람과 전시 해설 모두 무료로 제공됩니다.","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI1NWE2ZDFhYTljZjE1NWZiNmZjLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":33.4996,"lng":126.5312,"address":"제주특별자치도 제주시 오복4길 25 제주교육박물관 제주교육박물관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"수유실, 기저귀교환대, 유모차대여, 주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"제주교육박물관 요금 및 프로그램\n[요금]\n관람료: 무료\n전시 해설: 무료\n[이용안내]\n휴무일: 매주 월요일, 1월 1일\n마지막 입장: 17시 30분\n전시 해설 진행시간: 09시 30분~17시 30분","targetAudience":"$17","operatingHours":"관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 오후 5시 30분에 마감합니다. 매주 월요일과 1월 1일은 휴관이며, 박물관 관람과 전시 해설 모두 무료로 제공됩니다.","priceDetail":"관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 오후 5시 30분에 마감합니다. 매주 월요일과 1월 1일은 휴관이며, 박물관 관람과 전시 해설 모두 무료로 제공됩니다.","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"제주교육박물관\",\"startDate\":\"연중무휴\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"location\":{\"@type\":\"Place\",\"name\":\"제주교육박물관\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"제주교육박물관\",\"addressLocality\":\"Seoul\",\"addressCountry\":\"KR\"}},\"image\":[\"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI1NWE2ZDFhYTljZjE1NWZiNmZjLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19\"],\"description\":\"제주교육박물관는 제주교육박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 제주특별자치도 제주시 오복4길 25 제주교육박물관 제주교육박물관지도보기입니다. 추천 대상은 주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주교육박물관지도…입니다. 운영 시간은 관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 …입니다. 현장 편의 정보는 수유실, 기저귀교환대, 유모차대여, 주차입니다. 이용 정보는 관람 시간은 화~일요일 오전 9시부터 오후 6시까지며, 마지막 입장은 … 기준입니다.\",\"offers\":{\"@type\":\"Offer\",\"priceCurrency\":\"KRW\",\"url\":\"https://pyw31337.github.io/culture/p/museum_%EC%A0%9C%EC%A3%BC%EA%B5%90%EC%9C%A1%EB%B0%95%EB%AC%BC%EA%B4%80/\"}}"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+19:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"제주교육박물관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 제주교육박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"제주교육박물관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 제주교육박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EC%A0%9C%EC%A3%BC%EA%B5%90%EC%9C%A1%EB%B0%95%EB%AC%BC%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI1NWE2ZDFhYTljZjE1NWZiNmZjLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"제주교육박물관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"제주교육박물관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 제주교육박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI1NWE2ZDFhYTljZjE1NWZiNmZjLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L19","22",{}]]

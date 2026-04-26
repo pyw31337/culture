@@ -1,0 +1,99 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","perf_%EA%B3%B5%EC%A3%BC_%EC%95%88%EB%8F%99_%EC%9E%90%EB%A7%A4%EB%8F%84%EC%8B%9C_%EA%B5%90%EB%A5%98%EC%9D%8C%EC%95%85%ED%9A%8C_%ED%99%98%ED%9D%AC%EC%9D%98_%EC%86%A1%EA%B0%80_%EA%B3%B5%EC%A3%BC",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","perf_%EA%B3%B5%EC%A3%BC_%EC%95%88%EB%8F%99_%EC%9E%90%EB%A7%A4%EB%8F%84%EC%8B%9C_%EA%B5%90%EB%A5%98%EC%9D%8C%EC%95%85%ED%9A%8C_%ED%99%98%ED%9D%AC%EC%9D%98_%EC%86%A1%EA%B0%80_%EA%B3%B5%EC%A3%BC","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T888,[공연소개]
+
+백제의 고도 공주와 정신문화의 수도 안동,
+시대를 넘어 예술로 하나 되는 벅찬 감동의 순간
+ 
+고난을 넘어 환희로!
+두 자매도시가 전하는 희망의 메시지! 겨울의 문턱에서 웅장한 울림으로 무대를 채울 특별한 공연이 펼쳐진다.
+공주시와 안동시의 자매결연을 기념하고 양 도시의 우호를 다지기 위해 마련된 이번 음악회는, 클래식 역사상
+가장 위대한 걸작으로 손꼽히는 베토벤의 마지막 교향곡 '나인 심포니(The 9th Symphony)'를 선보인다.
+절망적인 상황 속에서도 인류애와 희망을 노래했던 베토벤의 정신은, 유구한 역사를 지켜온 두 도시의 만남과 어우러져
+더욱 깊은 의미를 전한다. 공주를 대표하는 공주시충남교향악단의 정교하고 파워풀한 연주에 공주시립합창단과
+안동시립합창단의 섬세하고 풍성한 하모니가 더해져, 폭발적인 시너지를 일으킬 예정이다.
+4악장 '환희의 송가'가 울려 퍼지는 순간, 무대와 객석이 하나 되어 느끼게 될 가슴 벅찬 전율!
+평화와 화합의 선율로 여러분의 마음에 깊은 울림을 선사할 것이다.
+
+
+[Program]
+  
+G. Bizet – Carmen : “Habanera (L’amour est un oiseau rebelle)”
+조르주 비제 오페라 <카르멘> 중 ‘하바네라(사랑은 길들일 수 없는 새)’
+ 
+G. Bizet – Carmen : “Toreador Song (Votre toast, je peux vous le rendre)”
+조르주 비제 오페라 <카르멘> 중 ‘투우사의 노래’
+ 
+G. Verdi – La Traviata : “De’ miei bollenti spiriti”
+쥬세페 베르디 오페라 <라 트라비아타> 중 ‘그녀를 멀리 떠나… 내 끓어오르는 마음’
+ 
+G. Verdi – La Traviata : “Ah, fors’è lui… Sempre libera”
+쥬세페 베르디 오페라 <라 트라비아타> 중 ‘아, 그이인가… 언제나 자유롭게’
+  
+L. v. Beethoven - Symphony No. 9 in d minor, Op. 125 'Choral' 
+베토벤  교향곡 제9번 라단조, 작품번호 125 '합창'
+Ⅰ. Allegro ma non troppo, un poco maestoso
+Ⅱ. Molto vivace
+Ⅲ. Adagio molto e cantabile
+Ⅳ. Presto - Allegro assai18:T888,[공연소개]
+
+백제의 고도 공주와 정신문화의 수도 안동,
+시대를 넘어 예술로 하나 되는 벅찬 감동의 순간
+ 
+고난을 넘어 환희로!
+두 자매도시가 전하는 희망의 메시지! 겨울의 문턱에서 웅장한 울림으로 무대를 채울 특별한 공연이 펼쳐진다.
+공주시와 안동시의 자매결연을 기념하고 양 도시의 우호를 다지기 위해 마련된 이번 음악회는, 클래식 역사상
+가장 위대한 걸작으로 손꼽히는 베토벤의 마지막 교향곡 '나인 심포니(The 9th Symphony)'를 선보인다.
+절망적인 상황 속에서도 인류애와 희망을 노래했던 베토벤의 정신은, 유구한 역사를 지켜온 두 도시의 만남과 어우러져
+더욱 깊은 의미를 전한다. 공주를 대표하는 공주시충남교향악단의 정교하고 파워풀한 연주에 공주시립합창단과
+안동시립합창단의 섬세하고 풍성한 하모니가 더해져, 폭발적인 시너지를 일으킬 예정이다.
+4악장 '환희의 송가'가 울려 퍼지는 순간, 무대와 객석이 하나 되어 느끼게 될 가슴 벅찬 전율!
+평화와 화합의 선율로 여러분의 마음에 깊은 울림을 선사할 것이다.
+
+
+[Program]
+  
+G. Bizet – Carmen : “Habanera (L’amour est un oiseau rebelle)”
+조르주 비제 오페라 <카르멘> 중 ‘하바네라(사랑은 길들일 수 없는 새)’
+ 
+G. Bizet – Carmen : “Toreador Song (Votre toast, je peux vous le rendre)”
+조르주 비제 오페라 <카르멘> 중 ‘투우사의 노래’
+ 
+G. Verdi – La Traviata : “De’ miei bollenti spiriti”
+쥬세페 베르디 오페라 <라 트라비아타> 중 ‘그녀를 멀리 떠나… 내 끓어오르는 마음’
+ 
+G. Verdi – La Traviata : “Ah, fors’è lui… Sempre libera”
+쥬세페 베르디 오페라 <라 트라비아타> 중 ‘아, 그이인가… 언제나 자유롭게’
+  
+L. v. Beethoven - Symphony No. 9 in d minor, Op. 125 'Choral' 
+베토벤  교향곡 제9번 라단조, 작품번호 125 '합창'
+Ⅰ. Allegro ma non troppo, un poco maestoso
+Ⅱ. Molto vivace
+Ⅲ. Adagio molto e cantabile
+Ⅳ. Presto - Allegro assaic:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"perf_공주_안동_자매도시_교류음악회_환희의_송가_공주","title":"공주, 안동 자매도시 교류음악회: 환희의 송가 [공주]","date":"2026.11.20 (금)","venue":"공주문예회관 대공연장","image":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF285362_260219_152115.gif","link":"https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF285362","region":"etc","genre":"classic_tradition","description":"$17","discount":"$undefined","originalPrice":"$undefined","price":"R석 30,000원\nS석 20,000원\nA석 10,000원","gradeIcon":"$undefined","ageRating":"만 7세 이상","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":["정나라","이창호 등"],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF285362_260219_152115.gif","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":36.4601770026339,"lng":127.111721755751,"address":"충남 공주시 고마나루길 5","source":"kopis","website":"$undefined","parking":"$undefined","parkingFee":"$undefined","facilities":"","restrooms":"$undefined","performanceTime":"금요일(19:30)","bookingNotice":"$undefined","ageDetail":"만 7세 이상","feesAndPrograms":"","targetAudience":"","operatingHours":"","priceDetail":"","closedDays":"","contact":"","synopsis":"$18","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L19"]}]
+1a:Tc11,{"@context":"https://schema.org","@type":"Event","name":"공주, 안동 자매도시 교류음악회: 환희의 송가 [공주]","startDate":"2026.11.20 (금)","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"공주문예회관 대공연장","address":{"@type":"PostalAddress","streetAddress":"공주문예회관 대공연장","addressLocality":"Seoul","addressCountry":"KR"}},"image":["http://www.kopis.or.kr/upload/pfmPoster/PF_PF285362_260219_152115.gif"],"description":"[공연소개]\n\n백제의 고도 공주와 정신문화의 수도 안동,\n시대를 넘어 예술로 하나 되는 벅찬 감동의 순간\n \n고난을 넘어 환희로!\n두 자매도시가 전하는 희망의 메시지! 겨울의 문턱에서 웅장한 울림으로 무대를 채울 특별한 공연이 펼쳐진다.\n공주시와 안동시의 자매결연을 기념하고 양 도시의 우호를 다지기 위해 마련된 이번 음악회는, 클래식 역사상\n가장 위대한 걸작으로 손꼽히는 베토벤의 마지막 교향곡 '나인 심포니(The 9th Symphony)'를 선보인다.\n절망적인 상황 속에서도 인류애와 희망을 노래했던 베토벤의 정신은, 유구한 역사를 지켜온 두 도시의 만남과 어우러져\n더욱 깊은 의미를 전한다. 공주를 대표하는 공주시충남교향악단의 정교하고 파워풀한 연주에 공주시립합창단과\n안동시립합창단의 섬세하고 풍성한 하모니가 더해져, 폭발적인 시너지를 일으킬 예정이다.\n4악장 '환희의 송가'가 울려 퍼지는 순간, 무대와 객석이 하나 되어 느끼게 될 가슴 벅찬 전율!\n평화와 화합의 선율로 여러분의 마음에 깊은 울림을 선사할 것이다.\n\n\n[Program]\n  \nG. Bizet – Carmen : “Habanera (L’amour est un oiseau rebelle)”\n조르주 비제 오페라 <카르멘> 중 ‘하바네라(사랑은 길들일 수 없는 새)’\n \nG. Bizet – Carmen : “Toreador Song (Votre toast, je peux vous le rendre)”\n조르주 비제 오페라 <카르멘> 중 ‘투우사의 노래’\n \nG. Verdi – La Traviata : “De’ miei bollenti spiriti”\n쥬세페 베르디 오페라 <라 트라비아타> 중 ‘그녀를 멀리 떠나… 내 끓어오르는 마음’\n \nG. Verdi – La Traviata : “Ah, fors’è lui… Sempre libera”\n쥬세페 베르디 오페라 <라 트라비아타> 중 ‘아, 그이인가… 언제나 자유롭게’\n  \nL. v. Beethoven - Symphony No. 9 in d minor, Op. 125 'Choral' \n베토벤  교향곡 제9번 라단조, 작품번호 125 '합창'\nⅠ. Allegro ma non troppo, un poco maestoso\nⅡ. Molto vivace\nⅢ. Adagio molto e cantabile\nⅣ. Presto - Allegro assai","offers":{"@type":"Offer","priceCurrency":"KRW","url":"https://pyw31337.github.io/culture/p/perf_%EA%B3%B5%EC%A3%BC_%EC%95%88%EB%8F%99_%EC%9E%90%EB%A7%A4%EB%8F%84%EC%8B%9C_%EA%B5%90%EB%A5%98%EC%9D%8C%EC%95%85%ED%9A%8C_%ED%99%98%ED%9D%AC%EC%9D%98_%EC%86%A1%EA%B0%80_%EA%B3%B5%EC%A3%BC/"}}19:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1a"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1b:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"공주, 안동 자매도시 교류음악회: 환희의 송가 [공주] - Culture Flow"}],["$","meta","1",{"name":"description","content":"2026.11.20 (금) | 공주문예회관 대공연장 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"공주, 안동 자매도시 교류음악회: 환희의 송가 [공주] - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"2026.11.20 (금) | 공주문예회관 대공연장 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/perf_%EA%B3%B5%EC%A3%BC_%EC%95%88%EB%8F%99_%EC%9E%90%EB%A7%A4%EB%8F%84%EC%8B%9C_%EA%B5%90%EB%A5%98%EC%9D%8C%EC%95%85%ED%9A%8C_%ED%99%98%ED%9D%AC%EC%9D%98_%EC%86%A1%EA%B0%80_%EA%B3%B5%EC%A3%BC/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF285362_260219_152115.gif"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"공주, 안동 자매도시 교류음악회: 환희의 송가 [공주]"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"공주, 안동 자매도시 교류음악회: 환희의 송가 [공주] - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"2026.11.20 (금) | 공주문예회관 대공연장 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF285362_260219_152115.gif"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1b","22",{}]]

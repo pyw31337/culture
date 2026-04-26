@@ -1,0 +1,97 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EB%B6%88%EA%B5%90%EC%A4%91%EC%95%99%EB%B0%95%EB%AC%BC%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EB%B6%88%EA%B5%90%EC%A4%91%EC%95%99%EB%B0%95%EB%AC%BC%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T201d,주소서울특별시 종로구 우정국로 55 조계사 불교중앙박물관지도보기전화02-2011-1960시설주차예약당일 방문 및 현장 접수 (예약 불가)예약하기영업시간월요일정기휴무화요일10:00 ~ 17:00수요일10:00 ~ 17:00목요일10:00 ~ 17:00금요일10:00 ~ 17:00토요일10:00 ~ 17:00일요일10:00 ~ 17:00인기 급상승 장소 서울더보기급상승코코몽키즈랜드 송파점코코몽 테마의 대형 실내 키즈카페 서울 송파구24 ~ 48개월 인기최대 12,000원 혜택받기키즈카페급상승캘리클럽 잠실점아이의 승부욕과 성취감을 자극하는 스포테인먼트키카 서울 송파구48개월 이상 인기50% 할인받기키즈카페급상승노리디지털키즈카페 중계점홈플러스 안, 가성비 키즈카페가!? 서울 노원구12 ~ 24개월 인기키즈카페급상승헬로키티 애플카페헬로키티로 가득한 대형 키티카페 서울 중구48개월 이상 인기식당/카페복합문화공간급상승챔피언더블랙벨트 메가박스 코엑스몰점액티비티 놀이시설로 가득한 나이 제한 없는 키즈카페 서울 강남구48개월 이상 인기최대 12,000원 할인받기키즈카페급상승하이커 그라운드전국 힙아가들 모여라 서울 중구48개월 이상 인기복합문화공간박물관/체험관
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        hyewon_chu자세히 알아보기불교중앙박물관아이와조계사서울특별시서울불교 중앙 박물관한국사찰음식한국사찰음식문화체험관애슐리퀸즈 기흥점불교중앙박물관
+소개
+불교중앙박물관은 서울특별시 종로구 우정국로 55 조계사 경내에 위치한 무료 박물관으로, 전국 각 사찰에서 보관이 어려운 불교 문화재를 보존, 관리, 전시합니다.지하 3층 규모로 상설전시실, 수장고, 보존처리실, 학예연구실 등을 갖추고 있습니다.아이와 함께 한국의 전통 불교문화와 다양한 역사적 유산을 경험할 수 있는 교육의 장입니다.
+관람 정보
+
+영업시간: 화요일~일요일 10:00~17:00 (월요일 정기휴무)
+휴관일: 매주 월요일
+입장료: 무료
+
+편의시설
+
+지원되는 편의시설: 주차 (박물관 바로 앞 유료주차장 이용 가능)
+지원되지 않는 편의시설: 아기의자, 수유실, 기저귀교환대, 유모차대여, 예약
+
+방문객을 위한 팁
+
+누구나 무료로 관람 가능합니다.
+박물관 내 어린이 대상 교육 프로그램이 비정기적으로 진행되며, 공식 홈페이지나 인스타그램에서 확인 및 신청 가능합니다.
+방문 시점에 따라 기획 전시가 상이할 수 있으므로 확인 후 방문을 권장합니다.
+현재 전시 중인 공간이 어두울 수 있으니 이동에 주의가 필요합니다.
+조계사와 우정총국이 인근에 위치해 있어 같이 방문하기 좋습니다.
+
+프로그램 및 전시
+
+어린이와 가족을 위한 불교문화 체험 교육 프로그램이 운영됩니다.
+진행 중인 주요 기획 전시 및 특별 전시(예: '호검 의겸' 전시 기간: 2025.04.09 ~ 2035.06.29) 등은 공식 홈페이지를 통해 확인 바랍니다.
+
+찾아오시는 길
+
+지하철: 1호선 종각역(2번 출구), 3호선 안국역(6번 출구)에서 도보 이동
+버스: 안국동 또는 인근 정류장 하차 후 도보 이동
+
+주변 볼거리
+
+인사동, 경복궁, 창덕궁 등 서울의 주요 관광지와 인접해 있고, 조계사와 우정총국 등도 함께 둘러볼 수 있습니다.
+
+불교중앙박물관 요금 및 프로그램[요금]무료[이용안내]'호검 의겸' 전시 기간 - 2025.04.09 ~ 2035.06.29불교중앙박물관을 위한 세상 유용한 꿀팁누구나 관람 가능한 무료 박물관이에요.박물관 내 어린이 대상 교육 프로그램은 홈페이지나 인스타그램에서 확인 후 신청 가능해요.방문 시점에 따라 기획 전시가 상이할 수 있으니 확인 후 방문 하는 걸 권장해요.현재 진행 중인 전시는 내부가 어두워서 이동에 주의가 필요해요.조계사와 우정총국이 인근에 위치해있어 같이 방문하기 좋아요.박물관 바로 앞에 유료 주차장이 있어요.불교중앙박물관의 주소서울특별시 종로구 우정국로 55 조계사 불교중앙박물관주소 복사길 찾기불교중앙박물관을 예약하려면?당일 방문 및 현장 접수 (예약 불가)홈페이지인스타그램근처의 인기 티켓엔포드 호텔[5성] 엔포드 호텔 어반오아시스 수영장 티켓 특가맘맘특가27% 16,000원 루프캣미[서울] 루프캣미 실내 고양이카페 명동점맘맘특가13,500원 N서울타워[남산] N서울타워 전망대+두루미 분식 이용권맘맘특가35,800원 N서울타워[남산] N서울타워 프로포즈 이벤트맘맘특가620,000원 N서울타워N서울타워 전망대 입장권(~26/12/31)맘맘특가24% 17,500원 N서울타워[남산] 2026년 N서울타워 와인페어 입장권맘맘특가45,000원 N서울타워2026 남산 와인페어 티켓맘맘특가20% 40,000원 N서울타워[남산] N서울타워 전망대+한쿡 레스토랑 PKG맘맘특가61,900원 N서울타워[남산] N서울타워 전망대+엔그릴 PKG맘맘특가125,000원 
+            
+              
+            
+        
+            
+                
+            
+        불교중앙박물관과 비슷한 아이와 가볼 만한 곳 더보기조계사종로 도심속에 개방되어있는 사찰 서울 종로구24 ~ 48개월 인기야외나들이우정총국한국 최초의 우체국을 탐방할 수 있는 곳! 서울 종로구48개월 이상 인기야외나들이신규<전시> 금기숙 기증특별전 Dancing, Dreaming, Enlightening(~26/03/15)대형 설치 작품부터 신비로운 의상까지!  서울 종로구공연/전시/축제인사동 쌈지길인사동 가면 들려야 할 필수 코스 서울 종로구48개월 이상 인기복합문화공간인사동홍보관인사동에서 한복체험을 할 수 있는 곳 서울 종로구48개월 이상 인기박물관/체험관한국사찰음식문화체험관한국사찰음식을 직접 만들어 보자! 서울 종로구48개월 이상 인기박물관/체험관쌈지길 계단갤러리무료로 갤러리도 보고 이벤트 선물도 받고! 서울 종로구복합문화공간템플스테이통합정보센터전통문화체험하고 스님과 차담도 나눌 수 있는 곳 서울 종로구48개월 이상 인기체험/클래스<전시> 쿠키런: 킹덤 아트 콜라보 프로젝트 - 위대한 왕국의 유산(~26/04/12)미디어아트로 만나는 쿠키런 체험 전시  서울 종로구공연/전시/축제나이프갤러리6,000여 점의 칼이 전시되어는 도검 전시관 서울 종로구공연/전시/축제
+            
+              
+            
+        
+            
+                
+            
+        불교중앙박물관 N블로그 후기 서울 종로 가볼만한곳 무료 전시회 조계사 불교중앙박물관서울 종로 가볼만한곳으로 알려진 명소 조계사와 불교중앙박물관 무료 전시회 관람하고 왔습니다. 다양한 불교미술 작품을 감상할 수 있는 시간이었습니다. 커플 데이트 코스로 좋습니다. 긴 글 끝까지 읽어...불교 중앙 박물관 - 풍경 만들기요즘 밖에 날씨 너무 더운데 전 불교 중앙 박물관 데리고 가려고 버스 타고, 버스 갈아 타려고 5분 걷고... 불교 중앙 박물관에서 초등학생을 대상으로 좋은 수업들을 많이 하고 있어요. 시간 될때마다 신청해서...[서울 여행] 불교중앙박물관 - 서울 역사 기행서울 종로 조계사 옆에 있어 다양한 서울의 역사 유적과 함께 둘러보기 좋은 불교중앙박물관. 불교사에 문외한인 기독교 모태신앙도 쉽게 이해할 수 있는 깔끔한 전시를 무료로 관람할 수 있으니, 이 포스팅...불교중앙박물관 방문리뷰 전체보기 (94)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_불교중앙박물관","title":"불교중앙박물관","date":"연중무휴","venue":"불교중앙박물관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgwNGY1ZjMxNDE1MjQ2MDZiMmNkYWVlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==","link":"https://mom-mom.net/travel/places/680b4f348764030395d6bd67","region":"etc","genre":"museum","description":"불교중앙박물관는 불교중앙박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 서울특별시 종로구 우정국로 55 조계사 불교중앙박물관지도보기입니다. 추천 대상은 주소서울특별시 종로구 우정국로 55 조계사 불교중앙박물관지도보기전화02…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 17:00수요일10:00 ~ 17:00…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 불교중앙박물관 요금 및 프로그램 [요금] 무료 [이용안내] '호검 의겸… 기준입니다.","discount":"$undefined","originalPrice":"","price":"무료","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgwNGY1ZjMxNDE1MjQ2MDZiMmNkYWVlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":37.5665,"lng":126.978,"address":"서울특별시 종로구 우정국로 55 조계사 불교중앙박물관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"불교중앙박물관 요금 및 프로그램\n[요금]\n무료\n[이용안내]\n'호검 의겸' 전시 기간 - 2025.04.09 ~ 2035.06.29","targetAudience":"$17","operatingHours":"월요일정기휴무화요일10:00 ~ 17:00수요일10:00 ~ 17:00목요일10:00 ~ 17:00금요일10:00 ~ 17:00토요일10:00 ~ 17:00일요일10:00 ~ 17:00","priceDetail":"","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"불교중앙박물관\",\"startDate\":\"연중무휴\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"location\":{\"@type\":\"Place\",\"name\":\"불교중앙박물관\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"불교중앙박물관\",\"addressLocality\":\"Seoul\",\"addressCountry\":\"KR\"}},\"image\":[\"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgwNGY1ZjMxNDE1MjQ2MDZiMmNkYWVlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==\"],\"description\":\"불교중앙박물관는 불교중앙박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 서울특별시 종로구 우정국로 55 조계사 불교중앙박물관지도보기입니다. 추천 대상은 주소서울특별시 종로구 우정국로 55 조계사 불교중앙박물관지도보기전화02…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 17:00수요일10:00 ~ 17:00…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 불교중앙박물관 요금 및 프로그램 [요금] 무료 [이용안내] '호검 의겸… 기준입니다.\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"KRW\",\"url\":\"https://pyw31337.github.io/culture/p/museum_%EB%B6%88%EA%B5%90%EC%A4%91%EC%95%99%EB%B0%95%EB%AC%BC%EA%B4%80/\"}}"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+19:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"불교중앙박물관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 불교중앙박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"불교중앙박물관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 불교중앙박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EB%B6%88%EA%B5%90%EC%A4%91%EC%95%99%EB%B0%95%EB%AC%BC%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgwNGY1ZjMxNDE1MjQ2MDZiMmNkYWVlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"불교중앙박물관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"불교중앙박물관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 불교중앙박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjgwNGY1ZjMxNDE1MjQ2MDZiMmNkYWVlLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L19","22",{}]]

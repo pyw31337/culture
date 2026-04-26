@@ -1,0 +1,123 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EC%A0%84%EA%B3%A1%EC%84%A0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%83%81%EC%84%A4%EC%A0%84%EC%8B%9C%EC%8B%A4",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EC%A0%84%EA%B3%A1%EC%84%A0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%83%81%EC%84%A4%EC%A0%84%EC%8B%9C%EC%8B%A4","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T2b87,주소경기도 연천군 전곡읍 평화로443번길 2 전곡선사박물관지도보기전화031-830-5600시설수유실, 기저귀교환대, 주차, 예약예약사전예약 & 당일 방문 모두 가능 - 홈페이지 예약예약하기영업시간월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00목요일10:00 ~ 18:00금요일10:00 ~ 18:00토요일10:00 ~ 18:00일요일10:00 ~ 18:00인기 급상승 장소 경기 북부더보기급상승아침고요가족동물원숲속에 사는 동물 친구들 만나러 가볼까 경기 가평군24 ~ 48개월 인기동식물친구들급상승모래알쏭쏭휴양지 컨셉의 실내 모래놀이터 경기 남양주시24 ~ 48개월 인기20% 할인받기키즈카페급상승정글반슬라임, 레고, 모래놀이 등 다양한 체험거리가 있는 곳 경기 남양주시24 ~ 48개월 인기체험/클래스키즈카페급상승허니버디 고양점36개월 미만 아기를 위한 베이비카페 경기 고양시~ 12개월 인기키즈카페급상승드림닥터 의사직업체험 일산점아이들이 한 번씩은 꿈꾸는 의사가 직접 되어보는 시간 경기 고양시48개월 이상 인기체험/클래스박물관/체험관급상승그래 여기구나시원한 물에 발 담그고 식사할 수 있는 계곡 식당 경기 양주시24 ~ 48개월 인기야외나들이
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        자세히 알아보기선사 박물관전곡 선사 박물관전곡선사박물관최고의 휴가 패키지경기 연천군멤버십 프로그램유산균 직구아이와 떠나는 시간여행, 전곡선사박물관 상설전시실
+전곡선사박물관 상설전시실의 주요 특징
+
+전곡선사박물관 상설전시실은 연천 전곡리 유적에서 발견된 다양한 구석기 유물과 함께 인류 진화의 여정을 한눈에 볼 수 있는 전시 공간입니다.
+아이와 함께 인류의 기원과 변화, 구석기 시대의 생활을 생생하게 체험하고 관찰할 수 있는 다양한 코너가 마련되어 있습니다.
+
+주요 전시 내용
+
+전곡의 주먹도끼
+
+1978년과 1979년에 전곡리 유적에서 발견된 동아시아 최초의 아슐리안형 주먹도끼가 전시되어 있습니다.
+아이들은 이 주먹도끼를 통해 당시 인류의 도구 제작과 사용법을 쉽게 이해할 수 있습니다.
+
+
+인류 진화의 위대한 행진
+
+약 700만 년 전의 투마이부터 1만 년 전의 만달인까지, 14개체의 인류 모형이 과학적으로 복원되어 전시됩니다.
+다양한 고인류의 변화 과정을 실제 크기의 모형과 함께 관찰할 수 있습니다.
+
+
+사바나의 최초인류
+
+오스트랄로피테쿠스가 숲을 떠나 사바나 환경에 적응하는 과정을 박제된 동물들과 함께 배울 수 있는 공간입니다.
+두발로 걷는 진화의 시작과 다양한 동물들이 함께 전시되어 있습니다.
+
+
+아시아의 이주인
+
+호모 에렉투스의 아시아 이주 과정을 아열대 환경과 함께 재현해놓았습니다.
+인류가 지구 각지로 퍼져나간 모습을 시각적으로 이해할 수 있습니다.
+
+
+추가령지구대의 고인류 터전
+
+한반도 중부 추가령지구대 일대의 지질과 생태, 인류 생활상을 재현한 공간입니다.
+
+
+전곡의 지층과 발굴 기록
+
+전곡리 유적의 구석기 유물 분포와 발굴 과정을 전시된 발굴 피트로 볼 수 있습니다.
+실제 발굴 현장의 모습과 30년 가까운 발굴 기록을 체험할 수 있습니다.
+
+
+선사시대의 예술과 믿음
+
+동굴벽화, 조각, 음악 도구 등 선사시대 예술활동의 흔적과, 인간만의 문화와 사고 능력을 엿볼 수 있습니다.
+죽음에 대한 인식, 언어의 기원 등 인류의 문화적 진화를 아이의 눈높이에 맞춰 설명하는 코너도 마련되어 있습니다.
+
+
+
+아이와 함께 하면 좋은 이유
+
+실제 크기의 인류 모형과 동물 박제, 발굴 현장 재현 등 시각적이고 입체적인 전시가 많아 아이들이 흥미를 느끼기에 좋습니다.
+인류 진화 과정을 놀이처럼 체험하며 자연스럽게 과거와 현재를 연결해볼 수 있습니다.
+장신구 만들기 등 다양한 체험 프로그램과 활동도 마련되어 있어 오감으로 역사와 문화를 배울 수 있습니다.
+규모가 크지 않아 아이와 부담 없이 둘러보기 적당하며, 전시실 내 동선이 잘 짜여 있습니다.
+
+관람 팁
+
+전시관 안에서 이쿠이트 고글 만들기 체험을 할 수 있습니다. 무료로, 정해진 시간 없이 자유롭게 이용할 수 있습니다.
+VR을 통해 실감 나게 구석기 시대를 여행해 볼 수 있는 체험이 있습니다.
+여름방학 특별 프로그램도 운영하고 있으며, 홈페이지 사전예약과 현장접수로 참여할 수 있습니다.
+1층에는 수유실과 자율 보관대도 마련되어 있어 어린아이와 오기 좋습니다. 엘리베이터가 있어 유모차를 이동하기에 편리합니다.
+야외 주차장이 넓게 마련되어 있습니다.
+
+관람 시간
+
+화요일부터 일요일, 오전 10시부터 오후 6시까지입니다. (월요일 정기휴무)
+
+"전곡선사박물관 상설전시실은 과거와 현재가 만나는 특별한 시간여행의 공간입니다. 아이와 함께 방문해 인류의 발자취와 우리의 기원을 직접 체험해보세요!"
+전곡선사박물관 상설전시실 FAQ전곡선사박물관 상설전시실에서 아이들이 가장 흥미롭게 볼 수 있는 전시는 무엇인가요?전곡선사박물관 상설전시실에서는 동양 최초로 발견된 '아슐리안형 주먹도끼' 등 구석기 유물, 인류와 동물의 실제 모형, 그리고 구석기 시대 생활상이나 예술을 입체적으로 체험할 수 있는 다양한 전시가 있습니다. 바닥에 '시간의 선'이 표시되어 있어 각 시대별로 차례차례 둘러보며 아이들이 흥미롭게 관람할 수 있습니다.전곡선사박물관 상설전시실에서 체험할 수 있는 프로그램에는 어떤 것이 있나요?'이쿠이트 고글 만들기'와 구석기 시대를 나만의 시선으로 탐험할 수 있는 VR 체험, 여름방학 특별 프로그램 등 다양한 체험이 모두 무료로 제공됩니다. 주요 체험은 예약이나 정해진 시간 없이 자유롭게 참여하실 수 있으며, 특별 프로그램은 홈페이지 사전예약 또는 현장접수로 신청할 수 있습니다.상설전시실 관람에는 어느 정도 시간이 걸리나요? 동선은 편리한가요?상설전시실의 규모는 너무 크지 않아 아이와 천천히 둘러봐도 약 1시간 이내에 관람이 가능합니다. 전시 동선이 명확하게 안내되어 있어 연령이 어린 아이들과도 부담 없이 이동하며 관람하실 수 있습니다.아이를 동반할 때 이용할 수 있는 편의시설에는 어떤 것이 있나요?1층에는 수유실과 자율 보관대가 설치되어 있으며, 박물관 내 엘리베이터를 통해 유모차 이동도 편리합니다. 넓은 야외 주차장이 무료로 제공되어 차량 접근성도 좋습니다. 단, 아기의자와 유모차 대여 서비스는 제공되지 않습니다.관람료, 운영 시간, 휴관일은 어떻게 되나요?전곡선사박물관 상설전시실은 무료로 관람하실 수 있습니다. 화요일부터 일요일까지 오전 10시~오후 6시 운영하며, 월요일은 정기휴무입니다.전곡선사박물관 상설전시실 요금 및 프로그램[요금]무료전곡선사박물관 상설전시실을 위한 세상 유용한 꿀팁무료로 입장이 가능하고, 다양한 체험 프로그램도 무료로 이용할 수 있어 아이와 함께 방문하기 좋아요.아슐리안형 주먹도끼가 동양 최초로 발견된 역사적 현장인 전곡리 구석기 유적에 건립된 유적박물관이에요. 2층 전시관 옆에 에스컬레이터를 타고 내려오면 기획전시실이 있어요. 기획 전시실의 전시 내용은 계속 바뀌어서 선사 박물관에 여러 번 방문했어도 새로운 전시를 볼 수 있어요전시관 안에서 이쿠이트 고글 만들기 체험을 할 수 있어요. 무료이고 정해진 시간 없이 자유롭게 이용할 수 있어요.VR을 통해 실감 나게 구석기 시대를 여행해 볼 수 있는 체험도 있어요. 여름방학 특별 프로그램도 운영하고 있으며, 홈페이지 사전예약과 현장접수로 참여할 수 있어요.1층에는 수유실과 자율 보관대도 마련되어 있어 어린아이와 오기 좋아요. 엘리베이터가 있어 유모차를 이동하기에 편해요.야외 주차장이 넓게 마련되어 있어요.전곡선사박물관 상설전시실의 주소경기도 연천군 전곡읍 평화로443번길 2 전곡선사박물관주소 복사길 찾기전곡선사박물관 상설전시실을 예약하려면?사전예약 & 당일 방문 모두 가능 - 홈페이지 예약홈페이지 예약인스타그램전곡선사박물관 상설전시실과 비슷한 아이와 가볼 만한 곳 더보기전곡선사박물관선사시대 생활을 경험해 볼 공간 경기 연천군48개월 이상 인기박물관/체험관연천전곡리유적우리나라 대표적인 구석기 유적 경기 연천군야외나들이연천군육아종합지원센터연천군 아이들의 무료 놀이터 경기 연천군키즈카페연천은대리성연천의 3대 삼국시대 성곽 중 한 곳 경기 연천군야외나들이신규임진강자연센터연천의 자연과 지질, 역사를 한눈에 담아낸 연천의 새로운 랜드마크 경기 연천군공연/전시/축제
+            
+              
+            
+        
+            
+                
+            
+        전곡선사박물관 상설전시실 N블로그 후기 [경기 연천] 전곡 선사 박물관않은데 선사시대 악기, 이누이트 물건 등이 전시되어 있고 레고로 스톤헨지 만들기, 춤추는 미로, 나무 베기 등을 전시해놔서 귀여웠어요 나오면 바로 바깥인데 전곡리 유적지로 갈 수 있는 산책로가 있어서...경기/연천 아이와 가볼만한 곳 - 전곡선사박물관이제 전곡석물점으로 가면 출구가 나와요 큰 글자책도 있어요 아직 태원이나 바다가 이해하기 힘든 부분이 많이 있지만 가볍게 관람하기에 좋은 거 같아요~~ 박물관에서의 기본예절도 계속 알려주면 내년에...연천에 간다면 바로 여기! 아이들과 가기 좋은 전곡선사박물관얼른 박물관으로 갔답니다! 그럼 바로 전곡선사박물관을 소개해드릴게요! 연천회관 포스팅도 한번 봐주세요! 카페 갔다가 박물관 가면 너무 좋은 코스에요! 위치는 지도 참고해주세요:) 주말 오후에 갔는데도...전곡선사박물관 상설전시실 방문리뷰 전체보기 (98)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_전곡선사박물관_상설전시실","title":"전곡선사박물관 상설전시실","date":"연중무휴","venue":"전곡선사박물관 상설전시실","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZiZTBlYmY5NmM3NjNjOWQyNDE5ZGZmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==","link":"https://mom-mom.net/travel/places/66c3f05fd58c65d39b9108c0","region":"etc","genre":"museum","description":"전곡선사박물관 상설전시실는 전곡선사박물관 상설전시실에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경기도 연천군 전곡읍 평화로443번길 2 전곡선사박물관지도보기입니다. 추천 대상은 주소경기도 연천군 전곡읍 평화로443번길 2 전곡선사박물관지도보기전화0…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00…입니다. 현장 편의 정보는 수유실, 기저귀교환대, 주차, 예약입니다. 이용 정보는 전곡선사박물관 상설전시실 요금 및 프로그램 [요금] 무료 기준입니다.","discount":"$undefined","originalPrice":"","price":"무료","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZiZTBlYmY5NmM3NjNjOWQyNDE5ZGZmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":37.4138,"lng":127.5183,"address":"경기도 연천군 전곡읍 평화로443번길 2 전곡선사박물관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"수유실, 기저귀교환대, 주차, 예약","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"전곡선사박물관 상설전시실 요금 및 프로그램\n[요금]\n무료","targetAudience":"$17","operatingHours":"월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00목요일10:00 ~ 18:00금요일10:00 ~ 18:00토요일10:00 ~ 18:00일요일10:00 ~ 18:00","priceDetail":"","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+19:T625,{"@context":"https://schema.org","@type":"Event","name":"전곡선사박물관 상설전시실","startDate":"연중무휴","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"전곡선사박물관 상설전시실","address":{"@type":"PostalAddress","streetAddress":"전곡선사박물관 상설전시실","addressLocality":"Seoul","addressCountry":"KR"}},"image":["https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZiZTBlYmY5NmM3NjNjOWQyNDE5ZGZmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="],"description":"전곡선사박물관 상설전시실는 전곡선사박물관 상설전시실에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경기도 연천군 전곡읍 평화로443번길 2 전곡선사박물관지도보기입니다. 추천 대상은 주소경기도 연천군 전곡읍 평화로443번길 2 전곡선사박물관지도보기전화0…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00…입니다. 현장 편의 정보는 수유실, 기저귀교환대, 주차, 예약입니다. 이용 정보는 전곡선사박물관 상설전시실 요금 및 프로그램 [요금] 무료 기준입니다.","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","url":"https://pyw31337.github.io/culture/p/museum_%EC%A0%84%EA%B3%A1%EC%84%A0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%83%81%EC%84%A4%EC%A0%84%EC%8B%9C%EC%8B%A4/"}}18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$19"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1a:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"전곡선사박물관 상설전시실 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 전곡선사박물관 상설전시실 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"전곡선사박물관 상설전시실 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 전곡선사박물관 상설전시실 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EC%A0%84%EA%B3%A1%EC%84%A0%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80_%EC%83%81%EC%84%A4%EC%A0%84%EC%8B%9C%EC%8B%A4/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZiZTBlYmY5NmM3NjNjOWQyNDE5ZGZmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"전곡선사박물관 상설전시실"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"전곡선사박물관 상설전시실 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 전곡선사박물관 상설전시실 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjZiZTBlYmY5NmM3NjNjOWQyNDE5ZGZmLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1a","22",{}]]

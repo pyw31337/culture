@@ -1,0 +1,104 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EB%B0%95%EB%91%90%EC%A7%84%EB%AC%B8%ED%95%99%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EB%B0%95%EB%91%90%EC%A7%84%EB%AC%B8%ED%95%99%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T2bc1,주소경기도 안성시 보개면 남사당로 198-11 박두진문학관 박두진문학관지도보기전화031-678-2466시설주차예약당일 방문 및 현장 접수 (예약 불가)예약하기영업시간월요일정기휴무화요일00:00 ~ 17:00수요일00:00 ~ 17:00목요일00:00 ~ 17:00금요일00:00 ~ 17:00토요일00:00 ~ 17:00일요일00:00 ~ 17:00인기 급상승 장소 경기 남부더보기급상승부천자연생태공원볼거리가 넘쳐나는 무릉도원 경기 부천시12 ~ 24개월 인기야외나들이급상승여주 썬밸리호텔 워터파크실내에서 따뜻하게 물놀이 하고 미끄럼틀 타고 경기 여주시24 ~ 48개월 인기워터파크/스파급상승아쿠아필드 안성쾌적한 워터파크에서 하루종일 신나는 물놀이 경기 안성시24 ~ 48개월 인기30% 할인받기워터파크/스파급상승온동물체험농장농작물 체험과 동물 농장의 정겨움 경기 시흥시24 ~ 48개월 인기체험/클래스급상승안성시아이사랑놀이터7세 이하의 아이라면 누구나 이용 가능한 실내놀이터 경기 안성시24 ~ 48개월 인기키즈카페복합문화공간급상승트니트니 PLUS 동탄 라크몽 센터아이들이 자유롭게 뛰어노는 프리미엄 놀이터 경기 화성시24 ~ 48개월 인기6,000원 할인받기키즈카페체험/클래스
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        _nanii._.luv자세히 알아보기멤버십 프로그램부여 리조트경주시티호텔가족 여행제주 에코랜드 호텔서울베베쥬에로로쿠킹스튜디오아이와 함께 시와 자연을 체험하는 특별한 공간, 박두진문학관
+경기도 안성시 보개면 남사당로 198-11에 위치한 박두진문학관은 안성 출신의 대표적인 시인 박두진(1916~1998)의 삶과 문학을 쉽고 재미있게 만날 수 있는 곳입니다.
+박두진문학관의 특징
+
+2018년 11월 16일 개관
+아름다운 시민공원인 안성맞춤랜드 내에 위치
+총 3층(옥상 포함), 999.45㎡ 규모의 현대적인 건물
+박두진 시인 유족이 기증한 2,000여 점의 귀중한 자료 전시
+
+공간별 안내
+1층
+
+북카페: 약 1,500~2,000권의 도서와 시집을 자유롭게 읽을 수 있는 공간입니다. 아이와 함께 책을 읽으며 쉴 수 있고, 문학에 대한 흥미와 호기심을 자연스럽게 키울 수 있습니다.
+수장고: 박두진 관련 자료를 보관하는 공간(일반 관람은 제한적).
+
+2층
+
+상설전시실: 박두진 시인의 시와 일상을 직접 보고 느낄 수 있습니다. 시집, 친필 원고, 사진, 유품, 그림, 서예 등 다양한 자료가 전시되어 있어 시인의 예술 세계를 가까이에서 만날 수 있습니다.
+기획전시실: 박두진 또는 다양한 문학 주제로 특별전이 수시로 열립니다.
+휴게공간: 인문도서가 준비되어 있어 가족 모두가 휴식하며 책을 읽기에 좋습니다.
+다목적실: 교육 프로그램이나 영상 상영 등 다양한 체험 행사가 이뤄집니다.
+
+3층
+
+전망대: 안성맞춤랜드와 안성의 자연풍경을 한눈에 볼 수 있습니다. 시인이 노래했던 자연을 직접 경험하며, 계절감을 아이와 공유하기 좋습니다.
+
+프로그램과 체험
+
+어린이 문학교실, 청소년 교육 프로그램 등 다양한 체험활동이 준비되어 있습니다(일부는 사전 예약 필요).
+박두진문학제, 작가 초청 특강 등 계절별 문화행사가 개최됩니다.
+문학관 모든 공간에서 시와 자연을 주제로 한 다양한 프로그램이 진행됩니다.
+
+이용안내 및 편의시설
+
+관람료 및 주차료: 무료
+운영시간: 화~일 09:00~17:00 (입장마감 17:00)
+휴관일: 매주 월요일, 1월 1일, 설날, 추석 당일(월요일이 공휴일이면 다음날 휴관)
+주차: 관내 주차장 협소, 만차 시 안성맞춤랜드 주차장 이용 가능
+유의사항: 음식물 반입 및 반려동물 출입 제한(안내견 제외), 전체 금연, 상업적 촬영 금지
+
+주변 연계 추천
+
+문학관은 안성맞춤랜드 내에 있어, 각종 야외공원, 천문과학관, 공예문화센터, 사계절 썰매장 등 다양한 체험시설과 함께 방문하기 좋습니다.
+
+아이와 함께 즐기는 포인트
+
+시집이 가득한 북카페에서 아이와 책을 읽으며 문학의 재미를 만끽할 수 있습니다.
+시인이 집중했던 자연과 계절을 직접 체험할 수 있는 전망대와 야외공원이 가까이 있어, 시와 자연을 함께 경험할 수 있습니다.
+아이 눈높이에 맞춘 전시 공간과 체험 행사로 문학이 어렵지 않게 느껴집니다.
+
+"박두진문학관은 문학적 감수성, 자연에 대한 사랑, 가족 간의 따뜻한 소통이 모두 이뤄지는 특별한 공간입니다. 아이와 의미 있는 시간을 보내고 싶을 때 꼭 한 번 방문해 보세요."
+박두진문학관 FAQ박두진문학관에서 아이와 함께 어떤 체험 프로그램을 할 수 있나요?박두진문학관에는 아이들이 즐길 수 있는 상설 체험공간이 마련되어 있어 색칠놀이, 빙고놀이 등의 활동을 할 수 있습니다. 매달 마지막 주 토요일에는 '자연문화가 있는 날'로, 특별한 체험활동도 준비됩니다. 그 외에도 박두진 시인의 시를 읽고 직접 써보는 필사 체험, 감성 엽서 및 편지지에 글을 써볼 수 있는 공간 등이 준비되어 있어 가족 나들이로 알맞습니다.문학관 관람과 주차는 무료인가요?네, 박두진문학관은 관람료와 주차료 모두 무료입니다. 건물 앞에 전용 주차장이 마련되어 있어 편리하게 이용할 수 있습니다.아이와 함께 방문할 때 꼭 둘러봐야 할 공간은 어디인가요?입구 앞의 작은 북카페 공간에서 다양한 책을 읽을 수 있고, 상설체험공간에서는 아이들이 색칠놀이, 빙고 놀이를 할 수 있습니다. 박두진 시인의 서재를 복원한 전시 공간, 시를 듣고 노래를 감상할 수 있는 전시, 태블릿 패드에 시를 따라 써보는 필사 체험공간 등이 있습니다. 3층 전망대에는 포토존이 있어 가족 단위 방문객들에게 인기가 많습니다.편의시설과 아기 동반 시 유의할 점이 있나요?문학관 내에는 화장실과 쾌적한 휴게 공간이 마련되어 있지만, 아기의자, 수유실, 기저귀 교환대, 유모차 대여 등은 지원되지 않습니다. 음식물 반입과 안내견 이외의 반려동물 출입이 제한되며, 실내에서는 금연입니다.운영 시간과 휴관일은 어떻게 되나요?박두진문학관은 화요일부터 일요일까지 09:00~17:00까지 운영되며, 매주 월요일은 정기 휴무입니다. 단, 월요일이 공휴일이더라도 별도의 임시 휴관이나 변동은 없습니다.박두진문학관 요금 및 프로그램[요금]무료박두진문학관을 위한 세상 유용한 꿀팁어른뿐만 아니라 아이도 즐길 수 있는 다양한 체험 프로그램이 마련되어 있어 가족 나들이로 딱이에요.입구 앞에 다양한 책이 있는 작은 북카페 공간이 있어요.아이들이 좋아하는 색칠놀이, 빙고 놀이를 할 수 있는 상설체험공간이 있어요.매달 마지막 주 토요일은 자연문화가 있는 날로 특별한 체험활동도 준비되어 있어요.전시를 더욱 흥미롭게 관람할 수 있도록 곳곳에 스탬프가 비치되어 있어요.박두진 시인의 서재를 복원한 전시 공간도 있어서 시인의 삶을 엿볼 수 있어요.작품 표지에 손을 올리면 시를 낭독해 주는 전시와 시인 문장을 곡으로 만든 노래를 감상할 수 있어요.시인의 작품을 읽고, 태블릿 패드 위에 마음에 드는 시를 따라서 써볼 수 있는 필사 체험공간이 있어요.박두진 시인의 시를 활용한 감성 엽서, 편지지에 글을 써볼 수 있어요.3층에는 포토존이 있는 전망대가 있어요.박두진 시인의 연보와 함께 짧은 영상을 시청할 수 있는 공간이 마련돼있어요.건물 앞에 전용 주차장이 있어 주차하기 편리해요.박두진문학관의 주소경기도 안성시 보개면 남사당로 198-11 박두진문학관 박두진문학관주소 복사길 찾기박두진문학관을 예약하려면?당일 방문 및 현장 접수 (예약 불가)홈페이지박두진문학관과 비슷한 아이와 가볼 만한 곳 더보기안성맞춤랜드사계절 방문하기 좋은 시민들의 편안한 휴식처 경기 안성시24 ~ 48개월 인기테마파크안성시 금북정맥 탐방안내소금북정맥의 자연과 생태를 쉽고 재미있게! 경기 안성시공연/전시/축제금광호수하늘전망대경치를 한눈에 감상할 수 있는 멋진 전망대 경기 안성시48개월 이상 인기야외나들이연와서고시골 마을의 평안함을 느낄 수 있는 독립서점 카페 경기 안성시식당/카페슈티뭉하우스주택을 개조한 인테리어 맛집 카페 경기 안성시식당/카페너리굴문화마을수영장과 키즈클래스가 있는 키즈캠핑장 경기 안성시24 ~ 48개월 인기캠핑/글램핑안성맞춤천문과학관망원경을 통해 실제로 별님들을 만나봐요 경기 안성시48개월 이상 인기박물관/체험관소담산딸기한여름에만 나오는 산딸기! 지금이 딱 철! 경기 안성시24 ~ 48개월 인기체험/클래스너리굴문화마을 네트플레이존숲속 놀이터에서 즐기는 네트플레이 경기 안성시48개월 이상 인기야외나들이올데이브런치카페수영장과 넓은 잔디를 보며 힐링할 수 있는 카페 경기 안성시24 ~ 48개월 인기식당/카페
+            
+              
+            
+        
+            
+                
+            
+        박두진문학관 N블로그 후기 안성 실내 아이와 가볼만한곳 박두진문학관해보고 박두진 시인의 대표적인 문학 작품에 손을 살짝 얹으면 시를낭독해주는 전시도 함께보고 또... 좋았던 박두진문학관 처음에는 문학관이라 우리 아이가 재미없어할까 걱정했는데, 생각보다 아이...[경기] 안성 나들이 하기 좋은 안성맞춤랜드 박두진문학관...3부 '박두진의 예술세계와 만나다'로 구성 되어 있다. 네이버 지식백과 '박두진문학관' 문학관은 총 3층으로 이루어져있었구 1층엔 북카페와 수장고, 2층엔 전시실과 다양한사무실이, 3층에는 전망가있었어요...공도 아이생각 어린이집              '박두진문학관 견학'안성맞춤랜드 '박두진문학관'에 다녀왔어요 박두진 시인은 안성을 대표하는 시인이랍니다 우리 아름이들은 박두진문학관에서 시인의 대표 시 '해'를 읽어 보고 의성어, 의태어를 함께 찾아보았어요 박물관...박두진문학관 방문리뷰 전체보기 (82)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_박두진문학관","title":"박두진문학관","date":"연중무휴","venue":"박두진문학관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdjM2ZlZTVlYjI0ZGQzYjcwOGM0NDk0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","link":"https://mom-mom.net/travel/places/67cac86f537f9db594e2650e","region":"etc","genre":"museum","description":"박두진문학관는 박두진문학관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경기도 안성시 보개면 남사당로 198-11 박두진문학관 박두진문학관지도보기입니다. 추천 대상은 주소경기도 안성시 보개면 남사당로 198-11 박두진문학관 박두진문학관…입니다. 운영 시간은 월요일정기휴무화요일00:00 ~ 17:00수요일00:00 ~ 17:00…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 박두진문학관 요금 및 프로그램 [요금] 무료 기준입니다.","discount":"$undefined","originalPrice":"","price":"무료","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdjM2ZlZTVlYjI0ZGQzYjcwOGM0NDk0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":37.4138,"lng":127.5183,"address":"경기도 안성시 보개면 남사당로 198-11 박두진문학관 박두진문학관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"박두진문학관 요금 및 프로그램\n[요금]\n무료","targetAudience":"$17","operatingHours":"월요일정기휴무화요일00:00 ~ 17:00수요일00:00 ~ 17:00목요일00:00 ~ 17:00금요일00:00 ~ 17:00토요일00:00 ~ 17:00일요일00:00 ~ 17:00","priceDetail":"","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"박두진문학관\",\"startDate\":\"연중무휴\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"location\":{\"@type\":\"Place\",\"name\":\"박두진문학관\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"박두진문학관\",\"addressLocality\":\"Seoul\",\"addressCountry\":\"KR\"}},\"image\":[\"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdjM2ZlZTVlYjI0ZGQzYjcwOGM0NDk0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19\"],\"description\":\"박두진문학관는 박두진문학관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경기도 안성시 보개면 남사당로 198-11 박두진문학관 박두진문학관지도보기입니다. 추천 대상은 주소경기도 안성시 보개면 남사당로 198-11 박두진문학관 박두진문학관…입니다. 운영 시간은 월요일정기휴무화요일00:00 ~ 17:00수요일00:00 ~ 17:00…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 박두진문학관 요금 및 프로그램 [요금] 무료 기준입니다.\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"KRW\",\"url\":\"https://pyw31337.github.io/culture/p/museum_%EB%B0%95%EB%91%90%EC%A7%84%EB%AC%B8%ED%95%99%EA%B4%80/\"}}"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+19:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"박두진문학관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 박두진문학관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"박두진문학관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 박두진문학관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EB%B0%95%EB%91%90%EC%A7%84%EB%AC%B8%ED%95%99%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdjM2ZlZTVlYjI0ZGQzYjcwOGM0NDk0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"박두진문학관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"박두진문학관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 박두진문학관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjdjM2ZlZTVlYjI0ZGQzYjcwOGM0NDk0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L19","22",{}]]

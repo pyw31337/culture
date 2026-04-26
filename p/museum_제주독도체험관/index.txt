@@ -1,0 +1,127 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EC%A0%9C%EC%A3%BC%EB%8F%85%EB%8F%84%EC%B2%B4%ED%97%98%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EC%A0%9C%EC%A3%BC%EB%8F%85%EB%8F%84%EC%B2%B4%ED%97%98%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:Ta9f,제주독도체험관
+독도, 가까이에서 느낄 수 있는 특별한 공간
+
+제주독도체험관은 제주특별자치도 제주시 오복4길 25, 제주교육박물관 내에 위치해 있습니다. 이곳은 아이와 함께 대한민국의 소중한 섬, 독도의 역사와 자연, 그리고 독도의 의미를 쉽고 재미있게 배울 수 있도록 다양한 체험과 전시가 준비된 공간입니다.
+
+주요 전시와 체험
+독도의 자연과 생태계, 동식물, 사계절의 변화 등을 실제 모형과 영상을 통해 생생하게 볼 수 있습니다.
+독도와 관련된 다양한 교육 자료, 역사를 보여주는 문헌, 옛 지도, 사진, 영상 등도 전시되어 있어 독도의 가치와 영유권에 대해 자연스럽게 이해할 수 있습니다.
+AR(증강현실)이나 VR(가상현실) 등 첨단 스마트 기술을 활용한 체험 콘텐츠가 마련되어 있어 아이들이 게임처럼 즐기며 독도에 대해 배울 수 있습니다.
+독도에 살고 있는 동물(강치 등)을 주제로 한 이야기나 퀴즈, 미니게임 등도 준비되어 있어 어린이들의 호기심과 흥미를 높여줍니다.
+아이와 함께 방문해야 할 이유
+어린이의 눈높이에 맞춘 전시와 체험프로그램이 많아 처음 독도를 접하는 아이들도 쉽고 즐겁게 배울 수 있습니다.
+독도의 아름다움과 생태, 그리고 대한민국의 소중한 영토임을 자연스럽게 느낄 수 있어 나라 사랑의 마음을 키워줄 수 있습니다.
+실내에서 운영되므로 날씨와 상관없이 쾌적하게 관람할 수 있습니다.
+다양한 자료와 체험이 무료로 제공되어 가족 모두 부담 없이 즐길 수 있습니다.
+방문 팁
+제주교육박물관의 다양한 전시도 함께 관람할 수 있어 하루 종일 알차게 보낼 수 있습니다.
+체험관에는 전시해설 프로그램이나 교육영상, 키오스크 등이 마련되어 있어 아이와 함께 천천히 둘러보면 더욱 좋습니다.
+사진 촬영이 가능한 구역도 있어 소중한 추억을 남길 수 있습니다.
+요금 및 프로그램
+관람료: 무료
+전시 해설: 무료로 진행
+휴무: 매주 월요일, 1월 1일
+마지막 입장: 17시
+전시 해설 진행시간: 09시 30분~13시 30분 / 13시 30분~17시 30분
+편의시설
+지원되는 편의시설: 주차
+지원되지 않는 편의시설: 아기의자, 수유실, 기저귀교환대, 유모차대여, 예약
+
+"제주에서 아이와 함께 뜻깊은 체험을 원한다면, 제주독도체험관은 꼭 들러볼 만한 장소입니다. 독도의 아름다움과 소중함을 아이와 함께 느끼는 특별한 하루를 보내보세요."18:T26a3,주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주독도체험관지도보기전화064-720-9145시설주차예약당일 방문 및 현장 접수 (예약 불가)예약하기영업시간월요일정기휴무화요일09:30 ~ 17:30수요일09:30 ~ 17:30목요일09:30 ~ 17:30금요일09:30 ~ 17:30토요일09:30 ~ 17:30일요일09:30 ~ 17:30인기 급상승 장소 제주더보기급상승하리보 해피월드 인 제주매니아들을 위한 하리보의 첫 초대형 미디어 체험 전시 제주 제주시24 ~ 48개월 인기20% 할인받기공연/전시/축제급상승제주 에코랜드 테마파크기차 타고 떠나는 동화같은 숲속 여행 제주 제주시24 ~ 48개월 인기최대 3,000원 할인받기테마파크급상승제주홀릭뮤지엄제주 컨셉의 다양한 포토존이 있는 이색 전시관 제주 제주시12 ~ 24개월 인기2,000원 할인받기공연/전시/축제급상승길갈 팜 랜드3만 평 규모의 자연 동물 휴양림 제주 제주시24 ~ 48개월 인기20% 할인받기동식물친구들
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        _nanii._.luv자세히 알아보기제주 독도체험관제주도독도체험관jeju제주시독도 체험관제주독도체험관제주특별자치도 민속자연사박물관제주제주독도체험관
+독도, 가까이에서 느낄 수 있는 특별한 공간
+제주독도체험관은 제주특별자치도 제주시 오복4길 25, 제주교육박물관 내에 위치해 있습니다. 이곳은 아이와 함께 대한민국의 소중한 섬, 독도의 역사와 자연, 그리고 독도의 의미를 쉽고 재미있게 배울 수 있도록 다양한 체험과 전시가 준비된 공간입니다.
+주요 전시와 체험
+
+독도의 자연과 생태계, 동식물, 사계절의 변화 등을 실제 모형과 영상을 통해 생생하게 볼 수 있습니다.
+독도와 관련된 다양한 교육 자료, 역사를 보여주는 문헌, 옛 지도, 사진, 영상 등도 전시되어 있어 독도의 가치와 영유권에 대해 자연스럽게 이해할 수 있습니다.
+AR(증강현실)이나 VR(가상현실) 등 첨단 스마트 기술을 활용한 체험 콘텐츠가 마련되어 있어 아이들이 게임처럼 즐기며 독도에 대해 배울 수 있습니다.
+독도에 살고 있는 동물(강치 등)을 주제로 한 이야기나 퀴즈, 미니게임 등도 준비되어 있어 어린이들의 호기심과 흥미를 높여줍니다.
+
+아이와 함께 방문해야 할 이유
+
+어린이의 눈높이에 맞춘 전시와 체험프로그램이 많아 처음 독도를 접하는 아이들도 쉽고 즐겁게 배울 수 있습니다.
+독도의 아름다움과 생태, 그리고 대한민국의 소중한 영토임을 자연스럽게 느낄 수 있어 나라 사랑의 마음을 키워줄 수 있습니다.
+실내에서 운영되므로 날씨와 상관없이 쾌적하게 관람할 수 있습니다.
+다양한 자료와 체험이 무료로 제공되어 가족 모두 부담 없이 즐길 수 있습니다.
+
+방문 팁
+
+제주교육박물관의 다양한 전시도 함께 관람할 수 있어 하루 종일 알차게 보낼 수 있습니다.
+체험관에는 전시해설 프로그램이나 교육영상, 키오스크 등이 마련되어 있어 아이와 함께 천천히 둘러보면 더욱 좋습니다.
+사진 촬영이 가능한 구역도 있어 소중한 추억을 남길 수 있습니다.
+
+요금 및 프로그램
+
+관람료: 무료
+전시 해설: 무료로 진행
+휴무: 매주 월요일, 1월 1일
+마지막 입장: 17시
+전시 해설 진행시간: 09시 30분~13시 30분 / 13시 30분~17시 30분
+
+편의시설
+
+지원되는 편의시설: 주차
+지원되지 않는 편의시설: 아기의자, 수유실, 기저귀교환대, 유모차대여, 예약
+
+"제주에서 아이와 함께 뜻깊은 체험을 원한다면, 제주독도체험관은 꼭 들러볼 만한 장소입니다. 독도의 아름다움과 소중함을 아이와 함께 느끼는 특별한 하루를 보내보세요."
+제주독도체험관 FAQ제주독도체험관에서 아이가 직접 참여할 수 있는 체험 프로그램에는 무엇이 있나요?제주독도체험관에는 독도 새우와 강치를 색칠하는 색칠놀이 공간, 비치된 태극기와 머리띠를 활용한 ‘독도는 우리 땅 포토존’ 등 아이들이 직접 체험할 수 있는 프로그램이 마련되어 있습니다. 전시 해설 프로그램 역시 아이들의 눈높이에 맞게 진행되어 교육적 경험을 더합니다.제주독도체험관의 입장료 및 체험 프로그램 이용 요금은 얼마인가요?제주독도체험관은 입장료와 전시 해설 등 모든 체험 프로그램을 전 연령 누구나 무료로 이용할 수 있습니다.제주독도체험관의 관람 시간과 휴관일은 어떻게 되나요?관람 시간은 화요일부터 일요일까지 오전 9시 30분부터 오후 5시 30분까지이며, 마지막 입장은 오후 5시까지 가능합니다. 매주 월요일과 1월 1일에는 휴관합니다.아이들과 방문할 때 이용할 수 있는 편의시설은 무엇이 있나요?주차장은 제주교육박물관과 함께 이용할 수 있습니다. 다만, 아기의자, 수유실, 기저귀교환대, 유모차 대여 등 영유아를 위한 편의시설은 별도로 마련되어 있지 않으니 참고해 주세요.전시 해설은 어떻게 이용할 수 있고, 운영 시간은 어떻게 되나요?전시 해설은 무료로 제공되며, 운영 시간은 09시 30분~13시 30분 및 13시 30분~17시 30분입니다. 보다 심도 깊은 관람을 원하신다면 해당 시간에 맞추어 신청해보세요.제주독도체험관을 방문할 때 함께 둘러보기 좋은 곳이 있나요?제주독도체험관은 제주교육박물관 건물 내에 있어, 방문 시 바로 옆 제주교육박물관도 함께 관람하면 더욱 유익한 시간을 보낼 수 있습니다.제주독도체험관 요금 및 프로그램[요금]관람료: 무료전시 해설: 무료[이용안내]휴무: 매주 월요일, 1월 1일마지막 입장: 17시전시 해설 진행시간: 09시 30분~13시 30분 / 13시 30분~17시 30분제주독도체험관을 위한 세상 유용한 꿀팁제주독도체험관은 독도의 자연과 역사, 지리 등을 알아볼 수 있는 체험관으로, 아이들의 눈높이에 맞춘 체험이 많아요.자유롭게 관람이 가능하고, 입장료가 무료예요. 전시 해설도 무료로 진행되니 좀 더 깊이 알고 싶다면 신청해 보세요. 다양한 영상을 활용하여 아이가 지루함을 느끼지 않고 전시를 구경할 수 있어요.독도에 서식하는 독도 새우와 독도 강치를 색칠하는 색칠놀이 공간이 있어요 비치된 태극기와 머리띠를 이용해 독도는 우리 땅 포토존에서 아이와 사진을 남겨 보세요.주차장은 제주교육박물관과 함께 사용하고 있어요.바로 옆 건물인 제주교육박물관과 함께 들르면 더 유익한 시간을 보낼 수 있어요.제주독도체험관의 주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주독도체험관주소 복사길 찾기제주독도체험관을 예약하려면?당일 방문 및 현장 접수 (예약 불가)홈페이지인스타그램근처의 인기 티켓하리보월드하리보 해피월드 인 제주 (HARIBO Happy World in jeju)맘맘특가10% 11,700원 히어로플레이파크[전국] 히어로플레이파크 이용권맘맘특가7,000원 카페패스[제주] 카페패스 3일 프리미엄맘맘특가10% 13,410원 
+            
+              
+            
+        
+            
+                
+            
+        제주독도체험관과 비슷한 아이와 가볼 만한 곳 더보기제주교육박물관제주 옛 교육의 흐름과 놀이를 엿볼 수 있는 곳 제주 제주시박물관/체험관제주민속자연사박물관자연을 존중하고 제주의 숨결을 간직한 박물관 제주 제주시24 ~ 48개월 인기박물관/체험관제주수학체험관교구와 함께 수학을 쉽게 이해할 수 있는 체험관 제주 제주시48개월 이상 인기박물관/체험관국립제주박물관 어린이박물관25년 말 리뉴얼하여 재개장한 제주의 무료 박물관 제주 제주시박물관/체험관SING SING SING제주도 최대 규모 롤러스케이트장 제주 제주시48개월 이상 인기스포츠/게임
+            
+              
+            
+        
+            
+                
+            
+        제주독도체험관 N블로그 후기 제주 무료 실내 체험관 아이와 가볼만한곳 제주독도체험관제주 무료 실내 체험관 아이와 가볼만한곳 제주독도체험관 아이와 함께 제주시에 위치한 제주독도체험관을 다녀왔어요 보는 각도에 따라 움직이는 신기한 독도 입체사진도 구경해 보고 그리고 아빠와 함께...아이랑 가볼만한 곳 추천! 제주교육박물관, 독도체험관 (무료시설)있는 독도체험관으로 향했습니다 . 제주 독도체험관 위치 제주특별자치도 제주시 오복4길 25 운영시간... 걸로 체험관이 시작되어요 ㅎㅎ 강치와 해녀의 이야기가 이어지고 독도의 탄생, 해녀 이야기, 사라진...제주 아이와 가볼만한 곳 제주독도체험관과 제주교육박물관현재 독도의 상태 등 이것저것 알려주시면서 잘 보고 잘 체험했다고 주신 기념품 포스트잇까지✌ 그냥 근처 카페왔다가 급 오게 된 제주독도체험관과 제주교육박물관에서 더 큰 걸 얻어간 느낌이었던 1시간...제주독도체험관 방문리뷰 전체보기 (67)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_제주독도체험관","title":"제주독도체험관","date":"연중무휴","venue":"제주독도체험관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI0ZDFjYTJhNTBlNTIwMjY3YmMxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","link":"https://mom-mom.net/travel/places/677376906f7a5e66598db91d","region":"etc","genre":"museum","description":"제주독도체험관는 제주독도체험관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 제주특별자치도 제주시 오복4길 25 제주교육박물관 제주독도체험관지도보기입니다. 추천 대상은 주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주독도체험관지도…입니다. 운영 시간은 관람 시간은 화요일부터 일요일까지 오전 9시 30분부터 오후 5시 30…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 제주독도체험관은 입장료와 전시 해설 등 모든 체험 프로그램을 전 연령 … 기준입니다.","discount":"$undefined","originalPrice":"","price":"제주독도체험관은 입장료와 전시 해설 등 모든 체험 프로그램을 전 연령 누구나 무료로 이용할 수 있습니다.","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI0ZDFjYTJhNTBlNTIwMjY3YmMxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":33.4996,"lng":126.5312,"address":"제주특별자치도 제주시 오복4길 25 제주교육박물관 제주독도체험관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"$17","targetAudience":"$18","operatingHours":"관람 시간은 화요일부터 일요일까지 오전 9시 30분부터 오후 5시 30분까지이며, 마지막 입장은 오후 5시까지 가능합니다. 매주 월요일과 1월 1일에는 휴관합니다.","priceDetail":"제주독도체험관은 입장료와 전시 해설 등 모든 체험 프로그램을 전 연령 누구나 무료로 이용할 수 있습니다.","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L19"]}]
+19:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"제주독도체험관\",\"startDate\":\"연중무휴\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"location\":{\"@type\":\"Place\",\"name\":\"제주독도체험관\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"제주독도체험관\",\"addressLocality\":\"Seoul\",\"addressCountry\":\"KR\"}},\"image\":[\"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI0ZDFjYTJhNTBlNTIwMjY3YmMxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19\"],\"description\":\"제주독도체험관는 제주독도체험관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 제주특별자치도 제주시 오복4길 25 제주교육박물관 제주독도체험관지도보기입니다. 추천 대상은 주소제주특별자치도 제주시 오복4길 25 제주교육박물관 제주독도체험관지도…입니다. 운영 시간은 관람 시간은 화요일부터 일요일까지 오전 9시 30분부터 오후 5시 30…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 제주독도체험관은 입장료와 전시 해설 등 모든 체험 프로그램을 전 연령 … 기준입니다.\",\"offers\":{\"@type\":\"Offer\",\"priceCurrency\":\"KRW\",\"url\":\"https://pyw31337.github.io/culture/p/museum_%EC%A0%9C%EC%A3%BC%EB%8F%85%EB%8F%84%EC%B2%B4%ED%97%98%EA%B4%80/\"}}"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1a:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"제주독도체험관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 제주독도체험관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"제주독도체험관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 제주독도체험관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EC%A0%9C%EC%A3%BC%EB%8F%85%EB%8F%84%EC%B2%B4%ED%97%98%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI0ZDFjYTJhNTBlNTIwMjY3YmMxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"제주독도체험관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"제주독도체험관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 제주독도체험관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2ZWI0ZDFjYTJhNTBlNTIwMjY3YmMxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1a","22",{}]]

@@ -1,0 +1,102 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%ED%99%94%EC%A0%95%EB%B0%95%EB%AC%BC%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%ED%99%94%EC%A0%95%EB%B0%95%EB%AC%BC%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T2932,주소서울특별시 종로구 평창8길 3 화정박물관지도보기전화02-2075-0114시설주차, 예약예약사전예약 & 당일 방문 모두 가능 - 네이버 예약예약하기영업시간월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00목요일10:00 ~ 18:00금요일10:00 ~ 18:00토요일10:00 ~ 18:00일요일10:00 ~ 18:00인기 급상승 장소 서울더보기급상승코코몽키즈랜드 송파점코코몽 테마의 대형 실내 키즈카페 서울 송파구24 ~ 48개월 인기최대 12,000원 혜택받기키즈카페급상승캘리클럽 잠실점아이의 승부욕과 성취감을 자극하는 스포테인먼트키카 서울 송파구48개월 이상 인기50% 할인받기키즈카페급상승노리디지털키즈카페 중계점홈플러스 안, 가성비 키즈카페가!? 서울 노원구12 ~ 24개월 인기키즈카페급상승헬로키티 애플카페헬로키티로 가득한 대형 키티카페 서울 중구48개월 이상 인기식당/카페복합문화공간급상승챔피언더블랙벨트 메가박스 코엑스몰점액티비티 놀이시설로 가득한 나이 제한 없는 키즈카페 서울 강남구48개월 이상 인기최대 12,000원 할인받기키즈카페급상승하이커 그라운드전국 힙아가들 모여라 서울 중구48개월 이상 인기복합문화공간박물관/체험관
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        hyewon_chu어린이와 함께 즐기는 동아시아 문화예술 여행, 화정박물관
+화정박물관은 어떤 곳인가요?
+화정박물관은 서울 종로구 평창동에 위치한 동아시아 문화예술 전문 박물관입니다. 이곳은 한국, 중국, 일본, 티베트 등 다양한 아시아 국가의 전통 문화유산과 미술품을 한자리에 모아 전시하고 있어요. 특히 세계적으로 유명한 티베트 불교미술 작품, ‘탕카’ 소장품으로도 잘 알려진 곳입니다.
+화정박물관의 탄생은 한광호 명예이사장이 40여 년간 모은 귀중한 소장품에서 시작되었습니다. 박물관의 이름 ‘화정(和庭)’ 역시 그의 아호(雅號)를 따서 지은 것이에요.
+주요 전시와 관람 포인트
+
+한국과 티베트, 중국, 일본 등 동아시아의 유려한 역사를 담은 유물들을 한곳에서 볼 수 있어요.
+1층에서 상설전시 관람이 가능하며, 특별전은 사전예약제로 2층에서 관람할 수 있어요.
+사람이 많지 않고 조용한 느낌이라 차분한 분위기에서 전시를 즐길 수 있어요.
+
+2025년 봄에는 ‘새들의 그림정원’ 같은 동아시아 새 그림 특별전, ‘티베트의 불교공예’ 등도 만나볼 수 있습니다.
+아이와 함께라면 이런 점이 좋아요
+
+한중일 및 티베트 등 다양한 문화권의 미술품을 쉽고 흥미롭게 접할 수 있어요.
+조용하고 쾌적한 주변 환경 덕분에 산책 삼아 방문하기도 좋습니다.
+가족 단위 방문객이 많아 어린이와 부모가 함께 천천히 둘러보기 알맞은 공간이에요.
+
+이용 안내
+
+관람시간: 오전 10시 ~ 오후 6시 (매주 월요일, 1월 1일, 설·추석 연휴 휴관)
+입장료:
+특별전: 7,000원~10,000원
+상설전: 3,000원~6,000원
+보호자 동반 미취학아동: 무료
+복지카드 소지자, 동반 1인: 무료
+
+
+주차: 건물 오른쪽 뒤편에 있으며, 전시 관람객 2시간 무료 주차 제공
+
+관람 시 유의사항
+
+전시물은 직접 만질 수 없으니 꼭 눈으로만 감상해 주세요.
+음식물과 애완동물은 박물관 내 반입이 불가합니다.
+
+위치 및 접근
+
+주소: 서울특별시 종로구 평창8길 3 화정박물관
+대중교통: 여러 버스와 지하철 노선(3, 6호선) 이용 시 편리하게 방문 가능합니다.
+
+맘맘 추천 한마디
+"화정박물관은 다양한 동아시아 문화를 오감으로 만날 수 있는 특별한 공간입니다. 아이에게 생생한 문화 예술 체험의 기회를 선물하고 싶다면 소중한 하루 나들이 장소로 추천드려요!"
+화정박물관 FAQ화정박물관의 입장료와 할인 혜택은 어떻게 되나요?화정박물관의 상설전시 입장료는 3,000원~6,000원, 특별전의 경우 7,000원~10,000원입니다. 보호자와 함께 방문하는 미취학 아동, 복지카드 소지자 및 동반 1인은 무료로 입장이 가능합니다. 특별전의 경우 요금과 관람 정책이 변동될 수 있으니 방문 전 홈페이지에서 확인해주세요.화정박물관에서 아이들과 함께 관람할 수 있는 전시 또는 체험은 무엇인가요?화정박물관에서는 동아시아(한국, 중국, 티베트, 일본 등)의 다양한 유물을 관람할 수 있습니다. 1층에서는 상설전시가, 2층에서는 특별전이 열리며, 특별전은 사전예약제로 운영됩니다. 별도의 어린이 체험 프로그램은 상시 제공되지 않으나, 조용히 관람하며 아이와 다양한 유물에 대해 이야기를 나누기에 적합한 공간입니다.주차 및 교통 편의시설은 어떻게 되나요?박물관 건물 오른쪽 뒤편에 주차장이 마련되어 있으며, 전시 관람객은 2시간 무료 주차 혜택을 받을 수 있습니다. 대중교통으로도 방문이 가능하지만, 상세한 노선 안내는 방문 전 공식 홈페이지를 참고해주세요.아이를 동반할 때 주의해야 할 점이나, 제공되는 유아/아동 편의시설이 있나요?화정박물관에는 아기의자, 수유실, 기저귀교환대, 유모차 대여 등 유아 편의시설이 제공되지 않습니다. 전시 환경 보호를 위해 전시장 내에서는 뛰거나 소란을 피하지 않도록 주의해 주시고, 유물은 반드시 눈으로만 감상해 주세요.관람 외에 아이와 함께 즐길 수 있는 공간이나 주변 시설이 있나요?박물관 옆에 작은 놀이터가 있어 관람 전후 아이와 함께 이용하기 좋습니다. 박물관 내부에는 별도의 키즈존이나 체험실은 마련되어 있지 않으니 참고하시기 바랍니다.화정박물관의 특별전과 상설전은 어떻게 관람할 수 있나요?1층에서 상설전시를 자유롭게 관람할 수 있으며, 2층 특별전은 사전 예약제로 운영되고 있습니다. 특별전의 내용과 일정은 수시로 변경되니 방문 전 공식 홈페이지를 꼭 확인하세요.화정박물관 요금 및 프로그램[요금]특별전: 7,000원~10,000원상설전시: 3,000원~6,000원보호자 동반 미취학아동: 무료복지카드 소지자, 동반 1인: 무료자세한 요금은 첨부된 이미지를 확인해 주세요.화정박물관을 위한 세상 유용한 꿀팁한국과 티베트, 중국, 일본 등 동아시아의 유려한 역사를 담은 유물들을 한곳에서 볼 수 있어 좋아요.1층에서 상설전시 관람이 가능하며, 특별전은 사전예약제로 2층에서 관람할 수 있어요.사람이 많지 않고 조용한 느낌이라 차분한 분위기에서 전시를 즐길 수 있어요.특별전는 계속 변경되니 전시의 구체적인 내용은 홈페이지를 통해 확인해 주세요. 주차장은 건물 오른쪽 뒤편에 있으며, 전시 관람객은 2시간 무료 주차가 가능해요.박물관 옆에 작은 놀이터가 있어 박물관 관람 후 놀러 가기 좋아요.화정박물관의 주소서울특별시 종로구 평창8길 3 화정박물관주소 복사길 찾기화정박물관을 예약하려면?사전예약 & 당일 방문 모두 가능 - 네이버 예약네이버예약홈페이지인스타그램페이스북스마트스토어근처의 인기 티켓엔포드 호텔[5성] 엔포드 호텔 어반오아시스 수영장 티켓 특가맘맘특가27% 16,000원 
+            
+              
+            
+        
+            
+                
+            
+        화정박물관과 비슷한 아이와 가볼 만한 곳 더보기서울기록원서울의 옛 기록을 찾아 떠나는 여정 서울 은평구48개월 이상 인기박물관/체험관북촌동양문화박물관북촌 최고의 전망대에서 즐기는 차 한 잔 서울 종로구24 ~ 48개월 인기박물관/체험관윤동주문학관2025년은 광복 80주년이자 윤동주 서거 80주기 서울 종로구박물관/체험관뮤지엄한미 삼청국내 최초 사진 전문 미술관 서울 종로구공연/전시/축제삼세영과거와 현재와 미래가 조화로운 곳 서울 종로구12 ~ 24개월 인기공연/전시/축제석파정 서울미술관흥선대원군이 사랑한 풍경을 즐길 수 있는 곳 서울 종로구12 ~ 24개월 인기공연/전시/축제가나아트센터매번 다양한 전시가 열리는 아트갤러리 서울 종로구48개월 이상 인기공연/전시/축제해프닝서울고즈넉한 종로 평창동의 갤러리에서 즐기는 무료 전시 서울 종로구공연/전시/축제서울시립 미술아카이브멋진 마운틴뷰 도서관과 전시를 한 번에! 서울 종로구24 ~ 48개월 인기공연/전시/축제목인박물관 목석원만나기 힘든 목인, 석인들이 한 자리에 서울 종로구12 ~ 24개월 인기박물관/체험관
+            
+              
+            
+        
+            
+                
+            
+        화정박물관 N블로그 후기 화정박물관 (서울 전시 추천)서울 나들이 길에 꼭 보고 싶었던 전시장인 화정박물관을 찾았다. 평일 오전이라 그런지 예약제라 그런지 관람내내 혼자라 집중하며 둘러보았다. 평창동에 위치한 박물관인데 '리움미술관'만큼이나 퀄리티...화정박물관 고인물전 소개  프랑스 화가가 그린 고정황제의...그와함께 내일부터 화정박물관을 비롯해서 다양한 전시 및 공연소식들도 봄꽃처럼 다양하고... 고인물전 소개 (출처 : 화정박물관 홈피) 전시명 : 고인물전 (2024 상반기 화정박물관 특별전) 전시기간 : 2024.3....서울명소 - 평창동 '화정박물관' 춘화 특별전 관람필수 박물관 로비에 매표소가 있어요. 특별전과 상설전시로 구분되어 있는데 전체를 관람할 수 있는... 화정박물관 한빛문화재단 설립자이자 사업가인 화정 한광호가 약 40년 동안 국내외에서 수집한...화정박물관 방문리뷰 전체보기 (85)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_화정박물관","title":"화정박물관","date":"연중무휴","venue":"화정박물관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlYzBhZTI4OWM5MjFmNjhmZWI5NTk4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==","link":"https://mom-mom.net/travel/places/65ee63ed1125833a155dba73","region":"etc","genre":"museum","description":"화정박물관는 화정박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 서울특별시 종로구 평창8길 3 화정박물관지도보기입니다. 추천 대상은 주소서울특별시 종로구 평창8길 3 화정박물관지도보기전화02-2075-0…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00…입니다. 현장 편의 정보는 주차, 예약입니다. 이용 정보는 화정박물관의 상설전시 입장료는 3,000원~6,000원, 특별전의 경우… 기준입니다.","discount":"$undefined","originalPrice":"","price":"화정박물관의 상설전시 입장료는 3,000원~6,000원, 특별전의 경우 7,000원~10,000원입니다. 보호자와 함께 방문하는 미취학 아동, 복지카드 소지자 및 동반 1인은 무료로 입장이 가능합니다. 특별전의 경우 요금과 관람 정책이 변동될 수 있으니 방문 전 홈페이지에서 확인해주세요.","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlYzBhZTI4OWM5MjFmNjhmZWI5NTk4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":37.5665,"lng":126.978,"address":"서울특별시 종로구 평창8길 3 화정박물관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"주차, 예약","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"화정박물관 요금 및 프로그램\n[요금]\n특별전: 7,000원~10,000원\n상설전시: 3,000원~6,000원\n보호자 동반 미취학아동: 무료\n복지카드 소지자, 동반 1인: 무료\n자세한 요금은 첨부된 이미지를 확인해 주세요.","targetAudience":"$17","operatingHours":"월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00목요일10:00 ~ 18:00금요일10:00 ~ 18:00토요일10:00 ~ 18:00일요일10:00 ~ 18:00","priceDetail":"화정박물관의 상설전시 입장료는 3,000원~6,000원, 특별전의 경우 7,000원~10,000원입니다. 보호자와 함께 방문하는 미취학 아동, 복지카드 소지자 및 동반 1인은 무료로 입장이 가능합니다. 특별전의 경우 요금과 관람 정책이 변동될 수 있으니 방문 전 홈페이지에서 확인해주세요.","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"화정박물관\",\"startDate\":\"연중무휴\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"location\":{\"@type\":\"Place\",\"name\":\"화정박물관\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"화정박물관\",\"addressLocality\":\"Seoul\",\"addressCountry\":\"KR\"}},\"image\":[\"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlYzBhZTI4OWM5MjFmNjhmZWI5NTk4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==\"],\"description\":\"화정박물관는 화정박물관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 서울특별시 종로구 평창8길 3 화정박물관지도보기입니다. 추천 대상은 주소서울특별시 종로구 평창8길 3 화정박물관지도보기전화02-2075-0…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00…입니다. 현장 편의 정보는 주차, 예약입니다. 이용 정보는 화정박물관의 상설전시 입장료는 3,000원~6,000원, 특별전의 경우… 기준입니다.\",\"offers\":{\"@type\":\"Offer\",\"priceCurrency\":\"KRW\",\"url\":\"https://pyw31337.github.io/culture/p/museum_%ED%99%94%EC%A0%95%EB%B0%95%EB%AC%BC%EA%B4%80/\"}}"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+19:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"화정박물관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 화정박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"화정박물관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 화정박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%ED%99%94%EC%A0%95%EB%B0%95%EB%AC%BC%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlYzBhZTI4OWM5MjFmNjhmZWI5NTk4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"화정박물관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"화정박물관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 화정박물관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjVlYzBhZTI4OWM5MjFmNjhmZWI5NTk4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L19","22",{}]]

@@ -1,0 +1,93 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EA%B8%88%EC%B4%8C%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90_%EC%95%88%EC%A0%84%EC%B2%B4%ED%97%98%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EA%B8%88%EC%B4%8C%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90_%EC%95%88%EC%A0%84%EC%B2%B4%ED%97%98%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T25d8,주소경기도 파주시 동산3길 38-11 금촌초등학교지도보기전화031-941-2013시설주차예약사전예약 & 당일 방문 모두 가능예약하기영업시간월요일09:00 ~ 15:00화요일09:00 ~ 15:00수요일09:00 ~ 15:00목요일09:00 ~ 15:00금요일09:00 ~ 15:00토요일정기휴무일요일정기휴무인기 급상승 장소 경기 북부더보기급상승아침고요가족동물원숲속에 사는 동물 친구들 만나러 가볼까 경기 가평군24 ~ 48개월 인기동식물친구들급상승모래알쏭쏭휴양지 컨셉의 실내 모래놀이터 경기 남양주시24 ~ 48개월 인기20% 할인받기키즈카페급상승정글반슬라임, 레고, 모래놀이 등 다양한 체험거리가 있는 곳 경기 남양주시24 ~ 48개월 인기체험/클래스키즈카페급상승허니버디 고양점36개월 미만 아기를 위한 베이비카페 경기 고양시~ 12개월 인기키즈카페급상승드림닥터 의사직업체험 일산점아이들이 한 번씩은 꿈꾸는 의사가 직접 되어보는 시간 경기 고양시48개월 이상 인기체험/클래스박물관/체험관급상승그래 여기구나시원한 물에 발 담그고 식사할 수 있는 계곡 식당 경기 양주시24 ~ 48개월 인기야외나들이
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        자세히 알아보기파주파주시학용품교육리조트 패키지여행 상품키즈 영어캠프가우숲 어린이 곰탕로로쿠킹스튜디오경주시티호텔아이와 함께 안전을 배우는 특별한 공간, 금촌초등학교 안전체험관
+금촌초등학교 안전체험관이란?
+금촌초등학교 안전체험관은 경기도 파주시 금촌초등학교 내에 마련된 실내 안전교육 시설입니다. 아이들이 학교생활 속 다양한 사고와 재난 상황을 직접 체험해보고 안전 수칙을 익힐 수 있도록 교실형 프로그램으로 구성되어 있습니다.
+이곳에서 경험할 수 있는 주요 체험
+
+화재진압체험직접 소화기를 뿌려서 불을 꺼볼 수 있습니다.
+
+교통안전체험실제와 같은 의자에서 안전벨트를 매보고 급제동을 경험할 수 있으며, 도로와 횡단보도 등 실생활 속 교통 상황을 재현합니다.
+
+지진체험지진 발생 시의 진동을 체험하고, 지진 상황에서 신속하고 안전하게 대처하는 실습을 진행합니다.
+
+심폐소생술(CPR) 체험아이들이 실제로 인형을 사용해 심폐소생술 방법을 배우고, 응급 상황에서 어떻게 행동해야 하는지 익힐 수 있습니다.
+
+추억의 교실 체험옛날 교과서를 볼 수 있는 "추억의 교실"이라는 공간이 있어서, 실제 초등학교 교실 책상에 앉아볼 수도 있습니다.
+
+
+체험관의 특징과 장점
+
+전문적으로 개발된 다양한 체험 기구와 프로그램이 배치되어 있어 아이들이 흥미롭고 적극적으로 참여할 수 있습니다.
+안전체험을 통해 실제 상황에서의 대처 능력과 생존 기술을 자연스럽게 익힐 수 있습니다.
+체험 위주의 학습으로 아이뿐 아니라 보호자도 함께 배우며, 가정에서도 이어지는 안전 실천의 계기가 될 수 있습니다.
+
+운영 및 위치 안내
+
+위치: 경기도 파주시 동산3길 38-11, 금촌초등학교 내부
+운영시간: 월요일~금요일 09:00~15:00
+휴관일: 매주 토요일과 일요일
+요금: 무료
+
+부모님께 드리는 안내
+이 체험관은 어린이의 눈높이에 맞춘 다양한 안전 교육을 실습 형태로 제공하여, 이론이 아닌 몸으로 배우는 체험 중심의 공간입니다. 특히 갑작스런 재난이나 사고 상황에서 빠른 판단과 행동이 중요한 만큼, 아이가 실제로 안전의 중요성을 느끼고, 생활 속에서 안전 습관을 기를 수 있도록 도와줍니다.
+"금촌초등학교 안전체험관을 방문하시면, 아이가 즐겁게 배우면서도 생명을 지키는 방법을 자연스럽게 익힐 수 있는 뜻깊은 시간을 보낼 수 있습니다."
+금촌초등학교 안전체험관 FAQ금촌초등학교 안전체험관은 어떤 프로그램들을 체험할 수 있나요?금촌초등학교 안전체험관에서는 화재진압체험, 교통안전체험, 지진체험, 응급처치 체험 등 총 10개의 다양한 안전 프로그램을 경험할 수 있습니다. 화재진압체험에서는 직접 소화기를 사용해 불을 꺼보는 경험을 할 수 있고, 교통안전체험에서는 실제 차량 의자에서 안전벨트 착용 및 급제동을 경험해볼 수 있습니다. 또한 ‘추억의 교실’에서 옛날 교과서를 보는 등 특별한 체험도 가능합니다.운영시간과 휴관일은 언제인가요?월요일부터 금요일까지 오전 9시부터 오후 3시까지 운영하며, 토요일과 일요일은 정기휴무입니다. 공휴일 운영 여부는 별도의 안내가 없으니 방문 전 학교 측에 확인해 주세요.체험관 이용에 비용이 발생하나요?모든 프로그램은 무료로 제공되며, 체험활동 참여 시 추가 비용이나 입장료가 없습니다.체험관 방문 시 편의시설에는 어떤 것이 제공되나요?체험관에는 주차장이 마련되어 있습니다. 다만, 아기의자, 수유실, 기저귀교환대, 유모차 대여 등은 제공되지 않으니 어린 자녀와 함께 방문 시 참고해 주세요.체험관을 이용하려면 예약이 필요한가요?체험관은 별도의 예약 시스템이 제공되지 않습니다. 방문 전 학교나 체험관에 이용 가능 여부 및 단체 방문 시 사전 협의가 필요한지 문의하시는 것을 추천합니다.모든 체험을 마치는 데 소요되는 시간은 얼마나 되나요?모든 안전 체험 프로그램을 모두 참여할 경우 약 2시간 정도가 소요됩니다. 참가 인원이나 당일 상황에 따라 일부 변동될 수 있습니다.금촌초등학교 안전체험관 요금 및 프로그램[요금]무료[이용안내]휴관일: 매주 토, 일요일금촌초등학교 안전체험관을 위한 세상 유용한 꿀팁화재진압체험, 응급처치 체험, 교통안전체험, 지진체험, 지하철 등 안전 체험을 할 수 있는 곳이에요.전문강사님에게 총 10개의 안전 프로그램을 체험해 볼 수 있어요.화재진압체험에서는 직접 소화기를 뿌려서 불을 꺼볼 수 있어요.교통안전체험에서 실제와 같은 의자에서 안전벨트를 매보고, 급제동을 경험할 수 있어요.추억의 교실이라는 공간이 있어서, 옛날 교과서를 볼 수 있어요.모든 체험을 마치는데 약 2시간 정도 소요돼요.실제 초등학교 교실 책상에 앉아볼 수도 있어서, 학교 입학을 앞둔 유치원 친구들에게 추천해요.금촌초등학교 안전체험관의 주소경기도 파주시 동산3길 38-11 금촌초등학교주소 복사길 찾기금촌초등학교 안전체험관을 예약하려면?사전예약 & 당일 방문 모두 가능홈페이지근처의 인기 티켓홍삼스파 참숯가마사우나[파주] 홍삼스파 참숯가마사우나맘맘특가7,500원 
+            
+              
+            
+        
+            
+                
+            
+        금촌초등학교 안전체험관과 비슷한 아이와 가볼 만한 곳 더보기애플샤인농원원하는 대로 즐기는 팜크닉과 농장체험 경기 파주시24 ~ 48개월 인기체험/클래스테이블에이 파주점귀여운 알파카를 만날 수 있는 이색적인 실내동물원 경기 파주시12 ~ 24개월 인기최대 50% 할인받기동식물친구들유니끄 스타필드빌리지 운정점입욕제 체험도 하고, 우주 포토존에서 사진도 남기고! 경기 파주시체험/클래스상상스케치 홈플러스 파주운정점여러 가지 미술 놀이 체험을 할 수 있는 곳 경기 파주시체험/클래스해와달농원직접 수확한 것들로 맛있는 음식 만들어 먹어요! 경기 파주시24 ~ 48개월 인기체험/클래스도도풀주변에 맛집도 많은 키즈풀에서 파티해요 경기 파주시24 ~ 48개월 인기키즈풀/공간대여DMZ 야생화체험관DMZ의 자연을 오감으로 느끼는 도심 속 힐링 체험관 경기 파주시박물관/체험관준도넛내 맘대로 도넛을 꾸밀 수 있는 곳 경기 파주시체험/클래스학령산유아숲체험원자연에서 마음껏 뛰어놀자! 경기 파주시야외나들이타카플레이카페 홈플러스 파주운정점말랑말랑 내가 만드는 슬라임 경기 파주시체험/클래스
+            
+              
+            
+        
+            
+                
+            
+        금촌초등학교 안전체험관 N블로그 후기 금촌초등학교 안전체험관쉽게 위험한 상황을 인지하고 체험 할 수 있도록 만든 공간이 있는 학교가 많아졌음 하는 바램입니다 #금촌초 #안전체험관 #초등학교인테리어 #오복인테리어 #파주인테리어 #일산인테리어 #학교인테리어대한안전교육협회, 파주 금촌초등학교에 체험형 안전체험관...파주 금촌초등학교에 교실형 안전체험관을 구축했다. 금촌초 교실형 안전체험관에는 △심폐소생술... “앞으로도 학교의 특색에 맞는 학생 안전체험관 모델을 개발하여 구축사업을 확대할 것이다.”라고...금촌초등학교 안전체험관 방문리뷰 전체보기 (2)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_금촌초등학교_안전체험관","title":"금촌초등학교 안전체험관","date":"연중무휴","venue":"금촌초등학교 안전체험관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcyZTI1YzViYmYwMzlkN2JiMDE3Nzc5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","link":"https://mom-mom.net/travel/places/6731691435efe47c62d1f4f1","region":"etc","genre":"museum","description":"금촌초등학교 안전체험관는 금촌초등학교 안전체험관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경기도 파주시 동산3길 38-11 금촌초등학교지도보기입니다. 추천 대상은 주소경기도 파주시 동산3길 38-11 금촌초등학교지도보기전화031-94…입니다. 운영 시간은 월요일09:00 ~ 15:00화요일09:00 ~ 15:00수요일09:0…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 금촌초등학교 안전체험관 요금 및 프로그램 [요금] 무료 [이용안내] 휴… 기준입니다.","discount":"$undefined","originalPrice":"","price":"무료","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcyZTI1YzViYmYwMzlkN2JiMDE3Nzc5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":37.4138,"lng":127.5183,"address":"경기도 파주시 동산3길 38-11 금촌초등학교지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"금촌초등학교 안전체험관 요금 및 프로그램\n[요금]\n무료\n[이용안내]\n휴관일: 매주 토, 일요일","targetAudience":"$17","operatingHours":"월요일09:00 ~ 15:00화요일09:00 ~ 15:00수요일09:00 ~ 15:00목요일09:00 ~ 15:00금요일09:00 ~ 15:00토요일정기휴무일요일정기휴무","priceDetail":"","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+19:T5d0,{"@context":"https://schema.org","@type":"Event","name":"금촌초등학교 안전체험관","startDate":"연중무휴","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"금촌초등학교 안전체험관","address":{"@type":"PostalAddress","streetAddress":"금촌초등학교 안전체험관","addressLocality":"Seoul","addressCountry":"KR"}},"image":["https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcyZTI1YzViYmYwMzlkN2JiMDE3Nzc5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"],"description":"금촌초등학교 안전체험관는 금촌초등학교 안전체험관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경기도 파주시 동산3길 38-11 금촌초등학교지도보기입니다. 추천 대상은 주소경기도 파주시 동산3길 38-11 금촌초등학교지도보기전화031-94…입니다. 운영 시간은 월요일09:00 ~ 15:00화요일09:00 ~ 15:00수요일09:0…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 금촌초등학교 안전체험관 요금 및 프로그램 [요금] 무료 [이용안내] 휴… 기준입니다.","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","url":"https://pyw31337.github.io/culture/p/museum_%EA%B8%88%EC%B4%8C%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90_%EC%95%88%EC%A0%84%EC%B2%B4%ED%97%98%EA%B4%80/"}}18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$19"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1a:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"금촌초등학교 안전체험관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 금촌초등학교 안전체험관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"금촌초등학교 안전체험관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 금촌초등학교 안전체험관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EA%B8%88%EC%B4%8C%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90_%EC%95%88%EC%A0%84%EC%B2%B4%ED%97%98%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcyZTI1YzViYmYwMzlkN2JiMDE3Nzc5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"금촌초등학교 안전체험관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"금촌초등학교 안전체험관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 금촌초등학교 안전체험관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjcyZTI1YzViYmYwMzlkN2JiMDE3Nzc5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1a","22",{}]]

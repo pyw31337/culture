@@ -1,0 +1,82 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EC%83%88%EB%A7%88%EC%9D%84%EC%9A%B4%EB%8F%99%EB%B0%9C%EC%83%81%EC%A7%80%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EC%83%88%EB%A7%88%EC%9D%84%EC%9A%B4%EB%8F%99%EB%B0%9C%EC%83%81%EC%A7%80%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:Tea9,함께 배우고 체험하는
+새마을운동발상지기념공원
+어린이 여행
+장소 개요 및 특징
+
+경북 청도군 청도읍에 자리한 새마을운동발상지기념공원은 대한민국 농촌 현대화 운동의 출발점이 된 신도마을을 중심으로 조성된 복합 공원입니다. 이곳은 새마을운동의 발자취와 성과를 다양한 전시와 체험으로 보여주며 어른들에게는 옛 시절의 추억을, 아이들에게는 살아있는 역사 교육을 제공하는 공간입니다.
+
+주요 전시 공간 및 볼거리
+
+새마을운동발상지기념관
+
+1층과 2층으로 구성된 전시관에서는 새마을운동의 시작, 전개, 성과, 그리고 세계로 퍼져나가는 과정까지 시대별로 알기 쉽게 전시되어 있습니다.
+다양한 사진, 당시 사용된 실물 유물, 생생한 동영상, 디오라마(모형) 등을 통해 어린이들도 쉽고 재미있게 당시의 상황을 이해할 수 있습니다.
+
+야외 조형물 및 광장
+
+기념공원 곳곳에는 근면, 자조, 협동정신을 상징하는 조형물과 새마을운동의 역사를 기념하는 상징 공간이 마련되어 있습니다.
+넓은 광장과 테마파크, 번영의 길 등 산책하며 둘러볼 수 있는 야외 볼거리도 풍부합니다.
+
+시대촌과 옛 주거 체험
+
+초가집, 슬레이트집, 기와집 등 변화하는 농촌의 집을 그대로 재현한 '시대촌'에서 당시의 생활 모습을 가까이서 볼 수 있습니다.
+일부 공간에서는 실제 숙박 체험도 가능하니, 색다른 가족 여행도 할 수 있습니다.
+
+특별 전시 및 체험학습
+
+'새마을 학교'에는 70~80년대 놀이 체험, 교복입기, VR체험 등 아이들을 위한 체험 프로그램이 마련되어 있어 역사와 놀이를 동시에 즐길 수 있습니다.
+'잘살아보세관' 등에서는 실제 마을의 생활상을 재현하여 마치 옛 농촌마을로 시간여행을 온 듯한 흥미로운 경험을 할 수 있습니다.
+
+옛 신거역, 대통령 전용열차, 신도정미소
+
+복원된 신거역에서는 옛 기차역의 모습을 볼 수 있고, 내부에 대통령 집무실, 침실, 식당 등이 꾸며진 대통령 전용열차 체험도 가능합니다.
+신도정미소에서는 쌀 도정 과정을 직접 보고 배우며, 생활 속 과학과 역사를 동시에 체험할 수 있습니다.
+관람 정보
+운영 시간: 화요일~일요일 09:30~17:30
+월요일 정기 휴무
+전체를 둘러보는 데 약 1시간 30분~2시간 정도가 권장됩니다.
+곳곳에 주차장이 마련되어 있어 자동차로도 편리하게 이동하며 관람할 수 있습니다.
+요금 및 프로그램
+입장료: 무료
+일반 보통권: 2,000원
+일반 아동, 청소년: 1,500원
+일반 할인권: 1,500원
+아동, 청소년 할인권: 1,000원
+교복체험장: 09:00~17:00
+추천 포인트
+아이들은 다양한 전시, 체험 프로그램, 실외 공간에서 뛰놀며 자연스럽게 한국 농촌의 변화와 새마을운동의 의미를 배울 수 있습니다.
+부모님 세대에게는 향수를, 어린이에게는 새로운 배움과 놀이의 기회를 주는 세대 통합형 여행지로 추천합니다.
+계절마다 변화하는 야외 풍경과 넓은 부지 덕분에 가족 나들이, 학교 체험학습 장소로도 적합합니다.
+방문 팁
+체험 공간 일부는 소액의 체험비가 있을 수 있으니 현장 안내를 참고하세요.
+야외 산책로와 포토존, 넓은 잔디밭 등 움직임이 많으니 편안한 복장을 추천합니다.
+
+"어린 자녀와 함께라면 역사 현장에서 배우고, 직접 체험도 하면서 특별하고 의미 있는 하루를 보내기에 좋은 곳입니다."c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_새마을운동발상지기념공원","title":"새마을운동발상지기념공원","date":"연중무휴","venue":"새마을운동발상지기념공원","image":"https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1NGQ2OTU4NzMzNGZiMDFhMGU5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=","link":"https://mom-mom.net/travel/places/62cd17b42718fee95297da11","region":"etc","genre":"museum","description":"새마을운동발상지기념공원는 새마을운동발상지기념공원에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경북 청도군 청도읍 새마을1길 34지도보기입니다. 추천 대상은 새마을운동발상지기념공원청도에 아이랑 간다면 방문해야 할 곳24 ~ 48…입니다. 운영 시간은 월요일정기휴무화요일09:30 ~ 17:30수요일09:30 ~ 17:30…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 [입장료] 무료입니다. 일부 프로그램 이용료는 다음과 같습니다. 일반 … 기준입니다.","discount":"$undefined","originalPrice":"","price":"[입장료] 무료입니다. 일부 프로그램 이용료는 다음과 같습니다. 일반 보통권 2,000원, 아동·청소년 1,500원, 일반 할인권 1,500원, 아동·청소년 할인권 1,000원 등이 있습니다. 교복 체험장 운영시간은 09:00~17:00이며, 요금은 현장 안내를 참고해 주세요.","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1NGQ2OTU4NzMzNGZiMDFhMGU5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":36.5684,"lng":128.7294,"address":"경북 청도군 청도읍 새마을1길 34지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"$17","targetAudience":"새마을운동발상지기념공원청도에 아이랑 간다면 방문해야 할 곳24 ~ 48개월 아들에게 인기2025.04.18 업데이트","operatingHours":"월요일정기휴무화요일09:30 ~ 17:30수요일09:30 ~ 17:30목요일09:30 ~ 17:30금요일09:30 ~ 17:30토요일09:30 ~ 17:30일요일09:30 ~ 17:30","priceDetail":"[입장료] 무료입니다. 일부 프로그램 이용료는 다음과 같습니다. 일반 보통권 2,000원, 아동·청소년 1,500원, 일반 할인권 1,500원, 아동·청소년 할인권 1,000원 등이 있습니다. 교복 체험장 운영시간은 09:00~17:00이며, 요금은 현장 안내를 참고해 주세요.","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+19:T5e2,{"@context":"https://schema.org","@type":"Event","name":"새마을운동발상지기념공원","startDate":"연중무휴","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"새마을운동발상지기념공원","address":{"@type":"PostalAddress","streetAddress":"새마을운동발상지기념공원","addressLocality":"Seoul","addressCountry":"KR"}},"image":["https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1NGQ2OTU4NzMzNGZiMDFhMGU5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0="],"description":"새마을운동발상지기념공원는 새마을운동발상지기념공원에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 경북 청도군 청도읍 새마을1길 34지도보기입니다. 추천 대상은 새마을운동발상지기념공원청도에 아이랑 간다면 방문해야 할 곳24 ~ 48…입니다. 운영 시간은 월요일정기휴무화요일09:30 ~ 17:30수요일09:30 ~ 17:30…입니다. 현장 편의 정보는 주차입니다. 이용 정보는 [입장료] 무료입니다. 일부 프로그램 이용료는 다음과 같습니다. 일반 … 기준입니다.","offers":{"@type":"Offer","priceCurrency":"KRW","url":"https://pyw31337.github.io/culture/p/museum_%EC%83%88%EB%A7%88%EC%9D%84%EC%9A%B4%EB%8F%99%EB%B0%9C%EC%83%81%EC%A7%80%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90/"}}18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$19"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1a:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"새마을운동발상지기념공원 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 새마을운동발상지기념공원 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"새마을운동발상지기념공원 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 새마을운동발상지기념공원 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EC%83%88%EB%A7%88%EC%9D%84%EC%9A%B4%EB%8F%99%EB%B0%9C%EC%83%81%EC%A7%80%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1NGQ2OTU4NzMzNGZiMDFhMGU5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0="}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"새마을운동발상지기념공원"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"새마을운동발상지기념공원 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 새마을운동발상지기념공원 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJtaWdyYXRlZC9wbGFjZXMvNjJkNjM1NGQ2OTU4NzMzNGZiMDFhMGU5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0="}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1a","22",{}]]

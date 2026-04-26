@@ -1,0 +1,178 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EC%A0%84%EC%A3%BC%EA%B3%B5%EC%98%88%ED%92%88%EC%A0%84%EC%8B%9C%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EC%A0%84%EC%A3%BC%EA%B3%B5%EC%98%88%ED%92%88%EC%A0%84%EC%8B%9C%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:Td50,아이와 함께하는
+전주공예품전시관
+즐기기
+전주공예품전시관 한눈에 보기
+위치: 전북특별자치도 전주시 완산구 태조로 15 공예품전시관
+운영시간: 화요일 ~ 일요일 10:00 ~ 18:00
+(월요일 정기휴무, 설·추석·1월 1일 휴무)
+전화: 063-281-1610
+입장료: 무료 (일부 체험 프로그램은 유료)
+주차: 한옥마을 공영주차장 이용 권장
+아이와 함께 방문하면 좋은 이유
+다양한 공예 체험 프로그램이 있어 아이가 손으로 직접 만들고 창의력을 펼칠 수 있음
+전통공예와 현대공예를 한자리에서 감상하며 우리 문화를 자연스럽게 배울 수 있음
+실내외 모두 한옥 건물로 구성되어 있어 한옥마을 산책과 연계하여 방문하기 좋음
+전주공예품전시관의 주요 공간
+안내관(쉼터): 편안하게 쉴 수 있는 공간
+명품관: 전라북도 무형문화재 등 우수 공예품 관람
+판매관: 전국의 다양한 수공예품을 구매 가능
+체험관: 전통 공예부터 현대 감각의 체험까지 가능한 공간
+전시관(1관/2관): 기획전, 작가전 등 다양한 전시가 상시 진행
+주요 체험 프로그램
+나만의 손거울 만들기, 접선(옥토끼) 인형 만들기, 도장 만들기, 목재 공예 등
+약 20~30분부터 1시간 30분 소요
+체험비는 종류에 따라 3,000원~25,000원 내외 다양한 선택 가능
+사전 예약 또는 현장 접수 가능하며, 가족 단위 참여에 적합
+아이와 함께한 방문 포인트
+전시장 중앙에는 ‘장인의 손’ 조형물이 아이들의 호기심을 유발
+체험 후 완성된 작품을 직접 가져갈 수 있어 특별한 추억 선물 가능
+한옥 특유의 운치와 전주 한옥마을의 분위기를 함께 느낄 수 있음
+부가 정보
+미래세대를 위한 디지털 콘텐츠도 준비되어 있어, 다양한 세대가 함께 즐길 수 있음
+각 공간은 연결되어 있어 동선이 편리하며, 휠체어 및 유모차 이용도 무리 없음
+방문시 참고사항
+주말과 방학 등 성수기에는 체험 프로그램이 조기에 마감될 수 있으니, 미리 예약하거나 일찍 방문 권장
+한옥마을 주변 관광과 연계해 하루 나들이 코스로 추천
+
+전주공예품전시관은 아이와 함께 전주의 전통과 창의성을 체험할 수 있는 공간입니다. 손으로 만들고, 눈으로 감상하며, 가족 모두에게 의미 있는 추억을 선사할 수 있습니다.
+
+편의시설
+지원되는 편의시설: 아기의자, 수유실, 기저귀교환대, 주차
+지원되지 않는 편의시설: 유모차대여, 예약
+방문객을 위한 꿀팁
+팔찌, 팽이, 부채 등 다양한 물품을 만드는 체험이 있음
+체험 요금은 물품별로 상이
+깨지기 쉬운 여러 수공예 작품이 전시되어 있으니, 아이를 잘 케어해 주세요.
+자석놀이존이 있음
+전시장 내외부 모두에 포토존이 있어 사진 찍기 좋음
+화장실이 있고, 수유실도 있어 아이를 데려오기 좋음
+한옥마을 내에 위치하여 여러 곳을 둘러보기 좋음
+근처에 있는 한옥마을 공영주차장에 주차하실 수 있음
+요금 및 프로그램
+관람료: 무료
+체험료는 프로그램별로 요금이 상이하니 자세한 요금은 현장에서 확인해 주세요.
+이용안내
+점심 시간: 12시~13시18:T2987,주소전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관지도보기전화063-281-1610시설아기의자, 수유실, 기저귀교환대, 주차예약당일방문 및 현장접수예약하기영업시간월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00목요일10:00 ~ 18:00금요일10:00 ~ 18:00토요일10:00 ~ 18:00일요일10:00 ~ 18:00인기 급상승 장소 전라더보기급상승안녕, 고래실내 키즈놀이터가 매력적인 키즈풀빌라 전남 담양군24 ~ 48개월 인기60,000원 혜택받기숙박급상승제이키즈클럽600평 규모의 스포츠 놀이형 키즈카페 전북 전주시24 ~ 48개월 인기키즈카페급상승완산벙커 더 스페이스25년 개관한 화려한 미디어아트 체험관 전북 전주시공연/전시/축제박물관/체험관급상승국립전주어린이박물관다양한 전시와 체험이 있는 어린이 박물관 전북 전주시24 ~ 48개월 인기박물관/체험관급상승전주자연생태관놀이터가 있는 대규모 체험관 전북 전주시24 ~ 48개월 인기박물관/체험관
+            
+              
+            
+        
+            
+              
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        자세히 알아보기한옥마을 제1공영주차장전주시전주자연생태관한옥마을 공영주차장국립무형유산원공예품 전시관한옥마을공예품전시관아이와 함께하는 전주공예품전시관 즐기기
+전주공예품전시관 한눈에 보기
+
+위치: 전북특별자치도 전주시 완산구 태조로 15 공예품전시관
+운영시간: 화요일 ~ 일요일 10:00 ~ 18:00(월요일 정기휴무, 설·추석·1월 1일 휴무)
+전화: 063-281-1610
+입장료: 무료 (일부 체험 프로그램은 유료)
+주차: 한옥마을 공영주차장 이용 권장
+
+아이와 함께 방문하면 좋은 이유
+
+다양한 공예 체험 프로그램이 있어 아이가 손으로 직접 만들고 창의력을 펼칠 수 있음
+전통공예와 현대공예를 한자리에서 감상하며 우리 문화를 자연스럽게 배울 수 있음
+실내외 모두 한옥 건물로 구성되어 있어 한옥마을 산책과 연계하여 방문하기 좋음
+
+전주공예품전시관의 주요 공간
+
+안내관(쉼터): 편안하게 쉴 수 있는 공간
+명품관: 전라북도 무형문화재 등 우수 공예품 관람
+판매관: 전국의 다양한 수공예품을 구매 가능
+체험관: 전통 공예부터 현대 감각의 체험까지 가능한 공간
+전시관(1관/2관): 기획전, 작가전 등 다양한 전시가 상시 진행
+
+주요 체험 프로그램
+
+나만의 손거울 만들기, 접선(옥토끼) 인형 만들기, 도장 만들기, 목재 공예 등약 20~30분부터 1시간 30분 소요
+체험비는 종류에 따라 3,000원~25,000원 내외 다양한 선택 가능
+사전 예약 또는 현장 접수 가능하며, 가족 단위 참여에 적합
+
+아이와 함께한 방문 포인트
+
+전시장 중앙에는 ‘장인의 손’ 조형물이 아이들의 호기심을 유발
+체험 후 완성된 작품을 직접 가져갈 수 있어 특별한 추억 선물 가능
+한옥 특유의 운치와 전주 한옥마을의 분위기를 함께 느낄 수 있음
+
+부가 정보
+
+미래세대를 위한 디지털 콘텐츠도 준비되어 있어, 다양한 세대가 함께 즐길 수 있음
+각 공간은 연결되어 있어 동선이 편리하며, 휠체어 및 유모차 이용도 무리 없음
+
+방문시 참고사항
+
+주말과 방학 등 성수기에는 체험 프로그램이 조기에 마감될 수 있으니, 미리 예약하거나 일찍 방문 권장
+한옥마을 주변 관광과 연계해 하루 나들이 코스로 추천
+
+
+전주공예품전시관은 아이와 함께 전주의 전통과 창의성을 체험할 수 있는 공간입니다. 손으로 만들고, 눈으로 감상하며, 가족 모두에게 의미 있는 추억을 선사할 수 있습니다.
+편의시설
+
+지원되는 편의시설: 아기의자, 수유실, 기저귀교환대, 주차
+지원되지 않는 편의시설: 유모차대여, 예약
+
+방문객을 위한 꿀팁
+
+팔찌, 팽이, 부채 등 다양한 물품을 만드는 체험이 있음체험 요금은 물품별로 상이
+깨지기 쉬운 여러 수공예 작품이 전시되어 있으니, 아이를 잘 케어해 주세요.
+자석놀이존이 있음
+전시장 내외부 모두에 포토존이 있어 사진 찍기 좋음
+화장실이 있고, 수유실도 있어 아이를 데려오기 좋음
+한옥마을 내에 위치하여 여러 곳을 둘러보기 좋음
+근처에 있는 한옥마을 공영주차장에 주차하실 수 있음
+
+요금 및 프로그램
+
+관람료: 무료
+체험료는 프로그램별로 요금이 상이하니 자세한 요금은 현장에서 확인해 주세요.
+
+이용안내
+
+점심 시간: 12시~13시
+
+전주공예품전시관 FAQ전주공예품전시관에서는 아이와 함께 어떤 체험 프로그램을 할 수 있나요?전주공예품전시관에서는 팔찌, 팽이, 부채 등 다양한 물품을 만드는 공예 체험을 할 수 있습니다. 체험 프로그램은 물품별로 상이하니 현장에서 체험 가능 여부와 상세 내용을 확인하시는 것이 좋습니다.체험 프로그램은 어떻게 신청할 수 있고, 비용은 얼마인가요?체험 프로그램은 현장 접수로 참여할 수 있으며, 일부 프로그램의 경우 사전 예약이 지원되지 않습니다. 체험비는 프로그램별로 상이하니, 방문 시 현장에서 개별 프로그램의 가격을 확인해주세요. 관람 자체는 무료이며, 체험은 유료입니다.아이와 함께 방문하기 좋은 편의시설에는 어떤 것이 있나요?전주공예품전시관에는 아기의자, 수유실, 기저귀 교환대가 있습니다. 전시장에는 화장실도 있으며, 주차는 인근 한옥마을 공영주차장을 이용하실 수 있습니다. 단, 유모차 대여와 예약 서비스는 지원되지 않습니다.주차 및 접근 방법은 어떻게 되나요?전주공예품전시관에는 별도의 전용 주차장이 없으므로, 한옥마을 공영주차장을 이용하셔야 합니다. 전시관은 전주한옥마을 내에 위치해 있어 도보로 이동이 편리합니다. 대중교통 이용 시 전주 시내 주요 버스 노선이 한옥마을과 연결되어 있습니다.전시관에서 아이와 특별히 즐길 수 있는 공간이나 주의할 점이 있다면 알려주세요.전주공예품전시관은 실내외에 포토존이 잘 마련되어 있어 사진을 찍기 좋고, 자석놀이존처럼 아이들이 즐길 수 있는 공간도 있습니다. 다만, 깨지기 쉬운 수공예 작품이 전시되어 있으니 아이가 전시물에 손을 대지 않도록 주의해 주셔야 합니다.전주공예품전시관 요금 및 프로그램[요금]관람료: 무료체험료는 프로그램별로 요금이 상이하니 자세한 요금은 현장에서 확인해 주세요.[이용안내]점심 시간: 12시~13시전주공예품전시관을 위한 세상 유용한 꿀팁팔찌, 팽이, 부채 등 다양한 물품을 만드는 체험이 있어요. 체험 요금은 물품별로 상이해요.깨지기 쉬운 여러 수공예 작품이 전시되어 있으니, 아이를 잘 케어해 주셔야 돼요.  자석놀이존이 있어요.전시장 내외부 모두에 포토존이 있어 사진 찍기 좋아요.화장실이 있고, 수유실도 있어 아이를 데려오기 좋아요.한옥마을 내에 위치하여 여러 곳을 둘러보기 좋아요.근처에 있는 한옥마을 공영주차장에 주차하실 수 있어요.전주공예품전시관의 주소전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관주소 복사길 찾기전주공예품전시관을 예약하려면?당일방문 및 현장접수홈페이지인스타그램전주공예품전시관과 비슷한 아이와 가볼 만한 곳 더보기신규금성당1938년 전주의 첫 시계방을 재해석한 복합문화공간 전북 전주시복합문화공간급상승전주자연생태관놀이터가 있는 대규모 체험관 전북 전주시24 ~ 48개월 인기박물관/체험관The 마시랑게경기전이 한눈에 보이는 지붕 포토존으로 유명한 카페 전북 전주시48개월 이상 인기식당/카페국립무형유산원 디지털체험관전주한옥마을과 함께 즐기는 작지만 알찬 미디어아트 전북 전주시12 ~ 24개월 인기박물관/체험관흐노니전주한옥마을 내 주택을 개조하여 만든 포토존 가득 카페 전북 전주시식당/카페라한호텔 전주 하녹당전주 한옥마을의 아름다움을 감상할 수 있는 카페 전북 전주시식당/카페전주종합관광안내소전주 한옥마을을 한눈에 내려다볼 수 있는 곳 전북 전주시복합문화공간한복남 전주한옥마을점취향에 맞는 한복을 체험할 수 있는 한복대여점 전북 전주시40% 할인받기복합문화공간전주산책아이와 책 읽으러 가기 좋은 한옥마을 북카페 전북 전주시서점/도서관식당/카페전주 한옥마을옛 모습 그대로 보존한 국내 최대 한옥마을 전북 전주시48개월 이상 인기야외나들이
+            
+              
+            
+        
+            
+                
+            
+        전주공예품전시관 N블로그 후기 전주 한옥마을 한지공예 실내 전시 전주공예품전시관..." ▼전주 한옥마을 한지공예 실내 전시 전주공예품전시관 <꽃을그리다/작가 김정희>▼ 전주 한국전통문화전당에 소속된 전주공예품전시관은 전시 1관과 2관의 두 공간으로 나뉘어진 한옥의 멋을 담은 전시관으로...전주 한옥마을 가볼만한곳 전주공예품전시관전주를 처음 가보는 친구가 궁금하다고 해서 방문했던 전주공예품전시관, 여기도 찾고자 간 것은... 한옥마을은 전시관도 멋드러진다. 저 호랑이 캐릭터가 “호사원”이라고 한다. 2024년을 맞이하는 포토존이...전주 한옥마을 수유실 정보, 전주공예품전시관 관람료 무료(수유쿠션등의 아이템은 없습니다.) 이렇게 전주 한옥마을에서 쉽게 사용 가능한 수유실 정보를 공유해 보았는데요. 무료로 입장 가능한 공예품 전시관 수유실이라 이용이 간편하지만 운영시간이 따로 있으니...전주공예품전시관 방문리뷰 전체보기 (95)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_전주공예품전시관","title":"전주공예품전시관","date":"연중무휴","venue":"전주공예품전시관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2YmUyOTM0YTk1NGVhYWRkZjI3YmNhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","link":"https://mom-mom.net/travel/places/67736abb6f7a5e66598db8d4","region":"etc","genre":"museum","description":"전주공예품전시관는 전주공예품전시관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관지도보기입니다. 추천 대상은 주소전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관지…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00…입니다. 현장 편의 정보는 아기의자, 수유실, 기저귀교환대, 주차입니다. 이용 정보는 아이와 함께하는 전주공예품전시관 즐기기 전주공예품전시관 한눈에 보기 위… 기준입니다.","discount":"$undefined","originalPrice":"","price":"무료","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2YmUyOTM0YTk1NGVhYWRkZjI3YmNhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":35.7175,"lng":127.153,"address":"전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"아기의자, 수유실, 기저귀교환대, 주차","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"$17","targetAudience":"$18","operatingHours":"월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00목요일10:00 ~ 18:00금요일10:00 ~ 18:00토요일10:00 ~ 18:00일요일10:00 ~ 18:00","priceDetail":"","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L19"]}]
+1a:T5f6,{"@context":"https://schema.org","@type":"Event","name":"전주공예품전시관","startDate":"연중무휴","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"전주공예품전시관","address":{"@type":"PostalAddress","streetAddress":"전주공예품전시관","addressLocality":"Seoul","addressCountry":"KR"}},"image":["https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2YmUyOTM0YTk1NGVhYWRkZjI3YmNhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"],"description":"전주공예품전시관는 전주공예품전시관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관지도보기입니다. 추천 대상은 주소전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관지…입니다. 운영 시간은 월요일정기휴무화요일10:00 ~ 18:00수요일10:00 ~ 18:00…입니다. 현장 편의 정보는 아기의자, 수유실, 기저귀교환대, 주차입니다. 이용 정보는 아이와 함께하는 전주공예품전시관 즐기기 전주공예품전시관 한눈에 보기 위… 기준입니다.","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW","url":"https://pyw31337.github.io/culture/p/museum_%EC%A0%84%EC%A3%BC%EA%B3%B5%EC%98%88%ED%92%88%EC%A0%84%EC%8B%9C%EA%B4%80/"}}19:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1a"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1b:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"전주공예품전시관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 전주공예품전시관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"전주공예품전시관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 전주공예품전시관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EC%A0%84%EC%A3%BC%EA%B3%B5%EC%98%88%ED%92%88%EC%A0%84%EC%8B%9C%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2YmUyOTM0YTk1NGVhYWRkZjI3YmNhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"전주공예품전시관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"전주공예품전시관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 전주공예품전시관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjc2YmUyOTM0YTk1NGVhYWRkZjI3YmNhLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1b","22",{}]]

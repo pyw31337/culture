@@ -1,0 +1,185 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","perf_%EC%95%88%EB%A0%A4%ED%99%8D_%ED%94%BC%EC%95%84%EB%85%B8_%EB%8F%85%EC%A3%BC%ED%9A%8C",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","perf_%EC%95%88%EB%A0%A4%ED%99%8D_%ED%94%BC%EC%95%84%EB%85%B8_%EB%8F%85%EC%A3%BC%ED%9A%8C","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T1ac0,[Program]
+
+“Ballades & Impromptus
+네 번의 독백 ”
+
+F. Chopin
+Ballade No.1 in g minor, Op. 23
+Impromptu No.1 in A-flat major, Op. 29
+
+F. Chopin
+Ballade No.2 in F major, Op. 38
+Impromptu No.2 in F-sharp major, Op. 36
+
+intermission
+
+F. Chopin
+Ballade No.3 in A-flat major, Op.47
+Impromptu No.3 in G-flat major, Op.51
+
+F. Chopin
+Fantasy-Impromptu in C-sharp minor, Op.66
+Ballade No.4 in F minor, Op. 52
+
+
+[공연소개]
+
+네 개의 발라드와 네 개의 즉흥곡은 결국 한 사람의 삶이자 기억. 이번 독주회는 쇼팽이 말하고자 했던 자조적인 고백과 모든 감정의 흔적을 그려내는 과정이다."
+
+오는 5월 27일, 세종문화회관 체임버홀에서 독주회를 앞두고있는 피아니스트 안려홍이 이와 같은 메시지를 전했다.
+
+피아니스트 안려홍은 예원학교와 서울예술고등학교 졸업 후 연세대학교 음악대학에 실기우수자로 입학, 학사학위를 취득하였다. 이후 도독하여 드레스덴 국입음대에서 석사학위 및 최고연주자과정을(Konzertexamen) 만장일치 만점으로 졸업하였다.
+
+그녀는 2023년 금호아트홀 연세에서 귀국 독주회를 시작으로 매해 개성있는 주제로 관객들을 만나왔다. 이번 독주회는 쇼팽의 발라드와 즉흥곡을 한 곡씩 교차하며 연주하는 구성을 선보인다. 두 장르의 본질적 차이에서 비롯된 음악적 논리와 연결성을 탐구한다. 발라드가 쇼팽의 서사를 구축하는 '큰 기둥'이라면, 즉흥곡은 한순간의 감정이 응집된 '시간의 단편'이라 할 수 있다. 피아니스트 안려홍은 두 장르의 교차를 통해 쇼팽이라는 한 인간의 전체적 삶의 흐름과 그 과정에서 겪었던 순간의 감정을 입체적으로 소개한다.
+
+쇼팽의 발라드는 조국인 폴란드로부터 망명했던 시대적 암흑기가 배경으로 쌓여진 대서사시이다. 1번에서 4번으로 갈수록 비극적 무게감과 내면의 감정이 깊어진다. 이와 반대로 즉흥곡은 살롱 문화의 화려함에서 탄생한 작품으로 피아노 음악의 자유로움이 묻어나지만 점차 내성적 고요함으로 이어진다.
+
+피아니스트 안려홍은 “발라드와 즉흥곡을 교차하는 것은 대비나 반대를 의미하는 것이 아닌, 쇼팽의 삶을 이야기와 감정으로 살펴보는 서사가 된다.”며 “쇼팽이 털어놓는 네 번의 고백을 통해 음악을 마음으로 이해하는 시간이 되기를 바란다.”고 전했다.
+
+청춘의 첫 고백 - 순간의 감정
+
+피아니스트 안려홍은 쇼팽 발라드 1번과 즉흥곡 1번을 '청춘'으로 소개한다.
+
+쇼팽이 처음으로 피아노 음악에 발라드 형식을 도입한 1번은 조국인 폴란드를 떠난 직후 파리 망명 시절에 작곡한 곡으로 상실과 저항의 정서가 깊이 새겨져 있다. 청년이었던 쇼팽이 그려낸 향수와 분노는 서정적이면서도 폭발적인 에너지가 공존한다.
+
+즉흥곡 1번은 1837년, 파리 살롱 전성기에 작곡한 곡으로 즉흥 연주를 즐겼던 쇼팽이 순간적 영감을 악보로 남긴 첫 번째 작품이다. 자유롭게 흘러가는 노래 속에서도 세련된 형식미가 살아 있다.
+
+평온 속의 격정 - 숨겨진 불안
+
+이어지는 발라드 2번은 사랑하는 연인이었던 조르주 상드와 함께 했던 시간, 그리고 건강 악화가 쇼팽의 이중적 내면을 내비치게 한다. 표면의 고요함 아래 잠재된 불안이 날카롭게 대비된다.
+
+즉흥곡 2번은 네 개의 즉흥곡 중 가장 규모가 크고 구조적으로 복잡한 작품이다. 단순한 살롱풍 음악에서 벗어나 발라드에 가까운 서사를 품고 있다. 쇼팽 내면의 복잡한 심리가 두 장르의 경계를 허문다.
+
+사랑의 기억 - 노래로 남은 감정
+
+1부에서는 격정적인 음악이 주를 이룬다면 2부는 보다 침체된 내면 속으로 들어간다.
+
+피아니스트 안려홍은 발라드 3번과 즉흥곡 3번을 배치하며 인간적 쇼팽과 음악가로서의 쇼팽을 함께 그린다.
+
+발라드 3번은 파리 정착 후 안정기에 작곡된 곡으로, 밝고 우아한 색채를 보이고 있으나 그 아래에는 섬세하게 감춰진 슬픔이 흐른다. 조르주 상드와의 관계에 생긴 균열은 사랑의 변질과 추억을 떠올리게 한다.
+
+즉흥곡 3번은 쇼팽 만년의 작품으로, 그가 스스로의 정체성과 내면에 대한 고뇌에 빠져들었다는 것을 알 수 있다. 표면은 유려하게 흘러가는 듯 보이지만 내면의 화성 언어는 후기 낭만주의를 예고하는 기풍을 품고 있다.
+
+깊어진 성찰 - 지워지지 않는 잔상
+
+각 4번 작품은 즉흥곡이 먼저 연주된 후 발라드로 유종의 미를 거둔다.
+
+즉흥곡 4번에서는 감정의 파편이 모여 쇼팽 내면의 풍경을 완성시킨 것을 볼 수 있다. 쇼팽이 감추고 싶었던 날것의 감정이 압축된 걸작으로, 오늘날 가장 대중적인 쇼팽의 작품이 된다.
+
+발라드 4번은 쇼팽의 정점이자 피아노 문학의 최고 걸작으로 꼽힌다. 건강이 악화되고 상드와의 관계도 흔들리던 시기에 완성된 작품으로, 죽음에 대한 예감과 삶에 대한 성찰이 공존하는 쇼팽 음악 여정의 총결산이 된다. 깊은 사색으로 시작해 걷잡을 수 없는 소용돌이로 끝나는 흐름은 쇼팽의 흔들리던 감정이 잘 나타난다.
+
+Ballades & Impromtus, 네 번의 고백
+
+피아니스트 안려홍이 표현하는 쇼팽은 단순한 작품의 나열이 아닌, 하나의 완결된 서사를 구성한다. 젊은 시절 쇼팽에서부터 말년의 무게로 마무리되는 여정은 관객들에게 쇼팽의 음악을 ‘인간적’으로 해석할 수 있도록 돕는다.
+
+주최사인 아투즈컴퍼니는 “피아니스트 안려홍의 손끝에서 펼쳐질 쇼팽의 독백은 솔직하면서도 날것의 긴장감을 고스란히 담아낼 것.”이라며 “기교에서 벗어나 음악을 진정으로 즐기고 해석하는 시간이 될 것이다.”라고 전했다.
+
+한편, 피아니스트 안려홍은 현재 연세대, 덕원예고, 인천예고에 출강하고 있으며 다가오는 12월, 예술의전당 리사이틀홀에서 ‘Virtuso to Visionary - F. Liszt 음악적 여정’을 주제로 한 독주회를 올릴 예정이다.
+
+낭만적 음악이 넘쳐흐르는 ‘안려홍 피아노 독주회 - Ballades & Impromptus 네 번의 독백’은 5월 27일, 세종문화회관 체임버홀에서 만날 수 있으며 티켓은 세종문화티켓(02-399-1000) 및 놀인터파크티켓(1544-1555)을 통해 예매가능하다. 기타문의 아투즈컴퍼니(070-7757-0300)18:T1ac0,[Program]
+
+“Ballades & Impromptus
+네 번의 독백 ”
+
+F. Chopin
+Ballade No.1 in g minor, Op. 23
+Impromptu No.1 in A-flat major, Op. 29
+
+F. Chopin
+Ballade No.2 in F major, Op. 38
+Impromptu No.2 in F-sharp major, Op. 36
+
+intermission
+
+F. Chopin
+Ballade No.3 in A-flat major, Op.47
+Impromptu No.3 in G-flat major, Op.51
+
+F. Chopin
+Fantasy-Impromptu in C-sharp minor, Op.66
+Ballade No.4 in F minor, Op. 52
+
+
+[공연소개]
+
+네 개의 발라드와 네 개의 즉흥곡은 결국 한 사람의 삶이자 기억. 이번 독주회는 쇼팽이 말하고자 했던 자조적인 고백과 모든 감정의 흔적을 그려내는 과정이다."
+
+오는 5월 27일, 세종문화회관 체임버홀에서 독주회를 앞두고있는 피아니스트 안려홍이 이와 같은 메시지를 전했다.
+
+피아니스트 안려홍은 예원학교와 서울예술고등학교 졸업 후 연세대학교 음악대학에 실기우수자로 입학, 학사학위를 취득하였다. 이후 도독하여 드레스덴 국입음대에서 석사학위 및 최고연주자과정을(Konzertexamen) 만장일치 만점으로 졸업하였다.
+
+그녀는 2023년 금호아트홀 연세에서 귀국 독주회를 시작으로 매해 개성있는 주제로 관객들을 만나왔다. 이번 독주회는 쇼팽의 발라드와 즉흥곡을 한 곡씩 교차하며 연주하는 구성을 선보인다. 두 장르의 본질적 차이에서 비롯된 음악적 논리와 연결성을 탐구한다. 발라드가 쇼팽의 서사를 구축하는 '큰 기둥'이라면, 즉흥곡은 한순간의 감정이 응집된 '시간의 단편'이라 할 수 있다. 피아니스트 안려홍은 두 장르의 교차를 통해 쇼팽이라는 한 인간의 전체적 삶의 흐름과 그 과정에서 겪었던 순간의 감정을 입체적으로 소개한다.
+
+쇼팽의 발라드는 조국인 폴란드로부터 망명했던 시대적 암흑기가 배경으로 쌓여진 대서사시이다. 1번에서 4번으로 갈수록 비극적 무게감과 내면의 감정이 깊어진다. 이와 반대로 즉흥곡은 살롱 문화의 화려함에서 탄생한 작품으로 피아노 음악의 자유로움이 묻어나지만 점차 내성적 고요함으로 이어진다.
+
+피아니스트 안려홍은 “발라드와 즉흥곡을 교차하는 것은 대비나 반대를 의미하는 것이 아닌, 쇼팽의 삶을 이야기와 감정으로 살펴보는 서사가 된다.”며 “쇼팽이 털어놓는 네 번의 고백을 통해 음악을 마음으로 이해하는 시간이 되기를 바란다.”고 전했다.
+
+청춘의 첫 고백 - 순간의 감정
+
+피아니스트 안려홍은 쇼팽 발라드 1번과 즉흥곡 1번을 '청춘'으로 소개한다.
+
+쇼팽이 처음으로 피아노 음악에 발라드 형식을 도입한 1번은 조국인 폴란드를 떠난 직후 파리 망명 시절에 작곡한 곡으로 상실과 저항의 정서가 깊이 새겨져 있다. 청년이었던 쇼팽이 그려낸 향수와 분노는 서정적이면서도 폭발적인 에너지가 공존한다.
+
+즉흥곡 1번은 1837년, 파리 살롱 전성기에 작곡한 곡으로 즉흥 연주를 즐겼던 쇼팽이 순간적 영감을 악보로 남긴 첫 번째 작품이다. 자유롭게 흘러가는 노래 속에서도 세련된 형식미가 살아 있다.
+
+평온 속의 격정 - 숨겨진 불안
+
+이어지는 발라드 2번은 사랑하는 연인이었던 조르주 상드와 함께 했던 시간, 그리고 건강 악화가 쇼팽의 이중적 내면을 내비치게 한다. 표면의 고요함 아래 잠재된 불안이 날카롭게 대비된다.
+
+즉흥곡 2번은 네 개의 즉흥곡 중 가장 규모가 크고 구조적으로 복잡한 작품이다. 단순한 살롱풍 음악에서 벗어나 발라드에 가까운 서사를 품고 있다. 쇼팽 내면의 복잡한 심리가 두 장르의 경계를 허문다.
+
+사랑의 기억 - 노래로 남은 감정
+
+1부에서는 격정적인 음악이 주를 이룬다면 2부는 보다 침체된 내면 속으로 들어간다.
+
+피아니스트 안려홍은 발라드 3번과 즉흥곡 3번을 배치하며 인간적 쇼팽과 음악가로서의 쇼팽을 함께 그린다.
+
+발라드 3번은 파리 정착 후 안정기에 작곡된 곡으로, 밝고 우아한 색채를 보이고 있으나 그 아래에는 섬세하게 감춰진 슬픔이 흐른다. 조르주 상드와의 관계에 생긴 균열은 사랑의 변질과 추억을 떠올리게 한다.
+
+즉흥곡 3번은 쇼팽 만년의 작품으로, 그가 스스로의 정체성과 내면에 대한 고뇌에 빠져들었다는 것을 알 수 있다. 표면은 유려하게 흘러가는 듯 보이지만 내면의 화성 언어는 후기 낭만주의를 예고하는 기풍을 품고 있다.
+
+깊어진 성찰 - 지워지지 않는 잔상
+
+각 4번 작품은 즉흥곡이 먼저 연주된 후 발라드로 유종의 미를 거둔다.
+
+즉흥곡 4번에서는 감정의 파편이 모여 쇼팽 내면의 풍경을 완성시킨 것을 볼 수 있다. 쇼팽이 감추고 싶었던 날것의 감정이 압축된 걸작으로, 오늘날 가장 대중적인 쇼팽의 작품이 된다.
+
+발라드 4번은 쇼팽의 정점이자 피아노 문학의 최고 걸작으로 꼽힌다. 건강이 악화되고 상드와의 관계도 흔들리던 시기에 완성된 작품으로, 죽음에 대한 예감과 삶에 대한 성찰이 공존하는 쇼팽 음악 여정의 총결산이 된다. 깊은 사색으로 시작해 걷잡을 수 없는 소용돌이로 끝나는 흐름은 쇼팽의 흔들리던 감정이 잘 나타난다.
+
+Ballades & Impromtus, 네 번의 고백
+
+피아니스트 안려홍이 표현하는 쇼팽은 단순한 작품의 나열이 아닌, 하나의 완결된 서사를 구성한다. 젊은 시절 쇼팽에서부터 말년의 무게로 마무리되는 여정은 관객들에게 쇼팽의 음악을 ‘인간적’으로 해석할 수 있도록 돕는다.
+
+주최사인 아투즈컴퍼니는 “피아니스트 안려홍의 손끝에서 펼쳐질 쇼팽의 독백은 솔직하면서도 날것의 긴장감을 고스란히 담아낼 것.”이라며 “기교에서 벗어나 음악을 진정으로 즐기고 해석하는 시간이 될 것이다.”라고 전했다.
+
+한편, 피아니스트 안려홍은 현재 연세대, 덕원예고, 인천예고에 출강하고 있으며 다가오는 12월, 예술의전당 리사이틀홀에서 ‘Virtuso to Visionary - F. Liszt 음악적 여정’을 주제로 한 독주회를 올릴 예정이다.
+
+낭만적 음악이 넘쳐흐르는 ‘안려홍 피아노 독주회 - Ballades & Impromptus 네 번의 독백’은 5월 27일, 세종문화회관 체임버홀에서 만날 수 있으며 티켓은 세종문화티켓(02-399-1000) 및 놀인터파크티켓(1544-1555)을 통해 예매가능하다. 기타문의 아투즈컴퍼니(070-7757-0300)c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"perf_안려홍_피아노_독주회","title":"안려홍 피아노 독주회","date":"2026.05.27 (수)","venue":"세종문화회관 세종체임버홀","image":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF289547_260416_141953.png","link":"https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF289547","region":"etc","genre":"classic_tradition","description":"$17","discount":"$undefined","originalPrice":"$undefined","price":"전석 30,000원","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF289547_260416_141953.png","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":37.5720692375751,"lng":126.975748352154,"address":"서울 종로구 세종대로 175","source":"kopis","website":"$undefined","parking":"$undefined","parkingFee":"$undefined","facilities":"","restrooms":"$undefined","performanceTime":"수요일(19:30)","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"","targetAudience":"","operatingHours":"","priceDetail":"","closedDays":"","contact":"","synopsis":"$18","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L19"]}]
+1a:T1df1,{"@context":"https://schema.org","@type":"Event","name":"안려홍 피아노 독주회","startDate":"2026.05.27 (수)","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"세종문화회관 세종체임버홀","address":{"@type":"PostalAddress","streetAddress":"세종문화회관 세종체임버홀","addressLocality":"Seoul","addressCountry":"KR"}},"image":["http://www.kopis.or.kr/upload/pfmPoster/PF_PF289547_260416_141953.png"],"description":"[Program]\n\n“Ballades & Impromptus\n네 번의 독백 ”\n\nF. Chopin\nBallade No.1 in g minor, Op. 23\nImpromptu No.1 in A-flat major, Op. 29\n\nF. Chopin\nBallade No.2 in F major, Op. 38\nImpromptu No.2 in F-sharp major, Op. 36\n\nintermission\n\nF. Chopin\nBallade No.3 in A-flat major, Op.47\nImpromptu No.3 in G-flat major, Op.51\n\nF. Chopin\nFantasy-Impromptu in C-sharp minor, Op.66\nBallade No.4 in F minor, Op. 52\n\n\n[공연소개]\n\n네 개의 발라드와 네 개의 즉흥곡은 결국 한 사람의 삶이자 기억. 이번 독주회는 쇼팽이 말하고자 했던 자조적인 고백과 모든 감정의 흔적을 그려내는 과정이다.\"\n\n오는 5월 27일, 세종문화회관 체임버홀에서 독주회를 앞두고있는 피아니스트 안려홍이 이와 같은 메시지를 전했다.\n\n피아니스트 안려홍은 예원학교와 서울예술고등학교 졸업 후 연세대학교 음악대학에 실기우수자로 입학, 학사학위를 취득하였다. 이후 도독하여 드레스덴 국입음대에서 석사학위 및 최고연주자과정을(Konzertexamen) 만장일치 만점으로 졸업하였다.\n\n그녀는 2023년 금호아트홀 연세에서 귀국 독주회를 시작으로 매해 개성있는 주제로 관객들을 만나왔다. 이번 독주회는 쇼팽의 발라드와 즉흥곡을 한 곡씩 교차하며 연주하는 구성을 선보인다. 두 장르의 본질적 차이에서 비롯된 음악적 논리와 연결성을 탐구한다. 발라드가 쇼팽의 서사를 구축하는 '큰 기둥'이라면, 즉흥곡은 한순간의 감정이 응집된 '시간의 단편'이라 할 수 있다. 피아니스트 안려홍은 두 장르의 교차를 통해 쇼팽이라는 한 인간의 전체적 삶의 흐름과 그 과정에서 겪었던 순간의 감정을 입체적으로 소개한다.\n\n쇼팽의 발라드는 조국인 폴란드로부터 망명했던 시대적 암흑기가 배경으로 쌓여진 대서사시이다. 1번에서 4번으로 갈수록 비극적 무게감과 내면의 감정이 깊어진다. 이와 반대로 즉흥곡은 살롱 문화의 화려함에서 탄생한 작품으로 피아노 음악의 자유로움이 묻어나지만 점차 내성적 고요함으로 이어진다.\n\n피아니스트 안려홍은 “발라드와 즉흥곡을 교차하는 것은 대비나 반대를 의미하는 것이 아닌, 쇼팽의 삶을 이야기와 감정으로 살펴보는 서사가 된다.”며 “쇼팽이 털어놓는 네 번의 고백을 통해 음악을 마음으로 이해하는 시간이 되기를 바란다.”고 전했다.\n\n청춘의 첫 고백 - 순간의 감정\n\n피아니스트 안려홍은 쇼팽 발라드 1번과 즉흥곡 1번을 '청춘'으로 소개한다.\n\n쇼팽이 처음으로 피아노 음악에 발라드 형식을 도입한 1번은 조국인 폴란드를 떠난 직후 파리 망명 시절에 작곡한 곡으로 상실과 저항의 정서가 깊이 새겨져 있다. 청년이었던 쇼팽이 그려낸 향수와 분노는 서정적이면서도 폭발적인 에너지가 공존한다.\n\n즉흥곡 1번은 1837년, 파리 살롱 전성기에 작곡한 곡으로 즉흥 연주를 즐겼던 쇼팽이 순간적 영감을 악보로 남긴 첫 번째 작품이다. 자유롭게 흘러가는 노래 속에서도 세련된 형식미가 살아 있다.\n\n평온 속의 격정 - 숨겨진 불안\n\n이어지는 발라드 2번은 사랑하는 연인이었던 조르주 상드와 함께 했던 시간, 그리고 건강 악화가 쇼팽의 이중적 내면을 내비치게 한다. 표면의 고요함 아래 잠재된 불안이 날카롭게 대비된다.\n\n즉흥곡 2번은 네 개의 즉흥곡 중 가장 규모가 크고 구조적으로 복잡한 작품이다. 단순한 살롱풍 음악에서 벗어나 발라드에 가까운 서사를 품고 있다. 쇼팽 내면의 복잡한 심리가 두 장르의 경계를 허문다.\n\n사랑의 기억 - 노래로 남은 감정\n\n1부에서는 격정적인 음악이 주를 이룬다면 2부는 보다 침체된 내면 속으로 들어간다.\n\n피아니스트 안려홍은 발라드 3번과 즉흥곡 3번을 배치하며 인간적 쇼팽과 음악가로서의 쇼팽을 함께 그린다.\n\n발라드 3번은 파리 정착 후 안정기에 작곡된 곡으로, 밝고 우아한 색채를 보이고 있으나 그 아래에는 섬세하게 감춰진 슬픔이 흐른다. 조르주 상드와의 관계에 생긴 균열은 사랑의 변질과 추억을 떠올리게 한다.\n\n즉흥곡 3번은 쇼팽 만년의 작품으로, 그가 스스로의 정체성과 내면에 대한 고뇌에 빠져들었다는 것을 알 수 있다. 표면은 유려하게 흘러가는 듯 보이지만 내면의 화성 언어는 후기 낭만주의를 예고하는 기풍을 품고 있다.\n\n깊어진 성찰 - 지워지지 않는 잔상\n\n각 4번 작품은 즉흥곡이 먼저 연주된 후 발라드로 유종의 미를 거둔다.\n\n즉흥곡 4번에서는 감정의 파편이 모여 쇼팽 내면의 풍경을 완성시킨 것을 볼 수 있다. 쇼팽이 감추고 싶었던 날것의 감정이 압축된 걸작으로, 오늘날 가장 대중적인 쇼팽의 작품이 된다.\n\n발라드 4번은 쇼팽의 정점이자 피아노 문학의 최고 걸작으로 꼽힌다. 건강이 악화되고 상드와의 관계도 흔들리던 시기에 완성된 작품으로, 죽음에 대한 예감과 삶에 대한 성찰이 공존하는 쇼팽 음악 여정의 총결산이 된다. 깊은 사색으로 시작해 걷잡을 수 없는 소용돌이로 끝나는 흐름은 쇼팽의 흔들리던 감정이 잘 나타난다.\n\nBallades & Impromtus, 네 번의 고백\n\n피아니스트 안려홍이 표현하는 쇼팽은 단순한 작품의 나열이 아닌, 하나의 완결된 서사를 구성한다. 젊은 시절 쇼팽에서부터 말년의 무게로 마무리되는 여정은 관객들에게 쇼팽의 음악을 ‘인간적’으로 해석할 수 있도록 돕는다.\n\n주최사인 아투즈컴퍼니는 “피아니스트 안려홍의 손끝에서 펼쳐질 쇼팽의 독백은 솔직하면서도 날것의 긴장감을 고스란히 담아낼 것.”이라며 “기교에서 벗어나 음악을 진정으로 즐기고 해석하는 시간이 될 것이다.”라고 전했다.\n\n한편, 피아니스트 안려홍은 현재 연세대, 덕원예고, 인천예고에 출강하고 있으며 다가오는 12월, 예술의전당 리사이틀홀에서 ‘Virtuso to Visionary - F. Liszt 음악적 여정’을 주제로 한 독주회를 올릴 예정이다.\n\n낭만적 음악이 넘쳐흐르는 ‘안려홍 피아노 독주회 - Ballades & Impromptus 네 번의 독백’은 5월 27일, 세종문화회관 체임버홀에서 만날 수 있으며 티켓은 세종문화티켓(02-399-1000) 및 놀인터파크티켓(1544-1555)을 통해 예매가능하다. 기타문의 아투즈컴퍼니(070-7757-0300)","offers":{"@type":"Offer","priceCurrency":"KRW","url":"https://pyw31337.github.io/culture/p/perf_%EC%95%88%EB%A0%A4%ED%99%8D_%ED%94%BC%EC%95%84%EB%85%B8_%EB%8F%85%EC%A3%BC%ED%9A%8C/"}}19:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1a"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+1b:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"안려홍 피아노 독주회 - Culture Flow"}],["$","meta","1",{"name":"description","content":"2026.05.27 (수) | 세종문화회관 세종체임버홀 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"안려홍 피아노 독주회 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"2026.05.27 (수) | 세종문화회관 세종체임버홀 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/perf_%EC%95%88%EB%A0%A4%ED%99%8D_%ED%94%BC%EC%95%84%EB%85%B8_%EB%8F%85%EC%A3%BC%ED%9A%8C/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF289547_260416_141953.png"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"안려홍 피아노 독주회"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"안려홍 피아노 독주회 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"2026.05.27 (수) | 세종문화회관 세종체임버홀 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"http://www.kopis.or.kr/upload/pfmPoster/PF_PF289547_260416_141953.png"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L1b","22",{}]]

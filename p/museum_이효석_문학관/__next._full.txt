@@ -1,0 +1,89 @@
+1:"$Sreact.fragment"
+2:I[42593,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],""]
+3:I[60525,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+4:I[83714,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+5:I[57121,[],""]
+6:I[17267,["39","static/chunks/app/error-6a3b5f361793e298.js"],"default"]
+7:I[74581,[],""]
+8:I[37145,["500","static/chunks/500-3f91014625dccb18.js","345","static/chunks/app/not-found-149e7dab0c149501.js"],"default"]
+9:I[48824,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+a:I[29879,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+b:I[24963,["500","static/chunks/500-3f91014625dccb18.js","467","static/chunks/467-810298c9d5bfcb6b.js","146","static/chunks/146-2e6800ebda200142.js","177","static/chunks/app/layout-99fe8ad18fcc5eb9.js"],"default"]
+d:I[90484,[],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[90484,[],"ViewportBoundary"]
+12:I[90484,[],"MetadataBoundary"]
+14:I[26719,["219","static/chunks/app/global-error-35be16fc51ad0967.js"],"default"]
+:HL["/culture/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/culture/_next/static/css/dbab3859e94f4a36.css","style"]
+:HL["/culture/_next/static/css/30ad2e5f7310d1d1.css","style"]
+0:{"P":null,"b":"pRm_CqcpYNufzcuJZWg2M","c":["","p","museum_%EC%9D%B4%ED%9A%A8%EC%84%9D_%EB%AC%B8%ED%95%99%EA%B4%80",""],"q":"","i":false,"f":[[["",{"children":["p",{"children":[["id","museum_%EC%9D%B4%ED%9A%A8%EC%84%9D_%EB%AC%B8%ED%95%99%EA%B4%80","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/dbab3859e94f4a36.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_fe4847 __variable_600cd1 antialiased","children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var localTheme = localStorage.getItem('theme');\n                  // Default is Light (:root). We only add .dark if explicitly set.\n                  if (localTheme === 'dark') {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}],[["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-5GWFPEPEW5","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n                window.dataLayer = window.dataLayer || [];\n                function gtag(){dataLayer.push(arguments);}\n                gtag('js', new Date());\n\n                gtag('config', 'G-5GWFPEPEW5');\n              "}]],["$","$L3",null,{"children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","error":"$6","errorStyles":[],"errorScripts":[],"template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L8",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L9",null,{}],["$","$La",null,{"currentVersion":"83de1d4f68a6","currentGeneratedAt":"2026-04-26T00:18:04.103Z"}],["$","$Lb",null,{}]]}]}],"$undefined"]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$Lc",null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$L11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$L13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/culture/_next/static/css/30ad2e5f7310d1d1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true}
+15:I[51943,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+16:I[59603,["538","static/chunks/538-0d11a538d94a5f6c.js","467","static/chunks/467-810298c9d5bfcb6b.js","750","static/chunks/750-6ff25e99651f2055.js","603","static/chunks/603-1c1dc5aba2160f96.js","841","static/chunks/app/p/%5Bid%5D/page-478312964eb49d9f.js"],"default"]
+17:T2703,주소강원특별자치도 평창군 봉평면 효석문학길 73-25 이효석문학관지도보기전화033-330-2700시설수유실, 기저귀교환대, 주차, 예약예약사전예약 & 당일 방문 모두 가능 - 홈페이지 예약예약하기영업시간월요일정기휴무화요일09:00 ~ 18:30수요일09:00 ~ 18:30목요일09:00 ~ 18:30금요일09:00 ~ 18:30토요일09:00 ~ 18:30일요일09:00 ~ 18:30아이와 꼭 한 번 가볼 만한 이효석 문학관
+이효석 문학관이란?
+이효석 문학관은 한국을 대표하는 소설가 이효석 선생의 삶과 문학, 그리고 그가 남긴 아름다운 작품들을 다양한 방법으로 만날 수 있는 특별한 공간입니다. 평창 봉평의 맑고 아름다운 자연 속에 자리 잡고 있어, 이효석 선생의 대표작인 '메밀꽃 필 무렵'의 그 정서를 몸소 느낄 수 있습니다.
+이효석 문학관의 주요 특징
+
+선생의 생애와 문학 세계를 시대별로 한눈에 볼 수 있는 다양한 전시실이 마련되어 있습니다.
+실제 사용하던 육필 원고, 유품, 창작의 방, 그리고 옛 봉평 장터를 재현한 전시물 등 아이들도 쉽고 재미있게 볼 수 있는 내용이 가득합니다.
+문학관 주변에는 넓은 잔디광장과 포토존, 메밀꽃길, 문학정원, 오솔길이 있어 자연을 즐기며 산책하기 좋습니다.
+메밀꽃밭과 산책로가 있어 아이와 문학, 역사 공부를 하고 산책하기도 좋은 곳입니다.
+야외에 있는 이효석 작가가 집필하는 모습의 동상은 포토존으로 인기가 많습니다.
+6개월 후 수신자에게 전달되는 느린 우체통이 마련되어 있으니 아이와 함께 마음을 편지로 전해보세요.
+
+이효석 문학관에서 즐길 수 있는 것들
+
+문학 전시실 탐방
+
+시대별로 구성된 전시실에서 이효석 선생의 작품과 생애를 살펴볼 수 있습니다.
+아이들이 직접 볼 수 있는 작품 유품, 손글씨 원고 등이 전시되어 있어 교육적인 효과도 높습니다.
+
+
+문학 쉼터와 포토존
+
+자연석에 새겨진 '메밀꽃 필 무렵' 글귀, 다양한 조형물, 아름다운 꽃과 어우러진 공간에서 가족 사진을 남기기 좋습니다.
+
+
+잔디광장 & 산책로
+
+문학관 주변에는 넓고 푸른 잔디광장, 소소한 오솔길, 메밀꽃 피는 길 등이 있어 천천히 산책하며 자연을 느끼기 좋습니다.
+
+
+도슨트 해설 프로그램
+
+전문 해설사와 함께 문학관을 둘러보며 이효석 선생의 삶과 작품에 대해 쉽게 배울 수 있습니다.
+
+
+연계 체험
+
+인근에는 이효석문화예술촌인 효석달빛언덕과 효석달빛언덕을 함께 입장할 수 있는 통합권을 매표소에서 4,500원에 구입할 수 있습니다.
+
+
+
+이용안내 및 편의사항
+
+주차시설이 넉넉하게 마련되어 차량을 이용한 방문이 편리합니다. 전용 주차장에서 무료로 주차가 가능합니다.
+입장료는 일반 2,000원으로 부담이 적습니다. 미취학 아동과 65세 이상은 무료입니다.
+매주 월요일, 1월 1일, 설날, 추석은 휴관입니다. 월요일이 공휴일인 경우 다음날 휴관합니다. 단, 성수기 시 월요일은 사전 단체 예약(20명 이상)에 한해서 관람 가능합니다.
+초중고 이상 20명부터 단체 관람 및 해설 예약이 가능하며 홈페이지를 통해 예약할 수 있습니다.
+
+이런 가족에게 추천해요
+
+초등학생, 중학생 자녀와 함께 한국문학을 직접 체험해보고 싶은 가족
+평창의 아름다운 자연에서 산책과 야외활동을 즐기고 싶은 가족
+'메밀꽃 필 무렵' 같은 교과서 속 작품을 실제로 보고 느끼고 싶은 가족
+
+맘맘에서 드리는 팁
+
+메밀꽃이 만발하는 여름~초가을에 방문하면 소설 속 풍경을 눈앞에서 만날 수 있습니다.
+어린이날에는 모든 어린이가 입장 무료입니다.
+
+"바람에 하얗게 물결치는 메밀꽃처럼, 아이와 함께 이효석 문학관에서 아름다운 추억을 만들어 보세요!"
+이효석 문학관 FAQ이효석 문학관에서는 아이와 함께 어떤 체험이나 전시를 즐길 수 있나요?이효석 문학관에는 '메밀꽃 필 무렵'의 작가 이효석 선생님의 연보, 육필 원고, 유품 전시와 함께, 재현한 창작실·옛 봉평장터 모형·이효석의 문학과 생애를 다룬 영상물 등이 있습니다. 문학관 주변의 메밀꽃밭, 산책로, 잔디광장, 그리고 이효석 작가의 집필 모습을 담은 동상 포토존 등 아이들과 함께 경험할 수 있는 다양한 체험 요소가 준비되어 있습니다. 매표소 근처에는 느린 우체통도 있어 엽서를 써서 6개월 후에 받을 수 있습니다.이효석 문학관의 입장료, 무료 입장 대상, 운영 시간은 어떻게 되나요?입장료는 초등학생 이상~65세 미만 2,000원, 미취학 아동과 65세 이상은 무료입니다. 어린이날에는 모든 어린이가 무료 입장할 수 있습니다. 운영 시간은 성수기(5~9월)는 오전 9시~오후 6시 30분, 비수기(10~4월)는 오전 9시~오후 5시 30분입니다. 매표 마감은 성수기 18시, 비수기 17시입니다. 휴관일은 매주 월요일, 1월 1일, 설날, 추석이며, 월요일이 공휴일일 경우 그 다음 날 쉽니다. 성수기 월요일에는 사전 단체예약(20명 이상)에 한해 관람이 가능합니다.아이와 함께 방문할 때 어떤 편의시설이 마련되어 있나요?문학관에는 전용 무료 주차장이 있으며, 매표소 쪽 수유실, 화장실마다 기저귀갈이대가 마련되어 있습니다. 예약 관람이 가능하며, 유모차 대여와 아기의자는 지원되지 않습니다. 넓은 잔디광장과 산책로 등 휴식 공간이 있어 가족 단위 방문객이 편하게 이용할 수 있습니다.문학관에서 함께 둘러보기 좋은 추천 코스나 연계할 만한 장소가 있나요?문학관 주변에는 메밀꽃 산책로, 자연석에 새겨진 글귀, 잔디광장, 문학정원 등이 있어 가족 산책과 사진 촬영에 좋습니다. 이효석문화예술촌인 '효석달빛언덕'에 함께 입장할 수 있는 통합권(4,500원)을 매표소에서 구매할 수 있으며, 효석달빛언덕, 이효석 생가터, 봉평장터, 계절별로 열리는 효석문화제 등도 연계 방문하기 좋습니다.단체 관람이나 해설 프로그램 예약은 어떻게 하나요?초중고 이상 20명부터 단체 관람 및 해설(도슨트) 예약이 가능하며, 예약은 이효석 문학관 홈페이지를 통해 진행할 수 있습니다. 성수기에는 단체예약 시 월요일도 관람이 가능합니다.이효석 문학관 요금 및 프로그램[요금]초등학생 이상~65세 미만: 2,000원미취학 아동, 65세 이상: 무료[이용안내]성수기(5월 ~ 9월): 오전 9시~오후 6시 30분비수기(10월 ~ 4월): 오전 9시~오후 5시 30분매표 마감: 18시(성수기) / 17시(비수기) 휴관: 매주 월요일, 1월 1일, 설날, 추석, 월요일이 공휴일인 경우 다음날단, 성수기 시 월요일은 사전 단체 예약(20명 이상)에 한해서 관람 가능이효석 문학관을 위한 세상 유용한 꿀팁메및꽃 필 무렵 작가인 가산 이효석 선생님을 위한 문학관으로 작가 연보를 비롯하여 이효석 선생님을 위한 자료를 볼 수 있는 곳이에요. 재현한 창작실, 옛 봉평장터 모형, 이효석의 문학과 생애를 다룬 영상물 등을 볼 수 있어요. 메밀꽃밭과 산책로가 있어 아이와 문학, 역사 공부를 하고 산책하기도 좋은 곳이에요. 메밀꽃 시즌인 7월부터 10월에는 메밀꽃밭이 장관이니 아이와 함께 방문하여 산책을 즐겨보세요. 야외에 있는 이효석 작가가 집필하는 모습의 동상은 포토존으로 인기가 많아요.6개월 후 수신자에게 전달되는 느린 우체통이 마련되어 있으니 아이와 함께 마음을 편지로 전해보세요. 매표소 쪽에는 수유실이 마련되어 있으며 화장실마다 기저귀 갈이대가 있어요.  어린이날에는 모든 어린이가 입장 무료예요. 이효석문화예술촌인 효석달빛언덕을 함께 입장할 수 있는 통합권을 매표소에서 4,500원에 구입할 수 있어요. 초중고 이상 20명부터 단체 관람 및 해설 예약이 가능하며 홈페이지를 통해 예약할 수 있어요.  전용 주차장에서 무료로 주차가 가능해요.이효석 문학관의 주소강원특별자치도 평창군 봉평면 효석문학길 73-25 이효석문학관주소 복사길 찾기이효석 문학관을 예약하려면?사전예약 & 당일 방문 모두 가능 - 홈페이지 예약홈페이지이효석 문학관 N블로그 후기 당일치기 강원도 봉평 겨울여행 가볼만한곳 이효석문학관평창군 봉평면에 가면 한번은 가봐야 할 곳으로 이효석문학관을 이야기하고 싶은데요 겨울에 강원도... 가산 이효석 선생 동상 있는 포토존에서 사진도 남겨봤는데요 평창군 봉평 가볼만한곳으로 문학관에서...평창 가볼만한곳 이효석 문학관과 효석달빛언덕몇년 전 다녀온 평창 가볼만한곳 '이효석 문학관'과 생가 이야기를 해볼까 해요. 그 때는 몰랐는데... 가까이 가보니 이효석 좌상이에요... 포토존이라 옆에서 사진을 찍었답니다. 문학관은 전시관도 보겠지만...봉평 가볼만한곳 이효석문학관이효석 문학관 주소 : 강원도 평창군 봉평면 효석문학길 73-25 운영시간 : 5~9월 9:00~18:30 (18시까지 입장)... 깔끔한 문학관 투어 :) 봉평에 가면 이효석 작가를 빼놓을 수가 없는데, 전시도 보고 멋진 뷰도 볼 수...이효석 문학관 방문리뷰 전체보기 (85)저장c:["$","main",null,{"className":"relative min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-emerald-500/30 inverted-share-theme transition-colors duration-500","children":[["$","$L15",null,{}],["$","div",null,{"className":"bg-squares opacity-30 sm:opacity-50","children":[["$","div","0",{"className":"bg-square"}],["$","div","1",{"className":"bg-square"}],["$","div","2",{"className":"bg-square"}],["$","div","3",{"className":"bg-square"}],["$","div","4",{"className":"bg-square"}],["$","div","5",{"className":"bg-square"}],["$","div","6",{"className":"bg-square"}],["$","div","7",{"className":"bg-square"}],["$","div","8",{"className":"bg-square"}],["$","div","9",{"className":"bg-square"}]]}],["$","$L16",null,{"performance":{"id":"museum_이효석_문학관","title":"이효석 문학관","date":"연중무휴","venue":"이효석 문학관","image":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYyYjQ4MTY5MmQ1Zjk0NjRhOTc3OGQ0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","link":"https://mom-mom.net/travel/places/660f574e833b44fd6b1f169e","region":"etc","genre":"museum","description":"이효석 문학관는 이효석 문학관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 강원특별자치도 평창군 봉평면 효석문학길 73-25 이효석문학관지도보기입니다. 추천 대상은 주소강원특별자치도 평창군 봉평면 효석문학길 73-25 이효석문학관지도보…입니다. 운영 시간은 월요일정기휴무화요일09:00 ~ 18:30수요일09:00 ~ 18:30…입니다. 현장 편의 정보는 수유실, 기저귀교환대, 주차, 예약입니다. 이용 정보는 입장료는 초등학생 이상~65세 미만 2,000원, 미취학 아동과 65세… 기준입니다.","discount":"$undefined","originalPrice":"","price":"입장료는 초등학생 이상~65세 미만 2,000원, 미취학 아동과 65세 이상은 무료입니다. 어린이날에는 모든 어린이가 무료 입장할 수 있습니다. 운영 시간은 성수기(5~9월)는 오전 9시~오후 6시 30분, 비수기(10~4월)는 오전 9시~오후 5시 30분입니다. 매표 마감은 성수기 18시, 비수기 17시입니다. 휴관일은 매주 월요일, 1월 1일, 설날, 추석이며, 월요일이 공휴일일 경우 그 다음 날 쉽니다. 성수기 월요일에는 사전 단체예약(20명 이상)에 한해 관람이 가능합니다.","gradeIcon":"$undefined","ageRating":"","subGenre":"$undefined","runningTime":"$undefined","originalTitle":"$undefined","productionCountry":"$undefined","productionYear":"$undefined","cast":[],"director":"$undefined","movieInfo":"$undefined","homeTeam":"$undefined","awayTeam":"$undefined","homeTeamLogo":"$undefined","awayTeamLogo":"$undefined","backupPoster":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYyYjQ4MTY5MmQ1Zjk0NjRhOTc3OGQ0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19","posterUrl":"$undefined","category":"$undefined","rank":"$undefined","dateRaw":"$undefined","lat":37.8228,"lng":128.1555,"address":"강원특별자치도 평창군 봉평면 효석문학길 73-25 이효석문학관지도보기","source":"mommom","website":"","parking":"$undefined","parkingFee":"$undefined","facilities":"수유실, 기저귀교환대, 주차, 예약","restrooms":"$undefined","performanceTime":"","bookingNotice":"$undefined","ageDetail":"$undefined","feesAndPrograms":"이효석 문학관 요금 및 프로그램\n[요금]\n초등학생 이상~65세 미만: 2,000원\n미취학 아동, 65세 이상: 무료\n[이용안내]\n성수기(5월 ~ 9월): 오전 9시~오후 6시 30분\n비수기(10월 ~ 4월): 오전 9시~오후 5시 30분\n매표 마감: 18시(성수기) / 17시(비수기)\n휴관: 매주 월요일, 1월 1일, 설날, 추석, 월요일이 공휴일인 경우 다음날\n단, 성수기 시 월요일은 사전 단체 예약(20명 이상)에 한해서 관람 가능","targetAudience":"$17","operatingHours":"월요일정기휴무화요일09:00 ~ 18:30수요일09:00 ~ 18:30목요일09:00 ~ 18:30금요일09:00 ~ 18:30토요일09:00 ~ 18:30일요일09:00 ~ 18:30","priceDetail":"입장료는 초등학생 이상~65세 미만 2,000원, 미취학 아동과 65세 이상은 무료입니다. 어린이날에는 모든 어린이가 무료 입장할 수 있습니다. 운영 시간은 성수기(5~9월)는 오전 9시~오후 6시 30분, 비수기(10~4월)는 오전 9시~오후 5시 30분입니다. 매표 마감은 성수기 18시, 비수기 17시입니다. 휴관일은 매주 월요일, 1월 1일, 설날, 추석이며, 월요일이 공휴일일 경우 그 다음 날 쉽니다. 성수기 월요일에는 사전 단체예약(20명 이상)에 한해 관람이 가능합니다.","closedDays":"","contact":"","synopsis":"$undefined","trailer":"$undefined","roi":"$undefined","reservationRate":"$undefined","audienceCount":"$undefined","budget":"$undefined","revenue":"$undefined","budgetKRW":"$undefined","revenueKRW":"$undefined"},"mode":"standalone"}],"$L18"]}]
+18:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"이효석 문학관\",\"startDate\":\"연중무휴\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"location\":{\"@type\":\"Place\",\"name\":\"이효석 문학관\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"이효석 문학관\",\"addressLocality\":\"Seoul\",\"addressCountry\":\"KR\"}},\"image\":[\"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYyYjQ4MTY5MmQ1Zjk0NjRhOTc3OGQ0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19\"],\"description\":\"이효석 문학관는 이효석 문학관에서 만날 수 있는 박물관/체험입니다. 일정은 연중무휴 기준입니다. 위치는 강원특별자치도 평창군 봉평면 효석문학길 73-25 이효석문학관지도보기입니다. 추천 대상은 주소강원특별자치도 평창군 봉평면 효석문학길 73-25 이효석문학관지도보…입니다. 운영 시간은 월요일정기휴무화요일09:00 ~ 18:30수요일09:00 ~ 18:30…입니다. 현장 편의 정보는 수유실, 기저귀교환대, 주차, 예약입니다. 이용 정보는 입장료는 초등학생 이상~65세 미만 2,000원, 미취학 아동과 65세… 기준입니다.\",\"offers\":{\"@type\":\"Offer\",\"priceCurrency\":\"KRW\",\"url\":\"https://pyw31337.github.io/culture/p/museum_%EC%9D%B4%ED%9A%A8%EC%84%9D_%EB%AC%B8%ED%95%99%EA%B4%80/\"}}"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0a0a0a"}]]
+19:I[86869,[],"IconMark"]
+f:null
+13:[["$","title","0",{"children":"이효석 문학관 - Culture Flow"}],["$","meta","1",{"name":"description","content":"연중무휴 | 이효석 문학관 | 전국 통합 문화 검색 Culture Flow"}],["$","link","2",{"rel":"manifest","href":"/culture/manifest.json","crossOrigin":"$undefined"}],["$","meta","3",{"name":"format-detection","content":"telephone=no"}],["$","meta","4",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","5",{"name":"apple-mobile-web-app-title","content":"Culture Flow"}],["$","meta","6",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","meta","7",{"property":"og:title","content":"이효석 문학관 - Culture Flow"}],["$","meta","8",{"property":"og:description","content":"연중무휴 | 이효석 문학관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","9",{"property":"og:url","content":"https://pyw31337.github.io/culture/p/museum_%EC%9D%B4%ED%9A%A8%EC%84%9D_%EB%AC%B8%ED%95%99%EA%B4%80/"}],["$","meta","10",{"property":"og:site_name","content":"Culture Flow"}],["$","meta","11",{"property":"og:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYyYjQ4MTY5MmQ1Zjk0NjRhOTc3OGQ0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","meta","12",{"property":"og:image:width","content":"800"}],["$","meta","13",{"property":"og:image:height","content":"1100"}],["$","meta","14",{"property":"og:image:alt","content":"이효석 문학관"}],["$","meta","15",{"property":"og:type","content":"article"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"이효석 문학관 - Culture Flow"}],["$","meta","18",{"name":"twitter:description","content":"연중무휴 | 이효석 문학관 | 전국 통합 문화 검색 Culture Flow"}],["$","meta","19",{"name":"twitter:image","content":"https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjYyYjQ4MTY5MmQ1Zjk0NjRhOTc3OGQ0LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTA4MCwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19"}],["$","link","20",{"rel":"icon","href":"/culture/favicon.png"}],["$","link","21",{"rel":"apple-touch-icon","href":"/culture/icon.png"}],["$","$L19","22",{}]]

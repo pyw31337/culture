@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+Sitemap: https://pyw31337.github.io/culture/sitemap.xml
