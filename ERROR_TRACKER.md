@@ -34,3 +34,23 @@
 - **GitHub Run ID**: [22998086490](https://github.com/pyw31337/culture/actions/runs/22998086490)
 - **Note**: A scraper or validation step failed during the daily data update. Please check the Action logs via the link above.
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-04-26 15:27:19 UTC
+- **GitHub Run ID**: [24959406381](https://github.com/pyw31337/culture/actions/runs/24959406381)
+- **Note**: A scraper or validation step failed during the daily data update. Please check the Action logs via the link above.
+- **Failed Scrapers**:
+  - interpark
+  - kbl
+  - handball
+  - festival
+  - kbo
+  - yes24-exclusive
+  - myrealtrip
+  - sssd
+  - museum
+  - mommom
+  - mommom-activities
+  - mommom-exhibitions
+  - mommom-products
+  - seoul-culture
+
