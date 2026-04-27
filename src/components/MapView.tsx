@@ -174,6 +174,7 @@ export default function MapView({
     const [isWeatherOpen, setIsWeatherOpen] = useState(false);
     const [weatherAddress, setWeatherAddress] = useState<string>('');
     const [showExtendedForecast, setShowExtendedForecast] = useState(false);
+    const [mapLoadError, setMapLoadError] = useState<string | null>(null);
 
     // Sync selectedMapGenre with URL on initial load only? No, user said "비연동" (independent).
     // But let's start with all if genre=all, or just the URL genre if specified.
@@ -428,6 +429,7 @@ export default function MapView({
     // --- Map Init ---
     useEffect(() => {
         let checkInterval: ReturnType<typeof setInterval> | null = null;
+        let sdkTimeout: ReturnType<typeof setTimeout> | null = null;
         let cancelled = false;
 
         const initializeMap = () => {
@@ -436,6 +438,10 @@ export default function MapView({
                 if (cancelled || !mapRef.current) return;
                 const k = window.kakao.maps;
                 if (!k.Map || !k.LatLng) return;
+                if (sdkTimeout) {
+                    clearTimeout(sdkTimeout);
+                    sdkTimeout = null;
+                }
 
                 let initialCenter = SEOUL_STATION;
                 let initialLevel = 8;
@@ -457,6 +463,7 @@ export default function MapView({
                 mapOverlaysRef.current.forEach(o => o.setMap(null));
                 mapOverlaysRef.current = [];
                 setMapInstance(map);
+                setMapLoadError(null);
 
                 window.kakao.maps.event.addListener(map, 'dragend', () => setShowSearchHereBtn(true));
                 window.kakao.maps.event.addListener(map, 'zoom_changed', () => setShowSearchHereBtn(true));
@@ -473,10 +480,19 @@ export default function MapView({
             }
         }, 100);
 
+        sdkTimeout = setTimeout(() => {
+            if (!cancelled && !window.kakao?.maps) {
+                setMapLoadError('지도 SDK를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+            }
+        }, 5000);
+
         return () => {
             cancelled = true;
             if (checkInterval) {
                 clearInterval(checkInterval);
+            }
+            if (sdkTimeout) {
+                clearTimeout(sdkTimeout);
             }
         };
     }, []);
@@ -868,6 +884,21 @@ export default function MapView({
                     <div className="absolute inset-x-0 top-20 z-[120] flex justify-center px-4 pointer-events-none">
                         <div className="pointer-events-auto rounded-full bg-black/70 px-4 py-2 text-sm font-bold text-white shadow-lg backdrop-blur-md">
                             지도 데이터를 불러오는 중...
+                        </div>
+                    </div>
+                )}
+
+                {mapLoadError && !isMapReady && (
+                    <div className="absolute inset-x-0 top-20 z-[130] flex justify-center px-4">
+                        <div className="pointer-events-auto max-w-md rounded-2xl border border-amber-200 bg-white/95 px-4 py-3 text-sm text-slate-700 shadow-xl backdrop-blur-md dark:border-amber-900/60 dark:bg-slate-900/95 dark:text-slate-200">
+                            <div className="font-black text-amber-600 dark:text-amber-400">지도를 표시하지 못하고 있어요</div>
+                            <p className="mt-1 leading-relaxed">{mapLoadError}</p>
+                            <button
+                                onClick={() => window.location.reload()}
+                                className="mt-3 inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+                            >
+                                새로고침
+                            </button>
                         </div>
                     </div>
                 )}

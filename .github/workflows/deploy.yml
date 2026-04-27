@@ -14,6 +14,9 @@ on:
         required: false
         type: boolean
         default: false
+    secrets:
+      NEXT_PUBLIC_KAKAO_JS_KEY:
+        required: false
 
 concurrency:
   group: deploy-to-github-pages
@@ -58,6 +61,7 @@ jobs:
       - name: Build Website
         env:
           NEXT_PUBLIC_BASE_PATH: /culture
+          NEXT_PUBLIC_KAKAO_JS_KEY: ${{ secrets.NEXT_PUBLIC_KAKAO_JS_KEY }}
           NODE_OPTIONS: '--max-old-space-size=4096'
         run: |
           if [ "${{ inputs.prebuilt-data }}" = "true" ]; then
