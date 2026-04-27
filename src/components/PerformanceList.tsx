@@ -114,10 +114,16 @@ export default function PerformanceList({
     // --- Derived State ---
     const activeLocation = searchLocation || userLocation;
     const genreCounts = useMemo(() => {
+        // Category pages intentionally keep a scoped item list, so the global
+        // genre navigation should continue to use the build-time aggregate counts.
+        if (isCategoryPage && initialGenreCounts && Object.keys(initialGenreCounts).length > 0) {
+            return initialGenreCounts;
+        }
+
         if (isDataFullyLoaded) return buildGenreCounts(allPerformances);
         if (initialGenreCounts && Object.keys(initialGenreCounts).length > 0) return initialGenreCounts;
         return buildGenreCounts(allPerformances);
-    }, [allPerformances, initialGenreCounts, isDataFullyLoaded]);
+    }, [allPerformances, initialGenreCounts, isCategoryPage, isDataFullyLoaded]);
     const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
     const totalItemCount = useMemo(() => {
         if (buildInfo?.itemCount) return buildInfo.itemCount;
