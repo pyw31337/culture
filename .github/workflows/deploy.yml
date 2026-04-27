@@ -78,6 +78,7 @@ jobs:
           test -f out/version.txt
           test -f out/robots.txt
           test -f out/sitemap.xml
+          grep -q "dapi.kakao.com/v2/maps/sdk.js" out/map/index.html
 
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v4
