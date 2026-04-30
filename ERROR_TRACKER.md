@@ -114,3 +114,23 @@
   - mommom-products
   - seoul-culture
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-04-30 16:34:36 UTC
+- **GitHub Run ID**: [25175140928](https://github.com/pyw31337/culture/actions/runs/25175140928)
+- **Note**: A scraper or validation step failed during the daily data update. Please check the Action logs via the link above.
+- **Failed Scrapers**:
+  - interpark
+  - kbl
+  - handball
+  - festival
+  - kbo
+  - yes24-exclusive
+  - myrealtrip
+  - sssd
+  - museum
+  - mommom
+  - mommom-activities
+  - mommom-exhibitions
+  - mommom-products
+  - seoul-culture
+
