@@ -128,6 +128,7 @@ function mergeItems(a: any, b: any): any {
     if (!merged.synopsis && loser.synopsis) merged.synopsis = loser.synopsis;
     if (!merged.roi && loser.roi) merged.roi = loser.roi;
     if (!merged.trailer && loser.trailer) merged.trailer = loser.trailer;
+    if (!merged.statsCollectedAt && loser.statsCollectedAt) merged.statsCollectedAt = loser.statsCollectedAt;
 
     // MomMom & Detailed Metadata
     if (!merged.feesAndPrograms && loser.feesAndPrograms) merged.feesAndPrograms = loser.feesAndPrograms;

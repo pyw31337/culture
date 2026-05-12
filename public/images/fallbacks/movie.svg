@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Movie Poster Placeholder</title>
+  <desc id="desc">Fallback poster for movies without an available image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="55%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb7185" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1200" fill="url(#bg)" rx="36" />
+  <rect x="64" y="64" width="672" height="1072" rx="28" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="4" />
+
+  <g opacity="0.18">
+    <circle cx="132" cy="132" r="18" fill="#fff" />
+    <circle cx="668" cy="132" r="18" fill="#fff" />
+    <circle cx="132" cy="1068" r="18" fill="#fff" />
+    <circle cx="668" cy="1068" r="18" fill="#fff" />
+  </g>
+
+  <rect x="170" y="210" width="460" height="500" rx="36" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="6" />
+  <path d="M300 305h200c22 0 40 18 40 40v230c0 22-18 40-40 40H300c-22 0-40-18-40-40V345c0-22 18-40 40-40Z" fill="url(#panel)" />
+  <path d="M340 345v230M460 345v230" stroke="rgba(17,24,39,0.35)" stroke-width="16" stroke-linecap="round" />
+  <path d="M300 395h240M300 525h240" stroke="rgba(17,24,39,0.35)" stroke-width="16" stroke-linecap="round" />
+  <circle cx="400" cy="460" r="76" fill="rgba(17,24,39,0.28)" />
+  <polygon points="382,420 454,460 382,500" fill="#fff" />
+
+  <text x="400" y="820" fill="#ffffff" font-family="Arial, sans-serif" font-size="72" font-weight="700" text-anchor="middle">MOVIE</text>
+  <text x="400" y="892" fill="rgba(255,255,255,0.72)" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">Poster unavailable</text>
+</svg>

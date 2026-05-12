@@ -19,7 +19,7 @@ const GENRE_FALLBACKS: Record<string, string> = {
     exhibition: `${_BP}/images/fallbacks/exhibition.jpg`,
     classic_tradition: `${_BP}/images/fallbacks/classic.jpg`,
     activity: `${_BP}/images/fallbacks/activity.jpg`,
-    movie: `${_BP}/images/kbo-thumbnail.png`,
+    movie: `${_BP}/images/fallbacks/movie.svg`,
     default: `${_BP}/images/placeholder.png`
 };
 
@@ -330,6 +330,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let facilities = raw.facilities || '';
     let closedDays = raw.closedDays || '';
     let contact = raw.contact || '';
+    const statsCollectedAt =
+        (typeof raw.statsCollectedAt === 'string' && raw.statsCollectedAt.trim())
+            ? raw.statsCollectedAt
+            : (typeof raw.lastCollected === 'string' && raw.lastCollected.trim() ? raw.lastCollected : undefined);
     let backupPoster = raw.backupPoster
         || raw.posterUrl
         || raw.poster
@@ -495,7 +499,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         priceDetail,
         facilities,
         closedDays,
-        contact
+        contact,
+        statsCollectedAt
     } as Performance;
 }
 

@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
+import { formatCompactKoreanDate } from '@/lib/build-info';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -34,6 +35,9 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
     const dDayLabel = getDdayLabel(p);
+    const movieStatsReferenceLabel = p.statsCollectedAt
+        ? `<${formatCompactKoreanDate(p.statsCollectedAt)} 기준>`
+        : null;
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -277,10 +281,22 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     
                                     if (isMovie) {
                                         if (p.reservationRate) {
-                                            infoItems.push({ icon: BarChart3, label: '예매율', text: p.reservationRate, color: 'text-rose-500' });
+                                            infoItems.push({
+                                                icon: BarChart3,
+                                                label: '예매율',
+                                                text: p.reservationRate,
+                                                color: 'text-rose-500',
+                                                rightText: movieStatsReferenceLabel
+                                            });
                                         }
                                         if (p.audienceCount) {
-                                            infoItems.push({ icon: Users, label: '관객수', text: p.audienceCount, color: 'text-blue-400' });
+                                            infoItems.push({
+                                                icon: Users,
+                                                label: '관객수',
+                                                text: p.audienceCount,
+                                                color: 'text-blue-400',
+                                                rightText: movieStatsReferenceLabel
+                                            });
                                         }
                                         if ((p as any).budgetKRW) {
                                             const formatted = new Intl.NumberFormat('ko-KR').format((p as any).budgetKRW);
@@ -414,20 +430,29 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 </div>
                                                 <div className="flex flex-col gap-1 flex-1 min-w-0">
                                                     {item.isLink ? (
-                                                        <button 
-                                                            onClick={item.onClick!}
-                                                            className="text-[14.5px] text-emerald-600 dark:text-emerald-400 font-extrabold text-left hover:underline flex items-center gap-1.5"
-                                                        >
-                                                            <span className="break-all">{item.text}</span>
-                                                            <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
-                                                        </button>
+                                                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                                            <button
+                                                                onClick={item.onClick!}
+                                                                className="text-[14.5px] text-emerald-600 dark:text-emerald-400 font-extrabold text-left hover:underline flex items-center gap-1.5"
+                                                            >
+                                                                <span className="break-all">{item.text}</span>
+                                                                <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
+                                                            </button>
+                                                            {item.rightText && (
+                                                                <span className="text-[12px] font-bold text-gray-400 dark:text-gray-500">
+                                                                    {item.rightText}
+                                                                </span>
+                                                            )}
+                                                        </div>
                                                     ) : (
-                                                        <p className="text-[14.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap">{item.text}</p>
-                                                    )}
-                                                    {item.rightText && (
-                                                        <span className="text-[12px] font-bold text-gray-400 dark:text-gray-500">
-                                                            {item.rightText}
-                                                        </span>
+                                                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                                            <p className="text-[14.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap">{item.text}</p>
+                                                            {item.rightText && (
+                                                                <span className="text-[12px] font-bold text-gray-400 dark:text-gray-500">
+                                                                    {item.rightText}
+                                                                </span>
+                                                            )}
+                                                        </div>
                                                     )}
                                                 </div>
                                             </div>

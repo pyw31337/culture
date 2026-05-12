@@ -114,6 +114,9 @@ export function safePerformance(data: any): Performance | null {
         revenue: (data.revenue !== undefined && data.revenue !== null) ? String(data.revenue) : undefined,
         budgetKRW: (data.budgetKRW !== undefined && data.budgetKRW !== null) ? String(data.budgetKRW) : undefined,
         revenueKRW: (data.revenueKRW !== undefined && data.revenueKRW !== null) ? String(data.revenueKRW) : undefined,
+        statsCollectedAt: typeof data.statsCollectedAt === 'string'
+            ? data.statsCollectedAt
+            : (typeof data.lastCollected === 'string' ? data.lastCollected : undefined),
     };
 }
 

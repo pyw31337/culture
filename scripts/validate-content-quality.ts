@@ -51,6 +51,13 @@ function main() {
         errors.push(`복구 경로 없는 영화 이미지 누락 ${qualitySummary.movieBrokenImageCount}건`);
     }
 
+    const movieWrongFallbackCount = items.filter(
+        (item) => item.genre === 'movie' && item.image === '/images/kbo-thumbnail.png'
+    ).length;
+    if (movieWrongFallbackCount > 0) {
+        errors.push(`영화에 야구 썸네일 fallback 사용 ${movieWrongFallbackCount}건`);
+    }
+
     console.log(`[quality] total items: ${items.length}`);
     console.warn(`[quality][warn] 장르별 링크 누락: ${JSON.stringify(qualitySummary.warningsByGenre.missingLinks)}`);
     console.warn(`[quality][warn] 장르별 텍스트 누락: ${JSON.stringify(qualitySummary.warningsByGenre.missingDescriptions)}`);

@@ -24,6 +24,11 @@ type VenueRecord = {
     name?: string;
 } & Record<string, unknown>;
 
+type MovieCatalogItem = Performance & {
+    lastCollected?: string;
+    posterFallback?: boolean;
+};
+
 const GENRE_LABELS: Record<string, string> = {
     movie: '영화',
     musical: '뮤지컬',
@@ -52,7 +57,7 @@ const FALLBACK_IMAGES: Record<string, string> = {
     exhibition: '/images/fallbacks/exhibition.jpg',
     classic_tradition: '/images/fallbacks/classic.jpg',
     activity: '/images/fallbacks/activity.jpg',
-    movie: '/images/kbo-thumbnail.png',
+    movie: '/images/fallbacks/movie.svg',
     default: '/images/placeholder.png'
 };
 
@@ -73,6 +78,20 @@ function hasUsableLink(value?: string) {
     return Boolean(value && value.trim() && value.trim() !== '#');
 }
 
+function hasLocalAsset(assetPath?: string) {
+    if (!assetPath || !assetPath.startsWith('/')) return false;
+    const normalized = assetPath.replace(/^\/+/, '');
+    return fs.existsSync(path.join(process.cwd(), 'public', normalized));
+}
+
+function isMovieFallbackImage(image?: string) {
+    return image === '/images/kbo-thumbnail.png' || image === FALLBACK_IMAGES.movie;
+}
+
+function isBrokenLocalAssetPath(assetPath?: string) {
+    return Boolean(assetPath && assetPath.startsWith('/') && !hasLocalAsset(assetPath));
+}
+
 function getRemoteImageCandidate(performance: Performance) {
     const candidates = [performance.backupPoster, performance.posterUrl, performance.image];
     return candidates.find((candidate) => typeof candidate === 'string' && candidate.startsWith('http'));
@@ -88,6 +107,98 @@ function getSiblingQualityScore(performance: Performance) {
     if (compactText(performance.address)) score += 1;
 
     return score;
+}
+
+function loadMovieCatalog(): MovieCatalogItem[] {
+    const candidates = [
+        path.join(process.cwd(), 'src', 'data', 'movies.json'),
+        path.join(process.cwd(), 'public', 'data', 'movies.json'),
+    ];
+
+    for (const candidate of candidates) {
+        if (!fs.existsSync(candidate)) continue;
+
+        try {
+            const parsed = JSON.parse(fs.readFileSync(candidate, 'utf8'));
+            if (Array.isArray(parsed)) {
+                return parsed as MovieCatalogItem[];
+            }
+        } catch {
+            // Try the next candidate.
+        }
+    }
+
+    return [];
+}
+
+function rehydrateMoviesFromCatalog(items: Performance[]) {
+    const catalog = loadMovieCatalog();
+    if (catalog.length === 0) return;
+
+    const byId = new Map<string, MovieCatalogItem>();
+    const byTitle = new Map<string, MovieCatalogItem>();
+
+    catalog.forEach((movie) => {
+        if (movie.id) byId.set(movie.id, movie);
+
+        const titleKey = compactText(movie.title);
+        if (titleKey) byTitle.set(titleKey, movie);
+    });
+
+    items.forEach((performance) => {
+        if (performance.genre !== 'movie') return;
+
+        const catalogItem =
+            byId.get(performance.id) ||
+            byTitle.get(compactText(performance.title));
+
+        if (!catalogItem) return;
+
+        const catalogBackupPoster = typeof catalogItem.backupPoster === 'string' ? catalogItem.backupPoster : undefined;
+        const catalogPosterUrl = typeof catalogItem.posterUrl === 'string' ? catalogItem.posterUrl : undefined;
+        const catalogImage = typeof catalogItem.image === 'string' ? catalogItem.image : undefined;
+        const catalogStatsCollectedAt =
+            typeof catalogItem.statsCollectedAt === 'string'
+                ? catalogItem.statsCollectedAt
+                : (typeof catalogItem.lastCollected === 'string' ? catalogItem.lastCollected : undefined);
+
+        if (!performance.reservationRate && catalogItem.reservationRate) {
+            performance.reservationRate = catalogItem.reservationRate;
+        }
+        if (!performance.audienceCount && catalogItem.audienceCount) {
+            performance.audienceCount = catalogItem.audienceCount;
+        }
+        if (!performance.statsCollectedAt && catalogStatsCollectedAt) {
+            performance.statsCollectedAt = catalogStatsCollectedAt;
+        }
+        if (!hasUsableLink(performance.link) && hasUsableLink(catalogItem.link)) {
+            performance.link = catalogItem.link;
+        }
+
+        if (!performance.backupPoster && catalogBackupPoster) {
+            performance.backupPoster = catalogBackupPoster;
+        }
+        if (!performance.posterUrl && catalogPosterUrl) {
+            performance.posterUrl = catalogPosterUrl;
+        }
+
+        const shouldUseCatalogImage =
+            !performance.image ||
+            isMovieFallbackImage(performance.image) ||
+            isBrokenLocalAssetPath(performance.image);
+
+        if (shouldUseCatalogImage && catalogImage) {
+            performance.image = catalogImage;
+        }
+
+        if (
+            isBrokenLocalAssetPath(performance.image) &&
+            !performance.backupPoster &&
+            catalogBackupPoster
+        ) {
+            performance.backupPoster = catalogBackupPoster;
+        }
+    });
 }
 
 function enrichFromSiblingItems(items: Performance[]) {
@@ -126,11 +237,14 @@ function enrichFromSiblingItems(items: Performance[]) {
 
 function repairBrokenLocalImages(items: Performance[]) {
     items.forEach((performance) => {
-        if (!performance.image || !performance.image.startsWith('/')) return;
+        if (performance.genre === 'movie' && isMovieFallbackImage(performance.image)) {
+            const remoteCandidate = getRemoteImageCandidate(performance);
+            performance.image = remoteCandidate || FALLBACK_IMAGES.movie;
+            return;
+        }
 
-        const normalized = performance.image.replace(/^\/+/, '');
-        const absolutePath = path.join(process.cwd(), 'public', normalized);
-        if (fs.existsSync(absolutePath)) return;
+        if (!performance.image || !performance.image.startsWith('/')) return;
+        if (hasLocalAsset(performance.image)) return;
 
         const remoteCandidate = getRemoteImageCandidate(performance);
         if (remoteCandidate) {
@@ -504,6 +618,7 @@ async function generate() {
             }
         });
         enrichFromSiblingItems(activePerformances);
+        rehydrateMoviesFromCatalog(activePerformances);
         repairMissingLinks(activePerformances);
         repairBrokenLocalImages(activePerformances);
 

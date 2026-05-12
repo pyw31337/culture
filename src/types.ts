@@ -77,4 +77,5 @@ export type Performance = {
     synopsisImages?: string[];
     trailer?: string;
     status?: string;
+    statsCollectedAt?: string;
 };
