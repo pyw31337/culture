@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2, MapPin, Heart } from 'lucide-react';
+import type { FavoriteVenuePreference } from '@/types';
 import Portal from './ui/Portal';
 
 interface FavoriteVenuesModalProps {
     isOpen: boolean;
     onClose: () => void;
-    favoriteVenues: string[];
-    onRemove: (venueName: string) => void;
-    onVenueClick: (venueName: string) => void;
+    favoriteVenues: FavoriteVenuePreference[];
+    onRemove: (favoriteVenue: FavoriteVenuePreference) => void;
+    onVenueClick: (favoriteVenue: FavoriteVenuePreference) => void;
 }
 
 const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenueClick }: FavoriteVenuesModalProps) => {
@@ -63,9 +64,9 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                 <div className="overflow-y-auto p-4 flex-1">
                                     {favoriteVenues.length > 0 ? (
                                         <div className="space-y-3">
-                                            {favoriteVenues.map((venueName) => (
+                                            {favoriteVenues.map((favoriteVenue) => (
                                                 <motion.div
-                                                    key={venueName}
+                                                    key={favoriteVenue.id}
                                                     layout
                                                     initial={{ opacity: 0, x: -20 }}
                                                     animate={{ opacity: 1, x: 0 }}
@@ -76,15 +77,22 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                                         <div className="p-2 rounded-xl bg-pink-500/20 text-pink-400 shrink-0">
                                                             <MapPin size={18} />
                                                         </div>
-                                                        <button
-                                                            onClick={() => onVenueClick(venueName)}
-                                                            className="text-gray-200 font-semibold truncate text-left hover:underline decoration-pink-400 decoration-2 underline-offset-4"
-                                                        >
-                                                            {venueName}
-                                                        </button>
+                                                        <div className="min-w-0">
+                                                            <button
+                                                                onClick={() => onVenueClick(favoriteVenue)}
+                                                                className="text-gray-200 font-semibold truncate text-left hover:underline decoration-pink-400 decoration-2 underline-offset-4 block"
+                                                            >
+                                                                {favoriteVenue.venueName}
+                                                            </button>
+                                                            {favoriteVenue.address ? (
+                                                                <p className="text-[11px] text-gray-500 mt-1 truncate">
+                                                                    {favoriteVenue.address}
+                                                                </p>
+                                                            ) : null}
+                                                        </div>
                                                     </div>
                                                     <button
-                                                        onClick={() => onRemove(venueName)}
+                                                        onClick={() => onRemove(favoriteVenue)}
                                                         className="p-2 rounded-full text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all shrink-0 ml-2"
                                                         title="목록에서 삭제"
                                                     >

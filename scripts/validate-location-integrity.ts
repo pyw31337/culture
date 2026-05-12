@@ -29,14 +29,24 @@ function main() {
     console.log(`- raw venue/address 충돌: ${report.rawMismatchCount}건`);
     console.log(`- 고신뢰 충돌: ${report.highConfidenceMismatchCount}건`);
     console.log(`- 해석 후 잔존 충돌: ${report.resolvedMismatchCount}건`);
-    console.log(`- 다지역 venue 이름 충돌: ${report.ambiguousVenueCount}건`);
+    console.log(`- 원본 venue 이름 충돌 참고: ${report.rawAmbiguousVenueNameCount}건`);
+    console.log(`- canonical venue 충돌: ${report.ambiguousVenueCount}건`);
 
-    if (report.ambiguousVenueCount > 0) {
-        console.warn('⚠️ 다지역 venue 이름 충돌 상위 샘플:');
-        report.topAmbiguousVenues.slice(0, 10).forEach((entry) => {
+    if (report.rawAmbiguousVenueNameCount > 0) {
+        console.warn('ℹ️ 원본 venue 이름 충돌 상위 샘플:');
+        report.topRawAmbiguousVenueNames.slice(0, 10).forEach((entry) => {
             const labels = entry.locations.map((location) => `${location.displayLabel} (${location.count}건)`).join(', ');
             console.warn(`- ${entry.venue}: ${labels}`);
         });
+    }
+
+    if (report.ambiguousVenueCount > 0) {
+        console.error('❌ canonical venue 기준으로도 여러 위치가 남아 있습니다.');
+        report.topAmbiguousVenues.slice(0, 10).forEach((entry) => {
+            const labels = entry.locations.map((location) => `${location.displayLabel} (${location.count}건)`).join(', ');
+            console.error(`- ${entry.venue}: ${labels}`);
+        });
+        process.exit(1);
     }
 
     if (report.resolvedMismatchCount > 0) {

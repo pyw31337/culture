@@ -1,4 +1,4 @@
-import { buildPerformanceLocationKey, getPerformanceLocationLabel, isSevereAddressMismatch, resolveVenueInfoForPerformance } from '../../src/lib/location-display';
+import { buildPerformanceLocationKey, getPerformanceLocationLabel, getPerformanceVenueKey, isSevereAddressMismatch, resolveVenueInfoForPerformance } from '../../src/lib/location-display';
 import type { Performance } from '../../src/types';
 
 type VenueRecord = Record<string, {
@@ -17,6 +17,7 @@ type LocationAuditRow = {
     genre: string;
     source?: string;
     venue: string;
+    venueKey: string;
     performanceAddress: string;
     venueDictionaryAddress: string;
     resolvedAddress: string;
@@ -54,6 +55,7 @@ export function buildLocationIntegrityReport(
                 genre: performance.genre,
                 source: performance.source,
                 venue: performance.venue,
+                venueKey: performance.venueKey || getPerformanceVenueKey(performance, venues),
                 performanceAddress: performance.address || '',
                 venueDictionaryAddress: venues[performance.venue]?.address || '',
                 resolvedAddress: resolved.address || '',
@@ -86,7 +88,40 @@ export function buildLocationIntegrityReport(
         venueGroups.set(row.venue, group);
     });
 
-    const ambiguousVenues = Array.from(venueGroups.entries())
+    const rawAmbiguousVenues = Array.from(venueGroups.entries())
+        .map(([venue, rows]) => {
+            const locationGroups = new Map<string, LocationAuditRow[]>();
+            rows.forEach((row) => {
+                const group = locationGroups.get(row.locationKey) || [];
+                group.push(row);
+                locationGroups.set(row.locationKey, group);
+            });
+
+            return {
+                venue,
+                locationCount: locationGroups.size,
+                locations: Array.from(locationGroups.values()).map((group) => ({
+                    displayLabel: group[0]?.displayLabel || group[0]?.resolvedAddress || venue,
+                    resolvedAddress: group[0]?.resolvedAddress || '',
+                    count: group.length,
+                    samples: group.slice(0, 3).map((row) => ({
+                        id: row.id,
+                        title: row.title,
+                    })),
+                })),
+            };
+        })
+        .filter((row) => row.locationCount > 1)
+        .sort((left, right) => right.locationCount - left.locationCount || right.locations.reduce((sum, item) => sum + item.count, 0) - left.locations.reduce((sum, item) => sum + item.count, 0));
+
+    const canonicalVenueGroups = new Map<string, LocationAuditRow[]>();
+    highConfidenceRows.forEach((row) => {
+        const group = canonicalVenueGroups.get(row.venueKey) || [];
+        group.push(row);
+        canonicalVenueGroups.set(row.venueKey, group);
+    });
+
+    const canonicalAmbiguousVenues = Array.from(canonicalVenueGroups.entries())
         .map(([venue, rows]) => {
             const locationGroups = new Map<string, LocationAuditRow[]>();
             rows.forEach((row) => {
@@ -118,10 +153,12 @@ export function buildLocationIntegrityReport(
         rawMismatchCount: rawMismatchRows.length,
         highConfidenceMismatchCount: highConfidenceRows.length,
         resolvedMismatchCount: resolvedMismatchRows.length,
-        ambiguousVenueCount: ambiguousVenues.length,
+        rawAmbiguousVenueNameCount: rawAmbiguousVenues.length,
+        ambiguousVenueCount: canonicalAmbiguousVenues.length,
         highConfidenceBySource: Object.entries(bySource).sort((a, b) => b[1] - a[1]),
         topHighRiskVenues: Object.entries(byVenue).sort((a, b) => b[1] - a[1]).slice(0, 20),
-        topAmbiguousVenues: ambiguousVenues.slice(0, 20),
+        topRawAmbiguousVenueNames: rawAmbiguousVenues.slice(0, 20),
+        topAmbiguousVenues: canonicalAmbiguousVenues.slice(0, 20),
         samples: highConfidenceRows.slice(0, 50),
         unresolvedSamples: resolvedMismatchRows.slice(0, 20),
     };

@@ -145,6 +145,8 @@ function mergeItems(a: any, b: any): any {
     if (!merged.latitude && loser.latitude) merged.latitude = loser.latitude;
     if (!merged.longitude && loser.longitude) merged.longitude = loser.longitude;
     if (!merged.contact && loser.contact) merged.contact = loser.contact;
+    if (!merged.venueKey && loser.venueKey) merged.venueKey = loser.venueKey;
+    if (!merged.locationKey && loser.locationKey) merged.locationKey = loser.locationKey;
 
     // Poster/Image
     // If winner has no valid image, try loser's

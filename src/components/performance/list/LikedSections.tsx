@@ -2,14 +2,14 @@ import React from 'react';
 import { Heart, MapPin } from 'lucide-react';
 import PerformanceGrid from '../PerformanceGrid';
 import ImageWithFallback from '../../ImageWithFallback';
-import { Performance } from '@/types';
-import { getRepresentativeVenueInfoForName } from '@/lib/location-display';
+import { FavoriteVenuePreference, Performance } from '@/types';
+import { getRepresentativeVenueInfoForFavorite } from '@/lib/favorite-venues';
 
 interface LikedSectionsProps {
     viewMode: string;
     allPerformances: Performance[];
     likedIds: string[];
-    favoriteVenues: string[];
+    favoriteVenues: FavoriteVenuePreference[];
     venues: Record<string, any>;
     onToggleLike: (id: string, e: any) => void;
     onDetailOpen: (perf: Performance) => void;
@@ -98,20 +98,28 @@ export const LikedSections = ({
                 </div>
                 {favoriteVenues.length > 0 ? (
                     <div className="space-y-6 text-white light:text-black">
-                        {favoriteVenues.map((venueName) => {
-                            const venuePerfs = allPerformances.filter(p => p.venue === venueName);
+                        {favoriteVenues.map((favoriteVenue) => {
+                            const venuePerfs = allPerformances.filter((performance) => {
+                                if (favoriteVenue.locationKey && performance.locationKey) {
+                                    return performance.locationKey === favoriteVenue.locationKey;
+                                }
+                                if (favoriteVenue.venueKey && performance.venueKey) {
+                                    return performance.venueKey === favoriteVenue.venueKey;
+                                }
+                                return performance.venue === favoriteVenue.venueName;
+                            });
                             return (
-                                <div key={venueName}>
+                                <div key={favoriteVenue.id}>
                                     <button
                                         onClick={() => {
-                                            const vData = getRepresentativeVenueInfoForName(venueName, venuePerfs, venues);
-                                            onSetSearchLocation({ lat: vData?.lat || 0, lng: vData?.lng || 0, name: venueName });
+                                            const vData = getRepresentativeVenueInfoForFavorite(favoriteVenue, venuePerfs, venues);
+                                            onSetSearchLocation({ lat: vData?.lat || 0, lng: vData?.lng || 0, name: favoriteVenue.venueName });
                                             setIsMapOpen(true);
                                         }}
                                         className="flex items-center gap-2 mb-2 text-pink-300 light:text-pink-600 hover:text-pink-200 transition-colors"
                                     >
                                         <MapPin size={14} />
-                                        <span className="font-semibold text-sm">{venueName}</span>
+                                        <span className="font-semibold text-sm">{favoriteVenue.venueName}</span>
                                         <span className="text-xs text-gray-500">({venuePerfs.length}건)</span>
                                     </button>
                                     {venuePerfs.length > 0 ? (

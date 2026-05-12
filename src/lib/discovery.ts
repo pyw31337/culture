@@ -1,5 +1,6 @@
-import type { DiscoveryContextId, Performance } from '@/types';
+import type { DiscoveryContextId, FavoriteVenuePreference, Performance } from '@/types';
 import type { DataBuildInfo } from '@/lib/build-info';
+import { favoriteVenueMatchesIdentity } from './favorite-venues';
 import { findMatchedKeyword } from './keyword-match';
 import { extractFirstPrice } from './utils';
 import {
@@ -19,7 +20,7 @@ interface DiscoveryActivity {
 
 interface DiscoverySignals {
     likedIds: string[];
-    favoriteVenues: string[];
+    favoriteVenues: FavoriteVenuePreference[];
     savedKeywords: string[];
     activity: DiscoveryActivity;
     buildInfo?: DataBuildInfo | null;
@@ -240,9 +241,16 @@ export function decoratePerformanceForDiscovery(
     referenceDate: Date = getKoreanReferenceDate()
 ): Performance {
     const matchedKeyword = findMatchedKeyword(performance, signals.savedKeywords);
+    const isFavoriteVenue = signals.favoriteVenues.some((favoriteVenue) =>
+        favoriteVenueMatchesIdentity(favoriteVenue, {
+            venueName: performance.venue,
+            venueKey: performance.venueKey,
+            locationKey: performance.locationKey,
+        })
+    );
     const recommendationReasons = dedupeTags([
         matchedKeyword ? `#${matchedKeyword}` : null,
-        signals.favoriteVenues.includes(performance.venue) ? '찜한 공연장' : null,
+        isFavoriteVenue ? '찜한 공연장' : null,
         (genreAffinityWeights[performance.genre] || 0) >= 4 ? '자주 보는 장르' : null,
         isToday(performance, referenceDate) ? '오늘 보기 좋아요' : null,
         isThisWeekend(performance, referenceDate) ? '이번 주말' : null,
@@ -286,7 +294,13 @@ export function buildPersonalizedRecommendations(
 
     const scored = ranked.map((performance) => {
         const matchedKeyword = findMatchedKeyword(performance, signals.savedKeywords);
-        const favoriteVenueBoost = signals.favoriteVenues.includes(performance.venue) ? 18 : 0;
+        const favoriteVenueBoost = signals.favoriteVenues.some((favoriteVenue) =>
+            favoriteVenueMatchesIdentity(favoriteVenue, {
+                venueName: performance.venue,
+                venueKey: performance.venueKey,
+                locationKey: performance.locationKey,
+            })
+        ) ? 18 : 0;
         const keywordBoost = matchedKeyword ? 24 : 0;
         const genreBoost = (genreAffinityWeights[performance.genre] || 0) * 4;
         const recencyBoost = isToday(performance, referenceDate) ? 20 : isThisWeekend(performance, referenceDate) ? 14 : 0;
@@ -296,7 +310,8 @@ export function buildPersonalizedRecommendations(
         const basedOnLikedVenue = signals.likedIds.reduce((score, id) => {
             const liked = performanceById.get(id);
             if (!liked) return score;
-            return liked.venue === performance.venue ? score + 6 : score;
+            const sameVenueIdentity = (liked.locationKey || liked.venueKey || liked.venue) === (performance.locationKey || performance.venueKey || performance.venue);
+            return sameVenueIdentity ? score + 6 : score;
         }, 0);
 
         return {
@@ -325,7 +340,8 @@ export function buildPersonalizedRecommendations(
         if (seen.has(performance.id)) continue;
 
         const sameGenreCount = genreCounts.get(performance.genre) || 0;
-        const sameVenueCount = venueCounts.get(performance.venue) || 0;
+        const venueIdentity = performance.locationKey || performance.venueKey || performance.venue;
+        const sameVenueCount = venueCounts.get(venueIdentity) || 0;
 
         if (selected.length < 6 && sameGenreCount >= 2) continue;
         if (selected.length < 6 && sameVenueCount >= 1) continue;
@@ -333,7 +349,7 @@ export function buildPersonalizedRecommendations(
         selected.push(performance);
         seen.add(performance.id);
         genreCounts.set(performance.genre, sameGenreCount + 1);
-        venueCounts.set(performance.venue, sameVenueCount + 1);
+        venueCounts.set(venueIdentity, sameVenueCount + 1);
     }
 
     if (selected.length < limit) {

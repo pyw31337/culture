@@ -10,6 +10,11 @@ type VenueLike = {
     name?: string;
 };
 
+type VenueEntryMatch = {
+    key: string;
+    venue: VenueLike;
+};
+
 const REGION_ALIASES: Record<string, string> = {
     서울특별시: '서울',
     서울시: '서울',
@@ -118,7 +123,7 @@ export function isSevereAddressMismatch(left?: string, right?: string) {
 function findRegionalVenueMatch(
     performance: Pick<Performance, 'venue' | 'address' | 'bracketRegion'>,
     venues: Record<string, VenueLike>
-) {
+): VenueEntryMatch | undefined {
     const bracketRegion = normalizeWhitespace(performance.bracketRegion);
     const performanceAddress = sanitizeAddress(performance.address);
     const cleanVenueName = normalizeWhitespace(performance.venue);
@@ -135,30 +140,75 @@ function findRegionalVenueMatch(
         })
         : undefined;
 
-    if (byBracket) return byBracket[1];
+    if (byBracket) {
+        return {
+            key: byBracket[0],
+            venue: byBracket[1],
+        };
+    }
 
     if (performanceAddress) {
         const [perfRegion, perfDistrict] = extractAddressTokens(performanceAddress);
-        return venueEntries.find(([, venue]) => {
+        const addressMatch = venueEntries.find(([key, venue]) => {
             const address = sanitizeAddress(venue.address);
             const [venueRegion, venueDistrict] = extractAddressTokens(address);
             if (!venueRegion) return false;
             if (perfRegion && perfRegion !== venueRegion) return false;
             if (perfDistrict && venueDistrict && perfDistrict !== venueDistrict) return false;
             return true;
-        })?.[1];
+        });
+
+        if (addressMatch) {
+            return {
+                key: addressMatch[0],
+                venue: addressMatch[1],
+            };
+        }
     }
 
     return undefined;
+}
+
+function resolveVenueEntryForPerformance(
+    performance: Pick<Performance, 'venue' | 'address' | 'bracketRegion'>,
+    venues: Record<string, VenueLike>
+) {
+    const cleanVenueName = normalizeWhitespace(performance.venue);
+    const bracketRegion = normalizeWhitespace(performance.bracketRegion);
+    const performanceAddress = sanitizeAddress(performance.address);
+    const [perfRegion] = extractAddressTokens(performanceAddress);
+    const exactMatch = cleanVenueName && venues[cleanVenueName]
+        ? { key: cleanVenueName, venue: venues[cleanVenueName] }
+        : undefined;
+    const regionalMatch = findRegionalVenueMatch(performance, venues);
+    const preferredMatch = regionalMatch || exactMatch;
+    const fallbackRegionalKey =
+        cleanVenueName && (bracketRegion || perfRegion) && (
+            !exactMatch ||
+            isSevereAddressMismatch(performanceAddress, sanitizeAddress(exactMatch.venue.address))
+        )
+            ? `${cleanVenueName} [${bracketRegion || perfRegion}]`
+            : '';
+    const shouldPreferDerivedRegionalKey = !regionalMatch && Boolean(fallbackRegionalKey);
+
+    return {
+        venueKey: regionalMatch?.key || (shouldPreferDerivedRegionalKey ? fallbackRegionalKey : exactMatch?.key) || cleanVenueName || 'unknown-venue',
+        preferredVenue: preferredMatch?.venue || {},
+    };
+}
+
+export function getPerformanceVenueKey(
+    performance: Pick<Performance, 'venue' | 'address' | 'bracketRegion'>,
+    venues: Record<string, VenueLike>
+) {
+    return resolveVenueEntryForPerformance(performance, venues).venueKey;
 }
 
 export function resolveVenueInfoForPerformance(
     performance: Pick<Performance, 'venue' | 'address' | 'lat' | 'lng' | 'latitude' | 'longitude' | 'bracketRegion'>,
     venues: Record<string, VenueLike>
 ): VenueLike {
-    const baseVenue = performance.venue ? venues[performance.venue] : undefined;
-    const regionalVenue = findRegionalVenueMatch(performance, venues);
-    const preferredVenue = regionalVenue || baseVenue || {};
+    const { preferredVenue } = resolveVenueEntryForPerformance(performance, venues);
 
     const performanceLat = parseCoordinate(performance.lat ?? performance.latitude);
     const performanceLng = parseCoordinate(performance.lng ?? performance.longitude);
@@ -190,21 +240,21 @@ export function buildPerformanceLocationKey(
     performance: Pick<Performance, 'venue' | 'address' | 'lat' | 'lng' | 'latitude' | 'longitude' | 'bracketRegion'>,
     venues: Record<string, VenueLike>
 ) {
+    const venueKey = getPerformanceVenueKey(performance, venues);
     const resolvedVenue = resolveVenueInfoForPerformance(performance, venues);
-    const venueName = normalizeWhitespace(performance.venue) || normalizeWhitespace(resolvedVenue.name) || 'unknown-venue';
     const lat = parseCoordinate(resolvedVenue.lat ?? resolvedVenue.latitude);
     const lng = parseCoordinate(resolvedVenue.lng ?? resolvedVenue.longitude);
 
     if (lat && lng) {
-        return `${venueName}::${lat.toFixed(5)},${lng.toFixed(5)}`;
+        return `${venueKey}::${lat.toFixed(5)},${lng.toFixed(5)}`;
     }
 
     const addressKey = normalizeAddressFingerprint(resolvedVenue.address);
     if (addressKey) {
-        return `${venueName}::${addressKey}`;
+        return `${venueKey}::${addressKey}`;
     }
 
-    return venueName;
+    return venueKey;
 }
 
 export function getRepresentativeVenueInfoForName(
