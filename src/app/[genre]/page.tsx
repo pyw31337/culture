@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { VALID_GENRE_SLUGS, GENRES } from '@/lib/constants';
 import { getAllPerformances, getDataBuildInfo, getLastUpdatedLabel } from '@/lib/performance-data';
 import { buildGenreCounts, getAvailableGenreSlugs, getGenreCount, getGenreFilterFromSlug, isGenreAvailable } from '@/lib/genre-availability';
+import { sortPerformancesForCategoryFeed } from '@/lib/performance-filter';
 
 function getGenreCounts() {
     const buildInfo = getDataBuildInfo();
@@ -27,6 +28,11 @@ async function getPerformances(genreFilter: string | string[] | null) {
 
         return p.genre === genreFilter;
     });
+
+    const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
+    if (typeof genreFilter === 'string' && genreFilter !== 'movie' && !sportsGenres.includes(genreFilter)) {
+        return sortPerformancesForCategoryFeed(filtered);
+    }
 
     return filtered;
 }

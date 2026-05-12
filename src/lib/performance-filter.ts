@@ -1,7 +1,7 @@
 
 import { Performance } from '@/types';
 import { isChoseongMatch } from './hangul';
-import { GENRES, REGIONS } from './constants';
+import { REGIONS } from './constants';
 import venueData from '@/data/venues.json';
 import { getDistanceFromLatLonInKm } from './utils';
 
@@ -228,10 +228,10 @@ function getFeedScore(performance: Performance, referenceDate: Date) {
     return score;
 }
 
-export function sortPerformancesForHomeFeed(performances: Performance[]) {
-    const referenceDate = getKoreanReferenceDate();
+function rankPerformancesByDiscoveryScore(performances: Performance[], referenceDate: Date) {
     const salt = getKoreanDaySalt(referenceDate);
-    const ranked = [...performances].sort((a, b) => {
+
+    return [...performances].sort((a, b) => {
         const scoreA = getFeedScore(a, referenceDate);
         const scoreB = getFeedScore(b, referenceDate);
         if (scoreA !== scoreB) return scoreB - scoreA;
@@ -248,6 +248,11 @@ export function sortPerformancesForHomeFeed(performances: Performance[]) {
 
         return a.title.localeCompare(b.title, 'ko');
     });
+}
+
+export function sortPerformancesForHomeFeed(performances: Performance[]) {
+    const referenceDate = getKoreanReferenceDate();
+    const ranked = rankPerformancesByDiscoveryScore(performances, referenceDate);
 
     const earlyWindow = 36;
     const selected: Performance[] = [];
@@ -290,6 +295,11 @@ export function sortPerformancesForHomeFeed(performances: Performance[]) {
 
     const remainder = ranked.filter((item) => !selectedIds.has(item.id));
     return [...selected, ...remainder];
+}
+
+export function sortPerformancesForCategoryFeed(performances: Performance[]) {
+    const referenceDate = getKoreanReferenceDate();
+    return rankPerformancesByDiscoveryScore(performances, referenceDate);
 }
 
 export function getFeaturedPerformances(performances: Performance[], limit = 18) {
@@ -488,7 +498,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
 export function sortPerformances(performances: Performance[], genre: string, searchText: string = ''): Performance[] {
     // 1. Sort copies of array
-    let sorted = [...performances];
+    const sorted = [...performances];
     const cleanSearch = searchText.replace(/\s+/g, '').toLowerCase().normalize('NFC');
 
     // Sports: Strict Date DESC Sort (Newest First)

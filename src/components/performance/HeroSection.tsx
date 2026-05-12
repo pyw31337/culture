@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { clsx } from 'clsx';
-import { ChevronDown, ChevronUp, RotateCcw, Search, X, Star, MapPin, Clock, TrendingUp } from 'lucide-react';
+import { ChevronDown, RotateCcw, Search, X, Star, MapPin, Clock, TrendingUp } from 'lucide-react';
 import { TypingHero } from './TypingHero';
 import { LocationSelector } from '../LocationSelector';
-import { HeroTemplate, HERO_TEMPLATES } from '../../lib/hero-templates';
-import { REGIONS, RADIUS_OPTIONS } from '../../lib/constants';
+import { HeroTemplate } from '../../lib/hero-templates';
+import { REGIONS } from '../../lib/constants';
 
 interface HeroSectionProps {
     heroText: HeroTemplate;
@@ -106,6 +106,7 @@ export default function HeroSection({
 
     // Handle scroll to sync animation
     const [isAtTop, setIsAtTop] = useState(true);
+    const [localHeroCycle, setLocalHeroCycle] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -115,6 +116,11 @@ export default function HeroSection({
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleHeroCycle = useCallback(() => {
+        setLocalHeroCycle((prev) => prev + 1);
+        onCycle();
+    }, [onCycle]);
 
     // Handle click outside to close search dropdown
     useEffect(() => {
@@ -136,6 +142,7 @@ export default function HeroSection({
     const currentTemplate = useMemo(() => {
         const now = new Date();
         const minuteSeed = now.getMinutes();
+        const rotationSeed = minuteSeed + localHeroCycle;
         const hour = now.getHours();
         const day = now.getDay();
         const month = now.getMonth() + 1;
@@ -171,8 +178,8 @@ export default function HeroSection({
             { line1: "자주 가는 그곳,", line2Pre: "새 ", highlight: "컨텐츠", suffix: "가 기다리고 있을지도요." }
         ];
 
-        const perfMsg = likesPerfMessages[minuteSeed % likesPerfMessages.length];
-        const venueMsg = likesVenueMessages[minuteSeed % likesVenueMessages.length];
+        const perfMsg = likesPerfMessages[rotationSeed % likesPerfMessages.length];
+        const venueMsg = likesVenueMessages[rotationSeed % likesVenueMessages.length];
 
         // Category-specific emotional messages with boldPrefix
         const genreMessages: Record<string, any[]> = {
@@ -241,7 +248,7 @@ export default function HeroSection({
         };
 
         const genreMsg = selectedGenre !== 'all' && genreMessages[selectedGenre]
-            ? genreMessages[selectedGenre][minuteSeed % genreMessages[selectedGenre].length]
+            ? genreMessages[selectedGenre][rotationSeed % genreMessages[selectedGenre].length]
             : null;
 
         if (viewMode === 'likes-perf') {
@@ -257,7 +264,7 @@ export default function HeroSection({
                 { line1: "궁금해하신 정보,", line2Pre: "", highlight: `"${cleanSearch}"`, suffix: " 키워드로 모아봤어요." },
                 { line1: "원하시는 그곳,", line2Pre: "", highlight: `"${cleanSearch}"`, suffix: " 관련 소식을 전해드려요." }
             ];
-            return { ...searchMsgs[minuteSeed % searchMsgs.length], keywords: [] } as HeroTemplate;
+            return { ...searchMsgs[rotationSeed % searchMsgs.length], keywords: [] } as HeroTemplate;
         } else if (selectedRegion !== 'all' || selectedVenue !== 'all') {
             const regionName = selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label : '';
             const locationString = `${regionName || ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim();
@@ -267,11 +274,11 @@ export default function HeroSection({
                 { line1: "지금,", boldPrefix: locationString, line2Pre: " 주변의 ", highlight: "핫한 무대", suffix: "를 확인해보세요." },
                 { line1: "우리 동네,", boldPrefix: locationString, line2Pre: " 숨은 ", highlight: "문화 예술", suffix: "을 찾아줄게요." }
             ];
-            return { ...locationMsgs[minuteSeed % locationMsgs.length], keywords: [] } as HeroTemplate;
+            return { ...locationMsgs[rotationSeed % locationMsgs.length], keywords: [] } as HeroTemplate;
         } else {
             return heroText;
         }
-    }, [viewMode, selectedGenre, searchText, selectedRegion, selectedDistrict, selectedVenue, heroText]);
+    }, [viewMode, selectedGenre, searchText, selectedRegion, selectedDistrict, selectedVenue, heroText, localHeroCycle]);
 
 
     // Close filter panel when clicking outside
@@ -451,8 +458,15 @@ export default function HeroSection({
 
                 <div ref={heroRef}>
                     <TypingHero
+                        key={[
+                            currentTemplate.line1,
+                            currentTemplate.boldPrefix || '',
+                            currentTemplate.line2Pre,
+                            currentTemplate.highlight,
+                            currentTemplate.suffix
+                        ].join('||')}
                         template={currentTemplate}
-                        onCycle={onCycle}
+                        onCycle={handleHeroCycle}
                         paused={!isHeroVisible || !['list', 'grid', 'likes-perf', 'likes-venue'].includes(viewMode)}
                         searchMode={searchMode}
                         isAtTop={isAtTop}
