@@ -21,7 +21,7 @@ export const getOptimizedUrl = (url: string, width: number = 400) => {
     try {
         // use wsrv.nl for image optimization
         const encodedUrl = encodeURIComponent(url);
-        return `https://wsrv.nl/?url=${encodedUrl}&w=${width}&q=92&output=webp`;
+        return `https://wsrv.nl/?url=${encodedUrl}&w=${width}&q=78&output=webp`;
     } catch {
         return url;
     }

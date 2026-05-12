@@ -2,21 +2,19 @@
 import { Performance } from '@/types';
 import { isChoseongMatch } from './hangul';
 import { REGIONS } from './constants';
-import venueData from '@/data/venues.json';
 import { getRepresentativeVenueInfoForName, resolveVenueInfoForPerformance } from './location-display';
 import { getDistanceFromLatLonInKm } from './utils';
 
 // Define Venue Interface since we import JSON directly
 interface Venue {
     name?: string;
-    address: string;
+    address?: string;
     district?: string;
     lat?: number | null;
     lng?: number | null;
     mapped_region_id?: string;
 }
 
-const venues = venueData as Record<string, Venue>;
 const KOREA_TIMEZONE = 'Asia/Seoul';
 const WINTER_KEYWORDS = ['스키', '보드', '스노우', '눈썰매', '리프트', '리프트권', '스키장', '렌탈샵', '겨울'];
 const SUMMER_KEYWORDS = ['워터파크', '수영장', '풀파티', '해수욕', '서핑', '물놀이', '계곡', '래프팅'];
@@ -351,7 +349,7 @@ export interface FilterOptions {
     searchMode?: 'keyword' | 'location';
 }
 
-export function filterPerformances(performances: Performance[], options: FilterOptions): Performance[] {
+export function filterPerformances(performances: Performance[], options: FilterOptions, venueLookup: Record<string, Venue> = {}): Performance[] {
     let filtered = performances;
     const { genre, region, district, venue, search, lat, lng, radius, searchMode } = options;
     const resolvedVenueCache = new Map<string, Venue>();
@@ -360,7 +358,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
         const cached = resolvedVenueCache.get(key);
         if (cached) return cached;
 
-        const resolved = resolveVenueInfoForPerformance(performance, venues) as Venue;
+        const resolved = resolveVenueInfoForPerformance(performance, venueLookup) as Venue;
         resolvedVenueCache.set(key, resolved);
         return resolved;
     };
@@ -460,12 +458,13 @@ export function filterPerformances(performances: Performance[], options: FilterO
             if (!regionLabel) return false;
 
             // Matches address 
-            const isRegionMatch = venueInfo.address.startsWith(regionLabel);
+            const venueAddress = venueInfo.address || '';
+            const isRegionMatch = venueAddress.startsWith(regionLabel);
             if (!isRegionMatch) return false;
 
             // District Check (if selected)
             if (district && district !== 'all') {
-                return venueInfo.district === district || venueInfo.address.includes(district);
+                return venueInfo.district === district || venueAddress.includes(district);
             }
 
             return true;
@@ -474,7 +473,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
     // 4. Venue Check (Specific Venue or Radius)
     if (venue && venue !== 'all') {
-        const centerVenue = getRepresentativeVenueInfoForName(venue, filtered, venues);
+        const centerVenue = getRepresentativeVenueInfoForName(venue, filtered, venueLookup);
         if (centerVenue && centerVenue.lat && centerVenue.lng) {
             // Include: 1. Exact Venue Match OR 2. Within 10km (Standard logic)
             filtered = filtered.filter(p => {

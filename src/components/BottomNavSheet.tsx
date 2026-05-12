@@ -9,6 +9,15 @@ import { Performance } from '@/types';
 import { getExternalContentLink } from '@/lib/performance-links';
 import ImageWithFallback from './ImageWithFallback';
 
+type VenueLookupEntry = {
+    refined_name?: string;
+    name?: string;
+    mapped_region_id?: string;
+    district?: string;
+    lat?: number | null;
+    lng?: number | null;
+};
+
 interface BottomNavSheetProps {
     activeMenu: BottomMenuType;
     onClose: () => void;
@@ -31,6 +40,7 @@ interface BottomNavSheetProps {
     availableVenues: string[];
     selectedVenue: string;
     onVenueSelect: (venue: string) => void;
+    venues?: Record<string, VenueLookupEntry>;
     onSearch: () => void;
     searchMode?: 'keyword' | 'location';
     onSearchModeChange?: (mode: 'keyword' | 'location') => void;
@@ -66,6 +76,7 @@ export default function BottomNavSheet({
     availableVenues,
     selectedVenue,
     onVenueSelect,
+    venues = {},
     onSearch,
     searchMode = 'keyword',
     onSearchModeChange = () => { },
@@ -513,6 +524,7 @@ export default function BottomNavSheet({
                                 inline={true}
                                 searchMode={searchMode}
                                 referenceLocation={activeLocation}
+                                venueLookup={venues}
                             />
                         </div>
 

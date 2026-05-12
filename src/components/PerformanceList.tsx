@@ -52,6 +52,9 @@ interface PerformanceListProps {
     buildInfo?: DataBuildInfo | null;
     isCategoryPage?: boolean;
     categoryLabel?: string;
+    initialFilteredCount?: number;
+    categoryGenreFilter?: string | string[] | null;
+    performanceDataPath?: string;
 }
 
 export default function PerformanceList({
@@ -61,7 +64,10 @@ export default function PerformanceList({
     initialGenreCounts,
     buildInfo,
     isCategoryPage = false,
-    categoryLabel
+    categoryLabel,
+    initialFilteredCount,
+    categoryGenreFilter = null,
+    performanceDataPath
 }: PerformanceListProps) {
     const router = useRouter();
 
@@ -74,10 +80,17 @@ export default function PerformanceList({
 
     const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
-        performanceLoadPolicy: isCategoryPage ? 'initial-only' : 'full',
+        performanceLoadPolicy: 'full',
+        performanceDataPath,
         backgroundLoadPriority: 'deferred',
         loadVenues: true,
     });
+    const scopedPerformances = useMemo(() => {
+        if (!isCategoryPage || !categoryGenreFilter) return allPerformances;
+
+        const allowedGenres = new Set(Array.isArray(categoryGenreFilter) ? categoryGenreFilter : [categoryGenreFilter]);
+        return allPerformances.filter((performance) => allowedGenres.has(performance.genre));
+    }, [allPerformances, categoryGenreFilter, isCategoryPage]);
 
     const searchParams = useSearchParams();
     const initialQuery = searchParams.get('q') || '';
@@ -90,7 +103,7 @@ export default function PerformanceList({
         searchText, setSearchText, searchMode, setSearchMode, searchLocation, setSearchLocation,
         userLocation, setUserLocation, userAddress, radius, setRadius, isDropdownOpen, setIsDropdownOpen,
         highlightedIndex, setHighlightedIndex, searchResults
-    } = useSearchLogic({ allPerformances, initialSearchText: initialQuery });
+    } = useSearchLogic({ allPerformances: scopedPerformances, initialSearchText: initialQuery });
     const [discoveryContextId, setDiscoveryContextId] = useState<DiscoveryContextId>('all');
 
     const {
@@ -99,10 +112,10 @@ export default function PerformanceList({
         setShuffleSeed, districts, availableVenues, filteredPerformances, displayPerformances,
         hasMore, loadMore
     } = usePerformanceFilters({
-        allPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius, venues, discoveryContextId
+        allPerformances: scopedPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius, venues, discoveryContextId
     });
 
-    const { heroText, selectNextTemplate } = useHeroTemplates({ allPerformances, initialPerformances, searchMode });
+    const { heroText, selectNextTemplate } = useHeroTemplates({ allPerformances: scopedPerformances, initialPerformances, searchMode });
 
     // --- View State ---
     const [viewMode, setViewMode] = useState<string>('grid');
@@ -141,6 +154,12 @@ export default function PerformanceList({
     const availableGenreCount = useMemo(() => {
         return availableGenres.filter((genre) => genre.id !== 'all').length;
     }, [availableGenres]);
+    const displayFilteredCount = useMemo(() => {
+        if (isCategoryPage && !isDataFullyLoaded && initialFilteredCount) {
+            return initialFilteredCount;
+        }
+        return filteredPerformances.length;
+    }, [filteredPerformances.length, initialFilteredCount, isCategoryPage, isDataFullyLoaded]);
     const freshnessNote = useMemo(() => {
         if (!buildInfo?.generatedAt) return '방금 정리한 추천 흐름이에요.';
         return `${formatCompactKoreanDateTime(buildInfo.generatedAt)} 기준으로 다시 정리했어요.`;
@@ -164,9 +183,9 @@ export default function PerformanceList({
     }, [urlMode, urlLat, urlLng, urlVenue, setSearchMode, setSearchLocation, setSearchText, setSelectedGenre, searchParams]);
 
     const keywordItems = useMemo(() => {
-        if (!savedKeywords.length || !allPerformances.length) return [];
-        return getKeywordMatchedItems(allPerformances, savedKeywords, 15);
-    }, [savedKeywords, allPerformances]);
+        if (!savedKeywords.length || !scopedPerformances.length) return [];
+        return getKeywordMatchedItems(scopedPerformances, savedKeywords, 15);
+    }, [savedKeywords, scopedPerformances]);
 
     const discoverySignals = useMemo(() => ({
         likedIds,
@@ -177,14 +196,14 @@ export default function PerformanceList({
     }), [likedIds, favoriteVenues, savedKeywords, activity, buildInfo]);
 
     const personalizedItems = useMemo(() => {
-        if (!allPerformances.length) return [];
-        return buildPersonalizedRecommendations(allPerformances, discoverySignals, 12);
-    }, [allPerformances, discoverySignals]);
+        if (!scopedPerformances.length) return [];
+        return buildPersonalizedRecommendations(scopedPerformances, discoverySignals, 12);
+    }, [scopedPerformances, discoverySignals]);
 
     const recommendedItems = useMemo(() => {
-        const featured = getFeaturedPerformances(allPerformances, 24);
+        const featured = getFeaturedPerformances(scopedPerformances, 24);
         return buildCuratedDiscoveryItems(featured, discoverySignals, 18);
-    }, [allPerformances, discoverySignals]);
+    }, [scopedPerformances, discoverySignals]);
 
     useEffect(() => {
         if (selectedGenre !== 'all' && !isGenreAvailable(genreCounts, selectedGenre)) {
@@ -304,13 +323,13 @@ export default function PerformanceList({
 
     // 2. Deep Link Support (Shared Content Modal)
     useEffect(() => {
-        if (deepLinkHandled.current || !allPerformances.length) return;
+        if (deepLinkHandled.current || !scopedPerformances.length) return;
 
         const hash = window.location.hash;
         const match = hash.match(/^#p=(.+)$/);
         if (match && match[1]) {
             const id = decodeURIComponent(match[1]);
-            const perf = allPerformances.find(p => p.id === id);
+            const perf = scopedPerformances.find(p => p.id === id);
             if (perf) {
                 setSharedPerf(perf);
                 deepLinkHandled.current = true;
@@ -318,7 +337,7 @@ export default function PerformanceList({
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
         }
-    }, [allPerformances]);
+    }, [scopedPerformances]);
 
     const handleOpenMap = useCallback(() => {
         if (searchMode === 'location' && activeLocation) {
@@ -457,7 +476,7 @@ export default function PerformanceList({
                 <div className="px-[1.6%]">
                     <ResultsHeader
                         viewMode={viewMode} activeLocation={activeLocation} searchLocation={searchLocation} searchText={searchText}
-                        searchMode={searchMode} selectedGenre={selectedGenre} filteredCount={filteredPerformances.length} radius={radius}
+                        searchMode={searchMode} selectedGenre={selectedGenre} filteredCount={displayFilteredCount} radius={radius}
                         lastUpdated={lastUpdated}
                         totalItemCount={totalItemCount}
                         availableGenreCount={availableGenreCount}
@@ -473,7 +492,7 @@ export default function PerformanceList({
                         <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={handleOpenMap} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />
                     ) : viewMode === 'likes-perf' ? (
                         <LikedSections
-                            viewMode={viewMode} allPerformances={allPerformances} likedIds={likedIds} favoriteVenues={favoriteVenues}
+                            viewMode={viewMode} allPerformances={scopedPerformances} likedIds={likedIds} favoriteVenues={favoriteVenues}
                             venues={venues} onToggleLike={toggleLike} onDetailOpen={handleDetailOpen} onSetSearchLocation={setSearchLocation}
                             onVenuePreview={(loc) => { router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }} setIsMapOpen={handleOpenMap}
                             copyItemShareUrl={copyItemShareUrl} selectedGenre={selectedGenre} searchMode={searchMode} searchText={searchText}
@@ -514,12 +533,12 @@ export default function PerformanceList({
             {/* 4. Navigation & Modals */}
             <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={() => { router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
 
-            <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} availableGenres={availableGenres} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} onVenueSelect={(v) => {
+            <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} availableGenres={availableGenres} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} venues={venues} onVenueSelect={(v) => {
                 setSelectedVenue(v);
 
                 // Location Mode Integration: Intercept venue selection to trigger location search
                 const representativeVenue = v !== 'all'
-                    ? getRepresentativeVenueInfoForName(v, allPerformances, venues)
+                    ? getRepresentativeVenueInfoForName(v, scopedPerformances, venues)
                     : null;
 
                 if (v !== 'all' && representativeVenue?.lat && representativeVenue?.lng) {
@@ -548,7 +567,7 @@ export default function PerformanceList({
             }} />
 
             {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(favoriteVenue) => {
-                const representativeVenue = getRepresentativeVenueInfoForFavorite(favoriteVenue, allPerformances, venues);
+                const representativeVenue = getRepresentativeVenueInfoForFavorite(favoriteVenue, scopedPerformances, venues);
                 router.push(`/map?genre=${selectedGenre}&lat=${representativeVenue?.lat || 0}&lng=${representativeVenue?.lng || 0}&venue=${encodeURIComponent(favoriteVenue.venueName)}`);
             }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}

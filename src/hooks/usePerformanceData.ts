@@ -8,6 +8,7 @@ type BackgroundLoadPriority = 'immediate' | 'deferred';
 interface UsePerformanceDataProps {
     initialPerformances: Performance[];
     performanceLoadPolicy?: PerformanceLoadPolicy;
+    performanceDataPath?: string;
     backgroundLoadPriority?: BackgroundLoadPriority;
     loadCinemas?: boolean;
     loadVenues?: boolean;
@@ -15,6 +16,8 @@ interface UsePerformanceDataProps {
 
 let performancesCache: Performance[] | null = null;
 let performancesPromise: Promise<Performance[]> | null = null;
+const performancesCacheByPath = new Map<string, Performance[]>();
+const performancesPromiseByPath = new Map<string, Promise<Performance[]>>();
 let cinemasCache: CinemaData[] | null = null;
 let cinemasPromise: Promise<CinemaData[]> | null = null;
 let venuesCache: Record<string, VenueData> | null = null;
@@ -28,20 +31,41 @@ async function fetchJson<T>(path: string, fallback: T): Promise<T> {
     return response.json() as Promise<T>;
 }
 
-function loadPerformances(): Promise<Performance[]> {
-    if (performancesCache) return Promise.resolve(performancesCache);
-    if (performancesPromise) return performancesPromise;
+function getCachedPerformances(path: string) {
+    if (path === '/data/performances.json' && performancesCache) return performancesCache;
+    return performancesCacheByPath.get(path) || null;
+}
 
-    performancesPromise = fetchJson<Performance[]>('/data/performances.json', [])
+function loadPerformances(path = '/data/performances.json'): Promise<Performance[]> {
+    const cached = getCachedPerformances(path);
+    if (cached) return Promise.resolve(cached);
+
+    const existingPromise = path === '/data/performances.json'
+        ? performancesPromise
+        : performancesPromiseByPath.get(path);
+    if (existingPromise) return existingPromise;
+
+    const promise = fetchJson<Performance[]>(path, [])
         .then((data) => {
-            performancesCache = data;
+            performancesCacheByPath.set(path, data);
+            if (path === '/data/performances.json') {
+                performancesCache = data;
+            }
             return data;
         })
         .finally(() => {
-            performancesPromise = null;
+            performancesPromiseByPath.delete(path);
+            if (path === '/data/performances.json') {
+                performancesPromise = null;
+            }
         });
 
-    return performancesPromise;
+    performancesPromiseByPath.set(path, promise);
+    if (path === '/data/performances.json') {
+        performancesPromise = promise;
+    }
+
+    return promise;
 }
 
 function loadCinemas(): Promise<CinemaData[]> {
@@ -91,20 +115,22 @@ function scheduleDeferredLoad(task: () => void) {
 export function usePerformanceData({
     initialPerformances,
     performanceLoadPolicy = 'full',
+    performanceDataPath = '/data/performances.json',
     backgroundLoadPriority = 'deferred',
     loadCinemas: shouldLoadCinemas = false,
     loadVenues: shouldLoadVenues = false,
 }: UsePerformanceDataProps) {
     const [allPerformances, setAllPerformances] = useState<Performance[]>(() => {
-        if (performanceLoadPolicy === 'full' && performancesCache) {
-            return performancesCache;
+        const cachedPerformances = getCachedPerformances(performanceDataPath);
+        if (performanceLoadPolicy === 'full' && cachedPerformances) {
+            return cachedPerformances;
         }
         return initialPerformances;
     });
     const [cinemas, setCinemas] = useState<CinemaData[]>(() => shouldLoadCinemas && cinemasCache ? cinemasCache : []);
     const [venues, setVenues] = useState<Record<string, VenueData>>(() => shouldLoadVenues && venuesCache ? venuesCache : {});
     const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(() => {
-        const performancesReady = performanceLoadPolicy !== 'full' || Boolean(performancesCache);
+        const performancesReady = performanceLoadPolicy !== 'full' || Boolean(getCachedPerformances(performanceDataPath));
         const cinemasReady = !shouldLoadCinemas || Boolean(cinemasCache);
         const venuesReady = !shouldLoadVenues || Boolean(venuesCache);
         return performancesReady && cinemasReady && venuesReady;
@@ -115,7 +141,7 @@ export function usePerformanceData({
 
         const loadRequestedData = async () => {
             const requiresColdLoad =
-                (performanceLoadPolicy === 'full' && !performancesCache) ||
+                (performanceLoadPolicy === 'full' && !getCachedPerformances(performanceDataPath)) ||
                 (shouldLoadCinemas && !cinemasCache) ||
                 (shouldLoadVenues && !venuesCache);
 
@@ -127,7 +153,7 @@ export function usePerformanceData({
 
             if (performanceLoadPolicy === 'full') {
                 tasks.push(
-                    loadPerformances()
+                    loadPerformances(performanceDataPath)
                         .then((data) => {
                             if (isCancelled || data.length === 0) return;
                             startTransition(() => {
@@ -199,7 +225,7 @@ export function usePerformanceData({
             isCancelled = true;
             cancelDeferredLoad();
         };
-    }, [backgroundLoadPriority, initialPerformances.length, performanceLoadPolicy, shouldLoadCinemas, shouldLoadVenues]);
+    }, [backgroundLoadPriority, initialPerformances.length, performanceDataPath, performanceLoadPolicy, shouldLoadCinemas, shouldLoadVenues]);
 
     return {
         allPerformances,

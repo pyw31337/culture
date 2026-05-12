@@ -30,11 +30,6 @@ const StadiumIcon = ({ className, strokeWidth = 2.5 }: { className?: string, str
     </svg>
 );
 
-import venuesData from '@/data/venue-dictionary.json'; // Direct import for lookup
-
-// Type assertion for venues data since it's a JSON file
-const venues = venuesData as Record<string, any>;
-
 interface LocationSelectorProps {
     selectedRegion: string;
     onRegionSelect: (region: string) => void;
@@ -49,7 +44,17 @@ interface LocationSelectorProps {
     inline?: boolean;
     searchMode?: 'keyword' | 'location';
     referenceLocation?: { lat: number, lng: number } | null;
+    venueLookup?: Record<string, VenueLookupEntry>;
 }
+
+type VenueLookupEntry = {
+    refined_name?: string;
+    name?: string;
+    mapped_region_id?: string;
+    district?: string;
+    lat?: number | null;
+    lng?: number | null;
+};
 
 const CHOSEONG_LIST = [
     'ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ',
@@ -71,7 +76,8 @@ export function LocationSelector({
     dropUp = false,
     inline = false,
     searchMode = 'keyword',
-    referenceLocation
+    referenceLocation,
+    venueLookup = {}
 }: LocationSelectorProps) {
 
     // UI Constants
@@ -118,7 +124,7 @@ export function LocationSelector({
         const seenNames = new Set<string>();
         const uniqueVenues = [];
         for (const v of baseVenues) {
-            const name = venues[v]?.refined_name || venues[v]?.name || v;
+            const name = venueLookup[v]?.refined_name || venueLookup[v]?.name || v;
             if (!seenNames.has(name)) {
                 seenNames.add(name);
                 uniqueVenues.push(v);
@@ -131,8 +137,8 @@ export function LocationSelector({
         if (searchMode === 'location' && referenceLocation) {
             // Sort by Distance
             sorted.sort((a, b) => {
-                const va = venues[a];
-                const vb = venues[b];
+                const va = venueLookup[a];
+                const vb = venueLookup[b];
                 const da = (va?.lat && va?.lng) ? getDistanceFromLatLonInKm(referenceLocation.lat, referenceLocation.lng, va.lat, va.lng) : 99999;
                 const db = (vb?.lat && vb?.lng) ? getDistanceFromLatLonInKm(referenceLocation.lat, referenceLocation.lng, vb.lat, vb.lng) : 99999;
                 return da - db;
@@ -140,8 +146,8 @@ export function LocationSelector({
         } else {
             // Sort by English (A-Z) then Korean (ㄱ-ㅎ)
             sorted.sort((a, b) => {
-                const nameA = venues[a]?.refined_name || venues[a]?.name || a;
-                const nameB = venues[b]?.refined_name || venues[b]?.name || b;
+                const nameA = venueLookup[a]?.refined_name || venueLookup[a]?.name || a;
+                const nameB = venueLookup[b]?.refined_name || venueLookup[b]?.name || b;
 
                 const isEnglishA = /^[A-Za-z]/.test(nameA);
                 const isEnglishB = /^[A-Za-z]/.test(nameB);
@@ -157,7 +163,7 @@ export function LocationSelector({
         if (activeChoseong === 'all') return sorted;
 
         return sorted.filter(v => {
-            const name = venues[v]?.refined_name || venues[v]?.name || v;
+            const name = venueLookup[v]?.refined_name || venueLookup[v]?.name || v;
 
             // Handle English filter
             if (/[A-Z]/.test(activeChoseong)) {
@@ -168,7 +174,7 @@ export function LocationSelector({
             const cho = getChoseong(name);
             return cho.startsWith(activeChoseong);
         });
-    }, [availableVenues, activeChoseong, searchMode, referenceLocation]);
+    }, [availableVenues, activeChoseong, searchMode, referenceLocation, venueLookup]);
 
     // Accordion State
     const [isRegionExpanded, setIsRegionExpanded] = useState(true);
@@ -263,7 +269,7 @@ export function LocationSelector({
 
                                 {REGIONS.filter(r => r.id !== 'all').map(r => {
                                     // Check if this region has any venues in the current context (venues object contains all venues used in current filter)
-                                    const hasData = Object.values(venues).some(v => v.mapped_region_id === r.id);
+                                    const hasData = Object.values(venueLookup).some(v => v.mapped_region_id === r.id);
                                     if (!hasData) return null;
 
                                     return (
@@ -449,15 +455,15 @@ export function LocationSelector({
                                             >
                                                 {/* Left: Name */}
                                                 <span className="truncate mr-2">
-                                                    {venues[v]?.refined_name || venues[v]?.name || v}
+                                                    {venueLookup[v]?.refined_name || venueLookup[v]?.name || v}
                                                 </span>
 
                                                 {/* Right: Location & Check */}
                                                 <div className="flex items-center gap-2 shrink-0">
                                                     {/* Location Tag (Full Region + District) */}
-                                                    {(venues[v]?.mapped_region_id || venues[v]?.district) && (
+                                                    {(venueLookup[v]?.mapped_region_id || venueLookup[v]?.district) && (
                                                         <span className="text-[10px] sm:text-xs text-gray-400 light:text-gray-500 border border-white/5 light:border-gray-200 px-2 py-0.5 rounded bg-black/40 light:bg-gray-100 italic">
-                                                            {[REGIONS.find(r => r.id === venues[v].mapped_region_id)?.label, venues[v].district].filter(Boolean).join(' ')}
+                                                            {[REGIONS.find(r => r.id === venueLookup[v].mapped_region_id)?.label, venueLookup[v].district].filter(Boolean).join(' ')}
                                                         </span>
                                                     )}
                                                     {selectedVenue === v && <Check className={clsx("w-3.5 h-3.5", isLoc ? "text-emerald-500" : "text-purple-500")} />}

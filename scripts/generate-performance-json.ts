@@ -11,6 +11,8 @@ import type {
 import { getExternalContentLink } from '../src/lib/performance-links';
 import { sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
 import { SOURCE_REGISTRY } from '../src/lib/source-registry';
+import { getGenreFilterFromSlug } from '../src/lib/genre-availability';
+import { VALID_GENRE_SLUGS } from '../src/lib/constants';
 import type { Performance } from '../src/types';
 import { analyzeContentQuality } from './utils/content-quality';
 
@@ -646,6 +648,20 @@ async function generate() {
 
         fs.writeFileSync(outputPath, JSON.stringify(pruned));
         console.log(`Successfully generated ${pruned.length} items to ${outputPath}`);
+
+        const categoryDataDir = path.join(dir, 'categories');
+        fs.mkdirSync(categoryDataDir, { recursive: true });
+        VALID_GENRE_SLUGS.forEach((slug) => {
+            const genreFilter = getGenreFilterFromSlug(slug);
+            const categoryItems = pruned.filter((performance) => (
+                Array.isArray(genreFilter)
+                    ? genreFilter.includes(performance.genre)
+                    : performance.genre === genreFilter
+            ));
+            const categoryPath = path.join(categoryDataDir, `${slug}.json`);
+            fs.writeFileSync(categoryPath, JSON.stringify(categoryItems));
+        });
+        console.log(`Generated category-scoped payloads to ${categoryDataDir}`);
 
         const versionPath = path.join(process.cwd(), 'public', 'version.txt');
         const version = process.env.GITHUB_SHA?.slice(0, 12) || `${Math.floor(Date.now() / 1000)}`;

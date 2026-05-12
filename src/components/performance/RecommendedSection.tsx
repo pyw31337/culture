@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Sparkles, ChevronLeft, ChevronRight, Share2 } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
-import venueData from '@/data/venues.json';
 import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
 import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { cleanTitle } from '@/lib/utils';
@@ -12,7 +11,7 @@ import { clsx } from 'clsx';
 import RecommendationReasonChips from './RecommendationReasonChips';
 import SectionInfoPopover from './SectionInfoPopover';
 
-const venues = venueData as Record<string, any>;
+const EMPTY_VENUES: Record<string, never> = {};
 
 interface RecommendedSectionProps {
     recommendedItems: any[];
@@ -322,7 +321,7 @@ export default function RecommendedSection({
                                                 {cleanTitle(perf.title)}
                                             </span>
                                             <span className="text-white/60 font-bold text-[10px] sm:text-xs leading-tight truncate uppercase tracking-tight">
-                                                {getPerformanceLocationLabel(perf, venues, 3) || perf.venue}
+                                                {getPerformanceLocationLabel(perf, EMPTY_VENUES, 3) || perf.venue}
                                             </span>
                                         </div>
                                     </div>

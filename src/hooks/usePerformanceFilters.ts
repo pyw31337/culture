@@ -114,7 +114,7 @@ export function usePerformanceFilters({
             relevantVenues = relevantVenues.filter(v => venues[v].district === selectedDistrict);
         }
         return relevantVenues.sort();
-    }, [selectedRegion, selectedDistrict]);
+    }, [selectedRegion, selectedDistrict, venues]);
 
     // Main Filtering Logic
     const filteredPerformances = useMemo(() => {
@@ -128,7 +128,7 @@ export function usePerformanceFilters({
             lng: searchLocation?.lng || userLocation?.lng,
             radius: radius,
             searchMode: searchMode
-        });
+        }, venues);
 
         const discoveryFiltered = (!debouncedSearchText && searchMode !== 'location')
             ? filterByDiscoveryContext(filtered, discoveryContextId)
@@ -173,7 +173,7 @@ export function usePerformanceFilters({
         }
 
         return sortPerformances(discoveryFiltered, selectedGenre, debouncedSearchText);
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, shuffleSeed, discoveryContextId]);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, venues, shuffleSeed, discoveryContextId]);
 
     // Pagination
     const displayPerformances = useMemo(() => {

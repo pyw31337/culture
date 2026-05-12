@@ -1,10 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { HERO_TEMPLATES, HeroTemplate } from '@/lib/hero-templates';
 import { Performance } from '@/types';
-import venueData from '@/data/venues.json';
 import { safeStorage } from '@/lib/safeStorage';
-
-const venues = venueData as Record<string, any>;
 
 interface UseHeroTemplatesProps {
     allPerformances: Performance[];
@@ -37,7 +34,8 @@ export function useHeroTemplates({ allPerformances, initialPerformances, searchM
                             (p.title || '').includes(k) ||
                             (p.genre || '').includes(k) ||
                             (p.venue || '').includes(k) ||
-                            (venues[p.venue || '']?.district?.includes(k))
+                            (p.district || '').includes(k) ||
+                            (p.address || '').includes(k)
                         )
                     );
                     if (!hasMatch) continue;
@@ -60,7 +58,7 @@ export function useHeroTemplates({ allPerformances, initialPerformances, searchM
             const month = now.getMonth() + 1;
             const hour = now.getHours();
             const day = now.getDay(); // 0: Sun, 1: Mon, ..., 6: Sat
-            let pool: HeroTemplate[] = [...HERO_TEMPLATES.general];
+            const pool: HeroTemplate[] = [...HERO_TEMPLATES.general];
 
             // 1. Seasons
             let currentSeasonTemplates: HeroTemplate[] = [];

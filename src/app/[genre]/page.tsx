@@ -120,6 +120,7 @@ export default async function GenrePage({ params }: PageProps) {
     if (performances.length === 0) {
         notFound();
     }
+    const initialPerformances = performances.slice(0, 24);
 
     const lastUpdated = getLastUpdatedLabel();
 
@@ -159,12 +160,15 @@ export default async function GenrePage({ params }: PageProps) {
             />
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading...</div>}>
                 <PerformanceList
-                    initialPerformances={performances}
+                    initialPerformances={initialPerformances}
                     lastUpdated={lastUpdated}
                     initialGenre={initialGenre}
                     initialGenreCounts={genreCounts}
                     buildInfo={buildInfo}
                     isCategoryPage={true}
+                    initialFilteredCount={performances.length}
+                    categoryGenreFilter={genreFilter}
+                    performanceDataPath={`/data/categories/${genre}.json`}
                 />
             </Suspense>
         </main>

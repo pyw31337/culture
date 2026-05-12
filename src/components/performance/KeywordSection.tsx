@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Bell } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
-import venueData from '@/data/venues.json';
 import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
 import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { cleanTitle } from '@/lib/utils';
@@ -10,7 +9,7 @@ import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-mot
 import { clsx } from 'clsx';
 import type { KeywordMatchedPerformance } from '@/lib/keyword-match';
 
-const venues = venueData as Record<string, any>;
+const EMPTY_VENUES: Record<string, never> = {};
 
 interface KeywordSectionProps {
     keywordItems: KeywordMatchedPerformance[];
@@ -258,7 +257,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                                 {cleanTitle(perf.title)}
                                             </span>
                                             <span className="text-white/60 font-bold text-[10px] sm:text-xs leading-tight truncate uppercase tracking-tight">
-                                                {getPerformanceLocationLabel(perf, venues, 3) || perf.venue}
+                                                {getPerformanceLocationLabel(perf, EMPTY_VENUES, 3) || perf.venue}
                                             </span>
                                         </div>
                                     </div>
