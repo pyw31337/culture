@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin, Sparkles } from 'lucide-react';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
 import type { Performance } from '@/types';
@@ -7,6 +7,7 @@ import { GENRES } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import RecommendationReasonChips from './RecommendationReasonChips';
+import SectionInfoPopover from './SectionInfoPopover';
 
 interface PersonalizedSectionProps {
     items: Performance[];
@@ -95,10 +96,11 @@ export default function PersonalizedSection({
                         <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
                             당신을 위한 <span className={clsx('text-transparent bg-clip-text bg-gradient-to-r', searchMode === 'location' ? 'from-[#55df99] to-[#0090f5]' : 'from-purple-400 to-pink-500')}>추천</span>
                         </h2>
+                        <SectionInfoPopover
+                            title="당신을 위한 추천"
+                            description={subtitle || '좋아요, 저장 키워드, 자주 본 장르, 찜한 공연장을 함께 보고 첫 화면을 조금 더 나답게 정리했어요.'}
+                        />
                     </div>
-                    <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600 max-w-2xl">
-                        {subtitle || '좋아요, 저장 키워드, 자주 본 장르, 찜한 공연장을 함께 보고 첫 화면을 조금 더 나답게 정리했어요.'}
-                    </p>
                 </div>
             </div>
 
@@ -150,28 +152,28 @@ export default function PersonalizedSection({
                                     draggable={false}
                                 />
 
-                                <div className="absolute top-3 left-3 right-3 z-20 flex flex-col gap-2">
-                                    <div className="inline-flex w-fit rounded-full bg-black/35 px-2.5 py-1 text-[10px] font-black text-white backdrop-blur-md border border-white/15">
+                                <div className="absolute top-3 left-3 right-3 z-20 flex items-center gap-1.5 overflow-hidden whitespace-nowrap">
+                                    <div className="inline-flex shrink-0 rounded-full bg-black/35 px-2 py-0.5 text-[9px] font-black text-white backdrop-blur-md border border-white/15">
                                         {GENRES.find((genre) => genre.id === performance.genre)?.label || performance.genre}
                                     </div>
                                     <RecommendationReasonChips
                                         reasons={performance.recommendationReasons}
                                         comparisonTags={performance.comparisonTags}
                                         compact
+                                        singleLine
                                     />
                                 </div>
 
                                 <div className="absolute inset-x-0 bottom-0 z-20 p-4">
-                                    <div className="rounded-[1.25rem] bg-black/35 p-3 backdrop-blur-md border border-white/10">
-                                        <h3 className="text-white font-black text-base leading-tight line-clamp-2">
+                                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-0" />
+                                    <div className="relative z-10">
+                                        <h3 className="text-white font-black text-sm sm:text-base leading-tight line-clamp-2 drop-shadow-md">
                                             {cleanTitle(performance.title)}
                                         </h3>
-                                        <p className="mt-1 text-[11px] font-semibold text-white/70 truncate">
-                                            {performance.venue}
-                                        </p>
-                                        <p className="mt-2 text-[11px] leading-5 text-slate-200/90 line-clamp-2">
-                                            {performance.description || '이 콘텐츠가 왜 지금 어울리는지 바로 읽을 수 있도록 추천 이유를 함께 붙여두었습니다.'}
-                                        </p>
+                                        <div className="mt-1 flex items-center gap-1 text-white/65 text-[11px] font-semibold min-w-0">
+                                            <MapPin className="h-3 w-3 shrink-0" />
+                                            <span className="truncate">{performance.venue}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </motion.div>

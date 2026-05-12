@@ -6,6 +6,7 @@ interface RecommendationReasonChipsProps {
     comparisonTags?: string[];
     className?: string;
     compact?: boolean;
+    singleLine?: boolean;
 }
 
 export default function RecommendationReasonChips({
@@ -13,6 +14,7 @@ export default function RecommendationReasonChips({
     comparisonTags = [],
     className,
     compact = false,
+    singleLine = false,
 }: RecommendationReasonChipsProps) {
     const visibleReasons = reasons.slice(0, compact ? 1 : 2);
     const visibleTags = comparisonTags.slice(0, compact ? 1 : 2);
@@ -20,7 +22,7 @@ export default function RecommendationReasonChips({
     if (visibleReasons.length === 0 && visibleTags.length === 0) return null;
 
     return (
-        <div className={clsx('flex flex-wrap items-center gap-1.5', className)}>
+        <div className={clsx('flex items-center gap-1.5', singleLine ? 'flex-nowrap overflow-hidden whitespace-nowrap' : 'flex-wrap', className)}>
             {visibleReasons.map((reason) => (
                 <span
                     key={reason}

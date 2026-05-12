@@ -4,6 +4,9 @@ import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
 import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
 import ServiceStatusStrip from './ServiceStatusStrip';
+import DiscoveryContextBar from '@/components/performance/DiscoveryContextBar';
+import type { DiscoveryContextDefinition } from '@/lib/discovery';
+import type { DiscoveryContextId } from '@/types';
 
 interface HeaderLocation {
     lat?: number;
@@ -25,6 +28,9 @@ interface ResultsHeaderProps {
     availableGenreCount: number;
     qualitySummary?: DataQualitySummary | null;
     sourceHealthSummary?: DataSourceHealthSummary | null;
+    discoveryContexts?: DiscoveryContextDefinition[];
+    activeDiscoveryContext?: DiscoveryContextId;
+    onDiscoveryContextChange?: (contextId: DiscoveryContextId) => void;
     onResetFilters: () => void;
     onRadiusChange: (val: number) => void;
 }
@@ -43,15 +49,25 @@ export const ResultsHeader = ({
     availableGenreCount,
     qualitySummary,
     sourceHealthSummary,
+    discoveryContexts,
+    activeDiscoveryContext,
+    onDiscoveryContextChange,
     onResetFilters,
     onRadiusChange
 }: ResultsHeaderProps) => {
     if (viewMode === 'likes-perf') return null;
 
+    const shouldShowDiscoveryContexts =
+        Boolean(discoveryContexts?.length) &&
+        Boolean(activeDiscoveryContext) &&
+        Boolean(onDiscoveryContextChange) &&
+        !searchText &&
+        searchMode !== 'location';
+
     return (
         <div className="mb-6 mt-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
-                <div className="w-full sm:w-auto">
+            <div className="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
+                <div className="w-full min-w-0">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                         <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
                             {(searchMode === 'location' && activeLocation) ? (
@@ -99,27 +115,48 @@ export const ResultsHeader = ({
                             sourceHealthSummary={sourceHealthSummary}
                             className="shrink-0"
                         />
-                        {(searchMode === 'location' && activeLocation) && (
-                            <div className="flex items-center gap-2 ml-auto">
-                                <div className="flex items-center bg-gray-800/50 light:bg-white border border-emerald-500/50 light:border-emerald-400 rounded-full pl-3 pr-1 py-1 group hover:border-emerald-400 transition-all shadow-sm">
-                                    <div className="relative flex items-center pl-1">
-                                        <select
-                                            value={radius}
-                                            onChange={(e) => onRadiusChange(Number(e.target.value))}
-                                            className="bg-transparent text-xs sm:text-sm font-bold text-emerald-500 light:text-emerald-700 focus:outline-none appearance-none pr-6 cursor-pointer py-1.5"
-                                        >
-                                            {RADIUS_OPTIONS.map(r => (
-                                                <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
-                                                    {r.label}
-                                                </option>
-                                            ))}
-                                        </select>
-                                        <ChevronDown className="absolute right-0 w-3.5 h-3.5 text-emerald-500 pointer-events-none mr-1" />
-                                    </div>
+                    </div>
+
+                    {shouldShowDiscoveryContexts && discoveryContexts && activeDiscoveryContext && onDiscoveryContextChange && (
+                        <DiscoveryContextBar
+                            contexts={discoveryContexts}
+                            activeContext={activeDiscoveryContext}
+                            onChange={onDiscoveryContextChange}
+                            className="mt-3 xl:hidden"
+                        />
+                    )}
+                </div>
+
+                <div className="flex w-full flex-col gap-3 xl:w-auto xl:min-w-[320px] xl:items-end">
+                    {shouldShowDiscoveryContexts && discoveryContexts && activeDiscoveryContext && onDiscoveryContextChange && (
+                        <DiscoveryContextBar
+                            contexts={discoveryContexts}
+                            activeContext={activeDiscoveryContext}
+                            onChange={onDiscoveryContextChange}
+                            className="hidden xl:flex"
+                        />
+                    )}
+
+                    {(searchMode === 'location' && activeLocation) && (
+                        <div className="flex items-center gap-2 xl:ml-auto">
+                            <div className="flex items-center bg-gray-800/50 light:bg-white border border-emerald-500/50 light:border-emerald-400 rounded-full pl-3 pr-1 py-1 group hover:border-emerald-400 transition-all shadow-sm">
+                                <div className="relative flex items-center pl-1">
+                                    <select
+                                        value={radius}
+                                        onChange={(e) => onRadiusChange(Number(e.target.value))}
+                                        className="bg-transparent text-xs sm:text-sm font-bold text-emerald-500 light:text-emerald-700 focus:outline-none appearance-none pr-6 cursor-pointer py-1.5"
+                                    >
+                                        {RADIUS_OPTIONS.map(r => (
+                                            <option key={r.value} value={r.value} className="bg-gray-800 light:bg-white text-gray-300 light:text-black">
+                                                {r.label}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown className="absolute right-0 w-3.5 h-3.5 text-emerald-500 pointer-events-none mr-1" />
                                 </div>
                             </div>
-                        )}
-                    </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

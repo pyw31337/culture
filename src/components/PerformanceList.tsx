@@ -20,7 +20,6 @@ import EmptyState from './performance/EmptyState';
 import RecommendedSection from './performance/RecommendedSection';
 import KeywordSection from './performance/KeywordSection';
 import PersonalizedSection from './performance/PersonalizedSection';
-import DiscoveryContextBar from './performance/DiscoveryContextBar';
 import RainbowBackground from './ui/RainbowBackground';
 import ErrorBoundary from './ErrorBoundary';
 import BottomNav, { BottomMenuType } from './BottomNav';
@@ -462,16 +461,11 @@ export default function PerformanceList({
                         availableGenreCount={availableGenreCount}
                         qualitySummary={buildInfo?.qualitySummary}
                         sourceHealthSummary={buildInfo?.sourceHealthSummary}
+                        discoveryContexts={DISCOVERY_CONTEXTS}
+                        activeDiscoveryContext={discoveryContextId}
+                        onDiscoveryContextChange={setDiscoveryContextId}
                         onResetFilters={() => { setSearchLocation(null); handleSearchChange(''); }} onRadiusChange={setRadius}
                     />
-
-                    {viewMode !== 'likes-perf' && !searchText && !searchLocation && (
-                        <DiscoveryContextBar
-                            contexts={DISCOVERY_CONTEXTS}
-                            activeContext={discoveryContextId}
-                            onChange={setDiscoveryContextId}
-                        />
-                    )}
 
                     {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
                         <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={handleOpenMap} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />

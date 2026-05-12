@@ -9,6 +9,7 @@ import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-mot
 import { useUserActivity } from '@/hooks/useUserActivity';
 import { clsx } from 'clsx';
 import RecommendationReasonChips from './RecommendationReasonChips';
+import SectionInfoPopover from './SectionInfoPopover';
 
 const venues = venueData as Record<string, any>;
 
@@ -171,8 +172,11 @@ export default function RecommendedSection({
                         <h2 className={clsx("text-xl sm:text-2xl font-black tracking-tight transition-colors text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>
                             {title}
                         </h2>
+                        <SectionInfoPopover
+                            title={title}
+                            description={subtitle}
+                        />
                     </div>
-                    <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600 max-w-2xl">{subtitle}</p>
                 </div>
             </div>
 
