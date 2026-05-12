@@ -9,7 +9,7 @@ import type {
     DataSourceSummary
 } from '../src/lib/build-info';
 import { getExternalContentLink } from '../src/lib/performance-links';
-import { sortPerformances } from '../src/lib/performance-filter';
+import { sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
 import { SOURCE_REGISTRY } from '../src/lib/source-registry';
 import type { Performance } from '../src/types';
 import { analyzeContentQuality } from './utils/content-quality';
@@ -623,7 +623,7 @@ async function generate() {
         repairBrokenLocalImages(activePerformances);
 
         // Sort by default (Date Ascending) to match previous API behavior
-        const sorted = sortPerformances(activePerformances, 'all');
+        const sorted = sortPerformancesForHomeFeed(activePerformances);
 
         // [New: Data Pruning for payload optimization]
         const pruned: PrunedPerformance[] = sorted.map((p) => {
