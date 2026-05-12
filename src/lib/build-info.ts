@@ -95,6 +95,29 @@ export function formatCompactKoreanDate(value?: string | null, fallback = '정�
     return `${getPart('year')}.${getPart('month')}.${getPart('day')} (${getPart('weekday')})`;
 }
 
+export function formatCompactKoreanDateTime(value?: string | null, fallback = '정보 없음') {
+    if (!value) return fallback;
+
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return fallback;
+
+    const formatter = new Intl.DateTimeFormat('ko-KR', {
+        timeZone: 'Asia/Seoul',
+        year: '2-digit',
+        month: '2-digit',
+        day: '2-digit',
+        weekday: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+    });
+
+    const parts = formatter.formatToParts(date);
+    const getPart = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
+
+    return `${getPart('year')}.${getPart('month')}.${getPart('day')} (${getPart('weekday')}) ${getPart('hour')}:${getPart('minute')}`;
+}
+
 export function getQualityIssueCount(summary?: DataQualitySummary | null) {
     if (!summary) return 0;
 

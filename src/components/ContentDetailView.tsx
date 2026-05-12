@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
-import { formatCompactKoreanDate } from '@/lib/build-info';
+import { formatCompactKoreanDateTime } from '@/lib/build-info';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -36,7 +36,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
     const dDayLabel = getDdayLabel(p);
     const movieStatsReferenceLabel = p.statsCollectedAt
-        ? `<${formatCompactKoreanDate(p.statsCollectedAt)} 기준>`
+        ? `${formatCompactKoreanDateTime(p.statsCollectedAt)} 수집`
         : null;
     
     // Unified Booking Link Logic with Fallback for Missing Data
