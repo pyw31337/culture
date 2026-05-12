@@ -25,6 +25,7 @@ import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import type { DataBuildInfo } from '@/lib/build-info';
+import { getKeywordMatchedItems } from '@/lib/keyword-match';
 
 // Custom Hooks
 import { useUserPreferences } from '@/hooks/useUserPreferences';
@@ -152,11 +153,7 @@ export default function PerformanceList({
 
     const keywordItems = useMemo(() => {
         if (!savedKeywords.length || !allPerformances.length) return [];
-        return allPerformances.filter(p =>
-            savedKeywords.some(k =>
-                (p.title || '').includes(k) || (p.genre || '').includes(k) || (p.venue || '').includes(k)
-            )
-        ).slice(0, 15);
+        return getKeywordMatchedItems(allPerformances, savedKeywords, 15);
     }, [savedKeywords, allPerformances]);
 
     const recommendedItems = useMemo(() => {
@@ -402,7 +399,7 @@ export default function PerformanceList({
             {/* Data Sections */}
             {(viewMode === 'grid' || viewMode === 'list') && !searchText && !searchLocation && selectedGenre === 'all' && (
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14 px-4 space-y-14 relative z-10">
-                    {keywordItems.length > 0 && <KeywordSection keywordItems={keywordItems} onDetail={handleDetailOpen} onLocationClick={setSearchLocation} onToggleLike={toggleLike} likedIds={new Set(likedIds)} searchMode={searchMode} />}
+                    {keywordItems.length > 0 && <KeywordSection keywordItems={keywordItems} onDetail={handleDetailOpen} searchMode={searchMode} />}
                     <RecommendedSection recommendedItems={recommendedItems} onDetail={handleDetailOpen} onLocationClick={setSearchLocation} onToggleLike={toggleLike} likedIds={new Set(likedIds)} searchMode={searchMode} />
                 </div>
             )}

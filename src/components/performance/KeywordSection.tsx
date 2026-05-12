@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { Sparkles, ChevronLeft, ChevronRight, Bell, Share2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Bell } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
 import venueData from '@/data/venues.json';
 import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
@@ -7,23 +7,20 @@ import { cleanTitle } from '@/lib/utils';
 import { getGenreIcon } from '../GenreIcons';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
+import type { KeywordMatchedPerformance } from '@/lib/keyword-match';
 
 const venues = venueData as Record<string, any>;
 
 interface KeywordSectionProps {
-    keywordItems: any[];
-    onLocationClick: (loc: any) => void;
-    onToggleLike: (id: string, e: React.MouseEvent) => void;
-    likedIds: Set<string>;
-    onDetail: (perf: any) => void;
+    keywordItems: KeywordMatchedPerformance[];
+    onDetail: (perf: KeywordMatchedPerformance) => void;
     searchMode?: 'keyword' | 'location';
     onShare?: (id: string, e?: React.MouseEvent) => void;
 }
 
-function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
+function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [randomRecs, setRandomRecs] = useState<any[]>(keywordItems || []);
     const [constraints, setConstraints] = useState({ left: 0, right: 0 });
     const [isDragging, setIsDragging] = useState(false);
     const lastDragEndTime = useRef<number>(0);
@@ -32,11 +29,6 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
 
     // Motion value for x-axis scroll
     const x = useMotionValue(0);
-
-    // Sync items
-    useEffect(() => {
-        setRandomRecs(keywordItems || []);
-    }, [keywordItems]);
 
     // Constraint & Arrow Logic
     const updateConstraints = useCallback(() => {
@@ -55,7 +47,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
             setShowLeftArrow(currentX < -10);
             setShowRightArrow(currentX > maxScroll + 10);
         }
-    }, [randomRecs, x]);
+    }, [keywordItems, x]);
 
     useEffect(() => {
         updateConstraints();
@@ -103,7 +95,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
         pointerPos.current = { x: e.clientX, y: e.clientY };
     };
 
-    const handlePointerUp = (e: React.PointerEvent, perf: any) => {
+    const handlePointerUp = (e: React.PointerEvent, perf: KeywordMatchedPerformance) => {
         // Threshold check
         const diffX = Math.abs(e.clientX - pointerPos.current.x);
         const diffY = Math.abs(e.clientY - pointerPos.current.y);
@@ -117,7 +109,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
         onDetail(perf);
     };
 
-    if (randomRecs.length === 0) return null;
+    if (keywordItems.length === 0) return null;
 
     return (
         <section className="mb-8 relative animate-in fade-in slide-in-from-bottom-4 duration-700 group/section">
@@ -169,7 +161,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                         }}
                         className="flex gap-5 sm:gap-9 pl-[1.6%] pr-[1.6%] pt-4 items-end min-w-max"
                     >
-                        {randomRecs.map((perf, idx) => (
+                        {keywordItems.map((perf) => (
                             <div
                                 key={perf.id}
                                 className="flex items-end gap-x-0 flex-shrink-0"
@@ -182,13 +174,18 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                     )}
                                     whileHover={!isDragging ? { scale: 1.05, zIndex: 30 } : {}}
                                     onPointerDown={handlePointerDown}
-                                    onPointerUp={(e) => handlePointerUp(e as any, perf)}
+                                    onPointerUp={(e) => handlePointerUp(e, perf)}
                                 >
                                     {/* Category Badge */}
                                     <div className="absolute top-3 left-3 z-30 flex gap-1.5 pointer-events-none">
                                         <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </div>
+                                        {perf.matchedKeyword && (
+                                            <div className="px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
+                                                #{perf.matchedKeyword.replace(/^#/, '')}
+                                            </div>
+                                        )}
                                         {perf.category === '독점공연' && (
                                             <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
                                                 단독
@@ -197,7 +194,7 @@ function KeywordSection({ keywordItems, onLocationClick, onToggleLike, likedIds,
                                     </div>
 
                                     <ImageWithFallback
-                                        src={perf.image || perf.poster}
+                                        src={perf.image || perf.poster || perf.backupPoster || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4='}
                                         backupSrc={perf.backupPoster}
                                         alt={perf.title}
                                         fill
