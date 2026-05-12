@@ -5,6 +5,9 @@ on:
     - cron: '0 14 * * *' # 23:00 KST (14:00 UTC) - Single daily refresh
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: daily-data-update
   cancel-in-progress: false

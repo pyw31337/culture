@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.jki9Bp9lrbYbGM7Yh2Oft.d04ba8309114ddd3812e41b24f9218e4.js"
+  "/culture/_next/precache.Whybf90OC0cc90L1jhfNI.3c42c3afdc92990adc2c677cea3f99c8.js"
 );
 
 workbox.core.skipWaiting();
@@ -66,6 +66,10 @@ self.__precacheManifest = [
   {
     "url": "/images/fallbacks/handball.jpg",
     "revision": "db6129c55493b3861a5a3a48a308383e"
+  },
+  {
+    "url": "/images/fallbacks/movie.svg",
+    "revision": "f4ffaca66c5ce06e6ec6d362f1fc317b"
   },
   {
     "url": "/images/fallbacks/museum.jpg",

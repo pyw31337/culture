@@ -26,6 +26,7 @@ import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import { formatCompactKoreanDateTime, type DataBuildInfo } from '@/lib/build-info';
+import { getRepresentativeVenueInfoForFavorite } from '@/lib/favorite-venues';
 import { getKeywordMatchedItems } from '@/lib/keyword-match';
 import { getRepresentativeVenueInfoForName } from '@/lib/location-display';
 import { getFeaturedPerformances } from '@/lib/performance-filter';
@@ -546,9 +547,9 @@ export default function PerformanceList({
                 }
             }} />
 
-            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => {
-                const representativeVenue = getRepresentativeVenueInfoForName(name, allPerformances, venues);
-                router.push(`/map?genre=${selectedGenre}&lat=${representativeVenue?.lat || 0}&lng=${representativeVenue?.lng || 0}&venue=${encodeURIComponent(name)}`);
+            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(favoriteVenue) => {
+                const representativeVenue = getRepresentativeVenueInfoForFavorite(favoriteVenue, allPerformances, venues);
+                router.push(`/map?genre=${selectedGenre}&lat=${representativeVenue?.lat || 0}&lng=${representativeVenue?.lng || 0}&venue=${encodeURIComponent(favoriteVenue.venueName)}`);
             }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
         </div>

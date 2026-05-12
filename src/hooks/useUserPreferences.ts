@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
+import type { FavoriteVenuePreference } from '@/types';
 import { safeStorage } from '@/lib/safeStorage';
+import { dedupeFavoriteVenuePreferences, normalizeFavoriteVenuePreference } from '@/lib/favorite-venues';
 
 export function useUserPreferences() {
     const [likedIds, setLikedIds] = useState<string[]>([]);
-    const [favoriteVenues, setFavoriteVenues] = useState<string[]>([]);
+    const [favoriteVenues, setFavoriteVenues] = useState<FavoriteVenuePreference[]>([]);
     const [savedKeywords, setSavedKeywords] = useState<string[]>([]);
     const [isStorageLoaded, setIsStorageLoaded] = useState(false);
     const [theme, setTheme] = useState<'light' | 'dark'>('dark');
@@ -12,7 +14,15 @@ export function useUserPreferences() {
     useEffect(() => {
         setSavedKeywords(safeStorage.get<string[]>('culture_keywords', []));
         setLikedIds(safeStorage.get<string[]>('culture_likes', []));
-        setFavoriteVenues(safeStorage.get<string[]>('culture_favorite_venues', []));
+        const storedFavoriteVenues = safeStorage.get<unknown[]>('culture_favorite_venues', []);
+        const migratedFavoriteVenues = Array.isArray(storedFavoriteVenues)
+            ? dedupeFavoriteVenuePreferences(
+                storedFavoriteVenues
+                    .map(normalizeFavoriteVenuePreference)
+                    .filter((item): item is FavoriteVenuePreference => Boolean(item))
+            )
+            : [];
+        setFavoriteVenues(migratedFavoriteVenues);
 
         const storedTheme = safeStorage.get<'light' | 'dark'>('theme', 'dark');
         setTheme(storedTheme);
@@ -53,8 +63,17 @@ export function useUserPreferences() {
         setLikedIds(prev => prev.includes(id) ? prev.filter(lid => lid !== id) : [...prev, id]);
     }, []);
 
-    const toggleFavoriteVenue = useCallback((venueName: string) => {
-        setFavoriteVenues(prev => prev.includes(venueName) ? prev.filter(v => v !== venueName) : [...prev, venueName]);
+    const toggleFavoriteVenue = useCallback((favoriteVenue: FavoriteVenuePreference | string) => {
+        const normalized = normalizeFavoriteVenuePreference(favoriteVenue);
+        if (!normalized) return;
+
+        setFavoriteVenues(prev => {
+            const exists = prev.some((venue) => venue.id === normalized.id);
+            if (exists) {
+                return prev.filter((venue) => venue.id !== normalized.id);
+            }
+            return dedupeFavoriteVenuePreferences([...prev, normalized]);
+        });
     }, []);
 
     const addKeyword = useCallback((keyword: string) => {

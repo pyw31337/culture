@@ -13,8 +13,9 @@ import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import type { DataBuildInfo } from '@/lib/build-info';
+import { createFavoriteVenuePreference, favoriteVenueMatchesIdentity } from '@/lib/favorite-venues';
 import { getExternalContentLink } from '@/lib/performance-links';
-import { buildPerformanceLocationKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
+import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
 import Portal from './ui/Portal';
 import ImageWithFallback from './ImageWithFallback';
 import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
@@ -56,6 +57,7 @@ type MapSearchCenter = {
 type VenueGroup = Venue & {
     groupKey: string;
     venueName: string;
+    venueKey: string;
     address?: string;
     lat: number;
     lng: number;
@@ -325,6 +327,7 @@ export default function MapView({
                 const vName = perf.venue;
                 const venueMeta = venues[vName];
                 const resolvedVenue = resolveVenueInfoForPerformance(perf, venues) as Venue;
+                const venueKey = perf.venueKey || getPerformanceVenueKey(perf, venues);
                 const venueLat = resolvedVenue.lat || venueMeta?.lat || 0;
                 const venueLng = resolvedVenue.lng || venueMeta?.lng || 0;
                 const groupKey = buildPerformanceLocationKey(perf, venues);
@@ -338,6 +341,7 @@ export default function MapView({
                         ...resolvedVenue,
                         groupKey,
                         venueName: vName,
+                        venueKey,
                         performances: [],
                         lat: venueLat,
                         lng: venueLng,
@@ -361,6 +365,7 @@ export default function MapView({
                     groupsMap.set(cinema.name, {
                         groupKey: cinema.name,
                         venueName: cinema.name,
+                        venueKey: cinema.name,
                         address: cinema.address,
                         lat: cinema.lat,
                         lng: cinema.lng,
@@ -1184,7 +1189,13 @@ export default function MapView({
                             style={{ WebkitOverflowScrolling: 'touch', overscrollBehaviorX: 'contain' }}
                             onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove}>
                             {visibleVenues.map((v) => {
-                                const isFavorite = favoriteVenues.includes(v.venueName);
+                                const isFavorite = favoriteVenues.some((favoriteVenue) =>
+                                    favoriteVenueMatchesIdentity(favoriteVenue, {
+                                        venueName: v.venueName,
+                                        venueKey: v.venueKey,
+                                        locationKey: v.groupKey,
+                                    })
+                                );
                                 const isSelected = selectedVenue === v.groupKey;
 
                                 let distanceLabel = '';
@@ -1228,7 +1239,17 @@ export default function MapView({
                                         )}>
                                         <div className="flex justify-between items-start w-full">
                                             <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-white" : "text-gray-900 dark:text-white")}>{v.venueName}</h4>
-                                            <button onClick={(e) => { e.stopPropagation(); toggleFavoriteVenue(v.venueName); }}
+                                            <button onClick={(e) => {
+                                                e.stopPropagation();
+                                                toggleFavoriteVenue(createFavoriteVenuePreference({
+                                                    venueName: v.venueName,
+                                                    venueKey: v.venueKey,
+                                                    locationKey: v.groupKey,
+                                                    address: v.address,
+                                                    lat: v.lat,
+                                                    lng: v.lng,
+                                                }));
+                                            }}
                                                 className={clsx("ml-2 p-1 rounded-full transition-colors",
                                                     isFavorite ? (isSelected ? "bg-white/20 hover:bg-white/30" : "hover:bg-pink-100 dark:hover:bg-pink-900/50")
                                                         : (isSelected ? "hover:bg-white/20 hover:text-white" : "hover:bg-gray-100 dark:hover:bg-gray-700"))}>

@@ -3,9 +3,10 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
+import { createFavoriteVenuePreference, favoriteVenueMatchesIdentity } from '@/lib/favorite-venues';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
-import { Performance } from '@/types';
+import { FavoriteVenuePreference, Performance } from '@/types';
 import { X, Heart, RotateCw, Film, Plus, Minus, ExternalLink } from 'lucide-react';
 import Portal from './ui/Portal';
 import { SPORTS_GENRES } from '@/lib/constants';
@@ -31,8 +32,8 @@ export interface KakaoMapModalProps {
     performances: Performance[];
     onClose: () => void;
     centerLocation?: { lat: number; lng: number; name: string } | null;
-    favoriteVenues: string[];
-    onToggleFavorite: (venueName: string) => void;
+    favoriteVenues: FavoriteVenuePreference[];
+    onToggleFavorite: (favoriteVenue: FavoriteVenuePreference) => void;
     onVenueLocationChange?: (venueName: string, lat: number, lng: number) => void;
     cinemas?: Cinema[];
     selectedGenre?: string;
@@ -686,7 +687,13 @@ export default function KakaoMapModal({
                                 onMouseMove={onMouseMove}
                             >
                                 {visibleVenues.map((v: any) => {
-                                    const isFavorite = favoriteVenues.includes(v.venueName);
+                                    const isFavorite = favoriteVenues.some((favoriteVenue) =>
+                                        favoriteVenueMatchesIdentity(favoriteVenue, {
+                                            venueName: v.venueName,
+                                            venueKey: v.venueName,
+                                            locationKey: v.groupKey,
+                                        })
+                                    );
                                     const isSelected = selectedVenue === v.venueName;
 
                                     let distanceLabel = '';
@@ -743,7 +750,14 @@ export default function KakaoMapModal({
                                                 <button
                                                     onClick={(e) => {
                                                         e.stopPropagation();
-                                                        onToggleFavorite(v.venueName);
+                                                        onToggleFavorite(createFavoriteVenuePreference({
+                                                            venueName: v.venueName,
+                                                            venueKey: v.venueName,
+                                                            locationKey: v.groupKey,
+                                                            address: v.address,
+                                                            lat: v.lat,
+                                                            lng: v.lng,
+                                                        }));
                                                     }}
                                                     className={clsx(
                                                         "ml-2 p-1 rounded-full transition-colors",

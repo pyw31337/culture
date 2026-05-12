@@ -10,11 +10,23 @@ export type DiscoveryContextId =
     | 'under_10000'
     | 'ending_soon';
 
+export type FavoriteVenuePreference = {
+    id: string;
+    venueName: string;
+    venueKey?: string;
+    locationKey?: string;
+    address?: string;
+    lat?: number;
+    lng?: number;
+};
+
 export type Performance = {
     id: string;
     title: string;
     date: string;
     venue: string;
+    venueKey?: string;
+    locationKey?: string;
     image: string;
     link: string;
     region: string;

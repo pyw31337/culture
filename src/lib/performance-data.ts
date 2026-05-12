@@ -8,7 +8,7 @@ import type {
     DataSourceSummary
 } from '@/lib/build-info';
 import { formatKoreanDateTime } from '@/lib/build-info';
-import { resolveVenueInfoForPerformance } from '@/lib/location-display';
+import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { processAndMergePerformances } from '@/lib/performance-merger';
 import { transformPerformance, type RawPerformance } from '@/lib/data-transformer';
 import { SOURCE_REGISTRY } from '@/lib/source-registry';
@@ -33,6 +33,38 @@ export interface VenueData {
     lng?: number;
     latitude?: number | string;
     longitude?: number | string;
+}
+
+function parseCoordinate(value: unknown) {
+    if (typeof value === 'number') return value;
+    if (typeof value === 'string') return parseFloat(value);
+    return 0;
+}
+
+function hydrateLocationIdentity(items: Performance[], venues: Record<string, VenueData>) {
+    return items.map((performance) => {
+        const resolvedVenue = resolveVenueInfoForPerformance(performance, venues);
+        const lat = parseCoordinate(performance.lat || performance.latitude || resolvedVenue.lat || resolvedVenue.latitude);
+        const lng = parseCoordinate(performance.lng || performance.longitude || resolvedVenue.lng || resolvedVenue.longitude);
+        const address = performance.address || resolvedVenue.address;
+
+        return {
+            ...performance,
+            address,
+            lat: lat || undefined,
+            lng: lng || undefined,
+            venueKey: performance.venueKey || getPerformanceVenueKey({
+                ...performance,
+                address,
+            }, venues),
+            locationKey: performance.locationKey || buildPerformanceLocationKey({
+                ...performance,
+                address,
+                lat: lat || undefined,
+                lng: lng || undefined,
+            }, venues),
+        };
+    });
 }
 
 function loadJSONFrom(baseDir: string[], filename: string, defaultValue: unknown = []) {
@@ -210,7 +242,11 @@ function getPrebuiltPerformances(): Performance[] | null {
         return null;
     }
 
-    cachedPublicPerformances = safePerformanceList(safeArray<Performance>(data));
+    const publicVenues = (cachedVenues || loadPublicJSON('venues.json', loadSourceJSON('venues.json', {}))) as Record<string, VenueData>;
+    cachedPublicPerformances = hydrateLocationIdentity(
+        safePerformanceList(safeArray<Performance>(data)),
+        publicVenues,
+    );
     return cachedPublicPerformances;
 }
 
@@ -316,18 +352,13 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
 
         // Address/Location Validation (Strict Policy)
         if (p.genre !== 'movie') {
-            const parseCoord = (val: unknown) => {
-                if (typeof val === 'number') return val;
-                if (typeof val === 'string') return parseFloat(val);
-                return 0;
-            };
-            const lat = parseCoord(p.lat || p.latitude);
-            const lng = parseCoord(p.lng || p.longitude);
+            const lat = parseCoordinate(p.lat || p.latitude);
+            const lng = parseCoordinate(p.lng || p.longitude);
             const hasInherentGeo = lat !== 0 && lng !== 0 && !isNaN(lat) && !isNaN(lng);
             const hasAddress = p.address && p.address !== '정보 없음' && p.address !== '';
             const resolvedVenue = resolveVenueInfoForPerformance(p, venues);
-            const resolvedLat = parseCoord(resolvedVenue.lat || resolvedVenue.latitude);
-            const resolvedLng = parseCoord(resolvedVenue.lng || resolvedVenue.longitude);
+            const resolvedLat = parseCoordinate(resolvedVenue.lat || resolvedVenue.latitude);
+            const resolvedLng = parseCoordinate(resolvedVenue.lng || resolvedVenue.longitude);
             const hasResolvedGeo = resolvedLat !== 0 && resolvedLng !== 0 && !isNaN(resolvedLat) && !isNaN(resolvedLng);
             const hasResolvedAddress = Boolean(resolvedVenue.address && resolvedVenue.address !== '정보 없음' && resolvedVenue.address !== '');
 
@@ -353,6 +384,9 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
             }
         }
 
+        p.venueKey = getPerformanceVenueKey(p, venues);
+        p.locationKey = buildPerformanceLocationKey(p, venues);
+
         if (BLOCKLIST.some(b => p.venue.includes(b))) return false;
         return true;
     });
@@ -365,7 +399,7 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
     console.log(`[DEBUG] Source breakdown after filter:`, sourceCounts);
 
     // 4. Deduplication & Stable ID Logic (Unified via Utility)
-    const stablePerformances = processAndMergePerformances(filtered);
+    const stablePerformances = hydrateLocationIdentity(processAndMergePerformances(filtered), venues);
 
     // 5. Custom Movie Sorting
     // Current Rule: Top 10 Ranked first, then Upcoming releases by date, then others.

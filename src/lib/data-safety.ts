@@ -35,6 +35,8 @@ export function safePerformance(data: any): Performance | null {
         title: String(data.title),
         date: typeof data.date === 'string' ? data.date : '날짜 미정',
         venue: typeof data.venue === 'string' ? data.venue : '정보 없음', // "venue" is critical for filtering
+        venueKey: typeof data.venueKey === 'string' ? data.venueKey : undefined,
+        locationKey: typeof data.locationKey === 'string' ? data.locationKey : undefined,
         image: typeof data.image === 'string' ? data.image : '', // Fallback to empty string, UI handles fallback
         link: typeof data.link === 'string' && data.link.trim()
             ? data.link
