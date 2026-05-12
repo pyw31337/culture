@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { Performance } from '@/types';
-import { filterPerformances, sortPerformances } from '@/lib/performance-filter';
+import { filterPerformances, sortPerformances, sortPerformancesForHomeFeed } from '@/lib/performance-filter';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 
 interface UsePerformanceFiltersProps {
@@ -153,6 +153,10 @@ export function usePerformanceFilters({
         }
 
         const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
+        if (selectedGenre === 'all' && searchMode !== 'location' && !debouncedSearchText) {
+            return sortPerformancesForHomeFeed(filtered);
+        }
+
         if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre) && !debouncedSearchText) {
             // Standardize on stable chronological sort to prevent list shuffling
             return filtered.sort((a, b) => {

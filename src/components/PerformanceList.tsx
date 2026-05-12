@@ -26,6 +26,7 @@ import BottomNavSheet from './BottomNavSheet';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import type { DataBuildInfo } from '@/lib/build-info';
 import { getKeywordMatchedItems } from '@/lib/keyword-match';
+import { getFeaturedPerformances } from '@/lib/performance-filter';
 
 // Custom Hooks
 import { useUserPreferences } from '@/hooks/useUserPreferences';
@@ -157,8 +158,7 @@ export default function PerformanceList({
     }, [savedKeywords, allPerformances]);
 
     const recommendedItems = useMemo(() => {
-        // Simple mock for now, can be sophisticated later
-        return allPerformances.slice(0, 10);
+        return getFeaturedPerformances(allPerformances, 24);
     }, [allPerformances]);
 
     useEffect(() => {

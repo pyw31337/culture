@@ -16,6 +16,317 @@ interface Venue {
 }
 
 const venues = venueData as Record<string, Venue>;
+const KOREA_TIMEZONE = 'Asia/Seoul';
+const WINTER_KEYWORDS = ['스키', '보드', '스노우', '눈썰매', '리프트', '리프트권', '스키장', '렌탈샵', '겨울'];
+const SUMMER_KEYWORDS = ['워터파크', '수영장', '풀파티', '해수욕', '서핑', '물놀이', '계곡', '래프팅'];
+const SPRING_KEYWORDS = ['벚꽃', '봄꽃', '유채꽃'];
+const AUTUMN_KEYWORDS = ['단풍', '가을꽃', '억새'];
+
+function getKoreanReferenceDate() {
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+        timeZone: KOREA_TIMEZONE,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+
+    const parts = formatter.formatToParts(new Date());
+    const getPart = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
+    return new Date(`${getPart('year')}-${getPart('month')}-${getPart('day')}T12:00:00+09:00`);
+}
+
+function getKoreanDaySalt(referenceDate: Date) {
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+        timeZone: KOREA_TIMEZONE,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+
+    return formatter.format(referenceDate);
+}
+
+function hashString(value: string) {
+    let hash = 0;
+    for (let i = 0; i < value.length; i++) {
+        hash = (hash << 5) - hash + value.charCodeAt(i);
+        hash |= 0;
+    }
+    return Math.abs(hash);
+}
+
+function toMiddayDate(year: number, month: number, day: number) {
+    return new Date(`${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T12:00:00+09:00`);
+}
+
+function extractScheduleDates(performance: Pick<Performance, 'date' | 'dateRaw'>) {
+    const source = [performance.dateRaw, performance.date]
+        .filter((value): value is string => typeof value === 'string' && value.trim().length > 0)
+        .join(' | ');
+
+    if (!source) return [] as Date[];
+
+    const normalized = source
+        .replace(/\([^)]*\)/g, ' ')
+        .replace(/\[[^\]]*\]/g, ' ')
+        .replace(/년/g, '.')
+        .replace(/월/g, '.')
+        .replace(/일/g, ' ')
+        .replace(/\s+/g, ' ');
+
+    const timestamps = new Set<number>();
+    const dates: Date[] = [];
+
+    const pushDate = (year: number, month: number, day: number) => {
+        if (!year || !month || !day) return;
+        const date = toMiddayDate(year, month, day);
+        if (Number.isNaN(date.getTime())) return;
+        if (timestamps.has(date.getTime())) return;
+        timestamps.add(date.getTime());
+        dates.push(date);
+    };
+
+    const fullYearPattern = /(20\d{2})[.\-/ ]+(\d{1,2})[.\-/ ]+(\d{1,2})/g;
+    const shortYearPattern = /(^|[^\d])(\d{2})[.\-/ ]+(\d{1,2})[.\-/ ]+(\d{1,2})(?!\d)/g;
+    const compactPattern = /\b(20\d{2})(\d{2})(\d{2})\b/g;
+
+    let match: RegExpExecArray | null;
+    while ((match = fullYearPattern.exec(normalized)) !== null) {
+        pushDate(Number(match[1]), Number(match[2]), Number(match[3]));
+    }
+
+    while ((match = shortYearPattern.exec(normalized)) !== null) {
+        pushDate(2000 + Number(match[2]), Number(match[3]), Number(match[4]));
+    }
+
+    while ((match = compactPattern.exec(normalized)) !== null) {
+        pushDate(Number(match[1]), Number(match[2]), Number(match[3]));
+    }
+
+    return dates.sort((a, b) => a.getTime() - b.getTime());
+}
+
+function getScheduleWindow(performance: Pick<Performance, 'date' | 'dateRaw'>) {
+    const dates = extractScheduleDates(performance);
+    if (dates.length === 0) {
+        return { start: null as Date | null, end: null as Date | null };
+    }
+
+    return {
+        start: dates[0],
+        end: dates[dates.length - 1],
+    };
+}
+
+function getDateDiffDays(target: Date, reference: Date) {
+    const ms = target.getTime() - reference.getTime();
+    return Math.round(ms / (1000 * 60 * 60 * 24));
+}
+
+function includesAny(text: string, keywords: string[]) {
+    return keywords.some((keyword) => text.includes(keyword));
+}
+
+function getSeasonalPenalty(performance: Pick<Performance, 'title' | 'venue' | 'genre' | 'description' | 'subGenre'>, referenceDate: Date) {
+    const text = [
+        performance.title,
+        performance.venue,
+        performance.genre,
+        performance.subGenre,
+        performance.description,
+    ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+    const month = referenceDate.getUTCMonth() + 1;
+    let penalty = 0;
+
+    if (includesAny(text, WINTER_KEYWORDS) && ![11, 12, 1, 2, 3].includes(month)) {
+        penalty -= 140;
+        if (text.includes('25/26') || text.includes('시즌권')) {
+            penalty -= 30;
+        }
+    }
+
+    if (includesAny(text, SUMMER_KEYWORDS) && ![6, 7, 8, 9].includes(month)) {
+        penalty -= 35;
+    }
+
+    if (includesAny(text, SPRING_KEYWORDS) && ![3, 4, 5].includes(month)) {
+        penalty -= 18;
+    }
+
+    if (includesAny(text, AUTUMN_KEYWORDS) && ![9, 10, 11].includes(month)) {
+        penalty -= 18;
+    }
+
+    return penalty;
+}
+
+function getFeedScore(performance: Performance, referenceDate: Date) {
+    const { start, end } = getScheduleWindow(performance);
+    const daysUntilStart = start ? getDateDiffDays(start, referenceDate) : null;
+    const daysUntilEnd = end ? getDateDiffDays(end, referenceDate) : null;
+    const runningDays = start && end ? Math.max(0, getDateDiffDays(end, start)) : 0;
+
+    let score = 0;
+
+    const genreBase: Record<string, number> = {
+        musical: 18,
+        play: 18,
+        concert: 17,
+        classic_tradition: 16,
+        exhibition: 15,
+        activity: 12,
+        class: 10,
+        museum: 12,
+        tourism: 10,
+        movie: 16,
+        baseball: 14,
+        soccer: 14,
+        sports: 13,
+    };
+
+    score += genreBase[performance.genre] ?? 12;
+
+    if (performance.genre === 'movie' && performance.rank && performance.rank <= 10) {
+        score += 32 - performance.rank * 2;
+    }
+
+    if (daysUntilStart !== null && daysUntilEnd !== null) {
+        if (daysUntilStart >= 0) {
+            if (daysUntilStart <= 7) score += 96 - daysUntilStart * 8;
+            else if (daysUntilStart <= 30) score += 68 - daysUntilStart;
+            else if (daysUntilStart <= 90) score += 36 - Math.floor(daysUntilStart / 3);
+            else if (daysUntilStart <= 180) score += 10;
+            else score -= 20;
+        } else if (daysUntilEnd >= 0) {
+            score += 44;
+            if (daysUntilEnd <= 7) score += 18;
+            else if (daysUntilEnd <= 30) score += 10;
+
+            const ageDays = start ? Math.max(0, getDateDiffDays(referenceDate, start)) : 0;
+            if (ageDays > 180) score -= Math.min(36, Math.floor(ageDays / 30));
+            if (runningDays > 365) score -= 18;
+        } else {
+            score -= 100;
+        }
+    } else if (daysUntilEnd !== null) {
+        if (daysUntilEnd >= 0 && daysUntilEnd <= 90) score += 18;
+        else if (daysUntilEnd < 0) score -= 40;
+    } else {
+        score += 4;
+    }
+
+    if (performance.title.includes('개막') || performance.title.includes('오픈') || performance.title.includes('신규')) {
+        score += 8;
+    }
+
+    score += getSeasonalPenalty(performance, referenceDate);
+
+    return score;
+}
+
+export function sortPerformancesForHomeFeed(performances: Performance[]) {
+    const referenceDate = getKoreanReferenceDate();
+    const salt = getKoreanDaySalt(referenceDate);
+    const ranked = [...performances].sort((a, b) => {
+        const scoreA = getFeedScore(a, referenceDate);
+        const scoreB = getFeedScore(b, referenceDate);
+        if (scoreA !== scoreB) return scoreB - scoreA;
+
+        const windowA = getScheduleWindow(a);
+        const windowB = getScheduleWindow(b);
+        const daysUntilA = windowA.start ? Math.abs(getDateDiffDays(windowA.start, referenceDate)) : 9999;
+        const daysUntilB = windowB.start ? Math.abs(getDateDiffDays(windowB.start, referenceDate)) : 9999;
+        if (daysUntilA !== daysUntilB) return daysUntilA - daysUntilB;
+
+        const tieA = hashString(`${salt}:${a.id}`) % 1000;
+        const tieB = hashString(`${salt}:${b.id}`) % 1000;
+        if (tieA !== tieB) return tieB - tieA;
+
+        return a.title.localeCompare(b.title, 'ko');
+    });
+
+    const earlyWindow = 36;
+    const selected: Performance[] = [];
+    const selectedIds = new Set<string>();
+    const genreCounts = new Map<string, number>();
+    const venueCounts = new Map<string, number>();
+
+    const canPlaceEarly = (item: Performance, index: number) => {
+        const sameGenreCount = genreCounts.get(item.genre) || 0;
+        const sameVenueCount = venueCounts.get(item.venue) || 0;
+
+        if (index < 8 && sameGenreCount >= 1) return false;
+        if (index < 10 && sameVenueCount >= 1) return false;
+        if (index < 18 && sameGenreCount >= 2) return false;
+        if (index < 24 && sameVenueCount >= 1) return false;
+        if (index < earlyWindow && sameGenreCount >= 3) return false;
+
+        return true;
+    };
+
+    for (const item of ranked) {
+        if (selected.length >= earlyWindow) break;
+        if (!canPlaceEarly(item, selected.length)) continue;
+
+        selected.push(item);
+        selectedIds.add(item.id);
+        genreCounts.set(item.genre, (genreCounts.get(item.genre) || 0) + 1);
+        venueCounts.set(item.venue, (venueCounts.get(item.venue) || 0) + 1);
+    }
+
+    if (selected.length < earlyWindow) {
+        for (const item of ranked) {
+            if (selected.length >= earlyWindow) break;
+            if (selectedIds.has(item.id)) continue;
+
+            selected.push(item);
+            selectedIds.add(item.id);
+        }
+    }
+
+    const remainder = ranked.filter((item) => !selectedIds.has(item.id));
+    return [...selected, ...remainder];
+}
+
+export function getFeaturedPerformances(performances: Performance[], limit = 18) {
+    const ranked = sortPerformancesForHomeFeed(performances);
+    const selected: Performance[] = [];
+    const seenIds = new Set<string>();
+    const genreCounts = new Map<string, number>();
+    const venueCounts = new Map<string, number>();
+
+    for (const item of ranked) {
+        if (selected.length >= limit) break;
+        if (seenIds.has(item.id)) continue;
+
+        const sameGenreCount = genreCounts.get(item.genre) || 0;
+        const sameVenueCount = venueCounts.get(item.venue) || 0;
+        const earlyWindow = selected.length < 8;
+
+        if (earlyWindow && sameGenreCount >= 1) continue;
+        if (selected.length < 6 && sameVenueCount >= 1) continue;
+
+        selected.push(item);
+        seenIds.add(item.id);
+        genreCounts.set(item.genre, sameGenreCount + 1);
+        venueCounts.set(item.venue, sameVenueCount + 1);
+    }
+
+    if (selected.length < limit) {
+        for (const item of ranked) {
+            if (selected.length >= limit) break;
+            if (seenIds.has(item.id)) continue;
+            selected.push(item);
+            seenIds.add(item.id);
+        }
+    }
+
+    return selected;
+}
 
 export interface FilterOptions {
     genre?: string;

@@ -15,7 +15,7 @@ export default async function Home() {
     // The rest will be fetched via Infinite Scroll API
     // We sort by Date Ascending (Upcoming) by default for consistency with API default
     const performaceFilter = await import('@/lib/performance-filter');
-    const sorted = performaceFilter.sortPerformances(allPerformances, 'all');
+    const sorted = performaceFilter.sortPerformancesForHomeFeed(allPerformances);
     const performances = sorted.slice(0, 24);
     const genreCounts = buildInfo?.genreCounts ?? buildGenreCounts(allPerformances);
 

@@ -30,6 +30,15 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     const lastDragEndTime = useRef<number>(0);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
+    const dailySalt = React.useMemo(() => {
+        const formatter = new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'Asia/Seoul',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+        });
+        return formatter.format(new Date());
+    }, []);
 
     // Motion value for x-axis scroll
     const x = useMotionValue(0);
@@ -39,8 +48,9 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     // Deterministic Random Score Generator
     const getBaseScore = (id: string) => {
         let hash = 0;
-        for (let i = 0; i < id.length; i++) {
-            hash = (hash << 5) - hash + id.charCodeAt(i);
+        const source = `${dailySalt}:${id}`;
+        for (let i = 0; i < source.length; i++) {
+            hash = (hash << 5) - hash + source.charCodeAt(i);
             hash |= 0;
         }
         return Math.abs(hash) % 100;
