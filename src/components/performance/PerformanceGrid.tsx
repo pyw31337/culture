@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { clsx } from 'clsx';
+import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import PerformanceCard from './PerformanceCard';
 import PerformanceListItem from './PerformanceListItem';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
@@ -61,7 +62,7 @@ export default function PerformanceGrid({
         >
             {items.map((perf) => {
                 // Venue Info
-                const venueInfo = venues[perf.venue];
+                const venueInfo = resolveVenueInfoForPerformance(perf, venues);
 
                 // Nearby Check
                 // If selectedVenue is active, and this perf's venue DOES NOT match, it's a recommendation.

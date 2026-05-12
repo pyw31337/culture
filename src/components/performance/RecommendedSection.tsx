@@ -3,6 +3,7 @@ import { Sparkles, ChevronLeft, ChevronRight, Share2 } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
 import venueData from '@/data/venues.json';
 import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
+import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { cleanTitle } from '@/lib/utils';
 import { getGenreIcon } from '../GenreIcons';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
@@ -321,13 +322,7 @@ export default function RecommendedSection({
                                                 {cleanTitle(perf.title)}
                                             </span>
                                             <span className="text-white/60 font-bold text-[10px] sm:text-xs leading-tight truncate uppercase tracking-tight">
-                                                {(() => {
-                                                    const addr = venues[perf.venue]?.address || '';
-                                                    if (!addr) return perf.venue;
-                                                    const parts = addr.split(' ');
-                                                    // Filter out numbers and specific theater detail rooms
-                                                    return parts.slice(0, 3).join(' ');
-                                                })()}
+                                                {getPerformanceLocationLabel(perf, venues, 3) || perf.venue}
                                             </span>
                                         </div>
                                     </div>

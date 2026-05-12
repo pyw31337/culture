@@ -9,6 +9,7 @@ import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import type { DataBuildInfo } from '@/lib/build-info';
+import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { getExternalContentLink } from '@/lib/performance-links';
 import CalendarDayCell from './CalendarDayCell';
 import venueData from '@/data/venues.json';
@@ -407,10 +408,7 @@ export default function CalendarView({
                                                 </div>
                                                 <h4 className="text-sm sm:text-base font-black text-gray-900 dark:text-white leading-tight line-clamp-2 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">{perf.title}</h4>
                                                 {(() => {
-                                                    const v = venues[perf.venue];
-                                                    const addr = v?.address || '';
-                                                    const parts = addr.split(/\s+/);
-                                                    const loc = parts.length >= 2 ? `${parts[0]} ${parts[1]}` : parts[0] || '';
+                                                    const loc = getPerformanceLocationLabel(perf, venues, 2);
                                                     return loc ? (
                                                         <span className="sm:hidden flex items-center gap-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold mt-1">
                                                             <MapPin size={9} className="shrink-0" />{loc}
@@ -419,10 +417,7 @@ export default function CalendarView({
                                                 })()}
                                             </div>
                                             {(() => {
-                                                const v = venues[perf.venue];
-                                                const addr = v?.address || '';
-                                                const parts = addr.split(/\s+/);
-                                                const loc = parts.length >= 2 ? `${parts[0]} ${parts[1]}` : parts[0] || '';
+                                                const loc = getPerformanceLocationLabel(perf, venues, 2);
                                                 return loc ? (
                                                     <div className="hidden sm:flex items-center gap-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold shrink-0 self-center">
                                                         <MapPin size={10} className="shrink-0" />{loc}

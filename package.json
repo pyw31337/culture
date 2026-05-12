@@ -16,7 +16,8 @@
     "scrape:yes24": "npx tsx scripts/scrape-yes24-exclusive.ts",
     "scrape:sssd": "npx tsx scripts/scrape-sssd.ts",
     "validate:images": "npx tsx scripts/validate-images.ts",
-    "validate:content": "npx tsx scripts/validate-content-quality.ts"
+    "validate:content": "npx tsx scripts/validate-content-quality.ts",
+    "audit:locations": "npx tsx scripts/audit-location-mismatches.ts"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",
