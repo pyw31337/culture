@@ -22,7 +22,7 @@ const SUMMER_KEYWORDS = ['워터파크', '수영장', '풀파티', '해수욕', 
 const SPRING_KEYWORDS = ['벚꽃', '봄꽃', '유채꽃'];
 const AUTUMN_KEYWORDS = ['단풍', '가을꽃', '억새'];
 
-function getKoreanReferenceDate() {
+export function getKoreanReferenceDate() {
     const formatter = new Intl.DateTimeFormat('en-CA', {
         timeZone: KOREA_TIMEZONE,
         year: 'numeric',
@@ -59,7 +59,7 @@ function toMiddayDate(year: number, month: number, day: number) {
     return new Date(`${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T12:00:00+09:00`);
 }
 
-function extractScheduleDates(performance: Pick<Performance, 'date' | 'dateRaw'>) {
+export function extractScheduleDates(performance: Pick<Performance, 'date' | 'dateRaw'>) {
     const source = [performance.dateRaw, performance.date]
         .filter((value): value is string => typeof value === 'string' && value.trim().length > 0)
         .join(' | ');
@@ -106,7 +106,7 @@ function extractScheduleDates(performance: Pick<Performance, 'date' | 'dateRaw'>
     return dates.sort((a, b) => a.getTime() - b.getTime());
 }
 
-function getScheduleWindow(performance: Pick<Performance, 'date' | 'dateRaw'>) {
+export function getScheduleWindow(performance: Pick<Performance, 'date' | 'dateRaw'>) {
     const dates = extractScheduleDates(performance);
     if (dates.length === 0) {
         return { start: null as Date | null, end: null as Date | null };
@@ -118,7 +118,7 @@ function getScheduleWindow(performance: Pick<Performance, 'date' | 'dateRaw'>) {
     };
 }
 
-function getDateDiffDays(target: Date, reference: Date) {
+export function getDateDiffDays(target: Date, reference: Date) {
     const ms = target.getTime() - reference.getTime();
     return Math.round(ms / (1000 * 60 * 60 * 24));
 }
@@ -164,7 +164,7 @@ function getSeasonalPenalty(performance: Pick<Performance, 'title' | 'venue' | '
     return penalty;
 }
 
-function getFeedScore(performance: Performance, referenceDate: Date) {
+export function getFeedScore(performance: Performance, referenceDate: Date) {
     const { start, end } = getScheduleWindow(performance);
     const daysUntilStart = start ? getDateDiffDays(start, referenceDate) : null;
     const daysUntilEnd = end ? getDateDiffDays(end, referenceDate) : null;

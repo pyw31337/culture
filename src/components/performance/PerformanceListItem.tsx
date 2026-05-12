@@ -9,6 +9,7 @@ import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
+import RecommendationReasonChips from './RecommendationReasonChips';
 
 interface PerformanceListItemProps {
     perf: any;
@@ -264,6 +265,13 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 {perf.date ? perf.date.split('~')[0].trim() : '상시'}
                             </span>
                         </div>
+
+                        <RecommendationReasonChips
+                            reasons={perf.recommendationReasons}
+                            comparisonTags={perf.comparisonTags}
+                            className="mb-1.5"
+                            compact
+                        />
 
                         <a href={externalLink} target="_blank" rel="noopener noreferrer" className="block group/link" onClick={e => e.stopPropagation()}>
                             <h3 className={clsx(

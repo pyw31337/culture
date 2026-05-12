@@ -1,7 +1,8 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { Performance } from '@/types';
+import { DiscoveryContextId, Performance } from '@/types';
 import { filterPerformances, sortPerformances, sortPerformancesForCategoryFeed, sortPerformancesForHomeFeed } from '@/lib/performance-filter';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
+import { filterByDiscoveryContext } from '@/lib/discovery';
 
 interface UsePerformanceFiltersProps {
     allPerformances: Performance[];
@@ -12,6 +13,7 @@ interface UsePerformanceFiltersProps {
     userLocation: any;
     radius: number;
     venues: Record<string, any>;
+    discoveryContextId: DiscoveryContextId;
 }
 
 export function usePerformanceFilters({
@@ -22,7 +24,8 @@ export function usePerformanceFilters({
     searchLocation,
     userLocation,
     radius,
-    venues
+    venues,
+    discoveryContextId
 }: UsePerformanceFiltersProps) {
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
     
@@ -126,10 +129,14 @@ export function usePerformanceFilters({
             searchMode: searchMode
         });
 
+        const discoveryFiltered = (!debouncedSearchText && searchMode !== 'location')
+            ? filterByDiscoveryContext(filtered, discoveryContextId)
+            : filtered;
+
         if (searchMode === 'location' && (searchLocation || userLocation)) {
             const center = searchLocation || userLocation;
             if (center && center.lat && center.lng) {
-                const withDist = filtered.map(p => {
+                const withDist = discoveryFiltered.map(p => {
                     const v = venues[p.venue];
                     const dist = (v?.lat && v?.lng)
                         ? getDistanceFromLatLonInKm(center.lat, center.lng, v.lat, v.lng)
@@ -154,15 +161,15 @@ export function usePerformanceFilters({
 
         const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
         if (selectedGenre === 'all' && searchMode !== 'location' && !debouncedSearchText) {
-            return sortPerformancesForHomeFeed(filtered);
+            return sortPerformancesForHomeFeed(discoveryFiltered);
         }
 
         if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre) && !debouncedSearchText) {
-            return sortPerformancesForCategoryFeed(filtered);
+            return sortPerformancesForCategoryFeed(discoveryFiltered);
         }
 
-        return sortPerformances(filtered, selectedGenre, debouncedSearchText);
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, shuffleSeed]);
+        return sortPerformances(discoveryFiltered, selectedGenre, debouncedSearchText);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, shuffleSeed, discoveryContextId]);
 
     // Pagination
     const displayPerformances = useMemo(() => {
@@ -181,7 +188,7 @@ export function usePerformanceFilters({
             // For now, let's reset to 24 if major filters change AFTER mount
             setVisibleCount(24);
         }
-    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation]);
+    }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, discoveryContextId]);
 
     const loadMore = useCallback(() => {
         setVisibleCount(prev => prev + 24);

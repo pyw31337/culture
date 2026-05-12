@@ -1,0 +1,184 @@
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
+import { clsx } from 'clsx';
+import type { Performance } from '@/types';
+import { GENRES } from '@/lib/constants';
+import { cleanTitle } from '@/lib/utils';
+import ImageWithFallback from '../ImageWithFallback';
+import RecommendationReasonChips from './RecommendationReasonChips';
+
+interface PersonalizedSectionProps {
+    items: Performance[];
+    onDetail: (perf: Performance) => void;
+    searchMode?: 'keyword' | 'location';
+    subtitle?: string;
+}
+
+export default function PersonalizedSection({
+    items,
+    onDetail,
+    searchMode = 'keyword',
+    subtitle,
+}: PersonalizedSectionProps) {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [constraints, setConstraints] = useState({ left: 0, right: 0 });
+    const [isDragging, setIsDragging] = useState(false);
+    const [showLeftArrow, setShowLeftArrow] = useState(false);
+    const [showRightArrow, setShowRightArrow] = useState(true);
+    const x = useMotionValue(0);
+
+    const updateConstraints = useCallback(() => {
+        if (!containerRef.current || !contentRef.current) return;
+        const containerWidth = containerRef.current.offsetWidth;
+        const contentWidth = contentRef.current.scrollWidth;
+        const maxScroll = -(contentWidth - containerWidth + 60);
+
+        setConstraints({ left: maxScroll, right: 0 });
+        const currentX = x.get();
+        setShowLeftArrow(currentX < -10);
+        setShowRightArrow(currentX > maxScroll + 10);
+    }, [items, x]);
+
+    useEffect(() => {
+        updateConstraints();
+        const onResize = () => updateConstraints();
+        window.addEventListener('resize', onResize);
+        return () => window.removeEventListener('resize', onResize);
+    }, [updateConstraints]);
+
+    useMotionValueEvent(x, 'change', (latest) => {
+        if (!contentRef.current || !containerRef.current) return;
+        const containerWidth = containerRef.current.offsetWidth;
+        const contentWidth = contentRef.current.scrollWidth;
+        const maxScroll = -(contentWidth - containerWidth + 60);
+        setShowLeftArrow(latest < -10);
+        setShowRightArrow(latest > maxScroll + 10);
+    });
+
+    const scroll = (direction: 'left' | 'right') => {
+        const currentX = x.get();
+        const containerWidth = containerRef.current?.offsetWidth || 300;
+        const scrollAmount = containerWidth * 0.75;
+        let nextX = direction === 'left' ? currentX + scrollAmount : currentX - scrollAmount;
+        if (nextX > 0) nextX = 0;
+        if (nextX < constraints.left) nextX = constraints.left;
+
+        animate(x, nextX, {
+            type: 'spring',
+            stiffness: 300,
+            damping: 30,
+        });
+    };
+
+    const pointerPos = useRef({ x: 0, y: 0 });
+    const handlePointerDown = (event: React.PointerEvent) => {
+        pointerPos.current = { x: event.clientX, y: event.clientY };
+    };
+
+    const handlePointerUp = (event: React.PointerEvent, performance: Performance) => {
+        const diffX = Math.abs(event.clientX - pointerPos.current.x);
+        const diffY = Math.abs(event.clientY - pointerPos.current.y);
+        if (diffX > 10 || diffY > 10 || isDragging) return;
+        onDetail(performance);
+    };
+
+    if (items.length === 0) return null;
+
+    return (
+        <section className="mb-8 relative animate-in fade-in slide-in-from-bottom-4 duration-700 group/section">
+            <div className="flex items-start justify-between gap-4 mb-4 pl-[1.6%] pr-[1.6%]">
+                <div>
+                    <div className="flex items-center gap-2">
+                        <Sparkles className={clsx('w-5 h-5', searchMode === 'location' ? 'text-emerald-400 fill-emerald-400/20' : 'text-purple-400 fill-purple-400/20')} />
+                        <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
+                            당신을 위한 <span className={clsx('text-transparent bg-clip-text bg-gradient-to-r', searchMode === 'location' ? 'from-[#55df99] to-[#0090f5]' : 'from-purple-400 to-pink-500')}>추천</span>
+                        </h2>
+                    </div>
+                    <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600 max-w-2xl">
+                        {subtitle || '좋아요, 저장 키워드, 자주 본 장르, 찜한 공연장을 함께 보고 첫 화면을 조금 더 나답게 정리했어요.'}
+                    </p>
+                </div>
+            </div>
+
+            <div className="relative">
+                {showLeftArrow && (
+                    <button
+                        onClick={() => scroll('left')}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-r-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                    >
+                        <ChevronLeft size={32} />
+                    </button>
+                )}
+                {showRightArrow && (
+                    <button
+                        onClick={() => scroll('right')}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-l-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                    >
+                        <ChevronRight size={32} />
+                    </button>
+                )}
+
+                <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing pb-6 transition-all select-none" style={{ touchAction: 'pan-y' }}>
+                    <motion.div
+                        ref={contentRef}
+                        drag="x"
+                        dragConstraints={constraints}
+                        dragElastic={0.6}
+                        style={{ x }}
+                        onDragStart={() => setIsDragging(true)}
+                        onDragEnd={() => setIsDragging(false)}
+                        className="flex gap-5 sm:gap-6 pl-[1.6%] pr-[1.6%] pt-2 items-stretch min-w-max"
+                    >
+                        {items.map((performance) => (
+                            <motion.div
+                                key={performance.id}
+                                className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-2xl transition-shadow flex-shrink-0"
+                                whileHover={!isDragging ? { scale: 1.03, zIndex: 30 } : {}}
+                                onPointerDown={handlePointerDown}
+                                onPointerUp={(event) => handlePointerUp(event, performance)}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
+                                <ImageWithFallback
+                                    src={performance.image || performance.poster || performance.backupPoster || `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/fallbacks/movie.svg`}
+                                    backupSrc={performance.backupPoster}
+                                    alt={performance.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 220px, 260px"
+                                    draggable={false}
+                                />
+
+                                <div className="absolute top-3 left-3 right-3 z-20 flex flex-col gap-2">
+                                    <div className="inline-flex w-fit rounded-full bg-black/35 px-2.5 py-1 text-[10px] font-black text-white backdrop-blur-md border border-white/15">
+                                        {GENRES.find((genre) => genre.id === performance.genre)?.label || performance.genre}
+                                    </div>
+                                    <RecommendationReasonChips
+                                        reasons={performance.recommendationReasons}
+                                        comparisonTags={performance.comparisonTags}
+                                        compact
+                                    />
+                                </div>
+
+                                <div className="absolute inset-x-0 bottom-0 z-20 p-4">
+                                    <div className="rounded-[1.25rem] bg-black/35 p-3 backdrop-blur-md border border-white/10">
+                                        <h3 className="text-white font-black text-base leading-tight line-clamp-2">
+                                            {cleanTitle(performance.title)}
+                                        </h3>
+                                        <p className="mt-1 text-[11px] font-semibold text-white/70 truncate">
+                                            {performance.venue}
+                                        </p>
+                                        <p className="mt-2 text-[11px] leading-5 text-slate-200/90 line-clamp-2">
+                                            {performance.description || '이 콘텐츠가 왜 지금 어울리는지 바로 읽을 수 있도록 추천 이유를 함께 붙여두었습니다.'}
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+}

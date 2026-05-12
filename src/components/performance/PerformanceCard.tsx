@@ -9,6 +9,7 @@ import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { getDdayLabel } from '@/lib/dday';
+import RecommendationReasonChips from './RecommendationReasonChips';
 
 interface PerformanceCardProps {
     perf: any;
@@ -358,6 +359,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <h2 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg">
                                         <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
                                     </h2>
+
+                                    <RecommendationReasonChips
+                                        reasons={perf.recommendationReasons}
+                                        comparisonTags={perf.comparisonTags}
+                                        className="mb-1.5"
+                                        compact
+                                    />
 
                                     <div className="flex items-center gap-1 text-gray-300 text-xs font-semibold mt-1">
                                         {perf.genre === 'movie' ? (

@@ -1,5 +1,15 @@
 export type Genre = string;
 
+export type DiscoveryContextId =
+    | 'all'
+    | 'today'
+    | 'this_weekend'
+    | 'indoor'
+    | 'with_kids'
+    | 'date_night'
+    | 'under_10000'
+    | 'ending_soon';
+
 export type Performance = {
     id: string;
     title: string;
@@ -78,4 +88,8 @@ export type Performance = {
     trailer?: string;
     status?: string;
     statsCollectedAt?: string;
+    matchedKeyword?: string;
+    recommendationReasons?: string[];
+    comparisonTags?: string[];
+    matchedDiscoveryContexts?: DiscoveryContextId[];
 };

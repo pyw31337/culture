@@ -8,6 +8,7 @@ import { getGenreIcon } from '../GenreIcons';
 import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { useUserActivity } from '@/hooks/useUserActivity';
 import { clsx } from 'clsx';
+import RecommendationReasonChips from './RecommendationReasonChips';
 
 const venues = venueData as Record<string, any>;
 
@@ -19,9 +20,21 @@ interface RecommendedSectionProps {
     onDetail: (perf: any) => void;
     searchMode?: 'keyword' | 'location';
     onShare?: (id: string, e?: React.MouseEvent) => void;
+    title?: string;
+    subtitle?: string;
 }
 
-export default function RecommendedSection({ recommendedItems, onLocationClick, onToggleLike, likedIds, onDetail, searchMode = 'keyword', onShare }: RecommendedSectionProps) {
+export default function RecommendedSection({
+    recommendedItems,
+    onLocationClick,
+    onToggleLike,
+    likedIds,
+    onDetail,
+    searchMode = 'keyword',
+    onShare,
+    title = '지금 주목할 콘텐츠',
+    subtitle = '시즌 적합성, 일정 임박도, 장르 다양성을 함께 보고 첫 화면을 조금 더 생동감 있게 정리했어요.',
+}: RecommendedSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [randomRecs, setRandomRecs] = useState<any[]>([]);
@@ -152,11 +165,14 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
     return (
         <section className="mb-8 relative animate-in fade-in slide-in-from-bottom-4 duration-700 group/section">
             <div className="flex items-center justify-between mb-4 text-left pl-[1.6%] pr-[1.6%]">
-                <div className="flex items-center gap-2">
-                    <Sparkles className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-400 fill-emerald-400/20" : "text-purple-400 fill-purple-400/20")} />
-                    <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
-                        실시간 인기 <span className={clsx("text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>TOP 9</span>
-                    </h2>
+                <div>
+                    <div className="flex items-center gap-2">
+                        <Sparkles className={clsx("w-5 h-5", searchMode === 'location' ? "text-emerald-400 fill-emerald-400/20" : "text-purple-400 fill-purple-400/20")} />
+                        <h2 className={clsx("text-xl sm:text-2xl font-black tracking-tight transition-colors text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>
+                            {title}
+                        </h2>
+                    </div>
+                    <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600 max-w-2xl">{subtitle}</p>
                 </div>
             </div>
 
@@ -229,6 +245,11 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                         <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </div>
+                                        {(perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]) && (
+                                            <div className="px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
+                                                {perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]}
+                                            </div>
+                                        )}
                                         {perf.category === '독점공연' && (
                                             <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
                                                 단독
@@ -305,6 +326,14 @@ export default function RecommendedSection({ recommendedItems, onLocationClick, 
                                                 })()}
                                             </span>
                                         </div>
+                                    </div>
+
+                                    <div className="absolute left-3 right-3 bottom-[4.5rem] z-20 pointer-events-none">
+                                        <RecommendationReasonChips
+                                            reasons={perf.recommendationReasons}
+                                            comparisonTags={perf.comparisonTags}
+                                            compact
+                                        />
                                     </div>
                                 </motion.div>
                             </div>

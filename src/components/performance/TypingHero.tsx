@@ -19,15 +19,14 @@ export const TypingHero = ({
     searchMode?: 'keyword' | 'location',
     isAtTop?: boolean
 }) => {
-    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE' | 'CYCLING'>('TYPE');
-    const [progress, setProgress] = useState(0);
-
     const len1 = template.line1.length;
     const lenBold = template.boldPrefix?.length || 0;
     const len2Pre = template.line2Pre.length;
     const lenHl = template.highlight.length;
     const lenSuf = template.suffix.length;
     const totalLen = len1 + lenBold + len2Pre + lenHl + lenSuf;
+    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE' | 'CYCLING'>('WAIT');
+    const [progress, setProgress] = useState(totalLen);
 
     useEffect(() => {
         let timeout: NodeJS.Timeout;

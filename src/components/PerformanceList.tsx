@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { Performance } from '@/types';
+import { DiscoveryContextId, Performance } from '@/types';
 import { MapPin, Bell, Sun, Moon, Loader2 } from 'lucide-react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
@@ -19,14 +19,17 @@ import PerformanceGrid from './performance/PerformanceGrid';
 import EmptyState from './performance/EmptyState';
 import RecommendedSection from './performance/RecommendedSection';
 import KeywordSection from './performance/KeywordSection';
+import PersonalizedSection from './performance/PersonalizedSection';
+import DiscoveryContextBar from './performance/DiscoveryContextBar';
 import RainbowBackground from './ui/RainbowBackground';
 import ErrorBoundary from './ErrorBoundary';
 import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
-import type { DataBuildInfo } from '@/lib/build-info';
+import { formatCompactKoreanDateTime, type DataBuildInfo } from '@/lib/build-info';
 import { getKeywordMatchedItems } from '@/lib/keyword-match';
 import { getFeaturedPerformances } from '@/lib/performance-filter';
+import { buildCuratedDiscoveryItems, buildPersonalizedRecommendations, DISCOVERY_CONTEXTS } from '@/lib/discovery';
 
 // Custom Hooks
 import { useUserPreferences } from '@/hooks/useUserPreferences';
@@ -34,6 +37,7 @@ import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { useSearchLogic } from '@/hooks/useSearchLogic';
 import { usePerformanceFilters } from '@/hooks/usePerformanceFilters';
 import { useHeroTemplates } from '@/hooks/useHeroTemplates';
+import { useUserActivity } from '@/hooks/useUserActivity';
 
 // Dynamic Modals for Code Splitting (Map & Calendar are now separate pages)
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
@@ -65,6 +69,7 @@ export default function PerformanceList({
         likedIds, favoriteVenues, savedKeywords, setSavedKeywords, theme, toggleTheme,
         toggleLike, toggleFavoriteVenue, addKeyword, removeKeyword
     } = useUserPreferences();
+    const { activity, trackGenreView, trackItemView } = useUserActivity();
 
     const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
@@ -85,6 +90,7 @@ export default function PerformanceList({
         userLocation, setUserLocation, userAddress, radius, setRadius, isDropdownOpen, setIsDropdownOpen,
         highlightedIndex, setHighlightedIndex, searchResults
     } = useSearchLogic({ allPerformances, initialSearchText: initialQuery });
+    const [discoveryContextId, setDiscoveryContextId] = useState<DiscoveryContextId>('all');
 
     const {
         selectedGenre, setSelectedGenre, selectedRegion, setSelectedRegion,
@@ -92,7 +98,7 @@ export default function PerformanceList({
         setShuffleSeed, districts, availableVenues, filteredPerformances, displayPerformances,
         hasMore, loadMore
     } = usePerformanceFilters({
-        allPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius, venues
+        allPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius, venues, discoveryContextId
     });
 
     const { heroText, selectNextTemplate } = useHeroTemplates({ allPerformances, initialPerformances, searchMode });
@@ -134,6 +140,10 @@ export default function PerformanceList({
     const availableGenreCount = useMemo(() => {
         return availableGenres.filter((genre) => genre.id !== 'all').length;
     }, [availableGenres]);
+    const freshnessNote = useMemo(() => {
+        if (!buildInfo?.generatedAt) return '방금 정리한 추천 흐름이에요.';
+        return `${formatCompactKoreanDateTime(buildInfo.generatedAt)} 기준으로 다시 정리했어요.`;
+    }, [buildInfo?.generatedAt]);
 
     // Initialize from URL params (e.g., from map '공연 더보기' button or venue links)
     const lastUrlKey = useRef<string>('');
@@ -157,15 +167,35 @@ export default function PerformanceList({
         return getKeywordMatchedItems(allPerformances, savedKeywords, 15);
     }, [savedKeywords, allPerformances]);
 
+    const discoverySignals = useMemo(() => ({
+        likedIds,
+        favoriteVenues,
+        savedKeywords,
+        activity,
+        buildInfo,
+    }), [likedIds, favoriteVenues, savedKeywords, activity, buildInfo]);
+
+    const personalizedItems = useMemo(() => {
+        if (!allPerformances.length) return [];
+        return buildPersonalizedRecommendations(allPerformances, discoverySignals, 12);
+    }, [allPerformances, discoverySignals]);
+
     const recommendedItems = useMemo(() => {
-        return getFeaturedPerformances(allPerformances, 24);
-    }, [allPerformances]);
+        const featured = getFeaturedPerformances(allPerformances, 24);
+        return buildCuratedDiscoveryItems(featured, discoverySignals, 18);
+    }, [allPerformances, discoverySignals]);
 
     useEffect(() => {
         if (selectedGenre !== 'all' && !isGenreAvailable(genreCounts, selectedGenre)) {
             setSelectedGenre('all');
         }
     }, [genreCounts, selectedGenre, setSelectedGenre]);
+
+    useEffect(() => {
+        if (selectedGenre !== 'all') {
+            trackGenreView(selectedGenre);
+        }
+    }, [selectedGenre, trackGenreView]);
 
     // --- Search Synchronization Helper ---
     const syncSearchToUrl = useCallback((
@@ -191,8 +221,9 @@ export default function PerformanceList({
 
     // --- Handlers ---
     const handleDetailOpen = useCallback((perf: Performance) => {
+        trackItemView(perf.id);
         router.push(`/p/${perf.id}/`);
-    }, [router]);
+    }, [router, trackItemView]);
 
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
@@ -221,6 +252,7 @@ export default function PerformanceList({
         setSelectedRegion('all');
         setSelectedDistrict('all');
         setSelectedVenue('all');
+        setDiscoveryContextId('all');
         setSearchLocation(null);
         setSearchText('');
         setViewMode('grid');
@@ -400,7 +432,22 @@ export default function PerformanceList({
             {(viewMode === 'grid' || viewMode === 'list') && !searchText && !searchLocation && selectedGenre === 'all' && (
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14 px-4 space-y-14 relative z-10">
                     {keywordItems.length > 0 && <KeywordSection keywordItems={keywordItems} onDetail={handleDetailOpen} searchMode={searchMode} />}
-                    <RecommendedSection recommendedItems={recommendedItems} onDetail={handleDetailOpen} onLocationClick={setSearchLocation} onToggleLike={toggleLike} likedIds={new Set(likedIds)} searchMode={searchMode} />
+                    <PersonalizedSection
+                        items={personalizedItems}
+                        onDetail={handleDetailOpen}
+                        searchMode={searchMode}
+                        subtitle={`좋아요, 저장 키워드, 자주 본 장르, 찜한 공연장을 함께 읽어서 첫 화면을 조금 더 나답게 정리했어요. ${freshnessNote}`}
+                    />
+                    <RecommendedSection
+                        recommendedItems={recommendedItems}
+                        onDetail={handleDetailOpen}
+                        onLocationClick={setSearchLocation}
+                        onToggleLike={toggleLike}
+                        likedIds={new Set(likedIds)}
+                        searchMode={searchMode}
+                        title="지금 주목할 콘텐츠"
+                        subtitle={`이번 주에 보기 좋고, 시즌에도 잘 맞고, 장르가 한쪽으로 몰리지 않도록 고른 흐름입니다. ${freshnessNote}`}
+                    />
                 </div>
             )}
 
@@ -417,6 +464,14 @@ export default function PerformanceList({
                         sourceHealthSummary={buildInfo?.sourceHealthSummary}
                         onResetFilters={() => { setSearchLocation(null); handleSearchChange(''); }} onRadiusChange={setRadius}
                     />
+
+                    {viewMode !== 'likes-perf' && !searchText && !searchLocation && (
+                        <DiscoveryContextBar
+                            contexts={DISCOVERY_CONTEXTS}
+                            activeContext={discoveryContextId}
+                            onChange={setDiscoveryContextId}
+                        />
+                    )}
 
                     {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
                         <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={handleOpenMap} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />
