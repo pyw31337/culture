@@ -17,6 +17,18 @@ interface ContentDetailViewProps {
     onClose?: () => void;
 }
 
+const formatKoreanNumber = (value: string | number) => {
+    const numericValue = Number(value);
+    if (!Number.isFinite(numericValue)) return String(value);
+    return new Intl.NumberFormat('ko-KR').format(numericValue);
+};
+
+const formatApproxEokValue = (value: string | number) => {
+    const numericValue = Number(value);
+    if (!Number.isFinite(numericValue)) return null;
+    return new Intl.NumberFormat('ko-KR').format(Math.round(numericValue / 100000000));
+};
+
 export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
     const router = useRouter();
     const isMobile = useMemo(() => {
@@ -299,12 +311,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             });
                                         }
                                         if ((p as any).budgetKRW) {
-                                            const formatted = new Intl.NumberFormat('ko-KR').format((p as any).budgetKRW);
-                                            infoItems.push({ icon: Coins, label: '제작비', text: `₩${formatted} (약 ${Math.round((p as any).budgetKRW / 100000000)}억원)`, color: 'text-amber-500' });
+                                            const formatted = formatKoreanNumber((p as any).budgetKRW);
+                                            const approxEok = formatApproxEokValue((p as any).budgetKRW);
+                                            infoItems.push({ icon: Coins, label: '제작비', text: approxEok ? `₩${formatted} (약 ${approxEok}억원)` : `₩${formatted}`, color: 'text-amber-500' });
                                         }
                                         if ((p as any).revenueKRW) {
-                                            const formatted = new Intl.NumberFormat('ko-KR').format((p as any).revenueKRW);
-                                            infoItems.push({ icon: Wallet, label: '수익', text: `₩${formatted} (약 ${Math.round((p as any).revenueKRW / 100000000)}억원)`, color: 'text-emerald-500' });
+                                            const formatted = formatKoreanNumber((p as any).revenueKRW);
+                                            const approxEok = formatApproxEokValue((p as any).revenueKRW);
+                                            infoItems.push({ icon: Wallet, label: '수익', text: approxEok ? `₩${formatted} (약 ${approxEok}억원)` : `₩${formatted}`, color: 'text-emerald-500' });
                                         }
                                         if ((p as any).roi) {
                                             infoItems.push({ icon: Presentation, label: '수익률', text: (p as any).roi, color: 'text-purple-400' });
