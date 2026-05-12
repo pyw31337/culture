@@ -8,6 +8,7 @@ import type {
     DataSourceSummary
 } from '@/lib/build-info';
 import { formatKoreanDateTime } from '@/lib/build-info';
+import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { processAndMergePerformances } from '@/lib/performance-merger';
 import { transformPerformance, type RawPerformance } from '@/lib/data-transformer';
 import { SOURCE_REGISTRY } from '@/lib/source-registry';
@@ -315,26 +316,6 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
 
         // Address/Location Validation (Strict Policy)
         if (p.genre !== 'movie') {
-            let v: VenueData | undefined = venues[p.venue];
-
-            // Disambiguation for regional tags [창원], [제주] etc.
-            if (p.bracketRegion) {
-                const bRegion = p.bracketRegion;
-                if (!v || (v.address && !v.address.includes(bRegion))) {
-                    const venueKeys = Object.keys(venues);
-                    const cleanName = p.venue.replace(/홀$|센터$|관$|장$/, '').trim();
-                    const bestMatchKey = venueKeys.find(k => k.includes(p.venue) && k.includes(bRegion)) ||
-                                       venueKeys.find(k => k.includes(cleanName) && k.includes(bRegion)) ||
-                                       venueKeys.find(k => venues[k]?.address?.includes(bRegion) && k.includes(p.venue)) ||
-                                       venueKeys.find(k => venues[k]?.address?.includes(bRegion) && k.includes(cleanName)) ||
-                                       venueKeys.find(k => venues[k]?.address?.includes(bRegion) && venues[k]?.address?.includes(p.venue));
-                    
-                    if (bestMatchKey) {
-                        v = venues[bestMatchKey];
-                    }
-                }
-            }
-
             const parseCoord = (val: unknown) => {
                 if (typeof val === 'number') return val;
                 if (typeof val === 'string') return parseFloat(val);
@@ -344,15 +325,26 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
             const lng = parseCoord(p.lng || p.longitude);
             const hasInherentGeo = lat !== 0 && lng !== 0 && !isNaN(lat) && !isNaN(lng);
             const hasAddress = p.address && p.address !== '정보 없음' && p.address !== '';
+            const resolvedVenue = resolveVenueInfoForPerformance(p, venues);
+            const resolvedLat = parseCoord(resolvedVenue.lat || resolvedVenue.latitude);
+            const resolvedLng = parseCoord(resolvedVenue.lng || resolvedVenue.longitude);
+            const hasResolvedGeo = resolvedLat !== 0 && resolvedLng !== 0 && !isNaN(resolvedLat) && !isNaN(resolvedLng);
+            const hasResolvedAddress = Boolean(resolvedVenue.address && resolvedVenue.address !== '정보 없음' && resolvedVenue.address !== '');
 
             if (hasInherentGeo) {
                 p.lat = lat;
                 p.lng = lng;
                 if (!hasAddress) p.address = p.venue || '주소 정보 없음';
-            } else if (v && v.address && v.address !== '정보 없음' && (v.lat || v.latitude) && (v.lng || v.longitude)) {
-                p.lat = (v.lat || v.latitude) as number;
-                p.lng = (v.lng || v.longitude) as number;
-                p.address = v.address;
+            } else if (hasResolvedGeo || hasResolvedAddress) {
+                if (hasResolvedGeo) {
+                    p.lat = resolvedLat;
+                    p.lng = resolvedLng;
+                }
+                if (hasResolvedAddress) {
+                    p.address = resolvedVenue.address;
+                } else if (!hasAddress) {
+                    p.address = p.venue || '주소 정보 없음';
+                }
             } else if (p.source?.startsWith('mommom')) {
                 // Keep MomMom items even if geo fails (Fallback to Seoul/Central or just don't filter)
                 if (!p.address) p.address = p.venue;

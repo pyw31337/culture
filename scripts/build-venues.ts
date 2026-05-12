@@ -4,6 +4,7 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import iconv from 'iconv-lite';
 import { fetchPerformances, type Performance } from '../src/lib/interpark.js';
+import { isSevereAddressMismatch } from '../src/lib/location-display';
 
 // Define Venue Data Structure
 interface VenueData {
@@ -363,34 +364,33 @@ async function buildVenues() {
 
         if (processedCount >= MAX_PROCESS) break;
 
+        const perf = all.find(p => p.venue === venueName);
+        if (!perf) continue;
+        const providedAddress = typeof (perf as any).address === 'string' ? (perf as any).address.trim() : '';
+        const hasProvidedAddress = Boolean(providedAddress && providedAddress !== '정보 없음' && providedAddress !== venueName);
+
         // Ensure entry exists
         if (!venues[venueName]) {
             venues[venueName] = { name: venueName, address: '정보 없음', district: '' };
 
-            // Smart Inheritance: Check if this new venue name contains a known venue name
-            // e.g. "Seoul Arts Center Opera House" contains "Seoul Arts Center"
-            // This prevents data loss when scrapers output slightly different names
-            const knownVenues = Object.keys(venues).sort((a, b) => b.length - a.length);
-            for (const existingKey of knownVenues) {
-                if (existingKey.length < 2) continue; // Skip short keys
-                // Verify inclusion AND that the existing key has valid data
-                // EXCEPTION: Do not inherit for MochaClass / generic chains if they are distinct
-                if ((venueName.includes('모카클래스') && existingKey === '모카클래스')) continue;
+            // Smart Inheritance is only safe when the performance itself does not already carry a better address.
+            if (!hasProvidedAddress) {
+                const knownVenues = Object.keys(venues).sort((a, b) => b.length - a.length);
+                for (const existingKey of knownVenues) {
+                    if (existingKey.length < 2) continue;
+                    if ((venueName.includes('모카클래스') && existingKey === '모카클래스')) continue;
 
-                if (venueName.includes(existingKey) && venues[existingKey].address && venues[existingKey].address !== '정보 없음') {
-                    console.log(`   -> Inheriting data from parent venue: "${existingKey}" for "${venueName}"`);
-                    venues[venueName].address = venues[existingKey].address;
-                    venues[venueName].district = venues[existingKey].district;
-                    venues[venueName].lat = venues[existingKey].lat;
-                    venues[venueName].lng = venues[existingKey].lng;
-                    break;
+                    if (venueName.includes(existingKey) && venues[existingKey].address && venues[existingKey].address !== '정보 없음') {
+                        console.log(`   -> Inheriting data from parent venue: "${existingKey}" for "${venueName}"`);
+                        venues[venueName].address = venues[existingKey].address;
+                        venues[venueName].district = venues[existingKey].district;
+                        venues[venueName].lat = venues[existingKey].lat;
+                        venues[venueName].lng = venues[existingKey].lng;
+                        break;
+                    }
                 }
             }
         }
-
-        // ... rest of loop
-        const perf = all.find(p => p.venue === venueName);
-        if (!perf) continue;
 
         console.log(`[${processedCount + 1}/${MAX_PROCESS}] Processing: ${venueName}`);
 
@@ -398,6 +398,12 @@ async function buildVenues() {
         let district = venues[venueName]?.district || '';
         let lat = venues[venueName]?.lat;
         let lng = venues[venueName]?.lng;
+
+        if (hasProvidedAddress && (!address || address === '정보 없음' || isSevereAddressMismatch(providedAddress, address))) {
+            address = providedAddress;
+            lat = (perf as any).latitude || (perf as any).lat || undefined;
+            lng = (perf as any).longitude || (perf as any).lng || undefined;
+        }
 
         // 3.0 Always extract native coordinates if this is a mommom item
         if ((perf as any).platform === 'mommom' || (perf as any).source === 'mommom') {

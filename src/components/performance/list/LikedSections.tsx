@@ -3,6 +3,7 @@ import { Heart, MapPin } from 'lucide-react';
 import PerformanceGrid from '../PerformanceGrid';
 import ImageWithFallback from '../../ImageWithFallback';
 import { Performance } from '@/types';
+import { getRepresentativeVenueInfoForName } from '@/lib/location-display';
 
 interface LikedSectionsProps {
     viewMode: string;
@@ -103,7 +104,7 @@ export const LikedSections = ({
                                 <div key={venueName}>
                                     <button
                                         onClick={() => {
-                                            const vData = venues[venueName];
+                                            const vData = getRepresentativeVenueInfoForName(venueName, venuePerfs, venues);
                                             onSetSearchLocation({ lat: vData?.lat || 0, lng: vData?.lng || 0, name: venueName });
                                             setIsMapOpen(true);
                                         }}

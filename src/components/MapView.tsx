@@ -14,6 +14,7 @@ import { filterPerformances } from '@/lib/performance-filter';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import type { DataBuildInfo } from '@/lib/build-info';
 import { getExternalContentLink } from '@/lib/performance-links';
+import { buildPerformanceLocationKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
 import Portal from './ui/Portal';
 import ImageWithFallback from './ImageWithFallback';
 import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
@@ -53,6 +54,7 @@ type MapSearchCenter = {
 };
 
 type VenueGroup = Venue & {
+    groupKey: string;
     venueName: string;
     address?: string;
     lat: number;
@@ -97,6 +99,7 @@ interface KakaoMarker {
     setZIndex(zIndex: number): void;
     getZIndex(): number;
     _venueName?: string;
+    _groupKey?: string;
     _color?: string;
     _text?: string;
 }
@@ -321,21 +324,28 @@ export default function MapView({
                 if (!isAllMode && perf.genre !== selectedMapGenre) continue;
                 const vName = perf.venue;
                 const venueMeta = venues[vName];
-                if (vName.includes('투어패스') && venueMeta?.lat && venueMeta?.lng && venueMeta.lat > 37.4 && venueMeta.lng > 130.8) continue;
+                const resolvedVenue = resolveVenueInfoForPerformance(perf, venues) as Venue;
+                const venueLat = resolvedVenue.lat || venueMeta?.lat || 0;
+                const venueLng = resolvedVenue.lng || venueMeta?.lng || 0;
+                const groupKey = buildPerformanceLocationKey(perf, venues);
 
-                let group = groupsMap.get(vName);
+                if (vName.includes('투어패스') && venueLat > 37.4 && venueLng > 130.8) continue;
+
+                let group = groupsMap.get(groupKey);
                 if (!group) {
                     group = {
                         ...venueMeta,
+                        ...resolvedVenue,
+                        groupKey,
                         venueName: vName,
                         performances: [],
-                        lat: venueMeta?.lat || 0,
-                        lng: venueMeta?.lng || 0,
+                        lat: venueLat,
+                        lng: venueLng,
                         type: 'performance',
                         kakaoLatLng: null,
                         firstAppearanceIndex: i
                     };
-                    groupsMap.set(vName, group);
+                    groupsMap.set(groupKey, group);
                 }
                 group.performances.push(perf);
             }
@@ -349,6 +359,7 @@ export default function MapView({
                 const cinema = cinemas[i];
                 if (!groupsMap.has(cinema.name)) {
                     groupsMap.set(cinema.name, {
+                        groupKey: cinema.name,
                         venueName: cinema.name,
                         address: cinema.address,
                         lat: cinema.lat,
@@ -531,7 +542,7 @@ export default function MapView({
             const first = allVenuesList.current[0];
             map.panTo(new k.LatLng(first.lat, first.lng));
             map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5); // Level 5-6 is good for nationwide clusters
-            setSelectedVenue(first.venueName);
+            setSelectedVenue(first.groupKey);
         }
     }, [handleSearchHereInternal, isMapReady, mapInstance, mapSearchCenter, selectedMapGenre]);
 
@@ -563,9 +574,9 @@ export default function MapView({
         const k = window.kakao.maps;
 
         markersRef.current.forEach((marker) => {
-            if (!marker._text || !marker._color || !marker._venueName) return;
+            if (!marker._text || !marker._color || !marker._groupKey) return;
 
-            const isSelected = marker._venueName === nextSelectedVenue;
+            const isSelected = marker._groupKey === nextSelectedVenue;
             const wasSelected = marker.getZIndex() === 100;
             if (!isSelected && !wasSelected) return;
 
@@ -616,11 +627,12 @@ export default function MapView({
             }) as KakaoMarker;
 
             k.event.addListener(marker, 'click', () => {
-                setSelectedVenue(venue.venueName);
+                setSelectedVenue(venue.groupKey);
                 mapInstance.panTo(new k.LatLng(venue.lat, venue.lng));
             });
 
             marker._venueName = venue.venueName;
+            marker._groupKey = venue.groupKey;
             marker._color = color;
             marker._text = text;
             markers.push(marker);
@@ -1079,7 +1091,7 @@ export default function MapView({
                                 <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
                                     <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
                                         <div className="min-w-0 flex-1">
-                                            <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
+                                            <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenueData.venueName}</h3>
                                             <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address || '주소 정보 없음'}</p>
                                         </div>
                                         <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
@@ -1089,7 +1101,7 @@ export default function MapView({
 
                                     {selectedVenueData.type === 'cinema' ? (
                                         <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
-                                            <a href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
+                                            <a href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenueData.venueName)}`}
                                                 target="_blank" rel="noopener noreferrer"
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
                                                 <RotateCw size={12} /> 실시간 상영시간표 확인하기
@@ -1103,7 +1115,7 @@ export default function MapView({
                                                     params.set('mode', 'location');
                                                     params.set('lat', String(selectedVenueData.lat));
                                                     params.set('lng', String(selectedVenueData.lng));
-                                                    params.set('venue', selectedVenue);
+                                                    params.set('venue', selectedVenueData.venueName);
 
                                                     const basePath = (selectedMapGenre && selectedMapGenre !== 'all') ? `/${selectedMapGenre}` : '/';
                                                     router.push(`${basePath}?${params.toString()}`);
@@ -1173,7 +1185,7 @@ export default function MapView({
                             onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove}>
                             {visibleVenues.map((v) => {
                                 const isFavorite = favoriteVenues.includes(v.venueName);
-                                const isSelected = selectedVenue === v.venueName;
+                                const isSelected = selectedVenue === v.groupKey;
 
                                 let distanceLabel = '';
                                 const hasCenter = mapSearchCenter && !isNaN(mapSearchCenter.lat) && !isNaN(mapSearchCenter.lng);
@@ -1190,10 +1202,10 @@ export default function MapView({
                                 const bgClass = isCinemaObj ? 'bg-indigo-600' : style.twBg.replace('bg-', 'bg-');
 
                                 return (
-                                    <button type="button" key={v.venueName}
+                                    <button type="button" key={v.groupKey}
                                         onClick={(e) => {
                                             if (isDragClicked.current) { e.preventDefault(); return; }
-                                            const newSelected = v.venueName === selectedVenue ? null : v.venueName;
+                                            const newSelected = v.groupKey === selectedVenue ? null : v.groupKey;
                                             setSelectedVenue(newSelected);
                                             if (newSelected && mapInstance && v.lat && v.lng) {
                                                 const k = window.kakao.maps;

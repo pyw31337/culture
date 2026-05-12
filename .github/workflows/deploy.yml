@@ -58,6 +58,12 @@ jobs:
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
           npm ci --prefer-offline --no-audit --fund=false
 
+      - name: Validate Prebuilt Data Artifacts
+        if: ${{ inputs.prebuilt-data == true }}
+        run: |
+          npm run validate:content
+          npm run validate:locations
+
       - name: Build Website
         env:
           NEXT_PUBLIC_BASE_PATH: /culture

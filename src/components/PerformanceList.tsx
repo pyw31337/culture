@@ -27,6 +27,7 @@ import BottomNavSheet from './BottomNavSheet';
 import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import { formatCompactKoreanDateTime, type DataBuildInfo } from '@/lib/build-info';
 import { getKeywordMatchedItems } from '@/lib/keyword-match';
+import { getRepresentativeVenueInfoForName } from '@/lib/location-display';
 import { getFeaturedPerformances } from '@/lib/performance-filter';
 import { buildCuratedDiscoveryItems, buildPersonalizedRecommendations, DISCOVERY_CONTEXTS } from '@/lib/discovery';
 
@@ -516,7 +517,11 @@ export default function PerformanceList({
                 setSelectedVenue(v);
 
                 // Location Mode Integration: Intercept venue selection to trigger location search
-                if (v !== 'all' && venues[v] && venues[v].lat && venues[v].lng) {
+                const representativeVenue = v !== 'all'
+                    ? getRepresentativeVenueInfoForName(v, allPerformances, venues)
+                    : null;
+
+                if (v !== 'all' && representativeVenue?.lat && representativeVenue?.lng) {
                     // [RESET ALL FILTERS] As requested, reset existing filtering related parts
                     setSelectedGenre('all');
                     setSelectedRegion('all');
@@ -524,7 +529,7 @@ export default function PerformanceList({
                     setSavedKeywords([]); // Reset saved keywords if applicable
                     
                     setSearchMode('location');
-                    setSearchLocation({ lat: venues[v].lat, lng: venues[v].lng, name: v });
+                    setSearchLocation({ lat: representativeVenue.lat, lng: representativeVenue.lng, name: v });
                     setSearchText(v);
                     setRadius(10); // Default to 10km radius
 
@@ -541,7 +546,10 @@ export default function PerformanceList({
                 }
             }} />
 
-            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => { router.push(`/map?genre=${selectedGenre}&lat=${venues[name]?.lat || 0}&lng=${venues[name]?.lng || 0}&venue=${encodeURIComponent(name)}`); }} />}
+            {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(name) => {
+                const representativeVenue = getRepresentativeVenueInfoForName(name, allPerformances, venues);
+                router.push(`/map?genre=${selectedGenre}&lat=${representativeVenue?.lat || 0}&lng=${representativeVenue?.lng || 0}&venue=${encodeURIComponent(name)}`);
+            }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
         </div>
     );

@@ -3,6 +3,7 @@ import { Performance } from '@/types';
 import { isChoseongMatch } from './hangul';
 import { REGIONS } from './constants';
 import venueData from '@/data/venues.json';
+import { getRepresentativeVenueInfoForName, resolveVenueInfoForPerformance } from './location-display';
 import { getDistanceFromLatLonInKm } from './utils';
 
 // Define Venue Interface since we import JSON directly
@@ -353,6 +354,16 @@ export interface FilterOptions {
 export function filterPerformances(performances: Performance[], options: FilterOptions): Performance[] {
     let filtered = performances;
     const { genre, region, district, venue, search, lat, lng, radius, searchMode } = options;
+    const resolvedVenueCache = new Map<string, Venue>();
+    const getResolvedVenue = (performance: Performance) => {
+        const key = performance.id || `${performance.title}::${performance.venue}::${performance.address || ''}`;
+        const cached = resolvedVenueCache.get(key);
+        if (cached) return cached;
+
+        const resolved = resolveVenueInfoForPerformance(performance, venues) as Venue;
+        resolvedVenueCache.set(key, resolved);
+        return resolved;
+    };
 
     // 0. Genre Early Filter (Optimization for [genre] pages)
     if (genre && genre !== 'all') {
@@ -370,10 +381,8 @@ export function filterPerformances(performances: Performance[], options: FilterO
     filtered = filtered.filter(p => {
         if (p.genre === 'movie') return true;
 
-        // If it already has geodata, it is valid regardless of venues.json
-        if (p.lat && p.lng && p.lat !== 0 && p.lng !== 0) return true;
-
-        const venueInfo = venues[p.venue];
+        const venueInfo = getResolvedVenue(p);
+        if ((venueInfo.lat && venueInfo.lng) || (p.lat && p.lng && p.lat !== 0 && p.lng !== 0)) return true;
         if (!venueInfo || !venueInfo.address || venueInfo.address.trim() === '') {
             return false;
         }
@@ -431,7 +440,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
         filtered = filtered.filter(p => {
             if (p.genre === 'movie') return true;
 
-            const venueInfo = venues[p.venue];
+            const venueInfo = getResolvedVenue(p);
 
             // 0. Use Strict Mapped Region ID if available
             if (venueInfo && venueInfo.mapped_region_id) {
@@ -465,13 +474,13 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
     // 4. Venue Check (Specific Venue or Radius)
     if (venue && venue !== 'all') {
-        const centerVenue = venues[venue];
+        const centerVenue = getRepresentativeVenueInfoForName(venue, filtered, venues);
         if (centerVenue && centerVenue.lat && centerVenue.lng) {
             // Include: 1. Exact Venue Match OR 2. Within 10km (Standard logic)
             filtered = filtered.filter(p => {
                 if (p.genre === 'movie') return true;
                 if (p.venue === venue) return true;
-                const pVenue = venues[p.venue];
+                const pVenue = getResolvedVenue(p);
                 if (!pVenue?.lat || !pVenue?.lng) return false;
                 const dist = getDistanceFromLatLonInKm(centerVenue.lat!, centerVenue.lng!, pVenue.lat, pVenue.lng);
                 return dist <= 10;
@@ -486,7 +495,7 @@ export function filterPerformances(performances: Performance[], options: FilterO
     if ((!venue || venue === 'all') && lat && lng && radius) {
         filtered = filtered.filter(p => {
             if (p.genre === 'movie') return true;
-            const pVenue = venues[p.venue];
+            const pVenue = getResolvedVenue(p);
             if (!pVenue?.lat || !pVenue?.lng) return false;
             const dist = getDistanceFromLatLonInKm(lat, lng, pVenue.lat, pVenue.lng);
             return dist <= radius;

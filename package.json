@@ -6,7 +6,7 @@
     "dev": "next dev --webpack",
     "generate-data": "npx tsx scripts/generate-performance-json.ts",
     "build:site": "next build --webpack",
-    "build": "npm run generate-data && npm run validate:content && next build --webpack",
+    "build": "npm run generate-data && npm run validate:content && npm run validate:locations && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "scrape:movies": "npx tsx scripts/scrape-movies.ts",
@@ -17,6 +17,7 @@
     "scrape:sssd": "npx tsx scripts/scrape-sssd.ts",
     "validate:images": "npx tsx scripts/validate-images.ts",
     "validate:content": "npx tsx scripts/validate-content-quality.ts",
+    "validate:locations": "npx tsx scripts/validate-location-integrity.ts",
     "audit:locations": "npx tsx scripts/audit-location-mismatches.ts"
   },
   "dependencies": {

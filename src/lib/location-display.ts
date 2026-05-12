@@ -2,8 +2,8 @@ import type { Performance } from '@/types';
 
 type VenueLike = {
     address?: string;
-    lat?: number;
-    lng?: number;
+    lat?: number | null;
+    lng?: number | null;
     latitude?: number | string;
     longitude?: number | string;
     district?: string;
@@ -61,13 +61,17 @@ function sanitizeAddress(value?: string) {
         .trim();
 }
 
+function normalizeAddressFingerprint(value?: string) {
+    return sanitizeAddress(value).toLowerCase();
+}
+
 function extractAddressTokens(address?: string) {
     const cleaned = sanitizeAddress(address);
     const parts = cleaned.split(' ').filter(Boolean);
     return parts.map((part, index) => (index === 0 ? normalizeRegionToken(part) : part));
 }
 
-function parseCoordinate(value?: number | string) {
+function parseCoordinate(value?: number | string | null) {
     if (typeof value === 'number' && Number.isFinite(value) && value !== 0) return value;
     if (typeof value === 'string') {
         const parsed = Number.parseFloat(value);
@@ -179,6 +183,71 @@ export function resolveVenueInfoForPerformance(
         lng: performanceHasGeo ? performanceLng : parseCoordinate(preferredVenue.lng ?? preferredVenue.longitude),
         latitude: performanceHasGeo ? performanceLat : parseCoordinate(preferredVenue.latitude ?? preferredVenue.lat),
         longitude: performanceHasGeo ? performanceLng : parseCoordinate(preferredVenue.longitude ?? preferredVenue.lng),
+    };
+}
+
+export function buildPerformanceLocationKey(
+    performance: Pick<Performance, 'venue' | 'address' | 'lat' | 'lng' | 'latitude' | 'longitude' | 'bracketRegion'>,
+    venues: Record<string, VenueLike>
+) {
+    const resolvedVenue = resolveVenueInfoForPerformance(performance, venues);
+    const venueName = normalizeWhitespace(performance.venue) || normalizeWhitespace(resolvedVenue.name) || 'unknown-venue';
+    const lat = parseCoordinate(resolvedVenue.lat ?? resolvedVenue.latitude);
+    const lng = parseCoordinate(resolvedVenue.lng ?? resolvedVenue.longitude);
+
+    if (lat && lng) {
+        return `${venueName}::${lat.toFixed(5)},${lng.toFixed(5)}`;
+    }
+
+    const addressKey = normalizeAddressFingerprint(resolvedVenue.address);
+    if (addressKey) {
+        return `${venueName}::${addressKey}`;
+    }
+
+    return venueName;
+}
+
+export function getRepresentativeVenueInfoForName(
+    venueName: string,
+    performances: Array<Pick<Performance, 'venue' | 'address' | 'lat' | 'lng' | 'latitude' | 'longitude' | 'bracketRegion'>>,
+    venues: Record<string, VenueLike>
+) {
+    const baseVenue = venues[venueName] || {};
+    const matchingPerformances = performances.filter((performance) => normalizeWhitespace(performance.venue) === normalizeWhitespace(venueName));
+
+    if (matchingPerformances.length === 0) {
+        return {
+            venueName,
+            ...baseVenue,
+        };
+    }
+
+    const grouped = new Map<string, { count: number; firstIndex: number; venue: VenueLike }>();
+
+    matchingPerformances.forEach((performance, index) => {
+        const key = buildPerformanceLocationKey(performance, venues);
+        const existing = grouped.get(key);
+        if (existing) {
+            existing.count += 1;
+            return;
+        }
+
+        grouped.set(key, {
+            count: 1,
+            firstIndex: index,
+            venue: resolveVenueInfoForPerformance(performance, venues),
+        });
+    });
+
+    const bestMatch = Array.from(grouped.values()).sort((left, right) => {
+        if (right.count !== left.count) return right.count - left.count;
+        return left.firstIndex - right.firstIndex;
+    })[0];
+
+    return {
+        venueName,
+        ...baseVenue,
+        ...bestMatch?.venue,
     };
 }
 

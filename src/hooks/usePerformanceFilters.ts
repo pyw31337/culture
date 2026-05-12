@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { DiscoveryContextId, Performance } from '@/types';
 import { filterPerformances, sortPerformances, sortPerformancesForCategoryFeed, sortPerformancesForHomeFeed } from '@/lib/performance-filter';
+import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { filterByDiscoveryContext } from '@/lib/discovery';
 
@@ -136,8 +137,11 @@ export function usePerformanceFilters({
         if (searchMode === 'location' && (searchLocation || userLocation)) {
             const center = searchLocation || userLocation;
             if (center && center.lat && center.lng) {
+                const resolvedVenueCache = new Map<string, { lat?: number | null; lng?: number | null }>();
                 const withDist = discoveryFiltered.map(p => {
-                    const v = venues[p.venue];
+                    const cacheKey = p.id || `${p.title}::${p.venue}::${p.address || ''}`;
+                    const v = resolvedVenueCache.get(cacheKey) || resolveVenueInfoForPerformance(p, venues);
+                    resolvedVenueCache.set(cacheKey, v);
                     const dist = (v?.lat && v?.lng)
                         ? getDistanceFromLatLonInKm(center.lat, center.lng, v.lat, v.lng)
                         : 99999;

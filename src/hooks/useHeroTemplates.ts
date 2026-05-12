@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { HERO_TEMPLATES, HeroTemplate } from '@/lib/hero-templates';
 import { Performance } from '@/types';
-import venueData from '@/data/venue-dictionary.json';
+import venueData from '@/data/venues.json';
 import { safeStorage } from '@/lib/safeStorage';
 
 const venues = venueData as Record<string, any>;
