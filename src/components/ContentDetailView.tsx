@@ -2,10 +2,10 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2 } from 'lucide-react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, type LucideIcon } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, toMobileUrl } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
@@ -16,6 +16,23 @@ interface ContentDetailViewProps {
     mode?: 'modal' | 'standalone';
     onClose?: () => void;
 }
+
+type DetailPerformance = Performance & {
+    runtime?: string | number;
+    budgetKRW?: string | number;
+    revenueKRW?: string | number;
+    roi?: string | number;
+};
+
+type DetailInfoItem = {
+    icon: LucideIcon;
+    label: string;
+    text: string | number;
+    color: string;
+    isLink?: boolean;
+    onClick?: React.MouseEventHandler;
+    rightText?: string | null;
+};
 
 const formatKoreanNumber = (value: string | number) => {
     const numericValue = Number(value);
@@ -29,8 +46,23 @@ const formatApproxEokValue = (value: string | number) => {
     return new Intl.NumberFormat('ko-KR').format(Math.round(numericValue / 100000000));
 };
 
+const normalizeDetailText = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim();
+
+const dedupeDetailInfoItems = <T extends { label: string; text?: unknown }>(items: T[]) => {
+    const seen = new Set<string>();
+    return items.filter((item) => {
+        const text = normalizeDetailText(item.text);
+        if (!text) return false;
+        const key = `${item.label}::${text}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+};
+
 export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
     const router = useRouter();
+    const detail = p as DetailPerformance;
     const isMobile = useMemo(() => {
         if (typeof navigator === 'undefined') return false;
         return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test((navigator.userAgent || '').toLowerCase());
@@ -93,7 +125,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         }
     };
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0, scale: 0.95 },
         visible: {
             opacity: 1,
@@ -101,12 +133,12 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
             transition: {
                 staggerChildren: 0.1,
                 duration: 0.4,
-                ease: "easeOut" as any
+                ease: "easeOut"
             }
         }
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 }
     };
@@ -251,7 +283,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         else if (movieRating.includes('18') || movieRating.includes('청소년') || movieRating.includes('불가') || movieRating.includes('청불')) movieRating = '청소년 관람불가';
                                     }
 
-                                    const infoItems = [];
+                                    const infoItems: DetailInfoItem[] = [];
 
                                     if (isMovie && movieRating) {
                                         infoItems.push({ icon: Film, label: '등급', text: movieRating, color: 'text-emerald-500' });
@@ -285,10 +317,22 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Calendar, label: isMovie ? '개봉' : '일정', text: dateText, color: 'text-blue-500' });
                                     }
 
-                                    if (p.operatingHours || p.performanceTime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: p.operatingHours || p.performanceTime, color: 'text-purple-500' });
-                                    } else if ((p as any).runtime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: `${(p as any).runtime}분`, color: 'text-purple-500' });
+                                    const operatingHoursText = normalizeDetailText(p.operatingHours);
+                                    const performanceTimeText = normalizeDetailText(p.performanceTime);
+                                    if (operatingHoursText) {
+                                        infoItems.push({ icon: Clock, label: '운영시간', text: operatingHoursText, color: 'text-purple-500' });
+                                    }
+                                    if (performanceTimeText && !operatingHoursText && p.genre === 'tourism') {
+                                        infoItems.push({ icon: Clock, label: '운영시간', text: performanceTimeText, color: 'text-purple-500' });
+                                    } else if (performanceTimeText && performanceTimeText !== operatingHoursText && p.genre !== 'tourism') {
+                                        infoItems.push({
+                                            icon: Clock,
+                                            label: operatingHoursText ? '공연시간' : '시간',
+                                            text: performanceTimeText,
+                                            color: operatingHoursText ? 'text-cyan-500' : 'text-purple-500'
+                                        });
+                                    } else if (!operatingHoursText && !performanceTimeText && detail.runtime) {
+                                        infoItems.push({ icon: Clock, label: '시간', text: `${detail.runtime}분`, color: 'text-purple-500' });
                                     }
                                     
                                     if (isMovie) {
@@ -310,23 +354,23 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 rightText: movieStatsReferenceLabel
                                             });
                                         }
-                                        if ((p as any).budgetKRW) {
-                                            const formatted = formatKoreanNumber((p as any).budgetKRW);
-                                            const approxEok = formatApproxEokValue((p as any).budgetKRW);
+                                        if (detail.budgetKRW) {
+                                            const formatted = formatKoreanNumber(detail.budgetKRW);
+                                            const approxEok = formatApproxEokValue(detail.budgetKRW);
                                             infoItems.push({ icon: Coins, label: '제작비', text: approxEok ? `₩${formatted} (약 ${approxEok}억원)` : `₩${formatted}`, color: 'text-amber-500' });
                                         }
-                                        if ((p as any).revenueKRW) {
-                                            const formatted = formatKoreanNumber((p as any).revenueKRW);
-                                            const approxEok = formatApproxEokValue((p as any).revenueKRW);
+                                        if (detail.revenueKRW) {
+                                            const formatted = formatKoreanNumber(detail.revenueKRW);
+                                            const approxEok = formatApproxEokValue(detail.revenueKRW);
                                             infoItems.push({ icon: Wallet, label: '수익', text: approxEok ? `₩${formatted} (약 ${approxEok}억원)` : `₩${formatted}`, color: 'text-emerald-500' });
                                         }
-                                        if ((p as any).roi) {
-                                            infoItems.push({ icon: Presentation, label: '수익률', text: (p as any).roi, color: 'text-purple-400' });
+                                        if (detail.roi) {
+                                            infoItems.push({ icon: Presentation, label: '수익률', text: detail.roi, color: 'text-purple-400' });
                                         }
                                     }
 
                                     if (!isMovie && (p.age || p.ageRating)) {
-                                        const ageText = p.age || p.ageRating;
+                                        const ageText = p.age || p.ageRating || '';
                                         // Prevent showing the exact same text twice (e.g. if age and ageRating are same)
                                         infoItems.push({ icon: Tag, label: '연령', text: ageText, color: 'text-rose-500' });
                                     }
@@ -343,10 +387,6 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 window.open(isMobile ? toMobileUrl(url) : url, '_blank');
                                             }
                                         });
-                                    }
-
-                                    if (p.performanceTime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: p.performanceTime, color: 'text-cyan-500' });
                                     }
 
                                     // Advanced KOPIS metadata with deduplication
@@ -435,7 +475,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Bath, label: '화장실', text: p.restrooms, color: 'text-blue-300' });
                                     }
 
-                                    return infoItems.map((item: any, idx: number) => (
+                                    return dedupeDetailInfoItems(infoItems).map((item, idx) => (
                                         <div key={idx} className="flex items-start justify-between gap-4 py-2 border-b border-gray-50 dark:border-white/5 last:border-0">
                                             <div className="flex items-start gap-3 min-w-0 flex-1">
                                                 <div className="flex items-center gap-1.5 w-14 shrink-0 mt-[2px]">
