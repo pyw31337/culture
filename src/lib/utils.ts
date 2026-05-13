@@ -48,21 +48,31 @@ function deg2rad(deg: number) {
 // Helper to extract first price from a price string like "VIP석 154,000원 R석 132,000원..."
 // Returns { label: 'VIP석', price: '154,000' } or { label: null, price: '30,000' }
 export function extractFirstPrice(priceStr: string): { label: string | null; price: string } | null {
-    if (!priceStr) return null;
+    const normalized = priceStr?.trim();
+    if (!normalized) return null;
 
-    // Check for free
-    if (priceStr.includes('무료') || priceStr === '0') {
+    const compact = normalized.replace(/\s+/g, '');
+    const hasWonPrice = /\d[\d,]*\s*원/.test(normalized);
+    const isExplicitlyFree = /^(무료|0|0원|입장무료|관람무료|무료입장)$/.test(compact);
+
+    // Treat "무료" as a price only when it is the actual price, not an exemption note.
+    if (isExplicitlyFree || (compact.includes('무료') && !hasWonPrice)) {
         return { label: null, price: '무료' };
     }
 
     // Try to match pattern: "XX석 NUMBER원" or "전석 NUMBER원"
-    const match = priceStr.match(/([가-힣A-Z]+석?)\s*([\d,]+)원?/);
+    const match = normalized.match(/([가-힣A-Z]+석?)\s*([\d,]+)원?/);
     if (match) {
         return { label: match[1], price: match[2] };
     }
 
-    // Fallback: just extract first number
-    const numMatch = priceStr.match(/([\d,]+)/);
+    const wonMatch = normalized.match(/([\d,]+)\s*원/);
+    if (wonMatch) {
+        return { label: null, price: wonMatch[1] };
+    }
+
+    // Fallback for normalized numeric strings such as "30000".
+    const numMatch = compact.match(/^[\d,]+$/);
     if (numMatch) {
         return { label: null, price: numMatch[1] };
     }

@@ -185,7 +185,7 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                         <Ticket className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
                                         <div className="flex-1">
                                             <p className="text-xs text-gray-400 mb-0.5">가격</p>
-                                            <p className="text-sm text-gray-200 font-bold whitespace-pre-wrap">{performance.price || '무료'}</p>
+                                            <p className="text-sm text-gray-200 font-bold whitespace-pre-wrap">{performance.price || '가격 정보 없음'}</p>
                                         </div>
                                     </div>
 
