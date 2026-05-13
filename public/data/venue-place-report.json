@@ -1,43 +1,1944 @@
 {
-  "checkedAt": "2026-05-13T08:16:49.488Z",
+  "checkedAt": "2026-05-13T09:19:57.470Z",
   "status": "warn",
-  "venueCount": 2222,
-  "matchedCount": 0,
-  "highConfidenceMatchCount": 0,
-  "needsReviewCount": 0,
-  "notFoundCount": 0,
-  "pendingLookupCount": 2156,
-  "insufficientIdentityCount": 66,
+  "venueCount": 2212,
+  "matchedCount": 29,
+  "highConfidenceMatchCount": 6,
+  "needsReviewCount": 20,
+  "notFoundCount": 28,
+  "pendingLookupCount": 1977,
+  "insufficientIdentityCount": 75,
   "lookupReady": false,
   "providersConfigured": [],
   "queue": [
     {
-      "venueId": "venue_위치정보는상품상세페이지를참고해주세요_7hhpm2",
-      "officialName": "위치 정보는 상품 상세 페이지를 참고해주세요.",
-      "address": "위치 정보는 상품 상세 페이지를 참고해주세요.",
-      "query": "위치 정보는 상품 상세 페이지를 참고해주세요. 위치 정보는",
-      "priority": 644,
-      "performanceCount": 8,
+      "venueId": "venue_반딧불마을_13aqu6u",
+      "officialName": "반딧불마을",
+      "address": "반딧불마을",
+      "query": "반딧불마을 반딧불마을",
+      "priority": 408,
+      "performanceCount": 1,
       "reviewFlags": [
-        "invalid_coordinate",
+        "alias_merge_candidate",
+        "missing_detailed_address",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "항공과학탐험대 초등! 국립항공박물관에서 항공기의 원리를 탐험해요!",
-        "덕수궁과 정동길 투어 어린이 초등 역사체험",
-        "초등반 경제탐험대 화폐부터 금융까지 경제 원리를 배우는 서울 화폐박물관"
+        "반딧불마을"
       ]
     },
+    {
+      "venueId": "venue_발랑저수지_k2zi8d",
+      "officialName": "발랑저수지",
+      "address": "발랑저수지",
+      "query": "발랑저수지 발랑저수지",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "발랑저수지"
+      ]
+    },
+    {
+      "venueId": "venue_부천부천문화원_1epqrv9",
+      "officialName": "부천 부천문화원",
+      "address": "부천 부천문화원",
+      "query": "부천 부천문화원 부천 부천문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "부천문화원"
+      ]
+    },
+    {
+      "venueId": "venue_부천부천시립박물관_1hdp3sn",
+      "officialName": "부천 부천시립박물관",
+      "address": "부천 부천시립박물관",
+      "query": "부천 부천시립박물관 부천 부천시립박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "부천시립박물관"
+      ]
+    },
+    {
+      "venueId": "venue_부천부천식물원_jcdaqi",
+      "officialName": "부천 부천식물원",
+      "address": "부천 부천식물원",
+      "query": "부천 부천식물원 부천 부천식물원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "부천식물원"
+      ]
+    },
+    {
+      "venueId": "venue_부천부천자유시장_oa6q9n",
+      "officialName": "부천 부천자유시장",
+      "address": "부천 부천자유시장",
+      "query": "부천 부천자유시장 부천 부천자유시장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "부천자유시장"
+      ]
+    },
+    {
+      "venueId": "venue_부천부천활박물관_1eepfua",
+      "officialName": "부천 부천활박물관",
+      "address": "부천 부천활박물관",
+      "query": "부천 부천활박물관 부천 부천활박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "부천활박물관"
+      ]
+    },
+    {
+      "venueId": "venue_부천오정_1k5dvjq",
+      "officialName": "부천 오정",
+      "address": "부천 오정아트홀",
+      "query": "부천 오정 부천 오정아트홀",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "오정아트홀"
+      ]
+    },
+    {
+      "venueId": "venue_서울마포구_otaffg",
+      "officialName": "서울 마포구",
+      "address": "서울 마포구",
+      "query": "서울 마포구 서울 마포구",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "창의성을 길러주는 미술관에서 만나는 클래식 원데이 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_서울영등포구_14q76pw",
+      "officialName": "서울 영등포구",
+      "address": "서울 영등포구",
+      "query": "서울 영등포구 서울 영등포구",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "녹음하면서 배우자! 쉽고 편하게 배우는 보컬레슨!"
+      ]
+    },
+    {
+      "venueId": "venue_서초구_radlly",
+      "officialName": "서초구",
+      "address": "서초구",
+      "query": "서초구 서초구",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "와인 원데이클래스, 와인 표현법을 배우며 나의 와인취향을 알아봐요"
+      ]
+    },
+    {
+      "venueId": "venue_석룡산_1kxrrcc",
+      "officialName": "석룡산",
+      "address": "석룡산",
+      "query": "석룡산 석룡산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "석룡산"
+      ]
+    },
+    {
+      "venueId": "venue_설미재미술관_1juhlky",
+      "officialName": "설미재미술관",
+      "address": "설미재미술관",
+      "query": "설미재미술관 설미재미술관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "설미재미술관"
+      ]
+    },
+    {
+      "venueId": "venue_설봉산_1y1cbrm",
+      "officialName": "설봉산",
+      "address": "설봉산",
+      "query": "설봉산 설봉산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "설봉산"
+      ]
+    },
+    {
+      "venueId": "venue_성남성남문화원_1t3r0n0",
+      "officialName": "성남 성남문화원",
+      "address": "성남 성남문화원",
+      "query": "성남 성남문화원 성남 성남문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "성남문화원"
+      ]
+    },
+    {
+      "venueId": "venue_성남신구대학교식물원_1mvm5jv",
+      "officialName": "성남 신구대학교식물원",
+      "address": "성남 신구대학교식물원",
+      "query": "성남 신구대학교식물원 성남 신구대학교식물원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "신구대학교식물원"
+      ]
+    },
+    {
+      "venueId": "venue_성남앤갤러리_1qs6w8r",
+      "officialName": "성남 앤갤러리",
+      "address": "성남 앤갤러리",
+      "query": "성남 앤갤러리 성남 앤갤러리",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "앤갤러리"
+      ]
+    },
+    {
+      "venueId": "venue_성남은행시장_1hstoql",
+      "officialName": "성남 은행시장",
+      "address": "성남 은행시장",
+      "query": "성남 은행시장 성남 은행시장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "은행시장"
+      ]
+    },
+    {
+      "venueId": "venue_성남판교박물관_we3m4s",
+      "officialName": "성남 판교박물관",
+      "address": "성남 판교박물관",
+      "query": "성남 판교박물관 성남 판교박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "판교박물관"
+      ]
+    },
+    {
+      "venueId": "venue_세종특별자치시세종시_9plxg7",
+      "officialName": "세종특별자치시 세종시",
+      "address": "세종 합강동",
+      "query": "세종특별자치시 세종시 세종 합강동",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "세종한글축제"
+      ]
+    },
+    {
+      "venueId": "venue_수덕산_19zrvfu",
+      "officialName": "수덕산",
+      "address": "수덕산",
+      "query": "수덕산 수덕산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수덕산"
+      ]
+    },
+    {
+      "venueId": "venue_수원경기아트센터_ooe7xv",
+      "officialName": "수원 경기아트센터",
+      "address": "수원 경기아트센터",
+      "query": "수원 경기아트센터 수원 경기아트센터",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경기아트센터"
+      ]
+    },
+    {
+      "venueId": "venue_수원광교산_1eho35",
+      "officialName": "수원 광교산",
+      "address": "수원 광교산",
+      "query": "수원 광교산 수원 광교산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광교산"
+      ]
+    },
+    {
+      "venueId": "venue_수원대유평공원_8luo2z",
+      "officialName": "수원 대유평공원",
+      "address": "수원 대유평공원",
+      "query": "수원 대유평공원 수원 대유평공원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "대유평공원"
+      ]
+    },
+    {
+      "venueId": "venue_수원매탄공원_1stq1io",
+      "officialName": "수원 매탄공원",
+      "address": "수원 매탄공원",
+      "query": "수원 매탄공원 수원 매탄공원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "매탄공원"
+      ]
+    },
+    {
+      "venueId": "venue_수원바른샘어린이도서관_1c0daqn",
+      "officialName": "수원 바른샘어린이도서관",
+      "address": "수원 바른샘어린이도서관",
+      "query": "수원 바른샘어린이도서관 수원 바른샘어린이도서관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "바른샘어린이도서관"
+      ]
+    },
+    {
+      "venueId": "venue_수원서수원도서관_ymep3a",
+      "officialName": "수원 서수원도서관",
+      "address": "수원 서수원도서관",
+      "query": "수원 서수원도서관 수원 서수원도서관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "서수원도서관"
+      ]
+    },
+    {
+      "venueId": "venue_수원수원광교박물관_bvdpav",
+      "officialName": "수원 수원광교박물관",
+      "address": "수원 수원광교박물관",
+      "query": "수원 수원광교박물관 수원 수원광교박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수원광교박물관"
+      ]
+    },
+    {
+      "venueId": "venue_수원수원메쎄_1p0byha",
+      "officialName": "수원 수원메쎄",
+      "address": "수원 수원메쎄",
+      "query": "수원 수원메쎄 수원 수원메쎄",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수원메쎄"
+      ]
+    },
+    {
+      "venueId": "venue_수원수원문화원_vs24le",
+      "officialName": "수원 수원문화원",
+      "address": "수원 수원문화원",
+      "query": "수원 수원문화원 수원 수원문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수원문화원"
+      ]
+    },
+    {
+      "venueId": "venue_수원수원화성박물관_1l25bw",
+      "officialName": "수원 수원화성박물관",
+      "address": "수원 수원화성박물관",
+      "query": "수원 수원화성박물관 수원 수원화성박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수원화성박물관"
+      ]
+    },
+    {
+      "venueId": "venue_수원슬기샘어린이도서관_02acem",
+      "officialName": "수원 슬기샘어린이도서관",
+      "address": "수원 슬기샘어린이도서관",
+      "query": "수원 슬기샘어린이도서관 수원 슬기샘어린이도서관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "슬기샘어린이도서관"
+      ]
+    },
+    {
+      "venueId": "venue_수원영흥수목원_rccrcf",
+      "officialName": "수원 영흥수목원",
+      "address": "수원 영흥수목원",
+      "query": "수원 영흥수목원 수원 영흥수목원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "영흥수목원"
+      ]
+    },
+    {
+      "venueId": "venue_수원지혜샘어린이도서관_1fz537r",
+      "officialName": "수원 지혜샘어린이도서관",
+      "address": "수원 지혜샘어린이도서관",
+      "query": "수원 지혜샘어린이도서관 수원 지혜샘어린이도서관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "지혜샘어린이도서관"
+      ]
+    },
+    {
+      "venueId": "venue_수원팔달산_a2v32e",
+      "officialName": "수원 팔달산",
+      "address": "수원 팔달산",
+      "query": "수원 팔달산 수원 팔달산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "팔달산"
+      ]
+    },
+    {
+      "venueId": "venue_수원한옥기술_1rt0k7o",
+      "officialName": "수원 한옥기술",
+      "address": "수원 한옥기술전시관",
+      "query": "수원 한옥기술 수원 한옥기술전시관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "한옥기술전시관"
+      ]
+    },
+    {
+      "venueId": "venue_수원해우재_uy2b89",
+      "officialName": "수원 해우재",
+      "address": "수원 해우재",
+      "query": "수원 해우재 수원 해우재",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "해우재"
+      ]
+    },
+    {
+      "venueId": "venue_수원해움미술관_1uffa4d",
+      "officialName": "수원 해움미술관",
+      "address": "수원 해움미술관",
+      "query": "수원 해움미술관 수원 해움미술관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "해움미술관"
+      ]
+    },
+    {
+      "venueId": "venue_시흥갯골캠핑장_1pjom4d",
+      "officialName": "시흥 갯골캠핑장",
+      "address": "시흥 갯골캠핑장",
+      "query": "시흥 갯골캠핑장 시흥 갯골캠핑장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "갯골캠핑장"
+      ]
+    },
+    {
+      "venueId": "venue_시흥삼미시장_1shkz2y",
+      "officialName": "시흥 삼미시장",
+      "address": "시흥 삼미시장",
+      "query": "시흥 삼미시장 시흥 삼미시장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "삼미시장"
+      ]
+    },
+    {
+      "venueId": "venue_시흥소래산_yknpgv",
+      "officialName": "시흥 소래산",
+      "address": "시흥 소래산",
+      "query": "시흥 소래산 시흥 소래산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "소래산"
+      ]
+    },
+    {
+      "venueId": "venue_시흥소전미술관_14frmx0",
+      "officialName": "시흥 소전미술관",
+      "address": "시흥 소전미술관",
+      "query": "시흥 소전미술관 시흥 소전미술관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "소전미술관"
+      ]
+    },
+    {
+      "venueId": "venue_시흥시흥abc행복학습타운_2w7rql",
+      "officialName": "시흥 시흥ABC행복학습타운",
+      "address": "시흥 시흥ABC행복학습타운",
+      "query": "시흥 시흥ABC행복학습타운 시흥 시흥abc행복학습타운",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "시흥ABC행복학습타운"
+      ]
+    },
+    {
+      "venueId": "venue_시흥시흥문화원_xuj7xz",
+      "officialName": "시흥 시흥문화원",
+      "address": "시흥 시흥문화원",
+      "query": "시흥 시흥문화원 시흥 시흥문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "시흥문화원"
+      ]
+    },
+    {
+      "venueId": "venue_시흥용도수목원_3rcon1",
+      "officialName": "시흥 용도수목원",
+      "address": "시흥 용도수목원",
+      "query": "시흥 용도수목원 시흥 용도수목원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "용도수목원"
+      ]
+    },
+    {
+      "venueId": "venue_시흥정왕시장_1ptkqao",
+      "officialName": "시흥 정왕시장",
+      "address": "시흥 정왕시장",
+      "query": "시흥 정왕시장 시흥 정왕시장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "정왕시장"
+      ]
+    },
+    {
+      "venueId": "venue_시흥창조자연사박물관_22d6y5",
+      "officialName": "시흥 창조자연사박물관",
+      "address": "시흥 창조자연사박물관",
+      "query": "시흥 창조자연사박물관 시흥 창조자연사박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "창조자연사박물관"
+      ]
+    },
+    {
+      "venueId": "venue_시흥abc행복학습센터abc_1bx5gar",
+      "officialName": "시흥ABC행복학습센터 ABC",
+      "address": "시흥ABC행복학습센터 ABC홀",
+      "query": "시흥ABC행복학습센터 ABC 시흥abc행복학습센터 abc홀",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "아기돼지 삼형제 [시흥]"
+      ]
+    },
+    {
+      "venueId": "venue_안산경기도미술관_1xz76n0",
+      "officialName": "안산 경기도미술관",
+      "address": "안산 경기도미술관",
+      "query": "안산 경기도미술관 안산 경기미술관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경기도미술관"
+      ]
+    },
+    {
+      "venueId": "venue_안산고송정지_1hazbh9",
+      "officialName": "안산 고송정지",
+      "address": "안산 고송정지",
+      "query": "안산 고송정지 안산 고송정지",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고송정지"
+      ]
+    },
+    {
+      "venueId": "venue_안산구봉도_smpvk0",
+      "officialName": "안산 구봉도",
+      "address": "안산 구봉도",
+      "query": "안산 구봉도 안산 구봉도",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구봉도"
+      ]
+    },
+    {
+      "venueId": "venue_안산대부도_1er5yf1",
+      "officialName": "안산 대부도",
+      "address": "안산 대부도",
+      "query": "안산 대부도 안산 대부도",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "대부도"
+      ]
+    },
+    {
+      "venueId": "venue_안산바다향기수목원_1lwxhpj",
+      "officialName": "안산 바다향기수목원",
+      "address": "안산 바다향기수목원",
+      "query": "안산 바다향기수목원 안산 바다향기수목원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "바다향기수목원"
+      ]
+    },
+    {
+      "venueId": "venue_안산방아머리해변_1nww0j9",
+      "officialName": "안산 방아머리해변",
+      "address": "안산 방아머리해변",
+      "query": "안산 방아머리해변 안산 방아머리해변",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "방아머리해변"
+      ]
+    },
+    {
+      "venueId": "venue_안산시화호_pa112s",
+      "officialName": "안산 시화호",
+      "address": "안산 시화호",
+      "query": "안산 시화호 안산 시화호",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "시화호"
+      ]
+    },
+    {
+      "venueId": "venue_안산안산농수산물도매시장_1awks9r",
+      "officialName": "안산 안산농수산물도매시장",
+      "address": "안산 안산농수산물도매시장",
+      "query": "안산 안산농수산물도매시장 안산 안산농수산물도매시장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안산농수산물도매시장"
+      ]
+    },
+    {
+      "venueId": "venue_안산안산문화예술의전당_mwrz0t",
+      "officialName": "안산 안산문화예술의전당",
+      "address": "안산 안산문화예술의전당",
+      "query": "안산 안산문화예술의전당 안산 안산문화예술의전당",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안산문화예술의전당"
+      ]
+    },
+    {
+      "venueId": "venue_안산안산문화원_192l7fk",
+      "officialName": "안산 안산문화원",
+      "address": "안산 안산문화원",
+      "query": "안산 안산문화원 안산 안산문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안산문화원"
+      ]
+    },
+    {
+      "venueId": "venue_안산안산식물원_4481rb",
+      "officialName": "안산 안산식물원",
+      "address": "안산 안산식물원",
+      "query": "안산 안산식물원 안산 안산식물원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안산식물원"
+      ]
+    },
+    {
+      "venueId": "venue_안산안산올림픽기념관_a2y3ay",
+      "officialName": "안산 안산올림픽기념관",
+      "address": "안산 안산올림픽기념관",
+      "query": "안산 안산올림픽기념관 안산 안산올림픽기념관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안산올림픽기념관"
+      ]
+    },
+    {
+      "venueId": "venue_안산안산향토사박물관_fjhjc9",
+      "officialName": "안산 안산향토사박물관",
+      "address": "안산 안산향토사박물관",
+      "query": "안산 안산향토사박물관 안산 안산향토사박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안산향토사박물관"
+      ]
+    },
+    {
+      "venueId": "venue_안산와동체육공원_1mw8q66",
+      "officialName": "안산 와동체육공원",
+      "address": "안산 와동체육공원",
+      "query": "안산 와동체육공원 안산 와동체육공원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "와동체육공원"
+      ]
+    },
+    {
+      "venueId": "venue_안산유리섬박물관_1hx1qaw",
+      "officialName": "안산 유리섬박물관",
+      "address": "안산 유리섬박물관",
+      "query": "안산 유리섬박물관 안산 유리섬박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "유리섬박물관"
+      ]
+    },
+    {
+      "venueId": "venue_안산자이언트제트_193wtfs",
+      "officialName": "안산 자이언트제트",
+      "address": "안산 자이언트제트",
+      "query": "안산 자이언트제트 안산 자이언트제트",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "자이언트제트"
+      ]
+    },
+    {
+      "venueId": "venue_안산종이미술관_1tr8vmq",
+      "officialName": "안산 종이미술관",
+      "address": "안산 종이미술관",
+      "query": "안산 종이미술관 안산 종이미술관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "종이미술관"
+      ]
+    },
+    {
+      "venueId": "venue_안산풍도_2bqpm4",
+      "officialName": "안산 풍도",
+      "address": "안산 풍도",
+      "query": "안산 풍도 안산 풍도",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "풍도"
+      ]
+    },
+    {
+      "venueId": "venue_안성고삼호수_1a8pkiw",
+      "officialName": "안성 고삼호수",
+      "address": "안성 고삼호수",
+      "query": "안성 고삼호수 안성 고삼호수",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고삼호수"
+      ]
+    },
+    {
+      "venueId": "venue_안성고성산_7oohow",
+      "officialName": "안성 고성산",
+      "address": "안성 고성산",
+      "query": "안성 고성산 안성 고성산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고성산"
+      ]
+    },
+    {
+      "venueId": "venue_안성금광호수공원_1hmezbw",
+      "officialName": "안성 금광호수공원",
+      "address": "안성 금광호수공원",
+      "query": "안성 금광호수공원 안성 금광호수공원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "금광호수공원"
+      ]
+    },
+    {
+      "venueId": "venue_안성비봉산_yliwvd",
+      "officialName": "안성 비봉산",
+      "address": "안성 비봉산",
+      "query": "안성 비봉산 안성 비봉산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "비봉산"
+      ]
+    },
+    {
+      "venueId": "venue_안성서운산_qxgcd1",
+      "officialName": "안성 서운산",
+      "address": "안성 서운산",
+      "query": "안성 서운산 안성 서운산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "서운산"
+      ]
+    },
+    {
+      "venueId": "venue_안성안성맞춤박물관_15oj59w",
+      "officialName": "안성 안성맞춤박물관",
+      "address": "안성 안성맞춤박물관",
+      "query": "안성 안성맞춤박물관 안성 안성맞춤박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안성맞춤박물관"
+      ]
+    },
+    {
+      "venueId": "venue_안성안성문화원_iu1jla",
+      "officialName": "안성 안성문화원",
+      "address": "안성 안성문화원",
+      "query": "안성 안성문화원 안성 안성문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안성문화원"
+      ]
+    },
+    {
+      "venueId": "venue_안성안성향교_1sqypi9",
+      "officialName": "안성 안성향교",
+      "address": "안성 안성향교",
+      "query": "안성 안성향교 안성 안성향교",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안성향교"
+      ]
+    },
+    {
+      "venueId": "venue_안성조병화문학관_1sml9xx",
+      "officialName": "안성 조병화문학관",
+      "address": "안성 조병화문학관",
+      "query": "안성 조병화문학관 안성 조병화문학관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "조병화문학관"
+      ]
+    },
+    {
+      "venueId": "venue_안성죽산향교_o4brue",
+      "officialName": "안성 죽산향교",
+      "address": "안성 죽산향교",
+      "query": "안성 죽산향교 안성 죽산향교",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "죽산향교"
+      ]
+    },
+    {
+      "venueId": "venue_안성칠장산_fbzio1",
+      "officialName": "안성 칠장산",
+      "address": "안성 칠장산",
+      "query": "안성 칠장산 안성 칠장산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "칠장산"
+      ]
+    },
+    {
+      "venueId": "venue_안양삼성산_b64701",
+      "officialName": "안양 삼성산",
+      "address": "안양 삼성산",
+      "query": "안양 삼성산 안양 삼성산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "삼성산"
+      ]
+    },
+    {
+      "venueId": "venue_안양삼성산산림욕장_nql3cm",
+      "officialName": "안양 삼성산산림욕장",
+      "address": "안양 삼성산산림욕장",
+      "query": "안양 삼성산산림욕장 안양 삼성산산림욕장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "삼성산산림욕장"
+      ]
+    },
+    {
+      "venueId": "venue_안양안양문화원_1kvevmc",
+      "officialName": "안양 안양문화원",
+      "address": "안양 안양문화원",
+      "query": "안양 안양문화원 안양 안양문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안양문화원"
+      ]
+    },
+    {
+      "venueId": "venue_안양안양박물관_12jlva3",
+      "officialName": "안양 안양박물관",
+      "address": "안양 안양박물관",
+      "query": "안양 안양박물관 안양 안양박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안양박물관"
+      ]
+    },
+    {
+      "venueId": "venue_안양안양아트센터_1rmcv9x",
+      "officialName": "안양 안양아트센터",
+      "address": "안양 안양아트센터",
+      "query": "안양 안양아트센터 안양 안양아트센터",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안양아트센터"
+      ]
+    },
+    {
+      "venueId": "venue_안양안양천_15xuz47",
+      "officialName": "안양 안양천",
+      "address": "안양 안양천",
+      "query": "안양 안양천 안양 안양천",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안양천"
+      ]
+    },
+    {
+      "venueId": "venue_안양자유공원_1dgvas8",
+      "officialName": "안양 자유공원",
+      "address": "안양 자유공원",
+      "query": "안양 자유공원 안양 자유공원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "자유공원"
+      ]
+    },
+    {
+      "venueId": "venue_안양평촌_1drj6ks",
+      "officialName": "안양 평촌",
+      "address": "안양 평촌아트홀",
+      "query": "안양 평촌 안양 평촌아트홀",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "평촌아트홀"
+      ]
+    },
+    {
+      "venueId": "venue_양주국립아세안자연휴양림_1u06orh",
+      "officialName": "양주 국립아세안자연휴양림",
+      "address": "양주 국립아세안자연휴양림",
+      "query": "양주 국립아세안자연휴양림 양주 국립아세안자연휴양림",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립아세안자연휴양림"
+      ]
+    },
+    {
+      "venueId": "venue_양주기산저수지_16l7lnu",
+      "officialName": "양주 기산저수지",
+      "address": "양주 기산저수지",
+      "query": "양주 기산저수지 양주 기산저수지",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "기산저수지"
+      ]
+    },
+    {
+      "venueId": "venue_양주백석생활체육공원_4jsdd8",
+      "officialName": "양주 백석생활체육공원",
+      "address": "양주 백석생활체육공원",
+      "query": "양주 백석생활체육공원 양주 백석생활체육공원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "백석생활체육공원"
+      ]
+    },
+    {
+      "venueId": "venue_양주불곡산_1a8pihc",
+      "officialName": "양주 불곡산",
+      "address": "양주 불곡산",
+      "query": "양주 불곡산 양주 불곡산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "불곡산"
+      ]
+    },
+    {
+      "venueId": "venue_양주송추계곡_vrbuu7",
+      "officialName": "양주 송추계곡",
+      "address": "양주 송추계곡",
+      "query": "양주 송추계곡 양주 송추계곡",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "송추계곡"
+      ]
+    },
+    {
+      "venueId": "venue_양주양주문화원_1u49lfk",
+      "officialName": "양주 양주문화원",
+      "address": "양주 양주문화원",
+      "query": "양주 양주문화원 양주 양주문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "양주문화원"
+      ]
+    },
+    {
+      "venueId": "venue_양주양주소놀이굿공연장_1p7qq8x",
+      "officialName": "양주 양주소놀이굿공연장",
+      "address": "양주 양주소놀이굿공연장",
+      "query": "양주 양주소놀이굿공연장 양주 양주소놀이굿공연장",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "양주소놀이굿공연장"
+      ]
+    },
+    {
+      "venueId": "venue_양주조명박물관_n41k6t",
+      "officialName": "양주 조명박물관",
+      "address": "양주 조명박물관",
+      "query": "양주 조명박물관 양주 조명박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "조명박물관"
+      ]
+    },
+    {
+      "venueId": "venue_양주조소앙기념관_xtkk0q",
+      "officialName": "양주 조소앙기념관",
+      "address": "양주 조소앙기념관",
+      "query": "양주 조소앙기념관 양주 조소앙기념관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "조소앙기념관"
+      ]
+    },
+    {
+      "venueId": "venue_양주청암민속박물관_3pg8s1",
+      "officialName": "양주 청암민속박물관",
+      "address": "양주 청암민속박물관",
+      "query": "양주 청암민속박물관 양주 청암민속박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "청암민속박물관"
+      ]
+    },
+    {
+      "venueId": "venue_양평국립양평치유의숲_gt0d3j",
+      "officialName": "양평 국립양평치유의숲",
+      "address": "양평 국립양평치유의숲",
+      "query": "양평 국립양평치유의숲 양평 국립양평치유의숲",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립양평치유의숲"
+      ]
+    },
+    {
+      "venueId": "venue_양평기흥성뮤지엄_y35bpj",
+      "officialName": "양평 기흥성뮤지엄",
+      "address": "양평 기흥성뮤지엄",
+      "query": "양평 기흥성뮤지엄 양평 기흥성뮤지엄",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "기흥성뮤지엄"
+      ]
+    },
+    {
+      "venueId": "venue_양평대부산_1iyyeo",
+      "officialName": "양평 대부산",
+      "address": "양평 대부산",
+      "query": "양평 대부산 양평 대부산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "대부산"
+      ]
+    },
+    {
+      "venueId": "venue_양평마나스아트센터_1ez03ex",
+      "officialName": "양평 마나스아트센터",
+      "address": "양평 마나스아트센터",
+      "query": "양평 마나스아트센터 양평 마나스아트센터",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "마나스아트센터"
+      ]
+    },
+    {
+      "venueId": "venue_양평명달리계곡_1or17e7",
+      "officialName": "양평 명달리계곡",
+      "address": "양평 명달리계곡",
+      "query": "양평 명달리계곡 양평 명달리계곡",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "명달리계곡"
+      ]
+    },
+    {
+      "venueId": "venue_양평벽계구곡_10fogpk",
+      "officialName": "양평 벽계구곡",
+      "address": "양평 벽계구곡",
+      "query": "양평 벽계구곡 양평 벽계구곡",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "벽계구곡"
+      ]
+    },
+    {
+      "venueId": "venue_양평서후리숲_1qwlq1z",
+      "officialName": "양평 서후리숲",
+      "address": "양평 서후리숲",
+      "query": "양평 서후리숲 양평 서후리숲",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "서후리숲"
+      ]
+    },
+    {
+      "venueId": "venue_양평석산계곡_f8dqlv",
+      "officialName": "양평 석산계곡",
+      "address": "양평 석산계곡",
+      "query": "양평 석산계곡 양평 석산계곡",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "석산계곡"
+      ]
+    },
+    {
+      "venueId": "venue_양평설매재자연휴양림_1dm6ip7",
+      "officialName": "양평 설매재자연휴양림",
+      "address": "양평 설매재자연휴양림",
+      "query": "양평 설매재자연휴양림 양평 설매재자연휴양림",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "설매재자연휴양림"
+      ]
+    },
+    {
+      "venueId": "venue_양평세미원_wkdrz0",
+      "officialName": "양평 세미원",
+      "address": "양평 세미원",
+      "query": "양평 세미원 양평 세미원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "세미원"
+      ]
+    },
+    {
+      "venueId": "venue_양평소리산_13ad31v",
+      "officialName": "양평 소리산",
+      "address": "양평 소리산",
+      "query": "양평 소리산 양평 소리산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "소리산"
+      ]
+    },
+    {
+      "venueId": "venue_양평양평군립미술관_1rxgx55",
+      "officialName": "양평 양평군립미술관",
+      "address": "양평 양평군립미술관",
+      "query": "양평 양평군립미술관 양평 양평군립미술관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "양평군립미술관"
+      ]
+    },
+    {
+      "venueId": "venue_양평양평문화원_1ocy8x0",
+      "officialName": "양평 양평문화원",
+      "address": "양평 양평문화원",
+      "query": "양평 양평문화원 양평 양평문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "양평문화원"
+      ]
+    },
+    {
+      "venueId": "venue_양평용문산_wwrj7m",
+      "officialName": "양평 용문산",
+      "address": "양평 용문산",
+      "query": "양평 용문산 양평 용문산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "용문산"
+      ]
+    },
+    {
+      "venueId": "venue_양평이재효갤러리_9w0m5f",
+      "officialName": "양평 이재효갤러리",
+      "address": "양평 이재효갤러리",
+      "query": "양평 이재효갤러리 양평 이재효갤러리",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "이재효갤러리"
+      ]
+    },
+    {
+      "venueId": "venue_양평중미산_1k5rx7d",
+      "officialName": "양평 중미산",
+      "address": "양평 중미산",
+      "query": "양평 중미산 양평 중미산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "중미산"
+      ]
+    },
+    {
+      "venueId": "venue_양평중미산자연휴양림_1nuuj09",
+      "officialName": "양평 중미산자연휴양림",
+      "address": "양평 중미산자연휴양림",
+      "query": "양평 중미산자연휴양림 양평 중미산자연휴양림",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "중미산자연휴양림"
+      ]
+    },
+    {
+      "venueId": "venue_양평중원계곡_1wkzjur",
+      "officialName": "양평 중원계곡",
+      "address": "양평 중원계곡",
+      "query": "양평 중원계곡 양평 중원계곡",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "중원계곡"
+      ]
+    },
+    {
+      "venueId": "venue_양평중원산_yg43yr",
+      "officialName": "양평 중원산",
+      "address": "양평 중원산",
+      "query": "양평 중원산 양평 중원산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "중원산"
+      ]
+    },
+    {
+      "venueId": "venue_양평화야산_13c6f7i",
+      "officialName": "양평 화야산",
+      "address": "양평 화야산",
+      "query": "양평 화야산 양평 화야산",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "화야산"
+      ]
+    },
+    {
+      "venueId": "venue_어비계곡_158tpsr",
+      "officialName": "어비계곡",
+      "address": "어비계곡",
+      "query": "어비계곡 어비계곡",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "어비계곡"
+      ]
+    },
+    {
+      "venueId": "venue_여성생활사박물관_iit9dl",
+      "officialName": "여성생활사박물관",
+      "address": "여성생활사박물관",
+      "query": "여성생활사박물관 여성생활사박물관",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "여성생활사박물관"
+      ]
+    },
+    {
+      "venueId": "venue_여주양화나루_9lh1jk",
+      "officialName": "여주 양화나루",
+      "address": "여주 양화나루",
+      "query": "여주 양화나루 여주 양화나루",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "여주 양화나루"
+      ]
+    },
+    {
+      "venueId": "venue_여주문화원_9z1dgi",
+      "officialName": "여주문화원",
+      "address": "여주문화원",
+      "query": "여주문화원 여주문화원",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "여주문화원"
+      ]
+    },
+    {
+      "venueId": "venue_역고드름_g985ba",
+      "officialName": "역고드름",
+      "address": "역고드름",
+      "query": "역고드름 역고드름",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "역고드름"
+      ]
+    }
+  ],
+  "insufficientIdentityQueue": [
     {
       "venueId": "venue_모카클래스_1ldjehf",
       "officialName": "모카클래스",
       "address": "서울특별시",
       "query": "모카클래스 서울",
-      "priority": 600,
+      "priority": 200,
       "performanceCount": 828,
       "reviewFlags": [
         "missing_detailed_address",
-        "needs_official_place_lookup"
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
       ],
       "sampleTitles": [
         "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
@@ -46,1846 +1947,23 @@
       ]
     },
     {
-      "venueId": "venue_단체전시회다수참여_e4sl0n",
-      "officialName": "단체전시회 다수 참여",
-      "address": "단체전시회 다수 참여",
-      "query": "단체전시회 다수 참여 단체전시회 다수",
-      "priority": 596,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "왕초보 아크릴화 원데이클래스",
-        "누구나 예술가 ! 부산 백드롭페인팅 원데이클래스"
-      ]
-    },
-    {
-      "venueId": "venue_하나딸기수확체험_5blmwt",
-      "officialName": "하나딸기수확체험",
-      "address": "경상남도 양산시 원동면 화제리 2696",
-      "query": "하나딸기수확체험 경남 양산시",
-      "priority": 596,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "하나 딸기수확체험(실내대기실+화장실완비)",
-        "하나 딸기수확체험(실내대기실+화장실완비)"
-      ]
-    },
-    {
-      "venueId": "venue_만남의장소자세한안내는수업전담당강사님이안내드립니다_bjg2bo",
-      "officialName": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다.",
-      "address": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다.",
-      "query": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다. ▶만남의 장소",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "술술풀리는 교과원정대 시즌1 과학관, 서울역사박물관, 세종충무공이야기"
-      ]
-    },
-    {
-      "venueId": "venue_경기도광주시중대동_9vi8gj",
-      "officialName": "경기도 · 광주시 · 중대동",
-      "address": "경기도 · 광주시 · 중대동",
-      "query": "경기도 · 광주시 · 중대동 경기 ·",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "모루인형 클래스"
-      ]
-    },
-    {
-      "venueId": "venue_경기도김포시구래동_uu9xqn",
-      "officialName": "경기도 · 김포시 · 구래동",
-      "address": "경기도 · 김포시 · 구래동",
-      "query": "경기도 · 김포시 · 구래동 경기 ·",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "100가지의 프리미엄 조향 퍼스널 향수 클래스"
-      ]
-    },
-    {
-      "venueId": "venue_괌박물관_a7zkpy",
-      "officialName": "괌 박물관",
-      "address": "193 Chalan Santo Papa Juan Pablo Dos, Hagåtña, 96910 괌",
-      "query": "괌 박물관 193 chalan",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "괌 박물관"
-      ]
-    },
-    {
-      "venueId": "venue_괌피시아이수중전망대_1p265vv",
-      "officialName": "괌 피시아이 수중 전망대",
-      "address": "818 N Marine Corps Drive Piti, 5524, 96915 괌",
-      "query": "괌 피시아이 수중 전망대 818 n",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "괌 피시아이 수중 전망대"
-      ]
-    },
-    {
-      "venueId": "venue_광주광역시북구신안동13664층광주리베르탱고_0lt1cw",
-      "officialName": "광주광역시 북구 신안동 136-6 4층 광주리베르탱고",
-      "address": "광주광역시 북구 신안동 136-6 4층 광주리베르탱고",
-      "query": "광주광역시 북구 신안동 136-6 4층 광주리베르탱고 광주 북구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "아르헨티나 탱고 동호회 : 광주리베르탱고 정규클래스"
-      ]
-    },
-    {
-      "venueId": "venue_끝나도피드백은끝까지드립니다만드는것부터홍보하는방법까지알려드려_1tjrfgl",
-      "officialName": "끝나도 피드백은 끝까지 드립니다, 만드는 것 부터 홍보하는 방법까지 알려드려",
-      "address": "끝나도 피드백은 끝까지 드립니다, 만드는 것 부터 홍보하는 방법까지 알려드려",
-      "query": "끝나도 피드백은 끝까지 드립니다, 만드는 것 부터 홍보하는 방법까지 알려드려 끝나도 피드백은",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "소담한날 케이크토퍼 밀착클래스"
-      ]
-    },
-    {
-      "venueId": "venue_대전광역시서구둔산동1036갤러리아백화점타임월드점3층파크제이_pqzhfd",
-      "officialName": "대전광역시 서구 둔산동 1036 갤러리아백화점 타임월드점 3층 파크제이드 라운지",
-      "address": "대전광역시 서구 둔산동 1036 갤러리아백화점 타임월드점 3층 파크제이드 라운지",
-      "query": "대전광역시 서구 둔산동 1036 갤러리아백화점 타임월드점 3층 파크제이드 라운지 대전 서구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "향수 만들기 클래스 (갤러리아타임월드, 5월28일)"
-      ]
-    },
-    {
-      "venueId": "venue_레스트리리솜_h30ga9",
-      "officialName": "레스트리 리솜",
-      "address": "충북 제천시 백운면 금봉로 365",
-      "query": "레스트리 리솜 충북 제천시",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "레스트리 리솜(객실 1박+조식 2인or워터파크 2인)"
-      ]
-    },
-    {
-      "venueId": "venue_뢰벨빌딩7층청춘정거장_37apra",
-      "officialName": "뢰벨빌딩 7층 청춘정거장",
-      "address": "대전광역시 서구 대덕대로 198 프뢰벨빌딩 7층 청춘정거장",
-      "query": "뢰벨빌딩 7층 청춘정거장 대전 서구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전직 프로게이머 토크쇼"
-      ]
-    },
-    {
-      "venueId": "venue_예약후집합장소사전조율예정_11qhlk2",
-      "officialName": "예약 후 집합 장소 사전 조율 예정.",
-      "address": "예약 후 집합 장소 사전 조율 예정.",
-      "query": "예약 후 집합 장소 사전 조율 예정. 예약 후",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)"
-      ]
-    },
-    {
-      "venueId": "venue_오래도록기억하고싶은순간의향을만들고자탄생한브랜드입니다_lstd1s",
-      "officialName": "오래도록 기억하고 싶은 순간의 향을 만들고자 탄생한 브랜드입니다.",
-      "address": "오래도록 기억하고 싶은 순간의 향을 만들고자 탄생한 브랜드입니다.",
-      "query": "오래도록 기억하고 싶은 순간의 향을 만들고자 탄생한 브랜드입니다. 오래도록 기억하고",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "나만의 향 만들기(MY ONLY FRAGRANCE)"
-      ]
-    },
-    {
-      "venueId": "venue_완성도높은작품을원하는분까지_8zl0tx",
-      "officialName": "완성도 높은 작품을 원하는 분까지,",
-      "address": "완성도 높은 작품을 원하는 분까지,",
-      "query": "완성도 높은 작품을 원하는 분까지, 완성도 높은",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "워치스트랩 원데이 클래스_하늘연달10"
-      ]
-    },
-    {
-      "venueId": "venue_우라이임업생활관_pjz8ti",
-      "officialName": "우라이임업생활관",
-      "address": "No. 1之2號, Pubu Rd, Wulai District, New Taipei City, 대만 233",
-      "query": "우라이임업생활관 no. 1之2號,",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "우라이임업생활관"
-      ]
-    },
-    {
-      "venueId": "venue_청주랜드어린이회관제2관어린이체험관_wdofh5",
-      "officialName": "청주랜드 어린이회관 제2관 어린이체험관",
-      "address": "충청북도 청주시 상당구 명암로 171 청주랜드 어린이체험관",
-      "query": "청주랜드 어린이회관 제2관 어린이체험관 충청북도 청주시",
-      "priority": 588,
-      "performanceCount": 1,
+      "venueId": "venue_모카클래스_1780tpn",
+      "officialName": "모카클래스",
+      "address": "서울 중구 세종대로 110",
+      "query": "모카클래스 서울 중구",
+      "priority": 200,
+      "performanceCount": 56,
       "reviewFlags": [
         "alias_merge_candidate",
-        "invalid_coordinate",
-        "needs_official_place_lookup"
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "청주랜드 어린이회관 제2관(어린이체험관)"
+        "향과 온기로 회복하는 태국 허브볼 &아로마 롤온 워크샵",
+        "초보도 OK! 플라잉요가 한 번 해볼까?",
+        "에바폼 자이언트플라워 자격증 클래스"
       ]
     },
-    {
-      "venueId": "venue_포레스트리솜_h30ga9",
-      "officialName": "포레스트 리솜",
-      "address": "충북 제천시 백운면 금봉로 365",
-      "query": "포레스트 리솜 충북 제천시",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "포레스트 리솜 패키지 (객실 1박+조식 2인or워터파크 2인)"
-      ]
-    },
-    {
-      "venueId": "venue_프로그램마다만나는장소가상이하여상세페이지확인부탁드립니다_fhnagz",
-      "officialName": "프로그램마다 만나는 장소가 상이하여 상세페이지 확인 부탁드립니다.",
-      "address": "프로그램마다 만나는 장소가 상이하여 상세페이지 확인 부탁드립니다.",
-      "query": "프로그램마다 만나는 장소가 상이하여 상세페이지 확인 부탁드립니다. 프로그램마다 만나는",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "달마다 새롭게 10회 과정! 한국사 역사체험 탐험대"
-      ]
-    },
-    {
-      "venueId": "venue_한복남한국민속촌점한복대여이용권_3월_pobogf",
-      "officialName": "한복남 한국민속촌점 한복 대여 이용권 ~3월",
-      "address": "한복남 한국민속촌점 한복 대여 이용권 ~3월",
-      "query": "한복남 한국민속촌점 한복 대여 이용권 ~3월 한복남 한국민속촌점",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "한복남 한국민속촌점 한복 대여 이용권(~3월)"
-      ]
-    },
-    {
-      "venueId": "venue_링크아트센터벅스_1acr5e3",
-      "officialName": "링크아트센터 벅스",
-      "address": "서울 종로구 대학로14길 29",
-      "query": "링크아트센터 벅스 서울 종로구",
-      "priority": 476,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "히스토리 보이즈 [대학로]",
-        "비스티 [대학로]"
-      ]
-    },
-    {
-      "venueId": "venue_nol서경스퀘어스콘_1g7lsmf",
-      "officialName": "NOL 서경스퀘어 스콘",
-      "address": "서울 종로구 동숭길 148",
-      "query": "NOL 서경스퀘어 스콘 서울 종로구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "뮤지컬 〈ROGER〉"
-      ]
-    },
-    {
-      "venueId": "venue_nol유니플렉스_1avdt2a",
-      "officialName": "NOL 유니플렉스",
-      "address": "서울특별시 종로구 동숭동 1-94",
-      "query": "NOL 유니플렉스 서울 종로구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "뮤지컬 〈빨래〉"
-      ]
-    },
-    {
-      "venueId": "venue_강화역사박물관_k95jp5",
-      "officialName": "강화역사박물관",
-      "address": "인천광역시 강화군 하점면 강화대로 994-19 강화역사박물관",
-      "query": "강화역사박물관 인천 강화군",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "강화역사박물관"
-      ]
-    },
-    {
-      "venueId": "venue_강화자연사박물관_1dxzhu6",
-      "officialName": "강화자연사박물관",
-      "address": "인천광역시 강화군 하점면 강화대로 994-33",
-      "query": "강화자연사박물관 인천 강화군",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "강화자연사박물관"
-      ]
-    },
-    {
-      "venueId": "venue_계양산성박물관_s8stbn",
-      "officialName": "계양산성박물관",
-      "address": "인천광역시 계양구 계양산로 101",
-      "query": "계양산성박물관 인천 계양구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "계양산성박물관"
-      ]
-    },
-    {
-      "venueId": "venue_국가유산방문캠페인인천공항홍보관_16ab9km",
-      "officialName": "국가유산 방문 캠페인 인천공항 홍보관",
-      "address": "인천광역시 중구 공항로 271 인천국제공항역 제1교통센터 지하 1층",
-      "query": "국가유산 방문 캠페인 인천공항 홍보관 인천 중구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국가유산 방문 캠페인 인천공항 홍보관"
-      ]
-    },
-    {
-      "venueId": "venue_국립세계문자박물관_s36adw",
-      "officialName": "국립세계문자박물관",
-      "address": "인천광역시 연수구 센트럴로 217 국립세계문자박물관",
-      "query": "국립세계문자박물관 인천 연수구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립세계문자박물관"
-      ]
-    },
-    {
-      "venueId": "venue_국립전주박물관_1d8ogoq",
-      "officialName": "국립전주박물관",
-      "address": "전북특별자치도 전주시 완산구 쑥고개로 249 국립전주박물관 국립전주박물관",
-      "query": "국립전주박물관 전북 전주시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립전주박물관"
-      ]
-    },
-    {
-      "venueId": "venue_국립전주어린이박물관_spc2sn",
-      "officialName": "국립전주어린이박물관",
-      "address": "전북특별자치도 전주시 완산구 쑥고개로 249 국립전주박물관",
-      "query": "국립전주어린이박물관 전북 전주시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립전주어린이박물관"
-      ]
-    },
-    {
-      "venueId": "venue_군산세관옛군산세관_1xos4le",
-      "officialName": "군산세관 옛군산세관",
-      "address": "전북특별자치도 군산시 해망로 244-7 군산세관 옛군산세관",
-      "query": "군산세관 옛군산세관 전북 군산시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "옛군산세관"
-      ]
-    },
-    {
-      "venueId": "venue_녹청자박물관_e9smff",
-      "officialName": "녹청자박물관",
-      "address": "인천광역시 서구 도요지로 54 녹청자박물관 1~2층",
-      "query": "녹청자박물관 인천 서구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "녹청자박물관"
-      ]
-    },
-    {
-      "venueId": "venue_농촌진흥청전주농업과학관어린이체험관_rl3jd3",
-      "officialName": "농촌진흥청 전주농업과학관어린이체험관",
-      "address": "전북특별자치도 전주시 덕진구 농생명로 300 농촌진흥청 전주농업과학관어린이체험관",
-      "query": "농촌진흥청 전주농업과학관어린이체험관 전북 전주시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전주농업과학관어린이체험관"
-      ]
-    },
-    {
-      "venueId": "venue_누들플랫폼_1jtw1c9",
-      "officialName": "누들플랫폼",
-      "address": "인천광역시 중구 신포로27번길 36 누들플랫폼",
-      "query": "누들플랫폼 인천 중구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "누들플랫폼"
-      ]
-    },
-    {
-      "venueId": "venue_대불호텔_1dt2m1x",
-      "officialName": "대불호텔",
-      "address": "인천광역시 중구 신포로23번길 101",
-      "query": "대불호텔 인천 중구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "대불호텔전시관"
-      ]
-    },
-    {
-      "venueId": "venue_독도_92bu6u",
-      "officialName": "독도",
-      "address": "서울 종로구 세종대로 172 5호선 광화문역 지하보도",
-      "query": "독도 서울 종로구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "독도 상설전시관"
-      ]
-    },
-    {
-      "venueId": "venue_동광직물생활문화센터_1nem3bu",
-      "officialName": "동광직물 생활문화센터",
-      "address": "인천광역시 강화군 강화읍 남문안길 35",
-      "query": "동광직물 생활문화센터 인천 강화군",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "동광직물 생활문화센터"
-      ]
-    },
-    {
-      "venueId": "venue_무주반디랜드_1jnb420",
-      "officialName": "무주반디랜드",
-      "address": "전북 무주군 설천면 무설로 1324",
-      "query": "무주반디랜드 전북 무주군",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "무주반디랜드"
-      ]
-    },
-    {
-      "venueId": "venue_백제왕궁박물관_13fjiq7",
-      "officialName": "백제왕궁박물관",
-      "address": "전북특별자치도 익산시 왕궁면 궁성로 666",
-      "query": "백제왕궁박물관 전북 익산시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "백제왕궁박물관"
-      ]
-    },
-    {
-      "venueId": "venue_벽골제농경문화박물관_fyhc2u",
-      "officialName": "벽골제농경문화박물관",
-      "address": "전북특별자치도 김제시 부량면 벽골제로 442 벽골제농경문화박물관",
-      "query": "벽골제농경문화박물관 전북 김제시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "벽골제농경문화박물관"
-      ]
-    },
-    {
-      "venueId": "venue_벽골제농경사주제관_1ibn4n7",
-      "officialName": "벽골제농경사주제관",
-      "address": "전북특별자치도 김제시 부량면 벽골제로 442 벽골제농경사주제관",
-      "query": "벽골제농경사주제관 전북 김제시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "벽골제농경사주제관"
-      ]
-    },
-    {
-      "venueId": "venue_부평굴포누리기후변화체험관_58slry",
-      "officialName": "부평 굴포누리 기후변화체험관",
-      "address": "인천광역시 부평구 장제로 267",
-      "query": "부평 굴포누리 기후변화체험관 인천 부평구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "부평 굴포누리 기후변화체험관"
-      ]
-    },
-    {
-      "venueId": "venue_부평안전체험관_n0nnvr",
-      "officialName": "부평안전체험관",
-      "address": "인천광역시 부평구 굴포로 110 부평구 민방위교육장(안전체험관)",
-      "query": "부평안전체험관 인천 부평구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "부평안전체험관"
-      ]
-    },
-    {
-      "venueId": "venue_서구로봇체험관_1s8crjt",
-      "officialName": "서구로봇체험관",
-      "address": "인천광역시 서구 로봇랜드로 155-11 로봇랜드 로봇지원센터 로봇타워 1층",
-      "query": "서구로봇체험관 인천 서구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "로봇체험관"
-      ]
-    },
-    {
-      "venueId": "venue_서울시종로구효자로12국립고궁박물관_1h27o4p",
-      "officialName": "서울시 종로구 효자로 12 국립고궁박물관",
-      "address": "서울시 종로구 효자로 12",
-      "query": "서울시 종로구 효자로 12 국립고궁박물관 서울 종로구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "경복궁으로 떠나는 조선 한국사 초등 역사체험"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시종로구창경궁로185창경궁_1h05k4d",
-      "officialName": "서울특별시 종로구 창경궁로 185 창경궁",
-      "address": "서울특별시 종로구 창경궁로 185",
-      "query": "서울특별시 종로구 창경궁로 185 창경궁 서울 종로구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "아이와 함께 궁궐투어 달빛궁궐 창경궁"
-      ]
-    },
-    {
-      "venueId": "venue_소래_1v9fjsv",
-      "officialName": "소래",
-      "address": "인천광역시 남동구 아암대로 1605 소래역사관",
-      "query": "소래 인천 남동구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "소래역사관"
-      ]
-    },
-    {
-      "venueId": "venue_심장박물관_jk5mkk",
-      "officialName": "심장박물관",
-      "address": "인천광역시 계양구 계양문화로 7 문화빌딩 2층",
-      "query": "심장박물관 인천 계양구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "심장박물관"
-      ]
-    },
-    {
-      "venueId": "venue_영종_3zt27f",
-      "officialName": "영종",
-      "address": "인천광역시 중구 구읍로 63 영종역사관",
-      "query": "영종 인천 중구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영종역사관"
-      ]
-    },
-    {
-      "venueId": "venue_옥토끼우주센터_11ful34",
-      "officialName": "옥토끼우주센터",
-      "address": "인천광역시 강화군 불은면 강화동로 403 옥토끼우주센터",
-      "query": "옥토끼우주센터 인천 강화군",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "옥토끼우주센터"
-      ]
-    },
-    {
-      "venueId": "venue_익산공룡테마공원_8fu9g1",
-      "officialName": "익산 공룡테마공원",
-      "address": "전북특별자치도 익산시 왕궁면 호반로 8 보석박물관 익산 공룡테마공원",
-      "query": "익산 공룡테마공원 전북 익산시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "익산 공룡테마공원"
-      ]
-    },
-    {
-      "venueId": "venue_익산보석박물관_djsbod",
-      "officialName": "익산보석박물관",
-      "address": "전북 익산시 왕궁면 호반로 8 보석박물관",
-      "query": "익산보석박물관 전북 익산시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "익산보석박물관"
-      ]
-    },
-    {
-      "venueId": "venue_인천서구환경로42국립생물자원관_1pl4egx",
-      "officialName": "인천 서구 환경로 42 국립생물자원관",
-      "address": "인천 서구 환경로 42 국립생물자원관",
-      "query": "인천 서구 환경로 42 국립생물자원관 인천 서구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립생물자원관"
-      ]
-    },
-    {
-      "venueId": "venue_인천광역시립박물관_1izc2v4",
-      "officialName": "인천광역시립박물관",
-      "address": "인천광역시 연수구 청량로160번길 26 인천광역시시립박물관",
-      "query": "인천광역시립박물관 인천 연수구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "인천광역시립박물관"
-      ]
-    },
-    {
-      "venueId": "venue_인천도시_11ah4yx",
-      "officialName": "인천도시",
-      "address": "인천광역시 연수구 인천타워대로 238 인천도시역사관",
-      "query": "인천도시 인천 연수구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "인천도시역사관"
-      ]
-    },
-    {
-      "venueId": "venue_인천학생과학관_78z65e",
-      "officialName": "인천학생과학관",
-      "address": "인천광역시 중구 영종대로277번길 74-10 인천광역시교육청 교육과학정보원",
-      "query": "인천학생과학관 인천 중구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "인천학생과학관"
-      ]
-    },
-    {
-      "venueId": "venue_전라북도교육청과학교육원_zs14oh",
-      "officialName": "전라북도교육청과학교육원",
-      "address": "전북 익산시 선화로 836-2 (부송동) 전라북도교육청과학교육원",
-      "query": "전라북도교육청과학교육원 전북 익산시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전라북도교육청과학교육원"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도정읍시내장산로37012정읍시립박물관정읍시립박물_1fibh3r",
-      "officialName": "전북특별자치도 정읍시 내장산로 370-12 정읍시립박물관 정읍시립박물관",
-      "address": "전북특별자치도 정읍시 내장산로 370-12 정읍시립박물관 정읍시립박물관",
-      "query": "전북특별자치도 정읍시 내장산로 370-12 정읍시립박물관 정읍시립박물관 전북 정읍시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "정읍시립박물관"
-      ]
-    },
-    {
-      "venueId": "venue_전주공예품_1kvduf6",
-      "officialName": "전주공예품",
-      "address": "전북특별자치도 전주시 완산구 태조로 15 공예품전시관 공예품전시관",
-      "query": "전주공예품 전북 전주시",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전주공예품전시관"
-      ]
-    },
-    {
-      "venueId": "venue_중구생활사_odq9dj",
-      "officialName": "중구생활사",
-      "address": "인천광역시 중구 신포로23번길 97",
-      "query": "중구생활사 인천 중구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "중구생활사전시관"
-      ]
-    },
-    {
-      "venueId": "venue_케이컬처뮤지엄_12rrz4v",
-      "officialName": "케이컬처뮤지엄",
-      "address": "인천광역시 중구 공항로 271 인천국제공항역 제1교통센터 지하 1층 k컬쳐 뮤지엄",
-      "query": "케이컬처뮤지엄 인천 중구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "케이컬처뮤지엄"
-      ]
-    },
-    {
-      "venueId": "venue_용인시문화예술회관처인_29p8xj",
-      "officialName": "용인시문화예술회관 처인",
-      "address": "용인시문화예술회관 처인홀",
-      "query": "용인시문화예술회관 처인 용인시문화예술회관 처인홀",
-      "priority": 448,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "어텐션라이브 Ⅰ. 스컬 & 하하 + 별 + Band SRG [용인]",
-        "콧구멍을 후비면 [용인]",
-        "폭풍우 치는 밤에 [용인]"
-      ]
-    },
-    {
-      "venueId": "venue_광진구_1jpxa40",
-      "officialName": "광진구",
-      "address": "광진구",
-      "query": "광진구 광진구",
-      "priority": 424,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "감성 민화 - 원데이 판넬 드로잉 클래스",
-        "내게 필요한 원석은 무엇? - 나만의 힐링스톤 비누 만들기 원데이 클래스",
-        "원데이 실크 드로잉 민화 클래스"
-      ]
-    },
-    {
-      "venueId": "venue_93뮤지엄가족미술관_1phtquy",
-      "officialName": "93뮤지엄가족미술관",
-      "address": "93뮤지엄가족미술관",
-      "query": "93뮤지엄가족미술관 93뮤지엄가족미술관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "93뮤지엄가족미술관"
-      ]
-    },
-    {
-      "venueId": "venue_가일미술관_criydo",
-      "officialName": "가일미술관",
-      "address": "가일미술관",
-      "query": "가일미술관 가일미술관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가일미술관"
-      ]
-    },
-    {
-      "venueId": "venue_가평문화예술회관_1wobbjd",
-      "officialName": "가평문화예술회관",
-      "address": "가평문화예술회관",
-      "query": "가평문화예술회관 가평문화예술회관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가평문화예술회관"
-      ]
-    },
-    {
-      "venueId": "venue_가평문화원_1wobbjd",
-      "officialName": "가평문화원",
-      "address": "가평문화원",
-      "query": "가평문화원 가평문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가평문화원"
-      ]
-    },
-    {
-      "venueId": "venue_가평베고니아새정원_1pycjlz",
-      "officialName": "가평베고니아새정원",
-      "address": "가평베고니아새정원",
-      "query": "가평베고니아새정원 가평베고니아새정원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가평베고니아새정원"
-      ]
-    },
-    {
-      "venueId": "venue_감악산출렁다리_10bn9t",
-      "officialName": "감악산 출렁다리",
-      "address": "감악산 출렁다리",
-      "query": "감악산 출렁다리 감악산 출렁다리",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "감악산 출렁다리"
-      ]
-    },
-    {
-      "venueId": "venue_갤러리박영_d2w3ln",
-      "officialName": "갤러리박영",
-      "address": "갤러리박영",
-      "query": "갤러리박영 갤러리박영",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "갤러리박영"
-      ]
-    },
-    {
-      "venueId": "venue_검단산_438zlp",
-      "officialName": "검단산",
-      "address": "검단산",
-      "query": "검단산 검단산",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "검단산"
-      ]
-    },
-    {
-      "venueId": "venue_경기성남아트센터_alpurb",
-      "officialName": "경기 | 성남아트센터",
-      "address": "경기도 성남시",
-      "query": "경기 | 성남아트센터 경기 성남시",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "성남아트센터 마티네 콘서트: 독일, 음악의 숲"
-      ]
-    },
-    {
-      "venueId": "venue_고대산_14ayp89",
-      "officialName": "고대산",
-      "address": "고대산",
-      "query": "고대산 고대산",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고대산"
-      ]
-    },
-    {
-      "venueId": "venue_고대산자연휴양림_jga3q2",
-      "officialName": "고대산자연휴양림",
-      "address": "고대산자연휴양림",
-      "query": "고대산자연휴양림 고대산자연휴양림",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고대산자연휴양림"
-      ]
-    },
-    {
-      "venueId": "venue_고양고봉산_lm269l",
-      "officialName": "고양 고봉산",
-      "address": "고양 고봉산",
-      "query": "고양 고봉산 고양 고봉산",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고봉산"
-      ]
-    },
-    {
-      "venueId": "venue_고양고양꽃_1o6qjn0",
-      "officialName": "고양 고양꽃",
-      "address": "고양 고양꽃전시관",
-      "query": "고양 고양꽃 고양 고양꽃전시관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고양꽃전시관"
-      ]
-    },
-    {
-      "venueId": "venue_고양고양문화원_hiouu2",
-      "officialName": "고양 고양문화원",
-      "address": "고양 고양문화원",
-      "query": "고양 고양문화원 고양 고양문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고양문화원"
-      ]
-    },
-    {
-      "venueId": "venue_고양고양시문예회관_8jnsoy",
-      "officialName": "고양 고양시문예회관",
-      "address": "고양 고양시문예회관",
-      "query": "고양 고양시문예회관 고양 고양시문예회관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고양시문예회관"
-      ]
-    },
-    {
-      "venueId": "venue_고양고양향교_b9rtry",
-      "officialName": "고양 고양향교",
-      "address": "고양 고양향교",
-      "query": "고양 고양향교 고양 고양향교",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고양향교"
-      ]
-    },
-    {
-      "venueId": "venue_고양공릉천_19mvnv8",
-      "officialName": "고양 공릉천",
-      "address": "고양 공릉천",
-      "query": "고양 공릉천 고양 공릉천",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "공릉천"
-      ]
-    },
-    {
-      "venueId": "venue_고양국립여성사_oboyp5",
-      "officialName": "고양 국립여성사",
-      "address": "고양 국립여성사전시관",
-      "query": "고양 국립여성사 고양 국립여성사전시관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립여성사전시관"
-      ]
-    },
-    {
-      "venueId": "venue_고양배다골테마파크_mgc555",
-      "officialName": "고양 배다골테마파크",
-      "address": "고양 배다골테마파크",
-      "query": "고양 배다골테마파크 고양 배다골테마파크",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "배다골테마파크"
-      ]
-    },
-    {
-      "venueId": "venue_고양성저공원_boq6fz",
-      "officialName": "고양 성저공원",
-      "address": "고양 성저공원",
-      "query": "고양 성저공원 고양 성저공원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "성저공원"
-      ]
-    },
-    {
-      "venueId": "venue_고양원당시장_yquvan",
-      "officialName": "고양 원당시장",
-      "address": "고양 원당시장",
-      "query": "고양 원당시장 고양 원당시장",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "원당시장"
-      ]
-    },
-    {
-      "venueId": "venue_고양중남미문화원_1u93nxc",
-      "officialName": "고양 중남미문화원",
-      "address": "고양 중남미문화원",
-      "query": "고양 중남미문화원 고양 중남미문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "중남미문화원"
-      ]
-    },
-    {
-      "venueId": "venue_고양중산체육공원_lr1epx",
-      "officialName": "고양 중산체육공원",
-      "address": "고양 중산체육공원",
-      "query": "고양 중산체육공원 고양 중산체육공원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "중산체육공원"
-      ]
-    },
-    {
-      "venueId": "venue_고양쥬쥬랜드_o7n814",
-      "officialName": "고양 쥬쥬랜드",
-      "address": "고양 쥬쥬랜드",
-      "query": "고양 쥬쥬랜드 고양 쥬쥬랜드",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "쥬쥬랜드"
-      ]
-    },
-    {
-      "venueId": "venue_고양충장근린체육공원_1qp0xwz",
-      "officialName": "고양 충장근린체육공원",
-      "address": "고양 충장근린체육공원",
-      "query": "고양 충장근린체육공원 고양 충장근린체육공원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "충장근린체육공원"
-      ]
-    },
-    {
-      "venueId": "venue_공유양조벤처센터술지움_1hguyfc",
-      "officialName": "공유양조벤처센터 술지움",
-      "address": "공유양조벤처센터 술지움",
-      "query": "공유양조벤처센터 술지움 공유양조벤처센터 술지움",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "공유양조벤처센터 술지움"
-      ]
-    },
-    {
-      "venueId": "venue_과천가원미술관_1x1kow9",
-      "officialName": "과천 가원미술관",
-      "address": "과천 가원미술관",
-      "query": "과천 가원미술관 과천 가원미술관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가원미술관"
-      ]
-    },
-    {
-      "venueId": "venue_과천갱매폭포_oorozp",
-      "officialName": "과천 갱매폭포",
-      "address": "과천 갱매폭포",
-      "query": "과천 갱매폭포 과천 갱매폭포",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "갱매폭포"
-      ]
-    },
-    {
-      "venueId": "venue_과천과천문화원_1lrzkgn",
-      "officialName": "과천 과천문화원",
-      "address": "과천 과천문화원",
-      "query": "과천 과천문화원 과천 과천문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "과천문화원"
-      ]
-    },
-    {
-      "venueId": "venue_과천과천시민회관_1fnrxjt",
-      "officialName": "과천 과천시민회관",
-      "address": "과천 과천시민회관",
-      "query": "과천 과천시민회관 과천 과천시민회관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "과천시민회관"
-      ]
-    },
-    {
-      "venueId": "venue_과천선바위미술관_hhigxa",
-      "officialName": "과천 선바위미술관",
-      "address": "과천 선바위미술관",
-      "query": "과천 선바위미술관 과천 선바위미술관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "선바위미술관"
-      ]
-    },
-    {
-      "venueId": "venue_과천아해박물관_wev7oo",
-      "officialName": "과천 아해박물관",
-      "address": "과천 아해박물관",
-      "query": "과천 아해박물관 과천 아해박물관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "아해박물관"
-      ]
-    },
-    {
-      "venueId": "venue_과천한국카메라박물관_nikaze",
-      "officialName": "과천 한국카메라박물관",
-      "address": "과천 한국카메라박물관",
-      "query": "과천 한국카메라박물관 과천 한국카메라박물관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "한국카메라박물관"
-      ]
-    },
-    {
-      "venueId": "venue_과천호반아트리움_10zsrla",
-      "officialName": "과천 호반아트리움",
-      "address": "과천 호반아트리움",
-      "query": "과천 호반아트리움 과천 호반아트리움",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "호반아트리움"
-      ]
-    },
-    {
-      "venueId": "venue_광명광명동굴_1jt4mde",
-      "officialName": "광명 광명동굴",
-      "address": "광명 광명동굴",
-      "query": "광명 광명동굴 광명 광명동굴",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "광명동굴"
-      ]
-    },
-    {
-      "venueId": "venue_광명광명문화원_1h1wags",
-      "officialName": "광명 광명문화원",
-      "address": "광명 광명문화원",
-      "query": "광명 광명문화원 광명 광명문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "광명문화원"
-      ]
-    },
-    {
-      "venueId": "venue_광명광명업사이클아트센터_1to6p1d",
-      "officialName": "광명 광명업사이클아트센터",
-      "address": "광명 광명업사이클아트센터",
-      "query": "광명 광명업사이클아트센터 광명 광명업사이클아트센터",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "광명업사이클아트센터"
-      ]
-    },
-    {
-      "venueId": "venue_광명구름산산림욕장_yu0dn9",
-      "officialName": "광명 구름산산림욕장",
-      "address": "광명 구름산산림욕장",
-      "query": "광명 구름산산림욕장 광명 구름산산림욕장",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "구름산산림욕장"
-      ]
-    },
-    {
-      "venueId": "venue_광주경기도자박물관_bpicb5",
-      "officialName": "광주 경기도자박물관",
-      "address": "광주 경기도자박물관",
-      "query": "광주 경기도자박물관 광주 경기자박물관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "경기도자박물관"
-      ]
-    },
-    {
-      "venueId": "venue_광주닻미술관_1pxamgb",
-      "officialName": "광주 닻미술관",
-      "address": "광주 닻미술관",
-      "query": "광주 닻미술관 광주 닻미술관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "닻미술관"
-      ]
-    },
-    {
-      "venueId": "venue_광주백향꽃누르미갤러리_q5ud9o",
-      "officialName": "광주 백향꽃누르미갤러리",
-      "address": "광주 백향꽃누르미갤러리",
-      "query": "광주 백향꽃누르미갤러리 광주 백향꽃누르미갤러리",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "백향꽃누르미갤러리"
-      ]
-    },
-    {
-      "venueId": "venue_광주불광사_162s1s9",
-      "officialName": "광주 불광사",
-      "address": "광주 불광사",
-      "query": "광주 불광사 광주 불광사",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "불광사(광주)"
-      ]
-    },
-    {
-      "venueId": "venue_광주앵자봉_1p00mza",
-      "officialName": "광주 앵자봉",
-      "address": "광주 앵자봉",
-      "query": "광주 앵자봉 광주 앵자봉",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "앵자봉"
-      ]
-    },
-    {
-      "venueId": "venue_광주영은미술관_a1hei3",
-      "officialName": "광주 영은미술관",
-      "address": "광주 영은미술관",
-      "query": "광주 영은미술관 광주 영은미술관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영은미술관"
-      ]
-    },
-    {
-      "venueId": "venue_광주율봄식물원_xhgrz0",
-      "officialName": "광주 율봄식물원",
-      "address": "광주 율봄식물원",
-      "query": "광주 율봄식물원 광주 율봄식물원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "율봄식물원"
-      ]
-    },
-    {
-      "venueId": "venue_광주팔당호_dzd7ab",
-      "officialName": "광주 팔당호",
-      "address": "광주 팔당호",
-      "query": "광주 팔당호 광주 팔당호",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "팔당호"
-      ]
-    },
-    {
-      "venueId": "venue_광주풀짚공예박물관_1kco5yo",
-      "officialName": "광주 풀짚공예박물관",
-      "address": "광주 풀짚공예박물관",
-      "query": "광주 풀짚공예박물관 광주 풀짚공예박물관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "풀짚공예박물관"
-      ]
-    },
-    {
-      "venueId": "venue_광주화담숲_ha12fd",
-      "officialName": "광주 화담숲",
-      "address": "광주 화담숲",
-      "query": "광주 화담숲 광주 화담숲",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "화담숲"
-      ]
-    },
-    {
-      "venueId": "venue_구리구리문화원_1px9590",
-      "officialName": "구리 구리문화원",
-      "address": "구리 구리문화원",
-      "query": "구리 구리문화원 구리 구리문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "구리문화원"
-      ]
-    },
-    {
-      "venueId": "venue_국립항공박물관_d60oik",
-      "officialName": "국립항공박물관",
-      "address": "국립항공박물관 로비",
-      "query": "국립항공박물관 국립항공박물관 로비",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립항공박물관 도슨트 투어"
-      ]
-    },
-    {
-      "venueId": "venue_군포군포문화원_jz0l11",
-      "officialName": "군포 군포문화원",
-      "address": "군포 군포문화원",
-      "query": "군포 군포문화원 군포 군포문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "군포문화원"
-      ]
-    },
-    {
-      "venueId": "venue_군포반월호수_1fi6ql8",
-      "officialName": "군포 반월호수",
-      "address": "군포 반월호수",
-      "query": "군포 반월호수 군포 반월호수",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "반월호수"
-      ]
-    },
-    {
-      "venueId": "venue_귀목봉_jcky0l",
-      "officialName": "귀목봉",
-      "address": "귀목봉",
-      "query": "귀목봉 귀목봉",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "귀목봉"
-      ]
-    },
-    {
-      "venueId": "venue_김포김포독립운동기념관_1bsc9hw",
-      "officialName": "김포 김포독립운동기념관",
-      "address": "김포 김포독립운동기념관",
-      "query": "김포 김포독립운동기념관 김포 김포독립운동기념관",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "김포독립운동기념관"
-      ]
-    },
-    {
-      "venueId": "venue_김포김포문화원_1ntrn5x",
-      "officialName": "김포 김포문화원",
-      "address": "김포 김포문화원",
-      "query": "김포 김포문화원 김포 김포문화원",
-      "priority": 408,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "김포문화원"
-      ]
-    }
-  ],
-  "insufficientIdentityQueue": [
     {
       "venueId": "venue_홍대신촌이대_1e5u5lj",
       "officialName": "홍대/신촌/이대",
@@ -1901,6 +1979,24 @@
         "액운을 막고 행운을 가져다주는 글라스아트 액막이명태 클래스",
         "행운가득 라탄 식물 리스 만들기",
         "반짝반짝 글라스아트 방패시계 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_위치정보는상품상세페이지를참고해주세요_7hhpm2",
+      "officialName": "위치 정보는 상품 상세 페이지를 참고해주세요.",
+      "address": "위치 정보는 상품 상세 페이지를 참고해주세요.",
+      "query": "위치 정보는 상품 상세 페이지를 참고해주세요. 위치 정보는",
+      "priority": 64,
+      "performanceCount": 8,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "항공과학탐험대 초등! 국립항공박물관에서 항공기의 원리를 탐험해요!",
+        "덕수궁과 정동길 투어 어린이 초등 역사체험",
+        "초등반 경제탐험대 화폐부터 금융까지 경제 원리를 배우는 서울 화폐박물관"
       ]
     },
     {
@@ -2093,6 +2189,39 @@
       ]
     },
     {
+      "venueId": "venue_공공북스x모카클래스_2xeksm",
+      "officialName": "공공북스 x 모카클래스",
+      "address": "부산 금정구 장전온천천로113번길 2",
+      "query": "공공북스 x 모카클래스 부산 금정구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "드로잉 그룹 클래스 4회",
+        "책 만들기 그룹 클래스 5회"
+      ]
+    },
+    {
+      "venueId": "venue_단체전시회다수참여_e4sl0n",
+      "officialName": "단체전시회 다수 참여",
+      "address": "단체전시회 다수 참여",
+      "query": "단체전시회 다수 참여 단체전시회 다수",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "왕초보 아크릴화 원데이클래스",
+        "누구나 예술가 ! 부산 백드롭페인팅 원데이클래스"
+      ]
+    },
+    {
       "venueId": "venue_망리단길_a8ilng",
       "officialName": "망리단길",
       "address": "서울",
@@ -2262,6 +2391,22 @@
       "sampleTitles": [
         "초보자를 위한 베어브릭&버니브릭 만들기(할인이벤트)",
         "오일파스텔로 즐기는 미니멀 원데이클래스"
+      ]
+    },
+    {
+      "venueId": "venue_만남의장소자세한안내는수업전담당강사님이안내드립니다_bjg2bo",
+      "officialName": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다.",
+      "address": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다.",
+      "query": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다. ▶만남의 장소",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "술술풀리는 교과원정대 시즌1 과학관, 서울역사박물관, 세종충무공이야기"
       ]
     },
     {
@@ -2469,6 +2614,53 @@
       ],
       "sampleTitles": [
         "나전칠기, 자개공예 악세사리소품 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_경기도광주시중대동_9vi8gj",
+      "officialName": "경기도 · 광주시 · 중대동",
+      "address": "경기도 · 광주시 · 중대동",
+      "query": "경기도 · 광주시 · 중대동 경기 ·",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "모루인형 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_경기도김포시구래동_uu9xqn",
+      "officialName": "경기도 · 김포시 · 구래동",
+      "address": "경기도 · 김포시 · 구래동",
+      "query": "경기도 · 김포시 · 구래동 경기 ·",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "100가지의 프리미엄 조향 퍼스널 향수 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_경기도수원시영통구_v5uil2",
+      "officialName": "경기도 · 수원시 · 영통구",
+      "address": "경기도 · 수원시 · 영통구",
+      "query": "경기도 · 수원시 · 영통구 경기 ·",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "순화 그림책꽃놀이"
       ]
     },
     {
@@ -2882,23 +3074,6 @@
       ]
     },
     {
-      "venueId": "venue_팅커위시_hqvu0c",
-      "officialName": "팅커위시",
-      "address": "팅커위시",
-      "query": "팅커위시 팅커위시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "팅커위시 요정수업 어린이 체험권 (유효기간 : ~3/31)"
-      ]
-    },
-    {
       "venueId": "venue_포항요트투어요트데이요트투어퍼블릭프라이빗커플프로포즈_sk5p2c",
       "officialName": "포항 요트투어 요트데이 요트투어/퍼블릭/프라이빗/커플/프로포즈",
       "address": "포항 요트투어 요트데이 요트투어/퍼블릭/프라이빗/커플/프로포즈",
@@ -2912,6 +3087,22 @@
       ],
       "sampleTitles": [
         "포항 요트투어 요트데이(요트투어/퍼블릭/프라이빗/커플/프로포즈)"
+      ]
+    },
+    {
+      "venueId": "venue_프로그램마다만나는장소가상이하여상세페이지확인부탁드립니다_fhnagz",
+      "officialName": "프로그램마다 만나는 장소가 상이하여 상세페이지 확인 부탁드립니다.",
+      "address": "프로그램마다 만나는 장소가 상이하여 상세페이지 확인 부탁드립니다.",
+      "query": "프로그램마다 만나는 장소가 상이하여 상세페이지 확인 부탁드립니다. 프로그램마다 만나는",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "달마다 새롭게 10회 과정! 한국사 역사체험 탐험대"
       ]
     },
     {
@@ -2979,49 +3170,537 @@
       ]
     }
   ],
-  "staleCacheCount": 0,
-  "topNeedsReview": [],
+  "staleCacheCount": 1,
+  "topNeedsReview": [
+    {
+      "venueId": "venue_남양주남양주문화원_1ykbcrp",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "컬처클럽 이마트 <b>남양주</b>점:경기도 남양주시 늘을2로 27 E-MART",
+      "officialName": "컬처클럽 이마트 남양주점",
+      "roadAddressName": "경기도 남양주시 늘을2로 27 E-MART",
+      "addressName": "경기도 남양주시 호평동 637 E-MART",
+      "lat": 37.6550423,
+      "lng": 127.2430342,
+      "categoryName": "교육원,교육센터>문화센터",
+      "confidence": 0.1071,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "남양주 남양주문화원 남양주 남양주문화원",
+      "reason": "name=0.21, address=0.00, distance=4635m"
+    },
+    {
+      "venueId": "venue_동두천왕방산_1t13lzr",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "https://blog.naver.com/wangbangpoolgarden",
+      "officialName": "왕방산풀장가든",
+      "roadAddressName": "경기도 동두천시 삼육사로 1662-9",
+      "addressName": "경기도 동두천시 탑동동 52-5",
+      "lat": 37.8902482,
+      "lng": 127.1320488,
+      "url": "https://blog.naver.com/wangbangpoolgarden",
+      "categoryName": "스포츠,오락>수영장",
+      "confidence": 0.15,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "동두천 왕방산 동두천 왕방산",
+      "reason": "name=0.30, address=0.00, distance=2207m"
+    },
+    {
+      "venueId": "venue_김포김포문화원_1ntrn5x",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "http://kimpoculture.nonghyup.com/",
+      "officialName": "김포농협 문화센터",
+      "roadAddressName": "경기도 김포시 홍도평로 20 김포농협 3층",
+      "addressName": "경기도 김포시 걸포동 1588 김포농협 3층",
+      "lat": 37.6317653,
+      "lng": 126.713135,
+      "url": "http://kimpoculture.nonghyup.com/",
+      "categoryName": "교육,학문>문화센터",
+      "confidence": 0.2222,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "김포 김포문화원 김포 김포문화원",
+      "reason": "name=0.44, address=0.00, distance=2203m"
+    },
+    {
+      "venueId": "venue_고양고양문화원_hiouu2",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "https://www.instagram.com/latinamuseum",
+      "officialName": "중남미문화원",
+      "roadAddressName": "경기도 고양시 덕양구 대양로285번길 33-15",
+      "addressName": "경기도 고양시 덕양구 고양동 301",
+      "lat": 37.7040802,
+      "lng": 126.8953744,
+      "url": "https://www.instagram.com/latinamuseum",
+      "categoryName": "문화,예술>문화원",
+      "confidence": 0.25,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "고양 고양문화원 고양 고양문화원",
+      "reason": "name=0.50, address=0.00, distance=12991m"
+    },
+    {
+      "venueId": "venue_인천도시_11ah4yx",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "http://www.twosome.co.kr/",
+      "officialName": "투썸플레이스 송도국제도시점",
+      "roadAddressName": "인천광역시 연수구 컨벤시아대로 69 송도 밀레니엄",
+      "addressName": "인천광역시 연수구 송도동 3-1 송도 밀레니엄",
+      "lat": 37.3960936,
+      "lng": 126.651109,
+      "url": "http://www.twosome.co.kr/",
+      "categoryName": "카페,디저트>카페",
+      "confidence": 0.2694,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "인천도시 인천 연수구",
+      "reason": "name=0.15, address=0.55, distance=8224m"
+    },
+    {
+      "venueId": "venue_남양주축령산_1puy4ad",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "http://foresttrip.go.kr",
+      "officialName": "축령산자연휴양림야영장",
+      "roadAddressName": "경기도 남양주시 수동면 축령산로 299",
+      "addressName": "경기도 남양주시 수동면 외방리 281",
+      "lat": 37.7532877,
+      "lng": 127.31437,
+      "url": "http://foresttrip.go.kr",
+      "categoryName": "숙박>캠핑,야영장",
+      "confidence": 0.2708,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "남양주 축령산 남양주 축령산",
+      "reason": "name=0.31, address=0.00, distance=199m"
+    },
+    {
+      "venueId": "venue_남양주비금계곡_1shy1d3",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>비금계곡</b>:경기도 남양주시 수동면 내방리 비금계곡",
+      "officialName": "비금계곡",
+      "addressName": "경기도 남양주시 수동면 내방리 비금계곡",
+      "lat": 37.757544,
+      "lng": 127.274683,
+      "categoryName": "여행,명소>계곡",
+      "confidence": 0.2857,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "남양주 비금계곡 남양주 비금계곡",
+      "reason": "name=0.57, address=0.00, distance=3352m"
+    },
+    {
+      "venueId": "venue_영종_3zt27f",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "https://www.kooducjip.co.kr/",
+      "officialName": "을왕리 꾸덕집 영종본점",
+      "roadAddressName": "인천광역시 중구 용유서로174번길 44",
+      "addressName": "인천광역시 중구 을왕동 620-1",
+      "lat": 37.4461986,
+      "lng": 126.384101,
+      "url": "https://www.kooducjip.co.kr/",
+      "categoryName": "한식>생선구이",
+      "confidence": 0.2925,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "영종 인천 중구",
+      "reason": "name=0.20, address=0.55, distance=28367m"
+    },
+    {
+      "venueId": "venue_소래_1v9fjsv",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "http://sorae49.com/main/ko/index.html",
+      "officialName": "소래포구종합어시장",
+      "roadAddressName": "인천광역시 남동구 소래역로 12",
+      "addressName": "인천광역시 남동구 논현동 680-1",
+      "lat": 37.3988819,
+      "lng": 126.73698,
+      "url": "http://sorae49.com/main/ko/index.html",
+      "categoryName": "쇼핑,유통>시장",
+      "confidence": 0.3036,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "소래 인천 남동구",
+      "reason": "name=0.22, address=0.55, distance=6974m"
+    },
+    {
+      "venueId": "venue_고양고봉산_lm269l",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>고봉산</b>시래기:경기도 고양시 일산동구 성석로 60",
+      "officialName": "고봉산시래기",
+      "roadAddressName": "경기도 고양시 일산동구 성석로 60",
+      "addressName": "경기도 고양시 일산동구 중산동 4",
+      "lat": 37.6849158,
+      "lng": 126.7926338,
+      "categoryName": "음식점>한식",
+      "confidence": 0.3175,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "고양 고봉산 고양 고봉산",
+      "reason": "name=0.50, address=0.00, distance=864m"
+    },
+    {
+      "venueId": "venue_남양주문안산_ourqjn",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>문안산</b>:경기도 남양주시 화도읍 창현리 산78-111",
+      "officialName": "문안산",
+      "addressName": "경기도 남양주시 화도읍 창현리 산78-111",
+      "lat": 37.6220679,
+      "lng": 127.3296984,
+      "categoryName": "여행,명소>산",
+      "confidence": 0.3175,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "남양주 문안산 남양주 문안산",
+      "reason": "name=0.50, address=0.00, distance=311m"
+    },
+    {
+      "venueId": "venue_남양주운길산_a7xe9o",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>운길산</b>:경기도 남양주시 조안면 북한강로433번길 186",
+      "officialName": "운길산",
+      "roadAddressName": "경기도 남양주시 조안면 북한강로433번길 186",
+      "addressName": "경기도 남양주시 조안면 송촌리 1060",
+      "lat": 37.5726046,
+      "lng": 127.2945474,
+      "categoryName": "여행,명소>산",
+      "confidence": 0.3175,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "남양주 운길산 남양주 운길산",
+      "reason": "name=0.50, address=0.00, distance=711m"
+    },
+    {
+      "venueId": "venue_마장호수_188xkit",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>마장호수</b> 출렁다리:경기도 파주시 광탄면 기산로 313",
+      "officialName": "마장호수 출렁다리",
+      "roadAddressName": "경기도 파주시 광탄면 기산로 313",
+      "addressName": "경기도 파주시 광탄면 기산리 산150-1",
+      "lat": 37.7756232,
+      "lng": 126.9278533,
+      "categoryName": "여행,명소>자연명소",
+      "confidence": 0.3175,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "마장호수 마장호수",
+      "reason": "name=0.50, address=0.00, distance=444m"
+    },
+    {
+      "venueId": "venue_김포문수산_1rzsku5",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>문수산</b>:경기도 김포시 월곶면",
+      "officialName": "문수산",
+      "roadAddressName": "경기도 김포시 월곶면",
+      "addressName": "경기도 김포시 월곶면 성동리 산35-1",
+      "lat": 37.7391363,
+      "lng": 126.5486024,
+      "categoryName": "여행,명소>산",
+      "confidence": 0.3675,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "김포 문수산 김포 문수산",
+      "reason": "name=0.60, address=0.00, distance=853m"
+    },
+    {
+      "venueId": "venue_남양주묘적사계곡_sr29x7",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>묘적사계곡</b>:경기도 남양주시 와부읍 월문리",
+      "officialName": "묘적사계곡",
+      "addressName": "경기도 남양주시 와부읍 월문리",
+      "lat": 37.6182821,
+      "lng": 127.2682,
+      "categoryName": "여행,명소>계곡",
+      "confidence": 0.38,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "남양주 묘적사계곡 남양주 묘적사계곡",
+      "reason": "name=0.63, address=0.00, distance=331m"
+    },
+    {
+      "venueId": "venue_고양원당시장_yquvan",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>원당</b>도매고기<b>시장</b>:경기도 고양시 덕양구 마상로154번길 43",
+      "officialName": "원당도매고기시장",
+      "roadAddressName": "경기도 고양시 덕양구 마상로154번길 43",
+      "addressName": "경기도 고양시 덕양구 성사동 367-13",
+      "lat": 37.6571171,
+      "lng": 126.8379987,
+      "categoryName": "쇼핑,유통>정육점",
+      "confidence": 0.3948,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "고양 원당시장 고양 원당시장",
+      "reason": "name=0.56, address=0.00, distance=108m"
+    },
+    {
+      "venueId": "venue_고양고양꽃_1o6qjn0",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "https://www.facebook.com/goyangflower",
+      "officialName": "고양꽃전시관",
+      "roadAddressName": "경기도 고양시 일산동구 호수로 595 고양꽃전시관(일산호수공원 3주차장)",
+      "addressName": "경기도 고양시 일산동구 장항동 906 고양꽃전시관(일산호수공원 3주차장)",
+      "lat": 37.6537748,
+      "lng": 126.7688873,
+      "url": "https://www.facebook.com/goyangflower",
+      "categoryName": "문화,예술>전시관",
+      "confidence": 0.4,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "고양 고양꽃 고양 고양꽃전시관",
+      "reason": "name=0.50, address=0.00, distance=18m"
+    },
+    {
+      "venueId": "venue_군포반월호수_1fi6ql8",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>반월호수</b>:경기도 군포시 둔대동",
+      "officialName": "반월호수",
+      "addressName": "경기도 군포시 둔대동",
+      "lat": 37.320744,
+      "lng": 126.8894157,
+      "categoryName": "여행,명소>호수,연못,저수지",
+      "confidence": 0.4008,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "군포 반월호수 군포 반월호수",
+      "reason": "name=0.67, address=0.00, distance=435m"
+    },
+    {
+      "venueId": "venue_농경유물_7vn39u",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>농경유물전시관</b>:경기도 파주시 통일로 600 파주농업기술센터",
+      "officialName": "농경유물전시관",
+      "roadAddressName": "경기도 파주시 통일로 600 파주농업기술센터",
+      "addressName": "경기도 파주시 아동동 91-6 파주농업기술센터",
+      "lat": 37.7651354,
+      "lng": 126.796231,
+      "categoryName": "문화,예술>전시관",
+      "confidence": 0.4027,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "농경유물 농경유물전시관",
+      "reason": "name=0.57, address=0.00, distance=135m"
+    },
+    {
+      "venueId": "venue_도드람산저명산_x2w9dy",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "<b>도드람산</b>:경기도 이천시 마장면 표교리",
+      "officialName": "도드람산",
+      "addressName": "경기도 이천시 마장면 표교리",
+      "lat": 37.267942,
+      "lng": 127.3921951,
+      "categoryName": "여행,명소>산",
+      "confidence": 0.4027,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:17:39.774Z",
+      "query": "도드람산 저명산 도드람산 저명산",
+      "reason": "name=0.57, address=0.00, distance=109m"
+    }
+  ],
   "summary": {
-    "checkedAt": "2026-05-13T08:16:49.488Z",
+    "checkedAt": "2026-05-13T09:19:57.470Z",
     "status": "warn",
-    "venueCount": 2222,
-    "matchedCount": 0,
-    "highConfidenceMatchCount": 0,
-    "needsReviewCount": 0,
-    "notFoundCount": 0,
-    "pendingLookupCount": 2156,
-    "insufficientIdentityCount": 66,
+    "venueCount": 2212,
+    "matchedCount": 29,
+    "highConfidenceMatchCount": 6,
+    "needsReviewCount": 20,
+    "notFoundCount": 28,
+    "pendingLookupCount": 1977,
+    "insufficientIdentityCount": 75,
     "lookupReady": false,
     "providersConfigured": [],
-    "staleCacheCount": 0,
+    "staleCacheCount": 1,
     "topQueue": [
       {
-        "venueId": "venue_위치정보는상품상세페이지를참고해주세요_7hhpm2",
-        "officialName": "위치 정보는 상품 상세 페이지를 참고해주세요.",
-        "address": "위치 정보는 상품 상세 페이지를 참고해주세요.",
-        "query": "위치 정보는 상품 상세 페이지를 참고해주세요. 위치 정보는",
-        "priority": 644,
-        "performanceCount": 8,
+        "venueId": "venue_반딧불마을_13aqu6u",
+        "officialName": "반딧불마을",
+        "address": "반딧불마을",
+        "query": "반딧불마을 반딧불마을",
+        "priority": 408,
+        "performanceCount": 1,
         "reviewFlags": [
-          "invalid_coordinate",
+          "alias_merge_candidate",
+          "missing_detailed_address",
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "항공과학탐험대 초등! 국립항공박물관에서 항공기의 원리를 탐험해요!",
-          "덕수궁과 정동길 투어 어린이 초등 역사체험",
-          "초등반 경제탐험대 화폐부터 금융까지 경제 원리를 배우는 서울 화폐박물관"
+          "반딧불마을"
         ]
       },
+      {
+        "venueId": "venue_발랑저수지_k2zi8d",
+        "officialName": "발랑저수지",
+        "address": "발랑저수지",
+        "query": "발랑저수지 발랑저수지",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "발랑저수지"
+        ]
+      },
+      {
+        "venueId": "venue_부천부천문화원_1epqrv9",
+        "officialName": "부천 부천문화원",
+        "address": "부천 부천문화원",
+        "query": "부천 부천문화원 부천 부천문화원",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "부천문화원"
+        ]
+      },
+      {
+        "venueId": "venue_부천부천시립박물관_1hdp3sn",
+        "officialName": "부천 부천시립박물관",
+        "address": "부천 부천시립박물관",
+        "query": "부천 부천시립박물관 부천 부천시립박물관",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "부천시립박물관"
+        ]
+      },
+      {
+        "venueId": "venue_부천부천식물원_jcdaqi",
+        "officialName": "부천 부천식물원",
+        "address": "부천 부천식물원",
+        "query": "부천 부천식물원 부천 부천식물원",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "부천식물원"
+        ]
+      },
+      {
+        "venueId": "venue_부천부천자유시장_oa6q9n",
+        "officialName": "부천 부천자유시장",
+        "address": "부천 부천자유시장",
+        "query": "부천 부천자유시장 부천 부천자유시장",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "부천자유시장"
+        ]
+      },
+      {
+        "venueId": "venue_부천부천활박물관_1eepfua",
+        "officialName": "부천 부천활박물관",
+        "address": "부천 부천활박물관",
+        "query": "부천 부천활박물관 부천 부천활박물관",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "부천활박물관"
+        ]
+      },
+      {
+        "venueId": "venue_부천오정_1k5dvjq",
+        "officialName": "부천 오정",
+        "address": "부천 오정아트홀",
+        "query": "부천 오정 부천 오정아트홀",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "오정아트홀"
+        ]
+      },
+      {
+        "venueId": "venue_서울마포구_otaffg",
+        "officialName": "서울 마포구",
+        "address": "서울 마포구",
+        "query": "서울 마포구 서울 마포구",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "창의성을 길러주는 미술관에서 만나는 클래식 원데이 클래스"
+        ]
+      },
+      {
+        "venueId": "venue_서울영등포구_14q76pw",
+        "officialName": "서울 영등포구",
+        "address": "서울 영등포구",
+        "query": "서울 영등포구 서울 영등포구",
+        "priority": 408,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "녹음하면서 배우자! 쉽고 편하게 배우는 보컬레슨!"
+        ]
+      }
+    ],
+    "topInsufficientIdentityQueue": [
       {
         "venueId": "venue_모카클래스_1ldjehf",
         "officialName": "모카클래스",
         "address": "서울특별시",
         "query": "모카클래스 서울",
-        "priority": 600,
+        "priority": 200,
         "performanceCount": 828,
         "reviewFlags": [
           "missing_detailed_address",
-          "needs_official_place_lookup"
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
         ],
         "sampleTitles": [
           "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
@@ -3030,129 +3709,23 @@
         ]
       },
       {
-        "venueId": "venue_단체전시회다수참여_e4sl0n",
-        "officialName": "단체전시회 다수 참여",
-        "address": "단체전시회 다수 참여",
-        "query": "단체전시회 다수 참여 단체전시회 다수",
-        "priority": 596,
-        "performanceCount": 2,
+        "venueId": "venue_모카클래스_1780tpn",
+        "officialName": "모카클래스",
+        "address": "서울 중구 세종대로 110",
+        "query": "모카클래스 서울 중구",
+        "priority": 200,
+        "performanceCount": 56,
         "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
+          "alias_merge_candidate",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "왕초보 아크릴화 원데이클래스",
-          "누구나 예술가 ! 부산 백드롭페인팅 원데이클래스"
+          "향과 온기로 회복하는 태국 허브볼 &아로마 롤온 워크샵",
+          "초보도 OK! 플라잉요가 한 번 해볼까?",
+          "에바폼 자이언트플라워 자격증 클래스"
         ]
       },
-      {
-        "venueId": "venue_하나딸기수확체험_5blmwt",
-        "officialName": "하나딸기수확체험",
-        "address": "경상남도 양산시 원동면 화제리 2696",
-        "query": "하나딸기수확체험 경남 양산시",
-        "priority": 596,
-        "performanceCount": 2,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "하나 딸기수확체험(실내대기실+화장실완비)",
-          "하나 딸기수확체험(실내대기실+화장실완비)"
-        ]
-      },
-      {
-        "venueId": "venue_만남의장소자세한안내는수업전담당강사님이안내드립니다_bjg2bo",
-        "officialName": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다.",
-        "address": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다.",
-        "query": "▶만남의 장소 : 자세한 안내는 수업전 담당 강사님이 안내드립니다. ▶만남의 장소",
-        "priority": 588,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "술술풀리는 교과원정대 시즌1 과학관, 서울역사박물관, 세종충무공이야기"
-        ]
-      },
-      {
-        "venueId": "venue_경기도광주시중대동_9vi8gj",
-        "officialName": "경기도 · 광주시 · 중대동",
-        "address": "경기도 · 광주시 · 중대동",
-        "query": "경기도 · 광주시 · 중대동 경기 ·",
-        "priority": 588,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "모루인형 클래스"
-        ]
-      },
-      {
-        "venueId": "venue_경기도김포시구래동_uu9xqn",
-        "officialName": "경기도 · 김포시 · 구래동",
-        "address": "경기도 · 김포시 · 구래동",
-        "query": "경기도 · 김포시 · 구래동 경기 ·",
-        "priority": 588,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "100가지의 프리미엄 조향 퍼스널 향수 클래스"
-        ]
-      },
-      {
-        "venueId": "venue_괌박물관_a7zkpy",
-        "officialName": "괌 박물관",
-        "address": "193 Chalan Santo Papa Juan Pablo Dos, Hagåtña, 96910 괌",
-        "query": "괌 박물관 193 chalan",
-        "priority": 588,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "괌 박물관"
-        ]
-      },
-      {
-        "venueId": "venue_괌피시아이수중전망대_1p265vv",
-        "officialName": "괌 피시아이 수중 전망대",
-        "address": "818 N Marine Corps Drive Piti, 5524, 96915 괌",
-        "query": "괌 피시아이 수중 전망대 818 n",
-        "priority": 588,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "괌 피시아이 수중 전망대"
-        ]
-      },
-      {
-        "venueId": "venue_광주광역시북구신안동13664층광주리베르탱고_0lt1cw",
-        "officialName": "광주광역시 북구 신안동 136-6 4층 광주리베르탱고",
-        "address": "광주광역시 북구 신안동 136-6 4층 광주리베르탱고",
-        "query": "광주광역시 북구 신안동 136-6 4층 광주리베르탱고 광주 북구",
-        "priority": 588,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "아르헨티나 탱고 동호회 : 광주리베르탱고 정규클래스"
-        ]
-      }
-    ],
-    "topInsufficientIdentityQueue": [
       {
         "venueId": "venue_홍대신촌이대_1e5u5lj",
         "officialName": "홍대/신촌/이대",
@@ -3168,6 +3741,24 @@
           "액운을 막고 행운을 가져다주는 글라스아트 액막이명태 클래스",
           "행운가득 라탄 식물 리스 만들기",
           "반짝반짝 글라스아트 방패시계 만들기"
+        ]
+      },
+      {
+        "venueId": "venue_위치정보는상품상세페이지를참고해주세요_7hhpm2",
+        "officialName": "위치 정보는 상품 상세 페이지를 참고해주세요.",
+        "address": "위치 정보는 상품 상세 페이지를 참고해주세요.",
+        "query": "위치 정보는 상품 상세 페이지를 참고해주세요. 위치 정보는",
+        "priority": 64,
+        "performanceCount": 8,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "항공과학탐험대 초등! 국립항공박물관에서 항공기의 원리를 탐험해요!",
+          "덕수궁과 정동길 투어 어린이 초등 역사체험",
+          "초등반 경제탐험대 화폐부터 금융까지 경제 원리를 배우는 서울 화폐박물관"
         ]
       },
       {
@@ -3273,59 +3864,65 @@
           "캐치마그넷 (냉장고자석 / 바늘자석) 원데이 클래스_하늘연달10",
           "타이 키링 원데이 클래스_하늘연달10"
         ]
-      },
-      {
-        "venueId": "venue_수원광교_1dqgyqz",
-        "officialName": "수원/광교",
-        "address": "경기 수원시 영통구 센트럴타운로 106",
-        "query": "수원/광교 경기 수원시",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "샤쉐(향주머니) 만들기 클래스",
-          "MBTI 향수 만들기 클래스",
-          "나만의 향수 만들기 클래스"
-        ]
-      },
-      {
-        "venueId": "venue_수원용인_zv9bt8",
-        "officialName": "수원/용인",
-        "address": "경기 수원시 권선구 구운로63번길 56-25",
-        "query": "수원/용인 경기 수원시",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "보석방향제 원데이클래스",
-          "알록달록 석고방향제 원데이클래스",
-          "나만의 향수 만들기 조향 원데이클래스"
-        ]
-      },
-      {
-        "venueId": "venue_아바바커피농장체험교육_8nwnp9",
-        "officialName": "아바바 커피농장 체험/교육",
-        "address": "충남 논산시 연산면 선비로604번길 27",
-        "query": "아바바 커피농장 체험/교육 충남 논산시",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "향기 따라 흐르는 물줄기, 브루잉(핸드드립) 클래스",
-          "향기를 굽는 시간 로스팅 체험 클래스",
-          "커피 드립백 클래스"
-        ]
       }
     ],
-    "topNeedsReview": []
+    "topNeedsReview": [
+      {
+        "venueId": "venue_남양주남양주문화원_1ykbcrp",
+        "officialName": "컬처클럽 이마트 남양주점",
+        "query": "남양주 남양주문화원 남양주 남양주문화원",
+        "confidence": 0.1071,
+        "reason": "name=0.21, address=0.00, distance=4635m"
+      },
+      {
+        "venueId": "venue_동두천왕방산_1t13lzr",
+        "officialName": "왕방산풀장가든",
+        "query": "동두천 왕방산 동두천 왕방산",
+        "confidence": 0.15,
+        "reason": "name=0.30, address=0.00, distance=2207m"
+      },
+      {
+        "venueId": "venue_김포김포문화원_1ntrn5x",
+        "officialName": "김포농협 문화센터",
+        "query": "김포 김포문화원 김포 김포문화원",
+        "confidence": 0.2222,
+        "reason": "name=0.44, address=0.00, distance=2203m"
+      },
+      {
+        "venueId": "venue_고양고양문화원_hiouu2",
+        "officialName": "중남미문화원",
+        "query": "고양 고양문화원 고양 고양문화원",
+        "confidence": 0.25,
+        "reason": "name=0.50, address=0.00, distance=12991m"
+      },
+      {
+        "venueId": "venue_인천도시_11ah4yx",
+        "officialName": "투썸플레이스 송도국제도시점",
+        "query": "인천도시 인천 연수구",
+        "confidence": 0.2694,
+        "reason": "name=0.15, address=0.55, distance=8224m"
+      },
+      {
+        "venueId": "venue_남양주축령산_1puy4ad",
+        "officialName": "축령산자연휴양림야영장",
+        "query": "남양주 축령산 남양주 축령산",
+        "confidence": 0.2708,
+        "reason": "name=0.31, address=0.00, distance=199m"
+      },
+      {
+        "venueId": "venue_남양주비금계곡_1shy1d3",
+        "officialName": "비금계곡",
+        "query": "남양주 비금계곡 남양주 비금계곡",
+        "confidence": 0.2857,
+        "reason": "name=0.57, address=0.00, distance=3352m"
+      },
+      {
+        "venueId": "venue_영종_3zt27f",
+        "officialName": "을왕리 꾸덕집 영종본점",
+        "query": "영종 인천 중구",
+        "confidence": 0.2925,
+        "reason": "name=0.20, address=0.55, distance=28367m"
+      }
+    ]
   }
 }

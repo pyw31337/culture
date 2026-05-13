@@ -534,6 +534,23 @@ function extractMonthScheduleRange(value: string, referenceDate: Date) {
     return { start, end };
 }
 
+function extractEndOnlyMonthWindow(value: string, referenceDate: Date) {
+    const normalized = compactText(value);
+    const match = normalized.match(/[~～]\s*(?:(20\d{2}|\d{2})[.년\s]+)?(\d{1,2})월?/);
+    if (!match) return null;
+
+    const endYear = normalizeYearToken(match[1], referenceDate.getFullYear());
+    const endMonth = Number.parseInt(match[2], 10);
+    if (!endMonth) return null;
+
+    const endDay = new Date(endYear, endMonth, 0).getDate();
+    const start = toKoreanMiddayDate(endYear, 1, 1);
+    const end = toKoreanMiddayDate(endYear, endMonth, endDay);
+    if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return null;
+
+    return { start, end };
+}
+
 function formatDateForUnifiedInput(date: Date) {
     return [
         date.getFullYear(),
@@ -545,6 +562,14 @@ function formatDateForUnifiedInput(date: Date) {
 function applyTitleScheduleMetadata(items: Performance[], referenceDate: Date) {
     items.forEach((performance) => {
         const scheduleText = [performance.dateRaw, performance.date, performance.title].filter(Boolean).join(' ');
+        const endOnlyWindow = extractEndOnlyMonthWindow(scheduleText, referenceDate);
+        if (endOnlyWindow && isWeakScheduleLabel(performance.date)) {
+            const rawRange = `${formatDateForUnifiedInput(endOnlyWindow.start)} ~ ${formatDateForUnifiedInput(endOnlyWindow.end)}`;
+            performance.dateRaw = rawRange;
+            performance.date = formatUnifiedDate(rawRange);
+            return;
+        }
+
         const monthWindow = extractMonthScheduleRange(scheduleText, referenceDate);
         if (monthWindow) {
             const rawRange = `${formatDateForUnifiedInput(monthWindow.start)} ~ ${formatDateForUnifiedInput(monthWindow.end)}`;
@@ -965,7 +990,7 @@ async function generate() {
             if (p.title.includes('일본 스페이스 일일캠프') || p.title.includes('JAXA츠크바우주센터')) return true;
 
             // 2. Address keywords
-            const overseasKeywords = ['일본', '미국', '중국', '유럽', 'France', 'USA', 'Japan', 'China', '츠쿠바역'];
+            const overseasKeywords = ['일본', '미국', '중국', '유럽', '괌', '대만', 'France', 'USA', 'Japan', 'China', 'Guam', 'Taiwan', 'New Taipei', '츠쿠바역'];
             if (overseasKeywords.some(kw => p.address?.includes(kw) || p.venue?.includes(kw))) return true;
 
             // 3. Coordinate check (if available)

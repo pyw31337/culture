@@ -97,6 +97,57 @@ function normalizeText(value?: string) {
         .toLowerCase();
 }
 
+const LEADING_LOCATION_PREFIXES = [
+    '서울',
+    '부산',
+    '대구',
+    '인천',
+    '광주',
+    '대전',
+    '울산',
+    '세종',
+    '경기',
+    '강원',
+    '충북',
+    '충남',
+    '전북',
+    '전남',
+    '경북',
+    '경남',
+    '제주',
+    '고양',
+    '가평',
+    '과천',
+    '광명',
+    '강화',
+    '익산',
+    '전주',
+    '군산',
+    '청주',
+    '용인',
+    '성남',
+    '수원',
+    '부천',
+];
+
+function getNameVariants(value?: string) {
+    const normalized = normalizeText(value);
+    const variants = new Set<string>();
+    if (!normalized) return variants;
+
+    variants.add(normalized);
+
+    LEADING_LOCATION_PREFIXES.forEach((prefix) => {
+        let candidate = normalized;
+        while (candidate.startsWith(prefix) && candidate.length - prefix.length >= 2) {
+            candidate = candidate.slice(prefix.length);
+            variants.add(candidate);
+        }
+    });
+
+    return variants;
+}
+
 function normalizeAddress(value?: string) {
     return compactText(value)
         .replace(/서울특별시|서울시/g, '서울')
@@ -121,24 +172,53 @@ function hasDetailedAddress(value?: string) {
     return Boolean(address && address.split(' ').filter(Boolean).length >= 3);
 }
 
+const NON_VENUE_NAME_KEYWORDS = [
+    '전국출강',
+    '개인레슨',
+    '원데이클래스',
+    '회차',
+    '과정',
+    '정규반',
+    '서울경기',
+    '수원동탄',
+    '송파잠실',
+    '의왕안양',
+    '위치정보',
+    '상품상세',
+    '상세페이지',
+    '상품페이지',
+    '예약후',
+    '집합장소',
+    '사전조율',
+    '만남의장소',
+    '자세한안내',
+    '담당강사',
+    '피드백',
+    '홍보하는방법',
+    '알려드립니다',
+    '브랜드입니다',
+    '완성도높은',
+    '프로그램마다',
+    '장소가상이',
+    '수업전',
+    '신청시',
+    '문의',
+    '조율',
+    '협의',
+    '괌',
+    '모카클래스',
+    '단체전시회',
+];
+
 function isClearlyNonVenueName(value?: string) {
     const text = compactText(value);
     const normalized = normalizeText(text);
     if (!normalized || normalized.length < 2) return true;
     if (/^[0-9:/\-\s]+$/.test(text)) return true;
     if (text.includes('/')) return true;
-    return [
-        '전국출강',
-        '개인레슨',
-        '원데이클래스',
-        '회차',
-        '과정',
-        '정규반',
-        '서울경기',
-        '수원동탄',
-        '송파잠실',
-        '의왕안양',
-    ].some((keyword) => normalized.includes(normalizeText(keyword)));
+    if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s*[·ㆍ]/.test(text)) return true;
+    if (normalized.length > 34 && /(합니다|드립니다|주세요|예정|참고|안내|알려)/.test(text)) return true;
+    return NON_VENUE_NAME_KEYWORDS.some((keyword) => normalized.includes(normalizeText(keyword)));
 }
 
 function extractAddressRegion(value?: string) {
@@ -146,19 +226,35 @@ function extractAddressRegion(value?: string) {
 }
 
 function nameSimilarity(left?: string, right?: string) {
-    const normalizedLeft = normalizeText(left);
-    const normalizedRight = normalizeText(right);
-    if (!normalizedLeft || !normalizedRight) return 0;
-    if (normalizedLeft === normalizedRight) return 1;
-    if (normalizedLeft.includes(normalizedRight) || normalizedRight.includes(normalizedLeft)) {
-        return Math.min(normalizedLeft.length, normalizedRight.length) / Math.max(normalizedLeft.length, normalizedRight.length);
-    }
+    const leftVariants = Array.from(getNameVariants(left));
+    const rightVariants = Array.from(getNameVariants(right));
+    let best = 0;
 
-    const leftChars = new Set(Array.from(normalizedLeft));
-    const rightChars = new Set(Array.from(normalizedRight));
-    const intersection = Array.from(leftChars).filter((char) => rightChars.has(char)).length;
-    const union = new Set([...leftChars, ...rightChars]).size;
-    return union > 0 ? intersection / union : 0;
+    leftVariants.forEach((normalizedLeft) => {
+        rightVariants.forEach((normalizedRight) => {
+            if (!normalizedLeft || !normalizedRight) return;
+            if (normalizedLeft === normalizedRight) {
+                best = Math.max(best, 1);
+                return;
+            }
+
+            if (normalizedLeft.includes(normalizedRight) || normalizedRight.includes(normalizedLeft)) {
+                best = Math.max(
+                    best,
+                    Math.min(normalizedLeft.length, normalizedRight.length) / Math.max(normalizedLeft.length, normalizedRight.length),
+                );
+                return;
+            }
+
+            const leftChars = new Set(Array.from(normalizedLeft));
+            const rightChars = new Set(Array.from(normalizedRight));
+            const intersection = Array.from(leftChars).filter((char) => rightChars.has(char)).length;
+            const union = new Set([...leftChars, ...rightChars]).size;
+            best = Math.max(best, union > 0 ? intersection / union : 0);
+        });
+    });
+
+    return best;
 }
 
 function addressSimilarity(left?: string, right?: string) {
@@ -214,7 +310,13 @@ export function scoreVenuePlaceCandidate(entry: VenueMasterEntry, candidate: Ven
                 : distance <= 1000
                     ? 0.45
                     : 0;
-    const confidence = Math.min(1, nameScore * 0.5 + addrScore * 0.35 + distanceScore * 0.15);
+    let confidence = Math.min(1, nameScore * 0.5 + addrScore * 0.35 + distanceScore * 0.15);
+    if (nameScore >= 0.96 && addrScore >= 0.55) {
+        confidence = Math.max(confidence, 0.78);
+    }
+    if (nameScore >= 0.86 && addrScore >= 0.88) {
+        confidence = Math.max(confidence, 0.8);
+    }
     const reason = [
         `name=${nameScore.toFixed(2)}`,
         `address=${addrScore.toFixed(2)}`,
@@ -298,11 +400,21 @@ export function applyVenuePlaceCache(entries: VenueMasterEntry[], cache: VenuePl
     });
 }
 
+function isRetryableLookupFailure(cached?: VenuePlaceCacheEntry) {
+    if (!cached) return true;
+    const reason = cached.reason || '';
+    return cached.status === 'needs_review' &&
+        cached.confidence === 0 &&
+        /429|Too Many Requests|local search failed|lookup failed|no response/i.test(reason);
+}
+
 export function buildVenuePlaceLookupQueue(entries: VenueMasterEntry[], cache: VenuePlaceCache) {
     return entries
         .filter((entry) => {
             const cached = cache[entry.id];
-            return !cached || cached.status !== 'matched' || cached.confidence < 0.72;
+            if (!cached) return true;
+            if (cached.status === 'matched' && cached.confidence >= 0.72) return false;
+            return isRetryableLookupFailure(cached);
         })
         .filter((entry) => {
             if (isClearlyNonVenueName(entry.officialName)) return false;
@@ -339,6 +451,7 @@ export function buildInsufficientVenueIdentityQueue(entries: VenueMasterEntry[],
         .filter((entry) => {
             const cached = cache[entry.id];
             if (cached?.status === 'matched' && cached.confidence >= 0.72) return false;
+            if (cached && !isRetryableLookupFailure(cached)) return false;
             return isClearlyNonVenueName(entry.officialName) || (!hasDetailedAddress(entry.address) && entry.reviewFlags.includes('invalid_coordinate'));
         })
         .map<VenuePlaceLookupQueueItem>((entry) => ({

@@ -25,6 +25,12 @@ function writeJson(filePath: string, value: unknown) {
 }
 
 function getConfiguredProviders(): VenuePlaceProvider[] {
+    const providerOverride = process.env.VENUE_PLACE_PROVIDERS
+        ?.split(',')
+        .map((provider) => provider.trim())
+        .filter((provider): provider is VenuePlaceProvider => provider === 'kakao' || provider === 'naver');
+    if (providerOverride?.length) return [...new Set(providerOverride)];
+
     const providers: VenuePlaceProvider[] = [];
     if (process.env.KAKAO_REST_API_KEY || process.env.KAKAO_LOCAL_REST_API_KEY) providers.push('kakao');
     if (
@@ -34,6 +40,17 @@ function getConfiguredProviders(): VenuePlaceProvider[] {
         providers.push('naver');
     }
     return providers;
+}
+
+function sleep(ms: number) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
+
+function getLookupDelayMs() {
+    const parsed = Number.parseInt(process.env.VENUE_PLACE_LOOKUP_DELAY_MS || '500', 10);
+    return Number.isFinite(parsed) && parsed >= 0 ? parsed : 500;
 }
 
 async function fetchKakaoPlaces(query: string): Promise<VenuePlaceCandidate[]> {
@@ -96,12 +113,29 @@ async function fetchNaverPlaces(query: string): Promise<VenuePlaceCandidate[]> {
     url.searchParams.set('display', '5');
     url.searchParams.set('sort', 'comment');
 
-    const response = await fetch(url, {
-        headers: {
-            'X-Naver-Client-Id': clientId,
-            'X-Naver-Client-Secret': clientSecret,
-        },
-    });
+    let response: Response | null = null;
+    const maxAttempts = Number.parseInt(process.env.VENUE_PLACE_NAVER_RETRY_LIMIT || '3', 10);
+
+    for (let attempt = 1; attempt <= Math.max(1, maxAttempts); attempt += 1) {
+        response = await fetch(url, {
+            headers: {
+                'X-Naver-Client-Id': clientId,
+                'X-Naver-Client-Secret': clientSecret,
+            },
+        });
+
+        if (response.ok || (response.status !== 429 && response.status < 500)) break;
+
+        const retryAfter = Number.parseInt(response.headers.get('retry-after') || '', 10);
+        const backoffMs = Number.isFinite(retryAfter)
+            ? retryAfter * 1000
+            : 1200 * attempt;
+        await sleep(backoffMs);
+    }
+
+    if (!response) {
+        throw new Error('Naver local search failed: no response');
+    }
 
     if (!response.ok) {
         throw new Error(`Naver local search failed: ${response.status} ${response.statusText}`);
@@ -136,10 +170,25 @@ async function fetchNaverPlaces(query: string): Promise<VenuePlaceCandidate[]> {
 
 async function lookupVenue(entry: VenueMasterEntry, providers: VenuePlaceProvider[]) {
     const query = getVenuePlaceLookupQuery(entry);
-    const candidateGroups = await Promise.all(providers.map((provider) => (
-        provider === 'kakao' ? fetchKakaoPlaces(query) : fetchNaverPlaces(query)
-    )));
-    return candidateGroups.flat();
+    const candidates: VenuePlaceCandidate[] = [];
+    const errors: string[] = [];
+
+    for (const provider of providers) {
+        try {
+            const results = provider === 'kakao'
+                ? await fetchKakaoPlaces(query)
+                : await fetchNaverPlaces(query);
+            candidates.push(...results);
+        } catch (error) {
+            errors.push(error instanceof Error ? error.message : `${provider} lookup failed`);
+        }
+    }
+
+    if (candidates.length === 0 && errors.length > 0) {
+        throw new Error(errors.join(' | '));
+    }
+
+    return { candidates, providerErrors: errors };
 }
 
 async function main() {
@@ -148,6 +197,7 @@ async function main() {
     const cache = readJsonIfExists<VenuePlaceCache>(CACHE_PATH, {});
     const providers = getConfiguredProviders();
     const lookupLimit = Number.parseInt(process.env.VENUE_PLACE_LOOKUP_LIMIT || '80', 10);
+    const lookupDelayMs = getLookupDelayMs();
     const initialReport = buildVenuePlaceMatchingReport(entries, cache, providers, checkedAt);
 
     if (providers.length === 0) {
@@ -160,15 +210,18 @@ async function main() {
     }
 
     const queue = initialReport.queue.slice(0, Math.max(0, lookupLimit));
-    console.log(`🔎 공식 장소 조회 시작: ${queue.length.toLocaleString()}개 (${providers.join(', ')})`);
+    console.log(`🔎 공식 장소 조회 시작: ${queue.length.toLocaleString()}개 (${providers.join(', ')}, delay ${lookupDelayMs}ms)`);
 
     for (const item of queue) {
         const entry = entries.find((venue) => venue.id === item.venueId);
         if (!entry) continue;
 
         try {
-            const candidates = await lookupVenue(entry, providers);
+            const { candidates, providerErrors } = await lookupVenue(entry, providers);
             cache[entry.id] = chooseBestVenuePlaceCandidate(entry, candidates, checkedAt);
+            if (providerErrors.length > 0) {
+                cache[entry.id].reason = `${cache[entry.id].reason}; provider warnings: ${providerErrors.join(' | ')}`;
+            }
             console.log(`- ${entry.officialName}: ${cache[entry.id].status} (${cache[entry.id].confidence})`);
         } catch (error) {
             cache[entry.id] = {
@@ -181,6 +234,10 @@ async function main() {
                 reason: error instanceof Error ? error.message : 'unknown lookup error',
             };
             console.warn(`- ${entry.officialName}: lookup failed`);
+        }
+
+        if (lookupDelayMs > 0) {
+            await sleep(lookupDelayMs);
         }
     }
 
