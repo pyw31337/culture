@@ -9,7 +9,8 @@ import type {
     DisplayIntegritySummary,
     SourceFunnelSummary,
     VenueCanonicalizationSummary,
-    VenueMasterSummary
+    VenueMasterSummary,
+    VenuePlaceMatchingSummary
 } from '@/lib/build-info';
 import { formatKoreanDateTime } from '@/lib/build-info';
 import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
@@ -268,6 +269,29 @@ function normalizeVenueMasterSummary(value: unknown): VenueMasterSummary | null 
     };
 }
 
+function normalizeVenuePlaceMatchingSummary(value: unknown): VenuePlaceMatchingSummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<VenuePlaceMatchingSummary>;
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        status: candidate.status === 'warn' ? 'warn' : 'pass',
+        venueCount: typeof candidate.venueCount === 'number' ? candidate.venueCount : 0,
+        matchedCount: typeof candidate.matchedCount === 'number' ? candidate.matchedCount : 0,
+        highConfidenceMatchCount: typeof candidate.highConfidenceMatchCount === 'number' ? candidate.highConfidenceMatchCount : 0,
+        needsReviewCount: typeof candidate.needsReviewCount === 'number' ? candidate.needsReviewCount : 0,
+        notFoundCount: typeof candidate.notFoundCount === 'number' ? candidate.notFoundCount : 0,
+        pendingLookupCount: typeof candidate.pendingLookupCount === 'number' ? candidate.pendingLookupCount : 0,
+        insufficientIdentityCount: typeof candidate.insufficientIdentityCount === 'number' ? candidate.insufficientIdentityCount : 0,
+        lookupReady: candidate.lookupReady === true,
+        providersConfigured: Array.isArray(candidate.providersConfigured) ? candidate.providersConfigured.filter((value): value is string => typeof value === 'string') : [],
+        staleCacheCount: typeof candidate.staleCacheCount === 'number' ? candidate.staleCacheCount : 0,
+        topQueue: Array.isArray(candidate.topQueue) ? candidate.topQueue : [],
+        topInsufficientIdentityQueue: Array.isArray(candidate.topInsufficientIdentityQueue) ? candidate.topInsufficientIdentityQueue : [],
+        topNeedsReview: Array.isArray(candidate.topNeedsReview) ? candidate.topNeedsReview : [],
+    };
+}
+
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr || dateStr.trim() === '') return true; // Lenient: Treat items without dates as active (e.g., Museums)
 
@@ -365,6 +389,7 @@ export function getDataBuildInfo(): DataBuildInfo | null {
         sourceFunnelSummary: normalizeSourceFunnelSummary(candidate.sourceFunnelSummary),
         venueCanonicalizationSummary: normalizeVenueCanonicalizationSummary(candidate.venueCanonicalizationSummary),
         venueMasterSummary: normalizeVenueMasterSummary(candidate.venueMasterSummary),
+        venuePlaceMatchingSummary: normalizeVenuePlaceMatchingSummary(candidate.venuePlaceMatchingSummary),
     };
     return cachedBuildInfo;
 }

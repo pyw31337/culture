@@ -19,6 +19,7 @@ import { buildDisplayIntegrityReport } from './utils/display-integrity';
 import { buildSourceFunnelReport } from './utils/source-funnel';
 import { buildVenueCanonicalizationReport } from './utils/venue-canonicalization';
 import { buildVenueMaster } from './utils/venue-master';
+import { applyVenuePlaceCache, buildVenuePlaceMatchingReport, type VenuePlaceCache, type VenuePlaceProvider } from './utils/venue-place-matching';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -135,6 +136,27 @@ function loadMovieCatalog(): MovieCatalogItem[] {
     }
 
     return [];
+}
+
+function readJsonIfExists<T>(filePath: string, fallback: T): T {
+    if (!fs.existsSync(filePath)) return fallback;
+    try {
+        return JSON.parse(fs.readFileSync(filePath, 'utf8')) as T;
+    } catch {
+        return fallback;
+    }
+}
+
+function getConfiguredVenuePlaceProviders(): VenuePlaceProvider[] {
+    const providers: VenuePlaceProvider[] = [];
+    if (process.env.KAKAO_REST_API_KEY || process.env.KAKAO_LOCAL_REST_API_KEY) providers.push('kakao');
+    if (
+        (process.env.NAVER_SEARCH_CLIENT_ID || process.env.NAVER_CLIENT_ID) &&
+        (process.env.NAVER_SEARCH_CLIENT_SECRET || process.env.NAVER_CLIENT_SECRET)
+    ) {
+        providers.push('naver');
+    }
+    return providers;
 }
 
 function rehydrateMoviesFromCatalog(items: Performance[]) {
@@ -650,6 +672,15 @@ async function generate() {
             coordinateRiskKeys,
             new Date().toISOString(),
         );
+        const venuePlaceCachePath = path.join(process.cwd(), 'src', 'data', 'venue-place-cache.json');
+        const venuePlaceCache = readJsonIfExists<VenuePlaceCache>(venuePlaceCachePath, {});
+        venueMasterBuild.entries = applyVenuePlaceCache(venueMasterBuild.entries, venuePlaceCache);
+        const venuePlaceMatchingReport = buildVenuePlaceMatchingReport(
+            venueMasterBuild.entries,
+            venuePlaceCache,
+            getConfiguredVenuePlaceProviders(),
+            new Date().toISOString(),
+        );
 
         sorted.forEach((performance) => {
             const venueMasterMatch = venueMasterBuild.performanceVenueIndex[performance.id];
@@ -748,6 +779,7 @@ async function generate() {
             sourceFunnelSummary: sourceFunnelReport.summary,
             venueCanonicalizationSummary: venueCanonicalizationReport.summary,
             venueMasterSummary: venueMasterBuild.report.summary,
+            venuePlaceMatchingSummary: venuePlaceMatchingReport.summary,
         };
         fs.writeFileSync(buildInfoPath, JSON.stringify(buildInfo));
         console.log(`Updated build-info.json to ${buildInfoPath}`);
@@ -761,6 +793,8 @@ async function generate() {
         console.log(`Updated venue-master.json to ${path.join(dir, 'venue-master.json')}`);
         fs.writeFileSync(path.join(dir, 'venue-master-report.json'), JSON.stringify(venueMasterBuild.report));
         console.log(`Updated venue-master-report.json to ${path.join(dir, 'venue-master-report.json')}`);
+        fs.writeFileSync(path.join(dir, 'venue-place-report.json'), JSON.stringify(venuePlaceMatchingReport));
+        console.log(`Updated venue-place-report.json to ${path.join(dir, 'venue-place-report.json')}`);
 
         // [New: Sync critical data files to public/data]
         const dataDir = path.join(process.cwd(), 'src', 'data');

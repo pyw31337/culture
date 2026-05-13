@@ -10,6 +10,7 @@ import {
     GitBranch,
     Landmark,
     MapPinned,
+    SearchCheck,
     ShieldAlert,
     ShieldCheck,
 } from 'lucide-react';
@@ -173,6 +174,17 @@ export default function StatusPage() {
     const venueMasterDetail = venueMasterSummary
         ? `표준 공연장 ${venueMasterSummary.entryCount.toLocaleString()}개 · 하위홀 그룹 ${venueMasterSummary.parentChildGroupCount.toLocaleString()}개 · 별칭 병합 ${venueMasterSummary.aliasMergedGroupCount.toLocaleString()}개`
         : '공식명칭, 별칭, 하위홀, 좌표를 누적 관리하는 마스터입니다.';
+    const venuePlaceMatchingSummary = buildInfo.venuePlaceMatchingSummary;
+    const venuePlaceMatchingStatusLabel = venuePlaceMatchingSummary
+        ? venuePlaceMatchingSummary.lookupReady
+            ? `공식 장소 매칭 ${venuePlaceMatchingSummary.matchedCount.toLocaleString()}개`
+            : `공식 장소 대기 ${venuePlaceMatchingSummary.pendingLookupCount.toLocaleString()}개`
+        : '공식 장소 매칭 준비 중';
+    const venuePlaceMatchingDetail = venuePlaceMatchingSummary
+        ? venuePlaceMatchingSummary.lookupReady
+            ? `카카오/네이버 조회 준비됨 · 고신뢰 ${venuePlaceMatchingSummary.highConfidenceMatchCount.toLocaleString()}개 · 검토 ${venuePlaceMatchingSummary.needsReviewCount.toLocaleString()}개`
+            : `API 키가 준비되면 대기열 순서대로 공식 placeId를 누적합니다. 장소명 보강 필요 ${venuePlaceMatchingSummary.insufficientIdentityCount.toLocaleString()}개`
+        : '공식 장소 검색 결과를 캐시해 좌표와 도로명주소를 확정합니다.';
 
     const sortedSources = [...buildInfo.sourceSummaries].sort((a, b) => {
         const order = {
@@ -261,6 +273,12 @@ export default function StatusPage() {
                                 icon={venueMasterSummary?.status === 'warn' ? <Landmark className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
                             />
                             <SnapshotLine
+                                label="공식 장소 매칭"
+                                value={venuePlaceMatchingStatusLabel}
+                                detail={venuePlaceMatchingDetail}
+                                icon={venuePlaceMatchingSummary?.lookupReady ? <SearchCheck className="h-4 w-4" /> : <ShieldAlert className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
                                 label="갱신 시각"
                                 value={formatKoreanDateTime(buildInfo.generatedAt)}
                                 detail="빌드에 반영된 최신 데이터 생성 시각입니다."
@@ -320,6 +338,11 @@ export default function StatusPage() {
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">공연장 마스터</p>
                                 <p className="mt-2 text-xl font-black tracking-tight">{venueMasterStatusLabel}</p>
                                 <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{venueMasterDetail}</p>
+                            </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">공식 장소 매칭</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{venuePlaceMatchingStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{venuePlaceMatchingDetail}</p>
                             </div>
                             <div>
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">운영 원칙</p>
@@ -452,6 +475,24 @@ export default function StatusPage() {
                                     </div>
                                     <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
                                         콘텐츠마다 canonical id를 부여해 같은 장소를 한 흐름으로 추적합니다.
+                                    </p>
+                                </div>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <span>공식 장소 매칭 대기</span>
+                                        <strong>{venuePlaceMatchingSummary?.pendingLookupCount ?? 0}개</strong>
+                                    </div>
+                                    <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
+                                        API 키가 있으면 대기열 우선순위대로 placeId, 도로명주소, 좌표를 보강합니다.
+                                    </p>
+                                </div>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <span>장소명 보강 필요</span>
+                                        <strong>{venuePlaceMatchingSummary?.insufficientIdentityCount ?? 0}개</strong>
+                                    </div>
+                                    <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
+                                        지역명/수업 방식처럼 검색하면 오염될 항목은 공식 조회에서 분리합니다.
                                     </p>
                                 </div>
                             </div>

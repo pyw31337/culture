@@ -130,6 +130,48 @@ export interface VenueMasterSummary {
     }>;
 }
 
+export interface VenuePlaceMatchingSummary {
+    checkedAt: string;
+    status: 'pass' | 'warn';
+    venueCount: number;
+    matchedCount: number;
+    highConfidenceMatchCount: number;
+    needsReviewCount: number;
+    notFoundCount: number;
+    pendingLookupCount: number;
+    insufficientIdentityCount: number;
+    lookupReady: boolean;
+    providersConfigured: string[];
+    staleCacheCount: number;
+    topQueue: Array<{
+        venueId: string;
+        officialName: string;
+        address: string;
+        query: string;
+        priority: number;
+        performanceCount: number;
+        reviewFlags: string[];
+        sampleTitles: string[];
+    }>;
+    topInsufficientIdentityQueue: Array<{
+        venueId: string;
+        officialName: string;
+        address: string;
+        query: string;
+        priority: number;
+        performanceCount: number;
+        reviewFlags: string[];
+        sampleTitles: string[];
+    }>;
+    topNeedsReview: Array<{
+        venueId: string;
+        officialName?: string;
+        query: string;
+        confidence: number;
+        reason: string;
+    }>;
+}
+
 export interface DataBuildInfo {
     generatedAt: string;
     version: string;
@@ -143,6 +185,7 @@ export interface DataBuildInfo {
     sourceFunnelSummary?: SourceFunnelSummary | null;
     venueCanonicalizationSummary?: VenueCanonicalizationSummary | null;
     venueMasterSummary?: VenueMasterSummary | null;
+    venuePlaceMatchingSummary?: VenuePlaceMatchingSummary | null;
 }
 
 export function getAvailableGenreCount(genreCounts?: Record<string, number>) {
