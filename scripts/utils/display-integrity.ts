@@ -39,11 +39,13 @@ export interface DisplayIntegritySummary {
     samples: Record<string, IntegritySample[]>;
 }
 
-const WINTER_KEYWORDS = ['스키', '보드', '스노우', '눈썰매', '리프트', '리프트권', '스키장', '렌탈샵', '겨울'];
+const WINTER_LEISURE_KEYWORDS = ['눈썰매', '리프트권', '스키장', '스노우파크', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
+const WINTER_FALSE_POSITIVE_KEYWORDS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
 const SUMMER_KEYWORDS = ['워터파크', '수영장', '해수욕', '서핑', '물놀이', '계곡', '래프팅'];
 const EVERGREEN_DATES = new Set(['상시', 'OPEN RUN', '오픈런', '연중무휴']);
 const PRICE_OPTIONAL_GENRES = new Set(['movie', 'soccer', 'baseball', 'basketball', 'volleyball', 'handball', 'tourism']);
 const REGION_HINTS = ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '부천', '수원', '성남', '고양', '용인', '안양', '전주', '전북', '제주', '강원', '충북', '충남', '전남', '경북', '경남'];
+const BROAD_REGION_HINTS = new Set(['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '전북', '제주', '강원', '충북', '충남', '전남', '경북', '경남']);
 
 function clean(value?: string | null) {
     return (value || '').replace(/\s+/g, ' ').trim();
@@ -94,7 +96,11 @@ function hasLocationHintInRecord(performance: Performance, hint: string) {
         .filter((part) => part && !['앵콜', '공연'].includes(part));
 
     if (parts.length === 0) return true;
-    return parts.every((part) => target.includes(part));
+
+    const broadParts = parts.filter((part) => BROAD_REGION_HINTS.has(part));
+    if (broadParts.some((part) => target.includes(part))) return true;
+
+    return parts.some((part) => target.includes(part));
 }
 
 function isEvergreenDate(value?: string) {
@@ -120,9 +126,27 @@ function isOutOfSeason(performance: Performance, referenceDate: Date) {
         .filter(Boolean)
         .join(' ')
         .toLowerCase();
+    const primaryText = [performance.title, performance.venue, performance.subGenre]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
 
-    if (WINTER_KEYWORDS.some((keyword) => text.includes(keyword)) && ![11, 12, 1, 2, 3].includes(month)) return true;
-    if (SUMMER_KEYWORDS.some((keyword) => text.includes(keyword)) && ![6, 7, 8, 9].includes(month)) return true;
+    const hasSeasonKeyword = (keywords: string[]) => keywords.some((keyword) => {
+        const target = keyword === '물놀이'
+            ? text.replace(/사물놀이/g, '')
+            : text;
+        return target.includes(keyword);
+    });
+    const hasWinterLeisureKeyword = () => {
+        const target = WINTER_FALSE_POSITIVE_KEYWORDS.reduce((acc, keyword) => acc.replaceAll(keyword, ''), primaryText);
+        if (WINTER_LEISURE_KEYWORDS.some((keyword) => target.includes(keyword))) return true;
+        if (target.includes('스키') && /(리조트|렌탈|강습|슬로프|스키학교|스키\/보드)/.test(target)) return true;
+        if (target.includes('보드') && /(스노우|스키|렌탈)/.test(target)) return true;
+        return false;
+    };
+
+    if (hasWinterLeisureKeyword() && ![11, 12, 1, 2, 3].includes(month)) return true;
+    if (hasSeasonKeyword(SUMMER_KEYWORDS) && ![5, 6, 7, 8, 9].includes(month)) return true;
     return false;
 }
 

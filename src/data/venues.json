@@ -64618,12 +64618,13 @@
   },
   "금정문화회관 소공연장(은빛샘홀)": {
     "name": "금정문화회관 소공연장(은빛샘홀)",
-    "address": "충남 천안시 서북구 불당5길 25",
-    "district": "",
-    "lat": 36.8036369056572,
-    "lng": 127.10952480655,
+    "address": "부산 금정구 체육공원로 7",
+    "district": "금정구",
+    "lat": 35.246196,
+    "lng": 129.0942315,
     "phone": "051-519-5651",
-    "homepage": "http://art.geumjeong.go.kr/"
+    "homepage": "http://art.geumjeong.go.kr/",
+    "mapped_region_id": "busan"
   },
   "대원 팝콘D 스퀘어 대원 콘텐츠 라이브": {
     "name": "대원 팝콘D 스퀘어 대원 콘텐츠 라이브",
@@ -72983,11 +72984,12 @@
   "금정문화회관 (소공연장(은빛샘홀))": {
     "name": "금정문화회관 (소공연장(은빛샘홀))",
     "address": "부산 금정구 체육공원로 7",
-    "district": "",
-    "lat": 35.2464072146076,
-    "lng": 129.094583279384,
+    "district": "금정구",
+    "lat": 35.246196,
+    "lng": 129.0942315,
     "phone": "051-519-5651",
-    "homepage": "http://art.geumjeong.go.kr/"
+    "homepage": "http://art.geumjeong.go.kr/",
+    "mapped_region_id": "busan"
   },
   "플라츠2 (B동)": {
     "name": "플라츠2 (B동)",

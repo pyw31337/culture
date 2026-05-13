@@ -9,7 +9,7 @@ import type {
     DataSourceSummary
 } from '../src/lib/build-info';
 import { getExternalContentLink } from '../src/lib/performance-links';
-import { sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
+import { getScheduleWindow, sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
 import { SOURCE_REGISTRY } from '../src/lib/source-registry';
 import { getGenreFilterFromSlug } from '../src/lib/genre-availability';
 import { VALID_GENRE_SLUGS } from '../src/lib/constants';
@@ -20,6 +20,7 @@ import { buildSourceFunnelReport } from './utils/source-funnel';
 import { buildVenueCanonicalizationReport } from './utils/venue-canonicalization';
 import { buildVenueMaster } from './utils/venue-master';
 import { applyVenuePlaceCache, buildVenuePlaceMatchingReport, type VenuePlaceCache, type VenuePlaceProvider } from './utils/venue-place-matching';
+import { isCompatibleVenueDisplayName } from './utils/venue-name-quality';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -70,6 +71,8 @@ const FALLBACK_IMAGES: Record<string, string> = {
 
 const SOURCE_FRESH_DAYS = 3;
 const SOURCE_STALE_DAYS = 30;
+const WINTER_LEISURE_TERMS = ['리프트권', '스키장', '스노우파크', '눈썰매', '눈썰매장', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
+const WINTER_LEISURE_FALSE_POSITIVE_TERMS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
 
 function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
@@ -288,6 +291,157 @@ function repairMissingLinks(items: Performance[]) {
     items.forEach((performance) => {
         if (hasUsableLink(performance.link)) return;
         performance.link = getExternalContentLink(performance);
+    });
+}
+
+function normalizeDuplicateTimeFields(items: Performance[]) {
+    items.forEach((performance) => {
+        const operatingHours = compactText(performance.operatingHours);
+        const performanceTime = compactText(performance.performanceTime);
+        if (!operatingHours || !performanceTime || operatingHours !== performanceTime) return;
+
+        if (performance.genre === 'tourism') {
+            performance.performanceTime = '';
+            return;
+        }
+
+        performance.operatingHours = '';
+    });
+}
+
+function getSeasonPrimaryText(performance: Performance) {
+    return [
+        performance.title,
+        performance.venue,
+        performance.subGenre,
+    ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+}
+
+function isOutOfSeasonWinterLeisure(performance: Performance, referenceDate: Date) {
+    const month = referenceDate.getMonth() + 1;
+    if ([11, 12, 1, 2, 3].includes(month)) return false;
+
+    const primaryText = WINTER_LEISURE_FALSE_POSITIVE_TERMS.reduce(
+        (acc, keyword) => acc.replaceAll(keyword, ''),
+        getSeasonPrimaryText(performance),
+    );
+
+    if (WINTER_LEISURE_TERMS.some((keyword) => primaryText.includes(keyword))) return true;
+    if (primaryText.includes('스키') && /(리조트|렌탈|강습|슬로프|스키학교|스키\/보드)/.test(primaryText)) return true;
+    if (primaryText.includes('보드') && /(스노우|스키|렌탈)/.test(primaryText)) return true;
+    return false;
+}
+
+function applyLocationOverride(
+    performance: Performance,
+    patch: Pick<Performance, 'venue' | 'address' | 'lat' | 'lng' | 'region'> & { district?: string }
+) {
+    performance.venue = patch.venue;
+    performance.address = patch.address;
+    performance.region = patch.region;
+    performance.lat = patch.lat;
+    performance.lng = patch.lng;
+    performance.district = patch.district;
+    performance.venueKey = undefined;
+    performance.locationKey = undefined;
+
+    const description = compactText(performance.description);
+    if (
+        description.includes('고양대로 1955') ||
+        description.includes('솜씨당 클래스') ||
+        description.includes('장소 확인 필요')
+    ) {
+        performance.description = buildFallbackDescription(performance);
+    }
+}
+
+function repairKnownLocationOverrides(items: Performance[]) {
+    items.forEach((performance) => {
+        if (
+            performance.source === 'kopis' &&
+            performance.venue.includes('금정문화회관') &&
+            compactText(performance.address).includes('천안')
+        ) {
+            applyLocationOverride(performance, {
+                venue: performance.venue,
+                address: '부산 금정구 체육공원로 7',
+                lat: 35.246196,
+                lng: 129.0942315,
+                region: 'busan',
+                district: '금정구',
+            });
+            return;
+        }
+
+        if (performance.source !== 'umclass') return;
+
+        const link = compactText(performance.link);
+        if (link.includes('/classInfo/1494')) {
+            applyLocationOverride(performance, {
+                venue: '서울 영등포구',
+                address: '서울 영등포구',
+                lat: undefined,
+                lng: undefined,
+                region: 'seoul',
+                district: '영등포구',
+            });
+            return;
+        }
+
+        if (link.includes('/classInfo/1950')) {
+            applyLocationOverride(performance, {
+                venue: '서울 광진구',
+                address: '서울 광진구',
+                lat: undefined,
+                lng: undefined,
+                region: 'seoul',
+                district: '광진구',
+            });
+            return;
+        }
+
+        const hasStaleGenericGoyangLocation =
+            compactText(performance.venue) === '솜씨당 클래스' &&
+            compactText(performance.address).includes('고양대로 1955');
+        if (!hasStaleGenericGoyangLocation) return;
+
+        if (link.includes('/classInfo/1933') || link.includes('/classInfo/1936')) {
+            applyLocationOverride(performance, {
+                venue: '대구 중구 봉산문화길 95 (봉산동) 1층 markcollection',
+                address: '대구광역시 중구 봉산문화길 95',
+                lat: 35.8641430410256,
+                lng: 128.596476331292,
+                region: 'daegu',
+                district: '중구',
+            });
+            return;
+        }
+
+        if (performance.title.includes('영등포')) {
+            applyLocationOverride(performance, {
+                venue: '서울 영등포구',
+                address: '서울 영등포구',
+                lat: undefined,
+                lng: undefined,
+                region: 'seoul',
+                district: '영등포구',
+            });
+            return;
+        }
+
+        if (performance.title.includes('건대')) {
+            applyLocationOverride(performance, {
+                venue: '서울 광진구',
+                address: '서울 광진구',
+                lat: undefined,
+                lng: undefined,
+                region: 'seoul',
+                district: '광진구',
+            });
+        }
     });
 }
 
@@ -548,6 +702,7 @@ async function generate() {
         const movieCount = 0;
         let ottCount = 0;
         let dateCount = 0;
+        let seasonalCount = 0;
 
         const activePerformances = performances.filter(p => {
             // 0. EXCLUDE OTT from this specific JSON 
@@ -560,8 +715,25 @@ async function generate() {
 
             // Exclude Overseas Content
             if (isOverseas(p)) return false;
+            if (isOutOfSeasonWinterLeisure(p, today)) {
+                seasonalCount++;
+                return false;
+            }
 
             if (!p.date || p.date.trim() === '') return true; // Treat as active if no date (Museums/Activities)
+            if (p.genre === 'movie') return true;
+
+            const scheduleWindow = getScheduleWindow(p);
+            if (scheduleWindow.end) {
+                const endDate = new Date(scheduleWindow.end);
+                endDate.setHours(23, 59, 59, 999);
+                const isActive = endDate >= today;
+                if (!isActive) {
+                    dateCount++;
+                    if (p.source === 'museum') console.log(`[DEBUG] Museum ${p.title} filtered by parsed schedule: ${p.date} (EndDate: ${endDate.toISOString()})`);
+                }
+                return isActive;
+            }
 
             try {
                 let endDate: Date | null = null;
@@ -612,9 +784,6 @@ async function generate() {
 
                 // Set end date to end of day
                 endDate.setHours(23, 59, 59, 999);
-                // Bypass date check for movies
-                if (p.genre === 'movie') return true;
-
                 const isActive = endDate >= today;
                 if (!isActive) {
                     dateCount++;
@@ -637,6 +806,7 @@ async function generate() {
         console.log(`- Movies Filtered: ${movieCount}`);
         console.log(`- OTT Filtered: ${ottCount}`);
         console.log(`- Expired/Date Filtered: ${dateCount}`);
+        console.log(`- Out-of-season Winter Leisure Filtered: ${seasonalCount}`);
 
         console.log(`Filtered ${performances.length - activePerformances.length} items (Expired or Duplicate Type).`);
 
@@ -649,6 +819,8 @@ async function generate() {
         rehydrateMoviesFromCatalog(activePerformances);
         repairMissingLinks(activePerformances);
         repairBrokenLocalImages(activePerformances);
+        normalizeDuplicateTimeFields(activePerformances);
+        repairKnownLocationOverrides(activePerformances);
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformancesForHomeFeed(activePerformances);
@@ -793,7 +965,7 @@ async function generate() {
         console.log(`Updated venue-master.json to ${path.join(dir, 'venue-master.json')}`);
         fs.writeFileSync(path.join(dir, 'venue-master-report.json'), JSON.stringify(venueMasterBuild.report));
         console.log(`Updated venue-master-report.json to ${path.join(dir, 'venue-master-report.json')}`);
-        fs.writeFileSync(path.join(dir, 'venue-place-report.json'), JSON.stringify(venuePlaceMatchingReport));
+        fs.writeFileSync(path.join(dir, 'venue-place-report.json'), JSON.stringify(venuePlaceMatchingReport, null, 2));
         console.log(`Updated venue-place-report.json to ${path.join(dir, 'venue-place-report.json')}`);
 
         // [New: Sync critical data files to public/data]
@@ -815,7 +987,7 @@ async function generate() {
                         if (usedVenueNames.has(key)) {
                             const { name, ...rest } = v;
                             // Only keep name if it differs from the key
-                            if (name && name !== key) {
+                            if (name && name !== key && isCompatibleVenueDisplayName(key, name)) {
                                 rest.name = name;
                             }
                             prunedVenues[key] = rest;

@@ -1,5 +1,6 @@
 import type { Performance } from '../../src/types';
 import type { VenueRecordMap } from './venue-canonicalization';
+import { isCompatibleVenueDisplayName } from './venue-name-quality';
 
 export type VenueMasterEntry = {
     id: string;
@@ -264,9 +265,11 @@ function chooseOfficialName(nameUsage: Map<string, number>) {
 }
 
 function getNameBase(performance: Performance, venueRecord?: VenueRecordMap[string]) {
-    const recordName = compactText(venueRecord?.name);
     const venue = compactText(performance.venue);
-    return stripHallAndMeetingPoint(recordName || venue || performance.venueKey || 'unknown');
+    const venueKey = compactText(performance.venueKey);
+    const recordName = compactText(venueRecord?.name);
+    const safeRecordName = isCompatibleVenueDisplayName(venue || venueKey, recordName) ? recordName : '';
+    return stripHallAndMeetingPoint(safeRecordName || venue || venueKey || 'unknown');
 }
 
 function getVenueRecord(performance: Performance, venues: VenueRecordMap) {
@@ -386,9 +389,10 @@ export function buildVenueMaster(
         const group = ensureGroup(groups, baseName, address, normalizedAddress, lat, lng);
         const alias = compactText(performance.venueKey || performance.venue);
         const recordName = compactText(venueRecord?.name);
+        const safeRecordName = isCompatibleVenueDisplayName(alias || performance.venue, recordName) ? recordName : '';
         const hallName = extractHallName(performance.venue) || extractHallName(alias);
 
-        if (recordName) group.nameUsage.set(recordName, (group.nameUsage.get(recordName) || 0) + 1);
+        if (safeRecordName) group.nameUsage.set(safeRecordName, (group.nameUsage.get(safeRecordName) || 0) + 1);
         if (baseName) group.nameUsage.set(baseName, (group.nameUsage.get(baseName) || 0) + 1);
         if (alias) group.aliases.add(alias);
         if (compactText(performance.venue)) group.aliases.add(compactText(performance.venue));

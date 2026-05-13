@@ -7,12 +7,12 @@ import performances from '../public/data/performances.json';
 interface Performance {
     id: string;
     title: string;
-    posterUrl: string;
-    // Add other properties if needed
+    image?: string;
+    posterUrl?: string;
 }
 
 // Cast the imported JSON to the correct type
-const items = performances as Performance[];
+const items = performances as unknown as Performance[];
 
 async function validateImages() {
     console.log(`Starting validation of ${items.length} items...`);
@@ -27,7 +27,6 @@ async function validateImages() {
         const batch = items.slice(i, i + batchSize);
 
         await Promise.all(batch.map(async (item) => {
-            // @ts-ignore
             const imageUrl = item.image || item.posterUrl; // Fallback just in case
 
             if (!imageUrl) {
@@ -59,8 +58,9 @@ async function validateImages() {
                     console.log(`[${response.status}] ${item.title}: ${imageUrl}`);
                     brokenImages.push(item);
                 }
-            } catch (error: any) {
-                console.log(`[ERROR] ${item.title}: ${imageUrl} - ${error.message}`);
+            } catch (error: unknown) {
+                const message = error instanceof Error ? error.message : String(error);
+                console.log(`[ERROR] ${item.title}: ${imageUrl} - ${message}`);
                 brokenImages.push(item);
             }
         }));

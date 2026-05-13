@@ -1,4 +1,5 @@
 import type { Performance } from '../../src/types';
+import { isCompatibleVenueDisplayName } from './venue-name-quality';
 
 type VenueRecordValue = {
     address?: string;
@@ -136,6 +137,8 @@ const HALL_TOKENS = [
     '4관',
     '홀',
 ];
+
+const NON_PHYSICAL_GENRES = new Set(['movie', 'ott']);
 
 function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
@@ -315,9 +318,13 @@ function buildSnapshots(performances: Performance[], venues: VenueRecordMap) {
     const snapshotMap = new Map<string, VenueSnapshot>();
 
     performances.forEach((performance) => {
+        if (NON_PHYSICAL_GENRES.has(performance.genre)) return;
+
         const key = performance.venueKey || performance.venue || 'unknown-venue';
         const venueRecord = venues[key] || venues[performance.venue] || {};
-        const name = compactText(venueRecord.name) || compactText(performance.venue) || key;
+        const recordName = compactText(venueRecord.name);
+        const safeRecordName = isCompatibleVenueDisplayName(key || performance.venue, recordName) ? recordName : '';
+        const name = safeRecordName || compactText(performance.venue) || key;
         const address = sanitizeAddress(performance.address || venueRecord.address);
         const lat = parseCoordinate(performance.lat ?? performance.latitude ?? venueRecord.lat ?? venueRecord.latitude);
         const lng = parseCoordinate(performance.lng ?? performance.longitude ?? venueRecord.lng ?? venueRecord.longitude);
@@ -365,6 +372,7 @@ export function buildVenueCanonicalizationReport(
     venues: VenueRecordMap,
     checkedAt = new Date().toISOString()
 ): VenueCanonicalizationReport {
+    const physicalPerformanceCount = performances.filter((performance) => !NON_PHYSICAL_GENRES.has(performance.genre)).length;
     const snapshots = buildSnapshots(performances, venues);
     const invalidCoordinateVenues = snapshots
         .filter((snapshot) => !isCoordinateInKorea(snapshot.lat, snapshot.lng))
@@ -465,7 +473,7 @@ export function buildVenueCanonicalizationReport(
         checkedAt,
         status,
         usedVenueCount: snapshots.length,
-        usedPerformanceCount: performances.length,
+        usedPerformanceCount: physicalPerformanceCount,
         invalidCoordinateVenues,
         missingAddressVenues,
         exactAddressAliasCandidates,
@@ -481,7 +489,7 @@ export function buildVenueCanonicalizationReport(
             checkedAt,
             status,
             usedVenueCount: snapshots.length,
-            usedPerformanceCount: performances.length,
+            usedPerformanceCount: physicalPerformanceCount,
             invalidCoordinateVenueCount: invalidCoordinateVenues.length,
             missingAddressVenueCount: missingAddressVenues.length,
             exactAddressAliasCandidateCount: exactAddressAliasCandidates.length,

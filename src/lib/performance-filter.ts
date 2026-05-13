@@ -16,7 +16,8 @@ interface Venue {
 }
 
 const KOREA_TIMEZONE = 'Asia/Seoul';
-const WINTER_KEYWORDS = ['스키', '보드', '스노우', '눈썰매', '리프트', '리프트권', '스키장', '렌탈샵', '겨울'];
+const WINTER_LEISURE_KEYWORDS = ['눈썰매', '리프트권', '스키장', '스노우파크', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
+const WINTER_FALSE_POSITIVE_KEYWORDS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
 const SUMMER_KEYWORDS = ['워터파크', '수영장', '풀파티', '해수욕', '서핑', '물놀이', '계곡', '래프팅'];
 const SPRING_KEYWORDS = ['벚꽃', '봄꽃', '유채꽃'];
 const AUTUMN_KEYWORDS = ['단풍', '가을꽃', '억새'];
@@ -122,8 +123,21 @@ export function getDateDiffDays(target: Date, reference: Date) {
     return Math.round(ms / (1000 * 60 * 60 * 24));
 }
 
-function includesAny(text: string, keywords: string[]) {
-    return keywords.some((keyword) => text.includes(keyword));
+function includesSeasonKeyword(text: string, keywords: string[]) {
+    return keywords.some((keyword) => {
+        const target = keyword === '물놀이'
+            ? text.replace(/사물놀이/g, '')
+            : text;
+        return target.includes(keyword);
+    });
+}
+
+function includesWinterLeisureKeyword(text: string) {
+    const target = WINTER_FALSE_POSITIVE_KEYWORDS.reduce((acc, keyword) => acc.replaceAll(keyword, ''), text);
+    if (WINTER_LEISURE_KEYWORDS.some((keyword) => target.includes(keyword))) return true;
+    if (target.includes('스키') && /(리조트|렌탈|강습|슬로프|스키학교|스키\/보드)/.test(target)) return true;
+    if (target.includes('보드') && /(스노우|스키|렌탈)/.test(target)) return true;
+    return false;
 }
 
 function getSeasonalPenalty(performance: Pick<Performance, 'title' | 'venue' | 'genre' | 'description' | 'subGenre'>, referenceDate: Date) {
@@ -137,26 +151,35 @@ function getSeasonalPenalty(performance: Pick<Performance, 'title' | 'venue' | '
         .filter(Boolean)
         .join(' ')
         .toLowerCase();
+    const primaryText = [
+        performance.title,
+        performance.venue,
+        performance.genre,
+        performance.subGenre,
+    ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
 
     const month = referenceDate.getUTCMonth() + 1;
     let penalty = 0;
 
-    if (includesAny(text, WINTER_KEYWORDS) && ![11, 12, 1, 2, 3].includes(month)) {
+    if (includesWinterLeisureKeyword(primaryText) && ![11, 12, 1, 2, 3].includes(month)) {
         penalty -= 140;
-        if (text.includes('25/26') || text.includes('시즌권') || text.includes('리프트권')) {
+        if (primaryText.includes('25/26') || primaryText.includes('시즌권') || primaryText.includes('리프트권')) {
             penalty -= 80;
         }
     }
 
-    if (includesAny(text, SUMMER_KEYWORDS) && ![6, 7, 8, 9].includes(month)) {
+    if (includesSeasonKeyword(text, SUMMER_KEYWORDS) && ![5, 6, 7, 8, 9].includes(month)) {
         penalty -= 35;
     }
 
-    if (includesAny(text, SPRING_KEYWORDS) && ![3, 4, 5].includes(month)) {
+    if (includesSeasonKeyword(text, SPRING_KEYWORDS) && ![3, 4, 5].includes(month)) {
         penalty -= 18;
     }
 
-    if (includesAny(text, AUTUMN_KEYWORDS) && ![9, 10, 11].includes(month)) {
+    if (includesSeasonKeyword(text, AUTUMN_KEYWORDS) && ![9, 10, 11].includes(month)) {
         penalty -= 18;
     }
 
