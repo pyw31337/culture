@@ -44,6 +44,31 @@ const WINTER_FALSE_POSITIVE_KEYWORDS = ['차이콥스키', '마이스키', '위�
 const SUMMER_KEYWORDS = ['워터파크', '수영장', '해수욕', '서핑', '물놀이', '계곡', '래프팅'];
 const EVERGREEN_DATES = new Set(['상시', 'OPEN RUN', '오픈런', '연중무휴']);
 const PRICE_OPTIONAL_GENRES = new Set(['movie', 'soccer', 'baseball', 'basketball', 'volleyball', 'handball', 'tourism']);
+const FLEXIBLE_SCHEDULE_KEYWORDS = [
+    '상품 상세',
+    '상세페이지',
+    '상세 페이지',
+    '예약 확정',
+    '일정 조율',
+    '시간을 조율',
+    '상이',
+    '신청 시',
+    '참고',
+    '문의',
+    '상품페이지',
+    '일자 별',
+    '일자별',
+    '날짜 선택',
+    '날짜에 따라',
+    '옵션',
+    '일정별',
+    '장소별 일정',
+    '행사 시작',
+    '수업',
+    '전화상담',
+    '협의',
+    '만남',
+];
 const REGION_HINTS = ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '부천', '수원', '성남', '고양', '용인', '안양', '전주', '전북', '제주', '강원', '충북', '충남', '전남', '경북', '경남'];
 const BROAD_REGION_HINTS = new Set(['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '전북', '제주', '강원', '충북', '충남', '전남', '경북', '경남']);
 
@@ -108,9 +133,25 @@ function isEvergreenDate(value?: string) {
     return EVERGREEN_DATES.has(normalized) || normalized.includes('상시') || normalized.includes('OPEN RUN');
 }
 
+function isFlexibleScheduleLabel(value?: string) {
+    const normalized = clean(value);
+    if (!normalized) return false;
+    if (FLEXIBLE_SCHEDULE_KEYWORDS.some((keyword) => normalized.includes(keyword))) return true;
+    const dateLikeText = normalized
+        .replace(/\d{4}년\s*\d{1,2}월/g, '')
+        .replace(/\d{2,4}[./-]\d{1,2}[./-]\d{1,2}/g, '');
+    if (/\d{1,2}\s*시|\d{1,2}:\d{2}|오전|오후/.test(dateLikeText) && !/\d{4}년\s*\d{1,2}월|\d{2,4}[./-]\d{1,2}[./-]\d{1,2}/.test(normalized)) {
+        return true;
+    }
+    return false;
+}
+
 function hasInvalidDate(performance: Performance) {
-    if (!clean(performance.date) && !clean(performance.dateRaw)) return true;
+    if (!clean(performance.date) && !clean(performance.dateRaw)) {
+        return false;
+    }
     if (isEvergreenDate(performance.date) || isEvergreenDate(performance.dateRaw)) return false;
+    if (isFlexibleScheduleLabel(performance.date) || isFlexibleScheduleLabel(performance.dateRaw)) return false;
     return extractScheduleDates(performance).length === 0;
 }
 

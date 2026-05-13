@@ -10,6 +10,7 @@ import type {
 } from '../src/lib/build-info';
 import { getExternalContentLink } from '../src/lib/performance-links';
 import { getScheduleWindow, sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
+import { formatUnifiedDate } from '../src/lib/utils';
 import { SOURCE_REGISTRY } from '../src/lib/source-registry';
 import { getGenreFilterFromSlug } from '../src/lib/genre-availability';
 import { VALID_GENRE_SLUGS } from '../src/lib/constants';
@@ -30,6 +31,13 @@ type PrunedPerformance = Omit<PrunablePerformance, 'posterUrl'>;
 
 type VenueRecord = {
     name?: string;
+    address?: string;
+    district?: string;
+    lat?: number | string;
+    lng?: number | string;
+    latitude?: number | string;
+    longitude?: number | string;
+    mapped_region_id?: string;
 } & Record<string, unknown>;
 
 type MovieCatalogItem = Performance & {
@@ -73,9 +81,118 @@ const SOURCE_FRESH_DAYS = 3;
 const SOURCE_STALE_DAYS = 30;
 const WINTER_LEISURE_TERMS = ['리프트권', '스키장', '스노우파크', '눈썰매', '눈썰매장', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
 const WINTER_LEISURE_FALSE_POSITIVE_TERMS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
+const GENERIC_OR_FALLBACK_COORDINATE_KEYS = new Set([
+    '37.5237,126.8882', // Seoul/Yeongdeungpo fallback frequently attached to Mom-Mom products.
+    '37.4138,127.5183', // Gyeonggi centroid fallback.
+    '37.5665,126.9780', // Seoul City Hall fallback.
+    '35.1796,129.0756', // Busan centroid fallback.
+    '35.8714,128.6014', // Daegu centroid fallback.
+    '37.8228,128.1555', // Gangwon centroid fallback.
+    '36.5753,128.5053', // Gyeongbuk centroid fallback.
+    '33.4996,126.5312', // Jeju centroid fallback.
+]);
+
+const KNOWN_BRANCH_VENUE_RULES: Array<{ tokens: string[]; venueKey: string }> = [
+    { tokens: ['주렁주렁', '하남점'], venueKey: '주렁주렁 하남점' },
+    { tokens: ['주렁주렁', '동탄점'], venueKey: '주렁주렁 동탄점' },
+    { tokens: ['주렁주렁', '영등포점'], venueKey: '주렁주렁 영등포점' },
+    { tokens: ['주렁주렁', '경주점'], venueKey: '주렁주렁 경주보문점' },
+    { tokens: ['주렁주렁', '경주보문점'], venueKey: '주렁주렁 경주보문점' },
+    { tokens: ['롯데리조트', '부여', '아쿠아가든'], venueKey: '롯데리조트 부여 아쿠아가든' },
+    { tokens: ['롯데리조트', '부여'], venueKey: '롯데리조트 부여' },
+    { tokens: ['롯데리조트부여', '아쿠아가든'], venueKey: '롯데리조트 부여 아쿠아가든' },
+    { tokens: ['롯데리조트부여'], venueKey: '롯데리조트 부여' },
+    { tokens: ['스플라스', '리솜'], venueKey: '스플라스 리솜' },
+    { tokens: ['아일랜드', '리솜'], venueKey: '아일랜드 리솜' },
+    { tokens: ['오아식스', '리솜'], venueKey: '아일랜드 리솜' },
+    { tokens: ['포레스트', '리솜'], venueKey: '포레스트 리솜' },
+    { tokens: ['레스트리', '리솜'], venueKey: '레스트리 리솜' },
+    { tokens: ['해브나인', '리솜'], venueKey: '포레스트 리솜' },
+    { tokens: ['삼악산케이블카'], venueKey: '춘천 삼악산 호수 케이블카' },
+    { tokens: ['씨라이프', '코엑스'], venueKey: '코엑스 아쿠아리움' },
+    { tokens: ['부산', '아쿠아리움'], venueKey: '부산 아쿠아리움' },
+    { tokens: ['놀자숲'], venueKey: '놀자숲' },
+    { tokens: ['대관령', '삼양라운드힐'], venueKey: '대관령 삼양라운드힐' },
+    { tokens: ['대구', '이월드'], venueKey: '대구 이월드' },
+    { tokens: ['레노부르크뮤지엄'], venueKey: '레노부르크뮤지엄' },
+    { tokens: ['삼방가딸기랜드'], venueKey: '삼방가딸기랜드' },
+];
 
 function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function compactComparable(value?: string) {
+    return compactText(value)
+        .replace(/[·ㆍ,./\\\-_:|"'“”‘’()[\]\s]/g, '')
+        .toLowerCase();
+}
+
+function parseCoordinate(value: unknown) {
+    if (typeof value === 'number' && Number.isFinite(value) && value !== 0) return value;
+    if (typeof value === 'string') {
+        const parsed = Number.parseFloat(value);
+        if (Number.isFinite(parsed) && parsed !== 0) return parsed;
+    }
+    return undefined;
+}
+
+function coordinateKey(lat?: number, lng?: number) {
+    if (typeof lat !== 'number' || typeof lng !== 'number') return '';
+    return `${lat.toFixed(4)},${lng.toFixed(4)}`;
+}
+
+function hasGenericFallbackCoordinate(performance: Performance) {
+    return GENERIC_OR_FALLBACK_COORDINATE_KEYS.has(coordinateKey(performance.lat, performance.lng));
+}
+
+function hasDetailedAddress(value?: string) {
+    const address = compactText(value);
+    if (!address || address === '정보 없음' || address === '주소 정보 없음') return false;
+    if (address.split(' ').filter(Boolean).length < 3) return false;
+    return /(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주|충청|전라|경상)/.test(address);
+}
+
+function applyVenueRecordToPerformance(performance: Performance, venueKey: string, record: VenueRecord) {
+    const previousVenue = compactText(performance.venue);
+    const venueChanged = previousVenue !== compactText(venueKey);
+    const recordAddress = compactText(record.address);
+    const recordLat = parseCoordinate(record.lat ?? record.latitude);
+    const recordLng = parseCoordinate(record.lng ?? record.longitude);
+
+    performance.venue = venueKey;
+    performance.venueKey = venueKey;
+
+    if (recordAddress && recordAddress !== '정보 없음') {
+        const currentAddressIsWeak =
+            !hasDetailedAddress(performance.address) ||
+            compactComparable(performance.address) === compactComparable(performance.venue) ||
+            hasGenericFallbackCoordinate(performance);
+
+        if (currentAddressIsWeak || hasDetailedAddress(recordAddress)) {
+            performance.address = recordAddress;
+        }
+    }
+
+    if (typeof recordLat === 'number' && typeof recordLng === 'number') {
+        const sameAddressAsRecord = compactComparable(performance.address) === compactComparable(recordAddress);
+        if (venueChanged || sameAddressAsRecord || !performance.lat || !performance.lng || hasGenericFallbackCoordinate(performance)) {
+            performance.lat = recordLat;
+            performance.lng = recordLng;
+        }
+    } else if (hasGenericFallbackCoordinate(performance)) {
+        performance.lat = undefined;
+        performance.lng = undefined;
+    }
+
+    if (typeof record.district === 'string' && record.district.trim()) {
+        performance.district = record.district.trim();
+    }
+    if (typeof record.mapped_region_id === 'string' && record.mapped_region_id.trim()) {
+        performance.region = record.mapped_region_id.trim();
+    }
+
+    performance.locationKey = undefined;
 }
 
 function shortenText(value?: string, maxLength = 80) {
@@ -306,6 +423,171 @@ function normalizeDuplicateTimeFields(items: Performance[]) {
         }
 
         performance.operatingHours = '';
+    });
+}
+
+function isWeakScheduleLabel(value?: string) {
+    const label = compactText(value).toUpperCase();
+    if (!label) return true;
+    return label.includes('상시') || label.includes('OPEN RUN') || label.includes('오픈런') || label.includes('연중');
+}
+
+function toKoreanMiddayDate(year: number, month: number, day: number) {
+    return new Date(`${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T12:00:00+09:00`);
+}
+
+function normalizeYearToken(value: string | undefined, fallbackYear: number) {
+    if (!value) return fallbackYear;
+    const year = Number.parseInt(value, 10);
+    if (!Number.isFinite(year)) return fallbackYear;
+    return year < 100 ? 2000 + year : year;
+}
+
+function extractTitleScheduleRange(title: string, referenceDate: Date) {
+    const normalized = compactText(title);
+    const match = normalized.match(/(?:^|[^\d])(?:(20\d{2}|\d{2})[.\/-])?(\d{1,2})[.\/-](\d{1,2})\s*[~～]\s*(?:(20\d{2}|\d{2})[.\/-])?(\d{1,2})[.\/-](\d{1,2})(?!\d)/);
+    if (!match) return null;
+
+    const referenceYear = referenceDate.getFullYear();
+    const referenceMonth = referenceDate.getMonth() + 1;
+    const startYearToken = match[1];
+    const startMonth = Number.parseInt(match[2], 10);
+    const startDay = Number.parseInt(match[3], 10);
+    const endYearToken = match[4];
+    const endMonth = Number.parseInt(match[5], 10);
+    const endDay = Number.parseInt(match[6], 10);
+    if (!startMonth || !startDay || !endMonth || !endDay) return null;
+
+    let startYear = normalizeYearToken(startYearToken, referenceYear);
+    let endYear = normalizeYearToken(endYearToken, startYear);
+
+    if (!startYearToken && !endYearToken) {
+        startYear = referenceYear;
+        endYear = referenceYear;
+
+        if (endMonth < startMonth) {
+            if (referenceMonth <= endMonth) {
+                startYear = referenceYear - 1;
+                endYear = referenceYear;
+            } else if (referenceMonth >= startMonth) {
+                startYear = referenceYear;
+                endYear = referenceYear + 1;
+            } else {
+                // Between the winter end and the next winter start, the range refers to the finished season.
+                startYear = referenceYear - 1;
+                endYear = referenceYear;
+            }
+        }
+    } else if (!endYearToken && endMonth < startMonth) {
+        endYear = startYear + 1;
+    }
+
+    const start = toKoreanMiddayDate(startYear, startMonth, startDay);
+    const end = toKoreanMiddayDate(endYear, endMonth, endDay);
+    if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return null;
+    if (end < start) return null;
+
+    return { start, end };
+}
+
+function extractMonthScheduleRange(value: string, referenceDate: Date) {
+    const normalized = compactText(value);
+    const match = normalized.match(/(?:(20\d{2}|\d{2})년\s*)?(\d{1,2})월\s*[~～]\s*(?:(20\d{2}|\d{2})년\s*)?(\d{1,2})월/);
+    if (!match) return null;
+
+    const referenceYear = referenceDate.getFullYear();
+    const referenceMonth = referenceDate.getMonth() + 1;
+    const startYearToken = match[1];
+    const startMonth = Number.parseInt(match[2], 10);
+    const endYearToken = match[3];
+    const endMonth = Number.parseInt(match[4], 10);
+    if (!startMonth || !endMonth) return null;
+
+    let startYear = normalizeYearToken(startYearToken, referenceYear);
+    let endYear = normalizeYearToken(endYearToken, startYear);
+
+    if (!startYearToken && !endYearToken) {
+        startYear = referenceYear;
+        endYear = referenceYear;
+        if (endMonth < startMonth) {
+            if (referenceMonth <= endMonth) {
+                startYear = referenceYear - 1;
+                endYear = referenceYear;
+            } else if (referenceMonth >= startMonth) {
+                startYear = referenceYear;
+                endYear = referenceYear + 1;
+            } else {
+                startYear = referenceYear - 1;
+                endYear = referenceYear;
+            }
+        }
+    } else if (!endYearToken && endMonth < startMonth) {
+        endYear = startYear + 1;
+    }
+
+    const endDay = new Date(endYear, endMonth, 0).getDate();
+    const start = toKoreanMiddayDate(startYear, startMonth, 1);
+    const end = toKoreanMiddayDate(endYear, endMonth, endDay);
+    if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return null;
+    if (end < start) return null;
+
+    return { start, end };
+}
+
+function formatDateForUnifiedInput(date: Date) {
+    return [
+        date.getFullYear(),
+        String(date.getMonth() + 1).padStart(2, '0'),
+        String(date.getDate()).padStart(2, '0'),
+    ].join('.');
+}
+
+function applyTitleScheduleMetadata(items: Performance[], referenceDate: Date) {
+    items.forEach((performance) => {
+        const scheduleText = [performance.dateRaw, performance.date, performance.title].filter(Boolean).join(' ');
+        const monthWindow = extractMonthScheduleRange(scheduleText, referenceDate);
+        if (monthWindow) {
+            const rawRange = `${formatDateForUnifiedInput(monthWindow.start)} ~ ${formatDateForUnifiedInput(monthWindow.end)}`;
+            performance.dateRaw = rawRange;
+            performance.date = formatUnifiedDate(rawRange);
+            return;
+        }
+
+        if (!isWeakScheduleLabel(performance.date) && !isWeakScheduleLabel(performance.dateRaw)) return;
+
+        const titleWindow = extractTitleScheduleRange(performance.title, referenceDate);
+        if (!titleWindow) return;
+
+        const rawRange = `${formatDateForUnifiedInput(titleWindow.start)} ~ ${formatDateForUnifiedInput(titleWindow.end)}`;
+        performance.dateRaw = rawRange;
+        performance.date = formatUnifiedDate(rawRange);
+    });
+}
+
+function repairBranchVenueAssignments(items: Performance[], venues: Record<string, VenueRecord>) {
+    items.forEach((performance) => {
+        const haystack = compactComparable([performance.title, performance.venue].filter(Boolean).join(' '));
+        const rule = KNOWN_BRANCH_VENUE_RULES.find((candidate) => (
+            venues[candidate.venueKey] &&
+            candidate.tokens.every((token) => haystack.includes(compactComparable(token)))
+        ));
+
+        if (rule) {
+            applyVenueRecordToPerformance(performance, rule.venueKey, venues[rule.venueKey]);
+            return;
+        }
+
+        const exactRecord = venues[performance.venue];
+        if (!exactRecord) return;
+
+        const shouldHydrateFromDictionary =
+            hasGenericFallbackCoordinate(performance) ||
+            !hasDetailedAddress(performance.address) ||
+            compactComparable(performance.address) === compactComparable(performance.venue);
+
+        if (shouldHydrateFromDictionary) {
+            applyVenueRecordToPerformance(performance, performance.venue, exactRecord);
+        }
     });
 }
 
@@ -650,6 +932,9 @@ async function generate() {
         const preferPublicData = shouldPreferPublicBaseline();
         console.log(`[Build Strategy] Input baseline: ${preferPublicData ? 'public/data' : 'src/data raw sources'}`);
         const performances = await getAllPerformances({ preferPublicData });
+        const sourceVenues: Record<string, VenueRecord> = fs.existsSync(path.join(process.cwd(), 'src', 'data', 'venues.json'))
+            ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'venues.json'), 'utf8'))
+            : {};
 
         // [Data Quality Override]
         // Manual fixes for specific items requested by user
@@ -698,6 +983,8 @@ async function generate() {
         // Use a safe buffer (e.g., allow items ending yesterday to show until today's build runs, but 1 month ago is definitely out)
         const today = new Date();
         today.setHours(0, 0, 0, 0);
+        applyTitleScheduleMetadata(performances, today);
+        repairBranchVenueAssignments(performances, sourceVenues);
 
         const movieCount = 0;
         let ottCount = 0;
@@ -824,9 +1111,6 @@ async function generate() {
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformancesForHomeFeed(activePerformances);
-        const sourceVenues = fs.existsSync(path.join(process.cwd(), 'src', 'data', 'venues.json'))
-            ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'venues.json'), 'utf8'))
-            : {};
         const preliminaryVenueCanonicalizationReport = buildVenueCanonicalizationReport(
             sorted as Performance[],
             sourceVenues,
