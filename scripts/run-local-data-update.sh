@@ -115,6 +115,7 @@ npx tsx scripts/prune-data.ts
 npm run generate-data
 npm run validate:content
 npm run validate:locations
+npm run validate:display
 
 git add src/data public/data public/version.txt public/images/posters
 

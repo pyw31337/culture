@@ -143,8 +143,8 @@ function getSeasonalPenalty(performance: Pick<Performance, 'title' | 'venue' | '
 
     if (includesAny(text, WINTER_KEYWORDS) && ![11, 12, 1, 2, 3].includes(month)) {
         penalty -= 140;
-        if (text.includes('25/26') || text.includes('시즌권')) {
-            penalty -= 30;
+        if (text.includes('25/26') || text.includes('시즌권') || text.includes('리프트권')) {
+            penalty -= 80;
         }
     }
 
@@ -161,6 +161,18 @@ function getSeasonalPenalty(performance: Pick<Performance, 'title' | 'venue' | '
     }
 
     return penalty;
+}
+
+function getFreshCollectionBoost(performance: Performance, referenceDate: Date) {
+    if (!performance.statsCollectedAt) return 0;
+
+    const collectedAt = new Date(performance.statsCollectedAt);
+    if (Number.isNaN(collectedAt.getTime())) return 0;
+
+    const ageDays = Math.max(0, getDateDiffDays(referenceDate, collectedAt));
+    if (ageDays <= 1) return 8;
+    if (ageDays <= 3) return 4;
+    return 0;
 }
 
 export function getFeedScore(performance: Performance, referenceDate: Date) {
@@ -222,6 +234,7 @@ export function getFeedScore(performance: Performance, referenceDate: Date) {
         score += 8;
     }
 
+    score += getFreshCollectionBoost(performance, referenceDate);
     score += getSeasonalPenalty(performance, referenceDate);
 
     return score;
@@ -298,7 +311,41 @@ export function sortPerformancesForHomeFeed(performances: Performance[]) {
 
 export function sortPerformancesForCategoryFeed(performances: Performance[]) {
     const referenceDate = getKoreanReferenceDate();
-    return rankPerformancesByDiscoveryScore(performances, referenceDate);
+    const ranked = rankPerformancesByDiscoveryScore(performances, referenceDate);
+    const earlyWindow = Math.min(36, ranked.length);
+    const selected: Performance[] = [];
+    const selectedIds = new Set<string>();
+    const venueCounts = new Map<string, number>();
+    const sourceCounts = new Map<string, number>();
+
+    for (const item of ranked) {
+        if (selected.length >= earlyWindow) break;
+
+        const venueIdentity = item.locationKey || item.venueKey || item.venue;
+        const sourceIdentity = item.source || 'unknown';
+        const sameVenueCount = venueCounts.get(venueIdentity) || 0;
+        const sameSourceCount = sourceCounts.get(sourceIdentity) || 0;
+
+        if (selected.length < 12 && sameVenueCount >= 1) continue;
+        if (selected.length < 24 && sameVenueCount >= 2) continue;
+        if (selected.length < 18 && sameSourceCount >= 8) continue;
+
+        selected.push(item);
+        selectedIds.add(item.id);
+        venueCounts.set(venueIdentity, sameVenueCount + 1);
+        sourceCounts.set(sourceIdentity, sameSourceCount + 1);
+    }
+
+    if (selected.length < earlyWindow) {
+        for (const item of ranked) {
+            if (selected.length >= earlyWindow) break;
+            if (selectedIds.has(item.id)) continue;
+            selected.push(item);
+            selectedIds.add(item.id);
+        }
+    }
+
+    return [...selected, ...ranked.filter((item) => !selectedIds.has(item.id))];
 }
 
 export function getFeaturedPerformances(performances: Performance[], limit = 18) {

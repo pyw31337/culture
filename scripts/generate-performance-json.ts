@@ -15,6 +15,7 @@ import { getGenreFilterFromSlug } from '../src/lib/genre-availability';
 import { VALID_GENRE_SLUGS } from '../src/lib/constants';
 import type { Performance } from '../src/types';
 import { analyzeContentQuality } from './utils/content-quality';
+import { buildDisplayIntegrityReport } from './utils/display-integrity';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -687,6 +688,13 @@ async function generate() {
                 return fs.existsSync(path.join(process.cwd(), 'public', normalized));
             },
         });
+        const displayIntegritySummary = buildDisplayIntegrityReport(
+            pruned as Performance[],
+            fs.existsSync(path.join(process.cwd(), 'src', 'data', 'venues.json'))
+                ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'venues.json'), 'utf8'))
+                : {},
+            new Date().toISOString(),
+        );
         const { sourceSummaries, sourceHealthSummary } = buildSourceSummaries(sourceCounts);
         const buildInfo = {
             generatedAt: new Date().toISOString(),
@@ -695,11 +703,14 @@ async function generate() {
             sourceCounts,
             genreCounts,
             qualitySummary,
+            displayIntegritySummary,
             sourceSummaries,
             sourceHealthSummary,
         };
         fs.writeFileSync(buildInfoPath, JSON.stringify(buildInfo));
         console.log(`Updated build-info.json to ${buildInfoPath}`);
+        fs.writeFileSync(path.join(dir, 'data-integrity-report.json'), JSON.stringify(displayIntegritySummary));
+        console.log(`Updated data-integrity-report.json to ${path.join(dir, 'data-integrity-report.json')}`);
 
         // [New: Sync critical data files to public/data]
         const dataDir = path.join(process.cwd(), 'src', 'data');

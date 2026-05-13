@@ -44,6 +44,8 @@ function ImageWithFallbackInner({
     };
 
     const isUnoptimized = errorStage >= 1 || !!(originalSrc && originalSrc.startsWith('/'));
+    const imageQuality = typeof props.quality === 'number' ? props.quality : 70;
+    const imageLoading = props.priority ? undefined : (props.loading ?? 'lazy');
 
     return (
         <>
@@ -65,6 +67,8 @@ function ImageWithFallbackInner({
                 {...props}
                 src={imgSrc || fallbackSrc}
                 alt={alt}
+                loading={imageLoading}
+                decoding={props.decoding ?? 'async'}
                 onError={handleError}
                 onLoad={() => setIsLoaded(true)}
                 unoptimized={isUnoptimized}
@@ -73,7 +77,7 @@ function ImageWithFallbackInner({
                     "transition-opacity duration-500",
                     isLoaded ? "opacity-100" : "opacity-0"
                 )}
-                quality={75}
+                quality={imageQuality}
                 referrerPolicy="no-referrer"
                 style={{ ...props.style }}
             />
@@ -89,7 +93,8 @@ function ImageWithFallback({
     optimizationWidth = 400,
     ...props
 }: ImageWithFallbackProps) {
-    const optimizedSrc = useMemo(() => getOptimizedUrl(src, optimizationWidth), [src, optimizationWidth]);
+    const imageQuality = typeof props.quality === 'number' ? props.quality : 70;
+    const optimizedSrc = useMemo(() => getOptimizedUrl(src, optimizationWidth, imageQuality), [src, optimizationWidth, imageQuality]);
     const imageKey = useMemo(() => `${optimizedSrc}|${backupSrc || ''}|${fallbackSrc}`, [backupSrc, fallbackSrc, optimizedSrc]);
 
     return (

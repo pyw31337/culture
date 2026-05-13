@@ -57,14 +57,24 @@ HighlightText.displayName = 'HighlightText';
 
 function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
-    const [showActions, setShowActions] = useState(false);
+    const [canUseHoverEffects, setCanUseHoverEffects] = useState(false);
 
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
     const dDay = getDdayLabel(perf);
 
+    useEffect(() => {
+        const query = window.matchMedia('(hover: hover) and (pointer: fine)');
+        const update = () => setCanUseHoverEffects(query.matches);
+
+        update();
+        query.addEventListener('change', update);
+        return () => query.removeEventListener('change', update);
+    }, []);
+
     const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!canUseHoverEffects) return;
         if (!cardRef.current || !glareRef.current) return;
 
         const rect = cardRef.current.getBoundingClientRect();
@@ -80,15 +90,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
         glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
         glareRef.current.style.opacity = '1';
-    }, []);
+    }, [canUseHoverEffects]);
 
     const handleMouseLeave = useCallback(() => {
+        if (!canUseHoverEffects) return;
         if (!cardRef.current || !glareRef.current) return;
 
         cardRef.current.style.transition = 'transform 0.3s ease-out';
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
         glareRef.current.style.opacity = '0';
-    }, []);
+    }, [canUseHoverEffects]);
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
@@ -194,7 +205,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         optimizationWidth={480}
                                         alt={perf.title}
                                         fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                        className="object-cover transition-transform duration-500 sm:group-hover:scale-110"
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         loading="lazy"
                                         referrerPolicy="no-referrer"
@@ -237,7 +248,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 {enableActions && (
                                     <div className={clsx(
                                         "absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex gap-2 items-center justify-between transition-transform duration-300 ease-out",
-                                        "translate-y-[100%] group-hover:translate-y-0"
+                                        "translate-y-0 sm:translate-y-[100%] sm:group-hover:translate-y-0"
                                     )}>
                                         <button
                                             onClick={async (e) => {
@@ -309,7 +320,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 optimizationWidth={480}
                                 alt={perf.title}
                                 fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-[15px]"
+                                className="object-cover transition-transform duration-500 sm:group-hover:scale-110 rounded-[15px]"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading="lazy"
                                 referrerPolicy="no-referrer"
@@ -342,7 +353,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                             <div className={clsx(
                                 "absolute inset-x-0 bottom-0 z-30 flex flex-col justify-end transition-transform duration-300 ease-out will-change-transform",
-                                enableActions ? (showActions ? "translate-y-0" : "translate-y-[82px] group-hover:translate-y-0") : "translate-y-0"
+                                enableActions ? "translate-y-0 sm:translate-y-[82px] sm:group-hover:translate-y-0" : "translate-y-0"
                             )}>
                                 <div className="relative z-30 w-full p-4 pb-4">
                                     <div className="flex flex-wrap gap-2 mb-1.5 items-center">

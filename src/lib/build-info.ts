@@ -15,6 +15,20 @@ export interface DataQualitySummary {
     };
 }
 
+export interface DisplayIntegritySummary {
+    checkedAt: string;
+    status: 'pass' | 'warn' | 'fail';
+    itemCount: number;
+    blockingIssueCount: number;
+    locationMismatchCount: number;
+    bracketLocationMismatchCount: number;
+    suspiciousFreePriceCount: number;
+    unknownPriceCount: number;
+    invalidDateCount: number;
+    duplicateTimeCount: number;
+    outOfSeasonCount: number;
+}
+
 export type DataSourceFreshness = 'fresh' | 'aging' | 'stale' | 'offseason' | 'unknown';
 
 export interface DataSourceSummary {
@@ -44,6 +58,7 @@ export interface DataBuildInfo {
     sourceCounts: Record<string, number>;
     genreCounts: Record<string, number>;
     qualitySummary: DataQualitySummary | null;
+    displayIntegritySummary?: DisplayIntegritySummary | null;
     sourceSummaries: DataSourceSummary[];
     sourceHealthSummary: DataSourceHealthSummary | null;
 }

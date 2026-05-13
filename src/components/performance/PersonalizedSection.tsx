@@ -149,6 +149,7 @@ export default function PersonalizedSection({
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 768px) 220px, 260px"
+                                    loading="lazy"
                                     draggable={false}
                                 />
 

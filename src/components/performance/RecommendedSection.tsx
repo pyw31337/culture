@@ -74,8 +74,10 @@ export default function RecommendedSection({
     useEffect(() => {
         if (recommendedItems && recommendedItems.length > 0) {
             const ranked = [...recommendedItems].sort((a, b) => {
-                const scoreA = (activity.itemClicks?.[a.id] || 0) * 20 + getBaseScore(a.id);
-                const scoreB = (activity.itemClicks?.[b.id] || 0) * 20 + getBaseScore(b.id);
+                const clickPenaltyA = Math.min(activity.itemClicks?.[a.id] || 0, 5) * 16;
+                const clickPenaltyB = Math.min(activity.itemClicks?.[b.id] || 0, 5) * 16;
+                const scoreA = getBaseScore(a.id) - clickPenaltyA;
+                const scoreB = getBaseScore(b.id) - clickPenaltyB;
                 return scoreB - scoreA;
             });
             setRandomRecs(ranked.slice(0, 9));
@@ -268,6 +270,7 @@ export default function RecommendedSection({
                                         fill
                                         className="object-cover pointer-events-none"
                                         sizes="(max-width: 768px) 200px, 260px"
+                                        loading="lazy"
                                         draggable={false}
                                     />
 

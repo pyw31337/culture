@@ -119,6 +119,21 @@ export default function StatusPage() {
 
     const availableGenreCount = getAvailableGenreCount(buildInfo.genreCounts);
     const qualityIssueCount = getQualityIssueCount(buildInfo.qualitySummary);
+    const displayIntegritySummary = buildInfo.displayIntegritySummary;
+    const displayIntegrityWarningCount = displayIntegritySummary
+        ? displayIntegritySummary.bracketLocationMismatchCount +
+            displayIntegritySummary.unknownPriceCount +
+            displayIntegritySummary.invalidDateCount +
+            displayIntegritySummary.duplicateTimeCount +
+            displayIntegritySummary.outOfSeasonCount
+        : 0;
+    const displayIntegrityStatusLabel = displayIntegritySummary
+        ? displayIntegritySummary.blockingIssueCount > 0
+            ? `표시 정합성 차단 ${displayIntegritySummary.blockingIssueCount}건`
+            : displayIntegrityWarningCount > 0
+                ? `표시 정합성 참고 ${displayIntegrityWarningCount}건`
+                : '표시 정합성 통과'
+        : '표시 정합성 점검 준비 중';
     const sourceHealthSummary = buildInfo.sourceHealthSummary;
     const sourceOverviewText = sourceHealthSummary
         ? [
@@ -190,6 +205,14 @@ export default function StatusPage() {
                                 icon={buildInfo.qualitySummary?.status === 'warn' ? <ShieldAlert className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
                             />
                             <SnapshotLine
+                                label="표시 정합성"
+                                value={displayIntegrityStatusLabel}
+                                detail={displayIntegritySummary
+                                    ? `위치 충돌 ${displayIntegritySummary.locationMismatchCount}건 · 무료 오표기 의심 ${displayIntegritySummary.suspiciousFreePriceCount}건 · 시간 중복 ${displayIntegritySummary.duplicateTimeCount}건`
+                                    : '장소, 가격, 날짜, 시간 중복을 표시 기준으로 점검합니다.'}
+                                icon={displayIntegritySummary?.blockingIssueCount ? <ShieldAlert className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
                                 label="갱신 시각"
                                 value={formatKoreanDateTime(buildInfo.generatedAt)}
                                 detail="빌드에 반영된 최신 데이터 생성 시각입니다."
@@ -224,6 +247,15 @@ export default function StatusPage() {
                                     {buildInfo.qualitySummary?.status === 'warn'
                                         ? `배포 전 보강이 필요한 항목 ${qualityIssueCount}건이 감지되었습니다.`
                                         : '핵심 링크, 설명, 이미지 검증을 통과한 상태입니다.'}
+                                </p>
+                            </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">표시 정합성</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{displayIntegrityStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">
+                                    {displayIntegritySummary
+                                        ? `장소/주소 충돌, 무료 뱃지 오표기, 날짜 해석, 시간 중복, 비시즌 노출을 함께 점검합니다. 차단 이슈는 ${displayIntegritySummary.blockingIssueCount}건입니다.`
+                                        : '다음 데이터 생성부터 표시 정합성 요약이 함께 노출됩니다.'}
                                 </p>
                             </div>
                             <div>

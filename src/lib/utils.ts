@@ -1,7 +1,7 @@
 import { format, isValid, parse } from 'date-fns';
 import { ko } from 'date-fns/locale';
 
-export const getOptimizedUrl = (url: string, width: number = 400) => {
+export const getOptimizedUrl = (url: string, width: number = 400, quality: number = 70) => {
     if (!url) return '';
     // TimeTicket blocks wsrv.nl (403 Forbidden), skipping optimization as requested
     if (url.includes('timeticket.co.kr')) return url;
@@ -21,7 +21,7 @@ export const getOptimizedUrl = (url: string, width: number = 400) => {
     try {
         // use wsrv.nl for image optimization
         const encodedUrl = encodeURIComponent(url);
-        return `https://wsrv.nl/?url=${encodedUrl}&w=${width}&q=78&output=webp`;
+        return `https://wsrv.nl/?url=${encodedUrl}&w=${width}&q=${quality}&output=webp`;
     } catch {
         return url;
     }

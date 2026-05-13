@@ -82,8 +82,8 @@ const runtimeCaching: RuntimeCachingEntry[] = [
     options: {
       cacheName: 'static-image-assets',
       expiration: {
-        maxEntries: 64,
-        maxAgeSeconds: 24 * 60 * 60,
+        maxEntries: 240,
+        maxAgeSeconds: 7 * 24 * 60 * 60,
       },
     },
   },

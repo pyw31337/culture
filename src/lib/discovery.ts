@@ -306,7 +306,8 @@ export function buildPersonalizedRecommendations(
         const genreBoost = (genreAffinityWeights[performance.genre] || 0) * 4;
         const recencyBoost = isToday(performance, referenceDate) ? 20 : isThisWeekend(performance, referenceDate) ? 14 : 0;
         const endingBoost = isEndingSoon(performance, referenceDate) ? 10 : 0;
-        const clickPenalty = Math.min(signals.activity.itemClicks?.[performance.id] || 0, 4) * 4;
+        const clickPenalty = Math.min(signals.activity.itemClicks?.[performance.id] || 0, 4) * 5;
+        const viewedPenalty = signals.activity.viewedItems?.includes(performance.id) ? 10 : 0;
         const likeBoost = signals.likedIds.includes(performance.id) ? 8 : 0;
         const basedOnLikedVenue = signals.likedIds.reduce((score, id) => {
             const liked = performanceById.get(id);
@@ -326,7 +327,8 @@ export function buildPersonalizedRecommendations(
                 endingBoost +
                 likeBoost +
                 basedOnLikedVenue -
-                clickPenalty,
+                clickPenalty -
+                viewedPenalty,
         };
     });
 
@@ -372,9 +374,40 @@ export function buildCuratedDiscoveryItems(
 ) {
     const referenceDate = getKoreanReferenceDate();
     const genreAffinityWeights = buildGenreAffinityWeights(performances, signals.likedIds, signals.activity);
-    return sortPerformancesForHomeFeed(performances)
-        .slice(0, limit)
-        .map((performance) => decoratePerformanceForDiscovery(performance, signals, genreAffinityWeights, referenceDate));
+    const ranked = sortPerformancesForHomeFeed(performances);
+    const selected: Performance[] = [];
+    const seen = new Set<string>();
+    const genreCounts = new Map<string, number>();
+    const venueCounts = new Map<string, number>();
+
+    for (const performance of ranked) {
+        if (selected.length >= limit) break;
+        if (seen.has(performance.id)) continue;
+
+        const venueIdentity = performance.locationKey || performance.venueKey || performance.venue;
+        const sameGenreCount = genreCounts.get(performance.genre) || 0;
+        const sameVenueCount = venueCounts.get(venueIdentity) || 0;
+
+        if (selected.length < 8 && sameGenreCount >= 1) continue;
+        if (selected.length < 10 && sameVenueCount >= 1) continue;
+        if (selected.length < 16 && sameGenreCount >= 2) continue;
+
+        selected.push(performance);
+        seen.add(performance.id);
+        genreCounts.set(performance.genre, sameGenreCount + 1);
+        venueCounts.set(venueIdentity, sameVenueCount + 1);
+    }
+
+    if (selected.length < limit) {
+        for (const performance of ranked) {
+            if (selected.length >= limit) break;
+            if (seen.has(performance.id)) continue;
+            selected.push(performance);
+            seen.add(performance.id);
+        }
+    }
+
+    return selected.map((performance) => decoratePerformanceForDiscovery(performance, signals, genreAffinityWeights, referenceDate));
 }
 
 export function getDiscoveryContextById(contextId: DiscoveryContextId) {

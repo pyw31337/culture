@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main # Trigger on push to main (UI/Code changes)
+    paths-ignore:
+      - 'README.md'
+      - 'ERROR_TRACKER.md'
+      - 'logs/**'
+      - 'ops/**'
+      - 'docs/**'
+      - '.github/ISSUE_TEMPLATE/**'
   workflow_dispatch:
   workflow_call: # Allow calling from other workflows (like daily-update)
     inputs:
@@ -63,6 +70,7 @@ jobs:
         run: |
           npm run validate:content
           npm run validate:locations
+          npm run validate:display
 
       - name: Build Website
         env:

@@ -200,6 +200,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                         fill
                                         className="object-cover pointer-events-none"
                                         sizes="(max-width: 768px) 200px, 260px"
+                                        loading="lazy"
                                         draggable={false}
                                         style={{ zIndex: 2 }}
                                     />
