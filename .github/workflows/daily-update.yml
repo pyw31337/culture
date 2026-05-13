@@ -5,9 +5,6 @@ on:
     - cron: '0 6 * * *' # 15:00 KST fallback. Local launchd owns the 00:00 KST primary update.
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 concurrency:
   group: daily-data-update
   cancel-in-progress: true
@@ -22,7 +19,7 @@ jobs:
       deployed_sha: ${{ steps.commit_changes.outputs.deployed_sha || '' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Check local update freshness
         id: freshness
@@ -83,14 +80,14 @@ jobs:
 
       - name: Setup Node.js
         if: steps.freshness.outputs.should_run == 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Cache Playwright Chromium
         if: steps.freshness.outputs.should_run == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
