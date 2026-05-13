@@ -16,6 +16,8 @@ import { VALID_GENRE_SLUGS } from '../src/lib/constants';
 import type { Performance } from '../src/types';
 import { analyzeContentQuality } from './utils/content-quality';
 import { buildDisplayIntegrityReport } from './utils/display-integrity';
+import { buildSourceFunnelReport } from './utils/source-funnel';
+import { buildVenueCanonicalizationReport } from './utils/venue-canonicalization';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -695,6 +697,15 @@ async function generate() {
                 : {},
             new Date().toISOString(),
         );
+        const sourceFunnelReport = buildSourceFunnelReport(pruned as Performance[], new Date().toISOString());
+        const sourceVenues = fs.existsSync(path.join(process.cwd(), 'src', 'data', 'venues.json'))
+            ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'venues.json'), 'utf8'))
+            : {};
+        const venueCanonicalizationReport = buildVenueCanonicalizationReport(
+            pruned as Performance[],
+            sourceVenues,
+            new Date().toISOString(),
+        );
         const { sourceSummaries, sourceHealthSummary } = buildSourceSummaries(sourceCounts);
         const buildInfo = {
             generatedAt: new Date().toISOString(),
@@ -706,11 +717,17 @@ async function generate() {
             displayIntegritySummary,
             sourceSummaries,
             sourceHealthSummary,
+            sourceFunnelSummary: sourceFunnelReport.summary,
+            venueCanonicalizationSummary: venueCanonicalizationReport.summary,
         };
         fs.writeFileSync(buildInfoPath, JSON.stringify(buildInfo));
         console.log(`Updated build-info.json to ${buildInfoPath}`);
         fs.writeFileSync(path.join(dir, 'data-integrity-report.json'), JSON.stringify(displayIntegritySummary));
         console.log(`Updated data-integrity-report.json to ${path.join(dir, 'data-integrity-report.json')}`);
+        fs.writeFileSync(path.join(dir, 'source-funnel-report.json'), JSON.stringify(sourceFunnelReport));
+        console.log(`Updated source-funnel-report.json to ${path.join(dir, 'source-funnel-report.json')}`);
+        fs.writeFileSync(path.join(dir, 'venue-canonicalization-report.json'), JSON.stringify(venueCanonicalizationReport));
+        console.log(`Updated venue-canonicalization-report.json to ${path.join(dir, 'venue-canonicalization-report.json')}`);
 
         // [New: Sync critical data files to public/data]
         const dataDir = path.join(process.cwd(), 'src', 'data');

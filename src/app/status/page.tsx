@@ -7,6 +7,8 @@ import {
     CalendarClock,
     CircleCheckBig,
     Database,
+    GitBranch,
+    MapPinned,
     ShieldAlert,
     ShieldCheck,
 } from 'lucide-react';
@@ -143,6 +145,24 @@ export default function StatusPage() {
             sourceHealthSummary.offseasonCount > 0 ? `비시즌 ${sourceHealthSummary.offseasonCount}개` : null,
         ].filter(Boolean).join(' · ')
         : '수집 소스 요약을 준비 중입니다.';
+    const sourceFunnelSummary = buildInfo.sourceFunnelSummary;
+    const sourceFunnelStatusLabel = sourceFunnelSummary
+        ? sourceFunnelSummary.status === 'warn'
+            ? `퍼널 점검 ${sourceFunnelSummary.highLossSourceCount + sourceFunnelSummary.noFinalOutputSourceCount + sourceFunnelSummary.unregisteredDataFileCount}건`
+            : '소스 퍼널 정상'
+        : '소스 퍼널 점검 준비 중';
+    const sourceFunnelDetail = sourceFunnelSummary
+        ? `raw ${sourceFunnelSummary.rawItemCount.toLocaleString()}건 → 운영 ${sourceFunnelSummary.finalItemCount.toLocaleString()}건 · 활성 소스 ${sourceFunnelSummary.activeSourceCount}개`
+        : 'raw 수집 데이터가 최종 산출물에 어떻게 반영되는지 추적합니다.';
+    const venueCanonicalizationSummary = buildInfo.venueCanonicalizationSummary;
+    const venueCanonicalizationStatusLabel = venueCanonicalizationSummary
+        ? venueCanonicalizationSummary.status === 'warn'
+            ? `공연장 표준화 후보 ${venueCanonicalizationSummary.highConfidenceMergeCandidateCount + venueCanonicalizationSummary.reviewCandidateCount}건`
+            : '공연장 표준화 정상'
+        : '공연장 표준화 점검 준비 중';
+    const venueCanonicalizationDetail = venueCanonicalizationSummary
+        ? `사용 공연장 ${venueCanonicalizationSummary.usedVenueCount.toLocaleString()}개 · 고신뢰 통합 ${venueCanonicalizationSummary.highConfidenceMergeCandidateCount}건 · 좌표 재확인 ${venueCanonicalizationSummary.coordinateRiskGroupCount}건`
+        : '공식명칭, 주소, 좌표, 하위홀 관계를 함께 점검합니다.';
 
     const sortedSources = [...buildInfo.sourceSummaries].sort((a, b) => {
         const order = {
@@ -213,6 +233,18 @@ export default function StatusPage() {
                                 icon={displayIntegritySummary?.blockingIssueCount ? <ShieldAlert className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
                             />
                             <SnapshotLine
+                                label="소스 퍼널"
+                                value={sourceFunnelStatusLabel}
+                                detail={sourceFunnelDetail}
+                                icon={sourceFunnelSummary?.status === 'warn' ? <GitBranch className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
+                                label="공연장 표준화"
+                                value={venueCanonicalizationStatusLabel}
+                                detail={venueCanonicalizationDetail}
+                                icon={venueCanonicalizationSummary?.status === 'warn' ? <MapPinned className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
                                 label="갱신 시각"
                                 value={formatKoreanDateTime(buildInfo.generatedAt)}
                                 detail="빌드에 반영된 최신 데이터 생성 시각입니다."
@@ -258,12 +290,23 @@ export default function StatusPage() {
                                         : '다음 데이터 생성부터 표시 정합성 요약이 함께 노출됩니다.'}
                                 </p>
                             </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">데이터 퍼널</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{sourceFunnelStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{sourceFunnelDetail}</p>
+                            </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">공연장/좌표</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{venueCanonicalizationStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{venueCanonicalizationDetail}</p>
+                            </div>
                             <div>
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">운영 원칙</p>
                                 <div className="mt-2 space-y-2 text-sm leading-6 text-slate-300 light:text-slate-600">
                                     <p>빈 카테고리는 메뉴와 사이트맵에서 함께 숨깁니다.</p>
                                     <p>원본이 비어도 링크·설명·포스터는 가능한 범위에서 자동 복구합니다.</p>
                                     <p>비시즌 스포츠는 오류가 아니라 의도된 숨김 상태로 구분합니다.</p>
+                                    <p>공연장은 좌표만 보고 합치지 않고 공식 placeId와 도로명주소를 우선합니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -347,6 +390,39 @@ export default function StatusPage() {
                                 <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
                                     <span>깨진 로컬 포스터</span>
                                     <strong>{buildInfo.qualitySummary?.brokenLocalImageCount ?? 0}건</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className="rounded-[2rem] border border-white/10 bg-white/6 p-6 backdrop-blur-xl light:border-slate-200 light:bg-white/85">
+                            <h2 className="text-xl font-black">정합성 감사 현황</h2>
+                            <div className="mt-5 space-y-3 text-sm">
+                                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <span>미등록 수집 데이터</span>
+                                        <strong>{sourceFunnelSummary?.unregisteredDataFileCount ?? 0}개</strong>
+                                    </div>
+                                    <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
+                                        수집은 됐지만 운영 레지스트리에 연결되지 않은 파일을 찾습니다.
+                                    </p>
+                                </div>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <span>고신뢰 공연장 통합 후보</span>
+                                        <strong>{venueCanonicalizationSummary?.highConfidenceMergeCandidateCount ?? 0}건</strong>
+                                    </div>
+                                    <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
+                                        같은 주소와 유사 명칭을 먼저 묶고, 공식 장소 검색으로 최종 확정합니다.
+                                    </p>
+                                </div>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <span>좌표 fallback 의심</span>
+                                        <strong>{venueCanonicalizationSummary?.coordinateRiskGroupCount ?? 0}그룹</strong>
+                                    </div>
+                                    <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
+                                        여러 장소가 같은 좌표를 공유하면 자동 병합하지 않고 재검색 대상으로 분리합니다.
+                                    </p>
                                 </div>
                             </div>
                         </section>

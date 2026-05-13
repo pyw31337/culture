@@ -51,6 +51,62 @@ export interface DataSourceHealthSummary {
     unknownCount: number;
 }
 
+export interface SourceFunnelSummary {
+    checkedAt: string;
+    status: 'pass' | 'warn';
+    rawItemCount: number;
+    finalItemCount: number;
+    registeredSourceCount: number;
+    activeSourceCount: number;
+    missingRegisteredFileCount: number;
+    unregisteredDataFileCount: number;
+    workflowOnlyScraperCount: number;
+    registeredWithoutWorkflowCount: number;
+    highLossSourceCount: number;
+    noFinalOutputSourceCount: number;
+    topUnregisteredDataFiles: Array<{
+        file: string;
+        itemCount: number;
+        note: string;
+    }>;
+    topHighLossSources: Array<{
+        key: string;
+        label: string;
+        rawItemCount: number;
+        finalItemCount: number;
+        conversionRate: number;
+    }>;
+}
+
+export interface VenueCanonicalizationSummary {
+    checkedAt: string;
+    status: 'pass' | 'warn';
+    usedVenueCount: number;
+    usedPerformanceCount: number;
+    invalidCoordinateVenueCount: number;
+    missingAddressVenueCount: number;
+    exactAddressAliasCandidateCount: number;
+    parentChildCandidateCount: number;
+    coordinateNameSimilarCandidateCount: number;
+    coordinateRiskGroupCount: number;
+    highConfidenceMergeCandidateCount: number;
+    reviewCandidateCount: number;
+    externalLookupMode: 'offline-audit' | 'lookup-ready';
+    topHighConfidenceCandidates: Array<{
+        type: string;
+        reason: string;
+        groupKey: string;
+        itemCount: number;
+        usageCount: number;
+    }>;
+    topCoordinateRiskGroups: Array<{
+        reason: string;
+        groupKey: string;
+        itemCount: number;
+        usageCount: number;
+    }>;
+}
+
 export interface DataBuildInfo {
     generatedAt: string;
     version: string;
@@ -61,6 +117,8 @@ export interface DataBuildInfo {
     displayIntegritySummary?: DisplayIntegritySummary | null;
     sourceSummaries: DataSourceSummary[];
     sourceHealthSummary: DataSourceHealthSummary | null;
+    sourceFunnelSummary?: SourceFunnelSummary | null;
+    venueCanonicalizationSummary?: VenueCanonicalizationSummary | null;
 }
 
 export function getAvailableGenreCount(genreCounts?: Record<string, number>) {

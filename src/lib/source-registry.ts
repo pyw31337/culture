@@ -9,6 +9,7 @@ export interface SourceRegistryEntry {
 
 export const SOURCE_REGISTRY: SourceRegistryEntry[] = [
     { key: 'interpark', file: 'interpark.json', label: '인터파크' },
+    { key: 'yes24-exclusive', file: 'yes24-exclusive.json', label: '예스24 독점공연', freshDays: 7, staleDays: 45 },
     { key: 'timeticket', file: 'timeticket.json', label: '타임티켓' },
     { key: 'festival', file: 'festivals.json', label: '관광공사 축제' },
     { key: 'volleyball', file: 'kovo.json', label: 'KOVO', seasonal: true },

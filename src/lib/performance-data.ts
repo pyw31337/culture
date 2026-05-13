@@ -5,7 +5,10 @@ import type {
     DataQualitySummary,
     DataSourceFreshness,
     DataSourceHealthSummary,
-    DataSourceSummary
+    DataSourceSummary,
+    DisplayIntegritySummary,
+    SourceFunnelSummary,
+    VenueCanonicalizationSummary
 } from '@/lib/build-info';
 import { formatKoreanDateTime } from '@/lib/build-info';
 import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
@@ -131,6 +134,26 @@ function normalizeQualitySummary(value: unknown): DataQualitySummary | null {
     };
 }
 
+function normalizeDisplayIntegritySummary(value: unknown): DisplayIntegritySummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<DisplayIntegritySummary>;
+    const status = candidate.status === 'fail' || candidate.status === 'warn' ? candidate.status : 'pass';
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        status,
+        itemCount: typeof candidate.itemCount === 'number' ? candidate.itemCount : 0,
+        blockingIssueCount: typeof candidate.blockingIssueCount === 'number' ? candidate.blockingIssueCount : 0,
+        locationMismatchCount: typeof candidate.locationMismatchCount === 'number' ? candidate.locationMismatchCount : 0,
+        bracketLocationMismatchCount: typeof candidate.bracketLocationMismatchCount === 'number' ? candidate.bracketLocationMismatchCount : 0,
+        suspiciousFreePriceCount: typeof candidate.suspiciousFreePriceCount === 'number' ? candidate.suspiciousFreePriceCount : 0,
+        unknownPriceCount: typeof candidate.unknownPriceCount === 'number' ? candidate.unknownPriceCount : 0,
+        invalidDateCount: typeof candidate.invalidDateCount === 'number' ? candidate.invalidDateCount : 0,
+        duplicateTimeCount: typeof candidate.duplicateTimeCount === 'number' ? candidate.duplicateTimeCount : 0,
+        outOfSeasonCount: typeof candidate.outOfSeasonCount === 'number' ? candidate.outOfSeasonCount : 0,
+    };
+}
+
 function normalizeSourceFreshness(value: unknown): DataSourceFreshness {
     if (value === 'fresh' || value === 'aging' || value === 'stale' || value === 'offseason') {
         return value;
@@ -174,6 +197,51 @@ function normalizeSourceHealthSummary(value: unknown): DataSourceHealthSummary |
         staleCount: typeof candidate.staleCount === 'number' ? candidate.staleCount : 0,
         offseasonCount: typeof candidate.offseasonCount === 'number' ? candidate.offseasonCount : 0,
         unknownCount: typeof candidate.unknownCount === 'number' ? candidate.unknownCount : 0,
+    };
+}
+
+function normalizeSourceFunnelSummary(value: unknown): SourceFunnelSummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<SourceFunnelSummary>;
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        status: candidate.status === 'warn' ? 'warn' : 'pass',
+        rawItemCount: typeof candidate.rawItemCount === 'number' ? candidate.rawItemCount : 0,
+        finalItemCount: typeof candidate.finalItemCount === 'number' ? candidate.finalItemCount : 0,
+        registeredSourceCount: typeof candidate.registeredSourceCount === 'number' ? candidate.registeredSourceCount : 0,
+        activeSourceCount: typeof candidate.activeSourceCount === 'number' ? candidate.activeSourceCount : 0,
+        missingRegisteredFileCount: typeof candidate.missingRegisteredFileCount === 'number' ? candidate.missingRegisteredFileCount : 0,
+        unregisteredDataFileCount: typeof candidate.unregisteredDataFileCount === 'number' ? candidate.unregisteredDataFileCount : 0,
+        workflowOnlyScraperCount: typeof candidate.workflowOnlyScraperCount === 'number' ? candidate.workflowOnlyScraperCount : 0,
+        registeredWithoutWorkflowCount: typeof candidate.registeredWithoutWorkflowCount === 'number' ? candidate.registeredWithoutWorkflowCount : 0,
+        highLossSourceCount: typeof candidate.highLossSourceCount === 'number' ? candidate.highLossSourceCount : 0,
+        noFinalOutputSourceCount: typeof candidate.noFinalOutputSourceCount === 'number' ? candidate.noFinalOutputSourceCount : 0,
+        topUnregisteredDataFiles: Array.isArray(candidate.topUnregisteredDataFiles) ? candidate.topUnregisteredDataFiles : [],
+        topHighLossSources: Array.isArray(candidate.topHighLossSources) ? candidate.topHighLossSources : [],
+    };
+}
+
+function normalizeVenueCanonicalizationSummary(value: unknown): VenueCanonicalizationSummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<VenueCanonicalizationSummary>;
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        status: candidate.status === 'warn' ? 'warn' : 'pass',
+        usedVenueCount: typeof candidate.usedVenueCount === 'number' ? candidate.usedVenueCount : 0,
+        usedPerformanceCount: typeof candidate.usedPerformanceCount === 'number' ? candidate.usedPerformanceCount : 0,
+        invalidCoordinateVenueCount: typeof candidate.invalidCoordinateVenueCount === 'number' ? candidate.invalidCoordinateVenueCount : 0,
+        missingAddressVenueCount: typeof candidate.missingAddressVenueCount === 'number' ? candidate.missingAddressVenueCount : 0,
+        exactAddressAliasCandidateCount: typeof candidate.exactAddressAliasCandidateCount === 'number' ? candidate.exactAddressAliasCandidateCount : 0,
+        parentChildCandidateCount: typeof candidate.parentChildCandidateCount === 'number' ? candidate.parentChildCandidateCount : 0,
+        coordinateNameSimilarCandidateCount: typeof candidate.coordinateNameSimilarCandidateCount === 'number' ? candidate.coordinateNameSimilarCandidateCount : 0,
+        coordinateRiskGroupCount: typeof candidate.coordinateRiskGroupCount === 'number' ? candidate.coordinateRiskGroupCount : 0,
+        highConfidenceMergeCandidateCount: typeof candidate.highConfidenceMergeCandidateCount === 'number' ? candidate.highConfidenceMergeCandidateCount : 0,
+        reviewCandidateCount: typeof candidate.reviewCandidateCount === 'number' ? candidate.reviewCandidateCount : 0,
+        externalLookupMode: candidate.externalLookupMode === 'lookup-ready' ? 'lookup-ready' : 'offline-audit',
+        topHighConfidenceCandidates: Array.isArray(candidate.topHighConfidenceCandidates) ? candidate.topHighConfidenceCandidates : [],
+        topCoordinateRiskGroups: Array.isArray(candidate.topCoordinateRiskGroups) ? candidate.topCoordinateRiskGroups : [],
     };
 }
 
@@ -268,8 +336,11 @@ export function getDataBuildInfo(): DataBuildInfo | null {
         sourceCounts: normalizeCountMap(candidate.sourceCounts),
         genreCounts: normalizeCountMap(candidate.genreCounts),
         qualitySummary: normalizeQualitySummary(candidate.qualitySummary),
+        displayIntegritySummary: normalizeDisplayIntegritySummary(candidate.displayIntegritySummary),
         sourceSummaries: normalizeSourceSummaries(candidate.sourceSummaries),
         sourceHealthSummary: normalizeSourceHealthSummary(candidate.sourceHealthSummary),
+        sourceFunnelSummary: normalizeSourceFunnelSummary(candidate.sourceFunnelSummary),
+        venueCanonicalizationSummary: normalizeVenueCanonicalizationSummary(candidate.venueCanonicalizationSummary),
     };
     return cachedBuildInfo;
 }
