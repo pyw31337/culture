@@ -104,14 +104,16 @@ export default function ServiceStatusStrip({
                     type="button"
                     onClick={() => setIsOpen(true)}
                     className={clsx(
-                        'inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/6 px-2.5 py-2 text-slate-300 transition hover:border-sky-300/35 hover:bg-white/10 hover:text-white light:border-slate-200 light:bg-white light:text-slate-600 light:hover:border-sky-300 light:hover:text-sky-700',
-                        iconOnly ? 'h-9 w-9 px-0' : 'text-sm font-semibold',
+                        'inline-flex items-center justify-center gap-2 rounded-full text-slate-300 transition hover:text-white light:text-slate-500 light:hover:text-slate-800',
+                        iconOnly
+                            ? 'h-6 w-6 border-0 bg-transparent p-0 hover:bg-slate-900/5 light:hover:bg-slate-100'
+                            : 'border border-white/10 bg-white/6 px-2.5 py-2 text-sm font-semibold hover:border-sky-300/35 hover:bg-white/10 light:border-slate-200 light:bg-white light:hover:border-sky-300 light:hover:text-sky-700',
                         buttonClassName
                     )}
                     aria-label="운영 정보 보기"
                     title="운영 정보 보기"
                 >
-                    <Info className="h-4 w-4" />
+                    <Info className={clsx(iconOnly ? 'h-3.5 w-3.5' : 'h-4 w-4')} />
                     {!iconOnly && <span>운영 정보</span>}
                 </button>
             </div>

@@ -17,7 +17,7 @@ export default function DiscoveryContextBar({
     className,
 }: DiscoveryContextBarProps) {
     return (
-        <div className={clsx('flex flex-wrap items-center gap-2', className)}>
+        <div className={clsx('flex max-w-full flex-nowrap items-center gap-2 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden', className)}>
             {contexts.map((context) => {
                 const selected = context.id === activeContext;
                 return (

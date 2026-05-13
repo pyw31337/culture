@@ -66,8 +66,8 @@ export const ResultsHeader = ({
 
     return (
         <div className="mb-6 mt-8">
-            <div className="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
-                <div className="w-full min-w-0">
+            <div className="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between xl:gap-6">
+                <div className="w-full min-w-0 xl:flex-1">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                         <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
                             {(searchMode === 'location' && activeLocation) ? (
@@ -127,7 +127,7 @@ export const ResultsHeader = ({
                     )}
                 </div>
 
-                <div className="flex w-full flex-col gap-3 xl:w-auto xl:min-w-[320px] xl:items-end">
+                <div className="flex w-full flex-col gap-3 xl:w-auto xl:min-w-fit xl:flex-none xl:items-end">
                     {shouldShowDiscoveryContexts && discoveryContexts && activeDiscoveryContext && onDiscoveryContextChange && (
                         <DiscoveryContextBar
                             contexts={discoveryContexts}
