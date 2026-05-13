@@ -22,6 +22,7 @@
     "audit:locations": "npx tsx scripts/audit-location-mismatches.ts",
     "audit:sources": "npx tsx scripts/audit-source-funnel.ts",
     "audit:venues:canonical": "npx tsx scripts/audit-venue-canonicalization.ts",
+    "build:venue-master": "npx tsx scripts/build-venue-master.ts",
     "local:update-data": "scripts/run-local-data-update.sh",
     "local:install-scheduler": "scripts/install-local-data-update.sh"
   },

@@ -107,6 +107,29 @@ export interface VenueCanonicalizationSummary {
     }>;
 }
 
+export interface VenueMasterSummary {
+    checkedAt: string;
+    status: 'pass' | 'warn';
+    entryCount: number;
+    performanceCount: number;
+    highConfidenceCount: number;
+    mediumConfidenceCount: number;
+    lowConfidenceCount: number;
+    needsOfficialLookupCount: number;
+    missingAddressCount: number;
+    invalidCoordinateCount: number;
+    coordinateFallbackRiskCount: number;
+    parentChildGroupCount: number;
+    aliasMergedGroupCount: number;
+    topReviewEntries: Array<{
+        id: string;
+        officialName: string;
+        address: string;
+        performanceCount: number;
+        reviewFlags: string[];
+    }>;
+}
+
 export interface DataBuildInfo {
     generatedAt: string;
     version: string;
@@ -119,6 +142,7 @@ export interface DataBuildInfo {
     sourceHealthSummary: DataSourceHealthSummary | null;
     sourceFunnelSummary?: SourceFunnelSummary | null;
     venueCanonicalizationSummary?: VenueCanonicalizationSummary | null;
+    venueMasterSummary?: VenueMasterSummary | null;
 }
 
 export function getAvailableGenreCount(genreCounts?: Record<string, number>) {

@@ -8,7 +8,8 @@ import type {
     DataSourceSummary,
     DisplayIntegritySummary,
     SourceFunnelSummary,
-    VenueCanonicalizationSummary
+    VenueCanonicalizationSummary,
+    VenueMasterSummary
 } from '@/lib/build-info';
 import { formatKoreanDateTime } from '@/lib/build-info';
 import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
@@ -245,6 +246,28 @@ function normalizeVenueCanonicalizationSummary(value: unknown): VenueCanonicaliz
     };
 }
 
+function normalizeVenueMasterSummary(value: unknown): VenueMasterSummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<VenueMasterSummary>;
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        status: candidate.status === 'warn' ? 'warn' : 'pass',
+        entryCount: typeof candidate.entryCount === 'number' ? candidate.entryCount : 0,
+        performanceCount: typeof candidate.performanceCount === 'number' ? candidate.performanceCount : 0,
+        highConfidenceCount: typeof candidate.highConfidenceCount === 'number' ? candidate.highConfidenceCount : 0,
+        mediumConfidenceCount: typeof candidate.mediumConfidenceCount === 'number' ? candidate.mediumConfidenceCount : 0,
+        lowConfidenceCount: typeof candidate.lowConfidenceCount === 'number' ? candidate.lowConfidenceCount : 0,
+        needsOfficialLookupCount: typeof candidate.needsOfficialLookupCount === 'number' ? candidate.needsOfficialLookupCount : 0,
+        missingAddressCount: typeof candidate.missingAddressCount === 'number' ? candidate.missingAddressCount : 0,
+        invalidCoordinateCount: typeof candidate.invalidCoordinateCount === 'number' ? candidate.invalidCoordinateCount : 0,
+        coordinateFallbackRiskCount: typeof candidate.coordinateFallbackRiskCount === 'number' ? candidate.coordinateFallbackRiskCount : 0,
+        parentChildGroupCount: typeof candidate.parentChildGroupCount === 'number' ? candidate.parentChildGroupCount : 0,
+        aliasMergedGroupCount: typeof candidate.aliasMergedGroupCount === 'number' ? candidate.aliasMergedGroupCount : 0,
+        topReviewEntries: Array.isArray(candidate.topReviewEntries) ? candidate.topReviewEntries : [],
+    };
+}
+
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr || dateStr.trim() === '') return true; // Lenient: Treat items without dates as active (e.g., Museums)
 
@@ -341,6 +364,7 @@ export function getDataBuildInfo(): DataBuildInfo | null {
         sourceHealthSummary: normalizeSourceHealthSummary(candidate.sourceHealthSummary),
         sourceFunnelSummary: normalizeSourceFunnelSummary(candidate.sourceFunnelSummary),
         venueCanonicalizationSummary: normalizeVenueCanonicalizationSummary(candidate.venueCanonicalizationSummary),
+        venueMasterSummary: normalizeVenueMasterSummary(candidate.venueMasterSummary),
     };
     return cachedBuildInfo;
 }

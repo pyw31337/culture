@@ -18,6 +18,7 @@ import { analyzeContentQuality } from './utils/content-quality';
 import { buildDisplayIntegrityReport } from './utils/display-integrity';
 import { buildSourceFunnelReport } from './utils/source-funnel';
 import { buildVenueCanonicalizationReport } from './utils/venue-canonicalization';
+import { buildVenueMaster } from './utils/venue-master';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -629,6 +630,36 @@ async function generate() {
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformancesForHomeFeed(activePerformances);
+        const sourceVenues = fs.existsSync(path.join(process.cwd(), 'src', 'data', 'venues.json'))
+            ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'venues.json'), 'utf8'))
+            : {};
+        const preliminaryVenueCanonicalizationReport = buildVenueCanonicalizationReport(
+            sorted as Performance[],
+            sourceVenues,
+            new Date().toISOString(),
+        );
+        const coordinateRiskKeys = new Set(
+            preliminaryVenueCanonicalizationReport.coordinateRiskGroups
+                .map((group) => group.groupKey)
+                .filter(Boolean)
+        );
+        const venueMasterSourceItems = (sorted as Performance[]).filter((performance) => performance.genre !== 'movie');
+        const venueMasterBuild = buildVenueMaster(
+            venueMasterSourceItems,
+            sourceVenues,
+            coordinateRiskKeys,
+            new Date().toISOString(),
+        );
+
+        sorted.forEach((performance) => {
+            const venueMasterMatch = venueMasterBuild.performanceVenueIndex[performance.id];
+            if (!venueMasterMatch) return;
+
+            performance.venueCanonicalId = venueMasterMatch.canonicalId;
+            if (venueMasterMatch.hallName) {
+                performance.venueHallName = venueMasterMatch.hallName;
+            }
+        });
 
         // [New: Data Pruning for payload optimization]
         const pruned: PrunedPerformance[] = sorted.map((p) => {
@@ -698,9 +729,6 @@ async function generate() {
             new Date().toISOString(),
         );
         const sourceFunnelReport = buildSourceFunnelReport(pruned as Performance[], new Date().toISOString());
-        const sourceVenues = fs.existsSync(path.join(process.cwd(), 'src', 'data', 'venues.json'))
-            ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'venues.json'), 'utf8'))
-            : {};
         const venueCanonicalizationReport = buildVenueCanonicalizationReport(
             pruned as Performance[],
             sourceVenues,
@@ -719,6 +747,7 @@ async function generate() {
             sourceHealthSummary,
             sourceFunnelSummary: sourceFunnelReport.summary,
             venueCanonicalizationSummary: venueCanonicalizationReport.summary,
+            venueMasterSummary: venueMasterBuild.report.summary,
         };
         fs.writeFileSync(buildInfoPath, JSON.stringify(buildInfo));
         console.log(`Updated build-info.json to ${buildInfoPath}`);
@@ -728,6 +757,10 @@ async function generate() {
         console.log(`Updated source-funnel-report.json to ${path.join(dir, 'source-funnel-report.json')}`);
         fs.writeFileSync(path.join(dir, 'venue-canonicalization-report.json'), JSON.stringify(venueCanonicalizationReport));
         console.log(`Updated venue-canonicalization-report.json to ${path.join(dir, 'venue-canonicalization-report.json')}`);
+        fs.writeFileSync(path.join(dir, 'venue-master.json'), JSON.stringify(venueMasterBuild.entries));
+        console.log(`Updated venue-master.json to ${path.join(dir, 'venue-master.json')}`);
+        fs.writeFileSync(path.join(dir, 'venue-master-report.json'), JSON.stringify(venueMasterBuild.report));
+        console.log(`Updated venue-master-report.json to ${path.join(dir, 'venue-master-report.json')}`);
 
         // [New: Sync critical data files to public/data]
         const dataDir = path.join(process.cwd(), 'src', 'data');

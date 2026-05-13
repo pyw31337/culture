@@ -8,6 +8,7 @@ import {
     CircleCheckBig,
     Database,
     GitBranch,
+    Landmark,
     MapPinned,
     ShieldAlert,
     ShieldCheck,
@@ -163,6 +164,15 @@ export default function StatusPage() {
     const venueCanonicalizationDetail = venueCanonicalizationSummary
         ? `사용 공연장 ${venueCanonicalizationSummary.usedVenueCount.toLocaleString()}개 · 고신뢰 통합 ${venueCanonicalizationSummary.highConfidenceMergeCandidateCount}건 · 좌표 재확인 ${venueCanonicalizationSummary.coordinateRiskGroupCount}건`
         : '공식명칭, 주소, 좌표, 하위홀 관계를 함께 점검합니다.';
+    const venueMasterSummary = buildInfo.venueMasterSummary;
+    const venueMasterStatusLabel = venueMasterSummary
+        ? venueMasterSummary.status === 'warn'
+            ? `공연장 마스터 보강 ${venueMasterSummary.needsOfficialLookupCount.toLocaleString()}개`
+            : '공연장 마스터 정상'
+        : '공연장 마스터 준비 중';
+    const venueMasterDetail = venueMasterSummary
+        ? `표준 공연장 ${venueMasterSummary.entryCount.toLocaleString()}개 · 하위홀 그룹 ${venueMasterSummary.parentChildGroupCount.toLocaleString()}개 · 별칭 병합 ${venueMasterSummary.aliasMergedGroupCount.toLocaleString()}개`
+        : '공식명칭, 별칭, 하위홀, 좌표를 누적 관리하는 마스터입니다.';
 
     const sortedSources = [...buildInfo.sourceSummaries].sort((a, b) => {
         const order = {
@@ -245,6 +255,12 @@ export default function StatusPage() {
                                 icon={venueCanonicalizationSummary?.status === 'warn' ? <MapPinned className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
                             />
                             <SnapshotLine
+                                label="공연장 마스터"
+                                value={venueMasterStatusLabel}
+                                detail={venueMasterDetail}
+                                icon={venueMasterSummary?.status === 'warn' ? <Landmark className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
                                 label="갱신 시각"
                                 value={formatKoreanDateTime(buildInfo.generatedAt)}
                                 detail="빌드에 반영된 최신 데이터 생성 시각입니다."
@@ -299,6 +315,11 @@ export default function StatusPage() {
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">공연장/좌표</p>
                                 <p className="mt-2 text-xl font-black tracking-tight">{venueCanonicalizationStatusLabel}</p>
                                 <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{venueCanonicalizationDetail}</p>
+                            </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">공연장 마스터</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{venueMasterStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{venueMasterDetail}</p>
                             </div>
                             <div>
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">운영 원칙</p>
@@ -422,6 +443,15 @@ export default function StatusPage() {
                                     </div>
                                     <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
                                         여러 장소가 같은 좌표를 공유하면 자동 병합하지 않고 재검색 대상으로 분리합니다.
+                                    </p>
+                                </div>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <span>표준 공연장 마스터</span>
+                                        <strong>{venueMasterSummary?.entryCount ?? 0}개</strong>
+                                    </div>
+                                    <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
+                                        콘텐츠마다 canonical id를 부여해 같은 장소를 한 흐름으로 추적합니다.
                                     </p>
                                 </div>
                             </div>

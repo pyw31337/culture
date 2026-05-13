@@ -27,6 +27,8 @@ export type Performance = {
     venue: string;
     venueKey?: string;
     locationKey?: string;
+    venueCanonicalId?: string;
+    venueHallName?: string;
     image: string;
     link: string;
     region: string;
