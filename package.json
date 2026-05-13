@@ -18,7 +18,9 @@
     "validate:images": "npx tsx scripts/validate-images.ts",
     "validate:content": "npx tsx scripts/validate-content-quality.ts",
     "validate:locations": "npx tsx scripts/validate-location-integrity.ts",
-    "audit:locations": "npx tsx scripts/audit-location-mismatches.ts"
+    "audit:locations": "npx tsx scripts/audit-location-mismatches.ts",
+    "local:update-data": "scripts/run-local-data-update.sh",
+    "local:install-scheduler": "scripts/install-local-data-update.sh"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",

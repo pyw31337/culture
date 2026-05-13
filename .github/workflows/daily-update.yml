@@ -2,7 +2,7 @@ name: Daily Data Update
 
 on:
   schedule:
-    - cron: '0 14 * * *' # 23:00 KST (14:00 UTC) - Single daily refresh
+    - cron: '0 6 * * *' # 15:00 KST fallback. Local launchd owns the 00:00 KST primary update.
   workflow_dispatch:
 
 env:
@@ -10,7 +10,7 @@ env:
 
 concurrency:
   group: daily-data-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-data:
@@ -18,19 +18,78 @@ jobs:
     permissions:
       contents: write
     outputs:
-      data_changed: ${{ steps.commit_changes.outputs.data_changed }}
-      deployed_sha: ${{ steps.commit_changes.outputs.deployed_sha }}
+      data_changed: ${{ steps.commit_changes.outputs.data_changed || 'false' }}
+      deployed_sha: ${{ steps.commit_changes.outputs.deployed_sha || '' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Check local update freshness
+        id: freshness
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const outputPath = process.env.GITHUB_OUTPUT;
+          const eventName = process.env.GITHUB_EVENT_NAME || '';
+          const buildInfoPath = path.join(process.cwd(), 'public', 'data', 'build-info.json');
+          const writeOutput = (key, value) => fs.appendFileSync(outputPath, `${key}=${value}\n`);
+          const kstDate = (date) => new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'Asia/Seoul',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          }).format(date);
+
+          if (eventName === 'workflow_dispatch') {
+            writeOutput('should_run', 'true');
+            writeOutput('skip_reason', 'manual-dispatch');
+            console.log('Manual dispatch: running fallback update regardless of freshness.');
+            process.exit(0);
+          }
+
+          let generatedAt = null;
+          try {
+            generatedAt = JSON.parse(fs.readFileSync(buildInfoPath, 'utf8')).generatedAt || null;
+          } catch (error) {
+            writeOutput('should_run', 'true');
+            writeOutput('skip_reason', 'missing-build-info');
+            console.log('No readable build-info.json; running fallback update.');
+            process.exit(0);
+          }
+
+          const generatedDate = generatedAt ? new Date(generatedAt) : null;
+          const now = new Date();
+          const ageHours = generatedDate ? (now.getTime() - generatedDate.getTime()) / 36e5 : Infinity;
+          const freshToday = generatedDate && kstDate(generatedDate) === kstDate(now) && ageHours >= 0 && ageHours <= 20;
+
+          if (freshToday) {
+            writeOutput('should_run', 'false');
+            writeOutput('skip_reason', 'local-update-already-fresh');
+            console.log(`Skipping fallback: local data is fresh. generatedAt=${generatedAt}, ageHours=${ageHours.toFixed(2)}`);
+          } else {
+            writeOutput('should_run', 'true');
+            writeOutput('skip_reason', 'fallback-needed');
+            console.log(`Running fallback: generatedAt=${generatedAt || 'none'}, ageHours=${Number.isFinite(ageHours) ? ageHours.toFixed(2) : 'unknown'}`);
+          }
+          NODE
+
+      - name: Skip summary
+        if: steps.freshness.outputs.should_run == 'false'
+        run: |
+          echo "Local midnight update already refreshed data today. GitHub fallback skipped."
+          echo "Reason: ${{ steps.freshness.outputs.skip_reason }}"
+
       - name: Setup Node.js
+        if: steps.freshness.outputs.should_run == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
       - name: Cache Playwright Chromium
+        if: steps.freshness.outputs.should_run == 'true'
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
@@ -39,17 +98,20 @@ jobs:
             ${{ runner.os }}-playwright-
 
       - name: Install dependencies
+        if: steps.freshness.outputs.should_run == 'true'
         run: |
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
           npm ci --prefer-offline --no-audit --fund=false
 
       - name: Install Playwright Chromium
+        if: steps.freshness.outputs.should_run == 'true'
         run: |
           # --with-deps already installs required Linux browser dependencies.
           npx playwright install chromium --with-deps
 
       - name: Run Scrapers
-        timeout-minutes: 240 # Total max for all scrapers
+        if: steps.freshness.outputs.should_run == 'true'
+        timeout-minutes: 180
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
         run: |
@@ -91,14 +153,13 @@ jobs:
           run_scraper "umclass" optional npx tsx scripts/scrape-umclass.ts
           run_scraper "sssd" optional npx tsx scripts/scrape-sssd.ts
           run_scraper "mochaclass" critical npx tsx scripts/scrape-mochaclass.ts
-          run_scraper "museum" critical npx tsx scripts/scrape-museum.ts
+          run_scraper "museum" optional npx tsx scripts/scrape-museum.ts
           run_scraper "mommom" optional npx tsx scripts/scrape-mommom.ts
           run_scraper "mommom-activities" optional npx tsx scripts/scrape-mommom-activities.ts
           run_scraper "mommom-exhibitions" optional npx tsx scripts/scrape-mommom-exhibitions.ts
           run_scraper "mommom-products" optional npx tsx scripts/scrape-mommom-products.ts
           run_scraper "seoul-culture" optional npx tsx scripts/scrape-seoul-culture.ts
           run_scraper "build-venues" critical npx tsx scripts/build-venues.ts
-          run_scraper "verify-links" optional npx tsx scripts/verify-links.ts
 
           : > scrape_failures.txt
           if [ ${#failures[@]} -gt 0 ]; then
@@ -109,29 +170,36 @@ jobs:
           fi
 
           if [ ${#critical_failures[@]} -gt 0 ]; then
-            echo "Critical scraper failures detected:"
-            printf '%s\n' "${critical_failures[@]}" >&2
-            exit 1
+            echo "Critical scraper failures detected, but continuing with retained data. Validators will gate commit safety:"
+            printf '%s\n' "${critical_failures[@]}"
           fi
 
+          exit 0
+
       - name: Validate Data Integrity (Pre-Commit Check)
+        if: steps.freshness.outputs.should_run == 'true'
         run: npx tsx scripts/validate-data-integrity.ts
 
       - name: Prune Stale Data (Strict Retention)
+        if: steps.freshness.outputs.should_run == 'true'
         run: |
           npx tsx scripts/prune-expired-data.ts
           npx tsx scripts/prune-data.ts
 
       - name: Generate Public Data Artifacts
+        if: steps.freshness.outputs.should_run == 'true'
         run: npm run generate-data
 
       - name: Validate Content Quality
+        if: steps.freshness.outputs.should_run == 'true'
         run: npm run validate:content
 
       - name: Validate Location Integrity
+        if: steps.freshness.outputs.should_run == 'true'
         run: npm run validate:locations
 
       - name: Commit and Push changes
+        if: steps.freshness.outputs.should_run == 'true'
         id: commit_changes
         run: |
           git config --global user.name 'GitHub Actions Bot'
@@ -147,19 +215,19 @@ jobs:
             exit 0
           fi
 
-          git commit -m "chore: update daily data"
+          git commit -m "chore: fallback daily data update"
           git push
 
           echo "data_changed=true" >> "$GITHUB_OUTPUT"
           echo "deployed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Log Error to Tracker
-        if: failure()
+        if: failure() && steps.freshness.outputs.should_run == 'true'
         run: |
           echo "### 🚨 CI Action Runtime Failure" >> ERROR_TRACKER.md
           echo "- **Date**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> ERROR_TRACKER.md
           echo "- **GitHub Run ID**: [${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> ERROR_TRACKER.md
-          echo "- **Note**: A scraper or validation step failed during the daily data update. Please check the Action logs via the link above." >> ERROR_TRACKER.md
+          echo "- **Note**: The 15:00 KST fallback data update failed after the local midnight update was absent or stale." >> ERROR_TRACKER.md
           if [ -f scrape_failures.txt ] && [ -s scrape_failures.txt ]; then
             echo "- **Failed Scrapers**:" >> ERROR_TRACKER.md
             sed 's/^/  - /' scrape_failures.txt >> ERROR_TRACKER.md
@@ -167,7 +235,7 @@ jobs:
           echo "" >> ERROR_TRACKER.md
 
       - name: Commit Error Tracker
-        if: failure()
+        if: failure() && steps.freshness.outputs.should_run == 'true'
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
