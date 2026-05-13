@@ -12,6 +12,7 @@ interface UseHeroTemplatesProps {
 export function useHeroTemplates({ allPerformances, initialPerformances, searchMode = 'keyword' }: UseHeroTemplatesProps) {
     const [heroText, setHeroText] = useState<HeroTemplate>(HERO_TEMPLATES.general[0]);
     const templatePoolRef = useRef<HeroTemplate[]>([]);
+    const initializedRef = useRef(false);
 
     const selectNextTemplate = useCallback(() => {
         setHeroText(currentHeroText => {
@@ -97,7 +98,10 @@ export function useHeroTemplates({ allPerformances, initialPerformances, searchM
             }
 
             templatePoolRef.current = pool;
-            selectNextTemplate();
+            if (!initializedRef.current) {
+                initializedRef.current = true;
+                selectNextTemplate();
+            }
         };
 
         updateHeroTextPool();

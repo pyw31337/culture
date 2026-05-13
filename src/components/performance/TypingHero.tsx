@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { HeroTemplate } from '../../lib/hero-templates';
 import { clsx } from 'clsx';
 
+const HOLD_DURATION_MS = 10000;
+const DELETE_DELAY_MS = 28;
+const CYCLE_GAP_MS = 260;
+
 const Cursor = () => (
     <span className="inline-block w-[4px] h-[1em] bg-[#FACC15] ml-[0.5ch] align-sub animate-cursor-blink" />
 );
@@ -25,27 +29,27 @@ export const TypingHero = ({
     const lenHl = template.highlight.length;
     const lenSuf = template.suffix.length;
     const totalLen = len1 + lenBold + len2Pre + lenHl + lenSuf;
-    const [phase, setPhase] = useState<'WAIT' | 'DELETE' | 'TYPE' | 'CYCLING'>('WAIT');
-    const [progress, setProgress] = useState(totalLen);
+    const [phase, setPhase] = useState<'TYPE' | 'WAIT' | 'DELETE' | 'CYCLING'>('TYPE');
+    const [progress, setProgress] = useState(0);
 
     useEffect(() => {
         let timeout: NodeJS.Timeout;
+
+        if ((paused || !isAtTop) && phase !== 'WAIT') {
+            timeout = setTimeout(() => {
+                setProgress(totalLen);
+                setPhase('WAIT');
+            }, 0);
+            return () => clearTimeout(timeout);
+        }
 
         if (phase === 'WAIT') {
             if (paused || !isAtTop) return;
 
             timeout = setTimeout(() => {
                 setPhase('DELETE');
-            }, 4200);
+            }, HOLD_DURATION_MS);
         } else if (phase === 'DELETE') {
-            if (paused || !isAtTop) {
-                timeout = setTimeout(() => {
-                    setProgress(totalLen);
-                    setPhase('WAIT');
-                }, 0);
-                return () => clearTimeout(timeout);
-            }
-
             timeout = setTimeout(() => {
                 setProgress((prev) => {
                     const next = prev - 1;
@@ -56,10 +60,10 @@ export const TypingHero = ({
                     }
                     return next;
                 });
-            }, 26);
+            }, DELETE_DELAY_MS);
         } else if (phase === 'TYPE') {
             const written = `${template.line1}${template.boldPrefix || ''}${template.line2Pre}${template.highlight}${template.suffix}`;
-            const currentChar = written[Math.max(0, progress - 1)] || '';
+            const currentChar = written[progress] || '';
             const typeDelay = /[,.!?~]/.test(currentChar)
                 ? 110
                 : /\s/.test(currentChar)
@@ -77,17 +81,9 @@ export const TypingHero = ({
                 });
             }, typeDelay);
         } else if (phase === 'CYCLING') {
-            if (paused || !isAtTop) {
-                timeout = setTimeout(() => {
-                    setProgress(totalLen);
-                    setPhase('WAIT');
-                }, 0);
-                return () => clearTimeout(timeout);
-            }
-
             timeout = setTimeout(() => {
                 setPhase((current) => current === 'CYCLING' ? 'TYPE' : current);
-            }, 240);
+            }, CYCLE_GAP_MS);
         }
 
         return () => clearTimeout(timeout);
