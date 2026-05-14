@@ -1,16 +1,1788 @@
 {
-  "checkedAt": "2026-05-14T04:24:55.602Z",
+  "checkedAt": "2026-05-14T16:15:09.607Z",
   "status": "warn",
-  "venueCount": 2311,
+  "venueCount": 2672,
   "matchedCount": 1467,
   "highConfidenceMatchCount": 1074,
   "needsReviewCount": 20,
   "notFoundCount": 236,
-  "pendingLookupCount": 0,
-  "insufficientIdentityCount": 27,
-  "lookupReady": false,
-  "providersConfigured": [],
-  "queue": [],
+  "pendingLookupCount": 372,
+  "insufficientIdentityCount": 47,
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
+  "queue": [
+    {
+      "venueId": "venue_슈퍼키즈랜드_5pomic",
+      "officialName": "슈퍼키즈랜드",
+      "address": "슈퍼키즈랜드",
+      "query": "슈퍼키즈랜드 슈퍼키즈랜드",
+      "priority": 828,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "coordinate_fallback_risk",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "슈퍼키즈랜드(이천시 가볼만한곳!)"
+      ]
+    },
+    {
+      "venueId": "venue_황금수영장_5pomic",
+      "officialName": "황금수영장",
+      "address": "황금수영장",
+      "query": "황금수영장 황금수영장",
+      "priority": 828,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "coordinate_fallback_risk",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고기굽는 수영장!!황금수영장(취사가능 및 평상무료)"
+      ]
+    },
+    {
+      "venueId": "venue_국립중앙박물관상설전시관검사대통과후좌측계단_1bmlrhd",
+      "officialName": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단",
+      "address": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단 앞",
+      "query": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단 국립중앙박물관 상설전시관",
+      "priority": 708,
+      "performanceCount": 16,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "저학년 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
+        "그리스로마 신화와 별자리를 한번에 알아보는 시간! - (8 -10세)",
+        "국립중앙박물관 삼국시대 초등저학년 \"Premium\" 역사탐험대 Season3"
+      ]
+    },
+    {
+      "venueId": "venue_nol씨어터대학로우리투자증권_msyxk3",
+      "officialName": "NOL 씨어터 대학로 우리투자증권",
+      "address": "NOL 씨어터 대학로 우리투자증권홀(자세히)",
+      "query": "NOL 씨어터 대학로 우리투자증권 nol 씨어터",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "뮤지컬 〈브라더스 까라마조프〉"
+      ]
+    },
+    {
+      "venueId": "venue_국립저작권박물관_s040dv",
+      "officialName": "국립저작권박물관",
+      "address": "경상남도 진주시 소호로 117 국립저작권박물관",
+      "query": "국립저작권박물관 경남 진주시",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립저작권박물관"
+      ]
+    },
+    {
+      "venueId": "venue_물위에서즐기는피크닉세빛섬튜브스터_kopaad",
+      "officialName": "물 위에서 즐기는 피크닉 세빛섬 튜브스터",
+      "address": "물 위에서 즐기는 피크닉 세빛섬 튜브스터",
+      "query": "물 위에서 즐기는 피크닉 세빛섬 튜브스터 물 위에서",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "물 위에서 즐기는 피크닉 세빛섬 튜브스터"
+      ]
+    },
+    {
+      "venueId": "venue_소노벨델피노오션플레이_1n34h0j",
+      "officialName": "소노벨 델피노 오션플레이",
+      "address": "소노벨 델피노 오션플레이",
+      "query": "소노벨 델피노 오션플레이 소노벨 델피노",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "소노벨 델피노 오션플레이 미들시즌 종일권 (04/25~06/19)"
+      ]
+    },
+    {
+      "venueId": "venue_싱가포르사이언스센터_aiqcp5",
+      "officialName": "싱가포르 사이언스 센터",
+      "address": "15 Science Centre Rd, 싱가포르 609081",
+      "query": "싱가포르 사이언스 센터 15 science",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "싱가포르 사이언스 센터"
+      ]
+    },
+    {
+      "venueId": "venue_진주실크박물관_ssqy7r",
+      "officialName": "진주실크박물관",
+      "address": "경상남도 진주시 문산읍 월아산로 994 진주실크박물관 진주실크박물관",
+      "query": "진주실크박물관 경남 진주시",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "진주실크박물관"
+      ]
+    },
+    {
+      "venueId": "venue_티켓링크1975씨어터구어린이회관문화관_1fvd11p",
+      "officialName": "티켓링크 1975 씨어터 구 어린이회관 문화관",
+      "address": "티켓링크 1975 씨어터 (구 어린이회관 문화관)(자세히)",
+      "query": "티켓링크 1975 씨어터 구 어린이회관 문화관 티켓링크 1975",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "라이브 시트콤 뮤지컬 〈인싸가족〉"
+      ]
+    },
+    {
+      "venueId": "venue_합천풀헤븐워터파크_057hzq",
+      "officialName": "합천풀헤븐워터파크",
+      "address": "[합천/대구빠지] 합천풀헤븐워터파크 수상레저 이용권",
+      "query": "합천풀헤븐워터파크 [합천/대구빠지] 합천풀헤븐워터파크",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "합천풀헤븐워터파크 수상레저 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_월미도해양관광크루즈_14d8ohx",
+      "officialName": "월미도 해양관광 크루즈",
+      "address": "월미도 해양관광 크루즈",
+      "query": "월미도 해양관광 크루즈 월미도 해양관광",
+      "priority": 476,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "월미도 유람선 해양관광 썬셋&불꽃크루즈",
+        "월미도 유람선 해양관광 행복&관광크루즈"
+      ]
+    },
+    {
+      "venueId": "venue_dmz야생화체험관_v28rb9",
+      "officialName": "DMZ 야생화체험관",
+      "address": "경기도 파주시 금정로 45 2층",
+      "query": "DMZ 야생화체험관 경기 파주시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "DMZ 야생화체험관"
+      ]
+    },
+    {
+      "venueId": "venue_구리시곤충생태관_1yqp52",
+      "officialName": "구리시곤충생태관",
+      "address": "경기 구리시 검배로 200",
+      "query": "구리시곤충생태관 경기 구리시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구리시곤충생태관"
+      ]
+    },
+    {
+      "venueId": "venue_구리시인창도서관천문대_n9cidd",
+      "officialName": "구리시인창도서관천문대",
+      "address": "경기도 구리시 건원대로34번길 90 구리시인창도서관",
+      "query": "구리시인창도서관천문대 경기 구리시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구리시인창도서관천문대"
+      ]
+    },
+    {
+      "venueId": "venue_국립인천해양박물관_z2alid",
+      "officialName": "국립인천해양박물관",
+      "address": "인천 중구 월미로 294",
+      "query": "국립인천해양박물관 인천 중구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립인천해양박물관"
+      ]
+    },
+    {
+      "venueId": "venue_군산근대건축관_p0g71v",
+      "officialName": "군산근대건축관",
+      "address": "전북 군산시 장미동 군산근대건축관",
+      "query": "군산근대건축관 전북 군산시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "군산근대건축관"
+      ]
+    },
+    {
+      "venueId": "venue_대청호자연생태관_1ktj7d2",
+      "officialName": "대청호자연생태관",
+      "address": "대전광역시 동구 천개동로 41 대청호자연생태관",
+      "query": "대청호자연생태관 대전 동구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "대청호자연생태관"
+      ]
+    },
+    {
+      "venueId": "venue_대학로tom_1m0bonk",
+      "officialName": "대학로 TOM",
+      "address": "서울특별시 종로구 대학로8가길 85 대학로문화공간",
+      "query": "대학로 TOM 서울 종로구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 뮤지컬 〈Mad Hatter〉"
+      ]
+    },
+    {
+      "venueId": "venue_동덕여자대학교공연예술센터코튼_1df4n33",
+      "officialName": "동덕여자대학교 공연예술센터 코튼",
+      "address": "서울 종로구 동숭길 126",
+      "query": "동덕여자대학교 공연예술센터 코튼 서울 종로구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "뮤지컬 〈종의 기원〉"
+      ]
+    },
+    {
+      "venueId": "venue_서울종로구종로12115층_1s595s2",
+      "officialName": "서울 종로구 종로 121-1 5층",
+      "address": "서울 종로구 종로 121-1 (종로3가) 5층",
+      "query": "서울 종로구 종로 121-1 5층 서울 종로구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "1대1 메이크업클래스★내 이목구비,분위기에 맞는 베스트 화장법 찾기"
+      ]
+    },
+    {
+      "venueId": "venue_서울특별시종로구사직로161경복궁바라보고왼쪽의국립고궁박물관정_jj86vc",
+      "officialName": "서울특별시 종로구 사직로 161 경복궁 바라보고 왼쪽의 국립고궁박물관 정문 앞 계단",
+      "address": "서울특별시 종로구 사직로 161 경복궁 바라보고 왼쪽의 국립고궁박물관 정문 앞 계단",
+      "query": "서울특별시 종로구 사직로 161 경복궁 바라보고 왼쪽의 국립고궁박물관 정문 앞 계단 서울 종로구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "역사랑 친구 되는 경복궁 미션 투어"
+      ]
+    },
+    {
+      "venueId": "venue_용인특례시가상현실스포츠체험센터_ovkak0",
+      "officialName": "용인특례시 가상현실스포츠체험센터",
+      "address": "경기도 용인시 처인구 중부대로 1217 용인차량등록사업소 1층",
+      "query": "용인특례시 가상현실스포츠체험센터 경기 용인시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "용인특례시 가상현실스포츠체험센터"
+      ]
+    },
+    {
+      "venueId": "venue_은산어울림생태박물관_3miop8",
+      "officialName": "은산어울림 생태박물관",
+      "address": "경기도 오산시 서동로19번길 19 2층",
+      "query": "은산어울림 생태박물관 경기 오산시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "은산어울림 생태박물관"
+      ]
+    },
+    {
+      "venueId": "venue_한국잡월드미래직업관_jaybvl",
+      "officialName": "한국잡월드 미래직업관",
+      "address": "경기도 성남시 분당구 분당수서로 501 한국잡월드",
+      "query": "한국잡월드 미래직업관 경기 성남시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "한국잡월드 미래직업관"
+      ]
+    },
+    {
+      "venueId": "venue_스카이베이호텔_139sjbc",
+      "officialName": "스카이베이호텔",
+      "address": "스카이베이호텔",
+      "query": "스카이베이호텔 스카이베이호텔",
+      "priority": 416,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "스카이베이호텔 경포 피트니스+사우나 입장권",
+        "스카이베이호텔 경포 인피니티풀+실내수영장+사우나 입장권"
+      ]
+    },
+    {
+      "venueId": "venue_강원특별자치도태백시_1b5gud3",
+      "officialName": "강원특별자치도 태백시",
+      "address": "강원특별자치도 태백시",
+      "query": "강원특별자치도 태백시 강원 태백시",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "한강·낙동강 발원지 축제"
+      ]
+    },
+    {
+      "venueId": "venue_런닝맨_다이나믹메이즈_1ps9kaw",
+      "officialName": "런닝맨&다이나믹메이즈",
+      "address": "런닝맨&다이나믹메이즈",
+      "query": "런닝맨&다이나믹메이즈 런닝맨&다이나믹메이즈",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "런닝맨&다이나믹메이즈"
+      ]
+    },
+    {
+      "venueId": "venue_리틀프린스하우스_1ps9kaw",
+      "officialName": "리틀프린스하우스",
+      "address": "리틀프린스하우스",
+      "query": "리틀프린스하우스 리틀프린스하우스",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "가정의달★리틀프린스하우스 입장권 : 감천문화마을 La Maison du Petit Prince"
+      ]
+    },
+    {
+      "venueId": "venue_모나용평_139sjbc",
+      "officialName": "모나용평",
+      "address": "모나용평",
+      "query": "모나용평 모나용평",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "모나용평 팡팡 유니버스 (키즈 에어바운서)"
+      ]
+    },
+    {
+      "venueId": "venue_서울광진구_1jpxa40",
+      "officialName": "서울 광진구",
+      "address": "서울 광진구",
+      "query": "서울 광진구 서울 광진구",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "건대-댄스/무용배우기 (프라이빗 1:1 / 그룹레슨 / 단체레슨)"
+      ]
+    },
+    {
+      "venueId": "venue_스카이라인루지_1ps9kaw",
+      "officialName": "스카이라인루지",
+      "address": "스카이라인루지",
+      "query": "스카이라인루지 스카이라인루지",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "스카이라인루지 부산 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_스카이라인루지통영_1int1oy",
+      "officialName": "스카이라인루지 통영",
+      "address": "스카이라인루지",
+      "query": "스카이라인루지 통영 스카이라인루지",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "스카이라인루지 통영 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_썬웨이어드벤처워터파크_1tx5ejs",
+      "officialName": "썬웨이어드벤처워터파크",
+      "address": "썬웨이어드벤처워터파크",
+      "query": "썬웨이어드벤처워터파크 썬웨이어드벤처워터파크",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "썬웨이어드벤처워터파크★폭탄할인★얼리버드 입장권!!"
+      ]
+    },
+    {
+      "venueId": "venue_테마파크툰_1ttqlnt",
+      "officialName": "테마파크 툰",
+      "address": "테마파크 툰",
+      "query": "테마파크 툰 테마파크 툰",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "제주 테마파크 툰"
+      ]
+    },
+    {
+      "venueId": "venue_피노디아뮤지엄_139sjbc",
+      "officialName": "피노디아 뮤지엄",
+      "address": "피노디아",
+      "query": "피노디아 뮤지엄 피노디아",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "속초 피노디아 엑스포 타워 전망대"
+      ]
+    },
+    {
+      "venueId": "venue_한화리조트평창_139sjbc",
+      "officialName": "한화리조트 평창",
+      "address": "한화리조트 평창",
+      "query": "한화리조트 평창 한화리조트 평창",
+      "priority": 408,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "평창 한화리조트 (대관령/멍패커/애견동반/휘닉스)"
+      ]
+    },
+    {
+      "venueId": "venue_잭슨나인스_1vcktdl",
+      "officialName": "잭슨나인스",
+      "address": "강원 춘천시 중앙로 193",
+      "query": "잭슨나인스 강원 춘천시",
+      "priority": 40,
+      "performanceCount": 5,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "잭슨나인스 대구점 4~6월 이용권",
+        "잭슨나인스 양산점 5월 이용권",
+        "잭슨나인스 창원점 5월 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_충북벨포레리조트_bcv8vz",
+      "officialName": "충북 벨포레 리조트",
+      "address": "충북 벨포레 리조트",
+      "query": "충북 벨포레 리조트 충북 벨포레",
+      "priority": 32,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "충북 벨포레 별빛 가족여행 액티비티 패키지 (좌구산 천문대)",
+        "충북 벨포레 힐링 가족여행 조식 패키지",
+        "충북 벨포레 힐링 가족여행 액티비티 패키지 (레일로드 베를린 가방)"
+      ]
+    },
+    {
+      "venueId": "venue_광진구_1yycs0y",
+      "officialName": "광진구",
+      "address": "서울 광진구 능동로31길 8-1",
+      "query": "광진구 서울 광진구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "내게 필요한 원석은 무엇? - 나만의 힐링스톤 비누 만들기 원데이 클래스",
+        "감성 민화 - 원데이 판넬 드로잉 클래스",
+        "원데이 실크 드로잉 민화 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_디오션리조트_z4eii9",
+      "officialName": "디오션리조트",
+      "address": "전남 여수시 소호로 295",
+      "query": "디오션리조트 전남 여수시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "디오션리조트 워터파크 로우시즌 입장권(5/2~6/14)",
+        "디오션리조트 워터파크 얼리버드 특가 종일권(5/2~8/30)"
+      ]
+    },
+    {
+      "venueId": "venue_디큐브링크아트센터_qygals",
+      "officialName": "디큐브 링크아트센터",
+      "address": "서울 구로구 경인로 662",
+      "query": "디큐브 링크아트센터 서울 구로구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "［로터리 티켓］ 뮤지컬 데스노트(The Musical Death Note)",
+        "뮤지컬 〈그날들〉"
+      ]
+    },
+    {
+      "venueId": "venue_세종문화회관m씨어터_1ljyn8u",
+      "officialName": "세종문화회관 M씨어터",
+      "address": "서울특별시 종로구 세종대로 175(세종로)",
+      "query": "세종문화회관 M씨어터 서울 종로구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "뮤지컬 〈더 트라이브〉",
+        "뮤지컬 〈크리스마스 캐럴〉"
+      ]
+    },
+    {
+      "venueId": "venue_아산스파비스_126tn7b",
+      "officialName": "아산 스파비스",
+      "address": "충남 아산시 음봉면 아산온천로157번길 67",
+      "query": "아산 스파비스 충남 아산시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "아산 스파비스 워터파크 입장권(3/21~6/30)",
+        "아산스파비스 대소공통종일이용권"
+      ]
+    },
+    {
+      "venueId": "venue_오산버드파크_etq37o",
+      "officialName": "오산버드파크",
+      "address": "경기 오산시 성호대로 141 오산시청",
+      "query": "오산버드파크 경기 오산시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "오산버드파크",
+        "오산 버드파크 이용권(~60일)"
+      ]
+    },
+    {
+      "venueId": "venue_웅진플레이도시워터파크_1cf1r8m",
+      "officialName": "웅진플레이도시 워터파크",
+      "address": "경기 부천시 원미구 조마루로 2",
+      "query": "웅진플레이도시 워터파크 경기 부천시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "웅진플레이도시 로우시즌 이용권 (유효기간 : 5/1~5/31)",
+        "웅진플레이도시"
+      ]
+    },
+    {
+      "venueId": "venue_원마운트워터파크_i17nhi",
+      "officialName": "원마운트워터파크",
+      "address": "경기 고양시 일산서구 한류월드로 300",
+      "query": "원마운트워터파크 경기 고양시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "원마운트 워터파크 시즌권",
+        "원마운트 워터파크 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_챔피언_1t4jmou",
+      "officialName": "챔피언",
+      "address": "경기 수원시 영통구 덕영대로 1566",
+      "query": "챔피언 경기 수원시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "도심형 실내 키즈 테마파크 챔피언1250/블랙벨트 39개점",
+        "도심형 실내 키즈 테마파크 챔피언/플레이타임 18개점"
+      ]
+    },
+    {
+      "venueId": "venue_쿵스롤러스케이트장_zscn4a",
+      "officialName": "쿵스 롤러스케이트장",
+      "address": "충북 청주시 상당구 성안로 19-2",
+      "query": "쿵스 롤러스케이트장 충북 청주시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "남포동 쿵스 롤러스케이트장",
+        "쿵스 롤러스케이트장 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_키자니아_4t4wld",
+      "officialName": "키자니아",
+      "address": "서울 송파구 올림픽로 240 키자니아 서울",
+      "query": "키자니아 서울 송파구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "키자니아 서울점 5월 이용권 (유효기간 : 5/1~5/31)",
+        "키자니아 부산점 5월 이용권 (유효기간 : 5/1~5/31)"
+      ]
+    },
+    {
+      "venueId": "venue_파크하비오워터킹덤_1fyxm6u",
+      "officialName": "파크하비오 워터킹덤",
+      "address": "서울 송파구 송파대로 111",
+      "query": "파크하비오 워터킹덤 서울 송파구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "파크하비오 워터킹덤&찜질스파 통합이용권 상시 04.14~05.31",
+        "파크하비오 찜질스파 상시 ~05.31"
+      ]
+    },
+    {
+      "venueId": "venue_하이원리조트_7jcr82",
+      "officialName": "하이원리조트",
+      "address": "강원 정선군 고한읍 하이원길 424",
+      "query": "하이원리조트 강원 정선군",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "하이원리조트 워터월드 준성수기 이용권(~26.07.09)",
+        "하이원리조트 부대시설 이용권 (운탄고도 케이블카, 수영장&사우나, 알파인코스터, 그랜드테이블 조식뷔페, 우주영상관)"
+      ]
+    },
+    {
+      "venueId": "venue_한화리조트설악워터피아_wp5e15",
+      "officialName": "한화리조트 설악워터피아",
+      "address": "강원 속초시 미시령로2983번길 111",
+      "query": "한화리조트 설악워터피아 강원 속초시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "한화리조트 설악 워터피아 MIDDLE시즌",
+        "한화리조트 설악 워터피아 MIDDLE시즌(B2B)"
+      ]
+    },
+    {
+      "venueId": "venue_3d과학체험관_x2bi51",
+      "officialName": "3D과학체험관",
+      "address": "경남 양산시 웅상대로 1009-1",
+      "query": "3D과학체험관 경남 양산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "3D과학체험관"
+      ]
+    },
+    {
+      "venueId": "venue_bibistudio_0wj1wd",
+      "officialName": "Bibistudio",
+      "address": "서울특별시 은평구 갈현로 250 (갈현동)",
+      "query": "Bibistudio 서울 은평구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "이야기해결단 모여라! (6월)"
+      ]
+    },
+    {
+      "venueId": "venue_가천이길여산부인과기념관_5k1e72",
+      "officialName": "가천이길여산부인과기념관",
+      "address": "인천 중구 우현로90번길 19-4",
+      "query": "가천이길여산부인과기념관 인천 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "가천이길여산부인과기념관"
+      ]
+    },
+    {
+      "venueId": "venue_강원특별자치도춘천시사농동643강원도산림박물관_o6urfv",
+      "officialName": "강원특별자치도 춘천시 사농동 643 강원도산림박물관",
+      "address": "강원특별자치도 춘천시 화목원길 24",
+      "query": "강원특별자치도 춘천시 사농동 643 강원도산림박물관 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "강원도산림박물관"
+      ]
+    },
+    {
+      "venueId": "venue_강원특별자치도춘천시신북읍신샘밭로361강원경찰박물관강원경찰박_1mlyjrr",
+      "officialName": "강원특별자치도 춘천시 신북읍 신샘밭로 361 강원경찰박물관 강원경찰박물관",
+      "address": "강원특별자치도 춘천시 신북읍 신샘밭로 361",
+      "query": "강원특별자치도 춘천시 신북읍 신샘밭로 361 강원경찰박물관 강원경찰박물관 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "강원경찰박물관"
+      ]
+    },
+    {
+      "venueId": "venue_강화문학관_9xbni1",
+      "officialName": "강화문학관",
+      "address": "인천 강화군 강화읍 관청길 40",
+      "query": "강화문학관 인천 강화군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "강화문학관"
+      ]
+    },
+    {
+      "venueId": "venue_거꾸로옛이야기나라숲_1a0q2l0",
+      "officialName": "거꾸로옛이야기나라숲",
+      "address": "경북 상주시 화북면 우복동길 63-23",
+      "query": "거꾸로옛이야기나라숲 경북 상주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "거꾸로옛이야기나라숲"
+      ]
+    },
+    {
+      "venueId": "venue_거제씨월드_15zzpru",
+      "officialName": "거제씨월드",
+      "address": "경남 거제시 일운면 지세포해안로 15",
+      "query": "거제씨월드 경남 거제시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "거제씨월드"
+      ]
+    },
+    {
+      "venueId": "venue_경기해양안전체험관_13axxzf",
+      "officialName": "경기해양안전체험관",
+      "address": "경기 안산시 단원구 대부황금로 1546 경기도 해양안전체험관",
+      "query": "경기해양안전체험관 경기 안산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경기해양안전체험관"
+      ]
+    },
+    {
+      "venueId": "venue_경남도립미술관_15scua8",
+      "officialName": "경남도립미술관",
+      "address": "경남 창원시 의창구 용지로 296",
+      "query": "경남도립미술관 경남 창원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경남도립미술관"
+      ]
+    },
+    {
+      "venueId": "venue_경북대학교자연사박물관_02cumk",
+      "officialName": "경북대학교 자연사박물관",
+      "address": "대구광역시 군위군 효령면 경북대로 2228",
+      "query": "경북대학교 자연사박물관 대구 군위군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경북대학교 자연사박물관"
+      ]
+    },
+    {
+      "venueId": "venue_경산수학체험센터_quxftx",
+      "officialName": "경산수학체험센터",
+      "address": "경북 경산시 삼성현로 110",
+      "query": "경산수학체험센터 경북 경산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경산수학체험센터"
+      ]
+    },
+    {
+      "venueId": "venue_경상남도교육청경남수학문화관_fpo99t",
+      "officialName": "경상남도교육청 경남수학문화관",
+      "address": "경남 창원시 성산구 창원천로196번길 48",
+      "query": "경상남도교육청 경남수학문화관 경남 창원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경상남도교육청 경남수학문화관"
+      ]
+    },
+    {
+      "venueId": "venue_경상남도교육청미래교육원_1yyvepa",
+      "officialName": "경상남도교육청 미래교육원",
+      "address": "경남 의령군 의령읍 의병로8길 12-33",
+      "query": "경상남도교육청 미래교육원 경남 의령군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경상남도교육청 미래교육원"
+      ]
+    },
+    {
+      "venueId": "venue_경상북도경산시박물관로46경산시립박물관_1u0xco8",
+      "officialName": "경상북도 경산시 박물관로 46 경산시립박물관",
+      "address": "경상북도 경산시 박물관로 46,경산시립박물관",
+      "query": "경상북도 경산시 박물관로 46 경산시립박물관 경북 경산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경산시립박물관"
+      ]
+    },
+    {
+      "venueId": "venue_경상북도구미시옥계북로51양포도서관3층구미어린이과학체험관_dy31qt",
+      "officialName": "경상북도 구미시 옥계북로 51 양포도서관 3층 구미어린이과학체험관",
+      "address": "경북 구미시 옥계북로 51",
+      "query": "경상북도 구미시 옥계북로 51 양포도서관 3층 구미어린이과학체험관 경북 구미시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구미어린이과학체험관"
+      ]
+    },
+    {
+      "venueId": "venue_경주버드파크_2vju6z",
+      "officialName": "경주버드파크",
+      "address": "경북 경주시 보문로 74-14",
+      "query": "경주버드파크 경북 경주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경주 버드파크 이용권(~60일)"
+      ]
+    },
+    {
+      "venueId": "venue_계룡시청소년별마루센터_1cg6oe5",
+      "officialName": "계룡시 청소년 별마루센터",
+      "address": "충남 계룡시 신도안면 송정길 174",
+      "query": "계룡시 청소년 별마루센터 충남 계룡시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "계룡시 청소년 별마루센터"
+      ]
+    },
+    {
+      "venueId": "venue_고려대학교서울캠퍼스박물관_크림슨스토어_2eiv52",
+      "officialName": "고려대학교 서울캠퍼스 박물관 & 크림슨스토어",
+      "address": "서울 성북구 안암로 145 고려대학교안암캠퍼스",
+      "query": "고려대학교 서울캠퍼스 박물관 & 크림슨스토어 서울 성북구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고려대학교 서울캠퍼스 박물관 & 크림슨스토어"
+      ]
+    },
+    {
+      "venueId": "venue_고성다이노플레이센터_1cy8zh8",
+      "officialName": "고성다이노플레이센터",
+      "address": "강원 고성군 하이면 월흥리",
+      "query": "고성다이노플레이센터 강원 고성군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고성다이노플레이센터"
+      ]
+    },
+    {
+      "venueId": "venue_고성생태학습관_1nut87b",
+      "officialName": "고성생태학습관",
+      "address": "강원 고성군 고성읍 송학리 134-1",
+      "query": "고성생태학습관 강원 고성군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고성생태학습관"
+      ]
+    },
+    {
+      "venueId": "venue_고아리벽화고분모형관_poz94t",
+      "officialName": "고아리 벽화고분 모형관",
+      "address": "경북 고령군 대가야읍 벽화길 104",
+      "query": "고아리 벽화고분 모형관 경북 고령군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고아리 벽화고분 모형관"
+      ]
+    },
+    {
+      "venueId": "venue_고창고인돌박물관_yd93nj",
+      "officialName": "고창고인돌박물관",
+      "address": "전북특별자치도 고창군 고창읍 고인돌공원길 74",
+      "query": "고창고인돌박물관 전북 고창군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고창고인돌박물관"
+      ]
+    },
+    {
+      "venueId": "venue_공주독립운동기념관_12halk6",
+      "officialName": "공주독립운동기념관",
+      "address": "충남 공주시 중동 258-9",
+      "query": "공주독립운동기념관 충남 공주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "공주독립운동기념관"
+      ]
+    },
+    {
+      "venueId": "venue_광명시어린이교통공원_160ydxk",
+      "officialName": "광명시 어린이교통공원",
+      "address": "경기 광명시 소하일로 51",
+      "query": "광명시 어린이교통공원 경기 광명시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광명시 어린이교통공원"
+      ]
+    },
+    {
+      "venueId": "venue_광명시자원회수시설홍보관_12elgu5",
+      "officialName": "광명시자원회수시설 홍보관",
+      "address": "경기 광명시 가학로85번길 142",
+      "query": "광명시자원회수시설 홍보관 경기 광명시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광명시자원회수시설 홍보관"
+      ]
+    },
+    {
+      "venueId": "venue_광명에디슨뮤지엄_1gwjqa",
+      "officialName": "광명에디슨뮤지엄",
+      "address": "경기 광명시 일직로12번길 24",
+      "query": "광명에디슨뮤지엄 경기 광명시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광명에디슨뮤지엄"
+      ]
+    },
+    {
+      "venueId": "venue_광주솔로몬로파크_17d2fvj",
+      "officialName": "광주 솔로몬로파크",
+      "address": "광주 북구 오문로 244",
+      "query": "광주 솔로몬로파크 광주 북구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광주 솔로몬로파크"
+      ]
+    },
+    {
+      "venueId": "venue_괴강토종어류체험관_1pmqu9q",
+      "officialName": "괴강토종어류체험관",
+      "address": "충북 괴산군 괴산읍 쏘가리2길 31",
+      "query": "괴강토종어류체험관 충북 괴산군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "괴강토종어류체험관"
+      ]
+    },
+    {
+      "venueId": "venue_구로구민회관_126lhkd",
+      "officialName": "구로구민회관",
+      "address": "서울특별시 구로구 가마산로25길 21 (구로동)",
+      "query": "구로구민회관 서울 구로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "누가 내 머리에 똥 쌌어 - 구로"
+      ]
+    },
+    {
+      "venueId": "venue_구리시안전체험관_x67v9d",
+      "officialName": "구리시안전체험관",
+      "address": "경기 구리시 왕숙천로 49",
+      "query": "구리시안전체험관 경기 구리시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구리시안전체험관"
+      ]
+    },
+    {
+      "venueId": "venue_구미에코랜드_nvs552",
+      "officialName": "구미 에코랜드",
+      "address": "제주특별자치도 제주시 조천읍 번영로 1278-169",
+      "query": "구미 에코랜드 제주 제주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구미 에코랜드"
+      ]
+    },
+    {
+      "venueId": "venue_국립공주박물관_6nhxht",
+      "officialName": "국립공주박물관",
+      "address": "충남 공주시 관광단지길 34",
+      "query": "국립공주박물관 충남 공주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립공주박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립과천과학관곤충생태관_wel45n",
+      "officialName": "국립과천과학관 곤충생태관",
+      "address": "경기 과천시 상하벌로 110",
+      "query": "국립과천과학관 곤충생태관 경기 과천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립과천과학관 곤충생태관"
+      ]
+    },
+    {
+      "venueId": "venue_국립극장무대예술지원센터_1hryhb",
+      "officialName": "국립극장 무대예술지원센터",
+      "address": "경기 파주시 탄현면 헤이리로 16",
+      "query": "국립극장 무대예술지원센터 경기 파주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립극장 무대예술지원센터"
+      ]
+    },
+    {
+      "venueId": "venue_국립극장공연예술박물관_1371fuy",
+      "officialName": "국립극장공연예술박물관",
+      "address": "서울특별시 중구 장충단로 59",
+      "query": "국립극장공연예술박물관 서울 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립극장공연예술박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립김해박물관_1r2hbwu",
+      "officialName": "국립김해박물관",
+      "address": "경남 김해시 가야의길 190",
+      "query": "국립김해박물관 경남 김해시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립김해박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립대구기상과학관_vg28ci",
+      "officialName": "국립대구기상과학관",
+      "address": "대구 동구 효동로2길 10",
+      "query": "국립대구기상과학관 대구 동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립대구기상과학관"
+      ]
+    },
+    {
+      "venueId": "venue_국립무형유산원디지털체험관_17pjlep",
+      "officialName": "국립무형유산원 디지털체험관",
+      "address": "전북특별자치도 전주시 완산구 서학로95",
+      "query": "국립무형유산원 디지털체험관 전북 전주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립무형유산원 디지털체험관"
+      ]
+    },
+    {
+      "venueId": "venue_국립민속박물관7080추억의거리_12jh9fz",
+      "officialName": "국립민속박물관 7080추억의거리",
+      "address": "서울특별시 종로구 삼청로 37",
+      "query": "국립민속박물관 7080추억의거리 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립민속박물관 7080추억의거리"
+      ]
+    },
+    {
+      "venueId": "venue_국립민속박물관파주어린이체험실_12jh9fz",
+      "officialName": "국립민속박물관 파주 어린이체험실",
+      "address": "서울특별시 종로구 삼청로 37",
+      "query": "국립민속박물관 파주 어린이체험실 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립민속박물관 파주 어린이체험실"
+      ]
+    },
+    {
+      "venueId": "venue_국립산악박물관_1ahozmj",
+      "officialName": "국립산악박물관",
+      "address": "서울특별시 도봉구 도봉산길 86",
+      "query": "국립산악박물관 서울 도봉구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립산악박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립익산박물관어린이박물관_1fae80d",
+      "officialName": "국립익산박물관 어린이박물관",
+      "address": "전북특별자치도 익산시 금마면 미륵사지로 362",
+      "query": "국립익산박물관 어린이박물관 전북 익산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립익산박물관 어린이박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립중앙박물관어린이박물관_175iv6w",
+      "officialName": "국립중앙박물관 어린이박물관",
+      "address": "서울특별시 용산구 서빙고로 137",
+      "query": "국립중앙박물관 어린이박물관 서울 용산구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립중앙박물관 어린이박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립청주박물관어린이박물관_rxcrff",
+      "officialName": "국립청주박물관 어린이박물관",
+      "address": "충청북도 청주시 상당구 명암로 143",
+      "query": "국립청주박물관 어린이박물관 충청북도 청주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립청주박물관 어린이박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립춘천박물관어린이박물관_vvdhqc",
+      "officialName": "국립춘천박물관 어린이박물관",
+      "address": "강원특별자치도 춘천시 우석로 70",
+      "query": "국립춘천박물관 어린이박물관 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립춘천박물관 어린이박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립충주기상과학관_jhlbi0",
+      "officialName": "국립충주기상과학관",
+      "address": "충북 충주시 번영대로 270-10",
+      "query": "국립충주기상과학관 충북 충주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립충주기상과학관"
+      ]
+    },
+    {
+      "venueId": "venue_국립호남권생물자원관_1u1wfyk",
+      "officialName": "국립호남권생물자원관",
+      "address": "전남 목포시 고하도안길 99",
+      "query": "국립호남권생물자원관 전남 목포시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립호남권생물자원관"
+      ]
+    },
+    {
+      "venueId": "venue_국세홍보관_gowffg",
+      "officialName": "국세홍보관",
+      "address": "서울 종로구 종로5길 86",
+      "query": "국세홍보관 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국세홍보관"
+      ]
+    },
+    {
+      "venueId": "venue_군산근대역사박물관_1xjqfwx",
+      "officialName": "군산근대역사박물관",
+      "address": "전북 군산시 해망로 240",
+      "query": "군산근대역사박물관 전북 군산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "군산근대역사박물관"
+      ]
+    },
+    {
+      "venueId": "venue_군파크루지_xs0asv",
+      "officialName": "군파크 루지",
+      "address": "경북 청도군 화양읍 남성현로 350-30",
+      "query": "군파크 루지 경북 청도군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "청도 군파크 루지+스카이 리프트 할인!(5/1~)"
+      ]
+    },
+    {
+      "venueId": "venue_그대나의뮤즈반고흐to마티스_16ysf3p",
+      "officialName": "그대 나의 뮤즈 반고흐 to 마티스",
+      "address": "강원 강릉시 창해로 307",
+      "query": "그대 나의 뮤즈 반고흐 to 마티스 강원 강릉시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "그대 나의 뮤즈 반고흐 to 마티스"
+      ]
+    },
+    {
+      "venueId": "venue_글로벌지식협력단지_10x9xxe",
+      "officialName": "글로벌지식협력단지",
+      "address": "서울 동대문구 회기로 47 한국개발연구원",
+      "query": "글로벌지식협력단지 서울 동대문구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "글로벌지식협력단지"
+      ]
+    },
+    {
+      "venueId": "venue_금강미래체험관_1tzajp4",
+      "officialName": "금강미래체험관",
+      "address": "전북 군산시 성산면 철새로 120",
+      "query": "금강미래체험관 전북 군산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "금강미래체험관"
+      ]
+    },
+    {
+      "venueId": "venue_기흥성뮤지엄_7wkhoz",
+      "officialName": "기흥성 뮤지엄",
+      "address": "경기 양평군 강하면 강남로 267",
+      "query": "기흥성 뮤지엄 경기 양평군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "기흥성 뮤지엄"
+      ]
+    },
+    {
+      "venueId": "venue_김중업박물관안양박물관_1uns0ms",
+      "officialName": "김중업 박물관 안양박물관",
+      "address": "경기도 안양시 만안구 예술공원로103번길 4",
+      "query": "김중업 박물관 안양박물관 경기 안양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "안양박물관"
+      ]
+    },
+    {
+      "venueId": "venue_김중업건축박물관_1uns0ms",
+      "officialName": "김중업건축박물관",
+      "address": "경기도 안양시 만안구 예술공원로103번길 4",
+      "query": "김중업건축박물관 경기 안양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "김중업건축박물관"
+      ]
+    },
+    {
+      "venueId": "venue_김포시독립운동기념관_jtdumr",
+      "officialName": "김포시독립운동기념관",
+      "address": "경기 김포시 양촌읍 양곡2로30번길 46",
+      "query": "김포시독립운동기념관 경기 김포시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "김포시독립운동기념관"
+      ]
+    },
+    {
+      "venueId": "venue_김해시수도박물관_1h3xgqp",
+      "officialName": "김해시 수도박물관",
+      "address": "경상남도 김해시 한림면 김해대로 1029-20",
+      "query": "김해시 수도박물관 경남 김해시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수도박물관"
+      ]
+    },
+    {
+      "venueId": "venue_나비생태원_r32yvu",
+      "officialName": "나비생태원",
+      "address": "대구 동구 팔공로50길 66",
+      "query": "나비생태원 대구 동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "나비생태원"
+      ]
+    },
+    {
+      "venueId": "venue_낙동강역사이야기관_mk9h21",
+      "officialName": "낙동강역사이야기관",
+      "address": "경북 상주시 낙동면 낙동1길 116",
+      "query": "낙동강역사이야기관 경북 상주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "낙동강역사이야기관"
+      ]
+    },
+    {
+      "venueId": "venue_남도향토음식박물관_xoukuq",
+      "officialName": "남도향토음식박물관",
+      "address": "광주 북구 설죽로 477",
+      "query": "남도향토음식박물관 광주 북구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "남도향토음식박물관"
+      ]
+    },
+    {
+      "venueId": "venue_남원다움관_yun67s",
+      "officialName": "남원다움관",
+      "address": "전북 남원시 검멀1길 14",
+      "query": "남원다움관 전북 남원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "남원다움관"
+      ]
+    },
+    {
+      "venueId": "venue_남원백두대간생태교육장_5cdzg0",
+      "officialName": "남원백두대간생태교육장",
+      "address": "전북 남원시 운봉읍 운봉로 151",
+      "query": "남원백두대간생태교육장 전북 남원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "남원백두대간생태교육장 전시관"
+      ]
+    },
+    {
+      "venueId": "venue_남이섬_1j6sa0m",
+      "officialName": "남이섬",
+      "address": "경기 가평군 가평읍 북한강변로 1024",
+      "query": "남이섬 경기 가평군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "남이섬 입장권 (~26.05.31)"
+      ]
+    },
+    {
+      "venueId": "venue_네이처스케이프_1q9pjab",
+      "officialName": "네이처스케이프",
+      "address": "경기 화성시 동탄구 동탄대로5길 21",
+      "query": "네이처스케이프 경기 화성시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "네이처스케이프 플러스 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_네이처에코리움_gz3gjt",
+      "officialName": "네이처에코리움",
+      "address": "경남 밀양시 단장면 관광단지로 77",
+      "query": "네이처에코리움 경남 밀양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "네이처에코리움"
+      ]
+    }
+  ],
   "insufficientIdentityQueue": [
     {
       "venueId": "venue_장소확인필요_134p0t7",
@@ -18,7 +1790,7 @@
       "address": "",
       "query": "장소 확인 필요",
       "priority": 200,
-      "performanceCount": 876,
+      "performanceCount": 56,
       "reviewFlags": [
         "invalid_coordinate",
         "missing_detailed_address",
@@ -26,45 +1798,83 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
-        "나만의 무드를 녹여내 만든 단 하나뿐인 실버링",
-        "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)"
+        "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)",
+        "화성박물관&화성행궁 어린이 역사투어",
+        "렛츠고 역사탐험대, 월 1~2회 박물관 답사 소셜클럽"
       ]
     },
     {
-      "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_vntjf9",
-      "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
+      "venueId": "venue_서울강남구_vntjf9",
+      "officialName": "서울 강남구",
       "address": "서울 강남구 선릉로100길 1",
-      "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
+      "query": "서울 강남구 서울 강남구",
       "priority": 48,
       "performanceCount": 6,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
         "리얼 가죽으로 명품st 가죽팔찌 만들기",
-        "순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기",
-        "원앤온리 특별한 목걸이 만들기 (원데이 커플/우정 클래스)"
+        "데일리와 유니크가 함께하는 발찌 클래스",
+        "순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기"
       ]
     },
     {
-      "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_xkqidd",
-      "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
-      "address": "서울 강남구 강남대로106길 29",
-      "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
+      "venueId": "venue_강촌레일파크_1drg8mo",
+      "officialName": "강촌레일파크",
+      "address": "강촌레일파크",
+      "query": "강촌레일파크 강촌레일파크",
       "priority": 24,
       "performanceCount": 3,
       "reviewFlags": [
         "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "가평 레일바이크 예매권",
+        "김유정 레일바이크 예매권",
+        "경강 레일바이크 예매권"
+      ]
+    },
+    {
+      "venueId": "venue_노원구민의전당구노원구민회관_1mjxumy",
+      "officialName": "노원구민의전당 구.노원구민회관",
+      "address": "노원구민의전당 (구.노원구민회관)(자세히)",
+      "query": "노원구민의전당 구.노원구민회관 노원구민의전당 (구.노원구민회관)(자세히)",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "［노원］ 싱어롱 콘서트 뮤지컬 ‘Live Show’ 〈무지개 물고기〉",
+        "［만원의행복］2026 가족뮤지컬 〈인어공주〉 - 서울 노원",
+        "리얼공룡쇼 〈포켓다이노 〉 - 서울 노원"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구_xkqidd",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 강남대로106길 29",
+      "query": "서울 강남구 서울 강남구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
         "그림컵클래스 당일수령가능한 머그컵만들기체험",
-        "전통적인 한국문양 단청그리기 원데이클래스 세라듀 CERADU",
-        "한국 전통 수호신 해태그리기 원데이클래스 세라듀 CERADU"
+        "한국 전통 수호신 해태그리기 원데이클래스 세라듀 CERADU",
+        "전통적인 한국문양 단청그리기 원데이클래스 세라듀 CERADU"
       ]
     },
     {
@@ -79,9 +1889,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
+        "원데이 반려동물 목걸이 펫 클래스",
         "우리만의 팔찌 만들기 (원데이 커플/우정 클래스)",
-        "강남구 / 서울원데이[서울/강남] 원데이 반려동물 목걸이 펫 클래스(0)70,000원",
-        "원데이 반려동물 목걸이 펫 클래스"
+        "강남구 / 서울원데이[서울/강남] 원데이 반려동물 목걸이 펫 클래스(0)70,000원"
       ]
     },
     {
@@ -97,25 +1907,44 @@
       ],
       "sampleTitles": [
         "내 마음을 알고 싶어요(MMPI-2)",
-        "커플성격분석 에니어그램",
-        "강남구 / 서울원데이[강남]커플성격분석 에니어그램(0)16%100,000원"
+        "강남구 / 서울원데이[강남]커플성격분석 에니어그램(0)16%100,000원",
+        "커플성격분석 에니어그램"
       ]
     },
     {
-      "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_7p5dnq",
-      "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
-      "address": "서울 강남구 선릉로 704",
-      "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
-      "priority": 16,
-      "performanceCount": 2,
+      "venueId": "venue_인제스피디움_jpwunp",
+      "officialName": "인제스피디움",
+      "address": "인제스피디움",
+      "query": "인제스피디움 인제스피디움",
+      "priority": 24,
+      "performanceCount": 3,
       "reviewFlags": [
         "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "세상에 하나뿐인 나만의 머그컵 만들기_도자기",
-        "컬러클레이 플레이트 만들기_도자기"
+        "맘맘x인제 스피디움 4인 패키지 특가",
+        "맘맘x인제 스피디움 3인 패키지 특가",
+        "맘맘x인제 스피디움 2인 패키지 특가"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구_7p5dnq",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 선릉로 704",
+      "query": "서울 강남구 서울 강남구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "컬러클레이 플레이트 만들기_도자기",
+        "세상에 하나뿐인 나만의 머그컵 만들기_도자기"
       ]
     },
     {
@@ -131,8 +1960,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "체질에 맞는 블렌딩티 원데이 클래스 - 티하우스 절기",
-        "심플함을 더한 NEW뱅글팔찌 클래스_925실버"
+        "심플함을 더한 NEW뱅글팔찌 클래스_925실버",
+        "체질에 맞는 블렌딩티 원데이 클래스 - 티하우스 절기"
       ]
     },
     {
@@ -168,57 +1997,10 @@
       ]
     },
     {
-      "venueId": "venue_경기_9vi8gj",
-      "officialName": "경기 ·",
-      "address": "경기도 · 광주시 · 중대동",
-      "query": "경기 · 경기 ·",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "모루인형 클래스"
-      ]
-    },
-    {
-      "venueId": "venue_경기_v5uil2",
-      "officialName": "경기 ·",
-      "address": "경기도 · 수원시 · 영통구",
-      "query": "경기 · 경기 ·",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "순화 그림책꽃놀이"
-      ]
-    },
-    {
-      "venueId": "venue_경기_uu9xqn",
-      "officialName": "경기 ·",
-      "address": "경기도 · 김포시 · 구래동",
-      "query": "경기 · 경기 ·",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "100가지의 프리미엄 조향 퍼스널 향수 클래스"
-      ]
-    },
-    {
-      "venueId": "venue_노원구민의전당구노원구민회관_1mjxumy",
-      "officialName": "노원구민의전당 구.노원구민회관",
-      "address": "노원구민의전당 (구.노원구민회관)(자세히)",
-      "query": "노원구민의전당 구.노원구민회관 노원구민의전당 (구.노원구민회관)(자세히)",
+      "venueId": "venue_js아트홀구고스트씨어터_15lyvdi",
+      "officialName": "JS아트홀 구,고스트씨어터",
+      "address": "JS아트홀(구,고스트씨어터)(자세히)",
+      "query": "JS아트홀 구,고스트씨어터 js아트홀(구,고스트씨어터)(자세히)",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -229,7 +2011,150 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "［만원의행복］2026 가족뮤지컬 〈인어공주〉 - 서울 노원"
+        "뮤지컬 〈달빛,한스푼〉"
+      ]
+    },
+    {
+      "venueId": "venue_the초리골_c0m0qw",
+      "officialName": "the초리골",
+      "address": "the초리골",
+      "query": "the초리골 the초리골",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "the초리골 야외수영장(취사가능)"
+      ]
+    },
+    {
+      "venueId": "venue_강화레포츠파크_8r2bco",
+      "officialName": "강화레포츠파크",
+      "address": "강화레포츠파크",
+      "query": "강화레포츠파크 강화레포츠파크",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "레포츠파크"
+      ]
+    },
+    {
+      "venueId": "venue_곤지암루지360_1xsh58q",
+      "officialName": "곤지암루지360",
+      "address": "곤지암루지360",
+      "query": "곤지암루지360 곤지암루지360",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "2026년 곤지암루지360 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_누리워터파크_1d0l3i1",
+      "officialName": "누리워터파크",
+      "address": "누리워터파크",
+      "query": "누리워터파크 누리워터파크",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "바닷가인근 누리워터파크(수영장/슬라이드/샤워실완비)"
+      ]
+    },
+    {
+      "venueId": "venue_더현대서울_iwgcu9",
+      "officialName": "더현대 서울",
+      "address": "더현대 서울",
+      "query": "더현대 서울 더현대 서울",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "렘브란트부터 고야까지 전시 어린이 도슨트 미취학 키즈 체험 라라클래스"
+      ]
+    },
+    {
+      "venueId": "venue_델피노오션플레이_1yktvh3",
+      "officialName": "델피노 오션플레이",
+      "address": "델피노 오션플레이",
+      "query": "델피노 오션플레이 델피노 오션플레이",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "소노 델피노 미니골프&파크골프 (~27.02.28)"
+      ]
+    },
+    {
+      "venueId": "venue_라온수상레저_goiyc0",
+      "officialName": "라온 수상레저",
+      "address": "라온 수상레저",
+      "query": "라온 수상레저 라온 수상레저",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "라온 수상레저&워터파크 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_라원_1p9frox",
+      "officialName": "라원",
+      "address": "라원",
+      "query": "라원 라원",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "라원 미디어아트 복합문화정원"
       ]
     },
     {
@@ -248,30 +2173,64 @@
       ]
     },
     {
-      "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_z8kzl7",
-      "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
-      "address": "서울 강남구 강남대로98길 12-5",
-      "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
+      "venueId": "venue_발왕산케이블카_qca8e6",
+      "officialName": "발왕산 케이블카",
+      "address": "발왕산 케이블카",
+      "query": "발왕산 케이블카 발왕산 케이블카",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
         "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "연주는 감성입니다. 악보는 못 봐도 괜찮아요."
+        "강릉 런닝맨(90분)+발왕산 케이블카PKG"
       ]
     },
     {
-      "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_g2jcnm",
-      "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
-      "address": "서울 강남구 대치동 1026",
-      "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
+      "venueId": "venue_비체팰리스_1vd6p8n",
+      "officialName": "비체팰리스",
+      "address": "비체팰리스",
+      "query": "비체팰리스 비체팰리스",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
         "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "비체팰리스 올인클루시브 3인/4인 패키지 (객실1박+조식뷔페+김세트+개화예술공원or갯벌체험+할인권 3종)"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구_1mu7kr2",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 논현로63길 16",
+      "query": "서울 강남구 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "향수만들기 원데이클래스 소모임 (10인이상) 시그널센트 출장서비스"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구_g2jcnm",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 대치동 1026",
+      "query": "서울 강남구 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
@@ -280,19 +2239,18 @@
       ]
     },
     {
-      "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_1mu7kr2",
-      "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
-      "address": "서울 강남구 논현로63길 16",
-      "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
+      "venueId": "venue_서울강남구_z8kzl7",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 강남대로98길 12-5",
+      "query": "서울 강남구 서울 강남구",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "향수만들기 원데이클래스 소모임 (10인이상) 시그널센트 출장서비스"
+        "연주는 감성입니다. 악보는 못 봐도 괜찮아요."
       ]
     },
     {
@@ -372,20 +2330,18 @@
       ]
     },
     {
-      "venueId": "venue_서울광진구_v4uu06",
-      "officialName": "서울 광진구",
-      "address": "서울 광진구",
-      "query": "서울 광진구 서울 광진구",
+      "venueId": "venue_서울강남구압구정로79길59304호_mmgaje",
+      "officialName": "서울 강남구 압구정로79길 59 304호",
+      "address": "서울 강남구 압구정로79길 59 (청담동) 304호",
+      "query": "서울 강남구 압구정로79길 59 304호 서울 강남구",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "건대-댄스/무용배우기 (프라이빗 1:1 / 그룹레슨 / 단체레슨)"
+        "엠유비유티샵 1:1 꼼꼼 메이크업 클래스"
       ]
     },
     {
@@ -403,6 +2359,60 @@
       ],
       "sampleTitles": [
         "비발디파크 액티비티 패키지 (소노벨or소노캄 객실+앤트월드or루지or인피니티풀 2인+할인권)"
+      ]
+    },
+    {
+      "venueId": "venue_소노캄거제_15lofrt",
+      "officialName": "소노캄 거제",
+      "address": "소노캄 거제",
+      "query": "소노캄 거제 소노캄 거제",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "소노캄 거제 오션어드벤처 미들시즌 종일권 (04/25~06/19)"
+      ]
+    },
+    {
+      "venueId": "venue_씨랄라워터파크_x6coa1",
+      "officialName": "씨랄라 워터파크",
+      "address": "씨랄라 워터파크",
+      "query": "씨랄라 워터파크 씨랄라 워터파크",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "씨랄라 워터파크 종일 이용권 (~6/30)"
+      ]
+    },
+    {
+      "venueId": "venue_약산체리원_14lmv60",
+      "officialName": "약산체리원",
+      "address": "약산체리원",
+      "query": "약산체리원 약산체리원",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "약산체리원 체리따기체험"
       ]
     },
     {
@@ -437,6 +2447,132 @@
       ]
     },
     {
+      "venueId": "venue_자연의꿈수영장_mhh9th",
+      "officialName": "자연의꿈수영장",
+      "address": "자연의꿈수영장",
+      "query": "자연의꿈수영장 자연의꿈수영장",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "자연의꿈수영장(취사가능 수영장!!)"
+      ]
+    },
+    {
+      "venueId": "venue_캘리클럽_iwpns6",
+      "officialName": "캘리클럽",
+      "address": "캘리클럽",
+      "query": "캘리클럽 캘리클럽",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "캘리클럽 키즈카페 실내 스포츠 테마파크 12개점"
+      ]
+    },
+    {
+      "venueId": "venue_킹스베이_q8zwgc",
+      "officialName": "킹스베이",
+      "address": "킹스베이",
+      "query": "킹스베이 킹스베이",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "충주 킹스베이 워터파크&놀이기구 5월 특가 이용권"
+      ]
+    },
+    {
+      "venueId": "venue_테테루드림랜드_1rljwuv",
+      "officialName": "테테루드림랜드",
+      "address": "테테루드림랜드",
+      "query": "테테루드림랜드 테테루드림랜드",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "테테루 드림랜드"
+      ]
+    },
+    {
+      "venueId": "venue_티브리지_ou4cot",
+      "officialName": "티브리지",
+      "address": "티브리지",
+      "query": "티브리지 티브리지",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "웨이브파크 서프존 (4/25~6/5)"
+      ]
+    },
+    {
+      "venueId": "venue_파밀리에승마장_1yiq1up",
+      "officialName": "파밀리에 승마장",
+      "address": "파밀리에 승마장",
+      "query": "파밀리에 승마장 파밀리에 승마장",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "파밀리에 승마장 승마체험"
+      ]
+    },
+    {
+      "venueId": "venue_프래밀리풀빌라앤호텔_z89emn",
+      "officialName": "프래밀리 풀빌라앤호텔",
+      "address": "프래밀리 풀빌라앤호텔",
+      "query": "프래밀리 풀빌라앤호텔 프래밀리 풀빌라앤호텔",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "거제 프래밀리 풀빌라&호텔 특가 패키지"
+      ]
+    },
+    {
       "venueId": "venue_한_1ncnguk",
       "officialName": "한",
       "address": "경기도 하남시 신장로 58(천현동)",
@@ -452,7 +2588,7 @@
       ]
     }
   ],
-  "staleCacheCount": 7,
+  "staleCacheCount": 38,
   "topNeedsReview": [
     {
       "venueId": "venue_갓성비클래스_1lf51gx",
@@ -809,19 +2945,182 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-05-14T04:24:55.602Z",
+    "checkedAt": "2026-05-14T16:15:09.607Z",
     "status": "warn",
-    "venueCount": 2311,
+    "venueCount": 2672,
     "matchedCount": 1467,
     "highConfidenceMatchCount": 1074,
     "needsReviewCount": 20,
     "notFoundCount": 236,
-    "pendingLookupCount": 0,
-    "insufficientIdentityCount": 27,
-    "lookupReady": false,
-    "providersConfigured": [],
-    "staleCacheCount": 7,
-    "topQueue": [],
+    "pendingLookupCount": 372,
+    "insufficientIdentityCount": 47,
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
+    "staleCacheCount": 38,
+    "topQueue": [
+      {
+        "venueId": "venue_슈퍼키즈랜드_5pomic",
+        "officialName": "슈퍼키즈랜드",
+        "address": "슈퍼키즈랜드",
+        "query": "슈퍼키즈랜드 슈퍼키즈랜드",
+        "priority": 828,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "coordinate_fallback_risk",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "슈퍼키즈랜드(이천시 가볼만한곳!)"
+        ]
+      },
+      {
+        "venueId": "venue_황금수영장_5pomic",
+        "officialName": "황금수영장",
+        "address": "황금수영장",
+        "query": "황금수영장 황금수영장",
+        "priority": 828,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "coordinate_fallback_risk",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "고기굽는 수영장!!황금수영장(취사가능 및 평상무료)"
+        ]
+      },
+      {
+        "venueId": "venue_국립중앙박물관상설전시관검사대통과후좌측계단_1bmlrhd",
+        "officialName": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단",
+        "address": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단 앞",
+        "query": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단 국립중앙박물관 상설전시관",
+        "priority": 708,
+        "performanceCount": 16,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "저학년 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
+          "그리스로마 신화와 별자리를 한번에 알아보는 시간! - (8 -10세)",
+          "국립중앙박물관 삼국시대 초등저학년 \"Premium\" 역사탐험대 Season3"
+        ]
+      },
+      {
+        "venueId": "venue_nol씨어터대학로우리투자증권_msyxk3",
+        "officialName": "NOL 씨어터 대학로 우리투자증권",
+        "address": "NOL 씨어터 대학로 우리투자증권홀(자세히)",
+        "query": "NOL 씨어터 대학로 우리투자증권 nol 씨어터",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "뮤지컬 〈브라더스 까라마조프〉"
+        ]
+      },
+      {
+        "venueId": "venue_국립저작권박물관_s040dv",
+        "officialName": "국립저작권박물관",
+        "address": "경상남도 진주시 소호로 117 국립저작권박물관",
+        "query": "국립저작권박물관 경남 진주시",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "국립저작권박물관"
+        ]
+      },
+      {
+        "venueId": "venue_물위에서즐기는피크닉세빛섬튜브스터_kopaad",
+        "officialName": "물 위에서 즐기는 피크닉 세빛섬 튜브스터",
+        "address": "물 위에서 즐기는 피크닉 세빛섬 튜브스터",
+        "query": "물 위에서 즐기는 피크닉 세빛섬 튜브스터 물 위에서",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "물 위에서 즐기는 피크닉 세빛섬 튜브스터"
+        ]
+      },
+      {
+        "venueId": "venue_소노벨델피노오션플레이_1n34h0j",
+        "officialName": "소노벨 델피노 오션플레이",
+        "address": "소노벨 델피노 오션플레이",
+        "query": "소노벨 델피노 오션플레이 소노벨 델피노",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "소노벨 델피노 오션플레이 미들시즌 종일권 (04/25~06/19)"
+        ]
+      },
+      {
+        "venueId": "venue_싱가포르사이언스센터_aiqcp5",
+        "officialName": "싱가포르 사이언스 센터",
+        "address": "15 Science Centre Rd, 싱가포르 609081",
+        "query": "싱가포르 사이언스 센터 15 science",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "싱가포르 사이언스 센터"
+        ]
+      },
+      {
+        "venueId": "venue_진주실크박물관_ssqy7r",
+        "officialName": "진주실크박물관",
+        "address": "경상남도 진주시 문산읍 월아산로 994 진주실크박물관 진주실크박물관",
+        "query": "진주실크박물관 경남 진주시",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "진주실크박물관"
+        ]
+      },
+      {
+        "venueId": "venue_티켓링크1975씨어터구어린이회관문화관_1fvd11p",
+        "officialName": "티켓링크 1975 씨어터 구 어린이회관 문화관",
+        "address": "티켓링크 1975 씨어터 (구 어린이회관 문화관)(자세히)",
+        "query": "티켓링크 1975 씨어터 구 어린이회관 문화관 티켓링크 1975",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "라이브 시트콤 뮤지컬 〈인싸가족〉"
+        ]
+      }
+    ],
     "topInsufficientIdentityQueue": [
       {
         "venueId": "venue_장소확인필요_134p0t7",
@@ -829,7 +3128,7 @@
         "address": "",
         "query": "장소 확인 필요",
         "priority": 200,
-        "performanceCount": 876,
+        "performanceCount": 56,
         "reviewFlags": [
           "invalid_coordinate",
           "missing_detailed_address",
@@ -837,45 +3136,83 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
-          "나만의 무드를 녹여내 만든 단 하나뿐인 실버링",
-          "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)"
+          "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)",
+          "화성박물관&화성행궁 어린이 역사투어",
+          "렛츠고 역사탐험대, 월 1~2회 박물관 답사 소셜클럽"
         ]
       },
       {
-        "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_vntjf9",
-        "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
+        "venueId": "venue_서울강남구_vntjf9",
+        "officialName": "서울 강남구",
         "address": "서울 강남구 선릉로100길 1",
-        "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
+        "query": "서울 강남구 서울 강남구",
         "priority": 48,
         "performanceCount": 6,
         "reviewFlags": [
-          "alias_merge_candidate",
           "needs_official_place_lookup",
           "insufficient_place_identity"
         ],
         "sampleTitles": [
           "리얼 가죽으로 명품st 가죽팔찌 만들기",
-          "순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기",
-          "원앤온리 특별한 목걸이 만들기 (원데이 커플/우정 클래스)"
+          "데일리와 유니크가 함께하는 발찌 클래스",
+          "순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기"
         ]
       },
       {
-        "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_xkqidd",
-        "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
-        "address": "서울 강남구 강남대로106길 29",
-        "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
+        "venueId": "venue_강촌레일파크_1drg8mo",
+        "officialName": "강촌레일파크",
+        "address": "강촌레일파크",
+        "query": "강촌레일파크 강촌레일파크",
         "priority": 24,
         "performanceCount": 3,
         "reviewFlags": [
           "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "가평 레일바이크 예매권",
+          "김유정 레일바이크 예매권",
+          "경강 레일바이크 예매권"
+        ]
+      },
+      {
+        "venueId": "venue_노원구민의전당구노원구민회관_1mjxumy",
+        "officialName": "노원구민의전당 구.노원구민회관",
+        "address": "노원구민의전당 (구.노원구민회관)(자세히)",
+        "query": "노원구민의전당 구.노원구민회관 노원구민의전당 (구.노원구민회관)(자세히)",
+        "priority": 24,
+        "performanceCount": 3,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "［노원］ 싱어롱 콘서트 뮤지컬 ‘Live Show’ 〈무지개 물고기〉",
+          "［만원의행복］2026 가족뮤지컬 〈인어공주〉 - 서울 노원",
+          "리얼공룡쇼 〈포켓다이노 〉 - 서울 노원"
+        ]
+      },
+      {
+        "venueId": "venue_서울강남구_xkqidd",
+        "officialName": "서울 강남구",
+        "address": "서울 강남구 강남대로106길 29",
+        "query": "서울 강남구 서울 강남구",
+        "priority": 24,
+        "performanceCount": 3,
+        "reviewFlags": [
           "needs_official_place_lookup",
           "insufficient_place_identity"
         ],
         "sampleTitles": [
           "그림컵클래스 당일수령가능한 머그컵만들기체험",
-          "전통적인 한국문양 단청그리기 원데이클래스 세라듀 CERADU",
-          "한국 전통 수호신 해태그리기 원데이클래스 세라듀 CERADU"
+          "한국 전통 수호신 해태그리기 원데이클래스 세라듀 CERADU",
+          "전통적인 한국문양 단청그리기 원데이클래스 세라듀 CERADU"
         ]
       },
       {
@@ -890,9 +3227,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
+          "원데이 반려동물 목걸이 펫 클래스",
           "우리만의 팔찌 만들기 (원데이 커플/우정 클래스)",
-          "강남구 / 서울원데이[서울/강남] 원데이 반려동물 목걸이 펫 클래스(0)70,000원",
-          "원데이 반려동물 목걸이 펫 클래스"
+          "강남구 / 서울원데이[서울/강남] 원데이 반려동물 목걸이 펫 클래스(0)70,000원"
         ]
       },
       {
@@ -908,25 +3245,44 @@
         ],
         "sampleTitles": [
           "내 마음을 알고 싶어요(MMPI-2)",
-          "커플성격분석 에니어그램",
-          "강남구 / 서울원데이[강남]커플성격분석 에니어그램(0)16%100,000원"
+          "강남구 / 서울원데이[강남]커플성격분석 에니어그램(0)16%100,000원",
+          "커플성격분석 에니어그램"
         ]
       },
       {
-        "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_7p5dnq",
-        "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
-        "address": "서울 강남구 선릉로 704",
-        "query": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩 서울 강남구",
-        "priority": 16,
-        "performanceCount": 2,
+        "venueId": "venue_인제스피디움_jpwunp",
+        "officialName": "인제스피디움",
+        "address": "인제스피디움",
+        "query": "인제스피디움 인제스피디움",
+        "priority": 24,
+        "performanceCount": 3,
         "reviewFlags": [
           "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
           "needs_official_place_lookup",
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "세상에 하나뿐인 나만의 머그컵 만들기_도자기",
-          "컬러클레이 플레이트 만들기_도자기"
+          "맘맘x인제 스피디움 4인 패키지 특가",
+          "맘맘x인제 스피디움 3인 패키지 특가",
+          "맘맘x인제 스피디움 2인 패키지 특가"
+        ]
+      },
+      {
+        "venueId": "venue_서울강남구_7p5dnq",
+        "officialName": "서울 강남구",
+        "address": "서울 강남구 선릉로 704",
+        "query": "서울 강남구 서울 강남구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "컬러클레이 플레이트 만들기_도자기",
+          "세상에 하나뿐인 나만의 머그컵 만들기_도자기"
         ]
       },
       {
@@ -942,56 +3298,8 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "체질에 맞는 블렌딩티 원데이 클래스 - 티하우스 절기",
-          "심플함을 더한 NEW뱅글팔찌 클래스_925실버"
-        ]
-      },
-      {
-        "venueId": "venue_11_8e47i2",
-        "officialName": "1:1",
-        "address": "전북특별자치도 부안군 부안읍 오리정로 116",
-        "query": "1:1 전북 부안군",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "내가 좋아하는 곡 피아노로 연주하는 고급취미반 ! 가을쌤 피아노 클래스"
-        ]
-      },
-      {
-        "venueId": "venue_cmg월드_1yjodl2",
-        "officialName": "CMG월드",
-        "address": "CMG월드",
-        "query": "CMG월드 cmg월드",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "볼베어파크 부천, 은평, 천안 / 세라젬웰파크 위례점 키즈카페 통합특가 CMG월드"
-        ]
-      },
-      {
-        "venueId": "venue_경기_9vi8gj",
-        "officialName": "경기 ·",
-        "address": "경기도 · 광주시 · 중대동",
-        "query": "경기 · 경기 ·",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "모루인형 클래스"
+          "심플함을 더한 NEW뱅글팔찌 클래스_925실버",
+          "체질에 맞는 블렌딩티 원데이 클래스 - 티하우스 절기"
         ]
       }
     ],

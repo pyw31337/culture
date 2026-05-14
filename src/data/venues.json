@@ -4819,7 +4819,7 @@
     "address": "대구광역시 달성군 유가읍 테크노대로6길 20",
     "lat": 35.6866551,
     "lng": 128.4657617,
-    "district": "달성군",
+    "district": "",
     "phone": "053-670-6114",
     "homepage": "https://www.dnsm.or.kr/"
   },
@@ -7527,7 +7527,7 @@
     "address": "충청남도 공주시 고마나루길 5 (웅진동)",
     "lat": 36.46003280000001,
     "lng": 127.11140380000006,
-    "district": "공주시",
+    "district": "",
     "phone": "041-840-2180",
     "homepage": "http://acc.gongju.go.kr/"
   },
@@ -8513,7 +8513,7 @@
     "address": "강원도 강릉시 죽헌길 7 (지변동)",
     "lat": 37.7708509,
     "lng": 128.8714463,
-    "district": "강릉시",
+    "district": "",
     "phone": "033-640-2560",
     "homepage": "http://www.gwnu.ac.kr/kor/154/subview.do?enc=Zm5jdDF8QEB8JTJGY3VsdHVyZSUyRmtvciUyRmxpc3QuZG8lM0ZndWJ1biUzRDIlMjY%3D"
   },
@@ -8540,7 +8540,7 @@
     "address": "강원도 춘천시 효자상길5번길 13 (효자동)",
     "lat": 37.8727557,
     "lng": 127.72918819999995,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-259-5841",
     "homepage": "http://www.cccf.or.kr/designer/skin/cafacility/cahallfacility.html"
   },
@@ -8557,7 +8557,7 @@
     "address": "강원도 춘천시 강원대학길 1 (효자동)",
     "lat": 37.8691718944428,
     "lng": 127.744539492098,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-250-7201",
     "homepage": "https://kwbc.kangwon.ac.kr/"
   },
@@ -8566,7 +8566,7 @@
     "address": "충청북도 청주시 상당구 단재로 28",
     "lat": 36.6246774,
     "lng": 127.50130059999992,
-    "district": "청주시",
+    "district": "",
     "phone": "010-6889-7388",
     "homepage": "http://himusical.com/"
   },
@@ -8585,7 +8585,7 @@
     "address": "충청북도 충주시 중앙로 128 (성내동)",
     "lat": 36.9707081,
     "lng": 127.93725459999996,
-    "district": "충주시",
+    "district": "",
     "phone": "043-850-3914",
     "homepage": "https://www.chungju.go.kr/culture/"
   },
@@ -8669,7 +8669,7 @@
     "address": "충청남도 예산군 삽교읍 도청대로 600",
     "lat": 36.681115,
     "lng": 126.67101189999994,
-    "district": "예산군",
+    "district": "",
     "phone": "041-635-3815",
     "homepage": "https://www.chungnam.go.kr/art.do"
   },
@@ -8705,7 +8705,7 @@
     "address": "충청남도 서산시 부춘공원2로 11 (읍내동)",
     "lat": 36.7867298,
     "lng": 126.4489674,
-    "district": "서산시",
+    "district": "",
     "phone": "041-669-5050",
     "homepage": "http://www.cnkccf.or.kr/seosan.do"
   },
@@ -8748,7 +8748,7 @@
     "address": "충청남도 천안시 동남구 각원사길 114-8(안서동)",
     "lat": 36.8290506,
     "lng": 127.1844376,
-    "district": "천안시"
+    "district": ""
   },
   "드림아트홀": {
     "name": "드림아트홀",
@@ -8817,7 +8817,7 @@
     "address": "대구광역시 수성구 무학로 180 (지산동)",
     "lat": 35.8295426,
     "lng": 128.62841500000002,
-    "district": "수성구",
+    "district": "",
     "phone": "053-666-3300",
     "homepage": "http://www.ssartpia.kr"
   },
@@ -8862,7 +8862,7 @@
     "address": "경상북도 김천시 김천로 200 (남산동)",
     "lat": 36.118733,
     "lng": 128.12124570000003,
-    "district": "김천시",
+    "district": "",
     "phone": "054-439-9487",
     "homepage": "https://www.gc.go.kr/gcart/contents.do?mId=0200000000"
   },
@@ -8905,7 +8905,7 @@
     "address": "대구광역시 달서구 달구벌대로 1095 - 0 계명대학교",
     "lat": 35.8570982,
     "lng": 128.48714700000005,
-    "district": "달서구",
+    "district": "",
     "phone": "053-580-6600",
     "homepage": "http://www.kmuartcenter.kr/index.html"
   },
@@ -8924,7 +8924,7 @@
     "address": "경상북도 경산시 대학로 280 (대동)",
     "lat": 35.8367325,
     "lng": 128.754368,
-    "district": "경산시",
+    "district": "",
     "phone": "053-810-1527",
     "homepage": "https://www.yu.ac.kr/cmac/index.do"
   },
@@ -8933,7 +8933,7 @@
     "address": "대구광역시 달성군 현풍면 현풍동로 92",
     "lat": 35.6988635,
     "lng": 128.45199760000003,
-    "district": "달성군",
+    "district": "",
     "phone": "053-611-0010",
     "homepage": "http://dalseong.kccf.or.kr/"
   },
@@ -8958,7 +8958,7 @@
     "address": "대구광역시 달서구 공원순환로 201 (성당동)",
     "lat": 35.8446585,
     "lng": 128.55874089999998,
-    "district": "달서구",
+    "district": "",
     "phone": "053-606-6114",
     "homepage": "http://artcenter.daegu.go.kr/content.html?md=0047"
   },
@@ -9095,7 +9095,7 @@
     "address": "대구광역시 남구 중앙대로51길 129-1 (대명동)",
     "lat": 35.8557069,
     "lng": 128.5834116,
-    "district": "남구",
+    "district": "",
     "homepage": "https://blog.naver.com/wofla5807"
   },
   "포항문화예술회관 소공연장": {
@@ -9308,7 +9308,7 @@
     "address": "경상남도 거제시 장승로 145 (장승포동)",
     "lat": 34.8671887,
     "lng": 128.72397890000002,
-    "district": "거제시",
+    "district": "",
     "phone": "055-680-1000",
     "homepage": "http://www.geojeart.or.kr/"
   },
@@ -9341,7 +9341,7 @@
     "address": "경상남도 창원시 성산구 원이대로 362 (대원동)",
     "lat": 35.238476,
     "lng": 128.6571,
-    "district": "창원시",
+    "district": "",
     "phone": "055-212-1000",
     "homepage": "http://www.ceco.co.kr/"
   },
@@ -9370,7 +9370,7 @@
     "address": "부산광역시 남구 유엔평화로76번길 1 (대연동)",
     "lat": 35.127275,
     "lng": 129.09361390000004,
-    "district": "남구",
+    "district": "",
     "phone": "051-607-6000",
     "homepage": "http://culture.busan.go.kr/Main.bs"
   },
@@ -9395,7 +9395,7 @@
     "address": "부산광역시 금정구 개좌로 162 (회동동) 예술지구 내 금사락",
     "lat": 35.2257448,
     "lng": 129.1182007,
-    "district": "금정구",
+    "district": "",
     "phone": "070-4322-3557",
     "homepage": "http://www.kumsarock.com/"
   },
@@ -9422,7 +9422,7 @@
     "address": "경상남도 양산시 물금읍 증산역로 163",
     "lat": 35.309495,
     "lng": 129.0077204,
-    "district": "양산시",
+    "district": "",
     "homepage": "https://ardi.modoo.at/"
   },
   "사랑새아트홀": {
@@ -9430,7 +9430,7 @@
     "address": "경상남도 창원시 성산구 용지로169번길 11-26 (용호동)",
     "lat": 35.2297216,
     "lng": 128.680144,
-    "district": "창원시",
+    "district": "",
     "homepage": "https://www.instagram.com/lovebirds_arthall/"
   },
   "어댑터씨어터": {
@@ -9524,7 +9524,7 @@
     "address": "전라북도 전주시 덕진구 권삼득로 407 (덕진동2가)",
     "lat": 35.84791209999999,
     "lng": 127.11964149999994,
-    "district": "전주시",
+    "district": "",
     "phone": "063-254-4354"
   },
   "전주학생교육문화관 공연장": {
@@ -9540,7 +9540,7 @@
     "address": "전북특별자치도 전주시 덕진구 권삼득로 290 (금암동)",
     "lat": 35.84321,
     "lng": 127.130056,
-    "district": "전주시",
+    "district": "",
     "phone": "063-270-2089",
     "homepage": "https://cnucc.jbnu.ac.kr/"
   },
@@ -9583,7 +9583,7 @@
     "address": "전라북도 전주시 완산구 홍산중앙로 13 (효자동2가)",
     "lat": 35.8161628,
     "lng": 127.10896359999992,
-    "district": "전주시",
+    "district": "",
     "phone": "00-1644-4356",
     "homepage": "http://16444356.cusmore.com/"
   },
@@ -9610,7 +9610,7 @@
     "address": "광주광역시 남구 천변좌로338번길 7 (구동)",
     "lat": 35.1481359,
     "lng": 126.90864540000007,
-    "district": "남구",
+    "district": "",
     "phone": "062-670-7931",
     "homepage": "http://bitculture.gjcf.or.kr/php/"
   },
@@ -9637,7 +9637,7 @@
     "address": "광주광역시 광산구 광산로68번길 13 (송정동)",
     "lat": 35.1404404,
     "lng": 126.79929249999998,
-    "district": "광산구",
+    "district": "",
     "phone": "062-960-8860",
     "homepage": "http://art.gwangsan.go.kr/"
   },
@@ -9646,7 +9646,7 @@
     "address": "전라남도 여수시 예울마루로 100 (시전동)",
     "lat": 34.7498095,
     "lng": 127.66498990000002,
-    "district": "여수시",
+    "district": "",
     "phone": "00-1544-7669",
     "homepage": "https://www.yeulmaru.org/"
   },
@@ -9710,7 +9710,7 @@
     "address": "제주특별자치도 서귀포시 김정문화로 32 (강정동)",
     "lat": 33.2511819,
     "lng": 126.50818700000002,
-    "district": "서귀포시",
+    "district": "",
     "phone": "064-760-3579",
     "homepage": "http://culture.seogwipo.go.kr/kimjeong/index.htm"
   },
@@ -9727,7 +9727,7 @@
     "address": "제주특별자치도 제주시 동광로 69 (일도이동)",
     "lat": 33.5043089,
     "lng": 126.53538589999994,
-    "district": "제주시",
+    "district": "",
     "phone": "064-710-7641",
     "homepage": "http://www.jeju.go.kr/jejuculture/index.htm"
   },
@@ -9736,7 +9736,7 @@
     "address": "제주특별자치도 제주시 애월읍 엄수로 63",
     "lat": 33.47029,
     "lng": 126.381111,
-    "district": "제주시",
+    "district": "",
     "homepage": "https://www.aewolmusicfactory.com/"
   },
   "제주 호은아트센터": {
@@ -12574,7 +12574,7 @@
     "address": "제주특별자치도 서귀포시 안덕면 신화역사로304번길 38 (서광리)",
     "lat": 33.3049727,
     "lng": 126.3163521,
-    "district": "서귀포시",
+    "district": "",
     "phone": "00-1670-1188",
     "homepage": "https://www.shinhwaworld.com/"
   },
@@ -12996,7 +12996,7 @@
     "address": "경상남도 창원시 진해구 충무로 43 (도만동)",
     "lat": 35.1483603,
     "lng": 128.6554547,
-    "district": "창원시",
+    "district": "",
     "homepage": "https://www.cwsisul.or.kr/_jhpuground/_sub01/sub01_01.html"
   },
   "이크루즈": {
@@ -15893,7 +15893,7 @@
     "address": "경상남도 창원시 성산구 충혼로72번길 16 (중앙동)",
     "lat": 35.2303295,
     "lng": 128.6615066,
-    "district": "창원시",
+    "district": "",
     "phone": "055-267-2676",
     "homepage": "https://www.cwsc.go.kr/main/main.php"
   },
@@ -18334,7 +18334,7 @@
     "address": "세종특별자치시 조치원읍 문예회관길 22",
     "lat": 36.599612,
     "lng": 127.28716899999995,
-    "district": "조치원읍",
+    "district": "",
     "phone": "044-301-3523",
     "homepage": "https://www.sjac.or.kr/culture/main/view"
   },
@@ -20938,7 +20938,7 @@
     "address": "부산광역시 부산진구 동평로 250 (연지동)",
     "lat": 35.1693728,
     "lng": 129.0542532,
-    "district": "부산진구",
+    "district": "",
     "phone": "051-640-8888",
     "homepage": "https://classicbusan.busan.go.kr/"
   },
@@ -21312,7 +21312,7 @@
     "address": "울산광역시 북구 산업로 1000 (연암동)",
     "lat": 35.58140119999999,
     "lng": 129.36140920000003,
-    "district": "북구",
+    "district": "",
     "phone": "052-241-7350",
     "homepage": "https://www.bukgu.ulsan.kr/art/main.mo#"
   },
@@ -27327,7 +27327,7 @@
     "address": "충청남도 홍성군 홍성읍 내포로 164",
     "lat": 36.5947409,
     "lng": 126.65187470000001,
-    "district": "홍성군",
+    "district": "",
     "phone": "041-634-0021",
     "homepage": "https://www.hongseong.go.kr/hjart/art/sub03_01.do"
   },
@@ -27553,7 +27553,7 @@
     "address": "경상남도 거제시 계룡로 175 (고현동)",
     "lat": 34.88487310000001,
     "lng": 128.61892450000005,
-    "district": "거제시",
+    "district": "",
     "phone": "055-639-8161",
     "homepage": "https://www.gmdc.co.kr/_gjyc/"
   },
@@ -27814,7 +27814,7 @@
     "address": "부산광역시 해운대구 센텀서로 30 KNN타워",
     "lat": 35.17369,
     "lng": 129.12690099999998,
-    "district": "해운대구",
+    "district": "",
     "phone": "051-664-7880",
     "homepage": "https://www.instagram.com/knntheater.official/"
   },
@@ -28542,7 +28542,7 @@
     "address": "충청북도 제천시 동명로 77 (명동)",
     "lat": 37.1356797,
     "lng": 128.2083233,
-    "district": "제천시",
+    "district": "",
     "phone": "043-641-5520",
     "homepage": "https://www.jecheon.go.kr/jcac"
   },
@@ -37796,7 +37796,7 @@
     "address": "충청북도 진천군 진천읍 중앙북1길 11-10 (벽암리)",
     "lat": 36.8611038,
     "lng": 127.4395014,
-    "district": "진천군",
+    "district": "",
     "phone": "043-539-3237"
   },
   "대전 평송청소년문화센터 대극장": {
@@ -45008,7 +45008,7 @@
     "address": "충청남도 보령시 대흥로 63 (대천동)",
     "lat": 36.364963,
     "lng": 126.59509400000002,
-    "district": "보령시",
+    "district": "",
     "phone": "041-930-3433",
     "homepage": "https://www.brcn.go.kr/culture/"
   },
@@ -46887,7 +46887,7 @@
     "address": "충청북도 청주시 상당구 문의면 청남대길 646",
     "lat": 36.5138029,
     "lng": 127.4981807,
-    "district": "청주시",
+    "district": "",
     "phone": "043-257-5080",
     "homepage": "http://chnam.chungbuk.go.kr/"
   },
@@ -46896,7 +46896,7 @@
     "address": "충청남도 서산시 군진4길 109-29 (예천동)",
     "lat": 36.761341,
     "lng": 126.444432,
-    "district": "서산시",
+    "district": "",
     "phone": "010-9008-4344",
     "homepage": "https://www.motusarthall.com/index.php"
   },
@@ -47936,7 +47936,7 @@
     "address": "부산광역시 남구 수영로 298 (대연동)",
     "lat": 35.136589,
     "lng": 129.09905060000006,
-    "district": "남구",
+    "district": "",
     "phone": "010-9071-1028",
     "homepage": "http://blog.naver.com/chocolate-factory"
   },
@@ -48033,7 +48033,7 @@
     "address": "제주특별자치도 제주시 서광로 182-6 (삼도일동)",
     "lat": 33.4991191,
     "lng": 126.51603879999993,
-    "district": "제주시",
+    "district": "",
     "phone": "064-744-8911",
     "homepage": "https://sayreartcenter.modoo.at/"
   },
@@ -53530,7 +53530,6 @@
     "name": "https://www.sssd.co.kr/m/class/detail/49520",
     "address": "정보 없음",
     "district": "",
-    "mapped_region_id": "",
     "lat": 0,
     "lng": 0
   },
@@ -53844,7 +53843,7 @@
     "address": "울산광역시 북구 진장유통로 64 (진장동)",
     "lat": 35.5760407,
     "lng": 129.35899289999998,
-    "district": "북구",
+    "district": "",
     "phone": "052-288-8799",
     "homepage": "http://www.reomusical.com/new/main/main.htm"
   },
@@ -53853,7 +53852,7 @@
     "address": "충청남도 부여군 규암면 백제문로 388",
     "lat": 36.304602,
     "lng": 126.8995592,
-    "district": "부여군",
+    "district": "",
     "phone": "041-832-4874"
   },
   "장성문화예술회관": {
@@ -53861,7 +53860,7 @@
     "address": "전라남도 장성군 장성읍 문화로 110",
     "lat": 35.3022066,
     "lng": 126.76655010000002,
-    "district": "장성군",
+    "district": "",
     "phone": "061-390-7552",
     "homepage": "https://www.jangseong.go.kr/home/www/openinfo/openinfo_15/"
   },
@@ -53870,7 +53869,7 @@
     "address": "대구광역시 달성군 화원읍 비슬로520길 6",
     "lat": 35.8035367,
     "lng": 128.5002487,
-    "district": "달성군",
+    "district": "",
     "phone": "010-2536-0599"
   },
   "링크더스페이스(LINK THE SPACE)": {
@@ -53886,7 +53885,7 @@
     "address": "부산광역시 사하구 낙동남로1233번길 25 (하단동)",
     "lat": 35.1099098,
     "lng": 128.94485229999998,
-    "district": "사하구",
+    "district": "",
     "phone": "051-220-5804",
     "homepage": "http://www.saha.go.kr/eulsukdo/contents.do?mId=0103000000"
   },
@@ -53895,7 +53894,7 @@
     "address": "부산광역시 남구 용소로13번길 30 (대연동)",
     "lat": 35.1367693,
     "lng": 129.1022655,
-    "district": "남구",
+    "district": "",
     "phone": "00-1600-1716"
   },
   "대백프라자": {
@@ -53912,7 +53911,7 @@
     "address": "충청남도 공주시 고마나루길 73 (웅진동)",
     "lat": 36.4641,
     "lng": 127.106077,
-    "district": "공주시",
+    "district": "",
     "homepage": "https://www.gongjucf.or.kr/bjac/main/view"
   },
   "아띠홀": {
@@ -53955,7 +53954,7 @@
     "address": "부산광역시 수영구 광안해변로 193 (광안동)",
     "lat": 35.1516557,
     "lng": 129.1167408,
-    "district": "수영구",
+    "district": "",
     "phone": "051-911-1447",
     "homepage": "http://www.adapter.theater"
   },
@@ -53964,7 +53963,7 @@
     "address": "경상북도 구미시 구미대로22길 11 (신평동) 롯데마트 구미점 3층",
     "lat": 36.1131943,
     "lng": 128.36526129999993,
-    "district": "구미시",
+    "district": "",
     "phone": "054-440-2490",
     "homepage": "http://company.lottemart.com/branch/bc/floorView.do?brnchCd=0100129"
   },
@@ -54030,7 +54029,7 @@
     "address": "대구광역시 달서구 문화회관길 160 (장기동)",
     "lat": 35.84337790000001,
     "lng": 128.52284439999994,
-    "district": "달서구",
+    "district": "",
     "phone": "053-584-8715",
     "homepage": "http://www.dscf.or.kr/pages/main/index.html"
   },
@@ -54039,7 +54038,7 @@
     "address": "경상남도 창원시 마산회원구 합성옛길 142 (합성동)",
     "lat": 35.237854,
     "lng": 128.583553,
-    "district": "창원시"
+    "district": ""
   },
   "잡월드 나래울극장": {
     "name": "잡월드 나래울극장",
@@ -54055,7 +54054,7 @@
     "address": "광주광역시 광산구 장신로 98 (장덕동)",
     "lat": 35.1901523,
     "lng": 126.82035339999993,
-    "district": "광산구",
+    "district": "",
     "phone": "062-975-2860",
     "homepage": "http://www.reomusical.com/new/main/main.htm?CPC_REFERER=https%3A%2F%2Fsearch.naver.com%2Fsearch.naver%3Fwhere%3Dnexearch%26sm%3Dtop_sug.pre%26fbm%3D1%26acr%3D1%26acq%3D%2"
   },
@@ -54064,7 +54063,7 @@
     "address": "충청북도 청주시 상당구 교서로 8-16 (영동)",
     "lat": 36.6374146,
     "lng": 127.4873036,
-    "district": "청주시"
+    "district": ""
   },
   "예술의전당 [서울]": {
     "name": "예술의전당 [서울]",
@@ -54080,7 +54079,7 @@
     "address": "부산광역시 남구 전포대로 133 (문현동)",
     "lat": 35.1482786,
     "lng": 129.0654385,
-    "district": "남구",
+    "district": "",
     "phone": "00-1833-3755",
     "homepage": "https://www.dreamtheatre.co.kr/"
   },
@@ -54098,7 +54097,7 @@
     "address": "전라남도 여수시 웅천로 83 (웅천동)",
     "lat": 34.743686,
     "lng": 127.6751029,
-    "district": "여수시"
+    "district": ""
   },
   "대전예술의전당": {
     "name": "대전예술의전당",
@@ -54166,7 +54165,7 @@
     "address": "전북특별자치도 전주시 완산구 용머리로 36 (효자동1가)",
     "lat": 35.805453,
     "lng": 127.114404,
-    "district": "전주시"
+    "district": ""
   },
   "소극장 고도": {
     "name": "소극장 고도",
@@ -54268,7 +54267,7 @@
     "address": "충청북도 청주시 상당구 중앙로 30 (북문로2가)",
     "lat": 36.6396573,
     "lng": 127.4889033,
-    "district": "청주시",
+    "district": "",
     "phone": "043-222-1434",
     "homepage": "http://somyung.modoo.at/"
   },
@@ -54311,7 +54310,7 @@
     "address": "전라북도 전주시 완산구 안행로 14 (삼천동1가)",
     "lat": 35.7999572,
     "lng": 127.1301029,
-    "district": "전주시",
+    "district": "",
     "phone": "063-232-6108",
     "homepage": "http://www.thevinehall.com/default/"
   },
@@ -54346,7 +54345,7 @@
     "address": "경상남도 창원시 성산구 중앙대로 181 (용호동)",
     "lat": 35.2293871,
     "lng": 128.6831193,
-    "district": "창원시",
+    "district": "",
     "phone": "055-268-7900",
     "homepage": "http://www.cwcf.or.kr/facility/facility_sungsan.asp"
   },
@@ -54391,7 +54390,7 @@
     "address": "충청남도 당진시 신평면 삽교천길 90-16",
     "lat": 36.88619,
     "lng": 126.826016,
-    "district": "당진시",
+    "district": "",
     "phone": "041-362-0000"
   },
   "오감클래식": {
@@ -54549,7 +54548,7 @@
     "address": "대구광역시 남구 중앙대로49길 23(대명동)",
     "lat": 35.8552797,
     "lng": 128.5892715,
-    "district": "남구",
+    "district": "",
     "homepage": "https://franzhall.modoo.at/"
   },
   "디큐브링크아트센터": {
@@ -54624,7 +54623,7 @@
     "address": "경상남도 사천시 노을길 146 (실안동)",
     "lat": 34.9443346,
     "lng": 128.0400005,
-    "district": "사천시",
+    "district": "",
     "homepage": "http://www.sacheoncircus.co.kr/"
   },
   "스케치홀 (구.소극장 선물 1관)": {
@@ -54853,7 +54852,7 @@
     "address": "부산광역시 부산진구 서면로 39 (부전동)",
     "lat": 35.1542715,
     "lng": 129.0573028,
-    "district": "부산진구",
+    "district": "",
     "phone": "051-809-5555",
     "homepage": "https://www.sangsangmadang.com/main/BS"
   },
@@ -54898,14 +54897,14 @@
     "address": "경상남도 진주시 논개길 16(본성동)",
     "lat": 35.1894027,
     "lng": 128.0826067,
-    "district": "진주시"
+    "district": ""
   },
   "경주예술의전당": {
     "name": "경주예술의전당",
     "address": "경상북도 경주시 알천북로 1 (황성동)",
     "lat": 35.8625869,
     "lng": 129.20586520000006,
-    "district": "경주시",
+    "district": "",
     "phone": "054-777-2949",
     "homepage": "https://garts.kr/index.do"
   },
@@ -54914,7 +54913,7 @@
     "address": "충청남도 서산시 문화로 54 (읍내동)",
     "lat": 36.7861243,
     "lng": 126.44837029999997,
-    "district": "서산시",
+    "district": "",
     "phone": "041-661-8023",
     "homepage": "http://www.seosan.go.kr/culture/index.do"
   },
@@ -54957,7 +54956,7 @@
     "address": "충청북도 청주시 서원구 예체로 118-1 (사직동)",
     "lat": 36.6374278,
     "lng": 127.4694055,
-    "district": "청주시",
+    "district": "",
     "phone": "043-201-2363",
     "homepage": "http://www.cheongju.go.kr/ac/contents.do?key=16276"
   },
@@ -54966,7 +54965,7 @@
     "address": "전라북도 전주시 덕진구 안덕원로 71 (진북동)",
     "lat": 35.8291331,
     "lng": 127.1378158,
-    "district": "전주시",
+    "district": "",
     "phone": "063-270-1623",
     "homepage": "https://lib.jbe.go.kr/jec/index.do"
   },
@@ -55001,7 +55000,7 @@
     "address": "전라남도 완도군 완도읍 개포로159번길 55",
     "lat": 34.3238995,
     "lng": 126.74174629999993,
-    "district": "완도군",
+    "district": "",
     "phone": "061-550-5460",
     "homepage": "http://blog.naver.com/wcahall"
   },
@@ -55010,7 +55009,7 @@
     "address": "경상북도 포항시 남구 시청로 1 (대잠동)",
     "lat": 36.0191816,
     "lng": 129.34329830000001,
-    "district": "포항시",
+    "district": "",
     "phone": "054-270-8282",
     "homepage": "http://www.phcf.or.kr/kr/sub.do?MENU_SEQ=10076&PAGE_SEQ=10158&LANG=ko_KR#none https://www.pohang.go.kr/pohang/index.do"
   },
@@ -55071,7 +55070,7 @@
     "address": "강원도 속초시 번영로 155 (영랑동)",
     "lat": 38.2127835,
     "lng": 128.58869170000003,
-    "district": "속초시",
+    "district": "",
     "phone": "033-639-2080"
   },
   "광주디자인센터": {
@@ -55079,7 +55078,7 @@
     "address": "광주광역시 북구 첨단과기로176번길 27 (오룡동)",
     "lat": 35.2238269,
     "lng": 126.84684870000001,
-    "district": "북구",
+    "district": "",
     "phone": "062-611-5000",
     "homepage": "http://www.gdc.or.kr/"
   },
@@ -55151,7 +55150,7 @@
     "address": "부산광역시 부산진구 당감서로94번길 8 (부암동)",
     "lat": 35.1688692,
     "lng": 129.0361856,
-    "district": "부산진구",
+    "district": "",
     "homepage": "https://byartscenter.or.kr/"
   },
   "쌀롱드무지끄": {
@@ -55194,7 +55193,7 @@
     "address": "강원특별자치도 속초시 미시령로2983번길 111 (장사동)",
     "lat": 38.2101595,
     "lng": 128.5273888,
-    "district": "속초시",
+    "district": "",
     "phone": "033-630-5500",
     "homepage": "https://www.hanwharesort.co.kr/irsweb/resort3/netIndex_.do"
   },
@@ -55228,7 +55227,7 @@
     "address": "전라남도 목포시 부주로 312 (옥암동)",
     "lat": 34.8122752,
     "lng": 126.43679280000003,
-    "district": "목포시",
+    "district": "",
     "phone": "061-270-8376",
     "homepage": "http://art.mokpo.go.kr/"
   },
@@ -55246,7 +55245,7 @@
     "address": "세종특별자치시 국책연구원3로 12 (반곡동)",
     "lat": 36.4922533,
     "lng": 127.3032718,
-    "district": "국책연구원3로",
+    "district": "",
     "phone": "044-868-3956",
     "homepage": "http://www.bokartcenter.co.kr"
   },
@@ -55255,7 +55254,7 @@
     "address": "전라북도 군산시 백토로 203 (지곡동)",
     "lat": 35.9608078,
     "lng": 126.70683980000001,
-    "district": "군산시",
+    "district": "",
     "phone": "063-454-5520",
     "homepage": "http://arts.gunsan.go.kr/index.gunsan"
   },
@@ -55307,7 +55306,7 @@
     "address": "대구광역시 수성구 동대구로 176 (황금동)",
     "lat": 35.845223,
     "lng": 128.62448199999994,
-    "district": "수성구",
+    "district": "",
     "phone": "053-803-7944",
     "homepage": "http://www.daegu.go.kr/Childhall/"
   },
@@ -55325,7 +55324,7 @@
     "address": "경상남도 함안군 가야읍 함안대로 619-1",
     "lat": 35.283282,
     "lng": 128.4012381,
-    "district": "함안군",
+    "district": "",
     "phone": "055-580-3608",
     "homepage": "https://www.haman.go.kr/art.web"
   },
@@ -55334,7 +55333,7 @@
     "address": "경상북도 구미시 송정대로 89 (송정동 75)",
     "lat": 36.1183785442842,
     "lng": 128.348984109841,
-    "district": "구미시",
+    "district": "",
     "phone": "054-480-4560",
     "homepage": "www.gumi.go.kr/arts"
   },
@@ -55350,7 +55349,7 @@
     "address": "경상남도 김해시 김해대로 2060 (내동)",
     "lat": 35.22784261716,
     "lng": 128.863909609837,
-    "district": "김해시",
+    "district": "",
     "phone": "055-320-1234",
     "homepage": "http://www.gasc.or.kr/"
   },
@@ -55368,7 +55367,7 @@
     "address": "부산광역시 해운대구 양운로 97 (좌동)",
     "lat": 35.1711676,
     "lng": 129.1740165,
-    "district": "해운대구",
+    "district": "",
     "phone": "051-749-7651",
     "homepage": "https://www.haeundae.go.kr/culture/index.do"
   },
@@ -55385,7 +55384,7 @@
     "address": "강원도 철원군 동송읍 태봉로 1825",
     "lat": 38.1854214,
     "lng": 127.2874037,
-    "district": "철원군",
+    "district": "",
     "phone": "033-450-5559"
   },
   "JCC 아트센터": {
@@ -55429,7 +55428,7 @@
     "address": "경상북도 영천시 시청로 17 (문외동)",
     "lat": 35.9729409,
     "lng": 128.93779010000003,
-    "district": "영천시",
+    "district": "",
     "phone": "054-330-6454",
     "homepage": "http://ycac.yc.go.kr/"
   },
@@ -55508,7 +55507,7 @@
     "address": "경상북도 구미시 인동가산로 392 (구평동) 강동문화복지회관",
     "lat": 36.0904747,
     "lng": 128.45493299999998,
-    "district": "구미시",
+    "district": "",
     "phone": "054-480-2990",
     "homepage": "http://www.gumi.go.kr/artsgd/contents.do?mId=0104040000"
   },
@@ -55526,7 +55525,7 @@
     "address": "부산광역시 수영구 구락로123번길 20 (망미동)",
     "lat": 35.177202,
     "lng": 129.114966,
-    "district": "수영구",
+    "district": "",
     "phone": "051-756-1963",
     "homepage": "http://www.f1963.org/ko/"
   },
@@ -55595,7 +55594,7 @@
     "address": "전라북도 전주시 덕진구 소리로 31 (덕진동1가) 소리문화전당",
     "lat": 35.855245,
     "lng": 127.13766699999996,
-    "district": "전주시",
+    "district": "",
     "phone": "063-270-8000",
     "homepage": "http://www.sori21.co.kr/"
   },
@@ -55604,7 +55603,7 @@
     "address": "광주광역시 북구 북문대로 60 (운암동)",
     "lat": 35.1777124,
     "lng": 126.88170230000003,
-    "district": "북구",
+    "district": "",
     "phone": "062-613-8333",
     "homepage": "https://gjart.gwangju.go.kr/intro.jsp"
   },
@@ -55636,7 +55635,7 @@
     "address": "전라남도 광양시 광양읍 향교길 9-30",
     "lat": 34.9799827,
     "lng": 127.58758920000002,
-    "district": "광양시",
+    "district": "",
     "phone": "061-797-2529",
     "homepage": "http://www.gwangyang.go.kr/tour_culture/index.gwangyang?menuCd=DOM_000000409001002001"
   },
@@ -55645,7 +55644,7 @@
     "address": "부산광역시 해운대구 APEC로 55",
     "lat": 35.1679229,
     "lng": 129.13569740000003,
-    "district": "해운대구",
+    "district": "",
     "phone": "051-740-7300",
     "homepage": "http://www.bexco.co.kr/audi/Contents.do?mCode=MN0001"
   },
@@ -55672,7 +55671,7 @@
     "address": "강원도 정선군 정선읍 애산로 51",
     "lat": 37.3754322,
     "lng": 128.6714877,
-    "district": "정선군",
+    "district": "",
     "phone": "033-560-3000",
     "homepage": "http://www.jacf.or.kr/"
   },
@@ -55681,7 +55680,7 @@
     "address": "경상북도 포항시 남구 희망대로 850 (대도동)",
     "lat": 36.009548,
     "lng": 129.3659927,
-    "district": "포항시",
+    "district": "",
     "phone": "054-289-7999",
     "homepage": "https://culturalspace.phcf.or.kr/munhwaArtCenter/subMain.do"
   },
@@ -55708,7 +55707,7 @@
     "address": "경상북도 안동시 퇴계로 115 (명륜동)",
     "lat": 36.5682946,
     "lng": 128.72791099999995,
-    "district": "안동시",
+    "district": "",
     "phone": "054-840-3651"
   },
   "부안예술회관": {
@@ -55716,7 +55715,7 @@
     "address": "전라북도 부안군 부안읍 예술회관길 11",
     "lat": 35.7243919,
     "lng": 126.72539059999997,
-    "district": "부안군",
+    "district": "",
     "phone": "063-580-3929"
   },
   "문래재즈IN": {
@@ -55733,7 +55732,7 @@
     "address": "충청남도 금산군 금산읍 금산로 1559",
     "lat": 36.1127758,
     "lng": 127.49221,
-    "district": "금산군",
+    "district": "",
     "phone": "041-750-4421",
     "homepage": "http://www.daragwon.net/"
   },
@@ -55742,7 +55741,7 @@
     "address": "대전광역시 유성구 대학로 99",
     "lat": 36.3679381,
     "lng": 127.3442986,
-    "district": "유성구",
+    "district": "",
     "phone": "042-821-8081",
     "homepage": "https://jsh.cnu.ac.kr/smain.html"
   },
@@ -55769,7 +55768,7 @@
     "address": "경상남도 밀양시 밀양대공원로 112 (교동)",
     "lat": 35.5036034,
     "lng": 128.7583247,
-    "district": "밀양시",
+    "district": "",
     "phone": "055-359-4500",
     "homepage": "https://www.mycf.or.kr/main/"
   },
@@ -55778,7 +55777,7 @@
     "address": "경상남도 창원시 마산회원구 삼호로 135 (양덕동)",
     "lat": 35.2258781,
     "lng": 128.57720210000002,
-    "district": "창원시",
+    "district": "",
     "phone": "055-719-7800",
     "homepage": "http://www.cwcf.or.kr/facility/facility_315art.asp"
   },
@@ -55787,7 +55786,7 @@
     "address": "제주특별자치도 서귀포시 태평로 270 (서홍동)",
     "lat": 33.2452306,
     "lng": 126.55175259999999,
-    "district": "서귀포시",
+    "district": "",
     "phone": "064-760-3341",
     "homepage": "https://culture.seogwipo.go.kr/artcenter/index.htm"
   },
@@ -55813,7 +55812,7 @@
     "address": "경상남도 사천시 삼천포대교로 471 (동림동)",
     "lat": 34.9399063,
     "lng": 128.07501849999994,
-    "district": "사천시",
+    "district": "",
     "phone": "055-831-2460",
     "homepage": "https://www.sccf.or.kr/"
   },
@@ -55831,7 +55830,7 @@
     "address": "부산광역시 남구 수영로 지하 242 (대연동)",
     "lat": 35.1342618,
     "lng": 129.0944425,
-    "district": "남구",
+    "district": "",
     "phone": "051-611-8518",
     "homepage": "http://cafe.naver.com/ggtheater"
   },
@@ -55840,7 +55839,7 @@
     "address": "전라남도 무안군 삼향읍 남악로 222",
     "lat": 34.8048793,
     "lng": 126.46175319999998,
-    "district": "무안군",
+    "district": "",
     "phone": "061-981-6688",
     "homepage": "http://namdosori.or.kr/"
   },
@@ -55849,7 +55848,7 @@
     "address": "전라남도 순천시 삼산로 16 (석현동)",
     "lat": 34.9705841,
     "lng": 127.4853144,
-    "district": "순천시",
+    "district": "",
     "phone": "061-749-8612",
     "homepage": "http://art.suncheon.go.kr/scart/"
   },
@@ -55858,7 +55857,7 @@
     "address": "충청남도 당진시 무수동2길 25-21 (읍내동)",
     "lat": 36.8901441,
     "lng": 126.63786579999999,
-    "district": "당진시",
+    "district": "",
     "phone": "041-350-2911",
     "homepage": "http://www.dangjinart.kr/"
   },
@@ -55902,7 +55901,7 @@
     "address": "강원도 강릉시 종합운동장길 84 (교동)",
     "lat": 37.7716846,
     "lng": 128.895305,
-    "district": "강릉시",
+    "district": "",
     "phone": "033-660-6800",
     "homepage": "http://www.gn.go.kr/artscenter/index.do"
   },
@@ -55920,7 +55919,7 @@
     "address": "부산광역시 해운대구 수영강변대로 120 (우동)",
     "lat": 35.1711778,
     "lng": 129.12719560000005,
-    "district": "해운대구",
+    "district": "",
     "phone": "051-780-6000",
     "homepage": "http://www.dureraum.org/bcc/main/main.do?rbsIdx=1"
   },
@@ -55929,7 +55928,7 @@
     "address": "부산광역시 수영구 수영로 429 (남천동 63) KBS부산방송총국",
     "lat": 35.1580172,
     "lng": 129.1145222,
-    "district": "수영구",
+    "district": "",
     "phone": "051-620-7181",
     "homepage": "http://busan.kbs.co.kr/"
   },
@@ -55953,7 +55952,7 @@
     "address": "대구광역시 북구 엑스코로 10 (산격동) 대구전시컨벤션센터",
     "lat": 35.907821,
     "lng": 128.61277599999994,
-    "district": "북구",
+    "district": "",
     "phone": "053-601-5000",
     "homepage": "https://www.exco.co.kr/kor/index.html"
   },
@@ -55962,7 +55961,7 @@
     "address": "부산광역시 동래구 문화로 80 (명륜동)",
     "lat": 35.2120008,
     "lng": 129.09038540000006,
-    "district": "동래구",
+    "district": "",
     "phone": "051-550-6611",
     "homepage": "http://www.dongnae.go.kr/culture/index.dongnae?menuCd=DOM_000000605001000000"
   },
@@ -55980,7 +55979,7 @@
     "address": "강원도 원주시 단구로 170 (명륜동)",
     "lat": 37.3360577,
     "lng": 127.94650660000002,
-    "district": "원주시",
+    "district": "",
     "phone": "033-760-9804",
     "homepage": "http://www.wcf.or.kr/culture/culture_art_2.php?tsort=2&msort=13"
   },
@@ -56013,7 +56012,7 @@
     "address": "제주특별자치도 제주시 선덕로8길 12 (연동)",
     "lat": 33.4844207,
     "lng": 126.50059499999998,
-    "district": "제주시",
+    "district": "",
     "phone": "064-710-4202",
     "homepage": "http://swcenter.jeju.go.kr/"
   },
@@ -56022,7 +56021,7 @@
     "address": "부산광역시 해운대구 센텀중앙로 55 (우동) 경남정보대학교및동서대학교센텀산학캠퍼스",
     "lat": 35.1731656,
     "lng": 129.12766,
-    "district": "해운대구",
+    "district": "",
     "phone": "051-950-6500",
     "homepage": "http://sohyangtheater.co.kr"
   },
@@ -56031,7 +56030,7 @@
     "address": "강원도 삼척시 엑스포로 45 (성남동)",
     "lat": 37.438147,
     "lng": 129.16028989999995,
-    "district": "삼척시",
+    "district": "",
     "phone": "033-572-1331"
   },
   "씨어터조이 (구. 마당세실극장)": {
@@ -56047,7 +56046,7 @@
     "address": "경상남도 창원시 진해구 진해대로 325 (태백동) 진해구민센터",
     "lat": 35.1691187,
     "lng": 128.65962420000005,
-    "district": "창원시",
+    "district": "",
     "phone": "055-719-7882",
     "homepage": "https://www.cwcf.or.kr/rental/rental_jhcc.asp"
   },
@@ -56073,7 +56072,7 @@
     "address": "대구광역시 달서구 앞산순환로 180 (송현동)",
     "lat": 35.8204704,
     "lng": 128.55330690000005,
-    "district": "달서구",
+    "district": "",
     "phone": "053-656-6655",
     "homepage": "http://www.dgyouth.net/"
   },
@@ -56122,7 +56121,7 @@
     "address": "전라북도 군산시 대학로 330 (나운동)",
     "lat": 35.9645869,
     "lng": 126.693096,
-    "district": "군산시",
+    "district": "",
     "phone": "063-454-5743"
   },
   "서울아트센터": {
@@ -56163,7 +56162,7 @@
     "address": "전라북도 남원시 양림길 54 - 0 국립민속국악원",
     "lat": 35.4018262,
     "lng": 127.39142549999997,
-    "district": "남원시",
+    "district": "",
     "phone": "063-620-2324",
     "homepage": "https://namwon.gugak.go.kr/site/main/main.do"
   },
@@ -56172,7 +56171,7 @@
     "address": "전라북도 익산시 선화1로 106 (마동)",
     "lat": 35.939343,
     "lng": 126.96868100000006,
-    "district": "익산시",
+    "district": "",
     "phone": "00-1577-0072",
     "homepage": "http://arts.iksan.go.kr/index.iksan?menuCd=DOM_000000103002002000"
   },
@@ -56190,7 +56189,7 @@
     "address": "부산광역시 금정구 체육공원로 7 (구서동)",
     "lat": 35.2459085,
     "lng": 129.0941378,
-    "district": "금정구",
+    "district": "",
     "phone": "051-519-5651",
     "homepage": "http://art.geumjeong.go.kr/"
   },
@@ -56215,7 +56214,7 @@
     "address": "충청남도 천안시 동남구 옛시청길 39 (문화동)",
     "lat": 36.806633,
     "lng": 127.1511772,
-    "district": "천안시",
+    "district": "",
     "phone": "070-4944-0360",
     "homepage": "https://www.cachildren.kr/kor/index.do"
   },
@@ -56224,7 +56223,7 @@
     "address": "경상남도 김해시 율하2로 210 (율하동)",
     "lat": 35.1718789,
     "lng": 128.81382729999996,
-    "district": "김해시",
+    "district": "",
     "phone": "055-344-1824",
     "homepage": "https://wgcc.ghct.or.kr/home/main"
   },
@@ -56267,7 +56266,7 @@
     "address": "대구광역시 달서구 용산로 181 (용산동)",
     "lat": 35.8530407,
     "lng": 128.52949850000005,
-    "district": "달서구",
+    "district": "",
     "phone": "053-231-1288",
     "homepage": "https://www.dge.go.kr/dccs/main.do"
   },
@@ -56276,7 +56275,7 @@
     "address": "울산광역시 울주군 온양읍 남창1길 13",
     "lat": 35.4195284,
     "lng": 129.2813745,
-    "district": "울주군",
+    "district": "",
     "phone": "052-229-9550",
     "homepage": "https://www.uljusiseol.or.kr/onyang/;jsessionid=5962069119CAAF4DB81A6A294B9A2641"
   },
@@ -56294,7 +56293,7 @@
     "address": "충청북도 충주시 중원대로 3306 (호암동)",
     "lat": 36.9631902,
     "lng": 127.92561679999994,
-    "district": "충주시",
+    "district": "",
     "phone": "043-870-7832",
     "homepage": "http://www.cjfmc.or.kr/homepage/guide/guide_sub01_02"
   },
@@ -56303,7 +56302,7 @@
     "address": "충청북도 청주시 상당구 교서로 16-5 (영동)",
     "lat": 36.6382992,
     "lng": 127.486879,
-    "district": "청주시",
+    "district": "",
     "phone": "043-255-7774"
   },
   "기벌포복합문화센터": {
@@ -56311,7 +56310,7 @@
     "address": "충청남도 서천군 장항읍 장항로161번길 63",
     "lat": 36.014304,
     "lng": 126.696234,
-    "district": "서천군",
+    "district": "",
     "phone": "041-956-7905",
     "homepage": "https://www.seocheonctf.or.kr/rental/facilities_info.do?rentalOrgNo=4"
   },
@@ -56409,7 +56408,7 @@
     "address": "충청남도 아산시 남부로 92 (용화동)",
     "lat": 36.7705363,
     "lng": 126.99199020000003,
-    "district": "아산시",
+    "district": "",
     "phone": "041-537-3903",
     "homepage": "http://life.asan.go.kr/_kor/index.asp"
   },
@@ -56418,7 +56417,7 @@
     "address": "경상남도 김해시 대청로176번길 7 (대청동)",
     "lat": 35.1914593,
     "lng": 128.79697080000005,
-    "district": "김해시",
+    "district": "",
     "phone": "055-330-7451",
     "homepage": "https://lib.gimhae.go.kr/jangyu.web"
   },
@@ -56427,7 +56426,7 @@
     "address": "울산광역시 울주군 범서읍 천상중앙길 36",
     "lat": 35.5644423,
     "lng": 129.23207939999998,
-    "district": "울주군",
+    "district": "",
     "phone": "052-229-9500",
     "homepage": "http://www.uljuart.or.kr/"
   },
@@ -56445,14 +56444,14 @@
     "address": "경상남도 거제시 거제중앙로 1898-5 (고현동)",
     "lat": 34.887976,
     "lng": 128.623976,
-    "district": "거제시"
+    "district": ""
   },
   "우전소극장": {
     "name": "우전소극장",
     "address": "대구광역시 남구 현충로 256 (대명동)",
     "lat": 35.8552072,
     "lng": 128.5832752,
-    "district": "남구",
+    "district": "",
     "phone": "053-653-2086"
   },
   "루미나아트홀 (구.시온아트홀)": {
@@ -56478,7 +56477,7 @@
     "address": "경상남도 진주시 동진로 33(칠암동)",
     "lat": 35.1792659,
     "lng": 128.0920809,
-    "district": "진주시",
+    "district": "",
     "phone": "055-751-3114"
   },
   "송파어린이문화회관": {
@@ -56540,7 +56539,7 @@
     "address": "경상북도 상주시 상산로 235 (남성동)",
     "lat": 36.4118747,
     "lng": 128.1592088,
-    "district": "상주시",
+    "district": "",
     "phone": "054-537-6215",
     "homepage": "http://www.sangju.go.kr/culture/index.jsp?home_url=culture"
   },
@@ -56558,7 +56557,7 @@
     "address": "대구광역시 남구 현충로48길 19(대명동)",
     "lat": 35.8527959,
     "lng": 128.5844351,
-    "district": "남구",
+    "district": "",
     "phone": "010-9468-5199",
     "homepage": "https://onlyforyoujazz.modoo.at/"
   },
@@ -56585,7 +56584,7 @@
     "address": "강원도 원주시 서원대로 331 (명륜동)",
     "lat": 37.33538619999999,
     "lng": 127.94449340000006,
-    "district": "원주시",
+    "district": "",
     "phone": "033-763-9114",
     "homepage": "http://www.wonju.go.kr/www/contents.do?key=328"
   },
@@ -56594,7 +56593,7 @@
     "address": "경상남도 창녕군 창녕읍 군청1길 35",
     "lat": 35.5446712,
     "lng": 128.4901958,
-    "district": "창녕군",
+    "district": "",
     "phone": "055-530-1911",
     "homepage": "http://art.cng.go.kr"
   },
@@ -56621,7 +56620,7 @@
     "address": "경상북도 성주군 성주읍 성산9길 45",
     "lat": 35.9183692,
     "lng": 128.30130510000004,
-    "district": "성주군",
+    "district": "",
     "phone": "054-933-6912",
     "homepage": "http://www.scac.go.kr"
   },
@@ -56630,7 +56629,7 @@
     "address": "울산광역시 남구 번영로 212 (달동)",
     "lat": 35.5441989,
     "lng": 129.3265401,
-    "district": "남구",
+    "district": "",
     "phone": "052-270-7181",
     "homepage": "https://kbsbiz.co.kr/kbs%ec%9a%b8%ec%82%b0%ed%99%80/"
   },
@@ -56657,7 +56656,7 @@
     "address": "울산광역시 남구 번영로 200 (달동)",
     "lat": 35.5429378079717,
     "lng": 129.327089892733,
-    "district": "남구",
+    "district": "",
     "phone": "052-266-8282",
     "homepage": "http://ucac.ulsan.go.kr/"
   },
@@ -56693,7 +56692,7 @@
     "address": "강원도 춘천시 한림대학길 1",
     "lat": 37.8868706,
     "lng": 127.73696949999999,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-248-1271",
     "homepage": "http://artshall.hallym.ac.kr"
   },
@@ -56702,7 +56701,7 @@
     "address": "세종특별자치시 시청대로 167(보람동)",
     "lat": 36.4813104,
     "lng": 127.2898957,
-    "district": "시청대로",
+    "district": "",
     "phone": "070-8882-3863",
     "homepage": "https://www.jazzinlab.com/"
   },
@@ -56711,7 +56710,7 @@
     "address": "대구광역시 북구 대학로 80 (산격동)",
     "lat": 35.8898417,
     "lng": 128.61269530000004,
-    "district": "북구",
+    "district": "",
     "phone": "053-950-7122",
     "homepage": "http://globalplaza.knu.ac.kr/gp/sub.php?top=2&sub=1&sub2=1&sub3=0&sub4=0"
   },
@@ -56720,7 +56719,7 @@
     "address": "강원도 원주시 시청로 1 (무실동)",
     "lat": 37.3418293,
     "lng": 127.91946759999996,
-    "district": "원주시",
+    "district": "",
     "phone": "033-737-3820",
     "homepage": "http://www.wonju.go.kr/baekunart/contents.do?key=630"
   },
@@ -56729,7 +56728,7 @@
     "address": "충청남도 천안시 동남구 성남면 종합휴양지로 185",
     "lat": 36.7561303,
     "lng": 127.2248886,
-    "district": "천안시",
+    "district": "",
     "phone": "00-1566-0155",
     "homepage": "http://www.cnac.or.kr/"
   },
@@ -56738,7 +56737,7 @@
     "address": "전라북도 익산시 동서로 490 (어양동)",
     "lat": 35.9515526,
     "lng": 126.9869056,
-    "district": "익산시",
+    "district": "",
     "phone": "063-859-3254",
     "homepage": "http://arts.iksan.go.kr/index.iksan"
   },
@@ -56747,7 +56746,7 @@
     "address": "경상남도 창원시 의창구 중앙대로 178 (신월동)",
     "lat": 35.2292771,
     "lng": 128.68574820000003,
-    "district": "창원시",
+    "district": "",
     "phone": "055-280-7181",
     "homepage": "https://changwon.kbs.co.kr/"
   },
@@ -56765,7 +56764,7 @@
     "address": "대전광역시 유성구 엑스포로97번길 40 (도룡동)",
     "lat": 36.3763434,
     "lng": 127.3904662,
-    "district": "유성구",
+    "district": "",
     "phone": "070-4229-8196",
     "homepage": "https://blog.naver.com/plan-a2021"
   },
@@ -56815,7 +56814,7 @@
     "address": "대구광역시 북구 태평로 161 (칠성동2가)",
     "lat": 35.8758942,
     "lng": 128.59631190000005,
-    "district": "북구",
+    "district": "",
     "phone": "00-1577-0001",
     "homepage": "http://www.ehyundai.com/newCulture/CW/CW000001_V.do"
   },
@@ -56824,7 +56823,7 @@
     "address": "충청남도 계룡시 엄사면 문화1로 13",
     "lat": 36.2729241,
     "lng": 127.2341481,
-    "district": "계룡시",
+    "district": "",
     "phone": "042-840-3707",
     "homepage": "http://ac.gyeryong.go.kr/html/kr/index.html"
   },
@@ -56885,7 +56884,7 @@
     "address": "강원도 동해시 평원로 15 (천곡동)",
     "lat": 37.5264687,
     "lng": 129.1151526,
-    "district": "동해시",
+    "district": "",
     "phone": "033-530-2115",
     "homepage": "http://www.dh.go.kr/pages/sub.htm?nav_code=dh1479357774"
   },
@@ -56910,7 +56909,7 @@
     "address": "세종특별자치시 국립박물관로 21(나성동)",
     "lat": 36.4866708,
     "lng": 127.2673677,
-    "district": "국립박물관로",
+    "district": "",
     "phone": "044-850-8921",
     "homepage": "https://www.sjac.or.kr/"
   },
@@ -56927,7 +56926,7 @@
     "address": "전라남도 나주시 전력로 55 (빛가람동)",
     "lat": 35.026607,
     "lng": 126.784615,
-    "district": "나주시"
+    "district": ""
   },
   "한국공예관 문화제조창": {
     "name": "한국공예관 문화제조창",
@@ -56952,7 +56951,7 @@
     "address": "대전광역시 유성구 엑스포로 107 (도룡동)",
     "lat": 36.3749012,
     "lng": 127.39168310000002,
-    "district": "유성구",
+    "district": "",
     "phone": "042-869-1100",
     "homepage": "http://www.dcckorea.or.kr/"
   },
@@ -56988,7 +56987,7 @@
     "address": "부산광역시 기장군 기장읍 기장대로 560",
     "lat": 35.2434816,
     "lng": 129.222956,
-    "district": "기장군"
+    "district": ""
   },
   "문산행복센터": {
     "name": "문산행복센터",
@@ -57004,7 +57003,7 @@
     "address": "부산광역시 북구 금곡대로46번길 50 (덕천동)",
     "lat": 35.2134491,
     "lng": 129.00546810000003,
-    "district": "북구",
+    "district": "",
     "phone": "051-309-4087",
     "homepage": "http://culture-ice.bsbukgu.go.kr/index.bsbukgu"
   },
@@ -57013,7 +57012,7 @@
     "address": "경상북도 고령군 대가야읍 왕릉로 30",
     "lat": 35.7265848,
     "lng": 128.2636126,
-    "district": "고령군",
+    "district": "",
     "phone": "054-950-7014",
     "homepage": "http://art.goryeong.go.kr/content.html?md=0026"
   },
@@ -57022,7 +57021,7 @@
     "address": "강원도 춘천시 스포츠타운길399번길 25 (삼천동)",
     "lat": 37.8813153,
     "lng": 127.72997069999997,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-818-3200",
     "homepage": "http://chuncheon.sangsangmadang.com/"
   },
@@ -57058,7 +57057,7 @@
     "address": "부산광역시 해운대구 센텀남대로 35 (우동)",
     "lat": 35.1687032,
     "lng": 129.12974659999998,
-    "district": "해운대구",
+    "district": "",
     "phone": "051-745-1168",
     "homepage": "http://shinsegae.com/culture/hallintro/hallintro01.jsp"
   },
@@ -57099,7 +57098,7 @@
     "address": "전라남도 진도군 임회면 진도대로 3818 국립남도국악원",
     "lat": 34.3849048,
     "lng": 126.22479020000003,
-    "district": "진도군",
+    "district": "",
     "phone": "061-540-4033",
     "homepage": "https://jindo.gugak.go.kr/"
   },
@@ -57133,7 +57132,7 @@
     "address": "경상남도 양산시 중앙로 39-1 (남부동)",
     "lat": 35.3336224,
     "lng": 129.03692249999995,
-    "district": "양산시",
+    "district": "",
     "phone": "055-379-8550",
     "homepage": "http://www.yangsanart.net/"
   },
@@ -57142,7 +57141,7 @@
     "address": "대구광역시 남구 앞산순환로 478 (대명동)",
     "lat": 35.8314679,
     "lng": 128.57711470000004,
-    "district": "남구",
+    "district": "",
     "phone": "053-664-3131",
     "homepage": "http://nam.daegu.kr/culturalcenter/index.do?menu_id=00001563"
   },
@@ -57169,7 +57168,7 @@
     "address": "경상북도 칠곡군 석적읍 강변대로 1570",
     "lat": 36.015599,
     "lng": 128.404399,
-    "district": "칠곡군",
+    "district": "",
     "homepage": "https://www.chilgokctf.or.kr/ctf/contents.do?mId=0801010000"
   },
   "진남문예회관": {
@@ -57177,7 +57176,7 @@
     "address": "전라남도 여수시 좌수영로 69 (광무동 42-4)",
     "lat": 34.747093351712,
     "lng": 127.72793172676,
-    "district": "여수시",
+    "district": "",
     "phone": "061-659-3770"
   },
   "대전 서구 관저문예회관": {
@@ -57194,7 +57193,7 @@
     "address": "대전광역시 유성구 동서대로 125 (덕명동)",
     "lat": 36.3507993,
     "lng": 127.30061079999996,
-    "district": "유성구",
+    "district": "",
     "phone": "042-821-1114",
     "homepage": "https://www.hanbat.ac.kr/cns/sub02_02.do"
   },
@@ -57203,7 +57202,7 @@
     "address": "인천광역시 남구 수봉안길 78 (숭의동)",
     "lat": 37.4615074,
     "lng": 126.66226830000005,
-    "district": "남구",
+    "district": "",
     "phone": "032-873-5174",
     "homepage": "http://artin.or.kr/artin_new.htm"
   },
@@ -57212,7 +57211,7 @@
     "address": "전라남도 여수시 좌수영로 69 (광무동)",
     "lat": 34.7469581,
     "lng": 127.72792270000002,
-    "district": "여수시",
+    "district": "",
     "phone": "061-659-3799",
     "homepage": "https://www.yeosu.go.kr/www/sphere/culture/mn0401/mn0401-1"
   },
@@ -57270,7 +57269,7 @@
     "address": "대구광역시 수성구 범안로64길 18-9 (삼덕동)",
     "lat": 35.8280059,
     "lng": 128.6688245,
-    "district": "수성구"
+    "district": ""
   },
   "브로스커피 [경주]": {
     "name": "브로스커피 [경주]",
@@ -57302,7 +57301,7 @@
     "address": "전북특별자치도 전주시 완산구 홍산남로 59-17 (효자동3가)",
     "lat": 35.816447,
     "lng": 127.107903,
-    "district": "전주시",
+    "district": "",
     "homepage": "https://www.instagram.com/led_piano_jeonju"
   },
   "디크레센도": {
@@ -57317,7 +57316,7 @@
     "address": "경상북도 안동시 축제장길 66 (안흥동)",
     "lat": 36.5595259,
     "lng": 128.7256906,
-    "district": "안동시",
+    "district": "",
     "phone": "054-840-3600",
     "homepage": "http://andongart.go.kr/"
   },
@@ -57368,7 +57367,7 @@
     "address": "경상북도 영주시 선비로 213 (영주동)",
     "lat": 36.8230344,
     "lng": 128.61702400000001,
-    "district": "영주시",
+    "district": "",
     "phone": "054-634-3124",
     "homepage": "www.영주시민회관.kr"
   },
@@ -57404,7 +57403,7 @@
     "address": "강원도 원주시 무실로 235(단계동)",
     "lat": 37.3378404,
     "lng": 127.9368787,
-    "district": "원주시",
+    "district": "",
     "phone": "033-764-3794",
     "homepage": "http://www.wjmunwha.or.kr/"
   },
@@ -57430,7 +57429,7 @@
     "address": "강원특별자치도 원주시 지정면 신평로 132",
     "lat": 37.381811,
     "lng": 127.880927,
-    "district": "원주시",
+    "district": "",
     "homepage": "https://www.pieplans.kr/playlist"
   },
   "청주예술의전당": {
@@ -57438,7 +57437,7 @@
     "address": "충청북도 청주시 서원구 흥덕로 69 (사직동)",
     "lat": 36.6420171,
     "lng": 127.46975329999998,
-    "district": "청주시",
+    "district": "",
     "phone": "043-201-2304",
     "homepage": "https://www.cheongju.go.kr/ac/index.do"
   },
@@ -57447,7 +57446,7 @@
     "address": "대전광역시 유성구 도안대로 591 (봉명동)",
     "lat": 36.3531322,
     "lng": 127.34079280000003,
-    "district": "유성구",
+    "district": "",
     "phone": "042-252-0887"
   },
   "아트팩토리 봄": {
@@ -57455,7 +57454,7 @@
     "address": "강원도 춘천시 신동면 풍류1길 34",
     "lat": 37.8179712,
     "lng": 127.7197078,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-263-7222"
   },
   "고양종합운동장": {
@@ -57495,7 +57494,7 @@
     "address": "경상남도 진주시 강남로 215 (칠암동) 경남문화예술회관",
     "lat": 35.1872624,
     "lng": 128.09176509999998,
-    "district": "진주시",
+    "district": "",
     "phone": "00-1544-6711",
     "homepage": "https://artcenter.gyeongnam.go.kr/main.do"
   },
@@ -57512,7 +57511,7 @@
     "address": "경상남도 양산시 신기강변로 26 (신기동)",
     "lat": 35.3501902,
     "lng": 129.0339852,
-    "district": "양산시",
+    "district": "",
     "phone": "055-379-8560",
     "homepage": "https://www.yssisul.or.kr/stms/art/complexIntro"
   },
@@ -57521,7 +57520,7 @@
     "address": "경상북도 경주시 금성로 236 (사정동)",
     "lat": 35.8384087,
     "lng": 129.2076376,
-    "district": "경주시",
+    "district": "",
     "phone": "054-779-8930"
   },
   "경희대학교": {
@@ -57547,7 +57546,7 @@
     "address": "경상남도 통영시 큰발개1길 38 (도남동)",
     "lat": 34.8261089,
     "lng": 128.43976640000005,
-    "district": "통영시",
+    "district": "",
     "phone": "055-650-0400",
     "homepage": "http://www.timf.org/"
   },
@@ -57590,7 +57589,7 @@
     "address": "부산광역시 수영구 광남로 102 (광안동, 에이스 로얄 팰리스)",
     "lat": 35.1508961,
     "lng": 129.1154563,
-    "district": "수영구",
+    "district": "",
     "homepage": "https://adapter.theater/index"
   },
   "라이브클럽 협동조합": {
@@ -57654,7 +57653,7 @@
     "address": "대구광역시 남구 계명중앙1길 39-4 (대명동)",
     "lat": 35.8561262,
     "lng": 128.5821888,
-    "district": "남구",
+    "district": "",
     "phone": "010-6533-2985",
     "homepage": "https://blog.naver.com/dpas17125/221423484160"
   },
@@ -57684,7 +57683,7 @@
     "address": "대구광역시 남구 계명중앙1길 35-1 (대명동)",
     "lat": 35.856223,
     "lng": 128.58196509999993,
-    "district": "남구",
+    "district": "",
     "phone": "053-246-2925",
     "homepage": "http://www.hanwoollim.com/bbs/board.php?bo_table=notice&wr_id=8"
   },
@@ -57723,7 +57722,7 @@
     "address": "경상북도 구미시 금오시장로 4 (원평동)",
     "lat": 36.1252774,
     "lng": 128.34051120000004,
-    "district": "구미시",
+    "district": "",
     "phone": "054-444-0604",
     "homepage": "https://gongterda.modoo.at/"
   },
@@ -57754,7 +57753,7 @@
     "address": "전라북도 정읍시 시기4길 13 (시기동)",
     "lat": 35.5529153,
     "lng": 126.86156249999999,
-    "district": "정읍시",
+    "district": "",
     "phone": "063-539-6424",
     "homepage": "http://art.jeongeup.go.kr/"
   },
@@ -57797,7 +57796,7 @@
     "address": "경상북도 영덕군 영해면 318만세길 36",
     "lat": 36.529789,
     "lng": 129.40498860000002,
-    "district": "영덕군",
+    "district": "",
     "phone": "054-730-7774",
     "homepage": "http://art.yd.go.kr/"
   },
@@ -57806,7 +57805,7 @@
     "address": "강원도 춘천시 공지로 121-1 (석사동) 삼원빌딩 지하",
     "lat": 37.8571091124131,
     "lng": 127.746990735375,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-241-1740",
     "homepage": "http://cafe.naver.com/itiki"
   },
@@ -57850,7 +57849,7 @@
     "address": "강원특별자치도 춘천시 동면 노루목길 8-5",
     "lat": 37.8992773,
     "lng": 127.7688882,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-254-1388",
     "homepage": "https://blog.naver.com/yena_arthall"
   },
@@ -57904,7 +57903,7 @@
     "address": "강원도 원주시 중앙로 27 (인동)",
     "lat": 37.346246,
     "lng": 127.95375680000006,
-    "district": "원주시",
+    "district": "",
     "phone": "010-5366-4545"
   },
   "후케즈": {
@@ -57944,7 +57943,7 @@
     "address": "부산광역시 해운대구 센텀중앙로 97 (재송동)",
     "lat": 35.1751629,
     "lng": 129.1245061,
-    "district": "해운대구",
+    "district": "",
     "homepage": "https://centumarthall.com/"
   },
   "서울문화예술교육센터 은평(서울무용창작센터)": {
@@ -57968,7 +57967,7 @@
     "address": "충청북도 청주시 상당구 중앙로 30 (북문로2가)",
     "lat": 36.6396741,
     "lng": 127.48890740000002,
-    "district": "청주시",
+    "district": "",
     "phone": "00-1661-1178",
     "homepage": "http://www.artnanum.com/main/main.php"
   },
@@ -58026,7 +58025,7 @@
     "address": "부산광역시 수영구 수영로 477 (남천동)",
     "lat": 35.1485415,
     "lng": 129.11040309999998,
-    "district": "수영구",
+    "district": "",
     "phone": "051-625-2117",
     "homepage": "http://blog.naver.com/mac1986"
   },
@@ -58035,7 +58034,7 @@
     "address": "대구광역시 북구 구암로 47 (관음동)",
     "lat": 35.9351297,
     "lng": 128.54623719999995,
-    "district": "북구",
+    "district": "",
     "phone": "053-320-5120",
     "homepage": "http://www.hbcf.or.kr/front/"
   },
@@ -58246,7 +58245,7 @@
     "address": "전라북도 전주시 덕진구 와룡로 30 (송천동2가)",
     "lat": 35.8622454,
     "lng": 127.1122952,
-    "district": "전주시"
+    "district": ""
   },
   "배곧생명공원": {
     "name": "배곧생명공원",
@@ -58297,7 +58296,7 @@
     "address": "강원특별자치도 강릉시 죽헌길 7 (지변동)",
     "lat": 37.770196,
     "lng": 128.869042,
-    "district": "강릉시",
+    "district": "",
     "phone": "033-640-2517",
     "homepage": "https://reserve.gwnu.ac.kr/main/content/view/MN10010000.do"
   },
@@ -58306,7 +58305,7 @@
     "address": "인천광역시 남구 인하로 126 (용현동)",
     "lat": 37.4494551,
     "lng": 126.661876,
-    "district": "남구",
+    "district": "",
     "phone": "032-866-3970",
     "homepage": "http://www.haksanculture.or.kr/theatre/haksantheater.php"
   },
@@ -58361,7 +58360,7 @@
     "address": "대구광역시 남구 중앙대로45길 53 (대명동)",
     "lat": 35.854396,
     "lng": 128.58947799999999,
-    "district": "남구",
+    "district": "",
     "phone": "053-664-3111",
     "homepage": "http://nam.daegu.kr/musiclab/index.do"
   },
@@ -58391,7 +58390,7 @@
     "address": "경상북도 울진군 울진읍 연호로 47",
     "lat": 36.994688,
     "lng": 129.4064616,
-    "district": "울진군",
+    "district": "",
     "phone": "054-789-5483"
   },
   "파주 임진각 평화누리": {
@@ -58534,7 +58533,7 @@
     "address": "부산광역시 남구 용소로40번길 11 (대연동)",
     "lat": 35.1337216,
     "lng": 129.10034740000003,
-    "district": "남구",
+    "district": "",
     "phone": "070-4842-7558",
     "homepage": "http://blog.naver.com/nadatheater"
   },
@@ -58550,7 +58549,7 @@
     "address": "제주특별자치도 서귀포시 중문관광로 224 (중문동) 5층",
     "lat": 33.2412897,
     "lng": 126.4244429,
-    "district": "서귀포시",
+    "district": "",
     "phone": "064-735-1000",
     "homepage": "http://www.iccjeju.co.kr/"
   },
@@ -58615,7 +58614,7 @@
     "address": "부산광역시 남구 용소로13번길 17 (대연동)",
     "lat": 35.1367436,
     "lng": 129.10148430000004,
-    "district": "남구",
+    "district": "",
     "homepage": "http://cafe.naver.com/habaso"
   },
   "밀양아리나 (구, 밀양연극촌)": {
@@ -58711,7 +58710,7 @@
     "address": "인천광역시 남구 매소홀로 618 (문학동)",
     "lat": 37.4374104,
     "lng": 126.69273420000002,
-    "district": "남구",
+    "district": "",
     "phone": "032-433-3777",
     "homepage": "http://www.mhtheater.kr"
   },
@@ -58777,7 +58776,7 @@
     "address": "제주특별자치도 서귀포시 안덕면 신화역사로304번길 139 (서광리)",
     "lat": 33.3013442,
     "lng": 126.3206558,
-    "district": "서귀포시",
+    "district": "",
     "phone": "010-3361-8919",
     "homepage": "https://claudearthall.modoo.at/"
   },
@@ -58870,7 +58869,7 @@
     "address": "제주특별자치도 제주시 신산로 82(일도이동)",
     "lat": 33.5054858,
     "lng": 126.5347396,
-    "district": "제주시",
+    "district": "",
     "phone": "064-735-0677",
     "homepage": "http://www.be-in.kr/Home/Main"
   },
@@ -58883,10 +58882,12 @@
   },
   "축제극장몸짓": {
     "name": "축제극장몸짓",
-    "address": "강원도 춘천시 춘천로 112",
+    "address": "강원도 춘천시 춘천로 112 (효자동)",
     "lat": 37.8729692,
     "lng": 127.72758580000004,
-    "district": ""
+    "district": "",
+    "phone": "033-251-0531",
+    "homepage": "http://www.mimefestival.com/rent/introduce"
   },
   "민들레연극마을": {
     "name": "민들레연극마을",
@@ -58994,7 +58995,7 @@
     "address": "경상북도 김천시 용전1로1길 17 (율곡동)",
     "lat": 36.1221659,
     "lng": 128.1888068,
-    "district": "김천시",
+    "district": "",
     "phone": "054-421-0200",
     "homepage": "https://www.gcl.go.kr/#secondPage"
   },
@@ -59115,7 +59116,7 @@
     "address": "강원특별자치도 태백시 고원로 203 (황지동)",
     "lat": 37.1719185,
     "lng": 128.9880057,
-    "district": "태백시",
+    "district": "",
     "phone": "033-552-1360",
     "homepage": "http://www.taebaek.go.kr/www/contents.do?key=495"
   },
@@ -59124,7 +59125,7 @@
     "address": "강원도 인제군 인제읍 비봉로44번길 100",
     "lat": 38.0611312,
     "lng": 128.16497060000006,
-    "district": "인제군",
+    "district": "",
     "phone": "033-460-8900",
     "homepage": "http://www.injeart.or.kr/index.php"
   },
@@ -59250,7 +59251,7 @@
     "address": "대전광역시 유성구 온천북로13번길 21 (봉명동)",
     "lat": 36.3580556,
     "lng": 127.3443975,
-    "district": "유성구"
+    "district": ""
   },
   "삼락생태공원": {
     "name": "삼락생태공원",
@@ -59271,7 +59272,7 @@
     "address": "부산광역시 북구 낙동북로 737-1 (구포동)",
     "lat": 35.2001396,
     "lng": 128.99989089999997,
-    "district": "북구",
+    "district": "",
     "homepage": "http://www.bacs.go.kr/main/main.php"
   },
   "클래식고택 디토 (구.선인재)": {
@@ -59307,7 +59308,7 @@
     "address": "전라남도 장흥군 장흥읍 읍성로 96",
     "lat": 34.6766446,
     "lng": 126.89826419999997,
-    "district": "장흥군",
+    "district": "",
     "phone": "061-860-5802",
     "homepage": "http://art.jangheung.go.kr/"
   },
@@ -59332,7 +59333,7 @@
     "address": "충청남도 논산시 은진면 탑정로 596",
     "lat": 36.1752153,
     "lng": 127.1285822,
-    "district": "논산시",
+    "district": "",
     "phone": "010-2915-2959"
   },
   "알펜시아 리조트": {
@@ -59340,7 +59341,7 @@
     "address": "강원도 평창군 대관령면 솔봉로 325 알펜시아리조트",
     "lat": 37.6580034,
     "lng": 128.67579420000004,
-    "district": "평창군",
+    "district": "",
     "phone": "02-563-7010",
     "homepage": "http://www.alpensiaresort.co.kr/AlViewCultConcertIntroForm.gdc?alpId=alp_04_09"
   },
@@ -59394,7 +59395,7 @@
     "address": "부산광역시 해운대구 센텀중앙로 55 (우동)",
     "lat": 35.1730462,
     "lng": 129.127655,
-    "district": "해운대구",
+    "district": "",
     "homepage": "https://uni.dongseo.ac.kr/acting/index.php?pCode=MN7000071"
   },
   "H-스테이지": {
@@ -59409,7 +59410,7 @@
     "address": "경상북도 포항시 북구 흥해읍 해안로 1374",
     "lat": 36.1323527,
     "lng": 129.3970124,
-    "district": "포항시",
+    "district": "",
     "homepage": "http://www.chilpojazz.com/main/main.php"
   },
   "플라멩코델서울": {
@@ -59489,7 +59490,7 @@
     "address": "부산광역시 연제구 월드컵대로 344(거제동)",
     "lat": 35.1899799,
     "lng": 129.0566488,
-    "district": "연제구",
+    "district": "",
     "phone": "051-500-2123",
     "homepage": "https://www.busan.go.kr/health/complexsub"
   },
@@ -59584,7 +59585,7 @@
     "address": "전라남도 무안군 창포로 8",
     "lat": 34.989977,
     "lng": 126.47322310000004,
-    "district": "무안군",
+    "district": "",
     "phone": "061-450-4090",
     "homepage": "https://www.muan.go.kr/culture"
   },
@@ -59698,7 +59699,7 @@
     "address": "전라북도 김제시 성산길 20 (교동)",
     "lat": 35.8028856,
     "lng": 126.87719349999998,
-    "district": "김제시",
+    "district": "",
     "phone": "063-540-4172",
     "homepage": "http://art.gimje.go.kr/index.sko"
   },
@@ -59812,7 +59813,7 @@
     "address": "경상남도 거창군 수남로 2181 거창군교육문화센터",
     "lat": 35.6742953691642,
     "lng": 127.910316706376,
-    "district": "거창군",
+    "district": "",
     "phone": "055-940-8460",
     "homepage": "https://www.gccf.or.kr/front/M0000000/index.do"
   },
@@ -59821,7 +59822,7 @@
     "address": "강원도 원주시 문막읍 비야동길 11",
     "lat": 37.312596,
     "lng": 127.81722890000003,
-    "district": "원주시",
+    "district": "",
     "phone": "033-732-0827",
     "homepage": "http://www.hooyongartscentre.com/main.php"
   },
@@ -59956,7 +59957,7 @@
     "address": "전라북도 전주시 완산구 용머리로 36(효자동1가)",
     "lat": 35.8055148,
     "lng": 127.1144693,
-    "district": "전주시",
+    "district": "",
     "phone": "063-223-5323",
     "homepage": "https://arterum.imweb.me/"
   },
@@ -60070,7 +60071,7 @@
     "address": "경상북도 경주시 경감로 614 (천군동)",
     "lat": 35.8320536,
     "lng": 129.28811599999995,
-    "district": "경주시",
+    "district": "",
     "phone": "054-748-3011",
     "homepage": "http://www.cultureexpo.or.kr/open.content/ko/"
   },
@@ -60142,7 +60143,7 @@
     "address": "충청남도 보령시 성주산로 101 (명천동)",
     "lat": 36.3338172,
     "lng": 126.61456599999997,
-    "district": "보령시",
+    "district": "",
     "homepage": "https://www.brcn.go.kr/art.do"
   },
   "크리에이터스 홀": {
@@ -60187,7 +60188,7 @@
     "address": "전라북도 전주시 완산구 전주객사3길 35(고사동)",
     "lat": 35.8187007,
     "lng": 127.1420682,
-    "district": "전주시",
+    "district": "",
     "phone": "010-2281-6321",
     "homepage": "https://www.instagram.com/the_musician_korea/"
   },
@@ -62023,7 +62024,7 @@
     "address": "광주광역시 북구 하서로 299 (양산동)",
     "lat": 35.2013855,
     "lng": 126.8738526,
-    "district": "북구",
+    "district": "",
     "phone": "062-410-8367",
     "homepage": "https://bukgu.gwangju.kr/bcc/"
   },
@@ -62596,10 +62597,10 @@
   },
   "한바탕 소극장": {
     "name": "한바탕 소극장",
-    "address": "서울 송파구 송이로32길 19",
-    "district": "송파구",
-    "lat": 37.4882248525501,
-    "lng": 127.127736130831
+    "address": "서울특별시 송파구 송이로32길 19 (문정동)",
+    "lat": 37.4882251,
+    "lng": 127.1277366,
+    "district": "송파구"
   },
   "무민랜드 제주": {
     "name": "무민랜드 제주",
@@ -63475,7 +63476,7 @@
     "address": "충청북도 청주시 상당구 상당로69번길 12-6 (북문로1가)",
     "lat": 36.6347375,
     "lng": 127.49001010000006,
-    "district": "청주시",
+    "district": "",
     "phone": "043-256-3338",
     "homepage": "http://cafe.daum.net/theatrej/"
   },
@@ -63500,7 +63501,7 @@
     "address": "경상남도 창원시 성산구 중앙대로 111 (중앙동)",
     "lat": 35.22484,
     "lng": 128.67976,
-    "district": "창원시"
+    "district": ""
   },
   "성산아트홀 소극장": {
     "name": "성산아트홀 소극장",
@@ -63749,7 +63750,7 @@
     "address": "부산광역시 금정구 기찰로108번길 49 (부곡동)",
     "lat": 35.2419551,
     "lng": 129.0956507,
-    "district": "금정구",
+    "district": "",
     "phone": "010-7517-5859",
     "homepage": "https://blog.naver.com/sillaguy"
   },
@@ -64223,7 +64224,7 @@
     "address": "강원특별자치도 춘천시 영서로 3035 (사농동)",
     "lat": 37.9231818,
     "lng": 127.7205112,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-259-5892",
     "homepage": "https://www.thehab.co.kr/html/main/index.php"
   },
@@ -64586,7 +64587,7 @@
     "address": "충청남도 예산군 예산읍 아리랑로 185-14",
     "lat": 36.685362,
     "lng": 126.84961739999994,
-    "district": "예산군",
+    "district": "",
     "phone": "041-339-8211",
     "homepage": "http://public.yesan.go.kr/public/sub03_02.do"
   },
@@ -64653,7 +64654,7 @@
   "금정문화회관 소공연장(은빛샘홀)": {
     "name": "금정문화회관 소공연장(은빛샘홀)",
     "address": "부산 금정구 체육공원로 7",
-    "district": "금정구",
+    "district": "",
     "lat": 35.246196,
     "lng": 129.0942315,
     "phone": "051-519-5651",
@@ -65306,7 +65307,7 @@
     "address": "전라북도 전주시 완산구 홍산북로 23-9(효자동2가)",
     "lat": 35.818148,
     "lng": 127.1042953,
-    "district": "전주시",
+    "district": "",
     "phone": "063-227-8287",
     "homepage": "https://blog.naver.com/kyoartcenter"
   },
@@ -65414,7 +65415,7 @@
     "address": "전라남도 보성군 보성읍 송재로 281-9",
     "lat": 34.7778023,
     "lng": 127.08806579999998,
-    "district": "보성군",
+    "district": "",
     "phone": "061-850-8660",
     "homepage": "http://www.boseong.go.kr/art"
   },
@@ -65822,7 +65823,7 @@
     "address": "대구광역시 북구 영송로 15 (태전동)",
     "lat": 35.9276807,
     "lng": 128.54356410000003,
-    "district": "북구",
+    "district": "",
     "phone": "053-320-1300",
     "homepage": "http://www.dhc.ac.kr/indang/"
   },
@@ -66447,7 +66448,7 @@
     "address": "강원도 양구군 양구읍 비봉로73번길 52",
     "lat": 38.1090409,
     "lng": 127.98395230000006,
-    "district": "양구군",
+    "district": "",
     "phone": "033-480-2241"
   },
   "아산 코미디홀": {
@@ -66522,7 +66523,7 @@
     "address": "전라남도 영암군 삼호읍 방아제로 66",
     "lat": 34.7534998,
     "lng": 126.4701999,
-    "district": "영암군"
+    "district": ""
   },
   "부산학생예술문화회관 대극장": {
     "name": "부산학생예술문화회관 대극장",
@@ -66588,7 +66589,7 @@
     "address": "대전광역시 유성구 북유성대로 93 (지족동)",
     "lat": 36.375174,
     "lng": 127.324979,
-    "district": "유성구",
+    "district": "",
     "homepage": "https://kiminhall.framer.website/"
   },
   "양림미술관": {
@@ -66727,7 +66728,7 @@
     "address": "전라북도 전주시 완산구 전주천동로 20 - 0 전통문화센터",
     "lat": 35.8119872,
     "lng": 127.15849300000002,
-    "district": "전주시",
+    "district": "",
     "phone": "063-280-7000",
     "homepage": "http://www.jt.or.kr/"
   },
@@ -66898,7 +66899,7 @@
     "address": "경상북도 예천군 예천읍 충효로 209-15",
     "lat": 36.651284,
     "lng": 128.44588120000003,
-    "district": "예천군",
+    "district": "",
     "phone": "054-650-6422",
     "homepage": "http://www.ycg.kr/open.content/culture/center/facilities/"
   },
@@ -67104,7 +67105,7 @@
     "address": "광주광역시 남구 제중로47번길 22 (양림동)",
     "lat": 35.138014,
     "lng": 126.911888,
-    "district": "남구",
+    "district": "",
     "homepage": "https://www.horang.art/"
   },
   "비바아첼 Chamber Hall & Academy": {
@@ -67112,7 +67113,7 @@
     "address": "부산광역시 해운대구 우동3로11번길 3 (우동)",
     "lat": 35.16706,
     "lng": 129.162398,
-    "district": "해운대구"
+    "district": ""
   },
   "제주아트센터 대극장": {
     "name": "제주아트센터 대극장",
@@ -67247,7 +67248,7 @@
     "address": "경상남도 창원시 마산회원구 양덕서9길 11-11 (양덕동)",
     "lat": 35.2238408,
     "lng": 128.5782738,
-    "district": "창원시",
+    "district": "",
     "phone": "055-250-5000",
     "homepage": "https://mbcgn.kr/"
   },
@@ -67304,7 +67305,7 @@
     "address": "충청남도 천안시 서북구 번영로 156 (불당동)",
     "lat": 36.8156927,
     "lng": 127.11368679999998,
-    "district": "천안시",
+    "district": "",
     "phone": "00-1577-3900"
   },
   "군산시민문화회관 공연장": {
@@ -67811,7 +67812,9 @@
     "address": "부산 중구 민주공원길 19",
     "district": "중구",
     "lat": 35.10973758402568,
-    "lng": 129.0280923112498
+    "lng": 129.0280923112498,
+    "phone": "051-790-7408",
+    "homepage": "http://www.demopark.or.kr/main/main.asp"
   },
   "진주교육대학교 대강당": {
     "name": "진주교육대학교 대강당",
@@ -68013,7 +68016,7 @@
     "address": "전라남도 나주시 예향로 4137 (송월동)",
     "lat": 35.0224762,
     "lng": 126.71239530000003,
-    "district": "나주시",
+    "district": "",
     "phone": "061-339-2531",
     "homepage": "http://najuart.naju.go.kr/"
   },
@@ -68031,7 +68034,7 @@
     "address": "경상북도 의성군 의성읍 충효로 88",
     "lat": 36.3554517,
     "lng": 128.70273480000003,
-    "district": "의성군",
+    "district": "",
     "phone": "054-830-6931",
     "homepage": "https://www.usc.go.kr/tour/sights/detail.tc?idx=27"
   },
@@ -68133,7 +68136,7 @@
     "address": "강원도 영월군 영월읍 단종로 24",
     "lat": 37.1859101,
     "lng": 128.46849029999998,
-    "district": "영월군",
+    "district": "",
     "phone": "033-375-6353",
     "homepage": "http://www.ywcf.or.kr/bbs/board.php?bo_table=sub2_1_1&wr_id=1"
   },
@@ -68406,7 +68409,7 @@
     "address": "경상남도 김해시 분성로 259 (봉황동)",
     "lat": 35.2346232,
     "lng": 128.87682340000003,
-    "district": "김해시",
+    "district": "",
     "phone": "055-339-9110",
     "homepage": "https://blog.naver.com/jhoehyeon707"
   },
@@ -68980,7 +68983,7 @@
     "address": "경상남도 의령군 의령읍 의병로24길 31-1",
     "lat": 35.3176895,
     "lng": 128.26483499999995,
-    "district": "의령군",
+    "district": "",
     "phone": "055-570-4922",
     "homepage": "http://culture.uiryeong.go.kr/"
   },
@@ -69747,7 +69750,7 @@
     "address": "충청북도 옥천군 옥천읍 문정1길 32",
     "lat": 36.3036801,
     "lng": 127.57420619999994,
-    "district": "옥천군",
+    "district": "",
     "phone": "043-730-3403",
     "homepage": "http://www.ocac.go.kr/2012/"
   },
@@ -69924,7 +69927,7 @@
     "address": "제주특별자치도 제주시 연북로 66 (연동)",
     "lat": 33.51190920000001,
     "lng": 126.52187979999997,
-    "district": "제주시",
+    "district": "",
     "phone": "010-5755-9220",
     "homepage": "http://artspace52.com/"
   },
@@ -73039,7 +73042,7 @@
   "금정문화회관 (소공연장(은빛샘홀))": {
     "name": "금정문화회관 (소공연장(은빛샘홀))",
     "address": "부산 금정구 체육공원로 7",
-    "district": "금정구",
+    "district": "",
     "lat": 35.246196,
     "lng": 129.0942315,
     "phone": "051-519-5651",
@@ -77164,7 +77167,7 @@
     "address": "충청북도 청주시 흥덕구 송화로108번길 30 (송절동)",
     "lat": 36.661752,
     "lng": 127.449118,
-    "district": "청주시"
+    "district": ""
   },
   "이들스": {
     "name": "이들스",
@@ -77189,7 +77192,7 @@
     "address": "경상북도 영주시 가흥로 257 (가흥동)",
     "lat": 36.8184005,
     "lng": 128.60536649999995,
-    "district": "영주시",
+    "district": "",
     "phone": "054-639-5951",
     "homepage": "http://art.yeongju.go.kr/"
   },
@@ -78550,7 +78553,7 @@
   "삼악산케이블카": {
     "name": "춘천 삼악산 호수 케이블카",
     "address": "강원 춘천시 스포츠타운길 245",
-    "district": "춘천시",
+    "district": "",
     "lat": 37.86433423002352,
     "lng": 127.69129278762853,
     "mapped_region_id": "gangwon"
@@ -78609,7 +78612,7 @@
     "address": "대전광역시 유성구 엑스포로97번길 40 (도룡동)",
     "lat": 36.3767096,
     "lng": 127.39080369999999,
-    "district": "유성구",
+    "district": "",
     "phone": "042-862-2221"
   },
   "나인 씨어터": {
@@ -78631,7 +78634,7 @@
     "address": "전라남도 여수시 돌산읍 돌산로 2876",
     "lat": 34.6860406,
     "lng": 127.7764878,
-    "district": "여수시"
+    "district": ""
   },
   "아지토 라이브 홀": {
     "name": "아지토 라이브 홀",
@@ -78646,7 +78649,7 @@
     "address": "충청북도 청주시 청원구 밀레니엄2로 21 (주중동)",
     "lat": 36.682944,
     "lng": 127.479636,
-    "district": "청주시",
+    "district": "",
     "phone": "043-229-2600",
     "homepage": "http://www.cbsec.go.kr/"
   },
@@ -78672,7 +78675,7 @@
     "address": "강원도 평창군 평창읍 문화예술길 51",
     "lat": 37.3613705,
     "lng": 128.39087970000003,
-    "district": "평창군",
+    "district": "",
     "phone": "033-330-2546"
   },
   "히든파티오(HIDDEN PATIO)": {
@@ -78697,7 +78700,7 @@
     "address": "충청남도 태안군 태안읍 백화로 200",
     "lat": 36.7540635,
     "lng": 126.31224930000008,
-    "district": "태안군",
+    "district": "",
     "phone": "041-670-2258",
     "homepage": "https://www.taean.go.kr/tour/sub04_03_01.do"
   },
@@ -78706,7 +78709,7 @@
     "address": "대전광역시 대덕구 쌍청당로 25 (중리동)",
     "lat": 36.3644802,
     "lng": 127.43425439999999,
-    "district": "대덕구",
+    "district": "",
     "phone": "042-626-7728",
     "homepage": "http://www.dd1318.com/youth"
   },
@@ -78715,7 +78718,7 @@
     "address": "충청북도 청주시 서원구 1순환로 854",
     "lat": 36.6199693,
     "lng": 127.4679175,
-    "district": "청주시",
+    "district": "",
     "phone": "043-279-3845",
     "homepage": "http://www.cjbmediacenter.co.kr"
   },
@@ -78724,14 +78727,14 @@
     "address": "경상북도 포항시 북구 송라면 동해대로 3310(지경리 232)",
     "lat": 36.2581979,
     "lng": 129.3737898,
-    "district": "포항시"
+    "district": ""
   },
   "하동문화예술회관": {
     "name": "하동문화예술회관",
     "address": "경상남도 하동군 하동읍 섬진강대로 2222",
     "lat": 35.0723241,
     "lng": 127.74119259999998,
-    "district": "하동군",
+    "district": "",
     "phone": "055-880-2401",
     "homepage": "https://www.hadong.go.kr/specialty/00225/00538.web"
   },
@@ -78766,7 +78769,7 @@
     "address": "강원도 강릉시 경강로2046번길 5 (명주동)",
     "lat": 37.7512734,
     "lng": 128.89270239999996,
-    "district": "강릉시",
+    "district": "",
     "phone": "033-640-4807",
     "homepage": "https://www.gncaf.or.kr/contents.asp?page=252"
   },
@@ -78775,7 +78778,7 @@
     "address": "경상남도 진주시 석갑로155번길 17-13 (신안동)",
     "lat": 35.182892,
     "lng": 128.0606254,
-    "district": "진주시"
+    "district": ""
   },
   "이수아트홀 [대전]": {
     "name": "이수아트홀 [대전]",
@@ -78791,7 +78794,7 @@
     "address": "광주광역시 광산구 광주여대길 45 (산정동)",
     "lat": 35.163936,
     "lng": 126.797521,
-    "district": "광산구",
+    "district": "",
     "phone": "062-950-3631",
     "homepage": "https://www.kwu.ac.kr/index.do"
   },
@@ -78800,7 +78803,7 @@
     "address": "부산광역시 남구 용소로7번길 15-1 (대연동)",
     "lat": 35.1372204,
     "lng": 129.1010229,
-    "district": "남구",
+    "district": "",
     "homepage": "https://www.facebook.com/Ovantgarde/"
   },
   "한국소리터": {
@@ -78826,7 +78829,7 @@
     "address": "부산광역시 사상구 가야대로196번길 51 (학장동)",
     "lat": 35.1498558,
     "lng": 129.00049609999996,
-    "district": "사상구",
+    "district": "",
     "phone": "051-316-9111",
     "homepage": "http://www.sasangculture.or.kr/"
   },
@@ -78851,7 +78854,7 @@
     "address": "광주광역시 남구 사직길 17(사동)",
     "lat": 35.1426119,
     "lng": 126.9149075,
-    "district": "남구",
+    "district": "",
     "phone": "062-654-3626"
   },
   "일지아트홀": {
@@ -78868,7 +78871,7 @@
     "address": "충청남도 서천군 서천읍 서천로14번길 20",
     "lat": 36.0763774,
     "lng": 126.69823139999994,
-    "district": "서천군",
+    "district": "",
     "phone": "041-953-4758",
     "homepage": "https://seocheonctf.or.kr/index.do"
   },
@@ -78886,7 +78889,7 @@
     "address": "충청남도 공주시 번영1로 84-10 (신관동)",
     "lat": 36.4732971,
     "lng": 127.1367604,
-    "district": "공주시"
+    "district": ""
   },
   "옥타바리움 라이브홀": {
     "name": "옥타바리움 라이브홀",
@@ -78908,7 +78911,7 @@
     "address": "제주특별자치도 서귀포시 성산읍 환해장성로 201",
     "lat": 33.386854,
     "lng": 126.888135,
-    "district": "서귀포시",
+    "district": "",
     "homepage": "https://www.kokocultureclub.com/"
   },
   "전주대사습청(구.전주소리문화관)": {
@@ -78916,7 +78919,7 @@
     "address": "전라북도 전주시 완산구 한지길 56 (풍남동3가) 한옥생활체험관 옆",
     "lat": 35.8176573,
     "lng": 127.15334830000006,
-    "district": "전주시",
+    "district": "",
     "phone": "063-231-0771"
   },
   "유어타입 본점": {
@@ -78924,7 +78927,7 @@
     "address": "부산광역시 수영구 광남로 157 (광안동) 2층",
     "lat": 35.155379,
     "lng": 129.1180795,
-    "district": "수영구"
+    "district": ""
   },
   "동아백화점 아트홀": {
     "name": "동아백화점 아트홀",
@@ -79053,7 +79056,7 @@
     "address": "세종특별자치시 갈매로 387 (어진동)",
     "lat": 36.4985469,
     "lng": 127.2638296,
-    "district": "갈매로",
+    "district": "",
     "phone": "044-850-0571",
     "homepage": "https://www.nurirock.or.kr/base/main/view"
   },
@@ -79069,7 +79072,7 @@
     "address": "울산광역시 울주군 삼남읍 울산역로 255",
     "lat": 35.5556181,
     "lng": 129.1316552,
-    "district": "울주군",
+    "district": "",
     "phone": "052-255-1800",
     "homepage": "http://ueco.or.kr/"
   },
@@ -79138,7 +79141,7 @@
     "address": "경상남도 합천군 합천읍 황강체육공원로 93",
     "lat": 35.5647983,
     "lng": 128.17050689999996,
-    "district": "합천군",
+    "district": "",
     "phone": "055-930-4933",
     "homepage": "https://www.hc.go.kr/05756/06120/06125.web"
   },
@@ -79179,7 +79182,7 @@
     "address": "전라북도 완주군 삼례읍 삼봉로 215",
     "lat": 35.919834,
     "lng": 127.09297779999997,
-    "district": "완주군",
+    "district": "",
     "phone": "063-291-7245",
     "homepage": "http://culture.wanju.go.kr/index.do?menuCd=DOM_000000101003003000"
   },
@@ -79188,7 +79191,7 @@
     "address": "충청북도 제천시 의림대로6길 32 (화산동)",
     "lat": 37.1304571,
     "lng": 128.2105957,
-    "district": "제천시",
+    "district": "",
     "phone": "043-641-5517",
     "homepage": "http://www.okjc.net/www/contents.do?key=479"
   },
@@ -79205,7 +79208,7 @@
     "address": "강원도 고성군 거진읍 자산천로 240",
     "lat": 38.4358742,
     "lng": 128.45250190000002,
-    "district": "고성군",
+    "district": "",
     "phone": "033-680-3366",
     "homepage": "http://www.goseong.go.kr/index.goseong?menuCd=DOM_000000107003006001"
   },
@@ -79214,7 +79217,7 @@
     "address": "광주광역시 남구 천변좌로338번길 7 (구동)",
     "lat": 35.1479059,
     "lng": 126.9078967,
-    "district": "남구",
+    "district": "",
     "phone": "062-670-7931",
     "homepage": "http://bitculture.gjcf.or.kr/"
   },
@@ -79255,7 +79258,7 @@
     "address": "전라남도 구례군 광의면 노고단로 209",
     "lat": 35.273879,
     "lng": 127.47632,
-    "district": "구례군",
+    "district": "",
     "homepage": "http://www.choneunsa.org/main.html"
   },
   "RED POINT": {
@@ -79270,7 +79273,7 @@
     "address": "충청남도 천안시 동남구 대흥로 328 (성황동)",
     "lat": 36.815747,
     "lng": 127.1500445,
-    "district": "천안시",
+    "district": "",
     "phone": "041-568-0233",
     "homepage": "https://cafe.naver.com/musictime5680233"
   },
@@ -79279,7 +79282,7 @@
     "address": "제주특별자치도 제주시 연동7길 41 (연동)",
     "lat": 33.486291,
     "lng": 126.490841,
-    "district": "제주시",
+    "district": "",
     "homepage": "https://www.instagram.com/rnr_jeju_"
   },
   "슈피겐홀": {
@@ -79356,7 +79359,7 @@
     "address": "경상남도 창원시 성산구 가양로136번길 14 (대방동)",
     "lat": 35.208354,
     "lng": 128.708073,
-    "district": "창원시",
+    "district": "",
     "homepage": "https://www.instagram.com/ars_nova25"
   },
   "해바라기소극장 (구. 훈아트홀)": {
@@ -79411,7 +79414,7 @@
     "address": "경상남도 창원시 성산구 창이대로460번길 11 (용호동)",
     "lat": 35.2380731,
     "lng": 128.6844783,
-    "district": "창원시",
+    "district": "",
     "phone": "055-294-9498"
   },
   "큐브컨벤션센터(CCC)": {
@@ -79427,7 +79430,7 @@
     "address": "전라북도 장수군 장수읍 한누리로 393",
     "lat": 35.6410294,
     "lng": 127.51808779999999,
-    "district": "장수군",
+    "district": "",
     "phone": "063-350-5542"
   },
   "벨포레 리조트": {
@@ -79435,7 +79438,7 @@
     "address": "충청북도 증평군 도안면 벨포레길 346",
     "lat": 36.8454056,
     "lng": 127.5827243,
-    "district": "증평군",
+    "district": "",
     "phone": "043-926-1160"
   },
   "광주남구문화예술회관": {
@@ -79443,7 +79446,7 @@
     "address": "광주광역시 남구 봉선로 208 (봉선동)",
     "lat": 35.1221068,
     "lng": 126.90795789999993,
-    "district": "남구",
+    "district": "",
     "phone": "062-670-5060",
     "homepage": "http://www.nglcc.kr/"
   },
@@ -79452,7 +79455,7 @@
     "address": "전라남도 광양시 금호로 215 (금호동)",
     "lat": 34.9430494,
     "lng": 127.7258084,
-    "district": "광양시",
+    "district": "",
     "phone": "061-790-6020",
     "homepage": "https://www.posco.co.kr/homepage/docs/kor6/jsp/common/posco/s91a1000031c.jsp"
   },
@@ -79490,21 +79493,21 @@
     "address": "충청남도 천안시 동남구 샛골길 1-8 (삼룡동)",
     "lat": 36.78589,
     "lng": 127.168378,
-    "district": "천안시"
+    "district": ""
   },
   "cafe 슬로우캣 [전주]": {
     "name": "cafe 슬로우캣 [전주]",
     "address": "전북특별자치도 전주시 덕진구 만성남5길 8-19 (만성동)",
     "lat": 35.840322,
     "lng": 127.073754,
-    "district": "전주시"
+    "district": ""
   },
   "전북예술회관": {
     "name": "전북예술회관",
     "address": "전라북도 전주시 완산구 팔달로 161 (경원동1가)",
     "lat": 35.8167967,
     "lng": 127.14712510000004,
-    "district": "전주시",
+    "district": "",
     "phone": "063-270-8000",
     "homepage": "http://www.sori21.co.kr/index.sko?menuCd=AA03011000000"
   },
@@ -79513,7 +79516,7 @@
     "address": "대구광역시 달서구 달구벌대로 1571 (죽전동)",
     "lat": 35.851104,
     "lng": 128.53856,
-    "district": "달서구"
+    "district": ""
   },
   "얼터(alter)": {
     "name": "얼터(alter)",
@@ -79535,7 +79538,7 @@
     "address": "강원특별자치도 춘천시 자라우길 31-1 (칠전동)",
     "lat": 37.852961,
     "lng": 127.7069599,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-261-2410",
     "homepage": "https://www.26theatre.com/"
   },
@@ -79544,7 +79547,7 @@
     "address": "부산광역시 기장군 일광면 이천6길 2",
     "lat": 35.2675636,
     "lng": 129.23491609999996,
-    "district": "기장군",
+    "district": "",
     "phone": "051-723-0568",
     "homepage": "www.kamagol.co.kr"
   },
@@ -79553,7 +79556,7 @@
     "address": "울산광역시 울주군 범서읍 구영로 101-20",
     "lat": 35.5748609,
     "lng": 129.2441514,
-    "district": "울주군",
+    "district": "",
     "phone": "052-229-9700",
     "homepage": "https://www.uljusiseol.or.kr/uljujb/"
   },
@@ -79562,7 +79565,7 @@
     "address": "경상남도 통영시 남망공원길 29 (동호동)",
     "lat": 34.8424044,
     "lng": 128.4287974,
-    "district": "통영시",
+    "district": "",
     "phone": "055-641-2622",
     "homepage": "http://www.tongyeong.go.kr/citizen.web"
   },
@@ -79571,7 +79574,7 @@
     "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 2265",
     "lat": 33.4978223,
     "lng": 126.9121785,
-    "district": "제주시",
+    "district": "",
     "homepage": "http://www.haenyeo.space/"
   },
   "경산시민회관": {
@@ -79579,7 +79582,7 @@
     "address": "경상북도 경산시 계양로 28 (계양동)",
     "lat": 35.8181935,
     "lng": 128.74785610000004,
-    "district": "경산시",
+    "district": "",
     "phone": "053-804-7243",
     "homepage": "http://www.gyeongsan.go.kr/special/civic/index.do"
   },
@@ -79618,7 +79621,7 @@
     "address": "경상남도 산청군 금서면 친환경로2631번길 12",
     "lat": 35.4200512,
     "lng": 127.87305990000004,
-    "district": "산청군",
+    "district": "",
     "phone": "055-970-6481",
     "homepage": "https://www.sancheong.go.kr/www/contents.do?key=232"
   },
@@ -79627,7 +79630,7 @@
     "address": "대전광역시 대덕구 대전로 1348 (읍내동)",
     "lat": 36.3741119,
     "lng": 127.4206198,
-    "district": "대덕구",
+    "district": "",
     "phone": "042-608-6491",
     "homepage": "https://lll.daedeok.go.kr/lms/contents/dms/main.jsp"
   },
@@ -79685,7 +79688,7 @@
     "address": "제주특별자치도 제주시 한라대학로 38 (노형동)",
     "lat": 33.4762933,
     "lng": 126.47489870000004,
-    "district": "제주시",
+    "district": "",
     "phone": "064-741-7575",
     "homepage": "http://www.chu.ac.kr/organization/02organization/sub02/sub02.php"
   },
@@ -79699,7 +79702,7 @@
   "스플라스 리솜": {
     "name": "스플라스 리솜",
     "address": "충남 예산군 덕산면 온천단지3로 45-7",
-    "district": "예산군",
+    "district": "",
     "lat": 36.6938027141362,
     "lng": 126.655824190986,
     "mapped_region_id": "chungnam"
@@ -79707,19 +79710,19 @@
   "아일랜드 리솜": {
     "name": "아일랜드 리솜",
     "address": "충남 태안군 안면읍 꽃지해안로 204",
-    "district": "태안군",
+    "district": "",
     "mapped_region_id": "chungnam"
   },
   "포레스트 리솜": {
     "name": "포레스트 리솜",
     "address": "충북 제천시 백운면 금봉로 365",
-    "district": "제천시",
+    "district": "",
     "mapped_region_id": "chungbuk"
   },
   "레스트리 리솜": {
     "name": "레스트리 리솜",
     "address": "충북 제천시 백운면 금봉로 365",
-    "district": "제천시",
+    "district": "",
     "mapped_region_id": "chungbuk"
   },
   "플러스씨어터(구. 컬처스페이스 엔유)": {
@@ -79735,7 +79738,7 @@
     "address": "부산광역시 부산진구 중앙대로 658 (부전동)",
     "lat": 35.1515302,
     "lng": 129.0595553,
-    "district": "부산진구"
+    "district": ""
   },
   "이화여자대학교 생활환경관 소극장": {
     "name": "이화여자대학교 생활환경관 소극장",
@@ -79796,7 +79799,7 @@
     "address": "부산광역시 금정구 금강로 280 (장전동)",
     "lat": 35.2329573,
     "lng": 129.0856837,
-    "district": "금정구",
+    "district": "",
     "phone": "010-3873-2200",
     "homepage": "http://cafe.daum.net/interplaycafe"
   },
@@ -79829,7 +79832,7 @@
     "address": "경상북도 문경시 신흥로 85 (점촌동)",
     "lat": 36.5902332,
     "lng": 128.197991,
-    "district": "문경시",
+    "district": "",
     "phone": "054-550-8949",
     "homepage": "http://www.gbmg.go.kr/open.content/mgculture/"
   },
@@ -79838,7 +79841,7 @@
     "address": "전라남도 나주시 죽림길 83 (죽림동)",
     "lat": 35.033225,
     "lng": 126.724584,
-    "district": "나주시"
+    "district": ""
   },
   "워커힐 호텔": {
     "name": "워커힐 호텔",
@@ -79853,7 +79856,7 @@
     "address": "충청북도 단양군 단양읍 중앙1로 32",
     "lat": 36.9855794,
     "lng": 128.3680875,
-    "district": "단양군",
+    "district": "",
     "phone": "043-420-2557",
     "homepage": "https://www.danyang.go.kr/culture/%EB%A9%94%EC%9D%B8"
   },
@@ -79862,14 +79865,14 @@
     "address": "강원특별자치도 강릉시 수문길 59 (옥천동)",
     "lat": 37.758164,
     "lng": 128.905744,
-    "district": "강릉시"
+    "district": ""
   },
   "모스트 아트홀(MOCT Art Hall)": {
     "name": "모스트 아트홀(MOCT Art Hall)",
     "address": "울산광역시 남구 정동로 89 (삼산동)",
     "lat": 35.541837,
     "lng": 129.343984,
-    "district": "남구",
+    "district": "",
     "homepage": "https://www.instagram.com/moct_arthall"
   },
   "신어아트센터 [김해]": {
@@ -79877,7 +79880,7 @@
     "address": "경상남도 김해시 활천로255번길 61-25 (삼방동)",
     "lat": 35.247592,
     "lng": 128.904799,
-    "district": "김해시",
+    "district": "",
     "phone": "055-322-9040",
     "homepage": "https://www.instagram.com/shin_eo_artcenter/"
   },
@@ -79886,7 +79889,7 @@
     "address": "충청북도 음성군 음성읍 예술로 102",
     "lat": 36.9315608,
     "lng": 127.68038090000005,
-    "district": "음성군",
+    "district": "",
     "phone": "043-871-5949",
     "homepage": "http://www.esart.go.kr/www/index.do"
   },
@@ -79902,7 +79905,7 @@
     "address": "부산광역시 수영구 광안해변로370번길 9-8 (민락동)",
     "lat": 35.155602,
     "lng": 129.133851,
-    "district": "수영구"
+    "district": ""
   },
   "서울문화예술교육센터 서초": {
     "name": "서울문화예술교육센터 서초",
@@ -79932,7 +79935,7 @@
     "address": "강원특별자치도 홍천군 내면 살둔길 25",
     "lat": 37.831889,
     "lng": 128.371332,
-    "district": "홍천군"
+    "district": ""
   },
   "롯데시네마 [신대방]": {
     "name": "롯데시네마 [신대방]",
@@ -79940,5 +79943,336 @@
     "lat": 37.486533,
     "lng": 126.905002,
     "district": "동작구"
+  },
+  "인천여관1965": {
+    "name": "인천여관1965",
+    "address": "인천광역시 중구 신포로31번길 20 (관동3가)",
+    "lat": 37.4723417,
+    "lng": 126.6246791,
+    "district": "중구"
+  },
+  "Bibistudio": {
+    "name": "Bibistudio",
+    "address": "서울특별시 은평구 갈현로 250 (갈현동)",
+    "lat": 37.6191498,
+    "lng": 126.915675,
+    "district": "은평구"
+  },
+  "부산민주공원 공연장": {
+    "name": "부산민주공원 공연장",
+    "address": "부산광역시 중구 민주공원길 19 (영주동)",
+    "lat": 35.1100718,
+    "lng": 129.02807269999994,
+    "district": "중구",
+    "phone": "051-790-7408",
+    "homepage": "http://www.demopark.or.kr/main/main.asp"
+  },
+  "공감센터": {
+    "name": "공감센터",
+    "address": "서울특별시 중구 퇴계로88길 38 (신당동)",
+    "lat": 37.5640044,
+    "lng": 127.02019799999994,
+    "district": "중구",
+    "phone": "02-2234-5211",
+    "homepage": "https://jctown.modoo.at/"
+  },
+  "NOL 유니플렉스 3관": {
+    "name": "NOL 유니플렉스 3관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "대학로 TOM(티오엠) 1관": {
+    "name": "대학로 TOM(티오엠) 1관",
+    "address": "서울특별시 종로구 대학로8가길 85 대학로문화공간",
+    "district": "종로구",
+    "lat": 37.573,
+    "lng": 126.9794
+  },
+  "현대카드 UNDERSTAGE, 언더스테이지": {
+    "name": "현대카드 UNDERSTAGE, 언더스테이지",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "JS아트홀(구,고스트씨어터)": {
+    "name": "JS아트홀(구,고스트씨어터)",
+    "address": "JS아트홀(구,고스트씨어터)(자세히)",
+    "district": ""
+  },
+  "NOL 씨어터 대학로 우리투자증권홀": {
+    "name": "NOL 씨어터 대학로 우리투자증권홀",
+    "address": "NOL 씨어터 대학로 우리투자증권홀(자세히)",
+    "district": ""
+  },
+  "서울특별시 종로구 사직로 161 경복궁 바라보고 왼쪽의 국립고궁박물관 정문 앞 계단": {
+    "name": "서울특별시 종로구 사직로 161 경복궁 바라보고 왼쪽의 국립고궁박물관 정문 앞 계단",
+    "address": "정보 없음",
+    "district": "종로구",
+    "lat": 37.573,
+    "lng": 126.9794
+  },
+  "▶만남의 장소 : 전쟁기념관 內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)": {
+    "name": "▶만남의 장소 : 전쟁기념관 內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "address": "▶만남의 장소 : 전쟁기념관 內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "district": ""
+  },
+  "▶만남의 장소 : 대한민국역사박물관  內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)": {
+    "name": "▶만남의 장소 : 대한민국역사박물관  內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "address": "▶만남의 장소 : 대한민국역사박물관  內 로비(자세한 안내는 수업전 담당 강사님이 안내드립니다.)",
+    "district": ""
+  },
+  "더현대 서울": {
+    "name": "더현대 서울",
+    "address": "더현대 서울",
+    "district": ""
+  },
+  "국립중앙박물관 상설전시관 검사대 통과후 좌측계단 앞": {
+    "name": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단 앞",
+    "address": "국립중앙박물관 상설전시관 검사대 통과후 좌측계단 앞",
+    "district": ""
+  },
+  "서울 광진구": {
+    "name": "서울 광진구",
+    "address": "정보 없음",
+    "district": "광진구",
+    "lat": 37.5385,
+    "lng": 127.0824
+  },
+  "동대문": {
+    "name": "동대문",
+    "address": "서울",
+    "district": ""
+  },
+  "원데이/단체/출강": {
+    "name": "원데이/단체/출강",
+    "address": "서울",
+    "district": ""
+  },
+  "잠실/송파": {
+    "name": "잠실/송파",
+    "address": "서울",
+    "district": ""
+  },
+  "잠실/ 송파": {
+    "name": "잠실/ 송파",
+    "address": "서울",
+    "district": ""
+  },
+  "홍대, 연남": {
+    "name": "홍대, 연남",
+    "address": "서울",
+    "district": ""
+  },
+  "대학로성신여대": {
+    "name": "대학로성신여대",
+    "address": "서울",
+    "district": ""
+  },
+  "원데이/ 단체/ 출강": {
+    "name": "원데이/ 단체/ 출강",
+    "address": "서울",
+    "district": ""
+  },
+  "서울시자원봉사센터": {
+    "name": "서울시자원봉사센터",
+    "address": "서울",
+    "district": ""
+  },
+  "추가결제-스미스앤드네퓨": {
+    "name": "추가결제-스미스앤드네퓨",
+    "address": "서울",
+    "district": ""
+  },
+  "추가결제-삼성물산 패션부문": {
+    "name": "추가결제-삼성물산 패션부문",
+    "address": "서울",
+    "district": ""
+  },
+  "서울 종로구 종로 121-1 (종로3가) 5층": {
+    "name": "서울 종로구 종로 121-1 (종로3가) 5층",
+    "address": "정보 없음",
+    "district": "종로구",
+    "lat": 37.573,
+    "lng": 126.9794
+  },
+  "서울 송파구 송파대로 567 (잠실동, 잠실주공아파트) 527동 건물입니다.": {
+    "name": "서울 송파구 송파대로 567 (잠실동, 잠실주공아파트) 527동 건물입니다.",
+    "address": "정보 없음",
+    "district": "송파구",
+    "lat": 37.5145,
+    "lng": 127.1066
+  },
+  "https://www.sssd.co.kr/m/class/detail/17562": {
+    "name": "https://www.sssd.co.kr/m/class/detail/17562",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울 서초구 강남대로61길 10 (서초동, 센터프라자) .": {
+    "name": "서울 서초구 강남대로61길 10 (서초동, 센터프라자) .",
+    "address": "정보 없음",
+    "district": "서초구",
+    "lat": 37.4837,
+    "lng": 127.0324
+  },
+  "서울 광진구 아차산로21길 15 (화양동, 이화음악학원) 2층 쿠키키쿠 베이킹스튜디오": {
+    "name": "서울 광진구 아차산로21길 15 (화양동, 이화음악학원) 2층 쿠키키쿠 베이킹스튜디오",
+    "address": "정보 없음",
+    "district": "광진구",
+    "lat": 37.5385,
+    "lng": 127.0824
+  },
+  "https://www.sssd.co.kr/m/class/detail/48932": {
+    "name": "https://www.sssd.co.kr/m/class/detail/48932",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울 강남구 압구정로79길 59 (청담동) 304호": {
+    "name": "서울 강남구 압구정로79길 59 (청담동) 304호",
+    "address": "정보 없음",
+    "district": "강남구",
+    "lat": 37.5172,
+    "lng": 127.0473
+  },
+  "https://www.sssd.co.kr/m/class/detail/35872": {
+    "name": "https://www.sssd.co.kr/m/class/detail/35872",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/47397": {
+    "name": "https://www.sssd.co.kr/m/class/detail/47397",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/45031": {
+    "name": "https://www.sssd.co.kr/m/class/detail/45031",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/55725": {
+    "name": "https://www.sssd.co.kr/m/class/detail/55725",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "https://www.sssd.co.kr/m/class/detail/54493": {
+    "name": "https://www.sssd.co.kr/m/class/detail/54493",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울 마포구 동교로46길 30 (연남동) 2층 니어메이크업&붙임머리": {
+    "name": "서울 마포구 동교로46길 30 (연남동) 2층 니어메이크업&붙임머리",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "서울 광진구 아차산로40길 37 (자양동) 1층": {
+    "name": "서울 광진구 아차산로40길 37 (자양동) 1층",
+    "address": "정보 없음",
+    "district": "광진구",
+    "lat": 37.5385,
+    "lng": 127.0824
+  },
+  "서울 마포구 어울마당로 98-1 (서교동) 2층 홍대반지카페": {
+    "name": "서울 마포구 어울마당로 98-1 (서교동) 2층 홍대반지카페",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "https://www.sssd.co.kr/m/class/detail/54741": {
+    "name": "https://www.sssd.co.kr/m/class/detail/54741",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울 영등포구 국제금융로6길 33 (여의도동) 라엘나스튜디오#사무실이 2개라서 필히!!! 수업전 주소확인 채팅문자 확인부탁드립니다.": {
+    "name": "서울 영등포구 국제금융로6길 33 (여의도동) 라엘나스튜디오#사무실이 2개라서 필히!!! 수업전 주소확인 채팅문자 확인부탁드립니다.",
+    "address": "정보 없음",
+    "district": "영등포구",
+    "lat": 37.5264,
+    "lng": 126.8962
+  },
+  "서산 친환경 체험관광 자원회수시설": {
+    "name": "서산 친환경 체험관광 자원회수시설",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "노원기차마을": {
+    "name": "노원기차마을",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "상하이 대한민국 임시정부": {
+    "name": "상하이 대한민국 임시정부",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "목면시배유지": {
+    "name": "목면시배유지",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "강화농경문화관": {
+    "name": "강화농경문화관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "오이도박물관": {
+    "name": "오이도박물관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "마포365천문대": {
+    "name": "마포365천문대",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "양양에너지팜": {
+    "name": "양양에너지팜",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "강릉화폐전시관": {
+    "name": "강릉화폐전시관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "소나무미디어숲": {
+    "name": "소나무미디어숲",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "아오야마고쇼 향토관(코난박물관)": {
+    "name": "아오야마고쇼 향토관(코난박물관)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "삼성이노베이션뮤지엄": {
+    "name": "삼성이노베이션뮤지엄",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "논산 선샤인랜드": {
+    "name": "논산 선샤인랜드",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "사천케이블카 자연휴양림 목재문화체험장": {
+    "name": "사천케이블카 자연휴양림 목재문화체험장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "구하우스 미술관": {
+    "name": "구하우스 미술관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "코스믹 리조트": {
+    "name": "코스믹 리조트",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "인천안전체험교육장": {
+    "name": "인천안전체험교육장",
+    "address": "정보 없음",
+    "district": ""
   }
 }
