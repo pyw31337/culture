@@ -60,7 +60,7 @@ export default function PerformanceGrid({
             )}
             style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}
         >
-            {items.map((perf) => {
+            {items.map((perf, index) => {
                 // Venue Info
                 const venueInfo = resolveVenueInfoForPerformance(perf, venues);
 
@@ -87,6 +87,7 @@ export default function PerformanceGrid({
                         {layoutMode === 'grid' ? (
                             <PerformanceCard
                                 perf={perf}
+                                priority={index < 5}
                                 distLabel={distLabel}
                                 venueInfo={venueInfo}
                                 onLocationClick={(loc) => {
@@ -112,6 +113,7 @@ export default function PerformanceGrid({
                         ) : (
                             <PerformanceListItem
                                 perf={perf}
+                                priority={index < 4}
                                 distLabel={distLabel}
                                 venueInfo={venueInfo}
                                 onLocationClick={(loc) => {

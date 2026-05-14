@@ -17,6 +17,14 @@ echo "[local-update] started at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
 echo "[local-update] project: $PROJECT_DIR"
 echo "[local-update] log: $LOG_FILE"
 
+if [ -f "$PROJECT_DIR/.env.local" ]; then
+  set -a
+  # shellcheck disable=SC1091
+  source "$PROJECT_DIR/.env.local"
+  set +a
+  echo "[local-update] loaded local environment variables"
+fi
+
 current_hour="$(TZ=Asia/Seoul date '+%H')"
 if [ "${FORCE_LOCAL_UPDATE:-0}" != "1" ] && [ "$current_hour" -ge "$SKIP_AFTER_HOUR" ]; then
   echo "[local-update] skipped: it is already ${current_hour}:00 KST. GitHub fallback owns the afternoon window."
@@ -45,6 +53,12 @@ if [ "${SKIP_PLAYWRIGHT_INSTALL:-0}" != "1" ]; then
   echo "[local-update] ensuring Playwright Chromium is installed"
   npx playwright install chromium
 fi
+
+if [ -z "${PUPPETEER_EXECUTABLE_PATH:-}" ]; then
+  PUPPETEER_EXECUTABLE_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+  export PUPPETEER_EXECUTABLE_PATH
+fi
+echo "[local-update] Puppeteer executable: $PUPPETEER_EXECUTABLE_PATH"
 
 failures=()
 critical_failures=()
@@ -139,6 +153,7 @@ run_scraper "mommom-exhibitions" optional npx tsx scripts/scrape-mommom-exhibiti
 run_scraper "mommom-products" optional npx tsx scripts/scrape-mommom-products.ts
 run_scraper "seoul-culture" optional npx tsx scripts/scrape-seoul-culture.ts
 run_scraper "build-venues" critical npx tsx scripts/build-venues.ts
+run_scraper "venue-places" optional npx tsx scripts/enrich-venue-places.ts
 
 if [ "${RUN_LINK_VERIFY:-0}" = "1" ]; then
   run_scraper "verify-links" optional npx tsx scripts/verify-links.ts

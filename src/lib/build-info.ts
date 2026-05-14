@@ -194,6 +194,9 @@ export interface OperationsSummary {
     localUpdateLogCount: number;
     latestLocalUpdateLog: string | null;
     latestLocalUpdateAt: string | null;
+    latestLocalUpdateCompleted: boolean;
+    lastFailureUpdatedAt: string | null;
+    lastFailureAgeHours: number | null;
     lastFailureCount: number;
     lastFailures: string[];
     schedulerConfigured: boolean;

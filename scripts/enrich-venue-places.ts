@@ -3,6 +3,7 @@ import path from 'path';
 import type { VenueMasterEntry } from './utils/venue-master';
 import {
     buildVenuePlaceMatchingReport,
+    buildVenuePlaceLookupQueue,
     chooseBestVenuePlaceCandidate,
     getVenuePlaceLookupQuery,
     type VenuePlaceCache,
@@ -51,6 +52,11 @@ function sleep(ms: number) {
 function getLookupDelayMs() {
     const parsed = Number.parseInt(process.env.VENUE_PLACE_LOOKUP_DELAY_MS || '500', 10);
     return Number.isFinite(parsed) && parsed >= 0 ? parsed : 500;
+}
+
+function getMaxConsecutiveLookupFailures() {
+    const parsed = Number.parseInt(process.env.VENUE_PLACE_MAX_CONSECUTIVE_FAILURES || '12', 10);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : 12;
 }
 
 async function fetchKakaoPlaces(query: string): Promise<VenuePlaceCandidate[]> {
@@ -209,7 +215,9 @@ async function main() {
         return;
     }
 
-    const queue = initialReport.queue.slice(0, Math.max(0, lookupLimit));
+    const queue = buildVenuePlaceLookupQueue(entries, cache).slice(0, Math.max(0, lookupLimit));
+    const maxConsecutiveFailures = getMaxConsecutiveLookupFailures();
+    let consecutiveFailures = 0;
     console.log(`🔎 공식 장소 조회 시작: ${queue.length.toLocaleString()}개 (${providers.join(', ')}, delay ${lookupDelayMs}ms)`);
 
     for (const item of queue) {
@@ -222,8 +230,10 @@ async function main() {
             if (providerErrors.length > 0) {
                 cache[entry.id].reason = `${cache[entry.id].reason}; provider warnings: ${providerErrors.join(' | ')}`;
             }
+            consecutiveFailures = 0;
             console.log(`- ${entry.officialName}: ${cache[entry.id].status} (${cache[entry.id].confidence})`);
         } catch (error) {
+            consecutiveFailures += 1;
             cache[entry.id] = {
                 venueId: entry.id,
                 status: 'needs_review',
@@ -233,7 +243,12 @@ async function main() {
                 query: item.query,
                 reason: error instanceof Error ? error.message : 'unknown lookup error',
             };
-            console.warn(`- ${entry.officialName}: lookup failed`);
+            console.warn(`- ${entry.officialName}: lookup failed (${consecutiveFailures}/${maxConsecutiveFailures})`);
+
+            if (consecutiveFailures >= maxConsecutiveFailures) {
+                console.warn(`⚠️ 연속 조회 오류가 ${maxConsecutiveFailures}회 발생해 남은 대기열은 다음 실행으로 넘깁니다.`);
+                break;
+            }
         }
 
         if (lookupDelayMs > 0) {

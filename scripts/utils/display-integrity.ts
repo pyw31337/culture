@@ -197,7 +197,7 @@ function isSuspiciousFreePrice(performance: Performance) {
     const extracted = extractFirstPrice(priceText);
     if (extracted?.price !== '무료') return false;
 
-    const hasWonPrice = /\d[\d,]*\s*원/.test(priceText);
+    const hasWonPrice = /\d[\d,]*\s*원|\d+\s*만(?:\s*\d+\s*천)?\s*원|\d+\s*천\s*원/.test(priceText);
     return hasWonPrice;
 }
 

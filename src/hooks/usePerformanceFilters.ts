@@ -5,8 +5,8 @@ import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { filterByDiscoveryContext } from '@/lib/discovery';
 
-const INITIAL_VISIBLE_COUNT = 20;
-const LOAD_MORE_COUNT = 20;
+const INITIAL_VISIBLE_COUNT = 15;
+const LOAD_MORE_COUNT = 15;
 
 interface UsePerformanceFiltersProps {
     allPerformances: Performance[];
@@ -186,13 +186,13 @@ export function usePerformanceFilters({
     const hasMore = visibleCount < filteredPerformances.length;
 
     useEffect(() => {
-        // Reset count only if GENRE or MAJOR parameters change in a way that implies a NEW search entry, 
+        // Reset count only if GENRE or MAJOR parameters change in a way that implies a NEW search entry,
         // but restored state will take precedence in the first mount.
-        // Actually, if we are initialized, we don't want to force reset to 24 if we just came back.
+        // Actually, if we are initialized, we don't want to force reset if we just came back.
         // However, if the user manually changes something, we DO want reset.
         if (isInitialized.current) {
             // We should distinguish between "mounting" and "explicitly changing filters"
-            // For now, let's reset to 24 if major filters change AFTER mount
+            // For now, let's reset to the initial window if major filters change AFTER mount
             setVisibleCount(INITIAL_VISIBLE_COUNT);
         }
     }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, discoveryContextId]);

@@ -23,6 +23,7 @@ interface PerformanceListItemProps {
     onDetail?: (perf: any) => void;
     searchMode?: 'keyword' | 'location';
     searchText?: string;
+    priority?: boolean;
 }
 
 // Helper for Highlighting
@@ -51,7 +52,7 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
 
 HighlightText.displayName = 'HighlightText';
 
-function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceListItemProps) {
+function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText, priority = false }: PerformanceListItemProps) {
     const genreStyle = useMemo(() => GENRE_STYLES[perf.genre] || {}, [perf.genre]);
     const externalLink = useMemo(() => getExternalContentLink(perf), [perf]);
     const dDay = getDdayLabel(perf);
@@ -160,12 +161,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     <ImageWithFallback
                         src={perf.image || perf.poster}
                         backupSrc={perf.backupPoster}
-                        optimizationWidth={320}
+                        optimizationWidth={priority ? 320 : 260}
+                        quality={priority ? 68 : 58}
                         alt={perf.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 640px) 128px, 192px"
-                        loading="lazy"
+                        loading={priority ? 'eager' : 'lazy'}
+                        priority={priority}
                         referrerPolicy="no-referrer"
                         style={{ zIndex: 2 }}
                     />

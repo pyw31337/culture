@@ -103,7 +103,7 @@ const WORKFLOW_SOURCE_ALIASES: Record<string, string> = {
     'yes24-exclusive': 'yes24-exclusive',
 };
 
-const INFRA_WORKFLOW_SCRAPERS = new Set(['build-venues', 'cinemas', 'mommom-exhibitions']);
+const INFRA_WORKFLOW_SCRAPERS = new Set(['build-venues', 'cinemas', 'mommom-exhibitions', 'venue-places']);
 
 function readJsonIfExists(filePath: string): unknown {
     if (!fs.existsSync(filePath)) return null;

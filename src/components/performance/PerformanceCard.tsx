@@ -27,6 +27,7 @@ interface PerformanceCardProps {
     onDetail?: (perf: any) => void;
     searchMode?: 'keyword' | 'location';
     searchText?: string;
+    priority?: boolean;
 }
 
 // Helper for Highlighting
@@ -55,7 +56,7 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
 
 HighlightText.displayName = 'HighlightText';
 
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText }: PerformanceCardProps) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText, priority = false }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
     const [canUseHoverEffects, setCanUseHoverEffects] = useState(false);
 
@@ -232,12 +233,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
-                                        optimizationWidth={480}
+                                        optimizationWidth={priority ? 420 : 360}
+                                        quality={priority ? 70 : 60}
                                         alt={perf.title}
                                         fill
                                         className="object-cover transition-transform duration-500 sm:group-hover:scale-110"
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                        loading="lazy"
+                                        loading={priority ? 'eager' : 'lazy'}
+                                        priority={priority}
                                         referrerPolicy="no-referrer"
                                         style={{ zIndex: 0 }}
                                     />
@@ -347,12 +350,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             <ImageWithFallback
                                 src={perf.image || perf.poster}
                                 backupSrc={perf.backupPoster}
-                                optimizationWidth={480}
+                                optimizationWidth={priority ? 420 : 360}
+                                quality={priority ? 70 : 60}
                                 alt={perf.title}
                                 fill
                                 className="object-cover transition-transform duration-500 sm:group-hover:scale-110 rounded-[15px]"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                loading="lazy"
+                                loading={priority ? 'eager' : 'lazy'}
+                                priority={priority}
                                 referrerPolicy="no-referrer"
                                 style={{ zIndex: 0 }}
                             />

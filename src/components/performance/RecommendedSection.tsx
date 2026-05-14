@@ -266,6 +266,8 @@ export default function RecommendedSection({
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
+                                        optimizationWidth={340}
+                                        quality={62}
                                         alt={perf.title}
                                         fill
                                         className="object-cover pointer-events-none"

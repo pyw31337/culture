@@ -127,6 +127,7 @@ export default function StatusPage() {
     const displayIntegritySummary = buildInfo.displayIntegritySummary;
     const displayIntegrityWarningCount = displayIntegritySummary
         ? displayIntegritySummary.bracketLocationMismatchCount +
+            displayIntegritySummary.suspiciousFreePriceCount +
             displayIntegritySummary.unknownPriceCount +
             displayIntegritySummary.invalidDateCount +
             displayIntegritySummary.duplicateTimeCount +
@@ -176,14 +177,15 @@ export default function StatusPage() {
         ? `표준 공연장 ${venueMasterSummary.entryCount.toLocaleString()}개 · 하위홀 그룹 ${venueMasterSummary.parentChildGroupCount.toLocaleString()}개 · 별칭 병합 ${venueMasterSummary.aliasMergedGroupCount.toLocaleString()}개`
         : '공식명칭, 별칭, 하위홀, 좌표를 누적 관리하는 마스터입니다.';
     const venuePlaceMatchingSummary = buildInfo.venuePlaceMatchingSummary;
+    const hasVenuePlaceMatches = Boolean(venuePlaceMatchingSummary && venuePlaceMatchingSummary.matchedCount > 0);
     const venuePlaceMatchingStatusLabel = venuePlaceMatchingSummary
-        ? venuePlaceMatchingSummary.lookupReady
+        ? hasVenuePlaceMatches
             ? `공식 장소 매칭 ${venuePlaceMatchingSummary.matchedCount.toLocaleString()}개`
             : `공식 장소 대기 ${venuePlaceMatchingSummary.pendingLookupCount.toLocaleString()}개`
         : '공식 장소 매칭 준비 중';
     const venuePlaceMatchingDetail = venuePlaceMatchingSummary
-        ? venuePlaceMatchingSummary.lookupReady
-            ? `카카오/네이버 조회 준비됨 · 고신뢰 ${venuePlaceMatchingSummary.highConfidenceMatchCount.toLocaleString()}개 · 검토 ${venuePlaceMatchingSummary.needsReviewCount.toLocaleString()}개`
+        ? hasVenuePlaceMatches
+            ? `누적 캐시 반영 · 고신뢰 ${venuePlaceMatchingSummary.highConfidenceMatchCount.toLocaleString()}개 · 검토 ${venuePlaceMatchingSummary.needsReviewCount.toLocaleString()}개 · 대기 ${venuePlaceMatchingSummary.pendingLookupCount.toLocaleString()}개`
             : `API 키가 준비되면 대기열 순서대로 공식 placeId를 누적합니다. 장소명 보강 필요 ${venuePlaceMatchingSummary.insufficientIdentityCount.toLocaleString()}개`
         : '공식 장소 검색 결과를 캐시해 좌표와 도로명주소를 확정합니다.';
     const priceCoverageSummary = buildInfo.priceCoverageSummary;
@@ -195,7 +197,9 @@ export default function StatusPage() {
         : '가격이 없는 항목을 소스별로 분리해 보강 우선순위를 정합니다.';
     const operationsSummary = buildInfo.operationsSummary;
     const operationsStatusLabel = operationsSummary
-        ? operationsSummary.lastFailureCount > 0
+        ? !operationsSummary.latestLocalUpdateCompleted
+            ? '로컬 수집 완료 확인 필요'
+            : operationsSummary.lastFailureCount > 0
             ? `최근 수집 실패 ${operationsSummary.lastFailureCount}개`
             : operationsSummary.latestLocalUpdateAt
                 ? '로컬 수집 로그 확인됨'
@@ -205,7 +209,14 @@ export default function StatusPage() {
         ? [
             operationsSummary.schedulerConfigured ? '자정 스케줄러 설치됨' : '자정 스케줄러 확인 필요',
             operationsSummary.latestLocalUpdateAt ? `최근 로컬 실행 ${formatKoreanDateTime(operationsSummary.latestLocalUpdateAt)}` : '최근 로컬 실행 기록 없음',
-        ].join(' · ')
+            operationsSummary.latestLocalUpdateCompleted ? '마지막 로그 완료 확인' : '마지막 로그 미완료',
+            operationsSummary.lastFailureUpdatedAt && operationsSummary.lastFailureCount > 0
+                ? `실패 기록 ${formatKoreanDateTime(operationsSummary.lastFailureUpdatedAt)}`
+                : null,
+            typeof operationsSummary.lastFailureAgeHours === 'number' && operationsSummary.lastFailureCount > 0
+                ? `${operationsSummary.lastFailureAgeHours}시간 전 실패 기록`
+                : null,
+        ].filter(Boolean).join(' · ')
         : '로컬 자정 수집과 GitHub fallback 상태를 함께 표시합니다.';
 
     const sortedSources = [...buildInfo.sourceSummaries].sort((a, b) => {
@@ -298,7 +309,7 @@ export default function StatusPage() {
                                 label="공식 장소 매칭"
                                 value={venuePlaceMatchingStatusLabel}
                                 detail={venuePlaceMatchingDetail}
-                                icon={venuePlaceMatchingSummary?.lookupReady ? <SearchCheck className="h-4 w-4" /> : <ShieldAlert className="h-4 w-4" />}
+                                icon={hasVenuePlaceMatches ? <SearchCheck className="h-4 w-4" /> : <ShieldAlert className="h-4 w-4" />}
                             />
                             <SnapshotLine
                                 label="가격 커버리지"
@@ -488,10 +499,34 @@ export default function StatusPage() {
                                     <span>가격 보강 대상</span>
                                     <strong>{priceCoverageSummary?.actionableUnknownCount ?? 0}건</strong>
                                 </div>
+                                {priceCoverageSummary?.topUnknownBySource && priceCoverageSummary.topUnknownBySource.length > 0 && (
+                                    <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                        <p className="font-bold">가격 보강 우선 소스</p>
+                                        <div className="mt-3 space-y-2">
+                                            {priceCoverageSummary.topUnknownBySource.slice(0, 5).map((source) => (
+                                                <div key={source.key} className="flex items-center justify-between gap-3 text-xs">
+                                                    <span className="truncate text-slate-300 light:text-slate-600">{source.label}</span>
+                                                    <strong>{source.actionableUnknownCount.toLocaleString()}건</strong>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                                 <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
                                     <span>최근 수집 실패</span>
                                     <strong>{operationsSummary?.lastFailureCount ?? 0}개</strong>
                                 </div>
+                                {operationsSummary?.latestLocalUpdateLog && (
+                                    <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                        <div className="flex items-center justify-between gap-3">
+                                            <span>최근 로컬 로그</span>
+                                            <strong>{operationsSummary.latestLocalUpdateCompleted ? '완료' : '미완료'}</strong>
+                                        </div>
+                                        <p className="mt-2 break-all text-xs leading-5 text-slate-400 light:text-slate-500">
+                                            {operationsSummary.latestLocalUpdateLog}
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         </section>
 
@@ -542,6 +577,19 @@ export default function StatusPage() {
                                     <p className="mt-2 text-xs leading-5 text-slate-400 light:text-slate-500">
                                         API 키가 있으면 대기열 우선순위대로 placeId, 도로명주소, 좌표를 보강합니다.
                                     </p>
+                                    {venuePlaceMatchingSummary?.topQueue && venuePlaceMatchingSummary.topQueue.length > 0 && (
+                                        <div className="mt-3 space-y-2">
+                                            {venuePlaceMatchingSummary.topQueue.slice(0, 4).map((venue) => (
+                                                <div key={venue.venueId} className="rounded-xl bg-black/15 px-3 py-2 light:bg-white">
+                                                    <div className="flex items-center justify-between gap-3">
+                                                        <span className="truncate font-bold">{venue.officialName}</span>
+                                                        <strong>{venue.performanceCount}건</strong>
+                                                    </div>
+                                                    <p className="mt-1 truncate text-xs text-slate-400 light:text-slate-500">{venue.address || venue.query}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
                                     <div className="flex items-center justify-between gap-3">

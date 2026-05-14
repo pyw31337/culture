@@ -12,7 +12,7 @@ import type {
 } from '../src/lib/build-info';
 import { getExternalContentLink } from '../src/lib/performance-links';
 import { getScheduleWindow, sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
-import { formatUnifiedDate } from '../src/lib/utils';
+import { extractFirstPrice, formatUnifiedDate } from '../src/lib/utils';
 import { SOURCE_REGISTRY } from '../src/lib/source-registry';
 import { getGenreFilterFromSlug } from '../src/lib/genre-availability';
 import { VALID_GENRE_SLUGS } from '../src/lib/constants';
@@ -83,7 +83,7 @@ const SOURCE_FRESH_DAYS = 3;
 const SOURCE_STALE_DAYS = 30;
 const WINTER_LEISURE_TERMS = ['리프트권', '스키장', '스노우파크', '눈썰매', '눈썰매장', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
 const WINTER_LEISURE_FALSE_POSITIVE_TERMS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
-const PRICE_OPTIONAL_GENRES = new Set(['movie', 'baseball', 'basketball', 'volleyball', 'soccer', 'handball']);
+const PRICE_OPTIONAL_GENRES = new Set(['movie', 'baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'tourism']);
 const NON_VENUE_TEXT_PATTERNS = [
     /위치\s*정보/,
     /상품\s*상세/,
@@ -974,7 +974,7 @@ function hasReliablePrice(performance: Performance) {
     const text = compactText([performance.price, performance.priceDetail, performance.feesAndPrograms].filter(Boolean).join(' '));
     if (!text) return false;
     if (/정보\s*없음|미정|문의|예매처\s*확인/i.test(text)) return false;
-    return /무료|입장무료|관람무료|\d[\d,]*\s*원|\d+\s*만원/.test(text);
+    return Boolean(extractFirstPrice(text));
 }
 
 function buildPriceCoverageSummary(items: Performance[], checkedAt = new Date().toISOString()): PriceCoverageSummary {
@@ -1044,8 +1044,13 @@ function buildOperationsSummary(checkedAt = new Date().toISOString()): Operation
     const recordedFailures = fs.existsSync(failurePath)
         ? fs.readFileSync(failurePath, 'utf8').split(/\r?\n/).map((line) => line.trim()).filter(Boolean)
         : [];
+    const failureUpdatedAt = fs.existsSync(failurePath) ? fs.statSync(failurePath).mtime : null;
+    const lastFailureAgeHours = failureUpdatedAt
+        ? Number(((Date.now() - failureUpdatedAt.getTime()) / 36e5).toFixed(1))
+        : null;
     const inferredFailures = new Set(recordedFailures);
     const latestLocalLog = localLogs[0];
+    let latestLocalUpdateCompleted = true;
 
     if (latestLocalLog) {
         const latestLogPath = path.join(logDir, latestLocalLog.file);
@@ -1060,10 +1065,12 @@ function buildOperationsSummary(checkedAt = new Date().toISOString()): Operation
 
             const started = /\[local-update\]\s+started at/.test(logText);
             const finished = /\[local-update\]\s+(completed at|skipped:|no data changes to commit)/.test(logText);
+            latestLocalUpdateCompleted = !started || finished;
             if (started && !finished) {
                 inferredFailures.add('local-update-incomplete');
             }
         } catch {
+            latestLocalUpdateCompleted = false;
             inferredFailures.add('local-update-log-unreadable');
         }
     }
@@ -1075,6 +1082,9 @@ function buildOperationsSummary(checkedAt = new Date().toISOString()): Operation
         localUpdateLogCount: localLogs.length,
         latestLocalUpdateLog: localLogs[0]?.file || null,
         latestLocalUpdateAt: localLogs[0]?.mtime.toISOString() || null,
+        latestLocalUpdateCompleted,
+        lastFailureUpdatedAt: failureUpdatedAt?.toISOString() || null,
+        lastFailureAgeHours,
         lastFailureCount: lastFailures.length,
         lastFailures: lastFailures.slice(0, 12),
         schedulerConfigured: fs.existsSync(schedulerPlistPath),

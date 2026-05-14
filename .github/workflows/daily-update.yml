@@ -111,9 +111,17 @@ jobs:
         timeout-minutes: 180
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+          KAKAO_LOCAL_REST_API_KEY: ${{ secrets.KAKAO_LOCAL_REST_API_KEY }}
+          NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
+          NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
+          VENUE_PLACE_LOOKUP_LIMIT: '80'
+          VENUE_PLACE_LOOKUP_DELAY_MS: '500'
         run: |
           set +e
           SCRAPER_TIMEOUT_SECONDS="${SCRAPER_TIMEOUT_SECONDS:-2700}"
+          export PUPPETEER_EXECUTABLE_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+          echo "Puppeteer executable: ${PUPPETEER_EXECUTABLE_PATH}"
           failures=()
           critical_failures=()
 
@@ -162,6 +170,7 @@ jobs:
           run_scraper "mommom-products" optional npx tsx scripts/scrape-mommom-products.ts
           run_scraper "seoul-culture" optional npx tsx scripts/scrape-seoul-culture.ts
           run_scraper "build-venues" critical npx tsx scripts/build-venues.ts
+          run_scraper "venue-places" optional npx tsx scripts/enrich-venue-places.ts
 
           : > scrape_failures.txt
           if [ ${#failures[@]} -gt 0 ]; then

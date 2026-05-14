@@ -206,6 +206,15 @@ const nextPwaConfigWithTypes = nextPwaConfig as NextConfig & {
 const nextPwaWebpack = nextPwaConfigWithTypes.webpack;
 delete nextPwaConfigWithTypes.pwa;
 const validatedConfig = nextPwaConfigWithTypes;
+const workboxGlobWarningPattern = /You're using the following Workbox configuration options?: \[(?:globDirectory|globFollow|globIgnores|globPatterns|globStrict)(?:,\s*(?:globDirectory|globFollow|globIgnores|globPatterns|globStrict))*\]/;
+
+function getWebpackWarningMessage(warning: unknown) {
+  if (warning instanceof Error) return warning.message;
+  if (warning && typeof warning === 'object' && 'message' in warning) {
+    return String((warning as { message?: unknown }).message || '');
+  }
+  return String(warning || '');
+}
 
 const finalConfig: NextConfig = {
   ...validatedConfig,
@@ -220,7 +229,34 @@ const finalConfig: NextConfig = {
       },
     } as WebpackConfigContext;
 
-    return nextPwaWebpack(config, nextPwaContext);
+    const updatedConfig = nextPwaWebpack(config, nextPwaContext);
+    updatedConfig.ignoreWarnings = [
+      ...(updatedConfig.ignoreWarnings || []),
+      workboxGlobWarningPattern,
+    ];
+    updatedConfig.plugins = [
+      ...(updatedConfig.plugins || []),
+      {
+        apply(compiler: {
+          hooks: {
+            done: {
+              tap: (
+                pluginName: string,
+                callback: (stats: { compilation: { warnings: unknown[] } }) => void
+              ) => void;
+            };
+          };
+        }) {
+          compiler.hooks.done.tap('SuppressWorkboxGlobWarningPlugin', (stats) => {
+            stats.compilation.warnings = stats.compilation.warnings.filter((warning) => (
+              !workboxGlobWarningPattern.test(getWebpackWarningMessage(warning))
+            ));
+          });
+        },
+      },
+    ];
+
+    return updatedConfig;
   },
 };
 

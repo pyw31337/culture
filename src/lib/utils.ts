@@ -53,15 +53,26 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
 
     const compact = normalized.replace(/\s+/g, '');
     const hasWonPrice = /\d[\d,]*\s*원/.test(normalized);
+    const hasKoreanUnitPrice = /\d+\s*만(?:\s*\d+\s*천)?\s*원|\d+\s*천\s*원/.test(normalized);
     const isExplicitlyFree = /^(무료|0|0원|입장무료|관람무료|무료입장)$/.test(compact);
 
     // Treat "무료" as a price only when it is the actual price, not an exemption note.
-    if (isExplicitlyFree || (compact.includes('무료') && !hasWonPrice)) {
+    if (isExplicitlyFree || (compact.includes('무료') && !hasWonPrice && !hasKoreanUnitPrice)) {
         return { label: null, price: '무료' };
     }
 
+    const labeledKoreanUnitMatch = normalized.match(/([가-힣A-Z]+석?)\s*(?:(\d+)만)?\s*(?:(\d+)천)?\s*원/);
+    if (labeledKoreanUnitMatch && (labeledKoreanUnitMatch[2] || labeledKoreanUnitMatch[3])) {
+        const amount =
+            (Number.parseInt(labeledKoreanUnitMatch[2] || '0', 10) * 10000) +
+            (Number.parseInt(labeledKoreanUnitMatch[3] || '0', 10) * 1000);
+        if (amount > 0) {
+            return { label: labeledKoreanUnitMatch[1], price: amount.toLocaleString('ko-KR') };
+        }
+    }
+
     // Try to match pattern: "XX석 NUMBER원" or "전석 NUMBER원"
-    const match = normalized.match(/([가-힣A-Z]+석?)\s*([\d,]+)원?/);
+    const match = normalized.match(/([가-힣A-Z]+석?)\s*([\d,]+)\s*원/);
     if (match) {
         return { label: match[1], price: match[2] };
     }
@@ -69,6 +80,16 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
     const wonMatch = normalized.match(/([\d,]+)\s*원/);
     if (wonMatch) {
         return { label: null, price: wonMatch[1] };
+    }
+
+    const koreanUnitMatch = compact.match(/(?:(\d+)만)?(?:(\d+)천)?원/);
+    if (koreanUnitMatch && (koreanUnitMatch[1] || koreanUnitMatch[2])) {
+        const amount =
+            (Number.parseInt(koreanUnitMatch[1] || '0', 10) * 10000) +
+            (Number.parseInt(koreanUnitMatch[2] || '0', 10) * 1000);
+        if (amount > 0) {
+            return { label: null, price: amount.toLocaleString('ko-KR') };
+        }
     }
 
     // Fallback for normalized numeric strings such as "30000".

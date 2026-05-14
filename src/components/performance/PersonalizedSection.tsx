@@ -145,6 +145,8 @@ export default function PersonalizedSection({
                                 <ImageWithFallback
                                     src={performance.image || performance.poster || performance.backupPoster || `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/fallbacks/movie.svg`}
                                     backupSrc={performance.backupPoster}
+                                    optimizationWidth={340}
+                                    quality={62}
                                     alt={performance.title}
                                     fill
                                     className="object-cover"

@@ -44,7 +44,7 @@ function ImageWithFallbackInner({
     };
 
     const isUnoptimized = errorStage >= 1 || !!(originalSrc && originalSrc.startsWith('/'));
-    const imageQuality = typeof props.quality === 'number' ? props.quality : 70;
+    const imageQuality = typeof props.quality === 'number' ? props.quality : 64;
     const imageLoading = props.priority ? undefined : (props.loading ?? 'lazy');
 
     return (
@@ -93,7 +93,7 @@ function ImageWithFallback({
     optimizationWidth = 400,
     ...props
 }: ImageWithFallbackProps) {
-    const imageQuality = typeof props.quality === 'number' ? props.quality : 70;
+    const imageQuality = typeof props.quality === 'number' ? props.quality : 64;
     const optimizedSrc = useMemo(() => getOptimizedUrl(src, optimizationWidth, imageQuality), [src, optimizationWidth, imageQuality]);
     const imageKey = useMemo(() => `${optimizedSrc}|${backupSrc || ''}|${fallbackSrc}`, [backupSrc, fallbackSrc, optimizedSrc]);
 
