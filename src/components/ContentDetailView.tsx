@@ -155,7 +155,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
     const containerClasses = mode === 'standalone'
         ? "w-full max-w-[380px] md:max-w-[1000px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
-        : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-white text-gray-900 dark:bg-white dark:text-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-black/10";
+        : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-white text-gray-900 dark:bg-[#070b14] dark:text-white rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-black/10 dark:border-white/10";
 
     return (
         <div 
@@ -167,6 +167,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                 animate="visible"
                 variants={containerVariants}
                 className={containerClasses}
+                data-cf-detail-view={mode}
             >
                 {/* Close Button UI - Moved to container level to stay fixed */}
                 {/* Close Button UI - Stay fixed in top-right */}
@@ -174,7 +175,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleClose}
-                    className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors shadow-xl"
+                    className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors shadow-xl dark:bg-white/10 dark:hover:bg-white/20 dark:border-white/20"
                 >
                     <X className="w-6 h-6" />
                 </motion.button>
@@ -250,7 +251,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                     {/* Main Content Area */}
                     <div className={mode === 'standalone' 
                         ? "p-6 md:p-8 lg:p-12 space-y-5 flex-1 md:overflow-y-auto md:h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
-                        : "p-6 sm:p-8 lg:p-12 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full bg-white text-gray-900 dark:bg-white dark:text-gray-900 scrollbar-hide"}>
+                        : "p-6 sm:p-8 lg:p-12 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full bg-white text-gray-900 dark:bg-[#070b14] dark:text-white scrollbar-hide"}>
                         
                         <div className="space-y-4">
                             <motion.div variants={itemVariants} className="space-y-3">

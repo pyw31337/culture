@@ -85,15 +85,18 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
-                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4 perspective-1000"
-                    style={{
-                        background: 'radial-gradient(circle at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%)',
-                        backdropFilter: 'blur(8px)',
-                    }}
+                    data-cf-modal-backdrop
+                    className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden p-4 perspective-1000 bg-black/[0.88] text-white backdrop-blur-[10px] dark:bg-white/[0.88] dark:text-gray-950"
                     onClick={onClose}
                 >
+                    {/* Keep the page's rainbow atmosphere visible inside the modal backdrop. */}
+                    <div className="absolute inset-0 pointer-events-none opacity-80 mix-blend-screen dark:mix-blend-multiply">
+                        <div className="absolute -right-16 top-0 h-full w-[55vw] rotate-6 bg-[linear-gradient(90deg,transparent,rgba(34,211,238,0.28),rgba(168,85,247,0.32),rgba(236,72,153,0.24),transparent)] blur-3xl" />
+                        <div className="absolute bottom-0 left-0 h-[40vh] w-full bg-[radial-gradient(circle_at_70%_40%,rgba(45,212,191,0.26),transparent_38%),radial-gradient(circle_at_82%_15%,rgba(96,165,250,0.26),transparent_36%),radial-gradient(circle_at_92%_30%,rgba(232,121,249,0.22),transparent_34%)] blur-2xl" />
+                    </div>
+
                     {/* Floating Glow BGs */}
-                    <div className="absolute pointer-events-none w-full h-full overflow-hidden">
+                    <div className="absolute pointer-events-none w-full h-full overflow-hidden opacity-90">
                         <div
                             className="absolute top-1/4 -left-1/4 w-[80vw] h-[80vw] rounded-full blur-[120px]"
                             style={{ background: `${hex}20` }}
