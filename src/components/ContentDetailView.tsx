@@ -155,7 +155,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
     const containerClasses = mode === 'standalone'
         ? "w-full max-w-[380px] md:max-w-[1000px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
-        : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-white/20 holo-effect";
+        : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-white text-gray-900 dark:bg-white dark:text-gray-900 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-black/10";
 
     return (
         <div 
@@ -250,7 +250,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                     {/* Main Content Area */}
                     <div className={mode === 'standalone' 
                         ? "p-6 md:p-8 lg:p-12 space-y-5 flex-1 md:overflow-y-auto md:h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
-                        : "p-6 sm:p-8 lg:p-12 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full scrollbar-hide"}>
+                        : "p-6 sm:p-8 lg:p-12 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full bg-white text-gray-900 dark:bg-white dark:text-gray-900 scrollbar-hide"}>
                         
                         <div className="space-y-4">
                             <motion.div variants={itemVariants} className="space-y-3">
