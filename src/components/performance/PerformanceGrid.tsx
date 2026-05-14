@@ -53,12 +53,11 @@ export default function PerformanceGrid({
     return (
         <div
             className={clsx(
-                "w-full",
+                "w-full overflow-visible",
                 layoutMode === 'grid'
                     ? "grid grid-cols-1 min-[310px]:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-6"
                     : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
             )}
-            style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1200px' }}
         >
             {items.map((perf, index) => {
                 // Venue Info
@@ -78,11 +77,7 @@ export default function PerformanceGrid({
                 return (
                     <div
                         key={`${perf.id}-${perf.region}`}
-                        className={clsx(layoutMode === 'grid' ? "h-full w-full" : "w-full")}
-                        style={{
-                            contentVisibility: 'auto',
-                            containIntrinsicSize: layoutMode === 'grid' ? 'auto 450px' : 'auto 150px'
-                        }}
+                        className={clsx(layoutMode === 'grid' ? "h-full w-full overflow-visible" : "w-full overflow-visible")}
                     >
                         {layoutMode === 'grid' ? (
                             <PerformanceCard

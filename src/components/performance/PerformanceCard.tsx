@@ -66,6 +66,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const latestPointerRef = useRef<{ x: number; y: number } | null>(null);
 
     const dDay = getDdayLabel(perf);
+    const formattedDate = formatUnifiedDate(perf.date);
+    const shouldShowDateChip = Boolean(formattedDate && formattedDate !== dDay);
     const priceText = typeof perf.price === 'string' ? perf.price.trim() : '';
     const priceFallbackText = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(perf.genre)
         ? '예매처 확인'
@@ -148,7 +150,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     return (
         <div
-            className="sm:perspective-1000 group h-full relative hover:z-[2000]"
+            className="sm:perspective-1000 group h-full relative overflow-visible hover:z-[2000]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
@@ -156,11 +158,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform ease-out sm:transform-style-3d shadow-xl h-full rounded-[15px] will-change-transform isolate",
+                        "relative transition-transform ease-out sm:transform-style-3d shadow-xl h-full rounded-[15px] will-change-transform isolate overflow-visible",
                         variant === 'default'
                             ? (searchMode === 'location'
-                                ? "gold-shimmer-wrapper border border-emerald-500/20 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.1)]"
-                                : "gold-shimmer-wrapper")
+                                ? "p-px border border-emerald-500/20 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.1)]"
+                                : "p-px")
                             : "",
                         variant === 'emerald'
                             ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
@@ -186,7 +188,9 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                 />
 
                 {variant === 'default' && (
-                    <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? (searchMode === 'location' ? '#34d399' : '#a78bfa') : 'gold' } as React.CSSProperties} />
+                    <div className="absolute inset-0 z-0 overflow-hidden rounded-[15px] pointer-events-none">
+                        <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? (searchMode === 'location' ? '#34d399' : '#a78bfa') : 'gold' } as React.CSSProperties} />
+                    </div>
                 )}
 
                 <div className={clsx(
@@ -197,7 +201,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             : "bg-gradient-to-br from-[#2e1065] to-[#0f172a]")
                         : "bg-gray-900"
                 )}
-                    style={{ transform: 'translateZ(0)', clipPath: 'inset(0 round 15px)' }}
+                    style={{ transform: 'translateZ(0)' }}
                 >
 
 
@@ -341,7 +345,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                     </span>
                                     {dDay && <span className="text-white text-[10px] font-black border border-white/30 px-2 rounded-full">{dDay}</span>}
-                                    <span className="text-[12px] font-extrabold opacity-70">{formatUnifiedDate(perf.date)}</span>
+                                    {shouldShowDateChip && <span className="text-[12px] font-extrabold opacity-70">{formattedDate}</span>}
                                 </div>
                             </div>
                         </>
@@ -399,7 +403,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                         </span>
                                         {dDay && <span className="px-2 rounded-full text-[10px] font-black border border-white/30 text-white bg-transparent h-[24px] flex items-center">{dDay}</span>}
-                                        <span className="text-[11px] text-gray-300 font-semibold">{formatUnifiedDate(perf.date)}</span>
+                                        {shouldShowDateChip && <span className="text-[11px] text-gray-300 font-semibold">{formattedDate}</span>}
                                     </div>
 
                                     <h2 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg">

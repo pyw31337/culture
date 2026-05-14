@@ -205,7 +205,7 @@ export default function RecommendedSection({
 
                 <div
                     ref={containerRef}
-                    className="overflow-hidden cursor-grab active:cursor-grabbing pb-12 transition-all select-none"
+                    className="overflow-hidden cursor-grab active:cursor-grabbing pt-8 -mt-8 pb-12 transition-all select-none"
                     style={{ touchAction: 'pan-y' }}
                 >
                     <motion.div
@@ -219,7 +219,7 @@ export default function RecommendedSection({
                             lastDragEndTime.current = Date.now();
                             setIsDragging(false);
                         }}
-                        className="flex gap-5 sm:gap-9 pl-[1.6%] pr-[1.6%] pt-4 items-end min-w-max"
+                        className="flex gap-5 sm:gap-9 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-end min-w-max"
                     >
                         {randomRecs.map((perf, idx) => (
                             <div

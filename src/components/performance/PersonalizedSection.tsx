@@ -122,7 +122,7 @@ export default function PersonalizedSection({
                     </button>
                 )}
 
-                <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing pb-6 transition-all select-none" style={{ touchAction: 'pan-y' }}>
+                <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing pt-8 -mt-8 pb-10 transition-all select-none" style={{ touchAction: 'pan-y' }}>
                     <motion.div
                         ref={contentRef}
                         drag="x"
@@ -131,7 +131,7 @@ export default function PersonalizedSection({
                         style={{ x }}
                         onDragStart={() => setIsDragging(true)}
                         onDragEnd={() => setIsDragging(false)}
-                        className="flex gap-5 sm:gap-6 pl-[1.6%] pr-[1.6%] pt-2 items-stretch min-w-max"
+                        className="flex gap-5 sm:gap-6 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-stretch min-w-max"
                     >
                         {items.map((performance) => (
                             <motion.div
