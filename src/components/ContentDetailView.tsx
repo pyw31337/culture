@@ -30,7 +30,9 @@ type DetailInfoItem = {
     text: string | number;
     color: string;
     isLink?: boolean;
+    href?: string;
     onClick?: React.MouseEventHandler;
+    linkTitle?: string;
     rightText?: string | null;
 };
 
@@ -47,6 +49,14 @@ const formatApproxEokValue = (value: string | number) => {
 };
 
 const normalizeDetailText = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim();
+
+const buildNaverRoadviewUrl = (address: string) => {
+    const query = normalizeDetailText(address);
+    if (!query) return null;
+
+    // Naver Maps uses `adh` in the c-parameter to open with the street-view layer active.
+    return `https://map.naver.com/p/search/${encodeURIComponent(query)}?c=19.00,0,0,0,adh`;
+};
 
 const dedupeDetailInfoItems = <T extends { label: string; text?: unknown }>(items: T[]) => {
     const seen = new Set<string>();
@@ -303,12 +313,15 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     if (p.address && p.address.trim() !== '') {
+                                        const naverRoadviewUrl = buildNaverRoadviewUrl(p.address);
                                         infoItems.push({ 
                                             icon: MapPin, 
                                             label: '주소', 
                                             text: p.address, 
                                             color: 'text-gray-400',
-                                            isLink: false
+                                            isLink: Boolean(naverRoadviewUrl),
+                                            href: naverRoadviewUrl || undefined,
+                                            linkTitle: '네이버 거리뷰로 새 창에서 보기',
                                         });
                                     }
 
@@ -484,13 +497,29 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 </div>
                                                 <div className="flex flex-col gap-1 flex-1 min-w-0">
                                                     {item.isLink ? (
-                                                        <button
-                                                            onClick={item.onClick!}
-                                                            className="text-[14.5px] text-emerald-600 dark:text-emerald-400 font-extrabold text-left hover:underline flex items-center gap-1.5 w-fit"
-                                                        >
-                                                            <span className="break-all">{item.text}</span>
-                                                            <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
-                                                        </button>
+                                                        item.href ? (
+                                                            <a
+                                                                href={item.href}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                title={item.linkTitle}
+                                                                aria-label={item.linkTitle || `${item.label} 링크 열기`}
+                                                                className="text-[14.5px] text-emerald-600 dark:text-emerald-400 font-extrabold text-left hover:underline flex items-center gap-1.5 w-fit"
+                                                            >
+                                                                <span className="break-all">{item.text}</span>
+                                                                <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
+                                                            </a>
+                                                        ) : (
+                                                            <button
+                                                                onClick={item.onClick!}
+                                                                title={item.linkTitle}
+                                                                aria-label={item.linkTitle || `${item.label} 링크 열기`}
+                                                                className="text-[14.5px] text-emerald-600 dark:text-emerald-400 font-extrabold text-left hover:underline flex items-center gap-1.5 w-fit"
+                                                            >
+                                                                <span className="break-all">{item.text}</span>
+                                                                <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
+                                                            </button>
+                                                        )
                                                     ) : (
                                                         <p className="text-[14.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap">
                                                             {item.text}
