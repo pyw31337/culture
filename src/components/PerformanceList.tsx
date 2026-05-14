@@ -42,7 +42,8 @@ import { useUserActivity } from '@/hooks/useUserActivity';
 
 // Dynamic Modals for Code Splitting (Map & Calendar are now separate pages)
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
-const SharedDetailModal = dynamic(() => import('./SharedDetailModal'), { ssr: false });
+const loadSharedDetailModal = () => import('./SharedDetailModal');
+const SharedDetailModal = dynamic(loadSharedDetailModal, { ssr: false });
 
 interface PerformanceListProps {
     initialPerformances: Performance[];
@@ -132,6 +133,7 @@ export default function PerformanceList({
     const [sharedPerf, setSharedPerf] = useState<Performance | null>(null);
     const observerTarget = useRef<HTMLDivElement>(null);
     const deepLinkHandled = useRef(false);
+    const modalReturnScrollY = useRef(0);
 
     // --- Derived State ---
     const activeLocation = searchLocation || userLocation;
@@ -217,6 +219,14 @@ export default function PerformanceList({
         }
     }, [selectedGenre, trackGenreView]);
 
+    useEffect(() => {
+        const preloadTimer = window.setTimeout(() => {
+            void loadSharedDetailModal();
+        }, 1200);
+
+        return () => window.clearTimeout(preloadTimer);
+    }, []);
+
     // --- Search Synchronization Helper ---
     const syncSearchToUrl = useCallback((
         q: string,
@@ -242,8 +252,29 @@ export default function PerformanceList({
     // --- Handlers ---
     const handleDetailOpen = useCallback((perf: Performance) => {
         trackItemView(perf.id);
-        router.push(`/p/${perf.id}/`);
-    }, [router, trackItemView]);
+        modalReturnScrollY.current = typeof window !== 'undefined' ? window.scrollY : 0;
+        setSharedPerf(perf);
+
+        if (typeof window !== 'undefined') {
+            const nextUrl = `${window.location.pathname}${window.location.search}#p=${encodeURIComponent(perf.id)}`;
+            window.history.pushState({ cultureFlowModal: perf.id }, '', nextUrl);
+        }
+    }, [trackItemView]);
+
+    const handleSharedDetailClose = useCallback(() => {
+        setSharedPerf(null);
+
+        if (typeof window !== 'undefined' && window.location.hash.startsWith('#p=')) {
+            window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+        }
+
+        if (typeof window !== 'undefined') {
+            const returnY = modalReturnScrollY.current;
+            window.requestAnimationFrame(() => {
+                window.requestAnimationFrame(() => window.scrollTo({ top: returnY, behavior: 'auto' }));
+            });
+        }
+    }, []);
 
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
@@ -337,6 +368,25 @@ export default function PerformanceList({
                 window.history.replaceState(null, '', window.location.pathname + window.location.search);
             }
         }
+    }, [scopedPerformances]);
+
+    useEffect(() => {
+        const handlePopState = () => {
+            const match = window.location.hash.match(/^#p=(.+)$/);
+            if (!match?.[1]) {
+                setSharedPerf(null);
+                window.requestAnimationFrame(() => window.scrollTo({ top: modalReturnScrollY.current, behavior: 'auto' }));
+                return;
+            }
+
+            const id = decodeURIComponent(match[1]);
+            const perf = scopedPerformances.find((item) => item.id === id);
+            modalReturnScrollY.current = window.scrollY;
+            setSharedPerf(perf || null);
+        };
+
+        window.addEventListener('popstate', handlePopState);
+        return () => window.removeEventListener('popstate', handlePopState);
     }, [scopedPerformances]);
 
     const handleOpenMap = useCallback(() => {
@@ -570,7 +620,7 @@ export default function PerformanceList({
                 const representativeVenue = getRepresentativeVenueInfoForFavorite(favoriteVenue, scopedPerformances, venues);
                 router.push(`/map?genre=${selectedGenre}&lat=${representativeVenue?.lat || 0}&lng=${representativeVenue?.lng || 0}&venue=${encodeURIComponent(favoriteVenue.venueName)}`);
             }} />}
-            {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={() => setSharedPerf(null)} />}
+            {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={handleSharedDetailClose} />}
         </div>
     );
 }

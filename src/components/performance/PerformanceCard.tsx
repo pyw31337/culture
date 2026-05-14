@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
-import { Heart, Star, MapPin, Calendar, Share2, Search, Film } from 'lucide-react';
+import { Heart, Star, MapPin, Calendar, Share2, Search } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
@@ -66,6 +66,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const latestPointerRef = useRef<{ x: number; y: number } | null>(null);
 
     const dDay = getDdayLabel(perf);
+    const isMovie = perf.genre === 'movie';
     const formattedDate = formatUnifiedDate(perf.date);
     const shouldShowDateChip = Boolean(formattedDate && formattedDate !== dDay);
     const priceText = typeof perf.price === 'string' ? perf.price.trim() : '';
@@ -327,22 +328,24 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <HighlightText text={cleanTitle(perf.title)} keyword={searchText} />
                                 </h3>
 
-                                <div className="text-gray-800 text-sm flex items-center gap-1 mb-2">
-                                    <MapPin className="w-3 h-3 text-gray-700 flex-shrink-0" />
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            onLocationClick({ lat: venueInfo?.lat, lng: venueInfo?.lng, name: perf.venue });
-                                        }}
-                                        className="truncate hover:underline"
-                                    >
-                                        <HighlightText text={perf.venue} keyword={searchText} />
-                                    </button>
-                                </div>
+                                {!isMovie && (
+                                    <div className="text-gray-800 text-sm flex items-center gap-1 mb-2">
+                                        <MapPin className="w-3 h-3 text-gray-700 flex-shrink-0" />
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                onLocationClick({ lat: venueInfo?.lat, lng: venueInfo?.lng, name: perf.venue });
+                                            }}
+                                            className="truncate hover:underline"
+                                        >
+                                            <HighlightText text={perf.venue} keyword={searchText} />
+                                        </button>
+                                    </div>
+                                )}
 
                                 <div className="mt-auto pt-2 border-t border-black/10 flex justify-between items-center text-black">
                                     <span className="text-white text-[10px] font-extrabold bg-black px-2 py-0.5 rounded">
-                                        {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
+                                        {isMovie && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                     </span>
                                     {dDay && <span className="text-white text-[10px] font-black border border-white/30 px-2 rounded-full">{dDay}</span>}
                                     {shouldShowDateChip && <span className="text-[12px] font-extrabold opacity-70">{formattedDate}</span>}
@@ -400,7 +403,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             "px-3 py-1 rounded-full text-[10px] font-black backdrop-blur-md border shadow-sm transition-all text-white",
                                             GENRE_STYLES[perf.genre]?.twBg || (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
                                         )}>
-                                            {perf.genre === 'movie' && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
+                                            {isMovie && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}
                                         </span>
                                         {dDay && <span className="px-2 rounded-full text-[10px] font-black border border-white/30 text-white bg-transparent h-[24px] flex items-center">{dDay}</span>}
                                         {shouldShowDateChip && <span className="text-[11px] text-gray-300 font-semibold">{formattedDate}</span>}
@@ -417,44 +420,44 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         compact
                                     />
 
-                                    <div className="flex items-center gap-1 text-gray-300 text-xs font-semibold mt-1">
-                                        {perf.genre === 'movie' ? (
-                                            <Film className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
-                                        ) : (
+                                    {!isMovie && (
+                                        <div className="flex items-center gap-1 text-gray-300 text-xs font-semibold mt-1">
                                             <MapPin className={clsx("w-3.5 h-3.5 flex-shrink-0", searchMode === 'location' ? "text-emerald-400" : "text-[#a78bfa]")} />
-                                        )}
-                                        <button onClick={(e) => { e.stopPropagation(); onLocationClick?.({ lat: venueInfo?.lat, lng: venueInfo?.lng, name: perf.venue }); }} className="truncate hover:underline">
-                                            <HighlightText text={perf.venue || 'Online'} keyword={searchText} />
-                                        </button>
-                                    </div>
-
-                                    <div className="flex justify-between items-end mt-2 pt-2 border-t border-white/10">
-                                        <div className="flex flex-col justify-end">
-                                            {perf.discount && <span className="text-red-500 font-black text-lg leading-none">{perf.discount}</span>}
+                                            <button onClick={(e) => { e.stopPropagation(); onLocationClick?.({ lat: venueInfo?.lat, lng: venueInfo?.lng, name: perf.venue }); }} className="truncate hover:underline">
+                                                <HighlightText text={perf.venue || 'Online'} keyword={searchText} />
+                                            </button>
                                         </div>
-                                        <div className="flex flex-col items-end">
-                                            {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
-                                            <div className="flex items-baseline gap-1 text-white">
-                                                {(() => {
-                                                    const extracted = extractFirstPrice(priceText);
-                                                    if (!extracted) return <span className="text-sm font-black text-white/85">{priceText || priceFallbackText}</span>;
-                                                    return (
-                                                        <div className="leading-none text-right">
-                                                            {extracted.price === '무료' ? (
-                                                                <span className="text-xl font-black">무료</span>
-                                                            ) : (
-                                                                <>
-                                                                    {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
-                                                                    <span className="text-xl font-black">{extracted.price}</span>
-                                                                    <span className="text-xs font-bold ml-0.5">원</span>
-                                                                </>
-                                                            )}
-                                                        </div>
-                                                    );
-                                                })()}
+                                    )}
+
+                                    {!isMovie && (
+                                        <div className="flex justify-between items-end mt-2 pt-2 border-t border-white/10">
+                                            <div className="flex flex-col justify-end">
+                                                {perf.discount && <span className="text-red-500 font-black text-lg leading-none">{perf.discount}</span>}
+                                            </div>
+                                            <div className="flex flex-col items-end">
+                                                {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
+                                                <div className="flex items-baseline gap-1 text-white">
+                                                    {(() => {
+                                                        const extracted = extractFirstPrice(priceText);
+                                                        if (!extracted) return <span className="text-sm font-black text-white/85">{priceText || priceFallbackText}</span>;
+                                                        return (
+                                                            <div className="leading-none text-right">
+                                                                {extracted.price === '무료' ? (
+                                                                    <span className="text-xl font-black">무료</span>
+                                                                ) : (
+                                                                    <>
+                                                                        {extracted.label && <span className="text-[10px] text-gray-400 mr-1">{extracted.label}</span>}
+                                                                        <span className="text-xl font-black">{extracted.price}</span>
+                                                                        <span className="text-xs font-bold ml-0.5">원</span>
+                                                                    </>
+                                                                )}
+                                                            </div>
+                                                        );
+                                                    })()}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
 
                                 {enableActions && (

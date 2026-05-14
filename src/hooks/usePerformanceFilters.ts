@@ -176,7 +176,7 @@ export function usePerformanceFilters({
         }
 
         return sortPerformances(discoveryFiltered, selectedGenre, debouncedSearchText);
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, venues, shuffleSeed, discoveryContextId]);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, venues, discoveryContextId]);
 
     // Pagination
     const displayPerformances = useMemo(() => {

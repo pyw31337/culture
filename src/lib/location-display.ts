@@ -15,6 +15,30 @@ type VenueEntryMatch = {
     venue: VenueLike;
 };
 
+type VenueLookup = Record<string, VenueLike>;
+
+type VenueLookupCache = {
+    entries: VenueEntryMatch[];
+    candidateEntriesByVenueName: Map<string, VenueEntryMatch[]>;
+    resolvedVenueByPerformance: Map<string, VenueLike>;
+};
+
+const venueLookupCaches = new WeakMap<VenueLookup, VenueLookupCache>();
+const MAX_RESOLVED_VENUE_CACHE_SIZE = 30000;
+
+function getVenueLookupCache(venues: VenueLookup) {
+    let cache = venueLookupCaches.get(venues);
+    if (cache) return cache;
+
+    cache = {
+        entries: Object.entries(venues).map(([key, venue]) => ({ key, venue })),
+        candidateEntriesByVenueName: new Map(),
+        resolvedVenueByPerformance: new Map(),
+    };
+    venueLookupCaches.set(venues, cache);
+    return cache;
+}
+
 const REGION_ALIASES: Record<string, string> = {
     서울특별시: '서울',
     서울시: '서울',
@@ -85,6 +109,18 @@ function parseCoordinate(value?: number | string | null) {
     return undefined;
 }
 
+function buildVenueResolutionCacheKey(
+    performance: Pick<Performance, 'venue' | 'address' | 'lat' | 'lng' | 'latitude' | 'longitude' | 'bracketRegion'>
+) {
+    return [
+        normalizeWhitespace(performance.venue),
+        sanitizeAddress(performance.address),
+        normalizeWhitespace(performance.bracketRegion),
+        parseCoordinate(performance.lat ?? performance.latitude) ?? '',
+        parseCoordinate(performance.lng ?? performance.longitude) ?? '',
+    ].join('::');
+}
+
 function hasUsableAddress(value?: string) {
     const cleaned = sanitizeAddress(value);
     return Boolean(cleaned && cleaned !== '정보 없음');
@@ -122,7 +158,7 @@ export function isSevereAddressMismatch(left?: string, right?: string) {
 
 function findRegionalVenueMatch(
     performance: Pick<Performance, 'venue' | 'address' | 'bracketRegion'>,
-    venues: Record<string, VenueLike>
+    venues: VenueLookup
 ): VenueEntryMatch | undefined {
     const bracketRegion = normalizeWhitespace(performance.bracketRegion);
     const performanceAddress = sanitizeAddress(performance.address);
@@ -130,11 +166,16 @@ function findRegionalVenueMatch(
 
     if (!cleanVenueName) return undefined;
 
-    const venueEntries = Object.entries(venues).filter(([key]) => key.includes(cleanVenueName));
+    const lookupCache = getVenueLookupCache(venues);
+    let venueEntries = lookupCache.candidateEntriesByVenueName.get(cleanVenueName);
+    if (!venueEntries) {
+        venueEntries = lookupCache.entries.filter(({ key }) => key.includes(cleanVenueName));
+        lookupCache.candidateEntriesByVenueName.set(cleanVenueName, venueEntries);
+    }
     if (venueEntries.length === 0) return undefined;
 
     const byBracket = bracketRegion
-        ? venueEntries.find(([key, venue]) => {
+        ? venueEntries.find(({ key, venue }) => {
             const address = sanitizeAddress(venue.address);
             return key.includes(`[${bracketRegion}]`) || key.includes(bracketRegion) || address.includes(bracketRegion);
         })
@@ -142,14 +183,14 @@ function findRegionalVenueMatch(
 
     if (byBracket) {
         return {
-            key: byBracket[0],
-            venue: byBracket[1],
+            key: byBracket.key,
+            venue: byBracket.venue,
         };
     }
 
     if (performanceAddress) {
         const [perfRegion, perfDistrict] = extractAddressTokens(performanceAddress);
-        const addressMatch = venueEntries.find(([key, venue]) => {
+        const addressMatch = venueEntries.find(({ venue }) => {
             const address = sanitizeAddress(venue.address);
             const [venueRegion, venueDistrict] = extractAddressTokens(address);
             if (!venueRegion) return false;
@@ -160,8 +201,8 @@ function findRegionalVenueMatch(
 
         if (addressMatch) {
             return {
-                key: addressMatch[0],
-                venue: addressMatch[1],
+                key: addressMatch.key,
+                venue: addressMatch.venue,
             };
         }
     }
@@ -171,7 +212,7 @@ function findRegionalVenueMatch(
 
 function resolveVenueEntryForPerformance(
     performance: Pick<Performance, 'venue' | 'address' | 'bracketRegion'>,
-    venues: Record<string, VenueLike>
+    venues: VenueLookup
 ) {
     const cleanVenueName = normalizeWhitespace(performance.venue);
     const bracketRegion = normalizeWhitespace(performance.bracketRegion);
@@ -199,15 +240,20 @@ function resolveVenueEntryForPerformance(
 
 export function getPerformanceVenueKey(
     performance: Pick<Performance, 'venue' | 'address' | 'bracketRegion'>,
-    venues: Record<string, VenueLike>
+    venues: VenueLookup
 ) {
     return resolveVenueEntryForPerformance(performance, venues).venueKey;
 }
 
 export function resolveVenueInfoForPerformance(
     performance: Pick<Performance, 'venue' | 'address' | 'lat' | 'lng' | 'latitude' | 'longitude' | 'bracketRegion'>,
-    venues: Record<string, VenueLike>
+    venues: VenueLookup
 ): VenueLike {
+    const lookupCache = getVenueLookupCache(venues);
+    const cacheKey = buildVenueResolutionCacheKey(performance);
+    const cachedVenue = lookupCache.resolvedVenueByPerformance.get(cacheKey);
+    if (cachedVenue) return cachedVenue;
+
     const { preferredVenue } = resolveVenueEntryForPerformance(performance, venues);
 
     const performanceLat = parseCoordinate(performance.lat ?? performance.latitude);
@@ -226,7 +272,7 @@ export function resolveVenueInfoForPerformance(
             !hasUsableAddress(venueAddress)
         );
 
-    return {
+    const resolvedVenue = {
         ...preferredVenue,
         address: shouldPreferPerformanceAddress ? performanceAddress : venueAddress,
         lat: performanceHasGeo ? performanceLat : parseCoordinate(preferredVenue.lat ?? preferredVenue.latitude),
@@ -234,6 +280,12 @@ export function resolveVenueInfoForPerformance(
         latitude: performanceHasGeo ? performanceLat : parseCoordinate(preferredVenue.latitude ?? preferredVenue.lat),
         longitude: performanceHasGeo ? performanceLng : parseCoordinate(preferredVenue.longitude ?? preferredVenue.lng),
     };
+
+    if (lookupCache.resolvedVenueByPerformance.size > MAX_RESOLVED_VENUE_CACHE_SIZE) {
+        lookupCache.resolvedVenueByPerformance.clear();
+    }
+    lookupCache.resolvedVenueByPerformance.set(cacheKey, resolvedVenue);
+    return resolvedVenue;
 }
 
 export function buildPerformanceLocationKey(
