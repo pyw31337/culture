@@ -8,6 +8,8 @@ import type {
     DataSourceSummary,
     DisplayIntegritySummary,
     SourceFunnelSummary,
+    OperationsSummary,
+    PriceCoverageSummary,
     VenueCanonicalizationSummary,
     VenueMasterSummary,
     VenuePlaceMatchingSummary
@@ -292,6 +294,37 @@ function normalizeVenuePlaceMatchingSummary(value: unknown): VenuePlaceMatchingS
     };
 }
 
+function normalizePriceCoverageSummary(value: unknown): PriceCoverageSummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<PriceCoverageSummary>;
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        itemCount: typeof candidate.itemCount === 'number' ? candidate.itemCount : 0,
+        pricedCount: typeof candidate.pricedCount === 'number' ? candidate.pricedCount : 0,
+        unknownCount: typeof candidate.unknownCount === 'number' ? candidate.unknownCount : 0,
+        optionalUnknownCount: typeof candidate.optionalUnknownCount === 'number' ? candidate.optionalUnknownCount : 0,
+        actionableUnknownCount: typeof candidate.actionableUnknownCount === 'number' ? candidate.actionableUnknownCount : 0,
+        coverageRate: typeof candidate.coverageRate === 'number' ? candidate.coverageRate : 0,
+        topUnknownBySource: Array.isArray(candidate.topUnknownBySource) ? candidate.topUnknownBySource : [],
+    };
+}
+
+function normalizeOperationsSummary(value: unknown): OperationsSummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<OperationsSummary>;
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        localUpdateLogCount: typeof candidate.localUpdateLogCount === 'number' ? candidate.localUpdateLogCount : 0,
+        latestLocalUpdateLog: typeof candidate.latestLocalUpdateLog === 'string' ? candidate.latestLocalUpdateLog : null,
+        latestLocalUpdateAt: typeof candidate.latestLocalUpdateAt === 'string' ? candidate.latestLocalUpdateAt : null,
+        lastFailureCount: typeof candidate.lastFailureCount === 'number' ? candidate.lastFailureCount : 0,
+        lastFailures: Array.isArray(candidate.lastFailures) ? candidate.lastFailures.filter((value): value is string => typeof value === 'string') : [],
+        schedulerConfigured: candidate.schedulerConfigured === true,
+    };
+}
+
 function isPerformanceActive(dateStr: string, today: Date): boolean {
     if (!dateStr || dateStr.trim() === '') return true; // Lenient: Treat items without dates as active (e.g., Museums)
 
@@ -390,6 +423,8 @@ export function getDataBuildInfo(): DataBuildInfo | null {
         venueCanonicalizationSummary: normalizeVenueCanonicalizationSummary(candidate.venueCanonicalizationSummary),
         venueMasterSummary: normalizeVenueMasterSummary(candidate.venueMasterSummary),
         venuePlaceMatchingSummary: normalizeVenuePlaceMatchingSummary(candidate.venuePlaceMatchingSummary),
+        priceCoverageSummary: normalizePriceCoverageSummary(candidate.priceCoverageSummary),
+        operationsSummary: normalizeOperationsSummary(candidate.operationsSummary),
     };
     return cachedBuildInfo;
 }

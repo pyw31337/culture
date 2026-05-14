@@ -2685,21 +2685,6 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K36.png"
   },
   {
-    "id": "kleague_2026.05.17_1_전북_vs_김천",
-    "title": "전북 vs 김천",
-    "image": "/images/soccer_poster.png",
-    "date": "2026-05-17 16:30",
-    "venue": "전주 월드컵 경기장",
-    "link": "https://www.kleague.com/schedule.do",
-    "region": "gyeonggi",
-    "genre": "soccer",
-    "league": "K League 1",
-    "homeTeam": "전북",
-    "awayTeam": "김천",
-    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
-    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
-  },
-  {
     "id": "kleague_2026.05.17_1_제주_vs_안양",
     "title": "제주 vs 안양",
     "image": "/images/soccer_poster.png",
@@ -2760,6 +2745,21 @@
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png"
   },
   {
+    "id": "kleague_2026.05.17_1_전북_vs_김천",
+    "title": "전북 vs 김천",
+    "image": "/images/soccer_poster.png",
+    "date": "2026-05-17 16:40",
+    "venue": "전주 월드컵 경기장",
+    "link": "https://www.kleague.com/schedule.do",
+    "region": "gyeonggi",
+    "genre": "soccer",
+    "league": "K League 1",
+    "homeTeam": "전북",
+    "awayTeam": "김천",
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K05.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K35.png"
+  },
+  {
     "id": "kleague_2026.05.17_1_강원_vs_울산",
     "title": "강원 vs 울산",
     "image": "/images/soccer_poster.png",
@@ -2803,6 +2803,21 @@
     "awayTeam": "충남아산",
     "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
+  },
+  {
+    "id": "kleague_2026.05.17_2_충남아산_vs_수원FC",
+    "title": "충남아산 vs 수원FC",
+    "image": "/images/soccer_poster.png",
+    "date": "2026-05-17 19:00",
+    "venue": "이순신 종합운동장",
+    "link": "https://www.kleague.com/schedule.do",
+    "region": "etc",
+    "genre": "soccer",
+    "league": "K League 2",
+    "homeTeam": "충남아산",
+    "awayTeam": "수원FC",
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png"
   },
   {
     "id": "kleague_2026.05.23_2_전남_vs_김해",
@@ -6538,6 +6553,21 @@
     "awayTeam": "경남",
     "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
     "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K20.png"
+  },
+  {
+    "id": "kleague_2026.10.25_2_수원FC_vs_충남아산",
+    "title": "수원FC vs 충남아산",
+    "image": "/images/soccer_poster.png",
+    "date": "2026-10-25 14:00",
+    "venue": "수원 종합 운동장",
+    "link": "https://www.kleague.com/schedule.do",
+    "region": "gyeonggi",
+    "genre": "soccer",
+    "league": "K League 2",
+    "homeTeam": "수원FC",
+    "awayTeam": "충남아산",
+    "homeTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+    "awayTeamLogo": "https://www.kleague.com/assets/images/emblem/emblem_K34.png"
   },
   {
     "id": "kleague_2026.10.25_2_천안_vs_안산",

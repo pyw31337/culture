@@ -13,6 +13,29 @@ const KBL_URL = 'https://www.kbl.or.kr/match/schedule';
 const KBL_POSTER = '/images/kbl_poster.png';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kbl.json');
 
+function getKstTodayStart() {
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+    const [year, month, day] = formatter.format(new Date()).split('-').map(Number);
+    return new Date(Date.UTC(year, month - 1, day));
+}
+
+function getScheduleDate(value: string) {
+    const match = value.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!match) return null;
+    return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+}
+
+function isUpcomingOrToday(value: string) {
+    const scheduleDate = getScheduleDate(value);
+    if (!scheduleDate) return false;
+    return scheduleDate >= getKstTodayStart();
+}
+
 async function scrapeKbl() {
     const KBL_LOGOS: Record<string, string> = {
         "서울 SK": "/images/logos/kbl/sk_official.svg",
@@ -86,8 +109,9 @@ async function scrapeKbl() {
         const nextBtnSelector = '.ic-date-nav-next';
         try {
             await page.waitForSelector(nextBtnSelector, { timeout: 10000 });
-            for (let i = 0; i < 3; i++) {
-                console.log(`Clicking next month (${i + 1}/3)...`);
+            const lookaheadMonths = Number.parseInt(process.env.KBL_MONTH_LOOKAHEAD || '8', 10);
+            for (let i = 0; i < lookaheadMonths; i++) {
+                console.log(`Clicking next month (${i + 1}/${lookaheadMonths})...`);
                 await page.waitForSelector(nextBtnSelector, { visible: true, timeout: 5000 });
                 await page.click(nextBtnSelector);
                 await new Promise(r => setTimeout(r, 3000));
@@ -107,13 +131,12 @@ async function scrapeKbl() {
             const t = match.gameStart || '0000';
             const timeStr = `${t.substring(0, 2)}:${t.substring(2, 4)}`;
 
-            if (!dateStr.startsWith('2026')) continue;
-
             const title = `${match.tnameH} vs ${match.tnameA}`;
             const safeMatchup = slugify(title);
             const id = `kbl_${match.gameDate}_${safeMatchup}`;
 
             if (seenIds.has(id)) continue;
+            if (process.env.SCRAPE_KEEP_PAST_SPORTS !== '1' && !isUpcomingOrToday(`${dateStr} ${timeStr}`)) continue;
             seenIds.add(id);
 
             const homeLogoUrl = KBL_LOGOS[match.tnameH] || (match.logoH ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoH}.svg` : '');
@@ -135,7 +158,10 @@ async function scrapeKbl() {
             });
         }
 
-        console.log(`Total collected: ${allPerformances.length}`);
+        console.log(`Total upcoming/current collected: ${allPerformances.length}`);
+        if (collectedMatches.length > 0 && allPerformances.length === 0) {
+            console.log('No upcoming KBL matches remain. Writing an empty seasonal file so the category stays hidden until the season returns.');
+        }
         fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allPerformances, null, 2));
         console.log(`Saved ${allPerformances.length} matches to ${OUTPUT_PATH}`);
 

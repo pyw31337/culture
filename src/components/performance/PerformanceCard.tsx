@@ -61,8 +61,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
+    const pointerFrameRef = useRef<number | null>(null);
+    const latestPointerRef = useRef<{ x: number; y: number } | null>(null);
 
     const dDay = getDdayLabel(perf);
+    const priceText = typeof perf.price === 'string' ? perf.price.trim() : '';
+    const priceFallbackText = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(perf.genre)
+        ? '예매처 확인'
+        : '가격 확인';
 
     useEffect(() => {
         const query = window.matchMedia('(hover: hover) and (pointer: fine)');
@@ -73,13 +79,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         return () => query.removeEventListener('change', update);
     }, []);
 
-    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const applyPointerTransform = useCallback(() => {
         if (!canUseHoverEffects) return;
         if (!cardRef.current || !glareRef.current) return;
 
         const rect = cardRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const pointer = latestPointerRef.current;
+        if (!pointer) return;
+
+        const x = pointer.x - rect.left;
+        const y = pointer.y - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
@@ -90,16 +99,37 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
         glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
         glareRef.current.style.opacity = '1';
+        pointerFrameRef.current = null;
     }, [canUseHoverEffects]);
+
+    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!canUseHoverEffects) return;
+        latestPointerRef.current = { x: e.clientX, y: e.clientY };
+
+        if (pointerFrameRef.current !== null) return;
+        pointerFrameRef.current = window.requestAnimationFrame(applyPointerTransform);
+    }, [applyPointerTransform, canUseHoverEffects]);
 
     const handleMouseLeave = useCallback(() => {
         if (!canUseHoverEffects) return;
         if (!cardRef.current || !glareRef.current) return;
 
+        if (pointerFrameRef.current !== null) {
+            window.cancelAnimationFrame(pointerFrameRef.current);
+            pointerFrameRef.current = null;
+        }
+        latestPointerRef.current = null;
+
         cardRef.current.style.transition = 'transform 0.3s ease-out';
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
         glareRef.current.style.opacity = '0';
     }, [canUseHoverEffects]);
+
+    useEffect(() => () => {
+        if (pointerFrameRef.current !== null) {
+            window.cancelAnimationFrame(pointerFrameRef.current);
+        }
+    }, []);
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
@@ -397,8 +427,8 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
                                             <div className="flex items-baseline gap-1 text-white">
                                                 {(() => {
-                                                    const extracted = extractFirstPrice(perf.price);
-                                                    if (!extracted) return <span className="text-lg font-black">{perf.price}</span>;
+                                                    const extracted = extractFirstPrice(priceText);
+                                                    if (!extracted) return <span className="text-sm font-black text-white/85">{priceText || priceFallbackText}</span>;
                                                     return (
                                                         <div className="leading-none text-right">
                                                             {extracted.price === '무료' ? (

@@ -6,7 +6,9 @@ import { getAllPerformances } from '../src/lib/performance-data';
 import type {
     DataSourceFreshness,
     DataSourceHealthSummary,
-    DataSourceSummary
+    DataSourceSummary,
+    OperationsSummary,
+    PriceCoverageSummary
 } from '../src/lib/build-info';
 import { getExternalContentLink } from '../src/lib/performance-links';
 import { getScheduleWindow, sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
@@ -81,6 +83,43 @@ const SOURCE_FRESH_DAYS = 3;
 const SOURCE_STALE_DAYS = 30;
 const WINTER_LEISURE_TERMS = ['리프트권', '스키장', '스노우파크', '눈썰매', '눈썰매장', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
 const WINTER_LEISURE_FALSE_POSITIVE_TERMS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
+const PRICE_OPTIONAL_GENRES = new Set(['movie', 'baseball', 'basketball', 'volleyball', 'soccer', 'handball']);
+const NON_VENUE_TEXT_PATTERNS = [
+    /위치\s*정보/,
+    /상품\s*상세/,
+    /상세\s*페이지/,
+    /예약\s*후/,
+    /집합\s*장소/,
+    /사전\s*조율/,
+    /만남의\s*장소/,
+    /담당\s*강사/,
+    /프로그램마다/,
+    /장소가\s*상이/,
+    /모카\s*클래스/,
+    /단체\s*전시회/,
+    /전국\s*출강/,
+    /무료\s*각인/,
+    /커플\/?친구/,
+    /기초\s*마스터/,
+    /주\s*과정/,
+    /원데이\s*클래스/,
+    /정규\s*클래스/,
+];
+const GENERIC_VENUE_EXACTS = new Set([
+    '서울',
+    '서울특별시',
+    '경기도',
+    '서울/강남',
+    '홍대/신촌/이대',
+    '홍대/연남',
+    '서울/강서',
+    '서울/강서/마곡',
+    '강남/역삼',
+    '송파/잠실/강남',
+    '수원/동탄/오산/평택',
+    '홍대/단체/출강',
+    '성수/단체/출강',
+]);
 const GENERIC_OR_FALLBACK_COORDINATE_KEYS = new Set([
     '37.5237,126.8882', // Seoul/Yeongdeungpo fallback frequently attached to Mom-Mom products.
     '37.4138,127.5183', // Gyeonggi centroid fallback.
@@ -151,6 +190,45 @@ function hasDetailedAddress(value?: string) {
     if (!address || address === '정보 없음' || address === '주소 정보 없음') return false;
     if (address.split(' ').filter(Boolean).length < 3) return false;
     return /(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주|충청|전라|경상)/.test(address);
+}
+
+function normalizeAddressRegionWords(value?: string) {
+    return compactText(value)
+        .replace(/서울특별시|서울시/g, '서울')
+        .replace(/부산광역시|부산시/g, '부산')
+        .replace(/대구광역시|대구시/g, '대구')
+        .replace(/인천광역시|인천시/g, '인천')
+        .replace(/광주광역시|광주시/g, '광주')
+        .replace(/대전광역시|대전시/g, '대전')
+        .replace(/울산광역시|울산시/g, '울산')
+        .replace(/경기도/g, '경기')
+        .replace(/강원특별자치도|강원도/g, '강원')
+        .replace(/충청북도/g, '충북')
+        .replace(/충청남도/g, '충남')
+        .replace(/전북특별자치도|전라북도/g, '전북')
+        .replace(/전라남도/g, '전남')
+        .replace(/경상북도/g, '경북')
+        .replace(/경상남도/g, '경남')
+        .replace(/제주특별자치도|제주도/g, '제주');
+}
+
+function getAddressAreaLabel(value?: string) {
+    const parts = normalizeAddressRegionWords(value).split(' ').filter(Boolean);
+    if (parts.length >= 2 && /(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)/.test(parts[0])) {
+        return `${parts[0]} ${parts[1]}`;
+    }
+    return '';
+}
+
+function isGenericOrNonVenueText(value?: string) {
+    const text = compactText(value);
+    if (!text) return true;
+    if (GENERIC_VENUE_EXACTS.has(text)) return true;
+    if (text.includes('/')) return true;
+    if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s*[·ㆍ]/.test(text)) return true;
+    if (NON_VENUE_TEXT_PATTERNS.some((pattern) => pattern.test(text))) return true;
+    if (text.length > 24 && /(합니다|드립니다|주세요|예정|참고|안내|확인)/.test(text)) return true;
+    return false;
 }
 
 function applyVenueRecordToPerformance(performance: Performance, venueKey: string, record: VenueRecord) {
@@ -752,6 +830,39 @@ function repairKnownLocationOverrides(items: Performance[]) {
     });
 }
 
+function sanitizeWeakVenueIdentities(items: Performance[]) {
+    items.forEach((performance) => {
+        const venue = compactText(performance.venue);
+        const address = compactText(performance.address);
+        const shouldSanitize =
+            isGenericOrNonVenueText(venue) ||
+            (isGenericOrNonVenueText(address) && !hasDetailedAddress(address));
+
+        if (!shouldSanitize) return;
+
+        const areaLabel = getAddressAreaLabel(address) || getAddressAreaLabel(venue);
+        const safeVenue = areaLabel || performance.district || '장소 확인 필요';
+
+        performance.venue = safeVenue;
+        performance.venueKey = undefined;
+        performance.locationKey = undefined;
+
+        if (!hasDetailedAddress(address)) {
+            performance.address = areaLabel || '';
+            performance.lat = undefined;
+            performance.lng = undefined;
+        } else if (hasGenericFallbackCoordinate(performance)) {
+            performance.lat = undefined;
+            performance.lng = undefined;
+        }
+
+        const description = compactText(performance.description);
+        if (!description || isGenericOrNonVenueText(description)) {
+            performance.description = buildFallbackDescription(performance);
+        }
+    });
+}
+
 function getSourceAgeDays(updatedAt: Date) {
     const ageMs = Date.now() - updatedAt.getTime();
     return Math.max(0, Math.floor(ageMs / (1000 * 60 * 60 * 24)));
@@ -760,6 +871,18 @@ function getSourceAgeDays(updatedAt: Date) {
 function getTrackedFileUpdatedAt(relativePath: string) {
     const absolutePath = path.join(process.cwd(), relativePath);
     if (!fs.existsSync(absolutePath)) return null;
+    const fileMtime = fs.statSync(absolutePath).mtime;
+    let hasUncommittedChanges = false;
+
+    try {
+        hasUncommittedChanges = execFileSync('git', ['status', '--porcelain', '--', relativePath], {
+            cwd: process.cwd(),
+            encoding: 'utf8',
+            stdio: ['ignore', 'pipe', 'ignore'],
+        }).trim().length > 0;
+    } catch {
+        hasUncommittedChanges = false;
+    }
 
     try {
         const gitUpdatedAt = execFileSync('git', ['log', '-1', '--format=%cI', '--', relativePath], {
@@ -771,14 +894,14 @@ function getTrackedFileUpdatedAt(relativePath: string) {
         if (gitUpdatedAt) {
             const parsed = new Date(gitUpdatedAt);
             if (!Number.isNaN(parsed.getTime())) {
-                return parsed;
+                return hasUncommittedChanges && fileMtime.getTime() > parsed.getTime() ? fileMtime : parsed;
             }
         }
     } catch {
         // Fall through to filesystem mtime when git metadata is unavailable.
     }
 
-    return fs.statSync(absolutePath).mtime;
+    return fileMtime;
 }
 
 function getSourceFreshness(
@@ -845,6 +968,117 @@ function buildSourceSummaries(sourceCounts: Record<string, number>): {
     });
 
     return { sourceSummaries, sourceHealthSummary };
+}
+
+function hasReliablePrice(performance: Performance) {
+    const text = compactText([performance.price, performance.priceDetail, performance.feesAndPrograms].filter(Boolean).join(' '));
+    if (!text) return false;
+    if (/정보\s*없음|미정|문의|예매처\s*확인/i.test(text)) return false;
+    return /무료|입장무료|관람무료|\d[\d,]*\s*원|\d+\s*만원/.test(text);
+}
+
+function buildPriceCoverageSummary(items: Performance[], checkedAt = new Date().toISOString()): PriceCoverageSummary {
+    const rows = items.reduce<Record<string, {
+        key: string;
+        label: string;
+        itemCount: number;
+        unknownCount: number;
+        actionableUnknownCount: number;
+    }>>((acc, performance) => {
+        const key = performance.source || 'unknown';
+        const entry = SOURCE_REGISTRY.find((source) => source.key === key);
+        acc[key] = acc[key] || {
+            key,
+            label: entry?.label || key,
+            itemCount: 0,
+            unknownCount: 0,
+            actionableUnknownCount: 0,
+        };
+
+        acc[key].itemCount += 1;
+        if (!hasReliablePrice(performance)) {
+            acc[key].unknownCount += 1;
+            if (!PRICE_OPTIONAL_GENRES.has(performance.genre)) {
+                acc[key].actionableUnknownCount += 1;
+            }
+        }
+        return acc;
+    }, {});
+
+    const pricedCount = items.filter(hasReliablePrice).length;
+    const unknownCount = items.length - pricedCount;
+    const optionalUnknownCount = items.filter((performance) => !hasReliablePrice(performance) && PRICE_OPTIONAL_GENRES.has(performance.genre)).length;
+    const actionableUnknownCount = unknownCount - optionalUnknownCount;
+
+    return {
+        checkedAt,
+        itemCount: items.length,
+        pricedCount,
+        unknownCount,
+        optionalUnknownCount,
+        actionableUnknownCount,
+        coverageRate: items.length > 0 ? Number((pricedCount / items.length).toFixed(4)) : 1,
+        topUnknownBySource: Object.values(rows)
+            .filter((row) => row.unknownCount > 0)
+            .sort((left, right) => right.actionableUnknownCount - left.actionableUnknownCount || right.unknownCount - left.unknownCount)
+            .slice(0, 8),
+    };
+}
+
+function buildOperationsSummary(checkedAt = new Date().toISOString()): OperationsSummary {
+    const logDir = path.join(process.cwd(), 'logs', 'data-update');
+    const failurePath = path.join(logDir, 'last-scrape-failures.txt');
+    const schedulerPlistPath = path.join(process.env.HOME || '', 'Library', 'LaunchAgents', 'com.cultureflow.daily-update.plist');
+    const localLogs = fs.existsSync(logDir)
+        ? fs.readdirSync(logDir)
+            .filter((file) => /^local-data-update-.*\.log$/.test(file))
+            .map((file) => {
+                const absolutePath = path.join(logDir, file);
+                return {
+                    file,
+                    mtime: fs.statSync(absolutePath).mtime,
+                };
+            })
+            .sort((left, right) => right.mtime.getTime() - left.mtime.getTime())
+        : [];
+    const recordedFailures = fs.existsSync(failurePath)
+        ? fs.readFileSync(failurePath, 'utf8').split(/\r?\n/).map((line) => line.trim()).filter(Boolean)
+        : [];
+    const inferredFailures = new Set(recordedFailures);
+    const latestLocalLog = localLogs[0];
+
+    if (latestLocalLog) {
+        const latestLogPath = path.join(logDir, latestLocalLog.file);
+        try {
+            const logText = fs.readFileSync(latestLogPath, 'utf8');
+            const failedExitPattern = /\[local-update\]\s+<<<\s+([a-z0-9-]+)\s+exit=([1-9]\d*)/gi;
+            let match: RegExpExecArray | null;
+
+            while ((match = failedExitPattern.exec(logText))) {
+                inferredFailures.add(match[1]);
+            }
+
+            const started = /\[local-update\]\s+started at/.test(logText);
+            const finished = /\[local-update\]\s+(completed at|skipped:|no data changes to commit)/.test(logText);
+            if (started && !finished) {
+                inferredFailures.add('local-update-incomplete');
+            }
+        } catch {
+            inferredFailures.add('local-update-log-unreadable');
+        }
+    }
+
+    const lastFailures = Array.from(inferredFailures);
+
+    return {
+        checkedAt,
+        localUpdateLogCount: localLogs.length,
+        latestLocalUpdateLog: localLogs[0]?.file || null,
+        latestLocalUpdateAt: localLogs[0]?.mtime.toISOString() || null,
+        lastFailureCount: lastFailures.length,
+        lastFailures: lastFailures.slice(0, 12),
+        schedulerConfigured: fs.existsSync(schedulerPlistPath),
+    };
 }
 
 function getLatestSourceUpdatedAt() {
@@ -1133,6 +1367,7 @@ async function generate() {
         repairBrokenLocalImages(activePerformances);
         normalizeDuplicateTimeFields(activePerformances);
         repairKnownLocationOverrides(activePerformances);
+        sanitizeWeakVenueIdentities(activePerformances);
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformancesForHomeFeed(activePerformances);
@@ -1241,6 +1476,8 @@ async function generate() {
             new Date().toISOString(),
         );
         const sourceFunnelReport = buildSourceFunnelReport(pruned as Performance[], new Date().toISOString());
+        const priceCoverageSummary = buildPriceCoverageSummary(pruned as Performance[], new Date().toISOString());
+        const operationsSummary = buildOperationsSummary(new Date().toISOString());
         const venueCanonicalizationReport = buildVenueCanonicalizationReport(
             pruned as Performance[],
             sourceVenues,
@@ -1261,6 +1498,8 @@ async function generate() {
             venueCanonicalizationSummary: venueCanonicalizationReport.summary,
             venueMasterSummary: venueMasterBuild.report.summary,
             venuePlaceMatchingSummary: venuePlaceMatchingReport.summary,
+            priceCoverageSummary,
+            operationsSummary,
         };
         fs.writeFileSync(buildInfoPath, JSON.stringify(buildInfo));
         console.log(`Updated build-info.json to ${buildInfoPath}`);

@@ -13,6 +13,7 @@ import {
     SearchCheck,
     ShieldAlert,
     ShieldCheck,
+    Ticket,
 } from 'lucide-react';
 import {
     formatKoreanDateTime,
@@ -185,6 +186,27 @@ export default function StatusPage() {
             ? `카카오/네이버 조회 준비됨 · 고신뢰 ${venuePlaceMatchingSummary.highConfidenceMatchCount.toLocaleString()}개 · 검토 ${venuePlaceMatchingSummary.needsReviewCount.toLocaleString()}개`
             : `API 키가 준비되면 대기열 순서대로 공식 placeId를 누적합니다. 장소명 보강 필요 ${venuePlaceMatchingSummary.insufficientIdentityCount.toLocaleString()}개`
         : '공식 장소 검색 결과를 캐시해 좌표와 도로명주소를 확정합니다.';
+    const priceCoverageSummary = buildInfo.priceCoverageSummary;
+    const priceCoverageStatusLabel = priceCoverageSummary
+        ? `가격 확인 가능 ${Math.round(priceCoverageSummary.coverageRate * 100)}%`
+        : '가격 커버리지 준비 중';
+    const priceCoverageDetail = priceCoverageSummary
+        ? `가격 미상 ${priceCoverageSummary.unknownCount.toLocaleString()}건 · 운영 보강 대상 ${priceCoverageSummary.actionableUnknownCount.toLocaleString()}건 · 스포츠/영화 참고 ${priceCoverageSummary.optionalUnknownCount.toLocaleString()}건`
+        : '가격이 없는 항목을 소스별로 분리해 보강 우선순위를 정합니다.';
+    const operationsSummary = buildInfo.operationsSummary;
+    const operationsStatusLabel = operationsSummary
+        ? operationsSummary.lastFailureCount > 0
+            ? `최근 수집 실패 ${operationsSummary.lastFailureCount}개`
+            : operationsSummary.latestLocalUpdateAt
+                ? '로컬 수집 로그 확인됨'
+                : '로컬 수집 로그 대기'
+        : '운영 로그 준비 중';
+    const operationsDetail = operationsSummary
+        ? [
+            operationsSummary.schedulerConfigured ? '자정 스케줄러 설치됨' : '자정 스케줄러 확인 필요',
+            operationsSummary.latestLocalUpdateAt ? `최근 로컬 실행 ${formatKoreanDateTime(operationsSummary.latestLocalUpdateAt)}` : '최근 로컬 실행 기록 없음',
+        ].join(' · ')
+        : '로컬 자정 수집과 GitHub fallback 상태를 함께 표시합니다.';
 
     const sortedSources = [...buildInfo.sourceSummaries].sort((a, b) => {
         const order = {
@@ -279,6 +301,18 @@ export default function StatusPage() {
                                 icon={venuePlaceMatchingSummary?.lookupReady ? <SearchCheck className="h-4 w-4" /> : <ShieldAlert className="h-4 w-4" />}
                             />
                             <SnapshotLine
+                                label="가격 커버리지"
+                                value={priceCoverageStatusLabel}
+                                detail={priceCoverageDetail}
+                                icon={<Ticket className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
+                                label="운영 로그"
+                                value={operationsStatusLabel}
+                                detail={operationsDetail}
+                                icon={<Activity className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
                                 label="갱신 시각"
                                 value={formatKoreanDateTime(buildInfo.generatedAt)}
                                 detail="빌드에 반영된 최신 데이터 생성 시각입니다."
@@ -343,6 +377,21 @@ export default function StatusPage() {
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">공식 장소 매칭</p>
                                 <p className="mt-2 text-xl font-black tracking-tight">{venuePlaceMatchingStatusLabel}</p>
                                 <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{venuePlaceMatchingDetail}</p>
+                            </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">가격 정보</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{priceCoverageStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{priceCoverageDetail}</p>
+                            </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">운영 자동화</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{operationsStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{operationsDetail}</p>
+                                {operationsSummary?.lastFailures && operationsSummary.lastFailures.length > 0 && (
+                                    <p className="mt-2 text-xs leading-5 text-amber-200 light:text-amber-700">
+                                        실패 소스: {operationsSummary.lastFailures.join(', ')}
+                                    </p>
+                                )}
                             </div>
                             <div>
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">운영 원칙</p>
@@ -434,6 +483,14 @@ export default function StatusPage() {
                                 <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
                                     <span>깨진 로컬 포스터</span>
                                     <strong>{buildInfo.qualitySummary?.brokenLocalImageCount ?? 0}건</strong>
+                                </div>
+                                <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <span>가격 보강 대상</span>
+                                    <strong>{priceCoverageSummary?.actionableUnknownCount ?? 0}건</strong>
+                                </div>
+                                <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
+                                    <span>최근 수집 실패</span>
+                                    <strong>{operationsSummary?.lastFailureCount ?? 0}개</strong>
                                 </div>
                             </div>
                         </section>

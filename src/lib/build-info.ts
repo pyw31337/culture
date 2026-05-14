@@ -172,6 +172,33 @@ export interface VenuePlaceMatchingSummary {
     }>;
 }
 
+export interface PriceCoverageSummary {
+    checkedAt: string;
+    itemCount: number;
+    pricedCount: number;
+    unknownCount: number;
+    optionalUnknownCount: number;
+    actionableUnknownCount: number;
+    coverageRate: number;
+    topUnknownBySource: Array<{
+        key: string;
+        label: string;
+        unknownCount: number;
+        actionableUnknownCount: number;
+        itemCount: number;
+    }>;
+}
+
+export interface OperationsSummary {
+    checkedAt: string;
+    localUpdateLogCount: number;
+    latestLocalUpdateLog: string | null;
+    latestLocalUpdateAt: string | null;
+    lastFailureCount: number;
+    lastFailures: string[];
+    schedulerConfigured: boolean;
+}
+
 export interface DataBuildInfo {
     generatedAt: string;
     version: string;
@@ -186,6 +213,8 @@ export interface DataBuildInfo {
     venueCanonicalizationSummary?: VenueCanonicalizationSummary | null;
     venueMasterSummary?: VenueMasterSummary | null;
     venuePlaceMatchingSummary?: VenuePlaceMatchingSummary | null;
+    priceCoverageSummary?: PriceCoverageSummary | null;
+    operationsSummary?: OperationsSummary | null;
 }
 
 export function getAvailableGenreCount(genreCounts?: Record<string, number>) {

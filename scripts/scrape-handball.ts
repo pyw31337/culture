@@ -21,6 +21,29 @@ const TARGET_URL = 'https://www.koreahandball.com/game/schedule_list.php';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/handball.json');
 const HANDBALL_POSTER = '/images/handball_poster.png'; // Placeholder or generic
 
+function getKstTodayStart() {
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+    const [year, month, day] = formatter.format(new Date()).split('-').map(Number);
+    return new Date(Date.UTC(year, month - 1, day));
+}
+
+function getScheduleDate(value: string) {
+    const match = value.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!match) return null;
+    return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+}
+
+function isUpcomingOrToday(value: string) {
+    const scheduleDate = getScheduleDate(value);
+    if (!scheduleDate) return false;
+    return scheduleDate >= getKstTodayStart();
+}
+
 async function scrapeHandball() {
     console.log(`Starting Korea Handball Scraper...`);
     const browser = await puppeteer.launch({
@@ -152,13 +175,19 @@ async function scrapeHandball() {
         })()`)) as any;
 
         // Post-process to add region and image
-        const finalData = performances.map(p => ({
-            ...p,
-            image: HANDBALL_POSTER,
-            region: classifyRegion(p.venue)
-        }));
+        const finalData = performances
+            .filter((p) => process.env.SCRAPE_KEEP_PAST_SPORTS === '1' || isUpcomingOrToday(p.date))
+            .map(p => ({
+                ...p,
+                image: HANDBALL_POSTER,
+                region: classifyRegion(p.venue)
+            }));
 
-        console.log(`Total matches collected: ${finalData.length}`);
+        console.log(`Total matches collected: ${performances.length}`);
+        console.log(`Upcoming/current matches retained: ${finalData.length}`);
+        if (performances.length > 0 && finalData.length === 0) {
+            console.log('No upcoming handball matches remain. Writing an empty seasonal file so the category stays hidden until the season returns.');
+        }
         fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalData, null, 2));
         console.log(`Saved to ${OUTPUT_PATH}`);
 

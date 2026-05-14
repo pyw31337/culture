@@ -6,6 +6,7 @@ LOG_DIR="$PROJECT_DIR/logs/data-update"
 RUN_STAMP="$(TZ=Asia/Seoul date '+%Y%m%d-%H%M%S')"
 LOG_FILE="$LOG_DIR/local-data-update-$RUN_STAMP.log"
 SKIP_AFTER_HOUR="${LOCAL_UPDATE_SKIP_AFTER_HOUR:-14}"
+SCRAPER_TIMEOUT_SECONDS="${LOCAL_SCRAPER_TIMEOUT_SECONDS:-2700}"
 
 mkdir -p "$LOG_DIR"
 exec > >(tee -a "$LOG_FILE") 2>&1
@@ -47,6 +48,29 @@ fi
 
 failures=()
 critical_failures=()
+: > "$LOG_DIR/last-scrape-failures.txt"
+
+terminate_process_tree() {
+  local pid="$1"
+  local child
+
+  for child in $(pgrep -P "$pid" 2>/dev/null || true); do
+    terminate_process_tree "$child"
+  done
+
+  kill "$pid" 2>/dev/null || true
+}
+
+force_kill_process_tree() {
+  local pid="$1"
+  local child
+
+  for child in $(pgrep -P "$pid" 2>/dev/null || true); do
+    force_kill_process_tree "$child"
+  done
+
+  kill -KILL "$pid" 2>/dev/null || true
+}
 
 run_scraper() {
   local name="$1"
@@ -55,8 +79,32 @@ run_scraper() {
 
   echo "[local-update] >>> ${name} (${priority})"
   set +e
-  "$@"
-  local status=$?
+  "$@" &
+  local scraper_pid=$!
+  local status=0
+  local elapsed=0
+
+  while kill -0 "$scraper_pid" 2>/dev/null; do
+    if [ "$elapsed" -ge "$SCRAPER_TIMEOUT_SECONDS" ]; then
+      echo "[local-update] !!! ${name} timed out after ${SCRAPER_TIMEOUT_SECONDS}s"
+      terminate_process_tree "$scraper_pid"
+      sleep 5
+      if kill -0 "$scraper_pid" 2>/dev/null; then
+        force_kill_process_tree "$scraper_pid"
+      fi
+      wait "$scraper_pid" 2>/dev/null
+      status=124
+      break
+    fi
+
+    sleep 5
+    elapsed=$((elapsed + 5))
+  done
+
+  if [ "$status" -eq 0 ]; then
+    wait "$scraper_pid"
+    status=$?
+  fi
   set -e
   echo "[local-update] <<< ${name} exit=${status}"
 

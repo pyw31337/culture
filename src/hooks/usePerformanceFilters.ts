@@ -5,6 +5,9 @@ import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { filterByDiscoveryContext } from '@/lib/discovery';
 
+const INITIAL_VISIBLE_COUNT = 20;
+const LOAD_MORE_COUNT = 20;
+
 interface UsePerformanceFiltersProps {
     allPerformances: Performance[];
     initialGenre: string;
@@ -60,11 +63,11 @@ export function usePerformanceFilters({
         } catch { return Date.now(); }
     });
     const [visibleCount, setVisibleCount] = useState<number>(() => {
-        if (typeof window === 'undefined') return 24;
+        if (typeof window === 'undefined') return INITIAL_VISIBLE_COUNT;
         try {
             const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).visibleCount || 24 : 24) as number;
-        } catch { return 24; }
+            return (saved ? JSON.parse(saved).visibleCount || INITIAL_VISIBLE_COUNT : INITIAL_VISIBLE_COUNT) as number;
+        } catch { return INITIAL_VISIBLE_COUNT; }
     });
 
     const [debouncedSearchText, setDebouncedSearchText] = useState(searchText);
@@ -190,12 +193,12 @@ export function usePerformanceFilters({
         if (isInitialized.current) {
             // We should distinguish between "mounting" and "explicitly changing filters"
             // For now, let's reset to 24 if major filters change AFTER mount
-            setVisibleCount(24);
+            setVisibleCount(INITIAL_VISIBLE_COUNT);
         }
     }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, discoveryContextId]);
 
     const loadMore = useCallback(() => {
-        setVisibleCount(prev => prev + 24);
+        setVisibleCount(prev => prev + LOAD_MORE_COUNT);
     }, []);
 
     return {

@@ -113,6 +113,7 @@ jobs:
           NODE_OPTIONS: '--max-old-space-size=4096'
         run: |
           set +e
+          SCRAPER_TIMEOUT_SECONDS="${SCRAPER_TIMEOUT_SECONDS:-2700}"
           failures=()
           critical_failures=()
 
@@ -122,9 +123,13 @@ jobs:
             shift 2
 
             echo "::group::${name}"
-            "$@"
+            timeout --preserve-status "${SCRAPER_TIMEOUT_SECONDS}" "$@"
             local status=$?
             echo "::endgroup::"
+
+            if [ $status -eq 124 ] || [ $status -eq 137 ] || [ $status -eq 143 ]; then
+              echo "${name} timed out or was terminated after ${SCRAPER_TIMEOUT_SECONDS}s"
+            fi
 
             if [ $status -ne 0 ]; then
               failures+=("$name")
