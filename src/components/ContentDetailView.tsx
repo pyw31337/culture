@@ -156,6 +156,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const containerClasses = mode === 'standalone'
         ? "w-full max-w-[380px] md:max-w-[1000px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
         : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-white text-gray-900 dark:bg-[#070b14] dark:text-white rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-black/10 dark:border-white/10";
+    const hasLongDescription = Boolean(p.description && p.description.length > 150 && p.genre !== 'movie');
+    const hasMovieSynopsis = Boolean(p.genre === 'movie' && (p.synopsis || p.description));
+    const shouldShowShortDescription = Boolean(
+        p.description
+        && p.genre !== 'tourism'
+        && !hasLongDescription
+        && !hasMovieSynopsis
+    );
 
     return (
         <div 
@@ -601,14 +609,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             )}
 
                             {/* Description - Short version for all modes (Hidden for tourism to avoid redundancy) */}
-                            {p.description && p.genre !== 'tourism' && (
+                            {shouldShowShortDescription && (
                                 <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
                                     &quot;{p.description}&quot;
                                 </motion.p>
                             )}
 
                             {/* Long Description for Standalone or if quite long (Non-movie) */}
-                            {p.description && p.description.length > 150 && p.genre !== 'movie' && (
+                            {hasLongDescription && (
                                 <motion.div variants={itemVariants} className="mt-8 bg-black/5 dark:bg-white/5 rounded-2xl p-6 border border-black/5 dark:border-white/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                                         <Sparkles className="w-5 h-5 text-amber-500" />
