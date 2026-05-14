@@ -8,6 +8,7 @@ interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
     backupSrc?: string; // New prop for remote URL backup
     fallbackSrc?: string;
     optimizationWidth?: number;
+    fastDisplay?: boolean;
 }
 
 interface ImageWithFallbackInnerProps extends Omit<ImageWithFallbackProps, 'fallbackSrc' | 'optimizationWidth' | 'src'> {
@@ -21,6 +22,7 @@ function ImageWithFallbackInner({
     initialSrc,
     backupSrc,
     fallbackSrc,
+    fastDisplay = false,
     alt,
     ...props
 }: ImageWithFallbackInnerProps) {
@@ -74,7 +76,7 @@ function ImageWithFallbackInner({
                 unoptimized={isUnoptimized}
                 className={clsx(
                     props.className,
-                    "transition-opacity duration-500",
+                    fastDisplay ? "transition-opacity duration-100" : "transition-opacity duration-500",
                     isLoaded ? "opacity-100" : "opacity-0"
                 )}
                 quality={imageQuality}

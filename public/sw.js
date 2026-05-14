@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.8Nh-VZc6lndM0jAGxtqIT.dbe55b0d78d23de48f1c47abe3c614d4.js"
+  "/culture/_next/precache.3PaWBVJBL4TKXL3OPMUjj.95981970d57925c983032cd3cf71b697.js"
 );
 
 workbox.core.skipWaiting();
@@ -758,6 +758,7 @@ workbox.routing.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*
 workbox.routing.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"font-awesome", plugins: [new workbox.expiration.Plugin({ maxEntries: 1, maxAgeSeconds: 31536000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-font-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 604800, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-image-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 240, maxAgeSeconds: 604800, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute(/^https:\/\/wsrv\.nl\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"optimized-poster-images", plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 700, maxAgeSeconds: 2592000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:js)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-js-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 16, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:css|less)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-style-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 16, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/.*/i, new workbox.strategies.NetworkFirst({ "cacheName":"others","networkTimeoutSeconds":3, plugins: [new workbox.expiration.Plugin({ maxEntries: 16, maxAgeSeconds: 3600, purgeOnQuotaError: false })] }), 'GET');

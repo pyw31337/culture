@@ -88,6 +88,20 @@ const runtimeCaching: RuntimeCachingEntry[] = [
     },
   },
   {
+    urlPattern: /^https:\/\/wsrv\.nl\/.*/i,
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'optimized-poster-images',
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 700,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
     urlPattern: /\.(?:js)$/i,
     handler: 'StaleWhileRevalidate',
     options: {

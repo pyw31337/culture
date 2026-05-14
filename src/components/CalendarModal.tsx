@@ -322,9 +322,13 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                                         <ImageWithFallback
                                                             src={perf.image || perf.poster || perf.backupPoster || perf.posterUrl || ''}
                                                             backupSrc={perf.backupPoster || perf.posterUrl || perf.poster}
-                                                            optimizationWidth={80}
                                                             alt={perf.title}
                                                             fill
+                                                            optimizationWidth={72}
+                                                            quality={45}
+                                                            fastDisplay
+                                                            loading={i < 8 ? 'eager' : 'lazy'}
+                                                            fetchPriority={i < 4 ? 'high' : 'auto'}
                                                             sizes="56px"
                                                             className="object-cover rounded-lg bg-gray-100 dark:bg-gray-700"
                                                         />
