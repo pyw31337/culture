@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
 import { formatCompactKoreanDateTime } from '@/lib/build-info';
+import { getSourceLabel, getSourceOfficialUrl } from '@/lib/source-registry';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -92,6 +93,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const movieStatsReferenceLabel = p.statsCollectedAt
         ? `${formatCompactKoreanDateTime(p.statsCollectedAt)} 수집`
         : null;
+    const sourceLabel = getSourceLabel(p.source || 'unknown');
+    const sourceUrl = getSourceOfficialUrl(p.source, p.website || p.link);
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -782,7 +785,24 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                             <motion.div variants={itemVariants} className="rounded-2xl bg-gray-50/80 p-4 text-[12px] font-bold text-gray-500 border border-black/5 dark:bg-white/5 dark:text-gray-400 dark:border-white/10">
                                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                                    <span>출처: {p.source || 'unknown'}</span>
+                                    <span className="inline-flex items-center gap-1">
+                                        출처:
+                                        {sourceUrl ? (
+                                            <a
+                                                href={sourceUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={(event) => event.stopPropagation()}
+                                                className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 dark:text-emerald-300 dark:hover:text-emerald-200 transition-colors"
+                                                title={`${sourceLabel} 공식사이트 새창열기`}
+                                            >
+                                                {sourceLabel}
+                                                <ExternalLink className="h-3 w-3" />
+                                            </a>
+                                        ) : (
+                                            <span>{sourceLabel}</span>
+                                        )}
+                                    </span>
                                     {(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt) && (
                                         <span>수집/갱신: {formatCompactKoreanDateTime(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt || '')}</span>
                                     )}
