@@ -222,7 +222,10 @@ function resolveVenueEntryForPerformance(
         ? { key: cleanVenueName, venue: venues[cleanVenueName] }
         : undefined;
     const regionalMatch = findRegionalVenueMatch(performance, venues);
-    const preferredMatch = regionalMatch || exactMatch;
+    const safeRegionalMatch = regionalMatch && exactMatch && looksLikeDetailedAddress(regionalMatch.key)
+        ? undefined
+        : regionalMatch;
+    const preferredMatch = safeRegionalMatch || exactMatch;
     const fallbackRegionalKey =
         cleanVenueName && (bracketRegion || perfRegion) && (
             !exactMatch ||
@@ -233,7 +236,7 @@ function resolveVenueEntryForPerformance(
     const shouldPreferDerivedRegionalKey = !regionalMatch && Boolean(fallbackRegionalKey);
 
     return {
-        venueKey: regionalMatch?.key || (shouldPreferDerivedRegionalKey ? fallbackRegionalKey : exactMatch?.key) || cleanVenueName || 'unknown-venue',
+        venueKey: safeRegionalMatch?.key || (shouldPreferDerivedRegionalKey ? fallbackRegionalKey : exactMatch?.key) || cleanVenueName || 'unknown-venue',
         preferredVenue: preferredMatch?.venue || {},
     };
 }

@@ -94,7 +94,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         ? `${formatCompactKoreanDateTime(p.statsCollectedAt)} 수집`
         : null;
     const sourceLabel = getSourceLabel(p.source || 'unknown');
-    const sourceUrl = getSourceOfficialUrl(p.source, p.website || p.link);
+    const sourceUrl = getSourceOfficialUrl(
+        p.source,
+        p.source === 'museum' || p.source?.startsWith('mommom') ? p.link : (p.website || p.link)
+    );
     const collectedAtLabel = p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt
         ? formatCompactKoreanDateTime(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt || '')
         : null;
@@ -480,6 +483,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                                     if (p.contact) {
                                         infoItems.push({ icon: Phone, label: '문의', text: p.contact, color: 'text-emerald-400' });
+                                    }
+
+                                    if (p.reservationInfo) {
+                                        infoItems.push({ icon: Ticket, label: '예약', text: p.reservationInfo, color: 'text-orange-400' });
                                     }
 
                                     if (p.instagram) {

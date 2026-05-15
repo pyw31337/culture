@@ -268,6 +268,40 @@ function getNumericPrice(priceStr: string | undefined): number | null {
     return numeric ? parseInt(numeric, 10) : null;
 }
 
+function compactDetailText(value?: string) {
+    return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function looksLikeKoreanAddress(value?: string) {
+    const text = compactDetailText(value);
+    if (!text) return false;
+    return /^(서울특별시|서울시|부산광역시|부산시|대구광역시|대구시|인천광역시|인천시|광주광역시|광주시|대전광역시|대전시|울산광역시|울산시|세종특별자치시|세종시|경기도|강원특별자치도|강원도|충청북도|충청남도|전북특별자치도|전라북도|전라남도|경상북도|경상남도|제주특별자치도|제주도|충북|충남|전북|전남|경북|경남)\s+/.test(text);
+}
+
+function splitAddressLikeVenue(rawVenue: string, title: string) {
+    const venueText = compactDetailText(rawVenue);
+    const titleText = compactDetailText(title);
+    if (!looksLikeKoreanAddress(venueText)) return null;
+
+    if (titleText && venueText.includes(titleText)) {
+        return {
+            venue: titleText,
+            address: venueText
+        };
+    }
+
+    const tokens = venueText.split(' ').filter(Boolean);
+    const trailingName = tokens.slice(-2).join(' ');
+    if (tokens.length >= 4 && trailingName && !/[0-9]/.test(trailingName)) {
+        return {
+            venue: trailingName,
+            address: venueText
+        };
+    }
+
+    return null;
+}
+
 /**
  * Normalizes any raw performance object into a strict Performance interface.
  */
@@ -281,6 +315,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let performanceTime = raw.time || raw.performanceTime || '';
     let region = raw.region || '';
     let genre = (raw.genre as Genre) || 'activity';
+    let address = raw.address || '';
+    const addressLikeVenue = splitAddressLikeVenue(rawVenue, title);
+    if (addressLikeVenue) {
+        rawVenue = addressLikeVenue.venue;
+        address = addressLikeVenue.address;
+    }
     
     // Extract bracketed region [창원], [제주] etc.
     const titleMatch = title.match(/\[([가-힣]+)\]/);
@@ -334,6 +374,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let facilities = raw.facilities || '';
     let closedDays = raw.closedDays || '';
     let contact = raw.contact || '';
+    let reservationInfo = raw.reservationInfo || '';
     let openRun = raw.openRun;
     let performanceState = raw.performanceState || raw.state || raw.prfstate || '';
     let lastModifiedAt = raw.lastModifiedAt || raw.updatedAt || '';
@@ -477,6 +518,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         link: raw.link || raw.website || '',
         image: image,
         venue: venue.trim(),
+        address,
         date: formatUnifiedDate(date),
         region: mappedRegion,
         genre,
@@ -533,6 +575,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         facilities,
         closedDays,
         contact,
+        reservationInfo,
         statsCollectedAt,
         openRun,
         performanceState,

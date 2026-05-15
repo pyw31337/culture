@@ -24,15 +24,177 @@ interface MuseumItem {
     description: string;
     usageStat: string;
     link: string;
-    address: string;
+    address?: string;
     genre: string;
     hours?: string;
     website?: string;
     parking?: string;
     parkingFee?: string;
     fees?: string;
+    price?: string;
+    priceDetail?: string;
+    operatingHours?: string;
+    closedDays?: string;
+    contact?: string;
+    reservationInfo?: string;
+    feesAndPrograms?: string;
+    targetAudience?: string;
+    sourceUpdatedAt?: string;
+    tips?: string;
+    longDescription?: string;
     facilities?: string;
+    venue?: string;
+    lat?: number;
+    lng?: number;
 }
+
+function normalizeDetailText(text: string): string {
+    return text.replace(/\s+/g, ' ').trim();
+}
+
+const MUSEUM_DETAIL_EXTRACTOR = String.raw`
+const results = {};
+
+function compact(value) {
+    return (value || '').replace(/\s+/g, ' ').trim();
+}
+
+function valueText(element) {
+    if (!element) return '';
+    const clone = element.cloneNode(true);
+    clone.querySelectorAll('button, script, style, img').forEach(function (node) {
+        node.remove();
+    });
+    return compact(clone.textContent);
+}
+
+document.querySelectorAll('section > ul > li').forEach(function (row) {
+    const key = compact(row.querySelector('p.key, p.label') && row.querySelector('p.key, p.label').textContent);
+    if (!key) return;
+
+    const valueEl = row.querySelector('p.value, div.value');
+    let value = valueText(valueEl);
+
+    if (key.indexOf('영업시간') >= 0) {
+        const rows = Array.from(row.querySelectorAll('tr'))
+            .map(function (tr) {
+                const dayNode = tr.querySelector('th, .day');
+                const timeNode = tr.querySelector('td');
+                const day = compact(dayNode && dayNode.textContent);
+                const time = compact(timeNode && timeNode.textContent);
+                return [day, time].filter(Boolean).join(' ');
+            })
+            .filter(Boolean);
+        value = rows.length > 0 ? rows.join(', ') : value;
+    }
+
+    if (key.indexOf('주소') >= 0) results.address = value;
+    if (key.indexOf('전화') >= 0) results.contact = value;
+    if (key.indexOf('영업시간') >= 0) results.operatingHours = value;
+    if (key.indexOf('시설') >= 0) results.facilities = value;
+    if (key.indexOf('예약') >= 0) results.reservationInfo = value;
+});
+
+const webBtn = document.querySelector('div.reservation-buttons > a[href^="http"]');
+if (webBtn) results.website = webBtn.href;
+
+const fullText = compact(document.body.textContent);
+const updatedMatch = fullText.match(/(\d{4}\.\d{2}\.\d{2})\s*업데이트/);
+if (updatedMatch) results.sourceUpdatedAt = updatedMatch[1];
+
+const feesSection = Array.from(document.querySelectorAll('section')).find(function (section) {
+    const text = compact(section.textContent);
+    const headingNode = section.querySelector('h2');
+    const heading = compact(headingNode && headingNode.textContent);
+    return heading.indexOf('요금') >= 0 || (text.indexOf('[요금]') >= 0 && text.indexOf('[이용안내]') >= 0);
+});
+
+if (feesSection) {
+    const lines = Array.from(feesSection.querySelectorAll('li'))
+        .map(function (li) { return compact(li.textContent); })
+        .filter(Boolean)
+        .map(function (line) { return /^\[[^\]]+\]$/.test(line) ? line : '- ' + line; });
+    results.feesAndPrograms = lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    results.fees = results.feesAndPrograms;
+
+    const feeLines = [];
+    let inFeeBlock = false;
+    lines.forEach(function (line) {
+        if (line === '[요금]') {
+            inFeeBlock = true;
+            return;
+        }
+        if (/^\[[^\]]+\]$/.test(line)) {
+            inFeeBlock = false;
+            return;
+        }
+        if (inFeeBlock) feeLines.push(line.replace(/^-\s*/, ''));
+    });
+
+    if (feeLines.length > 0) {
+        results.priceDetail = feeLines.join('\n');
+        const admissionLine = feeLines.find(function (line) { return /관람료|입장료|입장/.test(line); }) || feeLines[0];
+        const priceMatch = admissionLine.match(/([0-9][0-9,]*\s*원)/);
+        if (/무료/.test(admissionLine)) results.price = '무료';
+        else if (priceMatch) results.price = priceMatch[1].replace(/\s+/g, '');
+    }
+}
+
+const tipsSection = Array.from(document.querySelectorAll('section')).find(function (section) {
+    return compact(section.textContent).indexOf('세상 유용한 꿀팁') >= 0;
+});
+if (tipsSection) {
+    const tips = Array.from(tipsSection.querySelectorAll('li'))
+        .map(function (li) { return compact(li.textContent); })
+        .filter(Boolean);
+    if (tips.length > 0) {
+        results.tips = tips.map(function (tip) { return '- ' + tip; }).join('\n');
+    }
+}
+
+const articleSection = Array.from(document.querySelectorAll('section')).find(function (section) {
+    const text = compact(section.textContent);
+    return text.indexOf(itemTitle) >= 0 && section.querySelector('h3') && text.length > 160;
+});
+if (articleSection) {
+    const parts = Array.from(articleSection.querySelectorAll('h3, p'))
+        .map(function (node) {
+            const text = compact(node.textContent);
+            if (!text) return '';
+            return node.tagName === 'H3' ? '\n' + text : text;
+        })
+        .filter(Boolean);
+    if (parts.length > 0) {
+        results.longDescription = parts.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    }
+}
+
+const closedDayMatches = (results.operatingHours || '').match(/[가-힣]+요일\s*정기휴무/g);
+if (closedDayMatches) results.closedDays = closedDayMatches.join(', ');
+
+const localBusiness = Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+    .map(function (script) { return script.textContent || ''; })
+    .find(function (text) { return text.indexOf('LocalBusiness') >= 0 && text.indexOf('GeoCoordinates') >= 0; });
+if (localBusiness) {
+    try {
+        const parsed = JSON.parse(localBusiness);
+        if (parsed && parsed.geo && parsed.geo.latitude && parsed.geo.longitude) {
+            results.lat = Number(parsed.geo.latitude);
+            results.lng = Number(parsed.geo.longitude);
+        }
+    } catch (error) {
+        // Ignore malformed JSON-LD. The visible page fields above are enough.
+    }
+}
+
+return results;
+`;
+
+const runBrowserDetailExtractor = new Function(
+    'script',
+    'itemTitle',
+    'return new Function("itemTitle", script)(itemTitle);'
+) as (script: string, itemTitle: string) => Partial<MuseumItem>;
 
 async function scrapeMuseum() {
     console.log('Starting Museum/Experience Scraper...');
@@ -155,58 +317,38 @@ async function scrapeMuseum() {
                 // Block images/fonts/css to speed up
                 await detailPage.setRequestInterception(true);
                 detailPage.on('request', (req) => {
-                    if (['image', 'stylesheet', 'font'].includes(req.resourceType())) {
+                    if (['image', 'font'].includes(req.resourceType())) {
                         req.abort();
                     } else {
                         req.continue();
                     }
                 });
 
-                let address = '';
+                let detailData: Partial<MuseumItem> = {};
                 try {
-                    await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                    await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 60000 });
 
                     // Selector: body > div.container > main > div:nth-child(1) > article > div.main-container > section > ul > li:nth-child(1) > p.value
                     // Try generic "li > p.label" contains "주소"? Or just the specific path provided.
-                    address = await detailPage.evaluate(() => {
-                        const results: any = {};
-                        const labels = document.querySelectorAll('section > ul > li > p.label');
-                        
-                        labels.forEach(label => {
-                            const key = label.textContent?.trim() || '';
-                            const valueEl = label.parentElement?.querySelector('p.value, div.value');
-                            const value = valueEl?.textContent?.trim() || '';
-
-                            if (key.includes('주소')) results.address = value;
-                            if (key.includes('전화')) results.contact = value;
-                            if (key.includes('영업시간')) results.hours = value;
-                            if (key.includes('시설')) results.facilities = value;
-                        });
-
-                        // Website
-                        const webBtn = document.querySelector('div.reservation-buttons > a');
-                        if (webBtn) results.website = (webBtn as HTMLAnchorElement).href;
-
-                        // Fees
-                        const feesSection = Array.from(document.querySelectorAll('section')).find(s => s.textContent?.includes('요금'));
-                        if (feesSection) {
-                            results.fees = feesSection.querySelector('ul')?.textContent?.trim() || '';
-                        }
-
-                        return results;
-                    });
+                    detailData = await detailPage.evaluate(runBrowserDetailExtractor, MUSEUM_DETAIL_EXTRACTOR, item.title);
                 } catch (e) {
                     console.error(`Failed to scrape details for ${item.title}:`, e);
                 } finally {
-                    await detailPage.close();
+                    await detailPage.close().catch(() => undefined);
                 }
 
                 const id = `museum_${slugify(item.title)}`;
+                const richDescription = [detailData.longDescription, detailData.tips]
+                    .filter((value) => typeof value === 'string' && normalizeDetailText(value).length > 0)
+                    .join('\n\n');
 
                 finalItems.push({
                     id,
                     ...item,
-                    ...(typeof address === 'string' ? { address } : address),
+                    ...detailData,
+                    venue: item.title,
+                    description: richDescription || item.description,
+                    targetAudience: item.usageStat || detailData.targetAudience,
                     genre: 'museum'
                 });
 

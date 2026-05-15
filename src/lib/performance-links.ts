@@ -1,7 +1,7 @@
 import type { Performance } from '@/types';
 import { toMobileUrl } from '@/lib/utils';
 
-const MOMMOM_SOURCES = new Set(['mommom', 'mommom-activity', 'mommom-product']);
+const MOMMOM_SOURCES = new Set(['mommom', 'mommom-activity', 'mommom-product', 'museum']);
 
 function buildNaverSearchUrl(query: string): string {
     return `https://search.naver.com/search.naver?query=${encodeURIComponent(query)}`;

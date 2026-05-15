@@ -1,16 +1,126 @@
 {
-  "checkedAt": "2026-05-15T07:05:32.754Z",
+  "checkedAt": "2026-05-15T10:15:58.960Z",
   "status": "warn",
-  "venueCount": 2908,
+  "venueCount": 2996,
   "matchedCount": 1833,
   "highConfidenceMatchCount": 1376,
   "needsReviewCount": 20,
   "notFoundCount": 289,
-  "pendingLookupCount": 109,
+  "pendingLookupCount": 376,
   "insufficientIdentityCount": 109,
   "lookupReady": false,
   "providersConfigured": [],
   "queue": [
+    {
+      "venueId": "venue_모토아레나패독_1jkp7ke",
+      "officialName": "모토아레나 패독",
+      "address": "충북 증평군 벨포레리조트 모토아레나 패독",
+      "query": "모토아레나 패독 충북 증평군",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "BELLEFORET WEEK - MY VOLUME"
+      ]
+    },
+    {
+      "venueId": "venue_앞계단_jj86vc",
+      "officialName": "앞 계단",
+      "address": "서울특별시 종로구 사직로 161 경복궁 바라보고 왼쪽의 국립고궁박물관 정문 앞 계단",
+      "query": "앞 계단 서울 종로구",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "역사랑 친구 되는 경복궁 미션 투어"
+      ]
+    },
+    {
+      "venueId": "venue_오른쪽벤치_amuv6r",
+      "officialName": "오른쪽 벤치)",
+      "address": "서울특별시 중구 세종대로 99 덕수궁 (덕수궁 입장 후 오른쪽 벤치)",
+      "query": "오른쪽 벤치) 서울 중구",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "가족이 함께 걸어요, 달빛궁궐 덕수궁"
+      ]
+    },
+    {
+      "venueId": "venue_국립생물자원관_1pl4egx",
+      "officialName": "국립생물자원관",
+      "address": "인천 서구 환경로 42 국립생물자원관",
+      "query": "국립생물자원관 인천 서구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립생물자원관"
+      ]
+    },
+    {
+      "venueId": "venue_정읍시립박물관_1fibh3r",
+      "officialName": "정읍시립박물관",
+      "address": "전북특별자치도 정읍시 내장산로 370-12 정읍시립박물관 정읍시립박물관",
+      "query": "정읍시립박물관 전북 정읍시",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "정읍시립박물관"
+      ]
+    },
+    {
+      "venueId": "venue_kbs_i4a5ce",
+      "officialName": "KBS",
+      "address": "서울 영등포구 여의공원로 13",
+      "query": "KBS 서울 영등포구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "꼬마마법사 레미 공식 오케스트라 콘서트",
+        "제4회 덴탈필하모닉오케스트라 정기연주회",
+        "홍정희오페라단 COREA Arirang 세계를 울리다"
+      ]
+    },
+    {
+      "venueId": "venue_천마아트센터그랜드_1kahod3",
+      "officialName": "천마아트센터 그랜드",
+      "address": "경북 경산시 대학로 280",
+      "query": "천마아트센터 그랜드 경북 경산시",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "환희 X 최수호 전국투어 콘서트: FLY WITH",
+        "멜로우TV: Run it up, 팀 나빠",
+        "알파블록스"
+      ]
+    },
     {
       "venueId": "venue_강원특별자치도횡성군횡성읍문예로41횡성한우체험관_1q828jb",
       "officialName": "강원특별자치도 횡성군 횡성읍 문예로 41 횡성한우체험관",
@@ -28,6 +138,21 @@
       ]
     },
     {
+      "venueId": "venue_김녕요트투어_pnyusj",
+      "officialName": "김녕요트투어",
+      "address": "제주 제주시 구좌읍 구좌해안로 229-16",
+      "query": "김녕요트투어 제주 제주시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "김녕요트투어_대인",
+        "김녕요트투어_소인"
+      ]
+    },
+    {
       "venueId": "venue_부산광역시동구범일동망양로978패션비즈센터_6gho4m",
       "officialName": "부산광역시 동구 범일동 망양로 978 패션비즈센터",
       "address": "부산광역시 동구 이순신대로 164 (초량동)",
@@ -41,6 +166,119 @@
       "sampleTitles": [
         "부산세계시민축제",
         "부산항축제"
+      ]
+    },
+    {
+      "venueId": "venue_서울종로구_xzcys9",
+      "officialName": "서울 종로구",
+      "address": "서울 종로구 사직로 161",
+      "query": "서울 종로구 서울 종로구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "전문 숲해설가와 함께하는 숲도슨트",
+        "DIY, 내 손으로 만드는 나만의 월급 포트폴리오_재테크 원데이클래스"
+      ]
+    },
+    {
+      "venueId": "venue_3d과학체험관_1y3qlzt",
+      "officialName": "3D과학체험관",
+      "address": "경상남도 양산시 웅상대로 1009-1 3D과학체험관",
+      "query": "3D과학체험관 경남 양산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "3D과학체험관"
+      ]
+    },
+    {
+      "venueId": "venue_dmz생생누리_1l9pd0b",
+      "officialName": "DMZ 생생누리",
+      "address": "경기도 파주시 문산읍 임진각로 148-57 한반도 생태평화 종합 관광센터",
+      "query": "DMZ 생생누리 경기 파주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "DMZ 생생누리"
+      ]
+    },
+    {
+      "venueId": "venue_im뱅크금융박물관_moq8a5",
+      "officialName": "IM뱅크 금융박물관",
+      "address": "대구광역시 수성구 달구벌대로 2310 대구은행본점",
+      "query": "IM뱅크 금융박물관 대구 수성구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "IM뱅크 금융박물관"
+      ]
+    },
+    {
+      "venueId": "venue_가천이길여산부인과기념관_12w4ij6",
+      "officialName": "가천이길여산부인과기념관",
+      "address": "인천광역시 중구 우현로90번길 19-4 가천이길여산부인과기념관",
+      "query": "가천이길여산부인과기념관 인천 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "가천이길여산부인과기념관"
+      ]
+    },
+    {
+      "venueId": "venue_강서_82qsyu",
+      "officialName": "강서",
+      "address": "서울 강서구 마곡동로 161",
+      "query": "강서 서울 강서구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "살면서 노래 한번은 잘 해봐야죠?"
+      ]
+    },
+    {
+      "venueId": "venue_강원경찰박물관_3ap95j",
+      "officialName": "강원경찰박물관",
+      "address": "강원특별자치도 춘천시 신북읍 신샘밭로 361 강원경찰박물관 강원경찰박물관",
+      "query": "강원경찰박물관 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "강원경찰박물관"
+      ]
+    },
+    {
+      "venueId": "venue_강원도산림박물관_1bgvnix",
+      "officialName": "강원도산림박물관",
+      "address": "강원특별자치도 춘천시 사농동 643 강원도산림박물관",
+      "query": "강원도산림박물관 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "강원도산림박물관"
       ]
     },
     {
@@ -103,14 +341,13 @@
       ]
     },
     {
-      "venueId": "venue_강원특별자치도춘천시신북읍신샘밭로361강원경찰박물관강원경찰박_1hqf3i4",
-      "officialName": "강원특별자치도 춘천시 신북읍 신샘밭로 361 강원경찰박물관 강원경찰박물관",
+      "venueId": "venue_강원특별자치도춘천시_1hqf3i4",
+      "officialName": "강원특별자치도 춘천시",
       "address": "강원특별자치도 춘천시 춘천로 112 (효자동) 축제극장몸짓",
-      "query": "강원특별자치도 춘천시 신북읍 신샘밭로 361 강원경찰박물관 강원경찰박물관 강원 춘천시",
+      "query": "강원특별자치도 춘천시 강원 춘천시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -172,6 +409,76 @@
       ],
       "sampleTitles": [
         "횡성호수길축제"
+      ]
+    },
+    {
+      "venueId": "venue_강화농경문화관_1sv927f",
+      "officialName": "강화농경문화관",
+      "address": "인천광역시 강화군 불은면 중앙로 742-2 강화군농업기술센터(아르미애월드) 강화농경문화관",
+      "query": "강화농경문화관 인천 강화군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "강화농경문화관"
+      ]
+    },
+    {
+      "venueId": "venue_강화문학관_1e4u6u5",
+      "officialName": "강화문학관",
+      "address": "인천광역시 강화군 강화읍 관청길 40 강화문학관 강화문학관",
+      "query": "강화문학관 인천 강화군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "강화문학관"
+      ]
+    },
+    {
+      "venueId": "venue_거꾸로옛이야기나라숲_5jkw7j",
+      "officialName": "거꾸로옛이야기나라숲",
+      "address": "경상북도 상주시 화북면 우복동길 63-23 거꾸로 옛이야기나라숲",
+      "query": "거꾸로옛이야기나라숲 경북 상주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "거꾸로옛이야기나라숲"
+      ]
+    },
+    {
+      "venueId": "venue_거제씨월드_ljsgoq",
+      "officialName": "거제씨월드",
+      "address": "경상남도 거제시 일운면 지세포해안로 15 거제씨월드 거제씨월드",
+      "query": "거제씨월드 경남 거제시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "거제씨월드"
+      ]
+    },
+    {
+      "venueId": "venue_검단선사박물관_1s15jpx",
+      "officialName": "검단선사박물관",
+      "address": "인천광역시 서구 고산후로121번길 7 인천광역시 검단선사박물관",
+      "query": "검단선사박물관 인천 서구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "검단선사박물관"
       ]
     },
     {
@@ -275,14 +582,13 @@
       ]
     },
     {
-      "venueId": "venue_경기도포천시소흘읍송우로751층106호어모릭스공방_o9ljga",
-      "officialName": "경기도 포천시 소흘읍 송우로 75 1층 106호 어모릭스공방",
+      "venueId": "venue_경기도포천시_o9ljga",
+      "officialName": "경기도 포천시",
       "address": "경기도 포천시 관인면 창동로 832 포천 한탄강 생태경관단지",
-      "query": "경기도 포천시 소흘읍 송우로 75 1층 106호 어모릭스공방 경기 포천시",
+      "query": "경기도 포천시 경기 포천시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -332,14 +638,83 @@
       ]
     },
     {
-      "venueId": "venue_경상남도사천시사남면공단1로78_56hfdc",
-      "officialName": "경상남도 사천시 사남면 공단1로 78",
-      "address": "경상남도 사천시 사천읍 정의리 중선리 1-1, 사천비행장 일원",
-      "query": "경상남도 사천시 사남면 공단1로 78 경남 사천시",
+      "venueId": "venue_경기도교육청학생건강증진센터_17nn7s4",
+      "officialName": "경기도교육청 학생건강증진센터",
+      "address": "경기도 의정부시 호국로 1287 3층",
+      "query": "경기도교육청 학생건강증진센터 경기 의정부시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경기도교육청 학생건강증진센터"
+      ]
+    },
+    {
+      "venueId": "venue_경기도어린이식품안전체험관이천센터_1356jqf",
+      "officialName": "경기도어린이식품안전체험관 이천센터",
+      "address": "경기도 이천시 호법면 중부대로798번길 126 환경학습관 2층",
+      "query": "경기도어린이식품안전체험관 이천센터 경기 이천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경기도어린이식품안전체험관 이천센터"
+      ]
+    },
+    {
+      "venueId": "venue_경남도립미술관_1wcippa",
+      "officialName": "경남도립미술관",
+      "address": "경상남도 창원시 의창구 용지로 296 경남도립미술관",
+      "query": "경남도립미술관 경남 창원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경남도립미술관"
+      ]
+    },
+    {
+      "venueId": "venue_경산수학체험센터_6rkmlf",
+      "officialName": "경산수학체험센터",
+      "address": "경상북도 경산시 삼성현로 110 경상북도교육청 남부미래교육관",
+      "query": "경산수학체험센터 경북 경산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경산수학체험센터"
+      ]
+    },
+    {
+      "venueId": "venue_경산시립박물관_1u0xco8",
+      "officialName": "경산시립박물관",
+      "address": "경상북도 경산시 박물관로 46,경산시립박물관",
+      "query": "경산시립박물관 경북 경산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경산시립박물관"
+      ]
+    },
+    {
+      "venueId": "venue_경상남도사천시_56hfdc",
+      "officialName": "경상남도 사천시",
+      "address": "경상남도 사천시 사천읍 정의리 중선리 1-1, 사천비행장 일원",
+      "query": "경상남도 사천시 경남 사천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -362,14 +737,13 @@
       ]
     },
     {
-      "venueId": "venue_경상남도통영시정량동_vozlyx",
-      "officialName": "경상남도 통영시 정량동",
+      "venueId": "venue_경상남도통영시_vozlyx",
+      "officialName": "경상남도 통영시",
       "address": "경상남도 통영시 통영해안로 267 (항남동) 통영한산대첩광장",
-      "query": "경상남도 통영시 정량동 경남 통영시",
+      "query": "경상남도 통영시 경남 통영시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -389,6 +763,35 @@
       ],
       "sampleTitles": [
         "함양산삼축제"
+      ]
+    },
+    {
+      "venueId": "venue_경상남도교육청과학교육원진성과학관_eij5xb",
+      "officialName": "경상남도교육청 과학교육원 진성과학관",
+      "address": "경상남도 진주시 진성면 진의로 178-35 경남과학교육원",
+      "query": "경상남도교육청 과학교육원 진성과학관 경남 진주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경상남도교육청 과학교육원(진성과학관)"
+      ]
+    },
+    {
+      "venueId": "venue_경상남도교육청미래교육원_1wccye3",
+      "officialName": "경상남도교육청 미래교육원",
+      "address": "경상남도 의령군 의령읍 의병로8길 12-33 경상남도교육청 미래교육원",
+      "query": "경상남도교육청 미래교육원 경남 의령군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경상남도교육청 미래교육원"
       ]
     },
     {
@@ -422,14 +825,13 @@
       ]
     },
     {
-      "venueId": "venue_경상북도경주시황성동황성로353_mzoe2d",
-      "officialName": "경상북도 경주시 황성동 황성로 35-3",
+      "venueId": "venue_경상북도경주시_mzoe2d",
+      "officialName": "경상북도 경주시",
       "address": "경상북도 경주시 노동동 261",
-      "query": "경상북도 경주시 황성동 황성로 35-3 경북 경주시",
+      "query": "경상북도 경주시 경북 경주시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -437,14 +839,13 @@
       ]
     },
     {
-      "venueId": "venue_경상북도구미시형곡2동2453_12khm02",
-      "officialName": "경상북도 구미시 형곡2동 245-3",
+      "venueId": "venue_경상북도구미시_12khm02",
+      "officialName": "경상북도 구미시",
       "address": "경상북도 구미시 송정동 505",
-      "query": "경상북도 구미시 형곡2동 245-3 경북 구미시",
+      "query": "경상북도 구미시 경북 구미시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -452,14 +853,13 @@
       ]
     },
     {
-      "venueId": "venue_경상북도구미시형곡2동2453_1gh9h0l",
-      "officialName": "경상북도 구미시 형곡2동 245-3",
+      "venueId": "venue_경상북도구미시_1gh9h0l",
+      "officialName": "경상북도 구미시",
       "address": "경상북도 구미시 원평동 124-23 구미역 일원",
-      "query": "경상북도 구미시 형곡2동 245-3 경북 구미시",
+      "query": "경상북도 구미시 경북 구미시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -510,14 +910,13 @@
       ]
     },
     {
-      "venueId": "venue_경상북도안동시서동문로203전통문화콘텐츠박물관안동문화원_1o3v8u6",
-      "officialName": "경상북도 안동시 서동문로 203 전통문화콘텐츠박물관,안동문화원",
+      "venueId": "venue_경상북도안동시_1o3v8u6",
+      "officialName": "경상북도 안동시",
       "address": "경상북도 안동시 풍천면 하회종가길 2-1",
-      "query": "경상북도 안동시 서동문로 203 전통문화콘텐츠박물관,안동문화원 경북 안동시",
+      "query": "경상북도 안동시 경북 안동시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -525,14 +924,13 @@
       ]
     },
     {
-      "venueId": "venue_경상북도안동시서동문로203전통문화콘텐츠박물관안동문화원_10mecsu",
-      "officialName": "경상북도 안동시 서동문로 203 전통문화콘텐츠박물관,안동문화원",
+      "venueId": "venue_경상북도안동시_10mecsu",
+      "officialName": "경상북도 안동시",
       "address": "경상북도 안동시 육사로 239 (운흥동)",
-      "query": "경상북도 안동시 서동문로 203 전통문화콘텐츠박물관,안동문화원 경북 안동시",
+      "query": "경상북도 안동시 경북 안동시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -540,14 +938,13 @@
       ]
     },
     {
-      "venueId": "venue_경상북도영주시부석면영부로23콩과학관_19wm1uj",
-      "officialName": "경상북도 영주시 부석면 영부로 23 콩과학관",
+      "venueId": "venue_경상북도영주시_19wm1uj",
+      "officialName": "경상북도 영주시",
       "address": "경상북도 영주시 풍기읍 성내리 240-1",
-      "query": "경상북도 영주시 부석면 영부로 23 콩과학관 경북 영주시",
+      "query": "경상북도 영주시 경북 영주시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
@@ -585,10 +982,66 @@
       ]
     },
     {
-      "venueId": "venue_경상북도포항시북구흥해읍영일만항로962층잭서프_i07eyk",
-      "officialName": "경상북도 포항시 북구 흥해읍 영일만항로 96 2층 잭서프",
+      "venueId": "venue_경상북도포항시_i07eyk",
+      "officialName": "경상북도 포항시",
       "address": "경상북도 포항시 북구 해안로 48 (항구동) 영일대 해수욕장 외 포항시 일원",
-      "query": "경상북도 포항시 북구 흥해읍 영일만항로 96 2층 잭서프 경북 포항시",
+      "query": "경상북도 포항시 경북 포항시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "포항국제불빛축제"
+      ]
+    },
+    {
+      "venueId": "venue_경상북도교육청메이커교육관맹글마루_g4mx1y",
+      "officialName": "경상북도교육청 메이커교육관 맹글마루",
+      "address": "경상북도 구미시 박정희로 155",
+      "query": "경상북도교육청 메이커교육관 맹글마루 경북 구미시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경상북도교육청 메이커교육관 맹글마루"
+      ]
+    },
+    {
+      "venueId": "venue_경상북도교육청발명체험교육관_15fpag3",
+      "officialName": "경상북도교육청 발명체험교육관",
+      "address": "경상북도 경주시 첨성로 97",
+      "query": "경상북도교육청 발명체험교육관 경북 경주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경상북도교육청 발명체험교육관"
+      ]
+    },
+    {
+      "venueId": "venue_경상북도교육청과학원_8m5qr4",
+      "officialName": "경상북도교육청과학원",
+      "address": "경상북도 포항시 북구 우미길 93 경북과학고등학교,경상북도교육청과학원",
+      "query": "경상북도교육청과학원 경북 포항시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "경상북도교육청과학원"
+      ]
+    },
+    {
+      "venueId": "venue_경주예술의전당알천미술관_korwxb",
+      "officialName": "경주예술의전당 알천미술관",
+      "address": "경북 경주예술의전당 알천미술관",
+      "query": "경주예술의전당 알천미술관 경북 경주예술의전당",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -596,7 +1049,179 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "포항국제불빛축제"
+        "NEW! The경주; 경주연대기"
+      ]
+    },
+    {
+      "venueId": "venue_계룡시청소년별마루센터_zwcpnd",
+      "officialName": "계룡시 청소년 별마루센터",
+      "address": "충청남도 계룡시 신도안면 송정길 174 계룡시청소년수련관",
+      "query": "계룡시 청소년 별마루센터 충청남도 계룡시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "계룡시 청소년 별마루센터"
+      ]
+    },
+    {
+      "venueId": "venue_고구려천문과학관충주고구려천문과학관_1mm5lmv",
+      "officialName": "고구려천문과학관 충주고구려천문과학관",
+      "address": "충청북도 충주시 중앙탑면 묘곡내동길 100 고구려천문과학관 충주고구려천문과학관",
+      "query": "고구려천문과학관 충주고구려천문과학관 충청북도 충주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "충주고구려천문과학관"
+      ]
+    },
+    {
+      "venueId": "venue_고궁박물관_1dta7y9",
+      "officialName": "고궁박물관",
+      "address": "서울특별시 종로구 효자로 12 국립고궁박물관",
+      "query": "고궁박물관 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립고궁박물관"
+      ]
+    },
+    {
+      "venueId": "venue_고려청자박물관디지털박물관_1qrxozq",
+      "officialName": "고려청자박물관디지털박물관",
+      "address": "전라남도 강진군 대구면 청자촌길 45 도예문화원",
+      "query": "고려청자박물관디지털박물관 전남 강진군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고려청자박물관디지털박물관"
+      ]
+    },
+    {
+      "venueId": "venue_고성다이노플레이센터_zflf93",
+      "officialName": "고성다이노플레이센터",
+      "address": "경상남도 고성군 하이면 월흥7길 76-7 고성다이노플레이센터",
+      "query": "고성다이노플레이센터 경남 고성군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고성다이노플레이센터"
+      ]
+    },
+    {
+      "venueId": "venue_고성생태학습관_p35t6d",
+      "officialName": "고성생태학습관",
+      "address": "경상남도 고성군 고성읍 동해로 115",
+      "query": "고성생태학습관 경남 고성군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고성생태학습관"
+      ]
+    },
+    {
+      "venueId": "venue_고창고인돌박물관_1qdv4vi",
+      "officialName": "고창고인돌박물관",
+      "address": "전라북도 고창군 고창읍 고인돌공원길 74 고인돌박물관",
+      "query": "고창고인돌박물관 전북 고창군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고창고인돌박물관"
+      ]
+    },
+    {
+      "venueId": "venue_공주독립운동기념관_zrn3ay",
+      "officialName": "공주독립운동기념관",
+      "address": "충청남도 공주시 중동 258-9 공주독립운동기념관",
+      "query": "공주독립운동기념관 충청남도 공주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "공주독립운동기념관"
+      ]
+    },
+    {
+      "venueId": "venue_광명시어린이교통공원_1k7t1rc",
+      "officialName": "광명시 어린이교통공원",
+      "address": "경기도 광명시 금하로 486 광명시어린이교통공원",
+      "query": "광명시 어린이교통공원 경기 광명시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광명시 어린이교통공원"
+      ]
+    },
+    {
+      "venueId": "venue_광명시자원회수시설홍보관_1wnvpy6",
+      "officialName": "광명시자원회수시설 홍보관",
+      "address": "경기도 광명시 가학로85번길 142 광명자원회수시설 1층 홍보관",
+      "query": "광명시자원회수시설 홍보관 경기 광명시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광명시자원회수시설 홍보관"
+      ]
+    },
+    {
+      "venueId": "venue_광양목재문화체험장_32a3m2",
+      "officialName": "광양목재문화체험장",
+      "address": "전라남도 광양시 옥룡면 추산리 991-3 광양목재문화체험장",
+      "query": "광양목재문화체험장 전남 광양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광양목재문화체험장"
+      ]
+    },
+    {
+      "venueId": "venue_광주솔로몬로파크_1b1r9fs",
+      "officialName": "광주 솔로몬로파크",
+      "address": "광주광역시 북구 오문로 244 광주솔로몬로파크",
+      "query": "광주 솔로몬로파크 광주 북구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "광주 솔로몬로파크"
       ]
     },
     {
@@ -645,10 +1270,178 @@
       ]
     },
     {
-      "venueId": "venue_대구광역시달서구신당동182172층_izremw",
-      "officialName": "대구광역시 달서구 신당동 1821-7 2층",
-      "address": "대구광역시 달서구 이곡동 1306-6",
-      "query": "대구광역시 달서구 신당동 1821-7 2층 대구 달서구",
+      "venueId": "venue_괴강토종어류체험관_14dh0gy",
+      "officialName": "괴강토종어류체험관",
+      "address": "충청북도 괴산군 괴산읍 쏘가리2길 31 괴강토종어류체험관",
+      "query": "괴강토종어류체험관 충청북도 괴산군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "괴강토종어류체험관"
+      ]
+    },
+    {
+      "venueId": "venue_구리시안전체험관_lastbz",
+      "officialName": "구리시안전체험관",
+      "address": "경기도 구리시 왕숙천로 49 구리자원회수시설",
+      "query": "구리시안전체험관 경기 구리시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구리시안전체험관"
+      ]
+    },
+    {
+      "venueId": "venue_구미과학관_1jrnnoh",
+      "officialName": "구미과학관",
+      "address": "경상북도 구미시 3공단1로 219-1 구미과학관",
+      "query": "구미과학관 경북 구미시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구미과학관"
+      ]
+    },
+    {
+      "venueId": "venue_구미어린이과학체험관_1erzmiz",
+      "officialName": "구미어린이과학체험관",
+      "address": "경상북도 구미시 옥계북로 51 양포도서관 3층 구미어린이과학체험관",
+      "query": "구미어린이과학체험관 경북 구미시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구미어린이과학체험관"
+      ]
+    },
+    {
+      "venueId": "venue_구하우스미술관_1b30ynk",
+      "officialName": "구하우스 미술관",
+      "address": "경기도 양평군 서종면 무내미길 49-12 미술관",
+      "query": "구하우스 미술관 경기 양평군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "구하우스 미술관"
+      ]
+    },
+    {
+      "venueId": "venue_국립강원전문과학관_1ep8jbj",
+      "officialName": "국립강원전문과학관",
+      "address": "강원특별자치도 원주시 북원로 2790 국립강원전문과학관",
+      "query": "국립강원전문과학관 강원 원주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립강원전문과학관"
+      ]
+    },
+    {
+      "venueId": "venue_국립공원공단국립공원야생생물보전원남부보전센터_zsa9hr",
+      "officialName": "국립공원공단 국립공원야생생물보전원 남부보전센터",
+      "address": "전라남도 구례군 마산면 화엄사로 402-31 국립공원공단 국립공원야생생물보전원 남부보전센터",
+      "query": "국립공원공단 국립공원야생생물보전원 남부보전센터 전남 구례군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립공원공단 국립공원야생생물보전원 남부보전센터"
+      ]
+    },
+    {
+      "venueId": "venue_국립공주박물관_1ejymmf",
+      "officialName": "국립공주박물관",
+      "address": "충청남도 공주시 관광단지길 34 국립공주박물관",
+      "query": "국립공주박물관 충청남도 공주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립공주박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립극장공연예술박물관_9x5tv2",
+      "officialName": "국립극장공연예술박물관",
+      "address": "서울특별시 중구 장충단로 59 국립극장",
+      "query": "국립극장공연예술박물관 서울 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립극장공연예술박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립김해박물관_g90omv",
+      "officialName": "국립김해박물관",
+      "address": "경상남도 김해시 가야의길 190 국립김해박물관",
+      "query": "국립김해박물관 경남 김해시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립김해박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립대구기상과학관_s4592d",
+      "officialName": "국립대구기상과학관",
+      "address": "대구광역시 동구 효동로2길 10 대구지방기상청",
+      "query": "국립대구기상과학관 대구 동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립대구기상과학관"
+      ]
+    },
+    {
+      "venueId": "venue_국립무형유산원디지털체험관_fa9ytz",
+      "officialName": "국립무형유산원 디지털체험관",
+      "address": "전북특별자치도 전주시 완산구 서학로 95 국립무형유산원 국립무형유산원 꿈나래터 디지털체험관",
+      "query": "국립무형유산원 디지털체험관 전북 전주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립무형유산원 디지털체험관"
+      ]
+    },
+    {
+      "venueId": "venue_국립민속국악원예원당_1sj257g",
+      "officialName": "국립민속국악원 예원당",
+      "address": "전북 국립민속국악원 예원당",
+      "query": "국립민속국악원 예원당 전북 국립민속국악원",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -656,14 +1449,14 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "장미꽃 필(Feel) 무렵"
+        "국립민속국악원, K-국악스테이지"
       ]
     },
     {
-      "venueId": "venue_대구광역시달서구신당동182172층_f86xeu",
-      "officialName": "대구광역시 달서구 신당동 1821-7 2층",
-      "address": "대구광역시 달서구 공원순환로 36 (두류동) 두류공원",
-      "query": "대구광역시 달서구 신당동 1821-7 2층 대구 달서구",
+      "venueId": "venue_국립민속박물관파주어린이체험실_ck2fr6",
+      "officialName": "국립민속박물관 파주 어린이체험실",
+      "address": "경기도 파주시 탄현면 헤이리로 30 국립민속박물관 파주- 1층 어린이체험실",
+      "query": "국립민속박물관 파주 어린이체험실 경기 파주시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -671,14 +1464,28 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "대구치맥페스티벌"
+        "국립민속박물관 파주 어린이체험실"
       ]
     },
     {
-      "venueId": "venue_부산해운대구송정동7115부산광역시해운대구송정해변로501층2_1m2b2o6",
-      "officialName": "부산 해운대구 송정동 711-5 부산광역시 해운대구 송정해변로 50 1층,2층 서프홀릭",
-      "address": "부산광역시 해운대구 해운대해변로 280 (중동) 해운대 해수욕장",
-      "query": "부산 해운대구 송정동 711-5 부산광역시 해운대구 송정해변로 50 1층,2층 서프홀릭 부산 해운대구",
+      "venueId": "venue_국립부여박물관_1slefgl",
+      "officialName": "국립부여박물관",
+      "address": "충청남도 부여군 부여읍 금성로 5 국립부여박물관 국립부여박물관",
+      "query": "국립부여박물관 충청남도 부여군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립부여박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립산악박물관_f2lap6",
+      "officialName": "국립산악박물관",
+      "address": "강원도 속초시 미시령로 3054",
+      "query": "국립산악박물관 강원 속초시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -686,14 +1493,84 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "해운대 모래축제"
+        "국립산악박물관"
       ]
     },
     {
-      "venueId": "venue_부산광역시동구범일동망양로978패션비즈센터_5nz7iy",
-      "officialName": "부산광역시 동구 범일동 망양로 978 패션비즈센터",
-      "address": "부산광역시 동구 중앙대로 210 (초량동)",
-      "query": "부산광역시 동구 범일동 망양로 978 패션비즈센터 부산 동구",
+      "venueId": "venue_국립생물자원관_5hklh9",
+      "officialName": "국립생물자원관",
+      "address": "인천광역시 서구 환경로28번길 42 (경서동)",
+      "query": "국립생물자원관 인천 서구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립생물자원관"
+      ]
+    },
+    {
+      "venueId": "venue_국립수목원산림박물관_xad2a6",
+      "officialName": "국립수목원 산림박물관",
+      "address": "경기도 포천시 소흘읍 광릉수목원로 415",
+      "query": "국립수목원 산림박물관 경기 포천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립수목원 산림박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립익산박물관어린이박물관_10s8pkv",
+      "officialName": "국립익산박물관 어린이박물관",
+      "address": "전북특별자치도 익산시 금마면 미륵사지로 362 국립익산박물관",
+      "query": "국립익산박물관 어린이박물관 전북 익산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립익산박물관 어린이박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립중앙박물관_2wleh3",
+      "officialName": "국립중앙박물관",
+      "address": "서울특별시 용산구 서빙고로 137 국립중앙박물관",
+      "query": "국립중앙박물관 서울 용산구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립중앙박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립춘천박물관어린이박물관_dtcvkf",
+      "officialName": "국립춘천박물관 어린이박물관",
+      "address": "강원특별자치도 춘천시 우석로 70 국립춘천박물관 국립춘천박물관 어린이박물관",
+      "query": "국립춘천박물관 어린이박물관 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립춘천박물관 어린이박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국립현대미술관청주관_18r3uye",
+      "officialName": "국립현대미술관 청주관",
+      "address": "충북 국립현대미술관 청주관",
+      "query": "국립현대미술관 청주관 충북 국립현대미술관",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -701,14 +1578,56 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "부산원도심활성화축제 [택슐랭]"
+        "방혜자"
       ]
     },
     {
-      "venueId": "venue_부산광역시부산진구양정동동평로_1ihm8lh",
-      "officialName": "부산광역시 부산진구 양정동 동평로",
-      "address": "부산광역시 부산진구 동성로112번길 121-1 송상현광장 및 부산시민공원 일원",
-      "query": "부산광역시 부산진구 양정동 동평로 부산 부산진구",
+      "venueId": "venue_국세홍보관_1cecqyx",
+      "officialName": "국세홍보관",
+      "address": "서울특별시 종로구 종로5길 86 서울지방국세청",
+      "query": "국세홍보관 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국세홍보관"
+      ]
+    },
+    {
+      "venueId": "venue_국토지리정보원국립지도박물관_148rkeu",
+      "officialName": "국토지리정보원 국립지도박물관",
+      "address": "경기도 수원시 영통구 월드컵로 92 국토지리정보원",
+      "query": "국토지리정보원 국립지도박물관 경기 수원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국토지리정보원 국립지도박물관"
+      ]
+    },
+    {
+      "venueId": "venue_국회_zp4z3y",
+      "officialName": "국회",
+      "address": "서울특별시 영등포구 의사당대로 1 국회",
+      "query": "국회 서울 영등포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국회박물관"
+      ]
+    },
+    {
+      "venueId": "venue_금강문화관_v16e46",
+      "officialName": "금강문화관",
+      "address": "충청남도 부여군 부여읍 북포로 451 백제보문화관 금강문화관",
+      "query": "금강문화관 충청남도 부여군",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -716,14 +1635,42 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "부산연등회"
+        "금강문화관"
       ]
     },
     {
-      "venueId": "venue_부산광역시부산진구양정동동평로_15lzt44",
-      "officialName": "부산광역시 부산진구 양정동 동평로",
-      "address": "부산광역시 부산진구 시민공원로 73 (범전동)",
-      "query": "부산광역시 부산진구 양정동 동평로 부산 부산진구",
+      "venueId": "venue_기분좋은극장_ytdp6y",
+      "officialName": "기분좋은극장",
+      "address": "광주 서구 상무중앙로 90",
+      "query": "기분좋은극장 광주 서구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "나의 완벽한 파트너"
+      ]
+    },
+    {
+      "venueId": "venue_기지시줄다리기박물관_1jwatv",
+      "officialName": "기지시줄다리기박물관",
+      "address": "충청남도 당진시 송악읍 안틀모시길 11 기지시줄다리기박물관",
+      "query": "기지시줄다리기박물관 충청남도 당진시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "기지시줄다리기박물관"
+      ]
+    },
+    {
+      "venueId": "venue_김중업박물관안양박물관_1qvjfzn",
+      "officialName": "김중업 박물관 안양박물관",
+      "address": "경기도 안양시 만안구 예술공원로103번길 4 김중업 박물관 안양박물관",
+      "query": "김중업 박물관 안양박물관 경기 안양시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -731,14 +1678,28 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "부산가족축제"
+        "안양박물관"
       ]
     },
     {
-      "venueId": "venue_부산광역시연제구연산4동거제천로_1o20qcj",
-      "officialName": "부산광역시 연제구 연산4동 거제천로",
-      "address": "부산광역시 연제구 월드컵대로 344 (거제동) 부산아시아드주경기장",
-      "query": "부산광역시 연제구 연산4동 거제천로 부산 연제구",
+      "venueId": "venue_김중업건축박물관_1b6sdbs",
+      "officialName": "김중업건축박물관",
+      "address": "경기도 안양시 만안구 예술공원로131번길 7",
+      "query": "김중업건축박물관 경기 안양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "김중업건축박물관"
+      ]
+    },
+    {
+      "venueId": "venue_꿈키움동산어린이농촌테마체험관물놀이터_14as3hx",
+      "officialName": "꿈키움동산 어린이농촌테마체험관 물놀이터",
+      "address": "경상남도 진주시 판문오동길 99-7",
+      "query": "꿈키움동산 어린이농촌테마체험관 물놀이터 경남 진주시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
@@ -746,877 +1707,35 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "부산원아시아페스티벌(BOF) with NOL"
+        "꿈키움동산 어린이농촌테마체험관(물놀이터)"
       ]
     },
     {
-      "venueId": "venue_부산광역시영도구_1sz7zga",
-      "officialName": "부산광역시 영도구",
-      "address": "부산광역시 영도구 해양로301번길 55 아미르공원 및 블루포트2021",
-      "query": "부산광역시 영도구 부산 영도구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "글로벌 영도커피페스티벌"
-      ]
-    },
-    {
-      "venueId": "venue_부산광역시중구중앙동대청로138부산순대돼지국밥건물3층302호_6qggg1",
-      "officialName": "부산광역시 중구 중앙동 대청로 138 부산순대돼지국밥건물 3층 302호 아무아트",
-      "address": "부산광역시 중구 광복중앙로 13 (신창동1가) 청년작당소",
-      "query": "부산광역시 중구 중앙동 대청로 138 부산순대돼지국밥건물 3층 302호 아무아트 부산 중구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "작당페스타"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시강동구암사1동상암로_1ngsb1m",
-      "officialName": "서울특별시 강동구 암사1동 상암로",
-      "address": "서울특별시 강동구 올림픽로 875 (암사동)",
-      "query": "서울특별시 강동구 암사1동 상암로 서울 강동구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "강동선사문화축제"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시도봉구쌍문동103150우이천로근처_wvz9z4",
-      "officialName": "서울특별시 도봉구 쌍문동 103-150 우이천로 근처",
-      "address": "서울특별시 도봉구 도봉동 1-8",
-      "query": "서울특별시 도봉구 쌍문동 103-150 우이천로 근처 서울 도봉구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "경흥대로 도봉옛길 문화제"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시마포구합정동3871번지5층_1bvrfin",
-      "officialName": "서울특별시 마포구 합정동 387-1번지 5층",
-      "address": "서울특별시 마포구 증산로 87 (성산동) 문화비축기지",
-      "query": "서울특별시 마포구 합정동 387-1번지 5층 서울 마포구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "RAPBEAT"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시서초구매헌로99양재시민의숲_1scsyey",
-      "officialName": "서울특별시 서초구 매헌로 99 양재시민의숲",
-      "address": "서울특별시 서초구 양재동 261-23 양재천길 살롱스트림(수변무대~영동1교)",
-      "query": "서울특별시 서초구 매헌로 99 양재시민의숲 서울 서초구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "양재아트살롱"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시서초구매헌로99양재시민의숲_2suyuq",
-      "officialName": "서울특별시 서초구 매헌로 99 양재시민의숲",
-      "address": "서울특별시 서초구 반포동 잠수교",
-      "query": "서울특별시 서초구 매헌로 99 양재시민의숲 서울 서초구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "차 없는 잠수교 뚜벅뚜벅축제"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시서초구매헌로99양재시민의숲_1eqvci0",
-      "officialName": "서울특별시 서초구 매헌로 99 양재시민의숲",
-      "address": "서울특별시 서초구 신반포로11길 40 (반포동) 반포 한강공원 달빛광장",
-      "query": "서울특별시 서초구 매헌로 99 양재시민의숲 서울 서초구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "서울국악축제"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시성북구동소문동6가아리랑로3길361층공방코끼리_1cl3qjy",
-      "officialName": "서울특별시 성북구 동소문동6가 아리랑로3길 36 1층 공방코끼리",
-      "address": "서울특별시 성북구 성북동 142-1 성북로 일대(성북동 주민센터 건너편~홍익중고 앞 버스정류장)",
-      "query": "서울특별시 성북구 동소문동6가 아리랑로3길 36 1층 공방코끼리 서울 성북구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "성북세계음식축제 누리마실"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시종로구창경궁로185창경궁_nt0lk8",
-      "officialName": "서울특별시 종로구 창경궁로 185 창경궁",
-      "address": "서울특별시 종로구 창경궁로 185 (와룡동)",
-      "query": "서울특별시 종로구 창경궁로 185 창경궁 서울 종로구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "창경궁 야연"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시종로구창경궁로185창경궁_1jn4nzg",
-      "officialName": "서울특별시 종로구 창경궁로 185 창경궁",
-      "address": "서울특별시 종로구 사직로 161 (세종로) 경복궁",
-      "query": "서울특별시 종로구 창경궁로 185 창경궁 서울 종로구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "수라간 시식공감"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시종로구창경궁로185창경궁_16x573",
-      "officialName": "서울특별시 종로구 창경궁로 185 창경궁",
-      "address": "서울특별시 종로구 율곡로 99 (와룡동) 창덕궁",
-      "query": "서울특별시 종로구 창경궁로 185 창경궁 서울 종로구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "창덕궁 달빛기행"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시종로구창경궁로185창경궁_1uhexyx",
-      "officialName": "서울특별시 종로구 창경궁로 185 창경궁",
-      "address": "서울특별시 종로구 사직로 161 (세종로)",
-      "query": "서울특별시 종로구 창경궁로 185 창경궁 서울 종로구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "경복궁 생과방"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시중구칠패로5서소문공원_m6tczq",
-      "officialName": "서울특별시 중구 칠패로 5 서소문공원",
-      "address": "서울특별시 중구 세종대로 110 (태평로1가) 서울광장",
-      "query": "서울특별시 중구 칠패로 5 서소문공원 서울 중구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "중앙아시아 봄맞이축제"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시중구칠패로5서소문공원_13zyp6m",
-      "officialName": "서울특별시 중구 칠패로 5 서소문공원",
-      "address": "서울특별시 중구 세종대로 99 (정동) 덕수궁",
-      "query": "서울특별시 중구 칠패로 5 서소문공원 서울 중구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "덕수궁 밤의 석조전"
-      ]
-    },
-    {
-      "venueId": "venue_세종특별자치시다솜로216세종호수공원세종중앙공원_x8axgg",
-      "officialName": "세종특별자치시 다솜로 216 세종호수공원, 세종중앙공원",
-      "address": "세종특별자치시 다솜로 216 (세종동) 세종호수공원, 세종중앙공원",
-      "query": "세종특별자치시 다솜로 216 세종호수공원, 세종중앙공원 세종특별자치시 다솜로",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "세종한글축제"
-      ]
-    },
-    {
-      "venueId": "venue_세종특별자치시조치원읍대첩로98_1l0krh",
-      "officialName": "세종특별자치시 조치원읍 대첩로 98",
-      "address": "세종특별자치시 조치원읍 대첩로 98",
-      "query": "세종특별자치시 조치원읍 대첩로 98 세종특별자치시 조치원읍",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "세종 조치원 복숭아 축제"
-      ]
-    },
-    {
-      "venueId": "venue_세종호수공원중앙공원일원_15kmlqq",
-      "officialName": "세종호수공원·중앙공원 일원",
-      "address": "세종특별자치시 다솜로 216 (세종동)",
-      "query": "세종호수공원·중앙공원 일원 세종특별자치시 다솜로",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "세종낙화축제"
-      ]
-    },
-    {
-      "venueId": "venue_울산광역시남구신정동59961층레이홉_jk244n",
-      "officialName": "울산광역시 남구 신정동 599-6 1층 레이홉",
-      "address": "울산광역시 남구 남부순환도로 377 (옥동)",
-      "query": "울산광역시 남구 신정동 599-6 1층 레이홉 울산 남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "울산대공원 장미축제"
-      ]
-    },
-    {
-      "venueId": "venue_울산광역시중구약사동북부순환도로74612층_15458mm",
-      "officialName": "울산광역시 중구 약사동 북부순환도로 746-1 2층",
-      "address": "울산광역시 중구 문화의거리 38 (옥교동)",
-      "query": "울산광역시 중구 약사동 북부순환도로 746-1 2층 울산 중구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "울산태화강마두희축제"
-      ]
-    },
-    {
-      "venueId": "venue_위치대한민국경기도고양시일산동구마두2동중앙로1130올리브상가_19u15ya",
-      "officialName": "위치대한민국 경기도 고양시 일산동구 마두2동 중앙로 1130 올리브상가 c 동 2층",
-      "address": "경기도 고양시 덕양구 행주로15번길 89 (행주외동)",
-      "query": "위치대한민국 경기도 고양시 일산동구 마두2동 중앙로 1130 올리브상가 c 동 2층 경기 고양시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고양행주문화제"
-      ]
-    },
-    {
-      "venueId": "venue_위치대한민국경기도안산시단원구고잔동7422층voyage공간소_194dnxc",
-      "officialName": "위치대한민국 경기도 안산시 단원구 고잔동 742 2층 voyage공간 소개",
-      "address": "경기도 안산시 상록구 성호로 113 (이동) 성호공원",
-      "query": "위치대한민국 경기도 안산시 단원구 고잔동 742 2층 voyage공간 소개 경기 안산시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "안산 성호문화제"
-      ]
-    },
-    {
-      "venueId": "venue_위치대한민국부산광역시동래구명륜동명륜로140_jykx79",
-      "officialName": "위치대한민국 부산광역시 동래구 명륜동 명륜로 140",
-      "address": "부산광역시 동래구 문화로 80 (명륜동)",
-      "query": "위치대한민국 부산광역시 동래구 명륜동 명륜로 140 부산 동래구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "동래읍성역사축제"
-      ]
-    },
-    {
-      "venueId": "venue_위치대한민국부산광역시사상구괘법동55814_q9o2sj",
-      "officialName": "위치대한민국 부산광역시 사상구 괘법동 558-14",
-      "address": "부산광역시 사상구 삼락동 29-50",
-      "query": "위치대한민국 부산광역시 사상구 괘법동 558-14 부산 사상구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "부산국제록페스티벌"
-      ]
-    },
-    {
-      "venueId": "venue_위치대한민국부산광역시수영구민락동광남로2711층_p51acw",
-      "officialName": "위치대한민국 부산광역시 수영구 민락동 광남로 271 1층",
-      "address": "부산광역시 수영구 광안해변로 219 (광안동)",
-      "query": "위치대한민국 부산광역시 수영구 민락동 광남로 271 1층 부산 수영구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "광안리어방축제"
-      ]
-    },
-    {
-      "venueId": "venue_위치대한민국인천광역시부평구부평2동경인로899_8iiakz",
-      "officialName": "위치대한민국 인천광역시 부평구 부평2동 경인로 899",
-      "address": "인천광역시 부평구 부평대로 168 (부평동)",
-      "query": "위치대한민국 인천광역시 부평구 부평2동 경인로 899 인천 부평구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "부평풍물대축제"
-      ]
-    },
-    {
-      "venueId": "venue_인천광역시강화군삼산면삼산남로604번길67석모도해수온탕_ju68mk",
-      "officialName": "인천광역시 강화군 삼산면 삼산남로604번길 6-7 석모도해수온탕",
-      "address": "인천광역시 강화군 강화읍 북문길 42 12개 지역 내 국가유산 강화(고려궁지 등), 철원(노동당사), 경주(대릉원), 양산(통도사), 진주(진주성), 통영(삼도수군통제영), 군산(구 군산세관 본관 등), 여수(진남관), 익산(미륵사지), 부여(정림사지), 아산(이충무공 유허), 청주(용두사지 철당간 등)",
-      "query": "인천광역시 강화군 삼산면 삼산남로604번길 6-7 석모도해수온탕 인천 강화군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국가유산 미디어아트"
-      ]
-    },
-    {
-      "venueId": "venue_전라남도나주시_18myptm",
-      "officialName": "전라남도 나주시",
-      "address": "전라남도 나주시 금성관길 8 (과원동)",
-      "query": "전라남도 나주시 전남 나주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "천년나주목읍성문화축제"
-      ]
-    },
-    {
-      "venueId": "venue_전라남도목포시고하도안길99_6qkz4r",
-      "officialName": "전라남도 목포시 고하도안길 99",
-      "address": "전라남도 목포시 삼학로92번길 6 (산정동)",
-      "query": "전라남도 목포시 고하도안길 99 전남 목포시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "목포항구축제"
-      ]
-    },
-    {
-      "venueId": "venue_전라남도영광군_1mx226f",
-      "officialName": "전라남도 영광군",
-      "address": "전라남도 영광군 법성면 진굴비길 154-13 단오마당(단오제전수교육관)",
-      "query": "전라남도 영광군 전남 영광군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영광법성포단오제"
-      ]
-    },
-    {
-      "venueId": "venue_전라남도영광군_14df0y0",
-      "officialName": "전라남도 영광군",
-      "address": "전라남도 영광군 불갑면 불갑사로 450 영광군 불갑사관광지 일원",
-      "query": "전라남도 영광군 전남 영광군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영광불갑산상사화축제"
-      ]
-    },
-    {
-      "venueId": "venue_전라남도장흥군_ef63fh",
-      "officialName": "전라남도 장흥군",
-      "address": "전라남도 장흥군 장흥읍 건산리 805",
-      "query": "전라남도 장흥군 전남 장흥군",
+      "venueId": "venue_나트랑국립해양박물관_12fyr5a",
+      "officialName": "나트랑 국립해양박물관",
+      "address": "부산광역시 영도구 해양로301번길 45",
+      "query": "나트랑 국립해양박물관 부산 영도구",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "정남진 장흥 물축제"
+        "나트랑 국립해양박물관"
       ]
     },
     {
-      "venueId": "venue_전북특별자치도고창군_11w4dgq",
-      "officialName": "전북특별자치도 고창군",
-      "address": "전북특별자치도 고창군 고창읍 모양성로 11 고창읍성",
-      "query": "전북특별자치도 고창군 전북 고창군",
+      "venueId": "venue_낙동강역사이야기관_1pcwlm1",
+      "officialName": "낙동강역사이야기관",
+      "address": "경상북도 상주시 낙동면 낙동1길 116 낙동강 역사이야기관",
+      "query": "낙동강역사이야기관 경북 상주시",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "고창모양성제"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도군산시_19hahh8",
-      "officialName": "전북특별자치도 군산시",
-      "address": "전북특별자치도 군산시 해망로 224 (장미동)",
-      "query": "전북특별자치도 군산시 전북 군산시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "군산 수제맥주&블루스 페스티벌"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도무주군_1wwiyzw",
-      "officialName": "전북특별자치도 무주군",
-      "address": "전북특별자치도 무주군 무주읍 한풍루로 326-17",
-      "query": "전북특별자치도 무주군 전북 무주군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "무주반딧불축제"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도순창군_altwzg",
-      "officialName": "전북특별자치도 순창군",
-      "address": "전북특별자치도 순창군 순창읍 장류로 55",
-      "query": "전북특별자치도 순창군 전북 순창군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "순창장류축제"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도완주군_1jzzvt7",
-      "officialName": "전북특별자치도 완주군",
-      "address": "전북특별자치도 완주군 운주면 산북리 611-67 대둔산 잔디광장 일원",
-      "query": "전북특별자치도 완주군 전북 완주군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "완주 대둔산 축제"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도완주군_8237ik",
-      "officialName": "전북특별자치도 완주군",
-      "address": "전북특별자치도 완주군 고산면 고산휴양림로 89",
-      "query": "전북특별자치도 완주군 전북 완주군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "완주 와일드&로컬푸드축제"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도장수군_142jv31",
-      "officialName": "전북특별자치도 장수군",
-      "address": "전북특별자치도 장수군 장수읍 한누리로 378",
-      "query": "전북특별자치도 장수군 전북 장수군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "장수한우랑사과랑축제"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도전주시완산구홍산4길6골든시티_1eey6fn",
-      "officialName": "전북특별자치도 전주시 완산구 홍산4길 6 골든시티",
-      "address": "전북특별자치도 전주시 완산구 전주천동로 20 (교동)",
-      "query": "전북특별자치도 전주시 완산구 홍산4길 6 골든시티 전북 전주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전주독서대전"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도전주시완산구홍산4길6골든시티_z980cc",
-      "officialName": "전북특별자치도 전주시 완산구 홍산4길 6 골든시티",
-      "address": "전북특별자치도 전주시 덕진구 기린대로 1055 (반월동)",
-      "query": "전북특별자치도 전주시 완산구 홍산4길 6 골든시티 전북 전주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전주페스타"
-      ]
-    },
-    {
-      "venueId": "venue_전북특별자치도진안군_1mwkcwy",
-      "officialName": "전북특별자치도 진안군",
-      "address": "전북특별자치도 진안군 진안읍 마이산로 160 일원",
-      "query": "전북특별자치도 진안군 전북 진안군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "진안홍삼축제"
-      ]
-    },
-    {
-      "venueId": "venue_제주특별자치도서귀포시_1r8q2md",
-      "officialName": "제주특별자치도 서귀포시",
-      "address": "제주특별자치도 서귀포시 서홍동 684 천지연폭포 인근 주차장",
-      "query": "제주특별자치도 서귀포시 제주 서귀포시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "서귀포칠십리축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도공주시월미동길219_1c1ncfs",
-      "officialName": "충청남도 공주시 월미동길 219",
-      "address": "충청남도 공주시 중동(중학동) 대통교",
-      "query": "충청남도 공주시 월미동길 219 충청남도 공주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "꽃멍+물멍, 책자리"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도금산군_1xrtvs3",
-      "officialName": "충청남도 금산군",
-      "address": "충청남도 금산군 금산읍 인삼광장로 30 금산세계인삼엑스포 광장",
-      "query": "충청남도 금산군 충청남도 금산군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "금산 삼계탕축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도금산군_1y1p3yc",
-      "officialName": "충청남도 금산군",
-      "address": "충청남도 금산군 금산읍 인삼광장로 30",
-      "query": "충청남도 금산군 충청남도 금산군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "금산세계인삼축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도보령시성주면성주산로31857무궁화수목원내위치_1xvuozb",
-      "officialName": "충청남도 보령시 성주면 성주산로 318-57 무궁화수목원 내 위치",
-      "address": "충청남도 보령시 신흑동 2282",
-      "query": "충청남도 보령시 성주면 성주산로 318-57 무궁화수목원 내 위치 충청남도 보령시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "보령머드축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도서산시_e4plfc",
-      "officialName": "충청남도 서산시",
-      "address": "충청남도 서산시 해미면 남문2로 143",
-      "query": "충청남도 서산시 충청남도 서산시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "서산해미읍성축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도서천군_1av5lff",
-      "officialName": "충청남도 서천군",
-      "address": "충청남도 서천군 서면 서인로 58 마량진항",
-      "query": "충청남도 서천군 충청남도 서천군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "서천 자연산 광어 도미 축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도서천군_1gyize5",
-      "officialName": "충청남도 서천군",
-      "address": "충청남도 서천군 장산로 232 서천군 장항항 물양장 일원",
-      "query": "충청남도 서천군 충청남도 서천군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "장항항 수산물 꼴갑축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도서천군_1vbx7bv",
-      "officialName": "충청남도 서천군",
-      "address": "충청남도 서천군 한산면 충절로 1089 한산모시관",
-      "query": "충청남도 서천군 충청남도 서천군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "한산모시문화제"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도아산시온천동81151층예진아트공방_7c2j9m",
-      "officialName": "충청남도 아산시 온천동 81-15 1층 예진아트공방",
-      "address": "충청남도 아산시 외암민속길 5",
-      "query": "충청남도 아산시 온천동 81-15 1층 예진아트공방 충청남도 아산시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "아산외암마을야행"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도예산군삽교읍홍예공원로97내포자연놀이뜰_qk6ywu",
-      "officialName": "충청남도 예산군 삽교읍 홍예공원로 97 내포자연놀이뜰",
-      "address": "충청남도 예산군 군청로 22 예산군청 일원",
-      "query": "충청남도 예산군 삽교읍 홍예공원로 97 내포자연놀이뜰 충청남도 예산군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "예산 국가유산 야행"
-      ]
-    },
-    {
-      "venueId": "venue_충청남도천안시동남구원거리11길171층_d20apa",
-      "officialName": "충청남도 천안시 동남구 원거리11길 17 1층",
-      "address": "충청남도 천안시 서북구 번영로 208 (백석동)",
-      "query": "충청남도 천안시 동남구 원거리11길 17 1층 충청남도 천안시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "천안흥타령춤축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청북도괴산군_1f5plsk",
-      "officialName": "충청북도 괴산군",
-      "address": "충청북도 괴산군 괴산읍 임꺽정로 75-1 괴산유기농엑스포광장",
-      "query": "충청북도 괴산군 충청북도 괴산군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "괴산빨간맛페스티벌"
-      ]
-    },
-    {
-      "venueId": "venue_충청북도영동군_j9r911",
-      "officialName": "충청북도 영동군",
-      "address": "충청북도 영동군 영동읍 영동힐링로 117 영동 레인보우힐링광장 일원",
-      "query": "충청북도 영동군 충청북도 영동군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영동난계국악축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청북도음성군_29oy0g",
-      "officialName": "충청북도 음성군",
-      "address": "충청북도 음성군 음성읍 설성공원길 28",
-      "query": "충청북도 음성군 충청북도 음성군",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "음성품바축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청북도청주시흥덕구증안로22번길135층올대디_eyyay5",
-      "officialName": "충청북도 청주시 흥덕구 증안로22번길 13-5 층 올대디",
-      "address": "충청북도 청주시 청원구 내수읍 초정약수로 851 초정행궁",
-      "query": "충청북도 청주시 흥덕구 증안로22번길 13-5 층 올대디 충청북도 청주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "세종대왕과 초정약수축제"
-      ]
-    },
-    {
-      "venueId": "venue_충청북도충주시_1e5bjqp",
-      "officialName": "충청북도 충주시",
-      "address": "충청북도 충주시 대림로 85 (호암동)",
-      "query": "충청북도 충주시 충청북도 충주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "충주 다이브 페스티벌"
+        "낙동강역사이야기관"
       ]
     }
   ],
@@ -1627,7 +1746,7 @@
       "address": "",
       "query": "장소 확인 필요",
       "priority": 200,
-      "performanceCount": 58,
+      "performanceCount": 60,
       "reviewFlags": [
         "invalid_coordinate",
         "missing_detailed_address",
@@ -1984,6 +2103,22 @@
       ]
     },
     {
+      "venueId": "venue_서울강남_vntjf9",
+      "officialName": "서울 강남",
+      "address": "서울 강남구 선릉로100길 1",
+      "query": "서울 강남 서울 강남구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "심플함을 더한 NEW뱅글팔찌 클래스_925실버",
+        "체질에 맞는 블렌딩티 원데이 클래스 - 티하우스 절기"
+      ]
+    },
+    {
       "venueId": "venue_서울강남구_7p5dnq",
       "officialName": "서울 강남구",
       "address": "서울 강남구 선릉로 704",
@@ -1997,23 +2132,6 @@
       "sampleTitles": [
         "컬러클레이 플레이트 만들기_도자기",
         "세상에 하나뿐인 나만의 머그컵 만들기_도자기"
-      ]
-    },
-    {
-      "venueId": "venue_서울강남구삼성로642_9a2iyv",
-      "officialName": "서울 강남구 삼성로 642",
-      "address": "서울 강남구 삼성로 642",
-      "query": "서울 강남구 삼성로 642 서울 강남구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "심플함을 더한 NEW뱅글팔찌 클래스_925실버",
-        "체질에 맞는 블렌딩티 원데이 클래스 - 티하우스 절기"
       ]
     },
     {
@@ -3562,7 +3680,7 @@
       ]
     }
   ],
-  "staleCacheCount": 74,
+  "staleCacheCount": 253,
   "topNeedsReview": [
     {
       "venueId": "venue_갓성비클래스_1lf51gx",
@@ -3919,19 +4037,129 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-05-15T07:05:32.754Z",
+    "checkedAt": "2026-05-15T10:15:58.960Z",
     "status": "warn",
-    "venueCount": 2908,
+    "venueCount": 2996,
     "matchedCount": 1833,
     "highConfidenceMatchCount": 1376,
     "needsReviewCount": 20,
     "notFoundCount": 289,
-    "pendingLookupCount": 109,
+    "pendingLookupCount": 376,
     "insufficientIdentityCount": 109,
     "lookupReady": false,
     "providersConfigured": [],
-    "staleCacheCount": 74,
+    "staleCacheCount": 253,
     "topQueue": [
+      {
+        "venueId": "venue_모토아레나패독_1jkp7ke",
+        "officialName": "모토아레나 패독",
+        "address": "충북 증평군 벨포레리조트 모토아레나 패독",
+        "query": "모토아레나 패독 충북 증평군",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "BELLEFORET WEEK - MY VOLUME"
+        ]
+      },
+      {
+        "venueId": "venue_앞계단_jj86vc",
+        "officialName": "앞 계단",
+        "address": "서울특별시 종로구 사직로 161 경복궁 바라보고 왼쪽의 국립고궁박물관 정문 앞 계단",
+        "query": "앞 계단 서울 종로구",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "역사랑 친구 되는 경복궁 미션 투어"
+        ]
+      },
+      {
+        "venueId": "venue_오른쪽벤치_amuv6r",
+        "officialName": "오른쪽 벤치)",
+        "address": "서울특별시 중구 세종대로 99 덕수궁 (덕수궁 입장 후 오른쪽 벤치)",
+        "query": "오른쪽 벤치) 서울 중구",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "가족이 함께 걸어요, 달빛궁궐 덕수궁"
+        ]
+      },
+      {
+        "venueId": "venue_국립생물자원관_1pl4egx",
+        "officialName": "국립생물자원관",
+        "address": "인천 서구 환경로 42 국립생물자원관",
+        "query": "국립생물자원관 인천 서구",
+        "priority": 468,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "coordinate_fallback_risk",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "국립생물자원관"
+        ]
+      },
+      {
+        "venueId": "venue_정읍시립박물관_1fibh3r",
+        "officialName": "정읍시립박물관",
+        "address": "전북특별자치도 정읍시 내장산로 370-12 정읍시립박물관 정읍시립박물관",
+        "query": "정읍시립박물관 전북 정읍시",
+        "priority": 468,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "coordinate_fallback_risk",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "정읍시립박물관"
+        ]
+      },
+      {
+        "venueId": "venue_kbs_i4a5ce",
+        "officialName": "KBS",
+        "address": "서울 영등포구 여의공원로 13",
+        "query": "KBS 서울 영등포구",
+        "priority": 24,
+        "performanceCount": 3,
+        "reviewFlags": [
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "꼬마마법사 레미 공식 오케스트라 콘서트",
+          "제4회 덴탈필하모닉오케스트라 정기연주회",
+          "홍정희오페라단 COREA Arirang 세계를 울리다"
+        ]
+      },
+      {
+        "venueId": "venue_천마아트센터그랜드_1kahod3",
+        "officialName": "천마아트센터 그랜드",
+        "address": "경북 경산시 대학로 280",
+        "query": "천마아트센터 그랜드 경북 경산시",
+        "priority": 24,
+        "performanceCount": 3,
+        "reviewFlags": [
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "환희 X 최수호 전국투어 콘서트: FLY WITH",
+          "멜로우TV: Run it up, 팀 나빠",
+          "알파블록스"
+        ]
+      },
       {
         "venueId": "venue_강원특별자치도횡성군횡성읍문예로41횡성한우체험관_1q828jb",
         "officialName": "강원특별자치도 횡성군 횡성읍 문예로 41 횡성한우체험관",
@@ -3949,6 +4177,21 @@
         ]
       },
       {
+        "venueId": "venue_김녕요트투어_pnyusj",
+        "officialName": "김녕요트투어",
+        "address": "제주 제주시 구좌읍 구좌해안로 229-16",
+        "query": "김녕요트투어 제주 제주시",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "김녕요트투어_대인",
+          "김녕요트투어_소인"
+        ]
+      },
+      {
         "venueId": "venue_부산광역시동구범일동망양로978패션비즈센터_6gho4m",
         "officialName": "부산광역시 동구 범일동 망양로 978 패션비즈센터",
         "address": "부산광역시 동구 이순신대로 164 (초량동)",
@@ -3963,122 +4206,6 @@
           "부산세계시민축제",
           "부산항축제"
         ]
-      },
-      {
-        "venueId": "venue_강원특별자치도강릉시_4oqazj",
-        "officialName": "강원특별자치도 강릉시",
-        "address": "강원특별자치도 강릉시 창해로14번길 20-1 (견소동) 안목해변 일원",
-        "query": "강원특별자치도 강릉시 강원 강릉시",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "강릉해양레저 펫가족 힐링페스티벌"
-        ]
-      },
-      {
-        "venueId": "venue_강원특별자치도강릉시_18lpvmz",
-        "officialName": "강원특별자치도 강릉시",
-        "address": "강원특별자치도 강릉시 단오장길 1 강릉단오제전수교육관",
-        "query": "강원특별자치도 강릉시 강원 강릉시",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "강릉단오제"
-        ]
-      },
-      {
-        "venueId": "venue_강원특별자치도강릉시_357uzx",
-        "officialName": "강원특별자치도 강릉시",
-        "address": "강원특별자치도 강릉시 임영로131번길 6 임영관",
-        "query": "강원특별자치도 강릉시 강원 강릉시",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "강릉 국가유산 야행"
-        ]
-      },
-      {
-        "venueId": "venue_강원특별자치도정선군_nagolm",
-        "officialName": "강원특별자치도 정선군",
-        "address": "강원특별자치도 정선군 정선읍 봉양리 104",
-        "query": "강원특별자치도 정선군 강원 정선군",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "정선아리랑제"
-        ]
-      },
-      {
-        "venueId": "venue_강원특별자치도춘천시신북읍신샘밭로361강원경찰박물관강원경찰박_1hqf3i4",
-        "officialName": "강원특별자치도 춘천시 신북읍 신샘밭로 361 강원경찰박물관 강원경찰박물관",
-        "address": "강원특별자치도 춘천시 춘천로 112 (효자동) 축제극장몸짓",
-        "query": "강원특별자치도 춘천시 신북읍 신샘밭로 361 강원경찰박물관 강원경찰박물관 강원 춘천시",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "춘천마임축제"
-        ]
-      },
-      {
-        "venueId": "venue_강원특별자치도태백시_vxofwl",
-        "officialName": "강원특별자치도 태백시",
-        "address": "강원특별자치도 태백시 황지연못길 12 황지연못(문화관광해설사의집)",
-        "query": "강원특별자치도 태백시 강원 태백시",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "한강·낙동강 발원지 축제"
-        ]
-      },
-      {
-        "venueId": "venue_강원특별자치도평창군_dx8pvd",
-        "officialName": "강원특별자치도 평창군",
-        "address": "강원특별자치도 평창군 해뜰마을길 49-7",
-        "query": "강원특별자치도 평창군 강원 평창군",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "평창더위사냥축제"
-        ]
-      },
-      {
-        "venueId": "venue_강원특별자치도평창군_643wg6",
-        "officialName": "강원특별자치도 평창군",
-        "address": "강원특별자치도 평창군 봉평면 이효석길 157",
-        "query": "강원특별자치도 평창군 강원 평창군",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "평창효석문화제"
-        ]
       }
     ],
     "topInsufficientIdentityQueue": [
@@ -4088,7 +4215,7 @@
         "address": "",
         "query": "장소 확인 필요",
         "priority": 200,
-        "performanceCount": 58,
+        "performanceCount": 60,
         "reviewFlags": [
           "invalid_coordinate",
           "missing_detailed_address",

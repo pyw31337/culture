@@ -77,6 +77,7 @@ export type Performance = {
     producer?: string;
     sponsor?: string;
     contact?: string;
+    reservationInfo?: string;
     priceList?: { label: string; price: string; discount?: string }[];
     ageDetail?: string;
     bookingNotice?: string;
