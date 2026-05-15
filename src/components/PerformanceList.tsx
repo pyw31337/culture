@@ -298,6 +298,17 @@ export default function PerformanceList({
         }
     }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, searchParams, router]);
 
+    const handleResetLocationSearch = useCallback(() => {
+        setSearchLocation(null);
+        setUserLocation(null);
+        setSearchText('');
+        setSearchMode('keyword');
+        setIsDropdownOpen(false);
+
+        const path = selectedGenre === 'all' ? '/' : `/${selectedGenre === 'play' ? 'theater' : selectedGenre}`;
+        router.replace(path);
+    }, [router, selectedGenre, setIsDropdownOpen, setSearchLocation, setSearchMode, setSearchText, setUserLocation]);
+
     const resetHome = useCallback(() => {
         setSelectedGenre('all');
         setSelectedRegion('all');
@@ -535,7 +546,8 @@ export default function PerformanceList({
                         discoveryContexts={DISCOVERY_CONTEXTS}
                         activeDiscoveryContext={discoveryContextId}
                         onDiscoveryContextChange={setDiscoveryContextId}
-                        onResetFilters={() => { setSearchLocation(null); handleSearchChange(''); }} onRadiusChange={setRadius}
+                        onResetFilters={handleResetLocationSearch}
+                        onRadiusChange={setRadius}
                     />
 
                     {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (

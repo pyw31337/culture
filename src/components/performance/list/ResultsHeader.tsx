@@ -57,6 +57,7 @@ export const ResultsHeader = ({
 }: ResultsHeaderProps) => {
     if (viewMode === 'likes-perf') return null;
 
+    const isLocationSearch = searchMode === 'location' && Boolean(activeLocation);
     const shouldShowDiscoveryContexts =
         Boolean(discoveryContexts?.length) &&
         Boolean(activeDiscoveryContext) &&
@@ -77,13 +78,6 @@ export const ResultsHeader = ({
                                         {searchLocation?.name ? <>&apos;{searchLocation.name}&apos;</> : '내 위치'}
                                     </span>
                                     <span className="text-base sm:text-xl shrink-0">위치 주변 ({filteredCount})</span>
-                                    <button
-                                        onClick={onResetFilters}
-                                        className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 light:bg-black/5 light:hover:bg-black/10 text-gray-400 hover:text-white light:text-gray-600 light:hover:text-black transition-all border border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 group/reload"
-                                        title="지역 설정 초기화"
-                                    >
-                                        <RotateCcw className="w-4 h-4" />
-                                    </button>
                                 </>
                             ) : searchText ? (
                                 <>
@@ -137,8 +131,8 @@ export const ResultsHeader = ({
                         />
                     )}
 
-                    {(searchMode === 'location' && activeLocation) && (
-                        <div className="flex items-center gap-2 xl:ml-auto">
+                    {isLocationSearch && (
+                        <div className="flex w-full flex-wrap items-center justify-end gap-2 xl:ml-auto xl:w-auto">
                             <div className="flex items-center bg-gray-800/50 light:bg-white border border-emerald-500/50 light:border-emerald-400 rounded-full pl-3 pr-1 py-1 group hover:border-emerald-400 transition-all shadow-sm">
                                 <div className="relative flex items-center pl-1">
                                     <select
@@ -155,6 +149,15 @@ export const ResultsHeader = ({
                                     <ChevronDown className="absolute right-0 w-3.5 h-3.5 text-emerald-500 pointer-events-none mr-1" />
                                 </div>
                             </div>
+                            <button
+                                type="button"
+                                onClick={onResetFilters}
+                                className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3.5 py-2 text-xs sm:text-sm font-extrabold text-emerald-200 hover:border-emerald-300/70 hover:bg-emerald-500/20 light:bg-emerald-50 light:text-emerald-700 light:hover:bg-emerald-100 transition-all whitespace-nowrap shadow-sm"
+                                title="위치 검색을 초기화합니다"
+                            >
+                                <RotateCcw className="h-3.5 w-3.5" />
+                                위치 초기화
+                            </button>
                         </div>
                     )}
                 </div>
