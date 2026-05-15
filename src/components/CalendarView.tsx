@@ -29,6 +29,75 @@ interface CalendarViewProps {
 }
 
 type CalendarView = 'daily' | 'weekly' | 'monthly';
+type CalendarRegionId = 'all' | 'seoul' | 'gyeonggi' | 'incheon' | 'gangwon' | 'chungcheong' | 'jeolla' | 'gyeongsang' | 'jeju';
+
+const CALENDAR_REGION_FILTERS: Array<{
+    id: CalendarRegionId;
+    label: string;
+    regionIds: string[];
+    tokens: string[];
+}> = [
+    { id: 'all', label: '전국', regionIds: [], tokens: [] },
+    { id: 'seoul', label: '서울', regionIds: ['seoul'], tokens: ['서울', '서울특별시'] },
+    { id: 'gyeonggi', label: '경기', regionIds: ['gyeonggi'], tokens: ['경기', '경기도'] },
+    { id: 'incheon', label: '인천', regionIds: ['incheon'], tokens: ['인천', '인천광역시'] },
+    { id: 'gangwon', label: '강원', regionIds: ['gangwon'], tokens: ['강원', '강원도', '강원특별자치도'] },
+    { id: 'chungcheong', label: '충청', regionIds: ['chungbuk', 'chungnam', 'daejeon', 'sejong'], tokens: ['충북', '충청북도', '충남', '충청남도', '대전', '대전광역시', '세종', '세종특별자치시'] },
+    { id: 'jeolla', label: '전라', regionIds: ['jeonbuk', 'jeonnam', 'gwangju'], tokens: ['전북', '전라북도', '전북특별자치도', '전남', '전라남도', '광주', '광주광역시'] },
+    { id: 'gyeongsang', label: '경상', regionIds: ['gyeongbuk', 'gyeongnam', 'busan', 'daegu', 'ulsan'], tokens: ['경북', '경상북도', '경남', '경상남도', '부산', '부산광역시', '대구', '대구광역시', '울산', '울산광역시'] },
+    { id: 'jeju', label: '제주', regionIds: ['jeju'], tokens: ['제주', '제주특별자치도'] },
+];
+
+const CALENDAR_REGION_ID_SET = new Set(CALENDAR_REGION_FILTERS.map((region) => region.id));
+const KOREAN_REGION_TO_ID: Record<string, string> = {
+    서울: 'seoul',
+    경기: 'gyeonggi',
+    경기도: 'gyeonggi',
+    인천: 'incheon',
+    강원: 'gangwon',
+    충북: 'chungbuk',
+    충남: 'chungnam',
+    대전: 'daejeon',
+    세종: 'sejong',
+    전북: 'jeonbuk',
+    전남: 'jeonnam',
+    광주: 'gwangju',
+    경북: 'gyeongbuk',
+    경남: 'gyeongnam',
+    부산: 'busan',
+    대구: 'daegu',
+    울산: 'ulsan',
+    제주: 'jeju',
+};
+
+function normalizeCalendarRegionId(value?: string | null) {
+    if (!value) return '';
+    return KOREAN_REGION_TO_ID[value] || value;
+}
+
+function getCalendarRegionId(value?: string | null): CalendarRegionId {
+    const normalized = normalizeCalendarRegionId(value);
+    return CALENDAR_REGION_ID_SET.has(normalized as CalendarRegionId) ? normalized as CalendarRegionId : 'all';
+}
+
+function matchesCalendarRegion(performance: Performance, regionId: CalendarRegionId) {
+    if (regionId === 'all') return true;
+
+    const filter = CALENDAR_REGION_FILTERS.find((region) => region.id === regionId);
+    if (!filter) return true;
+
+    const normalizedRegion = normalizeCalendarRegionId(performance.region);
+    if (filter.regionIds.includes(normalizedRegion)) return true;
+
+    const haystack = [
+        performance.address,
+        performance.venue,
+        performance.district,
+        performance.bracketRegion,
+    ].filter(Boolean).join(' ');
+
+    return filter.tokens.some((token) => haystack.includes(token));
+}
 
 export default function CalendarView({
     performances: initialPerformances,
@@ -63,6 +132,7 @@ export default function CalendarView({
     // Read initial state from URL params
     const initialGenre = searchParams.get('genre') || 'all';
     const initialView = (searchParams.get('view') as CalendarView) || 'monthly';
+    const initialRegion = getCalendarRegionId(searchParams.get('region'));
     const initialDateStr = searchParams.get('date');
 
     const [currentMonth, setCurrentMonth] = useState(() => {
@@ -74,6 +144,7 @@ export default function CalendarView({
     });
     const [calendarView, setCalendarView] = useState<CalendarView>(initialView);
     const [localGenre, setLocalGenre] = useState(initialGenre);
+    const [localRegion, setLocalRegion] = useState<CalendarRegionId>(initialRegion);
     const effectiveGenre = useMemo(() => {
         if (localGenre === 'all') return 'all';
         return isGenreAvailable(genreCounts, localGenre) ? localGenre : 'all';
@@ -142,8 +213,10 @@ export default function CalendarView({
     const getPerformancesForDay = (day: Date) => {
         const dayStr = format(day, 'yyyy-MM-dd');
         const allEvents = performancesByDate.get(dayStr) || [];
-        if (effectiveGenre === 'all') return allEvents;
-        return allEvents.filter(p => p.genre === effectiveGenre);
+        return allEvents.filter((p) => (
+            matchesCalendarRegion(p, localRegion) &&
+            (effectiveGenre === 'all' || p.genre === effectiveGenre)
+        ));
     };
 
     // Calculate Counts for the focused view context
@@ -184,14 +257,28 @@ export default function CalendarView({
         }
     }, [calendarView, currentMonth, performancesByDate]);
 
+    const regionFilteredTotalEvents = useMemo(() => {
+        if (localRegion === 'all') return currentViewTotalEvents;
+        return currentViewTotalEvents.filter((p) => matchesCalendarRegion(p, localRegion));
+    }, [currentViewTotalEvents, localRegion]);
+
     const currentViewEvents = useMemo(() => {
-        if (effectiveGenre === 'all') return currentViewTotalEvents;
-        return currentViewTotalEvents.filter(p => p.genre === effectiveGenre);
-    }, [currentViewTotalEvents, effectiveGenre]);
+        if (effectiveGenre === 'all') return regionFilteredTotalEvents;
+        return regionFilteredTotalEvents.filter(p => p.genre === effectiveGenre);
+    }, [regionFilteredTotalEvents, effectiveGenre]);
+
+    const regionOptions = useMemo(() => {
+        return CALENDAR_REGION_FILTERS.map((region) => {
+            const count = region.id === 'all'
+                ? currentViewTotalEvents.length
+                : currentViewTotalEvents.filter((p) => matchesCalendarRegion(p, region.id)).length;
+            return { ...region, count };
+        });
+    }, [currentViewTotalEvents]);
 
     const visibleCountKey = useMemo(
-        () => `${calendarView}-${effectiveGenre}-${format(currentMonth, 'yyyy-MM-dd')}`,
-        [calendarView, currentMonth, effectiveGenre]
+        () => `${calendarView}-${localRegion}-${effectiveGenre}-${format(currentMonth, 'yyyy-MM-dd')}`,
+        [calendarView, currentMonth, effectiveGenre, localRegion]
     );
     const [visibleCountState, setVisibleCountState] = useState({ key: '', count: 20 });
     const visibleCount = visibleCountState.key === visibleCountKey ? visibleCountState.count : 20;
@@ -296,7 +383,46 @@ export default function CalendarView({
                             buttonClassName="h-8 w-8 sm:h-9 sm:w-9 border-gray-200 bg-gray-100 text-gray-500 hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-300"
                         />
                     </h2>
-                    <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+                    <div className="flex min-w-0 items-center gap-1 sm:gap-2 shrink-0">
+                        <div className="hidden lg:flex max-w-[42vw] items-center gap-1 overflow-x-auto scrollbar-hide pr-1">
+                            {regionOptions.map((region) => {
+                                const isSelected = localRegion === region.id;
+                                const isEmpty = region.count === 0 && region.id !== 'all';
+                                return (
+                                    <button
+                                        key={region.id}
+                                        type="button"
+                                        disabled={isEmpty}
+                                        onClick={() => setLocalRegion(region.id)}
+                                        className={clsx(
+                                            'flex h-8 items-center gap-1 whitespace-nowrap rounded-full px-3 text-[11px] font-black transition-colors',
+                                            isSelected
+                                                ? 'bg-gray-900 text-white shadow-sm dark:bg-white dark:text-gray-900'
+                                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
+                                            isEmpty && 'cursor-not-allowed opacity-35'
+                                        )}
+                                        aria-pressed={isSelected}
+                                    >
+                                        {region.label}
+                                        <span className={clsx('text-[10px]', isSelected ? 'opacity-80' : 'text-gray-400 dark:text-gray-500')}>
+                                            {region.count}
+                                        </span>
+                                    </button>
+                                );
+                            })}
+                        </div>
+                        <select
+                            value={localRegion}
+                            onChange={(event) => setLocalRegion(event.target.value as CalendarRegionId)}
+                            className="lg:hidden h-8 rounded-lg border border-gray-200 bg-gray-100 px-2 text-[11px] font-black text-gray-700 outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                            aria-label="지역 선택"
+                        >
+                            {regionOptions.map((region) => (
+                                <option key={region.id} value={region.id} disabled={region.count === 0 && region.id !== 'all'}>
+                                    {region.label} {region.count}
+                                </option>
+                            ))}
+                        </select>
                         {(['daily', 'weekly', 'monthly'] as CalendarView[]).map(v => (
                             <button
                                 key={v}
@@ -324,8 +450,8 @@ export default function CalendarView({
                         {availableGenres.map((genre) => {
                             const isSelected = effectiveGenre === genre.id;
                             const count = genre.id === 'all'
-                                ? currentViewTotalEvents.length
-                                : currentViewTotalEvents.filter(p => p.genre === genre.id).length;
+                                ? regionFilteredTotalEvents.length
+                                : regionFilteredTotalEvents.filter(p => p.genre === genre.id).length;
                             const isEmpty = count === 0;
 
                             return (
