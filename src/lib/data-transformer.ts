@@ -330,6 +330,28 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let facilities = raw.facilities || '';
     let closedDays = raw.closedDays || '';
     let contact = raw.contact || '';
+    let openRun = raw.openRun;
+    let performanceState = raw.performanceState || raw.state || raw.prfstate || '';
+    let lastModifiedAt = raw.lastModifiedAt || raw.updatedAt || '';
+    let dataCollectedAt = raw.dataCollectedAt || raw.lastCollected || raw.lastEnriched || '';
+    let venuePhone = raw.venuePhone || raw.phone || '';
+    let venueHomepage = raw.venueHomepage || raw.homepage || '';
+    let venueFacilityType = raw.venueFacilityType || raw.facilityType || '';
+    let venueSeatScale = raw.venueSeatScale || raw.seatScale || '';
+    let venueTheaterCount = raw.venueTheaterCount || raw.theaterCount || '';
+    let venueOpenedAt = raw.venueOpenedAt || '';
+    let venueAmenities = raw.venueAmenities;
+    let placeProvider = raw.placeProvider || '';
+    let placeId = raw.placeId || '';
+    let placeUrl = raw.placeUrl || '';
+    let placeCategory = raw.placeCategory || '';
+    let platforms = raw.platforms;
+    let stillImages = raw.stillImages;
+    let keywords = raw.keywords;
+    let tagline = raw.tagline || '';
+    let voteAverage = raw.voteAverage;
+    let voteCount = raw.voteCount;
+    let popularity = raw.popularity;
     const statsCollectedAt =
         (typeof raw.statsCollectedAt === 'string' && raw.statsCollectedAt.trim())
             ? raw.statsCollectedAt
@@ -345,6 +367,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         image = raw.poster || '';
         price = raw.cost || '';
         date = raw.time ? `${raw.date} (${raw.time})` : (raw.date || '');
+        region = raw.region || '서울';
     } else if (source === 'movie') {
         genre = 'movie';
     } else if (source === 'kopis' && raw.genre) {
@@ -461,6 +484,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         originalPrice: raw.originalPrice,
         cast,
         crew,
+        runningTime,
         age: age || '',
         ageRating: age || '',
         bracketRegion,
@@ -500,7 +524,29 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         facilities,
         closedDays,
         contact,
-        statsCollectedAt
+        statsCollectedAt,
+        openRun,
+        performanceState,
+        lastModifiedAt,
+        dataCollectedAt,
+        venuePhone,
+        venueHomepage,
+        venueFacilityType,
+        venueSeatScale,
+        venueTheaterCount,
+        venueOpenedAt,
+        venueAmenities,
+        placeProvider,
+        placeId,
+        placeUrl,
+        placeCategory,
+        platforms,
+        stillImages,
+        keywords,
+        tagline,
+        voteAverage,
+        voteCount,
+        popularity
     } as Performance;
 }
 

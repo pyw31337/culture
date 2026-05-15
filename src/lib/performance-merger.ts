@@ -13,6 +13,10 @@ function hasUsableImage(value: unknown): value is string {
     return typeof value === 'string' && value.trim() !== '' && !value.includes('default');
 }
 
+function hasNonEmptyArray(value: unknown): value is unknown[] {
+    return Array.isArray(value) && value.length > 0;
+}
+
 export function processAndMergePerformances(items: any[]): any[] {
     const uniqueMap = new Map<string, any>();
     const SPORTS_GENRES = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'];
@@ -102,10 +106,13 @@ function mergeItems(a: any, b: any): any {
     if (!hasUsableLink(merged.link) && hasUsableLink(loser.link)) merged.link = loser.link;
     if (!hasUsableLink(merged.website) && hasUsableLink(loser.website)) merged.website = loser.website;
 
-    // Platforms
-    if ((!merged.platforms || merged.platforms.length === 0) && (loser.platforms && loser.platforms.length > 0)) {
-        merged.platforms = loser.platforms;
-    }
+    // Enriched arrays
+    if (!hasNonEmptyArray(merged.platforms) && hasNonEmptyArray(loser.platforms)) merged.platforms = loser.platforms;
+    if (!hasNonEmptyArray(merged.stillImages) && hasNonEmptyArray(loser.stillImages)) merged.stillImages = loser.stillImages;
+    if (!hasNonEmptyArray(merged.keywords) && hasNonEmptyArray(loser.keywords)) merged.keywords = loser.keywords;
+    if (!hasNonEmptyArray(merged.synopsisImages) && hasNonEmptyArray(loser.synopsisImages)) merged.synopsisImages = loser.synopsisImages;
+    if (!hasNonEmptyArray(merged.priceList) && hasNonEmptyArray(loser.priceList)) merged.priceList = loser.priceList;
+    if (!hasNonEmptyArray(merged.venueAmenities) && hasNonEmptyArray(loser.venueAmenities)) merged.venueAmenities = loser.venueAmenities;
 
     // Metadata (Cast, Director, Runtime, etc.)
     if (!merged.cast && loser.cast) merged.cast = loser.cast;
@@ -129,6 +136,24 @@ function mergeItems(a: any, b: any): any {
     if (!merged.roi && loser.roi) merged.roi = loser.roi;
     if (!merged.trailer && loser.trailer) merged.trailer = loser.trailer;
     if (!merged.statsCollectedAt && loser.statsCollectedAt) merged.statsCollectedAt = loser.statsCollectedAt;
+    if (!merged.tagline && loser.tagline) merged.tagline = loser.tagline;
+    if (!merged.voteAverage && loser.voteAverage) merged.voteAverage = loser.voteAverage;
+    if (!merged.voteCount && loser.voteCount) merged.voteCount = loser.voteCount;
+    if (!merged.popularity && loser.popularity) merged.popularity = loser.popularity;
+    if (!merged.openRun && loser.openRun) merged.openRun = loser.openRun;
+    if (!merged.performanceState && loser.performanceState) merged.performanceState = loser.performanceState;
+    if (!merged.lastModifiedAt && loser.lastModifiedAt) merged.lastModifiedAt = loser.lastModifiedAt;
+    if (!merged.dataCollectedAt && loser.dataCollectedAt) merged.dataCollectedAt = loser.dataCollectedAt;
+    if (!merged.venuePhone && loser.venuePhone) merged.venuePhone = loser.venuePhone;
+    if (!merged.venueHomepage && loser.venueHomepage) merged.venueHomepage = loser.venueHomepage;
+    if (!merged.venueFacilityType && loser.venueFacilityType) merged.venueFacilityType = loser.venueFacilityType;
+    if (!merged.venueSeatScale && loser.venueSeatScale) merged.venueSeatScale = loser.venueSeatScale;
+    if (!merged.venueTheaterCount && loser.venueTheaterCount) merged.venueTheaterCount = loser.venueTheaterCount;
+    if (!merged.venueOpenedAt && loser.venueOpenedAt) merged.venueOpenedAt = loser.venueOpenedAt;
+    if (!merged.placeProvider && loser.placeProvider) merged.placeProvider = loser.placeProvider;
+    if (!merged.placeId && loser.placeId) merged.placeId = loser.placeId;
+    if (!merged.placeUrl && loser.placeUrl) merged.placeUrl = loser.placeUrl;
+    if (!merged.placeCategory && loser.placeCategory) merged.placeCategory = loser.placeCategory;
 
     // MomMom & Detailed Metadata
     if (!merged.feesAndPrograms && loser.feesAndPrograms) merged.feesAndPrograms = loser.feesAndPrograms;
@@ -184,6 +209,11 @@ function getRichnessScore(item: any): number {
     if (item.runningTime) score += 1;
     if (item.ageRating) score += 1;
     if (item.originalTitle) score += 1;
+    if (hasNonEmptyArray(item.keywords)) score += 1;
+    if (hasNonEmptyArray(item.stillImages)) score += 1;
+    if (item.performanceState) score += 1;
+    if (hasNonEmptyArray(item.venueAmenities)) score += 1;
+    if (item.venueSeatScale) score += 1;
 
     // Price is good, but shouldn't override metadata (unless metadata is equal)
     if (item.price) score += 1;

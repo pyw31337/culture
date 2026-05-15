@@ -10,6 +10,8 @@ const DATA_DIR = path.join(process.cwd(), 'src/data');
 const VENUE_FILE = path.join(DATA_DIR, 'venues.json');
 const OUTPUT_FILE = path.join(DATA_DIR, 'kopis-performances.json');
 const RATE_LIMIT_DELAY = 150; // ms between requests
+const DETAIL_LIMIT = Number.parseInt(process.env.KOPIS_DETAIL_LIMIT || '0', 10);
+const VENUE_LIMIT = Number.parseInt(process.env.KOPIS_VENUE_LIMIT || '0', 10);
 
 const parser = new XMLParser();
 
@@ -47,6 +49,19 @@ interface KopisPerformance {
     synopsis?: string;
     description?: string;
     synopsisImages?: string[];
+    openRun?: boolean;
+    performanceState?: string;
+    lastModifiedAt?: string;
+    dataCollectedAt?: string;
+    venueFacilityType?: string;
+    venueSeatScale?: string | number;
+    venueTheaterCount?: string | number;
+    venuePhone?: string;
+    venueHomepage?: string;
+    venueAmenities?: string[];
+    parking?: string;
+    restrooms?: string;
+    facilities?: string;
 }
 
 interface VenueInfo {
@@ -58,11 +73,102 @@ interface VenueInfo {
     mapped_region_id?: string;
     phone?: string;
     homepage?: string;
+    facilityType?: string;
+    seatScale?: string | number;
+    theaterCount?: string | number;
+    openedAt?: string;
+    amenities?: string[];
+    parking?: string;
+    restrooms?: string;
+    facilities?: string;
 }
 
 // --- Utils ---
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 const isUseless = (s: string) => !s || typeof s !== 'string' || s.trim() === '' || s.includes('해당정보') || s === '없음';
+
+const cleanText = (value: unknown) => {
+    if (value === undefined || value === null) return '';
+    return String(value).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+};
+
+const firstUseful = (...values: unknown[]) => {
+    for (const value of values) {
+        const text = cleanText(value);
+        if (text && !isUseless(text)) return text;
+    }
+    return '';
+};
+
+const splitPeople = (value: unknown) => {
+    const text = firstUseful(value);
+    if (!text) return undefined;
+
+    const people = text
+        .split(/[,，ㆍ·/|]|(?:\s{2,})|(?:\n+)/)
+        .map((item) => item.replace(/\([^)]*\)/g, '').trim())
+        .filter((item) => item && !isUseless(item));
+
+    return people.length > 0 ? [...new Set(people)].slice(0, 16) : undefined;
+};
+
+const parsePriceList = (value: unknown) => {
+    const text = firstUseful(value);
+    if (!text) return undefined;
+
+    const parts = text
+        .replace(/[\uff0c\u3001]/g, ',')
+        .replace(/\r/g, '\n')
+        .split(/\n+|(?<=원)\s*,\s*/)
+        .map((part) => part.trim())
+        .filter(Boolean);
+
+    const rows = parts.map((part) => {
+        const priceMatch = part.match(/((?:\d{1,3},)*\d{1,3}|무료)\s*원?/);
+        if (!priceMatch) return null;
+        const label = part.slice(0, priceMatch.index).replace(/[:：-]\s*$/, '').trim() || '기본';
+        const price = priceMatch[0].includes('무료') ? '무료' : `${priceMatch[1]}원`;
+        return { label, price };
+    }).filter((row): row is { label: string; price: string } => Boolean(row));
+
+    return rows.length > 0 ? rows : undefined;
+};
+
+const collectAmenities = (vdb: Record<string, unknown>) => {
+    const amenities: string[] = [];
+    const maybePush = (field: string, label: string) => {
+        const value = firstUseful(vdb[field]);
+        if (value && !/N|없음|무/i.test(value)) amenities.push(label);
+    };
+
+    maybePush('restaurant', '식당');
+    maybePush('cafe', '카페');
+    maybePush('store', '편의점');
+    maybePush('nolibang', '놀이방');
+    maybePush('suyu', '수유실');
+    maybePush('parkbarrier', '장애인 주차');
+    maybePush('restbarrier', '장애인 화장실');
+    maybePush('runwbarrier', '장애인 경사로');
+    maybePush('elevbarrier', '엘리베이터');
+    return [...new Set(amenities)];
+};
+
+const hasRichKopisDetails = (item?: KopisPerformance) => Boolean(
+    item &&
+    item.venueId &&
+    item.synopsisImages &&
+    item.synopsisImages.length > 0 &&
+    (
+        item.runtime ||
+        item.age ||
+        (item.cast && item.cast.length > 0) ||
+        item.production ||
+        item.host ||
+        item.organizer ||
+        item.priceList ||
+        item.performanceState
+    )
+);
 
 async function fetchWithRetry(url: string, params: any, retries = 3): Promise<any> {
     for (let i = 0; i < retries; i++) {
@@ -110,7 +216,7 @@ async function scrapeKopis() {
     // Initial scan for missing venues
     existingItems.forEach(it => {
         const v = it.venueId ? venues[it.venue] : null;
-        if (it.venueId && (!v || !v.phone || !v.homepage || !v.lat)) {
+        if (it.venueId && (!v || !v.phone || !v.homepage || !v.lat || !v.facilityType || !v.seatScale || !v.amenities)) {
             uniqueVenueIds.add(it.venueId);
         }
     });
@@ -123,6 +229,10 @@ async function scrapeKopis() {
         uniqueVenueIds.clear();
 
         for (const vid of ids) {
+            if (VENUE_LIMIT > 0 && venueUpdateCount >= VENUE_LIMIT) {
+                console.log(`\n⏸️ Venue enrichment limit reached (${VENUE_LIMIT}). Remaining venues will continue next run.`);
+                break;
+            }
             try {
                 process.stdout.write(`v`);
                 await delay(RATE_LIMIT_DELAY);
@@ -133,6 +243,16 @@ async function scrapeKopis() {
                 if (vdb && vdb.la && vdb.lo) {
                     const phone = !isUseless(vdb.telno) ? vdb.telno : (venues[vdb.fcltynm]?.phone);
                     const homepage = !isUseless(vdb.relateurl) ? vdb.relateurl : (venues[vdb.fcltynm]?.homepage);
+                    const amenities = collectAmenities(vdb);
+                    const parking = firstUseful(vdb.parkinglot);
+                    const restrooms = [
+                        firstUseful(vdb.restbarrier) ? '장애인 화장실' : '',
+                        firstUseful(vdb.suyu) ? '수유실' : '',
+                    ].filter(Boolean).join(', ');
+                    const facilities = [
+                        firstUseful(vdb.fcltychartr),
+                        amenities.length > 0 ? amenities.join(', ') : '',
+                    ].filter(Boolean).join(' · ');
 
                     const venueData = {
                         name: vdb.fcltynm,
@@ -141,7 +261,15 @@ async function scrapeKopis() {
                         lng: parseFloat(vdb.lo),
                         district: (vdb.adres || '').split(' ')[1],
                         phone,
-                        homepage
+                        homepage,
+                        facilityType: firstUseful(vdb.fcltychartr),
+                        seatScale: firstUseful(vdb.seatscale),
+                        theaterCount: firstUseful(vdb.mt13cnt),
+                        openedAt: firstUseful(vdb.opende),
+                        amenities,
+                        parking,
+                        restrooms,
+                        facilities,
                     };
 
                     // Save canonical
@@ -155,6 +283,14 @@ async function scrapeKopis() {
                             if (homepage && !vcache.homepage) vcache.homepage = homepage;
                             if (!vcache.lat) vcache.lat = venueData.lat;
                             if (!vcache.lng) vcache.lng = venueData.lng;
+                            if (venueData.facilityType && !vcache.facilityType) vcache.facilityType = venueData.facilityType;
+                            if (venueData.seatScale && !vcache.seatScale) vcache.seatScale = venueData.seatScale;
+                            if (venueData.theaterCount && !vcache.theaterCount) vcache.theaterCount = venueData.theaterCount;
+                            if (venueData.openedAt && !vcache.openedAt) vcache.openedAt = venueData.openedAt;
+                            if (venueData.amenities.length > 0 && !vcache.amenities) vcache.amenities = venueData.amenities;
+                            if (venueData.parking && !vcache.parking) vcache.parking = venueData.parking;
+                            if (venueData.restrooms && !vcache.restrooms) vcache.restrooms = venueData.restrooms;
+                            if (venueData.facilities && !vcache.facilities) vcache.facilities = venueData.facilities;
                         }
                     });
 
@@ -183,6 +319,7 @@ async function scrapeKopis() {
     const eddate = futureLimit.toISOString().split('T')[0].replace(/-/g, '');
 
     const fetchList = async (endpoint: string, isFestival = false) => {
+        let detailFetchCount = 0;
         const states = isFestival ? ['01', '02', '03', '04'] : ['02', '01']; 
         for (const state of states) {
             let page = 1;
@@ -208,12 +345,18 @@ async function scrapeKopis() {
                     const fullId = `kopis_${mt20id}`;
                     
                     const existing = existingItems.find(it => it.id === fullId);
-                    if (existing && existing.synopsis && existing.venueId) {
+                    if (existing && hasRichKopisDetails(existing) && process.env.KOPIS_FORCE_DETAIL_REFRESH !== '1') {
                         process.stdout.write(`s`);
                         continue;
                     }
 
                     try {
+                        if (DETAIL_LIMIT > 0 && detailFetchCount >= DETAIL_LIMIT) {
+                            console.log(`\n⏸️ Detail enrichment limit reached (${DETAIL_LIMIT}). Remaining performances will continue next run.`);
+                            safeWrite(OUTPUT_FILE, allItems);
+                            return;
+                        }
+                        detailFetchCount++;
                         process.stdout.write(`.`);
                         await delay(RATE_LIMIT_DELAY);
                         const detailXml = await fetchWithRetry(`${BASE_URL}/pblprfr/${mt20id}`, { service: API_KEY });
@@ -225,6 +368,18 @@ async function scrapeKopis() {
                                 let res = s.replace(/[\uff0c\u3001\n\r\t]/g, ',').replace(/\s+/g, ' ');
                                 return res.split(/(?<=원)\s*,\s*/).map(p => p.trim()).filter(p => p).join('\n');
                             };
+                            const cast = splitPeople(db.prfcast);
+                            const crew = splitPeople(db.prfcrew);
+                            const producer = firstUseful(db.entrpsnmP, db.producer);
+                            const planner = firstUseful(db.entrpsnmA, db.planner);
+                            const host = firstUseful(db.entrpsnmH, db.host);
+                            const organizer = firstUseful(db.entrpsnmS, db.organizer);
+                            const sponsor = firstUseful(db.sponsor, db.entrpsnmSponsor);
+                            const runtime = firstUseful(db.prfruntime, db.runtime);
+                            const age = firstUseful(db.prfage, db.age);
+                            const performanceState = firstUseful(db.prfstate, item.prfstate);
+                            const priceList = parsePriceList(db.pcseguidance);
+                            const currentVenue = venues[db.fcltynm] || venues[item.fcltynm];
 
                             const perf: KopisPerformance = {
                                 id: fullId,
@@ -240,6 +395,31 @@ async function scrapeKopis() {
                                 region: db.area,
                                 source: 'kopis',
                                 isFestival,
+                                cast,
+                                crew,
+                                runtime,
+                                age,
+                                production: producer || planner || host || organizer,
+                                host,
+                                organizer,
+                                planner,
+                                producer,
+                                sponsor,
+                                priceList,
+                                ageDetail: age,
+                                openRun: firstUseful(db.openrun).toUpperCase() === 'Y',
+                                performanceState,
+                                lastModifiedAt: firstUseful(db.updatedate, db.modifydate),
+                                dataCollectedAt: new Date().toISOString(),
+                                venuePhone: currentVenue?.phone,
+                                venueHomepage: currentVenue?.homepage,
+                                venueFacilityType: currentVenue?.facilityType,
+                                venueSeatScale: currentVenue?.seatScale,
+                                venueTheaterCount: currentVenue?.theaterCount,
+                                venueAmenities: currentVenue?.amenities,
+                                parking: currentVenue?.parking,
+                                restrooms: currentVenue?.restrooms,
+                                facilities: currentVenue?.facilities,
                                 synopsis: !isUseless(db.sty) ? db.sty : undefined,
                                 description: !isUseless(db.sty) ? db.sty : undefined,
                                 synopsisImages: db.styurls?.styurl ? (Array.isArray(db.styurls.styurl) ? db.styurls.styurl : [db.styurls.styurl]) : undefined,

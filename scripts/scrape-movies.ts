@@ -102,7 +102,7 @@ async function fetchTmdbData(title: string, year: string) {
         if (!results || results.length === 0) return null;
 
         const movieId = results[0].id;
-        const detailUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}&language=ko-KR&append_to_response=videos,credits`;
+        const detailUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}&language=ko-KR&append_to_response=videos,credits,images,keywords,watch/providers`;
         const detailRes = await axios.get(detailUrl);
         return detailRes.data;
     } catch (e) { return null; }
@@ -288,7 +288,8 @@ async function scrapeMovies() {
         if (existing && existing.image && existing.cast && existing.director && 
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
             existing.reservationRate && existing.audienceCount && existing.roi &&
-            existing.description && existing.link && !existing.posterFallback) {
+            existing.description && existing.link && !existing.posterFallback &&
+            existing.platforms && existing.keywords && existing.stillImages) {
             
             // --- DATA VALIDITY CHECK ---
             const movieDt = parseInt(existing.dateRaw?.replace(/-/g, '') || '0');
@@ -341,6 +342,20 @@ async function scrapeMovies() {
             const movieSearchUrl = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${m.title} 상영시간표`)}`;
             const productionCountries = tmdb?.production_countries?.map((country: any) => country.name)?.filter(Boolean);
             const productionYear = kobisDetail?.prdtYear || tmdb?.release_date?.slice(0, 4) || existing?.productionYear;
+            const providers = tmdb?.['watch/providers']?.results?.KR;
+            const platformNames = [
+                ...(providers?.flatrate || []),
+                ...(providers?.rent || []),
+                ...(providers?.buy || []),
+            ].map((provider: any) => provider.provider_name).filter(Boolean);
+            const stillImages = (tmdb?.images?.backdrops || [])
+                .slice(0, 8)
+                .map((image: any) => image.file_path ? `https://image.tmdb.org/t/p/w780${image.file_path}` : '')
+                .filter(Boolean);
+            const keywords = (tmdb?.keywords?.keywords || [])
+                .map((keyword: any) => keyword.name)
+                .filter(Boolean)
+                .slice(0, 12);
             
             // Refined Date Logic: Prioritize KOBIS openDt (theatrical) over TMDB (production/global)
             // If date is only YYYYMM, append the last day of that month.
@@ -402,6 +417,13 @@ async function scrapeMovies() {
                 productionCountry: productionCountries?.join(', ') || existing?.productionCountry,
                 productionYear,
                 movieInfo: existing?.movieInfo,
+                platforms: [...new Set(platformNames)].slice(0, 8).length > 0 ? [...new Set(platformNames)].slice(0, 8) : existing?.platforms,
+                stillImages: stillImages.length > 0 ? stillImages : existing?.stillImages,
+                keywords: keywords.length > 0 ? keywords : existing?.keywords,
+                tagline: tmdb?.tagline || existing?.tagline,
+                voteAverage: typeof tmdb?.vote_average === 'number' ? Number(tmdb.vote_average.toFixed(1)) : existing?.voteAverage,
+                voteCount: tmdb?.vote_count || existing?.voteCount,
+                popularity: typeof tmdb?.popularity === 'number' ? Number(tmdb.popularity.toFixed(1)) : existing?.popularity,
                 reservationRate: chartData?.resRate || existing?.reservationRate,
                 audienceCount: m.audiAcc 
                     ? (parseInt(m.audiAcc) > 10000 

@@ -132,6 +132,8 @@ const GENERIC_OR_FALLBACK_COORDINATE_KEYS = new Set([
 ]);
 
 const KNOWN_BRANCH_VENUE_RULES: Array<{ tokens: string[]; venueKey: string }> = [
+    { tokens: ['상록리조트', '아쿠아피아'], venueKey: '천안상록리조트 아쿠아피아' },
+    { tokens: ['상록리조트', '상록랜드'], venueKey: '천안상록리조트 상록랜드' },
     { tokens: ['주렁주렁', '하남점'], venueKey: '주렁주렁 하남점' },
     { tokens: ['주렁주렁', '동탄점'], venueKey: '주렁주렁 동탄점' },
     { tokens: ['주렁주렁', '영등포점'], venueKey: '주렁주렁 영등포점' },
@@ -156,6 +158,33 @@ const KNOWN_BRANCH_VENUE_RULES: Array<{ tokens: string[]; venueKey: string }> = 
     { tokens: ['레노부르크뮤지엄'], venueKey: '레노부르크뮤지엄' },
     { tokens: ['삼방가딸기랜드'], venueKey: '삼방가딸기랜드' },
 ];
+
+const EXTRA_VENUE_RECORDS: Record<string, VenueRecord> = {
+    '천안상록리조트 아쿠아피아': {
+        address: '충남 천안시 동남구 수신면 수신로 576',
+        district: '천안시',
+        lat: 36.7404638577393,
+        lng: 127.2890757071,
+        mapped_region_id: 'chungnam',
+        phone: '041-560-9114',
+        homepage: 'https://www.sangnokresort.co.kr/M090000',
+        facilities: '워터파크 · 실내풀 · 야외 물놀이장',
+        restrooms: '있음',
+        parking: '가능',
+    },
+    '천안상록리조트 상록랜드': {
+        address: '충남 천안시 동남구 수신면 수신로 576',
+        district: '천안시',
+        lat: 36.7404638577393,
+        lng: 127.2890757071,
+        mapped_region_id: 'chungnam',
+        phone: '041-560-9114',
+        homepage: 'https://www.sangnokresort.co.kr/',
+        facilities: '상록리조트 레저 시설',
+        restrooms: '있음',
+        parking: '가능',
+    },
+};
 
 function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
@@ -397,8 +426,35 @@ function rehydrateMoviesFromCatalog(items: Performance[]) {
         if (!performance.statsCollectedAt && catalogStatsCollectedAt) {
             performance.statsCollectedAt = catalogStatsCollectedAt;
         }
+        if (!performance.dataCollectedAt && catalogStatsCollectedAt) {
+            performance.dataCollectedAt = catalogStatsCollectedAt;
+        }
         if (!hasUsableLink(performance.link) && hasUsableLink(catalogItem.link)) {
             performance.link = catalogItem.link;
+        }
+        if ((!performance.platforms || performance.platforms.length === 0) && Array.isArray(catalogItem.platforms) && catalogItem.platforms.length > 0) {
+            performance.platforms = catalogItem.platforms;
+        }
+        if ((!performance.stillImages || performance.stillImages.length === 0) && Array.isArray(catalogItem.stillImages) && catalogItem.stillImages.length > 0) {
+            performance.stillImages = catalogItem.stillImages;
+        }
+        if ((!performance.keywords || performance.keywords.length === 0) && Array.isArray(catalogItem.keywords) && catalogItem.keywords.length > 0) {
+            performance.keywords = catalogItem.keywords;
+        }
+        if (!performance.tagline && catalogItem.tagline) {
+            performance.tagline = catalogItem.tagline;
+        }
+        if (performance.voteAverage === undefined && catalogItem.voteAverage !== undefined) {
+            performance.voteAverage = catalogItem.voteAverage;
+        }
+        if (performance.voteCount === undefined && catalogItem.voteCount !== undefined) {
+            performance.voteCount = catalogItem.voteCount;
+        }
+        if (performance.popularity === undefined && catalogItem.popularity !== undefined) {
+            performance.popularity = catalogItem.popularity;
+        }
+        if (!performance.trailer && catalogItem.trailer) {
+            performance.trailer = catalogItem.trailer;
         }
 
         if (!performance.backupPoster && catalogBackupPoster) {
@@ -501,6 +557,83 @@ function normalizeDuplicateTimeFields(items: Performance[]) {
         }
 
         performance.operatingHours = '';
+    });
+}
+
+function normalizeAmenityList(value: unknown) {
+    if (Array.isArray(value)) {
+        return value.map((item) => compactText(String(item))).filter(Boolean);
+    }
+
+    const text = compactText(value as string | undefined);
+    if (!text) return [];
+    return text.split(/[,，ㆍ·|/]/).map((item) => compactText(item)).filter(Boolean);
+}
+
+function enrichVenueContextFromRecords(items: Performance[], venues: Record<string, VenueRecord>) {
+    items.forEach((performance) => {
+        if (performance.genre === 'movie') return;
+
+        const record = venues[performance.venueKey || ''] || venues[performance.venue || ''];
+        if (!record) return;
+
+        const phone = compactText(record.phone as string | undefined);
+        const homepage = compactText(record.homepage as string | undefined);
+        const facilityType = compactText(record.facilityType as string | undefined);
+        const seatScale = compactText(record.seatScale as string | undefined);
+        const theaterCount = compactText(record.theaterCount as string | undefined);
+        const openedAt = compactText(record.openedAt as string | undefined);
+        const parking = compactText(record.parking as string | undefined);
+        const restrooms = compactText(record.restrooms as string | undefined);
+        const facilities = compactText(record.facilities as string | undefined);
+        const amenities = normalizeAmenityList(record.amenities);
+
+        if (!performance.contact && phone) performance.contact = phone;
+        if (!performance.venuePhone && phone) performance.venuePhone = phone;
+        if (!performance.website && homepage) performance.website = homepage;
+        if (!performance.venueHomepage && homepage) performance.venueHomepage = homepage;
+        if (!performance.venueFacilityType && facilityType) performance.venueFacilityType = facilityType;
+        if (!performance.venueSeatScale && seatScale) performance.venueSeatScale = seatScale;
+        if (!performance.venueTheaterCount && theaterCount) performance.venueTheaterCount = theaterCount;
+        if (!performance.venueOpenedAt && openedAt) performance.venueOpenedAt = openedAt;
+        if (!performance.parking && parking) performance.parking = parking;
+        if (!performance.restrooms && restrooms) performance.restrooms = restrooms;
+        if (!performance.facilities && facilities) performance.facilities = facilities;
+        if ((!performance.venueAmenities || performance.venueAmenities.length === 0) && amenities.length > 0) {
+            performance.venueAmenities = amenities;
+        }
+    });
+}
+
+function applyVenuePlaceContextToPerformances(items: Performance[], venueMasterBuild: ReturnType<typeof buildVenueMaster>) {
+    const entryById = new Map(venueMasterBuild.entries.map((entry) => [entry.id, entry]));
+
+    items.forEach((performance) => {
+        const venueMasterMatch = venueMasterBuild.performanceVenueIndex[performance.id];
+        if (!venueMasterMatch) return;
+
+        const entry = entryById.get(venueMasterMatch.canonicalId);
+        performance.venueCanonicalId = venueMasterMatch.canonicalId;
+        if (venueMasterMatch.hallName) {
+            performance.venueHallName = venueMasterMatch.hallName;
+        }
+
+        if (!entry) return;
+
+        const provider = (['kakao', 'naver'] as const).find((candidate) => entry.placeIds?.[candidate]);
+        const providerPlaceId = provider ? entry.placeIds?.[provider] : undefined;
+        if (provider && providerPlaceId) {
+            performance.placeProvider = provider;
+            performance.placeId = providerPlaceId;
+        }
+        if (entry.displayName && entry.confidence === 'high') {
+            performance.venue = entry.displayName;
+            performance.venueKey = entry.displayName;
+        }
+        if (entry.address) performance.address = entry.address;
+        if (typeof entry.lat === 'number') performance.lat = entry.lat;
+        if (typeof entry.lng === 'number') performance.lng = entry.lng;
+        performance.locationKey = undefined;
     });
 }
 
@@ -1120,6 +1253,7 @@ function getPublicBuildGeneratedAt() {
 }
 
 function shouldPreferPublicBaseline() {
+    if (process.env.PREFER_PUBLIC_DATA_BASELINE !== '1') return false;
     if (process.env.FORCE_SOURCE_REBUILD === '1') return false;
 
     const publicPerformancesPath = path.join(process.cwd(), 'public', 'data', 'performances.json');
@@ -1204,6 +1338,7 @@ async function generate() {
         const sourceVenues: Record<string, VenueRecord> = fs.existsSync(path.join(process.cwd(), 'src', 'data', 'venues.json'))
             ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'venues.json'), 'utf8'))
             : {};
+        Object.assign(sourceVenues, EXTRA_VENUE_RECORDS);
 
         // [Data Quality Override]
         // Manual fixes for specific items requested by user
@@ -1378,6 +1513,7 @@ async function generate() {
         normalizeDuplicateTimeFields(activePerformances);
         repairKnownLocationOverrides(activePerformances);
         sanitizeWeakVenueIdentities(activePerformances);
+        enrichVenueContextFromRecords(activePerformances, sourceVenues);
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformancesForHomeFeed(activePerformances);
@@ -1408,15 +1544,7 @@ async function generate() {
             new Date().toISOString(),
         );
 
-        sorted.forEach((performance) => {
-            const venueMasterMatch = venueMasterBuild.performanceVenueIndex[performance.id];
-            if (!venueMasterMatch) return;
-
-            performance.venueCanonicalId = venueMasterMatch.canonicalId;
-            if (venueMasterMatch.hallName) {
-                performance.venueHallName = venueMasterMatch.hallName;
-            }
-        });
+        applyVenuePlaceContextToPerformances(sorted as Performance[], venueMasterBuild);
 
         // [New: Data Pruning for payload optimization]
         const pruned: PrunedPerformance[] = sorted.map((p) => {

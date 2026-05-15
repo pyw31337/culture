@@ -534,6 +534,10 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
                 } else if (!hasAddress) {
                     p.address = p.venue || '주소 정보 없음';
                 }
+            } else if (p.source === 'seoul') {
+                // Seoul Culture Portal often provides a venue name before a geocoded address.
+                // Keep the item visible, then let venue-place enrichment resolve the official address.
+                if (!p.address) p.address = p.venue || '서울 문화행사';
             } else if (p.source?.startsWith('mommom')) {
                 // Keep MomMom items even if geo fails (Fallback to Seoul/Central or just don't filter)
                 if (!p.address) p.address = p.venue;

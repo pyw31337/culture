@@ -26,6 +26,7 @@ export const SOURCE_REGISTRY: SourceRegistryEntry[] = [
     { key: 'culture-portal', file: 'culture-portal.json', label: '문화포털' },
     { key: 'mommom', file: 'mommom.json', label: '맘맘', freshDays: 7, staleDays: 60 },
     { key: 'mommom-activity', file: 'mommom-activities.json', label: '맘맘 액티비티', freshDays: 7, staleDays: 60 },
+    { key: 'mommom-exhibition', file: 'mommom-exb.json', label: '맘맘 전시/체험', freshDays: 7, staleDays: 60 },
     { key: 'mommom-product', file: 'mommom-products.json', label: '맘맘 상품', freshDays: 7, staleDays: 60 },
     { key: 'museum', file: 'museum.json', label: '박물관 공공데이터', freshDays: 14, staleDays: 90 },
     { key: 'kopis', file: 'kopis-performances.json', label: 'KOPIS' },

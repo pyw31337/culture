@@ -152,6 +152,8 @@ run_scraper "mommom-activities" optional npx tsx scripts/scrape-mommom-activitie
 run_scraper "mommom-exhibitions" optional npx tsx scripts/scrape-mommom-exhibitions.ts
 run_scraper "mommom-products" optional npx tsx scripts/scrape-mommom-products.ts
 run_scraper "seoul-culture" optional npx tsx scripts/scrape-seoul-culture.ts
+run_scraper "culture-portal" optional npx tsx scripts/scrape-culture-portal.ts
+run_scraper "tourism" optional npx tsx scripts/scrape-visitkorea-expanded.ts
 run_scraper "build-venues" critical npx tsx scripts/build-venues.ts
 run_scraper "venue-places" optional npx tsx scripts/enrich-venue-places.ts
 

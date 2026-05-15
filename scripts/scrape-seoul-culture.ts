@@ -30,7 +30,22 @@ interface ScrapedEvent {
     lastEnriched?: string;
 }
 
-const TARGET_URL = 'https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?menuNo=200110&sdate=2026-01-01&edate=2026-12-31';
+function formatDateParam(date: Date) {
+    return [
+        date.getFullYear(),
+        String(date.getMonth() + 1).padStart(2, '0'),
+        String(date.getDate()).padStart(2, '0'),
+    ].join('-');
+}
+
+function buildTargetUrl() {
+    const start = new Date();
+    const end = new Date(start);
+    end.setFullYear(end.getFullYear() + 1);
+    return `https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?menuNo=200110&sdate=${formatDateParam(start)}&edate=${formatDateParam(end)}`;
+}
+
+const TARGET_URL = buildTargetUrl();
 const OutputPath = path.join(process.cwd(), 'src/data/seoul-culture.json');
 
 async function mapCategory(title: string): Promise<string> {
@@ -150,6 +165,14 @@ async function scrapeList(browser: any) {
 }
 
 async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map<string, ScrapedEvent>) {
+    if (process.env.SEOUL_CULTURE_SKIP_DETAIL === '1') {
+        return items.map((item) => ({
+            ...existingMap.get(item.id),
+            ...item,
+            lastEnriched: new Date().toISOString(),
+        }));
+    }
+
     // Determine TODO
     const todo: ScrapedEvent[] = [];
     const done: ScrapedEvent[] = [];
@@ -294,7 +317,17 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
         const listItems = await scrapeList(browser);
 
         // Enrich
-        const finalItems = await enrichItems(browser, listItems, existingMap);
+        let finalItems = listItems;
+        try {
+            finalItems = await enrichItems(browser, listItems, existingMap);
+        } catch (error) {
+            console.warn('⚠️ Detail enrichment failed; saving list-level Seoul Culture data.', error);
+            finalItems = listItems.map((item) => ({
+                ...existingMap.get(item.id),
+                ...item,
+                lastEnriched: new Date().toISOString(),
+            }));
+        }
 
         // Final Save
         fs.writeFileSync(OutputPath, JSON.stringify(finalItems, null, 2));

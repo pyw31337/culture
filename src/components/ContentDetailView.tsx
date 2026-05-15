@@ -341,6 +341,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                                     const operatingHoursText = normalizeDetailText(p.operatingHours);
                                     const performanceTimeText = normalizeDetailText(p.performanceTime);
+                                    const runtimeText = normalizeDetailText(detail.runtime || p.runningTime);
                                     if (operatingHoursText) {
                                         infoItems.push({ icon: Clock, label: '운영시간', text: operatingHoursText, color: 'text-purple-500' });
                                     }
@@ -353,8 +354,21 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             text: performanceTimeText,
                                             color: operatingHoursText ? 'text-cyan-500' : 'text-purple-500'
                                         });
-                                    } else if (!operatingHoursText && !performanceTimeText && detail.runtime) {
-                                        infoItems.push({ icon: Clock, label: '시간', text: `${detail.runtime}분`, color: 'text-purple-500' });
+                                    } else if (!operatingHoursText && !performanceTimeText && runtimeText) {
+                                        infoItems.push({
+                                            icon: Clock,
+                                            label: '시간',
+                                            text: runtimeText.includes('분') ? runtimeText : `${runtimeText}분`,
+                                            color: 'text-purple-500'
+                                        });
+                                    }
+
+                                    if (!isMovie && p.performanceState) {
+                                        infoItems.push({ icon: Info, label: '상태', text: p.performanceState, color: 'text-amber-500' });
+                                    }
+
+                                    if (!isMovie && (p.openRun === true || p.openRun === 'Y' || p.openRun === 'true')) {
+                                        infoItems.push({ icon: Calendar, label: '오픈런', text: '상시 진행', color: 'text-emerald-500' });
                                     }
                                     
                                     if (isMovie) {
@@ -388,6 +402,13 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         }
                                         if (detail.roi) {
                                             infoItems.push({ icon: Presentation, label: '수익률', text: detail.roi, color: 'text-purple-400' });
+                                        }
+                                        if (p.platforms && p.platforms.length > 0) {
+                                            infoItems.push({ icon: Globe, label: 'OTT', text: p.platforms.slice(0, 5).join(', '), color: 'text-cyan-500' });
+                                        }
+                                        if (p.voteAverage) {
+                                            const voteText = p.voteCount ? `${p.voteAverage} / 10 (${Number(p.voteCount).toLocaleString()}명)` : `${p.voteAverage} / 10`;
+                                            infoItems.push({ icon: Star, label: '평점', text: voteText, color: 'text-yellow-500' });
                                         }
                                     }
 
@@ -491,6 +512,15 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                                     if (p.facilities) {
                                         infoItems.push({ icon: Layers, label: '주요시설', text: p.facilities, color: 'text-teal-400' });
+                                    }
+
+                                    if (p.venueSeatScale) {
+                                        const seatText = String(p.venueSeatScale).includes('석') ? String(p.venueSeatScale) : `${p.venueSeatScale}석`;
+                                        infoItems.push({ icon: Building2, label: '객석', text: seatText, color: 'text-slate-400' });
+                                    }
+
+                                    if (p.venueAmenities && p.venueAmenities.length > 0) {
+                                        infoItems.push({ icon: Layers, label: '편의시설', text: p.venueAmenities.slice(0, 8).join(', '), color: 'text-teal-400' });
                                     }
 
                                     if (p.restrooms) {
@@ -696,6 +726,68 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     </p>
                                 </motion.div>
                             )}
+
+                            {p.genre === 'movie' && p.keywords && p.keywords.some((keyword) => /[가-힣]/.test(keyword)) && (
+                                <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
+                                    <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">영화 키워드</span>
+                                    {p.keywords.filter((keyword) => /[가-힣]/.test(keyword)).slice(0, 12).map((keyword) => (
+                                        <span key={keyword} className="px-3 py-1 rounded-full bg-indigo-50 text-[11px] font-bold text-indigo-600 border border-indigo-500/10 dark:bg-indigo-500/10 dark:text-indigo-300">
+                                            #{keyword}
+                                        </span>
+                                    ))}
+                                </motion.div>
+                            )}
+
+                            {p.stillImages && p.stillImages.length > 0 && (
+                                <motion.div variants={itemVariants} className="mt-6">
+                                    <h3 className="text-sm font-black text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
+                                        <Presentation className="w-4 h-4 text-rose-500" />
+                                        장면 이미지
+                                    </h3>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {p.stillImages.slice(0, 4).map((image) => (
+                                            <img
+                                                key={image}
+                                                src={getOptimizedUrl(image, 360, 62)}
+                                                alt={`${p.title} 장면 이미지`}
+                                                loading="lazy"
+                                                referrerPolicy="no-referrer"
+                                                className="aspect-video w-full rounded-xl object-cover border border-black/5 dark:border-white/10"
+                                            />
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {p.synopsisImages && p.synopsisImages.length > 0 && (
+                                <motion.div variants={itemVariants} className="mt-6">
+                                    <h3 className="text-sm font-black text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
+                                        <Sparkles className="w-4 h-4 text-amber-500" />
+                                        공연 소개 이미지
+                                    </h3>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {p.synopsisImages.slice(0, 4).map((image) => (
+                                            <img
+                                                key={image}
+                                                src={getOptimizedUrl(image, 360, 62)}
+                                                alt={`${p.title} 공연 소개 이미지`}
+                                                loading="lazy"
+                                                referrerPolicy="no-referrer"
+                                                className="aspect-[4/5] w-full rounded-xl object-cover border border-black/5 dark:border-white/10"
+                                            />
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            <motion.div variants={itemVariants} className="rounded-2xl bg-gray-50/80 p-4 text-[12px] font-bold text-gray-500 border border-black/5 dark:bg-white/5 dark:text-gray-400 dark:border-white/10">
+                                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                                    <span>출처: {p.source || 'unknown'}</span>
+                                    {(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt) && (
+                                        <span>수집/갱신: {formatCompactKoreanDateTime(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt || '')}</span>
+                                    )}
+                                </div>
+                            </motion.div>
 
                         </div>
 

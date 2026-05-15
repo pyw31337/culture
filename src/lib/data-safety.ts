@@ -13,6 +13,28 @@ export function safeArray<T>(data: any): T[] {
     return [];
 }
 
+function safeStringArray(value: any): string[] | undefined {
+    if (!Array.isArray(value)) return undefined;
+    const filtered = value
+        .map((item) => (typeof item === 'string' ? item.trim() : ''))
+        .filter(Boolean);
+    return filtered.length > 0 ? filtered : undefined;
+}
+
+function safePriceList(value: any): Performance['priceList'] {
+    if (!Array.isArray(value)) return undefined;
+    const filtered = value.reduce<NonNullable<Performance['priceList']>>((acc, item) => {
+            if (!item || typeof item !== 'object') return acc;
+            const label = typeof item.label === 'string' ? item.label.trim() : '';
+            const price = typeof item.price === 'string' ? item.price.trim() : '';
+            const discount = typeof item.discount === 'string' ? item.discount.trim() : undefined;
+            if (!label && !price) return acc;
+            acc.push({ label, price, discount });
+            return acc;
+        }, []);
+    return filtered.length > 0 ? filtered : undefined;
+}
+
 /**
  * Ensures a performance object has all required fields and safe defaults for optional ones.
  * This prevents client-side crashes (e.g., "Cannot read property 'includes' of undefined").
@@ -63,7 +85,14 @@ export function safePerformance(data: any): Performance | null {
 
         // Arrays
 
-        cast: Array.isArray(data.cast) ? data.cast.filter((c: any) => typeof c === 'string') : [],
+        cast: safeStringArray(data.cast) || [],
+        crew: safeStringArray(data.crew),
+        priceList: safePriceList(data.priceList),
+        synopsisImages: safeStringArray(data.synopsisImages),
+        venueAmenities: safeStringArray(data.venueAmenities),
+        platforms: safeStringArray(data.platforms),
+        stillImages: safeStringArray(data.stillImages),
+        keywords: safeStringArray(data.keywords),
 
         // Other optionals
         director: typeof data.director === 'string' ? data.director : undefined,
@@ -119,6 +148,26 @@ export function safePerformance(data: any): Performance | null {
         statsCollectedAt: typeof data.statsCollectedAt === 'string'
             ? data.statsCollectedAt
             : (typeof data.lastCollected === 'string' ? data.lastCollected : undefined),
+        openRun: typeof data.openRun === 'boolean' || typeof data.openRun === 'string' ? data.openRun : undefined,
+        performanceState: typeof data.performanceState === 'string' ? data.performanceState : undefined,
+        lastModifiedAt: typeof data.lastModifiedAt === 'string' ? data.lastModifiedAt : undefined,
+        dataCollectedAt: typeof data.dataCollectedAt === 'string'
+            ? data.dataCollectedAt
+            : (typeof data.lastCollected === 'string' ? data.lastCollected : undefined),
+        venuePhone: typeof data.venuePhone === 'string' ? data.venuePhone : undefined,
+        venueHomepage: typeof data.venueHomepage === 'string' ? data.venueHomepage : undefined,
+        venueFacilityType: typeof data.venueFacilityType === 'string' ? data.venueFacilityType : undefined,
+        venueSeatScale: typeof data.venueSeatScale === 'string' || typeof data.venueSeatScale === 'number' ? String(data.venueSeatScale) : undefined,
+        venueTheaterCount: typeof data.venueTheaterCount === 'string' || typeof data.venueTheaterCount === 'number' ? String(data.venueTheaterCount) : undefined,
+        venueOpenedAt: typeof data.venueOpenedAt === 'string' ? data.venueOpenedAt : undefined,
+        placeProvider: typeof data.placeProvider === 'string' ? data.placeProvider : undefined,
+        placeId: typeof data.placeId === 'string' ? data.placeId : undefined,
+        placeUrl: typeof data.placeUrl === 'string' ? data.placeUrl : undefined,
+        placeCategory: typeof data.placeCategory === 'string' ? data.placeCategory : undefined,
+        tagline: typeof data.tagline === 'string' ? data.tagline : undefined,
+        voteAverage: typeof data.voteAverage === 'number' || typeof data.voteAverage === 'string' ? data.voteAverage : undefined,
+        voteCount: typeof data.voteCount === 'number' || typeof data.voteCount === 'string' ? data.voteCount : undefined,
+        popularity: typeof data.popularity === 'number' || typeof data.popularity === 'string' ? data.popularity : undefined,
     };
 }
 

@@ -20,8 +20,10 @@ export type SourceFunnelRow = {
     label: string;
     file: string;
     rawItemCount: number;
+    activeRawItemCount: number;
     finalItemCount: number;
     conversionRate: number;
+    activeConversionRate: number;
     estimatedFilteredOrMergedCount: number;
     rawCompleteness: SourceFieldCompleteness;
     finalCompleteness: SourceFieldCompleteness;
@@ -91,7 +93,7 @@ const WORKFLOW_SOURCE_ALIASES: Record<string, string> = {
     mochaclass: 'mochaclass',
     mommom: 'mommom',
     'mommom-activities': 'mommom-activity',
-    'mommom-exhibitions': 'mommom-exhibitions',
+    'mommom-exhibitions': 'mommom-exhibition',
     'mommom-products': 'mommom-product',
     movies: 'movie',
     museum: 'museum',
@@ -99,11 +101,13 @@ const WORKFLOW_SOURCE_ALIASES: Record<string, string> = {
     'seoul-culture': 'seoul',
     sssd: 'sssd-class',
     timeticket: 'timeticket',
+    tourism: 'tourism',
     umclass: 'umclass',
     'yes24-exclusive': 'yes24-exclusive',
+    'culture-portal': 'culture-portal',
 };
 
-const INFRA_WORKFLOW_SCRAPERS = new Set(['build-venues', 'cinemas', 'mommom-exhibitions', 'venue-places']);
+const INFRA_WORKFLOW_SCRAPERS = new Set(['build-venues', 'cinemas', 'venue-places']);
 
 function readJsonIfExists(filePath: string): unknown {
     if (!fs.existsSync(filePath)) return null;
@@ -165,6 +169,50 @@ function buildCompleteness(items: Array<JsonObject | Performance>): SourceFieldC
     });
 }
 
+function parseDateToken(year: string, month: string, day: string) {
+    const y = Number.parseInt(year, 10);
+    const m = Number.parseInt(month, 10);
+    const d = Number.parseInt(day, 10);
+    if (!Number.isFinite(y) || !Number.isFinite(m) || !Number.isFinite(d)) return null;
+    const date = new Date(y, m - 1, d, 23, 59, 59, 999);
+    return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function extractComparableEndDate(item: JsonObject) {
+    const fields = [
+        item.endDate,
+        item.end,
+        item.to,
+        item.prfpdto,
+        item.date,
+        item.dateRaw,
+        item.period,
+        item.schedule,
+        item.startDate,
+    ].map(compactText).filter(Boolean);
+
+    const dates: Date[] = [];
+    fields.forEach((field) => {
+        Array.from(field.matchAll(/(20\d{2})[.\-/년\s]*(\d{1,2})[.\-/월\s]*(\d{1,2})/g)).forEach((match) => {
+            const parsed = parseDateToken(match[1], match[2], match[3]);
+            if (parsed) dates.push(parsed);
+        });
+        Array.from(field.matchAll(/\b(20\d{2})(\d{2})(\d{2})\b/g)).forEach((match) => {
+            const parsed = parseDateToken(match[1], match[2], match[3]);
+            if (parsed) dates.push(parsed);
+        });
+    });
+
+    if (dates.length === 0) return null;
+    return dates.sort((left, right) => right.getTime() - left.getTime())[0];
+}
+
+function isLikelyActiveRawItem(item: JsonObject, referenceDate: Date) {
+    const endDate = extractComparableEndDate(item);
+    if (!endDate) return true;
+    return endDate.getTime() >= referenceDate.getTime();
+}
+
 function getJsonDataFiles() {
     if (!fs.existsSync(SOURCE_DATA_DIR)) return [];
     return fs.readdirSync(SOURCE_DATA_DIR)
@@ -181,6 +229,8 @@ function readWorkflowScrapers() {
 }
 
 export function buildSourceFunnelReport(finalPerformances: Performance[], checkedAt = new Date().toISOString()): SourceFunnelReport {
+    const referenceDate = new Date(checkedAt);
+    referenceDate.setHours(0, 0, 0, 0);
     const finalBySource = finalPerformances.reduce<Record<string, Performance[]>>((acc, performance) => {
         const source = performance.source || 'unknown';
         acc[source] = acc[source] || [];
@@ -191,16 +241,20 @@ export function buildSourceFunnelReport(finalPerformances: Performance[], checke
     const rows = SOURCE_REGISTRY.map<SourceFunnelRow>((entry) => {
         const rawPath = path.join(SOURCE_DATA_DIR, entry.file);
         const rawItems = toArray(readJsonIfExists(rawPath));
+        const activeRawItems = rawItems.filter((item) => isLikelyActiveRawItem(item, referenceDate));
         const finalItems = finalBySource[entry.key] || [];
         const conversionRate = rawItems.length > 0 ? finalItems.length / rawItems.length : (finalItems.length > 0 ? 1 : 0);
+        const activeConversionRate = activeRawItems.length > 0 ? finalItems.length / activeRawItems.length : conversionRate;
 
         return {
             key: entry.key,
             label: entry.label,
             file: entry.file,
             rawItemCount: rawItems.length,
+            activeRawItemCount: activeRawItems.length,
             finalItemCount: finalItems.length,
             conversionRate,
+            activeConversionRate,
             estimatedFilteredOrMergedCount: Math.max(0, rawItems.length - finalItems.length),
             rawCompleteness: buildCompleteness(rawItems),
             finalCompleteness: buildCompleteness(finalItems),
@@ -241,8 +295,16 @@ export function buildSourceFunnelReport(finalPerformances: Performance[], checke
         .filter((entry) => !workflowSourceKeys.has(entry.key))
         .map((entry) => entry.key);
     const highLossSources = rows
-        .filter((row) => row.rawItemCount >= 20 && row.finalItemCount > 0 && row.conversionRate < 0.35)
-        .sort((left, right) => left.conversionRate - right.conversionRate || right.rawItemCount - left.rawItemCount);
+        .filter((row) => {
+            const comparableRawCount = row.activeRawItemCount > 0 ? row.activeRawItemCount : row.rawItemCount;
+            const comparableConversionRate = row.activeRawItemCount > 0 ? row.activeConversionRate : row.conversionRate;
+            return comparableRawCount >= 20 && row.finalItemCount > 0 && comparableConversionRate < 0.35;
+        })
+        .sort((left, right) => {
+            const leftRate = left.activeRawItemCount > 0 ? left.activeConversionRate : left.conversionRate;
+            const rightRate = right.activeRawItemCount > 0 ? right.activeConversionRate : right.conversionRate;
+            return leftRate - rightRate || right.rawItemCount - left.rawItemCount;
+        });
     const noFinalOutputSources = rows
         .filter((row) => {
             const registryEntry = SOURCE_REGISTRY.find((entry) => entry.key === row.key);

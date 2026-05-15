@@ -89,7 +89,14 @@ function pushSample(samples: Record<string, IntegritySample[]>, key: string, sam
 
 function getBracketLocationHint(title?: string) {
     const matches = [...clean(title).matchAll(/\[([^\]]{1,12})\]/g)].map((match) => match[1]);
-    return matches.find((value) => REGION_HINTS.some((hint) => value.includes(hint))) || null;
+    return matches.find((value) => {
+        const parts = clean(value)
+            .replace(/\([^)]*\)/g, ' ')
+            .split(/[\/·, ]+/)
+            .map((part) => part.trim())
+            .filter(Boolean);
+        return parts.some((part) => REGION_HINTS.includes(part));
+    }) || null;
 }
 
 function normalizeLocationText(value?: string | null) {
@@ -293,7 +300,7 @@ export function buildDisplayIntegrityReport(
     });
 
     const blockingIssueCount = locationReport.resolvedMismatchCount + suspiciousFreePriceCount;
-    const warningIssueCount = bracketLocationMismatchCount + unknownPriceCount + invalidDateCount + duplicateTimeCount + outOfSeasonCount;
+    const warningIssueCount = bracketLocationMismatchCount + invalidDateCount + duplicateTimeCount + outOfSeasonCount;
 
     return {
         checkedAt,
