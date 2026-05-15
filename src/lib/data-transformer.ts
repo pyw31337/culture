@@ -327,6 +327,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let targetAudience = raw.targetAudience || '';
     let operatingHours = raw.operatingHours || '';
     let priceDetail = raw.priceDetail || '';
+    let sourceUpdatedAt = raw.sourceUpdatedAt || '';
+    let instagram = raw.instagram || raw.instagramUrl || '';
+    let foodInfo = raw.foodInfo || '';
+    let foodVendors = raw.foodVendors;
     let facilities = raw.facilities || '';
     let closedDays = raw.closedDays || '';
     let contact = raw.contact || '';
@@ -413,7 +417,8 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
 
 
     // 3. Region Mapping
-    const mappedRegion = REGION_MAP[region] || (region ? 'etc' : 'unknown');
+    const regionIds = new Set(Object.values(REGION_MAP));
+    const mappedRegion = REGION_MAP[region] || (regionIds.has(region) ? region : (region ? 'etc' : 'unknown'));
 
     // 4. Fallback Handling
     if (!image || image === '정보 없음') {
@@ -521,6 +526,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         targetAudience,
         operatingHours,
         priceDetail,
+        sourceUpdatedAt,
+        instagram,
+        foodInfo,
+        foodVendors,
         facilities,
         closedDays,
         contact,

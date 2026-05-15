@@ -2,7 +2,7 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, type LucideIcon } from 'lucide-react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, AtSign, type LucideIcon } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import { getOptimizedUrl, formatUnifiedDate, toMobileUrl } from '@/lib/utils';
 import { motion, type Variants } from 'framer-motion';
@@ -95,6 +95,9 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         : null;
     const sourceLabel = getSourceLabel(p.source || 'unknown');
     const sourceUrl = getSourceOfficialUrl(p.source, p.website || p.link);
+    const collectedAtLabel = p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt
+        ? formatCompactKoreanDateTime(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt || '')
+        : null;
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -479,11 +482,34 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ icon: Phone, label: '문의', text: p.contact, color: 'text-emerald-400' });
                                     }
 
+                                    if (p.instagram) {
+                                        const instagramHandle = normalizeDetailText(p.instagram)
+                                            .replace(/^@/, '')
+                                            .replace(/^https?:\/\/(www\.)?instagram\.com\//, '')
+                                            .replace(/\/$/, '');
+                                        const instagramUrl = p.instagram.startsWith('http')
+                                            ? p.instagram
+                                            : `https://www.instagram.com/${instagramHandle}/`;
+                                        infoItems.push({
+                                            icon: AtSign,
+                                            label: '인스타그램',
+                                            text: instagramHandle,
+                                            color: 'text-pink-500',
+                                            isLink: true,
+                                            href: instagramUrl,
+                                            linkTitle: '인스타그램 새 창에서 보기',
+                                        });
+                                    }
+
+                                    if (p.sourceUpdatedAt) {
+                                        infoItems.push({ icon: Info, label: '공식 업데이트', text: p.sourceUpdatedAt, color: 'text-slate-400' });
+                                    }
+
                                      if (p.price && !p.priceList) {
                                          infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
                                      }
 
-                                     if (p.genre === 'tourism' && p.priceDetail) {
+                                     if (!isMovie && p.priceDetail && normalizeDetailText(p.priceDetail) !== normalizeDetailText(p.price)) {
                                          infoItems.push({ icon: Coins, label: '상세 요금', text: p.priceDetail, color: 'text-amber-500' });
                                      }
 
@@ -600,15 +626,27 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 </motion.div>
                             )}
 
-                            {/* Mommom Specific: Fees and Programs */}
+                            {/* Source-provided program / fee details */}
                             {p.feesAndPrograms && (
                                 <motion.div variants={itemVariants} className="mt-4 bg-purple-50/50 dark:bg-purple-500/5 rounded-xl p-4 border border-purple-500/10">
                                     <h4 className="text-[13px] font-bold text-purple-600 dark:text-purple-400 mb-2 flex items-center gap-1.5">
                                         <Presentation className="w-4 h-4" />
-                                        요금 및 프로그램
+                                        {p.source === 'festival' ? '행사내용' : '요금 및 프로그램'}
                                     </h4>
                                     <p className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line font-medium">
                                         {p.feesAndPrograms}
+                                    </p>
+                                </motion.div>
+                            )}
+
+                            {p.foodInfo && (
+                                <motion.div variants={itemVariants} className="mt-4 bg-emerald-50/50 dark:bg-emerald-500/5 rounded-xl p-4 border border-emerald-500/10">
+                                    <h4 className="text-[13px] font-bold text-emerald-600 dark:text-emerald-400 mb-2 flex items-center gap-1.5">
+                                        <Ticket className="w-4 h-4" />
+                                        먹거리 정보
+                                    </h4>
+                                    <p className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line font-medium">
+                                        {p.foodInfo.replace(/^먹거리 정보\s*/u, '')}
                                     </p>
                                 </motion.div>
                             )}
@@ -785,8 +823,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
 
                             <motion.div variants={itemVariants} className="rounded-2xl bg-gray-50/80 p-4 text-[12px] font-bold text-gray-500 border border-black/5 dark:bg-white/5 dark:text-gray-400 dark:border-white/10">
                                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                                    <span className="inline-flex items-center gap-1">
-                                        출처:
+                                    <span className="inline-flex items-center gap-1.5">
+                                        <span className="text-gray-400 dark:text-gray-500">[출처]</span>
                                         {sourceUrl ? (
                                             <a
                                                 href={sourceUrl}
@@ -803,8 +841,11 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             <span>{sourceLabel}</span>
                                         )}
                                     </span>
-                                    {(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt) && (
-                                        <span>수집/갱신: {formatCompactKoreanDateTime(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt || '')}</span>
+                                    {collectedAtLabel && (
+                                        <span className="inline-flex items-center gap-1.5">
+                                            <span className="text-gray-400 dark:text-gray-500">[수집/갱신]</span>
+                                            <span>{collectedAtLabel}</span>
+                                        </span>
                                     )}
                                 </div>
                             </motion.div>

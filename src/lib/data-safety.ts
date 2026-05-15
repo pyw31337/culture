@@ -134,6 +134,10 @@ export function safePerformance(data: any): Performance | null {
         priceDetail: typeof data.priceDetail === 'string' ? data.priceDetail : undefined,
         closedDays: typeof data.closedDays === 'string' ? data.closedDays : undefined,
         contact: typeof data.contact === 'string' ? data.contact : undefined,
+        sourceUpdatedAt: typeof data.sourceUpdatedAt === 'string' ? data.sourceUpdatedAt : undefined,
+        instagram: typeof data.instagram === 'string' ? data.instagram : undefined,
+        foodInfo: typeof data.foodInfo === 'string' ? data.foodInfo : undefined,
+        foodVendors: safeStringArray(data.foodVendors),
         
         // Movie & Meta Stats
         synopsis: data.synopsis ? String(data.synopsis) : undefined,

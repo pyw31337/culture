@@ -90,6 +90,10 @@ export type Performance = {
     priceDetail?: string;
     closedDays?: string;
     feesAndPrograms?: string;
+    sourceUpdatedAt?: string;
+    instagram?: string;
+    foodInfo?: string;
+    foodVendors?: string[];
     reservationRate?: string;
     audienceCount?: string;
     budget?: number | string;
