@@ -374,3 +374,10 @@
   - mommom-products
   - seoul-culture
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-05-16 10:49:56 UTC
+- **GitHub Run ID**: [25956870937](https://github.com/pyw31337/culture/actions/runs/25956870937)
+- **Note**: The 15:00 KST fallback data update failed after the local midnight update was absent or stale.
+- **Failed Scrapers**:
+  - culture-portal
+
