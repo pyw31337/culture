@@ -4752,24 +4752,6 @@
     "lastEnriched": "2026-05-14T15:50:30.225Z"
   },
   {
-    "id": "class_서울시자원봉사센터_허브티_아로마테라피_클래스_8월_29일",
-    "title": "[서울시자원봉사센터] 허브티+아로마테라피 클래스 (8월 29일)",
-    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FSHBDUR1tGR4jb5PU_5f5097bb65c28a0d18e73545_400x400?alt=media",
-    "date": "OPEN RUN",
-    "venue": "서울시자원봉사센터",
-    "link": "https://mochaclass.com/class/68a6ceed4a2860a2c30c3547",
-    "region": "seoul",
-    "genre": "class",
-    "price": "825,000원",
-    "originalPrice": "825,000원",
-    "discount": "",
-    "runningTime": "예약페이지 참조",
-    "ageLimit": "전체",
-    "casting": "",
-    "address": "서울",
-    "lastEnriched": "2026-05-14T15:50:32.368Z"
-  },
-  {
     "id": "class_강남_대치_논알콜_워터베이스향수",
     "title": "[강남/대치] 논알콜 워터베이스향수",
     "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F1Pt6jAunZFVW24zk_66bed24def373b68b2829306_400x400?alt=media",
@@ -21490,5 +21472,23 @@
     "casting": "",
     "address": "서울",
     "lastEnriched": "2026-05-14T16:02:34.590Z"
+  },
+  {
+    "id": "class_채선책_드로잉스튜디오",
+    "title": "채선책 드로잉스튜디오",
+    "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F1630396119087_6124bec837c5761aac2f55e6_400x400?alt=media",
+    "date": "OPEN RUN",
+    "venue": "모카클래스",
+    "link": "https://mochaclass.com/class/612e0ef937c5761aac2f5726",
+    "region": "seoul",
+    "genre": "class",
+    "price": "40,000원",
+    "originalPrice": "40,000원",
+    "discount": "",
+    "runningTime": "예약페이지 참조",
+    "ageLimit": "전체",
+    "casting": "",
+    "address": "서울",
+    "lastEnriched": "2026-05-17T09:33:43.079Z"
   }
 ]
