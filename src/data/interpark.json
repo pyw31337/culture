@@ -4397,17 +4397,23 @@
     "link": "https://tickets.interpark.com/goods/26007127",
     "region": "서울",
     "genre": "musical",
-    "runningTime": "",
-    "ageRating": "",
-    "price": "",
+    "runningTime": "60분",
+    "ageRating": "만 7세 이상",
+    "price": "전석 50,000원",
     "originalPrice": "",
     "discount": "",
     "address": "",
-    "priceList": [],
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "50,000원"
+      }
+    ],
     "ageDetail": "",
-    "bookingNotice": "",
+    "bookingNotice": "예매가능시간: 전일 17시(월~토 관람 시)까지 / 전일 11시(일요일 관람 시)까지",
     "synopsisImages": [],
-    "lastEnriched": "2026-05-17T08:25:58.207Z"
+    "lastEnriched": "2026-05-18T06:36:21.718Z",
+    "performanceTime": "토 17시 30분 / 일, 월 15시 40분"
   },
   {
     "id": "perf_특별할인_9_900원_가족뮤지컬_백설공주",

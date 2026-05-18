@@ -30,6 +30,7 @@ interface Performance {
     // New fields
     address?: string;
     runningTime?: string;
+    performanceTime?: string;
     ageRating?: string;
     price?: string;
     originalPrice?: string;
@@ -318,7 +319,40 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 const basicInfo = await page.evaluate(function () {
                     // 1. Info Items (Runtime, Age)
                     let runningTime = '';
+                    let performanceTime = '';
                     let ageRating = '';
+
+                    const normalizeInlineText = function (value: string) {
+                        return (value || '').replace(/\s+/g, ' ').trim();
+                    };
+
+                    const bodyLines = function () {
+                        return (document.body.innerText || '')
+                            .split('\n')
+                            .map(line => normalizeInlineText(line))
+                            .filter(Boolean);
+                    };
+
+                    const readValueAfterLabel = function (labels: string[]) {
+                        const lines = bodyLines();
+                        for (let i = 0; i < lines.length; i += 1) {
+                            for (const label of labels) {
+                                const line = lines[i];
+                                if (line === label || line.startsWith(label)) {
+                                    const inline = normalizeInlineText(line.slice(label.length));
+                                    if (inline && !inline.includes('자세히') && inline !== label) return inline;
+
+                                    for (let j = i + 1; j < Math.min(lines.length, i + 6); j += 1) {
+                                        const next = lines[j];
+                                        if (!next || labels.includes(next)) continue;
+                                        if (next.includes('자세히') || next.includes('전체가격보기')) continue;
+                                        return next;
+                                    }
+                                }
+                            }
+                        }
+                        return '';
+                    };
 
                     // Try finding .infoList items first, or just .infoItem globally if .infoList class is missing
                     const infoItems = Array.from(document.querySelectorAll('.infoList .infoItem, li.infoItem'));
@@ -365,6 +399,18 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                             const ageMatch = bodyText.match(/관람연령\s*\n*(.*?관람가능|.*?\s이상)/);
                             if (ageMatch) ageRating = ageMatch[1].trim();
                         }
+                    }
+
+                    if (!runningTime) {
+                        runningTime = readValueAfterLabel(['공연시간', '관람시간']);
+                    }
+                    if (!ageRating) {
+                        ageRating = readValueAfterLabel(['관람연령', '이용등급']);
+                    }
+                    if (ageRating) {
+                        ageRating = normalizeInlineText(ageRating)
+                            .replace(/세이상/g, '세 이상')
+                            .replace(/세\s*이상/g, '세 이상');
                     }
 
                     // 2. Price Info
@@ -630,6 +676,10 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                     // 5. Booking Notice (New: Search in prdGuide or special notice areas)
                     let bookingNotice = '';
+                    const inlineBookingNotice = document.querySelector('.prdContents.detail .content .contentDetailText')?.textContent?.trim() || '';
+                    if (inlineBookingNotice && inlineBookingNotice.includes('예매가능시간')) {
+                        bookingNotice = normalizeInlineText(inlineBookingNotice);
+                    }
                     const guideItems = Array.from(document.querySelectorAll('.prdGuide strong'));
                     guideItems.forEach(strong => {
                         const title = strong.textContent?.trim() || '';
@@ -666,13 +716,44 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                         }
                     });
 
+                    if (priceList.length === 0) {
+                        const lines = bodyLines();
+                        for (let i = 0; i < lines.length; i += 1) {
+                            const inlineMatch = lines[i].match(/^(전석|일반석|R석|S석|A석|VIP석|스탠딩|지정석|자유석)\s+([0-9,]+원)$/);
+                            if (inlineMatch) {
+                                priceList.push({ label: inlineMatch[1], price: inlineMatch[2] });
+                                continue;
+                            }
+
+                            if (/^(전석|일반석|R석|S석|A석|VIP석|스탠딩|지정석|자유석)$/.test(lines[i])) {
+                                const next = lines[i + 1] || '';
+                                const priceMatch = next.match(/^([0-9,]+원)$/);
+                                if (priceMatch) {
+                                    priceList.push({ label: lines[i], price: priceMatch[1] });
+                                }
+                            }
+                        }
+                    }
+
+                    if (!price && priceList.length > 0) {
+                        price = priceList.map(item => `${item.label} ${item.price}`).join('\n');
+                    }
+
+                    const scheduleList = document.querySelector('.prdContents.detail .content .contentDetail .contentDetailList');
+                    if (scheduleList) {
+                        performanceTime = Array.from(scheduleList.querySelectorAll('li, div, p'))
+                            .map(el => normalizeInlineText(el.textContent || ''))
+                            .filter(line => line && !line.includes('예매가능시간'))
+                            .join('\n');
+                    }
+
                     const synopsis = document.querySelector('.prdContents.detail .content .contentDetailText, .prdContents.detail .content .contentDetail')?.textContent?.trim();
                     const synopsisImages = Array.from(document.querySelectorAll('.prdContents.detail .content .contentDetail img')).map(img => (img as HTMLImageElement).src);
 
-                    return { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages };
+                    return { runningTime, performanceTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages };
                 });
 
-                let { runningTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages } = basicInfo;
+                let { runningTime, performanceTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages } = basicInfo;
 
                 // 3. Click "Venue Info" Layer if address is missing
                 if (!address) {
@@ -747,6 +828,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 return {
                     ...item,
                     runningTime,
+                    performanceTime,
                     ageRating,
                     price,
                     originalPrice,

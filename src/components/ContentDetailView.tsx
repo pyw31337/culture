@@ -59,6 +59,11 @@ const normalizeDetailText = (value: unknown) => String(value ?? '')
 
 const compactDetailText = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim();
 
+const isGenericPerformanceState = (value?: string | null) => {
+    const text = compactDetailText(value);
+    return /^(공연예정|예정|판매예정)$/u.test(text);
+};
+
 const formatWebsiteLabel = (value: string) => {
     const label = compactDetailText(value)
         .replace(/^https?:\/\//, '')
@@ -414,17 +419,23 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             text: performanceTimeText,
                                             color: operatingHoursText ? 'text-cyan-500' : 'text-purple-500'
                                         });
-                                    } else if (!operatingHoursText && !performanceTimeText && runtimeText) {
+                                    }
+                                    if (
+                                        runtimeText
+                                        && compactDetailText(runtimeText) !== compactDetailText(performanceTimeText)
+                                        && compactDetailText(runtimeText) !== compactDetailText(operatingHoursText)
+                                    ) {
                                         infoItems.push({
                                             icon: Clock,
-                                            label: '시간',
-                                            text: runtimeText.includes('분') ? runtimeText : `${runtimeText}분`,
+                                            label: performanceTimeText || operatingHoursText ? '소요시간' : '시간',
+                                            text: runtimeText.includes('분') || runtimeText.includes('시간') ? runtimeText : `${runtimeText}분`,
                                             color: 'text-purple-500'
                                         });
                                     }
 
-                                    if (!isMovie && p.performanceState) {
-                                        infoItems.push({ icon: Info, label: '상태', text: p.performanceState, color: 'text-amber-500' });
+                                    const performanceStateText = normalizeDetailText(p.performanceState);
+                                    if (!isMovie && performanceStateText && !isGenericPerformanceState(performanceStateText)) {
+                                        infoItems.push({ icon: Info, label: '상태', text: performanceStateText, color: 'text-amber-500' });
                                     }
 
                                     if (!isMovie && (p.openRun === true || p.openRun === 'Y' || p.openRun === 'true')) {
