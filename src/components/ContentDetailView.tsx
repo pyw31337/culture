@@ -59,9 +59,23 @@ const normalizeDetailText = (value: unknown) => String(value ?? '')
 
 const compactDetailText = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim();
 
+const comparableDetailText = (value: unknown) => compactDetailText(value)
+    .replace(/[·ㆍ,./\\\-_:|"'“”‘’()[\]\s]/g, '')
+    .toLowerCase();
+
 const isGenericPerformanceState = (value?: string | null) => {
     const text = compactDetailText(value);
     return /^(공연예정|예정|판매예정)$/u.test(text);
+};
+
+const isRedundantAgeDetail = (ageDetail?: string | null, ...ageValues: Array<string | undefined | null>) => {
+    const detail = comparableDetailText(ageDetail);
+    if (!detail) return true;
+
+    return ageValues
+        .map(value => comparableDetailText(value))
+        .filter(Boolean)
+        .some(age => detail === age || (detail.includes(age) && detail.length <= age.length + 8));
 };
 
 const formatWebsiteLabel = (value: string) => {
@@ -157,6 +171,8 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt
     );
     const officialUpdateLabel = formatOfficialUpdateLabel(p.sourceUpdatedAt);
+    const visibleAgeDetail = normalizeDetailText(p.ageDetail);
+    const shouldShowAgeDetail = Boolean(visibleAgeDetail && !isRedundantAgeDetail(visibleAgeDetail, p.age, p.ageRating));
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -427,7 +443,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     ) {
                                         infoItems.push({
                                             icon: Clock,
-                                            label: performanceTimeText || operatingHoursText ? '소요시간' : '시간',
+                                            label: performanceTimeText || operatingHoursText ? '공연시간' : '시간',
                                             text: runtimeText.includes('분') || runtimeText.includes('시간') ? runtimeText : `${runtimeText}분`,
                                             color: 'text-purple-500'
                                         });
@@ -624,9 +640,9 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     return dedupeDetailInfoItems(infoItems).map((item, idx) => (
                                         <div key={idx} className="flex items-start justify-between gap-4 py-2 border-b border-gray-50 dark:border-white/5 last:border-0">
                                             <div className="flex items-start gap-3 min-w-0 flex-1">
-                                                <div className="flex items-center gap-1.5 w-14 shrink-0 mt-[2px]">
-                                                    <item.icon className={`w-4 h-4 ${item.color} opacity-80`} />
-                                                    <span className="text-[12px] font-bold text-gray-500 dark:text-gray-400">{item.label}</span>
+                                                <div className="grid w-[6.75rem] shrink-0 grid-cols-[1rem_1fr] items-start gap-2 mt-[2px]">
+                                                    <item.icon className={`w-4 h-4 shrink-0 ${item.color} opacity-80`} />
+                                                    <span className="text-[12px] font-bold text-gray-500 dark:text-gray-400 whitespace-nowrap leading-4">{item.label}</span>
                                                 </div>
                                                 <div className="flex flex-col gap-1 flex-1 min-w-0">
                                                     {item.isLink ? (
@@ -717,16 +733,16 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             )}
 
                             {/* Detailed Notices & Age Rules */}
-                            {(p.ageDetail || p.bookingNotice) && (
+                            {(shouldShowAgeDetail || p.bookingNotice) && (
                                 <motion.div variants={itemVariants} className="mt-4 space-y-3">
-                                    {p.ageDetail && (
+                                    {shouldShowAgeDetail && (
                                         <div className="bg-blue-50/50 dark:bg-blue-500/5 rounded-xl p-4 border border-blue-500/10">
                                             <h4 className="text-[13px] font-bold text-blue-600 dark:text-blue-400 mb-1.5 flex items-center gap-1.5">
                                                 <Info className="w-4 h-4" />
                                                 관람/입장 연령 안내
                                             </h4>
                                             <p className="text-[13px] text-blue-800/80 dark:text-blue-300/80 leading-relaxed whitespace-pre-line font-medium">
-                                                {p.ageDetail}
+                                                {visibleAgeDetail}
                                             </p>
                                         </div>
                                     )}
