@@ -116,6 +116,13 @@ export function safePerformance(data: any): Performance | null {
         lng: typeof data.lng === 'number' ? data.lng : undefined,
         address: typeof data.address === 'string' ? data.address : undefined,
         source: typeof data.source === 'string' ? data.source : undefined,
+        bracketRegion: typeof data.bracketRegion === 'string' ? data.bracketRegion : undefined,
+        production: typeof data.production === 'string' ? data.production : undefined,
+        host: typeof data.host === 'string' ? data.host : undefined,
+        organizer: typeof data.organizer === 'string' ? data.organizer : undefined,
+        planner: typeof data.planner === 'string' ? data.planner : undefined,
+        producer: typeof data.producer === 'string' ? data.producer : undefined,
+        sponsor: typeof data.sponsor === 'string' ? data.sponsor : undefined,
 
         // Tourism & Enhanced Metadata
         website: typeof data.website === 'string' ? data.website : undefined,

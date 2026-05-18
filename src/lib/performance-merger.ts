@@ -144,6 +144,12 @@ function mergeItems(a: any, b: any): any {
     if (!merged.performanceState && loser.performanceState) merged.performanceState = loser.performanceState;
     if (!merged.lastModifiedAt && loser.lastModifiedAt) merged.lastModifiedAt = loser.lastModifiedAt;
     if (!merged.dataCollectedAt && loser.dataCollectedAt) merged.dataCollectedAt = loser.dataCollectedAt;
+    if (!merged.production && loser.production) merged.production = loser.production;
+    if (!merged.host && loser.host) merged.host = loser.host;
+    if (!merged.organizer && loser.organizer) merged.organizer = loser.organizer;
+    if (!merged.planner && loser.planner) merged.planner = loser.planner;
+    if (!merged.producer && loser.producer) merged.producer = loser.producer;
+    if (!merged.sponsor && loser.sponsor) merged.sponsor = loser.sponsor;
     if (!merged.venuePhone && loser.venuePhone) merged.venuePhone = loser.venuePhone;
     if (!merged.venueHomepage && loser.venueHomepage) merged.venueHomepage = loser.venueHomepage;
     if (!merged.venueFacilityType && loser.venueFacilityType) merged.venueFacilityType = loser.venueFacilityType;

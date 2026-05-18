@@ -626,7 +626,17 @@ function applyVenuePlaceContextToPerformances(items: Performance[], venueMasterB
             performance.placeProvider = provider;
             performance.placeId = providerPlaceId;
         }
-        if (entry.displayName && entry.confidence === 'high') {
+        const shouldKeepSourceVenueName = (() => {
+            if (performance.source !== 'yes24-exclusive') return false;
+            const sourceVenue = compactText(performance.venue);
+            const displayName = compactText(entry.displayName);
+            if (!sourceVenue || !displayName || sourceVenue === displayName) return false;
+            return sourceVenue.length > displayName.length
+                && /(문화홀|콘서트홀|아트홀|소극장|대극장|공연장|홀)$/u.test(sourceVenue)
+                && isCompatibleVenueDisplayName(sourceVenue, displayName);
+        })();
+
+        if (entry.displayName && entry.confidence === 'high' && !shouldKeepSourceVenueName) {
             performance.venue = entry.displayName;
             performance.venueKey = entry.displayName;
         }

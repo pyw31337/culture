@@ -26,6 +26,16 @@ function slugify(text: string): string {
         .replace(/^_|_$/g, '');
 }
 
+function needsDetailRefresh(item: any) {
+    return !item
+        || !item.ageRating
+        || !item.runningTime
+        || !item.performanceTime
+        || !item.reservationInfo
+        || !item.description
+        || !item.priceDetail;
+}
+
 async function scrapeYes24() {
     console.log('Starting Yes24 Multi-Category Exclusive Scraper...');
 
@@ -131,9 +141,10 @@ async function scrapeYes24() {
                 for (const item of items) {
                     progressBar.update({ item: item.title.substring(0, 15) });
                     
-                    // Check if already enriched to save time and requests
+                    // Check if already enriched to save time and requests.
+                    // Older rows only had price/description, so refresh them when detail fields are missing.
                     const existing = allEnrichedItems.find(i => i.id === item.id);
-                    if (existing) {
+                    if (existing && !needsDetailRefresh(existing)) {
                         progressBar.increment();
                         continue;
                     }
@@ -142,23 +153,151 @@ async function scrapeYes24() {
                         const detailPage = await browser.newPage();
                         await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
                         
-                        const detail = await detailPage.evaluate(() => {
-                            const priceList = document.querySelectorAll('.rn-product-price1 li');
-                            const prices = Array.from(priceList).map(li => li.textContent?.trim() || '').filter(Boolean);
-                            const description = document.querySelector('.rn-product-area2')?.textContent?.trim() || '';
-                            return { price: prices.join(', '), description };
-                        });
+                        const detail = await detailPage.evaluate(async (perfId) => {
+                            const compact = (value?: string | null) => (value || '')
+                                .replace(/\r/g, '')
+                                .replace(/\u00a0/g, ' ')
+                                .replace(/[ \t]+/g, ' ')
+                                .trim();
+
+                            const cleanLines = (value?: string | null) => (value || '')
+                                .replace(/\r/g, '')
+                                .replace(/\u00a0/g, ' ')
+                                .split('\n')
+                                .map(line => line.replace(/[ \t]+/g, ' ').trim())
+                                .filter(Boolean)
+                                .join('\n')
+                                .trim();
+
+                            const readDlValues = (selector: string) => {
+                                const result: Record<string, string> = {};
+                                const root = document.querySelector(selector);
+                                if (!root) return result;
+
+                                root.querySelectorAll('dt').forEach((dt) => {
+                                    const label = compact(dt.textContent);
+                                    if (!label) return;
+
+                                    const values: string[] = [];
+                                    let node = dt.nextElementSibling;
+                                    while (node && node.tagName.toLowerCase() !== 'dt') {
+                                        values.push((node as HTMLElement).innerText || node.textContent || '');
+                                        node = node.nextElementSibling;
+                                    }
+                                    result[label] = cleanLines(values.join('\n'));
+                                });
+
+                                return result;
+                            };
+
+                            const htmlToReadableText = (html?: string) => {
+                                if (!html) return '';
+                                const doc = new DOMParser().parseFromString(html, 'text/html');
+                                doc.querySelectorAll('script, style, img').forEach(el => el.remove());
+
+                                const blocks = Array.from(doc.body.querySelectorAll('p, li, dt, dd, div'))
+                                    .filter(el => !el.querySelector('p, li, dt, dd'))
+                                    .map(el => compact((el as HTMLElement).innerText || el.textContent || ''))
+                                    .filter(Boolean);
+
+                                const unique = blocks.filter((line, index) => {
+                                    return blocks.findIndex(candidate => candidate === line || candidate.includes(line)) === index;
+                                });
+
+                                const blockText = unique.join('\n').trim();
+                                return blockText || cleanLines(doc.body.textContent || '');
+                            };
+
+                            const parseYes24Json = (text: string) => {
+                                try {
+                                    return JSON.parse(text);
+                                } catch {
+                                    return JSON.parse(text.replace(/\r/gi, '\\r').replace(/\n/gi, '\\n'));
+                                }
+                            };
+
+                            const parsePriceItem = (raw: string) => {
+                                const text = compact(raw);
+                                const priceMatch = text.match(/([0-9,]+)\s*원/);
+                                if (!priceMatch) return null;
+                                const label = compact(text.slice(0, priceMatch.index).replace(/[:：]/g, '')) || '가격';
+                                return { label, price: `${priceMatch[1]}원` };
+                            };
+
+                            const area1 = readDlValues('.rn-product-area1');
+                            const area3 = readDlValues('.rn-product-area3');
+                            const priceTexts = Array.from(document.querySelectorAll('.rn-product-price1 li'))
+                                .map(li => compact(li.textContent))
+                                .filter(Boolean);
+                            const priceList = priceTexts.map(parsePriceItem).filter(Boolean);
+                            const discountSummary = compact(document.querySelector('.rn-product-price2')?.textContent)
+                                .replace(/자세히$/u, '')
+                                .trim();
+
+                            let ajaxDetail: Record<string, string> = {};
+                            try {
+                                const response = await fetch(`/New/Perf/Detail/Ajax/axPerfContents.aspx?IdPerf=${perfId}`, {
+                                    credentials: 'include'
+                                });
+                                const text = await response.text();
+                                const parsed = parseYes24Json(text);
+                                if (parsed?.Result === '00') {
+                                    ajaxDetail = {
+                                        notice: htmlToReadableText(parsed.PerfNotice),
+                                        promotion: htmlToReadableText(parsed.PerfPromotion),
+                                        content: htmlToReadableText(parsed.PerfContent),
+                                        organization: htmlToReadableText(parsed.PerfOrganization),
+                                    };
+                                }
+                            } catch {
+                                ajaxDetail = {};
+                            }
+
+                            const organizationLines = cleanLines(ajaxDetail.organization).split('\n').filter(Boolean);
+                            const organizationValue = (label: string) => {
+                                const row = organizationLines.find(line => line.replace(/\s/g, '').startsWith(label.replace(/\s/g, '')));
+                                return row ? compact(row.replace(new RegExp(`^${label}\\s*[:：]?\\s*`, 'u'), '')) : '';
+                            };
+
+                            const priceDetail = cleanLines([
+                                discountSummary,
+                                ajaxDetail.promotion ? `할인정보\n${ajaxDetail.promotion}` : '',
+                            ].filter(Boolean).join('\n\n'));
+
+                            return {
+                                price: priceTexts.join(', '),
+                                priceList,
+                                priceDetail,
+                                ageRating: area1['등급'] || '',
+                                runningTime: area1['관람시간'] || '',
+                                performanceTime: area3['공연시간 안내'] || '',
+                                reservationInfo: area3['배송정보'] || '',
+                                host: organizationValue('주최'),
+                                organizer: organizationValue('주관/홍보') || organizationValue('주관'),
+                                contact: organizationValue('문의'),
+                                description: ajaxDetail.notice || ajaxDetail.content || '',
+                                dataCollectedAt: new Date().toISOString(),
+                            };
+                        }, item.id.replace(/^yes24_/, ''));
                         
                         const safeTitle = slugify(item.title);
-                        const localPoster = await processImage(item.poster, `yes24_${safeTitle}`, `posters/${cat.genre}`);
+                        const existingImage = existing?.image;
+                        const localPoster = existingImage || await processImage(item.poster, `yes24_${safeTitle}`, `posters/${cat.genre}`);
                         
-                        allEnrichedItems.push({
+                        const enrichedItem = {
+                            ...existing,
                             ...item,
                             ...detail,
                             image: localPoster,
                             backupPoster: item.poster,
                             category: '독점공연'
-                        });
+                        };
+
+                        if (existing) {
+                            Object.assign(existing, enrichedItem);
+                        } else {
+                            allEnrichedItems.push(enrichedItem);
+                        }
 
                         await detailPage.close();
                         // Random delay between requests: 1-2.5s
