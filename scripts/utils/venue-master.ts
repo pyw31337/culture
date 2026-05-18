@@ -184,6 +184,10 @@ function normalizeName(value?: string) {
         .toLowerCase();
 }
 
+function escapeRegExp(value: string) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function slugify(value: string) {
     return normalizeName(value)
         .replace(/[^a-z0-9가-힣]/gi, '_')
@@ -243,7 +247,7 @@ function stripHallAndMeetingPoint(value?: string) {
     [...HALL_TOKENS, ...MEETING_POINT_TOKENS]
         .sort((left, right) => right.length - left.length)
         .forEach((token) => {
-            name = name.replace(new RegExp(`\\s*${token}\\s*$`, 'g'), '').trim();
+            name = name.replace(new RegExp(`\\s+${escapeRegExp(token)}\\s*$`, 'g'), '').trim();
         });
 
     return name || compactText(value);
