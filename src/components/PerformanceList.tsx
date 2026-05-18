@@ -613,7 +613,7 @@ export default function PerformanceList({
                     setSearchMode('location');
                     setSearchLocation({ lat: representativeVenue.lat, lng: representativeVenue.lng, name: v });
                     setSearchText(v);
-                    setRadius(10); // Default to 10km radius
+                    setRadius(1);
 
                     // Force UI adjustments
                     setActiveBottomMenu(null); // Close the bottom sheet immediately

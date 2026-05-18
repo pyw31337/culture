@@ -74,6 +74,7 @@ export const NATIONWIDE_REGIONS = REGIONS;
 
 export const RADIUS_OPTIONS = [
     { value: 9999, label: '전체 반경' },
+    { value: 1, label: '1km 반경' },
     { value: 5, label: '5km 반경' },
     { value: 10, label: '10km 반경' },
     { value: 15, label: '15km 반경' },
