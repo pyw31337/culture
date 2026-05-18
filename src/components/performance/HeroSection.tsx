@@ -258,7 +258,14 @@ export default function HeroSection({
         } else if (genreMsg) {
             return { ...genreMsg, keywords: [] } as HeroTemplate;
         } else if (searchText) {
-            const cleanSearch = searchText.replace(/^.*? \d+(?:-\d+)?\s*/, '').replace(/\(.*\)/, '').trim();
+            const rawSearchLabel =
+                searchMode === 'location'
+                    ? (searchLocation?.name || activeLocation?.name || searchText)
+                    : searchText;
+            const cleanSearch = rawSearchLabel
+                .replace(/\s*\([^)]*\)\s*/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
             const searchMsgs = [
                 { line1: "찾으시는 컨텐츠,", line2Pre: "입력하신 ", highlight: `"${cleanSearch}"`, suffix: " 결과입니다." },
                 { line1: "궁금해하신 정보,", line2Pre: "", highlight: `"${cleanSearch}"`, suffix: " 키워드로 모아봤어요." },
@@ -278,7 +285,7 @@ export default function HeroSection({
         } else {
             return heroText;
         }
-    }, [viewMode, selectedGenre, searchText, selectedRegion, selectedDistrict, selectedVenue, heroText, localHeroCycle]);
+    }, [viewMode, selectedGenre, searchText, searchMode, searchLocation, activeLocation, selectedRegion, selectedDistrict, selectedVenue, heroText, localHeroCycle]);
 
 
     // Close filter panel when clicking outside
