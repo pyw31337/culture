@@ -87,6 +87,23 @@ const formatSourceTimestampLabel = (value?: string | null) => {
     return raw;
 };
 
+const formatOfficialUpdateLabel = (value?: string | null) => {
+    const raw = compactDetailText(value || '');
+    if (!raw) return null;
+
+    const dotDate = raw.match(/^(\d{4})\.(\d{1,2})\.(\d{1,2})/);
+    if (dotDate) {
+        return `${dotDate[1]}.${dotDate[2].padStart(2, '0')}.${dotDate[3].padStart(2, '0')}`;
+    }
+
+    const hyphenDate = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+    if (hyphenDate) {
+        return `${hyphenDate[1]}.${hyphenDate[2].padStart(2, '0')}.${hyphenDate[3].padStart(2, '0')}`;
+    }
+
+    return raw;
+};
+
 const buildNaverRoadviewUrl = (address: string) => {
     const query = compactDetailText(address);
     if (!query) return null;
@@ -132,8 +149,9 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const sourceLabel = getSourceLabel(p.source || 'unknown');
     const sourceUrl = getSourceOfficialUrl(p.source, p.link);
     const collectedAtLabel = formatSourceTimestampLabel(
-        p.dataCollectedAt || p.sourceUpdatedAt || p.statsCollectedAt || p.lastModifiedAt
+        p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt
     );
+    const officialUpdateLabel = formatOfficialUpdateLabel(p.sourceUpdatedAt);
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -541,10 +559,6 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         });
                                     }
 
-                                    if (p.sourceUpdatedAt) {
-                                        infoItems.push({ icon: Info, label: '공식 업데이트', text: p.sourceUpdatedAt, color: 'text-slate-400' });
-                                    }
-
                                      if (p.price && !p.priceList) {
                                          infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
                                      }
@@ -885,6 +899,12 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         <span className="inline-flex items-center gap-1.5">
                                             <span className="text-gray-400 dark:text-gray-500">[수집/갱신]</span>
                                             <span>{collectedAtLabel}</span>
+                                        </span>
+                                    )}
+                                    {officialUpdateLabel && (
+                                        <span className="inline-flex items-center gap-1.5">
+                                            <span className="text-gray-400 dark:text-gray-500">[공식 업데이트]</span>
+                                            <span>{officialUpdateLabel}</span>
                                         </span>
                                     )}
                                 </div>
