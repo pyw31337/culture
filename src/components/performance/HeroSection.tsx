@@ -271,6 +271,9 @@ export default function HeroSection({
                 { line1: "궁금해하신 정보,", line2Pre: "", highlight: `"${cleanSearch}"`, suffix: " 키워드로 모아봤어요." },
                 { line1: "원하시는 그곳,", line2Pre: "", highlight: `"${cleanSearch}"`, suffix: " 관련 소식을 전해드려요." }
             ];
+            if (searchMode === 'location') {
+                return { ...searchMsgs[0], keywords: [] } as HeroTemplate;
+            }
             return { ...searchMsgs[rotationSeed % searchMsgs.length], keywords: [] } as HeroTemplate;
         } else if (selectedRegion !== 'all' || selectedVenue !== 'all') {
             const regionName = selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label : '';
