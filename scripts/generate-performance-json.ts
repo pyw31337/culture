@@ -1237,6 +1237,25 @@ function getLatestSourceUpdatedAt() {
     }, null);
 }
 
+function buildSourceUpdatedAtMap() {
+    return SOURCE_REGISTRY.reduce<Record<string, string>>((acc, entry) => {
+        const updatedAt = getTrackedFileUpdatedAt(path.join('src', 'data', entry.file));
+        if (updatedAt) acc[entry.key] = updatedAt.toISOString();
+        return acc;
+    }, {});
+}
+
+function applySourceTimestampFallbacks(items: Performance[], sourceUpdatedAtByKey: Record<string, string>) {
+    items.forEach((performance) => {
+        if (performance.dataCollectedAt || performance.sourceUpdatedAt) return;
+
+        const updatedAt = sourceUpdatedAtByKey[performance.source || ''];
+        if (updatedAt) {
+            performance.dataCollectedAt = updatedAt;
+        }
+    });
+}
+
 function getPublicBuildGeneratedAt() {
     const buildInfoPath = path.join(process.cwd(), 'public', 'data', 'build-info.json');
     if (!fs.existsSync(buildInfoPath)) return null;
@@ -1514,6 +1533,7 @@ async function generate() {
         repairKnownLocationOverrides(activePerformances);
         sanitizeWeakVenueIdentities(activePerformances);
         enrichVenueContextFromRecords(activePerformances, sourceVenues);
+        applySourceTimestampFallbacks(activePerformances, buildSourceUpdatedAtMap());
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformancesForHomeFeed(activePerformances);

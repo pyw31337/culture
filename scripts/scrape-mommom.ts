@@ -17,7 +17,218 @@ const OUTPUT_FILE = path.resolve(process.cwd(), 'src/data/mommom.json');
 
 // Helper to clean address
 function cleanAddress(addr: string): string {
-    return addr.replace('주소', '').trim();
+    return addr
+        .replace(/^주소\s*/u, '')
+        .replace(/지도보기/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function normalizeBlock(value?: string): string {
+    return String(value || '')
+        .replace(/\r/g, '')
+        .replace(/\u00a0/g, ' ')
+        .split('\n')
+        .map(line => line.replace(/\s+/g, ' ').trim())
+        .filter(Boolean)
+        .join('\n')
+        .trim();
+}
+
+function formatBusinessHours(value?: string): string {
+    if (String(value || '').includes('\n')) return normalizeBlock(value);
+    const text = String(value || '').replace(/\s+/g, ' ').trim();
+    if (!text) return '';
+    return text
+        .replace(/(월:|화:|수:|목:|금:|토:|일:)/g, '\n$1')
+        .replace(/(월요일|화요일|수요일|목요일|금요일|토요일|일요일)/g, '\n$1 ')
+        .split('\n')
+        .map(line => line.trim())
+        .filter(Boolean)
+        .map(line => line
+            .replace(/^월요일\s*/u, '월: ')
+            .replace(/^화요일\s*/u, '화: ')
+            .replace(/^수요일\s*/u, '수: ')
+            .replace(/^목요일\s*/u, '목: ')
+            .replace(/^금요일\s*/u, '금: ')
+            .replace(/^토요일\s*/u, '토: ')
+            .replace(/^일요일\s*/u, '일: ')
+            .replace(/정기휴무/g, '정기휴무')
+        )
+        .join('\n');
+}
+
+function isKoreanPlace(address: string): boolean {
+    if (!address) return false;
+    if (/[A-Za-zÀ-ÿ]/.test(address) && !/(서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)/.test(address)) {
+        return false;
+    }
+    return /(서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주|[가-힣]+시|[가-힣]+군|[가-힣]+구)/.test(address);
+}
+
+function inferDisplayPrice(priceDetail?: string, rawPrice?: string | number): string {
+    const detail = normalizeBlock(priceDetail);
+    const raw = String(rawPrice || '').trim();
+    if (
+        raw === '무료' ||
+        /(?:입장료|관람료|관람은|입장|이용료|요금)[^\n.]{0,40}무료/u.test(detail) ||
+        /무료[^\n.]{0,20}(?:입장|관람|이용)/u.test(detail)
+    ) return '무료';
+    const match = detail.match(/\d{1,3}(?:,\d{3})*원/);
+    if (match) return match[0];
+    if (/원|달러|유료/.test(detail)) return '요금 확인';
+    return '가격 확인';
+}
+
+function extractFlightText(html: string): string {
+    const re = /<script>(?:self\.__next_f\.push\((\[[\s\S]*?\])\))<\/script>/g;
+    let match: RegExpExecArray | null;
+    let text = '';
+    while ((match = re.exec(html))) {
+        try {
+            const chunk = JSON.parse(match[1]);
+            if (typeof chunk[1] === 'string') text += chunk[1];
+        } catch {
+            // Continue with other flight chunks.
+        }
+    }
+    return text;
+}
+
+function extractBalancedObject(text: string, start: number): string {
+    let depth = 0;
+    let inString = false;
+    let escaped = false;
+    for (let index = start; index < text.length; index += 1) {
+        const char = text[index];
+        if (inString) {
+            if (escaped) escaped = false;
+            else if (char === '\\') escaped = true;
+            else if (char === '"') inString = false;
+            continue;
+        }
+        if (char === '"') inString = true;
+        else if (char === '{') depth += 1;
+        else if (char === '}') {
+            depth -= 1;
+            if (depth === 0) return text.slice(start, index + 1);
+        }
+    }
+    return '';
+}
+
+function extractPlaceFromHtml(html: string): any | null {
+    const flight = extractFlightText(html);
+    const placeIndex = flight.indexOf('"place":');
+    if (placeIndex < 0) return null;
+    const start = flight.indexOf('{', placeIndex + '"place":'.length);
+    if (start < 0) return null;
+    const raw = extractBalancedObject(flight, start);
+    if (!raw) return null;
+    try {
+        return JSON.parse(raw);
+    } catch {
+        return null;
+    }
+}
+
+function formatPlaceBusinessHours(hours?: Array<{ day?: string; description?: string }>): string {
+    if (!Array.isArray(hours) || hours.length === 0) return '';
+    const dayLabel: Record<string, string> = {
+        mon: '월',
+        tue: '화',
+        wed: '수',
+        thu: '목',
+        fri: '금',
+        sat: '토',
+        sun: '일',
+    };
+    return hours
+        .map((item) => {
+            const day = item.day ? dayLabel[item.day] || item.day : '';
+            const description = normalizeBlock(item.description);
+            return day && description ? `${day}: ${description}` : description;
+        })
+        .filter(Boolean)
+        .join('\n');
+}
+
+function extractPlaceImage(place: any, fallback = ''): string {
+    const image = place?.media?.images?.[0];
+    return image?.thumb || image?.link || fallback;
+}
+
+function buildPlaceDescription(place: any): string {
+    const pieces = [
+        normalizeBlock(place?.description),
+        normalizeBlock(place?.introductionHtml?.replace(/<[^>]+>/g, ' ')),
+        normalizeBlock(place?.tip),
+    ].filter(Boolean);
+    return Array.from(new Set(pieces)).join('\n\n');
+}
+
+function buildPlaceFeesAndPrograms(place: any, operatingHours: string): string {
+    const amenities = Array.isArray(place?.amenities)
+        ? place.amenities.map((item: any) => normalizeBlock(item?.name || item)).filter(Boolean)
+        : [];
+    const contents = Array.isArray(place?.contents)
+        ? place.contents.map((item: any) => normalizeBlock(item?.body || item?.content || item?.description || item?.title)).filter(Boolean)
+        : [];
+    return Array.from(new Set([
+        Array.isArray(place?.categories) && place.categories.length ? `분류: ${place.categories.join(', ')}` : '',
+        operatingHours ? `운영시간\n${operatingHours}` : '',
+        amenities.length ? `편의시설: ${amenities.join(', ')}` : '',
+        normalizeBlock(place?.reserveDescription) ? `예약 안내: ${normalizeBlock(place.reserveDescription)}` : '',
+        typeof place?.commentCount === 'number' ? `리뷰/댓글: ${place.commentCount.toLocaleString('ko-KR')}건` : '',
+        typeof place?.scrapCount === 'number' ? `저장: ${place.scrapCount.toLocaleString('ko-KR')}건` : '',
+        ...contents,
+    ].filter(Boolean))).join('\n');
+}
+
+async function fetchMomMomPlaceDetail(item: { title: string; link: string; image: string }) {
+    const response = await fetch(item.link, {
+        headers: {
+            accept: 'text/html,application/xhtml+xml',
+            'accept-language': 'ko-KR,ko;q=0.9',
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) CultureFlowBot/1.0',
+        },
+    });
+    if (!response.ok) return null;
+    const place = extractPlaceFromHtml(await response.text());
+    if (!place) return null;
+    const listTitle = normalizeBlock(item.title);
+    const title = listTitle && listTitle !== 'Pending' ? listTitle : normalizeBlock(place.title);
+    const address = cleanAddress(place.address || '');
+    if (!title || !isKoreanPlace(address)) return null;
+    const operatingHours = formatPlaceBusinessHours(place.businessHours);
+    const feesAndPrograms = buildPlaceFeesAndPrograms(place, operatingHours);
+    const location = classifyRegion(address);
+    const lat = typeof place.coordinate?.lat === 'number' ? place.coordinate.lat : REGION_COORDS[Object.keys(REGION_COORDS).find(key => address.includes(key)) || '']?.lat || 0;
+    const lng = typeof place.coordinate?.lng === 'number' ? place.coordinate.lng : REGION_COORDS[Object.keys(REGION_COORDS).find(key => address.includes(key)) || '']?.lng || 0;
+    const amenities = Array.isArray(place.amenities)
+        ? place.amenities.map((entry: any) => normalizeBlock(entry?.name || entry)).filter(Boolean).join(', ')
+        : '';
+
+    return {
+        ...item,
+        title,
+        image: extractPlaceImage(place, item.image),
+        address,
+        closedDay: '',
+        price: inferDisplayPrice(feesAndPrograms),
+        pageTitle: title,
+        detailImage: extractPlaceImage(place, item.image),
+        description: buildPlaceDescription(place),
+        targetAudience: normalizeBlock(place.targetAge || place.recommendedAge),
+        priceDetail: '',
+        operatingHours,
+        facilities: amenities,
+        website: normalizeBlock(place.homepageUrl || place.website || item.link),
+        feesAndPrograms,
+        region: location,
+        latitude: lat,
+        longitude: lng,
+    };
 }
 
 function slugify(text: string): string {
@@ -97,8 +308,10 @@ interface MomMomItem {
     price: number | string; // Store text if format varies
     rate: number;
     platform: string;
+    source?: string;
     description?: string;
     closedDay?: string;
+    closedDays?: string;
     targetAudience?: string;
     operatingHours?: string;
     priceDetail?: string;
@@ -111,6 +324,7 @@ async function scrapeMomMom() {
     console.log('Starting Mom-Mom Scraper (Detail Mode)...');
     const browser = await puppeteer.launch({
         headless: true,
+        protocolTimeout: 120000,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
@@ -124,36 +338,18 @@ async function scrapeMomMom() {
 
         // Infinite Scroll
         console.log('Loading list...');
-        await page.evaluate(async () => {
-            await new Promise<void>((resolve) => {
-                let totalHeight = 0;
-                let noChangeCount = 0;
-                const distance = 500;
-                const timer = setInterval(() => {
-                    const scrollHeight = document.body.scrollHeight;
-                    window.scrollBy(0, distance);
-                    totalHeight += distance;
-
-                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
-                        // Reached bottom
-                        if (document.body.scrollHeight > scrollHeight) {
-                            noChangeCount = 0;
-                        } else {
-                            noChangeCount++;
-                        }
-                    } else {
-                        // Still scrolling
-                        noChangeCount = 0;
-                    }
-
-                    // Stop if no change for 50 ticks (5 seconds) or extremely long scroll
-                    if (noChangeCount > 50 || totalHeight > 500000) {
-                        clearInterval(timer);
-                        resolve();
-                    }
-                }, 100);
-            });
-        });
+        let noChangeCount = 0;
+        let previousHeight = 0;
+        for (let scrollCount = 0; scrollCount < 700; scrollCount += 1) {
+            const height = await page.evaluate(() => document.body.scrollHeight);
+            await page.evaluate(() => window.scrollBy(0, 700));
+            await new Promise(resolve => setTimeout(resolve, 90));
+            const currentY = await page.evaluate(() => window.innerHeight + window.scrollY);
+            if (height === previousHeight && currentY >= height - 250) noChangeCount += 1;
+            else noChangeCount = 0;
+            previousHeight = height;
+            if (noChangeCount > 35) break;
+        }
 
         // Debug: Screenshot
         await page.screenshot({ path: 'debug_mommom.png' });
@@ -241,12 +437,11 @@ async function scrapeMomMom() {
         bar.start(listItems.length, 0);
 
         // Batch processing to respect resources
-        const CHUNK_SIZE = 3;
+        const CHUNK_SIZE = 12;
         for (let i = 0; i < listItems.length; i += CHUNK_SIZE) {
             const chunk = listItems.slice(i, i + CHUNK_SIZE);
             if (i > 0) {
-                console.log(`Waiting 1s before next chunk...`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                await new Promise(resolve => setTimeout(resolve, 180));
             }
             const promises = chunk.map(async (item) => {
                 // Filter existing items based on criteria:
@@ -257,7 +452,7 @@ async function scrapeMomMom() {
                     // fall through
                 }
                 // Case 2: Incomplete Data -> Scrape
-                else if (!existing.description || existing.description.length < 10 || !existing.price) {
+                else if (existing.title === 'Pending' || !existing.description || existing.description.length < 10 || !existing.price) {
                     // fall through
                 }
                 // Case 3: Permanent/OpenRun items -> Skip (Efficiency)
@@ -277,6 +472,13 @@ async function scrapeMomMom() {
                             image: (item.image) ? item.image : existing.image
                         };
                     }
+                }
+
+                try {
+                    const fastDetail = await fetchMomMomPlaceDetail(item);
+                    if (fastDetail) return fastDetail;
+                } catch (error) {
+                    console.warn(`Fast detail parse failed ${item.link}:`, error instanceof Error ? error.message : error);
                 }
 
                 const detailPage = await browser.newPage();
@@ -447,7 +649,7 @@ async function scrapeMomMom() {
                     if (!finalTitle) return null; // Skip if still no title
 
                     // Clean Address
-                    const rawAddr = details.address.replace('주소', '').trim();
+                    const rawAddr = cleanAddress(details.address);
                     const validAddr = rawAddr.match(/(([가-힣]+[시도])\s+([가-힣]+[시구군]).+)/)?.[1] || rawAddr;
 
                     const region = classifyRegion(validAddr);
@@ -478,6 +680,12 @@ async function scrapeMomMom() {
             const results = await Promise.all(promises);
             results.forEach(r => {
                 if (r) {
+                    if (!r.title || r.title.includes('아이와 함께 갈 만한 곳 검색')) return;
+                    const cleanAddr = cleanAddress(r.address);
+                    if (!isKoreanPlace(cleanAddr)) return;
+                    const operatingHours = formatBusinessHours(r.operatingHours);
+                    const priceDetail = normalizeBlock(r.priceDetail);
+                    const feesAndPrograms = normalizeBlock(r.feesAndPrograms);
                     // ID generation
                     const id = `mommom_${slugify(r.title)}`;
 
@@ -490,19 +698,22 @@ async function scrapeMomMom() {
                         genre: determineGenre(r.title),
                         region: r.region,
                         venue: r.title, // Venue name IS the title for MomMom places
-                        address: r.address,
+                        address: cleanAddr,
                         latitude: r.latitude,
                         longitude: r.longitude,
                         originalPrice: '', // No distinct original price scraped yet
-                        price: r.price || '무료',
+                        price: inferDisplayPrice([priceDetail, feesAndPrograms, r.description].filter(Boolean).join('\n'), r.price),
                         rate: 0,
                         platform: 'mommom',
+                        source: 'mommom',
+                        description: normalizeBlock(r.description || r.targetAudience),
                         targetAudience: r.targetAudience,
-                        operatingHours: r.operatingHours,
-                        priceDetail: r.priceDetail,
-                        facilities: r.facilities,
+                        operatingHours,
+                        closedDays: normalizeBlock(r.closedDay),
+                        priceDetail,
+                        facilities: normalizeBlock(r.facilities),
                         website: r.website,
-                        feesAndPrograms: r.feesAndPrograms
+                        feesAndPrograms
                     });
                 }
             });

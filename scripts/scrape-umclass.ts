@@ -23,6 +23,12 @@ interface UmClassItem {
     casting: string;
     address: string;
     viewCount?: string;
+    description?: string;
+    priceDetail?: string;
+    feesAndPrograms?: string;
+    targetAudience?: string;
+    website?: string;
+    sourceUpdatedAt?: string;
     lastEnriched?: string;
 }
 
@@ -359,8 +365,14 @@ async function scrapeUmClass() {
 
                         // Strip trailing UI garbage
                         address = address.replace(/지도보기주소복사/g, '').replace(/주소복사/g, '').replace(/지도보기/g, '').trim();
+                        const metaDescription = document.querySelector('meta[name="description"], meta[property="og:description"]')?.getAttribute('content')?.trim() || '';
+                        const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || location.href;
+                        const keywords = document.querySelector('meta[name="keywords"]')?.getAttribute('content')?.split(',')
+                            .map((keyword) => keyword.trim())
+                            .filter(Boolean)
+                            .slice(0, 12) || [];
 
-                        return { rawAddress: address, duration, people, totalCount, discount, originPrice, salePrice, useTime };
+                        return { rawAddress: address, duration, people, totalCount, discount, originPrice, salePrice, useTime, metaDescription, canonical, keywords };
                     });
 
                     let venue = '솜씨당 클래스';
@@ -396,6 +408,22 @@ async function scrapeUmClass() {
                         ageLimit: 'all',
                         address: address,
                         casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}`,
+                        description: detailData.metaDescription,
+                        priceDetail: [
+                            detailData.originPrice ? `정상가: ${detailData.originPrice}` : '',
+                            detailData.discount ? `할인율: ${detailData.discount}` : '',
+                            (detailData.salePrice || detailData.originPrice) ? `판매가: ${detailData.salePrice || detailData.originPrice}` : '',
+                        ].filter(Boolean).join('\n'),
+                        feesAndPrograms: [
+                            detailData.duration ? `일정/기간: ${detailData.duration}` : '',
+                            detailData.useTime ? `이용시간: ${detailData.useTime}` : '',
+                            detailData.people ? `인원: ${detailData.people}` : '',
+                            detailData.totalCount ? `총회차/조회: ${detailData.totalCount}` : '',
+                        ].filter(Boolean).join('\n'),
+                        targetAudience: detailData.people,
+                        website: detailData.canonical,
+                        sourceUpdatedAt: new Date().toISOString(),
+                        keywords: detailData.keywords,
                         lastEnriched: new Date().toISOString()
                     };
 

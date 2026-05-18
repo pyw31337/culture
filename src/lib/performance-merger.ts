@@ -171,6 +171,8 @@ function mergeItems(a: any, b: any): any {
     if (!merged.longitude && loser.longitude) merged.longitude = loser.longitude;
     if (!merged.contact && loser.contact) merged.contact = loser.contact;
     if (!merged.reservationInfo && loser.reservationInfo) merged.reservationInfo = loser.reservationInfo;
+    if (!merged.bookingNotice && loser.bookingNotice) merged.bookingNotice = loser.bookingNotice;
+    if (!merged.ageDetail && loser.ageDetail) merged.ageDetail = loser.ageDetail;
     if (!merged.sourceUpdatedAt && loser.sourceUpdatedAt) merged.sourceUpdatedAt = loser.sourceUpdatedAt;
     if (!merged.instagram && loser.instagram) merged.instagram = loser.instagram;
     if (!merged.foodInfo && loser.foodInfo) merged.foodInfo = loser.foodInfo;

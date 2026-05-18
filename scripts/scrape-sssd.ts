@@ -188,6 +188,16 @@ async function scrapeDetailPage(detailPage: any, item: any) {
             // Parking? Old selector: .detail-car. We can keep it or skip if not requested.
             // keeping for richness if it exists alongside new selectors
             const parking = document.querySelector('.detail-car')?.textContent?.trim() || '';
+            const metaDescription = document.querySelector('meta[name="description"], meta[property="og:description"]')?.getAttribute('content')?.trim() || '';
+            const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || window.location.href;
+            const keywords = document.querySelector('meta[name="keywords"]')?.getAttribute('content')?.split(',')
+                .map((keyword) => keyword.trim())
+                .filter(Boolean)
+                .slice(0, 12) || [];
+            if (!location || location.startsWith('http')) {
+                const metaAddress = metaDescription.match(/장소\s*:\s*([^,]+)/)?.[1]?.trim();
+                if (metaAddress) location = metaAddress;
+            }
 
             return {
                 location: location || '상세페이지 참조',
@@ -197,7 +207,10 @@ async function scrapeDetailPage(detailPage: any, item: any) {
                 originalPrice,
                 finalPrice,
                 detailImage,
-                parking
+                parking,
+                metaDescription,
+                canonical,
+                keywords
             };
         });
 
@@ -337,9 +350,12 @@ async function scrape() {
             // INCREMENTAL SCRAPING OPTIMIZATION:
             if (existingDataMap.has(item.link)) {
                 const existing = existingDataMap.get(item.link);
-                results.push(existing);
-                process.stdout.write(` [Skipped - Exists] \r`);
-                continue;
+                const hasRichDetail = existing.address && !String(existing.address).startsWith('http') && existing.description && existing.priceDetail;
+                if (hasRichDetail) {
+                    results.push(existing);
+                    process.stdout.write(` [Skipped - Exists] \r`);
+                    continue;
+                }
             }
 
             try {
@@ -360,7 +376,8 @@ async function scrape() {
                     id: `class_${slugify(item.title)}`,
                     title: item.title,
                     date: '상시',
-                    venue: detailInfo.location,
+                    venue: detailInfo.location && detailInfo.location !== '상세페이지 참조' ? detailInfo.location : '솜씨당 클래스',
+                    address: detailInfo.location && detailInfo.location !== '상세페이지 참조' ? detailInfo.location : '',
                     price: detailInfo.finalPrice || '가격 정보 없음',
                     originalPrice: detailInfo.originalPrice,
                     discount: detailInfo.discountRate,
@@ -369,7 +386,24 @@ async function scrape() {
                     genre: 'class',
                     source: 'sssd',
                     tags: tags,
-                    status: 'OPEN'
+                    status: 'OPEN',
+                    description: detailInfo.metaDescription,
+                    priceDetail: [
+                        detailInfo.originalPrice ? `정상가: ${detailInfo.originalPrice}` : '',
+                        detailInfo.discountRate ? `할인율: ${detailInfo.discountRate}` : '',
+                        detailInfo.finalPrice ? `판매가: ${detailInfo.finalPrice}` : '',
+                    ].filter(Boolean).join('\n'),
+                    feesAndPrograms: [
+                        detailInfo.time ? `수업시간: ${detailInfo.time}` : '',
+                        detailInfo.capacity ? `인원: ${detailInfo.capacity}` : '',
+                        detailInfo.parking ? `주차: ${detailInfo.parking}` : '',
+                    ].filter(Boolean).join('\n'),
+                    runningTime: detailInfo.time,
+                    targetAudience: detailInfo.capacity,
+                    parking: detailInfo.parking,
+                    website: detailInfo.canonical,
+                    sourceUpdatedAt: new Date().toISOString(),
+                    keywords: detailInfo.keywords
                 });
 
             } catch (err) {

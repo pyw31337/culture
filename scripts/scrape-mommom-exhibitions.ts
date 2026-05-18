@@ -101,6 +101,130 @@ function isExpired(endDate: Date | null): boolean {
     return endDate < today;
 }
 
+function compact(value?: string | null) {
+    return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function stripHtml(value?: string | null) {
+    return compact((value || '')
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>'));
+}
+
+function extractFlightText(html: string) {
+    const re = /<script>(?:self\.__next_f\.push\((\[[\s\S]*?\])\))<\/script>/g;
+    let match: RegExpExecArray | null;
+    let text = '';
+    while ((match = re.exec(html))) {
+        try {
+            const chunk = JSON.parse(match[1]);
+            if (typeof chunk[1] === 'string') text += chunk[1];
+        } catch {
+            // Continue with other chunks.
+        }
+    }
+    return text;
+}
+
+function extractBalancedObject(text: string, start: number) {
+    let depth = 0;
+    let inString = false;
+    let escaped = false;
+
+    for (let index = start; index < text.length; index += 1) {
+        const char = text[index];
+        if (inString) {
+            if (escaped) escaped = false;
+            else if (char === '\\') escaped = true;
+            else if (char === '"') inString = false;
+            continue;
+        }
+        if (char === '"') {
+            inString = true;
+            continue;
+        }
+        if (char === '{') depth += 1;
+        else if (char === '}') {
+            depth -= 1;
+            if (depth === 0) return text.slice(start, index + 1);
+        }
+    }
+    return '';
+}
+
+function extractPlaceFromHtml(html: string): any | null {
+    const flight = extractFlightText(html);
+    const placeIndex = flight.indexOf('"place":');
+    if (placeIndex < 0) return null;
+    const start = flight.indexOf('{', placeIndex + '"place":'.length);
+    if (start < 0) return null;
+    const raw = extractBalancedObject(flight, start);
+    if (!raw) return null;
+    try {
+        return JSON.parse(raw);
+    } catch {
+        return null;
+    }
+}
+
+function formatBusinessHours(hours?: Array<{ day?: string; description?: string }>) {
+    if (!Array.isArray(hours) || hours.length === 0) return '';
+    const dayLabel: Record<string, string> = {
+        mon: '월',
+        tue: '화',
+        wed: '수',
+        thu: '목',
+        fri: '금',
+        sat: '토',
+        sun: '일',
+    };
+    return hours
+        .map((item) => {
+            const day = item.day ? dayLabel[item.day] || item.day : '';
+            const description = compact(item.description);
+            return day && description ? `${day}: ${description}` : description;
+        })
+        .filter(Boolean)
+        .join('\n');
+}
+
+function getPlaceImage(place: any, fallback = '') {
+    const image = place?.media?.images?.[0];
+    return image?.thumb || image?.link || fallback;
+}
+
+function buildPlaceDescription(place: any) {
+    const pieces = [
+        compact(place?.description),
+        stripHtml(place?.introductionHtml),
+        compact(place?.tip),
+    ].filter(Boolean);
+    return Array.from(new Set(pieces)).join('\n\n');
+}
+
+function buildPlaceFeesAndPrograms(place: any, operatingHours: string) {
+    const amenities = Array.isArray(place?.amenities)
+        ? place.amenities.map((item: any) => compact(item?.name || item)).filter(Boolean)
+        : [];
+    const contents = Array.isArray(place?.contents)
+        ? place.contents.map((item: any) => stripHtml(item?.body || item?.content || item?.description || item?.title)).filter(Boolean)
+        : [];
+    const lines = [
+        Array.isArray(place?.categories) && place.categories.length ? `분류: ${place.categories.join(', ')}` : '',
+        operatingHours ? `운영시간\n${operatingHours}` : '',
+        amenities.length ? `편의시설: ${amenities.join(', ')}` : '',
+        compact(place?.reserveDescription) ? `예약 안내: ${compact(place.reserveDescription)}` : '',
+        typeof place?.commentCount === 'number' ? `리뷰/댓글: ${place.commentCount.toLocaleString('ko-KR')}건` : '',
+        typeof place?.scrapCount === 'number' ? `저장: ${place.scrapCount.toLocaleString('ko-KR')}건` : '',
+        ...contents,
+    ].filter(Boolean);
+    return Array.from(new Set(lines)).join('\n');
+}
+
 async function scrapeExhibitions() {
     console.log('Starting Mom-Mom Exhibition Scraper (Improved)...');
     const browser = await puppeteer.launch({
@@ -208,6 +332,58 @@ async function scrapeDetail(browser: any, item: { title: string, link: string, i
         });
 
         await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        const place = extractPlaceFromHtml(await page.content());
+        if (place) {
+            const finalTitle = compact(item.title) || compact(place.title);
+            if (!finalTitle) return null;
+            const address = compact(place.address);
+            if (isJapaneseAddress(address)) return null;
+
+            const titleDateInfo = extractDateFromTitle(finalTitle);
+            if (isExpired(titleDateInfo.endDate)) {
+                console.log(`Skipping expired: ${finalTitle}`);
+                return null;
+            }
+
+            const genre = determineGenre(finalTitle);
+            const location = classifyRegion(address);
+            const operatingHours = formatBusinessHours(place.businessHours);
+            const safeTitle = finalTitle.replace(/\s/g, '').replace(/[^a-zA-Z0-9가-힣]/g, '').slice(0, 20);
+            const lat = typeof place.coordinate?.lat === 'number' ? place.coordinate.lat : location.lat;
+            const lng = typeof place.coordinate?.lng === 'number' ? place.coordinate.lng : location.lng;
+
+            return {
+                id: `mommom_exb_${place.id || safeTitle}`,
+                title: finalTitle,
+                image: getPlaceImage(place, item.image),
+                link: item.link,
+                date: titleDateInfo.dateStr,
+                genre,
+                region: location.region,
+                venue: compact(place.title) || finalTitle,
+                address,
+                latitude: lat,
+                longitude: lng,
+                lat,
+                lng,
+                originalPrice: '',
+                price: '',
+                priceDetail: '',
+                rate: 0,
+                platform: 'mommom',
+                source: 'mommom-exhibition',
+                description: buildPlaceDescription(place),
+                feesAndPrograms: buildPlaceFeesAndPrograms(place, operatingHours),
+                bookingNotice: compact(place.tip),
+                operatingHours,
+                contact: compact(place.phone),
+                website: item.link,
+                sourceUpdatedAt: compact(place.updatedAt || place.createdAt),
+                stillImages: Array.isArray(place.media?.images)
+                    ? place.media.images.map((image: any) => image?.thumb || image?.link).filter(Boolean)
+                    : [],
+            };
+        }
 
         const data = await page.evaluate(() => {
             // Title from H1/H2

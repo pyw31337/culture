@@ -7,6 +7,12 @@ export const getOptimizedUrl = (url: string, width: number = 400, quality: numbe
     if (url.includes('timeticket.co.kr')) return url;
     // Seoul Culture might be unstable with proxy, skipping to be safe
     if (url.includes('culture.seoul.go.kr')) return url;
+    // VisitKorea CDN already serves resized assets reliably; proxying it can delay or replace images.
+    if (
+        url.includes('cdn.visitkorea.or.kr') ||
+        url.includes('kfescdn.visitkorea.or.kr') ||
+        url.includes('tong.visitkorea.or.kr')
+    ) return url;
     // Skip external optimization for local images (relative paths)
     if (url.startsWith('/')) {
         const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';

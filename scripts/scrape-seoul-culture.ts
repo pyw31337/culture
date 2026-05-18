@@ -24,6 +24,14 @@ interface ScrapedEvent {
     runningTime?: string;
     ageRating?: string;
     price?: string;
+    contact?: string;
+    website?: string;
+    description?: string;
+    feesAndPrograms?: string;
+    bookingNotice?: string;
+    targetAudience?: string;
+    priceDetail?: string;
+    sourceUpdatedAt?: string;
     genre: string;
     source: 'seoul-culture';
     link: string;
@@ -45,8 +53,21 @@ function buildTargetUrl() {
     return `https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?menuNo=200110&sdate=${formatDateParam(start)}&edate=${formatDateParam(end)}`;
 }
 
+function formatKoreanDateTime(value = new Date()) {
+    return [
+        value.getFullYear(),
+        String(value.getMonth() + 1).padStart(2, '0'),
+        String(value.getDate()).padStart(2, '0'),
+    ].join('.') + ` ${String(value.getHours()).padStart(2, '0')}:${String(value.getMinutes()).padStart(2, '0')}`;
+}
+
 const TARGET_URL = buildTargetUrl();
 const OutputPath = path.join(process.cwd(), 'src/data/seoul-culture.json');
+const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
+
+async function preparePageForEvaluate(page: any) {
+    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
+}
 
 async function mapCategory(title: string): Promise<string> {
     const t = title.toLowerCase();
@@ -63,6 +84,7 @@ async function mapCategory(title: string): Promise<string> {
 async function scrapeList(browser: any) {
     console.log('🚀 Starting Seoul Culture List Scraper...');
     const page = await browser.newPage();
+    await preparePageForEvaluate(page);
     await page.setViewport({ width: 1280, height: 800 });
 
     // 1. Initial Navigation
@@ -191,8 +213,13 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
     items.forEach(item => {
         if (existingMap.has(item.id)) {
             const ex = existingMap.get(item.id)!;
-            // Check if enriched fields exist or recently checked
-            if ((ex.price || ex.ageRating || ex.runningTime) || isRecentlyEnriched(ex)) {
+            // Re-enrich older records that only have summary fields. The detail page often
+            // carries useful description text in poster alt attributes and official links.
+            const hasStructuredDetail = Boolean(
+                (ex.price || ex.ageRating || ex.runningTime) &&
+                (ex.description || ex.website || ex.contact || ex.feesAndPrograms)
+            );
+            if (hasStructuredDetail || (isRecentlyEnriched(ex) && (ex.description || ex.website))) {
                 done.push({ ...item, ...ex });
             } else {
                 todo.push(item);
@@ -211,12 +238,14 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
     bar.start(todo.length, 0);
 
     const CONCURRENCY = 5;
+    let detailFailureCount = 0;
     for (let i = 0; i < todo.length; i += CONCURRENCY) {
         const chunk = todo.slice(i, i + CONCURRENCY);
 
         const promises = chunk.map(async (item) => {
             const page = await browser.newPage();
             try {
+                await preparePageForEvaluate(page);
                 // ... setup ...
                 await page.setRequestInterception(true);
                 page.on('request', (req: any) => {
@@ -228,24 +257,50 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                 });
 
                 await page.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                await page.evaluate(BROWSER_EVAL_BOOTSTRAP);
 
                 const details = await page.evaluate(() => {
+                    const compact = (value?: string | null) => value?.replace(/\s+/g, ' ').trim() || '';
                     const ul = document.querySelector('.type-box > ul');
-                    if (!ul) return null;
 
                     const res: any = {};
-                    ul.querySelectorAll('li').forEach(li => {
-                        const txt = li.textContent || '';
-                        if (txt.includes('기간')) {
-                            res.period = li.querySelector('.type-td')?.textContent?.trim() || '';
-                        } else if (txt.includes('시간')) {
-                            res.time = li.querySelector('.type-td')?.textContent?.trim() || '';
-                        } else if (txt.includes('대상') || txt.includes('연령')) {
-                            res.target = li.querySelector('.type-td')?.textContent?.trim() || '';
-                        } else if (txt.includes('요금') || txt.includes('비용')) {
-                            res.cost = li.querySelector('.type-td')?.textContent?.trim() || '';
-                        }
+                    ul?.querySelectorAll('li').forEach(li => {
+                        const label = compact(li.querySelector('.type-th')?.textContent);
+                        const value = compact(li.querySelector('.type-td')?.textContent);
+                        if (!label || !value) return;
+                        if (label.includes('장소')) res.place = value;
+                        else if (label.includes('기간')) res.period = value;
+                        else if (label.includes('시간')) res.time = value;
+                        else if (label.includes('대상') || label.includes('연령')) res.target = value;
+                        else if (label.includes('요금') || label.includes('비용')) res.cost = value;
+                        else if (label.includes('문의')) res.contact = value;
                     });
+
+                    const homepageLink = document.querySelector('.detail-btn a[href], a[title*="홈페이지"]') as HTMLAnchorElement | null;
+                    res.website = homepageLink?.href || '';
+
+                    const cultureContent = document.querySelector('.culture-content') as HTMLElement | null;
+                    if (cultureContent) {
+                        const altTexts = Array.from(cultureContent.querySelectorAll('img[alt]'))
+                            .map((img) => compact((img as HTMLImageElement).alt))
+                            .filter((text) => text.length > 20 && !text.includes('상세 정보는 상단'));
+                        const visibleText = compact(cultureContent.innerText)
+                            .replace(/자료출처\s*:\s*/g, '자료출처: ')
+                            .replace(/※\s*해당 행사 상세 정보는.*$/u, '')
+                            .trim();
+                        const merged = Array.from(new Set([...altTexts, visibleText ? visibleText : '']))
+                            .filter(Boolean)
+                            .join('\n\n');
+                        res.description = merged;
+
+                        const sourceMatch = cultureContent.innerText.match(/자료출처\s*:\s*([^\n]+)/);
+                        if (sourceMatch) res.sourceCredit = compact(sourceMatch[1]);
+                    }
+
+                    if (!res.description) {
+                        const ogDescription = document.querySelector('meta[property="og:description"], meta[name="description"]')?.getAttribute('content');
+                        res.description = compact(ogDescription);
+                    }
 
                     return res;
                 });
@@ -271,14 +326,27 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                     result = {
                         ...result,
                         date: details.period ? details.period.replace(/\s+/g, ' ') : item.date,
+                        place: details.place || item.place,
                         runningTime: timeInfo, // Map detailed time string here
                         ageRating: details.target,
+                        targetAudience: details.target,
                         price: price, // Keep full price string
-                        cost: price
+                        cost: price,
+                        contact: details.contact,
+                        website: details.website,
+                        description: details.description,
+                        feesAndPrograms: details.description,
+                        priceDetail: price,
+                        sourceUpdatedAt: formatKoreanDateTime(),
+                        bookingNotice: details.sourceCredit ? `자료출처: ${details.sourceCredit}` : undefined
                     };
                 }
                 return result;
-            } catch (e) {
+            } catch (e: any) {
+                detailFailureCount += 1;
+                if (detailFailureCount <= 5) {
+                    console.warn(`[seoul-detail] failed ${item.link}: ${e?.message || e}`);
+                }
                 return item;
             } finally {
                 await page.close();

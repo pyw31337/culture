@@ -230,6 +230,9 @@ function isClearlyNonVenueName(value?: string) {
     const normalized = normalizeText(text);
     if (!normalized || normalized.length < 2) return true;
     if (/^[0-9:/\-\s]+$/.test(text)) return true;
+    if (/장소\s*확인\s*필요|온라인|zoom/i.test(text)) return true;
+    if (/^\d+\s*층(?:\s|$)|^\d+\s*~\s*\d+\s*층/.test(text)) return true;
+    if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s+[가-힣]+(구|군|시)$/.test(text)) return true;
     if (text.includes('/')) return true;
     if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s*[·ㆍ]/.test(text)) return true;
     if (normalized.length > 34 && /(합니다|드립니다|주세요|예정|참고|안내|알려)/.test(text)) return true;
@@ -332,6 +335,10 @@ export function scoreVenuePlaceCandidate(entry: VenueMasterEntry, candidate: Ven
     if (nameScore >= 0.86 && addrScore >= 0.88) {
         confidence = Math.max(confidence, 0.8);
     }
+    if (!hasDetailedAddress(entry.address) && hasDetailedAddress(candidateAddress)) {
+        if (nameScore >= 0.96) confidence = Math.max(confidence, 0.76);
+        else if (nameScore >= 0.9) confidence = Math.max(confidence, 0.72);
+    }
     const reason = [
         `name=${nameScore.toFixed(2)}`,
         `address=${addrScore.toFixed(2)}`,
@@ -433,7 +440,6 @@ export function buildVenuePlaceLookupQueue(entries: VenueMasterEntry[], cache: V
         })
         .filter((entry) => {
             if (isClearlyNonVenueName(entry.officialName)) return false;
-            if (!hasDetailedAddress(entry.address) && entry.reviewFlags.includes('invalid_coordinate')) return false;
             return true;
         })
         .map<VenuePlaceLookupQueueItem>((entry) => {

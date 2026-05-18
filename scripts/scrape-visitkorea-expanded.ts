@@ -43,6 +43,30 @@ function clean(str: string | undefined): string {
     return str ? str.replace(/\s+/g, ' ').trim() : '';
 }
 
+function normalizeExternalUrl(value?: string | null) {
+    const raw = clean(value || '');
+    if (!raw) return '';
+    if (raw.startsWith('//')) return `https:${raw}`;
+    if (raw.startsWith('/')) return `${baseApiUrl}${raw}`;
+    return raw;
+}
+
+function normalizeHomepageUrl(value?: string | null) {
+    return normalizeExternalUrl(value).replace(/\/+$/, '');
+}
+
+function getMetaContent($: cheerio.CheerioAPI, selector: string) {
+    return normalizeExternalUrl($(selector).attr('content'));
+}
+
+function extractRepresentativeImage($: cheerio.CheerioAPI) {
+    return (
+        getMetaContent($, 'meta[property="og:image"]') ||
+        getMetaContent($, 'meta[name="twitter:image"]') ||
+        getMetaContent($, 'meta[id="ogimage"]')
+    );
+}
+
 async function fetchDetails(cotId: string) {
     const url = `${baseApiUrl}/detail/ms_detail.do?cotid=${cotId}`;
     try {
@@ -54,6 +78,7 @@ async function fetchDetails(cotId: string) {
         });
         const html = response.data;
         const $ = cheerio.load(html);
+        const image = extractRepresentativeImage($);
 
         // 1. Improved Introduction Selectors
         let description = clean($('.inr_wrap .inr p, .char_cont p, .detail_cont, #detailinfoview .inr_wrap p').first().text());
@@ -79,7 +104,7 @@ async function fetchDetails(cotId: string) {
         const operatingHours = infoList['이용시간'] || infoList['운영시간'] || '';
         const address = infoList['주소'] || '';
         const closedDays = infoList['휴일'] || infoList['쉬는날'] || '';
-        const website = infoList['홈페이지'] || '';
+        const website = normalizeHomepageUrl(infoList['홈페이지'] || '');
         const parking = infoList['주차'] || '';
         const parkingFee = infoList['주차요금'] || infoList['주차 요금'] || infoList['주차비'] || '';
         const status = infoList['지정현황'] || '';
@@ -106,7 +131,8 @@ async function fetchDetails(cotId: string) {
             status,
             ageDetail,
             facilities,
-            restrooms
+            restrooms,
+            image
         };
     } catch (error: any) {
         console.error(`Error fetching details for ${cotId}:`, error.message);
@@ -145,18 +171,27 @@ async function fetchDetailsWithPuppeteer(url: string) {
         await page.evaluate(() => window.scrollBy(0, 1000));
         await new Promise(r => setTimeout(r, 2000));
 
-        const data = await page.evaluate(() => {
-            // Description
-            const descEl = document.querySelector('.inr_wrap .inr p, .char_cont p, .detail_cont, #detailinfoview .inr_wrap p');
-            const description = descEl ? descEl.textContent?.replace(/\s+/g, ' ').trim() || '' : '';
+            const data = await page.evaluate(() => {
+                const getMeta = (selector: string) => document.querySelector(selector)?.getAttribute('content') || '';
+                const image =
+                    getMeta('meta[property="og:image"]') ||
+                    getMeta('meta[name="twitter:image"]') ||
+                    getMeta('meta[id="ogimage"]');
+
+                // Description
+                const descEl = document.querySelector('.inr_wrap .inr p, .char_cont p, .detail_cont, #detailinfoview .inr_wrap p');
+                const description = descEl ? descEl.textContent?.replace(/\s+/g, ' ').trim() || '' : '';
 
             // Info items
             const info: Record<string, string> = {};
             document.querySelectorAll('#detailinfoview li, .detail_info li').forEach(li => {
-                const strong = li.querySelector('strong');
-                const label = (strong ? strong.textContent?.replace(/\s+/g, ' ').trim() : '')?.replace(':', '') || '';
-                const span = li.querySelector('span');
-                let value = span ? span.textContent?.replace(/\s+/g, ' ').trim() : '';
+                    const strong = li.querySelector('strong');
+                    const label = (strong ? strong.textContent?.replace(/\s+/g, ' ').trim() : '')?.replace(':', '') || '';
+                    const span = li.querySelector('span');
+                    const anchor = li.querySelector('a') as HTMLAnchorElement | null;
+                    let value = anchor && (label.includes('홈페이지') || label.includes('예매'))
+                        ? (anchor.href || anchor.textContent?.replace(/\s+/g, ' ').trim() || '')
+                        : (span ? span.textContent?.replace(/\s+/g, ' ').trim() : '');
                 
                 if (!value && label) {
                     value = li.textContent?.replace(label, '').replace(':', '').trim() || '';
@@ -164,14 +199,15 @@ async function fetchDetailsWithPuppeteer(url: string) {
                 if (label) info[label] = value || '';
             });
 
-            return {
-                description,
+                return {
+                    image,
+                    description,
                 contact: info['문의 및 안내'] || info['전화번호'] || info['문의'] || '',
                 priceDetail: info['입장료'] || info['이용요금'] || info['관람료'] || '',
                 operatingHours: info['이용시간'] || info['운영시간'] || '',
                 address: info['주소'] || '',
                 closedDays: info['휴일'] || info['쉬는날'] || '',
-                website: info['홈페이지'] || '',
+                    website: info['홈페이지'] || '',
                 parking: info['주차'] || '',
                 parkingFee: info['주차요금'] || info['주차 요금'] || info['주차비'] || '',
                 status: info['지정현황'] || '',
@@ -181,7 +217,13 @@ async function fetchDetailsWithPuppeteer(url: string) {
             };
         });
 
-        return data;
+            return data
+                ? {
+                    ...data,
+                    image: normalizeExternalUrl(data.image),
+                    website: normalizeHomepageUrl(data.website),
+                }
+                : data;
     } catch (e: any) {
         console.warn(`[Puppeteer WARN] ${url}: ${e.message}`);
         return null;
@@ -222,6 +264,11 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                     const details = await fetchDetails(item.cotId);
                     const areaCode = item.detailDatabase?.areaCode || '';
                     const region = AREA_MAP[areaCode] || '전국';
+                    const listImage = item.detailDatabase?.firstImage
+                        ? (item.detailDatabase.firstImage.startsWith('http') ? item.detailDatabase.firstImage : `${baseImageURL}${item.detailDatabase.firstImage}`)
+                        : '';
+                    const representativeImage = details?.image || listImage;
+                    const collectedAt = new Date().toISOString();
                     
                     const perf: Performance = {
                         id: `visitkorea_${item.cotId}`,
@@ -229,12 +276,9 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                         venue: item.title,
                         region: region,
                         date: '상시',
-                        image: item.detailDatabase?.firstImage 
-                            ? (item.detailDatabase.firstImage.startsWith('http') ? item.detailDatabase.firstImage : `${baseImageURL}${item.detailDatabase.firstImage}`)
-                            : '',
-                        poster: item.detailDatabase?.firstImage 
-                            ? (item.detailDatabase.firstImage.startsWith('http') ? item.detailDatabase.firstImage : `${baseImageURL}${item.detailDatabase.firstImage}`)
-                            : '',
+                        image: representativeImage,
+                        poster: representativeImage,
+                        backupPoster: representativeImage,
                         link: `${baseApiUrl}/detail/ms_detail.do?cotid=${item.cotId}`,
                         genre: 'tourism',
                         category: '관광/여행',
@@ -245,14 +289,15 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                         contact: details?.contact || '',
                         address: details?.address || item.detailDatabase?.addr1 || '',
                         closedDays: details?.closedDays || '',
-                        website: details?.website || '',
+                        website: normalizeHomepageUrl(details?.website || ''),
                         parking: details?.parking || '',
                         parkingFee: details?.parkingFee || '',
                         status: details?.status || '',
                         ageDetail: details?.ageDetail || '',
                         facilities: details?.facilities || '',
                         restrooms: details?.restrooms || '',
-                        source: 'VisitKorea',
+                        source: 'tourism',
+                        dataCollectedAt: collectedAt,
                         lat: item.detailDatabase?.mapCoords?.latitude,
                         lng: item.detailDatabase?.mapCoords?.longitude
                     };

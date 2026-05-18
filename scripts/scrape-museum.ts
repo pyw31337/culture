@@ -85,7 +85,7 @@ document.querySelectorAll('section > ul > li').forEach(function (row) {
                 return [day, time].filter(Boolean).join(' ');
             })
             .filter(Boolean);
-        value = rows.length > 0 ? rows.join(', ') : value;
+        value = rows.length > 0 ? rows.join('\n') : value;
     }
 
     if (key.indexOf('주소') >= 0) results.address = value;

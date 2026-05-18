@@ -272,6 +272,98 @@ function compactDetailText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
 }
 
+const WEEKDAY_FULL_PATTERN = '(?:월요일|화요일|수요일|목요일|금요일|토요일|일요일)';
+const WEEKDAY_SHORT_PATTERN = '(?:월|화|수|목|금|토|일):';
+
+function normalizeMultilineDetailText(value?: string) {
+    return String(value || '')
+        .replace(/\r/g, '')
+        .split('\n')
+        .map(line => line.replace(/[ \t]+/g, ' ').trim())
+        .filter(Boolean)
+        .join('\n')
+        .trim();
+}
+
+function formatReadableSchedule(value?: string) {
+    const text = normalizeMultilineDetailText(value);
+    if (!text) return '';
+
+    const weekdayMatches = text.match(new RegExp(WEEKDAY_FULL_PATTERN, 'g')) || [];
+    const shortWeekdayMatches = text.match(new RegExp(WEEKDAY_SHORT_PATTERN, 'g')) || [];
+    const hasWeeklyPattern = weekdayMatches.length >= 3 || shortWeekdayMatches.length >= 3;
+    if (!hasWeeklyPattern) return text;
+
+    let formatted = text
+        .replace(/\s*(\[[^\]\n]{2,24}\])\s*/g, '\n$1\n')
+        .replace(new RegExp(`\\s*-\\s*(?=${WEEKDAY_FULL_PATTERN})`, 'g'), '\n- ')
+        .replace(new RegExp(`\\s*-\\s*(?=${WEEKDAY_SHORT_PATTERN})`, 'g'), '\n- ')
+        .replace(/\s*(※)\s*/g, '\n$1 ')
+        .replace(new RegExp(`,\\s*(?=${WEEKDAY_FULL_PATTERN}\\s)`, 'g'), ',\n')
+        .replace(new RegExp(`,\\s*(?=${WEEKDAY_SHORT_PATTERN})`, 'g'), ',\n');
+
+    if (formatted === text) {
+        formatted = formatted
+            .replace(new RegExp(`\\s+(?=(?:화요일|수요일|목요일|금요일|토요일|일요일)\\s)`, 'g'), '\n')
+            .replace(/\s+(?=(?:화|수|목|금|토|일):)/g, '\n');
+    }
+
+    return formatted
+        .split('\n')
+        .map(line => line.replace(/[ \t]+/g, ' ').trim())
+        .filter(Boolean)
+        .join('\n');
+}
+
+function formatReadableSectionBlock(value?: string) {
+    const text = normalizeMultilineDetailText(value);
+    if (!text) return '';
+
+    return text
+        .replace(/\s*(\[[^\]\n]{2,24}\])\s*/g, '\n$1\n')
+        .replace(/(?<!^)\s*[ㆍ•]\s*/g, '\n- ')
+        .replace(/(?<!^)\s*-\s*(?=[가-힣A-Za-z])/g, '\n- ')
+        .replace(/\s*(※)\s*/g, '\n$1 ')
+        .replace(/\s+(?=\d+\.\s*[가-힣A-Za-z])/g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .split('\n')
+        .map(line => line.replace(/[ \t]+/g, ' ').trim())
+        .filter(Boolean)
+        .join('\n');
+}
+
+function formatReadableParagraphBlock(value?: string) {
+    const text = normalizeMultilineDetailText(value);
+    if (!text) return '';
+
+    const sectioned = text
+        .replace(/\s*(\[행사내용\]|\[상세내용\]|\[이용안내\]|\[요금\]|\[프로그램\])\s*/g, '\n\n$1\n')
+        .replace(/\s+(?=\d+\.\s*[가-힣A-Za-z])/g, '\n')
+        .replace(/\s*(※)\s*/g, '\n$1 ');
+
+    if (sectioned.includes('\n')) {
+        return sectioned
+            .split('\n')
+            .map(line => line.replace(/[ \t]+/g, ' ').trim())
+            .filter(Boolean)
+            .join('\n');
+    }
+
+    if (sectioned.length < 130) return sectioned;
+
+    return sectioned
+        .replace(/([가-힣A-Za-z0-9)"'’”\]](?:다|요|음|함|됨|임|한다|된다|있다|없다|이다|입니다|습니다)\.)\s+(?=[가-힣A-Za-z0-9"'“‘\[])/g, '$1\n\n')
+        .replace(/([.!?])\s+(?=[가-힣A-Za-z"'“‘\[])/g, '$1\n\n')
+        .split('\n')
+        .map(line => line.replace(/[ \t]+/g, ' ').trim())
+        .filter(Boolean)
+        .join('\n');
+}
+
+function trimWebsiteForDisplay(value?: string) {
+    return String(value || '').trim().replace(/\/+$/, '');
+}
+
 function looksLikeKoreanAddress(value?: string) {
     const text = compactDetailText(value);
     if (!text) return false;
@@ -510,6 +602,22 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     if (title.includes('외옹치')) {
         console.log(`[DEBUG-TRANSFORM] 외옹치 raw.contact: ${raw.contact}, website: ${raw.website}`);
     }
+
+    operatingHours = formatReadableSchedule(operatingHours);
+    performanceTime = formatReadableSchedule(performanceTime);
+    closedDays = formatReadableSchedule(closedDays);
+    priceDetail = formatReadableSectionBlock(priceDetail);
+    feesAndPrograms = formatReadableSectionBlock(feesAndPrograms);
+    description = formatReadableParagraphBlock(description);
+    synopsis = formatReadableParagraphBlock(synopsis);
+    bookingNotice = formatReadableParagraphBlock(bookingNotice);
+    ageDetail = formatReadableSectionBlock(ageDetail);
+    parking = formatReadableParagraphBlock(parking);
+    parkingFee = formatReadableSectionBlock(parkingFee);
+    reservationInfo = formatReadableParagraphBlock(reservationInfo);
+    foodInfo = formatReadableSectionBlock(foodInfo);
+    website = trimWebsiteForDisplay(website);
+    venueHomepage = trimWebsiteForDisplay(venueHomepage);
 
     return {
         ...raw,

@@ -22,6 +22,12 @@ interface MochaClassItem {
     ageLimit: string;
     casting: string;
     address: string;
+    description?: string;
+    priceDetail?: string;
+    feesAndPrograms?: string;
+    targetAudience?: string;
+    website?: string;
+    sourceUpdatedAt?: string;
     lastEnriched?: string;
 }
 
@@ -235,7 +241,8 @@ async function scrapeMochaClass() {
 
     for (const item of pendingItems) {
         const existing = existingMap.get(item.link);
-        if (existing && isRecentlyEnriched(existing)) {
+        const hasRichDetail = Boolean(existing?.description && existing?.priceDetail && existing?.feesAndPrograms);
+        if (existing && isRecentlyEnriched(existing) && hasRichDetail) {
             done.push({
                 ...existing,
                 title: item.title,
@@ -327,11 +334,20 @@ async function scrapeMochaClass() {
 
                         const timeEl = document.querySelector('#topleft > div:nth-child(11) > section');
                         const priceEl = document.querySelector('#topleft > div:nth-child(2) > div.css-7df1aj > div.css-q3pnu7');
+                        const metaDescription = document.querySelector('meta[name="description"], meta[property="og:description"]')?.getAttribute('content')?.trim() || '';
+                        const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || location.href;
+                        const keywords = document.querySelector('meta[name="keywords"]')?.getAttribute('content')?.split(',')
+                            .map((keyword) => keyword.trim())
+                            .filter(Boolean)
+                            .slice(0, 12) || [];
 
                         return {
                             rawAddress: rawAddress,
                             time: timeEl ? (timeEl as HTMLElement).innerText?.trim() || '' : '',
-                            detailPrice: priceEl ? (priceEl as HTMLElement).innerText?.trim() || '' : ''
+                            detailPrice: priceEl ? (priceEl as HTMLElement).innerText?.trim() || '' : '',
+                            metaDescription,
+                            canonical,
+                            keywords
                         };
                     });
 
@@ -420,6 +436,19 @@ async function scrapeMochaClass() {
                         ageLimit: '전체',
                         casting: '',
                         address: address,
+                        description: detailData.metaDescription,
+                        priceDetail: [
+                            item.originalPrice ? `정상가: ${item.originalPrice}` : '',
+                            (detailPrice || item.price) ? `판매가: ${detailPrice || item.price}` : '',
+                        ].filter(Boolean).join('\n'),
+                        feesAndPrograms: [
+                            detailData.time ? `운영/수업 안내\n${detailData.time}` : '',
+                            address ? `장소: ${address}` : '',
+                        ].filter(Boolean).join('\n'),
+                        targetAudience: '전체',
+                        website: detailData.canonical,
+                        sourceUpdatedAt: new Date().toISOString(),
+                        keywords: detailData.keywords,
                         lastEnriched: new Date().toISOString()
                     };
                 } catch (e: any) {

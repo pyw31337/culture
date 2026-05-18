@@ -49,10 +49,46 @@ const formatApproxEokValue = (value: string | number) => {
     return new Intl.NumberFormat('ko-KR').format(Math.round(numericValue / 100000000));
 };
 
-const normalizeDetailText = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim();
+const normalizeDetailText = (value: unknown) => String(value ?? '')
+    .replace(/\r/g, '')
+    .split('\n')
+    .map(line => line.replace(/[ \t]+/g, ' ').trim())
+    .filter(Boolean)
+    .join('\n')
+    .trim();
+
+const compactDetailText = (value: unknown) => String(value ?? '').replace(/\s+/g, ' ').trim();
+
+const formatWebsiteLabel = (value: string) => {
+    const label = compactDetailText(value)
+        .replace(/^https?:\/\//, '')
+        .replace(/^www\./, 'www.')
+        .replace(/\/+$/, '');
+    return label || value;
+};
+
+const formatSourceTimestampLabel = (value?: string | null) => {
+    const raw = compactDetailText(value || '');
+    if (!raw) return null;
+
+    if (/^\d{2}\.\d{2}\.\d{2}\s*\(.+\)/.test(raw)) {
+        return raw;
+    }
+
+    const dotDateTime = raw.match(/^(\d{4})\.(\d{1,2})\.(\d{1,2})(?:\s+(\d{1,2}):(\d{2}))?/);
+    const parsed = dotDateTime
+        ? new Date(`${dotDateTime[1]}-${dotDateTime[2].padStart(2, '0')}-${dotDateTime[3].padStart(2, '0')}T${(dotDateTime[4] || '00').padStart(2, '0')}:${dotDateTime[5] || '00'}:00+09:00`)
+        : new Date(raw);
+
+    if (!Number.isNaN(parsed.getTime())) {
+        return formatCompactKoreanDateTime(parsed.toISOString());
+    }
+
+    return raw;
+};
 
 const buildNaverRoadviewUrl = (address: string) => {
-    const query = normalizeDetailText(address);
+    const query = compactDetailText(address);
     if (!query) return null;
 
     // Naver Maps uses `adh` in the c-parameter to open with the street-view layer active.
@@ -62,7 +98,7 @@ const buildNaverRoadviewUrl = (address: string) => {
 const dedupeDetailInfoItems = <T extends { label: string; text?: unknown }>(items: T[]) => {
     const seen = new Set<string>();
     return items.filter((item) => {
-        const text = normalizeDetailText(item.text);
+        const text = compactDetailText(item.text);
         if (!text) return false;
         const key = `${item.label}::${text}`;
         if (seen.has(key)) return false;
@@ -94,13 +130,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         ? `${formatCompactKoreanDateTime(p.statsCollectedAt)} 수집`
         : null;
     const sourceLabel = getSourceLabel(p.source || 'unknown');
-    const sourceUrl = getSourceOfficialUrl(
-        p.source,
-        p.source === 'museum' || p.source?.startsWith('mommom') ? p.link : (p.website || p.link)
+    const sourceUrl = getSourceOfficialUrl(p.source, p.link);
+    const collectedAtLabel = formatSourceTimestampLabel(
+        p.dataCollectedAt || p.sourceUpdatedAt || p.statsCollectedAt || p.lastModifiedAt
     );
-    const collectedAtLabel = p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt
-        ? formatCompactKoreanDateTime(p.dataCollectedAt || p.statsCollectedAt || p.lastModifiedAt || '')
-        : null;
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -356,7 +389,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
                                     if (performanceTimeText && !operatingHoursText && p.genre === 'tourism') {
                                         infoItems.push({ icon: Clock, label: '운영시간', text: performanceTimeText, color: 'text-purple-500' });
-                                    } else if (performanceTimeText && performanceTimeText !== operatingHoursText && p.genre !== 'tourism') {
+                                    } else if (performanceTimeText && compactDetailText(performanceTimeText) !== compactDetailText(operatingHoursText) && p.genre !== 'tourism') {
                                         infoItems.push({
                                             icon: Clock,
                                             label: operatingHoursText ? '공연시간' : '시간',
@@ -490,7 +523,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     if (p.instagram) {
-                                        const instagramHandle = normalizeDetailText(p.instagram)
+                                        const instagramHandle = compactDetailText(p.instagram)
                                             .replace(/^@/, '')
                                             .replace(/^https?:\/\/(www\.)?instagram\.com\//, '')
                                             .replace(/\/$/, '');
@@ -516,7 +549,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                          infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
                                      }
 
-                                     if (!isMovie && p.priceDetail && normalizeDetailText(p.priceDetail) !== normalizeDetailText(p.price)) {
+                                     if (!isMovie && p.priceDetail && compactDetailText(p.priceDetail) !== compactDetailText(p.price)) {
                                          infoItems.push({ icon: Coins, label: '상세 요금', text: p.priceDetail, color: 'text-amber-500' });
                                      }
 
@@ -528,7 +561,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         infoItems.push({ 
                                             icon: Globe, 
                                             label: '홈페이지', 
-                                            text: p.website.replace(/^https?:\/\//, ''), 
+                                            text: formatWebsiteLabel(p.website),
                                             color: 'text-cyan-400', 
                                             isLink: true, 
                                             onClick: () => {
@@ -596,7 +629,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                             </button>
                                                         )
                                                     ) : (
-                                                        <p className="text-[14.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap">
+                                                        <p className="text-[14.5px] text-gray-700 dark:text-gray-300 font-bold whitespace-pre-wrap leading-relaxed">
                                                             {item.text}
                                                         </p>
                                                     )}
@@ -839,7 +872,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                                 rel="noopener noreferrer"
                                                 onClick={(event) => event.stopPropagation()}
                                                 className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 dark:text-emerald-300 dark:hover:text-emerald-200 transition-colors"
-                                                title={`${sourceLabel} 공식사이트 새창열기`}
+                                                title={`${sourceLabel} 원수집 페이지 새창열기`}
                                             >
                                                 {sourceLabel}
                                                 <ExternalLink className="h-3 w-3" />
