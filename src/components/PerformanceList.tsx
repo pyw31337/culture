@@ -77,7 +77,7 @@ export default function PerformanceList({
         likedIds, favoriteVenues, savedKeywords, setSavedKeywords, theme, toggleTheme,
         toggleLike, toggleFavoriteVenue, addKeyword, removeKeyword
     } = useUserPreferences();
-    const { activity, trackGenreView, trackItemView } = useUserActivity();
+    const { activity, trackGenreView, trackItemView, isActivityReady } = useUserActivity();
 
     const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
@@ -197,10 +197,20 @@ export default function PerformanceList({
         buildInfo,
     }), [likedIds, favoriteVenues, savedKeywords, activity, buildInfo]);
 
-    const personalizedItems = useMemo(() => {
+    const computedPersonalizedItems = useMemo(() => {
         if (!scopedPerformances.length) return [];
         return buildPersonalizedRecommendations(scopedPerformances, discoverySignals, 12);
     }, [scopedPerformances, discoverySignals]);
+    const [lockedPersonalizedItems, setLockedPersonalizedItems] = useState<Performance[]>([]);
+    const hasLockedPersonalizedItems = useRef(false);
+    useEffect(() => {
+        if (hasLockedPersonalizedItems.current) return;
+        if (!isActivityReady || !isDataFullyLoaded || computedPersonalizedItems.length === 0) return;
+
+        hasLockedPersonalizedItems.current = true;
+        setLockedPersonalizedItems(computedPersonalizedItems);
+    }, [computedPersonalizedItems, isActivityReady, isDataFullyLoaded]);
+    const personalizedItems = lockedPersonalizedItems;
 
     const recommendedItems = useMemo(() => {
         const featured = getFeaturedPerformances(scopedPerformances, 24);

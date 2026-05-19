@@ -57,7 +57,8 @@ export default function RecommendedSection({
     // Motion value for x-axis scroll
     const x = useMotionValue(0);
 
-    const { activity } = useUserActivity();
+    const { activity, isActivityReady } = useUserActivity();
+    const hasLockedRecommendations = useRef(false);
 
     // Deterministic Random Score Generator
     const getBaseScore = (id: string) => {
@@ -72,6 +73,9 @@ export default function RecommendedSection({
 
     // Rank Logic
     useEffect(() => {
+        if (hasLockedRecommendations.current) return;
+        if (!isActivityReady) return;
+
         if (recommendedItems && recommendedItems.length > 0) {
             const ranked = [...recommendedItems].sort((a, b) => {
                 const clickPenaltyA = Math.min(activity.itemClicks?.[a.id] || 0, 5) * 16;
@@ -81,8 +85,9 @@ export default function RecommendedSection({
                 return scoreB - scoreA;
             });
             setRandomRecs(ranked.slice(0, 9));
+            hasLockedRecommendations.current = true;
         }
-    }, [recommendedItems, activity.itemClicks]);
+    }, [recommendedItems, activity.itemClicks, isActivityReady]);
 
     // Constraint & Arrow Logic
     const updateConstraints = useCallback(() => {

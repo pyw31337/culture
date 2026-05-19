@@ -9,34 +9,39 @@ interface UserActivity {
 }
 
 const STORAGE_KEY = 'culture_user_activity_v1';
+const DEFAULT_ACTIVITY: UserActivity = {
+    viewedGenres: {},
+    viewedItems: [],
+    itemClicks: {},
+    lastActive: 0
+};
 
 export function useUserActivity() {
-    const [activity, setActivity] = useState<UserActivity>({
-        viewedGenres: {},
-        viewedItems: [],
-        itemClicks: {},
+    const [activity, setActivity] = useState<UserActivity>(() => ({
+        ...DEFAULT_ACTIVITY,
         lastActive: Date.now()
-    });
+    }));
+    const [isActivityReady, setIsActivityReady] = useState(false);
 
     // Load from storage on mount
     useEffect(() => {
         const stored = safeStorage.get<UserActivity>(STORAGE_KEY, {
-            viewedGenres: {},
-            viewedItems: [],
-            itemClicks: {},
+            ...DEFAULT_ACTIVITY,
             lastActive: Date.now()
         });
         if (stored) {
             setActivity(prev => ({ ...prev, ...stored }));
         }
+        setIsActivityReady(true);
     }, []);
 
     // Persist to storage whenever activity changes
     useEffect(() => {
+        if (!isActivityReady) return;
         if (Object.keys(activity.viewedGenres).length > 0 || activity.viewedItems.length > 0) {
             safeStorage.set(STORAGE_KEY, activity);
         }
-    }, [activity]);
+    }, [activity, isActivityReady]);
 
     const trackGenreView = useCallback((genre: string) => {
         if (!genre || genre === 'all') return;
@@ -77,6 +82,7 @@ export function useUserActivity() {
     return {
         activity,
         trackGenreView,
-        trackItemView
+        trackItemView,
+        isActivityReady
     };
 }
