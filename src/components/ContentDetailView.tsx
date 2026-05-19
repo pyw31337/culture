@@ -86,6 +86,26 @@ const formatWebsiteLabel = (value: string) => {
     return label || value;
 };
 
+const formatParkingLabel = (value?: string | null) => {
+    const text = compactDetailText(value);
+    if (!text) return '';
+
+    const normalized = text.toLowerCase();
+    if (/^(y|yes|true|가능|있음|무료가능|유료가능)$/.test(normalized)) return '주차가능';
+    if (/^(n|no|false|불가|없음)$/.test(normalized)) return '주차불가';
+    return text
+        .replace(/^y$/i, '주차가능')
+        .replace(/^n$/i, '주차불가');
+};
+
+const getFullImageHref = (image: string) => {
+    if (!image) return '#';
+    if (!image.startsWith('/')) return image;
+
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    return basePath && !image.startsWith(basePath) ? `${basePath}${image}` : image;
+};
+
 const formatSourceTimestampLabel = (value?: string | null) => {
     const raw = compactDetailText(value || '');
     if (!raw) return null;
@@ -613,7 +633,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     }
 
                                     if (p.parking) {
-                                        infoItems.push({ icon: ParkingCircle, label: '주차', text: p.parking, color: 'text-blue-500' });
+                                        infoItems.push({ icon: ParkingCircle, label: '주차', text: formatParkingLabel(p.parking), color: 'text-blue-500' });
                                     }
 
                                     if (p.parkingFee) {
@@ -889,14 +909,25 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                     </h3>
                                     <div className="grid grid-cols-2 gap-2">
                                         {p.synopsisImages.slice(0, 4).map((image) => (
-                                            <img
+                                            <a
                                                 key={image}
-                                                src={getOptimizedUrl(image, 360, 62)}
-                                                alt={`${p.title} 공연 소개 이미지`}
-                                                loading="lazy"
+                                                href={getFullImageHref(image)}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 referrerPolicy="no-referrer"
-                                                className="aspect-[4/5] w-full rounded-xl object-cover border border-black/5 dark:border-white/10"
-                                            />
+                                                title="공연 소개 이미지 크게 보기"
+                                                aria-label={`${p.title} 공연 소개 이미지 새창에서 크게 보기`}
+                                                onClick={(event) => event.stopPropagation()}
+                                                className="group block overflow-hidden rounded-xl border border-black/5 bg-gray-100 dark:border-white/10 dark:bg-white/5"
+                                            >
+                                                <img
+                                                    src={getOptimizedUrl(image, 360, 62)}
+                                                    alt={`${p.title} 공연 소개 이미지`}
+                                                    loading="lazy"
+                                                    referrerPolicy="no-referrer"
+                                                    className="aspect-[4/5] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                                                />
+                                            </a>
                                         ))}
                                     </div>
                                 </motion.div>
