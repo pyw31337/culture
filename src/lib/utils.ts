@@ -101,7 +101,7 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
     // Fallback for normalized numeric strings such as "30000".
     const numMatch = compact.match(/^[\d,]+$/);
     if (numMatch) {
-        return { label: null, price: numMatch[1] };
+        return { label: null, price: numMatch[0] };
     }
 
     return null;

@@ -119,6 +119,7 @@ function getNumericPrice(performance: Performance) {
     const extracted = extractFirstPrice(performance.price || performance.priceDetail || '');
     if (!extracted) return null;
     if (extracted.price === '무료') return 0;
+    if (typeof extracted.price !== 'string' || !extracted.price.trim()) return null;
     const numeric = Number(extracted.price.replace(/[^\d]/g, ''));
     return Number.isFinite(numeric) ? numeric : null;
 }
