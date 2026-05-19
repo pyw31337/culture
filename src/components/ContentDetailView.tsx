@@ -78,6 +78,47 @@ const isRedundantAgeDetail = (ageDetail?: string | null, ...ageValues: Array<str
         .some(age => detail === age || (detail.includes(age) && detail.length <= age.length + 8));
 };
 
+const isGeneratedSummaryDescription = (performance: Performance, value?: string | null) => {
+    const text = compactDetailText(value);
+    if (!text || performance.genre === 'movie') return false;
+    const comparableText = comparableDetailText(text);
+
+    const patterns = [
+        /에서\s+진행되는\s+.+입니다/u,
+        /일정은\s+.+기준입니다/u,
+        /위치는\s+.+입니다/u,
+        /현장\s+편의\s+정보는\s+.+입니다/u,
+        /이용\s+정보는\s+.+기준입니다/u,
+    ];
+    const signalCount = patterns.filter((pattern) => pattern.test(text)).length;
+
+    if (signalCount >= 3) return true;
+
+    const title = compactDetailText(performance.title);
+    const startsWithTitleSummary = Boolean(title && (
+        text.startsWith(`${title}는 `)
+        || text.startsWith(`"${title}"는 `)
+        || text.startsWith(`'${title}'는 `)
+    ));
+
+    if (startsWithTitleSummary && signalCount >= 2) return true;
+
+    const redundantFieldHits = [
+        performance.venue,
+        performance.address,
+        performance.date,
+        performance.performanceTime,
+        performance.price,
+        performance.priceDetail,
+        performance.facilities,
+    ]
+        .map((field) => comparableDetailText(field))
+        .filter((field) => field.length >= 4 && comparableText.includes(field))
+        .length;
+
+    return startsWithTitleSummary && signalCount >= 1 && redundantFieldHits >= 3;
+};
+
 const formatWebsiteLabel = (value: string) => {
     const label = compactDetailText(value)
         .replace(/^https?:\/\//, '')
@@ -288,10 +329,13 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const containerClasses = mode === 'standalone'
         ? "w-full max-w-[380px] md:max-w-[1000px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
         : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-white text-gray-900 dark:bg-[#070b14] dark:text-white rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-black/10 dark:border-white/10";
-    const hasLongDescription = Boolean(p.description && p.description.length > 150 && p.genre !== 'movie');
-    const hasMovieSynopsis = Boolean(p.genre === 'movie' && (p.synopsis || p.description));
+    const normalizedDescription = normalizeDetailText(p.description);
+    const displayDescription = isGeneratedSummaryDescription(p, normalizedDescription) ? '' : normalizedDescription;
+    const movieSynopsisText = p.genre === 'movie' ? normalizeDetailText(p.synopsis || displayDescription) : '';
+    const hasLongDescription = Boolean(displayDescription && displayDescription.length > 150 && p.genre !== 'movie');
+    const hasMovieSynopsis = Boolean(movieSynopsisText);
     const shouldShowShortDescription = Boolean(
-        p.description
+        displayDescription
         && p.genre !== 'tourism'
         && !hasLongDescription
         && !hasMovieSynopsis
@@ -814,7 +858,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             {/* Description - Short version for all modes (Hidden for tourism to avoid redundancy) */}
                             {shouldShowShortDescription && (
                                 <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
-                                    &quot;{p.description}&quot;
+                                    &quot;{displayDescription}&quot;
                                 </motion.p>
                             )}
 
@@ -826,7 +870,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                         {p.genre === 'exhibition' ? '전시 소개' : p.genre === 'tourism' ? '여행지 정보' : '상세 설명'}
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400 text-[14.5px] leading-relaxed whitespace-pre-line">
-                                        {p.description}
+                                        {displayDescription}
                                     </p>
                                 </motion.div>
                             )}
@@ -878,14 +922,14 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                             )}
 
                             {/* Movie Synopsis Section - Dedicated below cast for movies */}
-                            {p.genre === 'movie' && (p.synopsis || p.description) && (
+                            {hasMovieSynopsis && (
                                 <motion.div variants={itemVariants} className="mt-8 bg-indigo-50/30 dark:bg-indigo-500/5 rounded-2xl p-6 border border-indigo-500/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Film className="w-5 h-5 text-indigo-500" />
                                         시놉시스
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-300 text-[14.5px] leading-relaxed whitespace-pre-line font-medium">
-                                        {p.synopsis || p.description}
+                                        {movieSynopsisText}
                                     </p>
                                 </motion.div>
                             )}
