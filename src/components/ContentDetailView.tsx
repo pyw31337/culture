@@ -151,6 +151,15 @@ const buildNaverRoadviewUrl = (address: string) => {
     return `https://map.naver.com/p/search/${encodeURIComponent(query)}?c=19.00,0,0,0,adh`;
 };
 
+const formatPersonName = (value: unknown) => compactDetailText(value)
+    .replace(/\s*(?:등|외\s*\d*명?)$/u, '')
+    .trim();
+
+const buildNaverPersonSearchUrl = (name: string) => {
+    const query = encodeURIComponent(name);
+    return `https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=${query}`;
+};
+
 const dedupeDetailInfoItems = <T extends { label: string; text?: unknown }>(items: T[]) => {
     const seen = new Set<string>();
     return items.filter((item) => {
@@ -177,7 +186,29 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
     const hasTeams = p.homeTeam && p.awayTeam;
 
-    const hasCast = p.cast && p.cast.length > 0;
+    const castMembers = useMemo(() => {
+        if (!p.cast || p.cast.length === 0) return [];
+
+        const seen = new Set<string>();
+        return p.cast
+            .map((cast) => {
+                const rawName = typeof cast === 'string' ? cast : cast.name;
+                const name = formatPersonName(rawName);
+                if (!name) return null;
+
+                const key = comparableDetailText(name);
+                if (!key || seen.has(key)) return null;
+                seen.add(key);
+
+                const explicitUrl = typeof cast === 'string' ? undefined : cast.url;
+                return {
+                    name,
+                    url: explicitUrl || buildNaverPersonSearchUrl(name),
+                };
+            })
+            .filter((cast): cast is { name: string; url: string } => Boolean(cast));
+    }, [p.cast]);
+    const hasCast = castMembers.length > 0;
     const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
     const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
@@ -800,35 +831,25 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                 </motion.div>
                             )}
 
-                             {hasCast && mode === 'standalone' && (
+                             {hasCast && (
                                 <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
                                     <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">출연진</span>
-                                    {p.cast!.slice(0, 10).map((c, idx) => {
-                                        const name = typeof c === 'string' ? c : c.name;
-                                        let url = typeof c === 'string' ? undefined : (c as { url?: string }).url;
+                                    {castMembers.slice(0, 10).map(({ name, url }) => {
+                                        const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
                                         
-                                        // Auto-generate Naver search link for any performance type if missing URL
-                                        if (!url) {
-                                            url = `https://search.naver.com/search.naver?query=${encodeURIComponent(name)}`;
-                                        }
-
-                                         const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
-                                        
-                                        return url ? (
+                                        return (
                                             <a 
-                                                key={idx} 
+                                                key={name}
                                                 href={isMobile ? toMobileUrl(url) : url} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer" 
+                                                title={`${name} 네이버 인물검색`}
+                                                aria-label={`${name} 네이버 인물검색 새창열기`}
                                                 className={`${castClasses} hover:bg-gray-100 dark:hover:bg-white/10 text-emerald-500`}
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 {name}
                                             </a>
-                                        ) : (
-                                            <span key={idx} className={castClasses}>
-                                                {name}
-                                            </span>
                                         );
                                     })}
                                 </motion.div>

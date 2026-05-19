@@ -106,7 +106,11 @@ const splitPeople = (value: unknown) => {
 
     const people = text
         .split(/[,，ㆍ·/|]|(?:\s{2,})|(?:\n+)/)
-        .map((item) => item.replace(/\([^)]*\)/g, '').trim())
+        .map((item) => item
+            .replace(/\([^)]*\)/g, '')
+            .replace(/\s*(?:등|외\s*\d*명?)$/u, '')
+            .trim()
+        )
         .filter((item) => item && !isUseless(item));
 
     return people.length > 0 ? [...new Set(people)].slice(0, 16) : undefined;
