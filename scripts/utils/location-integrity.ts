@@ -18,6 +18,7 @@ type LocationAuditRow = {
     source?: string;
     venue: string;
     venueKey: string;
+    venueCanonicalId?: string;
     performanceAddress: string;
     venueDictionaryAddress: string;
     resolvedAddress: string;
@@ -56,6 +57,7 @@ export function buildLocationIntegrityReport(
                 source: performance.source,
                 venue: performance.venue,
                 venueKey: performance.venueKey || getPerformanceVenueKey(performance, venues),
+                venueCanonicalId: performance.venueCanonicalId,
                 performanceAddress: performance.address || '',
                 venueDictionaryAddress: venues[performance.venue]?.address || '',
                 resolvedAddress: resolved.address || '',
@@ -116,22 +118,24 @@ export function buildLocationIntegrityReport(
 
     const canonicalVenueGroups = new Map<string, LocationAuditRow[]>();
     highConfidenceRows.forEach((row) => {
-        const group = canonicalVenueGroups.get(row.venueKey) || [];
+        const canonicalKey = row.venueCanonicalId || row.venueKey;
+        const group = canonicalVenueGroups.get(canonicalKey) || [];
         group.push(row);
-        canonicalVenueGroups.set(row.venueKey, group);
+        canonicalVenueGroups.set(canonicalKey, group);
     });
 
     const canonicalAmbiguousVenues = Array.from(canonicalVenueGroups.entries())
         .map(([venue, rows]) => {
             const locationGroups = new Map<string, LocationAuditRow[]>();
             rows.forEach((row) => {
-                const group = locationGroups.get(row.locationKey) || [];
+                const locationKey = normalizeWhitespace(row.displayLabel) || normalizeWhitespace(row.resolvedAddress) || row.locationKey;
+                const group = locationGroups.get(locationKey) || [];
                 group.push(row);
-                locationGroups.set(row.locationKey, group);
+                locationGroups.set(locationKey, group);
             });
 
             return {
-                venue,
+                venue: rows[0]?.venueKey || venue,
                 locationCount: locationGroups.size,
                 locations: Array.from(locationGroups.values()).map((group) => ({
                     displayLabel: group[0]?.displayLabel || group[0]?.resolvedAddress || venue,
