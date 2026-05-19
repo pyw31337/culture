@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { HeroTemplate } from '../../lib/hero-templates';
 import { clsx } from 'clsx';
 
 const HOLD_DURATION_MS = 10000;
+const TYPE_DELAY_MS = 46;
 const DELETE_DELAY_MS = 28;
 const CYCLE_GAP_MS = 260;
 
@@ -29,11 +30,20 @@ export const TypingHero = ({
     const lenHl = template.highlight.length;
     const lenSuf = template.suffix.length;
     const totalLen = len1 + lenBold + len2Pre + lenHl + lenSuf;
+    const fullText = useMemo(() => (
+        `${template.line1}${template.boldPrefix || ''}${template.line2Pre}${template.highlight}${template.suffix}`
+    ), [template.line1, template.boldPrefix, template.line2Pre, template.highlight, template.suffix]);
+    const onCycleRef = useRef(onCycle);
     const [phase, setPhase] = useState<'TYPE' | 'WAIT' | 'DELETE' | 'CYCLING'>('TYPE');
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        let timeout: NodeJS.Timeout;
+        onCycleRef.current = onCycle;
+    }, [onCycle]);
+
+    useEffect(() => {
+        let timeout: ReturnType<typeof setTimeout> | undefined;
+        let animationFrame: number | undefined;
 
         if ((paused || !isAtTop) && phase !== 'WAIT') {
             timeout = setTimeout(() => {
@@ -55,39 +65,44 @@ export const TypingHero = ({
                     const next = prev - 1;
                     if (next <= 0) {
                         setPhase('CYCLING');
-                        onCycle();
+                        onCycleRef.current();
                         return 0;
                     }
                     return next;
                 });
             }, DELETE_DELAY_MS);
         } else if (phase === 'TYPE') {
-            const written = `${template.line1}${template.boldPrefix || ''}${template.line2Pre}${template.highlight}${template.suffix}`;
-            const currentChar = written[progress] || '';
-            const typeDelay = /[,.!?~]/.test(currentChar)
-                ? 110
-                : /\s/.test(currentChar)
-                    ? 70
-                    : 58;
+            const startedAt = performance.now() - (progress * TYPE_DELAY_MS);
+            let lastProgress = progress;
 
-            timeout = setTimeout(() => {
-                setProgress((prev) => {
-                    const next = prev + 1;
-                    if (next >= totalLen) {
-                        setPhase('WAIT');
-                        return totalLen;
-                    }
-                    return next;
-                });
-            }, typeDelay);
+            const tick = (now: number) => {
+                const next = Math.min(totalLen, Math.floor((now - startedAt) / TYPE_DELAY_MS));
+
+                if (next !== lastProgress) {
+                    lastProgress = next;
+                    setProgress(next);
+                }
+
+                if (next >= totalLen) {
+                    setPhase('WAIT');
+                    return;
+                }
+
+                animationFrame = requestAnimationFrame(tick);
+            };
+
+            animationFrame = requestAnimationFrame(tick);
         } else if (phase === 'CYCLING') {
             timeout = setTimeout(() => {
                 setPhase((current) => current === 'CYCLING' ? 'TYPE' : current);
             }, CYCLE_GAP_MS);
         }
 
-        return () => clearTimeout(timeout);
-    }, [phase, progress, totalLen, onCycle, paused, isAtTop, template]);
+        return () => {
+            if (timeout) clearTimeout(timeout);
+            if (animationFrame) cancelAnimationFrame(animationFrame);
+        };
+    }, [phase, totalLen, paused, isAtTop, fullText]);
 
     const getSub = (text: string, offset: number) => {
         if (progress < offset) return '';
