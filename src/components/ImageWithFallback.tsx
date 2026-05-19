@@ -1,6 +1,6 @@
-import { useMemo, useState, memo } from 'react';
+import { useEffect, useMemo, useRef, useState, memo } from 'react';
 import Image, { ImageProps } from 'next/image';
-import { getOptimizedUrl } from '@/lib/utils';
+import { getOptimizedUrl, normalizeImageUrl } from '@/lib/utils';
 import { clsx } from 'clsx';
 
 interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
@@ -26,32 +26,78 @@ function ImageWithFallbackInner({
     alt,
     ...props
 }: ImageWithFallbackInnerProps) {
-    const [imgSrc, setImgSrc] = useState<string>(initialSrc);
-    const [errorStage, setErrorStage] = useState(0); // 0: Initial, 1: Backup/Retry, 2: Fallback
+    const sources = useMemo(() => {
+        const uniqueSources = new Set<string>();
+        [initialSrc, originalSrc, backupSrc, fallbackSrc].forEach((candidate) => {
+            const source = typeof candidate === 'string' ? candidate.trim() : '';
+            if (source) uniqueSources.add(source);
+        });
+        return Array.from(uniqueSources);
+    }, [backupSrc, fallbackSrc, initialSrc, originalSrc]);
+    const [sourceIndex, setSourceIndex] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isNearViewport, setIsNearViewport] = useState(false);
+    const imageRef = useRef<HTMLImageElement | null>(null);
+    const imgSrc = sources[sourceIndex] || fallbackSrc;
+
+    useEffect(() => {
+        const node = imageRef.current;
+        if (!node) return;
+
+        if (typeof IntersectionObserver === 'undefined') {
+            setIsNearViewport(true);
+            return;
+        }
+
+        setIsNearViewport(false);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    setIsNearViewport(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '0px' }
+        );
+
+        observer.observe(node);
+        return () => observer.disconnect();
+    }, [imgSrc]);
+
+    useEffect(() => {
+        if (!isNearViewport || isLoaded || sourceIndex >= sources.length - 1) return;
+
+        const timeoutMs = fastDisplay ? 3500 : 5000;
+        const timeoutId = window.setTimeout(() => {
+            setSourceIndex((index) => (
+                index === sourceIndex ? Math.min(index + 1, sources.length - 1) : index
+            ));
+        }, timeoutMs);
+
+        return () => window.clearTimeout(timeoutId);
+    }, [fastDisplay, isLoaded, isNearViewport, sourceIndex, sources.length]);
 
     const handleError = () => {
-        if (errorStage === 0) {
-            if (backupSrc && backupSrc !== originalSrc) {
-                setImgSrc(backupSrc);
-                setErrorStage(1);
-            } else {
-                setImgSrc(fallbackSrc);
-                setErrorStage(2);
-            }
-        } else if (errorStage === 1) {
-            setImgSrc(fallbackSrc);
-            setErrorStage(2);
+        setIsLoaded(false);
+        if (sourceIndex < sources.length - 1) {
+            setSourceIndex((index) => Math.min(index + 1, sources.length - 1));
+            return;
         }
+        setIsLoaded(true);
     };
 
-    const isUnoptimized = errorStage >= 1 || !!(originalSrc && originalSrc.startsWith('/'));
+    const isUnoptimized =
+        imgSrc === originalSrc ||
+        imgSrc === backupSrc ||
+        imgSrc.startsWith('/') ||
+        imgSrc.startsWith('data:');
     const imageQuality = typeof props.quality === 'number' ? props.quality : 64;
     const imageLoading = props.priority ? undefined : (props.loading ?? 'lazy');
+    const isFallback = imgSrc === fallbackSrc;
 
     return (
         <>
-            {!isLoaded && errorStage < 2 && (
+            {!isLoaded && !isFallback && (
                 <div
                     aria-hidden="true"
                     className={clsx(
@@ -67,6 +113,7 @@ function ImageWithFallbackInner({
 
             <Image
                 {...props}
+                ref={imageRef}
                 src={imgSrc || fallbackSrc}
                 alt={alt}
                 loading={imageLoading}
@@ -96,16 +143,18 @@ function ImageWithFallback({
     ...props
 }: ImageWithFallbackProps) {
     const imageQuality = typeof props.quality === 'number' ? props.quality : 64;
-    const optimizedSrc = useMemo(() => getOptimizedUrl(src, optimizationWidth, imageQuality), [src, optimizationWidth, imageQuality]);
-    const imageKey = useMemo(() => `${optimizedSrc}|${backupSrc || ''}|${fallbackSrc}`, [backupSrc, fallbackSrc, optimizedSrc]);
+    const normalizedSrc = useMemo(() => normalizeImageUrl(src), [src]);
+    const normalizedBackupSrc = useMemo(() => normalizeImageUrl(backupSrc), [backupSrc]);
+    const optimizedSrc = useMemo(() => getOptimizedUrl(normalizedSrc, optimizationWidth, imageQuality), [normalizedSrc, optimizationWidth, imageQuality]);
+    const imageKey = useMemo(() => `${optimizedSrc}|${normalizedSrc}|${normalizedBackupSrc}|${fallbackSrc}`, [fallbackSrc, normalizedBackupSrc, normalizedSrc, optimizedSrc]);
 
     return (
         <ImageWithFallbackInner
             key={imageKey}
             {...props}
-            originalSrc={src}
+            originalSrc={normalizedSrc}
             initialSrc={optimizedSrc}
-            backupSrc={backupSrc}
+            backupSrc={normalizedBackupSrc}
             fallbackSrc={fallbackSrc}
             alt={alt}
             width={!props.fill ? (props.width || optimizationWidth) : undefined}

@@ -12,7 +12,7 @@ import type {
 } from '../src/lib/build-info';
 import { getExternalContentLink } from '../src/lib/performance-links';
 import { getScheduleWindow, sortPerformancesForHomeFeed } from '../src/lib/performance-filter';
-import { extractFirstPrice, formatUnifiedDate } from '../src/lib/utils';
+import { extractFirstPrice, formatUnifiedDate, normalizeImageUrl } from '../src/lib/utils';
 import { SOURCE_REGISTRY } from '../src/lib/source-registry';
 import { getGenreFilterFromSlug } from '../src/lib/genre-availability';
 import { VALID_GENRE_SLUGS } from '../src/lib/constants';
@@ -329,6 +329,31 @@ function isBrokenLocalAssetPath(assetPath?: string) {
 function getRemoteImageCandidate(performance: Performance) {
     const candidates = [performance.backupPoster, performance.posterUrl, performance.image];
     return candidates.find((candidate) => typeof candidate === 'string' && candidate.startsWith('http'));
+}
+
+function normalizeImageFields(items: Performance[]) {
+    items.forEach((performance) => {
+        const normalizedImage = normalizeImageUrl(performance.image);
+        const normalizedBackup = normalizeImageUrl(performance.backupPoster);
+        const normalizedPosterUrl = normalizeImageUrl(performance.posterUrl);
+        const normalizedPoster = normalizeImageUrl(performance.poster);
+
+        if (normalizedImage) performance.image = normalizedImage;
+        if (normalizedBackup) performance.backupPoster = normalizedBackup;
+        if (normalizedPosterUrl) performance.posterUrl = normalizedPosterUrl;
+        if (normalizedPoster) performance.poster = normalizedPoster;
+
+        const remoteCandidate = getRemoteImageCandidate(performance);
+        if ((!performance.image || isMovieFallbackImage(performance.image)) && remoteCandidate) {
+            performance.image = remoteCandidate;
+        }
+        if (performance.image?.startsWith('http') && !performance.backupPoster) {
+            performance.backupPoster = performance.image;
+        }
+        if (performance.backupPoster?.startsWith('http') && !performance.posterUrl && performance.image !== performance.backupPoster) {
+            performance.posterUrl = performance.backupPoster;
+        }
+    });
 }
 
 function getSiblingQualityScore(performance: Performance) {
@@ -1544,6 +1569,7 @@ async function generate() {
         rehydrateMoviesFromCatalog(activePerformances);
         repairMissingLinks(activePerformances);
         repairBrokenLocalImages(activePerformances);
+        normalizeImageFields(activePerformances);
         normalizeDuplicateTimeFields(activePerformances);
         repairKnownLocationOverrides(activePerformances);
         sanitizeWeakVenueIdentities(activePerformances);

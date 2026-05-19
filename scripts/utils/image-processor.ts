@@ -4,7 +4,22 @@ import path from 'path';
 import axios from 'axios';
 import sharp from 'sharp';
 
-const DOWNLOAD_DOMAINS = ['namu.wiki', 'i.namu.wiki', 'pstatic.net', 'naver.com', 'kakaocdn.net', 'daumcdn.net', 'justwatch.com', 'images.justwatch.com', 'kfescdn.visitkorea.or.kr', 'tong.visitkorea.or.kr', 'cdn.visitkorea.or.kr'];
+const DOWNLOAD_DOMAINS = [
+    'namu.wiki',
+    'i.namu.wiki',
+    'pstatic.net',
+    'naver.com',
+    'kakaocdn.net',
+    'daumcdn.net',
+    'justwatch.com',
+    'images.justwatch.com',
+    'kfescdn.visitkorea.or.kr',
+    'tong.visitkorea.or.kr',
+    'cdn.visitkorea.or.kr',
+    'kopis.or.kr',
+    'culture.go.kr',
+    'ticketimage.interpark.com',
+];
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 
 // Ensure directory exists
@@ -70,6 +85,9 @@ export async function processImage(url: string, filenameBase: string, subDir: st
         if (url.includes('namu.wiki') || url.includes('namu.mirror')) referer = 'https://namu.wiki/';
         if (url.includes('daum') || url.includes('kakao')) referer = 'https://daum.net/';
         if (url.includes('kobis.or.kr')) referer = 'https://www.kobis.or.kr/';
+        if (url.includes('kopis.or.kr')) referer = 'https://www.kopis.or.kr/';
+        if (url.includes('culture.go.kr')) referer = 'https://www.culture.go.kr/';
+        if (url.includes('ticketimage.interpark.com')) referer = 'https://tickets.interpark.com/';
 
         const response = await axios({
             url,

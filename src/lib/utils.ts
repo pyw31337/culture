@@ -1,35 +1,52 @@
 import { format, isValid, parse } from 'date-fns';
 import { ko } from 'date-fns/locale';
 
+export const normalizeImageUrl = (url?: string | null) => {
+    if (!url) return '';
+    const trimmed = url.trim();
+    if (!trimmed) return '';
+    if (trimmed.startsWith('//')) return `https:${trimmed}`;
+    if (trimmed.startsWith('http://www.kopis.or.kr/')) return trimmed.replace('http://www.kopis.or.kr/', 'https://www.kopis.or.kr/');
+    if (trimmed.startsWith('http://kopis.or.kr/')) return trimmed.replace('http://kopis.or.kr/', 'https://kopis.or.kr/');
+    if (trimmed.startsWith('http://www.culture.go.kr/')) return trimmed.replace('http://www.culture.go.kr/', 'https://www.culture.go.kr/');
+    if (trimmed.startsWith('http://culture.go.kr/')) return trimmed.replace('http://culture.go.kr/', 'https://culture.go.kr/');
+    if (trimmed.startsWith('http://ticketimage.interpark.com/')) return trimmed.replace('http://ticketimage.interpark.com/', 'https://ticketimage.interpark.com/');
+    return trimmed;
+};
+
 export const getOptimizedUrl = (url: string, width: number = 400, quality: number = 70) => {
     if (!url) return '';
+    const normalizedUrl = normalizeImageUrl(url);
+    if (!normalizedUrl) return '';
+    if (normalizedUrl.startsWith('data:')) return normalizedUrl;
+    if (normalizedUrl.includes('wsrv.nl/?url=')) return normalizedUrl;
     // TimeTicket blocks wsrv.nl (403 Forbidden), skipping optimization as requested
-    if (url.includes('timeticket.co.kr')) return url;
+    if (normalizedUrl.includes('timeticket.co.kr')) return normalizedUrl;
     // Seoul Culture might be unstable with proxy, skipping to be safe
-    if (url.includes('culture.seoul.go.kr')) return url;
+    if (normalizedUrl.includes('culture.seoul.go.kr')) return normalizedUrl;
     // VisitKorea CDN already serves resized assets reliably; proxying it can delay or replace images.
     if (
-        url.includes('cdn.visitkorea.or.kr') ||
-        url.includes('kfescdn.visitkorea.or.kr') ||
-        url.includes('tong.visitkorea.or.kr')
-    ) return url;
+        normalizedUrl.includes('cdn.visitkorea.or.kr') ||
+        normalizedUrl.includes('kfescdn.visitkorea.or.kr') ||
+        normalizedUrl.includes('tong.visitkorea.or.kr')
+    ) return normalizedUrl;
     // Skip external optimization for local images (relative paths)
-    if (url.startsWith('/')) {
+    if (normalizedUrl.startsWith('/')) {
         const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
         // If basePath is set and url doesn't start with it (and isn't just a slash if basePath is empty?), prepend it.
         // Also avoid double-slash if basePath ends with / (it shouldn't based on config)
-        if (basePath && !url.startsWith(basePath)) {
-            return `${basePath}${url}`;
+        if (basePath && !normalizedUrl.startsWith(basePath)) {
+            return `${basePath}${normalizedUrl}`;
         }
-        return url;
+        return normalizedUrl;
     }
 
     try {
         // use wsrv.nl for image optimization
-        const encodedUrl = encodeURIComponent(url);
+        const encodedUrl = encodeURIComponent(normalizedUrl);
         return `https://wsrv.nl/?url=${encodedUrl}&w=${width}&q=${quality}&output=webp`;
     } catch {
-        return url;
+        return normalizedUrl;
     }
 };
 
@@ -168,14 +185,15 @@ export function getDistrictFromAddress(address?: string): string | null {
 }
 
 export function getLowResUrl(url: string): string | null {
-    if (!url) return null;
-    if (url.startsWith('/')) return null; // Local images handled by Next.js
+    const normalizedUrl = normalizeImageUrl(url);
+    if (!normalizedUrl) return null;
+    if (normalizedUrl.startsWith('/')) return null; // Local images handled by Next.js
 
     // Mom-Mom Specific
-    if (url.includes('image.mom-mom.net')) {
+    if (normalizedUrl.includes('image.mom-mom.net')) {
         try {
             // Extract base64 part
-            const matches = url.match(/image\.mom-mom\.net\/([^?#]+)/);
+            const matches = normalizedUrl.match(/image\.mom-mom\.net\/([^?#]+)/);
             if (matches && matches[1]) {
                 // Determine if we need to decode first (some might be raw, but usually base64)
                 // Mom-Mom uses straightforward base64 encoded JSON
@@ -196,10 +214,10 @@ export function getLowResUrl(url: string): string | null {
     }
 
     // Skip blocked or specific domains for wsrv
-    if (url.includes('timeticket.co.kr') || url.includes('culture.seoul.go.kr')) return null;
+    if (normalizedUrl.includes('timeticket.co.kr') || normalizedUrl.includes('culture.seoul.go.kr')) return null;
 
     // Use wsrv.nl for low-res blur
-    const encodedUrl = encodeURIComponent(url);
+    const encodedUrl = encodeURIComponent(normalizedUrl);
     // w=20: Tiny width
     // blur=5: Apply blur on server side
     // q=20: Low quality

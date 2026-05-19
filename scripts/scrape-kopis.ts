@@ -2,6 +2,7 @@ import axios from 'axios';
 import { XMLParser } from 'fast-xml-parser';
 import fs from 'fs';
 import path from 'path';
+import { normalizeImageUrl } from '../src/lib/utils';
 
 // --- Configuration ---
 const API_KEY = process.env.KOPIS_API_KEY || 'ba7dc8feda8a4e66a90e43fcdb03c35a'; // Fallback for local run without .env
@@ -33,6 +34,7 @@ interface KopisPerformance {
     address?: string;
     source: 'kopis';
     isFestival?: boolean;
+    backupPoster?: string;
     cast?: string[];
     crew?: string[];
     runtime?: string;
@@ -384,11 +386,18 @@ async function scrapeKopis() {
                             const performanceState = firstUseful(db.prfstate, item.prfstate);
                             const priceList = parsePriceList(db.pcseguidance);
                             const currentVenue = venues[db.fcltynm] || venues[item.fcltynm];
+                            const poster = normalizeImageUrl(firstUseful(db.poster));
+                            const synopsisImages = db.styurls?.styurl
+                                ? (Array.isArray(db.styurls.styurl) ? db.styurls.styurl : [db.styurls.styurl])
+                                    .map((url: unknown) => normalizeImageUrl(firstUseful(url)))
+                                    .filter(Boolean)
+                                : undefined;
 
                             const perf: KopisPerformance = {
                                 id: fullId,
                                 title: db.prfnm,
-                                image: db.poster,
+                                image: poster,
+                                backupPoster: poster,
                                 date: `${db.prfpdfrom} ~ ${db.prfpdto}`,
                                 venue: db.fcltynm,
                                 venueId: db.mt10id,
@@ -426,7 +435,7 @@ async function scrapeKopis() {
                                 facilities: currentVenue?.facilities,
                                 synopsis: !isUseless(db.sty) ? db.sty : undefined,
                                 description: !isUseless(db.sty) ? db.sty : undefined,
-                                synopsisImages: db.styurls?.styurl ? (Array.isArray(db.styurls.styurl) ? db.styurls.styurl : [db.styurls.styurl]) : undefined,
+                                synopsisImages,
                             };
                             allItems = allItems.filter(it => it.id !== fullId);
                             allItems.push(perf);
