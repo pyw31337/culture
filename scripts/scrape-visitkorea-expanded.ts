@@ -67,6 +67,116 @@ function extractRepresentativeImage($: cheerio.CheerioAPI) {
     );
 }
 
+function normalizePageAssetUrl(value: string | undefined, pageUrl: string) {
+    const raw = clean(value || '');
+    if (!raw || raw.startsWith('data:') || raw.startsWith('javascript:')) return '';
+    try {
+        return new URL(raw, pageUrl).href;
+    } catch {
+        return '';
+    }
+}
+
+function looksLikeContentImage(url: string) {
+    const normalized = url.toLowerCase();
+    if (!normalized) return false;
+    if (/\.(svg|ico)(?:[?#]|$)/.test(normalized)) return false;
+    if (/(logo|favicon|weather|btn-|button|footer|accessibility|banner|dummy_icon|sticker|sns|facebook|twitter|instagram|kakao|naver|map_dim|pop_img|photoevent)/.test(normalized)) {
+        return false;
+    }
+    if (/\/resources\/images\//.test(normalized) && !/\/theme\/travel|\/theme\/story|\/upload\//.test(normalized)) {
+        return false;
+    }
+    return (
+        /\/img\/call\?/.test(normalized) ||
+        /\/story\//.test(normalized) ||
+        /\/upload\//.test(normalized) ||
+        /\.(jpe?g|png|webp|gif)(?:[?#]|$)/.test(normalized)
+    );
+}
+
+function dedupeImages(images: string[]) {
+    const seen = new Set<string>();
+    return images.filter((image) => {
+        const normalized = normalizeExternalUrl(image);
+        if (!normalized || !looksLikeContentImage(normalized)) return false;
+        const key = normalized.replace(/([?&])(?:w|h|width|height|thumb|thumbnail)=[^&]+/gi, '$1');
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
+function extractImageGallery($: cheerio.CheerioAPI, pageUrl: string) {
+    const images: string[] = [];
+    const html = $.root().html() || '';
+    const selectors = [
+        '#section1 img',
+        '.figureGrid img',
+        '.detail-infor img',
+        '.swiper-slide img',
+        '.wrap_contView img',
+        '.box_txtPhoto img',
+        '.img_typeBox img',
+        '.photo img',
+        'article img',
+        'main img',
+        'img',
+    ];
+
+    selectors.forEach((selector) => {
+        $(selector).each((_, el) => {
+            const image = normalizePageAssetUrl(
+                $(el).attr('src')
+                    || $(el).attr('data-src')
+                    || $(el).attr('data-original')
+                    || $(el).attr('data-lazy')
+                    || $(el).attr('data-image'),
+                pageUrl,
+            );
+            if (image) images.push(image);
+        });
+    });
+
+    html.match(/https?:\/\/(?:cdn|kfescdn|tong)\.visitkorea\.or\.kr\/[^"'\s<>]+/g)
+        ?.forEach((image) => images.push(image.replace(/&amp;/g, '&').replace(/[),.;]+$/g, '')));
+
+    return dedupeImages(images);
+}
+
+const OFFICIAL_GALLERY_HOST_ALLOWLIST = [
+    'icjg.go.kr',
+];
+
+function canFetchOfficialGallery(url: string) {
+    try {
+        const { hostname } = new URL(url);
+        return OFFICIAL_GALLERY_HOST_ALLOWLIST.some((host) => hostname === host || hostname.endsWith(`.${host}`));
+    } catch {
+        return false;
+    }
+}
+
+async function fetchOfficialWebsiteGallery(url: string) {
+    const normalizedUrl = normalizeExternalUrl(url);
+    if (!normalizedUrl || !canFetchOfficialGallery(normalizedUrl)) return [];
+
+    try {
+        const response = await axios.get(normalizedUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Referer': baseApiUrl,
+            },
+            timeout: 8000,
+        });
+        const $ = cheerio.load(response.data);
+        return extractImageGallery($, normalizedUrl).slice(0, 10);
+    } catch (error: any) {
+        console.warn(`[Official gallery WARN] ${normalizedUrl}: ${error.message}`);
+        return [];
+    }
+}
+
 async function fetchDetails(cotId: string) {
     const url = `${baseApiUrl}/detail/ms_detail.do?cotid=${cotId}`;
     try {
@@ -111,6 +221,11 @@ async function fetchDetails(cotId: string) {
         const ageDetail = infoList['체험가능 연령'] || infoList['관람소요시간'] || '';
         const facilities = infoList['주요시설'] || '';
         const restrooms = infoList['화장실'] || '';
+        const visitKoreaImages = extractImageGallery($, url);
+        const officialImages = await fetchOfficialWebsiteGallery(website);
+        const synopsisImages = dedupeImages([image, ...visitKoreaImages, ...officialImages])
+            .filter((galleryImage) => galleryImage !== image)
+            .slice(0, 10);
 
         // Case for missing data via Cheerio -> Usually means JS-only rendering
         if (!description && !contact && !operatingHours && !address) {
@@ -132,7 +247,8 @@ async function fetchDetails(cotId: string) {
             ageDetail,
             facilities,
             restrooms,
-            image
+            image,
+            synopsisImages
         };
     } catch (error: any) {
         console.error(`Error fetching details for ${cotId}:`, error.message);
@@ -283,6 +399,7 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                         genre: 'tourism',
                         category: '관광/여행',
                         description: details?.description || '',
+                        synopsisImages: details?.synopsisImages || [],
                         price: parseTourismPrice(details?.priceDetail || ''),
                         priceDetail: details?.priceDetail || '',
                         operatingHours: details?.operatingHours || '',

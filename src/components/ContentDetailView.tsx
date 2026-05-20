@@ -1048,27 +1048,27 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                 <motion.div variants={itemVariants} className="mt-6">
                                     <h3 className="text-sm font-black text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Sparkles className="w-4 h-4 text-amber-500" />
-                                        공연 소개 이미지
+                                        {p.genre === 'tourism' ? '여행지 사진' : '공연 소개 이미지'}
                                     </h3>
                                     <div className="grid grid-cols-2 gap-2">
-                                        {p.synopsisImages.slice(0, 4).map((image) => (
+                                        {p.synopsisImages.slice(0, p.genre === 'tourism' ? 8 : 4).map((image) => (
                                             <a
                                                 key={image}
                                                 href={getFullImageHref(image)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 referrerPolicy="no-referrer"
-                                                title="공연 소개 이미지 크게 보기"
-                                                aria-label={`${p.title} 공연 소개 이미지 새창에서 크게 보기`}
+                                                title={p.genre === 'tourism' ? '여행지 사진 크게 보기' : '공연 소개 이미지 크게 보기'}
+                                                aria-label={`${p.title} ${p.genre === 'tourism' ? '여행지 사진' : '공연 소개 이미지'} 새창에서 크게 보기`}
                                                 onClick={(event) => event.stopPropagation()}
                                                 className="group block overflow-hidden rounded-xl border border-black/5 bg-gray-100 dark:border-white/10 dark:bg-white/5"
                                             >
                                                 <img
                                                     src={getOptimizedUrl(image, 360, 62)}
-                                                    alt={`${p.title} 공연 소개 이미지`}
+                                                    alt={`${p.title} ${p.genre === 'tourism' ? '여행지 사진' : '공연 소개 이미지'}`}
                                                     loading="lazy"
                                                     referrerPolicy="no-referrer"
-                                                    className="aspect-[4/5] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                                                    className={`${p.genre === 'tourism' ? 'aspect-video' : 'aspect-[4/5]'} w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]`}
                                                 />
                                             </a>
                                         ))}
