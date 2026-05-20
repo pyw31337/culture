@@ -120,7 +120,7 @@ export default function ServiceStatusStrip({
 
             {isOpen && (
                 <Portal>
-                    <div className="fixed inset-0 z-[10020] flex items-center justify-center bg-black/55 p-4 backdrop-blur-sm" onClick={() => setIsOpen(false)}>
+                    <div className="fixed inset-0 z-[1000000] flex items-center justify-center bg-black/55 p-4 backdrop-blur-sm" onClick={() => setIsOpen(false)}>
                         <div
                             className="w-full max-w-lg rounded-[2rem] border border-white/12 bg-[#07111f]/96 p-5 text-white shadow-[0_30px_80px_rgba(0,0,0,0.42)] light:border-slate-200 light:bg-white light:text-slate-900"
                             onClick={(event) => event.stopPropagation()}
