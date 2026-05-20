@@ -95,6 +95,7 @@ type ShopProductDetail = {
     afterServiceGuide?: string | null;
     refundGuide?: string | null;
     exchangeGuide?: string | null;
+    detailImages?: string[];
 };
 
 type ShopApiResponse = {
@@ -133,6 +134,98 @@ function toImageUrl(value?: string) {
     if (value.startsWith('//')) return `https:${value}`;
     if (value.startsWith('/')) return `${BASE_URL}${value}`;
     return value;
+}
+
+type MomMomImagePayload = {
+    bucket?: string;
+    key?: string;
+    edits?: {
+        resize?: {
+            width?: number;
+            withoutEnlargement?: boolean;
+            [key: string]: unknown;
+        };
+        [key: string]: unknown;
+    };
+    [key: string]: unknown;
+};
+
+const MOMMOM_IMAGE_PREFIX = 'https://image.mom-mom.net/';
+
+function cleanMomMomImageUrl(value?: string | null) {
+    return compact(value || '')
+        .replace(/\\u002F/g, '/')
+        .replace(/\\\//g, '/')
+        .replace(/&amp;/g, '&')
+        .replace(/[),.;]+$/u, '');
+}
+
+function parseMomMomImagePayload(value?: string | null): MomMomImagePayload | null {
+    const url = cleanMomMomImageUrl(value);
+    if (!url.startsWith(MOMMOM_IMAGE_PREFIX)) return null;
+
+    const encoded = url.slice(MOMMOM_IMAGE_PREFIX.length).split(/[?#]/)[0];
+    if (!encoded) return null;
+
+    try {
+        return JSON.parse(Buffer.from(decodeURIComponent(encoded), 'base64').toString('utf8')) as MomMomImagePayload;
+    } catch {
+        return null;
+    }
+}
+
+function normalizeMomMomImageUrl(value?: string | null, width = 1080) {
+    const url = cleanMomMomImageUrl(value);
+    if (!url) return '';
+
+    const payload = parseMomMomImagePayload(url);
+    if (!payload?.key) return toImageUrl(url);
+
+    const normalizedPayload: MomMomImagePayload = {
+        ...payload,
+        edits: {
+            ...(payload.edits || {}),
+            resize: {
+                ...(payload.edits?.resize || {}),
+                width,
+                withoutEnlargement: true,
+            },
+        },
+    };
+
+    return `${MOMMOM_IMAGE_PREFIX}${Buffer.from(JSON.stringify(normalizedPayload)).toString('base64')}`;
+}
+
+function getImageDedupeKey(value?: string | null) {
+    const payload = parseMomMomImagePayload(value);
+    return payload?.key || normalizeKey(cleanMomMomImageUrl(value || ''));
+}
+
+function extractMomMomDetailImagesFromHtml(html: string) {
+    const normalizedHtml = html
+        .replace(/\\u002F/g, '/')
+        .replace(/\\\//g, '/');
+    const matches = normalizedHtml.match(/https:\/\/image\.mom-mom\.net\/[^"'<>\\\s)]+/g) || [];
+    const seen = new Set<string>();
+    const images: string[] = [];
+
+    for (const match of matches) {
+        const payload = parseMomMomImagePayload(match);
+        const key = payload?.key || '';
+        if (!key.startsWith('events/')) continue;
+
+        const width = Number(payload?.edits?.resize?.width || 0);
+        if (width > 0 && width < 760) continue;
+        if (seen.has(key)) continue;
+
+        const image = normalizeMomMomImageUrl(match, Math.max(width || 1080, 1080));
+        if (!image) continue;
+
+        seen.add(key);
+        images.push(image);
+    }
+
+    return images.slice(0, 12);
 }
 
 function toCurrency(value?: number) {
@@ -741,7 +834,10 @@ async function fetchProductDetail(productNo: number) {
     });
     if (!response.ok) throw new Error(`MomMom detail failed: ${response.status} ${response.statusText}`);
     const html = await response.text();
-    return extractProductDetailFromFlight(extractFlightText(html));
+    const detailImages = extractMomMomDetailImagesFromHtml(html);
+    const detail = extractProductDetailFromFlight(extractFlightText(html));
+    if (!detail) return detailImages.length > 0 ? { detailImages } : null;
+    return { ...detail, detailImages };
 }
 
 async function enrichProductDetails(products: ShopProduct[]) {
@@ -817,6 +913,38 @@ function buildDetailInfoLines(product: ShopProduct, detail?: ShopProductDetail |
         product.reservationData || detail?.reservationData ? '예약형 상품입니다. 구매 전 예약 가능일과 이용 조건을 확인하세요.' : '',
     ].filter(Boolean);
     return Array.from(new Set(lines)).join('\n');
+}
+
+function buildSynopsisImages(product: ShopProduct, detail: ShopProductDetail | undefined, representativeImage: string, cache: ExistingItem) {
+    const cachedImages = Array.isArray(cache.synopsisImages)
+        ? cache.synopsisImages.filter((image: unknown): image is string => typeof image === 'string')
+        : [];
+    const productImages = [
+        ...(product.imageUrls || []),
+        ...(product.listImageUrls || []),
+    ].map((image) => toImageUrl(image));
+    const representativeKey = getImageDedupeKey(representativeImage);
+    const seen = new Set<string>();
+    const images: string[] = [];
+
+    for (const candidate of [
+        ...(detail?.detailImages || []),
+        ...productImages,
+        ...cachedImages,
+    ]) {
+        const image = candidate?.startsWith(MOMMOM_IMAGE_PREFIX)
+            ? normalizeMomMomImageUrl(candidate, 1080)
+            : toImageUrl(candidate);
+        if (!image) continue;
+
+        const key = getImageDedupeKey(image);
+        if (!key || key === representativeKey || seen.has(key)) continue;
+
+        seen.add(key);
+        images.push(image);
+    }
+
+    return images.slice(0, 12);
 }
 
 function buildDetailBookingNotice(product: ShopProduct, detail?: ShopProductDetail | null) {
@@ -920,6 +1048,7 @@ export async function scrapeMomMomShopProducts(options: ScrapeOptions) {
             const price = toCurrency(finalPrice) || (typeof cache.price === 'string' ? cache.price : '');
             const originalPrice = toCurrency(base) || (typeof cache.originalPrice === 'string' ? cache.originalPrice : '');
             const image = toImageUrl(product.listImageUrls?.[0] || product.imageUrls?.[0]) || cache.image || '';
+            const synopsisImages = buildSynopsisImages(product, detail, image, cache);
             const date = buildDate(product);
             const priceDetail = buildPriceDetail(product, price, originalPrice);
             const detailInfo = buildDetailInfoLines(product, detail);
@@ -984,6 +1113,7 @@ export async function scrapeMomMomShopProducts(options: ScrapeOptions) {
                 productNo: product.productNo,
                 title,
                 image,
+                synopsisImages,
                 link,
                 date,
                 genre: classifyGenre(title, venue, options.defaultGenre),

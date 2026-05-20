@@ -150,6 +150,8 @@ const getFullImageHref = (image: string) => {
     return basePath && !image.startsWith(basePath) ? `${basePath}${image}` : image;
 };
 
+const getDetailHeroImageUrl = (image: string) => getOptimizedUrl(image, 960, 88);
+
 const formatSourceTimestampLabel = (value?: string | null) => {
     const raw = compactDetailText(value || '');
     if (!raw) return null;
@@ -254,8 +256,18 @@ export default function ContentDetailView({ performance: p, allPerformances = []
     }, [p.cast]);
     const hasCast = castMembers.length > 0;
     const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
-    const [imgSrc, setImgSrc] = useState(rawImg ? getOptimizedUrl(rawImg) : '');
+    const [imgSrc, setImgSrc] = useState(rawImg ? getDetailHeroImageUrl(rawImg) : '');
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
+    const fallbackImgSrc = fallbackImg ? getDetailHeroImageUrl(fallbackImg) : '';
+    const isMomMomSource = (p.source || '').startsWith('mommom');
+    const galleryLabel = isMomMomSource ? '상품 상세 이미지' : (p.genre === 'tourism' ? '여행지 사진' : '공연 소개 이미지');
+    const galleryLimit = isMomMomSource || p.genre === 'tourism' ? 8 : 4;
+    const galleryThumbWidth = isMomMomSource ? 520 : 360;
+    const galleryThumbQuality = isMomMomSource ? 76 : 66;
+    const galleryAspectClass = isMomMomSource ? 'aspect-[3/4]' : (p.genre === 'tourism' ? 'aspect-video' : 'aspect-[4/5]');
+    const galleryImageClass = isMomMomSource
+        ? 'w-full h-auto object-contain bg-white dark:bg-white'
+        : `${galleryAspectClass} w-full object-cover`;
     const dDayLabel = getDdayLabel(p);
     const movieStatsReferenceLabel = p.statsCollectedAt
         ? `${formatCompactKoreanDateTime(p.statsCollectedAt)} 수집`
@@ -388,8 +400,8 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                 className="w-full h-full object-cover transition-transform duration-700"
                                 referrerPolicy="no-referrer"
                                 onError={() => {
-                                    if (fallbackImg && imgSrc !== fallbackImg && imgSrc !== getOptimizedUrl(fallbackImg)) {
-                                        setImgSrc(getOptimizedUrl(fallbackImg));
+                                    if (fallbackImgSrc && imgSrc !== fallbackImgSrc) {
+                                        setImgSrc(fallbackImgSrc);
                                     } else {
                                         setImgSrc('');
                                     }
@@ -1048,27 +1060,27 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                 <motion.div variants={itemVariants} className="mt-6">
                                     <h3 className="text-sm font-black text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Sparkles className="w-4 h-4 text-amber-500" />
-                                        {p.genre === 'tourism' ? '여행지 사진' : '공연 소개 이미지'}
+                                        {galleryLabel}
                                     </h3>
                                     <div className="grid grid-cols-2 gap-2">
-                                        {p.synopsisImages.slice(0, p.genre === 'tourism' ? 8 : 4).map((image) => (
+                                        {p.synopsisImages.slice(0, galleryLimit).map((image) => (
                                             <a
                                                 key={image}
                                                 href={getFullImageHref(image)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 referrerPolicy="no-referrer"
-                                                title={p.genre === 'tourism' ? '여행지 사진 크게 보기' : '공연 소개 이미지 크게 보기'}
-                                                aria-label={`${p.title} ${p.genre === 'tourism' ? '여행지 사진' : '공연 소개 이미지'} 새창에서 크게 보기`}
+                                                title={`${galleryLabel} 크게 보기`}
+                                                aria-label={`${p.title} ${galleryLabel} 새창에서 크게 보기`}
                                                 onClick={(event) => event.stopPropagation()}
                                                 className="group block overflow-hidden rounded-xl border border-black/5 bg-gray-100 dark:border-white/10 dark:bg-white/5"
                                             >
                                                 <img
-                                                    src={getOptimizedUrl(image, 360, 62)}
-                                                    alt={`${p.title} ${p.genre === 'tourism' ? '여행지 사진' : '공연 소개 이미지'}`}
+                                                    src={getOptimizedUrl(image, galleryThumbWidth, galleryThumbQuality)}
+                                                    alt={`${p.title} ${galleryLabel}`}
                                                     loading="lazy"
                                                     referrerPolicy="no-referrer"
-                                                    className={`${p.genre === 'tourism' ? 'aspect-video' : 'aspect-[4/5]'} w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]`}
+                                                    className={`${galleryImageClass} transition-transform duration-300 group-hover:scale-[1.03]`}
                                                 />
                                             </a>
                                         ))}

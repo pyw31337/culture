@@ -484,6 +484,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let placeCategory = raw.placeCategory || '';
     let platforms = raw.platforms;
     let stillImages = raw.stillImages;
+    let synopsisImages = raw.synopsisImages;
     let keywords = raw.keywords;
     let tagline = raw.tagline || '';
     let voteAverage = raw.voteAverage;
@@ -702,6 +703,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         placeCategory,
         platforms,
         stillImages,
+        synopsisImages,
         keywords,
         tagline,
         voteAverage,
