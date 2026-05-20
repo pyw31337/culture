@@ -8,10 +8,11 @@ import ContentDetailView from './ContentDetailView';
 
 interface SharedDetailModalProps {
     performance: Performance;
+    allPerformances?: Performance[];
     onClose: () => void;
 }
 
-export default function SharedDetailModal({ performance: p, onClose }: SharedDetailModalProps) {
+export default function SharedDetailModal({ performance: p, allPerformances = [], onClose }: SharedDetailModalProps) {
     const scrollYRef = useRef(0);
 
     // Close on Escape
@@ -103,7 +104,7 @@ export default function SharedDetailModal({ performance: p, onClose }: SharedDet
                         className="relative w-full max-w-[1000px] z-[100]"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <ContentDetailView performance={p} mode="modal" onClose={onClose} />
+                        <ContentDetailView performance={p} allPerformances={allPerformances} mode="modal" onClose={onClose} />
                     </motion.div>
                 </motion.div>
             </AnimatePresence>

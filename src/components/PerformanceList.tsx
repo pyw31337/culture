@@ -679,7 +679,7 @@ export default function PerformanceList({
                 const representativeVenue = getRepresentativeVenueInfoForFavorite(favoriteVenue, scopedPerformances, venues);
                 router.push(`/map?genre=${selectedGenre}&lat=${representativeVenue?.lat || 0}&lng=${representativeVenue?.lng || 0}&venue=${encodeURIComponent(favoriteVenue.venueName)}`);
             }} />}
-            {sharedPerf && <SharedDetailModal performance={sharedPerf} onClose={handleSharedDetailClose} />}
+            {sharedPerf && <SharedDetailModal performance={sharedPerf} allPerformances={scopedPerformances} onClose={handleSharedDetailClose} />}
         </div>
     );
 }

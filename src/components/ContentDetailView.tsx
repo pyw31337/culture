@@ -11,9 +11,11 @@ import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
 import { formatCompactKoreanDateTime } from '@/lib/build-info';
 import { getSourceLabel, getSourceOfficialUrl } from '@/lib/source-registry';
+import { buildSportsContext, isRedundantSportsDescription } from '@/lib/sports-context';
 
 interface ContentDetailViewProps {
     performance: Performance;
+    allPerformances?: Performance[];
     mode?: 'modal' | 'standalone';
     onClose?: () => void;
 }
@@ -213,7 +215,7 @@ const dedupeDetailInfoItems = <T extends { label: string; text?: unknown }>(item
     });
 };
 
-export default function ContentDetailView({ performance: p, mode = 'modal', onClose }: ContentDetailViewProps) {
+export default function ContentDetailView({ performance: p, allPerformances = [], mode = 'modal', onClose }: ContentDetailViewProps) {
     const router = useRouter();
     const detail = p as DetailPerformance;
     const isMobile = useMemo(() => {
@@ -265,6 +267,10 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
     const officialUpdateLabel = formatOfficialUpdateLabel(p.sourceUpdatedAt);
     const visibleAgeDetail = normalizeDetailText(p.ageDetail);
     const shouldShowAgeDetail = Boolean(visibleAgeDetail && !isRedundantAgeDetail(visibleAgeDetail, p.age, p.ageRating));
+    const sportsContext = useMemo(
+        () => buildSportsContext(p, allPerformances),
+        [p, allPerformances]
+    );
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -330,7 +336,7 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
         ? "w-full max-w-[380px] md:max-w-[1000px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
         : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-white text-gray-900 dark:bg-[#070b14] dark:text-white rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-black/10 dark:border-white/10";
     const normalizedDescription = normalizeDetailText(p.description);
-    const displayDescription = isGeneratedSummaryDescription(p, normalizedDescription) ? '' : normalizedDescription;
+    const displayDescription = (isGeneratedSummaryDescription(p, normalizedDescription) || isRedundantSportsDescription(p, normalizedDescription)) ? '' : normalizedDescription;
     const movieSynopsisText = p.genre === 'movie' ? normalizeDetailText(p.synopsis || displayDescription) : '';
     const hasLongDescription = Boolean(displayDescription && displayDescription.length > 150 && p.genre !== 'movie');
     const hasMovieSynopsis = Boolean(movieSynopsisText);
@@ -850,6 +856,66 @@ export default function ContentDetailView({ performance: p, mode = 'modal', onCl
                                             <p className="text-[13px] text-amber-800/80 dark:text-amber-300/80 leading-relaxed whitespace-pre-line font-medium">
                                                 {p.bookingNotice}
                                             </p>
+                                        </div>
+                                    )}
+                                </motion.div>
+                            )}
+
+                            {sportsContext && (
+                                <motion.div variants={itemVariants} className="mt-5 rounded-2xl border border-emerald-500/15 bg-emerald-50/70 p-5 dark:border-emerald-400/15 dark:bg-emerald-400/5">
+                                    <h3 className="mb-2 flex items-center gap-2 text-lg font-black text-gray-900 dark:text-white">
+                                        <BarChart3 className="h-5 w-5 text-emerald-500" />
+                                        {sportsContext.title}
+                                    </h3>
+                                    <p className="text-[13.5px] font-medium leading-relaxed text-gray-600 dark:text-gray-300">
+                                        {sportsContext.summary}
+                                    </p>
+
+                                    {sportsContext.facts.length > 0 && (
+                                        <div className="mt-4 grid grid-cols-2 gap-2">
+                                            {sportsContext.facts.slice(0, 8).map((fact) => (
+                                                <div key={`${fact.label}-${fact.value}`} className="rounded-xl border border-black/5 bg-white/70 p-3 dark:border-white/10 dark:bg-white/5">
+                                                    <span className="block text-[10px] font-black uppercase tracking-[0.12em] text-gray-400 dark:text-gray-500">
+                                                        {fact.label}
+                                                    </span>
+                                                    <span className="mt-1 block truncate text-[13px] font-black text-gray-900 dark:text-white" title={fact.value}>
+                                                        {fact.value}
+                                                    </span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {sportsContext.relatedGames.length > 0 && (
+                                        <div className="mt-4 space-y-2">
+                                            <span className="block text-[11px] font-black text-gray-500 dark:text-gray-400">함께 보면 좋은 수집 일정</span>
+                                            {sportsContext.relatedGames.map((game) => (
+                                                <div key={`${game.label}-${game.title}-${game.date}`} className="rounded-xl bg-white/65 px-3 py-2 text-[12px] font-bold text-gray-600 dark:bg-white/5 dark:text-gray-300">
+                                                    <span className="mr-2 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] text-emerald-600 dark:text-emerald-300">{game.label}</span>
+                                                    <span>{game.title}</span>
+                                                    <span className="ml-2 text-gray-400 dark:text-gray-500">{formatUnifiedDate(game.date)} · {game.venue}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {sportsContext.links.length > 0 && (
+                                        <div className="mt-4 flex flex-wrap gap-2">
+                                            {sportsContext.links.slice(0, 7).map((link) => (
+                                                <a
+                                                    key={`${link.label}-${link.href}`}
+                                                    href={isMobile ? toMobileUrl(link.href) : link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    title={link.helper || link.label}
+                                                    aria-label={`${link.label} 새창열기`}
+                                                    onClick={(event) => event.stopPropagation()}
+                                                    className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/15 bg-white px-3 py-1.5 text-[11px] font-black text-emerald-700 shadow-sm transition-colors hover:bg-emerald-50 dark:border-emerald-400/20 dark:bg-white/5 dark:text-emerald-300 dark:hover:bg-emerald-400/10"
+                                                >
+                                                    <span>{link.label}</span>
+                                                    <ExternalLink className="h-3 w-3 opacity-60" />
+                                                </a>
+                                            ))}
                                         </div>
                                     )}
                                 </motion.div>
