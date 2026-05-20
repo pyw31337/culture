@@ -2,10 +2,18 @@ import type { Performance } from '@/types';
 import { GENRES, SPORTS_GENRES, VALID_GENRE_SLUGS } from '@/lib/constants';
 
 export type GenreCounts = Record<string, number>;
+export type GenreNavigationItem = {
+    id: string;
+    label: string;
+    disabled?: boolean;
+    offseason?: boolean;
+};
 
 const SLUG_TO_GENRE: Record<string, string> = {
     theater: 'play',
 };
+
+const OFFSEASON_VISIBLE_GENRES = new Set(['basketball', 'volleyball', 'handball']);
 
 export function buildGenreCounts(performances: Array<Pick<Performance, 'genre'>>): GenreCounts {
     return performances.reduce<GenreCounts>((counts, performance) => {
@@ -35,6 +43,22 @@ export function isGenreAvailable(counts: GenreCounts, genre: string): boolean {
 
 export function getAvailableGenres(counts: GenreCounts) {
     return GENRES.filter((genre) => genre.id === 'all' || isGenreAvailable(counts, genre.id));
+}
+
+export function getGenreNavigationItems(counts: GenreCounts): GenreNavigationItem[] {
+    const availableGenres = getAvailableGenres(counts);
+    const availableIds = new Set(availableGenres.map((genre) => genre.id));
+    const offseasonGenres = GENRES
+        .filter((genre) => OFFSEASON_VISIBLE_GENRES.has(genre.id))
+        .filter((genre) => !availableIds.has(genre.id) && getGenreCount(counts, genre.id) === 0)
+        .map((genre) => ({
+            ...genre,
+            label: `${genre.label} (비시즌)`,
+            disabled: true,
+            offseason: true,
+        }));
+
+    return [...availableGenres, ...offseasonGenres];
 }
 
 export function getAvailableGenreIds(counts: GenreCounts): string[] {

@@ -24,7 +24,7 @@ import RainbowBackground from './ui/RainbowBackground';
 import ErrorBoundary from './ErrorBoundary';
 import BottomNav, { BottomMenuType } from './BottomNav';
 import BottomNavSheet from './BottomNavSheet';
-import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
+import { buildGenreCounts, getAvailableGenres, getGenreNavigationItems, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import { formatCompactKoreanDateTime, type DataBuildInfo } from '@/lib/build-info';
 import { getRepresentativeVenueInfoForFavorite } from '@/lib/favorite-venues';
 import { getKeywordMatchedItems } from '@/lib/keyword-match';
@@ -150,6 +150,7 @@ export default function PerformanceList({
         return buildGenreCounts(allPerformances);
     }, [allPerformances, initialGenreCounts, isCategoryPage, isDataFullyLoaded]);
     const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
+    const genreNavigationItems = useMemo(() => getGenreNavigationItems(genreCounts), [genreCounts]);
     const totalItemCount = useMemo(() => {
         if (buildInfo?.itemCount) return buildInfo.itemCount;
         return Object.values(genreCounts).reduce((sum, count) => sum + count, 0);
@@ -642,7 +643,7 @@ export default function PerformanceList({
             {/* 4. Navigation & Modals */}
             <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={() => { router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
 
-            <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} availableGenres={availableGenres} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} venues={venues} onVenueSelect={(v) => {
+            <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} availableGenres={genreNavigationItems} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} venues={venues} onVenueSelect={(v) => {
                 setSelectedVenue(v);
 
                 // Location Mode Integration: Intercept venue selection to trigger location search

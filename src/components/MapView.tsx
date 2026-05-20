@@ -11,7 +11,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
-import { buildGenreCounts, getAvailableGenres, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
+import { buildGenreCounts, getAvailableGenres, getGenreNavigationItems, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
 import type { DataBuildInfo } from '@/lib/build-info';
 import { createFavoriteVenuePreference, favoriteVenueMatchesIdentity } from '@/lib/favorite-venues';
 import { getExternalContentLink } from '@/lib/performance-links';
@@ -238,6 +238,7 @@ export default function MapView({
         return buildGenreCounts(allPerformances);
     }, [allPerformances, initialGenreCounts, isDataFullyLoaded]);
     const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
+    const genreNavigationItems = useMemo(() => getGenreNavigationItems(genreCounts), [genreCounts]);
     const totalItemCount = useMemo(() => {
         if (buildInfo?.itemCount) return buildInfo.itemCount;
         return Object.values(genreCounts).reduce((sum, count) => sum + count, 0);
@@ -933,26 +934,32 @@ export default function MapView({
                             )}
                         >
                         <Filter className="w-4 h-4" />
-                            카테고리 ({availableGenres.find(g => g.id === selectedMapGenre)?.label || '전체'})
+                            카테고리 ({genreNavigationItems.find(g => g.id === selectedMapGenre)?.label || '전체'})
                         </button>
 
                         {isCategoryMenuOpen && (
                             <div className="absolute top-full left-0 mt-2 w-56 max-h-[70vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 p-2 animate-fade-in-down pointer-events-auto custom-scrollbar">
                                 <div className="space-y-1">
                                     {/* Categoriy Order matching GENRES list in constants.ts */}
-                                    {availableGenres.map(genre => {
+                                    {genreNavigationItems.map(genre => {
                                         const isSel = selectedMapGenre === genre.id;
                                         const style = getGenreStyle(genre.id);
                                         return (
                                             <button
                                                 key={genre.id}
+                                                disabled={genre.disabled}
+                                                aria-disabled={genre.disabled}
+                                                title={genre.offseason ? `${genre.label.replace(' (비시즌)', '')}은 현재 비시즌이라 수집된 경기가 없습니다.` : undefined}
                                                 onClick={() => {
+                                                    if (genre.disabled) return;
                                                     setSelectedMapGenre(genre.id);
                                                     setIsCategoryMenuOpen(false);
                                                 }}
                                                 className={clsx(
                                                     "flex items-center justify-between w-full px-3 py-2.5 rounded-xl transition-all text-sm group",
-                                                    isSel ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold" : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                                                    genre.disabled
+                                                        ? "cursor-not-allowed border border-dashed border-gray-200 text-gray-400 opacity-60 grayscale dark:border-gray-800 dark:text-gray-600"
+                                                        : isSel ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold" : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                                                 )}
                                             >
                                                 <div className="flex items-center gap-3">

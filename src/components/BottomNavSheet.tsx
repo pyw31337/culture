@@ -8,6 +8,7 @@ import { safeStorage } from '@/lib/safeStorage';
 import { Performance } from '@/types';
 import { getExternalContentLink } from '@/lib/performance-links';
 import ImageWithFallback from './ImageWithFallback';
+import type { GenreNavigationItem } from '@/lib/genre-availability';
 
 type VenueLookupEntry = {
     refined_name?: string;
@@ -25,7 +26,7 @@ interface BottomNavSheetProps {
     viewMode: string;
     onViewModeChange: (mode: string) => void;
     selectedGenre: string;
-    availableGenres?: { id: string; label: string }[];
+    availableGenres?: GenreNavigationItem[];
     onGenreSelect: (genre: string) => void;
     searchText: string;
     onSearchChange: (text: string) => void;
@@ -326,10 +327,19 @@ export default function BottomNavSheet({
                                     return (
                                         <button
                                             key={genre.id}
-                                            onClick={() => { onGenreSelect(genre.id); onClose(); }}
+                                            disabled={genre.disabled}
+                                            aria-disabled={genre.disabled}
+                                            title={genre.offseason ? `${genre.label.replace(' (비시즌)', '')}은 현재 비시즌이라 수집된 경기가 없습니다.` : undefined}
+                                            onClick={() => {
+                                                if (genre.disabled) return;
+                                                onGenreSelect(genre.id);
+                                                onClose();
+                                            }}
                                             className={clsx(
                                                 "rounded-xl px-3 py-2.5 flex items-center gap-2 transition-all border",
-                                                isSelected
+                                                genre.disabled
+                                                    ? "cursor-not-allowed border-dashed border-white/10 bg-gray-900/30 text-gray-500 opacity-60 light:border-black/10 light:bg-gray-100 light:text-gray-400"
+                                                    : isSelected
                                                     ? (searchMode === 'location'
                                                         ? "bg-emerald-600 text-white border-emerald-500 shadow-lg shadow-emerald-900/50 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-600 light:shadow-none"
                                                         : "bg-purple-600 text-white border-purple-500 shadow-lg shadow-purple-900/50 light:bg-purple-50 light:text-purple-700 light:border-purple-600 light:shadow-none")

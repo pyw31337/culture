@@ -7,7 +7,7 @@ import { ko } from 'date-fns/locale';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
-import { buildGenreCounts, getAvailableGenres, isGenreAvailable } from '@/lib/genre-availability';
+import { buildGenreCounts, getAvailableGenres, getGenreNavigationItems, isGenreAvailable } from '@/lib/genre-availability';
 import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { getExternalContentLink } from '@/lib/performance-links';
 import Portal from './ui/Portal';
@@ -33,6 +33,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
     const [localGenre, setLocalGenre] = useState(selectedGenre);
     const genreCounts = useMemo(() => buildGenreCounts(performances), [performances]);
     const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
+    const genreNavigationItems = useMemo(() => getGenreNavigationItems(genreCounts), [genreCounts]);
 
     const startDate = startOfWeek(startOfMonth(currentMonth));
     const endDate = endOfWeek(endOfMonth(currentMonth));
@@ -258,18 +259,21 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                     <div className="w-full px-4 py-3 bg-gray-100/30 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 overflow-x-auto scrollbar-hide shrink-0 cursor-grab z-10"
                         onMouseDown={onMouseDown} onMouseLeave={onMouseLeave} onMouseUp={onMouseUp} onMouseMove={onMouseMove} ref={scrollRef}>
                         <div className="flex gap-2 w-max">
-                            {availableGenres.map((genre) => {
+                            {genreNavigationItems.map((genre) => {
                                 const isSelected = localGenre === genre.id;
                                 const count = genre.id === 'all'
                                     ? currentViewTotalEvents.length
                                     : currentViewTotalEvents.filter(p => p.genre === genre.id).length;
-                                const isEmpty = count === 0;
+                                const isDisabled = Boolean(genre.disabled || (count === 0 && genre.id !== 'all'));
 
                                 return (
                                     <button
                                         key={genre.id}
-                                        disabled={isEmpty && genre.id !== 'all'}
+                                        disabled={isDisabled}
+                                        aria-disabled={isDisabled}
+                                        title={genre.offseason ? `${genre.label.replace(' (비시즌)', '')}은 현재 비시즌이라 수집된 경기가 없습니다.` : undefined}
                                         onClick={() => {
+                                            if (isDisabled) return;
                                             setLocalGenre(genre.id);
                                             onGenreSelect?.(genre.id);
                                         }}
@@ -278,7 +282,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
                                             isSelected
                                                 ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white shadow-lg scale-105"
                                                 : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800",
-                                            isEmpty && genre.id !== 'all' ? "opacity-30 grayscale cursor-not-allowed" : "opacity-100"
+                                            isDisabled ? "opacity-30 grayscale cursor-not-allowed" : "opacity-100"
                                         )}
                                     >
                                         {genre.label}
