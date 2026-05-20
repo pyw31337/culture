@@ -12,6 +12,7 @@ import { getDdayLabel } from '@/lib/dday';
 import { formatCompactKoreanDateTime } from '@/lib/build-info';
 import { getSourceLabel, getSourceOfficialUrl } from '@/lib/source-registry';
 import { buildSportsContext, isRedundantSportsDescription } from '@/lib/sports-context';
+import { getSportsTicketingInfo } from '@/lib/sports-ticketing';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -271,6 +272,7 @@ export default function ContentDetailView({ performance: p, allPerformances = []
         () => buildSportsContext(p, allPerformances),
         [p, allPerformances]
     );
+    const sportsTicketingInfo = useMemo(() => getSportsTicketingInfo(p), [p]);
     
     // Unified Booking Link Logic with Fallback for Missing Data
     const bookingUrl = useMemo(
@@ -689,6 +691,16 @@ export default function ContentDetailView({ performance: p, allPerformances = []
 
                                      if (p.price && !p.priceList) {
                                          infoItems.push({ icon: Ticket, label: '가격', text: p.price, color: 'text-orange-500' });
+                                     } else if (sportsTicketingInfo?.ticketBay?.label) {
+                                         infoItems.push({
+                                             icon: Ticket,
+                                             label: '참고가',
+                                             text: sportsTicketingInfo.ticketBay.label,
+                                             color: 'text-orange-500',
+                                             isLink: true,
+                                             href: sportsTicketingInfo.ticketBay.url,
+                                             linkTitle: `${sportsTicketingInfo.ticketBay.sourceLabel} 새 창에서 보기`,
+                                         });
                                      }
 
                                      if (!isMovie && p.priceDetail && compactDetailText(p.priceDetail) !== compactDetailText(p.price)) {
@@ -1111,6 +1123,22 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                 >
                                     <Share2 className="w-5 h-5" />
                                 </motion.button>
+
+                                {sportsTicketingInfo?.officialUrl && sportsTicketingInfo.officialUrl !== bookingUrl && (
+                                    <motion.a
+                                        whileHover={{ scale: 1.01 }}
+                                        whileTap={{ scale: 0.99 }}
+                                        href={isMobile ? toMobileUrl(sportsTicketingInfo.officialUrl) : sportsTicketingInfo.officialUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex min-w-[112px] items-center justify-center gap-2 rounded-2xl border border-black/10 bg-white px-4 py-4 text-sm font-black text-gray-700 shadow-sm transition-colors hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:hover:bg-white/10"
+                                        title={`${sportsTicketingInfo.officialLabel || '공식사이트'} 새창열기`}
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <Globe className="w-4 h-4" />
+                                        <span>공식사이트</span>
+                                    </motion.a>
+                                )}
                                 
                                  <motion.a
                                     whileHover={{ scale: 1.01 }}
@@ -1122,9 +1150,24 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     <ExternalLink className="w-5 h-5" />
-                                    <span>예매하기 이동</span>
+                                    <span>예매하러 가기</span>
                                 </motion.a>
                             </motion.div>
+
+                            {sportsTicketingInfo?.ticketBay && (
+                                <motion.a
+                                    variants={itemVariants}
+                                    href={isMobile ? toMobileUrl(sportsTicketingInfo.ticketBay.url) : sportsTicketingInfo.ticketBay.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block rounded-2xl border border-orange-500/15 bg-orange-50/60 px-4 py-3 text-[12px] font-bold text-orange-800 transition-colors hover:bg-orange-50 dark:border-orange-400/15 dark:bg-orange-400/5 dark:text-orange-200"
+                                    title="티켓베이 참고가 새창열기"
+                                    onClick={(event) => event.stopPropagation()}
+                                >
+                                    <span className="mr-2 text-orange-500">[{sportsTicketingInfo.ticketBay.sourceLabel}]</span>
+                                    {sportsTicketingInfo.ticketBay.detail}
+                                </motion.a>
+                            )}
 
                             {/* Volleyball Specific Links: 관전포인트 & 전력비교 */}
                             {p.genre === 'volleyball' && (p.versusLink || p.highlightsLink) && (

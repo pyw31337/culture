@@ -1,0 +1,1145 @@
+{
+  "generatedAt": "2026-05-20T03:38:55.498Z",
+  "source": "TicketBay public product list",
+  "sourceUrl": "https://www.ticketbay.co.kr/ticketbayApi/product/v1/public/products",
+  "references": [
+    {
+      "categoryId": 5576,
+      "categoryName": "LG - 잠실야구장 (주중)",
+      "depth2Name": "야구 - LG 트윈스",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5576/list/0",
+      "saleCount": 4,
+      "sampleCount": 4,
+      "minPrice": 24500,
+      "maxPrice": 45000,
+      "minListPrice": 16000,
+      "opponents": [
+        "vs 키움"
+      ],
+      "grades": [
+        "3루 레드석",
+        "1루 네이비석",
+        "3루 익사이팅존"
+      ],
+      "events": [
+        {
+          "date": "2026-05-22",
+          "opponent": "vs 키움",
+          "saleCount": 2,
+          "minPrice": 24500,
+          "maxPrice": 45000,
+          "minListPrice": 19000,
+          "grades": [
+            "3루 레드석",
+            "3루 익사이팅존"
+          ]
+        },
+        {
+          "date": "2026-05-23",
+          "opponent": "vs 키움",
+          "saleCount": 2,
+          "minPrice": 40000,
+          "maxPrice": 42000,
+          "minListPrice": 16000,
+          "grades": [
+            "1루 네이비석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 6549,
+      "categoryName": "LG - 잠실야구장 (금토일/공휴일)",
+      "depth2Name": "야구 - LG 트윈스",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/6549/list/0",
+      "saleCount": 1757,
+      "sampleCount": 30,
+      "minPrice": 11000,
+      "maxPrice": 15000,
+      "minListPrice": 11000,
+      "opponents": [
+        "vs 키움"
+      ],
+      "grades": [
+        "외야 그린석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-22",
+          "opponent": "vs 키움",
+          "saleCount": 13,
+          "minPrice": 11000,
+          "maxPrice": 15000,
+          "minListPrice": 11000,
+          "grades": [
+            "외야 그린석"
+          ]
+        },
+        {
+          "date": "2026-05-23",
+          "opponent": "vs 키움",
+          "saleCount": 7,
+          "minPrice": 14000,
+          "maxPrice": 15000,
+          "minListPrice": 11000,
+          "grades": [
+            "외야 그린석"
+          ]
+        },
+        {
+          "date": "2026-05-24",
+          "opponent": "vs 키움",
+          "saleCount": 10,
+          "minPrice": 13000,
+          "maxPrice": 15000,
+          "minListPrice": 11000,
+          "grades": [
+            "외야 그린석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 6543,
+      "categoryName": "한화 - 대전 한화생명 볼파크 (2구간)",
+      "depth2Name": "야구 - 한화 이글스",
+      "infoType": "SPORTS_B",
+      "url": "https://www.ticketbay.co.kr/product/6543/list/0",
+      "saleCount": 947,
+      "sampleCount": 30,
+      "minPrice": 13000,
+      "maxPrice": 18000,
+      "minListPrice": 13000,
+      "opponents": [
+        "vs 롯데"
+      ],
+      "grades": [
+        "3루 내야 지정석 A",
+        "외야 지정석",
+        "1루 내야 지정석 A",
+        "1루 내야 지정석 B"
+      ],
+      "events": [
+        {
+          "date": "2026-05-20",
+          "opponent": "vs 롯데",
+          "saleCount": 29,
+          "minPrice": 13000,
+          "maxPrice": 18000,
+          "minListPrice": 13000,
+          "grades": [
+            "3루 내야 지정석 A",
+            "외야 지정석",
+            "1루 내야 지정석 A",
+            "1루 내야 지정석 B"
+          ]
+        },
+        {
+          "date": "2026-05-21",
+          "opponent": "vs 롯데",
+          "saleCount": 1,
+          "minPrice": 18000,
+          "maxPrice": 18000,
+          "minListPrice": 13000,
+          "grades": [
+            "외야 지정석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 6544,
+      "categoryName": "한화 - 대전 한화생명 볼파크 (3구간)",
+      "depth2Name": "야구 - 한화 이글스",
+      "infoType": "SPORTS_B",
+      "url": "https://www.ticketbay.co.kr/product/6544/list/0",
+      "saleCount": 1106,
+      "sampleCount": 30,
+      "minPrice": 22000,
+      "maxPrice": 29800,
+      "minListPrice": 14500,
+      "opponents": [
+        "vs 두산"
+      ],
+      "grades": [
+        "3루 내야 지정석 B",
+        "외야 지정석",
+        "3루 내야 지정석 A",
+        "1루 내야 지정석 B",
+        "3루 응원단석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-22",
+          "opponent": "vs 두산",
+          "saleCount": 27,
+          "minPrice": 22000,
+          "maxPrice": 29800,
+          "minListPrice": 14500,
+          "grades": [
+            "3루 내야 지정석 B",
+            "외야 지정석",
+            "3루 내야 지정석 A",
+            "1루 내야 지정석 B",
+            "3루 응원단석"
+          ]
+        },
+        {
+          "date": "2026-05-24",
+          "opponent": "vs 두산",
+          "saleCount": 3,
+          "minPrice": 28000,
+          "maxPrice": 29000,
+          "minListPrice": 14500,
+          "grades": [
+            "외야 지정석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5586,
+      "categoryName": "SSG - 인천 SSG랜더스필드 (주중)",
+      "depth2Name": "야구 - SSG 랜더스",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5586/list/0",
+      "saleCount": 595,
+      "sampleCount": 30,
+      "minPrice": 19000,
+      "maxPrice": 24900,
+      "minListPrice": 13000,
+      "opponents": [
+        "vs 삼성"
+      ],
+      "grades": [
+        "1루 으쓱이존",
+        "몰리스 그린존",
+        "중앙 4층 SKY뷰석",
+        "3루 내야필드석",
+        "3루 원정응원석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-26",
+          "opponent": "vs 삼성",
+          "saleCount": 16,
+          "minPrice": 19000,
+          "maxPrice": 24900,
+          "minListPrice": 13000,
+          "grades": [
+            "1루 으쓱이존",
+            "몰리스 그린존",
+            "중앙 4층 SKY뷰석",
+            "3루 내야필드석",
+            "3루 원정응원석"
+          ]
+        },
+        {
+          "date": "2026-05-27",
+          "opponent": "vs 삼성",
+          "saleCount": 14,
+          "minPrice": 23000,
+          "maxPrice": 24900,
+          "minListPrice": 16000,
+          "grades": [
+            "3루 내야필드석",
+            "3루 원정응원석",
+            "1루 으쓱이존"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 6550,
+      "categoryName": "SSG - 인천 SSG랜더스필드 (금토일/공휴일)",
+      "depth2Name": "야구 - SSG 랜더스",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/6550/list/0",
+      "saleCount": 1,
+      "sampleCount": 1,
+      "minPrice": 58000,
+      "maxPrice": 58000,
+      "minListPrice": 22000,
+      "opponents": [
+        "vs 삼성"
+      ],
+      "grades": [
+        "1루 으쓱이존"
+      ],
+      "events": [
+        {
+          "date": "2026-05-27",
+          "opponent": "vs 삼성",
+          "saleCount": 1,
+          "minPrice": 58000,
+          "maxPrice": 58000,
+          "minListPrice": 22000,
+          "grades": [
+            "1루 으쓱이존"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 6554,
+      "categoryName": "삼성 - 대구 라이온즈 파크 (그레이)",
+      "depth2Name": "야구 - 삼성 라이온즈",
+      "infoType": "SPORTS_B",
+      "url": "https://www.ticketbay.co.kr/product/6554/list/0",
+      "saleCount": 147,
+      "sampleCount": 30,
+      "minPrice": 9000,
+      "maxPrice": 20000,
+      "minListPrice": 8000,
+      "opponents": [
+        "vs KT"
+      ],
+      "grades": [
+        "외야지정석",
+        "잔디그린존",
+        "3루 내야지정석",
+        "3루 SKY 상단지정석",
+        "1루 내야지정석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-20",
+          "opponent": "vs KT",
+          "saleCount": 26,
+          "minPrice": 9000,
+          "maxPrice": 19900,
+          "minListPrice": 8000,
+          "grades": [
+            "외야지정석",
+            "잔디그린존",
+            "3루 내야지정석",
+            "3루 SKY 상단지정석",
+            "1루 내야지정석"
+          ]
+        },
+        {
+          "date": "2026-05-21",
+          "opponent": "vs KT",
+          "saleCount": 4,
+          "minPrice": 15000,
+          "maxPrice": 20000,
+          "minListPrice": 10000,
+          "grades": [
+            "잔디그린존",
+            "3루 내야지정석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 6552,
+      "categoryName": "NC - 창원NC파크",
+      "depth2Name": "야구 - NC 다이노스",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/6552/list/0",
+      "saleCount": 86,
+      "sampleCount": 30,
+      "minPrice": 6000,
+      "maxPrice": 15000,
+      "minListPrice": 17800,
+      "opponents": [
+        "vs 한화",
+        "vs 키움"
+      ],
+      "grades": [
+        "1루 외야일반석",
+        "3층 3루 내야석",
+        "1층 1루 내야석",
+        "1층 3루 내야석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-26",
+          "opponent": "vs 한화",
+          "saleCount": 11,
+          "minPrice": 8000,
+          "maxPrice": 15000,
+          "minListPrice": 17800,
+          "grades": [
+            "1루 외야일반석",
+            "3층 3루 내야석",
+            "1층 1루 내야석"
+          ]
+        },
+        {
+          "date": "2026-05-27",
+          "opponent": "vs 한화",
+          "saleCount": 8,
+          "minPrice": 6000,
+          "maxPrice": 15000,
+          "minListPrice": 17800,
+          "grades": [
+            "1루 외야일반석",
+            "1층 1루 내야석"
+          ]
+        },
+        {
+          "date": "2026-05-28",
+          "opponent": "vs 한화",
+          "saleCount": 8,
+          "minPrice": 8000,
+          "maxPrice": 15000,
+          "minListPrice": 17800,
+          "grades": [
+            "1루 외야일반석",
+            "1층 1루 내야석"
+          ]
+        },
+        {
+          "date": "2026-06-26",
+          "opponent": "vs 키움",
+          "saleCount": 1,
+          "minPrice": 10000,
+          "maxPrice": 10000,
+          "minListPrice": 24700,
+          "grades": [
+            "1층 3루 내야석"
+          ]
+        },
+        {
+          "date": "2026-06-27",
+          "opponent": "vs 키움",
+          "saleCount": 1,
+          "minPrice": 10000,
+          "maxPrice": 10000,
+          "minListPrice": 24700,
+          "grades": [
+            "1층 3루 내야석"
+          ]
+        },
+        {
+          "date": "2026-06-28",
+          "opponent": "vs 키움",
+          "saleCount": 1,
+          "minPrice": 10000,
+          "maxPrice": 10000,
+          "minListPrice": 24700,
+          "grades": [
+            "1층 3루 내야석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5598,
+      "categoryName": "KT - 수원 위즈 파크 (주중)",
+      "depth2Name": "야구 - KT wiz",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5598/list/0",
+      "saleCount": 1,
+      "sampleCount": 1,
+      "minPrice": 42000,
+      "maxPrice": 42000,
+      "minListPrice": 20000,
+      "opponents": [
+        "vs 두산"
+      ],
+      "grades": [
+        "3루 응원지정석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-27",
+          "opponent": "vs 두산",
+          "saleCount": 1,
+          "minPrice": 42000,
+          "maxPrice": 42000,
+          "minListPrice": 20000,
+          "grades": [
+            "3루 응원지정석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5700,
+      "categoryName": "KT - 수원 위즈 파크 (금토일/공휴일)",
+      "depth2Name": "야구 - KT wiz",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5700/list/0",
+      "saleCount": 329,
+      "sampleCount": 30,
+      "minPrice": 16900,
+      "maxPrice": 19900,
+      "minListPrice": 14000,
+      "opponents": [
+        "vs NC"
+      ],
+      "grades": [
+        "외야 잔디자유석",
+        "1루 스카이존"
+      ],
+      "events": [
+        {
+          "date": "2026-05-22",
+          "opponent": "vs NC",
+          "saleCount": 1,
+          "minPrice": 16900,
+          "maxPrice": 16900,
+          "minListPrice": 14000,
+          "grades": [
+            "외야 잔디자유석"
+          ]
+        },
+        {
+          "date": "2026-05-23",
+          "opponent": "vs NC",
+          "saleCount": 18,
+          "minPrice": 17000,
+          "maxPrice": 19900,
+          "minListPrice": 14000,
+          "grades": [
+            "외야 잔디자유석"
+          ]
+        },
+        {
+          "date": "2026-05-24",
+          "opponent": "vs NC",
+          "saleCount": 11,
+          "minPrice": 18000,
+          "maxPrice": 19900,
+          "minListPrice": 14000,
+          "grades": [
+            "외야 잔디자유석",
+            "1루 스카이존"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5583,
+      "categoryName": "롯데 - 부산 사직 야구장 (주중)",
+      "depth2Name": "야구 - 롯데 자이언츠",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5583/list/0",
+      "saleCount": 500,
+      "sampleCount": 30,
+      "minPrice": 15000,
+      "maxPrice": 22000,
+      "minListPrice": 8000,
+      "opponents": [
+        "vs LG"
+      ],
+      "grades": [
+        "3루 내야필드석",
+        "1루 외야석",
+        "1루 내야상단석",
+        "1루 내야필드석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-26",
+          "opponent": "vs LG",
+          "saleCount": 8,
+          "minPrice": 20000,
+          "maxPrice": 22000,
+          "minListPrice": 13000,
+          "grades": [
+            "1루 내야상단석",
+            "1루 내야필드석",
+            "3루 내야필드석"
+          ]
+        },
+        {
+          "date": "2026-05-27",
+          "opponent": "vs LG",
+          "saleCount": 8,
+          "minPrice": 17000,
+          "maxPrice": 22000,
+          "minListPrice": 13000,
+          "grades": [
+            "1루 내야상단석",
+            "1루 내야필드석"
+          ]
+        },
+        {
+          "date": "2026-05-28",
+          "opponent": "vs LG",
+          "saleCount": 14,
+          "minPrice": 15000,
+          "maxPrice": 22000,
+          "minListPrice": 8000,
+          "grades": [
+            "3루 내야필드석",
+            "1루 외야석",
+            "1루 내야상단석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5702,
+      "categoryName": "롯데 - 부산 사직 야구장 (금토일/공휴일)",
+      "depth2Name": "야구 - 롯데 자이언츠",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5702/list/0",
+      "saleCount": 645,
+      "sampleCount": 30,
+      "minPrice": 17700,
+      "maxPrice": 27000,
+      "minListPrice": 10000,
+      "opponents": [
+        "vs 삼성"
+      ],
+      "grades": [
+        "중앙상단석",
+        "3루 외야석",
+        "1루 내야상단석",
+        "1루 외야석",
+        "3루 내야상단석",
+        "1루 내야필드석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-22",
+          "opponent": "vs 삼성",
+          "saleCount": 30,
+          "minPrice": 17700,
+          "maxPrice": 27000,
+          "minListPrice": 10000,
+          "grades": [
+            "중앙상단석",
+            "3루 외야석",
+            "1루 내야상단석",
+            "1루 외야석",
+            "3루 내야상단석",
+            "1루 내야필드석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5578,
+      "categoryName": "KIA - 광주 챔피언스 필드 (주중)",
+      "depth2Name": "야구 - KIA 타이거즈",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5578/list/0",
+      "saleCount": 203,
+      "sampleCount": 30,
+      "minPrice": 9900,
+      "maxPrice": 20000,
+      "minListPrice": 10000,
+      "opponents": [
+        "vs LG"
+      ],
+      "grades": [
+        "3루 K5석",
+        "3루 K8석",
+        "3루 응원특별석",
+        "3루 K9석",
+        "1루 K9석",
+        "3루 EV석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-20",
+          "opponent": "vs LG",
+          "saleCount": 18,
+          "minPrice": 9900,
+          "maxPrice": 20000,
+          "minListPrice": 12000,
+          "grades": [
+            "3루 K5석",
+            "3루 K8석",
+            "3루 응원특별석",
+            "3루 K9석",
+            "1루 K9석"
+          ]
+        },
+        {
+          "date": "2026-05-21",
+          "opponent": "vs LG",
+          "saleCount": 12,
+          "minPrice": 14000,
+          "maxPrice": 20000,
+          "minListPrice": 10000,
+          "grades": [
+            "3루 K5석",
+            "3루 EV석",
+            "3루 K8석",
+            "3루 응원특별석",
+            "1루 K9석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5701,
+      "categoryName": "KIA - 광주 챔피언스 필드 (금토일/공휴일)",
+      "depth2Name": "야구 - KIA 타이거즈",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5701/list/0",
+      "saleCount": 759,
+      "sampleCount": 30,
+      "minPrice": 15000,
+      "maxPrice": 20000,
+      "minListPrice": 13000,
+      "opponents": [
+        "vs SSG"
+      ],
+      "grades": [
+        "외야석",
+        "1루 EV석",
+        "3루 EV석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-22",
+          "opponent": "vs SSG",
+          "saleCount": 30,
+          "minPrice": 15000,
+          "maxPrice": 20000,
+          "minListPrice": 13000,
+          "grades": [
+            "외야석",
+            "1루 EV석",
+            "3루 EV석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5575,
+      "categoryName": "두산 - 잠실야구장 (주중)",
+      "depth2Name": "야구 - 두산 베어스",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5575/list/0",
+      "saleCount": 1001,
+      "sampleCount": 30,
+      "minPrice": 9000,
+      "maxPrice": 19000,
+      "minListPrice": 10000,
+      "opponents": [
+        "vs NC"
+      ],
+      "grades": [
+        "외야 지정석",
+        "외야 응원석",
+        "1루 네이비석",
+        "3루 네이비석",
+        "중앙 네이비석",
+        "1루 레드석",
+        "1루 블루석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-20",
+          "opponent": "vs NC",
+          "saleCount": 26,
+          "minPrice": 13500,
+          "maxPrice": 19000,
+          "minListPrice": 11000,
+          "grades": [
+            "외야 응원석",
+            "1루 네이비석",
+            "중앙 네이비석",
+            "1루 레드석",
+            "1루 블루석"
+          ]
+        },
+        {
+          "date": "2026-05-21",
+          "opponent": "vs NC",
+          "saleCount": 4,
+          "minPrice": 9000,
+          "maxPrice": 16000,
+          "minListPrice": 10000,
+          "grades": [
+            "외야 지정석",
+            "3루 네이비석",
+            "중앙 네이비석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5698,
+      "categoryName": "두산 - 잠실야구장 (금토일/공휴일)",
+      "depth2Name": "야구 - 두산 베어스",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5698/list/0",
+      "saleCount": 5,
+      "sampleCount": 5,
+      "minPrice": 36000,
+      "maxPrice": 50000,
+      "minListPrice": 18000,
+      "opponents": [
+        "vs KT"
+      ],
+      "grades": [
+        "중앙 네이비석",
+        "1루 오렌지석 (응원석)",
+        "3루 블루석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-26",
+          "opponent": "vs KT",
+          "saleCount": 4,
+          "minPrice": 36000,
+          "maxPrice": 50000,
+          "minListPrice": 18000,
+          "grades": [
+            "중앙 네이비석",
+            "1루 오렌지석 (응원석)",
+            "3루 블루석"
+          ]
+        },
+        {
+          "date": "2026-05-27",
+          "opponent": "vs KT",
+          "saleCount": 1,
+          "minPrice": 50000,
+          "maxPrice": 50000,
+          "minListPrice": 24000,
+          "grades": [
+            "1루 오렌지석 (응원석)"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5577,
+      "categoryName": "키움 - 고척 돔 야구장 (주중)",
+      "depth2Name": "야구 - 키움 히어로즈",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5577/list/0",
+      "saleCount": 626,
+      "sampleCount": 30,
+      "minPrice": 12000,
+      "maxPrice": 19000,
+      "minListPrice": 10000,
+      "opponents": [
+        "vs KIA"
+      ],
+      "grades": [
+        "1루 4층 지정석",
+        "외야지정석",
+        "중앙 4층 지정석",
+        "3루 4층 지정석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-26",
+          "opponent": "vs KIA",
+          "saleCount": 24,
+          "minPrice": 12000,
+          "maxPrice": 19000,
+          "minListPrice": 10000,
+          "grades": [
+            "1루 4층 지정석",
+            "외야지정석",
+            "중앙 4층 지정석",
+            "3루 4층 지정석"
+          ]
+        },
+        {
+          "date": "2026-05-27",
+          "opponent": "vs KIA",
+          "saleCount": 6,
+          "minPrice": 17900,
+          "maxPrice": 19000,
+          "minListPrice": 10000,
+          "grades": [
+            "3루 4층 지정석",
+            "중앙 4층 지정석",
+            "외야지정석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 5699,
+      "categoryName": "키움 - 고척 돔 야구장 (금토일/공휴일)",
+      "depth2Name": "야구 - 키움 히어로즈",
+      "infoType": "SPORTS_BASEBALL",
+      "url": "https://www.ticketbay.co.kr/product/5699/list/0",
+      "saleCount": 6,
+      "sampleCount": 6,
+      "minPrice": 18000,
+      "maxPrice": 48000,
+      "minListPrice": 15000,
+      "opponents": [
+        "vs KIA"
+      ],
+      "grades": [
+        "3루 4층 지정석",
+        "중앙 4층 지정석",
+        "3루 3층 지정석",
+        "3루 버건디석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-26",
+          "opponent": "vs KIA",
+          "saleCount": 5,
+          "minPrice": 25000,
+          "maxPrice": 48000,
+          "minListPrice": 15000,
+          "grades": [
+            "중앙 4층 지정석",
+            "3루 3층 지정석",
+            "3루 버건디석"
+          ]
+        },
+        {
+          "date": "2026-05-27",
+          "opponent": "vs KIA",
+          "saleCount": 1,
+          "minPrice": 18000,
+          "maxPrice": 18000,
+          "minListPrice": 15000,
+          "grades": [
+            "3루 4층 지정석"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 34,
+      "categoryName": "국내 축구",
+      "depth2Name": "국내 축구",
+      "infoType": "SPORTS_A",
+      "url": "https://www.ticketbay.co.kr/product/34/list/0",
+      "saleCount": 4,
+      "sampleCount": 4,
+      "minPrice": 17000,
+      "maxPrice": 70000,
+      "minListPrice": 17000,
+      "opponents": [
+        "1층",
+        "지정석"
+      ],
+      "grades": [
+        "응원",
+        "테이블"
+      ],
+      "events": [
+        {
+          "date": "2026-05-25",
+          "opponent": "1층",
+          "saleCount": 2,
+          "minPrice": 17000,
+          "maxPrice": 70000,
+          "minListPrice": 17000,
+          "grades": [
+            "응원",
+            "테이블"
+          ]
+        },
+        {
+          "date": "2026-05-25",
+          "opponent": "지정석",
+          "saleCount": 2,
+          "minPrice": 25000,
+          "maxPrice": 25000,
+          "minListPrice": null,
+          "grades": [
+            "응원"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 219,
+      "categoryName": "E-스포츠",
+      "depth2Name": "E-스포츠",
+      "infoType": "SPORTS_A",
+      "url": "https://www.ticketbay.co.kr/product/219/list/0",
+      "saleCount": 1,
+      "sampleCount": 1,
+      "minPrice": 500000,
+      "maxPrice": 500000,
+      "minListPrice": null,
+      "opponents": [
+        "지정석"
+      ],
+      "grades": [
+        "일반"
+      ],
+      "events": [
+        {
+          "date": "2026-05-28",
+          "opponent": "지정석",
+          "saleCount": 1,
+          "minPrice": 500000,
+          "maxPrice": 500000,
+          "minListPrice": null,
+          "grades": [
+            "일반"
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 35,
+      "categoryName": "기타-스포츠",
+      "depth2Name": "기타-스포츠",
+      "infoType": "SPORTS_A",
+      "url": "https://www.ticketbay.co.kr/product/35/list/0",
+      "saleCount": 76,
+      "sampleCount": 30,
+      "minPrice": 15000,
+      "maxPrice": 170000,
+      "minListPrice": 34000,
+      "opponents": [
+        "1층",
+        "2층",
+        "입장권",
+        "3층",
+        "지정석",
+        "기타",
+        "일반"
+      ],
+      "grades": [
+        "R",
+        "일반",
+        "B",
+        "기타",
+        "C",
+        "A",
+        "지정석"
+      ],
+      "events": [
+        {
+          "date": "2026-05-22",
+          "opponent": "1층",
+          "saleCount": 1,
+          "minPrice": 15000,
+          "maxPrice": 15000,
+          "minListPrice": 59000,
+          "grades": [
+            "R"
+          ]
+        },
+        {
+          "date": "2026-06-06",
+          "opponent": "1층",
+          "saleCount": 3,
+          "minPrice": 120000,
+          "maxPrice": 170000,
+          "minListPrice": 122000,
+          "grades": [
+            "기타",
+            "B"
+          ]
+        },
+        {
+          "date": "2026-06-06",
+          "opponent": "2층",
+          "saleCount": 2,
+          "minPrice": 160000,
+          "maxPrice": 170000,
+          "minListPrice": null,
+          "grades": [
+            "B",
+            "기타"
+          ]
+        },
+        {
+          "date": "2026-06-06",
+          "opponent": "3층",
+          "saleCount": 7,
+          "minPrice": 55000,
+          "maxPrice": 145000,
+          "minListPrice": null,
+          "grades": [
+            "B",
+            "C",
+            "지정석"
+          ]
+        },
+        {
+          "date": "2026-06-06",
+          "opponent": "기타",
+          "saleCount": 4,
+          "minPrice": 60000,
+          "maxPrice": 170000,
+          "minListPrice": null,
+          "grades": [
+            "기타",
+            "일반",
+            "지정석"
+          ]
+        },
+        {
+          "date": "2026-06-06",
+          "opponent": "일반",
+          "saleCount": 1,
+          "minPrice": 120000,
+          "maxPrice": 120000,
+          "minListPrice": null,
+          "grades": [
+            "일반"
+          ]
+        },
+        {
+          "date": "2026-06-06",
+          "opponent": "지정석",
+          "saleCount": 7,
+          "minPrice": 60000,
+          "maxPrice": 160000,
+          "minListPrice": 142000,
+          "grades": [
+            "일반",
+            "B",
+            "A",
+            "기타"
+          ]
+        },
+        {
+          "date": "2026-06-20",
+          "opponent": "1층",
+          "saleCount": 1,
+          "minPrice": 50000,
+          "maxPrice": 50000,
+          "minListPrice": 52000,
+          "grades": [
+            "B"
+          ]
+        },
+        {
+          "date": "2026-07-31",
+          "opponent": "2층",
+          "saleCount": 1,
+          "minPrice": 30000,
+          "maxPrice": 30000,
+          "minListPrice": 34000,
+          "grades": [
+            "일반"
+          ]
+        },
+        {
+          "date": "2026-10-02",
+          "opponent": "입장권",
+          "saleCount": 1,
+          "minPrice": 40000,
+          "maxPrice": 40000,
+          "minListPrice": 40000,
+          "grades": [
+            "일반"
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "입장권",
+          "saleCount": 2,
+          "minPrice": 40000,
+          "maxPrice": 120000,
+          "minListPrice": 40000,
+          "grades": [
+            "일반",
+            "A"
+          ]
+        }
+      ]
+    }
+  ]
+}

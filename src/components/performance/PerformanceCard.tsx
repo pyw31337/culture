@@ -9,6 +9,7 @@ import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { getDdayLabel } from '@/lib/dday';
+import { getSportsTicketBaySummary } from '@/lib/sports-ticketing';
 import RecommendationReasonChips from './RecommendationReasonChips';
 
 interface PerformanceCardProps {
@@ -69,10 +70,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const isMovie = perf.genre === 'movie';
     const formattedDate = formatUnifiedDate(perf.date);
     const shouldShowDateChip = Boolean(formattedDate && formattedDate !== dDay);
-    const priceText = typeof perf.price === 'string' ? perf.price.trim() : '';
-    const priceFallbackText = ['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(perf.genre)
+    const sportsTicketBay = useMemo(() => getSportsTicketBaySummary(perf), [perf]);
+    const priceText = typeof perf.price === 'string' && perf.price.trim()
+        ? perf.price.trim()
+        : sportsTicketBay?.label || '';
+    const priceFallbackText = sportsTicketBay?.sourceLabel || (['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(perf.genre)
         ? '예매처 확인'
-        : '가격 확인';
+        : '가격 확인');
 
     useEffect(() => {
         const query = window.matchMedia('(hover: hover) and (pointer: fine)');

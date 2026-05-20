@@ -1,5 +1,6 @@
 import type { Performance } from '@/types';
 import { toMobileUrl } from '@/lib/utils';
+import { getSportsBookingUrl, isSportsPerformance } from '@/lib/sports-ticketing';
 
 const MOMMOM_SOURCES = new Set(['mommom', 'mommom-activity', 'mommom-product', 'museum']);
 
@@ -8,7 +9,7 @@ function buildNaverSearchUrl(query: string): string {
 }
 
 export function getExternalContentLink(
-    performance: Pick<Performance, 'genre' | 'title' | 'link' | 'website' | 'source'>,
+    performance: Pick<Performance, 'genre' | 'title' | 'link' | 'website' | 'source' | 'date' | 'homeTeam' | 'awayTeam' | 'venue'>,
     options: { mobile?: boolean } = {}
 ): string {
     let url = performance.link?.trim() || performance.website?.trim() || '';
@@ -16,7 +17,9 @@ export function getExternalContentLink(
         url = '';
     }
 
-    if (performance.genre === 'movie') {
+    if (isSportsPerformance(performance)) {
+        url = getSportsBookingUrl(performance) || url;
+    } else if (performance.genre === 'movie') {
         url = buildNaverSearchUrl(`${performance.title} 상영시간표`);
     } else if (!url) {
         url = MOMMOM_SOURCES.has(performance.source || '')

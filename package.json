@@ -13,6 +13,7 @@
     "scrape:class": "npx tsx scripts/scrape-umclass.ts",
     "scrape:mochaclass": "npx tsx scripts/scrape-mochaclass.ts",
     "scrape:kbo": "npx tsx scripts/scrape-kbo.ts",
+    "scrape:ticketbay:sports": "npx tsx scripts/scrape-ticketbay-sports.ts",
     "scrape:yes24": "npx tsx scripts/scrape-yes24-exclusive.ts",
     "scrape:sssd": "npx tsx scripts/scrape-sssd.ts",
     "validate:images": "npx tsx scripts/validate-images.ts",

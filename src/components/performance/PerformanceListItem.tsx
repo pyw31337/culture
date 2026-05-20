@@ -9,6 +9,7 @@ import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
+import { getSportsTicketBaySummary } from '@/lib/sports-ticketing';
 import RecommendationReasonChips from './RecommendationReasonChips';
 
 interface PerformanceListItemProps {
@@ -55,6 +56,10 @@ HighlightText.displayName = 'HighlightText';
 function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText, priority = false }: PerformanceListItemProps) {
     const genreStyle = useMemo(() => GENRE_STYLES[perf.genre] || {}, [perf.genre]);
     const externalLink = useMemo(() => getExternalContentLink(perf), [perf]);
+    const sportsTicketBay = useMemo(() => getSportsTicketBaySummary(perf), [perf]);
+    const displayPrice = typeof perf.price === 'string' && perf.price.trim()
+        ? perf.price.trim()
+        : sportsTicketBay?.label || '';
     const dDay = getDdayLabel(perf);
     const [isCopied, setIsCopied] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -397,7 +402,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                     </div>
                                 )}
 
-                                {(perf.runningTime || perf.ageRating || perf.price) && (
+                                {(perf.runningTime || perf.ageRating || displayPrice) && (
                                     <div className="text-gray-400 light:text-gray-900 mt-1.5 space-y-1">
                                         {perf.runningTime && (
                                             <div className="flex flex-col gap-0.5 text-xs text-gray-400">
@@ -412,7 +417,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             </div>
                         )}
 
-                        {(perf.price || perf.discount) && (
+                        {(displayPrice || perf.discount) && (
                             <div className="flex justify-between items-end mt-2 w-full border-t border-white/5 light:border-black/5 pt-2">
                                 <div className="flex flex-col justify-end">
                                     {perf.discount && <span className="text-red-500 font-black text-lg leading-none">{perf.discount}</span>}
@@ -420,9 +425,9 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 <div className="flex flex-col items-end">
                                     {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
                                     <div className="flex items-baseline gap-1.5">
-                                        {perf.price && (() => {
-                                            const extracted = extractFirstPrice(perf.price);
-                                            if (!extracted) return <span className="text-white light:text-black font-black text-xl tracking-tighter">{perf.price}</span>;
+                                        {displayPrice && (() => {
+                                            const extracted = extractFirstPrice(displayPrice);
+                                            if (!extracted) return <span className="text-white light:text-black font-black text-xl tracking-tighter">{displayPrice}</span>;
                                             return (
                                                 <div className="text-white light:text-black drop-shadow-md leading-none text-right">
                                                     {extracted.price === '무료' ? (
