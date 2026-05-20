@@ -73,9 +73,23 @@ const KNOWN_REGION_TOKENS = new Set<string>([
     ...Object.keys(REGION_ALIASES),
     ...Object.values(REGION_ALIASES),
 ]);
+const KNOWN_SELLER_ADDRESS_PATTERNS = [
+    /제주특별자치도\s*제주시\s*청사로\s*11/,
+    /서울특별시\s*동작구\s*사당로29가길\s*26/,
+    /서울특별시\s*강남구\s*언주로\s*415/,
+    /서울특별시\s*강남구\s*논현로149길\s*64/,
+    /서울특별시\s*강남구\s*남부순환로\s*2732/,
+    /서울특별시\s*강남구\s*영동대로96길\s*34/,
+    /서울특별시\s*마포구\s*큰우물로\s*76/,
+];
 
 function normalizeWhitespace(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function isKnownSellerAddress(value?: string) {
+    const address = normalizeWhitespace(value);
+    return Boolean(address && KNOWN_SELLER_ADDRESS_PATTERNS.some((pattern) => pattern.test(address)));
 }
 
 function normalizeRegionToken(token?: string) {
@@ -267,6 +281,7 @@ export function resolveVenueInfoForPerformance(
 
     const shouldPreferPerformanceAddress =
         hasUsableAddress(performanceAddress) &&
+        !isKnownSellerAddress(performanceAddress) &&
         !isGenericAddressEcho(performanceAddress, performance.venue) &&
         (
             performanceHasGeo ||

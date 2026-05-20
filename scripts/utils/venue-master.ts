@@ -154,8 +154,23 @@ const MEETING_POINT_TOKENS = [
     '앞',
 ];
 
+const KNOWN_SELLER_ADDRESS_PATTERNS = [
+    /제주특별자치도\s*제주시\s*청사로\s*11/,
+    /서울특별시\s*동작구\s*사당로29가길\s*26/,
+    /서울특별시\s*강남구\s*언주로\s*415/,
+    /서울특별시\s*강남구\s*논현로149길\s*64/,
+    /서울특별시\s*강남구\s*남부순환로\s*2732/,
+    /서울특별시\s*강남구\s*영동대로96길\s*34/,
+    /서울특별시\s*마포구\s*큰우물로\s*76/,
+];
+
 function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function isKnownSellerAddress(value?: string) {
+    const address = compactText(value);
+    return Boolean(address && KNOWN_SELLER_ADDRESS_PATTERNS.some((pattern) => pattern.test(address)));
 }
 
 function sanitizeAddress(value?: string) {
@@ -281,7 +296,10 @@ function getVenueRecord(performance: Performance, venues: VenueRecordMap) {
 }
 
 function getVenueAddress(performance: Performance, venueRecord?: VenueRecordMap[string]) {
-    return sanitizeAddress(performance.address || venueRecord?.address);
+    const performanceAddress = sanitizeAddress(performance.address);
+    const recordAddress = sanitizeAddress(venueRecord?.address);
+    if (isKnownSellerAddress(performanceAddress) && recordAddress) return recordAddress;
+    return performanceAddress || recordAddress;
 }
 
 function getVenueLatLng(performance: Performance, venueRecord?: VenueRecordMap[string]) {

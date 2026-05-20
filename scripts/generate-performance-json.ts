@@ -130,6 +130,15 @@ const GENERIC_OR_FALLBACK_COORDINATE_KEYS = new Set([
     '36.5753,128.5053', // Gyeongbuk centroid fallback.
     '33.4996,126.5312', // Jeju centroid fallback.
 ]);
+const KNOWN_SELLER_ADDRESS_PATTERNS = [
+    /제주특별자치도\s*제주시\s*청사로\s*11/,
+    /서울특별시\s*동작구\s*사당로29가길\s*26/,
+    /서울특별시\s*강남구\s*언주로\s*415/,
+    /서울특별시\s*강남구\s*논현로149길\s*64/,
+    /서울특별시\s*강남구\s*남부순환로\s*2732/,
+    /서울특별시\s*강남구\s*영동대로96길\s*34/,
+    /서울특별시\s*마포구\s*큰우물로\s*76/,
+];
 
 const KNOWN_BRANCH_VENUE_RULES: Array<{ tokens: string[]; venueKey: string }> = [
     { tokens: ['상록리조트', '아쿠아피아'], venueKey: '천안상록리조트 아쿠아피아' },
@@ -160,6 +169,29 @@ const KNOWN_BRANCH_VENUE_RULES: Array<{ tokens: string[]; venueKey: string }> = 
 ];
 
 const EXTRA_VENUE_RECORDS: Record<string, VenueRecord> = {
+    '모나용평': {
+        address: '강원특별자치도 평창군 대관령면 올림픽로 715',
+        district: '평창군',
+        lat: 37.645263,
+        lng: 128.681598,
+        mapped_region_id: 'gangwon',
+        phone: '033-335-5757',
+        homepage: 'https://www.yongpyong.co.kr/',
+        facilities: '리조트 · 워터파크 · 관광케이블카 · 키즈 시설',
+        restrooms: '있음',
+        parking: '가능',
+    },
+    '디오션리조트': {
+        address: '전남 여수시 소호로 295',
+        district: '여수시',
+        lat: 34.7324505,
+        lng: 127.6439655,
+        mapped_region_id: 'jeonnam',
+        homepage: 'https://www.theoceanresort.co.kr/',
+        facilities: '리조트 · 워터파크',
+        restrooms: '있음',
+        parking: '가능',
+    },
     '천안상록리조트 아쿠아피아': {
         address: '충남 천안시 동남구 수신면 수신로 576',
         district: '천안시',
@@ -188,6 +220,11 @@ const EXTRA_VENUE_RECORDS: Record<string, VenueRecord> = {
 
 function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function isKnownSellerAddress(value?: string) {
+    const address = compactText(value);
+    return Boolean(address && KNOWN_SELLER_ADDRESS_PATTERNS.some((pattern) => pattern.test(address)));
 }
 
 function compactComparable(value?: string) {
@@ -249,6 +286,29 @@ function getAddressAreaLabel(value?: string) {
     return '';
 }
 
+function getRegionIdFromAddress(value?: string) {
+    const region = normalizeAddressRegionWords(value).split(' ').filter(Boolean)[0];
+    if (!region) return '';
+    if (region === '서울') return 'seoul';
+    if (region === '부산') return 'busan';
+    if (region === '대구') return 'daegu';
+    if (region === '인천') return 'incheon';
+    if (region === '광주') return 'gwangju';
+    if (region === '대전') return 'daejeon';
+    if (region === '울산') return 'ulsan';
+    if (region === '세종') return 'sejong';
+    if (region === '경기') return 'gyeonggi';
+    if (region === '강원') return 'gangwon';
+    if (region === '충북') return 'chungbuk';
+    if (region === '충남') return 'chungnam';
+    if (region === '전북') return 'jeonbuk';
+    if (region === '전남') return 'jeonnam';
+    if (region === '경북') return 'gyeongbuk';
+    if (region === '경남') return 'gyeongnam';
+    if (region === '제주') return 'jeju';
+    return '';
+}
+
 function isGenericOrNonVenueText(value?: string) {
     const text = compactText(value);
     if (!text) return true;
@@ -272,6 +332,7 @@ function applyVenueRecordToPerformance(performance: Performance, venueKey: strin
 
     if (recordAddress && recordAddress !== '정보 없음') {
         const currentAddressIsWeak =
+            isKnownSellerAddress(performance.address) ||
             !hasDetailedAddress(performance.address) ||
             compactComparable(performance.address) === compactComparable(performance.venue) ||
             hasGenericFallbackCoordinate(performance);
@@ -670,7 +731,11 @@ function applyVenuePlaceContextToPerformances(items: Performance[], venueMasterB
             performance.venue = entry.displayName;
             performance.venueKey = entry.displayName;
         }
-        if (entry.address) performance.address = entry.address;
+        if (entry.address) {
+            performance.address = entry.address;
+            const regionFromAddress = getRegionIdFromAddress(entry.address);
+            if (regionFromAddress) performance.region = regionFromAddress;
+        }
         if (typeof entry.lat === 'number') performance.lat = entry.lat;
         if (typeof entry.lng === 'number') performance.lng = entry.lng;
         performance.locationKey = undefined;
@@ -857,6 +922,7 @@ function repairBranchVenueAssignments(items: Performance[], venues: Record<strin
         if (!exactRecord) return;
 
         const shouldHydrateFromDictionary =
+            isKnownSellerAddress(performance.address) ||
             hasGenericFallbackCoordinate(performance) ||
             !hasDetailedAddress(performance.address) ||
             compactComparable(performance.address) === compactComparable(performance.venue);

@@ -204,6 +204,7 @@ type KnownVenue = {
 const SELLER_ADDRESS_PATTERNS = [
     /제주특별자치도\s*제주시\s*청사로\s*11/,
     /서울특별시\s*동작구\s*사당로29가길\s*26/,
+    /서울특별시\s*강남구\s*언주로\s*415/,
     /서울특별시\s*강남구\s*논현로149길\s*64/,
     /서울특별시\s*강남구\s*남부순환로\s*2732/,
     /서울특별시\s*강남구\s*영동대로96길\s*34/,
@@ -211,6 +212,29 @@ const SELLER_ADDRESS_PATTERNS = [
 ];
 
 const KNOWN_VENUES: Array<{ patterns: RegExp[]; value: KnownVenue }> = [
+    {
+        patterns: [/모나\s*용평|모나용평|용평리조트/],
+        value: {
+            venue: '모나용평',
+            address: '강원특별자치도 평창군 대관령면 올림픽로 715',
+            lat: 37.645263,
+            lng: 128.681598,
+            region: 'gangwon',
+            website: 'https://www.yongpyong.co.kr/',
+            contact: '033-335-5757',
+        },
+    },
+    {
+        patterns: [/디오션리조트|디오션\s*워터파크|여수.*디오션/],
+        value: {
+            venue: '디오션리조트',
+            address: '전라남도 여수시 소호로 295',
+            lat: 34.7324505,
+            lng: 127.6439655,
+            region: 'jeonnam',
+            website: 'https://www.theoceanresort.co.kr/',
+        },
+    },
     {
         patterns: [/N\s*서울타워/i, /남산.*타워/],
         value: {
