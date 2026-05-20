@@ -31,6 +31,7 @@ import { getKeywordMatchedItems } from '@/lib/keyword-match';
 import { getRepresentativeVenueInfoForName } from '@/lib/location-display';
 import { getFeaturedPerformances } from '@/lib/performance-filter';
 import { buildCuratedDiscoveryItems, buildPersonalizedRecommendations, DISCOVERY_CONTEXTS } from '@/lib/discovery';
+import { warmPosterImages } from '@/lib/poster-preload';
 
 // Custom Hooks
 import { useUserPreferences } from '@/hooks/useUserPreferences';
@@ -217,6 +218,33 @@ export default function PerformanceList({
         return buildCuratedDiscoveryItems(featured, discoverySignals, 18);
     }, [scopedPerformances, discoverySignals]);
 
+    const posterWarmupItems = useMemo(() => {
+        const seen = new Set<string>();
+        const candidates = [
+            ...keywordItems.slice(0, 8),
+            ...personalizedItems.slice(0, 8),
+            ...recommendedItems.slice(0, 8),
+            ...displayPerformances.slice(0, 14),
+        ];
+
+        return candidates.filter((item) => {
+            if (!item?.id || seen.has(item.id)) return false;
+            seen.add(item.id);
+            return true;
+        });
+    }, [displayPerformances, keywordItems, personalizedItems, recommendedItems]);
+    const posterWarmupKey = useMemo(() => posterWarmupItems.map((item) => item.id).join('|'), [posterWarmupItems]);
+
+    useEffect(() => {
+        if (posterWarmupItems.length === 0) return;
+        return warmPosterImages(posterWarmupItems, {
+            limit: 28,
+            width: 360,
+            quality: 62,
+            concurrency: 3,
+        });
+    }, [posterWarmupKey, posterWarmupItems]);
+
     useEffect(() => {
         if (selectedGenre !== 'all' && !isGenreAvailable(genreCounts, selectedGenre)) {
             setSelectedGenre('all');
@@ -262,6 +290,15 @@ export default function PerformanceList({
     // --- Handlers ---
     const handleDetailOpen = useCallback((perf: Performance) => {
         trackItemView(perf.id);
+        void loadSharedDetailModal();
+        warmPosterImages([perf], {
+            limit: 3,
+            width: 760,
+            quality: 70,
+            concurrency: 2,
+            immediate: true,
+            includeOriginalFallback: true,
+        });
         modalReturnScrollY.current = typeof window !== 'undefined' ? window.scrollY : 0;
         setSharedPerf(perf);
 

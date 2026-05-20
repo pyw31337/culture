@@ -44,6 +44,36 @@ const runtimeCaching: RuntimeCachingEntry[] = [
     },
   },
   {
+    urlPattern: /\/data\/(?:performances|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i,
+    handler: 'NetworkFirst',
+    options: {
+      cacheName: 'runtime-data-payloads',
+      networkTimeoutSeconds: 2,
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 32,
+        maxAgeSeconds: 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /\/data\/categories\/[^/]+\.json(?:\?.*)?$/i,
+    handler: 'NetworkFirst',
+    options: {
+      cacheName: 'runtime-data-payloads',
+      networkTimeoutSeconds: 2,
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 32,
+        maxAgeSeconds: 24 * 60 * 60,
+      },
+    },
+  },
+  {
     urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
     handler: 'CacheFirst',
     options: {
@@ -77,17 +107,6 @@ const runtimeCaching: RuntimeCachingEntry[] = [
     },
   },
   {
-    urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-    handler: 'StaleWhileRevalidate',
-    options: {
-      cacheName: 'static-image-assets',
-      expiration: {
-        maxEntries: 240,
-        maxAgeSeconds: 7 * 24 * 60 * 60,
-      },
-    },
-  },
-  {
     urlPattern: /^https:\/\/wsrv\.nl\/.*/i,
     handler: 'CacheFirst',
     options: {
@@ -96,7 +115,74 @@ const runtimeCaching: RuntimeCachingEntry[] = [
         statuses: [0, 200],
       },
       expiration: {
-        maxEntries: 700,
+        maxEntries: 1200,
+        maxAgeSeconds: 45 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /^https?:\/\/(?:www\.)?(?:kopis\.or\.kr|culture\.go\.kr)\/.*/i,
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'remote-poster-images',
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 1200,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /^https?:\/\/(?:ticketimage\.interpark\.com|image\.yes24\.com|tkfile\.yes24\.com|cdnticket\.melon\.co\.kr|file\.kinolights\.com|image\.toast\.com|ticketlink\.co\.kr)\/.*/i,
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'remote-ticket-images',
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 900,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /^https?:\/\/(?:cdn\.visitkorea\.or\.kr|kfescdn\.visitkorea\.or\.kr|tong\.visitkorea\.or\.kr|api\.visitkorea\.or\.kr)\/.*/i,
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'remote-tourism-images',
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 900,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /^https?:\/\/(?:[^/]+\.)?(?:mom-mom\.net|mom-mom\.co\.kr|nhncommerce\.com|firebasestorage\.googleapis\.com)\/.*/i,
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'remote-family-images',
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 900,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      },
+    },
+  },
+  {
+    urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
+    handler: 'StaleWhileRevalidate',
+    options: {
+      cacheName: 'static-image-assets',
+      expiration: {
+        maxEntries: 500,
         maxAgeSeconds: 30 * 24 * 60 * 60,
       },
     },
