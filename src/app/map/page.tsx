@@ -15,7 +15,8 @@ export default function MapPage() {
     const lastUpdated = getLastUpdatedLabel();
     return (
         <main className="min-h-screen bg-gray-900 light:bg-white">
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading Map...</div>}>
+            {/* Invisible fallback - see app/page.tsx for rationale. */}
+            <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
                 <MapView
                     initialPerformances={[]}
                     initialCinemas={cinemas}
