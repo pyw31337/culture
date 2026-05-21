@@ -271,6 +271,11 @@ export default function RecommendedSection({
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
+                                        placeholderInput={{
+                                            title: perf.title,
+                                            genre: perf.genre,
+                                            matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
+                                        }}
                                         optimizationWidth={340}
                                         quality={62}
                                         alt={perf.title}

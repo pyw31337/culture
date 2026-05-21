@@ -166,6 +166,11 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     <ImageWithFallback
                         src={perf.image || perf.poster}
                         backupSrc={perf.backupPoster}
+                        placeholderInput={{
+                            title: perf.title,
+                            genre: perf.genre,
+                            matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
+                        }}
                         optimizationWidth={priority ? 320 : 260}
                         quality={priority ? 68 : 58}
                         alt={perf.title}

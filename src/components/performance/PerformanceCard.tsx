@@ -242,6 +242,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <ImageWithFallback
                                         src={perf.image || perf.poster}
                                         backupSrc={perf.backupPoster}
+                                        placeholderInput={{
+                                            title: perf.title,
+                                            genre: perf.genre,
+                                            matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
+                                        }}
                                         optimizationWidth={priority ? 420 : 360}
                                         quality={priority ? 70 : 60}
                                         alt={perf.title}
@@ -361,6 +366,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             <ImageWithFallback
                                 src={perf.image || perf.poster}
                                 backupSrc={perf.backupPoster}
+                                placeholderInput={{
+                                    title: perf.title,
+                                    genre: perf.genre,
+                                    matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
+                                }}
                                 optimizationWidth={priority ? 420 : 360}
                                 quality={priority ? 70 : 60}
                                 alt={perf.title}

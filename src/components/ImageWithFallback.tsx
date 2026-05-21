@@ -1,12 +1,29 @@
 import { useEffect, useMemo, useRef, useState, memo } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { getOptimizedUrl, normalizeImageUrl } from '@/lib/utils';
+import { buildPlaceholderDataUrl } from '@/lib/poster-placeholder';
 import { clsx } from 'clsx';
+
+interface PlaceholderInput {
+    /** Card title - rendered large in the placeholder SVG. */
+    title?: string | null;
+    /** Genre id (movie / musical / baseball / ...) for palette + label. */
+    genre?: string | null;
+    /** Optional team-vs-team string for sports rows. */
+    matchLabel?: string | null;
+}
 
 interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
     src: string;
     backupSrc?: string; // New prop for remote URL backup
     fallbackSrc?: string;
+    /**
+     * When provided, this overrides the default "No Image" fallback with a
+     * genre-aware SVG placeholder (gradient + title + label). Pass `null` to
+     * keep the legacy gray fallback. Used by card grids so that items with
+     * missing posters still render with a designed cover.
+     */
+    placeholderInput?: PlaceholderInput | null;
     optimizationWidth?: number;
     fastDisplay?: boolean;
 }
@@ -134,10 +151,13 @@ function ImageWithFallbackInner({
     );
 }
 
+const LEGACY_FALLBACK = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4=';
+
 function ImageWithFallback({
     src,
     backupSrc, // Destructure backupSrc
-    fallbackSrc = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4=',
+    fallbackSrc,
+    placeholderInput,
     alt,
     optimizationWidth = 400,
     ...props
@@ -146,7 +166,18 @@ function ImageWithFallback({
     const normalizedSrc = useMemo(() => normalizeImageUrl(src), [src]);
     const normalizedBackupSrc = useMemo(() => normalizeImageUrl(backupSrc), [backupSrc]);
     const optimizedSrc = useMemo(() => getOptimizedUrl(normalizedSrc, optimizationWidth, imageQuality), [normalizedSrc, optimizationWidth, imageQuality]);
-    const imageKey = useMemo(() => `${optimizedSrc}|${normalizedSrc}|${normalizedBackupSrc}|${fallbackSrc}`, [fallbackSrc, normalizedBackupSrc, normalizedSrc, optimizedSrc]);
+
+    // Resolve the final fallback source. Order of precedence:
+    //   1. explicit fallbackSrc prop (highest priority - lets callers force)
+    //   2. genre-aware SVG placeholder if placeholderInput is given
+    //   3. legacy "No Image" gray block (back-compat default)
+    const resolvedFallback = useMemo(() => {
+        if (fallbackSrc) return fallbackSrc;
+        if (placeholderInput) return buildPlaceholderDataUrl(placeholderInput);
+        return LEGACY_FALLBACK;
+    }, [fallbackSrc, placeholderInput]);
+
+    const imageKey = useMemo(() => `${optimizedSrc}|${normalizedSrc}|${normalizedBackupSrc}|${resolvedFallback}`, [resolvedFallback, normalizedBackupSrc, normalizedSrc, optimizedSrc]);
 
     return (
         <ImageWithFallbackInner
@@ -155,7 +186,7 @@ function ImageWithFallback({
             originalSrc={normalizedSrc}
             initialSrc={optimizedSrc}
             backupSrc={normalizedBackupSrc}
-            fallbackSrc={fallbackSrc}
+            fallbackSrc={resolvedFallback}
             alt={alt}
             width={!props.fill ? (props.width || optimizationWidth) : undefined}
             height={!props.fill ? (props.height || Math.floor(optimizationWidth * 1.4)) : undefined}
