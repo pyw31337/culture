@@ -158,7 +158,8 @@ export default async function GenrePage({ params }: PageProps) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading...</div>}>
+            {/* Invisible fallback - see app/page.tsx for rationale. */}
+            <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
                 <PerformanceList
                     initialPerformances={initialPerformances}
                     lastUpdated={lastUpdated}

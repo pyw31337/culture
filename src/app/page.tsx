@@ -23,7 +23,11 @@ export default async function Home() {
 
     return (
         <main className="min-h-screen bg-gray-900 light:bg-white pb-20">
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading...</div>}>
+            {/* Invisible fallback. PerformanceList isolates its own useSearchParams
+                via SearchParamsBridge, so this boundary should not trip in normal
+                operation. The empty-shell fallback prevents a "Loading..." string
+                from being baked into the prerendered HTML if anything still bails. */}
+            <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
                 <PerformanceList
                     initialPerformances={performances}
                     lastUpdated={lastUpdated}
