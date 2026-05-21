@@ -5198,11 +5198,27 @@
   },
   "에버랜드": {
     "name": "에버랜드",
-    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199",
+    "address": "경기도 용인시 처인구 포곡읍 에버랜드로 199",
+    "lat": 37.2929265,
+    "lng": 127.20312039999999,
     "district": "용인시",
-    "lat": 37.2938764,
-    "lng": 127.2048444,
-    "mapped_region_id": "gyeonggi"
+    "phone": "031-320-5000",
+    "homepage": "http://www.everland.com/web/everland/main.html",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "10550",
+    "theaterCount": "3",
+    "openedAt": "1993",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실"
   },
   "모빌리티뮤지엄": {
     "name": "모빌리티뮤지엄",
@@ -67522,7 +67538,18 @@
     "lng": 126.927865,
     "district": "은평구",
     "phone": "02-351-3736",
-    "homepage": "https://www.efac.or.kr/"
+    "homepage": "https://www.efac.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1020",
+    "theaterCount": "2",
+    "openedAt": "1996",
+    "amenities": [
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 화장실, 장애인 경사로"
   },
   "SPACE SODA2002": {
     "name": "SPACE SODA2002",
@@ -70216,7 +70243,23 @@
     "address": "강원도 철원군 서면 약수로 3 화강문화센터",
     "lat": 38.2451525,
     "lng": 127.42645429999993,
-    "district": ""
+    "district": "",
+    "phone": "033-450-5591",
+    "homepage": "https://hwagang.or.kr",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "348",
+    "theaterCount": "1",
+    "openedAt": "2010",
+    "amenities": [
+      "식당",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 놀이방, 장애인 주차, 장애인 화장실, 엘리베이터"
   },
   "세종대학교 충무관": {
     "name": "세종대학교 충무관",
@@ -70815,10 +70858,20 @@
   },
   "현장아트홀": {
     "name": "현장아트홀",
-    "address": "경상남도 진주시 진주대로 1038",
+    "address": "경상남도 진주시 진주대로 1038 (동성동)",
     "lat": 35.1922893,
     "lng": 128.08497349999993,
-    "district": ""
+    "district": "",
+    "phone": "055-746-7411",
+    "homepage": "https://www.ihyunjang.com/hj/main/index",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "109",
+    "theaterCount": "3",
+    "openedAt": "2007",
+    "amenities": [],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "부산아시아드 경기장": {
     "name": "부산아시아드 경기장",
@@ -80551,7 +80604,23 @@
     "address": "강원특별자치도 철원군 서면 약수로 3",
     "district": "",
     "lat": 38.245142757623334,
-    "lng": 127.42755914822415
+    "lng": 127.42755914822415,
+    "phone": "033-450-5591",
+    "homepage": "https://hwagang.or.kr",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "348",
+    "theaterCount": "1",
+    "openedAt": "2010",
+    "amenities": [
+      "식당",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 놀이방, 장애인 주차, 장애인 화장실, 엘리베이터"
   },
   "대한민국예술인센터 한국문인협회": {
     "name": "대한민국예술인센터 한국문인협회",
@@ -85572,7 +85641,18 @@
     "lat": 37.6036618787743,
     "lng": 126.92780884732541,
     "phone": "02-351-3736",
-    "homepage": "https://www.efac.or.kr/"
+    "homepage": "https://www.efac.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1020",
+    "theaterCount": "2",
+    "openedAt": "1996",
+    "amenities": [
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 화장실, 장애인 경사로"
   },
   "강동문화재단": {
     "name": "강동문화재단",
@@ -96324,7 +96404,18 @@
     "lat": 37.60391728825848,
     "lng": 126.92851412760575,
     "phone": "02-351-3736",
-    "homepage": "https://www.efac.or.kr/"
+    "homepage": "https://www.efac.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1020",
+    "theaterCount": "2",
+    "openedAt": "1996",
+    "amenities": [
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 화장실, 장애인 경사로"
   },
   "SPACE SODA2002 (공연장)": {
     "name": "SPACE SODA2002 (공연장)",
@@ -106480,5 +106571,142 @@
     "district": "",
     "lat": 35.192283,
     "lng": 129.2092776
+  },
+  "서울시립청소년음악센터": {
+    "name": "서울시립청소년음악센터",
+    "address": "서울특별시 양천구 남부순환로 657 (신정동)",
+    "lat": 37.5105883,
+    "lng": 126.8428707,
+    "district": "양천구",
+    "phone": "02-6956-1870",
+    "homepage": "https://symc.or.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "160",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타)"
+  },
+  "메타코미디클럽": {
+    "name": "메타코미디클럽",
+    "address": "서울특별시 마포구 와우산로 76-1 (서교동)",
+    "lat": 37.551274,
+    "lng": 126.9235668,
+    "district": "마포구",
+    "phone": "010-9506-1190",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "10",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "ACS.KR": {
+    "name": "ACS.KR",
+    "address": "서울특별시 중구 수표로6길 10 (충무로3가)",
+    "lat": 37.5627292,
+    "lng": 126.9909575,
+    "district": "중구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "아트홀맥, 플레이맥, 갤러리맥, 스튜디오3, 야외광장": {
+    "name": "아트홀맥, 플레이맥, 갤러리맥, 스튜디오3, 야외광장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울 강남구 삼성동 125": {
+    "name": "서울 강남구 삼성동 125",
+    "address": "정보 없음",
+    "district": "강남구",
+    "lat": 37.5172,
+    "lng": 127.0473
+  },
+  "서울 중구 퇴계로 67 (회현동1가, AK타워) AK타워": {
+    "name": "서울 중구 퇴계로 67 (회현동1가, AK타워) AK타워",
+    "address": "정보 없음",
+    "district": "중구",
+    "lat": 37.5637,
+    "lng": 126.9975
+  },
+  "서울 마포구 와우산로37길 9 (동교동) 예약 시 사전 안내 문자 드립니다": {
+    "name": "서울 마포구 와우산로37길 9 (동교동) 예약 시 사전 안내 문자 드립니다",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "서울 송파구 잠실동 204-8": {
+    "name": "서울 송파구 잠실동 204-8",
+    "address": "정보 없음",
+    "district": "송파구",
+    "lat": 37.5145,
+    "lng": 127.1066
+  },
+  "서울 마포구 서교동 407-3": {
+    "name": "서울 마포구 서교동 407-3",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "서울 강남구 청담동 2-13": {
+    "name": "서울 강남구 청담동 2-13",
+    "address": "정보 없음",
+    "district": "강남구",
+    "lat": 37.5172,
+    "lng": 127.0473
+  },
+  "서울 용산구 한강로1가 221-2": {
+    "name": "서울 용산구 한강로1가 221-2",
+    "address": "정보 없음",
+    "district": "용산구",
+    "lat": 37.5323,
+    "lng": 126.9906
+  },
+  "서울 송파구 송파동 14-5": {
+    "name": "서울 송파구 송파동 14-5",
+    "address": "정보 없음",
+    "district": "송파구",
+    "lat": 37.5145,
+    "lng": 127.1066
+  },
+  "서울 성동구 성수동2가 322-1": {
+    "name": "서울 성동구 성수동2가 322-1",
+    "address": "정보 없음",
+    "district": "성동구",
+    "lat": 37.5633,
+    "lng": 127.0371
+  },
+  "서울 마포구 공덕동 249-29": {
+    "name": "서울 마포구 공덕동 249-29",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "서울 마포구 동교동 165": {
+    "name": "서울 마포구 동교동 165",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "헬로우뮤지엄": {
+    "name": "헬로우뮤지엄",
+    "address": "서울특별시 성동구 성수일로12길 20 성동안심상가 2층",
+    "district": "성동구",
+    "lat": 37.5481744,
+    "lng": 127.0532505
   }
 }
