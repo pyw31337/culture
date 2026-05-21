@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useMemo } from 'react';
+import { Suspense, useState, useRef, useMemo, useCallback } from 'react';
 import { Performance } from '@/types';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, addMonths, subMonths, addWeeks, subWeeks, addDays, subDays } from 'date-fns';
 import { ko } from 'date-fns/locale';
@@ -14,7 +14,12 @@ import { getExternalContentLink } from '@/lib/performance-links';
 import CalendarDayCell from './CalendarDayCell';
 import venueData from '@/data/venues.json';
 import { MapPin } from 'lucide-react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import SearchParamsBridge from './SearchParamsBridge';
+
+// Empty URLSearchParams sentinel for static prerender. See
+// SearchParamsBridge for rationale.
+const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import ImageWithFallback from './ImageWithFallback';
 import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
@@ -106,7 +111,11 @@ export default function CalendarView({
     lastUpdated
 }: CalendarViewProps) {
     const router = useRouter();
-    const searchParams = useSearchParams();
+    // searchParams is populated by <SearchParamsBridge> after mount. Initial
+    // render uses EMPTY_SEARCH_PARAMS so the static prerender doesn't bail out
+    // to client-side rendering. A useEffect below syncs URL params -> state
+    // once the bridge fires.
+    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
 
     // Load full data client-side (server provides initial subset, client fetches full)
     const { allPerformances, isDataFullyLoaded } = usePerformanceData({
@@ -146,6 +155,30 @@ export default function CalendarView({
     const [calendarView, setCalendarView] = useState<CalendarView>(initialView);
     const [localGenre, setLocalGenre] = useState(initialGenre);
     const [localRegion, setLocalRegion] = useState<CalendarRegionId>(initialRegion);
+
+    // Sync URL params -> local state. Done in the bridge callback (not in a
+    // useEffect body) so React 19's set-state-in-effect rule is satisfied -
+    // we're effectively subscribing to an external system (the URL).
+    // We only apply a value when the URL actually carries it so user
+    // interactions aren't overwritten.
+    const handleSearchParamsChange = useCallback((sp: URLSearchParams) => {
+        const genreParam = sp.get('genre');
+        if (genreParam) setLocalGenre(genreParam);
+
+        const viewParam = sp.get('view') as CalendarView | null;
+        if (viewParam) setCalendarView(viewParam);
+
+        const regionParam = sp.get('region');
+        if (regionParam) setLocalRegion(getCalendarRegionId(regionParam));
+
+        const dateParam = sp.get('date');
+        if (dateParam) {
+            const d = new Date(dateParam);
+            if (!isNaN(d.getTime())) setCurrentMonth(d);
+        }
+
+        setSearchParams(sp);
+    }, []);
     const effectiveGenre = useMemo(() => {
         if (localGenre === 'all') return 'all';
         return isGenreAvailable(genreCounts, localGenre) ? localGenre : 'all';
@@ -343,6 +376,10 @@ export default function CalendarView({
 
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+            {/* Isolated URL params bridge - see SearchParamsBridge for rationale. */}
+            <Suspense fallback={null}>
+                <SearchParamsBridge onParams={handleSearchParamsChange} />
+            </Suspense>
             <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0">
                 {/* Header */}
                 <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900 z-10">

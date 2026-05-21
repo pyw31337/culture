@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
+import { Suspense, useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { DiscoveryContextId, Performance } from '@/types';
 import { MapPin, Bell, Sun, Moon, Loader2 } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -8,7 +8,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import SearchParamsBridge from './SearchParamsBridge';
+
+// Empty URLSearchParams sentinel used for the initial (prerender) render.
+// See SearchParamsBridge for the full rationale - using useSearchParams() in
+// the render body of a client component forces this component's nearest
+// Suspense boundary to bail out to client-side rendering during static export.
+const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
@@ -94,7 +101,11 @@ export default function PerformanceList({
         return allPerformances.filter((performance) => allowedGenres.has(performance.genre));
     }, [allPerformances, categoryGenreFilter, isCategoryPage]);
 
-    const searchParams = useSearchParams();
+    // searchParams is populated by <SearchParamsBridge> after mount. During
+    // static prerender it stays at EMPTY_SEARCH_PARAMS, which means the
+    // initial markup is fully prerendered (no BAILOUT_TO_CLIENT_SIDE_RENDERING)
+    // and the real URL params flow in once the client hydrates.
+    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
     const initialQuery = searchParams.get('q') || '';
     const urlMode = searchParams.get('mode') as 'keyword' | 'location' | null;
     const urlLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
@@ -459,6 +470,11 @@ export default function PerformanceList({
 
     return (
         <div className="min-h-screen bg-transparent text-white light:text-black">
+            {/* URL searchParams bridge - isolated so the rest of the tree can be
+                prerendered without bailing out to client-side rendering. */}
+            <Suspense fallback={null}>
+                <SearchParamsBridge onParams={setSearchParams} />
+            </Suspense>
             <RainbowBackground />
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
 

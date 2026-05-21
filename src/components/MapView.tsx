@@ -1,13 +1,18 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+import { Suspense, useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES, SPORTS_GENRES } from '@/lib/constants';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { Performance } from '@/types';
 import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CloudSun, Calendar, Droplets, Navigation } from 'lucide-react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import SearchParamsBridge from './SearchParamsBridge';
+
+// Empty URLSearchParams sentinel for static prerender. See
+// SearchParamsBridge for rationale.
+const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { filterPerformances } from '@/lib/performance-filter';
@@ -156,7 +161,10 @@ export default function MapView({
     lastUpdated
 }: MapViewProps) {
     const router = useRouter();
-    const searchParams = useSearchParams();
+    // searchParams is populated by <SearchParamsBridge> after mount. Initial
+    // render uses EMPTY_SEARCH_PARAMS so the static prerender doesn't bail out
+    // to client-side rendering.
+    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
 
     // Self-contained state from URL params
     const selectedGenre = searchParams.get('genre') || 'all';
@@ -852,6 +860,10 @@ export default function MapView({
 
     return (
         <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+            {/* Isolated URL params bridge - see SearchParamsBridge for rationale. */}
+            <Suspense fallback={null}>
+                <SearchParamsBridge onParams={setSearchParams} />
+            </Suspense>
             <div className="relative w-full h-full bg-white dark:bg-black overflow-hidden shadow-2xl flex flex-col">
                 {/* Controls */}
                 <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2">
