@@ -72,6 +72,30 @@ export const REGIONS = [
 // Alias for backward compatibility if needed, though we will update usage.
 export const NATIONWIDE_REGIONS = REGIONS;
 
+// Quick date filters surfaced as chips above the results grid. These are
+// pure UX shortcuts on top of the existing schedule data - the matching
+// logic lives in src/lib/filter-chips.ts (so the date math has a single
+// source of truth and can be unit tested separately if we add tests).
+export const DATE_FILTERS: { id: 'today' | 'weekend' | 'this-week' | 'next-week'; label: string }[] = [
+    { id: 'today', label: '오늘' },
+    { id: 'weekend', label: '이번 주말' },
+    { id: 'this-week', label: '이번 주' },
+    { id: 'next-week', label: '다음 주' },
+];
+
+// Quick price tier filters. Tiers are inclusive on the upper bound and
+// always include "무료" because lots of cards (전시, 박물관, 일부 키즈)
+// price at 0 - users frequently want to bias toward those.
+export const PRICE_FILTERS: { id: 'free' | 'under-10k' | 'under-50k' | 'under-100k'; label: string }[] = [
+    { id: 'free', label: '무료' },
+    { id: 'under-10k', label: '1만원 이하' },
+    { id: 'under-50k', label: '5만원 이하' },
+    { id: 'under-100k', label: '10만원 이하' },
+];
+
+export type DateFilterId = (typeof DATE_FILTERS)[number]['id'];
+export type PriceFilterId = (typeof PRICE_FILTERS)[number]['id'];
+
 export const RADIUS_OPTIONS = [
     { value: 9999, label: '전체 반경' },
     { value: 1, label: '1km 반경' },

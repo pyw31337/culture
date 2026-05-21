@@ -4,6 +4,7 @@ import { filterPerformances, sortPerformances, sortPerformancesForCategoryFeed, 
 import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { filterByDiscoveryContext } from '@/lib/discovery';
+import type { DateFilterId, PriceFilterId } from '@/lib/constants';
 
 const INITIAL_VISIBLE_COUNT = 15;
 const LOAD_MORE_COUNT = 15;
@@ -62,6 +63,11 @@ export function usePerformanceFilters({
             return (saved ? JSON.parse(saved).seed || Date.now() : Date.now()) as number;
         } catch { return Date.now(); }
     });
+    // Chip filters: simple toggle state, not persisted (intentionally - they're
+    // meant for one-off browsing rather than a remembered preference).
+    const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilterId | null>(null);
+    const [selectedPriceTier, setSelectedPriceTier] = useState<PriceFilterId | null>(null);
+
     const [visibleCount, setVisibleCount] = useState<number>(() => {
         if (typeof window === 'undefined') return INITIAL_VISIBLE_COUNT;
         try {
@@ -130,7 +136,9 @@ export function usePerformanceFilters({
             lat: searchLocation?.lat || userLocation?.lat,
             lng: searchLocation?.lng || userLocation?.lng,
             radius: radius,
-            searchMode: searchMode
+            searchMode: searchMode,
+            dateFilter: selectedDateFilter,
+            priceTier: selectedPriceTier,
         }, venues);
 
         const discoveryFiltered = (!debouncedSearchText && searchMode !== 'location')
@@ -176,7 +184,7 @@ export function usePerformanceFilters({
         }
 
         return sortPerformances(discoveryFiltered, selectedGenre, debouncedSearchText);
-    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, venues, discoveryContextId]);
+    }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, venues, discoveryContextId, selectedDateFilter, selectedPriceTier]);
 
     // Pagination
     const displayPerformances = useMemo(() => {
@@ -201,6 +209,16 @@ export function usePerformanceFilters({
         setVisibleCount(prev => prev + LOAD_MORE_COUNT);
     }, []);
 
+    // Reset chip filters when other major filters change. Avoids users being
+    // confused by an empty grid because, say, '오늘' is still active after
+    // they switched to a category that has no shows today.
+    useEffect(() => {
+        if (isInitialized.current) {
+            setSelectedDateFilter(null);
+            setSelectedPriceTier(null);
+        }
+    }, [selectedGenre, debouncedSearchText, searchLocation]);
+
     return {
         selectedGenre,
         setSelectedGenre,
@@ -212,6 +230,10 @@ export function usePerformanceFilters({
         setSelectedVenue,
         shuffleSeed,
         setShuffleSeed,
+        selectedDateFilter,
+        setSelectedDateFilter,
+        selectedPriceTier,
+        setSelectedPriceTier,
         districts,
         availableVenues,
         filteredPerformances,
