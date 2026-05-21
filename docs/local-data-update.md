@@ -5,8 +5,8 @@ CultureFlow uses a local-first collection schedule to avoid exhausting GitHub Ac
 ## Schedule
 
 - Local Mac: every day at 00:00 KST via `launchd`.
-- GitHub Actions fallback: every day at 03:00 KST.
-- The GitHub fallback first checks `public/data/build-info.json`. If today's local update already produced data on the same KST date within 20 hours, it skips the expensive scraper job.
+- GitHub Actions fallback: paused while Actions quota is constrained.
+- Manual GitHub dispatch still exists for emergencies, but it should not be used until Actions quota resets.
 
 ## Production Runner Clone
 
@@ -44,7 +44,7 @@ FORCE_LOCAL_UPDATE=1 scripts/run-local-data-update.sh
 ## Notes
 
 - If the runner working tree has uncommitted changes, the local job skips to avoid damaging local work and sends a macOS notification.
-- If the Mac wakes late after 03:00 KST, the local job skips because the GitHub fallback owns that window.
+- If the Mac wakes late after 03:00 KST, the local job skips to avoid overlapping with the old fallback window.
 - Failures and skips write `last-run-status.json` and send a macOS notification by default. Set `LOCAL_UPDATE_NOTIFY=0` to disable notifications.
-- Manual GitHub dispatch still runs immediately, even when today's local data is fresh.
+- Re-enable the GitHub schedule only after Actions quota/billing is healthy again.
 - `verify-links` is intentionally disabled by default because it is slow and often fails due external 500 responses. Enable it only when needed with `RUN_LINK_VERIFY=1`.
