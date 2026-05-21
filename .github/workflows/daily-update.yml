@@ -1,8 +1,8 @@
 name: Daily Data Update
 
 on:
-  # Scheduled GitHub fallback is paused while Actions quota is constrained.
-  # Local launchd owns the daily 00:00 KST update from CultureFlow-Runner.
+  schedule:
+    - cron: '0 18 * * *' # 03:00 KST fallback. Local launchd owns the 00:00 KST primary update.
   workflow_dispatch:
 
 concurrency:
