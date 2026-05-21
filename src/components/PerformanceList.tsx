@@ -7,7 +7,7 @@ import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
+import { GENRES, RADIUS_OPTIONS, DATE_FILTERS, PRICE_FILTERS, type DateFilterId, type PriceFilterId } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
 import SearchParamsBridge from './SearchParamsBridge';
 
@@ -20,6 +20,7 @@ const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
 import ResultsHeader from './performance/list/ResultsHeader';
+import FilterChipBar from './performance/list/FilterChipBar';
 import LikedSections from './performance/list/LikedSections';
 import HeroSection from './performance/HeroSection';
 import PerformanceGrid from './performance/PerformanceGrid';
@@ -105,7 +106,7 @@ export default function PerformanceList({
     // static prerender it stays at EMPTY_SEARCH_PARAMS, which means the
     // initial markup is fully prerendered (no BAILOUT_TO_CLIENT_SIDE_RENDERING)
     // and the real URL params flow in once the client hydrates.
-    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
+    const [searchParams, setSearchParamsState] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
     const initialQuery = searchParams.get('q') || '';
     const urlMode = searchParams.get('mode') as 'keyword' | 'location' | null;
     const urlLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
@@ -123,7 +124,9 @@ export default function PerformanceList({
         selectedGenre, setSelectedGenre, selectedRegion, setSelectedRegion,
         selectedDistrict, setSelectedDistrict, selectedVenue, setSelectedVenue,
         setShuffleSeed, districts, availableVenues, filteredPerformances, displayPerformances,
-        hasMore, loadMore
+        hasMore, loadMore,
+        selectedDateFilter, setSelectedDateFilter,
+        selectedPriceTier, setSelectedPriceTier,
     } = usePerformanceFilters({
         allPerformances: scopedPerformances, initialGenre, searchMode, searchText, searchLocation, userLocation, radius, venues, discoveryContextId
     });
@@ -282,11 +285,13 @@ export default function PerformanceList({
         q: string,
         mode: 'keyword' | 'location',
         loc: { lat: number, lng: number, name: string } | null,
-        genre: string = selectedGenre
+        genre: string = selectedGenre,
+        date: DateFilterId | null = selectedDateFilter,
+        price: PriceFilterId | null = selectedPriceTier,
     ) => {
         const path = genre === 'all' ? '/' : `/${genre === 'play' ? 'theater' : genre}`;
         const params = new URLSearchParams();
-        
+
         if (q.trim()) params.set('q', q.trim());
         params.set('mode', mode);
 
@@ -295,9 +300,11 @@ export default function PerformanceList({
             params.set('lng', String(loc.lng));
             params.set('venue', loc.name);
         }
+        if (date) params.set('date', date);
+        if (price) params.set('price', price);
 
         router.push(`${path}?${params.toString()}`);
-    }, [router, selectedGenre]);
+    }, [router, selectedGenre, selectedDateFilter, selectedPriceTier]);
 
     // --- Handlers ---
     const handleDetailOpen = useCallback((perf: Performance) => {
@@ -392,6 +399,17 @@ export default function PerformanceList({
         syncSearchToUrl(searchText, searchMode, searchLocation, g);
     }, [setSelectedGenre, setShuffleSeed, viewMode, setViewMode, syncSearchToUrl, searchText, searchMode, searchLocation]);
 
+    // Chip toggles: update state AND push to URL so the link is shareable.
+    const handleDateChipChange = useCallback((next: DateFilterId | null) => {
+        setSelectedDateFilter(next);
+        syncSearchToUrl(searchText, searchMode, searchLocation, selectedGenre, next, selectedPriceTier);
+    }, [setSelectedDateFilter, syncSearchToUrl, searchText, searchMode, searchLocation, selectedGenre, selectedPriceTier]);
+
+    const handlePriceChipChange = useCallback((next: PriceFilterId | null) => {
+        setSelectedPriceTier(next);
+        syncSearchToUrl(searchText, searchMode, searchLocation, selectedGenre, selectedDateFilter, next);
+    }, [setSelectedPriceTier, syncSearchToUrl, searchText, searchMode, searchLocation, selectedGenre, selectedDateFilter]);
+
     const handleLikePerfClick = useCallback(() => {
         if (viewMode === 'likes-perf') {
             setViewMode('grid');
@@ -471,9 +489,22 @@ export default function PerformanceList({
     return (
         <div className="min-h-screen bg-transparent text-white light:text-black">
             {/* URL searchParams bridge - isolated so the rest of the tree can be
-                prerendered without bailing out to client-side rendering. */}
+                prerendered without bailing out to client-side rendering. We also
+                hydrate the chip-filter state (date / price) from the URL here so
+                a shared link like ?date=weekend&price=under-50k restores the same
+                view. */}
             <Suspense fallback={null}>
-                <SearchParamsBridge onParams={setSearchParams} />
+                <SearchParamsBridge onParams={(sp) => {
+                    setSearchParamsState(sp);
+                    const dateParam = sp.get('date');
+                    if (dateParam && DATE_FILTERS.some(d => d.id === dateParam)) {
+                        setSelectedDateFilter(dateParam as DateFilterId);
+                    }
+                    const priceParam = sp.get('price');
+                    if (priceParam && PRICE_FILTERS.some(p => p.id === priceParam)) {
+                        setSelectedPriceTier(priceParam as PriceFilterId);
+                    }
+                }} />
             </Suspense>
             <RainbowBackground />
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
@@ -613,6 +644,18 @@ export default function PerformanceList({
                         onResetFilters={handleResetLocationSearch}
                         onRadiusChange={setRadius}
                     />
+
+                    {/* Quick filter chips (date / price tier). Hidden inside the
+                        likes view since it has its own curated layout. */}
+                    {viewMode !== 'likes-perf' && (
+                        <FilterChipBar
+                            selectedDate={selectedDateFilter}
+                            onDateChange={handleDateChipChange}
+                            selectedPrice={selectedPriceTier}
+                            onPriceChange={handlePriceChipChange}
+                            filteredCount={displayFilteredCount}
+                        />
+                    )}
 
                     {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
                         <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={handleOpenMap} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />

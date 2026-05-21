@@ -4,6 +4,7 @@ import { isChoseongMatch } from './hangul';
 import { REGIONS } from './constants';
 import { getRepresentativeVenueInfoForName, resolveVenueInfoForPerformance } from './location-display';
 import { getDistanceFromLatLonInKm } from './utils';
+import { resolveDateFilterRange, performanceMatchesDateRange, performanceMatchesPriceTier } from './filter-chips';
 
 // Define Venue Interface since we import JSON directly
 interface Venue {
@@ -417,11 +418,14 @@ export interface FilterOptions {
     lng?: number;
     radius?: number; // In km
     searchMode?: 'keyword' | 'location';
+    // Quick chip filters. null/undefined = chip not active.
+    dateFilter?: import('./constants').DateFilterId | null;
+    priceTier?: import('./constants').PriceFilterId | null;
 }
 
 export function filterPerformances(performances: Performance[], options: FilterOptions, venueLookup: Record<string, Venue> = {}): Performance[] {
     let filtered = performances;
-    const { genre, region, district, venue, search, lat, lng, radius, searchMode } = options;
+    const { genre, region, district, venue, search, lat, lng, radius, searchMode, dateFilter, priceTier } = options;
     const resolvedVenueCache = new Map<string, Venue>();
     const getResolvedVenue = (performance: Performance) => {
         const key = performance.id || `${performance.title}::${performance.venue}::${performance.address || ''}`;
@@ -569,6 +573,20 @@ export function filterPerformances(performances: Performance[], options: FilterO
             const dist = getDistanceFromLatLonInKm(lat, lng, pVenue.lat, pVenue.lng);
             return dist <= radius;
         });
+    }
+
+    // 6. Date chip filter (오늘 / 이번 주 / 이번 주말 / 다음 주). Date math
+    // lives in filter-chips.ts so this file stays focused on assembly.
+    if (dateFilter) {
+        const range = resolveDateFilterRange(dateFilter);
+        if (range) {
+            filtered = filtered.filter(p => performanceMatchesDateRange(p, range));
+        }
+    }
+
+    // 7. Price tier chip filter (무료 / 1만원 이하 / 5만원 이하 / 10만원 이하).
+    if (priceTier) {
+        filtered = filtered.filter(p => performanceMatchesPriceTier(p, priceTier));
     }
 
     return filtered;
