@@ -50,24 +50,44 @@ export type SportsTicketingInfo = {
 
 const SPORTS_GENRES = new Set(['soccer', 'baseball', 'basketball', 'volleyball', 'handball']);
 
+// Build a Naver search URL with a sports-specific query. We fall back to Naver
+// search for any sport where the upstream ticket vendor's listing page is not
+// stable (ticketlink.co.kr/sports/{soccer,baseball,basketball,volleyball,
+// handball} were returning either a "서비스가 원활하지 않습니다" page or
+// redirecting to /sports as of 2026-05-21). Naver search consistently surfaces
+// all major ticketing providers (ticketlink, interpark, team-official) plus
+// fixture info, which is strictly better than landing the user on a broken
+// vendor page.
+const naverSearchUrl = (query: string) =>
+    `https://search.naver.com/search.naver?query=${encodeURIComponent(query)}`;
+
 const BASEBALL_BOOKING_BY_TEAM: Record<string, SportsBookingProvider> = {
-    KIA: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/baseball' },
-    KT: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/baseball' },
-    LG: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/baseball' },
-    SSG: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/baseball' },
-    삼성: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/baseball' },
-    한화: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/baseball' },
+    // Teams whose home-game booking goes through ticketlink. The vendor's
+    // /sports/baseball landing redirected to /sports during testing, so we
+    // route through Naver search ("[team] KBO 예매") which lists the actual
+    // ticketing page reliably.
+    KIA: { provider: 'KBO 예매', url: naverSearchUrl('KIA 타이거즈 KBO 예매') },
+    KT: { provider: 'KBO 예매', url: naverSearchUrl('KT 위즈 KBO 예매') },
+    LG: { provider: 'KBO 예매', url: naverSearchUrl('LG 트윈스 KBO 예매') },
+    SSG: { provider: 'KBO 예매', url: naverSearchUrl('SSG 랜더스 KBO 예매') },
+    삼성: { provider: 'KBO 예매', url: naverSearchUrl('삼성 라이온즈 KBO 예매') },
+    한화: { provider: 'KBO 예매', url: naverSearchUrl('한화 이글스 KBO 예매') },
+    // Teams with stable direct vendor URLs - kept as-is, verified to work.
     두산: { provider: '인터파크 티켓', url: 'https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07001&TeamCode=PB004' },
     키움: { provider: '인터파크 티켓', url: 'https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07001&TeamCode=PB003' },
     롯데: { provider: '롯데 자이언츠 티켓', url: 'https://ticket.giantsclub.com/' },
     NC: { provider: 'NC 다이노스 티켓', url: 'https://ticket.ncdinos.com/' },
 };
 
+// Genre-level fallbacks. ticketlink.co.kr/sports/{soccer,basketball,volleyball}
+// were broken as of 2026-05-21 - they 200 but render an error template. We
+// route through Naver search instead because it always lists the active
+// ticketing providers (ticketlink, interpark, kleague.com, team-official).
 const SPORTS_BOOKING_BY_GENRE: Record<string, SportsBookingProvider> = {
-    soccer: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/soccer' },
-    basketball: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/basketball' },
-    volleyball: { provider: '티켓링크', url: 'https://www.ticketlink.co.kr/sports/volleyball' },
-    handball: { provider: '공식 예매처', url: 'https://www.handballkorea.com/' },
+    soccer: { provider: 'K리그 예매', url: naverSearchUrl('K리그 예매') },
+    basketball: { provider: 'KBL 예매', url: naverSearchUrl('KBL 농구 예매') },
+    volleyball: { provider: 'V리그 예매', url: naverSearchUrl('V리그 배구 예매') },
+    handball: { provider: '핸드볼 예매', url: naverSearchUrl('H리그 핸드볼 예매') },
 };
 
 const BASEBALL_HOME_TEAM_BY_VENUE: Record<string, string> = {
@@ -151,9 +171,15 @@ function inferTicketBayOpponent(performance: Pick<Performance, 'genre' | 'homeTe
 
 function getBaseballBookingProvider(performance: Pick<Performance, 'homeTeam' | 'awayTeam' | 'venue'>) {
     const homeTeam = inferBaseballHomeTeam(performance);
-    return BASEBALL_BOOKING_BY_TEAM[homeTeam] || {
-        provider: '공식 예매처',
-        url: 'https://www.ticketlink.co.kr/sports/baseball',
+    if (BASEBALL_BOOKING_BY_TEAM[homeTeam]) return BASEBALL_BOOKING_BY_TEAM[homeTeam];
+
+    // Unknown home team - search by the away team name (it always comes from
+    // KBO data) plus 'KBO 예매' so the user lands on a usable Naver search
+    // result rather than the broken ticketlink listing.
+    const fallbackQueryTeam = compactText(performance.homeTeam || performance.awayTeam) || 'KBO';
+    return {
+        provider: 'KBO 예매',
+        url: naverSearchUrl(`${fallbackQueryTeam} KBO 예매`),
     };
 }
 

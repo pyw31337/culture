@@ -2,10 +2,11 @@
 
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
-import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, AtSign, type LucideIcon } from 'lucide-react';
-import { useState, useMemo } from 'react';
+import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Check, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, AtSign, type LucideIcon } from 'lucide-react';
+import { useState, useMemo, useRef } from 'react';
+import Portal from './ui/Portal';
 import { getOptimizedUrl, formatUnifiedDate, toMobileUrl } from '@/lib/utils';
-import { motion, type Variants } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
@@ -292,10 +293,42 @@ export default function ContentDetailView({ performance: p, allPerformances = []
         [p, isMobile]
     );
 
+    const [shareStatus, setShareStatus] = useState<'idle' | 'copied' | 'shared' | 'error'>('idle');
+    const shareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
     const handleShare = async (e?: React.MouseEvent) => {
         if (e) e.stopPropagation();
         const url = `${window.location.origin}${window.location.pathname}${mode === 'modal' ? `#p=${p.id}` : ''}`;
-        await navigator.clipboard.writeText(url);
+
+        // Prefer native share sheet on mobile. Falls through to clipboard on
+        // unsupported browsers or when the user cancels the share dialog (the
+        // promise rejects with AbortError).
+        try {
+            if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+                try {
+                    await navigator.share({ title: p.title, url });
+                    setShareStatus('shared');
+                } catch (err) {
+                    // User cancelled - silently fall through to clipboard copy
+                    // so they still get a usable result.
+                    if ((err as DOMException)?.name === 'AbortError') {
+                        await navigator.clipboard.writeText(url);
+                        setShareStatus('copied');
+                    } else {
+                        throw err;
+                    }
+                }
+            } else {
+                await navigator.clipboard.writeText(url);
+                setShareStatus('copied');
+            }
+        } catch (err) {
+            console.warn('handleShare failed', err);
+            setShareStatus('error');
+        }
+
+        if (shareTimerRef.current) clearTimeout(shareTimerRef.current);
+        shareTimerRef.current = setTimeout(() => setShareStatus('idle'), 2000);
     };
 
     const handleClose = (e?: React.MouseEvent) => {
@@ -1128,13 +1161,58 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                         {/* Actions Block */}
                         <div className="space-y-4 pt-2">
                             <motion.div variants={itemVariants} className="flex items-center gap-2">
-                                <motion.button
-                                    whileTap={{ scale: 0.95 }}
-                                    onClick={handleShare}
-                                    className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 text-gray-900 dark:text-white border border-black/5 dark:border-white/10 flex items-center justify-center transition-all shrink-0"
-                                >
-                                    <Share2 className="w-5 h-5" />
-                                </motion.button>
+                                <div className="relative shrink-0">
+                                    <motion.button
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={handleShare}
+                                        aria-label="링크 공유"
+                                        className={`p-4 rounded-2xl border flex items-center justify-center transition-all shrink-0 ${
+                                            shareStatus === 'copied' || shareStatus === 'shared'
+                                                ? 'bg-emerald-500 text-white border-emerald-400'
+                                                : shareStatus === 'error'
+                                                    ? 'bg-red-600 text-white border-red-400'
+                                                    : 'bg-gray-50 dark:bg-white/5 text-gray-900 dark:text-white border-black/5 dark:border-white/10'
+                                        }`}
+                                    >
+                                        {/* Icon swap gives an immediate visual confirmation even if the
+                                            toast happens to be visually clipped on the user's screen. */}
+                                        {shareStatus === 'copied' || shareStatus === 'shared' ? (
+                                            <Check className="w-5 h-5" />
+                                        ) : (
+                                            <Share2 className="w-5 h-5" />
+                                        )}
+                                    </motion.button>
+                                </div>
+
+                                {/* Toast rendered via Portal so it always sits above the modal stacking
+                                    context. The previous inline absolute toast was being clipped/hidden
+                                    by the modal's z-index — making the share button look dead. */}
+                                <Portal>
+                                    <AnimatePresence>
+                                        {shareStatus !== 'idle' && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: -12, scale: 0.95 }}
+                                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                exit={{ opacity: 0, y: -12, scale: 0.95 }}
+                                                transition={{ type: 'spring', stiffness: 420, damping: 28 }}
+                                                role="status"
+                                                aria-live="polite"
+                                                className={`pointer-events-none fixed left-1/2 -translate-x-1/2 top-[max(env(safe-area-inset-top),16px)] whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-extrabold shadow-2xl border z-[2147483647] flex items-center gap-2 ${
+                                                    shareStatus === 'error'
+                                                        ? 'bg-red-600 text-white border-red-400/40'
+                                                        : 'bg-emerald-500 text-white border-emerald-300/60'
+                                                }`}
+                                            >
+                                                {shareStatus === 'error'
+                                                    ? <AlertCircle className="w-4 h-4" />
+                                                    : <Check className="w-4 h-4" />}
+                                                {shareStatus === 'copied' && '링크가 복사되었습니다'}
+                                                {shareStatus === 'shared' && '공유되었습니다'}
+                                                {shareStatus === 'error' && '복사에 실패했습니다. 다시 시도해주세요'}
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </Portal>
 
                                 {sportsTicketingInfo?.officialUrl && sportsTicketingInfo.officialUrl !== bookingUrl && (
                                     <motion.a
