@@ -8,6 +8,7 @@ import type {
     DataSourceSummary,
     DisplayIntegritySummary,
     SourceFunnelSummary,
+    SourceQualityOpportunitySummary,
     OperationsSummary,
     PriceCoverageSummary,
     VenueCanonicalizationSummary,
@@ -226,6 +227,28 @@ function normalizeSourceFunnelSummary(value: unknown): SourceFunnelSummary | nul
     };
 }
 
+function normalizeSourceQualityOpportunitySummary(value: unknown): SourceQualityOpportunitySummary | null {
+    if (!value || typeof value !== 'object') return null;
+
+    const candidate = value as Partial<SourceQualityOpportunitySummary>;
+    return {
+        checkedAt: typeof candidate.checkedAt === 'string' ? candidate.checkedAt : new Date().toISOString(),
+        status: candidate.status === 'warn' ? 'warn' : 'pass',
+        itemCount: typeof candidate.itemCount === 'number' ? candidate.itemCount : 0,
+        sourceCount: typeof candidate.sourceCount === 'number' ? candidate.sourceCount : 0,
+        highOpportunitySourceCount: typeof candidate.highOpportunitySourceCount === 'number' ? candidate.highOpportunitySourceCount : 0,
+        missingImageCount: typeof candidate.missingImageCount === 'number' ? candidate.missingImageCount : 0,
+        weakImageCount: typeof candidate.weakImageCount === 'number' ? candidate.weakImageCount : 0,
+        missingDetailImageCount: typeof candidate.missingDetailImageCount === 'number' ? candidate.missingDetailImageCount : 0,
+        missingCoordinateCount: typeof candidate.missingCoordinateCount === 'number' ? candidate.missingCoordinateCount : 0,
+        missingAddressCount: typeof candidate.missingAddressCount === 'number' ? candidate.missingAddressCount : 0,
+        unknownPriceCount: typeof candidate.unknownPriceCount === 'number' ? candidate.unknownPriceCount : 0,
+        weakDescriptionCount: typeof candidate.weakDescriptionCount === 'number' ? candidate.weakDescriptionCount : 0,
+        duplicateSignatureCount: typeof candidate.duplicateSignatureCount === 'number' ? candidate.duplicateSignatureCount : 0,
+        topSourceOpportunities: Array.isArray(candidate.topSourceOpportunities) ? candidate.topSourceOpportunities : [],
+    };
+}
+
 function normalizeVenueCanonicalizationSummary(value: unknown): VenueCanonicalizationSummary | null {
     if (!value || typeof value !== 'object') return null;
 
@@ -423,6 +446,7 @@ export function getDataBuildInfo(): DataBuildInfo | null {
         sourceSummaries: normalizeSourceSummaries(candidate.sourceSummaries),
         sourceHealthSummary: normalizeSourceHealthSummary(candidate.sourceHealthSummary),
         sourceFunnelSummary: normalizeSourceFunnelSummary(candidate.sourceFunnelSummary),
+        sourceQualityOpportunitySummary: normalizeSourceQualityOpportunitySummary(candidate.sourceQualityOpportunitySummary),
         venueCanonicalizationSummary: normalizeVenueCanonicalizationSummary(candidate.venueCanonicalizationSummary),
         venueMasterSummary: normalizeVenueMasterSummary(candidate.venueMasterSummary),
         venuePlaceMatchingSummary: normalizeVenuePlaceMatchingSummary(candidate.venuePlaceMatchingSummary),

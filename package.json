@@ -22,6 +22,8 @@
     "validate:display": "npx tsx scripts/validate-display-integrity.ts",
     "audit:locations": "npx tsx scripts/audit-location-mismatches.ts",
     "audit:sources": "npx tsx scripts/audit-source-funnel.ts",
+    "audit:sources:quality": "npx tsx scripts/audit-source-completeness.ts",
+    "audit:sources:quality:write": "npx tsx scripts/audit-source-completeness.ts --write",
     "audit:venues:canonical": "npx tsx scripts/audit-venue-canonicalization.ts",
     "build:venue-master": "npx tsx scripts/build-venue-master.ts",
     "enrich:venue-places": "npx tsx scripts/enrich-venue-places.ts",

@@ -20,6 +20,7 @@ import type { Performance } from '../src/types';
 import { analyzeContentQuality } from './utils/content-quality';
 import { buildDisplayIntegrityReport } from './utils/display-integrity';
 import { buildSourceFunnelReport } from './utils/source-funnel';
+import { buildSourceQualityOpportunitySummary } from './utils/source-quality-opportunities';
 import { buildVenueCanonicalizationReport } from './utils/venue-canonicalization';
 import { buildVenueMaster } from './utils/venue-master';
 import { applyVenuePlaceCache, buildVenuePlaceMatchingReport, type VenuePlaceCache, type VenuePlaceProvider } from './utils/venue-place-matching';
@@ -1741,6 +1742,7 @@ async function generate() {
             new Date().toISOString(),
         );
         const sourceFunnelReport = buildSourceFunnelReport(pruned as Performance[], new Date().toISOString());
+        const sourceQualityOpportunitySummary = buildSourceQualityOpportunitySummary(pruned as Performance[], new Date().toISOString());
         const priceCoverageSummary = buildPriceCoverageSummary(pruned as Performance[], new Date().toISOString());
         const operationsSummary = buildOperationsSummary(new Date().toISOString());
         const venueCanonicalizationReport = buildVenueCanonicalizationReport(
@@ -1760,6 +1762,7 @@ async function generate() {
             sourceSummaries,
             sourceHealthSummary,
             sourceFunnelSummary: sourceFunnelReport.summary,
+            sourceQualityOpportunitySummary,
             venueCanonicalizationSummary: venueCanonicalizationReport.summary,
             venueMasterSummary: venueMasterBuild.report.summary,
             venuePlaceMatchingSummary: venuePlaceMatchingReport.summary,
@@ -1772,6 +1775,8 @@ async function generate() {
         console.log(`Updated data-integrity-report.json to ${path.join(dir, 'data-integrity-report.json')}`);
         fs.writeFileSync(path.join(dir, 'source-funnel-report.json'), JSON.stringify(sourceFunnelReport));
         console.log(`Updated source-funnel-report.json to ${path.join(dir, 'source-funnel-report.json')}`);
+        fs.writeFileSync(path.join(dir, 'source-quality-opportunities.json'), JSON.stringify(sourceQualityOpportunitySummary, null, 2));
+        console.log(`Updated source-quality-opportunities.json to ${path.join(dir, 'source-quality-opportunities.json')}`);
         fs.writeFileSync(path.join(dir, 'venue-canonicalization-report.json'), JSON.stringify(venueCanonicalizationReport));
         console.log(`Updated venue-canonicalization-report.json to ${path.join(dir, 'venue-canonicalization-report.json')}`);
         fs.writeFileSync(path.join(dir, 'venue-master.json'), JSON.stringify(venueMasterBuild.entries));

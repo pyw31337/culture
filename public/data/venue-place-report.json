@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-21T02:48:06.166Z",
+  "checkedAt": "2026-05-21T04:49:15.074Z",
   "status": "warn",
   "venueCount": 3778,
   "matchedCount": 2059,
@@ -8,11 +8,8 @@
   "notFoundCount": 633,
   "pendingLookupCount": 1415,
   "insufficientIdentityCount": 182,
-  "lookupReady": true,
-  "providersConfigured": [
-    "kakao",
-    "naver"
-  ],
+  "lookupReady": false,
+  "providersConfigured": [],
   "queue": [
     {
       "venueId": "venue_세종예술아카데미스퀘어홀_oavi7e",
@@ -4207,7 +4204,7 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-05-21T02:48:06.166Z",
+    "checkedAt": "2026-05-21T04:49:15.074Z",
     "status": "warn",
     "venueCount": 3778,
     "matchedCount": 2059,
@@ -4216,11 +4213,8 @@
     "notFoundCount": 633,
     "pendingLookupCount": 1415,
     "insufficientIdentityCount": 182,
-    "lookupReady": true,
-    "providersConfigured": [
-      "kakao",
-      "naver"
-    ],
+    "lookupReady": false,
+    "providersConfigured": [],
     "staleCacheCount": 1256,
     "topQueue": [
       {

@@ -158,6 +158,18 @@ export default function StatusPage() {
     const sourceFunnelDetail = sourceFunnelSummary
         ? `raw ${sourceFunnelSummary.rawItemCount.toLocaleString()}건 → 운영 ${sourceFunnelSummary.finalItemCount.toLocaleString()}건 · 활성 소스 ${sourceFunnelSummary.activeSourceCount}개`
         : 'raw 수집 데이터가 최종 산출물에 어떻게 반영되는지 추적합니다.';
+    const sourceQualityOpportunitySummary = buildInfo.sourceQualityOpportunitySummary;
+    const sourceQualityOpportunityStatusLabel = sourceQualityOpportunitySummary
+        ? sourceQualityOpportunitySummary.status === 'warn'
+            ? `수집 품질 보강 ${sourceQualityOpportunitySummary.highOpportunitySourceCount}개`
+            : '수집 품질 기회 안정'
+        : '수집 품질 기회 준비 중';
+    const sourceQualityOpportunityDetail = sourceQualityOpportunitySummary
+        ? `이미지 ${(
+            sourceQualityOpportunitySummary.missingImageCount +
+            sourceQualityOpportunitySummary.weakImageCount
+        ).toLocaleString()}건 · 좌표 ${sourceQualityOpportunitySummary.missingCoordinateCount.toLocaleString()}건 · 약한 설명 ${sourceQualityOpportunitySummary.weakDescriptionCount.toLocaleString()}건`
+        : '이미지, 좌표, 상세본문, 가격, 상세 이미지 누락을 소스별로 점수화합니다.';
     const venueCanonicalizationSummary = buildInfo.venueCanonicalizationSummary;
     const venueCanonicalizationStatusLabel = venueCanonicalizationSummary
         ? venueCanonicalizationSummary.status === 'warn'
@@ -294,6 +306,12 @@ export default function StatusPage() {
                                 icon={sourceFunnelSummary?.status === 'warn' ? <GitBranch className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
                             />
                             <SnapshotLine
+                                label="수집 품질 기회"
+                                value={sourceQualityOpportunityStatusLabel}
+                                detail={sourceQualityOpportunityDetail}
+                                icon={sourceQualityOpportunitySummary?.status === 'warn' ? <ShieldAlert className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
+                            />
+                            <SnapshotLine
                                 label="공연장 표준화"
                                 value={venueCanonicalizationStatusLabel}
                                 detail={venueCanonicalizationDetail}
@@ -373,6 +391,11 @@ export default function StatusPage() {
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">데이터 퍼널</p>
                                 <p className="mt-2 text-xl font-black tracking-tight">{sourceFunnelStatusLabel}</p>
                                 <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{sourceFunnelDetail}</p>
+                            </div>
+                            <div className="border-b border-white/10 pb-4 light:border-slate-200">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">수집 품질 기회</p>
+                                <p className="mt-2 text-xl font-black tracking-tight">{sourceQualityOpportunityStatusLabel}</p>
+                                <p className="mt-2 text-sm leading-6 text-slate-300 light:text-slate-600">{sourceQualityOpportunityDetail}</p>
                             </div>
                             <div className="border-b border-white/10 pb-4 light:border-slate-200">
                                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-400 light:text-slate-500">공연장/좌표</p>
@@ -508,6 +531,29 @@ export default function StatusPage() {
                                                     <span className="truncate text-slate-300 light:text-slate-600">{source.label}</span>
                                                     <strong>{source.actionableUnknownCount.toLocaleString()}건</strong>
                                                 </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                                {sourceQualityOpportunitySummary?.topSourceOpportunities && sourceQualityOpportunitySummary.topSourceOpportunities.length > 0 && (
+                                    <div className="rounded-2xl border border-emerald-300/20 bg-emerald-400/10 px-4 py-3 light:border-emerald-200 light:bg-emerald-50">
+                                        <p className="font-bold">수집 품질 개선 우선순위</p>
+                                        <p className="mt-1 text-xs leading-5 text-slate-400 light:text-slate-500">
+                                            이미지, 좌표, 상세본문, 가격, 상세 이미지를 함께 점수화했습니다.
+                                        </p>
+                                        <div className="mt-3 space-y-3">
+                                            {sourceQualityOpportunitySummary.topSourceOpportunities.slice(0, 4).map((source) => (
+                                                <article key={source.key} className="rounded-2xl border border-white/10 bg-black/12 px-3 py-3 light:border-emerald-100 light:bg-white">
+                                                    <div className="flex items-center justify-between gap-3">
+                                                        <span className="truncate text-sm font-black">{source.label}</span>
+                                                        <span className="shrink-0 rounded-full bg-slate-950 px-2.5 py-1 text-[11px] font-black text-white light:bg-emerald-600">
+                                                            {source.opportunityScore}점
+                                                        </span>
+                                                    </div>
+                                                    <p className="mt-2 text-xs leading-5 text-slate-300 light:text-slate-600">
+                                                        {source.recommendedAction}
+                                                    </p>
+                                                </article>
                                             ))}
                                         </div>
                                     </div>

@@ -78,6 +78,47 @@ export interface SourceFunnelSummary {
     }>;
 }
 
+export interface SourceQualityOpportunityRow {
+    key: string;
+    label: string;
+    itemCount: number;
+    opportunityScore: number;
+    priority: 'high' | 'medium' | 'low';
+    missingImageCount: number;
+    weakImageCount: number;
+    missingDetailImageCount: number;
+    missingCoordinateCount: number;
+    missingAddressCount: number;
+    missingVenueCount: number;
+    missingLinkCount: number;
+    unknownPriceCount: number;
+    weakDescriptionCount: number;
+    duplicateSignatureCount: number;
+    imageCoverageRate: number;
+    coordinateCoverageRate: number;
+    descriptionCoverageRate: number;
+    detailImageCoverageRate: number;
+    priceCoverageRate: number;
+    recommendedAction: string;
+}
+
+export interface SourceQualityOpportunitySummary {
+    checkedAt: string;
+    status: 'pass' | 'warn';
+    itemCount: number;
+    sourceCount: number;
+    highOpportunitySourceCount: number;
+    missingImageCount: number;
+    weakImageCount: number;
+    missingDetailImageCount: number;
+    missingCoordinateCount: number;
+    missingAddressCount: number;
+    unknownPriceCount: number;
+    weakDescriptionCount: number;
+    duplicateSignatureCount: number;
+    topSourceOpportunities: SourceQualityOpportunityRow[];
+}
+
 export interface VenueCanonicalizationSummary {
     checkedAt: string;
     status: 'pass' | 'warn';
@@ -213,6 +254,7 @@ export interface DataBuildInfo {
     sourceSummaries: DataSourceSummary[];
     sourceHealthSummary: DataSourceHealthSummary | null;
     sourceFunnelSummary?: SourceFunnelSummary | null;
+    sourceQualityOpportunitySummary?: SourceQualityOpportunitySummary | null;
     venueCanonicalizationSummary?: VenueCanonicalizationSummary | null;
     venueMasterSummary?: VenueMasterSummary | null;
     venuePlaceMatchingSummary?: VenuePlaceMatchingSummary | null;

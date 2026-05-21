@@ -1,106 +1,57 @@
 import fs from 'fs';
 import path from 'path';
+import type { Performance } from '../src/types';
+import { buildSourceQualityOpportunitySummary } from './utils/source-quality-opportunities';
 
-const DATA_DIR = '/Users/pyw31337/Developer/CultureFlow-New/src/data';
+const PUBLIC_PERFORMANCES_PATH = path.join(process.cwd(), 'public', 'data', 'performances.json');
+const PUBLIC_BUILD_INFO_PATH = path.join(process.cwd(), 'public', 'data', 'build-info.json');
+const PUBLIC_REPORT_PATH = path.join(process.cwd(), 'public', 'data', 'source-quality-opportunities.json');
 
-const EXCLUDE = [
-    'venues.json', 
-    'venuedictionary.json', 
-    'venue-dictionary.json', 
-    'korean_address_hierarchy.json',
-    'cinemas.json'
-];
+function readPerformances() {
+    if (!fs.existsSync(PUBLIC_PERFORMANCES_PATH)) {
+        throw new Error(`Cannot find ${PUBLIC_PERFORMANCES_PATH}. Run npm run generate-data first.`);
+    }
 
-interface AuditResult {
-    file: string;
-    total: number;
-    missingVenue: number;
-    missingAddress: number;
-    missingCoordinates: number;
-    missingPrice: number;
-    missingImage: number;
-    samples: any[];
+    const parsed = JSON.parse(fs.readFileSync(PUBLIC_PERFORMANCES_PATH, 'utf8')) as unknown;
+    if (!Array.isArray(parsed)) {
+        throw new Error('public/data/performances.json is not an array.');
+    }
+
+    return parsed as Performance[];
 }
 
-function auditSourceFiles() {
-    const files = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json') && !EXCLUDE.includes(f));
-    const finalReport: AuditResult[] = [];
-
-    files.forEach(file => {
-        const filePath = path.join(DATA_DIR, file);
-        let data;
-        try {
-            data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        } catch (e) {
-            console.error(`Error parsing ${file}:`, e);
-            return;
-        }
-        
-        let items: any[] = [];
-        if (Array.isArray(data)) {
-            items = data;
-        } else if (data && typeof data === 'object') {
-            const arrayProp = Object.values(data).find(v => Array.isArray(v));
-            if (arrayProp) items = arrayProp as any[];
-        }
-
-        if (items.length === 0) {
-            return;
-        }
-
-        const stats: AuditResult = {
-            file,
-            total: items.length,
-            missingVenue: 0,
-            missingAddress: 0,
-            missingCoordinates: 0,
-            missingPrice: 0,
-            missingImage: 0,
-            samples: []
-        };
-
-        items.forEach((item: any) => {
-            let hasMissing = false;
-            let missingFields: string[] = [];
-
-            if (!item.venue || item.venue === '모카클래스' || item.venue === 'Venue Unknown' || item.venue === '') {
-                stats.missingVenue++;
-                missingFields.push('venue');
-                hasMissing = true;
-            }
-            if (!item.address || item.address === '' || item.address === '서울특별시' || item.address === '정보없음') {
-                stats.missingAddress++;
-                missingFields.push('address');
-                hasMissing = true;
-            }
-            if (!item.lat || !item.lng || (item.lat === 37.56661 && item.lng === 126.978388)) {
-                stats.missingCoordinates++;
-                missingFields.push('coordinates');
-                hasMissing = true;
-            }
-            if (!item.price || item.price === '' || item.price === '정보없음' || (item.genre !== 'movie' && !/[0-9]/.test(item.price) && item.price !== '무료')) {
-                stats.missingPrice++;
-                missingFields.push('price');
-                hasMissing = true;
-            }
-            if (!item.image || item.image === '' || item.image.includes('placeholder')) {
-                stats.missingImage++;
-                missingFields.push('image');
-                hasMissing = true;
-            }
-
-            if (hasMissing && stats.samples.length < 2) {
-                stats.samples.push({
-                    title: item.title,
-                    missing: missingFields
-                });
-            }
-        });
-
-        finalReport.push(stats);
-    });
-
-    console.log(JSON.stringify(finalReport, null, 2));
+function formatPercent(rate: number) {
+    return `${Math.round(rate * 100)}%`;
 }
 
-auditSourceFiles();
+const performances = readPerformances();
+const summary = buildSourceQualityOpportunitySummary(performances);
+const shouldWrite = process.argv.includes('--write');
+
+if (shouldWrite) {
+    fs.writeFileSync(PUBLIC_REPORT_PATH, JSON.stringify(summary, null, 2));
+
+    if (fs.existsSync(PUBLIC_BUILD_INFO_PATH)) {
+        const buildInfo = JSON.parse(fs.readFileSync(PUBLIC_BUILD_INFO_PATH, 'utf8')) as Record<string, unknown>;
+        buildInfo.sourceQualityOpportunitySummary = summary;
+        fs.writeFileSync(PUBLIC_BUILD_INFO_PATH, JSON.stringify(buildInfo));
+    }
+
+    console.log(`Wrote ${PUBLIC_REPORT_PATH}`);
+    console.log(`Updated ${PUBLIC_BUILD_INFO_PATH}`);
+}
+
+console.log(JSON.stringify(summary, null, 2));
+console.log('\nSource quality opportunities');
+console.table(summary.topSourceOpportunities.map((row) => ({
+    source: row.label,
+    items: row.itemCount,
+    score: row.opportunityScore,
+    priority: row.priority,
+    image: formatPercent(row.imageCoverageRate),
+    coordinates: formatPercent(row.coordinateCoverageRate),
+    description: formatPercent(row.descriptionCoverageRate),
+    detailImages: formatPercent(row.detailImageCoverageRate),
+    price: formatPercent(row.priceCoverageRate),
+    action: row.recommendedAction.slice(0, 72),
+})));
