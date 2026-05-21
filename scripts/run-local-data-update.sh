@@ -5,7 +5,7 @@ PROJECT_DIR="${CULTUREFLOW_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.."
 LOG_DIR="$PROJECT_DIR/logs/data-update"
 RUN_STAMP="$(TZ=Asia/Seoul date '+%Y%m%d-%H%M%S')"
 LOG_FILE="$LOG_DIR/local-data-update-$RUN_STAMP.log"
-SKIP_AFTER_HOUR="${LOCAL_UPDATE_SKIP_AFTER_HOUR:-14}"
+SKIP_AFTER_HOUR="${LOCAL_UPDATE_SKIP_AFTER_HOUR:-3}"
 SCRAPER_TIMEOUT_SECONDS="${LOCAL_SCRAPER_TIMEOUT_SECONDS:-2700}"
 
 mkdir -p "$LOG_DIR"
@@ -27,7 +27,7 @@ fi
 
 current_hour="$(TZ=Asia/Seoul date '+%H')"
 if [ "${FORCE_LOCAL_UPDATE:-0}" != "1" ] && [ "$current_hour" -ge "$SKIP_AFTER_HOUR" ]; then
-  echo "[local-update] skipped: it is already ${current_hour}:00 KST. GitHub fallback owns the afternoon window."
+  echo "[local-update] skipped: it is already ${current_hour}:00 KST. GitHub fallback owns the 03:00+ KST window."
   exit 0
 fi
 

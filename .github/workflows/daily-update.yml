@@ -2,7 +2,7 @@ name: Daily Data Update
 
 on:
   schedule:
-    - cron: '0 6 * * *' # 15:00 KST fallback. Local launchd owns the 00:00 KST primary update.
+    - cron: '0 18 * * *' # 03:00 KST fallback. Local launchd owns the 00:00 KST primary update.
   workflow_dispatch:
 
 concurrency:
@@ -248,7 +248,7 @@ jobs:
           echo "### 🚨 CI Action Runtime Failure" >> ERROR_TRACKER.md
           echo "- **Date**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> ERROR_TRACKER.md
           echo "- **GitHub Run ID**: [${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> ERROR_TRACKER.md
-          echo "- **Note**: The 15:00 KST fallback data update failed after the local midnight update was absent or stale." >> ERROR_TRACKER.md
+          echo "- **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale." >> ERROR_TRACKER.md
           if [ -f scrape_failures.txt ] && [ -s scrape_failures.txt ]; then
             echo "- **Failed Scrapers**:" >> ERROR_TRACKER.md
             sed 's/^/  - /' scrape_failures.txt >> ERROR_TRACKER.md
