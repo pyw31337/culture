@@ -304,6 +304,13 @@ if git diff --quiet && git diff --staged --quiet; then
 fi
 
 git commit -m "chore: local daily data update"
+
+if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+  echo "[local-update] stashing residual generated files before syncing"
+  git status --short
+  git stash push -u -m "local-update residual generated files ${RUN_STAMP}"
+fi
+
 git pull --rebase origin main
 git push origin main
 
