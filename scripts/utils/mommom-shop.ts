@@ -201,32 +201,138 @@ function getImageDedupeKey(value?: string | null) {
     return payload?.key || normalizeKey(cleanMomMomImageUrl(value || ''));
 }
 
-function extractMomMomDetailImagesFromHtml(html: string) {
-    const normalizedHtml = html
+/**
+ * 후보 URL 파일명에 들어있는 사이즈 힌트(예: 1000x1000, 720x320, _w800 등)를 점수화하여
+ * 가장 큰 원본으로 보이는 URL을 고른다. 힌트가 없으면 입력 순서를 유지한다.
+ * NHN커머스 CDN(mom-mom.cdn-nhncommerce.com)은 리사이즈 파라미터를 지원하지 않으므로
+ * 파일명 자체가 사이즈 단서가 된다.
+ */
+function pickLargestImage(urls: string[]): string {
+    if (!urls.length) return '';
+    const scored = urls
+        .map((url, index) => {
+            const filename = (url.split('?')[0].split('#')[0].split('/').pop() || '').toLowerCase();
+            let score = 0;
+            // 1000x1000 형태
+            const dim = filename.match(/(\d{3,5})\s*x\s*(\d{3,5})/);
+            if (dim) {
+                const area = Number(dim[1]) * Number(dim[2]);
+                score += area;
+            }
+            // _w800, w1080 패턴
+            const w = filename.match(/[_-]?w(\d{3,5})/);
+            if (w) score += Number(w[1]) * 600;
+            // 썸네일/thumb 키워드는 페널티
+            if (/(썸네일|thumb|small|list|tiny|480|520)/i.test(filename)) score -= 500_000;
+            // 대표/main/big 키워드는 가산
+            if (/(대표|main|big|large|hero|origin|original|full)/i.test(filename)) score += 800_000;
+            return { url, score, index };
+        })
+        .sort((a, b) => b.score - a.score || a.index - b.index);
+    return scored[0].url;
+}
+
+// mom-mom의 image.mom-mom.net 도메인에서 events/* 키는 사이트 공통 광고/이벤트 배너이고,
+// showcases/* 키는 큐레이션 쇼케이스 카드 이미지이므로 상품 상세 이미지로 취급하지 않는다.
+const MOMMOM_AD_KEY_PREFIXES = ['events/', 'showcases/', 'banners/', 'promotions/', 'curations/'];
+
+function isMomMomAdAssetKey(key?: string | null) {
+    if (!key) return false;
+    return MOMMOM_AD_KEY_PREFIXES.some((prefix) => key.startsWith(prefix));
+}
+
+function isLikelyProductDetailImageUrl(url: string) {
+    if (!url) return false;
+    const trimmed = url.trim();
+    if (!trimmed) return false;
+    if (trimmed.startsWith('data:')) return false;
+
+    if (trimmed.includes('image.mom-mom.net/')) {
+        const payload = parseMomMomImagePayload(trimmed);
+        if (!payload?.key) return true;
+        return !isMomMomAdAssetKey(payload.key);
+    }
+
+    // 판매자가 직접 업로드한 NHN커머스 CDN 이미지(예: mom-mom.cdn-nhncommerce.com/Mall-No-Chsg/...)
+    // 또는 그 외 외부 이미지(상품 상세 페이지에 삽입된 HTML 안)는 그대로 허용한다.
+    return true;
+}
+
+function normalizeDetailImageUrl(rawUrl: string) {
+    let url = (rawUrl || '').trim();
+    if (!url) return '';
+    if (url.startsWith('//')) url = `https:${url}`;
+    if (url.startsWith('http://')) url = `https://${url.slice('http://'.length)}`;
+
+    if (url.startsWith(MOMMOM_IMAGE_PREFIX)) {
+        const payload = parseMomMomImagePayload(url);
+        const width = Number(payload?.edits?.resize?.width || 0);
+        return normalizeMomMomImageUrl(url, Math.max(width || 1080, 1080));
+    }
+    return url;
+}
+
+/**
+ * 상품 상세 페이지 HTML(detail.baseInfo.contentHeader/content/contentFooter 등)에서
+ * <img src="..."> 태그만 파싱하여 실제 상품 상세 이미지만 반환한다.
+ *
+ * 사용자가 알려준 셀렉터 path:
+ *   body > div.full-width.space-between-align-start > div > div > main > div > article > div > article > p > img
+ * 이는 판매자가 NHN커머스로 업로드한 상품 상세 이미지가 노출되는 영역이며,
+ * 이 영역은 detail.baseInfo.contentHeader / content / contentFooter HTML 필드에 그대로 들어있다.
+ * 따라서 이 필드들의 HTML 안의 <img>만 추출하면 페이지 전체에 깔린
+ * events/* 광고 배너나 showcases/* 큐레이션 카드를 깔끔하게 배제할 수 있다.
+ */
+function extractImagesFromDetailContentHtml(html?: string | null) {
+    const raw = (html || '').trim();
+    if (!raw) return [];
+    const normalizedHtml = raw
         .replace(/\\u002F/g, '/')
         .replace(/\\\//g, '/');
-    const matches = normalizedHtml.match(/https:\/\/image\.mom-mom\.net\/[^"'<>\\\s)]+/g) || [];
+
     const seen = new Set<string>();
     const images: string[] = [];
 
-    for (const match of matches) {
-        const payload = parseMomMomImagePayload(match);
-        const key = payload?.key || '';
-        if (!key.startsWith('events/')) continue;
+    try {
+        const $ = cheerio.load(normalizedHtml);
+        $('img').each((_, el) => {
+            const attribs = el.attribs || {};
+            const candidate =
+                attribs['src'] ||
+                attribs['data-src'] ||
+                attribs['data-original'] ||
+                attribs['data-lazy'] ||
+                '';
+            const url = candidate?.trim();
+            if (!url) return;
+            if (!isLikelyProductDetailImageUrl(url)) return;
 
-        const width = Number(payload?.edits?.resize?.width || 0);
-        if (width > 0 && width < 760) continue;
-        if (seen.has(key)) continue;
+            const normalized = normalizeDetailImageUrl(url);
+            if (!normalized) return;
+            if (!/^https?:\/\//i.test(normalized)) return;
 
-        const image = normalizeMomMomImageUrl(match, Math.max(width || 1080, 1080));
-        if (!image) continue;
-
-        seen.add(key);
-        images.push(image);
+            const dedupeKey = getImageDedupeKey(normalized) || normalized;
+            if (seen.has(dedupeKey)) return;
+            seen.add(dedupeKey);
+            images.push(normalized);
+        });
+    } catch {
+        // 만약 cheerio 파싱이 실패하면 안전하게 빈 배열 반환.
     }
 
-    return images.slice(0, 12);
+    return images.slice(0, 20);
 }
+
+/**
+ * @deprecated 페이지 전체 HTML에서 image.mom-mom.net URL을 regex로 긁어 모으는 방식은
+ * events/* 광고 배너까지 통째로 포함하는 문제가 있어 더 이상 사용하지 않는다.
+ * 본 함수는 호환을 위해 남겨두지만 내부적으로는 빈 배열을 반환한다.
+ * 새로운 추출은 extractImagesFromDetailContentHtml()을 통해 이루어진다.
+ */
+function extractMomMomDetailImagesFromHtml(_html: string) {
+    return [] as string[];
+}
+void extractMomMomDetailImagesFromHtml;
 
 function toCurrency(value?: number) {
     if (typeof value !== 'number' || !Number.isFinite(value) || value <= 0) return '';
@@ -834,9 +940,20 @@ async function fetchProductDetail(productNo: number) {
     });
     if (!response.ok) throw new Error(`MomMom detail failed: ${response.status} ${response.statusText}`);
     const html = await response.text();
-    const detailImages = extractMomMomDetailImagesFromHtml(html);
     const detail = extractProductDetailFromFlight(extractFlightText(html));
-    if (!detail) return detailImages.length > 0 ? { detailImages } : null;
+    if (!detail) return null;
+
+    // 진짜 상품 상세 이미지는 판매자가 등록한 detail.baseInfo.contentHeader / content / contentFooter
+    // HTML 안의 <img>만 사용한다. 페이지 전체에는 events/* 광고 배너가 섞여 있어 신뢰할 수 없다.
+    const detailContentHtml = [
+        detail.baseInfo?.contentHeader,
+        detail.baseInfo?.content,
+        detail.baseInfo?.contentFooter,
+    ]
+        .filter((part): part is string => Boolean(part && part.trim()))
+        .join('\n');
+    const detailImages = extractImagesFromDetailContentHtml(detailContentHtml);
+
     return { ...detail, detailImages };
 }
 
@@ -927,15 +1044,26 @@ function buildSynopsisImages(product: ShopProduct, detail: ShopProductDetail | u
     const seen = new Set<string>();
     const images: string[] = [];
 
+    // 우선순위:
+    //   1) detail.baseInfo.content* HTML에서 추출한 실제 판매자 상세 이미지(detail.detailImages)
+    //   2) 상품 카드 갤러리(product.imageUrls / listImageUrls)
+    //   3) 캐시된 이전 결과(레거시 데이터; 광고일 가능성 있어 강력 필터링)
     for (const candidate of [
         ...(detail?.detailImages || []),
         ...productImages,
         ...cachedImages,
     ]) {
-        const image = candidate?.startsWith(MOMMOM_IMAGE_PREFIX)
+        if (!candidate || typeof candidate !== 'string') continue;
+
+        const image = candidate.startsWith(MOMMOM_IMAGE_PREFIX)
             ? normalizeMomMomImageUrl(candidate, 1080)
             : toImageUrl(candidate);
         if (!image) continue;
+
+        // 광고/이벤트/큐레이션 자산은 상세 이미지로 취급하지 않는다.
+        // (기존 캐시(mommom-products.json)에 events/* 키가 다수 누적되어 있으므로 반드시 필터링)
+        const payload = parseMomMomImagePayload(image);
+        if (payload?.key && isMomMomAdAssetKey(payload.key)) continue;
 
         const key = getImageDedupeKey(image);
         if (!key || key === representativeKey || seen.has(key)) continue;
@@ -1047,7 +1175,17 @@ export async function scrapeMomMomShopProducts(options: ScrapeOptions) {
             const { base, finalPrice, discountAmt, rate } = computeDiscount(product);
             const price = toCurrency(finalPrice) || (typeof cache.price === 'string' ? cache.price : '');
             const originalPrice = toCurrency(base) || (typeof cache.originalPrice === 'string' ? cache.originalPrice : '');
-            const image = toImageUrl(product.listImageUrls?.[0] || product.imageUrls?.[0]) || cache.image || '';
+            // 좌측 메인 이미지(modal hero)는 가능한 한 큰 원본을 쓴다.
+            // listImageUrls는 카테고리 리스트용 작은 썸네일(720x320 등)이라 모달에서 확대되면 깨져 보이므로
+            // imageUrls(상품 갤러리 메인, 보통 1000x1000)를 우선적으로 사용한다.
+            const heroCandidates = [
+                ...(product.imageUrls || []),
+                ...(product.listImageUrls || []),
+            ]
+                .map((url) => compact(url))
+                .filter(Boolean);
+            const preferredHero = pickLargestImage(heroCandidates);
+            const image = toImageUrl(preferredHero) || cache.image || '';
             const synopsisImages = buildSynopsisImages(product, detail, image, cache);
             const date = buildDate(product);
             const priceDetail = buildPriceDetail(product, price, originalPrice);
