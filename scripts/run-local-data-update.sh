@@ -5,13 +5,122 @@ PROJECT_DIR="${CULTUREFLOW_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.."
 LOG_DIR="$PROJECT_DIR/logs/data-update"
 RUN_STAMP="$(TZ=Asia/Seoul date '+%Y%m%d-%H%M%S')"
 LOG_FILE="$LOG_DIR/local-data-update-$RUN_STAMP.log"
+STATUS_FILE="$LOG_DIR/last-run-status.json"
 SKIP_AFTER_HOUR="${LOCAL_UPDATE_SKIP_AFTER_HOUR:-3}"
 SCRAPER_TIMEOUT_SECONDS="${LOCAL_SCRAPER_TIMEOUT_SECONDS:-2700}"
+LOCAL_UPDATE_NOTIFY="${LOCAL_UPDATE_NOTIFY:-1}"
 
 mkdir -p "$LOG_DIR"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 cd "$PROJECT_DIR"
+
+RUN_STARTED_AT="$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
+RUN_STATUS="running"
+RUN_MESSAGE="Local data update is running."
+RUN_NOTIFIED="0"
+failures=()
+critical_failures=()
+
+notify_local_update() {
+  local title="$1"
+  local message="$2"
+
+  if [ "$LOCAL_UPDATE_NOTIFY" != "1" ]; then
+    return 1
+  fi
+
+  /usr/bin/osascript - "$title" "$message" <<'APPLESCRIPT' >/dev/null 2>&1
+on run argv
+  display notification (item 2 of argv) with title (item 1 of argv)
+end run
+APPLESCRIPT
+}
+
+write_status_file() {
+  local exit_code="$1"
+  local ended_at
+  local head_sha
+  local failure_list
+  local critical_failure_list
+
+  ended_at="$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
+  head_sha="$(git rev-parse --short HEAD 2>/dev/null || true)"
+  failure_list="${failures[*]:-}"
+  critical_failure_list="${critical_failures[*]:-}"
+
+  node - "$STATUS_FILE" "$RUN_STARTED_AT" "$ended_at" "$RUN_STATUS" "$exit_code" "$RUN_MESSAGE" "$PROJECT_DIR" "$LOG_FILE" "$head_sha" "$failure_list" "$critical_failure_list" <<'NODE' >/dev/null 2>&1 || true
+const fs = require('fs');
+const [
+  statusPath,
+  startedAt,
+  endedAt,
+  status,
+  exitCode,
+  message,
+  projectDir,
+  logFile,
+  headSha,
+  failures,
+  criticalFailures,
+] = process.argv.slice(2);
+
+fs.writeFileSync(statusPath, JSON.stringify({
+  startedAt,
+  endedAt,
+  status,
+  exitCode: Number(exitCode),
+  message,
+  projectDir,
+  logFile,
+  headSha,
+  failures: failures ? failures.split(/\s+/).filter(Boolean) : [],
+  criticalFailures: criticalFailures ? criticalFailures.split(/\s+/).filter(Boolean) : [],
+}, null, 2) + '\n');
+NODE
+}
+
+finish_run() {
+  local exit_code="$?"
+
+  if [ "$exit_code" -ne 0 ] && [ "$RUN_STATUS" = "running" ]; then
+    RUN_STATUS="failed"
+    RUN_MESSAGE="Local data update failed. Check $LOG_FILE"
+  fi
+
+  if [ "$RUN_STATUS" = "running" ]; then
+    RUN_STATUS="success"
+    RUN_MESSAGE="Local data update completed."
+  fi
+
+  write_status_file "$exit_code"
+
+  case "$RUN_STATUS" in
+    success)
+      if [ ${#failures[@]} -gt 0 ]; then
+        if notify_local_update "CultureFlow update completed with warnings" "Scraper warnings: ${failures[*]}. Log: $LOG_FILE"; then
+          RUN_NOTIFIED="1"
+        fi
+      fi
+      ;;
+    skipped)
+      if notify_local_update "CultureFlow update skipped" "$RUN_MESSAGE"; then
+        RUN_NOTIFIED="1"
+      fi
+      ;;
+    failed)
+      if notify_local_update "CultureFlow update failed" "$RUN_MESSAGE"; then
+        RUN_NOTIFIED="1"
+      fi
+      ;;
+  esac
+
+  if [ "$RUN_NOTIFIED" = "1" ]; then
+    echo "[local-update] notification sent: $RUN_STATUS"
+  fi
+}
+
+trap finish_run EXIT
 
 echo "[local-update] started at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
 echo "[local-update] project: $PROJECT_DIR"
@@ -27,12 +136,16 @@ fi
 
 current_hour="$(TZ=Asia/Seoul date '+%H')"
 if [ "${FORCE_LOCAL_UPDATE:-0}" != "1" ] && [ "$current_hour" -ge "$SKIP_AFTER_HOUR" ]; then
-  echo "[local-update] skipped: it is already ${current_hour}:00 KST. GitHub fallback owns the 03:00+ KST window."
+  RUN_STATUS="skipped"
+  RUN_MESSAGE="It is already ${current_hour}:00 KST. GitHub fallback owns the 03:00+ KST window."
+  echo "[local-update] skipped: $RUN_MESSAGE"
   exit 0
 fi
 
 if ! git diff --quiet || ! git diff --cached --quiet; then
-  echo "[local-update] skipped: working tree has local changes. Commit/stash them before the scheduled update."
+  RUN_STATUS="skipped"
+  RUN_MESSAGE="Working tree has local changes. Commit/stash them before the scheduled update."
+  echo "[local-update] skipped: $RUN_MESSAGE"
   git status --short
   exit 2
 fi
@@ -60,8 +173,6 @@ if [ -z "${PUPPETEER_EXECUTABLE_PATH:-}" ]; then
 fi
 echo "[local-update] Puppeteer executable: $PUPPETEER_EXECUTABLE_PATH"
 
-failures=()
-critical_failures=()
 : > "$LOG_DIR/last-scrape-failures.txt"
 
 terminate_process_tree() {
@@ -186,6 +297,8 @@ git add src/data public/data public/version.txt public/images/posters
 
 if git diff --quiet && git diff --staged --quiet; then
   echo "[local-update] no data changes to commit"
+  RUN_STATUS="success"
+  RUN_MESSAGE="Local data update completed with no data changes."
   echo "[local-update] completed at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
   exit 0
 fi
@@ -194,5 +307,7 @@ git commit -m "chore: local daily data update"
 git pull --rebase origin main
 git push origin main
 
+RUN_STATUS="success"
+RUN_MESSAGE="Local data update pushed data changes to origin/main."
 echo "[local-update] pushed data update; GitHub Pages deploy will run from the push workflow"
 echo "[local-update] completed at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
