@@ -143,8 +143,15 @@ export default function PersonalizedSection({
                             >
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
                                 <ImageWithFallback
-                                    src={performance.image || performance.poster || performance.backupPoster || `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/fallbacks/movie.svg`}
+                                    src={performance.image || performance.poster || performance.backupPoster || ''}
                                     backupSrc={performance.backupPoster}
+                                    placeholderInput={{
+                                        title: performance.title,
+                                        genre: performance.genre,
+                                        matchLabel: (performance as { homeTeam?: string; awayTeam?: string }).homeTeam && (performance as { homeTeam?: string; awayTeam?: string }).awayTeam
+                                            ? `${(performance as { homeTeam?: string; awayTeam?: string }).homeTeam} vs ${(performance as { homeTeam?: string; awayTeam?: string }).awayTeam}`
+                                            : null,
+                                    }}
                                     optimizationWidth={340}
                                     quality={62}
                                     alt={performance.title}

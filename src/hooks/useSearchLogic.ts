@@ -91,33 +91,55 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
         if (searchMode === 'location') {
             return kakaoSearchResults;
         } else {
+            // Weighted scoring search.
+            //   exact title prefix    : 100
+            //   title contains        :  70
+            //   choseong title match  :  60
+            //   venue contains        :  35
+            //   cast contains         :  25
+            //   genre label contains  :  20
+            // Higher score wins; ties broken by upcoming date (input order).
             const lowerText = searchText.toLowerCase().replace(/\s+/g, '');
             const isChoseong = /^[ㄱ-ㅎ\s]+$/.test(searchText);
 
-            const uniqueTitles = new Set();
-            return allPerformances
-                .filter(p => {
-                    if (uniqueTitles.has(p.title)) return false;
-                    const titleNoSpace = p.title.toLowerCase().replace(/\s+/g, '');
-                    const venueNoSpace = p.venue.toLowerCase().replace(/\s+/g, '');
+            const scored: Array<{ p: Performance; score: number }> = [];
+            const uniqueTitles = new Set<string>();
 
-                    const match = isChoseong
-                        ? isChoseongMatch(p.title, searchText)
-                        : (titleNoSpace.includes(lowerText) ||
-                            venueNoSpace.includes(lowerText) ||
-                            (p.cast && Array.isArray(p.cast) && p.cast.some((c: any) =>
-                                typeof c === 'string' ? c.replace(/\s+/g, '').includes(lowerText) : c.name.replace(/\s+/g, '').includes(lowerText))));
+            for (const p of allPerformances) {
+                if (uniqueTitles.has(p.title)) continue;
+                const titleNoSpace = p.title.toLowerCase().replace(/\s+/g, '');
+                const venueNoSpace = (p.venue || '').toLowerCase().replace(/\s+/g, '');
+                const genreLabelNoSpace = (p.genre || '').toLowerCase();
 
-                    if (match) uniqueTitles.add(p.title);
-                    return match;
-                })
-                .slice(0, 10)
-                .map(p => ({
-                    type: p.genre === 'movie' ? 'video' : 'stage',
-                    name: p.title,
-                    address: p.venue,
-                    ...p
-                }));
+                let score = 0;
+                if (isChoseong) {
+                    if (isChoseongMatch(p.title, searchText)) score = 60;
+                } else {
+                    if (titleNoSpace.startsWith(lowerText)) score = 100;
+                    else if (titleNoSpace.includes(lowerText)) score = 70;
+                    else if (venueNoSpace.includes(lowerText)) score = 35;
+                    else if (p.cast && Array.isArray(p.cast) && p.cast.some((c: unknown) =>
+                        typeof c === 'string'
+                            ? c.replace(/\s+/g, '').toLowerCase().includes(lowerText)
+                            : (c as { name?: string })?.name?.replace(/\s+/g, '').toLowerCase().includes(lowerText)
+                    )) score = 25;
+                    else if (genreLabelNoSpace.includes(lowerText)) score = 20;
+                }
+
+                if (score > 0) {
+                    uniqueTitles.add(p.title);
+                    scored.push({ p, score });
+                }
+            }
+
+            scored.sort((a, b) => b.score - a.score);
+
+            return scored.slice(0, 24).map(({ p }) => ({
+                type: p.genre === 'movie' ? 'video' : 'stage',
+                name: p.title,
+                address: p.venue,
+                ...p
+            }));
         }
     }, [searchText, searchMode, allPerformances, kakaoSearchResults]);
 
