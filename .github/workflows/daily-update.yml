@@ -116,6 +116,14 @@ jobs:
           KAKAO_LOCAL_REST_API_KEY: ${{ secrets.KAKAO_LOCAL_REST_API_KEY }}
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
+          INTERPARK_ENRICH_LIMIT: '250'
+          YES24_DETAIL_LIMIT: '160'
+          UMCLASS_DETAIL_LIMIT: '300'
+          MOCHACLASS_DETAIL_LIMIT: '360'
+          MUSEUM_MAX_DETAIL_ITEMS: '220'
+          CULTURE_PORTAL_MAX_API_PAGES: '360'
+          CULTURE_PORTAL_DETAIL_LIMIT: '250'
+          TOURISM_MAX_PAGES: '25'
           VENUE_PLACE_LOOKUP_LIMIT: '30'
           VENUE_PLACE_LOOKUP_DELAY_MS: '250'
         run: |
@@ -184,8 +192,9 @@ jobs:
           fi
 
           if [ ${#critical_failures[@]} -gt 0 ]; then
-            echo "Critical scraper failures detected, but continuing with retained data. Validators will gate commit safety:"
+            echo "Critical scraper failures detected. Aborting before validation and commit so partial critical data is not published:"
             printf '%s\n' "${critical_failures[@]}"
+            exit 1
           fi
 
           exit 0
