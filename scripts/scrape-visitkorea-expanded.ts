@@ -110,6 +110,41 @@ function dedupeImages(images: string[]) {
     });
 }
 
+async function fetchVisitKoreaBodyDetail(cotId: string, refererUrl: string) {
+    try {
+        const body = new URLSearchParams({
+            cmd: 'TOUR_CONTENT_BODY_DETAIL',
+            cotId,
+            locationx: '',
+            locationy: '',
+            stampId: '',
+        });
+        const response = await axios.post(`${baseApiUrl}/call`, body.toString(), {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Referer': refererUrl,
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+            timeout: 10000,
+        });
+
+        const images = Array.isArray(response.data?.body?.image) ? response.data.body.image : [];
+        const publicImages = images
+            .filter((item: any) => item?.imgType === 'Public' && item?.imgPath)
+            .sort((a: any, b: any) => Number(a.orderby || 0) - Number(b.orderby || 0))
+            .map((item: any) => `${baseImageURL}${item.imgPath}`);
+
+        return {
+            image: publicImages[0] || '',
+            synopsisImages: dedupeImages(publicImages).slice(0, 12),
+        };
+    } catch (error: any) {
+        console.warn(`[VisitKorea body WARN] ${cotId}: ${error.message}`);
+        return { image: '', synopsisImages: [] as string[] };
+    }
+}
+
 function extractImageGallery($: cheerio.CheerioAPI, pageUrl: string) {
     const images: string[] = [];
     const html = $.root().html() || '';
@@ -192,6 +227,7 @@ async function fetchDetails(cotId: string) {
         const html = response.data;
         const $ = cheerio.load(html);
         const image = extractRepresentativeImage($);
+        const bodyDetail = await fetchVisitKoreaBodyDetail(cotId, url);
 
         // 1. Improved Introduction Selectors
         let description = clean($('.inr_wrap .inr p, .char_cont p, .detail_cont, #detailinfoview .inr_wrap p').first().text());
@@ -226,14 +262,38 @@ async function fetchDetails(cotId: string) {
         const restrooms = infoList['화장실'] || '';
         const visitKoreaImages = extractImageGallery($, url);
         const officialImages = await fetchOfficialWebsiteGallery(website);
-        const synopsisImages = dedupeImages([image, ...visitKoreaImages, ...officialImages])
-            .filter((galleryImage) => galleryImage !== image)
+        const representativeImage = image || bodyDetail.image;
+        const synopsisImages = dedupeImages([...bodyDetail.synopsisImages, ...visitKoreaImages, ...officialImages])
+            .filter((galleryImage) => galleryImage !== representativeImage)
             .slice(0, 10);
 
         // Case for missing data via Cheerio -> Usually means JS-only rendering
         if (!description && !contact && !operatingHours && !address) {
             console.log(`[DEBUG] No details for ${cotId} via Cheerio. Trying Puppeteer fallback...`);
-            return await fetchDetailsWithPuppeteer(url);
+            const fallback = await fetchDetailsWithPuppeteer(url);
+            return fallback
+                ? {
+                    ...fallback,
+                    image: fallback.image || representativeImage,
+                    synopsisImages,
+                }
+                : {
+                    image: representativeImage,
+                    synopsisImages,
+                    description,
+                    contact,
+                    priceDetail,
+                    operatingHours,
+                    address,
+                    closedDays,
+                    website,
+                    parking,
+                    parkingFee,
+                    status,
+                    ageDetail,
+                    facilities,
+                    restrooms,
+                };
         }
 
         return {
@@ -250,7 +310,7 @@ async function fetchDetails(cotId: string) {
             ageDetail,
             facilities,
             restrooms,
-            image,
+            image: representativeImage,
             synopsisImages
         };
     } catch (error: any) {

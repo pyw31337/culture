@@ -4,9 +4,10 @@ import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
 import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
 import ServiceStatusStrip from './ServiceStatusStrip';
-import DiscoveryContextBar from '@/components/performance/DiscoveryContextBar';
+import FilterChipBar from './FilterChipBar';
 import type { DiscoveryContextDefinition } from '@/lib/discovery';
 import type { DiscoveryContextId } from '@/types';
+import type { DateFilterId, PriceFilterId } from '@/lib/constants';
 
 interface HeaderLocation {
     lat?: number;
@@ -31,6 +32,10 @@ interface ResultsHeaderProps {
     discoveryContexts?: DiscoveryContextDefinition[];
     activeDiscoveryContext?: DiscoveryContextId;
     onDiscoveryContextChange?: (contextId: DiscoveryContextId) => void;
+    selectedDateFilter?: DateFilterId | null;
+    onDateFilterChange?: (next: DateFilterId | null) => void;
+    selectedPriceTier?: PriceFilterId | null;
+    onPriceTierChange?: (next: PriceFilterId | null) => void;
     onResetFilters: () => void;
     onRadiusChange: (val: number) => void;
 }
@@ -52,6 +57,10 @@ export const ResultsHeader = ({
     discoveryContexts,
     activeDiscoveryContext,
     onDiscoveryContextChange,
+    selectedDateFilter,
+    onDateFilterChange,
+    selectedPriceTier,
+    onPriceTierChange,
     onResetFilters,
     onRadiusChange
 }: ResultsHeaderProps) => {
@@ -64,6 +73,10 @@ export const ResultsHeader = ({
         Boolean(onDiscoveryContextChange) &&
         !searchText &&
         searchMode !== 'location';
+    const shouldShowUnifiedFilters =
+        shouldShowDiscoveryContexts &&
+        Boolean(onDateFilterChange) &&
+        Boolean(onPriceTierChange);
     const locationResetButton = isLocationSearch ? (
         <button
             type="button"
@@ -103,72 +116,65 @@ export const ResultsHeader = ({
             <div className="flex flex-col gap-3">
                 <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                     <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                            <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
-                                {(searchMode === 'location' && activeLocation) ? (
-                                    <>
-                                        <MapPin className="text-emerald-500 w-5 h-5" />
-                                        <span className="truncate max-w-[150px] sm:max-w-xs">
-                                            {searchLocation?.name ? <>&apos;{searchLocation.name}&apos;</> : '내 위치'}
-                                        </span>
-                                        <span className="text-base sm:text-xl shrink-0">위치 주변 ({filteredCount})</span>
-                                    </>
-                                ) : searchText ? (
-                                    <>
-                                        {searchMode === 'location' ? (
+                        <div className="flex min-w-0 flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+                            <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+                                <h2 className="text-xl sm:text-2xl font-black text-gray-200 light:text-black flex items-center gap-2">
+                                    {(searchMode === 'location' && activeLocation) ? (
+                                        <>
                                             <MapPin className="text-emerald-500 w-5 h-5" />
-                                        ) : (
-                                            <Search className="text-purple-500 w-5 h-5" />
-                                        )}
-                                        <span className="truncate max-w-[120px] sm:max-w-xs">&apos;{searchText}&apos;</span>
-                                        <span className="text-base sm:text-xl shrink-0">
-                                            {searchMode === 'location' ? '위치 주변' : '키워드 검색'} ({filteredCount})
-                                        </span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <span className="flex items-center gap-2">
-                                            {getGenreIcon(selectedGenre, 28)}
-                                            {selectedGenre === 'all' ? '전체 컨텐츠 목록' : `${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'} 목록`}
-                                        </span>
-                                        <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({filteredCount})</span>
-                                    </>
-                                )}
-                            </h2>
-                            <ServiceStatusStrip
-                                lastUpdated={lastUpdated}
-                                totalItemCount={totalItemCount}
-                                availableGenreCount={availableGenreCount}
-                                qualitySummary={qualitySummary}
-                                sourceHealthSummary={sourceHealthSummary}
-                                className="shrink-0"
-                            />
+                                            <span className="truncate max-w-[150px] sm:max-w-xs">
+                                                {searchLocation?.name ? <>&apos;{searchLocation.name}&apos;</> : '내 위치'}
+                                            </span>
+                                            <span className="text-base sm:text-xl shrink-0">위치 주변 ({filteredCount})</span>
+                                        </>
+                                    ) : searchText ? (
+                                        <>
+                                            {searchMode === 'location' ? (
+                                                <MapPin className="text-emerald-500 w-5 h-5" />
+                                            ) : (
+                                                <Search className="text-purple-500 w-5 h-5" />
+                                            )}
+                                            <span className="truncate max-w-[120px] sm:max-w-xs">&apos;{searchText}&apos;</span>
+                                            <span className="text-base sm:text-xl shrink-0">
+                                                {searchMode === 'location' ? '위치 주변' : '키워드 검색'} ({filteredCount})
+                                            </span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <span className="flex items-center gap-2">
+                                                {getGenreIcon(selectedGenre, 28)}
+                                                {selectedGenre === 'all' ? '전체 컨텐츠 목록' : `${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'} 목록`}
+                                            </span>
+                                            <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({filteredCount})</span>
+                                        </>
+                                    )}
+                                </h2>
+                                <ServiceStatusStrip
+                                    lastUpdated={lastUpdated}
+                                    totalItemCount={totalItemCount}
+                                    availableGenreCount={availableGenreCount}
+                                    qualitySummary={qualitySummary}
+                                    sourceHealthSummary={sourceHealthSummary}
+                                    className="shrink-0"
+                                />
+                            </div>
+                            {shouldShowUnifiedFilters && activeDiscoveryContext && onDiscoveryContextChange && onDateFilterChange && onPriceTierChange && (
+                                <FilterChipBar
+                                    activeDiscoveryContext={activeDiscoveryContext}
+                                    onDiscoveryContextChange={onDiscoveryContextChange}
+                                    selectedDate={selectedDateFilter ?? null}
+                                    onDateChange={onDateFilterChange}
+                                    selectedPrice={selectedPriceTier ?? null}
+                                    onPriceChange={onPriceTierChange}
+                                    className="w-full xl:w-auto xl:max-w-[760px] xl:justify-end"
+                                />
+                            )}
                         </div>
-
-                    {shouldShowDiscoveryContexts && discoveryContexts && activeDiscoveryContext && onDiscoveryContextChange && (
-                        <DiscoveryContextBar
-                            contexts={discoveryContexts}
-                            activeContext={activeDiscoveryContext}
-                            onChange={onDiscoveryContextChange}
-                            className="mt-3 xl:hidden"
-                        />
-                    )}
                     </div>
                     <div className="shrink-0 sm:ml-auto">
                         {locationControls}
                     </div>
                 </div>
-
-                {shouldShowDiscoveryContexts && (
-                    <div className="flex w-full flex-wrap items-center justify-between gap-3 xl:justify-end">
-                        <DiscoveryContextBar
-                            contexts={discoveryContexts!}
-                            activeContext={activeDiscoveryContext!}
-                            onChange={onDiscoveryContextChange!}
-                            className="hidden xl:flex"
-                        />
-                    </div>
-                )}
             </div>
         </div>
     );

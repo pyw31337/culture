@@ -128,6 +128,19 @@ export function parseMinPriceWon(priceStr: string | null | undefined): number | 
         const value = parseInt(match[1].replace(/,/g, ''), 10);
         if (Number.isFinite(value) && (min === null || value < min)) min = value;
     }
+
+    const koreanUnitRe = /(?:(\d+)\s*만)?\s*(?:(\d+)\s*천)?\s*원/g;
+    while ((match = koreanUnitRe.exec(priceStr)) !== null) {
+        if (!match[1] && !match[2]) continue;
+        const value = (parseInt(match[1] || '0', 10) * 10000) + (parseInt(match[2] || '0', 10) * 1000);
+        if (Number.isFinite(value) && value > 0 && (min === null || value < min)) min = value;
+    }
+
+    const labeledNumberRe = /(?:[가-힣A-Z]+(?:석|권)?|[A-Z])\s*(\d{1,3}(?:,\d{3})+|\d{4,})\b/g;
+    while ((match = labeledNumberRe.exec(priceStr)) !== null) {
+        const value = parseInt(match[1].replace(/,/g, ''), 10);
+        if (Number.isFinite(value) && value > 0 && (min === null || value < min)) min = value;
+    }
     return min;
 }
 

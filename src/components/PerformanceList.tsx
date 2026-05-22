@@ -20,7 +20,6 @@ const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
 import ResultsHeader from './performance/list/ResultsHeader';
-import FilterChipBar from './performance/list/FilterChipBar';
 import LikedSections from './performance/list/LikedSections';
 import HeroSection from './performance/HeroSection';
 import PerformanceGrid from './performance/PerformanceGrid';
@@ -641,21 +640,13 @@ export default function PerformanceList({
                         discoveryContexts={DISCOVERY_CONTEXTS}
                         activeDiscoveryContext={discoveryContextId}
                         onDiscoveryContextChange={setDiscoveryContextId}
+                        selectedDateFilter={selectedDateFilter}
+                        onDateFilterChange={handleDateChipChange}
+                        selectedPriceTier={selectedPriceTier}
+                        onPriceTierChange={handlePriceChipChange}
                         onResetFilters={handleResetLocationSearch}
                         onRadiusChange={setRadius}
                     />
-
-                    {/* Quick filter chips (date / price tier). Hidden inside the
-                        likes view since it has its own curated layout. */}
-                    {viewMode !== 'likes-perf' && (
-                        <FilterChipBar
-                            selectedDate={selectedDateFilter}
-                            onDateChange={handleDateChipChange}
-                            selectedPrice={selectedPriceTier}
-                            onPriceChange={handlePriceChipChange}
-                            filteredCount={displayFilteredCount}
-                        />
-                    )}
 
                     {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
                         <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={handleOpenMap} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />

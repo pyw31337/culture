@@ -6,6 +6,7 @@
 import { Performance, Genre } from '@/types';
 import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { getOptimizedUrl, cleanTitle, formatUnifiedDate } from '@/lib/utils';
+import { getSportsTicketBaySummary, getSportsTicketingInfo } from '@/lib/sports-ticketing';
 
 // Genre-specific fallback images
 const _BP = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -175,6 +176,32 @@ const REGION_MAP: Record<string, string> = {
     '강원': 'gangwon', '충북': 'chungbuk', '충남': 'chungnam',
     '전북': 'jeonbuk', '전남': 'jeonnam', '경북': 'gyeongbuk',
     '경남': 'gyeongnam', '제주': 'jeju'
+};
+
+const SPORTS_GENRES = new Set(['baseball', 'basketball', 'volleyball', 'soccer', 'handball']);
+
+const SPORT_LABELS: Record<string, string> = {
+    baseball: '야구',
+    basketball: '농구',
+    volleyball: '배구',
+    soccer: '축구',
+    handball: '핸드볼',
+};
+
+const SPORT_LEAGUE_LABELS: Record<string, string> = {
+    baseball: 'KBO',
+    basketball: 'KBL',
+    volleyball: 'V-리그',
+    soccer: 'K리그',
+    handball: '핸드볼 H리그',
+};
+
+const SPORT_RECORD_URLS: Record<string, string> = {
+    baseball: 'https://www.koreabaseball.com/Record/TeamRank/TeamRank.aspx',
+    basketball: 'https://www.kbl.or.kr/team/team-rank',
+    volleyball: 'https://www.kovo.co.kr/game/v-league/11210_team-ranking.asp',
+    soccer: 'https://www.kleague.com/record.do',
+    handball: 'https://www.handballkorea.com/',
 };
 
 export interface RawPerformance {
@@ -364,6 +391,124 @@ function trimWebsiteForDisplay(value?: string) {
     return String(value || '').trim().replace(/\/+$/, '');
 }
 
+function isSportsGenre(genre?: string) {
+    return SPORTS_GENRES.has(genre || '');
+}
+
+function looksUnknownPrice(value?: string) {
+    const text = compactDetailText(value);
+    return !text || /정보\s*없음|미정|문의|예매처\s*확인|가격\s*확인/i.test(text);
+}
+
+function compactUrlLabel(value?: string | null) {
+    return String(value || '').trim().replace(/^https?:\/\//i, '').replace(/\/+$/, '');
+}
+
+function buildSportsDescription(raw: RawPerformance, genre: string, venue: string) {
+    const sportLabel = SPORT_LABELS[genre] || '스포츠';
+    const leagueLabel = raw.league || SPORT_LEAGUE_LABELS[genre] || sportLabel;
+    const homeTeam = compactDetailText(raw.homeTeam);
+    const awayTeam = compactDetailText(raw.awayTeam);
+    const matchup = homeTeam && awayTeam ? `${homeTeam} vs ${awayTeam}` : cleanTitle(raw.title || '');
+    const officialSchedule = raw.link || '';
+    const recordUrl = SPORT_RECORD_URLS[genre] || '';
+
+    return [
+        '[관람 포인트]',
+        `- ${leagueLabel} ${sportLabel} 일정 중 ${matchup} 매치업입니다.`,
+        venue ? `- 경기장은 ${venue}입니다. 좌석 구역, 원정석 운영, 우천/취소 규정은 예매처 공지를 함께 확인하는 편이 안전합니다.` : '',
+        '- 실제 티켓 오픈 시간, 잔여석, 취소표, 현장 운영은 홈팀 또는 공식 예매처 기준으로 바뀔 수 있습니다.',
+        '',
+        '[확인 링크]',
+        officialSchedule ? `- 공식 일정: ${compactUrlLabel(officialSchedule)}` : '',
+        recordUrl ? `- 리그 기록/순위: ${compactUrlLabel(recordUrl)}` : '',
+    ].filter(Boolean).join('\n');
+}
+
+function buildSportsBookingNotice(raw: RawPerformance, genre: string, currentNotice?: string) {
+    const baseNotice = formatReadableParagraphBlock(currentNotice);
+    const tempPerformance = {
+        genre,
+        title: cleanTitle(raw.title || ''),
+        link: raw.link || raw.website || '',
+        website: raw.website || '',
+        source: '',
+        date: raw.date || '',
+        homeTeam: raw.homeTeam,
+        awayTeam: raw.awayTeam,
+        venue: raw.venue || raw.place || '',
+    };
+    const ticketingInfo = getSportsTicketingInfo(tempPerformance);
+    const ticketBay = getSportsTicketBaySummary(tempPerformance);
+    const lines = [
+        '[예매 참고]',
+        ticketingInfo?.bookingProvider && ticketingInfo.bookingUrl
+            ? `- 공식 예매처: ${ticketingInfo.bookingProvider} (${compactUrlLabel(ticketingInfo.bookingUrl)})`
+            : '- 공식 예매처와 홈팀 공지를 우선 확인하세요.',
+        ticketingInfo?.officialLabel && ticketingInfo.officialUrl
+            ? `- 공식 사이트: ${ticketingInfo.officialLabel} (${compactUrlLabel(ticketingInfo.officialUrl)})`
+            : '',
+        ticketBay
+            ? `- ${ticketBay.sourceLabel}: ${ticketBay.label} · ${ticketBay.detail}`
+            : '- 가격이 변동되는 스포츠 경기는 좌석 등급과 예매 오픈 시점에 따라 실제 결제 금액이 달라질 수 있습니다.',
+    ].filter(Boolean).join('\n');
+
+    if (!baseNotice) return lines;
+    if (baseNotice.includes('[예매 참고]')) return baseNotice;
+    return `${baseNotice}\n\n${lines}`;
+}
+
+function buildSportsPriceDetail(raw: RawPerformance, genre: string, currentPriceDetail?: string) {
+    const base = formatReadableSectionBlock(currentPriceDetail);
+    const ticketBay = getSportsTicketBaySummary({
+        genre,
+        date: raw.date || '',
+        homeTeam: raw.homeTeam,
+        awayTeam: raw.awayTeam,
+        venue: raw.venue || raw.place || '',
+    });
+
+    if (!ticketBay) return base;
+
+    const lines = [
+        '티켓베이 참고가',
+        `최저 참고가: ${ticketBay.label.replace(/^티켓베이\s*참고\s*/u, '')}`,
+        ticketBay.detail,
+    ].join('\n');
+
+    return base ? `${base}\n\n${lines}` : lines;
+}
+
+function isLowValueDescription(value?: string) {
+    const text = compactDetailText(value);
+    if (!text) return false;
+    return /^\[[^\]]+\]\s*장소\s*:/u.test(text)
+        || /^서울시\s*문화분야\s*종합\s*정보\s*제공\s*사이트/u.test(text);
+}
+
+function pickBestImageFromRaw(raw: RawPerformance, genre: string) {
+    const candidates = [
+        raw.image,
+        raw.poster,
+        raw.posterUrl,
+        raw.thumbnail,
+        raw.thumbnailUrl,
+        raw.ogImage,
+        raw.coverImage,
+        raw.mainImage,
+        raw.photoUrl,
+        raw.imageUrl,
+        Array.isArray(raw.images) ? raw.images[0] : undefined,
+        Array.isArray(raw.synopsisImages) ? raw.synopsisImages[0] : undefined,
+        Array.isArray(raw.stillImages) ? raw.stillImages[0] : undefined,
+    ]
+        .map((value) => typeof value === 'string' ? value.trim() : '')
+        .filter(Boolean);
+
+    const fallback = GENRE_FALLBACKS[genre] || GENRE_FALLBACKS.default;
+    return candidates.find((candidate) => !/정보\s*없음|placeholder|no[-_ ]?image|noimage/i.test(candidate)) || fallback;
+}
+
 function looksLikeKoreanAddress(value?: string) {
     const text = compactDetailText(value);
     if (!text) return false;
@@ -401,12 +546,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     // 1. Source-specific field normalization
     let title = raw.title || '';
     let rawVenue = raw.venue || raw.place || raw.title || '';
-    let image = raw.image || raw.poster || raw.posterUrl || '';
     let price = raw.price || raw.cost || '';
     let date = raw.date || '';
     let performanceTime = raw.time || raw.performanceTime || '';
     let region = raw.region || '';
     let genre = (raw.genre as Genre) || 'activity';
+    let image = pickBestImageFromRaw(raw, genre);
     let address = raw.address || '';
     const addressLikeVenue = splitAddressLikeVenue(rawVenue, title);
     if (addressLikeVenue) {
@@ -549,6 +694,23 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         }
     }
 
+    if (!image || image === '정보 없음' || /placeholder|no[-_ ]?image|noimage/i.test(image)) {
+        image = pickBestImageFromRaw(raw, genre);
+    }
+
+    if (isSportsGenre(genre)) {
+        const descriptionText = compactDetailText(description);
+        const shouldReplaceDescription = !descriptionText
+            || /경기입니다|일정은\s*20\d{2}|위치는\s*|기준입니다/i.test(descriptionText);
+        if (shouldReplaceDescription) {
+            description = buildSportsDescription(raw, genre, venue);
+        }
+        bookingNotice = buildSportsBookingNotice(raw, genre, bookingNotice);
+        if (looksUnknownPrice(price)) {
+            price = '';
+        }
+        priceDetail = buildSportsPriceDetail(raw, genre, priceDetail);
+    }
 
     // 3. Region Mapping
     const regionIds = new Set(Object.values(REGION_MAP));
@@ -600,15 +762,18 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         discount = undefined;
     }
 
-    if (title.includes('외옹치')) {
-        console.log(`[DEBUG-TRANSFORM] 외옹치 raw.contact: ${raw.contact}, website: ${raw.website}`);
-    }
-
     operatingHours = formatReadableSchedule(operatingHours);
     performanceTime = formatReadableSchedule(performanceTime);
+    if (compactDetailText(performanceTime) && compactDetailText(performanceTime) === compactDetailText(operatingHours)) {
+        // Avoid rendering the same time information twice in detail views.
+        performanceTime = '';
+    }
     closedDays = formatReadableSchedule(closedDays);
     priceDetail = formatReadableSectionBlock(priceDetail);
     feesAndPrograms = formatReadableSectionBlock(feesAndPrograms);
+    if (isLowValueDescription(description)) {
+        description = '';
+    }
     description = formatReadableParagraphBlock(description);
     synopsis = formatReadableParagraphBlock(synopsis);
     bookingNotice = formatReadableParagraphBlock(bookingNotice);

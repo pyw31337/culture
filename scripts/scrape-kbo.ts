@@ -64,6 +64,11 @@ function classifyRegion(venue: string): string {
     if (v.includes('잠실') || v.includes('고척') || v.includes('서울')) return 'seoul';
     if (v.includes('수원') || v.includes('이천') || v.includes('고양')) return 'gyeonggi';
     if (v.includes('인천') || v.includes('문학') || v.includes('강화')) return 'incheon';
+    if (v.includes('광주')) return 'gwangju';
+    if (v.includes('대구') || v.includes('경산') || v.includes('포항')) return 'daegu';
+    if (v.includes('대전') || v.includes('청주') || v.includes('서산')) return 'daejeon';
+    if (v.includes('부산') || v.includes('사직') || v.includes('울산') || v.includes('마산') || v.includes('창원')) return 'busan';
+    if (v.includes('함평')) return 'jeonnam';
     return 'etc';
 }
 
@@ -389,8 +394,9 @@ async function scrapeKBO() {
                     let awayTeamLogo = '';
 
                     if (parts.length === 2) {
-                        homeTeam = parts[0].trim();
-                        awayTeam = parts[1].trim();
+                        // KBO schedule rows are usually stored as "away vs home".
+                        awayTeam = parts[0].trim();
+                        homeTeam = parts[1].trim();
 
                         homeTeamLogo = TEAM_LOGOS[homeTeam] || '';
                         awayTeamLogo = TEAM_LOGOS[awayTeam] || '';

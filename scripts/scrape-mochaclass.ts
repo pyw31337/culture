@@ -25,16 +25,24 @@ interface MochaClassItem {
     description?: string;
     priceDetail?: string;
     feesAndPrograms?: string;
+    synopsisImages?: string[];
+    stillImages?: string[];
+    backupPoster?: string;
     targetAudience?: string;
     website?: string;
     sourceUpdatedAt?: string;
     lastEnriched?: string;
+    keywords?: string[];
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/mochaclass.json');
 const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
 const DETAIL_ENRICH_LIMIT = Number(process.env.MOCHACLASS_DETAIL_LIMIT || 360);
 const LIST_PAGE_LIMIT = Number(process.env.MOCHACLASS_MAX_PAGES || 100);
+
+async function preparePageForEvaluate(page: any) {
+    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
+}
 
 // Simple progress bar
 class ProgressBar {
@@ -100,6 +108,51 @@ function buildFallbackItem(item: { link: string, title: string, image: string, p
     };
 }
 
+function compactText(text?: string) {
+    return (text || '').replace(/\s+/g, ' ').trim();
+}
+
+function isGenericMochaDescription(text?: string) {
+    const compact = compactText(text);
+    if (compact.length < 40) return true;
+    const genericFragments = [
+        '모카클래스는',
+        '원데이클래스 플랫폼',
+        '단체 클래스',
+        '단체 수업 신청',
+        '클래스 등록',
+        '주변의 다양한 클래스를',
+        '원데이 클래스 평균',
+        '기업교육',
+        '취미 클래스',
+        '클래스 예약',
+        'B2B',
+    ];
+    return genericFragments.some((fragment) => compact.includes(fragment));
+}
+
+function isUsefulMochaImage(url?: string) {
+    return Boolean(url)
+        && /^https?:\/\//i.test(url || '')
+        && !/logo|icon|avatar|profile|blank|sprite|kakao|naver|static\/media\/main_|without_circle|mochaclass\.com\/static\/media|\.svg(?:\?|$)/i.test(url || '');
+}
+
+function buildMochaDescription(title: string, detailText?: string, metaDescription?: string, keywords: string[] = []) {
+    const detail = compactText(detailText);
+    const meta = isGenericMochaDescription(metaDescription) ? '' : compactText(metaDescription);
+    const keywordLine = keywords.length > 0 ? `키워드: ${keywords.slice(0, 8).join(', ')}` : '';
+    const merged = [detail, meta, keywordLine].filter(Boolean).join('\n\n').trim();
+    if (merged.length >= 80) return merged.slice(0, 1400);
+
+    const titleWithoutRegion = title.replace(/^\[[^\]]+\]\s*/, '').trim();
+    return [
+        `${titleWithoutRegion} 클래스입니다.`,
+        detail || meta || '',
+        keywordLine,
+        '운영 일정과 세부 구성은 공식 예약 페이지 기준으로 확인됩니다.',
+    ].filter(Boolean).join('\n\n').slice(0, 900);
+}
+
 async function scrapeMochaClass() {
     console.log(`Starting MochaClass Scraper...`);
 
@@ -127,7 +180,7 @@ async function scrapeMochaClass() {
     }
 
     const page = await browser.newPage();
-    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
+    await preparePageForEvaluate(page);
     await page.setViewport({ width: 1280, height: 800 });
 
     // Header settings
@@ -270,7 +323,14 @@ async function scrapeMochaClass() {
 
     for (const item of pendingItems) {
         const existing = existingMap.get(item.link);
-        const hasRichDetail = Boolean(existing?.description && existing?.priceDetail && existing?.feesAndPrograms);
+        const hasDetailImages = Array.isArray(existing?.synopsisImages) && existing.synopsisImages.some(isUsefulMochaImage);
+        const hasRichDetail = Boolean(
+            existing?.description &&
+            !isGenericMochaDescription(existing.description) &&
+            existing?.priceDetail &&
+            existing?.feesAndPrograms &&
+            hasDetailImages
+        );
         if (existing && isRecentlyEnriched(existing) && hasRichDetail) {
             done.push({
                 ...existing,
@@ -293,18 +353,39 @@ async function scrapeMochaClass() {
     if (enrichQueue.length > 0) {
         const progressBar = new ProgressBar(enrichQueue.length);
         let processedCount = 0;
-        const CONCURRENCY = 3; // Reduced from 10 to stabilize system load
+        const CONCURRENCY = Number(process.env.MOCHACLASS_CONCURRENCY || 8);
+        const CHUNK_DELAY_MS = Number(process.env.MOCHACLASS_CHUNK_DELAY_MS || 250);
 
         for (let i = 0; i < enrichQueue.length; i += CONCURRENCY) {
             const chunk = enrichQueue.slice(i, i + CONCURRENCY);
             const promises = chunk.map(async (item) => {
                 const p = await browser.newPage();
                 try {
-                    await p.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
+                    await preparePageForEvaluate(p);
                     await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
-                    await p.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
+                    await p.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => {});
+                    await p.waitForSelector('img[src], h1, h2, h3, p', { timeout: 10000 }).catch(() => {});
+                    await new Promise(r => setTimeout(r, 1200));
 
                     const detailData = await p.evaluate(async () => {
+                        const compact = (value?: string | null) => value?.replace(/\s+/g, ' ').trim() || '';
+                        const normalizeImageUrl = (value?: string | null) => {
+                            const raw = compact(value)
+                                .replace(/^url\(["']?/i, '')
+                                .replace(/["']?\)$/i, '')
+                                .replace(/&amp;/g, '&');
+                            if (!raw) return '';
+                            try {
+                                return new URL(raw, location.origin).href;
+                            } catch {
+                                return '';
+                            }
+                        };
+                        const isVisible = (el: Element) => {
+                            const style = window.getComputedStyle(el);
+                            const rect = el.getBoundingClientRect();
+                            return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+                        };
                         const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, p.MuiTypography-root, li'));
                         
                         // Extract summary location from header (e.g. "부산 · 금정구")
@@ -375,13 +456,69 @@ async function scrapeMochaClass() {
                             .filter(Boolean)
                             .slice(0, 12) || [];
 
+                        const imageUrls = Array.from(new Set([
+                            ...Array.from(document.querySelectorAll('img')).flatMap((img) => [
+                                (img as HTMLImageElement).currentSrc,
+                                img.getAttribute('src'),
+                                img.getAttribute('data-src'),
+                                img.getAttribute('data-original'),
+                            ].map(normalizeImageUrl)),
+                            ...Array.from(document.querySelectorAll<HTMLElement>('*')).map((el) => {
+                                const background = window.getComputedStyle(el).backgroundImage;
+                                const match = background.match(/url\(["']?(.+?)["']?\)/i);
+                                return normalizeImageUrl(match?.[1]);
+                            }),
+                        ]))
+                            .filter((url) => /^https?:\/\//i.test(url))
+                            .filter((url) => /(firebasestorage|FCMImages|mocha|class|upload|image|cdn)/i.test(url))
+                            .filter((url) => !/logo|icon|avatar|profile|blank|sprite|kakao|naver|static\/media\/main_|without_circle|mochaclass\.com\/static\/media|\.svg(?:\?|$)/i.test(url))
+                            .slice(0, 10);
+
+                        const root = (document.querySelector('main') || document.querySelector('#root') || document.body) as HTMLElement;
+                        const genericLineFragments = [
+                            '로그인',
+                            '회원가입',
+                            '마이페이지',
+                            '장바구니',
+                            '개인정보',
+                            '이용약관',
+                            '고객센터',
+                            '모카클래스는',
+                            '기업교육',
+                            '단체 클래스',
+                            '단체 수업 신청',
+                            '클래스 등록',
+                            '주변의 다양한 클래스를',
+                            '원데이 클래스 평균',
+                            'B2B',
+                            'TOP',
+                            '카카오',
+                            '네이버',
+                            '공유하기',
+                        ];
+                        const detailLines = Array.from(new Set((root.innerText || '')
+                            .split(/\n+/)
+                            .map((line) => compact(line))
+                            .filter((line) => line.length >= 6 && line.length <= 220)
+                            .filter((line) => !genericLineFragments.some((fragment) => line.includes(fragment)))
+                            .filter((line) => !/^(예약|문의|상담|찜하기|공유|전체|추천순|거리순)$/u.test(line))
+                            .filter((line) => !/^[\d,]+원$/.test(line))
+                        ));
+                        const headingLines = Array.from(document.querySelectorAll('h1, h2, h3, h4'))
+                            .filter(isVisible)
+                            .map((el) => compact(el.textContent))
+                            .filter((line) => line.length >= 4 && line.length <= 120);
+                        const detailText = Array.from(new Set([...headingLines, ...detailLines])).slice(0, 32).join('\n');
+
                         return {
                             rawAddress: rawAddress,
                             time: timeEl ? (timeEl as HTMLElement).innerText?.trim() || '' : '',
                             detailPrice: priceEl ? (priceEl as HTMLElement).innerText?.trim() || '' : '',
                             metaDescription,
                             canonical,
-                            keywords
+                            keywords,
+                            images: imageUrls,
+                            detailText
                         };
                     });
 
@@ -453,15 +590,17 @@ async function scrapeMochaClass() {
 
                     // Stable ID
                     const id = `class_${slugify(item.title)}`;
+                    const detailImages = Array.isArray(detailData.images) ? detailData.images.filter(isUsefulMochaImage) : [];
+                    const description = buildMochaDescription(item.title, detailData.detailText, detailData.metaDescription, detailData.keywords);
 
                     return {
                         id,
                         title: item.title,
-                        image: item.image,
+                        image: detailImages[0] || item.image,
                         date: 'OPEN RUN',
                         venue: venue,
                         link: item.link,
-                        region: address.includes('서울') ? 'seoul' : 'gyeonggi',
+                        region: mappedRegion || (address.includes('서울') ? 'seoul' : 'gyeonggi'),
                         genre: 'class',
                         price: detailPrice || item.price,
                         originalPrice: item.originalPrice,
@@ -470,15 +609,19 @@ async function scrapeMochaClass() {
                         ageLimit: '전체',
                         casting: '',
                         address: address,
-                        description: detailData.metaDescription,
+                        description,
                         priceDetail: [
                             item.originalPrice ? `정상가: ${item.originalPrice}` : '',
                             (detailPrice || item.price) ? `판매가: ${detailPrice || item.price}` : '',
                         ].filter(Boolean).join('\n'),
                         feesAndPrograms: [
+                            description ? `클래스 안내\n${description}` : '',
                             detailData.time ? `운영/수업 안내\n${detailData.time}` : '',
                             address ? `장소: ${address}` : '',
                         ].filter(Boolean).join('\n'),
+                        synopsisImages: detailImages.slice(0, 8),
+                        stillImages: detailImages.slice(1, 5),
+                        backupPoster: item.image,
                         targetAudience: '전체',
                         website: detailData.canonical,
                         sourceUpdatedAt: new Date().toISOString(),
@@ -501,7 +644,7 @@ async function scrapeMochaClass() {
             if (i % 20 === 0) saveData(allItems);
             
             // Small stabilizer delay between chunks
-            await new Promise(r => setTimeout(r, 1000));
+            await new Promise(r => setTimeout(r, CHUNK_DELAY_MS));
         }
         progressBar.finish();
     }

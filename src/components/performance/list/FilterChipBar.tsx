@@ -1,112 +1,120 @@
 'use client';
 
 import { clsx } from 'clsx';
-import { Calendar, Tag, X } from 'lucide-react';
+import type { DiscoveryContextId } from '@/types';
 import { DATE_FILTERS, PRICE_FILTERS, type DateFilterId, type PriceFilterId } from '@/lib/constants';
 
 interface FilterChipBarProps {
+    activeDiscoveryContext: DiscoveryContextId;
+    onDiscoveryContextChange: (next: DiscoveryContextId) => void;
     selectedDate: DateFilterId | null;
     onDateChange: (next: DateFilterId | null) => void;
     selectedPrice: PriceFilterId | null;
     onPriceChange: (next: PriceFilterId | null) => void;
-    /**
-     * Total result count after all filters have been applied - shown next to
-     * the bar so the user can see how aggressive their current chip selection
-     * is. Hidden when there's nothing meaningful to show.
-     */
-    filteredCount?: number;
+    className?: string;
 }
 
-/**
- * Quick filter chips that sit above the results grid. Each chip toggles on /
- * off - clicking an active chip clears it. Designed to be additive with the
- * existing genre / region selectors above (handled by other components).
- *
- * The bar is mounted in PerformanceList right after ResultsHeader.
- */
+type UnifiedFilterChip =
+    | { kind: 'all'; id: 'all'; label: string }
+    | { kind: 'date'; id: DateFilterId; label: string }
+    | { kind: 'context'; id: DiscoveryContextId; label: string }
+    | { kind: 'price'; id: PriceFilterId; label: string };
+
+const contextChips: UnifiedFilterChip[] = [
+    { kind: 'context', id: 'indoor', label: '실내' },
+    { kind: 'context', id: 'with_kids', label: '아이와' },
+    { kind: 'context', id: 'date_night', label: '데이트' },
+];
+
+const endingSoonChip: UnifiedFilterChip = { kind: 'context', id: 'ending_soon', label: '곧 종료' };
+
+const unifiedChips: UnifiedFilterChip[] = [
+    { kind: 'all', id: 'all', label: '전체' },
+    ...DATE_FILTERS.map((filter) => ({ kind: 'date' as const, id: filter.id, label: filter.label })),
+    ...contextChips,
+    ...PRICE_FILTERS.filter((filter) => filter.id !== 'under-100k').map((filter) => ({
+        kind: 'price' as const,
+        id: filter.id,
+        label: filter.label,
+    })),
+    endingSoonChip,
+];
+
 export default function FilterChipBar({
+    activeDiscoveryContext,
+    onDiscoveryContextChange,
     selectedDate,
     onDateChange,
     selectedPrice,
     onPriceChange,
-    filteredCount,
+    className,
 }: FilterChipBarProps) {
-    const hasActive = selectedDate !== null || selectedPrice !== null;
+    const clearAll = () => {
+        onDiscoveryContextChange('all');
+        onDateChange(null);
+        onPriceChange(null);
+    };
+
+    const handleChipClick = (chip: UnifiedFilterChip) => {
+        if (chip.kind === 'all') {
+            clearAll();
+            return;
+        }
+
+        if (chip.kind === 'date') {
+            onDiscoveryContextChange('all');
+            onPriceChange(null);
+            onDateChange(selectedDate === chip.id ? null : chip.id);
+            return;
+        }
+
+        if (chip.kind === 'price') {
+            onDiscoveryContextChange('all');
+            onDateChange(null);
+            onPriceChange(selectedPrice === chip.id ? null : chip.id);
+            return;
+        }
+
+        onDateChange(null);
+        onPriceChange(null);
+        onDiscoveryContextChange(activeDiscoveryContext === chip.id ? 'all' : chip.id);
+    };
+
+    const isChipActive = (chip: UnifiedFilterChip) => {
+        if (chip.kind === 'all') {
+            return activeDiscoveryContext === 'all' && selectedDate === null && selectedPrice === null;
+        }
+        if (chip.kind === 'date') return selectedDate === chip.id;
+        if (chip.kind === 'price') return selectedPrice === chip.id;
+        return activeDiscoveryContext === chip.id;
+    };
 
     return (
-        <div className="mt-3 mb-4 -mx-1">
-            <div className="flex flex-wrap items-center gap-2 px-1">
-                {/* Date chips */}
-                <div className="inline-flex items-center gap-1.5 mr-2">
-                    <Calendar className="w-3.5 h-3.5 text-gray-400 light:text-gray-500" aria-hidden="true" />
-                    <span className="text-[11px] font-bold text-gray-400 light:text-gray-500">언제</span>
-                </div>
-                {DATE_FILTERS.map((opt) => {
-                    const active = selectedDate === opt.id;
-                    return (
-                        <button
-                            key={opt.id}
-                            type="button"
-                            aria-pressed={active}
-                            onClick={() => onDateChange(active ? null : opt.id)}
-                            className={clsx(
-                                'inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-bold transition-colors border',
-                                active
-                                    ? 'bg-purple-500 text-white border-purple-400 shadow shadow-purple-500/20'
-                                    : 'bg-white/5 text-gray-200 border-white/10 hover:bg-white/10 light:bg-gray-100 light:text-gray-700 light:border-gray-200 light:hover:bg-gray-200'
-                            )}
-                        >
-                            {opt.label}
-                        </button>
-                    );
-                })}
-
-                {/* Separator */}
-                <span className="hidden sm:inline-block w-px h-5 bg-white/10 light:bg-gray-200 mx-1" aria-hidden="true" />
-
-                {/* Price chips */}
-                <div className="inline-flex items-center gap-1.5 mr-2 mt-2 sm:mt-0">
-                    <Tag className="w-3.5 h-3.5 text-gray-400 light:text-gray-500" aria-hidden="true" />
-                    <span className="text-[11px] font-bold text-gray-400 light:text-gray-500">가격</span>
-                </div>
-                {PRICE_FILTERS.map((opt) => {
-                    const active = selectedPrice === opt.id;
-                    return (
-                        <button
-                            key={opt.id}
-                            type="button"
-                            aria-pressed={active}
-                            onClick={() => onPriceChange(active ? null : opt.id)}
-                            className={clsx(
-                                'inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-bold transition-colors border',
-                                active
-                                    ? 'bg-emerald-500 text-white border-emerald-400 shadow shadow-emerald-500/20'
-                                    : 'bg-white/5 text-gray-200 border-white/10 hover:bg-white/10 light:bg-gray-100 light:text-gray-700 light:border-gray-200 light:hover:bg-gray-200'
-                            )}
-                        >
-                            {opt.label}
-                        </button>
-                    );
-                })}
-
-                {/* Clear-all + active count summary */}
-                {hasActive && (
+        <div
+            className={clsx(
+                'flex max-w-full flex-nowrap items-center gap-2 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden',
+                className
+            )}
+        >
+            {unifiedChips.map((chip) => {
+                const active = isChipActive(chip);
+                return (
                     <button
+                        key={`${chip.kind}-${chip.id}`}
                         type="button"
-                        onClick={() => {
-                            onDateChange(null);
-                            onPriceChange(null);
-                        }}
-                        className="ml-auto inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-bold text-gray-300 hover:text-white light:text-gray-500 light:hover:text-gray-900 transition-colors"
-                    >
-                        <X className="w-3.5 h-3.5" />
-                        필터 초기화
-                        {typeof filteredCount === 'number' && (
-                            <span className="ml-1 opacity-70">· {filteredCount.toLocaleString('ko-KR')}건</span>
+                        aria-pressed={active}
+                        onClick={() => handleChipClick(chip)}
+                        className={clsx(
+                            'inline-flex shrink-0 items-center rounded-full border px-3.5 py-1.5 text-[11px] font-extrabold transition sm:text-xs',
+                            active
+                                ? 'border-slate-950 bg-slate-950 text-white shadow-lg shadow-slate-900/10 dark:border-white dark:bg-white dark:text-slate-950'
+                                : 'border-slate-200 bg-white/90 text-slate-600 hover:border-sky-300 hover:text-sky-700 dark:border-white/10 dark:bg-white/7 dark:text-slate-200 dark:hover:border-sky-300/40 dark:hover:text-white'
                         )}
+                    >
+                        {chip.label}
                     </button>
-                )}
-            </div>
+                );
+            })}
         </div>
     );
 }

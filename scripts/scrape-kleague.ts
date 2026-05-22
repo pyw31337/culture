@@ -8,6 +8,8 @@ import path from 'path';
  */
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kleague.json');
+const POSTER_DIR = path.resolve(process.cwd(), 'public/images/posters/kleague');
+const PUBLIC_POSTER_BASE = '/images/posters/kleague';
 const API_URL = 'https://www.kleague.com/getScheduleList.do';
 const YEAR = '2026';
 
@@ -43,20 +45,114 @@ const TEAM_MAP: Record<string, { id: string, name: string }> = {
     '용인': { id: 'K42', name: '용인 미르' }
 };
 
-function getLogoUrl(teamName: string) {
-    for (const [key, val] of Object.entries(TEAM_MAP)) {
-        if (teamName.includes(key)) {
-            return `https://www.kleague.com/assets/images/emblem/emblem_${val.id}.png`;
-        }
-    }
-    return '';
-}
-
 function slugify(text: string): string {
     return text
         .replace(/[^a-zA-Z0-9가-힣]/g, '_')
         .replace(/_+/g, '_')
         .replace(/^_|_$/g, '');
+}
+
+function getTeamEntry(teamName: string) {
+    return Object.entries(TEAM_MAP)
+        .sort(([a], [b]) => b.length - a.length)
+        .find(([key]) => teamName.includes(key))?.[1];
+}
+
+function getLogoUrl(teamName: string) {
+    const team = getTeamEntry(teamName);
+    return team ? `https://www.kleague.com/assets/images/emblem/emblem_${team.id}.png` : '';
+}
+
+function escapeXml(value: string) {
+    return value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function hasHangulFinalConsonant(value: string) {
+    const char = value.trim().slice(-1);
+    const code = char.charCodeAt(0) - 0xac00;
+    return code >= 0 && code <= 11171 && code % 28 !== 0;
+}
+
+function pairParticle(value: string) {
+    return hasHangulFinalConsonant(value) ? '과' : '와';
+}
+
+function buildMatchDescription(match: {
+    leagueLabel: string;
+    homeTeam: string;
+    awayTeam: string;
+    date: string;
+    venue: string;
+}) {
+    return [
+        `${match.leagueLabel} 공식 일정 기준 경기입니다.`,
+        `홈 ${match.homeTeam}${pairParticle(match.homeTeam)} 원정 ${match.awayTeam}의 매치업이며, 킥오프는 ${match.date}로 예정되어 있습니다.`,
+        match.venue ? `경기장은 ${match.venue}입니다.` : '',
+        '예매 가능 여부와 좌석/가격은 K League 공식 일정 및 각 구단 예매 채널을 기준으로 확인하세요.',
+    ].filter(Boolean).join('\n');
+}
+
+function ensureMatchPoster(details: {
+    id: string;
+    leagueLabel: string;
+    homeTeam: string;
+    awayTeam: string;
+    date: string;
+    venue: string;
+    homeTeamLogo: string;
+    awayTeamLogo: string;
+}) {
+    fs.mkdirSync(POSTER_DIR, { recursive: true });
+    const fileName = `${slugify(details.id)}.svg`;
+    const absolutePath = path.join(POSTER_DIR, fileName);
+    const publicPath = `${PUBLIC_POSTER_BASE}/${fileName}`;
+    const homeLogo = details.homeTeamLogo ? `<image href="${escapeXml(details.homeTeamLogo)}" x="130" y="520" width="280" height="280" preserveAspectRatio="xMidYMid meet" />` : '';
+    const awayLogo = details.awayTeamLogo ? `<image href="${escapeXml(details.awayTeamLogo)}" x="790" y="520" width="280" height="280" preserveAspectRatio="xMidYMid meet" />` : '';
+    const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="48%" stop-color="#12365d"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <radialGradient id="light" cx="50%" cy="34%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+  <rect width="1200" height="1600" fill="url(#light)"/>
+  <path d="M80 1170 C260 1080 410 1280 590 1180 C775 1078 930 1205 1120 1110 L1120 1600 L80 1600 Z" fill="#ffffff" opacity="0.08"/>
+  <rect x="90" y="96" width="1020" height="1408" rx="46" fill="#ffffff" opacity="0.1" stroke="#ffffff" stroke-opacity="0.24"/>
+  <text x="600" y="210" text-anchor="middle" fill="#d7fff7" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" letter-spacing="3">${escapeXml(details.leagueLabel.toUpperCase())}</text>
+  <text x="600" y="308" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">${escapeXml(details.date)}</text>
+  <g filter="url(#shadow)">
+    <circle cx="270" cy="660" r="180" fill="#ffffff" opacity="0.94"/>
+    <circle cx="930" cy="660" r="180" fill="#ffffff" opacity="0.94"/>
+    ${homeLogo}
+    ${awayLogo}
+  </g>
+  <text x="600" y="704" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="900">VS</text>
+  <text x="270" y="938" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900">${escapeXml(details.homeTeam)}</text>
+  <text x="930" y="938" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900">${escapeXml(details.awayTeam)}</text>
+  <rect x="170" y="1060" width="860" height="150" rx="24" fill="#06111f" opacity="0.52"/>
+  <text x="600" y="1132" text-anchor="middle" fill="#e6fffb" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800">${escapeXml(details.venue || 'K League Stadium')}</text>
+  <text x="600" y="1192" text-anchor="middle" fill="#bdeee7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">OFFICIAL SCHEDULE MATCH CARD</text>
+  <text x="600" y="1410" text-anchor="middle" fill="#ffffff" opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="28">K League schedule data</text>
+</svg>
+`;
+    if (!fs.existsSync(absolutePath) || process.env.KLEAGUE_REBUILD_POSTERS === '1') {
+        fs.writeFileSync(absolutePath, svg);
+    }
+    return publicPath;
 }
 
 async function scrapeKLeague() {
@@ -104,21 +200,47 @@ async function scrapeKLeague() {
 
                         const title = `${homeTeam} vs ${awayTeam}`;
                         const id = `kleague_${dateRaw}_${league}_${slugify(title)}`;
+                        const leagueLabel = league === '1' ? 'K League 1' : 'K League 2';
+                        const date = `${dateStr} ${timeStr}`;
+                        const homeTeamLogo = getLogoUrl(homeTeam);
+                        const awayTeamLogo = getLogoUrl(awayTeam);
+                        const image = ensureMatchPoster({
+                            id,
+                            leagueLabel,
+                            homeTeam,
+                            awayTeam,
+                            date,
+                            venue: stadium,
+                            homeTeamLogo,
+                            awayTeamLogo,
+                        });
+                        const description = buildMatchDescription({
+                            leagueLabel,
+                            homeTeam,
+                            awayTeam,
+                            date,
+                            venue: stadium,
+                        });
 
                         allMatches.push({
                             id,
                             title,
-                            image: '/images/soccer_poster.png',
-                            date: `${dateStr} ${timeStr}`,
+                            image,
+                            backupPoster: '/images/soccer_poster.png',
+                            date,
                             venue: stadium,
                             link: 'https://www.kleague.com/schedule.do',
                             region: classifyRegion(stadium),
                             genre: 'soccer',
-                            league: league === '1' ? 'K League 1' : 'K League 2',
+                            league: leagueLabel,
                             homeTeam,
                             awayTeam,
-                            homeTeamLogo: getLogoUrl(homeTeam),
-                            awayTeamLogo: getLogoUrl(awayTeam)
+                            homeTeamLogo,
+                            awayTeamLogo,
+                            description,
+                            feesAndPrograms: description,
+                            synopsisImages: [homeTeamLogo, awayTeamLogo].filter(Boolean),
+                            sourceUpdatedAt: new Date().toISOString(),
                         });
                     }
                 } catch (err) {
@@ -147,6 +269,43 @@ async function scrapeKLeague() {
         finalMatches.forEach(m => mergedMap.set(m.id, m));
 
         const mergedList = Array.from(mergedMap.values())
+            .map((match) => {
+                const hasWeakImage = !match.image || /soccer_poster|fallback|placeholder/i.test(match.image);
+                if (!hasWeakImage || !match.homeTeam || !match.awayTeam || !match.date) return match;
+
+                const leagueLabel = match.league || 'K League';
+                const homeTeamLogo = match.homeTeamLogo || getLogoUrl(match.homeTeam);
+                const awayTeamLogo = match.awayTeamLogo || getLogoUrl(match.awayTeam);
+                const description = buildMatchDescription({
+                    leagueLabel,
+                    homeTeam: match.homeTeam,
+                    awayTeam: match.awayTeam,
+                    date: match.date,
+                    venue: match.venue || '',
+                });
+                return {
+                    ...match,
+                    image: ensureMatchPoster({
+                        id: match.id,
+                        leagueLabel,
+                        homeTeam: match.homeTeam,
+                        awayTeam: match.awayTeam,
+                        date: match.date,
+                        venue: match.venue || '',
+                        homeTeamLogo,
+                        awayTeamLogo,
+                    }),
+                    backupPoster: match.backupPoster || '/images/soccer_poster.png',
+                    homeTeamLogo,
+                    awayTeamLogo,
+                    description: match.description || description,
+                    feesAndPrograms: match.feesAndPrograms || description,
+                    synopsisImages: Array.isArray(match.synopsisImages) && match.synopsisImages.length > 0
+                        ? match.synopsisImages
+                        : [homeTeamLogo, awayTeamLogo].filter(Boolean),
+                    sourceUpdatedAt: match.sourceUpdatedAt || new Date().toISOString(),
+                };
+            })
             .sort((a, b) => a.date.localeCompare(b.date));
 
         fs.writeFileSync(OUTPUT_PATH, JSON.stringify(mergedList, null, 2));
@@ -160,14 +319,26 @@ async function scrapeKLeague() {
 
 function classifyRegion(venue: string): string {
     if (!venue) return 'etc';
-    if (venue.includes('서울') || venue.includes('상암')) return 'seoul';
-    if (venue.includes('경기') || venue.includes('인천') || venue.includes('수원') || venue.includes('용인') || venue.includes('화성') || venue.includes('안양') || venue.includes('부천') || venue.includes('김포')) return 'gyeonggi';
-    if (venue.includes('부산') || venue.includes('울산') || venue.includes('경남') || venue.includes('창원')) return 'busan';
-    if (venue.includes('대구') || venue.includes('포항')) return 'daegu';
-    if (venue.includes('광주') || venue.includes('전주') || venue.includes('전남') || venue.includes('광양')) return 'gwangju';
-    if (venue.includes('대전') || venue.includes('세종') || venue.includes('충남') || venue.includes('충북') || venue.includes('청주')) return 'daejeon';
-    if (venue.includes('강원') || venue.includes('춘천') || venue.includes('강릉')) return 'gangwon';
-    if (venue.includes('제주')) return 'jeju';
+    const compactVenue = venue.replace(/\s+/g, '');
+
+    // Do not match the bare word "경기"; every stadium name contains "경기장".
+    if (/서울|상암/.test(compactVenue)) return 'seoul';
+    if (/인천/.test(compactVenue)) return 'incheon';
+    if (/수원|용인|화성|안양|부천|김포|성남/.test(compactVenue)) return 'gyeonggi';
+    if (/부산/.test(compactVenue)) return 'busan';
+    if (/대구/.test(compactVenue)) return 'daegu';
+    if (/광주/.test(compactVenue)) return 'gwangju';
+    if (/대전/.test(compactVenue)) return 'daejeon';
+    if (/울산/.test(compactVenue)) return 'ulsan';
+    if (/세종/.test(compactVenue)) return 'sejong';
+    if (/춘천|강릉|강원/.test(compactVenue)) return 'gangwon';
+    if (/청주|충북/.test(compactVenue)) return 'chungbuk';
+    if (/천안|아산|충남/.test(compactVenue)) return 'chungnam';
+    if (/전주|전북/.test(compactVenue)) return 'jeonbuk';
+    if (/전남|광양|목포/.test(compactVenue)) return 'jeonnam';
+    if (/포항|경북|김천/.test(compactVenue)) return 'gyeongbuk';
+    if (/창원|경남|김해/.test(compactVenue)) return 'gyeongnam';
+    if (/제주/.test(compactVenue)) return 'jeju';
     return 'etc';
 }
 

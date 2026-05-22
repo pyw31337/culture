@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-05-22T04:10:59.616Z",
+  "itemCount": 10667,
+  "status": "pass",
+  "metrics": {
+    "missingLocalImageCount": 0,
+    "placeholderImageCount": 0,
+    "placeholderImageRate": 0,
+    "duplicatedDescriptionCount": 16,
+    "missingSourceDateCount": 0,
+    "suspiciousVenueAddressCount": 0,
+    "ambiguousVenueDictionaryCount": 0,
+    "noBookingLinkCount": 0
+  },
+  "samples": {
+    "missingLocalImages": [],
+    "placeholderImages": [],
+    "duplicatedDescriptions": [
+      {
+        "id": "class_20여종_캐릭터로_차량용석고방향제_원데이클래스",
+        "title": "20여종 캐릭터로 차량용석고방향제 원데이클래스",
+        "genre": "class",
+        "similarity": 0.67
+      },
+      {
+        "id": "class_피크닉에_어울리는_보자기포장_원데이클래스",
+        "title": "피크닉에 어울리는 보자기포장 원데이클래스",
+        "genre": "class",
+        "similarity": 0.64
+      },
+      {
+        "id": "class_영문캘리그라피_이탤릭체클래스_정규_클래스",
+        "title": "영문캘리그라피 이탤릭체클래스(정규 클래스)",
+        "genre": "class",
+        "similarity": 0.66
+      },
+      {
+        "id": "class_누구나_할_수_있는_은공예로_반지_목걸이_만들기",
+        "title": "누구나 할 수 있는 은공예로 반지, 목걸이 만들기",
+        "genre": "class",
+        "similarity": 0.65
+      },
+      {
+        "id": "class_속이_편안하고_건강한_맛있는_쌀디저트_클래스",
+        "title": "속이 편안하고 건강한 맛있는 쌀디저트 클래스",
+        "genre": "class",
+        "similarity": 0.64
+      },
+      {
+        "id": "class_광양라탄공방_라움라탄_라탄자개모빌_만들기_원데이클래스",
+        "title": "광양라탄공방 라움라탄 라탄자개모빌 만들기 원데이클래스",
+        "genre": "class",
+        "similarity": 0.67
+      },
+      {
+        "id": "class_자수_도안을_조금더_쉽게_그리는_방법",
+        "title": "자수 도안을 조금더 쉽게 그리는 방법",
+        "genre": "class",
+        "similarity": 0.6
+      },
+      {
+        "id": "class_우디쌤과_함께하는_유행댄스_릴스_틱톡_댄스배우기",
+        "title": "우디쌤과 함께하는 유행댄스(릴스.틱톡)댄스배우기",
+        "genre": "class",
+        "similarity": 0.47
+      },
+      {
+        "id": "class_나에게_꼭_맞는_아로마_롤온을_찾아_떠나는_특별한_하루",
+        "title": "나에게 꼭 맞는 아로마 롤온을 찾아 떠나는 특별한 하루!",
+        "genre": "class",
+        "similarity": 0.47
+      },
+      {
+        "id": "class_나도_고흐가_될_수_있다_오일파스텔_정규_클래스",
+        "title": "나도 고흐가 될 수 있다! 오일파스텔 정규 클래스",
+        "genre": "class",
+        "similarity": 0.65
+      },
+      {
+        "id": "class_원데이메이크업_눈썹그리기_정규수강",
+        "title": "원데이메이크업/눈썹그리기/정규수강",
+        "genre": "class",
+        "similarity": 0.63
+      },
+      {
+        "id": "class_한개만_먹어도_세상_든든한_건강하고_맛있는_스콘_만들기",
+        "title": "한개만 먹어도 세상 든든한 건강하고 맛있는 스콘 만들기",
+        "genre": "class",
+        "similarity": 0.46
+      },
+      {
+        "id": "class_기업인들의_피로를_풀어주고_몸과_마음의_여유를_가지는_기업강의",
+        "title": "기업인들의 피로를 풀어주고 몸과 마음의 여유를 가지는 기업강의",
+        "genre": "class",
+        "similarity": 0.64
+      },
+      {
+        "id": "class_SKETCHUP_스케치업_빠르게_알려드려요",
+        "title": "SKETCHUP[스케치업] 빠르게 알려드려요.",
+        "genre": "class",
+        "similarity": 0.47
+      },
+      {
+        "id": "class_자전거_청소도_OK_입문용_자전거정비",
+        "title": "자전거 청소도 OK! 입문용 자전거정비!",
+        "genre": "class",
+        "similarity": 0.63
+      },
+      {
+        "id": "class_건강한_몸과_마음의_변화를_나누는_요가_필라테스_클래스",
+        "title": "건강한 몸과 마음의 변화를 나누는 요가 / 필라테스 클래스",
+        "genre": "class",
+        "similarity": 0.68
+      }
+    ],
+    "missingSourceDates": [],
+    "suspiciousVenueAddress": [],
+    "ambiguousVenueDictionary": [],
+    "noBookingLinks": []
+  }
+}

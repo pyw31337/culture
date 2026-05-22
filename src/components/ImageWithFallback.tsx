@@ -74,7 +74,8 @@ function ImageWithFallbackInner({
                     observer.disconnect();
                 }
             },
-            { rootMargin: '0px' }
+            // Start fallback and warm-up decisions before the card fully enters the viewport.
+            { rootMargin: fastDisplay ? '900px 0px' : '600px 0px' }
         );
 
         observer.observe(node);

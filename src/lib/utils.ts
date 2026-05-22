@@ -84,7 +84,8 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
         return { label: null, price: '무료' };
     }
 
-    const labeledKoreanUnitMatch = normalized.match(/([가-힣A-Z]+석?)\s*(?:(\d+)만)?\s*(?:(\d+)천)?\s*원/);
+    const seatLabel = '([가-힣A-Z]+(?:석|권)?|[A-Z])';
+    const labeledKoreanUnitMatch = normalized.match(new RegExp(`${seatLabel}\\s*(?:(\\d+)\\s*만)?\\s*(?:(\\d+)\\s*천)?\\s*원`));
     if (labeledKoreanUnitMatch && (labeledKoreanUnitMatch[2] || labeledKoreanUnitMatch[3])) {
         const amount =
             (Number.parseInt(labeledKoreanUnitMatch[2] || '0', 10) * 10000) +
@@ -95,9 +96,15 @@ export function extractFirstPrice(priceStr: string): { label: string | null; pri
     }
 
     // Try to match pattern: "XX석 NUMBER원" or "전석 NUMBER원"
-    const match = normalized.match(/([가-힣A-Z]+석?)\s*([\d,]+)\s*원/);
+    const match = normalized.match(new RegExp(`${seatLabel}\\s*([\\d,]+)\\s*원`));
     if (match) {
         return { label: match[1], price: match[2] };
+    }
+
+    // Some sources omit "원" after a clearly labeled ticket price, e.g. "전석 20,000".
+    const labeledNumberMatch = normalized.match(new RegExp(`${seatLabel}\\s*([\\d]{1,3}(?:,[\\d]{3})+|[\\d]{4,})\\b`));
+    if (labeledNumberMatch) {
+        return { label: labeledNumberMatch[1], price: Number.parseInt(labeledNumberMatch[2].replace(/,/g, ''), 10).toLocaleString('ko-KR') };
     }
 
     const wonMatch = normalized.match(/([\d,]+)\s*원/);

@@ -288,10 +288,12 @@ export default function ContentDetailView({ performance: p, allPerformances = []
     const sportsTicketingInfo = useMemo(() => getSportsTicketingInfo(p), [p]);
     
     // Unified Booking Link Logic with Fallback for Missing Data
-    const bookingUrl = useMemo(
-        () => getExternalContentLink(p, { mobile: isMobile }),
-        [p, isMobile]
-    );
+    const bookingUrl = useMemo(() => {
+        if (sportsTicketingInfo?.bookingUrl) {
+            return isMobile ? toMobileUrl(sportsTicketingInfo.bookingUrl) : sportsTicketingInfo.bookingUrl;
+        }
+        return getExternalContentLink(p, { mobile: isMobile });
+    }, [p, isMobile, sportsTicketingInfo]);
 
     const [shareStatus, setShareStatus] = useState<'idle' | 'copied' | 'shared' | 'error'>('idle');
     const shareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);

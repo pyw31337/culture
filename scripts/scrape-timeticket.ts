@@ -21,6 +21,14 @@ export interface Performance {
     ageRating: string;
     casting: string;
     address?: string;
+    description?: string;
+    feesAndPrograms?: string;
+    priceDetail?: string;
+    synopsisImages?: string[];
+    stillImages?: string[];
+    backupPoster?: string;
+    website?: string;
+    sourceUpdatedAt?: string;
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/timeticket.json');
@@ -68,6 +76,33 @@ function slugify(text: string): string {
         .replace(/[^a-zA-Z0-9가-힣]/g, '_')
         .replace(/_+/g, '_')
         .replace(/^_|_$/g, '');
+}
+
+function compactText(text?: string) {
+    return (text || '').replace(/\s+/g, ' ').trim();
+}
+
+function extractTimeTicketDetailHints(text?: string) {
+    const compact = compactText(text);
+    const periodMatch = compact.match(/진행기간\s*((?:20\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2})(?:\s*~\s*(?:20\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}))?|OPEN\s*RUN|오픈런)/i);
+    const venueMatch = compact.match(/(?:장소|공연장)\s+(.+?)(?:\s+주소|\s+주차|\s+좌석|\s+문의|$)/);
+    const addressMatch = compact.match(/주소\s+(.+?)(?:\s+주차|\s+좌석|\s+문의|\s+자주묻는질문|$)/);
+    const cleanVenue = compactText(venueMatch?.[1])
+        .replace(/\s*\/\s*총.*$/u, '')
+        .replace(/\s*총\s*\d+석.*$/u, '')
+        .trim();
+
+    return {
+        date: compactText(periodMatch?.[1]).replace(/\s+/g, ' '),
+        venue: cleanVenue,
+        address: compactText(addressMatch?.[1]).replace(/\s*,\s*/g, ', '),
+    };
+}
+
+function isUsefulTimeTicketImage(url?: string) {
+    return Boolean(url)
+        && /^https?:\/\//i.test(url || '')
+        && !/logo|icon|blank|loading|spacer|sprite|daumcdn|kakao|map|tile|roadview/i.test(url || '');
 }
 
 function saveData(data: Performance[]) {
@@ -176,7 +211,7 @@ async function scrapeTimeTicket() {
                         let title = titleEl ? titleEl.textContent?.trim() || '' : '';
                         title = title.replace(/^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g, '');
 
-                        const categoryEl = item.querySelector('.category');
+                        const categoryEl = item.querySelector('.category, .meta__cate');
                         const categoryText = categoryEl ? categoryEl.textContent?.trim() || '' : '';
 
                         let genre = currentDefaultGenre;
@@ -185,7 +220,7 @@ async function scrapeTimeTicket() {
                             else if (categoryText.includes('콘서트')) genre = 'concert';
                         }
 
-                        const discountEl = item.querySelector('.sale_percent');
+                        const discountEl = item.querySelector('.sale_percent, .discount, .sale_p, .sale_rate');
                         const discount = discountEl ? discountEl.textContent?.trim() || '' : '';
 
                         const priceEl = item.querySelector('.price');
@@ -307,7 +342,9 @@ async function scrapeTimeTicket() {
                 // To force scrape, we should NOT continue.
                 // But wait, if we fall through, we need to make sure we don't duplicate logic.
                 // The simplest way: just don't enter this `if` block if originalPrice is missing.
-                if (!existing.originalPrice || existing.originalPrice === '') {
+                const hasDetailImages = Array.isArray(existing.synopsisImages) && existing.synopsisImages.length > 0;
+                const hasRichBody = Boolean(existing.description && existing.feesAndPrograms && existing.description.length > 50 && hasDetailImages);
+                if (!existing.originalPrice || existing.originalPrice === '' || !hasRichBody) {
                     // If originalPrice is missing, we fall through to the detail scraping block below.
                 } else {
                     allItems.push(existing);
@@ -401,6 +438,61 @@ async function scrapeTimeTicket() {
                     }
                 });
 
+                const compact = (value) => (value || '').replace(/\\s+/g, ' ').trim();
+                const normalizeUrl = (value) => {
+                    const raw = compact(value).replace(/&amp;/g, '&');
+                    if (!raw) return '';
+                    try {
+                        return new URL(raw, location.origin).href;
+                    } catch (e) {
+                        return '';
+                    }
+                };
+                const metaDescription = compact(document.querySelector('meta[name="description"], meta[property="og:description"]')?.getAttribute('content') || '');
+                const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || location.href;
+                const ogImage = normalizeUrl(document.querySelector('meta[property="og:image"]')?.getAttribute('content') || '');
+
+                const sectionBlocks = Array.from(document.querySelectorAll('.detail-section, .viewpage_text.radius_box, .detail-image-fold'))
+                    .map(section => {
+                        const titleEl = section.querySelector('.detail-section__title, .section_title, h2, h3, h4, strong, b');
+                        const title = compact(titleEl?.textContent || '');
+                        const text = compact(section.innerText || section.textContent || '');
+                        const images = Array.from(section.querySelectorAll('img'))
+                            .map(img => normalizeUrl(img.getAttribute('data-src') || img.getAttribute('src') || img.currentSrc || ''))
+                            .filter(url => /^https?:\\/\\//i.test(url))
+                            .filter(url => !/logo|icon|blank|loading|spacer|sprite|daumcdn|kakao|map|tile|roadview/i.test(url));
+                        return { title, text, images };
+                    })
+                    .filter(block => block.text.length > 20 || block.images.length > 0);
+
+                const sectionImages = Array.from(new Set([
+                    ogImage,
+                    ...sectionBlocks.flatMap(block => block.images),
+                    ...Array.from(document.querySelectorAll('.detail-image-fold img, .viewpage_img img, .detail-section img, .editor img'))
+                        .map(img => normalizeUrl(img.getAttribute('data-src') || img.getAttribute('src') || img.currentSrc || '')),
+                ]))
+                    .filter(url => /^https?:\\/\\//i.test(url))
+                    .filter(url => !/logo|icon|blank|loading|spacer|sprite|daumcdn|kakao|map|tile|roadview/i.test(url))
+                    .slice(0, 10);
+
+                const importantSections = sectionBlocks
+                    .filter(block => !/후기|리뷰|문의|댓글|추천/i.test(block.title + ' ' + block.text))
+                    .slice(0, 8);
+                const sectionText = importantSections
+                    .map(block => block.title && !block.text.startsWith(block.title) ? block.title + '\\n' + block.text : block.text)
+                    .filter(Boolean)
+                    .join('\\n\\n');
+                const aiSummary = compact(document.querySelector('.review-ai-summary__text, .ai_review_summary, .summary_text')?.textContent || '');
+                const description = [sectionText, aiSummary ? '관람 후기 요약\\n' + aiSummary : '', metaDescription]
+                    .filter(Boolean)
+                    .join('\\n\\n')
+                    .slice(0, 1600);
+                const priceDetail = [
+                    originalPrice ? '정상가: ' + originalPrice : '',
+                    salePrice ? '판매가: ' + salePrice : '',
+                    discount ? '할인: ' + discount : '',
+                ].filter(Boolean).join('\\n');
+
                 return {
                     runningTime,
                     ageRating: ageLimit,
@@ -409,6 +501,14 @@ async function scrapeTimeTicket() {
                     originalPrice,
                     salePrice,
                     address,
+                    description,
+                    feesAndPrograms: sectionText,
+                    priceDetail,
+                    synopsisImages: sectionImages,
+                    stillImages: sectionImages.slice(1, 5),
+                    ogImage,
+                    website: canonical,
+                    sourceUpdatedAt: new Date().toISOString(),
                 };
             })()`);
 
@@ -431,13 +531,25 @@ async function scrapeTimeTicket() {
                 finalImage = finalImage.replace('/thn/thn_', '/');
                 finalImage = finalImage.replace('/thn/', '/'); // Just in case
             }
+            const detailHints = extractTimeTicketDetailHints([detailData.description, detailData.feesAndPrograms].filter(Boolean).join('\n'));
+            const detailImages = Array.isArray(detailData.synopsisImages)
+                ? detailData.synopsisImages.filter(isUsefulTimeTicketImage)
+                : [];
+            const primaryImage = finalImage || detailData.ogImage || detailImages[0] || item.image;
+            const finalDate = detailData.date && detailData.date !== 'OPEN RUN'
+                ? detailData.date
+                : (detailHints.date || detailData.date);
+            const finalVenue = detailData.venue && detailData.venue !== '대학로'
+                ? detailData.venue
+                : (detailHints.venue || detailData.venue);
+            const finalAddress = detailData.address || detailHints.address;
 
             allItems.push({
                 id: `perf_${slugify(item.title)}`,
                 title: item.title,
-                image: finalImage,
-                date: detailData.date,
-                venue: detailData.venue,
+                image: primaryImage,
+                date: finalDate,
+                venue: finalVenue,
                 link: item.link,
                 region: item.region,
                 genre: item.genre,
@@ -447,7 +559,18 @@ async function scrapeTimeTicket() {
                 runningTime: detailData.runningTime,
                 ageRating: detailData.ageRating,
                 casting: '',
-                address: detailData.address
+                address: finalAddress,
+                description: detailData.description,
+                feesAndPrograms: detailData.feesAndPrograms || detailData.description,
+                priceDetail: [
+                    detailData.priceDetail,
+                    item.discount ? `목록 할인율: ${item.discount}` : '',
+                ].filter(Boolean).join('\n'),
+                synopsisImages: detailImages.slice(0, 8),
+                stillImages: Array.isArray(detailData.stillImages) ? detailData.stillImages.filter(isUsefulTimeTicketImage) : detailImages.slice(1, 5),
+                backupPoster: finalImage || item.image,
+                website: detailData.website || item.link,
+                sourceUpdatedAt: detailData.sourceUpdatedAt || new Date().toISOString(),
             });
 
 

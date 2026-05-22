@@ -155,8 +155,7 @@ function inferBaseballHomeTeam(performance: Pick<Performance, 'homeTeam' | 'away
 
     if (venueHome) return venueHome;
 
-    // KBO source data is commonly stored as away vs home in the title order.
-    return compactText(performance.awayTeam || performance.homeTeam);
+    return compactText(performance.homeTeam || performance.awayTeam);
 }
 
 function inferTicketBayTeam(performance: Pick<Performance, 'genre' | 'homeTeam' | 'awayTeam' | 'venue'>) {

@@ -18,7 +18,16 @@ export function getExternalContentLink(
     }
 
     if (isSportsPerformance(performance)) {
-        url = getSportsBookingUrl(performance) || url;
+        // Honor the data-supplied schedule URL first. K-League rows ship a
+        // kleague.com/schedule.do URL and KBO rows ship a
+        // koreabaseball.com/Schedule/Schedule.aspx URL - both are more
+        // reliable than the ticketlink genre pages, which now 302 away from
+        // /sports/baseball|basketball|volleyball|handball, and the
+        // /sports/soccer page sometimes renders the ticketlink
+        // "서비스가 원활하지 않습니다" error state. Only fall through to the
+        // genre-mapped booking provider when the data doesn't carry a link
+        // at all.
+        if (!url) url = getSportsBookingUrl(performance) || '';
     } else if (performance.genre === 'movie') {
         url = buildNaverSearchUrl(`${performance.title} 상영시간표`);
     } else if (!url) {

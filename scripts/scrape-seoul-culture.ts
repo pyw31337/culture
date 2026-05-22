@@ -24,6 +24,10 @@ interface ScrapedEvent {
     runningTime?: string;
     ageRating?: string;
     price?: string;
+    address?: string;
+    venueAddress?: string;
+    lat?: number;
+    lng?: number;
     contact?: string;
     website?: string;
     description?: string;
@@ -31,6 +35,7 @@ interface ScrapedEvent {
     bookingNotice?: string;
     targetAudience?: string;
     priceDetail?: string;
+    synopsisImages?: string[];
     sourceUpdatedAt?: string;
     genre: string;
     source: 'seoul-culture';
@@ -219,7 +224,9 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                 (ex.price || ex.ageRating || ex.runningTime) &&
                 (ex.description || ex.website || ex.contact || ex.feesAndPrograms)
             );
-            if (hasStructuredDetail || (isRecentlyEnriched(ex) && (ex.description || ex.website))) {
+            const hasDetailImages = Array.isArray(ex.synopsisImages) && ex.synopsisImages.length > 0;
+            const hasCoordinates = Number.isFinite(Number(ex.lat)) && Number.isFinite(Number(ex.lng));
+            if ((hasStructuredDetail && hasDetailImages && hasCoordinates) || (isRecentlyEnriched(ex) && hasDetailImages && hasCoordinates)) {
                 done.push({ ...item, ...ex });
             } else {
                 todo.push(item);
@@ -261,6 +268,19 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
 
                 const details = await page.evaluate(() => {
                     const compact = (value?: string | null) => value?.replace(/\s+/g, ' ').trim() || '';
+                    const normalizeUrl = (value?: string | null) => {
+                        const url = compact(value)
+                            .replace(/&amp;/g, '&')
+                            .replace(/[),.;]+$/u, '');
+                        if (!url) return '';
+                        if (url.startsWith('//')) return `https:${url}`;
+                        if (url.startsWith('/')) return `https://culture.seoul.go.kr${url}`;
+                        return url;
+                    };
+                    const toNumber = (value?: string | null) => {
+                        const numeric = Number(compact(value).replace(/[^0-9.\-]/g, ''));
+                        return Number.isFinite(numeric) ? numeric : undefined;
+                    };
                     const ul = document.querySelector('.type-box > ul');
 
                     const res: any = {};
@@ -279,7 +299,26 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                     const homepageLink = document.querySelector('.detail-btn a[href], a[title*="홈페이지"]') as HTMLAnchorElement | null;
                     res.website = homepageLink?.href || '';
 
+                    const introPoster = normalizeUrl(
+                        (document.querySelector('.intro-top .img-box img, .intro-top img') as HTMLImageElement | null)?.getAttribute('data-src') ||
+                        (document.querySelector('.intro-top .img-box img, .intro-top img') as HTMLImageElement | null)?.getAttribute('src') ||
+                        (document.querySelector('meta[property="og:image"]') as HTMLMetaElement | null)?.content
+                    );
+                    if (/^https?:\/\//i.test(introPoster)) res.primaryImage = introPoster;
+
                     const cultureContent = document.querySelector('.culture-content') as HTMLElement | null;
+                    const imageRoots = [
+                        document.querySelector('.intro-top') as HTMLElement | null,
+                        cultureContent,
+                    ].filter(Boolean) as HTMLElement[];
+                    if (imageRoots.length > 0) {
+                        const contentImages = imageRoots.flatMap((root) => Array.from(root.querySelectorAll('img'))
+                            .map((img) => normalizeUrl((img as HTMLImageElement).getAttribute('data-src') || (img as HTMLImageElement).src || (img as HTMLImageElement).getAttribute('src')))
+                            .filter((url) => /^https?:\/\//i.test(url))
+                            .filter((url) => !/logo|blank|pixel|loading|spacer/i.test(url)));
+                        res.synopsisImages = Array.from(new Set(contentImages)).slice(0, 8);
+                    }
+
                     if (cultureContent) {
                         const altTexts = Array.from(cultureContent.querySelectorAll('img[alt]'))
                             .map((img) => compact((img as HTMLImageElement).alt))
@@ -295,6 +334,26 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
 
                         const sourceMatch = cultureContent.innerText.match(/자료출처\s*:\s*([^\n]+)/);
                         if (sourceMatch) res.sourceCredit = compact(sourceMatch[1]);
+                    }
+
+                    const bodyHtml = document.body.innerHTML;
+                    const readScriptValue = (key: string) => {
+                        const markerPattern = new RegExp(`${key}\\s*:\\s*['"]([^'"]+)['"]`, 'i');
+                        const markerMatch = bodyHtml.match(markerPattern);
+                        if (markerMatch?.[1]) return compact(markerMatch[1]);
+                        const variablePattern = new RegExp(`var\\s+${key}\\s*=\\s*['"]([^'"]+)['"]`, 'i');
+                        return compact(bodyHtml.match(variablePattern)?.[1]);
+                    };
+                    const address = readScriptValue('addr') || readScriptValue('address');
+                    if (address) {
+                        res.address = address;
+                        res.venueAddress = address;
+                    }
+                    const lat = toNumber(readScriptValue('la') || readScriptValue('lat'));
+                    const lng = toNumber(readScriptValue('lo') || readScriptValue('lng'));
+                    if (lat !== undefined && lng !== undefined) {
+                        res.lat = lat;
+                        res.lng = lng;
                     }
 
                     if (!res.description) {
@@ -338,6 +397,12 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
                         feesAndPrograms: details.description,
                         priceDetail: price,
                         sourceUpdatedAt: formatKoreanDateTime(),
+                        poster: details.primaryImage || item.poster,
+                        address: details.address,
+                        venueAddress: details.venueAddress,
+                        lat: details.lat,
+                        lng: details.lng,
+                        synopsisImages: details.synopsisImages || [],
                         bookingNotice: details.sourceCredit ? `자료출처: ${details.sourceCredit}` : undefined
                     };
                 }

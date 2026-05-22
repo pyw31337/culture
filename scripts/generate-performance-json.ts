@@ -634,8 +634,8 @@ function repairMissingLinks(items: Performance[]) {
 
 function normalizeDuplicateTimeFields(items: Performance[]) {
     items.forEach((performance) => {
-        const operatingHours = compactText(performance.operatingHours);
-        const performanceTime = compactText(performance.performanceTime);
+        const operatingHours = compactComparable(performance.operatingHours);
+        const performanceTime = compactComparable(performance.performanceTime);
         if (!operatingHours || !performanceTime || operatingHours !== performanceTime) return;
 
         if (performance.genre === 'tourism') {

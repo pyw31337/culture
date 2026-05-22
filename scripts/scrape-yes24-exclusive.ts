@@ -227,6 +227,25 @@ async function scrapeYes24() {
                                 return blockText || cleanLines(doc.body.textContent || '');
                             };
 
+                            const extractImageUrls = (html?: string) => {
+                                if (!html) return [];
+                                const doc = new DOMParser().parseFromString(html, 'text/html');
+                                const urls = Array.from(doc.querySelectorAll('img'))
+                                    .map((img) => img.getAttribute('data-src') || img.getAttribute('src') || '')
+                                    .map((src) => {
+                                        const trimmed = compact(src)
+                                            .replace(/&amp;/g, '&')
+                                            .replace(/[),.;]+$/u, '');
+                                        if (!trimmed) return '';
+                                        if (trimmed.startsWith('//')) return `https:${trimmed}`;
+                                        if (trimmed.startsWith('/')) return `https://ticket.yes24.com${trimmed}`;
+                                        return trimmed;
+                                    })
+                                    .filter((url) => /^https?:\/\//i.test(url))
+                                    .filter((url) => !/logo|blank|pixel|loading|spacer/i.test(url));
+                                return Array.from(new Set(urls)).slice(0, 8);
+                            };
+
                             const parseYes24Json = (text: string) => {
                                 try {
                                     return JSON.parse(text);
@@ -253,7 +272,13 @@ async function scrapeYes24() {
                                 .replace(/자세히$/u, '')
                                 .trim();
 
-                            let ajaxDetail: Record<string, string> = {};
+                            let ajaxDetail: {
+                                notice?: string;
+                                promotion?: string;
+                                content?: string;
+                                organization?: string;
+                                images?: string[];
+                            } = {};
                             try {
                                 const response = await fetch(`/New/Perf/Detail/Ajax/axPerfContents.aspx?IdPerf=${perfId}`, {
                                     credentials: 'include'
@@ -261,11 +286,18 @@ async function scrapeYes24() {
                                 const text = await response.text();
                                 const parsed = parseYes24Json(text);
                                 if (parsed?.Result === '00') {
+                                    const detailHtml = [
+                                        parsed.PerfNotice,
+                                        parsed.PerfPromotion,
+                                        parsed.PerfContent,
+                                        parsed.PerfOrganization,
+                                    ].filter(Boolean).join('\n');
                                     ajaxDetail = {
                                         notice: htmlToReadableText(parsed.PerfNotice),
                                         promotion: htmlToReadableText(parsed.PerfPromotion),
                                         content: htmlToReadableText(parsed.PerfContent),
                                         organization: htmlToReadableText(parsed.PerfOrganization),
+                                        images: extractImageUrls(detailHtml),
                                     };
                                 }
                             } catch {
@@ -295,6 +327,7 @@ async function scrapeYes24() {
                                 organizer: organizationValue('주관/홍보') || organizationValue('주관'),
                                 contact: organizationValue('문의'),
                                 description: ajaxDetail.notice || ajaxDetail.content || '',
+                                synopsisImages: ajaxDetail.images || [],
                                 dataCollectedAt: new Date().toISOString(),
                             };
                         }, item.id.replace(/^yes24_/, ''));
