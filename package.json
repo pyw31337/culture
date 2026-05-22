@@ -28,6 +28,7 @@
     "build:venue-master": "npx tsx scripts/build-venue-master.ts",
     "enrich:venue-places": "npx tsx scripts/enrich-venue-places.ts",
     "local:update-data": "scripts/run-local-data-update.sh",
+    "local:check-update-status": "scripts/check-local-data-update-status.sh",
     "local:install-scheduler": "scripts/install-local-data-update.sh"
   },
   "dependencies": {

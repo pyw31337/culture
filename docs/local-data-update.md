@@ -5,6 +5,7 @@ CultureFlow uses a local-first collection schedule to avoid exhausting GitHub Ac
 ## Schedule
 
 - Local Mac: every day at 00:00 KST via `launchd`.
+- Local health check: every day at 07:30 KST via `launchd`; notifies when the midnight run failed, skipped, or did not generate today's public data.
 - GitHub Actions fallback: every day at 03:00 KST.
 - The GitHub fallback first checks `public/data/build-info.json`. If today's local update already produced data on the same KST date within 20 hours, it skips the expensive scraper job.
 
@@ -33,6 +34,12 @@ scripts/install-local-data-update.sh
 FORCE_LOCAL_UPDATE=1 scripts/run-local-data-update.sh
 ```
 
+Check the latest local run without scraping:
+
+```bash
+scripts/check-local-data-update-status.sh
+```
+
 For a fast smoke run while debugging, keep the full pipeline shape but reduce heavy detail enrichment:
 
 ```bash
@@ -51,6 +58,9 @@ scripts/run-local-data-update.sh
 
 - Launchd stdout: `logs/launchd-daily-update.out.log`
 - Launchd stderr: `logs/launchd-daily-update.err.log`
+- Health check stdout: `logs/launchd-update-watch.out.log`
+- Health check stderr: `logs/launchd-update-watch.err.log`
+- Health check detail log: `logs/data-update/local-data-update-status-check.log`
 - Per-run logs: `logs/data-update/local-data-update-YYYYMMDD-HHMMSS.log`
 - Last run status: `logs/data-update/last-run-status.json`
 - Last scraper failures: `logs/data-update/last-scrape-failures.txt`
