@@ -44,6 +44,19 @@ const WINTER_FALSE_POSITIVE_KEYWORDS = ['차이콥스키', '마이스키', '위�
 const SUMMER_KEYWORDS = ['워터파크', '수영장', '해수욕', '서핑', '물놀이', '계곡', '래프팅'];
 const EVERGREEN_DATES = new Set(['상시', 'OPEN RUN', '오픈런', '연중무휴']);
 const PRICE_OPTIONAL_GENRES = new Set(['movie', 'soccer', 'baseball', 'basketball', 'volleyball', 'handball', 'tourism']);
+const PRICE_LINK_MITIGATED_SOURCES = new Set([
+    'interpark',
+    'yes24-exclusive',
+    'timeticket',
+    'mommom',
+    'mommom-activity',
+    'mommom-exhibition',
+    'mommom-product',
+    'umclass',
+    'mochaclass',
+    'sssd-class',
+    'museum',
+]);
 const FLEXIBLE_SCHEDULE_KEYWORDS = [
     '상품 상세',
     '상세페이지',
@@ -208,6 +221,14 @@ function isSuspiciousFreePrice(performance: Performance) {
     return hasWonPrice;
 }
 
+function hasDirectPriceVerificationPath(performance: Performance) {
+    const link = clean(performance.link || performance.website || performance.venueHomepage);
+    const source = clean(performance.source);
+    if (!link) return false;
+    if (PRICE_LINK_MITIGATED_SOURCES.has(source)) return true;
+    return /interpark|yes24|ticket|timeticket|mom-mom|sssd|umclass|mochaclass/i.test(link);
+}
+
 export function buildDisplayIntegrityReport(
     performances: Performance[],
     venues: VenueRecord,
@@ -251,7 +272,11 @@ export function buildDisplayIntegrityReport(
             });
         }
 
-        if (!PRICE_OPTIONAL_GENRES.has(performance.genre) && !extractFirstPrice(performance.price || performance.priceDetail || '')) {
+        if (
+            !PRICE_OPTIONAL_GENRES.has(performance.genre)
+            && !hasDirectPriceVerificationPath(performance)
+            && !extractFirstPrice(performance.price || performance.priceDetail || '')
+        ) {
             unknownPriceCount += 1;
             pushSample(samples, 'unknownPrice', {
                 ...base,

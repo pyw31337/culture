@@ -483,7 +483,13 @@ function isLowValueDescription(value?: string) {
     const text = compactDetailText(value);
     if (!text) return false;
     return /^\[[^\]]+\]\s*장소\s*:/u.test(text)
-        || /^서울시\s*문화분야\s*종합\s*정보\s*제공\s*사이트/u.test(text);
+        || /^서울시\s*문화분야\s*종합\s*정보\s*제공\s*사이트/u.test(text)
+        || /장소\s*확인\s*필요에서\s*진행되는\s*클래스입니다/u.test(text);
+}
+
+function isDurationOnly(value?: string) {
+    const text = compactDetailText(value);
+    return Boolean(text && /^\d{1,3}(?:시간)?(?:\d{1,2})?분$|^\d{1,2}시간(?:\d{1,2}분)?$/.test(text));
 }
 
 function pickBestImageFromRaw(raw: RawPerformance, genre: string) {
@@ -767,6 +773,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     if (compactDetailText(performanceTime) && compactDetailText(performanceTime) === compactDetailText(operatingHours)) {
         // Avoid rendering the same time information twice in detail views.
         performanceTime = '';
+    }
+    if (isDurationOnly(date)) {
+        runningTime = runningTime && !/소요\s*시간|예약페이지\s*참조/i.test(runningTime)
+            ? runningTime
+            : date;
+        date = genre === 'class' ? '상시/예약' : '';
     }
     closedDays = formatReadableSchedule(closedDays);
     priceDetail = formatReadableSectionBlock(priceDetail);

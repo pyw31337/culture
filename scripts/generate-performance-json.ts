@@ -223,6 +223,14 @@ function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
 }
 
+function isLowValueGeneratedDescription(value?: string) {
+    const text = compactText(value);
+    if (!text) return false;
+    return /장소\s*확인\s*필요에서\s*진행되는\s*클래스입니다/.test(text)
+        || /^.+는\s*(?:지정 장소|현장|전시 공간)에서\s*(?:진행|만날|즐길)/.test(text)
+        || /^.+는\s*방문을\s*고려해볼\s*만한\s*관광\/여행입니다/.test(text);
+}
+
 function isKnownSellerAddress(value?: string) {
     const address = compactText(value);
     return Boolean(address && KNOWN_SELLER_ADDRESS_PATTERNS.some((pattern) => pattern.test(address)));
@@ -1100,6 +1108,17 @@ function sanitizeWeakVenueIdentities(items: Performance[]) {
         if (!description || isGenericOrNonVenueText(description)) {
             performance.description = buildFallbackDescription(performance);
         }
+        if (isLowValueGeneratedDescription(performance.description)) {
+            performance.description = '';
+        }
+    });
+}
+
+function removeLowValueGeneratedDescriptions(items: Performance[]) {
+    items.forEach((performance) => {
+        if (isLowValueGeneratedDescription(performance.description)) {
+            performance.description = '';
+        }
     });
 }
 
@@ -1631,6 +1650,9 @@ async function generate() {
             if (!compactText(performance.description) && !compactText(performance.synopsis)) {
                 performance.description = buildFallbackDescription(performance);
             }
+            if (isLowValueGeneratedDescription(performance.description)) {
+                performance.description = '';
+            }
         });
         enrichFromSiblingItems(activePerformances);
         rehydrateMoviesFromCatalog(activePerformances);
@@ -1642,6 +1664,7 @@ async function generate() {
         sanitizeWeakVenueIdentities(activePerformances);
         enrichVenueContextFromRecords(activePerformances, sourceVenues);
         applySourceTimestampFallbacks(activePerformances, buildSourceUpdatedAtMap());
+        removeLowValueGeneratedDescriptions(activePerformances);
 
         // Sort by default (Date Ascending) to match previous API behavior
         const sorted = sortPerformancesForHomeFeed(activePerformances);

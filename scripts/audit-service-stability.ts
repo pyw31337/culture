@@ -122,6 +122,11 @@ function hasUsefulSourceDetail(item: Performance) {
     '프로그램',
     '예약 방법',
     '상담 일정',
+    '수강권 정보',
+    '클래스 정보',
+    '커리큘럼',
+    '다른 수강권',
+    '키워드:',
   ];
   return usefulSignals.some((signal) => text.includes(signal));
 }
