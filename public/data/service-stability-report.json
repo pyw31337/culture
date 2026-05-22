@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-05-22T04:10:59.616Z",
-  "itemCount": 10667,
+  "checkedAt": "2026-05-22T04:24:36.383Z",
+  "itemCount": 10634,
   "status": "pass",
   "metrics": {
     "missingLocalImageCount": 0,
     "placeholderImageCount": 0,
     "placeholderImageRate": 0,
-    "duplicatedDescriptionCount": 16,
+    "duplicatedDescriptionCount": 82,
     "missingSourceDateCount": 0,
     "suspiciousVenueAddressCount": 0,
     "ambiguousVenueDictionaryCount": 0,
@@ -17,10 +17,76 @@
     "placeholderImages": [],
     "duplicatedDescriptions": [
       {
+        "id": "class_라틴댄스_바차타_신규체험_만원이벤트_1일",
+        "title": "라틴댄스 바차타 신규체험 만원이벤트 [1일]",
+        "genre": "class",
+        "similarity": 0.6
+      },
+      {
+        "id": "class_바레_1회_정규_쿠폰",
+        "title": "바레 1회 정규 쿠폰",
+        "genre": "class",
+        "similarity": 0.5
+      },
+      {
+        "id": "class_요가공간_요가가_일상이_되는_시작_1회",
+        "title": "요가공간 - 요가가 일상이 되는 시작 (1회)",
+        "genre": "class",
+        "similarity": 0.57
+      },
+      {
         "id": "class_20여종_캐릭터로_차량용석고방향제_원데이클래스",
         "title": "20여종 캐릭터로 차량용석고방향제 원데이클래스",
         "genre": "class",
         "similarity": 0.67
+      },
+      {
+        "id": "class_하바리움_볼펜_원데이클래스",
+        "title": "하바리움 볼펜 원데이클래스",
+        "genre": "class",
+        "similarity": 0.53
+      },
+      {
+        "id": "class_떡카롱_원데이클래스_초급반",
+        "title": "떡카롱 원데이클래스 초급반",
+        "genre": "class",
+        "similarity": 0.53
+      },
+      {
+        "id": "class_째즈퓨전_무브먼트_1개월",
+        "title": "째즈퓨전 무브먼트 [1개월]",
+        "genre": "class",
+        "similarity": 0.54
+      },
+      {
+        "id": "class_앙금플라워케이크_한식디저트_원데이_초급반",
+        "title": "앙금플라워케이크[한식디저트] 원데이 초급반",
+        "genre": "class",
+        "similarity": 0.63
+      },
+      {
+        "id": "class_와인잔1잔_만들기",
+        "title": "와인잔1잔 만들기",
+        "genre": "class",
+        "similarity": 0.5
+      },
+      {
+        "id": "class_아티스트가_되어보는_페인팅_클래스",
+        "title": "아티스트가 되어보는 페인팅 클래스",
+        "genre": "class",
+        "similarity": 0.56
+      },
+      {
+        "id": "class_꽃으로_만드는_젤캔들홀더_클래스_티라이트와_홀더만들기",
+        "title": "꽃으로 만드는 젤캔들홀더 클래스 티라이트와 홀더만들기",
+        "genre": "class",
+        "similarity": 0.63
+      },
+      {
+        "id": "class_부드러운_달콤함_아이스크림_얼그레이쿠키",
+        "title": "부드러운 달콤함~ 아이스크림&얼그레이쿠키",
+        "genre": "class",
+        "similarity": 0.6
       },
       {
         "id": "class_피크닉에_어울리는_보자기포장_원데이클래스",
@@ -29,88 +95,46 @@
         "similarity": 0.64
       },
       {
+        "id": "class_수영레슨_원데이_초급반",
+        "title": "수영레슨 원데이 초급반",
+        "genre": "class",
+        "similarity": 0.51
+      },
+      {
+        "id": "class_부산_쌀휘낭시에_원데이_베이킹_클래스_촉촉",
+        "title": "부산) 쌀휘낭시에 원데이 베이킹 클래스 촉촉",
+        "genre": "class",
+        "similarity": 0.6
+      },
+      {
+        "id": "class_보울_면기_만들기",
+        "title": "보울/면기 만들기",
+        "genre": "class",
+        "similarity": 0.5
+      },
+      {
+        "id": "class_떡케이크_컵설기_앙금플라워_클래스",
+        "title": "떡케이크 컵설기 앙금플라워 클래스",
+        "genre": "class",
+        "similarity": 0.58
+      },
+      {
+        "id": "class_오산_원동_쿠나블라폴댄스",
+        "title": "오산 원동 쿠나블라폴댄스",
+        "genre": "class",
+        "similarity": 0.53
+      },
+      {
         "id": "class_영문캘리그라피_이탤릭체클래스_정규_클래스",
         "title": "영문캘리그라피 이탤릭체클래스(정규 클래스)",
         "genre": "class",
         "similarity": 0.66
       },
       {
-        "id": "class_누구나_할_수_있는_은공예로_반지_목걸이_만들기",
-        "title": "누구나 할 수 있는 은공예로 반지, 목걸이 만들기",
+        "id": "class_꽃풍선_원데이클래스",
+        "title": "꽃풍선 원데이클래스",
         "genre": "class",
-        "similarity": 0.65
-      },
-      {
-        "id": "class_속이_편안하고_건강한_맛있는_쌀디저트_클래스",
-        "title": "속이 편안하고 건강한 맛있는 쌀디저트 클래스",
-        "genre": "class",
-        "similarity": 0.64
-      },
-      {
-        "id": "class_광양라탄공방_라움라탄_라탄자개모빌_만들기_원데이클래스",
-        "title": "광양라탄공방 라움라탄 라탄자개모빌 만들기 원데이클래스",
-        "genre": "class",
-        "similarity": 0.67
-      },
-      {
-        "id": "class_자수_도안을_조금더_쉽게_그리는_방법",
-        "title": "자수 도안을 조금더 쉽게 그리는 방법",
-        "genre": "class",
-        "similarity": 0.6
-      },
-      {
-        "id": "class_우디쌤과_함께하는_유행댄스_릴스_틱톡_댄스배우기",
-        "title": "우디쌤과 함께하는 유행댄스(릴스.틱톡)댄스배우기",
-        "genre": "class",
-        "similarity": 0.47
-      },
-      {
-        "id": "class_나에게_꼭_맞는_아로마_롤온을_찾아_떠나는_특별한_하루",
-        "title": "나에게 꼭 맞는 아로마 롤온을 찾아 떠나는 특별한 하루!",
-        "genre": "class",
-        "similarity": 0.47
-      },
-      {
-        "id": "class_나도_고흐가_될_수_있다_오일파스텔_정규_클래스",
-        "title": "나도 고흐가 될 수 있다! 오일파스텔 정규 클래스",
-        "genre": "class",
-        "similarity": 0.65
-      },
-      {
-        "id": "class_원데이메이크업_눈썹그리기_정규수강",
-        "title": "원데이메이크업/눈썹그리기/정규수강",
-        "genre": "class",
-        "similarity": 0.63
-      },
-      {
-        "id": "class_한개만_먹어도_세상_든든한_건강하고_맛있는_스콘_만들기",
-        "title": "한개만 먹어도 세상 든든한 건강하고 맛있는 스콘 만들기",
-        "genre": "class",
-        "similarity": 0.46
-      },
-      {
-        "id": "class_기업인들의_피로를_풀어주고_몸과_마음의_여유를_가지는_기업강의",
-        "title": "기업인들의 피로를 풀어주고 몸과 마음의 여유를 가지는 기업강의",
-        "genre": "class",
-        "similarity": 0.64
-      },
-      {
-        "id": "class_SKETCHUP_스케치업_빠르게_알려드려요",
-        "title": "SKETCHUP[스케치업] 빠르게 알려드려요.",
-        "genre": "class",
-        "similarity": 0.47
-      },
-      {
-        "id": "class_자전거_청소도_OK_입문용_자전거정비",
-        "title": "자전거 청소도 OK! 입문용 자전거정비!",
-        "genre": "class",
-        "similarity": 0.63
-      },
-      {
-        "id": "class_건강한_몸과_마음의_변화를_나누는_요가_필라테스_클래스",
-        "title": "건강한 몸과 마음의 변화를 나누는 요가 / 필라테스 클래스",
-        "genre": "class",
-        "similarity": 0.68
+        "similarity": 0.53
       }
     ],
     "missingSourceDates": [],

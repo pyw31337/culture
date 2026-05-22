@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-05-22T04:10:14.188Z",
+  "checkedAt": "2026-05-22T04:23:58.057Z",
   "status": "warn",
-  "venueCount": 4905,
+  "venueCount": 4904,
   "matchedCount": 2094,
   "highConfidenceMatchCount": 1522,
   "needsReviewCount": 20,
   "notFoundCount": 708,
   "pendingLookupCount": 2628,
-  "insufficientIdentityCount": 293,
+  "insufficientIdentityCount": 292,
   "lookupReady": false,
   "providersConfigured": [],
   "queue": [
@@ -82,17 +82,17 @@
       "officialName": "부산 부산진구 서전로68번길 104 전포동) 이담(전포역 6번출구 부근",
       "address": "부산 부산진구 서전로68번길 104 (전포동) 이담(전포역 6번출구 부근)",
       "query": "부산 부산진구 서전로68번길 104 전포동) 이담(전포역 6번출구 부근 부산 부산진구",
-      "priority": 708,
-      "performanceCount": 16,
+      "priority": 716,
+      "performanceCount": 17,
       "reviewFlags": [
         "alias_merge_candidate",
         "invalid_coordinate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
+        "현무암빵, 먹물크림치즈 식빵 만들기 원데이 클래스",
         "소보루 크림 치즈브라우니 쌀빵 만들기 베이킹 원데이 클래스",
-        "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트",
-        "앙금플라워 떡케이크 만들기 원데이 클래스"
+        "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트"
       ]
     },
     {
@@ -100,16 +100,33 @@
       "officialName": "부산 부산진구 서전로68번길 104 이담",
       "address": "부산 부산진구 서전로68번길 104 (전포동) 이담",
       "query": "부산 부산진구 서전로68번길 104 이담 부산 부산진구",
-      "priority": 660,
-      "performanceCount": 10,
+      "priority": 708,
+      "performanceCount": 16,
       "reviewFlags": [
         "invalid_coordinate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
         "부산) 쌀휘낭시에 원데이 베이킹 클래스 촉촉",
-        "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡",
-        "수제 카네이션 쿠키 만들기 어버이날 이색 선물"
+        "부산 전포 롤떡케이크 베이킹 원데이 클래스",
+        "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡"
+      ]
+    },
+    {
+      "venueId": "venue_부산부산진구전포대로255번길201층_2gf3r1",
+      "officialName": "부산 부산진구 전포대로255번길 20 1층",
+      "address": "부산 부산진구 전포대로255번길 20 (전포동) 1층",
+      "query": "부산 부산진구 전포대로255번길 20 1층 부산 부산진구",
+      "priority": 644,
+      "performanceCount": 8,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "와인잔1잔 만들기",
+        "보울/면기 만들기",
+        "소주잔1잔 + 맥주잔1잔 만들기"
       ]
     },
     {
@@ -131,29 +148,12 @@
       ]
     },
     {
-      "venueId": "venue_부산부산진구전포대로255번길201층_2gf3r1",
-      "officialName": "부산 부산진구 전포대로255번길 20 1층",
-      "address": "부산 부산진구 전포대로255번길 20 (전포동) 1층",
-      "query": "부산 부산진구 전포대로255번길 20 1층 부산 부산진구",
-      "priority": 636,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "와인잔1잔 만들기",
-        "보울/면기 만들기",
-        "소주잔1잔 + 맥주잔1잔 만들기"
-      ]
-    },
-    {
       "venueId": "venue_부산부산진구서전로68번길104전포동_백설공주이야기2층_전포_djk43r",
       "officialName": "부산 부산진구 서전로68번길 104 전포동) 백설공주이야기 2층(전포역 6번출구 부근",
       "address": "부산 부산진구 서전로68번길 104 (전포동) 백설공주이야기 2층(전포역 6번출구 부근)",
       "query": "부산 부산진구 서전로68번길 104 전포동) 백설공주이야기 2층(전포역 6번출구 부근 부산 부산진구",
-      "priority": 628,
-      "performanceCount": 6,
+      "priority": 636,
+      "performanceCount": 7,
       "reviewFlags": [
         "alias_merge_candidate",
         "invalid_coordinate",
@@ -238,6 +238,23 @@
       ]
     },
     {
+      "venueId": "venue_부산연제구중앙대로10513층_14damju",
+      "officialName": "부산 연제구 중앙대로 1051 3층",
+      "address": "부산 연제구 중앙대로 1051 (연산동) 3층",
+      "query": "부산 연제구 중앙대로 1051 3층 부산 연제구",
+      "priority": 612,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "피아노 레슨[1개월 - 30분]",
+        "바이올린 레슨 [1개월 - 50분]",
+        "통기타 레슨 [1개월 - 50분]"
+      ]
+    },
+    {
       "venueId": "venue_부산해운대구달맞이길117번다길165젬마하우스_1fx4meh",
       "officialName": "부산 해운대구 달맞이길117번다길 165 젬마하우스",
       "address": "부산 해운대구 달맞이길117번다길 165 (중동) 젬마하우스",
@@ -309,10 +326,10 @@
       ]
     },
     {
-      "venueId": "venue_부산연제구중앙대로10513층_14damju",
-      "officialName": "부산 연제구 중앙대로 1051 3층",
-      "address": "부산 연제구 중앙대로 1051 (연산동) 3층",
-      "query": "부산 연제구 중앙대로 1051 3층 부산 연제구",
+      "venueId": "venue_부산부산진구서전로37번길1413층_apxlse",
+      "officialName": "부산 부산진구 서전로37번길 14-1 3층",
+      "address": "부산 부산진구 서전로37번길 14-1 (전포동) 3층",
+      "query": "부산 부산진구 서전로37번길 14-1 3층 부산 부산진구",
       "priority": 604,
       "performanceCount": 3,
       "reviewFlags": [
@@ -320,9 +337,43 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "피아노 레슨[1개월 - 30분]",
-        "통기타 레슨 [1개월 - 50분]",
-        "피아노 레슨[1개월 - 50분]"
+        "째즈퓨전 무브먼트 [1개월]",
+        "1:1 개인레슨",
+        "퓨전 발레 [1개월]"
+      ]
+    },
+    {
+      "venueId": "venue_부산부산진구전포대로199번길273층프랑꼬아트랩_1fn46dm",
+      "officialName": "부산 부산진구 전포대로199번길 27 3층 프랑꼬아트랩",
+      "address": "부산 부산진구 전포대로199번길 27 (전포동, KH마이우스) 3층 프랑꼬아트랩",
+      "query": "부산 부산진구 전포대로199번길 27 3층 프랑꼬아트랩 부산 부산진구",
+      "priority": 604,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "데일리와 유니크가 함께하는 발찌 클래스",
+        "창의력 쑥쑥 원데이 키즈 팔찌 클래스",
+        "명품st 가죽팔찌 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_부산수영구광남로1592층베이킹하루_nkgs9d",
+      "officialName": "부산 수영구 광남로 159 2층 베이킹하루",
+      "address": "부산 수영구 광남로 159 (광안동) 2층 베이킹하루",
+      "query": "부산 수영구 광남로 159 2층 베이킹하루 부산 수영구",
+      "priority": 604,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "성인 / 원형 or 캐릭터 마카롱 클래스",
+        "성인 / 케이크 클래스",
+        "키즈 / 원형or캐릭터 마카롱 원데이 클래스"
       ]
     },
     {
@@ -429,6 +480,39 @@
       ]
     },
     {
+      "venueId": "venue_경기김포시김포한강8로17388마산동한강신도시동일스위트더파크_1uyg3cs",
+      "officialName": "경기 김포시 김포한강8로 173-88 마산동, 한강신도시 동일스위트 더파크뷰 1단지",
+      "address": "경기 김포시 김포한강8로 173-88 (마산동, 한강신도시 동일스위트 더파크뷰 1단지)",
+      "query": "경기 김포시 김포한강8로 173-88 마산동, 한강신도시 동일스위트 더파크뷰 1단지 경기 김포시",
+      "priority": 596,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "휘낭시에 3종 A원데이클래스",
+        "점보쿠키 5종 원데이클래스"
+      ]
+    },
+    {
+      "venueId": "venue_경기안양시만안구박달로542번길46b1층_4ruwhq",
+      "officialName": "경기 안양시 만안구 박달로542번길 46 B1층",
+      "address": "경기 안양시 만안구 박달로542번길 46 (안양동) B1층",
+      "query": "경기 안양시 만안구 박달로542번길 46 B1층 경기 안양시",
+      "priority": 596,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "원데이 클래스 [ 쿨 썸머 tea set ]",
+        "꿈가득 도자기 [물레체험 초등반]"
+      ]
+    },
+    {
       "venueId": "venue_광주광산구신창로36번길331층chiot_5vwx0h",
       "officialName": "광주 광산구 신창로36번길 33 1층 chiot",
       "address": "광주 광산구 신창로36번길 33 (신창동) 1층 chiot",
@@ -458,6 +542,22 @@
       "sampleTitles": [
         "광주광역시 꽃화병 클래스",
         "광주광역시 꽃다발 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_대구남구대명동200794층아르떼스튜디오_ifta0l",
+      "officialName": "대구 남구 대명동 2007-9 4층 아르떼스튜디오",
+      "address": "대구 남구 대명동 2007-9 4층 아르떼스튜디오",
+      "query": "대구 남구 대명동 2007-9 4층 아르떼스튜디오 대구 남구",
+      "priority": 596,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "피아노 원데이 클래스",
+        "대구 취미 피아노 레슨"
       ]
     },
     {
@@ -511,10 +611,10 @@
       ]
     },
     {
-      "venueId": "venue_부산부산진구서전로37번길1413층_apxlse",
-      "officialName": "부산 부산진구 서전로37번길 14-1 3층",
-      "address": "부산 부산진구 서전로37번길 14-1 (전포동) 3층",
-      "query": "부산 부산진구 서전로37번길 14-1 3층 부산 부산진구",
+      "venueId": "venue_부산부산진구동평로9413층필라테스스튜디오_0vy0yp",
+      "officialName": "부산 부산진구 동평로 94-1 3층 필라테스 스튜디오",
+      "address": "부산 부산진구 동평로 94-1 (당감동) 3층 필라테스 스튜디오",
+      "query": "부산 부산진구 동평로 94-1 3층 필라테스 스튜디오 부산 부산진구",
       "priority": 596,
       "performanceCount": 2,
       "reviewFlags": [
@@ -522,15 +622,15 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "째즈퓨전 무브먼트 [1개월]",
-        "퓨전 발레 [1개월]"
+        "대기구 필라테스 자유수강권",
+        "필라테스 1회 정규 쿠폰"
       ]
     },
     {
-      "venueId": "venue_부산부산진구전포대로199번길273층프랑꼬아트랩_1fn46dm",
-      "officialName": "부산 부산진구 전포대로199번길 27 3층 프랑꼬아트랩",
-      "address": "부산 부산진구 전포대로199번길 27 (전포동, KH마이우스) 3층 프랑꼬아트랩",
-      "query": "부산 부산진구 전포대로199번길 27 3층 프랑꼬아트랩 부산 부산진구",
+      "venueId": "venue_부산사하구낙동대로234번길101층플뢰르fleur_1p1ella",
+      "officialName": "부산 사하구 낙동대로234번길 10 1층 플뢰르 FLEUR",
+      "address": "부산 사하구 낙동대로234번길 10 (괴정동) 1층 플뢰르 FLEUR",
+      "query": "부산 사하구 낙동대로234번길 10 1층 플뢰르 FLEUR 부산 사하구",
       "priority": 596,
       "performanceCount": 2,
       "reviewFlags": [
@@ -538,15 +638,15 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "창의력 쑥쑥 원데이 키즈 팔찌 클래스",
-        "명품st 가죽팔찌 만들기"
+        "떡카롱 원데이클래스 초급반",
+        "앙금플라워케이크[한식디저트] 원데이 초급반"
       ]
     },
     {
-      "venueId": "venue_부산수영구광남로1592층베이킹하루_nkgs9d",
-      "officialName": "부산 수영구 광남로 159 2층 베이킹하루",
-      "address": "부산 수영구 광남로 159 (광안동) 2층 베이킹하루",
-      "query": "부산 수영구 광남로 159 2층 베이킹하루 부산 수영구",
+      "venueId": "venue_부산수영구광안로61번가길161층오드집_xraur5",
+      "officialName": "부산 수영구 광안로61번가길 16 1층 오드집",
+      "address": "부산 수영구 광안로61번가길 16 (민락동) 1층 오드집",
+      "query": "부산 수영구 광안로61번가길 16 1층 오드집 부산 수영구",
       "priority": 596,
       "performanceCount": 2,
       "reviewFlags": [
@@ -554,8 +654,8 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "성인 / 원형 or 캐릭터 마카롱 클래스",
-        "성인 / 케이크 클래스"
+        "아티스트가 되어보는 페인팅 클래스",
+        "수채화 그림으로 수놓기 그림 그리기 원데이 클래스"
       ]
     },
     {
@@ -606,6 +706,22 @@
       "sampleTitles": [
         "새벽정원 크리스마스 트리 만들기",
         "새벽정원 크리스마스 리스 만들기(중형)"
+      ]
+    },
+    {
+      "venueId": "venue_전북군산시궁포안2길27지플레이스dm5층_1i0wc83",
+      "officialName": "전북 군산시 궁포안2길 27 지플레이스DM 5층",
+      "address": "전북 군산시 궁포안2길 27 (조촌동) 지플레이스DM 5층",
+      "query": "전북 군산시 궁포안2길 27 지플레이스DM 5층 전북 군산시",
+      "priority": 596,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "원데이 자이로토닉",
+        "원데이 테라피월요가&필라"
       ]
     },
     {
@@ -1057,22 +1173,6 @@
       ]
     },
     {
-      "venueId": "venue_경기김포시김포한강8로17388마산동한강신도시동일스위트더파크_1uyg3cs",
-      "officialName": "경기 김포시 김포한강8로 173-88 마산동, 한강신도시 동일스위트 더파크뷰 1단지",
-      "address": "경기 김포시 김포한강8로 173-88 (마산동, 한강신도시 동일스위트 더파크뷰 1단지)",
-      "query": "경기 김포시 김포한강8로 173-88 마산동, 한강신도시 동일스위트 더파크뷰 1단지 경기 김포시",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "점보쿠키 5종 원데이클래스"
-      ]
-    },
-    {
       "venueId": "venue_경기김포시청송로85층_1atagot",
       "officialName": "경기 김포시 청송로 8 5층",
       "address": "경기 김포시 청송로 8 (장기동) 5층",
@@ -1100,21 +1200,6 @@
       ],
       "sampleTitles": [
         "보이즈인더후드 4회 레슨권"
-      ]
-    },
-    {
-      "venueId": "venue_경기안양시만안구박달로542번길46b1층_4ruwhq",
-      "officialName": "경기 안양시 만안구 박달로542번길 46 B1층",
-      "address": "경기 안양시 만안구 박달로542번길 46 (안양동) B1층",
-      "query": "경기 안양시 만안구 박달로542번길 46 B1층 경기 안양시",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "원데이 클래스 [ 쿨 썸머 tea set ]"
       ]
     },
     {
@@ -1146,6 +1231,22 @@
       ],
       "sampleTitles": [
         "아크릴화 원데이클래스"
+      ]
+    },
+    {
+      "venueId": "venue_경남김해시김해대로2389부원동_1c4qhe2",
+      "officialName": "경남 김해시 김해대로 2389 부원동",
+      "address": "경남 김해시 김해대로 2389 (부원동)",
+      "query": "경남 김해시 김해대로 2389 부원동 경남 김해시",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "보컬핏 스튜디오 (발성훈련,보컬스타일)"
       ]
     },
     {
@@ -1306,21 +1407,6 @@
       ]
     },
     {
-      "venueId": "venue_대구남구대명동200794층아르떼스튜디오_ifta0l",
-      "officialName": "대구 남구 대명동 2007-9 4층 아르떼스튜디오",
-      "address": "대구 남구 대명동 2007-9 4층 아르떼스튜디오",
-      "query": "대구 남구 대명동 2007-9 4층 아르떼스튜디오 대구 남구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "피아노 원데이 클래스"
-      ]
-    },
-    {
       "venueId": "venue_대구달서구월곡로47길541층작은별_h6d61o",
       "officialName": "대구 달서구 월곡로47길 54 1층 작은별",
       "address": "대구 달서구 월곡로47길 54 (상인동) 1층 작은별",
@@ -1333,21 +1419,6 @@
       ],
       "sampleTitles": [
         "대구 아크릴 원데이 초급반"
-      ]
-    },
-    {
-      "venueId": "venue_대구달성군구지면국가산단대로70길17103동102호_n6ol19",
-      "officialName": "대구 달성군 구지면 국가산단대로70길 17 103동 102호",
-      "address": "대구 달성군 구지면 국가산단대로70길 17 (창리, 대구국가산단 디에트르 더 센트럴) 103동 102호",
-      "query": "대구 달성군 구지면 국가산단대로70길 17 103동 102호 대구 달성군",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "*[대구]아크릴화 원데이 클래스"
       ]
     },
     {
@@ -1656,21 +1727,6 @@
       ]
     },
     {
-      "venueId": "venue_부산동구중앙대로460번길132층블리센트_1nrrvtj",
-      "officialName": "부산 동구 중앙대로460번길 13 2층 블리센트",
-      "address": "부산 동구 중앙대로460번길 13 (좌천동) 2층 블리센트",
-      "query": "부산 동구 중앙대로460번길 13 2층 블리센트 부산 동구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "부케 캔들 one-day class"
-      ]
-    },
-    {
       "venueId": "venue_부산동래구명륜로19511층_0bp6sx",
       "officialName": "부산 동래구 명륜로 195-1 1층",
       "address": "부산 동래구 명륜로 195-1 (명륜동) 1층",
@@ -1713,21 +1769,6 @@
       ],
       "sampleTitles": [
         "담백한 쌀빵 (단호박,흑임자등) 파운드케익 3가지 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_부산부산진구동평로9413층필라테스스튜디오_0vy0yp",
-      "officialName": "부산 부산진구 동평로 94-1 3층 필라테스 스튜디오",
-      "address": "부산 부산진구 동평로 94-1 (당감동) 3층 필라테스 스튜디오",
-      "query": "부산 부산진구 동평로 94-1 3층 필라테스 스튜디오 부산 부산진구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "필라테스 1회 정규 쿠폰"
       ]
     },
     {
@@ -1836,18 +1877,19 @@
       ]
     },
     {
-      "venueId": "venue_부산사하구낙동대로234번길101층플뢰르fleur_1p1ella",
-      "officialName": "부산 사하구 낙동대로234번길 10 1층 플뢰르 FLEUR",
-      "address": "부산 사하구 낙동대로234번길 10 (괴정동) 1층 플뢰르 FLEUR",
-      "query": "부산 사하구 낙동대로234번길 10 1층 플뢰르 FLEUR 부산 사하구",
+      "venueId": "venue_부산북구산성로48번길7화명동돈호빌딩_3층화명핫바디댄스학원__1eycks7",
+      "officialName": "부산 북구 산성로48번길 7 화명동, 돈호빌딩) 3층 화명핫바디댄스학원 (푸르지오헤리센트 109동옆",
+      "address": "부산 북구 산성로48번길 7 (화명동, 돈호빌딩) 3층 화명핫바디댄스학원 (푸르지오헤리센트 109동옆)",
+      "query": "부산 북구 산성로48번길 7 화명동, 돈호빌딩) 3층 화명핫바디댄스학원 (푸르지오헤리센트 109동옆 부산 북구",
       "priority": 588,
       "performanceCount": 1,
       "reviewFlags": [
+        "alias_merge_candidate",
         "invalid_coordinate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "떡카롱 원데이클래스 초급반"
+        "화명핫바디 다이어트댄스"
       ]
     },
     {
@@ -1863,21 +1905,6 @@
       ],
       "sampleTitles": [
         "미니어처 케이크 생일 축하 오르골 원데이"
-      ]
-    },
-    {
-      "venueId": "venue_부산수영구광안로61번가길161층오드집_xraur5",
-      "officialName": "부산 수영구 광안로61번가길 16 1층 오드집",
-      "address": "부산 수영구 광안로61번가길 16 (민락동) 1층 오드집",
-      "query": "부산 수영구 광안로61번가길 16 1층 오드집 부산 수영구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "아티스트가 되어보는 페인팅 클래스"
       ]
     },
     {
@@ -1908,21 +1935,6 @@
       ],
       "sampleTitles": [
         "첼로레슨 (1회)"
-      ]
-    },
-    {
-      "venueId": "venue_부산해운대구달맞이길117번가길30도자공방가원_izqmfs",
-      "officialName": "부산 해운대구 달맞이길117번가길 30 도자공방가원",
-      "address": "부산 해운대구 달맞이길117번가길 30 (중동) 도자공방가원",
-      "query": "부산 해운대구 달맞이길117번가길 30 도자공방가원 부산 해운대구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "해운대 도자기공방에서 나만의 도자기만들기 이색 체험 클래스"
       ]
     }
   ],
@@ -2017,6 +2029,24 @@
         "원데이 이색 악세사리 클래스",
         "원데이 반려동물 목걸이 펫 클래스",
         "원 앤 온리 특별한 목걸이 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_부산사하구_1dugcvn",
+      "officialName": "부산 사하구",
+      "address": "부산 사하구 서포로30번길 26 (구평동, e편한세상 사하1차) 1(상세주소는 수업신청완료후 안내)",
+      "query": "부산 사하구 부산 사하구",
+      "priority": 32,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
+        "앙금플라워케이크정규반모집 [1개월]",
+        "악마의에그타르트 원데이클래스(겉빠속촉)"
       ]
     },
     {
@@ -2242,23 +2272,6 @@
       ]
     },
     {
-      "venueId": "venue_부산사하구_1dugcvn",
-      "officialName": "부산 사하구",
-      "address": "부산 사하구 서포로30번길 26 (구평동, e편한세상 사하1차) 1(상세주소는 수업신청완료후 안내)",
-      "query": "부산 사하구 부산 사하구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
-        "촉촉한 건강식 수제오란다 원데이클래스"
-      ]
-    },
-    {
       "venueId": "venue_부산연제구과정로191번가길8카페스토리쿡_zo3xhm",
       "officialName": "부산 연제구 과정로191번가길 8 카페 스토리쿡",
       "address": "부산 연제구 과정로191번가길 8 (연산동) 카페 스토리쿡",
@@ -2321,6 +2334,24 @@
       "sampleTitles": [
         "순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기",
         "순은 99.9% 은점토로 나만의 목걸이 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구논현로332역삼동계유빌딩_1xhy2x0",
+      "officialName": "서울 강남구 논현로 332 역삼동, 계유빌딩",
+      "address": "서울 강남구 논현로 332 (역삼동, 계유빌딩)",
+      "query": "서울 강남구 논현로 332 역삼동, 계유빌딩 서울 강남구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "당일수령가능한 그림컵만들기 !",
+        "도자기원데이클래스"
       ]
     },
     {
@@ -3822,23 +3853,6 @@
       "sampleTitles": [
         "프리저브드 디퓨저 만들기"
       ]
-    },
-    {
-      "venueId": "venue_서울강남구논현동8322논현2주민센터4층향기로운그대공동작업장_5isr5h",
-      "officialName": "서울 강남구 논현동 83-22 논현2주민센터, 4층 향기로운그대 공동작업장",
-      "address": "서울특별시 강남구 학동로43길 17 논현2동주민센터, 4층 향기로운그대 공동작업장",
-      "query": "서울 강남구 논현동 83-22 논현2주민센터, 4층 향기로운그대 공동작업장 서울 강남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "한복방향제 만들기"
-      ]
     }
   ],
   "staleCacheCount": 1635,
@@ -4190,15 +4204,15 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-05-22T04:10:14.188Z",
+    "checkedAt": "2026-05-22T04:23:58.057Z",
     "status": "warn",
-    "venueCount": 4905,
+    "venueCount": 4904,
     "matchedCount": 2094,
     "highConfidenceMatchCount": 1522,
     "needsReviewCount": 20,
     "notFoundCount": 708,
     "pendingLookupCount": 2628,
-    "insufficientIdentityCount": 293,
+    "insufficientIdentityCount": 292,
     "lookupReady": false,
     "providersConfigured": [],
     "staleCacheCount": 1635,
@@ -4274,17 +4288,17 @@
         "officialName": "부산 부산진구 서전로68번길 104 전포동) 이담(전포역 6번출구 부근",
         "address": "부산 부산진구 서전로68번길 104 (전포동) 이담(전포역 6번출구 부근)",
         "query": "부산 부산진구 서전로68번길 104 전포동) 이담(전포역 6번출구 부근 부산 부산진구",
-        "priority": 708,
-        "performanceCount": 16,
+        "priority": 716,
+        "performanceCount": 17,
         "reviewFlags": [
           "alias_merge_candidate",
           "invalid_coordinate",
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
+          "현무암빵, 먹물크림치즈 식빵 만들기 원데이 클래스",
           "소보루 크림 치즈브라우니 쌀빵 만들기 베이킹 원데이 클래스",
-          "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트",
-          "앙금플라워 떡케이크 만들기 원데이 클래스"
+          "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트"
         ]
       },
       {
@@ -4292,16 +4306,33 @@
         "officialName": "부산 부산진구 서전로68번길 104 이담",
         "address": "부산 부산진구 서전로68번길 104 (전포동) 이담",
         "query": "부산 부산진구 서전로68번길 104 이담 부산 부산진구",
-        "priority": 660,
-        "performanceCount": 10,
+        "priority": 708,
+        "performanceCount": 16,
         "reviewFlags": [
           "invalid_coordinate",
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
           "부산) 쌀휘낭시에 원데이 베이킹 클래스 촉촉",
-          "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡",
-          "수제 카네이션 쿠키 만들기 어버이날 이색 선물"
+          "부산 전포 롤떡케이크 베이킹 원데이 클래스",
+          "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡"
+        ]
+      },
+      {
+        "venueId": "venue_부산부산진구전포대로255번길201층_2gf3r1",
+        "officialName": "부산 부산진구 전포대로255번길 20 1층",
+        "address": "부산 부산진구 전포대로255번길 20 (전포동) 1층",
+        "query": "부산 부산진구 전포대로255번길 20 1층 부산 부산진구",
+        "priority": 644,
+        "performanceCount": 8,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "와인잔1잔 만들기",
+          "보울/면기 만들기",
+          "소주잔1잔 + 맥주잔1잔 만들기"
         ]
       },
       {
@@ -4323,29 +4354,12 @@
         ]
       },
       {
-        "venueId": "venue_부산부산진구전포대로255번길201층_2gf3r1",
-        "officialName": "부산 부산진구 전포대로255번길 20 1층",
-        "address": "부산 부산진구 전포대로255번길 20 (전포동) 1층",
-        "query": "부산 부산진구 전포대로255번길 20 1층 부산 부산진구",
-        "priority": 636,
-        "performanceCount": 7,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "와인잔1잔 만들기",
-          "보울/면기 만들기",
-          "소주잔1잔 + 맥주잔1잔 만들기"
-        ]
-      },
-      {
         "venueId": "venue_부산부산진구서전로68번길104전포동_백설공주이야기2층_전포_djk43r",
         "officialName": "부산 부산진구 서전로68번길 104 전포동) 백설공주이야기 2층(전포역 6번출구 부근",
         "address": "부산 부산진구 서전로68번길 104 (전포동) 백설공주이야기 2층(전포역 6번출구 부근)",
         "query": "부산 부산진구 서전로68번길 104 전포동) 백설공주이야기 2층(전포역 6번출구 부근 부산 부산진구",
-        "priority": 628,
-        "performanceCount": 6,
+        "priority": 636,
+        "performanceCount": 7,
         "reviewFlags": [
           "alias_merge_candidate",
           "invalid_coordinate",
@@ -4470,6 +4484,24 @@
         ]
       },
       {
+        "venueId": "venue_부산사하구_1dugcvn",
+        "officialName": "부산 사하구",
+        "address": "부산 사하구 서포로30번길 26 (구평동, e편한세상 사하1차) 1(상세주소는 수업신청완료후 안내)",
+        "query": "부산 사하구 부산 사하구",
+        "priority": 32,
+        "performanceCount": 4,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
+          "앙금플라워케이크정규반모집 [1개월]",
+          "악마의에그타르트 원데이클래스(겉빠속촉)"
+        ]
+      },
+      {
         "venueId": "venue_경기수원시_hjgkem",
         "officialName": "경기 수원시",
         "address": "경기 수원시 영통구 광교중앙로 124, 갤러리아 광교 10층 매직앤조이",
@@ -4536,23 +4568,6 @@
           "나만의 오브제 그릇 만들기 (물레) 이색 체험 데이트",
           "나만의 오브제 그릇 만들기 (핸드빌딩) 이색 체험",
           "나만의 캐릭터 그릇 만들기 (핸드빌딩) 이색 체험"
-        ]
-      },
-      {
-        "venueId": "venue_서울강서구_17g2ahx",
-        "officialName": "서울 강서구",
-        "address": "서울 강서구 공항대로41길 51",
-        "query": "서울 강서구 서울 강서구",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "내 취향에 딱 맞는 향기로 만드는 천연 핸드크림 원데이클래스",
-          "비누에 봄을 담아요, 플라워솝 압화비누 만들기",
-          "내 몸에도 건강하고, 환경에도 이로운 제로웨이스트 올인원 샴푸바 만들기"
         ]
       }
     ],

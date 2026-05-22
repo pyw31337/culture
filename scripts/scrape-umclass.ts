@@ -26,16 +26,24 @@ interface UmClassItem {
     description?: string;
     priceDetail?: string;
     feesAndPrograms?: string;
+    synopsisImages?: string[];
+    stillImages?: string[];
+    backupPoster?: string;
     targetAudience?: string;
     website?: string;
     sourceUpdatedAt?: string;
     lastEnriched?: string;
+    keywords?: string[];
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/umclass.json');
 const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
 const DETAIL_ENRICH_LIMIT = Number(process.env.UMCLASS_DETAIL_LIMIT || 300);
 const LIST_PAGE_LIMIT = Number(process.env.UMCLASS_MAX_PAGES || 100);
+
+async function preparePageForEvaluate(page: any) {
+    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
+}
 
 // Simple progress bar
 class ProgressBar {
@@ -80,6 +88,40 @@ function slugify(text: string): string {
         .replace(/^_|_$/g, '');
 }
 
+function compactText(text?: string) {
+    return (text || '').replace(/\s+/g, ' ').trim();
+}
+
+function isUsefulUmclassImage(url?: string) {
+    return Boolean(url)
+        && /^https?:\/\//i.test(url || '')
+        && /(umclassuploadboardimg|umclassupload\.s3|s3\.ap-northeast-2\.amazonaws\.com\/umclassupload)/i.test(url || '')
+        && !/\/app\/|static\/img|icon|logo|review|map|coupon|close|sprite|blank|loading|spacer|sample|\.svg(?:\?|$)/i.test(url || '');
+}
+
+function buildUmclassDescription(title: string, detailText?: string, metaDescription?: string, keywords: string[] = []) {
+    const detail = compactText(detailText);
+    const meta = compactText(metaDescription);
+    const keywordLine = keywords.length > 0 ? `키워드: ${keywords.slice(0, 8).join(', ')}` : '';
+    const merged = [detail, meta, keywordLine].filter(Boolean).join('\n\n').trim();
+    if (merged.length >= 80) return merged.slice(0, 1600);
+
+    return [
+        `${title.replace(/^\[[^\]]+\]\s*/, '').trim()} 클래스입니다.`,
+        detail || meta,
+        keywordLine,
+        '운영 일정과 세부 구성은 공식 예약 페이지 기준으로 확인됩니다.',
+    ].filter(Boolean).join('\n\n').slice(0, 900);
+}
+
+function firstWonText(...values: Array<string | undefined>) {
+    for (const value of values) {
+        const match = compactText(value).match(/([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{4,})\s*원?/);
+        if (match) return `${Number.parseInt(match[1].replace(/,/g, ''), 10).toLocaleString('ko-KR')}원`;
+    }
+    return '';
+}
+
 function buildFallbackItem(item: { link: string, title: string, image: string, discount: string, price: string }, existing?: UmClassItem): UmClassItem {
     return {
         ...(existing || {}),
@@ -99,6 +141,9 @@ function buildFallbackItem(item: { link: string, title: string, image: string, d
         ageLimit: existing?.ageLimit || 'all',
         address: existing?.address || '',
         casting: existing?.casting || '',
+        synopsisImages: existing?.synopsisImages || [],
+        stillImages: existing?.stillImages || [],
+        backupPoster: existing?.backupPoster || item.image || '',
     };
 }
 
@@ -129,7 +174,7 @@ async function scrapeUmClass() {
     }
 
     const page = await browser.newPage();
-    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
+    await preparePageForEvaluate(page);
     await page.setViewport({ width: 1280, height: 800 });
 
     // Header settings for Korean context
@@ -277,7 +322,14 @@ async function scrapeUmClass() {
 
     for (const item of pendingItems) {
         const existing = existingMap.get(item.link);
-        if (existing && isRecentlyEnriched(existing)) {
+        const hasDetailImages = Array.isArray(existing?.synopsisImages) && existing.synopsisImages.some(isUsefulUmclassImage);
+        const hasRichDetail = Boolean(
+            existing?.description &&
+            compactText(existing.description).length >= 80 &&
+            (existing?.price || existing?.priceDetail) &&
+            hasDetailImages
+        );
+        if (existing && isRecentlyEnriched(existing) && hasRichDetail) {
             // Updated basic info from list if needed, but keep detail info?
             // Usually list partial info is fresher (discount/price) but detail info is heavy.
             // We'll trust existing full record.
@@ -302,7 +354,8 @@ async function scrapeUmClass() {
     if (enrichQueue.length > 0) {
         const progressBar = new ProgressBar(enrichQueue.length);
         let processedCount = 0;
-        const CONCURRENCY = 3;
+        const CONCURRENCY = Number(process.env.UMCLASS_CONCURRENCY || 4);
+        const CHUNK_DELAY_MS = Number(process.env.UMCLASS_CHUNK_DELAY_MS || 250);
 
         // Trap SIGINT
         process.on('SIGINT', () => {
@@ -316,12 +369,26 @@ async function scrapeUmClass() {
             const promises = chunk.map(async (item) => {
                 const p = await browser.newPage();
                 try {
-                    await p.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
+                    await preparePageForEvaluate(p);
                     await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
                     await p.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
-                    // await new Promise(r => setTimeout(r, 500)); // Remove wait for speed
+                    await p.waitForSelector('.voucher-contents, .class-main-img, img[src]', { timeout: 10000 }).catch(() => undefined);
+                    await new Promise(r => setTimeout(r, 800));
 
                     const detailData = await p.evaluate(() => {
+                        const compact = (value?: string | null) => value?.replace(/\s+/g, ' ').trim() || '';
+                        const normalizeImageUrl = (value?: string | null) => {
+                            const raw = compact(value)
+                                .replace(/^url\(["']?/i, '')
+                                .replace(/["']?\)$/i, '')
+                                .replace(/&amp;/g, '&');
+                            if (!raw) return '';
+                            try {
+                                return new URL(raw, location.origin).href;
+                            } catch {
+                                return '';
+                            }
+                        };
                         function getTxt(sel: string) {
                             return document.querySelector(sel)?.textContent?.trim() || '';
                         }
@@ -407,7 +474,68 @@ async function scrapeUmClass() {
                             .filter(Boolean)
                             .slice(0, 12) || [];
 
-                        return { rawAddress: address, duration, people, totalCount, discount, originPrice, salePrice, useTime, metaDescription, canonical, keywords };
+                        const imageUrls = Array.from(new Set([
+                            ...Array.from(document.querySelectorAll('img')).flatMap((img) => [
+                                (img as HTMLImageElement).currentSrc,
+                                img.getAttribute('src'),
+                                img.getAttribute('data-src'),
+                                img.getAttribute('data-original'),
+                            ].map(normalizeImageUrl)),
+                            ...Array.from(document.querySelectorAll<HTMLElement>('*')).map((el) => {
+                                const background = window.getComputedStyle(el).backgroundImage;
+                                const match = background.match(/url\(["']?(.+?)["']?\)/i);
+                                return normalizeImageUrl(match?.[1]);
+                            }),
+                        ]))
+                            .filter((url) => /^https?:\/\//i.test(url))
+                            .filter((url) => /(umclassuploadboardimg|umclassupload\.s3|s3\.ap-northeast-2\.amazonaws\.com\/umclassupload)/i.test(url))
+                            .filter((url) => !/\/app\/|static\/img|icon|logo|review|map|coupon|close|sprite|blank|loading|spacer|sample|\.svg(?:\?|$)/i.test(url))
+                            .slice(0, 12);
+
+                        const root = (document.querySelector('.voucher-contents') || document.querySelector('#um_contents') || document.body) as HTMLElement;
+                        const genericFragments = [
+                            '예약하기',
+                            '할인 쿠폰',
+                            '링크복사',
+                            '카카오맵',
+                            '네이버 지도',
+                            '취소 및 환불',
+                            '예약 대기',
+                            '예약확정',
+                            '예약불가',
+                            '판매자',
+                            '개인정보',
+                            '이용약관',
+                        ];
+                        const detailLines = Array.from(new Set((root.innerText || '')
+                            .split(/\n+/)
+                            .map((line) => compact(line))
+                            .filter((line) => line.length >= 8 && line.length <= 240)
+                            .filter((line) => !genericFragments.some((fragment) => line.includes(fragment)))
+                            .filter((line) => !/^[0-9,]+\s*원$/.test(line))
+                        ));
+                        const detailText = detailLines.slice(0, 36).join('\n');
+                        const priceTexts = Array.from(document.querySelectorAll('span, p, div'))
+                            .map((el) => compact(el.textContent))
+                            .filter((text) => /[0-9,]+\s*원/.test(text) && text.length <= 120)
+                            .slice(0, 40);
+
+                        return {
+                            rawAddress: address,
+                            duration,
+                            people,
+                            totalCount,
+                            discount,
+                            originPrice,
+                            salePrice,
+                            useTime,
+                            metaDescription,
+                            canonical,
+                            keywords,
+                            images: imageUrls,
+                            detailText,
+                            priceTexts,
+                        };
                     });
 
                     let venue = '솜씨당 클래스';
@@ -425,36 +553,44 @@ async function scrapeUmClass() {
 
                     // Stable ID
                     const id = `class_${slugify(item.title)}`;
+                    const detailImages = Array.isArray(detailData.images) ? detailData.images.filter(isUsefulUmclassImage) : [];
+                    const description = buildUmclassDescription(item.title, detailData.detailText, detailData.metaDescription, detailData.keywords);
+                    const salePrice = firstWonText(detailData.salePrice, item.price, ...(detailData.priceTexts || []));
+                    const originalPrice = firstWonText(detailData.originPrice) || salePrice;
 
                     return {
                         id,
                         title: item.title,
                         date: detailData.duration || '2024-01-01',
                         venue: venue,
-                        image: item.image,
+                        image: detailImages[0] || item.image,
                         link: item.link,
                         genre: 'class',
                         region: address,
                         runningTime: detailData.useTime || detailData.duration,
                         viewCount: detailData.totalCount,
-                        originalPrice: detailData.originPrice,
-                        price: detailData.salePrice || detailData.originPrice,
-                        discount: detailData.discount,
+                        originalPrice,
+                        price: salePrice || originalPrice,
+                        discount: detailData.discount || item.discount,
                         ageLimit: 'all',
                         address: address,
                         casting: `정원: ${detailData.people}, 총회차: ${detailData.totalCount}`,
-                        description: detailData.metaDescription,
+                        description,
                         priceDetail: [
-                            detailData.originPrice ? `정상가: ${detailData.originPrice}` : '',
-                            detailData.discount ? `할인율: ${detailData.discount}` : '',
-                            (detailData.salePrice || detailData.originPrice) ? `판매가: ${detailData.salePrice || detailData.originPrice}` : '',
+                            originalPrice ? `정상가: ${originalPrice}` : '',
+                            (detailData.discount || item.discount) ? `할인율: ${detailData.discount || item.discount}` : '',
+                            (salePrice || originalPrice) ? `판매가: ${salePrice || originalPrice}` : '',
                         ].filter(Boolean).join('\n'),
                         feesAndPrograms: [
+                            description ? `클래스 안내\n${description}` : '',
                             detailData.duration ? `일정/기간: ${detailData.duration}` : '',
                             detailData.useTime ? `이용시간: ${detailData.useTime}` : '',
                             detailData.people ? `인원: ${detailData.people}` : '',
                             detailData.totalCount ? `총회차/조회: ${detailData.totalCount}` : '',
                         ].filter(Boolean).join('\n'),
+                        synopsisImages: detailImages.slice(0, 8),
+                        stillImages: detailImages.slice(1, 5),
+                        backupPoster: item.image,
                         targetAudience: detailData.people,
                         website: detailData.canonical,
                         sourceUpdatedAt: new Date().toISOString(),
@@ -482,6 +618,7 @@ async function scrapeUmClass() {
             progressBar.update(processedCount);
 
             if (i % 20 === 0) saveData(allItems);
+            await new Promise(r => setTimeout(r, CHUNK_DELAY_MS));
         }
         progressBar.finish();
     }
