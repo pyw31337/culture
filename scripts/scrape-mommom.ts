@@ -351,8 +351,11 @@ async function scrapeMomMom() {
             if (noChangeCount > 35) break;
         }
 
-        // Debug: Screenshot
-        await page.screenshot({ path: 'debug_mommom.png' });
+        if (process.env.MOMMOM_DEBUG_SCREENSHOT === '1') {
+            const debugPath = path.resolve(process.cwd(), 'logs/data-update/debug_mommom.png');
+            await page.screenshot({ path: debugPath });
+            console.log('Saved MomMom debug screenshot:', debugPath);
+        }
 
         // Debug: Log all links
         const allLinks = await page.evaluate(() => {

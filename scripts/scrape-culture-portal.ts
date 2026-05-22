@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import axios from 'axios';
 import { XMLParser } from 'fast-xml-parser';
 import * as cheerio from 'cheerio';
@@ -12,6 +13,14 @@ const OUTPUT_FILE = path.resolve(DATA_DIR, 'culture-portal.json');
 const VENUE_FILE = path.resolve(DATA_DIR, 'venues.json');
 
 const RATE_LIMIT_DELAY = 100;
+const ROWS_PER_PAGE = 100;
+const MAX_API_PAGES = positiveInt(process.env.CULTURE_PORTAL_MAX_API_PAGES, 360);
+const MAX_ACTIVE_ITEMS = positiveInt(process.env.CULTURE_PORTAL_MAX_ACTIVE_ITEMS, 8500);
+const DETAIL_LIMIT = positiveInt(process.env.CULTURE_PORTAL_DETAIL_LIMIT, 400);
+const DETAIL_STALE_DAYS = positiveInt(process.env.CULTURE_PORTAL_DETAIL_STALE_DAYS, 30);
+const DETAIL_CONCURRENCY = positiveInt(process.env.CULTURE_PORTAL_DETAIL_CONCURRENCY, 5);
+const DEBUG_DETAILS = process.env.CULTURE_PORTAL_DEBUG_DETAILS === '1';
+const RUN_CHECKED_AT = new Date().toISOString();
 
 interface CulturePerformance {
     id: string;
@@ -34,10 +43,38 @@ interface CulturePerformance {
     cast?: string[];
     crew?: string[];
     bookingLink?: string;
+    sourceKey?: string;
+    detailCheckedAt?: string;
+    detailStatus?: 'enriched' | 'checked';
     [key: string]: any; // Allow indexing
 }
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+function positiveInt(value: string | undefined, fallback: number): number {
+    const parsed = Number.parseInt(String(value ?? ''), 10);
+    return Number.isFinite(parsed) && parsed >= 0 ? parsed : fallback;
+}
+
+function itemKey(title: string, date: string): string {
+    return `${title.trim()}::${date.trim()}`;
+}
+
+function stableId(title: string, date: string, link: string): string {
+    const hash = crypto
+        .createHash('sha1')
+        .update(`${title.trim()}|${date.trim()}|${link.trim()}`)
+        .digest('hex')
+        .slice(0, 14);
+    return `culture_portal_${hash}`;
+}
+
+function isDetailStale(item: CulturePerformance): boolean {
+    if (!item.detailCheckedAt) return true;
+    const checkedAt = Date.parse(item.detailCheckedAt);
+    if (!Number.isFinite(checkedAt)) return true;
+    return Date.now() - checkedAt > DETAIL_STALE_DAYS * 24 * 60 * 60 * 1000;
+}
 
 // Safe write to prevent corruption during crash
 function safeWrite(file: string, data: any) {
@@ -175,6 +212,11 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
     } catch (e: any) {
         console.warn(`[WARN] Failed to enrich details for ${item.link}: ${e.message}`);
     }
+
+    item.detailCheckedAt = RUN_CHECKED_AT;
+    item.detailStatus = item.price || item.time || item.contact || item.description || item.bookingLink
+        ? 'enriched'
+        : 'checked';
     return item;
 }
 
@@ -199,22 +241,27 @@ async function scrapeCulturePortal() {
         } catch (e) {}
     }
     const existingMap = new Map<string, CulturePerformance>();
-    existingItems.forEach(it => existingMap.set(it.title + it.date, it));
+    existingItems.forEach(it => {
+        existingMap.set(itemKey(it.title || '', it.date || ''), it);
+        if (it.sourceKey) existingMap.set(it.sourceKey, it);
+    });
 
     const newList: CulturePerformance[] = [];
+    const seenKeys = new Set<string>();
     const parser = new XMLParser();
 
     let pageNo = 1;
     let hasMore = true;
+    let fetchedRows = 0;
 
     // Phase 1: API Collection
-    console.log("Phase 1: API Index Collection...");
+    console.log(`Phase 1: API Index Collection (max pages: ${MAX_API_PAGES}, max active: ${MAX_ACTIVE_ITEMS})...`);
     while (hasMore) {
         process.stdout.write(`Fetching Page ${pageNo}... `);
         try {
             const data = await fetchWithRetry(BASE_URL, {
                 serviceKey: API_KEY,
-                numOfRows: 100,
+                numOfRows: ROWS_PER_PAGE,
                 pageNo: pageNo
             });
 
@@ -235,10 +282,15 @@ async function scrapeCulturePortal() {
             }
 
             const list = Array.isArray(items) ? items : [items];
+            fetchedRows += list.length;
             
             for (const item of list) {
                 let genre = 'exhibition';
                 const title = item.title || '';
+                const normalizedDate = normalizeDate(item.eventPeriod || '');
+                const sourceKey = itemKey(title, normalizedDate);
+                if (seenKeys.has(sourceKey)) continue;
+                seenKeys.add(sourceKey);
                 
                 if (title.includes('콘서트') || title.includes('연주회')) genre = 'classic_tradition';
                 if (title.includes('뮤지컬')) genre = 'musical';
@@ -250,20 +302,33 @@ async function scrapeCulturePortal() {
                 if (!rawVenue || typeof rawVenue !== 'string') rawVenue = '미상';
                 rawVenue = rawVenue.split(',')[0].trim();
 
-                const key = title + (item.eventPeriod || '');
-                let perf = existingMap.get(key);
+                let perf = existingMap.get(sourceKey);
 
                 if (!perf) {
                     perf = {
-                        id: `culture_portal_${title.replace(/\s/g, '').substring(0,20)}_${pageNo}_${Math.floor(Math.random() * 1000)}`,
+                        id: stableId(title, normalizedDate, item.url || ''),
                         title: title,
                         image: item.imageObject || '',
-                        date: normalizeDate(item.eventPeriod || ''),
+                        date: normalizedDate,
                         venue: rawVenue,
                         link: item.url || '',
                         genre: genre,
                         source: 'culture-portal',
-                        isFestival: genre === 'festival'
+                        isFestival: genre === 'festival',
+                        sourceKey
+                    };
+                } else {
+                    perf = {
+                        ...perf,
+                        title,
+                        image: item.imageObject || perf.image || '',
+                        date: normalizedDate,
+                        venue: rawVenue || perf.venue,
+                        link: item.url || perf.link || '',
+                        genre,
+                        source: 'culture-portal',
+                        isFestival: genre === 'festival',
+                        sourceKey
                     };
                 }
 
@@ -301,6 +366,7 @@ async function scrapeCulturePortal() {
             }
 
             console.log(`Pushed ${list.length}. Accumulated: ${newList.length}`);
+            const totalCount = Number.parseInt(String(body?.totalCount || ''), 10);
             
             const pageActiveCount = list.filter(item => {
                 const period = item.eventPeriod || '';
@@ -320,10 +386,17 @@ async function scrapeCulturePortal() {
                 hasMore = false;
             }
 
-            if (body.totalCount && newList.length >= parseInt(body.totalCount)) {
+            if (Number.isFinite(totalCount) && totalCount > 0 && fetchedRows >= totalCount) {
+                console.log("Reached API totalCount. Stopping.");
                 hasMore = false;
-            } else if (list.length < 100 || newList.length > 8000) {
-                console.log("Reached safety limit. Stopping.");
+            } else if (MAX_API_PAGES > 0 && pageNo >= MAX_API_PAGES) {
+                console.log("Reached API page limit. Stopping.");
+                hasMore = false;
+            } else if (list.length < ROWS_PER_PAGE) {
+                console.log("Reached last short page. Stopping.");
+                hasMore = false;
+            } else if (MAX_ACTIVE_ITEMS > 0 && newList.length >= MAX_ACTIVE_ITEMS) {
+                console.log("Reached active item safety limit. Stopping.");
                 hasMore = false;
             }
 
@@ -341,17 +414,21 @@ async function scrapeCulturePortal() {
     // Phase 2: Detail Enrichment
     console.log(`\nPhase 2: HTML Enrichment for ${newList.length} items...`);
     
-    // Process only items that lack price/age mappings and have an mcst link
-    const toEnrich = newList.filter(item => !item.price && item.link && item.link.includes('mcst.go.kr'));
-    console.log(`${toEnrich.length} items need enrichment.`);
+    // Process a bounded rolling subset so daily runs do not re-check thousands of low-value detail pages.
+    const detailCandidates = newList.filter(item => {
+        const missingCoreDetails = !item.price && !item.time && !item.contact;
+        return missingCoreDetails && item.link && item.link.includes('mcst.go.kr') && isDetailStale(item);
+    });
+    const toEnrich = DETAIL_LIMIT > 0 ? detailCandidates.slice(0, DETAIL_LIMIT) : [];
+    console.log(`${detailCandidates.length} items need detail checks. This run: ${toEnrich.length}. Deferred: ${Math.max(0, detailCandidates.length - toEnrich.length)}.`);
 
-    const limit = pLimit(5); // Parallel requests
+    const limit = pLimit(DETAIL_CONCURRENCY); // Parallel requests
     let enrichedCount = 0;
 
     const tasks = toEnrich.map((item, idx) => limit(async () => {
         const enriched = await enrichDetails({ ...item });
         
-        if (enriched.price || enriched.time || enriched.contact) {
+        if (DEBUG_DETAILS && (enriched.price || enriched.time || enriched.contact)) {
             console.log(`[DEBUG] Enriched: ${item.title} | Price: ${enriched.price} | Time: ${enriched.time}`);
         }
 

@@ -42,6 +42,7 @@ YES24_DETAIL_LIMIT=10 \
 MOCHACLASS_DETAIL_LIMIT=10 \
 UMCLASS_DETAIL_LIMIT=10 \
 MUSEUM_MAX_DETAIL_ITEMS=10 \
+CULTURE_PORTAL_DETAIL_LIMIT=10 \
 TOURISM_MAX_PAGES=1 \
 scripts/run-local-data-update.sh
 ```
@@ -59,6 +60,7 @@ scripts/run-local-data-update.sh
 - If the runner working tree has uncommitted changes, the local job skips to avoid damaging local work and sends a macOS notification.
 - If the Mac wakes late after 03:00 KST, the local job skips because the GitHub fallback owns that window.
 - Critical scraper failures stop the run before validators and git commit/push, so partial critical data is not published as a successful update.
+- Culture Portal keeps a large active index, but HTML detail enrichment is intentionally capped (`CULTURE_PORTAL_DETAIL_LIMIT`, default 400) and retried on a rolling stale window.
 - Failures and skips write `last-run-status.json` and send a macOS notification by default. Set `LOCAL_UPDATE_NOTIFY=0` to disable notifications.
 - Manual GitHub dispatch still runs immediately, even when today's local data is fresh.
 - `verify-links` is intentionally disabled by default because it is slow and often fails due external 500 responses. Enable it only when needed with `RUN_LINK_VERIFY=1`.
