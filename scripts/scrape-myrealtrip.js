@@ -19,8 +19,10 @@ function slugify(text) {
 
 async function scrape() {
     console.log('launching browser...');
+    let failed = false;
     const browser = await puppeteer.launch({
         headless: true,
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
@@ -30,7 +32,7 @@ async function scrape() {
         await page.setViewport({ width: 1280, height: 800 });
 
         console.log(`Navigating to ${TARGET_URL}...`);
-        await page.goto(TARGET_URL, { waitUntil: 'networkidle2' });
+        await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded', timeout: 20000 });
 
         // Wait for list to load
         await page.waitForSelector('a[href*="/products/"]', { timeout: 10000 });
@@ -145,9 +147,17 @@ async function scrape() {
 
     } catch (e) {
         console.error('Scraping failed:', e);
+        failed = true;
     } finally {
         await browser.close();
     }
+
+    if (failed) {
+        process.exitCode = 1;
+    }
 }
 
-scrape();
+scrape().catch((error) => {
+    console.error(error);
+    process.exit(1);
+});

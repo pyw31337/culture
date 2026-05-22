@@ -33,6 +33,9 @@ interface UmClassItem {
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/umclass.json');
+const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
+const DETAIL_ENRICH_LIMIT = Number(process.env.UMCLASS_DETAIL_LIMIT || 300);
+const LIST_PAGE_LIMIT = Number(process.env.UMCLASS_MAX_PAGES || 100);
 
 // Simple progress bar
 class ProgressBar {
@@ -77,6 +80,28 @@ function slugify(text: string): string {
         .replace(/^_|_$/g, '');
 }
 
+function buildFallbackItem(item: { link: string, title: string, image: string, discount: string, price: string }, existing?: UmClassItem): UmClassItem {
+    return {
+        ...(existing || {}),
+        id: existing?.id || `class_${slugify(item.title)}`,
+        title: item.title,
+        date: existing?.date || '상시/예약',
+        venue: existing?.venue || '솜씨당 클래스',
+        image: item.image || existing?.image || '',
+        link: item.link,
+        genre: 'class',
+        region: existing?.region || 'seoul',
+        runningTime: existing?.runningTime || '예약페이지 참조',
+        viewCount: existing?.viewCount,
+        originalPrice: existing?.originalPrice || item.price || '',
+        price: item.price || existing?.price || '',
+        discount: item.discount || existing?.discount || '',
+        ageLimit: existing?.ageLimit || 'all',
+        address: existing?.address || '',
+        casting: existing?.casting || '',
+    };
+}
+
 async function scrapeUmClass() {
     console.log(`Starting UmClass Scraper...`);
 
@@ -104,6 +129,7 @@ async function scrapeUmClass() {
     }
 
     const page = await browser.newPage();
+    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
     await page.setViewport({ width: 1280, height: 800 });
 
     // Header settings for Korean context
@@ -121,7 +147,7 @@ async function scrapeUmClass() {
     // URL provided by user: https://www.umclass.com/class?page=1
     let currentPage = 1;
     let hasNextPage = true;
-    const MAX_PAGES = 100; // Increased limit for full scrape
+    const MAX_PAGES = LIST_PAGE_LIMIT; // Increased limit for full scrape
 
     console.log(`\nPhase 1: Collecting all classes (All Regions / All Categories)...`);
 
@@ -131,6 +157,7 @@ async function scrapeUmClass() {
 
         try {
             await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+            await page.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
             // Wait for list container - selector might differ on main class page vs plan page
             // Plan page used .classPlan-contents-list. Main class page might use .class-list-wrapper or similar.
             // Let's use a generic wait or check if the previous selector works.
@@ -227,6 +254,9 @@ async function scrapeUmClass() {
 
     console.log(`  Total unique classes found: ${pendingItems.length}`);
     await page.close(); // Close list page
+    if (pendingItems.length === 0) {
+        throw new Error('UmClass list scrape found 0 items.');
+    }
 
     // Phase 2: Details
     console.log(`\nPhase 2: Scraping details (Smart Incremental - Parallel)...`);
@@ -263,11 +293,14 @@ async function scrapeUmClass() {
         }
     }
 
-    console.log(`Skipped (Recently Enriched): ${done.length}. To Enrich: ${todo.length}`);
-    allItems.push(...done);
+    const enrichQueue = todo.slice(0, DETAIL_ENRICH_LIMIT);
+    const deferred = todo.slice(DETAIL_ENRICH_LIMIT).map((item) => buildFallbackItem(item, existingMap.get(item.link)));
 
-    if (todo.length > 0) {
-        const progressBar = new ProgressBar(todo.length);
+    console.log(`Skipped (Recently Enriched): ${done.length}. To Enrich this run: ${enrichQueue.length}. Deferred/retained: ${deferred.length}`);
+    allItems.push(...done, ...deferred);
+
+    if (enrichQueue.length > 0) {
+        const progressBar = new ProgressBar(enrichQueue.length);
         let processedCount = 0;
         const CONCURRENCY = 3;
 
@@ -278,12 +311,14 @@ async function scrapeUmClass() {
             process.exit();
         });
 
-        for (let i = 0; i < todo.length; i += CONCURRENCY) {
-            const chunk = todo.slice(i, i + CONCURRENCY);
+        for (let i = 0; i < enrichQueue.length; i += CONCURRENCY) {
+            const chunk = enrichQueue.slice(i, i + CONCURRENCY);
             const promises = chunk.map(async (item) => {
                 const p = await browser.newPage();
                 try {
+                    await p.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
                     await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 15000 });
+                    await p.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
                     // await new Promise(r => setTimeout(r, 500)); // Remove wait for speed
 
                     const detailData = await p.evaluate(() => {
@@ -429,9 +464,9 @@ async function scrapeUmClass() {
 
                 } catch (e) {
                     // console.error(e);
-                    return null;
+                    return buildFallbackItem(item, existingMap.get(item.link));
                 } finally {
-                    await p.close();
+                    await p.close().catch(() => undefined);
                 }
             });
 
@@ -457,4 +492,9 @@ async function scrapeUmClass() {
     saveData(allItems);
 }
 
-scrapeUmClass().catch(console.error);
+scrapeUmClass()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });

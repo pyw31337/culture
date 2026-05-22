@@ -111,8 +111,32 @@ type ScrapeOptions = {
     categoryNo?: string;
 };
 
-function compact(value?: string | null) {
-    return value?.replace(/\s+/g, ' ').trim() || '';
+function toPlainText(value: unknown, depth = 0): string {
+    if (value === null || value === undefined) return '';
+    if (typeof value === 'string') return value;
+    if (typeof value === 'number' || typeof value === 'boolean' || typeof value === 'bigint') return String(value);
+    if (Array.isArray(value)) {
+        return value.map((entry) => toPlainText(entry, depth + 1)).filter(Boolean).join(' ');
+    }
+    if (typeof value === 'object' && depth < 2) {
+        const record = value as Record<string, unknown>;
+        const preferredKeys = ['label', 'text', 'name', 'title', 'value', 'content', 'contents', 'description', 'message', 'html'];
+        const preferred = preferredKeys
+            .map((key) => toPlainText(record[key], depth + 1))
+            .filter(Boolean);
+        if (preferred.length > 0) return preferred.join(' ');
+
+        return Object.values(record)
+            .slice(0, 20)
+            .map((entry) => toPlainText(entry, depth + 1))
+            .filter(Boolean)
+            .join(' ');
+    }
+    return '';
+}
+
+function compact(value?: unknown) {
+    return toPlainText(value).replace(/\s+/g, ' ').trim();
 }
 
 function slugify(text: string) {
@@ -794,20 +818,20 @@ function buildBookingNotice(product: ShopProduct) {
     return Array.from(new Set(notices.filter(Boolean))).join('\n');
 }
 
-function stripHtml(value?: string | null) {
+function stripHtml(value?: unknown) {
     const html = compact(value || '');
     if (!html) return '';
     const $ = cheerio.load(html.replace(/<br\s*\/?>/gi, '\n'));
     return compact($.root().text().replace(/\u00a0/g, ' '));
 }
 
-function truncateText(value: string, limit = 1200) {
+function truncateText(value: unknown, limit = 1200) {
     const text = compact(value);
     if (text.length <= limit) return text;
     return `${text.slice(0, limit).trim()}...`;
 }
 
-function formatPhone(value?: string) {
+function formatPhone(value?: unknown) {
     const digits = compact(value).replace(/\D/g, '');
     if (!digits) return '';
     if (digits.length === 8) return `${digits.slice(0, 4)}-${digits.slice(4)}`;
@@ -817,7 +841,7 @@ function formatPhone(value?: string) {
         return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
     }
     if (digits.length === 11) return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7)}`;
-    return value || '';
+    return compact(value);
 }
 
 function parseDutyInfo(value?: string) {

@@ -80,6 +80,14 @@ fs.writeFileSync(statusPath, JSON.stringify({
 NODE
 }
 
+abort_run() {
+  local signal_name="${1:-interrupted}"
+  RUN_STATUS="failed"
+  RUN_MESSAGE="Local data update was ${signal_name}. Check $LOG_FILE"
+  echo "[local-update] interrupted: $RUN_MESSAGE"
+  exit 130
+}
+
 finish_run() {
   local exit_code="$?"
 
@@ -120,6 +128,7 @@ finish_run() {
   fi
 }
 
+trap 'abort_run interrupted' INT TERM
 trap finish_run EXIT
 
 echo "[local-update] started at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
@@ -280,8 +289,11 @@ if [ ${#failures[@]} -gt 0 ]; then
 fi
 
 if [ ${#critical_failures[@]} -gt 0 ]; then
-  echo "[local-update] warning: critical scraper failures occurred, but final validators will decide whether data is safe."
+  RUN_STATUS="failed"
+  RUN_MESSAGE="Critical scraper failures occurred: ${critical_failures[*]}. Data changes were not committed."
+  echo "[local-update] failed: $RUN_MESSAGE"
   echo "[local-update] critical failures: ${critical_failures[*]}"
+  exit 1
 fi
 
 echo "[local-update] validating and generating public artifacts"

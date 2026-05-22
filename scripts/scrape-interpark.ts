@@ -45,6 +45,8 @@ interface Performance {
 }
 
 const outputPath = path.resolve(process.cwd(), 'src/data/interpark.json');
+const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
+const INTERPARK_ENRICH_LIMIT = Number(process.env.INTERPARK_ENRICH_LIMIT || 250);
 
 const REGIONS = {
     seoul: '42001',
@@ -262,24 +264,31 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
         }
     });
 
-    console.log(`Total Candidates: ${candidates.length}. Smart Skip: ${alreadyDone.length}. To Enrich: ${todo.length}.`);
+    const enrichQueue = todo.slice(0, INTERPARK_ENRICH_LIMIT);
+    const deferred = todo.slice(INTERPARK_ENRICH_LIMIT).map((item) => {
+        const existing = existingEnriched.get(item.id);
+        return existing ? { ...existing, ...item } : item;
+    });
 
-    const enrichedResult: Performance[] = [...alreadyDone];
+    console.log(`Total Candidates: ${candidates.length}. Smart Skip: ${alreadyDone.length}. To Enrich: ${enrichQueue.length}. Deferred/retained: ${deferred.length}.`);
+
+    const enrichedResult: Performance[] = [...alreadyDone, ...deferred];
 
     // Progress bar for ToDo
     const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-    if (todo.length > 0) {
-        bar.start(todo.length, 0);
+    if (enrichQueue.length > 0) {
+        bar.start(enrichQueue.length, 0);
     }
 
     // Concurrency: Reduced to 5 to prevent timeouts on CI
     const CONCURRENCY = 5;
-    for (let i = 0; i < todo.length; i += CONCURRENCY) {
-        const chunk = todo.slice(0, 50).slice(i, i + CONCURRENCY);
+    for (let i = 0; i < enrichQueue.length; i += CONCURRENCY) {
+        const chunk = enrichQueue.slice(i, i + CONCURRENCY);
 
         const promises = chunk.map(async (item) => {
             const page = await browser.newPage();
             try {
+                await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
                 // Optimize: Block heavy media only (Allow styles/fonts for correct rendering)
                 await page.setRequestInterception(true);
                 page.on('request', (req: any) => {
@@ -292,7 +301,6 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                 await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
                 await page.setViewport({ width: 1280, height: 800 });
-                await page.evaluateOnNewDocument(() => { (window as any).__name = (f: any) => f; });
 
                 // Extract original GoodsCode from link
                 const goodsIdMatch = item.link.match(/\/goods\/([A-Za-z0-9]+)/);
@@ -303,6 +311,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
 
                 await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                await page.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
 
                 // [FIX] Force close popups that might block content scraping
                 try {
@@ -853,10 +862,10 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
         const results = await Promise.all(promises);
         enrichedResult.push(...results);
-        if (todo.length > 0) bar.increment(results.length);
+        if (enrichQueue.length > 0) bar.increment(results.length);
 
         // Autosave every 20 items (4 chunks)
-        if (i % 20 === 0 || i + CONCURRENCY >= todo.length) {
+        if (i % 20 === 0 || i + CONCURRENCY >= enrichQueue.length) {
             const currentSave = [...enrichedResult, ...others];
             // Note: 'others' might have items that are in 'existingEnriched' but we filtered 'others' by genre.
             // If non-musical items were in 'existing', they are not in 'targets'. They are in 'others'.
@@ -864,7 +873,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             fs.writeFileSync(outputPath, JSON.stringify(currentSave, null, 2));
         }
     }
-    if (todo.length > 0) bar.stop();
+    if (enrichQueue.length > 0) bar.stop();
 
     // Final merge
     const finalItems = [...enrichedResult, ...others];

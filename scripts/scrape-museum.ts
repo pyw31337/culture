@@ -8,7 +8,14 @@ puppeteer.use(StealthPlugin());
 
 const TARGET_URL = 'https://mom-mom.net/search?q=%EB%B0%95%EB%AC%BC%EA%B4%80/%EC%B2%B4%ED%97%98%EA%B4%80&hl=places';
 const DATA_PATH = path.join(process.cwd(), 'src/data/museum.json');
-const CONCURRENCY_LIMIT = 5;
+const CONCURRENCY_LIMIT = Number(process.env.MUSEUM_DETAIL_CONCURRENCY || 4);
+const MAX_DETAIL_ITEMS = Number(process.env.MUSEUM_MAX_DETAIL_ITEMS || 220);
+const DETAIL_STALE_DAYS = Number(process.env.MUSEUM_DETAIL_STALE_DAYS || 21);
+const DETAIL_NAV_TIMEOUT_MS = Number(process.env.MUSEUM_DETAIL_TIMEOUT_MS || 25000);
+const DETAIL_BUDGET_MS = Number(process.env.MUSEUM_DETAIL_BUDGET_MS || 35 * 60 * 1000);
+const LIST_TARGET_COUNT = Number(process.env.MUSEUM_LIST_TARGET_COUNT || 880);
+const LIST_MAX_SCROLLS = Number(process.env.MUSEUM_LIST_MAX_SCROLLS || 120);
+const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
 
 function slugify(text: string): string {
     return text
@@ -40,6 +47,7 @@ interface MuseumItem {
     feesAndPrograms?: string;
     targetAudience?: string;
     sourceUpdatedAt?: string;
+    lastCollected?: string;
     tips?: string;
     longDescription?: string;
     facilities?: string;
@@ -50,6 +58,49 @@ interface MuseumItem {
 
 function normalizeDetailText(text: string): string {
     return text.replace(/\s+/g, ' ').trim();
+}
+
+type MuseumListItem = Pick<MuseumItem, 'title' | 'image' | 'link' | 'description' | 'usageStat'>;
+
+function getMuseumId(item: Pick<MuseumItem, 'title'>) {
+    return `museum_${slugify(item.title)}`;
+}
+
+function hasUsefulDetail(item?: MuseumItem) {
+    return Boolean(item?.address || item?.operatingHours || item?.priceDetail || item?.feesAndPrograms || item?.longDescription);
+}
+
+function isFreshEnough(value?: string) {
+    if (!value) return false;
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return false;
+    const ageDays = (Date.now() - parsed.getTime()) / (1000 * 60 * 60 * 24);
+    return ageDays < DETAIL_STALE_DAYS;
+}
+
+function shouldRefreshDetail(item: MuseumListItem, existing?: MuseumItem) {
+    if (!existing) return true;
+    if (!hasUsefulDetail(existing)) return true;
+    if (!isFreshEnough(existing.lastCollected || existing.sourceUpdatedAt)) return true;
+    return false;
+}
+
+function mergeMuseumItem(item: MuseumListItem, existing: MuseumItem | undefined, detailData: Partial<MuseumItem>, collectedAt: string): MuseumItem {
+    const richDescription = [detailData.longDescription, detailData.tips]
+        .filter((value) => typeof value === 'string' && normalizeDetailText(value).length > 0)
+        .join('\n\n');
+
+    return {
+        ...(existing || {}),
+        ...item,
+        ...detailData,
+        id: getMuseumId(item),
+        venue: item.title,
+        description: richDescription || detailData.description || item.description || existing?.description || '',
+        targetAudience: item.usageStat || detailData.targetAudience || existing?.targetAudience,
+        genre: 'museum',
+        lastCollected: collectedAt,
+    };
 }
 
 const MUSEUM_DETAIL_EXTRACTOR = String.raw`
@@ -200,13 +251,17 @@ async function scrapeMuseum() {
     console.log('Starting Museum/Experience Scraper...');
     const browser = await puppeteer.launch({
         headless: process.env.HEADLESS !== 'false',
+        protocolTimeout: 120000,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     try {
         const page = await browser.newPage();
+        await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
         await page.setViewport({ width: 1280, height: 800 });
-        await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
+        await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        await page.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
+        await page.waitForSelector('div.contents > a', { timeout: 15000 }).catch(() => undefined);
 
         // 1. Infinite Scroll to load all items
         console.log('Scrolling to load all items (~800)...');
@@ -216,8 +271,25 @@ async function scrapeMuseum() {
         let noChangeAttempts = 0;
         const MAX_NO_CHANGE = 10; // Stop after 10 attempts (~20 sec) of no new content
 
-        while (noChangeAttempts < MAX_NO_CHANGE) {
-            const currentHeight = await page.evaluate(() => document.body.scrollHeight);
+        let scrollAttempts = 0;
+        while (noChangeAttempts < MAX_NO_CHANGE && scrollAttempts < LIST_MAX_SCROLLS) {
+            let currentHeight = previousHeight;
+            let count = 0;
+            try {
+                const snapshot = await page.evaluate(() => {
+                    const height = document.body.scrollHeight;
+                    window.scrollTo(0, height);
+                    return {
+                        height,
+                        count: document.querySelectorAll('div.contents > a').length,
+                    };
+                });
+                currentHeight = snapshot.height;
+                count = snapshot.count;
+            } catch (error) {
+                console.warn(`\nList scroll evaluate failed after ${scrollAttempts} attempts. Continuing with loaded items.`);
+                break;
+            }
 
             if (currentHeight > previousHeight) {
                 previousHeight = currentHeight;
@@ -226,15 +298,17 @@ async function scrapeMuseum() {
                 noChangeAttempts++;
             }
 
-            // Scroll to bottom
-            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-
             // Wait for load (variable delay)
             await new Promise(r => setTimeout(r, 2000));
 
             // Log progress
-            const count = await page.evaluate(() => document.querySelectorAll('div.contents > a').length);
             process.stdout.write(`\rLoaded ${count} items...`);
+            scrollAttempts++;
+
+            if (count >= LIST_TARGET_COUNT) {
+                console.log(`\nReached museum list target (${count}/${LIST_TARGET_COUNT}).`);
+                break;
+            }
         }
         console.log('\nFinished scrolling.');
 
@@ -293,27 +367,63 @@ async function scrapeMuseum() {
         if (listItems.length === 0) {
             console.error('Museum scraper found 0 items. Creating error marker.');
             fs.writeFileSync(path.join(process.cwd(), 'src/data/museum.error'), 'Museum scraper found 0 items. Check selector: div.contents > a');
-            await browser.close();
-            return;
+            throw new Error('Museum scraper found 0 items.');
         } else {
             const errFile = path.join(process.cwd(), 'src/data/museum.error');
             if (fs.existsSync(errFile)) fs.unlinkSync(errFile);
         }
 
-        console.log(`Found ${listItems.length} items. Starting detail scraping...`);
+        console.log(`Found ${listItems.length} items. Preparing cache-aware detail scraping...`);
+
+        const now = new Date().toISOString();
+        let existingData: MuseumItem[] = [];
+        if (fs.existsSync(DATA_PATH)) {
+            try {
+                existingData = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
+            } catch {
+                existingData = [];
+            }
+        }
+
+        const finalById = new Map<string, MuseumItem>();
+        existingData.forEach(item => finalById.set(item.id, item));
+
+        const listWithIds = (listItems as MuseumListItem[]).map(item => ({
+            id: getMuseumId(item),
+            item,
+            existing: finalById.get(getMuseumId(item)),
+        }));
+
+        for (const { id, item, existing } of listWithIds) {
+            finalById.set(id, mergeMuseumItem(item, existing, {}, now));
+        }
+
+        const refreshCandidates = listWithIds
+            .filter(({ item, existing }) => shouldRefreshDetail(item, existing))
+            .map(({ item }) => item);
+        const detailTargets = refreshCandidates.slice(0, MAX_DETAIL_ITEMS);
+        const deferredCount = refreshCandidates.length - detailTargets.length;
+
+        console.log(`Detail refresh candidates: ${refreshCandidates.length}. This run: ${detailTargets.length}. Deferred/retained: ${Math.max(0, deferredCount)}.`);
 
         // 3. Detail Scraping (Batched)
-        const finalItems: MuseumItem[] = [];
         const chunkedItems = [];
-        for (let i = 0; i < listItems.length; i += CONCURRENCY_LIMIT) {
-            chunkedItems.push(listItems.slice(i, i + CONCURRENCY_LIMIT));
+        for (let i = 0; i < detailTargets.length; i += CONCURRENCY_LIMIT) {
+            chunkedItems.push(detailTargets.slice(i, i + CONCURRENCY_LIMIT));
         }
 
         let processedCount = 0;
+        const detailStartedAt = Date.now();
 
         for (const chunk of chunkedItems) {
+            if (Date.now() - detailStartedAt > DETAIL_BUDGET_MS) {
+                console.log(`\nDetail budget reached after ${processedCount}/${detailTargets.length}. Remaining items retained from cache/basic list.`);
+                break;
+            }
+
             await Promise.all(chunk.map(async (item) => {
                 const detailPage = await browser.newPage();
+                await detailPage.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
                 // Block images/fonts/css to speed up
                 await detailPage.setRequestInterception(true);
                 detailPage.on('request', (req) => {
@@ -326,7 +436,8 @@ async function scrapeMuseum() {
 
                 let detailData: Partial<MuseumItem> = {};
                 try {
-                    await detailPage.goto(item.link, { waitUntil: 'networkidle2', timeout: 60000 });
+                    await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: DETAIL_NAV_TIMEOUT_MS });
+                    await detailPage.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
 
                     // Selector: body > div.container > main > div:nth-child(1) > article > div.main-container > section > ul > li:nth-child(1) > p.value
                     // Try generic "li > p.label" contains "주소"? Or just the specific path provided.
@@ -337,25 +448,13 @@ async function scrapeMuseum() {
                     await detailPage.close().catch(() => undefined);
                 }
 
-                const id = `museum_${slugify(item.title)}`;
-                const richDescription = [detailData.longDescription, detailData.tips]
-                    .filter((value) => typeof value === 'string' && normalizeDetailText(value).length > 0)
-                    .join('\n\n');
-
-                finalItems.push({
-                    id,
-                    ...item,
-                    ...detailData,
-                    venue: item.title,
-                    description: richDescription || item.description,
-                    targetAudience: item.usageStat || detailData.targetAudience,
-                    genre: 'museum'
-                });
+                const id = getMuseumId(item);
+                finalById.set(id, mergeMuseumItem(item, finalById.get(id), detailData, now));
 
                 processedCount++;
             }));
 
-            process.stdout.write(`\rProgress: ${processedCount}/${listItems.length}`);
+            process.stdout.write(`\rProgress: ${processedCount}/${detailTargets.length}`);
             // Small delay between chunks to be nice
             await new Promise(r => setTimeout(r, 500));
         }
@@ -363,35 +462,14 @@ async function scrapeMuseum() {
         console.log('\nScraping complete.');
 
         // 4. Persistence (Strict Retention)
-        const now = new Date().toISOString();
-        let existingData: MuseumItem[] = [];
-
-        // Load ALL existing data
-        if (fs.existsSync(DATA_PATH)) {
-            existingData = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
-        }
-
-        const dataMap = new Map<string, MuseumItem>();
-        existingData.forEach(item => dataMap.set(item.id, item));
-
-        // Update with collected items
-        for (const item of finalItems) {
-            const existing = dataMap.get(item.id);
-            const merged = {
-                ...existing,
-                ...item,
-                lastCollected: now
-            };
-            dataMap.set(item.id, merged);
-        }
-
-        const allItems = Array.from(dataMap.values());
+        const allItems = Array.from(finalById.values());
 
         fs.writeFileSync(DATA_PATH, JSON.stringify(allItems, null, 2));
-        console.log(`Saved ${allItems.length} items (merged). Updated: ${finalItems.length}.`);
+        console.log(`Saved ${allItems.length} items (merged). Detail updated: ${processedCount}. Retained/deferred: ${Math.max(0, listItems.length - processedCount)}.`);
 
     } catch (error) {
         console.error('Fatal Error:', error);
+        process.exitCode = 1;
     } finally {
         await browser.close();
     }

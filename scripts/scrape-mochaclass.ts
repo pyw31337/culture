@@ -32,6 +32,9 @@ interface MochaClassItem {
 }
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/mochaclass.json');
+const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
+const DETAIL_ENRICH_LIMIT = Number(process.env.MOCHACLASS_DETAIL_LIMIT || 360);
+const LIST_PAGE_LIMIT = Number(process.env.MOCHACLASS_MAX_PAGES || 100);
 
 // Simple progress bar
 class ProgressBar {
@@ -76,6 +79,27 @@ function slugify(text: string): string {
         .replace(/^_|_$/g, '');
 }
 
+function buildFallbackItem(item: { link: string, title: string, image: string, price: string, originalPrice: string }, existing?: MochaClassItem): MochaClassItem {
+    return {
+        ...(existing || {}),
+        id: existing?.id || `class_${slugify(item.title)}`,
+        title: item.title,
+        image: item.image || existing?.image || '',
+        date: existing?.date || 'OPEN RUN',
+        venue: existing?.venue || '모카클래스',
+        link: item.link,
+        region: existing?.region || 'seoul',
+        genre: 'class',
+        price: item.price || existing?.price || '',
+        originalPrice: item.originalPrice || existing?.originalPrice || '',
+        discount: existing?.discount || '',
+        runningTime: existing?.runningTime || '예약페이지 참조',
+        ageLimit: existing?.ageLimit || '전체',
+        casting: existing?.casting || '',
+        address: existing?.address || '',
+    };
+}
+
 async function scrapeMochaClass() {
     console.log(`Starting MochaClass Scraper...`);
 
@@ -103,6 +127,7 @@ async function scrapeMochaClass() {
     }
 
     const page = await browser.newPage();
+    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
     await page.setViewport({ width: 1280, height: 800 });
 
     // Header settings
@@ -115,7 +140,7 @@ async function scrapeMochaClass() {
 
     let currentPage = 1;
     let hasNextPage = true;
-    const MAX_PAGES = 100;
+    const MAX_PAGES = LIST_PAGE_LIMIT;
 
     console.log(`\nPhase 1: Collecting all class links...`);
 
@@ -127,6 +152,7 @@ async function scrapeMochaClass() {
 
         try {
             await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+            await page.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
 
             try {
                 await page.waitForSelector('.MuiGrid-root.css-2xazwd', { timeout: 10000 });
@@ -221,6 +247,9 @@ async function scrapeMochaClass() {
 
     console.log(`  Total unique classes found: ${pendingItems.length}`);
     await page.close();
+    if (pendingItems.length === 0) {
+        throw new Error('MochaClass list scrape found 0 items.');
+    }
 
     // Phase 2: Details
     console.log(`\nPhase 2: Scraping details (Smart Incremental - Parallel)...`);
@@ -255,20 +284,25 @@ async function scrapeMochaClass() {
         }
     }
 
-    console.log(`Skipped: ${done.length}. To Enrich: ${todo.length}`);
-    allItems.push(...done);
+    const enrichQueue = todo.slice(0, DETAIL_ENRICH_LIMIT);
+    const deferred = todo.slice(DETAIL_ENRICH_LIMIT).map((item) => buildFallbackItem(item, existingMap.get(item.link)));
 
-    if (todo.length > 0) {
-        const progressBar = new ProgressBar(todo.length);
+    console.log(`Skipped: ${done.length}. To Enrich this run: ${enrichQueue.length}. Deferred/retained: ${deferred.length}`);
+    allItems.push(...done, ...deferred);
+
+    if (enrichQueue.length > 0) {
+        const progressBar = new ProgressBar(enrichQueue.length);
         let processedCount = 0;
         const CONCURRENCY = 3; // Reduced from 10 to stabilize system load
 
-        for (let i = 0; i < todo.length; i += CONCURRENCY) {
-            const chunk = todo.slice(i, i + CONCURRENCY);
+        for (let i = 0; i < enrichQueue.length; i += CONCURRENCY) {
+            const chunk = enrichQueue.slice(i, i + CONCURRENCY);
             const promises = chunk.map(async (item) => {
                 const p = await browser.newPage();
                 try {
+                    await p.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
                     await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                    await p.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
 
                     const detailData = await p.evaluate(async () => {
                         const allNodes = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, p.MuiTypography-root, li'));
@@ -453,9 +487,9 @@ async function scrapeMochaClass() {
                     };
                 } catch (e: any) {
                     console.error(`Error processing ${item.link}:`, e.message);
-                    return null;
+                    return buildFallbackItem(item, existingMap.get(item.link));
                 } finally {
-                    await p.close();
+                    await p.close().catch(() => undefined);
                 }
             });
 
@@ -478,4 +512,9 @@ async function scrapeMochaClass() {
     saveData(allItems);
 }
 
-scrapeMochaClass().catch(console.error);
+scrapeMochaClass()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });

@@ -9,6 +9,9 @@ import pLimit from 'p-limit';
 const DATA_FILE = path.join(process.cwd(), 'src/data/tourism.json');
 const baseApiUrl = 'https://korean.visitkorea.or.kr';
 const baseImageURL = 'https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=';
+const PUPPETEER_DETAIL_TIMEOUT_MS = Number(process.env.TOURISM_PUPPETEER_TIMEOUT_MS || 25000);
+const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
+const TOURISM_MAX_PAGES = Number(process.env.TOURISM_MAX_PAGES || 25);
 
 const AREA_MAP: Record<string, string> = {
     '1': '서울', '2': '인천', '3': '대전', '4': '대구', '5': '광주', '6': '부산', '7': '울산', '8': '세종',
@@ -259,6 +262,18 @@ async function fetchDetails(cotId: string) {
 // Global browser instance for detail fetching (reusable)
 let _browser: any = null;
 
+async function closeSharedBrowser() {
+    if (!_browser) return;
+    const browser = _browser;
+    _browser = null;
+    await Promise.race([
+        browser.close(),
+        new Promise((resolve) => setTimeout(resolve, 5000)),
+    ]).catch((error: any) => {
+        console.warn(`[Puppeteer WARN] browser close failed: ${error.message}`);
+    });
+}
+
 async function fetchDetailsWithPuppeteer(url: string) {
     const puppeteer = require('puppeteer-extra');
     const StealthPlugin = require('puppeteer-extra-plugin-stealth');
@@ -272,20 +287,20 @@ async function fetchDetailsWithPuppeteer(url: string) {
     }
 
     const page = await _browser.newPage();
+    await page.setDefaultNavigationTimeout(PUPPETEER_DETAIL_TIMEOUT_MS);
     // Shim for tsx/esbuild injected __name helper
-    await page.evaluateOnNewDocument(() => {
-        (window as any).__name = (f: any) => f;
-    });
+    await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
     try {
         await page.setViewport({ width: 1280, height: 800 });
-        await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: PUPPETEER_DETAIL_TIMEOUT_MS });
+        await page.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
         
         // Wait for potential dynamic content
-        await page.waitForSelector('.inr_wrap', { timeout: 15000 }).catch(() => {});
+        await page.waitForSelector('.inr_wrap', { timeout: 5000 }).catch(() => {});
         
         // Scroll slightly to trigger lazy loads
         await page.evaluate(() => window.scrollBy(0, 1000));
-        await new Promise(r => setTimeout(r, 2000));
+        await new Promise(r => setTimeout(r, 500));
 
             const data = await page.evaluate(() => {
                 const getMeta = (selector: string) => document.querySelector(selector)?.getAttribute('content') || '';
@@ -369,7 +384,8 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
                 headers: {
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                     'Referer': 'https://korean.visitkorea.or.kr/main/area_list.do?type=Place',
-                }
+                },
+                timeout: 10000,
             });
 
             if (response.data?.code === 0 && response.data?.data?.items) {
@@ -433,16 +449,13 @@ async function scrapeVisitKoreaPlaces(maxPages = 25) {
         }
     }
 
-    if (_browser) {
-        await _browser.close();
-        _browser = null;
-    }
+    await closeSharedBrowser();
 
     return results;
 }
 
 async function main() {
-    const results = await scrapeVisitKoreaPlaces(25); // Set to 25 pages for full coverage
+    const results = await scrapeVisitKoreaPlaces(TOURISM_MAX_PAGES); // Set to 25 pages for full coverage
     
     // Deduplicate
     const uniqueMap = new Map();
@@ -464,4 +477,13 @@ async function main() {
     console.log(`Saved ${uniqueResults.length} unique VisitKorea items to tourism.json`);
 }
 
-main();
+main()
+    .then(async () => {
+        await closeSharedBrowser();
+        process.exit(0);
+    })
+    .catch(async (error) => {
+        console.error(error);
+        await closeSharedBrowser();
+        process.exit(1);
+    });

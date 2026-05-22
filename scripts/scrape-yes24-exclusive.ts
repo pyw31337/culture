@@ -18,6 +18,8 @@ const CATEGORIES = [
 
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'yes24-exclusive.json');
+const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
+const DETAIL_ENRICH_LIMIT = Number(process.env.YES24_DETAIL_LIMIT || 160);
 
 function slugify(text: string): string {
     return text
@@ -43,6 +45,7 @@ async function scrapeYes24() {
 
     // Load existing data to avoid redundant enrichment
     let allEnrichedItems: any[] = [];
+    let detailAttempts = 0;
     if (fs.existsSync(OUTPUT_FILE)) {
         try {
             allEnrichedItems = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
@@ -59,6 +62,7 @@ async function scrapeYes24() {
 
     try {
         const page = await browser.newPage();
+        await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
         // Set a realistic User-Agent
         await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36');
         await page.setViewport({ width: 1280, height: 800 });
@@ -70,6 +74,7 @@ async function scrapeYes24() {
             
             try {
                 await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+                await page.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
                 await page.waitForSelector('.ms-list-imgs', { timeout: 30000 });
 
                 // Scroll to load all items (lazy loading)
@@ -149,11 +154,25 @@ async function scrapeYes24() {
                         continue;
                     }
 
+                    if (detailAttempts >= DETAIL_ENRICH_LIMIT) {
+                        if (existing) {
+                            Object.assign(existing, { ...existing, ...item });
+                        } else if (!allEnrichedItems.some(i => i.id === item.id)) {
+                            allEnrichedItems.push(item);
+                        }
+                        progressBar.increment();
+                        continue;
+                    }
+
+                    let detailPage: any = null;
                     try {
-                        const detailPage = await browser.newPage();
+                        detailAttempts++;
+                        detailPage = await browser.newPage();
+                        await detailPage.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
                         await detailPage.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                        await detailPage.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
                         
-                        const detail = await detailPage.evaluate(async (perfId) => {
+                        const detail = await detailPage.evaluate(async (perfId: string) => {
                             const compact = (value?: string | null) => (value || '')
                                 .replace(/\r/g, '')
                                 .replace(/\u00a0/g, ' ')
@@ -299,12 +318,17 @@ async function scrapeYes24() {
                             allEnrichedItems.push(enrichedItem);
                         }
 
-                        await detailPage.close();
                         // Random delay between requests: 1-2.5s
                         await new Promise(r => setTimeout(r, 1000 + Math.random() * 1500));
                     } catch (e: any) {
                         console.error(`\nFailed to enrich ${item.title}:`, e.message);
-                        allEnrichedItems.push(item);
+                        if (existing) {
+                            Object.assign(existing, { ...existing, ...item });
+                        } else if (!allEnrichedItems.some(i => i.id === item.id)) {
+                            allEnrichedItems.push(item);
+                        }
+                    } finally {
+                        await detailPage?.close().catch(() => undefined);
                     }
                     progressBar.increment();
                 }
@@ -322,7 +346,7 @@ async function scrapeYes24() {
             }
         }
 
-        console.log(`\nScraping complete. Total items: ${allEnrichedItems.length}`);
+        console.log(`\nScraping complete. Total items: ${allEnrichedItems.length}. Detail attempts: ${detailAttempts}. Deferred limit: ${DETAIL_ENRICH_LIMIT}.`);
 
     } catch (e) {
         console.error('Global Scraping Error:', e);
