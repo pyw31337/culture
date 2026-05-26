@@ -406,3 +406,8 @@
 - **GitHub Run ID**: [26417199093](https://github.com/pyw31337/culture/actions/runs/26417199093)
 - **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale.
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-05-26 21:11:28 UTC
+- **GitHub Run ID**: [26472628837](https://github.com/pyw31337/culture/actions/runs/26472628837)
+- **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale.
+
