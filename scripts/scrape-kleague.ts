@@ -204,16 +204,7 @@ async function scrapeKLeague() {
                         const date = `${dateStr} ${timeStr}`;
                         const homeTeamLogo = getLogoUrl(homeTeam);
                         const awayTeamLogo = getLogoUrl(awayTeam);
-                        const image = ensureMatchPoster({
-                            id,
-                            leagueLabel,
-                            homeTeam,
-                            awayTeam,
-                            date,
-                            venue: stadium,
-                            homeTeamLogo,
-                            awayTeamLogo,
-                        });
+                        const image = '/images/soccer_poster.png';
                         const description = buildMatchDescription({
                             leagueLabel,
                             homeTeam,
@@ -270,8 +261,13 @@ async function scrapeKLeague() {
 
         const mergedList = Array.from(mergedMap.values())
             .map((match) => {
-                const hasWeakImage = !match.image || /soccer_poster|fallback|placeholder/i.test(match.image);
-                if (!hasWeakImage || !match.homeTeam || !match.awayTeam || !match.date) return match;
+                if (!match.homeTeam || !match.awayTeam || !match.date) {
+                    return {
+                        ...match,
+                        image: '/images/soccer_poster.png',
+                        backupPoster: '/images/soccer_poster.png',
+                    };
+                }
 
                 const leagueLabel = match.league || 'K League';
                 const homeTeamLogo = match.homeTeamLogo || getLogoUrl(match.homeTeam);
@@ -285,17 +281,8 @@ async function scrapeKLeague() {
                 });
                 return {
                     ...match,
-                    image: ensureMatchPoster({
-                        id: match.id,
-                        leagueLabel,
-                        homeTeam: match.homeTeam,
-                        awayTeam: match.awayTeam,
-                        date: match.date,
-                        venue: match.venue || '',
-                        homeTeamLogo,
-                        awayTeamLogo,
-                    }),
-                    backupPoster: match.backupPoster || '/images/soccer_poster.png',
+                    image: '/images/soccer_poster.png',
+                    backupPoster: '/images/soccer_poster.png',
                     homeTeamLogo,
                     awayTeamLogo,
                     description: match.description || description,

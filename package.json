@@ -32,7 +32,8 @@
     "enrich:venue-places": "npx tsx scripts/enrich-venue-places.ts",
     "local:update-data": "scripts/run-local-data-update.sh",
     "local:check-update-status": "scripts/check-local-data-update-status.sh",
-    "local:install-scheduler": "scripts/install-local-data-update.sh"
+    "local:install-scheduler": "scripts/install-local-data-update.sh",
+    "audit:map-navigation": "npx tsx scripts/audit-map-navigation.ts"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",

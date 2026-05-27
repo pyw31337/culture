@@ -15,6 +15,30 @@ const VENUE_MASTER_PATH = path.join(process.cwd(), 'public', 'data', 'venue-mast
 const CACHE_PATH = path.join(process.cwd(), 'src', 'data', 'venue-place-cache.json');
 const REPORT_PATH = path.join(process.cwd(), 'public', 'data', 'venue-place-report.json');
 
+function loadLocalEnvFile(fileName: string) {
+    const filePath = path.join(process.cwd(), fileName);
+    if (!fs.existsSync(filePath)) return;
+
+    fs.readFileSync(filePath, 'utf8')
+        .split(/\r?\n/)
+        .forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed || trimmed.startsWith('#')) return;
+
+            const separatorIndex = trimmed.indexOf('=');
+            if (separatorIndex <= 0) return;
+
+            const key = trimmed.slice(0, separatorIndex).trim();
+            const rawValue = trimmed.slice(separatorIndex + 1).trim();
+            if (!key || process.env[key]) return;
+
+            process.env[key] = rawValue.replace(/^['"]|['"]$/g, '');
+        });
+}
+
+loadLocalEnvFile('.env');
+loadLocalEnvFile('.env.local');
+
 function readJsonIfExists<T>(filePath: string, fallback: T): T {
     if (!fs.existsSync(filePath)) return fallback;
     return JSON.parse(fs.readFileSync(filePath, 'utf8')) as T;
@@ -201,6 +225,12 @@ async function main() {
     const checkedAt = new Date().toISOString();
     const entries = readJsonIfExists<VenueMasterEntry[]>(VENUE_MASTER_PATH, []);
     const cache = readJsonIfExists<VenuePlaceCache>(CACHE_PATH, {});
+    const activeVenueIds = new Set(entries.map((entry) => entry.id));
+    Object.keys(cache).forEach((venueId) => {
+        if (!activeVenueIds.has(venueId)) {
+            delete cache[venueId];
+        }
+    });
     const providers = getConfiguredProviders();
     const lookupLimit = Number.parseInt(process.env.VENUE_PLACE_LOOKUP_LIMIT || '80', 10);
     const lookupDelayMs = getLookupDelayMs();

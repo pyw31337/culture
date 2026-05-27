@@ -75,6 +75,7 @@ const SUPPORT_DATA_FILES = new Set([
     'mommom-debug.json',
     'ott.json',
     'performances.json',
+    'sports-ticket-reference.json',
     'venue-dictionary.json',
     'venues.backup.json',
     'venues.json',

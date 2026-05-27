@@ -73,6 +73,30 @@ export default function PerformanceGrid({
                     ? getDistanceFromLatLonInKm(activeLocation.lat, activeLocation.lng, venueInfo.lat, venueInfo.lng)
                     : null;
                 const distLabel = dist !== null ? `${dist.toFixed(1)}km` : null;
+                const handleLocationClick = (loc: any) => {
+                    const lat = Number(loc?.lat ?? venueInfo?.lat);
+                    const lng = Number(loc?.lng ?? venueInfo?.lng);
+                    const resolvedVenueName = (venueInfo as { name?: string; refined_name?: string } | null | undefined)?.name
+                        || (venueInfo as { name?: string; refined_name?: string } | null | undefined)?.refined_name;
+
+                    if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+                        return;
+                    }
+
+                    const nextLocation = {
+                        ...loc,
+                        lat,
+                        lng,
+                        name: loc?.name || resolvedVenueName || perf.venue,
+                    };
+
+                    setSearchLocation(nextLocation);
+                    if (onVenuePreview) {
+                        onVenuePreview(nextLocation);
+                    } else {
+                        setIsMapOpen(true);
+                    }
+                };
 
                 return (
                     <div
@@ -85,14 +109,7 @@ export default function PerformanceGrid({
                                 priority={index < 5}
                                 distLabel={distLabel}
                                 venueInfo={venueInfo}
-                                onLocationClick={(loc) => {
-                                    setSearchLocation(loc);
-                                    if (onVenuePreview) {
-                                        onVenuePreview(loc);
-                                    } else {
-                                        setIsMapOpen(true);
-                                    }
-                                }}
+                                onLocationClick={handleLocationClick}
                                 isLiked={likedIds.includes(perf.id)}
                                 onToggleLike={onToggleLike}
                                 // Show ribbon for Nearby items
@@ -111,14 +128,7 @@ export default function PerformanceGrid({
                                 priority={index < 4}
                                 distLabel={distLabel}
                                 venueInfo={venueInfo}
-                                onLocationClick={(loc) => {
-                                    setSearchLocation(loc);
-                                    if (onVenuePreview) {
-                                        onVenuePreview(loc);
-                                    } else {
-                                        setIsMapOpen(true);
-                                    }
-                                }}
+                                onLocationClick={handleLocationClick}
                                 isLiked={likedIds.includes(perf.id)}
                                 onToggleLike={onToggleLike}
                                 onShare={copyItemShareUrl}

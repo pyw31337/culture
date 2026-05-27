@@ -44,7 +44,7 @@ const runtimeCaching: RuntimeCachingEntry[] = [
     },
   },
   {
-    urlPattern: /\/data\/(?:performances|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i,
+    urlPattern: /\/data\/(?:performances|map-items|map-venues|calendar-items|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i,
     handler: 'NetworkFirst',
     options: {
       cacheName: 'runtime-data-payloads',

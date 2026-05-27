@@ -73,6 +73,10 @@ type VenueGroup = Venue & {
     firstAppearanceIndex: number;
 };
 
+type MapVenueGroupPayload = Omit<VenueGroup, 'kakaoLatLng' | 'performances'> & {
+    performances: Performance[];
+};
+
 type GenreStyle = (typeof GENRE_STYLES)[keyof typeof GENRE_STYLES];
 
 interface KakaoLatLng {
@@ -140,6 +144,43 @@ interface WeatherApiResponse {
 
 const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
 const venues = venueData as unknown as Record<string, Venue>;
+let mapVenueGroupsCache: VenueGroup[] | null = null;
+let mapVenueGroupsPromise: Promise<VenueGroup[]> | null = null;
+
+const getBasePath = () => process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+function normalizeSearchValue(value?: string | null) {
+    return (value || '').replace(/\s+/g, '').toLowerCase();
+}
+
+function loadMapVenueGroups() {
+    if (mapVenueGroupsCache) return Promise.resolve(mapVenueGroupsCache);
+    if (mapVenueGroupsPromise) return mapVenueGroupsPromise;
+
+    mapVenueGroupsPromise = fetch(`${getBasePath()}/data/map-venues.json`)
+        .then((response) => (response.ok ? response.json() : []))
+        .then((payload: MapVenueGroupPayload[]) => {
+            const groups = payload
+                .filter((group) => Number.isFinite(group.lat) && Number.isFinite(group.lng))
+                .map((group) => ({
+                    ...group,
+                    type: group.type || 'performance',
+                    performances: Array.isArray(group.performances) ? group.performances : [],
+                    kakaoLatLng: null,
+                } satisfies VenueGroup));
+            mapVenueGroupsCache = groups;
+            return groups;
+        })
+        .catch((error) => {
+            console.warn('Failed to load venue-grouped map payload', error);
+            return [];
+        })
+        .finally(() => {
+            mapVenueGroupsPromise = null;
+        });
+
+    return mapVenueGroupsPromise;
+}
 
 function getGenreStyle(genreId?: string): GenreStyle {
     return GENRE_STYLES[genreId as keyof typeof GENRE_STYLES] ?? GENRE_STYLES.all;
@@ -151,6 +192,8 @@ interface MapViewProps {
     initialGenreCounts?: GenreCounts;
     buildInfo?: DataBuildInfo | null;
     lastUpdated: string;
+    embeddedSearchParams?: string;
+    onClose?: () => void;
 }
 
 export default function MapView({
@@ -158,16 +201,20 @@ export default function MapView({
     initialCinemas = [],
     initialGenreCounts,
     buildInfo,
-    lastUpdated
+    lastUpdated,
+    embeddedSearchParams,
+    onClose,
 }: MapViewProps) {
     const router = useRouter();
     // searchParams is populated by <SearchParamsBridge> after mount. Initial
     // render uses EMPTY_SEARCH_PARAMS so the static prerender doesn't bail out
     // to client-side rendering.
-    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
+    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => (
+        embeddedSearchParams ? new URLSearchParams(embeddedSearchParams) : EMPTY_SEARCH_PARAMS
+    ));
+    const isEmbedded = typeof embeddedSearchParams === 'string';
 
     // Self-contained state from URL params
-    const selectedGenre = searchParams.get('genre') || 'all';
     const searchMode = (searchParams.get('mode') as 'keyword' | 'location') || 'keyword';
     const searchText = searchParams.get('q') || '';
     const paramLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
@@ -177,7 +224,11 @@ export default function MapView({
     // Default center: try user's GPS first, fall back to Seoul Station
     const [geoCenter, setGeoCenter] = useState<MapSearchCenter | null>(null);
     const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
-    const [selectedMapGenre, setSelectedMapGenre] = useState<string>('all');
+    const [selectedMapGenre, setSelectedMapGenre] = useState<string>(() => {
+        if (embeddedSearchParams) return new URLSearchParams(embeddedSearchParams).get('genre') || 'all';
+        return 'all';
+    });
+    const [precomputedVenueGroups, setPrecomputedVenueGroups] = useState<VenueGroup[] | null>(() => mapVenueGroupsCache);
     
     // Independent search center for the map - triggers marker reloading
     const [mapSearchCenter, setMapSearchCenter] = useState<MapSearchCenter | null>(null);
@@ -189,11 +240,25 @@ export default function MapView({
     const [showExtendedForecast, setShowExtendedForecast] = useState(false);
     const [mapLoadError, setMapLoadError] = useState<string | null>(null);
 
-    // Sync selectedMapGenre with URL on initial load only? No, user said "비연동" (independent).
-    // But let's start with all if genre=all, or just the URL genre if specified.
     useEffect(() => {
-        setSelectedMapGenre(selectedGenre);
-    }, [selectedGenre]);
+        if (isEmbedded || typeof window === 'undefined') return;
+        const nextParams = new URLSearchParams(window.location.search);
+        setSearchParams(nextParams);
+        setSelectedMapGenre(nextParams.get('genre') || 'all');
+    }, [isEmbedded]);
+
+    const handleSearchParams = useCallback((params: URLSearchParams) => {
+        const nextParams = new URLSearchParams(params.toString());
+        if (!nextParams.toString() && typeof window !== 'undefined' && window.location.search) {
+            const locationParams = new URLSearchParams(window.location.search);
+            setSearchParams(locationParams);
+            setSelectedMapGenre(locationParams.get('genre') || 'all');
+            return;
+        }
+
+        setSearchParams(nextParams);
+        setSelectedMapGenre(nextParams.get('genre') || 'all');
+    }, []);
 
     const geoAttempted = useRef(false);
 
@@ -227,18 +292,40 @@ export default function MapView({
         return { ...SEOUL_STATION, name: '서울역' };
     }, [paramLat, paramLng, centerName, geoCenter]);
 
-    // Update mapSearchCenter when initial centerLocation is resolved
+    // Update mapSearchCenter when initial centerLocation is resolved.
+    // Explicit URL coordinates must win even if the first static render started
+    // with the Seoul fallback before SearchParamsBridge hydrated.
     useEffect(() => {
+        if (Number.isFinite(paramLat) && Number.isFinite(paramLng)) {
+            setMapSearchCenter(centerLocation);
+            return;
+        }
+
         setMapSearchCenter((previousCenter) => previousCenter ?? centerLocation);
-    }, [centerLocation]);
+    }, [centerLocation, paramLat, paramLng]);
 
     // Load full data client-side
     const { allPerformances, cinemas: clientCinemas, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
         performanceLoadPolicy: 'full',
+        performanceDataPath: '/data/map-items.json',
         backgroundLoadPriority: 'immediate',
         loadCinemas: true,
     });
+
+    useEffect(() => {
+        let isCancelled = false;
+
+        void loadMapVenueGroups().then((groups) => {
+            if (!isCancelled && groups.length > 0) {
+                setPrecomputedVenueGroups(groups);
+            }
+        });
+
+        return () => {
+            isCancelled = true;
+        };
+    }, []);
     const cinemas = clientCinemas.length > 0 ? clientCinemas : initialCinemas;
     const genreCounts = useMemo(() => {
         if (isDataFullyLoaded) return buildGenreCounts(allPerformances);
@@ -259,10 +346,16 @@ export default function MapView({
     const { favoriteVenues, toggleFavoriteVenue } = useUserPreferences();
 
     useEffect(() => {
+        const requestedGenre = searchParams.get('genre');
+        if (requestedGenre && requestedGenre === selectedMapGenre) return;
+
+        const hasGenreCounts = Object.values(genreCounts).some((count) => count > 0);
+        if (!hasGenreCounts) return;
+
         if (selectedMapGenre !== 'all' && !isGenreAvailable(genreCounts, selectedMapGenre)) {
             setSelectedMapGenre('all');
         }
-    }, [genreCounts, selectedMapGenre]);
+    }, [genreCounts, searchParams, selectedMapGenre]);
 
     // Filter performances based on URL params
     const performances = useMemo(() => {
@@ -329,7 +422,50 @@ export default function MapView({
         const isAllMode = selectedMapGenre === 'all' || !selectedMapGenre;
         const groupsMap = new Map<string, VenueGroup>();
 
-        if (!isMovieMode || isAllMode) {
+        if (precomputedVenueGroups && (!isMovieMode || isAllMode)) {
+            const keyword = searchMode === 'keyword' ? normalizeSearchValue(searchText) : '';
+            const center = mapSearchCenter;
+
+            for (const venueGroup of precomputedVenueGroups) {
+                if (venueGroup.venueName.includes('투어패스') && venueGroup.lat > 37.4 && venueGroup.lng > 130.8) continue;
+
+                if (center && Number.isFinite(center.lat) && Number.isFinite(center.lng)) {
+                    const distance = getDistanceFromLatLonInKm(center.lat, center.lng, venueGroup.lat, venueGroup.lng);
+                    const isExactCenter = normalizeSearchValue(venueGroup.venueName) === normalizeSearchValue(center.name);
+                    if (!isExactCenter && distance > 20) continue;
+                }
+
+                const filteredPerformances = venueGroup.performances.filter((perf) => {
+                    if (!isAllMode && perf.genre !== selectedMapGenre) return false;
+                    if (!keyword) return true;
+
+                    return [
+                        perf.title,
+                        perf.venue,
+                        perf.venueKey,
+                        perf.address,
+                        perf.homeTeam,
+                        perf.awayTeam,
+                    ].some((value) => normalizeSearchValue(value).includes(keyword));
+                });
+
+                if (!isAllMode && filteredPerformances.length === 0) continue;
+
+                const groupKeywordMatch = !keyword || [
+                    venueGroup.venueName,
+                    venueGroup.venueKey,
+                    venueGroup.address,
+                ].some((value) => normalizeSearchValue(value).includes(keyword));
+
+                if (filteredPerformances.length === 0 && !groupKeywordMatch) continue;
+
+                groupsMap.set(venueGroup.groupKey, {
+                    ...venueGroup,
+                    performances: filteredPerformances.length > 0 ? filteredPerformances : venueGroup.performances,
+                    kakaoLatLng: null,
+                });
+            }
+        } else if (!isMovieMode || isAllMode) {
             for (let i = 0; i < performances.length; i++) {
                 const perf = performances[i];
                 if (!isAllMode && perf.genre !== selectedMapGenre) continue;
@@ -402,7 +538,7 @@ export default function MapView({
         }
 
         return { groups: Object.fromEntries(groupsMap), list };
-    }, [performances, cinemas, mapSearchCenter, selectedMapGenre]);
+    }, [performances, precomputedVenueGroups, cinemas, mapSearchCenter, searchMode, searchText, selectedMapGenre]);
 
     useEffect(() => {
         allVenueGroups.current = processedData.groups;
@@ -654,8 +790,18 @@ export default function MapView({
         });
 
         clusterer.addMarkers(markers);
-        updateMarkerSelection(selectedVenue);
-    }, [getMarkerIcon, isMapReady, mapInstance, processedData, selectedMapGenre, selectedVenue, updateMarkerSelection]);
+
+        return () => {
+            clusterer.clear();
+            markers.forEach((marker) => {
+                marker.setMap(null);
+                k.event.removeListener(marker, 'click');
+            });
+            if (clustererRef.current === clusterer) {
+                clustererRef.current = null;
+            }
+        };
+    }, [getMarkerIcon, isMapReady, mapInstance, processedData, selectedMapGenre]);
 
     // Selection update
     useEffect(() => {
@@ -730,6 +876,11 @@ export default function MapView({
     const handleZoomOut = () => { if (mapInstance) mapInstance.setLevel(mapInstance.getLevel() + 1, { animate: true }); };
 
     const handleClose = () => {
+        if (onClose) {
+            onClose();
+            return;
+        }
+
         // Navigate to the list view matching the currently selected category on the map
         const genrePath = (selectedMapGenre && selectedMapGenre !== 'all') ? `/${selectedMapGenre}` : '/';
         
@@ -861,9 +1012,11 @@ export default function MapView({
     return (
         <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
             {/* Isolated URL params bridge - see SearchParamsBridge for rationale. */}
-            <Suspense fallback={null}>
-                <SearchParamsBridge onParams={setSearchParams} />
-            </Suspense>
+            {!isEmbedded && (
+                <Suspense fallback={null}>
+                    <SearchParamsBridge onParams={handleSearchParams} />
+                </Suspense>
+            )}
             <div className="relative w-full h-full bg-white dark:bg-black overflow-hidden shadow-2xl flex flex-col">
                 {/* Controls */}
                 <div className="absolute top-4 right-4 z-[100] flex flex-col gap-2">
@@ -1231,27 +1384,36 @@ export default function MapView({
                                 const isCinemaObj = v.type === 'cinema';
                                 const bgClass = isCinemaObj ? 'bg-indigo-600' : style.twBg.replace('bg-', 'bg-');
 
+                                const selectVenue = () => {
+                                    const newSelected = v.groupKey === selectedVenue ? null : v.groupKey;
+                                    setSelectedVenue(newSelected);
+                                    if (newSelected && mapInstance && v.lat && v.lng) {
+                                        const k = window.kakao.maps;
+                                        if (typeof k.LatLng === 'function') {
+                                            const moveLatLon = new k.LatLng(v.lat, v.lng);
+                                            if (mapInstance.getLevel() > 4) {
+                                                mapInstance.setLevel(4);
+                                                setTimeout(() => mapInstance.panTo(moveLatLon), 10);
+                                            } else {
+                                                mapInstance.panTo(moveLatLon);
+                                            }
+                                        }
+                                    }
+                                };
+
                                 return (
-                                    <button type="button" key={v.groupKey}
+                                    <div role="button" tabIndex={0} key={v.groupKey}
                                         onClick={(e) => {
                                             if (isDragClicked.current) { e.preventDefault(); return; }
-                                            const newSelected = v.groupKey === selectedVenue ? null : v.groupKey;
-                                            setSelectedVenue(newSelected);
-                                            if (newSelected && mapInstance && v.lat && v.lng) {
-                                                const k = window.kakao.maps;
-                                                if (typeof k.LatLng === 'function') {
-                                                    const moveLatLon = new k.LatLng(v.lat, v.lng);
-                                                    if (mapInstance.getLevel() > 4) {
-                                                        mapInstance.setLevel(4);
-                                                        setTimeout(() => mapInstance.panTo(moveLatLon), 10);
-                                                    } else {
-                                                        mapInstance.panTo(moveLatLon);
-                                                    }
-                                                }
-                                            }
+                                            selectVenue();
+                                        }}
+                                        onKeyDown={(e) => {
+                                            if (e.key !== 'Enter' && e.key !== ' ') return;
+                                            e.preventDefault();
+                                            selectVenue();
                                         }}
                                         className={clsx(
-                                            "shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300",
+                                            "shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 cursor-pointer",
                                             isSelected
                                                 ? `${bgClass} text-white scale-[1.03] shadow-2xl`
                                                 : "bg-white/90 dark:bg-gray-800/90 backdrop-blur border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:scale-[1.01]"
@@ -1287,7 +1449,7 @@ export default function MapView({
                                                 {v.performances.length}개 컨텐츠
                                             </span>
                                         </div>
-                                    </button>
+                                    </div>
                                 );
                             })}
                         </div>

@@ -31,6 +31,8 @@ interface CalendarViewProps {
     initialGenreCounts?: GenreCounts;
     buildInfo?: DataBuildInfo | null;
     lastUpdated: string;
+    embeddedSearchParams?: string;
+    onClose?: () => void;
 }
 
 type CalendarView = 'daily' | 'weekly' | 'monthly';
@@ -108,19 +110,25 @@ export default function CalendarView({
     performances: initialPerformances,
     initialGenreCounts,
     buildInfo,
-    lastUpdated
+    lastUpdated,
+    embeddedSearchParams,
+    onClose,
 }: CalendarViewProps) {
     const router = useRouter();
     // searchParams is populated by <SearchParamsBridge> after mount. Initial
     // render uses EMPTY_SEARCH_PARAMS so the static prerender doesn't bail out
     // to client-side rendering. A useEffect below syncs URL params -> state
     // once the bridge fires.
-    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
+    const [searchParams, setSearchParams] = useState<URLSearchParams>(() => (
+        embeddedSearchParams ? new URLSearchParams(embeddedSearchParams) : EMPTY_SEARCH_PARAMS
+    ));
+    const isEmbedded = typeof embeddedSearchParams === 'string';
 
     // Load full data client-side (server provides initial subset, client fetches full)
     const { allPerformances, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
         performanceLoadPolicy: 'full',
+        performanceDataPath: '/data/calendar-items.json',
         backgroundLoadPriority: 'immediate',
     });
     const performances = allPerformances;
@@ -196,7 +204,8 @@ export default function CalendarView({
         const map = new Map<string, Performance[]>();
 
         performances.forEach(perf => {
-            const dateStr = perf.date.trim();
+            const dateStr = (perf.date || '').trim();
+            if (!dateStr) return;
 
             if (dateStr.includes('~')) {
                 const [startRaw, endRaw] = dateStr.split('~').map(s => s.trim());
@@ -361,6 +370,11 @@ export default function CalendarView({
     };
 
     const handleClose = () => {
+        if (onClose) {
+            onClose();
+            return;
+        }
+
         // Navigate back, or go to home if no history
         if (window.history.length > 1) {
             router.back();
@@ -377,9 +391,11 @@ export default function CalendarView({
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
             {/* Isolated URL params bridge - see SearchParamsBridge for rationale. */}
-            <Suspense fallback={null}>
-                <SearchParamsBridge onParams={handleSearchParamsChange} />
-            </Suspense>
+            {!isEmbedded && (
+                <Suspense fallback={null}>
+                    <SearchParamsBridge onParams={handleSearchParamsChange} />
+                </Suspense>
+            )}
             <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0">
                 {/* Header */}
                 <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900 z-10">

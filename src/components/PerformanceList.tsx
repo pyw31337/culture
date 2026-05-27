@@ -52,6 +52,8 @@ import { useUserActivity } from '@/hooks/useUserActivity';
 const FavoriteVenuesModal = dynamic(() => import('./FavoriteVenuesModal'), { ssr: false });
 const loadSharedDetailModal = () => import('./SharedDetailModal');
 const SharedDetailModal = dynamic(loadSharedDetailModal, { ssr: false });
+const MapViewOverlay = dynamic(() => import('./MapView'), { ssr: false });
+const CalendarViewOverlay = dynamic(() => import('./CalendarView'), { ssr: false });
 
 interface PerformanceListProps {
     initialPerformances: Performance[];
@@ -145,6 +147,8 @@ export default function PerformanceList({
     const [isAlarmOpen, setIsAlarmOpen] = useState(false);
     const [keywordInput, setKeywordInput] = useState('');
     const [sharedPerf, setSharedPerf] = useState<Performance | null>(null);
+    const [activeOverlay, setActiveOverlay] = useState<'map' | 'calendar' | null>(null);
+    const [overlaySearchParams, setOverlaySearchParams] = useState('');
     const observerTarget = useRef<HTMLDivElement>(null);
     const deepLinkHandled = useRef(false);
     const modalReturnScrollY = useRef(0);
@@ -477,13 +481,40 @@ export default function PerformanceList({
     }, [scopedPerformances]);
 
     const handleOpenMap = useCallback(() => {
+        const params = new URLSearchParams();
+        params.set('genre', selectedGenre);
+
         if (searchMode === 'location' && activeLocation) {
             const venueName = 'name' in activeLocation ? (activeLocation as any).name : '내 위치';
-            router.push(`/map?genre=${selectedGenre}&mode=location&lat=${activeLocation.lat}&lng=${activeLocation.lng}&venue=${encodeURIComponent(venueName)}`);
+            params.set('mode', 'location');
+            params.set('lat', String(activeLocation.lat));
+            params.set('lng', String(activeLocation.lng));
+            params.set('venue', venueName);
         } else {
-            router.push(`/map?genre=${selectedGenre}`);
+            params.set('mode', searchMode);
+            if (searchText.trim()) params.set('q', searchText.trim());
         }
-    }, [searchMode, activeLocation, selectedGenre, router]);
+
+        setOverlaySearchParams(params.toString());
+        setActiveOverlay('map');
+    }, [searchMode, activeLocation, selectedGenre, searchText]);
+
+    const handleOpenCalendar = useCallback(() => {
+        const params = new URLSearchParams();
+        params.set('genre', selectedGenre);
+        setOverlaySearchParams(params.toString());
+        setActiveOverlay('calendar');
+    }, [selectedGenre]);
+
+    const handleCloseOverlay = useCallback(() => {
+        setActiveOverlay(null);
+        if (typeof window !== 'undefined') {
+            const returnY = window.scrollY;
+            window.requestAnimationFrame(() => {
+                window.scrollTo({ top: returnY, behavior: 'auto' });
+            });
+        }
+    }, []);
 
     return (
         <div className="min-h-screen bg-transparent text-white light:text-black">
@@ -654,7 +685,16 @@ export default function PerformanceList({
                         <LikedSections
                             viewMode={viewMode} allPerformances={scopedPerformances} likedIds={likedIds} favoriteVenues={favoriteVenues}
                             venues={venues} onToggleLike={toggleLike} onDetailOpen={handleDetailOpen} onSetSearchLocation={setSearchLocation}
-                            onVenuePreview={(loc) => { router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }} setIsMapOpen={handleOpenMap}
+                            onVenuePreview={(loc) => {
+                                const params = new URLSearchParams();
+                                params.set('genre', selectedGenre);
+                                params.set('mode', 'location');
+                                params.set('lat', String(loc.lat));
+                                params.set('lng', String(loc.lng));
+                                params.set('venue', loc.name);
+                                setOverlaySearchParams(params.toString());
+                                setActiveOverlay('map');
+                            }} setIsMapOpen={handleOpenMap}
                             copyItemShareUrl={copyItemShareUrl} selectedGenre={selectedGenre} searchMode={searchMode} searchText={searchText}
                             setShowFavoriteListModal={setShowFavoriteListModal} layoutMode={layoutMode}
                         />
@@ -671,7 +711,16 @@ export default function PerformanceList({
                             onToggleLike={toggleLike}
                             handleDetailOpen={handleDetailOpen}
                             setSearchLocation={setSearchLocation}
-                            onVenuePreview={(loc) => { router.push(`/map?genre=${selectedGenre}&lat=${loc.lat}&lng=${loc.lng}&venue=${encodeURIComponent(loc.name)}`); }}
+                            onVenuePreview={(loc) => {
+                                const params = new URLSearchParams();
+                                params.set('genre', selectedGenre);
+                                params.set('mode', 'location');
+                                params.set('lat', String(loc.lat));
+                                params.set('lng', String(loc.lng));
+                                params.set('venue', loc.name);
+                                setOverlaySearchParams(params.toString());
+                                setActiveOverlay('map');
+                            }}
                             setIsMapOpen={handleOpenMap}
                             copyItemShareUrl={copyItemShareUrl}
                             selectedGenre={selectedGenre}
@@ -691,7 +740,7 @@ export default function PerformanceList({
             </main>
 
             {/* 4. Navigation & Modals */}
-            <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={() => { router.push(`/calendar?genre=${selectedGenre}`); }} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
+            <BottomNav activeMenu={activeBottomMenu} currentViewMode={viewMode} onMenuClick={setActiveBottomMenu} onLikePerfClick={handleLikePerfClick} onMapClick={handleOpenMap} onCalendarClick={handleOpenCalendar} likeCount={likedIds.length} venueCount={favoriteVenues.length} selectedGenre={selectedGenre} searchMode={searchMode} />
 
             <BottomNavSheet activeMenu={activeBottomMenu} onClose={() => setActiveBottomMenu(null)} viewMode={viewMode} onViewModeChange={setViewMode} selectedGenre={selectedGenre} availableGenres={genreNavigationItems} onGenreSelect={handleGenreSelect} selectedRegion={selectedRegion} onRegionSelect={setSelectedRegion} selectedDistrict={selectedDistrict} onDistrictSelect={setSelectedDistrict} selectedVenue={selectedVenue} venues={venues} onVenueSelect={(v) => {
                 setSelectedVenue(v);
@@ -728,9 +777,36 @@ export default function PerformanceList({
 
             {showFavoriteListModal && <FavoriteVenuesModal isOpen={showFavoriteListModal} onClose={() => setShowFavoriteListModal(false)} favoriteVenues={favoriteVenues} onRemove={toggleFavoriteVenue} onVenueClick={(favoriteVenue) => {
                 const representativeVenue = getRepresentativeVenueInfoForFavorite(favoriteVenue, scopedPerformances, venues);
-                router.push(`/map?genre=${selectedGenre}&lat=${representativeVenue?.lat || 0}&lng=${representativeVenue?.lng || 0}&venue=${encodeURIComponent(favoriteVenue.venueName)}`);
+                const params = new URLSearchParams();
+                params.set('genre', selectedGenre);
+                params.set('mode', 'location');
+                params.set('lat', String(representativeVenue?.lat || 0));
+                params.set('lng', String(representativeVenue?.lng || 0));
+                params.set('venue', favoriteVenue.venueName);
+                setOverlaySearchParams(params.toString());
+                setActiveOverlay('map');
             }} />}
             {sharedPerf && <SharedDetailModal performance={sharedPerf} allPerformances={scopedPerformances} onClose={handleSharedDetailClose} />}
+            {activeOverlay === 'map' && (
+                <MapViewOverlay
+                    initialPerformances={[]}
+                    initialGenreCounts={genreCounts}
+                    buildInfo={buildInfo}
+                    lastUpdated={lastUpdated}
+                    embeddedSearchParams={overlaySearchParams}
+                    onClose={handleCloseOverlay}
+                />
+            )}
+            {activeOverlay === 'calendar' && (
+                <CalendarViewOverlay
+                    performances={[]}
+                    initialGenreCounts={genreCounts}
+                    buildInfo={buildInfo}
+                    lastUpdated={lastUpdated}
+                    embeddedSearchParams={overlaySearchParams}
+                    onClose={handleCloseOverlay}
+                />
+            )}
         </div>
     );
 }

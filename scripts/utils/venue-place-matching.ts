@@ -89,6 +89,55 @@ function compactText(value?: string) {
     return value?.replace(/\s+/g, ' ').trim() || '';
 }
 
+function stripLookupNoise(value?: string) {
+    return compactText(value)
+        .replace(/\(자세히\)|\[자세히\]|자세히/g, ' ')
+        .replace(/\(무료주차가능\)|무료주차가능/g, ' ')
+        .replace(/\[[^\]]+\]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function isAddressLike(value?: string) {
+    const text = compactText(value);
+    return /(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)/.test(text)
+        && /(?:로|길|대로|번길)\s*\d|[가-힣]+(구|군|시)\s+[가-힣0-9]+(로|길|대로|번길)/.test(text);
+}
+
+function cleanLookupName(value?: string) {
+    let text = stripLookupNoise(value);
+    if (!text) return '';
+
+    text = text
+        .replace(/^[·ㆍ]\s*/g, '')
+        .replace(/\s*\([^)]*(?:역|출구|부근|상세주소|예약|안내)[^)]*\)\s*/g, ' ')
+        .replace(/\([^)]*$/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    const addressPrefixPatterns = [
+        /^(?:서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)?\s*[가-힣]+(?:시|구|군)\s+[가-힣0-9]+(?:로|길|대로|번길)\s*\d+(?:-\d+)?\s*(?:\([^)]*\)|[가-힣]+동\))?\s*/u,
+        /^(?:서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s+[가-힣]+(?:시|구|군)\s*/u,
+    ];
+
+    for (const pattern of addressPrefixPatterns) {
+        const stripped = text.replace(pattern, '').trim();
+        if (stripped && stripped.length >= 2) {
+            text = stripped;
+            break;
+        }
+    }
+
+    text = text
+        .replace(/\s*\([^)]*(?:역|출구|부근|상세주소|예약|안내)[^)]*\)\s*/g, ' ')
+        .replace(/\([^)]*$/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    if (/^\d+\s*(층|호)$/u.test(text) || /^호$/u.test(text)) return '';
+    return text;
+}
+
 function normalizeText(value?: string) {
     return compactText(value)
         .replace(/\[[^\]]+\]/g, '')
@@ -229,8 +278,10 @@ function isClearlyNonVenueName(value?: string) {
     const text = compactText(value);
     const normalized = normalizeText(text);
     if (!normalized || normalized.length < 2) return true;
+    if (/^[·ㆍ]\s*/.test(text)) return true;
     if (/^[0-9:/\-\s]+$/.test(text)) return true;
     if (/장소\s*확인\s*필요|온라인|zoom/i.test(text)) return true;
+    if (/^[가-힣]+(구|군|시|읍|면|동|로|길)$/u.test(text)) return true;
     if (/^\d+\s*층(?:\s|$)|^\d+\s*~\s*\d+\s*층/.test(text)) return true;
     if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s+[가-힣]+(구|군|시)$/.test(text)) return true;
     if (text.includes('/')) return true;
@@ -288,6 +339,12 @@ function addressSimilarity(left?: string, right?: string) {
     return 0;
 }
 
+function hasHelpfulPlaceCategory(value?: string) {
+    const category = compactText(value);
+    if (!category) return false;
+    return /문화|예술|공연|전시|극장|박물관|미술관|여행|관광|명소|테마파크|워터|수영|수상|스포츠|레저|루지|케이블카|공방|체험/i.test(category);
+}
+
 function distanceMeters(leftLat?: number | null, leftLng?: number | null, rightLat?: number | null, rightLng?: number | null) {
     if (
         typeof leftLat !== 'number' ||
@@ -310,8 +367,13 @@ function distanceMeters(leftLat?: number | null, leftLng?: number | null, rightL
 }
 
 export function getVenuePlaceLookupQuery(entry: VenueMasterEntry) {
+    const cleanName = cleanLookupName(entry.officialName);
     const region = extractAddressRegion(entry.address);
-    return [entry.officialName, region].filter(Boolean).join(' ');
+    if (cleanName && !isAddressLike(cleanName)) {
+        return [cleanName, region].filter(Boolean).join(' ');
+    }
+    const address = stripLookupNoise(entry.address);
+    return [cleanName || address, region].filter(Boolean).join(' ');
 }
 
 export function scoreVenuePlaceCandidate(entry: VenueMasterEntry, candidate: VenuePlaceCandidate) {
@@ -338,6 +400,12 @@ export function scoreVenuePlaceCandidate(entry: VenueMasterEntry, candidate: Ven
     if (!hasDetailedAddress(entry.address) && hasDetailedAddress(candidateAddress)) {
         if (nameScore >= 0.96) confidence = Math.max(confidence, 0.76);
         else if (nameScore >= 0.9) confidence = Math.max(confidence, 0.72);
+    }
+    if (!hasDetailedAddress(entry.address) && hasHelpfulPlaceCategory(candidate.categoryName)) {
+        if (nameScore >= 0.95) confidence = Math.max(confidence, 0.76);
+        else if (nameScore >= 0.74 && /관광|명소|테마파크|워터|수영|수상|루지|케이블카|공방|체험/i.test(candidate.categoryName || '')) {
+            confidence = Math.max(confidence, 0.72);
+        }
     }
     const reason = [
         `name=${nameScore.toFixed(2)}`,
@@ -424,6 +492,8 @@ export function applyVenuePlaceCache(entries: VenueMasterEntry[], cache: VenuePl
 
 function isRetryableLookupFailure(cached?: VenuePlaceCacheEntry) {
     if (!cached) return true;
+    if (process.env.VENUE_PLACE_REFRESH_NOT_FOUND === '1' && cached.status === 'not_found') return true;
+    if (process.env.VENUE_PLACE_REFRESH_REVIEW === '1' && cached.status === 'needs_review') return true;
     const reason = cached.reason || '';
     return cached.status === 'needs_review' &&
         cached.confidence === 0 &&
@@ -439,7 +509,9 @@ export function buildVenuePlaceLookupQueue(entries: VenueMasterEntry[], cache: V
             return isRetryableLookupFailure(cached);
         })
         .filter((entry) => {
-            if (isClearlyNonVenueName(entry.officialName)) return false;
+            const cleanName = cleanLookupName(entry.officialName);
+            if (!cleanName || isClearlyNonVenueName(cleanName)) return false;
+            if (isClearlyNonVenueName(entry.officialName) && isClearlyNonVenueName(cleanName)) return false;
             return true;
         })
         .map<VenuePlaceLookupQueueItem>((entry) => {

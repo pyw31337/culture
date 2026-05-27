@@ -141,6 +141,30 @@ const KNOWN_SELLER_ADDRESS_PATTERNS = [
     /서울특별시\s*마포구\s*큰우물로\s*76/,
 ];
 
+function loadLocalEnvFile(fileName: string) {
+    const filePath = path.join(process.cwd(), fileName);
+    if (!fs.existsSync(filePath)) return;
+
+    fs.readFileSync(filePath, 'utf8')
+        .split(/\r?\n/)
+        .forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed || trimmed.startsWith('#')) return;
+
+            const separatorIndex = trimmed.indexOf('=');
+            if (separatorIndex <= 0) return;
+
+            const key = trimmed.slice(0, separatorIndex).trim();
+            const rawValue = trimmed.slice(separatorIndex + 1).trim();
+            if (!key || process.env[key]) return;
+
+            process.env[key] = rawValue.replace(/^['"]|['"]$/g, '');
+        });
+}
+
+loadLocalEnvFile('.env');
+loadLocalEnvFile('.env.local');
+
 const KNOWN_BRANCH_VENUE_RULES: Array<{ tokens: string[]; venueKey: string }> = [
     { tokens: ['상록리조트', '아쿠아피아'], venueKey: '천안상록리조트 아쿠아피아' },
     { tokens: ['상록리조트', '상록랜드'], venueKey: '천안상록리조트 상록랜드' },
@@ -249,6 +273,120 @@ function parseCoordinate(value: unknown) {
         if (Number.isFinite(parsed) && parsed !== 0) return parsed;
     }
     return undefined;
+}
+
+function pickDefined<T extends Record<string, unknown>>(value: T) {
+    return Object.fromEntries(
+        Object.entries(value).filter(([, entry]) => (
+            entry !== undefined &&
+            entry !== null &&
+            entry !== '' &&
+            !(Array.isArray(entry) && entry.length === 0)
+        ))
+    );
+}
+
+function buildMapPayloadItem(performance: PrunedPerformance) {
+    return pickDefined({
+        id: performance.id,
+        title: performance.title,
+        date: performance.date,
+        venue: performance.venue,
+        venueKey: performance.venueKey,
+        locationKey: performance.locationKey,
+        address: performance.address,
+        district: performance.district,
+        region: performance.region,
+        genre: performance.genre,
+        image: performance.image,
+        backupPoster: performance.backupPoster,
+        poster: performance.poster,
+        link: performance.link,
+        price: performance.price,
+        lat: performance.lat,
+        lng: performance.lng,
+        homeTeam: performance.homeTeam,
+        awayTeam: performance.awayTeam,
+        homeTeamLogo: performance.homeTeamLogo,
+        awayTeamLogo: performance.awayTeamLogo,
+        openRun: performance.openRun,
+        bracketRegion: performance.bracketRegion,
+    }) as Partial<PrunedPerformance>;
+}
+
+function buildCalendarPayloadItem(performance: PrunedPerformance) {
+    return pickDefined({
+        id: performance.id,
+        title: performance.title,
+        date: performance.date,
+        venue: performance.venue,
+        venueKey: performance.venueKey,
+        locationKey: performance.locationKey,
+        address: performance.address,
+        district: performance.district,
+        region: performance.region,
+        genre: performance.genre,
+        image: performance.image,
+        backupPoster: performance.backupPoster,
+        poster: performance.poster,
+        link: performance.link,
+        price: performance.price,
+        lat: performance.lat,
+        lng: performance.lng,
+        openRun: performance.openRun,
+        bracketRegion: performance.bracketRegion,
+    }) as Partial<PrunedPerformance>;
+}
+
+function buildMapVenuePayload(items: Array<Partial<PrunedPerformance>>) {
+    type MapVenueGroupPayload = {
+        groupKey: string;
+        venueName: string;
+        venueKey: string;
+        address?: string;
+        lat: number;
+        lng: number;
+        region?: string;
+        district?: string;
+        type: 'performance';
+        performances: Array<Partial<PrunedPerformance>>;
+        firstAppearanceIndex: number;
+    };
+
+    const groups = new Map<string, MapVenueGroupPayload>();
+
+    items.forEach((performance, index) => {
+        const lat = parseCoordinate(performance.lat);
+        const lng = parseCoordinate(performance.lng);
+        if (!lat || !lng) return;
+
+        const venueName = compactText(performance.venue) || compactText(performance.venueKey) || '장소 확인 필요';
+        const venueKey = compactText(performance.venueKey) || venueName;
+        const groupKey = compactText(performance.locationKey)
+            || `${venueKey}::${coordinateKey(lat, lng) || compactText(performance.address)}`;
+
+        const existing = groups.get(groupKey);
+        if (existing) {
+            existing.performances.push(performance);
+            return;
+        }
+
+        groups.set(groupKey, pickDefined({
+            groupKey,
+            venueName,
+            venueKey,
+            address: performance.address,
+            lat,
+            lng,
+            region: performance.region,
+            district: performance.district,
+            type: 'performance' as const,
+            performances: [performance],
+            firstAppearanceIndex: index,
+        }) as MapVenueGroupPayload);
+    });
+
+    return Array.from(groups.values());
 }
 
 function coordinateKey(lat?: number, lng?: number) {
@@ -403,6 +541,11 @@ function getRemoteImageCandidate(performance: Performance) {
 
 function normalizeImageFields(items: Performance[]) {
     items.forEach((performance) => {
+        if (performance.genre === 'soccer') {
+            performance.image = FALLBACK_IMAGES.soccer;
+            performance.backupPoster = FALLBACK_IMAGES.soccer;
+        }
+
         const normalizedImage = normalizeImageUrl(performance.image);
         const normalizedBackup = normalizeImageUrl(performance.backupPoster);
         const normalizedPosterUrl = normalizeImageUrl(performance.posterUrl);
@@ -1687,6 +1830,12 @@ async function generate() {
         );
         const venuePlaceCachePath = path.join(process.cwd(), 'src', 'data', 'venue-place-cache.json');
         const venuePlaceCache = readJsonIfExists<VenuePlaceCache>(venuePlaceCachePath, {});
+        const activeVenueIds = new Set(venueMasterBuild.entries.map((entry) => entry.id));
+        Object.keys(venuePlaceCache).forEach((venueId) => {
+            if (!activeVenueIds.has(venueId)) {
+                delete venuePlaceCache[venueId];
+            }
+        });
         venueMasterBuild.entries = applyVenuePlaceCache(venueMasterBuild.entries, venuePlaceCache);
         const venuePlaceMatchingReport = buildVenuePlaceMatchingReport(
             venueMasterBuild.entries,
@@ -1718,6 +1867,23 @@ async function generate() {
 
         fs.writeFileSync(outputPath, JSON.stringify(pruned));
         console.log(`Successfully generated ${pruned.length} items to ${outputPath}`);
+
+        const mapPayloadPath = path.join(dir, 'map-items.json');
+        const mapPayload = pruned
+            .map(buildMapPayloadItem)
+            .filter((performance) => performance.lat && performance.lng);
+        fs.writeFileSync(mapPayloadPath, JSON.stringify(mapPayload));
+        console.log(`Generated lightweight map payload (${mapPayload.length} items) to ${mapPayloadPath}`);
+
+        const mapVenuesPayloadPath = path.join(dir, 'map-venues.json');
+        const mapVenuesPayload = buildMapVenuePayload(mapPayload);
+        fs.writeFileSync(mapVenuesPayloadPath, JSON.stringify(mapVenuesPayload));
+        console.log(`Generated venue-grouped map payload (${mapVenuesPayload.length} venues) to ${mapVenuesPayloadPath}`);
+
+        const calendarPayloadPath = path.join(dir, 'calendar-items.json');
+        const calendarPayload = pruned.map(buildCalendarPayloadItem);
+        fs.writeFileSync(calendarPayloadPath, JSON.stringify(calendarPayload));
+        console.log(`Generated lightweight calendar payload (${calendarPayload.length} items) to ${calendarPayloadPath}`);
 
         const categoryDataDir = path.join(dir, 'categories');
         fs.mkdirSync(categoryDataDir, { recursive: true });

@@ -184,7 +184,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-5" />
 
-                    {['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                    {['volleyball', 'basketball', 'baseball', 'handball'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 items-center z-10 pointer-events-none">
                             {/* Background Decorative Icon */}
                             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.12] text-white pointer-events-none z-[-1]">
