@@ -37,8 +37,18 @@ interface MochaClassItem {
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/mochaclass.json');
 const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
-const DETAIL_ENRICH_LIMIT = Number(process.env.MOCHACLASS_DETAIL_LIMIT || 360);
-const LIST_PAGE_LIMIT = Number(process.env.MOCHACLASS_MAX_PAGES || 100);
+
+function positiveInt(value: string | undefined, fallback: number) {
+    const parsed = Number.parseInt(value || '', 10);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+const DETAIL_ENRICH_LIMIT = positiveInt(process.env.MOCHACLASS_DETAIL_LIMIT, 360);
+const LIST_PAGE_LIMIT = positiveInt(process.env.MOCHACLASS_MAX_PAGES, 100);
+const DETAIL_TIMEOUT_MS = positiveInt(process.env.MOCHACLASS_DETAIL_TIMEOUT_MS, 30000);
+const SELECTOR_TIMEOUT_MS = positiveInt(process.env.MOCHACLASS_SELECTOR_TIMEOUT_MS, 10000);
+const POST_LOAD_DELAY_MS = positiveInt(process.env.MOCHACLASS_POST_LOAD_DELAY_MS, 1200);
+const RETAIN_UNSEEN_EXISTING = process.env.MOCHACLASS_RETAIN_UNSEEN_EXISTING === '1';
 
 async function preparePageForEvaluate(page: any) {
     await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
@@ -190,6 +200,7 @@ async function scrapeMochaClass() {
 
     const allItems: MochaClassItem[] = [];
     const seenTitles = new Set<string>();
+    const seenLinks = new Set<string>();
 
     let currentPage = 1;
     let hasNextPage = true;
@@ -285,6 +296,7 @@ async function scrapeMochaClass() {
                 for (const item of pageItems) {
                     if (!seenTitles.has(item.title)) {
                         seenTitles.add(item.title);
+                        seenLinks.add(item.link);
                         pendingItems.push(item);
                         newItemsCount++;
                     }
@@ -350,11 +362,19 @@ async function scrapeMochaClass() {
     console.log(`Skipped: ${done.length}. To Enrich this run: ${enrichQueue.length}. Deferred/retained: ${deferred.length}`);
     allItems.push(...done, ...deferred);
 
+    if (RETAIN_UNSEEN_EXISTING) {
+        const retainedExisting = Array.from(existingMap.values()).filter((item) => item.link && !seenLinks.has(item.link));
+        if (retainedExisting.length > 0) {
+            console.log(`Retaining ${retainedExisting.length} existing items outside the fallback page window.`);
+            allItems.push(...retainedExisting);
+        }
+    }
+
     if (enrichQueue.length > 0) {
         const progressBar = new ProgressBar(enrichQueue.length);
         let processedCount = 0;
-        const CONCURRENCY = Number(process.env.MOCHACLASS_CONCURRENCY || 8);
-        const CHUNK_DELAY_MS = Number(process.env.MOCHACLASS_CHUNK_DELAY_MS || 250);
+        const CONCURRENCY = positiveInt(process.env.MOCHACLASS_CONCURRENCY, 8);
+        const CHUNK_DELAY_MS = positiveInt(process.env.MOCHACLASS_CHUNK_DELAY_MS, 250);
 
         for (let i = 0; i < enrichQueue.length; i += CONCURRENCY) {
             const chunk = enrichQueue.slice(i, i + CONCURRENCY);
@@ -362,10 +382,10 @@ async function scrapeMochaClass() {
                 const p = await browser.newPage();
                 try {
                     await preparePageForEvaluate(p);
-                    await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                    await p.goto(item.link, { waitUntil: 'domcontentloaded', timeout: DETAIL_TIMEOUT_MS });
                     await p.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => {});
-                    await p.waitForSelector('img[src], h1, h2, h3, p', { timeout: 10000 }).catch(() => {});
-                    await new Promise(r => setTimeout(r, 1200));
+                    await p.waitForSelector('img[src], h1, h2, h3, p', { timeout: SELECTOR_TIMEOUT_MS }).catch(() => {});
+                    await new Promise(r => setTimeout(r, POST_LOAD_DELAY_MS));
 
                     const detailData = await p.evaluate(async () => {
                         const compact = (value?: string | null) => value?.replace(/\s+/g, ' ').trim() || '';

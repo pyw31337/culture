@@ -116,13 +116,22 @@ jobs:
           KAKAO_LOCAL_REST_API_KEY: ${{ secrets.KAKAO_LOCAL_REST_API_KEY }}
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
-          INTERPARK_ENRICH_LIMIT: '250'
-          YES24_DETAIL_LIMIT: '160'
-          UMCLASS_DETAIL_LIMIT: '300'
-          MOCHACLASS_DETAIL_LIMIT: '360'
-          MUSEUM_MAX_DETAIL_ITEMS: '220'
+          # GitHub Actions is only the 03:00 KST fallback. Keep it shallow so it
+          # finishes within the free-minute budget; the local midnight job does
+          # the deeper enrichment pass.
+          INTERPARK_ENRICH_LIMIT: '160'
+          YES24_DETAIL_LIMIT: '100'
+          UMCLASS_DETAIL_LIMIT: '140'
+          MOCHACLASS_MAX_PAGES: '60'
+          MOCHACLASS_DETAIL_LIMIT: '90'
+          MOCHACLASS_CONCURRENCY: '4'
+          MOCHACLASS_DETAIL_TIMEOUT_MS: '18000'
+          MOCHACLASS_SELECTOR_TIMEOUT_MS: '6000'
+          MOCHACLASS_POST_LOAD_DELAY_MS: '450'
+          MOCHACLASS_RETAIN_UNSEEN_EXISTING: '1'
+          MUSEUM_MAX_DETAIL_ITEMS: '160'
           CULTURE_PORTAL_MAX_API_PAGES: '360'
-          CULTURE_PORTAL_DETAIL_LIMIT: '250'
+          CULTURE_PORTAL_DETAIL_LIMIT: '180'
           TOURISM_MAX_PAGES: '25'
           VENUE_PLACE_LOOKUP_LIMIT: '30'
           VENUE_PLACE_LOOKUP_DELAY_MS: '250'
