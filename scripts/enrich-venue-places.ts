@@ -221,6 +221,22 @@ async function lookupVenue(entry: VenueMasterEntry, providers: VenuePlaceProvide
     return { candidates, providerErrors: errors };
 }
 
+function statusRank(status?: VenuePlaceCache[string]['status']) {
+    if (status === 'matched') return 3;
+    if (status === 'needs_review') return 2;
+    if (status === 'not_found') return 1;
+    return 0;
+}
+
+function shouldRetainExistingCache(previous: VenuePlaceCache[string] | undefined, next: VenuePlaceCache[string]) {
+    if (!previous) return false;
+    const previousRank = statusRank(previous.status);
+    const nextRank = statusRank(next.status);
+    if (previousRank > nextRank) return true;
+    if (previousRank < nextRank) return false;
+    return (previous.confidence || 0) > (next.confidence || 0);
+}
+
 async function main() {
     const checkedAt = new Date().toISOString();
     const entries = readJsonIfExists<VenueMasterEntry[]>(VENUE_MASTER_PATH, []);
@@ -256,9 +272,20 @@ async function main() {
 
         try {
             const { candidates, providerErrors } = await lookupVenue(entry, providers);
-            cache[entry.id] = chooseBestVenuePlaceCandidate(entry, candidates, checkedAt);
-            if (providerErrors.length > 0) {
-                cache[entry.id].reason = `${cache[entry.id].reason}; provider warnings: ${providerErrors.join(' | ')}`;
+            const nextCache = chooseBestVenuePlaceCandidate(entry, candidates, checkedAt);
+            const previousCache = cache[entry.id];
+
+            if (shouldRetainExistingCache(previousCache, nextCache)) {
+                cache[entry.id] = {
+                    ...previousCache,
+                    checkedAt,
+                    reason: `${previousCache.reason}; retained over lower-confidence refresh (${nextCache.reason})`,
+                };
+            } else {
+                cache[entry.id] = nextCache;
+                if (providerErrors.length > 0) {
+                    cache[entry.id].reason = `${cache[entry.id].reason}; provider warnings: ${providerErrors.join(' | ')}`;
+                }
             }
             consecutiveFailures = 0;
             console.log(`- ${entry.officialName}: ${cache[entry.id].status} (${cache[entry.id].confidence})`);
