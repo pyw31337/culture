@@ -1,4 +1,4 @@
-self.__precacheManifest = (self.__precacheManifest || []).concat([ { "url": "/", "revision": "hyTn00jGkz5qCH5q0PYtg" },
+self.__precacheManifest = (self.__precacheManifest || []).concat([ { "url": "/", "revision": "GU57plZ4f80GsrJXiZ_cK" },
   {
     "revision": "90a1feb8d72c508a1783b5b1dcf87003",
     "url": "/culture/_next/server/app/[genre]/page_client-reference-manifest.js"
@@ -54,6 +54,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([ { "url": "/",
   {
     "revision": "4d5963f7629fb94a23e878267938dd32",
     "url": "/culture/_next/server/next-font-manifest.json"
+  },
+  {
+    "revision": "257cdf337ed146fe8d4b04f1034cdb7d",
+    "url": "/culture/_next/static/GU57plZ4f80GsrJXiZ_cK/_buildManifest.js"
+  },
+  {
+    "revision": "b6652df95db52feb4daf4eca35380933",
+    "url": "/culture/_next/static/GU57plZ4f80GsrJXiZ_cK/_ssgManifest.js"
   },
   {
     "revision": "ac931fab04e808e1",
@@ -226,14 +234,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([ { "url": "/",
   {
     "revision": "31e0a6fa823740a9",
     "url": "/culture/_next/static/css/ceaced2da8bc7ed8.css"
-  },
-  {
-    "revision": "257cdf337ed146fe8d4b04f1034cdb7d",
-    "url": "/culture/_next/static/hyTn00jGkz5qCH5q0PYtg/_buildManifest.js"
-  },
-  {
-    "revision": "b6652df95db52feb4daf4eca35380933",
-    "url": "/culture/_next/static/hyTn00jGkz5qCH5q0PYtg/_ssgManifest.js"
   },
   {
     "revision": "7ffd9af8193278e5330da4a0abc2ee71",

@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-05-27T05:15:59.855Z",
+  "checkedAt": "2026-05-27T06:25:31.492Z",
   "summary": {
-    "checkedPerformanceCount": 9697,
-    "mapItemCount": 9259,
-    "mapVenueGroupCount": 4286,
-    "missingCoordinateCount": 438,
-    "actionableMissingCoordinateCount": 399,
+    "checkedPerformanceCount": 9694,
+    "mapItemCount": 9248,
+    "mapVenueGroupCount": 4281,
+    "missingCoordinateCount": 446,
+    "actionableMissingCoordinateCount": 287,
     "invalidCoordinateCount": 0,
     "missingMapItemCount": 0,
     "missingMapVenueGroupCount": 0,
-    "ambiguousVenueNameCount": 47,
+    "ambiguousVenueNameCount": 44,
     "status": "warn"
   },
   "samples": {
@@ -18,13 +18,12 @@
         "id": "class_딱딱한쿠키는가라_촉촉한브라우니쿠키_원데이클래스_오픈",
         "title": "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
         "date": "OPEN RUN",
-        "venue": "· 팔달구",
-        "venueKey": "· 팔달구 [경기]",
+        "venue": "경기 ·",
         "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F9WSHPpdVwI7F4u6g_6327e632f9fdb223e4558820_1024x1024?alt=media",
         "link": "https://mochaclass.com/class/664a61a367b4395e281b1204",
         "region": "gyeonggi",
         "genre": "class",
-        "description": "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈! 디저트·음료 원데이 클래스 1시간 30분 경기도 · 수원시 · 팔달구 수용인원 1 ~ 2명 클래스 소개 호스트 소개 후기 (0) 문의 (0) ​📍디저트 분양소의 노하우로 알려주는 ​\"브라우니쿠키 원데이클래스\" ​수업은 간단한 이론 수업으로 시작하고 ​계량부터 제조, 오븐에 넣어 굽는 것 까지 ​전과정을 직접 만들어 볼수 있는 수업입니다! ​수강생 한분 한분 꼼꼼하게 밀착 지도를 하며 ​수업도 재미있는 분위기로 진행하니 부담 갖지 말고 오세요~ ​(선생님 대문자 EEEEEE) ​* 디저트 분양소의 레시피를 사용합니다. ​* 레시피는 제공해드리며, 집에서도 만들어 보실수있도록 설명해드릴게요! ​📍1인 12개 구성의 쿠키! ​너무 달지 않고 맛있는 쿠키를 만들어볼수있습니다! ​브라우니 식감의 쿠키이기때문에 ​너무 단단하지 않아서 ​부드럽게 드실수있어요~ ​귀여운 눈동자도 달아보고, ​포장도 직접 하기때문에 완전 핸드메이드 쿠키를 ​가져가실수있어요! ​📍짧은 시간내에 대충 만들고 끝나는 수업이아닌, ​수업내내 모든 과정을 직접 해볼수있도록 준비해드리겠습니다 :-)​ 이런 분들이 들으면 좋아요 • 남녀노소 다가능해요!\n키워드: 모카클래스, 단체 클래스, 기업 워크샵, 팀빌딩, 사내 복지, 힐링 프로그램, 단체 취미, 기관 프로그램",
+        "description": "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!는 경기 ·에서 진행되는 클래스입니다. 위치는 경기 ·입니다. 추천 대상은 전체입니다. 이용 정보는 정상가: 40,000원 판매가: 40,000원 기준입니다.",
         "originalPrice": "40,000원",
         "price": "40,000원",
         "ageRating": "",
@@ -60,7 +59,7 @@
           "모클"
         ],
         "backupPoster": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F9WSHPpdVwI7F4u6g_6327e632f9fdb223e4558820_400x400?alt=media",
-        "address": "경기도 · 수원시 · 팔달구",
+        "address": "경기 ·",
         "source": "mochaclass",
         "production": "",
         "host": "",
@@ -99,7 +98,7 @@
         "placeUrl": "",
         "placeCategory": "",
         "tagline": "",
-        "venueCanonicalId": "venue_팔달구_b7v6dk"
+        "venueCanonicalId": "venue_경기_12plvtp"
       },
       {
         "id": "perf_뮤지컬_달빛_한스푼",
@@ -3244,93 +3243,6 @@
       }
     ],
     "actionableMissingCoordinates": [
-      {
-        "id": "class_딱딱한쿠키는가라_촉촉한브라우니쿠키_원데이클래스_오픈",
-        "title": "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
-        "date": "OPEN RUN",
-        "venue": "· 팔달구",
-        "venueKey": "· 팔달구 [경기]",
-        "image": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F9WSHPpdVwI7F4u6g_6327e632f9fdb223e4558820_1024x1024?alt=media",
-        "link": "https://mochaclass.com/class/664a61a367b4395e281b1204",
-        "region": "gyeonggi",
-        "genre": "class",
-        "description": "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈! 디저트·음료 원데이 클래스 1시간 30분 경기도 · 수원시 · 팔달구 수용인원 1 ~ 2명 클래스 소개 호스트 소개 후기 (0) 문의 (0) ​📍디저트 분양소의 노하우로 알려주는 ​\"브라우니쿠키 원데이클래스\" ​수업은 간단한 이론 수업으로 시작하고 ​계량부터 제조, 오븐에 넣어 굽는 것 까지 ​전과정을 직접 만들어 볼수 있는 수업입니다! ​수강생 한분 한분 꼼꼼하게 밀착 지도를 하며 ​수업도 재미있는 분위기로 진행하니 부담 갖지 말고 오세요~ ​(선생님 대문자 EEEEEE) ​* 디저트 분양소의 레시피를 사용합니다. ​* 레시피는 제공해드리며, 집에서도 만들어 보실수있도록 설명해드릴게요! ​📍1인 12개 구성의 쿠키! ​너무 달지 않고 맛있는 쿠키를 만들어볼수있습니다! ​브라우니 식감의 쿠키이기때문에 ​너무 단단하지 않아서 ​부드럽게 드실수있어요~ ​귀여운 눈동자도 달아보고, ​포장도 직접 하기때문에 완전 핸드메이드 쿠키를 ​가져가실수있어요! ​📍짧은 시간내에 대충 만들고 끝나는 수업이아닌, ​수업내내 모든 과정을 직접 해볼수있도록 준비해드리겠습니다 :-)​ 이런 분들이 들으면 좋아요 • 남녀노소 다가능해요!\n키워드: 모카클래스, 단체 클래스, 기업 워크샵, 팀빌딩, 사내 복지, 힐링 프로그램, 단체 취미, 기관 프로그램",
-        "originalPrice": "40,000원",
-        "price": "40,000원",
-        "ageRating": "",
-        "runningTime": "예약페이지 참조",
-        "synopsisImages": [
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F9WSHPpdVwI7F4u6g_6327e632f9fdb223e4558820_1024x1024?alt=media",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FI3TD79sK3bgQ0Gpv_6327e632f9fdb223e4558820_1024x1024?alt=media",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F3wrfkZDQktSHUzDc_6327e632f9fdb223e4558820_1024x1024?alt=media",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FtGRfmrApvEx0d7qE_6327e632f9fdb223e4558820_1024x1024?alt=media",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F1716150491018_6327e632f9fdb223e4558820?alt=media&token=9e6faeba-95e0-4d62-a514-9f49bc766abc",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F1716150497859_6327e632f9fdb223e4558820?alt=media&token=f221487e-c910-49b5-a342-e4c72a288243",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F1716150502075_6327e632f9fdb223e4558820?alt=media&token=1f24a681-f901-4215-b336-0ce8e0dc3186",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F1716150509544_6327e632f9fdb223e4558820?alt=media&token=76f3eda4-7724-49be-8714-8b92edc7e4e3"
-        ],
-        "stillImages": [
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FI3TD79sK3bgQ0Gpv_6327e632f9fdb223e4558820_1024x1024?alt=media",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F3wrfkZDQktSHUzDc_6327e632f9fdb223e4558820_1024x1024?alt=media",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2FtGRfmrApvEx0d7qE_6327e632f9fdb223e4558820_1024x1024?alt=media",
-          "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F1716150491018_6327e632f9fdb223e4558820?alt=media&token=9e6faeba-95e0-4d62-a514-9f49bc766abc"
-        ],
-        "keywords": [
-          "모카클래스",
-          "단체 클래스",
-          "기업 워크샵",
-          "팀빌딩",
-          "사내 복지",
-          "힐링 프로그램",
-          "단체 취미",
-          "기관 프로그램",
-          "학교 문화행사",
-          "wellness workshop",
-          "B2B 클래스",
-          "모클"
-        ],
-        "backupPoster": "https://firebasestorage.googleapis.com/v0/b/mochaclass-intro-web-4e0c0.appspot.com/o/FCMImages%2F9WSHPpdVwI7F4u6g_6327e632f9fdb223e4558820_400x400?alt=media",
-        "address": "경기도 · 수원시 · 팔달구",
-        "source": "mochaclass",
-        "production": "",
-        "host": "",
-        "organizer": "",
-        "planner": "",
-        "producer": "",
-        "sponsor": "",
-        "website": "https://mochaclass.com/class/664a61a367b4395e281b1204",
-        "parking": "",
-        "parkingFee": "",
-        "facilities": "",
-        "performanceTime": "",
-        "bookingNotice": "",
-        "ageDetail": "",
-        "feesAndPrograms": "클래스 안내\n딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈! 디저트·음료 원데이 클래스 1시간 30분 경기도 · 수원시 · 팔달구 수용인원 1 ~ 2명 클래스 소개 호스트 소개 후기 (0) 문의 (0) ​📍디저트 분양소의 노하우로 알려주는 ​\"브라우니쿠키 원데이클래스\" ​수업은 간단한 이론 수업으로 시작하고 ​계량부터 제조, 오븐에 넣어 굽는 것 까지 ​전과정을 직접 만들어 볼수 있는 수업입니다! ​수강생 한분 한분 꼼꼼하게 밀착 지도를 하며 ​수업도 재미있는 분위기로 진행하니 부담 갖지 말고 오세요~ ​(선생님 대문자 EEEEEE) ​* 디저트 분양소의 레시피를 사용합니다. ​* 레시피는 제공해드리며, 집에서도 만들어 보실수있도록 설명해드릴게요! ​📍1인 12개 구성의 쿠키! ​너무 달지 않고 맛있는 쿠키를 만들어볼수있습니다! ​브라우니 식감의 쿠키이기때문에 ​너무 단단하지 않아서 ​부드럽게 드실수있어요~ ​귀여운 눈동자도 달아보고, ​포장도 직접 하기때문에 완전 핸드메이드 쿠키를 ​가져가실수있어요! ​📍짧은 시간내에 대충 만들고 끝나는 수업이아닌, ​수업내내 모든 과정을 직접 해볼수있도록 준비해드리겠습니다 :-)​ 이런 분들이 들으면 좋아요\n- 남녀노소 다가능해요!\n키워드: 모카클래스, 단체 클래스, 기업 워크샵, 팀빌딩, 사내 복지, 힐링 프로그램, 단체 취미, 기관 프로그램\n장소: 경기도 · 수원시 · 팔달구",
-        "targetAudience": "전체",
-        "operatingHours": "",
-        "priceDetail": "정상가: 40,000원\n판매가: 40,000원",
-        "closedDays": "",
-        "contact": "",
-        "reservationInfo": "",
-        "sourceUpdatedAt": "2026-05-22T00:13:27.924Z",
-        "instagram": "",
-        "foodInfo": "",
-        "performanceState": "",
-        "lastModifiedAt": "",
-        "dataCollectedAt": "2026-05-22T00:13:27.924Z",
-        "venuePhone": "",
-        "venueHomepage": "",
-        "venueFacilityType": "",
-        "venueSeatScale": "",
-        "venueTheaterCount": "",
-        "venueOpenedAt": "",
-        "placeProvider": "",
-        "placeId": "",
-        "placeUrl": "",
-        "placeCategory": "",
-        "tagline": "",
-        "venueCanonicalId": "venue_팔달구_b7v6dk"
-      },
       {
         "id": "perf_뮤지컬_달빛_한스푼",
         "title": "뮤지컬 〈달빛,한스푼〉",
@@ -6531,6 +6443,75 @@
         "placeCategory": "",
         "tagline": "",
         "venueCanonicalId": "venue_스카이라인루지_19gr6jj"
+      },
+      {
+        "id": "perf_런닝맨_amp_다이나믹메이즈",
+        "title": "런닝맨&amp;다이나믹메이즈",
+        "date": "상시운영",
+        "venue": "런닝맨&다이나믹메이즈",
+        "venueKey": "런닝맨&다이나믹메이즈",
+        "image": "https://mom-mom.cdn-nhncommerce.com/20260409/114552.147084150/thumb_600x600.jpg",
+        "link": "https://mom-mom.net/shop/products/133328885",
+        "region": "seoul",
+        "genre": "activity",
+        "description": "※ 취소/환불 규정- 미사용 티켓 100% 취소/환불 가능- 사용된 티켓 절대 환불 불가- 티켓 유효기간 연장 및 대체 불가",
+        "discount": "19%",
+        "originalPrice": "16,000원",
+        "price": "13,000원",
+        "ageRating": "",
+        "synopsisImages": [
+          "https://mom-mom.cdn-nhncommerce.com/Mall-No-Chsg/20260330/111636.675256000/맘맘-채널톡.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/point/item_wf_250801_01.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/top/item_wf_250801_02.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/notice/item_wf_250801_03.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/how/item_wf_250801_04.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/facility/item_wf_250801_05.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/facility/item_wf_250801_06.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/facility/item_wf_250801_07.jpg",
+          "https://www.tourok.co.kr/img/om/ls/tk/rnm/sel/location/item_wf_250801_08.jpg"
+        ],
+        "backupPoster": "https://mom-mom.cdn-nhncommerce.com/20260409/114552.147084150/thumb_600x600.jpg",
+        "address": "런닝맨&다이나믹메이즈",
+        "source": "mommom-activity",
+        "bracketRegion": "서울",
+        "production": "",
+        "host": "",
+        "organizer": "",
+        "planner": "",
+        "producer": "",
+        "sponsor": "",
+        "website": "https://mom-mom.net/shop/products/133328885",
+        "parking": "",
+        "parkingFee": "",
+        "facilities": "",
+        "performanceTime": "",
+        "bookingNotice": "",
+        "ageDetail": "",
+        "feesAndPrograms": "카테고리: 레저/티켓>경기남부\n상품 유형: DEFAULT\n잔여 재고: 29,996개\n관심: 7명\n문의: 1670-3535",
+        "targetAudience": "",
+        "operatingHours": "",
+        "priceDetail": "정상가: 16,000원\n상품 할인: -3,000원\n판매가: 13,000원",
+        "closedDays": "",
+        "contact": "1670-3535",
+        "reservationInfo": "",
+        "sourceUpdatedAt": "2026.04.09 11:46",
+        "instagram": "",
+        "foodInfo": "",
+        "performanceState": "",
+        "lastModifiedAt": "",
+        "dataCollectedAt": "",
+        "venuePhone": "",
+        "venueHomepage": "",
+        "venueFacilityType": "",
+        "venueSeatScale": "",
+        "venueTheaterCount": "",
+        "venueOpenedAt": "",
+        "placeProvider": "",
+        "placeId": "",
+        "placeUrl": "",
+        "placeCategory": "",
+        "tagline": "",
+        "venueCanonicalId": "venue_런닝맨_다이나믹메이즈_1pvhr91"
       }
     ],
     "invalidCoordinates": [],
@@ -6592,14 +6573,6 @@
           "KBS홀::37.5259,126.9153",
           "KBS홀::35.1580,129.1145",
           "KBS홀::35.2293,128.6857"
-        ]
-      },
-      {
-        "venueName": "경기도 화성시",
-        "count": 2,
-        "sampleGroupKeys": [
-          "경기도 화성시::37.1669,127.1024",
-          "경기도 화성시::37.2066,126.9951"
         ]
       },
       {
@@ -6711,14 +6684,6 @@
         ]
       },
       {
-        "venueName": "위치대한민국 경기도 고양시 일산동구 마두2동 중앙로 1130 올리브상가 c 동 2층",
-        "count": 2,
-        "sampleGroupKeys": [
-          "위치대한민국 경기도 고양시 일산동구 마두2동 중앙로 1130 올리브상가 c 동 2층::37.6004,126.8246",
-          "위치대한민국 경기도 고양시 일산동구 마두2동 중앙로 1130 올리브상가 c 동 2층::37.6547,126.8328"
-        ]
-      },
-      {
         "venueName": "광주광역시 동구 계림동 중흥로 242 1층",
         "count": 2,
         "sampleGroupKeys": [
@@ -6821,14 +6786,6 @@
         "sampleGroupKeys": [
           "동궁원::35.8498,129.2627",
           "동궁원::35.8519,129.2768"
-        ]
-      },
-      {
-        "venueName": "경기도 수원시",
-        "count": 2,
-        "sampleGroupKeys": [
-          "경기도 수원시::37.2858,127.0594",
-          "경기도 수원시::37.2819,127.0144"
         ]
       },
       {

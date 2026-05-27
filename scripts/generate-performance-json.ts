@@ -401,7 +401,9 @@ function hasGenericFallbackCoordinate(performance: Performance) {
 function hasDetailedAddress(value?: string) {
     const address = compactText(value);
     if (!address || address === '정보 없음' || address === '주소 정보 없음') return false;
+    if (/[·ㆍ]/.test(address) && !/\d/.test(address)) return false;
     if (address.split(' ').filter(Boolean).length < 3) return false;
+    if (!/\d/.test(address) && /(시|군|구|동|읍|면)$/.test(address)) return false;
     return /(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주|충청|전라|경상)/.test(address);
 }
 
@@ -461,7 +463,9 @@ function isGenericOrNonVenueText(value?: string) {
     if (!text) return true;
     if (GENERIC_VENUE_EXACTS.has(text)) return true;
     if (text.includes('/')) return true;
+    if (/^[·ㆍ]\s*[가-힣]+[구군시읍면동]$/.test(text)) return true;
     if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s*[·ㆍ]/.test(text)) return true;
+    if (!/\d/.test(text) && /^(서울|부산|대구|인천|광주|대전|울산|세종|경기|경기도|강원|충북|충남|전북|전남|경북|경남|제주)\s+[가-힣]+[구군시]$/.test(text)) return true;
     if (NON_VENUE_TEXT_PATTERNS.some((pattern) => pattern.test(text))) return true;
     if (text.length > 24 && /(합니다|드립니다|주세요|예정|참고|안내|확인)/.test(text)) return true;
     return false;

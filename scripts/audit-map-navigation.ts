@@ -48,6 +48,8 @@ function compactDisplay(value?: string) {
 function isGenericVenueName(value?: string) {
     const text = compactDisplay(value);
     if (!text) return true;
+    if (/^[·ㆍ]\s*[가-힣]+[구군시읍면동]$/.test(text)) return true;
+    if (/[·ㆍ]/.test(text) && !/\d/.test(text)) return true;
     if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)\s+[가-힣]+[구군시]$/.test(text)) return true;
     if (/^(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)$/.test(text)) return true;
     return /집결지|장소 확인|위치 확인|검사대|계단 앞|인근에 전용|외 \d+곳|12개점|전용|출강/.test(text);
