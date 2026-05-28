@@ -153,6 +153,17 @@ export default function PerformanceList({
     const deepLinkHandled = useRef(false);
     const modalReturnScrollY = useRef(0);
 
+    useEffect(() => {
+        if (typeof document === 'undefined') return;
+        const previousOverflow = document.body.style.overflow;
+        if (activeOverlay) {
+            document.body.style.overflow = 'hidden';
+        }
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
+    }, [activeOverlay]);
+
     // --- Derived State ---
     const activeLocation = searchLocation || userLocation;
     const genreCounts = useMemo(() => {

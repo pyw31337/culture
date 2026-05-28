@@ -62,6 +62,13 @@ const CHOSEONG_LIST = [
 ];
 
 import { HorizontalScroll } from '@/components/ui/HorizontalScroll';
+import {
+    getRegionSelectionLabel,
+    parseDistrictSelection,
+    parseRegionSelection,
+    serializeDistrictSelection,
+    serializeRegionSelection,
+} from '@/lib/region-selection';
 
 export function LocationSelector({
     selectedRegion,
@@ -195,9 +202,64 @@ export function LocationSelector({
     };
 
     const selectedRegionLabel = useMemo(() => {
-        if (selectedRegion === 'all') return '전국';
-        return REGIONS.find(r => r.id === selectedRegion)?.label || '';
-    }, [selectedRegion]);
+        return getRegionSelectionLabel(selectedRegion, selectedDistrict);
+    }, [selectedRegion, selectedDistrict]);
+
+    const selectedRegionIds = useMemo(() => parseRegionSelection(selectedRegion), [selectedRegion]);
+    const selectedDistrictMap = useMemo(
+        () => parseDistrictSelection(selectedDistrict, selectedRegionIds[0]),
+        [selectedDistrict, selectedRegionIds]
+    );
+
+    const regionDistrictEntries = useMemo(() => {
+        return selectedRegionIds.map((regionId) => {
+            const regionLabel = REGIONS.find((region) => region.id === regionId)?.label || regionId;
+            const regionDistricts = Object.values(venueLookup)
+                .filter((venue) => venue.mapped_region_id === regionId)
+                .map((venue) => venue.district)
+                .filter((district): district is string => Boolean(district));
+            const uniqueDistricts = Array.from(new Set(regionDistricts)).sort();
+            return { regionId, regionLabel, districts: uniqueDistricts };
+        });
+    }, [selectedRegionIds, venueLookup]);
+
+    const toggleRegion = (region: string) => {
+        if (region === 'all') {
+            onRegionSelect('all');
+            onDistrictSelect('all');
+            onVenueSelect('all');
+            return;
+        }
+
+        const nextRegions = selectedRegionIds.includes(region)
+            ? selectedRegionIds.filter((id) => id !== region)
+            : [...selectedRegionIds, region];
+
+        const nextRegionValue = serializeRegionSelection(nextRegions);
+        const nextDistrictMap = Object.fromEntries(
+            Object.entries(selectedDistrictMap).filter(([regionId]) => nextRegions.includes(regionId))
+        );
+
+        onRegionSelect(nextRegionValue);
+        onDistrictSelect(serializeDistrictSelection(nextDistrictMap));
+        onVenueSelect('all');
+    };
+
+    const toggleDistrict = (regionId: string, district: string) => {
+        const nextMap = { ...selectedDistrictMap };
+        const current = nextMap[regionId] || [];
+        if (district === 'all') {
+            delete nextMap[regionId];
+        } else if (current.includes(district)) {
+            const next = current.filter((item) => item !== district);
+            if (next.length) nextMap[regionId] = next;
+            else delete nextMap[regionId];
+        } else {
+            nextMap[regionId] = [...current, district];
+        }
+        onDistrictSelect(serializeDistrictSelection(nextMap));
+        onVenueSelect('all');
+    };
 
     return (
         <div className="flex flex-col gap-5 w-full">
@@ -256,10 +318,10 @@ export function LocationSelector({
                         <div className="relative z-20 pb-0"> {/* z-index to sit on top of district box */}
                             <HorizontalScroll className="px-1 pb-0 relative z-30">
                                 <button
-                                    onClick={() => handleRegionSelectInternal('all')}
+                                    onClick={() => toggleRegion('all')}
                                     className={clsx(
                                         baseButtonClass,
-                                        selectedRegion === 'all'
+                                        selectedRegionIds.length === 0
                                             ? activeClass
                                             : inactiveClass
                                     )}
@@ -275,11 +337,11 @@ export function LocationSelector({
                                     return (
                                         <button
                                             key={r.id}
-                                            onClick={() => handleRegionSelectInternal(r.id)}
+                                            onClick={() => toggleRegion(r.id)}
                                             className={clsx(
                                                 "relative rounded-t-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center whitespace-nowrap",
                                                 // Tab logic: Filled color for active, clearly contrasting text
-                                                selectedRegion === r.id
+                                                selectedRegionIds.includes(r.id)
                                                     ? clsx(
                                                         "text-white z-30 font-extrabold shadow-lg -mb-2 pb-4", // -mb-2 and large pb to overlap
                                                         isLoc
@@ -297,7 +359,7 @@ export function LocationSelector({
                         </div>
 
                         {/* District Selection (Box) */}
-                        {selectedRegion !== 'all' && (
+                        {selectedRegionIds.length > 0 && (
                             <div className="relative pt-0 animate-in fade-in slide-in-from-top-1 duration-200 z-10 -mt-px">
                                 {/* The Box - Tighten margin top (-mt-3 to sit behind buttons) */}
                                 <div className={clsx(
@@ -306,38 +368,50 @@ export function LocationSelector({
                                         ? "border-emerald-500/60 light:border-emerald-600/30"
                                         : "border-purple-400/60 light:border-purple-600/30"
                                 )}>
-                                    {districts.length > 0 ? (
-                                        <HorizontalScroll className="items-center h-full"> {/* Center items in scroll */}
-                                            <button
-                                                onClick={() => handleDistrictSelectInternal('all')}
-                                                className={clsx(
-                                                    "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
-                                                    selectedDistrict === 'all'
-                                                        ? (isLoc
-                                                            ? "bg-emerald-500/20 text-emerald-300 light:text-emerald-700 light:bg-emerald-100 border-emerald-500/50 light:border-emerald-200 font-extrabold"
-                                                            : "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold")
-                                                        : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
-                                                )}
-                                            >
-                                                전체
-                                            </button>
-                                            {districts.map(d => (
-                                                <button
-                                                    key={d}
-                                                    onClick={() => handleDistrictSelectInternal(d)}
-                                                    className={clsx(
-                                                        "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
-                                                        selectedDistrict === d
-                                                            ? (isLoc
-                                                                ? "bg-white text-black border-white font-extrabold light:bg-emerald-600 light:text-white light:border-emerald-600 shadow-sm"
-                                                                : "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm")
-                                                            : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
-                                                    )}
-                                                >
-                                                    {d}
-                                                </button>
+                                    {regionDistrictEntries.some((entry) => entry.districts.length > 0) ? (
+                                        <div className="flex w-full flex-col gap-3">
+                                            {regionDistrictEntries.map((entry) => (
+                                                <div key={entry.regionId} className="min-w-0">
+                                                    <div className={clsx("mb-2 text-[11px] font-black", accentTextClass)}>
+                                                        {entry.regionLabel}
+                                                    </div>
+                                                    <HorizontalScroll className="items-center h-full">
+                                                        <button
+                                                            onClick={() => toggleDistrict(entry.regionId, 'all')}
+                                                            className={clsx(
+                                                                "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
+                                                                !(selectedDistrictMap[entry.regionId]?.length)
+                                                                    ? (isLoc
+                                                                        ? "bg-emerald-500/20 text-emerald-300 light:text-emerald-700 light:bg-emerald-100 border-emerald-500/50 light:border-emerald-200 font-extrabold"
+                                                                        : "bg-purple-500/20 text-purple-300 light:text-purple-700 light:bg-purple-100 border-purple-500/50 light:border-purple-200 font-extrabold")
+                                                                    : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
+                                                            )}
+                                                        >
+                                                            전체
+                                                        </button>
+                                                        {entry.districts.map(d => {
+                                                            const selected = selectedDistrictMap[entry.regionId]?.includes(d);
+                                                            return (
+                                                                <button
+                                                                    key={`${entry.regionId}-${d}`}
+                                                                    onClick={() => toggleDistrict(entry.regionId, d)}
+                                                                    className={clsx(
+                                                                        "px-4 py-2 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap",
+                                                                        selected
+                                                                            ? (isLoc
+                                                                                ? "bg-white text-black border-white font-extrabold light:bg-emerald-600 light:text-white light:border-emerald-600 shadow-sm"
+                                                                                : "bg-white text-black border-white font-extrabold light:bg-purple-600 light:text-white light:border-purple-600 shadow-sm")
+                                                                            : "bg-gray-800 light:bg-white text-gray-400 light:text-gray-500 border-gray-700 light:border-gray-200 hover:bg-gray-700 light:hover:bg-gray-100"
+                                                                    )}
+                                                                >
+                                                                    {d}
+                                                                </button>
+                                                            );
+                                                        })}
+                                                    </HorizontalScroll>
+                                                </div>
                                             ))}
-                                        </HorizontalScroll>
+                                        </div>
                                     ) : (
                                         <div className="flex items-center gap-2 text-gray-500 light:text-gray-400 text-xs font-semibold py-2">
                                             <X size={14} className="text-gray-600" />

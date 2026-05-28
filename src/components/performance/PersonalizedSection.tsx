@@ -9,6 +9,16 @@ import ImageWithFallback from '../ImageWithFallback';
 import RecommendationReasonChips from './RecommendationReasonChips';
 import SectionInfoPopover from './SectionInfoPopover';
 
+
+function formatPosterSchedule(date?: string) {
+    if (!date) return '';
+    return date
+        .replace(/\s+/g, ' ')
+        .replace(/\s*~\s*/g, ' ~ ')
+        .replace(/\.$/, '')
+        .trim();
+}
+
 interface PersonalizedSectionProps {
     items: Performance[];
     onDetail: (perf: Performance) => void;
@@ -166,6 +176,11 @@ export default function PersonalizedSection({
                                     <div className="inline-flex shrink-0 rounded-full bg-black/35 px-2 py-0.5 text-[9px] font-black text-white backdrop-blur-md border border-white/15">
                                         {GENRES.find((genre) => genre.id === performance.genre)?.label || performance.genre}
                                     </div>
+                                    {formatPosterSchedule(performance.date) && (
+                                        <div className="inline-flex min-w-0 max-w-[8.5rem] shrink rounded-full bg-white/85 px-2 py-0.5 text-[9px] font-black text-gray-900 backdrop-blur-md border border-white/30">
+                                            <span className="truncate">{formatPosterSchedule(performance.date)}</span>
+                                        </div>
+                                    )}
                                     <RecommendationReasonChips
                                         reasons={performance.recommendationReasons}
                                         comparisonTags={performance.comparisonTags}

@@ -13,6 +13,16 @@ import SectionInfoPopover from './SectionInfoPopover';
 
 const EMPTY_VENUES: Record<string, never> = {};
 
+
+function formatPosterSchedule(date?: string) {
+    if (!date) return '';
+    return date
+        .replace(/\s+/g, ' ')
+        .replace(/\s*~\s*/g, ' ~ ')
+        .replace(/\.$/, '')
+        .trim();
+}
+
 interface RecommendedSectionProps {
     recommendedItems: any[];
     onLocationClick: (loc: any) => void;
@@ -252,10 +262,15 @@ export default function RecommendedSection({
                                     onPointerUp={(e) => handlePointerUp(e as any, perf)}
                                 >
                                     {/* Category Badge */}
-                                    <div className="absolute top-3 left-3 z-30 flex gap-1.5 pointer-events-none">
+                                    <div className="absolute top-3 left-3 right-3 z-30 flex gap-1.5 pointer-events-none overflow-hidden whitespace-nowrap">
                                         <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </div>
+                                        {formatPosterSchedule(perf.date) && (
+                                            <div className="min-w-0 max-w-[8.5rem] shrink rounded-full bg-white/85 px-2 py-0.5 text-[10px] font-black text-gray-900 backdrop-blur-md border border-white/30">
+                                                <span className="block truncate">{formatPosterSchedule(perf.date)}</span>
+                                            </div>
+                                        )}
                                         {(perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]) && (
                                             <div className="px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
                                                 {perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]}

@@ -5,6 +5,7 @@ import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { filterByDiscoveryContext } from '@/lib/discovery';
 import type { DateFilterId, PriceFilterId } from '@/lib/constants';
+import { parseDistrictSelection, parseRegionSelection, persistRegionSelection, readPersistedRegionSelection, REGION_SELECTION_EVENT } from '@/lib/region-selection';
 
 const INITIAL_VISIBLE_COUNT = 15;
 const LOAD_MORE_COUNT = 15;
@@ -38,6 +39,8 @@ export function usePerformanceFilters({
     const [selectedRegion, setSelectedRegion] = useState<string>(() => {
         if (typeof window === 'undefined') return 'all';
         try {
+            const persisted = readPersistedRegionSelection();
+            if (persisted?.region) return persisted.region;
             const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
             return (saved ? JSON.parse(saved).region || 'all' : 'all') as string;
         } catch { return 'all'; }
@@ -45,6 +48,8 @@ export function usePerformanceFilters({
     const [selectedDistrict, setSelectedDistrict] = useState<string>(() => {
         if (typeof window === 'undefined') return 'all';
         try {
+            const persisted = readPersistedRegionSelection();
+            if (persisted?.district) return persisted.district;
             const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
             return (saved ? JSON.parse(saved).district || 'all' : 'all') as string;
         } catch { return 'all'; }
@@ -52,6 +57,8 @@ export function usePerformanceFilters({
     const [selectedVenue, setSelectedVenue] = useState<string>(() => {
         if (typeof window === 'undefined') return 'all';
         try {
+            const persisted = readPersistedRegionSelection();
+            if (persisted?.venue) return persisted.venue;
             const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
             return (saved ? JSON.parse(saved).venue || 'all' : 'all') as string;
         } catch { return 'all'; }
@@ -91,8 +98,22 @@ export function usePerformanceFilters({
             visibleCount: visibleCount
         };
         sessionStorage.setItem(`cf_state_${selectedGenre}`, JSON.stringify(state));
+        persistRegionSelection(selectedRegion, selectedDistrict, selectedVenue);
         isInitialized.current = true;
     }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, shuffleSeed, visibleCount]);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const handleRegionSync = (event: Event) => {
+            const detail = (event as CustomEvent<{ region?: string; district?: string; venue?: string }>).detail;
+            if (!detail) return;
+            if (detail.region && detail.region !== selectedRegion) setSelectedRegion(detail.region);
+            if (detail.district && detail.district !== selectedDistrict) setSelectedDistrict(detail.district);
+            if (detail.venue && detail.venue !== selectedVenue) setSelectedVenue(detail.venue);
+        };
+        window.addEventListener(REGION_SELECTION_EVENT, handleRegionSync);
+        return () => window.removeEventListener(REGION_SELECTION_EVENT, handleRegionSync);
+    }, [selectedRegion, selectedDistrict, selectedVenue]);
 
     // Debounce search text to avoid heavy filtering on every keystroke
     useEffect(() => {
@@ -108,19 +129,27 @@ export function usePerformanceFilters({
 
     // Derived Filter Lists
     const districts = useMemo(() => {
-        if (!selectedRegion || selectedRegion === 'all') return [];
-        const regionVenues = Object.values(venues).filter(v => v.mapped_region_id === selectedRegion);
+        const selectedRegions = parseRegionSelection(selectedRegion);
+        if (selectedRegions.length === 0) return [];
+        const regionVenues = Object.values(venues).filter(v => selectedRegions.includes(v.mapped_region_id));
         const uniqueDistricts = new Set(regionVenues.map(v => v.district).filter((d): d is string => !!d));
         return Array.from(uniqueDistricts).sort();
     }, [selectedRegion, venues]);
 
     const availableVenues = useMemo(() => {
         let relevantVenues = Object.keys(venues);
-        if (selectedRegion && selectedRegion !== 'all') {
-            relevantVenues = relevantVenues.filter(v => venues[v].mapped_region_id === selectedRegion);
+        const selectedRegions = parseRegionSelection(selectedRegion);
+        const districtMap = parseDistrictSelection(selectedDistrict, selectedRegions[0]);
+        if (selectedRegions.length > 0) {
+            relevantVenues = relevantVenues.filter(v => selectedRegions.includes(venues[v].mapped_region_id));
         }
-        if (selectedDistrict && selectedDistrict !== 'all') {
-            relevantVenues = relevantVenues.filter(v => venues[v].district === selectedDistrict);
+        const hasDistricts = Object.values(districtMap).some((items) => items.length > 0);
+        if (hasDistricts) {
+            relevantVenues = relevantVenues.filter(v => {
+                const region = venues[v].mapped_region_id;
+                const selectedDistricts = districtMap[region] || [];
+                return selectedDistricts.length === 0 || selectedDistricts.includes(venues[v].district);
+            });
         }
         return relevantVenues.sort();
     }, [selectedRegion, selectedDistrict, venues]);

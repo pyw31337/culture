@@ -2,6 +2,7 @@
 import { Performance } from '@/types';
 import { isChoseongMatch } from './hangul';
 import { REGIONS } from './constants';
+import { parseDistrictSelection, parseRegionSelection } from './region-selection';
 import { getRepresentativeVenueInfoForName, resolveVenueInfoForPerformance } from './location-display';
 import { getDistanceFromLatLonInKm } from './utils';
 import { resolveDateFilterRange, performanceMatchesDateRange, performanceMatchesPriceTier } from './filter-chips';
@@ -508,40 +509,32 @@ export function filterPerformances(performances: Performance[], options: FilterO
     });
 
     // 3. Region Filter
-    if (region && region !== 'all') {
+    const selectedRegionIds = parseRegionSelection(region);
+    const selectedDistrictMap = parseDistrictSelection(district, selectedRegionIds[0]);
+    if (selectedRegionIds.length > 0) {
         filtered = filtered.filter(p => {
             if (p.genre === 'movie') return true;
 
             const venueInfo = getResolvedVenue(p);
+            const venueAddress = venueInfo?.address || p.address || '';
 
-            // 0. Use Strict Mapped Region ID if available
-            if (venueInfo && venueInfo.mapped_region_id) {
-                return venueInfo.mapped_region_id === region;
-            }
+            return selectedRegionIds.some((regionId) => {
+                const regionLabel = REGIONS.find(r => r.id === regionId)?.label;
+                const regionMatches = Boolean(
+                    (venueInfo?.mapped_region_id && venueInfo.mapped_region_id === regionId) ||
+                    p.region === regionId ||
+                    (regionLabel && (venueAddress.startsWith(regionLabel) || p.venue.includes(regionLabel)))
+                );
 
-            // 1. Trust server-side region assignment
-            if (p.region === region) return true;
+                if (!regionMatches) return false;
 
-            if (!venueInfo) {
-                // Fallback check if venue name contains region
-                const regionLabel = REGIONS.find(r => r.id === region)?.label;
-                return regionLabel ? p.venue.includes(regionLabel) : false;
-            }
+                const districtsForRegion = selectedDistrictMap[regionId] || [];
+                if (districtsForRegion.length === 0) return true;
 
-            const regionLabel = REGIONS.find(r => r.id === region)?.label;
-            if (!regionLabel) return false;
-
-            // Matches address 
-            const venueAddress = venueInfo.address || '';
-            const isRegionMatch = venueAddress.startsWith(regionLabel);
-            if (!isRegionMatch) return false;
-
-            // District Check (if selected)
-            if (district && district !== 'all') {
-                return venueInfo.district === district || venueAddress.includes(district);
-            }
-
-            return true;
+                return districtsForRegion.some((selectedDistrict) =>
+                    venueInfo?.district === selectedDistrict || venueAddress.includes(selectedDistrict) || p.district === selectedDistrict
+                );
+            });
         });
     }
 

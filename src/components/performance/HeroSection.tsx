@@ -5,6 +5,7 @@ import { TypingHero } from './TypingHero';
 import { LocationSelector } from '../LocationSelector';
 import { HeroTemplate } from '../../lib/hero-templates';
 import { REGIONS } from '../../lib/constants';
+import { getRegionSelectionLabel, parseRegionSelection } from '../../lib/region-selection';
 
 interface HeroSectionProps {
     heroText: HeroTemplate;
@@ -344,7 +345,7 @@ export default function HeroSection({
                                     : "text-[#a78bfa] light:text-purple-600"
                             )} />
                             <span>
-                                {(selectedRegion === 'all' && selectedVenue === 'all')
+                                {(parseRegionSelection(selectedRegion).length === 0 && selectedVenue === 'all')
                                     ? (activeLocation ? (searchLocation ? '검색위치 :' : '현재위치 :') : '현재위치 :')
                                     : '설정위치 :'
                                 }
@@ -359,13 +360,13 @@ export default function HeroSection({
                                     : "border-b border-[#a78bfa]"
                             )}
                         >
-                            {(selectedRegion === 'all' && selectedVenue === 'all')
+                            {(parseRegionSelection(selectedRegion).length === 0 && selectedVenue === 'all')
                                 ? (searchLocation?.name
                                     ? searchLocation.name
                                     : (activeLocation
                                         ? (userAddress || '내 위치 (GPS)')
                                         : '전국'))
-                                : `${selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label || '' : ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전국'
+                                : `${getRegionSelectionLabel(selectedRegion, selectedDistrict)} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim() || '전국'
                             }
                         </span>
 
@@ -380,7 +381,7 @@ export default function HeroSection({
                             <ChevronDown className={clsx("w-3.5 h-3.5 transition-transform duration-300", isHeroFilterExpanded && "rotate-180")} />
                         </button>
 
-                        {(activeLocation || selectedRegion !== 'all' || selectedVenue !== 'all') && (
+                        {(activeLocation || parseRegionSelection(selectedRegion).length > 0 || selectedVenue !== 'all') && (
                             <button
                                 onClick={() => {
                                     setSelectedRegion('all');

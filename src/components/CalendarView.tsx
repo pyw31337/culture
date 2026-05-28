@@ -1,10 +1,10 @@
 'use client';
 
-import { Suspense, useState, useRef, useMemo, useCallback } from 'react';
+import { Suspense, useState, useRef, useMemo, useCallback, useEffect } from 'react';
 import { Performance } from '@/types';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, addMonths, subMonths, addWeeks, subWeeks, addDays, subDays } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { buildGenreCounts, getAvailableGenres, getGenreNavigationItems, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
@@ -13,7 +13,6 @@ import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { getExternalContentLink } from '@/lib/performance-links';
 import CalendarDayCell from './CalendarDayCell';
 import venueData from '@/data/venues.json';
-import { MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import SearchParamsBridge from './SearchParamsBridge';
 
@@ -23,8 +22,10 @@ const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import ImageWithFallback from './ImageWithFallback';
 import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
+import { LocationSelector } from './LocationSelector';
+import { getRegionSelectionLabel, parseDistrictSelection, parseRegionSelection, persistRegionSelection, readPersistedRegionSelection, REGION_SELECTION_EVENT } from '@/lib/region-selection';
 
-const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string }>;
+const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string; mapped_region_id?: string; lat?: number | null; lng?: number | null }>;
 
 interface CalendarViewProps {
     performances: Performance[];
@@ -85,6 +86,38 @@ function normalizeCalendarRegionId(value?: string | null) {
 function getCalendarRegionId(value?: string | null): CalendarRegionId {
     const normalized = normalizeCalendarRegionId(value);
     return CALENDAR_REGION_ID_SET.has(normalized as CalendarRegionId) ? normalized as CalendarRegionId : 'all';
+}
+
+
+function matchesRegionSelection(performance: Performance, regionValue: string, districtValue: string) {
+    const selectedRegions = parseRegionSelection(regionValue);
+    if (selectedRegions.length === 0) return true;
+
+    const districtMap = parseDistrictSelection(districtValue, selectedRegions[0]);
+    const venueInfo = performance.venue ? venues[performance.venue] : undefined;
+    const normalizedRegion = normalizeCalendarRegionId(performance.region || venueInfo?.mapped_region_id);
+    const haystack = [
+        performance.address,
+        venueInfo?.address,
+        performance.venue,
+        performance.district,
+        venueInfo?.district,
+        performance.bracketRegion,
+    ].filter(Boolean).join(' ');
+
+    return selectedRegions.some((regionId) => {
+        const directRegionMatch = normalizedRegion === regionId || venueInfo?.mapped_region_id === regionId;
+        const regionLabel = CALENDAR_REGION_FILTERS.find((region) => region.regionIds.includes(regionId) || region.id === regionId)?.label;
+        const broadFilter = CALENDAR_REGION_FILTERS.find((region) => region.regionIds.includes(regionId) || region.id === regionId);
+        const tokenMatch = Boolean(regionLabel && haystack.includes(regionLabel)) || Boolean(broadFilter?.tokens.some((token) => haystack.includes(token)));
+        if (!directRegionMatch && !tokenMatch) return false;
+
+        const selectedDistricts = districtMap[regionId] || [];
+        if (selectedDistricts.length === 0) return true;
+        return selectedDistricts.some((district) =>
+            performance.district === district || venueInfo?.district === district || haystack.includes(district)
+        );
+    });
 }
 
 function matchesCalendarRegion(performance: Performance, regionId: CalendarRegionId) {
@@ -150,7 +183,9 @@ export default function CalendarView({
     // Read initial state from URL params
     const initialGenre = searchParams.get('genre') || 'all';
     const initialView = (searchParams.get('view') as CalendarView) || 'monthly';
-    const initialRegion = getCalendarRegionId(searchParams.get('region'));
+    const persistedRegion = readPersistedRegionSelection();
+    const initialRegion = persistedRegion?.region || getCalendarRegionId(searchParams.get('region'));
+    const initialDistrict = persistedRegion?.district || 'all';
     const initialDateStr = searchParams.get('date');
 
     const [currentMonth, setCurrentMonth] = useState(() => {
@@ -162,7 +197,25 @@ export default function CalendarView({
     });
     const [calendarView, setCalendarView] = useState<CalendarView>(initialView);
     const [localGenre, setLocalGenre] = useState(initialGenre);
-    const [localRegion, setLocalRegion] = useState<CalendarRegionId>(initialRegion);
+    const [localRegion, setLocalRegion] = useState<string>(initialRegion);
+    const [localDistrict, setLocalDistrict] = useState<string>(initialDistrict);
+    const [isRegionPanelOpen, setIsRegionPanelOpen] = useState(false);
+
+    useEffect(() => {
+        persistRegionSelection(localRegion, localDistrict, 'all');
+    }, [localRegion, localDistrict]);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const handleRegionSync = (event: Event) => {
+            const detail = (event as CustomEvent<{ region?: string; district?: string }>).detail;
+            if (!detail) return;
+            if (detail.region) setLocalRegion(detail.region);
+            if (detail.district) setLocalDistrict(detail.district);
+        };
+        window.addEventListener(REGION_SELECTION_EVENT, handleRegionSync);
+        return () => window.removeEventListener(REGION_SELECTION_EVENT, handleRegionSync);
+    }, []);
 
     // Sync URL params -> local state. Done in the bridge callback (not in a
     // useEffect body) so React 19's set-state-in-effect rule is satisfied -
@@ -257,7 +310,7 @@ export default function CalendarView({
         const dayStr = format(day, 'yyyy-MM-dd');
         const allEvents = performancesByDate.get(dayStr) || [];
         return allEvents.filter((p) => (
-            matchesCalendarRegion(p, localRegion) &&
+            matchesRegionSelection(p, localRegion, localDistrict) &&
             (effectiveGenre === 'all' || p.genre === effectiveGenre)
         ));
     };
@@ -301,9 +354,8 @@ export default function CalendarView({
     }, [calendarView, currentMonth, performancesByDate]);
 
     const regionFilteredTotalEvents = useMemo(() => {
-        if (localRegion === 'all') return currentViewTotalEvents;
-        return currentViewTotalEvents.filter((p) => matchesCalendarRegion(p, localRegion));
-    }, [currentViewTotalEvents, localRegion]);
+        return currentViewTotalEvents.filter((p) => matchesRegionSelection(p, localRegion, localDistrict));
+    }, [currentViewTotalEvents, localRegion, localDistrict]);
 
     const currentViewEvents = useMemo(() => {
         if (effectiveGenre === 'all') return regionFilteredTotalEvents;
@@ -320,8 +372,8 @@ export default function CalendarView({
     }, [currentViewTotalEvents]);
 
     const visibleCountKey = useMemo(
-        () => `${calendarView}-${localRegion}-${effectiveGenre}-${format(currentMonth, 'yyyy-MM-dd')}`,
-        [calendarView, currentMonth, effectiveGenre, localRegion]
+        () => `${calendarView}-${localRegion}-${localDistrict}-${effectiveGenre}-${format(currentMonth, 'yyyy-MM-dd')}`,
+        [calendarView, currentMonth, effectiveGenre, localRegion, localDistrict]
     );
     const [visibleCountState, setVisibleCountState] = useState({ key: '', count: 20 });
     const visibleCount = visibleCountState.key === visibleCountKey ? visibleCountState.count : 20;
@@ -438,45 +490,37 @@ export default function CalendarView({
                         />
                     </h2>
                     <div className="flex min-w-0 items-center gap-1 sm:gap-2 shrink-0">
-                        <div className="hidden lg:flex max-w-[42vw] items-center gap-1 overflow-x-auto scrollbar-hide pr-1">
-                            {regionOptions.map((region) => {
-                                const isSelected = localRegion === region.id;
-                                const isEmpty = region.count === 0 && region.id !== 'all';
-                                return (
-                                    <button
-                                        key={region.id}
-                                        type="button"
-                                        disabled={isEmpty}
-                                        onClick={() => setLocalRegion(region.id)}
-                                        className={clsx(
-                                            'flex h-8 items-center gap-1 whitespace-nowrap rounded-full px-3 text-[11px] font-black transition-colors',
-                                            isSelected
-                                                ? 'bg-gray-900 text-white shadow-sm dark:bg-white dark:text-gray-900'
-                                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
-                                            isEmpty && 'cursor-not-allowed opacity-35'
-                                        )}
-                                        aria-pressed={isSelected}
-                                    >
-                                        {region.label}
-                                        <span className={clsx('text-[10px]', isSelected ? 'opacity-80' : 'text-gray-400 dark:text-gray-500')}>
-                                            {region.count}
-                                        </span>
-                                    </button>
-                                );
-                            })}
+                        <div className="relative shrink-0">
+                            <button
+                                type="button"
+                                onClick={() => setIsRegionPanelOpen((value) => !value)}
+                                className="flex h-9 max-w-[42vw] items-center gap-2 rounded-full border border-gray-200 bg-gray-100 px-3 text-[11px] font-black text-gray-700 transition hover:bg-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                                title="지역설정"
+                            >
+                                <MapPin className="h-3.5 w-3.5 text-emerald-500" />
+                                <span className="shrink-0">지역설정</span>
+                                <span className="truncate text-emerald-600 dark:text-emerald-300">
+                                    {getRegionSelectionLabel(localRegion, localDistrict)}
+                                </span>
+                            </button>
+                            {isRegionPanelOpen && (
+                                <div className="absolute right-0 top-full z-[80] mt-3 w-[min(720px,calc(100vw-2rem))] rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl dark:border-gray-700 dark:bg-gray-900">
+                                    <LocationSelector
+                                        selectedRegion={localRegion}
+                                        onRegionSelect={setLocalRegion}
+                                        selectedDistrict={localDistrict}
+                                        onDistrictSelect={setLocalDistrict}
+                                        selectedVenue="all"
+                                        onVenueSelect={() => {}}
+                                        districts={[]}
+                                        availableVenues={Object.keys(venues)}
+                                        venueLookup={venues}
+                                        searchMode="location"
+                                        inline
+                                    />
+                                </div>
+                            )}
                         </div>
-                        <select
-                            value={localRegion}
-                            onChange={(event) => setLocalRegion(event.target.value as CalendarRegionId)}
-                            className="lg:hidden h-8 rounded-lg border border-gray-200 bg-gray-100 px-2 text-[11px] font-black text-gray-700 outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-                            aria-label="지역 선택"
-                        >
-                            {regionOptions.map((region) => (
-                                <option key={region.id} value={region.id} disabled={region.count === 0 && region.id !== 'all'}>
-                                    {region.label} {region.count}
-                                </option>
-                            ))}
-                        </select>
                         {(['daily', 'weekly', 'monthly'] as CalendarView[]).map(v => (
                             <button
                                 key={v}
