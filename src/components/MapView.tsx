@@ -247,6 +247,13 @@ export default function MapView({
         setSelectedMapGenre(nextParams.get('genre') || 'all');
     }, [isEmbedded]);
 
+    useEffect(() => {
+        if (!isEmbedded || typeof embeddedSearchParams !== 'string') return;
+        const nextParams = new URLSearchParams(embeddedSearchParams);
+        setSearchParams(nextParams);
+        setSelectedMapGenre(nextParams.get('genre') || 'all');
+    }, [embeddedSearchParams, isEmbedded]);
+
     const handleSearchParams = useCallback((params: URLSearchParams) => {
         const nextParams = new URLSearchParams(params.toString());
         if (!nextParams.toString() && typeof window !== 'undefined' && window.location.search) {

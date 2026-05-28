@@ -11,7 +11,7 @@ import { getSportsTicketBaySummary, getSportsTicketingInfo } from '@/lib/sports-
 // Genre-specific fallback images
 const _BP = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const GENRE_FALLBACKS: Record<string, string> = {
-    soccer: `${_BP}/images/soccer_poster.png`,
+    soccer: `${_BP}/images/soccer_goal_poster_20260528.jpg`,
     baseball: `${_BP}/images/fallbacks/baseball.jpg`,
     basketball: `${_BP}/images/fallbacks/basketball.jpg`,
     volleyball: `${_BP}/images/fallbacks/volleyball.jpg`,

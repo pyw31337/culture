@@ -251,12 +251,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         quality={priority ? 70 : 60}
                                         alt={perf.title}
                                         fill
-                                        className="object-cover transition-transform duration-500 sm:group-hover:scale-110"
+                                        className="pointer-events-none object-cover transition-transform duration-500 sm:group-hover:scale-110"
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         loading={priority ? 'eager' : 'lazy'}
                                         priority={priority}
                                         referrerPolicy="no-referrer"
-                                        style={{ zIndex: 0 }}
+                                        style={{ zIndex: 0, pointerEvents: 'none' }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-[1]" />
                                 </div>
@@ -375,12 +375,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 quality={priority ? 70 : 60}
                                 alt={perf.title}
                                 fill
-                                className="object-cover transition-transform duration-500 sm:group-hover:scale-110 rounded-[15px]"
+                                className="pointer-events-none object-cover transition-transform duration-500 sm:group-hover:scale-110 rounded-[15px]"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading={priority ? 'eager' : 'lazy'}
                                 priority={priority}
                                 referrerPolicy="no-referrer"
-                                style={{ zIndex: 0 }}
+                                style={{ zIndex: 0, pointerEvents: 'none' }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-[1]" />
 

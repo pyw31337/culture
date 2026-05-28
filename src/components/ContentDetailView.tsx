@@ -231,6 +231,7 @@ export default function ContentDetailView({ performance: p, allPerformances = []
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
 
     const isSports = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'].includes(p.genre);
+    const shouldShowSportsTeamOverlay = ['volleyball', 'basketball', 'baseball', 'handball'].includes(p.genre);
     const hasTeams = p.homeTeam && p.awayTeam;
 
     const castMembers = useMemo(() => {
@@ -461,7 +462,7 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                             </div>
 
                             {/* Sports VS Overlay */}
-                            {isSports && hasTeams && (
+                            {shouldShowSportsTeamOverlay && hasTeams && (
                                 <div className="absolute inset-x-0 bottom-6 flex items-center justify-center pointer-events-none px-6">
                                     <div className="flex justify-between items-center w-full gap-4">
                                         <motion.img

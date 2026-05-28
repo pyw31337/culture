@@ -789,6 +789,7 @@ export default function PerformanceList({
             {sharedPerf && <SharedDetailModal performance={sharedPerf} allPerformances={scopedPerformances} onClose={handleSharedDetailClose} />}
             {activeOverlay === 'map' && (
                 <MapViewOverlay
+                    key={overlaySearchParams || 'map'}
                     initialPerformances={[]}
                     initialGenreCounts={genreCounts}
                     buildInfo={buildInfo}

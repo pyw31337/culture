@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.GU57plZ4f80GsrJXiZ_cK.8d5068565f5a57babd8075d695267f93.js"
+  "/culture/_next/precache.RbpEnbTuFpBrOuOl0SoMg.d56afb2ac18a057dc78a523a632e8995.js"
 );
 
 workbox.core.skipWaiting();
@@ -714,6 +714,10 @@ self.__precacheManifest = [
   {
     "url": "/images/og-image.jpg",
     "revision": "9ad9b167a0e383b30a2bd1697f9462d3"
+  },
+  {
+    "url": "/images/soccer_goal_poster_20260528.jpg",
+    "revision": "6c1d9e2cd563eb973b8c1291d33d58dd"
   },
   {
     "url": "/images/soccer_poster.png",

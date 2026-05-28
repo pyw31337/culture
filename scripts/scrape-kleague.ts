@@ -8,8 +8,7 @@ import path from 'path';
  */
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kleague.json');
-const POSTER_DIR = path.resolve(process.cwd(), 'public/images/posters/kleague');
-const PUBLIC_POSTER_BASE = '/images/posters/kleague';
+const SOCCER_POSTER_PATH = '/images/soccer_goal_poster_20260528.jpg';
 const API_URL = 'https://www.kleague.com/getScheduleList.do';
 const YEAR = '2026';
 
@@ -63,14 +62,6 @@ function getLogoUrl(teamName: string) {
     return team ? `https://www.kleague.com/assets/images/emblem/emblem_${team.id}.png` : '';
 }
 
-function escapeXml(value: string) {
-    return value
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-}
-
 function hasHangulFinalConsonant(value: string) {
     const char = value.trim().slice(-1);
     const code = char.charCodeAt(0) - 0xac00;
@@ -94,65 +85,6 @@ function buildMatchDescription(match: {
         match.venue ? `경기장은 ${match.venue}입니다.` : '',
         '예매 가능 여부와 좌석/가격은 K League 공식 일정 및 각 구단 예매 채널을 기준으로 확인하세요.',
     ].filter(Boolean).join('\n');
-}
-
-function ensureMatchPoster(details: {
-    id: string;
-    leagueLabel: string;
-    homeTeam: string;
-    awayTeam: string;
-    date: string;
-    venue: string;
-    homeTeamLogo: string;
-    awayTeamLogo: string;
-}) {
-    fs.mkdirSync(POSTER_DIR, { recursive: true });
-    const fileName = `${slugify(details.id)}.svg`;
-    const absolutePath = path.join(POSTER_DIR, fileName);
-    const publicPath = `${PUBLIC_POSTER_BASE}/${fileName}`;
-    const homeLogo = details.homeTeamLogo ? `<image href="${escapeXml(details.homeTeamLogo)}" x="130" y="520" width="280" height="280" preserveAspectRatio="xMidYMid meet" />` : '';
-    const awayLogo = details.awayTeamLogo ? `<image href="${escapeXml(details.awayTeamLogo)}" x="790" y="520" width="280" height="280" preserveAspectRatio="xMidYMid meet" />` : '';
-    const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="1600" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1220"/>
-      <stop offset="48%" stop-color="#12365d"/>
-      <stop offset="100%" stop-color="#0f766e"/>
-    </linearGradient>
-    <radialGradient id="light" cx="50%" cy="34%" r="55%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.24"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.28"/>
-    </filter>
-  </defs>
-  <rect width="1200" height="1600" fill="url(#bg)"/>
-  <rect width="1200" height="1600" fill="url(#light)"/>
-  <path d="M80 1170 C260 1080 410 1280 590 1180 C775 1078 930 1205 1120 1110 L1120 1600 L80 1600 Z" fill="#ffffff" opacity="0.08"/>
-  <rect x="90" y="96" width="1020" height="1408" rx="46" fill="#ffffff" opacity="0.1" stroke="#ffffff" stroke-opacity="0.24"/>
-  <text x="600" y="210" text-anchor="middle" fill="#d7fff7" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" letter-spacing="3">${escapeXml(details.leagueLabel.toUpperCase())}</text>
-  <text x="600" y="308" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">${escapeXml(details.date)}</text>
-  <g filter="url(#shadow)">
-    <circle cx="270" cy="660" r="180" fill="#ffffff" opacity="0.94"/>
-    <circle cx="930" cy="660" r="180" fill="#ffffff" opacity="0.94"/>
-    ${homeLogo}
-    ${awayLogo}
-  </g>
-  <text x="600" y="704" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="900">VS</text>
-  <text x="270" y="938" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900">${escapeXml(details.homeTeam)}</text>
-  <text x="930" y="938" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900">${escapeXml(details.awayTeam)}</text>
-  <rect x="170" y="1060" width="860" height="150" rx="24" fill="#06111f" opacity="0.52"/>
-  <text x="600" y="1132" text-anchor="middle" fill="#e6fffb" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800">${escapeXml(details.venue || 'K League Stadium')}</text>
-  <text x="600" y="1192" text-anchor="middle" fill="#bdeee7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">OFFICIAL SCHEDULE MATCH CARD</text>
-  <text x="600" y="1410" text-anchor="middle" fill="#ffffff" opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="28">K League schedule data</text>
-</svg>
-`;
-    if (!fs.existsSync(absolutePath) || process.env.KLEAGUE_REBUILD_POSTERS === '1') {
-        fs.writeFileSync(absolutePath, svg);
-    }
-    return publicPath;
 }
 
 async function scrapeKLeague() {
@@ -204,7 +136,7 @@ async function scrapeKLeague() {
                         const date = `${dateStr} ${timeStr}`;
                         const homeTeamLogo = getLogoUrl(homeTeam);
                         const awayTeamLogo = getLogoUrl(awayTeam);
-                        const image = '/images/soccer_poster.png';
+                        const image = SOCCER_POSTER_PATH;
                         const description = buildMatchDescription({
                             leagueLabel,
                             homeTeam,
@@ -217,7 +149,7 @@ async function scrapeKLeague() {
                             id,
                             title,
                             image,
-                            backupPoster: '/images/soccer_poster.png',
+                            backupPoster: SOCCER_POSTER_PATH,
                             date,
                             venue: stadium,
                             link: 'https://www.kleague.com/schedule.do',
@@ -264,8 +196,8 @@ async function scrapeKLeague() {
                 if (!match.homeTeam || !match.awayTeam || !match.date) {
                     return {
                         ...match,
-                        image: '/images/soccer_poster.png',
-                        backupPoster: '/images/soccer_poster.png',
+                        image: SOCCER_POSTER_PATH,
+                        backupPoster: SOCCER_POSTER_PATH,
                     };
                 }
 
@@ -281,8 +213,8 @@ async function scrapeKLeague() {
                 });
                 return {
                     ...match,
-                    image: '/images/soccer_poster.png',
-                    backupPoster: '/images/soccer_poster.png',
+                    image: SOCCER_POSTER_PATH,
+                    backupPoster: SOCCER_POSTER_PATH,
                     homeTeamLogo,
                     awayTeamLogo,
                     description: match.description || description,

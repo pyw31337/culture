@@ -67,7 +67,7 @@ const GENRE_LABELS: Record<string, string> = {
 };
 
 const FALLBACK_IMAGES: Record<string, string> = {
-    soccer: '/images/soccer_poster.png',
+    soccer: '/images/soccer_goal_poster_20260528.jpg',
     baseball: '/images/fallbacks/baseball.jpg',
     basketball: '/images/fallbacks/basketball.jpg',
     volleyball: '/images/fallbacks/volleyball.jpg',
