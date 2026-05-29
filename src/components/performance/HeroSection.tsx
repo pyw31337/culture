@@ -46,6 +46,14 @@ interface HeroSectionProps {
     // Data
     availableVenues: string[];
     districts: string[];
+    venueLookup?: Record<string, {
+        refined_name?: string;
+        name?: string;
+        mapped_region_id?: string;
+        district?: string;
+        lat?: number | null;
+        lng?: number | null;
+    }>;
 
     // New Props for Search History
     recentKeywords: string[];
@@ -94,6 +102,7 @@ export default function HeroSection({
     handleCurrentLocationClick,
     availableVenues,
     districts,
+    venueLookup = {},
     recentKeywords,
     onKeywordSelect,
     onRemoveRecent,
@@ -411,22 +420,14 @@ export default function HeroSection({
                         <div className="flex flex-col gap-4 p-6">
                             <LocationSelector
                                 selectedRegion={selectedRegion}
-                                onRegionSelect={(r) => {
-                                    setSelectedRegion(r);
-                                    if (r !== selectedRegion) {
-                                        setSelectedDistrict('all');
-                                        setSelectedVenue('all');
-                                    }
-                                }}
+                                onRegionSelect={setSelectedRegion}
                                 selectedDistrict={selectedDistrict}
-                                onDistrictSelect={(d) => {
-                                    setSelectedDistrict(d);
-                                    if (d !== selectedDistrict) setSelectedVenue('all');
-                                }}
+                                onDistrictSelect={setSelectedDistrict}
                                 selectedVenue={selectedVenue}
                                 onVenueSelect={setSelectedVenue}
                                 districts={districts}
                                 availableVenues={availableVenues}
+                                venueLookup={venueLookup}
                                 searchMode={searchMode}
                             />
                         </div>

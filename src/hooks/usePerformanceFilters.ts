@@ -34,61 +34,51 @@ export function usePerformanceFilters({
     discoveryContextId
 }: UsePerformanceFiltersProps) {
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
-    
-    // Lazy State Initializers for Persistence
-    const [selectedRegion, setSelectedRegion] = useState<string>(() => {
-        if (typeof window === 'undefined') return 'all';
-        try {
-            const persisted = readPersistedRegionSelection();
-            if (persisted?.region) return persisted.region;
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).region || 'all' : 'all') as string;
-        } catch { return 'all'; }
-    });
-    const [selectedDistrict, setSelectedDistrict] = useState<string>(() => {
-        if (typeof window === 'undefined') return 'all';
-        try {
-            const persisted = readPersistedRegionSelection();
-            if (persisted?.district) return persisted.district;
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).district || 'all' : 'all') as string;
-        } catch { return 'all'; }
-    });
-    const [selectedVenue, setSelectedVenue] = useState<string>(() => {
-        if (typeof window === 'undefined') return 'all';
-        try {
-            const persisted = readPersistedRegionSelection();
-            if (persisted?.venue) return persisted.venue;
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).venue || 'all' : 'all') as string;
-        } catch { return 'all'; }
-    });
-    const [shuffleSeed, setShuffleSeed] = useState<number>(() => {
-        if (typeof window === 'undefined') return Date.now();
-        try {
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).seed || Date.now() : Date.now()) as number;
-        } catch { return Date.now(); }
-    });
+
+    // Keep the first client render identical to the static HTML, then restore
+    // browser-only state after mount. Reading storage in useState initializers
+    // causes hydration mismatches on GitHub Pages.
+    const [selectedRegion, setSelectedRegion] = useState<string>('all');
+    const [selectedDistrict, setSelectedDistrict] = useState<string>('all');
+    const [selectedVenue, setSelectedVenue] = useState<string>('all');
+    const [shuffleSeed, setShuffleSeed] = useState<number>(0);
     // Chip filters: simple toggle state, not persisted (intentionally - they're
     // meant for one-off browsing rather than a remembered preference).
     const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilterId | null>(null);
     const [selectedPriceTier, setSelectedPriceTier] = useState<PriceFilterId | null>(null);
 
-    const [visibleCount, setVisibleCount] = useState<number>(() => {
-        if (typeof window === 'undefined') return INITIAL_VISIBLE_COUNT;
-        try {
-            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
-            return (saved ? JSON.parse(saved).visibleCount || INITIAL_VISIBLE_COUNT : INITIAL_VISIBLE_COUNT) as number;
-        } catch { return INITIAL_VISIBLE_COUNT; }
-    });
+    const [visibleCount, setVisibleCount] = useState<number>(INITIAL_VISIBLE_COUNT);
 
     const [debouncedSearchText, setDebouncedSearchText] = useState(searchText);
     const isInitialized = useRef(false);
+    const skipInitialPersist = useRef(true);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        try {
+            const persisted = readPersistedRegionSelection();
+            const saved = sessionStorage.getItem(`cf_state_${initialGenre}`);
+            const parsed = saved ? JSON.parse(saved) : null;
+
+            setSelectedRegion(persisted?.region || parsed?.region || 'all');
+            setSelectedDistrict(persisted?.district || parsed?.district || 'all');
+            setSelectedVenue(persisted?.venue || parsed?.venue || 'all');
+            setShuffleSeed(parsed?.seed || Date.now());
+            setVisibleCount(parsed?.visibleCount || INITIAL_VISIBLE_COUNT);
+        } catch {
+            setShuffleSeed(Date.now());
+        } finally {
+            isInitialized.current = true;
+        }
+    }, [initialGenre]);
 
     // Persistence: Always keep sessionStorage synced with current state
     useEffect(() => {
-        if (typeof window === 'undefined') return;
+        if (typeof window === 'undefined' || !isInitialized.current) return;
+        if (skipInitialPersist.current) {
+            skipInitialPersist.current = false;
+            return;
+        }
 
         const state = {
             region: selectedRegion,
@@ -99,7 +89,6 @@ export function usePerformanceFilters({
         };
         sessionStorage.setItem(`cf_state_${selectedGenre}`, JSON.stringify(state));
         persistRegionSelection(selectedRegion, selectedDistrict, selectedVenue);
-        isInitialized.current = true;
     }, [selectedGenre, selectedRegion, selectedDistrict, selectedVenue, shuffleSeed, visibleCount]);
 
     useEffect(() => {

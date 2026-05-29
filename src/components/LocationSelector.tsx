@@ -331,7 +331,7 @@ export function LocationSelector({
 
                                 {REGIONS.filter(r => r.id !== 'all').map(r => {
                                     // Check if this region has any venues in the current context (venues object contains all venues used in current filter)
-                                    const hasData = Object.values(venueLookup).some(v => v.mapped_region_id === r.id);
+                                    const hasData = Object.keys(venueLookup).length === 0 || Object.values(venueLookup).some(v => v.mapped_region_id === r.id);
                                     if (!hasData) return null;
 
                                     return (

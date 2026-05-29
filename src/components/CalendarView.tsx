@@ -183,9 +183,8 @@ export default function CalendarView({
     // Read initial state from URL params
     const initialGenre = searchParams.get('genre') || 'all';
     const initialView = (searchParams.get('view') as CalendarView) || 'monthly';
-    const persistedRegion = readPersistedRegionSelection();
-    const initialRegion = persistedRegion?.region || getCalendarRegionId(searchParams.get('region'));
-    const initialDistrict = persistedRegion?.district || 'all';
+    const initialRegion = getCalendarRegionId(searchParams.get('region'));
+    const initialDistrict = 'all';
     const initialDateStr = searchParams.get('date');
 
     const [currentMonth, setCurrentMonth] = useState(() => {
@@ -200,8 +199,33 @@ export default function CalendarView({
     const [localRegion, setLocalRegion] = useState<string>(initialRegion);
     const [localDistrict, setLocalDistrict] = useState<string>(initialDistrict);
     const [isRegionPanelOpen, setIsRegionPanelOpen] = useState(false);
+    const skipInitialRegionPersist = useRef(true);
 
     useEffect(() => {
+        if (typeof document === 'undefined') return;
+        const previousBodyOverflow = document.body.style.overflow;
+        const previousHtmlOverflow = document.documentElement.style.overflow;
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = previousBodyOverflow;
+            document.documentElement.style.overflow = previousHtmlOverflow;
+        };
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const persistedRegion = readPersistedRegionSelection();
+        if (persistedRegion?.region) setLocalRegion(persistedRegion.region);
+        if (persistedRegion?.district) setLocalDistrict(persistedRegion.district);
+    }, []);
+
+    useEffect(() => {
+        if (skipInitialRegionPersist.current) {
+            skipInitialRegionPersist.current = false;
+            return;
+        }
         persistRegionSelection(localRegion, localDistrict, 'all');
     }, [localRegion, localDistrict]);
 
@@ -499,6 +523,7 @@ export default function CalendarView({
                             >
                                 <MapPin className="h-3.5 w-3.5 text-emerald-500" />
                                 <span className="shrink-0">지역설정</span>
+                                <span className="shrink-0 text-gray-300 dark:text-gray-600"> / </span>
                                 <span className="truncate text-emerald-600 dark:text-emerald-300">
                                     {getRegionSelectionLabel(localRegion, localDistrict)}
                                 </span>

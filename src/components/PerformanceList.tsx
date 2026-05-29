@@ -155,12 +155,15 @@ export default function PerformanceList({
 
     useEffect(() => {
         if (typeof document === 'undefined') return;
-        const previousOverflow = document.body.style.overflow;
+        const previousBodyOverflow = document.body.style.overflow;
+        const previousHtmlOverflow = document.documentElement.style.overflow;
         if (activeOverlay) {
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
         }
         return () => {
-            document.body.style.overflow = previousOverflow;
+            document.body.style.overflow = previousBodyOverflow;
+            document.documentElement.style.overflow = previousHtmlOverflow;
         };
     }, [activeOverlay]);
 
@@ -625,7 +628,7 @@ export default function PerformanceList({
                             syncSearchToUrl(searchText, 'keyword', null, 'all');
                         }
                     }} handleCurrentLocationClick={() => { setUserLocation(null); setSearchLocation(null); }}
-                    availableVenues={availableVenues} districts={districts} recentKeywords={savedKeywords}
+                    availableVenues={availableVenues} districts={districts} venueLookup={venues} recentKeywords={savedKeywords}
                     onKeywordSelect={(k) => {
                         setSearchText(k);
                         // Reset all filters for a clean keyword search
