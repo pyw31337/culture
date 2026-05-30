@@ -428,3 +428,10 @@
 - **Failed Scrapers**:
   - kopis
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-05-30 20:10:38 UTC
+- **GitHub Run ID**: [26692762723](https://github.com/pyw31337/culture/actions/runs/26692762723)
+- **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale.
+- **Failed Scrapers**:
+  - kopis
+
