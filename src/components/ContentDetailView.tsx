@@ -365,21 +365,21 @@ export default function ContentDetailView({ performance: p, allPerformances = []
     };
 
     const containerVariants: Variants = {
-        hidden: { opacity: 0, scale: 0.95 },
+        hidden: { opacity: 0, scale: 0.99 },
         visible: {
             opacity: 1,
             scale: 1,
             transition: {
-                staggerChildren: 0.1,
-                duration: 0.4,
+                staggerChildren: 0.015,
+                duration: 0.12,
                 ease: "easeOut"
             }
         }
     };
 
     const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 }
+        hidden: { opacity: 0, y: 6 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.12 } }
     };
 
     const containerClasses = mode === 'standalone'

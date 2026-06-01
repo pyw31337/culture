@@ -23,6 +23,17 @@ function formatPosterSchedule(date?: string) {
         .trim();
 }
 
+function PosterScheduleLine({ date }: { date?: string }) {
+    const schedule = formatPosterSchedule(date);
+    if (!schedule) return null;
+
+    return (
+        <p className="mb-1 text-[10.5px] sm:text-[11px] font-extrabold leading-snug text-white/80 drop-shadow-md break-keep whitespace-normal">
+            {schedule}
+        </p>
+    );
+}
+
 interface RecommendedSectionProps {
     recommendedItems: any[];
     onLocationClick: (loc: any) => void;
@@ -266,11 +277,6 @@ export default function RecommendedSection({
                                         <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </div>
-                                        {formatPosterSchedule(perf.date) && (
-                                            <div className="min-w-0 max-w-[8.5rem] shrink rounded-full bg-white/85 px-2 py-0.5 text-[10px] font-black text-gray-900 backdrop-blur-md border border-white/30">
-                                                <span className="block truncate">{formatPosterSchedule(perf.date)}</span>
-                                            </div>
-                                        )}
                                         {(perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]) && (
                                             <div className="px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
                                                 {perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]}
@@ -298,6 +304,7 @@ export default function RecommendedSection({
                                         className="object-cover pointer-events-none"
                                         sizes="(max-width: 768px) 200px, 260px"
                                         loading="lazy"
+                                        fastDisplay
                                         draggable={false}
                                     />
 
@@ -346,7 +353,8 @@ export default function RecommendedSection({
                                             <ChevronRight size={20} />
                                         </button>
 
-                                        <div className="relative z-10 flex flex-col justify-center min-w-0 h-10 overflow-hidden">
+                                        <div className="relative z-10 flex min-w-0 flex-col justify-center overflow-visible">
+                                            <PosterScheduleLine date={perf.date} />
                                             <span className="text-white font-black text-sm sm:text-base leading-tight truncate drop-shadow-md">
                                                 {cleanTitle(perf.title)}
                                             </span>
@@ -356,13 +364,6 @@ export default function RecommendedSection({
                                         </div>
                                     </div>
 
-                                    <div className="absolute left-3 right-3 bottom-[4.5rem] z-20 pointer-events-none">
-                                        <RecommendationReasonChips
-                                            reasons={perf.recommendationReasons}
-                                            comparisonTags={perf.comparisonTags}
-                                            compact
-                                        />
-                                    </div>
                                 </motion.div>
                             </div>
                         ))}

@@ -158,6 +158,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             className="sm:perspective-1000 group h-full relative overflow-visible hover:z-[2000]"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ contentVisibility: 'auto', containIntrinsicSize: '360px 520px' }}
         >
             <div
                 ref={cardRef}
@@ -255,6 +256,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         loading={priority ? 'eager' : 'lazy'}
                                         priority={priority}
+                                        fastDisplay={priority}
                                         referrerPolicy="no-referrer"
                                         style={{ zIndex: 0, pointerEvents: 'none' }}
                                     />
@@ -379,6 +381,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading={priority ? 'eager' : 'lazy'}
                                 priority={priority}
+                                fastDisplay={priority}
                                 referrerPolicy="no-referrer"
                                 style={{ zIndex: 0, pointerEvents: 'none' }}
                             />

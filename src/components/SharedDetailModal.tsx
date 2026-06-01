@@ -26,17 +26,20 @@ export default function SharedDetailModal({ performance: p, allPerformances = []
     useEffect(() => {
         scrollYRef.current = window.scrollY;
         const originalOverflow = document.body.style.overflow;
+        const originalHtmlOverflow = document.documentElement.style.overflow;
         const originalPosition = document.body.style.position;
         const originalTop = document.body.style.top;
         const originalWidth = document.body.style.width;
 
         document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollYRef.current}px`;
         document.body.style.width = '100%';
 
         return () => {
             document.body.style.overflow = originalOverflow;
+            document.documentElement.style.overflow = originalHtmlOverflow;
             document.body.style.position = originalPosition;
             document.body.style.top = originalTop;
             document.body.style.width = originalWidth;
@@ -52,25 +55,24 @@ export default function SharedDetailModal({ performance: p, allPerformances = []
 
     const cardVariants = {
         hidden: {
-            scale: 0.8,
+            scale: 0.98,
             opacity: 0,
-            y: 20,
+            y: 8,
         },
         visible: {
             scale: 1,
             opacity: 1,
             y: 0,
             transition: {
-                type: 'spring' as const,
-                stiffness: 300,
-                damping: 30
+                duration: 0.14,
+                ease: 'easeOut' as const,
             }
         },
         exit: {
-            scale: 0.8,
+            scale: 0.98,
             opacity: 0,
-            y: 20,
-            transition: { duration: 0.2 }
+            y: 8,
+            transition: { duration: 0.1 }
         }
     };
 

@@ -19,6 +19,17 @@ function formatPosterSchedule(date?: string) {
         .trim();
 }
 
+function PosterScheduleLine({ date }: { date?: string }) {
+    const schedule = formatPosterSchedule(date);
+    if (!schedule) return null;
+
+    return (
+        <p className="mb-1 text-[10.5px] sm:text-[11px] font-extrabold leading-snug text-white/80 drop-shadow-md break-keep whitespace-normal">
+            {schedule}
+        </p>
+    );
+}
+
 interface PersonalizedSectionProps {
     items: Performance[];
     onDetail: (perf: Performance) => void;
@@ -169,6 +180,7 @@ export default function PersonalizedSection({
                                     className="object-cover"
                                     sizes="(max-width: 768px) 220px, 260px"
                                     loading="lazy"
+                                    fastDisplay
                                     draggable={false}
                                 />
 
@@ -176,11 +188,6 @@ export default function PersonalizedSection({
                                     <div className="inline-flex shrink-0 rounded-full bg-black/35 px-2 py-0.5 text-[9px] font-black text-white backdrop-blur-md border border-white/15">
                                         {GENRES.find((genre) => genre.id === performance.genre)?.label || performance.genre}
                                     </div>
-                                    {formatPosterSchedule(performance.date) && (
-                                        <div className="inline-flex min-w-0 max-w-[8.5rem] shrink rounded-full bg-white/85 px-2 py-0.5 text-[9px] font-black text-gray-900 backdrop-blur-md border border-white/30">
-                                            <span className="truncate">{formatPosterSchedule(performance.date)}</span>
-                                        </div>
-                                    )}
                                     <RecommendationReasonChips
                                         reasons={performance.recommendationReasons}
                                         comparisonTags={performance.comparisonTags}
@@ -192,6 +199,7 @@ export default function PersonalizedSection({
                                 <div className="absolute inset-x-0 bottom-0 z-20 p-4">
                                     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-0" />
                                     <div className="relative z-10">
+                                        <PosterScheduleLine date={performance.date} />
                                         <h3 className="text-white font-black text-sm sm:text-base leading-tight line-clamp-2 drop-shadow-md">
                                             {cleanTitle(performance.title)}
                                         </h3>
