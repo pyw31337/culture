@@ -1,9 +1,8 @@
 
-import React, { useState, useRef, useEffect, useMemo, useCallback, memo } from 'react';
+import React, { useState, useMemo, memo } from 'react';
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Search } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';
-import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
@@ -59,12 +58,6 @@ HighlightText.displayName = 'HighlightText';
 
 function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText, priority = false }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
-    const [canUseHoverEffects, setCanUseHoverEffects] = useState(false);
-
-    const cardRef = useRef<HTMLDivElement>(null);
-    const glareRef = useRef<HTMLDivElement>(null);
-    const pointerFrameRef = useRef<number | null>(null);
-    const latestPointerRef = useRef<{ x: number; y: number } | null>(null);
 
     const dDay = getDdayLabel(perf);
     const isMovie = perf.genre === 'movie';
@@ -77,67 +70,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     const priceFallbackText = sportsTicketBay?.sourceLabel || (['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(perf.genre)
         ? '예매처 확인'
         : '가격 확인');
-
-    useEffect(() => {
-        const query = window.matchMedia('(hover: hover) and (pointer: fine)');
-        const update = () => setCanUseHoverEffects(query.matches);
-
-        update();
-        query.addEventListener('change', update);
-        return () => query.removeEventListener('change', update);
-    }, []);
-
-    const applyPointerTransform = useCallback(() => {
-        if (!canUseHoverEffects) return;
-        if (!cardRef.current || !glareRef.current) return;
-
-        const rect = cardRef.current.getBoundingClientRect();
-        const pointer = latestPointerRef.current;
-        if (!pointer) return;
-
-        const x = pointer.x - rect.left;
-        const y = pointer.y - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -10;
-        const rotateY = ((x - centerX) / centerX) * 10;
-
-        cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-
-        glareRef.current.style.transform = `translateX(${(x - centerX) / 2}px) translateY(${(y - centerY) / 2}px)`;
-        glareRef.current.style.opacity = '1';
-        pointerFrameRef.current = null;
-    }, [canUseHoverEffects]);
-
-    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-        if (!canUseHoverEffects) return;
-        latestPointerRef.current = { x: e.clientX, y: e.clientY };
-
-        if (pointerFrameRef.current !== null) return;
-        pointerFrameRef.current = window.requestAnimationFrame(applyPointerTransform);
-    }, [applyPointerTransform, canUseHoverEffects]);
-
-    const handleMouseLeave = useCallback(() => {
-        if (!canUseHoverEffects) return;
-        if (!cardRef.current || !glareRef.current) return;
-
-        if (pointerFrameRef.current !== null) {
-            window.cancelAnimationFrame(pointerFrameRef.current);
-            pointerFrameRef.current = null;
-        }
-        latestPointerRef.current = null;
-
-        cardRef.current.style.transition = 'transform 0.3s ease-out';
-        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
-        glareRef.current.style.opacity = '0';
-    }, [canUseHoverEffects]);
-
-    useEffect(() => () => {
-        if (pointerFrameRef.current !== null) {
-            window.cancelAnimationFrame(pointerFrameRef.current);
-        }
-    }, []);
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
 
@@ -155,16 +87,13 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     return (
         <div
-            className="sm:perspective-1000 group h-full relative overflow-visible hover:z-[2000]"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            className="group h-full relative overflow-visible hover:z-[2000]"
             style={{ contentVisibility: 'auto', containIntrinsicSize: '360px 520px' }}
         >
             <div
-                ref={cardRef}
                 className={
                     clsx(
-                        "relative transition-transform ease-out sm:transform-style-3d shadow-xl h-full rounded-[15px] will-change-transform isolate overflow-visible",
+                        "relative transition-transform ease-out shadow-xl h-full rounded-[15px] isolate overflow-visible sm:hover:-translate-y-1",
                         variant === 'default'
                             ? (searchMode === 'location'
                                 ? "p-px border border-emerald-500/20 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.1)]"
@@ -179,20 +108,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     : "border-0"
                     )
                 }
-                style={{
-                    transformStyle: 'preserve-3d',
-                }}
             >
-                {/* Glare component */}
-                <div
-                    ref={glareRef}
-                    className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-200 rounded-xl"
-                    style={{
-                        background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 60%)',
-                        mixBlendMode: 'overlay',
-                    }}
-                />
-
                 {variant === 'default' && (
                     <div className="absolute inset-0 z-0 overflow-hidden rounded-[15px] pointer-events-none">
                         <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? (searchMode === 'location' ? '#34d399' : '#a78bfa') : 'gold' } as React.CSSProperties} />
@@ -248,11 +164,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             genre: perf.genre,
                                             matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
                                         }}
-                                        optimizationWidth={priority ? 420 : 360}
-                                        quality={priority ? 70 : 60}
+                                        optimizationWidth={priority ? 360 : 320}
+                                        quality={priority ? 62 : 56}
                                         alt={perf.title}
                                         fill
-                                        className="pointer-events-none object-cover transition-transform duration-500 sm:group-hover:scale-110"
+                                        className="pointer-events-none object-cover transition-transform duration-300 sm:group-hover:scale-[1.03]"
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         loading={priority ? 'eager' : 'lazy'}
                                         priority={priority}
@@ -270,7 +186,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                             alt={perf.homeTeam}
                                             className="w-[30%] max-w-[64px] aspect-square object-contain drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                                         />
-                                        <div className="text-white/90 font-black text-[10px] italic bg-black/40 px-1.5 py-0.5 rounded-full backdrop-blur-[1px] border border-white/10">VS</div>
+                                        <div className="text-white/90 font-black text-[10px] italic bg-black/50 px-1.5 py-0.5 rounded-full border border-white/10">VS</div>
                                         <img
                                             src={FUTURES_TEAM_LOGOS[perf.awayTeam] || perf.awayTeamLogo}
                                             alt={perf.awayTeam}
@@ -310,7 +226,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     }
                                                 }
                                             }}
-                                            className="w-[20%] bg-black/40 hover:bg-black/99 text-white backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all shadow-lg h-[50px] relative group/share"
+                                            className="w-[20%] bg-black/55 hover:bg-black text-white border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all shadow-lg h-[50px] relative group/share"
                                         >
                                             <Share2 className="w-5 h-5" />
                                             {isCopied && (
@@ -322,7 +238,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                 e.stopPropagation();
                                                 onDetail?.(perf);
                                             }}
-                                            className="flex-1 bg-black/60 text-white hover:bg-black/90 backdrop-blur-md border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
+                                            className="flex-1 bg-black/70 text-white hover:bg-black/90 border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-all font-black shadow-lg h-[50px] gap-2 text-sm"
                                         >
                                             자세히 보기
                                             <Search className="w-4 h-4" />
@@ -373,11 +289,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     genre: perf.genre,
                                     matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
                                 }}
-                                optimizationWidth={priority ? 420 : 360}
-                                quality={priority ? 70 : 60}
+                                optimizationWidth={priority ? 360 : 320}
+                                quality={priority ? 62 : 56}
                                 alt={perf.title}
                                 fill
-                                className="pointer-events-none object-cover transition-transform duration-500 sm:group-hover:scale-110 rounded-[15px]"
+                                className="pointer-events-none object-cover transition-transform duration-300 sm:group-hover:scale-[1.03] rounded-[15px]"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading={priority ? 'eager' : 'lazy'}
                                 priority={priority}
@@ -394,7 +310,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         alt={perf.homeTeam}
                                         className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
                                     />
-                                    <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-[1px] border border-white/10 shadow-lg">VS</div>
+                                    <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/50 px-2 py-0.5 rounded-full border border-white/10 shadow-lg">VS</div>
                                     <img
                                         src={FUTURES_TEAM_LOGOS[perf.awayTeam] || perf.awayTeamLogo}
                                         alt={perf.awayTeam}
@@ -404,7 +320,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             )}
 
                             {distLabel && (
-                                <div className="absolute top-2 left-2 z-40 bg-emerald-600/90 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-[10px] font-black shadow-lg flex items-center gap-1 backdrop-blur-sm">
+                                <div className="absolute top-2 left-2 z-40 bg-emerald-600 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-[10px] font-black shadow-lg flex items-center gap-1">
                                     <MapPin className="w-3 h-3" />
                                     {distLabel}
                                 </div>
@@ -417,7 +333,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 <div className="relative z-30 w-full p-4 pb-4">
                                     <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                         <span className={clsx(
-                                            "px-3 py-1 rounded-full text-[10px] font-black backdrop-blur-md border shadow-sm transition-all text-white",
+                                            "px-3 py-1 rounded-full text-[10px] font-black border shadow-sm transition-all text-white",
                                             GENRE_STYLES[perf.genre]?.twBg || (searchMode === 'location' ? 'bg-black/30 border-emerald-500/50 text-emerald-400' : 'bg-black/30 border-[#a78bfa]/50 text-[#a78bfa]')
                                         )}>
                                             {isMovie && perf.rank ? `영화 #${perf.rank}위` : (GENRES.find(g => g.id === perf.genre)?.label || perf.genre)}

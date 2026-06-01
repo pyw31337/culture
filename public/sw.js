@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.HVMCGbmrEF6OWHXoe-N-Q.aee6994723bc90ae0475fd684c2fad74.js"
+  "/culture/_next/precache.JQdV9ON9lgkJ9zGHDKhCF.c3abc88c46cb147997132abe6a176d43.js"
 );
 
 workbox.core.skipWaiting();
@@ -758,8 +758,8 @@ workbox.precaching.cleanupOutdatedCaches();
 
 workbox.routing.registerRoute(/\/version\.txt(?:\?.*)?$/i, new workbox.strategies.NetworkFirst({ "cacheName":"version-check","networkTimeoutSeconds":2, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 60, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\/data\/build-info\.json(?:\?.*)?$/i, new workbox.strategies.NetworkFirst({ "cacheName":"build-info","networkTimeoutSeconds":2, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 60, purgeOnQuotaError: false })] }), 'GET');
-workbox.routing.registerRoute(/\/data\/(?:performances|map-items|map-venues|calendar-items|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i, new workbox.strategies.NetworkFirst({ "cacheName":"runtime-data-payloads","networkTimeoutSeconds":2, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 32, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
-workbox.routing.registerRoute(/\/data\/categories\/[^/]+\.json(?:\?.*)?$/i, new workbox.strategies.NetworkFirst({ "cacheName":"runtime-data-payloads","networkTimeoutSeconds":2, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 32, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute(/\/data\/(?:performances|home-feed|map-items|map-venues|calendar-items|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"runtime-data-payloads", plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 32, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute(/\/data\/categories\/[^/]+\.json(?:\?.*)?$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"runtime-data-payloads", plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 32, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"google-fonts", plugins: [new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 31536000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"font-awesome", plugins: [new workbox.expiration.Plugin({ maxEntries: 1, maxAgeSeconds: 31536000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-font-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 604800, purgeOnQuotaError: false })] }), 'GET');

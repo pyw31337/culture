@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, MapPin, Sparkles } from 'lucide-react';
-import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
 import type { Performance } from '@/types';
 import { GENRES } from '@/lib/constants';
@@ -45,53 +44,39 @@ export default function PersonalizedSection({
 }: PersonalizedSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [constraints, setConstraints] = useState({ left: 0, right: 0 });
     const [isDragging, setIsDragging] = useState(false);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
-    const x = useMotionValue(0);
 
-    const updateConstraints = useCallback(() => {
-        if (!containerRef.current || !contentRef.current) return;
-        const containerWidth = containerRef.current.offsetWidth;
-        const contentWidth = contentRef.current.scrollWidth;
-        const maxScroll = -(contentWidth - containerWidth + 60);
-
-        setConstraints({ left: maxScroll, right: 0 });
-        const currentX = x.get();
-        setShowLeftArrow(currentX < -10);
-        setShowRightArrow(currentX > maxScroll + 10);
-    }, [items, x]);
+    // Native horizontal scroll is significantly cheaper than drag spring animations.
+    const updateArrowState = useCallback(() => {
+        const container = containerRef.current;
+        if (!container) return;
+        const maxScroll = container.scrollWidth - container.clientWidth - 8;
+        setShowLeftArrow(container.scrollLeft > 10);
+        setShowRightArrow(container.scrollLeft < maxScroll);
+    }, [items]);
 
     useEffect(() => {
-        updateConstraints();
-        const onResize = () => updateConstraints();
-        window.addEventListener('resize', onResize);
-        return () => window.removeEventListener('resize', onResize);
-    }, [updateConstraints]);
+        updateArrowState();
+        const container = containerRef.current;
+        const onResize = () => updateArrowState();
+        const onScroll = () => updateArrowState();
 
-    useMotionValueEvent(x, 'change', (latest) => {
-        if (!contentRef.current || !containerRef.current) return;
-        const containerWidth = containerRef.current.offsetWidth;
-        const contentWidth = contentRef.current.scrollWidth;
-        const maxScroll = -(contentWidth - containerWidth + 60);
-        setShowLeftArrow(latest < -10);
-        setShowRightArrow(latest > maxScroll + 10);
-    });
+        window.addEventListener('resize', onResize, { passive: true });
+        container?.addEventListener('scroll', onScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('resize', onResize);
+            container?.removeEventListener('scroll', onScroll);
+        };
+    }, [updateArrowState]);
 
     const scroll = (direction: 'left' | 'right') => {
-        const currentX = x.get();
-        const containerWidth = containerRef.current?.offsetWidth || 300;
-        const scrollAmount = containerWidth * 0.75;
-        let nextX = direction === 'left' ? currentX + scrollAmount : currentX - scrollAmount;
-        if (nextX > 0) nextX = 0;
-        if (nextX < constraints.left) nextX = constraints.left;
-
-        animate(x, nextX, {
-            type: 'spring',
-            stiffness: 300,
-            damping: 30,
-        });
+        const container = containerRef.current;
+        if (!container) return;
+        const amount = container.clientWidth * 0.78;
+        container.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
     };
 
     const pointerPos = useRef({ x: 0, y: 0 });
@@ -143,22 +128,16 @@ export default function PersonalizedSection({
                     </button>
                 )}
 
-                <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing pt-8 -mt-8 pb-10 transition-all select-none" style={{ touchAction: 'pan-y' }}>
-                    <motion.div
+                <div ref={containerRef} className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-10 transition-all select-none" style={{ touchAction: 'pan-x pan-y' }}>
+                    <div
                         ref={contentRef}
-                        drag="x"
-                        dragConstraints={constraints}
-                        dragElastic={0.6}
-                        style={{ x }}
-                        onDragStart={() => setIsDragging(true)}
                         onDragEnd={() => setIsDragging(false)}
                         className="flex gap-5 sm:gap-6 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-stretch min-w-max"
                     >
                         {items.map((performance) => (
-                            <motion.div
+                            <div
                                 key={performance.id}
-                                className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-2xl transition-shadow flex-shrink-0"
-                                whileHover={!isDragging ? { scale: 1.03, zIndex: 30 } : {}}
+                                className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-2xl transition-transform duration-200 hover:-translate-y-1 flex-shrink-0"
                                 onPointerDown={handlePointerDown}
                                 onPointerUp={(event) => handlePointerUp(event, performance)}
                             >
@@ -209,9 +188,9 @@ export default function PersonalizedSection({
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

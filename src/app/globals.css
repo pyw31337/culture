@@ -574,3 +574,12 @@ body {
 .holo-effect:hover::after {
   opacity: 1;
 }
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-soft {
+  animation: float-soft 3s ease-in-out infinite;
+}

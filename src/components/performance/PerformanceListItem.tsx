@@ -2,7 +2,6 @@
 import React, { useState, useRef, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
@@ -237,18 +236,11 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         )}
                     </button>
 
-                    <AnimatePresence>
-                        {isCopied && (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                                className="absolute bottom-8 left-1 bg-black/90 text-white text-[10px] font-extrabold px-2 py-1 round-md whitespace-nowrap border border-white/20 z-[200] shadow-xl"
-                            >
-                                복사됨!
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    {isCopied && (
+                        <div className="absolute bottom-8 left-1 bg-black/90 text-white text-[10px] font-extrabold px-2 py-1 rounded-md whitespace-nowrap border border-white/20 z-[200] shadow-xl animate-scale-in">
+                            복사됨!
+                        </div>
+                    )}
                 </div>
 
                 <div className={clsx(

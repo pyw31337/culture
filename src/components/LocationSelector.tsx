@@ -4,7 +4,6 @@ import { clsx } from 'clsx';
 import { ChevronDown, MapPin, Check, Search, X, GripHorizontal, ChevronUp } from 'lucide-react'; // Added icons
 import { REGIONS } from '@/lib/constants';
 import { getChoseong } from '@/lib/hangul';
-import { motion } from 'framer-motion';
 
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 
@@ -308,12 +307,7 @@ export function LocationSelector({
 
                 {/* Collapsible Content */}
                 {isRegionExpanded && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="space-y-0 overflow-visible" // Changed space-y-4 to 0 for tight tab connection
-                    >
+                    <div className="space-y-0 overflow-visible animate-in fade-in slide-in-from-top-1 duration-150">
                         {/* Region Buttons */}
                         <div className="relative z-20 pb-0"> {/* z-index to sit on top of district box */}
                             <HorizontalScroll className="px-1 pb-0 relative z-30">
@@ -421,7 +415,7 @@ export function LocationSelector({
                                 </div>
                             </div>
                         )}
-                    </motion.div>
+                    </div>
                 )}
             </div>
 

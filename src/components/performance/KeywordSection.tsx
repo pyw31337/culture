@@ -5,7 +5,6 @@ import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
 import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { cleanTitle } from '@/lib/utils';
 import { getGenreIcon } from '../GenreIcons';
-import { motion, useMotionValue, animate, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
 import type { KeywordMatchedPerformance } from '@/lib/keyword-match';
 
@@ -21,71 +20,40 @@ interface KeywordSectionProps {
 function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [constraints, setConstraints] = useState({ left: 0, right: 0 });
     const [isDragging, setIsDragging] = useState(false);
-    const lastDragEndTime = useRef<number>(0);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
 
-    // Motion value for x-axis scroll
-    const x = useMotionValue(0);
-
-    // Constraint & Arrow Logic
-    const updateConstraints = useCallback(() => {
-        if (containerRef.current && contentRef.current) {
-            const containerWidth = containerRef.current.offsetWidth;
-            const contentWidth = contentRef.current.scrollWidth;
-            const maxScroll = -(contentWidth - containerWidth + 60);
-
-            setConstraints({
-                left: maxScroll,
-                right: 0 // Strict right constraint
-            });
-
-            // Initial Arrow State Check
-            const currentX = x.get();
-            setShowLeftArrow(currentX < -10);
-            setShowRightArrow(currentX > maxScroll + 10);
-        }
-    }, [keywordItems, x]);
+    // Native horizontal scroll is significantly cheaper than drag spring animations.
+    const updateArrowState = useCallback(() => {
+        const container = containerRef.current;
+        if (!container) return;
+        const maxScroll = container.scrollWidth - container.clientWidth - 8;
+        setShowLeftArrow(container.scrollLeft > 10);
+        setShowRightArrow(container.scrollLeft < maxScroll);
+    }, [keywordItems]);
 
     useEffect(() => {
-        updateConstraints();
-        const handleResize = () => updateConstraints();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [updateConstraints]);
+        updateArrowState();
+        const container = containerRef.current;
+        const onResize = () => updateArrowState();
+        const onScroll = () => updateArrowState();
 
-    // Track scroll position for arrows
-    useMotionValueEvent(x, "change", (latest) => {
-        if (!contentRef.current || !containerRef.current) return;
-        const containerWidth = containerRef.current.offsetWidth;
-        const contentWidth = contentRef.current.scrollWidth;
-        const maxScroll = -(contentWidth - containerWidth + 60);
+        window.addEventListener('resize', onResize, { passive: true });
+        container?.addEventListener('scroll', onScroll, { passive: true });
 
-        setShowLeftArrow(latest < -10);
-        setShowRightArrow(latest > maxScroll + 10);
-    });
+        return () => {
+            window.removeEventListener('resize', onResize);
+            container?.removeEventListener('scroll', onScroll);
+        };
+    }, [updateArrowState]);
 
 
-    // Arrow Navigation Handlers
     const scroll = (direction: 'left' | 'right') => {
-        const currentX = x.get();
-        const containerWidth = containerRef.current?.offsetWidth || 300;
-        const scrollAmount = containerWidth * 0.8; // Scroll 80% of screen width
-
-        let newX = direction === 'left' ? currentX + scrollAmount : currentX - scrollAmount;
-
-        // Clamp
-        const maxScroll = constraints.left;
-        if (newX > 0) newX = 0;
-        if (newX < maxScroll) newX = maxScroll;
-
-        animate(x, newX, {
-            type: "spring",
-            stiffness: 300,
-            damping: 30
-        });
+        const container = containerRef.current;
+        if (!container) return;
+        const amount = container.clientWidth * 0.78;
+        container.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
     };
 
     // Simplified Click Detection
@@ -145,20 +113,11 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
 
                 <div
                     ref={containerRef}
-                    className="overflow-hidden cursor-grab active:cursor-grabbing pt-8 -mt-8 pb-12 transition-all select-none"
-                    style={{ touchAction: 'pan-y' }}
+                    className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-all select-none"
+                    style={{ touchAction: 'pan-x pan-y' }}
                 >
-                    <motion.div
+                    <div
                         ref={contentRef}
-                        drag="x"
-                        dragConstraints={constraints}
-                        dragElastic={0.6} // Restored elastic feel
-                        style={{ x }}
-                        onDragStart={() => setIsDragging(true)}
-                        onDragEnd={() => {
-                            lastDragEndTime.current = Date.now();
-                            setIsDragging(false);
-                        }}
                         className="flex gap-5 sm:gap-9 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-end min-w-max"
                     >
                         {keywordItems.map((perf) => (
@@ -167,12 +126,11 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                 className="flex items-end gap-x-0 flex-shrink-0"
                             >
                                 {/* Poster Card */}
-                                <motion.div
+                                <div
                                     className={clsx(
-                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-shadow",
+                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-transform duration-200 hover:-translate-y-1",
                                         !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
-                                    whileHover={!isDragging ? { scale: 1.05, zIndex: 30 } : {}}
                                     onPointerDown={handlePointerDown}
                                     onPointerUp={(e) => handlePointerUp(e, perf)}
                                 >
@@ -269,10 +227,10 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                             </span>
                                         </div>
                                     </div>
-                                </motion.div>
+                                </div>
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

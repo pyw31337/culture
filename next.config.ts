@@ -44,11 +44,10 @@ const runtimeCaching: RuntimeCachingEntry[] = [
     },
   },
   {
-    urlPattern: /\/data\/(?:performances|map-items|map-venues|calendar-items|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i,
-    handler: 'NetworkFirst',
+    urlPattern: /\/data\/(?:performances|home-feed|map-items|map-venues|calendar-items|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i,
+    handler: 'StaleWhileRevalidate',
     options: {
       cacheName: 'runtime-data-payloads',
-      networkTimeoutSeconds: 2,
       cacheableResponse: {
         statuses: [0, 200],
       },
@@ -60,10 +59,9 @@ const runtimeCaching: RuntimeCachingEntry[] = [
   },
   {
     urlPattern: /\/data\/categories\/[^/]+\.json(?:\?.*)?$/i,
-    handler: 'NetworkFirst',
+    handler: 'StaleWhileRevalidate',
     options: {
       cacheName: 'runtime-data-payloads',
-      networkTimeoutSeconds: 2,
       cacheableResponse: {
         statuses: [0, 200],
       },

@@ -82,6 +82,7 @@ const FALLBACK_IMAGES: Record<string, string> = {
 
 const SOURCE_FRESH_DAYS = 3;
 const SOURCE_STALE_DAYS = 30;
+const HOME_FEED_LIMIT = 720;
 const WINTER_LEISURE_TERMS = ['리프트권', '스키장', '스노우파크', '눈썰매', '눈썰매장', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
 const WINTER_LEISURE_FALSE_POSITIVE_TERMS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
 const PRICE_OPTIONAL_GENRES = new Set(['movie', 'baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'tourism']);
@@ -1871,6 +1872,11 @@ async function generate() {
 
         fs.writeFileSync(outputPath, JSON.stringify(pruned));
         console.log(`Successfully generated ${pruned.length} items to ${outputPath}`);
+
+        const homeFeedPayloadPath = path.join(dir, 'home-feed.json');
+        const homeFeedPayload = pruned.slice(0, HOME_FEED_LIMIT);
+        fs.writeFileSync(homeFeedPayloadPath, JSON.stringify(homeFeedPayload));
+        console.log(`Generated lightweight home feed (${homeFeedPayload.length} items) to ${homeFeedPayloadPath}`);
 
         const mapPayloadPath = path.join(dir, 'map-items.json');
         const mapPayload = pruned

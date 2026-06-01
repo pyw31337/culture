@@ -89,12 +89,32 @@ export default function PerformanceList({
     } = useUserPreferences();
     const { activity, trackGenreView, trackItemView, isActivityReady } = useUserActivity();
 
+    // --- View State ---
+    const [viewMode, setViewMode] = useState<string>('grid');
+    const [savedScrollPosition, setSavedScrollPosition] = useState(0);
+    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
+
+    const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
+    const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false);
+    const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero');
+    const [showFavoriteListModal, setShowFavoriteListModal] = useState(false);
+    const [isHeroVisible, setIsHeroVisible] = useState(true);
+    const [isAlarmOpen, setIsAlarmOpen] = useState(false);
+    const [keywordInput, setKeywordInput] = useState('');
+    const [sharedPerf, setSharedPerf] = useState<Performance | null>(null);
+    const [activeOverlay, setActiveOverlay] = useState<'map' | 'calendar' | null>(null);
+    const [overlaySearchParams, setOverlaySearchParams] = useState('');
+    const [shouldLoadVenueData, setShouldLoadVenueData] = useState(false);
+    const observerTarget = useRef<HTMLDivElement>(null);
+    const deepLinkHandled = useRef(false);
+    const modalReturnScrollY = useRef(0);
+
     const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
         performanceLoadPolicy: 'full',
         performanceDataPath,
         backgroundLoadPriority: 'deferred',
-        loadVenues: true,
+        loadVenues: shouldLoadVenueData,
     });
     const scopedPerformances = useMemo(() => {
         if (!isCategoryPage || !categoryGenreFilter) return allPerformances;
@@ -134,24 +154,12 @@ export default function PerformanceList({
 
     const { heroText, selectNextTemplate } = useHeroTemplates({ allPerformances: scopedPerformances, initialPerformances, searchMode });
 
-    // --- View State ---
-    const [viewMode, setViewMode] = useState<string>('grid');
-    const [savedScrollPosition, setSavedScrollPosition] = useState(0);
-    const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
-
-    const [activeBottomMenu, setActiveBottomMenu] = useState<BottomMenuType>(null);
-    const [isHeroFilterExpanded, setIsHeroFilterExpanded] = useState(false);
-    const [activeSearchSource, setActiveSearchSource] = useState<'hero' | 'sticky'>('hero');
-    const [showFavoriteListModal, setShowFavoriteListModal] = useState(false);
-    const [isHeroVisible, setIsHeroVisible] = useState(true);
-    const [isAlarmOpen, setIsAlarmOpen] = useState(false);
-    const [keywordInput, setKeywordInput] = useState('');
-    const [sharedPerf, setSharedPerf] = useState<Performance | null>(null);
-    const [activeOverlay, setActiveOverlay] = useState<'map' | 'calendar' | null>(null);
-    const [overlaySearchParams, setOverlaySearchParams] = useState('');
-    const observerTarget = useRef<HTMLDivElement>(null);
-    const deepLinkHandled = useRef(false);
-    const modalReturnScrollY = useRef(0);
+    useEffect(() => {
+        if (shouldLoadVenueData) return;
+        if (isHeroFilterExpanded || activeBottomMenu || activeOverlay || viewMode === 'likes-venue') {
+            setShouldLoadVenueData(true);
+        }
+    }, [activeBottomMenu, activeOverlay, isHeroFilterExpanded, shouldLoadVenueData, viewMode]);
 
     useEffect(() => {
         if (typeof document === 'undefined') return;
@@ -253,10 +261,10 @@ export default function PerformanceList({
     const posterWarmupItems = useMemo(() => {
         const seen = new Set<string>();
         const candidates = [
-            ...keywordItems.slice(0, 8),
-            ...personalizedItems.slice(0, 8),
-            ...recommendedItems.slice(0, 8),
-            ...displayPerformances.slice(0, 14),
+            ...keywordItems.slice(0, 4),
+            ...personalizedItems.slice(0, 4),
+            ...recommendedItems.slice(0, 4),
+            ...displayPerformances.slice(0, 8),
         ];
 
         return candidates.filter((item) => {
@@ -270,10 +278,10 @@ export default function PerformanceList({
     useEffect(() => {
         if (posterWarmupItems.length === 0) return;
         return warmPosterImages(posterWarmupItems, {
-            limit: 28,
-            width: 360,
-            quality: 62,
-            concurrency: 3,
+            limit: 14,
+            width: 320,
+            quality: 58,
+            concurrency: 2,
         });
     }, [posterWarmupKey, posterWarmupItems]);
 
@@ -291,8 +299,12 @@ export default function PerformanceList({
 
     useEffect(() => {
         const preloadTimer = window.setTimeout(() => {
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(() => void loadSharedDetailModal(), { timeout: 2500 });
+                return;
+            }
             void loadSharedDetailModal();
-        }, 1200);
+        }, 6500);
 
         return () => window.clearTimeout(preloadTimer);
     }, []);
@@ -328,12 +340,12 @@ export default function PerformanceList({
         trackItemView(perf.id);
         void loadSharedDetailModal();
         warmPosterImages([perf], {
-            limit: 3,
-            width: 760,
-            quality: 70,
-            concurrency: 2,
+            limit: 1,
+            width: 560,
+            quality: 62,
+            concurrency: 1,
             immediate: true,
-            includeOriginalFallback: true,
+            includeOriginalFallback: false,
         });
         modalReturnScrollY.current = typeof window !== 'undefined' ? window.scrollY : 0;
         setSharedPerf(perf);

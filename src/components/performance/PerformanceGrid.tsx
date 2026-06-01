@@ -49,6 +49,7 @@ export default function PerformanceGrid({
     searchMode = 'keyword',
     searchText
 }: PerformanceGridProps) {
+    const likedIdSet = React.useMemo(() => new Set(likedIds), [likedIds]);
 
     return (
         <div
@@ -110,7 +111,7 @@ export default function PerformanceGrid({
                                 distLabel={distLabel}
                                 venueInfo={venueInfo}
                                 onLocationClick={handleLocationClick}
-                                isLiked={likedIds.includes(perf.id)}
+                                isLiked={likedIdSet.has(perf.id)}
                                 onToggleLike={onToggleLike}
                                 // Show ribbon for Nearby items
                                 showRibbon={isNearby}
@@ -129,7 +130,7 @@ export default function PerformanceGrid({
                                 distLabel={distLabel}
                                 venueInfo={venueInfo}
                                 onLocationClick={handleLocationClick}
-                                isLiked={likedIds.includes(perf.id)}
+                                isLiked={likedIdSet.has(perf.id)}
                                 onToggleLike={onToggleLike}
                                 onShare={copyItemShareUrl}
                                 onDetail={handleDetailOpen}

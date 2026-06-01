@@ -1,6 +1,5 @@
 import React from 'react';
 import { Heart, Star, Search, Filter, Calendar, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { GENRES, SPORTS_GENRES } from '@/lib/constants';
 import Link from 'next/link';
 
@@ -28,30 +27,16 @@ export default function EmptyState({
 }: EmptyStateProps) {
     const isSportsGenre = SPORTS_GENRES.includes(selectedGenre as typeof SPORTS_GENRES[number]);
 
-    // Floating Animation Variant
-    const floatVariant = {
-        animate: {
-            y: [0, -15, 0],
-            transition: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut" as const
-            }
-        }
-    };
-
     return (
         <div className="flex flex-col items-center justify-center py-20 text-center w-full min-h-[50vh]">
             {viewMode === 'likes-perf' ? (
                 <>
-                    <motion.div
-                        variants={floatVariant}
-                        animate="animate"
-                        className="w-24 h-24 rounded-full bg-pink-500/10 flex items-center justify-center mb-6 relative"
+                    <div
+                        className="w-24 h-24 rounded-full animate-float-soft bg-pink-500/10 flex items-center justify-center mb-6 relative"
                     >
                         <Heart className="w-12 h-12 text-pink-500/60 fill-pink-500/10" />
                         <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-pink-500 animate-pulse" />
-                    </motion.div>
+                    </div>
                     <h3 className="text-2xl font-extrabold text-pink-500 mb-2">좋아요한 컨텐츠가 없어요</h3>
                     <p className="text-gray-400 light:text-gray-600 mb-6 font-semibold">
                         마음에 드는 컨텐츠나 전시를 발견하면 하트를 눌러보세요.<br />
@@ -63,14 +48,12 @@ export default function EmptyState({
                 </>
             ) : viewMode === 'likes-venue' ? (
                 <>
-                    <motion.div
-                        variants={floatVariant}
-                        animate="animate"
-                        className="w-24 h-24 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 relative"
+                    <div
+                        className="w-24 h-24 rounded-full animate-float-soft bg-emerald-500/10 flex items-center justify-center mb-6 relative"
                     >
                         <Star className="w-12 h-12 text-emerald-500/60 fill-emerald-500/10" />
                         <div className="absolute top-0 left-0 w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
-                    </motion.div>
+                    </div>
                     <h3 className="text-2xl font-extrabold text-emerald-500 mb-2">찜한 공연장이 없어요</h3>
                     <p className="text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed">
                         자주 가는 공연장이나 관심 있는 장소를 찜해보세요.<br />
@@ -85,10 +68,8 @@ export default function EmptyState({
                 </>
             ) : (
                 <>
-                    <motion.div
-                        variants={floatVariant}
-                        animate="animate"
-                        className="mb-8 opacity-80"
+                    <div
+                        className="mb-8 opacity-80 animate-float-soft"
                     >
                         {searchText ? (
                             <Search className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
@@ -97,7 +78,7 @@ export default function EmptyState({
                         ) : (
                             <Filter className="w-20 h-20 text-gray-700 light:text-gray-300" strokeWidth={1} />
                         )}
-                    </motion.div>
+                    </div>
 
                     <h3 className="text-2xl font-black text-white light:text-gray-900 mb-2">
                         {searchText ? (

@@ -75,7 +75,7 @@ function ImageWithFallbackInner({
                 }
             },
             // Start fallback and warm-up decisions before the card fully enters the viewport.
-            { rootMargin: fastDisplay ? '900px 0px' : '600px 0px' }
+            { rootMargin: fastDisplay ? '700px 0px' : '450px 0px' }
         );
 
         observer.observe(node);
@@ -85,7 +85,7 @@ function ImageWithFallbackInner({
     useEffect(() => {
         if (!isNearViewport || isLoaded || sourceIndex >= sources.length - 1) return;
 
-        const timeoutMs = fastDisplay ? 1800 : 3600;
+        const timeoutMs = fastDisplay ? 900 : 1800;
         const timeoutId = window.setTimeout(() => {
             setSourceIndex((index) => (
                 index === sourceIndex ? Math.min(index + 1, sources.length - 1) : index
