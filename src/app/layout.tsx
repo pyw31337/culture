@@ -127,8 +127,8 @@ export default function RootLayout({
         {kakaoJsKey && (
           <Script
             id="kakao-map-script"
-            src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false&libraries=services,clusterer`}
-            strategy="lazyOnload"
+            src={`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false&libraries=services,clusterer`}
+            strategy="afterInteractive"
           />
         )}
       </body>

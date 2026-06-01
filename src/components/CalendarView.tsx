@@ -474,7 +474,7 @@ export default function CalendarView({
             )}
             <div className="bg-white dark:bg-gray-900 w-full h-full shadow-2xl flex flex-col border-0">
                 {/* Header */}
-                <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900 z-10">
+                <div className="relative z-[120] flex items-center justify-between overflow-visible p-3 sm:p-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
                     <h2 className="text-base sm:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-1 sm:gap-4 truncate">
                         <button onClick={() => {
                             if (calendarView === 'monthly') handlePrevMonth();
@@ -513,7 +513,7 @@ export default function CalendarView({
                             buttonClassName="h-8 w-8 sm:h-9 sm:w-9 border-gray-200 bg-gray-100 text-gray-500 hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-300"
                         />
                     </h2>
-                    <div className="flex min-w-0 items-center gap-1 sm:gap-2 shrink-0">
+                    <div className="relative z-[130] flex min-w-0 items-center gap-1 sm:gap-2 shrink-0">
                         <div className="relative shrink-0">
                             <button
                                 type="button"
@@ -529,7 +529,7 @@ export default function CalendarView({
                                 </span>
                             </button>
                             {isRegionPanelOpen && (
-                                <div className="absolute right-0 top-full z-[80] mt-3 w-[min(720px,calc(100vw-2rem))] rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl dark:border-gray-700 dark:bg-gray-900">
+                                <div className="absolute right-0 top-full z-[200] mt-3 max-h-[min(76vh,720px)] w-[min(720px,calc(100vw-2rem))] overflow-y-auto rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl dark:border-gray-700 dark:bg-gray-900">
                                     <LocationSelector
                                         selectedRegion={localRegion}
                                         onRegionSelect={setLocalRegion}
