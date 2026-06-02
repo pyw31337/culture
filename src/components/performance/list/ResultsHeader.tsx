@@ -166,7 +166,7 @@ export const ResultsHeader = ({
                                     onDateChange={onDateFilterChange}
                                     selectedPrice={selectedPriceTier ?? null}
                                     onPriceChange={onPriceTierChange}
-                                    className="w-full xl:w-auto xl:max-w-[760px] xl:justify-end"
+                                    className="w-full xl:ml-auto xl:w-auto xl:max-w-full"
                                 />
                             )}
                         </div>

@@ -2,7 +2,7 @@
 
 import { clsx } from 'clsx';
 import type { DiscoveryContextId } from '@/types';
-import { DATE_FILTERS, PRICE_FILTERS, type DateFilterId, type PriceFilterId } from '@/lib/constants';
+import type { DateFilterId, PriceFilterId } from '@/lib/constants';
 
 interface FilterChipBarProps {
     activeDiscoveryContext: DiscoveryContextId;
@@ -15,29 +15,18 @@ interface FilterChipBarProps {
 }
 
 type UnifiedFilterChip =
-    | { kind: 'all'; id: 'all'; label: string }
     | { kind: 'date'; id: DateFilterId; label: string }
     | { kind: 'context'; id: DiscoveryContextId; label: string }
     | { kind: 'price'; id: PriceFilterId; label: string };
 
-const contextChips: UnifiedFilterChip[] = [
+const unifiedChips: UnifiedFilterChip[] = [
+    { kind: 'context', id: 'ending_soon', label: '곧 종료' },
+    { kind: 'date', id: 'today', label: '오늘' },
+    { kind: 'date', id: 'this-week', label: '이번주' },
+    { kind: 'date', id: 'weekend', label: '이번주말' },
     { kind: 'context', id: 'indoor', label: '실내' },
     { kind: 'context', id: 'with_kids', label: '아이와' },
-    { kind: 'context', id: 'date_night', label: '데이트' },
-];
-
-const endingSoonChip: UnifiedFilterChip = { kind: 'context', id: 'ending_soon', label: '곧 종료' };
-
-const unifiedChips: UnifiedFilterChip[] = [
-    { kind: 'all', id: 'all', label: '전체' },
-    ...DATE_FILTERS.map((filter) => ({ kind: 'date' as const, id: filter.id, label: filter.label })),
-    ...contextChips,
-    ...PRICE_FILTERS.filter((filter) => filter.id !== 'under-100k').map((filter) => ({
-        kind: 'price' as const,
-        id: filter.id,
-        label: filter.label,
-    })),
-    endingSoonChip,
+    { kind: 'price', id: 'free', label: '무료' },
 ];
 
 export default function FilterChipBar({
@@ -49,18 +38,7 @@ export default function FilterChipBar({
     onPriceChange,
     className,
 }: FilterChipBarProps) {
-    const clearAll = () => {
-        onDiscoveryContextChange('all');
-        onDateChange(null);
-        onPriceChange(null);
-    };
-
     const handleChipClick = (chip: UnifiedFilterChip) => {
-        if (chip.kind === 'all') {
-            clearAll();
-            return;
-        }
-
         if (chip.kind === 'date') {
             onDiscoveryContextChange('all');
             onPriceChange(null);
@@ -81,9 +59,6 @@ export default function FilterChipBar({
     };
 
     const isChipActive = (chip: UnifiedFilterChip) => {
-        if (chip.kind === 'all') {
-            return activeDiscoveryContext === 'all' && selectedDate === null && selectedPrice === null;
-        }
         if (chip.kind === 'date') return selectedDate === chip.id;
         if (chip.kind === 'price') return selectedPrice === chip.id;
         return activeDiscoveryContext === chip.id;
