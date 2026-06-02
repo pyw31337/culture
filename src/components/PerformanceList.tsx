@@ -156,10 +156,17 @@ export default function PerformanceList({
 
     useEffect(() => {
         if (shouldLoadVenueData) return;
-        if (isHeroFilterExpanded || activeBottomMenu || activeOverlay || viewMode === 'likes-venue') {
+        if (
+            selectedRegion !== 'all' ||
+            selectedVenue !== 'all' ||
+            isHeroFilterExpanded ||
+            activeBottomMenu ||
+            activeOverlay ||
+            viewMode === 'likes-venue'
+        ) {
             setShouldLoadVenueData(true);
         }
-    }, [activeBottomMenu, activeOverlay, isHeroFilterExpanded, shouldLoadVenueData, viewMode]);
+    }, [activeBottomMenu, activeOverlay, isHeroFilterExpanded, selectedRegion, selectedVenue, shouldLoadVenueData, viewMode]);
 
     useEffect(() => {
         if (typeof document === 'undefined') return;
