@@ -8,12 +8,27 @@ import FilterChipBar from './FilterChipBar';
 import type { DiscoveryContextDefinition } from '@/lib/discovery';
 import type { DiscoveryContextId } from '@/types';
 import type { DateFilterId, PriceFilterId } from '@/lib/constants';
+import { getRegionSelectionLabel } from '@/lib/region-selection';
 
 interface HeaderLocation {
     lat?: number;
     lng?: number;
     name?: string;
 }
+
+const DATE_FILTER_LABELS: Record<string, string> = {
+    today: '오늘',
+    weekend: '이번 주말',
+    'this-week': '이번 주',
+    'next-week': '다음 주',
+};
+
+const PRICE_FILTER_LABELS: Record<string, string> = {
+    free: '무료',
+    'under-10k': '1만원 이하',
+    'under-50k': '5만원 이하',
+    'under-100k': '10만원 이하',
+};
 
 interface ResultsHeaderProps {
     viewMode: string;
@@ -22,6 +37,9 @@ interface ResultsHeaderProps {
     searchText: string;
     searchMode: string;
     selectedGenre: string;
+    selectedRegion?: string;
+    selectedDistrict?: string;
+    selectedVenue?: string;
     filteredCount: number;
     radius: number;
     lastUpdated: string;
@@ -47,6 +65,9 @@ export const ResultsHeader = ({
     searchText,
     searchMode,
     selectedGenre,
+    selectedRegion = 'all',
+    selectedDistrict = 'all',
+    selectedVenue = 'all',
     filteredCount,
     radius,
     lastUpdated,
@@ -77,6 +98,34 @@ export const ResultsHeader = ({
         shouldShowDiscoveryContexts &&
         Boolean(onDateFilterChange) &&
         Boolean(onPriceTierChange);
+    const activeDiscoveryLabel = discoveryContexts?.find((item) => item.id === activeDiscoveryContext)?.label || '';
+    const activeDateLabel = DATE_FILTER_LABELS[selectedDateFilter || ''] || '';
+    const activePriceLabel = PRICE_FILTER_LABELS[selectedPriceTier || ''] || '';
+    const isRegionFiltered = selectedRegion !== 'all' || selectedDistrict !== 'all' || selectedVenue !== 'all';
+    const hasQuickFilter = activeDiscoveryContext !== 'all' || Boolean(selectedDateFilter) || Boolean(selectedPriceTier);
+    const hasAnyListFilter = isRegionFiltered || hasQuickFilter || Boolean(searchText) || isLocationSearch;
+    const regionFilterLabel = selectedVenue !== 'all' ? selectedVenue : getRegionSelectionLabel(selectedRegion, selectedDistrict);
+    const filterTitleLabel = [
+        isRegionFiltered ? regionFilterLabel : '',
+        activeDiscoveryLabel,
+        activeDateLabel,
+        activePriceLabel,
+    ].filter(Boolean).join(' · ');
+    const listTitle =
+        selectedGenre === 'all'
+            ? (hasAnyListFilter && !searchText && !isLocationSearch ? '필터 적용 콘텐츠 목록' : '전체 컨텐츠 목록')
+            : `${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'} 목록`;
+    const allResetButton = hasAnyListFilter && !isLocationSearch ? (
+        <button
+            type="button"
+            onClick={onResetFilters}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white/95 px-3.5 py-1.5 text-[11px] font-extrabold text-slate-700 shadow-sm transition hover:border-emerald-400 hover:text-emerald-700 dark:border-white/10 dark:bg-white/10 dark:text-slate-100 dark:hover:border-emerald-300/50"
+            title="지역, 검색어, 날짜, 가격, 상황 필터를 모두 초기화하고 전체 목록으로 돌아갑니다"
+        >
+            <RotateCcw className="h-3.5 w-3.5" />
+            전체 보기
+        </button>
+    ) : null;
     const locationResetButton = isLocationSearch ? (
         <button
             type="button"
@@ -143,12 +192,17 @@ export const ResultsHeader = ({
                                         <>
                                             <span className="flex items-center gap-2">
                                                 {getGenreIcon(selectedGenre, 28)}
-                                                {selectedGenre === 'all' ? '전체 컨텐츠 목록' : `${GENRES.find(g => g.id === selectedGenre)?.label || '컨텐츠'} 목록`}
+                                                {listTitle}
                                             </span>
                                             <span className="text-base sm:text-xl text-gray-400 font-medium ml-2">({filteredCount})</span>
                                         </>
                                     )}
                                 </h2>
+                                {filterTitleLabel && (
+                                    <span className="max-w-full truncate rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-extrabold text-emerald-700 dark:bg-emerald-400/10 dark:text-emerald-200">
+                                        {filterTitleLabel}
+                                    </span>
+                                )}
                                 <ServiceStatusStrip
                                     lastUpdated={lastUpdated}
                                     totalItemCount={totalItemCount}
@@ -159,15 +213,18 @@ export const ResultsHeader = ({
                                 />
                             </div>
                             {shouldShowUnifiedFilters && activeDiscoveryContext && onDiscoveryContextChange && onDateFilterChange && onPriceTierChange && (
-                                <FilterChipBar
-                                    activeDiscoveryContext={activeDiscoveryContext}
-                                    onDiscoveryContextChange={onDiscoveryContextChange}
-                                    selectedDate={selectedDateFilter ?? null}
-                                    onDateChange={onDateFilterChange}
-                                    selectedPrice={selectedPriceTier ?? null}
-                                    onPriceChange={onPriceTierChange}
-                                    className="w-full xl:ml-auto xl:w-auto xl:max-w-full"
-                                />
+                                <div className="flex w-full min-w-0 items-center justify-start gap-2 xl:ml-auto xl:w-auto xl:justify-end">
+                                    {allResetButton}
+                                    <FilterChipBar
+                                        activeDiscoveryContext={activeDiscoveryContext}
+                                        onDiscoveryContextChange={onDiscoveryContextChange}
+                                        selectedDate={selectedDateFilter ?? null}
+                                        onDateChange={onDateFilterChange}
+                                        selectedPrice={selectedPriceTier ?? null}
+                                        onPriceChange={onPriceTierChange}
+                                        className="min-w-0 flex-1 xl:flex-none"
+                                    />
+                                </div>
                             )}
                         </div>
                     </div>

@@ -39,6 +39,7 @@ import { getRepresentativeVenueInfoForName } from '@/lib/location-display';
 import { getFeaturedPerformances } from '@/lib/performance-filter';
 import { buildCuratedDiscoveryItems, buildPersonalizedRecommendations, DISCOVERY_CONTEXTS } from '@/lib/discovery';
 import { warmPosterImages } from '@/lib/poster-preload';
+import { persistRegionSelection } from '@/lib/region-selection';
 
 // Custom Hooks
 import { useUserPreferences } from '@/hooks/useUserPreferences';
@@ -417,15 +418,43 @@ export default function PerformanceList({
         setSelectedDistrict('all');
         setSelectedVenue('all');
         setDiscoveryContextId('all');
+        setSelectedDateFilter(null);
+        setSelectedPriceTier(null);
         setSearchLocation(null);
+        setUserLocation(null);
         setSearchText('');
+        setSearchMode('keyword');
+        setIsDropdownOpen(false);
         setViewMode('grid');
-        if (searchParams.has('q')) {
-            router.replace('/');
-        } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        persistRegionSelection('all', 'all', 'all');
+
+        if (typeof window !== 'undefined') {
+            try {
+                sessionStorage.removeItem('cf_state_all');
+                sessionStorage.removeItem(`cf_state_${selectedGenre}`);
+            } catch {}
         }
-    }, [setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, setSearchLocation, setSearchText, setViewMode, searchParams, router]);
+
+        router.replace('/');
+        if (typeof window !== 'undefined') {
+            window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+    }, [
+        router,
+        selectedGenre,
+        setIsDropdownOpen,
+        setSearchLocation,
+        setSearchMode,
+        setSearchText,
+        setSelectedDateFilter,
+        setSelectedDistrict,
+        setSelectedGenre,
+        setSelectedPriceTier,
+        setSelectedRegion,
+        setSelectedVenue,
+        setUserLocation,
+        setViewMode
+    ]);
 
     const handleGenreSelect = useCallback((g: string) => {
         setSelectedGenre(g);
@@ -708,7 +737,10 @@ export default function PerformanceList({
                         onDateFilterChange={handleDateChipChange}
                         selectedPriceTier={selectedPriceTier}
                         onPriceTierChange={handlePriceChipChange}
-                        onResetFilters={handleResetLocationSearch}
+                        selectedRegion={selectedRegion}
+                        selectedDistrict={selectedDistrict}
+                        selectedVenue={selectedVenue}
+                        onResetFilters={resetHome}
                         onRadiusChange={setRadius}
                     />
 
