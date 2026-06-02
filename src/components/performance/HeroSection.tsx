@@ -4,8 +4,7 @@ import { ChevronDown, RotateCcw, Search, X, Star, MapPin, Clock, TrendingUp } fr
 import { TypingHero } from './TypingHero';
 import { LocationSelector } from '../LocationSelector';
 import { HeroTemplate } from '../../lib/hero-templates';
-import { REGIONS } from '../../lib/constants';
-import { getRegionSelectionLabel, parseRegionSelection } from '../../lib/region-selection';
+import { getRegionSelectionLabel, getRegionSelectionSentenceLabel, parseRegionSelection } from '../../lib/region-selection';
 
 interface HeroSectionProps {
     heroText: HeroTemplate;
@@ -285,12 +284,15 @@ export default function HeroSection({
                 return { ...searchMsgs[0], keywords: [] } as HeroTemplate;
             }
             return { ...searchMsgs[rotationSeed % searchMsgs.length], keywords: [] } as HeroTemplate;
-        } else if (selectedRegion !== 'all' || selectedVenue !== 'all') {
-            const regionName = selectedRegion !== 'all' ? REGIONS.find(r => r.id === selectedRegion)?.label : '';
-            const locationString = `${regionName || ''} ${selectedDistrict !== 'all' ? selectedDistrict : ''} ${selectedVenue !== 'all' ? selectedVenue : ''}`.trim();
+        } else if (parseRegionSelection(selectedRegion).length > 0 || selectedVenue !== 'all') {
+            const regionLabel = getRegionSelectionSentenceLabel(selectedRegion, selectedDistrict);
+            const locationString = [regionLabel !== '전국' ? regionLabel : '', selectedVenue !== 'all' ? selectedVenue : '']
+                .filter(Boolean)
+                .join(' ')
+                .trim();
 
             const locationMsgs = [
-                { line1: "현재,", boldPrefix: locationString, line2Pre: "에서 진행중인 ", highlight: "문화 정보", suffix: "들이에요." },
+                { line1: "현재", boldPrefix: locationString, line2Pre: "에서 진행중인 ", highlight: "문화 정보", suffix: "들이에요." },
                 { line1: "지금,", boldPrefix: locationString, line2Pre: " 주변의 ", highlight: "핫한 무대", suffix: "를 확인해보세요." },
                 { line1: "우리 동네,", boldPrefix: locationString, line2Pre: " 숨은 ", highlight: "문화 예술", suffix: "을 찾아줄게요." }
             ];

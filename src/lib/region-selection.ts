@@ -5,9 +5,15 @@ export const REGION_SELECTION_EVENT = 'cultureflow:region-selection-change';
 
 export type DistrictSelectionMap = Record<string, string[]>;
 
+function normalizeRegionId(region?: string | null) {
+  const value = region?.trim();
+  if (!value || value === 'all') return value || '';
+  return REGIONS.find((item) => item.id === value || item.label === value)?.id || value;
+}
+
 export function parseRegionSelection(value?: string | null): string[] {
   if (!value || value === 'all') return [];
-  return Array.from(new Set(value.split(',').map((v) => v.trim()).filter(Boolean).filter((v) => v !== 'all')));
+  return Array.from(new Set(value.split(',').map((v) => normalizeRegionId(v)).filter(Boolean).filter((v) => v !== 'all')));
 }
 
 export function serializeRegionSelection(regionIds: string[]) {
@@ -20,7 +26,7 @@ export function parseDistrictSelection(value?: string | null, fallbackRegion?: s
   const map: DistrictSelectionMap = {};
   value.split('|').map((v) => v.trim()).filter(Boolean).forEach((token) => {
     const [regionRaw, districtRaw] = token.includes(':') ? token.split(':') : [fallbackRegion || '', token];
-    const region = regionRaw?.trim();
+    const region = normalizeRegionId(regionRaw);
     const district = districtRaw?.trim();
     if (!region || !district || district === 'all') return;
     if (!map[region]) map[region] = [];
@@ -50,6 +56,19 @@ export function getRegionSelectionLabel(regionValue?: string | null, districtVal
     if (!selectedDistricts.length) return label;
     return `${label} ${selectedDistricts.join(', ')}`;
   }).join(' / ');
+}
+
+export function getRegionSelectionSentenceLabel(regionValue?: string | null, districtValue?: string | null) {
+  const regions = parseRegionSelection(regionValue);
+  if (regions.length === 0) return '전국';
+  const districts = parseDistrictSelection(districtValue, regions[0]);
+
+  return regions.map((region) => {
+    const selectedDistricts = districts[region] || [];
+    const label = getRegionLabel(region);
+    if (!selectedDistricts.length) return label;
+    return `${label} ${selectedDistricts.join(', ')}`;
+  }).join(', ');
 }
 
 export function persistRegionSelection(region: string, district: string, venue = 'all') {
