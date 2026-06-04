@@ -215563,5 +215563,4635 @@
     "synopsisImages": [
       "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF290735_202606020403438510.jpg"
     ]
+  },
+  {
+    "id": "kopis_PF292729",
+    "title": "제2회 국악의 날 기념식: 국악, 일상의 울림이 되다",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292729_260601_171101.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292729_260601_171101.jpg",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "국립국악원 (예악당)",
+    "venueId": "FC000009",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292729",
+    "genre": "한국음악(국악)",
+    "price": "전석무료",
+    "time": "금요일(17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "박애리"
+    ],
+    "runtime": "1시간 10분",
+    "age": "만 7세 이상",
+    "production": "문화체육관광부",
+    "host": "문화체육관광부",
+    "organizer": "(재)전통공연예술진흥재단, 국립국악원",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:06.298Z",
+    "venuePhone": "02-580-3300",
+    "venueHomepage": "http://www.gugak.go.kr",
+    "venueFacilityType": "국립",
+    "venueSeatScale": "2449",
+    "venueTheaterCount": "5",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "국립 · 식당, 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292729_202606010511011690.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292712",
+    "title": "제6회 샘이맑은소리, 오재영의 민요: 창천초행 (蒼天初行)",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292712_260601_154749.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292712_260601_154749.jpg",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "선릉아트홀 (선릉아트홀)",
+    "venueId": "FC002517",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292712",
+    "genre": "한국음악(국악)",
+    "price": "전석 20,000원",
+    "time": "금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "오재영",
+      "양슬기",
+      "이기수",
+      "전미선",
+      "김예진"
+    ],
+    "runtime": "1시간",
+    "age": "전체 관람가",
+    "production": "선릉아트홀(구. 아트홀 가얏고을)",
+    "host": "선릉아트홀(구. 아트홀 가얏고을)",
+    "organizer": "선릉아트홀(구. 아트홀 가얏고을)",
+    "planner": "선릉아트홀(구. 아트홀 가얏고을)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:06.719Z",
+    "venuePhone": "02-553-0067",
+    "venueHomepage": "http://www.gayatarthall.com/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "77",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292712_202606010347498961.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292712_202606010347498910.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292591",
+    "title": "변정은 & 유예지 피아노 듀오 리사이틀",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292591_260601_105158.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292591_260601_105158.png",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "꿈의숲아트센터 (콘서트홀)",
+    "venueId": "FC000567",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292591",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "변정은",
+      "유예지"
+    ],
+    "runtime": "1시간 15분",
+    "age": "만 5세 이상",
+    "production": "뮤지우인 클래시카",
+    "host": "뮤지우인 클래시카",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 5세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:07.126Z",
+    "venuePhone": "02-2289-5401",
+    "venueHomepage": "http://www.dfac.or.kr/main/main.asp",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "584",
+    "venueTheaterCount": "4",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292591_202606011051588681.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292591_202606011051588590.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292450",
+    "title": "제375회 창원시립교향악단 정기연주회",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292450_260528_135807.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292450_260528_135807.png",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "성산아트홀 (대극장)",
+    "venueId": "FC000885",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292450",
+    "genre": "서양음악(클래식)",
+    "price": "전석무료",
+    "time": "금요일(19:30)",
+    "region": "경상남도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김건",
+      "김태형"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "창원시립예술단",
+    "host": "창원시립예술단",
+    "organizer": "창원시립교향악단",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-28 15:00:04.153722",
+    "dataCollectedAt": "2026-06-04T20:13:07.553Z",
+    "venuePhone": "055-268-7900",
+    "venueHomepage": "http://www.cwcf.or.kr/facility/facility_sungsan.asp",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "2560",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "식당"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292450_202605280158072640.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292380",
+    "title": "단국대학교 공연영화학부 연극전공 졸업공연: 파랑새",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292380_260528_102139.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292380_260528_102139.png",
+    "date": "2026.06.05 ~ 2026.06.06",
+    "venue": "단국대학교 죽전캠퍼스 (체육관 극장 젊음)",
+    "venueId": "FC004477",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292380",
+    "genre": "연극",
+    "price": "전석무료",
+    "time": "금요일(19:00), 토요일(14:00,18:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "강동호",
+      "김건보",
+      "박새봄",
+      "박서현",
+      "박선영",
+      "박윤진",
+      "박희윤"
+    ],
+    "crew": [
+      "임하은",
+      "권예영",
+      "황미나"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "단국대학교 공연영화학부",
+    "host": "단국대학교 공연영화학부",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-28 15:00:04.153722",
+    "dataCollectedAt": "2026-06-04T20:13:07.950Z",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292380_202605281021391590.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292295",
+    "title": "대구시립교향악단, 스쿨콘서트 2: Classics in K-Pop (06.05)",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292295_260527_104638.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292295_260527_104638.gif",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "대구콘서트하우스 (그랜드홀 (대공연장) )",
+    "venueId": "FC001193",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292295",
+    "genre": "서양음악(클래식)",
+    "price": "전석 15,000원",
+    "time": "금요일(14:00)",
+    "region": "대구광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "백진현",
+      "이정현"
+    ],
+    "crew": [
+      "백진현"
+    ],
+    "runtime": "1시간",
+    "age": "만 7세 이상",
+    "production": "대구문화예술회관",
+    "host": "대구문화예술진흥원, 대구문화예술회관",
+    "organizer": "대구시립교향악단",
+    "planner": "대구문화예술회관",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "15,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-27 15:00:04.230096",
+    "dataCollectedAt": "2026-06-04T20:13:08.357Z",
+    "venuePhone": "053-250-1400",
+    "venueHomepage": "https://daeguconcerthouse.or.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "2192",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 카페, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292295_202605271046388582.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292295_202605271046388451.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292295_202605271046388360.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292272",
+    "title": "사슴코딱코의 재판 [월산초초등학교]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292204_260526_134534.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292204_260526_134534.png",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "남양주월산초등학교 (남양주월산초등학교)",
+    "venueId": "FC004899",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292272",
+    "genre": "뮤지컬",
+    "price": "전석 10,000원",
+    "time": "금요일(10:30)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간",
+    "age": "만 7세 이상",
+    "production": "",
+    "host": "",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-27 15:00:04.230096",
+    "dataCollectedAt": "2026-06-04T20:13:08.777Z",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292204_202605260145345960.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292245",
+    "title": "ONE HOUR [부산] (6월)",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292245_260526_153651.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292245_260526_153651.png",
+    "date": "2026.06.05 ~ 2026.06.26",
+    "venue": "KT&G 상상마당 라이브홀 [부산] (라이브홀)",
+    "venueId": "FC002785",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292245",
+    "genre": "대중음악",
+    "price": "전석 10,000원",
+    "time": "금요일(19:00)",
+    "region": "부산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "정봉길",
+      "고형석",
+      "이루리",
+      "윤혜린",
+      "정동욱",
+      "최해성",
+      "조현아"
+    ],
+    "runtime": "1시간",
+    "age": "만 14세 이상",
+    "production": "(주)코르부스 CORVUS",
+    "host": "(주)코르부스 CORVUS",
+    "organizer": "(주)코르부스 CORVUS",
+    "planner": "(주)코르부스 CORVUS",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 14세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-26 18:00:04.062792",
+    "dataCollectedAt": "2026-06-04T20:13:09.190Z",
+    "venuePhone": "051-809-5555",
+    "venueHomepage": "https://www.sangsangmadang.com/main/BS",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "217",
+    "venueTheaterCount": "5",
+    "venueAmenities": [
+      "카페"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292245_202605260336513190.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292214",
+    "title": "제1295회 서초금요음악회, Shall We Dance?",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292214_260526_141258.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292214_260526_141258.jpg",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "서초문화예술회관(구. 서초구민회관) (아트홀(대강당))",
+    "venueId": "FC001485",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292214",
+    "genre": "서양음악(클래식)",
+    "price": "전석 5,000원",
+    "time": "금요일(19:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "정재희",
+      "김민정",
+      "김사란",
+      "박현",
+      "황소진",
+      "이윤숙"
+    ],
+    "crew": [
+      "김에스더"
+    ],
+    "runtime": "1시간 50분",
+    "age": "만 7세 이상",
+    "production": "서초구청",
+    "host": "서초구청",
+    "organizer": "서초구청",
+    "planner": "서초구청",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "5,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-26 15:00:04.095277",
+    "dataCollectedAt": "2026-06-04T20:13:09.590Z",
+    "venuePhone": "02-2155-8301",
+    "venueHomepage": "http://www.seocho.go.kr/site/seocho/04/10404021401002015070703.jsp",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "690",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292214_202605260212588640.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292146",
+    "title": "ASE vol.2: LOCAL PREQUENCY",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292146_260526_110640.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292146_260526_110640.jpg",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "그랜드하얏트서울 (JJ마호니스)",
+    "venueId": "FC002364",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292146",
+    "genre": "대중음악",
+    "price": "전석 30,000원",
+    "time": "금요일(20:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김찬능",
+      "이정욱",
+      "이삼수",
+      "이찬진",
+      "채지호"
+    ],
+    "runtime": "6시간 30분",
+    "age": "만 19세 이상",
+    "production": "그랜드 하얏트 서울(GRAND HYATT HOTEL SEOUL)",
+    "host": "그랜드 하얏트 서울(GRAND HYATT HOTEL SEOUL)",
+    "organizer": "그랜드 하얏트 서울(GRAND HYATT HOTEL SEOUL)",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 19세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-26 15:00:04.095277",
+    "dataCollectedAt": "2026-06-04T20:13:10.000Z",
+    "venuePhone": "02-797-1234",
+    "venueHomepage": "https://www.hyatt.com/ko-KR/hotel/south-korea/grand-hyatt-seoul/selrs",
+    "venueFacilityType": "기타(비공연장)",
+    "venueSeatScale": "715",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장) · 식당, 카페, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292146_202605261106402610.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292034",
+    "title": "IMAGINE the Stage, IMAGINE #01: DECEMBER",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292034_260522_113109.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292034_260522_113109.png",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "홍대 카페 (구.홍대카페) (STAGE (B1) )",
+    "venueId": "FC003917",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292034",
+    "genre": "대중음악",
+    "price": "전석 77,000원",
+    "time": "금요일(20:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "한대규",
+      "박은비"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "(주) 이매진프로",
+    "host": "(주) 이매진프로, 홍대스테이지(ㅎㄷ스테이지)",
+    "organizer": "(주) 이매진프로, 홍대스테이지(ㅎㄷ스테이지)",
+    "planner": "(주) 이매진프로",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "77,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-05-22 15:00:04.495363",
+    "dataCollectedAt": "2026-06-04T20:13:10.408Z",
+    "venuePhone": "010-8877-5497",
+    "venueHomepage": "https://www.hongdaecafe.co.kr/main",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "650",
+    "venueTheaterCount": "4",
+    "venueAmenities": [
+      "카페"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292034_202605221131098270.png"
+    ]
+  },
+  {
+    "id": "kopis_PF291988",
+    "title": "호국보훈유월음악회 [논산]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF291988_260521_142057.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF291988_260521_142057.png",
+    "date": "2026.06.05 ~ 2026.06.05",
+    "venue": "건양대학교 (문화콘서트홀)",
+    "venueId": "FC002396",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF291988",
+    "genre": "복합",
+    "price": "1층석 20,000원\n2층석 10,000원",
+    "time": "금요일(19:30)",
+    "region": "충청남도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "장사익",
+      "유준상",
+      "오만석",
+      "박건형"
+    ],
+    "runtime": "2시간",
+    "age": "만 7세 이상",
+    "production": "논산문화원",
+    "host": "논산문화원",
+    "organizer": "",
+    "planner": "논산문화원",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "기본",
+        "price": "1원"
+      },
+      {
+        "label": "기본",
+        "price": "2원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연중",
+    "lastModifiedAt": "2026-06-02 18:00:04.096267",
+    "dataCollectedAt": "2026-06-04T20:13:10.815Z",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF291988_202605210220577900.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292747",
+    "title": "SAC ON SCREEN, 마술피리 [제주] (영상화)",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292747_260602_103929.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292747_260602_103929.png",
+    "date": "2026.06.16 ~ 2026.06.16",
+    "venue": "제주문예회관 (대극장)",
+    "venueId": "FC000260",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292747",
+    "genre": "서양음악(클래식)",
+    "price": "전석무료",
+    "time": "화요일(19:00)",
+    "region": "제주특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간 45분",
+    "age": "전체 관람가",
+    "production": "제주특별자치도 문화예술진흥원",
+    "host": "제주특별자치도 문화예술진흥원",
+    "organizer": "제주특별자치도 문화예술진흥원",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:15.513Z",
+    "venuePhone": "064-710-7641",
+    "venueHomepage": "http://www.jeju.go.kr/jejuculture/index.htm",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "998",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "놀이방",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 놀이방, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292747_202606021039295221.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292747_202606021039295120.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292746",
+    "title": "변진섭 전국투어 콘서트: 변천사 시즌2.5: 시간여행 [대구]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292746_260602_103704.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292746_260602_103704.gif",
+    "date": "2026.08.30 ~ 2026.08.30",
+    "venue": "아양아트센터 (아양홀)",
+    "venueId": "FC001169",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292746",
+    "genre": "대중음악",
+    "price": "VIP석 132,000원\nR석 110,000원\nS석 88,000원",
+    "time": "일요일(17:00)",
+    "region": "대구광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "변진섭"
+    ],
+    "runtime": "2시간",
+    "age": "만 7세 이상",
+    "production": "(주)좋은콘서트",
+    "host": "굿초이스",
+    "organizer": "(주)베리굿",
+    "planner": "굿초이스",
+    "producer": "(주)좋은콘서트",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "132,000원"
+      },
+      {
+        "label": "R석",
+        "price": "110,000원"
+      },
+      {
+        "label": "S석",
+        "price": "88,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:15.922Z",
+    "venuePhone": "053-951-3300",
+    "venueHomepage": "http://www.ayangarts.or.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "1700",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292746_202606021037040190.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292745",
+    "title": "박상민 LOVE 콘서트 [대전]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292745_260602_103245.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292745_260602_103245.gif",
+    "date": "2026.07.04 ~ 2026.07.05",
+    "venue": "우송예술회관 (우송예술회관)",
+    "venueId": "FC000472",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292745",
+    "genre": "대중음악",
+    "price": "R석 130,000원\nS석 100,000원",
+    "time": "토요일(18:00), 일요일(16:00)",
+    "region": "대전광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "박상민"
+    ],
+    "runtime": "2시간",
+    "age": "만 7세 이상",
+    "production": "(주)엔엔터테인먼트",
+    "host": "팍스뮤직엔터테인먼트",
+    "organizer": "팍스뮤직엔터테인먼트",
+    "planner": "(주)엔엔터테인먼트",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "130,000원"
+      },
+      {
+        "label": "S석",
+        "price": "100,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:16.336Z",
+    "venuePhone": "042-629-6363",
+    "venueHomepage": "https://woosongart.wsu.ac.kr:444/main/index.jsp",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "1189",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292745_202606021032454570.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292744",
+    "title": "G-STAGE Vol.7: 신인류 콘서트 [경기 광주]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292744_260602_103152.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292744_260602_103152.gif",
+    "date": "2026.07.04 ~ 2026.07.04",
+    "venue": "광주시문화예술의전당 (구. 남한산성아트홀) (맹사성홀)",
+    "venueId": "FC000110",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292744",
+    "genre": "대중음악",
+    "price": "전석 50,000원",
+    "time": "토요일(17:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "하형언",
+      "신온유",
+      "문정환"
+    ],
+    "runtime": "1시간 10분",
+    "age": "만 7세 이상",
+    "production": "(재)광주시문화재단 [경기광주]",
+    "host": "(재)광주시문화재단 [경기광주]",
+    "organizer": "(재)광주시문화재단 [경기광주]",
+    "planner": "(재)광주시문화재단 [경기광주]",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:16.742Z",
+    "venuePhone": "031-760-4466",
+    "venueHomepage": "https://www.nsart.or.kr",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "1308",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292744_202606021031525410.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292743",
+    "title": "제11회 Mproject 공존 정기연주회 [대전]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292743_260602_103151.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292743_260602_103151.gif",
+    "date": "2026.06.17 ~ 2026.06.17",
+    "venue": "대전예술의전당 (앙상블홀)",
+    "venueId": "FC000076",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292743",
+    "genre": "서양음악(클래식)",
+    "price": "전석 10,000원",
+    "time": "수요일(19:30)",
+    "region": "대전광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "crew": [
+      "박소라",
+      "정수화",
+      "김지선"
+    ],
+    "runtime": "1시간 20분",
+    "age": "만 7세 이상",
+    "production": "피아트(P-ART) [대전]",
+    "host": "Mproject 공존, 피아트(P-ART) [대전]",
+    "organizer": "",
+    "planner": "피아트(P-ART) [대전]",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:17.161Z",
+    "venuePhone": "042-270-8333",
+    "venueHomepage": "https://www.daejeon.go.kr/djac/index.do",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "3039",
+    "venueTheaterCount": "4",
+    "venueAmenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 카페, 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292743_202606021031514190.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292742",
+    "title": "나루아티스트와 함께하는 살롱음악회, 소노로스 앙상블 (6월)",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292742_260602_102846.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292742_260602_102846.gif",
+    "date": "2026.06.24 ~ 2026.06.24",
+    "venue": "나루아트센터 (갤러리(전시실))",
+    "venueId": "FC000039",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292742",
+    "genre": "서양음악(클래식)",
+    "price": "전석 1,000원",
+    "time": "수요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "함유진",
+      "김신혜",
+      "조혜령",
+      "양재춘",
+      "나인국"
+    ],
+    "crew": [
+      "이신규"
+    ],
+    "runtime": "1시간",
+    "age": "만 7세 이상",
+    "production": "(재)광진문화재단",
+    "host": "문화체육관광부",
+    "organizer": "(재)광진문화재단, 한국문화예술회관연합회(KoCACA)",
+    "planner": "(재)광진문화재단",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "1,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:17.548Z",
+    "venuePhone": "02-2049-4711",
+    "venueHomepage": "http://www.naruart.or.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "785",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292742_202606021028461400.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292740",
+    "title": "LIVE in SETi vol.85",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292740_260602_102454.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292740_260602_102454.jpg",
+    "date": "2026.06.09 ~ 2026.06.09",
+    "venue": "세티 라이브홀 (SETI LIVE HALL) (세티 라이브홀 (SETI LIVE HALL) )",
+    "venueId": "FC004237",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292740",
+    "genre": "대중음악",
+    "price": "현장판매 25,000원\n사전예약 20,000원",
+    "time": "화요일(18:50)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "2시간",
+    "age": "전체 관람가",
+    "production": "(주) 수소엔터테인먼트 (SOOSO Ent.), 세티 라이브홀(SETi LIVE HALL)",
+    "host": "(주) 수소엔터테인먼트 (SOOSO Ent.), 세티 라이브홀(SETi LIVE HALL)",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "현장판매",
+        "price": "25,000원"
+      },
+      {
+        "label": "사전예약",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 18:00:04.096267",
+    "dataCollectedAt": "2026-06-04T20:13:17.964Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "0",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 화장실"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 장애인 화장실",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292740_202606021024544251.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292740_202606021024543840.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292738",
+    "title": "구원찬 단독 콘서트: 빈자리",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292738_260602_101808.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292738_260602_101808.jpg",
+    "date": "2026.06.21 ~ 2026.06.21",
+    "venue": "Vel.R 벨르 (구. 벨로주 [홍대]) (Vel.R 벨르 (구. 벨로주 [홍대]))",
+    "venueId": "FC002035",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292738",
+    "genre": "대중음악",
+    "price": "전석 77,000원",
+    "time": "일요일(14:00,18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "구원찬"
+    ],
+    "runtime": "1시간 30분",
+    "age": "전체 관람가",
+    "production": "authentic (어센틱)",
+    "host": "authentic (어센틱)",
+    "organizer": "authentic (어센틱)",
+    "planner": "authentic (어센틱)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "77,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:18.366Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "123",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292738_202606021018080870.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292737",
+    "title": "ABOUT (어바웃) 단독 콘서트: Diver’s Cabin",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292737_260602_101807.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292737_260602_101807.jpg",
+    "date": "2026.06.27 ~ 2026.06.27",
+    "venue": "Vel.R 벨르 (구. 벨로주 [홍대]) (Vel.R 벨르 (구. 벨로주 [홍대]))",
+    "venueId": "FC002035",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292737",
+    "genre": "대중음악",
+    "price": "전석 77,000원",
+    "time": "토요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간 40분",
+    "age": "만 7세 이상",
+    "production": "스튜디오 빅블루(Studio Big Blue)",
+    "host": "스튜디오 빅블루(Studio Big Blue)",
+    "organizer": "스튜디오 빅블루(Studio Big Blue)",
+    "planner": "스튜디오 빅블루(Studio Big Blue)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "77,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:18.774Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "123",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292737_202606021018075090.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292736",
+    "title": "중구소년소녀합창단 기획연주회: 노래하는 개구쟁이들 [울산]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292736_260602_101818.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292736_260602_101818.png",
+    "date": "2026.06.20 ~ 2026.06.20",
+    "venue": "울산중구문화의전당 (함월홀 (2층) )",
+    "venueId": "FC001328",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292736",
+    "genre": "서양음악(클래식)",
+    "price": "전석무료",
+    "time": "토요일(17:00)",
+    "region": "울산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "조나리",
+      "백송이",
+      "황성호",
+      "임상훈"
+    ],
+    "crew": [
+      "최윤정",
+      "조나리",
+      "백소희"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "중구소년소녀합창단",
+    "host": "울산광역시 중구문화의전당",
+    "organizer": "중구소년소녀합창단",
+    "planner": "중구소년소녀합창단",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:19.192Z",
+    "venuePhone": "052-290-4000",
+    "venueHomepage": "http://artscenter.junggu.ulsan.kr",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "1022",
+    "venueTheaterCount": "5",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 카페, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292736_202606021015155770.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292735",
+    "title": "세상 참 예쁜 오드리 [대학로]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292735_260602_101515.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292735_260602_101515.gif",
+    "date": "2026.07.01 ~ 2026.07.19",
+    "venue": "드림시어터 [대학로] (소극장)",
+    "venueId": "FC001218",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292735",
+    "genre": "연극",
+    "price": "전석 55,000원",
+    "time": "화요일 ~ 금요일(19:30), 토요일 ~ 일요일(15:00,18:00), HOL(15:00,18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김경란",
+      "정애연",
+      "도은우",
+      "원성준",
+      "김민아",
+      "한지우",
+      "이서희"
+    ],
+    "crew": [
+      "정시연",
+      "이영국",
+      "이효숙"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "브릿지제이",
+    "host": "브릿지제이",
+    "organizer": "브릿지제이, 에이엔컴퍼니(AYEN Company)",
+    "planner": "브릿지제이",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "55,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:19.588Z",
+    "venuePhone": "010-3749-0221",
+    "venueHomepage": "https://bulltheatre.modoo.at/?link=cb6i15sg",
+    "venueFacilityType": "민간(대학로)",
+    "venueSeatScale": "126",
+    "venueTheaterCount": "1",
+    "venueAmenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292735_202606021015150481.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292735_202606021015150380.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292734",
+    "title": "로데아트센터 개관 2주년 기념 FRIENDS 시리즈: 피피남 & Friends",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292734_260602_101041.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292734_260602_101041.gif",
+    "date": "2026.12.19 ~ 2026.12.19",
+    "venue": "로데아트센터 (콘서트홀)",
+    "venueId": "FC003861",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292734",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "토요일(19:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "이윤혁"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 6세 이상",
+    "production": "(주) 악기거리 로데클래식(RODE CLASSIC)",
+    "host": "(주) 악기거리 로데클래식(RODE CLASSIC)",
+    "organizer": "(주) 악기거리 로데클래식(RODE CLASSIC)",
+    "planner": "(주) 악기거리 로데클래식(RODE CLASSIC)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 6세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:20.006Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "349",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292734_202606021010413640.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292733",
+    "title": "유리 킴 콘서트: 바람의 노래",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292733_260602_101040.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292733_260602_101040.jpg",
+    "date": "2026.06.28 ~ 2026.06.28",
+    "venue": "살롱 문보우 (살롱 문보우)",
+    "venueId": "FC002040",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292733",
+    "genre": "대중음악",
+    "price": "전석 33,000원",
+    "time": "일요일(17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "헉스뮤직",
+    "host": "헉스뮤직",
+    "organizer": "헉스뮤직",
+    "planner": "헉스뮤직",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "33,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:20.404Z",
+    "venuePhone": "02-322-6406",
+    "venueHomepage": "https://www.instagram.com/salon.moonbow/",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292733_202606021010405420.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292732",
+    "title": "어바웃타임 [대학로]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292732_260602_101013.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292732_260602_101013.jpg",
+    "date": "2026.07.03 ~ 2026.07.05",
+    "venue": "성균소극장 (성균소극장)",
+    "venueId": "FC001262",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292732",
+    "genre": "연극",
+    "price": "전석 50,000원",
+    "time": "금요일(19:30), 토요일(14:00,17:00,19:30), 일요일(14:00,17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김윤식",
+      "이슬기",
+      "홍채현",
+      "박범석"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 9세 이상",
+    "production": "(주)플레이더부산",
+    "host": "(주)플레이더부산",
+    "organizer": "극단 파아란",
+    "planner": "(주)플레이더부산",
+    "producer": "(주)플레이더부산",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "만 9세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:20.820Z",
+    "venuePhone": "02-747-5035",
+    "venueHomepage": "http://sktheater.modoo.at/",
+    "venueFacilityType": "민간(대학로)",
+    "venueSeatScale": "180",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292732_202606021010137410.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292731",
+    "title": "페인터즈 [예천]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292731_260602_100743.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292731_260602_100743.jpg",
+    "date": "2026.06.19 ~ 2026.06.19",
+    "venue": "예천군문화회관 (예천군문화회관)",
+    "venueId": "FC001190",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292731",
+    "genre": "뮤지컬",
+    "price": "전석 10,000원",
+    "time": "금요일(19:30)",
+    "region": "경상북도",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간 15분",
+    "age": "만 3세 이상",
+    "production": "(재)예술경영지원센터",
+    "host": "(재)예술경영지원센터",
+    "organizer": "(재)예천문화관광재단, (주)펜타토닉",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 3세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 15:00:04.112713",
+    "dataCollectedAt": "2026-06-04T20:13:21.227Z",
+    "venuePhone": "054-650-6422",
+    "venueHomepage": "http://www.ycg.kr/open.content/culture/center/facilities/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "711",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292731_202606021007434830.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292728",
+    "title": "제253회 울산시립교향악단 정기연주회: 사랑, 상실, 그리고 내면의 진실 [울산]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292728_260601_170441.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292728_260601_170441.jpg",
+    "date": "2026.10.16 ~ 2026.10.16",
+    "venue": "울산문화예술회관 (대공연장)",
+    "venueId": "FC000081",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292728",
+    "genre": "서양음악(클래식)",
+    "price": "R석 20,000원\nS석 15,000원\nA석 10,000원",
+    "time": "금요일(19:30)",
+    "region": "울산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "사샤 괴첼",
+      "이유빈"
+    ],
+    "runtime": "1시간 40분",
+    "age": "만 7세 이상",
+    "production": "울산광역시청",
+    "host": "울산광역시청",
+    "organizer": "울산시립예술단",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "20,000원"
+      },
+      {
+        "label": "S석",
+        "price": "15,000원"
+      },
+      {
+        "label": "A석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:21.631Z",
+    "venuePhone": "052-266-8282",
+    "venueHomepage": "http://ucac.ulsan.go.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "2550",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292728_202606010504411000.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292722",
+    "title": "All Day, JAZZ SHOW! (올데이, 재즈쇼!) ALLDAY (1부+2부)",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292722_260601_161736.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292722_260601_161736.png",
+    "date": "2026.06.21 ~ 2026.06.21",
+    "venue": "이들스 (이들스(2F))",
+    "venueId": "FC003913",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292722",
+    "genre": "대중음악",
+    "price": "올데이티켓(1부+2부) 40,000원\n올데이패키지 148,000원",
+    "time": "일요일(14:00,19:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "최혜진",
+      "임보영",
+      "함희태",
+      "김선호",
+      "김예림",
+      "고현지",
+      "박엽"
+    ],
+    "runtime": "4시간",
+    "age": "전체 관람가",
+    "production": "EDLS",
+    "host": "EDLS",
+    "organizer": "EDLS, 올댓재즈(All That Jazz)",
+    "planner": "EDLS",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "올데이티켓(",
+        "price": "1원"
+      },
+      {
+        "label": "올데이패키지",
+        "price": "148,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 10:54:49",
+    "dataCollectedAt": "2026-06-04T20:13:22.033Z",
+    "venuePhone": "02-763-0921",
+    "venueHomepage": "https://www.instagram.com/edls_official",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292722_202606010417368703.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292722_202606010417368382.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292722_202606010417368181.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292722_202606010417368020.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292719",
+    "title": "아이재아 제이 톰슨 트리오 첫 내한공연",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292719_260601_161033.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292719_260601_161033.gif",
+    "date": "2026.07.26 ~ 2026.07.26",
+    "venue": "푸르지오아트홀 (푸르지오아트홀)",
+    "venueId": "FC002246",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292719",
+    "genre": "대중음악",
+    "price": "전석 88,000원",
+    "time": "일요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "아이재아 제이 톰슨"
+    ],
+    "runtime": "1시간 20분",
+    "age": "만 6세 이상",
+    "production": "재즈브릿지컴퍼니",
+    "host": "재즈브릿지컴퍼니",
+    "organizer": "재즈브릿지컴퍼니",
+    "planner": "재즈브릿지컴퍼니",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "88,000원"
+      }
+    ],
+    "ageDetail": "만 6세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:22.436Z",
+    "venuePhone": "02-2288-2864",
+    "venueHomepage": "http://prugioarthall.daewooenc.com/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "280",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 식당, 카페, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsis": "[공연소개]\n\n아이재아 제이 톰슨 트리오 첫 내한공연\nIsaiah J. Thompson Trio First Live in Seoul\n\n<현재 가장 주목받는 미국 정통 재즈계의 라이징 스타>\n피아니스트겸 작곡가인 아이재아 제이 톰슨은 2023년 American Piano Awards의 수상자이며, 스타인웨이 아티스트로 선정된 탁월한 젊은 피아니스트이다. 그는 현재 가장 많은 러브콜을 받는 정통 재즈 피아니스트로 론 카터, 윈턴 마살리스, 크리스찬 맥브라이드, 그리고 존 피자렐리와 같은 재즈 거장들과 함께 연주하고 있다.그는 미국 링컨센터, 디트로이트 재즈페스티벌, NPR 타이니 데스크 등 다양한 무대와 미디어에서 초청공연을 하고 있으며, 그가 최신 발매한 음반 “The Book of Isaiah”는 가스펠과 블루스의 영향과 재즈를 절묘하게 섞어 다수의 매체에서 높은 평가를 받았다.한국 첫 내한공연이 될 그의 연주는 미국 정통 재즈의 명맥을 이어가는 젊은 피아니스트의 연주와 더불어 미국 뉴욕 재즈씬의 미래를 생생하게 목격하는 공연이 될 것이다. 특히 뉴욕 재즈씬에서 이미 힙합과 재즈의 감각적인 조화로 주목받고 있는 트리오 “New Jazz Underground”의 베이시스트 세바스찬 리오스, 그리고 클레이튼 형제 및 베니 그린과 함께 연주를 해온 드러머 데이비드 알바레즈 3세가 참여하며 보다 현대적인 감각이 살아있는 정통재즈를 들려줄 예정이다.\n\n공연 관람 포인트\nPoint 1. 뉴욕 정통 재즈 (Straight Ahead Jazz)로 평가받는 흥겹고 역동적인 연주\nPoint 2. 스타인웨이 아티스트로 선정된 미국 재즈 라이징 스타의 탁월한 연주\nPoint 3. 미국 뉴욕 재즈씬을 대표하는 젊은 연주자들의 세련되고 현대적인 연주\n\n“그의 음악은 신앙, 음악, 인종과 인류애를 보다 희망적으로 높이 올리는 정신을 담고있다” – 재즈 타임즈\n\n<이사야 제이 톰슨 프로필>\n미국 뉴저지 출신으로 줄리어드 음대를 졸업한 피아니스트 이사야 제이 톰슨은 일찍부터 두각을 나타낸 정통 재즈의 기대주이다. 2018년에는 국제적으로 가장 권위있는 재즈 컴페티션인 델로니어스 몽크 컴페티션의 2위를 수상하며, 같은 해 링컨센터의 Emerging Artists Award를 수상하였다. 2019년 윈턴 마살리스가 이끄는 Young Stars of Jazz 프로젝트에 선정되어 Jazz in Marciac 페스티벌과 유럽투어 공연을 했던 그는 같은 해에 스윙 기타의 전설 존 피자렐리의 트리오 멤버로 발탁되어 현재까지도 같이 활동하고 있다.\n\n미국에서 높은 권위를 자랑하는 아메리칸 피아노 어워즈를 2023년에 수상하고, 2024년에는 정식으로 자신이 졸업한 줄리어드 음대의 최연소 교수로 채용되었다. 그의 음악은 재즈의 뿌리인 블루스와 가스펠을 기반으로 영혼을 더욱 풍요롭게 하는 spiritual jazz를 선보이고 있는데, 자신의 자작곡에서 신에 대한 경외로움, 그리고 재즈 음악에 대한 깊은 애정과 존경을 표현하고 있다.",
+    "description": "[공연소개]\n\n아이재아 제이 톰슨 트리오 첫 내한공연\nIsaiah J. Thompson Trio First Live in Seoul\n\n<현재 가장 주목받는 미국 정통 재즈계의 라이징 스타>\n피아니스트겸 작곡가인 아이재아 제이 톰슨은 2023년 American Piano Awards의 수상자이며, 스타인웨이 아티스트로 선정된 탁월한 젊은 피아니스트이다. 그는 현재 가장 많은 러브콜을 받는 정통 재즈 피아니스트로 론 카터, 윈턴 마살리스, 크리스찬 맥브라이드, 그리고 존 피자렐리와 같은 재즈 거장들과 함께 연주하고 있다.그는 미국 링컨센터, 디트로이트 재즈페스티벌, NPR 타이니 데스크 등 다양한 무대와 미디어에서 초청공연을 하고 있으며, 그가 최신 발매한 음반 “The Book of Isaiah”는 가스펠과 블루스의 영향과 재즈를 절묘하게 섞어 다수의 매체에서 높은 평가를 받았다.한국 첫 내한공연이 될 그의 연주는 미국 정통 재즈의 명맥을 이어가는 젊은 피아니스트의 연주와 더불어 미국 뉴욕 재즈씬의 미래를 생생하게 목격하는 공연이 될 것이다. 특히 뉴욕 재즈씬에서 이미 힙합과 재즈의 감각적인 조화로 주목받고 있는 트리오 “New Jazz Underground”의 베이시스트 세바스찬 리오스, 그리고 클레이튼 형제 및 베니 그린과 함께 연주를 해온 드러머 데이비드 알바레즈 3세가 참여하며 보다 현대적인 감각이 살아있는 정통재즈를 들려줄 예정이다.\n\n공연 관람 포인트\nPoint 1. 뉴욕 정통 재즈 (Straight Ahead Jazz)로 평가받는 흥겹고 역동적인 연주\nPoint 2. 스타인웨이 아티스트로 선정된 미국 재즈 라이징 스타의 탁월한 연주\nPoint 3. 미국 뉴욕 재즈씬을 대표하는 젊은 연주자들의 세련되고 현대적인 연주\n\n“그의 음악은 신앙, 음악, 인종과 인류애를 보다 희망적으로 높이 올리는 정신을 담고있다” – 재즈 타임즈\n\n<이사야 제이 톰슨 프로필>\n미국 뉴저지 출신으로 줄리어드 음대를 졸업한 피아니스트 이사야 제이 톰슨은 일찍부터 두각을 나타낸 정통 재즈의 기대주이다. 2018년에는 국제적으로 가장 권위있는 재즈 컴페티션인 델로니어스 몽크 컴페티션의 2위를 수상하며, 같은 해 링컨센터의 Emerging Artists Award를 수상하였다. 2019년 윈턴 마살리스가 이끄는 Young Stars of Jazz 프로젝트에 선정되어 Jazz in Marciac 페스티벌과 유럽투어 공연을 했던 그는 같은 해에 스윙 기타의 전설 존 피자렐리의 트리오 멤버로 발탁되어 현재까지도 같이 활동하고 있다.\n\n미국에서 높은 권위를 자랑하는 아메리칸 피아노 어워즈를 2023년에 수상하고, 2024년에는 정식으로 자신이 졸업한 줄리어드 음대의 최연소 교수로 채용되었다. 그의 음악은 재즈의 뿌리인 블루스와 가스펠을 기반으로 영혼을 더욱 풍요롭게 하는 spiritual jazz를 선보이고 있는데, 자신의 자작곡에서 신에 대한 경외로움, 그리고 재즈 음악에 대한 깊은 애정과 존경을 표현하고 있다.",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292719_202606010410336540.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292714",
+    "title": "일리야 라쉬코프스키, 라흐마니노프 3개의 피아노 협주곡 [춘천]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292714_260601_155357.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292714_260601_155357.jpg",
+    "date": "2026.07.03 ~ 2026.07.03",
+    "venue": "춘천문화예술회관 (공연장)",
+    "venueId": "FC000371",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292714",
+    "genre": "서양음악(클래식)",
+    "price": "R석 40,000원\nS석 30,000원\nA석 20,000원",
+    "time": "금요일(19:30)",
+    "region": "강원특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "일리야 라쉬코프스키"
+    ],
+    "runtime": "2시간 30분",
+    "age": "만 7세 이상",
+    "production": "(사)밀레니엄심포니오케스트라",
+    "host": "(재)예술경영지원센터",
+    "organizer": "(재)춘천문화재단",
+    "planner": "",
+    "producer": "(사)밀레니엄심포니오케스트라",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "40,000원"
+      },
+      {
+        "label": "S석",
+        "price": "30,000원"
+      },
+      {
+        "label": "A석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:22.853Z",
+    "venuePhone": "033-259-5841",
+    "venueHomepage": "http://www.cccf.or.kr/designer/skin/cafacility/cahallfacility.html",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "940",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292714_202606010353575080.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292713",
+    "title": "제3회 면사랑 신진 유망 연주자 수상자 연주회",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292713_260601_155208.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292713_260601_155208.gif",
+    "date": "2026.07.18 ~ 2026.07.18",
+    "venue": "예술의전당 [서울] (IBK챔버홀)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292713",
+    "genre": "서양음악(클래식)",
+    "price": "R석 50,000원\nS석 30,000원",
+    "time": "토요일(14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김도현",
+      "배재성",
+      "정주은",
+      "최송하",
+      "정우찬",
+      "유서연",
+      "강민성"
+    ],
+    "runtime": "1시간 35분",
+    "age": "만 7세 이상",
+    "production": "(주)스테이지 원",
+    "host": "(주)스테이지 원",
+    "organizer": "",
+    "planner": "(주)스테이지 원",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "50,000원"
+      },
+      {
+        "label": "S석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:23.265Z",
+    "venuePhone": "02-580-1300",
+    "venueHomepage": "http://www.sac.or.kr",
+    "venueFacilityType": "국립",
+    "venueSeatScale": "164344",
+    "venueTheaterCount": "11",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "국립 · 식당, 카페, 편의점, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsis": "[프로그램]\n\nC. Reinecke, 3 Fantasiestücke for Viola and Piano, Op. 43\n라이네케, 비올라와 피아노를 위한 3개의 환상소곡집, Op.43\nViola. 유서연, Piano. 배재성\n\nG. Rossini, Thème et Variations for Horn and Piano in F Major\n로시니, 호른과 피아노를 위한 서주, 주제와 변주 F장조\nHorn. 강민성\nPiano. 배재성\n\nE. Ysaÿe: Sonata No. 3 for Solo Violin, Op. 27 “Ballade”\n외젠 이자이, 무반주 소나타 제3번, Op.27 \"발라드\"\nViolin. 최송하\n\nL. v. Beethoven, Cello Sonata No. 4 in C Major, Op. 102/1\n베토벤, 첼로 소나타 No. 4 C장조, Op.102/1\nCello. 정우찬\nPiano. 김도현 \n\nINTERMISSION\n\nR. Schumann, Piano Quintet in E♭ Major Op.44\n슈만, 피아노 오중주 E♭장조 Op.44\nViolin. 최송하, 정주은\nViola. 유서연\nCello. 정우찬\nPiano. 배재성",
+    "description": "[프로그램]\n\nC. Reinecke, 3 Fantasiestücke for Viola and Piano, Op. 43\n라이네케, 비올라와 피아노를 위한 3개의 환상소곡집, Op.43\nViola. 유서연, Piano. 배재성\n\nG. Rossini, Thème et Variations for Horn and Piano in F Major\n로시니, 호른과 피아노를 위한 서주, 주제와 변주 F장조\nHorn. 강민성\nPiano. 배재성\n\nE. Ysaÿe: Sonata No. 3 for Solo Violin, Op. 27 “Ballade”\n외젠 이자이, 무반주 소나타 제3번, Op.27 \"발라드\"\nViolin. 최송하\n\nL. v. Beethoven, Cello Sonata No. 4 in C Major, Op. 102/1\n베토벤, 첼로 소나타 No. 4 C장조, Op.102/1\nCello. 정우찬\nPiano. 김도현 \n\nINTERMISSION\n\nR. Schumann, Piano Quintet in E♭ Major Op.44\n슈만, 피아노 오중주 E♭장조 Op.44\nViolin. 최송하, 정주은\nViola. 유서연\nCello. 정우찬\nPiano. 배재성",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292713_202606010352088640.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292707",
+    "title": "강남문화재단 키즈예술공연: 노는국악 셋! (6월)",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292707_260601_153352.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292707_260601_153352.gif",
+    "date": "2026.06.20 ~ 2026.06.20",
+    "venue": "강남씨어터 (강남씨어터)",
+    "venueId": "FC001619",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292707",
+    "genre": "한국음악(국악)",
+    "price": "전석 10,000원",
+    "time": "토요일(11:00,14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "민대식",
+      "최자인",
+      "오현범",
+      "이지은",
+      "최영석",
+      "이유정",
+      "김승진"
+    ],
+    "crew": [
+      "정가람",
+      "김승진",
+      "김소정"
+    ],
+    "runtime": "50분",
+    "age": "36개월 이상",
+    "production": "(재)강남문화재단",
+    "host": "(재)강남문화재단",
+    "organizer": "(재)강남문화재단",
+    "planner": "(재)강남문화재단",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "36개월 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:23.677Z",
+    "venuePhone": "02-6712-0531",
+    "venueHomepage": "https://gangnam.go.kr/office/gfac/contents/gfac_place02/1/view.do?mid=gfac_place02",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "232",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292707_202606010333520561.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292707_202606010333520500.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292703",
+    "title": "기다림: attendez",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292703_260601_152559.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292703_260601_152559.gif",
+    "date": "2026.06.18 ~ 2026.06.21",
+    "venue": "연희예술극장 (연희예술극장)",
+    "venueId": "FC001852",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292703",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "목요일 ~ 금요일(19:30), 토요일(15:00,19:30), 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "이지민",
+      "신승현",
+      "김리원",
+      "우민정",
+      "남궁설",
+      "박해인",
+      "이산"
+    ],
+    "crew": [
+      "김한비",
+      "오수진",
+      "이재의"
+    ],
+    "runtime": "1시간 40분",
+    "age": "만 13세 이상",
+    "production": "극단 선언",
+    "host": "극단 선언",
+    "organizer": "극단 선언",
+    "planner": "극단 선언",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "만 13세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:24.085Z",
+    "venuePhone": "010-3441-5877",
+    "venueHomepage": "http://yeonheeart.com/INTRO",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "100",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "카페"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292703_202606010325598384.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292703_202606010325598333.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292703_202606010325598282.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292703_202606010325598031.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292703_202606010325597870.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292700",
+    "title": "SPYAIR JUST LIKE THIS [고양]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292700_260601_152115.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292700_260601_152115.jpg",
+    "date": "2026.09.05 ~ 2026.09.05",
+    "venue": "킨텍스 (야외공연장)",
+    "venueId": "FC001910",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292700",
+    "genre": "대중음악",
+    "price": "VIP석(A Type / T shirt) 187,000원\nVIP석(B Type / Towel) 172,000원\n일반석 138,000원",
+    "time": "토요일(18:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "주식회사 원더로크",
+    "host": "LIVET(리벳)",
+    "organizer": "주식회사 원더로크",
+    "planner": "주식회사 원더로크",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "VIP석(A Type / T shirt)",
+        "price": "187,000원"
+      },
+      {
+        "label": "VIP석(B Type / Towel)",
+        "price": "172,000원"
+      },
+      {
+        "label": "일반석",
+        "price": "138,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:24.622Z",
+    "venuePhone": "031-995-8036",
+    "venueHomepage": "http://www.kintex.com/",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "2800",
+    "venueTheaterCount": "11",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 식당, 카페, 편의점, 수유실, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292700_202606010321154310.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292699",
+    "title": "오해 [대학로]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292699_260601_151759.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292699_260601_151759.gif",
+    "date": "2026.06.13 ~ 2026.06.14",
+    "venue": "소극장 공유 (소극장 공유)",
+    "venueId": "FC001266",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292699",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "토요일(15:00,18:00), 일요일(14:00,17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "한소희",
+      "김혜은",
+      "문성호",
+      "손예원",
+      "정성진"
+    ],
+    "crew": [
+      "이양우",
+      "김혜은",
+      "노현서"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 13세 이상",
+    "production": "극단 숨",
+    "host": "",
+    "organizer": "",
+    "planner": "창작집단 결",
+    "producer": "극단 숨",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "만 13세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:25.038Z",
+    "venuePhone": "010-4879-0255",
+    "venueHomepage": "https://theater0you.modoo.at/",
+    "venueFacilityType": "민간(대학로)",
+    "venueSeatScale": "80",
+    "venueTheaterCount": "1",
+    "venueAmenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292699_202606010317599400.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292698",
+    "title": "넌 모르는 이야기",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292698_260601_151428.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292698_260601_151428.gif",
+    "date": "2026.07.01 ~ 2026.07.05",
+    "venue": "후암스테이지 (후암스테이지 (구. 마라카 3관, 오씨어터))",
+    "venueId": "FC002777",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292698",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "수요일 ~ 금요일(19:30), 토요일(15:00,19:00), 일요일(15:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "박성범",
+      "이주현",
+      "김강석",
+      "김민지",
+      "오영민",
+      "정진수",
+      "김규리"
+    ],
+    "crew": [
+      "김이환",
+      "주소형",
+      "김영주"
+    ],
+    "runtime": "1시간 40분",
+    "age": "만 17세 이상",
+    "production": "극단 매생",
+    "host": "극단 매생",
+    "organizer": "극단 매생",
+    "planner": "극단 매생, 아트인셉션",
+    "producer": "극단 매생",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "만 17세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:25.452Z",
+    "venueHomepage": "https://m.cafe.daum.net/mimania",
+    "venueFacilityType": "민간(대학로)",
+    "venueSeatScale": "230",
+    "venueTheaterCount": "2",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292698_202606010314287820.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292697",
+    "title": "3人 3色 댄스 커넥션 [광주]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292697_260601_151428.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292697_260601_151428.jpg",
+    "date": "2026.06.27 ~ 2026.06.27",
+    "venue": "광주북구문화센터 (양산도서관) (공연장)",
+    "venueId": "FC002769",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292697",
+    "genre": "무용(서양/한국무용)",
+    "price": "전석 10,000원",
+    "time": "토요일(17:00)",
+    "region": "광주광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김영채",
+      "고동훈",
+      "김석현",
+      "변민지",
+      "양진석",
+      "신지우",
+      "윤혁중"
+    ],
+    "crew": [
+      "선유라",
+      "정아영",
+      "최소영"
+    ],
+    "runtime": "1시간",
+    "age": "만 6세 이상",
+    "production": "광주북구문화센터(광주북구시설관리공단)",
+    "host": "광주북구문화센터(광주북구시설관리공단)",
+    "organizer": "댄스컴퍼니 Sun&Friends",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 6세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:25.855Z",
+    "venuePhone": "062-410-8367",
+    "venueHomepage": "https://bukgu.gwangju.kr/bcc/",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "360",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "카페",
+      "놀이방"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 카페, 놀이방",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292697_202606010314282260.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292696",
+    "title": "Grand Soft Day [평택]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292696_260601_151045.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292696_260601_151045.jpg",
+    "date": "2026.08.01 ~ 2026.08.01",
+    "venue": "평택시북부문예회관 (소공연장)",
+    "venueId": "FC000332",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292696",
+    "genre": "연극",
+    "price": "전석 20,000원",
+    "time": "토요일(11:00,14:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "45분",
+    "age": "만 3세 이상",
+    "production": "(재)평택시문화재단",
+    "host": "(재)평택시문화재단",
+    "organizer": "(재)평택시문화재단",
+    "planner": "(재)평택시문화재단",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 3세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:26.267Z",
+    "venuePhone": "031-8053-3570",
+    "venueHomepage": "https://www.pyeongtaek.go.kr/alrimi/contents.do?mId=0204000000",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "913",
+    "venueTheaterCount": "2",
+    "venueAmenities": [],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292696_202606010310455990.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292695",
+    "title": "일물: 사도세자 [당진]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292695_260601_151044.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292695_260601_151044.jpg",
+    "date": "2026.07.18 ~ 2026.07.18",
+    "venue": "당진문예의전당 (대공연장)",
+    "venueId": "FC000424",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292695",
+    "genre": "연극",
+    "price": "R석 30,000원\nS석 20,000원",
+    "time": "토요일(16:00,19:00)",
+    "region": "충청남도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "최광남",
+      "석애영",
+      "전경희",
+      "김대종",
+      "김승주",
+      "신여경",
+      "남승화"
+    ],
+    "crew": [
+      "김관",
+      "김소희",
+      "김태원"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "극단 천안",
+    "host": "극단 천안",
+    "organizer": "극단 천안",
+    "planner": "극단 천안, 해나루공연예술",
+    "producer": "극단 천안",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "30,000원"
+      },
+      {
+        "label": "S석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:26.676Z",
+    "venuePhone": "041-350-2911",
+    "venueHomepage": "http://www.dangjinart.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "1401",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292695_202606010310449892.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292695_202606010310449811.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292695_202606010310449730.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292694",
+    "title": "손영택 (Universe) 1st FAN-CON: From Birth to Death",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292694_260601_150814.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292694_260601_150814.jpg",
+    "date": "2026.06.28 ~ 2026.06.28",
+    "venue": "구름아래소극장 (구름아래소극장)",
+    "venueId": "FC002033",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292694",
+    "genre": "대중음악",
+    "price": "VIP석 119,000원\nR석 99,000원",
+    "time": "일요일(13:00,17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "손영택"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "(주) 에버라인 (Everline)",
+    "host": "(주) 에버라인 (Everline)",
+    "organizer": "",
+    "planner": "(주) 에버라인 (Everline)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "119,000원"
+      },
+      {
+        "label": "R석",
+        "price": "99,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:27.082Z",
+    "venuePhone": "02-3280-8800",
+    "venueHomepage": "http://gurumare.co.kr/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "200",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "식당",
+      "카페"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 식당, 카페",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292694_202606010308147570.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292692",
+    "title": "다시, 민들레 [옥천]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292692_260601_150612.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292692_260601_150612.jpg",
+    "date": "2026.08.27 ~ 2026.08.27",
+    "venue": "옥천문화예술회관 (옥천문화예술회관)",
+    "venueId": "FC000760",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292692",
+    "genre": "연극",
+    "price": "전석 10,000원",
+    "time": "목요일(19:30)",
+    "region": "충청북도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "문창완",
+      "박선혜",
+      "오영석",
+      "정수현"
+    ],
+    "crew": [
+      "박춘근",
+      "하동기",
+      "도상민"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "충북도립극단",
+    "host": "충청북도청",
+    "organizer": "(재)충북문화재단",
+    "planner": "",
+    "producer": "충북도립극단",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 18:00:04.096267",
+    "dataCollectedAt": "2026-06-04T20:13:27.496Z",
+    "venuePhone": "043-730-3403",
+    "venueHomepage": "http://www.ocac.go.kr/2012/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "478",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "놀이방",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 놀이방, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292692_202606020357136540.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292692_202606020357136611.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292691",
+    "title": "박장현 소극장 콘서트, 미열: A Quiet Warmth",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292691_260601_145913.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292691_260601_145913.png",
+    "date": "2026.06.27 ~ 2026.06.27",
+    "venue": "연남스페이스 (연남스페이스)",
+    "venueId": "FC003185",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292691",
+    "genre": "대중음악",
+    "price": "전석 88,000원",
+    "time": "토요일(14:00,18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "박장현"
+    ],
+    "runtime": "1시간 50분",
+    "age": "만 7세 이상",
+    "production": "소리의정원",
+    "host": "소리의정원",
+    "organizer": "소리의정원",
+    "planner": "소리의정원",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "88,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:27.910Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "280",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292691_202606010259135760.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292690",
+    "title": "거기 누구요? [대학로]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292690_260601_145707.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292690_260601_145707.gif",
+    "date": "2026.07.15 ~ 2026.07.19",
+    "venue": "종로아이들극장 (종로아이들극장)",
+    "venueId": "FC001435",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292690",
+    "genre": "연극",
+    "price": "전석 30,000원",
+    "time": "수요일 ~ 금요일(14:00), 토요일 ~ 일요일(14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "50분",
+    "age": "36개월 이상",
+    "production": "아라리프로덕션((주)아라리)",
+    "host": "(재)종로문화재단, 극단 무릎베개, 아라리프로덕션((주)아라리)",
+    "organizer": "(재)종로문화재단, 극단 무릎베개, 아라리프로덕션((주)아라리)",
+    "planner": "아라리프로덕션((주)아라리)",
+    "producer": "아라리프로덕션((주)아라리)",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "36개월 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:28.320Z",
+    "venuePhone": "02-2088-4290",
+    "venueHomepage": "https://jct.jfac.or.kr/site/child/home",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "281",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 수유실, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292690_202606010257073990.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292687",
+    "title": "린 트로트 콘서트: Queen of Serenade",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292687_260601_145326.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292687_260601_145326.png",
+    "date": "2026.06.27 ~ 2026.06.28",
+    "venue": "이화여자대학교 삼성홀 (이화여자대학교 삼성홀)",
+    "venueId": "FC001799",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292687",
+    "genre": "대중음악",
+    "price": "전석 143,000원",
+    "time": "토요일(18:00), 일요일(17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "이세진"
+    ],
+    "runtime": "2시간",
+    "age": "만 7세 이상",
+    "production": "(주)쇼노트, 젤리피쉬엔터테인먼트(주)",
+    "host": "젤리피쉬엔터테인먼트(주)",
+    "organizer": "(주)쇼노트",
+    "planner": "(주)쇼노트, 젤리피쉬엔터테인먼트(주)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "143,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:28.732Z",
+    "venuePhone": "02-6380-4430",
+    "venueHomepage": "http://samsunghall.ticketlink.co.kr/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "702",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292687_202606010253267020.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292684",
+    "title": "MBC 심야괴담회X니니키즈: 학교에서 살아남기 [부산]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292684_260601_144949.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292684_260601_144949.jpg",
+    "date": "2026.07.31 ~ 2026.08.01",
+    "venue": "벡스코 (BEXCO) (오디토리움)",
+    "venueId": "FC001345",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292684",
+    "genre": "뮤지컬",
+    "price": "VIP석 43,900원\nR석 38,900원\nS석 33,900원",
+    "time": "금요일(20:00), 토요일(11:00,14:00,16:30)",
+    "region": "부산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "crew": [
+      "황바울",
+      "이용섭",
+      "김찬란"
+    ],
+    "runtime": "1시간 20분",
+    "age": "24개월 이상",
+    "production": "(주)이에스생활문화 (ES생활문화)",
+    "host": "(주)이에스생활문화 (ES생활문화)",
+    "organizer": "(주)이에스생활문화 (ES생활문화)",
+    "planner": "(주)이에스생활문화 (ES생활문화)",
+    "producer": "(주)이에스생활문화 (ES생활문화)",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "43,900원"
+      },
+      {
+        "label": "R석",
+        "price": "38,900원"
+      },
+      {
+        "label": "S석",
+        "price": "33,900원"
+      }
+    ],
+    "ageDetail": "24개월 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:29.143Z",
+    "venuePhone": "051-740-7300",
+    "venueHomepage": "http://www.bexco.co.kr/audi/Contents.do?mCode=MN0001",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "40002",
+    "venueTheaterCount": "5",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 식당, 카페, 편의점, 수유실, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292684_202606010249498140.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292682",
+    "title": "제3회 깃츠무용단 정기공연, 출: 타",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292682_260601_144524.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292682_260601_144524.png",
+    "date": "2026.06.12 ~ 2026.06.12",
+    "venue": "서울남산국악당 (크라운해태홀)",
+    "venueId": "FC004809",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292682",
+    "genre": "무용(서양/한국무용)",
+    "price": "전석 30,000원",
+    "time": "금요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "이민호",
+      "정찬민",
+      "백상하",
+      "김응민",
+      "박슬종",
+      "김우혁",
+      "김재원"
+    ],
+    "crew": [
+      "류일훈",
+      "김청우",
+      "이민후"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "깃츠 무용단",
+    "host": "깃츠 무용단",
+    "organizer": "깃츠 무용단",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:30.170Z",
+    "venuePhone": "02-6358-5500",
+    "venueHomepage": "https://sgtt.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "302",
+    "venueTheaterCount": "3",
+    "venueAmenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292682_202606010245247180.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292680",
+    "title": "ジエメイ ONEMAN LIVE in KOREA",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292680_260601_144230.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292680_260601_144230.png",
+    "date": "2026.06.07 ~ 2026.06.07",
+    "venue": "세티 라이브홀 (SETI LIVE HALL) (세티 라이브홀 (SETI LIVE HALL) )",
+    "venueId": "FC004237",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292680",
+    "genre": "대중음악",
+    "price": "S석 70,000원\n일반석 40,000원",
+    "time": "일요일(19:20)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "",
+    "age": "전체 관람가",
+    "production": "세티 라이브홀(SETi LIVE HALL)",
+    "host": "세티 라이브홀(SETi LIVE HALL)",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "S석",
+        "price": "70,000원"
+      },
+      {
+        "label": "일반석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:30.587Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "0",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 화장실"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 장애인 화장실",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292680_202606010242307910.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292679",
+    "title": "윤종신 전국투어 콘서트: 윤종신 그리고 나 [평택]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292679_260601_143802.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292679_260601_143802.gif",
+    "date": "2026.07.25 ~ 2026.07.25",
+    "venue": "평택아트센터 (대공연장)",
+    "venueId": "FC004655",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292679",
+    "genre": "대중음악",
+    "price": "R석 154,000원\nS석 132,000원\nA석 110,000원",
+    "time": "토요일(16:00)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "윤종신"
+    ],
+    "runtime": "2시간 30분",
+    "age": "만 7세 이상",
+    "production": "(주)다날스테이지, (주)월간윤종신, 뉴에라프로젝트, 하이퍼어스 주식회사",
+    "host": "(재)평택시문화재단",
+    "organizer": "라이브아트(유), 삼거리프로젝트",
+    "planner": "라이브아트(유)",
+    "producer": "(주)다날스테이지, (주)월간윤종신, 뉴에라프로젝트, 하이퍼어스 주식회사",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "154,000원"
+      },
+      {
+        "label": "S석",
+        "price": "132,000원"
+      },
+      {
+        "label": "A석",
+        "price": "110,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:30.994Z",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "1623",
+    "venueTheaterCount": "2",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292679_202606010238025870.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292677",
+    "title": "제22회 앙상블위드 정기연주회 [대전]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292677_260601_143501.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292677_260601_143501.gif",
+    "date": "2026.06.20 ~ 2026.06.20",
+    "venue": "대전예술의전당 (앙상블홀)",
+    "venueId": "FC000076",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292677",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "토요일(15:00)",
+    "region": "대전광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "최진아",
+      "노미은",
+      "조우식",
+      "송명진",
+      "구윤경",
+      "주민영",
+      "김윤희"
+    ],
+    "runtime": "2시간",
+    "age": "만 7세 이상",
+    "production": "앙상블위드",
+    "host": "앙상블위드",
+    "organizer": "앙상블위드",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:31.423Z",
+    "venuePhone": "042-270-8333",
+    "venueHomepage": "https://www.daejeon.go.kr/djac/index.do",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "3039",
+    "venueTheaterCount": "4",
+    "venueAmenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 카페, 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsis": "[프로그램]\n\n- G. Fauré 포레 (1845-1924)\nPiano Trio in d minor, Op.120 (1923) 피아노 삼중주 d단조, 작품 120\nI. Allegro, ma non troppo\nII. Andantino\nIII. Allegro vivo\nViolin 김윤희 / Cello 이경미 / Piano 노미은\n\n- C. Franck 프랑크(1822-1890)\nSonata for Flute (Violin) and Piano in A major\n플루트(바이올린)과 피아노를 위한 소나타 A장조\nI. Allegretto ben moderato\nII. Allegro molto\nIII. Recitativo-Fantasia: Ben moderato\nIV. Allegretto poco mosso\n\nI & II: Flute 김다연 / Piano 송명진\nIII & IV : Violin 구윤경 / Piano 송명진\n\n- Intermission -\n\nC. Debussy 드뷔시(1862-1918)\nPiano Trio in G major, L.3 (1880) 피아노 삼중주 G장조, L.3\nI. Andantino con moto allegro\nII. Scherzo - Intermezzo. Moderato con allegro\nIII. Andante espressivo\nIV. Finale. Appassionato\nViolin 구윤경 / Cello 이경미 / Piano 조우식\n\nM. Ravel 라벨(1875-1937)\nPiano Trio in a minor, M.67 (1914) 피아노 삼중주 a단조, M.67\nI. Modéré\nII. Pantoum. Assez vif\nIII. Passacaille. Très large\nIV. Final. Animé\nViolin 주민영 / Cello 임화영 / Piano 최진아",
+    "description": "[프로그램]\n\n- G. Fauré 포레 (1845-1924)\nPiano Trio in d minor, Op.120 (1923) 피아노 삼중주 d단조, 작품 120\nI. Allegro, ma non troppo\nII. Andantino\nIII. Allegro vivo\nViolin 김윤희 / Cello 이경미 / Piano 노미은\n\n- C. Franck 프랑크(1822-1890)\nSonata for Flute (Violin) and Piano in A major\n플루트(바이올린)과 피아노를 위한 소나타 A장조\nI. Allegretto ben moderato\nII. Allegro molto\nIII. Recitativo-Fantasia: Ben moderato\nIV. Allegretto poco mosso\n\nI & II: Flute 김다연 / Piano 송명진\nIII & IV : Violin 구윤경 / Piano 송명진\n\n- Intermission -\n\nC. Debussy 드뷔시(1862-1918)\nPiano Trio in G major, L.3 (1880) 피아노 삼중주 G장조, L.3\nI. Andantino con moto allegro\nII. Scherzo - Intermezzo. Moderato con allegro\nIII. Andante espressivo\nIV. Finale. Appassionato\nViolin 구윤경 / Cello 이경미 / Piano 조우식\n\nM. Ravel 라벨(1875-1937)\nPiano Trio in a minor, M.67 (1914) 피아노 삼중주 a단조, M.67\nI. Modéré\nII. Pantoum. Assez vif\nIII. Passacaille. Très large\nIV. Final. Animé\nViolin 주민영 / Cello 임화영 / Piano 최진아",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292677_202606010235018170.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292676",
+    "title": "싸운드 써커스 [천안]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292676_260601_143501.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292676_260601_143501.png",
+    "date": "2026.06.13 ~ 2026.06.21",
+    "venue": "천안어린이꿈누리터 (구. 천안시 어린이 회관) (꿈누리대공연장)",
+    "venueId": "FC002779",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292676",
+    "genre": "뮤지컬",
+    "price": "전석 10,000원",
+    "time": "토요일 ~ 일요일(11:00,15:00)",
+    "region": "충청남도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "박성준",
+      "서민준",
+      "전민혁"
+    ],
+    "crew": [
+      "오동석",
+      "옥한나",
+      "박성준"
+    ],
+    "runtime": "1시간",
+    "age": "만 4세 이상",
+    "production": "유상통프로젝트",
+    "host": "천안어린이꿈누리터",
+    "organizer": "",
+    "planner": "천안어린이꿈누리터",
+    "producer": "유상통프로젝트",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "만 4세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:31.822Z",
+    "venuePhone": "070-4944-0360",
+    "venueHomepage": "https://www.cachildren.kr/kor/index.do",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "396",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "카페",
+      "놀이방",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 카페, 놀이방, 수유실, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292676_202606010235012481.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292676_202606010235012180.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292673",
+    "title": "악착동자: 이배, 극락가는 거 맞습니까?",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292673_260601_142847.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292673_260601_142847.jpg",
+    "date": "2026.06.30 ~ 2026.06.30",
+    "venue": "김희수아트센터 (SPACE 1(다목적홀))",
+    "venueId": "FC001860",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292673",
+    "genre": "한국음악(국악)",
+    "price": "전석 20,000원",
+    "time": "화요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간 30분",
+    "age": "전체 관람가",
+    "production": "세상만물 이야기꾼 빈빈정",
+    "host": "세상만물 이야기꾼 빈빈정",
+    "organizer": "세상만물 이야기꾼 빈빈정",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:32.222Z",
+    "venuePhone": "02-962-7911",
+    "venueHomepage": "http://www.soorimcf.or.kr/index.html",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "140",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페, 장애인 주차",
+    "synopsis": "[빈빈정 : 세상만물 이야기꾼]\n\n우리는 끊임없이 더 나은 삶을 요구받으며 살아갑니다.\n\n더 아름다운 모습, 더 높은 자리, 더 많은 것들.\n그 끝에 진짜 행복이 있을거라 믿으며, 계속해서 앞으로 나아갑니다.\n\n그렇다면 이것들은 진정한 행복을 가져다 줄까 ?\n우리가 찾고 있는 삶은 ‘어디에‘ 있을까 ?\n\n빈빈정은 <악착동자 齷齪童子> 이야기를 통해 이 답을 찾아보려 합니다.\n\n여러분이 찾고 있는 극락은, 무엇입니까 ?",
+    "description": "[빈빈정 : 세상만물 이야기꾼]\n\n우리는 끊임없이 더 나은 삶을 요구받으며 살아갑니다.\n\n더 아름다운 모습, 더 높은 자리, 더 많은 것들.\n그 끝에 진짜 행복이 있을거라 믿으며, 계속해서 앞으로 나아갑니다.\n\n그렇다면 이것들은 진정한 행복을 가져다 줄까 ?\n우리가 찾고 있는 삶은 ‘어디에‘ 있을까 ?\n\n빈빈정은 <악착동자 齷齪童子> 이야기를 통해 이 답을 찾아보려 합니다.\n\n여러분이 찾고 있는 극락은, 무엇입니까 ?",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292673_202606010228474880.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292671",
+    "title": "아이를 위한 나라는 없다",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292671_260601_142458.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292671_260601_142458.gif",
+    "date": "2026.06.25 ~ 2026.07.05",
+    "venue": "업스테이지 (UP Stage) (업스테이지 (UP Stage) )",
+    "venueId": "FC002072",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292671",
+    "genre": "연극",
+    "price": "전석 15,000원",
+    "time": "목요일 ~ 금요일(20:00), 토요일 ~ 일요일(14:00,18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "고은별",
+      "김민직",
+      "김유정",
+      "김은진",
+      "류광현",
+      "안주연",
+      "오예진"
+    ],
+    "crew": [
+      "변광섭",
+      "최지원"
+    ],
+    "runtime": "1시간 15분",
+    "age": "만 13세 이상",
+    "production": "야시극장",
+    "host": "야시극장",
+    "organizer": "",
+    "planner": "야시극장",
+    "producer": "야시극장",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "15,000원"
+      }
+    ],
+    "ageDetail": "만 13세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:32.635Z",
+    "venuePhone": "070-4792-8342",
+    "venueHomepage": "https://www.spacecloud.kr/space/30147",
+    "venueFacilityType": "민간(대학로)",
+    "venueSeatScale": "153",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292671_202606010224585740.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292670",
+    "title": "미호제작소 사계절 여행연극 시리즈 #여름: 달빛을 먹는 사람들",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292670_260601_142457.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292670_260601_142457.gif",
+    "date": "2026.06.26 ~ 2026.07.04",
+    "venue": "성북마을극장 (성북마을극장)",
+    "venueId": "FC001361",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292670",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "금요일(20:00), 토요일 ~ 일요일(13:00,16:00,19:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김노진",
+      "한라엘",
+      "손윤필",
+      "이기창",
+      "한주원"
+    ],
+    "crew": [
+      "한은혜",
+      "정영진",
+      "원지훈"
+    ],
+    "runtime": "1시간",
+    "age": "만 15세 이상",
+    "production": "미호제작소(Meeho Works)",
+    "host": "미호제작소(Meeho Works)",
+    "organizer": "미호제작소(Meeho Works)",
+    "planner": "미호제작소(Meeho Works)",
+    "producer": "미호제작소(Meeho Works)",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "만 15세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:33.041Z",
+    "venuePhone": "010-3385-4155",
+    "venueHomepage": "http://sbtheater.modoo.at/",
+    "venueFacilityType": "민간(대학로)",
+    "venueSeatScale": "68",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292670_202606010224579793.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292670_202606010224579722.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292670_202606010224579621.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292670_202606010224579530.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292669",
+    "title": "하은빈 1집 발매 기념 공연: 등",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292669_260601_142058.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292669_260601_142058.png",
+    "date": "2026.06.12 ~ 2026.06.12",
+    "venue": "Vel.R 벨르 (구. 벨로주 [홍대]) (Vel.R 벨르 (구. 벨로주 [홍대]))",
+    "venueId": "FC002035",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292669",
+    "genre": "대중음악",
+    "price": "전석 40,000원",
+    "time": "금요일(20:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "하은빈",
+      "김사월",
+      "안담",
+      "이설아",
+      "이슬아"
+    ],
+    "runtime": "1시간 10분",
+    "age": "전체 관람가",
+    "production": "",
+    "host": "",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:33.457Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "123",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292669_202606010220583660.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292669_202606010219118170.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292668",
+    "title": "아몬드 [안양]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292668_260601_141736.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292668_260601_141736.gif",
+    "date": "2026.07.05 ~ 2026.07.05",
+    "venue": "안양아트센터 (관악홀)",
+    "venueId": "FC000021",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292668",
+    "genre": "뮤지컬",
+    "price": "R석 77,000원\nS석 66,000원",
+    "time": "일요일(14:00,18:30)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "문태유",
+      "조환지",
+      "윤승우",
+      "홍산하",
+      "금보미",
+      "강하나",
+      "김지욱"
+    ],
+    "runtime": "2시간 40분",
+    "age": "만 6세 이상",
+    "production": "(재) 안양문화예술재단(안양아트센터)",
+    "host": "(재)예술경영지원센터",
+    "organizer": "(재) 안양문화예술재단(안양아트센터), 우리별이야기",
+    "planner": "(재) 안양문화예술재단(안양아트센터)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "77,000원"
+      },
+      {
+        "label": "S석",
+        "price": "66,000원"
+      }
+    ],
+    "ageDetail": "만 6세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:33.881Z",
+    "venuePhone": "031-687-0500",
+    "venueHomepage": "http://www.ayac.or.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "2246",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292668_202606010217362700.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292660",
+    "title": "김재혁 피아노 독주회",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292660_260601_140448.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292660_260601_140448.gif",
+    "date": "2026.06.30 ~ 2026.06.30",
+    "venue": "영산아트홀 (영산아트홀)",
+    "venueId": "FC000384",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292660",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "화요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김재혁"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "(재)순복음선교회",
+    "host": "영산아트홀",
+    "organizer": "",
+    "planner": "(재)순복음선교회",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:34.287Z",
+    "venuePhone": "02-6181-5260",
+    "venueHomepage": "http://www.youngsanarthall.com/rb/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "598",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 식당, 카페, 장애인 주차",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292660_202606010204480411.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292660_202606010204480360.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292657",
+    "title": "쌀롱드무지끄, Conversation for Three",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292657_260602_163037.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292657_260602_163037.png",
+    "date": "2026.06.14 ~ 2026.06.14",
+    "venue": "쌀롱드무지끄 (쌀롱드무지끄)",
+    "venueId": "FC002062",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292657",
+    "genre": "서양음악(클래식)",
+    "price": "정보없음",
+    "time": "일요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "박수빈",
+      "이지영",
+      "최영임"
+    ],
+    "runtime": "1시간",
+    "age": "만 7세 이상",
+    "production": "쌀롱드무지끄",
+    "host": "쌀롱드무지끄",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 18:00:04.096267",
+    "dataCollectedAt": "2026-06-04T20:13:34.697Z",
+    "venuePhone": "010-8826-8364",
+    "venueHomepage": "https://salondemusique.modoo.at/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "20",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsis": "[PROGRAM]\n\n* W. A. Mozart Pino Trio in G Major, K. 496\n\n* S. Rachmaninoff Piano Trio elegiaque No, 1 in g minor\n\n* J. Turina Piano Trio No. 1, Op. 35",
+    "description": "[PROGRAM]\n\n* W. A. Mozart Pino Trio in G Major, K. 496\n\n* S. Rachmaninoff Piano Trio elegiaque No, 1 in g minor\n\n* J. Turina Piano Trio No. 1, Op. 35",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292657_202606020430371900.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292656",
+    "title": "Heritage Series; The Masters, 피아니스트 존 오코너",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292656_260601_135333.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292656_260601_135333.gif",
+    "date": "2026.06.22 ~ 2026.06.22",
+    "venue": "신영체임버홀 (신영체임버홀)",
+    "venueId": "FC001868",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292656",
+    "genre": "서양음악(클래식)",
+    "price": "전석 40,000원",
+    "time": "월요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "존 오코너"
+    ],
+    "runtime": "1시간 10분",
+    "age": "만 7세 이상",
+    "production": "(주)마스트미디어",
+    "host": "(주)마스트미디어",
+    "organizer": "",
+    "planner": "(주)마스트미디어",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:35.102Z",
+    "venuePhone": "02-2004-9592",
+    "venueHomepage": "https://shinyoungchamberhall.modoo.at/?link=7xorn9he",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "80",
+    "venueTheaterCount": "1",
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292656_202606010153337561.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292656_202606010153337510.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292654",
+    "title": "목요상설음악회 아트살롱, MOOD SPACE: Swing Re;Born",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292654_260601_135127.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292654_260601_135127.png",
+    "date": "2026.06.25 ~ 2026.06.25",
+    "venue": "동래문화회관 (대극장)",
+    "venueId": "FC000164",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292654",
+    "genre": "대중음악",
+    "price": "전석무료",
+    "time": "목요일(19:30)",
+    "region": "부산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "구윤화",
+      "허유진",
+      "이원주",
+      "유경훈",
+      "김하영",
+      "윤관형",
+      "박인찬"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "동래문화회관",
+    "host": "동래문화회관",
+    "organizer": "무드스페이스(Mood Space)",
+    "planner": "동래문화회관",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:35.525Z",
+    "venuePhone": "051-550-6611",
+    "venueHomepage": "http://www.dongnae.go.kr/culture/index.dongnae?menuCd=DOM_000000605001000000",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "1831",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292654_202606010151276913.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292654_202606010151276852.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292654_202606010151276591.png",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292654_202606010151276500.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292652",
+    "title": "TONE STUDIO LIVE: 예람",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292652_260601_134544.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292652_260601_134544.png",
+    "date": "2026.06.20 ~ 2026.06.20",
+    "venue": "톤스튜디오 서울 (A ROOM)",
+    "venueId": "FC001975",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292652",
+    "genre": "대중음악",
+    "price": "전석 55,000원",
+    "time": "토요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "정서현"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "톤엔터",
+    "host": "톤 스튜디오, 톤엔터",
+    "organizer": "톤 스튜디오, 톤엔터",
+    "planner": "톤엔터",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "55,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:35.930Z",
+    "venuePhone": "02-3141-4605",
+    "venueHomepage": "http://tonestudio.co.kr/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "39",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 장애인 화장실, 장애인 경사로",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292652_202606010145448690.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292651",
+    "title": "신데렐라 [포항]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292651_260601_134544.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292651_260601_134544.jpg",
+    "date": "2026.08.23 ~ 2026.08.23",
+    "venue": "포항시청 대잠홀 (포항시청 대잠홀)",
+    "venueId": "FC001256",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292651",
+    "genre": "뮤지컬",
+    "price": "현장판매 35,000원\n사전예약 9,900원",
+    "time": "일요일(14:00,16:00)",
+    "region": "경상북도",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "50분",
+    "age": "전체 관람가",
+    "production": "",
+    "host": "",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "현장판매",
+        "price": "35,000원"
+      },
+      {
+        "label": "사전예약",
+        "price": "9,900원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:36.338Z",
+    "venuePhone": "054-270-8282",
+    "venueHomepage": "http://www.phcf.or.kr/kr/sub.do?MENU_SEQ=10076&PAGE_SEQ=10158&LANG=ko_KR#none https://www.pohang.go.kr/pohang/index.do",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "597",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 수유실, 장애인 주차, 장애인 화장실, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292651_202606010145443170.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292648",
+    "title": "숲세권 라이브, 훈스 단독 공연: 초록 주의보",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292648_260601_134100.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292648_260601_134100.jpg",
+    "date": "2026.06.21 ~ 2026.06.21",
+    "venue": "숲세권 라이브 (숲세권 라이브)",
+    "venueId": "FC003092",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292648",
+    "genre": "대중음악",
+    "price": "현장판매 40,000원\n사전예약 38,000원",
+    "time": "일요일(18:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "이상훈",
+      "이종훈"
+    ],
+    "runtime": "1시간 40분",
+    "age": "전체 관람가",
+    "production": "숲세권 라이브",
+    "host": "숲세권 라이브",
+    "organizer": "숲세권 라이브",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "현장판매",
+        "price": "40,000원"
+      },
+      {
+        "label": "사전예약",
+        "price": "38,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:36.742Z",
+    "venuePhone": "070-1369-1992",
+    "venueFacilityType": "기타(비공연장)",
+    "venueSeatScale": "0",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292648_202606010141008311.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292648_202606010141008210.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292647",
+    "title": "모두가 이상하다",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292647_260601_133714.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292647_260601_133714.png",
+    "date": "2026.06.19 ~ 2026.06.21",
+    "venue": "소극장 창덕궁 (소극장 창덕궁)",
+    "venueId": "FC001215",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292647",
+    "genre": "연극",
+    "price": "전석 15,000원",
+    "time": "금요일(19:30), 토요일(15:00,19:00), 일요일(13:00,17:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "장용익",
+      "백진휘",
+      "김설빈",
+      "서영은",
+      "김상우",
+      "강동화",
+      "이득규"
+    ],
+    "crew": [
+      "김재윤",
+      "백진휘",
+      "이주희"
+    ],
+    "runtime": "1시간 40분",
+    "age": "만 16세 이상",
+    "production": "선인장엔터테인먼트(극단 선인장)",
+    "host": "선인장엔터테인먼트(극단 선인장)",
+    "organizer": "",
+    "planner": "선인장엔터테인먼트(극단 선인장)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "15,000원"
+      }
+    ],
+    "ageDetail": "만 16세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:37.165Z",
+    "venuePhone": "02-742-7278",
+    "venueHomepage": "http://www.changgeuk.com/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "150",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292647_202606010137143670.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292646",
+    "title": "국립오페라단, 잔니 스키키 [춘천]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292646_260601_133513.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292646_260601_133513.jpg",
+    "date": "2026.07.25 ~ 2026.07.25",
+    "venue": "춘천문화예술회관 (공연장)",
+    "venueId": "FC000371",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292646",
+    "genre": "서양음악(클래식)",
+    "price": "R석 40,000원\nS석 30,000원\nA석 20,000원",
+    "time": "토요일(17:00)",
+    "region": "강원특별자치도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김원",
+      "김수정",
+      "이재명",
+      "신성희",
+      "이충만",
+      "김민경",
+      "박의현"
+    ],
+    "crew": [
+      "장서문",
+      "차웅",
+      "김유미"
+    ],
+    "runtime": "1시간 5분",
+    "age": "만 7세 이상",
+    "production": "(재)국립오페라단",
+    "host": "(재)춘천문화재단",
+    "organizer": "(재)춘천문화재단",
+    "planner": "",
+    "producer": "(재)국립오페라단",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "40,000원"
+      },
+      {
+        "label": "S석",
+        "price": "30,000원"
+      },
+      {
+        "label": "A석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:37.586Z",
+    "venuePhone": "033-259-5841",
+    "venueHomepage": "http://www.cccf.or.kr/designer/skin/cafacility/cahallfacility.html",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "940",
+    "venueTheaterCount": "2",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292646_202606010135135970.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292645",
+    "title": "적벽대전 [대전]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292645_260601_133206.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292645_260601_133206.jpg",
+    "date": "2026.06.24 ~ 2026.07.16",
+    "venue": "별별마당 우금치 (관용극장)",
+    "venueId": "FC003225",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292645",
+    "genre": "연극",
+    "price": "전석 30,000원",
+    "time": "수요일 ~ 금요일(19:30), 토요일 ~ 일요일(15:00)",
+    "region": "대전광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "이주행",
+      "김황식",
+      "성장순",
+      "이신애",
+      "임창숙",
+      "이광백",
+      "김시현"
+    ],
+    "crew": [
+      "류기형",
+      "박지헌",
+      "김영진"
+    ],
+    "runtime": "1시간 20분",
+    "age": "만 7세 이상",
+    "production": "(사)마당극패 우금치",
+    "host": "(사)마당극패 우금치",
+    "organizer": "(사)마당극패 우금치",
+    "planner": "",
+    "producer": "(사)마당극패 우금치",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:37.990Z",
+    "venueHomepage": "https://linktr.ee/wukumchi1990",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "100",
+    "venueTheaterCount": "1",
+    "venueAmenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292645_202606010132062820.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292643",
+    "title": "아스라이 첫 번째 단독콘서트: 표류일지",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292643_260601_132904.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292643_260601_132904.png",
+    "date": "2026.06.12 ~ 2026.06.12",
+    "venue": "우무지 (우무지)",
+    "venueId": "FC004500",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292643",
+    "genre": "대중음악",
+    "price": "전석 30,000원",
+    "time": "금요일(20:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "정동혁",
+      "전이삭",
+      "박유민",
+      "김현택"
+    ],
+    "runtime": "1시간 30분",
+    "age": "전체 관람가",
+    "production": "(사) 코드(우무지)",
+    "host": "(사) 코드(우무지)",
+    "organizer": "(사) 코드(우무지)",
+    "planner": "(사) 코드(우무지)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:38.391Z",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "100",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292643_202606010129045630.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292642",
+    "title": "제22회 래디언트챔버오케스트라 정기연주회: 6월, 건반 위의 산책",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292642_260601_132604.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292642_260601_132604.jpg",
+    "date": "2026.06.19 ~ 2026.06.19",
+    "venue": "고양아람누리 (새라새극장)",
+    "venueId": "FC000127",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292642",
+    "genre": "서양음악(클래식)",
+    "price": "전석무료",
+    "time": "금요일(19:30)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "민유홍",
+      "박미리",
+      "박채원",
+      "김호준",
+      "전지우",
+      "정서현",
+      "김율리아나"
+    ],
+    "runtime": "1시간 50분",
+    "age": "만 5세 이상",
+    "production": "래디언트챔버오케스트라(Radiant Chamber Orchestra)",
+    "host": "래디언트챔버오케스트라(Radiant Chamber Orchestra)",
+    "organizer": "헤리티지 아트앤 매니지먼트",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "만 5세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:38.805Z",
+    "venuePhone": "00-1577-7766",
+    "venueHomepage": "http://www.artgy.or.kr/aram/introduction.aspx",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "4640",
+    "venueTheaterCount": "6",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 카페, 놀이방, 장애인 주차, 장애인 경사로",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292642_202606010126040471.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292642_202606010126040340.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292641",
+    "title": "쌀롱드무지끄, Stillness and Flow",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292641_260601_132316.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292641_260601_132316.png",
+    "date": "2026.06.06 ~ 2026.06.06",
+    "venue": "쌀롱드무지끄 (쌀롱드무지끄)",
+    "venueId": "FC002062",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292641",
+    "genre": "서양음악(클래식)",
+    "price": "전석 22,000원",
+    "time": "토요일(14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "장혜원"
+    ],
+    "runtime": "1시간",
+    "age": "만 5세 이상",
+    "production": "쌀롱드무지끄",
+    "host": "쌀롱드무지끄",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "22,000원"
+      }
+    ],
+    "ageDetail": "만 5세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:39.231Z",
+    "venuePhone": "010-8826-8364",
+    "venueHomepage": "https://salondemusique.modoo.at/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "20",
+    "venueTheaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsis": "[PROGRAM]\n\n* Schubert Piano Sonata No. 21 in B flat major, D. 960\n\nI. Molto moderato\nII. Andante sostenuto\nIII. Scherzo: Allegro vivace con delicatezza - \nTrio\nIV. Allegro ma non troppo - Presto\n\n*Ravel Gaspard de la Nuit\nOndine\n\n* Debussy Prelude- Bruyeres",
+    "description": "[PROGRAM]\n\n* Schubert Piano Sonata No. 21 in B flat major, D. 960\n\nI. Molto moderato\nII. Andante sostenuto\nIII. Scherzo: Allegro vivace con delicatezza - \nTrio\nIV. Allegro ma non troppo - Presto\n\n*Ravel Gaspard de la Nuit\nOndine\n\n* Debussy Prelude- Bruyeres",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292641_202606010123162970.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292640",
+    "title": "신카이 마코토 하이라이트 필름 콘서트 [서울 송파]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292640_260601_132131.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292640_260601_132131.gif",
+    "date": "2026.07.11 ~ 2026.07.11",
+    "venue": "롯데콘서트홀 (롯데콘서트홀)",
+    "venueId": "FC001513",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292640",
+    "genre": "서양음악(클래식)",
+    "price": "R석 140,000원\nS석 110,000원\nA석 90,000원\nB석 70,000원\nC석 60,000원\n시야방해S 50,000원\n시야방해A 40,000원\n시야방해B 30,000원",
+    "time": "토요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "남기범"
+    ],
+    "runtime": "2시간",
+    "age": "만 7세 이상",
+    "production": "(주) 엔오에이 (NOA Inc.)",
+    "host": "(주) 엔오에이 (NOA Inc.)",
+    "organizer": "(주) 엔오에이 (NOA Inc.)",
+    "planner": "(주) 엔오에이 (NOA Inc.)",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "140,000원"
+      },
+      {
+        "label": "S석",
+        "price": "110,000원"
+      },
+      {
+        "label": "A석",
+        "price": "90,000원"
+      },
+      {
+        "label": "B석",
+        "price": "70,000원"
+      },
+      {
+        "label": "C석",
+        "price": "60,000원"
+      },
+      {
+        "label": "시야방해S",
+        "price": "50,000원"
+      },
+      {
+        "label": "시야방해A",
+        "price": "40,000원"
+      },
+      {
+        "label": "시야방해B",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:39.644Z",
+    "venuePhone": "00-1544-7744",
+    "venueHomepage": "http://www.lotteconcerthall.com/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "2036",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292640_202606010121312550.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292639",
+    "title": "프린세스 공주 [대구]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292639_260601_131919.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292639_260601_131919.gif",
+    "date": "2026.08.03 ~ 2026.08.05",
+    "venue": "대백프라자 (프라임홀)",
+    "venueId": "FC000293",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292639",
+    "genre": "뮤지컬",
+    "price": "전석 30,000원",
+    "time": "월요일 ~ 수요일(11:00,14:00,16:00)",
+    "region": "대구광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "1시간",
+    "age": "24개월 이상",
+    "production": "조이컬쳐",
+    "host": "(주)대구백화점 대백프라자",
+    "organizer": "조이컬쳐",
+    "planner": "조이컬쳐",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "24개월 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 10:15:38",
+    "dataCollectedAt": "2026-06-04T20:13:40.027Z",
+    "venuePhone": "053-420-8088",
+    "venueHomepage": "http://www.debec.co.kr/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "314",
+    "venueTheaterCount": "3",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 식당, 카페, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292639_202606010119199940.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292638",
+    "title": "깜빡도깨비야 같이 놀자 [울산]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292638_260601_131919.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292638_260601_131919.jpg",
+    "date": "2026.06.06 ~ 2026.07.11",
+    "venue": "레미어린이극장 [울산진장] (레미어린이극장 [울산진장])",
+    "venueId": "FC001666",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292638",
+    "genre": "연극",
+    "price": "전석 20,000원",
+    "time": "토요일 ~ 일요일(11:30,14:00)",
+    "region": "울산광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "runtime": "50분",
+    "age": "전체 관람가",
+    "production": "극단 온누리",
+    "host": "극단 온누리",
+    "organizer": "",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:40.435Z",
+    "venuePhone": "052-288-8799",
+    "venueHomepage": "http://www.reomusical.com/new/main/main.htm",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "193",
+    "venueTheaterCount": "1",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsis": "[공연소개]\n관객들과 모두 함께 산 너머~ 노래를 불러봐요^^\n보슬비가 보슬보슬 내리는 날 \n신비로운 도깨비나라의 문이 열리고\n깜빡도깨비도 신나게 노래를 불러요.\n깜빡도깨비는 착하고 부지런한 덕이에게 서푼을 계속 갔다주네요.\n하지만 자기 욕심만 채우는 맹이는 벌을 받게 되어요.\n넷쌍둥이 할아버지도 너무너무 재밌어요^^\n\n[줄거리]\n옛날, 옛날 어느 마을에 가난하지만 착하고 씩씩하게 살아가는 덕이라는 아이가 있었어요. 비가 오는 어느 날, 옆집 할아버지댁의 일을 도우고 서푼을 받아 집으로 돌아가는 길이었어요. 돌에 떨어지는 빗방울 소리가 점점 이상한 발자국소리로 바뀌면서 도깨비들이 잠에서 깨어나게 되죠. 덕이는 깜빡깜빡 건망증이 많은 도깨비를 만나 서푼을 빌려주었어요. 근데 어찌 된 일일까요? 깜빡깜빡 건망증이 많은 도깨비는 매일 매일 찾아와 덕이에게 서푼을 갚는 거예요. 건망증 도깨비 덕분에 덕이는 부자가 되어 마을 잔치를 열고 불쌍한 사람들을 돕게 되죠. 하지만 덕이의 친구 맹이는 시샘이 났어요. 그래서 맹이도 건망증 도깨비에게 서푼을 빌리고 떡이랑 엿을 사 먹었어요. 과연 맹이는 어떻게 될까요?",
+    "description": "[공연소개]\n관객들과 모두 함께 산 너머~ 노래를 불러봐요^^\n보슬비가 보슬보슬 내리는 날 \n신비로운 도깨비나라의 문이 열리고\n깜빡도깨비도 신나게 노래를 불러요.\n깜빡도깨비는 착하고 부지런한 덕이에게 서푼을 계속 갔다주네요.\n하지만 자기 욕심만 채우는 맹이는 벌을 받게 되어요.\n넷쌍둥이 할아버지도 너무너무 재밌어요^^\n\n[줄거리]\n옛날, 옛날 어느 마을에 가난하지만 착하고 씩씩하게 살아가는 덕이라는 아이가 있었어요. 비가 오는 어느 날, 옆집 할아버지댁의 일을 도우고 서푼을 받아 집으로 돌아가는 길이었어요. 돌에 떨어지는 빗방울 소리가 점점 이상한 발자국소리로 바뀌면서 도깨비들이 잠에서 깨어나게 되죠. 덕이는 깜빡깜빡 건망증이 많은 도깨비를 만나 서푼을 빌려주었어요. 근데 어찌 된 일일까요? 깜빡깜빡 건망증이 많은 도깨비는 매일 매일 찾아와 덕이에게 서푼을 갚는 거예요. 건망증 도깨비 덕분에 덕이는 부자가 되어 마을 잔치를 열고 불쌍한 사람들을 돕게 되죠. 하지만 덕이의 친구 맹이는 시샘이 났어요. 그래서 맹이도 건망증 도깨비에게 서푼을 빌리고 떡이랑 엿을 사 먹었어요. 과연 맹이는 어떻게 될까요?",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292638_202606010119193320.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292637",
+    "title": "최지선 귀국 피아노 독주회",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292637_260601_131821.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292637_260601_131821.gif",
+    "date": "2026.06.28 ~ 2026.06.28",
+    "venue": "예술의전당 [서울] (인춘아트홀)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292637",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "일요일(14:00)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "최지선"
+    ],
+    "runtime": "1시간 40분",
+    "age": "만 7세 이상",
+    "production": "위드클래식",
+    "host": "위드클래식",
+    "organizer": "위드클래식",
+    "planner": "위드클래식",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:40.841Z",
+    "venuePhone": "02-580-1300",
+    "venueHomepage": "http://www.sac.or.kr",
+    "venueFacilityType": "국립",
+    "venueSeatScale": "164344",
+    "venueTheaterCount": "11",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "국립 · 식당, 카페, 편의점, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsis": "[PROGRAM]\n\nM. Ravel - Sonatine\nⅠ. Modere\nⅡ. Mouvement de menuet\nⅢ. Anime\n\nW. A. Mozart - Fantasia in C Minor, K.475\n\nW. A. Mozart - Piano Sonata No.14 in C Minor, K.457\nⅠ. Molto Allegro\nⅡ. Adagio\nⅢ. Allegro assai\n\nIntermission\n\nF. Chopin -  Piano Sonata No.3 in B Minor, Op.58\nⅠ Allegro maestoso\nⅡ. Schezo, Molto vivace\nⅢ. Largo\nⅣ. Finale, Presto non tanto",
+    "description": "[PROGRAM]\n\nM. Ravel - Sonatine\nⅠ. Modere\nⅡ. Mouvement de menuet\nⅢ. Anime\n\nW. A. Mozart - Fantasia in C Minor, K.475\n\nW. A. Mozart - Piano Sonata No.14 in C Minor, K.457\nⅠ. Molto Allegro\nⅡ. Adagio\nⅢ. Allegro assai\n\nIntermission\n\nF. Chopin -  Piano Sonata No.3 in B Minor, Op.58\nⅠ Allegro maestoso\nⅡ. Schezo, Molto vivace\nⅢ. Largo\nⅣ. Finale, Presto non tanto",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292637_202606010118217780.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292636",
+    "title": "섬 집 엄마",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292636_260601_131427.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292636_260601_131427.jpg",
+    "date": "2026.06.26 ~ 2026.06.28",
+    "venue": "작은극장 다함 (작은극장 다함)",
+    "venueId": "FC001407",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292636",
+    "genre": "연극",
+    "price": "전석 40,000원",
+    "time": "금요일(19:30), 토요일(19:30), 일요일(14:00)",
+    "region": "대전광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김정아",
+      "이훈희",
+      "이지은",
+      "정은지",
+      "이건희",
+      "이빛나"
+    ],
+    "crew": [
+      "김정아",
+      "정은지",
+      "김승진"
+    ],
+    "runtime": "1시간",
+    "age": "전체 관람가",
+    "production": "달다방 프로젝트",
+    "host": "달다방 프로젝트",
+    "organizer": "달다방 프로젝트",
+    "planner": "달다방 프로젝트, 작은극장 다함",
+    "producer": "달다방 프로젝트",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:41.226Z",
+    "venuePhone": "042-282-2116",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "200",
+    "venueTheaterCount": "1",
+    "venueAmenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292636_202606010114278932.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292636_202606010114278801.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292636_202606010114278760.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292635",
+    "title": "나무늘보 릴렉스 [무안]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292635_260601_131427.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292635_260601_131427.jpg",
+    "date": "2026.06.13 ~ 2026.06.13",
+    "venue": "남도소리울림터 (남도소리울림터)",
+    "venueId": "FC001396",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292635",
+    "genre": "뮤지컬",
+    "price": "전석 10,000원",
+    "time": "토요일(16:30)",
+    "region": "전라남도",
+    "source": "kopis",
+    "isFestival": false,
+    "crew": [
+      "고정욱",
+      "조윤진"
+    ],
+    "runtime": "1시간",
+    "age": "24개월 이상",
+    "production": "전라남도",
+    "host": "전라남도",
+    "organizer": "(재) 전라남도문화재단",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "24개월 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-02 18:00:04.096267",
+    "dataCollectedAt": "2026-06-04T20:13:41.633Z",
+    "venuePhone": "061-981-6688",
+    "venueHomepage": "http://namdosori.or.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "558",
+    "venueTheaterCount": "1",
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292635_202606010114272370.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292634",
+    "title": "최재희 클라리넷 리사이틀",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292634_260601_131259.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292634_260601_131259.gif",
+    "date": "2026.06.23 ~ 2026.06.23",
+    "venue": "예술의전당 [서울] (리사이틀홀)",
+    "venueId": "FC000001",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292634",
+    "genre": "서양음악(클래식)",
+    "price": "전석 40,000원",
+    "time": "화요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "최재희",
+      "채원경"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "뉴화인아트뮤직",
+    "host": "뉴화인아트뮤직",
+    "organizer": "",
+    "planner": "뉴화인아트뮤직",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:42.046Z",
+    "venuePhone": "02-580-1300",
+    "venueHomepage": "http://www.sac.or.kr",
+    "venueFacilityType": "국립",
+    "venueSeatScale": "164344",
+    "venueTheaterCount": "11",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "국립 · 식당, 카페, 편의점, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsis": "[Program]\n\nDonald Martino\nA Set for Clarinet Solo\n      I. Allegro    II. Adagio    III. Allegro\n\nLuigi Bassi\nFantasy on Themes from Verdi’s “Rigoletto”\n\nGiuseppe Verdi\nLa Traviata Prelude\n\nDonato Lovreglio\nFantasy on Themes from Verdi’s “La Traviata”\n\nIntermission\n\nCarlo Della Giacoma\nFantasy on Themes from Mascagni’s ‘”Cavalleria Rusticana”\n\nGeorge Bizet\nCarmen Prelude\n\nPablo Sarasate/ Nicolas Baldeyrou\nFantasy on Bizet’s “Carmen”",
+    "description": "[Program]\n\nDonald Martino\nA Set for Clarinet Solo\n      I. Allegro    II. Adagio    III. Allegro\n\nLuigi Bassi\nFantasy on Themes from Verdi’s “Rigoletto”\n\nGiuseppe Verdi\nLa Traviata Prelude\n\nDonato Lovreglio\nFantasy on Themes from Verdi’s “La Traviata”\n\nIntermission\n\nCarlo Della Giacoma\nFantasy on Themes from Mascagni’s ‘”Cavalleria Rusticana”\n\nGeorge Bizet\nCarmen Prelude\n\nPablo Sarasate/ Nicolas Baldeyrou\nFantasy on Bizet’s “Carmen”",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292634_202606010113000080.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292633",
+    "title": "제10회 삼육대학교 음악학과 피아노 동문장학회 입상자 연주회",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292633_260601_130949.png",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292633_260601_130949.png",
+    "date": "2026.06.10 ~ 2026.06.10",
+    "venue": "꿈의숲아트센터 (콘서트홀)",
+    "venueId": "FC000567",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292633",
+    "genre": "서양음악(클래식)",
+    "price": "전석무료",
+    "time": "수요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "김경림",
+      "이지훈",
+      "노정민",
+      "김민솔",
+      "이진혁",
+      "김경민",
+      "김화현"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 5세 이상",
+    "production": "삼육대학교 음악학과 피아노 동문장학회",
+    "host": "삼육대학교 음악학과 피아노 동문장학회",
+    "organizer": "삼육대학교 음악학과 피아노 동문장학회",
+    "planner": "",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "무료"
+      }
+    ],
+    "ageDetail": "만 5세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 18:00:04.089147",
+    "dataCollectedAt": "2026-06-04T20:13:42.458Z",
+    "venuePhone": "02-2289-5401",
+    "venueHomepage": "http://www.dfac.or.kr/main/main.asp",
+    "venueFacilityType": "공공(기타)",
+    "venueSeatScale": "584",
+    "venueTheaterCount": "4",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
+    "synopsis": "[공연소개]\n<​​​​​​R. Schumann - Fantasie Op.17>\n슈만이 연인 클라라 비크를 향한 그리움과 베토벤에 대한 존경을 담아 작곡한 대표적 낭만주의 피아노 작품이다. 자유로운 형식 속에서 시적 환상성과 격정적 감정, 깊은 서정성이 어우러지며 슈만 특유의 내면세계를 드러낸다.\n\n<​​​​​​N. Kapustin - Variations Op.41>\n러시아 작곡가 Nikolai Kapustin이 클래식 형식과 재즈 어법을 결합하여 만든 독창적인 피아노 작품이다. 전통적인 변주곡 구조를 바탕으로 하면서도 스윙 리듬, 블루스 화성, 즉흥연주적인 패시지 등이 유기적으로 어우러진다. 각 변주는 서로 다른 재즈 스타일과 분위기를 보여주며, 화려한 리듬감과 고난도의 테크닉을 요구한다. 카푸스틴은 악보에 모든 요소를 정교하게 기보했기 때문에 실제 즉흥연주처럼 들리면서도 치밀한 구성미를 지닌 것이 특징이다. 이 작품은 클래식과 재즈의 경계를 자연스럽게 넘나드는 카푸스틴 음악 세계의 개성을 잘 보여준다.\n\n<​​​​​​F. Chopin - Ballade No.3>\n의 네 개의 발라드 가운데 가장 밝고 목가적인 분위기를 지닌 작품이다. 부드럽고 유려한 주제로 시작해 서정성과 춤곡적인 리듬이 자연스럽게 어우러지며, 점차 풍부한 감정과 긴장감을 형성한다. 특히 밝은 A♭장조의 따뜻한 색채 속에서도 극적인 전개와 섬세한 감정 변화가 나타나며, 쇼팽 특유의 시적 상상력과 뛰어난 화성 감각이 돋보인다. 중간부에서는 역동적 에너지와 화려한 패시지가 전개되고, 마지막에는 찬란하고 힘찬 코다로 곡을 마무리한다. 이 작품은 이야기하듯 흐르는 서정성과 화려한 기교가 조화를 이루는 쇼팽 발라드의 대표작 중 하나로 평가된다.\n\n<​​​​​​S. Rachmaninoff - Piano Sonata No.2>\nSergei Rachmaninoff의 대표적인 후기 낭만주의 피아노 작품으로, 웅장한 음향과 극적인 감정 표현이 돋보이는 곡이다. 1913년에 초판이 완성되었으며, 이후 1931년 라흐마니노프가 보다 간결하고 응축된 형태로 개정하였다. 세 악장은 쉼 없이 유기적으로 연결되며, 어두운 서주와 격렬한 패시지, 서정적인 선율, 종교적 분위기의 화성 진행이 긴장감 있게 전개된다. 특히 폭넓은 음역과 두터운 화성, 거대한 클라이맥스는 오케스트라적인 울림을 만들어내며, 연주자에게 뛰어난 체력과 테크닉을 요구한다. 이 작품은 라흐마니노프 특유의 깊은 서정성과 러시아적 비애, 화려한 피아니즘이 집약된 걸작으로 평가된다.\n\n<​​​​​​D. Kavalevsky - Piano Sonata No. 3>\n제2차 세계대전 시기에 작곡한 작품으로, 강한 추진력과 서정성이 대비를 이루는 소나타이다. 비교적 전통적인 형식을 유지하면서도 러시아 현대음악 특유의 명확한 리듬과 선명한 화성을 보여준다. 1악장은 힘찬 동기와 긴장감 있는 전개가 특징이며, 2악장은 깊은 서정성과 명상적인 분위기를 통해 전쟁 속 인간적인 감정을 드러낸다. 마지막 악장은 역동적인 리듬과 화려한 기교가 어우러지며 강렬한 에너지로 곡을 이끈다. 카발레프스키 특유의 간결하면서도 효과적인 음악 언어가 잘 드러나는 작품으로, 교육적 성격과 예술성을 동시에 갖춘 러시아 피아노 레퍼토리의 대표작 가운데 하나로 평가된다.\n\n<​​​​​​S. Prokofiev - Piano Sonata No. 4>\nSergei Prokofiev의 초기 피아노 소나타 가운데 하나로, 어둡고 내면적인 정서가 두드러지는 작품이다. 프로코피예프는 세상을 떠난 친구 막시밀리안 슈미트의 기억에 이 곡을 헌정하였으며, 전반적으로 우울하고 긴장된 분위기가 깊게 배어 있다. 불안정한 화성과 날카로운 리듬, 갑작스러운 감정 변화 속에서도 서정적인 선율이 섬세하게 드러난다. 특히 느린 악장에서는 몽환적이고 음울한 색채가 강조되며, 마지막 악장은 집요한 리듬과 강렬한 추진력으로 극적인 긴장을 형성한다. 이 작품은 프로코피예프 특유의 현대적 감각과 냉철한 표현, 그리고 숨겨진 서정성이 조화를 이루는 소나타로 평가된다.\n\n<​​​​​​F. Liszt - Trantella : Venezia e Napoli>\nVenezia e Napoli의 마지막 곡인 ‘Tarantella’는 Franz Liszt가 이탈리아 민속 춤곡의 열정과 화려한 피아니즘을 결합해 만든 작품이다. 빠른 6/8박자의 타란텔라 리듬 위에 눈부신 패시지와 현란한 옥타브, 도약 진행이 이어지며 강렬한 에너지를 만들어낸다. 곡은 이탈리아 나폴리 지역의 민속 선율과 춤의 분위기를 바탕으로 하면서도 리스트 특유의 화려한 편곡 감각과 극적인 전개가 더해져 독주회용 비르투오소 작품으로 완성되었다. 끊임없이 몰아치는 리듬과 화려한 기교 속에서도 유쾌하고 생동감 있는 정취가 살아 있으며, 마지막까지 폭발적인 긴장감과 환희를 유지한다. 이 작품은 리스트의 뛰어난 피아노 작법과 낭만주의적 화려함을 대표하는 곡 가운데 하나로 평가된다.",
+    "description": "[공연소개]\n<​​​​​​R. Schumann - Fantasie Op.17>\n슈만이 연인 클라라 비크를 향한 그리움과 베토벤에 대한 존경을 담아 작곡한 대표적 낭만주의 피아노 작품이다. 자유로운 형식 속에서 시적 환상성과 격정적 감정, 깊은 서정성이 어우러지며 슈만 특유의 내면세계를 드러낸다.\n\n<​​​​​​N. Kapustin - Variations Op.41>\n러시아 작곡가 Nikolai Kapustin이 클래식 형식과 재즈 어법을 결합하여 만든 독창적인 피아노 작품이다. 전통적인 변주곡 구조를 바탕으로 하면서도 스윙 리듬, 블루스 화성, 즉흥연주적인 패시지 등이 유기적으로 어우러진다. 각 변주는 서로 다른 재즈 스타일과 분위기를 보여주며, 화려한 리듬감과 고난도의 테크닉을 요구한다. 카푸스틴은 악보에 모든 요소를 정교하게 기보했기 때문에 실제 즉흥연주처럼 들리면서도 치밀한 구성미를 지닌 것이 특징이다. 이 작품은 클래식과 재즈의 경계를 자연스럽게 넘나드는 카푸스틴 음악 세계의 개성을 잘 보여준다.\n\n<​​​​​​F. Chopin - Ballade No.3>\n의 네 개의 발라드 가운데 가장 밝고 목가적인 분위기를 지닌 작품이다. 부드럽고 유려한 주제로 시작해 서정성과 춤곡적인 리듬이 자연스럽게 어우러지며, 점차 풍부한 감정과 긴장감을 형성한다. 특히 밝은 A♭장조의 따뜻한 색채 속에서도 극적인 전개와 섬세한 감정 변화가 나타나며, 쇼팽 특유의 시적 상상력과 뛰어난 화성 감각이 돋보인다. 중간부에서는 역동적 에너지와 화려한 패시지가 전개되고, 마지막에는 찬란하고 힘찬 코다로 곡을 마무리한다. 이 작품은 이야기하듯 흐르는 서정성과 화려한 기교가 조화를 이루는 쇼팽 발라드의 대표작 중 하나로 평가된다.\n\n<​​​​​​S. Rachmaninoff - Piano Sonata No.2>\nSergei Rachmaninoff의 대표적인 후기 낭만주의 피아노 작품으로, 웅장한 음향과 극적인 감정 표현이 돋보이는 곡이다. 1913년에 초판이 완성되었으며, 이후 1931년 라흐마니노프가 보다 간결하고 응축된 형태로 개정하였다. 세 악장은 쉼 없이 유기적으로 연결되며, 어두운 서주와 격렬한 패시지, 서정적인 선율, 종교적 분위기의 화성 진행이 긴장감 있게 전개된다. 특히 폭넓은 음역과 두터운 화성, 거대한 클라이맥스는 오케스트라적인 울림을 만들어내며, 연주자에게 뛰어난 체력과 테크닉을 요구한다. 이 작품은 라흐마니노프 특유의 깊은 서정성과 러시아적 비애, 화려한 피아니즘이 집약된 걸작으로 평가된다.\n\n<​​​​​​D. Kavalevsky - Piano Sonata No. 3>\n제2차 세계대전 시기에 작곡한 작품으로, 강한 추진력과 서정성이 대비를 이루는 소나타이다. 비교적 전통적인 형식을 유지하면서도 러시아 현대음악 특유의 명확한 리듬과 선명한 화성을 보여준다. 1악장은 힘찬 동기와 긴장감 있는 전개가 특징이며, 2악장은 깊은 서정성과 명상적인 분위기를 통해 전쟁 속 인간적인 감정을 드러낸다. 마지막 악장은 역동적인 리듬과 화려한 기교가 어우러지며 강렬한 에너지로 곡을 이끈다. 카발레프스키 특유의 간결하면서도 효과적인 음악 언어가 잘 드러나는 작품으로, 교육적 성격과 예술성을 동시에 갖춘 러시아 피아노 레퍼토리의 대표작 가운데 하나로 평가된다.\n\n<​​​​​​S. Prokofiev - Piano Sonata No. 4>\nSergei Prokofiev의 초기 피아노 소나타 가운데 하나로, 어둡고 내면적인 정서가 두드러지는 작품이다. 프로코피예프는 세상을 떠난 친구 막시밀리안 슈미트의 기억에 이 곡을 헌정하였으며, 전반적으로 우울하고 긴장된 분위기가 깊게 배어 있다. 불안정한 화성과 날카로운 리듬, 갑작스러운 감정 변화 속에서도 서정적인 선율이 섬세하게 드러난다. 특히 느린 악장에서는 몽환적이고 음울한 색채가 강조되며, 마지막 악장은 집요한 리듬과 강렬한 추진력으로 극적인 긴장을 형성한다. 이 작품은 프로코피예프 특유의 현대적 감각과 냉철한 표현, 그리고 숨겨진 서정성이 조화를 이루는 소나타로 평가된다.\n\n<​​​​​​F. Liszt - Trantella : Venezia e Napoli>\nVenezia e Napoli의 마지막 곡인 ‘Tarantella’는 Franz Liszt가 이탈리아 민속 춤곡의 열정과 화려한 피아니즘을 결합해 만든 작품이다. 빠른 6/8박자의 타란텔라 리듬 위에 눈부신 패시지와 현란한 옥타브, 도약 진행이 이어지며 강렬한 에너지를 만들어낸다. 곡은 이탈리아 나폴리 지역의 민속 선율과 춤의 분위기를 바탕으로 하면서도 리스트 특유의 화려한 편곡 감각과 극적인 전개가 더해져 독주회용 비르투오소 작품으로 완성되었다. 끊임없이 몰아치는 리듬과 화려한 기교 속에서도 유쾌하고 생동감 있는 정취가 살아 있으며, 마지막까지 폭발적인 긴장감과 환희를 유지한다. 이 작품은 리스트의 뛰어난 피아노 작법과 낭만주의적 화려함을 대표하는 곡 가운데 하나로 평가된다.",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292633_202606010109491300.png"
+    ]
+  },
+  {
+    "id": "kopis_PF292632",
+    "title": "소프라노 신주연 귀국 독창회",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292632_260601_130834.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292632_260601_130834.gif",
+    "date": "2026.06.24 ~ 2026.06.24",
+    "venue": "금호아트홀 연세 (금호아트홀 연세)",
+    "venueId": "FC001556",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292632",
+    "genre": "서양음악(클래식)",
+    "price": "전석 20,000원",
+    "time": "수요일(19:30)",
+    "region": "서울특별시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "신주연",
+      "이상호"
+    ],
+    "runtime": "1시간 30분",
+    "age": "만 7세 이상",
+    "production": "영음예술기획",
+    "host": "영음예술기획",
+    "organizer": "",
+    "planner": "영음예술기획",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "만 7세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:42.878Z",
+    "venuePhone": "02-6303-1977",
+    "venueHomepage": "http://www.kumhoarthall.com/",
+    "venueFacilityType": "민간(대학로 외)",
+    "venueSeatScale": "390",
+    "venueTheaterCount": "1",
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292632_202606010108343202.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292632_202606010108343031.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292632_202606010108343000.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292631",
+    "title": "Souvenirs Concert series V [성남]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292631_260601_130614.gif",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292631_260601_130614.gif",
+    "date": "2026.06.19 ~ 2026.06.19",
+    "venue": "성남아트센터 (앙상블씨어터)",
+    "venueId": "FC000016",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292631",
+    "genre": "서양음악(클래식)",
+    "price": "전석 30,000원",
+    "time": "금요일(19:30)",
+    "region": "경기도",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "서필원",
+      "정지인",
+      "전수진",
+      "최다혜",
+      "김미영"
+    ],
+    "runtime": "1시간 25분",
+    "age": "만 6세 이상",
+    "production": "드림넥서스뮤직",
+    "host": "드림넥서스뮤직",
+    "organizer": "",
+    "planner": "드림넥서스뮤직",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "만 6세 이상",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:43.284Z",
+    "venuePhone": "031-783-8000",
+    "venueHomepage": "http://www.snart.or.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "5174",
+    "venueTheaterCount": "4",
+    "venueAmenities": [
+      "식당",
+      "카페",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 카페, 놀이방, 수유실, 장애인 주차, 장애인 경사로",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292631_202606010106147841.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292631_202606010106147700.jpg",
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292631_202606010107204360.jpg"
+    ]
+  },
+  {
+    "id": "kopis_PF292630",
+    "title": "천방지축 강심장 [광주 광산]",
+    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292630_260601_130614.jpg",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF292630_260601_130614.jpg",
+    "date": "2026.06.12 ~ 2026.06.13",
+    "venue": "광산문화예술회관 (공연장)",
+    "venueId": "FC000849",
+    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF292630",
+    "genre": "연극",
+    "price": "전석 20,000원",
+    "time": "금요일(11:00,14:00), 토요일(14:00)",
+    "region": "광주광역시",
+    "source": "kopis",
+    "isFestival": false,
+    "cast": [
+      "최윤석",
+      "소지원",
+      "박태영",
+      "김은숙",
+      "박미강",
+      "정성훈",
+      "김은비"
+    ],
+    "crew": [
+      "김보람",
+      "김호준",
+      "박은비"
+    ],
+    "runtime": "1시간",
+    "age": "전체 관람가",
+    "production": "예락",
+    "host": "광산구청, 더 싱어즈 [광주], 예락",
+    "organizer": "광산구청, 더 싱어즈 [광주], 예락",
+    "planner": "예락",
+    "producer": "",
+    "sponsor": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "전체 관람가",
+    "openRun": false,
+    "performanceState": "공연예정",
+    "lastModifiedAt": "2026-06-01 15:00:04.064384",
+    "dataCollectedAt": "2026-06-04T20:13:43.691Z",
+    "venuePhone": "062-960-8860",
+    "venueHomepage": "http://art.gwangsan.go.kr/",
+    "venueFacilityType": "공공(문예회관)",
+    "venueSeatScale": "500",
+    "venueTheaterCount": "1",
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관)",
+    "synopsisImages": [
+      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF292630_202606010106140910.jpg"
+    ]
   }
 ]
