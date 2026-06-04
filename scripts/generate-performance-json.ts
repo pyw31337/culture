@@ -83,6 +83,33 @@ const FALLBACK_IMAGES: Record<string, string> = {
 const SOURCE_FRESH_DAYS = 3;
 const SOURCE_STALE_DAYS = 30;
 const HOME_FEED_LIMIT = 720;
+const PERFORMANCE_PAGE_SIZE = 300;
+
+function writePagedPayload(
+    rootDir: string,
+    relativeDir: string,
+    items: PrunedPerformance[],
+) {
+    const outputDir = path.join(rootDir, relativeDir);
+    fs.rmSync(outputDir, { recursive: true, force: true });
+    fs.mkdirSync(outputDir, { recursive: true });
+
+    const pages: string[] = [];
+    for (let start = 0; start < items.length; start += PERFORMANCE_PAGE_SIZE) {
+        const pageNumber = Math.floor(start / PERFORMANCE_PAGE_SIZE) + 1;
+        const filename = `page-${String(pageNumber).padStart(3, '0')}.json`;
+        fs.writeFileSync(path.join(outputDir, filename), JSON.stringify(items.slice(start, start + PERFORMANCE_PAGE_SIZE)));
+        pages.push(`/data/${relativeDir}/${filename}`);
+    }
+
+    const manifest = {
+        total: items.length,
+        pageSize: PERFORMANCE_PAGE_SIZE,
+        pages,
+    };
+    fs.writeFileSync(path.join(outputDir, 'manifest.json'), JSON.stringify(manifest));
+    return manifest;
+}
 const WINTER_LEISURE_TERMS = ['리프트권', '스키장', '스노우파크', '눈썰매', '눈썰매장', '스키렌탈', '보드렌탈', '렌탈샵', '슬로프'];
 const WINTER_LEISURE_FALSE_POSITIVE_TERMS = ['차이콥스키', '마이스키', '위스키', '트바르코프스키', '패들보드', '플레이팅보드'];
 const PRICE_OPTIONAL_GENRES = new Set(['movie', 'baseball', 'basketball', 'volleyball', 'soccer', 'handball', 'tourism']);
@@ -1873,6 +1900,9 @@ async function generate() {
         fs.writeFileSync(outputPath, JSON.stringify(pruned));
         console.log(`Successfully generated ${pruned.length} items to ${outputPath}`);
 
+        const performancePages = writePagedPayload(dir, 'pages', pruned);
+        console.log(`Generated ${performancePages.pages.length} progressive performance pages to ${path.join(dir, 'pages')}`);
+
         const homeFeedPayloadPath = path.join(dir, 'home-feed.json');
         const homeFeedPayload = pruned.slice(0, HOME_FEED_LIMIT);
         fs.writeFileSync(homeFeedPayloadPath, JSON.stringify(homeFeedPayload));
@@ -1906,8 +1936,9 @@ async function generate() {
             ));
             const categoryPath = path.join(categoryDataDir, `${slug}.json`);
             fs.writeFileSync(categoryPath, JSON.stringify(categoryItems));
+            writePagedPayload(dir, path.join('category-pages', slug), categoryItems);
         });
-        console.log(`Generated category-scoped payloads to ${categoryDataDir}`);
+        console.log(`Generated category-scoped and paged payloads to ${categoryDataDir}`);
 
         const versionPath = path.join(process.cwd(), 'public', 'version.txt');
         const version = process.env.GITHUB_SHA?.slice(0, 12) || `${Math.floor(Date.now() / 1000)}`;

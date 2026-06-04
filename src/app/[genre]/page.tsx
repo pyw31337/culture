@@ -169,7 +169,7 @@ export default async function GenrePage({ params }: PageProps) {
                     isCategoryPage={true}
                     initialFilteredCount={performances.length}
                     categoryGenreFilter={genreFilter}
-                    performanceDataPath={`/data/categories/${genre}.json`}
+                    performanceDataPath={`/data/category-pages/${genre}/manifest.json`}
                 />
             </Suspense>
         </main>

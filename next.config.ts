@@ -72,6 +72,20 @@ const runtimeCaching: RuntimeCachingEntry[] = [
     },
   },
   {
+    urlPattern: /\/data\/(?:pages|category-pages)\/.+\.json(?:\?.*)?$/i,
+    handler: 'StaleWhileRevalidate',
+    options: {
+      cacheName: 'runtime-paged-data',
+      cacheableResponse: {
+        statuses: [0, 200],
+      },
+      expiration: {
+        maxEntries: 160,
+        maxAgeSeconds: 24 * 60 * 60,
+      },
+    },
+  },
+  {
     urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
     handler: 'CacheFirst',
     options: {

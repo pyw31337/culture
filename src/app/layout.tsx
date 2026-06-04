@@ -20,8 +20,6 @@ const geistMono = Geist_Mono({
 });
 
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-5GWFPEPEW5';
-const kakaoJsKey = process.env.NEXT_PUBLIC_KAKAO_JS_KEY;
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -78,6 +76,10 @@ export default function RootLayout({
 
   return (
     <html lang="ko" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://wsrv.nl" crossOrigin="" />
+        <link rel="dns-prefetch" href="//wsrv.nl" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -124,13 +126,6 @@ export default function RootLayout({
             <ScrollToTop />
           </ErrorBoundary>
         </ProgressBarProvider>
-        {kakaoJsKey && (
-          <Script
-            id="kakao-map-script"
-            src={`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false&libraries=services,clusterer`}
-            strategy="afterInteractive"
-          />
-        )}
       </body>
     </html>
   );

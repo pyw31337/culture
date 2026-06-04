@@ -10,6 +10,7 @@ import { FavoriteVenuePreference, Performance } from '@/types';
 import { X, Heart, RotateCw, Film, Plus, Minus, ExternalLink } from 'lucide-react';
 import Portal from './ui/Portal';
 import { SPORTS_GENRES } from '@/lib/constants';
+import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
 
 interface Cinema {
     name: string;
@@ -273,14 +274,12 @@ export default function KakaoMapModal({
             });
         };
 
-        checkInterval = setInterval(() => {
-            if (window.kakao?.maps) {
-                clearInterval(checkInterval);
-                initializeMap();
-            }
-        }, 100);
+        void loadKakaoMapSdk().then(initializeMap).catch(() => undefined);
 
-        return () => { cancelled = true; clearInterval(checkInterval); };
+        return () => {
+            cancelled = true;
+            if (checkInterval) clearInterval(checkInterval);
+        };
     }, []); // Empty dependency array = mount once
 
     // --- 3. Reactive Map Updates (Center/Bounds) ---

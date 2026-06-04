@@ -9,6 +9,19 @@ import { parseDistrictSelection, parseRegionSelection, persistRegionSelection, r
 
 const INITIAL_VISIBLE_COUNT = 15;
 const LOAD_MORE_COUNT = 45;
+const FILTER_CACHE_LIMIT = 24;
+const filterResultCache = new Map<string, Performance[]>();
+
+function rememberFilterResult(key: string, result: Performance[]) {
+    filterResultCache.delete(key);
+    filterResultCache.set(key, result);
+    while (filterResultCache.size > FILTER_CACHE_LIMIT) {
+        const oldestKey = filterResultCache.keys().next().value;
+        if (!oldestKey) break;
+        filterResultCache.delete(oldestKey);
+    }
+    return result;
+}
 
 interface UsePerformanceFiltersProps {
     allPerformances: Performance[];
@@ -145,6 +158,27 @@ export function usePerformanceFilters({
 
     // Main Filtering Logic
     const filteredPerformances = useMemo(() => {
+        const dataFingerprint = `${allPerformances.length}:${allPerformances.at(-1)?.id || ''}`;
+        const locationFingerprint = searchLocation || userLocation;
+        const cacheKey = JSON.stringify([
+            dataFingerprint,
+            selectedGenre,
+            selectedRegion,
+            selectedDistrict,
+            selectedVenue,
+            debouncedSearchText,
+            locationFingerprint?.lat || '',
+            locationFingerprint?.lng || '',
+            radius,
+            searchMode,
+            discoveryContextId,
+            selectedDateFilter,
+            selectedPriceTier,
+            Object.keys(venues).length,
+        ]);
+        const cachedResult = filterResultCache.get(cacheKey);
+        if (cachedResult) return cachedResult;
+
         const filtered = filterPerformances(allPerformances, {
             genre: selectedGenre,
             region: selectedRegion,
@@ -176,7 +210,7 @@ export function usePerformanceFilters({
                         : 99999;
                     return { ...p, _dist: dist };
                 });
-                return withDist.sort((a, b) => {
+                return rememberFilterResult(cacheKey, withDist.sort((a, b) => {
                     const distDiff = a._dist - b._dist;
                     if (distDiff !== 0) return distDiff; // Primary: Distance
 
@@ -188,20 +222,20 @@ export function usePerformanceFilters({
 
                     // Tertiary: Title (Alphabetical)
                     return a.title.localeCompare(b.title);
-                });
+                }));
             }
         }
 
         const sportsGenres = ['volleyball', 'basketball', 'baseball', 'handball', 'soccer'];
         if (selectedGenre === 'all' && searchMode !== 'location' && !debouncedSearchText) {
-            return sortPerformancesForHomeFeed(discoveryFiltered);
+            return rememberFilterResult(cacheKey, sortPerformancesForHomeFeed(discoveryFiltered));
         }
 
         if (selectedGenre !== 'movie' && !sportsGenres.includes(selectedGenre) && !debouncedSearchText) {
-            return sortPerformancesForCategoryFeed(discoveryFiltered);
+            return rememberFilterResult(cacheKey, sortPerformancesForCategoryFeed(discoveryFiltered));
         }
 
-        return sortPerformances(discoveryFiltered, selectedGenre, debouncedSearchText);
+        return rememberFilterResult(cacheKey, sortPerformances(discoveryFiltered, selectedGenre, debouncedSearchText));
     }, [allPerformances, selectedGenre, selectedRegion, selectedDistrict, selectedVenue, debouncedSearchText, searchLocation, userLocation, radius, searchMode, venues, discoveryContextId, selectedDateFilter, selectedPriceTier]);
 
     // Pagination

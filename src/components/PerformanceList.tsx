@@ -110,6 +110,43 @@ export default function PerformanceList({
     const deepLinkHandled = useRef(false);
     const modalReturnScrollY = useRef(0);
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        let timer: ReturnType<typeof setTimeout> | null = null;
+        const handleScroll = () => {
+            document.documentElement.classList.add('is-scrolling');
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(() => {
+                document.documentElement.classList.remove('is-scrolling');
+            }, 140);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (timer) clearTimeout(timer);
+            document.documentElement.classList.remove('is-scrolling');
+        };
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        const preloadOverlays = () => {
+            void import('./MapView');
+            void import('./CalendarView');
+        };
+
+        if ('requestIdleCallback' in window) {
+            const idleId = window.requestIdleCallback(preloadOverlays, { timeout: 3500 });
+            return () => window.cancelIdleCallback(idleId);
+        }
+
+        const timer = globalThis.setTimeout(preloadOverlays, 1800);
+        return () => globalThis.clearTimeout(timer);
+    }, []);
+
     const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
         performanceLoadPolicy: 'full',

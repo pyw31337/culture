@@ -25,6 +25,12 @@ let venuesPromise: Promise<Record<string, VenueData>> | null = null;
 
 const getBasePath = () => process.env.NEXT_PUBLIC_BASE_PATH || '';
 
+type PerformancePageManifest = {
+    total: number;
+    pageSize: number;
+    pages: string[];
+};
+
 async function fetchJson<T>(path: string, fallback: T): Promise<T> {
     const response = await fetch(`${getBasePath()}${path}`);
     if (!response.ok) return fallback;
@@ -36,7 +42,29 @@ function getCachedPerformances(path: string) {
     return performancesCacheByPath.get(path) || null;
 }
 
-function loadPerformances(path = '/data/performances.json'): Promise<Performance[]> {
+function waitForBrowserIdle() {
+    if (typeof window === 'undefined') return Promise.resolve();
+
+    return new Promise<void>((resolve) => {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(() => resolve(), { timeout: 250 });
+            return;
+        }
+        globalThis.setTimeout(resolve, 16);
+    });
+}
+
+function mergePerformances(current: Performance[], next: Performance[]) {
+    const byId = new Map<string, Performance>();
+    current.forEach((item) => byId.set(item.id, item));
+    next.forEach((item) => byId.set(item.id, item));
+    return Array.from(byId.values());
+}
+
+function loadPerformances(
+    path = '/data/performances.json',
+    onProgress?: (data: Performance[]) => void,
+): Promise<Performance[]> {
     const cached = getCachedPerformances(path);
     if (cached) return Promise.resolve(cached);
 
@@ -45,7 +73,21 @@ function loadPerformances(path = '/data/performances.json'): Promise<Performance
         : performancesPromiseByPath.get(path);
     if (existingPromise) return existingPromise;
 
-    const promise = fetchJson<Performance[]>(path, [])
+    const promise = (path.endsWith('/manifest.json')
+        ? fetchJson<PerformancePageManifest>(path, { total: 0, pageSize: 0, pages: [] })
+            .then(async (manifest) => {
+                let merged: Performance[] = [];
+                for (let index = 0; index < manifest.pages.length; index += 1) {
+                    const page = await fetchJson<Performance[]>(manifest.pages[index], []);
+                    merged = mergePerformances(merged, page);
+                    if (onProgress && (index === 0 || index % 2 === 1 || index === manifest.pages.length - 1)) {
+                        onProgress(merged);
+                    }
+                    await waitForBrowserIdle();
+                }
+                return merged;
+            })
+        : fetchJson<Performance[]>(path, []))
         .then((data) => {
             performancesCacheByPath.set(path, data);
             if (path === '/data/performances.json') {
@@ -152,12 +194,21 @@ export function usePerformanceData({
             const tasks: Promise<void>[] = [];
 
             if (performanceLoadPolicy === 'full') {
+                const handleProgress = performanceDataPath.endsWith('/manifest.json')
+                    ? (data: Performance[]) => {
+                        if (isCancelled || data.length === 0) return;
+                        startTransition(() => {
+                            setAllPerformances((current) => mergePerformances(current, data));
+                        });
+                    }
+                    : undefined;
+
                 tasks.push(
-                    loadPerformances(performanceDataPath)
+                    loadPerformances(performanceDataPath, handleProgress)
                         .then((data) => {
                             if (isCancelled || data.length === 0) return;
                             startTransition(() => {
-                                setAllPerformances(data);
+                                setAllPerformances((current) => mergePerformances(current, data));
                             });
                         })
                         .catch((error) => {

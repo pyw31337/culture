@@ -33,7 +33,7 @@ export default async function Home() {
                     lastUpdated={lastUpdated}
                     initialGenreCounts={genreCounts}
                     buildInfo={buildInfo}
-                    performanceDataPath="/data/performances.json"
+                    performanceDataPath="/data/pages/manifest.json"
                 />
             </Suspense>
         </main>

@@ -24,6 +24,7 @@ import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoFo
 import Portal from './ui/Portal';
 import ImageWithFallback from './ImageWithFallback';
 import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
+import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
 
 // Weather interface
 interface DailyWeather {
@@ -641,12 +642,13 @@ export default function MapView({
             });
         };
 
-        checkInterval = setInterval(() => {
-            if (window.kakao?.maps && checkInterval) {
-                clearInterval(checkInterval);
-                initializeMap();
-            }
-        }, 100);
+        void loadKakaoMapSdk()
+            .then(initializeMap)
+            .catch(() => {
+                if (!cancelled) {
+                    setMapLoadError('지도 SDK를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+                }
+            });
 
         sdkTimeout = setTimeout(() => {
             if (!cancelled && !window.kakao?.maps) {

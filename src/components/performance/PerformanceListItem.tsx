@@ -64,35 +64,10 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     const cardRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
-    // Tilt handlers
-    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-        if (!cardRef.current || !glareRef.current) return;
-        const rect = cardRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -5;
-        const rotateY = ((x - centerX) / centerX) * 5;
-        cardRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
-        glareRef.current.style.transform = `translateX(${(x - centerX) / 3}px) translateY(${(y - centerY) / 3}px)`;
-        glareRef.current.style.opacity = '1';
-    }, []);
-
     const handleMouseLeave = useCallback(() => {
         if (!cardRef.current || !glareRef.current) return;
         cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
         glareRef.current.style.opacity = '0';
-    }, []);
-
-    const handleTouchStart = useCallback(() => {
-        if (!cardRef.current) return;
-        cardRef.current.style.transform = `perspective(1000px) rotateX(3deg) scale3d(0.99, 0.99, 0.99)`;
-    }, []);
-
-    const handleTouchEnd = useCallback(() => {
-        if (!cardRef.current) return;
-        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
     }, []);
 
     // Variant styles
@@ -136,10 +111,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     return (
         <div
             className="perspective-1000 group relative hover:z-[2000]"
-            onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
         >
             <div
                 ref={cardRef}

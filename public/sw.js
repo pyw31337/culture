@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.z74vzbxE8FDU4ywbZ217T.b6383ab7f649cc2b5e09c1d75df790bd.js"
+  "/culture/_next/precache.EnxmUjieCvdG5vYhzhM9K.ff98142585d73eda3a41f88822629d65.js"
 );
 
 workbox.core.skipWaiting();
@@ -760,6 +760,7 @@ workbox.routing.registerRoute(/\/version\.txt(?:\?.*)?$/i, new workbox.strategie
 workbox.routing.registerRoute(/\/data\/build-info\.json(?:\?.*)?$/i, new workbox.strategies.NetworkFirst({ "cacheName":"build-info","networkTimeoutSeconds":2, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 60, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\/data\/(?:performances|home-feed|map-items|map-venues|calendar-items|cinemas|venues|movies|ott)\.json(?:\?.*)?$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"runtime-data-payloads", plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 32, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\/data\/categories\/[^/]+\.json(?:\?.*)?$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"runtime-data-payloads", plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 32, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute(/\/data\/(?:pages|category-pages)\/.+\.json(?:\?.*)?$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"runtime-paged-data", plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] }), new workbox.expiration.Plugin({ maxEntries: 160, maxAgeSeconds: 86400, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"google-fonts", plugins: [new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 31536000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i, new workbox.strategies.CacheFirst({ "cacheName":"font-awesome", plugins: [new workbox.expiration.Plugin({ maxEntries: 1, maxAgeSeconds: 31536000, purgeOnQuotaError: false })] }), 'GET');
 workbox.routing.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"static-font-assets", plugins: [new workbox.expiration.Plugin({ maxEntries: 4, maxAgeSeconds: 604800, purgeOnQuotaError: false })] }), 'GET');
