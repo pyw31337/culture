@@ -88,7 +88,9 @@ jobs:
           test -f out/version.txt
           test -f out/robots.txt
           test -f out/sitemap.xml
-          grep -q "dapi.kakao.com/v2/maps/sdk.js" out/map/index.html
+          test -f out/data/pages/manifest.json
+          ! grep -q "dapi.kakao.com/v2/maps/sdk.js" out/index.html
+          grep -R -q "dapi.kakao.com/v2/maps/sdk.js" out/_next/static/chunks
 
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v5
