@@ -210,7 +210,9 @@ jobs:
             status=1
             for attempt in $(seq 1 $((retry_count + 1))); do
               echo "Attempt ${attempt}/$((retry_count + 1)); timeout=${timeout_seconds}s"
-              timeout --preserve-status "${timeout_seconds}" "$@"
+              # Browser scrapers may leave Chromium children alive after TERM.
+              # Escalate after 15s so one source cannot consume the whole job.
+              timeout --preserve-status --kill-after=15s "${timeout_seconds}" "$@"
               status=$?
               if [ $status -eq 0 ]; then
                 break
