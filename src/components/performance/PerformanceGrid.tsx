@@ -29,6 +29,41 @@ interface PerformanceGridProps {
     searchText?: string;
 }
 
+const VIRTUALIZATION_THRESHOLD = 60;
+const OVERSCAN_ROWS = 4;
+
+function getColumnCount(layoutMode: 'grid' | 'list', width: number): number {
+    if (layoutMode === 'grid') {
+        if (width >= 1536) return 5;
+        if (width >= 1024) return 4;
+        if (width >= 768) return 3;
+        if (width >= 640) return 2;
+        return 1;
+    }
+
+    if (width >= 1536) return 4;
+    if (width >= 1280) return 3;
+    if (width >= 768) return 2;
+    return 1;
+}
+
+function getGap(width: number): number {
+    return width >= 640 ? 24 : 12;
+}
+
+function getEstimatedRowHeight(layoutMode: 'grid' | 'list', width: number, columns: number, gap: number): number {
+    const safeColumns = Math.max(1, columns);
+    const columnWidth = Math.max(220, (width - gap * (safeColumns - 1)) / safeColumns);
+
+    if (layoutMode === 'list') {
+        return 230 + gap;
+    }
+
+    // Poster cards are portrait-oriented. This estimate keeps scroll height
+    // stable without forcing layout reads for every card.
+    return Math.max(330, columnWidth * 1.34 + gap);
+}
+
 export default function PerformanceGrid({
     items,
     layoutMode,
@@ -50,9 +85,96 @@ export default function PerformanceGrid({
     searchText
 }: PerformanceGridProps) {
     const likedIdSet = React.useMemo(() => new Set(likedIds), [likedIds]);
+    const containerRef = React.useRef<HTMLDivElement>(null);
+    const [viewport, setViewport] = React.useState({
+        scrollY: 0,
+        height: 900,
+        width: 0,
+        top: 0,
+    });
+
+    React.useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        let frame = 0;
+        const measure = () => {
+            frame = 0;
+            const node = containerRef.current;
+            const rect = node?.getBoundingClientRect();
+            setViewport({
+                scrollY: window.scrollY || window.pageYOffset || 0,
+                height: window.innerHeight || 900,
+                width: node?.clientWidth || window.innerWidth || 1200,
+                top: (rect?.top || 0) + (window.scrollY || window.pageYOffset || 0),
+            });
+        };
+
+        const requestMeasure = () => {
+            if (frame) return;
+            frame = window.requestAnimationFrame(measure);
+        };
+
+        measure();
+        window.addEventListener('scroll', requestMeasure, { passive: true });
+        window.addEventListener('resize', requestMeasure, { passive: true });
+
+        let resizeObserver: ResizeObserver | null = null;
+        if ('ResizeObserver' in window && containerRef.current) {
+            resizeObserver = new ResizeObserver(requestMeasure);
+            resizeObserver.observe(containerRef.current);
+        }
+
+        return () => {
+            if (frame) window.cancelAnimationFrame(frame);
+            window.removeEventListener('scroll', requestMeasure);
+            window.removeEventListener('resize', requestMeasure);
+            resizeObserver?.disconnect();
+        };
+    }, []);
+
+    const virtualization = React.useMemo(() => {
+        const width = viewport.width || 1200;
+        const columns = getColumnCount(layoutMode, width);
+        const gap = getGap(width);
+        const rowHeight = getEstimatedRowHeight(layoutMode, width, columns, gap);
+        const rowCount = Math.ceil(items.length / columns);
+        const shouldVirtualize = items.length > VIRTUALIZATION_THRESHOLD;
+
+        if (!shouldVirtualize) {
+            return {
+                shouldVirtualize,
+                startIndex: 0,
+                endIndex: items.length,
+                topSpacer: 0,
+                bottomSpacer: 0,
+            };
+        }
+
+        const relativeTop = Math.max(0, viewport.scrollY - viewport.top);
+        const startRow = Math.max(0, Math.floor(relativeTop / rowHeight) - OVERSCAN_ROWS);
+        const visibleRows = Math.ceil(viewport.height / rowHeight) + OVERSCAN_ROWS * 2;
+        const endRow = Math.min(rowCount, startRow + visibleRows);
+        const startIndex = Math.min(items.length, startRow * columns);
+        const endIndex = Math.min(items.length, endRow * columns);
+        const topSpacer = Math.max(0, startRow * rowHeight);
+        const bottomSpacer = Math.max(0, (rowCount - endRow) * rowHeight);
+
+        return {
+            shouldVirtualize,
+            startIndex,
+            endIndex,
+            topSpacer,
+            bottomSpacer,
+        };
+    }, [items.length, layoutMode, viewport.height, viewport.scrollY, viewport.top, viewport.width]);
+
+    const renderedItems = virtualization.shouldVirtualize
+        ? items.slice(virtualization.startIndex, virtualization.endIndex)
+        : items;
 
     return (
         <div
+            ref={containerRef}
             className={clsx(
                 "w-full overflow-visible",
                 layoutMode === 'grid'
@@ -60,7 +182,14 @@ export default function PerformanceGrid({
                     : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6"
             )}
         >
-            {items.map((perf, index) => {
+            {virtualization.shouldVirtualize && virtualization.topSpacer > 0 && (
+                <div aria-hidden="true" className="col-span-full" style={{ height: virtualization.topSpacer }} />
+            )}
+
+            {renderedItems.map((perf, visibleIndex) => {
+                const index = virtualization.shouldVirtualize
+                    ? virtualization.startIndex + visibleIndex
+                    : visibleIndex;
                 // Venue Info
                 const venueInfo = resolveVenueInfoForPerformance(perf, venues);
 
@@ -141,6 +270,10 @@ export default function PerformanceGrid({
                     </div>
                 );
             })}
+
+            {virtualization.shouldVirtualize && virtualization.bottomSpacer > 0 && (
+                <div aria-hidden="true" className="col-span-full" style={{ height: virtualization.bottomSpacer }} />
+            )}
 
             {/* Sentinel for Infinite Scroll */}
             {hasMore && (

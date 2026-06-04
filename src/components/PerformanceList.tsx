@@ -498,7 +498,7 @@ export default function PerformanceList({
                     loadMore();
                 }
             },
-            { threshold: 0.1, rootMargin: '100px' }
+            { threshold: 0.1, rootMargin: '900px' }
         );
 
         observer.observe(observerTarget.current);

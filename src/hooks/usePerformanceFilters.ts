@@ -8,7 +8,7 @@ import type { DateFilterId, PriceFilterId } from '@/lib/constants';
 import { parseDistrictSelection, parseRegionSelection, persistRegionSelection, readPersistedRegionSelection, REGION_SELECTION_EVENT } from '@/lib/region-selection';
 
 const INITIAL_VISIBLE_COUNT = 15;
-const LOAD_MORE_COUNT = 15;
+const LOAD_MORE_COUNT = 45;
 
 interface UsePerformanceFiltersProps {
     allPerformances: Performance[];

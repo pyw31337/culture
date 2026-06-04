@@ -243,7 +243,7 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: process.cwd(),
   images: {
     unoptimized: true,
-    qualities: [60, 62, 70, 75],
+    qualities: [56, 58, 60, 62, 64, 70, 75],
     remotePatterns: [
       {
         protocol: 'https',
