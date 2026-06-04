@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { Performance } from '../src/types';
 import pLimit from 'p-limit';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 const DATA_FILE = path.join(process.cwd(), 'src/data/tourism.json');
 const baseApiUrl = 'https://korean.visitkorea.or.kr';
@@ -533,7 +534,7 @@ async function main() {
     const filteredData = existingData.filter(p => !p.id.startsWith('visitkorea_'));
     const finalData = [...filteredData, ...uniqueResults];
 
-    fs.writeFileSync(DATA_FILE, JSON.stringify(finalData, null, 2), 'utf-8');
+    atomicWriteJson(DATA_FILE, finalData);
     console.log(`Saved ${uniqueResults.length} unique VisitKorea items to tourism.json`);
 }
 

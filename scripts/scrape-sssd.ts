@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -420,7 +421,7 @@ async function scrape() {
             fs.mkdirSync(dir, { recursive: true });
         }
 
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
+        atomicWriteJson(OUTPUT_FILE, results);
 
     } catch (e) {
         console.error('Fatal Error:', e);

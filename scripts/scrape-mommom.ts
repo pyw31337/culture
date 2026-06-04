@@ -4,6 +4,7 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import * as fs from 'fs';
 import * as path from 'path';
 import cliProgress from 'cli-progress';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 import { fileURLToPath } from 'url';
 
@@ -723,12 +724,12 @@ async function scrapeMomMom() {
             bar.increment(chunk.length);
             
             // Incremental Save
-            fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
+            atomicWriteJson(OUTPUT_FILE, finalItems);
         }
         bar.stop();
 
         // Save
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalItems, null, 2));
+        atomicWriteJson(OUTPUT_FILE, finalItems);
         console.log(`\nSaved ${finalItems.length} items to ${OUTPUT_FILE}`);
 
     } catch (e) {

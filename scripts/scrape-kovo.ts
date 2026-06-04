@@ -2,6 +2,7 @@ import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
 import cliProgress from 'cli-progress';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 function slugify(text: string): string {
     return text
@@ -184,7 +185,7 @@ async function scrapeKovo() {
         progressBar.stop();
 
         if (performances.length > 0) {
-            fs.writeFileSync(OUTPUT_PATH, JSON.stringify(performances, null, 2));
+            atomicWriteJson(OUTPUT_PATH, performances);
             console.log(`Saved ${performances.length} items to ${OUTPUT_PATH}`);
         }
 

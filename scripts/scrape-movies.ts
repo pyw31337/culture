@@ -4,6 +4,7 @@ import path from 'path';
 import { processImage } from './utils/image-processor.js';
 import axios from 'axios';
 import cliProgress from 'cli-progress';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 // API Keys
 const KOBIS_API_KEY = process.env.KOBIS_API_KEY || '1225e1bd404fa561ed37a396619860aa';
@@ -11,6 +12,7 @@ const TMDB_API_KEY = process.env.TMDB_API_KEY || '9544743f9acc5bb30f74830ea89b2c
 
 const DATA_DIR = path.join(process.cwd(), 'src', 'data');
 const OUTPUT_FILE = path.join(DATA_DIR, 'movies.json');
+const httpClient = axios.create({ timeout: 12000 });
 
 // --- Helper Functions ---
 
@@ -66,7 +68,7 @@ async function fetchKobisBoxOffice() {
     yesterday.setDate(yesterday.getDate() - 1);
     const dateStr = yesterday.toISOString().split('T')[0].replace(/-/g, '');
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${KOBIS_API_KEY}&targetDt=${dateStr}`;
-    const res = await axios.get(url);
+    const res = await httpClient.get(url);
     return res.data.boxOfficeResult?.dailyBoxOfficeList || [];
 }
 
@@ -74,14 +76,14 @@ async function fetchKobisUpcoming(page = 1) {
     // Fetch a broad list of potential upcoming movies
     const currentYear = new Date().getFullYear();
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${KOBIS_API_KEY}&itemPerPage=100&prdtStartYear=${currentYear - 1}&curPage=${page}`;
-    const res = await axios.get(url);
+    const res = await httpClient.get(url);
     return res.data.movieListResult?.movieList || [];
 }
 
 async function fetchKobisDetail(movieCd: string) {
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=${KOBIS_API_KEY}&movieCd=${movieCd}`;
     try {
-        const res = await axios.get(url);
+        const res = await httpClient.get(url);
         return res.data.movieInfoResult?.movieInfo;
     } catch (e) { return null; }
 }
@@ -89,13 +91,13 @@ async function fetchKobisDetail(movieCd: string) {
 async function fetchTmdbData(title: string, year: string) {
     try {
         const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&language=ko-KR&primary_release_year=${year.substring(0, 4)}`;
-        let searchRes = await axios.get(searchUrl);
+        let searchRes = await httpClient.get(searchUrl);
         let results = searchRes.data.results;
         
         // Fallback: If no results with year, try without year
         if (!results || results.length === 0) {
             const fallbackUrl = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&language=ko-KR`;
-            searchRes = await axios.get(fallbackUrl);
+            searchRes = await httpClient.get(fallbackUrl);
             results = searchRes.data.results;
         }
 
@@ -103,7 +105,7 @@ async function fetchTmdbData(title: string, year: string) {
 
         const movieId = results[0].id;
         const detailUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}&language=ko-KR&append_to_response=videos,credits,images,keywords,watch/providers`;
-        const detailRes = await axios.get(detailUrl);
+        const detailRes = await httpClient.get(detailUrl);
         return detailRes.data;
     } catch (e) { return null; }
 }
@@ -496,7 +498,7 @@ async function scrapeMovies() {
             return (b.dateRaw || '').localeCompare(a.dateRaw || '');
         });
 
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalMovies, null, 2));
+        atomicWriteJson(OUTPUT_FILE, finalMovies);
         fs.copyFileSync(OUTPUT_FILE, path.resolve(process.cwd(), 'public/data/movies.json'));
         console.log(`Saved ${finalMovies.length} movies.`);
     }

@@ -53,12 +53,22 @@ export function generateStableId(title: string, date: string, venue: string, sou
  */
 export function saveJson(filename: string, data: any) {
     const filePath = path.join(process.cwd(), 'src/data', filename);
+    atomicWriteJson(filePath, data);
+    console.log(`[Scraper] Saved ${data.length || Object.keys(data).length} items to ${filename}`);
+}
+
+/**
+ * Write JSON through a temporary sibling file so interruption never leaves a
+ * truncated production data file.
+ */
+export function atomicWriteJson(filePath: string, data: any) {
     const dir = path.dirname(filePath);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-    console.log(`[Scraper] Saved ${data.length || Object.keys(data).length} items to ${filename}`);
+    const tempPath = `${filePath}.${process.pid}.tmp`;
+    fs.writeFileSync(tempPath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+    fs.renameSync(tempPath, filePath);
 }
 
 /**

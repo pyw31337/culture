@@ -13,6 +13,12 @@ const OUTPUT_FILE = path.join(DATA_DIR, 'kopis-performances.json');
 const RATE_LIMIT_DELAY = 150; // ms between requests
 const DETAIL_LIMIT = Number.parseInt(process.env.KOPIS_DETAIL_LIMIT || '0', 10);
 const VENUE_LIMIT = Number.parseInt(process.env.KOPIS_VENUE_LIMIT || '0', 10);
+const RUN_BUDGET_SECONDS = Number.parseInt(process.env.KOPIS_RUN_BUDGET_SECONDS || '0', 10);
+const LOOKBACK_DAYS = Number.parseInt(process.env.KOPIS_LOOKBACK_DAYS || '0', 10);
+const REQUEST_RETRIES = Number.parseInt(process.env.KOPIS_REQUEST_RETRIES || '3', 10);
+const REQUEST_TIMEOUT_MS = Number.parseInt(process.env.KOPIS_REQUEST_TIMEOUT_MS || '15000', 10);
+const scraperStartedAt = Date.now();
+let budgetWarningPrinted = false;
 
 const parser = new XMLParser();
 
@@ -176,15 +182,26 @@ const hasRichKopisDetails = (item?: KopisPerformance) => Boolean(
     )
 );
 
-async function fetchWithRetry(url: string, params: any, retries = 3): Promise<any> {
+const isBudgetExceeded = () => {
+    if (RUN_BUDGET_SECONDS <= 0) return false;
+    const exceeded = Date.now() - scraperStartedAt >= RUN_BUDGET_SECONDS * 1000;
+    if (exceeded && !budgetWarningPrinted) {
+        budgetWarningPrinted = true;
+        console.warn(`\n⏱️ KOPIS run budget reached (${RUN_BUDGET_SECONDS}s). Saving progress and exiting cleanly.`);
+    }
+    return exceeded;
+};
+
+async function fetchWithRetry(url: string, params: any, retries = REQUEST_RETRIES): Promise<any> {
     for (let i = 0; i < retries; i++) {
+        if (isBudgetExceeded()) throw new Error('KOPIS_RUN_BUDGET_EXCEEDED');
         try {
-            const response = await axios.get(url, { params, timeout: 15000 });
+            const response = await axios.get(url, { params, timeout: REQUEST_TIMEOUT_MS });
             return response.data;
         } catch (e: any) {
             if (i === retries - 1) throw e;
             console.warn(`\nRetrying ${url} (${i + 1}/${retries})... Error: ${e.message}`);
-            await delay(2000 * (i + 1));
+            await delay((1000 * (2 ** i)) + Math.floor(Math.random() * 400));
         }
     }
 }
@@ -235,6 +252,7 @@ async function scrapeKopis() {
         uniqueVenueIds.clear();
 
         for (const vid of ids) {
+            if (isBudgetExceeded()) break;
             if (VENUE_LIMIT > 0 && venueUpdateCount >= VENUE_LIMIT) {
                 console.log(`\n⏸️ Venue enrichment limit reached (${VENUE_LIMIT}). Remaining venues will continue next run.`);
                 break;
@@ -320,21 +338,30 @@ async function scrapeKopis() {
     // Phase 2: Live Performances
     const today = new Date();
     const stdate = today.toISOString().split('T')[0].replace(/-/g, '');
+    const performanceStart = new Date(today);
+    if (LOOKBACK_DAYS > 0) performanceStart.setDate(performanceStart.getDate() - LOOKBACK_DAYS);
+    const performanceStdate = LOOKBACK_DAYS > 0
+        ? performanceStart.toISOString().split('T')[0].replace(/-/g, '')
+        : '20230101';
     const futureLimit = new Date();
     futureLimit.setFullYear(futureLimit.getFullYear() + 1);
     const eddate = futureLimit.toISOString().split('T')[0].replace(/-/g, '');
 
-    const fetchList = async (endpoint: string, isFestival = false) => {
+    const fetchList = async (endpoint: string, isFestival = false): Promise<boolean> => {
         let detailFetchCount = 0;
         const states = isFestival ? ['01', '02', '03', '04'] : ['02', '01']; 
         for (const state of states) {
             let page = 1;
             let hasMore = true;
             while (hasMore) {
+                if (isBudgetExceeded()) {
+                    safeWrite(OUTPUT_FILE, allItems);
+                    return false;
+                }
                 console.log(`Fetching ${isFestival ? 'Festival' : 'Performance'} State ${state} Page ${page}...`);
                 const xmlData = await fetchWithRetry(`${BASE_URL}/${endpoint}`, {
                     service: API_KEY,
-                    stdate: isFestival ? stdate : '20230101', // Wide window for perfs
+                    stdate: isFestival ? stdate : performanceStdate,
                     eddate,
                     cpage: page,
                     rows: 100,
@@ -347,6 +374,10 @@ async function scrapeKopis() {
 
                 const list = Array.isArray(dbs) ? dbs : [dbs];
                 for (const item of list) {
+                    if (isBudgetExceeded()) {
+                        safeWrite(OUTPUT_FILE, allItems);
+                        return false;
+                    }
                     const mt20id = item.mt20id;
                     const fullId = `kopis_${mt20id}`;
                     
@@ -360,7 +391,7 @@ async function scrapeKopis() {
                         if (DETAIL_LIMIT > 0 && detailFetchCount >= DETAIL_LIMIT) {
                             console.log(`\n⏸️ Detail enrichment limit reached (${DETAIL_LIMIT}). Remaining performances will continue next run.`);
                             safeWrite(OUTPUT_FILE, allItems);
-                            return;
+                            return true;
                         }
                         detailFetchCount++;
                         process.stdout.write(`.`);
@@ -451,18 +482,25 @@ async function scrapeKopis() {
                 safeWrite(OUTPUT_FILE, allItems);
             }
         }
+        return true;
     };
 
-    await fetchList('pblprfr', false);
-    await fetchList('prffest', true);
+    const performancePassCompleted = await fetchList('pblprfr', false);
+    if (performancePassCompleted && !isBudgetExceeded()) {
+        await fetchList('prffest', true);
+    }
 
     // Phase 3: Final Venue Sweep
-    await enrichVenues();
+    if (!isBudgetExceeded()) await enrichVenues();
 
     console.log(`\n🎉 Final result: ${allItems.length} items saved.`);
 }
 
 scrapeKopis().catch(err => {
+    if (err?.message === 'KOPIS_RUN_BUDGET_EXCEEDED') {
+        console.warn('KOPIS budget reached between requests. Existing checkpoint retained.');
+        process.exit(0);
+    }
     console.error('Fatal Error:', err);
     process.exit(1);
 });

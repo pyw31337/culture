@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import cliProgress from 'cli-progress';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 function slugify(text: string): string {
     return text
@@ -424,7 +425,7 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
 
         // Autosave
         if (i % 20 === 0) {
-            fs.writeFileSync(OutputPath, JSON.stringify(enrichedResults, null, 2));
+            atomicWriteJson(OutputPath, enrichedResults);
         }
     }
     bar.stop();
@@ -463,7 +464,7 @@ async function enrichItems(browser: any, items: ScrapedEvent[], existingMap: Map
         }
 
         // Final Save
-        fs.writeFileSync(OutputPath, JSON.stringify(finalItems, null, 2));
+        atomicWriteJson(OutputPath, finalItems);
         console.log(`✅ Saved ${finalItems.length} items to ${OutputPath}`);
 
     } catch (e) {

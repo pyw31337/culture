@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -77,7 +78,7 @@ function saveData(data: UmClassItem[]) {
         console.log("No items to save.");
         return;
     }
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(data, null, 2));
+    atomicWriteJson(OUTPUT_PATH, data);
     console.log(`\nSaved ${data.length} items to ${OUTPUT_PATH}`);
 }
 

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import * as cheerio from 'cheerio';
+import { atomicWriteJson } from './scraper-utils';
 
 const DEFAULT_CATEGORY_NO = '1102241';
 const BASE_URL = 'https://mom-mom.net';
@@ -1316,7 +1317,7 @@ export async function scrapeMomMomShopProducts(options: ScrapeOptions) {
         });
 
     fs.mkdirSync(path.dirname(outputFile), { recursive: true });
-    fs.writeFileSync(outputFile, JSON.stringify(items, null, 2));
+    atomicWriteJson(outputFile, items);
     console.log(`Saved ${items.length} MomMom shop items to ${outputFile}`);
     return items;
 }

@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -464,7 +465,7 @@ async function scrapeMuseum() {
         // 4. Persistence (Strict Retention)
         const allItems = Array.from(finalById.values());
 
-        fs.writeFileSync(DATA_PATH, JSON.stringify(allItems, null, 2));
+        atomicWriteJson(DATA_PATH, allItems);
         console.log(`Saved ${allItems.length} items (merged). Detail updated: ${processedCount}. Retained/deferred: ${Math.max(0, listItems.length - processedCount)}.`);
 
     } catch (error) {

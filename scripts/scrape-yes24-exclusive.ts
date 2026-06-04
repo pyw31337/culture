@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { processImage } from './utils/image-processor';
 import cliProgress from 'cli-progress';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -368,7 +369,7 @@ async function scrapeYes24() {
                 progressBar.stop();
 
                 // Save after each category
-                fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allEnrichedItems, null, 2));
+                atomicWriteJson(OUTPUT_FILE, allEnrichedItems);
                 console.log(`Saved progress to ${OUTPUT_FILE}`);
 
                 // Random delay between categories: 3-6s

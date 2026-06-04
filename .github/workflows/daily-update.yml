@@ -120,7 +120,22 @@ jobs:
           # GitHub Actions is only the 03:00 KST fallback. Keep it shallow so it
           # finishes within the free-minute budget; the local midnight job does
           # the deeper enrichment pass.
-          INTERPARK_ENRICH_LIMIT: '160'
+          # The GitHub fallback refreshes Interpark lists only. Existing rich
+          # details are retained; the local midnight run owns browser enrichment.
+          INTERPARK_ENRICH_LIMIT: '0'
+          INTERPARK_FAST_MODE: '1'
+          INTERPARK_CONCURRENCY: '2'
+          INTERPARK_NAVIGATION_TIMEOUT_MS: '15000'
+          INTERPARK_SELECTOR_TIMEOUT_MS: '3000'
+          INTERPARK_PROTOCOL_TIMEOUT_MS: '25000'
+          # KOPIS checkpoints and exits cleanly before the outer timeout. The
+          # local midnight run still performs the unrestricted deep refresh.
+          KOPIS_DETAIL_LIMIT: '80'
+          KOPIS_VENUE_LIMIT: '40'
+          KOPIS_RUN_BUDGET_SECONDS: '420'
+          KOPIS_LOOKBACK_DAYS: '45'
+          KOPIS_REQUEST_RETRIES: '2'
+          KOPIS_REQUEST_TIMEOUT_MS: '10000'
           YES24_DETAIL_LIMIT: '100'
           UMCLASS_DETAIL_LIMIT: '140'
           MOCHACLASS_MAX_PAGES: '60'
@@ -131,21 +146,33 @@ jobs:
           MOCHACLASS_POST_LOAD_DELAY_MS: '450'
           MOCHACLASS_RETAIN_UNSEEN_EXISTING: '1'
           MUSEUM_MAX_DETAIL_ITEMS: '160'
+          MUSEUM_DETAIL_BUDGET_MS: '180000'
           CULTURE_PORTAL_MAX_API_PAGES: '360'
           CULTURE_PORTAL_DETAIL_LIMIT: '180'
           TOURISM_MAX_PAGES: '25'
+          TOURISM_PUPPETEER_TIMEOUT_MS: '12000'
+          SEOUL_CULTURE_SKIP_DETAIL: '1'
+          KBL_MONTH_LOOKAHEAD: '4'
+          UMCLASS_MAX_PAGES: '45'
           VENUE_PLACE_LOOKUP_LIMIT: '0'
           VENUE_PLACE_LOOKUP_DELAY_MS: '250'
-          SCRAPER_TIMEOUT_SECONDS: '600'
+          SCRAPER_CRITICAL_TIMEOUT_SECONDS: '480'
+          SCRAPER_OPTIONAL_TIMEOUT_SECONDS: '240'
+          SCRAPER_RETRY_COUNT: '1'
           SCRAPER_OPTIONAL_BUDGET_SECONDS: '2400'
         run: |
           set +e
-          SCRAPER_TIMEOUT_SECONDS="${SCRAPER_TIMEOUT_SECONDS:-900}"
+          SCRAPER_CRITICAL_TIMEOUT_SECONDS="${SCRAPER_CRITICAL_TIMEOUT_SECONDS:-480}"
+          SCRAPER_OPTIONAL_TIMEOUT_SECONDS="${SCRAPER_OPTIONAL_TIMEOUT_SECONDS:-240}"
+          SCRAPER_RETRY_COUNT="${SCRAPER_RETRY_COUNT:-1}"
           SCRAPER_OPTIONAL_BUDGET_SECONDS="${SCRAPER_OPTIONAL_BUDGET_SECONDS:-2400}"
           SCRAPER_STARTED_AT="$(date +%s)"
+          SCRAPER_CHECKPOINT_ROOT="$RUNNER_TEMP/cultureflow-scraper-checkpoints"
+          mkdir -p "$SCRAPER_CHECKPOINT_ROOT"
           export PUPPETEER_EXECUTABLE_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           echo "Puppeteer executable: ${PUPPETEER_EXECUTABLE_PATH}"
           failures=()
+          recovered_failures=()
 
           elapsed_seconds() {
             echo $(( $(date +%s) - SCRAPER_STARTED_AT ))
@@ -156,36 +183,70 @@ jobs:
             local priority="$2"
             shift 2
 
-            local elapsed
+            local elapsed timeout_seconds checkpoint_dir attempt status
             elapsed="$(elapsed_seconds)"
             if [ "$priority" = "optional" ] && [ "$elapsed" -ge "$SCRAPER_OPTIONAL_BUDGET_SECONDS" ]; then
               echo "Skipping optional scraper ${name}: elapsed ${elapsed}s exceeds fallback budget ${SCRAPER_OPTIONAL_BUDGET_SECONDS}s"
               return 0
             fi
 
+            if [ "$priority" = "critical" ]; then
+              timeout_seconds="$SCRAPER_CRITICAL_TIMEOUT_SECONDS"
+            else
+              timeout_seconds="$SCRAPER_OPTIONAL_TIMEOUT_SECONDS"
+            fi
+
+            checkpoint_dir="$SCRAPER_CHECKPOINT_ROOT/$name"
+            rm -rf "$checkpoint_dir"
+            mkdir -p "$checkpoint_dir"
+            cp -a src/data "$checkpoint_dir/data"
+
             echo "::group::${name}"
             echo "Elapsed before ${name}: ${elapsed}s"
-            timeout --preserve-status "${SCRAPER_TIMEOUT_SECONDS}" "$@"
-            local status=$?
+            status=1
+            for attempt in $(seq 1 $((SCRAPER_RETRY_COUNT + 1))); do
+              echo "Attempt ${attempt}/$((SCRAPER_RETRY_COUNT + 1)); timeout=${timeout_seconds}s"
+              timeout --preserve-status "${timeout_seconds}" "$@"
+              status=$?
+              if [ $status -eq 0 ]; then
+                break
+              fi
+
+              echo "${name} attempt ${attempt} failed with exit=${status}; restoring its data checkpoint."
+              rm -rf src/data
+              cp -a "$checkpoint_dir/data" src/data
+
+              if [ "$attempt" -le "$SCRAPER_RETRY_COUNT" ]; then
+                if [ "$priority" = "optional" ] && [ "$(elapsed_seconds)" -ge "$SCRAPER_OPTIONAL_BUDGET_SECONDS" ]; then
+                  echo "Not retrying optional scraper ${name}: fallback budget reached."
+                  break
+                fi
+                sleep $((attempt * 3))
+              fi
+            done
             echo "::endgroup::"
 
             if [ $status -eq 124 ] || [ $status -eq 137 ] || [ $status -eq 143 ]; then
-              echo "${name} timed out or was terminated after ${SCRAPER_TIMEOUT_SECONDS}s"
+              echo "${name} timed out or was terminated after ${timeout_seconds}s"
             fi
 
             if [ $status -ne 0 ]; then
               failures+=("$name")
+            elif [ "$attempt" -gt 1 ]; then
+              recovered_failures+=("$name")
             fi
+
+            rm -rf "$checkpoint_dir"
           }
 
           # Core fallback pass: keep these early so a near-timeout run still
           # reaches venue/public artifact generation with useful updates.
           run_scraper "interpark" critical npx tsx scripts/scrape-interpark.ts
+          run_scraper "kopis" critical npx tsx scripts/scrape-kopis.ts
           run_scraper "festival" optional npx tsx scripts/scrape-festival.ts
           run_scraper "kbo" critical npx tsx scripts/scrape-kbo.ts
           run_scraper "kleague" optional npx tsx scripts/scrape-kleague.ts
           run_scraper "yes24-exclusive" optional npx tsx scripts/scrape-yes24-exclusive.ts
-          run_scraper "kopis" critical npx tsx scripts/scrape-kopis.ts
           run_scraper "timeticket" optional npx tsx scripts/scrape-timeticket.ts
           run_scraper "movies" critical npx tsx scripts/scrape-movies.ts
           run_scraper "cinemas" critical npx tsx scripts/scrape-cinemas.ts
@@ -219,6 +280,13 @@ jobs:
             cat scrape_failures.txt
           fi
 
+          if [ ${#recovered_failures[@]} -gt 0 ]; then
+            printf '%s\n' "${recovered_failures[@]}" > scrape_recovered_failures.txt
+            echo "SCRAPER_RECOVERED_FAILURES=true" >> $GITHUB_ENV
+            echo "Scrapers recovered after retry:"
+            cat scrape_recovered_failures.txt
+          fi
+
           exit 0
 
       - name: Scraper Failure Summary
@@ -232,6 +300,15 @@ jobs:
             echo ""
             echo "Failed scrapers:"
             sed 's/^/- /' scrape_failures.txt
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Scraper Recovery Summary
+        if: steps.freshness.outputs.should_run == 'true' && env.SCRAPER_RECOVERED_FAILURES == 'true'
+        run: |
+          {
+            echo "### Scrapers recovered after retry"
+            echo ""
+            sed 's/^/- /' scrape_recovered_failures.txt
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Validate Data Integrity (Pre-Commit Check)

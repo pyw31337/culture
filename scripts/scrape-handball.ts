@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 export interface Performance {
     id: string;
@@ -188,7 +189,7 @@ async function scrapeHandball() {
         if (performances.length > 0 && finalData.length === 0) {
             console.log('No upcoming handball matches remain. Writing an empty seasonal file so the category stays hidden until the season returns.');
         }
-        fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalData, null, 2));
+        atomicWriteJson(OUTPUT_PATH, finalData);
         console.log(`Saved to ${OUTPUT_PATH}`);
 
     } finally {

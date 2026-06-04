@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 function slugify(text: string): string {
     return text
@@ -162,7 +163,7 @@ async function scrapeKbl() {
         if (collectedMatches.length > 0 && allPerformances.length === 0) {
             console.log('No upcoming KBL matches remain. Writing an empty seasonal file so the category stays hidden until the season returns.');
         }
-        fs.writeFileSync(OUTPUT_PATH, JSON.stringify(allPerformances, null, 2));
+        atomicWriteJson(OUTPUT_PATH, allPerformances);
         console.log(`Saved ${allPerformances.length} matches to ${OUTPUT_PATH}`);
 
     } finally {

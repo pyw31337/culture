@@ -1,6 +1,7 @@
 import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 /**
  * K League 2026 Scraper
@@ -106,6 +107,7 @@ async function scrapeKLeague() {
                         teamId: '',
                         ticketYn: ''
                     }, {
+                        timeout: 15000,
                         headers: {
                             'Content-Type': 'application/json',
                             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
@@ -227,7 +229,7 @@ async function scrapeKLeague() {
             })
             .sort((a, b) => a.date.localeCompare(b.date));
 
-        fs.writeFileSync(OUTPUT_PATH, JSON.stringify(mergedList, null, 2));
+        atomicWriteJson(OUTPUT_PATH, mergedList);
         console.log(`Saved to ${OUTPUT_PATH}`);
 
     } catch (err) {

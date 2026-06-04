@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/cinemas.json');
@@ -24,7 +25,8 @@ async function fetchCinemasByKeyword(keyword: string, brand: string): Promise<Ci
         try {
             const url = `https://dapi.kakao.com/v2/local/search/keyword.json?query=${encodeURIComponent(keyword)}&page=${page}&size=15`;
             const res = await fetch(url, {
-                headers: { 'Authorization': `KakaoAK ${KAKAO_API_KEY}` }
+                headers: { 'Authorization': `KakaoAK ${KAKAO_API_KEY}` },
+                signal: AbortSignal.timeout(10000),
             });
 
             if (!res.ok) {
@@ -146,7 +148,7 @@ async function main() {
     // Sort by name
     finalCinemaList.sort((a, b) => a.name.localeCompare(b.name));
 
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalCinemaList, null, 2), 'utf8');
+    atomicWriteJson(OUTPUT_PATH, finalCinemaList);
     console.log(`Saved cinema data to ${OUTPUT_PATH}`);
 }
 

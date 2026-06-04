@@ -8,6 +8,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import crypto from 'crypto';
 import cliProgress from 'cli-progress';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -47,6 +48,11 @@ interface Performance {
 const outputPath = path.resolve(process.cwd(), 'src/data/interpark.json');
 const BROWSER_EVAL_BOOTSTRAP = 'window.__name = window.__name || function(fn){ return fn; };';
 const INTERPARK_ENRICH_LIMIT = Number(process.env.INTERPARK_ENRICH_LIMIT || 250);
+const INTERPARK_FAST_MODE = process.env.INTERPARK_FAST_MODE === '1';
+const INTERPARK_CONCURRENCY = Number(process.env.INTERPARK_CONCURRENCY || (INTERPARK_FAST_MODE ? 2 : 5));
+const INTERPARK_NAVIGATION_TIMEOUT_MS = Number(process.env.INTERPARK_NAVIGATION_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 15000 : 30000));
+const INTERPARK_SELECTOR_TIMEOUT_MS = Number(process.env.INTERPARK_SELECTOR_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 3000 : 5000));
+const INTERPARK_PROTOCOL_TIMEOUT_MS = Number(process.env.INTERPARK_PROTOCOL_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 25000 : 60000));
 
 const REGIONS = {
     seoul: '42001',
@@ -280,8 +286,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
         bar.start(enrichQueue.length, 0);
     }
 
-    // Concurrency: Reduced to 5 to prevent timeouts on CI
-    const CONCURRENCY = 5;
+    const CONCURRENCY = Math.max(1, INTERPARK_CONCURRENCY);
     for (let i = 0; i < enrichQueue.length; i += CONCURRENCY) {
         const chunk = enrichQueue.slice(i, i + CONCURRENCY);
 
@@ -289,10 +294,16 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             const page = await browser.newPage();
             try {
                 await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
-                // Optimize: Block heavy media only (Allow styles/fonts for correct rendering)
+                page.setDefaultNavigationTimeout(INTERPARK_NAVIGATION_TIMEOUT_MS);
+                page.setDefaultTimeout(INTERPARK_SELECTOR_TIMEOUT_MS);
+                // The CI fallback only needs list freshness. Local deep runs keep
+                // styles so detailed selectors remain available.
                 await page.setRequestInterception(true);
                 page.on('request', (req: any) => {
-                    if (['image', 'media'].includes(req.resourceType())) {
+                    const blockedTypes = INTERPARK_FAST_MODE
+                        ? ['image', 'media', 'font', 'stylesheet']
+                        : ['image', 'media'];
+                    if (blockedTypes.includes(req.resourceType())) {
                         req.abort();
                     } else {
                         req.continue();
@@ -310,7 +321,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 }
                 const detailUrl = `https://tickets.interpark.com/goods/${goodsId}`;
 
-                await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+                await page.goto(detailUrl, { waitUntil: 'domcontentloaded', timeout: INTERPARK_NAVIGATION_TIMEOUT_MS });
                 await page.evaluate(BROWSER_EVAL_BOOTSTRAP).catch(() => undefined);
 
                 // [FIX] Force close popups that might block content scraping
@@ -321,7 +332,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 } catch (e) { }
 
                 try {
-                    await page.waitForSelector('.infoList', { timeout: 5000 });
+                    await page.waitForSelector('.infoList', { timeout: INTERPARK_SELECTOR_TIMEOUT_MS });
                 } catch (e) { }
 
                 // 1. Basic Info & Base Price
@@ -854,9 +865,10 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
             } catch (e) {
                 console.error(`Failed to enrich ${item.id}:`, e);
-                return item;
+                const existing = existingEnriched.get(item.id);
+                return existing ? { ...existing, ...item } : item;
             } finally {
-                await page.close();
+                await page.close().catch(() => undefined);
             }
         });
 
@@ -870,7 +882,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             // Note: 'others' might have items that are in 'existingEnriched' but we filtered 'others' by genre.
             // If non-musical items were in 'existing', they are not in 'targets'. They are in 'others'.
             // So we just save 'enrichedResult' + 'others'.
-            fs.writeFileSync(outputPath, JSON.stringify(currentSave, null, 2));
+            atomicWriteJson(outputPath, currentSave);
         }
     }
     if (enrichQueue.length > 0) bar.stop();
@@ -916,7 +928,7 @@ const runScraper = async () => {
     // 2. Enrich Details
     const browser = await puppeteer.launch({
         headless: true,
-        protocolTimeout: 60000,
+        protocolTimeout: INTERPARK_PROTOCOL_TIMEOUT_MS,
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
     });
 
@@ -924,7 +936,7 @@ const runScraper = async () => {
         const finalItems = await scrapeDetails(browser, uniqueItems, existingMap);
 
         // 3. Final Save
-        fs.writeFileSync(outputPath, JSON.stringify(finalItems, null, 2));
+        atomicWriteJson(outputPath, finalItems);
         console.log(`Saved ${finalItems.length} items to ${outputPath}`);
 
     } finally {

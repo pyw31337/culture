@@ -3,6 +3,7 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as cliProgress from 'cli-progress';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -312,7 +313,7 @@ async function scrapeExhibitions() {
             arr.findIndex(t => t.id === item.id) === idx && item.title
         );
 
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(uniqueItems, null, 2));
+        atomicWriteJson(OUTPUT_FILE, uniqueItems);
         console.log(`Saved ${uniqueItems.length} valid items to ${OUTPUT_FILE}`);
 
     } catch (e) {

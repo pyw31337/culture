@@ -6,6 +6,12 @@ const path = require('path');
 const TARGET_URL = 'https://www.myrealtrip.com/search?tab=tour&per=200&selected=category%3Akids%5Ekids_history&q=%EB%A7%88%EB%A6%AC%ED%8A%B8%ED%82%A4%EC%A6%88';
 const OUTPUT_FILE = path.join(__dirname, '../src/data/myrealtrip-kids.json');
 
+function atomicWriteJson(filePath, data) {
+    const tempPath = `${filePath}.${process.pid}.tmp`;
+    fs.writeFileSync(tempPath, `${JSON.stringify(data, null, 2)}\n`);
+    fs.renameSync(tempPath, filePath);
+}
+
 // Mobile UA for potentially lighter pages, but Desktop is probably safer for MyRealTrip structure which looks complex
 // User's selectors look like Desktop structure.
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
@@ -143,7 +149,7 @@ async function scrape() {
         }
 
         console.log(`Scraped ${results.length} items.`);
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
+        atomicWriteJson(OUTPUT_FILE, results);
 
     } catch (e) {
         console.error('Scraping failed:', e);

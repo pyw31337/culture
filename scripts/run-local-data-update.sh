@@ -8,6 +8,7 @@ LOG_FILE="$LOG_DIR/local-data-update-$RUN_STAMP.log"
 STATUS_FILE="$LOG_DIR/last-run-status.json"
 SKIP_AFTER_HOUR="${LOCAL_UPDATE_SKIP_AFTER_HOUR:-3}"
 SCRAPER_TIMEOUT_SECONDS="${LOCAL_SCRAPER_TIMEOUT_SECONDS:-2700}"
+SCRAPER_RETRY_COUNT="${LOCAL_SCRAPER_RETRY_COUNT:-1}"
 LOCAL_UPDATE_NOTIFY="${LOCAL_UPDATE_NOTIFY:-1}"
 
 mkdir -p "$LOG_DIR"
@@ -21,6 +22,7 @@ RUN_MESSAGE="Local data update is running."
 RUN_NOTIFIED="0"
 failures=()
 critical_failures=()
+recovered_failures=()
 
 notify_local_update() {
   local title="$1"
@@ -90,6 +92,10 @@ abort_run() {
 
 finish_run() {
   local exit_code="$?"
+
+  if [ -n "${SCRAPER_CHECKPOINT_ROOT:-}" ]; then
+    rm -rf "$SCRAPER_CHECKPOINT_ROOT"
+  fi
 
   if [ "$exit_code" -ne 0 ] && [ "$RUN_STATUS" = "running" ]; then
     RUN_STATUS="failed"
@@ -183,6 +189,7 @@ fi
 echo "[local-update] Puppeteer executable: $PUPPETEER_EXECUTABLE_PATH"
 
 : > "$LOG_DIR/last-scrape-failures.txt"
+SCRAPER_CHECKPOINT_ROOT="$(mktemp -d "${TMPDIR:-/tmp}/cultureflow-scrapers.XXXXXX")"
 
 terminate_process_tree() {
   local pid="$1"
@@ -212,34 +219,55 @@ run_scraper() {
   shift 2
 
   echo "[local-update] >>> ${name} (${priority})"
-  set +e
-  "$@" &
-  local scraper_pid=$!
-  local status=0
-  local elapsed=0
+  local checkpoint_dir="$SCRAPER_CHECKPOINT_ROOT/$name"
+  local attempt status scraper_pid elapsed
+  rm -rf "$checkpoint_dir"
+  mkdir -p "$checkpoint_dir"
+  cp -a src/data "$checkpoint_dir/data"
 
-  while kill -0 "$scraper_pid" 2>/dev/null; do
-    if [ "$elapsed" -ge "$SCRAPER_TIMEOUT_SECONDS" ]; then
-      echo "[local-update] !!! ${name} timed out after ${SCRAPER_TIMEOUT_SECONDS}s"
-      terminate_process_tree "$scraper_pid"
-      sleep 5
-      if kill -0 "$scraper_pid" 2>/dev/null; then
-        force_kill_process_tree "$scraper_pid"
+  status=1
+  for attempt in $(seq 1 $((SCRAPER_RETRY_COUNT + 1))); do
+    set +e
+    "$@" &
+    scraper_pid=$!
+    status=0
+    elapsed=0
+
+    while kill -0 "$scraper_pid" 2>/dev/null; do
+      if [ "$elapsed" -ge "$SCRAPER_TIMEOUT_SECONDS" ]; then
+        echo "[local-update] !!! ${name} timed out after ${SCRAPER_TIMEOUT_SECONDS}s"
+        terminate_process_tree "$scraper_pid"
+        sleep 5
+        if kill -0 "$scraper_pid" 2>/dev/null; then
+          force_kill_process_tree "$scraper_pid"
+        fi
+        wait "$scraper_pid" 2>/dev/null
+        status=124
+        break
       fi
-      wait "$scraper_pid" 2>/dev/null
-      status=124
+
+      sleep 5
+      elapsed=$((elapsed + 5))
+    done
+
+    if [ "$status" -eq 0 ]; then
+      wait "$scraper_pid"
+      status=$?
+    fi
+    set -e
+
+    if [ "$status" -eq 0 ]; then
       break
     fi
 
-    sleep 5
-    elapsed=$((elapsed + 5))
+    echo "[local-update] ${name} attempt ${attempt} failed; restoring its data checkpoint"
+    rm -rf src/data
+    cp -a "$checkpoint_dir/data" src/data
+    if [ "$attempt" -le "$SCRAPER_RETRY_COUNT" ]; then
+      sleep $((attempt * 3))
+    fi
   done
 
-  if [ "$status" -eq 0 ]; then
-    wait "$scraper_pid"
-    status=$?
-  fi
-  set -e
   echo "[local-update] <<< ${name} exit=${status}"
 
   if [ $status -ne 0 ]; then
@@ -247,10 +275,15 @@ run_scraper() {
     if [ "$priority" = "critical" ]; then
       critical_failures+=("$name")
     fi
+  elif [ "$attempt" -gt 1 ]; then
+    recovered_failures+=("$name")
   fi
+
+  rm -rf "$checkpoint_dir"
 }
 
 run_scraper "interpark" critical npx tsx scripts/scrape-interpark.ts
+run_scraper "kopis" critical npx tsx scripts/scrape-kopis.ts
 run_scraper "kovo" optional npx tsx scripts/scrape-kovo.ts
 run_scraper "kbl" optional npx tsx scripts/scrape-kbl.ts
 run_scraper "handball" optional npx tsx scripts/scrape-handball.ts
@@ -258,7 +291,6 @@ run_scraper "festival" optional npx tsx scripts/scrape-festival.ts
 run_scraper "kbo" critical npx tsx scripts/scrape-kbo.ts
 run_scraper "kleague" optional npx tsx scripts/scrape-kleague.ts
 run_scraper "yes24-exclusive" optional npx tsx scripts/scrape-yes24-exclusive.ts
-run_scraper "kopis" critical npx tsx scripts/scrape-kopis.ts
 run_scraper "timeticket" optional npx tsx scripts/scrape-timeticket.ts
 run_scraper "movies" critical npx tsx scripts/scrape-movies.ts
 run_scraper "cinemas" critical npx tsx scripts/scrape-cinemas.ts
@@ -288,11 +320,18 @@ if [ ${#failures[@]} -gt 0 ]; then
   echo "[local-update] scraper failures recorded: ${failures[*]}"
 fi
 
+if [ ${#recovered_failures[@]} -gt 0 ]; then
+  echo "[local-update] scrapers recovered after retry: ${recovered_failures[*]}"
+fi
+
 if [ ${#critical_failures[@]} -gt 0 ]; then
   RUN_STATUS="failed"
   RUN_MESSAGE="Critical scraper failures occurred: ${critical_failures[*]}. Data changes were not committed."
   echo "[local-update] failed: $RUN_MESSAGE"
   echo "[local-update] critical failures: ${critical_failures[*]}"
+  echo "[local-update] restoring clean pre-run data state so the next scheduled run can proceed"
+  git restore --source=HEAD -- src/data public/data public/version.txt public/images/posters 2>/dev/null || true
+  git clean -fd -- public/images/posters 2>/dev/null || true
   exit 1
 fi
 

@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
+import { atomicWriteJson } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -89,6 +90,8 @@ async function scrapeKBO() {
     try {
         const page = await browser.newPage();
         await page.setViewport({ width: 1280, height: 1024 });
+        page.setDefaultNavigationTimeout(45000);
+        page.setDefaultTimeout(15000);
         const TARGET_URL = 'https://www.koreabaseball.com/Schedule/Schedule.aspx';
         await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
@@ -448,7 +451,7 @@ async function scrapeKBO() {
         });
 
         const finalItems = Array.from(itemMap.values());
-        fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalItems, null, 2));
+        atomicWriteJson(OUTPUT_PATH, finalItems);
         console.log(`Saved ${finalItems.length} items to ${OUTPUT_PATH} (Merged with existing data)`);
     } finally {
         await browser.close();
