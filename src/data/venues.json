@@ -11885,7 +11885,15 @@
     "lng": 128.58320249999997,
     "district": "",
     "phone": "053-421-2223",
-    "homepage": "https://www.facebook.com/groups/1109711122479798/about/"
+    "homepage": "https://www.facebook.com/groups/1109711122479798/about/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "104",
+    "theaterCount": "1",
+    "openedAt": "2017",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "대백레오문화홀": {
     "name": "대백레오문화홀",
@@ -98571,7 +98579,14 @@
     "lat": 37.5215164193252,
     "lng": 126.767362329175,
     "phone": "053-421-2223",
-    "homepage": "https://www.facebook.com/groups/1109711122479798/about/"
+    "homepage": "https://www.facebook.com/groups/1109711122479798/about/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "104",
+    "theaterCount": "1",
+    "openedAt": "2017",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "소나무예술극장 (공연장)": {
     "name": "소나무예술극장 (공연장)",
@@ -106937,7 +106952,9 @@
   "경희대학교 국제캠퍼스 선승관": {
     "name": "경희대학교 국제캠퍼스 선승관",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.2449102,
+    "lng": 127.0789628
   },
   "안양체육관(정관장아레나)": {
     "name": "안양체육관(정관장아레나)",
@@ -107019,7 +107036,24 @@
   "과천시민회관 갤러리 마루,아라": {
     "name": "과천시민회관 갤러리 마루,아라",
     "address": "정보 없음",
-    "district": "과천시"
+    "district": "과천시",
+    "phone": "02-504-7300",
+    "homepage": "http://www.gccs.or.kr/dev_home/facilities/status.php",
+    "lat": 37.4279091,
+    "lng": 126.98950450000007,
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1309",
+    "theaterCount": "2",
+    "openedAt": "1995",
+    "amenities": [
+      "식당",
+      "카페",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 카페, 장애인 주차, 장애인 경사로"
   },
   "k2수상레저": {
     "name": "k2수상레저",
@@ -110976,5 +111010,58 @@
     "district": "서초구",
     "lat": 37.4837,
     "lng": 127.0324
+  },
+  "보라 아트홀(구. 지구인아트홀)": {
+    "name": "보라 아트홀(구. 지구인아트홀)",
+    "address": "서울특별시 종로구 창경궁로 260 (명륜2가)",
+    "lat": 37.5843848,
+    "lng": 127.00051899999994,
+    "district": "종로구",
+    "phone": "02-745-3641",
+    "facilityType": "민간(대학로)",
+    "seatScale": "170",
+    "theaterCount": "1",
+    "openedAt": "2014",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로) · 카페"
+  },
+  "더 블랙레이블 사옥": {
+    "name": "더 블랙레이블 사옥",
+    "address": "서울특별시 용산구 이태원로 214 (한남동)",
+    "lat": 37.534468,
+    "lng": 126.997779,
+    "district": "용산구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
+  },
+  "제로윈아트홀": {
+    "name": "제로윈아트홀",
+    "address": "경기도 김포시 김포대로1473번길 84 (장기동)",
+    "lat": 37.653503,
+    "lng": 126.665099,
+    "district": "김포시",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "오죽한옥마을 대형버스 주차장": {
+    "name": "오죽한옥마을 대형버스 주차장",
+    "address": "오죽한옥마을 대형버스 주차장",
+    "district": ""
   }
 }

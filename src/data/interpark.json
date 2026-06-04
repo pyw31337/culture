@@ -11811,6 +11811,16 @@
     "genre": "musical"
   },
   {
+    "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+    "title": "〈슬립노모어 서울〉 (Sleep No More Seoul)",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25008376_p.gif",
+    "date": "2025.07.24 ~ 2026.06.28",
+    "venue": "매키탄 호텔 (The McKithan Hotel)",
+    "link": "https://tickets.interpark.com/goods/25008376",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
     "id": "perf_2026_더_매직서커스_서울_서대문",
     "title": "2026 〈더:매직서커스〉 - 서울(서대문)",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007995_p.gif",
@@ -11979,6 +11989,16 @@
     "genre": "musical"
   },
   {
+    "id": "perf_뮤지컬_써니텐_JTN_아트홀_1관",
+    "title": "뮤지컬 〈써니텐〉 - JTN 아트홀 1관",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25002567_p.gif",
+    "date": "2025.03.07 ~ 2026.07.05",
+    "venue": "JTN 아트홀 1관",
+    "link": "https://tickets.interpark.com/goods/25002567",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
     "id": "perf_뮤지컬_해몽가",
     "title": "뮤지컬 〈해몽가〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007355_p.gif",
@@ -12046,6 +12066,26 @@
     "lastEnriched": "2026-05-22T00:33:58.441Z"
   },
   {
+    "id": "perf_뮤지컬_오렌지_스카이",
+    "title": "뮤지컬 오렌지 스카이",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26003397_p.gif",
+    "date": "2026.04.02 ~ 2026.06.28",
+    "venue": "달밤엔씨어터",
+    "link": "https://tickets.interpark.com/goods/26003397",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
+    "id": "perf_뮤지컬_헝키쇼_HUNKY_SHOW",
+    "title": "뮤지컬 헝키쇼 (HUNKY SHOW)",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25003978_p.gif",
+    "date": "2025.04.25 ~ 2026.07.31",
+    "venue": "스타스테이지",
+    "link": "https://tickets.interpark.com/goods/25003978",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
     "id": "perf_뮤지컬_헬로카봇_카봇크루가_되어줘",
     "title": "뮤지컬 헬로카봇 〈카봇크루가 되어줘!〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007680_p.gif",
@@ -12086,6 +12126,16 @@
     "lastEnriched": "2026-05-22T00:33:57.024Z"
   },
   {
+    "id": "perf_뮤지컬펍_스폿라이트",
+    "title": "뮤지컬펍 스폿라이트",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25012647_p.gif",
+    "date": "2025.09.02 ~ 2026.06.30",
+    "venue": "뮤지컬펍 스폿라이트",
+    "link": "https://tickets.interpark.com/goods/25012647",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
     "id": "perf_박준우_마술사_첫_단독_콘서트_POP_MAGIC",
     "title": "박준우 마술사 첫 단독 콘서트 〈POP MAGIC〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007588_p.gif",
@@ -12106,12 +12156,52 @@
     "genre": "musical"
   },
   {
+    "id": "perf_쇼뮤지컬_와일드_와일드",
+    "title": "쇼뮤지컬 ［와일드 와일드］",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25006677_p.gif",
+    "date": "2025.06.13 ~ 2026.08.31",
+    "venue": "와일드 와일드 전용관 (명보아트홀)",
+    "link": "https://tickets.interpark.com/goods/25006677",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
+    "id": "perf_쇼뮤지컬_더_맨_얼라이브_초이스",
+    "title": "쇼뮤지컬 〈더 맨 얼라이브 : 초이스〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25014107_p.gif",
+    "date": "2025.11.05 ~ 2026.07.31",
+    "venue": "서울숲씨어터 1관",
+    "link": "https://tickets.interpark.com/goods/25014107",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
     "id": "perf_쇼태권_SHOW_TAEKWON",
     "title": "쇼태권 (SHOW TAEKWON)",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007676_p.gif",
     "date": "2026.06.18 ~ 2026.06.30",
     "venue": "허리우드 극장 5층 쇼태권 전용관",
     "link": "https://tickets.interpark.com/goods/26007676",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
+    "id": "perf_어린이_참여_소통_뮤지컬_피노키오야_노올자",
+    "title": "어린이 참여 소통 뮤지컬 피노키오야 노올자~!",
+    "image": "https://ticketimage.interpark.com/Play/image/large/24/24002315_p.gif",
+    "date": "2024.03.23 ~ 2026.06.30",
+    "venue": "대학로 서연아트홀",
+    "link": "https://tickets.interpark.com/goods/24002315",
+    "region": "서울",
+    "genre": "musical"
+  },
+  {
+    "id": "perf_어린이참여뮤지컬_아기돼지삼형제_늑대숲_또옹돼지_원정대",
+    "title": "어린이참여뮤지컬 아기돼지삼형제 (늑대숲 또옹돼지 원정대)",
+    "image": "https://ticketimage.interpark.com/Play/image/large/24/24009893_p.gif",
+    "date": "2024.07.20 ~ 2026.06.30",
+    "venue": "대학로 라온씨어터",
+    "link": "https://tickets.interpark.com/goods/24009893",
     "region": "서울",
     "genre": "musical"
   },
@@ -16175,16 +16265,6 @@
     "genre": "classic"
   },
   {
-    "id": "perf_레이_첸_바이올린_리사이틀",
-    "title": "레이 첸 바이올린 리사이틀",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002352_p.gif",
-    "date": "2026.06.04 ~ 2026.06.04",
-    "venue": "롯데콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26002352",
-    "region": "서울",
-    "genre": "classic"
-  },
-  {
     "id": "perf_로데아트센터_개관_2주년_기념_FRIENDS_시리즈_피피남_Friends",
     "title": "로데아트센터 개관 2주년 기념 FRIENDS 시리즈 - 피피남 ＆ Friends",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007947_p.gif",
@@ -18095,6 +18175,16 @@
     "genre": "classic"
   },
   {
+    "id": "perf_제2회_발켄퍼커션_정기연주회",
+    "title": "제2회 발켄퍼커션 정기연주회",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008093_p.gif",
+    "date": "2026.08.08 ~ 2026.08.08",
+    "venue": "예술의전당 IBK기업은행챔버홀",
+    "link": "https://tickets.interpark.com/goods/26008093",
+    "region": "서울",
+    "genre": "classic"
+  },
+  {
     "id": "perf_제3회_면사랑_신진_유망_연주자_수상자_연주회",
     "title": "제3회 면사랑 신진 유망 연주자 수상자 연주회",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007916_p.gif",
@@ -18711,16 +18801,6 @@
     "date": "2026.06.20 ~ 2026.06.20",
     "venue": "예술의전당 콘서트홀",
     "link": "https://tickets.interpark.com/goods/26005261",
-    "region": "서울",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_한불_수교_140주년_기념공연_제2회_발켄퍼커션_정기연주회",
-    "title": "한불 수교 140주년 기념공연_제2회 발켄퍼커션 정기연주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008093_p.gif",
-    "date": "2026.08.08 ~ 2026.08.08",
-    "venue": "예술의전당 IBK기업은행챔버홀",
-    "link": "https://tickets.interpark.com/goods/26008093",
     "region": "서울",
     "genre": "classic"
   },
