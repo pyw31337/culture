@@ -112,8 +112,9 @@ jobs:
         timeout-minutes: 55
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
-          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
-          KAKAO_LOCAL_REST_API_KEY: ${{ secrets.KAKAO_LOCAL_REST_API_KEY }}
+          # GitHub-hosted runners use rotating Azure IPs. Kakao REST API is
+          # restricted by allowed IP, so only the local Mac mini job may call it.
+          DISABLE_KAKAO_API: '1'
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
           # GitHub Actions is only the 03:00 KST fallback. Keep it shallow so it
@@ -133,7 +134,7 @@ jobs:
           CULTURE_PORTAL_MAX_API_PAGES: '360'
           CULTURE_PORTAL_DETAIL_LIMIT: '180'
           TOURISM_MAX_PAGES: '25'
-          VENUE_PLACE_LOOKUP_LIMIT: '30'
+          VENUE_PLACE_LOOKUP_LIMIT: '0'
           VENUE_PLACE_LOOKUP_DELAY_MS: '250'
           SCRAPER_TIMEOUT_SECONDS: '600'
           SCRAPER_OPTIONAL_BUDGET_SECONDS: '2400'

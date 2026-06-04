@@ -3,6 +3,7 @@ import path from 'path';
 
 const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/cinemas.json');
+const KAKAO_API_DISABLED = process.env.DISABLE_KAKAO_API === '1';
 
 interface Cinema {
     name: string;
@@ -79,6 +80,13 @@ async function fetchCinemasByKeyword(keyword: string, brand: string): Promise<Ci
 
 async function main() {
     console.log('Starting nationwide cinema data collection (Comprehensive Region Search)...');
+    if (KAKAO_API_DISABLED) {
+        if (fs.existsSync(OUTPUT_PATH)) {
+            console.log('Kakao API disabled for this run; retaining existing cinema data.');
+            return;
+        }
+        throw new Error('Kakao API disabled and no existing cinema data is available.');
+    }
 
     const brands = [
         { name: 'CGV', keyword: 'CGV' },

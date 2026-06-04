@@ -50,14 +50,16 @@ function writeJson(filePath: string, value: unknown) {
 }
 
 function getConfiguredProviders(): VenuePlaceProvider[] {
+    const kakaoDisabled = process.env.DISABLE_KAKAO_API === '1';
     const providerOverride = process.env.VENUE_PLACE_PROVIDERS
         ?.split(',')
         .map((provider) => provider.trim())
-        .filter((provider): provider is VenuePlaceProvider => provider === 'kakao' || provider === 'naver');
+        .filter((provider): provider is VenuePlaceProvider => provider === 'kakao' || provider === 'naver')
+        .filter((provider) => provider !== 'kakao' || !kakaoDisabled);
     if (providerOverride?.length) return [...new Set(providerOverride)];
 
     const providers: VenuePlaceProvider[] = [];
-    if (process.env.KAKAO_REST_API_KEY || process.env.KAKAO_LOCAL_REST_API_KEY) providers.push('kakao');
+    if (!kakaoDisabled && (process.env.KAKAO_REST_API_KEY || process.env.KAKAO_LOCAL_REST_API_KEY)) providers.push('kakao');
     if (
         (process.env.NAVER_SEARCH_CLIENT_ID || process.env.NAVER_CLIENT_ID) &&
         (process.env.NAVER_SEARCH_CLIENT_SECRET || process.env.NAVER_CLIENT_SECRET)
