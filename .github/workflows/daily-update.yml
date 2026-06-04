@@ -252,8 +252,6 @@ jobs:
           run_scraper "festival" optional npx tsx scripts/scrape-festival.ts
           run_scraper "kbo" critical npx tsx scripts/scrape-kbo.ts
           run_scraper "kleague" optional npx tsx scripts/scrape-kleague.ts
-          run_scraper "yes24-exclusive" optional npx tsx scripts/scrape-yes24-exclusive.ts
-          run_scraper "timeticket" optional npx tsx scripts/scrape-timeticket.ts
           run_scraper "movies" critical npx tsx scripts/scrape-movies.ts
           run_scraper "cinemas" critical npx tsx scripts/scrape-cinemas.ts
           run_scraper "build-venues" critical npx tsx scripts/build-venues.ts
@@ -261,10 +259,12 @@ jobs:
           # Extended pass: these are valuable, but the local midnight job is the
           # canonical deep refresh. GitHub fallback skips them once the budget is
           # spent instead of burning the full monthly Actions allowance.
+          # Browser-heavy detail sources (YES24, TimeTicket, MyRealTrip) are
+          # intentionally local-only: short CI runs cannot enrich them reliably,
+          # while retained data is safer than a predictable timeout warning.
           run_scraper "kovo" optional npx tsx scripts/scrape-kovo.ts
           run_scraper "kbl" optional npx tsx scripts/scrape-kbl.ts
           run_scraper "handball" optional npx tsx scripts/scrape-handball.ts
-          run_scraper "myrealtrip" optional node scripts/scrape-myrealtrip.js
           run_scraper "umclass" optional npx tsx scripts/scrape-umclass.ts
           run_scraper "sssd" optional npx tsx scripts/scrape-sssd.ts
           run_scraper "mochaclass" optional npx tsx scripts/scrape-mochaclass.ts
