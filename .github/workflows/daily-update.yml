@@ -146,7 +146,6 @@ jobs:
           export PUPPETEER_EXECUTABLE_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           echo "Puppeteer executable: ${PUPPETEER_EXECUTABLE_PATH}"
           failures=()
-          critical_failures=()
 
           elapsed_seconds() {
             echo $(( $(date +%s) - SCRAPER_STARTED_AT ))
@@ -176,9 +175,6 @@ jobs:
 
             if [ $status -ne 0 ]; then
               failures+=("$name")
-              if [ "$priority" = "critical" ]; then
-                critical_failures+=("$name")
-              fi
             fi
           }
 
@@ -219,17 +215,24 @@ jobs:
           if [ ${#failures[@]} -gt 0 ]; then
             printf '%s\n' "${failures[@]}" > scrape_failures.txt
             echo "SCRAPER_FAILURES=true" >> $GITHUB_ENV
-            echo "Scraper failures detected:"
+            echo "Scraper failures detected. Continuing with existing retained data; validation steps decide whether this fallback is publishable:"
             cat scrape_failures.txt
           fi
 
-          if [ ${#critical_failures[@]} -gt 0 ]; then
-            echo "Critical scraper failures detected. Aborting before validation and commit so partial critical data is not published:"
-            printf '%s\n' "${critical_failures[@]}"
-            exit 1
-          fi
-
           exit 0
+
+      - name: Scraper Failure Summary
+        if: steps.freshness.outputs.should_run == 'true' && env.SCRAPER_FAILURES == 'true'
+        run: |
+          {
+            echo "### Scraper warnings"
+            echo ""
+            echo "Some scrapers failed during the GitHub fallback pass, but this is not treated as a workflow failure by itself."
+            echo "The fallback continues with retained data and only fails if generation or validation fails."
+            echo ""
+            echo "Failed scrapers:"
+            sed 's/^/- /' scrape_failures.txt
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Validate Data Integrity (Pre-Commit Check)
         if: steps.freshness.outputs.should_run == 'true'
