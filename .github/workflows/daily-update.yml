@@ -159,13 +159,15 @@ jobs:
           SCRAPER_CRITICAL_TIMEOUT_SECONDS: '480'
           SCRAPER_OPTIONAL_TIMEOUT_SECONDS: '240'
           SCRAPER_RETRY_COUNT: '1'
-          SCRAPER_OPTIONAL_BUDGET_SECONDS: '2400'
+          SCRAPER_OPTIONAL_RETRY_COUNT: '0'
+          SCRAPER_OPTIONAL_BUDGET_SECONDS: '1200'
         run: |
           set +e
           SCRAPER_CRITICAL_TIMEOUT_SECONDS="${SCRAPER_CRITICAL_TIMEOUT_SECONDS:-480}"
           SCRAPER_OPTIONAL_TIMEOUT_SECONDS="${SCRAPER_OPTIONAL_TIMEOUT_SECONDS:-240}"
           SCRAPER_RETRY_COUNT="${SCRAPER_RETRY_COUNT:-1}"
-          SCRAPER_OPTIONAL_BUDGET_SECONDS="${SCRAPER_OPTIONAL_BUDGET_SECONDS:-2400}"
+          SCRAPER_OPTIONAL_RETRY_COUNT="${SCRAPER_OPTIONAL_RETRY_COUNT:-0}"
+          SCRAPER_OPTIONAL_BUDGET_SECONDS="${SCRAPER_OPTIONAL_BUDGET_SECONDS:-1200}"
           SCRAPER_STARTED_AT="$(date +%s)"
           SCRAPER_CHECKPOINT_ROOT="$RUNNER_TEMP/cultureflow-scraper-checkpoints"
           mkdir -p "$SCRAPER_CHECKPOINT_ROOT"
@@ -183,7 +185,7 @@ jobs:
             local priority="$2"
             shift 2
 
-            local elapsed timeout_seconds checkpoint_dir attempt status
+            local elapsed timeout_seconds retry_count checkpoint_dir attempt status
             elapsed="$(elapsed_seconds)"
             if [ "$priority" = "optional" ] && [ "$elapsed" -ge "$SCRAPER_OPTIONAL_BUDGET_SECONDS" ]; then
               echo "Skipping optional scraper ${name}: elapsed ${elapsed}s exceeds fallback budget ${SCRAPER_OPTIONAL_BUDGET_SECONDS}s"
@@ -192,8 +194,10 @@ jobs:
 
             if [ "$priority" = "critical" ]; then
               timeout_seconds="$SCRAPER_CRITICAL_TIMEOUT_SECONDS"
+              retry_count="$SCRAPER_RETRY_COUNT"
             else
               timeout_seconds="$SCRAPER_OPTIONAL_TIMEOUT_SECONDS"
+              retry_count="$SCRAPER_OPTIONAL_RETRY_COUNT"
             fi
 
             checkpoint_dir="$SCRAPER_CHECKPOINT_ROOT/$name"
@@ -204,8 +208,8 @@ jobs:
             echo "::group::${name}"
             echo "Elapsed before ${name}: ${elapsed}s"
             status=1
-            for attempt in $(seq 1 $((SCRAPER_RETRY_COUNT + 1))); do
-              echo "Attempt ${attempt}/$((SCRAPER_RETRY_COUNT + 1)); timeout=${timeout_seconds}s"
+            for attempt in $(seq 1 $((retry_count + 1))); do
+              echo "Attempt ${attempt}/$((retry_count + 1)); timeout=${timeout_seconds}s"
               timeout --preserve-status "${timeout_seconds}" "$@"
               status=$?
               if [ $status -eq 0 ]; then
@@ -216,7 +220,7 @@ jobs:
               rm -rf src/data
               cp -a "$checkpoint_dir/data" src/data
 
-              if [ "$attempt" -le "$SCRAPER_RETRY_COUNT" ]; then
+              if [ "$attempt" -le "$retry_count" ]; then
                 if [ "$priority" = "optional" ] && [ "$(elapsed_seconds)" -ge "$SCRAPER_OPTIONAL_BUDGET_SECONDS" ]; then
                   echo "Not retrying optional scraper ${name}: fallback budget reached."
                   break
