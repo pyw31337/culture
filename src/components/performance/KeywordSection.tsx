@@ -97,7 +97,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                 {showLeftArrow && (
                     <button
                         onClick={() => scroll('left')}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-r-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-r-xl  transition-colors opacity-0 group-hover/section:opacity-100 hidden sm:block"
                     >
                         <ChevronLeft size={32} />
                     </button>
@@ -107,7 +107,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                 {showRightArrow && (
                     <button
                         onClick={() => scroll('right')}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-l-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-l-xl  transition-colors opacity-0 group-hover/section:opacity-100 hidden sm:block"
                     >
                         <ChevronRight size={32} />
                     </button>
@@ -115,7 +115,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
 
                 <div
                     ref={containerRef}
-                    className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-all select-none"
+                    className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-colors select-none"
                     style={{ touchAction: 'pan-x pan-y' }}
                 >
                     <div
@@ -130,7 +130,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                 {/* Poster Card */}
                                 <div
                                     className={clsx(
-                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-transform duration-200 hover:-translate-y-1",
+                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-lg",
                                         !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
                                     onPointerDown={handlePointerDown}
@@ -139,16 +139,16 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                 >
                                     {/* Category Badge */}
                                     <div className="absolute top-3 left-3 z-30 flex gap-1.5 pointer-events-none">
-                                        <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
+                                        <div className="px-2 py-0.5 rounded-full bg-black/40  border border-white/20 text-white text-[10px] font-bold">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </div>
                                         {perf.matchedKeyword && (
-                                            <div className="px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
+                                            <div className="px-2 py-0.5 rounded-full bg-white/15  border border-white/20 text-white text-[10px] font-bold">
                                                 #{perf.matchedKeyword.replace(/^#/, '')}
                                             </div>
                                         )}
                                         {perf.category === '독점공연' && (
-                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
+                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80  border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
                                                 단독
                                             </div>
                                         )}
@@ -193,7 +193,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                     )}
 
                                     {/* Info Overlay (Detail View) */}
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-20">
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-150 flex flex-col items-center justify-center p-4 text-center z-20">
                                         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
                                         <p className="text-gray-300 text-[10px] mb-3 line-clamp-3 px-2 italic font-medium opacity-80">
                                             {perf.synopsis || perf.description}
@@ -215,7 +215,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                                 e.stopPropagation();
                                                 onShare?.(perf.id, e);
                                             }}
-                                            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white backdrop-blur-md pointer-events-auto transition-all shrink-0 border border-white/10"
+                                            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white  pointer-events-auto transition-colors shrink-0 border border-white/10"
                                             title="공유하기"
                                         >
                                             <ChevronRight size={20} />

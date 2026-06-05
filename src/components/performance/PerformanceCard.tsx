@@ -28,6 +28,7 @@ interface PerformanceCardProps {
     searchMode?: 'keyword' | 'location';
     searchText?: string;
     priority?: boolean;
+    enableEffects?: boolean;
 }
 
 // Helper for Highlighting
@@ -56,7 +57,7 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
 
 HighlightText.displayName = 'HighlightText';
 
-function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText, priority = false }: PerformanceCardProps) {
+function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, searchMode = 'keyword', searchText, priority = false, enableEffects = false }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
 
     const dDay = getDdayLabel(perf);
@@ -93,7 +94,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
             <div
                 className={
                     clsx(
-                        "relative transition-transform ease-out shadow-xl h-full rounded-[15px] isolate overflow-visible sm:hover:-translate-y-1",
+                        "relative transition-transform ease-out shadow-md h-full rounded-[15px] isolate overflow-visible",
                         variant === 'default'
                             ? (searchMode === 'location'
                                 ? "p-px border border-emerald-500/20 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.1)]"
@@ -109,7 +110,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     )
                 }
             >
-                {variant === 'default' && (
+                {enableEffects && variant === 'default' && (
                     <div className="absolute inset-0 z-0 overflow-hidden rounded-[15px] pointer-events-none">
                         <div className="gold-shimmer-border" style={{ '--shimmer-color': isGradient ? (searchMode === 'location' ? '#34d399' : '#a78bfa') : 'gold' } as React.CSSProperties} />
                     </div>
@@ -145,12 +146,14 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         />
                     </button>
 
-                    <div className={clsx(
-                        "absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-neon-flow bg-[length:200%_auto] pointer-events-none",
-                        searchMode === 'location'
-                            ? "bg-linear-to-tr from-[#34d399] via-[#059669] to-[#34d399]"
-                            : "bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc]"
-                    )} />
+                    {enableEffects && (
+                        <div className={clsx(
+                            "absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-150 animate-neon-flow bg-[length:200%_auto] pointer-events-none",
+                            searchMode === 'location'
+                                ? "bg-linear-to-tr from-[#34d399] via-[#059669] to-[#34d399]"
+                                : "bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc]"
+                        )} />
+                    )}
 
                     {isInterestVariant ? (
                         <>
@@ -168,7 +171,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         quality={priority ? 62 : 56}
                                         alt={perf.title}
                                         fill
-                                        className="pointer-events-none object-cover transition-transform duration-300 sm:group-hover:scale-[1.03]"
+                                        className={clsx("pointer-events-none object-cover", enableEffects && "transition-transform duration-150 sm:group-hover:scale-[1.02]")}
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         loading={priority ? 'eager' : 'lazy'}
                                         priority={priority}
@@ -293,7 +296,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 quality={priority ? 62 : 56}
                                 alt={perf.title}
                                 fill
-                                className="pointer-events-none object-cover transition-transform duration-300 sm:group-hover:scale-[1.03] rounded-[15px]"
+                                className={clsx("pointer-events-none object-cover rounded-[15px]", enableEffects && "transition-transform duration-150 sm:group-hover:scale-[1.02]")}
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading={priority ? 'eager' : 'lazy'}
                                 priority={priority}
@@ -441,7 +444,8 @@ function arePerformanceCardPropsEqual(previous: PerformanceCardProps, next: Perf
         && previous.isGradient === next.isGradient
         && previous.searchMode === next.searchMode
         && previous.searchText === next.searchText
-        && previous.priority === next.priority;
+        && previous.priority === next.priority
+        && previous.enableEffects === next.enableEffects;
 }
 
 export default memo(PerformanceCard, arePerformanceCardPropsEqual);

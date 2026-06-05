@@ -27,7 +27,7 @@ export default function RecommendationReasonChips({
                 <span
                     key={reason}
                     className={clsx(
-                        'rounded-full border border-white/15 bg-black/35 px-2.5 py-1 text-[10px] font-black tracking-tight text-white backdrop-blur-md light:border-slate-300 light:bg-white light:text-slate-700',
+                        'rounded-full border border-white/15 bg-black/35 px-2.5 py-1 text-[10px] font-black tracking-tight text-white light:border-slate-300 light:bg-white light:text-slate-700',
                         compact && 'px-2 py-0.5 text-[9px]'
                     )}
                 >

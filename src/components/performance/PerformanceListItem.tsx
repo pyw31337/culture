@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useMemo, useCallback, memo } from 'react';
+import React, { useState, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from 'lucide-react';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
@@ -61,23 +61,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
         : sportsTicketBay?.label || '';
     const dDay = getDdayLabel(perf);
     const [isCopied, setIsCopied] = useState(false);
-    const cardRef = useRef<HTMLDivElement>(null);
-    const glareRef = useRef<HTMLDivElement>(null);
-
-    const handleMouseLeave = useCallback(() => {
-        if (!cardRef.current || !glareRef.current) return;
-        cardRef.current.style.transform = `rotateX(0) rotateY(0) scale(1)`;
-        glareRef.current.style.opacity = '0';
-    }, []);
-
     // Variant styles
     const outerVariantStyle = useMemo(() => variant === 'emerald'
-        ? "border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
+        ? "border-emerald-500/30 shadow-[0_3px_14px_-8px_rgba(16,185,129,0.22)]"
         : variant === 'pink'
-            ? "border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
+            ? "border-pink-500/30 shadow-[0_3px_14px_-8px_rgba(236,72,153,0.22)]"
             : variant === 'yellow'
-                ? "border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
-                : "border-white/5 hover:border-white/20 light:border-black/5 light:hover:border-black/10 shadow-xl hover:shadow-2xl light:shadow-none light:hover:shadow-none bg-gray-900 light:bg-white", [variant]);
+                ? "border-yellow-500/30 shadow-[0_3px_14px_-8px_rgba(234,179,8,0.22)]"
+                : "border-white/5 hover:border-white/15 light:border-black/5 light:hover:border-black/10 shadow-md light:shadow-none bg-gray-900 light:bg-white", [variant]);
 
     const contentBgStyle = useMemo(() => variant === 'emerald'
         ? "bg-emerald-950/40"
@@ -111,12 +102,10 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     return (
         <div
             className="perspective-1000 group relative hover:z-[2000]"
-            onMouseLeave={handleMouseLeave}
         >
             <div
-                ref={cardRef}
                 className={clsx(
-                    "relative transition-transform duration-100 ease-out transform-style-3d rounded-xl overflow-hidden flex border backface-hidden h-full",
+                    "relative rounded-xl overflow-hidden flex border backface-hidden h-full",
                     outerVariantStyle
                 )}
                 style={{
@@ -124,15 +113,6 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     WebkitMaskImage: '-webkit-radial-gradient(white, black)',
                 }}
             >
-                <div
-                    ref={glareRef}
-                    className="absolute inset-0 pointer-events-none z-50 opacity-0 transition-opacity duration-200"
-                    style={{
-                        background: 'radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 60%)',
-                        mixBlendMode: 'overlay',
-                    }}
-                />
-
                 <div className="relative w-32 sm:w-48 shrink-0 aspect-[3/4] overflow-hidden isolate z-0 h-full">
                     <ImageWithFallback
                         src={perf.image || perf.poster}
@@ -146,7 +126,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                         quality={priority ? 68 : 58}
                         alt={perf.title}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover"
                         sizes="(max-width: 640px) 128px, 192px"
                         loading={priority ? 'eager' : 'lazy'}
                         priority={priority}
@@ -169,7 +149,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                                 alt={perf.homeTeam}
                                 className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
                             />
-                            <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded backdrop-blur-[2px] border border-white/10">VS</div>
+                            <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded border border-white/10">VS</div>
                             <img
                                 src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
                                 alt={perf.awayTeam}
@@ -179,14 +159,14 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     )}
 
                     {distLabel && (
-                        <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-extrabold px-1.5 py-0.5 rounded border border-green-500/30 backdrop-blur-md z-[60]">
+                        <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-extrabold px-1.5 py-0.5 rounded border border-green-500/30 z-[60]">
                             {distLabel}
                         </div>
                     )}
 
                     <button
                         onClick={(e) => onToggleLike && onToggleLike(perf.id, e)}
-                        className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors group/heart"
+                        className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 border border-white/10 hover:bg-black/60 transition-colors group/heart"
                     >
                         <Heart
                             className={clsx(
@@ -199,7 +179,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     </button>
                     <button
                         onClick={handleShareClick}
-                        className="absolute bottom-1 left-1 p-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60 transition-colors z-[60] flex items-center justify-center group/share"
+                        className="absolute bottom-1 left-1 p-1.5 rounded-full bg-black/40 border border-white/10 hover:bg-black/60 transition-colors z-[60] flex items-center justify-center group/share"
                     >
                         {isCopied ? (
                             <Check className="w-3.5 h-3.5 text-green-400" />

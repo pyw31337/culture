@@ -16,6 +16,7 @@ import SearchParamsBridge from './SearchParamsBridge';
 // the render body of a client component forces this component's nearest
 // Suspense boundary to bail out to client-side rendering during static export.
 const EMPTY_SEARCH_PARAMS = new URLSearchParams();
+const HOME_SECTION_POOL_LIMIT = 720;
 
 // Atomic Components
 import AlarmPanel from './performance/list/AlarmPanel';
@@ -128,23 +129,6 @@ export default function PerformanceList({
             if (timer) clearTimeout(timer);
             document.documentElement.classList.remove('is-scrolling');
         };
-    }, []);
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-
-        const preloadOverlays = () => {
-            void import('./MapView');
-            void import('./CalendarView');
-        };
-
-        if ('requestIdleCallback' in window) {
-            const idleId = window.requestIdleCallback(preloadOverlays, { timeout: 9000 });
-            return () => window.cancelIdleCallback(idleId);
-        }
-
-        const timer = globalThis.setTimeout(preloadOverlays, 9000);
-        return () => globalThis.clearTimeout(timer);
     }, []);
 
     const {
@@ -296,10 +280,15 @@ export default function PerformanceList({
         }
     }, [urlMode, urlLat, urlLng, urlVenue, setSearchMode, setSearchLocation, setSearchText, setSelectedGenre, searchParams]);
 
+    const homeSectionCandidates = useMemo(() => {
+        if (scopedPerformances.length <= HOME_SECTION_POOL_LIMIT) return scopedPerformances;
+        return scopedPerformances.slice(0, HOME_SECTION_POOL_LIMIT);
+    }, [scopedPerformances]);
+
     const keywordItems = useMemo(() => {
-        if (!savedKeywords.length || !scopedPerformances.length) return [];
-        return getKeywordMatchedItems(scopedPerformances, savedKeywords, 15);
-    }, [savedKeywords, scopedPerformances]);
+        if (!savedKeywords.length || !homeSectionCandidates.length) return [];
+        return getKeywordMatchedItems(homeSectionCandidates, savedKeywords, 15);
+    }, [homeSectionCandidates, savedKeywords]);
 
     const discoverySignals = useMemo(() => ({
         likedIds,
@@ -310,9 +299,9 @@ export default function PerformanceList({
     }), [likedIds, favoriteVenues, savedKeywords, activity, buildInfo]);
 
     const computedPersonalizedItems = useMemo(() => {
-        if (!scopedPerformances.length) return [];
-        return buildPersonalizedRecommendations(scopedPerformances, discoverySignals, 12);
-    }, [scopedPerformances, discoverySignals]);
+        if (!homeSectionCandidates.length) return [];
+        return buildPersonalizedRecommendations(homeSectionCandidates, discoverySignals, 12);
+    }, [homeSectionCandidates, discoverySignals]);
     const [lockedPersonalizedItems, setLockedPersonalizedItems] = useState<Performance[]>([]);
     const hasLockedPersonalizedItems = useRef(false);
     useEffect(() => {
@@ -325,17 +314,17 @@ export default function PerformanceList({
     const personalizedItems = lockedPersonalizedItems;
 
     const recommendedItems = useMemo(() => {
-        const featured = getFeaturedPerformances(scopedPerformances, 24);
+        const featured = getFeaturedPerformances(homeSectionCandidates, 24);
         return buildCuratedDiscoveryItems(featured, discoverySignals, 18);
-    }, [scopedPerformances, discoverySignals]);
+    }, [homeSectionCandidates, discoverySignals]);
 
     const posterWarmupItems = useMemo(() => {
         const seen = new Set<string>();
         const candidates = [
-            ...keywordItems.slice(0, 4),
-            ...personalizedItems.slice(0, 4),
-            ...recommendedItems.slice(0, 4),
-            ...displayPerformances.slice(0, 8),
+            ...keywordItems.slice(0, 2),
+            ...personalizedItems.slice(0, 2),
+            ...recommendedItems.slice(0, 2),
+            ...displayPerformances.slice(0, 4),
         ];
 
         return candidates.filter((item) => {
@@ -348,13 +337,14 @@ export default function PerformanceList({
 
     useEffect(() => {
         if (posterWarmupItems.length === 0) return;
+        if (activeOverlay) return;
         return warmPosterImages(posterWarmupItems, {
-            limit: 8,
+            limit: 4,
             width: 300,
             quality: 54,
             concurrency: 1,
         });
-    }, [posterWarmupKey, posterWarmupItems]);
+    }, [activeOverlay, posterWarmupKey, posterWarmupItems]);
 
     useEffect(() => {
         if (selectedGenre !== 'all' && !isGenreAvailable(genreCounts, selectedGenre)) {

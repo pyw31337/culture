@@ -5,7 +5,6 @@ import type { Performance } from '@/types';
 import { GENRES } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
-import RecommendationReasonChips from './RecommendationReasonChips';
 import SectionInfoPopover from './SectionInfoPopover';
 
 
@@ -116,7 +115,7 @@ export default function PersonalizedSection({
                 {showLeftArrow && (
                     <button
                         onClick={() => scroll('left')}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-r-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-r-xl  transition-colors opacity-0 group-hover/section:opacity-100 hidden sm:block"
                     >
                         <ChevronLeft size={32} />
                     </button>
@@ -124,13 +123,13 @@ export default function PersonalizedSection({
                 {showRightArrow && (
                     <button
                         onClick={() => scroll('right')}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-l-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-l-xl  transition-colors opacity-0 group-hover/section:opacity-100 hidden sm:block"
                     >
                         <ChevronRight size={32} />
                     </button>
                 )}
 
-                <div ref={containerRef} className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-10 transition-all select-none" style={{ touchAction: 'pan-x pan-y' }}>
+                <div ref={containerRef} className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-10 transition-colors select-none" style={{ touchAction: 'pan-x pan-y' }}>
                     <div
                         ref={contentRef}
                         onDragEnd={() => setIsDragging(false)}
@@ -139,7 +138,7 @@ export default function PersonalizedSection({
                         {items.map((performance) => (
                             <div
                                 key={performance.id}
-                                className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-2xl transition-transform duration-200 hover:-translate-y-1 flex-shrink-0"
+                                className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-lg flex-shrink-0"
                                 onPointerDown={handlePointerDown}
                                 onPointerUp={(event) => handlePointerUp(event, performance)}
                                 style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
@@ -167,15 +166,9 @@ export default function PersonalizedSection({
                                 />
 
                                 <div className="absolute top-3 left-3 right-3 z-20 flex items-center gap-1.5 overflow-hidden whitespace-nowrap">
-                                    <div className="inline-flex shrink-0 rounded-full bg-black/35 px-2 py-0.5 text-[9px] font-black text-white backdrop-blur-md border border-white/15">
+                                    <div className="inline-flex shrink-0 rounded-full bg-black/35 px-2 py-0.5 text-[9px] font-black text-white  border border-white/15">
                                         {GENRES.find((genre) => genre.id === performance.genre)?.label || performance.genre}
                                     </div>
-                                    <RecommendationReasonChips
-                                        reasons={performance.recommendationReasons}
-                                        comparisonTags={performance.comparisonTags}
-                                        compact
-                                        singleLine
-                                    />
                                 </div>
 
                                 <div className="absolute inset-x-0 bottom-0 z-20 p-4">

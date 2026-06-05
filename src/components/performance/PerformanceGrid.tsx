@@ -30,8 +30,8 @@ interface PerformanceGridProps {
 }
 
 const VIRTUALIZATION_THRESHOLD = 36;
-const OVERSCAN_ROWS = 2;
-const SCROLL_MEASURE_STEP = 120;
+const OVERSCAN_ROWS = 1;
+const SCROLL_MEASURE_STEP = 180;
 
 function getColumnCount(layoutMode: 'grid' | 'list', width: number): number {
     if (layoutMode === 'grid') {
@@ -270,6 +270,7 @@ export default function PerformanceGrid({
                                 ribbonText="Nearby"
                                 isGradient={isNearby || (selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue')}
                                 enableActions={true}
+                                enableEffects={index < 8}
                                 onShare={copyItemShareUrl}
                                 onDetail={handleDetailOpen}
                                 searchMode={searchMode}

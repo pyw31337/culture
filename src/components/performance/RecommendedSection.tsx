@@ -7,7 +7,6 @@ import { cleanTitle } from '@/lib/utils';
 import { getGenreIcon } from '../GenreIcons';
 import { useUserActivity } from '@/hooks/useUserActivity';
 import { clsx } from 'clsx';
-import RecommendationReasonChips from './RecommendationReasonChips';
 import SectionInfoPopover from './SectionInfoPopover';
 
 const EMPTY_VENUES: Record<string, never> = {};
@@ -186,7 +185,7 @@ export default function RecommendedSection({
                 {showLeftArrow && (
                     <button
                         onClick={() => scroll('left')}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-r-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-r-xl  transition-colors opacity-0 group-hover/section:opacity-100 hidden sm:block"
                     >
                         <ChevronLeft size={32} />
                     </button>
@@ -196,7 +195,7 @@ export default function RecommendedSection({
                 {showRightArrow && (
                     <button
                         onClick={() => scroll('right')}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-l-xl backdrop-blur-sm transition-all opacity-0 group-hover/section:opacity-100 hidden sm:block"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 bg-black/50 hover:bg-black/80 text-white rounded-l-xl  transition-colors opacity-0 group-hover/section:opacity-100 hidden sm:block"
                     >
                         <ChevronRight size={32} />
                     </button>
@@ -204,7 +203,7 @@ export default function RecommendedSection({
 
                 <div
                     ref={containerRef}
-                    className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-all select-none"
+                    className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-colors select-none"
                     style={{ touchAction: 'pan-x pan-y' }}
                 >
                     <div
@@ -229,7 +228,7 @@ export default function RecommendedSection({
                                 {/* Poster Card */}
                                 <div
                                     className={clsx(
-                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-2xl transition-transform duration-200 hover:-translate-y-1 -ml-6",
+                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-lg -ml-6",
                                         !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
                                     onPointerDown={handlePointerDown}
@@ -238,16 +237,11 @@ export default function RecommendedSection({
                                 >
                                     {/* Category Badge */}
                                     <div className="absolute top-3 left-3 right-3 z-30 flex gap-1.5 pointer-events-none overflow-hidden whitespace-nowrap">
-                                        <div className="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
+                                        <div className="px-2 py-0.5 rounded-full bg-black/40  border border-white/20 text-white text-[10px] font-bold">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </div>
-                                        {(perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]) && (
-                                            <div className="px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold">
-                                                {perf.recommendationReasons?.[0] || perf.comparisonTags?.[0]}
-                                            </div>
-                                        )}
                                         {perf.category === '독점공연' && (
-                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80 backdrop-blur-md border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
+                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80  border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
                                                 단독
                                             </div>
                                         )}
@@ -292,7 +286,7 @@ export default function RecommendedSection({
                                     )}
 
                                     {/* Info Overlay (Detail View) */}
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center z-10">
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-150 flex flex-col items-center justify-center p-4 text-center z-10">
                                         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">{cleanTitle(perf.title)}</h3>
                                         <p className="text-gray-300 text-sm mb-4 font-bold tracking-wider">
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
@@ -311,7 +305,7 @@ export default function RecommendedSection({
                                                 e.stopPropagation();
                                                 onShare?.(perf.id, e);
                                             }}
-                                            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white backdrop-blur-md pointer-events-auto transition-all shrink-0 border border-white/10"
+                                            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white  pointer-events-auto transition-colors shrink-0 border border-white/10"
                                             title="공유하기"
                                         >
                                             <ChevronRight size={20} />
