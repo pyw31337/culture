@@ -11,7 +11,7 @@ type WarmPosterOptions = {
 };
 
 const warmedUrls = new Set<string>();
-const MAX_WARMED_URLS_PER_SESSION = 96;
+const MAX_WARMED_URLS_PER_SESSION = 48;
 const SLOW_CONNECTIONS = new Set(['slow-2g', '2g']);
 
 function getConnectionInfo() {
@@ -44,11 +44,11 @@ function scheduleWarmup(task: () => void, immediate?: boolean) {
     };
 
     if (typeof idleWindow.requestIdleCallback === 'function') {
-        const id = idleWindow.requestIdleCallback(task, { timeout: 900 });
+        const id = idleWindow.requestIdleCallback(task, { timeout: 1400 });
         return () => idleWindow.cancelIdleCallback?.(id);
     }
 
-    const timer = globalThis.setTimeout(task, 160);
+    const timer = globalThis.setTimeout(task, 500);
     return () => globalThis.clearTimeout(timer);
 }
 
@@ -86,7 +86,7 @@ function preloadUrl(url: string) {
             resolve();
         };
 
-        const timeout = window.setTimeout(finish, 6000);
+        const timeout = window.setTimeout(finish, 3000);
         img.decoding = 'async';
         img.loading = 'eager';
         img.onload = () => {

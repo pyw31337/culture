@@ -1,8 +1,8 @@
-import { startTransition, useEffect, useState } from 'react';
+import { startTransition, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Performance } from '@/types';
 import type { CinemaData, VenueData } from '@/lib/performance-data';
 
-type PerformanceLoadPolicy = 'full' | 'initial-only';
+type PerformanceLoadPolicy = 'full' | 'initial-only' | 'paged';
 type BackgroundLoadPriority = 'immediate' | 'deferred';
 
 interface UsePerformanceDataProps {
@@ -18,6 +18,10 @@ let performancesCache: Performance[] | null = null;
 let performancesPromise: Promise<Performance[]> | null = null;
 const performancesCacheByPath = new Map<string, Performance[]>();
 const performancesPromiseByPath = new Map<string, Promise<Performance[]>>();
+const manifestCacheByPath = new Map<string, PerformancePageManifest>();
+const manifestPromiseByPath = new Map<string, Promise<PerformancePageManifest>>();
+const pageCacheByPath = new Map<string, Performance[]>();
+const pagePromiseByPath = new Map<string, Promise<Performance[]>>();
 let cinemasCache: CinemaData[] | null = null;
 let cinemasPromise: Promise<CinemaData[]> | null = null;
 let venuesCache: Record<string, VenueData> | null = null;
@@ -55,10 +59,47 @@ function waitForBrowserIdle() {
 }
 
 function mergePerformances(current: Performance[], next: Performance[]) {
+    if (next.length === 0) return current;
     const byId = new Map<string, Performance>();
     current.forEach((item) => byId.set(item.id, item));
     next.forEach((item) => byId.set(item.id, item));
     return Array.from(byId.values());
+}
+
+function getManifest(path: string): Promise<PerformancePageManifest> {
+    const cached = manifestCacheByPath.get(path);
+    if (cached) return Promise.resolve(cached);
+
+    const existing = manifestPromiseByPath.get(path);
+    if (existing) return existing;
+
+    const promise = fetchJson<PerformancePageManifest>(path, { total: 0, pageSize: 0, pages: [] })
+        .then((manifest) => {
+            manifestCacheByPath.set(path, manifest);
+            return manifest;
+        })
+        .finally(() => manifestPromiseByPath.delete(path));
+
+    manifestPromiseByPath.set(path, promise);
+    return promise;
+}
+
+function getPage(path: string): Promise<Performance[]> {
+    const cached = pageCacheByPath.get(path);
+    if (cached) return Promise.resolve(cached);
+
+    const existing = pagePromiseByPath.get(path);
+    if (existing) return existing;
+
+    const promise = fetchJson<Performance[]>(path, [])
+        .then((page) => {
+            pageCacheByPath.set(path, page);
+            return page;
+        })
+        .finally(() => pagePromiseByPath.delete(path));
+
+    pagePromiseByPath.set(path, promise);
+    return promise;
 }
 
 function loadPerformances(
@@ -74,11 +115,11 @@ function loadPerformances(
     if (existingPromise) return existingPromise;
 
     const promise = (path.endsWith('/manifest.json')
-        ? fetchJson<PerformancePageManifest>(path, { total: 0, pageSize: 0, pages: [] })
+        ? getManifest(path)
             .then(async (manifest) => {
                 let merged: Performance[] = [];
                 for (let index = 0; index < manifest.pages.length; index += 1) {
-                    const page = await fetchJson<Performance[]>(manifest.pages[index], []);
+                    const page = await getPage(manifest.pages[index]);
                     merged = mergePerformances(merged, page);
                     if (onProgress && (index === 0 || index % 2 === 1 || index === manifest.pages.length - 1)) {
                         onProgress(merged);
@@ -162,6 +203,7 @@ export function usePerformanceData({
     loadCinemas: shouldLoadCinemas = false,
     loadVenues: shouldLoadVenues = false,
 }: UsePerformanceDataProps) {
+    const isPagedMode = performanceLoadPolicy === 'paged' && performanceDataPath.endsWith('/manifest.json');
     const [allPerformances, setAllPerformances] = useState<Performance[]>(() => {
         const cachedPerformances = getCachedPerformances(performanceDataPath);
         if (performanceLoadPolicy === 'full' && cachedPerformances) {
@@ -171,7 +213,12 @@ export function usePerformanceData({
     });
     const [cinemas, setCinemas] = useState<CinemaData[]>(() => shouldLoadCinemas && cinemasCache ? cinemasCache : []);
     const [venues, setVenues] = useState<Record<string, VenueData>>(() => shouldLoadVenues && venuesCache ? venuesCache : {});
+    const [pagedManifest, setPagedManifest] = useState<PerformancePageManifest | null>(() => manifestCacheByPath.get(performanceDataPath) || null);
+    const [loadedPageCount, setLoadedPageCount] = useState(0);
+    const [isPerformancePageLoading, setIsPerformancePageLoading] = useState(false);
+    const pageLoadCursorRef = useRef(0);
     const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(() => {
+        if (isPagedMode) return true;
         const performancesReady = performanceLoadPolicy !== 'full' || Boolean(getCachedPerformances(performanceDataPath));
         const cinemasReady = !shouldLoadCinemas || Boolean(cinemasCache);
         const venuesReady = !shouldLoadVenues || Boolean(venuesCache);
@@ -179,11 +226,60 @@ export function usePerformanceData({
     });
 
     useEffect(() => {
+        if (!isPagedMode) return;
+        let isCancelled = false;
+        getManifest(performanceDataPath)
+            .then((manifest) => {
+                if (isCancelled) return;
+                setPagedManifest(manifest);
+                const firstPage = manifest.pages[0];
+                // If page 1 was already fetched in this browser session, hydrate it
+                // back into the current list before advancing the cursor. Otherwise a
+                // route return could skip items that were only present in cached page 1.
+                if (firstPage && pageCacheByPath.has(firstPage)) {
+                    const cachedPage = pageCacheByPath.get(firstPage) || [];
+                    startTransition(() => {
+                        setAllPerformances((current) => mergePerformances(current, cachedPage));
+                    });
+                    pageLoadCursorRef.current = Math.max(pageLoadCursorRef.current, 1);
+                    setLoadedPageCount(pageLoadCursorRef.current);
+                }
+            })
+            .catch((error) => console.error('Failed to load performance manifest', error));
+        return () => {
+            isCancelled = true;
+        };
+    }, [isPagedMode, performanceDataPath]);
+
+    const loadNextPerformancePage = useCallback(async () => {
+        if (!isPagedMode || isPerformancePageLoading) return;
+        const manifest = pagedManifest || await getManifest(performanceDataPath);
+        setPagedManifest(manifest);
+
+        const pagePath = manifest.pages[pageLoadCursorRef.current];
+        if (!pagePath) return;
+
+        setIsPerformancePageLoading(true);
+        try {
+            const page = await getPage(pagePath);
+            pageLoadCursorRef.current += 1;
+            setLoadedPageCount(pageLoadCursorRef.current);
+            startTransition(() => {
+                setAllPerformances((current) => mergePerformances(current, page));
+            });
+        } catch (error) {
+            console.error('Failed to load performance page', error);
+        } finally {
+            setIsPerformancePageLoading(false);
+        }
+    }, [isPagedMode, isPerformancePageLoading, pagedManifest, performanceDataPath]);
+
+    useEffect(() => {
         let isCancelled = false;
 
         const loadRequestedData = async () => {
             const requiresColdLoad =
-                (performanceLoadPolicy === 'full' && !getCachedPerformances(performanceDataPath)) ||
+                (!isPagedMode && performanceLoadPolicy === 'full' && !getCachedPerformances(performanceDataPath)) ||
                 (shouldLoadCinemas && !cinemasCache) ||
                 (shouldLoadVenues && !venuesCache);
 
@@ -193,7 +289,7 @@ export function usePerformanceData({
 
             const tasks: Promise<void>[] = [];
 
-            if (performanceLoadPolicy === 'full') {
+            if (!isPagedMode && performanceLoadPolicy === 'full') {
                 const handleProgress = performanceDataPath.endsWith('/manifest.json')
                     ? (data: Performance[]) => {
                         if (isCancelled || data.length === 0) return;
@@ -276,13 +372,22 @@ export function usePerformanceData({
             isCancelled = true;
             cancelDeferredLoad();
         };
-    }, [backgroundLoadPriority, initialPerformances.length, performanceDataPath, performanceLoadPolicy, shouldLoadCinemas, shouldLoadVenues]);
+    }, [backgroundLoadPriority, initialPerformances.length, isPagedMode, performanceDataPath, performanceLoadPolicy, shouldLoadCinemas, shouldLoadVenues]);
+
+    const hasMorePerformancePages = useMemo(() => {
+        if (!isPagedMode) return false;
+        return pageLoadCursorRef.current < (pagedManifest?.pages.length || 0);
+    }, [isPagedMode, loadedPageCount, pagedManifest?.pages.length]);
 
     return {
         allPerformances,
         setAllPerformances,
         cinemas,
         venues,
-        isDataFullyLoaded
+        isDataFullyLoaded,
+        isPerformancePageLoading,
+        hasMorePerformancePages,
+        loadNextPerformancePage,
+        performanceTotal: pagedManifest?.total || allPerformances.length,
     };
 }

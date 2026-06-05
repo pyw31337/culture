@@ -85,7 +85,7 @@ function ImageWithFallbackInner({
     useEffect(() => {
         if (!isNearViewport || isLoaded || sourceIndex >= sources.length - 1) return;
 
-        const timeoutMs = fastDisplay ? 900 : 1800;
+        const timeoutMs = fastDisplay ? 450 : 900;
         const timeoutId = window.setTimeout(() => {
             setSourceIndex((index) => (
                 index === sourceIndex ? Math.min(index + 1, sources.length - 1) : index
@@ -141,7 +141,7 @@ function ImageWithFallbackInner({
                 unoptimized={isUnoptimized}
                 className={clsx(
                     props.className,
-                    fastDisplay ? "transition-opacity duration-75" : "transition-opacity duration-300",
+                    fastDisplay ? "transition-opacity duration-75" : "transition-opacity duration-150",
                     isLoaded ? "opacity-100" : "opacity-0"
                 )}
                 quality={imageQuality}

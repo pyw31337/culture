@@ -438,4 +438,15 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
 
 PerformanceListItem.displayName = 'PerformanceListItem';
 
-export default memo(PerformanceListItem);
+function arePerformanceListItemPropsEqual(previous: PerformanceListItemProps, next: PerformanceListItemProps) {
+    return previous.perf === next.perf
+        && previous.distLabel === next.distLabel
+        && previous.venueInfo === next.venueInfo
+        && previous.isLiked === next.isLiked
+        && previous.variant === next.variant
+        && previous.searchMode === next.searchMode
+        && previous.searchText === next.searchText
+        && previous.priority === next.priority;
+}
+
+export default memo(PerformanceListItem, arePerformanceListItemPropsEqual);

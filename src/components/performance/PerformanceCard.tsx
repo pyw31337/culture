@@ -429,4 +429,19 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     );
 }
 
-export default memo(PerformanceCard);
+function arePerformanceCardPropsEqual(previous: PerformanceCardProps, next: PerformanceCardProps) {
+    return previous.perf === next.perf
+        && previous.distLabel === next.distLabel
+        && previous.venueInfo === next.venueInfo
+        && previous.variant === next.variant
+        && previous.isLiked === next.isLiked
+        && previous.showRibbon === next.showRibbon
+        && previous.ribbonText === next.ribbonText
+        && previous.enableActions === next.enableActions
+        && previous.isGradient === next.isGradient
+        && previous.searchMode === next.searchMode
+        && previous.searchText === next.searchText
+        && previous.priority === next.priority;
+}
+
+export default memo(PerformanceCard, arePerformanceCardPropsEqual);

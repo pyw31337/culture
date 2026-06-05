@@ -29,8 +29,9 @@ interface PerformanceGridProps {
     searchText?: string;
 }
 
-const VIRTUALIZATION_THRESHOLD = 60;
-const OVERSCAN_ROWS = 4;
+const VIRTUALIZATION_THRESHOLD = 36;
+const OVERSCAN_ROWS = 2;
+const SCROLL_MEASURE_STEP = 120;
 
 function getColumnCount(layoutMode: 'grid' | 'list', width: number): number {
     if (layoutMode === 'grid') {
@@ -86,6 +87,12 @@ export default function PerformanceGrid({
 }: PerformanceGridProps) {
     const likedIdSet = React.useMemo(() => new Set(likedIds), [likedIds]);
     const containerRef = React.useRef<HTMLDivElement>(null);
+    const lastViewportRef = React.useRef({
+        scrollY: 0,
+        height: 900,
+        width: 0,
+        top: 0,
+    });
     const [viewport, setViewport] = React.useState({
         scrollY: 0,
         height: 900,
@@ -97,16 +104,28 @@ export default function PerformanceGrid({
         if (typeof window === 'undefined') return;
 
         let frame = 0;
+        const shouldTrackScroll = items.length > VIRTUALIZATION_THRESHOLD;
         const measure = () => {
             frame = 0;
             const node = containerRef.current;
             const rect = node?.getBoundingClientRect();
-            setViewport({
+            const nextViewport = {
                 scrollY: window.scrollY || window.pageYOffset || 0,
                 height: window.innerHeight || 900,
                 width: node?.clientWidth || window.innerWidth || 1200,
                 top: (rect?.top || 0) + (window.scrollY || window.pageYOffset || 0),
-            });
+            };
+            const previous = lastViewportRef.current;
+            const layoutChanged =
+                Math.abs(nextViewport.width - previous.width) > 2 ||
+                Math.abs(nextViewport.height - previous.height) > 2 ||
+                Math.abs(nextViewport.top - previous.top) > 2;
+            const scrolledEnough = Math.abs(nextViewport.scrollY - previous.scrollY) >= SCROLL_MEASURE_STEP;
+
+            if (layoutChanged || scrolledEnough || previous.width === 0 || !shouldTrackScroll) {
+                lastViewportRef.current = nextViewport;
+                setViewport(nextViewport);
+            }
         };
 
         const requestMeasure = () => {
@@ -115,7 +134,9 @@ export default function PerformanceGrid({
         };
 
         measure();
-        window.addEventListener('scroll', requestMeasure, { passive: true });
+        if (shouldTrackScroll) {
+            window.addEventListener('scroll', requestMeasure, { passive: true });
+        }
         window.addEventListener('resize', requestMeasure, { passive: true });
 
         let resizeObserver: ResizeObserver | null = null;
@@ -126,11 +147,13 @@ export default function PerformanceGrid({
 
         return () => {
             if (frame) window.cancelAnimationFrame(frame);
-            window.removeEventListener('scroll', requestMeasure);
+            if (shouldTrackScroll) {
+                window.removeEventListener('scroll', requestMeasure);
+            }
             window.removeEventListener('resize', requestMeasure);
             resizeObserver?.disconnect();
         };
-    }, []);
+    }, [items.length]);
 
     const virtualization = React.useMemo(() => {
         const width = viewport.width || 1200;

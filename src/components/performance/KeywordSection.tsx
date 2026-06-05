@@ -29,8 +29,10 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
         const container = containerRef.current;
         if (!container) return;
         const maxScroll = container.scrollWidth - container.clientWidth - 8;
-        setShowLeftArrow(container.scrollLeft > 10);
-        setShowRightArrow(container.scrollLeft < maxScroll);
+        const nextShowLeft = container.scrollLeft > 10;
+        const nextShowRight = container.scrollLeft < maxScroll;
+        setShowLeftArrow((current) => current === nextShowLeft ? current : nextShowLeft);
+        setShowRightArrow((current) => current === nextShowRight ? current : nextShowRight);
     }, [keywordItems]);
 
     useEffect(() => {

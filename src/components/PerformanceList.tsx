@@ -139,17 +139,25 @@ export default function PerformanceList({
         };
 
         if ('requestIdleCallback' in window) {
-            const idleId = window.requestIdleCallback(preloadOverlays, { timeout: 3500 });
+            const idleId = window.requestIdleCallback(preloadOverlays, { timeout: 9000 });
             return () => window.cancelIdleCallback(idleId);
         }
 
-        const timer = globalThis.setTimeout(preloadOverlays, 1800);
+        const timer = globalThis.setTimeout(preloadOverlays, 9000);
         return () => globalThis.clearTimeout(timer);
     }, []);
 
-    const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
+    const {
+        allPerformances,
+        venues,
+        isDataFullyLoaded,
+        isPerformancePageLoading,
+        hasMorePerformancePages,
+        loadNextPerformancePage,
+        performanceTotal,
+    } = usePerformanceData({
         initialPerformances,
-        performanceLoadPolicy: 'full',
+        performanceLoadPolicy: performanceDataPath?.endsWith('/manifest.json') ? 'paged' : 'full',
         performanceDataPath,
         backgroundLoadPriority: 'deferred',
         loadVenues: shouldLoadVenueData,
@@ -236,18 +244,36 @@ export default function PerformanceList({
     const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
     const genreNavigationItems = useMemo(() => getGenreNavigationItems(genreCounts), [genreCounts]);
     const totalItemCount = useMemo(() => {
-        if (buildInfo?.itemCount) return buildInfo.itemCount;
+        if (buildInfo?.itemCount && !isCategoryPage) return buildInfo.itemCount;
+        if (performanceTotal) return performanceTotal;
         return Object.values(genreCounts).reduce((sum, count) => sum + count, 0);
-    }, [buildInfo?.itemCount, genreCounts]);
+    }, [buildInfo?.itemCount, genreCounts, isCategoryPage, performanceTotal]);
     const availableGenreCount = useMemo(() => {
         return availableGenres.filter((genre) => genre.id !== 'all').length;
     }, [availableGenres]);
     const displayFilteredCount = useMemo(() => {
-        if (isCategoryPage && !isDataFullyLoaded && initialFilteredCount) {
+        const isDefaultBrowse = !searchText && !searchLocation && selectedRegion === 'all' && selectedDistrict === 'all' && selectedVenue === 'all' && !selectedDateFilter && !selectedPriceTier && discoveryContextId === 'all';
+        if (isCategoryPage && initialFilteredCount && isDefaultBrowse) {
             return initialFilteredCount;
         }
+        if (!isCategoryPage && isDefaultBrowse && performanceTotal > filteredPerformances.length) {
+            return performanceTotal;
+        }
         return filteredPerformances.length;
-    }, [filteredPerformances.length, initialFilteredCount, isCategoryPage, isDataFullyLoaded]);
+    }, [
+        discoveryContextId,
+        filteredPerformances.length,
+        initialFilteredCount,
+        isCategoryPage,
+        performanceTotal,
+        searchLocation,
+        searchText,
+        selectedDateFilter,
+        selectedDistrict,
+        selectedPriceTier,
+        selectedRegion,
+        selectedVenue,
+    ]);
     const freshnessNote = useMemo(() => {
         if (!buildInfo?.generatedAt) return '방금 정리한 추천 흐름이에요.';
         return `${formatCompactKoreanDateTime(buildInfo.generatedAt)} 기준으로 다시 정리했어요.`;
@@ -323,10 +349,10 @@ export default function PerformanceList({
     useEffect(() => {
         if (posterWarmupItems.length === 0) return;
         return warmPosterImages(posterWarmupItems, {
-            limit: 14,
-            width: 320,
-            quality: 58,
-            concurrency: 2,
+            limit: 8,
+            width: 300,
+            quality: 54,
+            concurrency: 1,
         });
     }, [posterWarmupKey, posterWarmupItems]);
 
@@ -349,7 +375,7 @@ export default function PerformanceList({
                 return;
             }
             void loadSharedDetailModal();
-        }, 6500);
+        }, 10000);
 
         return () => window.clearTimeout(preloadTimer);
     }, []);
@@ -531,8 +557,13 @@ export default function PerformanceList({
 
         const observer = new IntersectionObserver(
             (entries) => {
-                if (entries[0].isIntersecting && hasMore) {
+                if (!entries[0].isIntersecting) return;
+                if (hasMore) {
                     loadMore();
+                    return;
+                }
+                if (hasMorePerformancePages && !isPerformancePageLoading) {
+                    void loadNextPerformancePage();
                 }
             },
             { threshold: 0.1, rootMargin: '900px' }
@@ -540,7 +571,7 @@ export default function PerformanceList({
 
         observer.observe(observerTarget.current);
         return () => observer.disconnect();
-    }, [hasMore, loadMore]);
+    }, [hasMore, hasMorePerformancePages, isPerformancePageLoading, loadMore, loadNextPerformancePage]);
 
     // 2. Deep Link Support (Shared Content Modal)
     useEffect(() => {
@@ -803,7 +834,7 @@ export default function PerformanceList({
                     ) : (
                         <PerformanceGrid
                             items={displayPerformances}
-                            hasMore={hasMore}
+                            hasMore={hasMore || hasMorePerformancePages || isPerformancePageLoading}
                             observerRef={observerTarget}
                             layoutMode={layoutMode}
                             selectedVenue={selectedVenue}
@@ -832,10 +863,10 @@ export default function PerformanceList({
                         />
                     )}
 
-                    {!isDataFullyLoaded && (
+                    {(!isDataFullyLoaded || isPerformancePageLoading) && (
                         <div className="flex justify-center py-12">
                             <Loader2 className="animate-spin text-purple-500" />
-                            <span className="ml-3 text-gray-400">데이터를 불러오는 중...</span>
+                            <span className="ml-3 text-gray-400">콘텐츠를 이어서 불러오는 중...</span>
                         </div>
                     )}
                 </div>
