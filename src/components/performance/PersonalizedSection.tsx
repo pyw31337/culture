@@ -142,6 +142,7 @@ export default function PersonalizedSection({
                                 className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-2xl transition-transform duration-200 hover:-translate-y-1 flex-shrink-0"
                                 onPointerDown={handlePointerDown}
                                 onPointerUp={(event) => handlePointerUp(event, performance)}
+                                style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
                                 <ImageWithFallback

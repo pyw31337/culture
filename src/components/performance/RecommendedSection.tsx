@@ -234,6 +234,7 @@ export default function RecommendedSection({
                                     )}
                                     onPointerDown={handlePointerDown}
                                     onPointerUp={(e) => handlePointerUp(e as any, perf)}
+                                    style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                                 >
                                     {/* Category Badge */}
                                     <div className="absolute top-3 left-3 right-3 z-30 flex gap-1.5 pointer-events-none overflow-hidden whitespace-nowrap">

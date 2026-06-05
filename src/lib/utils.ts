@@ -33,6 +33,15 @@ export const getOptimizedUrl = (url: string, width: number = 400, quality: numbe
     // Skip external optimization for local images (relative paths)
     if (normalizedUrl.startsWith('/')) {
         const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const sourcePath = basePath && normalizedUrl.startsWith(basePath)
+            ? normalizedUrl.slice(basePath.length)
+            : normalizedUrl;
+        if (width <= 420 && sourcePath.startsWith('/images/posters/')) {
+            const thumbPath = sourcePath
+                .replace('/images/posters/', '/images/thumbs/w320/posters/')
+                .replace(/\.(?:jpe?g|png|webp)$/i, '.webp');
+            return `${basePath}${thumbPath}`;
+        }
         // If basePath is set and url doesn't start with it (and isn't just a slash if basePath is empty?), prepend it.
         // Also avoid double-slash if basePath ends with / (it shouldn't based on config)
         if (basePath && !normalizedUrl.startsWith(basePath)) {

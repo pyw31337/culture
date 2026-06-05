@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "generate-data": "npx tsx scripts/generate-performance-json.ts",
+    "generate:thumbs": "node scripts/generate-local-thumbnails.mjs",
     "build:site": "next build --webpack",
     "build": "npm run generate-data && npm run validate:content && npm run validate:locations && npm run validate:display && npm run audit:stability && next build --webpack",
     "start": "next start",

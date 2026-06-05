@@ -135,6 +135,7 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                     )}
                                     onPointerDown={handlePointerDown}
                                     onPointerUp={(e) => handlePointerUp(e, perf)}
+                                    style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                                 >
                                     {/* Category Badge */}
                                     <div className="absolute top-3 left-3 z-30 flex gap-1.5 pointer-events-none">
