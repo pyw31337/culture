@@ -474,3 +474,10 @@
 - **GitHub Run ID**: [27071942882](https://github.com/pyw31337/culture/actions/runs/27071942882)
 - **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale.
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-06-07 20:03:18 UTC
+- **GitHub Run ID**: [27102738861](https://github.com/pyw31337/culture/actions/runs/27102738861)
+- **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale.
+- **Failed Scrapers**:
+  - mochaclass
+
