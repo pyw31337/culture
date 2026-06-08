@@ -16,6 +16,13 @@ const CRITICAL_TARGETS = [
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const VENUES_PATH = path.join(DATA_DIR, 'venues.json');
 
+function positiveInt(value: string | undefined, fallback: number) {
+    const parsed = Number.parseInt(value || '', 10);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+const CLASS_GEO_CRITICAL_THRESHOLD = positiveInt(process.env.UMCLASS_MISSING_GEO_CRITICAL_THRESHOLD, 300);
+
 async function validate() {
     const dataDir = DATA_DIR;
     const errors: string[] = [];
@@ -109,8 +116,8 @@ async function validate() {
             if (missingGeoCount > 0) {
                 const msg = `⚠️ [${target.name}] 좌표 누락: ${missingGeoCount}건 ${stats}`;
                 // Allow some missing for Class/Travel if it's below a threshold (Best effort)
-                if (target.file.includes('class') && missingGeoCount > 300) {
-                    errors.push(`❌ [${target.name}] 심각한 좌표 누락 (임계값 300건 초과): ${missingGeoCount}건`);
+                if (target.file.includes('class') && missingGeoCount > CLASS_GEO_CRITICAL_THRESHOLD) {
+                    errors.push(`❌ [${target.name}] 심각한 좌표 누락 (임계값 ${CLASS_GEO_CRITICAL_THRESHOLD}건 초과): ${missingGeoCount}건`);
                 } else {
                     warnings.push(msg);
                 }

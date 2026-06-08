@@ -89,8 +89,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
     return (
         <div
-            className="group h-full relative overflow-visible hover:z-[2000]"
-            style={{ contentVisibility: 'auto', containIntrinsicSize: '360px 520px' }}
+            className="performance-card-root group h-full relative overflow-visible hover:z-[2000]"
             onPointerEnter={onDetailPrepare}
             onFocusCapture={onDetailPrepare}
         >
@@ -218,6 +217,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
 
                                 {enableActions && (
                                     <div className={clsx(
+                                        "performance-card-actions",
                                         "absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex gap-2 items-center justify-between",
                                         "translate-y-0 sm:translate-y-[100%] sm:group-hover:translate-y-0"
                                     )}>
@@ -400,7 +400,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </div>
 
                                 {enableActions && (
-                                    <div className="relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-t before:from-black/95 before:to-transparent before:pointer-events-none">
+                                    <div className="performance-card-actions relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-t before:from-black/95 before:to-transparent before:pointer-events-none">
                                         <button
                                             onClick={async (e) => {
                                                 e.stopPropagation();

@@ -653,6 +653,28 @@ html.is-scrolling .group:hover * {
   transform: none !important;
 }
 
+.performance-card-root {
+  contain: layout paint style;
+  isolation: isolate;
+}
+
+.performance-card-root img {
+  transform: translateZ(0);
+}
+
+html.is-scrolling .performance-card-root,
+html.is-scrolling .performance-card-root * {
+  pointer-events: none !important;
+}
+
+html.is-scrolling .performance-card-root {
+  box-shadow: none !important;
+}
+
+html.is-scrolling .performance-card-actions {
+  display: none !important;
+}
+
 @media (prefers-reduced-motion: reduce), (max-width: 768px) {
   .gold-shimmer-border,
   .animate-neon-flow,
