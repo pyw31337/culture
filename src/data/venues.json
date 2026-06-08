@@ -53831,7 +53831,20 @@
     "address": "경기도 수원시 팔달구 월드컵로 310 (우만동) 4층",
     "lat": 37.2863374,
     "lng": 127.03645630000005,
-    "district": "수원시"
+    "district": "수원시",
+    "phone": "031-202-2002",
+    "homepage": "https://suwonworldcup.gg.go.kr/gg_worldcup_use/stage/intro",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "42861",
+    "theaterCount": "2",
+    "openedAt": "2006",
+    "amenities": [
+      "장애인 주차",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장) · 장애인 주차, 엘리베이터"
   },
   "전주월드컵경기장": {
     "name": "전주 월드컵 경기장",
@@ -65762,7 +65775,18 @@
     "lng": 126.6639609,
     "district": "서구",
     "phone": "032-456-2100",
-    "homepage": "https://www.insiseol.or.kr/sport/asiad/"
+    "homepage": "https://www.insiseol.or.kr/sport/asiad/",
+    "facilityType": "공공(기타)",
+    "seatScale": "29376",
+    "theaterCount": "1",
+    "openedAt": "2014",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실"
   },
   "브로일링커피 강동점": {
     "name": "브로일링커피 강동점",
@@ -70204,10 +70228,27 @@
   },
   "과천 서울대공원": {
     "name": "과천 서울대공원",
-    "address": "경기도 과천시 대공원광장로 102",
+    "address": "경기도 과천시 대공원광장로 102 (막계동)",
     "lat": 37.435965,
     "lng": 127.0142281,
-    "district": "과천시"
+    "district": "과천시",
+    "phone": "02-500-7335",
+    "homepage": "https://grandpark.seoul.go.kr/main/grandMain.do?headerId=41181",
+    "facilityType": "공공(기타)",
+    "seatScale": "10000",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실"
   },
   "경기도 박물관": {
     "name": "경기도 박물관",
@@ -71419,10 +71460,25 @@
   },
   "대구스타디움": {
     "name": "대구스타디움",
-    "address": "대구광역시 수성구 유니버시아드로 180",
+    "address": "대구광역시 수성구 유니버시아드로 180 (대흥동)",
     "lat": 35.8299377,
     "lng": 128.6901563,
-    "district": ""
+    "district": "",
+    "phone": "053-803-8323",
+    "homepage": "http://www.daegu.go.kr/cts/index.do?menu_id=00933147",
+    "facilityType": "공공(기타)",
+    "seatScale": "68922",
+    "theaterCount": "4",
+    "openedAt": "2001",
+    "amenities": [
+      "카페",
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 카페, 편의점, 장애인 주차, 장애인 화장실"
   },
   "클라라하우스": {
     "name": "클라라하우스",
@@ -71513,10 +71569,25 @@
   },
   "목원대학교": {
     "name": "목원대학교",
-    "address": "대전광역시 서구 도안북로 88",
+    "address": "대전광역시 서구 도안북로 88 (도안동)",
     "lat": 36.3254316,
     "lng": 127.3385292,
-    "district": "서구"
+    "district": "서구",
+    "phone": "042-829-7114",
+    "homepage": "http://www.mokwon.ac.kr/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "704",
+    "theaterCount": "3",
+    "openedAt": "1954",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장) · 식당, 카페, 편의점, 장애인 경사로"
   },
   "부산 디자인센터(디자인진흥원)": {
     "name": "부산 디자인센터(디자인진흥원)",
@@ -93031,7 +93102,18 @@
     "lat": 37.5445607254883,
     "lng": 126.665463436164,
     "phone": "032-456-2100",
-    "homepage": "https://www.insiseol.or.kr/sport/asiad/"
+    "homepage": "https://www.insiseol.or.kr/sport/asiad/",
+    "facilityType": "공공(기타)",
+    "seatScale": "29376",
+    "theaterCount": "1",
+    "openedAt": "2014",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실"
   },
   "엑스코(exco) (오디토리움)": {
     "name": "엑스코(exco) (오디토리움)",
@@ -106978,7 +107060,9 @@
   "인천어린이과학관 1층 공연장": {
     "name": "인천어린이과학관 1층 공연장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5516966213711,
+    "lng": 126.739895619632
   },
   "운정행복센터 대공연장": {
     "name": "운정행복센터 대공연장",
@@ -107037,8 +107121,19 @@
   },
   "호텔 스카이파크 센트럴 서울 판교": {
     "name": "호텔 스카이파크 센트럴 서울 판교",
-    "address": "정보 없음",
-    "district": ""
+    "address": "경기도 성남시 분당구 황새울로311번길 36 (서현동)",
+    "lat": 37.3865396,
+    "lng": 127.1212274,
+    "district": "성남시",
+    "homepage": "https://www.skyparkhotel.com/html/main.asp",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "시은소교회": {
     "name": "시은소교회",
@@ -107050,7 +107145,23 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.6693071,
-    "lng": 126.74568449999992
+    "lng": 126.74568449999992,
+    "phone": "031-995-8036",
+    "homepage": "http://www.kintex.com/",
+    "facilityType": "공공(기타)",
+    "seatScale": "2800",
+    "theaterCount": "11",
+    "openedAt": "2005",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 식당, 카페, 편의점, 수유실, 장애인 주차"
   },
   "이천아트홀 전관": {
     "name": "이천아트홀 전관",
@@ -109276,7 +109387,9 @@
   "수원월드컵경기장 보조경기장": {
     "name": "수원월드컵경기장 보조경기장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.2863374,
+    "lng": 127.03645630000005
   },
   "의정부종합운동장": {
     "name": "의정부종합운동장",
@@ -109371,7 +109484,9 @@
   "대구스타디움 보조경기장": {
     "name": "대구스타디움 보조경기장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 35.8299377,
+    "lng": 128.6901563
   },
   "대구 킨더키노": {
     "name": "대구 킨더키노",
@@ -111336,5 +111451,102 @@
     "district": "종로구",
     "lat": 37.573,
     "lng": 126.9794
+  },
+  "NOL 씨어터 합정 동양생명홀": {
+    "name": "NOL 씨어터 합정 동양생명홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울대학교 제1파워플랜트": {
+    "name": "서울대학교 제1파워플랜트",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "아르떼서울 아르떼홀": {
+    "name": "아르떼서울 아르떼홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "C-SQUARE": {
+    "name": "C-SQUARE",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "운정행복센터 공연장": {
+    "name": "운정행복센터 공연장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "워터랩 수상레저": {
+    "name": "워터랩 수상레저",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "가평 탑랜드 수상레저": {
+    "name": "가평 탑랜드 수상레저",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "마스타대천워터파크": {
+    "name": "마스타대천워터파크",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "드윌연수원 나태지옥 수영장": {
+    "name": "드윌연수원 나태지옥 수영장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "안단테 워터파크": {
+    "name": "안단테 워터파크",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "나주 중흥 골드스파": {
+    "name": "나주 중흥 골드스파",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "나주 워터락": {
+    "name": "나주 워터락",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "코코컬처클럽": {
+    "name": "코코컬처클럽",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "자롤로뮤지엄": {
+    "name": "자롤로뮤지엄",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "제주라프": {
+    "name": "제주라프",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "중문 초콜릿랜드": {
+    "name": "중문 초콜릿랜드",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "한개만 먹어도 세상 든든한 건강하고 맛있는 스콘 만들기": {
+    "name": "한개만 먹어도 세상 든든한 건강하고 맛있는 스콘 만들기",
+    "address": "한개만 먹어도 세상 든든한 건강하고 맛있는 스콘 만들기",
+    "district": ""
+  },
+  "대전 서구 복수동 280 목화2차 상가 1층 플로리포레": {
+    "name": "대전 서구 복수동 280 목화2차 상가 1층 플로리포레",
+    "address": "대전 서구 복수동 280 목화2차 상가 1층 플로리포레",
+    "district": "서구"
+  },
+  "서울 동작구 알마타길 37 (대방동, 대방1차e-편한세상) 201호 하마공방": {
+    "name": "서울 동작구 알마타길 37 (대방동, 대방1차e-편한세상) 201호 하마공방",
+    "address": "정보 없음",
+    "district": "동작구",
+    "lat": 37.5124,
+    "lng": 126.9393
   }
 }

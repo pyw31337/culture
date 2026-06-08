@@ -599,21 +599,6 @@
     "category": "독점공연"
   },
   {
-    "id": "yes24_57543",
-    "title": "[부산] 2026 버블S의 [컬러버블쇼]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260311/20260311-57543.jpg/dims/quality/70/",
-    "date": "2026.05.05 ~ 2026.05.05",
-    "venue": "부산 신세계센텀시티 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/57543",
-    "genre": "kids",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/kids/yes24_부산_2026_버블S의_컬러버블쇼.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260311/20260311-57543.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_57459",
     "title": "[창원] 뮤지컬 [빵굽는 포포아저씨]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260310/20260310-57459_1.jpg/dims/quality/70/",
@@ -677,21 +662,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202602/20260220/조이컬쳐-양천.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202602/20260220/잠자는-숲속의-공주-상세-페이지.jpg"
     ]
-  },
-  {
-    "id": "yes24_57213",
-    "title": "[창원] 국립현대무용단 어린이무용 [얍! 얍! 얍!]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260225/20260225-57213.jpg/dims/quality/70/",
-    "date": "2026.05.05 ~ 2026.05.05",
-    "venue": "창원 3.15 아트센터 대공연장",
-    "link": "https://ticket.yes24.com/Perf/57213",
-    "genre": "kids",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/kids/yes24_창원_국립현대무용단_어린이무용_얍_얍_얍.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260225/20260225-57213.jpg/dims/quality/70/",
-    "category": "독점공연"
   },
   {
     "id": "yes24_58112",
