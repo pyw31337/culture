@@ -52,8 +52,8 @@ function ImageWithFallbackInner({
         return Array.from(uniqueSources);
     }, [backupSrc, fallbackSrc, initialSrc, originalSrc]);
     const [sourceIndex, setSourceIndex] = useState(0);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [isNearViewport, setIsNearViewport] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(fastDisplay);
+    const [isNearViewport, setIsNearViewport] = useState(fastDisplay);
     const imageRef = useRef<HTMLImageElement | null>(null);
     const imgSrc = sources[sourceIndex] || fallbackSrc;
 
@@ -61,12 +61,15 @@ function ImageWithFallbackInner({
         const node = imageRef.current;
         if (!node) return;
 
-        if (typeof IntersectionObserver === 'undefined') {
-            setIsNearViewport(true);
+        if (fastDisplay) {
             return;
         }
 
-        setIsNearViewport(false);
+        if (typeof IntersectionObserver === 'undefined') {
+            const frameId = window.requestAnimationFrame(() => setIsNearViewport(true));
+            return () => window.cancelAnimationFrame(frameId);
+        }
+
         const observer = new IntersectionObserver(
             (entries) => {
                 if (entries.some((entry) => entry.isIntersecting)) {
@@ -75,12 +78,12 @@ function ImageWithFallbackInner({
                 }
             },
             // Start fallback and warm-up decisions before the card fully enters the viewport.
-            { rootMargin: fastDisplay ? '700px 0px' : '450px 0px' }
+            { rootMargin: '450px 0px' }
         );
 
         observer.observe(node);
         return () => observer.disconnect();
-    }, [imgSrc]);
+    }, [fastDisplay, imgSrc]);
 
     useEffect(() => {
         if (!isNearViewport || isLoaded || sourceIndex >= sources.length - 1) return;
@@ -115,7 +118,7 @@ function ImageWithFallbackInner({
 
     return (
         <>
-            {!isLoaded && !isFallback && (
+            {!isLoaded && !isFallback && !fastDisplay && (
                 <div
                     aria-hidden="true"
                     className={clsx(
@@ -125,7 +128,7 @@ function ImageWithFallbackInner({
                     style={{ zIndex: 0 }}
                 >
                     <div className="absolute inset-0 bg-linear-to-br from-white/8 via-white/4 to-transparent" />
-                    <div className="absolute inset-0 animate-pulse bg-white/6" />
+                    <div className="absolute inset-0 bg-white/6" />
                 </div>
             )}
 
@@ -141,7 +144,7 @@ function ImageWithFallbackInner({
                 unoptimized={isUnoptimized}
                 className={clsx(
                     props.className,
-                    fastDisplay ? "transition-opacity duration-75" : "transition-opacity duration-150",
+                    !fastDisplay && "transition-opacity duration-100",
                     isLoaded ? "opacity-100" : "opacity-0"
                 )}
                 quality={imageQuality}

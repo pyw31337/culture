@@ -38,6 +38,7 @@ interface RecommendedSectionProps {
     onToggleLike: (id: string, e: React.MouseEvent) => void;
     likedIds: Set<string>;
     onDetail: (perf: any) => void;
+    onDetailPrepare?: () => void;
     searchMode?: 'keyword' | 'location';
     onShare?: (id: string, e?: React.MouseEvent) => void;
     title?: string;
@@ -50,6 +51,7 @@ export default function RecommendedSection({
     onToggleLike,
     likedIds,
     onDetail,
+    onDetailPrepare,
     searchMode = 'keyword',
     onShare,
     title = '지금 주목할 콘텐츠',
@@ -232,6 +234,8 @@ export default function RecommendedSection({
                                         !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
                                     onPointerDown={handlePointerDown}
+                                    onPointerEnter={onDetailPrepare}
+                                    onFocusCapture={onDetailPrepare}
                                     onPointerUp={(e) => handlePointerUp(e as any, perf)}
                                     style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                                 >

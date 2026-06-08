@@ -13,11 +13,12 @@ const EMPTY_VENUES: Record<string, never> = {};
 interface KeywordSectionProps {
     keywordItems: KeywordMatchedPerformance[];
     onDetail: (perf: KeywordMatchedPerformance) => void;
+    onDetailPrepare?: () => void;
     searchMode?: 'keyword' | 'location';
     onShare?: (id: string, e?: React.MouseEvent) => void;
 }
 
-function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShare }: KeywordSectionProps) {
+function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 'keyword', onShare }: KeywordSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -134,6 +135,8 @@ function KeywordSection({ keywordItems, onDetail, searchMode = 'keyword', onShar
                                         !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
                                     onPointerDown={handlePointerDown}
+                                    onPointerEnter={onDetailPrepare}
+                                    onFocusCapture={onDetailPrepare}
                                     onPointerUp={(e) => handlePointerUp(e, perf)}
                                     style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                                 >

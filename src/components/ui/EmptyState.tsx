@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Search, Compass, Sparkles, RefreshCw } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
 interface EmptyStateProps {
@@ -65,26 +64,13 @@ export default function EmptyState({
     ];
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+        <div
             className="flex flex-col items-center justify-center py-16 px-6 text-center"
         >
-            {/* Animated Icon */}
-            <motion.div
-                animate={{
-                    scale: [1, 1.05, 1],
-                    rotate: type === 'error' ? [0, 360] : 0
-                }}
-                transition={{
-                    scale: { repeat: Infinity, duration: 2 },
-                    rotate: { duration: 2, ease: 'linear', repeat: type === 'error' ? Infinity : 0 }
-                }}
-                className="mb-6"
-            >
+            {/* Icon */}
+            <div className="mb-6">
                 {icon}
-            </motion.div>
+            </div>
 
             {/* Text */}
             <h3 className="text-xl font-extrabold text-gray-700 dark:text-gray-300 mb-2">
@@ -131,6 +117,6 @@ export default function EmptyState({
                     </div>
                 </div>
             )}
-        </motion.div>
+        </div>
     );
 }

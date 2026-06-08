@@ -12,7 +12,6 @@ import type { DataBuildInfo } from '@/lib/build-info';
 import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { getExternalContentLink } from '@/lib/performance-links';
 import CalendarDayCell from './CalendarDayCell';
-import venueData from '@/data/venues.json';
 import { useRouter } from 'next/navigation';
 import SearchParamsBridge from './SearchParamsBridge';
 
@@ -25,7 +24,7 @@ import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
 import { LocationSelector } from './LocationSelector';
 import { getRegionSelectionLabel, parseDistrictSelection, parseRegionSelection, persistRegionSelection, readPersistedRegionSelection, REGION_SELECTION_EVENT } from '@/lib/region-selection';
 
-const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string; mapped_region_id?: string; lat?: number | null; lng?: number | null }>;
+type CalendarVenueLookup = Record<string, { address?: string; district?: string; refined_name?: string; mapped_region_id?: string; lat?: number | null; lng?: number | null }>;
 
 interface CalendarViewProps {
     performances: Performance[];
@@ -89,7 +88,7 @@ function getCalendarRegionId(value?: string | null): CalendarRegionId {
 }
 
 
-function matchesRegionSelection(performance: Performance, regionValue: string, districtValue: string) {
+function matchesRegionSelection(performance: Performance, regionValue: string, districtValue: string, venues: CalendarVenueLookup) {
     const selectedRegions = parseRegionSelection(regionValue);
     if (selectedRegions.length === 0) return true;
 
@@ -158,11 +157,12 @@ export default function CalendarView({
     const isEmbedded = typeof embeddedSearchParams === 'string';
 
     // Load full data client-side (server provides initial subset, client fetches full)
-    const { allPerformances, isDataFullyLoaded } = usePerformanceData({
+    const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
         performanceLoadPolicy: 'full',
         performanceDataPath: '/data/calendar-items.json',
         backgroundLoadPriority: 'immediate',
+        loadVenues: true,
     });
     const performances = allPerformances;
     const genreCounts = useMemo(() => {
@@ -334,7 +334,7 @@ export default function CalendarView({
         const dayStr = format(day, 'yyyy-MM-dd');
         const allEvents = performancesByDate.get(dayStr) || [];
         return allEvents.filter((p) => (
-            matchesRegionSelection(p, localRegion, localDistrict) &&
+            matchesRegionSelection(p, localRegion, localDistrict, venues) &&
             (effectiveGenre === 'all' || p.genre === effectiveGenre)
         ));
     };
@@ -378,8 +378,8 @@ export default function CalendarView({
     }, [calendarView, currentMonth, performancesByDate]);
 
     const regionFilteredTotalEvents = useMemo(() => {
-        return currentViewTotalEvents.filter((p) => matchesRegionSelection(p, localRegion, localDistrict));
-    }, [currentViewTotalEvents, localRegion, localDistrict]);
+        return currentViewTotalEvents.filter((p) => matchesRegionSelection(p, localRegion, localDistrict, venues));
+    }, [currentViewTotalEvents, localRegion, localDistrict, venues]);
 
     const currentViewEvents = useMemo(() => {
         if (effectiveGenre === 'all') return regionFilteredTotalEvents;

@@ -31,6 +31,7 @@ function PosterScheduleLine({ date }: { date?: string }) {
 interface PersonalizedSectionProps {
     items: Performance[];
     onDetail: (perf: Performance) => void;
+    onDetailPrepare?: () => void;
     searchMode?: 'keyword' | 'location';
     subtitle?: string;
 }
@@ -38,6 +39,7 @@ interface PersonalizedSectionProps {
 export default function PersonalizedSection({
     items,
     onDetail,
+    onDetailPrepare,
     searchMode = 'keyword',
     subtitle,
 }: PersonalizedSectionProps) {
@@ -140,6 +142,8 @@ export default function PersonalizedSection({
                                 key={performance.id}
                                 className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-lg flex-shrink-0"
                                 onPointerDown={handlePointerDown}
+                                onPointerEnter={onDetailPrepare}
+                                onFocusCapture={onDetailPrepare}
                                 onPointerUp={(event) => handlePointerUp(event, performance)}
                                 style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                             >

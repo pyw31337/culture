@@ -3,10 +3,9 @@
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Check, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, AtSign, type LucideIcon } from 'lucide-react';
-import { useState, useMemo, useRef } from 'react';
+import { Fragment, useState, useMemo, useRef } from 'react';
 import Portal from './ui/Portal';
 import { getOptimizedUrl, formatUnifiedDate, toMobileUrl } from '@/lib/utils';
-import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
@@ -364,24 +363,6 @@ export default function ContentDetailView({ performance: p, allPerformances = []
         }
     };
 
-    const containerVariants: Variants = {
-        hidden: { opacity: 0, scale: 0.99 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                staggerChildren: 0.015,
-                duration: 0.12,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 6 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.12 } }
-    };
-
     const containerClasses = mode === 'standalone'
         ? "w-full max-w-[380px] md:max-w-[1000px] mx-auto bg-white dark:bg-gray-900 rounded-[32px] shadow-2xl overflow-hidden border border-black/5 dark:border-white/10"
         : "relative w-full h-full lg:h-auto lg:max-h-[90vh] lg:max-w-[1000px] bg-white text-gray-900 dark:bg-[#070b14] dark:text-white rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.6)] overflow-hidden border border-black/10 dark:border-white/10";
@@ -402,23 +383,18 @@ export default function ContentDetailView({ performance: p, allPerformances = []
             className={mode === 'standalone' ? "relative z-10 min-h-screen w-full flex items-center justify-center p-4 cursor-pointer" : "relative"}
             onClick={handleBackgroundClick}
         >
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
+            <div
                 className={containerClasses}
                 data-cf-detail-view={mode}
             >
                 {/* Close Button UI - Moved to container level to stay fixed */}
                 {/* Close Button UI - Stay fixed in top-right */}
-                <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                <button
                     onClick={handleClose}
                     className="absolute top-6 right-6 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white z-50 hover:bg-black/60 transition-colors shadow-xl dark:bg-white/10 dark:hover:bg-white/20 dark:border-white/20"
                 >
                     <X className="w-6 h-6" />
-                </motion.button>
+                </button>
 
                 <div className={`overflow-y-auto md:overflow-hidden overflow-x-hidden ${mode === 'standalone' ? 'max-h-none' : 'max-h-[85vh] lg:max-h-none md:max-h-none'} scrollbar-hide`}>
                     <div className="flex flex-col md:flex-row md:min-h-[600px] lg:h-[85vh]">
@@ -427,10 +403,7 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                         <div className={mode === 'standalone' 
                             ? "relative w-full md:w-[42%] aspect-[3/4] md:aspect-auto shrink-0 group cursor-default overflow-hidden" 
                             : "relative h-60 sm:h-[450px] lg:h-full lg:w-[42%] w-full group cursor-default overflow-hidden shrink-0"}>
-                            <motion.img
-                                initial={{ scale: 1.05 }}
-                                animate={{ scale: 1 }}
-                                transition={{ duration: 1.2, ease: "easeOut" }}
+                            <img
                                 src={imgSrc}
                                 alt={p.title}
                                 className="w-full h-full object-cover transition-transform duration-700"
@@ -448,9 +421,7 @@ export default function ContentDetailView({ performance: p, allPerformances = []
 
                             {/* Play Button Overlay */}
                             <div className="absolute inset-0 flex items-center justify-center z-10">
-                                <motion.a
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
+                                <a
                                     href={isMobile ? toMobileUrl(`https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`) : `https://www.youtube.com/results?search_query=${encodeURIComponent(p.title + (p.genre === 'movie' ? ' 예고편' : ''))}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -458,26 +429,20 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     <Play className="w-8 h-8 fill-current translate-x-0.5" />
-                                </motion.a>
+                                </a>
                             </div>
 
                             {/* Sports VS Overlay */}
                             {shouldShowSportsTeamOverlay && hasTeams && (
                                 <div className="absolute inset-x-0 bottom-6 flex items-center justify-center pointer-events-none px-6">
                                     <div className="flex justify-between items-center w-full gap-4">
-                                        <motion.img
-                                            initial={{ x: -30, opacity: 0, rotate: -10 }}
-                                            animate={{ x: 0, opacity: 1, rotate: 0 }}
-                                            transition={{ delay: 0.5, type: 'spring' }}
+                                        <img
                                             src={p.genre === 'baseball' && p.homeTeam && FUTURES_TEAM_LOGOS[p.homeTeam] ? FUTURES_TEAM_LOGOS[p.homeTeam] : p.homeTeamLogo}
                                             alt={p.homeTeam}
                                             className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
                                         />
                                         <div className="text-white text-xl font-black italic bg-black/40 px-4 py-1 rounded-full backdrop-blur-md border border-white/10 shadow-lg">VS</div>
-                                        <motion.img
-                                            initial={{ x: 30, opacity: 0, rotate: 10 }}
-                                            animate={{ x: 0, opacity: 1, rotate: 0 }}
-                                            transition={{ delay: 0.5, type: 'spring' }}
+                                        <img
                                             src={p.genre === 'baseball' && p.awayTeam && FUTURES_TEAM_LOGOS[p.awayTeam] ? FUTURES_TEAM_LOGOS[p.awayTeam] : p.awayTeamLogo}
                                             alt={p.awayTeam}
                                             className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
@@ -494,18 +459,16 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                         : "p-6 sm:p-8 lg:p-12 space-y-4 sm:space-y-8 lg:space-y-10 flex-1 lg:overflow-y-auto lg:h-full bg-white text-gray-900 dark:bg-[#070b14] dark:text-white scrollbar-hide"}>
                         
                         <div className="space-y-4">
-                            <motion.div variants={itemVariants} className="space-y-3">
+                            <div className="space-y-3">
                                 {/* Genre badge next to title */}
                                 {/* Category badge above title */}
                                 <div className="flex flex-col gap-2.5">
                                     <div className="flex flex-wrap items-center gap-2">
-                                        <motion.span
-                                            initial={{ scale: 0.8, opacity: 0 }}
-                                            animate={{ scale: 1, opacity: 1 }}
+                                        <span
                                             className={`px-3 py-1 rounded-md text-[10px] font-black text-white ${genreStyle.twBg} shadow-sm tracking-widest uppercase border border-white/10 w-fit`}
                                         >
                                             {genreLabel}
-                                        </motion.span>
+                                        </span>
                                         {dDayLabel && (
                                             <span className="inline-flex items-center rounded-full border border-black/10 bg-black/5 px-3 py-1 text-[10px] font-black tracking-[0.16em] text-gray-600 dark:border-white/15 dark:bg-white/5 dark:text-gray-200">
                                                 {dDayLabel}
@@ -520,10 +483,10 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                  {p.originalTitle && (
                                     <p className="text-[12px] text-gray-400 font-medium italic opacity-70 tracking-wide mt-[-4px]">{p.originalTitle}</p>
                                 )}
-                            </motion.div>
+                            </div>
 
                             {/* Info List - 1 Column Narrow Style */}
-                            <motion.div variants={itemVariants} className="space-y-2.5">
+                            <div className="space-y-2.5">
                                 {(() => {
                                     const isMovie = p.genre === 'movie';
                                     let movieRating = p.ageRating || p.age || p.venue || '';
@@ -845,11 +808,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                         </div>
                                     ));
                                 })()}
-                            </motion.div>
+                            </div>
 
                             {/* Enhanced Price List (Table style) */}
                             {p.priceList && p.priceList.length > 0 && (
-                                <motion.div variants={itemVariants} className="mt-4 bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-black/5 dark:border-white/5">
+                                <div className="mt-4 bg-gray-50 dark:bg-white/5 rounded-xl p-4 border border-black/5 dark:border-white/5">
                                     <h4 className="text-[13px] font-bold text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-1.5">
                                         <Coins className="w-4 h-4 text-orange-400" />
                                         상세 가격 정보
@@ -865,12 +828,12 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             </div>
                                         ))}
                                     </div>
-                                </motion.div>
+                                </div>
                             )}
 
                             {/* Source-provided program / fee details */}
                             {p.feesAndPrograms && (
-                                <motion.div variants={itemVariants} className="mt-4 bg-purple-50/50 dark:bg-purple-500/5 rounded-xl p-4 border border-purple-500/10">
+                                <div className="mt-4 bg-purple-50/50 dark:bg-purple-500/5 rounded-xl p-4 border border-purple-500/10">
                                     <h4 className="text-[13px] font-bold text-purple-600 dark:text-purple-400 mb-2 flex items-center gap-1.5">
                                         <Presentation className="w-4 h-4" />
                                         {p.source === 'festival' ? '행사내용' : '요금 및 프로그램'}
@@ -878,11 +841,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                     <p className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line font-medium">
                                         {p.feesAndPrograms}
                                     </p>
-                                </motion.div>
+                                </div>
                             )}
 
                             {p.foodInfo && (
-                                <motion.div variants={itemVariants} className="mt-4 bg-emerald-50/50 dark:bg-emerald-500/5 rounded-xl p-4 border border-emerald-500/10">
+                                <div className="mt-4 bg-emerald-50/50 dark:bg-emerald-500/5 rounded-xl p-4 border border-emerald-500/10">
                                     <h4 className="text-[13px] font-bold text-emerald-600 dark:text-emerald-400 mb-2 flex items-center gap-1.5">
                                         <Ticket className="w-4 h-4" />
                                         먹거리 정보
@@ -890,12 +853,12 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                     <p className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line font-medium">
                                         {p.foodInfo.replace(/^먹거리 정보\s*/u, '')}
                                     </p>
-                                </motion.div>
+                                </div>
                             )}
 
                             {/* Detailed Notices & Age Rules */}
                             {(shouldShowAgeDetail || p.bookingNotice) && (
-                                <motion.div variants={itemVariants} className="mt-4 space-y-3">
+                                <div className="mt-4 space-y-3">
                                     {shouldShowAgeDetail && (
                                         <div className="bg-blue-50/50 dark:bg-blue-500/5 rounded-xl p-4 border border-blue-500/10">
                                             <h4 className="text-[13px] font-bold text-blue-600 dark:text-blue-400 mb-1.5 flex items-center gap-1.5">
@@ -918,11 +881,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             </p>
                                         </div>
                                     )}
-                                </motion.div>
+                                </div>
                             )}
 
                             {sportsContext && (
-                                <motion.div variants={itemVariants} className="mt-5 rounded-2xl border border-emerald-500/15 bg-emerald-50/70 p-5 dark:border-emerald-400/15 dark:bg-emerald-400/5">
+                                <div className="mt-5 rounded-2xl border border-emerald-500/15 bg-emerald-50/70 p-5 dark:border-emerald-400/15 dark:bg-emerald-400/5">
                                     <h3 className="mb-2 flex items-center gap-2 text-lg font-black text-gray-900 dark:text-white">
                                         <BarChart3 className="h-5 w-5 text-emerald-500" />
                                         {sportsContext.title}
@@ -978,19 +941,19 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             ))}
                                         </div>
                                     )}
-                                </motion.div>
+                                </div>
                             )}
 
                             {/* Description - Short version for all modes (Hidden for tourism to avoid redundancy) */}
                             {shouldShowShortDescription && (
-                                <motion.p variants={itemVariants} className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
+                                <p className="text-[13.5px] text-gray-500 dark:text-gray-400 leading-relaxed font-medium italic line-clamp-3 pt-2">
                                     &quot;{displayDescription}&quot;
-                                </motion.p>
+                                </p>
                             )}
 
                             {/* Long Description for Standalone or if quite long (Non-movie) */}
                             {hasLongDescription && (
-                                <motion.div variants={itemVariants} className="mt-8 bg-black/5 dark:bg-white/5 rounded-2xl p-6 border border-black/5 dark:border-white/10">
+                                <div className="mt-8 bg-black/5 dark:bg-white/5 rounded-2xl p-6 border border-black/5 dark:border-white/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                                         <Sparkles className="w-5 h-5 text-amber-500" />
                                         {p.genre === 'exhibition' ? '전시 소개' : p.genre === 'tourism' ? '여행지 정보' : '상세 설명'}
@@ -998,11 +961,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                     <p className="text-gray-600 dark:text-gray-400 text-[14.5px] leading-relaxed whitespace-pre-line">
                                         {displayDescription}
                                     </p>
-                                </motion.div>
+                                </div>
                             )}
 
                              {hasCast && (
-                                <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
+                                <div className="flex flex-wrap gap-2 pt-2">
                                     <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">출연진</span>
                                     {castMembers.slice(0, 10).map(({ name, url }) => {
                                         const castClasses = "px-3 py-1 rounded-md bg-gray-50 dark:bg-white/5 text-[11px] font-bold text-gray-400 dark:text-gray-500 border border-black/5 dark:border-white/5 transition-colors";
@@ -1022,11 +985,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             </a>
                                         );
                                     })}
-                                </motion.div>
+                                </div>
                             )}
 
                              {p.crew && p.crew.length > 0 && mode === 'standalone' && (
-                                <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-white/5 mt-2">
+                                <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-white/5 mt-2">
                                     <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">제작진</span>
                                     {p.crew!.slice(0, 5).map((c, idx) => {
                                         const url = `https://search.naver.com/search.naver?query=${encodeURIComponent(`${c} ${p.title}`)}`;
@@ -1044,12 +1007,12 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             </a>
                                         );
                                     })}
-                                </motion.div>
+                                </div>
                             )}
 
                             {/* Movie Synopsis Section - Dedicated below cast for movies */}
                             {hasMovieSynopsis && (
-                                <motion.div variants={itemVariants} className="mt-8 bg-indigo-50/30 dark:bg-indigo-500/5 rounded-2xl p-6 border border-indigo-500/10">
+                                <div className="mt-8 bg-indigo-50/30 dark:bg-indigo-500/5 rounded-2xl p-6 border border-indigo-500/10">
                                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Film className="w-5 h-5 text-indigo-500" />
                                         시놉시스
@@ -1057,22 +1020,22 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                     <p className="text-gray-600 dark:text-gray-300 text-[14.5px] leading-relaxed whitespace-pre-line font-medium">
                                         {movieSynopsisText}
                                     </p>
-                                </motion.div>
+                                </div>
                             )}
 
                             {p.genre === 'movie' && p.keywords && p.keywords.some((keyword) => /[가-힣]/.test(keyword)) && (
-                                <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-2">
+                                <div className="flex flex-wrap gap-2 pt-2">
                                     <span className="w-full text-[12px] font-bold text-gray-500 dark:text-gray-400">영화 키워드</span>
                                     {p.keywords.filter((keyword) => /[가-힣]/.test(keyword)).slice(0, 12).map((keyword) => (
                                         <span key={keyword} className="px-3 py-1 rounded-full bg-indigo-50 text-[11px] font-bold text-indigo-600 border border-indigo-500/10 dark:bg-indigo-500/10 dark:text-indigo-300">
                                             #{keyword}
                                         </span>
                                     ))}
-                                </motion.div>
+                                </div>
                             )}
 
                             {p.stillImages && p.stillImages.length > 0 && (
-                                <motion.div variants={itemVariants} className="mt-6">
+                                <div className="mt-6">
                                     <h3 className="text-sm font-black text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Presentation className="w-4 h-4 text-rose-500" />
                                         장면 이미지
@@ -1089,11 +1052,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             />
                                         ))}
                                     </div>
-                                </motion.div>
+                                </div>
                             )}
 
                             {p.synopsisImages && p.synopsisImages.length > 0 && (
-                                <motion.div variants={itemVariants} className="mt-6">
+                                <div className="mt-6">
                                     <h3 className="text-sm font-black text-gray-900 dark:text-white mb-3 flex items-center gap-1.5">
                                         <Sparkles className="w-4 h-4 text-amber-500" />
                                         {galleryLabel}
@@ -1121,10 +1084,10 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             </a>
                                         ))}
                                     </div>
-                                </motion.div>
+                                </div>
                             )}
 
-                            <motion.div variants={itemVariants} className="rounded-2xl bg-gray-50/80 p-4 text-[12px] font-bold text-gray-500 border border-black/5 dark:bg-white/5 dark:text-gray-400 dark:border-white/10">
+                            <div className="rounded-2xl bg-gray-50/80 p-4 text-[12px] font-bold text-gray-500 border border-black/5 dark:bg-white/5 dark:text-gray-400 dark:border-white/10">
                                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                                     <span className="inline-flex items-center gap-1.5">
                                         <span className="text-gray-400 dark:text-gray-500">[출처]</span>
@@ -1157,16 +1120,15 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                         </span>
                                     )}
                                 </div>
-                            </motion.div>
+                            </div>
 
                         </div>
 
                         {/* Actions Block */}
                         <div className="space-y-4 pt-2">
-                            <motion.div variants={itemVariants} className="flex items-center gap-2">
+                            <div className="flex items-center gap-2">
                                 <div className="relative shrink-0">
-                                    <motion.button
-                                        whileTap={{ scale: 0.95 }}
+                                    <button
                                         onClick={handleShare}
                                         aria-label="링크 공유"
                                         className={`p-4 rounded-2xl border flex items-center justify-center transition-all shrink-0 ${
@@ -1184,20 +1146,16 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                         ) : (
                                             <Share2 className="w-5 h-5" />
                                         )}
-                                    </motion.button>
+                                    </button>
                                 </div>
 
                                 {/* Toast rendered via Portal so it always sits above the modal stacking
                                     context. The previous inline absolute toast was being clipped/hidden
                                     by the modal's z-index — making the share button look dead. */}
                                 <Portal>
-                                    <AnimatePresence>
+                                    <Fragment>
                                         {shareStatus !== 'idle' && (
-                                            <motion.div
-                                                initial={{ opacity: 0, y: -12, scale: 0.95 }}
-                                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                                exit={{ opacity: 0, y: -12, scale: 0.95 }}
-                                                transition={{ type: 'spring', stiffness: 420, damping: 28 }}
+                                            <div
                                                 role="status"
                                                 aria-live="polite"
                                                 className={`pointer-events-none fixed left-1/2 -translate-x-1/2 top-[max(env(safe-area-inset-top),16px)] whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-extrabold shadow-2xl border z-[2147483647] flex items-center gap-2 ${
@@ -1212,15 +1170,13 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                                 {shareStatus === 'copied' && '링크가 복사되었습니다'}
                                                 {shareStatus === 'shared' && '공유되었습니다'}
                                                 {shareStatus === 'error' && '복사에 실패했습니다. 다시 시도해주세요'}
-                                            </motion.div>
+                                            </div>
                                         )}
-                                    </AnimatePresence>
+                                    </Fragment>
                                 </Portal>
 
                                 {sportsTicketingInfo?.officialUrl && sportsTicketingInfo.officialUrl !== bookingUrl && (
-                                    <motion.a
-                                        whileHover={{ scale: 1.01 }}
-                                        whileTap={{ scale: 0.99 }}
+                                    <a
                                         href={isMobile ? toMobileUrl(sportsTicketingInfo.officialUrl) : sportsTicketingInfo.officialUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -1230,12 +1186,10 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                     >
                                         <Globe className="w-4 h-4" />
                                         <span>공식사이트</span>
-                                    </motion.a>
+                                    </a>
                                 )}
                                 
-                                 <motion.a
-                                    whileHover={{ scale: 1.01 }}
-                                    whileTap={{ scale: 0.99 }}
+                                 <a
                                     href={bookingUrl}
                                     target="_blank"
                                      rel="noopener noreferrer"
@@ -1244,13 +1198,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                 >
                                     <ExternalLink className="w-5 h-5" />
                                     <span>예매하러 가기</span>
-                                </motion.a>
-                            </motion.div>
+                                </a>
+                            </div>
 
                             {sportsTicketingInfo?.ticketBay && (
-                                <motion.a
-                                    variants={itemVariants}
-                                    href={isMobile ? toMobileUrl(sportsTicketingInfo.ticketBay.url) : sportsTicketingInfo.ticketBay.url}
+                                <a href={isMobile ? toMobileUrl(sportsTicketingInfo.ticketBay.url) : sportsTicketingInfo.ticketBay.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block rounded-2xl border border-orange-500/15 bg-orange-50/60 px-4 py-3 text-[12px] font-bold text-orange-800 transition-colors hover:bg-orange-50 dark:border-orange-400/15 dark:bg-orange-400/5 dark:text-orange-200"
@@ -1259,17 +1211,15 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                 >
                                     <span className="mr-2 text-orange-500">[{sportsTicketingInfo.ticketBay.sourceLabel}]</span>
                                     {sportsTicketingInfo.ticketBay.detail}
-                                </motion.a>
+                                </a>
                             )}
 
                             {/* Volleyball Specific Links: 관전포인트 & 전력비교 */}
                             {p.genre === 'volleyball' && (p.versusLink || p.highlightsLink) && (
-                                <motion.div variants={itemVariants} className="flex flex-col gap-2">
+                                <div className="flex flex-col gap-2">
                                     <div className="flex items-center gap-2">
                                         {p.versusLink && (
-                                            <motion.a
-                                                whileHover={{ scale: 1.02 }}
-                                                whileTap={{ scale: 0.98 }}
+                                            <a
                                                 href={isMobile ? toMobileUrl(p.versusLink) : p.versusLink}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -1278,12 +1228,10 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             >
                                                 <BarChart3 className="w-4 h-4" />
                                                 <span>전력비교</span>
-                                            </motion.a>
+                                            </a>
                                         )}
                                         {p.highlightsLink && (
-                                            <motion.a
-                                                whileHover={{ scale: 1.02 }}
-                                                whileTap={{ scale: 0.98 }}
+                                            <a
                                                 href={isMobile ? toMobileUrl(p.highlightsLink) : p.highlightsLink}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -1292,10 +1240,10 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                             >
                                                 <Presentation className="w-4 h-4" />
                                                 <span>관전포인트/상세결과</span>
-                                            </motion.a>
+                                            </a>
                                         )}
                                     </div>
-                                </motion.div>
+                                </div>
                             )}
 
                              {/* Removed: 컬처플로우 바로가기 버튼 */}
@@ -1303,7 +1251,7 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                     </div>
                 </div>
             </div>
-            </motion.div>
+            </div>
         </div>
     );
 }

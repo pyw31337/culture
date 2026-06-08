@@ -12,11 +12,11 @@ import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { getExternalContentLink } from '@/lib/performance-links';
 import Portal from './ui/Portal';
 import CalendarDayCell from './CalendarDayCell';
-import venueData from '@/data/venues.json';
 import { MapPin } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback';
 
-const venues = venueData as unknown as Record<string, { address?: string; district?: string; refined_name?: string }>;
+type CalendarModalVenueLookup = Record<string, { address?: string; district?: string; refined_name?: string }>;
+const getBasePath = () => process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 interface CalendarModalProps {
     performances: Performance[];
@@ -31,6 +31,7 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [calendarView, setCalendarView] = useState<CalendarView>('monthly');
     const [localGenre, setLocalGenre] = useState(selectedGenre);
+    const [venues, setVenues] = useState<CalendarModalVenueLookup>({});
     const genreCounts = useMemo(() => buildGenreCounts(performances), [performances]);
     const availableGenres = useMemo(() => getAvailableGenres(genreCounts), [genreCounts]);
     const genreNavigationItems = useMemo(() => getGenreNavigationItems(genreCounts), [genreCounts]);
@@ -41,6 +42,22 @@ export default function CalendarModal({ performances, onClose, selectedGenre = '
 
     const handlePrevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
     const handleNextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
+
+    useEffect(() => {
+        let isCancelled = false;
+        fetch(`${getBasePath()}/data/venues.json`)
+            .then((response) => (response.ok ? response.json() : {}))
+            .then((data: CalendarModalVenueLookup) => {
+                if (!isCancelled) setVenues(data);
+            })
+            .catch(() => {
+                if (!isCancelled) setVenues({});
+            });
+
+        return () => {
+            isCancelled = true;
+        };
+    }, []);
 
     // Map performances to dates
     const performancesByDate = useMemo(() => {

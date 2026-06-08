@@ -1,7 +1,6 @@
 'use client';
 
 import { Suspense, useEffect, useRef, useState, useCallback, useMemo } from 'react';
-import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES, SPORTS_GENRES } from '@/lib/constants';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
@@ -47,7 +46,7 @@ interface Cinema {
 }
 interface Venue {
     name?: string;
-    address: string;
+    address?: string;
     lat?: number;
     lng?: number;
     district?: string;
@@ -144,7 +143,6 @@ interface WeatherApiResponse {
 }
 
 const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
-const venues = venueData as unknown as Record<string, Venue>;
 let mapVenueGroupsCache: VenueGroup[] | null = null;
 let mapVenueGroupsPromise: Promise<VenueGroup[]> | null = null;
 
@@ -313,12 +311,13 @@ export default function MapView({
     }, [centerLocation, paramLat, paramLng]);
 
     // Load full data client-side
-    const { allPerformances, cinemas: clientCinemas, isDataFullyLoaded } = usePerformanceData({
+    const { allPerformances, cinemas: clientCinemas, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
         performanceLoadPolicy: 'full',
         performanceDataPath: '/data/map-items.json',
         backgroundLoadPriority: 'immediate',
         loadCinemas: true,
+        loadVenues: true,
     });
 
     useEffect(() => {

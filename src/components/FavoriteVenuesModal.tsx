@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2, MapPin, Heart } from 'lucide-react';
 import type { FavoriteVenuePreference } from '@/types';
 import Portal from './ui/Portal';
@@ -15,34 +14,19 @@ interface FavoriteVenuesModalProps {
 const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenueClick }: FavoriteVenuesModalProps) => {
     return (
         <Portal>
-            <AnimatePresence>
+            <>
                 {isOpen && (
                     <>
                         {/* Backdrop */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                        <div
                             onClick={onClose}
                             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999]"
                         />
 
                         {/* Modal Container */}
                         <div className="fixed inset-0 flex items-center justify-center p-4 z-[9999] pointer-events-none">
-                            <motion.div
-                                initial={{ scale: 0.95, opacity: 0, y: 20 }}
-                                animate={{ scale: 1, opacity: 1, y: 0 }}
-                                exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                                drag="y"
-                                dragControls={undefined}
-                                dragConstraints={{ top: 0, bottom: 0 }}
-                                dragElastic={{ top: 0, bottom: 0.2 }}
-                                onDragEnd={(e, info) => {
-                                    if (info.offset.y > 100 || info.velocity.y > 500) {
-                                        onClose();
-                                    }
-                                }}
-                                className="bg-gray-900 border border-white/10 rounded-3xl w-full max-w-md shadow-2xl overflow-hidden flex flex-col pointer-events-auto max-h-[80vh] cursor-grab active:cursor-grabbing"
+                            <div
+                                className="bg-gray-900 border border-white/10 rounded-3xl w-full max-w-md shadow-2xl overflow-hidden flex flex-col pointer-events-auto max-h-[80vh]"
                             >
                                 {/* Header */}
                                 <div className="p-6 border-b border-white/10 flex items-center justify-between bg-black/20">
@@ -65,12 +49,7 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                     {favoriteVenues.length > 0 ? (
                                         <div className="space-y-3">
                                             {favoriteVenues.map((favoriteVenue) => (
-                                                <motion.div
-                                                    key={favoriteVenue.id}
-                                                    layout
-                                                    initial={{ opacity: 0, x: -20 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    exit={{ opacity: 0, x: -20 }}
+                                                <div key={favoriteVenue.id}
                                                     className={`flex items-center justify-between p-4 bg-white/5 rounded-2xl group hover:bg-white/10 transition-colors border border-white/5 hover:border-pink-500/30`}
                                                 >
                                                     <div className="flex items-center gap-3 overflow-hidden">
@@ -98,7 +77,7 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                                     >
                                                         <Trash2 size={18} />
                                                     </button>
-                                                </motion.div>
+                                                </div>
                                             ))}
                                         </div>
                                     ) : (
@@ -121,11 +100,11 @@ const FavoriteVenuesModal = ({ isOpen, onClose, favoriteVenues, onRemove, onVenu
                                         닫기
                                     </button>
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
                     </>
                 )}
-            </AnimatePresence>
+            </>
         </Portal>
     );
 };

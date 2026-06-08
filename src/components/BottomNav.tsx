@@ -119,7 +119,7 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 key={item.id}
                 onClick={item.action}
                 className={clsx(
-                    "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-300 relative group",
+                    "flex flex-col items-center justify-center gap-1 flex-1 h-full transition-colors duration-150 relative group",
                     isActive
                         ? (item.id === 'likes-perf'
                             ? "text-pink-500 light:text-pink-600"
@@ -135,14 +135,10 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                 <div className="relative">
                     <Icon
                         className={clsx(
-                            "w-5 h-5 transition-all duration-300",
+                            "w-5 h-5 transition-colors duration-150",
                             isActive && (item.id === 'likes-perf'
-                                ? "drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]" // Pink Glow
-                                : (item.id === 'likes-venue'
-                                    ? "drop-shadow-[0_0_8px_rgba(16,185,129,0.6)]" // Emerald Glow
-                                    : (searchMode === 'location'
-                                        ? "drop-shadow-none" // Remove glow if BG is present
-                                        : "drop-shadow-none"))) // Remove glow if BG is present
+                                ? "" // Keep active state color-only for scroll performance.
+                                : "")
                         )}
                         strokeWidth={isActive ? 2.5 : 2}
                     />
@@ -172,44 +168,35 @@ export default function BottomNav({ activeMenu, currentViewMode, onMenuClick, on
                     <button
                         onClick={() => onMenuClick(activeMenu === 'location' ? null : 'location')}
                         className={clsx(
-                            "w-[68px] h-[68px] rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl",
+                            "w-[68px] h-[68px] rounded-full flex items-center justify-center transition-colors duration-150 shadow-lg",
                             searchMode === 'location'
                                 ? "bg-gradient-to-br from-[#55df99] to-[#0090f5]"
                                 : "bg-gradient-to-br from-[#a78bfa] via-[#c084fc] to-[#f472b6]",
-                            "hover:scale-105",
                             "active:scale-95",
                             "bg-white light:bg-white", // Floating button bg
-                            activeMenu === 'location' && (searchMode === 'location'
-                                ? "shadow-[0_0_40px_rgba(52,211,153,0.8)]"
-                                : "shadow-[0_0_40px_rgba(167,139,250,0.8)]")
+                            activeMenu === 'location' && "ring-4 ring-white/20"
                         )}
                     >
                         {searchMode === 'location' ? (
                             <MapPin
-                                className="w-7 h-7 text-white drop-shadow-lg"
+                                className="w-7 h-7 text-white"
                                 strokeWidth={2.5}
                             />
                         ) : (
                             <Search
-                                className="w-7 h-7 text-white drop-shadow-lg"
+                                className="w-7 h-7 text-white"
                                 strokeWidth={2.5}
                             />
                         )}
                     </button>
-                    {activeMenu === 'location' && (
-                        <div className={clsx(
-                            "absolute inset-0 rounded-full animate-ping pointer-events-none",
-                            searchMode === 'location' ? "bg-emerald-400/30" : "bg-purple-400/30"
-                        )} />
-                    )}
                 </div>
 
                 {/* Bottom bar - Clean Glassy Look */}
                 <div className={clsx(
-                    "relative backdrop-blur-xl rounded-t-3xl overflow-hidden transition-colors duration-500",
+                    "relative rounded-t-3xl overflow-hidden transition-colors duration-150",
                     searchMode === 'location'
-                        ? "bg-gradient-to-t from-black via-[#0a1f1a] to-[#0a1f1a]/90 light:bg-white/60 light:bg-none border-t border-emerald-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.05)]"
-                        : "bg-gradient-to-t from-black via-[#1a0b2e] to-[#1a0b2e]/90 light:bg-white/60 light:bg-none border-t border-purple-500/20 light:border-black/5 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] light:shadow-[0_-5px_20px_rgba(0,0,0,0.05)]"
+                        ? "bg-[#061712]/96 light:bg-white/95 border-t border-emerald-500/20 light:border-black/5 shadow-[0_-4px_16px_rgba(0,0,0,0.18)] light:shadow-[0_-4px_14px_rgba(0,0,0,0.05)]"
+                        : "bg-[#12071f]/96 light:bg-white/95 border-t border-purple-500/20 light:border-black/5 shadow-[0_-4px_16px_rgba(0,0,0,0.18)] light:shadow-[0_-4px_14px_rgba(0,0,0,0.05)]"
                 )}>
                     {/* SVG Notch Mask REMOVED */}
 

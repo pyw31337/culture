@@ -21,6 +21,7 @@ interface PerformanceListItemProps {
     variant?: 'default' | 'yellow' | 'pink' | 'emerald';
     onShare?: (id: string) => Promise<boolean>;
     onDetail?: (perf: any) => void;
+    onDetailPrepare?: () => void;
     searchMode?: 'keyword' | 'location';
     searchText?: string;
     priority?: boolean;
@@ -52,7 +53,7 @@ const HighlightText = memo(({ text, keyword }: { text: string, keyword?: string 
 
 HighlightText.displayName = 'HighlightText';
 
-function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, searchMode = 'keyword', searchText, priority = false }: PerformanceListItemProps) {
+function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLiked = false, onToggleLike, variant = 'default', onShare, onDetail, onDetailPrepare, searchMode = 'keyword', searchText, priority = false }: PerformanceListItemProps) {
     const genreStyle = useMemo(() => GENRE_STYLES[perf.genre] || {}, [perf.genre]);
     const externalLink = useMemo(() => getExternalContentLink(perf), [perf]);
     const sportsTicketBay = useMemo(() => getSportsTicketBaySummary(perf), [perf]);
@@ -102,6 +103,8 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     return (
         <div
             className="perspective-1000 group relative hover:z-[2000]"
+            onPointerEnter={onDetailPrepare}
+            onFocusCapture={onDetailPrepare}
         >
             <div
                 className={clsx(
@@ -170,10 +173,10 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     >
                         <Heart
                             className={clsx(
-                                "w-4 h-4 transition-all duration-300",
+                                "w-4 h-4 transition-colors duration-100",
                                 isLiked
-                                    ? "text-pink-500 fill-pink-500 scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
-                                    : "text-gray-300 hover:text-pink-400 hover:scale-110"
+                                    ? "text-pink-500 fill-pink-500"
+                                    : "text-gray-300 hover:text-pink-400"
                             )}
                         />
                     </button>
@@ -400,7 +403,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             <button
                                 onClick={handleDetailClick}
                                 className={clsx(
-                                    "w-full py-2.5 transition-all flex items-center justify-center gap-1 text-xs sm:text-sm rounded-lg border text-left",
+                                    "w-full py-2.5 transition-colors duration-100 flex items-center justify-center gap-1 text-xs sm:text-sm rounded-lg border text-left",
                                     "border-white/20 text-gray-400 hover:text-white hover:border-white/40 hover:bg-white/5",
                                     "light:border-0 light:bg-gray-100 light:text-gray-600 light:font-extrabold light:hover:bg-gray-200 light:hover:text-black"
                                 )}
@@ -424,6 +427,7 @@ function arePerformanceListItemPropsEqual(previous: PerformanceListItemProps, ne
         && previous.venueInfo === next.venueInfo
         && previous.isLiked === next.isLiked
         && previous.variant === next.variant
+        && previous.onDetailPrepare === next.onDetailPrepare
         && previous.searchMode === next.searchMode
         && previous.searchText === next.searchText
         && previous.priority === next.priority;

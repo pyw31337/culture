@@ -15,6 +15,7 @@ interface PerformanceGridProps {
     likedIds: string[];
     onToggleLike: (id: string, e: any) => void;
     handleDetailOpen: (perf: any) => void;
+    handleDetailPrepare?: () => void;
     setSearchLocation: (loc: any) => void;
     onVenuePreview?: (loc: any) => void; // Optional to separate preview from search
     setIsMapOpen: (val: boolean) => void;
@@ -74,6 +75,7 @@ export default function PerformanceGrid({
     likedIds,
     onToggleLike,
     handleDetailOpen,
+    handleDetailPrepare,
     setSearchLocation,
     onVenuePreview,
     setIsMapOpen,
@@ -270,9 +272,10 @@ export default function PerformanceGrid({
                                 ribbonText="Nearby"
                                 isGradient={isNearby || (selectedGenre === 'all' && !activeLocation && viewMode !== 'likes-perf' && viewMode !== 'likes-venue')}
                                 enableActions={true}
-                                enableEffects={index < 8}
+                                enableEffects={false}
                                 onShare={copyItemShareUrl}
                                 onDetail={handleDetailOpen}
+                                onDetailPrepare={handleDetailPrepare}
                                 searchMode={searchMode}
                                 searchText={searchText}
                             />
@@ -287,6 +290,7 @@ export default function PerformanceGrid({
                                 onToggleLike={onToggleLike}
                                 onShare={copyItemShareUrl}
                                 onDetail={handleDetailOpen}
+                                onDetailPrepare={handleDetailPrepare}
                                 searchMode={searchMode}
                                 searchText={searchText}
                             />

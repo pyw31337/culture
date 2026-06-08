@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
-import venueData from '@/data/venues.json';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { createFavoriteVenuePreference, favoriteVenueMatchesIdentity } from '@/lib/favorite-venues';
 import { getOptimizedUrl, getDistanceFromLatLonInKm } from '@/lib/utils';
@@ -21,13 +20,13 @@ interface Cinema {
 }
 interface Venue {
     name?: string;
-    address: string;
+    address?: string;
     lat?: number;
     lng?: number;
     district?: string;
     refined_name?: string;
 }
-const venues = venueData as unknown as Record<string, Venue>;
+const getBasePath = () => process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export interface KakaoMapModalProps {
     performances: Performance[];
@@ -64,6 +63,7 @@ export default function KakaoMapModal({
     const [visibleVenues, setVisibleVenues] = useState<any[]>([]);
     const [showSearchHereBtn, setShowSearchHereBtn] = useState(false);
     const [isMapReady, setIsMapReady] = useState(false);
+    const [venues, setVenues] = useState<Record<string, Venue>>({});
     const markersRef = useRef<any[]>([]);
     const mapOverlaysRef = useRef<any[]>([]);
     const popupOverlayRef = useRef<any>(null);
@@ -79,6 +79,22 @@ export default function KakaoMapModal({
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const isDragClicked = useRef(false);
+
+    useEffect(() => {
+        let isCancelled = false;
+        fetch(`${getBasePath()}/data/venues.json`)
+            .then((response) => (response.ok ? response.json() : {}))
+            .then((data: Record<string, Venue>) => {
+                if (!isCancelled) setVenues(data);
+            })
+            .catch(() => {
+                if (!isCancelled) setVenues({});
+            });
+
+        return () => {
+            isCancelled = true;
+        };
+    }, []);
 
     const onMouseDown = (e: React.MouseEvent) => {
         setIsDragging(true);

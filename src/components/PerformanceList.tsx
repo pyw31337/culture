@@ -358,18 +358,6 @@ export default function PerformanceList({
         }
     }, [selectedGenre, trackGenreView]);
 
-    useEffect(() => {
-        const preloadTimer = window.setTimeout(() => {
-            if ('requestIdleCallback' in window) {
-                window.requestIdleCallback(() => void loadSharedDetailModal(), { timeout: 2500 });
-                return;
-            }
-            void loadSharedDetailModal();
-        }, 10000);
-
-        return () => window.clearTimeout(preloadTimer);
-    }, []);
-
     // --- Search Synchronization Helper ---
     const syncSearchToUrl = useCallback((
         q: string,
@@ -397,6 +385,10 @@ export default function PerformanceList({
     }, [router, selectedGenre, selectedDateFilter, selectedPriceTier]);
 
     // --- Handlers ---
+    const handleDetailPrepare = useCallback(() => {
+        void loadSharedDetailModal();
+    }, []);
+
     const handleDetailOpen = useCallback((perf: Performance) => {
         trackItemView(perf.id);
         void loadSharedDetailModal();
@@ -757,16 +749,18 @@ export default function PerformanceList({
             {/* Data Sections */}
             {(viewMode === 'grid' || viewMode === 'list') && !searchText && !searchLocation && selectedGenre === 'all' && (
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14 px-4 space-y-14 relative z-10">
-                    {keywordItems.length > 0 && <KeywordSection keywordItems={keywordItems} onDetail={handleDetailOpen} searchMode={searchMode} />}
+                    {keywordItems.length > 0 && <KeywordSection keywordItems={keywordItems} onDetail={handleDetailOpen} onDetailPrepare={handleDetailPrepare} searchMode={searchMode} />}
                     <PersonalizedSection
                         items={personalizedItems}
                         onDetail={handleDetailOpen}
+                        onDetailPrepare={handleDetailPrepare}
                         searchMode={searchMode}
                         subtitle={`좋아요, 저장 키워드, 자주 본 장르, 찜한 공연장을 함께 읽어서 첫 화면을 조금 더 나답게 정리했어요. ${freshnessNote}`}
                     />
                     <RecommendedSection
                         recommendedItems={recommendedItems}
                         onDetail={handleDetailOpen}
+                        onDetailPrepare={handleDetailPrepare}
                         onLocationClick={setSearchLocation}
                         onToggleLike={toggleLike}
                         likedIds={new Set(likedIds)}
@@ -833,6 +827,7 @@ export default function PerformanceList({
                             likedIds={likedIds}
                             onToggleLike={toggleLike}
                             handleDetailOpen={handleDetailOpen}
+                            handleDetailPrepare={handleDetailPrepare}
                             setSearchLocation={setSearchLocation}
                             onVenuePreview={(loc) => {
                                 const params = new URLSearchParams();

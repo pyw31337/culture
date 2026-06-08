@@ -1,30 +1,19 @@
 'use client';
 
-import { motion } from 'framer-motion';
 
 interface SkeletonCardProps {
     variant?: 'card' | 'list';
 }
+
+const ShimmerOverlay = () => (
+    <div className="absolute inset-0 bg-white/20 dark:bg-white/5" />
+);
 
 /**
  * Skeleton Loading component for performance cards/list items.
  * Provides visual feedback during data loading with smooth animations.
  */
 export default function SkeletonCard({ variant = 'card' }: SkeletonCardProps) {
-    // Shimmer animation component
-    const ShimmerOverlay = () => (
-        <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 dark:via-gray-600/30 to-transparent"
-            initial={{ x: '-100%' }}
-            animate={{ x: '100%' }}
-            transition={{
-                repeat: Infinity,
-                duration: 1.5,
-                ease: 'easeInOut' as const,
-            }}
-        />
-    );
-
     if (variant === 'list') {
         return (
             <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden">
