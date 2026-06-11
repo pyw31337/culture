@@ -77,7 +77,12 @@ export function usePerformanceFilters({
             setSelectedDistrict(persisted?.district || parsed?.district || 'all');
             setSelectedVenue(persisted?.venue || parsed?.venue || 'all');
             setShuffleSeed(parsed?.seed || Date.now());
-            setVisibleCount(parsed?.visibleCount || INITIAL_VISIBLE_COUNT);
+            const savedVisibleCount = Number(parsed?.visibleCount);
+            setVisibleCount(
+                Number.isFinite(savedVisibleCount)
+                    ? Math.min(Math.max(savedVisibleCount, INITIAL_VISIBLE_COUNT), INITIAL_VISIBLE_COUNT + LOAD_MORE_COUNT * 2)
+                    : INITIAL_VISIBLE_COUNT
+            );
         } catch {
             setShuffleSeed(Date.now());
         } finally {

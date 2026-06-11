@@ -555,6 +555,42 @@ export default function PerformanceList({
         return () => observer.disconnect();
     }, [hasMore, hasMorePerformancePages, isPerformancePageLoading, loadMore, loadNextPerformancePage]);
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        let frame = 0;
+        const checkNearBottom = () => {
+            frame = 0;
+            const documentElement = document.documentElement;
+            const remaining = documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+            if (remaining > 1200) return;
+
+            if (hasMore) {
+                loadMore();
+                return;
+            }
+
+            if (hasMorePerformancePages && !isPerformancePageLoading) {
+                void loadNextPerformancePage();
+            }
+        };
+
+        const requestCheck = () => {
+            if (frame) return;
+            frame = window.requestAnimationFrame(checkNearBottom);
+        };
+
+        window.addEventListener('scroll', requestCheck, { passive: true });
+        window.addEventListener('resize', requestCheck, { passive: true });
+        requestCheck();
+
+        return () => {
+            if (frame) window.cancelAnimationFrame(frame);
+            window.removeEventListener('scroll', requestCheck);
+            window.removeEventListener('resize', requestCheck);
+        };
+    }, [hasMore, hasMorePerformancePages, isPerformancePageLoading, loadMore, loadNextPerformancePage]);
+
     // 2. Deep Link Support (Shared Content Modal)
     useEffect(() => {
         if (deepLinkHandled.current || !scopedPerformances.length) return;

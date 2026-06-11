@@ -31,6 +31,7 @@ interface PerformanceGridProps {
 }
 
 const VIRTUALIZATION_THRESHOLD = 36;
+const VIRTUALIZATION_MIN_WIDTH = 768;
 const OVERSCAN_ROWS = 4;
 const SCROLL_MEASURE_STEP = 420;
 
@@ -163,7 +164,7 @@ export default function PerformanceGrid({
         const gap = getGap(width);
         const rowHeight = getEstimatedRowHeight(layoutMode, width, columns, gap);
         const rowCount = Math.ceil(items.length / columns);
-        const shouldVirtualize = items.length > VIRTUALIZATION_THRESHOLD;
+        const shouldVirtualize = width >= VIRTUALIZATION_MIN_WIDTH && items.length > VIRTUALIZATION_THRESHOLD;
 
         if (!shouldVirtualize) {
             return {
@@ -305,7 +306,11 @@ export default function PerformanceGrid({
 
             {/* Sentinel for Infinite Scroll */}
             {hasMore && (
-                <div ref={observerRef} className="col-span-full h-20 flex items-center justify-center opacity-50">
+                <div
+                    ref={observerRef}
+                    className="col-span-full h-20 flex items-center justify-center opacity-50"
+                    style={{ minHeight: 80 }}
+                >
                     <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
                 </div>
             )}
