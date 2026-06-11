@@ -229,7 +229,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         <button
                                             data-card-control="true"
                                             onClick={handleShareClick}
-                                            className="pointer-events-auto h-11 w-11 shrink-0 rounded-[14px] border border-white/15 bg-black/65 text-white flex items-center justify-center transition-colors duration-100 hover:bg-black"
+                                            className="pointer-events-auto h-11 w-11 shrink-0 scale-[0.8] origin-left rounded-[14px] border border-white/15 bg-black/65 text-white flex items-center justify-center transition-colors duration-100 hover:bg-black"
                                             title="공유하기"
                                         >
                                             <Share2 className="w-5 h-5" />
@@ -360,7 +360,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                                     <button
                                                         data-card-control="true"
                                                         onClick={handleShareClick}
-                                                        className="relative z-40 h-11 w-11 shrink-0 rounded-[14px] border border-white/15 bg-black/70 text-white flex items-center justify-center transition-colors duration-100 hover:bg-black"
+                                                        className="relative z-40 h-11 w-11 shrink-0 scale-[0.8] origin-left rounded-[14px] border border-white/15 bg-black/70 text-white flex items-center justify-center transition-colors duration-100 hover:bg-black"
                                                         title="공유하기"
                                                     >
                                                         <Share2 className="w-5 h-5" />

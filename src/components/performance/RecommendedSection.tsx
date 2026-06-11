@@ -298,7 +298,7 @@ export default function RecommendedSection({
                                                 e.stopPropagation();
                                                 onShare?.(perf.id, e);
                                             }}
-                                            className="relative z-10 w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white  pointer-events-auto transition-colors shrink-0 border border-white/10"
+                                            className="relative z-10 w-10 h-10 scale-[0.8] origin-left flex items-center justify-center rounded-xl bg-white/20 hover:bg-white/30 text-white  pointer-events-auto transition-colors shrink-0 border border-white/10"
                                             title="공유하기"
                                         >
                                             <Share2 size={18} />
