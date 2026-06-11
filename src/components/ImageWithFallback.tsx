@@ -34,6 +34,18 @@ interface ImageWithFallbackInnerProps extends Omit<ImageWithFallbackProps, 'fall
     fallbackSrc: string;
 }
 
+const loadedImageSources = new Set<string>();
+
+function markImageSourceLoaded(src?: string) {
+    if (typeof src === 'string' && src.trim()) {
+        loadedImageSources.add(src);
+    }
+}
+
+function isImageSourceLoaded(src?: string) {
+    return typeof src === 'string' && loadedImageSources.has(src);
+}
+
 function ImageWithFallbackInner({
     originalSrc,
     initialSrc,
@@ -51,11 +63,35 @@ function ImageWithFallbackInner({
         });
         return Array.from(uniqueSources);
     }, [backupSrc, fallbackSrc, initialSrc, originalSrc]);
-    const [sourceIndex, setSourceIndex] = useState(0);
-    const [isLoaded, setIsLoaded] = useState(fastDisplay);
+    const initialSourceIndex = useMemo(() => {
+        const cachedIndex = sources.findIndex((source) => isImageSourceLoaded(source));
+        return cachedIndex >= 0 ? cachedIndex : 0;
+    }, [sources]);
+    const [sourceIndex, setSourceIndex] = useState(initialSourceIndex);
     const [isNearViewport, setIsNearViewport] = useState(fastDisplay);
     const imageRef = useRef<HTMLImageElement | null>(null);
     const imgSrc = sources[sourceIndex] || fallbackSrc;
+    const [isLoaded, setIsLoaded] = useState(() => fastDisplay || isImageSourceLoaded(imgSrc));
+
+    useEffect(() => {
+        setSourceIndex(initialSourceIndex);
+    }, [initialSourceIndex]);
+
+    useEffect(() => {
+        if (fastDisplay || isImageSourceLoaded(imgSrc)) {
+            setIsLoaded(true);
+            return;
+        }
+        setIsLoaded(false);
+    }, [fastDisplay, imgSrc]);
+
+    useEffect(() => {
+        const node = imageRef.current;
+        if (node?.complete && node.naturalWidth > 0) {
+            markImageSourceLoaded(imgSrc);
+            setIsLoaded(true);
+        }
+    }, [imgSrc]);
 
     useEffect(() => {
         const node = imageRef.current;
@@ -88,7 +124,7 @@ function ImageWithFallbackInner({
     useEffect(() => {
         if (!isNearViewport || isLoaded || sourceIndex >= sources.length - 1) return;
 
-        const timeoutMs = fastDisplay ? 450 : 900;
+        const timeoutMs = fastDisplay ? 1200 : 4500;
         const timeoutId = window.setTimeout(() => {
             setSourceIndex((index) => (
                 index === sourceIndex ? Math.min(index + 1, sources.length - 1) : index
@@ -140,7 +176,10 @@ function ImageWithFallbackInner({
                 loading={imageLoading}
                 decoding={props.decoding ?? 'async'}
                 onError={handleError}
-                onLoad={() => setIsLoaded(true)}
+                onLoad={() => {
+                    markImageSourceLoaded(imgSrc);
+                    setIsLoaded(true);
+                }}
                 unoptimized={isUnoptimized}
                 className={clsx(
                     props.className,
