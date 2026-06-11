@@ -22,7 +22,7 @@ function PosterScheduleLine({ date }: { date?: string }) {
     if (!schedule) return null;
 
     return (
-        <p className="mb-1 text-[10.5px] sm:text-[11px] font-extrabold leading-snug text-white/80 drop-shadow-md break-keep whitespace-normal">
+        <p className="mb-1 text-[10.5px] sm:text-[11px] font-extrabold leading-snug text-white/80 break-keep whitespace-normal">
             {schedule}
         </p>
     );
@@ -140,10 +140,8 @@ export default function PersonalizedSection({
                         {items.map((performance) => (
                             <div
                                 key={performance.id}
-                                className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 shadow-lg flex-shrink-0"
+                                className="relative w-[220px] sm:w-[260px] h-[340px] sm:h-[390px] rounded-[1.5rem] overflow-hidden bg-gray-900 flex-shrink-0"
                                 onPointerDown={handlePointerDown}
-                                onPointerEnter={onDetailPrepare}
-                                onFocusCapture={onDetailPrepare}
                                 onPointerUp={(event) => handlePointerUp(event, performance)}
                                 style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                             >
@@ -179,7 +177,7 @@ export default function PersonalizedSection({
                                     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-0" />
                                     <div className="relative z-10">
                                         <PosterScheduleLine date={performance.date} />
-                                        <h3 className="text-white font-black text-sm sm:text-base leading-tight line-clamp-2 drop-shadow-md">
+                                        <h3 className="text-white font-black text-sm sm:text-base leading-tight line-clamp-2">
                                             {cleanTitle(performance.title)}
                                         </h3>
                                         <div className="mt-1 flex items-center gap-1 text-white/65 text-[11px] font-semibold min-w-0">

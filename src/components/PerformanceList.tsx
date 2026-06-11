@@ -111,26 +111,6 @@ export default function PerformanceList({
     const deepLinkHandled = useRef(false);
     const modalReturnScrollY = useRef(0);
 
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-
-        let timer: ReturnType<typeof setTimeout> | null = null;
-        const handleScroll = () => {
-            document.documentElement.classList.add('is-scrolling');
-            if (timer) clearTimeout(timer);
-            timer = setTimeout(() => {
-                document.documentElement.classList.remove('is-scrolling');
-            }, 140);
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            if (timer) clearTimeout(timer);
-            document.documentElement.classList.remove('is-scrolling');
-        };
-    }, []);
-
     const {
         allPerformances,
         venues,
@@ -387,6 +367,26 @@ export default function PerformanceList({
     // --- Handlers ---
     const handleDetailPrepare = useCallback(() => {
         void loadSharedDetailModal();
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const idleWindow = window as Window & typeof globalThis & {
+            requestIdleCallback?: (callback: () => void, options?: { timeout?: number }) => number;
+            cancelIdleCallback?: (handle: number) => void;
+        };
+
+        if (typeof idleWindow.requestIdleCallback === 'function') {
+            const id = idleWindow.requestIdleCallback(() => {
+                void loadSharedDetailModal();
+            }, { timeout: 2500 });
+            return () => idleWindow.cancelIdleCallback?.(id);
+        }
+
+        const timer = window.setTimeout(() => {
+            void loadSharedDetailModal();
+        }, 1200);
+        return () => window.clearTimeout(timer);
     }, []);
 
     const handleDetailOpen = useCallback((perf: Performance) => {

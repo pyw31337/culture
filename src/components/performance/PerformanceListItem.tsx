@@ -103,8 +103,6 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
     return (
         <div
             className="perspective-1000 group relative hover:z-[2000]"
-            onPointerEnter={onDetailPrepare}
-            onFocusCapture={onDetailPrepare}
         >
             <div
                 className={clsx(

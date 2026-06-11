@@ -584,22 +584,6 @@ body {
   animation: float-soft 3s ease-in-out infinite;
 }
 
-/* Keep scrolling on the compositor instead of repainting expensive effects. */
-.is-scrolling [class*="backdrop-blur"],
-.is-scrolling [class*="drop-shadow"],
-.is-scrolling [class*="shadow-2xl"] {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  filter: none !important;
-  box-shadow: none !important;
-}
-
-.is-scrolling [class*="animate-"],
-.is-scrolling [class*="transition-"] {
-  animation-play-state: paused !important;
-  transition-duration: 0s !important;
-}
-
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .perspective-1000,
   .transform-style-3d {
@@ -626,53 +610,9 @@ body {
   animation-play-state: paused;
 }
 
-.group:hover .gold-shimmer-border,
-.group:hover .animate-neon-flow {
-  animation-play-state: running;
-}
-
-html.is-scrolling .gold-shimmer-border,
-html.is-scrolling .animate-neon-flow,
-html.is-scrolling .animate-shine,
-html.is-scrolling .animate-purple-shimmer,
-html.is-scrolling .animate-rotate-gradient::before,
-html.is-scrolling .bg-square {
-  animation: none !important;
-  transition: none !important;
-}
-
-html.is-scrolling .group,
-html.is-scrolling .group *,
-html.is-scrolling [class*="hover\\:"],
-html.is-scrolling [class*="shadow-"] {
-  transition-duration: 0ms !important;
-}
-
-html.is-scrolling .group:hover,
-html.is-scrolling .group:hover * {
-  transform: none !important;
-}
-
 .performance-card-root {
   contain: layout paint style;
   isolation: isolate;
-}
-
-.performance-card-root img {
-  transform: translateZ(0);
-}
-
-html.is-scrolling .performance-card-root,
-html.is-scrolling .performance-card-root * {
-  pointer-events: none !important;
-}
-
-html.is-scrolling .performance-card-root {
-  box-shadow: none !important;
-}
-
-html.is-scrolling .performance-card-actions {
-  display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce), (max-width: 768px) {

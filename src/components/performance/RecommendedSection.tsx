@@ -26,7 +26,7 @@ function PosterScheduleLine({ date }: { date?: string }) {
     if (!schedule) return null;
 
     return (
-        <p className="mb-1 text-[10.5px] sm:text-[11px] font-extrabold leading-snug text-white/80 drop-shadow-md break-keep whitespace-normal">
+        <p className="mb-1 text-[10.5px] sm:text-[11px] font-extrabold leading-snug text-white/80 break-keep whitespace-normal">
             {schedule}
         </p>
     );
@@ -230,12 +230,10 @@ export default function RecommendedSection({
                                 {/* Poster Card */}
                                 <div
                                     className={clsx(
-                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-lg -ml-6",
+                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 -ml-6",
                                         !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
                                     onPointerDown={handlePointerDown}
-                                    onPointerEnter={onDetailPrepare}
-                                    onFocusCapture={onDetailPrepare}
                                     onPointerUp={(e) => handlePointerUp(e as any, perf)}
                                     style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                                 >
@@ -245,7 +243,7 @@ export default function RecommendedSection({
                                             {GENRES.find(g => g.id === perf.genre)?.label || perf.genre}
                                         </div>
                                         {perf.category === '독점공연' && (
-                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80  border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
+                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80  border border-orange-400/30 text-white text-[10px] font-bold shadow-orange-500/20">
                                                 단독
                                             </div>
                                         )}
@@ -283,9 +281,9 @@ export default function RecommendedSection({
                                                     null}
                                             </div>
 
-                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-12 h-12 object-contain drop-shadow-md" />
+                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-12 h-12 object-contain" />
                                             <span className="text-white/80 font-black text-sm italic bg-black/40 px-1.5 rounded border border-white/10">VS</span>
-                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-12 h-12 object-contain drop-shadow-md" />
+                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-12 h-12 object-contain" />
                                         </div>
                                     )}
 
@@ -306,7 +304,7 @@ export default function RecommendedSection({
 
                                         <div className="relative z-10 flex min-w-0 flex-col justify-center overflow-visible">
                                             <PosterScheduleLine date={perf.date} />
-                                            <span className="text-white font-black text-sm sm:text-base leading-tight truncate drop-shadow-md">
+                                            <span className="text-white font-black text-sm sm:text-base leading-tight truncate">
                                                 {cleanTitle(perf.title)}
                                             </span>
                                             <span className="text-white/60 font-bold text-[10px] sm:text-xs leading-tight truncate uppercase tracking-tight">

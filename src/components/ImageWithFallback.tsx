@@ -68,7 +68,6 @@ function ImageWithFallbackInner({
         return cachedIndex >= 0 ? cachedIndex : 0;
     }, [sources]);
     const [sourceIndex, setSourceIndex] = useState(initialSourceIndex);
-    const [isNearViewport, setIsNearViewport] = useState(fastDisplay);
     const imageRef = useRef<HTMLImageElement | null>(null);
     const imgSrc = sources[sourceIndex] || fallbackSrc;
     const [isLoaded, setIsLoaded] = useState(() => fastDisplay || isImageSourceLoaded(imgSrc));
@@ -92,47 +91,6 @@ function ImageWithFallbackInner({
             setIsLoaded(true);
         }
     }, [imgSrc]);
-
-    useEffect(() => {
-        const node = imageRef.current;
-        if (!node) return;
-
-        if (fastDisplay) {
-            return;
-        }
-
-        if (typeof IntersectionObserver === 'undefined') {
-            const frameId = window.requestAnimationFrame(() => setIsNearViewport(true));
-            return () => window.cancelAnimationFrame(frameId);
-        }
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries.some((entry) => entry.isIntersecting)) {
-                    setIsNearViewport(true);
-                    observer.disconnect();
-                }
-            },
-            // Start fallback and warm-up decisions before the card fully enters the viewport.
-            { rootMargin: '450px 0px' }
-        );
-
-        observer.observe(node);
-        return () => observer.disconnect();
-    }, [fastDisplay, imgSrc]);
-
-    useEffect(() => {
-        if (!isNearViewport || isLoaded || sourceIndex >= sources.length - 1) return;
-
-        const timeoutMs = fastDisplay ? 1200 : 4500;
-        const timeoutId = window.setTimeout(() => {
-            setSourceIndex((index) => (
-                index === sourceIndex ? Math.min(index + 1, sources.length - 1) : index
-            ));
-        }, timeoutMs);
-
-        return () => window.clearTimeout(timeoutId);
-    }, [fastDisplay, isLoaded, isNearViewport, sourceIndex, sources.length]);
 
     const handleError = () => {
         setIsLoaded(false);
@@ -181,11 +139,7 @@ function ImageWithFallbackInner({
                     setIsLoaded(true);
                 }}
                 unoptimized={isUnoptimized}
-                className={clsx(
-                    props.className,
-                    !fastDisplay && "transition-opacity duration-100",
-                    isLoaded ? "opacity-100" : "opacity-0"
-                )}
+                className={props.className}
                 quality={imageQuality}
                 referrerPolicy="no-referrer"
                 style={{ ...props.style }}

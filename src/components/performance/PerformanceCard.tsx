@@ -102,13 +102,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
     return (
         <div
             className="performance-card-root group h-full relative overflow-visible hover:z-[2000]"
-            onPointerEnter={onDetailPrepare}
-            onFocusCapture={onDetailPrepare}
         >
             <div
                 className={
                     clsx(
-                        "relative shadow-md h-full rounded-[15px] isolate overflow-visible",
+                        "relative h-full rounded-[15px] isolate overflow-visible",
                         variant === 'default'
                             ? (searchMode === 'location'
                                 ? "p-px border border-emerald-500/20 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.1)]"
@@ -143,7 +141,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     tabIndex={onDetail ? 0 : undefined}
                     onClick={handleCardClick}
                     onKeyDown={handleCardKeyDown}
-                    style={{ transform: 'translateZ(0)' }}
                 >
 
 
@@ -154,7 +151,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             if (onToggleLike) onToggleLike(perf.id, e);
                         }}
                         className="absolute top-3 right-3 z-[100] p-2 rounded-full hover:bg-black/20 transition-colors duration-100 group/heart"
-                        style={{ transform: 'translateZ(50px)' }}
                     >
                         <Heart
                             className={clsx(
@@ -194,31 +190,30 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </div>
 
                                 {['volleyball', 'basketball', 'baseball', 'handball'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
-                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
+                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none">
                                         <img
                                             src={FUTURES_TEAM_LOGOS[perf.homeTeam] || perf.homeTeamLogo}
                                             alt={perf.homeTeam}
-                                            className="w-[30%] max-w-[64px] aspect-square object-contain drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                                            className="w-[30%] max-w-[64px] aspect-square object-contain"
                                         />
                                         <div className="text-white/90 font-black text-[10px] italic bg-black/50 px-1.5 py-0.5 rounded-full border border-white/10">VS</div>
                                         <img
                                             src={FUTURES_TEAM_LOGOS[perf.awayTeam] || perf.awayTeamLogo}
                                             alt={perf.awayTeam}
-                                            className="w-[30%] max-w-[64px] aspect-square object-contain drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                                            className="w-[30%] max-w-[64px] aspect-square object-contain"
                                         />
                                     </div>
                                 )}
 
                                 <div
                                     className={clsx(
-                                        "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full shadow-md z-10 flex items-center gap-1 border",
+                                        "absolute top-2 left-2 text-xs font-extrabold px-2 py-1 rounded-full z-10 flex items-center gap-1 border",
                                         variant === 'yellow'
                                             ? "bg-black/80 text-yellow-500 border-yellow-500/30"
                                             : variant === 'pink'
                                                 ? "bg-black/80 text-pink-500 border-pink-500/30"
                                                 : "bg-black/80 text-emerald-500 border-emerald-500/30"
                                     )}
-                                    style={{ transform: 'translateZ(20px)' }}
                                 >
                                     {variant === 'yellow' ? <Star className="w-3 h-3 fill-yellow-500" /> : variant === 'pink' ? <Heart className="w-3 h-3 fill-pink-500" /> : <BuildingStadium className="w-3 h-3 fill-emerald-500" />}
                                     {variant === 'yellow' ? '알림' : variant === 'pink' ? '좋아요' : '찜한공연장'}
@@ -242,7 +237,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             </div>
 
                             <div className={clsx(
-                                "relative flex-1 sm:transform-style-3d overflow-hidden p-4 flex flex-col min-h-0",
+                                "relative flex-1 overflow-hidden p-4 flex flex-col min-h-0",
                                 variant === 'yellow' ? "bg-yellow-400" : variant === 'emerald' ? "bg-emerald-500" : "bg-pink-500"
                             )}>
                                 <h3 className="font-extrabold text-lg text-black mb-1 line-clamp-2">
@@ -298,23 +293,23 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-[1]" />
 
                             {['volleyball', 'basketball', 'baseball', 'handball'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
-                                <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none" style={{ transform: 'translateZ(25px)' }}>
+                                <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none">
                                     <img
                                         src={FUTURES_TEAM_LOGOS[perf.homeTeam] || perf.homeTeamLogo}
                                         alt={perf.homeTeam}
-                                        className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                                        className="w-[35%] max-w-[96px] aspect-square object-contain"
                                     />
-                                    <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/50 px-2 py-0.5 rounded-full border border-white/10 shadow-lg">VS</div>
+                                    <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/50 px-2 py-0.5 rounded-full border border-white/10">VS</div>
                                     <img
                                         src={FUTURES_TEAM_LOGOS[perf.awayTeam] || perf.awayTeamLogo}
                                         alt={perf.awayTeam}
-                                        className="w-[35%] max-w-[96px] aspect-square object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                                        className="w-[35%] max-w-[96px] aspect-square object-contain"
                                     />
                                 </div>
                             )}
 
                             {distLabel && (
-                                <div className="absolute top-2 left-2 z-40 bg-emerald-600 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-[10px] font-black shadow-lg flex items-center gap-1">
+                                <div className="absolute top-2 left-2 z-40 bg-emerald-600 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-[10px] font-black flex items-center gap-1">
                                     <MapPin className="w-3 h-3" />
                                     {distLabel}
                                 </div>
@@ -333,7 +328,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         {shouldShowDateChip && <span className="text-[11px] text-gray-300 font-semibold">{formattedDate}</span>}
                                     </div>
 
-                                    <h2 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2 drop-shadow-lg">
+                                    <h2 className="text-lg md:text-xl font-[800] tracking-tighter text-white mb-0.5 leading-tight line-clamp-2">
                                         <HighlightText text={cleanTitle(perf.title) || '제목 없음'} keyword={searchText} />
                                     </h2>
 

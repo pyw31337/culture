@@ -131,12 +131,10 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
                                 {/* Poster Card */}
                                 <div
                                     className={clsx(
-                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900 shadow-lg",
+                                        "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900",
                                         !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
                                     )}
                                     onPointerDown={handlePointerDown}
-                                    onPointerEnter={onDetailPrepare}
-                                    onFocusCapture={onDetailPrepare}
                                     onPointerUp={(e) => handlePointerUp(e, perf)}
                                     style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                                 >
@@ -151,7 +149,7 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
                                             </div>
                                         )}
                                         {perf.category === '독점공연' && (
-                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80  border border-orange-400/30 text-white text-[10px] font-bold shadow-lg shadow-orange-500/20">
+                                            <div className="px-2 py-0.5 rounded-full bg-orange-500/80  border border-orange-400/30 text-white text-[10px] font-bold shadow-orange-500/20">
                                                 단독
                                             </div>
                                         )}
@@ -189,9 +187,9 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
                                                     null}
                                             </div>
 
-                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-12 h-12 object-contain drop-shadow-md" />
+                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-12 h-12 object-contain" />
                                             <span className="text-white/80 font-black text-sm italic bg-black/40 px-1.5 rounded border border-white/10">VS</span>
-                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-12 h-12 object-contain drop-shadow-md" />
+                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-12 h-12 object-contain" />
                                         </div>
                                     )}
 
@@ -211,7 +209,7 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
                                         </button>
 
                                         <div className="relative z-10 flex flex-col justify-center min-w-0 h-10 overflow-hidden">
-                                            <span className="text-white font-black text-sm sm:text-base leading-tight truncate drop-shadow-md">
+                                            <span className="text-white font-black text-sm sm:text-base leading-tight truncate">
                                                 {cleanTitle(perf.title)}
                                             </span>
                                             <span className="text-white/60 font-bold text-[10px] sm:text-xs leading-tight truncate uppercase tracking-tight">
