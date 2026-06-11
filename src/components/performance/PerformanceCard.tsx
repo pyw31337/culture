@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo, memo } from 'react';
 import { clsx } from 'clsx';
-import { Heart, Star, MapPin, Calendar, Share2, Search } from 'lucide-react';
+import { Heart, Star, MapPin, Share2 } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';
 import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
@@ -61,6 +61,30 @@ HighlightText.displayName = 'HighlightText';
 function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant = 'default', isLiked = false, onToggleLike, showRibbon = false, ribbonText = '추천 컨텐츠', enableActions = false, isGradient = false, onShare, onDetail, onDetailPrepare, searchMode = 'keyword', searchText, priority = false, enableEffects = false }: PerformanceCardProps) {
     const [isCopied, setIsCopied] = useState(false);
 
+    const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement | null;
+        if (target?.closest('button, a, [data-card-control=\"true\"]')) return;
+        onDetail?.(perf);
+    };
+
+    const handleCardKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const target = e.target as HTMLElement | null;
+        if (target?.closest('button, a, [data-card-control=\"true\"]')) return;
+        e.preventDefault();
+        onDetail?.(perf);
+    };
+
+    const handleShareClick = async (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (!onShare) return;
+        const usedClipboard = await onShare(perf.id);
+        if (usedClipboard) {
+            setIsCopied(true);
+            setTimeout(() => setIsCopied(false), 2000);
+        }
+    };
+
     const dDay = getDdayLabel(perf);
     const isMovie = perf.genre === 'movie';
     const formattedDate = formatUnifiedDate(perf.date);
@@ -74,18 +98,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
         : '가격 확인');
 
     const isInterestVariant = ['yellow', 'pink', 'emerald'].includes(variant);
-
-    const hasOtherDetails = useMemo(() => !!(
-        (perf.originalTitle && perf.originalTitle !== perf.title) ||
-        perf.productionCountry ||
-        perf.productionYear ||
-        perf.subGenre ||
-        perf.runningTime ||
-        (perf.ageRating && !['movie'].includes(perf.genre)) ||
-        perf.director ||
-        ((perf.castWithLinks && perf.castWithLinks.length > 0) || (perf.cast && Array.isArray(perf.cast) && perf.cast.length > 0)) ||
-        (perf.platforms && perf.platforms.length > 0)
-    ), [perf.originalTitle, perf.title, perf.productionCountry, perf.productionYear, perf.subGenre, perf.runningTime, perf.ageRating, perf.genre, perf.director, perf.castWithLinks, perf.cast, perf.platforms]);
 
     return (
         <div
@@ -103,11 +115,11 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 : "p-px")
                             : "",
                         variant === 'emerald'
-                            ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(16,185,129,0.4)]"
+                            ? "border border-emerald-500/40 shadow-[0_4px_20px_-5px_rgba(16,185,129,0.25)]"
                             : variant === 'pink'
-                                ? "border border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(236,72,153,0.4)]"
+                                ? "border border-pink-500/40 shadow-[0_4px_20px_-5px_rgba(236,72,153,0.25)]"
                                 : variant === 'yellow'
-                                    ? "border border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)] hover:shadow-[0_8px_30px_-5px_rgba(234,179,8,0.4)]"
+                                    ? "border border-yellow-500/40 shadow-[0_4px_20px_-5px_rgba(234,179,8,0.25)]"
                                     : "border-0"
                     )
                 }
@@ -118,19 +130,25 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                     </div>
                 )}
 
-                <div className={clsx(
-                    "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px] isolate",
-                    isGradient
-                        ? (searchMode === 'location'
-                            ? "bg-gradient-to-br from-[#064e3b] to-[#0f172a]"
-                            : "bg-gradient-to-br from-[#2e1065] to-[#0f172a]")
-                        : "bg-gray-900"
-                )}
+                <div
+                    className={clsx(
+                        "gold-shimmer-main flex flex-col overflow-hidden h-full rounded-[15px] isolate cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60",
+                        isGradient
+                            ? (searchMode === 'location'
+                                ? "bg-gradient-to-br from-[#064e3b] to-[#0f172a]"
+                                : "bg-gradient-to-br from-[#2e1065] to-[#0f172a]")
+                            : "bg-gray-900"
+                    )}
+                    role={onDetail ? "button" : undefined}
+                    tabIndex={onDetail ? 0 : undefined}
+                    onClick={handleCardClick}
+                    onKeyDown={handleCardKeyDown}
                     style={{ transform: 'translateZ(0)' }}
                 >
 
 
                     <button
+                        data-card-control="true"
                         onClick={(e) => {
                             e.stopPropagation();
                             if (onToggleLike) onToggleLike(perf.id, e);
@@ -148,15 +166,6 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                         />
                     </button>
 
-                    {enableEffects && (
-                        <div className={clsx(
-                            "absolute inset-[-2px] z-[-1] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-150 animate-neon-flow bg-[length:200%_auto] pointer-events-none",
-                            searchMode === 'location'
-                                ? "bg-linear-to-tr from-[#34d399] via-[#059669] to-[#34d399]"
-                                : "bg-linear-to-tr from-[#ff00cc] via-[#3333ff] to-[#ff00cc]"
-                        )} />
-                    )}
-
                     {isInterestVariant ? (
                         <>
                             <div className="relative aspect-[3/4] overflow-hidden shrink-0">
@@ -173,7 +182,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                         quality={priority ? 62 : 56}
                                         alt={perf.title}
                                         fill
-                                        className={clsx("pointer-events-none object-cover", enableEffects && "transition-transform duration-150 sm:group-hover:scale-[1.02]")}
+                                        className="pointer-events-none object-cover"
                                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         loading={priority ? 'eager' : 'lazy'}
                                         priority={priority}
@@ -216,38 +225,17 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </div>
 
                                 {enableActions && (
-                                    <div className={clsx(
-                                        "performance-card-actions",
-                                        "absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex gap-2 items-center justify-between",
-                                        "translate-y-0 sm:translate-y-[100%] sm:group-hover:translate-y-0"
-                                    )}>
+                                    <div className="performance-card-actions absolute inset-x-0 bottom-0 z-50 p-4 pb-4 flex items-center gap-2 pointer-events-none">
                                         <button
-                                            onClick={async (e) => {
-                                                e.stopPropagation();
-                                                if (onShare) {
-                                                    const usedClipboard = await onShare(perf.id);
-                                                    if (usedClipboard) {
-                                                        setIsCopied(true);
-                                                        setTimeout(() => setIsCopied(false), 2000);
-                                                    }
-                                                }
-                                            }}
-                                            className="w-[20%] bg-black/55 hover:bg-black text-white border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-colors duration-100 h-[50px] relative group/share"
+                                            data-card-control="true"
+                                            onClick={handleShareClick}
+                                            className="pointer-events-auto h-11 w-11 shrink-0 rounded-[14px] border border-white/15 bg-black/65 text-white flex items-center justify-center transition-colors duration-100 hover:bg-black"
+                                            title="공유하기"
                                         >
                                             <Share2 className="w-5 h-5" />
                                             {isCopied && (
-                                                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-xs px-2 py-1 rounded">복사됨</div>
+                                                <div className="absolute -top-10 left-4 bg-black text-xs px-2 py-1 rounded">복사됨</div>
                                             )}
-                                        </button>
-                                        <button
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                onDetail?.(perf);
-                                            }}
-                                            className="flex-1 bg-black/70 text-white hover:bg-black/90 border border-white/20 py-3 rounded-[15px] flex items-center justify-center transition-colors duration-100 font-black h-[50px] gap-2 text-sm"
-                                        >
-                                            자세히 보기
-                                            <Search className="w-4 h-4" />
                                         </button>
                                     </div>
                                 )}
@@ -299,7 +287,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 quality={priority ? 62 : 56}
                                 alt={perf.title}
                                 fill
-                                className={clsx("pointer-events-none object-cover rounded-[15px]", enableEffects && "transition-transform duration-150 sm:group-hover:scale-[1.02]")}
+                                className="pointer-events-none object-cover rounded-[15px]"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading={priority ? 'eager' : 'lazy'}
                                 priority={priority}
@@ -332,10 +320,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                 </div>
                             )}
 
-                            <div className={clsx(
-                                "absolute inset-x-0 bottom-0 z-30 flex flex-col justify-end",
-                                enableActions ? "translate-y-0 sm:translate-y-[82px] sm:group-hover:translate-y-0" : "translate-y-0"
-                            )}>
+                            <div className="absolute inset-x-0 bottom-0 z-30 flex flex-col justify-end">
                                 <div className="relative z-30 w-full p-4 pb-4">
                                     <div className="flex flex-wrap gap-2 mb-1.5 items-center">
                                         <span className={clsx(
@@ -369,16 +354,27 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     )}
 
                                     {!isMovie && (
-                                        <div className="flex justify-between items-end mt-2 pt-2 border-t border-white/10">
-                                            <div className="flex flex-col justify-end">
-                                                {perf.discount && <span className="text-red-500 font-black text-lg leading-none">{perf.discount}</span>}
+                                        <div className="flex items-end justify-between gap-2 mt-2 pt-2 border-t border-white/10">
+                                            <div className="flex items-end gap-2 min-w-0">
+                                                {enableActions && onShare && (
+                                                    <button
+                                                        data-card-control="true"
+                                                        onClick={handleShareClick}
+                                                        className="relative z-40 h-11 w-11 shrink-0 rounded-[14px] border border-white/15 bg-black/70 text-white flex items-center justify-center transition-colors duration-100 hover:bg-black"
+                                                        title="공유하기"
+                                                    >
+                                                        <Share2 className="w-5 h-5" />
+                                                        {isCopied && <div className="absolute -top-10 left-0 bg-black text-xs px-2 py-1 rounded whitespace-nowrap">복사됨</div>}
+                                                    </button>
+                                                )}
+                                                {perf.discount && <span className="text-red-500 font-black text-lg sm:text-xl leading-none pb-1">{perf.discount}</span>}
                                             </div>
-                                            <div className="flex flex-col items-end">
+                                            <div className="flex flex-col items-end min-w-0">
                                                 {perf.originalPrice && perf.originalPrice !== perf.price && <span className="text-gray-500 text-[10px] line-through mb-0.5">{perf.originalPrice}</span>}
                                                 <div className="flex items-baseline gap-1 text-white">
                                                     {(() => {
                                                         const extracted = extractFirstPrice(priceText);
-                                                        if (!extracted) return <span className="text-sm font-black text-white/85">{priceText || priceFallbackText}</span>;
+                                                        if (!extracted) return <span className="text-sm font-black text-white/85 text-right">{priceText || priceFallbackText}</span>;
                                                         return (
                                                             <div className="leading-none text-right">
                                                                 {extracted.price === '무료' ? (
@@ -399,33 +395,7 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     )}
                                 </div>
 
-                                {enableActions && (
-                                    <div className="performance-card-actions relative z-20 p-4 pb-4 bg-black/95 flex gap-2 items-center justify-between before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-t before:from-black/95 before:to-transparent before:pointer-events-none">
-                                        <button
-                                            onClick={async (e) => {
-                                                e.stopPropagation();
-                                                if (onShare) {
-                                                    const usedClipboard = await onShare(perf.id);
-                                                    if (usedClipboard) {
-                                                        setIsCopied(true);
-                                                        setTimeout(() => setIsCopied(false), 2000);
-                                                    }
-                                                }
-                                            }}
-                                            className="w-[20%] bg-white/5 hover:bg-white/20 text-white border border-white/10 py-3 rounded-[15px] flex items-center justify-center transition-colors duration-100 h-[50px] relative"
-                                        >
-                                            <Share2 className="w-5 h-5" />
-                                            {isCopied && <div className="absolute -top-10 bg-black text-xs px-2 py-1 rounded">복사됨</div>}
-                                        </button>
-                                        <button
-                                            onClick={(e) => { e.stopPropagation(); onDetail?.(perf); }}
-                                            className="flex-1 bg-white ring-1 ring-white/20 text-black hover:bg-gray-200 py-3 rounded-[15px] flex items-center justify-center transition-colors duration-100 font-black h-[50px] gap-2 text-sm"
-                                        >
-                                            자세히 보기
-                                            <Search className="w-4 h-4" />
-                                        </button>
-                                    </div>
-                                )}
+
                             </div>
                         </div>
                     )}
