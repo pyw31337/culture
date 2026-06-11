@@ -1,35 +1,5 @@
 [
   {
-    "id": "yes24_57549",
-    "title": "[광주] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260311/20260311-57549.jpg/dims/quality/70/",
-    "date": "2026.05.09 ~ 2026.05.10",
-    "venue": "김대중컨벤션센터 다목적홀",
-    "link": "https://ticket.yes24.com/Perf/57549",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_광주_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260311/20260311-57549.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_57508",
-    "title": "[부산] 2026 심규선x안예은 콘서트(어느봄날)",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260309/20260309-57508.jpg/dims/quality/70/",
-    "date": "2026.05.09 ~ 2026.05.09",
-    "venue": "부산시민회관 대극장",
-    "link": "https://ticket.yes24.com/Perf/57508",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_부산_2026_심규선x안예은_콘서트_어느봄날.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260309/20260309-57508.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_57510",
     "title": "[대구] 2026 심규선x안예은 콘서트(어느봄날)",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260309/20260309-57508.jpg/dims/quality/70/",
@@ -67,21 +37,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202603/20260309/57510_02.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202603/20260309/57510_03.jpg"
     ]
-  },
-  {
-    "id": "yes24_57038",
-    "title": "2025-2026 이찬원 〈찬가 : 찬란한 하루〉 앵콜 콘서트",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260204/20260204-57038.jpg/dims/quality/70/",
-    "date": "2026.05.09 ~ 2026.05.10",
-    "venue": "KSPO DOME(올림픽체조경기장)",
-    "link": "https://ticket.yes24.com/Perf/57038",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_2025_2026_이찬원_찬가_찬란한_하루_앵콜_콘서트.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260204/20260204-57038.jpg/dims/quality/70/",
-    "category": "독점공연"
   },
   {
     "id": "yes24_56966",
@@ -223,36 +178,6 @@
     ]
   },
   {
-    "id": "yes24_56965",
-    "title": "[전주] 겸손은힘들다 LIVE TOUR",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202601/20260129/20260129-56965.jpg/dims/quality/70/",
-    "date": "2026.05.09 ~ 2026.05.09",
-    "venue": "한국소리문화의전당 야외공연장",
-    "link": "https://ticket.yes24.com/Perf/56965",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_전주_겸손은힘들다_LIVE_TOUR.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202601/20260129/20260129-56965.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_57586",
-    "title": "2026 CHAE JONG HYEOP Fanmeeting in Seoul ‘THE WAY for US’",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260312/20260312-57586.jpg/dims/quality/70/",
-    "date": "2026.05.09 ~ 2026.05.09",
-    "venue": "YES24 LIVE HALL",
-    "link": "https://ticket.yes24.com/Perf/57586",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_2026_CHAE_JONG_HYEOP_Fanmeeting_in_Seoul_THE_WAY_for_US.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260312/20260312-57586.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_57254",
     "title": "네이버후드 내한공연 (The Neighbourhood Live in Seoul)",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57254.jpg/dims/quality/70/",
@@ -277,21 +202,6 @@
     "contact": "",
     "dataCollectedAt": "2026-06-04T08:56:27.647Z",
     "synopsisImages": []
-  },
-  {
-    "id": "yes24_57263",
-    "title": "숀(SHAUN) [LAST PAGE] Band Set 서울 단독 공연",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57263.jpg/dims/quality/70/",
-    "date": "2026.05.10 ~ 2026.05.10",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/57263",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_숀_SHAUN_LAST_PAGE_Band_Set_서울_단독_공연.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57263.jpg/dims/quality/70/",
-    "category": "독점공연"
   },
   {
     "id": "yes24_57517",
@@ -554,21 +464,6 @@
     ]
   },
   {
-    "id": "yes24_57145",
-    "title": "yanaginagi live tour 2026 Green Light in Seoul",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260210/20260210-57145.jpg/dims/quality/70/",
-    "date": "2026.05.10 ~ 2026.05.10",
-    "venue": "가빈아트홀",
-    "link": "https://ticket.yes24.com/Perf/57145",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_yanaginagi_live_tour_2026_Green_Light_in_Seoul.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260210/20260210-57145.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_57338",
     "title": "[김해] 2026 자유 패키지 P:art Ⅰ",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260227/20260227-57338.jpg/dims/quality/70/",
@@ -596,21 +491,6 @@
     "description": "",
     "image": "/images/posters/classic/yes24_김해_2026_저녁의음악회_패키지.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260225/20260225-57324.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_57459",
-    "title": "[창원] 뮤지컬 [빵굽는 포포아저씨]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260310/20260310-57459_1.jpg/dims/quality/70/",
-    "date": "2026.05.10 ~ 2026.05.10",
-    "venue": "진해문화센터 공연장",
-    "link": "https://ticket.yes24.com/Perf/57459",
-    "genre": "kids",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/kids/yes24_창원_뮤지컬_빵굽는_포포아저씨.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260310/20260310-57459_1.jpg/dims/quality/70/",
     "category": "독점공연"
   },
   {
