@@ -1,15 +1,18 @@
 {
-  "checkedAt": "2026-06-11T20:49:24.517Z",
+  "checkedAt": "2026-06-12T07:58:06.585Z",
   "status": "warn",
-  "venueCount": 4322,
-  "matchedCount": 1093,
-  "highConfidenceMatchCount": 802,
+  "venueCount": 4311,
+  "matchedCount": 1090,
+  "highConfidenceMatchCount": 800,
   "needsReviewCount": 20,
   "notFoundCount": 305,
-  "pendingLookupCount": 2141,
+  "pendingLookupCount": 2133,
   "insufficientIdentityCount": 239,
-  "lookupReady": false,
-  "providersConfigured": [],
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
   "queue": [
     {
       "venueId": "venue_ncs산업현장교수_ta9hlr",
@@ -4075,17 +4078,20 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-06-11T20:49:24.517Z",
+    "checkedAt": "2026-06-12T07:58:06.585Z",
     "status": "warn",
-    "venueCount": 4322,
-    "matchedCount": 1093,
-    "highConfidenceMatchCount": 802,
+    "venueCount": 4311,
+    "matchedCount": 1090,
+    "highConfidenceMatchCount": 800,
     "needsReviewCount": 20,
     "notFoundCount": 305,
-    "pendingLookupCount": 2141,
+    "pendingLookupCount": 2133,
     "insufficientIdentityCount": 239,
-    "lookupReady": false,
-    "providersConfigured": [],
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
     "staleCacheCount": 0,
     "topQueue": [
       {

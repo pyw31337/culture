@@ -83,7 +83,7 @@ const isRedundantAgeDetail = (ageDetail?: string | null, ...ageValues: Array<str
 
 const isGeneratedSummaryDescription = (performance: Performance, value?: string | null) => {
     const text = compactDetailText(value);
-    if (!text || performance.genre === 'movie') return false;
+    if (!text) return false;
     const comparableText = comparableDetailText(text);
 
     const patterns = [

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.Xf7_6tbr78fE5ED-D9uiG.adefd942bc3a593fa0c94355d83d4900.js"
+  "/culture/_next/precache.uWtlAHJNEYrW5_w-ijEJx.691f0c96e7b8e00746895932ef209c89.js"
 );
 
 workbox.core.skipWaiting();
@@ -4228,6 +4228,10 @@ self.__precacheManifest = [
     "revision": "c60654dc5bca27e850e747204ce1e4f3"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/0f8ab017_197a_40c2_b9cc_622bdef0ad4b.webp",
+    "revision": "96bcc4457ed2caf7fb9d1eedb18a997f"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/0fe22b88_0997_4c23_9f07_789667874b06.webp",
     "revision": "42ddcf49bb4e8bd7fe4d6bc909b06d62"
   },
@@ -4242,6 +4246,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/1d3238d9_455f_4384_a1c3_21ba4c9d8176.webp",
     "revision": "e95554f03ae0bc2c4eb44c598dbdd85d"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/festivals/1f4196b6_5e15_4e22_accf_6e57a484612c.webp",
+    "revision": "4d18b71a7b61d0240651f481f1fbfe4a"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/1f47bee8_d195_40a2_81eb_a5aeca10fb81.webp",
@@ -4276,6 +4284,10 @@ self.__precacheManifest = [
     "revision": "5f1b76ee9475af8bab27187a02c314dc"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/355a548e_438e_4745_b388_774b506f3030.webp",
+    "revision": "ad778e5f9144c734d95d89d25cea3821"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/3676449f_073e_41d2_8626_e416a1c8468a.webp",
     "revision": "c1cac339d78f12733ac5bb8b37e34731"
   },
@@ -4288,8 +4300,16 @@ self.__precacheManifest = [
     "revision": "6a90fd7636573fe3b214a54bacf254f6"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/38c52c0b_98b9_4cfb_b285_72ca7ec0b988.webp",
+    "revision": "746359c0309505bb4e3eaf0da924098c"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/3d2b41c5_9052_43b8_8a8b_9e741ccca343.webp",
     "revision": "f9643cd2c91c8b35be9be4fea831a74f"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/festivals/3e214a82_45b4_4ccb_87af_15908caaa0d9.webp",
+    "revision": "f39ef2b69e64694c3afc6a00c798d81e"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/3f27a115_2692_4e44_9460_0eebba1edc88.webp",
@@ -4340,6 +4360,10 @@ self.__precacheManifest = [
     "revision": "e6bc46b9e88948c8710f992c1bc5f8f1"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/580585e7_09cf_424b_96c5_e465d893bb1e.webp",
+    "revision": "3a84695aeb641078282f4f3b2386db64"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/5aa748cc_5523_4fca_bf80_3b331ba22212.webp",
     "revision": "7398b7cde8793862a93e296d6a252526"
   },
@@ -4350,6 +4374,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/5fa03d15_98d2_48c0_bab5_be597a7f15eb.webp",
     "revision": "2e89effe3c9152017fb8e75c0eeb747f"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/festivals/623c6c39_3c0b_4bf5_a38a_7bf860b50594.webp",
+    "revision": "afa85844057a6f172a9e5d17636af518"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/644495a7_65e3_42ef_8993_e18e2e71a8bd.webp",
@@ -4374,6 +4402,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/7231bfc8_9e7b_470e_8cc2_b237fe582fa3.webp",
     "revision": "03ca5a425d2c59a0f0c7370034f01032"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/festivals/726b815a_509f_4fe0_92c7_2b91357cc97d.webp",
+    "revision": "e8a3dd2625894c37f2c317ac190c79de"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/75ebfb38_9953_47aa_bbfe_188dc8a3767c.webp",
@@ -4456,6 +4488,10 @@ self.__precacheManifest = [
     "revision": "b0f8fd668902ed61fd8cd18705adaef3"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/93af6941_5c19_4d64_8ea8_e92dff83fc1e.webp",
+    "revision": "1d61f9b1996c78ae44a8810755286c90"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/94ce1369_20c5_42a8_9eb7_bb61ca7647e9.webp",
     "revision": "5a533d15e97bd8a0f1130e238378dc57"
   },
@@ -4486,6 +4522,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/98cf6eac_a8b9_423d_afad_5fc46aefa481.webp",
     "revision": "d9d53d31c23d3f5eae57e052215cc3f4"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/festivals/9b5b4dcb_1687_4588_8fd3_dd91f8b60206.webp",
+    "revision": "746359c0309505bb4e3eaf0da924098c"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/9baec2f1_84c7_4b70_aa3e_b8f6fe76b0c1.webp",
@@ -4520,6 +4560,10 @@ self.__precacheManifest = [
     "revision": "e3cde9da50a01ceaa165997042a283b6"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/abfe6e2e_06b0_4beb_a6ff_1708f242c84d.webp",
+    "revision": "03165f33b90432870555be8e103f2260"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/aebdd924_73cd_4187_be5e_ba29ccf19c49.webp",
     "revision": "220ca301fae941fde99681313a483815"
   },
@@ -4536,12 +4580,20 @@ self.__precacheManifest = [
     "revision": "0565934ed7f664ad4ce6ef7966695ca5"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/baea76a5_ea80_4ba3_b832_a2b2d90fd2d6.webp",
+    "revision": "3086536d5dbd0f0f244accf74b80dad1"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/bcc6fe38_fd8f_463d_8365_7e946f6ffad3.webp",
     "revision": "51a25e02924750ea8ef1f84424ae9e6e"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/bdb6b300_de85_4ae5_8a09_32de8875e1a4.webp",
     "revision": "65ec9f54fc50813120eae5be70a8bfe6"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/festivals/c30076fe_18c2_40a8_8a0c_66f05e349cb1.webp",
+    "revision": "ed3ccc1bd3b678172e436a2e7b80f899"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/c337383f_787b_4583_a7ac_76890f105113.webp",
@@ -4624,6 +4676,10 @@ self.__precacheManifest = [
     "revision": "38f1e8e5f4b6c16b0c7a50cb09dd642b"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/e943dc7c_44b6_4d95_bcb6_551104d10ed2.webp",
+    "revision": "919f4f86d353ec9a4b1a09f700359728"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/eb493baf_5c5e_470b_ae57_ef335fe405c5.webp",
     "revision": "f7fd4192719c4170fb04c64d6cbc006b"
   },
@@ -4636,8 +4692,16 @@ self.__precacheManifest = [
     "revision": "9d206018a7e584e81c3ba0aaad1c273c"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/f2adc8dc_4e10_4efb_a60e_677c56614f27.webp",
+    "revision": "813333be0c579f9a14aaa86803036f69"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/f3026b60_0634_49ef_9ccb_8fb68d0e09a5.webp",
     "revision": "d8a1e952fdf22820c831043a77a95573"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/festivals/f706f043_fc2f_4fca_9e9a_bcd588eaafb4.webp",
+    "revision": "38c7afbeb23af9265783b31dc94173a6"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/fc491eba_6273_4ae0_a6bd_aee54fcac631.webp",
@@ -5044,6 +5108,10 @@ self.__precacheManifest = [
     "revision": "5d40a8d782d1c7cb2cc8f80b7b1881c4"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie__웨일폴_고래에_먹힌_남자.webp",
+    "revision": "578dafb581dc828ac89995cc0867889e"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_1026_새로운_세상을_위한.webp",
     "revision": "be2148fe6b7ca3bce54953d387f27083"
   },
@@ -5178,6 +5246,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_그림자_내각.webp",
     "revision": "b85ea18c6cdfbea39533b46795e657cf"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_그림자_아이.webp",
+    "revision": "224dc74c95e7f5a9d9e1fb0beabd2954"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_극장의_시간들.webp",
@@ -5372,6 +5444,10 @@ self.__precacheManifest = [
     "revision": "2774c5b59cec62e839f3eca0d12f5daf"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_모자_쓴_고양이.webp",
+    "revision": "b7773c4b5fc52feaf85c91eb4a6fcc26"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_모탈_컴뱃_2.webp",
     "revision": "08b0e236fb614b28cb655425db10e2bc"
   },
@@ -5382,6 +5458,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_미니언즈__몬스터즈.webp",
     "revision": "19c9bc6aafc54e67a03ac32e39982cf6"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_미명.webp",
+    "revision": "59b6489837fda606e96cfb5db44cfcce"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_미세스_그린_애플_매지컬_10주년_기념_라이브_피오르드_온_스크린.webp",
@@ -5412,6 +5492,10 @@ self.__precacheManifest = [
     "revision": "e9a68e882e94c40574ddc82fc1020dd9"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_방과후_퇴마클럽_소녀들의_밤.webp",
+    "revision": "75da1a9b04a1b463af3f4927c6297572"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_백룸.webp",
     "revision": "b831e323fa8c2c36cdbbf68d7926e5ea"
   },
@@ -5430,6 +5514,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_사랑_우유_그리고_치즈.webp",
     "revision": "aca5d8fa12633d236e58169cc3f12059"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_사랑의_네_가지_온도.webp",
+    "revision": "5237ac8d087a5a2a07342406c6114b2f"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_사랑의_하츄핑_고래보석의_전설.webp",
@@ -5504,12 +5592,20 @@ self.__precacheManifest = [
     "revision": "5e596c2d0f735dde48f3fbe0b99c7f3b"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_시크릿_에이전트.webp",
+    "revision": "0d7d1295b5baa26d49fa4f9d4e43be5b"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_신극장판_은혼_요시와라_대염상.webp",
     "revision": "8bdf5cc68bd0a587f3afa05643f5a126"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_신의악단.webp",
     "revision": "8332a26e1d00fe2051900b93fd203ebd"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_쏜애플_나의_세기_익스텐디드_플레이_필름.webp",
+    "revision": "13dd7d6e5a19380b56795a5a35bf0c86"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_아르코.webp",
@@ -5582,6 +5678,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_올_그린스.webp",
     "revision": "556e7b175015ba8f33b65074ddc6ca5b"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_와인드업_더_무비.webp",
+    "revision": "05cd123975e9fdf50f5c150d8b3fb893"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_와일드_씽.webp",
@@ -5670,6 +5770,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_초속_5센티미터.webp",
     "revision": "a3f3897d9a369ecbb9034ec5b3637a84"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_최후의_만찬.webp",
+    "revision": "30e22ad7b1dc4a83288d29fbd549c17e"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_침묵의_친구.webp",

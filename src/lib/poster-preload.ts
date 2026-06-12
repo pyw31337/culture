@@ -11,7 +11,7 @@ type WarmPosterOptions = {
 };
 
 const warmedUrls = new Set<string>();
-const MAX_WARMED_URLS_PER_SESSION = 48;
+const MAX_WARMED_URLS_PER_SESSION = 96;
 const SLOW_CONNECTIONS = new Set(['slow-2g', '2g']);
 
 function getConnectionInfo() {

@@ -278,7 +278,9 @@ function compactText(value?: string) {
 function isLowValueGeneratedDescription(value?: string) {
     const text = compactText(value);
     if (!text) return false;
-    return /장소\s*확인\s*필요에서\s*진행되는\s*클래스입니다/.test(text)
+    return /장소\s*확인\s*필요에서\s*진행되는\s*(클래스|영화)입니다/u.test(text)
+        || (/일정은\s*20\d{2}[.\-]\d{2}[.\-]\d{2}.+기준입니다/u.test(text)
+            && /에서\s*진행되는\s*(영화|클래스)입니다/u.test(text))
         || /^.+는\s*(?:지정 장소|현장|전시 공간)에서\s*(?:진행|만날|즐길)/.test(text)
         || /^.+는\s*방문을\s*고려해볼\s*만한\s*관광\/여행입니다/.test(text);
 }
@@ -776,7 +778,11 @@ function enrichFromSiblingItems(items: Performance[]) {
         if (!hasUsableLink(performance.website) && hasUsableLink(donor.website)) {
             performance.website = donor.website;
         }
-        if (!compactText(performance.description) && compactText(donor.description)) {
+        if (
+            !compactText(performance.description)
+            && compactText(donor.description)
+            && !isLowValueGeneratedDescription(donor.description)
+        ) {
             performance.description = donor.description;
         }
 

@@ -32,8 +32,8 @@ interface PerformanceGridProps {
 
 const VIRTUALIZATION_THRESHOLD = 36;
 const VIRTUALIZATION_MIN_WIDTH = 768;
-const OVERSCAN_ROWS = 4;
-const SCROLL_MEASURE_STEP = 420;
+const OVERSCAN_ROWS = 6;
+const SCROLL_MEASURE_STEP = 240;
 
 function getColumnCount(layoutMode: 'grid' | 'list', width: number): number {
     if (layoutMode === 'grid') {

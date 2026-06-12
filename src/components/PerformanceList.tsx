@@ -318,11 +318,13 @@ export default function PerformanceList({
     useEffect(() => {
         if (posterWarmupItems.length === 0) return;
         if (activeOverlay) return;
+        const isDesktopPointer = typeof window !== 'undefined'
+            && (window.matchMedia?.('(hover: hover) and (pointer: fine)').matches ?? false);
         return warmPosterImages(posterWarmupItems, {
-            limit: 4,
-            width: 300,
-            quality: 54,
-            concurrency: 1,
+            limit: isDesktopPointer ? 12 : 5,
+            width: isDesktopPointer ? 360 : 300,
+            quality: isDesktopPointer ? 58 : 54,
+            concurrency: isDesktopPointer ? 2 : 1,
         });
     }, [activeOverlay, posterWarmupKey, posterWarmupItems]);
 

@@ -484,7 +484,9 @@ function isLowValueDescription(value?: string) {
     if (!text) return false;
     return /^\[[^\]]+\]\s*장소\s*:/u.test(text)
         || /^서울시\s*문화분야\s*종합\s*정보\s*제공\s*사이트/u.test(text)
-        || /장소\s*확인\s*필요에서\s*진행되는\s*클래스입니다/u.test(text);
+        || /장소\s*확인\s*필요에서\s*진행되는\s*(클래스|영화)입니다/u.test(text)
+        || (/일정은\s*20\d{2}[.\-]\d{2}[.\-]\d{2}.+기준입니다/u.test(text)
+            && /에서\s*진행되는\s*(영화|클래스)입니다/u.test(text));
 }
 
 function isDurationOnly(value?: string) {
