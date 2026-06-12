@@ -67190,7 +67190,15 @@
     "lng": 127.72997069999997,
     "district": "",
     "phone": "033-818-3200",
-    "homepage": "http://chuncheon.sangsangmadang.com/"
+    "homepage": "http://chuncheon.sangsangmadang.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "1700",
+    "theaterCount": "5",
+    "openedAt": "2014",
+    "amenities": [],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "인천중구문화회관": {
     "name": "인천중구문화회관",
@@ -83899,10 +83907,20 @@
   },
   "서울연극센터": {
     "name": "서울연극센터",
-    "address": "서울 성북구 성북로 8",
-    "district": "성북구",
-    "lat": 37.5892039678348,
-    "lng": 127.00610053345238
+    "address": "서울특별시 종로구 대명길 3 (명륜4가)",
+    "lat": 37.5833896,
+    "lng": 127.0013221,
+    "district": "종로구",
+    "phone": "02-743-9333",
+    "homepage": "https://www.sfac.or.kr/artspace/artspace/play_main.do?groupCtgry=g3",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "openedAt": "2007",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관)"
   },
   "고려청자박물관": {
     "name": "고려청자박물관",
@@ -86058,10 +86076,18 @@
   },
   "홀리데이 코티지 (Holiday Cottage)": {
     "name": "홀리데이 코티지 (Holiday Cottage)",
-    "address": "충북 청주시 청원구 내수읍 세교초정로 47",
+    "address": "충청북도 청주시 청원구 내수읍 세교초정로 47",
+    "lat": 36.706801,
+    "lng": 127.5714345,
     "district": "",
-    "lat": 36.70630589907357,
-    "lng": 127.57204170167826
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "인제하늘내린센터 대공연장": {
     "name": "인제하늘내린센터 대공연장",
@@ -111836,5 +111862,133 @@
     "district": "강남구",
     "lat": 37.5172,
     "lng": 127.0473
+  },
+  "ming(밍)": {
+    "name": "ming(밍)",
+    "address": "서울특별시 마포구 와우산로 63 (서교동)",
+    "lat": 37.55021,
+    "lng": 126.922902,
+    "district": "마포구",
+    "homepage": "https://www.instagram.com/mingindustrial/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
+  },
+  "딥퍼플": {
+    "name": "딥퍼플",
+    "address": "서울특별시 서대문구 연세로7안길 34-6 (창천동)",
+    "lat": 37.558347,
+    "lng": 126.935063,
+    "district": "서대문구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
+  },
+  "CLUB bender(클럽 벤더)": {
+    "name": "CLUB bender(클럽 벤더)",
+    "address": "서울특별시 마포구 와우산로14길 4 (상수동) 지하1층",
+    "lat": 37.5500517,
+    "lng": 126.923351,
+    "district": "마포구",
+    "phone": "02-6406-5646",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "락교 라이브펍": {
+    "name": "락교 라이브펍",
+    "address": "서울특별시 강남구 논현로163길 11 (신사동)",
+    "lat": 37.524013,
+    "lng": 127.02723,
+    "district": "강남구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
+  },
+  "타타타 수상레저": {
+    "name": "타타타 수상레저",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "가죽공예(중구/부산)": {
+    "name": "가죽공예(중구/부산)",
+    "address": "정보 없음",
+    "district": "중구",
+    "lat": 37.5637,
+    "lng": 126.9975
+  },
+  "원데이\n                                \n                                케이크(서구/광주)": {
+    "name": "원데이\n                                \n                                케이크(서구/광주)",
+    "address": "원데이\n                                \n                                케이크(서구/광주)",
+    "district": "서구"
+  },
+  "서울 영등포구 문래동3가 54-43": {
+    "name": "서울 영등포구 문래동3가 54-43",
+    "address": "정보 없음",
+    "district": "영등포구",
+    "lat": 37.5264,
+    "lng": 126.8962
+  },
+  "서울 강동구 암사동 455-42": {
+    "name": "서울 강동구 암사동 455-42",
+    "address": "정보 없음",
+    "district": "강동구",
+    "lat": 37.5301,
+    "lng": 127.1238
+  },
+  "서울 관악구 봉천동 863-5": {
+    "name": "서울 관악구 봉천동 863-5",
+    "address": "정보 없음",
+    "district": "관악구",
+    "lat": 37.4784,
+    "lng": 126.9516
+  },
+  "인천 부평구 부평동 888-5": {
+    "name": "인천 부평구 부평동 888-5",
+    "address": "정보 없음",
+    "district": "부평구",
+    "lat": 37.5074,
+    "lng": 126.7217
+  },
+  "서울 광진구 자양동 507-6": {
+    "name": "서울 광진구 자양동 507-6",
+    "address": "정보 없음",
+    "district": "광진구",
+    "lat": 37.5385,
+    "lng": 127.0824
+  },
+  "서울 마포구 창전동 2-37": {
+    "name": "서울 마포구 창전동 2-37",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
+  },
+  "서울 광진구 자양동 229-56": {
+    "name": "서울 광진구 자양동 229-56",
+    "address": "정보 없음",
+    "district": "광진구",
+    "lat": 37.5385,
+    "lng": 127.0824
   }
 }
