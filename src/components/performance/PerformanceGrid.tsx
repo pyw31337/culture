@@ -102,22 +102,26 @@ export default function PerformanceGrid({
         width: 0,
         top: 0,
     });
+    const [canVirtualize, setCanVirtualize] = React.useState(false);
 
     React.useEffect(() => {
         if (typeof window === 'undefined') return;
 
         let frame = 0;
-        const shouldTrackScroll = items.length > VIRTUALIZATION_THRESHOLD;
+        const shouldTrackScroll = canVirtualize && items.length > VIRTUALIZATION_THRESHOLD;
         const measure = () => {
             frame = 0;
             const node = containerRef.current;
             const rect = node?.getBoundingClientRect();
+            const width = node?.clientWidth || window.innerWidth || 0;
+            const isTouchViewport = window.matchMedia?.('(hover: none), (pointer: coarse)').matches ?? false;
             const nextViewport = {
                 scrollY: window.scrollY || window.pageYOffset || 0,
                 height: window.innerHeight || 900,
-                width: node?.clientWidth || window.innerWidth || 1200,
+                width,
                 top: (rect?.top || 0) + (window.scrollY || window.pageYOffset || 0),
             };
+            setCanVirtualize(width >= VIRTUALIZATION_MIN_WIDTH && !isTouchViewport);
             const previous = lastViewportRef.current;
             const layoutChanged =
                 Math.abs(nextViewport.width - previous.width) > 2 ||
@@ -156,15 +160,15 @@ export default function PerformanceGrid({
             window.removeEventListener('resize', requestMeasure);
             resizeObserver?.disconnect();
         };
-    }, [items.length]);
+    }, [canVirtualize, items.length]);
 
     const virtualization = React.useMemo(() => {
-        const width = viewport.width || 1200;
+        const width = viewport.width;
         const columns = getColumnCount(layoutMode, width);
         const gap = getGap(width);
         const rowHeight = getEstimatedRowHeight(layoutMode, width, columns, gap);
         const rowCount = Math.ceil(items.length / columns);
-        const shouldVirtualize = width >= VIRTUALIZATION_MIN_WIDTH && items.length > VIRTUALIZATION_THRESHOLD;
+        const shouldVirtualize = canVirtualize && width >= VIRTUALIZATION_MIN_WIDTH && items.length > VIRTUALIZATION_THRESHOLD;
 
         if (!shouldVirtualize) {
             return {
@@ -192,7 +196,7 @@ export default function PerformanceGrid({
             topSpacer,
             bottomSpacer,
         };
-    }, [items.length, layoutMode, viewport.height, viewport.scrollY, viewport.top, viewport.width]);
+    }, [canVirtualize, items.length, layoutMode, viewport.height, viewport.scrollY, viewport.top, viewport.width]);
 
     const renderedItems = virtualization.shouldVirtualize
         ? items.slice(virtualization.startIndex, virtualization.endIndex)
