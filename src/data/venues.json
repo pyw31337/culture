@@ -2116,8 +2116,8 @@
     "lng": 127.00349,
     "district": "종로구",
     "facilityType": "민간(대학로)",
-    "seatScale": "0",
-    "theaterCount": "1",
+    "seatScale": "50",
+    "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
     "parking": "N",
@@ -69117,7 +69117,17 @@
     "lng": 128.6268473,
     "district": "",
     "phone": "033-670-2348",
-    "homepage": "https://www.yangyang.go.kr/gw/portal/sub03_06_02_01"
+    "homepage": "https://www.yangyang.go.kr/gw/portal/sub03_06_02_01",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "440",
+    "theaterCount": "1",
+    "openedAt": "2004",
+    "amenities": [
+      "식당"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당"
   },
   "재즈소사이어티 서울(서울브루어리 성수 5층)": {
     "name": "재즈소사이어티 서울(서울브루어리 성수 5층)",
@@ -69450,7 +69460,20 @@
     "address": "대구광역시 남구 명덕로 98 - 2",
     "lat": 35.8566254,
     "lng": 128.58077560000004,
-    "district": ""
+    "district": "",
+    "phone": "053-625-8251",
+    "homepage": "http://www.hamsesang.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "70",
+    "theaterCount": "1",
+    "openedAt": "2015",
+    "amenities": [
+      "카페",
+      "장애인 경사로"
+    ],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외) · 카페, 장애인 경사로"
   },
   "광안리 해수욕장": {
     "name": "광안리 해수욕장",
@@ -70453,10 +70476,25 @@
   },
   "논산아트센터(구. 논산문화예술회관)": {
     "name": "논산아트센터(구. 논산문화예술회관)",
-    "address": "충청남도 논산시 시민로 270",
+    "address": "충청남도 논산시 시민로 270 (내동)",
     "lat": 36.1909178,
     "lng": 127.09514979999994,
-    "district": ""
+    "district": "",
+    "phone": "041-746-5950",
+    "homepage": "https://www.nonsan.go.kr/arthall/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "729",
+    "theaterCount": "2",
+    "openedAt": "1985",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
   },
   "스페이스 아텔 (space Artel)": {
     "name": "스페이스 아텔 (space Artel)",
@@ -76883,7 +76921,22 @@
     "address": "충남 논산시 시민로 270",
     "district": "",
     "lat": 36.1909571410171,
-    "lng": 127.095159496209
+    "lng": 127.095159496209,
+    "phone": "041-746-5950",
+    "homepage": "https://www.nonsan.go.kr/arthall/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "729",
+    "theaterCount": "2",
+    "openedAt": "1985",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
   },
   "김대중컨벤션센터 다목적홀": {
     "name": "김대중컨벤션센터 다목적홀",
@@ -81430,7 +81483,17 @@
     "lat": 38.0769813735116,
     "lng": 128.62690266863,
     "phone": "033-670-2348",
-    "homepage": "https://www.yangyang.go.kr/gw/portal/sub03_06_02_01"
+    "homepage": "https://www.yangyang.go.kr/gw/portal/sub03_06_02_01",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "440",
+    "theaterCount": "1",
+    "openedAt": "2004",
+    "amenities": [
+      "식당"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당"
   },
   "춘향문화예술회관 대공연장": {
     "name": "춘향문화예술회관 대공연장",
@@ -107084,7 +107147,9 @@
   "강동아트센터 아트랑1~3": {
     "name": "강동아트센터 아트랑1~3",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5512621,
+    "lng": 127.15761910000003
   },
   "문화비축기지 T4, T5 전시장": {
     "name": "문화비축기지 T4, T5 전시장",
@@ -107899,7 +107964,9 @@
   "예스24 라이브홀": {
     "name": "예스24 라이브홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5456881,
+    "lng": 127.1079671
   },
   "시립청소년음악센터 블랙박스공연장": {
     "name": "시립청소년음악센터 블랙박스공연장",
@@ -109624,7 +109691,9 @@
   "한국소리문화의전당 전시장": {
     "name": "한국소리문화의전당 전시장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 35.855245,
+    "lng": 127.13766699999996
   },
   "광주조선대학교 종합운동장": {
     "name": "광주조선대학교 종합운동장",
@@ -111990,5 +112059,75 @@
     "district": "광진구",
     "lat": 37.5385,
     "lng": 127.0824
+  },
+  "이이남스튜디오": {
+    "name": "이이남스튜디오",
+    "address": "광주광역시 남구 제중로47번길 10 (양림동)",
+    "lat": 35.139159,
+    "lng": 126.912809,
+    "district": "",
+    "homepage": "https://www.instagram.com/leeleenamstudio",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
+  },
+  "CLUB VICTIM": {
+    "name": "CLUB VICTIM",
+    "address": "서울특별시 마포구 와우산로 53 (상수동)",
+    "lat": 37.5492543,
+    "lng": 126.9228672,
+    "district": "마포구",
+    "phone": "02-322-8487",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "쎄서미 뮤지엄": {
+    "name": "쎄서미 뮤지엄",
+    "address": "인천광역시 연수구 인천타워대로 253-25 (송도동, 아트윈 푸르지오)",
+    "lat": 37.4101014,
+    "lng": 126.6782749,
+    "district": "연수구",
+    "phone": "070-7719-0777",
+    "homepage": "https://www.sesamemuseum.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "2022",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "원데이\n                                \n                                기타(강서구/부산)": {
+    "name": "원데이\n                                \n                                기타(강서구/부산)",
+    "address": "정보 없음",
+    "district": "강서구",
+    "lat": 37.5509,
+    "lng": 126.8497
+  },
+  "서울 동작구 사당동 1031-15": {
+    "name": "서울 동작구 사당동 1031-15",
+    "address": "정보 없음",
+    "district": "동작구",
+    "lat": 37.5124,
+    "lng": 126.9393
+  },
+  "서울 성동구 성수동2가 331-8": {
+    "name": "서울 성동구 성수동2가 331-8",
+    "address": "정보 없음",
+    "district": "성동구",
+    "lat": 37.5633,
+    "lng": 127.0371
   }
 }
