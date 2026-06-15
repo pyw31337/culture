@@ -3466,7 +3466,13 @@
     "district": "송파구",
     "lat": 37.511088,
     "lng": 127.0982822,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "가산 아쿠아밸리": {
     "name": "가산 아쿠아밸리",
@@ -3522,7 +3528,13 @@
     "district": "송파구",
     "lat": 37.511088,
     "lng": 127.0982822,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "롯데월드 아쿠아리움": {
     "name": "롯데월드",
@@ -3530,7 +3542,13 @@
     "district": "송파구",
     "lat": 37.511088,
     "lng": 127.0982822,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "부천시민회관": {
     "name": "부천시민회관",
@@ -6746,7 +6764,13 @@
     "lat": 37.511088,
     "lng": 127.0982822,
     "district": "송파구",
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "서울공예박물관": {
     "name": "서울공예박물관",
@@ -14619,7 +14643,13 @@
     "district": "",
     "lat": 35.1968369,
     "lng": 129.2130858,
-    "mapped_region_id": "busan"
+    "mapped_region_id": "busan",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "부산타워": {
     "name": "부산타워",
@@ -19469,11 +19499,18 @@
   },
   "롯데월드": {
     "name": "롯데월드",
-    "address": "서울 송파구 올림픽로 240",
+    "address": "서울특별시 송파구 올림픽로 240 (잠실동)",
+    "lat": 37.5113096,
+    "lng": 127.0981418,
     "district": "송파구",
-    "lat": 37.511088,
-    "lng": 127.0982822,
-    "mapped_region_id": "seoul"
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "경기 안성시 공도읍 소신두길 52-9": {
     "name": "경기 안성시 공도읍 소신두길 52-9",
@@ -111746,7 +111783,9 @@
   "롯데월드 민속박물관 놀이마당": {
     "name": "롯데월드 민속박물관 놀이마당",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5113096,
+    "lng": 127.0981418
   },
   "꿈의숲_상상톡톡미술관": {
     "name": "꿈의숲_상상톡톡미술관",
@@ -112129,5 +112168,27 @@
     "district": "성동구",
     "lat": 37.5633,
     "lng": 127.0371
+  },
+  "한강난지공원": {
+    "name": "한강난지공원",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "하이비치 워터파크": {
+    "name": "하이비치 워터파크",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "스페이스": {
+    "name": "스페이스",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울 용산구 남영동 25-2": {
+    "name": "서울 용산구 남영동 25-2",
+    "address": "정보 없음",
+    "district": "용산구",
+    "lat": 37.5323,
+    "lng": 126.9906
   }
 }

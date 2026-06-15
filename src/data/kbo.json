@@ -18614,5 +18614,61 @@
     "awayTeam": "한화1",
     "homeTeamLogo": "",
     "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260614_한화2_vs_3키움",
+    "title": "한화2 vs 3키움",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-06-14 14:00",
+    "venue": "고척스카이돔",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "seoul",
+    "genre": "baseball",
+    "homeTeam": "3키움",
+    "awayTeam": "한화2",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260614_롯데1_vs_6LG",
+    "title": "롯데1 vs 6LG",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-06-14 17:00",
+    "venue": "잠실종합운동장잠실야구장",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "seoul",
+    "genre": "baseball",
+    "homeTeam": "6LG",
+    "awayTeam": "롯데1",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260614_SSG8_vs_10삼성",
+    "title": "SSG8 vs 10삼성",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-06-14 17:00",
+    "venue": "대구삼성라이온즈파크",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "daegu",
+    "genre": "baseball",
+    "homeTeam": "10삼성",
+    "awayTeam": "SSG8",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260614_두산8_vs_1KIA",
+    "title": "두산8 vs 1KIA",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-06-14 17:00",
+    "venue": "광주기아챔피언스필드",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "gwangju",
+    "genre": "baseball",
+    "homeTeam": "1KIA",
+    "awayTeam": "두산8",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]
