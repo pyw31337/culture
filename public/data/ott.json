@@ -27,7 +27,7 @@
   {
     "title": "나는 SOLO <나는 솔로>",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=18896551&qvt=0&query=%EB%82%98%EB%8A%94%20%EC%86%94%EB%A1%9C",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250507_55%2F1746626455383LlD44_JPEG%2F3f92dd269906cd477588dcf236a43c9e.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "coupang",
     "type": "추천",
     "source": "naver",
@@ -43,7 +43,8 @@
       "데프콘",
       "송해나",
       "이이경"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250507_55%2F1746626455383LlD44_JPEG%2F3f92dd269906cd477588dcf236a43c9e.jpg"
   },
   {
     "title": "야구여왕",
@@ -375,7 +376,7 @@
   {
     "title": "안나 (ANNA)",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=25960602&qvt=0&query=%EC%95%88%EB%82%98",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220614_243%2F16551650723299uM2q_JPEG%2F9870a3bf0f5a62824ff42d679a2636b0.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "coupang",
     "type": "오리지널",
     "source": "naver",
@@ -391,7 +392,8 @@
       "정은채",
       "김준한",
       "박예영"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220614_243%2F16551650723299uM2q_JPEG%2F9870a3bf0f5a62824ff42d679a2636b0.jpg"
   },
   {
     "title": "소년시대",
@@ -446,7 +448,7 @@
   {
     "title": "하이드",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=32255914&qvt=0&query=%ED%95%98%EC%9D%B4%EB%93%9C",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20240229_182%2F1709168847105IzrvC_JPEG%2F7d94bb1eab904009b3bc0524ecfc043a.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "coupang",
     "type": "오리지널",
     "source": "naver",
@@ -466,12 +468,13 @@
       "박명희",
       "백민엽",
       "주신화"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20240229_182%2F1709168847105IzrvC_JPEG%2F7d94bb1eab904009b3bc0524ecfc043a.jpg"
   },
   {
     "title": "사랑 후에 오는 것들",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=32851568&qvt=0&query=%EC%82%AC%EB%9E%91%20%ED%9B%84%EC%97%90%20%EC%98%A4%EB%8A%94%20%EA%B2%83%EB%93%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20240910_253%2F17259328922127TXX2_JPEG%2F9154f03a07566f9f6c9fec21fed49ca4.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "coupang",
     "type": "오리지널",
     "source": "naver",
@@ -491,7 +494,8 @@
       "최 한",
       "이영숙",
       "최 록"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20240910_253%2F17259328922127TXX2_JPEG%2F9154f03a07566f9f6c9fec21fed49ca4.jpg"
   },
   {
     "title": "사내연애",
@@ -665,7 +669,7 @@
   {
     "title": "솔로지옥 시즌5",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=36481338&qvt=0&query=%EC%86%94%EB%A1%9C%EC%A7%80%EC%98%A5%20%EC%8B%9C%EC%A6%8C5",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260131_283%2F1769829379195e0y3i_JPEG%2Fac93ebf4371e0fcc34330ad20ab8a2f5.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "netflix",
     "type": "추천",
     "source": "naver",
@@ -682,7 +686,8 @@
       "한해",
       "규현",
       "덱스"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260131_283%2F1769829379195e0y3i_JPEG%2Fac93ebf4371e0fcc34330ad20ab8a2f5.jpg"
   },
   {
     "title": "쿵푸팬더3",
@@ -754,7 +759,7 @@
   {
     "title": "순수 박물관",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40578185&qvt=0&query=%EC%88%9C%EC%88%98%20%EB%B0%95%EB%AC%BC%EA%B4%80",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABdHX3kQRYm9v7mfF_FXgGrsTGiGRF8urrQ-_qdJyCZHdiIJOm2nnvbz0qgIkF6mdyUvRvKLORsj--pUUdt7A5KBQVl07X5hyIQQGaBBkgHLIYrK63cZ56g_TNQ5JqDog4mV0Hw.jpg%3Fr%3Deb7",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "netflix",
     "type": "신작",
     "source": "naver",
@@ -764,7 +769,8 @@
     ],
     "date": "2026.02.13",
     "genre": "ott",
-    "description": "전시 > 서울 전시"
+    "description": "전시 > 서울 전시",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fdnm.nflximg.net%2Fapi%2Fv6%2FOXOysnqzq1gUn-x48CWxvRjH7rk%2FAAAABdHX3kQRYm9v7mfF_FXgGrsTGiGRF8urrQ-_qdJyCZHdiIJOm2nnvbz0qgIkF6mdyUvRvKLORsj--pUUdt7A5KBQVl07X5hyIQQGaBBkgHLIYrK63cZ56g_TNQ5JqDog4mV0Hw.jpg%3Fr%3Deb7"
   },
   {
     "title": "사랑하기 때문에",
@@ -962,7 +968,7 @@
   {
     "title": "브리저튼 시즌4",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40554730&qvt=0&query=%EB%B8%8C%EB%A6%AC%EC%A0%80%ED%8A%BC%20%EC%8B%9C%EC%A6%8C4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260206_93%2F1770345639437S6xTf_JPEG%2F882cb633f3d58a3da4e049c82a63df85.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "netflix",
     "type": "오리지널",
     "source": "naver",
@@ -976,7 +982,8 @@
     "cast": [
       "루크 톰슨",
       "하예린"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260206_93%2F1770345639437S6xTf_JPEG%2F882cb633f3d58a3da4e049c82a63df85.jpg"
   },
   {
     "title": "폭싹 속았수다",
@@ -1284,7 +1291,7 @@
   {
     "title": "더 뷰티",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=40537203&qvt=0&query=%EB%8D%94%20%EB%B7%B0%ED%8B%B0",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260122_113%2F17690626039926VhCQ_JPEG%2F74cda6be7bd27dd79d0111571eed0651.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "disney",
     "type": "신작",
     "source": "naver",
@@ -1303,12 +1310,13 @@
       "벨라 하디드",
       "레베카 홀",
       "이사벨라 로셀리니"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260122_113%2F17690626039926VhCQ_JPEG%2F74cda6be7bd27dd79d0111571eed0651.jpg"
   },
   {
     "title": "폭군",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=33694191&qvt=0&query=%ED%8F%AD%EA%B5%B0",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241015_49%2F1728974624167mPAK5_JPEG%2F882094a6066840fcedb15299f8f9b943.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "disney",
     "type": "오리지널",
     "source": "naver",
@@ -1324,12 +1332,13 @@
       "김선호",
       "김강우",
       "조윤수"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241015_49%2F1728974624167mPAK5_JPEG%2F882094a6066840fcedb15299f8f9b943.jpg"
   },
   {
     "title": "비질란테 (Vigilante)",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=31313141&qvt=0&query=%EB%B9%84%EC%A7%88%EB%9E%80%ED%85%8C",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20231026_73%2F1698278933675pl8FD_JPEG%2F3a6918e522644db985e368f283e7bd8d.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "disney",
     "type": "오리지널",
     "source": "naver",
@@ -1345,7 +1354,8 @@
       "유지태",
       "이준혁",
       "김소진"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20231026_73%2F1698278933675pl8FD_JPEG%2F3a6918e522644db985e368f283e7bd8d.jpg"
   },
   {
     "title": "조각도시",
@@ -1539,7 +1549,7 @@
   {
     "title": "리 밀러: 카메라를 든 여자",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=32059241&qvt=0&query=%EB%A6%AC%20%EB%B0%80%EB%9F%AC%20%EC%B9%B4%EB%A9%94%EB%9D%BC%EB%A5%BC%20%EB%93%A0%20%EC%97%AC%EC%9E%90",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250829_53%2F1756436930335U06FG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "tving",
     "type": "신작",
     "source": "naver",
@@ -1558,12 +1568,13 @@
       "안드레아 라이즈보로",
       "조쉬 오코너"
     ],
-    "director": "엘렌 쿠라스"
+    "director": "엘렌 쿠라스",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20250829_53%2F1756436930335U06FG_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2"
   },
   {
     "title": "배틀 어스",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=1840505&qvt=0&query=%EB%B0%B0%ED%8B%80%EC%96%B4%EC%8A%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20130506_116%2F1367820457707ijHWq_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "tving",
     "type": "신작",
     "source": "naver",
@@ -1572,12 +1583,13 @@
       "tving"
     ],
     "genre": "ott",
-    "description": "영화"
+    "description": "영화",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20130506_116%2F1367820457707ijHWq_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2"
   },
   {
     "title": "잠입: 클라라와 도둑들",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bkEw&pkid=68&os=40326049&qvt=0&query=%EC%9E%A0%EC%9E%85%20%ED%81%B4%EB%9D%BC%EB%9D%BC%EC%99%80%20%EB%8F%84%EB%91%91%EB%93%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251118_126%2F1763432812777OtAM4_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "tving",
     "type": "신작",
     "source": "naver",
@@ -1586,7 +1598,8 @@
       "tving"
     ],
     "genre": "ott",
-    "description": "영화"
+    "description": "영화",
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fs.pstatic.net%2Fmovie.phinf%2F20251118_126%2F1763432812777OtAM4_JPEG%2Fmovie_image.jpg%3Ftype%3Dw640_2"
   },
   {
     "title": "미혼남녀의 효율적 만남",
@@ -1615,7 +1628,7 @@
   {
     "title": "히든에이지: 시간도둑을 찾아라",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=40733901&qvt=0&query=%ED%9E%88%EB%93%A0%EC%97%90%EC%9D%B4%EC%A7%80%20%EC%8B%9C%EA%B0%84%EB%8F%84%EB%91%91%EC%9D%84%20%EC%B0%BE%EC%95%84%EB%9D%BC",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260209_60%2F1770614532992D7Hth_JPEG%2F7e838433216effd0751647cc3535c462.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "tving",
     "type": "신작",
     "source": "naver",
@@ -1628,7 +1641,8 @@
     "cast": [
       "유인나",
       "엄지윤"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20260209_60%2F1770614532992D7Hth_JPEG%2F7e838433216effd0751647cc3535c462.jpg"
   },
   {
     "title": "망내인: 얼굴 없는 살인자들",
@@ -1775,7 +1789,7 @@
   {
     "title": "원경",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=36216974&qvt=0&query=%EC%9B%90%EA%B2%BD",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241218_234%2F1734481601487r2Cu2_JPEG%2F4dd0a255dad78bfc832b6453af4e685d.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "tving",
     "type": "오리지널",
     "source": "naver",
@@ -1795,12 +1809,13 @@
       "박용우",
       "한승원",
       "김우담"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241218_234%2F1734481601487r2Cu2_JPEG%2F4dd0a255dad78bfc832b6453af4e685d.jpg"
   },
   {
     "title": "스터디그룹",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=36250564&qvt=0&query=%EC%8A%A4%ED%84%B0%EB%94%94%EA%B7%B8%EB%A3%B9",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250106_197%2F1736126451286jjCRY_JPEG%2Fa166068b2b594a5dd10fae2d89751cff.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "tving",
     "type": "오리지널",
     "source": "naver",
@@ -1819,7 +1834,8 @@
       "이지우",
       "최희원",
       "이준"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250106_197%2F1736126451286jjCRY_JPEG%2Fa166068b2b594a5dd10fae2d89751cff.jpg"
   },
   {
     "title": "이재, 곧 죽습니다",
@@ -1918,26 +1934,28 @@
   {
     "title": "ONE : 하이스쿨 히어로즈",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=36860835&qvt=0&query=%EC%9B%90%20%ED%95%98%EC%9D%B4%EC%8A%A4%EC%BF%A8%20%ED%9E%88%EC%96%B4%EB%A1%9C%EC%A6%88",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250529_195%2F1748499454292Rk026_JPEG%2F140b5bd24db019d7d365657d254b227c.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "wavve",
     "type": "오리지널",
     "source": "naver",
     "id": "ott_naver_ONE:하이스쿨히어로즈",
     "platforms": [
       "wavve"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250529_195%2F1748499454292Rk026_JPEG%2F140b5bd24db019d7d365657d254b227c.jpg"
   },
   {
     "title": "S라인",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=blFB&pkid=356&os=37136402&qvt=0&query=S%EB%9D%BC%EC%9D%B8",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250624_194%2F1750772060019gf1rk_JPEG%2Fb52210ad96aa5603a2177dcdcbbf117a.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "wavve",
     "type": "오리지널",
     "source": "naver",
     "id": "ott_naver_S라인",
     "platforms": [
       "wavve"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20250624_194%2F1750772060019gf1rk_JPEG%2Fb52210ad96aa5603a2177dcdcbbf117a.jpg"
   },
   {
     "title": "모범택시",
@@ -1966,43 +1984,46 @@
   {
     "title": "오월의 청춘",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=17407874&qvt=0&query=%EC%98%A4%EC%9B%94%EC%9D%98%20%EC%B2%AD%EC%B6%98",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20210420_30%2F1618887227640A1ip1_JPEG%2F57_17407874_poster_image_1618887227574.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "wavve",
     "type": "오리지널",
     "source": "naver",
     "id": "ott_naver_오월의청춘",
     "platforms": [
       "wavve"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20210420_30%2F1618887227640A1ip1_JPEG%2F57_17407874_poster_image_1618887227574.jpg"
   },
   {
     "title": "펜트하우스",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=26046712&qvt=0&query=%ED%8E%9C%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220603_21%2F1654249496456BsOhT_JPEG%2F56a84ade6111b1e3c147d9a15817bfdc.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "wavve",
     "type": "오리지널",
     "source": "naver",
     "id": "ott_naver_펜트하우스",
     "platforms": [
       "wavve"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220603_21%2F1654249496456BsOhT_JPEG%2F56a84ade6111b1e3c147d9a15817bfdc.jpg"
   },
   {
     "title": "악의 마음을 읽는 자들",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=18859553&qvt=0&query=%EC%95%85%EC%9D%98%20%EB%A7%88%EC%9D%8C%EC%9D%84%20%EC%9D%BD%EB%8A%94%20%EC%9E%90%EB%93%A4",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20211228_271%2F1640677752442DId0r_JPEG%2Fecdd68b10a78e253ff895d13036d3f9a.jpg",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "wavve",
     "type": "오리지널",
     "source": "naver",
     "id": "ott_naver_악의마음을읽는자들",
     "platforms": [
       "wavve"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20211228_271%2F1640677752442DId0r_JPEG%2Fecdd68b10a78e253ff895d13036d3f9a.jpg"
   },
   {
     "title": "페이스미",
     "link": "https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjkw&pkid=57&os=35253531&qvt=0&query=%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%AF%B8",
-    "poster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241010_206%2F1728518279541JLReY_PNG%2F488e19a261fec5804f509a39633fee33.png",
+    "poster": "/images/fallbacks/exhibition.jpg",
     "platform": "wavve",
     "type": "오리지널",
     "source": "naver",
@@ -2021,6 +2042,7 @@
       "박채경",
       "윤서희",
       "이진석"
-    ]
+    ],
+    "backupPoster": "https://search.pstatic.net/common?type=o&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20241010_206%2F1728518279541JLReY_PNG%2F488e19a261fec5804f509a39633fee33.png"
   }
 ]

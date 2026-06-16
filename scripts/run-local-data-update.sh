@@ -340,7 +340,7 @@ npx tsx scripts/validate-data-integrity.ts
 npx tsx scripts/prune-expired-data.ts
 npx tsx scripts/prune-data.ts
 npm run generate-data
-npm run cache:posters
+POSTER_CACHE_INCLUDE_ALL_REMOTE=1 POSTER_CACHE_MAX_NEW_DOWNLOADS=8000 npm run cache:posters
 npm run generate:thumbs
 npm run validate:content
 npm run validate:locations

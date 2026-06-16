@@ -335,7 +335,8 @@ jobs:
       - name: Stabilize Poster Image Cache
         if: steps.freshness.outputs.should_run == 'true'
         env:
-          POSTER_CACHE_MAX_NEW_DOWNLOADS: '450'
+          POSTER_CACHE_MAX_NEW_DOWNLOADS: '2500'
+          POSTER_CACHE_INCLUDE_ALL_REMOTE: '1'
           POSTER_CACHE_CONCURRENCY: '6'
         run: |
           npm run cache:posters

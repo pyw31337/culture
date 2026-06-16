@@ -28,6 +28,7 @@ const MAX_NEW_DOWNLOADS = Number(process.env.POSTER_CACHE_MAX_NEW_DOWNLOADS || '
 const CONCURRENCY = Number(process.env.POSTER_CACHE_CONCURRENCY || '8');
 const HOME_VISIBLE_COUNT = Number(process.env.POSTER_CACHE_HOME_VISIBLE_COUNT || '260');
 const PAGE_ONE_VISIBLE_COUNT = Number(process.env.POSTER_CACHE_PAGE_ONE_VISIBLE_COUNT || '360');
+const INCLUDE_ALL_REMOTE = process.env.POSTER_CACHE_INCLUDE_ALL_REMOTE === '1';
 
 const HIGH_RISK_HOSTS = new Set([
   'kopis.or.kr',
@@ -212,7 +213,7 @@ function collectCandidates(visibleIds: Map<string, number>) {
     walk(data, (item) => {
       const id = safeString(item.id);
       if (!id) return;
-      const imageUrl = normalizeRemoteUrl(safeString(item.image) || safeString(item.posterUrl));
+      const imageUrl = normalizeRemoteUrl(safeString(item.image) || safeString(item.poster) || safeString(item.posterUrl));
       if (!isRemoteUrl(imageUrl)) return;
 
       const title = safeString(item.title, id);
@@ -226,7 +227,7 @@ function collectCandidates(visibleIds: Map<string, number>) {
       const existing = cachePathFor({ id, title, genre, source, imageUrl });
       const alreadyCached = fs.existsSync(existing.abs);
 
-      if (!highRisk && !visible && !alreadyCached) return;
+      if (!INCLUDE_ALL_REMOTE && !highRisk && !visible && !alreadyCached) return;
 
       const priority = alreadyCached ? 0 : visible ? 1 : highRisk ? 2 : 3;
       const rank = visibleRank ?? Number.MAX_SAFE_INTEGER;
@@ -294,6 +295,11 @@ function applyLocalPosterToObject(object: JsonObject, originalRemote: string, lo
     object.image = localUrl;
     return true;
   }
+  if (!safeString(object.image) && isRemoteUrl(object.poster)) {
+    object.backupPoster = safeString(object.backupPoster) || object.poster;
+    object.poster = localUrl;
+    return true;
+  }
   if (safeString(object.image) === originalRemote) {
     object.image = localUrl;
     return true;
@@ -306,6 +312,11 @@ function applyFallbackToObject(object: JsonObject, originalRemote: string, fallb
     object.backupPoster = safeString(object.backupPoster) || object.image;
     object.posterUrl = safeString(object.posterUrl) || object.image;
     object.image = fallbackUrl;
+    return true;
+  }
+  if (isRemoteUrl(object.poster) && normalizeRemoteUrl(object.poster) === originalRemote) {
+    object.backupPoster = safeString(object.backupPoster) || object.poster;
+    object.poster = fallbackUrl;
     return true;
   }
   return false;
@@ -325,7 +336,7 @@ function rewritePublicData(resultByKey: Map<string, { originalRemote: string; lo
 
     walk(data, (object) => {
       const id = safeString(object.id);
-      const imageUrl = normalizeRemoteUrl(safeString(object.image) || safeString(object.posterUrl));
+      const imageUrl = normalizeRemoteUrl(safeString(object.image) || safeString(object.poster) || safeString(object.posterUrl));
       const result = id && isRemoteUrl(imageUrl) ? resultByKey.get(candidateKey(id, imageUrl)) : undefined;
       if (!result) return;
       if (result.localUrl && applyLocalPosterToObject(object, result.originalRemote, result.localUrl)) {
@@ -380,7 +391,7 @@ async function main() {
     }
     failed += 1;
     const host = getHost(candidate.imageUrl);
-    if (HIGH_RISK_HOSTS.has(host) || visibleIds.has(candidate.id)) {
+    if (INCLUDE_ALL_REMOTE || HIGH_RISK_HOSTS.has(host) || visibleIds.has(candidate.id)) {
       resultByKey.set(candidate.key, {
         originalRemote: candidate.imageUrl,
         fallbackUrl: fallbackForGenre(candidate.genre),
