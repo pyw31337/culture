@@ -161,6 +161,7 @@ export default function CalendarView({
         initialPerformances,
         performanceLoadPolicy: 'full',
         performanceDataPath: '/data/calendar-items.json',
+        dataVersion: buildInfo?.version,
         backgroundLoadPriority: 'immediate',
         loadVenues: true,
     });

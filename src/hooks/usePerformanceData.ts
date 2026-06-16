@@ -9,6 +9,7 @@ interface UsePerformanceDataProps {
     initialPerformances: Performance[];
     performanceLoadPolicy?: PerformanceLoadPolicy;
     performanceDataPath?: string;
+    dataVersion?: string | null;
     backgroundLoadPriority?: BackgroundLoadPriority;
     loadCinemas?: boolean;
     loadVenues?: boolean;
@@ -44,6 +45,13 @@ async function fetchJson<T>(path: string, fallback: T): Promise<T> {
 function getCachedPerformances(path: string) {
     if (path === '/data/performances.json' && performancesCache) return performancesCache;
     return performancesCacheByPath.get(path) || null;
+}
+
+function buildVersionedDataPath(path: string, dataVersion?: string | null) {
+    if (!dataVersion) return path;
+    if (!path.startsWith('/data/')) return path;
+    const separator = path.includes('?') ? '&' : '?';
+    return `${path}${separator}v=${encodeURIComponent(dataVersion)}`;
 }
 
 function waitForBrowserIdle() {
@@ -199,13 +207,18 @@ export function usePerformanceData({
     initialPerformances,
     performanceLoadPolicy = 'full',
     performanceDataPath = '/data/performances.json',
+    dataVersion,
     backgroundLoadPriority = 'deferred',
     loadCinemas: shouldLoadCinemas = false,
     loadVenues: shouldLoadVenues = false,
 }: UsePerformanceDataProps) {
+    const effectivePerformanceDataPath = useMemo(
+        () => buildVersionedDataPath(performanceDataPath, dataVersion),
+        [dataVersion, performanceDataPath]
+    );
     const isPagedMode = performanceLoadPolicy === 'paged' && performanceDataPath.endsWith('/manifest.json');
     const [allPerformances, setAllPerformances] = useState<Performance[]>(() => {
-        const cachedPerformances = getCachedPerformances(performanceDataPath);
+        const cachedPerformances = getCachedPerformances(effectivePerformanceDataPath);
         if (performanceLoadPolicy === 'full' && cachedPerformances) {
             return cachedPerformances;
         }
@@ -213,13 +226,13 @@ export function usePerformanceData({
     });
     const [cinemas, setCinemas] = useState<CinemaData[]>(() => shouldLoadCinemas && cinemasCache ? cinemasCache : []);
     const [venues, setVenues] = useState<Record<string, VenueData>>(() => shouldLoadVenues && venuesCache ? venuesCache : {});
-    const [pagedManifest, setPagedManifest] = useState<PerformancePageManifest | null>(() => manifestCacheByPath.get(performanceDataPath) || null);
+    const [pagedManifest, setPagedManifest] = useState<PerformancePageManifest | null>(() => manifestCacheByPath.get(effectivePerformanceDataPath) || null);
     const [loadedPageCount, setLoadedPageCount] = useState(0);
     const [isPerformancePageLoading, setIsPerformancePageLoading] = useState(false);
     const pageLoadCursorRef = useRef(0);
     const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(() => {
         if (isPagedMode) return true;
-        const performancesReady = performanceLoadPolicy !== 'full' || Boolean(getCachedPerformances(performanceDataPath));
+        const performancesReady = performanceLoadPolicy !== 'full' || Boolean(getCachedPerformances(effectivePerformanceDataPath));
         const cinemasReady = !shouldLoadCinemas || Boolean(cinemasCache);
         const venuesReady = !shouldLoadVenues || Boolean(venuesCache);
         return performancesReady && cinemasReady && venuesReady;
@@ -228,7 +241,7 @@ export function usePerformanceData({
     useEffect(() => {
         if (!isPagedMode) return;
         let isCancelled = false;
-        getManifest(performanceDataPath)
+        getManifest(effectivePerformanceDataPath)
             .then((manifest) => {
                 if (isCancelled) return;
                 setPagedManifest(manifest);
@@ -249,11 +262,11 @@ export function usePerformanceData({
         return () => {
             isCancelled = true;
         };
-    }, [isPagedMode, performanceDataPath]);
+    }, [effectivePerformanceDataPath, isPagedMode]);
 
     const loadNextPerformancePage = useCallback(async () => {
         if (!isPagedMode || isPerformancePageLoading) return;
-        const manifest = pagedManifest || await getManifest(performanceDataPath);
+        const manifest = pagedManifest || await getManifest(effectivePerformanceDataPath);
         setPagedManifest(manifest);
 
         const pagePath = manifest.pages[pageLoadCursorRef.current];
@@ -272,14 +285,14 @@ export function usePerformanceData({
         } finally {
             setIsPerformancePageLoading(false);
         }
-    }, [isPagedMode, isPerformancePageLoading, pagedManifest, performanceDataPath]);
+    }, [effectivePerformanceDataPath, isPagedMode, isPerformancePageLoading, pagedManifest]);
 
     useEffect(() => {
         let isCancelled = false;
 
         const loadRequestedData = async () => {
             const requiresColdLoad =
-                (!isPagedMode && performanceLoadPolicy === 'full' && !getCachedPerformances(performanceDataPath)) ||
+                (!isPagedMode && performanceLoadPolicy === 'full' && !getCachedPerformances(effectivePerformanceDataPath)) ||
                 (shouldLoadCinemas && !cinemasCache) ||
                 (shouldLoadVenues && !venuesCache);
 
@@ -300,7 +313,7 @@ export function usePerformanceData({
                     : undefined;
 
                 tasks.push(
-                    loadPerformances(performanceDataPath, handleProgress)
+                    loadPerformances(effectivePerformanceDataPath, handleProgress)
                         .then((data) => {
                             if (isCancelled || data.length === 0) return;
                             startTransition(() => {
@@ -372,7 +385,7 @@ export function usePerformanceData({
             isCancelled = true;
             cancelDeferredLoad();
         };
-    }, [backgroundLoadPriority, initialPerformances.length, isPagedMode, performanceDataPath, performanceLoadPolicy, shouldLoadCinemas, shouldLoadVenues]);
+    }, [backgroundLoadPriority, effectivePerformanceDataPath, initialPerformances.length, isPagedMode, performanceDataPath, performanceLoadPolicy, shouldLoadCinemas, shouldLoadVenues]);
 
     const hasMorePerformancePages = useMemo(() => {
         if (!isPagedMode) return false;
