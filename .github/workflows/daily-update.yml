@@ -332,6 +332,15 @@ jobs:
         if: steps.freshness.outputs.should_run == 'true'
         run: npm run generate-data
 
+      - name: Stabilize Poster Image Cache
+        if: steps.freshness.outputs.should_run == 'true'
+        env:
+          POSTER_CACHE_MAX_NEW_DOWNLOADS: '450'
+          POSTER_CACHE_CONCURRENCY: '6'
+        run: |
+          npm run cache:posters
+          npm run generate:thumbs
+
       - name: Validate Content Quality
         if: steps.freshness.outputs.should_run == 'true'
         run: npm run validate:content
@@ -354,6 +363,7 @@ jobs:
           git add public/data
           git add public/version.txt
           git add public/images/posters
+          git add public/images/thumbs
 
           if git diff --quiet && git diff --staged --quiet; then
             echo "data_changed=false" >> "$GITHUB_OUTPUT"

@@ -340,11 +340,13 @@ npx tsx scripts/validate-data-integrity.ts
 npx tsx scripts/prune-expired-data.ts
 npx tsx scripts/prune-data.ts
 npm run generate-data
+npm run cache:posters
+npm run generate:thumbs
 npm run validate:content
 npm run validate:locations
 npm run validate:display
 
-git add src/data public/data public/version.txt public/images/posters
+git add src/data public/data public/version.txt public/images/posters public/images/thumbs
 
 if git diff --quiet && git diff --staged --quiet; then
   echo "[local-update] no data changes to commit"

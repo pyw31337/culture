@@ -7,7 +7,7 @@
     "generate-data": "npx tsx scripts/generate-performance-json.ts",
     "generate:thumbs": "node scripts/generate-local-thumbnails.mjs",
     "build:site": "next build --webpack",
-    "build": "npm run generate-data && npm run validate:content && npm run validate:locations && npm run validate:display && npm run audit:stability && next build --webpack",
+    "build": "npm run generate-data && npm run cache:posters && npm run generate:thumbs && npm run validate:content && npm run validate:locations && npm run validate:display && npm run audit:stability && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "scrape:movies": "npx tsx scripts/scrape-movies.ts",
@@ -34,7 +34,8 @@
     "local:update-data": "scripts/run-local-data-update.sh",
     "local:check-update-status": "scripts/check-local-data-update-status.sh",
     "local:install-scheduler": "scripts/install-local-data-update.sh",
-    "audit:map-navigation": "npx tsx scripts/audit-map-navigation.ts"
+    "audit:map-navigation": "npx tsx scripts/audit-map-navigation.ts",
+    "cache:posters": "npx tsx scripts/cache-remote-posters.ts"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",
