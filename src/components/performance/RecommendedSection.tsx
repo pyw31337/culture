@@ -1,13 +1,14 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Sparkles, ChevronLeft, ChevronRight, Share2 } from 'lucide-react';
 import ImageWithFallback from '../ImageWithFallback';
-import { FUTURES_TEAM_LOGOS, GENRES } from '@/lib/constants';
+import { GENRES } from '@/lib/constants';
 import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { cleanTitle } from '@/lib/utils';
 import { getGenreIcon } from '../GenreIcons';
 import { useUserActivity } from '@/hooks/useUserActivity';
 import { clsx } from 'clsx';
 import SectionInfoPopover from './SectionInfoPopover';
+import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
 
 const EMPTY_VENUES: Record<string, never> = {};
 
@@ -272,7 +273,7 @@ export default function RecommendedSection({
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90" />
 
                                     {/* VS Badge for Sports */}
-                                    {['volleyball', 'basketball', 'baseball', 'handball'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                    {shouldShowSportsTeamLogoOverlay(perf) && (
                                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-20 pointer-events-none">
                                             {/* Background Decorative Icon */}
                                             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.1] text-white pointer-events-none z-[-1]">
@@ -281,9 +282,9 @@ export default function RecommendedSection({
                                                     null}
                                             </div>
 
-                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo} alt={perf.homeTeam} className="w-12 h-12 object-contain" />
+                                            <img src={getSportsTeamLogo(perf, 'home')} alt={perf.homeTeam} className="w-12 h-12 object-contain" />
                                             <span className="text-white/80 font-black text-sm italic bg-black/40 px-1.5 rounded border border-white/10">VS</span>
-                                            <img src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo} alt={perf.awayTeam} className="w-12 h-12 object-contain" />
+                                            <img src={getSportsTeamLogo(perf, 'away')} alt={perf.awayTeam} className="w-12 h-12 object-contain" />
                                         </div>
                                     )}
 

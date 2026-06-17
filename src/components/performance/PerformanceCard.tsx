@@ -3,12 +3,12 @@ import React, { useState, useMemo, memo } from 'react';
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Share2 } from 'lucide-react';
 import BuildingStadium from '../BuildingStadium';
-import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
-import { getGenreIcon } from '../GenreIcons';
 import { getDdayLabel } from '@/lib/dday';
 import { getSportsTicketBaySummary } from '@/lib/sports-ticketing';
+import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
 import RecommendationReasonChips from './RecommendationReasonChips';
 
 interface PerformanceCardProps {
@@ -189,16 +189,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-[1]" />
                                 </div>
 
-                                {['volleyball', 'basketball', 'baseball', 'handball'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                                {shouldShowSportsTeamLogoOverlay(perf) && (
                                     <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none">
                                         <img
-                                            src={FUTURES_TEAM_LOGOS[perf.homeTeam] || perf.homeTeamLogo}
+                                            src={getSportsTeamLogo(perf, 'home')}
                                             alt={perf.homeTeam}
                                             className="w-[30%] max-w-[64px] aspect-square object-contain"
                                         />
                                         <div className="text-white/90 font-black text-[10px] italic bg-black/50 px-1.5 py-0.5 rounded-full border border-white/10">VS</div>
                                         <img
-                                            src={FUTURES_TEAM_LOGOS[perf.awayTeam] || perf.awayTeamLogo}
+                                            src={getSportsTeamLogo(perf, 'away')}
                                             alt={perf.awayTeam}
                                             className="w-[30%] max-w-[64px] aspect-square object-contain"
                                         />
@@ -292,16 +292,16 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-[1]" />
 
-                            {['volleyball', 'basketball', 'baseball', 'handball'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                            {shouldShowSportsTeamLogoOverlay(perf) && (
                                 <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none">
                                     <img
-                                        src={FUTURES_TEAM_LOGOS[perf.homeTeam] || perf.homeTeamLogo}
+                                        src={getSportsTeamLogo(perf, 'home')}
                                         alt={perf.homeTeam}
                                         className="w-[35%] max-w-[96px] aspect-square object-contain"
                                     />
                                     <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/50 px-2 py-0.5 rounded-full border border-white/10">VS</div>
                                     <img
-                                        src={FUTURES_TEAM_LOGOS[perf.awayTeam] || perf.awayTeamLogo}
+                                        src={getSportsTeamLogo(perf, 'away')}
                                         alt={perf.awayTeam}
                                         className="w-[35%] max-w-[96px] aspect-square object-contain"
                                     />

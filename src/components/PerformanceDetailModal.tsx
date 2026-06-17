@@ -6,6 +6,7 @@ import ImageWithFallback from './ImageWithFallback';
 import { getOptimizedUrl, getDistrictFromAddress } from '@/lib/utils';
 import Image from 'next/image';
 import Portal from './ui/Portal';
+import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
 
 interface PerformanceDetailModalProps {
     performance: Performance;
@@ -114,19 +115,19 @@ export default function PerformanceDetailModal({ performance, isOpen, onClose, o
                                             fill
                                             className="object-cover"
                                         />
-                                        {/* Volleyball/Basketball/Baseball/Handball/Hockey Team Logos Overlay */}
-                                        {['volleyball', 'basketball', 'baseball', 'handball'].includes(performance.genre) && performance.homeTeamLogo && performance.awayTeamLogo && (
+                                        {/* Sports Team Logos Overlay */}
+                                        {shouldShowSportsTeamLogoOverlay(performance) && (
                                             <div className="absolute inset-x-0 top-0 pt-6 px-4 flex justify-between items-start z-20">
                                                 <div className="flex flex-col items-center gap-1">
                                                     <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
-                                                        <img src={performance.homeTeamLogo} alt={performance.homeTeam} className="w-full h-full object-contain" />
+                                                        <img src={getSportsTeamLogo(performance, 'home')} alt={performance.homeTeam} className="w-full h-full object-contain" />
                                                     </div>
                                                     <span className="text-white font-extrabold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.homeTeam}</span>
                                                 </div>
                                                 <div className="mt-8 text-white/90 font-black text-2xl italic bg-black/30 px-4 py-1 rounded-full backdrop-blur-[1px]">VS</div>
                                                 <div className="flex flex-col items-center gap-1">
                                                     <div className="w-24 h-24 bg-white/90 rounded-full p-2 shadow-lg backdrop-blur-sm">
-                                                        <img src={performance.awayTeamLogo} alt={performance.awayTeam} className="w-full h-full object-contain" />
+                                                        <img src={getSportsTeamLogo(performance, 'away')} alt={performance.awayTeam} className="w-full h-full object-contain" />
                                                     </div>
                                                     <span className="text-white font-extrabold drop-shadow-md bg-black/50 px-2 rounded-full text-sm">{performance.awayTeam}</span>
                                                 </div>

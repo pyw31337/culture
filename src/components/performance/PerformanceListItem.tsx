@@ -2,13 +2,14 @@
 import React, { useState, useMemo, useCallback, memo } from 'react';
 import { clsx } from 'clsx';
 import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from 'lucide-react';
-import { GENRES, GENRE_STYLES, FUTURES_TEAM_LOGOS } from '@/lib/constants';
+import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getGenreIcon } from '../GenreIcons';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
 import { getSportsTicketBaySummary } from '@/lib/sports-ticketing';
+import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
 import RecommendationReasonChips from './RecommendationReasonChips';
 
 interface PerformanceListItemProps {
@@ -136,7 +137,7 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-5" />
 
-                    {['volleyball', 'basketball', 'baseball', 'handball'].includes(perf.genre) && perf.homeTeam && perf.awayTeam && (
+                    {shouldShowSportsTeamLogoOverlay(perf) && (
                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 items-center z-10 pointer-events-none">
                             {/* Background Decorative Icon */}
                             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.12] text-white pointer-events-none z-[-1]">
@@ -146,13 +147,13 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                             </div>
 
                             <img
-                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.homeTeam] ? FUTURES_TEAM_LOGOS[perf.homeTeam] : perf.homeTeamLogo}
+                                src={getSportsTeamLogo(perf, 'home')}
                                 alt={perf.homeTeam}
                                 className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
                             />
                             <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded border border-white/10">VS</div>
                             <img
-                                src={perf.genre === 'baseball' && FUTURES_TEAM_LOGOS[perf.awayTeam] ? FUTURES_TEAM_LOGOS[perf.awayTeam] : perf.awayTeamLogo}
+                                src={getSportsTeamLogo(perf, 'away')}
                                 alt={perf.awayTeam}
                                 className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
                             />
