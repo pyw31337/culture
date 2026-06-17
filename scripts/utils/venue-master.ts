@@ -238,6 +238,195 @@ function coordinateKey(lat: number | null, lng: number | null) {
     return `${lat!.toFixed(4)},${lng!.toFixed(4)}`;
 }
 
+const HIGH_CONFIDENCE_NAME_SIMILARITY = 0.8;
+const HIGH_CONFIDENCE_ADDRESS_SIMILARITY = 0.9;
+const HIGH_CONFIDENCE_COORDINATE_SIMILARITY = 0.9;
+const COORDINATE_SIMILARITY_WINDOW_KM = 1;
+
+function charBigrams(value: string) {
+    const chars = Array.from(value);
+    if (chars.length <= 1) return new Set(chars);
+
+    const bigrams = new Set<string>();
+    for (let index = 0; index < chars.length - 1; index += 1) {
+        bigrams.add(`${chars[index]}${chars[index + 1]}`);
+    }
+    return bigrams;
+}
+
+function textSimilarity(left: string, right: string) {
+    if (!left || !right) return 0;
+    if (left === right) return 1;
+    if (left.includes(right) || right.includes(left)) return 1;
+
+    const leftBigrams = charBigrams(left);
+    const rightBigrams = charBigrams(right);
+    const intersection = Array.from(leftBigrams).filter((value) => rightBigrams.has(value)).length;
+    const union = new Set([...leftBigrams, ...rightBigrams]).size;
+    return union > 0 ? intersection / union : 0;
+}
+
+function normalizeNameForVenueMerge(value?: string) {
+    return normalizeName(
+        compactText(value)
+            .replace(/^\s*(서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)\s*[|/]\s*/u, '')
+    );
+}
+
+function normalizeAddressForVenueMerge(value?: string) {
+    return normalizeAddress(value)
+        .replace(/\([^)]*\)/g, ' ')
+        .replace(/[\s,./\\\-_:|"'“”‘’]/g, '')
+        .toLowerCase();
+}
+
+function coordinateDistanceKm(
+    leftLat: number | null,
+    leftLng: number | null,
+    rightLat: number | null,
+    rightLng: number | null
+) {
+    if (!isCoordinateInKorea(leftLat, leftLng) || !isCoordinateInKorea(rightLat, rightLng)) return Number.POSITIVE_INFINITY;
+
+    const earthRadiusKm = 6371;
+    const dLat = ((rightLat! - leftLat!) * Math.PI) / 180;
+    const dLng = ((rightLng! - leftLng!) * Math.PI) / 180;
+    const lat1 = (leftLat! * Math.PI) / 180;
+    const lat2 = (rightLat! * Math.PI) / 180;
+    const a = Math.sin(dLat / 2) ** 2 +
+        Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+    return earthRadiusKm * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function coordinateSimilarity(left: WorkingVenueGroup, right: WorkingVenueGroup) {
+    const distance = coordinateDistanceKm(left.lat, left.lng, right.lat, right.lng);
+    if (!Number.isFinite(distance)) return 0;
+    return Math.max(0, 1 - distance / COORDINATE_SIMILARITY_WINDOW_KM);
+}
+
+function hasConflictingHallIdentity(left: WorkingVenueGroup, right: WorkingVenueGroup) {
+    if (left.halls.size === 0 || right.halls.size === 0) return false;
+    return !Array.from(left.halls).some((hall) => right.halls.has(hall));
+}
+
+function shouldMergeHighConfidenceVenue(left: WorkingVenueGroup, right: WorkingVenueGroup) {
+    if (hasConflictingHallIdentity(left, right)) return false;
+
+    const nameScore = Math.max(
+        textSimilarity(normalizeNameForVenueMerge(chooseOfficialName(left.nameUsage)), normalizeNameForVenueMerge(chooseOfficialName(right.nameUsage))),
+        ...Array.from(left.aliases).flatMap((leftAlias) => (
+            Array.from(right.aliases).map((rightAlias) => textSimilarity(
+                normalizeNameForVenueMerge(leftAlias),
+                normalizeNameForVenueMerge(rightAlias)
+            ))
+        ))
+    );
+    if (nameScore < HIGH_CONFIDENCE_NAME_SIMILARITY) return false;
+
+    const addressScore = textSimilarity(
+        normalizeAddressForVenueMerge(left.address),
+        normalizeAddressForVenueMerge(right.address)
+    );
+    if (addressScore < HIGH_CONFIDENCE_ADDRESS_SIMILARITY) return false;
+
+    return coordinateSimilarity(left, right) >= HIGH_CONFIDENCE_COORDINATE_SIMILARITY;
+}
+
+function mergeGroupInto(target: WorkingVenueGroup, source: WorkingVenueGroup) {
+    if (!target.address && source.address) target.address = source.address;
+    if (!target.normalizedAddress && source.normalizedAddress) target.normalizedAddress = source.normalizedAddress;
+    if (!target.coordinateKey && source.coordinateKey) target.coordinateKey = source.coordinateKey;
+    if (!isCoordinateInKorea(target.lat, target.lng) && isCoordinateInKorea(source.lat, source.lng)) {
+        target.lat = source.lat;
+        target.lng = source.lng;
+    }
+
+    source.nameUsage.forEach((count, name) => {
+        target.nameUsage.set(name, (target.nameUsage.get(name) || 0) + count);
+    });
+    source.aliases.forEach((alias) => target.aliases.add(alias));
+    source.halls.forEach((hall) => target.halls.add(hall));
+    source.sources.forEach((sourceName) => target.sources.add(sourceName));
+    source.sampleTitles.forEach((title) => {
+        if (target.sampleTitles.length < 5) target.sampleTitles.push(title);
+    });
+    source.performanceIds.forEach((id) => target.performanceIds.add(id));
+    source.reviewFlags.forEach((flag) => target.reviewFlags.add(flag));
+    source.kopisVenueIds.forEach((id) => target.kopisVenueIds.add(id));
+    target.reviewFlags.add('high_confidence_similarity_merge');
+}
+
+function chooseMergeTarget(groups: WorkingVenueGroup[]) {
+    return [...groups].sort((left, right) => {
+        if (right.performanceIds.size !== left.performanceIds.size) return right.performanceIds.size - left.performanceIds.size;
+        const leftName = normalizeNameForVenueMerge(chooseOfficialName(left.nameUsage));
+        const rightName = normalizeNameForVenueMerge(chooseOfficialName(right.nameUsage));
+        if (leftName.length !== rightName.length) return leftName.length - rightName.length;
+        return left.id.localeCompare(right.id);
+    })[0];
+}
+
+function mergeHighConfidenceSimilarGroups(groups: Map<string, WorkingVenueGroup>) {
+    const groupList = Array.from(new Set(groups.values()));
+    const parent = new Map<WorkingVenueGroup, WorkingVenueGroup>();
+    groupList.forEach((group) => parent.set(group, group));
+
+    const find = (group: WorkingVenueGroup): WorkingVenueGroup => {
+        const current = parent.get(group) || group;
+        if (current === group) return current;
+        const root = find(current);
+        parent.set(group, root);
+        return root;
+    };
+    const union = (left: WorkingVenueGroup, right: WorkingVenueGroup) => {
+        const leftRoot = find(left);
+        const rightRoot = find(right);
+        if (leftRoot !== rightRoot) parent.set(rightRoot, leftRoot);
+    };
+    const groupsByAddressBucket = new Map<string, WorkingVenueGroup[]>();
+
+    groupList.forEach((group) => {
+        const addressKey = normalizeAddressForVenueMerge(group.address);
+        if (!addressKey) return;
+
+        const bucketKey = addressKey.slice(0, Math.min(addressKey.length, 16));
+        const bucket = groupsByAddressBucket.get(bucketKey) || [];
+        bucket.push(group);
+        groupsByAddressBucket.set(bucketKey, bucket);
+    });
+
+    groupsByAddressBucket.forEach((bucket) => {
+        for (let leftIndex = 0; leftIndex < bucket.length; leftIndex += 1) {
+            for (let rightIndex = leftIndex + 1; rightIndex < bucket.length; rightIndex += 1) {
+                const left = bucket[leftIndex];
+                const right = bucket[rightIndex];
+                if (shouldMergeHighConfidenceVenue(left, right)) union(left, right);
+            }
+        }
+    });
+
+    const clusters = new Map<WorkingVenueGroup, WorkingVenueGroup[]>();
+    groupList.forEach((group) => {
+        const root = find(group);
+        const cluster = clusters.get(root) || [];
+        cluster.push(group);
+        clusters.set(root, cluster);
+    });
+
+    clusters.forEach((cluster) => {
+        if (cluster.length < 2) return;
+
+        const target = chooseMergeTarget(cluster);
+        cluster.forEach((source) => {
+            if (source !== target) mergeGroupInto(target, source);
+        });
+
+        Array.from(groups.entries()).forEach(([key, group]) => {
+            if (cluster.includes(group) && group !== target) groups.delete(key);
+        });
+    });
+}
+
 function extractHallName(value?: string) {
     const text = compactText(value);
     if (!text) return '';
@@ -432,6 +621,17 @@ export function buildVenueMaster(
             canonicalId: group.id,
             hallName: hallName || undefined,
         };
+    });
+
+    mergeHighConfidenceSimilarGroups(groups);
+    const canonicalIdByPerformanceId = new Map<string, string>();
+    groups.forEach((group) => {
+        group.performanceIds.forEach((performanceId) => {
+            canonicalIdByPerformanceId.set(performanceId, group.id);
+        });
+    });
+    Object.entries(performanceVenueIndex).forEach(([performanceId, match]) => {
+        match.canonicalId = canonicalIdByPerformanceId.get(performanceId) || match.canonicalId;
     });
 
     const entries = Array.from(groups.values())

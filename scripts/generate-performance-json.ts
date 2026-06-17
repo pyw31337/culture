@@ -323,6 +323,7 @@ function buildMapPayloadItem(performance: PrunedPerformance) {
         date: performance.date,
         venue: performance.venue,
         venueKey: performance.venueKey,
+        venueCanonicalId: performance.venueCanonicalId,
         locationKey: performance.locationKey,
         address: performance.address,
         district: performance.district,
@@ -351,6 +352,7 @@ function buildCalendarPayloadItem(performance: PrunedPerformance) {
         date: performance.date,
         venue: performance.venue,
         venueKey: performance.venueKey,
+        venueCanonicalId: performance.venueCanonicalId,
         locationKey: performance.locationKey,
         address: performance.address,
         district: performance.district,
@@ -392,11 +394,19 @@ function buildMapVenuePayload(items: Array<Partial<PrunedPerformance>>) {
 
         const venueName = compactText(performance.venue) || compactText(performance.venueKey) || '장소 확인 필요';
         const venueKey = compactText(performance.venueKey) || venueName;
-        const groupKey = compactText(performance.locationKey)
+        const groupKey = compactText(performance.venueCanonicalId)
+            || compactText(performance.locationKey)
             || `${venueKey}::${coordinateKey(lat, lng) || compactText(performance.address)}`;
 
         const existing = groups.get(groupKey);
         if (existing) {
+            if (existing.venueName.includes('|') && !venueName.includes('|')) {
+                existing.venueName = venueName;
+                existing.venueKey = venueKey;
+            }
+            if (!existing.address && performance.address) existing.address = performance.address;
+            if (!existing.district && performance.district) existing.district = performance.district;
+            if (!existing.region && performance.region) existing.region = performance.region;
             existing.performances.push(performance);
             return;
         }

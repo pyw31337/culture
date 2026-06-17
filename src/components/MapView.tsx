@@ -113,6 +113,8 @@ interface KakaoMarker {
     _groupKey?: string;
     _color?: string;
     _text?: string;
+    _normalIcon?: unknown;
+    _selectedIcon?: unknown;
 }
 
 interface KakaoClusterer {
@@ -143,6 +145,8 @@ interface WeatherApiResponse {
 }
 
 const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
+const MAX_RENDERED_MARKERS = 700;
+const DEFAULT_RENDERED_MARKERS = 350;
 let mapVenueGroupsCache: VenueGroup[] | null = null;
 let mapVenueGroupsPromise: Promise<VenueGroup[]> | null = null;
 
@@ -386,9 +390,14 @@ export default function MapView({
     const [mapInstance, setMapInstance] = useState<KakaoMap | null>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
     const [visibleVenues, setVisibleVenues] = useState<VenueGroup[]>([]);
+    const [renderedMarkerVenues, setRenderedMarkerVenues] = useState<VenueGroup[]>([]);
     const [showSearchHereBtn, setShowSearchHereBtn] = useState(false);
     const [isMapReady, setIsMapReady] = useState(false);
     const markersRef = useRef<KakaoMarker[]>([]);
+    const markersByGroupKeyRef = useRef<Map<string, KakaoMarker>>(new Map());
+    const selectedVenueRef = useRef<string | null>(null);
+    const previousSelectedVenueRef = useRef<string | null>(null);
+    const renderedMarkerKeyRef = useRef('');
     const mapOverlaysRef = useRef<KakaoOverlay[]>([]);
     const popupOverlayRef = useRef<KakaoOverlay | null>(null);
 
@@ -545,19 +554,67 @@ export default function MapView({
         }
 
         return { groups: Object.fromEntries(groupsMap), list };
-    }, [performances, precomputedVenueGroups, cinemas, mapSearchCenter, searchMode, searchText, selectedMapGenre]);
+    }, [performances, precomputedVenueGroups, cinemas, mapSearchCenter, searchMode, searchText, selectedMapGenre, venues]);
+
+    useEffect(() => {
+        centerLocationRef.current = centerLocation;
+        selectedMapGenreRef.current = selectedMapGenre;
+    }, [centerLocation, selectedMapGenre]);
+
+    useEffect(() => {
+        selectedVenueRef.current = selectedVenue;
+    }, [selectedVenue]);
+
+    const selectMarkerVenuesForMap = useCallback((map: KakaoMap | null) => {
+        const venuesForMap = allVenuesList.current;
+        if (!map || !window.kakao?.maps?.LatLng || venuesForMap.length <= DEFAULT_RENDERED_MARKERS) {
+            return venuesForMap.slice(0, MAX_RENDERED_MARKERS);
+        }
+
+        const bounds = map.getBounds();
+        const center = map.getCenter();
+        const selectedKey = selectedVenueRef.current;
+        let candidates = venuesForMap.filter((venue) => {
+            if (!venue.kakaoLatLng) {
+                venue.kakaoLatLng = new window.kakao.maps.LatLng(venue.lat, venue.lng) as KakaoLatLng;
+            }
+            return bounds.contain(venue.kakaoLatLng);
+        });
+
+        if (selectedKey) {
+            const selectedVenueInList = venuesForMap.find((venue) => venue.groupKey === selectedKey);
+            if (selectedVenueInList && !candidates.some((venue) => venue.groupKey === selectedKey)) {
+                candidates = [selectedVenueInList, ...candidates];
+            }
+        }
+
+        if (candidates.length <= MAX_RENDERED_MARKERS) return candidates;
+
+        return candidates
+            .sort((left, right) => {
+                if (left.groupKey === selectedKey) return -1;
+                if (right.groupKey === selectedKey) return 1;
+                return getDistanceFromLatLonInKm(center.getLat(), center.getLng(), left.lat, left.lng) -
+                    getDistanceFromLatLonInKm(center.getLat(), center.getLng(), right.lat, right.lng);
+            })
+            .slice(0, MAX_RENDERED_MARKERS);
+    }, []);
+
+    const updateRenderedMarkerVenues = useCallback((map: KakaoMap | null) => {
+        const nextVenues = selectMarkerVenuesForMap(map);
+        const nextKey = nextVenues.map((venue) => venue.groupKey).join('|');
+        if (nextKey === renderedMarkerKeyRef.current) return;
+        renderedMarkerKeyRef.current = nextKey;
+        setRenderedMarkerVenues(nextVenues);
+    }, [selectMarkerVenuesForMap]);
 
     useEffect(() => {
         allVenueGroups.current = processedData.groups;
         allVenuesList.current = processedData.list;
         const initialCount = selectedMapGenre !== 'all' ? 200 : 20;
         setVisibleVenues(processedData.list.slice(0, initialCount));
-    }, [processedData, selectedMapGenre]);
-
-    useEffect(() => {
-        centerLocationRef.current = centerLocation;
-        selectedMapGenreRef.current = selectedMapGenre;
-    }, [centerLocation, selectedMapGenre]);
+        updateRenderedMarkerVenues(mapInstance);
+    }, [mapInstance, processedData, selectedMapGenre, updateRenderedMarkerVenues]);
 
     const handleSearchHereInternal = useCallback((map: KakaoMap) => {
         if (!map || !window.kakao?.maps?.LatLng) return;
@@ -596,7 +653,6 @@ export default function MapView({
 
     // --- Map Init ---
     useEffect(() => {
-        let checkInterval: ReturnType<typeof setInterval> | null = null;
         let sdkTimeout: ReturnType<typeof setTimeout> | null = null;
         let cancelled = false;
 
@@ -633,9 +689,6 @@ export default function MapView({
                 setMapInstance(map);
                 setMapLoadError(null);
 
-                window.kakao.maps.event.addListener(map, 'dragend', () => setShowSearchHereBtn(true));
-                window.kakao.maps.event.addListener(map, 'zoom_changed', () => setShowSearchHereBtn(true));
-
                 setIsMapReady(true);
                 setTimeout(() => { map.relayout(); }, 200);
             });
@@ -657,14 +710,30 @@ export default function MapView({
 
         return () => {
             cancelled = true;
-            if (checkInterval) {
-                clearInterval(checkInterval);
-            }
             if (sdkTimeout) {
                 clearTimeout(sdkTimeout);
             }
         };
     }, []);
+
+    useEffect(() => {
+        if (!mapInstance || !isMapReady || !window.kakao?.maps?.event) return;
+
+        const kakaoEvent = window.kakao.maps.event;
+        const handleIdle = () => updateRenderedMarkerVenues(mapInstance);
+        const handleViewportChanged = () => setShowSearchHereBtn(true);
+
+        kakaoEvent.addListener(mapInstance, 'idle', handleIdle);
+        kakaoEvent.addListener(mapInstance, 'dragend', handleViewportChanged);
+        kakaoEvent.addListener(mapInstance, 'zoom_changed', handleViewportChanged);
+        handleIdle();
+
+        return () => {
+            kakaoEvent.removeListener(mapInstance, 'idle', handleIdle);
+            kakaoEvent.removeListener(mapInstance, 'dragend', handleViewportChanged);
+            kakaoEvent.removeListener(mapInstance, 'zoom_changed', handleViewportChanged);
+        };
+    }, [isMapReady, mapInstance, updateRenderedMarkerVenues]);
 
     // --- Reactive Map Updates ---
     useEffect(() => {
@@ -709,7 +778,7 @@ export default function MapView({
     const iconCache = useRef<Record<string, string>>({});
 
     const getMarkerIcon = useCallback((text: string, color: string, isSelected: boolean) => {
-        const size = isSelected ? 44 : 36;
+        const size = isSelected ? 54 : 48;
         const r = isSelected ? 20 : 16;
         const key = `${text}-${color}-${isSelected}`;
         if (iconCache.current[key]) return iconCache.current[key];
@@ -727,24 +796,38 @@ export default function MapView({
         return iconUrl;
     }, []);
 
+    const createMarkerImage = useCallback((text: string, color: string, isSelected: boolean) => {
+        const k = window.kakao.maps;
+        const size = isSelected ? 54 : 48;
+        return new k.MarkerImage(
+            getMarkerIcon(text, color, isSelected),
+            new k.Size(size, size),
+            new k.Point(size / 2, size / 2)
+        );
+    }, [getMarkerIcon]);
+
     const updateMarkerSelection = useCallback((nextSelectedVenue: string | null) => {
         if (!mapInstance || !isMapReady) return;
-        const k = window.kakao.maps;
+        const updateMarker = (groupKey: string | null, isSelected: boolean) => {
+            if (!groupKey) return;
+            const marker = markersByGroupKeyRef.current.get(groupKey);
+            if (!marker || !marker._text || !marker._color || !marker._groupKey) return;
 
-        markersRef.current.forEach((marker) => {
-            if (!marker._text || !marker._color || !marker._groupKey) return;
-
-            const isSelected = marker._groupKey === nextSelectedVenue;
-            const wasSelected = marker.getZIndex() === 100;
-            if (!isSelected && !wasSelected) return;
-
-            const iconUrl = getMarkerIcon(marker._text, marker._color, isSelected);
-            const size = isSelected ? 44 : 36;
-            const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
+            const markerImage = isSelected ? marker._selectedIcon : marker._normalIcon;
+            if (!markerImage) return;
             marker.setImage(markerImage);
             marker.setZIndex(isSelected ? 100 : 10);
-        });
-    }, [getMarkerIcon, isMapReady, mapInstance]);
+        };
+
+        const previousSelectedVenue = previousSelectedVenueRef.current;
+        if (previousSelectedVenue !== nextSelectedVenue) {
+            updateMarker(previousSelectedVenue, false);
+            updateMarker(nextSelectedVenue, true);
+            previousSelectedVenueRef.current = nextSelectedVenue;
+        } else {
+            updateMarker(nextSelectedVenue, true);
+        }
+    }, [isMapReady, mapInstance]);
 
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
@@ -756,6 +839,8 @@ export default function MapView({
             k.event.removeListener(marker, 'click');
         });
         markersRef.current = [];
+        const markersByGroupKey = markersByGroupKeyRef.current;
+        markersByGroupKey.clear();
 
         const clusterer = new k.MarkerClusterer({
             map: mapInstance, averageCenter: true, minLevel: 6, disableClickZoom: false,
@@ -769,19 +854,20 @@ export default function MapView({
         clustererRef.current = clusterer;
 
         const markers: KakaoMarker[] = [];
-        allVenuesList.current.forEach((venue) => {
+        renderedMarkerVenues.forEach((venue) => {
             const primaryGenre = venue.performances[0]?.genre || selectedMapGenre || 'all';
             const style = getGenreStyle(primaryGenre);
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
             const text = venue.performances.length.toString();
+            const isSelected = selectedVenueRef.current === venue.groupKey;
 
-            const iconUrl = getMarkerIcon(text, color, false);
-            const size = 36;
-            const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
+            const normalIcon = createMarkerImage(text, color, false);
+            const selectedIcon = createMarkerImage(text, color, true);
 
             const marker = new k.Marker({
-                position: new k.LatLng(venue.lat, venue.lng), image: markerImage,
-                zIndex: 10
+                position: new k.LatLng(venue.lat, venue.lng), image: isSelected ? selectedIcon : normalIcon,
+                zIndex: isSelected ? 100 : 10,
+                clickable: true
             }) as KakaoMarker;
 
             k.event.addListener(marker, 'click', () => {
@@ -793,11 +879,15 @@ export default function MapView({
             marker._groupKey = venue.groupKey;
             marker._color = color;
             marker._text = text;
+            marker._normalIcon = normalIcon;
+            marker._selectedIcon = selectedIcon;
             markers.push(marker);
             markersRef.current.push(marker);
+            markersByGroupKey.set(venue.groupKey, marker);
         });
 
         clusterer.addMarkers(markers);
+        updateMarkerSelection(selectedVenueRef.current);
 
         return () => {
             clusterer.clear();
@@ -808,8 +898,9 @@ export default function MapView({
             if (clustererRef.current === clusterer) {
                 clustererRef.current = null;
             }
+            markersByGroupKey.clear();
         };
-    }, [getMarkerIcon, isMapReady, mapInstance, processedData, selectedMapGenre]);
+    }, [createMarkerImage, isMapReady, mapInstance, renderedMarkerVenues, selectedMapGenre, updateMarkerSelection]);
 
     // Selection update
     useEffect(() => {

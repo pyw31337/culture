@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-06-15T21:32:43.581Z",
+  "checkedAt": "2026-06-16T09:17:28.356Z",
   "status": "pass",
-  "itemCount": 8871,
+  "itemCount": 8866,
   "sourceCount": 19,
   "highOpportunitySourceCount": 0,
   "topSourceOpportunities": [
@@ -215,7 +215,7 @@
     {
       "key": "kopis",
       "label": "KOPIS",
-      "itemCount": 1429,
+      "itemCount": 1424,
       "opportunityScore": 15,
       "missingImageCount": 0,
       "weakImageCount": 0,
@@ -225,11 +225,11 @@
       "missingVenueCount": 0,
       "missingLinkCount": 0,
       "unknownPriceCount": 1,
-      "weakDescriptionCount": 1159,
+      "weakDescriptionCount": 1157,
       "duplicateSignatureCount": 2,
       "imageCoverageRate": 1,
       "coordinateCoverageRate": 1,
-      "descriptionCoverageRate": 0.1889,
+      "descriptionCoverageRate": 0.1875,
       "detailImageCoverageRate": 1,
       "priceCoverageRate": 0.9993,
       "priority": "low",
@@ -242,6 +242,6 @@
   "missingCoordinateCount": 764,
   "missingAddressCount": 322,
   "unknownPriceCount": 3806,
-  "weakDescriptionCount": 4380,
+  "weakDescriptionCount": 4378,
   "duplicateSignatureCount": 14
 }

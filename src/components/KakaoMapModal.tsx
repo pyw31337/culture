@@ -28,6 +28,20 @@ interface Venue {
 }
 const getBasePath = () => process.env.NEXT_PUBLIC_BASE_PATH || '';
 
+function parseCoordinate(value: unknown) {
+    if (typeof value === 'number' && Number.isFinite(value) && value !== 0) return value;
+    if (typeof value === 'string') {
+        const parsed = Number.parseFloat(value);
+        if (Number.isFinite(parsed) && parsed !== 0) return parsed;
+    }
+    return 0;
+}
+
+function coordinateKey(lat: number, lng: number) {
+    if (!lat || !lng) return '';
+    return `${lat.toFixed(5)},${lng.toFixed(5)}`;
+}
+
 export interface KakaoMapModalProps {
     performances: Performance[];
     onClose: () => void;
@@ -133,21 +147,30 @@ export default function KakaoMapModal({
                 const vName = perf.venue;
                 // [DATA FIX] Filter out items mapped to remote/generic coordinates like Tour Passes on Ulleungdo
                 const venueMeta = venues[vName];
-                if (vName.includes('투어패스') && venueMeta?.lat && venueMeta?.lng && venueMeta.lat > 37.4 && venueMeta.lng > 130.8) continue;
+                const lat = parseCoordinate(perf.lat ?? perf.latitude ?? venueMeta?.lat);
+                const lng = parseCoordinate(perf.lng ?? perf.longitude ?? venueMeta?.lng);
+                const venueKey = perf.venueKey || vName;
+                const groupKey = perf.venueCanonicalId || perf.locationKey || `${venueKey}::${coordinateKey(lat, lng) || perf.address || venueMeta?.address || ''}`;
+                if (vName.includes('투어패스') && lat > 37.4 && lng > 130.8) continue;
 
-                let group = groupsMap.get(vName);
+                let group = groupsMap.get(groupKey);
                 if (!group) {
                     group = {
                         ...venueMeta,
+                        groupKey,
                         venueName: vName,
+                        venueKey,
                         performances: [],
-                        lat: venueMeta?.lat || 0,
-                        lng: venueMeta?.lng || 0,
+                        lat,
+                        lng,
                         type: 'performance',
                         kakaoLatLng: null,
                         firstAppearanceIndex: i // Record the exact index the user sees it in their feed
                     };
-                    groupsMap.set(vName, group);
+                    groupsMap.set(groupKey, group);
+                } else if (group.venueName.includes('|') && !vName.includes('|')) {
+                    group.venueName = vName;
+                    group.venueKey = venueKey;
                 }
                 group.performances.push(perf);
             }
@@ -164,7 +187,9 @@ export default function KakaoMapModal({
                 const cinema = cinemas[i];
                 if (!groupsMap.has(cinema.name)) {
                     groupsMap.set(cinema.name, {
+                        groupKey: cinema.name,
                         venueName: cinema.name,
+                        venueKey: cinema.name,
                         address: cinema.address,
                         lat: cinema.lat,
                         lng: cinema.lng,
@@ -237,7 +262,7 @@ export default function KakaoMapModal({
 
         // Notify parent grid to sync location search ONLY when user explicitly clicked
         if (isUserClick && onMapSearchHere && center) {
-            onMapSearchHere(center.getLat(), center.getLng(), selectedVenue || undefined);
+            onMapSearchHere(center.getLat(), center.getLng(), selectedVenue ? allVenueGroups.current[selectedVenue]?.venueName : undefined);
         }
     }, [selectedGenre, onMapSearchHere, selectedVenue]);
 
@@ -332,7 +357,7 @@ export default function KakaoMapModal({
             map.setLevel(SPORTS_GENRES.includes(selectedGenre) ? 6 : 5);
 
             // Auto-open the popup for the first venue
-            setSelectedVenue(first.venueName);
+            setSelectedVenue(first.groupKey);
 
             // We strictly DO NOT call handleSearchHereInternal(map) here.
             // This preserves the full list of venues at the bottom (sorted by feed order)
@@ -352,7 +377,7 @@ export default function KakaoMapModal({
     const iconCache = useRef<Record<string, string>>({});
 
     const getMarkerIcon = useCallback((text: string, color: string, isSelected: boolean) => {
-        const size = isSelected ? 44 : 36;
+        const size = isSelected ? 54 : 48;
         const r = isSelected ? 20 : 16;
         const key = `${text}-${color}-${isSelected}`;
         if (iconCache.current[key]) return iconCache.current[key];
@@ -401,10 +426,10 @@ export default function KakaoMapModal({
             const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
             const text = venue.performances.length.toString();
-            const isSelected = venue.venueName === selectedVenue;
+            const isSelected = venue.groupKey === selectedVenue;
 
             const iconUrl = getMarkerIcon(text, color, isSelected);
-            const size = isSelected ? 44 : 36;
+            const size = isSelected ? 54 : 48;
             const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
 
             const marker = new k.Marker({
@@ -414,11 +439,12 @@ export default function KakaoMapModal({
             });
 
             k.event.addListener(marker, 'click', () => {
-                setSelectedVenue(venue.venueName);
+                setSelectedVenue(venue.groupKey);
                 mapInstance.panTo(new k.LatLng(venue.lat, venue.lng));
             });
 
             (marker as any)._venueName = venue.venueName;
+            (marker as any)._groupKey = venue.groupKey;
             (marker as any)._color = color;
             (marker as any)._text = text;
             markers.push(marker);
@@ -434,13 +460,13 @@ export default function KakaoMapModal({
         const k = window.kakao.maps;
 
         markersRef.current.forEach(marker => {
-            const vName = marker._venueName;
-            const isSelected = vName === selectedVenue;
+            const groupKey = marker._groupKey;
+            const isSelected = groupKey === selectedVenue;
             const wasSelected = marker.getZIndex() === 100;
 
             if (isSelected || wasSelected) {
                 const iconUrl = getMarkerIcon(marker._text, marker._color, isSelected);
-                const size = isSelected ? 44 : 36;
+                const size = isSelected ? 54 : 48;
                 const markerImage = new k.MarkerImage(iconUrl, new k.Size(size, size), new k.Point(size / 2, size / 2));
                 marker.setImage(markerImage);
                 marker.setZIndex(isSelected ? 100 : 10);
@@ -612,7 +638,7 @@ export default function KakaoMapModal({
                                     <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 w-[280px] overflow-hidden flex flex-col shadow-2xl">
                                         <div className="bg-gray-50 dark:bg-gray-800 p-3 flex justify-between items-start border-b border-gray-100 dark:border-gray-800">
                                             <div className="min-w-0 flex-1">
-                                                <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenue}</h3>
+                                                <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenueData.venueName}</h3>
                                                 <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address}</p>
                                             </div>
                                             <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
@@ -624,7 +650,7 @@ export default function KakaoMapModal({
                                         {selectedVenueData.type === 'cinema' ? (
                                             <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
                                                 <a
-                                                    href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenue)}`}
+                                                    href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenueData.venueName)}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
@@ -637,7 +663,7 @@ export default function KakaoMapModal({
                                             <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
                                                 <button
                                                     onClick={() => {
-                                                        onVenueLocationChange(selectedVenue, selectedVenueData.lat, selectedVenueData.lng);
+                                                        onVenueLocationChange(selectedVenueData.venueName, selectedVenueData.lat, selectedVenueData.lng);
                                                     }}
                                                     className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm"
                                                 >
@@ -709,7 +735,7 @@ export default function KakaoMapModal({
                                             locationKey: v.groupKey,
                                         })
                                     );
-                                    const isSelected = selectedVenue === v.venueName;
+                                    const isSelected = selectedVenue === v.groupKey;
 
                                     let distanceLabel = '';
                                     const hasCenter = centerLocation && !isNaN(centerLocation.lat) && !isNaN(centerLocation.lng);
@@ -730,13 +756,13 @@ export default function KakaoMapModal({
                                     return (
                                         <button
                                             type="button"
-                                            key={v.venueName}
+                                            key={v.groupKey}
                                             onClick={(e) => {
                                                 if (isDragClicked.current) {
                                                     e.preventDefault();
                                                     return;
                                                 }
-                                                const newSelected = v.venueName === selectedVenue ? null : v.venueName;
+                                                const newSelected = v.groupKey === selectedVenue ? null : v.groupKey;
                                                 setSelectedVenue(newSelected);
                                                 if (newSelected && mapInstance && v.lat && v.lng) {
                                                     const k = window.kakao.maps;

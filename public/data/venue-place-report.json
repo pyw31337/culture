@@ -1,15 +1,18 @@
 {
-  "checkedAt": "2026-06-15T21:32:41.444Z",
+  "checkedAt": "2026-06-16T09:17:26.689Z",
   "status": "warn",
-  "venueCount": 4215,
-  "matchedCount": 1075,
-  "highConfidenceMatchCount": 787,
+  "venueCount": 3970,
+  "matchedCount": 1001,
+  "highConfidenceMatchCount": 724,
   "needsReviewCount": 20,
-  "notFoundCount": 298,
-  "pendingLookupCount": 2071,
-  "insufficientIdentityCount": 231,
-  "lookupReady": false,
-  "providersConfigured": [],
+  "notFoundCount": 291,
+  "pendingLookupCount": 1915,
+  "insufficientIdentityCount": 226,
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
   "queue": [
     {
       "venueId": "venue_ncs산업현장교수_ta9hlr",
@@ -1982,6 +1985,24 @@
       ]
     },
     {
+      "venueId": "venue_서울종로구_oyrb7i",
+      "officialName": "서울 종로구",
+      "address": "서울특별시 종로구 대학로14길 18-2, 지하 1층",
+      "query": "서울 종로구 서울 종로구",
+      "priority": 32,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "오즈의 마법사",
+        "반짝반짝 신데렐라",
+        "반짝반짝 인어공주"
+      ]
+    },
+    {
       "venueId": "venue_전북_1n6425r",
       "officialName": "전북 ·",
       "address": "전북 ·",
@@ -2090,20 +2111,39 @@
       ]
     },
     {
-      "venueId": "venue_서울종로구_oyrb7i",
-      "officialName": "서울 종로구",
-      "address": "서울특별시 종로구 대학로14길 18-2, 지하 1층",
-      "query": "서울 종로구 서울 종로구",
+      "venueId": "venue_서울용산구_2wleh3",
+      "officialName": "서울 용산구",
+      "address": "서울특별시 용산구 서빙고로 137 국립중앙박물관",
+      "query": "서울 용산구 서울 용산구",
       "priority": 24,
       "performanceCount": 3,
       "reviewFlags": [
+        "high_confidence_similarity_merge",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "오즈의 마법사",
-        "반짝반짝 신데렐라",
-        "반짝반짝 인어공주"
+        "<행사> 2026년 박물관문화향연(26/04/18 ~ 26/10/31)",
+        "<행사> 카카오프렌즈와 국중박 보물찾기(~ 26/05/31)",
+        "<행사> 2026 박물관·미술관 주간(~ 26/05/31)"
+      ]
+    },
+    {
+      "venueId": "venue_서울종로구_rs2duc",
+      "officialName": "서울 종로구",
+      "address": "서울특별시 종로구 동숭길 145, 3층 스케치홀",
+      "query": "서울 종로구 서울 종로구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "드립소년단",
+        "급식왕",
+        "<연극> 급식왕 - 급식이사라졌다(~ 26/07/04)"
       ]
     },
     {
@@ -2255,22 +2295,6 @@
       ]
     },
     {
-      "venueId": "venue_서울용산구_2wleh3",
-      "officialName": "서울 용산구",
-      "address": "서울특별시 용산구 서빙고로 137 국립중앙박물관",
-      "query": "서울 용산구 서울 용산구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<행사> 2026년 박물관문화향연(26/04/18 ~ 26/10/31)",
-        "<행사> 카카오프렌즈와 국중박 보물찾기(~ 26/05/31)"
-      ]
-    },
-    {
       "venueId": "venue_서울종로구_ozq9hk",
       "officialName": "서울 종로구",
       "address": "서울특별시 종로구 대학로12길 49, 4층",
@@ -2303,19 +2327,20 @@
       ]
     },
     {
-      "venueId": "venue_서울종로구_rs2duc",
+      "venueId": "venue_서울종로구_1isi5m4",
       "officialName": "서울 종로구",
-      "address": "서울특별시 종로구 동숭길 145, 3층 스케치홀",
+      "address": "서울특별시 종로구 대학로12길 63 지하2층",
       "query": "서울 종로구 서울 종로구",
       "priority": 16,
       "performanceCount": 2,
       "reviewFlags": [
+        "high_confidence_similarity_merge",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "드립소년단",
-        "급식왕"
+        "너의 목소리가 들려",
+        "핫식스"
       ]
     },
     {
@@ -2332,6 +2357,41 @@
       "sampleTitles": [
         "궁궐야행 창경궁",
         "창경궁 여행"
+      ]
+    },
+    {
+      "venueId": "venue_웅진플레이도시_1cf1r8m",
+      "officialName": "웅진플레이도시",
+      "address": "경기 부천시 원미구 조마루로 2",
+      "query": "웅진플레이도시 경기 부천시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "웅진플레이도시 워터파크＆온천스파",
+        "웅진플레이도시"
+      ]
+    },
+    {
+      "venueId": "venue_인천연수구_11ahlvy",
+      "officialName": "인천 연수구",
+      "address": "인천광역시 연수구 송도과학로16번길 33-4, 트리플 스트리트 D동 3층 (메가박스 2층 에스컬레이터 이용)",
+      "query": "인천 연수구 인천 연수구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "어린이 마술쇼(송도)",
+        "코미디 매직쇼(송도)"
       ]
     },
     {
@@ -3688,52 +3748,6 @@
       "sampleTitles": [
         "포켓몬 시크릿 포레스트(~ 26/6/21)"
       ]
-    },
-    {
-      "venueId": "venue_서울성동구_luxi1u",
-      "officialName": "서울 성동구",
-      "address": "서울특별시 성동구 서울숲2길 32-14, G층",
-      "query": "서울 성동구 서울 성동구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "알사탕"
-      ]
-    },
-    {
-      "venueId": "venue_서울성동구_16fyz40",
-      "officialName": "서울 성동구",
-      "address": "서울 성동구 무학봉15길 27",
-      "query": "서울 성동구 서울 성동구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "［왕십리］ 그아저씨 도예공방 원데이 클래스(전화예약 필수)"
-      ]
-    },
-    {
-      "venueId": "venue_서울성북구_1kvtv2v",
-      "officialName": "서울 성북구",
-      "address": "서울특별시 성북구 성북로 5-7 우성 하땅세극장 2층",
-      "query": "서울 성북구 서울 성북구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<공연> 오버코트 (26/06/06 ~ 06/27)"
-      ]
     }
   ],
   "staleCacheCount": 0,
@@ -4079,17 +4093,20 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-06-15T21:32:41.444Z",
+    "checkedAt": "2026-06-16T09:17:26.689Z",
     "status": "warn",
-    "venueCount": 4215,
-    "matchedCount": 1075,
-    "highConfidenceMatchCount": 787,
+    "venueCount": 3970,
+    "matchedCount": 1001,
+    "highConfidenceMatchCount": 724,
     "needsReviewCount": 20,
-    "notFoundCount": 298,
-    "pendingLookupCount": 2071,
-    "insufficientIdentityCount": 231,
-    "lookupReady": false,
-    "providersConfigured": [],
+    "notFoundCount": 291,
+    "pendingLookupCount": 1915,
+    "insufficientIdentityCount": 226,
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
     "staleCacheCount": 0,
     "topQueue": [
       {
@@ -4401,6 +4418,24 @@
         ]
       },
       {
+        "venueId": "venue_서울종로구_oyrb7i",
+        "officialName": "서울 종로구",
+        "address": "서울특별시 종로구 대학로14길 18-2, 지하 1층",
+        "query": "서울 종로구 서울 종로구",
+        "priority": 32,
+        "performanceCount": 4,
+        "reviewFlags": [
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "오즈의 마법사",
+          "반짝반짝 신데렐라",
+          "반짝반짝 인어공주"
+        ]
+      },
+      {
         "venueId": "venue_전북_1n6425r",
         "officialName": "전북 ·",
         "address": "전북 ·",
@@ -4417,25 +4452,6 @@
           "향기테라피 커스텀 키링 만들기",
           "시그니처 오가닉 천연향수 원데이클래스",
           "전주 힙팟클래스"
-        ]
-      },
-      {
-        "venueId": "venue_제주_pb0fqw",
-        "officialName": "제주 ·",
-        "address": "제주 ·",
-        "query": "제주 · 제주 ·",
-        "priority": 32,
-        "performanceCount": 4,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "<여행의 기억, 선물이 되는 시간> 작은선물만들기 원데이클래스 _재봉틀",
-          "나만의 특별한 향 만들기, 스튜디오 유랑 향수 원데이 클래스",
-          "라탄 원데이클래스"
         ]
       }
     ],
