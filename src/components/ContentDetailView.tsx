@@ -13,7 +13,7 @@ import { formatCompactKoreanDateTime } from '@/lib/build-info';
 import { getSourceLabel, getSourceOfficialUrl } from '@/lib/source-registry';
 import { buildSportsContext, isRedundantSportsDescription } from '@/lib/sports-context';
 import { getSportsTicketingInfo } from '@/lib/sports-ticketing';
-import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
+import SportsTeamLogoOverlay from './performance/SportsTeamLogoOverlay';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -230,8 +230,6 @@ export default function ContentDetailView({ performance: p, allPerformances = []
     const genreStyle = GENRE_STYLES[p.genre] || GENRE_STYLES['all'];
     const genreLabel = GENRES.find(g => g.id === p.genre)?.label || p.genre;
 
-    const shouldShowSportsTeamOverlay = shouldShowSportsTeamLogoOverlay(p);
-
     const castMembers = useMemo(() => {
         if (!p.cast || p.cast.length === 0) return [];
 
@@ -432,23 +430,12 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                             </div>
 
                             {/* Sports VS Overlay */}
-                            {shouldShowSportsTeamOverlay && (
-                                <div className="absolute inset-x-0 bottom-6 flex items-center justify-center pointer-events-none px-6">
-                                    <div className="flex justify-between items-center w-full gap-4">
-                                        <img
-                                            src={getSportsTeamLogo(p, 'home')}
-                                            alt={p.homeTeam}
-                                            className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
-                                        />
-                                        <div className="text-white text-xl font-black italic bg-black/40 px-4 py-1 rounded-full backdrop-blur-md border border-white/10 shadow-lg">VS</div>
-                                        <img
-                                            src={getSportsTeamLogo(p, 'away')}
-                                            alt={p.awayTeam}
-                                            className="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
-                                        />
-                                    </div>
-                                </div>
-                            )}
+                            <SportsTeamLogoOverlay
+                                performance={p}
+                                className="absolute inset-x-0 bottom-6 flex justify-between items-center gap-4 pointer-events-none px-6"
+                                logoClassName="w-1/4 aspect-square object-contain drop-shadow-[0_12px_32px_rgba(255,255,255,0.3)]"
+                                vsClassName="text-white text-xl font-black italic bg-black/40 px-4 py-1 rounded-full backdrop-blur-md border border-white/10 shadow-lg"
+                            />
                         </div>
                     )}
 

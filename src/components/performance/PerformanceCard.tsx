@@ -8,8 +8,8 @@ import { extractFirstPrice, cleanTitle, formatUnifiedDate } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import { getDdayLabel } from '@/lib/dday';
 import { getSportsTicketBaySummary } from '@/lib/sports-ticketing';
-import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
 import RecommendationReasonChips from './RecommendationReasonChips';
+import SportsTeamLogoOverlay from './SportsTeamLogoOverlay';
 
 interface PerformanceCardProps {
     perf: any;
@@ -189,21 +189,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-60 z-[1]" />
                                 </div>
 
-                                {shouldShowSportsTeamLogoOverlay(perf) && (
-                                    <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none">
-                                        <img
-                                            src={getSportsTeamLogo(perf, 'home')}
-                                            alt={perf.homeTeam}
-                                            className="w-[30%] max-w-[64px] aspect-square object-contain"
-                                        />
-                                        <div className="text-white/90 font-black text-[10px] italic bg-black/50 px-1.5 py-0.5 rounded-full border border-white/10">VS</div>
-                                        <img
-                                            src={getSportsTeamLogo(perf, 'away')}
-                                            alt={perf.awayTeam}
-                                            className="w-[30%] max-w-[64px] aspect-square object-contain"
-                                        />
-                                    </div>
-                                )}
+                                <SportsTeamLogoOverlay
+                                    performance={perf}
+                                    className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none"
+                                    logoClassName="w-[30%] max-w-[64px] aspect-square object-contain"
+                                    vsClassName="text-white/90 font-black text-[10px] italic bg-black/50 px-1.5 py-0.5 rounded-full border border-white/10"
+                                />
 
                                 <div
                                     className={clsx(
@@ -292,21 +283,12 @@ function PerformanceCard({ perf, distLabel, venueInfo, onLocationClick, variant 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-[1]" />
 
-                            {shouldShowSportsTeamLogoOverlay(perf) && (
-                                <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none">
-                                    <img
-                                        src={getSportsTeamLogo(perf, 'home')}
-                                        alt={perf.homeTeam}
-                                        className="w-[35%] max-w-[96px] aspect-square object-contain"
-                                    />
-                                    <div className="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/50 px-2 py-0.5 rounded-full border border-white/10">VS</div>
-                                    <img
-                                        src={getSportsTeamLogo(perf, 'away')}
-                                        alt={perf.awayTeam}
-                                        className="w-[35%] max-w-[96px] aspect-square object-contain"
-                                    />
-                                </div>
-                            )}
+                            <SportsTeamLogoOverlay
+                                performance={perf}
+                                className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-4 items-center z-10 pointer-events-none"
+                                logoClassName="w-[35%] max-w-[96px] aspect-square object-contain"
+                                vsClassName="text-white/90 font-black text-xs sm:text-base md:text-xl italic bg-black/50 px-2 py-0.5 rounded-full border border-white/10"
+                            />
 
                             {distLabel && (
                                 <div className="absolute top-2 left-2 z-40 bg-emerald-600 text-white border border-emerald-400/30 px-2 py-1 rounded-full text-[10px] font-black flex items-center gap-1">

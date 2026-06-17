@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, memo } from 'react';
+import { useCallback, useMemo, useRef, useState, memo } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { getOptimizedUrl, normalizeImageUrl } from '@/lib/utils';
 import { buildPlaceholderDataUrl } from '@/lib/poster-placeholder';
@@ -72,33 +72,21 @@ function ImageWithFallbackInner({
     const imgSrc = sources[sourceIndex] || fallbackSrc;
     const [isLoaded, setIsLoaded] = useState(() => fastDisplay || isImageSourceLoaded(imgSrc));
 
-    useEffect(() => {
-        setSourceIndex(initialSourceIndex);
-    }, [initialSourceIndex]);
-
-    useEffect(() => {
-        if (fastDisplay || isImageSourceLoaded(imgSrc)) {
-            setIsLoaded(true);
-            return;
-        }
-        setIsLoaded(false);
-    }, [fastDisplay, imgSrc]);
-
-    useEffect(() => {
-        const node = imageRef.current;
+    const setImageRef = useCallback((node: HTMLImageElement | null) => {
+        imageRef.current = node;
         if (node?.complete && node.naturalWidth > 0) {
             markImageSourceLoaded(imgSrc);
-            setIsLoaded(true);
+            setIsLoaded((current) => current ? current : true);
         }
     }, [imgSrc]);
 
     const handleError = () => {
-        setIsLoaded(false);
+        setIsLoaded((current) => current ? false : current);
         if (sourceIndex < sources.length - 1) {
             setSourceIndex((index) => Math.min(index + 1, sources.length - 1));
             return;
         }
-        setIsLoaded(true);
+        setIsLoaded((current) => current ? current : true);
     };
 
     const isUnoptimized =
@@ -128,7 +116,7 @@ function ImageWithFallbackInner({
 
             <Image
                 {...props}
-                ref={imageRef}
+                ref={setImageRef}
                 src={imgSrc || fallbackSrc}
                 alt={alt}
                 loading={imageLoading}
@@ -136,7 +124,7 @@ function ImageWithFallbackInner({
                 onError={handleError}
                 onLoad={() => {
                     markImageSourceLoaded(imgSrc);
-                    setIsLoaded(true);
+                    setIsLoaded((current) => current ? current : true);
                 }}
                 unoptimized={isUnoptimized}
                 className={props.className}

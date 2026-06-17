@@ -5,12 +5,11 @@ import { Heart, Star, MapPin, Calendar, Share2, Check, Plane, ChevronDown } from
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { extractFirstPrice, cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
-import { getGenreIcon } from '../GenreIcons';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
 import { getSportsTicketBaySummary } from '@/lib/sports-ticketing';
-import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
 import RecommendationReasonChips from './RecommendationReasonChips';
+import SportsTeamLogoOverlay from './SportsTeamLogoOverlay';
 
 interface PerformanceListItemProps {
     perf: any;
@@ -137,28 +136,15 @@ function PerformanceListItem({ perf, distLabel, venueInfo, onLocationClick, isLi
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-5" />
 
-                    {shouldShowSportsTeamLogoOverlay(perf) && (
-                        <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 items-center z-10 pointer-events-none">
-                            {/* Background Decorative Icon */}
-                            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.12] text-white pointer-events-none z-[-1]">
-                                {React.isValidElement(getGenreIcon(perf.genre, 90)) ?
-                                    React.cloneElement(getGenreIcon(perf.genre, 90) as React.ReactElement<React.SVGProps<SVGSVGElement>>, { strokeWidth: 1.5 }) :
-                                    null}
-                            </div>
-
-                            <img
-                                src={getSportsTeamLogo(perf, 'home')}
-                                alt={perf.homeTeam}
-                                className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
-                            />
-                            <div className="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded border border-white/10">VS</div>
-                            <img
-                                src={getSportsTeamLogo(perf, 'away')}
-                                alt={perf.awayTeam}
-                                className="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
-                            />
-                        </div>
-                    )}
+                    <SportsTeamLogoOverlay
+                        performance={perf}
+                        className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 items-center z-10 pointer-events-none"
+                        logoClassName="w-[35%] max-w-[64px] aspect-square object-contain drop-shadow-md"
+                        vsClassName="text-white/90 font-black text-[10px] sm:text-sm italic bg-black/50 px-1.5 py-0.5 rounded border border-white/10"
+                        showBackgroundIcon
+                        backgroundIconSize={90}
+                        backgroundIconClassName="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.12] text-white pointer-events-none z-[-1]"
+                    />
 
                     {distLabel && (
                         <div className="absolute bottom-1 right-1 bg-black/80 text-green-400 text-[10px] font-extrabold px-1.5 py-0.5 rounded border border-green-500/30 z-[60]">

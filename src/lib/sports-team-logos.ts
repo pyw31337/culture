@@ -2,7 +2,7 @@ import { FUTURES_TEAM_LOGOS } from '@/lib/constants';
 
 export const SPORTS_TEAM_LOGO_GENRES = new Set(['volleyball', 'basketball', 'baseball', 'handball', 'soccer']);
 
-type SportsTeamLogoInput = {
+export type SportsTeamLogoInput = {
     genre?: string;
     homeTeam?: string;
     awayTeam?: string;

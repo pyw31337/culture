@@ -4,10 +4,9 @@ import ImageWithFallback from '../ImageWithFallback';
 import { GENRES } from '@/lib/constants';
 import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { cleanTitle } from '@/lib/utils';
-import { getGenreIcon } from '../GenreIcons';
 import { clsx } from 'clsx';
 import type { KeywordMatchedPerformance } from '@/lib/keyword-match';
-import { getSportsTeamLogo, shouldShowSportsTeamLogoOverlay } from '@/lib/sports-team-logos';
+import SportsTeamLogoOverlay from './SportsTeamLogoOverlay';
 
 const EMPTY_VENUES: Record<string, never> = {};
 
@@ -22,7 +21,6 @@ interface KeywordSectionProps {
 function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 'keyword', onShare }: KeywordSectionProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [isDragging, setIsDragging] = useState(false);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
 
@@ -35,7 +33,7 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
         const nextShowRight = container.scrollLeft < maxScroll;
         setShowLeftArrow((current) => current === nextShowLeft ? current : nextShowLeft);
         setShowRightArrow((current) => current === nextShowRight ? current : nextShowRight);
-    }, [keywordItems]);
+    }, []);
 
     useEffect(() => {
         updateArrowState();
@@ -51,6 +49,10 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
             container?.removeEventListener('scroll', onScroll);
         };
     }, [updateArrowState]);
+
+    useEffect(() => {
+        updateArrowState();
+    }, [keywordItems.length, updateArrowState]);
 
 
     const scroll = (direction: 'left' | 'right') => {
@@ -74,9 +76,6 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
 
         // If moved more than 10px, it was a drag or intentional swipe
         if (diffX > 10 || diffY > 10) return;
-
-        // Ensure we aren't currently dragging
-        if (isDragging) return;
 
         onDetail(perf);
     };
@@ -133,7 +132,7 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
                                 <div
                                     className={clsx(
                                         "relative w-[200px] sm:w-[260px] h-[300px] sm:h-[390px] rounded-xl overflow-hidden bg-gray-900",
-                                        !isDragging && (searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30")
+                                        searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30"
                                     )}
                                     onPointerDown={handlePointerDown}
                                     onPointerUp={(e) => handlePointerUp(e, perf)}
@@ -179,20 +178,15 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90 z-5" />
 
                                     {/* VS Badge for Sports */}
-                                    {shouldShowSportsTeamLogoOverlay(perf) && (
-                                        <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none">
-                                            {/* Background Decorative Icon */}
-                                            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.1] text-white pointer-events-none z-[-1]">
-                                                {React.isValidElement(getGenreIcon(perf.genre, 120)) ?
-                                                    React.cloneElement(getGenreIcon(perf.genre, 120) as React.ReactElement<React.SVGProps<SVGSVGElement>>, { strokeWidth: 1 }) :
-                                                    null}
-                                            </div>
-
-                                            <img src={getSportsTeamLogo(perf, 'home')} alt={perf.homeTeam} className="w-12 h-12 object-contain" />
-                                            <span className="text-white/80 font-black text-sm italic bg-black/40 px-1.5 rounded border border-white/10">VS</span>
-                                            <img src={getSportsTeamLogo(perf, 'away')} alt={perf.awayTeam} className="w-12 h-12 object-contain" />
-                                        </div>
-                                    )}
+                                    <SportsTeamLogoOverlay
+                                        performance={perf}
+                                        className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-3 items-center z-10 pointer-events-none"
+                                        logoClassName="w-12 h-12 object-contain"
+                                        vsClassName="text-white/80 font-black text-sm italic bg-black/40 px-1.5 rounded border border-white/10"
+                                        showBackgroundIcon
+                                        backgroundIconSize={120}
+                                        backgroundIconClassName="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.1] text-white pointer-events-none z-[-1]"
+                                    />
 
                                     {/* Bottom Action Bar (Permanent) */}
                                     <div className="absolute inset-x-0 bottom-0 z-30 p-3 flex items-center gap-3 pointer-events-none">

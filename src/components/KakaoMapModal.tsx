@@ -685,7 +685,16 @@ export default function KakaoMapModal({
                                                     className="flex gap-2 bg-gray-50 dark:bg-gray-800/50 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 group"
                                                 >
                                                     {p.image ? (
-                                                        <img src={getOptimizedUrl(p.image, 80)} alt={p.title} className="w-10 h-14 object-cover rounded bg-gray-200 dark:bg-gray-950 shrink-0" />
+                                                        <img
+                                                            src={getOptimizedUrl(p.image, 80)}
+                                                            alt={p.title}
+                                                            width={40}
+                                                            height={56}
+                                                            loading="lazy"
+                                                            decoding="async"
+                                                            draggable={false}
+                                                            className="w-10 h-14 object-cover rounded bg-gray-200 dark:bg-gray-950 shrink-0"
+                                                        />
                                                     ) : (
                                                         <div className="w-10 h-14 bg-gray-200 dark:bg-gray-800 rounded flex items-center justify-center shrink-0">
                                                             <Heart size={10} className="text-gray-400 dark:text-gray-600" />
