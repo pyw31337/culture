@@ -10,15 +10,23 @@ type SportsTeamLogoInput = {
     awayTeamLogo?: string;
 };
 
+function normalizeLogoSrc(src: string) {
+    if (!src || src.startsWith('http') || src.startsWith('data:')) {
+        return src;
+    }
+
+    return encodeURI(src);
+}
+
 export function getSportsTeamLogo(performance: SportsTeamLogoInput, side: 'home' | 'away') {
     const team = side === 'home' ? performance.homeTeam : performance.awayTeam;
     const logo = side === 'home' ? performance.homeTeamLogo : performance.awayTeamLogo;
 
     if (team && FUTURES_TEAM_LOGOS[team]) {
-        return FUTURES_TEAM_LOGOS[team];
+        return normalizeLogoSrc(FUTURES_TEAM_LOGOS[team]);
     }
 
-    return logo || '';
+    return normalizeLogoSrc(logo || '');
 }
 
 export function shouldShowSportsTeamLogoOverlay(performance: SportsTeamLogoInput) {
