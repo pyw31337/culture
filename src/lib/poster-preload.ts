@@ -56,6 +56,10 @@ function unique(values: string[]) {
     return Array.from(new Set(values.filter(Boolean)));
 }
 
+function isLocalImageUrl(url: string) {
+    return url.startsWith('/') || url.startsWith('data:');
+}
+
 export function getPosterWarmupUrls(
     performance: Pick<Performance, 'image' | 'poster' | 'backupPoster' | 'posterUrl'>,
     {
@@ -64,12 +68,14 @@ export function getPosterWarmupUrls(
         includeOriginalFallback = false,
     }: Pick<WarmPosterOptions, 'width' | 'quality' | 'includeOriginalFallback'> = {}
 ) {
-    const rawUrls = unique([
+    const candidates = unique([
         normalizeImageUrl(performance.image),
         normalizeImageUrl(performance.posterUrl),
         normalizeImageUrl(performance.poster),
         normalizeImageUrl(performance.backupPoster),
     ]);
+    const hasLocalCandidate = candidates.some(isLocalImageUrl);
+    const rawUrls = hasLocalCandidate ? candidates.filter(isLocalImageUrl) : candidates;
 
     const optimizedUrls = rawUrls.map((url) => getOptimizedUrl(url, width, quality));
     return includeOriginalFallback ? unique([...optimizedUrls, ...rawUrls]) : unique(optimizedUrls);

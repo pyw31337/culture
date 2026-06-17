@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.ywp-G6JL4nTOtG2ML_mMt.39f62c6fb3b64d606aecbd9fedd7746f.js"
+  "/culture/_next/precache.ixqAAZWOl9YAAGwxy6zkw.f2ba8d779abb9f8cd60d01aab3ea8386.js"
 );
 
 workbox.core.skipWaiting();
@@ -17480,6 +17480,10 @@ self.__precacheManifest = [
     "revision": "9b2ab2771416c097d34817ce7d7ee24f"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_2026_소울_첼로_앙상블_정기연주회_33aeafbc9e7d9824.webp",
+    "revision": "0ad7f3ad898ee83d77d2185f5c5ee39a"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_2026_송년음악회_손열음_고잉홈프로젝트_부산_1643b3371cffca03.webp",
     "revision": "1df2bbfdcb9114ab54a09094631eba3e"
   },
@@ -17726,6 +17730,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_2026년_토요키즈클래식_상반기_용인_c9030ea57090ac26.webp",
     "revision": "8edda5127fac42f70be631b6bc16336a"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_2026년_토요키즈클래식_하반기_용인_98154b014a37ce2a.webp",
+    "revision": "23a49b547c81bd043bee7f8219bcb8fb"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_6월_월간듀오_바이올리니스트_박정현_하피스트_이진_a5bf62821513349a.webp",
@@ -18166,6 +18174,14 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_강남심포니오케스트라_제118회_정기연주회_12bd89a6606eb72a.webp",
     "revision": "166fa80d7d59a941d9b7e53f981b705d"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_강남심포니오케스트라_제119회_정기연주회_ebb36922c3dc06c5.webp",
+    "revision": "a1640be58b18a28fc3d940e785a27ab9"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_강남심포니오케스트라_제120회_정기연주회_f68bca1cb1fdec7a.webp",
+    "revision": "6116b52266fb2eb8935cd16f7f025083"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_강효진_가야금_독주회_연하일휘_7f595b6693fb7c35.webp",
@@ -21744,6 +21760,10 @@ self.__precacheManifest = [
     "revision": "329414c07122fd866beb62ce8a432f84"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_춤추는_발레_FESTA_백조의호수_호두까기인형_대전_f99ddc2d94fd8a38.webp",
+    "revision": "67773df0e032036a478054e497994334"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_춤추는_발레_FESTA_백조의호수_호두까기인형_안산_1a3462a94d4c0073.webp",
     "revision": "dd5a3db42605c2791c3b916071cbee19"
   },
@@ -22122,6 +22142,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_피아니스트_조재혁_음악의_재발견_인천_8c30b5a82073e7f2.webp",
     "revision": "435f60d455212c8a6abf3b99c18dd437"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_피아니스트_채문영_3주기_추모_음악회_67869d20967c5f7e.webp",
+    "revision": "a6d8c57359df5c5216d4c0d3cda99799"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/classic_tradition/perf_피아니스트_함수연_초청_리스트_초절기교_연습곡_전곡_리사이틀_0433b0aaab725e2e.webp",
@@ -40152,6 +40176,10 @@ self.__precacheManifest = [
     "revision": "f1eaef351d180f31fb04b9df1e4bbf90"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_고석정_꽃밭_62fce82725089ed5.webp",
+    "revision": "6819fd5a4b488ac6471fc670afd68ea6"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_고성_통일전망타워_6cf7b3e08e96794f.webp",
     "revision": "6ddc1aa1493509aa9b109955583fdcad"
   },
@@ -41156,6 +41184,10 @@ self.__precacheManifest = [
     "revision": "4fbc4850f738abbd69d6adc3790a9ec3"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_상화원_0019cd990baafc83.webp",
+    "revision": "c5dddbc753a9a5106f0350393e523c86"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_서귀포_치유의_숲_73df71a5b16ee754.webp",
     "revision": "9d2d14d40c69558866d38aa362eee805"
   },
@@ -42048,6 +42080,10 @@ self.__precacheManifest = [
     "revision": "1a156b163192aa2fa73ff26a7d2cb2c0"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_율암온천숯가마_테마파크_d680fab04e02bb0c.webp",
+    "revision": "3444ee0675aa8d22c94f563a1d2fe5ea"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_은산어울림생태박물관_63603b57ecff3f55.webp",
     "revision": "627795d26f7c740ee85e84a49aaeab61"
   },
@@ -42474,6 +42510,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_충북_벨포레_별빛_가족여행_액티비티_패키지_좌구산_천문대_74cdfd63d1f25e99.webp",
     "revision": "17335d58520ee15cae3c82660f631ec8"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_충북_벨포레_힐링_가족여행_목장_패키지_969d41be02694fdc.webp",
+    "revision": "402502d37bf7d5333aa7aaf8b45869a3"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_충북_벨포레_힐링_가족여행_액티비티_패키지_레일로드_베를린_가방_31dfea8b446c6edb.webp",

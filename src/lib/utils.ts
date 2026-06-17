@@ -14,6 +14,8 @@ export const normalizeImageUrl = (url?: string | null) => {
     return trimmed;
 };
 
+const encodeLocalImagePath = (path: string) => encodeURI(path);
+
 export const getOptimizedUrl = (url: string, width: number = 400, quality: number = 70) => {
     if (!url) return '';
     const normalizedUrl = normalizeImageUrl(url);
@@ -40,14 +42,14 @@ export const getOptimizedUrl = (url: string, width: number = 400, quality: numbe
             const thumbPath = sourcePath
                 .replace('/images/posters/', '/images/thumbs/w320/posters/')
                 .replace(/\.(?:jpe?g|png|webp)$/i, '.webp');
-            return `${basePath}${thumbPath}`;
+            return encodeLocalImagePath(`${basePath}${thumbPath}`);
         }
         // If basePath is set and url doesn't start with it (and isn't just a slash if basePath is empty?), prepend it.
         // Also avoid double-slash if basePath ends with / (it shouldn't based on config)
         if (basePath && !normalizedUrl.startsWith(basePath)) {
-            return `${basePath}${normalizedUrl}`;
+            return encodeLocalImagePath(`${basePath}${normalizedUrl}`);
         }
-        return normalizedUrl;
+        return encodeLocalImagePath(normalizedUrl);
     }
 
     try {
@@ -226,7 +228,7 @@ export function getLowResUrl(url: string): string | null {
                 const encodedStr = typeof btoa === 'function' ? btoa(JSON.stringify(decoded)) : Buffer.from(JSON.stringify(decoded)).toString('base64');
                 return `https://image.mom-mom.net/${encodedStr}`;
             }
-        } catch (e) { return null; }
+        } catch { return null; }
     }
 
     // Skip blocked or specific domains for wsrv
@@ -322,7 +324,7 @@ function formatSingleDateInternal(str: string): string {
             if (!isValid(parsedDate)) {
                 parsedDate = parse(parseStr, 'yyyy-MM-dd', new Date());
             }
-        } catch (e) {
+        } catch {
             return str;
         }
     }
