@@ -6,6 +6,7 @@ import { GENRES } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
 import SectionInfoPopover from './SectionInfoPopover';
+import { useHorizontalDragScroll } from '@/hooks/useHorizontalDragScroll';
 
 
 function formatPosterSchedule(date?: string) {
@@ -43,9 +44,8 @@ export default function PersonalizedSection({
     searchMode = 'keyword',
     subtitle,
 }: PersonalizedSectionProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const { ref: containerRef, isDragging, hasDragged, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
-    const [isDragging, setIsDragging] = useState(false);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
 
@@ -90,7 +90,7 @@ export default function PersonalizedSection({
     const handlePointerUp = (event: React.PointerEvent, performance: Performance) => {
         const diffX = Math.abs(event.clientX - pointerPos.current.x);
         const diffY = Math.abs(event.clientY - pointerPos.current.y);
-        if (diffX > 10 || diffY > 10 || isDragging) return;
+        if (diffX > 10 || diffY > 10 || hasDragged()) return;
         onDetail(performance);
     };
 
@@ -131,10 +131,17 @@ export default function PersonalizedSection({
                     </button>
                 )}
 
-                <div ref={containerRef} className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-10 transition-colors select-none" style={{ touchAction: 'pan-x pan-y' }}>
+                <div
+                    ref={containerRef}
+                    {...dragHandlers}
+                    className={clsx(
+                        "overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-10 transition-colors select-none cursor-grab active:cursor-grabbing",
+                        isDragging && "cursor-grabbing"
+                    )}
+                    style={{ touchAction: 'pan-x pan-y' }}
+                >
                     <div
                         ref={contentRef}
-                        onDragEnd={() => setIsDragging(false)}
                         className="flex gap-5 sm:gap-6 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-stretch min-w-max"
                     >
                         {items.map((performance) => (

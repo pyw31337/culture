@@ -3,10 +3,24 @@ import { Performance } from '@/types';
 import { isChoseongMatch } from '@/lib/hangul';
 import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
 import { buildLocalLocationCandidates, type LocationSearchCandidate } from '@/lib/location-search';
+import { collapseDuplicateLeadingLocationToken } from '@/lib/location-text';
 
 interface UseSearchLogicProps {
     allPerformances: Performance[];
     initialSearchText?: string;
+}
+
+let fullPerformanceFallbackPromise: Promise<Performance[]> | null = null;
+
+async function loadFullPerformanceFallback() {
+    if (typeof window === 'undefined') return [];
+    if (!fullPerformanceFallbackPromise) {
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        fullPerformanceFallbackPromise = fetch(`${basePath}/data/performances.json`)
+            .then((response) => response.ok ? response.json() as Promise<Performance[]> : [])
+            .catch(() => []);
+    }
+    return fullPerformanceFallbackPromise;
 }
 
 export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseSearchLogicProps) {
@@ -52,8 +66,28 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
         if (searchMode === 'location' && searchText.trim().length > 1) {
             const currentSearchText = searchText.trim();
             let cancelled = false;
+            let placesFallbackTimer: ReturnType<typeof setTimeout> | null = null;
             const timer = setTimeout(() => {
                 const localFallback = () => buildLocalLocationCandidates(allPerformances, currentSearchText);
+                const applyLocalFallback = async () => {
+                    const currentCandidates = localFallback();
+                    if (currentCandidates.length > 0) {
+                        if (!cancelled && searchTextRef.current.trim() === currentSearchText) {
+                            setKakaoSearchResults(currentCandidates);
+                            setIsDropdownOpen(true);
+                        }
+                        return;
+                    }
+
+                    const fullPerformances = await loadFullPerformanceFallback();
+                    if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
+                    setKakaoSearchResults(buildLocalLocationCandidates(fullPerformances, currentSearchText));
+                    setIsDropdownOpen(true);
+                };
+                let handledByPlaces = false;
+                placesFallbackTimer = setTimeout(() => {
+                    if (!handledByPlaces) void applyLocalFallback();
+                }, 1400);
 
                 loadKakaoMapSdk()
                     .then(() => {
@@ -61,8 +95,9 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
 
                         const kakao = (window as any).kakao;
                         if (!kakao?.maps?.services?.Places) {
-                            setKakaoSearchResults(localFallback());
-                            setIsDropdownOpen(true);
+                            handledByPlaces = true;
+                            if (placesFallbackTimer) clearTimeout(placesFallbackTimer);
+                            void applyLocalFallback();
                             return;
                         }
 
@@ -72,6 +107,8 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
                             const ps = new kakao.maps.services.Places();
                             ps.keywordSearch(currentSearchText, (data: any[], status: any) => {
                                 if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
+                                handledByPlaces = true;
+                                if (placesFallbackTimer) clearTimeout(placesFallbackTimer);
 
                                 if (status === kakao.maps.services.Status.OK) {
                                     const filteredData = data.filter((place: any) => {
@@ -83,8 +120,8 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
 
                                     const kakaoResults: LocationSearchCandidate[] = filteredData.map((place: any): LocationSearchCandidate => ({
                                         type: 'location',
-                                        name: place.place_name,
-                                        address: place.road_address_name || place.address_name,
+                                        name: collapseDuplicateLeadingLocationToken(place.place_name),
+                                        address: collapseDuplicateLeadingLocationToken(place.road_address_name || place.address_name),
                                         lat: parseFloat(place.y),
                                         lng: parseFloat(place.x),
                                         venueId: place.id,
@@ -92,9 +129,13 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
                                         source: 'kakao'
                                     })).filter((place) => Number.isFinite(place.lat) && Number.isFinite(place.lng));
 
-                                    setKakaoSearchResults(kakaoResults.length > 0 ? kakaoResults : localFallback());
+                                    if (kakaoResults.length > 0) {
+                                        setKakaoSearchResults(kakaoResults);
+                                    } else {
+                                        void applyLocalFallback();
+                                    }
                                 } else {
-                                    setKakaoSearchResults(localFallback());
+                                    void applyLocalFallback();
                                 }
                                 setIsDropdownOpen(true);
                             }, { size: 15 });
@@ -102,12 +143,14 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
                     })
                     .catch(() => {
                         if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
-                        setKakaoSearchResults(localFallback());
-                        setIsDropdownOpen(true);
+                        handledByPlaces = true;
+                        if (placesFallbackTimer) clearTimeout(placesFallbackTimer);
+                        void applyLocalFallback();
                     });
             }, 300);
             return () => {
                 cancelled = true;
+                if (placesFallbackTimer) clearTimeout(placesFallbackTimer);
                 clearTimeout(timer);
             };
         } else if (searchMode === 'location' && searchText.trim().length === 0) {

@@ -8,6 +8,7 @@ import { useUserActivity } from '@/hooks/useUserActivity';
 import { clsx } from 'clsx';
 import SectionInfoPopover from './SectionInfoPopover';
 import SportsTeamLogoOverlay from './SportsTeamLogoOverlay';
+import { useHorizontalDragScroll } from '@/hooks/useHorizontalDragScroll';
 
 const EMPTY_VENUES: Record<string, never> = {};
 
@@ -57,7 +58,7 @@ export default function RecommendedSection({
     title = '지금 주목할 콘텐츠',
     subtitle = '시즌 적합성, 일정 임박도, 장르 다양성을 함께 보고 첫 화면을 조금 더 생동감 있게 정리했어요.',
 }: RecommendedSectionProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const { ref: containerRef, isDragging, hasDragged, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
     const [randomRecs, setRandomRecs] = useState<any[]>([]);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -158,7 +159,7 @@ export default function RecommendedSection({
         const diffY = Math.abs(e.clientY - pointerPos.current.y);
 
         // If moved more than 10px, it was a drag or intentional swipe
-        if (diffX > 10 || diffY > 10) return;
+        if (diffX > 10 || diffY > 10 || hasDragged()) return;
 
         onDetail(perf);
     };
@@ -205,7 +206,11 @@ export default function RecommendedSection({
 
                 <div
                     ref={containerRef}
-                    className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-colors select-none"
+                    {...dragHandlers}
+                    className={clsx(
+                        "overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-colors select-none cursor-grab active:cursor-grabbing",
+                        isDragging && "cursor-grabbing"
+                    )}
                     style={{ touchAction: 'pan-x pan-y' }}
                 >
                     <div

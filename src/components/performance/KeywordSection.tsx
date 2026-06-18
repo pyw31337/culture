@@ -7,6 +7,7 @@ import { cleanTitle } from '@/lib/utils';
 import { clsx } from 'clsx';
 import type { KeywordMatchedPerformance } from '@/lib/keyword-match';
 import SportsTeamLogoOverlay from './SportsTeamLogoOverlay';
+import { useHorizontalDragScroll } from '@/hooks/useHorizontalDragScroll';
 
 const EMPTY_VENUES: Record<string, never> = {};
 
@@ -19,7 +20,7 @@ interface KeywordSectionProps {
 }
 
 function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 'keyword', onShare }: KeywordSectionProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const { ref: containerRef, isDragging, hasDragged, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
@@ -75,7 +76,7 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
         const diffY = Math.abs(e.clientY - pointerPos.current.y);
 
         // If moved more than 10px, it was a drag or intentional swipe
-        if (diffX > 10 || diffY > 10) return;
+        if (diffX > 10 || diffY > 10 || hasDragged()) return;
 
         onDetail(perf);
     };
@@ -116,7 +117,11 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
 
                 <div
                     ref={containerRef}
-                    className="overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-colors select-none"
+                    {...dragHandlers}
+                    className={clsx(
+                        "overflow-x-auto overflow-y-visible overscroll-x-contain scrollbar-hide pt-8 -mt-8 pb-12 transition-colors select-none cursor-grab active:cursor-grabbing",
+                        isDragging && "cursor-grabbing"
+                    )}
                     style={{ touchAction: 'pan-x pan-y' }}
                 >
                     <div

@@ -1,4 +1,5 @@
 import type { Performance } from '@/types';
+import { collapseDuplicateLeadingLocationToken } from '@/lib/location-text';
 
 export type LocationSearchCandidate = {
     type: 'location';
@@ -36,10 +37,10 @@ export function buildLocalLocationCandidates(
         const lng = toFiniteNumber(performance.lng ?? performance.longitude);
         if (lat === null || lng === null) continue;
 
-        const name = performance.venue?.trim();
+        const name = collapseDuplicateLeadingLocationToken(performance.venue);
         if (!name) continue;
 
-        const address = performance.address?.trim();
+        const address = collapseDuplicateLeadingLocationToken(performance.address);
         const district = performance.district?.trim();
         const region = performance.region?.trim();
         const nameKey = normalize(name);

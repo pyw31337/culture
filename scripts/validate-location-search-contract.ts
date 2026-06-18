@@ -24,4 +24,11 @@ if (psyLocationCandidates.length > 0) {
     throw new Error('Location fallback must not search performance titles/artist keywords such as "싸이".');
 }
 
+const duplicateLeadingGuri = guriCandidates.find((candidate) => {
+    return /^구리\s+구리/.test(candidate.name) || /^구리\s+구리/.test(candidate.address || '');
+});
+if (duplicateLeadingGuri) {
+    throw new Error(`Location fallback must collapse duplicated leading "구리": ${duplicateLeadingGuri.name}`);
+}
+
 console.log(`[location-search] 구리 fallback candidates: ${guriCandidates.length}`);

@@ -1,4 +1,5 @@
 import type { Performance } from '@/types';
+import { collapseDuplicateLeadingLocationToken, normalizeLocationWhitespace } from '@/lib/location-text';
 
 type VenueLike = {
     address?: string;
@@ -84,7 +85,7 @@ const KNOWN_SELLER_ADDRESS_PATTERNS = [
 ];
 
 function normalizeWhitespace(value?: string) {
-    return value?.replace(/\s+/g, ' ').trim() || '';
+    return normalizeLocationWhitespace(value);
 }
 
 function isKnownSellerAddress(value?: string) {
@@ -98,7 +99,7 @@ function normalizeRegionToken(token?: string) {
 }
 
 function sanitizeAddress(value?: string) {
-    return normalizeWhitespace(value)
+    return collapseDuplicateLeadingLocationToken(value)
         .replace(/지도보기$/g, '')
         .replace(/\s*\|\s*/g, ' ')
         .trim();

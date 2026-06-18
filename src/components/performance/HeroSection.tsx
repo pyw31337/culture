@@ -543,13 +543,7 @@ export default function HeroSection({
                                 onClick={() => setIsDropdownOpen(true)}
                                 onChange={(e) => {
                                     const val = e.target.value;
-                                    setSearchText(val);
-                                    // Reset location filters when user starts typing search
-                                    if (val && (selectedRegion !== 'all' || selectedDistrict !== 'all' || selectedVenue !== 'all')) {
-                                        setSelectedRegion('all');
-                                        setSelectedDistrict('all');
-                                        setSelectedVenue('all');
-                                    }
+                                    onSearchChange(val);
                                     if (!isDropdownOpen) setIsDropdownOpen(true);
                                 }}
                                 onKeyDown={(e) => {

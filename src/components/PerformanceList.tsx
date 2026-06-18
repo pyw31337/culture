@@ -246,6 +246,12 @@ export default function PerformanceList({
     // Initialize from URL params (e.g., from map '공연 더보기' button or venue links)
     const lastUrlKey = useRef<string>('');
     useEffect(() => {
+        if (urlMode === 'keyword' || urlMode === 'location') {
+            setSearchMode(urlMode);
+        }
+    }, [setSearchMode, urlMode]);
+
+    useEffect(() => {
         const currentKey = `${urlMode}-${urlLat}-${urlLng}-${urlVenue}`;
         if (lastUrlKey.current === currentKey) return;
         
@@ -438,6 +444,19 @@ export default function PerformanceList({
             setSelectedRegion('all');
             setSelectedDistrict('all');
             setSelectedVenue('all');
+            setDiscoveryContextId('all');
+            setSelectedDateFilter(null);
+            setSelectedPriceTier(null);
+            setSearchLocation(null);
+            setUserLocation(null);
+            persistRegionSelection('all', 'all', 'all');
+
+            if (isCategoryPage) {
+                const params = new URLSearchParams();
+                params.set('q', text.trim());
+                params.set('mode', searchMode);
+                router.replace(`/?${params.toString()}`);
+            }
         } else {
             // If cleared manually, remove from URL
             if (searchParams.has('q')) {
@@ -445,7 +464,21 @@ export default function PerformanceList({
                 router.replace(path);
             }
         }
-    }, [setSearchText, setSelectedGenre, setSelectedRegion, setSelectedDistrict, setSelectedVenue, searchParams, router]);
+    }, [
+        isCategoryPage,
+        router,
+        searchMode,
+        searchParams,
+        setSearchLocation,
+        setSearchText,
+        setSelectedDateFilter,
+        setSelectedDistrict,
+        setSelectedGenre,
+        setSelectedPriceTier,
+        setSelectedRegion,
+        setSelectedVenue,
+        setUserLocation,
+    ]);
 
     const handleResetLocationSearch = useCallback(() => {
         setSearchLocation(null);
