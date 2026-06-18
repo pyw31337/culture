@@ -20,6 +20,10 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
 
     const searchTextRef = useRef(searchText);
 
+    useEffect(() => {
+        setSearchText(initialSearchText);
+    }, [initialSearchText]);
+
     // Persistence of Search Mode
     useEffect(() => {
         const savedMode = localStorage.getItem('cultureflow_search_mode');

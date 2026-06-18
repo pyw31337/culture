@@ -70,6 +70,7 @@ jobs:
         run: |
           npm run validate:content
           npm run validate:details
+          npm run validate:search
           npm run validate:locations
           npm run validate:display
           npm run audit:stability

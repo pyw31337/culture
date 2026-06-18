@@ -87,7 +87,7 @@ export default function PerformanceList({
     // --- Custom Hooks (Modular Logic) ---
     const {
         likedIds, favoriteVenues, savedKeywords, setSavedKeywords, theme, toggleTheme,
-        toggleLike, toggleFavoriteVenue, addKeyword, removeKeyword
+        toggleLike, toggleFavoriteVenue, addKeyword, removeKeyword, isStorageLoaded
     } = useUserPreferences();
     const { activity, trackGenreView, trackItemView, isActivityReady } = useUserActivity();
 
@@ -111,6 +111,17 @@ export default function PerformanceList({
     const deepLinkHandled = useRef(false);
     const modalReturnScrollY = useRef(0);
 
+    // searchParams is populated by <SearchParamsBridge> after mount. During
+    // static prerender it stays at EMPTY_SEARCH_PARAMS, which means the
+    // initial markup is fully prerendered (no BAILOUT_TO_CLIENT_SIDE_RENDERING)
+    // and the real URL params flow in once the client hydrates.
+    const [searchParams, setSearchParamsState] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
+    const initialQuery = searchParams.get('q') || '';
+    const urlMode = searchParams.get('mode') as 'keyword' | 'location' | null;
+    const urlLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
+    const urlLng = searchParams.get('lng') ? parseFloat(searchParams.get('lng')!) : null;
+    const urlVenue = searchParams.get('venue') || '';
+
     const {
         allPerformances,
         venues,
@@ -123,7 +134,7 @@ export default function PerformanceList({
         initialPerformances,
         performanceLoadPolicy: performanceDataPath?.endsWith('/manifest.json') ? 'paged' : 'full',
         performanceDataPath,
-        backgroundLoadPriority: 'deferred',
+        backgroundLoadPriority: savedKeywords.length > 0 || initialQuery.trim() ? 'immediate' : 'deferred',
         loadVenues: shouldLoadVenueData,
     });
     const scopedPerformances = useMemo(() => {
@@ -132,17 +143,6 @@ export default function PerformanceList({
         const allowedGenres = new Set(Array.isArray(categoryGenreFilter) ? categoryGenreFilter : [categoryGenreFilter]);
         return allPerformances.filter((performance) => allowedGenres.has(performance.genre));
     }, [allPerformances, categoryGenreFilter, isCategoryPage]);
-
-    // searchParams is populated by <SearchParamsBridge> after mount. During
-    // static prerender it stays at EMPTY_SEARCH_PARAMS, which means the
-    // initial markup is fully prerendered (no BAILOUT_TO_CLIENT_SIDE_RENDERING)
-    // and the real URL params flow in once the client hydrates.
-    const [searchParams, setSearchParamsState] = useState<URLSearchParams>(() => EMPTY_SEARCH_PARAMS);
-    const initialQuery = searchParams.get('q') || '';
-    const urlMode = searchParams.get('mode') as 'keyword' | 'location' | null;
-    const urlLat = searchParams.get('lat') ? parseFloat(searchParams.get('lat')!) : null;
-    const urlLng = searchParams.get('lng') ? parseFloat(searchParams.get('lng')!) : null;
-    const urlVenue = searchParams.get('venue') || '';
 
     const {
         searchText, setSearchText, searchMode, setSearchMode, searchLocation, setSearchLocation,
@@ -266,9 +266,9 @@ export default function PerformanceList({
     }, [scopedPerformances]);
 
     const keywordItems = useMemo(() => {
-        if (!savedKeywords.length || !homeSectionCandidates.length) return [];
-        return getKeywordMatchedItems(homeSectionCandidates, savedKeywords, 15);
-    }, [homeSectionCandidates, savedKeywords]);
+        if (!savedKeywords.length || !scopedPerformances.length) return [];
+        return getKeywordMatchedItems(scopedPerformances, savedKeywords, 15);
+    }, [scopedPerformances, savedKeywords]);
 
     const discoverySignals = useMemo(() => ({
         likedIds,
@@ -282,16 +282,15 @@ export default function PerformanceList({
         if (!homeSectionCandidates.length) return [];
         return buildPersonalizedRecommendations(homeSectionCandidates, discoverySignals, 12);
     }, [homeSectionCandidates, discoverySignals]);
-    const [lockedPersonalizedItems, setLockedPersonalizedItems] = useState<Performance[]>([]);
-    const hasLockedPersonalizedItems = useRef(false);
-    useEffect(() => {
-        if (hasLockedPersonalizedItems.current) return;
-        if (!isActivityReady || !isDataFullyLoaded || computedPersonalizedItems.length === 0) return;
+    const personalizedItems = (isStorageLoaded && isActivityReady && isDataFullyLoaded)
+        ? computedPersonalizedItems
+        : [];
 
-        hasLockedPersonalizedItems.current = true;
-        setLockedPersonalizedItems(computedPersonalizedItems);
-    }, [computedPersonalizedItems, isActivityReady, isDataFullyLoaded]);
-    const personalizedItems = lockedPersonalizedItems;
+    useEffect(() => {
+        if (!searchText.trim() && savedKeywords.length === 0) return;
+        if (!hasMorePerformancePages || isPerformancePageLoading) return;
+        void loadNextPerformancePage();
+    }, [hasMorePerformancePages, isPerformancePageLoading, loadNextPerformancePage, savedKeywords.length, searchText]);
 
     const recommendedItems = useMemo(() => {
         const featured = getFeaturedPerformances(homeSectionCandidates, 24);
@@ -787,7 +786,7 @@ export default function PerformanceList({
             {/* Data Sections */}
             {(viewMode === 'grid' || viewMode === 'list') && !searchText && !searchLocation && selectedGenre === 'all' && (
                 <div className="max-w-7xl 2xl:max-w-[1800px] mx-auto mt-14 px-4 space-y-14 relative z-10">
-                    {keywordItems.length > 0 && <KeywordSection keywordItems={keywordItems} onDetail={handleDetailOpen} onDetailPrepare={handleDetailPrepare} searchMode={searchMode} />}
+                    {isDataFullyLoaded && keywordItems.length > 0 && <KeywordSection keywordItems={keywordItems} onDetail={handleDetailOpen} onDetailPrepare={handleDetailPrepare} searchMode={searchMode} />}
                     <PersonalizedSection
                         items={personalizedItems}
                         onDetail={handleDetailOpen}

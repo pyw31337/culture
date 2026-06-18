@@ -231,7 +231,7 @@ export function usePerformanceData({
     const [isPerformancePageLoading, setIsPerformancePageLoading] = useState(false);
     const pageLoadCursorRef = useRef(0);
     const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(() => {
-        if (isPagedMode) return true;
+        if (isPagedMode) return false;
         const performancesReady = performanceLoadPolicy !== 'full' || Boolean(getCachedPerformances(effectivePerformanceDataPath));
         const cinemasReady = !shouldLoadCinemas || Boolean(cinemasCache);
         const venuesReady = !shouldLoadVenues || Boolean(venuesCache);
@@ -357,7 +357,7 @@ export function usePerformanceData({
             }
 
             if (tasks.length === 0) {
-                setIsDataFullyLoaded(true);
+                setIsDataFullyLoaded(!isPagedMode || pageLoadCursorRef.current >= (pagedManifest?.pages.length || 0));
                 return;
             }
 
@@ -390,6 +390,11 @@ export function usePerformanceData({
     const hasMorePerformancePages = useMemo(() => {
         if (!isPagedMode) return false;
         return pageLoadCursorRef.current < (pagedManifest?.pages.length || 0);
+    }, [isPagedMode, loadedPageCount, pagedManifest?.pages.length]);
+
+    useEffect(() => {
+        if (!isPagedMode) return;
+        setIsDataFullyLoaded(pageLoadCursorRef.current >= (pagedManifest?.pages.length || 0));
     }, [isPagedMode, loadedPageCount, pagedManifest?.pages.length]);
 
     return {
