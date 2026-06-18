@@ -738,21 +738,34 @@ export default function PerformanceList({
                     setActiveSearchSource={setActiveSearchSource} setIsDropdownOpen={setIsDropdownOpen} handleSearch={() => { }}
                     handleSelectResult={(res: any) => {
                         setSearchText(res.name);
-                        
-                        // Reset all filters for a clean keyword search
+
                         setSelectedGenre('all');
                         setSelectedRegion('all');
                         setSelectedDistrict('all');
                         setSelectedVenue('all');
+
+                        if (res.type === 'location' && Number.isFinite(res.lat) && Number.isFinite(res.lng)) {
+                            const nextLocation = { lat: res.lat, lng: res.lng, name: res.name };
+                            setUserLocation(null);
+                            setSearchLocation(nextLocation);
+                            setSearchMode('location');
+                            setIsDropdownOpen(false);
+                            syncSearchToUrl(res.name, 'location', nextLocation, 'all');
+                            return;
+                        }
+
                         setSearchLocation(null);
                         setSearchMode('keyword');
-
                         setIsDropdownOpen(false);
                         syncSearchToUrl(res.name, 'keyword', null, 'all');
                     }}
                     handleKeyDown={(e: React.KeyboardEvent) => {
                         if (e.key === 'Enter') {
-                            // Reset all filters for a clean keyword search
+                            if (searchMode === 'location') {
+                                setIsDropdownOpen(false);
+                                return;
+                            }
+
                             setSelectedGenre('all');
                             setSelectedRegion('all');
                             setSelectedDistrict('all');
@@ -778,7 +791,12 @@ export default function PerformanceList({
                     }} onRemoveRecent={removeKeyword} onClearRecent={() => setSavedKeywords([])}
                     searchMode={searchMode} onSearchModeChange={(m) => {
                         setSearchMode(m);
-                        syncSearchToUrl(searchText, m, searchLocation);
+                        if (m === 'keyword') {
+                            setSearchLocation(null);
+                            syncSearchToUrl(searchText, 'keyword', null);
+                        } else if (searchLocation) {
+                            syncSearchToUrl(searchText, 'location', searchLocation);
+                        }
                     }}
                 />
             </ErrorBoundary>
@@ -925,8 +943,20 @@ export default function PerformanceList({
                 }
             }} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={searchResults} onResultSelect={(res) => {
                 setSearchText(res.name);
-                if (searchMode === 'location' && res.lat && res.lng) {
-                    setSearchLocation({ lat: res.lat, lng: res.lng, name: res.name });
+                if (res.type === 'location' && Number.isFinite(res.lat) && Number.isFinite(res.lng)) {
+                    setSelectedGenre('all');
+                    setSelectedRegion('all');
+                    setSelectedDistrict('all');
+                    setSelectedVenue('all');
+                    setUserLocation(null);
+                    const nextLocation = { lat: res.lat, lng: res.lng, name: res.name };
+                    setSearchMode('location');
+                    setSearchLocation(nextLocation);
+                    syncSearchToUrl(res.name, 'location', nextLocation, 'all');
+                } else {
+                    setSearchLocation(null);
+                    setSearchMode('keyword');
+                    syncSearchToUrl(res.name, 'keyword', null, 'all');
                 }
             }} />
 

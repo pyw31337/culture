@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Performance } from '@/types';
 import { isChoseongMatch } from '@/lib/hangul';
+import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
+import { buildLocalLocationCandidates, type LocationSearchCandidate } from '@/lib/location-search';
 
 interface UseSearchLogicProps {
     allPerformances: Performance[];
@@ -36,57 +38,82 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
         localStorage.setItem('cultureflow_search_mode', searchMode);
     }, [searchMode]);
 
-    // Kakao Location Search Logic
+    // Location search must stay separate from content keyword search.
+    // Kakao Places is the primary source; local venue/address candidates keep the UI usable
+    // when the SDK key is missing, blocked, or still loading.
     useEffect(() => {
         searchTextRef.current = searchText;
 
         if (searchMode === 'location' && searchLocation && searchText === searchLocation.name) {
+            setKakaoSearchResults([]);
             return;
         }
 
         if (searchMode === 'location' && searchText.trim().length > 1) {
             const currentSearchText = searchText.trim();
+            let cancelled = false;
             const timer = setTimeout(() => {
-                const kakao = (window as any).kakao;
-                if (kakao && kakao.maps) {
-                    kakao.maps.load(() => {
-                        if (kakao.maps.services) {
+                const localFallback = () => buildLocalLocationCandidates(allPerformances, currentSearchText);
+
+                loadKakaoMapSdk()
+                    .then(() => {
+                        if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
+
+                        const kakao = (window as any).kakao;
+                        if (!kakao?.maps?.services?.Places) {
+                            setKakaoSearchResults(localFallback());
+                            setIsDropdownOpen(true);
+                            return;
+                        }
+
+                        kakao.maps.load(() => {
+                            if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
+
                             const ps = new kakao.maps.services.Places();
-                            ps.keywordSearch(currentSearchText, (data: any, status: any) => {
-                                if (searchTextRef.current.trim() !== currentSearchText) return;
+                            ps.keywordSearch(currentSearchText, (data: any[], status: any) => {
+                                if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
 
                                 if (status === kakao.maps.services.Status.OK) {
                                     const filteredData = data.filter((place: any) => {
-                                        const cat = place.category_name || '';
-                                        const isIrrelevant = /서비스,산업|의료,건강|부동산|교육,학원|기업/.test(cat);
+                                        const category = place.category_name || '';
+                                        const isIrrelevant = /서비스,산업|부동산|기업/.test(category);
                                         const isExactMatch = place.place_name.toLowerCase().includes(currentSearchText.toLowerCase());
                                         return !isIrrelevant || isExactMatch;
                                     });
 
-                                    setKakaoSearchResults(filteredData.map((place: any) => ({
+                                    const kakaoResults: LocationSearchCandidate[] = filteredData.map((place: any): LocationSearchCandidate => ({
                                         type: 'location',
                                         name: place.place_name,
                                         address: place.road_address_name || place.address_name,
                                         lat: parseFloat(place.y),
                                         lng: parseFloat(place.x),
                                         venueId: place.id,
-                                        category: place.category_group_name
-                                    })));
-                                    setIsDropdownOpen(true);
+                                        category: place.category_group_name || place.category_name,
+                                        source: 'kakao'
+                                    })).filter((place) => Number.isFinite(place.lat) && Number.isFinite(place.lng));
+
+                                    setKakaoSearchResults(kakaoResults.length > 0 ? kakaoResults : localFallback());
                                 } else {
-                                    setKakaoSearchResults([]);
-                                    setIsDropdownOpen(true);
+                                    setKakaoSearchResults(localFallback());
                                 }
-                            });
-                        }
+                                setIsDropdownOpen(true);
+                            }, { size: 15 });
+                        });
+                    })
+                    .catch(() => {
+                        if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
+                        setKakaoSearchResults(localFallback());
+                        setIsDropdownOpen(true);
                     });
-                }
             }, 300);
-            return () => clearTimeout(timer);
+            return () => {
+                cancelled = true;
+                clearTimeout(timer);
+            };
         } else if (searchMode === 'location' && searchText.trim().length === 0) {
             setKakaoSearchResults([]);
         }
-    }, [searchText, searchMode, searchLocation]);
+    }, [searchText, searchMode, searchLocation, allPerformances]);
 
     // Unified Search Results
     const searchResults = useMemo(() => {

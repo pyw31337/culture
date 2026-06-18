@@ -185,7 +185,7 @@ export const ResultsHeader = ({
                                             )}
                                             <span className="truncate max-w-[120px] sm:max-w-xs">&apos;{searchText}&apos;</span>
                                             <span className="text-base sm:text-xl shrink-0">
-                                                {searchMode === 'location' ? '위치 주변' : '키워드 검색'} ({filteredCount})
+                                                {searchMode === 'location' ? '위치 선택 대기' : '키워드 검색'} ({filteredCount})
                                             </span>
                                         </>
                                     ) : (

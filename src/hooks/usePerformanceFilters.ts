@@ -184,6 +184,10 @@ export function usePerformanceFilters({
         const cachedResult = filterResultCache.get(cacheKey);
         if (cachedResult) return cachedResult;
 
+        if (searchMode === 'location' && debouncedSearchText.trim() && !searchLocation && !userLocation) {
+            return rememberFilterResult(cacheKey, []);
+        }
+
         const filtered = filterPerformances(allPerformances, {
             genre: selectedGenre,
             region: selectedRegion,

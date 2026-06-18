@@ -326,6 +326,10 @@ jobs:
         if: steps.freshness.outputs.should_run == 'true'
         run: npm run validate:search
 
+      - name: Validate Location Search Contract
+        if: steps.freshness.outputs.should_run == 'true'
+        run: npm run validate:location-search
+
       - name: Validate Location Integrity
         if: steps.freshness.outputs.should_run == 'true'
         run: npm run validate:locations

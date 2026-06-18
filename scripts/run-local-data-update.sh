@@ -321,6 +321,8 @@ POSTER_CACHE_INCLUDE_ALL_REMOTE=1 POSTER_CACHE_MAX_NEW_DOWNLOADS=8000 npm run ca
 npm run generate:thumbs
 npm run validate:content
 npm run validate:details
+npm run validate:search
+npm run validate:location-search
 npm run validate:locations
 npm run validate:display
 
