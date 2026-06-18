@@ -69,8 +69,10 @@ jobs:
       - name: Validate Prebuilt Data Artifacts
         run: |
           npm run validate:content
+          npm run validate:details
           npm run validate:locations
           npm run validate:display
+          npm run audit:stability
 
       - name: Build Website
         env:

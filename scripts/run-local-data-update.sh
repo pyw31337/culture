@@ -282,32 +282,9 @@ run_scraper() {
   rm -rf "$checkpoint_dir"
 }
 
-run_scraper "interpark" critical npx tsx scripts/scrape-interpark.ts
-run_scraper "kopis" critical npx tsx scripts/scrape-kopis.ts
-run_scraper "kovo" optional npx tsx scripts/scrape-kovo.ts
-run_scraper "kbl" optional npx tsx scripts/scrape-kbl.ts
-run_scraper "handball" optional npx tsx scripts/scrape-handball.ts
-run_scraper "festival" optional npx tsx scripts/scrape-festival.ts
-run_scraper "kbo" critical npx tsx scripts/scrape-kbo.ts
-run_scraper "kleague" optional npx tsx scripts/scrape-kleague.ts
-run_scraper "yes24-exclusive" optional npx tsx scripts/scrape-yes24-exclusive.ts
-run_scraper "timeticket" optional npx tsx scripts/scrape-timeticket.ts
-run_scraper "movies" critical npx tsx scripts/scrape-movies.ts
-run_scraper "cinemas" critical npx tsx scripts/scrape-cinemas.ts
-run_scraper "myrealtrip" optional node scripts/scrape-myrealtrip.js
-run_scraper "umclass" optional npx tsx scripts/scrape-umclass.ts
-run_scraper "sssd" optional npx tsx scripts/scrape-sssd.ts
-run_scraper "mochaclass" critical npx tsx scripts/scrape-mochaclass.ts
-run_scraper "museum" optional npx tsx scripts/scrape-museum.ts
-run_scraper "mommom" optional npx tsx scripts/scrape-mommom.ts
-run_scraper "mommom-activities" optional npx tsx scripts/scrape-mommom-activities.ts
-run_scraper "mommom-exhibitions" optional npx tsx scripts/scrape-mommom-exhibitions.ts
-run_scraper "mommom-products" optional npx tsx scripts/scrape-mommom-products.ts
-run_scraper "seoul-culture" optional npx tsx scripts/scrape-seoul-culture.ts
-run_scraper "culture-portal" optional npx tsx scripts/scrape-culture-portal.ts
-run_scraper "tourism" optional npx tsx scripts/scrape-visitkorea-expanded.ts
-run_scraper "build-venues" critical npx tsx scripts/build-venues.ts
-run_scraper "venue-places" optional npx tsx scripts/enrich-venue-places.ts
+while IFS=$'\t' read -r name priority command; do
+  run_scraper "$name" "$priority" bash -lc "$command"
+done < <(node scripts/print-scraper-plan.mjs local)
 
 if [ "${RUN_LINK_VERIFY:-0}" = "1" ]; then
   run_scraper "verify-links" optional npx tsx scripts/verify-links.ts
@@ -343,6 +320,7 @@ npm run generate-data
 POSTER_CACHE_INCLUDE_ALL_REMOTE=1 POSTER_CACHE_MAX_NEW_DOWNLOADS=8000 npm run cache:posters
 npm run generate:thumbs
 npm run validate:content
+npm run validate:details
 npm run validate:locations
 npm run validate:display
 

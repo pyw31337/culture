@@ -35,8 +35,12 @@ Untitled-*.psd
 # screenshots & debug images
 debug-*.png
 debug-*.html
+debug_*
 error_row_*.png
 naver_debug*.png
+interpark*_screenshot.png
+*_debug.html
+*_debug.json
 *.webp
 !public/images/posters/**/*.webp
 !public/images/thumbs/**/*.webp
@@ -45,10 +49,18 @@ naver_debug*.png
 # data/cache
 venue_cache.json
 venue_report.*
+venue_export*.csv
+venues_export.csv
+venues_for_review.csv
+unmatched_sports_venues.json
 venue_audit.csv
 venue_export.csv
 venue_validation_log.txt
 missing_venues.txt
+missing_venues_report.json
+tmp/
+tmp-*.json
+ship-*.sh
 
 # env files (can opt-in for committing if needed)
 .env*

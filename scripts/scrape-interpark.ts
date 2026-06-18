@@ -293,9 +293,9 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             // 1. Has important details (MUST have a REAL price to be considered fully enriched)
             // 2. Was checked recently (lastEnriched < 7 days), preventing infinite retry of empty items
             const hasBadPrice = !hasUsefulPrice(ex.price);
-            const hasCompleteData = !hasBadPrice && (ex.runningTime || ex.ageRating) && ex.synopsis;
+            const hasCompleteData = !hasBadPrice && Boolean(ex.runningTime) && Boolean(ex.ageRating) && Boolean(ex.synopsis);
 
-            if (hasCompleteData || (isRecentlyEnriched(ex) && !hasBadPrice && ex.synopsis)) {
+            if (hasCompleteData || (isRecentlyEnriched(ex) && hasCompleteData)) {
                 alreadyDone.push({ ...c, ...ex });
             } else {
                 todo.push(c);

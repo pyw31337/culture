@@ -79,9 +79,11 @@ export default function KakaoMapModal({
     const [isMapReady, setIsMapReady] = useState(false);
     const [venues, setVenues] = useState<Record<string, Venue>>({});
     const markersRef = useRef<any[]>([]);
+    const markerByGroupKeyRef = useRef<Map<string, any>>(new Map());
     const mapOverlaysRef = useRef<any[]>([]);
     const popupOverlayRef = useRef<any>(null);
     const lastRenderedVenuesKey = useRef<string>("");
+    const previousSelectedVenueRef = useRef<string | null>(null);
 
     // Group performances by venue - Pre-calculation
     const allVenueGroups = useRef<Record<string, any>>({});
@@ -223,6 +225,11 @@ export default function KakaoMapModal({
 
         return { groups: Object.fromEntries(groupsMap), list };
     }, [performances, cinemas, centerLocation, selectedGenre, venues]);
+
+    const markerVenues = useMemo(() => {
+        const limit = selectedGenre === 'all' || !selectedGenre ? 700 : 1200;
+        return processedData.list.slice(0, limit);
+    }, [processedData, selectedGenre]);
 
     // Update refs immediately after memoization
     useEffect(() => {
@@ -406,6 +413,7 @@ export default function KakaoMapModal({
             k.event.removeListener(m, 'click');
         });
         markersRef.current = [];
+        markerByGroupKeyRef.current.clear();
 
         const clusterer = new k.MarkerClusterer({
             map: mapInstance,
@@ -421,7 +429,7 @@ export default function KakaoMapModal({
         clustererRef.current = clusterer;
 
         const markers: any[] = [];
-        allVenuesList.current.forEach(venue => {
+        markerVenues.forEach(venue => {
             const primaryGenre = venue.performances[0]?.genre || selectedGenre || 'all';
             const style = (GENRE_STYLES as any)[primaryGenre] || (GENRE_STYLES as any)['all'];
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
@@ -449,19 +457,26 @@ export default function KakaoMapModal({
             (marker as any)._text = text;
             markers.push(marker);
             markersRef.current.push(marker);
+            markerByGroupKeyRef.current.set(venue.groupKey, marker);
         });
 
         clusterer.addMarkers(markers);
-    }, [mapInstance, isMapReady, processedData]); // DOES NOT depend on selectedVenue
+    }, [mapInstance, isMapReady, markerVenues, getMarkerIcon]);
 
     // 2. Selection Update (Efficiently update specific markers)
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
         const k = window.kakao.maps;
 
-        markersRef.current.forEach(marker => {
-            const groupKey = marker._groupKey;
-            const isSelected = groupKey === selectedVenue;
+        const keysToUpdate = new Set<string>();
+        if (previousSelectedVenueRef.current) keysToUpdate.add(previousSelectedVenueRef.current);
+        if (selectedVenue) keysToUpdate.add(selectedVenue);
+
+        keysToUpdate.forEach((key) => {
+            const marker = markerByGroupKeyRef.current.get(key);
+            if (!marker) return;
+            const markerGroupKey = marker._groupKey;
+            const isSelected = markerGroupKey === selectedVenue;
             const wasSelected = marker.getZIndex() === 100;
 
             if (isSelected || wasSelected) {
@@ -472,7 +487,8 @@ export default function KakaoMapModal({
                 marker.setZIndex(isSelected ? 100 : 10);
             }
         });
-    }, [selectedVenue]);
+        previousSelectedVenueRef.current = selectedVenue;
+    }, [selectedVenue, mapInstance, isMapReady, getMarkerIcon]);
 
 
     // --- 5. Search Auto-bounding ---
