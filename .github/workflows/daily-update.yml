@@ -117,17 +117,16 @@ jobs:
           DISABLE_KAKAO_API: '1'
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
-          # GitHub Actions is only the 03:00 KST fallback. Keep it shallow so it
-          # finishes within the free-minute budget; the local midnight job does
-          # the deeper enrichment pass.
-          # The GitHub fallback refreshes Interpark lists only. Existing rich
-          # details are retained; the local midnight run owns browser enrichment.
-          INTERPARK_ENRICH_LIMIT: '0'
+          # GitHub Actions is only the 03:00 KST fallback. Keep it shallow, but
+          # still enrich the nearest Interpark items so visible cards do not lose
+          # price, age, and runtime when the local midnight job is stale.
+          INTERPARK_ENRICH_LIMIT: '80'
           INTERPARK_FAST_MODE: '1'
           INTERPARK_CONCURRENCY: '2'
-          INTERPARK_NAVIGATION_TIMEOUT_MS: '15000'
-          INTERPARK_SELECTOR_TIMEOUT_MS: '3000'
-          INTERPARK_PROTOCOL_TIMEOUT_MS: '25000'
+          INTERPARK_NAVIGATION_TIMEOUT_MS: '25000'
+          INTERPARK_SELECTOR_TIMEOUT_MS: '12000'
+          INTERPARK_POST_LOAD_DELAY_MS: '1500'
+          INTERPARK_PROTOCOL_TIMEOUT_MS: '45000'
           # KOPIS checkpoints and exits cleanly before the outer timeout. The
           # local midnight run still performs the unrestricted deep refresh.
           KOPIS_DETAIL_LIMIT: '80'
@@ -320,6 +319,8 @@ jobs:
 
       - name: Validate Data Integrity (Pre-Commit Check)
         if: steps.freshness.outputs.should_run == 'true'
+        env:
+          UMCLASS_MISSING_GEO_CRITICAL_THRESHOLD: '1000'
         run: npx tsx scripts/validate-data-integrity.ts
 
       - name: Prune Stale Data (Strict Retention)

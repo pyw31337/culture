@@ -53,6 +53,7 @@ const INTERPARK_CONCURRENCY = Number(process.env.INTERPARK_CONCURRENCY || (INTER
 const INTERPARK_NAVIGATION_TIMEOUT_MS = Number(process.env.INTERPARK_NAVIGATION_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 15000 : 30000));
 const INTERPARK_SELECTOR_TIMEOUT_MS = Number(process.env.INTERPARK_SELECTOR_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 3000 : 5000));
 const INTERPARK_PROTOCOL_TIMEOUT_MS = Number(process.env.INTERPARK_PROTOCOL_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 25000 : 60000));
+const INTERPARK_POST_LOAD_DELAY_MS = Number(process.env.INTERPARK_POST_LOAD_DELAY_MS || (INTERPARK_FAST_MODE ? 800 : 1500));
 
 const REGIONS = {
     seoul: '42001',
@@ -247,7 +248,41 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             const now = new Date();
             const diffDays = (now.getTime() - last.getTime()) / (1000 * 3600 * 24);
             return diffDays < 7;
-        } catch (e) { return false; }
+        } catch { return false; }
+    };
+
+    const hasUsefulPrice = (price?: string) => Boolean(price && /[0-9]/.test(price) && !['무료/이벤트', '이벤트', '가격정보없음'].includes(price));
+
+    const parseStartDate = (date?: string) => {
+        const match = (date || '').match(/(\d{4})[.-](\d{2})[.-](\d{2})/);
+        if (!match) return null;
+        const parsed = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+        return Number.isNaN(parsed.getTime()) ? null : parsed;
+    };
+
+    const enrichPriority = (item: Performance) => {
+        const existing = existingEnriched.get(item.id);
+        let score = 0;
+        if (!existing) score += 20;
+        if (!hasUsefulPrice(existing?.price)) score += 50;
+        if (!existing?.ageRating) score += 25;
+        if (!existing?.runningTime) score += 15;
+        if (!existing?.synopsis) score += 5;
+
+        const startDate = parseStartDate(item.date || existing?.date);
+        if (startDate) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const daysFromToday = Math.floor((startDate.getTime() - today.getTime()) / 86400000);
+            if (daysFromToday >= -2 && daysFromToday <= 30) {
+                score += 100 - Math.max(0, daysFromToday) * 2;
+            } else if (daysFromToday < -2) {
+                score -= 40;
+            }
+        }
+
+        if (['musical', 'play', 'concert', 'classic', 'exhibition'].includes(item.genre)) score += 5;
+        return score;
     };
 
     candidates.forEach(c => {
@@ -257,7 +292,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             // Criteria for skipping:
             // 1. Has important details (MUST have a REAL price to be considered fully enriched)
             // 2. Was checked recently (lastEnriched < 7 days), preventing infinite retry of empty items
-            const hasBadPrice = !ex.price || ex.price === '무료/이벤트' || ex.price === '이벤트' || ex.price === '가격정보없음';
+            const hasBadPrice = !hasUsefulPrice(ex.price);
             const hasCompleteData = !hasBadPrice && (ex.runningTime || ex.ageRating) && ex.synopsis;
 
             if (hasCompleteData || (isRecentlyEnriched(ex) && !hasBadPrice && ex.synopsis)) {
@@ -269,6 +304,8 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             todo.push(c);
         }
     });
+
+    todo.sort((a, b) => enrichPriority(b) - enrichPriority(a));
 
     const enrichQueue = todo.slice(0, INTERPARK_ENRICH_LIMIT);
     const deferred = todo.slice(INTERPARK_ENRICH_LIMIT).map((item) => {
@@ -301,7 +338,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 await page.setRequestInterception(true);
                 page.on('request', (req: any) => {
                     const blockedTypes = INTERPARK_FAST_MODE
-                        ? ['image', 'media', 'font', 'stylesheet']
+                        ? ['image', 'media', 'font']
                         : ['image', 'media'];
                     if (blockedTypes.includes(req.resourceType())) {
                         req.abort();
@@ -332,8 +369,16 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                 } catch (e) { }
 
                 try {
-                    await page.waitForSelector('.infoList', { timeout: INTERPARK_SELECTOR_TIMEOUT_MS });
+                    await page.waitForSelector('.infoList, .infoItem', { timeout: INTERPARK_SELECTOR_TIMEOUT_MS });
+                    await page.waitForFunction(function () {
+                        return Array.from(document.querySelectorAll('.infoItem')).some(function (el) {
+                            return /장소|공연기간|공연시간|관람연령|가격/.test(el.textContent || '');
+                        });
+                    }, { timeout: INTERPARK_SELECTOR_TIMEOUT_MS });
                 } catch (e) { }
+                if (INTERPARK_POST_LOAD_DELAY_MS > 0) {
+                    await new Promise(resolve => setTimeout(resolve, INTERPARK_POST_LOAD_DELAY_MS));
+                }
 
                 // 1. Basic Info & Base Price
                 const basicInfo = await page.evaluate(function () {
@@ -375,11 +420,24 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     };
 
                     // Try finding .infoList items first, or just .infoItem globally if .infoList class is missing
-                    const infoItems = Array.from(document.querySelectorAll('.infoList .infoItem, li.infoItem'));
+                    const readInfoPair = function (item: Element) {
+                        let label = item.querySelector('.infoLabel')?.textContent?.trim() || '';
+                        let text = item.querySelector('.infoText')?.textContent?.trim() || '';
+                        if (!label || !text) {
+                            const lines = ((item as HTMLElement).innerText || '')
+                                .split('\n')
+                                .map(line => normalizeInlineText(line))
+                                .filter(Boolean);
+                            label = label || lines[0] || '';
+                            text = text || lines.slice(1).find(line => !line.includes('자세히') && line !== label) || '';
+                        }
+                        return { label, text };
+                    };
+
+                    const infoItems = Array.from(document.querySelectorAll('.infoList .infoItem, li.infoItem, .infoItem'));
                     if (infoItems.length > 0) {
                         infoItems.forEach(item => {
-                            const label = item.querySelector('.infoLabel')?.textContent?.trim() || '';
-                            const text = item.querySelector('.infoText')?.textContent?.trim() || '';
+                            const { label, text } = readInfoPair(item);
 
                             if (label.includes('공연시간') || label.includes('관람시간')) runningTime = text;
                             if (label.includes('관람연령') || label.includes('이용등급')) {
@@ -392,10 +450,11 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                     // Fallback to old structure (dl > dd) if not found
                     if (!runningTime || !ageRating) {
-                        const items = Array.from(document.querySelectorAll('li.infoItem, dl > div, dl > .item'));
+                        const items = Array.from(document.querySelectorAll('li.infoItem, .infoItem, dl > div, dl > .item'));
                         items.forEach(item => {
-                            const label = item.querySelector('.infoLabel, dt')?.textContent?.trim() || '';
-                            const text = item.querySelector('.infoDesc .infoText, dd')?.textContent?.trim() || '';
+                            const pair = readInfoPair(item);
+                            const label = item.querySelector('.infoLabel, dt')?.textContent?.trim() || pair.label;
+                            const text = item.querySelector('.infoDesc .infoText, dd')?.textContent?.trim() || pair.text;
 
                             if (!runningTime && (label.includes('공연시간') || label.includes('관람시간'))) runningTime = text;
                             if (!ageRating && (label.includes('관람연령') || label.includes('이용등급'))) ageRating = text;
@@ -544,11 +603,12 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
                     // Strategy C: Traverse .infoItem for labels like "가격" or "금액" (observed on 26001972)
                     if (!price) {
-                        const items = Array.from(document.querySelectorAll('.infoList .infoItem, li.infoItem'));
+                        const items = Array.from(document.querySelectorAll('.infoList .infoItem, li.infoItem, .infoItem'));
                         items.forEach(item => {
-                            const label = item.querySelector('.infoLabel')?.textContent?.trim() || '';
+                            const pair = readInfoPair(item);
+                            const label = item.querySelector('.infoLabel')?.textContent?.trim() || pair.label;
                             const textSource = item.querySelector('.infoText, .infoDesc') || item;
-                            const text = textSource.textContent?.trim() || '';
+                            const text = textSource.textContent?.trim() || pair.text;
 
                             if (label.includes('가격') || label.includes('판매가') || label.includes('티켓가격')) {
                                 // Try finding a price pattern in the item text
@@ -739,7 +799,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     if (priceList.length === 0) {
                         const lines = bodyLines();
                         for (let i = 0; i < lines.length; i += 1) {
-                            const inlineMatch = lines[i].match(/^(전석|일반석|R석|S석|A석|VIP석|스탠딩|지정석|자유석)\s+([0-9,]+원)$/);
+                            const inlineMatch = lines[i].match(/^(전석|일반석|R석|S석|A석|VIP석|스탠딩|지정석|자유석)\s+([0-9,]+원)/);
                             if (inlineMatch) {
                                 priceList.push({ label: inlineMatch[1], price: inlineMatch[2] });
                                 continue;
