@@ -93,7 +93,10 @@ jobs:
           test -f out/robots.txt
           test -f out/sitemap.xml
           test -f out/data/pages/manifest.json
-          ! grep -q "dapi.kakao.com/v2/maps/sdk.js" out/index.html
+          if grep -q "dapi.kakao.com/v2/maps/sdk.js" out/index.html; then
+            echo "Kakao SDK should not be loaded from the static home page."
+            exit 1
+          fi
           grep -R -q "dapi.kakao.com/v2/maps/sdk.js" out/_next/static/chunks
 
       - name: Upload GitHub Pages Artifact
