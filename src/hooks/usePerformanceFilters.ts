@@ -4,6 +4,7 @@ import { filterPerformances, sortPerformances, sortPerformancesForCategoryFeed, 
 import { resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { filterByDiscoveryContext } from '@/lib/discovery';
+import { performanceMatchesLocationQuery } from '@/lib/location-search';
 import type { DateFilterId, PriceFilterId } from '@/lib/constants';
 import { parseDistrictSelection, parseRegionSelection, persistRegionSelection, readPersistedRegionSelection, REGION_SELECTION_EVENT } from '@/lib/region-selection';
 
@@ -11,6 +12,21 @@ const INITIAL_VISIBLE_COUNT = 15;
 const LOAD_MORE_COUNT = 30;
 const FILTER_CACHE_LIMIT = 24;
 const filterResultCache = new Map<string, Performance[]>();
+
+type SearchPoint = {
+    lat: number;
+    lng: number;
+    name?: string;
+} | null;
+
+type VenueLookupEntry = {
+    name?: string;
+    address?: string;
+    district?: string;
+    lat?: number | null;
+    lng?: number | null;
+    mapped_region_id?: string;
+};
 
 function rememberFilterResult(key: string, result: Performance[]) {
     filterResultCache.delete(key);
@@ -28,10 +44,10 @@ interface UsePerformanceFiltersProps {
     initialGenre: string;
     searchMode: 'keyword' | 'location';
     searchText: string;
-    searchLocation: any;
-    userLocation: any;
+    searchLocation: SearchPoint;
+    userLocation: SearchPoint;
     radius: number;
-    venues: Record<string, any>;
+    venues: Record<string, VenueLookupEntry>;
     discoveryContextId: DiscoveryContextId;
 }
 
@@ -138,7 +154,7 @@ export function usePerformanceFilters({
     const districts = useMemo(() => {
         const selectedRegions = parseRegionSelection(selectedRegion);
         if (selectedRegions.length === 0) return [];
-        const regionVenues = Object.values(venues).filter(v => selectedRegions.includes(v.mapped_region_id));
+        const regionVenues = Object.values(venues).filter(v => Boolean(v.mapped_region_id && selectedRegions.includes(v.mapped_region_id)));
         const uniqueDistricts = new Set(regionVenues.map(v => v.district).filter((d): d is string => !!d));
         return Array.from(uniqueDistricts).sort();
     }, [selectedRegion, venues]);
@@ -148,14 +164,14 @@ export function usePerformanceFilters({
         const selectedRegions = parseRegionSelection(selectedRegion);
         const districtMap = parseDistrictSelection(selectedDistrict, selectedRegions[0]);
         if (selectedRegions.length > 0) {
-            relevantVenues = relevantVenues.filter(v => selectedRegions.includes(venues[v].mapped_region_id));
+            relevantVenues = relevantVenues.filter(v => Boolean(venues[v].mapped_region_id && selectedRegions.includes(venues[v].mapped_region_id)));
         }
         const hasDistricts = Object.values(districtMap).some((items) => items.length > 0);
         if (hasDistricts) {
             relevantVenues = relevantVenues.filter(v => {
-                const region = venues[v].mapped_region_id;
+                const region = venues[v].mapped_region_id || '';
                 const selectedDistricts = districtMap[region] || [];
-                return selectedDistricts.length === 0 || selectedDistricts.includes(venues[v].district);
+                return selectedDistricts.length === 0 || selectedDistricts.includes(venues[v].district || '');
             });
         }
         return relevantVenues.sort();
@@ -184,10 +200,6 @@ export function usePerformanceFilters({
         const cachedResult = filterResultCache.get(cacheKey);
         if (cachedResult) return cachedResult;
 
-        if (searchMode === 'location' && debouncedSearchText.trim() && !searchLocation && !userLocation) {
-            return rememberFilterResult(cacheKey, []);
-        }
-
         const filtered = filterPerformances(allPerformances, {
             genre: selectedGenre,
             region: selectedRegion,
@@ -205,6 +217,19 @@ export function usePerformanceFilters({
         const discoveryFiltered = (!debouncedSearchText && searchMode !== 'location')
             ? filterByDiscoveryContext(filtered, discoveryContextId)
             : filtered;
+
+        if (searchMode === 'location' && debouncedSearchText.trim() && !searchLocation && !userLocation) {
+            const locationQuery = debouncedSearchText.trim();
+            const resolvedVenueCache = new Map<string, ReturnType<typeof resolveVenueInfoForPerformance>>();
+            const locationMatched = discoveryFiltered.filter((performance) => {
+                const key = performance.id || `${performance.title}::${performance.venue}::${performance.address || ''}`;
+                const venueInfo = resolvedVenueCache.get(key) || resolveVenueInfoForPerformance(performance, venues);
+                resolvedVenueCache.set(key, venueInfo);
+                return performanceMatchesLocationQuery(performance, locationQuery, venueInfo);
+            });
+
+            return rememberFilterResult(cacheKey, sortPerformances(locationMatched, selectedGenre, ''));
+        }
 
         if (searchMode === 'location' && (searchLocation || userLocation)) {
             const center = searchLocation || userLocation;

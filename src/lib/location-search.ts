@@ -16,6 +16,29 @@ function normalize(value: unknown) {
     return String(value || '').replace(/\s+/g, '').toLowerCase().normalize('NFC');
 }
 
+function tokenizeLocationText(value: unknown) {
+    return String(value || '')
+        .normalize('NFC')
+        .toLowerCase()
+        .split(/[\s,./\\\-_:|"'“”‘’()[\]{}<>]+/u)
+        .map((token) => token.trim())
+        .filter(Boolean);
+}
+
+function matchesLocationField(value: unknown, query: string) {
+    const normalizedQuery = normalize(query);
+    if (!normalizedQuery) return false;
+
+    const collapsedValue = collapseDuplicateLeadingLocationToken(String(value || ''));
+    const normalizedValue = normalize(collapsedValue);
+    if (normalizedValue === normalizedQuery || normalizedValue.startsWith(normalizedQuery)) return true;
+
+    return tokenizeLocationText(collapsedValue).some((token) => {
+        const normalizedToken = normalize(token);
+        return normalizedToken === normalizedQuery || normalizedToken.startsWith(normalizedQuery);
+    });
+}
+
 function toFiniteNumber(value: unknown) {
     const next = typeof value === 'number' ? value : Number(value);
     return Number.isFinite(next) && next !== 0 ? next : null;
@@ -49,10 +72,10 @@ export function buildLocalLocationCandidates(
         const regionKey = normalize(region);
 
         const matchedByLocation =
-            nameKey.includes(normalizedQuery) ||
-            addressKey.includes(normalizedQuery) ||
-            districtKey.includes(normalizedQuery) ||
-            regionKey.includes(normalizedQuery);
+            matchesLocationField(name, query) ||
+            matchesLocationField(address, query) ||
+            matchesLocationField(district, query) ||
+            matchesLocationField(region, query);
         if (!matchedByLocation) continue;
 
         const dedupeKey = `${nameKey}:${addressKey}:${lat.toFixed(5)}:${lng.toFixed(5)}`;
@@ -61,11 +84,10 @@ export function buildLocalLocationCandidates(
 
         const score =
             (nameKey === normalizedQuery ? 100 : 0) +
-            (nameKey.startsWith(normalizedQuery) ? 70 : 0) +
-            (nameKey.includes(normalizedQuery) ? 45 : 0) +
-            (addressKey.includes(normalizedQuery) ? 35 : 0) +
-            (districtKey.includes(normalizedQuery) ? 25 : 0) +
-            (regionKey.includes(normalizedQuery) ? 10 : 0);
+            (matchesLocationField(name, query) ? 70 : 0) +
+            (matchesLocationField(address, query) ? 35 : 0) +
+            (districtKey === normalizedQuery || matchesLocationField(district, query) ? 25 : 0) +
+            (regionKey === normalizedQuery || matchesLocationField(region, query) ? 10 : 0);
 
         candidates.push({
             type: 'location',
@@ -83,5 +105,31 @@ export function buildLocalLocationCandidates(
     return candidates
         .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name, 'ko'))
         .slice(0, limit)
-        .map(({ score: _score, ...candidate }) => candidate);
+        .map((candidate) => {
+            const { score, ...result } = candidate;
+            void score;
+            return result;
+        });
+}
+
+export function performanceMatchesLocationQuery(
+    performance: Performance,
+    query: string,
+    resolvedVenue?: { name?: string; address?: string; district?: string; mapped_region_id?: string } | null,
+) {
+    const normalizedQuery = normalize(query);
+    if (!normalizedQuery) return false;
+
+    const fields = [
+        performance.venue,
+        performance.address,
+        performance.district,
+        performance.region,
+        resolvedVenue?.name,
+        resolvedVenue?.address,
+        resolvedVenue?.district,
+        resolvedVenue?.mapped_region_id,
+    ];
+
+    return fields.some((field) => matchesLocationField(field, normalizedQuery));
 }

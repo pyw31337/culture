@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { buildLocalLocationCandidates } from '../src/lib/location-search';
+import { buildLocalLocationCandidates, performanceMatchesLocationQuery } from '../src/lib/location-search';
 import type { Performance } from '../src/types';
 
 const dataPath = path.join(process.cwd(), 'public/data/performances.json');
@@ -31,4 +31,33 @@ if (duplicateLeadingGuri) {
     throw new Error(`Location fallback must collapse duplicated leading "구리": ${duplicateLeadingGuri.name}`);
 }
 
+const falsePositiveGuriCandidate = guriCandidates.find((candidate) =>
+    /개구리|강구리|대게거리/.test(`${candidate.name} ${candidate.address || ''}`),
+);
+if (falsePositiveGuriCandidate) {
+    throw new Error(`Location fallback must not match embedded non-location words for "구리": ${falsePositiveGuriCandidate.name}`);
+}
+
+const guriLocationMatches = performances.filter((performance) => performanceMatchesLocationQuery(performance, '구리'));
+if (guriLocationMatches.length === 0) {
+    throw new Error('Location text fallback must return content whose venue/address/district/region matches "구리".');
+}
+
+const falsePositiveGuriMatch = guriLocationMatches.find((performance) =>
+    /개구리|강구리|대게거리/.test(`${performance.title || ''} ${performance.venue || ''} ${performance.address || ''}`),
+);
+if (falsePositiveGuriMatch) {
+    throw new Error(`Location text fallback must not match embedded non-location words for "구리": ${falsePositiveGuriMatch.title}`);
+}
+
+const psyTitleOnly = performances.find((performance) => {
+    const title = String(performance.title || '').replace(/\s+/g, '');
+    const locationFields = `${performance.venue || ''} ${performance.address || ''} ${performance.district || ''} ${performance.region || ''}`;
+    return title.includes('싸이') && !locationFields.includes('싸이');
+});
+if (psyTitleOnly && performanceMatchesLocationQuery(psyTitleOnly, '싸이')) {
+    throw new Error('Location text fallback must not match title-only keywords such as "싸이".');
+}
+
 console.log(`[location-search] 구리 fallback candidates: ${guriCandidates.length}`);
+console.log(`[location-search] 구리 text fallback matches: ${guriLocationMatches.length}`);

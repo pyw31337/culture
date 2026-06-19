@@ -10,6 +10,38 @@ interface UseSearchLogicProps {
     initialSearchText?: string;
 }
 
+type SearchLocation = { lat: number; lng: number; name: string };
+type UserLocation = { lat: number; lng: number };
+
+type KakaoPlace = {
+    id?: string;
+    place_name: string;
+    road_address_name?: string;
+    address_name?: string;
+    y: string;
+    x: string;
+    category_group_name?: string;
+    category_name?: string;
+};
+
+type KakaoPlacesService = {
+    keywordSearch: (
+        query: string,
+        callback: (data: KakaoPlace[], status: unknown) => void,
+        options?: { size?: number },
+    ) => void;
+};
+
+type KakaoGlobal = {
+    maps?: {
+        load?: (callback: () => void) => void;
+        services?: {
+            Places?: new () => KakaoPlacesService;
+            Status?: { OK?: unknown };
+        };
+    };
+};
+
 let fullPerformanceFallbackPromise: Promise<Performance[]> | null = null;
 
 async function loadFullPerformanceFallback() {
@@ -26,13 +58,13 @@ async function loadFullPerformanceFallback() {
 export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseSearchLogicProps) {
     const [searchText, setSearchText] = useState(initialSearchText);
     const [searchMode, setSearchMode] = useState<'keyword' | 'location'>('keyword');
-    const [searchLocation, setSearchLocation] = useState<{ lat: number, lng: number, name: string } | null>(null);
-    const [userLocation, setUserLocation] = useState<{ lat: number, lng: number } | null>(null);
+    const [searchLocation, setSearchLocation] = useState<SearchLocation | null>(null);
+    const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
     const [userAddress, setUserAddress] = useState<string | null>(null);
     const [radius, setRadius] = useState<number>(1);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
-    const [kakaoSearchResults, setKakaoSearchResults] = useState<any[]>([]);
+    const [kakaoSearchResults, setKakaoSearchResults] = useState<LocationSearchCandidate[]>([]);
 
     const searchTextRef = useRef(searchText);
 
@@ -84,6 +116,7 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
                     setKakaoSearchResults(buildLocalLocationCandidates(fullPerformances, currentSearchText));
                     setIsDropdownOpen(true);
                 };
+                void applyLocalFallback();
                 let handledByPlaces = false;
                 placesFallbackTimer = setTimeout(() => {
                     if (!handledByPlaces) void applyLocalFallback();
@@ -93,7 +126,7 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
                     .then(() => {
                         if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
 
-                        const kakao = (window as any).kakao;
+                        const kakao = (window as Window & { kakao?: KakaoGlobal }).kakao;
                         if (!kakao?.maps?.services?.Places) {
                             handledByPlaces = true;
                             if (placesFallbackTimer) clearTimeout(placesFallbackTimer);
@@ -101,24 +134,24 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
                             return;
                         }
 
-                        kakao.maps.load(() => {
+                        kakao.maps.load?.(() => {
                             if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
 
                             const ps = new kakao.maps.services.Places();
-                            ps.keywordSearch(currentSearchText, (data: any[], status: any) => {
+                            ps.keywordSearch(currentSearchText, (data: KakaoPlace[], status: unknown) => {
                                 if (cancelled || searchTextRef.current.trim() !== currentSearchText) return;
                                 handledByPlaces = true;
                                 if (placesFallbackTimer) clearTimeout(placesFallbackTimer);
 
                                 if (status === kakao.maps.services.Status.OK) {
-                                    const filteredData = data.filter((place: any) => {
+                                    const filteredData = data.filter((place) => {
                                         const category = place.category_name || '';
                                         const isIrrelevant = /서비스,산업|부동산|기업/.test(category);
                                         const isExactMatch = place.place_name.toLowerCase().includes(currentSearchText.toLowerCase());
                                         return !isIrrelevant || isExactMatch;
                                     });
 
-                                    const kakaoResults: LocationSearchCandidate[] = filteredData.map((place: any): LocationSearchCandidate => ({
+                                    const kakaoResults: LocationSearchCandidate[] = filteredData.map((place): LocationSearchCandidate => ({
                                         type: 'location',
                                         name: collapseDuplicateLeadingLocationToken(place.place_name),
                                         address: collapseDuplicateLeadingLocationToken(place.road_address_name || place.address_name),
