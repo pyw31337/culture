@@ -1842,24 +1842,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_제39회한국현대춤협회한국현대춤작가12_2_53",
-    "title": "제39회 한국현대춤협회 한국현대춤작가 12인전",
-    "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042821205175288.gif",
-    "date": "2026.05.13 ~ 2026.05.20",
-    "venue": "서울 | 나루아트센터 대공연장",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69501",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5375856708648,
-    "lng": 127.070580693965,
-    "address": "서울 광진구 능동로 76",
-    "time": "화요일 ~ 목요일(19:30), 토요일(19:00), 일요일(16:00)",
-    "price": "전석 30,000원",
-    "contact": "02-2049-4712",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_제11회음협플루트앙상블정기연주회_2_754",
     "title": "제11회 음협플루트 앙상블 정기연주회",
     "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_202605142117991282.png",
@@ -2265,24 +2247,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[춘천]라루스코트기그동물원_2_91",
-    "title": "[춘천] 라루스코트 기그 동물원",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_202605122119713068.png",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "강원 | 아트팩토리 봄",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69479",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.8179712,
-    "lng": 127.7197078,
-    "address": "강원도 춘천시 신동면 풍류1길 34",
-    "time": "수요일(19:30)",
-    "price": "전석 30,000원",
-    "contact": "033-263-7222",
-    "description": "삶의 가치를 계속 무시하는 청년 기그는 자신을 안내하려는 신비한 뱀을 만나게 된다. 그리고 나서 삶이 끝나는 순간 나타난다고 전해지는 까마귀. 잊혀진 끝없는 황무지 라가키나에서 누군가의 방황하는 영혼의 기록이 시작된다. 이것은 진정으로 중요한 것을 잃어버린 세상에서도 여전히 무언가를 믿기 어려운 사람들의 이야기이다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[천안]지역아티스트와함께하는K-클래식_2_732",
     "title": "[천안] 지역 아티스트와 함께하는 K-클래식 콘서트4: 더흥컴퍼니",
     "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_202605072119007430.gif",
@@ -2344,24 +2308,6 @@
     "price": "일반석 3만원",
     "contact": "지클레프 02-515-5123",
     "description": "PROGRAM J. S. Bach (1685-1750) Chaconne (BWV1004) V. David (b. 1974) Rhizome N. Rimsky-Korsakov (1844-1908) Scheherazade L. Bernstein (1918-1990) West Side Story 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_제68회창악회정기발표회:CMSSFes_2_254",
-    "title": "제68회 창악회 정기발표회: CMSS Festival Ⅱ & Ⅲ",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026051321172972377.jpg",
-    "date": "2026.05.19 ~ 2026.05.20",
-    "venue": "서울 | 일신홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69477",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5372055,
-    "lng": 127.00552319999997,
-    "address": "서울특별시 용산구 한남대로 98 (한남동)",
-    "time": "화요일 ~ 수요일(19:30)",
-    "price": "전석 10,000원",
-    "contact": "02-2266-1307",
-    "description": "[프로그램] 5.19.(화) 19:30, 일신홀 1. 송채아 “Antinomic antinomy” for Flute & Alto Flute (제49회 작곡 콩쿠르 최우수상작) Flute 김성현 / Alto Flute 오병철 2. 박순영 바이올린과 비올라를 위한 “목멱의 아침” Violin 이보연 / Viola 박성봉 3. 조영미 바이올린, 호른, 피아노를 위한 \"바리데기(Barideagi)“ Violin 김범구 / Horn 김오진 / Piano 김아름 4. Shen Ye \"Ondulation-Night Music“ for Piano Solo Piano 김아름 INTERMISSION 5. 이아름 “Event horizon” for Voice, Flute, Violin, Double bass and Piano Soprano 백세리 / Flute 강나래 / Violin 황수빈 / Double bass 유이삭 Piano 김은아 / Conductor 조가희 6. 이귀숙 대금과 피아노를 위한 “아슬라의 저녁노을” Daegeum 강성우 / Piano 이선미 7. 최진석 \"Two Pieces(The Songs of Incheon)\" for Six Players Flute 김지혜 / Clarinet 강석원 / Trumpet 김동민 / Trombone 김유성 Violin 엄희원 / Cello 이윤하 / Conductor 이탐구 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_[전주]하나,둘,셋,김치!_2_322",
@@ -2688,24 +2634,6 @@
     "time": "화요일(19:30)",
     "price": "전석 30,000원",
     "contact": "리음아트앤컴퍼니 02-3141-6619",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_노르망디_3_466",
-    "title": "노르망디",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026051221172153446.gif",
-    "date": "2026.05.14 ~ 2026.05.20",
-    "venue": "서울 | 성미산마을극장 향",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69382",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5594242,
-    "lng": 126.90989319999994,
-    "address": "서울특별시 마포구 월드컵로26길 39 (성산동)",
-    "time": "월요일 ~ 금요일(19:30), 토요일(15:00,18:00), 일요일(16:00)",
-    "price": "전석 30,000원",
-    "contact": "-",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
@@ -3156,24 +3084,6 @@
     "time": "화요일(19:30)",
     "price": "전석 30,000원",
     "contact": "트레첸토 031-213-3314",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_원연민피아노독주회_3_802",
-    "title": "원연민 피아노 독주회",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026051221172490541.gif",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "서울 | 금호아트홀 연세",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69423",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.564089,
-    "lng": 126.93898089999993,
-    "address": "서울특별시 서대문구 연세로 50 (신촌동) 연세대학교 백양누리 B1 금호아트홀 연세",
-    "time": "수요일(19:30)",
-    "price": "전석 20,000원",
-    "contact": "음악교육신문 02-549-4133, 1131",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
@@ -4151,24 +4061,6 @@
     "time": "목요일 19:00",
     "price": "전석 20,000원",
     "contact": "-",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_이탈리아성악회기획공연:오월의정원,노래_4_182",
-    "title": "이탈리아 성악회 기획공연: 오월의정원, 노래로 피어나다",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_202605072117827474.jpg",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "서울 | 영산아트홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69261",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5292309,
-    "lng": 126.92487210000002,
-    "address": "서울특별시 영등포구 여의공원로 101 (여의도동)",
-    "time": "수요일(19:30)",
-    "price": "S석 50,000원, A석 30,000원",
-    "contact": "02-2203-0483",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
@@ -5657,24 +5549,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[대구]심승엽귀국피아노독주회_6_719",
-    "title": "[대구] 심승엽 귀국 피아노 독주회",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026050121172166977.jpg",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "대구 | 대구콘서트하우스 챔버홀(소공연장)",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69048",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 35.87605689309163,
-    "lng": 128.59369952433883,
-    "address": "대구 중구 태평로 141",
-    "time": "수요일(19:30)",
-    "price": "전석 10,000원",
-    "contact": "아르테위드 070-8733-3933",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[김포]재주많은세친구_6_872",
     "title": "[김포] 재주 많은 세 친구",
     "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026050121174284985.png",
@@ -7049,24 +6923,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_제2회운스앙상블정기연주회_8_491",
-    "title": "제2회 운스 앙상블 정기연주회",
-    "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_202604202119940979.png",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "서울 | 세종문화회관 세종체임버홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68826",
-    "genre": "classic_tradition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5720692375751,
-    "lng": 126.975748352154,
-    "address": "서울 종로구 세종대로 175",
-    "time": "수요일(19:30)",
-    "price": "전석 20,000원",
-    "contact": "위드클래식 070-4324-6360",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_제4회아츠앤라이프SSP정기연주회_8_338",
     "title": "제4회 아츠앤라이프 SSP 정기연주회",
     "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_202604272119061508.gif",
@@ -7098,21 +6954,6 @@
     "price": "전석무료",
     "contact": "춘천시립청소년합창단 033-259-5874",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_장하얀첼로독주회_8_105",
-    "title": "장하얀 첼로 독주회",
-    "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042021184443980.gif",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "서울 | 예술의전당 [서울] IBK기업은행챔버홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68824",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "time": "수요일(19:30)",
-    "price": "전석 20,000원",
-    "contact": "이든예술기획 02-6412-3053",
-    "description": "PROGRAM Francois Francœur (1698-1787) Sonata for Cello and Piano in E major Adagio cantabile Allegro vivo Tempo di gavotta Largo cantabile Gigue: Allegro Vivo Claude Debussy (1862-1918) Sonata for Cello and Piano in D minor, CD. 144 L. 135 Prologue Serenade Final Intermission Cesar Franck (1822-1890) Sonata for Cello and Piano in A major, FWV 8 Allegretto ben moderato Allegro Recitativo-Fantasia Allegretto poco mosso 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_제525회대구시립교향악단정기연주회:베_8_133",
@@ -7217,24 +7058,6 @@
     "description": "프로그램 “Ballades & Impromptus 네 번의 독백 ” F. Chopin Ballade No.1 in g minor, Op. 23 Impromptu No.1 in A-flat major, Op. 29 F. Chopin Ballade No.2 in F major, Op. 38 Impromptu No.2 in F-sharp major, Op. 36 intermission F. Chopin Ballade No.3 in A-flat major, Op.47 Impromptu No.3 in G-flat major, Op.51 F. Chopin Fantasy-Impromptu in C-sharp minor, Op.66 Ballade No.4 in F minor, Op. 52 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_예술산책프로젝트:아트워크(ART+WA_9_59",
-    "title": "예술산책 프로젝트 : 아트워크 (ART+WALK)",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/212f5a3fd14a483eba925bc5901de213.jpg",
-    "date": "2026.05.05 ~ 2026.05.20",
-    "venue": "부산 | 복합문화예술공간MERGE",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68833",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 35.2335508403782,
-    "lng": 129.08637987507,
-    "address": "부산 금정구 부산대학로50번길 49",
-    "time": "11:00 - 19:00",
-    "price": "무료",
-    "contact": "051-529-8196",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_안토닌앙상블정기연주회_9_530",
     "title": "안토닌 앙상블 정기연주회",
     "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042421174348440.gif",
@@ -7286,21 +7109,6 @@
     "time": "월요일(17:00)",
     "price": "전석 20,000원",
     "contact": "02-929-2227",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_앙상블드로즈마리정기연주회:LesVoy_9_247",
-    "title": "앙상블 드 로즈마리 정기연주회: Les Voyageurs",
-    "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042021211299950.gif",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "서울 | 예술의전당 [서울] 인춘아트홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68827",
-    "genre": "classic_tradition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "time": "수요일(19:30)",
-    "price": "전석 30,000원",
-    "contact": "영음예술기획 02-581-5404",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
@@ -7931,24 +7739,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_[제천]클라라주미강&김선욱듀오리사이틀_10_212",
-    "title": "[제천] 클라라 주미강 & 김선욱 듀오 리사이틀",
-    "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042321171633873.gif",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "충북 | 제천예술의전당 대공연장",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68702",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.1348,
-    "lng": 128.2011,
-    "address": "충북 제천시 내토로 204",
-    "time": "수요일(19:30)",
-    "price": "R석 70,000원, S석 50,000원, A석 30,000원",
-    "contact": "제천예술의전당 043-642-3938",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[서울]클라라주미강&김선욱듀오리사이틀_10_757",
     "title": "[서울] 클라라 주미 강 & 김선욱 듀오 리사이틀 (05.23)",
     "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042321255244901.jpg",
@@ -8085,24 +7875,6 @@
     "price": "전석 30,000원",
     "contact": "예인예술기획 02-586-0945",
     "description": "PROGRAM J. Haydn ... String Quartet in C Major, Op. 54, No. 2 M. Ravel ... String Quartet in F Major, M. 35 F. Schubert ... String Quartet No. 14 in d minor, D. 810 “Der Tod und das Mädchen” 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_동대문구아르코2026년기획공연<콘서트_10_669",
-    "title": "동대문구 아르코 2026년 기획공연 <콘서트 청(淸):ON(5월)>",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/aee7e7cb21ce466b95bff6685824826b.png",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "서울 | 동대문구 아르코(DDM ARCO)",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68692",
-    "genre": "classic_tradition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.579875,
-    "lng": 127.046368,
-    "address": "서울특별시 동대문구 왕산로 200 (전농동)",
-    "time": "수요일 19:30",
-    "price": "30,000",
-    "contact": "동대문구 아르코 02-6956-0872",
-    "description": "동대문구 아르코 2026년 기획공연 <콘서트 청(淸):ON> 설렘 가득한 음악의 향연, 일상이 예술로 피어나는 공간 동대문구 아르코가 준비한 <콘서트 청(淸):ON>으로 지친 일상을 청량하게, 반짝이는 설렘으로 물들여보세요. 평범한 수요일 저녁이 마법처럼 특별해집니다. 5.20. WED Op 1. Voice of Blossom 아카펠라 그룹 오직목소리 6.17. WED Op 2. Musical Wonderland 뮤지컬 배우 이준우, 진세휘, 문은수 7.15. WED Op 3. String&Summer 클래식 기타리스트 장하은 아카펠라의 하모니부터 뮤지컬의 전율, 클래식 기타의 낭만까지 도심 속 아늑한 공간에서 누리는 가장 우아한 휴식 지금 바로 당신만을 위한 특별한 순간의 주인공이 되어보세요! **세부 내용은 하단 이미지 안내 참고** 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_동대문문화재단「브런치콘서트아트리움:국_10_952",
@@ -8549,39 +8321,6 @@
     "time": "일요일 20:00",
     "price": "전석 20,000원 (학생 50% 할인)",
     "contact": "예인예술기획 02-586-0945",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[서천]오케스트라가들려주는클래식동화:_12_528",
-    "title": "[서천] 오케스트라가 들려주는 클래식 동화: 페페의 꿈",
-    "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042021184575895.jpg",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "충남 | 서천문예의전당 대강당",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68454",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "time": "수요일(14:00)",
-    "price": "전석 10,000원",
-    "contact": "서천문화관광재단 041-957-9036",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_[성남]선우예권피아노리사이틀_12_677",
-    "title": "[성남] 선우예권 피아노 리사이틀",
-    "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042021233556134.gif",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "경기 | 성남아트리움",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68455",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.444766061997,
-    "lng": 127.139210330751,
-    "address": "경기 성남시 수정구 수정로171번길 10",
-    "time": "수요일(19:30)",
-    "price": "R석 60,000원, S석 40,000원, 시야제한석   20,000원",
-    "contact": "성남문화재단 031-783-8000",
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
@@ -10235,24 +9974,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_제주특별자치도립서귀포관악단미취학아동을_16_443",
-    "title": "제주특별자치도립 서귀포관악단 미취학 아동을 위한 EQ쑥쑥 콘서트",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/49af6780ca5f49daae3146ca1e780fce.jpg",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "제주 | 서귀포예술의전당 대극장",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=68047",
-    "genre": "classic_tradition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 33.2463874097162,
-    "lng": 126.550785933267,
-    "address": "제주특별자치도 서귀포시 태평로 270",
-    "time": "수요일 10:40",
-    "price": "무료",
-    "contact": "제주특별자치도립 서귀포예술단 사무국 064-739-0641",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_폴란드포스터전<침묵,그고요한외침>_16_821",
     "title": "폴란드 포스터전 <침묵, 그 고요한 외침>",
     "image": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026041221191125987.jpg",
@@ -11141,24 +10862,6 @@
     "description": "Program Johann Sebastian Bach (1685-1750) Violin Partita No. 2 in d minor, BWV 1004 I. Allemande II. Courante III. Sarabande IV. Gigue V. Chaconne Eugène Ysaÿe (1858-1931) Sonata No. 3 \"Ballade\" in d minor, Op. 27 Sonata No. 5 in G Major, Op. 27 Sonata No. 6 in E Major, Op. 27 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_2026드영미술관한부철기획초대전《꽃;_21_660",
-    "title": "2026 드영미술관 한부철 기획초대전 《꽃 ; 지면 피더라》",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/d7d25e2f60334350a9c9815f5fdbef61.png",
-    "date": "2026.03.27 ~ 2026.05.20",
-    "venue": "광주 | 드영미술관",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=67594",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 35.134298581412985,
-    "lng": 126.95348192621191,
-    "address": "광주 동구 성촌길 6",
-    "time": "화~일 오전 10시~오후6시(전시 마지막 입장 시간; 전시 종료 30분전)",
-    "price": "무료",
-    "contact": "드영미술관 062-223-6515",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_2026사단법인포아피아노연구회기획-모_21_794",
     "title": "2026 사단법인 포아피아노연구회 기획 - 모차르트 피아노 협주곡 전곡 연주 프로젝트 \"음악의 위대한 유산, <모차르트의 Artistry>\"",
     "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/8e6d427032df4870b9f33e930ac3cb2a.jpg",
@@ -11823,21 +11526,6 @@
     "price": "무료",
     "contact": "부산현대미술관 051-220-7400",
     "description": "몸은 말보다 먼저 반응하고 언어보다 오래 기억합니다. 언어는 때로 사건을 매끄럽게 요약하지만 몸이 기억하는 미세한 떨림은 가공할 수 없는 정직한 신호로 남기 때문입니다. 그렇게 남은 신호가 다시금 살아있는 목소리가 되는 순간 몸은 단순한 경험의 산물이 아니라 과거를 현재로 불러내는 증언의 매개가 됩니다. 이번 전시는 숨길 수 없는 몸의 반응들이 다시금 살아있는 목소리가 되는 지점에 주목하며 이를 몸의 증언이라 명명하고자 합니다. 우리가 삶의 순간을 정의하고 결론을 내리는 동안에도 몸에는 기록이 포착하기 어려운 긴장과 흔적이 잔류합니다. 이러한 미세한 감각은 삶의 과정이 완전히 종료되지 않았음을 알리는 신호이며 몸이 내뱉는 가장 정직한 발화이기도 합니다. 증언은 단순히 과거를 되풀이하는 행위라기보다 기록이 놓친 감각을 빌려 지나간 시간을 현재의 체감으로 변화해 나가는 과정입니다. 사실이 과거를 고정된 장면으로 박제한다면 증언은 몸을 매개로 그날의 실재를 오늘로 되돌려 놓습니다. 《몸의 증언》은 부산현대미술관 수장고 내부에 머물던 세 개의 몸을 선택하여 현재의 지평 위로 소환합니다. 오랜 기간 보관되어 온 소장품을 다시 꺼내어 배열하는 행위는 과거를 전시하는 차원을 넘어 그 안에 축적된 생명력을 오늘날의 질문으로 다시 불러내는 실천입니다. 수장고의 어둠 속에 잠들어 있던 이 세 개의 몸은 이제 전시장 조명 아래에서 감상자에게 말을 건네기 시작합니다. 그 전언 속에는 몸을 매개로 오늘을 살아내야 하는 우리에게 스스로의 실존적 근거를 마주하며 사유의 경로를 개척할 가능성이 담겨 있습니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_배종선플루트독주회_26_193",
-    "title": "배종선 플루트 독주회",
-    "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/1da45a518be246f395a7c95318f4312d.jpg",
-    "date": "2026.05.20 ~ 2026.05.20",
-    "venue": "서울 | 예술의전당 [서울] 리사이틀홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=67094",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "time": "수요일(19:30)",
-    "price": "일반석 2만원 (학생할인 50%)",
-    "contact": "지클레프 02-515-5123",
-    "description": "Program Carl Reinecke (1824-1910) Arrangement: Wilhelm Barge (1836-1925) Sonatine für Flöte und Klavier NR.1 in F-Dur, Op.108 Ⅰ. Allegro moderato Ⅱ. Andante con moto Ⅲ. Allegretto grazioso Carl Maria von Weber (1786-1826) Trio for Flute, Cello and Piano in G minor, Op.63 Ⅰ. Allegro moderato Ⅱ. Scherzo Ⅲ. Andante espressivo(Shepherd’s Lament) Ⅳ. Finale INTERMISSION Carl Maria von Weber (1786-1826) Sonate für Flöte und Klavier in As-Dur(A♭ Major), Op.39 Ⅰ. Allegro moderato con spirito ed assai legato Ⅱ. Andante Ⅲ. Menuetto capriccioso Ⅳ. Rondo 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_해동문화예술촌3월기획전시'틈새의공생'_26_448",
