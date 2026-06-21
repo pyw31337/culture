@@ -1589,11 +1589,27 @@
   },
   "고척스카이돔": {
     "name": "고척스카이돔",
-    "address": "서울 구로구 고척1동 고척동 경인로 430",
-    "lat": 37.4981936,
-    "lng": 126.8670731,
+    "address": "서울특별시 구로구 경인로 430 (고척동)",
+    "lat": 37.498415,
+    "lng": 126.867219,
     "district": "구로구",
-    "mapped_region_id": "seoul"
+    "phone": "02-2128-2331",
+    "homepage": "https://www.sisul.or.kr/open_content/skydome/",
+    "facilityType": "공공(기타)",
+    "seatScale": "16744",
+    "theaterCount": "1",
+    "openedAt": "2015",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실"
   },
   "파랑새극장": {
     "name": "시윤아트홀",
@@ -65817,7 +65833,7 @@
     "homepage": "https://www.instagram.com/gcmc.kr/",
     "facilityType": "공공(기타)",
     "seatScale": "197",
-    "theaterCount": "1",
+    "theaterCount": "2",
     "openedAt": "2021",
     "amenities": [
       "장애인 주차",
@@ -107387,7 +107403,9 @@
   "의정부예술의전당 전시장": {
     "name": "의정부예술의전당 전시장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.7334125,
+    "lng": 127.03436779999993
   },
   "부평아트센터 갤러리 꽃누리": {
     "name": "부평아트센터 갤러리 꽃누리",
@@ -107754,8 +107772,8 @@
   },
   "수목원 생활온천": {
     "name": "수목원 생활온천",
-    "address": "정보 없음",
-    "district": ""
+    "address": "대한민국 대구광역시 달서구 진천동 446",
+    "district": "서구"
   },
   "히어로플레이파크 침산점": {
     "name": "히어로플레이파크 침산점",
@@ -109560,8 +109578,10 @@
   },
   "DUEX(덕스)홍대": {
     "name": "DUEX(덕스)홍대",
-    "address": "정보 없음",
-    "district": ""
+    "address": "서울특별시 마포구 양화로 186(동교동) LC TOWER B3F DUEX (홍대입구역 4번출구)",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
   },
   "성수 에스팩토리 D동 3층": {
     "name": "성수 에스팩토리 D동 3층",
@@ -109790,7 +109810,7 @@
   },
   "전주창작소극장": {
     "name": "전주창작소극장",
-    "address": "정보 없음",
+    "address": "전라북도 전주시 완산구 경원동1가 10-2",
     "district": ""
   },
   "우진문화공간 예술극장": {
@@ -112337,7 +112357,9 @@
   "금천뮤지컬센터 창작공간 101호": {
     "name": "금천뮤지컬센터 창작공간 101호",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.4687771,
+    "lng": 126.8944749
   },
   "대학로 SH아트홀": {
     "name": "대학로 SH아트홀",
@@ -112671,6 +112693,43 @@
   "광주 광산구 신창로 52 (신창동) 2층 202호": {
     "name": "광주 광산구 신창로 52 (신창동) 2층 202호",
     "address": "광주 광산구 신창로 52 (신창동) 2층 202호",
+    "district": ""
+  },
+  "수상한거리 2호점": {
+    "name": "수상한거리 2호점",
+    "address": "서울특별시 마포구 양화로16길 26 (서교동)",
+    "lat": 37.5529848,
+    "lng": 126.9209873,
+    "district": "마포구",
+    "homepage": "https://susanghanstno2.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "80",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "스튜디오 엔텐바흐(Studio ENTENBACH)": {
+    "name": "스튜디오 엔텐바흐(Studio ENTENBACH)",
+    "address": "서울특별시 마포구 동교로 178 (동교동)",
+    "lat": 37.556283,
+    "lng": 126.921757,
+    "district": "마포구",
+    "homepage": "https://www.instagram.com/studio_entenbach/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "활옥동굴": {
+    "name": "활옥동굴",
+    "address": "활옥동굴(자세히)",
     "district": ""
   }
 }
