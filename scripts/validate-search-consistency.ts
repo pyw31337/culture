@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { includesSearchTerm } from '../src/lib/search-match';
 
 type SearchItem = {
     title?: string;
@@ -16,22 +17,17 @@ function readJson<T>(relativePath: string): T {
     return JSON.parse(fs.readFileSync(path.join(process.cwd(), relativePath), 'utf8')) as T;
 }
 
-function normalize(value: unknown) {
-    return String(value || '').replace(/\s+/g, '').toLowerCase().normalize('NFC');
-}
-
 function castText(cast: SearchItem['cast']) {
     if (!Array.isArray(cast)) return '';
     return cast.map((member) => typeof member === 'string' ? member : member?.name || '').join(' ');
 }
 
 function matchesKeyword(item: SearchItem, query: string) {
-    const needle = normalize(query);
     return [
         item.title,
         item.venue,
         castText(item.cast),
-    ].some((value) => normalize(value).includes(needle));
+    ].some((value) => includesSearchTerm(value, query));
 }
 
 function loadCategoryItems(slug: string) {
@@ -41,6 +37,10 @@ function loadCategoryItems(slug: string) {
 
 const allItems = readJson<SearchItem[]>('public/data/performances.json');
 const errors: string[] = [];
+
+if (!includesSearchTerm('싸이흠뻑쇼', '싸이') || includesSearchTerm('업싸이클공예', '싸이')) {
+    errors.push('[search][싸이] 한글 토큰 경계 검증에 실패했습니다.');
+}
 
 for (const check of CHECKS) {
     const globalMatches = allItems.filter((item) => item.genre === check.genreSlug && matchesKeyword(item, check.query));

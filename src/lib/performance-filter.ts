@@ -6,6 +6,7 @@ import { parseDistrictSelection, parseRegionSelection } from './region-selection
 import { getRepresentativeVenueInfoForName, resolveVenueInfoForPerformance } from './location-display';
 import { getDistanceFromLatLonInKm } from './utils';
 import { resolveDateFilterRange, performanceMatchesDateRange, performanceMatchesPriceTier } from './filter-chips';
+import { includesSearchTerm } from './search-match';
 
 // Define Venue Interface since we import JSON directly
 interface Venue {
@@ -470,20 +471,19 @@ export function filterPerformances(performances: Performance[], options: FilterO
 
         filtered = filtered.filter(p => {
             const titleNoSpace = p.title.replace(/\s+/g, '').toLowerCase().normalize('NFC');
-            const venueNoSpace = p.venue.replace(/\s+/g, '').toLowerCase().normalize('NFC');
 
             // A. Title Match
-            if (isChoseongMode ? isChoseongMatch(titleNoSpace, targetSearch) : titleNoSpace.includes(targetSearch)) return true;
+            if (isChoseongMode ? isChoseongMatch(titleNoSpace, targetSearch) : includesSearchTerm(p.title, targetSearch)) return true;
 
             // B. Cast Match
             if (p.cast) {
                 const castStr = Array.isArray(p.cast) ? p.cast.join('') : p.cast;
                 const castNoSpace = castStr.replace(/\s+/g, '').toLowerCase().normalize('NFC');
-                if (isChoseongMode ? isChoseongMatch(castNoSpace, targetSearch) : castNoSpace.includes(targetSearch)) return true;
+                if (isChoseongMode ? isChoseongMatch(castNoSpace, targetSearch) : includesSearchTerm(castStr, targetSearch)) return true;
             }
 
             // C. Venue Match
-            if (venueNoSpace.includes(targetSearch)) return true;
+            if (includesSearchTerm(p.venue, targetSearch)) return true;
 
             return false;
         });

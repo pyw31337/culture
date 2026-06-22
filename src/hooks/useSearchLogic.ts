@@ -4,6 +4,7 @@ import { isChoseongMatch } from '@/lib/hangul';
 import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
 import { buildLocalLocationCandidates, type LocationSearchCandidate } from '@/lib/location-search';
 import { collapseDuplicateLeadingLocationToken } from '@/lib/location-text';
+import { includesSearchTerm } from '@/lib/search-match';
 
 interface UseSearchLogicProps {
     allPerformances: Performance[];
@@ -215,7 +216,6 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
             for (const p of allPerformances) {
                 if (uniqueTitles.has(p.title)) continue;
                 const titleNoSpace = p.title.toLowerCase().replace(/\s+/g, '');
-                const venueNoSpace = (p.venue || '').toLowerCase().replace(/\s+/g, '');
                 const genreLabelNoSpace = (p.genre || '').toLowerCase();
 
                 let score = 0;
@@ -223,12 +223,12 @@ export function useSearchLogic({ allPerformances, initialSearchText = '' }: UseS
                     if (isChoseongMatch(p.title, searchText)) score = 60;
                 } else {
                     if (titleNoSpace.startsWith(lowerText)) score = 100;
-                    else if (titleNoSpace.includes(lowerText)) score = 70;
-                    else if (venueNoSpace.includes(lowerText)) score = 35;
+                    else if (includesSearchTerm(p.title, lowerText)) score = 70;
+                    else if (includesSearchTerm(p.venue, lowerText)) score = 35;
                     else if (p.cast && Array.isArray(p.cast) && p.cast.some((c: unknown) =>
                         typeof c === 'string'
-                            ? c.replace(/\s+/g, '').toLowerCase().includes(lowerText)
-                            : (c as { name?: string })?.name?.replace(/\s+/g, '').toLowerCase().includes(lowerText)
+                            ? includesSearchTerm(c, lowerText)
+                            : includesSearchTerm((c as { name?: string })?.name, lowerText)
                     )) score = 25;
                     else if (genreLabelNoSpace.includes(lowerText)) score = 20;
                 }
