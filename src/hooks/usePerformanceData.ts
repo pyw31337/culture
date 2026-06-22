@@ -230,6 +230,7 @@ export function usePerformanceData({
     const [loadedPageCount, setLoadedPageCount] = useState(0);
     const [isPerformancePageLoading, setIsPerformancePageLoading] = useState(false);
     const pageLoadCursorRef = useRef(0);
+    const pageLoadPromiseRef = useRef<Promise<void> | null>(null);
     const [isDataFullyLoaded, setIsDataFullyLoaded] = useState(() => {
         if (isPagedMode) return false;
         const performancesReady = performanceLoadPolicy !== 'full' || Boolean(getCachedPerformances(effectivePerformanceDataPath));
@@ -265,7 +266,7 @@ export function usePerformanceData({
     }, [effectivePerformanceDataPath, isPagedMode]);
 
     const loadNextPerformancePage = useCallback(async () => {
-        if (!isPagedMode || isPerformancePageLoading) return;
+        if (!isPagedMode || pageLoadPromiseRef.current) return;
         const manifest = pagedManifest || await getManifest(effectivePerformanceDataPath);
         setPagedManifest(manifest);
 
@@ -273,19 +274,57 @@ export function usePerformanceData({
         if (!pagePath) return;
 
         setIsPerformancePageLoading(true);
-        try {
-            const page = await getPage(pagePath);
-            pageLoadCursorRef.current += 1;
-            setLoadedPageCount(pageLoadCursorRef.current);
-            startTransition(() => {
-                setAllPerformances((current) => mergePerformances(current, page));
+        const loadPromise = getPage(pagePath)
+            .then((page) => {
+                pageLoadCursorRef.current += 1;
+                setLoadedPageCount(pageLoadCursorRef.current);
+                startTransition(() => {
+                    setAllPerformances((current) => mergePerformances(current, page));
+                });
+            })
+            .catch((error) => {
+                console.error('Failed to load performance page', error);
+            })
+            .finally(() => {
+                pageLoadPromiseRef.current = null;
+                setIsPerformancePageLoading(false);
             });
-        } catch (error) {
-            console.error('Failed to load performance page', error);
-        } finally {
-            setIsPerformancePageLoading(false);
+
+        pageLoadPromiseRef.current = loadPromise;
+        await loadPromise;
+    }, [effectivePerformanceDataPath, isPagedMode, pagedManifest]);
+
+    const loadAllPerformancePages = useCallback(async () => {
+        if (!isPagedMode) return;
+        if (pageLoadPromiseRef.current) {
+            await pageLoadPromiseRef.current;
         }
-    }, [effectivePerformanceDataPath, isPagedMode, isPerformancePageLoading, pagedManifest]);
+
+        const manifest = pagedManifest || await getManifest(effectivePerformanceDataPath);
+        setPagedManifest(manifest);
+        const startIndex = pageLoadCursorRef.current;
+        const remainingPaths = manifest.pages.slice(startIndex);
+        if (remainingPaths.length === 0) return;
+
+        setIsPerformancePageLoading(true);
+        const loadPromise = Promise.all(remainingPaths.map((path) => getPage(path)))
+            .then((pages) => {
+                const completeBatch = pages.flat();
+                setAllPerformances((current) => mergePerformances(current, completeBatch));
+                pageLoadCursorRef.current = manifest.pages.length;
+                setLoadedPageCount(manifest.pages.length);
+            })
+            .catch((error) => {
+                console.error('Failed to load complete performance search data', error);
+            })
+            .finally(() => {
+                pageLoadPromiseRef.current = null;
+                setIsPerformancePageLoading(false);
+            });
+
+        pageLoadPromiseRef.current = loadPromise;
+        await loadPromise;
+    }, [effectivePerformanceDataPath, isPagedMode, pagedManifest]);
 
     useEffect(() => {
         let isCancelled = false;
@@ -389,12 +428,12 @@ export function usePerformanceData({
 
     const hasMorePerformancePages = useMemo(() => {
         if (!isPagedMode) return false;
-        return pageLoadCursorRef.current < (pagedManifest?.pages.length || 0);
+        return loadedPageCount < (pagedManifest?.pages.length || 0);
     }, [isPagedMode, loadedPageCount, pagedManifest?.pages.length]);
 
     useEffect(() => {
         if (!isPagedMode) return;
-        setIsDataFullyLoaded(pageLoadCursorRef.current >= (pagedManifest?.pages.length || 0));
+        setIsDataFullyLoaded(loadedPageCount >= (pagedManifest?.pages.length || 0));
     }, [isPagedMode, loadedPageCount, pagedManifest?.pages.length]);
 
     return {
@@ -406,6 +445,7 @@ export function usePerformanceData({
         isPerformancePageLoading,
         hasMorePerformancePages,
         loadNextPerformancePage,
+        loadAllPerformancePages,
         performanceTotal: pagedManifest?.total || allPerformances.length,
     };
 }

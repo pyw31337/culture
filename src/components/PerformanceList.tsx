@@ -129,6 +129,7 @@ export default function PerformanceList({
         isPerformancePageLoading,
         hasMorePerformancePages,
         loadNextPerformancePage,
+        loadAllPerformancePages,
         performanceTotal,
     } = usePerformanceData({
         initialPerformances,
@@ -194,6 +195,10 @@ export default function PerformanceList({
 
     // --- Derived State ---
     const activeLocation = searchLocation || userLocation;
+    const isSearchDataLoading = Boolean(searchText.trim()) && !isDataFullyLoaded;
+    const visibleSearchResults = searchMode === 'keyword' && isSearchDataLoading
+        ? []
+        : searchResults;
     const genreCounts = useMemo(() => {
         // Category pages intentionally keep a scoped item list, so the global
         // genre navigation should continue to use the build-time aggregate counts.
@@ -216,6 +221,7 @@ export default function PerformanceList({
         return availableGenres.filter((genre) => genre.id !== 'all').length;
     }, [availableGenres]);
     const displayFilteredCount = useMemo(() => {
+        if (isSearchDataLoading) return 0;
         const isDefaultBrowse = !searchText && !searchLocation && selectedRegion === 'all' && selectedDistrict === 'all' && selectedVenue === 'all' && !selectedDateFilter && !selectedPriceTier && discoveryContextId === 'all';
         if (isCategoryPage && initialFilteredCount && isDefaultBrowse) {
             return initialFilteredCount;
@@ -229,6 +235,7 @@ export default function PerformanceList({
         filteredPerformances.length,
         initialFilteredCount,
         isCategoryPage,
+        isSearchDataLoading,
         performanceTotal,
         searchLocation,
         searchText,
@@ -295,8 +302,8 @@ export default function PerformanceList({
     useEffect(() => {
         if (!searchText.trim() && savedKeywords.length === 0) return;
         if (!hasMorePerformancePages || isPerformancePageLoading) return;
-        void loadNextPerformancePage();
-    }, [hasMorePerformancePages, isPerformancePageLoading, loadNextPerformancePage, savedKeywords.length, searchText]);
+        void loadAllPerformancePages();
+    }, [hasMorePerformancePages, isPerformancePageLoading, loadAllPerformancePages, savedKeywords.length, searchText]);
 
     const recommendedItems = useMemo(() => {
         const featured = getFeaturedPerformances(homeSectionCandidates, 24);
@@ -764,7 +771,7 @@ export default function PerformanceList({
                     selectedRegion={selectedRegion} selectedDistrict={selectedDistrict} selectedVenue={selectedVenue}
                     activeLocation={activeLocation ? { name: searchLocation?.name || '내 위치' } : null}
                     userAddress={userAddress} radius={radius} searchLocation={searchLocation} searchText={searchText}
-                    searchResults={searchResults} isDropdownOpen={isDropdownOpen} activeSearchSource={activeSearchSource} highlightedIndex={highlightedIndex}
+                    searchResults={visibleSearchResults} isDropdownOpen={isDropdownOpen} activeSearchSource={activeSearchSource} highlightedIndex={highlightedIndex}
                     setIsHeroFilterExpanded={setIsHeroFilterExpanded} isHeroFilterExpanded={isHeroFilterExpanded} setSelectedRegion={setSelectedRegion}
                     setSelectedDistrict={setSelectedDistrict} setSelectedVenue={setSelectedVenue} setUserLocation={setUserLocation}
                     setSearchLocation={setSearchLocation} setRadius={setRadius} setSearchText={setSearchText} onSearchChange={handleSearchChange}
@@ -884,7 +891,12 @@ export default function PerformanceList({
                         onRadiusChange={setRadius}
                     />
 
-                    {filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
+                    {isSearchDataLoading ? (
+                        <div className="flex min-h-[280px] items-center justify-center py-12" role="status" aria-live="polite">
+                            <Loader2 className="animate-spin text-purple-500" />
+                            <span className="ml-3 text-gray-400">전체 검색 결과를 불러오는 중...</span>
+                        </div>
+                    ) : filteredPerformances.length === 0 && viewMode !== 'likes-perf' && isDataFullyLoaded ? (
                         <EmptyState viewMode={viewMode} selectedGenre={selectedGenre} setSelectedRegion={setSelectedRegion} setSelectedDistrict={setSelectedDistrict} setSearchText={setSearchText} setUserLocation={setUserLocation} setIsMapOpen={handleOpenMap} searchMode={searchMode} setSearchMode={setSearchMode} searchText={searchText} />
                     ) : viewMode === 'likes-perf' ? (
                         <LikedSections
@@ -936,7 +948,7 @@ export default function PerformanceList({
                         />
                     )}
 
-                    {(!isDataFullyLoaded || isPerformancePageLoading) && (
+                    {!isSearchDataLoading && (!isDataFullyLoaded || isPerformancePageLoading) && (
                         <div className="flex justify-center py-12">
                             <Loader2 className="animate-spin text-purple-500" />
                             <span className="ml-3 text-gray-400">콘텐츠를 이어서 불러오는 중...</span>
@@ -974,7 +986,7 @@ export default function PerformanceList({
                     // Reset pagination/scroll
                     setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 10);
                 }
-            }} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={searchResults} onResultSelect={(res) => {
+            }} searchText={searchText} onSearchChange={handleSearchChange} keywords={savedKeywords} onKeywordAdd={addKeyword} onKeywordRemove={removeKeyword} districts={districts} availableVenues={availableVenues} onSearch={() => { }} searchMode={searchMode} onSearchModeChange={setSearchMode} activeLocation={activeLocation} searchResults={visibleSearchResults} onResultSelect={(res) => {
                 setSearchText(res.name);
                 if (res.type === 'location' && Number.isFinite(res.lat) && Number.isFinite(res.lng)) {
                     setSelectedGenre('all');
