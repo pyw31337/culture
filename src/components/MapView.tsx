@@ -87,6 +87,8 @@ interface KakaoLatLng {
 interface KakaoBounds {
     contain(latlng: KakaoLatLng): boolean;
     extend(latlng: KakaoLatLng): void;
+    getSouthWest(): KakaoLatLng;
+    getNorthEast(): KakaoLatLng;
 }
 
 interface KakaoMap {
@@ -119,7 +121,9 @@ interface KakaoMarker {
 
 interface KakaoClusterer {
     clear(): void;
-    addMarkers(markers: KakaoMarker[]): void;
+    addMarkers(markers: KakaoMarker[], noDraw?: boolean): void;
+    removeMarkers(markers: KakaoMarker[], noDraw?: boolean): void;
+    redraw(): void;
 }
 
 interface KakaoGeocoderAddressResult {
@@ -145,8 +149,8 @@ interface WeatherApiResponse {
 }
 
 const SEOUL_STATION = { lat: 37.554648, lng: 126.972559 };
-const MAX_RENDERED_MARKERS = 700;
-const DEFAULT_RENDERED_MARKERS = 350;
+const MAX_RENDERED_MARKERS = 320;
+const DEFAULT_RENDERED_MARKERS = 160;
 let mapVenueGroupsCache: VenueGroup[] | null = null;
 let mapVenueGroupsPromise: Promise<VenueGroup[]> | null = null;
 
@@ -187,6 +191,30 @@ function loadMapVenueGroups() {
 
 function getGenreStyle(genreId?: string): GenreStyle {
     return GENRE_STYLES[genreId as keyof typeof GENRE_STYLES] ?? GENRE_STYLES.all;
+}
+
+function getMarkerRenderBudget(map: KakaoMap | null) {
+    if (!map) return DEFAULT_RENDERED_MARKERS;
+
+    const level = map.getLevel();
+    const desktopBudget = level >= 8
+        ? 120
+        : level >= 6
+            ? 180
+            : level >= 4
+                ? 260
+                : MAX_RENDERED_MARKERS;
+    const isCompactViewport = typeof window !== 'undefined' && window.innerWidth < 768;
+    return isCompactViewport ? Math.max(90, Math.round(desktopBudget * 0.68)) : desktopBudget;
+}
+
+function isVenueWithinBounds(venue: Pick<VenueGroup, 'lat' | 'lng'>, bounds: KakaoBounds) {
+    const southWest = bounds.getSouthWest();
+    const northEast = bounds.getNorthEast();
+    return venue.lat >= southWest.getLat()
+        && venue.lat <= northEast.getLat()
+        && venue.lng >= southWest.getLng()
+        && venue.lng <= northEast.getLng();
 }
 
 interface MapViewProps {
@@ -567,19 +595,15 @@ export default function MapView({
 
     const selectMarkerVenuesForMap = useCallback((map: KakaoMap | null) => {
         const venuesForMap = allVenuesList.current;
-        if (!map || !window.kakao?.maps?.LatLng || venuesForMap.length <= DEFAULT_RENDERED_MARKERS) {
-            return venuesForMap.slice(0, MAX_RENDERED_MARKERS);
+        const markerBudget = getMarkerRenderBudget(map);
+        if (!map || venuesForMap.length <= markerBudget) {
+            return venuesForMap.slice(0, markerBudget);
         }
 
         const bounds = map.getBounds();
         const center = map.getCenter();
         const selectedKey = selectedVenueRef.current;
-        let candidates = venuesForMap.filter((venue) => {
-            if (!venue.kakaoLatLng) {
-                venue.kakaoLatLng = new window.kakao.maps.LatLng(venue.lat, venue.lng) as KakaoLatLng;
-            }
-            return bounds.contain(venue.kakaoLatLng);
-        });
+        let candidates = venuesForMap.filter((venue) => isVenueWithinBounds(venue, bounds));
 
         if (selectedKey) {
             const selectedVenueInList = venuesForMap.find((venue) => venue.groupKey === selectedKey);
@@ -588,7 +612,7 @@ export default function MapView({
             }
         }
 
-        if (candidates.length <= MAX_RENDERED_MARKERS) return candidates;
+        if (candidates.length <= markerBudget) return candidates;
 
         return candidates
             .sort((left, right) => {
@@ -597,7 +621,7 @@ export default function MapView({
                 return getDistanceFromLatLonInKm(center.getLat(), center.getLng(), left.lat, left.lng) -
                     getDistanceFromLatLonInKm(center.getLat(), center.getLng(), right.lat, right.lng);
             })
-            .slice(0, MAX_RENDERED_MARKERS);
+            .slice(0, markerBudget);
     }, []);
 
     const updateRenderedMarkerVenues = useCallback((map: KakaoMap | null) => {
@@ -622,13 +646,9 @@ export default function MapView({
         const center = map.getCenter();
         const isMovieMode = selectedMapGenre === 'movie';
 
-        const visible = allVenuesList.current.filter((venue) => {
-            if (!venue.kakaoLatLng) {
-                venue.kakaoLatLng = new window.kakao.maps.LatLng(venue.lat, venue.lng) as KakaoLatLng;
-            }
-            if (isMovieMode) return true;
-            return bounds.contain(venue.kakaoLatLng);
-        });
+        const visible = allVenuesList.current.filter((venue) => (
+            isMovieMode || isVenueWithinBounds(venue, bounds)
+        ));
 
         if (isMovieMode && center) {
             visible.sort((a, b) => getDistanceFromLatLonInKm(center.getLat(), center.getLng(), a.lat, a.lng) - getDistanceFromLatLonInKm(center.getLat(), center.getLng(), b.lat, b.lng));
@@ -720,7 +740,14 @@ export default function MapView({
         if (!mapInstance || !isMapReady || !window.kakao?.maps?.event) return;
 
         const kakaoEvent = window.kakao.maps.event;
-        const handleIdle = () => updateRenderedMarkerVenues(mapInstance);
+        let viewportUpdateTimer: ReturnType<typeof setTimeout> | null = null;
+        const handleIdle = () => {
+            if (viewportUpdateTimer) clearTimeout(viewportUpdateTimer);
+            viewportUpdateTimer = setTimeout(() => {
+                viewportUpdateTimer = null;
+                updateRenderedMarkerVenues(mapInstance);
+            }, 120);
+        };
         const handleViewportChanged = () => setShowSearchHereBtn(true);
 
         kakaoEvent.addListener(mapInstance, 'idle', handleIdle);
@@ -729,6 +756,7 @@ export default function MapView({
         handleIdle();
 
         return () => {
+            if (viewportUpdateTimer) clearTimeout(viewportUpdateTimer);
             kakaoEvent.removeListener(mapInstance, 'idle', handleIdle);
             kakaoEvent.removeListener(mapInstance, 'dragend', handleViewportChanged);
             kakaoEvent.removeListener(mapInstance, 'zoom_changed', handleViewportChanged);
@@ -776,6 +804,7 @@ export default function MapView({
     // --- Markers & Clusterer ---
     const clustererRef = useRef<KakaoClusterer | null>(null);
     const iconCache = useRef<Record<string, string>>({});
+    const markerImageCache = useRef<Record<string, unknown>>({});
 
     const getMarkerIcon = useCallback((text: string, color: string, isSelected: boolean) => {
         const size = isSelected ? 54 : 48;
@@ -799,11 +828,16 @@ export default function MapView({
     const createMarkerImage = useCallback((text: string, color: string, isSelected: boolean) => {
         const k = window.kakao.maps;
         const size = isSelected ? 54 : 48;
-        return new k.MarkerImage(
+        const key = `${text}-${color}-${isSelected}`;
+        if (markerImageCache.current[key]) return markerImageCache.current[key];
+
+        const markerImage = new k.MarkerImage(
             getMarkerIcon(text, color, isSelected),
             new k.Size(size, size),
             new k.Point(size / 2, size / 2)
         );
+        markerImageCache.current[key] = markerImage;
+        return markerImage;
     }, [getMarkerIcon]);
 
     const updateMarkerSelection = useCallback((nextSelectedVenue: string | null) => {
@@ -833,28 +867,51 @@ export default function MapView({
         if (!mapInstance || !isMapReady) return;
         const k = window.kakao.maps;
 
-        if (clustererRef.current) clustererRef.current.clear();
-        markersRef.current.forEach((marker) => {
-            marker.setMap(null);
-            k.event.removeListener(marker, 'click');
-        });
-        markersRef.current = [];
-        const markersByGroupKey = markersByGroupKeyRef.current;
-        markersByGroupKey.clear();
-
         const clusterer = new k.MarkerClusterer({
             map: mapInstance, averageCenter: true, minLevel: 6, disableClickZoom: false,
             styles: [{
                 width: '40px', height: '40px', background: 'rgba(16, 185, 129, 0.9)',
-                borderRadius: '12px', color: '#fff', textAlign: 'center',
-                fontWeight: 'bold', lineHeight: '34px', fontSize: '14px',
-                border: '3px solid white', boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                borderRadius: '10px', color: '#fff', textAlign: 'center',
+                fontWeight: 'bold', lineHeight: '36px', fontSize: '14px',
+                border: '2px solid white'
             }]
         });
         clustererRef.current = clusterer;
+        const markersByGroupKey = markersByGroupKeyRef.current;
 
-        const markers: KakaoMarker[] = [];
+        return () => {
+            clusterer.clear();
+            markersRef.current.forEach((marker) => {
+                marker.setMap(null);
+                k.event.removeListener(marker, 'click');
+            });
+            markersRef.current = [];
+            markersByGroupKey.clear();
+            if (clustererRef.current === clusterer) {
+                clustererRef.current = null;
+            }
+        };
+    }, [isMapReady, mapInstance]);
+
+    useEffect(() => {
+        if (!mapInstance || !isMapReady || !clustererRef.current) return;
+        const k = window.kakao.maps;
+        const clusterer = clustererRef.current;
+        const markersByGroupKey = markersByGroupKeyRef.current;
+        const nextVenueKeys = new Set(renderedMarkerVenues.map((venue) => venue.groupKey));
+        const markersToRemove: KakaoMarker[] = [];
+
+        markersByGroupKey.forEach((marker, groupKey) => {
+            if (nextVenueKeys.has(groupKey)) return;
+            markersToRemove.push(marker);
+            marker.setMap(null);
+            k.event.removeListener(marker, 'click');
+            markersByGroupKey.delete(groupKey);
+        });
+
+        const markersToAdd: KakaoMarker[] = [];
         renderedMarkerVenues.forEach((venue) => {
+            if (markersByGroupKey.has(venue.groupKey)) return;
             const primaryGenre = venue.performances[0]?.genre || selectedMapGenre || 'all';
             const style = getGenreStyle(primaryGenre);
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
@@ -881,25 +938,15 @@ export default function MapView({
             marker._text = text;
             marker._normalIcon = normalIcon;
             marker._selectedIcon = selectedIcon;
-            markers.push(marker);
-            markersRef.current.push(marker);
+            markersToAdd.push(marker);
             markersByGroupKey.set(venue.groupKey, marker);
         });
 
-        clusterer.addMarkers(markers);
+        if (markersToRemove.length > 0) clusterer.removeMarkers(markersToRemove, true);
+        if (markersToAdd.length > 0) clusterer.addMarkers(markersToAdd, true);
+        if (markersToRemove.length > 0 || markersToAdd.length > 0) clusterer.redraw();
+        markersRef.current = Array.from(markersByGroupKey.values());
         updateMarkerSelection(selectedVenueRef.current);
-
-        return () => {
-            clusterer.clear();
-            markers.forEach((marker) => {
-                marker.setMap(null);
-                k.event.removeListener(marker, 'click');
-            });
-            if (clustererRef.current === clusterer) {
-                clustererRef.current = null;
-            }
-            markersByGroupKey.clear();
-        };
     }, [createMarkerImage, isMapReady, mapInstance, renderedMarkerVenues, selectedMapGenre, updateMarkerSelection]);
 
     // Selection update
@@ -1185,7 +1232,11 @@ export default function MapView({
                     </div>
                 )}
 
-                <div ref={mapRef} className="w-full h-full bg-gray-200 dark:bg-gray-800" />
+                <div
+                    ref={mapRef}
+                    className="w-full h-full bg-gray-200 dark:bg-gray-800"
+                    style={{ contain: 'strict', willChange: 'transform' }}
+                />
 
                 {/* Left Controls: Category Filter */}
                 <div className="absolute top-4 left-4 z-[110] flex flex-col gap-2">
@@ -1515,7 +1566,7 @@ export default function MapView({
                                             "shrink-0 w-64 p-3 rounded-xl shadow-xl text-left flex flex-col gap-1 transition-all duration-300 cursor-pointer",
                                             isSelected
                                                 ? `${bgClass} text-white scale-[1.03] shadow-2xl`
-                                                : "bg-white/90 dark:bg-gray-800/90 backdrop-blur border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:scale-[1.01]"
+                                            : "bg-white/95 dark:bg-gray-800/95 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 hover:scale-[1.01]"
                                         )}>
                                         <div className="flex justify-between items-start w-full">
                                             <h4 className={clsx("font-extrabold text-sm truncate flex-1", isSelected ? "text-white" : "text-gray-900 dark:text-white")}>{v.venueName}</h4>
