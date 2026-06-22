@@ -396,7 +396,10 @@ export function usePerformanceData({
             }
 
             if (tasks.length === 0) {
-                setIsDataFullyLoaded(!isPagedMode || pageLoadCursorRef.current >= (pagedManifest?.pages.length || 0));
+                const hasPagedManifest = Boolean(pagedManifest);
+                setIsDataFullyLoaded(
+                    !isPagedMode || (hasPagedManifest && pageLoadCursorRef.current >= (pagedManifest?.pages.length || 0))
+                );
                 return;
             }
 
