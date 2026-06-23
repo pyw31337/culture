@@ -70209,7 +70209,16 @@
     "address": "부산광역시 수영구 광남로 14 (남천동) 301호",
     "lat": 35.1440982,
     "lng": 129.110081,
-    "district": ""
+    "district": "",
+    "homepage": "https://www.instagram.com/house_of_vert/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "한국가구박물관": {
     "name": "한국가구박물관",
@@ -71428,10 +71437,26 @@
   },
   "김천시문화예술회관": {
     "name": "김천시문화예술회관",
-    "address": "경상북도 김천시 운동장길 3",
+    "address": "경상북도 김천시 운동장길 3 (삼락동)",
     "lat": 36.1382834,
     "lng": 128.08868029999996,
-    "district": ""
+    "district": "",
+    "phone": "054-420-7820",
+    "homepage": "https://www.gc.go.kr/gcart/main.do",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1428",
+    "theaterCount": "3",
+    "openedAt": "2000",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
   },
   "용지문화공원": {
     "name": "용지문화공원",
@@ -107138,7 +107163,9 @@
   "김희수아트센터 SPACE1": {
     "name": "김희수아트센터 SPACE1",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5905713,
+    "lng": 127.04291860000001
   },
   "대학로 세우아트센터 2관": {
     "name": "대학로 세우아트센터 2관",
@@ -107407,7 +107434,9 @@
   "이천아트홀 전관": {
     "name": "이천아트홀 전관",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.2711919,
+    "lng": 127.43434869999999
   },
   "부평구청소년수련관 공연장": {
     "name": "부평구청소년수련관 공연장",
@@ -107608,7 +107637,23 @@
   "음성문화예술회관 전시실": {
     "name": "음성문화예술회관 전시실",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "phone": "043-871-5949",
+    "homepage": "http://www.esart.go.kr/www/index.do",
+    "lat": 36.9315608,
+    "lng": 127.68038090000005,
+    "facilityType": "공공(문예회관)",
+    "seatScale": "600",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "놀이방",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 놀이방, 장애인 주차, 장애인 경사로"
   },
   "페러 이야기": {
     "name": "페러 이야기",
@@ -112016,7 +112061,9 @@
   "고흥문화회관 김연수실": {
     "name": "고흥문화회관 김연수실",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 34.6128268,
+    "lng": 127.29753310000001
   },
   "서울 중랑구 봉우재로 113 (상봉동, 세림빌딩) 아오 연습실": {
     "name": "서울 중랑구 봉우재로 113 (상봉동, 세림빌딩) 아오 연습실",
@@ -112409,7 +112456,9 @@
   "천안시성환문화회관 대공연장": {
     "name": "천안시성환문화회관 대공연장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 36.9128883,
+    "lng": 127.13722340000004
   },
   "서울 관악구 신림동 512-6": {
     "name": "서울 관악구 신림동 512-6",
@@ -113024,5 +113073,45 @@
     "district": "은평구",
     "lat": 37.6027,
     "lng": 126.9291
+  },
+  "고흥문화회관": {
+    "name": "고흥문화회관",
+    "address": "전라남도 고흥군 고흥읍 고흥로 1892-67",
+    "lat": 34.6128268,
+    "lng": 127.29753310000001,
+    "district": "",
+    "phone": "061-830-6712",
+    "homepage": "https://www.goheung.go.kr/culture/contentsView.do?pageId=culture2",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "754",
+    "theaterCount": "2",
+    "openedAt": "1999",
+    "amenities": [
+      "식당",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 식당, 장애인 주차, 장애인 경사로"
+  },
+  "천안시성환문화회관": {
+    "name": "천안시성환문화회관",
+    "address": "충청남도 천안시 서북구 성환읍 성진로 15",
+    "lat": 36.9128883,
+    "lng": 127.13722340000004,
+    "district": "",
+    "phone": "041-521-3745",
+    "homepage": "www.ccsh.or.kr",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "840",
+    "theaterCount": "2",
+    "openedAt": "1995",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차"
   }
 }
