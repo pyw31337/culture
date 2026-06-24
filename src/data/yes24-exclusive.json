@@ -901,43 +901,6 @@
     "synopsisImages": []
   },
   {
-    "id": "yes24_57608",
-    "title": "[인천] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260316/20260316-57608.jpg/dims/quality/70/",
-    "date": "2026.05.23 ~ 2026.05.24",
-    "venue": "송도컨벤시아 4홀",
-    "link": "https://ticket.yes24.com/Perf/57608",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 165,000원, R석 143,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 10매\n※ 일괄배송: 4월 28일(화)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_인천_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260316/20260316-57608.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 108,900원 ~ 최고가 148,500원\n할인정보\n[고객센터 전화예매시 1544-6399]\n-국가유공자(본인만) 10%\n-장애인(1~3급,중증/동반1인) 10%\n-장애인(4~6급,경증/본인만) 10%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 5월 23일(토) 오후 5시\n2026년 5월 24일(일) 오후 4시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)그레이스이엔엠",
-    "organizer": "㈜ 쇼7, ㈜ 고엔터테인먼트",
-    "contact": "",
-    "dataCollectedAt": "2026-05-21T13:26:13.138Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260317/26031702.jpg"
-    ]
-  },
-  {
     "id": "yes24_57939",
     "title": "[부산] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260406/20260406-57939.jpg/dims/quality/70/",
@@ -1869,58 +1832,6 @@
     "synopsisImages": []
   },
   {
-    "id": "yes24_57763",
-    "title": "sonicBLOOM 2026",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57763_1.jpg/dims/quality/70/",
-    "date": "2026.05.23 ~ 2026.05.24",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/57763",
-    "genre": "concert",
-    "region": "서울",
-    "price": "1DAY PASS(공연+NOWTONE 1F 요가좌석) 99,000원, 1DAY PASS(공연+NOWTONE 2F 일반좌석) 88,000원, 1DAY(공연) 77,000원, 1DAY(NOWTONE 1F 요가좌석) 33,000원, 1DAY(NOWTONE 2F 일반좌석) 22,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_sonicBLOOM_2026.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57763_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "1DAY PASS(공연+NOWTONE 1F 요가좌석)",
-        "price": "99,000원"
-      },
-      {
-        "label": "1DAY PASS(공연+NOWTONE 2F 일반좌석)",
-        "price": "88,000원"
-      },
-      {
-        "label": "1DAY(공연)",
-        "price": "77,000원"
-      },
-      {
-        "label": "1DAY(NOWTONE 1F 요가좌석)",
-        "price": "33,000원"
-      },
-      {
-        "label": "1DAY(NOWTONE 2F 일반좌석)",
-        "price": "22,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "2007년생 포함 이전 출생자(만 19세 이상)성인인증",
-    "runningTime": "180분 (인터미션 포함)",
-    "performanceTime": "2026년 5월 23일(토) ~ 5월 24일(일)\nNOWTONE - 토/일 오후 4시 - 6시\n공연 - 토/일 오후 8시 ~",
-    "reservationInfo": "현장 수령만 가능",
-    "host": ",주관: WeSA, FIG",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-05-21T13:28:24.233Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_04.jpg"
-    ]
-  },
-  {
     "id": "yes24_57553",
     "title": "Sou LIVE TOUR 2026 「Finder」 in Seoul",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260311/20260311-57553.jpg/dims/quality/70/",
@@ -2302,47 +2213,6 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202605/20260507/58371_01.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202605/20260507/58371_02.jpg"
-    ]
-  },
-  {
-    "id": "yes24_58152",
-    "title": "[광주] 광주예술의전당 기획공연 그랜드스테이지 ‘슈퍼 클래식 몬스터’",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260421/20260421-58152_1.jpg/dims/quality/70/",
-    "date": "2026.05.24 ~ 2026.05.24",
-    "venue": "광주 예술의전당 대극장",
-    "link": "https://ticket.yes24.com/Perf/58152",
-    "genre": "classic",
-    "region": "서울",
-    "price": "R석 50,000원, S석 40,000원, A석 30,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 4월 24일(금) 오후 2시 전까지 광주 예술의 전당 유료회원 선예매기간으로 일반예매 불가합니다.\n※ 유료회원 선예매 및 광주예술의전당 유료회원할인의 경우 광주예술의전당 홈페이지에서 예매 가능합니다.\n※ 유료회원 무료관람권(바우처)은 단독으로만 사용 가능합니다.\n※ 유료회원 할인 및 기타 할인권종은 무료관람권과 중복 사용이 불가하며, 해당 할인 선택 후 별도로 예매하셔야 합니다.",
-    "image": "/images/posters/classic/yes24_광주_광주예술의전당_기획공연_그랜드스테이지_슈퍼_클래식_몬스터.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260421/20260421-58152_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      },
-      {
-        "label": "A석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 15,000원 ~ 최고가 35,000원\n할인정보\n- 장애인(경증/본인) 50%\n- 장애인(중증/동반 1인) 50%\n- 국가유공자, 5.18민주유공자할인(동반1인) 50%\n- 경로우대할인(본인만) 50%\n- 학생/청소년할인(본인만) 30%\n- 다자녀할인(1인2매) 30%\n- 문화누리카드 소지자(본인만) 30%\n- 예술인패스(본인만) 30%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.\n[광주예술의전당 홈페이지에서 예매가능]\n- 광주예술의전당 VIP 회원 40%\n- 광주예술의전당 골드 회원 40%\n- 광주예술의전당 그린 회원 40%\n- 광주예술의전당 블루 회원 40%",
-    "ageRating": "7세 이상(2019년 포함 이전 출생자)",
-    "runningTime": "총 90분 (인터미션 15분)",
-    "performanceTime": "2026년 5월 24일(일) 오후 3시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: 광주예술의전당",
-    "organizer": "",
-    "contact": "062-613-8232",
-    "dataCollectedAt": "2026-05-21T13:34:17.889Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260421/26042110.jpg"
     ]
   },
   {
@@ -3398,41 +3268,6 @@
     ]
   },
   {
-    "id": "yes24_57788",
-    "title": "[부산] 가정의 달 기념 앤서니브라운 가족뮤지컬 [우리가족]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57788.jpg/dims/quality/70/",
-    "date": "2026.05.23 ~ 2026.05.24",
-    "venue": "부산 신세계센텀시티 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/57788",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 50,000원",
-    "description": "- 좌석배치도 A열~D열 까지는 바닥 단차가 없는 평지 좌석에 이동식 의자입니다(예매시 참고 바랍니다)\n- 어린이 단독 입장 불가 (본 공연장은 안전한 관람을 위하여 초등학생까지는 성인보호자 동반없이 입장 절대 불가 합니다.)\n- 24개월 이상 표를 구입합니다. /24개월미만 무료입장(단. 부모님안고관람)\n- 공연중에는 사진촬영, 동영상촬영, 음식물 반입이 금지되어 있습니다.\n- 1인 1티켓 적용 (본 공연은 부모님과 자녀 모두 소지하셔야 합니다.)\n- 어린이 보조방석 있음 (보조방석이 구비 되어있음으로 필요하신분들은 입장시 직원통해 받으시면 됩니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.)\n-공연당일 주차하기까지 소요되는 시간이 길게는 2시간이상 소요되오니 참고하시어 공연관람에 어려움없도록 해주시고, 주차로인한 환불은 안됩니다.\n- 대중교통 이용을 권장드립니다.\n- 2시간 무료주차",
-    "image": "/images/posters/kids/yes24_부산_가정의_달_기념_앤서니브라운_가족뮤지컬_우리가족.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57788.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "50,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 18,000원 ~ 최고가 20,000원\n할인정보\n기본할인 20,000원 / 상시할인\n조이컬쳐(부산) 카톡채널 추가할인 18,000원 / 카톡채널추가시 적용 - 미증빙시 차액지불\n신세계신용카드 및 백화점어플 소지자 할인 18,000원 / 신세계백화점 제휴 카드 및 백화점 어플 소지자 할인\n조기예매할인 15,000원 / ~ 5월 18일까지",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 60분 (인터미션 없음)",
-    "performanceTime": "2026년 5월 23일(토) ~ 24일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관 : ㈜조이컬처",
-    "organizer": "",
-    "contact": "070-7807-0701",
-    "dataCollectedAt": "2026-05-21T13:36:45.171Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202601/20260113/56762n.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260325/조이컬쳐(부산)채널추가방법.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260325/우리가족-상세_센텀.jpg"
-    ]
-  },
-  {
     "id": "yes24_58167",
     "title": "[서울(양천)] 2026 라이브 가족뮤지컬 [인어공주]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260421/20260421-58167.jpg/dims/quality/70/",
@@ -4161,43 +3996,6 @@
     "dataCollectedAt": "2026-05-21T13:27:31.160Z"
   },
   {
-    "id": "yes24_57608",
-    "title": "[인천] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260316/20260316-57608.jpg/dims/quality/70/",
-    "date": "2026.05.23 ~ 2026.05.24",
-    "venue": "송도컨벤시아 4홀",
-    "link": "https://ticket.yes24.com/Perf/57608",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 165,000원, R석 143,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 10매\n※ 일괄배송: 4월 28일(화)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_인천_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260316/20260316-57608.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 108,900원 ~ 최고가 148,500원\n할인정보\n[고객센터 전화예매시 1544-6399]\n-국가유공자(본인만) 10%\n-장애인(1~3급,중증/동반1인) 10%\n-장애인(4~6급,경증/본인만) 10%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 5월 23일(토) 오후 5시\n2026년 5월 24일(일) 오후 4시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)그레이스이엔엠",
-    "organizer": "㈜ 쇼7, ㈜ 고엔터테인먼트",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260317/26031702.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:26:13.138Z"
-  },
-  {
     "id": "yes24_58324",
     "title": "HY LIVE SERIES & MUKAI TAICHI : After the End Roll Mukai Taichi In Seoul",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260504/20260504-58324.jpg/dims/quality/70/",
@@ -4379,58 +4177,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202603/20260324/26032402.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:27:58.759Z"
-  },
-  {
-    "id": "yes24_57763",
-    "title": "sonicBLOOM 2026",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57763_1.jpg/dims/quality/70/",
-    "date": "2026.05.23 ~ 2026.05.24",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/57763",
-    "genre": "concert",
-    "region": "서울",
-    "price": "1DAY PASS(공연+NOWTONE 1F 요가좌석) 99,000원, 1DAY PASS(공연+NOWTONE 2F 일반좌석) 88,000원, 1DAY(공연) 77,000원, 1DAY(NOWTONE 1F 요가좌석) 33,000원, 1DAY(NOWTONE 2F 일반좌석) 22,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_sonicBLOOM_2026.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57763_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "1DAY PASS(공연+NOWTONE 1F 요가좌석)",
-        "price": "99,000원"
-      },
-      {
-        "label": "1DAY PASS(공연+NOWTONE 2F 일반좌석)",
-        "price": "88,000원"
-      },
-      {
-        "label": "1DAY(공연)",
-        "price": "77,000원"
-      },
-      {
-        "label": "1DAY(NOWTONE 1F 요가좌석)",
-        "price": "33,000원"
-      },
-      {
-        "label": "1DAY(NOWTONE 2F 일반좌석)",
-        "price": "22,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "2007년생 포함 이전 출생자(만 19세 이상)성인인증",
-    "runningTime": "180분 (인터미션 포함)",
-    "performanceTime": "2026년 5월 23일(토) ~ 5월 24일(일)\nNOWTONE - 토/일 오후 4시 - 6시\n공연 - 토/일 오후 8시 ~",
-    "reservationInfo": "현장 수령만 가능",
-    "host": ",주관: WeSA, FIG",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:28:24.233Z"
   },
   {
     "id": "yes24_58079",
@@ -6606,47 +6352,6 @@
     "dataCollectedAt": "2026-05-21T13:34:01.679Z"
   },
   {
-    "id": "yes24_58152",
-    "title": "[광주] 광주예술의전당 기획공연 그랜드스테이지 ‘슈퍼 클래식 몬스터’",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260421/20260421-58152_1.jpg/dims/quality/70/",
-    "date": "2026.05.24 ~ 2026.05.24",
-    "venue": "광주 예술의전당 대극장",
-    "link": "https://ticket.yes24.com/Perf/58152",
-    "genre": "classic",
-    "region": "서울",
-    "price": "R석 50,000원, S석 40,000원, A석 30,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 4월 24일(금) 오후 2시 전까지 광주 예술의 전당 유료회원 선예매기간으로 일반예매 불가합니다.\n※ 유료회원 선예매 및 광주예술의전당 유료회원할인의 경우 광주예술의전당 홈페이지에서 예매 가능합니다.\n※ 유료회원 무료관람권(바우처)은 단독으로만 사용 가능합니다.\n※ 유료회원 할인 및 기타 할인권종은 무료관람권과 중복 사용이 불가하며, 해당 할인 선택 후 별도로 예매하셔야 합니다.",
-    "image": "/images/posters/classic/yes24_광주_광주예술의전당_기획공연_그랜드스테이지_슈퍼_클래식_몬스터.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260421/20260421-58152_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      },
-      {
-        "label": "A석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 15,000원 ~ 최고가 35,000원\n할인정보\n- 장애인(경증/본인) 50%\n- 장애인(중증/동반 1인) 50%\n- 국가유공자, 5.18민주유공자할인(동반1인) 50%\n- 경로우대할인(본인만) 50%\n- 학생/청소년할인(본인만) 30%\n- 다자녀할인(1인2매) 30%\n- 문화누리카드 소지자(본인만) 30%\n- 예술인패스(본인만) 30%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.\n[광주예술의전당 홈페이지에서 예매가능]\n- 광주예술의전당 VIP 회원 40%\n- 광주예술의전당 골드 회원 40%\n- 광주예술의전당 그린 회원 40%\n- 광주예술의전당 블루 회원 40%",
-    "ageRating": "7세 이상(2019년 포함 이전 출생자)",
-    "runningTime": "총 90분 (인터미션 15분)",
-    "performanceTime": "2026년 5월 24일(일) 오후 3시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: 광주예술의전당",
-    "organizer": "",
-    "contact": "062-613-8232",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260421/26042110.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:34:17.889Z"
-  },
-  {
     "id": "yes24_58405",
     "title": "[광주시립합창단] 204회 정기연주회 ‘German Requiem’",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58405.jpg/dims/quality/70/",
@@ -6950,41 +6655,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58266_2.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:35:48.319Z"
-  },
-  {
-    "id": "yes24_58517",
-    "title": "〈불꽃야구2〉2026시즌 네 번째 직관",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260519/20260519-58517.jpg/dims/quality/70/",
-    "date": "2026.05.24 ~ 2026.05.24",
-    "venue": "고척스카이돔",
-    "link": "https://ticket.yes24.com/Perf/58517",
-    "genre": "exhibition",
-    "region": "서울",
-    "price": "",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "--",
-    "runningTime": "--",
-    "performanceTime": "",
-    "reservationInfo": "모바일 티켓",
-    "host": ",주관 : STUDIO C1",
-    "organizer": "",
-    "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "dataCollectedAt": "2026-05-21T13:35:51.048Z",
-    "image": "/images/posters/exhibition/yes24_불꽃야구2_2026시즌_네_번째_직관.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260519/20260519-58517.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/58517n_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/5851dc.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/5851171.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/585172.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260520/585173_1.jpg",
-      "https://tkfile.yes24.com/img/event/2026/fighters/ban_fighters_photo.jpg",
-      "https://tkfile.yes24.com/img/event/2026/fighters/ban_cap_Ablue.jpg",
-      "https://tkfile.yes24.com/img/event/2026/fighters/ban_cap_Ablalck.jpg"
-    ]
   },
   {
     "id": "yes24_58255",
@@ -7523,43 +7193,6 @@
     "dataCollectedAt": "2026-05-21T13:25:51.319Z"
   },
   {
-    "id": "yes24_57608",
-    "title": "[인천] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260316/20260316-57608.jpg/dims/quality/70/",
-    "date": "2026.05.23 ~ 2026.05.24",
-    "venue": "송도컨벤시아 4홀",
-    "link": "https://ticket.yes24.com/Perf/57608",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 165,000원, R석 143,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 10매\n※ 일괄배송: 4월 28일(화)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_인천_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260316/20260316-57608.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 108,900원 ~ 최고가 148,500원\n할인정보\n[고객센터 전화예매시 1544-6399]\n-국가유공자(본인만) 10%\n-장애인(1~3급,중증/동반1인) 10%\n-장애인(4~6급,경증/본인만) 10%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 5월 23일(토) 오후 5시\n2026년 5월 24일(일) 오후 4시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)그레이스이엔엠",
-    "organizer": "㈜ 쇼7, ㈜ 고엔터테인먼트",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260317/26031702.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:26:13.138Z"
-  },
-  {
     "id": "yes24_58336",
     "title": "[청주] 2026 이승철 40주년 콘서트 [THE VOICE: LEE SEUNG CHUL]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260521/20260521-58336.jpg/dims/quality/70/",
@@ -8025,58 +7658,6 @@
     "image": "/images/posters/concert/yes24_부천_2026_이승철_40주년_콘서트_THE_VOICE_LEE_SEUNG_CHUL.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260520/20260520-58546.jpg/dims/quality/70/",
     "category": "독점공연"
-  },
-  {
-    "id": "yes24_57763",
-    "title": "sonicBLOOM 2026",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57763_1.jpg/dims/quality/70/",
-    "date": "2026.05.23 ~ 2026.05.24",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/57763",
-    "genre": "concert",
-    "region": "서울",
-    "price": "1DAY PASS(공연+NOWTONE 1F 요가좌석) 99,000원, 1DAY PASS(공연+NOWTONE 2F 일반좌석) 88,000원, 1DAY(공연) 77,000원, 1DAY(NOWTONE 1F 요가좌석) 33,000원, 1DAY(NOWTONE 2F 일반좌석) 22,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_sonicBLOOM_2026.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57763_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "1DAY PASS(공연+NOWTONE 1F 요가좌석)",
-        "price": "99,000원"
-      },
-      {
-        "label": "1DAY PASS(공연+NOWTONE 2F 일반좌석)",
-        "price": "88,000원"
-      },
-      {
-        "label": "1DAY(공연)",
-        "price": "77,000원"
-      },
-      {
-        "label": "1DAY(NOWTONE 1F 요가좌석)",
-        "price": "33,000원"
-      },
-      {
-        "label": "1DAY(NOWTONE 2F 일반좌석)",
-        "price": "22,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "2007년생 포함 이전 출생자(만 19세 이상)성인인증",
-    "runningTime": "180분 (인터미션 포함)",
-    "performanceTime": "2026년 5월 23일(토) ~ 5월 24일(일)\nNOWTONE - 토/일 오후 4시 - 6시\n공연 - 토/일 오후 8시 ~",
-    "reservationInfo": "현장 수령만 가능",
-    "host": ",주관: WeSA, FIG",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260414/57763_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:28:24.233Z"
   },
   {
     "id": "yes24_58079",
@@ -10469,47 +10050,6 @@
     "dataCollectedAt": "2026-05-21T13:34:14.113Z"
   },
   {
-    "id": "yes24_58152",
-    "title": "[광주] 광주예술의전당 기획공연 그랜드스테이지 ‘슈퍼 클래식 몬스터’",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260421/20260421-58152_1.jpg/dims/quality/70/",
-    "date": "2026.05.24 ~ 2026.05.24",
-    "venue": "광주 예술의전당 대극장",
-    "link": "https://ticket.yes24.com/Perf/58152",
-    "genre": "classic",
-    "region": "서울",
-    "price": "R석 50,000원, S석 40,000원, A석 30,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 4월 24일(금) 오후 2시 전까지 광주 예술의 전당 유료회원 선예매기간으로 일반예매 불가합니다.\n※ 유료회원 선예매 및 광주예술의전당 유료회원할인의 경우 광주예술의전당 홈페이지에서 예매 가능합니다.\n※ 유료회원 무료관람권(바우처)은 단독으로만 사용 가능합니다.\n※ 유료회원 할인 및 기타 할인권종은 무료관람권과 중복 사용이 불가하며, 해당 할인 선택 후 별도로 예매하셔야 합니다.",
-    "image": "/images/posters/classic/yes24_광주_광주예술의전당_기획공연_그랜드스테이지_슈퍼_클래식_몬스터.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260421/20260421-58152_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      },
-      {
-        "label": "A석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 15,000원 ~ 최고가 35,000원\n할인정보\n- 장애인(경증/본인) 50%\n- 장애인(중증/동반 1인) 50%\n- 국가유공자, 5.18민주유공자할인(동반1인) 50%\n- 경로우대할인(본인만) 50%\n- 학생/청소년할인(본인만) 30%\n- 다자녀할인(1인2매) 30%\n- 문화누리카드 소지자(본인만) 30%\n- 예술인패스(본인만) 30%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.\n[광주예술의전당 홈페이지에서 예매가능]\n- 광주예술의전당 VIP 회원 40%\n- 광주예술의전당 골드 회원 40%\n- 광주예술의전당 그린 회원 40%\n- 광주예술의전당 블루 회원 40%",
-    "ageRating": "7세 이상(2019년 포함 이전 출생자)",
-    "runningTime": "총 90분 (인터미션 15분)",
-    "performanceTime": "2026년 5월 24일(일) 오후 3시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: 광주예술의전당",
-    "organizer": "",
-    "contact": "062-613-8232",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260421/26042110.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:34:17.889Z"
-  },
-  {
     "id": "yes24_58523",
     "title": "[부산] 2026 NAC 시그니처 Symphony No.5 ＆ Choral Series Ⅳ 쇼스타코비치 No.5 엘가 첼로 협주곡",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260519/20260519-58523.jpg/dims/quality/70/",
@@ -10739,41 +10279,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58266_2.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:35:48.319Z"
-  },
-  {
-    "id": "yes24_58517",
-    "title": "〈불꽃야구2〉2026시즌 네 번째 직관",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260519/20260519-58517.jpg/dims/quality/70/",
-    "date": "2026.05.24 ~ 2026.05.24",
-    "venue": "고척스카이돔",
-    "link": "https://ticket.yes24.com/Perf/58517",
-    "genre": "exhibition",
-    "region": "서울",
-    "price": "",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "--",
-    "runningTime": "--",
-    "performanceTime": "",
-    "reservationInfo": "모바일 티켓",
-    "host": ",주관 : STUDIO C1",
-    "organizer": "",
-    "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/58517n_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/5851dc.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/5851171.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/585172.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260520/585173_1.jpg",
-      "https://tkfile.yes24.com/img/event/2026/fighters/ban_fighters_photo.jpg",
-      "https://tkfile.yes24.com/img/event/2026/fighters/ban_cap_Ablue.jpg",
-      "https://tkfile.yes24.com/img/event/2026/fighters/ban_cap_Ablalck.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:35:51.048Z",
-    "image": "/images/posters/exhibition/yes24_불꽃야구2_2026시즌_네_번째_직관.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260519/20260519-58517.jpg/dims/quality/70/",
-    "category": "독점공연"
   },
   {
     "id": "yes24_58369",
