@@ -113113,5 +113113,71 @@
     "parking": "Y",
     "restrooms": "장애인 화장실, 수유실",
     "facilities": "공공(문예회관) · 장애인 주차"
+  },
+  "라우어 콘서트홀": {
+    "name": "라우어 콘서트홀",
+    "address": "부산광역시 기장군 기장읍 동부산관광1로 60",
+    "lat": 35.18998,
+    "lng": 129.208431,
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "몬스터즈 크래프트 비어": {
+    "name": "몬스터즈 크래프트 비어",
+    "address": "대구광역시 중구 종로 45-4(종로1가)",
+    "lat": 35.8699131,
+    "lng": 128.5909561,
+    "district": "중구",
+    "phone": "010-5623-0259",
+    "homepage": "https://www.instagram.com/monsterscraftbeer/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [
+      "식당",
+      "장애인 화장실"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장) · 식당, 장애인 화장실"
+  },
+  "버드나무 예술창고": {
+    "name": "버드나무 예술창고",
+    "address": "강원특별자치도 양구군 양구읍 중심로 110-2",
+    "lat": 38.100585,
+    "lng": 127.992924,
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
+  },
+  "울산 폴이스트(Forest)": {
+    "name": "울산 폴이스트(Forest)",
+    "address": "울산광역시 남구 대학로94번길 5-22 (무거동)",
+    "lat": 35.543843,
+    "lng": 129.26105,
+    "district": "",
+    "homepage": "https://www.instagram.com/forest_band_challenge/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   }
 }
