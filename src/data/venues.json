@@ -63830,7 +63830,15 @@
     "lat": 37.5533112,
     "lng": 126.9276554,
     "district": "마포구",
-    "homepage": "https://www.instagram.com/space_hangang/"
+    "homepage": "https://www.instagram.com/space_hangang/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "문화정원 아트홀": {
     "name": "문화정원 아트홀",
@@ -78755,10 +78763,19 @@
   },
   "스튜디오 리움": {
     "name": "스튜디오 리움",
-    "address": "서울 서대문구 성산로 533",
+    "address": "서울특별시 서대문구 성산로 533(대신동)",
+    "lat": 37.564146,
+    "lng": 126.9445671,
     "district": "서대문구",
-    "lat": 37.56413716079409,
-    "lng": 126.94456691223479
+    "homepage": "https://www.lyum.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "76",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "서귀포예술의전당 소극장": {
     "name": "서귀포예술의전당 소극장",
@@ -86050,7 +86067,21 @@
     "address": "전북특별자치도 완주군 용진읍 지암로 61",
     "district": "",
     "lat": 35.90530486252923,
-    "lng": 127.16078737043718
+    "lng": 127.16078737043718,
+    "phone": "063-290-2597",
+    "homepage": "http://culture.wanju.go.kr/index.wanju",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "478",
+    "theaterCount": "1",
+    "openedAt": "2012",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
   },
   "영주문화예술회관 까치홀": {
     "name": "영주문화예술회관 까치홀",
@@ -88936,7 +88967,13 @@
     "district": "마포구",
     "lat": 37.5533115411549,
     "lng": 126.927655999935,
-    "homepage": "https://www.instagram.com/space_hangang/"
+    "homepage": "https://www.instagram.com/space_hangang/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "문화정원 아트홀 (문화정원 아트홀)": {
     "name": "문화정원 아트홀 (문화정원 아트홀)",
@@ -103549,7 +103586,7 @@
     "phone": "033-680-3366",
     "homepage": "http://www.goseong.go.kr/index.goseong?menuCd=DOM_000000107003006001",
     "facilityType": "공공(문예회관)",
-    "seatScale": "400",
+    "seatScale": "398",
     "theaterCount": "2",
     "openedAt": "2005",
     "amenities": [
@@ -105544,10 +105581,10 @@
   },
   "비유아트홀": {
     "name": "비유아트홀",
-    "address": "정보 없음",
-    "district": "",
-    "lat": 37.5899206,
-    "lng": 126.9982675
+    "address": "서울특별시 종로구 성균관로 87(명륜1가) 지하 4층",
+    "district": "종로구",
+    "lat": 37.573,
+    "lng": 126.9794
   },
   "남양주 체육문화센터 실내체육관": {
     "name": "남양주 체육문화센터 실내체육관",
@@ -107180,7 +107217,9 @@
   "서울문화예술교육센터 서초 서울체임버홀": {
     "name": "서울문화예술교육센터 서초 서울체임버홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5047177,
+    "lng": 126.9983081
   },
   "워커힐 포레스트 파크": {
     "name": "워커힐 포레스트 파크",
@@ -107457,10 +107496,8 @@
   },
   "의정부예술의전당 전시장": {
     "name": "의정부예술의전당 전시장",
-    "address": "정보 없음",
-    "district": "",
-    "lat": 37.7334125,
-    "lng": 127.03436779999993
+    "address": "의정부예술의전당 전시장(자세히)",
+    "district": ""
   },
   "부평아트센터 갤러리 꽃누리": {
     "name": "부평아트센터 갤러리 꽃누리",
@@ -109605,10 +109642,10 @@
   },
   "성미산마을극장": {
     "name": "성미산마을극장",
-    "address": "정보 없음",
-    "district": "",
-    "lat": 37.5594242,
-    "lng": 126.90989319999994
+    "address": "서울특별시 마포구 월드컵로26길 39(성산동) 지하 2층",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
   },
   "대학로 공간아울": {
     "name": "대학로 공간아울",
@@ -112025,7 +112062,7 @@
   },
   "동아쇼핑 10층 아트홀": {
     "name": "동아쇼핑 10층 아트홀",
-    "address": "정보 없음",
+    "address": "동아쇼핑 10층 아트홀(자세히)",
     "district": ""
   },
   "에저또 소극장": {
@@ -112370,7 +112407,9 @@
   "스페이스": {
     "name": "스페이스",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5533112,
+    "lng": 126.9276554
   },
   "서울 용산구 남영동 25-2": {
     "name": "서울 용산구 남영동 25-2",
@@ -113179,5 +113218,180 @@
     "parking": "N",
     "restrooms": "장애인 화장실, 수유실",
     "facilities": "민간(대학로 외)"
+  },
+  "Live Office by dabubucompany": {
+    "name": "Live Office by dabubucompany",
+    "address": "전북특별자치도 전주시 덕진구 명륜3길 17-2 (덕진동1가)",
+    "lat": 35.8430933,
+    "lng": 127.1277577,
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "60",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
+  },
+  "완주문화예술회관": {
+    "name": "완주문화예술회관",
+    "address": "전라북도 완주군 용진읍 지암로 61",
+    "lat": 35.9043858,
+    "lng": 127.1619941,
+    "district": "",
+    "phone": "063-290-2597",
+    "homepage": "http://culture.wanju.go.kr/index.wanju",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "478",
+    "theaterCount": "1",
+    "openedAt": "2012",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+  },
+  "유미플레이 1관": {
+    "name": "유미플레이 1관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "노원구민의전당(구.노원구민회관)": {
+    "name": "노원구민의전당(구.노원구민회관)",
+    "address": "정보 없음",
+    "district": "노원구",
+    "lat": 37.6542,
+    "lng": 127.0568
+  },
+  "경기아트센터 컨벤션홀": {
+    "name": "경기아트센터 컨벤션홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "이머시브 뮤지엄 잠실": {
+    "name": "이머시브 뮤지엄 잠실",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울시립대학교 UOS아트홀(음악관)": {
+    "name": "서울시립대학교 UOS아트홀(음악관)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "경기문화재단 예술인의 집(다목적홀)": {
+    "name": "경기문화재단 예술인의 집(다목적홀)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "어린이비전센터 4층 다목적 강당": {
+    "name": "어린이비전센터 4층 다목적 강당",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "엔 아트센터": {
+    "name": "엔 아트센터",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "원주 충정교회": {
+    "name": "원주 충정교회",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "사운드얼라이언스, SA홀": {
+    "name": "사운드얼라이언스, SA홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "갤러리 디아르테 청담": {
+    "name": "갤러리 디아르테 청담",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "DSM 아트홀": {
+    "name": "DSM 아트홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "대전 한밭대학교 아트홀": {
+    "name": "대전 한밭대학교 아트홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "부산 사직실내체육관": {
+    "name": "부산 사직실내체육관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "포디움다이브 광안": {
+    "name": "포디움다이브 광안",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "원광대학교 문화체육관": {
+    "name": "원광대학교 문화체육관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "전주 덕진예술회관": {
+    "name": "전주 덕진예술회관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "장흥 유수풀 물놀이장": {
+    "name": "장흥 유수풀 물놀이장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "임하호 아쿠아 수상레저": {
+    "name": "임하호 아쿠아 수상레저",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "한강공원 광나루 수영장": {
+    "name": "한강공원 광나루 수영장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "2026 한강공원": {
+    "name": "2026 한강공원",
+    "address": "서울특별시 광진구 자양동 112",
+    "district": "광진구",
+    "lat": 37.5385,
+    "lng": 127.0824
+  },
+  "아늑 료칸 호텔 안산역": {
+    "name": "아늑 료칸 호텔 안산역",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "삼풍수영장": {
+    "name": "삼풍수영장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "애니멀클럽": {
+    "name": "애니멀클럽",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "청양 알프스마을": {
+    "name": "청양 알프스마을",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "팔공 워터랜드": {
+    "name": "팔공 워터랜드",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "한양대학교 퍼포밍아트시어터": {
+    "name": "한양대학교 퍼포밍아트시어터",
+    "address": "한양대학교 퍼포밍아트시어터(자세히)",
+    "district": ""
   }
 }
