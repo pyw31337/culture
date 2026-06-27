@@ -60350,7 +60350,15 @@
     "lng": 126.8988554,
     "district": "영등포구",
     "phone": "02-6949-2016",
-    "homepage": "https://sites.google.com/view/enitheater2014"
+    "homepage": "https://sites.google.com/view/enitheater2014",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "2017",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "레미어린이극장 [금천]": {
     "name": "레미어린이극장 [금천]",
@@ -67034,7 +67042,15 @@
     "lat": 37.556783,
     "lng": 126.934855,
     "district": "서대문구",
-    "homepage": "https://blog.naver.com/geeklive/90171856113"
+    "homepage": "https://blog.naver.com/geeklive/90171856113",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "60",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "한국전력공사 본사": {
     "name": "한국전력공사 본사",
@@ -71408,10 +71424,19 @@
   },
   "언플러그드 서교": {
     "name": "언플러그드 서교",
-    "address": "서울특별시 마포구 와우산로29길 15",
+    "address": "서울특별시 마포구 와우산로29길 15 (서교동)",
     "lat": 37.5547913,
     "lng": 126.9288673,
-    "district": "마포구"
+    "district": "마포구",
+    "phone": "070-7517-3004",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "공간 비틀즈": {
     "name": "공간 비틀즈",
@@ -95494,7 +95519,13 @@
     "district": "서대문구",
     "lat": 37.55678367214646,
     "lng": 126.93485512320403,
-    "homepage": "https://blog.naver.com/geeklive/90171856113"
+    "homepage": "https://blog.naver.com/geeklive/90171856113",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "60",
+    "theaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "기타(비공연장)"
   },
   "우리소극장 (우리소극장)": {
     "name": "우리소극장 (우리소극장)",
@@ -98509,7 +98540,14 @@
     "lat": 37.5325920750248,
     "lng": 126.897170408544,
     "phone": "02-6949-2016",
-    "homepage": "https://sites.google.com/view/enitheater2014"
+    "homepage": "https://sites.google.com/view/enitheater2014",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "2017",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "레미어린이극장 (레미어린이극장 )": {
     "name": "레미어린이극장 (레미어린이극장 )",
@@ -108216,8 +108254,10 @@
   },
   "MOK DONG JS ART HALL": {
     "name": "MOK DONG JS ART HALL",
-    "address": "정보 없음",
-    "district": ""
+    "address": "서울특별시 양천구 등촌로 36(목동) 지하 JS ART HALL",
+    "district": "양천구",
+    "lat": 37.5169,
+    "lng": 126.866
   },
   "홍대 프리즘홀": {
     "name": "홍대 프리즘홀",
@@ -113392,6 +113432,26 @@
   "한양대학교 퍼포밍아트시어터": {
     "name": "한양대학교 퍼포밍아트시어터",
     "address": "한양대학교 퍼포밍아트시어터(자세히)",
+    "district": ""
+  },
+  "BRST STUDIO": {
+    "name": "BRST STUDIO",
+    "address": "서울특별시 마포구 와우산로18길 30 (서교동)",
+    "lat": 37.5514862,
+    "lng": 126.9240873,
+    "district": "마포구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "포슬린(부산진구/부산)\n                                                            접시  만들기": {
+    "name": "포슬린(부산진구/부산)\n                                                            접시  만들기",
+    "address": "포슬린(부산진구/부산)\n                                                            접시  만들기",
     "district": ""
   }
 }
