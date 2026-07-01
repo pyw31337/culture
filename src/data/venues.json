@@ -1619,7 +1619,14 @@
     "lng": 127.002326525331,
     "mapped_region_id": "seoul",
     "phone": "02-744-0015",
-    "homepage": "http://www.parangsae.theater"
+    "homepage": "http://www.parangsae.theater",
+    "facilityType": "민간(대학로)",
+    "seatScale": "503",
+    "theaterCount": "2",
+    "openedAt": "1984",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)"
   },
   "이화여자대학교 대강당": {
     "name": "이화여자대학교",
@@ -59947,7 +59954,16 @@
     "district": "성북구",
     "mapped_region_id": "",
     "lat": 37.5977192575545,
-    "lng": 127.021419977676
+    "lng": 127.021419977676,
+    "phone": "02-6956-9045",
+    "homepage": "https://www.miari-cooptheater.co.kr",
+    "facilityType": "공공(기타)",
+    "seatScale": "74",
+    "theaterCount": "1",
+    "openedAt": "2009",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타)"
   },
   "아트301": {
     "name": "아트301",
@@ -69652,10 +69668,20 @@
   },
   "미아리고개예술극장(구. 미아리예술극장)": {
     "name": "미아리고개예술극장(구. 미아리예술극장)",
-    "address": "서울특별시 성북구 동소문로 177",
+    "address": "서울특별시 성북구 동소문로 177 (돈암동)",
     "lat": 37.597782,
     "lng": 127.02140899999995,
-    "district": "성북구"
+    "district": "성북구",
+    "phone": "02-6956-9045",
+    "homepage": "https://www.miari-cooptheater.co.kr",
+    "facilityType": "공공(기타)",
+    "seatScale": "74",
+    "theaterCount": "1",
+    "openedAt": "2009",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타)"
   },
   "한국콘텐츠진흥원 CKL스테이지": {
     "name": "한국콘텐츠진흥원 CKL스테이지",
@@ -70444,10 +70470,22 @@
   },
   "창조문화활력센터 소극장 624": {
     "name": "창조문화활력센터 소극장 624",
-    "address": "부산광역시 북구 백양대로 1167",
+    "address": "부산광역시 북구 백양대로 1167 (구포동)",
     "lat": 35.20643889999999,
     "lng": 129.0044021,
-    "district": ""
+    "district": "",
+    "phone": "051-336-8521",
+    "homepage": "https://cafe.naver.com/bswindow.cafe",
+    "facilityType": "공공(기타)",
+    "seatScale": "123",
+    "theaterCount": "2",
+    "openedAt": "2013",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "Y",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "공공(기타) · 카페"
   },
   "철원군 화강문화센터": {
     "name": "철원군 화강문화센터",
@@ -78690,7 +78728,14 @@
     "lat": 37.58158440422107,
     "lng": 127.00232652533127,
     "phone": "02-744-0015",
-    "homepage": "http://www.parangsae.theater"
+    "homepage": "http://www.parangsae.theater",
+    "facilityType": "민간(대학로)",
+    "seatScale": "503",
+    "theaterCount": "2",
+    "openedAt": "1984",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)"
   },
   "엑스코(exco) 제2전시장(동관)": {
     "name": "엑스코(exco) 제2전시장(동관)",
@@ -84482,7 +84527,15 @@
     "lng": 127.00241119999998,
     "district": "종로구",
     "phone": "02-744-0015",
-    "homepage": "http://www.parangsae.theater"
+    "homepage": "http://www.parangsae.theater",
+    "facilityType": "민간(대학로)",
+    "seatScale": "503",
+    "theaterCount": "2",
+    "openedAt": "1984",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)"
   },
   "전북도립미술관 서울관": {
     "name": "전북도립미술관 서울관",
@@ -107540,7 +107593,9 @@
   "부평아트센터 갤러리 꽃누리": {
     "name": "부평아트센터 갤러리 꽃누리",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.4819229,
+    "lng": 126.7049151
   },
   "화성행궁 별주": {
     "name": "화성행궁 별주",
@@ -109705,7 +109760,9 @@
   "충무아트센터예그린스페이스": {
     "name": "충무아트센터예그린스페이스",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5660139,
+    "lng": 127.01481309999997
   },
   "대원콘텐츠라이브": {
     "name": "대원콘텐츠라이브",
@@ -113453,5 +113510,36 @@
     "name": "포슬린(부산진구/부산)\n                                                            접시  만들기",
     "address": "포슬린(부산진구/부산)\n                                                            접시  만들기",
     "district": ""
+  },
+  "한양대학교 동문회관": {
+    "name": "한양대학교 동문회관",
+    "address": "서울특별시 성동구 마조로 22-2 (행당동)",
+    "lat": 37.559555,
+    "lng": 127.041401,
+    "district": "성동구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
+  },
+  "갤럭시 로봇파크": {
+    "name": "갤럭시 로봇파크",
+    "address": "서울특별시 강동구 아리수로61길 103 (고덕동)",
+    "lat": 37.565301,
+    "lng": 127.14771,
+    "district": "강동구",
+    "homepage": "https://www.galaxyuniverse.ai/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   }
 }
