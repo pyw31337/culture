@@ -2445,7 +2445,7 @@
     "homepage": "http://theater.arko.or.kr/Pages/Main.aspx",
     "facilityType": "국립",
     "seatScale": "999",
-    "theaterCount": "4",
+    "theaterCount": "5",
     "openedAt": "2009",
     "amenities": [],
     "parking": "Y",
@@ -82908,10 +82908,18 @@
   },
   "et theatre 1 (구. 눈빛극장)": {
     "name": "et theatre 1 (구. 눈빛극장)",
-    "address": "서울 종로구 혜화로 17",
+    "address": "서울특별시 종로구 혜화로 17 (명륜1가)",
+    "lat": 37.5871099,
+    "lng": 126.9997845,
     "district": "종로구",
-    "lat": 37.5871525651097,
-    "lng": 126.999818845849
+    "facilityType": "민간(대학로)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로)"
   },
   "PS CENTER": {
     "name": "PS CENTER",
@@ -107266,7 +107274,15 @@
   "지포캣": {
     "name": "지포캣",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.56254,
+    "lng": 126.996989,
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "parking": "N",
+    "restrooms": "장애인 화장실, 수유실",
+    "facilities": "민간(대학로 외)"
   },
   "대학로 스타시티 후암스테이지 2관": {
     "name": "대학로 스타시티 후암스테이지 2관",
@@ -108327,7 +108343,9 @@
   "상명아트홀 1관": {
     "name": "상명아트홀 1관",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5833331,
+    "lng": 127.00272719999998
   },
   "JTN 아트홀 3관": {
     "name": "JTN 아트홀 3관",
