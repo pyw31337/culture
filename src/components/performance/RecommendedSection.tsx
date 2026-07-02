@@ -9,8 +9,15 @@ import { clsx } from 'clsx';
 import SectionInfoPopover from './SectionInfoPopover';
 import SportsTeamLogoOverlay from './SportsTeamLogoOverlay';
 import { useHorizontalDragScroll } from '@/hooks/useHorizontalDragScroll';
+import type { Performance } from '@/types';
 
 const EMPTY_VENUES: Record<string, never> = {};
+
+type RecommendedPerformance = Performance & {
+    category?: string;
+    homeTeam?: string;
+    awayTeam?: string;
+};
 
 
 function formatPosterSchedule(date?: string) {
@@ -34,11 +41,11 @@ function PosterScheduleLine({ date }: { date?: string }) {
 }
 
 interface RecommendedSectionProps {
-    recommendedItems: any[];
-    onLocationClick: (loc: any) => void;
+    recommendedItems: RecommendedPerformance[];
+    onLocationClick: (loc: unknown) => void;
     onToggleLike: (id: string, e: React.MouseEvent) => void;
     likedIds: Set<string>;
-    onDetail: (perf: any) => void;
+    onDetail: (perf: RecommendedPerformance) => void;
     onDetailPrepare?: () => void;
     searchMode?: 'keyword' | 'location';
     onShare?: (id: string, e?: React.MouseEvent) => void;
@@ -58,9 +65,14 @@ export default function RecommendedSection({
     title = '지금 주목할 콘텐츠',
     subtitle = '시즌 적합성, 일정 임박도, 장르 다양성을 함께 보고 첫 화면을 조금 더 생동감 있게 정리했어요.',
 }: RecommendedSectionProps) {
-    const { ref: containerRef, isDragging, hasDragged, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
+    void onLocationClick;
+    void onToggleLike;
+    void likedIds;
+    void onDetailPrepare;
+
+    const { ref: containerRef, isDragging, hasDragged, elasticStyle, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
-    const [randomRecs, setRandomRecs] = useState<any[]>([]);
+    const [randomRecs, setRandomRecs] = useState<RecommendedPerformance[]>([]);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
     const dailySalt = React.useMemo(() => {
@@ -105,7 +117,7 @@ export default function RecommendedSection({
             setRandomRecs(ranked.slice(0, 9));
             hasLockedRecommendations.current = true;
         }
-    }, [recommendedItems, activity.itemClicks, isActivityReady]);
+    }, [recommendedItems, activity.itemClicks, isActivityReady, getBaseScore]);
 
     // Constraint & Arrow Logic
     // Native horizontal scroll is significantly cheaper than drag spring animations.
@@ -117,7 +129,7 @@ export default function RecommendedSection({
         const nextShowRight = container.scrollLeft < maxScroll;
         setShowLeftArrow((current) => current === nextShowLeft ? current : nextShowLeft);
         setShowRightArrow((current) => current === nextShowRight ? current : nextShowRight);
-    }, []);
+    }, [containerRef]);
 
     useEffect(() => {
         updateArrowState();
@@ -153,7 +165,7 @@ export default function RecommendedSection({
         pointerPos.current = { x: e.clientX, y: e.clientY };
     };
 
-    const handlePointerUp = (e: React.PointerEvent, perf: any) => {
+    const handlePointerUp = (e: React.PointerEvent, perf: RecommendedPerformance) => {
         // Threshold check
         const diffX = Math.abs(e.clientX - pointerPos.current.x);
         const diffY = Math.abs(e.clientY - pointerPos.current.y);
@@ -216,6 +228,7 @@ export default function RecommendedSection({
                     <div
                         ref={contentRef}
                         className="flex gap-5 sm:gap-9 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-end min-w-max"
+                        style={elasticStyle}
                     >
                         {randomRecs.map((perf, idx) => (
                             <div
@@ -239,7 +252,7 @@ export default function RecommendedSection({
                                         searchMode === 'location' ? "hover:shadow-emerald-500/30" : "hover:shadow-purple-500/30"
                                     )}
                                     onPointerDown={handlePointerDown}
-                                    onPointerUp={(e) => handlePointerUp(e as any, perf)}
+                                    onPointerUp={(e) => handlePointerUp(e, perf)}
                                     style={{ contentVisibility: 'auto', containIntrinsicSize: '260px 390px' }}
                                 >
                                     {/* Category Badge */}
@@ -255,7 +268,7 @@ export default function RecommendedSection({
                                     </div>
 
                                     <ImageWithFallback
-                                        src={perf.image || perf.poster}
+                                        src={perf.image || perf.poster || ''}
                                         backupSrc={perf.backupPoster}
                                         placeholderInput={{
                                             title: perf.title,

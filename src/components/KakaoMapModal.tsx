@@ -10,6 +10,7 @@ import { X, Heart, RotateCw, Film, Plus, Minus, ExternalLink } from 'lucide-reac
 import Portal from './ui/Portal';
 import { SPORTS_GENRES } from '@/lib/constants';
 import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
+import { useHorizontalDragScroll } from '@/hooks/useHorizontalDragScroll';
 
 interface Cinema {
     name: string;
@@ -89,12 +90,8 @@ export default function KakaoMapModal({
     const allVenueGroups = useRef<Record<string, any>>({});
     const allVenuesList = useRef<any[]>([]);
 
-    // Drag to scroll logic (Horizontal List)
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
-    const isDragClicked = useRef(false);
+    // Drag to scroll logic (Horizontal List) via custom hook
+    const { ref: scrollRef, dragHandlers, isDragging, elasticStyle } = useHorizontalDragScroll<HTMLDivElement>();
 
     useEffect(() => {
         let isCancelled = false;
@@ -112,27 +109,7 @@ export default function KakaoMapModal({
         };
     }, []);
 
-    const onMouseDown = (e: React.MouseEvent) => {
-        setIsDragging(true);
-        isDragClicked.current = false;
-        if (scrollRef.current) {
-            setStartX(e.pageX - scrollRef.current.offsetLeft);
-            setScrollLeft(scrollRef.current.scrollLeft);
-        }
-    };
 
-    const onMouseLeave = () => setIsDragging(false);
-    const onMouseUp = () => setIsDragging(false);
-    const onMouseMove = (e: React.MouseEvent) => {
-        if (!isDragging || !scrollRef.current) return;
-        e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        if (Math.abs(walk) > 10) {
-            isDragClicked.current = true;
-        }
-        scrollRef.current.scrollLeft = scrollLeft - walk;
-    };
 
     // --- 1. Data Memoization (Crucial for Performance) ---
     const processedData = useMemo(() => {
@@ -395,9 +372,9 @@ export default function KakaoMapModal({
 
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
             <circle cx="${center}" cy="${center}" r="${r}" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" />
-            <text x="${center}" y="${center + 1}" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="${isSelected ? 14 : 12}" font-family="Pretendard, sans-serif" font-weight="900">${text}</text>
+            <text x="${center}" y="${center + 1}" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="${isSelected ? 14 : 12}" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-weight="900">${text}</text>
         </svg>`;
-        const iconUrl = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
+        const iconUrl = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
         iconCache.current[key] = iconUrl;
         return iconUrl;
     }, []);
@@ -746,11 +723,8 @@ export default function KakaoMapModal({
                                 id="venue-scroll-container"
                                 ref={scrollRef}
                                 className={`flex gap-3 overflow-x-auto pb-2 scrollbar-hide pointer-events-auto cursor-grab ${isDragging ? 'cursor-grabbing' : ''}`}
-                                style={{ WebkitOverflowScrolling: 'touch', overscrollBehaviorX: 'contain' }}
-                                onMouseDown={onMouseDown}
-                                onMouseLeave={onMouseLeave}
-                                onMouseUp={onMouseUp}
-                                onMouseMove={onMouseMove}
+                                style={{ WebkitOverflowScrolling: 'touch', overscrollBehaviorX: 'contain', ...elasticStyle }}
+                                {...dragHandlers}
                             >
                                 {visibleVenues.map((v: any) => {
                                     const isFavorite = favoriteVenues.some((favoriteVenue) =>
@@ -783,7 +757,7 @@ export default function KakaoMapModal({
                                             type="button"
                                             key={v.groupKey}
                                             onClick={(e) => {
-                                                if (isDragClicked.current) {
+                                                if (isDragging) {
                                                     e.preventDefault();
                                                     return;
                                                 }

@@ -20,7 +20,7 @@ interface KeywordSectionProps {
 }
 
 function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 'keyword', onShare }: KeywordSectionProps) {
-    const { ref: containerRef, isDragging, hasDragged, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
+    const { ref: containerRef, isDragging, hasDragged, elasticStyle, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
@@ -127,6 +127,7 @@ function KeywordSection({ keywordItems, onDetail, onDetailPrepare, searchMode = 
                     <div
                         ref={contentRef}
                         className="flex gap-5 sm:gap-9 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-end min-w-max"
+                        style={elasticStyle}
                     >
                         {keywordItems.map((perf) => (
                             <div

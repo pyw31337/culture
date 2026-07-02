@@ -44,7 +44,7 @@ export default function PersonalizedSection({
     searchMode = 'keyword',
     subtitle,
 }: PersonalizedSectionProps) {
-    const { ref: containerRef, isDragging, hasDragged, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
+    const { ref: containerRef, isDragging, hasDragged, elasticStyle, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
@@ -143,6 +143,7 @@ export default function PersonalizedSection({
                     <div
                         ref={contentRef}
                         className="flex gap-5 sm:gap-6 pl-[1.6%] pr-[1.6%] pt-4 pb-4 items-stretch min-w-max"
+                        style={elasticStyle}
                     >
                         {items.map((performance) => (
                             <div

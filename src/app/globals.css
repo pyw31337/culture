@@ -93,7 +93,7 @@
   --z-nav: var(--z-nav);
   --z-modal: var(--z-modal);
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-noto-sans-kr), var(--font-geist-sans), Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -108,7 +108,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans-kr), var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   word-break: keep-all;
   transition: background-color 0.3s ease, color 0.3s ease;

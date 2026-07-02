@@ -135,6 +135,7 @@ export default function PerformanceList({
         initialPerformances,
         performanceLoadPolicy: performanceDataPath?.endsWith('/manifest.json') ? 'paged' : 'full',
         performanceDataPath,
+        dataVersion: buildInfo?.version ?? (buildInfo?.generatedAt ? String(buildInfo.generatedAt) : null),
         backgroundLoadPriority: savedKeywords.length > 0 || initialQuery.trim() ? 'immediate' : 'deferred',
         loadVenues: shouldLoadVenueData,
     });
@@ -856,7 +857,7 @@ export default function PerformanceList({
                         recommendedItems={recommendedItems}
                         onDetail={handleDetailOpen}
                         onDetailPrepare={handleDetailPrepare}
-                        onLocationClick={setSearchLocation}
+                        onLocationClick={(loc) => setSearchLocation(loc as any)}
                         onToggleLike={toggleLike}
                         likedIds={new Set(likedIds)}
                         searchMode={searchMode}

@@ -1,10 +1,11 @@
-import { useCallback, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
 
 type DragState = {
     pointerId: number | null;
     startX: number;
     startScrollLeft: number;
     distance: number;
+    hasCapture: boolean;
 };
 
 export function useHorizontalDragScroll<T extends HTMLElement>() {
@@ -14,13 +15,25 @@ export function useHorizontalDragScroll<T extends HTMLElement>() {
         startX: 0,
         startScrollLeft: 0,
         distance: 0,
+        hasCapture: false,
     });
     const isDraggingRef = useRef(false);
+    const settleTimerRef = useRef<number | null>(null);
     const [isDragging, setIsDragging] = useState(false);
+    const [elasticOffset, setElasticOffset] = useState(0);
+    const [isSettling, setIsSettling] = useState(false);
+
+    useEffect(() => {
+        return () => {
+            if (settleTimerRef.current !== null) {
+                window.clearTimeout(settleTimerRef.current);
+            }
+        };
+    }, []);
 
     const endDrag = useCallback((event?: ReactPointerEvent<T>) => {
         const element = ref.current;
-        if (event && element && dragState.current.pointerId === event.pointerId) {
+        if (event && element && dragState.current.pointerId === event.pointerId && dragState.current.hasCapture) {
             try {
                 element.releasePointerCapture(event.pointerId);
             } catch {
@@ -28,8 +41,18 @@ export function useHorizontalDragScroll<T extends HTMLElement>() {
             }
         }
         dragState.current.pointerId = null;
+        dragState.current.hasCapture = false;
         isDraggingRef.current = false;
         setIsDragging(false);
+        if (settleTimerRef.current !== null) {
+            window.clearTimeout(settleTimerRef.current);
+        }
+        setIsSettling(true);
+        setElasticOffset(0);
+        settleTimerRef.current = window.setTimeout(() => {
+            setIsSettling(false);
+            settleTimerRef.current = null;
+        }, 220);
     }, []);
 
     const onPointerDown = useCallback((event: ReactPointerEvent<T>) => {
@@ -43,12 +66,8 @@ export function useHorizontalDragScroll<T extends HTMLElement>() {
             startX: event.clientX,
             startScrollLeft: element.scrollLeft,
             distance: 0,
+            hasCapture: false,
         };
-        try {
-            element.setPointerCapture(event.pointerId);
-        } catch {
-            // Some browser/input combinations do not allow capture here.
-        }
     }, []);
 
     const onPointerMove = useCallback((event: ReactPointerEvent<T>) => {
@@ -61,7 +80,27 @@ export function useHorizontalDragScroll<T extends HTMLElement>() {
         if (state.distance > 3) {
             isDraggingRef.current = true;
             setIsDragging(true);
-            element.scrollLeft = state.startScrollLeft - deltaX;
+            if (!state.hasCapture) {
+                try {
+                    element.setPointerCapture(event.pointerId);
+                    state.hasCapture = true;
+                } catch {
+                    // Some browser/input combinations do not allow capture here.
+                }
+            }
+
+            const maxScrollLeft = Math.max(0, element.scrollWidth - element.clientWidth);
+            const nextScrollLeft = state.startScrollLeft - deltaX;
+            if (nextScrollLeft < 0) {
+                element.scrollLeft = 0;
+                setElasticOffset(Math.min(72, -nextScrollLeft * 0.34));
+            } else if (nextScrollLeft > maxScrollLeft) {
+                element.scrollLeft = maxScrollLeft;
+                setElasticOffset(-Math.min(72, (nextScrollLeft - maxScrollLeft) * 0.34));
+            } else {
+                element.scrollLeft = nextScrollLeft;
+                setElasticOffset(0);
+            }
             event.preventDefault();
         }
     }, []);
@@ -70,10 +109,17 @@ export function useHorizontalDragScroll<T extends HTMLElement>() {
         return isDraggingRef.current || dragState.current.distance > 10;
     }, []);
 
+    const elasticStyle: CSSProperties = {
+        transform: elasticOffset ? `translate3d(${elasticOffset}px, 0, 0)` : undefined,
+        transition: isSettling ? 'transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1)' : undefined,
+        willChange: isDragging || isSettling ? 'transform' : undefined,
+    };
+
     return {
         ref,
         isDragging,
         hasDragged,
+        elasticStyle,
         dragHandlers: {
             onPointerDown,
             onPointerMove,

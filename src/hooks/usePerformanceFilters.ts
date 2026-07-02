@@ -64,6 +64,12 @@ export function usePerformanceFilters({
 }: UsePerformanceFiltersProps) {
     const [selectedGenre, setSelectedGenre] = useState<string>(initialGenre);
 
+    const resolvedVenueCacheRef = useRef<Map<string, ReturnType<typeof resolveVenueInfoForPerformance>>>(new Map());
+
+    useEffect(() => {
+        resolvedVenueCacheRef.current.clear();
+    }, [allPerformances, venues]);
+
     // Keep the first client render identical to the static HTML, then restore
     // browser-only state after mount. Reading storage in useState initializers
     // causes hydration mismatches on GitHub Pages.
@@ -220,7 +226,7 @@ export function usePerformanceFilters({
 
         if (searchMode === 'location' && debouncedSearchText.trim() && !searchLocation && !userLocation) {
             const locationQuery = debouncedSearchText.trim();
-            const resolvedVenueCache = new Map<string, ReturnType<typeof resolveVenueInfoForPerformance>>();
+            const resolvedVenueCache = resolvedVenueCacheRef.current;
             const locationMatched = discoveryFiltered.filter((performance) => {
                 const key = performance.id || `${performance.title}::${performance.venue}::${performance.address || ''}`;
                 const venueInfo = resolvedVenueCache.get(key) || resolveVenueInfoForPerformance(performance, venues);
@@ -234,7 +240,7 @@ export function usePerformanceFilters({
         if (searchMode === 'location' && (searchLocation || userLocation)) {
             const center = searchLocation || userLocation;
             if (center && center.lat && center.lng) {
-                const resolvedVenueCache = new Map<string, { lat?: number | null; lng?: number | null }>();
+                const resolvedVenueCache = resolvedVenueCacheRef.current;
                 const withDist = discoveryFiltered.map(p => {
                     const cacheKey = p.id || `${p.title}::${p.venue}::${p.address || ''}`;
                     const v = resolvedVenueCache.get(cacheKey) || resolveVenueInfoForPerformance(p, venues);
