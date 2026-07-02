@@ -267,24 +267,6 @@ async function scrapeMovies() {
         
         const existing = existingMap.get(m.title);
 
-        // Content Filter Configuration
-        // We only filter if title contains dirty keywords or if genre is explicitly "에로"
-        const DIRTY_KEYWORDS = [
-            '에로', '성인물', '포르노', '섹스', '정사', '유부녀', '사모님', '정원사',
-            '여대생', '박음', '새엄마', '여사친', '꼭지', '구멍', '젖었다',
-            '거유', '속옷', '은밀한', '관음',
-            '며느리', '시아버지', '장모', '사위', '형수', '처제', '조이는', '넣어',
-            '벌려', '빨아', '맛본', '절륜', '섹파', '조건만남', '여관',
-            '가정부', '번식', '노천탕', '도우미', '몸매'
-        ];
-        const hasBadTitle = DIRTY_KEYWORDS.some(k => m.title.includes(k));
-
-        if (hasBadTitle) {
-            console.log(`[FILTER] Skipping bad title: ${m.title}`);
-            progressBar.increment();
-            continue;
-        }
-
         // Determine if this movie needs daily real-time updates (box office ranked, or recently released within 30 days)
         const movieOpenDt = existing?.dateRaw || m.dateRaw || '';
         let isRealTimeTarget = false;
@@ -351,13 +333,16 @@ async function scrapeMovies() {
             const rating = kobisDetail?.audits?.[0]?.watchGradeNm || existing?.venue || '등급 미정';
             const kobisGenres = kobisDetail?.genres?.map((g: any) => g.genreNm) || [];
             
-            // Refined Filter: 18+ is OK unless it's "에로" genre or TMDB marks it as adult
-            const isEroticGenre = kobisGenres.some((g: string) => g.includes('에로')) || 
-                                DIRTY_KEYWORDS.some(k => m.title.includes(k)) ||
-                                tmdb?.adult === true;
+            // Refined Filter: Rely on official rating grade, adult flags, and popularity indicators instead of title keywords.
+            const isAdultContent = 
+                kobisGenres.some((g: string) => g.includes('에로') || g.includes('성인물')) || 
+                tmdb?.adult === true ||
+                (rating.includes('청소년관람불가') && 
+                 kobisGenres.some((g: string) => g.includes('멜로') || g.includes('로맨스') || g.includes('드라마')) && 
+                 (tmdb?.popularity || 0) < 1.0);
 
-            if (isEroticGenre) {
-                console.log(`[FILTER] Skipping erotic movie: ${m.title} (Genres: ${kobisGenres.join(',')}, TMDB Adult: ${tmdb?.adult})`);
+            if (isAdultContent) {
+                console.log(`[FILTER] Skipping adult/erotic content: ${m.title} (Rating: ${rating}, Genres: ${kobisGenres.join(',')}, Popularity: ${tmdb?.popularity})`);
                 progressBar.increment();
                 continue;
             }
