@@ -291,7 +291,8 @@ async function scrapeMovies() {
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
             existing.reservationRate && existing.audienceCount && existing.roi &&
             existing.description && existing.link && !existing.posterFallback &&
-            existing.platforms && existing.keywords && existing.stillImages) {
+            existing.platforms && existing.keywords && existing.stillImages &&
+            existing.voteAverage !== undefined && existing.voteCount !== undefined && existing.popularity !== undefined) {
             
             // --- DATA VALIDITY CHECK ---
             const movieDt = parseInt(existing.dateRaw?.replace(/-/g, '') || '0');

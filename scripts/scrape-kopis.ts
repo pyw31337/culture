@@ -268,14 +268,23 @@ async function scrapeKopis() {
                     const phone = !isUseless(vdb.telno) ? vdb.telno : (venues[vdb.fcltynm]?.phone);
                     const homepage = !isUseless(vdb.relateurl) ? vdb.relateurl : (venues[vdb.fcltynm]?.homepage);
                     const amenities = collectAmenities(vdb);
-                    const parking = firstUseful(vdb.parkinglot);
+                    const parking = [
+                        firstUseful(vdb.parkinglot) ? `주차장: ${firstUseful(vdb.parkinglot)}` : '',
+                        firstUseful(vdb.parkbarrier) && !/N|없음|무/i.test(String(vdb.parkbarrier)) ? '장애인 주차구역 제공' : '',
+                    ].filter(Boolean).join(' / ');
+
                     const restrooms = [
-                        firstUseful(vdb.restbarrier) ? '장애인 화장실' : '',
-                        firstUseful(vdb.suyu) ? '수유실' : '',
+                        firstUseful(vdb.restbarrier) && !/N|없음|무/i.test(String(vdb.restbarrier)) ? '장애인 화장실 완비' : '',
+                        firstUseful(vdb.suyu) && !/N|없음|무/i.test(String(vdb.suyu)) ? '수유실 보유' : '',
                     ].filter(Boolean).join(', ');
+
                     const facilities = [
-                        firstUseful(vdb.fcltychartr),
-                        amenities.length > 0 ? amenities.join(', ') : '',
+                        firstUseful(vdb.fcltychartr) ? `시설 특성: ${firstUseful(vdb.fcltychartr)}` : '',
+                        firstUseful(vdb.runwbarrier) && !/N|없음|무/i.test(String(vdb.runwbarrier)) ? '휠체어 경사로 설치' : '',
+                        firstUseful(vdb.elevbarrier) && !/N|없음|무/i.test(String(vdb.elevbarrier)) ? '장애인 엘리베이터 운행' : '',
+                        amenities.filter(a => ['식당', '카페', '편의점', '놀이방'].includes(a)).length > 0 
+                            ? `편의시설: ${amenities.filter(a => ['식당', '카페', '편의점', '놀이방'].includes(a)).join(', ')}` 
+                            : '',
                     ].filter(Boolean).join(' · ');
 
                     const venueData = {

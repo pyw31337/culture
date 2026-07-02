@@ -830,10 +830,29 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     const synopsis = document.querySelector('.prdContents.detail .content .contentDetailText, .prdContents.detail .content .contentDetail')?.textContent?.trim();
                     const synopsisImages = Array.from(document.querySelectorAll('.prdContents.detail .content .contentDetail img')).map(img => (img as HTMLImageElement).src);
 
-                    return { runningTime, performanceTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages };
+                    const cast: string[] = [];
+                    const castElements = Array.from(document.querySelectorAll('.prdCastItem .name, .castList .name, .prdCast .name, .prdCastList .castName, .castItem .name'));
+                    castElements.forEach(el => {
+                        const name = el.textContent?.trim();
+                        if (name && !cast.includes(name)) {
+                            cast.push(name);
+                        }
+                    });
+
+                    if (cast.length === 0) {
+                        const castImgs = Array.from(document.querySelectorAll('.prdCast img, .castList img, .castArea img'));
+                        castImgs.forEach(img => {
+                            const alt = img.getAttribute('alt')?.trim();
+                            if (alt && !alt.includes('사진') && !alt.includes('프로필') && !cast.includes(alt)) {
+                                cast.push(alt);
+                            }
+                        });
+                    }
+
+                    return { runningTime, performanceTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages, cast };
                 });
 
-                let { runningTime, performanceTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages } = basicInfo;
+                let { runningTime, performanceTime, ageRating, price, originalPrice, discount, address, priceList, ageDetail, bookingNotice, synopsis, synopsisImages, cast } = basicInfo;
 
                 // 3. Click "Venue Info" Layer if address is missing
                 if (!address) {
@@ -920,6 +939,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
                     synopsis,
                     description: synopsis,
                     synopsisImages,
+                    cast: cast.length > 0 ? cast : undefined,
                     lastEnriched: new Date().toISOString()
                 };
 
