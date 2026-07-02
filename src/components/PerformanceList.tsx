@@ -438,6 +438,17 @@ export default function PerformanceList({
             });
         }
     }, []);
+    const handleSearchParams = useCallback((sp: URLSearchParams) => {
+        setSearchParamsState(sp);
+        const dateParam = sp.get('date');
+        if (dateParam && DATE_FILTERS.some(d => d.id === dateParam)) {
+            setSelectedDateFilter(dateParam as DateFilterId);
+        }
+        const priceParam = sp.get('price');
+        if (priceParam && PRICE_FILTERS.some(p => p.id === priceParam)) {
+            setSelectedPriceTier(priceParam as PriceFilterId);
+        }
+    }, [setSelectedDateFilter, setSelectedPriceTier]);
 
     const copyItemShareUrl = useCallback(async (id: string) => {
         const url = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/p/${id}/`;
@@ -714,17 +725,7 @@ export default function PerformanceList({
                 a shared link like ?date=weekend&price=under-50k restores the same
                 view. */}
             <Suspense fallback={null}>
-                <SearchParamsBridge onParams={(sp) => {
-                    setSearchParamsState(sp);
-                    const dateParam = sp.get('date');
-                    if (dateParam && DATE_FILTERS.some(d => d.id === dateParam)) {
-                        setSelectedDateFilter(dateParam as DateFilterId);
-                    }
-                    const priceParam = sp.get('price');
-                    if (priceParam && PRICE_FILTERS.some(p => p.id === priceParam)) {
-                        setSelectedPriceTier(priceParam as PriceFilterId);
-                    }
-                }} />
+                <SearchParamsBridge onParams={handleSearchParams} />
             </Suspense>
             <RainbowBackground />
             <div className="noise-texture z-0 mix-blend-overlay opacity-20 fixed inset-0 pointer-events-none"></div>
