@@ -754,8 +754,13 @@ export default function PerformanceList({
                         <button onClick={toggleTheme} className="p-2 rounded-full text-gray-400 light:text-gray-500 hover:text-white light:hover:text-black">
                             {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
                         </button>
-                        <button onClick={() => setIsAlarmOpen(!isAlarmOpen)} className={clsx("p-2 rounded-full", isAlarmOpen ? "text-purple-300" : "text-gray-400")}>
+                        <button onClick={() => setIsAlarmOpen(!isAlarmOpen)} className={clsx("p-2 rounded-full relative", isAlarmOpen ? "text-purple-300" : "text-gray-400")}>
                             <Bell size={24} className={clsx(isAlarmOpen && "animate-pulse")} />
+                            {savedKeywords.length > 0 && (
+                                <span className="absolute top-1 right-1 min-w-[16px] h-[16px] px-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-[9px] font-extrabold rounded-full flex items-center justify-center shadow-md border border-white/20">
+                                    {savedKeywords.length}
+                                </span>
+                            )}
                         </button>
                     </div>
                 </div>
