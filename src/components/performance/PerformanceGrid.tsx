@@ -30,7 +30,7 @@ interface PerformanceGridProps {
     searchText?: string;
 }
 
-const VIRTUALIZATION_THRESHOLD = 36;
+const VIRTUALIZATION_THRESHOLD = 150;
 const VIRTUALIZATION_MIN_WIDTH = 768;
 const OVERSCAN_ROWS = 6;
 const SCROLL_MEASURE_STEP = 240;
