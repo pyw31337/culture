@@ -1,15 +1,18 @@
 {
-  "checkedAt": "2026-07-01T20:32:03.374Z",
+  "checkedAt": "2026-07-02T08:33:26.820Z",
   "status": "warn",
-  "venueCount": 3775,
+  "venueCount": 3770,
   "matchedCount": 944,
   "highConfidenceMatchCount": 686,
   "needsReviewCount": 20,
-  "notFoundCount": 270,
-  "pendingLookupCount": 1811,
+  "notFoundCount": 269,
+  "pendingLookupCount": 1807,
   "insufficientIdentityCount": 227,
-  "lookupReady": false,
-  "providersConfigured": [],
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
   "queue": [
     {
       "venueId": "venue_동구문화플랫폼_dzzo7b",
@@ -1306,23 +1309,6 @@
       ]
     },
     {
-      "venueId": "venue_보라아트홀_1d5qkbp",
-      "officialName": "보라아트홀",
-      "address": "서울특별시 종로구 창경궁로 260(명륜2가) 지구인아트홀",
-      "query": "보라아트홀 서울 종로구",
-      "priority": 484,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "뮤지컬 떳다ㅅㄱ",
-        "연극〈APEX(에이펙스)〉",
-        "죽음 혹은 아님 - 제 34회 젊은연극제"
-      ]
-    },
-    {
       "venueId": "venue_2026한강공원_kg32y8",
       "officialName": "2026 한강공원",
       "address": "서울특별시 광진구 자양동 112",
@@ -1352,6 +1338,22 @@
       "sampleTitles": [
         "［얼리버드］ 고스트 바둑왕 원화전",
         "고스트 바둑왕 원화전"
+      ]
+    },
+    {
+      "venueId": "venue_보라아트홀_1d5qkbp",
+      "officialName": "보라아트홀",
+      "address": "서울특별시 종로구 창경궁로 260(명륜2가) 지구인아트홀",
+      "query": "보라아트홀 서울 종로구",
+      "priority": 476,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "뮤지컬 떳다ㅅㄱ",
+        "연극〈APEX(에이펙스)〉"
       ]
     },
     {
@@ -4117,17 +4119,20 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-07-01T20:32:03.374Z",
+    "checkedAt": "2026-07-02T08:33:26.820Z",
     "status": "warn",
-    "venueCount": 3775,
+    "venueCount": 3770,
     "matchedCount": 944,
     "highConfidenceMatchCount": 686,
     "needsReviewCount": 20,
-    "notFoundCount": 270,
-    "pendingLookupCount": 1811,
+    "notFoundCount": 269,
+    "pendingLookupCount": 1807,
     "insufficientIdentityCount": 227,
-    "lookupReady": false,
-    "providersConfigured": [],
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
     "staleCacheCount": 0,
     "topQueue": [
       {

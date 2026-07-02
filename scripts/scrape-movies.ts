@@ -285,9 +285,31 @@ async function scrapeMovies() {
             continue;
         }
 
-        // Optimization: Only skip if we have EVERYTHING (including new fields)
-        // Optimization: Skip if we have ALL metrics
-        if (existing && existing.image && existing.cast && existing.director && 
+        // Determine if this movie needs daily real-time updates (box office ranked, or recently released within 30 days)
+        const movieOpenDt = existing?.dateRaw || m.dateRaw || '';
+        let isRealTimeTarget = false;
+
+        if (m.rank && m.rank <= 10) {
+            isRealTimeTarget = true;
+        } else if (movieOpenDt) {
+            try {
+                const openDate = new Date(
+                    parseInt(movieOpenDt.substring(0, 4)),
+                    parseInt(movieOpenDt.substring(4, 6)) - 1,
+                    parseInt(movieOpenDt.substring(6, 8) || '01')
+                );
+                const today = new Date();
+                const diffTime = Math.abs(today.getTime() - openDate.getTime());
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                // If released within last 30 days or is upcoming (future release)
+                if (diffDays <= 30 || openDate.getTime() > today.getTime()) {
+                    isRealTimeTarget = true;
+                }
+            } catch (e) {}
+        }
+
+        // Optimization: Only skip if we have EVERYTHING AND it is NOT a real-time update target (which requires fresh stats daily)
+        if (!isRealTimeTarget && existing && existing.image && existing.cast && existing.director && 
             existing.venue !== '등급 미정' && existing.budget && existing.budgetKRW && 
             existing.reservationRate && existing.audienceCount && existing.roi &&
             existing.description && existing.link && !existing.posterFallback &&
@@ -436,7 +458,8 @@ async function scrapeMovies() {
                 roi: (finalBudget && finalRevenue && finalBudget > 0) 
                     ? Math.round(((finalRevenue - finalBudget) / finalBudget) * 100) + '%'
                     : existing?.roi,
-                lastCollected: new Date().toISOString()
+                lastCollected: new Date().toISOString(),
+                statsCollectedAt: new Date().toISOString()
             };
 
             // --- DATA VALIDITY CHECK ---
