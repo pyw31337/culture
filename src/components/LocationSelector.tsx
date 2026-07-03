@@ -103,6 +103,12 @@ export function LocationSelector({
     const accentBgClass = isLoc ? "bg-emerald-600" : "bg-purple-600";
     const accentLightTextClass = isLoc ? "light:text-emerald-600" : "light:text-purple-600";
 
+    const selectedRegionIds = useMemo(() => parseRegionSelection(selectedRegion), [selectedRegion]);
+    const selectedDistrictMap = useMemo(
+        () => parseDistrictSelection(selectedDistrict, selectedRegionIds[0]),
+        [selectedDistrict, selectedRegionIds]
+    );
+
     // Venue Selector State
     const [isVenueOpen, setIsVenueOpen] = useState(false);
     const [activeChoseong, setActiveChoseong] = useState<string>('all');
@@ -122,9 +128,23 @@ export function LocationSelector({
         };
     }, [inline]);
 
-    // Venue Filtering Logic
-    const filteredVenues = useMemo(() => {
+    // Venue Regional Filtered List (Before Choseong Filter & Sorting)
+    const regionalVenues = useMemo(() => {
         let baseVenues = [...availableVenues];
+
+        // Filter by selected regions and districts
+        if (selectedRegion !== 'all' && selectedRegionIds.length > 0) {
+            baseVenues = baseVenues.filter(venueKey => {
+                const v = venueLookup[venueKey];
+                if (!v) return false;
+                const regionId = v.mapped_region_id;
+                if (!regionId || !selectedRegionIds.includes(regionId)) return false;
+                
+                const districtsForRegion = selectedDistrictMap[regionId] || [];
+                if (districtsForRegion.length === 0) return true;
+                return v.district ? districtsForRegion.includes(v.district) : false;
+            });
+        }
 
         // Deduplicate by display name
         const seenNames = new Set<string>();
@@ -137,7 +157,12 @@ export function LocationSelector({
             }
         }
 
-        let sorted = uniqueVenues;
+        return uniqueVenues;
+    }, [availableVenues, selectedRegion, selectedRegionIds, selectedDistrictMap, venueLookup]);
+
+    // Final filtered and sorted venues for dropdown display
+    const filteredVenues = useMemo(() => {
+        let sorted = [...regionalVenues];
 
         // 1. Sort Logic
         if (searchMode === 'location' && referenceLocation) {
@@ -180,7 +205,7 @@ export function LocationSelector({
             const cho = getChoseong(name);
             return cho.startsWith(activeChoseong);
         });
-    }, [availableVenues, activeChoseong, searchMode, referenceLocation, venueLookup]);
+    }, [regionalVenues, activeChoseong, searchMode, referenceLocation, venueLookup]);
 
     // Accordion State
     const [isRegionExpanded, setIsRegionExpanded] = useState(true);
@@ -203,12 +228,6 @@ export function LocationSelector({
     const selectedRegionLabel = useMemo(() => {
         return getRegionSelectionLabel(selectedRegion, selectedDistrict);
     }, [selectedRegion, selectedDistrict]);
-
-    const selectedRegionIds = useMemo(() => parseRegionSelection(selectedRegion), [selectedRegion]);
-    const selectedDistrictMap = useMemo(
-        () => parseDistrictSelection(selectedDistrict, selectedRegionIds[0]),
-        [selectedDistrict, selectedRegionIds]
-    );
 
     const regionDistrictEntries = useMemo(() => {
         return selectedRegionIds.map((regionId) => {
@@ -428,7 +447,7 @@ export function LocationSelector({
                             <StadiumIcon className={clsx("w-3.5 h-3.5", accentTextClass)} />
                         </div>
                         <label className="text-xs font-extrabold text-gray-500 light:text-gray-400 uppercase tracking-wider">
-                            공연장 선택 <span className={clsx("ml-1", accentTextClass)}>({availableVenues.length})</span>
+                            공연장 선택 <span className={clsx("ml-1", accentTextClass)}>({regionalVenues.length})</span>
                         </label>
                     </div>
 
