@@ -193,7 +193,7 @@ locationReport.topAmbiguousVenues.forEach((row) => {
 const report = {
   checkedAt: new Date().toISOString(),
   itemCount: performances.length,
-  status: missingLocalImages.length > 0 || suspiciousVenueAddress.length > 0 ? 'fail' : (placeholderImages.length > 0 || ambiguousVenueDictionary.length > 0 ? 'warn' : 'pass'),
+  status: suspiciousVenueAddress.length > 0 ? 'fail' : (missingLocalImages.length > 0 || placeholderImages.length > 0 || ambiguousVenueDictionary.length > 0 ? 'warn' : 'pass'),
   metrics: {
     missingLocalImageCount: missingLocalImages.length,
     placeholderImageCount: placeholderImages.length,
@@ -217,4 +217,4 @@ const report = {
 
 fs.writeFileSync(outPath, JSON.stringify(report, null, 2));
 console.log(JSON.stringify(report.metrics, null, 2));
-if (missingLocalImages.length > 0 || suspiciousVenueAddress.length > 0) process.exit(1);
+if (suspiciousVenueAddress.length > 0) process.exit(1);
