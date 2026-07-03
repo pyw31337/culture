@@ -107,7 +107,7 @@ export const ResultsHeader = ({
     const regionFilterLabel = selectedVenue !== 'all' ? selectedVenue : getRegionSelectionLabel(selectedRegion, selectedDistrict);
     const filterTitleLabel = [
         isRegionFiltered ? regionFilterLabel : '',
-        activeDiscoveryLabel,
+        activeDiscoveryContext !== 'all' ? activeDiscoveryLabel : '',
         activeDateLabel,
         activePriceLabel,
     ].filter(Boolean).join(' · ');
