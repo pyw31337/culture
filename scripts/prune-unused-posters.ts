@@ -6,52 +6,48 @@ const PUBLIC_DATA_DIR = path.resolve(process.cwd(), 'public/data');
 const POSTERS_DIR = path.resolve(process.cwd(), 'public/images/posters');
 const THUMBS_DIR = path.resolve(process.cwd(), 'public/images/thumbs');
 
-// Recursively traverse JSON data to find any string that starts with '/images/'
-function extractImagesFromObject(obj: any, set: Set<string>) {
-    if (!obj) return;
-    if (typeof obj === 'string') {
-        if (obj.startsWith('/images/')) {
-            set.add(obj);
-        } else if (obj.startsWith('images/')) {
-            set.add('/' + obj);
-        }
-        return;
-    }
-    if (Array.isArray(obj)) {
-        for (const item of obj) {
-            extractImagesFromObject(item, set);
-        }
-        return;
-    }
-    if (typeof obj === 'object') {
-        for (const key of Object.keys(obj)) {
-            extractImagesFromObject(obj[key], set);
-        }
-    }
-}
-
-// Get all referenced poster paths from JSON files in both src/data and public/data
+// Get all referenced poster paths from JSON, TS, and TSX files in src/ and public/data
 function getReferencedPosters(): Set<string> {
     const referenced = new Set<string>();
     
-    const dirs = [SRC_DATA_DIR, PUBLIC_DATA_DIR];
-    for (const dir of dirs) {
-        if (!fs.existsSync(dir)) {
-            console.warn(`⚠️ Directory does not exist: ${dir}`);
-            continue;
-        }
+    // Scan all json, ts, and tsx files in src/ and public/data/ to gather image paths (including Korean / unicode filenames)
+    const imagePattern = /\/?images\/[^\s"']+\.(?:webp|png|jpe?g|gif)/gi;
 
-        const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
-        for (const file of files) {
-            const filePath = path.join(dir, file);
-            try {
-                const content = fs.readFileSync(filePath, 'utf-8');
-                const data = JSON.parse(content);
-                extractImagesFromObject(data, referenced);
-            } catch (e: any) {
-                console.error(`❌ Failed to read or parse ${file} in ${dir}: ${e.message}`);
+    const dirsToScan = [
+        path.resolve(process.cwd(), 'src'),
+        path.resolve(process.cwd(), 'public/data')
+    ];
+
+    function scanDir(dir: string) {
+        if (!fs.existsSync(dir)) return;
+        const list = fs.readdirSync(dir);
+        for (const item of list) {
+            const fullPath = path.join(dir, item);
+            const stat = fs.statSync(fullPath);
+            if (stat.isDirectory()) {
+                scanDir(fullPath);
+            } else if (item.endsWith('.json') || item.endsWith('.ts') || item.endsWith('.tsx')) {
+                try {
+                    const content = fs.readFileSync(fullPath, 'utf-8');
+                    const matches = content.match(imagePattern);
+                    if (matches) {
+                        for (const match of matches) {
+                            let normalized = match.trim();
+                            if (!normalized.startsWith('/')) {
+                                normalized = '/' + normalized;
+                            }
+                            referenced.add(normalized);
+                        }
+                    }
+                } catch (e: any) {
+                    console.error(`❌ Failed to read or parse file ${item}: ${e.message}`);
+                }
             }
         }
+    }
+
+    for (const dir of dirsToScan) {
+        scanDir(dir);
     }
     
     return referenced;
@@ -91,8 +87,16 @@ function pruneDirectory(targetDir: string, referenced: Set<string>, rootLabel: s
         const relativePath = path.relative(process.cwd(), file);
         
         // Convert to absolute-like web paths e.g., "/images/posters/festivals/abc.webp" or "images/posters/festivals/abc.webp"
-        const webPathSlash = '/' + relativePath.replace('public/', '');
-        const webPathNoSlash = relativePath.replace('public/', '');
+        let webPathSlash = '/' + relativePath.replace('public/', '');
+        let webPathNoSlash = relativePath.replace('public/', '');
+
+        // Map thumbs directory paths to their corresponding poster paths for reference checking
+        if (webPathSlash.startsWith('/images/thumbs/w320/posters/')) {
+            webPathSlash = webPathSlash.replace('/images/thumbs/w320/posters/', '/images/posters/');
+        }
+        if (webPathNoSlash.startsWith('images/thumbs/w320/posters/')) {
+            webPathNoSlash = webPathNoSlash.replace('images/thumbs/w320/posters/', 'images/posters/');
+        }
 
         // If the file is not referenced anywhere in active JSONs, delete it
         if (!referenced.has(webPathSlash) && !referenced.has(webPathNoSlash)) {
