@@ -5,7 +5,7 @@ import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Check, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, AtSign, type LucideIcon } from 'lucide-react';
 import { Fragment, useState, useMemo, useRef } from 'react';
 import Portal from './ui/Portal';
-import { getOptimizedUrl, formatUnifiedDate, toMobileUrl } from '@/lib/utils';
+import { getOptimizedUrl, formatUnifiedDate, toMobileUrl, decodePunycodeUrl } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import { getExternalContentLink } from '@/lib/performance-links';
 import { getDdayLabel } from '@/lib/dday';
@@ -124,11 +124,12 @@ const isGeneratedSummaryDescription = (performance: Performance, value?: string 
 };
 
 const formatWebsiteLabel = (value: string) => {
-    const label = compactDetailText(value)
+    const decodedValue = decodePunycodeUrl(value);
+    const label = compactDetailText(decodedValue)
         .replace(/^https?:\/\//, '')
-        .replace(/^www\./, 'www.')
+        .replace(/^www\./, '')
         .replace(/\/+$/, '');
-    return label || value;
+    return label || decodedValue;
 };
 
 const formatParkingLabel = (value?: string | null) => {

@@ -380,3 +380,123 @@ export function toMobileUrl(url: string | undefined): string {
         return url || '';
     }
 }
+
+// --- Punycode Decoder for Unicode / Korean Domains (RFC 3492) ---
+const BASE = 36;
+const TMIN = 1;
+const TMAX = 26;
+const SKEW = 38;
+const DAMP = 700;
+const INITIAL_BIAS = 72;
+const INITIAL_N = 128;
+const DELIMITER = '-';
+
+function adaptBias(delta: number, numPoints: number, firstTime: boolean): number {
+    let k = 0;
+    delta = firstTime ? Math.floor(delta / DAMP) : Math.floor(delta / 2);
+    delta += Math.floor(delta / numPoints);
+    for (; delta > Math.floor(((BASE - TMIN) * TMAX) / 2); k += BASE) {
+        delta = Math.floor(delta / (BASE - TMIN));
+    }
+    return k + Math.floor(((BASE + 1 - TMIN) * delta) / (delta + SKEW));
+}
+
+export function decodePunycode(input: string): string {
+    const output: number[] = [];
+    const inputLength = input.length;
+    let i = 0;
+    let n = INITIAL_N;
+    let bias = INITIAL_BIAS;
+
+    let basic = input.lastIndexOf(DELIMITER);
+    if (basic < 0) {
+        basic = 0;
+    }
+
+    for (let j = 0; j < basic; ++j) {
+        const code = input.charCodeAt(j);
+        if (code >= 0x80) {
+            throw new RangeError("Illegal input >= 0x80");
+        }
+        output.push(code);
+    }
+
+    let consume = basic > 0 ? basic + 1 : 0;
+    while (consume < inputLength) {
+        const oldi = i;
+        let w = 1;
+        for (let k = BASE; ; k += BASE) {
+            if (consume >= inputLength) {
+                throw new RangeError("Invalid input");
+            }
+            const code = input.charCodeAt(consume++);
+            let digit = 0;
+            if (code - 48 < 10) {
+                digit = code - 22;
+            } else if (code - 65 < 26) {
+                digit = code - 65;
+            } else if (code - 97 < 26) {
+                digit = code - 97;
+            } else {
+                throw new RangeError("Invalid input");
+            }
+
+            if (digit >= BASE || digit > Math.floor((0x7fffffff - i) / w)) {
+                throw new RangeError("Overflow");
+            }
+            i += digit * w;
+            const t = k <= bias ? TMIN : k >= bias + TMAX ? TMAX : k - bias;
+            if (digit < t) {
+                break;
+            }
+            w *= BASE - t;
+        }
+
+        const len = output.length + 1;
+        bias = adaptBias(i - oldi, len, oldi === 0);
+
+        if (Math.floor(i / len) > 0x7fffffff - n) {
+            throw new RangeError("Overflow");
+        }
+        n += Math.floor(i / len);
+        i %= len;
+
+        output.splice(i++, 0, n);
+    }
+
+    return String.fromCodePoint(...output);
+}
+
+export function decodePunycodeUrl(url?: string | null): string {
+    if (!url) return '';
+    try {
+        let protocol = '';
+        let rest = url;
+        const protoMatch = url.match(/^([a-zA-Z]+:\/\/)/);
+        if (protoMatch) {
+            protocol = protoMatch[1];
+            rest = url.slice(protocol.length);
+        }
+
+        const slashIdx = rest.indexOf('/');
+        let host = slashIdx >= 0 ? rest.slice(0, slashIdx) : rest;
+        const path = slashIdx >= 0 ? rest.slice(slashIdx) : '';
+
+        const hostParts = host.split('.');
+        const decodedParts = hostParts.map(part => {
+            const lower = part.toLowerCase();
+            if (lower.startsWith('xn--')) {
+                try {
+                    return decodePunycode(lower.slice(4));
+                } catch {
+                    return part;
+                }
+            }
+            return part;
+        });
+        
+        return `${protocol}${decodedParts.join('.')}${path}`;
+    } catch {
+        return url;
+    }
+}
