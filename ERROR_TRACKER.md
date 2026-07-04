@@ -534,3 +534,10 @@
 - **Failed Scrapers**:
   - umclass
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-07-04 19:53:16 UTC
+- **GitHub Run ID**: [28716990687](https://github.com/pyw31337/culture/actions/runs/28716990687)
+- **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale.
+- **Failed Scrapers**:
+  - interpark
+
