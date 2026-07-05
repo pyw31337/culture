@@ -541,3 +541,10 @@
 - **Failed Scrapers**:
   - interpark
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-07-05 19:56:07 UTC
+- **GitHub Run ID**: [28752137417](https://github.com/pyw31337/culture/actions/runs/28752137417)
+- **Note**: The 03:00 KST fallback data update failed after the local midnight update was absent or stale.
+- **Failed Scrapers**:
+  - interpark
+
