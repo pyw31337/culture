@@ -1518,9 +1518,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "베짱이홀": {
     "name": "베짱이홀",
@@ -1678,9 +1678,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "푸르지오 아트홀": {
     "name": "푸르지오 아트홀",
@@ -1823,9 +1823,9 @@
     "theaterCount": "1",
     "openedAt": "2006",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "상명아트홀": {
     "name": "상명아트홀",
@@ -2448,9 +2448,9 @@
     "theaterCount": "5",
     "openedAt": "2009",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 국립"
   },
   "정극장": {
     "name": "정극장",
@@ -2696,9 +2696,9 @@
     "theaterCount": "1",
     "openedAt": "2015",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "거암아트홀": {
     "name": "거암아트홀",
@@ -2734,9 +2734,9 @@
     "theaterCount": "1",
     "openedAt": "2009",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "삼익아트홀": {
     "name": "삼익아트홀",
@@ -3843,9 +3843,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 카페, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 식당, 카페"
   },
   "한국잡월드 나래울극장": {
     "name": "한국잡월드 나래울극장",
@@ -10850,9 +10850,9 @@
     "theaterCount": "1",
     "openedAt": "2018",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "푸르지오아트홀": {
     "name": "푸르지오아트홀",
@@ -10873,9 +10873,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페"
   },
   "부평아트센터 달누리 극장": {
     "name": "부평아트센터 달누리 극장",
@@ -12015,9 +12015,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "포항문화예술회관 소공연장": {
     "name": "포항문화예술회관",
@@ -17032,9 +17032,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "까망돌어울마당 아트홀": {
     "name": "까망돌어울마당 아트홀",
@@ -17128,9 +17128,9 @@
     "theaterCount": "1",
     "openedAt": "2024",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "서울 서초구": {
     "name": "서울 서초구",
@@ -19061,9 +19061,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립 · 식당, 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 국립 · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페"
   },
   "경북 칠곡군 석적읍 강변대로 1580-1": {
     "name": "경북 칠곡군 석적읍 강변대로 1580-1",
@@ -19300,9 +19300,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "명동성당 천주교서울대교구역사관": {
     "name": "명동대성당 내 파밀리아 채플",
@@ -19679,9 +19679,9 @@
       "편의점",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 편의점, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 편의점"
   },
   "수달전시관 섬진강수달생태공원": {
     "name": "수달전시관 섬진강수달생태공원",
@@ -21823,9 +21823,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "별관": {
     "name": "별관",
@@ -24778,9 +24778,9 @@
     "amenities": [
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "남동소래아트홀": {
     "name": "남동소래아트홀",
@@ -31082,7 +31082,15 @@
     "district": "",
     "mapped_region_id": "busan",
     "lat": 35.199021,
-    "lng": 129.061866
+    "lng": 129.061866,
+    "phone": "051-500-2121",
+    "homepage": "https://www.busan.go.kr/depart/culture0501010106",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "14099",
+    "theaterCount": "1",
+    "openedAt": "1985",
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "서울남산국악당": {
     "name": "서울남산국악당",
@@ -52012,9 +52020,9 @@
     "theaterCount": "1",
     "openedAt": "2016",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "아트스페이스3": {
     "name": "아트스페이스3",
@@ -53433,9 +53441,9 @@
     "theaterCount": "2",
     "openedAt": "2026",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "서강대 메리홀 대극장": {
     "name": "서강대 메리홀 대극장",
@@ -53790,12 +53798,21 @@
     "district": "중구"
   },
   "부산사직실내체육관": {
-    "name": "부산사직",
-    "address": "부산광역시",
+    "name": "부산사직실내체육관",
+    "address": "부산광역시 동래구 사직로 55-32 (사직동)",
+    "lat": 35.1923121,
+    "lng": 129.0606809,
     "district": "",
-    "mapped_region_id": "busan",
-    "lat": 35.199021,
-    "lng": 129.061866
+    "phone": "051-500-2121",
+    "homepage": "https://www.busan.go.kr/depart/culture0501010106",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "14099",
+    "theaterCount": "1",
+    "openedAt": "1985",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "대구체육관": {
     "name": "대구",
@@ -60355,9 +60372,9 @@
     "theaterCount": "1",
     "openedAt": "2023",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "창작플랫폼 경험과 상상": {
     "name": "창작플랫폼 경험과 상상",
@@ -60416,9 +60433,9 @@
     "amenities": [
       "장애인 화장실"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 화장실"
+    "parking": "주차장: N",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "레미어린이극장 [울산진장]": {
     "name": "레미어린이극장 [울산진장]",
@@ -60507,9 +60524,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "을숙도문화회관": {
     "name": "을숙도문화회관",
@@ -60604,9 +60621,9 @@
     "amenities": [
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "드림시어터 [대학로]": {
     "name": "드림시어터 [대학로]",
@@ -60720,9 +60737,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대학로 자유극장 (자유문화발전소)": {
     "name": "대학로 자유극장 (자유문화발전소)",
@@ -60860,9 +60877,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "잡월드 나래울극장": {
     "name": "잡월드 나래울극장",
@@ -60944,9 +60961,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립 · 식당, 카페, 편의점, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 국립 · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 편의점, 놀이방"
   },
   "드림씨어터 [부산]": {
     "name": "드림씨어터 [부산]",
@@ -61001,9 +61018,9 @@
     "theaterCount": "1",
     "openedAt": "2023",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대전예술의전당": {
     "name": "대전예술의전당",
@@ -61286,9 +61303,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "굿씨어터": {
     "name": "굿씨어터",
@@ -61617,9 +61634,9 @@
     "theaterCount": "1",
     "openedAt": "2019",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "월드아트 서커스 [당진]": {
     "name": "월드아트 서커스 [당진]",
@@ -61700,9 +61717,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페"
   },
   "NOL 씨어터 대학로 (구. 대학로뮤지컬센터)": {
     "name": "NOL 씨어터 대학로 (구. 대학로뮤지컬센터)",
@@ -62071,9 +62088,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "JTN 아트홀(구. 대학로예술마당)": {
     "name": "JTN 아트홀(구. 대학로예술마당)",
@@ -62282,9 +62299,9 @@
     "theaterCount": "1",
     "openedAt": "2013",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "경향아트힐": {
     "name": "경향아트힐",
@@ -62504,9 +62521,9 @@
     "amenities": [
       "장애인 화장실"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 장애인 화장실"
+    "parking": "주차장: N",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "맛있는 극장": {
     "name": "맛있는 극장",
@@ -62555,9 +62572,9 @@
     "theaterCount": "1",
     "openedAt": "1995",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "인천동구문화체육센터": {
     "name": "인천동구문화체육센터",
@@ -62761,9 +62778,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: N",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "아양아트센터": {
     "name": "아양아트센터",
@@ -63233,9 +63250,9 @@
     "theaterCount": "1",
     "openedAt": "2019",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "숲세권 라이브": {
     "name": "숲세권 라이브",
@@ -63352,9 +63369,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "예술가의 집": {
     "name": "예술가의 집",
@@ -63411,9 +63428,9 @@
     "theaterCount": "1",
     "openedAt": "2013",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "비오케이아트센터(BOK아트센터)": {
     "name": "비오케이아트센터(BOK아트센터)",
@@ -63512,9 +63529,9 @@
     "theaterCount": "2",
     "openedAt": "2023",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "클럽헤비": {
     "name": "클럽헤비",
@@ -63844,9 +63861,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "스페이스한강": {
     "name": "스페이스한강",
@@ -64502,9 +64519,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 놀이방, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 놀이방"
   },
   "충남대학교 정심화국제문화회관": {
     "name": "충남대학교 정심화국제문화회관",
@@ -64724,9 +64741,9 @@
     "theaterCount": "1",
     "openedAt": "2019",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "남도소리울림터": {
     "name": "남도소리울림터",
@@ -64890,9 +64907,9 @@
       "카페",
       "엘리베이터"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 엘리베이터"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "(재) 영화의전당": {
     "name": "(재) 영화의전당",
@@ -64915,9 +64932,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 편의점"
   },
   "KBS홀 [부산]": {
     "name": "KBS홀 [부산]",
@@ -65077,9 +65094,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 놀이방, 장애인 주차, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
   },
   "브릭스씨어터 (구. 콘텐츠 그라운드 구. 브로드웨이아트홀 [3관])": {
     "name": "브릭스씨어터 (구. 콘텐츠 그라운드 구. 브로드웨이아트홀 [3관])",
@@ -65934,9 +65951,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 카페, 편의점, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 편의점, 놀이방"
   },
   "아산시 평생학습관(아산아트홀)": {
     "name": "아산시 평생학습관(아산아트홀)",
@@ -66110,9 +66127,9 @@
     "theaterCount": "1",
     "openedAt": "2010",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "구리아트홀": {
     "name": "구리아트홀",
@@ -66377,9 +66394,9 @@
     "theaterCount": "1",
     "openedAt": "1993",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "군포시평생학습원": {
     "name": "군포시평생학습원",
@@ -66514,9 +66531,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "그랜드하얏트서울": {
     "name": "그랜드하얏트서울",
@@ -66912,9 +66929,9 @@
     "theaterCount": "3",
     "openedAt": "2008",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "비원뮤직홀": {
     "name": "비원뮤직홀",
@@ -67079,9 +67096,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "한국공예관 문화제조창": {
     "name": "한국공예관 문화제조창",
@@ -67415,9 +67432,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "인스파이어 엔터테인먼트 리조트": {
     "name": "인스파이어 엔터테인먼트 리조트",
@@ -67789,9 +67806,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "공간울림연주홀": {
     "name": "공간울림연주홀",
@@ -68092,9 +68109,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "청주예술의전당": {
     "name": "청주예술의전당",
@@ -68385,9 +68402,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "무대륙": {
     "name": "무대륙",
@@ -68437,9 +68454,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "대구서구문화회관": {
     "name": "대구서구문화회관",
@@ -68473,9 +68490,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "예술도서관": {
     "name": "예술도서관",
@@ -71369,9 +71386,9 @@
     "theaterCount": "1",
     "openedAt": "2016",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "광양공설운동장": {
     "name": "광양공설운동장",
@@ -74291,9 +74308,9 @@
     "theaterCount": "1",
     "openedAt": "2023",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "카페와안": {
     "name": "카페와안",
@@ -75967,9 +75984,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "능동 어린이회관 티켓링크 1975 씨어터": {
     "name": "능동 어린이회관 티켓링크 1975 씨어터",
@@ -77017,9 +77034,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "성산아트홀 소극장": {
     "name": "성산아트홀 소극장",
@@ -79388,9 +79405,9 @@
     "theaterCount": "1",
     "openedAt": "2007",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "축제극장 몸짓": {
     "name": "축제극장 몸짓",
@@ -80016,9 +80033,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "청주예술의전당 소공연장": {
     "name": "청주예술의전당 소공연장",
@@ -80082,9 +80099,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "국립아시아문화전당 극장1": {
     "name": "국립아시아문화전당 극장1",
@@ -102112,9 +102129,9 @@
     "amenities": [
       "편의점"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 편의점"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 편의점"
   },
   "연세대학교 노천극장": {
     "name": "연세대학교 노천극장",
@@ -102549,9 +102566,9 @@
       "수유실",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 수유실, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "나인 씨어터": {
     "name": "나인 씨어터",
@@ -104553,9 +104570,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "딜리스 [서울 성북]": {
     "name": "딜리스 [서울 성북]",
@@ -104842,9 +104859,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "소다아트홀": {
     "name": "소다아트홀",
@@ -106019,9 +106036,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "서울특별시 종로구 세종로 84-6": {
     "name": "서울특별시 종로구 세종로 84-6",
@@ -107469,7 +107486,9 @@
   "한국항공대학교 투데이아트홀": {
     "name": "한국항공대학교 투데이아트홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5990163,
+    "lng": 126.8641725
   },
   "인천어린이과학관 1층 공연장": {
     "name": "인천어린이과학관 1층 공연장",
@@ -107604,7 +107623,24 @@
   "의정부예술의전당 전시장": {
     "name": "의정부예술의전당 전시장",
     "address": "의정부예술의전당 전시장(자세히)",
-    "district": ""
+    "district": "",
+    "phone": "031-828-5841",
+    "homepage": "https://www.uac.or.kr/",
+    "lat": 37.7334125,
+    "lng": 127.03436779999993,
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1258",
+    "theaterCount": "2",
+    "openedAt": "2001",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
   },
   "부평아트센터 갤러리 꽃누리": {
     "name": "부평아트센터 갤러리 꽃누리",
@@ -113559,5 +113595,64 @@
     "parking": "N",
     "restrooms": "장애인 화장실, 수유실",
     "facilities": "민간(대학로 외)"
+  },
+  "더매직스튜디오": {
+    "name": "더매직스튜디오",
+    "address": "충청북도 청주시 흥덕구 직지대로753번길 7 (운천동)",
+    "lat": 36.644536,
+    "lng": 127.475985,
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "전남광주통합특별시 예술의전당 (구. 광주예술의전당)": {
+    "name": "전남광주통합특별시 예술의전당 (구. 광주예술의전당)",
+    "address": "광주광역시 북구 북문대로 60 (운암동)",
+    "lat": 35.1777124,
+    "lng": 126.88170230000003,
+    "district": "",
+    "phone": "062-613-8333",
+    "homepage": "https://gjart.gwangju.go.kr/intro.jsp",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1981",
+    "theaterCount": "4",
+    "openedAt": "1991",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
+  },
+  "소극장 연극바보들": {
+    "name": "소극장 연극바보들",
+    "address": "강원도 춘천시 서부대성로239번길 7 (효자동)",
+    "lat": 37.8733467,
+    "lng": 127.7448361,
+    "district": "",
+    "phone": "010-4610-8343",
+    "homepage": "http://scmooha.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "74",
+    "theaterCount": "1",
+    "openedAt": "2019",
+    "amenities": [
+      "식당"
+    ],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당"
   }
 }
