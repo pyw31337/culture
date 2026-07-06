@@ -289,14 +289,19 @@ function normalizeVenueName(rawVenue: string, homeTeam?: string, genre?: string)
 /**
  * Extracts numeric value from a price string (e.g. "40,000원" -> 40000)
  */
-function getNumericPrice(priceStr: string | undefined): number | null {
-    if (!priceStr) return null;
-    const numeric = priceStr.replace(/[^0-9]/g, '');
+function getNumericPrice(priceStr: unknown): number | null {
+    if (priceStr === null || priceStr === undefined || priceStr === '') return null;
+    const str = String(priceStr);
+    const numeric = str.replace(/[^0-9]/g, '');
     return numeric ? parseInt(numeric, 10) : null;
 }
 
-function compactDetailText(value?: string) {
-    return value?.replace(/\s+/g, ' ').trim() || '';
+function compactDetailText(value?: unknown) {
+    if (typeof value !== 'string') {
+        if (value === null || value === undefined) return '';
+        return String(value).trim();
+    }
+    return value.replace(/\s+/g, ' ').trim() || '';
 }
 
 const WEEKDAY_FULL_PATTERN = '(?:월요일|화요일|수요일|목요일|금요일|토요일|일요일)';
