@@ -556,23 +556,23 @@ function splitAddressLikeVenue(rawVenue: string, title: string) {
  * Normalizes any raw performance object into a strict Performance interface.
  */
 export function transformPerformance(raw: RawPerformance, source?: string): Performance {
-    // 1. Source-specific field normalization
-    let title = raw.title || '';
-    let rawVenue = raw.venue || raw.place || raw.title || '';
-    let price = raw.price || raw.cost || '';
-    let date = raw.date || '';
-    let performanceTime = raw.time || raw.performanceTime || '';
-    let region = raw.region || '';
+    // 1. Source-specific field normalization (Explicit String Casts for Runtime Safety)
+    let title = String(raw.title || '');
+    let rawVenue = String(raw.venue || raw.place || raw.title || '');
+    let price = String(raw.price || raw.cost || '');
+    let date = String(raw.date || '');
+    let performanceTime = String(raw.time || raw.performanceTime || '');
+    let region = String(raw.region || '');
     let genre = (raw.genre as Genre) || 'activity';
     let image = pickBestImageFromRaw(raw, genre);
-    let address = raw.address || '';
+    let address = String(raw.address || '');
     const addressLikeVenue = splitAddressLikeVenue(rawVenue, title);
     if (addressLikeVenue) {
         rawVenue = addressLikeVenue.venue;
         address = addressLikeVenue.address;
     }
     
-    // Extract bracketed region [창원], [제주] etc.
+    // Extract bracketed region [창원], [제주] etc. (Safe from title.match TypeError)
     const titleMatch = title.match(/\[([가-힣]+)\]/);
     const venueMatch = rawVenue.match(/\[([가-힣]+)\]/);
     const bracketRegion = titleMatch ? titleMatch[1] : (venueMatch ? venueMatch[1] : undefined);
