@@ -89,11 +89,8 @@ function ImageWithFallbackInner({
         setIsLoaded((current) => current ? current : true);
     };
 
-    const isUnoptimized =
-        imgSrc === originalSrc ||
-        imgSrc === backupSrc ||
-        imgSrc.startsWith('/') ||
-        imgSrc.startsWith('data:');
+    // Force true for static HTML export compatibility, bypassing Next.js built-in optimizer which results in 404/500 in static hosts like GitHub Pages
+    const isUnoptimized = true;
     const imageQuality = typeof props.quality === 'number' ? props.quality : 64;
     const imageLoading = props.priority ? undefined : (props.loading ?? 'lazy');
     const isFallback = imgSrc === fallbackSrc;

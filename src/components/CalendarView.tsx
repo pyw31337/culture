@@ -639,23 +639,26 @@ export default function CalendarView({
                                         <a key={`${perf.id}-${i}`} href={getExternalContentLink(perf)} target="_blank" rel="noopener noreferrer"
                                             className="flex gap-4 p-4 bg-white dark:bg-gray-800/50 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-750 border border-gray-100 dark:border-gray-800 transition-all group shadow-sm hover:shadow-md active:scale-[0.98]"
                                         >
-                                            {perf.image && (
-                                                <div className="relative w-14 h-20 shrink-0 shadow-lg group-hover:scale-105 transition-transform">
-                                                    <ImageWithFallback
-                                                        src={perf.image || perf.poster || perf.backupPoster || perf.posterUrl || ''}
-                                                        backupSrc={perf.backupPoster || perf.posterUrl || perf.poster}
-                                                        alt={perf.title}
-                                                        fill
-                                                        optimizationWidth={72}
-                                                        quality={45}
-                                                        fastDisplay
-                                                        loading={i < 8 ? 'eager' : 'lazy'}
-                                                        fetchPriority={i < 4 ? 'high' : 'auto'}
-                                                        sizes="56px"
-                                                        className="object-cover rounded-lg bg-gray-100 dark:bg-gray-700"
-                                                    />
-                                                </div>
-                                            )}
+                                            <div className="relative w-14 h-20 shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+                                                <ImageWithFallback
+                                                    src={perf.image || perf.poster || perf.backupPoster || perf.posterUrl || ''}
+                                                    backupSrc={perf.backupPoster || perf.posterUrl || perf.poster}
+                                                    placeholderInput={{
+                                                        title: perf.title,
+                                                        genre: perf.genre,
+                                                        matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
+                                                    }}
+                                                    alt={perf.title}
+                                                    fill
+                                                    optimizationWidth={72}
+                                                    quality={45}
+                                                    fastDisplay
+                                                    loading={i < 8 ? 'eager' : 'lazy'}
+                                                    fetchPriority={i < 4 ? 'high' : 'auto'}
+                                                    sizes="56px"
+                                                    className="object-cover rounded-lg bg-gray-100 dark:bg-gray-700"
+                                                />
+                                            </div>
                                             <div className="min-w-0 flex-1 flex flex-col justify-center">
                                                 <div className="flex items-center gap-2 mb-1.5">
                                                     <span className={clsx("px-2 py-0.5 rounded text-[10px] font-black tracking-wider text-white uppercase", GENRE_STYLES[perf.genre as keyof typeof GENRE_STYLES]?.twBg || 'bg-gray-600')}>
