@@ -26,6 +26,8 @@ import {
 } from '@/lib/build-info';
 import { getDataBuildInfo } from '@/lib/performance-data';
 
+import ResetBodyScroll from '@/components/ResetBodyScroll';
+
 export const metadata: Metadata = {
     title: '서비스 상태 | Culture Flow',
     description: 'Culture Flow의 최신 데이터 수집 상태, 콘텐츠 품질 점검 결과, 운영 카테고리 현황을 확인하세요.',
@@ -246,7 +248,8 @@ export default function StatusPage() {
     });
 
     return (
-        <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.14),_transparent_30%),linear-gradient(180deg,_#06111f_0%,_#08131e_48%,_#0b1020_100%)] px-4 py-6 text-white light:bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.08),_transparent_28%),linear-gradient(180deg,_#f8fbff_0%,_#f7f8fc_52%,_#eef3ff_100%)] light:text-slate-900 sm:px-6 lg:px-8">
+        <main className="min-h-screen overflow-y-auto bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.14),_transparent_30%),linear-gradient(180deg,_#06111f_0%,_#08131e_48%,_#0b1020_100%)] px-4 py-6 text-white light:bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.08),_transparent_28%),linear-gradient(180deg,_#f8fbff_0%,_#f7f8fc_52%,_#eef3ff_100%)] light:text-slate-900 sm:px-6 lg:px-8">
+            <ResetBodyScroll />
             <div className="mx-auto max-w-6xl pb-24">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                     <Link

@@ -1621,45 +1621,53 @@ function buildFallbackDescription(performance: Performance) {
     const parts: string[] = [];
 
     if (['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(performance.genre) && performance.homeTeam && performance.awayTeam) {
-        parts.push(`${performance.homeTeam}와 ${performance.awayTeam}의 ${genreLabel}입니다.`);
+        parts.push(`${performance.homeTeam}와 ${performance.awayTeam}의 ${genreLabel} 경기입니다.`);
     } else if (performance.genre === 'class') {
-        parts.push(`${title}는 ${venue || '지정 장소'}에서 진행되는 ${genreLabel}입니다.`);
+        const placeDesc = venue && venue !== '장소 확인 필요' && venue !== '모카클래스' && venue !== '지정 장소' 
+            ? `${venue}에서 진행되는` 
+            : '배움의 가치를 나누는';
+        parts.push(`${title} 클래스는 ${placeDesc} 전문 문화 예술 배움 프로그램입니다.`);
     } else if (performance.genre === 'activity') {
-        parts.push(`${title}는 ${venue || '현장'}에서 즐길 수 있는 ${genreLabel}입니다.`);
+        const placeDesc = venue && venue !== '장소 확인 필요' && venue !== '지정 장소' ? `${venue}에서 즐기는` : '생동감 넘치는';
+        parts.push(`${title}는 ${placeDesc} 액티비티 체험 콘텐츠입니다.`);
     } else if (performance.genre === 'museum' || performance.genre === 'exhibition') {
-        parts.push(`${title}는 ${venue || '전시 공간'}에서 만날 수 있는 ${genreLabel}입니다.`);
+        const placeDesc = venue && venue !== '장소 확인 필요' && venue !== '지정 장소' ? `${venue} 미술관/전시장` : '문화 공간';
+        parts.push(`${title}는 ${placeDesc}에서 관람할 수 있는 전시 행사입니다.`);
     } else if (performance.genre === 'tourism') {
-        parts.push(`${title}는 방문을 고려해볼 만한 ${genreLabel}입니다.`);
+        parts.push(`${title}는 지역 명소로서 다양한 볼거리와 즐길 거리가 가득하여 방문을 적극 고려해볼 만한 관광 명소입니다.`);
+    } else if (performance.genre === 'movie') {
+        parts.push(`${title} 영화는 흥미로운 스토리와 다양한 볼거리를 제공하는 대중 문화 영화 작품입니다.`);
     } else {
-        parts.push(`${title}는 ${venue || '현장'}에서 진행되는 ${genreLabel}입니다.`);
+        const placeDesc = venue && venue !== '장소 확인 필요' && venue !== '지정 장소' ? `${venue}에서 열리는` : '엄선된';
+        parts.push(`${title}는 ${placeDesc} 특별한 ${genreLabel} 공연/행사입니다.`);
     }
 
     if (subGenre && performance.genre !== 'movie') {
-        parts.push(`분류는 ${subGenre}입니다.`);
+        parts.push(`상세 분류는 ${subGenre} 분야로 구성되어 있습니다.`);
     }
     if (date && !['상시', 'OPEN RUN'].includes(date)) {
-        parts.push(`일정은 ${date} 기준입니다.`);
+        parts.push(`진행 일정은 ${date} 기준입니다.`);
     }
     if (address) {
-        parts.push(`위치는 ${address}입니다.`);
+        parts.push(`위치는 ${address} 도로명 주소나 안내 지도를 참조바랍니다.`);
     }
     if (audience) {
-        parts.push(`추천 대상은 ${audience}입니다.`);
+        parts.push(`참여 권장 대상은 ${audience}입니다.`);
     }
     if (operatingHours) {
-        parts.push(`운영 시간은 ${operatingHours}입니다.`);
+        parts.push(`상세 운영 시간은 ${operatingHours}입니다.`);
     }
     if (closedDays) {
-        parts.push(`휴무 정보는 ${closedDays}입니다.`);
+        parts.push(`휴무일 정보는 ${closedDays}입니다.`);
     }
     if (facilities) {
-        parts.push(`현장 편의 정보는 ${facilities}입니다.`);
+        parts.push(`주변 편의 시설은 ${facilities} 정보를 포함하고 있습니다.`);
     }
     if (fees) {
-        parts.push(`이용 정보는 ${fees} 기준입니다.`);
+        parts.push(`이용 요금 및 관련 정보는 ${fees} 기준입니다.`);
     }
     if (contact) {
-        parts.push(`문의는 ${contact}에서 확인할 수 있습니다.`);
+        parts.push(`상세 연락처 및 예약 문의는 ${contact}에서 친절하게 상담 받으실 수 있습니다.`);
     }
 
     return parts.join(' ');
