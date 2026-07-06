@@ -271,8 +271,12 @@ const EXTRA_VENUE_RECORDS: Record<string, VenueRecord> = {
     },
 };
 
-function compactText(value?: string) {
-    return value?.replace(/\s+/g, ' ').trim() || '';
+function compactText(value?: unknown) {
+    if (typeof value !== 'string') {
+        if (value === null || value === undefined) return '';
+        return String(value).trim();
+    }
+    return value.replace(/\s+/g, ' ').trim() || '';
 }
 
 function isLowValueGeneratedDescription(value?: string) {
