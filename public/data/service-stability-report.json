@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-07T05:50:10.278Z",
-  "itemCount": 7785,
+  "checkedAt": "2026-07-07T07:29:39.018Z",
+  "itemCount": 7929,
   "status": "pass",
   "metrics": {
     "missingLocalImageCount": 0,
     "placeholderImageCount": 0,
     "placeholderImageRate": 0,
-    "duplicatedDescriptionCount": 78,
+    "duplicatedDescriptionCount": 87,
     "missingSourceDateCount": 0,
     "suspiciousVenueAddressCount": 0,
     "ambiguousVenueDictionaryCount": 0,

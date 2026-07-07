@@ -22,7 +22,13 @@
     { "name": "seoul-culture", "priority": "optional", "command": "npx tsx scripts/scrape-seoul-culture.ts" },
     { "name": "culture-portal", "priority": "optional", "command": "npx tsx scripts/scrape-culture-portal.ts" },
     { "name": "tourism", "priority": "optional", "command": "npx tsx scripts/scrape-visitkorea-expanded.ts" },
-    { "name": "venue-places", "priority": "optional", "command": "npx tsx scripts/enrich-venue-places.ts" }
+    { "name": "venue-places", "priority": "optional", "command": "npx tsx scripts/enrich-venue-places.ts" },
+    { "name": "coex", "priority": "optional", "command": "npx tsx scripts/scrape-coex.ts" },
+    { "name": "conventions", "priority": "optional", "command": "npx tsx scripts/scrape-conventions.ts" },
+    { "name": "gocamping", "priority": "optional", "command": "npx tsx scripts/scrape-gocamping.ts" },
+    { "name": "templestay", "priority": "optional", "command": "npx tsx scripts/scrape-templestay.ts" },
+    { "name": "popups", "priority": "optional", "command": "npx tsx scripts/scrape-popups.ts" },
+    { "name": "hotdeals", "priority": "optional", "command": "npx tsx scripts/scrape-hotdeals.ts" }
   ],
   "local": [
     { "name": "interpark", "priority": "critical", "command": "npx tsx scripts/scrape-interpark.ts" },
@@ -50,6 +56,12 @@
     { "name": "culture-portal", "priority": "optional", "command": "npx tsx scripts/scrape-culture-portal.ts" },
     { "name": "tourism", "priority": "optional", "command": "npx tsx scripts/scrape-visitkorea-expanded.ts" },
     { "name": "build-venues", "priority": "critical", "command": "npx tsx scripts/build-venues.ts" },
-    { "name": "venue-places", "priority": "optional", "command": "npx tsx scripts/enrich-venue-places.ts" }
+    { "name": "venue-places", "priority": "optional", "command": "npx tsx scripts/enrich-venue-places.ts" },
+    { "name": "coex", "priority": "optional", "command": "npx tsx scripts/scrape-coex.ts" },
+    { "name": "conventions", "priority": "optional", "command": "npx tsx scripts/scrape-conventions.ts" },
+    { "name": "gocamping", "priority": "optional", "command": "npx tsx scripts/scrape-gocamping.ts" },
+    { "name": "templestay", "priority": "optional", "command": "npx tsx scripts/scrape-templestay.ts" },
+    { "name": "popups", "priority": "optional", "command": "npx tsx scripts/scrape-popups.ts" },
+    { "name": "hotdeals", "priority": "optional", "command": "npx tsx scripts/scrape-hotdeals.ts" }
   ]
 }

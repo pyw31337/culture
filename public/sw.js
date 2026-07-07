@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.gqZKhyfH-n4iDQnnhwZW0.95857a1877d98b8e33e9dbacfb459ad5.js"
+  "/culture/_next/precache.H85VRhpV2XhwF_YlqFjS7.9eb98e8b99dcb58946bd85c1718921f8.js"
 );
 
 workbox.core.skipWaiting();
@@ -1660,6 +1660,166 @@ self.__precacheManifest = [
     "revision": "a80ace3fa48cb2609ca3ca5ddac0275c"
   },
   {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_1601.webp",
+    "revision": "00314bbf6f46db27c6deaa0b9694d4ce"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_1776.webp",
+    "revision": "05732aa6a81d97e23fd19387acab2d63"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_2022.webp",
+    "revision": "8986b7ece262044957e8f2ff188464f0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_2217.webp",
+    "revision": "53140175521cc7e9e0540e8b68ed8ac2"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_2422.webp",
+    "revision": "0f6126b97325cdad44449e736998837d"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_2464.webp",
+    "revision": "e0bb7f3bc83414d8af43938e82bdd5a4"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_2672.webp",
+    "revision": "c56be7029ac2f8bcc75912b68e4b51d6"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_2703.webp",
+    "revision": "208bea5fc7aa1d7f3f4883514b3f24f1"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_2999.webp",
+    "revision": "747f646cd07776e4b1f5402a95d75a67"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_306.webp",
+    "revision": "9179e886b53bffa0524d2fb6df901995"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_3139.webp",
+    "revision": "a76dbd08d07dcbcf45708f8b5094d249"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_3389.webp",
+    "revision": "6266ea6887588c5b85f85c3d9b7a9937"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_3394.webp",
+    "revision": "81afcf08b39221382a887d472d7cb774"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_6808.webp",
+    "revision": "f7525c32009b3f0aa205a9953b970633"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_6959.webp",
+    "revision": "f4e3b731bc9cd8df8b37751cea294397"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_6975.webp",
+    "revision": "13d3b31d112019d7ff24677c3ef21ed9"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_6979.webp",
+    "revision": "b68de8fbd55af6257344276d0a57e361"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_7254.webp",
+    "revision": "e774b5ead07037fdcd6312a342bbeaee"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_7767.webp",
+    "revision": "d1d7cb14e4535d511369650e0d8238a5"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/gocamping/gocamping_8014.webp",
+    "revision": "df6ca22f679b207bf4e9f136090274af"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10023349.webp",
+    "revision": "b28b873d4eb7603742f0b260f0c25916"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10037742.webp",
+    "revision": "2425cfda87bac1475f4eba11b40cda62"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10061523.webp",
+    "revision": "a430f65abd605cf3ea123e053c8ff57e"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10124731.webp",
+    "revision": "d45cd1cf42f2fed0e5d81d19108ff8ea"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10177758.webp",
+    "revision": "520574f9c343c8ed2defea56d9bd9511"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10198660.webp",
+    "revision": "a921ed7135a066d405c1d64b8d190be1"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10244780.webp",
+    "revision": "91fb07781a240c67f5eb7b74c4c6379c"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10244879.webp",
+    "revision": "fc462788bea3c00a9608a62e9929da3e"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10260973.webp",
+    "revision": "cfdc0560461d022ac87daee2cad18d46"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10271992.webp",
+    "revision": "9337458203925a1c845a598680ad815f"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10284948.webp",
+    "revision": "3a0632e39d8813e46d9a46f5d08ae1e1"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10296537.webp",
+    "revision": "ea8a77794e81d0f49e890a82ed5015d5"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10298420.webp",
+    "revision": "00762732d71dc66872d702f2440c29e0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10319674.webp",
+    "revision": "2a18d401e3eeac6b43132c92bc7bf32e"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10323843.webp",
+    "revision": "3f01c040de58b949fd0524537e2707b0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10337162.webp",
+    "revision": "44438ce73e87349834c1f6e127ab6f6d"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10340695.webp",
+    "revision": "902addc9074048d2d6e4c1224353943e"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10343073.webp",
+    "revision": "50a24a63d5dca928a7af1f82dae04261"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10344982.webp",
+    "revision": "ed63e16f0727e21347fa868e680cefdf"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/hotdeals/klook_deal_10346044.webp",
+    "revision": "741772cd2b9ee55a99e146d736d4979b"
+  },
+  {
     "url": "/images/thumbs/w320/posters/kids/yes24_고양_2026_가족뮤지컬_신데렐라.webp",
     "revision": "3ba4714947ba408227f7494f8001bd0b"
   },
@@ -1718,6 +1878,158 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/kids/yes24_성남_2026_여름방학특집_가족뮤지컬_피터팬.webp",
     "revision": "f0d8f1301c1affd52e0184d4b67ad507"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26011402.webp",
+    "revision": "1c66e3cedadd0c57eb41b83a3a4cda0b"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26011606.webp",
+    "revision": "1c566dd9efb5ddc843080a5a961f72b5"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26012601.webp",
+    "revision": "75d4901ae2d7a94d03eda412727b4959"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26020602.webp",
+    "revision": "2f3ecec995fbef5de0d78b3c432f9c26"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26021906.webp",
+    "revision": "ce4f4ce3e046568b009d5322ab44f6df"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26030306.webp",
+    "revision": "6e20d3dcc1d47499a00dd80106a86c0c"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26030312.webp",
+    "revision": "720c5cc3ded082c5b7df923819f908a9"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26030510.webp",
+    "revision": "5b05bdd0856c787e0c646a8f16b00b63"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26031015.webp",
+    "revision": "da247510637af2fcab5689a8dbab9f88"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26031206.webp",
+    "revision": "408fc442e23b2c339ed96ef155d72e56"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26031709.webp",
+    "revision": "5938d7622148422cedc77f6abee2c212"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26032304.webp",
+    "revision": "341a8aa772635537d67ef76249907bb6"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26033003.webp",
+    "revision": "bed2cdcb65e2cb5e12f73ee93be6597d"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26033004.webp",
+    "revision": "8d27d7a75f4c75d7141d414e79804a28"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26040104.webp",
+    "revision": "dc11e467180cc34c55f5a40c7c4b6ac1"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26040310.webp",
+    "revision": "644a3161b3942b01479d34cde649f6ea"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26040606.webp",
+    "revision": "5da21a51aeff59eadf79a5613e4abe2e"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26041410.webp",
+    "revision": "6a3d9e81c082810c0439515e86037cb5"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26041504.webp",
+    "revision": "a2b55cf9dcaa880d19da4d5e3dad6e58"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26042204.webp",
+    "revision": "e81b761d60b8c870392665a27d157f72"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26042205.webp",
+    "revision": "c6db5a16946e46ed5ef3b1d271aa49e0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26042207.webp",
+    "revision": "f61ae28d372367d5b15e57551f467ace"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26042803.webp",
+    "revision": "557ed787062c0c8fdc9dc3292316279f"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26042903.webp",
+    "revision": "6a5c109873efc445e9cb887bfd5c84cf"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26042904.webp",
+    "revision": "a940b7a6aa8db1ac3b397ac55aa3490b"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26042905.webp",
+    "revision": "2a560372c874705a5b357b1d548d21e9"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26043007.webp",
+    "revision": "54e850cd4dde02d7f2412f69ffda42f9"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26051112.webp",
+    "revision": "f4d93cc205d3f114bd04e2b5c7d2a6cb"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26051208.webp",
+    "revision": "5bf74a43dbccac96edb536c491e41b1a"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26051916.webp",
+    "revision": "02f727ad0331f4974223ebcc74de2af5"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26052102.webp",
+    "revision": "14f1c3a543f6ff46f30d3d330903e20d"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26052702.webp",
+    "revision": "76a70f55ae62cf65d3ab0f7c358e4664"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26060202.webp",
+    "revision": "92960591fd7adb9bc371c0d0d093c546"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26060205.webp",
+    "revision": "df6b1d60fdd98f8aed3dea57b25f62a9"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26060404.webp",
+    "revision": "7a3acf72ad1181facad791b73f953adf"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26060803.webp",
+    "revision": "7d2549316673d2c553947b3c86ce01ee"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26061902.webp",
+    "revision": "cd4f29226cf78609581023ea78476076"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/kintex/kintex_26062208.webp",
+    "revision": "250a40902fd406c917581e94772925a5"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie__웨일폴_고래에_먹힌_남자.webp",
@@ -2262,6 +2574,54 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/play/yes24_창원_국립극단_연극_그의_어머니.webp",
     "revision": "ff124df7d53060b0baee0349e6dfeb79"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7806.webp",
+    "revision": "4dcb686c49f95785293e9f00291bf051"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7879.webp",
+    "revision": "35146cb2eafa69b46145bae615fcd661"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7880.webp",
+    "revision": "c5583ca8db328ba17f3432cf802b9e30"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7881.webp",
+    "revision": "45a2e5532b234916633ff2ebd67bf8d3"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7882.webp",
+    "revision": "1d47e50a1ba4201438c3d24d3a4cb071"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7883.webp",
+    "revision": "8934c355f9c4ef850bee06a77590b4c5"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7884.webp",
+    "revision": "8934c355f9c4ef850bee06a77590b4c5"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7885.webp",
+    "revision": "c301daff6c29086773c57590bb348b16"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7886.webp",
+    "revision": "0b7d05cabd89c79abdfa9ea07285c8b2"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7887.webp",
+    "revision": "3a51e7dbff1ae9002fdbe57d09140a9b"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7888.webp",
+    "revision": "ed1de28421201f9cd058a1f9795380a3"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/popups/popup_7889.webp",
+    "revision": "edfb5f86b84454b407a1d5a7f52e117e"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/activity/perf_2025_Now_for_Zero_Waste_Vol_2_새로제로_bc46898a1f46cf5f.webp",
@@ -30322,6 +30682,102 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_휴휴암_강원_deff4814b453c8a9.webp",
     "revision": "9ac723ccfa14fa895fc2f32d94f0ab8c"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2250.webp",
+    "revision": "366d2024c27676099fc2b60759f686c6"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2251.webp",
+    "revision": "80793c991ffadfe0ff2bc01de92247a0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2265.webp",
+    "revision": "ae2d5ca603266b82310d35dab32f8d07"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2278.webp",
+    "revision": "5fdc964ca392de59d8b0f7d2218e2a5b"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2286.webp",
+    "revision": "80793c991ffadfe0ff2bc01de92247a0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2287.webp",
+    "revision": "b00aee8274eb98777ab578c07bbe8bc4"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2288.webp",
+    "revision": "80793c991ffadfe0ff2bc01de92247a0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2291.webp",
+    "revision": "8ad9d230697d2a36d50007889aa63897"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2292.webp",
+    "revision": "e8771f32a8268d8d2c5b1ba074801ffa"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2295.webp",
+    "revision": "54d13921e294fef1ce343bb20bec969a"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2298.webp",
+    "revision": "faebeb12d624322ed1745bec2236cacd"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2299.webp",
+    "revision": "b2a6ccdb0040b529e77f5a8029f399fc"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_25648.webp",
+    "revision": "c16d1accaf26b363a1123726da6c5b64"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_25812.webp",
+    "revision": "6e390272058afc0bb3f7e747847bbc83"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_26582.webp",
+    "revision": "5fdbcda0c4c2bab6b21bc07e8354c5f6"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_27600.webp",
+    "revision": "cd8c96aabac3b51ce48f8e3a83ff19ab"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28179.webp",
+    "revision": "2ac18b9bcf80107e29ce29702e8fe42c"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28197.webp",
+    "revision": "675cdd735bb025a5d0ca6231b53c0cfb"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28215.webp",
+    "revision": "07e2d0256a97ff0030d216ab903861b8"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28224.webp",
+    "revision": "e67c96293875afb38d7f36d8bda6dbe2"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28741.webp",
+    "revision": "7e56210453b4e181fe9765dbd1bbca2a"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28747.webp",
+    "revision": "1a9aca694755f27e061abecd4370e459"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28807.webp",
+    "revision": "6045326c6ed1b2bd81bff9e2c0dd9493"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/templestay/templestay_28808.webp",
+    "revision": "9b22207f28d90151cf0a566f7578a274"
   },
   {
     "url": "/images/ticket_icon.png",

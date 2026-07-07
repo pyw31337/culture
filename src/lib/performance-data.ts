@@ -578,6 +578,34 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
                 if (!p.address) p.address = '서울 강남구 영동대로 513';
                 if (!p.lat) p.lat = 37.5113;
                 if (!p.lng) p.lng = 127.0598;
+            } else if (p.source === 'kintex') {
+                if (!p.address) p.address = '경기 고양시 일산서구 킨텍스로 217-60';
+                if (!p.lat) p.lat = 37.6698;
+                if (!p.lng) p.lng = 126.7471;
+            } else if (p.source === 'bexco') {
+                if (!p.address) p.address = '부산 해운대구 APEC로 55';
+                if (!p.lat) p.lat = 35.1695;
+                if (!p.lng) p.lng = 129.1357;
+            } else if (p.source === 'setec') {
+                if (!p.address) p.address = '서울 강남구 남부순환로 3104';
+                if (!p.lat) p.lat = 37.4968;
+                if (!p.lng) p.lng = 127.0628;
+            } else if (p.source === 'gocamping') {
+                if (!p.address) p.address = p.venue || '전국 캠핑장';
+                if (!p.lat) p.lat = 37.5665;
+                if (!p.lng) p.lng = 126.9780;
+            } else if (p.source === 'templestay') {
+                if (!p.address) p.address = p.venue || '전국 사찰';
+                if (!p.lat) p.lat = 37.5665;
+                if (!p.lng) p.lng = 126.9780;
+            } else if (p.source === 'popup-store') {
+                if (!p.address) p.address = p.venue || '팝업스토어';
+                if (!p.lat) p.lat = 37.5665;
+                if (!p.lng) p.lng = 126.9780;
+            } else if (p.source === 'klook-deal') {
+                if (!p.address) p.address = p.venue || '관광지';
+                if (!p.lat) p.lat = 37.5665;
+                if (!p.lng) p.lng = 126.9780;
             } else {
                 return false;
             }

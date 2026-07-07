@@ -33,6 +33,13 @@ export const SOURCE_REGISTRY: SourceRegistryEntry[] = [
     { key: 'kopis', file: 'kopis-performances.json', label: 'KOPIS', homepage: 'https://www.kopis.or.kr/' },
     { key: 'tourism', file: 'tourism.json', label: '대한민국 구석구석', homepage: 'https://korean.visitkorea.or.kr/', freshDays: 14, staleDays: 90 },
     { key: 'coex', file: 'coex-exhibitions.json', label: '코엑스 전시', homepage: 'https://www.coex.co.kr/', freshDays: 7, staleDays: 45 },
+    { key: 'kintex', file: 'kintex-exhibitions.json', label: '킨텍스 전시', homepage: 'https://www.kintex.com/', freshDays: 7, staleDays: 45 },
+    { key: 'bexco', file: 'bexco-exhibitions.json', label: '벡스코 전시', homepage: 'https://www.bexco.co.kr/', freshDays: 7, staleDays: 45 },
+    { key: 'setec', file: 'setec-exhibitions.json', label: '세텍 전시', homepage: 'https://www.setec.or.kr/', freshDays: 7, staleDays: 45 },
+    { key: 'gocamping', file: 'gocamping.json', label: '고캠핑', homepage: 'https://gocamping.or.kr/', freshDays: 14, staleDays: 90 },
+    { key: 'templestay', file: 'templestays.json', label: '템플스테이', homepage: 'https://www.templestay.com/', freshDays: 7, staleDays: 60 },
+    { key: 'popup-store', file: 'popup-stores.json', label: '트렌디 팝업스토어', homepage: 'https://popply.co.kr/', freshDays: 7, staleDays: 45 },
+    { key: 'klook-deal', file: 'klook-deals.json', label: '레저/투어 핫딜', homepage: 'https://www.klook.com/', freshDays: 7, staleDays: 45 },
 ];
 
 export const SOURCE_REGISTRY_BY_KEY = SOURCE_REGISTRY.reduce<Record<string, SourceRegistryEntry>>((acc, entry) => {
