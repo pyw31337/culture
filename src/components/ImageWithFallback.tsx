@@ -139,6 +139,32 @@ function ImageWithFallbackInner({
 
 const LEGACY_FALLBACK = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4=';
 
+const getBasePath = () => process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+const applyLocalOptimizationAndBasePath = (url: string, width: number) => {
+    if (!url) return '';
+    if (url.startsWith('data:')) return url;
+    if (url.startsWith('/')) {
+        const basePath = getBasePath();
+        const sourcePath = basePath && url.startsWith(basePath)
+            ? url.slice(basePath.length)
+            : url;
+        
+        let targetPath = sourcePath;
+        if (width <= 420 && sourcePath.startsWith('/images/posters/')) {
+            targetPath = sourcePath
+                .replace('/images/posters/', '/images/thumbs/w320/posters/')
+                .replace(/\.(?:jpe?g|png|webp)$/i, '.webp');
+        }
+        
+        if (basePath && !targetPath.startsWith(basePath)) {
+            return `${basePath}${targetPath}`;
+        }
+        return targetPath;
+    }
+    return url;
+};
+
 function ImageWithFallback({
     src,
     backupSrc, // Destructure backupSrc
@@ -149,8 +175,14 @@ function ImageWithFallback({
     ...props
 }: ImageWithFallbackProps) {
     const imageQuality = typeof props.quality === 'number' ? props.quality : 64;
-    const normalizedSrc = useMemo(() => normalizeImageUrl(src), [src]);
-    const normalizedBackupSrc = useMemo(() => normalizeImageUrl(backupSrc), [backupSrc]);
+    const normalizedSrc = useMemo(() => {
+        const normalized = normalizeImageUrl(src);
+        return applyLocalOptimizationAndBasePath(normalized, optimizationWidth);
+    }, [src, optimizationWidth]);
+    const normalizedBackupSrc = useMemo(() => {
+        const normalized = normalizeImageUrl(backupSrc);
+        return applyLocalOptimizationAndBasePath(normalized, optimizationWidth);
+    }, [backupSrc, optimizationWidth]);
     const optimizedSrcs = useMemo(() => getAlternativeOptimizedUrls(normalizedSrc, optimizationWidth, imageQuality), [normalizedSrc, optimizationWidth, imageQuality]);
 
     // Resolve the final fallback source. Order of precedence:
