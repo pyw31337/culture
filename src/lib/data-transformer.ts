@@ -227,6 +227,19 @@ export interface RawPerformance {
     [key: string]: any;
 }
 
+const CANONICAL_VENUE_ALIGNED: Record<string, string> = {
+    '예술의 전당': '예술의전당',
+    '예술의전당 오페라하우스': '예술의전당 오페라극장',
+    '세종문화회관': '세종문화회관 대극장',
+    '대학로 극장 쿼드': '대학로극장 쿼드',
+    '블루스퀘어 신한카드홀': '블루스퀘어',
+    '블루스퀘어 마스터카드홀': '블루스퀘어',
+    '샤롯데 씨어터': '샤롯데씨어터',
+    '샤롯데 시어터': '샤롯데씨어터',
+    '디큐브 링크아트센터': '디큐브시티 디큐브아트센터',
+    '디큐브 아트센터': '디큐브시티 디큐브아트센터',
+};
+
 /**
  * Normalizes sports venue names to official long-form names.
  */
@@ -270,20 +283,35 @@ function normalizeVenueName(rawVenue: string, homeTeam?: string, genre?: string)
         OFFICIAL_SPORTS_VENUES[name.replace(/야구장$/, '')] ||
         OFFICIAL_SPORTS_VENUES[name.replace(/잠실야구장$/, '잠실')];
 
-    if (!entry) return name; 
-
-    if (typeof entry === 'string') return entry;
-
-    if (homeTeam) {
+    let finalVenue = '';
+    if (!entry) {
+        finalVenue = name; 
+    } else if (typeof entry === 'string') {
+        finalVenue = entry;
+    } else if (homeTeam) {
         const teamMatch = Object.keys(entry).find(key => homeTeam.toLowerCase().includes(key.toLowerCase()));
-        if (teamMatch) return entry[teamMatch];
+        finalVenue = teamMatch ? entry[teamMatch] : (entry.default || Object.values(entry)[0]);
+    } else if (genre && entry[genre]) {
+        finalVenue = entry[genre];
+    } else {
+        finalVenue = entry.default || (typeof entry === 'object' ? Object.values(entry)[0] : name);
     }
 
-    if (genre && entry[genre]) {
-        return entry[genre];
+    // 5. Aligned normalization rules (Canonical Clustering)
+    if (finalVenue) {
+        let cleaned = finalVenue.replace(/\s+/g, ' ').trim();
+        if (CANONICAL_VENUE_ALIGNED[cleaned]) {
+            cleaned = CANONICAL_VENUE_ALIGNED[cleaned];
+        }
+        cleaned = cleaned
+            .replace(/아트\s*센터/g, '아트센터')
+            .replace(/콘서트\s*홀/g, '콘서트홀')
+            .replace(/오페라\s*극장/g, '오페라극장')
+            .replace(/체임버\s*홀/g, '체임버홀')
+            .replace(/리사이틀\s*홀/g, '리사이틀홀');
+        return cleaned;
     }
-
-    return entry.default || (typeof entry === 'object' ? Object.values(entry)[0] : name);
+    return finalVenue;
 }
 
 /**

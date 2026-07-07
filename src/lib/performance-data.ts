@@ -501,7 +501,16 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
         if (rawItems.length > 0) {
             console.log(`[DEBUG] Source: ${source}, Raw items: ${rawItems.length}`);
         }
-        return rawItems.map(p => transformPerformance(p, source));
+        const transformedItems: Performance[] = [];
+        for (const p of rawItems) {
+            try {
+                const transformed = transformPerformance(p, source);
+                if (transformed) transformedItems.push(transformed);
+            } catch (err) {
+                console.error(`[Data Quality Warning] Failed to transform performance item id: ${p ? p.id : 'unknown'}, title: ${p ? (p.title || 'Unknown') : 'Unknown'} from source: ${source}. Error: ${err instanceof Error ? err.stack || err.message : String(err)}`);
+            }
+        }
+        return transformedItems;
     });
 
     // 3. Filter

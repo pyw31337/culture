@@ -374,6 +374,65 @@ function buildCalendarPayloadItem(performance: PrunedPerformance) {
     }) as Partial<PrunedPerformance>;
 }
 
+function getMonthsForPerformance(performance: Partial<PrunedPerformance>): string[] {
+    const months = new Set<string>();
+    const dateStr = String(performance.date || '').replace(/\./g, '-');
+    if (!dateStr || dateStr.trim() === '') {
+        const now = new Date();
+        return [`${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`];
+    }
+    
+    const toYearMonth = (d: Date) => {
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+    };
+    
+    const schedule = getScheduleWindow(performance as any);
+    let start: Date | null = null;
+    let end: Date | null = null;
+    
+    if (schedule.start) start = new Date(schedule.start);
+    if (schedule.end) end = new Date(schedule.end);
+    
+    if (start && isNaN(start.getTime())) start = null;
+    if (end && isNaN(end.getTime())) end = null;
+    
+    if (!start) {
+        const matches = dateStr.match(/\b(20)?(\d{2})[-/](\d{2})[-/](\d{2})\b/g);
+        if (matches && matches.length > 0) {
+            const cleanYear = (yStr: string) => yStr.length === 2 ? '20' + yStr : yStr;
+            const parts = matches[0].split(/[-/]/);
+            start = new Date(`${cleanYear(parts[0])}-${parts[1]}-${parts[2]}`);
+            if (matches.length > 1) {
+                const partsEnd = matches[1].split(/[-/]/);
+                end = new Date(`${cleanYear(partsEnd[0])}-${partsEnd[1]}-${partsEnd[2]}`);
+            }
+        }
+    }
+    
+    if (!start) {
+        const now = new Date();
+        return [toYearMonth(now)];
+    }
+    
+    let limitEnd = new Date(start);
+    limitEnd.setMonth(limitEnd.getMonth() + 12); // Limit range to 1 year to prevent payload blowup
+    
+    let finalEnd = end;
+    if (!finalEnd || finalEnd > limitEnd || isNaN(finalEnd.getTime())) {
+        finalEnd = limitEnd;
+    }
+    
+    let current = new Date(start.getFullYear(), start.getMonth(), 1);
+    const targetEnd = new Date(finalEnd.getFullYear(), finalEnd.getMonth(), 1);
+    
+    while (current <= targetEnd) {
+        months.add(toYearMonth(current));
+        current.setMonth(current.getMonth() + 1);
+    }
+    
+    return Array.from(months);
+}
+
 function buildMapVenuePayload(items: Array<Partial<PrunedPerformance>>) {
     type MapVenueGroupPayload = {
         groupKey: string;
@@ -1948,10 +2007,41 @@ async function generate() {
         fs.writeFileSync(mapVenuesPayloadPath, JSON.stringify(mapVenuesPayload));
         console.log(`Generated venue-grouped map payload (${mapVenuesPayload.length} venues) to ${mapVenuesPayloadPath}`);
 
-        const calendarPayloadPath = path.join(dir, 'calendar-items.json');
+        // [New: Calendar Split Loading]
+        const calendarDir = path.join(dir, 'calendar');
+        fs.mkdirSync(calendarDir, { recursive: true });
+        
         const calendarPayload = pruned.map(buildCalendarPayloadItem);
+        const monthlyChunks: Record<string, typeof calendarPayload> = {};
+        
+        calendarPayload.forEach(item => {
+            const months = getMonthsForPerformance(item);
+            months.forEach(month => {
+                if (!monthlyChunks[month]) {
+                    monthlyChunks[month] = [];
+                }
+                monthlyChunks[month].push(item);
+            });
+        });
+        
+        const monthsManifest: Record<string, number> = {};
+        Object.entries(monthlyChunks).forEach(([month, items]) => {
+            const chunkPath = path.join(calendarDir, `${month}.json`);
+            fs.writeFileSync(chunkPath, JSON.stringify(items));
+            monthsManifest[month] = items.length;
+        });
+        
+        const manifestPath = path.join(calendarDir, 'manifest.json');
+        const manifestContent = {
+            totalItems: calendarPayload.length,
+            months: monthsManifest
+        };
+        fs.writeFileSync(manifestPath, JSON.stringify(manifestContent));
+        console.log(`Generated monthly calendar chunks in ${calendarDir}. Available months: ${Object.keys(monthsManifest).length}`);
+
+        const calendarPayloadPath = path.join(dir, 'calendar-items.json');
         fs.writeFileSync(calendarPayloadPath, JSON.stringify(calendarPayload));
-        console.log(`Generated lightweight calendar payload (${calendarPayload.length} items) to ${calendarPayloadPath}`);
+        console.log(`Generated fallback calendar-items.json (${calendarPayload.length} items) for compatibility.`);
 
         const categoryDataDir = path.join(dir, 'categories');
         fs.mkdirSync(categoryDataDir, { recursive: true });

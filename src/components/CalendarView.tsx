@@ -156,11 +156,27 @@ export default function CalendarView({
     ));
     const isEmbedded = typeof embeddedSearchParams === 'string';
 
-    // Load full data client-side (server provides initial subset, client fetches full)
+    // Read initial state from URL params to initialize currentMonth early
+    const initialDateStr = searchParams.get('date');
+    const [currentMonth, setCurrentMonth] = useState<Date>(() => {
+        if (initialDateStr) {
+            const d = new Date(initialDateStr);
+            if (!isNaN(d.getTime())) return d;
+        }
+        return new Date();
+    });
+
+    const formattedMonth = useMemo(() => {
+        const year = currentMonth.getFullYear();
+        const month = String(currentMonth.getMonth() + 1).padStart(2, '0');
+        return `${year}-${month}`;
+    }, [currentMonth]);
+
+    // Load full data client-side (server provides initial subset, client fetches monthly chunks)
     const { allPerformances, venues, isDataFullyLoaded } = usePerformanceData({
         initialPerformances,
         performanceLoadPolicy: 'full',
-        performanceDataPath: '/data/calendar-items.json',
+        performanceDataPath: `/data/calendar/${formattedMonth}.json`,
         dataVersion: buildInfo?.version,
         backgroundLoadPriority: 'immediate',
         loadVenues: true,
@@ -186,15 +202,7 @@ export default function CalendarView({
     const initialView = (searchParams.get('view') as CalendarView) || 'monthly';
     const initialRegion = getCalendarRegionId(searchParams.get('region'));
     const initialDistrict = 'all';
-    const initialDateStr = searchParams.get('date');
 
-    const [currentMonth, setCurrentMonth] = useState(() => {
-        if (initialDateStr) {
-            const d = new Date(initialDateStr);
-            if (!isNaN(d.getTime())) return d;
-        }
-        return new Date();
-    });
     const [calendarView, setCalendarView] = useState<CalendarView>(initialView);
     const [localGenre, setLocalGenre] = useState(initialGenre);
     const [localRegion, setLocalRegion] = useState<string>(initialRegion);

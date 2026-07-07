@@ -61,6 +61,56 @@ export const getOptimizedUrl = (url: string, width: number = 400, quality: numbe
     }
 };
 
+/**
+ * Returns a priority list of image proxy URLs for a remote image, ending with the raw direct URL.
+ * Enables client-side Image component to fallback seamlessly across vendors if wsrv.nl is down.
+ */
+export const getAlternativeOptimizedUrls = (url: string, width: number = 400, quality: number = 70): string[] => {
+    if (!url) return [];
+    const normalized = normalizeImageUrl(url);
+    if (!normalized) return [];
+    
+    // For data URI, local paths, or pre-optimized ones, no proxy chain is needed.
+    if (normalized.startsWith('data:') || normalized.startsWith('/') || normalized.includes('wsrv.nl/?url=')) {
+        return [normalized];
+    }
+    
+    // TimeTicket / Seoul Culture bypass proxies
+    if (normalized.includes('timeticket.co.kr') || normalized.includes('culture.seoul.go.kr')) {
+        return [normalized];
+    }
+    
+    const out: string[] = [];
+    
+    // 1. wsrv.nl Webp (Primary)
+    try {
+        const encoded = encodeURIComponent(normalized);
+        out.push(`https://wsrv.nl/?url=${encoded}&w=${width}&q=${quality}&output=webp`);
+    } catch {}
+    
+    // 2. images.weserv.nl Webp (Secondary fallback hostname)
+    try {
+        const encoded = encodeURIComponent(normalized);
+        out.push(`https://images.weserv.nl/?url=${encoded}&w=${width}&q=${quality}&output=webp`);
+    } catch {}
+    
+    // 3. Statically.io Webp (Tertiary)
+    try {
+        if (normalized.startsWith('https://')) {
+            const cleanUrl = normalized.slice(8);
+            out.push(`https://statically.io/img/${cleanUrl}?w=${width}&q=${quality}`);
+        } else if (normalized.startsWith('http://')) {
+            const cleanUrl = normalized.slice(7);
+            out.push(`https://statically.io/img/${cleanUrl}?w=${width}&q=${quality}`);
+        }
+    } catch {}
+    
+    // 4. Original Direct URL (Last resort fallback)
+    out.push(normalized);
+    
+    return out;
+};
+
 // Calculate distance between two points
 export function getDistanceFromLatLonInKm(lat1: number, lon1: number, lat2: number, lon2: number) {
     const R = 6371; // Radius of the earth in km

@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef, useState, memo } from 'react';
 import Image, { ImageProps } from 'next/image';
-import { getOptimizedUrl, normalizeImageUrl } from '@/lib/utils';
+import { getAlternativeOptimizedUrls, normalizeImageUrl } from '@/lib/utils';
 import { buildPlaceholderDataUrl } from '@/lib/poster-placeholder';
 import { clsx } from 'clsx';
 
@@ -30,7 +30,7 @@ interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
 
 interface ImageWithFallbackInnerProps extends Omit<ImageWithFallbackProps, 'fallbackSrc' | 'optimizationWidth' | 'src'> {
     originalSrc: string;
-    initialSrc: string;
+    optimizedSrcs: string[];
     fallbackSrc: string;
 }
 
@@ -48,7 +48,7 @@ function isImageSourceLoaded(src?: string) {
 
 function ImageWithFallbackInner({
     originalSrc,
-    initialSrc,
+    optimizedSrcs,
     backupSrc,
     fallbackSrc,
     fastDisplay = false,
@@ -57,12 +57,16 @@ function ImageWithFallbackInner({
 }: ImageWithFallbackInnerProps) {
     const sources = useMemo(() => {
         const uniqueSources = new Set<string>();
-        [initialSrc, originalSrc, backupSrc, fallbackSrc].forEach((candidate) => {
+        optimizedSrcs.forEach((candidate) => {
+            const source = typeof candidate === 'string' ? candidate.trim() : '';
+            if (source) uniqueSources.add(source);
+        });
+        [originalSrc, backupSrc, fallbackSrc].forEach((candidate) => {
             const source = typeof candidate === 'string' ? candidate.trim() : '';
             if (source) uniqueSources.add(source);
         });
         return Array.from(uniqueSources);
-    }, [backupSrc, fallbackSrc, initialSrc, originalSrc]);
+    }, [backupSrc, fallbackSrc, optimizedSrcs, originalSrc]);
     const initialSourceIndex = useMemo(() => {
         const cachedIndex = sources.findIndex((source) => isImageSourceLoaded(source));
         return cachedIndex >= 0 ? cachedIndex : 0;
@@ -147,7 +151,7 @@ function ImageWithFallback({
     const imageQuality = typeof props.quality === 'number' ? props.quality : 64;
     const normalizedSrc = useMemo(() => normalizeImageUrl(src), [src]);
     const normalizedBackupSrc = useMemo(() => normalizeImageUrl(backupSrc), [backupSrc]);
-    const optimizedSrc = useMemo(() => getOptimizedUrl(normalizedSrc, optimizationWidth, imageQuality), [normalizedSrc, optimizationWidth, imageQuality]);
+    const optimizedSrcs = useMemo(() => getAlternativeOptimizedUrls(normalizedSrc, optimizationWidth, imageQuality), [normalizedSrc, optimizationWidth, imageQuality]);
 
     // Resolve the final fallback source. Order of precedence:
     //   1. explicit fallbackSrc prop (highest priority - lets callers force)
@@ -159,14 +163,14 @@ function ImageWithFallback({
         return LEGACY_FALLBACK;
     }, [fallbackSrc, placeholderInput]);
 
-    const imageKey = useMemo(() => `${optimizedSrc}|${normalizedSrc}|${normalizedBackupSrc}|${resolvedFallback}`, [resolvedFallback, normalizedBackupSrc, normalizedSrc, optimizedSrc]);
+    const imageKey = useMemo(() => `${optimizedSrcs.join('|')}|${normalizedSrc}|${normalizedBackupSrc}|${resolvedFallback}`, [resolvedFallback, normalizedBackupSrc, normalizedSrc, optimizedSrcs]);
 
     return (
         <ImageWithFallbackInner
             key={imageKey}
             {...props}
             originalSrc={normalizedSrc}
-            initialSrc={optimizedSrc}
+            optimizedSrcs={optimizedSrcs}
             backupSrc={normalizedBackupSrc}
             fallbackSrc={resolvedFallback}
             alt={alt}
