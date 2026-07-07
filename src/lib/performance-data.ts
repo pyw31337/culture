@@ -574,6 +574,10 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
             } else if (p.source?.startsWith('mommom')) {
                 // Keep MomMom items even if geo fails (Fallback to Seoul/Central or just don't filter)
                 if (!p.address) p.address = p.venue;
+            } else if (p.source === 'coex') {
+                if (!p.address) p.address = '서울 강남구 영동대로 513';
+                if (!p.lat) p.lat = 37.5113;
+                if (!p.lng) p.lng = 127.0598;
             } else {
                 return false;
             }

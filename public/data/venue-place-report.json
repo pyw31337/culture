@@ -1,15 +1,18 @@
 {
-  "checkedAt": "2026-07-06T20:40:03.075Z",
+  "checkedAt": "2026-07-07T05:34:12.419Z",
   "status": "warn",
-  "venueCount": 3731,
-  "matchedCount": 932,
-  "highConfidenceMatchCount": 673,
+  "venueCount": 3730,
+  "matchedCount": 930,
+  "highConfidenceMatchCount": 671,
   "needsReviewCount": 20,
   "notFoundCount": 271,
   "pendingLookupCount": 1783,
-  "insufficientIdentityCount": 223,
-  "lookupReady": false,
-  "providersConfigured": [],
+  "insufficientIdentityCount": 224,
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
   "queue": [
     {
       "venueId": "venue_동구문화플랫폼_dzzo7b",
@@ -1209,6 +1212,26 @@
       ]
     },
     {
+      "venueId": "venue_코엑스halld_xzwjmn",
+      "officialName": "코엑스아티움",
+      "address": "서울 강남구 영동대로 513",
+      "query": "코엑스아티움 서울 강남구",
+      "priority": 572,
+      "performanceCount": 14,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "coordinate_fallback_risk",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup",
+        "parent_child_halls"
+      ],
+      "sampleTitles": [
+        "2026 베지노믹스-비건페어 인 서울",
+        "2026 아산 유스프러너 데모데이: 무한(Infinite)",
+        "2026 케이펫페어 서울"
+      ]
+    },
+    {
       "venueId": "venue_나인진홀_it7gqh",
       "officialName": "나인진홀",
       "address": "서울특별시 종로구 동숭길 47(동숭동) 5F 나인진홀 3관",
@@ -1829,21 +1852,6 @@
       ],
       "sampleTitles": [
         "향수만들기 원데이클래스 소모임 (출장가능,2인이상) 시그널센트 출강"
-      ]
-    },
-    {
-      "venueId": "venue_서울특별시서초구서초동14734석영빌딩5층_1ehp6zt",
-      "officialName": "서울특별시 서초구 서초동 1473-4 석영빌딩 5층",
-      "address": "서울특별시 서초구 서초동 1473-4 석영빌딩 5층",
-      "query": "서울특별시 서초구 서초동 1473-4 석영빌딩 5층 서울 서초구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "와인잔 젤캔들 홀더"
       ]
     }
   ],
@@ -3112,6 +3120,22 @@
       ]
     },
     {
+      "venueId": "venue_서울강남구_xzwjmn",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 영동대로 513",
+      "query": "서울 강남구 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "AXIS 2026 (Asia eXperience & Innovation Summit)"
+      ]
+    },
+    {
       "venueId": "venue_서울강남구_7p5dnq",
       "officialName": "서울 강남구",
       "address": "서울 강남구 선릉로 704",
@@ -3750,21 +3774,6 @@
       "sampleTitles": [
         "［왕십리］ 그아저씨 도예공방 원데이 클래스(전화예약 필수)"
       ]
-    },
-    {
-      "venueId": "venue_서울성북구_19snf32",
-      "officialName": "서울 성북구",
-      "address": "서울특별시 성북구 성북로 5-7 우성 지하1층 하땅세 극장",
-      "query": "서울 성북구 서울 성북구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<공연> 고래바위에서 기다려(24/10/05~오픈런)"
-      ]
     }
   ],
   "staleCacheCount": 0,
@@ -4110,17 +4119,20 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-07-06T20:40:03.075Z",
+    "checkedAt": "2026-07-07T05:34:12.419Z",
     "status": "warn",
-    "venueCount": 3731,
-    "matchedCount": 932,
-    "highConfidenceMatchCount": 673,
+    "venueCount": 3730,
+    "matchedCount": 930,
+    "highConfidenceMatchCount": 671,
     "needsReviewCount": 20,
     "notFoundCount": 271,
     "pendingLookupCount": 1783,
-    "insufficientIdentityCount": 223,
-    "lookupReady": false,
-    "providersConfigured": [],
+    "insufficientIdentityCount": 224,
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
     "staleCacheCount": 0,
     "topQueue": [
       {

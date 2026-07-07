@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
@@ -19,6 +20,13 @@ const ensureDir = (dir: string) => {
 };
 
 /**
+ * MD5 hash to safely create ascii-only filenames and IDs, preventing Next.js ByteString conversion error.
+ */
+function hashString(text: string): string {
+    return crypto.createHash('md5').update(text).digest('hex').substring(0, 16);
+}
+
+/**
  * Downloads and processes an image, converting to WebP.
  */
 async function processImage(url: string, filenameBase: string, subDir: string = 'posters/coex'): Promise<string> {
@@ -29,7 +37,7 @@ async function processImage(url: string, filenameBase: string, subDir: string = 
     ensureDir(targetDir);
 
     try {
-        const safeFilename = filenameBase.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
+        const safeFilename = filenameBase.replace(/[^a-z0-9]/gi, '_').substring(0, 100);
         const relativePath = `/images/${subDir}/${safeFilename}.webp`;
         const absolutePath = path.join(targetDir, `${safeFilename}.webp`);
 
@@ -62,18 +70,49 @@ async function processImage(url: string, filenameBase: string, subDir: string = 
     }
 }
 
-function slugify(text: string): string {
-    return text
-        .replace(/[^a-zA-Z0-9가-힣]/g, '_')
-        .replace(/_+/g, '_')
-        .replace(/^_|_$/g, '');
-}
-
 function formatDate(date: Date): string {
     const y = date.getFullYear();
     const m = String(date.getMonth() + 1).padStart(2, '0');
     const d = String(date.getDate()).padStart(2, '0');
     return `${y}.${m}.${d}`;
+}
+
+/**
+ * Crawls individual exhibition page to fetch high-res/official detail poster.
+ */
+async function fetchOfficialDetailPoster(url: string, fallbackImg: string): Promise<string> {
+    if (!url) return fallbackImg;
+    try {
+        console.log(`[Coex Detail] Crawling details: ${url}`);
+        const response = await axios.get(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            },
+            timeout: 10000
+        });
+        const $ = cheerio.load(response.data);
+
+        // 1st Option: EventDetailThumbBox container image (Official poster placement)
+        const thumbImg = $('.EventDetailThumbBox img').first().attr('src');
+        if (thumbImg) {
+            return thumbImg;
+        }
+
+        // 2nd Option: Body content images
+        const bodyImg = $('.EventDetailBoxBody img').first().attr('src');
+        if (bodyImg) {
+            return bodyImg;
+        }
+
+        // 3rd Option: Any major uploads folder image in article
+        const articleImg = $('article img').first().attr('src');
+        if (articleImg) {
+            return articleImg;
+        }
+    } catch (e: any) {
+        console.warn(`[Coex Detail] Failed to extract detail poster from ${url}, using list thumbnail fallback:`, e.message);
+    }
+    return fallbackImg;
 }
 
 async function scrapeCoexExhibitions() {
@@ -114,8 +153,7 @@ async function scrapeCoexExhibitions() {
             const href = linkEl.attr('href') || '';
             if (!href) continue;
 
-            // Extract slug from link
-            // e.g. "https://www.coex.co.kr/exhibitions/2026-여성발명왕-expo/..." -> "2026-여성발명왕-expo"
+            // Generate clean ASCII-safe ID using MD5 hash of URL path to avoid character encoding bugs
             let slug = '';
             try {
                 const parts = href.split('/exhibitions/');
@@ -128,8 +166,8 @@ async function scrapeCoexExhibitions() {
                 slug = Math.random().toString(36).substring(7);
             }
 
-            slug = slugify(decodeURIComponent(slug));
-            const id = `coex_${slug}`;
+            const cleanHash = hashString(decodeURIComponent(slug));
+            const id = `coex_${cleanHash}`;
 
             if (seenIds.has(id)) continue;
             seenIds.add(id);
@@ -139,7 +177,9 @@ async function scrapeCoexExhibitions() {
             const rawDate = $(el).find('.BlogEventItemCont-date').first().text().trim() || startDateStr;
             const hall = $(el).find('.BlogEventItemCont-hall').first().text().trim() || '전시장';
 
-            const localImagePath = rawImg ? await processImage(rawImg, id) : '';
+            // 1st Priority: Crawl the detail page to capture the real high-res poster image
+            const officialImgUrl = await fetchOfficialDetailPoster(href, rawImg);
+            const localImagePath = officialImgUrl ? await processImage(officialImgUrl, id) : '';
 
             // Clean date to standard format (2026.07.06 - 2026.07.11) -> (2026.07.06 ~ 2026.07.11)
             const dateStr = rawDate.replace(/\s*-\s*/g, ' ~ ').trim();

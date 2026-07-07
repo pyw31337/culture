@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-03T05:46:20.095Z",
-  "itemCount": 8093,
+  "checkedAt": "2026-07-07T05:34:30.446Z",
+  "itemCount": 7785,
   "status": "pass",
   "metrics": {
     "missingLocalImageCount": 0,
     "placeholderImageCount": 0,
     "placeholderImageRate": 0,
-    "duplicatedDescriptionCount": 0,
+    "duplicatedDescriptionCount": 78,
     "missingSourceDateCount": 0,
     "suspiciousVenueAddressCount": 0,
     "ambiguousVenueDictionaryCount": 0,
@@ -15,7 +15,128 @@
   "samples": {
     "missingLocalImages": [],
     "placeholderImages": [],
-    "duplicatedDescriptions": [],
+    "duplicatedDescriptions": [
+      {
+        "id": "perf_쇼뮤지컬_프린세스_캐치_티니핑_성남",
+        "title": "쇼뮤지컬〈프린세스 캐치! 티니핑〉 - 성남",
+        "genre": "musical",
+        "similarity": 0.46
+      },
+      {
+        "id": "perf_2026_PEPPERTONES_CLUB_TOUR_부산",
+        "title": "2026 PEPPERTONES CLUB TOUR - 부산",
+        "genre": "concert",
+        "similarity": 0.54
+      },
+      {
+        "id": "perf_성남_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2",
+        "title": "［성남］ 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
+        "genre": "concert",
+        "similarity": 0.5
+      },
+      {
+        "id": "perf_영유아_톡_톡_클래식_In_JULY_서산",
+        "title": "영유아 톡!톡! 클래식 In JULY - 서산",
+        "genre": "classic_tradition",
+        "similarity": 0.51
+      },
+      {
+        "id": "perf_2026년_서울단편극_페스티벌_테스트중입니다_아버지와_나",
+        "title": "2026년 서울단편극 페스티벌 - 〈테스트중입니다.〉, 〈아버지와 나〉",
+        "genre": "play",
+        "similarity": 0.54
+      },
+      {
+        "id": "perf_뮤지컬_Club_설화",
+        "title": "뮤지컬 Club 〈설화〉",
+        "genre": "musical",
+        "similarity": 0.48
+      },
+      {
+        "id": "perf_얼리버드_뱅크시_Still_Here",
+        "title": "［얼리버드］ 뱅크시 : Still Here",
+        "genre": "exhibition",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_2026_서울시향_수산나_멜키의_슈베르트_그레이트",
+        "title": "2026 서울시향 수산나 멜키의 슈베르트 ‘그레이트’",
+        "genre": "classic_tradition",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_인천_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
+        "title": "［인천］ 가족뮤지컬 〈로보카폴리 - 브룸스타운의 에너지를 지켜라!〉",
+        "genre": "musical",
+        "similarity": 0.51
+      },
+      {
+        "id": "perf_2026년_서울단편극_페스티벌_토스트구워주는_남자_폴리웜",
+        "title": "2026년 서울단편극 페스티벌 - 〈토스트구워주는 남자〉, 〈폴리웜〉",
+        "genre": "play",
+        "similarity": 0.54
+      },
+      {
+        "id": "perf_베베핀_뮤지컬_두근두근_새친구_서울",
+        "title": "베베핀 뮤지컬 〈두근두근 새친구〉 - 서울",
+        "genre": "musical",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_경기_동두천_체험형_숲_테마파크_놀자숲_이용권_실내_외_초대형_어드벤처_파크",
+        "title": "［경기 동두천］ 체험형 숲 테마파크 놀자숲 이용권 (실내/외 초대형 어드벤처 파크)",
+        "genre": "exhibition",
+        "similarity": 0.53
+      },
+      {
+        "id": "perf_2026_인천펜타포트_락_페스티벌_with_KB국민카드",
+        "title": "2026 인천펜타포트 락 페스티벌 with KB국민카드",
+        "genre": "concert",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_2026_가족_라이브_뮤지컬_라푼젤_수원",
+        "title": "2026 가족 라이브 뮤지컬〈라푼젤〉 - 수원",
+        "genre": "musical",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_옐레드_서초교대역점_애견유치원_애견호텔_이용권",
+        "title": "옐레드 서초교대역점 애견유치원 애견호텔 이용권",
+        "genre": "activity",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_경주가볼만한곳_라원_미디어아트_복합문화정원",
+        "title": "［경주가볼만한곳］ 라원 미디어아트 복합문화정원",
+        "genre": "exhibition",
+        "similarity": 0.51
+      },
+      {
+        "id": "perf_동탄_아이와가볼만한곳_동탄공룡월드_키즈카페_그랜드_오픈특가",
+        "title": "［동탄］ 아이와가볼만한곳! 동탄공룡월드＆키즈카페 그랜드 오픈특가",
+        "genre": "activity",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_피아니스트_김준_독주회_줄라이_페스티벌_서산",
+        "title": "피아니스트 김준 독주회 ［줄라이 페스티벌］ - 서산",
+        "genre": "classic_tradition",
+        "similarity": 0.52
+      },
+      {
+        "id": "perf_아산_까블랑_키즈카페_이용권",
+        "title": "［아산］ 까블랑 키즈카페 이용권",
+        "genre": "activity",
+        "similarity": 0.5
+      },
+      {
+        "id": "perf_대전_오월드_엑스포_아쿠아리움_패키지",
+        "title": "［대전］ 오월드+엑스포 아쿠아리움 패키지",
+        "genre": "activity",
+        "similarity": 0.51
+      }
+    ],
     "missingSourceDates": [],
     "suspiciousVenueAddress": [],
     "ambiguousVenueDictionary": [],
