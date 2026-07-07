@@ -4,7 +4,7 @@ import { Suspense, useState, useRef, useMemo, useCallback, useEffect } from 'rea
 import { Performance } from '@/types';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, addMonths, subMonths, addWeeks, subWeeks, addDays, subDays } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { X, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MapPin, Heart } from 'lucide-react';
 import { clsx } from 'clsx';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { buildGenreCounts, getAvailableGenres, getGenreNavigationItems, isGenreAvailable, type GenreCounts } from '@/lib/genre-availability';
@@ -19,6 +19,7 @@ import SearchParamsBridge from './SearchParamsBridge';
 // SearchParamsBridge for rationale.
 const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 import { usePerformanceData } from '@/hooks/usePerformanceData';
+import { useUserPreferences } from '@/hooks/useUserPreferences';
 import ImageWithFallback from './ImageWithFallback';
 import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
 import { LocationSelector } from './LocationSelector';
@@ -164,6 +165,7 @@ export default function CalendarView({
     onClose,
 }: CalendarViewProps) {
     const router = useRouter();
+    const { likedIds, toggleLike } = useUserPreferences();
     // searchParams is populated by <SearchParamsBridge> after mount. Initial
     // render uses EMPTY_SEARCH_PARAMS so the static prerender doesn't bail out
     // to client-side rendering. A useEffect below syncs URL params -> state
@@ -711,14 +713,40 @@ export default function CalendarView({
                                                     ) : null;
                                                 })()}
                                             </div>
-                                            {(() => {
-                                                const loc = getPerformanceLocationLabel(perf, venues, 2);
-                                                return loc ? (
-                                                    <div className="hidden sm:flex items-center gap-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold shrink-0 self-center">
-                                                        <MapPin size={10} className="shrink-0" />{loc}
-                                                    </div>
-                                                ) : null;
-                                            })()}
+                                            {/* Right aligned action and location section */}
+                                            <div className="flex items-center gap-3 shrink-0 self-center">
+                                                {(() => {
+                                                    const loc = getPerformanceLocationLabel(perf, venues, 2);
+                                                    return loc ? (
+                                                        <div className="hidden sm:flex items-center gap-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold">
+                                                            <MapPin size={10} className="shrink-0" />{loc}
+                                                        </div>
+                                                    ) : null;
+                                                })()}
+
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        e.stopPropagation();
+                                                        toggleLike(perf.id);
+                                                    }}
+                                                    className={clsx(
+                                                        "flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-200 active:scale-90",
+                                                        likedIds.includes(perf.id)
+                                                            ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900/50 text-red-500 shadow-sm"
+                                                            : "bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700/80 text-gray-400 hover:text-red-500 hover:bg-red-50/50 dark:hover:bg-red-950/10 hover:border-red-100 dark:hover:border-red-900/30"
+                                                    )}
+                                                    title={likedIds.includes(perf.id) ? "좋아요 취소" : "좋아요"}
+                                                >
+                                                    <Heart
+                                                        size={14}
+                                                        className={clsx(
+                                                            "transition-all duration-200",
+                                                            likedIds.includes(perf.id) ? "fill-red-500 scale-110" : ""
+                                                        )}
+                                                    />
+                                                </button>
+                                            </div>
                                         </a>
                                     ))}
 
