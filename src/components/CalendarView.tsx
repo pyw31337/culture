@@ -34,6 +34,8 @@ interface CalendarViewProps {
     lastUpdated: string;
     embeddedSearchParams?: string;
     onClose?: () => void;
+    likedIds?: string[];
+    onToggleLike?: (id: string) => void;
 }
 
 type CalendarView = 'daily' | 'weekly' | 'monthly';
@@ -163,9 +165,13 @@ export default function CalendarView({
     lastUpdated,
     embeddedSearchParams,
     onClose,
+    likedIds: propLikedIds,
+    onToggleLike: propOnToggleLike,
 }: CalendarViewProps) {
     const router = useRouter();
-    const { likedIds, toggleLike } = useUserPreferences();
+    const { likedIds: localLikedIds, toggleLike: localToggleLike } = useUserPreferences();
+    const likedIds = propLikedIds !== undefined ? propLikedIds : localLikedIds;
+    const toggleLike = propOnToggleLike !== undefined ? propOnToggleLike : localToggleLike;
     // searchParams is populated by <SearchParamsBridge> after mount. Initial
     // render uses EMPTY_SEARCH_PARAMS so the static prerender doesn't bail out
     // to client-side rendering. A useEffect below syncs URL params -> state

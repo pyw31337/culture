@@ -1043,6 +1043,8 @@ export default function PerformanceList({
                     lastUpdated={lastUpdated}
                     embeddedSearchParams={overlaySearchParams}
                     onClose={handleCloseOverlay}
+                    likedIds={likedIds}
+                    onToggleLike={toggleLike}
                 />
             )}
         </div>
