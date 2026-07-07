@@ -87,6 +87,22 @@ function getCalendarRegionId(value?: string | null): CalendarRegionId {
     return CALENDAR_REGION_ID_SET.has(normalized as CalendarRegionId) ? normalized as CalendarRegionId : 'all';
 }
 
+const GENRE_PRIORITY: Record<string, number> = {
+    classic_tradition: 10,
+    musical: 9,
+    play: 8,
+    concert: 7,
+    exhibition: 6,
+    museum: 5,
+    activity: 4,
+    class: 3,
+    sports: 2,
+    baseball: 2,
+    soccer: 2,
+    theater: 2,
+    tourism: 1,
+};
+
 
 function matchesRegionSelection(performance: Performance, regionValue: string, districtValue: string, venues: CalendarVenueLookup) {
     const selectedRegions = parseRegionSelection(regionValue);
@@ -391,8 +407,18 @@ export default function CalendarView({
     }, [currentViewTotalEvents, localRegion, localDistrict, venues]);
 
     const currentViewEvents = useMemo(() => {
-        if (effectiveGenre === 'all') return regionFilteredTotalEvents;
-        return regionFilteredTotalEvents.filter(p => p.genre === effectiveGenre);
+        const baseEvents = effectiveGenre === 'all'
+            ? regionFilteredTotalEvents
+            : regionFilteredTotalEvents.filter(p => p.genre === effectiveGenre);
+
+        return [...baseEvents].sort((a, b) => {
+            const priorityA = GENRE_PRIORITY[a.genre] || 0;
+            const priorityB = GENRE_PRIORITY[b.genre] || 0;
+            if (priorityA !== priorityB) {
+                return priorityB - priorityA;
+            }
+            return a.title.localeCompare(b.title, 'ko');
+        });
     }, [regionFilteredTotalEvents, effectiveGenre]);
 
     const regionOptions = useMemo(() => {
