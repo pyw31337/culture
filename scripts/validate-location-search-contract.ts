@@ -11,6 +11,11 @@ if (guriCandidates.length === 0) {
     throw new Error('Location fallback must return venue/address candidates for "구리".');
 }
 
+const guriSicheongCandidates = buildLocalLocationCandidates(performances, '구리시청');
+if (guriSicheongCandidates.length === 0) {
+    throw new Error('Location fallback must return venue/address candidates for "구리시청".');
+}
+
 const invalidGuriCandidate = guriCandidates.find((candidate) => {
     const target = `${candidate.name} ${candidate.address || ''} ${candidate.category || ''}`;
     return !target.includes('구리');

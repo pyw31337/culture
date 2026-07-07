@@ -25,17 +25,36 @@ function tokenizeLocationText(value: unknown) {
         .filter(Boolean);
 }
 
+function shareCommonPrefixOfLength(a: string, b: string, minLength: number): boolean {
+    const limit = Math.min(a.length, b.length);
+    if (limit < minLength) return false;
+    for (let i = 0; i < minLength; i++) {
+        if (a[i] !== b[i]) return false;
+    }
+    return true;
+}
+
 function matchesLocationField(value: unknown, query: string) {
     const normalizedQuery = normalize(query);
     if (!normalizedQuery) return false;
 
     const collapsedValue = collapseDuplicateLeadingLocationToken(String(value || ''));
     const normalizedValue = normalize(collapsedValue);
-    if (normalizedValue === normalizedQuery || normalizedValue.startsWith(normalizedQuery)) return true;
+    if (
+        normalizedValue === normalizedQuery ||
+        normalizedValue.startsWith(normalizedQuery) ||
+        shareCommonPrefixOfLength(normalizedValue, normalizedQuery, 2)
+    ) {
+        return true;
+    }
 
     return tokenizeLocationText(collapsedValue).some((token) => {
         const normalizedToken = normalize(token);
-        return normalizedToken === normalizedQuery || normalizedToken.startsWith(normalizedQuery);
+        return (
+            normalizedToken === normalizedQuery ||
+            normalizedToken.startsWith(normalizedQuery) ||
+            shareCommonPrefixOfLength(normalizedToken, normalizedQuery, 2)
+        );
     });
 }
 
