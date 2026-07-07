@@ -687,7 +687,7 @@ async function scrapeFestivals() {
         console.log('Starting Load More Scraping...');
 
         const uniqueListItems = new Map<string, ListItem>();
-        const maxPages = 20; // Safety limit
+        const maxPages = 40; // Safety limit
 
         // Initial scrape
         let prevCount = 0;
@@ -769,6 +769,7 @@ async function scrapeFestivals() {
                 const endDate = new Date(cleanDate);
                 if (isNaN(endDate.getTime())) return false;
 
+                endDate.setDate(endDate.getDate() + 3); // 3-day grace period
                 endDate.setHours(23, 59, 59, 999);
 
                 const now = new Date();

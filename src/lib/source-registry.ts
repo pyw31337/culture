@@ -32,6 +32,7 @@ export const SOURCE_REGISTRY: SourceRegistryEntry[] = [
     { key: 'museum', file: 'museum.json', label: '맘맘 플레이스', homepage: 'https://mom-mom.net/', freshDays: 14, staleDays: 90 },
     { key: 'kopis', file: 'kopis-performances.json', label: 'KOPIS', homepage: 'https://www.kopis.or.kr/' },
     { key: 'tourism', file: 'tourism.json', label: '대한민국 구석구석', homepage: 'https://korean.visitkorea.or.kr/', freshDays: 14, staleDays: 90 },
+    { key: 'coex', file: 'coex-exhibitions.json', label: '코엑스 전시', homepage: 'https://www.coex.co.kr/', freshDays: 7, staleDays: 45 },
 ];
 
 export const SOURCE_REGISTRY_BY_KEY = SOURCE_REGISTRY.reduce<Record<string, SourceRegistryEntry>>((acc, entry) => {

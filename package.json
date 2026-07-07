@@ -18,6 +18,7 @@
     "scrape:ticketbay:sports": "npx tsx scripts/scrape-ticketbay-sports.ts",
     "scrape:yes24": "npx tsx scripts/scrape-yes24-exclusive.ts",
     "scrape:tourism": "npx tsx scripts/scrape-visitkorea-expanded.ts",
+    "scrape:coex": "npx tsx scripts/scrape-coex.ts",
     "enrich:myrealtrip": "node scripts/enrich-myrealtrip-details.mjs",
     "scrape:sssd": "npx tsx scripts/scrape-sssd.ts",
     "validate:images": "npx tsx scripts/validate-images.ts",
