@@ -88,10 +88,11 @@ function getCalendarRegionId(value?: string | null): CalendarRegionId {
 }
 
 const GENRE_PRIORITY: Record<string, number> = {
-    classic_tradition: 10,
-    musical: 9,
+    movie: 11,
+    musical: 10,
+    concert: 9,
     play: 8,
-    concert: 7,
+    classic_tradition: 7,
     exhibition: 6,
     museum: 5,
     activity: 4,
