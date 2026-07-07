@@ -174,7 +174,7 @@ export default function PerformanceList({
             isHeroFilterExpanded ||
             activeBottomMenu ||
             activeOverlay ||
-            viewMode === 'likes-venue'
+            viewMode === 'likes-perf'
         ) {
             setShouldLoadVenueData(true);
         }

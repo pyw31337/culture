@@ -132,7 +132,13 @@ export const LikedSections = ({
                                                 >
                                                     <div className="aspect-[3/4] rounded-lg overflow-hidden bg-gray-800 light:bg-gray-200 relative">
                                                         <ImageWithFallback
-                                                            src={perf.image || perf.posterUrl || ''}
+                                                            src={perf.image || perf.poster || ''}
+                                                            backupSrc={perf.backupPoster || perf.posterUrl}
+                                                            placeholderInput={{
+                                                                title: perf.title,
+                                                                genre: perf.genre,
+                                                                matchLabel: perf.homeTeam && perf.awayTeam ? `${perf.homeTeam} vs ${perf.awayTeam}` : null,
+                                                            }}
                                                             alt={perf.title}
                                                             fill
                                                             className="w-full h-full object-cover group-hover/venue:scale-105 transition-transform duration-300"
