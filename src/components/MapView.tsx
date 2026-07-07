@@ -4,7 +4,7 @@ import { Suspense, useEffect, useRef, useState, useCallback, useMemo } from 'rea
 import { GENRES, GENRE_STYLES, SPORTS_GENRES } from '@/lib/constants';
 import { getDistanceFromLatLonInKm } from '@/lib/utils';
 import { clsx } from 'clsx';
-import { Performance } from '@/types';
+import { Performance, FavoriteVenuePreference } from '@/types';
 import { X, Heart, RotateCw, Plus, Minus, ExternalLink, Locate, Filter, CloudSun, Calendar, Droplets, Navigation } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import SearchParamsBridge from './SearchParamsBridge';
@@ -225,6 +225,8 @@ interface MapViewProps {
     lastUpdated: string;
     embeddedSearchParams?: string;
     onClose?: () => void;
+    favoriteVenues?: FavoriteVenuePreference[];
+    onToggleFavoriteVenue?: (venue: FavoriteVenuePreference) => void;
 }
 
 export default function MapView({
@@ -235,6 +237,8 @@ export default function MapView({
     lastUpdated,
     embeddedSearchParams,
     onClose,
+    favoriteVenues: propFavoriteVenues,
+    onToggleFavoriteVenue: propOnToggleFavoriteVenue,
 }: MapViewProps) {
     const router = useRouter();
     // searchParams is populated by <SearchParamsBridge> after mount. Initial
@@ -382,7 +386,9 @@ export default function MapView({
     }, [availableGenres]);
 
     // Self-contained user preferences
-    const { favoriteVenues, toggleFavoriteVenue } = useUserPreferences();
+    const { favoriteVenues: localFavoriteVenues, toggleFavoriteVenue: localToggleFavoriteVenue } = useUserPreferences();
+    const favoriteVenues = propFavoriteVenues !== undefined ? propFavoriteVenues : localFavoriteVenues;
+    const toggleFavoriteVenue = propOnToggleFavoriteVenue !== undefined ? propOnToggleFavoriteVenue : localToggleFavoriteVenue;
 
     useEffect(() => {
         const requestedGenre = searchParams.get('genre');
@@ -418,6 +424,22 @@ export default function MapView({
     const [mapInstance, setMapInstance] = useState<KakaoMap | null>(null);
     const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
     const [visibleVenues, setVisibleVenues] = useState<VenueGroup[]>([]);
+
+    useEffect(() => {
+        if (!selectedVenue || !scrollRef.current) return;
+        const container = scrollRef.current;
+        const cardElement = container.querySelector(`[data-group-key="${selectedVenue}"]`) as HTMLElement;
+        if (cardElement) {
+            const containerWidth = container.clientWidth;
+            const cardWidth = cardElement.clientWidth;
+            const cardLeft = cardElement.offsetLeft;
+            const targetScrollLeft = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+            container.scrollTo({
+                left: targetScrollLeft,
+                behavior: 'smooth'
+            });
+        }
+    }, [selectedVenue]);
     const [renderedMarkerVenues, setRenderedMarkerVenues] = useState<VenueGroup[]>([]);
     const [showSearchHereBtn, setShowSearchHereBtn] = useState(false);
     const [isMapReady, setIsMapReady] = useState(false);
@@ -979,6 +1001,16 @@ export default function MapView({
     const [popupContainerRef, setPopupContainerRef] = useState<HTMLDivElement | null>(null);
     const [perfVisibleCount, setPerfVisibleCount] = useState(30);
     const selectedVenueData = selectedVenue ? allVenueGroups.current[selectedVenue] : null;
+    const isPopupFavorite = useMemo(() => {
+        if (!selectedVenue || !selectedVenueData) return false;
+        return favoriteVenues.some((favoriteVenue) =>
+            favoriteVenueMatchesIdentity(favoriteVenue, {
+                venueName: selectedVenueData.venueName,
+                venueKey: selectedVenueData.venueKey,
+                locationKey: selectedVenue,
+            })
+        );
+    }, [selectedVenue, selectedVenueData, favoriteVenues]);
 
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;
@@ -1421,6 +1453,23 @@ export default function MapView({
                                             <h3 className="text-gray-900 dark:text-white font-bold text-base leading-tight truncate">{selectedVenueData.venueName}</h3>
                                             <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{selectedVenueData.address || '주소 정보 없음'}</p>
                                         </div>
+                                        <button onClick={(e) => {
+                                            e.stopPropagation();
+                                            toggleFavoriteVenue(createFavoriteVenuePreference({
+                                                venueName: selectedVenueData.venueName,
+                                                venueKey: selectedVenueData.venueKey,
+                                                locationKey: selectedVenue,
+                                                address: selectedVenueData.address,
+                                                lat: selectedVenueData.lat,
+                                                lng: selectedVenueData.lng,
+                                            }));
+                                        }}
+                                            className={clsx("p-1 rounded-full transition-colors ml-2 shrink-0",
+                                                isPopupFavorite ? "hover:bg-pink-100 dark:hover:bg-pink-900/50"
+                                                    : "hover:bg-gray-100 dark:hover:bg-gray-700")}
+                                        >
+                                            <Heart className={clsx("w-4 h-4", isPopupFavorite ? 'text-pink-500 fill-pink-500' : 'text-gray-400')} />
+                                        </button>
                                         <button onClick={() => setSelectedVenue(null)} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ml-2 shrink-0">
                                             <X size={16} />
                                         </button>
@@ -1553,6 +1602,7 @@ export default function MapView({
 
                                 return (
                                     <div role="button" tabIndex={0} key={v.groupKey}
+                                        data-group-key={v.groupKey}
                                         onClick={(e) => {
                                             if (isDragClicked.current) { e.preventDefault(); return; }
                                             selectVenue();

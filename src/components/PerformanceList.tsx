@@ -1033,6 +1033,8 @@ export default function PerformanceList({
                     lastUpdated={lastUpdated}
                     embeddedSearchParams={overlaySearchParams}
                     onClose={handleCloseOverlay}
+                    favoriteVenues={favoriteVenues}
+                    onToggleFavoriteVenue={toggleFavoriteVenue}
                 />
             )}
             {activeOverlay === 'calendar' && (
