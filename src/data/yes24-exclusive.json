@@ -322,75 +322,6 @@
     "category": "독점공연"
   },
   {
-    "id": "yes24_58112",
-    "title": "포레스텔라 정규 4집 투어 콘서트 [THE LEGACY: SYMPHONY] In Incheon",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260422/20260422-58112.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "송도컨벤시아 4홀",
-    "link": "https://ticket.yes24.com/Perf/58112",
-    "genre": "concert",
-    "region": "서울",
-    "price": "R석 154,000원, S석 132,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 팬클럽 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매 (선예매 매수 포함)\n※ 일괄배송: 5월 15일(금)\n※ 일반예매 오픈 준비로 인해 5/12(화) 오후 5시 ~ 7시 59분까지 취소가 불가합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_포레스텔라_정규_4집_투어_콘서트_THE_LEGACY_SYMPHONY_In_Incheon.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260422/20260422-58112.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "154,000원"
-      },
-      {
-        "label": "S석",
-        "price": "132,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 105,600원 ~ 최고가 123,200원\n할인정보\n[고객센터 전화예매시 1544-6399]\n※ 장애인(1~3급(중증)/동반1인) 20%할인\n※ 장애인(4~6급(경증)/본인만) 20%할인\n※ 국가유공자(본인만) 20%할인\n* 당일 증빙자료 미지참 시 차액지불",
-    "ageRating": "만 8세 이상",
-    "runningTime": "총 150분 (인터미션 20분 포함)",
-    "performanceTime": "2026년 6월 6일(토) 오후 6시\n2026년 6월 7일(일) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "㈜비트인터렉티브",
-    "organizer": "㈜스프링이엔티",
-    "contact": "",
-    "dataCollectedAt": "2026-05-21T13:24:44.415Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_04.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_05.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_06.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_07.jpg"
-    ]
-  },
-  {
-    "id": "yes24_58406",
-    "title": "온앤오프 팬미팅 IN SEOUL",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260511/20260511-58406.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "성암아트홀",
-    "link": "https://ticket.yes24.com/Perf/58406",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_온앤오프_팬미팅_IN_SEOUL.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260511/20260511-58406.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:56:37.134Z",
-    "synopsisImages": []
-  },
-  {
     "id": "yes24_58337",
     "title": "[화성] 2026 이승철 40주년 콘서트 [THE VOICE: LEE SEUNG CHUL]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260504/20260504-58337.jpg/dims/quality/70/",
@@ -525,32 +456,6 @@
     "synopsisImages": []
   },
   {
-    "id": "yes24_58120",
-    "title": "[서울] 1등들 전국투어 콘서트",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260415/20260415-58120.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "올림픽공원 內 올림픽홀",
-    "link": "https://ticket.yes24.com/Perf/58120",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_서울_1등들_전국투어_콘서트.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260415/20260415-58120.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:55:32.917Z",
-    "synopsisImages": []
-  },
-  {
     "id": "yes24_58336",
     "title": "[청주] 2026 이승철 40주년 콘서트 [THE VOICE: LEE SEUNG CHUL]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260521/20260521-58336.jpg/dims/quality/70/",
@@ -590,32 +495,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260516/58336_04.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202605/20260516/58336_05.jpg"
     ]
-  },
-  {
-    "id": "yes24_58347",
-    "title": "[부산] 야외광장 [금정 빈백 콘서트]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58347.jpg/dims/quality/70/",
-    "date": "2026.06.05 ~ 2026.06.06",
-    "venue": "금정문화회관 야외광장",
-    "link": "https://ticket.yes24.com/Perf/58347",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_부산_야외광장_금정_빈백_콘서트.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58347.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:56:05.221Z",
-    "synopsisImages": []
   },
   {
     "id": "yes24_58185",
@@ -705,110 +584,6 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202604/20260406/26040609.jpg"
     ]
-  },
-  {
-    "id": "yes24_58344",
-    "title": "2026 소유 단독콘서트 [Off Hours]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58344.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/58344",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_2026_소유_단독콘서트_Off_Hours.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58344.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:56:17.165Z",
-    "synopsisImages": []
-  },
-  {
-    "id": "yes24_57976",
-    "title": "BELLEFORET WEEK - MY VOLUME",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260407/20260407-57976.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "충북 증평군 벨포레리조트 모토아레나 패독",
-    "link": "https://ticket.yes24.com/Perf/57976",
-    "genre": "concert",
-    "region": "서울",
-    "price": "1일권 90,000원",
-    "description": "",
-    "image": "/images/posters/concert/yes24_BELLEFORET_WEEK_MY_VOLUME.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260407/20260407-57976.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_57734",
-    "title": "[전주] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57734.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "전북대학교 삼성문화회관",
-    "link": "https://ticket.yes24.com/Perf/57734",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 165,000원, R석 143,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 10매\n※ 일괄배송: 5월 11일(월)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_전주_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57734.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 128,700원 ~ 최고가 148,500원\n할인정보\n[고객센터 전화예매시 1544-6399]\n-국가유공자(본인만) 10%\n-장애인(1~3급,중증/동반1인) 10%\n-장애인(4~6급,경증/본인만) 10%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 6월 6일(토) 오후 5시\n2026년 6월 7일(일) 오후 4시",
-    "reservationInfo": "현장 수령 또는 배송(등기우편)",
-    "host": "(주)그레이스이엔엠",
-    "organizer": "㈜ 쇼7",
-    "contact": "",
-    "dataCollectedAt": "2026-05-21T13:27:58.759Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260324/26032402.jpg"
-    ]
-  },
-  {
-    "id": "yes24_58295",
-    "title": "수학여행에서 친하지 않은 그룹에 들어 갔습니다. (부제 :  A School Trip to Korea)",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260429/20260429-58295.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "광운대학교 동해문화예술관 소극장",
-    "link": "https://ticket.yes24.com/Perf/58295",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_수학여행에서_친하지_않은_그룹에_들어_갔습니다_부제_A_School_Trip_to_Korea.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260429/20260429-58295.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:56:33.945Z",
-    "synopsisImages": []
   },
   {
     "id": "yes24_57907",
@@ -1930,21 +1705,6 @@
     ]
   },
   {
-    "id": "yes24_58435",
-    "title": "[부산] 2026 NAC 렉처콘서트 - BSO 솔로이스츠, 실내악 ① 현악6중주 ＆ 현악8중주",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58435_1.jpg/dims/quality/70/",
-    "date": "2026.06.07 ~ 2026.06.07",
-    "venue": "낙동아트센터 콘서트홀",
-    "link": "https://ticket.yes24.com/Perf/58435",
-    "genre": "classic",
-    "region": "서울",
-    "price": "R석 20,000원, S석 10,000원",
-    "description": "",
-    "image": "/images/posters/classic/yes24_부산_2026_NAC_렉처콘서트_BSO_솔로이스츠_실내악_현악6중주_현악8중주.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58435_1.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_58438",
     "title": "[부산] 2026 NAC 렉처콘서트 - BSO 솔로이스츠, 실내악 ② 목관5중주 ＆ 금관5중주",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58438.jpg/dims/quality/70/",
@@ -2132,41 +1892,6 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58266_dc0518.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58266_2.jpg"
-    ]
-  },
-  {
-    "id": "yes24_58361",
-    "title": "[고양] 2026 가족뮤지컬 [잠자는 숲속의 공주]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58361.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "현대백화점 킨텍스점 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58361",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 30,000원",
-    "description": "■ 공연당일 한시간전 온라인 판매 마감후 현장에서 한시간 전부터 나머지 판매 합니다 ■\n- 11시 공연은 백화점 오픈시간으로 인하여 10시30분 매표소 오픈되오니 참고 바랍니다\n- 공연이 시작된 이후에는 입장이 제한될 수 있으며, 다른 관객의 관람에 방해되지 않도록 지정된 입장 시간을 통해 본인 좌석이 아닌 곳으로 안내받으실 수 있습니다.\n- 가열~나열은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 공연장 주변 교통이 혼잡하며, 주말엔 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.\n- 객석 맨앞 두줄은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 예매티켓은 공연당일 현장 수령만 가능하며, 티켓을 분실하실 경우 재발권이 불가하오니 유의해주시기 바랍니다.(당일 현장 판매는 공연시작 30분 전부터 가능하십니다)\n-본 공연장은 어린이용 보조방석이 구비되어 있지 않습니다.(필요하신분은 개인지참하여 주시기 바랍니다.)\n-24개월 이상 표를 구매합니다.\n-공연중에는 사진촬영 ,동영상촬영,음식물 반입이 금지되어있습니다.\n-본 공연은 가족 모두가 함께 관람 할 수 있습니다.(24개월 미만 부모님 동반입장 가능-증빙서류지참)\n-1인 1티켓적용 (본 공연은 부모님과 자녀 모두 티켓을 소지하셔야 합니다.)\n-미취학아동 단독입장 불가 (본공연은 안전한 관람을 위하여 미취학 아동은 성인보호자와 동반 입장을 권장합니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.\n- 주차는 현장매표소에서 공연관람전 또는 공연관람후 주차 패드로 직접등록 해주셔야 하며, 무료 3시간 등록 가능하십니다.(꼭!! 공연관람전,후 등록하시고 가셔야 합니다)\n- 공연장 주변 교통이 혼잡하며, 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.",
-    "image": "/images/posters/kids/yes24_고양_2026_가족뮤지컬_잠자는_숲속의_공주.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58361.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 15,000원\n할인정보\n기본할인 15,000원 / 상시할인\n카톡채널추가할인 10,000원 / 채널명 : 조이컬쳐(고양) 카톡채널 추가시할인(미증빙시 차액지불)\n현대백화점카드 또는 h.point 회원할인 10,000원 / 티켓발권시 현장증빙(미증빙시 차액지불)\n맘맘멤버쉽회원할인 10,000원 / 현장티켓수령시 회원증빙필(미증빙시 차액지불)",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 6월 6일(토) ~ 7일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C컴퍼니, 컬처마켓",
-    "organizer": "㈜조이컬쳐",
-    "contact": "070-7807-0701",
-    "dataCollectedAt": "2026-05-21T13:36:22.673Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202507/20250730/54743.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202509/20250922/%EC%A1%B0%EC%9D%B4%EC%BB%AC%EC%B3%90(%EA%B3%A0%EC%96%91)%EC%B1%84%EB%84%90%EC%B6%94%EA%B0%80%EB%B0%A9%EB%B2%95_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/잠자는-숲속의-공주-상세-페이지.jpg"
     ]
   },
   {
@@ -2702,49 +2427,6 @@
     "dataCollectedAt": "2026-05-21T13:24:18.094Z"
   },
   {
-    "id": "yes24_58112",
-    "title": "포레스텔라 정규 4집 투어 콘서트 [THE LEGACY: SYMPHONY] In Incheon",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260422/20260422-58112.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "송도컨벤시아 4홀",
-    "link": "https://ticket.yes24.com/Perf/58112",
-    "genre": "concert",
-    "region": "서울",
-    "price": "R석 154,000원, S석 132,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 팬클럽 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매 (선예매 매수 포함)\n※ 일괄배송: 5월 15일(금)\n※ 일반예매 오픈 준비로 인해 5/12(화) 오후 5시 ~ 7시 59분까지 취소가 불가합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_포레스텔라_정규_4집_투어_콘서트_THE_LEGACY_SYMPHONY_In_Incheon.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260422/20260422-58112.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "154,000원"
-      },
-      {
-        "label": "S석",
-        "price": "132,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 105,600원 ~ 최고가 123,200원\n할인정보\n[고객센터 전화예매시 1544-6399]\n※ 장애인(1~3급(중증)/동반1인) 20%할인\n※ 장애인(4~6급(경증)/본인만) 20%할인\n※ 국가유공자(본인만) 20%할인\n* 당일 증빙자료 미지참 시 차액지불",
-    "ageRating": "만 8세 이상",
-    "runningTime": "총 150분 (인터미션 20분 포함)",
-    "performanceTime": "2026년 6월 6일(토) 오후 6시\n2026년 6월 7일(일) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "㈜비트인터렉티브",
-    "organizer": "㈜스프링이엔티",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_04.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_05.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_06.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_07.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:24:44.415Z"
-  },
-  {
     "id": "yes24_58277",
     "title": "[인천] 2026 강문경 콘서트 [The Holic：더 홀릭]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260428/20260428-58277.jpg/dims/quality/70/",
@@ -2820,45 +2502,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260513/58180k_03.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:25:27.868Z"
-  },
-  {
-    "id": "yes24_58120",
-    "title": "[서울] 1등들 전국투어 콘서트",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260415/20260415-58120.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "올림픽공원 內 올림픽홀",
-    "link": "https://ticket.yes24.com/Perf/58120",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 143,000원, R석 121,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 4매\n※ 일괄배송: 5월 13일(수)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_서울_1등들_전국투어_콘서트.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260415/20260415-58120.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "143,000원"
-      },
-      {
-        "label": "R석",
-        "price": "121,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 6월 6일(토) 오후 1시, 6시\n2026년 6월 7일(일) 오후 1시, 6시",
-    "reservationInfo": "현장 수령 또는 배송(등기우편)",
-    "host": "㈜대박기획",
-    "organizer": "㈜대박기획,㈜고엔터테인먼트",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58120_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58120_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58120_03.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:25:51.319Z"
   },
   {
     "id": "yes24_57563",
@@ -3215,69 +2858,6 @@
     "dataCollectedAt": "2026-05-21T13:27:41.144Z"
   },
   {
-    "id": "yes24_58512",
-    "title": "잭킹콩 〈HAPPY JKC DAY〉 TALK SESSION",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58512.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "KT&G 상상마당 춘천 퍼포먼스룸",
-    "link": "https://ticket.yes24.com/Perf/58512",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "description": "",
-    "dataCollectedAt": "2026-06-04T08:56:39.885Z",
-    "image": "/images/posters/concert/yes24_잭킹콩_HAPPY_JKC_DAY_TALK_SESSION.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58512.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "synopsisImages": []
-  },
-  {
-    "id": "yes24_57734",
-    "title": "[전주] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57734.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "전북대학교 삼성문화회관",
-    "link": "https://ticket.yes24.com/Perf/57734",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 165,000원, R석 143,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 10매\n※ 일괄배송: 5월 11일(월)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_전주_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57734.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 128,700원 ~ 최고가 148,500원\n할인정보\n[고객센터 전화예매시 1544-6399]\n-국가유공자(본인만) 10%\n-장애인(1~3급,중증/동반1인) 10%\n-장애인(4~6급,경증/본인만) 10%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 6월 6일(토) 오후 5시\n2026년 6월 7일(일) 오후 4시",
-    "reservationInfo": "현장 수령 또는 배송(등기우편)",
-    "host": "(주)그레이스이엔엠",
-    "organizer": "㈜ 쇼7",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260324/26032402.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:27:58.759Z"
-  },
-  {
     "id": "yes24_58079",
     "title": "back number “Grateful Yesterdays Tour 2026” in Seoul",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260416/20260416-58079.jpg/dims/quality/70/",
@@ -3324,54 +2904,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202604/20260421/58079_3_02.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:28:29.626Z"
-  },
-  {
-    "id": "yes24_58344",
-    "title": "2026 소유 단독콘서트 [Off Hours]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58344.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/58344",
-    "genre": "concert",
-    "region": "서울",
-    "price": "1층 A구역 스탠딩 99,000원, 1층 B구역 좌석 99,000원, 1층 C구역 좌석 99,000원, 2층 좌석 99,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 일괄배송: 5월 15일(금)\n※ 판매/취소마감시간: 공연 전일 오전 11시\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_2026_소유_단독콘서트_Off_Hours.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58344.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "1층 A구역 스탠딩",
-        "price": "99,000원"
-      },
-      {
-        "label": "1층 B구역 좌석",
-        "price": "99,000원"
-      },
-      {
-        "label": "1층 C구역 좌석",
-        "price": "99,000원"
-      },
-      {
-        "label": "2층 좌석",
-        "price": "99,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "12세 이상",
-    "runningTime": "90분",
-    "performanceTime": "2026년 6월 6일(토) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "매직스트로베리사운드",
-    "organizer": "주식회사 원더로크",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:28:34.094Z"
   },
   {
     "id": "yes24_58335",
@@ -3560,43 +3092,6 @@
     "dataCollectedAt": "2026-05-21T13:28:51.211Z"
   },
   {
-    "id": "yes24_58295",
-    "title": "수학여행에서 친하지 않은 그룹에 들어 갔습니다. (부제 :  A School Trip to Korea)",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260429/20260429-58295.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "광운대학교 동해문화예술관 소극장",
-    "link": "https://ticket.yes24.com/Perf/58295",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 280,000원, A석 180,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 2매\n※ 일괄배송: 5월 15일(금)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_수학여행에서_친하지_않은_그룹에_들어_갔습니다_부제_A_School_Trip_to_Korea.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260429/20260429-58295.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "280,000원"
-      },
-      {
-        "label": "A석",
-        "price": "180,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "7세이상",
-    "runningTime": "90분",
-    "performanceTime": "2026년 6월 6일(토) 오후 1시, 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: P'En",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260429/58295K.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:30:48.303Z"
-  },
-  {
     "id": "yes24_57905",
     "title": "[대구] 더 보컬",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260406/20260406-57905.jpg/dims/quality/70/",
@@ -3635,40 +3130,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260520/57905K_04.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:29:22.222Z"
-  },
-  {
-    "id": "yes24_58347",
-    "title": "[부산] 야외광장 [금정 빈백 콘서트]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58347.jpg/dims/quality/70/",
-    "date": "2026.06.05 ~ 2026.06.06",
-    "venue": "금정문화회관 야외광장",
-    "link": "https://ticket.yes24.com/Perf/58347",
-    "genre": "concert",
-    "region": "서울",
-    "price": "전석(음료포함) 10,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 우천시 공연 장소는 은빛샘홀로 대체되며, 사전 예매내역을 반영하여 임의로 배정될 예정입니다.\n※ 5세 이상부터 1인 1매 티켓 구매 필수\n※ 야외공연 특성상 안전사고 예방을 위해 어린이 동반객은 안전에 유의바랍니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_부산_야외광장_금정_빈백_콘서트.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58347.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석(음료포함)",
-        "price": "10,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "전체관람가",
-    "runningTime": "70분",
-    "performanceTime": "2026년 6월 5일(금) 오후 7시\n2026년 6월 6일(토) 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "금정문화회관",
-    "organizer": "금정문화회관",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/583471.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260512/0606.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:29:28.334Z"
   },
   {
     "id": "yes24_57789",
@@ -4087,45 +3548,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260519/58534_01_1.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202605/20260519/58534_02_1.jpg"
     ]
-  },
-  {
-    "id": "yes24_58406",
-    "title": "온앤오프 팬미팅 IN SEOUL",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260511/20260511-58406.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "성암아트홀",
-    "link": "https://ticket.yes24.com/Perf/58406",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 129,000원, 일반석 99,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 1매\n※ 판매 기간 : 5월 13일(수) 20:00 ~ 6월 5일(금) 17:00 ※\n- 잔여 좌석에 한하여 현장 구매가 가능합니다.\n- 온라인 판매 매진 시 현장 판매는 진행되지 않습니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_온앤오프_팬미팅_IN_SEOUL.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260511/20260511-58406.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "129,000원"
-      },
-      {
-        "label": "일반석",
-        "price": "99,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "15세 이상",
-    "runningTime": "총 150분 (인터미션 20분)",
-    "performanceTime": "2026년 6월 6일(토) 오후 1시, 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "석필름",
-    "organizer": "이브 온 스튜디오",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260511/58406_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260511/58406_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260511/58406_03.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:30:58.844Z"
   },
   {
     "id": "yes24_58504",
@@ -5071,21 +4493,6 @@
     "dataCollectedAt": "2026-05-21T13:34:10.893Z"
   },
   {
-    "id": "yes24_58435",
-    "title": "[부산] 2026 NAC 렉처콘서트 - BSO 솔로이스츠, 실내악 ① 현악6중주 ＆ 현악8중주",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58435_1.jpg/dims/quality/70/",
-    "date": "2026.06.07 ~ 2026.06.07",
-    "venue": "낙동아트센터 콘서트홀",
-    "link": "https://ticket.yes24.com/Perf/58435",
-    "genre": "classic",
-    "region": "서울",
-    "price": "R석 20,000원, S석 10,000원",
-    "description": "",
-    "image": "/images/posters/classic/yes24_부산_2026_NAC_렉처콘서트_BSO_솔로이스츠_실내악_현악6중주_현악8중주.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58435_1.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_58450",
     "title": "[부산] [마티네 콘서트] 성악 앙상블 시리즈 Ⅲ 오네스토 앙상블의 ‘힐링 뮤직브런치’",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260513/20260513-58450.jpg/dims/quality/70/",
@@ -5299,41 +4706,6 @@
     "dataCollectedAt": "2026-05-21T13:36:25.786Z"
   },
   {
-    "id": "yes24_58361",
-    "title": "[고양] 2026 가족뮤지컬 [잠자는 숲속의 공주]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58361.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "현대백화점 킨텍스점 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58361",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 30,000원",
-    "description": "■ 공연당일 한시간전 온라인 판매 마감후 현장에서 한시간 전부터 나머지 판매 합니다 ■\n- 11시 공연은 백화점 오픈시간으로 인하여 10시30분 매표소 오픈되오니 참고 바랍니다\n- 공연이 시작된 이후에는 입장이 제한될 수 있으며, 다른 관객의 관람에 방해되지 않도록 지정된 입장 시간을 통해 본인 좌석이 아닌 곳으로 안내받으실 수 있습니다.\n- 가열~나열은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 공연장 주변 교통이 혼잡하며, 주말엔 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.\n- 객석 맨앞 두줄은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 예매티켓은 공연당일 현장 수령만 가능하며, 티켓을 분실하실 경우 재발권이 불가하오니 유의해주시기 바랍니다.(당일 현장 판매는 공연시작 30분 전부터 가능하십니다)\n-본 공연장은 어린이용 보조방석이 구비되어 있지 않습니다.(필요하신분은 개인지참하여 주시기 바랍니다.)\n-24개월 이상 표를 구매합니다.\n-공연중에는 사진촬영 ,동영상촬영,음식물 반입이 금지되어있습니다.\n-본 공연은 가족 모두가 함께 관람 할 수 있습니다.(24개월 미만 부모님 동반입장 가능-증빙서류지참)\n-1인 1티켓적용 (본 공연은 부모님과 자녀 모두 티켓을 소지하셔야 합니다.)\n-미취학아동 단독입장 불가 (본공연은 안전한 관람을 위하여 미취학 아동은 성인보호자와 동반 입장을 권장합니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.\n- 주차는 현장매표소에서 공연관람전 또는 공연관람후 주차 패드로 직접등록 해주셔야 하며, 무료 3시간 등록 가능하십니다.(꼭!! 공연관람전,후 등록하시고 가셔야 합니다)\n- 공연장 주변 교통이 혼잡하며, 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.",
-    "image": "/images/posters/kids/yes24_고양_2026_가족뮤지컬_잠자는_숲속의_공주.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58361.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 15,000원\n할인정보\n기본할인 15,000원 / 상시할인\n카톡채널추가할인 10,000원 / 채널명 : 조이컬쳐(고양) 카톡채널 추가시할인(미증빙시 차액지불)\n현대백화점카드 또는 h.point 회원할인 10,000원 / 티켓발권시 현장증빙(미증빙시 차액지불)\n맘맘멤버쉽회원할인 10,000원 / 현장티켓수령시 회원증빙필(미증빙시 차액지불)",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 6월 6일(토) ~ 7일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C컴퍼니, 컬처마켓",
-    "organizer": "㈜조이컬쳐",
-    "contact": "070-7807-0701",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202507/20250730/54743.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202509/20250922/%EC%A1%B0%EC%9D%B4%EC%BB%AC%EC%B3%90(%EA%B3%A0%EC%96%91)%EC%B1%84%EB%84%90%EC%B6%94%EA%B0%80%EB%B0%A9%EB%B2%95_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/잠자는-숲속의-공주-상세-페이지.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:36:22.673Z"
-  },
-  {
     "id": "yes24_58362",
     "title": "[고양] 2026 가족뮤지컬 [피터팬]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
@@ -5529,49 +4901,6 @@
     "dataCollectedAt": "2026-05-21T13:24:30.960Z"
   },
   {
-    "id": "yes24_58112",
-    "title": "포레스텔라 정규 4집 투어 콘서트 [THE LEGACY: SYMPHONY] In Incheon",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260422/20260422-58112.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "송도컨벤시아 4홀",
-    "link": "https://ticket.yes24.com/Perf/58112",
-    "genre": "concert",
-    "region": "서울",
-    "price": "R석 154,000원, S석 132,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 팬클럽 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매 (선예매 매수 포함)\n※ 일괄배송: 5월 15일(금)\n※ 일반예매 오픈 준비로 인해 5/12(화) 오후 5시 ~ 7시 59분까지 취소가 불가합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_포레스텔라_정규_4집_투어_콘서트_THE_LEGACY_SYMPHONY_In_Incheon.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260422/20260422-58112.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "154,000원"
-      },
-      {
-        "label": "S석",
-        "price": "132,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 105,600원 ~ 최고가 123,200원\n할인정보\n[고객센터 전화예매시 1544-6399]\n※ 장애인(1~3급(중증)/동반1인) 20%할인\n※ 장애인(4~6급(경증)/본인만) 20%할인\n※ 국가유공자(본인만) 20%할인\n* 당일 증빙자료 미지참 시 차액지불",
-    "ageRating": "만 8세 이상",
-    "runningTime": "총 150분 (인터미션 20분 포함)",
-    "performanceTime": "2026년 6월 6일(토) 오후 6시\n2026년 6월 7일(일) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "㈜비트인터렉티브",
-    "organizer": "㈜스프링이엔티",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_04.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_05.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_06.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260422/58112_07.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:24:44.415Z"
-  },
-  {
     "id": "yes24_57563",
     "title": "King Gnu CEN+RAL Tour 2026 in Seoul",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260312/20260312-57563.jpg/dims/quality/70/",
@@ -5654,45 +4983,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260513/58180k_03.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:25:27.868Z"
-  },
-  {
-    "id": "yes24_58120",
-    "title": "[서울] 1등들 전국투어 콘서트",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260415/20260415-58120.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "올림픽공원 內 올림픽홀",
-    "link": "https://ticket.yes24.com/Perf/58120",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 143,000원, R석 121,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 4매\n※ 일괄배송: 5월 13일(수)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_서울_1등들_전국투어_콘서트.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260415/20260415-58120.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "143,000원"
-      },
-      {
-        "label": "R석",
-        "price": "121,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 6월 6일(토) 오후 1시, 6시\n2026년 6월 7일(일) 오후 1시, 6시",
-    "reservationInfo": "현장 수령 또는 배송(등기우편)",
-    "host": "㈜대박기획",
-    "organizer": "㈜대박기획,㈜고엔터테인먼트",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58120_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58120_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260430/58120_03.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:25:51.319Z"
   },
   {
     "id": "yes24_58336",
@@ -6004,78 +5294,6 @@
     "dataCollectedAt": "2026-05-21T13:28:03.758Z"
   },
   {
-    "id": "yes24_57734",
-    "title": "[전주] 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57734.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "전북대학교 삼성문화회관",
-    "link": "https://ticket.yes24.com/Perf/57734",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 165,000원, R석 143,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 10매\n※ 일괄배송: 5월 11일(월)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_전주_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260324/20260324-57734.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 128,700원 ~ 최고가 148,500원\n할인정보\n[고객센터 전화예매시 1544-6399]\n-국가유공자(본인만) 10%\n-장애인(1~3급,중증/동반1인) 10%\n-장애인(4~6급,경증/본인만) 10%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "8세 이상 관람가",
-    "runningTime": "총 120분",
-    "performanceTime": "2026년 6월 6일(토) 오후 5시\n2026년 6월 7일(일) 오후 4시",
-    "reservationInfo": "현장 수령 또는 배송(등기우편)",
-    "host": "(주)그레이스이엔엠",
-    "organizer": "㈜ 쇼7",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260324/26032402.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:27:58.759Z"
-  },
-  {
-    "id": "yes24_58512",
-    "title": "잭킹콩 〈HAPPY JKC DAY〉 TALK SESSION",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58512.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "KT&G 상상마당 춘천 퍼포먼스룸",
-    "link": "https://ticket.yes24.com/Perf/58512",
-    "genre": "concert",
-    "region": "서울",
-    "price": "전석 25,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "25,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "전체관람가",
-    "runningTime": "60분",
-    "performanceTime": "2026년 6월 6일(토) 오후 7시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: KT&G 상상마당 춘천, 앳시 콜렉티브",
-    "organizer": "",
-    "contact": "",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58512_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58512_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58512_03.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:28:10.176Z",
-    "image": "/images/posters/concert/yes24_잭킹콩_HAPPY_JKC_DAY_TALK_SESSION.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58512.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_58546",
     "title": "[부천] 2026 이승철 40주년 콘서트 [THE VOICE: LEE SEUNG CHUL]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260520/20260520-58546.jpg/dims/quality/70/",
@@ -6167,54 +5385,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202604/20260421/58079_3_02.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:28:29.626Z"
-  },
-  {
-    "id": "yes24_58344",
-    "title": "2026 소유 단독콘서트 [Off Hours]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58344.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/58344",
-    "genre": "concert",
-    "region": "서울",
-    "price": "1층 A구역 스탠딩 99,000원, 1층 B구역 좌석 99,000원, 1층 C구역 좌석 99,000원, 2층 좌석 99,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 일괄배송: 5월 15일(금)\n※ 판매/취소마감시간: 공연 전일 오전 11시\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_2026_소유_단독콘서트_Off_Hours.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58344.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "1층 A구역 스탠딩",
-        "price": "99,000원"
-      },
-      {
-        "label": "1층 B구역 좌석",
-        "price": "99,000원"
-      },
-      {
-        "label": "1층 C구역 좌석",
-        "price": "99,000원"
-      },
-      {
-        "label": "2층 좌석",
-        "price": "99,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "12세 이상",
-    "runningTime": "90분",
-    "performanceTime": "2026년 6월 6일(토) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "매직스트로베리사운드",
-    "organizer": "주식회사 원더로크",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/58344_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:28:34.094Z"
   },
   {
     "id": "yes24_57907",
@@ -6406,40 +5576,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260520/57905K_04.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:29:22.222Z"
-  },
-  {
-    "id": "yes24_58347",
-    "title": "[부산] 야외광장 [금정 빈백 콘서트]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58347.jpg/dims/quality/70/",
-    "date": "2026.06.05 ~ 2026.06.06",
-    "venue": "금정문화회관 야외광장",
-    "link": "https://ticket.yes24.com/Perf/58347",
-    "genre": "concert",
-    "region": "서울",
-    "price": "전석(음료포함) 10,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 우천시 공연 장소는 은빛샘홀로 대체되며, 사전 예매내역을 반영하여 임의로 배정될 예정입니다.\n※ 5세 이상부터 1인 1매 티켓 구매 필수\n※ 야외공연 특성상 안전사고 예방을 위해 어린이 동반객은 안전에 유의바랍니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_부산_야외광장_금정_빈백_콘서트.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58347.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석(음료포함)",
-        "price": "10,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "전체관람가",
-    "runningTime": "70분",
-    "performanceTime": "2026년 6월 5일(금) 오후 7시\n2026년 6월 6일(토) 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "금정문화회관",
-    "organizer": "금정문화회관",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/583471.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260512/0606.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:29:28.334Z"
   },
   {
     "id": "yes24_57789",
@@ -6777,43 +5913,6 @@
     "dataCollectedAt": "2026-05-21T13:30:36.509Z"
   },
   {
-    "id": "yes24_58295",
-    "title": "수학여행에서 친하지 않은 그룹에 들어 갔습니다. (부제 :  A School Trip to Korea)",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260429/20260429-58295.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "광운대학교 동해문화예술관 소극장",
-    "link": "https://ticket.yes24.com/Perf/58295",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 280,000원, A석 180,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 2매\n※ 일괄배송: 5월 15일(금)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_수학여행에서_친하지_않은_그룹에_들어_갔습니다_부제_A_School_Trip_to_Korea.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260429/20260429-58295.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "280,000원"
-      },
-      {
-        "label": "A석",
-        "price": "180,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "7세이상",
-    "runningTime": "90분",
-    "performanceTime": "2026년 6월 6일(토) 오후 1시, 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: P'En",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260429/58295K.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:30:48.303Z"
-  },
-  {
     "id": "yes24_58534",
     "title": "에즈라 콜렉티브 첫 단독 내한공연 Ezra Collective Live in Seoul",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260519/20260519-58534.jpg/dims/quality/70/",
@@ -6850,45 +5949,6 @@
     "image": "/images/posters/concert/yes24_에즈라_콜렉티브_첫_단독_내한공연_Ezra_Collective_Live_in_Seoul.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260519/20260519-58534.jpg/dims/quality/70/",
     "category": "독점공연"
-  },
-  {
-    "id": "yes24_58406",
-    "title": "온앤오프 팬미팅 IN SEOUL",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260511/20260511-58406.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.06",
-    "venue": "성암아트홀",
-    "link": "https://ticket.yes24.com/Perf/58406",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 129,000원, 일반석 99,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 1매\n※ 판매 기간 : 5월 13일(수) 20:00 ~ 6월 5일(금) 17:00 ※\n- 잔여 좌석에 한하여 현장 구매가 가능합니다.\n- 온라인 판매 매진 시 현장 판매는 진행되지 않습니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_온앤오프_팬미팅_IN_SEOUL.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260511/20260511-58406.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "129,000원"
-      },
-      {
-        "label": "일반석",
-        "price": "99,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "15세 이상",
-    "runningTime": "총 150분 (인터미션 20분)",
-    "performanceTime": "2026년 6월 6일(토) 오후 1시, 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "석필름",
-    "organizer": "이브 온 스튜디오",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260511/58406_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260511/58406_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260511/58406_03.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:30:58.844Z"
   },
   {
     "id": "yes24_58504",
@@ -8285,41 +7345,6 @@
     "dataCollectedAt": "2026-05-21T13:36:25.786Z"
   },
   {
-    "id": "yes24_58361",
-    "title": "[고양] 2026 가족뮤지컬 [잠자는 숲속의 공주]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58361.jpg/dims/quality/70/",
-    "date": "2026.06.06 ~ 2026.06.07",
-    "venue": "현대백화점 킨텍스점 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58361",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 30,000원",
-    "description": "■ 공연당일 한시간전 온라인 판매 마감후 현장에서 한시간 전부터 나머지 판매 합니다 ■\n- 11시 공연은 백화점 오픈시간으로 인하여 10시30분 매표소 오픈되오니 참고 바랍니다\n- 공연이 시작된 이후에는 입장이 제한될 수 있으며, 다른 관객의 관람에 방해되지 않도록 지정된 입장 시간을 통해 본인 좌석이 아닌 곳으로 안내받으실 수 있습니다.\n- 가열~나열은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 공연장 주변 교통이 혼잡하며, 주말엔 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.\n- 객석 맨앞 두줄은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 예매티켓은 공연당일 현장 수령만 가능하며, 티켓을 분실하실 경우 재발권이 불가하오니 유의해주시기 바랍니다.(당일 현장 판매는 공연시작 30분 전부터 가능하십니다)\n-본 공연장은 어린이용 보조방석이 구비되어 있지 않습니다.(필요하신분은 개인지참하여 주시기 바랍니다.)\n-24개월 이상 표를 구매합니다.\n-공연중에는 사진촬영 ,동영상촬영,음식물 반입이 금지되어있습니다.\n-본 공연은 가족 모두가 함께 관람 할 수 있습니다.(24개월 미만 부모님 동반입장 가능-증빙서류지참)\n-1인 1티켓적용 (본 공연은 부모님과 자녀 모두 티켓을 소지하셔야 합니다.)\n-미취학아동 단독입장 불가 (본공연은 안전한 관람을 위하여 미취학 아동은 성인보호자와 동반 입장을 권장합니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.\n- 주차는 현장매표소에서 공연관람전 또는 공연관람후 주차 패드로 직접등록 해주셔야 하며, 무료 3시간 등록 가능하십니다.(꼭!! 공연관람전,후 등록하시고 가셔야 합니다)\n- 공연장 주변 교통이 혼잡하며, 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.",
-    "image": "/images/posters/kids/yes24_고양_2026_가족뮤지컬_잠자는_숲속의_공주.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58361.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 15,000원\n할인정보\n기본할인 15,000원 / 상시할인\n카톡채널추가할인 10,000원 / 채널명 : 조이컬쳐(고양) 카톡채널 추가시할인(미증빙시 차액지불)\n현대백화점카드 또는 h.point 회원할인 10,000원 / 티켓발권시 현장증빙(미증빙시 차액지불)\n맘맘멤버쉽회원할인 10,000원 / 현장티켓수령시 회원증빙필(미증빙시 차액지불)",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 6월 6일(토) ~ 7일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C컴퍼니, 컬처마켓",
-    "organizer": "㈜조이컬쳐",
-    "contact": "070-7807-0701",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202507/20250730/54743.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202509/20250922/%EC%A1%B0%EC%9D%B4%EC%BB%AC%EC%B3%90(%EA%B3%A0%EC%96%91)%EC%B1%84%EB%84%90%EC%B6%94%EA%B0%80%EB%B0%A9%EB%B2%95_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/잠자는-숲속의-공주-상세-페이지.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:36:22.673Z"
-  },
-  {
     "id": "yes24_58362",
     "title": "[고양] 2026 가족뮤지컬 [피터팬]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
@@ -9457,16 +8482,6 @@
     "image": "/images/posters/classic/yes24_부산_2026_지역민간교향악축제_낙동아트센터_페스티벌_오케스트라_NAFO.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260522/20260522-58581.jpg/dims/quality/70/",
     "category": "독점공연"
-  },
-  {
-    "id": "yes24_58597",
-    "title": "[부산] 2026 NAC 렉처콘서트 - BSO 솔로이스츠, 실내악 ① 현악6중주 ＆ 현악8중주",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260526/20260526-58597.jpg/dims/quality/70/",
-    "date": "2026.06.07 ~ 2026.06.07",
-    "venue": "낙동아트센터 앙상블극장",
-    "link": "https://ticket.yes24.com/Perf/58597",
-    "genre": "classic",
-    "region": "서울"
   },
   {
     "id": "yes24_58589",
