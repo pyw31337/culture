@@ -518,6 +518,18 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
     const BLOCKLIST = ['블루마린 스쿠버 다이브', '광주 조선대학교 해오름관'];
 
     const filtered = allPerformances.filter(p => {
+        // Filter out non-public corporate/academic/closed B2B events from convention and portal sources
+        const TITLE_BLOCKLIST_KEYWORDS = [
+            '설명회', '학술대회', '세미나', '포럼', '컨퍼런스', '심포지엄', 
+            '보고회', '간담회', '공청회', '학회', '입학전형', '정기총회', 
+            '회의', '워크숍', '워크샵', '강좌', '특강', '교육', '강연'
+        ];
+        const lowerTitle = (p.title || '').toLowerCase();
+        const isConventionSource = ['coex', 'kintex', 'bexco', 'setec', 'seoul', 'culture-portal'].includes(p.source || '');
+        if (isConventionSource && TITLE_BLOCKLIST_KEYWORDS.some(keyword => lowerTitle.includes(keyword))) {
+            return false;
+        }
+
         // Filter out deprecated genres eagerly
         if (p.genre === 'popup' || p.genre === 'travel') return false;
 

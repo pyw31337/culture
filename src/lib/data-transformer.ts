@@ -16,12 +16,12 @@ const GENRE_FALLBACKS: Record<string, string> = {
     basketball: `${_BP}/images/fallbacks/basketball.jpg`,
     volleyball: `${_BP}/images/fallbacks/volleyball.jpg`,
     handball: `${_BP}/images/fallbacks/handball.jpg`,
-    museum: `${_BP}/images/fallbacks/museum.jpg`,
-    exhibition: `${_BP}/images/fallbacks/exhibition.jpg`,
-    classic_tradition: `${_BP}/images/fallbacks/classic.jpg`,
-    activity: `${_BP}/images/fallbacks/activity.jpg`,
+    museum: '',
+    exhibition: '',
+    classic_tradition: '',
+    activity: '',
     movie: `${_BP}/images/fallbacks/movie.svg`,
-    default: `${_BP}/images/placeholder.png`
+    default: ''
 };
 
 const OFFICIAL_SPORTS_VENUES: Record<string, string | Record<string, string>> = {

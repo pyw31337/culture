@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.11zHqu44TallGtt5FG7em.256d785b3394a5d5c84d7b2c4ab27eb0.js"
+  "/culture/_next/precache.uTtR_Cph8EeGi5FMY3iRH.f20760bf483e7721529f32a3ec56a3b1.js"
 );
 
 workbox.core.skipWaiting();
@@ -28440,6 +28440,10 @@ self.__precacheManifest = [
     "revision": "316705b8c4597d37b675243f0b8aace3"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_경주_대릉원_일원_95699ae8fe18c12b.webp",
+    "revision": "2cb81d7c7cc39ed08c3f606ed58462b8"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_경주_동궁과_월지_39ae90d8ae958aa5.webp",
     "revision": "7283d114fde74d2575330285990e485e"
   },
@@ -29060,6 +29064,10 @@ self.__precacheManifest = [
     "revision": "77e42fe7ade686baef956b386b3af082"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_매미성_de462a05d652a29b.webp",
+    "revision": "4cf02637aee16ea35dab3373379dcebc"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_매탄공원_dcd3fa21907b0cd9.webp",
     "revision": "132383028896b10e06064cc763b009a6"
   },
@@ -29200,6 +29208,10 @@ self.__precacheManifest = [
     "revision": "7dcd271f51471f51d7486e2758f1390d"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_반포한강공원_df7fa92abc4b0ba1.webp",
+    "revision": "32bd211514ebd952d579883cab24e68f"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_발랑저수지_af5f2f34196f0de6.webp",
     "revision": "fc38780375ee442ae2ba96c66d61d90f"
   },
@@ -29284,6 +29296,10 @@ self.__precacheManifest = [
     "revision": "bc2d2d8452e9af2f5829f5b3f9c43094"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_보은_법주사_유네스코_세계유산_ed10f2e286a49e7e.webp",
+    "revision": "8afa8a6bab08c94e29195581ccea5185"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_볼베어파크_부천점_be5b659fd024066f.webp",
     "revision": "84826cce2ae3f2f0f0927efe1c226444"
   },
@@ -29342,6 +29358,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_북악스카이_팔각정_06de6d22f36a7a3b.webp",
     "revision": "d3940f6b53ca471cf05dd5ed257f5583"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_북촌_8경_c6b94612a95cfd53.webp",
+    "revision": "a64f996188c598c30a3cf2e7178b7a88"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_불곡산_be78c628c1837237.webp",
@@ -29628,6 +29648,10 @@ self.__precacheManifest = [
     "revision": "2bd50ea0c042931a921542168863fa10"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_수원_화성_유네스코_세계유산_035ebec3c50a3a23.webp",
+    "revision": "6056bb60ecf87ff6ce596f5db443e115"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_수원KT위즈파크_71a42153f9b33674.webp",
     "revision": "a00a2f2b15b25c4908672a4b98dc8651"
   },
@@ -29720,8 +29744,16 @@ self.__precacheManifest = [
     "revision": "1d0de8e4f56e94f849eafa7b73afc83d"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_신지명사십리해수욕장_dec508d173e61757.webp",
+    "revision": "28d28582c7eece89eb2b20dfa620115b"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_실학박물관_ae75d93d1377b728.webp",
     "revision": "43bd5a50ade4162e73a3a4547e34f633"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_쌍계사_하동_f796a29e9b4000da.webp",
+    "revision": "5624dd48def635e8ef9fd3758969c905"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_쏠비치_삼척_7795d586b396dd2e.webp",
@@ -29778,6 +29810,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_안면도자연휴양림_2e99ba56a3a5f5ec.webp",
     "revision": "6bdfe701275982ddd0d790fa17c4e50a"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_안목해변_1a00a88eb68f1275.webp",
+    "revision": "040e8a037d5dd39df2a2ae7b62a38a44"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_안반데기_bd4a42d4d3af4d8d.webp",
@@ -29996,6 +30032,10 @@ self.__precacheManifest = [
     "revision": "044863a580322ea760ee6467c74ddb72"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_영주_소수서원_c9dc221555e2ae0a.webp",
+    "revision": "32530a7d1a352393712d1e4af8962072"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_영집궁시박물관_b700699bdacf7ce2.webp",
     "revision": "c2dbdd9e51ef91a2bf3d6a6243f9dcf3"
   },
@@ -30078,6 +30118,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_오정아트홀_c7dd3bb9f067eb28.webp",
     "revision": "cbfa973c11982864d3c51592dd7d8738"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_옥연지_송해공원_4083e51d56224924.webp",
+    "revision": "107b8397457c15d7d400f9d6b530629a"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_옥정호_출렁다리_및_붕어섬생태공원_cd7c0b1e29380646.webp",
@@ -30376,8 +30420,16 @@ self.__precacheManifest = [
     "revision": "6a55efcc8ecf3b6be3939ee9b0ed7a23"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_정남진_편백숲_우드랜드_b33b28aa6331b0ec.webp",
+    "revision": "76015b9c0ebbf59132b857ff2f7b8f81"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_정방폭포_81b0dbc930f394f0.webp",
     "revision": "408729a1f77ec557102b60e358994178"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_정선5일장_정선_아리랑시장_2_7일_24a3d7ecedf37a60.webp",
+    "revision": "c7cfa8bd6526e363c0fc7b3b1006ed99"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_정왕시장_75f839357fdd0812.webp",
@@ -30828,6 +30880,10 @@ self.__precacheManifest = [
     "revision": "3bc9721d06fe2cfa1a7f1b10eb07de55"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_학동_흑진주_몽돌해변_f401e6b02fc27223.webp",
+    "revision": "50b25a07eaa5f95e8b81a36a7087cad0"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_한강_f71fcd191b1e417f.webp",
     "revision": "9e001e12de52d8e4438e2466915cd712"
   },
@@ -30864,6 +30920,10 @@ self.__precacheManifest = [
     "revision": "04d7ad2b381a9fb90dcf3d3f1d0d135a"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_한담해안산책로_51b7ccf34bfca7aa.webp",
+    "revision": "e2585e3c65181263ef74be08a06f221f"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_한반도지형_강원고생대_국가지질공원_d637761bed9c8e15.webp",
     "revision": "09e011b76cfe1953b9362f0ca33c04b4"
   },
@@ -30888,6 +30948,10 @@ self.__precacheManifest = [
     "revision": "678e5ecd6202cecc8478fcb84b3918fa"
   },
   {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_합천_영상테마파크_63b4060aa8b64f6d.webp",
+    "revision": "eb7edee56036e886703e44286292216d"
+  },
+  {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_해동용궁사_fe6109b7120f721e.webp",
     "revision": "44ee441ed36b1ff778dbd4911f843b76"
   },
@@ -30910,6 +30974,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_해움미술관_11a61913fa53632b.webp",
     "revision": "36c7d210377a2493a0d3874c18baac67"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_해인사_합천_439454d34f265382.webp",
+    "revision": "72500b038742d9cb6528b55eca3c9577"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_해피초원목장_5318b526683db1bc.webp",
@@ -30982,6 +31050,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_황령산_전망대_fd99a07f7e7f132a.webp",
     "revision": "3fc43504ce150b86b0aba36290a59b27"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_황매산_군립공원_107c65259c23a3f6.webp",
+    "revision": "35d61a5308ccb0d24668443052576f81"
   },
   {
     "url": "/images/thumbs/w320/posters/remote-cache/tourism/tourism_황학산수목원_827fb338e12fb7ab.webp",

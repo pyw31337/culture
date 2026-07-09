@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-09T07:44:24.684Z",
+  "checkedAt": "2026-07-09T08:37:08.108Z",
   "status": "warn",
-  "venueCount": 3820,
+  "venueCount": 3799,
   "matchedCount": 935,
   "highConfidenceMatchCount": 675,
   "needsReviewCount": 20,
   "notFoundCount": 271,
-  "pendingLookupCount": 1868,
+  "pendingLookupCount": 1847,
   "insufficientIdentityCount": 224,
   "lookupReady": true,
   "providersConfigured": [
@@ -1212,26 +1212,6 @@
       ]
     },
     {
-      "venueId": "venue_코엑스halld_xzwjmn",
-      "officialName": "코엑스아티움",
-      "address": "서울 강남구 영동대로 513",
-      "query": "코엑스아티움 서울 강남구",
-      "priority": 564,
-      "performanceCount": 13,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "coordinate_fallback_risk",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup",
-        "parent_child_halls"
-      ],
-      "sampleTitles": [
-        "2026 아산 유스프러너 데모데이: 무한(Infinite)",
-        "2026 베지노믹스-비건페어 인 서울",
-        "제43회 국제머신러닝학회"
-      ]
-    },
-    {
       "venueId": "venue_나인진홀_it7gqh",
       "officialName": "나인진홀",
       "address": "서울특별시 종로구 동숭길 47(동숭동) 5F 나인진홀 3관",
@@ -1852,6 +1832,21 @@
       ],
       "sampleTitles": [
         "향수만들기 원데이클래스 소모임 (출장가능,2인이상) 시그널센트 출강"
+      ]
+    },
+    {
+      "venueId": "venue_서울특별시서초구서초동14734석영빌딩5층_1ehp6zt",
+      "officialName": "서울특별시 서초구 서초동 1473-4 석영빌딩 5층",
+      "address": "서울특별시 서초구 서초동 1473-4 석영빌딩 5층",
+      "query": "서울특별시 서초구 서초동 1473-4 석영빌딩 5층 서울 서초구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "와인잔 젤캔들 홀더"
       ]
     }
   ],
@@ -3127,7 +3122,6 @@
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "coordinate_fallback_risk",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
@@ -4119,14 +4113,14 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-07-09T07:44:24.684Z",
+    "checkedAt": "2026-07-09T08:37:08.108Z",
     "status": "warn",
-    "venueCount": 3820,
+    "venueCount": 3799,
     "matchedCount": 935,
     "highConfidenceMatchCount": 675,
     "needsReviewCount": 20,
     "notFoundCount": 271,
-    "pendingLookupCount": 1868,
+    "pendingLookupCount": 1847,
     "insufficientIdentityCount": 224,
     "lookupReady": true,
     "providersConfigured": [
