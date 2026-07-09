@@ -15,6 +15,13 @@ const guriSicheongCandidates = buildLocalLocationCandidates(performances, '구�
 if (guriSicheongCandidates.length === 0) {
     throw new Error('Location fallback must return venue/address candidates for "구리시청".');
 }
+const firstGuriSicheong = guriSicheongCandidates[0];
+if (firstGuriSicheong.name !== '구리시청') {
+    throw new Error(`Location fallback candidate name for "구리시청" must be exactly "구리시청", got: ${firstGuriSicheong.name}`);
+}
+if (Math.abs(firstGuriSicheong.lat - 37.5944) > 0.0001 || Math.abs(firstGuriSicheong.lng - 127.1296) > 0.0001) {
+    throw new Error(`Location fallback coordinates for "구리시청" are incorrect: lat=${firstGuriSicheong.lat}, lng=${firstGuriSicheong.lng}`);
+}
 
 const invalidGuriCandidate = guriCandidates.find((candidate) => {
     const target = `${candidate.name} ${candidate.address || ''} ${candidate.category || ''}`;

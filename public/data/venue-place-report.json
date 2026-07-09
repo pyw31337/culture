@@ -1,15 +1,18 @@
 {
-  "checkedAt": "2026-07-08T20:13:42.297Z",
+  "checkedAt": "2026-07-09T07:44:24.684Z",
   "status": "warn",
-  "venueCount": 3823,
+  "venueCount": 3820,
   "matchedCount": 935,
   "highConfidenceMatchCount": 675,
   "needsReviewCount": 20,
   "notFoundCount": 271,
-  "pendingLookupCount": 1871,
+  "pendingLookupCount": 1868,
   "insufficientIdentityCount": 224,
-  "lookupReady": false,
-  "providersConfigured": [],
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
   "queue": [
     {
       "venueId": "venue_동구문화플랫폼_dzzo7b",
@@ -1213,8 +1216,8 @@
       "officialName": "코엑스아티움",
       "address": "서울 강남구 영동대로 513",
       "query": "코엑스아티움 서울 강남구",
-      "priority": 572,
-      "performanceCount": 14,
+      "priority": 564,
+      "performanceCount": 13,
       "reviewFlags": [
         "alias_merge_candidate",
         "coordinate_fallback_risk",
@@ -4116,17 +4119,20 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-07-08T20:13:42.297Z",
+    "checkedAt": "2026-07-09T07:44:24.684Z",
     "status": "warn",
-    "venueCount": 3823,
+    "venueCount": 3820,
     "matchedCount": 935,
     "highConfidenceMatchCount": 675,
     "needsReviewCount": 20,
     "notFoundCount": 271,
-    "pendingLookupCount": 1871,
+    "pendingLookupCount": 1868,
     "insufficientIdentityCount": 224,
-    "lookupReady": false,
-    "providersConfigured": [],
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
     "staleCacheCount": 0,
     "topQueue": [
       {
