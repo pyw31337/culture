@@ -16,6 +16,7 @@ const eslintConfig = defineConfig([
     "src/data/**",
     "test-results/**",
     "tmp/**",
+    "tmp_build/**",
   ]),
 ]);
 

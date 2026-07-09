@@ -103,7 +103,6 @@ export function buildLocalLocationCandidates(
     const candidates: Array<LocationSearchCandidate & { score: number }> = [];
 
     // Synthesize district office/center fallback candidate if the query is a region/landmark
-    const queryEndsWithOffice = /시청$|구청$|군청$|도청$|주민센터$|동사무소$/.test(normalizedQuery);
     const baseName = normalizedQuery.replace(/시청$|구청$|군청$|도청$|주민센터$|동사무소$|시$|구$|군$|도$/, '');
 
     if (baseName.length >= 2) {
