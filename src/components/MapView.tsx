@@ -455,6 +455,7 @@ export default function MapView({
     const allVenuesList = useRef<VenueGroup[]>([]);
     const centerLocationRef = useRef<MapSearchCenter>(centerLocation);
     const selectedMapGenreRef = useRef(selectedMapGenre);
+    const lastProcessedCenterRef = useRef<MapSearchCenter | null>(null);
 
     // Drag scroll for venue list
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -725,7 +726,12 @@ export default function MapView({
 
                 if (nextCenterLocation) {
                     initialCenter = { lat: nextCenterLocation.lat, lng: nextCenterLocation.lng };
-                    initialLevel = nextGenre === 'movie' ? 7 : 6;
+                    const isMatched = allVenuesList.current.some(v => 
+                        v.venueName === nextCenterLocation.name ||
+                        v.venueKey === nextCenterLocation.name ||
+                        v.groupKey === nextCenterLocation.name
+                    );
+                    initialLevel = isMatched ? 4 : (nextGenre === 'movie' ? 7 : 6);
                 } else if (allVenuesList.current.length > 0) {
                     const first = allVenuesList.current[0];
                     initialCenter = { lat: first.lat, lng: first.lng };
@@ -736,6 +742,8 @@ export default function MapView({
                 const map = new k.Map(mapRef.current, options) as KakaoMap;
                 (map as any).setZoomable(true);
                 (map as any).setDraggable(true);
+
+                lastProcessedCenterRef.current = { lat: initialCenter.lat, lng: initialCenter.lng, name: nextCenterLocation?.name || '' };
 
                 mapOverlaysRef.current.forEach(o => o.setMap(null));
                 mapOverlaysRef.current = [];
@@ -813,12 +821,26 @@ export default function MapView({
         if (mapSearchCenter) {
             const loc = new k.LatLng(mapSearchCenter.lat, mapSearchCenter.lng);
             
+            // Check if coordinates are the same as last processed
+            const isSameCoords = lastProcessedCenterRef.current &&
+                lastProcessedCenterRef.current.lat === mapSearchCenter.lat &&
+                lastProcessedCenterRef.current.lng === mapSearchCenter.lng;
+
             // Check if there is a matching venue in the list
             const matchedVenue = allVenuesList.current.find(v => 
                 v.venueName === mapSearchCenter.name ||
                 v.venueKey === mapSearchCenter.name ||
                 v.groupKey === mapSearchCenter.name
             );
+
+            if (isSameCoords) {
+                if (matchedVenue && selectedVenue !== matchedVenue.groupKey) {
+                    setSelectedVenue(matchedVenue.groupKey);
+                }
+                return;
+            }
+
+            lastProcessedCenterRef.current = mapSearchCenter;
 
             if (matchedVenue) {
                 map.panTo(new k.LatLng(matchedVenue.lat, matchedVenue.lng));
@@ -1294,7 +1316,6 @@ export default function MapView({
                 <div
                     ref={mapRef}
                     className="w-full h-full bg-gray-200 dark:bg-gray-800"
-                    style={{ contain: 'strict', willChange: 'transform' }}
                 />
 
                 {/* Left Controls: Category Filter */}
