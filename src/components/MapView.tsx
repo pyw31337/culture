@@ -796,32 +796,44 @@ export default function MapView({
 
         if (mapSearchCenter) {
             const loc = new k.LatLng(mapSearchCenter.lat, mapSearchCenter.lng);
-            // We only pan if it's the initial center (to avoid fighting manual dragging)
-            // if (hasPannedOnce.current === false) ... - but let's just use mapSearchCenter
             
-            if (mapSearchCenter.name !== '현 위치') {
-                map.panTo(loc);
+            // Check if there is a matching venue in the list
+            const matchedVenue = allVenuesList.current.find(v => 
+                v.venueName === mapSearchCenter.name ||
+                v.venueKey === mapSearchCenter.name ||
+                v.groupKey === mapSearchCenter.name
+            );
+
+            if (matchedVenue) {
+                map.panTo(new k.LatLng(matchedVenue.lat, matchedVenue.lng));
+                map.setLevel(4);
+                setSelectedVenue(matchedVenue.groupKey);
+                handleSearchHereInternal(map);
+            } else {
+                if (mapSearchCenter.name !== '현 위치') {
+                    map.panTo(loc);
+                }
+
+                const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
+                    <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
+                        ${mapSearchCenter.name || '검색 위치'}
+                    </div>
+                    <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
+                        <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
+                    </div>
+                </div>`;
+                const overlay = new k.CustomOverlay({ map, position: loc, content, zIndex: 100 });
+                mapOverlaysRef.current.push(overlay);
+
+                handleSearchHereInternal(map);
             }
-
-            const content = `<div class="flex flex-col items-center pointer-events-none" style="transform: translateY(-100%); margin-top: 12px;">
-                <div class="bg-red-500 text-white px-2.5 py-1 rounded-lg text-xs font-extrabold shadow-md mb-1 whitespace-nowrap border border-red-400 font-sans">
-                    ${mapSearchCenter.name || '검색 위치'}
-                </div>
-                <div class="w-4 h-4 bg-red-500 border-2 border-white rounded-full shadow-lg relative">
-                    <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50"></div>
-                </div>
-            </div>`;
-            const overlay = new k.CustomOverlay({ map, position: loc, content, zIndex: 100 });
-            mapOverlaysRef.current.push(overlay);
-
-            handleSearchHereInternal(map);
         } else if (allVenuesList.current.length > 0) {
             const first = allVenuesList.current[0];
             map.panTo(new k.LatLng(first.lat, first.lng));
-            map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5); // Level 5-6 is good for nationwide clusters
+            map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5);
             setSelectedVenue(first.groupKey);
         }
-    }, [handleSearchHereInternal, isMapReady, mapInstance, mapSearchCenter, selectedMapGenre]);
+    }, [handleSearchHereInternal, isMapReady, mapInstance, mapSearchCenter, selectedMapGenre, processedData.list]);
 
     // --- Markers & Clusterer ---
     const clustererRef = useRef<KakaoClusterer | null>(null);
@@ -1495,10 +1507,11 @@ export default function MapView({
 
                                                     const basePath = (selectedMapGenre && selectedMapGenre !== 'all') ? `/${selectedMapGenre}` : '/';
                                                     router.push(`${basePath}?${params.toString()}`);
+                                                    onClose?.();
                                                 }}
                                                 className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
                                                 <ExternalLink size={12} />
-                                                {SPORTS_GENRES.includes(selectedMapGenre) ? '경기 더보기' : '공연 더보기'} · {selectedVenueData.performances?.length || 0}개 컨텐츠
+                                                주변 공연 목록보기
                                             </button>
                                         </div>
                                     ) : null}

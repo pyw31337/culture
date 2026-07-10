@@ -250,10 +250,10 @@ export default function PerformanceGrid({
                         name: loc?.name || resolvedVenueName || perf.venue,
                     };
 
-                    setSearchLocation(nextLocation);
                     if (onVenuePreview) {
                         onVenuePreview(nextLocation);
                     } else {
+                        setSearchLocation(nextLocation);
                         setIsMapOpen(true);
                     }
                 };

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.rWM4S41v9cbErXPL0THvL.f72ca0c2bb474d069da84f56442f841c.js"
+  "/culture/_next/precache.bc-uFGu8sHPuBKUa4Yt7t.73e87c88abb023b1d5292c2e2bccd0a7.js"
 );
 
 workbox.core.skipWaiting();
@@ -722,6 +722,70 @@ self.__precacheManifest = [
   {
     "url": "/images/soccer_poster.png",
     "revision": "6c1d9e2cd563eb973b8c1291d33d58dd"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_15661.webp",
+    "revision": "a44770d4824ee2c1add835a7a3652e31"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_15810.webp",
+    "revision": "acd1b27227a9620bef7ee7bff582473a"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_15811.webp",
+    "revision": "01a9e093f09b2caec60b14e8f368277d"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_15812.webp",
+    "revision": "027425291d340da7fb9b9cadf634dca2"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_15982.webp",
+    "revision": "7cbbac917d8cb91d0eda8a5a1f0f8093"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16065.webp",
+    "revision": "29ca3f43b21c1b9dfb75bf0734194ab8"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16149.webp",
+    "revision": "7fa949ede8c4dbe111968603ac95c49e"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16232.webp",
+    "revision": "76200d66fd29e99e5120c85920f6ae19"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16233.webp",
+    "revision": "5ec684f4c22772029359751fe9f05985"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16238.webp",
+    "revision": "5c8fbacf4d280670f538b24641fc14d2"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16240.webp",
+    "revision": "3b527597b20d38cd608105506ebca777"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16298.webp",
+    "revision": "adb89b1b1cdfb245c13d06b2c362675c"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16410.webp",
+    "revision": "d0e71457057afb128194e8b32aa792f2"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16445.webp",
+    "revision": "24736946ba875f5bd7eb580fe22f7e97"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16448.webp",
+    "revision": "24736946ba875f5bd7eb580fe22f7e97"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/bexco/bexco_16450.webp",
+    "revision": "24736946ba875f5bd7eb580fe22f7e97"
   },
   {
     "url": "/images/thumbs/w320/posters/classic/yes24_광주_GAC_기획공연_11시_음악산책_단편선_시리즈_귀여운_여인.webp",
@@ -2526,6 +2590,22 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/setec/setec_2299.webp",
     "revision": "b2a6ccdb0040b529e77f5a8029f399fc"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2300.webp",
+    "revision": "80793c991ffadfe0ff2bc01de92247a0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2301.webp",
+    "revision": "80793c991ffadfe0ff2bc01de92247a0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2303.webp",
+    "revision": "80793c991ffadfe0ff2bc01de92247a0"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/setec/setec_2304.webp",
+    "revision": "80793c991ffadfe0ff2bc01de92247a0"
   },
   {
     "url": "/images/thumbs/w320/posters/templestay/templestay_25648.webp",
