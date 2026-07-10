@@ -699,7 +699,16 @@ export default function MapView({
         let cancelled = false;
 
         const initializeMap = () => {
-            if (!window.kakao?.maps?.load || !mapRef.current || cancelled) return;
+            if (cancelled) return;
+            if (!mapRef.current) {
+                setTimeout(initializeMap, 30);
+                return;
+            }
+            if (mapRef.current.clientWidth === 0 || mapRef.current.clientHeight === 0) {
+                setTimeout(initializeMap, 30);
+                return;
+            }
+            if (!window.kakao?.maps?.load) return;
             window.kakao.maps.load(() => {
                 if (cancelled || !mapRef.current) return;
                 const k = window.kakao.maps;
@@ -734,7 +743,12 @@ export default function MapView({
                 setMapLoadError(null);
 
                 setIsMapReady(true);
-                setTimeout(() => { map.relayout(); }, 200);
+                setTimeout(() => {
+                    if (map && typeof map.relayout === 'function') {
+                        map.relayout();
+                        map.setCenter(new k.LatLng(initialCenter.lat, initialCenter.lng));
+                    }
+                }, 200);
             });
         };
 
@@ -1558,7 +1572,7 @@ export default function MapView({
                         </Portal>
                     )}
 
-                <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-gray-900 via-white/80 dark:via-gray-900/80 to-transparent pt-16 pb-4 px-4 sm:px-6">
+                <div className="absolute bottom-0 left-0 right-0 z-[90] bg-gradient-to-t from-white/95 dark:from-gray-900 via-white/80 dark:via-gray-900/80 to-transparent pt-16 pb-4 px-4 sm:px-6 pointer-events-none">
                     {showSearchHereBtn && isMapReady && (
                         <div className="absolute top-3 left-1/2 transform -translate-x-1/2 z-[100] w-full flex justify-center pointer-events-none">
                             <button onClick={handleSearchHere}
@@ -1598,19 +1612,29 @@ export default function MapView({
                                 const bgClass = isCinemaObj ? 'bg-indigo-600' : style.twBg.replace('bg-', 'bg-');
 
                                 const selectVenue = () => {
-                                    const newSelected = v.groupKey === selectedVenue ? null : v.groupKey;
-                                    setSelectedVenue(newSelected);
-                                    if (newSelected && mapInstance && v.lat && v.lng) {
-                                        const k = window.kakao.maps;
-                                        if (typeof k.LatLng === 'function') {
-                                            const moveLatLon = new k.LatLng(v.lat, v.lng);
-                                            if (mapInstance.getLevel() > 4) {
-                                                mapInstance.setLevel(4);
-                                                setTimeout(() => mapInstance.panTo(moveLatLon), 10);
-                                            } else {
-                                                mapInstance.panTo(moveLatLon);
+                                    try {
+                                        const newSelected = v.groupKey === selectedVenue ? null : v.groupKey;
+                                        setSelectedVenue(newSelected);
+                                        if (newSelected && mapInstance && v.lat && v.lng) {
+                                            const k = window.kakao.maps;
+                                            if (typeof k.LatLng === 'function') {
+                                                const moveLatLon = new k.LatLng(v.lat, v.lng);
+                                                if (mapInstance.getLevel() > 4) {
+                                                    mapInstance.setLevel(4);
+                                                    setTimeout(() => {
+                                                        try {
+                                                            mapInstance.panTo(moveLatLon);
+                                                        } catch (e) {
+                                                            console.error('Error panning map:', e);
+                                                        }
+                                                    }, 50);
+                                                } else {
+                                                    mapInstance.panTo(moveLatLon);
+                                                }
                                             }
                                         }
+                                    } catch (e) {
+                                        console.error('Error selecting venue:', e);
                                     }
                                 };
 
