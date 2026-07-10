@@ -478,7 +478,7 @@ export default function MapView({
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
         const walk = (x - startX) * 2;
-        if (Math.abs(walk) > 10) isDragClicked.current = true;
+        if (Math.abs(walk) > 30) isDragClicked.current = true;
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
@@ -789,7 +789,7 @@ export default function MapView({
 
     // --- Reactive Map Updates ---
     useEffect(() => {
-        if (!mapInstance || !isMapReady) return;
+        if (!mapInstance || !isMapReady || !isDataFullyLoaded) return;
         const map = mapInstance;
         const k = window.kakao.maps;
 
@@ -834,7 +834,7 @@ export default function MapView({
             map.setLevel(SPORTS_GENRES.includes(selectedMapGenre) ? 6 : 5);
             setSelectedVenue(first.groupKey);
         }
-    }, [handleSearchHereInternal, isMapReady, mapInstance, mapSearchCenter, selectedMapGenre, processedData.list]);
+    }, [handleSearchHereInternal, isMapReady, mapInstance, mapSearchCenter, selectedMapGenre, processedData.list, isDataFullyLoaded]);
 
     // --- Markers & Clusterer ---
     const clustererRef = useRef<KakaoClusterer | null>(null);
