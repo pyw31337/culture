@@ -175,9 +175,9 @@ async function scrapePopups() {
                 lng,
                 region,
                 date: dateStr,
-                image: localImage || '/images/fallbacks/exhibition.jpg',
-                poster: localImage || '/images/fallbacks/exhibition.jpg',
-                backupPoster: localImage || '/images/fallbacks/exhibition.jpg',
+                image: localImage || '',
+                poster: localImage || '',
+                backupPoster: localImage || '',
                 link: detailUrl,
                 genre: 'exhibition', // Map popups to exhibition so they integrate natively
                 category: '전시',

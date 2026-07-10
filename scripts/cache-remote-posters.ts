@@ -53,20 +53,20 @@ const SOURCE_REFERER: Array<[RegExp, string]> = [
 ];
 
 const GENRE_FALLBACK: Record<string, string> = {
-  movie: '/images/fallbacks/movie.svg',
-  musical: '/images/fallbacks/exhibition.jpg',
-  concert: '/images/fallbacks/classic.jpg',
-  play: '/images/fallbacks/exhibition.jpg',
-  classic: '/images/fallbacks/classic.jpg',
-  exhibition: '/images/fallbacks/exhibition.jpg',
-  activity: '/images/fallbacks/activity.jpg',
-  museum: '/images/fallbacks/museum.jpg',
-  tourism: '/images/fallbacks/activity.jpg',
-  baseball: '/images/fallbacks/baseball.jpg',
-  soccer: '/images/fallbacks/soccer.jpg',
-  basketball: '/images/fallbacks/basketball.jpg',
-  volleyball: '/images/fallbacks/volleyball.jpg',
-  handball: '/images/fallbacks/handball.jpg',
+  movie: '',
+  musical: '',
+  concert: '',
+  play: '',
+  classic: '',
+  exhibition: '',
+  activity: '',
+  museum: '',
+  tourism: '',
+  baseball: '',
+  soccer: '/images/soccer_goal_poster_20260528.jpg',
+  basketball: '',
+  volleyball: '',
+  handball: '',
 };
 
 function isObject(value: JsonValue): value is JsonObject {
@@ -114,7 +114,7 @@ function getReferer(url: string) {
 }
 
 function fallbackForGenre(genre: string) {
-  return GENRE_FALLBACK[genre] || '/images/fallbacks/exhibition.jpg';
+  return GENRE_FALLBACK[genre] || '';
 }
 
 function cachePathFor(candidate: Pick<PosterCandidate, 'id' | 'title' | 'genre' | 'source' | 'imageUrl'>) {

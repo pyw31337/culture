@@ -20,7 +20,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:03.525Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.434Z"
   },
   {
     "id": "setec_2287",
@@ -43,7 +43,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:03.772Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.434Z"
   },
   {
     "id": "setec_2250",
@@ -66,7 +66,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:03.846Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.435Z"
   },
   {
     "id": "setec_2278",
@@ -89,7 +89,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.253Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.435Z"
   },
   {
     "id": "setec_2299",
@@ -112,7 +112,30 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.286Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.435Z"
+  },
+  {
+    "id": "setec_2300",
+    "title": "코리아보드게임즈",
+    "venue": "세텍 제3전시실",
+    "venueKey": "세텍 제3전시실",
+    "address": "서울 강남구 남부순환로 3104",
+    "lat": 37.4968,
+    "lng": 127.0628,
+    "region": "seoul",
+    "date": "2026.07.25 ~ 2026.07.26",
+    "image": "/images/posters/setec/setec_2300.webp",
+    "poster": "/images/posters/setec/setec_2300.webp",
+    "backupPoster": "/images/posters/setec/setec_2300.webp",
+    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2300",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "02-2222-3811",
+    "website": "https://www.setec.or.kr/",
+    "source": "setec",
+    "dataCollectedAt": "2026-07-09T23:59:05.435Z"
   },
   {
     "id": "setec_2286",
@@ -123,7 +146,7 @@
     "lat": 37.4968,
     "lng": 127.0628,
     "region": "seoul",
-    "date": "2026.07.26 ~ 2026.07.28",
+    "date": "2026.07.29 ~ 2026.07.30",
     "image": "/images/posters/setec/setec_2286.webp",
     "poster": "/images/posters/setec/setec_2286.webp",
     "backupPoster": "/images/posters/setec/setec_2286.webp",
@@ -135,7 +158,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.327Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.435Z"
   },
   {
     "id": "setec_2288",
@@ -158,7 +181,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.365Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.436Z"
   },
   {
     "id": "setec_2251",
@@ -181,22 +204,22 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.403Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.436Z"
   },
   {
-    "id": "setec_2292",
-    "title": "2026 서울 카페&베이커리페어 시즌2",
+    "id": "setec_2301",
+    "title": "2026년 한섬패밀리세일",
     "venue": "세텍 제1전시실, 제2전시실, 제3전시실",
     "venueKey": "세텍 제1전시실, 제2전시실, 제3전시실",
     "address": "서울 강남구 남부순환로 3104",
     "lat": 37.4968,
     "lng": 127.0628,
     "region": "seoul",
-    "date": "2026.08.27 ~ 2026.08.30",
-    "image": "/images/posters/setec/setec_2292.webp",
-    "poster": "/images/posters/setec/setec_2292.webp",
-    "backupPoster": "/images/posters/setec/setec_2292.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2292",
+    "date": "2026.08.13 ~ 2026.08.16",
+    "image": "/images/posters/setec/setec_2301.webp",
+    "poster": "/images/posters/setec/setec_2301.webp",
+    "backupPoster": "/images/posters/setec/setec_2301.webp",
+    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2301",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -204,22 +227,22 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.468Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.436Z"
   },
   {
-    "id": "setec_2291",
-    "title": "코사운드 스테이지테크 2026",
-    "venue": "세텍 제1전시실, 제2전시실, 제3전시실",
-    "venueKey": "세텍 제1전시실, 제2전시실, 제3전시실",
+    "id": "setec_2303",
+    "title": "2026 서울베이비키즈페어_시즌1",
+    "venue": "세텍 제1전시실",
+    "venueKey": "세텍 제1전시실",
     "address": "서울 강남구 남부순환로 3104",
     "lat": 37.4968,
     "lng": 127.0628,
     "region": "seoul",
-    "date": "2026.09.02 ~ 2026.09.04",
-    "image": "/images/posters/setec/setec_2291.webp",
-    "poster": "/images/posters/setec/setec_2291.webp",
-    "backupPoster": "/images/posters/setec/setec_2291.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2291",
+    "date": "2026.08.20 ~ 2026.08.23",
+    "image": "/images/posters/setec/setec_2303.webp",
+    "poster": "/images/posters/setec/setec_2303.webp",
+    "backupPoster": "/images/posters/setec/setec_2303.webp",
+    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2303",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -227,22 +250,22 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.652Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.436Z"
   },
   {
-    "id": "setec_2298",
-    "title": "제31회 동아 차·공예 박람회",
-    "venue": "세텍 제3전시실",
-    "venueKey": "세텍 제3전시실",
+    "id": "setec_2304",
+    "title": "동국대학교 서울국제명상엑스포",
+    "venue": "세텍 제2전시실",
+    "venueKey": "세텍 제2전시실",
     "address": "서울 강남구 남부순환로 3104",
     "lat": 37.4968,
     "lng": 127.0628,
     "region": "seoul",
-    "date": "2026.09.10 ~ 2026.09.13",
-    "image": "/images/posters/setec/setec_2298.webp",
-    "poster": "/images/posters/setec/setec_2298.webp",
-    "backupPoster": "/images/posters/setec/setec_2298.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2298",
+    "date": "2026.08.22 ~ 2026.08.23",
+    "image": "/images/posters/setec/setec_2304.webp",
+    "poster": "/images/posters/setec/setec_2304.webp",
+    "backupPoster": "/images/posters/setec/setec_2304.webp",
+    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2304",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -250,29 +273,6 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.678Z"
-  },
-  {
-    "id": "setec_2295",
-    "title": "2026 서울 가구·인테리어 박람회",
-    "venue": "세텍 제1전시실, 제2전시실",
-    "venueKey": "세텍 제1전시실, 제2전시실",
-    "address": "서울 강남구 남부순환로 3104",
-    "lat": 37.4968,
-    "lng": 127.0628,
-    "region": "seoul",
-    "date": "2026.09.10 ~ 2026.09.13",
-    "image": "/images/posters/setec/setec_2295.webp",
-    "poster": "/images/posters/setec/setec_2295.webp",
-    "backupPoster": "/images/posters/setec/setec_2295.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2295",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-2222-3811",
-    "website": "https://www.setec.or.kr/",
-    "source": "setec",
-    "dataCollectedAt": "2026-07-07T07:21:04.723Z"
+    "dataCollectedAt": "2026-07-09T23:59:05.436Z"
   }
 ]

@@ -198,9 +198,9 @@ async function scrapeHotdeals() {
                 lng,
                 region,
                 date: dateStr,
-                image: localImage || '/images/fallbacks/activity.jpg',
-                poster: localImage || '/images/fallbacks/activity.jpg',
-                backupPoster: localImage || '/images/fallbacks/activity.jpg',
+                image: localImage || '',
+                poster: localImage || '',
+                backupPoster: localImage || '',
                 link: href,
                 genre: 'tourism', // map to tourism so they show up under travel/activities
                 category: '여행',

@@ -12,7 +12,7 @@
     "image": "/images/posters/coex/coex_1b551c853a7cf8f6.webp",
     "poster": "/images/posters/coex/coex_1b551c853a7cf8f6.webp",
     "backupPoster": "/images/posters/coex/coex_1b551c853a7cf8f6.webp",
-    "link": "https://www.coex.co.kr/exhibitions/2026-%ec%97%ac%ec%84%b1%eb%b0%9c%eb%aa%85%ec%99%95-expo/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/2026-%ec%97%ac%ec%84%b1%eb%b0%9c%eb%aa%85%ec%99%95-expo/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -20,53 +20,7 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:36.990Z"
-  },
-  {
-    "id": "coex_4c31c8a79f45b34b",
-    "title": "제43회 국제머신러닝학회",
-    "venue": "코엑스 전관",
-    "venueKey": "코엑스 전관",
-    "address": "서울 강남구 영동대로 513",
-    "lat": 37.5113,
-    "lng": 127.0598,
-    "region": "seoul",
-    "date": "2026.07.06 ~ 2026.07.11",
-    "image": "/images/posters/coex/coex_4c31c8a79f45b34b.webp",
-    "poster": "/images/posters/coex/coex_4c31c8a79f45b34b.webp",
-    "backupPoster": "/images/posters/coex/coex_4c31c8a79f45b34b.webp",
-    "link": "https://www.coex.co.kr/exhibitions/%ec%a0%9c43%ed%9a%8c-%ea%b5%ad%ec%a0%9c%eb%a8%b8%ec%8b%a0%eb%9f%ac%eb%8b%9d%ed%95%99%ed%9a%8c/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-6000-0114",
-    "website": "https://www.coex.co.kr/",
-    "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:37.318Z"
-  },
-  {
-    "id": "coex_f9d0dcdf5966c30a",
-    "title": "2026 분산에너지 AI 전환을 위한 지붕형·주차장 태양광 활용 RE100·PPA 대응전략 컨퍼런스",
-    "venue": "코엑스 컨퍼런스룸(남) 4F",
-    "venueKey": "코엑스 컨퍼런스룸(남) 4F",
-    "address": "서울 강남구 영동대로 513",
-    "lat": 37.5113,
-    "lng": 127.0598,
-    "region": "seoul",
-    "date": "2026.07.08 ~ 2026.07.08",
-    "image": "/images/posters/coex/coex_f9d0dcdf5966c30a.webp",
-    "poster": "/images/posters/coex/coex_f9d0dcdf5966c30a.webp",
-    "backupPoster": "/images/posters/coex/coex_f9d0dcdf5966c30a.webp",
-    "link": "https://www.coex.co.kr/exhibitions/2026-%eb%b6%84%ec%82%b0%ec%97%90%eb%84%88%ec%a7%80-ai-%ec%a0%84%ed%99%98%ec%9d%84-%ec%9c%84%ed%95%9c-%ec%a7%80%eb%b6%95%ed%98%95%c2%b7%ec%a3%bc%ec%b0%a8%ec%9e%a5-%ed%83%9c%ec%96%91%ea%b4%91-%ed%99%9c/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-6000-0114",
-    "website": "https://www.coex.co.kr/",
-    "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:37.580Z"
+    "dataCollectedAt": "2026-07-09T23:58:42.240Z"
   },
   {
     "id": "coex_3dfc7aa3bcaa459f",
@@ -81,7 +35,7 @@
     "image": "/images/posters/coex/coex_3dfc7aa3bcaa459f.webp",
     "poster": "/images/posters/coex/coex_3dfc7aa3bcaa459f.webp",
     "backupPoster": "/images/posters/coex/coex_3dfc7aa3bcaa459f.webp",
-    "link": "https://www.coex.co.kr/exhibitions/axis-2026-asia-experience-innovation-summit/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/axis-2026-asia-experience-innovation-summit/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -89,7 +43,7 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:37.844Z"
+    "dataCollectedAt": "2026-07-09T23:58:42.475Z"
   },
   {
     "id": "coex_c4cb7bd855cb8e02",
@@ -104,7 +58,7 @@
     "image": "/images/posters/coex/coex_c4cb7bd855cb8e02.webp",
     "poster": "/images/posters/coex/coex_c4cb7bd855cb8e02.webp",
     "backupPoster": "/images/posters/coex/coex_c4cb7bd855cb8e02.webp",
-    "link": "https://www.coex.co.kr/exhibitions/2026-%ea%b0%95%eb%82%a8%ea%b5%ac-%ed%96%89%eb%b3%b5-%ec%9d%bc%ec%9e%90%eb%a6%ac-%eb%b0%95%eb%9e%8c%ed%9a%8c/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/2026-%ea%b0%95%eb%82%a8%ea%b5%ac-%ed%96%89%eb%b3%b5-%ec%9d%bc%ec%9e%90%eb%a6%ac-%eb%b0%95%eb%9e%8c%ed%9a%8c/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -112,7 +66,7 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:38.168Z"
+    "dataCollectedAt": "2026-07-09T23:58:42.867Z"
   },
   {
     "id": "coex_fe6c43359186cd5d",
@@ -127,7 +81,7 @@
     "image": "/images/posters/coex/coex_fe6c43359186cd5d.webp",
     "poster": "/images/posters/coex/coex_fe6c43359186cd5d.webp",
     "backupPoster": "/images/posters/coex/coex_fe6c43359186cd5d.webp",
-    "link": "https://www.coex.co.kr/exhibitions/%ec%a0%9c4%ed%9a%8c-%eb%86%8d%ec%8b%9d%ed%92%88-%ed%85%8c%ed%81%ac-%ec%b0%bd%ec%97%85-%ec%8a%a4%ed%83%80%ed%8a%b8%ec%97%85-%eb%b0%95%eb%9e%8c%ed%9a%8c/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/%ec%a0%9c4%ed%9a%8c-%eb%86%8d%ec%8b%9d%ed%92%88-%ed%85%8c%ed%81%ac-%ec%b0%bd%ec%97%85-%ec%8a%a4%ed%83%80%ed%8a%b8%ec%97%85-%eb%b0%95%eb%9e%8c%ed%9a%8c/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -135,7 +89,7 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:38.489Z"
+    "dataCollectedAt": "2026-07-09T23:58:43.203Z"
   },
   {
     "id": "coex_bb1e8350670aea41",
@@ -150,7 +104,7 @@
     "image": "/images/posters/coex/coex_bb1e8350670aea41.webp",
     "poster": "/images/posters/coex/coex_bb1e8350670aea41.webp",
     "backupPoster": "/images/posters/coex/coex_bb1e8350670aea41.webp",
-    "link": "https://www.coex.co.kr/exhibitions/2026-%eb%b2%a0%ec%a7%80%eb%85%b8%eb%af%b9%ec%8a%a4-%eb%b9%84%ea%b1%b4%ed%8e%98%ec%96%b4-%ec%9d%b8-%ec%84%9c%ec%9a%b8/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/2026-%eb%b2%a0%ec%a7%80%eb%85%b8%eb%af%b9%ec%8a%a4-%eb%b9%84%ea%b1%b4%ed%8e%98%ec%96%b4-%ec%9d%b8-%ec%84%9c%ec%9a%b8/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -158,7 +112,7 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:38.753Z"
+    "dataCollectedAt": "2026-07-09T23:58:43.438Z"
   },
   {
     "id": "coex_ac0f00c8931375d8",
@@ -173,7 +127,7 @@
     "image": "/images/posters/coex/coex_ac0f00c8931375d8.webp",
     "poster": "/images/posters/coex/coex_ac0f00c8931375d8.webp",
     "backupPoster": "/images/posters/coex/coex_ac0f00c8931375d8.webp",
-    "link": "https://www.coex.co.kr/exhibitions/%ec%ba%90%eb%a6%ad%ed%84%b0-%eb%9d%bc%ec%9d%b4%ec%84%a0%ec%8b%b1-%ed%8e%98%ec%96%b4-2026/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/%ec%ba%90%eb%a6%ad%ed%84%b0-%eb%9d%bc%ec%9d%b4%ec%84%a0%ec%8b%b1-%ed%8e%98%ec%96%b4-2026/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -181,7 +135,7 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:39.257Z"
+    "dataCollectedAt": "2026-07-09T23:58:43.655Z"
   },
   {
     "id": "coex_2d83e99a06fc295b",
@@ -196,7 +150,7 @@
     "image": "/images/posters/coex/coex_2d83e99a06fc295b.webp",
     "poster": "/images/posters/coex/coex_2d83e99a06fc295b.webp",
     "backupPoster": "/images/posters/coex/coex_2d83e99a06fc295b.webp",
-    "link": "https://www.coex.co.kr/exhibitions/2026-%ec%bc%80%ec%9d%b4%ed%8e%ab%ed%8e%98%ec%96%b4-%ec%84%9c%ec%9a%b8/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/2026-%ec%bc%80%ec%9d%b4%ed%8e%ab%ed%8e%98%ec%96%b4-%ec%84%9c%ec%9a%b8/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -204,7 +158,7 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:39.620Z"
+    "dataCollectedAt": "2026-07-09T23:58:43.945Z"
   },
   {
     "id": "coex_6861858464ebc463",
@@ -219,7 +173,7 @@
     "image": "/images/posters/coex/coex_6861858464ebc463.webp",
     "poster": "/images/posters/coex/coex_6861858464ebc463.webp",
     "backupPoster": "/images/posters/coex/coex_6861858464ebc463.webp",
-    "link": "https://www.coex.co.kr/exhibitions/%ec%9c%a0%ed%95%99%eb%84%a4%ed%8a%b8-%ec%9c%a0%ed%95%99%eb%b0%95%eb%9e%8c%ed%9a%8c-6/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
+    "link": "https://www.coex.co.kr/exhibitions/%ec%9c%a0%ed%95%99%eb%84%a4%ed%8a%b8-%ec%9c%a0%ed%95%99%eb%b0%95%eb%9e%8c%ed%9a%8c-6/?var_page=1&search_start_date=2026.07.10&search_end_date=2027.01.10&list_type=LIST",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -227,29 +181,6 @@
     "contact": "02-6000-0114",
     "website": "https://www.coex.co.kr/",
     "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:39.995Z"
-  },
-  {
-    "id": "coex_30154046408d23ed",
-    "title": "2026 아산 유스프러너 데모데이: 무한(Infinite)",
-    "venue": "코엑스 Hall D",
-    "venueKey": "코엑스 Hall D",
-    "address": "서울 강남구 영동대로 513",
-    "lat": 37.5113,
-    "lng": 127.0598,
-    "region": "seoul",
-    "date": "2026.07.21 ~ 2026.07.21",
-    "image": "/images/posters/coex/coex_30154046408d23ed.webp",
-    "poster": "/images/posters/coex/coex_30154046408d23ed.webp",
-    "backupPoster": "/images/posters/coex/coex_30154046408d23ed.webp",
-    "link": "https://www.coex.co.kr/exhibitions/2026-%ec%95%84%ec%82%b0-%ec%9c%a0%ec%8a%a4%ed%94%84%eb%9f%ac%eb%84%88-%eb%8d%b0%eb%aa%a8%eb%8d%b0%ec%9d%b4-%eb%ac%b4%ed%95%9cinfinite/?var_page=1&search_start_date=2026.07.07&search_end_date=2027.01.07&list_type=LIST",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-6000-0114",
-    "website": "https://www.coex.co.kr/",
-    "source": "coex",
-    "dataCollectedAt": "2026-07-07T05:22:40.329Z"
+    "dataCollectedAt": "2026-07-09T23:58:44.292Z"
   }
 ]

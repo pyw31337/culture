@@ -72,6 +72,16 @@ function formatDate(date: Date): string {
     return `${y}.${m}.${d}`;
 }
 
+function isPublicExhibition(title: string): boolean {
+    const blacklist = [
+        '회의', '세미나', '설명회', '학술대회', '학회', '포럼',
+        '입찰', '연수', '워크숍', '워크샵', '간담회', '공청회',
+        '필기시험', '채용시험', '대행사', '조회', '포상',
+        '기념식', '이사회', '정기총회', '총회', '심사', '평가'
+    ];
+    return !blacklist.some(word => title.includes(word));
+}
+
 // ==========================================
 // 1. KINTEX Scraper
 // ==========================================
@@ -106,6 +116,7 @@ async function scrapeKintex(): Promise<Performance[]> {
 
             for (const card of cards) {
                 const title = $(card).find('.item-subject').text().trim();
+                if (!isPublicExhibition(title)) continue;
                 const rawDate = $(card).find('.item-date').text().trim();
                 const hall = $(card).find('.item-client').text().trim().replace(/\s+/g, ' ');
                 const rawImg = $(card).find('.thumb img').attr('src') || '';
@@ -141,9 +152,9 @@ async function scrapeKintex(): Promise<Performance[]> {
                     lng: 126.7471,
                     region: 'gyeonggi',
                     date: dateStr,
-                    image: localImage || '/images/fallbacks/exhibition.jpg',
-                    poster: localImage || '/images/fallbacks/exhibition.jpg',
-                    backupPoster: localImage || '/images/fallbacks/exhibition.jpg',
+                    image: localImage || '',
+                    poster: localImage || '',
+                    backupPoster: localImage || '',
                     link: detailUrl,
                     genre: 'exhibition',
                     category: '전시',
@@ -176,7 +187,7 @@ async function fetchBexcoDetailPoster(url: string): Promise<string> {
             timeout: 10000
         });
         const $ = cheerio.load(res.data);
-        const img = $('.view-img img, .img-box img, .photo img, .photo-box img, td img, .contents-view img').first().attr('src');
+        const img = $('.EventVtop .imgBox img, .view-img img, .img-box img, .photo img, .photo-box img, td img, .contents-view img').first().attr('src');
         if (img) {
             return img.startsWith('http') ? img : `https://www.bexco.co.kr${img}`;
         }
@@ -226,6 +237,7 @@ async function scrapeBexco(): Promise<Performance[]> {
                 const text = $(el).text().trim().replace(/\s+/g, ' ');
                 const titleMatch = text.match(/상세보기\s+(?:D-\d+|진행중|마감|오늘오픈)\s+(?:이벤트|회의|전시)?\s*(.*?)\s*\d{4}-\d{2}-\d{2}/i);
                 const title = titleMatch ? titleMatch[1].trim() : '벡스코 행사';
+                if (!isPublicExhibition(title)) continue;
 
                 const dateMatch = text.match(/(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})/);
                 const rawDate = dateMatch ? `${dateMatch[1].replace(/-/g, '.')} ~ ${dateMatch[2].replace(/-/g, '.')}` : formatDate(new Date());
@@ -247,9 +259,9 @@ async function scrapeBexco(): Promise<Performance[]> {
                     lng: 129.1357,
                     region: 'busan',
                     date: rawDate,
-                    image: localImage || '/images/fallbacks/exhibition.jpg',
-                    poster: localImage || '/images/fallbacks/exhibition.jpg',
-                    backupPoster: localImage || '/images/fallbacks/exhibition.jpg',
+                    image: localImage || '',
+                    poster: localImage || '',
+                    backupPoster: localImage || '',
                     link: detailUrl,
                     genre: 'exhibition',
                     category: '전시',
@@ -301,6 +313,7 @@ async function scrapeSetec(): Promise<Performance[]> {
             const id = `setec_${sIdx}`;
 
             const title = anchor.find('.txt strong').text().trim() || '세텍 전시';
+            if (!isPublicExhibition(title)) continue;
             const rawImg = anchor.find('.img img').attr('src') || '';
 
             let rawDate = '';
@@ -334,9 +347,9 @@ async function scrapeSetec(): Promise<Performance[]> {
                 lng: 127.0628,
                 region: 'seoul',
                 date: rawDate,
-                image: localImage || '/images/fallbacks/exhibition.jpg',
-                poster: localImage || '/images/fallbacks/exhibition.jpg',
-                backupPoster: localImage || '/images/fallbacks/exhibition.jpg',
+                image: localImage || '',
+                poster: localImage || '',
+                backupPoster: localImage || '',
                 link: detailUrl,
                 genre: 'exhibition',
                 category: '전시',

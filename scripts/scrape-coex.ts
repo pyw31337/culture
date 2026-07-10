@@ -19,9 +19,15 @@ const ensureDir = (dir: string) => {
     }
 };
 
-/**
- * MD5 hash to safely create ascii-only filenames and IDs, preventing Next.js ByteString conversion error.
- */
+function isPublicExhibition(title: string): boolean {
+    const blacklist = [
+        '회의', '세미나', '설명회', '학술대회', '학회', '포럼',
+        '입찰', '연수', '워크숍', '워크샵', '간담회', '공청회',
+        '필기시험', '채용시험', '대행사', '조회', '포상',
+        '기념식', '이사회', '정기총회', '총회', '심사', '평가'
+    ];
+    return !blacklist.some(word => title.includes(word));
+}
 function hashString(text: string): string {
     return crypto.createHash('md5').update(text).digest('hex').substring(0, 16);
 }
@@ -173,6 +179,7 @@ async function scrapeCoexExhibitions() {
             seenIds.add(id);
 
             const title = $(el).find('.BlogEventItemCont-tit').first().text().trim() || '코엑스 전시';
+            if (!isPublicExhibition(title)) continue;
             const rawImg = $(el).find('.BlogEventItemHover img').attr('src') || '';
             const rawDate = $(el).find('.BlogEventItemCont-date').first().text().trim() || startDateStr;
             const hall = $(el).find('.BlogEventItemCont-hall').first().text().trim() || '전시장';
@@ -194,9 +201,9 @@ async function scrapeCoexExhibitions() {
                 lng: 127.0598,
                 region: 'seoul',
                 date: dateStr,
-                image: localImagePath || '/images/fallbacks/exhibition.jpg',
-                poster: localImagePath || '/images/fallbacks/exhibition.jpg',
-                backupPoster: localImagePath || '/images/fallbacks/exhibition.jpg',
+                image: localImagePath || '',
+                poster: localImagePath || '',
+                backupPoster: localImagePath || '',
                 link: href,
                 genre: 'exhibition',
                 category: '전시',
