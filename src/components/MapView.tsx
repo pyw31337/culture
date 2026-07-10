@@ -725,6 +725,8 @@ export default function MapView({
 
                 const options = { center: new k.LatLng(initialCenter.lat, initialCenter.lng), level: initialLevel };
                 const map = new k.Map(mapRef.current, options) as KakaoMap;
+                (map as any).setZoomable(true);
+                (map as any).setDraggable(true);
 
                 mapOverlaysRef.current.forEach(o => o.setMap(null));
                 mapOverlaysRef.current = [];
@@ -808,7 +810,6 @@ export default function MapView({
                 map.panTo(new k.LatLng(matchedVenue.lat, matchedVenue.lng));
                 map.setLevel(4);
                 setSelectedVenue(matchedVenue.groupKey);
-                handleSearchHereInternal(map);
             } else {
                 if (mapSearchCenter.name !== '현 위치') {
                     map.panTo(loc);
@@ -1200,7 +1201,7 @@ export default function MapView({
     };
 
     return (
-        <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/85">
             {/* Isolated URL params bridge - see SearchParamsBridge for rationale. */}
             {!isEmbedded && (
                 <Suspense fallback={null}>
