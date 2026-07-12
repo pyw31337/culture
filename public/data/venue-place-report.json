@@ -1,15 +1,18 @@
 {
-  "checkedAt": "2026-07-12T19:32:39.995Z",
+  "checkedAt": "2026-07-12T23:43:04.857Z",
   "status": "warn",
-  "venueCount": 3882,
-  "matchedCount": 953,
-  "highConfidenceMatchCount": 690,
+  "venueCount": 3845,
+  "matchedCount": 947,
+  "highConfidenceMatchCount": 685,
   "needsReviewCount": 20,
-  "notFoundCount": 270,
-  "pendingLookupCount": 1914,
-  "insufficientIdentityCount": 226,
-  "lookupReady": false,
-  "providersConfigured": [],
+  "notFoundCount": 269,
+  "pendingLookupCount": 1888,
+  "insufficientIdentityCount": 225,
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
   "queue": [
     {
       "venueId": "venue_동구문화플랫폼_dzzo7b",
@@ -1398,21 +1401,6 @@
       ]
     },
     {
-      "venueId": "venue_07호메종디케_mktqnc",
-      "officialName": "07호 메종디케",
-      "address": "서울특별시 강서구 마곡중앙6로 21 807호 메종디케",
-      "query": "07호 메종디케 서울 강서구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "화과자 만들기 클래스"
-      ]
-    },
-    {
       "venueId": "venue_duex홍대_7huh1f",
       "officialName": "DUEX 홍대",
       "address": "서울특별시 마포구 양화로 186(동교동) LC TOWER B3F DUEX (홍대입구역 4번출구)",
@@ -1488,21 +1476,6 @@
       ]
     },
     {
-      "venueId": "venue_부산강서구명지오션시티10로114114동108gh2층비이스튜_p2mekp",
-      "officialName": "부산 강서구 명지오션시티10로 114 114동 108gh 2층 비이스튜디오",
-      "address": "부산 강서구 명지오션시티10로 114 (명지동, 명지오션시티삼정그린코아) 114동 108gh 2층 비이스튜디오",
-      "query": "114동 108gh 2층 비이스튜디오 부산 강서구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가죽공예 마카쥬커스텀 클래스"
-      ]
-    },
-    {
       "venueId": "venue_서울강남구논현로332b1_12a3h7l",
       "officialName": "서울 강남구 논현로 332 b1",
       "address": "서울 강남구 논현로 332 (역삼동, 계유빌딩) b1",
@@ -1515,21 +1488,6 @@
       ],
       "sampleTitles": [
         "유리컵 전사 체험"
-      ]
-    },
-    {
-      "venueId": "venue_서울강서구공항동3435401호달보컬스튜디오_07d78e",
-      "officialName": "서울 강서구 공항동 34-35 401호 달보컬스튜디오",
-      "address": "서울 강서구 공항동 34-35 401호 달보컬스튜디오",
-      "query": "서울 강서구 공항동 34-35 401호 달보컬스튜디오 서울 강서구",
-      "priority": 468,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "coordinate_fallback_risk",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "보컬 무작정 한곡 완성해보기"
       ]
     },
     {
@@ -1845,6 +1803,51 @@
       ],
       "sampleTitles": [
         "마음대로그리기"
+      ]
+    },
+    {
+      "venueId": "venue_서울특별시마포구서교동46731층델라젬플라워_9grkyf",
+      "officialName": "서울특별시 마포구 서교동 467-3 1층 델라젬플라워",
+      "address": "서울 마포구 월드컵로 212",
+      "query": "서울특별시 마포구 서교동 467-3 1층 델라젬플라워 서울 마포구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "크리스마스 다육이 테라리움"
+      ]
+    },
+    {
+      "venueId": "venue_서울특별시마포구연남동38711지하1층취미미술그링_9grkyf",
+      "officialName": "서울특별시 마포구 연남동 387-11 지하1층 취미미술그링",
+      "address": "서울 마포구 월드컵로 212",
+      "query": "서울특별시 마포구 연남동 387-11 지하1층 취미미술그링 서울 마포구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "초보자를 위한 베어브릭&버니브릭 만들기(할인이벤트)"
+      ]
+    },
+    {
+      "venueId": "venue_서울특별시마포구포은로8길21지층_1tk723t",
+      "officialName": "서울특별시 마포구 포은로8길 21 지층",
+      "address": "서울특별시 마포구 포은로8길 21 지층",
+      "query": "서울특별시 마포구 포은로8길 21 지층 서울 마포구",
+      "priority": 468,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "coordinate_fallback_risk",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "1:1 프라이빗 보컬 디렉팅: 내 목소리로 만드는 고퀄리티 보컬 녹음"
       ]
     }
   ],
@@ -3645,21 +3648,6 @@
       ]
     },
     {
-      "venueId": "venue_서울마포구_1rjlv2a",
-      "officialName": "서울 마포구",
-      "address": "서울특별시 마포구 양화로 45, 메세나폴리스 2층",
-      "query": "서울 마포구 서울 마포구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "아주아주 배고픈 애벌레 쇼"
-      ]
-    },
-    {
       "venueId": "venue_서울서초구_12c4zd9",
       "officialName": "서울 서초구",
       "address": "서울특별시 서초구 효령로72길 60 한전아트센터",
@@ -3763,6 +3751,21 @@
       ],
       "sampleTitles": [
         "감성 컬러 액션페인팅 물레 도자기 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_서울성동구_16fyz40",
+      "officialName": "서울 성동구",
+      "address": "서울 성동구 무학봉15길 27",
+      "query": "서울 성동구 서울 성동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "［왕십리］ 그아저씨 도예공방 원데이 클래스(전화예약 필수)"
       ]
     }
   ],
@@ -4109,17 +4112,20 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-07-12T19:32:39.995Z",
+    "checkedAt": "2026-07-12T23:43:04.857Z",
     "status": "warn",
-    "venueCount": 3882,
-    "matchedCount": 953,
-    "highConfidenceMatchCount": 690,
+    "venueCount": 3845,
+    "matchedCount": 947,
+    "highConfidenceMatchCount": 685,
     "needsReviewCount": 20,
-    "notFoundCount": 270,
-    "pendingLookupCount": 1914,
-    "insufficientIdentityCount": 226,
-    "lookupReady": false,
-    "providersConfigured": [],
+    "notFoundCount": 269,
+    "pendingLookupCount": 1888,
+    "insufficientIdentityCount": 225,
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
     "staleCacheCount": 0,
     "topQueue": [
       {
