@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-09T08:37:31.284Z",
-  "itemCount": 7912,
+  "checkedAt": "2026-07-13T04:30:25.175Z",
+  "itemCount": 8431,
   "status": "pass",
   "metrics": {
     "missingLocalImageCount": 0,
     "placeholderImageCount": 0,
     "placeholderImageRate": 0,
-    "duplicatedDescriptionCount": 87,
+    "duplicatedDescriptionCount": 102,
     "missingSourceDateCount": 0,
     "suspiciousVenueAddressCount": 0,
     "ambiguousVenueDictionaryCount": 0,
@@ -17,52 +17,16 @@
     "placeholderImages": [],
     "duplicatedDescriptions": [
       {
-        "id": "perf_쇼뮤지컬_프린세스_캐치_티니핑_성남",
-        "title": "쇼뮤지컬〈프린세스 캐치! 티니핑〉 - 성남",
-        "genre": "musical",
-        "similarity": 0.46
-      },
-      {
-        "id": "perf_영유아_톡_톡_클래식_In_JULY_서산",
-        "title": "영유아 톡!톡! 클래식 In JULY - 서산",
-        "genre": "classic_tradition",
-        "similarity": 0.51
-      },
-      {
-        "id": "perf_성남_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2",
-        "title": "［성남］ 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-        "genre": "concert",
-        "similarity": 0.5
-      },
-      {
-        "id": "perf_2026_PEPPERTONES_CLUB_TOUR_부산",
-        "title": "2026 PEPPERTONES CLUB TOUR - 부산",
-        "genre": "concert",
-        "similarity": 0.54
-      },
-      {
-        "id": "perf_2026년_서울단편극_페스티벌_테스트중입니다_아버지와_나",
-        "title": "2026년 서울단편극 페스티벌 - 〈테스트중입니다.〉, 〈아버지와 나〉",
-        "genre": "play",
-        "similarity": 0.54
-      },
-      {
         "id": "perf_피아니스트_김준_독주회_줄라이_페스티벌_서산",
         "title": "피아니스트 김준 독주회 ［줄라이 페스티벌］ - 서산",
         "genre": "classic_tradition",
         "similarity": 0.52
       },
       {
-        "id": "perf_뮤지컬_Club_설화",
-        "title": "뮤지컬 Club 〈설화〉",
-        "genre": "musical",
-        "similarity": 0.48
-      },
-      {
-        "id": "perf_얼리버드_뱅크시_Still_Here",
-        "title": "［얼리버드］ 뱅크시 : Still Here",
-        "genre": "exhibition",
-        "similarity": 0.47
+        "id": "perf_어린이_음악극_고양이는_죽어서_어디로_갈까요",
+        "title": "어린이 음악극 〈고양이는 죽어서 어디로 갈까요？〉",
+        "genre": "play",
+        "similarity": 0.5
       },
       {
         "id": "perf_2026_서울시향_수산나_멜키의_슈베르트_그레이트",
@@ -71,16 +35,64 @@
         "similarity": 0.45
       },
       {
+        "id": "perf_브런치콘서트_11시11분_미드나잇_인_파리",
+        "title": "브런치콘서트 ［11시11분］ 미드나잇 인 파리",
+        "genre": "concert",
+        "similarity": 0.49
+      },
+      {
         "id": "perf_인천_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
         "title": "［인천］ 가족뮤지컬 〈로보카폴리 - 브룸스타운의 에너지를 지켜라!〉",
         "genre": "musical",
         "similarity": 0.51
       },
       {
+        "id": "perf_7월_동탄_네이처스케이프_플러스_썸머_얼리버드_패키지_특가",
+        "title": "［7월］ 동탄 네이처스케이프 플러스 (썸머 얼리버드 패키지 특가!)",
+        "genre": "activity",
+        "similarity": 0.48
+      },
+      {
         "id": "perf_2026년_서울단편극_페스티벌_토스트구워주는_남자_폴리웜",
         "title": "2026년 서울단편극 페스티벌 - 〈토스트구워주는 남자〉, 〈폴리웜〉",
         "genre": "play",
         "similarity": 0.54
+      },
+      {
+        "id": "perf_롯데월드_아쿠아리움_서울스카이PKG",
+        "title": "롯데월드 아쿠아리움+서울스카이PKG",
+        "genre": "activity",
+        "similarity": 0.46
+      },
+      {
+        "id": "perf_2026_PEPPERTONES_CLUB_TOUR_부산",
+        "title": "2026 PEPPERTONES CLUB TOUR - 부산",
+        "genre": "concert",
+        "similarity": 0.54
+      },
+      {
+        "id": "perf_성남_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2",
+        "title": "［성남］ 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
+        "genre": "concert",
+        "similarity": 0.5
+      },
+      {
+        "id": "perf_뮤지컬_Club_설화",
+        "title": "뮤지컬 Club 〈설화〉",
+        "genre": "musical",
+        "similarity": 0.48
+      },
+      {
+        "id": "perf_가야금피어나_Blooming_Together",
+        "title": "가야금피어나 〈Blooming Together〉",
+        "genre": "classic_tradition",
+        "similarity": 0.54
+      },
+      {
+        "id": "perf_검정고무신_2_부산",
+        "title": "검정고무신 2 - 부산",
+        "genre": "play",
+        "similarity": 0.46
       },
       {
         "id": "perf_베베핀_뮤지컬_두근두근_새친구_서울",
@@ -101,40 +113,28 @@
         "similarity": 0.47
       },
       {
-        "id": "perf_경기_동두천_체험형_숲_테마파크_놀자숲_이용권_실내_외_초대형_어드벤처_파크",
-        "title": "［경기 동두천］ 체험형 숲 테마파크 놀자숲 이용권 (실내/외 초대형 어드벤처 파크)",
-        "genre": "exhibition",
-        "similarity": 0.53
+        "id": "perf_웨이브파크_미오코스타존_7_4_7_24",
+        "title": "웨이브파크 미오코스타존(7/4~7/24)",
+        "genre": "activity",
+        "similarity": 0.48
       },
       {
-        "id": "perf_옐레드_서초교대역점_애견유치원_애견호텔_이용권",
-        "title": "옐레드 서초교대역점 애견유치원 애견호텔 이용권",
+        "id": "perf_7월_동탄_네이처스케이프_플러스_AFTER_4_모험권",
+        "title": "［7월］ 동탄 네이처스케이프 플러스(AFTER 4 모험권)",
+        "genre": "activity",
+        "similarity": 0.48
+      },
+      {
+        "id": "perf_골드시즌_이천_테르메덴_풀앤스파_7_1_7_24",
+        "title": "［골드시즌］ 이천 테르메덴 풀앤스파 (7/1~7/24)",
         "genre": "activity",
         "similarity": 0.45
       },
       {
-        "id": "perf_경주가볼만한곳_라원_미디어아트_복합문화정원",
-        "title": "［경주가볼만한곳］ 라원 미디어아트 복합문화정원",
-        "genre": "exhibition",
-        "similarity": 0.51
-      },
-      {
-        "id": "perf_연극_멜로에_차질_로맨스_찍먹_코미디",
-        "title": "연극 〈멜로에 차질〉 - 로맨스 찍먹 코미디",
-        "genre": "play",
-        "similarity": 0.46
-      },
-      {
-        "id": "perf_동탄_아이와가볼만한곳_동탄공룡월드_키즈카페_그랜드_오픈특가",
-        "title": "［동탄］ 아이와가볼만한곳! 동탄공룡월드＆키즈카페 그랜드 오픈특가",
+        "id": "perf_7월_동탄_네이처스케이프_플러스_입장권_1인권_패밀리권",
+        "title": "［7월］ 동탄 네이처스케이프 플러스 입장권 (1인권/패밀리권)",
         "genre": "activity",
-        "similarity": 0.45
-      },
-      {
-        "id": "perf_아산_까블랑_키즈카페_이용권",
-        "title": "［아산］ 까블랑 키즈카페 이용권",
-        "genre": "activity",
-        "similarity": 0.5
+        "similarity": 0.48
       }
     ],
     "missingSourceDates": [],

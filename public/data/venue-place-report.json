@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-07-12T23:49:24.327Z",
+  "checkedAt": "2026-07-13T04:32:04.063Z",
   "status": "warn",
-  "venueCount": 3986,
+  "venueCount": 3983,
   "matchedCount": 935,
   "highConfidenceMatchCount": 684,
   "needsReviewCount": 20,
   "notFoundCount": 256,
   "pendingLookupCount": 2082,
-  "insufficientIdentityCount": 229,
+  "insufficientIdentityCount": 226,
   "lookupReady": true,
   "providersConfigured": [
     "kakao",
@@ -2495,22 +2495,6 @@
       ]
     },
     {
-      "venueId": "venue_서울종로구_1h05k4d",
-      "officialName": "서울 종로구",
-      "address": "서울 종로구 창경궁로 185",
-      "query": "서울 종로구 서울 종로구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "궁궐야행 창경궁",
-        "창경궁 여행"
-      ]
-    },
-    {
       "venueId": "venue_웅진플레이도시_1cf1r8m",
       "officialName": "웅진플레이도시",
       "address": "경기 부천시 원미구 조마루로 2",
@@ -3828,6 +3812,21 @@
       "sampleTitles": [
         "[신촌,홍대][몸치 탈출][스트릿댄스][4회권][1회권]"
       ]
+    },
+    {
+      "venueId": "venue_서울마포구_1tjcgvl",
+      "officialName": "서울 마포구",
+      "address": "서울 마포구 서교동 345-8",
+      "query": "서울 마포구 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "'운명전쟁49' 화제의 주인공, 빈타로의 타로 상담 클래스"
+      ]
     }
   ],
   "staleCacheCount": 0,
@@ -4173,15 +4172,15 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-07-12T23:49:24.327Z",
+    "checkedAt": "2026-07-13T04:32:04.063Z",
     "status": "warn",
-    "venueCount": 3986,
+    "venueCount": 3983,
     "matchedCount": 935,
     "highConfidenceMatchCount": 684,
     "needsReviewCount": 20,
     "notFoundCount": 256,
     "pendingLookupCount": 2082,
-    "insufficientIdentityCount": 229,
+    "insufficientIdentityCount": 226,
     "lookupReady": true,
     "providersConfigured": [
       "kakao",

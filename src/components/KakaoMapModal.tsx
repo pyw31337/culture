@@ -307,6 +307,21 @@ export default function KakaoMapModal({
         };
     }, []); // Empty dependency array = mount once
 
+    // Relayout Kakao Map automatically on any container size changes
+    useEffect(() => {
+        if (!mapInstance || !mapRef.current) return;
+        const map = mapInstance;
+        const observer = new ResizeObserver(() => {
+            if (typeof map.relayout === 'function') {
+                map.relayout();
+            }
+        });
+        observer.observe(mapRef.current);
+        return () => {
+            observer.disconnect();
+        };
+    }, [mapInstance]);
+
     // --- 3. Reactive Map Updates (Center/Bounds) ---
     useEffect(() => {
         if (!mapInstance || !isMapReady) return;

@@ -809,6 +809,21 @@ export default function MapView({
         };
     }, [isMapReady, mapInstance, updateRenderedMarkerVenues]);
 
+    // Relayout Kakao Map automatically on any container size changes
+    useEffect(() => {
+        if (!mapInstance || !mapRef.current) return;
+        const map = mapInstance;
+        const observer = new ResizeObserver(() => {
+            if (typeof map.relayout === 'function') {
+                map.relayout();
+            }
+        });
+        observer.observe(mapRef.current);
+        return () => {
+            observer.disconnect();
+        };
+    }, [mapInstance]);
+
     // --- Reactive Map Updates ---
     useEffect(() => {
         if (!mapInstance || !isMapReady || !isDataFullyLoaded) return;

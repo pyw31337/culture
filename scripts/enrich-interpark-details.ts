@@ -151,11 +151,32 @@ async function extractDetail(page: any, item: InterparkItem) {
     });
 }
 
+function parseDateValue(dateText?: string) {
+    const match = String(dateText || '').match(/(20\d{2})[.-](\d{1,2})[.-](\d{1,2})/);
+    if (!match) return Number.POSITIVE_INFINITY;
+    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3])).getTime();
+}
+
 async function main() {
     const items = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')) as InterparkItem[];
     const targets = items
         .filter((item) => goodsIdFromLink(item.link))
-        .filter((item) => !hasUsefulDetail(item))
+        .filter((item) => {
+            if (item.lastEnriched) {
+                const ageDays = (Date.now() - new Date(item.lastEnriched).getTime()) / (24 * 3600 * 1000);
+                if (ageDays < 2) return false; // Throttling: skip recently enriched
+            }
+            return !hasUsefulDetail(item);
+        })
+        .sort((a, b) => {
+            const dateA = parseDateValue(a.date);
+            const dateB = parseDateValue(b.date);
+            if (dateA !== dateB) return dateA - dateB; // Upcoming first
+            
+            if (!a.lastEnriched && b.lastEnriched) return -1;
+            if (a.lastEnriched && !b.lastEnriched) return 1;
+            return 0;
+        })
         .slice(0, LIMIT);
 
     console.log(`Interpark detail enrich targets: ${targets.length}/${items.length}`);
