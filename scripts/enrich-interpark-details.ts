@@ -8,6 +8,7 @@ puppeteer.use(StealthPlugin());
 type InterparkItem = {
     id: string;
     title: string;
+    date?: string;
     image?: string;
     link?: string;
     synopsis?: string;

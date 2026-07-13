@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/culture/_next/precache.S6YrWF1pjGu9x-K8efk-h.97990b70ac9e3fcd95eb2dd83d5ffd74.js"
+  "/culture/_next/precache.ZN8OcQtbdtv6Vt2y7-upQ.9485766a9304112895860c63cdbdf96f.js"
 );
 
 workbox.core.skipWaiting();
@@ -808,10 +808,6 @@ self.__precacheManifest = [
     "revision": "8b11c8a0f9913836717bdb070c6ccfd3"
   },
   {
-    "url": "/images/thumbs/w320/posters/classic/yes24_광주시립합창단_204회_정기연주회_German_Requiem.webp",
-    "revision": "68279faf4e6b89860a95c862d89f6249"
-  },
-  {
     "url": "/images/thumbs/w320/posters/classic/yes24_김해_2026_자유_패키지_P_art.webp",
     "revision": "f3c072bd4954ca665eee0c23cbaf23dc"
   },
@@ -1036,10 +1032,6 @@ self.__precacheManifest = [
     "revision": "8e10f76cdca4ed62fbc325c58fee6a3e"
   },
   {
-    "url": "/images/thumbs/w320/posters/concert/yes24_Ruslan_Belyy_New_concert_IMMIGRACIAS.webp",
-    "revision": "b9f031fd14861ac5d030e6ce7141817e"
-  },
-  {
     "url": "/images/thumbs/w320/posters/concert/yes24_SIRUP_내한공연_SIRUP_ASIA_TOUR_2026_TURN_THE_PAGE_IN_ASIA_in_SEOUL.webp",
     "revision": "cd24246eb742907f2cc0cf43d67f0c12"
   },
@@ -1098,10 +1090,6 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/concert/yes24_대구_더_보컬.webp",
     "revision": "51d08e9d1035aa1391244ea585f29dc8"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/concert/yes24_매튜_아이필드_Matthew_Ifield_내한_공연_CLOSE_TO_YOUR_HEART_TOUR.webp",
-    "revision": "54ab13f9c123b0de4adc415035b8d0c0"
   },
   {
     "url": "/images/thumbs/w320/posters/concert/yes24_무쿠_내한공연_muque_LIVE_TOUR_2026_GLHF_in_Seoul.webp",
@@ -1236,10 +1224,6 @@ self.__precacheManifest = [
     "revision": "96bcc4457ed2caf7fb9d1eedb18a997f"
   },
   {
-    "url": "/images/thumbs/w320/posters/festivals/0fe22b88_0997_4c23_9f07_789667874b06.webp",
-    "revision": "42ddcf49bb4e8bd7fe4d6bc909b06d62"
-  },
-  {
     "url": "/images/thumbs/w320/posters/festivals/187271d0_9f7f_450f_a502_fe0b46f4e48c.webp",
     "revision": "43ad8db8b5378dad40b35cc8b813214d"
   },
@@ -1274,10 +1258,6 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/2387725a_dc4a_4b19_8d5d_2a4d954d00d7.webp",
     "revision": "023f1dc36cac6c7404c424cb67b896b4"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/festivals/24e592fb_3856_4d3a_b155_b6d16d1b51bf.webp",
-    "revision": "923fef1b292a4e35f5a6c6a0d04617cf"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/28db2736_cde3_4e56_a331_aaf8ba9f0015.webp",
@@ -1316,12 +1296,12 @@ self.__precacheManifest = [
     "revision": "4b8cb5d1ec1bebf3f18b88dce15d8461"
   },
   {
-    "url": "/images/thumbs/w320/posters/festivals/47010e81_432c_42b0_a5f7_aaac7a07dbc2.webp",
-    "revision": "d7f820e1878400433d47fe8d25bf39ef"
+    "url": "/images/thumbs/w320/posters/festivals/41c6d57e_9241_4c59_8054_762470cbe3e1.webp",
+    "revision": "f3967bab3955b989e310b99a45c2efbb"
   },
   {
-    "url": "/images/thumbs/w320/posters/festivals/4b3a9d90_353d_4b1b_a34f_8807e713774b.webp",
-    "revision": "5ea6d83372b8f55042a83f43d025defe"
+    "url": "/images/thumbs/w320/posters/festivals/47010e81_432c_42b0_a5f7_aaac7a07dbc2.webp",
+    "revision": "d7f820e1878400433d47fe8d25bf39ef"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/50f59373_bf29_455b_8c92_50c4e76f58f5.webp",
@@ -1338,10 +1318,6 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/52c26e05_2f86_4332_8181_ca3f68edb064.webp",
     "revision": "c0a3bde4883bc6cda116b9f5bc8f50ce"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/festivals/53b9497a_02cf_48ed_9d46_ee58efc16545.webp",
-    "revision": "83a81b74e74760353810a0fd8de761c8"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/53d646d1_9565_4c14_8888_81359ac8867a.webp",
@@ -1362,10 +1338,6 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/644495a7_65e3_42ef_8993_e18e2e71a8bd.webp",
     "revision": "cfb9a4b08918f22fe9e64dc00527ec59"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/festivals/67a2b058_c7c0_42bd_a018_8aedc8418bde.webp",
-    "revision": "8ea73d0670731632247e746964f29297"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/6d5c971e_b99c_4da8_a003_f673b4beba76.webp",
@@ -1452,6 +1424,10 @@ self.__precacheManifest = [
     "revision": "771ba9ad9fb2d99d8576419e28b835bf"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/97898552_1e73_46e2_bba5_ab4f5d0f8670.webp",
+    "revision": "446f739a15e8131b572cc90c88373a21"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/98cca56b_209b_44a7_9a41_a89629ef0242.webp",
     "revision": "603fe7653fd8697b016cdaa0d79a0c71"
   },
@@ -1470,14 +1446,6 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/9baec2f1_84c7_4b70_aa3e_b8f6fe76b0c1.webp",
     "revision": "e4196ce47c3ed4b8aacada1e90eb5a2c"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/festivals/9be93722_b4ee_4059_b688_0ae9e2527083.webp",
-    "revision": "3a8837e6b79a6ebc667d8fbc78829a71"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/festivals/9cfdf097_5fcd_469f_ab72_b979b3cb69ce.webp",
-    "revision": "e6c7afcb0bb4fc2bf2d2d3898365897d"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/9df157f4_4547_4672_92b6_56f92e9e06e0.webp",
@@ -1534,10 +1502,6 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/festivals/ce010596_12fe_43cb_9386_3f09a4397ef1.webp",
     "revision": "f3de19dd68a5e1ebfd725c12b323d5a0"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/festivals/d0187095_61a5_4ae2_ab27_5ece7161158b.webp",
-    "revision": "c7188ceea34d964af6731b46273a5543"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/d18ca54d_6d78_46c4_a7f6_d6bda804f736.webp",
@@ -1600,16 +1564,16 @@ self.__precacheManifest = [
     "revision": "d79e5cf57b75e3e8f57fe74c7e6a9cb9"
   },
   {
+    "url": "/images/thumbs/w320/posters/festivals/f0c6ae7b_6eba_4c2e_86c9_806afc612d08.webp",
+    "revision": "a6d1d4967b1471286a50b53dfc0c319e"
+  },
+  {
     "url": "/images/thumbs/w320/posters/festivals/f3026b60_0634_49ef_9ccb_8fb68d0e09a5.webp",
     "revision": "d8a1e952fdf22820c831043a77a95573"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/f706f043_fc2f_4fca_9e9a_bcd588eaafb4.webp",
     "revision": "187ac927eee872d53a25a858846151f8"
-  },
-  {
-    "url": "/images/thumbs/w320/posters/festivals/fc491eba_6273_4ae0_a6bd_aee54fcac631.webp",
-    "revision": "656802e14b88b357c4ae79743313f204"
   },
   {
     "url": "/images/thumbs/w320/posters/festivals/fdb11408_6de8_46ea_b051_faac6fc020a7.webp",
@@ -1992,6 +1956,10 @@ self.__precacheManifest = [
     "revision": "65a2f98378abd69f2e73b65ccd3f229d"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_가족여행.webp",
+    "revision": "2642fe607f968c1775d5d12d880330ec"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_군체.webp",
     "revision": "f6f7b556ab7a5b4cfb953de474d4ab48"
   },
@@ -2016,6 +1984,10 @@ self.__precacheManifest = [
     "revision": "401914fb02a1c5c1675c3608e74aebe9"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_눈_둘_데가_없네.webp",
+    "revision": "5f0732d62b7a4429de7465885db41734"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_눈동자.webp",
     "revision": "e8d1a8ab534d90eaa8298860e1494dda"
   },
@@ -2032,6 +2004,10 @@ self.__precacheManifest = [
     "revision": "e74f84532c0865b0127496083265f99e"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_듄_파트_3.webp",
+    "revision": "3e8915776d19a79b39d16336a760c638"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_드림_애니멀즈_더무비.webp",
     "revision": "005e18b9a6d17a6b1fef3b6f8658b9bd"
   },
@@ -2046,6 +2022,14 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_레지던트_이블_0번째_밤.webp",
     "revision": "f120d304e34f06f9c9828ada9f7f6562"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_룩백.webp",
+    "revision": "8a7a1e0446399e8f96dbf06511000711"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_리틀_드래곤몬스터섬의_비밀.webp",
+    "revision": "e82e7414de1cb692d1c23beb3282149f"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_마티_슈프림.webp",
@@ -2076,6 +2060,10 @@ self.__precacheManifest = [
     "revision": "59b6489837fda606e96cfb5db44cfcce"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_미트_페어런츠_4.webp",
+    "revision": "635d875951612a28749450add7374ead"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_백룸.webp",
     "revision": "b831e323fa8c2c36cdbbf68d7926e5ea"
   },
@@ -2084,12 +2072,24 @@ self.__precacheManifest = [
     "revision": "4d94105b8adbb3dd8d281c66ca63c29c"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_베어_헌트_피의_추격.webp",
+    "revision": "99a37aee9720eec9f86960b076d39366"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_비광.webp",
+    "revision": "35115e9d17c00fb6ae19bc969836a9ab"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_사랑의_네_가지_온도.webp",
     "revision": "5237ac8d087a5a2a07342406c6114b2f"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_사랑의_하츄핑_고래보석의_전설.webp",
     "revision": "f8ba9f95706827a4314f1f01780ee78b"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_산양들.webp",
+    "revision": "1aaa6d6f395e2095bc72a3d9e715b1b4"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_섹스중독_쉬운_여자.webp",
@@ -2124,6 +2124,10 @@ self.__precacheManifest = [
     "revision": "dfe882aa2a2983b7a23b8da9f7eb1fd8"
   },
   {
+    "url": "/images/thumbs/w320/posters/movies/movie_옵세션.webp",
+    "revision": "818b66e31496b88ff886d49422e7258e"
+  },
+  {
     "url": "/images/thumbs/w320/posters/movies/movie_와인드업_더_무비.webp",
     "revision": "05cd123975e9fdf50f5c150d8b3fb893"
   },
@@ -2134,6 +2138,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_우리_아빠_좀비.webp",
     "revision": "49f5365648134c88d3e8c2b875bdb904"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_워페어.webp",
+    "revision": "623b1a00943d47a3dd25e3526b94916c"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_인시디어스_그들이_넘어왔다.webp",
@@ -2182,6 +2190,10 @@ self.__precacheManifest = [
   {
     "url": "/images/thumbs/w320/posters/movies/movie_헥스_깨어난_마법.webp",
     "revision": "35bb280c7a8b8301f1f94aa0ffda2e23"
+  },
+  {
+    "url": "/images/thumbs/w320/posters/movies/movie_헬파이어_시수의_길.webp",
+    "revision": "9ac325d67f0d0996aaadd35f6480e885"
   },
   {
     "url": "/images/thumbs/w320/posters/movies/movie_호컴.webp",
