@@ -1,16 +1,34 @@
 {
-  "checkedAt": "2026-07-14T19:57:25.108Z",
+  "checkedAt": "2026-07-15T19:42:19.393Z",
   "status": "warn",
-  "venueCount": 4033,
-  "matchedCount": 943,
-  "highConfidenceMatchCount": 690,
+  "venueCount": 4049,
+  "matchedCount": 946,
+  "highConfidenceMatchCount": 692,
   "needsReviewCount": 20,
   "notFoundCount": 255,
-  "pendingLookupCount": 2117,
-  "insufficientIdentityCount": 236,
+  "pendingLookupCount": 2138,
+  "insufficientIdentityCount": 228,
   "lookupReady": false,
   "providersConfigured": [],
   "queue": [
+    {
+      "venueId": "venue_제물포구문화체육센터공연장_ey9y9y",
+      "officialName": "제물포구문화체육센터 공연장",
+      "address": "제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+      "query": "제물포구문화체육센터 공연장 제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+      "priority": 964,
+      "performanceCount": 8,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "키즈 바로크 : 텔레만 아저씨의 이야기 보따리 - 코리안 바로크 소사이어티 - 인천 (07.18)",
+        "제물포구문화체육센터 개관5주년 기념음악회 〈Chapter 5〉",
+        "［김시라의 품바 : Original］ - 인천"
+      ]
+    },
     {
       "venueId": "venue_ncs산업현장교수_ta9hlr",
       "officialName": "NCS 산업현장교수,",
@@ -94,6 +112,22 @@
       ]
     },
     {
+      "venueId": "venue_시드스페이스갤러리_1couznj",
+      "officialName": "시드스페이스갤러리",
+      "address": "시드스페이스갤러리(자세히)",
+      "query": "시드스페이스갤러리 시드스페이스갤러리(자세히)",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "벽에 달린 손잡이"
+      ]
+    },
+    {
       "venueId": "venue_영동복합문화예술회관_1tyr5al",
       "officialName": "영동복합문화예술회관",
       "address": "영동복합문화예술회관 대공연장(자세히)",
@@ -107,22 +141,6 @@
       ],
       "sampleTitles": [
         "판타지 가족오페라 〈물의 아이〉 - 충북 영동"
-      ]
-    },
-    {
-      "venueId": "venue_제물포구문화체육센터공연장_ey9y9y",
-      "officialName": "제물포구문화체육센터 공연장",
-      "address": "제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
-      "query": "제물포구문화체육센터 공연장 제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
-      "priority": 908,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "키즈 바로크 : 텔레만 아저씨의 이야기 보따리 - 코리안 바로크 소사이어티 - 인천 (07.18)"
       ]
     },
     {
@@ -153,9 +171,9 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "부산 산타딸기 케이크 만들기/ 쌀케이크 만들기 이색 클래스",
-        "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡",
-        "비건이 왔어요 얼려먹는 비건맘모스쌀빵 3종 베이킹"
+        "부산전포)한입치즈케이크 완전강추 jmt",
+        "부산/전포/ 맛있는 쌀로 만드는 찰꿀빵 만들기",
+        "수제 카네이션 쿠키 만들기 어버이날 이색 선물"
       ]
     },
     {
@@ -171,9 +189,9 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "앙금플라워 떡케이크 만들기 원데이 클래스",
         "뚱카롱 만들기 원데이 클래스",
-        "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트"
+        "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트",
+        "앙금플라워쿠키+쁘띠너트 타르트 2종 만들기 원데이 클래스"
       ]
     },
     {
@@ -189,9 +207,9 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "우유크림 카스테라 만들기 원데이 클래스",
-        "스모어 쿠키 2종 만들기 원데이 클래스",
-        "쌀바통 빼빼로 만들기 원데이 클래스"
+        "설날 선물 쌀전병 원데이 클래스",
+        "중독성 강한 옥수수빵 만들기 원데이 클래스",
+        "바도 매직 초코바 만들기 원데이 클래스"
       ]
     },
     {
@@ -239,8 +257,8 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "부산성인피아노/부산피아노/사상피아노/주례피아노/사상음악학원/주례음악학원 [1개월]",
-        "부산성인피아노1:1레슨/주례피아노/사상피아노"
+        "부산성인피아노1:1레슨/주례피아노/사상피아노",
+        "부산성인피아노/부산피아노/사상피아노/주례피아노/사상음악학원/주례음악학원 [1개월]"
       ]
     },
     {
@@ -257,22 +275,6 @@
       "sampleTitles": [
         "［3차 얼리버드 10% 할인］ 스튜디오 지브리展 in Jeju",
         "스튜디오 지브리展 in Jeju"
-      ]
-    },
-    {
-      "venueId": "venue_진천예술의전당진아트홀_1mqhas7",
-      "officialName": "진천예술의전당 진아트홀",
-      "address": "충청북도 진천군 진천읍 남산10길 31 진아트홀",
-      "query": "진천예술의전당 진아트홀 충청북도 진천군",
-      "priority": 596,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "보재 이상설, 조국독립을 꿈꾸다: 서전서숙 [진천]",
-        "서전서숙_진천"
       ]
     },
     {
@@ -380,21 +382,6 @@
       ],
       "sampleTitles": [
         "광주플룻원데이클래스"
-      ]
-    },
-    {
-      "venueId": "venue_광주광역시광산구장덕로39번길101층_18tf35o",
-      "officialName": "광주광역시 광산구 장덕로39번길 10 1층",
-      "address": "광주광역시 광산구 장덕로39번길 10 1층",
-      "query": "광주광역시 광산구 장덕로39번길 10 1층 광주 광산구",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "스트레스타파 수제왁뿌볼 &말랑이 만들기"
       ]
     },
     {
@@ -532,6 +519,22 @@
       ],
       "sampleTitles": [
         "천연향수 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_롤링스타즈패들보드구루나루_1taybes",
+      "officialName": "롤링스타즈 패들보드 구 루나루",
+      "address": "롤링스타즈 패들보드 (구 루나루)(자세히)",
+      "query": "롤링스타즈 패들보드 구 루나루 롤링스타즈 패들보드",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "［충남 안면도］ 태안 바다 위를 걷는 힐링 롤링스타즈 패들보드"
       ]
     },
     {
@@ -926,6 +929,21 @@
       ]
     },
     {
+      "venueId": "venue_엑스코동관56홀_2mcixn",
+      "officialName": "엑스코 동관 5,6홀",
+      "address": "엑스코 동관 5,6홀(자세히)",
+      "query": "엑스코 동관 5,6홀 엑스코 동관",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 무명전설 전국투어 콘서트 - 대구"
+      ]
+    },
+    {
       "venueId": "venue_여러분에게도즐겁고따뜻한시간이되기를바라며_1rnrat7",
       "officialName": "여러분에게도 즐겁고, 따뜻한 시간이 되기를 바라며",
       "address": "여러분에게도 즐겁고, 따뜻한 시간이 되기를 바라며",
@@ -1136,6 +1154,21 @@
       ]
     },
     {
+      "venueId": "venue_진천예술의전당진아트홀_1mqhas7",
+      "officialName": "진천예술의전당 진아트홀",
+      "address": "충청북도 진천군 진천읍 남산10길 31 진아트홀",
+      "query": "진천예술의전당 진아트홀 충청북도 진천군",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "보재 이상설, 조국독립을 꿈꾸다: 서전서숙 [진천]"
+      ]
+    },
+    {
       "venueId": "venue_집_스튜디오_qnuhu1",
       "officialName": "집! 스튜디오",
       "address": "부산광역시 전포동 309-43번지 2층 부산진구 부산광역시 KR 4층 집! 스튜디오",
@@ -1288,24 +1321,6 @@
       ]
     },
     {
-      "venueId": "venue_부산낙동아트센터앙상블극장_55ayaz",
-      "officialName": "부산 낙동아트센터 앙상블극장",
-      "address": "부산",
-      "query": "부산 낙동아트센터 앙상블극장 부산",
-      "priority": 440,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "2026 NAC 문화예술교육 공연 및 체험 악기체험 클클클 Ⅲ：친구들이 놀러왔어",
-        "모차르트의 마법 바이올린",
-        "갬블러크루: 얼쑤, 얼쓰"
-      ]
-    },
-    {
       "venueId": "venue_천안시성환문화회관_a7lw14",
       "officialName": "천안시성환문화회관",
       "address": "천안시성환문화회관 대공연장",
@@ -1320,6 +1335,24 @@
         "멜로우TV: Run it up, 팀 나빠 [천안]",
         "뮤지컬 ‘멜로우TV〈Run it up,팀나빠〉’ - 천안",
         "당신의 이야기를 연주합니다. - 천안"
+      ]
+    },
+    {
+      "venueId": "venue_부산낙동아트센터앙상블극장_55ayaz",
+      "officialName": "부산 낙동아트센터 앙상블극장",
+      "address": "부산",
+      "query": "부산 낙동아트센터 앙상블극장 부산",
+      "priority": 432,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 NAC 문화예술교육 공연 및 체험 악기체험 클클클 Ⅲ：친구들이 놀러왔어",
+        "모차르트의 마법 바이올린",
+        "갬블러크루: 얼쑤, 얼쓰"
       ]
     },
     {
@@ -1366,8 +1399,8 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "［항공우주박물관］ 뮤지컬〈수도SONG 세계여행〉 - 고양",
-        "마하랑 떠나요, 수도SONG 세계여행 [고양]"
+        "마하랑 떠나요, 수도SONG 세계여행 [고양]",
+        "［항공우주박물관］ 뮤지컬〈수도SONG 세계여행〉 - 고양"
       ]
     },
     {
@@ -1457,8 +1490,8 @@
       ],
       "sampleTitles": [
         "아르헨티나 탱고 원데이 클래스 오픈",
-        "르블루아뜰리에 도자기 마블링 원데이 클래스",
-        "JU보컬스튜디오 김포구래점 보컬레슨"
+        "더위 이기는 타이요리",
+        "커플 폴댄스(원데이 클래스)"
       ]
     },
     {
@@ -1491,9 +1524,27 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "NEC첼로앙상블 정기연주회",
         "키타무라 아사미 피아노 리사이틀",
-        "테너 김승직 솔로 리사이틀 : 시인의 사랑"
+        "테너 김승직 솔로 리사이틀 : 시인의 사랑",
+        "김지혜 바이올린 독주회 - 그리그 바이올린 소나타 전곡 연주"
+      ]
+    },
+    {
+      "venueId": "venue_경기아트센터_80cx9e",
+      "officialName": "경기아트센터",
+      "address": "경기 수원시 팔달구 효원로307번길 20",
+      "query": "경기아트센터 경기 수원시",
+      "priority": 144,
+      "performanceCount": 18,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup",
+        "parent_child_halls"
+      ],
+      "sampleTitles": [
+        "2026 경기 영유아 공연 페스티벌 〈엄마랑 아기랑〉 : ［벨기에］ BIMBAM Part - Klankennest - 수원",
+        "쇼뮤지컬 〈프린세스 캐치! 티니핑〉 - 수원",
+        "경기시나위오케스트라 기획공연 〈백범 김구〉 - 수원"
       ]
     },
     {
@@ -1515,21 +1566,19 @@
       ]
     },
     {
-      "venueId": "venue_경기아트센터_80cx9e",
-      "officialName": "경기아트센터",
-      "address": "경기 수원시 팔달구 효원로307번길 20",
-      "query": "경기아트센터 경기 수원시",
-      "priority": 136,
-      "performanceCount": 17,
+      "venueId": "venue_영화의전당하늘연극장_to1n4w",
+      "officialName": "영화의전당 하늘연극장",
+      "address": "부산 남구 수영로298번길 41",
+      "query": "영화의전당 하늘연극장 부산 남구",
+      "priority": 128,
+      "performanceCount": 16,
       "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup",
-        "parent_child_halls"
+        "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "쇼뮤지컬 〈프린세스 캐치! 티니핑〉 - 수원",
-        "2026 경기 영유아 공연 페스티벌 〈엄마랑 아기랑〉 : ［벨기에］ BIMBAM Part - Klankennest - 수원",
-        "경기시나위오케스트라 기획공연 〈백범 김구〉 - 수원"
+        "2026 영화의전당 07월 11시 영화음악콘서트 〈인생은 짧고, 예술은 길다 : 사카모토 류이치〉",
+        "2026 BCC 필름 뮤직 페스티벌 : 무성영화 〈창작곡 컴피티션 Final : 리틀 아멜리〉 - 부산",
+        "2026 BCC 필름 뮤직 페스티벌 : 무성영화 〈필름콘서트Ⅰ. 브로큰 블로썸〉 - 부산"
       ]
     },
     {
@@ -1543,9 +1592,9 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "명작모작 페인팅 원데이클래스",
+        "아이패드 드로잉 원데이 클래스",
         "플루이드아트 for KIDS 원데이클래스",
-        "캐릭터 페인팅 원데이클래스"
+        "추상화 페인팅 원데이클래스"
       ]
     },
     {
@@ -1559,25 +1608,9 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "2026 평창대관령음악제 Concert ＃3 ‘노래에서 화려한 기교로’",
         "2026 평창대관령음악제 Concert ＃2 ‘뿌리에서 피어나는 혁신’",
-        "2026 평창대관령음악제 Concert ＃5 ‘투명함에서 찬란함으로’"
-      ]
-    },
-    {
-      "venueId": "venue_영화의전당하늘연극장_to1n4w",
-      "officialName": "영화의전당 하늘연극장",
-      "address": "부산 남구 수영로298번길 41",
-      "query": "영화의전당 하늘연극장 부산 남구",
-      "priority": 112,
-      "performanceCount": 14,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "2026 BCC 필름 뮤직 페스티벌 : 무성영화 〈창작곡 컴피티션 Final : 리틀 아멜리〉 - 부산",
-        "2026 영화의전당 07월 11시 영화음악콘서트 〈인생은 짧고, 예술은 길다 : 사카모토 류이치〉",
-        "2026 BCC 필름 뮤직 페스티벌 : 무성영화 〈필름콘서트Ⅰ. 브로큰 블로썸〉 - 부산"
+        "2026 평창대관령음악제 Concert ＃3 ‘노래에서 화려한 기교로’",
+        "2026 평창대관령음악제 Concert ＃4 ‘친밀함에서 춤으로’"
       ]
     },
     {
@@ -1594,7 +1627,7 @@
       "sampleTitles": [
         "［부산투어패스］송도해상케이블카X남포동 영화체험박물관",
         "［부산투어패스］송도해상케이블카X센텀 뮤지엄원",
-        "［부산］ 부산투어패스 송도해상케이블카X남포동 자갈치크루즈"
+        "［부산투어패스］송도해상케이블카X해운대 요트투어 요트홀릭"
       ]
     },
     {
@@ -1629,25 +1662,25 @@
       "sampleTitles": [
         "제4회 농식품 테크 스타트업 창업박람회",
         "서울일러스트레이션페어V.21 얼리버드 티켓",
-        "2026 케이펫페어 서울"
+        "캐릭터 라이선싱 페어 2026"
       ]
     },
     {
-      "venueId": "venue_갤러리디아르테_6wlgqq",
-      "officialName": "갤러리 디아르테",
+      "venueId": "venue_갤러리디아르테청담_6wlgqq",
+      "officialName": "갤러리 디아르테 청담",
       "address": "서울 강남구 영동대로131길 14",
-      "query": "갤러리 디아르테 서울 강남구",
-      "priority": 80,
-      "performanceCount": 10,
+      "query": "갤러리 디아르테 청담 서울 강남구",
+      "priority": 72,
+      "performanceCount": 9,
       "reviewFlags": [
         "alias_merge_candidate",
         "high_confidence_similarity_merge",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "7월, 월간실내악 Ensemble Aubaine",
-        "7월, 월간연주자 피아니스트 김민진",
-        "8월, 월간연주자 피아니스트 이준병"
+        "8월, 월간연주자 피아니스트 서승은",
+        "8월, 월간연주자 피아니스트 노현진",
+        "9월, 월간연주자 피아니스트 김채원"
       ]
     },
     {
@@ -1662,9 +1695,27 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "장사항마리나 세일요트 이용권",
-        "도심형 실내 키즈 테마파크 챔피언/플레이타임 18개점",
-        "삼성화재 모빌리티뮤지엄 입장권"
+        "2026 화담숲 입장권(05.12-10.22)",
+        "도심형 실내 키즈 테마파크 챔피언1250/블랙벨트 34개점",
+        "헬로키티아일랜드 ♥혜택 4종 증정♥"
+      ]
+    },
+    {
+      "venueId": "venue_봄내극장_b5zd4f",
+      "officialName": "봄내극장",
+      "address": "강원도 춘천시 서부대성로 71",
+      "query": "봄내극장 강원 춘천시",
+      "priority": 72,
+      "performanceCount": 9,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "춘천연극제, 굿모닝 시티 라이브",
+        "춘천연극제, 휴먼코메디 [춘천]",
+        "춘천연극제, 미스터 마담"
       ]
     },
     {
@@ -1728,27 +1779,9 @@
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "［제주］ 제주 더마파크 공연+심쿵혜택",
+        "［제주］ 제주 더마파크 승마+심쿵혜택",
         "［제주］ 제주 더마파크 카트+심쿵혜택",
-        "［제주］ 제주 더마파크 승마+심쿵혜택"
-      ]
-    },
-    {
-      "venueId": "venue_봄내극장_b5zd4f",
-      "officialName": "봄내극장",
-      "address": "강원도 춘천시 서부대성로 71",
-      "query": "봄내극장 강원 춘천시",
-      "priority": 64,
-      "performanceCount": 8,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "춘천연극제, 휴먼코메디 [춘천]",
-        "춘천연극제, 미스터 마담",
-        "춘천연극제, 굿모닝 시티 라이브"
+        "［제주］ 제주 더마파크 공연+심쿵혜택"
       ]
     },
     {
@@ -1765,6 +1798,40 @@
         "분장실 [전주]",
         "2026 우수작품시리즈I - 피아니스트 김수연(전주)",
         "2026 우수작품시리즈II - 소프라노 황수미 - 전주"
+      ]
+    },
+    {
+      "venueId": "venue_춘천문화예술회관_ugd4yq",
+      "officialName": "춘천문화예술회관",
+      "address": "강원도 춘천시 효자상길5번길 13 (효자동)",
+      "query": "춘천문화예술회관 강원 춘천시",
+      "priority": 64,
+      "performanceCount": 8,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "퍼커션앙상블K 제 14회 정기연주회 - 춘천",
+        "뮤지컬 최고다 호기심딱지 시즌4 〈우리 몸은 우리가 지킨다!〉 - 춘천",
+        "지브리와 사랑에 빠지다 : 지브리 영화음악 콘서트 2026 - 춘천"
+      ]
+    },
+    {
+      "venueId": "venue_kbs수원아트홀_1bmili0",
+      "officialName": "KBS수원아트홀",
+      "address": "경기 수원시 팔달구 인계로 123",
+      "query": "KBS수원아트홀 경기 수원시",
+      "priority": 56,
+      "performanceCount": 7,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "연극 사랑해엄마 (수원)",
+        "공포연극 자취(수원)",
+        "어린이과학매직쇼 사이언스매직아트(수원)"
       ]
     },
     {
@@ -1815,8 +1882,8 @@
       ],
       "sampleTitles": [
         "너는 특별하단다 - 대전",
-        "2026 베스트셀러 뮤지컬〈사과가 쿵!〉- 대전",
-        "뮤지컬 멜로우TV 〈Run it up, 팀 나빠〉 - 대전"
+        "뮤지컬 멜로우TV 〈Run it up, 팀 나빠〉 - 대전",
+        "2026 베스트셀러 뮤지컬〈사과가 쿵!〉- 대전"
       ]
     },
     {
@@ -1835,76 +1902,6 @@
         "［경주］ 경주가볼만한곳! 추억의달동네+동궁원 패키지",
         "［경주］ 동궁원+코오롱호텔 타임애프터타임 전시회 패키지"
       ]
-    },
-    {
-      "venueId": "venue_블루스퀘어우리은행홀_bt3bft",
-      "officialName": "블루스퀘어 우리은행홀",
-      "address": "서울 용산구 이태원로 294",
-      "query": "블루스퀘어 우리은행홀 서울 용산구",
-      "priority": 56,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "블루스퀘어 우리은행홀 자막안경 사전 예약 〈빌리 엘리어트〉",
-        "뮤지컬 〈빌리 엘리어트〉",
-        "뮤지컬 〈엘리자벳〉"
-      ]
-    },
-    {
-      "venueId": "venue_영남대학교천마아트센터그랜드홀_1kahod3",
-      "officialName": "영남대학교 천마아트센터 그랜드홀",
-      "address": "경북 경산시 대학로 280",
-      "query": "영남대학교 천마아트센터 그랜드홀 경북 경산시",
-      "priority": 56,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가족뮤지컬 〈알파블록스〉 - 대구",
-        "슈퍼디바 적우 콘서트 - 대구",
-        "〈현역가왕3〉 with 현역가왕 패밀리 페스티벌 - 대구"
-      ]
-    },
-    {
-      "venueId": "venue_인스파이어아레나_svbtcz",
-      "officialName": "인스파이어 아레나",
-      "address": "인천 중구 운서동 공항문화로 인스파이어 아레나",
-      "query": "인스파이어 아레나 인천 중구",
-      "priority": 56,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "2026 CORTIS TOUR 〈PUT YOUR PHONE DOWN〉 IN INCHEON",
-        "2026 2PM Concert “THE RETURN” in INCHEON",
-        "NCT DREAM 10TH ANNIVERSARY PARTY 〈THE SWEET DREAM HOTEL〉"
-      ]
-    },
-    {
-      "venueId": "venue_킨텍스전시홀7_1y52slt",
-      "officialName": "킨텍스 전시홀 7",
-      "address": "경기 고양시 일산서구 킨텍스로 217-60",
-      "query": "킨텍스 전시홀 7 경기 고양시",
-      "priority": 56,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "제19회 폐기물·자원순환산업전(RETECH) & 차세대 분체·유체기술전(A-POWDER TECH)",
-        "2026 솔라 아시아",
-        "KDTEX 2026"
-      ]
     }
   ],
   "insufficientIdentityQueue": [
@@ -1914,7 +1911,7 @@
       "address": "",
       "query": "장소 확인 필요",
       "priority": 200,
-      "performanceCount": 320,
+      "performanceCount": 322,
       "reviewFlags": [
         "invalid_coordinate",
         "missing_detailed_address",
@@ -1924,7 +1921,7 @@
       "sampleTitles": [
         "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)",
         "어드밴처 물리탐험대 10-13세 추천! 과학관으로 과학 원리 탐구하러 가요!",
-        "화성박물관&화성행궁 어린이 역사투어"
+        "달마다 새롭게 10회 과정! 한국사 역사체험 탐험대"
       ]
     },
     {
@@ -1942,7 +1939,7 @@
       ],
       "sampleTitles": [
         "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
-        "화장품 연구원과 함께하는 올리브영 정복하기",
+        "한방 라이프스타일 문화공간",
         "행궁동 백드롭 페인팅🎨 기업/단체/출강 문의 환영🙆🏻‍♂🙆"
       ]
     },
@@ -1960,9 +1957,28 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
+        "Wish Violin 위시바이올린",
         "수제꽃차원데이클래스",
-        "보자기아트직장인반저녁클래스",
-        "나의 매력을 발견하는 퍼스널컬러 클래스"
+        "K아트-전통을탐하고 창의적으로 재현하는 민화"
+      ]
+    },
+    {
+      "venueId": "venue_제물포구문화체육센터공연장_ey9y9y",
+      "officialName": "제물포구문화체육센터 공연장",
+      "address": "제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+      "query": "제물포구문화체육센터 공연장 제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+      "priority": 64,
+      "performanceCount": 8,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "키즈 바로크 : 텔레만 아저씨의 이야기 보따리 - 코리안 바로크 소사이어티 - 인천 (07.18)",
+        "제물포구문화체육센터 개관5주년 기념음악회 〈Chapter 5〉",
+        "［김시라의 품바 : Original］ - 인천"
       ]
     },
     {
@@ -1979,9 +1995,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "향기를 굽는 시간 로스팅 체험 클래스",
+        "감각적인 시그니처 향수 제작, 뤼미에르 퍼퓸 A Class",
         "향기 따라 흐르는 물줄기, 브루잉(핸드드립) 클래스",
-        "감각적인 시그니처 향수 제작, 뤼미에르 퍼퓸 A Class"
+        "나만의 특별한 아이템 레진아트 원데이 클래스"
       ]
     },
     {
@@ -1998,9 +2014,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "200여가지 향수 셀프체험 클래스",
-        "키링만들기",
-        "틴 케이스 거울 만들기"
+        "틴 케이스 거울 만들기",
+        "무드등만들기",
+        "키링만들기"
       ]
     },
     {
@@ -2015,9 +2031,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
+        "원 앤 온리 특별한 목걸이 만들기",
         "순은 99.9% 은점토로 나만의 반지/목걸이 만들기",
-        "원데이 키즈 클래스/키즈 팔찌 만들기",
-        "원데이 반려동물 목걸이 펫 클래스"
+        "원데이 이색 악세사리 클래스"
       ]
     },
     {
@@ -2034,9 +2050,28 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "펫푸드자격증 / 반려동물 베이커리지도사",
         "펫푸드 자격증 / 반려동물 푸드지도사",
-        "시한드로잉모임"
+        "시한드로잉모임",
+        "강아지 노오븐 수제간식 취미반"
+      ]
+    },
+    {
+      "venueId": "venue_제주_pb0fqw",
+      "officialName": "제주 ·",
+      "address": "제주 ·",
+      "query": "제주 · 제주 ·",
+      "priority": 40,
+      "performanceCount": 5,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "라탄 원데이클래스",
+        "<여행의 기억, 선물이 되는 시간> 작은선물만들기 원데이클래스 _재봉틀",
+        "미니테라리움클래스"
       ]
     },
     {
@@ -2052,9 +2087,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "악마의에그타르트 원데이클래스(겉빠속촉)",
         "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
-        "촉촉한 건강식 수제오란다 원데이클래스"
+        "악마의에그타르트 원데이클래스(겉빠속촉)",
+        "앙금플라워케이크정규반모집 [1개월]"
       ]
     },
     {
@@ -2070,8 +2105,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "반짝반짝 신데렐라",
         "오즈의 마법사",
+        "반짝반짝 신데렐라",
         "반짝반짝 인어공주"
       ]
     },
@@ -2089,28 +2124,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "향기테라피 커스텀 키링 만들기",
         "전주 힙팟클래스",
-        "오가닉으로 건강한 샴푸바 올인원바 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_제주_pb0fqw",
-      "officialName": "제주 ·",
-      "address": "제주 ·",
-      "query": "제주 · 제주 ·",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<여행의 기억, 선물이 되는 시간> 작은선물만들기 원데이클래스 _재봉틀",
-        "나만의 특별한 향 만들기, 스튜디오 유랑 향수 원데이 클래스",
-        "라탄 원데이클래스"
+        "향기테라피 커스텀 키링 만들기",
+        "시그니처 오가닉 천연향수 원데이클래스"
       ]
     },
     {
@@ -2142,9 +2158,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "나만의 오브제 그릇 만들기 (물레) 이색 체험 데이트",
+        "나만의 캐릭터 그릇 만들기 (핸드빌딩) 이색 체험",
         "나만의 오브제 그릇 만들기 (핸드빌딩) 이색 체험",
-        "나만의 캐릭터 그릇 만들기 (핸드빌딩) 이색 체험"
+        "나만의 오브제 그릇 만들기 (물레) 이색 체험 데이트"
       ]
     },
     {
@@ -2159,9 +2175,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "내 몸에도 건강하고, 환경에도 이로운 제로웨이스트 올인원 샴푸바 만들기",
         "내 취향에 딱 맞는 향기로 만드는 천연 핸드크림 원데이클래스",
-        "비누에 봄을 담아요, 플라워솝 압화비누 만들기"
+        "비누에 봄을 담아요, 플라워솝 압화비누 만들기",
+        "내 몸에도 건강하고, 환경에도 이로운 제로웨이스트 올인원 샴푸바 만들기"
       ]
     },
     {
@@ -2177,9 +2193,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
+        "깨먹는 하트 티라미수 만들기",
         "남다른 에그타르트 6ps 원데이 클래스",
-        "창의성을 길러주는 미술관에서 만나는 클래식 원데이 클래스",
-        "깨먹는 하트 티라미수 만들기"
+        "창의성을 길러주는 미술관에서 만나는 클래식 원데이 클래스"
       ]
     },
     {
@@ -2232,8 +2248,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "소망컬러 소잉클래스",
-        "소망컬러 소잉클래스(단체클래스)"
+        "소망컬러 소잉클래스(단체클래스)",
+        "소망컬러 소잉클래스"
       ]
     },
     {
@@ -2250,8 +2266,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "가죽공예 키링 만들기",
-        "나만의 카드지갑만들기"
+        "나만의 카드지갑만들기",
+        "가죽공예 키링 만들기"
       ]
     },
     {
@@ -2266,8 +2282,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기",
-        "순은 99.9% 은점토로 나만의 목걸이 만들기"
+        "순은 99.9% 은점토로 나만의 목걸이 만들기",
+        "순은 99.9% 은점토로 세상에 단 하나뿐인 반지 만들기"
       ]
     },
     {
@@ -2314,8 +2330,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "꽃으로 만드는 젤캔들홀더 클래스 티라이트와 홀더만들기",
-        "반짝반짝 향기가득 보석방향제 만들기"
+        "반짝반짝 향기가득 보석방향제 만들기",
+        "꽃으로 만드는 젤캔들홀더 클래스 티라이트와 홀더만들기"
       ]
     },
     {
@@ -2367,24 +2383,6 @@
       ]
     },
     {
-      "venueId": "venue_서울송파구_nijwri",
-      "officialName": "서울 송파구",
-      "address": "서울 송파구",
-      "query": "서울 송파구 서울 송파구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "퍼스널컬러 기반! 💖1:1 맞춤형 디테일 메이크업 클래스💖",
-        "꼬북~~ 귀여운 토마토,메론 거북이 쿠키 만들어보기!"
-      ]
-    },
-    {
       "venueId": "venue_서울종로구_10mf9gi",
       "officialName": "서울 종로구",
       "address": "서울특별시 종로구 동숭길 50, 지층 플레이더씨어터",
@@ -2398,6 +2396,22 @@
       "sampleTitles": [
         "삐삐",
         "나의 빈틈메이트"
+      ]
+    },
+    {
+      "venueId": "venue_서울종로구_10wljzf",
+      "officialName": "서울 종로구",
+      "address": "서울특별시 종로구 대학로8가길 30, 4층",
+      "query": "서울 종로구 서울 종로구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "사춘기 메들리",
+        "마피아 게임"
       ]
     },
     {
@@ -2415,22 +2429,6 @@
       "sampleTitles": [
         "너의 목소리가 들려",
         "핫식스"
-      ]
-    },
-    {
-      "venueId": "venue_서울종로구_10wljzf",
-      "officialName": "서울 종로구",
-      "address": "서울특별시 종로구 대학로8가길 30, 4층",
-      "query": "서울 종로구 서울 종로구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "사춘기 메들리",
-        "마피아 게임"
       ]
     },
     {
@@ -2513,8 +2511,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "［사전예매 3차］2026 여수세계섬박람회 전기간권",
-        "［사전예매 3차］2026 여수세계섬박람회 보통권/가족권"
+        "［사전예매 3차］2026 여수세계섬박람회 보통권/가족권",
+        "［사전예매 3차］2026 여수세계섬박람회 전기간권"
       ]
     },
     {
@@ -2672,9 +2670,9 @@
       ]
     },
     {
-      "venueId": "venue_경기군포시_1ced3je",
+      "venueId": "venue_경기군포시_wkx1j9",
       "officialName": "경기 군포시",
-      "address": "경기 군포시 산본로323번길",
+      "address": "경기 군포시 군포로735번길",
       "query": "경기 군포시 경기 군포시",
       "priority": 8,
       "performanceCount": 1,
@@ -2683,7 +2681,7 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "제스모나이트+캔들/레진아트 2가지를 한번에 배울수 있다?"
+        "마크라메 카네이션 월행잉 클래스"
       ]
     },
     {
@@ -2702,9 +2700,9 @@
       ]
     },
     {
-      "venueId": "venue_경기군포시_wkx1j9",
+      "venueId": "venue_경기군포시_1ced3je",
       "officialName": "경기 군포시",
-      "address": "경기 군포시 군포로735번길",
+      "address": "경기 군포시 산본로323번길",
       "query": "경기 군포시 경기 군포시",
       "priority": 8,
       "performanceCount": 1,
@@ -2713,7 +2711,7 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "마크라메 카네이션 월행잉 클래스"
+        "제스모나이트+캔들/레진아트 2가지를 한번에 배울수 있다?"
       ]
     },
     {
@@ -2849,6 +2847,21 @@
       ],
       "sampleTitles": [
         "시흥갯골축제"
+      ]
+    },
+    {
+      "venueId": "venue_경기안산시_1wxl87h",
+      "officialName": "경기 안산시",
+      "address": "경기도 안산시 단원구 대부황금로 1480-7 (대부북동)",
+      "query": "경기 안산시 경기 안산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "안산 대부포도축제"
       ]
     },
     {
@@ -3346,9 +3359,9 @@
       ]
     },
     {
-      "venueId": "venue_서울강남구_1x1ikn5",
+      "venueId": "venue_서울강남구_1mu7kr2",
       "officialName": "서울 강남구",
-      "address": "서울 강남구 삼성동 65 / 주차가능 / 수업시간 : 총80분 / 인원 : 1~1명)",
+      "address": "서울 강남구 논현로63길 16",
       "query": "서울 강남구 서울 강남구",
       "priority": 8,
       "performanceCount": 1,
@@ -3357,13 +3370,13 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "썸을 부르는 1:1 메이크업클래스 퍼스널컬러 진단"
+        "향수만들기 원데이클래스 소모임 (10인이상) 시그널센트 출장서비스"
       ]
     },
     {
-      "venueId": "venue_서울강남구_fmuivs",
+      "venueId": "venue_서울강남구_igy89h",
       "officialName": "서울 강남구",
-      "address": "서울 강남구 논현동 182-24 / 주차불가 / 수업시간 : 총90분 / 인원 : 1~20명)",
+      "address": "서울 강남구 삼성동 65",
       "query": "서울 강남구 서울 강남구",
       "priority": 8,
       "performanceCount": 1,
@@ -3372,7 +3385,22 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "기념일 케이크! 특별한 커플 데이트 (2인 1케이크) 원데이"
+        "민서실장 내 손으로 배우는 1:1 데일리 메이크업클래스"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구_13k8jgi",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 삼성동 125",
+      "query": "서울 강남구 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "물레+핸드빌딩으로 2작품 만들기! 도자기 원데이 클래스"
       ]
     },
     {
@@ -3391,9 +3419,9 @@
       ]
     },
     {
-      "venueId": "venue_서울강남구_11mp928",
+      "venueId": "venue_서울강남구_7p5dnq",
       "officialName": "서울 강남구",
-      "address": "서울 강남구 논현동 184-16 / 주차불가 / 수업시간 : 총60분 / 인원 : 1~6명)",
+      "address": "서울 강남구 선릉로 704",
       "query": "서울 강남구 서울 강남구",
       "priority": 8,
       "performanceCount": 1,
@@ -3402,7 +3430,22 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "60분 케이크 페인팅 클래스 (데이트 코스 추천)"
+        "컬러클레이 플레이트 만들기_도자기"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구_uojfwm",
+      "officialName": "서울 강남구",
+      "address": "서울 강남구 청담동 2-13 / 주차불가 / 수업시간 : 총80분 / 인원 : 1~1명)",
+      "query": "서울 강남구 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "친절한 혜온 쌤의 두 배 더 예뻐지는 1:1 데일리 메이크업 클래스"
       ]
     },
     {
@@ -3423,9 +3466,9 @@
       ]
     },
     {
-      "venueId": "venue_서울강남구_1atbcu1",
+      "venueId": "venue_서울강남구_fmuivs",
       "officialName": "서울 강남구",
-      "address": "서울 강남구 신사동 514-5 / 주차불가 / 수업시간 : 총90분 / 인원 : 1~1명)",
+      "address": "서울 강남구 논현동 182-24 / 주차불가 / 수업시간 : 총90분 / 인원 : 1~20명)",
       "query": "서울 강남구 서울 강남구",
       "priority": 8,
       "performanceCount": 1,
@@ -3434,97 +3477,7 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "\"1:1 원장직강, 1시간 30분만에 샵에서 받은느낌 나도 연예인처럼! \""
-      ]
-    },
-    {
-      "venueId": "venue_서울강남구_49afx9",
-      "officialName": "서울 강남구",
-      "address": "서울 강남구 삼성동 59-15 / 주차가능 / 수업시간 : 총60분 / 인원 : 1~1명)",
-      "query": "서울 강남구 서울 강남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "청담동 메이크업아티스트에게 배우는 메이크업 노하우"
-      ]
-    },
-    {
-      "venueId": "venue_서울강남구_1rbgiz",
-      "officialName": "서울 강남구",
-      "address": "서울 강남구 논현동 184-16 / 주차불가 / 수업시간 : 총100분 / 인원 : 1~4명)",
-      "query": "서울 강남구 서울 강남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "귀염뽀짝 헬로 키티 마들렌 6개 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_서울강남구_7p5dnq",
-      "officialName": "서울 강남구",
-      "address": "서울 강남구 선릉로 704",
-      "query": "서울 강남구 서울 강남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "컬러클레이 플레이트 만들기_도자기"
-      ]
-    },
-    {
-      "venueId": "venue_서울강남구_1mu7kr2",
-      "officialName": "서울 강남구",
-      "address": "서울 강남구 논현로63길 16",
-      "query": "서울 강남구 서울 강남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "향수만들기 원데이클래스 소모임 (10인이상) 시그널센트 출장서비스"
-      ]
-    },
-    {
-      "venueId": "venue_서울강남구_13k8jgi",
-      "officialName": "서울 강남구",
-      "address": "서울 강남구 삼성동 125",
-      "query": "서울 강남구 서울 강남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "물레+핸드빌딩으로 2작품 만들기! 도자기 원데이 클래스"
-      ]
-    },
-    {
-      "venueId": "venue_서울강남구_uojfwm",
-      "officialName": "서울 강남구",
-      "address": "서울 강남구 청담동 2-13 / 주차불가 / 수업시간 : 총80분 / 인원 : 1~1명)",
-      "query": "서울 강남구 서울 강남구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "친절한 혜온 쌤의 두 배 더 예뻐지는 1:1 데일리 메이크업 클래스"
+        "기념일 케이크! 특별한 커플 데이트 (2인 1케이크) 원데이"
       ]
     },
     {
@@ -3785,21 +3738,6 @@
       ]
     },
     {
-      "venueId": "venue_서울광진구_gqpcje",
-      "officialName": "서울 광진구",
-      "address": "서울 광진구 화양동 42-21 / 주차불가 / 수업시간 : 총90분 / 인원 : 2~8명)",
-      "query": "서울 광진구 서울 광진구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "프랑스 오리지널 사브레 쿠키 원데이클래스"
-      ]
-    },
-    {
       "venueId": "venue_서울구로구_1x7n6p1",
       "officialName": "서울 구로구",
       "address": "서울 구로구",
@@ -3814,6 +3752,66 @@
       ],
       "sampleTitles": [
         "라탄 원형 트레이 원데이 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_서울동작구_xucklx",
+      "officialName": "서울 동작구",
+      "address": "서울 동작구 신대방동 690-9 / 주차불가 / 수업시간 : 총60분 / 인원 : 1~30명)",
+      "query": "서울 동작구 서울 동작구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "물레 원데이클래스 / 빙글빙글 돌아가는 물레로 나만의 도자기 만들기!"
+      ]
+    },
+    {
+      "venueId": "venue_서울마포구_6uylkr",
+      "officialName": "서울 마포구",
+      "address": "서울 마포구 와우산로21길 29, 지하 1층",
+      "query": "서울 마포구 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "개그스테이지"
+      ]
+    },
+    {
+      "venueId": "venue_서울마포구_15d9t5g",
+      "officialName": "서울 마포구",
+      "address": "서울특별시 마포구 양화로 45 메세나폴리스 2층 NOL씨어터 합정 ABL생명홀",
+      "query": "서울 마포구 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<공연> 아주아주 배고픈 애벌레 쇼(~ 26/08/30)"
+      ]
+    },
+    {
+      "venueId": "venue_서울마포구_d0whnl",
+      "officialName": "서울 마포구",
+      "address": "서울특별시 마포구 양화로16길 29, 옐로우다이아몬드 지하2층, 지하3층",
+      "query": "서울 마포구 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "난타(NANTA) - 홍대"
       ]
     }
   ],
@@ -4160,19 +4158,37 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-07-14T19:57:25.108Z",
+    "checkedAt": "2026-07-15T19:42:19.393Z",
     "status": "warn",
-    "venueCount": 4033,
-    "matchedCount": 943,
-    "highConfidenceMatchCount": 690,
+    "venueCount": 4049,
+    "matchedCount": 946,
+    "highConfidenceMatchCount": 692,
     "needsReviewCount": 20,
     "notFoundCount": 255,
-    "pendingLookupCount": 2117,
-    "insufficientIdentityCount": 236,
+    "pendingLookupCount": 2138,
+    "insufficientIdentityCount": 228,
     "lookupReady": false,
     "providersConfigured": [],
     "staleCacheCount": 0,
     "topQueue": [
+      {
+        "venueId": "venue_제물포구문화체육센터공연장_ey9y9y",
+        "officialName": "제물포구문화체육센터 공연장",
+        "address": "제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+        "query": "제물포구문화체육센터 공연장 제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+        "priority": 964,
+        "performanceCount": 8,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "키즈 바로크 : 텔레만 아저씨의 이야기 보따리 - 코리안 바로크 소사이어티 - 인천 (07.18)",
+          "제물포구문화체육센터 개관5주년 기념음악회 〈Chapter 5〉",
+          "［김시라의 품바 : Original］ - 인천"
+        ]
+      },
       {
         "venueId": "venue_ncs산업현장교수_ta9hlr",
         "officialName": "NCS 산업현장교수,",
@@ -4256,6 +4272,22 @@
         ]
       },
       {
+        "venueId": "venue_시드스페이스갤러리_1couznj",
+        "officialName": "시드스페이스갤러리",
+        "address": "시드스페이스갤러리(자세히)",
+        "query": "시드스페이스갤러리 시드스페이스갤러리(자세히)",
+        "priority": 908,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "벽에 달린 손잡이"
+        ]
+      },
+      {
         "venueId": "venue_영동복합문화예술회관_1tyr5al",
         "officialName": "영동복합문화예술회관",
         "address": "영동복합문화예술회관 대공연장(자세히)",
@@ -4269,22 +4301,6 @@
         ],
         "sampleTitles": [
           "판타지 가족오페라 〈물의 아이〉 - 충북 영동"
-        ]
-      },
-      {
-        "venueId": "venue_제물포구문화체육센터공연장_ey9y9y",
-        "officialName": "제물포구문화체육센터 공연장",
-        "address": "제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
-        "query": "제물포구문화체육센터 공연장 제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
-        "priority": 908,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "키즈 바로크 : 텔레만 아저씨의 이야기 보따리 - 코리안 바로크 소사이어티 - 인천 (07.18)"
         ]
       },
       {
@@ -4315,27 +4331,9 @@
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "부산 산타딸기 케이크 만들기/ 쌀케이크 만들기 이색 클래스",
-          "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡",
-          "비건이 왔어요 얼려먹는 비건맘모스쌀빵 3종 베이킹"
-        ]
-      },
-      {
-        "venueId": "venue_부산부산진구서전로68번길104전포동_이담_전포역6번출구부근_1uolo3i",
-        "officialName": "부산 부산진구 서전로68번길 104 전포동) 이담(전포역 6번출구 부근",
-        "address": "부산진구 서전로68번길 104 (전포동) 이담(전포역 6번출구 부근)",
-        "query": "이담 부산진구 서전로68번길",
-        "priority": 716,
-        "performanceCount": 17,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "앙금플라워 떡케이크 만들기 원데이 클래스",
-          "뚱카롱 만들기 원데이 클래스",
-          "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트"
+          "부산전포)한입치즈케이크 완전강추 jmt",
+          "부산/전포/ 맛있는 쌀로 만드는 찰꿀빵 만들기",
+          "수제 카네이션 쿠키 만들기 어버이날 이색 선물"
         ]
       }
     ],
@@ -4346,7 +4344,7 @@
         "address": "",
         "query": "장소 확인 필요",
         "priority": 200,
-        "performanceCount": 320,
+        "performanceCount": 322,
         "reviewFlags": [
           "invalid_coordinate",
           "missing_detailed_address",
@@ -4356,7 +4354,7 @@
         "sampleTitles": [
           "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)",
           "어드밴처 물리탐험대 10-13세 추천! 과학관으로 과학 원리 탐구하러 가요!",
-          "화성박물관&화성행궁 어린이 역사투어"
+          "달마다 새롭게 10회 과정! 한국사 역사체험 탐험대"
         ]
       },
       {
@@ -4374,7 +4372,7 @@
         ],
         "sampleTitles": [
           "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
-          "화장품 연구원과 함께하는 올리브영 정복하기",
+          "한방 라이프스타일 문화공간",
           "행궁동 백드롭 페인팅🎨 기업/단체/출강 문의 환영🙆🏻‍♂🙆"
         ]
       },
@@ -4392,9 +4390,28 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
+          "Wish Violin 위시바이올린",
           "수제꽃차원데이클래스",
-          "보자기아트직장인반저녁클래스",
-          "나의 매력을 발견하는 퍼스널컬러 클래스"
+          "K아트-전통을탐하고 창의적으로 재현하는 민화"
+        ]
+      },
+      {
+        "venueId": "venue_제물포구문화체육센터공연장_ey9y9y",
+        "officialName": "제물포구문화체육센터 공연장",
+        "address": "제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+        "query": "제물포구문화체육센터 공연장 제물포구문화체육센터(구.동구문화체육센터) 공연장(자세히)",
+        "priority": 64,
+        "performanceCount": 8,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "키즈 바로크 : 텔레만 아저씨의 이야기 보따리 - 코리안 바로크 소사이어티 - 인천 (07.18)",
+          "제물포구문화체육센터 개관5주년 기념음악회 〈Chapter 5〉",
+          "［김시라의 품바 : Original］ - 인천"
         ]
       },
       {
@@ -4411,9 +4428,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "향기를 굽는 시간 로스팅 체험 클래스",
+          "감각적인 시그니처 향수 제작, 뤼미에르 퍼퓸 A Class",
           "향기 따라 흐르는 물줄기, 브루잉(핸드드립) 클래스",
-          "감각적인 시그니처 향수 제작, 뤼미에르 퍼퓸 A Class"
+          "나만의 특별한 아이템 레진아트 원데이 클래스"
         ]
       },
       {
@@ -4430,9 +4447,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "200여가지 향수 셀프체험 클래스",
-          "키링만들기",
-          "틴 케이스 거울 만들기"
+          "틴 케이스 거울 만들기",
+          "무드등만들기",
+          "키링만들기"
         ]
       },
       {
@@ -4447,9 +4464,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
+          "원 앤 온리 특별한 목걸이 만들기",
           "순은 99.9% 은점토로 나만의 반지/목걸이 만들기",
-          "원데이 키즈 클래스/키즈 팔찌 만들기",
-          "원데이 반려동물 목걸이 펫 클래스"
+          "원데이 이색 악세사리 클래스"
         ]
       },
       {
@@ -4466,9 +4483,28 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "펫푸드자격증 / 반려동물 베이커리지도사",
           "펫푸드 자격증 / 반려동물 푸드지도사",
-          "시한드로잉모임"
+          "시한드로잉모임",
+          "강아지 노오븐 수제간식 취미반"
+        ]
+      },
+      {
+        "venueId": "venue_제주_pb0fqw",
+        "officialName": "제주 ·",
+        "address": "제주 ·",
+        "query": "제주 · 제주 ·",
+        "priority": 40,
+        "performanceCount": 5,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "라탄 원데이클래스",
+          "<여행의 기억, 선물이 되는 시간> 작은선물만들기 원데이클래스 _재봉틀",
+          "미니테라리움클래스"
         ]
       },
       {
@@ -4484,46 +4520,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "악마의에그타르트 원데이클래스(겉빠속촉)",
           "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
-          "촉촉한 건강식 수제오란다 원데이클래스"
-        ]
-      },
-      {
-        "venueId": "venue_서울종로구_oyrb7i",
-        "officialName": "서울 종로구",
-        "address": "서울특별시 종로구 대학로14길 18-2, 지하 1층",
-        "query": "서울 종로구 서울 종로구",
-        "priority": 32,
-        "performanceCount": 4,
-        "reviewFlags": [
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "반짝반짝 신데렐라",
-          "오즈의 마법사",
-          "반짝반짝 인어공주"
-        ]
-      },
-      {
-        "venueId": "venue_전북_1n6425r",
-        "officialName": "전북 ·",
-        "address": "전북 ·",
-        "query": "전북 · 전북 ·",
-        "priority": 32,
-        "performanceCount": 4,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "향기테라피 커스텀 키링 만들기",
-          "전주 힙팟클래스",
-          "오가닉으로 건강한 샴푸바 올인원바 만들기"
+          "악마의에그타르트 원데이클래스(겉빠속촉)",
+          "앙금플라워케이크정규반모집 [1개월]"
         ]
       }
     ],

@@ -100,32 +100,6 @@
     "synopsisImages": []
   },
   {
-    "id": "yes24_57214",
-    "title": "Echoes Weekend Seoul",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260213/20260213-57214.jpg/dims/quality/70/",
-    "date": "2026.06.12 ~ 2026.06.14",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/57214",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_Echoes_Weekend_Seoul.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260213/20260213-57214.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:56:59.589Z",
-    "synopsisImages": []
-  },
-  {
     "id": "yes24_57226",
     "title": "KBS부산 제 98기 수요일 노래교실(오전반) - 1층 지정석",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57226.jpg/dims/quality/70/",
@@ -609,32 +583,6 @@
     "organizer": "",
     "contact": "",
     "dataCollectedAt": "2026-06-04T08:57:30.548Z",
-    "synopsisImages": []
-  },
-  {
-    "id": "yes24_57795",
-    "title": "[서울] Midnight rAge Party!!",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57789_1.jpg/dims/quality/70/",
-    "date": "2026.06.14 ~ 2026.06.14",
-    "venue": "얼라이브홀",
-    "link": "https://ticket.yes24.com/Perf/57795",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_서울_Midnight_rAge_Party.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57789_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:56:14.572Z",
     "synopsisImages": []
   },
   {
@@ -1192,43 +1140,6 @@
     ]
   },
   {
-    "id": "yes24_57968",
-    "title": "[김해] 대니 구 데뷔 10주년 리사이틀",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260409/20260409-57968.jpg/dims/quality/70/",
-    "date": "2026.06.14 ~ 2026.06.14",
-    "venue": "김해서부문화센터 하늬홀",
-    "link": "https://ticket.yes24.com/Perf/57968",
-    "genre": "classic",
-    "region": "서울",
-    "price": "R석 50,000원, S석 30,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "image": "/images/posters/classic/yes24_김해_대니_구_데뷔_10주년_리사이틀.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260409/20260409-57968.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 15,000원 ~ 최고가 40,000원\n할인정보\n-장애인(경증/본인) 50%\n-장애인(중증/동반 1인) 50%\n-국가유공자 유족증(본인만) 50%\n-국가유공자할인(1인2매) 50%\n-의사상자 할인(1-2급/동반1인) 50%\n-의사상자 할인(3급이하/본인만) 50%\n-초,중,고,대학생(본인) 20%\n-임신부 할인(본인만) 20%\n-예술인패스 카드소지자(본인만) 20%\n-경로할인(본인만) 20%\n-문화누리카드할인(본인만)(기획사문의) 20%\n※ 할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "8세 이상(초등학생이상)",
-    "runningTime": "90분(인터미션 10분 포함)",
-    "performanceTime": "2026년 6월 14일(일) 오후 5시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)김해문화관광재단",
-    "organizer": "",
-    "contact": "055-344-1800",
-    "dataCollectedAt": "2026-05-21T13:35:21.768Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260409/26040909.jpg"
-    ]
-  },
-  {
     "id": "yes24_58197",
     "title": "[창원] 미디어아트 콘서트〈이중섭, 그림과 편지〉",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260423/20260423-58197.jpg/dims/quality/70/",
@@ -1363,21 +1274,6 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202605/20260513/26051304.jpg"
     ]
-  },
-  {
-    "id": "yes24_58438",
-    "title": "[부산] 2026 NAC 렉처콘서트 - BSO 솔로이스츠, 실내악 ② 목관5중주 ＆ 금관5중주",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58438.jpg/dims/quality/70/",
-    "date": "2026.06.14 ~ 2026.06.14",
-    "venue": "낙동아트센터 콘서트홀",
-    "link": "https://ticket.yes24.com/Perf/58438",
-    "genre": "classic",
-    "region": "서울",
-    "price": "R석 20,000원, S석 10,000원",
-    "description": "",
-    "image": "/images/posters/classic/yes24_부산_2026_NAC_렉처콘서트_BSO_솔로이스츠_실내악_목관5중주_금관5중주.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58438.jpg/dims/quality/70/",
-    "category": "독점공연"
   },
   {
     "id": "yes24_58449",
@@ -1587,41 +1483,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202507/20250730/54743.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202509/20250922/%EC%A1%B0%EC%9D%B4%EC%BB%AC%EC%B3%90(%EA%B3%A0%EC%96%91)%EC%B1%84%EB%84%90%EC%B6%94%EA%B0%80%EB%B0%A9%EB%B2%95_1.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202605/20260506/피노키오상세페이지.jpg"
-    ]
-  },
-  {
-    "id": "yes24_58362",
-    "title": "[고양] 2026 가족뮤지컬 [피터팬]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
-    "date": "2026.06.13 ~ 2026.06.14",
-    "venue": "현대백화점 킨텍스점 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58362",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 30,000원",
-    "description": "■ 공연당일 한시간전 온라인 판매 마감후 현장에서 한시간 전부터 나머지 판매 합니다 ■\n- 11시 공연은 백화점 오픈시간으로 인하여 10시30분 매표소 오픈되오니 참고 바랍니다\n- 공연이 시작된 이후에는 입장이 제한될 수 있으며, 다른 관객의 관람에 방해되지 않도록 지정된 입장 시간을 통해 본인 좌석이 아닌 곳으로 안내받으실 수 있습니다.\n- 가열~나열은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 공연장 주변 교통이 혼잡하며, 주말엔 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.\n- 객석 맨앞 두줄은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 예매티켓은 공연당일 현장 수령만 가능하며, 티켓을 분실하실 경우 재발권이 불가하오니 유의해주시기 바랍니다.(당일 현장 판매는 공연시작 30분 전부터 가능하십니다)\n-본 공연장은 어린이용 보조방석이 구비되어 있지 않습니다.(필요하신분은 개인지참하여 주시기 바랍니다.)\n-24개월 이상 표를 구매합니다.\n-공연중에는 사진촬영 ,동영상촬영,음식물 반입이 금지되어있습니다.\n-본 공연은 가족 모두가 함께 관람 할 수 있습니다.(24개월 미만 부모님 동반입장 가능-증빙서류지참)\n-1인 1티켓적용 (본 공연은 부모님과 자녀 모두 티켓을 소지하셔야 합니다.)\n-미취학아동 단독입장 불가 (본공연은 안전한 관람을 위하여 미취학 아동은 성인보호자와 동반 입장을 권장합니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.\n- 주차는 현장매표소에서 공연관람전 또는 공연관람후 주차 패드로 직접등록 해주셔야 하며, 무료 3시간 등록 가능하십니다.(꼭!! 공연관람전,후 등록하시고 가셔야 합니다)\n- 공연장 주변 교통이 혼잡하며, 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.",
-    "image": "/images/posters/kids/yes24_고양_2026_가족뮤지컬_피터팬.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 15,000원\n할인정보\n기본할인 15,000원 / 상시할인\n카톡채널추가할인 10,000원 / 채널명 : 조이컬쳐(고양) 카톡채널 추가시할인(미증빙시 차액지불)\n현대백화점카드 또는 h.point 회원할인 10,000원 / 티켓발권시 현장증빙(미증빙시 차액지불)\n맘맘멤버쉽회원할인 10,000원 / 현장티켓수령시 회원증빙필(미증빙시 차액지불)",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 6월 13일(토) ~ 14일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C컴퍼니, 컬처마켓",
-    "organizer": "㈜조이컬처",
-    "contact": "070-7807-0701",
-    "dataCollectedAt": "2026-05-21T13:36:30.191Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202507/20250730/54743.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202509/20250922/%EC%A1%B0%EC%9D%B4%EC%BB%AC%EC%B3%90(%EA%B3%A0%EC%96%91)%EC%B1%84%EB%84%90%EC%B6%94%EA%B0%80%EB%B0%A9%EB%B2%95_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/피터팬_상세_.jpg"
     ]
   },
   {
@@ -2729,44 +2590,6 @@
     ]
   },
   {
-    "id": "yes24_57795",
-    "title": "[서울] Midnight rAge Party!!",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57789_1.jpg/dims/quality/70/",
-    "date": "2026.06.14 ~ 2026.06.14",
-    "venue": "얼라이브홀",
-    "link": "https://ticket.yes24.com/Perf/57795",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 88,000원, 일반석 44,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 일괄배송: 5월 26일(화)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_서울_Midnight_rAge_Party.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57789_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "88,000원"
-      },
-      {
-        "label": "일반석",
-        "price": "44,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "만 8세 이상",
-    "runningTime": "총 85분 (셋체인지 15분)",
-    "performanceTime": "2026년 6월 14일(일) 오후 5시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 05월 26일부터 순차 배송됩니다.",
-    "host": "KAGEROU AGENCY(Japan)Inc.",
-    "organizer": "KAGEROU AGENCY(Japan)Inc. / 페스티벌투어",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260326/26032601.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260326/26032602.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:29:41.013Z"
-  },
-  {
     "id": "yes24_58496",
     "title": "[수원] 패션 워십 컨퍼런스 2026",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58496.jpg/dims/quality/70/",
@@ -3088,46 +2911,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202604/20260408/58013_04.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:31:20.952Z"
-  },
-  {
-    "id": "yes24_57214",
-    "title": "Echoes Weekend Seoul",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260213/20260213-57214.jpg/dims/quality/70/",
-    "date": "2026.06.12 ~ 2026.06.14",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/57214",
-    "genre": "concert",
-    "region": "서울",
-    "price": "3일권 258,000원, 1일권 99,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 2매\n※ 일괄배송: 5월 20일(수)\n※ 판매/취소마감시간: 각 공연 전일 오전 11시\n※ 본 공연은 원활한 예매 진행을 위해 무통장 입금이 제한됩니다. 예매 시 참고부탁드립니다.\n[3일권 안내]\n* 3일권은 12일, 13일, 14일 공연을 모두 관람할 수 있는 티켓입니다.\n* 스탠딩 1~100번은 3일권 전용 구간이며, 12일 회차 선택 시 예매가 가능합니다.\n* 3일권 예매자는 공연 기간 동안 동일한 스탠딩 번호로 입장합니다.\n* 3일권 예매자에 한해 매 회차마다 티켓부스에서 본인 확인 및 티켓 확인이 진행되며, 해당 회차에 맞는 손목밴드로 교환하여야 입장 가능합니다. 티켓 분실 및 훼손 시 입장이 제한되오니 보관에 유의해 주세요.\n* 모든 티켓은 예매자 본인만 사용 가능하며, 타인에게의 양도 및 재판매를 엄격히 금지합니다. 위반 시 예매 취소 및 입장이 제한될 수 있습니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_Echoes_Weekend_Seoul.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260213/20260213-57214.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "3일권",
-        "price": "258,000원"
-      },
-      {
-        "label": "1일권",
-        "price": "99,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "90분",
-    "performanceTime": "2026년 6월 12일(금) 오후 6시\n2026년 6월 13일(토) 오후 6시\n2026년 6월 14일(일) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "LIVET",
-    "organizer": "주식회사 원더로크",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260213/260213_Echoes_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260219/260219_Echoes_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260213/260213_Echoes_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260213/260213_Echoes_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:31:28.584Z"
   },
   {
     "id": "yes24_58233",
@@ -3889,41 +3672,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260506/신데렐라_상세_쁘띠벨.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:36:25.786Z"
-  },
-  {
-    "id": "yes24_58362",
-    "title": "[고양] 2026 가족뮤지컬 [피터팬]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
-    "date": "2026.06.13 ~ 2026.06.14",
-    "venue": "현대백화점 킨텍스점 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58362",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 30,000원",
-    "description": "■ 공연당일 한시간전 온라인 판매 마감후 현장에서 한시간 전부터 나머지 판매 합니다 ■\n- 11시 공연은 백화점 오픈시간으로 인하여 10시30분 매표소 오픈되오니 참고 바랍니다\n- 공연이 시작된 이후에는 입장이 제한될 수 있으며, 다른 관객의 관람에 방해되지 않도록 지정된 입장 시간을 통해 본인 좌석이 아닌 곳으로 안내받으실 수 있습니다.\n- 가열~나열은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 공연장 주변 교통이 혼잡하며, 주말엔 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.\n- 객석 맨앞 두줄은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 예매티켓은 공연당일 현장 수령만 가능하며, 티켓을 분실하실 경우 재발권이 불가하오니 유의해주시기 바랍니다.(당일 현장 판매는 공연시작 30분 전부터 가능하십니다)\n-본 공연장은 어린이용 보조방석이 구비되어 있지 않습니다.(필요하신분은 개인지참하여 주시기 바랍니다.)\n-24개월 이상 표를 구매합니다.\n-공연중에는 사진촬영 ,동영상촬영,음식물 반입이 금지되어있습니다.\n-본 공연은 가족 모두가 함께 관람 할 수 있습니다.(24개월 미만 부모님 동반입장 가능-증빙서류지참)\n-1인 1티켓적용 (본 공연은 부모님과 자녀 모두 티켓을 소지하셔야 합니다.)\n-미취학아동 단독입장 불가 (본공연은 안전한 관람을 위하여 미취학 아동은 성인보호자와 동반 입장을 권장합니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.\n- 주차는 현장매표소에서 공연관람전 또는 공연관람후 주차 패드로 직접등록 해주셔야 하며, 무료 3시간 등록 가능하십니다.(꼭!! 공연관람전,후 등록하시고 가셔야 합니다)\n- 공연장 주변 교통이 혼잡하며, 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.",
-    "image": "/images/posters/kids/yes24_고양_2026_가족뮤지컬_피터팬.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 15,000원\n할인정보\n기본할인 15,000원 / 상시할인\n카톡채널추가할인 10,000원 / 채널명 : 조이컬쳐(고양) 카톡채널 추가시할인(미증빙시 차액지불)\n현대백화점카드 또는 h.point 회원할인 10,000원 / 티켓발권시 현장증빙(미증빙시 차액지불)\n맘맘멤버쉽회원할인 10,000원 / 현장티켓수령시 회원증빙필(미증빙시 차액지불)",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 6월 13일(토) ~ 14일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C컴퍼니, 컬처마켓",
-    "organizer": "㈜조이컬처",
-    "contact": "070-7807-0701",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202507/20250730/54743.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202509/20250922/%EC%A1%B0%EC%9D%B4%EC%BB%AC%EC%B3%90(%EA%B3%A0%EC%96%91)%EC%B1%84%EB%84%90%EC%B6%94%EA%B0%80%EB%B0%A9%EB%B2%95_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/피터팬_상세_.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:36:30.191Z"
   },
   {
     "id": "yes24_58200",
@@ -4723,44 +4471,6 @@
     "dataCollectedAt": "2026-05-21T13:28:59.883Z"
   },
   {
-    "id": "yes24_57795",
-    "title": "[서울] Midnight rAge Party!!",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57789_1.jpg/dims/quality/70/",
-    "date": "2026.06.14 ~ 2026.06.14",
-    "venue": "얼라이브홀",
-    "link": "https://ticket.yes24.com/Perf/57795",
-    "genre": "concert",
-    "region": "서울",
-    "price": "VIP석 88,000원, 일반석 44,000원",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 일괄배송: 5월 26일(화)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_서울_Midnight_rAge_Party.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202603/20260325/20260325-57789_1.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "88,000원"
-      },
-      {
-        "label": "일반석",
-        "price": "44,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "만 8세 이상",
-    "runningTime": "총 85분 (셋체인지 15분)",
-    "performanceTime": "2026년 6월 14일(일) 오후 5시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 05월 26일부터 순차 배송됩니다.",
-    "host": "KAGEROU AGENCY(Japan)Inc.",
-    "organizer": "KAGEROU AGENCY(Japan)Inc. / 페스티벌투어",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260326/26032601.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202603/20260326/26032602.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:29:41.013Z"
-  },
-  {
     "id": "yes24_58496",
     "title": "[수원] 패션 워십 컨퍼런스 2026",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58496.jpg/dims/quality/70/",
@@ -5082,46 +4792,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202604/20260408/58013_04.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:31:20.952Z"
-  },
-  {
-    "id": "yes24_57214",
-    "title": "Echoes Weekend Seoul",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260213/20260213-57214.jpg/dims/quality/70/",
-    "date": "2026.06.12 ~ 2026.06.14",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/57214",
-    "genre": "concert",
-    "region": "서울",
-    "price": "3일권 258,000원, 1일권 99,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 2매\n※ 일괄배송: 5월 20일(수)\n※ 판매/취소마감시간: 각 공연 전일 오전 11시\n※ 본 공연은 원활한 예매 진행을 위해 무통장 입금이 제한됩니다. 예매 시 참고부탁드립니다.\n[3일권 안내]\n* 3일권은 12일, 13일, 14일 공연을 모두 관람할 수 있는 티켓입니다.\n* 스탠딩 1~100번은 3일권 전용 구간이며, 12일 회차 선택 시 예매가 가능합니다.\n* 3일권 예매자는 공연 기간 동안 동일한 스탠딩 번호로 입장합니다.\n* 3일권 예매자에 한해 매 회차마다 티켓부스에서 본인 확인 및 티켓 확인이 진행되며, 해당 회차에 맞는 손목밴드로 교환하여야 입장 가능합니다. 티켓 분실 및 훼손 시 입장이 제한되오니 보관에 유의해 주세요.\n* 모든 티켓은 예매자 본인만 사용 가능하며, 타인에게의 양도 및 재판매를 엄격히 금지합니다. 위반 시 예매 취소 및 입장이 제한될 수 있습니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_Echoes_Weekend_Seoul.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260213/20260213-57214.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "3일권",
-        "price": "258,000원"
-      },
-      {
-        "label": "1일권",
-        "price": "99,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "90분",
-    "performanceTime": "2026년 6월 12일(금) 오후 6시\n2026년 6월 13일(토) 오후 6시\n2026년 6월 14일(일) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "LIVET",
-    "organizer": "주식회사 원더로크",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260213/260213_Echoes_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260219/260219_Echoes_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260213/260213_Echoes_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260213/260213_Echoes_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:31:28.584Z"
   },
   {
     "id": "yes24_58573",
@@ -6123,41 +5793,6 @@
     "dataCollectedAt": "2026-05-21T13:36:25.786Z"
   },
   {
-    "id": "yes24_58362",
-    "title": "[고양] 2026 가족뮤지컬 [피터팬]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
-    "date": "2026.06.13 ~ 2026.06.14",
-    "venue": "현대백화점 킨텍스점 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58362",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 30,000원",
-    "description": "■ 공연당일 한시간전 온라인 판매 마감후 현장에서 한시간 전부터 나머지 판매 합니다 ■\n- 11시 공연은 백화점 오픈시간으로 인하여 10시30분 매표소 오픈되오니 참고 바랍니다\n- 공연이 시작된 이후에는 입장이 제한될 수 있으며, 다른 관객의 관람에 방해되지 않도록 지정된 입장 시간을 통해 본인 좌석이 아닌 곳으로 안내받으실 수 있습니다.\n- 가열~나열은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 공연장 주변 교통이 혼잡하며, 주말엔 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.\n- 객석 맨앞 두줄은 가변석(간이의자)으로 좌석이 불편할 수 있으며, 좌석 사이에 단차가 없어 시야를 가릴 수 있으니 예매시 참고해주시기 바랍니다.\n- 예매티켓은 공연당일 현장 수령만 가능하며, 티켓을 분실하실 경우 재발권이 불가하오니 유의해주시기 바랍니다.(당일 현장 판매는 공연시작 30분 전부터 가능하십니다)\n-본 공연장은 어린이용 보조방석이 구비되어 있지 않습니다.(필요하신분은 개인지참하여 주시기 바랍니다.)\n-24개월 이상 표를 구매합니다.\n-공연중에는 사진촬영 ,동영상촬영,음식물 반입이 금지되어있습니다.\n-본 공연은 가족 모두가 함께 관람 할 수 있습니다.(24개월 미만 부모님 동반입장 가능-증빙서류지참)\n-1인 1티켓적용 (본 공연은 부모님과 자녀 모두 티켓을 소지하셔야 합니다.)\n-미취학아동 단독입장 불가 (본공연은 안전한 관람을 위하여 미취학 아동은 성인보호자와 동반 입장을 권장합니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.\n- 주차는 현장매표소에서 공연관람전 또는 공연관람후 주차 패드로 직접등록 해주셔야 하며, 무료 3시간 등록 가능하십니다.(꼭!! 공연관람전,후 등록하시고 가셔야 합니다)\n- 공연장 주변 교통이 혼잡하며, 주차가 매우 혼잡할 수 있으니 가급적 대중교통을 이용해주시고, 당일 주차 혼잡으로 인한 취소, 환불, 회차 변경은 불가합니다.",
-    "image": "/images/posters/kids/yes24_고양_2026_가족뮤지컬_피터팬.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260506/20260506-58362.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 15,000원\n할인정보\n기본할인 15,000원 / 상시할인\n카톡채널추가할인 10,000원 / 채널명 : 조이컬쳐(고양) 카톡채널 추가시할인(미증빙시 차액지불)\n현대백화점카드 또는 h.point 회원할인 10,000원 / 티켓발권시 현장증빙(미증빙시 차액지불)\n맘맘멤버쉽회원할인 10,000원 / 현장티켓수령시 회원증빙필(미증빙시 차액지불)",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 6월 13일(토) ~ 14일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C컴퍼니, 컬처마켓",
-    "organizer": "㈜조이컬처",
-    "contact": "070-7807-0701",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202507/20250730/54743.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202509/20250922/%EC%A1%B0%EC%9D%B4%EC%BB%AC%EC%B3%90(%EA%B3%A0%EC%96%91)%EC%B1%84%EB%84%90%EC%B6%94%EA%B0%80%EB%B0%A9%EB%B2%95_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260506/피터팬_상세_.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:36:30.191Z"
-  },
-  {
     "id": "yes24_58200",
     "title": "[김해] 뮤지컬 [장수탕 선녀님]",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260427/20260427-58200.jpg/dims/quality/70/",
@@ -7140,16 +6775,6 @@
     "image": "/images/posters/classic/yes24_부산_2026_지역민간교향악축제_낙동아트센터_페스티벌_오케스트라_NAFO.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260522/20260522-58581.jpg/dims/quality/70/",
     "category": "독점공연"
-  },
-  {
-    "id": "yes24_58589",
-    "title": "[부산] 2026 NAC 렉처콘서트 - BSO 솔로이스츠, 실내악 ② 목관5중주 ＆ 금관5중주",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260526/20260526-58589.jpg/dims/quality/70/",
-    "date": "2026.06.14 ~ 2026.06.14",
-    "venue": "낙동아트센터 앙상블극장",
-    "link": "https://ticket.yes24.com/Perf/58589",
-    "genre": "classic",
-    "region": "서울"
   },
   {
     "id": "yes24_57206",
