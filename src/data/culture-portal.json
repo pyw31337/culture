@@ -321,21 +321,6 @@
     "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
-    "id": "culture_portal_이승혜피아노독주회_1_242",
-    "title": "이승혜 피아노 독주회",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026051721182756022.gif",
-    "date": "2026.06.16 ~ 2026.06.16",
-    "venue": "서울 | 예술의전당 [서울] 리사이틀홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69604",
-    "genre": "exhibition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "time": "화요일(19:30)",
-    "price": "전석 30,000원",
-    "contact": "케이클래식스테이지 02-523-7789",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
     "id": "culture_portal_[프리미엄코믹연극]스카프_1_442",
     "title": "[프리미엄 코믹 연극] 스카프",
     "image": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/73ae189bc8f14009af48d1157e40864f.jpg",
@@ -370,24 +355,6 @@
     "price": "전석 2만원(학생 할인 50%)",
     "contact": "지클레프 02-515-5123",
     "description": "PROGRAM Johann Sebastian Bach (1685-1750) Cello Suite No. 1 in G Major, BWV 1007 for Alto Saxophone I. Prélude V. Menuet I & II VI. Gigue Christian Lauba (b. 1952) Clouds for Alto Saxophone and Electronics (한국초연) Robert Schumann (1810-1856) Fantasiestücke, Op.73 for Clarinet and Piano arranged for Alto Saxophone and Piano I. Zart und mit Ausdruck Il. Lebhaft, leicht Ill. Rasch und mit Feuer INTERMISSION David Maslanka (1943-2017) Sonata for Saxophone and Piano I. Moderate II. Slow III. Very fast 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
-  },
-  {
-    "id": "culture_portal_제9회보컬콘소트서울정기연주회_1_11",
-    "title": "제9회 보컬콘소트서울 정기연주회",
-    "image": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026051721173601128.png",
-    "date": "2026.06.16 ~ 2026.06.16",
-    "venue": "서울 | 세종문화회관 세종체임버홀",
-    "link": "https://www.mcst.go.kr/kor/s_culture/culture/cultureView.jsp?pSeq=69603",
-    "genre": "classic_tradition",
-    "source": "culture-portal",
-    "isFestival": false,
-    "lat": 37.5720692375751,
-    "lng": 126.975748352154,
-    "address": "서울 종로구 세종대로 175",
-    "time": "화요일(19:30)",
-    "price": "전석 50,000원",
-    "contact": "영음예술기획 02-581-5404",
-    "description": "자세한 정보는 '바로가기' 링크를 통해 확인하시기 바랍니다. 해당 공연·전시 프로그램은 주최자·공연자 등의 사정에 따라 변경될 수 있습니다. 1688-2220"
   },
   {
     "id": "culture_portal_주현미데뷔40주년콘서트<TheQuee_1_981",
