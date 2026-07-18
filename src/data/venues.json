@@ -61290,9 +61290,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 식당, 카페"
   },
   "나인진홀 (구.청년극장)": {
     "name": "나인진홀 (구.청년극장)",
@@ -63174,9 +63174,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "성수아트홀(성수문화복지회관)": {
     "name": "성수아트홀(성수문화복지회관)",
@@ -63319,9 +63319,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "안산문화예술의전당": {
     "name": "안산문화예술의전당",
@@ -63441,9 +63441,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립 · 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 국립 · 편의시설: 카페"
   },
   "목포시민문화체육센터": {
     "name": "목포시민문화체육센터",
@@ -63593,7 +63593,17 @@
     "lng": 128.5833933,
     "district": "",
     "phone": "010-2338-1340",
-    "homepage": "http://cafe.daum.net/clubheavy96"
+    "homepage": "http://cafe.daum.net/clubheavy96",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "1994",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "노들섬": {
     "name": "노들섬",
@@ -63636,9 +63646,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 놀이방"
   },
   "경기아트센터(구. 경기도문화의전당)": {
     "name": "경기아트센터(구. 경기도문화의전당)",
@@ -64203,9 +64213,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "성북구민회관": {
     "name": "성북구민회관",
@@ -64326,9 +64336,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 식당, 카페, 편의점, 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 편의점, 놀이방"
   },
   "광양시문화예술회관": {
     "name": "광양시문화예술회관",
@@ -66033,9 +66043,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "김해 장유문화센터": {
     "name": "김해 장유문화센터",
@@ -68022,9 +68032,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "영주시민회관": {
     "name": "영주시민회관",
@@ -68617,9 +68627,9 @@
     "theaterCount": "1",
     "openedAt": "2017",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "AG아트홀 [청주]": {
     "name": "AG아트홀 [청주]",
@@ -70173,7 +70183,15 @@
     "lat": 37.4802751,
     "lng": 127.0058377,
     "district": "서초구",
-    "homepage": "https://braumhall.modoo.at/"
+    "homepage": "https://braumhall.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대학로 일대": {
     "name": "대학로 일대",
@@ -70879,9 +70897,9 @@
     "theaterCount": "1",
     "openedAt": "1987",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "옐로우택시": {
     "name": "옐로우택시",
@@ -71268,9 +71286,9 @@
     "theaterCount": "3",
     "openedAt": "2007",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "부산아시아드 경기장": {
     "name": "부산아시아드 경기장",
@@ -81888,7 +81906,20 @@
     "address": "전북특별자치도 남원시 양림길 43",
     "district": "",
     "lat": 35.4023395125802,
-    "lng": 127.390016169139
+    "lng": 127.390016169139,
+    "phone": "063-620-5724",
+    "homepage": "http://www.namwon.go.kr/tour/board/view.do?menuCd=DOM_000001002003003000&boardId=BBS_0000028&dataSid=121051",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "908",
+    "theaterCount": "2",
+    "openedAt": "1995",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "건양대학교 문화콘서트홀": {
     "name": "건양대학교 문화콘서트홀",
@@ -88588,7 +88619,16 @@
     "lat": 35.854110714417054,
     "lng": 128.58338855056553,
     "phone": "010-2338-1340",
-    "homepage": "http://cafe.daum.net/clubheavy96"
+    "homepage": "http://cafe.daum.net/clubheavy96",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "1994",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "달서아트센터 (구. 웃는얼굴아트센터) (와룡홀)": {
     "name": "달서아트센터 (구. 웃는얼굴아트센터) (와룡홀)",
@@ -101358,9 +101398,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "이들스": {
     "name": "이들스",
@@ -103388,9 +103428,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행"
   },
   "극단 빈공간 (빈-공간 THEATRE)": {
     "name": "극단 빈공간 (빈-공간 THEATRE)",
@@ -104920,9 +104960,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "지포캣(G4CAT)": {
     "name": "지포캣(G4CAT)",
@@ -108182,7 +108222,21 @@
     "address": "경기 연천군 연천읍 문화로 150",
     "district": "연천군",
     "lat": 38.10703481677,
-    "lng": 127.07974947327
+    "lng": 127.07974947327,
+    "phone": "031-834-3770",
+    "homepage": "http://sureul.co.kr/company/arthall_intro.jsp",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "716",
+    "theaterCount": "2",
+    "openedAt": "2010",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행"
   },
   "안산 소극장 보노마루": {
     "name": "안산 소극장 보노마루",
@@ -109088,7 +109142,18 @@
     "address": "서울 광진구 구천면로 20",
     "district": "광진구",
     "lat": 37.5457348738776,
-    "lng": 127.107971464114
+    "lng": 127.107971464114,
+    "phone": "02-457-5114",
+    "homepage": "http://www.yes24livehall.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "1051",
+    "theaterCount": "1",
+    "openedAt": "2006",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "시립청소년음악센터 블랙박스공연장": {
     "name": "시립청소년음악센터 블랙박스공연장",
@@ -113161,7 +113226,18 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5805023,
-    "lng": 127.0032562
+    "lng": 127.0032562,
+    "phone": "02-760-4715",
+    "homepage": "https://arko.or.kr/infra/pm1_01/m2_07/m3_03.do",
+    "facilityType": "국립",
+    "seatScale": "110",
+    "theaterCount": "3",
+    "openedAt": "2010",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 국립 · 편의시설: 카페"
   },
   "롯데월드 민속박물관 놀이마당": {
     "name": "롯데월드 민속박물관 놀이마당",
@@ -115953,5 +116029,55 @@
     "parking": "주차장: Y / 장애인 주차구역 제공",
     "restrooms": "",
     "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치"
+  },
+  "춘향문화예술회관": {
+    "name": "춘향문화예술회관",
+    "address": "전라북도 남원시 양림길 43 (어현동)",
+    "lat": 35.4022201,
+    "lng": 127.39007179999999,
+    "district": "",
+    "phone": "063-620-5724",
+    "homepage": "http://www.namwon.go.kr/tour/board/view.do?menuCd=DOM_000001002003003000&boardId=BBS_0000028&dataSid=121051",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "908",
+    "theaterCount": "2",
+    "openedAt": "1995",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관)"
+  },
+  "JTBC 스튜디오일산": {
+    "name": "JTBC 스튜디오일산",
+    "address": "경기도 고양시 일산동구 한류월드로 270 (장항동)",
+    "lat": 37.662547,
+    "lng": 126.756078,
+    "district": "고양시",
+    "facilityType": "민간(대학로)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
+  },
+  "더같음": {
+    "name": "더같음",
+    "address": "대구광역시 수성구 범안로 14 (범물동)",
+    "lat": 35.816924,
+    "lng": 128.638631,
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   }
 }
