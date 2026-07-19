@@ -581,3 +581,10 @@
 - **GitHub Run ID**: [29118708042](https://github.com/pyw31337/culture/actions/runs/29118708042)
 - **Note**: The 03:00 KST fallback data update failed during validation/processing. Retaining last successful data commit.
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-07-19 19:47:16 UTC
+- **GitHub Run ID**: [29700140880](https://github.com/pyw31337/culture/actions/runs/29700140880)
+- **Note**: The 03:00 KST fallback data update failed during validation/processing. Retaining last successful data commit.
+- **Failed Scrapers**:
+  - interpark
+
