@@ -506,9 +506,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "홍대난타극장": {
     "name": "온맘씨어터",
@@ -900,9 +900,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 카페"
   },
   "링크아트센터 벅스홀": {
     "name": "링크아트센터 벅스홀",
@@ -2018,7 +2018,15 @@
     "address": "서울특별시 중구 을지로38길 9-4 (광희동1가)",
     "lat": 37.5660433,
     "lng": 127.0039785,
-    "district": "중구"
+    "district": "중구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "플레이더씨어터": {
     "name": "나인진홀",
@@ -9750,9 +9758,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "재즈클럽 그루브": {
     "name": "재즈클럽 그루브",
@@ -9852,9 +9860,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 놀이방, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 카페, 놀이방"
   },
   "극단 빈 - 공간": {
     "name": "극단 빈 - 공간",
@@ -11036,7 +11044,7 @@
     "homepage": "http://www.cccf.or.kr/designer/skin/cafacility/puppetmain.html",
     "facilityType": "공공(문예회관)",
     "seatScale": "1458",
-    "theaterCount": "8",
+    "theaterCount": "9",
     "openedAt": "2001",
     "amenities": [
       "카페",
@@ -11044,9 +11052,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 카페"
   },
   "속초문화예술회관 대공연장": {
     "name": "속초문화예술회관",
@@ -24871,9 +24879,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 놀이방"
   },
   "수원SK아트리움": {
     "name": "수원SK아트리움",
@@ -33688,9 +33696,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "무신사 개러지": {
     "name": "무신사 개러지",
@@ -34120,7 +34128,7 @@
   "소향씨어터 우리은행홀": {
     "name": "소향씨어터 우리은행홀",
     "address": "부산 해운대구 센텀중앙로 55",
-    "district": "해운대구",
+    "district": "",
     "lat": 35.1728123481706,
     "lng": 129.12724228796,
     "mapped_region_id": "busan",
@@ -43477,10 +43485,20 @@
   },
   "가온스테이지": {
     "name": "가온스테이지",
-    "address": "서울특별시 마포구 잔다리로 59",
+    "address": "서울특별시 마포구 잔다리로 59(서교동)",
     "lat": 37.5531083,
     "lng": 126.9175257,
-    "district": "마포구"
+    "district": "마포구",
+    "phone": "010-9474-8650",
+    "homepage": "https://blog.naver.com/gaonstudio7",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "씨어터쿰": {
     "name": "씨어터쿰",
@@ -46177,10 +46195,18 @@
   },
   "클럽디 오아시스": {
     "name": "클럽디 오아시스",
-    "address": "부산 해운대구 달맞이길 30 엘시티",
+    "address": "부산광역시 해운대구 달맞이길 30 (중동, 엘시티)",
+    "lat": 35.1613327,
+    "lng": 129.1680138,
     "district": "",
-    "lat": 35.1613327099223,
-    "lng": 129.168013841974
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "춘천 삼악산 호수 케이블카": {
     "name": "춘천 삼악산 호수 케이블카",
@@ -62690,9 +62716,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "숭실대학교 한경직기념관": {
     "name": "숭실대학교 한경직기념관",
@@ -64486,9 +64512,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페"
   },
   "종로아이들극장": {
     "name": "종로아이들극장",
@@ -64690,9 +64716,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페"
   },
   "서귀포예술의전당": {
     "name": "서귀포예술의전당",
@@ -64877,9 +64903,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "쇼킹 케이팝 센터 (ShowKing K-POP Center)": {
     "name": "쇼킹 케이팝 센터 (ShowKing K-POP Center)",
@@ -66778,9 +66804,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 카페, 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 놀이방"
   },
   "KBS홀 [창원]": {
     "name": "KBS홀 [창원]",
@@ -70620,9 +70646,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페"
   },
   "철원군 화강문화센터": {
     "name": "철원군 화강문화센터",
@@ -70960,10 +70986,18 @@
   },
   "춘천시청": {
     "name": "춘천시청",
-    "address": "강원특별자치도 춘천시 시청길 11",
+    "address": "강원특별자치도 춘천시 시청길 11 (옥천동)",
     "lat": 37.8813632,
     "lng": 127.7298589,
-    "district": ""
+    "district": "",
+    "facilityType": "공공(기타)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "목포종합경기장": {
     "name": "목포종합경기장",
@@ -83153,9 +83187,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "PS CENTER": {
     "name": "PS CENTER",
@@ -100556,7 +100590,12 @@
     "address": "서울 중구 을지로38길 9-4",
     "district": "중구",
     "lat": 37.5660431001951,
-    "lng": 127.003978606954
+    "lng": 127.003978606954,
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "엠스테이지 (구.인사아트홀) (1관)": {
     "name": "엠스테이지 (구.인사아트홀) (1관)",
@@ -108141,7 +108180,23 @@
     "address": "경기 고양시 일산서구 킨텍스로 217-59",
     "district": "고양시",
     "lat": 37.665623938847006,
-    "lng": 126.74121567801413
+    "lng": 126.74121567801413,
+    "phone": "031-995-8036",
+    "homepage": "http://www.kintex.com/",
+    "facilityType": "공공(기타)",
+    "seatScale": "2800",
+    "theaterCount": "12",
+    "openedAt": "2005",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "인천 상상플랫폼": {
     "name": "인천 상상플랫폼",
@@ -108208,7 +108263,23 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.2711919,
-    "lng": 127.43434869999999
+    "lng": 127.43434869999999,
+    "phone": "031-644-2100",
+    "homepage": "https://art.icheon.go.kr/files/intro_02_01.php",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1651",
+    "theaterCount": "3",
+    "openedAt": "2009",
+    "amenities": [
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 놀이방"
   },
   "부평구청소년수련관 공연장": {
     "name": "부평구청소년수련관 공연장",
@@ -108706,7 +108777,18 @@
     "address": "대구 달서구 공원순환로 201",
     "district": "",
     "lat": 35.845163352352714,
-    "lng": 128.55995783712197
+    "lng": 128.55995783712197,
+    "phone": "053-606-6114",
+    "homepage": "http://artcenter.daegu.go.kr/content.html?md=0047",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "2327",
+    "theaterCount": "6",
+    "openedAt": "1990",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "군파크 루지 테마파크": {
     "name": "군파크 루지 테마파크",
@@ -110795,14 +110877,46 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.6693071,
-    "lng": 126.74568449999992
+    "lng": 126.74568449999992,
+    "phone": "031-995-8036",
+    "homepage": "http://www.kintex.com/",
+    "facilityType": "공공(기타)",
+    "seatScale": "2800",
+    "theaterCount": "12",
+    "openedAt": "2005",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "킨텍스 2전시장 9홀": {
     "name": "킨텍스 2전시장 9홀",
     "address": "경기 고양시 일산서구 킨텍스로 217-59",
     "district": "고양시",
     "lat": 37.66443711852197,
-    "lng": 126.74029042407192
+    "lng": 126.74029042407192,
+    "phone": "031-995-8036",
+    "homepage": "http://www.kintex.com/",
+    "facilityType": "공공(기타)",
+    "seatScale": "2800",
+    "theaterCount": "12",
+    "openedAt": "2005",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "KINTEX 제1전시장 1홀": {
     "name": "KINTEX 제1전시장 1홀",
