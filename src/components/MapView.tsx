@@ -260,7 +260,15 @@ export default function MapView({
     const [geoCenter, setGeoCenter] = useState<MapSearchCenter | null>(null);
     const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
     const [selectedMapGenre, setSelectedMapGenre] = useState<string>(() => {
-        if (embeddedSearchParams) return new URLSearchParams(embeddedSearchParams).get('genre') || 'all';
+        const params = embeddedSearchParams ? new URLSearchParams(embeddedSearchParams) : (typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : EMPTY_SEARCH_PARAMS);
+        const paramGenre = params.get('genre');
+        if (paramGenre) return paramGenre;
+        if (typeof window !== 'undefined') {
+            const parts = window.location.pathname.split('/').filter(Boolean);
+            if (parts.length > 0 && parts[0] !== 'map' && parts[0] !== 'p' && parts[0] !== 'calendar') {
+                return parts[0];
+            }
+        }
         return 'all';
     });
     const [precomputedVenueGroups, setPrecomputedVenueGroups] = useState<VenueGroup[] | null>(() => mapVenueGroupsCache);
@@ -275,19 +283,31 @@ export default function MapView({
     const [showExtendedForecast, setShowExtendedForecast] = useState(false);
     const [mapLoadError, setMapLoadError] = useState<string | null>(null);
 
+    const getGenreFromLocation = useCallback((params: URLSearchParams) => {
+        const paramGenre = params.get('genre');
+        if (paramGenre) return paramGenre;
+        if (typeof window !== 'undefined') {
+            const parts = window.location.pathname.split('/').filter(Boolean);
+            if (parts.length > 0 && parts[0] !== 'map' && parts[0] !== 'p' && parts[0] !== 'calendar') {
+                return parts[0];
+            }
+        }
+        return 'all';
+    }, []);
+
     useEffect(() => {
         if (isEmbedded || typeof window === 'undefined') return;
         const nextParams = new URLSearchParams(window.location.search);
         setSearchParams(nextParams);
-        setSelectedMapGenre(nextParams.get('genre') || 'all');
-    }, [isEmbedded]);
+        setSelectedMapGenre(getGenreFromLocation(nextParams));
+    }, [getGenreFromLocation, isEmbedded]);
 
     useEffect(() => {
         if (!isEmbedded || typeof embeddedSearchParams !== 'string') return;
         const nextParams = new URLSearchParams(embeddedSearchParams);
         setSearchParams(nextParams);
-        setSelectedMapGenre(nextParams.get('genre') || 'all');
-    }, [embeddedSearchParams, isEmbedded]);
+        setSelectedMapGenre(getGenreFromLocation(nextParams));
+    }, [embeddedSearchParams, getGenreFromLocation, isEmbedded]);
 
     const handleSearchParams = useCallback((params: URLSearchParams) => {
         const nextParams = new URLSearchParams(params.toString());
@@ -410,11 +430,8 @@ export default function MapView({
             searchMode,
             lat: mapSearchCenter?.lat || undefined,
             lng: mapSearchCenter?.lng || undefined,
-            radius: 20 // Balanced 20km radius for markers
         }).filter(p => {
             if (selectedMapGenre === 'all') return true;
-            // The data stores genre IDs (English), but we were comparing with Korean labels.
-            // Fix: Compare directly with the selected ID.
             return p.genre === selectedMapGenre;
         });
     }, [allPerformances, searchMode, searchText, mapSearchCenter, selectedMapGenre]);
@@ -491,16 +508,9 @@ export default function MapView({
 
         if (precomputedVenueGroups && (!isMovieMode || isAllMode)) {
             const keyword = searchMode === 'keyword' ? normalizeSearchValue(searchText) : '';
-            const center = mapSearchCenter;
 
             for (const venueGroup of precomputedVenueGroups) {
                 if (venueGroup.venueName.includes('투어패스') && venueGroup.lat > 37.4 && venueGroup.lng > 130.8) continue;
-
-                if (center && Number.isFinite(center.lat) && Number.isFinite(center.lng)) {
-                    const distance = getDistanceFromLatLonInKm(center.lat, center.lng, venueGroup.lat, venueGroup.lng);
-                    const isExactCenter = normalizeSearchValue(venueGroup.venueName) === normalizeSearchValue(center.name);
-                    if (!isExactCenter && distance > 20) continue;
-                }
 
                 const filteredPerformances = venueGroup.performances.filter((perf) => {
                     if (!isAllMode && perf.genre !== selectedMapGenre) return false;
@@ -591,7 +601,25 @@ export default function MapView({
             }
         }
 
-        const list = Array.from(groupsMap.values()).filter((venue) => venue.lat && venue.lng);
+        let list = Array.from(groupsMap.values()).filter((venue) => venue.lat && venue.lng);
+        let isFallback = false;
+
+        // Ensure Map NEVER stays empty even if strict filter yields 0 matches
+        if (list.length === 0 && precomputedVenueGroups && precomputedVenueGroups.length > 0) {
+            isFallback = true;
+            for (const venueGroup of precomputedVenueGroups) {
+                if (Number.isFinite(venueGroup.lat) && Number.isFinite(venueGroup.lng)) {
+                    groupsMap.set(venueGroup.groupKey, {
+                        ...venueGroup,
+                        type: venueGroup.type || 'performance',
+                        performances: venueGroup.performances || [],
+                        kakaoLatLng: null,
+                    });
+                }
+            }
+            list = Array.from(groupsMap.values());
+        }
+
         list.sort((a, b) => (a.firstAppearanceIndex ?? 99999) - (b.firstAppearanceIndex ?? 99999));
 
         if (mapSearchCenter && !isNaN(mapSearchCenter.lat) && !isNaN(mapSearchCenter.lng)) {
@@ -604,7 +632,7 @@ export default function MapView({
             });
         }
 
-        return { groups: Object.fromEntries(groupsMap), list };
+        return { groups: Object.fromEntries(groupsMap), list, isFallback };
     }, [performances, precomputedVenueGroups, cinemas, mapSearchCenter, searchMode, searchText, selectedMapGenre, venues]);
 
     useEffect(() => {
@@ -1728,10 +1756,17 @@ export default function MapView({
                             })}
                         </div>
                     )}
+                    {processedData.isFallback && (
+                        <div className="flex items-center justify-center pb-2 pointer-events-auto">
+                            <span className="text-xs text-amber-700 dark:text-amber-300 font-bold bg-amber-100/90 dark:bg-amber-900/90 backdrop-blur px-4 py-1.5 rounded-full shadow border border-amber-300 dark:border-amber-700">
+                                💡 조건에 일치하는 결과가 없어 전체 공연장을 표시합니다.
+                            </span>
+                        </div>
+                    )}
                     {visibleVenues.length === 0 && isMapReady && (
                         <div className="flex items-center justify-center py-6 pointer-events-auto">
                             <span className="text-sm text-gray-500 dark:text-gray-400 font-medium bg-white/80 dark:bg-gray-800/80 backdrop-blur px-4 py-2 rounded-full shadow">
-                                주변 공연장이 없습니다.
+                                주변 공연장을 불러오고 있습니다.
                             </span>
                         </div>
                     )}
