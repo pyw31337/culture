@@ -12518,7 +12518,7 @@
     "phone": "051-607-6000",
     "homepage": "http://culture.busan.go.kr/Main.bs",
     "facilityType": "공공(문예회관)",
-    "seatScale": "2926",
+    "seatScale": "2966",
     "theaterCount": "4",
     "openedAt": "1988",
     "amenities": [
@@ -12529,9 +12529,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 놀이방"
   },
   "KBS울산홀": {
     "name": "KBS울산홀",
@@ -33144,9 +33144,9 @@
     "theaterCount": "1",
     "openedAt": "2014",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "다케이씨어터(구. 창조소극장)": {
     "name": "다케이씨어터(구. 창조소극장)",
@@ -52138,9 +52138,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "가온아트홀 1관": {
     "address": "부산 동구 자성로133번길 10",
@@ -61633,9 +61633,9 @@
     "amenities": [
       "식당"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 식당"
   },
   "광야아트센터": {
     "name": "광야아트센터",
@@ -61754,9 +61754,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 경사로, 엘리베이터"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "JS아트홀 (구. 고스트씨어터 구.다소니씨어터)": {
     "name": "JS아트홀 (구. 고스트씨어터 구.다소니씨어터)",
@@ -62015,9 +62015,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 수유실, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "브릴란트 아트 스튜디오 [서울 서초]": {
     "name": "브릴란트 아트 스튜디오 [서울 서초]",
@@ -62046,9 +62046,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "디큐브링크아트센터": {
     "name": "디큐브링크아트센터",
@@ -62267,9 +62267,9 @@
       "식당",
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "엠스테이지 (구.인사아트홀)": {
     "name": "엠스테이지 (구.인사아트홀)",
@@ -64230,9 +64230,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 카페"
   },
   "갤러리 디 아르테 청담": {
     "name": "갤러리 디 아르테 청담",
@@ -64678,9 +64678,9 @@
     "theaterCount": "1",
     "openedAt": "2011",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "밀양아리랑아트센터": {
     "name": "밀양아리랑아트센터",
@@ -66256,9 +66256,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
   },
   "HD아트센터(구 현대예술관)": {
     "name": "HD아트센터(구 현대예술관)",
@@ -66438,9 +66438,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 장애인 엘리베이터 운행"
   },
   "원주치악예술관": {
     "name": "원주치악예술관",
@@ -66520,9 +66520,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 놀이방, 수유실, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 놀이방"
   },
   "성주문화예술회관": {
     "name": "성주문화예술회관",
@@ -78243,7 +78243,17 @@
     "lat": 36.7540700278761,
     "lng": 126.31250076756,
     "phone": "041-670-2258",
-    "homepage": "https://www.taean.go.kr/tour/sub04_03_01.do"
+    "homepage": "https://www.taean.go.kr/tour/sub04_03_01.do",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "855",
+    "theaterCount": "2",
+    "openedAt": "2001",
+    "amenities": [
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "앳모스피어 뮤직홀": {
     "name": "앳모스피어 뮤직홀",
@@ -85651,9 +85661,9 @@
     "theaterCount": "1",
     "openedAt": "1997",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "클래식고택 [대구 옻골마을]": {
     "name": "클래식고택 [대구 옻골마을]",
@@ -85871,9 +85881,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "김포아트빌리지 야외공연장": {
     "name": "김포아트빌리지 야외공연장",
@@ -103194,7 +103204,18 @@
     "lng": 126.31224930000008,
     "district": "",
     "phone": "041-670-2258",
-    "homepage": "https://www.taean.go.kr/tour/sub04_03_01.do"
+    "homepage": "https://www.taean.go.kr/tour/sub04_03_01.do",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "855",
+    "theaterCount": "2",
+    "openedAt": "2001",
+    "amenities": [
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "대덕구청소년어울림센터(구. 대덕청소년수련관)": {
     "name": "대덕구청소년어울림센터(구. 대덕청소년수련관)",
@@ -107886,7 +107907,19 @@
     "address": "서울 중구 마른내로 47",
     "district": "중구",
     "lat": 37.5646995866903,
-    "lng": 126.993208758748
+    "lng": 126.993208758748,
+    "phone": "02-2274-2121",
+    "homepage": "https://www.mbah.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "1818",
+    "theaterCount": "6",
+    "openedAt": "2008",
+    "amenities": [
+      "식당",
+      "카페"
+    ],
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "한성아트홀 2관": {
     "name": "한성아트홀 2관",
@@ -108375,7 +108408,27 @@
     "address": "인천 부평구 아트센터로 166",
     "district": "부평구",
     "lat": 37.482177029032286,
-    "lng": 126.70457302081286
+    "lng": 126.70457302081286,
+    "phone": "032-500-2000",
+    "homepage": "http://www.bpart.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1191",
+    "theaterCount": "2",
+    "openedAt": "2010",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 편의점, 놀이방"
   },
   "화성행궁 별주": {
     "name": "화성행궁 별주",
@@ -114026,9 +114079,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "BHC 27번가 갤러리 [광주]": {
     "name": "BHC 27번가 갤러리 [광주]",
@@ -115571,7 +115624,14 @@
   "영동복합문화예술회관 대공연장": {
     "name": "영동복합문화예술회관 대공연장",
     "address": "영동복합문화예술회관 대공연장(자세히)",
-    "district": ""
+    "district": "",
+    "lat": 36.1563534,
+    "lng": 127.7865137,
+    "facilityType": "공공(문예회관)",
+    "seatScale": "416",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "목포문화예술회관 공연장": {
     "name": "목포문화예술회관 공연장",
@@ -116296,5 +116356,21 @@
     "name": "극단빈공간",
     "address": "정보 없음",
     "district": ""
+  },
+  "운율북클래식": {
+    "name": "운율북클래식",
+    "address": "인천광역시 연수구 센트럴로 313 (송도동)",
+    "lat": 37.401648,
+    "lng": 126.631564,
+    "district": "연수구",
+    "homepage": "https://www.instagram.com/woonyul_classic",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }

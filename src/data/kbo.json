@@ -20406,5 +20406,47 @@
     "awayTeam": "삼성8",
     "homeTeamLogo": "",
     "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260722_SSG7_vs_3롯데",
+    "title": "SSG7 vs 3롯데",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-07-22 18:30",
+    "venue": "부산사직종합운동장사직야구장",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "busan",
+    "genre": "baseball",
+    "homeTeam": "3롯데",
+    "awayTeam": "SSG7",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260722_한화7_vs_3KIA",
+    "title": "한화7 vs 3KIA",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-07-22 18:30",
+    "venue": "광주기아챔피언스필드",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "gwangju",
+    "genre": "baseball",
+    "homeTeam": "3KIA",
+    "awayTeam": "한화7",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260722_삼성1_vs_3키움",
+    "title": "삼성1 vs 3키움",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-07-22 18:30",
+    "venue": "고척스카이돔",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "seoul",
+    "genre": "baseball",
+    "homeTeam": "3키움",
+    "awayTeam": "삼성1",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]
