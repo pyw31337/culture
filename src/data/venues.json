@@ -4348,7 +4348,19 @@
     "lng": 126.7335991,
     "district": "남동구",
     "phone": "032-715-5173",
-    "homepage": "https://www.icsports.or.kr/fmcs/63"
+    "homepage": "https://www.icsports.or.kr/fmcs/63",
+    "facilityType": "공공(기타)",
+    "seatScale": "8828",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 장애인 엘리베이터 운행"
   },
   "킨텍스 제1전시장 2홀": {
     "name": "킨텍스 캠핑장",
@@ -34128,9 +34140,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페"
   },
   "소향씨어터 우리은행홀": {
     "name": "소향씨어터 우리은행홀",
@@ -52993,9 +53005,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "후암스테이지 1관": {
     "name": "후암스테이지 1관",
@@ -60465,9 +60477,9 @@
     "theaterCount": "1",
     "openedAt": "2017",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "레미어린이극장 [금천]": {
     "name": "레미어린이극장 [금천]",
@@ -60774,9 +60786,9 @@
       "식당",
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "롯데마트 어린이소극장 [구미]": {
     "name": "롯데마트 어린이소극장 [구미]",
@@ -63321,7 +63333,18 @@
     "lat": 35.1688692,
     "lng": 129.0361856,
     "district": "",
-    "homepage": "https://byartscenter.or.kr/"
+    "homepage": "https://byartscenter.or.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "2024",
+    "amenities": [
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 장애인 엘리베이터 운행"
   },
   "쌀롱드무지끄": {
     "name": "쌀롱드무지끄",
@@ -64195,9 +64218,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "라이언슈퍼클럽(LION SUPER CLUB)": {
     "name": "라이언슈퍼클럽(LION SUPER CLUB)",
@@ -65380,9 +65403,9 @@
       "수유실",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 수유실, 장애인 화장실"
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "중랑구민회관": {
     "name": "중랑구민회관",
@@ -66845,9 +66868,9 @@
     "theaterCount": "1",
     "openedAt": "2011",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "복합문화공간 플랜에이": {
     "name": "복합문화공간 플랜에이",
@@ -69020,10 +69043,20 @@
   },
   "극장 PLOT": {
     "name": "극장 PLOT",
-    "address": "서울특별시 서대문구 연세로4길 27",
+    "address": "서울특별시 서대문구 연세로4길 27(창천동)",
     "lat": 37.5576008,
     "lng": 126.9381984,
-    "district": "서대문구"
+    "district": "서대문구",
+    "phone": "010-4334-2862",
+    "homepage": "www.theatreplot.com",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "2019",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "아르코 꿈밭극장": {
     "name": "아르코 꿈밭극장",
@@ -69660,9 +69693,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "보노마루": {
     "name": "보노마루",
@@ -70266,10 +70299,20 @@
   },
   "신포아트홀": {
     "name": "신포아트홀",
-    "address": "인천광역시 중구 신포로31번길 6",
+    "address": "인천광역시 중구 신포로31번길 6 (관동3가)",
     "lat": 37.4719449,
     "lng": 126.6252219,
-    "district": "중구"
+    "district": "중구",
+    "phone": "032-514-2150",
+    "homepage": "https://blog.naver.com/n9016",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "2022",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "세종중앙공원": {
     "name": "세종중앙공원",
@@ -88128,7 +88171,18 @@
     "district": "",
     "lat": 35.1688627842795,
     "lng": 129.036183032838,
-    "homepage": "https://byartscenter.or.kr/"
+    "homepage": "https://byartscenter.or.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "2024",
+    "amenities": [
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 장애인 엘리베이터 운행"
   },
   "예술의전당 (IBK챔버홀)": {
     "name": "예술의전당 (IBK챔버홀)",
@@ -96926,7 +96980,19 @@
     "lat": 37.4346425602455,
     "lng": 126.733811034142,
     "phone": "032-715-5173",
-    "homepage": "https://www.icsports.or.kr/fmcs/63"
+    "homepage": "https://www.icsports.or.kr/fmcs/63",
+    "facilityType": "공공(기타)",
+    "seatScale": "8828",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 장애인 엘리베이터 운행"
   },
   "의정부예술의전당 (소극장)": {
     "name": "의정부예술의전당 (소극장)",
@@ -103118,9 +103184,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "의정부 종합운동장": {
     "name": "의정부 종합운동장",
@@ -104399,9 +104465,9 @@
     "theaterCount": "1",
     "openedAt": "1995",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "크레스트72(CREST72)": {
     "name": "크레스트72(CREST72)",
@@ -114784,9 +114850,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "유미플레이 1관": {
     "name": "유미플레이 1관",
@@ -116350,7 +116416,9 @@
   "어댑터씨어터 1관": {
     "name": "어댑터씨어터 1관",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 35.1516557,
+    "lng": 129.1167408
   },
   "극단빈공간": {
     "name": "극단빈공간",
