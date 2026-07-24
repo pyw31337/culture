@@ -4044,9 +4044,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 편의점, 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 편의점, 놀이방"
   },
   "한국만화박물관 1층 만화영화상영관": {
     "name": "한국만화박물관",
@@ -4218,9 +4218,9 @@
       "수유실",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 놀이방, 수유실, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 놀이방"
   },
   "인천어린이과학관": {
     "name": "인천어린이과학관",
@@ -13240,9 +13240,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치"
   },
   "제주 호은아트센터": {
     "name": "제주 호은아트센터",
@@ -25035,9 +25035,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 놀이방"
   },
   "구미문화예술회관": {
     "name": "구미문화예술회관",
@@ -31128,9 +31128,9 @@
     "theaterCount": "1",
     "openedAt": "2021",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "부산사직": {
     "name": "부산사직",
@@ -53044,9 +53044,9 @@
     "theaterCount": "1",
     "openedAt": "2012",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "프리비젼스홀": {
     "name": "프리비젼스홀",
@@ -60588,9 +60588,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 편의점"
   },
   "대구마술극장 (블루마술극장)": {
     "name": "대구마술극장 (블루마술극장)",
@@ -60911,9 +60911,9 @@
     "amenities": [
       "장애인 화장실"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 화장실"
+    "parking": "주차장: N",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "허리우드극장 (구. 모두의극장)": {
     "name": "허리우드극장 (구. 모두의극장)",
@@ -61007,9 +61007,9 @@
     "theaterCount": "1",
     "openedAt": "2009",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "공간춤": {
     "name": "공간춤",
@@ -61148,9 +61148,9 @@
     "amenities": [
       "식당"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 식당"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 식당"
   },
   "도고아트홀(구.아산 코미디홀)": {
     "name": "도고아트홀(구.아산 코미디홀)",
@@ -61501,9 +61501,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 편의점, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페, 편의점"
   },
   "두산아트센터": {
     "name": "두산아트센터",
@@ -63303,9 +63303,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: N / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "톤스튜디오 서울": {
     "name": "톤스튜디오 서울",
@@ -66423,9 +66423,9 @@
     "theaterCount": "2",
     "openedAt": "2023",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "보헤미안 소극장": {
     "name": "보헤미안 소극장",
@@ -70538,9 +70538,9 @@
     "theaterCount": "1",
     "openedAt": "2022",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "소전서림": {
     "name": "소전서림",
@@ -74623,9 +74623,9 @@
     "amenities": [
       "장애인 화장실"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 화장실"
+    "parking": "주차장: N",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "광주북구문화센터 (양산도서관)": {
     "name": "광주북구문화센터 (양산도서관)",
@@ -82438,9 +82438,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행"
   },
   "써포먼트갤러리": {
     "name": "써포먼트갤러리",
@@ -103373,9 +103373,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "그린빈 버찌라이브하우스": {
     "name": "그린빈 버찌라이브하우스",
@@ -109175,7 +109175,9 @@
   "전주한벽문화관 마당창극 야외공연장": {
     "name": "전주한벽문화관 마당창극 야외공연장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 35.8119872,
+    "lng": 127.15849300000002
   },
   "남군산교회": {
     "name": "남군산교회",
@@ -116432,6 +116434,22 @@
     "lng": 126.631564,
     "district": "연수구",
     "homepage": "https://www.instagram.com/woonyul_classic",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "DOT [수원]": {
+    "name": "DOT [수원]",
+    "address": "경기도 수원시 팔달구 화서문로 34-1 (신풍동)",
+    "lat": 37.284978,
+    "lng": 127.01184,
+    "district": "수원시",
+    "homepage": "https://www.instagram.com/d.o.t_kr",
     "facilityType": "민간(대학로 외)",
     "seatScale": "0",
     "theaterCount": "1",
