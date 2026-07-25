@@ -100,66 +100,6 @@
     "synopsisImages": []
   },
   {
-    "id": "yes24_57226",
-    "title": "KBS부산 제 98기 수요일 노래교실(오전반) - 1층 지정석",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57226.jpg/dims/quality/70/",
-    "date": "2026.04.01 ~ 2026.06.24",
-    "venue": "KBS부산홀",
-    "link": "https://ticket.yes24.com/Perf/57226",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_KBS부산_제_98기_수요일_노래교실_오전반_1층_지정석.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57226.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_57227",
-    "title": "KBS부산 제 98기 수요일 노래교실(오전반) - 2층 자유석",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57227.jpg/dims/quality/70/",
-    "date": "2026.04.01 ~ 2026.06.24",
-    "venue": "KBS부산홀",
-    "link": "https://ticket.yes24.com/Perf/57227",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_KBS부산_제_98기_수요일_노래교실_오전반_2층_자유석.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57227.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_57256",
-    "title": "KBS부산 제 98기 수요일 노래교실(오후반) - 1층 지정석",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57226.jpg/dims/quality/70/",
-    "date": "2026.04.01 ~ 2026.06.24",
-    "venue": "KBS부산홀",
-    "link": "https://ticket.yes24.com/Perf/57256",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_KBS부산_제_98기_수요일_노래교실_오후반_1층_지정석.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57226.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_57257",
-    "title": "KBS부산 제 98기 수요일 노래교실(오후반) - 2층 자유석",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57227.jpg/dims/quality/70/",
-    "date": "2026.04.01 ~ 2026.06.24",
-    "venue": "KBS부산홀",
-    "link": "https://ticket.yes24.com/Perf/57257",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_KBS부산_제_98기_수요일_노래교실_오후반_2층_자유석.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260219/20260219-57227.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
     "id": "yes24_57338",
     "title": "[김해] 2026 자유 패키지 P:art Ⅰ",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260227/20260227-57338.jpg/dims/quality/70/",
@@ -449,44 +389,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202604/20260402/57907_01.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202604/20260402/57907_02.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202604/20260402/57907_03.jpg"
-    ]
-  },
-  {
-    "id": "yes24_58223",
-    "title": "[창원] SUPER! 수요콘서트 Enjoy by BUMHAN MECATEC 6월 [오월오일]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260423/20260423-58223.jpg/dims/quality/70/",
-    "date": "2026.06.24 ~ 2026.06.24",
-    "venue": "창원 3·15아트센터 대극장",
-    "link": "https://ticket.yes24.com/Perf/58223",
-    "genre": "concert",
-    "region": "서울",
-    "price": "R석 50,000원, S석 40,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_창원_SUPER_수요콘서트_Enjoy_by_BUMHAN_MECATEC_6월_오월오일.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260423/20260423-58223.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 20,000원 ~ 최고가 47,500원\n할인정보\n※ 조기예매 할인 20%할인 (~5/31까지 예매 시)\n※ 인터넷 예매시 5%할인\n※ 다자녀가정(미성년자녀 2명이상) 20%할인\n※ 임산부(본인만) 20%할인\n※ 문화패스 30%할인 (7~23세 및 대학생 본인만)\n※ 예술인패스(본인만) 30%할인\n※ 장애인(경증/본인만) 50%할인\n※ 장애인(중증/동반1인) 50%할인\n※ 경로우대(65세이상,본인만) 50%할인\n※ 국가유공자(동반1인) 50%할인\n※ 유족증소지자(본인만) 50%할인\n※ 기초생활수급자 (본인만) 50%할인\n※ 단체할인 기획사 문의\n[창원문화재단 문화누리 멤버쉽 유료회원]\n창원문화재단 유료회원 가입하기>>\n-할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "7세(취학아동)이상 관람가",
-    "runningTime": "90분 관람 (인터미션 없음)",
-    "performanceTime": "2026년 6월 24일(수) 오후 7시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)창원문화재단",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-05-21T13:28:03.758Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260424/58223_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260424/58223_02.jpg"
     ]
   },
   {
@@ -1747,44 +1649,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260504/583245.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:27:49.365Z"
-  },
-  {
-    "id": "yes24_58223",
-    "title": "[창원] SUPER! 수요콘서트 Enjoy by BUMHAN MECATEC 6월 [오월오일]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260423/20260423-58223.jpg/dims/quality/70/",
-    "date": "2026.06.24 ~ 2026.06.24",
-    "venue": "창원 3·15아트센터 대극장",
-    "link": "https://ticket.yes24.com/Perf/58223",
-    "genre": "concert",
-    "region": "서울",
-    "price": "R석 50,000원, S석 40,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_창원_SUPER_수요콘서트_Enjoy_by_BUMHAN_MECATEC_6월_오월오일.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260423/20260423-58223.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 20,000원 ~ 최고가 47,500원\n할인정보\n※ 조기예매 할인 20%할인 (~5/31까지 예매 시)\n※ 인터넷 예매시 5%할인\n※ 다자녀가정(미성년자녀 2명이상) 20%할인\n※ 임산부(본인만) 20%할인\n※ 문화패스 30%할인 (7~23세 및 대학생 본인만)\n※ 예술인패스(본인만) 30%할인\n※ 장애인(경증/본인만) 50%할인\n※ 장애인(중증/동반1인) 50%할인\n※ 경로우대(65세이상,본인만) 50%할인\n※ 국가유공자(동반1인) 50%할인\n※ 유족증소지자(본인만) 50%할인\n※ 기초생활수급자 (본인만) 50%할인\n※ 단체할인 기획사 문의\n[창원문화재단 문화누리 멤버쉽 유료회원]\n창원문화재단 유료회원 가입하기>>\n-할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "7세(취학아동)이상 관람가",
-    "runningTime": "90분 관람 (인터미션 없음)",
-    "performanceTime": "2026년 6월 24일(수) 오후 7시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)창원문화재단",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260424/58223_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260424/58223_02.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:28:03.758Z"
   },
   {
     "id": "yes24_58337",
@@ -3364,44 +3228,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260504/583245.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:27:49.365Z"
-  },
-  {
-    "id": "yes24_58223",
-    "title": "[창원] SUPER! 수요콘서트 Enjoy by BUMHAN MECATEC 6월 [오월오일]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260423/20260423-58223.jpg/dims/quality/70/",
-    "date": "2026.06.24 ~ 2026.06.24",
-    "venue": "창원 3·15아트센터 대극장",
-    "link": "https://ticket.yes24.com/Perf/58223",
-    "genre": "concert",
-    "region": "서울",
-    "price": "R석 50,000원, S석 40,000원",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_창원_SUPER_수요콘서트_Enjoy_by_BUMHAN_MECATEC_6월_오월오일.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202604/20260423/20260423-58223.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 20,000원 ~ 최고가 47,500원\n할인정보\n※ 조기예매 할인 20%할인 (~5/31까지 예매 시)\n※ 인터넷 예매시 5%할인\n※ 다자녀가정(미성년자녀 2명이상) 20%할인\n※ 임산부(본인만) 20%할인\n※ 문화패스 30%할인 (7~23세 및 대학생 본인만)\n※ 예술인패스(본인만) 30%할인\n※ 장애인(경증/본인만) 50%할인\n※ 장애인(중증/동반1인) 50%할인\n※ 경로우대(65세이상,본인만) 50%할인\n※ 국가유공자(동반1인) 50%할인\n※ 유족증소지자(본인만) 50%할인\n※ 기초생활수급자 (본인만) 50%할인\n※ 단체할인 기획사 문의\n[창원문화재단 문화누리 멤버쉽 유료회원]\n창원문화재단 유료회원 가입하기>>\n-할인증빙서류 미지참시 현장에서 정가대비 차액을 지불하셔야 합니다.",
-    "ageRating": "7세(취학아동)이상 관람가",
-    "runningTime": "90분 관람 (인터미션 없음)",
-    "performanceTime": "2026년 6월 24일(수) 오후 7시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)창원문화재단",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260424/58223_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202604/20260424/58223_02.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:28:03.758Z"
   },
   {
     "id": "yes24_58546",

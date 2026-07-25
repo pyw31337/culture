@@ -1535,9 +1535,9 @@
     "theaterCount": "1",
     "openedAt": "2013",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "벨로주 홍대": {
     "name": "벨로주 홍대",
@@ -12635,9 +12635,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "사랑새아트홀": {
     "name": "사랑새아트홀",
@@ -24920,9 +24920,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "하남문화예술회관": {
     "name": "하남문화예술회관",
@@ -34313,9 +34313,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "라움아트센터 체임버홀": {
     "name": "라움아트센터 체임버홀",
@@ -63916,9 +63916,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "단막극장(구.대학로단막극장)": {
     "name": "단막극장(구.대학로단막극장)",
@@ -66910,9 +66910,9 @@
     "amenities": [
       "수유실"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 수유실"
+    "parking": "주차장: N",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "SCC홀 (구. DS홀, 구. 서울바로크챔버홀)": {
     "name": "SCC홀 (구. DS홀, 구. 서울바로크챔버홀)",
@@ -67718,9 +67718,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 편의시설: 카페"
   },
   "하하아트홀 (구. 성원아트홀)": {
     "name": "하하아트홀 (구. 성원아트홀)",
@@ -67988,9 +67988,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장) · 식당, 카페, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 기타(비공연장) · 휠체어 경사로 설치 · 편의시설: 식당, 카페"
   },
   "레드피아노": {
     "name": "레드피아노",
@@ -82927,9 +82927,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "제주아트센터 대극장": {
     "name": "제주아트센터 대극장",
@@ -104714,9 +104714,9 @@
     "theaterCount": "4",
     "openedAt": "2026",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "장수한누리전당": {
     "name": "장수한누리전당",
@@ -111314,7 +111314,19 @@
     "address": "전북특별자치도 전주시 덕진구 전주천동로 376",
     "district": "",
     "lat": 35.8275004233569,
-    "lng": 127.130443164904
+    "lng": 127.130443164904,
+    "phone": "063-272-7223",
+    "homepage": "http://woojin.or.kr/index.html",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "162",
+    "theaterCount": "1",
+    "openedAt": "1991",
+    "amenities": [
+      "장애인 화장실"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "한국소리문화의전당 전시장": {
     "name": "한국소리문화의전당 전시장",
@@ -113944,7 +113956,15 @@
     "address": "경남 창원시 마산합포구 구산면 유산군령로 250",
     "district": "",
     "lat": 35.13084677200299,
-    "lng": 128.56139697531265
+    "lng": 128.56139697531265,
+    "phone": "051-557-3369",
+    "homepage": "http://www.spaceum.kr/main",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "235",
+    "theaterCount": "3",
+    "openedAt": "2011",
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "서울 용산구 남영동 25-2": {
     "name": "서울 용산구 남영동 25-2",
@@ -116458,5 +116478,157 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "카세트 스튜디오": {
+    "name": "카세트 스튜디오",
+    "address": "서울특별시 마포구 성미산로 52 (성산동)",
+    "lat": 37.5590652,
+    "lng": 126.9138586,
+    "district": "마포구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "8",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "스페이스 움": {
+    "name": "스페이스 움",
+    "address": "부산광역시 동래구 명륜로 106 (명륜동)",
+    "lat": 35.2034429,
+    "lng": 129.0833517,
+    "district": "",
+    "phone": "051-557-3369",
+    "homepage": "http://www.spaceum.kr/main",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "235",
+    "theaterCount": "3",
+    "openedAt": "2011",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "스튜디오 모음": {
+    "name": "스튜디오 모음",
+    "address": "서울특별시 용산구 녹사평대로 222 (이태원동)",
+    "lat": 37.5373432,
+    "lng": 126.9870637,
+    "district": "용산구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "하남소극장": {
+    "name": "하남소극장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "현대백화점 킨텍스점 9층 토파즈홀": {
+    "name": "현대백화점 킨텍스점 9층 토파즈홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "하우스오브레퓨즈": {
+    "name": "하우스오브레퓨즈",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "유성선병원 김인홀": {
+    "name": "유성선병원 김인홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "롯데월드 어드벤처 부산 주차장 일대": {
+    "name": "롯데월드 어드벤처 부산 주차장 일대",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "대학로 한성아트홀 1관": {
+    "name": "대학로 한성아트홀 1관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "삼익악기 엠팟홀": {
+    "name": "삼익악기 엠팟홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "Dule Live Hall": {
+    "name": "Dule Live Hall",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "재즈클럽 야누스": {
+    "name": "재즈클럽 야누스",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "올림픽 공원 88잔디마당": {
+    "name": "올림픽 공원 88잔디마당",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "WEST BRIDGE LIVE HALL": {
+    "name": "WEST BRIDGE LIVE HALL",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "SCC 선 아트홀": {
+    "name": "SCC 선 아트홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "수원 실내체육관": {
+    "name": "수원 실내체육관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "남동소래아트홀 갤러리 화소": {
+    "name": "남동소래아트홀 갤러리 화소",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "영월 장릉 실경 무대": {
+    "name": "영월 장릉 실경 무대",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "소극장 공터다": {
+    "name": "소극장 공터다",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "전북제사1970": {
+    "name": "전북제사1970",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "파주 임진각평화누리": {
+    "name": "파주 임진각평화누리",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "태화강참숯가마": {
+    "name": "태화강참숯가마",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "천안 공룡월드": {
+    "name": "천안 공룡월드",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "귀몽": {
+    "name": "귀몽",
+    "address": "정보 없음",
+    "district": ""
   }
 }
