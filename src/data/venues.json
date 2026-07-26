@@ -4636,9 +4636,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "현대백화점 판교점 10층 토파즈홀": {
     "name": "판교점 10층 토파즈홀",
@@ -6190,9 +6190,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "매직라이브펍": {
     "name": "매직라이브펍",
@@ -12849,9 +12849,9 @@
     "theaterCount": "1",
     "openedAt": "1999",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "전주학생교육문화관 공연장": {
     "name": "전주학생교육문화관 공연장",
@@ -17106,9 +17106,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 편의점"
   },
   "서울생활사박물관": {
     "name": "서울생활사박물관",
@@ -54571,9 +54571,9 @@
     "theaterCount": "1",
     "openedAt": "2012",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "예스24스테이지 1관": {
     "name": "예스24스테이지 1관",
@@ -63241,9 +63241,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 수유실, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페"
   },
   "경북도청 동락관": {
     "name": "경북도청 동락관",
@@ -64202,9 +64202,9 @@
       "식당",
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장) · 식당, 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 식당, 카페"
   },
   "듈스튜디오": {
     "name": "듈스튜디오",
@@ -65383,9 +65383,9 @@
     "theaterCount": "1",
     "openedAt": "1994",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "영도문화예술회관": {
     "name": "영도문화예술회관",
@@ -65671,9 +65671,9 @@
       "수유실",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 놀이방, 수유실, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페, 놀이방"
   },
   "김해서부문화센터": {
     "name": "김해서부문화센터",
@@ -67349,9 +67349,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "기장군청": {
     "name": "기장군청",
@@ -68556,9 +68556,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 카페"
   },
   "어댑터씨어터 2관": {
     "name": "어댑터씨어터 2관",
@@ -106378,9 +106378,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대주아트 엔터뮤직 2호점": {
     "name": "대주아트 엔터뮤직 2호점",
@@ -113491,7 +113491,20 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5578945,
-    "lng": 126.93978519999996
+    "lng": 126.93978519999996,
+    "phone": "02-330-4393",
+    "homepage": "https://www.scas.or.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "2018",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(기타) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "창덕궁소극장": {
     "name": "창덕궁소극장",
@@ -116630,5 +116643,42 @@
     "name": "귀몽",
     "address": "정보 없음",
     "district": ""
+  },
+  "전주학생교육문화관(전북교육문화회관)": {
+    "name": "전주학생교육문화관(전북교육문화회관)",
+    "address": "전라북도 전주시 덕진구 안덕원로 71 (진북동)",
+    "lat": 35.8291331,
+    "lng": 127.1378158,
+    "district": "",
+    "phone": "063-270-1623",
+    "homepage": "https://lib.jbe.go.kr/jec/index.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "1162",
+    "theaterCount": "1",
+    "openedAt": "1983",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치"
+  },
+  "인디 [제주]": {
+    "name": "인디 [제주]",
+    "address": "제주특별자치도 제주시 광양11길 10 (이도이동)",
+    "lat": 33.499195,
+    "lng": 126.531232,
+    "district": "",
+    "homepage": "https://www.instagram.com/indie_jeju_zero",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }
