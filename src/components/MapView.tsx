@@ -314,13 +314,13 @@ export default function MapView({
         if (!nextParams.toString() && typeof window !== 'undefined' && window.location.search) {
             const locationParams = new URLSearchParams(window.location.search);
             setSearchParams(locationParams);
-            setSelectedMapGenre(locationParams.get('genre') || 'all');
+            setSelectedMapGenre(getGenreFromLocation(locationParams));
             return;
         }
 
         setSearchParams(nextParams);
-        setSelectedMapGenre(nextParams.get('genre') || 'all');
-    }, []);
+        setSelectedMapGenre(getGenreFromLocation(nextParams));
+    }, [getGenreFromLocation]);
 
     const geoAttempted = useRef(false);
 
