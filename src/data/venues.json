@@ -1058,9 +1058,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "소월아트홀": {
     "name": "소월아트홀",
@@ -11154,9 +11154,9 @@
     "theaterCount": "1",
     "openedAt": "2014",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "청주아트홀": {
     "name": "청주아트홀",
@@ -16995,11 +16995,27 @@
   },
   "노원문화예술회관": {
     "name": "노원문화예술회관",
-    "address": "서울 노원구 중계로 181",
-    "lat": 37.6501998113605,
-    "lng": 127.080282814225,
+    "address": "서울특별시 노원구 중계로 181 (중계동)",
+    "lat": 37.6501653,
+    "lng": 127.08026270000005,
     "district": "노원구",
-    "mapped_region_id": "seoul"
+    "phone": "02-951-3355",
+    "homepage": "http://www.nowonart.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1182",
+    "theaterCount": "2",
+    "openedAt": "2004",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "세종대학교 새날관": {
     "name": "세종대학교 새날관",
@@ -26158,7 +26174,24 @@
     "district": "노원구",
     "mapped_region_id": "seoul",
     "lat": 37.6501998113605,
-    "lng": 127.080282814225
+    "lng": 127.080282814225,
+    "phone": "02-951-3355",
+    "homepage": "http://www.nowonart.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1182",
+    "theaterCount": "2",
+    "openedAt": "2004",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "덕수궁 돌담길": {
     "name": "덕수궁",
@@ -32390,7 +32423,24 @@
     "district": "노원구",
     "lat": 37.6501998113605,
     "lng": 127.080282814225,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-951-3355",
+    "homepage": "http://www.nowonart.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1182",
+    "theaterCount": "2",
+    "openedAt": "2004",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "볼베어파크 은평": {
     "name": "볼베어파크 은평",
@@ -61218,9 +61268,9 @@
     "theaterCount": "3",
     "openedAt": "2014",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "소나무예술극장": {
     "name": "소나무예술극장",
@@ -62119,9 +62169,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "성수 소극장(일루미 스튜디오)": {
     "name": "성수 소극장(일루미 스튜디오)",
@@ -64660,9 +64710,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 편의점, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 편의시설: 카페, 편의점"
   },
   "웅상문화체육센터": {
     "name": "웅상문화체육센터",
@@ -64684,9 +64734,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 편의점, 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 편의점, 놀이방"
   },
   "더 씨어터": {
     "name": "더 씨어터",
@@ -64784,9 +64834,9 @@
     "theaterCount": "1",
     "openedAt": "2015",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "문래예술공장": {
     "name": "문래예술공장",
@@ -67675,9 +67725,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "대덕문화전당": {
     "name": "대덕문화전당",
@@ -69170,9 +69220,9 @@
     "theaterCount": "3",
     "openedAt": "2025",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "반얀트리 클럽 앤 스파 [서울]": {
     "name": "반얀트리 클럽 앤 스파 [서울]",
@@ -69506,9 +69556,9 @@
     "theaterCount": "1",
     "openedAt": "2021",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "국립한국해양대학교": {
     "name": "국립한국해양대학교",
@@ -72477,9 +72527,9 @@
     "theaterCount": "1",
     "openedAt": "1989",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "스페이스T (SPACE T)(경계없는예술센터)": {
     "name": "스페이스T (SPACE T)(경계없는예술센터)",
@@ -84843,7 +84893,24 @@
     "address": "서울 노원구 중계로 181",
     "district": "노원구",
     "lat": 37.650232240552,
-    "lng": 127.080291914495
+    "lng": 127.080291914495,
+    "phone": "02-951-3355",
+    "homepage": "http://www.nowonart.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1182",
+    "theaterCount": "2",
+    "openedAt": "2004",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "쿰아트홀": {
     "name": "쿰아트홀",
@@ -103795,9 +103862,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "Baby Doll (베이비돌)": {
     "name": "Baby Doll (베이비돌)",
@@ -104905,9 +104972,9 @@
     "theaterCount": "1",
     "openedAt": "1982",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "더열린아트홀": {
     "name": "더열린아트홀",
@@ -116414,7 +116481,9 @@
   "더 서울라이티움": {
     "name": "더 서울라이티움",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5457838,
+    "lng": 127.0424798
   },
   "목동 JS 아트홀 (양천구 등촌로 36)": {
     "name": "목동 JS 아트홀 (양천구 등촌로 36)",
@@ -116552,7 +116621,9 @@
   "하우스오브레퓨즈": {
     "name": "하우스오브레퓨즈",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 33.419291,
+    "lng": 126.396035
   },
   "유성선병원 김인홀": {
     "name": "유성선병원 김인홀",
@@ -116680,5 +116751,60 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "하우스오브레퓨즈(House of Refuge)": {
+    "name": "하우스오브레퓨즈(House of Refuge)",
+    "address": "제주특별자치도 제주시 애월읍 하소로 735",
+    "lat": 33.419291,
+    "lng": 126.396035,
+    "district": "",
+    "homepage": "https://www.instagram.com/hofrefuge/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
+  },
+  "다대포 해수욕장 선셋펍 내": {
+    "name": "다대포 해수욕장 선셋펍 내",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "은덕문화원": {
+    "name": "은덕문화원",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "자연과 숲": {
+    "name": "자연과 숲",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "장천아트홀": {
+    "name": "장천아트홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "구리아트홀 유채꽃 소극장": {
+    "name": "구리아트홀 유채꽃 소극장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "통영 용호도": {
+    "name": "통영 용호도",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "리버스펀랜드": {
+    "name": "리버스펀랜드",
+    "address": "정보 없음",
+    "district": ""
   }
 }
