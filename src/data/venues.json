@@ -1425,9 +1425,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "KBS아레나": {
     "name": "KBS아레나",
@@ -2863,7 +2863,15 @@
     "district": "중구",
     "lat": 37.5636758699882,
     "lng": 126.986775823267,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-774-1784",
+    "homepage": "http://www.mdsd.or.kr/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "676",
+    "theaterCount": "3",
+    "openedAt": "2017",
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "삼청각 일화당": {
     "name": "삼청각",
@@ -10781,9 +10789,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "삼일로창고극장": {
     "name": "삼일로창고극장",
@@ -32154,9 +32162,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "서대문 전용관": {
     "name": "서대문 전용관",
@@ -60683,9 +60691,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 카페"
   },
   "해바라기소극장 [부산]": {
     "name": "해바라기소극장 [부산]",
@@ -62054,9 +62062,9 @@
       "식당",
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 식당, 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 식당, 카페"
   },
   "NOL 씨어터 합정(구, 신한카드 SOL페이 스퀘어)": {
     "name": "NOL 씨어터 합정(구, 신한카드 SOL페이 스퀘어)",
@@ -63671,9 +63679,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "부천아트센터": {
     "name": "부천아트센터",
@@ -65672,9 +65680,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "플라츠2": {
     "name": "플라츠2",
@@ -65815,9 +65823,9 @@
     "theaterCount": "1",
     "openedAt": "2024",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대구학생문화센터": {
     "name": "대구학생문화센터",
@@ -65854,9 +65862,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치"
   },
   "안산올림픽기념관": {
     "name": "안산올림픽기념관",
@@ -67585,9 +67593,9 @@
       "수유실",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페, 편의점"
   },
   "인천문학경기장": {
     "name": "인천문학경기장",
@@ -70543,7 +70551,19 @@
     "address": "경상남도 거창군 은하리길 2  수승대관리사무소 수승대",
     "lat": 35.7605757,
     "lng": 127.83200950000003,
-    "district": ""
+    "district": "",
+    "phone": "055-940-8530",
+    "homepage": "https://www.geochang.go.kr/ssd/Index.do",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "2900",
+    "theaterCount": "8",
+    "openedAt": "2003",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "피아니스트의 방": {
     "name": "피아니스트의 방",
@@ -71788,10 +71808,20 @@
   },
   "광주아트홀": {
     "name": "광주아트홀",
-    "address": "광주광역시 동구 중앙로160번길 22",
+    "address": "광주광역시 동구 중앙로160번길 22 (황금동)",
     "lat": 35.146874,
     "lng": 126.91517539999995,
-    "district": "동구"
+    "district": "동구",
+    "phone": "062-227-7440",
+    "homepage": "http://gwangjuarthall.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "135",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "김천시문화예술회관": {
     "name": "김천시문화예술회관",
@@ -80609,7 +80639,15 @@
     "address": "서울 중구 명동길 66",
     "district": "중구",
     "lat": 37.56389258742638,
-    "lng": 126.98623090691724
+    "lng": 126.98623090691724,
+    "phone": "02-774-1784",
+    "homepage": "http://www.mdsd.or.kr/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "676",
+    "theaterCount": "3",
+    "openedAt": "2017",
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "CTS아트홀": {
     "name": "CTS아트홀",
@@ -86165,7 +86203,15 @@
     "address": "부산 남구 수영로293번길 42",
     "district": "",
     "lat": 35.1382280615045,
-    "lng": 129.097371538907
+    "lng": 129.097371538907,
+    "phone": "051-852-9161",
+    "homepage": "https://cafe.daum.net/ejotto",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "삼청로 146": {
     "name": "삼청로 146",
@@ -116806,5 +116852,39 @@
     "name": "리버스펀랜드",
     "address": "정보 없음",
     "district": ""
+  },
+  "에저또소극장 [부산]": {
+    "name": "에저또소극장 [부산]",
+    "address": "부산광역시 남구 수영로293번길 42 (대연동)",
+    "lat": 35.1431981,
+    "lng": 129.09650169999998,
+    "district": "",
+    "phone": "051-852-9161",
+    "homepage": "https://cafe.daum.net/ejotto",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "명동대성당": {
+    "name": "명동대성당",
+    "address": "서울특별시 중구 명동길 74 (명동2가) 명동성당",
+    "lat": 37.563177,
+    "lng": 126.98736039999994,
+    "district": "중구",
+    "phone": "02-774-1784",
+    "homepage": "http://www.mdsd.or.kr/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "676",
+    "theaterCount": "3",
+    "openedAt": "2017",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   }
 }
