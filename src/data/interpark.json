@@ -957,48 +957,6 @@
     "lastEnriched": "2026-05-14T15:01:49.637Z"
   },
   {
-    "id": "perf_뮤지컬_어서_오세요_휴남동_서점입니다_서울",
-    "title": "뮤지컬 〈어서 오세요, 휴남동 서점입니다〉 - 서울",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002729_p.gif",
-    "date": "2025.03.01 ~ 2026.06.28",
-    "venue": "루미나아트홀",
-    "link": "https://tickets.interpark.com/goods/26002729",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "100분",
-    "performanceTime": "",
-    "ageRating": "만 7세 이상",
-    "price": "전석 66,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "66,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 관람 2시간 전까지",
-    "synopsis": "[캐스팅 변경 안내]05/18(월) 기준 일부 캐스팅이 변경 되었습니다.* 캐스팅 변경은 하단 캐스팅 이미지에 형광 표시되어 있으니 참고 부탁 드립니다.",
-    "description": "[캐스팅 변경 안내]05/18(월) 기준 일부 캐스팅이 변경 되었습니다.* 캐스팅 변경은 하단 캐스팅 이미지에 형광 표시되어 있으니 참고 부탁 드립니다.",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/3/2026032011515742.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/2/2026022513110598.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/4/2026043013212050.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026051115563964.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026050814042562.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026051413072663.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026051309160380.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002729-25.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002729-27.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002729-28.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002729-03.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26002729-04.jpg"
-    ],
-    "lastEnriched": "2026-05-21T00:02:25.354Z"
-  },
-  {
     "id": "perf_뮤지컬_유미의_세포들",
     "title": "뮤지컬 〈유미의 세포들〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26006325_p.gif",
@@ -1824,43 +1782,6 @@
       "https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040011/26/04/0400112604_83933_M.wmv.png"
     ],
     "priceDetail": "전석23,000원"
-  },
-  {
-    "id": "perf_인사이드_미",
-    "title": "인사이드 미",
-    "image": "https://ticketimage.interpark.com/Play/image/large/23/23018498_p.gif",
-    "date": "2024.01.01 ~ 2026.06.28",
-    "venue": "JTN 아트홀 2관",
-    "link": "https://tickets.interpark.com/goods/23018498",
-    "region": "서울",
-    "genre": "musical",
-    "runningTime": "110분",
-    "performanceTime": "[5월] 수, 목, 금 7시 │ 토, 일 2시, 5시 │ 월, 화 공연 없음 │*5월 - 일 5시 공연 없음 │ *5월 특이사항 - 5/1(금), 5/5(화), 5/25(월) 14:00 공연 - 5/6(수), 5/13(수), 5/14(목), 5/15(금), 5/20(수), 5/21(목), 5/27(수) 공연 없음 [6월] 수, 목, 금 7시 │ 토 2시, 5시 │ 일 2시 │ 월, 화 공연 없음 │ * 6월 특이사항 - 6/3(수) 14:00 공연 - 6/17(수), 6/25(목), 6/26(금) 공연 없음 ※ 극장, 공연제작사 및 관계사의 협의에 따라 일부 좌석이 마감되었습니다.",
-    "ageRating": "8세 이상 관람가능",
-    "price": "전석 50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 관람 2시간 전까지",
-    "synopsis": "예매가능시간: 관람 2시간 전까지[5월]\n수, 목, 금 7시 │ 토, 일 2시, 5시 │ 월, 화 공연 없음 │*5월 - 일 5시 공연 없음 │\n\n*5월 특이사항\n- 5/1(금), 5/5(화), 5/25(월) 14:00 공연\n- 5/6(수), 5/13(수), 5/14(목), 5/15(금), 5/20(수), 5/21(목), 5/27(수) 공연 없음\n\n[6월]\n수, 목, 금 7시 │ 토  2시, 5시 │ 일 2시 │ 월, 화 공연 없음 │\n\n* 6월 특이사항 \n- 6/3(수) 14:00 공연 \n- 6/17(수), 6/25(목), 6/26(금) 공연 없음\n\n※ 극장, 공연제작사 및 관계사의 협의에 따라 일부 좌석이 마감되었습니다.",
-    "description": "예매가능시간: 관람 2시간 전까지[5월]\n수, 목, 금 7시 │ 토, 일 2시, 5시 │ 월, 화 공연 없음 │*5월 - 일 5시 공연 없음 │\n\n*5월 특이사항\n- 5/1(금), 5/5(화), 5/25(월) 14:00 공연\n- 5/6(수), 5/13(수), 5/14(목), 5/15(금), 5/20(수), 5/21(목), 5/27(수) 공연 없음\n\n[6월]\n수, 목, 금 7시 │ 토  2시, 5시 │ 일 2시 │ 월, 화 공연 없음 │\n\n* 6월 특이사항 \n- 6/3(수) 14:00 공연 \n- 6/17(수), 6/25(목), 6/26(금) 공연 없음\n\n※ 극장, 공연제작사 및 관계사의 협의에 따라 일부 좌석이 마감되었습니다.",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026051116505650.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2025/7/2025071016150530.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/4/2026040813232635.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/23018498-89.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/23018498-93.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/23018498-94.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/23018498-95.jpg"
-    ],
-    "lastEnriched": "2026-05-21T00:03:17.186Z"
   },
   {
     "id": "perf_클래식_가족뮤지컬_반짝반짝_라푼젤",
@@ -3936,41 +3857,6 @@
       "https://ticketimage.interpark.com/Play/image/large/P0/P0004486_p.gif"
     ],
     "priceDetail": "R석80,000원\nS석60,000원\nA석40,000원"
-  },
-  {
-    "id": "perf_시간을_파는_상점",
-    "title": "시간을 파는 상점",
-    "image": "https://ticketimage.interpark.com/Play/image/large/24/24002778_p.gif",
-    "date": "2024.03.15 ~ 2026.06.28",
-    "venue": "파랑씨어터",
-    "link": "https://tickets.interpark.com/goods/24002778",
-    "region": "서울",
-    "genre": "play",
-    "runningTime": "90분",
-    "performanceTime": "[5~6월]금: 17:00토: 11:00, 13:00, 15:00, 17:00일: 11:00, 13:30, 16:00*특이회차5/1(금) 11:00, 13:00, 15:00, 17:005/3(일) 11:00, 13:00, 15:00, 17:005/4(월) 13:00, 15:00, 17:005/5(화) 11:00, 13:00, 15:00, 17:005/24(일) 11:00, 13:00, 15:00, 17:005/25(월) 11:00, 13:30, 16:006/3(수) 11:00, 13:30, 16:00\n*특이회차\n5/1(금) 11:00, 13:00, 15:00, 17:00\n5/3(일) 11:00, 13:00, 15:00, 17:00\n5/4(월) 13:00, 15:00, 17:00\n5/5(화) 11:00, 13:00, 15:00, 17:00\n5/24(일) 11:00, 13:00, 15:00, 17:00\n5/25(월) 11:00, 13:30, 16:00",
-    "ageRating": "8세 이상 관람가능",
-    "price": "전석 45,000원",
-    "originalPrice": "45,000원",
-    "discount": "67%",
-    "address": "서울특별시 종로구 대학로8가길 36 (동숭동) 3층 파랑씨어터",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "45,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 관람 1시간 30분 전까지",
-    "synopsis": "예매가능시간: 관람 1시간 30분 전까지[5~6월]금: 17:00토: 11:00, 13:00, 15:00, 17:00일: 11:00, 13:30, 16:00*특이회차5/1(금) 11:00, 13:00, 15:00, 17:005/3(일) 11:00, 13:00, 15:00, 17:005/4(월) 13:00, 15:00, 17:005/5(화) 11:00, 13:00, 15:00, 17:005/24(일) 11:00, 13:00, 15:00, 17:005/25(월) 11:00, 13:30, 16:006/3(수) 11:00, 13:30, 16:00",
-    "description": "예매가능시간: 관람 1시간 30분 전까지[5~6월]금: 17:00토: 11:00, 13:00, 15:00, 17:00일: 11:00, 13:30, 16:00*특이회차5/1(금) 11:00, 13:00, 15:00, 17:005/3(일) 11:00, 13:00, 15:00, 17:005/4(월) 13:00, 15:00, 17:005/5(화) 11:00, 13:00, 15:00, 17:005/24(일) 11:00, 13:00, 15:00, 17:005/25(월) 11:00, 13:30, 16:006/3(수) 11:00, 13:30, 16:00",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2024/5/2024053111365380.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2025/7/2025072915401385.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/24002778-40.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/24002778-42.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/25/24002778-28.jpg"
-    ],
-    "lastEnriched": "2026-05-22T00:45:28.230Z"
   },
   {
     "id": "perf_신림괴담_시즌3_수박등",

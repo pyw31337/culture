@@ -31202,9 +31202,9 @@
     "theaterCount": "3",
     "openedAt": "2005",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "서울문화예술교육센터 은평": {
     "name": "서울문화예술교육센터 은평",
@@ -32197,9 +32197,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 카페"
   },
   "H-STAGE": {
     "name": "H-STAGE",
@@ -60868,9 +60868,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페, 편의점"
   },
   "송도 건원테크노큐브": {
     "name": "송도 건원테크노큐브",
@@ -61520,9 +61520,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 경사로, 엘리베이터"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "소명아트홀 (구.메가폴리스아트홀)": {
     "name": "소명아트홀 (구.메가폴리스아트홀)",
@@ -61537,9 +61537,9 @@
     "theaterCount": "1",
     "openedAt": "2023",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "우리소극장 [의정부]": {
     "name": "우리소극장 [의정부]",
@@ -62578,9 +62578,9 @@
       "편의점",
       "놀이방"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장) · 식당, 카페, 편의점, 놀이방"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 식당, 카페, 편의점, 놀이방"
   },
   "지인시어터(구. 알과핵소극장)": {
     "name": "지인시어터(구. 알과핵소극장)",
@@ -63954,9 +63954,9 @@
       "편의점",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 카페, 편의점, 장애인 화장실"
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 카페, 편의점"
   },
   "평택시남부문예회관": {
     "name": "평택시남부문예회관",
@@ -70228,9 +70228,9 @@
     "theaterCount": "1",
     "openedAt": "2016",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "칠곡보 야외물놀이장": {
     "name": "칠곡보 야외물놀이장",
@@ -72117,9 +72117,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "예전아트센터": {
     "name": "예전아트센터",
@@ -78013,9 +78013,9 @@
     "theaterCount": "1",
     "openedAt": "2004",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대학로 드림아트센터": {
     "name": "대학로 드림아트센터",
@@ -83498,9 +83498,9 @@
     "theaterCount": "1",
     "openedAt": "2003",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "뚝섬플레이스": {
     "name": "뚝섬플레이스",
@@ -85655,10 +85655,20 @@
   },
   "영산양재홀": {
     "name": "영산양재홀",
-    "address": "서울 서초구 바우뫼로37길 45",
+    "address": "서울특별시 서초구 바우뫼로37길 45 (양재동)",
+    "lat": 37.4804908,
+    "lng": 127.03841050000005,
     "district": "서초구",
-    "lat": 37.4804768210113,
-    "lng": 127.03840428523617
+    "phone": "02-571-7689",
+    "homepage": "http://www.youngsanhall.co.kr/introduction/int_1.asp?subnum=1",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "195",
+    "theaterCount": "1",
+    "openedAt": "2005",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "국립진주박물관": {
     "name": "국립진주박물관",
@@ -104458,9 +104468,9 @@
     "theaterCount": "1",
     "openedAt": "2010",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "천은사 [전남 구례]": {
     "name": "천은사 [전남 구례]",
@@ -105534,9 +105544,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "파닥파닥클럽": {
     "name": "파닥파닥클럽",
@@ -106386,7 +106396,14 @@
     "address": "서울 종로구 성균관로 87",
     "district": "종로구",
     "lat": 37.5899717585245,
-    "lng": 126.998282027747
+    "lng": 126.998282027747,
+    "phone": "02-3676-2352",
+    "facilityType": "민간(대학로)",
+    "seatScale": "200",
+    "theaterCount": "1",
+    "openedAt": "2010",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "남양주 체육문화센터 실내체육관": {
     "name": "남양주 체육문화센터 실내체육관",
@@ -106630,9 +106647,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "진천예술의전당": {
     "name": "진천예술의전당",
@@ -108315,7 +108332,13 @@
     "address": "서울 관악구 관악로14나길 13",
     "district": "관악구",
     "lat": 37.4774317883099,
-    "lng": 126.95744134932
+    "lng": 126.95744134932,
+    "homepage": "https://www.instagram.com/namtheater/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "강동아트센터 아트랑1~3": {
     "name": "강동아트센터 아트랑1~3",
@@ -116698,8 +116721,18 @@
   },
   "재즈클럽 야누스": {
     "name": "재즈클럽 야누스",
-    "address": "정보 없음",
-    "district": ""
+    "address": "서울특별시 중구 세종대로21길 53 (정동)",
+    "lat": 37.568958,
+    "lng": 126.975391,
+    "district": "중구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "올림픽 공원 88잔디마당": {
     "name": "올림픽 공원 88잔디마당",
@@ -116886,5 +116919,37 @@
     "parking": "주차장: Y",
     "restrooms": "",
     "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "소담아트홀": {
+    "name": "소담아트홀",
+    "address": "대구광역시 수성구 청수로38길 56(지산동)",
+    "lat": 35.8364103,
+    "lng": 128.6277364,
+    "district": "",
+    "phone": "010-6605-9001",
+    "homepage": "https://sodamarthall.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "음악정원홀": {
+    "name": "음악정원홀",
+    "address": "대전광역시 유성구 지족로328번길 14-26 (지족동)",
+    "lat": 36.386291,
+    "lng": 127.311994,
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }
