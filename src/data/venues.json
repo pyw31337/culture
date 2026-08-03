@@ -483,9 +483,9 @@
     "theaterCount": "1",
     "openedAt": "2009",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "NOL 유니플렉스": {
     "name": "정극장",
@@ -1018,9 +1018,9 @@
     "theaterCount": "1",
     "openedAt": "2022",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "허리우드극장 4층 낭만극장": {
     "name": "허리우드극장 4층 낭만극장",
@@ -5983,9 +5983,9 @@
     "theaterCount": "1",
     "openedAt": "2008",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "대학로 더굿씨어터": {
     "name": "대학로 더굿씨어터",
@@ -6183,9 +6183,9 @@
     "amenities": [
       "식당"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 식당"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 식당"
   },
   "아트하우스": {
     "name": "아트하우스",
@@ -6229,9 +6229,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "명보아트홀 가온홀": {
     "name": "와일드",
@@ -43600,11 +43600,19 @@
   },
   "고개 소극장": {
     "name": "고개 소극장",
-    "address": "경기 가평군 청평면 호반로 1063",
-    "district": "가평군",
-    "lat": 37.7152343727416,
-    "lng": 127.490431790049,
-    "mapped_region_id": "gyeonggi"
+    "address": "서울특별시 노원구 덕릉로 680 (중계동)",
+    "lat": 37.658365,
+    "lng": 127.075459,
+    "district": "노원구",
+    "homepage": "https://www.instagram.com/geukdan_gogae/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대학로 바탕골 소극장": {
     "name": "대학로 바탕골 소극장",
@@ -54583,9 +54591,9 @@
     "theaterCount": "1",
     "openedAt": "2008",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "BNK부산은행조은극장 2관": {
     "name": "BNK부산은행조은극장 2관",
@@ -60648,9 +60656,9 @@
     "theaterCount": "1",
     "openedAt": "2005",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "장성문화예술회관": {
     "name": "장성문화예술회관",
@@ -61770,9 +61778,9 @@
     "theaterCount": "1",
     "openedAt": "1998",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "소셜베뉴 라움": {
     "name": "소셜베뉴 라움",
@@ -61941,9 +61949,9 @@
     "theaterCount": "2",
     "openedAt": "2016",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "큐씨어터(구. 수상한흥신소전용관)": {
     "name": "큐씨어터(구. 수상한흥신소전용관)",
@@ -62492,9 +62500,9 @@
       "편의점",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 장애인 화장실"
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페, 편의점"
   },
   "대학로 무하아트센터": {
     "name": "대학로 무하아트센터",
@@ -62638,9 +62646,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "정극장 (구. M시어터, 구.하모니아트홀)": {
     "name": "정극장 (구. M시어터, 구.하모니아트홀)",
@@ -64204,9 +64212,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "KBS스포츠월드(아레나)": {
     "name": "KBS스포츠월드(아레나)",
@@ -64927,9 +64935,9 @@
     "theaterCount": "1",
     "openedAt": "2008",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "공간소극장 [대연역]": {
     "name": "공간소극장 [대연역]",
@@ -65197,9 +65205,9 @@
       "편의점",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페, 편의점"
   },
   "동래문화회관": {
     "name": "동래문화회관",
@@ -66810,9 +66818,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "재즈인연구소": {
     "name": "재즈인연구소",
@@ -67343,9 +67351,9 @@
     "theaterCount": "1",
     "openedAt": "2015",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대전컨벤션센터 (DCC)": {
     "name": "대전컨벤션센터 (DCC)",
@@ -77312,9 +77320,9 @@
     "theaterCount": "1",
     "openedAt": "2025",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "평택남부문화예술회관": {
     "name": "평택남부문화예술회관",
@@ -103295,9 +103303,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "아지토 라이브 홀": {
     "name": "아지토 라이브 홀",
@@ -104220,9 +104228,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "Vel.R 벨르 (구. 벨로주 [홍대])": {
     "name": "Vel.R 벨르 (구. 벨로주 [홍대])",
@@ -117027,5 +117035,42 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "1미터마술": {
+    "name": "1미터마술",
+    "address": "전라북도 군산시 절골4길 14(신흥동)",
+    "lat": 35.9869298,
+    "lng": 126.7049321,
+    "district": "",
+    "phone": "063-462-4522",
+    "homepage": "https://morecloser.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "북구문화센터": {
+    "name": "북구문화센터",
+    "address": "광주광역시 북구 하서로 299 (양산동)",
+    "lat": 35.2013855,
+    "lng": 126.8738526,
+    "district": "",
+    "phone": "062-574-0293",
+    "homepage": "https://bukgu.gwangju.kr/bcc/",
+    "facilityType": "공공(기타)",
+    "seatScale": "360",
+    "theaterCount": "1",
+    "openedAt": "2021",
+    "amenities": [
+      "카페",
+      "놀이방"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페, 놀이방"
   }
 }
