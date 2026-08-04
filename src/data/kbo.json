@@ -21092,5 +21092,47 @@
     "awayTeam": "한화1",
     "homeTeamLogo": "",
     "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260804_한화4_vs_1삼성",
+    "title": "한화4 vs 1삼성",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-04 18:30",
+    "venue": "대구삼성라이온즈파크",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "daegu",
+    "genre": "baseball",
+    "homeTeam": "1삼성",
+    "awayTeam": "한화4",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260804_키움2_vs_3롯데",
+    "title": "키움2 vs 3롯데",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-04 18:30",
+    "venue": "부산사직종합운동장사직야구장",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "busan",
+    "genre": "baseball",
+    "homeTeam": "3롯데",
+    "awayTeam": "키움2",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260804_LG8_vs_10SSG",
+    "title": "LG8 vs 10SSG",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-04 18:30",
+    "venue": "인천SSG 랜더스필드",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "incheon",
+    "genre": "baseball",
+    "homeTeam": "10SSG",
+    "awayTeam": "LG8",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]
