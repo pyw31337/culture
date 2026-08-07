@@ -2687,9 +2687,9 @@
     "amenities": [
       "놀이방"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립 · 놀이방"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 국립 · 편의시설: 놀이방"
   },
   "금호아트홀 연세": {
     "name": "금호아트홀 연세",
@@ -11462,9 +11462,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "드림아트홀": {
     "name": "드림아트홀",
@@ -62515,9 +62515,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "제주난타극장": {
     "name": "제주난타극장",
@@ -64654,9 +64654,9 @@
       "수유실",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 수유실, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "안동시청 대동관(구. 안동시민회관)": {
     "name": "안동시청 대동관(구. 안동시민회관)",
@@ -67213,9 +67213,9 @@
     "theaterCount": "2",
     "openedAt": "1991",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "동해문화예술회관": {
     "name": "동해문화예술회관",
@@ -69163,9 +69163,9 @@
     "theaterCount": "3",
     "openedAt": "2024",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 국립"
   },
   "어울림소극장 [원주]": {
     "name": "어울림소극장 [원주]",
@@ -70126,10 +70126,19 @@
   },
   "모브닷.에이": {
     "name": "모브닷.에이",
-    "address": "서울특별시 마포구 성미산로 88-11",
+    "address": "서울특별시 마포구 성미산로 88-11 (성산동)",
     "lat": 37.560329,
     "lng": 126.917672,
-    "district": "마포구"
+    "district": "마포구",
+    "phone": "010-4142-8818",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "25",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "플래그테일 팁시": {
     "name": "플래그테일 팁시",
@@ -70309,10 +70318,19 @@
   },
   "모두의놀이터": {
     "name": "모두의놀이터",
-    "address": "서울특별시 마포구 월드컵북로 75",
+    "address": "서울특별시 마포구 월드컵북로 75 (성산동)",
     "lat": 37.560454,
     "lng": 126.915823,
-    "district": "마포구"
+    "district": "마포구",
+    "homepage": "https://www.haveittogether.kr/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "lmp작업실": {
     "name": "lmp작업실",
@@ -70323,10 +70341,19 @@
   },
   "리리랜드": {
     "name": "리리랜드",
-    "address": "서울특별시 성북구 삼선교로22길 3-10",
+    "address": "서울특별시 성북구 삼선교로22길 3-10 (삼선동5가)",
     "lat": 37.589487,
     "lng": 127.014807,
-    "district": "성북구"
+    "district": "성북구",
+    "homepage": "https://www.instagram.com/_leeleeland/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "오온 [마포]": {
     "name": "오온 [마포]",
@@ -71876,9 +71903,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "용지문화공원": {
     "name": "용지문화공원",
@@ -117114,5 +117141,133 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "너울너울": {
+    "name": "너울너울",
+    "address": "서울특별시 마포구 성미산로13길 105 (성산동)",
+    "lat": 37.565158,
+    "lng": 126.916268,
+    "district": "마포구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "하남 소극장(구.하남 단막극장)": {
+    "name": "하남 소극장(구.하남 단막극장)",
+    "address": "경기도 하남시 하남대로784번안길 10 (신장동)",
+    "lat": 37.5408696,
+    "lng": 127.2117286,
+    "district": "하남시",
+    "phone": "031-792-9119",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "2010",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "미진플로어": {
+    "name": "미진플로어",
+    "address": "서울특별시 마포구 동교로 134 (서교동)",
+    "lat": 37.554963,
+    "lng": 126.91699,
+    "district": "마포구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "167",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "서보아트스페이스(서보미술문화공간)[서울]": {
+    "name": "서보아트스페이스(서보미술문화공간)[서울]",
+    "address": "서울특별시 마포구 월드컵북로12안길 3 (성산동)",
+    "lat": 37.5620777,
+    "lng": 126.9152742,
+    "district": "마포구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "스페이스 바이 파소(Space by Paso)": {
+    "name": "스페이스 바이 파소(Space by Paso)",
+    "address": "서울특별시 종로구 성균관로 92 (명륜1가)",
+    "lat": 37.589747,
+    "lng": 126.998754,
+    "district": "종로구",
+    "phone": "02-765-4331",
+    "homepage": "https://pasogallery.com/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "팔걸이 연습실": {
+    "name": "팔걸이 연습실",
+    "address": "서울특별시 성북구 동소문로10길 6 (동소문동3가)",
+    "lat": 37.590114,
+    "lng": 127.010753,
+    "district": "성북구",
+    "homepage": "https://www.instagram.com/elbowrest",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "서울마포음악창작소(구.뮤지스땅스)": {
+    "name": "서울마포음악창작소(구.뮤지스땅스)",
+    "address": "서울특별시 마포구 마포대로 238 (아현동) 지하",
+    "lat": 37.5551663,
+    "lng": 126.95762100000002,
+    "district": "마포구",
+    "phone": "02-313-7865",
+    "homepage": "https://www.facebook.com/musistance",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "2014",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "제물포구문화체육센터(구. 동구문화체육센터)": {
+    "name": "제물포구문화체육센터(구. 동구문화체육센터)",
+    "address": "인천광역시 동구 송림로110번길 5-8(송림동)",
+    "lat": 37.475773,
+    "lng": 126.6475423,
+    "district": "동구",
+    "phone": "032-772-7700",
+    "homepage": "https://www.icdonggu.go.kr/cscenter/fmcs/1",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "495",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   }
 }
