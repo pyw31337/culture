@@ -91,9 +91,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "성수아트홀": {
     "name": "성수아트홀",
@@ -865,9 +865,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "NOL 서경스퀘어 스콘": {
     "name": "NOL 서경스퀘어 스콘",
@@ -2009,9 +2009,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "더더더": {
     "name": "더더더",
@@ -3606,9 +3606,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "퓨처그라운드 롯데몰 김포공항점": {
     "name": "퓨처그라운드 롯데몰 김포공항점",
@@ -21692,9 +21692,9 @@
     "amenities": [
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "한솥아트스페이스": {
     "name": "복이담 청담점",
@@ -62004,9 +62004,9 @@
     "theaterCount": "3",
     "openedAt": "2014",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "예스24아트원(구.대학로아트원씨어터)": {
     "name": "예스24아트원(구.대학로아트원씨어터)",
@@ -62789,9 +62789,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "KT&G 상상마당 라이브홀 [부산]": {
     "name": "KT&G 상상마당 라이브홀 [부산]",
@@ -62877,9 +62877,9 @@
     "amenities": [
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "진주성 의암 일원(의암바위)": {
     "name": "진주성 의암 일원(의암바위)",
@@ -64897,9 +64897,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 편의시설: 카페"
   },
   "사천문화예술회관": {
     "name": "사천문화예술회관",
@@ -74745,9 +74745,9 @@
     "theaterCount": "1",
     "openedAt": "2011",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "노원구민의전당(구. 노원구민회관)": {
     "name": "노원구민의전당(구. 노원구민회관)",
@@ -83484,10 +83484,19 @@
   },
   "온수공간": {
     "name": "온수공간",
-    "address": "서울 마포구 월드컵북로1길 74",
+    "address": "서울특별시 마포구 월드컵북로1길 74 (서교동)",
+    "lat": 37.553489,
+    "lng": 126.917815,
     "district": "마포구",
-    "lat": 37.5534898065016,
-    "lng": 126.917815663776
+    "homepage": "https://www.instagram.com/os_gonggan",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "윤당아트홀 1관": {
     "name": "윤당아트홀 1관",
@@ -103609,7 +103618,15 @@
     "lng": 127.00063039999998,
     "district": "종로구",
     "phone": "02-3672-7971",
-    "homepage": "https://picassotheater.modoo.at/"
+    "homepage": "https://picassotheater.modoo.at/",
+    "facilityType": "민간(대학로)",
+    "seatScale": "140",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "작은공연장 단": {
     "name": "작은공연장 단",
@@ -105438,9 +105455,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "동대문구 아르코(DDM ARCO)": {
     "name": "동대문구 아르코(DDM ARCO)",
@@ -105775,9 +105792,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "(구)화남산업": {
     "name": "(구)화남산업",
@@ -105940,9 +105957,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "페노모브 푸어링아웃": {
     "name": "페노모브 푸어링아웃",
@@ -113996,9 +114013,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "CLUB bender(클럽 벤더)": {
     "name": "CLUB bender(클럽 벤더)",
@@ -115672,7 +115689,23 @@
     "address": "전남광주통합특별시 서구 마재로 3",
     "district": "서구",
     "lat": 35.130759590531255,
-    "lng": 126.8604222346809
+    "lng": 126.8604222346809,
+    "phone": "062-654-4300",
+    "homepage": "http://www.ymcakwangju.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "326",
+    "theaterCount": "1",
+    "openedAt": "2000",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "난지 한강공원 일대": {
     "name": "난지 한강공원 일대",
@@ -117269,5 +117302,40 @@
     "parking": "주차장: Y",
     "restrooms": "",
     "facilities": "시설 특성: 공공(문예회관)"
+  },
+  "쏘울브릿지": {
+    "name": "쏘울브릿지",
+    "address": "대전광역시 중구 계룡로 825 (용두동)",
+    "lat": 36.3266934,
+    "lng": 127.4077666,
+    "district": "중구",
+    "phone": "010-2849-9962",
+    "homepage": "http://soul-bridge.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "80",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
+  },
+  "스튜디오 마스 MAS": {
+    "name": "스튜디오 마스 MAS",
+    "address": "서울특별시 서대문구 성산로 370 (연희동)",
+    "lat": 37.563397,
+    "lng": 126.930065,
+    "district": "서대문구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   }
 }
