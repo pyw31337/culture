@@ -11796,9 +11796,9 @@
     "theaterCount": "1",
     "openedAt": "2014",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "엑스코 서관 1홀": {
     "name": "엑스코 서관",
@@ -21765,9 +21765,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "송파 청년아티스트센터": {
     "name": "송파 청년아티스트센터",
@@ -63932,9 +63932,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 놀이방, 수유실, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페, 놀이방"
   },
   "제페토(GEPPETTO)": {
     "name": "제페토(GEPPETTO)",
@@ -67573,8 +67573,8 @@
     "phone": "032-500-2000",
     "homepage": "http://www.bpart.kr/",
     "facilityType": "공공(문예회관)",
-    "seatScale": "1191",
-    "theaterCount": "2",
+    "seatScale": "1291",
+    "theaterCount": "3",
     "openedAt": "2010",
     "amenities": [
       "식당",
@@ -71295,10 +71295,18 @@
   },
   "더퍼포머 마술극장": {
     "name": "더퍼포머 마술극장",
-    "address": "충청북도 청주시 상당구 사직대로 379",
+    "address": "충청북도 청주시 상당구 사직대로 379 (북문로2가)",
     "lat": 36.6373135,
     "lng": 127.4894553,
-    "district": ""
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "송도달빛축제공원": {
     "name": "송도달빛축제공원",
@@ -117367,5 +117375,57 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "와부읍주민자치센터": {
+    "name": "와부읍주민자치센터",
+    "address": "경기도 남양주시 와부읍 월문천로 35 (덕소리)",
+    "lat": 37.5854341,
+    "lng": 127.2169723,
+    "district": "남양주시",
+    "phone": "031-521-6801",
+    "homepage": "http://www.wabujumin.or.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "240",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치"
+  },
+  "유영공간": {
+    "name": "유영공간",
+    "address": "서울특별시 성북구 성북로16가길 1(성북동)",
+    "lat": 37.5939628,
+    "lng": 127.0003886,
+    "district": "성북구",
+    "phone": "010-1319-6957",
+    "homepage": "https://spaceuooyoung.art/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "장승포수변공원": {
+    "name": "장승포수변공원",
+    "address": "경상남도 거제시 장승로 146-12 (장승포동)",
+    "lat": 34.866963,
+    "lng": 128.725909,
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   }
 }
