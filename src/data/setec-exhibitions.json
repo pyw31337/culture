@@ -1,28 +1,5 @@
 [
   {
-    "id": "setec_2265",
-    "title": "2026 국제아웃도어캠핑&레포츠페스티벌 서울",
-    "venue": "세텍 제1전시실, 제2전시실, 제3전시실",
-    "venueKey": "세텍 제1전시실, 제2전시실, 제3전시실",
-    "address": "서울 강남구 남부순환로 3104",
-    "lat": 37.4968,
-    "lng": 127.0628,
-    "region": "seoul",
-    "date": "2026.07.10 ~ 2026.07.12",
-    "image": "/images/posters/setec/setec_2265.webp",
-    "poster": "/images/posters/setec/setec_2265.webp",
-    "backupPoster": "/images/posters/setec/setec_2265.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2265",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-2222-3811",
-    "website": "https://www.setec.or.kr/",
-    "source": "setec",
-    "dataCollectedAt": "2026-07-09T23:59:05.434Z"
-  },
-  {
     "id": "setec_2287",
     "title": "The 5th DV world Seoul 2026",
     "venue": "세텍 제1전시실, 제2전시실",
