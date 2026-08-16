@@ -4255,9 +4255,9 @@
       "수유실",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 편의점, 수유실, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페, 편의점"
   },
   "광명시민회관 대공연장": {
     "name": "광명시민회관",
@@ -5873,9 +5873,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "덕스(DUEX) 홍대": {
     "name": "덕스(DUEX) 홍대",
@@ -8428,9 +8428,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "공간222": {
     "name": "공간222",
@@ -9761,9 +9761,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "연세대학교 대강당": {
     "name": "연세대학교 대강당",
@@ -11206,9 +11206,9 @@
     "theaterCount": "1",
     "openedAt": "1985",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "청주 CJB미디어센터 에덴아트홀": {
     "name": "청주 CJB미디어센터 에덴아트홀",
@@ -66896,9 +66896,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "천안예술의전당": {
     "name": "천안예술의전당",
@@ -69825,9 +69825,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "상암문화광장": {
     "name": "상암문화광장",
@@ -81851,7 +81851,13 @@
     "lat": 37.7377023839278,
     "lng": 127.047467575667,
     "phone": "031-850-5130",
-    "homepage": "https://www.uac.or.kr/artcamp/"
+    "homepage": "https://www.uac.or.kr/artcamp/",
+    "facilityType": "공공(기타)",
+    "seatScale": "80",
+    "theaterCount": "1",
+    "openedAt": "2017",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "덕호아트홀": {
     "name": "덕호아트홀",
@@ -81862,10 +81868,26 @@
   },
   "목포문화예술회관": {
     "name": "목포문화예술회관",
-    "address": "전남 목포시 남농로 102",
+    "address": "전라남도 목포시 남농로 102 (용해동)",
+    "lat": 34.7913967,
+    "lng": 126.41699100000005,
     "district": "",
-    "lat": 34.791647929097984,
-    "lng": 126.41789464191544
+    "phone": "061-270-4038",
+    "homepage": "https://www.mokpo.go.kr/art/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "629",
+    "theaterCount": "1",
+    "openedAt": "1997",
+    "amenities": [
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 편의점"
   },
   "서울교육대학교": {
     "name": "서울교육대학교",
@@ -104449,7 +104471,15 @@
     "lng": 127.0692182,
     "district": "의정부시",
     "phone": "031-850-5130",
-    "homepage": "https://www.uac.or.kr/artcamp/"
+    "homepage": "https://www.uac.or.kr/artcamp/",
+    "facilityType": "공공(기타)",
+    "seatScale": "80",
+    "theaterCount": "1",
+    "openedAt": "2017",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "연남장": {
     "name": "연남장",
@@ -104627,9 +104657,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "비유아트홀(구. 효천아트센터 그라운드씬)": {
     "name": "비유아트홀(구. 효천아트센터 그라운드씬)",
@@ -104912,9 +104942,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "인 컬쳐앤콘텐츠 스튜디오": {
     "name": "인 컬쳐앤콘텐츠 스튜디오",
@@ -108577,7 +108607,22 @@
     "address": "인천 계양구 방축로 21",
     "district": "계양구",
     "lat": 37.551772304439154,
-    "lng": 126.73989535661602
+    "lng": 126.73989535661602,
+    "phone": "032-550-3300",
+    "homepage": "https://www.insiseol.or.kr/culture/icsmuseum/",
+    "facilityType": "공공(기타)",
+    "seatScale": "412",
+    "theaterCount": "2",
+    "openedAt": "2011",
+    "amenities": [
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페, 편의점"
   },
   "운정행복센터 대공연장": {
     "name": "운정행복센터 대공연장",
@@ -116099,7 +116144,23 @@
     "address": "전남광주통합특별시 목포시 남농로 102",
     "district": "",
     "lat": 34.791647929097984,
-    "lng": 126.41789464191544
+    "lng": 126.41789464191544,
+    "phone": "061-270-4038",
+    "homepage": "https://www.mokpo.go.kr/art/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "629",
+    "theaterCount": "1",
+    "openedAt": "1997",
+    "amenities": [
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 편의점"
   },
   "언더그라운드 H": {
     "name": "언더그라운드 H",
@@ -117585,5 +117646,20 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "두더지라이브홀 [전주]": {
+    "name": "두더지라이브홀 [전주]",
+    "address": "전북특별자치도 전주시 완산구 덕적골2길 18 (평화동1가)",
+    "lat": 35.796914,
+    "lng": 127.140827,
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }

@@ -166,29 +166,5 @@
     "source": "popup-store",
     "description": "잠실, 잠실 전시, 스파이더맨, 서울스카이, 롯데월드몰 전시, 서울야경, 스파이더맨: 브랜드 뉴 데이, 영화/드라마, 사전 예약, 체험형 팝업, 마블",
     "dataCollectedAt": "2026-07-07T07:25:22.478Z"
-  },
-  {
-    "id": "popup_7879",
-    "title": "울트라맨 60주년 기념 팝업",
-    "venue": "용산구 한강대로23길",
-    "venueKey": "서울 용산구 한강대로23길 55 (한강로3가, 용산역)",
-    "address": "서울 용산구 한강대로23길 55 (한강로3가, 용산역)",
-    "lat": 37.5291117442,
-    "lng": 126.9644958618,
-    "region": "seoul",
-    "date": "2026.07.10 ~ 2026.07.16",
-    "image": "/images/posters/popups/popup_7879.webp",
-    "poster": "/images/posters/popups/popup_7879.webp",
-    "backupPoster": "/images/posters/popups/popup_7879.webp",
-    "link": "https://popga.co.kr/popup/7879",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "무료",
-    "priceDetail": "무료 (상세내용 참고)",
-    "contact": "02-120",
-    "website": "https://popga.co.kr/",
-    "source": "popup-store",
-    "description": "용산, 용산 팝업, 울트라맨, 울트라맨 팝업, TSUBURAYAPRODUCTIONS, 울트라맨의날, 울트라맨 #울트라맨60주년, 울트라맨팝업, ULTRAMANPOPUP, ULTRAMAN, M78, 울트라맨아크, 울트라맨티가, 초대울트라맨, MeetAndGreeting, 밋앤그릿, 용산아이파크몰, 도파민스테이션, 영화/드라마, 체험형 팝업",
-    "dataCollectedAt": "2026-07-07T07:25:22.551Z"
   }
 ]
