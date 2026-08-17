@@ -6881,11 +6881,20 @@
   },
   "독립기념관": {
     "name": "독립기념관",
-    "address": "충남 천안시 동남구 목천읍 독립기념관로 1",
-    "lat": 36.7836,
-    "lng": 127.2234,
+    "address": "충청남도 천안시 동남구 목천읍 독립기념관로 1",
+    "lat": 36.781872,
+    "lng": 127.2303981,
     "district": "",
-    "mapped_region_id": "chungnam"
+    "phone": "041-560-0114",
+    "homepage": "https://i815.or.kr/2018/gov/info01.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "0",
+    "theaterCount": "13",
+    "openedAt": "1987",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "국립해양박물관": {
     "name": "국립해양박물관",
@@ -33029,9 +33038,9 @@
     "theaterCount": "1",
     "openedAt": "2015",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "연세대학교 백주년기념관 콘서트홀": {
     "name": "연세대학교 백주년기념관 콘서트홀",
@@ -62035,9 +62044,9 @@
     "theaterCount": "3",
     "openedAt": "2009",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "맥거핀 서교": {
     "name": "맥거핀 서교",
@@ -62190,9 +62199,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 놀이방, 수유실, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 놀이방"
   },
   "스폿라이트": {
     "name": "스폿라이트",
@@ -62330,13 +62339,13 @@
     "lng": 127.0022799,
     "district": "종로구",
     "facilityType": "민간(대학로)",
-    "seatScale": "20",
+    "seatScale": "211",
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "TOUCH FIVE 전용관": {
     "name": "TOUCH FIVE 전용관",
@@ -63104,9 +63113,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장) · 식당, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 식당"
   },
   "인피니티클럽 (1nfinity club)": {
     "name": "인피니티클럽 (1nfinity club)",
@@ -63153,9 +63162,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 수유실, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행"
   },
   "홍대 카페 (구.홍대카페)": {
     "name": "홍대 카페 (구.홍대카페)",
@@ -67976,9 +67985,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "SPACE SODA2002": {
     "name": "SPACE SODA2002",
@@ -77833,9 +77842,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "타임스퀘어 영등포아트스퀘어": {
     "name": "타임스퀘어 영등포아트스퀘어",
@@ -86168,7 +86177,21 @@
     "address": "대구 수성구 범어천로 90",
     "district": "",
     "lat": 35.85618983615959,
-    "lng": 128.62280965749022
+    "lng": 128.62280965749022,
+    "phone": "053-744-1391",
+    "homepage": "http://demangehall.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "410",
+    "theaterCount": "2",
+    "openedAt": "2017",
+    "amenities": [
+      "식당",
+      "카페",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페"
   },
   "한국대중음악박물관 1층": {
     "name": "한국대중음악박물관 1층",
@@ -115876,10 +115899,18 @@
   },
   "아름지기 안국동한옥": {
     "name": "아름지기 안국동한옥",
-    "address": "서울 종로구 북촌로5길 19-6",
+    "address": "서울특별시 종로구 북촌로5길 19-6 (안국동)",
+    "lat": 37.579132,
+    "lng": 126.984003,
     "district": "종로구",
-    "lat": 37.57913264008521,
-    "lng": 126.98400354021655
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "서울 코엑스 전관": {
     "name": "서울 코엑스 전관",
@@ -117661,5 +117692,42 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "소다 미술관": {
+    "name": "소다 미술관",
+    "address": "경기도 화성시 효행로707번길 30 (안녕동)",
+    "lat": 37.201595,
+    "lng": 127.00615,
+    "district": "화성시",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "대구범어대성당": {
+    "name": "대구범어대성당",
+    "address": "대구광역시 수성구 범어천로 90 - 0 범어성당",
+    "lat": 35.8560247,
+    "lng": 128.6233095,
+    "district": "",
+    "phone": "053-744-1391",
+    "homepage": "http://demangehall.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "410",
+    "theaterCount": "2",
+    "openedAt": "2017",
+    "amenities": [
+      "식당",
+      "카페",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페"
   }
 }
