@@ -1,31 +1,5 @@
 [
   {
-    "id": "yes24_57254",
-    "title": "네이버후드 내한공연 (The Neighbourhood Live in Seoul)",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57254.jpg/dims/quality/70/",
-    "date": "2026.07.20 ~ 2026.07.20",
-    "venue": "YES24 LIVE HALL",
-    "link": "https://ticket.yes24.com/Perf/57254",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_네이버후드_내한공연_The_Neighbourhood_Live_in_Seoul.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57254.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:56:27.647Z",
-    "synopsisImages": []
-  },
-  {
     "id": "yes24_57338",
     "title": "[김해] 2026 자유 패키지 P:art Ⅰ",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260227/20260227-57338.jpg/dims/quality/70/",
@@ -213,32 +187,6 @@
     "organizer": "",
     "contact": "",
     "dataCollectedAt": "2026-06-04T08:56:49.708Z",
-    "synopsisImages": []
-  },
-  {
-    "id": "yes24_58233",
-    "title": "Reol Oneman Live 2026 Bijigaku in SEOUL",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260527/20260527-58233.jpg/dims/quality/70/",
-    "date": "2026.07.18 ~ 2026.07.19",
-    "venue": "예스24 원더로크홀",
-    "link": "https://ticket.yes24.com/Perf/58233",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "description": "",
-    "image": "/images/posters/concert/yes24_Reol_Oneman_Live_2026_Bijigaku_in_SEOUL.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260527/20260527-58233.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "dataCollectedAt": "2026-06-04T08:57:22.058Z",
     "synopsisImages": []
   },
   {
@@ -499,41 +447,6 @@
     "contact": "",
     "dataCollectedAt": "2026-06-04T08:56:57.172Z",
     "synopsisImages": []
-  },
-  {
-    "id": "yes24_58479",
-    "title": "[부산] 2026 라이브 가족뮤지컬 [어린이 캣프렌즈]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260514/20260514-58479.jpg/dims/quality/70/",
-    "date": "2026.07.18 ~ 2026.07.19",
-    "venue": "부산 신세계센텀시티 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58479",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 40,000원",
-    "description": "- 좌석배치도 A열~D열 까지는 바닥 단차가 없는 평지 좌석에 이동식 의자입니다(예매시 참고 바랍니다)\n- 어린이 단독 입장 불가 (본 공연장은 안전한 관람을 위하여 초등학생까지는 성인보호자 동반없이 입장 절대 불가 합니다.)\n- 24개월 이상 표를 구입합니다. / 24개월 미만 무료입장(단. 부모님안고관람)\n- 공연중에는 사진촬영, 동영상촬영, 음식물 반입이 금지되어 있습니다.\n- 1인 1티켓 적용 (본 공연은 부모님과 자녀 모두 소지하셔야 합니다.)\n- 어린이 보조방석 있음 (보조방석이 구비 되어있음으로 필요하신분들은 입장시 직원통해 받으시면 됩니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.)\n- 공연당일 주차하기까지 소요되는 시간이 길게는 2시간이상 소요되오니 참고하시어 공연관람에 어려움없도록 해주시고, 주차로인한 환불은 안됩니다.\n- 대중교통 이용을 권장드립니다.\n- 2시간 무료주차",
-    "image": "/images/posters/kids/yes24_부산_2026_라이브_가족뮤지컬_어린이_캣프렌즈.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260514/20260514-58479.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 18,000원\n할인정보\n기본할인 18,000원 / 상시할인\n조이컬쳐(부산) 카톡채널추가할인 15,000원 / 카톡채널추가시 적용_미증빙시 차액지불\n신세계신용카드 및 백화점어플 소지자 할인 15.000원 / 신세계백화점 제휴 카드 및 백화점 어플 소지자 할인_미증빙시 차액지불\n맘맘 멤버십회원 할인 15,000원 / 티켓수령시 육아앰(맘맘) 유료멤버십회원 확인_미증빙시 차액지불\n조기예매할인(카톡채널추가시) 10,000원 / ~ 6월 18일까지, 조이컬쳐(부산) 카톡채널추가시 적용_미증빙시 차액지불",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 7월 18일(토) ~ 19일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C 컴퍼니, 문화공작소",
-    "organizer": "㈜조이컬처",
-    "contact": "070-7807-0701",
-    "dataCollectedAt": "2026-05-21T13:36:41.684Z",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202601/20260113/56762n.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260514/조이컬쳐(부산)채널추가방법.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260514/캣프렌즈_상세.jpg"
-    ]
   },
   {
     "id": "yes24_58283",
@@ -820,46 +733,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58496_07.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58496_08.jpg"
     ]
-  },
-  {
-    "id": "yes24_57254",
-    "title": "네이버후드 내한공연 (The Neighbourhood Live in Seoul)",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57254.jpg/dims/quality/70/",
-    "date": "2026.07.20 ~ 2026.07.20",
-    "venue": "YES24 LIVE HALL",
-    "link": "https://ticket.yes24.com/Perf/57254",
-    "genre": "concert",
-    "region": "서울",
-    "price": "스탠딩석 139,000원, 지정석 139,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 6매\n※ 일괄배송: 6월 25일(목)\n※ 본 공연은 휠체어석을 판매하지 않습니다.\n1층은 스탠딩 구역으로 시야 및 안전 문제로 인해 휠체어석 제공이 어려우며, 공연장 내 엘리베이터가 없는 관계로 2층 또한 휠체어석 제공이 어렵습니다. 이 점 너른 양해 부탁드립니다\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_네이버후드_내한공연_The_Neighbourhood_Live_in_Seoul.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57254.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "139,000원"
-      },
-      {
-        "label": "지정석",
-        "price": "139,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "13세 이상",
-    "runningTime": "총 90분 이상",
-    "performanceTime": "2026년 7월 20일(월) 오후 8시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 06월 25일부터 순차 배송됩니다.",
-    "host": "/주관: 주식회사 위얼라이브",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:30:18.153Z"
   },
   {
     "id": "yes24_58534",
@@ -1391,46 +1264,6 @@
     "image": "/images/posters/concert/yes24_수원_패션_워십_컨퍼런스_2026.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58496.jpg/dims/quality/70/",
     "category": "독점공연"
-  },
-  {
-    "id": "yes24_57254",
-    "title": "네이버후드 내한공연 (The Neighbourhood Live in Seoul)",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57254.jpg/dims/quality/70/",
-    "date": "2026.07.20 ~ 2026.07.20",
-    "venue": "YES24 LIVE HALL",
-    "link": "https://ticket.yes24.com/Perf/57254",
-    "genre": "concert",
-    "region": "서울",
-    "price": "스탠딩석 139,000원, 지정석 139,000원",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 6매\n※ 일괄배송: 6월 25일(목)\n※ 본 공연은 휠체어석을 판매하지 않습니다.\n1층은 스탠딩 구역으로 시야 및 안전 문제로 인해 휠체어석 제공이 어려우며, 공연장 내 엘리베이터가 없는 관계로 2층 또한 휠체어석 제공이 어렵습니다. 이 점 너른 양해 부탁드립니다\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "image": "/images/posters/concert/yes24_네이버후드_내한공연_The_Neighbourhood_Live_in_Seoul.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202602/20260220/20260220-57254.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "139,000원"
-      },
-      {
-        "label": "지정석",
-        "price": "139,000원"
-      }
-    ],
-    "priceDetail": "",
-    "ageRating": "13세 이상",
-    "runningTime": "총 90분 이상",
-    "performanceTime": "2026년 7월 20일(월) 오후 8시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 06월 25일부터 순차 배송됩니다.",
-    "host": "/주관: 주식회사 위얼라이브",
-    "organizer": "",
-    "contact": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202602/20260223/57254_2_04.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:30:18.153Z"
   },
   {
     "id": "yes24_58534",
@@ -1904,41 +1737,6 @@
     "dataCollectedAt": "2026-05-21T13:36:19.612Z"
   },
   {
-    "id": "yes24_58479",
-    "title": "[부산] 2026 라이브 가족뮤지컬 [어린이 캣프렌즈]",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260514/20260514-58479.jpg/dims/quality/70/",
-    "date": "2026.07.18 ~ 2026.07.19",
-    "venue": "부산 신세계센텀시티 9층 문화홀",
-    "link": "https://ticket.yes24.com/Perf/58479",
-    "genre": "kids",
-    "region": "서울",
-    "price": "전석 40,000원",
-    "description": "- 좌석배치도 A열~D열 까지는 바닥 단차가 없는 평지 좌석에 이동식 의자입니다(예매시 참고 바랍니다)\n- 어린이 단독 입장 불가 (본 공연장은 안전한 관람을 위하여 초등학생까지는 성인보호자 동반없이 입장 절대 불가 합니다.)\n- 24개월 이상 표를 구입합니다. / 24개월 미만 무료입장(단. 부모님안고관람)\n- 공연중에는 사진촬영, 동영상촬영, 음식물 반입이 금지되어 있습니다.\n- 1인 1티켓 적용 (본 공연은 부모님과 자녀 모두 소지하셔야 합니다.)\n- 어린이 보조방석 있음 (보조방석이 구비 되어있음으로 필요하신분들은 입장시 직원통해 받으시면 됩니다.)\n- 당일 변경 및 취소 불가 (공연당일 현장에서의 취소, 변경, 환불은 불가하며, 개인사정, 공연 중 울고보채는 아이로 퇴장하는 경우에도 환불은 불가합니다.)\n- 공연당일 주차하기까지 소요되는 시간이 길게는 2시간이상 소요되오니 참고하시어 공연관람에 어려움없도록 해주시고, 주차로인한 환불은 안됩니다.\n- 대중교통 이용을 권장드립니다.\n- 2시간 무료주차",
-    "image": "/images/posters/kids/yes24_부산_2026_라이브_가족뮤지컬_어린이_캣프렌즈.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260514/20260514-58479.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 18,000원\n할인정보\n기본할인 18,000원 / 상시할인\n조이컬쳐(부산) 카톡채널추가할인 15,000원 / 카톡채널추가시 적용_미증빙시 차액지불\n신세계신용카드 및 백화점어플 소지자 할인 15.000원 / 신세계백화점 제휴 카드 및 백화점 어플 소지자 할인_미증빙시 차액지불\n맘맘 멤버십회원 할인 15,000원 / 티켓수령시 육아앰(맘맘) 유료멤버십회원 확인_미증빙시 차액지불\n조기예매할인(카톡채널추가시) 10,000원 / ~ 6월 18일까지, 조이컬쳐(부산) 카톡채널추가시 적용_미증빙시 차액지불",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2026년 7월 18일(토) ~ 19일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "S&C 컴퍼니, 문화공작소",
-    "organizer": "㈜조이컬처",
-    "contact": "070-7807-0701",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202601/20260113/56762n.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260514/조이컬쳐(부산)채널추가방법.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260514/캣프렌즈_상세.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:36:41.684Z"
-  },
-  {
     "id": "yes24_58468",
     "title": "[김해] 2026 자유 패키지 P：art Ⅱ",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58468.jpg/dims/quality/70/",
@@ -2064,32 +1862,6 @@
     "dataCollectedAt": "2026-06-04T08:55:11.212Z",
     "image": "/images/posters/concert/yes24_IDOL1ST_KENTY_ASIA_TOUR_2026_in_SEOUL.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260528/20260528-58653.jpg/dims/quality/70/",
-    "category": "독점공연"
-  },
-  {
-    "id": "yes24_58611",
-    "title": "〈승리의 여신: 니케〉 밴드라이브 콘서트 Full Burst Live",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260526/20260526-58611.jpg/dims/quality/70/",
-    "date": "2026.07.18 ~ 2026.07.19",
-    "venue": "YES24 LIVE HALL",
-    "link": "https://ticket.yes24.com/Perf/58611",
-    "genre": "concert",
-    "region": "서울",
-    "price": "",
-    "priceList": [],
-    "priceDetail": "",
-    "ageRating": "",
-    "runningTime": "",
-    "performanceTime": "",
-    "reservationInfo": "",
-    "host": "",
-    "organizer": "",
-    "contact": "",
-    "description": "",
-    "synopsisImages": [],
-    "dataCollectedAt": "2026-06-04T08:55:46.529Z",
-    "image": "/images/posters/concert/yes24_승리의_여신_니케_밴드라이브_콘서트_Full_Burst_Live.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260526/20260526-58611.jpg/dims/quality/70/",
     "category": "독점공연"
   },
   {
