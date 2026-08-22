@@ -21806,5 +21806,33 @@
     "awayTeam": "KIA11",
     "homeTeamLogo": "",
     "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260822_KIA1_vs_3키움",
+    "title": "KIA1 vs 3키움",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-22 18:00",
+    "venue": "고척스카이돔",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "seoul",
+    "genre": "baseball",
+    "homeTeam": "3키움",
+    "awayTeam": "KIA1",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260822_삼성8_vs_6NC",
+    "title": "삼성8 vs 6NC",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-22 19:00",
+    "venue": "창원NC파크",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "busan",
+    "genre": "baseball",
+    "homeTeam": "6NC",
+    "awayTeam": "삼성8",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]

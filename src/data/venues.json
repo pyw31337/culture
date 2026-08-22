@@ -9832,15 +9832,15 @@
     "lng": 126.8491891,
     "district": "강서구",
     "phone": "02-2657-9757",
-    "homepage": "https://skyarthall.modoo.at",
+    "homepage": "http://skyarthall.co.kr/w/home.html",
     "facilityType": "민간(대학로 외)",
     "seatScale": "987",
     "theaterCount": "1",
     "openedAt": "2022",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "K-POP STAGE": {
     "name": "K-POP STAGE",
@@ -12555,7 +12555,7 @@
     "homepage": "http://culture.busan.go.kr/Main.bs",
     "facilityType": "공공(문예회관)",
     "seatScale": "2966",
-    "theaterCount": "4",
+    "theaterCount": "6",
     "openedAt": "1988",
     "amenities": [
       "놀이방",
@@ -22250,9 +22250,9 @@
     "theaterCount": "1",
     "openedAt": "1972",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "서울시청 하늘광장 갤러리": {
     "name": "서촌 일대",
@@ -54749,17 +54749,17 @@
     "lng": 126.51603879999993,
     "district": "",
     "phone": "064-744-8911",
-    "homepage": "https://sayreartcenter.modoo.at/",
+    "homepage": "https://sayre21.tistory.com",
     "facilityType": "민간(대학로 외)",
-    "seatScale": "120",
+    "seatScale": "99",
     "theaterCount": "1",
     "openedAt": "2007",
     "amenities": [
       "편의점"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 편의점"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 편의점"
   },
   "서울특별시 성동구 성수2가3동 성수일로8길 39": {
     "name": "서울특별시 성동구 성수2가3동 성수일로8길 39",
@@ -61541,9 +61541,9 @@
     "theaterCount": "2",
     "openedAt": "1990",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "문화예술전용극장CT": {
     "name": "문화예술전용극장CT",
@@ -64177,9 +64177,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "봉산문화회관": {
     "name": "봉산문화회관",
@@ -64999,7 +64999,7 @@
   },
   "순천문화예술회관": {
     "name": "순천문화예술회관",
-    "address": "전라남도 순천시 삼산로 16 (석현동)",
+    "address": "전남광주통합특별시 순천시 삼산로 16 (석현동)",
     "lat": 34.9705841,
     "lng": 127.4853144,
     "district": "",
@@ -66848,9 +66848,9 @@
   },
   "재즈인연구소": {
     "name": "재즈인연구소",
-    "address": "세종특별자치시 시청대로 167",
-    "lat": 36.4813104143387,
-    "lng": 127.289895723001,
+    "address": "세종특별자치시 시청대로 167(보람동)",
+    "lat": 36.4813104,
+    "lng": 127.2898957,
     "district": "",
     "phone": "070-8882-3863",
     "homepage": "https://www.jazzinlab.com/",
@@ -66859,9 +66859,9 @@
     "theaterCount": "1",
     "openedAt": "2012",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "경북대학교": {
     "name": "경북대학교",
@@ -66967,9 +66967,9 @@
     "theaterCount": "1",
     "openedAt": "1987",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "극장 봄 (봄소극장)": {
     "name": "극장 봄 (봄소극장)",
@@ -67330,7 +67330,7 @@
   },
   "한국전력공사 본사": {
     "name": "한국전력공사 본사",
-    "address": "전라남도 나주시 전력로 55 (빛가람동)",
+    "address": "전남광주통합특별시 나주시 전력로 55 (빛가람동)",
     "lat": 35.026607,
     "lng": 126.784615,
     "district": "",
@@ -67565,9 +67565,9 @@
     "theaterCount": "5",
     "openedAt": "2014",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "인천중구문화회관": {
     "name": "인천중구문화회관",
@@ -67922,9 +67922,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페, 편의점"
   },
   "인천수봉문화회관": {
     "name": "인천수봉문화회관",
@@ -69548,10 +69548,22 @@
   },
   "미로센터 [광주]": {
     "name": "미로센터 [광주]",
-    "address": "광주광역시 동구 중앙로196번길 15-12",
+    "address": "전남광주통합특별시 동구 중앙로196번길 15-12 (궁동)",
     "lat": 35.1500515,
     "lng": 126.917886,
-    "district": "동구"
+    "district": "동구",
+    "phone": "062-608-2132",
+    "homepage": "http://dgmiro.donggu.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "82",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페"
   },
   "효자아트홀": {
     "name": "효자아트홀",
@@ -69973,10 +69985,20 @@
   },
   "창작소극장": {
     "name": "창작소극장",
-    "address": "전라북도 전주시 완산구 동문길 100",
+    "address": "전라북도 전주시 완산구 동문길 100 (경원동1가)",
     "lat": 35.8181057,
     "lng": 127.14857289999998,
-    "district": ""
+    "district": "",
+    "phone": "063-282-1810",
+    "homepage": "https://blog.naver.com/changjaktheater",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "1990",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "미아리고개예술극장(구. 미아리예술극장)": {
     "name": "미아리고개예술극장(구. 미아리예술극장)",
@@ -70685,10 +70707,26 @@
   },
   "제주아트센터": {
     "name": "제주아트센터",
-    "address": "제주특별자치도 제주시 오남로 231",
+    "address": "제주특별자치도 제주시 오남로 231 (오라이동)",
     "lat": 33.4751552,
     "lng": 126.51550610000004,
-    "district": ""
+    "district": "",
+    "phone": "064-728-1509",
+    "homepage": "http://arts.jejusi.go.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "2064",
+    "theaterCount": "2",
+    "openedAt": "2010",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 카페, 놀이방"
   },
   "대천해수욕장 보령머드테마파크": {
     "name": "대천해수욕장 보령머드테마파크",
@@ -83188,7 +83226,23 @@
     "address": "제주특별자치도 제주시 한라대학로 38",
     "district": "",
     "lat": 33.476184080093,
-    "lng": 126.474793004793
+    "lng": 126.474793004793,
+    "phone": "064-728-1509",
+    "homepage": "http://arts.jejusi.go.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "2064",
+    "theaterCount": "2",
+    "openedAt": "2010",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 카페, 놀이방"
   },
   "극장 담장이 공연장": {
     "name": "극장 담장이 공연장",
@@ -117185,8 +117239,19 @@
   },
   "은덕문화원": {
     "name": "은덕문화원",
-    "address": "정보 없음",
-    "district": ""
+    "address": "서울특별시 종로구 창덕궁길 51 (원서동)",
+    "lat": 37.579744,
+    "lng": 126.989127,
+    "district": "종로구",
+    "homepage": "http://www.eundeok.or.kr/client/main.asp",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "자연과 숲": {
     "name": "자연과 숲",
