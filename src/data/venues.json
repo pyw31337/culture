@@ -11161,9 +11161,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 놀이방, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 편의시설: 놀이방"
   },
   "소극장 쇠내골": {
     "name": "소극장 쇠내골",
@@ -61390,7 +61390,7 @@
   },
   "국립아시아문화전당": {
     "name": "국립아시아문화전당",
-    "address": "광주광역시 동구 문화전당로 38 (광산동) 아시아문화전당",
+    "address": "전남광주통합특별시 동구 문화전당로 38 (광산동)",
     "lat": 35.1467193,
     "lng": 126.92025420000004,
     "district": "동구",
@@ -61706,9 +61706,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페"
   },
   "루시드아트홀": {
     "name": "루시드아트홀",
@@ -64571,9 +64571,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "파주운정행복센터": {
     "name": "파주운정행복센터",
@@ -66757,9 +66757,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "프리즘홀 (프리즘플러스)": {
     "name": "프리즘홀 (프리즘플러스)",
@@ -68637,9 +68637,9 @@
     "theaterCount": "1",
     "openedAt": "2008",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "소극장 초속": {
     "name": "소극장 초속",
@@ -70665,10 +70665,19 @@
   },
   "꾸꾸플루트 (경복궁 클래식)": {
     "name": "꾸꾸플루트 (경복궁 클래식)",
-    "address": "서울특별시 종로구 율곡로 1",
+    "address": "서울특별시 종로구 율곡로 1 (사간동)",
     "lat": 37.5762442,
     "lng": 126.9798614,
-    "district": "종로구"
+    "district": "종로구",
+    "homepage": "https://www.instagram.com/gyeongbokgung_classic",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "거창 수승대": {
     "name": "거창 수승대",
@@ -115608,7 +115617,7 @@
   },
   "전남광주통합특별시 예술의전당 (구. 광주예술의전당)": {
     "name": "전남광주통합특별시 예술의전당 (구. 광주예술의전당)",
-    "address": "광주광역시 북구 북문대로 60 (운암동)",
+    "address": "전남광주통합특별시 북구 북문대로 60 (운암동)",
     "lat": 35.1777124,
     "lng": 126.88170230000003,
     "district": "",
@@ -117836,5 +117845,24 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "베어홀(Bear Hall)": {
+    "name": "베어홀(Bear Hall)",
+    "address": "서울특별시 강남구 봉은사로 644 (삼성동)",
+    "lat": 37.5148701,
+    "lng": 127.0656969,
+    "district": "강남구",
+    "phone": "02-2059-1697",
+    "homepage": "https://www.daewoongholdings.com/bear_hall/about/location.web",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "202",
+    "theaterCount": "1",
+    "openedAt": "2011",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   }
 }
