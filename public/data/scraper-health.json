@@ -1,0 +1,353 @@
+{
+  "generatedAt": "2026-08-25T23:46:08.837Z",
+  "totals": {
+    "sources": 31,
+    "fresh": 17,
+    "aging": 3,
+    "stale": 11,
+    "missing": 0,
+    "runFailures": 0
+  },
+  "sources": [
+    {
+      "key": "interpark",
+      "label": "인터파크 티켓",
+      "file": "interpark.json",
+      "homepage": "https://tickets.interpark.com/",
+      "itemCount": 3011,
+      "mtime": "2026-08-25T23:46:06.983Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "yes24-exclusive",
+      "label": "예스24 티켓",
+      "file": "yes24-exclusive.json",
+      "homepage": "https://ticket.yes24.com/",
+      "itemCount": 154,
+      "mtime": "2026-08-25T23:46:07.903Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "timeticket",
+      "label": "타임티켓",
+      "file": "timeticket.json",
+      "homepage": "https://www.timeticket.co.kr/",
+      "itemCount": 206,
+      "mtime": "2026-08-25T23:46:07.762Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "festival",
+      "label": "대한민국 구석구석",
+      "file": "festivals.json",
+      "homepage": "https://korean.visitkorea.or.kr/",
+      "itemCount": 116,
+      "mtime": "2026-08-25T23:46:06.954Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "volleyball",
+      "label": "KOVO",
+      "file": "kovo.json",
+      "homepage": "https://www.kovo.co.kr/",
+      "itemCount": 256,
+      "mtime": "2026-06-04T09:45:29.378Z",
+      "ageHours": 1982,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "basketball",
+      "label": "KBL",
+      "file": "kbl.json",
+      "homepage": "https://www.kbl.or.kr/",
+      "itemCount": 0,
+      "mtime": "2026-06-04T09:45:29.350Z",
+      "ageHours": 1982,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "baseball",
+      "label": "KBO",
+      "file": "kbo.json",
+      "homepage": "https://www.koreabaseball.com/",
+      "itemCount": 1275,
+      "mtime": "2026-08-25T23:46:07.003Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "handball",
+      "label": "핸드볼코리아",
+      "file": "handball.json",
+      "homepage": "https://www.handballkorea.com/",
+      "itemCount": 0,
+      "mtime": "2026-06-04T09:45:29.345Z",
+      "ageHours": 1982,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "football",
+      "label": "K리그",
+      "file": "kleague.json",
+      "homepage": "https://www.kleague.com/",
+      "itemCount": 475,
+      "mtime": "2026-07-20T02:26:51.297Z",
+      "ageHours": 885.3,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "movie",
+      "label": "영화",
+      "file": "movies.json",
+      "itemCount": 85,
+      "mtime": "2026-07-27T04:27:33.220Z",
+      "ageHours": 715.3,
+      "freshness": "aging",
+      "lastRun": null
+    },
+    {
+      "key": "myrealtrip-kids",
+      "label": "마이리얼트립 키즈",
+      "file": "myrealtrip-kids.json",
+      "homepage": "https://www.myrealtrip.com/",
+      "itemCount": 106,
+      "mtime": "2026-06-04T09:45:29.399Z",
+      "ageHours": 1982,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "sssd-class",
+      "label": "솜씨당",
+      "file": "sssd-class.json",
+      "homepage": "https://www.sssd.co.kr/",
+      "itemCount": 30,
+      "mtime": "2026-08-25T23:46:07.750Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "umclass",
+      "label": "움클래스",
+      "file": "umclass.json",
+      "homepage": "https://www.umclass.com/",
+      "itemCount": 575,
+      "mtime": "2026-08-25T23:46:07.857Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "mochaclass",
+      "label": "모카클래스",
+      "file": "mochaclass.json",
+      "homepage": "https://www.mochaclass.com/",
+      "itemCount": 1211,
+      "mtime": "2026-08-25T23:46:07.324Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "seoul",
+      "label": "서울문화포털",
+      "file": "seoul-culture.json",
+      "homepage": "https://culture.seoul.go.kr/",
+      "itemCount": 185,
+      "mtime": "2026-08-25T23:46:07.745Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "culture-portal",
+      "label": "문화포털",
+      "file": "culture-portal.json",
+      "homepage": "https://www.culture.go.kr/",
+      "itemCount": 7181,
+      "mtime": "2026-08-25T23:46:06.940Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "mommom",
+      "label": "맘맘",
+      "file": "mommom.json",
+      "homepage": "https://mom-mom.net/",
+      "itemCount": 666,
+      "mtime": "2026-08-25T23:46:07.673Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "mommom-activity",
+      "label": "맘맘 액티비티",
+      "file": "mommom-activities.json",
+      "homepage": "https://mom-mom.net/",
+      "itemCount": 237,
+      "mtime": "2026-08-25T23:46:07.344Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "mommom-exhibition",
+      "label": "맘맘 전시/체험",
+      "file": "mommom-exb.json",
+      "homepage": "https://mom-mom.net/",
+      "itemCount": 262,
+      "mtime": "2026-08-25T23:46:07.369Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "mommom-product",
+      "label": "맘맘 상품",
+      "file": "mommom-products.json",
+      "homepage": "https://mom-mom.net/",
+      "itemCount": 237,
+      "mtime": "2026-08-25T23:46:07.431Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "museum",
+      "label": "맘맘 플레이스",
+      "file": "museum.json",
+      "homepage": "https://mom-mom.net/",
+      "itemCount": 1,
+      "mtime": "2026-08-25T23:46:07.681Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "kopis",
+      "label": "KOPIS",
+      "file": "kopis-performances.json",
+      "homepage": "https://www.kopis.or.kr/",
+      "itemCount": 4085,
+      "mtime": "2026-08-25T23:46:07.226Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "tourism",
+      "label": "대한민국 구석구석",
+      "file": "tourism.json",
+      "homepage": "https://korean.visitkorea.or.kr/",
+      "itemCount": 732,
+      "mtime": "2026-08-25T23:46:07.789Z",
+      "ageHours": 0,
+      "freshness": "fresh",
+      "lastRun": null
+    },
+    {
+      "key": "coex",
+      "label": "코엑스 전시",
+      "file": "coex-exhibitions.json",
+      "homepage": "https://www.coex.co.kr/",
+      "itemCount": 8,
+      "mtime": "2026-07-10T00:01:17.334Z",
+      "ageHours": 1127.7,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "kintex",
+      "label": "킨텍스 전시",
+      "file": "kintex-exhibitions.json",
+      "homepage": "https://www.kintex.com/",
+      "itemCount": 37,
+      "mtime": "2026-07-10T00:01:17.335Z",
+      "ageHours": 1127.7,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "bexco",
+      "label": "벡스코 전시",
+      "file": "bexco-exhibitions.json",
+      "homepage": "https://www.bexco.co.kr/",
+      "itemCount": 16,
+      "mtime": "2026-07-10T00:01:17.333Z",
+      "ageHours": 1127.7,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "setec",
+      "label": "세텍 전시",
+      "file": "setec-exhibitions.json",
+      "homepage": "https://www.setec.or.kr/",
+      "itemCount": 12,
+      "mtime": "2026-07-10T00:01:17.336Z",
+      "ageHours": 1127.7,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "gocamping",
+      "label": "고캠핑",
+      "file": "gocamping.json",
+      "homepage": "https://gocamping.or.kr/",
+      "itemCount": 20,
+      "mtime": "2026-07-07T07:22:10.622Z",
+      "ageHours": 1192.4,
+      "freshness": "aging",
+      "lastRun": null
+    },
+    {
+      "key": "templestay",
+      "label": "템플스테이",
+      "file": "templestays.json",
+      "homepage": "https://www.templestay.com/",
+      "itemCount": 12,
+      "mtime": "2026-07-07T07:23:41.066Z",
+      "ageHours": 1192.4,
+      "freshness": "aging",
+      "lastRun": null
+    },
+    {
+      "key": "popup-store",
+      "label": "트렌디 팝업스토어",
+      "file": "popup-stores.json",
+      "homepage": "https://popply.co.kr/",
+      "itemCount": 12,
+      "mtime": "2026-07-07T07:25:22.553Z",
+      "ageHours": 1192.3,
+      "freshness": "stale",
+      "lastRun": null
+    },
+    {
+      "key": "klook-deal",
+      "label": "레저/투어 핫딜",
+      "file": "klook-deals.json",
+      "homepage": "https://www.klook.com/",
+      "itemCount": 20,
+      "mtime": "2026-07-07T07:27:12.357Z",
+      "ageHours": 1192.3,
+      "freshness": "stale",
+      "lastRun": null
+    }
+  ]
+}

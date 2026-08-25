@@ -1,5 +1,5 @@
 {
-  "name": "thermal-hypernova",
+  "name": "culture-flow",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -40,7 +40,11 @@
     "local:check-update-status": "scripts/check-local-data-update-status.sh",
     "local:install-scheduler": "scripts/install-local-data-update.sh",
     "audit:map-navigation": "npx tsx scripts/audit-map-navigation.ts",
-    "cache:posters": "npx tsx scripts/cache-remote-posters.ts"
+    "cache:posters": "npx tsx scripts/cache-remote-posters.ts",
+    "report:health": "npx tsx scripts/report-scraper-health.ts",
+    "fix:regions": "npx tsx scripts/fix-region-mismatches.ts",
+    "fix:regions:write": "npx tsx scripts/fix-region-mismatches.ts --write",
+    "cleanup:junk": "bash scripts/cleanup-repo-junk.sh"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",

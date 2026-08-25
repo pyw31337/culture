@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/test-results
 
 # next.js
 /.next/
@@ -21,18 +22,27 @@ next-env.d.ts
 
 # production
 /build
+/tmp_build
 
 # misc
 .DS_Store
 /logs/
 *.pem
+*.key
+oracle_key
 Untitled-*.psd
+*.psd
 *.zip
 *.log
 *.txt
 !public/version.txt
+!README.md
+!docs/**/*.md
+!REMEDIATION.md
+!RESUME_GUIDE.md
+!ERROR_TRACKER.md
 
-# screenshots & debug images
+# screenshots & debug images / dumps
 debug-*.png
 debug-*.html
 debug_*
@@ -41,12 +51,36 @@ naver_debug*.png
 interpark*_screenshot.png
 *_debug.html
 *_debug.json
+*_debug.png
+*_debug.log
+debug_output.txt
+debug_html_empty_list.txt
+kbl_debug.html
+kovo_debug.html
+timeticket_item_dump.html
+coex-page.html
+venue_page_v2.html
 *.webp
 !public/images/posters/**/*.webp
 !public/images/thumbs/**/*.webp
 !public/images/logos/**/*.webp
 
-# data/cache
+# one-off root clutter
+/0
+/=
+/1200x600.jpg
+/256x256.jpg
+ReadMe.rtf
+QUALITY_REPORT.json
+geospatial_audit_report.md
+export_venues_csv*.js
+get-missing-sample.js
+test-*.js
+kovo.js
+mochaclass_debug.json
+debug_daum_api.json
+
+# data/cache / audit exports (generated)
 venue_cache.json
 venue_report.*
 venue_export*.csv
@@ -55,18 +89,32 @@ venues_for_review.csv
 unmatched_sports_venues.json
 venue_audit.csv
 venue_export.csv
+venue_coordinate_mismatches.csv
 venue_validation_log.txt
 missing_venues.txt
 missing_venues_report.json
 tmp/
 tmp-*.json
 ship-*.sh
+scrape_failures.txt
+scrape_recovered_failures.txt
 
-# env files (can opt-in for committing if needed)
+# npm local caches committed by mistake
+.npm-local-cache/
+.npm_cache/
+
+# env files
 .env*
+!.env.example
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+
+# editor
+.idea/
+.vscode/
+*.swp
+*~
