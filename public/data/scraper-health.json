@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-25T23:46:08.837Z",
+  "generatedAt": "2026-08-25T23:56:14.271Z",
   "totals": {
     "sources": 31,
-    "fresh": 17,
-    "aging": 3,
-    "stale": 11,
+    "fresh": 23,
+    "aging": 2,
+    "stale": 6,
     "missing": 0,
     "runFailures": 0
   },
@@ -14,8 +14,8 @@
       "label": "인터파크 티켓",
       "file": "interpark.json",
       "homepage": "https://tickets.interpark.com/",
-      "itemCount": 3011,
-      "mtime": "2026-08-25T23:46:06.983Z",
+      "itemCount": 3051,
+      "mtime": "2026-08-25T23:56:12.521Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -25,8 +25,8 @@
       "label": "예스24 티켓",
       "file": "yes24-exclusive.json",
       "homepage": "https://ticket.yes24.com/",
-      "itemCount": 154,
-      "mtime": "2026-08-25T23:46:07.903Z",
+      "itemCount": 56,
+      "mtime": "2026-08-25T23:56:12.914Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -36,8 +36,8 @@
       "label": "타임티켓",
       "file": "timeticket.json",
       "homepage": "https://www.timeticket.co.kr/",
-      "itemCount": 206,
-      "mtime": "2026-08-25T23:46:07.762Z",
+      "itemCount": 196,
+      "mtime": "2026-08-25T23:53:56.522Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -47,8 +47,8 @@
       "label": "대한민국 구석구석",
       "file": "festivals.json",
       "homepage": "https://korean.visitkorea.or.kr/",
-      "itemCount": 116,
-      "mtime": "2026-08-25T23:46:06.954Z",
+      "itemCount": 142,
+      "mtime": "2026-08-25T23:56:12.491Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -60,7 +60,7 @@
       "homepage": "https://www.kovo.co.kr/",
       "itemCount": 256,
       "mtime": "2026-06-04T09:45:29.378Z",
-      "ageHours": 1982,
+      "ageHours": 1982.2,
       "freshness": "stale",
       "lastRun": null
     },
@@ -71,7 +71,7 @@
       "homepage": "https://www.kbl.or.kr/",
       "itemCount": 0,
       "mtime": "2026-06-04T09:45:29.350Z",
-      "ageHours": 1982,
+      "ageHours": 1982.2,
       "freshness": "stale",
       "lastRun": null
     },
@@ -80,8 +80,8 @@
       "label": "KBO",
       "file": "kbo.json",
       "homepage": "https://www.koreabaseball.com/",
-      "itemCount": 1275,
-      "mtime": "2026-08-25T23:46:07.003Z",
+      "itemCount": 1360,
+      "mtime": "2026-08-25T23:53:56.466Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -93,7 +93,7 @@
       "homepage": "https://www.handballkorea.com/",
       "itemCount": 0,
       "mtime": "2026-06-04T09:45:29.345Z",
-      "ageHours": 1982,
+      "ageHours": 1982.2,
       "freshness": "stale",
       "lastRun": null
     },
@@ -104,7 +104,7 @@
       "homepage": "https://www.kleague.com/",
       "itemCount": 475,
       "mtime": "2026-07-20T02:26:51.297Z",
-      "ageHours": 885.3,
+      "ageHours": 885.5,
       "freshness": "stale",
       "lastRun": null
     },
@@ -112,10 +112,10 @@
       "key": "movie",
       "label": "영화",
       "file": "movies.json",
-      "itemCount": 85,
-      "mtime": "2026-07-27T04:27:33.220Z",
-      "ageHours": 715.3,
-      "freshness": "aging",
+      "itemCount": 95,
+      "mtime": "2026-08-25T23:53:55.615Z",
+      "ageHours": 0,
+      "freshness": "fresh",
       "lastRun": null
     },
     {
@@ -125,7 +125,7 @@
       "homepage": "https://www.myrealtrip.com/",
       "itemCount": 106,
       "mtime": "2026-06-04T09:45:29.399Z",
-      "ageHours": 1982,
+      "ageHours": 1982.2,
       "freshness": "stale",
       "lastRun": null
     },
@@ -135,7 +135,7 @@
       "file": "sssd-class.json",
       "homepage": "https://www.sssd.co.kr/",
       "itemCount": 30,
-      "mtime": "2026-08-25T23:46:07.750Z",
+      "mtime": "2026-08-25T23:53:56.521Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -146,7 +146,7 @@
       "file": "umclass.json",
       "homepage": "https://www.umclass.com/",
       "itemCount": 575,
-      "mtime": "2026-08-25T23:46:07.857Z",
+      "mtime": "2026-08-25T23:53:56.531Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -157,7 +157,7 @@
       "file": "mochaclass.json",
       "homepage": "https://www.mochaclass.com/",
       "itemCount": 1211,
-      "mtime": "2026-08-25T23:46:07.324Z",
+      "mtime": "2026-08-25T23:53:56.501Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -167,8 +167,8 @@
       "label": "서울문화포털",
       "file": "seoul-culture.json",
       "homepage": "https://culture.seoul.go.kr/",
-      "itemCount": 185,
-      "mtime": "2026-08-25T23:46:07.745Z",
+      "itemCount": 118,
+      "mtime": "2026-08-25T23:56:12.793Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -178,8 +178,8 @@
       "label": "문화포털",
       "file": "culture-portal.json",
       "homepage": "https://www.culture.go.kr/",
-      "itemCount": 7181,
-      "mtime": "2026-08-25T23:46:06.940Z",
+      "itemCount": 7087,
+      "mtime": "2026-08-25T23:56:12.475Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -190,7 +190,7 @@
       "file": "mommom.json",
       "homepage": "https://mom-mom.net/",
       "itemCount": 666,
-      "mtime": "2026-08-25T23:46:07.673Z",
+      "mtime": "2026-08-25T23:53:56.513Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -200,8 +200,8 @@
       "label": "맘맘 액티비티",
       "file": "mommom-activities.json",
       "homepage": "https://mom-mom.net/",
-      "itemCount": 237,
-      "mtime": "2026-08-25T23:46:07.344Z",
+      "itemCount": 157,
+      "mtime": "2026-08-25T23:56:12.726Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -212,7 +212,7 @@
       "file": "mommom-exb.json",
       "homepage": "https://mom-mom.net/",
       "itemCount": 262,
-      "mtime": "2026-08-25T23:46:07.369Z",
+      "mtime": "2026-08-25T23:53:56.506Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -222,8 +222,8 @@
       "label": "맘맘 상품",
       "file": "mommom-products.json",
       "homepage": "https://mom-mom.net/",
-      "itemCount": 237,
-      "mtime": "2026-08-25T23:46:07.431Z",
+      "itemCount": 157,
+      "mtime": "2026-08-25T23:56:12.742Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -234,7 +234,7 @@
       "file": "museum.json",
       "homepage": "https://mom-mom.net/",
       "itemCount": 1,
-      "mtime": "2026-08-25T23:46:07.681Z",
+      "mtime": "2026-08-25T23:53:56.514Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -244,8 +244,8 @@
       "label": "KOPIS",
       "file": "kopis-performances.json",
       "homepage": "https://www.kopis.or.kr/",
-      "itemCount": 4085,
-      "mtime": "2026-08-25T23:46:07.226Z",
+      "itemCount": 4180,
+      "mtime": "2026-08-25T23:56:12.672Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -256,7 +256,7 @@
       "file": "tourism.json",
       "homepage": "https://korean.visitkorea.or.kr/",
       "itemCount": 732,
-      "mtime": "2026-08-25T23:46:07.789Z",
+      "mtime": "2026-08-25T23:53:56.526Z",
       "ageHours": 0,
       "freshness": "fresh",
       "lastRun": null
@@ -266,10 +266,10 @@
       "label": "코엑스 전시",
       "file": "coex-exhibitions.json",
       "homepage": "https://www.coex.co.kr/",
-      "itemCount": 8,
-      "mtime": "2026-07-10T00:01:17.334Z",
-      "ageHours": 1127.7,
-      "freshness": "stale",
+      "itemCount": 0,
+      "mtime": "2026-08-25T23:53:55.474Z",
+      "ageHours": 0,
+      "freshness": "fresh",
       "lastRun": null
     },
     {
@@ -277,10 +277,10 @@
       "label": "킨텍스 전시",
       "file": "kintex-exhibitions.json",
       "homepage": "https://www.kintex.com/",
-      "itemCount": 37,
-      "mtime": "2026-07-10T00:01:17.335Z",
-      "ageHours": 1127.7,
-      "freshness": "stale",
+      "itemCount": 31,
+      "mtime": "2026-08-25T23:53:55.485Z",
+      "ageHours": 0,
+      "freshness": "fresh",
       "lastRun": null
     },
     {
@@ -288,10 +288,10 @@
       "label": "벡스코 전시",
       "file": "bexco-exhibitions.json",
       "homepage": "https://www.bexco.co.kr/",
-      "itemCount": 16,
-      "mtime": "2026-07-10T00:01:17.333Z",
-      "ageHours": 1127.7,
-      "freshness": "stale",
+      "itemCount": 7,
+      "mtime": "2026-08-25T23:53:55.473Z",
+      "ageHours": 0,
+      "freshness": "fresh",
       "lastRun": null
     },
     {
@@ -299,10 +299,10 @@
       "label": "세텍 전시",
       "file": "setec-exhibitions.json",
       "homepage": "https://www.setec.or.kr/",
-      "itemCount": 12,
-      "mtime": "2026-07-10T00:01:17.336Z",
-      "ageHours": 1127.7,
-      "freshness": "stale",
+      "itemCount": 8,
+      "mtime": "2026-08-25T23:53:55.631Z",
+      "ageHours": 0,
+      "freshness": "fresh",
       "lastRun": null
     },
     {
@@ -312,7 +312,7 @@
       "homepage": "https://gocamping.or.kr/",
       "itemCount": 20,
       "mtime": "2026-07-07T07:22:10.622Z",
-      "ageHours": 1192.4,
+      "ageHours": 1192.6,
       "freshness": "aging",
       "lastRun": null
     },
@@ -323,7 +323,7 @@
       "homepage": "https://www.templestay.com/",
       "itemCount": 12,
       "mtime": "2026-07-07T07:23:41.066Z",
-      "ageHours": 1192.4,
+      "ageHours": 1192.5,
       "freshness": "aging",
       "lastRun": null
     },
@@ -332,10 +332,10 @@
       "label": "트렌디 팝업스토어",
       "file": "popup-stores.json",
       "homepage": "https://popply.co.kr/",
-      "itemCount": 12,
-      "mtime": "2026-07-07T07:25:22.553Z",
-      "ageHours": 1192.3,
-      "freshness": "stale",
+      "itemCount": 4,
+      "mtime": "2026-08-25T23:53:55.628Z",
+      "ageHours": 0,
+      "freshness": "fresh",
       "lastRun": null
     },
     {
@@ -345,7 +345,7 @@
       "homepage": "https://www.klook.com/",
       "itemCount": 20,
       "mtime": "2026-07-07T07:27:12.357Z",
-      "ageHours": 1192.3,
+      "ageHours": 1192.5,
       "freshness": "stale",
       "lastRun": null
     }
