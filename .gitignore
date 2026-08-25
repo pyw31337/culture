@@ -118,3 +118,4 @@ scrape_recovered_failures.txt
 .vscode/
 *.swp
 *~
+install-improvements.mjs
