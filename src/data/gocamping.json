@@ -21,16 +21,16 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "솔섬오토캠핑장은 별주부전 테마파크가 있는 사천시 비토섬 인근 해안에 위치하고 있는 캠핑장이다. 바닥은 파쇄석으로 되어",
-    "dataCollectedAt": "2026-07-07T07:22:04.183Z"
+    "dataCollectedAt": "2026-08-26T00:14:23.223Z"
   },
   {
     "id": "gocamping_2703",
-    "title": "정읍시 내장산 국민여가캠핑장",
-    "venue": "정읍시 내장산 국민여가캠핑장",
-    "venueKey": "정읍시 내장산 국민여가캠핑장",
-    "address": "전북특별자치도 정읍시 내장산로 390",
-    "lat": 35.5249589,
-    "lng": 126.8948546,
+    "title": "정읍시 국민여가캠핑장",
+    "venue": "정읍시 국민여가캠핑장",
+    "venueKey": "정읍시 국민여가캠핑장",
+    "address": "전북특별자치도 정읍시 내장산로 410 (부전동)",
+    "lat": 35.5241500454258,
+    "lng": 126.89563576742,
     "region": "jeonbuk",
     "date": "2026.01.01 ~ 2026.12.31",
     "image": "/images/posters/gocamping/gocamping_2703.webp",
@@ -45,7 +45,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "내장산 국민여가캠핑장은 내장산 문화광장 내에 조성되어 있는 곳으로 일반캠핑장, 오토캠핑장, 카라반, 자가 카라반 등",
-    "dataCollectedAt": "2026-07-07T07:22:04.487Z"
+    "dataCollectedAt": "2026-08-26T00:14:23.422Z"
   },
   {
     "id": "gocamping_6975",
@@ -69,31 +69,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "우리나라에서 가장 아름답고 보존이 잘 된 강으로 통하는 동강. 정선 가수리를 들머리로 운치리와 제장마을,연포마을 차",
-    "dataCollectedAt": "2026-07-07T07:22:04.792Z"
-  },
-  {
-    "id": "gocamping_2422",
-    "title": "용인 자연숲",
-    "venue": "용인 자연숲",
-    "venueKey": "용인 자연숲",
-    "address": "경기도 용인시 처인구 원삼면 원양로591번길 93-34",
-    "lat": 37.2076471,
-    "lng": 127.309936,
-    "region": "gyeonggi",
-    "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/gocamping/gocamping_2422.webp",
-    "poster": "/images/posters/gocamping/gocamping_2422.webp",
-    "backupPoster": "/images/posters/gocamping/gocamping_2422.webp",
-    "link": "https://gocamping.or.kr/bsite/camp/info/read.do?c_no=2422&listOrdrTrget=c_rdcnt",
-    "genre": "activity",
-    "category": "액티비티",
-    "price": "홈페이지 참고",
-    "priceDetail": "홈페이지 참고",
-    "contact": "010-9424-7978",
-    "website": "https://gocamping.or.kr/",
-    "source": "gocamping",
-    "description": "용인자연숲힐링캠핑장은 양지 나들목 가까이에 있다. 지도상에서 보면 양지파인리조트 산 너머에 있다. 좌항 저수지 위쪽에",
-    "dataCollectedAt": "2026-07-07T07:22:05.106Z"
+    "dataCollectedAt": "2026-08-26T00:14:23.609Z"
   },
   {
     "id": "gocamping_6808",
@@ -117,14 +93,38 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "고사포 해변은 변산반도 국립공원에 포함된 해수욕장이다.약 2km에 이르는 백사장과 방풍을 위해 심어 놓은 약 300m",
-    "dataCollectedAt": "2026-07-07T07:22:05.441Z"
+    "dataCollectedAt": "2026-08-26T00:14:23.813Z"
+  },
+  {
+    "id": "gocamping_2422",
+    "title": "용인 자연숲",
+    "venue": "용인 자연숲",
+    "venueKey": "용인 자연숲",
+    "address": "경기도 용인시 처인구 원삼면 원양로591번길 93-34",
+    "lat": 37.2076471,
+    "lng": 127.309936,
+    "region": "gyeonggi",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/gocamping/gocamping_2422.webp",
+    "poster": "/images/posters/gocamping/gocamping_2422.webp",
+    "backupPoster": "/images/posters/gocamping/gocamping_2422.webp",
+    "link": "https://gocamping.or.kr/bsite/camp/info/read.do?c_no=2422&listOrdrTrget=c_rdcnt",
+    "genre": "activity",
+    "category": "액티비티",
+    "price": "홈페이지 참고",
+    "priceDetail": "홈페이지 참고",
+    "contact": "010-9424-7978",
+    "website": "https://gocamping.or.kr/",
+    "source": "gocamping",
+    "description": "용인자연숲힐링캠핑장은 양지 나들목 가까이에 있다. 지도상에서 보면 양지파인리조트 산 너머에 있다. 좌항 저수지 위쪽에",
+    "dataCollectedAt": "2026-08-26T00:14:24.030Z"
   },
   {
     "id": "gocamping_8014",
     "title": "수도권매립지 캠핑장",
     "venue": "수도권매립지 캠핑장",
     "venueKey": "수도권매립지 캠핑장",
-    "address": "인천광역시 검단구 정서진로 500 (오류동) 500",
+    "address": "인천광역시 서구 정서진로 500 (오류동) 500",
     "lat": 37.5697718419022,
     "lng": 126.657130748411,
     "region": "incheon",
@@ -141,31 +141,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "고캠핑 등록 야영장",
-    "dataCollectedAt": "2026-07-07T07:22:05.744Z"
-  },
-  {
-    "id": "gocamping_2999",
-    "title": "충주카누캠핑장",
-    "venue": "충주카누캠핑장",
-    "venueKey": "충주카누캠핑장",
-    "address": "충청북도 충주시 동량면 지등로 1276-4",
-    "lat": 36.9758361790207,
-    "lng": 128.020916889977,
-    "region": "chungbuk",
-    "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/gocamping/gocamping_2999.webp",
-    "poster": "/images/posters/gocamping/gocamping_2999.webp",
-    "backupPoster": "/images/posters/gocamping/gocamping_2999.webp",
-    "link": "https://gocamping.or.kr/bsite/camp/info/read.do?c_no=2999&listOrdrTrget=c_rdcnt",
-    "genre": "activity",
-    "category": "액티비티",
-    "price": "홈페이지 참고",
-    "priceDetail": "홈페이지 참고",
-    "contact": "010-4479-5587",
-    "website": "https://gocamping.or.kr/",
-    "source": "gocamping",
-    "description": "카누 캠핑장은 충북 충주시 동량면에 자리 잡고 있다. 충주시청을 기점으로 약 15km 거리에 있으며, 차량을 이용해",
-    "dataCollectedAt": "2026-07-07T07:22:06.056Z"
+    "dataCollectedAt": "2026-08-26T00:14:24.373Z"
   },
   {
     "id": "gocamping_2217",
@@ -189,7 +165,31 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "고래불국민야영장은 경상북도 영덕군 고래불해수욕장 인근에 자리했다. 당진영덕고속도로 영덕IC로 나와 국도 7호선을 타고",
-    "dataCollectedAt": "2026-07-07T07:22:06.386Z"
+    "dataCollectedAt": "2026-08-26T00:14:25.137Z"
+  },
+  {
+    "id": "gocamping_2999",
+    "title": "충주카누캠핑장",
+    "venue": "충주카누캠핑장",
+    "venueKey": "충주카누캠핑장",
+    "address": "충청북도 충주시 동량면 지등로 1276-4",
+    "lat": 36.9758361790207,
+    "lng": 128.020916889977,
+    "region": "chungbuk",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/gocamping/gocamping_2999.webp",
+    "poster": "/images/posters/gocamping/gocamping_2999.webp",
+    "backupPoster": "/images/posters/gocamping/gocamping_2999.webp",
+    "link": "https://gocamping.or.kr/bsite/camp/info/read.do?c_no=2999&listOrdrTrget=c_rdcnt",
+    "genre": "activity",
+    "category": "액티비티",
+    "price": "홈페이지 참고",
+    "priceDetail": "홈페이지 참고",
+    "contact": "010-4479-5587",
+    "website": "https://gocamping.or.kr/",
+    "source": "gocamping",
+    "description": "카누 캠핑장은 충북 충주시 동량면에 자리 잡고 있다. 충주시청을 기점으로 약 15km 거리에 있으며, 차량을 이용해",
+    "dataCollectedAt": "2026-08-26T00:14:25.335Z"
   },
   {
     "id": "gocamping_2672",
@@ -213,7 +213,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "장호비치캠핑장은 동해안에서도 가장 아름답기로 소문난 장호해변 언덕에 자리잡고 있다. 캠핑장 바로 앞이 해수욕장 이고,",
-    "dataCollectedAt": "2026-07-07T07:22:06.717Z"
+    "dataCollectedAt": "2026-08-26T00:14:25.540Z"
   },
   {
     "id": "gocamping_7767",
@@ -237,7 +237,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "대천용두캠핑장은 충남 보령시 웅천읍에 자리했다. 보령시청을 기점으로 15Km가량 떨어졌다. 자동차를 타고 충서로, 월",
-    "dataCollectedAt": "2026-07-07T07:22:07.053Z"
+    "dataCollectedAt": "2026-08-26T00:14:25.718Z"
   },
   {
     "id": "gocamping_3389",
@@ -261,7 +261,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "거제의 명소인 학동몽돌해수욕장을 정원처럼 끼고 조성된 학동자동차야영장은 한려해상국립공원에서 운영하는 캠핑장입니다. 자",
-    "dataCollectedAt": "2026-07-07T07:22:07.902Z"
+    "dataCollectedAt": "2026-08-26T00:14:26.127Z"
   },
   {
     "id": "gocamping_3394",
@@ -285,7 +285,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "학암포 자동차야영장은 충남 태안군 원북면에 자리 잡고 있다. 태안군청을 기점으로 약 24km 거리에 있으며, 차량을",
-    "dataCollectedAt": "2026-07-07T07:22:08.243Z"
+    "dataCollectedAt": "2026-08-26T00:14:26.427Z"
   },
   {
     "id": "gocamping_6959",
@@ -309,16 +309,16 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "산림청 국립화천숲속야영장은 산림청 제1호 숲속야영장으로, 산림의 원형을 최대한 보전해 조성된 야영장입니다. 2018년",
-    "dataCollectedAt": "2026-07-07T07:22:08.563Z"
+    "dataCollectedAt": "2026-08-26T00:14:26.712Z"
   },
   {
     "id": "gocamping_1601",
-    "title": "생림 오토 캠핑장",
-    "venue": "생림 오토 캠핑장",
-    "venueKey": "생림 오토 캠핑장",
+    "title": "김해생림오토캠핑장",
+    "venue": "김해생림오토캠핑장",
+    "venueKey": "김해생림오토캠핑장",
     "address": "경상남도 김해시 생림면 마사리 1322-6",
-    "lat": 35.3664367,
-    "lng": 128.8124517,
+    "lat": 35.3651886220804,
+    "lng": 128.811910126267,
     "region": "gyeongnam",
     "date": "2026.01.01 ~ 2026.12.31",
     "image": "/images/posters/gocamping/gocamping_1601.webp",
@@ -333,31 +333,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "생림오토캠핑장은 낙동강을 바라보고 작약산을 등지고 있는 캠핑장으로, 캠핑장의 크기는 38,000㎡이며, 56개의 사이",
-    "dataCollectedAt": "2026-07-07T07:22:08.896Z"
-  },
-  {
-    "id": "gocamping_6979",
-    "title": "마장호수 휴 캠핑장",
-    "venue": "마장호수 휴 캠핑장",
-    "venueKey": "마장호수 휴 캠핑장",
-    "address": "경기도 파주시 광탄면 기산리 459-6",
-    "lat": 37.7721753,
-    "lng": 126.9275139,
-    "region": "gyeonggi",
-    "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/gocamping/gocamping_6979.webp",
-    "poster": "/images/posters/gocamping/gocamping_6979.webp",
-    "backupPoster": "/images/posters/gocamping/gocamping_6979.webp",
-    "link": "https://gocamping.or.kr/bsite/camp/info/read.do?c_no=6979&listOrdrTrget=c_rdcnt",
-    "genre": "activity",
-    "category": "액티비티",
-    "price": "홈페이지 참고",
-    "priceDetail": "홈페이지 참고",
-    "contact": "02-729-9100",
-    "website": "https://gocamping.or.kr/",
-    "source": "gocamping",
-    "description": "고캠핑 등록 야영장",
-    "dataCollectedAt": "2026-07-07T07:22:09.192Z"
+    "dataCollectedAt": "2026-08-26T00:14:27.577Z"
   },
   {
     "id": "gocamping_7254",
@@ -381,7 +357,31 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "평화누리캠핑장은 DMZ 일원에 위치해 판문점, 제3땅굴, 도라산전망대, 임진각 평화누리 등 주요 역사·관광 명소와의",
-    "dataCollectedAt": "2026-07-07T07:22:09.452Z"
+    "dataCollectedAt": "2026-08-26T00:14:27.862Z"
+  },
+  {
+    "id": "gocamping_6979",
+    "title": "마장호수 휴 캠핑장",
+    "venue": "마장호수 휴 캠핑장",
+    "venueKey": "마장호수 휴 캠핑장",
+    "address": "경기도 파주시 광탄면 기산리 459-6",
+    "lat": 37.5665,
+    "lng": 126.978,
+    "region": "gyeonggi",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/gocamping/gocamping_6979.webp",
+    "poster": "/images/posters/gocamping/gocamping_6979.webp",
+    "backupPoster": "/images/posters/gocamping/gocamping_6979.webp",
+    "link": "https://gocamping.or.kr/bsite/camp/info/read.do?c_no=6979&listOrdrTrget=c_rdcnt",
+    "genre": "activity",
+    "category": "액티비티",
+    "price": "홈페이지 참고",
+    "priceDetail": "홈페이지 참고",
+    "contact": "02-729-9100",
+    "website": "https://gocamping.or.kr/",
+    "source": "gocamping",
+    "description": "고캠핑 등록 야영장",
+    "dataCollectedAt": "2026-08-26T00:14:28.656Z"
   },
   {
     "id": "gocamping_306",
@@ -389,8 +389,8 @@
     "venue": "공릉관광지 캠핑장",
     "venueKey": "공릉관광지 캠핑장",
     "address": "경기도 파주시 조리읍 장곡로 218",
-    "lat": 37.7498499,
-    "lng": 126.8335561,
+    "lat": 37.7498499368493,
+    "lng": 126.833556117164,
     "region": "gyeonggi",
     "date": "2026.01.01 ~ 2026.12.31",
     "image": "/images/posters/gocamping/gocamping_306.webp",
@@ -401,11 +401,11 @@
     "category": "액티비티",
     "price": "홈페이지 참고",
     "priceDetail": "홈페이지 참고",
-    "contact": "031-950-1990",
+    "contact": "031-950-1999",
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "공릉관광지캠핑장은 경기도 파주시 공릉관광지 내부에 위치한 캠핑장이다. 수도권 북부지역 최대 규모의 놀이시설인 공릉유원",
-    "dataCollectedAt": "2026-07-07T07:22:09.745Z"
+    "dataCollectedAt": "2026-08-26T00:14:28.860Z"
   },
   {
     "id": "gocamping_3139",
@@ -429,7 +429,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "둘레길 캠핑장은 충남 태안군 이원면에 위치했다. 태안군청을 기점으로 약 28km 거리에 있으며, 차량을 이용해 서해로",
-    "dataCollectedAt": "2026-07-07T07:22:10.032Z"
+    "dataCollectedAt": "2026-08-26T00:14:29.101Z"
   },
   {
     "id": "gocamping_2464",
@@ -453,7 +453,7 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "원동자연휴양림은 영남의 알프스라 불리는 가지산, 영축산, 신불산, 천태산, 토곡산, 오봉산 등에 둘러싸인 고즈넉한 곳",
-    "dataCollectedAt": "2026-07-07T07:22:10.346Z"
+    "dataCollectedAt": "2026-08-26T00:14:29.516Z"
   },
   {
     "id": "gocamping_2022",
@@ -477,6 +477,6 @@
     "website": "https://gocamping.or.kr/",
     "source": "gocamping",
     "description": "안산화랑오토캠핑장은 경기도 안산시 단원구에 위치했다. 시흥대로를 타고 지하철 4호선 초지역 방면으로 달리면 도착한다.",
-    "dataCollectedAt": "2026-07-07T07:22:10.620Z"
+    "dataCollectedAt": "2026-08-26T00:14:29.850Z"
   }
 ]

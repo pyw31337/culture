@@ -1,4 +1,8 @@
 import { REGIONS } from './constants';
+import {
+  normalizeRegionId as canonicalRegionId,
+  normalizeRegionLabel,
+} from './region-normalize';
 
 export const REGION_SELECTION_STORAGE_KEY = 'cf_region_selection_v2';
 export const REGION_SELECTION_EVENT = 'cultureflow:region-selection-change';
@@ -8,7 +12,9 @@ export type DistrictSelectionMap = Record<string, string[]>;
 function normalizeRegionId(region?: string | null) {
   const value = region?.trim();
   if (!value || value === 'all') return value || '';
-  return REGIONS.find((item) => item.id === value || item.label === value)?.id || value;
+  const canonical = canonicalRegionId(value);
+  if (canonical && REGIONS.some((item) => item.id === canonical)) return canonical;
+  return REGIONS.find((item) => item.id === value || item.label === value)?.id || canonical || value;
 }
 
 export function parseRegionSelection(value?: string | null): string[] {
@@ -43,7 +49,7 @@ export function serializeDistrictSelection(map: DistrictSelectionMap) {
 
 export function getRegionLabel(regionId: string) {
   if (regionId === 'all') return '전국';
-  return REGIONS.find((region) => region.id === regionId)?.label || regionId;
+  return REGIONS.find((region) => region.id === regionId)?.label || normalizeRegionLabel(regionId) || regionId;
 }
 
 export function getRegionSelectionLabel(regionValue?: string | null, districtValue?: string | null) {
@@ -62,7 +68,6 @@ export function getRegionSelectionSentenceLabel(regionValue?: string | null, dis
   const regions = parseRegionSelection(regionValue);
   if (regions.length === 0) return '전국';
   const districts = parseDistrictSelection(districtValue, regions[0]);
-
   return regions.map((region) => {
     const selectedDistricts = districts[region] || [];
     const label = getRegionLabel(region);
