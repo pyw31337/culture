@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 import { Performance } from '../src/types';
-import { atomicWriteJson } from './utils/scraper-utils';
+import { atomicWriteJson, atomicWriteJsonPreserve } from './utils/scraper-utils';
 
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const OUTPUT_FILE = path.join(process.cwd(), 'src/data/klook-deals.json');
@@ -105,16 +105,128 @@ async function processImage(url: string, filenameBase: string, subDir: string): 
 }
 
 async function scrapeHotdeals() {
-    console.log('🚀 Starting Leisure Hotdeals Scraper...');
+    
+const BROWSER_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Upgrade-Insecure-Requests': '1',
+};
+
+function absolutizeUrl(url: string, base: string): string {
+    if (!url) return '';
+    if (url.startsWith('//')) return 'https:' + url;
+    if (url.startsWith('http')) return url;
+    try { return new URL(url, base).toString(); } catch { return url; }
+}
+
+function pickBestImage(candidates: string[]): string {
+    const scored = candidates
+        .map((u) => u.trim())
+        .filter((u) => {
+            if (!u || u.startsWith('data:')) return false;
+            const low = u.toLowerCase();
+            // UI chrome / badges — never use as product poster
+            if (/icon-picto|icon-|sprite|badge|logo-only|placeholder|1x1|spacer|blank|loading/.test(low)) return false;
+            if (/\/icon\//.test(low)) return false;
+            return true;
+        })
+        .map((u) => {
+            const low = u.toLowerCase();
+            let score = 0;
+            if (/\.(jpe?g|webp)/i.test(u)) score += 4;
+            if (/\.png$/i.test(u)) score += 1;
+            if (/og:|\/product\/|\/leisure\/|main|poster|cover|gallery|upload|resized/i.test(low)) score += 5;
+            if (/lqt-images|yanolja|dailyhotel|cloudfront|kakaocdn|image\.toast/.test(low)) score += 3;
+            // Prefer larger looking paths
+            if (/[_-]?(10[0-9]{2}|[2-9][0-9]{2,3})x/.test(low)) score += 2;
+            if (u.length > 60) score += 1;
+            // Penalize tiny UI assets that slipped through
+            if (/picto|favicon|emoji/.test(low)) score -= 20;
+            return { u, score };
+        })
+        .filter((x) => x.score > 0)
+        .sort((a, b) => b.score - a.score);
+    return scored[0]?.u || '';
+}
+
+async function fetchDetailImage(detailUrl: string): Promise<string> {
+    const urls = [
+        detailUrl,
+        detailUrl.replace('https://www.dailyhotel.com', 'https://leisure-web.yanolja.com'),
+        detailUrl.replace('https://leisure-web.yanolja.com', 'https://www.dailyhotel.com'),
+    ];
+    const unique = [...new Set(urls.filter(Boolean))];
+
+    for (const url of unique) {
+        try {
+            const res = await axios.get(url, {
+                headers: { ...BROWSER_HEADERS, Referer: 'https://www.dailyhotel.com/leisure' },
+                timeout: 20000,
+                maxRedirects: 5,
+                validateStatus: (s) => s >= 200 && s < 400,
+            });
+            const html = String(res.data || '');
+            const $ = cheerio.load(html);
+            const candidates: string[] = [];
+
+            const og = $('meta[property="og:image"]').attr('content')
+                || $('meta[name="og:image"]').attr('content')
+                || $('meta[property="og:image:secure_url"]').attr('content');
+            if (og) candidates.push(absolutizeUrl(og, url));
+
+            const tw = $('meta[name="twitter:image"]').attr('content');
+            if (tw) candidates.push(absolutizeUrl(tw, url));
+
+            $('script[type="application/ld+json"]').each((_, el) => {
+                try {
+                    const raw = $(el).html() || '';
+                    const data = JSON.parse(raw);
+                    const list = Array.isArray(data) ? data : [data];
+                    for (const node of list) {
+                        const img = node?.image || node?.photo;
+                        if (typeof img === 'string') candidates.push(absolutizeUrl(img, url));
+                        if (Array.isArray(img)) img.forEach((x: string) => candidates.push(absolutizeUrl(x, url)));
+                    }
+                } catch { /* ignore */ }
+            });
+
+            $('img').each((_, el) => {
+                const src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-original') || '';
+                if (src) candidates.push(absolutizeUrl(src, url));
+            });
+
+            // raw regex fallback for JSON image fields
+            const re = /https?:\/\/[^"'\s]+\.(?:jpe?g|png|webp)/gi;
+            const found = html.match(re) || [];
+            found.slice(0, 30).forEach((u) => candidates.push(u));
+
+            const best = pickBestImage(candidates);
+            if (best) {
+                console.log('[Hotdeals] detail image', url, '->', best.slice(0, 80));
+                return best;
+            }
+        } catch (e: any) {
+            console.warn('[Hotdeals] detail fetch failed', url, e?.message || e);
+        }
+    }
+    return '';
+}
+
+
+console.log('🚀 Starting Leisure Hotdeals Scraper...');
     const items: Performance[] = [];
     const seen = new Set<string>();
 
     try {
         const res = await axios.get(`${BASE_URL}/leisure`, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            },
-            timeout: 20000
+            headers: { ...BROWSER_HEADERS, Referer: 'https://www.dailyhotel.com/' },
+            timeout: 25000,
         });
 
         const $ = cheerio.load(res.data);
@@ -132,7 +244,11 @@ async function scrapeHotdeals() {
             seen.add(id);
 
             const title = $(card).find('div').eq(1).text().trim() || '레저 핫딜 상품';
-            const rawImg = $(card).find('img').attr('src') || '';
+            let rawImg = $(card).find('img').attr('src')
+                || $(card).find('img').attr('data-src')
+                || $(card).find('img').attr('data-original')
+                || '';
+            rawImg = absolutizeUrl(rawImg, BASE_URL);
 
             // Skip invalid items
             if (!title || title.includes('레저') && title.length < 5) continue;
@@ -181,8 +297,19 @@ async function scrapeHotdeals() {
                 }
             }
 
-            // Image process
-            const localImage = rawImg ? await processImage(rawImg, id, 'posters/hotdeals') : '';
+            // Image process: keep list thumb unless weak; detail must beat UI icons
+            let imageUrl = rawImg;
+            const weak = !imageUrl || /placeholder|data:|icon-picto|\/icon\//i.test(imageUrl) || imageUrl.length < 20;
+            if (weak || process.env.HOTDEAL_FORCE_DETAIL === '1') {
+                const detailUrl = absolutizeUrl(href, BASE_URL);
+                const fromDetail = await fetchDetailImage(detailUrl);
+                if (fromDetail && !/icon-picto|\/icon\//i.test(fromDetail)) {
+                    imageUrl = fromDetail;
+                }
+                await new Promise((r) => setTimeout(r, 250));
+            }
+            if (imageUrl && /icon-picto|\/icon\//i.test(imageUrl)) imageUrl = '';
+            const localImage = imageUrl ? await processImage(imageUrl, id, 'posters/hotdeals') : '';
 
             // Dates: valid for this year
             const year = new Date().getFullYear();
@@ -217,7 +344,7 @@ async function scrapeHotdeals() {
         }
 
         console.log(`[Hotdeals] Successfully scraped ${items.length} hot deals.`);
-        atomicWriteJson(OUTPUT_FILE, items);
+        atomicWriteJsonPreserve(OUTPUT_FILE, items, { allowEmpty: process.env.SCRAPE_ALLOW_EMPTY === '1', label: 'klook-deals.json' });
         console.log(`Saved entries to ${OUTPUT_FILE}`);
     } catch (e: any) {
         console.error('Failed to scrape Hotdeals:', e.message);
