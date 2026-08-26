@@ -119,3 +119,4 @@ scrape_recovered_failures.txt
 *.swp
 *~
 install-improvements.mjs
+src/data/_scraper-health-session.json

@@ -69,16 +69,16 @@ const GENRE_LABELS: Record<string, string> = {
 
 const FALLBACK_IMAGES: Record<string, string> = {
     soccer: '/images/fallbacks/soccer.jpg',
-    baseball: '',
-    basketball: '',
-    volleyball: '',
-    handball: '',
-    museum: '',
-    exhibition: '',
-    classic_tradition: '',
-    activity: '',
-    movie: '',
-    default: ''
+    baseball: '/images/fallbacks/baseball.jpg',
+    basketball: '/images/fallbacks/basketball.jpg',
+    volleyball: '/images/volleyball_poster.png',
+    handball: '/images/fallbacks/handball.jpg',
+    museum: '/images/fallbacks/museum.jpg',
+    exhibition: '/images/fallbacks/exhibition.jpg',
+    classic_tradition: '/images/fallbacks/classic.jpg',
+    activity: '/images/fallbacks/activity.jpg',
+    movie: '/images/fallbacks/movie.svg',
+    default: '/images/fallbacks/activity.jpg'
 };
 
 const SOURCE_FRESH_DAYS = 3;

@@ -2,7 +2,7 @@ import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
 import cliProgress from 'cli-progress';
-import { atomicWriteJson } from './utils/scraper-utils';
+import { atomicWriteJson, atomicWriteJsonPreserve } from './utils/scraper-utils';
 import { runScraperJob } from './utils/scraper-runner';
 
 function slugify(text: string): string {
@@ -51,6 +51,33 @@ function isUpcomingOrToday(dateStr: string, timeStr?: string) {
     return d >= getKstTodayStart();
 }
 
+
+async function detectKovoSeasons(): Promise<string[]> {
+    const env = (process.env.KOVO_SEASONS || '').split(',').map((s) => s.trim()).filter(Boolean);
+    if (env.length) return env;
+    const found: string[] = [];
+    for (let n = 20; n <= 30; n++) {
+        const code = String(n).padStart(3, '0');
+        try {
+            const url = 'https://user-api.kovo.co.kr/stat/game-schedule?gcode=001&seasonCode=' + code + '&leagueCode=201&round=1';
+            const res = await axios.get(url, {
+                headers: { 'User-Agent': 'Mozilla/5.0', Referer: 'https://kovo.co.kr/' },
+                timeout: 15000,
+            });
+            const content = res.data?.payload?.content;
+            if (Array.isArray(content) && content.length > 0) found.push(code);
+        } catch {
+            // ignore
+        }
+    }
+    if (!found.length) {
+        console.warn('[kovo] season probe empty; fallback 022,023');
+        return ['022', '023'];
+    }
+    console.log('[kovo] detected seasons:', found.join(','));
+    return found;
+}
+
 async function scrapeKovo() {
     console.log(`Starting KOVO Scraper (Axios)...`);
 
@@ -58,7 +85,7 @@ async function scrapeKovo() {
         const allItems: any[] = [];
 
         // 022 = 2025-26 (mostly past), 023 = 2026-27 upcoming
-        const seasons = (process.env.KOVO_SEASONS || '022,023').split(',').map((s) => s.trim()).filter(Boolean);
+        const seasons = await detectKovoSeasons();
         const leagues = [201, 202]; // 201: Regular, 202: Post-season
         for (const seasonCode of seasons) {
         for (const league of leagues) {
@@ -100,7 +127,7 @@ async function scrapeKovo() {
 
         if (allItems.length === 0) {
             console.log('No performances found in any round.');
-            atomicWriteJson(OUTPUT_PATH, []);
+            atomicWriteJsonPreserve(OUTPUT_PATH, [], { allowEmpty: process.env.SCRAPE_ALLOW_EMPTY === '1', label: 'kovo.json' });
             return;
         }
 
@@ -218,7 +245,7 @@ async function scrapeKovo() {
         if (!keepPast && performances.length > 0 && upcoming.length === 0) {
             console.log('No upcoming KOVO matches remain. Writing empty seasonal file.');
         }
-        atomicWriteJson(OUTPUT_PATH, upcoming);
+        atomicWriteJsonPreserve(OUTPUT_PATH, upcoming, { allowEmpty: process.env.SCRAPE_ALLOW_EMPTY === '1', label: 'kovo.json' });
         console.log(`Saved ${upcoming.length} items to ${OUTPUT_PATH}`);
 
     } catch (error) {

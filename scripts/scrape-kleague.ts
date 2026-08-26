@@ -1,7 +1,7 @@
 import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
-import { atomicWriteJson } from './utils/scraper-utils';
+import { atomicWriteJsonPreserve } from './utils/scraper-utils';
 
 /**
  * K League 2026 Scraper
@@ -11,7 +11,7 @@ import { atomicWriteJson } from './utils/scraper-utils';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kleague.json');
 const SOCCER_POSTER_PATH = '/images/fallbacks/soccer.jpg';
 const API_URL = 'https://www.kleague.com/getScheduleList.do';
-const YEAR = '2026';
+const YEAR = process.env.KLEAGUE_YEAR || String(new Date().getFullYear());
 
 // Team ID Mapping (Extracted during research)
 const TEAM_MAP: Record<string, { id: string, name: string }> = {
@@ -229,7 +229,7 @@ async function scrapeKLeague() {
             })
             .sort((a, b) => a.date.localeCompare(b.date));
 
-        atomicWriteJson(OUTPUT_PATH, mergedList);
+        atomicWriteJsonPreserve(OUTPUT_PATH, mergedList, { allowEmpty: process.env.SCRAPE_ALLOW_EMPTY === '1', label: 'kleague.json' });
         console.log(`Saved to ${OUTPUT_PATH}`);
 
     } catch (err) {

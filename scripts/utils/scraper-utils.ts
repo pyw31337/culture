@@ -35,6 +35,33 @@ export function generateStableId(title: string, date: string, venue: string, sou
   return cleanId;
 }
 
+
+/**
+ * Skip empty-array overwrite when a non-empty file already exists.
+ * Set SCRAPE_ALLOW_EMPTY=1 to force empty write (true off-season wipe).
+ */
+export function atomicWriteJsonPreserve(
+  filePath: string,
+  data: unknown,
+  options?: { allowEmpty?: boolean; label?: string },
+) {
+  const allowEmpty = options?.allowEmpty === true;
+  const label = options?.label || path.basename(filePath);
+  if (Array.isArray(data) && data.length === 0 && !allowEmpty && fs.existsSync(filePath)) {
+    try {
+      const prev = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      if (Array.isArray(prev) && prev.length > 0) {
+        console.warn('[Scraper] Preserve previous ' + label + ' (' + prev.length + ' items); refused empty overwrite');
+        return { written: false, preserved: prev.length };
+      }
+    } catch {
+      // write empty below
+    }
+  }
+  atomicWriteJson(filePath, data);
+  return { written: true, preserved: 0, count: Array.isArray(data) ? data.length : 0 };
+}
+
 export function atomicWriteJson(filePath: string, data: unknown) {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) {
