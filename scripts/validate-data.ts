@@ -16,7 +16,7 @@ async function validateAll() {
 
     for (const file of files) {
         console.log(`\n--- Auditing ${file} ---`);
-        const data = loadJson(file);
+        const data = loadJson(file, []);
         if (!Array.isArray(data)) {
             console.log(`Skipping ${file} (not an array)`);
             continue;
