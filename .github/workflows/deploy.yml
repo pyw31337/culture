@@ -82,7 +82,7 @@ jobs:
           NEXT_PUBLIC_KAKAO_JS_KEY: ${{ secrets.NEXT_PUBLIC_KAKAO_JS_KEY }}
           NODE_OPTIONS: '--max-old-space-size=4096'
         run: |
-          npm run build:site
+          npm run build:site:ci
 
       - name: Verify Static Artifacts
         run: |

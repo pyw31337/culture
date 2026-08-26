@@ -38,7 +38,11 @@
   ],
   "exclude": [
     "node_modules",
-    "scripts/backups"
+    "scripts/backups",
+    "scripts",
+    "scripts/**/*",
+    "ops",
+    "ops/**/*"
   ],
   "ts-node": {
     "esm": true,

@@ -56,7 +56,7 @@ export function saveJson(filename: string, data: unknown) {
   console.log(`[Scraper] Saved ${count} items to ${filename}`);
 }
 
-export function loadJson<T = unknown>(filename: string, defaultValue: T): T {
+export function loadJson<T = unknown>(filename: string, defaultValue: T = [] as unknown as T): T {
   const filePath = path.join(process.cwd(), 'src/data', filename);
   if (fs.existsSync(filePath)) {
     return JSON.parse(fs.readFileSync(filePath, 'utf8')) as T;

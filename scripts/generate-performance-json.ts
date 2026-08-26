@@ -25,6 +25,7 @@ import { buildVenueCanonicalizationReport } from './utils/venue-canonicalization
 import { buildVenueMaster } from './utils/venue-master';
 import { applyVenuePlaceCache, buildVenuePlaceMatchingReport, type VenuePlaceCache, type VenuePlaceProvider } from './utils/venue-place-matching';
 import { isCompatibleVenueDisplayName } from './utils/venue-name-quality';
+import { normalizeRegionId } from '../src/lib/region-normalize';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -372,6 +373,20 @@ function buildCalendarPayloadItem(performance: PrunedPerformance) {
         openRun: performance.openRun,
         bracketRegion: performance.bracketRegion,
     }) as Partial<PrunedPerformance>;
+}
+
+
+function applyCanonicalRegion<T extends { region?: string; address?: string; venue?: string }>(item: T): T {
+    const fromFields = [item.region, item.address, item.venue].filter(Boolean).join(' ');
+    const id = normalizeRegionId(fromFields || item.region || '');
+    if (id && id !== 'etc') {
+        return { ...item, region: id };
+    }
+    if (item.region) {
+        const only = normalizeRegionId(item.region);
+        if (only) return { ...item, region: only };
+    }
+    return item;
 }
 
 function getCalendarWindowBounds() {
@@ -2039,6 +2054,12 @@ async function generate() {
         const calendarDir = path.join(dir, 'calendar');
         fs.mkdirSync(calendarDir, { recursive: true });
         
+                // Canonicalize region ids for all public payloads
+        const prunedCanonical = pruned.map((item) => applyCanonicalRegion(item as any));
+        // Use canonical list for all subsequent outputs
+        pruned.length = 0;
+        pruned.push(...prunedCanonical);
+
         const calendarPayload = pruned.map(buildCalendarPayloadItem);
         const monthlyChunks: Record<string, typeof calendarPayload> = {};
         
