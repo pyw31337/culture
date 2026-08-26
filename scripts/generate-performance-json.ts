@@ -374,28 +374,43 @@ function buildCalendarPayloadItem(performance: PrunedPerformance) {
     }) as Partial<PrunedPerformance>;
 }
 
+function getCalendarWindowBounds() {
+    const now = new Date();
+    const min = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+    const max = new Date(now.getFullYear(), now.getMonth() + 18, 1);
+    return { min, max };
+}
+
+function isYearMonthInCalendarWindow(yearMonth: string, min: Date, max: Date) {
+    const match = yearMonth.match(/^(\d{4})-(\d{2})$/);
+    if (!match) return false;
+    const d = new Date(Number(match[1]), Number(match[2]) - 1, 1);
+    return d >= min && d <= max;
+}
+
 function getMonthsForPerformance(performance: Partial<PrunedPerformance>): string[] {
     const months = new Set<string>();
+    const { min: windowMin, max: windowMax } = getCalendarWindowBounds();
     const dateStr = String(performance.date || '').replace(/\./g, '-');
     if (!dateStr || dateStr.trim() === '') {
         const now = new Date();
         return [`${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`];
     }
-    
+
     const toYearMonth = (d: Date) => {
         return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
     };
-    
+
     const schedule = getScheduleWindow(performance as any);
     let start: Date | null = null;
     let end: Date | null = null;
-    
+
     if (schedule.start) start = new Date(schedule.start);
     if (schedule.end) end = new Date(schedule.end);
-    
+
     if (start && isNaN(start.getTime())) start = null;
     if (end && isNaN(end.getTime())) end = null;
-    
+
     if (!start) {
         const matches = dateStr.match(/\b(20)?(\d{2})[-/](\d{2})[-/](\d{2})\b/g);
         if (matches && matches.length > 0) {
@@ -408,28 +423,41 @@ function getMonthsForPerformance(performance: Partial<PrunedPerformance>): strin
             }
         }
     }
-    
-    if (!start) {
+
+    if (!start || isNaN(start.getTime())) {
         const now = new Date();
         return [toYearMonth(now)];
     }
-    
+
+    // Drop clearly bogus historical/far-future dates from calendar index
+    if (start < windowMin && (!end || end < windowMin)) {
+        return [];
+    }
+    if (start > windowMax) {
+        return [];
+    }
+
     let limitEnd = new Date(start);
-    limitEnd.setMonth(limitEnd.getMonth() + 12); // Limit range to 1 year to prevent payload blowup
-    
+    limitEnd.setMonth(limitEnd.getMonth() + 12);
+
     let finalEnd = end;
     if (!finalEnd || finalEnd > limitEnd || isNaN(finalEnd.getTime())) {
         finalEnd = limitEnd;
     }
-    
+    if (finalEnd > windowMax) finalEnd = windowMax;
+    if (start < windowMin) start = windowMin;
+
     let current = new Date(start.getFullYear(), start.getMonth(), 1);
     const targetEnd = new Date(finalEnd.getFullYear(), finalEnd.getMonth(), 1);
-    
+
     while (current <= targetEnd) {
-        months.add(toYearMonth(current));
+        const ym = toYearMonth(current);
+        if (isYearMonthInCalendarWindow(ym, windowMin, windowMax)) {
+            months.add(ym);
+        }
         current.setMonth(current.getMonth() + 1);
     }
-    
+
     return Array.from(months);
 }
 
