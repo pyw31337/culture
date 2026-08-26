@@ -68,7 +68,7 @@ const GENRE_LABELS: Record<string, string> = {
 };
 
 const FALLBACK_IMAGES: Record<string, string> = {
-    soccer: '/images/soccer_goal_poster_20260528.jpg',
+    soccer: '/images/fallbacks/soccer.jpg',
     baseball: '',
     basketball: '',
     volleyball: '',
@@ -691,12 +691,7 @@ function getRemoteImageCandidate(performance: Performance) {
 
 function normalizeImageFields(items: Performance[]) {
     items.forEach((performance) => {
-        if (performance.genre === 'soccer') {
-            performance.image = FALLBACK_IMAGES.soccer;
-            performance.backupPoster = FALLBACK_IMAGES.soccer;
-        }
-
-        const normalizedImage = normalizeImageUrl(performance.image);
+const normalizedImage = normalizeImageUrl(performance.image);
         const normalizedBackup = normalizeImageUrl(performance.backupPoster);
         const normalizedPosterUrl = normalizeImageUrl(performance.posterUrl);
         const normalizedPoster = normalizeImageUrl(performance.poster);

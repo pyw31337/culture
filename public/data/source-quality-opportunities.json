@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-26T01:22:29.792Z",
+  "checkedAt": "2026-08-26T01:31:00.485Z",
   "status": "warn",
   "itemCount": 8157,
   "sourceCount": 27,
@@ -237,7 +237,7 @@
     }
   ],
   "missingImageCount": 785,
-  "weakImageCount": 0,
+  "weakImageCount": 106,
   "missingDetailImageCount": 4305,
   "missingCoordinateCount": 770,
   "missingAddressCount": 324,
