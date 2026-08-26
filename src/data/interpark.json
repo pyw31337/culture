@@ -2315,39 +2315,6 @@
     "priceDetail": "지정석55,000원\n스탠딩석55,000원"
   },
   {
-    "id": "perf_KOKOON_SHOW",
-    "title": "KOKOON SHOW",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009628_p.gif",
-    "date": "2026.07.11 ~ 2026.07.26",
-    "venue": "K-POP STAGE",
-    "link": "https://tickets.interpark.com/goods/26009628",
-    "region": "seoul",
-    "genre": "concert",
-    "runningTime": "60분",
-    "performanceTime": "",
-    "ageRating": "전체관람가",
-    "price": "전석 45,000원",
-    "originalPrice": "45,000원",
-    "discount": "50%",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "45,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "예매가능시간: 관람 2시간 전까지\n\n*07월 코쿤쇼 일정 \n07월11일(토) 6시 \n07월12일(일) 공연없음.\n07월18일(토) 6시 \n07월19일(일) 6시\n07월25일(토) 6시 \n07월26일(일) 6시",
-    "description": "예매가능시간: 관람 2시간 전까지\n\n*07월 코쿤쇼 일정 \n07월11일(토) 6시 \n07월12일(일) 공연없음.\n07월18일(토) 6시 \n07월19일(일) 6시\n07월25일(토) 6시 \n07월26일(일) 6시",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Detail/2026/6/2026063015064760.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26009628-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26009628-02.jpg"
-    ],
-    "lastEnriched": "2026-07-12T19:12:41.040Z"
-  },
-  {
     "id": "perf_VIO_LENCE_Live_In_Seoul_2026",
     "title": "VIO-LENCE Live In Seoul 2026",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26006247_p.gif",
@@ -2413,47 +2380,6 @@
       "https://ticketimage.interpark.com/Play/image/etc/26/26008365-01.jpg"
     ],
     "lastEnriched": "2026-07-15T19:21:27.414Z"
-  },
-  {
-    "id": "perf_2026연극_사랑해엄마",
-    "title": "2026연극 사랑해엄마",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005154_p.gif",
-    "date": "2026.05.01 ~ 2026.07.26",
-    "venue": "대학로 아트하우스",
-    "link": "https://tickets.interpark.com/goods/26005154",
-    "region": "대학로",
-    "genre": "play",
-    "runningTime": "110분",
-    "performanceTime": "",
-    "ageRating": "만 7세 이상",
-    "price": "특별석 50,000원\n일반석 50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "대학로 아트하우스(자세히)",
-    "priceList": [
-      {
-        "label": "특별석",
-        "price": "50,000원"
-      },
-      {
-        "label": "일반석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 관람 2시간 전까지",
-    "synopsis": "<캐스팅변경공지>제작사 내부적인 사정으로 인해 캐스팅이 변경되었습니다.캐스팅 스케줄 변경으로 인해 관람에 불편함을 드려 죄송합니다.관객 여러분들의 너그러운 양해 부탁드립니다.5월16일(토) 2시, 5시 철동役 고준혁 -> 안대겸5월17일(일) 2시 철동役 혁진 -> 안대겸5월21일(목) 7시30분 철동役 혁진 -> 안대겸5월22일(금) 7시30분 철동役 고준혁 -> 혁진5월23일(토) 2시, 5시 철동役 고준혁 -> 김건호5월27일(수) 7시30분 철동役 손수아 -> 정주희 5월28일(목) 7시30분 철동役 혁진 -> 안대겸5월31일(일) 2시 철동役 고준혁 -> 안대겸6월1일(월) 7시30분 철동役 혁진 -> 안대겸6월4일(목) 7시30분 철동役 고준혁 -> 정지환6월8일(월) 7시30분 철동役 고준혁 -> 정지환6월10일(수) 7시30분 철동役 고준혁 -> 정지환캐스팅 변경으로 예매 취소를 원하시는 경우, 해당 회차 공연 전날까지 예매처 고객센터를 통해 문의주시면 수수료 없이 취소 및 환불이 가능합니다.  앱/웹에서 직접 취소 시 수수료가 발생하오니 이 점 유의 부탁드립니다. 관람에 불편을 드려 죄송합니다. 너른 양해 부탁드립니다.취소 및 환불 관련 문의NOL 티켓 고객센터 1544-1555",
-    "description": "<캐스팅변경공지>제작사 내부적인 사정으로 인해 캐스팅이 변경되었습니다.캐스팅 스케줄 변경으로 인해 관람에 불편함을 드려 죄송합니다.관객 여러분들의 너그러운 양해 부탁드립니다.5월16일(토) 2시, 5시 철동役 고준혁 -> 안대겸5월17일(일) 2시 철동役 혁진 -> 안대겸5월21일(목) 7시30분 철동役 혁진 -> 안대겸5월22일(금) 7시30분 철동役 고준혁 -> 혁진5월23일(토) 2시, 5시 철동役 고준혁 -> 김건호5월27일(수) 7시30분 철동役 손수아 -> 정주희 5월28일(목) 7시30분 철동役 혁진 -> 안대겸5월31일(일) 2시 철동役 고준혁 -> 안대겸6월1일(월) 7시30분 철동役 혁진 -> 안대겸6월4일(목) 7시30분 철동役 고준혁 -> 정지환6월8일(월) 7시30분 철동役 고준혁 -> 정지환6월10일(수) 7시30분 철동役 고준혁 -> 정지환캐스팅 변경으로 예매 취소를 원하시는 경우, 해당 회차 공연 전날까지 예매처 고객센터를 통해 문의주시면 수수료 없이 취소 및 환불이 가능합니다.  앱/웹에서 직접 취소 시 수수료가 발생하오니 이 점 유의 부탁드립니다. 관람에 불편을 드려 죄송합니다. 너른 양해 부탁드립니다.취소 및 환불 관련 문의NOL 티켓 고객센터 1544-1555",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026051304091781.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/4/2026040115240423.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026051916432506.jpg",
-      "https://ticketimage.interpark.com/260051542026/05/18/5edf2735.png",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026051919542328.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26005154-15.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26005154-14.jpg"
-    ],
-    "lastEnriched": "2026-05-22T00:41:30.065Z"
   },
   {
     "id": "perf_나의_빈틈_메이트",
