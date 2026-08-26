@@ -74,8 +74,9 @@ async function detectKovoSeasons(): Promise<string[]> {
         console.warn('[kovo] season probe empty; fallback 022,023');
         return ['022', '023'];
     }
-    console.log('[kovo] detected seasons:', found.join(','));
-    return found;
+    const recent = found.slice(-2);
+    console.log('[kovo] detected seasons:', recent.join(','), '(from', found.join(','), ')');
+    return recent;
 }
 
 async function scrapeKovo() {
