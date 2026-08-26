@@ -11,7 +11,7 @@ interface PageProps {
 
 export const dynamicParams = false;
 
-const DETAIL_PAGE_EXPORT_LIMIT = Number(process.env.DETAIL_PAGE_EXPORT_LIMIT || 1800);
+const DETAIL_PAGE_EXPORT_LIMIT = Number(process.env.DETAIL_PAGE_EXPORT_LIMIT || 400);
 const ONE_DAY = 24 * 60 * 60 * 1000;
 
 function parseFirstEventDate(performance: Performance) {
