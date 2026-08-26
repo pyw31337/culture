@@ -32,17 +32,38 @@ const KOVO_SCHEDULE_URL = 'https://kovo.co.kr/games/v-leagues/schedules?season=0
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kovo.json');
 const VOLLEYBALL_POSTER = '/images/volleyball_poster.png';
 
+function getKstTodayStart() {
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Seoul',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+    const [year, month, day] = formatter.format(new Date()).split('-').map(Number);
+    return new Date(Date.UTC(year, month - 1, day));
+}
+
+function isUpcomingOrToday(dateStr: string, timeStr?: string) {
+    const match = String(dateStr || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!match) return false;
+    const d = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+    return d >= getKstTodayStart();
+}
+
 async function scrapeKovo() {
     console.log(`Starting KOVO Scraper (Axios)...`);
 
     try {
         const allItems: any[] = [];
 
+        // 022 = 2025-26 (mostly past), 023 = 2026-27 upcoming
+        const seasons = (process.env.KOVO_SEASONS || '022,023').split(',').map((s) => s.trim()).filter(Boolean);
         const leagues = [201, 202]; // 201: Regular, 202: Post-season
+        for (const seasonCode of seasons) {
         for (const league of leagues) {
-            console.log(`Fetching League ${league}...`);
+            console.log(`Fetching season ${seasonCode} league ${league}...`);
             for (let round = 1; round <= 6; round++) {
-                const apiRoundUrl = `https://user-api.kovo.co.kr/stat/game-schedule?gcode=001&seasonCode=022&leagueCode=${league}&round=${round}`;
+                const apiRoundUrl = `https://user-api.kovo.co.kr/stat/game-schedule?gcode=001&seasonCode=${seasonCode}&leagueCode=${league}&round=${round}`;
                 console.log(`Fetching League ${league} Round ${round} from API...`);
 
                 try {
@@ -74,8 +95,11 @@ async function scrapeKovo() {
             }
         }
 
+        } // seasons
+
         if (allItems.length === 0) {
             console.log('No performances found in any round.');
+            atomicWriteJson(OUTPUT_PATH, []);
             return;
         }
 
@@ -184,10 +208,17 @@ async function scrapeKovo() {
 
         progressBar.stop();
 
-        if (performances.length > 0) {
-            atomicWriteJson(OUTPUT_PATH, performances);
-            console.log(`Saved ${performances.length} items to ${OUTPUT_PATH}`);
+        const keepPast = process.env.SCRAPE_KEEP_PAST_SPORTS === '1';
+        const upcoming = keepPast
+            ? performances
+            : performances.filter((p) => isUpcomingOrToday(p.date));
+
+        console.log(`Total extracted: ${performances.length}, upcoming/current: ${upcoming.length}`);
+        if (!keepPast && performances.length > 0 && upcoming.length === 0) {
+            console.log('No upcoming KOVO matches remain. Writing empty seasonal file.');
         }
+        atomicWriteJson(OUTPUT_PATH, upcoming);
+        console.log(`Saved ${upcoming.length} items to ${OUTPUT_PATH}`);
 
     } catch (error) {
         console.error(`Fatal Error in KOVO Scraper:`, error);
@@ -195,14 +226,22 @@ async function scrapeKovo() {
 }
 
 function classifyRegion(venue: string): string {
-    if (venue.includes('서울')) return 'seoul';
-    if (venue.includes('인천') || venue.includes('경기') || venue.includes('수원') || venue.includes('안산') || venue.includes('화성') || venue.includes('의정부')) return 'gyeonggi';
+    if (!venue) return 'etc';
+    if (venue.includes('서울') || venue.includes('장충')) return 'seoul';
+    if (venue.includes('인천') || venue.includes('계양') || venue.includes('삼산')) return 'incheon';
+    if (venue.includes('수원') || venue.includes('안산') || venue.includes('화성') || venue.includes('의정부') || venue.includes('경기')) return 'gyeonggi';
     if (venue.includes('강원')) return 'gangwon';
-    if (venue.includes('충청') || venue.includes('천안') || venue.includes('대전')) return 'chungcheong';
-    if (venue.includes('전라') || venue.includes('광주')) return 'jeolla';
-    if (venue.includes('경상') || venue.includes('부산') || venue.includes('대구') || venue.includes('김천')) return 'gyeongsang';
+    if (venue.includes('대전') || venue.includes('충무')) return 'daejeon';
+    if (venue.includes('천안') || venue.includes('충남') || venue.includes('유관순')) return 'chungnam';
+    if (venue.includes('광주') || venue.includes('페퍼')) return 'gwangju';
+    if (venue.includes('전북') || venue.includes('전주')) return 'jeonbuk';
+    if (venue.includes('전남') || venue.includes('여수')) return 'jeonnam';
+    if (venue.includes('부산')) return 'busan';
+    if (venue.includes('대구')) return 'daegu';
+    if (venue.includes('김천') || venue.includes('경북')) return 'gyeongbuk';
+    if (venue.includes('경남') || venue.includes('창원')) return 'gyeongnam';
     if (venue.includes('제주')) return 'jeju';
-    return 'seoul';
+    return 'etc';
 }
 
 scrapeKovo().then(() => {

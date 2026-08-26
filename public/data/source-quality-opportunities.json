@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-08-26T00:30:06.311Z",
+  "checkedAt": "2026-08-26T00:36:26.561Z",
   "status": "warn",
-  "itemCount": 7941,
-  "sourceCount": 26,
+  "itemCount": 8157,
+  "sourceCount": 27,
   "highOpportunitySourceCount": 1,
   "topSourceOpportunities": [
     {
@@ -167,6 +167,29 @@
       "recommendedAction": "상세 이미지와 소개 이미지를 추가 수집하세요. 관광지/체험/공연 소스는 하단 썸네일 갤러리까지 확보하면 페이지 체류 품질이 좋아집니다."
     },
     {
+      "key": "volleyball",
+      "label": "KOVO",
+      "itemCount": 216,
+      "opportunityScore": 25,
+      "missingImageCount": 0,
+      "weakImageCount": 0,
+      "missingDetailImageCount": 216,
+      "missingCoordinateCount": 0,
+      "missingAddressCount": 0,
+      "missingVenueCount": 0,
+      "missingLinkCount": 0,
+      "unknownPriceCount": 216,
+      "weakDescriptionCount": 0,
+      "duplicateSignatureCount": 0,
+      "imageCoverageRate": 1,
+      "coordinateCoverageRate": 1,
+      "descriptionCoverageRate": 1,
+      "detailImageCoverageRate": 0,
+      "priceCoverageRate": 0,
+      "priority": "medium",
+      "recommendedAction": "상세 이미지와 소개 이미지를 추가 수집하세요. 관광지/체험/공연 소스는 하단 썸네일 갤러리까지 확보하면 페이지 체류 품질이 좋아집니다."
+    },
+    {
       "key": "sssd-class",
       "label": "솜씨당",
       "itemCount": 30,
@@ -211,37 +234,14 @@
       "priceCoverageRate": 0.3571,
       "priority": "medium",
       "recommendedAction": "상세본문, 유의사항, 프로그램 소개, 관람 포인트처럼 상단 요약과 중복되지 않는 본문을 더 수집하세요."
-    },
-    {
-      "key": "gocamping",
-      "label": "고캠핑",
-      "itemCount": 20,
-      "opportunityScore": 23,
-      "missingImageCount": 0,
-      "weakImageCount": 0,
-      "missingDetailImageCount": 20,
-      "missingCoordinateCount": 0,
-      "missingAddressCount": 0,
-      "missingVenueCount": 0,
-      "missingLinkCount": 0,
-      "unknownPriceCount": 20,
-      "weakDescriptionCount": 2,
-      "duplicateSignatureCount": 0,
-      "imageCoverageRate": 1,
-      "coordinateCoverageRate": 1,
-      "descriptionCoverageRate": 0.9,
-      "detailImageCoverageRate": 0,
-      "priceCoverageRate": 0,
-      "priority": "medium",
-      "recommendedAction": "상세 이미지와 소개 이미지를 추가 수집하세요. 관광지/체험/공연 소스는 하단 썸네일 갤러리까지 확보하면 페이지 체류 품질이 좋아집니다."
     }
   ],
   "missingImageCount": 97,
   "weakImageCount": 0,
-  "missingDetailImageCount": 4089,
+  "missingDetailImageCount": 4305,
   "missingCoordinateCount": 770,
   "missingAddressCount": 324,
-  "unknownPriceCount": 3399,
+  "unknownPriceCount": 3615,
   "weakDescriptionCount": 3102,
   "duplicateSignatureCount": 4
 }

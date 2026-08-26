@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-08-26T00:30:04.728Z",
+  "checkedAt": "2026-08-26T00:36:24.914Z",
   "status": "warn",
-  "venueCount": 3829,
+  "venueCount": 3838,
   "matchedCount": 908,
   "highConfidenceMatchCount": 663,
   "needsReviewCount": 20,
   "notFoundCount": 254,
-  "pendingLookupCount": 1957,
+  "pendingLookupCount": 1966,
   "insufficientIdentityCount": 226,
   "lookupReady": true,
   "providersConfigured": [
@@ -1312,6 +1312,54 @@
       ]
     },
     {
+      "venueId": "venue_대전충무체육관_1b4eu78",
+      "officialName": "대전충무체육관",
+      "address": "대전 중구 대종로 373",
+      "query": "대전충무체육관 대전 중구",
+      "priority": 200,
+      "performanceCount": 36,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "레드스파크스 vs 알토스",
+        "블루팡스 vs 스카이워커스",
+        "레드스파크스 vs GS칼텍스"
+      ]
+    },
+    {
+      "venueId": "venue_수원체육관_1qrwhos",
+      "officialName": "수원체육관",
+      "address": "경기 수원시 장안구 경수대로 893",
+      "query": "수원체육관 경기 수원시",
+      "priority": 200,
+      "performanceCount": 36,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "VIXTORM vs 스타즈",
+        "VIXTORM vs 스카이워커스",
+        "힐스테이트 vs SOOP SOOPers"
+      ]
+    },
+    {
+      "venueId": "venue_장충체육관_1bdsfd2",
+      "officialName": "장충체육관",
+      "address": "서울특별시 중구 동호로 241 (장충동2가)",
+      "query": "장충체육관 서울 중구",
+      "priority": 200,
+      "performanceCount": 36,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "GS칼텍스 vs 하이패스",
+        "GS칼텍스 vs SOOP SOOPers",
+        "우리WON vs 블루팡스"
+      ]
+    },
+    {
       "venueId": "venue_고양소노아레나_1r4o07r",
       "officialName": "고양소노아레나",
       "address": "경기 고양시 일산서구 중앙로 1601",
@@ -1440,6 +1488,102 @@
         "대구시립교향악단 ［모차르트 페스티벌］- 8.27.목",
         "대구시립교향악단 ［모차르트 페스티벌］- 8.28.금",
         "특별음악회 : 광저우 심포니 오케스트라 - 대구"
+      ]
+    },
+    {
+      "venueId": "venue_김천실내체육관_1k4yaes",
+      "officialName": "김천실내체육관",
+      "address": "경북 김천시 운동장길 1",
+      "query": "김천실내체육관 경북 김천시",
+      "priority": 144,
+      "performanceCount": 18,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "하이패스 vs 힐스테이트",
+        "하이패스 vs 핑크스파이더스",
+        "하이패스 vs 알토스"
+      ]
+    },
+    {
+      "venueId": "venue_부산강서체육관_etzkf5",
+      "officialName": "부산강서체육관",
+      "address": "부산 강서구 대저1동 1-1",
+      "query": "부산강서체육관 부산 강서구",
+      "priority": 144,
+      "performanceCount": 18,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "읏맨 vs VIXTORM",
+        "읏맨 vs 스타즈",
+        "읏맨 vs 점보스"
+      ]
+    },
+    {
+      "venueId": "venue_인천계양체육관_h1jruj",
+      "officialName": "인천계양체육관",
+      "address": "인천 계양구 봉오대로 855",
+      "query": "인천계양체육관 인천 계양구",
+      "priority": 144,
+      "performanceCount": 18,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "점보스 vs 스카이워커스",
+        "점보스 vs 블루팡스",
+        "점보스 vs 스타즈"
+      ]
+    },
+    {
+      "venueId": "venue_인천삼산월드체육관_152ztkb",
+      "officialName": "인천삼산월드체육관",
+      "address": "인천 부평구 체육관로 60",
+      "query": "인천삼산월드체육관 인천 부평구",
+      "priority": 144,
+      "performanceCount": 18,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "핑크스파이더스 vs GS칼텍스",
+        "핑크스파이더스 vs SOOP SOOPers",
+        "핑크스파이더스 vs 하이패스"
+      ]
+    },
+    {
+      "venueId": "venue_천안유관순체육관_sg5dn2",
+      "officialName": "천안유관순체육관",
+      "address": "충남 천안시 서북구 번영로 208",
+      "query": "천안유관순체육관 충남 천안시",
+      "priority": 144,
+      "performanceCount": 18,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "스카이워커스 vs 우리WON",
+        "스카이워커스 vs 스타즈",
+        "스카이워커스 vs VIXTORM"
+      ]
+    },
+    {
+      "venueId": "venue_화성종합실내체육관_dlq5vx",
+      "officialName": "화성종합실내체육관",
+      "address": "경기 화성시 향남읍 향남로 470",
+      "query": "화성종합실내체육관 경기 화성시",
+      "priority": 144,
+      "performanceCount": 18,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "알토스 vs 핑크스파이더스",
+        "알토스 vs 하이패스",
+        "알토스 vs 힐스테이트"
       ]
     },
     {
@@ -1756,154 +1900,6 @@
         "예수아 피아노 독주회",
         "제8회 어텀실내악페스티벌: 소리의 결, Sound in Motion: 영체임버 트리오 뮤즈",
         "뮤리살롱 X: 억양들, 바로크는 말한다"
-      ]
-    },
-    {
-      "venueId": "venue_구로아트밸리예술극장_9jhk54",
-      "officialName": "구로아트밸리 예술극장",
-      "address": "서울 구로구 구로5동 가마산로23길",
-      "query": "구로아트밸리 예술극장 서울 구로구",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "최백호 재개관 스페셜 콘서트 x 게스트 정미조",
-        "디토 오케스트라 정기연주회, 톡톡 클래식: MOZART",
-        "이달의 공연 사운드트립: 홍진호 with 김준서 & 차환희 (9월)"
-      ]
-    },
-    {
-      "venueId": "venue_군포문화예술회관수리홀_1uh12rx",
-      "officialName": "군포문화예술회관 수리홀",
-      "address": "경기 군포시 고산로 599",
-      "query": "군포문화예술회관 수리홀 경기 군포시",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "무대는 내 친구 시즌8, 키사를 찾아서 [군포]",
-        "김영하 작가의 음악 [군포]",
-        "브런치클래식 Ⅳ. 탱고로 즐기는 가을의 정취 [군포]"
-      ]
-    },
-    {
-      "venueId": "venue_서울문화예술교육센터서초서울체임버홀_rudmk2",
-      "officialName": "서울문화예술교육센터 서초 서울체임버홀",
-      "address": "서울문화예술교육센터 서초 서울체임버홀",
-      "query": "서울문화예술교육센터 서초 서울체임버홀 서울문화예술교육센터 서초",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "무지카 엑스 마키나 - Around C (어라운드 씨)",
-        "제43회 대학생을 위한 프랑스 가곡과 아리아의 밤",
-        "김규리 리코더 리사이틀, 헨델의 꿈꾸는 다락방 Ⅱ: 리코더 소나타 전곡"
-      ]
-    },
-    {
-      "venueId": "venue_세종문화회관체임버홀_aoou2i",
-      "officialName": "세종문화회관 체임버홀",
-      "address": "서울 종로구 세종대로 175",
-      "query": "세종문화회관 체임버홀 서울 종로구",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "한여름의 메시아",
-        "2026 서울시향 체임버 클래식스 V: 고전 빈",
-        "2026 꿈나무 토요음악회 〈맛있는 클래식〉"
-      ]
-    },
-    {
-      "venueId": "venue_소극장공터다_y7n5kr",
-      "officialName": "소극장 공터 다",
-      "address": "경상북도 구미시 금오시장로 4 (원평동)",
-      "query": "소극장 공터 다 경북 구미시",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "구미아시아연극제",
-        "구미아시아연극제, 김헌근의 호랑이 이야기",
-        "구미아시아연극제, 햄릿 Part. 1"
-      ]
-    },
-    {
-      "venueId": "venue_스튜디오블루_4kl6a5",
-      "officialName": "스튜디오 블루",
-      "address": "서울특별시 종로구 대학로8가길 80(동숭동)",
-      "query": "스튜디오 블루 서울 종로구",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "한여름 밤의 호두까기",
-        "몬스터 허균",
-        "바람으로의 여행"
-      ]
-    },
-    {
-      "venueId": "venue_어디든가게_s0smqo",
-      "officialName": "어디든가게",
-      "address": "경북 경주시 동문로 38 1층",
-      "query": "어디든가게 경북 경주시",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "［경주］ 야외 방탈출 경주월드 비밀자들",
-        "［포항］ 야외 방탈출 추리게임 (꺼지지 않는 불빛)",
-        "［포항］ 야외 방탈출 추리게임 (별의 기억1)"
-      ]
-    },
-    {
-      "venueId": "venue_제주아트센터_wwd1xj",
-      "officialName": "제주아트센터",
-      "address": "제주특별자치도 제주시 한라대학로 38",
-      "query": "제주아트센터 제주 제주시",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "작가의 음악: 김영하 작가",
-        "선우예권 피아노 리사이틀",
-        "앤 ANNE: 배리어 프리"
-      ]
-    },
-    {
-      "venueId": "venue_천마아트센터그랜드홀_1kahod3",
-      "officialName": "천마아트센터 그랜드홀",
-      "address": "경북 경산시 대학로 280",
-      "query": "천마아트센터 그랜드홀 경북 경산시",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "현역가왕3 with 현역가왕 패밀리 페스티벌",
-        "제4회 무용비엔날레",
-        "소향 X 김기태 THE GREATEST: 전율"
       ]
     }
   ],
@@ -4149,14 +4145,14 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-08-26T00:30:04.728Z",
+    "checkedAt": "2026-08-26T00:36:24.914Z",
     "status": "warn",
-    "venueCount": 3829,
+    "venueCount": 3838,
     "matchedCount": 908,
     "highConfidenceMatchCount": 663,
     "needsReviewCount": 20,
     "notFoundCount": 254,
-    "pendingLookupCount": 1957,
+    "pendingLookupCount": 1966,
     "insufficientIdentityCount": 226,
     "lookupReady": true,
     "providersConfigured": [
