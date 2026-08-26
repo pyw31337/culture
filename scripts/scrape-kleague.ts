@@ -9,7 +9,7 @@ import { atomicWriteJsonPreserve } from './utils/scraper-utils';
  */
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/kleague.json');
-const SOCCER_POSTER_PATH = '/images/fallbacks/soccer-template.svg';
+const SOCCER_POSTER_PATH = '/images/soccer_poster.svg';
 const API_URL = 'https://www.kleague.com/getScheduleList.do';
 const YEAR = process.env.KLEAGUE_YEAR || String(new Date().getFullYear());
 
