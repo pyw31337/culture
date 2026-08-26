@@ -33,15 +33,33 @@ function parseVersionText(value: string) {
 }
 
 async function fetchCurrentLiveVersion(basePath: string) {
-    const response = await fetch(`${basePath}/version.txt?ts=${Date.now()}`, {
-        cache: 'no-store',
-        headers: {
-            'cache-control': 'no-store',
-        },
-    });
+    // Prefer build-info.json — same field as VersionUpdateBanner currentVersion prop.
+    // version.txt often drifts and caused permanent "update available" modals.
+    try {
+        const response = await fetch(`${basePath}/data/build-info.json?ts=${Date.now()}`, {
+            cache: 'no-store',
+            headers: { 'cache-control': 'no-store' },
+        });
+        if (response.ok) {
+            const payload = await response.json() as { version?: unknown };
+            if (typeof payload.version === 'string' || typeof payload.version === 'number') {
+                return String(payload.version);
+            }
+        }
+    } catch {
+        // fall through to version.txt
+    }
 
-    if (!response.ok) return null;
-    return parseVersionText(await response.text());
+    try {
+        const response = await fetch(`${basePath}/version.txt?ts=${Date.now()}`, {
+            cache: 'no-store',
+            headers: { 'cache-control': 'no-store' },
+        });
+        if (!response.ok) return null;
+        return parseVersionText(await response.text());
+    } catch {
+        return null;
+    }
 }
 
 async function fetchCurrentBuildGeneratedAt(basePath: string) {
