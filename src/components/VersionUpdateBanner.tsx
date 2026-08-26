@@ -24,6 +24,8 @@ interface WorkboxLike {
 }
 
 const DISMISSED_VERSION_KEY = 'culture_dismissed_version';
+const DISMISSED_AT_KEY = 'culture_dismissed_version_at';
+const DISMISS_COOLDOWN_MS = 6 * 60 * 60 * 1000;
 
 function parseVersionText(value: string) {
     const match = value.match(/Version:\s*([^\s]+)/i);
@@ -71,7 +73,11 @@ export default function VersionUpdateBanner({
 
     const announceUpdate = useCallback((update: UpdateState) => {
         const dismissedVersion = safeStorage.get<string | null>(DISMISSED_VERSION_KEY, null);
+        const dismissedAt = safeStorage.get<number | null>(DISMISSED_AT_KEY, null);
         if (update.version && dismissedVersion === update.version) return;
+        if (typeof dismissedAt === 'number' && Date.now() - dismissedAt < DISMISS_COOLDOWN_MS) {
+            if (!update.version || update.version === dismissedVersion) return;
+        }
         setPendingUpdate(update);
     }, []);
 
@@ -121,7 +127,7 @@ export default function VersionUpdateBanner({
             if (document.visibilityState === 'visible') {
                 void checkForUpdate();
             }
-        }, 180000);
+        }, 900000);
 
         return () => {
             window.removeEventListener('focus', handleFocus);
@@ -162,11 +168,13 @@ export default function VersionUpdateBanner({
         if (pendingUpdate?.version) {
             safeStorage.set(DISMISSED_VERSION_KEY, pendingUpdate.version);
         }
+        safeStorage.set(DISMISSED_AT_KEY, Date.now());
         setPendingUpdate(null);
     }, [pendingUpdate]);
 
     const handleRefresh = useCallback(async () => {
         safeStorage.remove(DISMISSED_VERSION_KEY);
+        safeStorage.remove(DISMISSED_AT_KEY);
 
         if (typeof window === 'undefined') return;
 
