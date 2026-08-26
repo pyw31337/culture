@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import cliProgress from 'cli-progress';
 import { atomicWriteJson } from './utils/scraper-utils';
+import { runScraperJob } from './utils/scraper-runner';
 
 function slugify(text: string): string {
     return text
@@ -244,9 +245,21 @@ function classifyRegion(venue: string): string {
     return 'etc';
 }
 
-scrapeKovo().then(() => {
-    process.exit(0);
-}).catch(err => {
-    console.error(err);
-    process.exit(1);
+runScraperJob({
+    name: 'kovo',
+    timeoutMs: 180_000,
+    run: async () => {
+        await scrapeKovo();
+        // scrapeKovo writes file; approximate count from output path if needed
+        try {
+            const fs = await import('fs');
+            const path = await import('path');
+            const raw = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'src/data/kovo.json'), 'utf8'));
+            return { itemCount: Array.isArray(raw) ? raw.length : 0 };
+        } catch {
+            return { itemCount: 0 };
+        }
+    },
+}).then(() => {
+    process.exit(process.exitCode ?? 0);
 });

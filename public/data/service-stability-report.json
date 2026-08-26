@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-07-13T04:30:25.175Z",
-  "itemCount": 8431,
-  "status": "pass",
+  "checkedAt": "2026-08-26T01:18:05.231Z",
+  "itemCount": 8157,
+  "status": "warn",
   "metrics": {
     "missingLocalImageCount": 0,
-    "placeholderImageCount": 0,
-    "placeholderImageRate": 0,
-    "duplicatedDescriptionCount": 102,
+    "placeholderImageCount": 785,
+    "placeholderImageRate": 0.0962,
+    "duplicatedDescriptionCount": 93,
     "missingSourceDateCount": 0,
     "suspiciousVenueAddressCount": 0,
     "ambiguousVenueDictionaryCount": 0,
@@ -14,126 +14,267 @@
   },
   "samples": {
     "missingLocalImages": [],
-    "placeholderImages": [],
+    "placeholderImages": [
+      {
+        "id": "baseball_20260826_한화_vs_SSG",
+        "title": "한화 vs SSG",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260826_롯데_vs_KIA",
+        "title": "롯데 vs KIA",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "basketball_20260924_대구_한국가스공사_vs_울산_현대모비스",
+        "title": "대구 한국가스공사 vs 울산 현대모비스",
+        "genre": "basketball",
+        "source": "basketball",
+        "image": ""
+      },
+      {
+        "id": "basketball_20260924_원주_DB_vs_서울_삼성",
+        "title": "원주 DB vs 서울 삼성",
+        "genre": "basketball",
+        "source": "basketball",
+        "image": ""
+      },
+      {
+        "id": "basketball_20260924_고양_소노_vs_서울_SK",
+        "title": "고양 소노 vs 서울 SK",
+        "genre": "basketball",
+        "source": "basketball",
+        "image": ""
+      },
+      {
+        "id": "volleyball_20261031_점보스_vs_스카이워커스",
+        "title": "점보스 vs 스카이워커스",
+        "genre": "volleyball",
+        "source": "volleyball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260826_두산_vs_KT",
+        "title": "두산 vs KT",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260826_NC_vs_LG",
+        "title": "NC vs LG",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260826_삼성_vs_키움",
+        "title": "삼성 vs 키움",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "movie_47년_7개월_어느_여교수의_외출",
+        "title": "47년 7개월 어느 여교수의 외출",
+        "genre": "movie",
+        "source": "movie",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260827_NC_vs_LG",
+        "title": "NC vs LG",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260827_삼성_vs_키움",
+        "title": "삼성 vs 키움",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260827_롯데_vs_KIA",
+        "title": "롯데 vs KIA",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260827_한화_vs_SSG",
+        "title": "한화 vs SSG",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260827_두산_vs_KT",
+        "title": "두산 vs KT",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      },
+      {
+        "id": "perf_동대문구_맥주축제",
+        "title": "동대문구 맥주축제",
+        "genre": "exhibition",
+        "source": "festival",
+        "image": ""
+      },
+      {
+        "id": "perf_장항_맥문동_꽃_축제",
+        "title": "장항 맥문동 꽃 축제",
+        "genre": "exhibition",
+        "source": "festival",
+        "image": ""
+      },
+      {
+        "id": "perf_국토정중앙_청춘양구_배꼽축제",
+        "title": "국토정중앙 청춘양구 배꼽축제",
+        "genre": "exhibition",
+        "source": "festival",
+        "image": ""
+      },
+      {
+        "id": "perf_유성재즈_맥주페스타",
+        "title": "유성재즈&맥주페스타",
+        "genre": "exhibition",
+        "source": "festival",
+        "image": ""
+      },
+      {
+        "id": "baseball_20260828_NC_vs_한화",
+        "title": "NC vs 한화",
+        "genre": "baseball",
+        "source": "baseball",
+        "image": ""
+      }
+    ],
     "duplicatedDescriptions": [
       {
-        "id": "perf_피아니스트_김준_독주회_줄라이_페스티벌_서산",
-        "title": "피아니스트 김준 독주회 ［줄라이 페스티벌］ - 서산",
+        "id": "perf_2026_시그니처대전_콘서트_오페라_피가로의_결혼_대전",
+        "title": "2026 시그니처대전_콘서트 오페라 ［피가로의 결혼］-대전",
         "genre": "classic_tradition",
-        "similarity": 0.52
-      },
-      {
-        "id": "perf_어린이_음악극_고양이는_죽어서_어디로_갈까요",
-        "title": "어린이 음악극 〈고양이는 죽어서 어디로 갈까요？〉",
-        "genre": "play",
-        "similarity": 0.5
-      },
-      {
-        "id": "perf_2026_서울시향_수산나_멜키의_슈베르트_그레이트",
-        "title": "2026 서울시향 수산나 멜키의 슈베르트 ‘그레이트’",
-        "genre": "classic_tradition",
-        "similarity": 0.45
-      },
-      {
-        "id": "perf_브런치콘서트_11시11분_미드나잇_인_파리",
-        "title": "브런치콘서트 ［11시11분］ 미드나잇 인 파리",
-        "genre": "concert",
         "similarity": 0.49
       },
       {
-        "id": "perf_인천_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
-        "title": "［인천］ 가족뮤지컬 〈로보카폴리 - 브룸스타운의 에너지를 지켜라!〉",
+        "id": "perf_2026_어린이_베스트셀러_뮤지컬_사과가쿵_고양",
+        "title": "2026 어린이 베스트셀러 뮤지컬 〈사과가쿵!〉 - 고양",
         "genre": "musical",
+        "similarity": 0.52
+      },
+      {
+        "id": "perf_2026_김종서_전국투어_콘서트_모두의_김종서_광주",
+        "title": "2026 김종서 전국투어 콘서트 : 모두의 김종서 - 광주",
+        "genre": "concert",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_김시라의_품바_Original_광주",
+        "title": "［김시라의 품바 : Original］ - 광주",
+        "genre": "play",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_조영남_전국투어_콘서트_조영남이_죽기_전에_하고_싶은_이야기_광주",
+        "title": "조영남 전국투어 콘서트 : 조영남이 죽기 전에 하고 싶은 이야기 - 광주",
+        "genre": "concert",
+        "similarity": 0.46
+      },
+      {
+        "id": "perf_연극_럭키_전당포_2026_심야N연극제_광주",
+        "title": "연극 〈럭키! 전당포〉 2026 심야N연극제 - 광주",
+        "genre": "play",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_입장권_2026_송도맥주축제_환상의_나라_비어랜드_일자지정",
+        "title": "［입장권］ 2026 송도맥주축제: 환상의 나라 비어랜드(일자지정)",
+        "genre": "exhibition",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_VIP_2026_송도맥주축제_환상의_나라_비어랜드",
+        "title": "［VIP］ 2026 송도맥주축제: 환상의 나라 비어랜드",
+        "genre": "exhibition",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_관객_20만돌파기념_슈퍼위크_베베핀_뮤지컬_두근두근_새친구_극장_용",
+        "title": "［관객 20만돌파기념 슈퍼위크］ 베베핀 뮤지컬 〈두근두근 새친구〉 - 극장 용",
+        "genre": "musical",
+        "similarity": 0.48
+      },
+      {
+        "id": "perf_경주가볼만한곳_라원_미디어아트_복합문화정원",
+        "title": "［경주가볼만한곳］ 라원 미디어아트 복합문화정원",
+        "genre": "exhibition",
         "similarity": 0.51
       },
       {
-        "id": "perf_7월_동탄_네이처스케이프_플러스_썸머_얼리버드_패키지_특가",
-        "title": "［7월］ 동탄 네이처스케이프 플러스 (썸머 얼리버드 패키지 특가!)",
-        "genre": "activity",
-        "similarity": 0.48
+        "id": "perf_2026_가족_라이브_뮤지컬_신데렐라_고양",
+        "title": "2026 가족 라이브 뮤지컬 〈신데렐라〉 - 고양",
+        "genre": "musical",
+        "similarity": 0.49
       },
       {
-        "id": "perf_2026년_서울단편극_페스티벌_토스트구워주는_남자_폴리웜",
-        "title": "2026년 서울단편극 페스티벌 - 〈토스트구워주는 남자〉, 〈폴리웜〉",
-        "genre": "play",
-        "similarity": 0.54
-      },
-      {
-        "id": "perf_롯데월드_아쿠아리움_서울스카이PKG",
-        "title": "롯데월드 아쿠아리움+서울스카이PKG",
-        "genre": "activity",
+        "id": "perf_뮤지컬_최고다_호기심딱지_시즌4_우리_몸은_우리가_지킨다_용인",
+        "title": "뮤지컬 최고다 호기심딱지 시즌4 〈우리 몸은 우리가 지킨다!〉 - 용인",
+        "genre": "musical",
         "similarity": 0.46
       },
       {
-        "id": "perf_2026_PEPPERTONES_CLUB_TOUR_부산",
-        "title": "2026 PEPPERTONES CLUB TOUR - 부산",
-        "genre": "concert",
-        "similarity": 0.54
-      },
-      {
-        "id": "perf_성남_2026_박지현_콘서트_쇼맨쉽_시즌2_SHOWMANSHIP_SEASON_2",
-        "title": "［성남］ 2026 박지현 콘서트 쇼맨쉽 시즌2 “SHOWMANSHIP SEASON 2”",
-        "genre": "concert",
-        "similarity": 0.5
-      },
-      {
-        "id": "perf_뮤지컬_Club_설화",
-        "title": "뮤지컬 Club 〈설화〉",
+        "id": "perf_2026_라이브_가족뮤지컬_알라딘_서울_영등포",
+        "title": "2026 라이브 가족뮤지컬 〈알라딘〉 - 서울(영등포)",
         "genre": "musical",
-        "similarity": 0.48
+        "similarity": 0.45
       },
       {
-        "id": "perf_가야금피어나_Blooming_Together",
-        "title": "가야금피어나 〈Blooming Together〉",
-        "genre": "classic_tradition",
-        "similarity": 0.54
-      },
-      {
-        "id": "perf_검정고무신_2_부산",
-        "title": "검정고무신 2 - 부산",
-        "genre": "play",
-        "similarity": 0.46
-      },
-      {
-        "id": "perf_베베핀_뮤지컬_두근두근_새친구_서울",
-        "title": "베베핀 뮤지컬 〈두근두근 새친구〉 - 서울",
-        "genre": "musical",
-        "similarity": 0.47
-      },
-      {
-        "id": "perf_2026_인천펜타포트_락_페스티벌_with_KB국민카드",
-        "title": "2026 인천펜타포트 락 페스티벌 with KB국민카드",
-        "genre": "concert",
-        "similarity": 0.47
-      },
-      {
-        "id": "perf_2026_가족_라이브_뮤지컬_라푼젤_수원",
-        "title": "2026 가족 라이브 뮤지컬〈라푼젤〉 - 수원",
-        "genre": "musical",
-        "similarity": 0.47
-      },
-      {
-        "id": "perf_웨이브파크_미오코스타존_7_4_7_24",
-        "title": "웨이브파크 미오코스타존(7/4~7/24)",
-        "genre": "activity",
-        "similarity": 0.48
-      },
-      {
-        "id": "perf_7월_동탄_네이처스케이프_플러스_AFTER_4_모험권",
-        "title": "［7월］ 동탄 네이처스케이프 플러스(AFTER 4 모험권)",
-        "genre": "activity",
-        "similarity": 0.48
-      },
-      {
-        "id": "perf_골드시즌_이천_테르메덴_풀앤스파_7_1_7_24",
-        "title": "［골드시즌］ 이천 테르메덴 풀앤스파 (7/1~7/24)",
+        "id": "perf_상시_키자니아_서울점_8월_이용권_유효기간_8_1_8_31",
+        "title": "［상시］ 키자니아 서울점 8월 이용권 (유효기간 : 8/1~8/31)",
         "genre": "activity",
         "similarity": 0.45
       },
       {
-        "id": "perf_7월_동탄_네이처스케이프_플러스_입장권_1인권_패밀리권",
-        "title": "［7월］ 동탄 네이처스케이프 플러스 입장권 (1인권/패밀리권)",
+        "id": "perf_경기_시흥_웨이브파크_서프존_7_4_8_30",
+        "title": "［경기 시흥］ 웨이브파크 서프존 (7/4~8/30)",
         "genre": "activity",
+        "similarity": 0.51
+      },
+      {
+        "id": "perf_안성팜랜드_입장권_6_8_8_31",
+        "title": "안성팜랜드 입장권(6/8~8/31)",
+        "genre": "activity",
+        "similarity": 0.49
+      },
+      {
+        "id": "perf_안성팜랜드_입장권_승마_패키지_6_8_8_31_이용_가능",
+        "title": "안성팜랜드 입장권 + 승마 패키지(6/8~8/31 이용 가능)",
+        "genre": "activity",
+        "similarity": 0.52
+      },
+      {
+        "id": "perf_대전_오월드_자유이용권",
+        "title": "［대전］ 오월드 자유이용권",
+        "genre": "activity",
+        "similarity": 0.48
+      },
+      {
+        "id": "perf_경주_동궁원",
+        "title": "［경주］ 동궁원",
+        "genre": "activity",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_이머시브_뮤지컬_좀비",
+        "title": "이머시브 뮤지컬 〈좀비〉",
+        "genre": "musical",
         "similarity": 0.48
       }
     ],
