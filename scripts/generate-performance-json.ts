@@ -59,7 +59,7 @@ const GENRE_LABELS: Record<string, string> = {
     museum: '박물관/체험',
     activity: '체험',
     class: '클래스',
-    tourism: '관광지',
+    tourism: '/images/fallbacks/tourism-template.svg',
     baseball: '야구 경기',
     basketball: '농구 경기',
     volleyball: '배구 경기',
@@ -69,16 +69,16 @@ const GENRE_LABELS: Record<string, string> = {
 
 const FALLBACK_IMAGES: Record<string, string> = {
     soccer: '/images/soccer_goal_poster_20260528.jpg',
-    baseball: '/images/fallbacks/baseball.jpg',
+    baseball: '/images/kbo-thumbnail.png',
     basketball: '/images/kbl_poster.png',
     volleyball: '/images/volleyball_poster.png',
     handball: '/images/fallbacks/handball.jpg',
     museum: '/images/fallbacks/museum.jpg',
     exhibition: '/images/fallbacks/exhibition.jpg',
     classic_tradition: '/images/fallbacks/classic.jpg',
-    activity: '/images/fallbacks/activity.jpg',
+    activity: '/images/fallbacks/tourism-template.svg',
     movie: '/images/fallbacks/movie.svg',
-    default: '/images/fallbacks/activity.jpg'
+    default: '/images/fallbacks/tourism-template.svg'
 };
 
 const SOURCE_FRESH_DAYS = 3;
