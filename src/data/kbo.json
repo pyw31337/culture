@@ -23514,5 +23514,61 @@
     "awayTeam": "한화",
     "homeTeamLogo": "/images/logos/kbo/kiwoom.svg",
     "awayTeamLogo": "/images/logos/kbo/hanwha.svg"
+  },
+  {
+    "id": "kbo_20260827_NC13_vs_3LG",
+    "title": "NC13 vs 3LG",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-27 18:30",
+    "venue": "잠실종합운동장잠실야구장",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "seoul",
+    "genre": "baseball",
+    "homeTeam": "3LG",
+    "awayTeam": "NC13",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260827_한화6_vs_13SSG",
+    "title": "한화6 vs 13SSG",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-27 18:30",
+    "venue": "인천SSG 랜더스필드",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "incheon",
+    "genre": "baseball",
+    "homeTeam": "13SSG",
+    "awayTeam": "한화6",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260827_두산4_vs_5KT",
+    "title": "두산4 vs 5KT",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-27 18:30",
+    "venue": "수원KT위즈파크",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "gyeonggi",
+    "genre": "baseball",
+    "homeTeam": "5KT",
+    "awayTeam": "두산4",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260827_삼성15_vs_2키움",
+    "title": "삼성15 vs 2키움",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-27 18:30",
+    "venue": "고척스카이돔",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "seoul",
+    "genre": "baseball",
+    "homeTeam": "2키움",
+    "awayTeam": "삼성15",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]

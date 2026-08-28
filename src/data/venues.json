@@ -11749,9 +11749,9 @@
     "amenities": [
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "포항문화예술회관 대공연장": {
     "name": "포항문화예술회관",
@@ -17124,7 +17124,12 @@
     "district": "동작구",
     "lat": 37.5051202,
     "lng": 126.960611,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "강북문화예술회관": {
     "name": "강북문화예술회관",
@@ -60989,9 +60994,9 @@
     "theaterCount": "1",
     "openedAt": "2017",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "소극장 혜화당 (구. 까망소극장)": {
     "name": "소극장 혜화당 (구. 까망소극장)",
@@ -64942,9 +64947,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페"
   },
   "나온씨어터": {
     "name": "나온씨어터",
@@ -66735,9 +66740,9 @@
     "amenities": [
       "식당"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 식당"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 식당"
   },
   "울산문화예술회관": {
     "name": "울산문화예술회관",
@@ -67001,9 +67006,9 @@
     "theaterCount": "1",
     "openedAt": "2014",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "프리버드 라이브카페 [강원 원주]": {
     "name": "프리버드 라이브카페 [강원 원주]",
@@ -69341,10 +69346,24 @@
   },
   "도곡2문화센터": {
     "name": "도곡2문화센터",
-    "address": "서울특별시 강남구 남부순환로378길 34-9",
+    "address": "서울특별시 강남구 남부순환로378길 34-9 (도곡동)",
     "lat": 37.4837128,
     "lng": 127.04643740000006,
-    "district": "강남구"
+    "district": "강남구",
+    "phone": "02-2176-0743",
+    "facilityType": "공공(기타)",
+    "seatScale": "138",
+    "theaterCount": "1",
+    "openedAt": "2010",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "죽향찻집": {
     "name": "죽향찻집",
@@ -69808,10 +69827,22 @@
   },
   "소극장 소금창고": {
     "name": "소극장 소금창고",
-    "address": "대구광역시 남구 계명중앙1길 48",
+    "address": "대구광역시 남구 계명중앙1길 48 (대명동)",
     "lat": 35.8558238,
     "lng": 128.58233199999995,
-    "district": ""
+    "district": "",
+    "phone": "053-655-7139",
+    "homepage": "www.goorigoal.modoo.at",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "2018",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "빈티지소극장": {
     "name": "빈티지소극장",
@@ -79629,7 +79660,21 @@
     "address": "서울 강남구 남부순환로378길 34-9",
     "district": "강남구",
     "lat": 37.4837356132787,
-    "lng": 127.046374781024
+    "lng": 127.046374781024,
+    "phone": "02-2176-0743",
+    "facilityType": "공공(기타)",
+    "seatScale": "138",
+    "theaterCount": "1",
+    "openedAt": "2010",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "킨텍스 제1전시장": {
     "name": "킨텍스 제1전시장",
@@ -106174,6 +106219,7 @@
     "lng": 126.9983081,
     "district": "서초구",
     "phone": "02-3399-0777",
+    "homepage": "https://www.sfac.or.kr/artspace/artspace/seocho_main.do",
     "facilityType": "민간(대학로 외)",
     "seatScale": "241",
     "theaterCount": "1",
@@ -106867,7 +106913,7 @@
   },
   "곡성레저문화센터": {
     "name": "곡성레저문화센터",
-    "address": "전라남도 곡성군 곡성읍 곡성로 855 곡성레저문화센터",
+    "address": "전남광주통합특별시 곡성군 곡성읍 곡성로 855",
     "lat": 35.280205,
     "lng": 127.29703819999997,
     "district": "",
@@ -106880,9 +106926,9 @@
     "amenities": [
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "관아골 아트뱅크243": {
     "name": "관아골 아트뱅크243",
@@ -117957,5 +118003,20 @@
     "name": "분황사",
     "address": "분황사",
     "district": ""
+  },
+  "까망돌어울마당": {
+    "name": "까망돌어울마당",
+    "address": "서울특별시 동작구 서달로 129 (흑석동)",
+    "lat": 37.505119,
+    "lng": 126.960611,
+    "district": "동작구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }
