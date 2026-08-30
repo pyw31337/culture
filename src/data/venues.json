@@ -60691,7 +60691,7 @@
   },
   "장성문화예술회관": {
     "name": "장성문화예술회관",
-    "address": "전라남도 장성군 장성읍 문화로 110",
+    "address": "전남광주통합특별시 장성군 장성읍 문화로 110",
     "lat": 35.3022066,
     "lng": 126.76655010000002,
     "district": "",
@@ -62257,9 +62257,9 @@
     "theaterCount": "1",
     "openedAt": "2019",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "지지대악": {
     "name": "지지대악",
@@ -66504,9 +66504,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "광운대학교 동해문화예술관": {
     "name": "광운대학교 동해문화예술관",
@@ -78431,7 +78431,7 @@
   },
   "서빛마루문화예술회관": {
     "name": "서빛마루문화예술회관",
-    "address": "광주광역시 서구 풍암공원로 30 (풍암동)",
+    "address": "전남광주통합특별시 서구 풍암공원로 30 (풍암동)",
     "lat": 35.1304664,
     "lng": 126.8806018,
     "district": "서구",
@@ -78441,9 +78441,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "파브릭 서울(Fabrik Seoul)": {
     "name": "파브릭 서울(Fabrik Seoul)",
@@ -105281,7 +105281,7 @@
   },
   "포스코광양백운아트홀": {
     "name": "포스코광양백운아트홀",
-    "address": "전라남도 광양시 금호로 215 (금호동)",
+    "address": "전남광주통합특별시 광양시 금호로 215 (금호동)",
     "lat": 34.9430494,
     "lng": 127.7258084,
     "district": "",
@@ -105295,9 +105295,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "프로젝트 스페이스 큐": {
     "name": "프로젝트 스페이스 큐",
@@ -106899,9 +106899,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "CGV 대구한일": {
     "name": "CGV 대구한일",
@@ -118055,6 +118055,22 @@
     "openedAt": "2020",
     "amenities": [],
     "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "스케네웨이 [홍대]": {
+    "name": "스케네웨이 [홍대]",
+    "address": "서울특별시 마포구 와우산로 76 (서교동)",
+    "lat": 37.551129,
+    "lng": 126.923539,
+    "district": "마포구",
+    "homepage": "https://www.instagram.com/skene_way",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
   }

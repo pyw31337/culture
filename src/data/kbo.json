@@ -23668,5 +23668,33 @@
     "awayTeam": "SSG",
     "homeTeamLogo": "/images/logos/kbo/kia.svg",
     "awayTeamLogo": "/images/logos/kbo/ssg.svg"
+  },
+  {
+    "id": "kbo_20260830_키움1_vs_15두산",
+    "title": "키움1 vs 15두산",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-30 18:00",
+    "venue": "잠실종합운동장잠실야구장",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "seoul",
+    "genre": "baseball",
+    "homeTeam": "15두산",
+    "awayTeam": "키움1",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20260830_NC10_vs_7한화",
+    "title": "NC10 vs 7한화",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-08-30 18:00",
+    "venue": "한화생명이글스파크",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "etc",
+    "genre": "baseball",
+    "homeTeam": "7한화",
+    "awayTeam": "NC10",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]

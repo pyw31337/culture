@@ -1,28 +1,5 @@
 [
   {
-    "id": "setec_2286",
-    "title": "세계청소년올림피아드",
-    "venue": "세텍 제2전시실",
-    "venueKey": "세텍 제2전시실",
-    "address": "서울 강남구 남부순환로 3104",
-    "lat": 37.4968,
-    "lng": 127.0628,
-    "region": "seoul",
-    "date": "2026.07.29 ~ 2026.07.30",
-    "image": "/images/posters/setec/setec_2286.webp",
-    "poster": "/images/posters/setec/setec_2286.webp",
-    "backupPoster": "/images/posters/setec/setec_2286.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2286",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-2222-3811",
-    "website": "https://www.setec.or.kr/",
-    "source": "setec",
-    "dataCollectedAt": "2026-07-09T23:59:05.435Z"
-  },
-  {
     "id": "setec_2288",
     "title": "2026 가낳지모 캣페어 SUMMER",
     "venue": "세텍 제1전시실, 제2전시실, 제3전시실",

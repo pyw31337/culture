@@ -3625,39 +3625,6 @@
     "lastEnriched": "2026-07-15T19:21:35.928Z"
   },
   {
-    "id": "perf_제4회_툴뮤직장애인예술단_정기연주회_HARMONY_LIVE_정규앨범에서_무대로",
-    "title": "제4회 툴뮤직장애인예술단 정기연주회 HARMONY LIVE : 정규앨범에서 무대로",
-    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004758_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "꿈의숲_콘서트홀",
-    "link": "https://tickets.interpark.com/goods/P0004758",
-    "region": "seoul",
-    "genre": "classic",
-    "runningTime": "80분",
-    "performanceTime": "2026.07.30(목) 19:00",
-    "ageRating": "만 7세 이상",
-    "price": "전석 30,000원",
-    "originalPrice": "30,000원",
-    "discount": "50%",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 관람 2시간 전까지",
-    "synopsis": "예매가능시간: 관람 2시간 전까지2026.07.30(목) 19:00",
-    "description": "예매가능시간: 관람 2시간 전까지2026.07.30(목) 19:00",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/P0004758-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/P0004758-02.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/P0004758-03.jpg"
-    ],
-    "lastEnriched": "2026-07-15T19:21:10.805Z"
-  },
-  {
     "id": "perf_Summer_with_Cellos",
     "title": "Summer with Cellos",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26010377_p.gif",
@@ -3685,41 +3652,6 @@
     "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026.7.28.화요일. 오후 7:30분\n2026.8.1.토요일. 오후 5:00시",
     "synopsisImages": [],
     "lastEnriched": "2026-07-15T19:19:54.451Z"
-  },
-  {
-    "id": "perf_파이_의_변주_강강술래",
-    "title": "π(파이)의 변주: 강강술래",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010294_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "한국문화의집 KOUS",
-    "link": "https://tickets.interpark.com/goods/26010294",
-    "region": "seoul",
-    "genre": "classic",
-    "runningTime": "65분",
-    "performanceTime": "목요일 17시 30분",
-    "ageRating": "만 6세 이상",
-    "price": "R석 30,000원\nS석 15,000원",
-    "originalPrice": "30,000원",
-    "discount": "75%",
-    "address": "서울특별시 강남구 테헤란로92길 12-9(대치동) 한국문화의집 KOUS",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "30,000원"
-      },
-      {
-        "label": "S석",
-        "price": "15,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지목요일 17시 30분",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지목요일 17시 30분",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26010294-01.jpg"
-    ],
-    "lastEnriched": "2026-07-15T19:21:13.553Z"
   },
   {
     "id": "perf_2차_얼리버드_뱅크시_Still_Here",
@@ -5896,72 +5828,12 @@
     "genre": "play"
   },
   {
-    "id": "perf_금호아트홀_아름다운_목요일_III_윤해원_박원민_진영훈_Violin",
-    "title": "금호아트홀 아름다운 목요일 - III. 윤해원 ＆ 박원민 ＆ 진영훈 Violin",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016068_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "금호아트홀 연세",
-    "link": "https://tickets.interpark.com/goods/25016068",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_아츠앤라이프_SSP_현대_음악_작곡가_시리즈_III_작곡가_유진솔",
-    "title": "아츠앤라이프 SSP 현대 음악 작곡가 시리즈 III - 작곡가 유진솔",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009662_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "살롱쿤스트",
-    "link": "https://tickets.interpark.com/goods/26009662",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_음악에_미치다_피아노에_미치다_월광_김현정",
-    "title": "음악에 미치다, 피아노에 미치다! 월광 김현정",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010250_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "모스크바홀",
-    "link": "https://tickets.interpark.com/goods/26010250",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_조종현_귀국_클라리넷_독주회",
-    "title": "조종현 귀국 클라리넷 독주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004735_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "세종문화회관 체임버홀",
-    "link": "https://tickets.interpark.com/goods/P0004735",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
     "id": "perf_지브리_디즈니_영화음악_FESTA_8_9",
     "title": "지브리＆디즈니 영화음악 FESTA(8/9)",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26006406_p.gif",
     "date": "2026.08.09 ~ 2026.08.09",
     "venue": "롯데콘서트홀",
     "link": "https://tickets.interpark.com/goods/26006406",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_The_Unison_Piano_Ensemble",
-    "title": "The Unison: Piano Ensemble",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009449_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "영산양재홀",
-    "link": "https://tickets.interpark.com/goods/26009449",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_우리_시대_에투알_2026_7_30",
-    "title": "우리 시대 에투알 2026 (7.30)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007744_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "예술의전당 오페라극장",
-    "link": "https://tickets.interpark.com/goods/26007744",
     "region": "seoul",
     "genre": "classic"
   },
@@ -5984,86 +5856,6 @@
     "link": "https://tickets.interpark.com/goods/26005653",
     "region": "seoul",
     "genre": "exhibition"
-  },
-  {
-    "id": "perf_수_라운지_올디_벗_구디_Oldie_but_Goodie_연천",
-    "title": "秀(수)라운지 올디 벗 구디(Oldie but Goodie) - 연천",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009046_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "연천수레울아트홀 소공연장",
-    "link": "https://tickets.interpark.com/goods/26009046",
-    "region": "gyeonggi",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_2026_평창대관령음악제_Concert_12_긴장에서_환희로_평창",
-    "title": "2026 평창대관령음악제 Concert ＃12 ‘긴장에서 환희로’ - 평창",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005473_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "알펜시아 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26005473",
-    "region": "gangwon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_평창대관령음악제_Concert_13_속삭임에서_춤으로",
-    "title": "2026 평창대관령음악제 Concert ＃13 ‘속삭임에서 춤으로’",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005807_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "알펜시아 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26005807",
-    "region": "gangwon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_세상의_모든_플레이리스트_이혜지_김정훈_원주",
-    "title": "세상의 모든 플레이리스트 - 이혜지, 김정훈 - 원주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005174_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "카페 플레이리스트",
-    "link": "https://tickets.interpark.com/goods/26005174",
-    "region": "gangwon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_충청남도_문예회관_기획공연_객석으로_떠나는_피서_트롯_흥캉스",
-    "title": "2026 충청남도 문예회관 기획공연 〈객석으로 떠나는 피서 : 트롯 흥캉스〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010035_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "충청남도 문화예술회관",
-    "link": "https://tickets.interpark.com/goods/26010035",
-    "region": "chungnam",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_제14회_피아빌레_피아노_앙상블_정기연주회_대전",
-    "title": "제14회 피아빌레 피아노 앙상블 정기연주회 - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009808_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "대전예술의전당 앙상블홀",
-    "link": "https://tickets.interpark.com/goods/26009808",
-    "region": "daejeon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_BCC_필름_뮤직_페스티벌_무성영화_필름콘서트_브로큰_블로썸_부산",
-    "title": "2026 BCC 필름 뮤직 페스티벌 : 무성영화 〈필름콘서트Ⅰ. 브로큰 블로썸〉 - 부산",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007864_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "영화의전당 하늘연극장",
-    "link": "https://tickets.interpark.com/goods/26007864",
-    "region": "busan",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_창원시립교향악단_기획공연_SPECIAL_ARTIST_CONCERT_창원",
-    "title": "창원시립교향악단 기획공연 SPECIAL ARTIST CONCERT Ⅷ - 창원",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010189_p.gif",
-    "date": "2026.07.30 ~ 2026.07.30",
-    "venue": "창원 성산아트홀 대극장",
-    "link": "https://tickets.interpark.com/goods/26010189",
-    "region": "gyeongnam",
-    "genre": "classic"
   },
   {
     "id": "perf_사전예매_제30회_부산바다축제_아로마_필라테스",
@@ -25773,16 +25565,6 @@
     "genre": "exhibition"
   },
   {
-    "id": "perf_찬란한_에르미타주",
-    "title": "찬란한 에르미타주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26003900_p.gif",
-    "date": "2026.04.30 ~ 2026.07.30",
-    "venue": "문화비축기지 T4, T5 전시장",
-    "link": "https://tickets.interpark.com/goods/26003900",
-    "region": "seoul",
-    "genre": "exhibition"
-  },
-  {
     "id": "perf_쿠이료코전_던전밥_미궁탐색_IN_SEOUL",
     "title": "쿠이료코전 ＆ 던전밥 미궁탐색展_IN SEOUL",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007877_p.gif",
@@ -26973,26 +26755,6 @@
     "genre": "exhibition"
   },
   {
-    "id": "perf_부산투어패스_송도해상케이블카X남포동_영화체험박물관",
-    "title": "［부산투어패스］송도해상케이블카X남포동 영화체험박물관",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y5/Y5000261_p.gif",
-    "date": "2026.04.16 ~ 2026.07.30",
-    "venue": "송도해상케이블카",
-    "link": "https://tickets.interpark.com/goods/Y5000261",
-    "region": "busan",
-    "genre": "exhibition"
-  },
-  {
-    "id": "perf_부산투어패스_송도해상케이블카X센텀_뮤지엄원",
-    "title": "［부산투어패스］송도해상케이블카X센텀 뮤지엄원",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y3/Y3001580_p.gif",
-    "date": "2026.01.31 ~ 2026.07.30",
-    "venue": "송도해상케이블카",
-    "link": "https://tickets.interpark.com/goods/Y3001580",
-    "region": "busan",
-    "genre": "exhibition"
-  },
-  {
     "id": "perf_부산투어패스_해운대_요트투어_요트홀릭X센텀_뮤지엄원",
     "title": "［부산투어패스］해운대 요트투어 요트홀릭X센텀 뮤지엄원",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y5/Y5000906_p.gif",
@@ -27263,16 +27025,6 @@
     "link": "https://tickets.interpark.com/goods/25012881",
     "region": "jeonnam",
     "genre": "exhibition"
-  },
-  {
-    "id": "perf_백조의_노래_제주",
-    "title": "백조의 노래 - 제주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008209_p.gif",
-    "date": "2026.07.08 ~ 2026.07.30",
-    "venue": "세이레아트센터",
-    "link": "https://tickets.interpark.com/goods/26008209",
-    "region": "jeju",
-    "genre": "play"
   },
   {
     "id": "perf_2026년_하리보_해피월드_인_제주",
@@ -28929,16 +28681,6 @@
     "genre": "leisure"
   },
   {
-    "id": "perf_안산_자이언트_제트_초대형_키즈카페",
-    "title": "［안산］ 자이언트 제트 초대형 키즈카페",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6001023_p.gif",
-    "date": "2026.06.30 ~ 2026.07.30",
-    "venue": "자이언트 제트",
-    "link": "https://tickets.interpark.com/goods/Y6001023",
-    "region": "gyeonggi",
-    "genre": "leisure"
-  },
-  {
     "id": "perf_안양_워터랜드_극성수기_이용권",
     "title": "［안양］ 워터랜드 극성수기 이용권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6001130_p.gif",
@@ -29160,16 +28902,6 @@
     "venue": "월미도 해양관광 크루즈",
     "link": "https://tickets.interpark.com/goods/Y6000709",
     "region": "incheon",
-    "genre": "leisure"
-  },
-  {
-    "id": "perf_일산_대형_프리미어_키즈카페_키즈랜드_점핑몬스터_일산점_이용권",
-    "title": "［일산］ 대형 프리미어 키즈카페/키즈랜드 점핑몬스터 일산점 이용권",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000416_p.gif",
-    "date": "2026.03.06 ~ 2026.07.30",
-    "venue": "점핑몬스터",
-    "link": "https://tickets.interpark.com/goods/Y6000416",
-    "region": "gyeonggi",
     "genre": "leisure"
   },
   {
@@ -30881,26 +30613,6 @@
     "genre": "leisure"
   },
   {
-    "id": "perf_대구_이월드_연간회원_가족권_7월",
-    "title": "［대구］ 이월드 연간회원 가족권 7월",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000942_p.gif",
-    "date": "2026.07.01 ~ 2026.07.30",
-    "venue": "［대구］ 이월드",
-    "link": "https://tickets.interpark.com/goods/Y6000942",
-    "region": "daegu",
-    "genre": "leisure"
-  },
-  {
-    "id": "perf_대구_이월드_연간회원권_7월",
-    "title": "［대구］ 이월드 연간회원권 7월",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000944_p.gif",
-    "date": "2026.07.01 ~ 2026.07.30",
-    "venue": "대구 이월드",
-    "link": "https://tickets.interpark.com/goods/Y6000944",
-    "region": "daegu",
-    "genre": "leisure"
-  },
-  {
     "id": "perf_대구_이월드_자유권_예스교복_PKG_7월",
     "title": "［대구］ 이월드 자유권+예스교복 PKG 7월",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000937_p.gif",
@@ -30957,16 +30669,6 @@
     "date": "2023.11.21 ~ 2026.08.30",
     "venue": "팔공산 케이블카",
     "link": "https://tickets.interpark.com/goods/Y3001913",
-    "region": "daegu",
-    "genre": "leisure"
-  },
-  {
-    "id": "perf_썸머페스타_이월드_자유이용권_시즌패스_3개월",
-    "title": "［썸머페스타］이월드 자유이용권 시즌패스(3개월)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000941_p.gif",
-    "date": "2026.07.01 ~ 2026.07.30",
-    "venue": "이월드",
-    "link": "https://tickets.interpark.com/goods/Y6000941",
     "region": "daegu",
     "genre": "leisure"
   },
@@ -31547,16 +31249,6 @@
     "genre": "leisure"
   },
   {
-    "id": "perf_부산_부산투어패스_송도해상케이블카X남포동_자갈치크루즈",
-    "title": "［부산］ 부산투어패스 송도해상케이블카X남포동 자갈치크루즈",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y3/Y3001574_p.gif",
-    "date": "2026.01.31 ~ 2026.07.30",
-    "venue": "송도해상케이블카",
-    "link": "https://tickets.interpark.com/goods/Y3001574",
-    "region": "busan",
-    "genre": "leisure"
-  },
-  {
     "id": "perf_부산_세라젬웰파크_부산기장점_할인_이용권_3_1",
     "title": "［부산］ 세라젬웰파크 부산기장점 할인 이용권(3/1~)",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000334_p.gif",
@@ -31693,16 +31385,6 @@
     "date": "2023.11.27 ~ 2026.12.31",
     "venue": "해운대 스파마린 사우나",
     "link": "https://tickets.interpark.com/goods/Y3001943",
-    "region": "busan",
-    "genre": "leisure"
-  },
-  {
-    "id": "perf_부산투어패스_송도해상케이블카X해운대_요트투어_요트홀릭",
-    "title": "［부산투어패스］송도해상케이블카X해운대 요트투어 요트홀릭",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y3/Y3001344_p.gif",
-    "date": "2026.01.31 ~ 2026.07.30",
-    "venue": "송도해상케이블카",
-    "link": "https://tickets.interpark.com/goods/Y3001344",
     "region": "busan",
     "genre": "leisure"
   },
@@ -32111,16 +31793,6 @@
     "genre": "leisure"
   },
   {
-    "id": "perf_7_1_7_31_아쿠아플라넷_여수_입장권",
-    "title": "［7/1~7/31］ 아쿠아플라넷 여수 입장권",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000997_p.gif",
-    "date": "2026.06.30 ~ 2026.07.30",
-    "venue": "아쿠아플라넷 여수",
-    "link": "https://tickets.interpark.com/goods/Y6000997",
-    "region": "jeonnam",
-    "genre": "leisure"
-  },
-  {
     "id": "perf_광양_섬진강_별빛_스카이_짚와이어",
     "title": "［광양］ 섬진강 별빛 스카이 짚와이어",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y5/Y5000040_p.gif",
@@ -32297,36 +31969,6 @@
     "date": "2025.06.09 ~ 2026.09.29",
     "venue": "두륜산 케이블카",
     "link": "https://tickets.interpark.com/goods/Y5000869",
-    "region": "jeonnam",
-    "genre": "leisure"
-  },
-  {
-    "id": "perf_아쿠아플라넷_여수_라마다짚트랙_PKG_7_1_7_31",
-    "title": "아쿠아플라넷 여수 + 라마다짚트랙 PKG (7/1~7/31)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000998_p.gif",
-    "date": "2026.06.30 ~ 2026.07.30",
-    "venue": "아쿠아플라넷 여수",
-    "link": "https://tickets.interpark.com/goods/Y6000998",
-    "region": "jeonnam",
-    "genre": "leisure"
-  },
-  {
-    "id": "perf_아쿠아플라넷_여수_여수예술랜드_PKG_7_1_7_31",
-    "title": "아쿠아플라넷 여수 + 여수예술랜드 PKG (7/1~7/31)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000999_p.gif",
-    "date": "2026.06.30 ~ 2026.07.30",
-    "venue": "아쿠아플라넷 여수",
-    "link": "https://tickets.interpark.com/goods/Y6000999",
-    "region": "jeonnam",
-    "genre": "leisure"
-  },
-  {
-    "id": "perf_아쿠아플라넷_여수_해상케이블카_PKG_7_1_7_31",
-    "title": "아쿠아플라넷 여수 + 해상케이블카 PKG (7/1~7/31)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000990_p.gif",
-    "date": "2026.06.30 ~ 2026.07.30",
-    "venue": "아쿠아플라넷 여수",
-    "link": "https://tickets.interpark.com/goods/Y6000990",
     "region": "jeonnam",
     "genre": "leisure"
   },
@@ -36261,48 +35903,6 @@
     "lastEnriched": "2026-07-13T04:31:54.707Z"
   },
   {
-    "id": "perf_송도해상케이블카_왕복탑승권_7월_7_1_7_31",
-    "title": "송도해상케이블카 왕복탑승권 7월(7/1~7/31)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000951_p.gif",
-    "date": "2026.06.24 ~ 2026.07.30",
-    "venue": "송도해상케이블카",
-    "link": "https://tickets.interpark.com/goods/Y6000951",
-    "region": "대한민국",
-    "genre": "leisure",
-    "runningTime": "",
-    "performanceTime": "* 판매기간 : ~ 2026.07.30* 유효기간 : 2026.07.01 ~ 2026.07.31",
-    "ageRating": "전체관람가",
-    "price": "에어크루즈 왕복 소인 13,000원",
-    "originalPrice": "14,000원",
-    "discount": "7%",
-    "address": "대한민국 부산광역시 서구 송도해변로 171",
-    "priceList": [
-      {
-        "label": "에어크루즈 왕복 소인",
-        "price": "13,000원",
-        "discount": "7%"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "* 판매기간 : ~ 2026.07.30* 유효기간 : 2026.07.01 ~ 2026.07.31",
-    "description": "* 판매기간 : ~ 2026.07.30* 유효기간 : 2026.07.01 ~ 2026.07.31",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_0.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_1.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_2.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_3.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_4.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_5.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_6.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_7.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_8.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_9.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/Y6/Y6000951_10.jpg"
-    ],
-    "lastEnriched": "2026-06-26T19:58:54.199Z"
-  },
-  {
     "id": "perf_잭슨나인스_양산점_7월_이용권",
     "title": "잭슨나인스 양산점 7월 이용권",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6000936_p.gif",
@@ -36740,28 +36340,6 @@
     "lastEnriched": "2026-07-27T19:51:28.451Z"
   },
   {
-    "id": "perf_한국_일본_랑랑별_때때롱_아시테지",
-    "title": "［한국-일본］ 랑랑별 때때롱 - 아시테지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008198_p.gif",
-    "date": "2026.07.29 ~ 2026.07.30",
-    "venue": "종로 아이들극장",
-    "link": "https://tickets.interpark.com/goods/26008198",
-    "region": "seoul",
-    "genre": "play",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-27T19:51:28.406Z"
-  },
-  {
     "id": "perf_2026_제10회_미스터리_스릴러전_헨젤과그레텔",
     "title": "2026 제10회 미스터리 스릴러전 : 〈헨젤과그레텔〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26009451_p.gif",
@@ -36982,50 +36560,6 @@
     "lastEnriched": "2026-07-27T19:52:51.307Z"
   },
   {
-    "id": "perf_제주_특가_다이나믹메이즈_부스트업_LEVEL2",
-    "title": "［제주/특가］ 다이나믹메이즈 부스트업+LEVEL2",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6001101_p.gif",
-    "date": "2026.07.27 ~ 2026.07.30",
-    "venue": "다이나믹메이즈",
-    "link": "https://tickets.interpark.com/goods/Y6001101",
-    "region": "jeju",
-    "genre": "leisure",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-27T19:53:05.155Z"
-  },
-  {
-    "id": "perf_제주_특가_런닝맨_감귤카트",
-    "title": "［제주/특가］ 런닝맨/감귤카트",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6001102_p.gif",
-    "date": "2026.07.27 ~ 2026.07.30",
-    "venue": "런닝맨",
-    "link": "https://tickets.interpark.com/goods/Y6001102",
-    "region": "jeju",
-    "genre": "leisure",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-27T19:53:05.114Z"
-  },
-  {
     "id": "perf_제주_리버스펀랜드_사계절_썰매장_에어바운스",
     "title": "［제주］ 리버스펀랜드 / 사계절 썰매장 에어바운스",
     "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6001136_p.gif",
@@ -37046,28 +36580,6 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-07-27T19:53:18.983Z"
-  },
-  {
-    "id": "perf_특가_제주올패스_이용권",
-    "title": "［특가］ 제주올패스 이용권",
-    "image": "https://ticketimage.interpark.com/Play/image/large/Y6/Y6001100_p.gif",
-    "date": "2026.07.27 ~ 2026.07.30",
-    "venue": "제주올패스",
-    "link": "https://tickets.interpark.com/goods/Y6001100",
-    "region": "jeju",
-    "genre": "leisure",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-27T19:53:18.937Z"
   },
   {
     "id": "perf_헤일리_티프먼_일상을_그리다_평범한_하루의_온도_부산",
@@ -37530,28 +37042,6 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-07-27T19:56:49.876Z"
-  },
-  {
-    "id": "perf_폴란드_미스터_사티_종이로_만든_세상_아시테지",
-    "title": "［폴란드］ 미스터 사티: 종이로 만든 세상 - 아시테지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008121_p.gif",
-    "date": "2026.07.28 ~ 2026.07.30",
-    "venue": "아르코꿈밭극장",
-    "link": "https://tickets.interpark.com/goods/26008121",
-    "region": "seoul",
-    "genre": "play",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-27T19:56:49.851Z"
   },
   {
     "id": "perf_부산_스탠드업_코미디",
