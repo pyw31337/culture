@@ -3810,9 +3810,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "인천 중구문화회관": {
     "name": "인천 중구문화회관",
@@ -4507,7 +4507,18 @@
     "lng": 126.68573600000002,
     "district": "미추홀구",
     "phone": "032-772-7361",
-    "homepage": "http://www.clownmime.co.kr/"
+    "homepage": "http://www.clownmime.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "96",
+    "theaterCount": "1",
+    "openedAt": "2007",
+    "amenities": [
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행"
   },
   "미리내 마술극단 송도점": {
     "name": "송도 메가박스",
@@ -4550,9 +4561,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "부천아트센터 콘서트홀": {
     "name": "부천아트센터",
@@ -21849,11 +21860,19 @@
   },
   "본동어울마당 아트홀": {
     "name": "본동어울마당 아트홀",
-    "address": "서울 동작구 노량진로32길 79",
+    "address": "서울특별시 동작구 노량진로32길 79 (본동)",
+    "lat": 37.51053,
+    "lng": 126.956894,
     "district": "동작구",
-    "lat": 37.5105545,
-    "lng": 126.9569133,
-    "mapped_region_id": "seoul"
+    "homepage": "https://www.idfac.or.kr/sub_new/menu02_07_01.php",
+    "facilityType": "공공(기타)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "중랑청소년문화예술창작센터": {
     "name": "중랑청소년문화예술창작센터",
@@ -64987,7 +65006,7 @@
   },
   "남도소리울림터": {
     "name": "남도소리울림터",
-    "address": "전라남도 무안군 삼향읍 남악로 222",
+    "address": "전남광주통합특별시 무안군 삼향읍 남악로 222",
     "lat": 34.8048793,
     "lng": 126.46175319999998,
     "district": "",
@@ -98507,7 +98526,18 @@
     "lat": 37.4387377161169,
     "lng": 126.685759250934,
     "phone": "032-772-7361",
-    "homepage": "http://www.clownmime.co.kr/"
+    "homepage": "http://www.clownmime.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "96",
+    "theaterCount": "1",
+    "openedAt": "2007",
+    "amenities": [
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행"
   },
   "한국소리문화의전당 (연지홀)": {
     "name": "한국소리문화의전당 (연지홀)",
@@ -108728,7 +108758,19 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5716073,
-    "lng": 126.895369
+    "lng": 126.895369,
+    "phone": "02-376-8410",
+    "homepage": "http://parks.seoul.go.kr/template/sub/culturetank.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "11180",
+    "theaterCount": "6",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "성곡미술관 전관": {
     "name": "성곡미술관 전관",
@@ -118068,6 +118110,23 @@
     "facilityType": "민간(대학로 외)",
     "seatScale": "0",
     "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "사유원": {
+    "name": "사유원",
+    "address": "대구광역시 군위군 부계면 치산효령로 1150",
+    "lat": 36.090771,
+    "lng": 128.68302,
+    "district": "",
+    "phone": "054-383-1278",
+    "homepage": "https://sayuwon.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "350",
+    "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
     "parking": "주차장: N",
