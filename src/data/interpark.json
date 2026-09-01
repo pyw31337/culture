@@ -2312,37 +2312,6 @@
     "lastEnriched": "2026-05-22T00:39:56.014Z"
   },
   {
-    "id": "perf_2026년_강북Festa_김진환_예술원_나비의_노래_vol2",
-    "title": "〈2026년 강북Festa〉 김진환 예술원 ‘나비의 노래 vol2’",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008365_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "강북문화예술회관 강북진달래홀",
-    "link": "https://tickets.interpark.com/goods/26008365",
-    "region": "seoul",
-    "genre": "play",
-    "runningTime": "50분",
-    "performanceTime": "2026년 8월 1일(토) 오후 3시",
-    "ageRating": "36개월이상 관람가능",
-    "price": "10,000원",
-    "originalPrice": "10,000원",
-    "discount": "70%",
-    "address": "서울특별시 강북구 삼각산로 85(수유동)",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 8월 1일(토) 오후 3시",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 8월 1일(토) 오후 3시",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26008365-01.jpg"
-    ],
-    "lastEnriched": "2026-07-15T19:21:27.414Z"
-  },
-  {
     "id": "perf_나의_빈틈_메이트",
     "title": "나의 빈틈 메이트",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26005788_p.gif",
@@ -3374,66 +3343,6 @@
     "lastEnriched": "2026-07-14T19:27:44.031Z"
   },
   {
-    "id": "perf_둘을_위한_프로코피에프",
-    "title": "둘을 위한 프로코피에프",
-    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004763_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "꿈의숲_콘서트홀",
-    "link": "https://tickets.interpark.com/goods/P0004763",
-    "region": "seoul",
-    "genre": "classic",
-    "runningTime": "100분(인터미션 15분 포함)",
-    "performanceTime": "2026.08.01(토) 17:00",
-    "ageRating": "7세 이상 관람가능",
-    "price": "전석 25,000원",
-    "originalPrice": "25,000원",
-    "discount": "60%",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "25,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 관람 2시간 전까지",
-    "synopsis": "예매가능시간: 관람 2시간 전까지2026.08.01(토) 17:00",
-    "description": "예매가능시간: 관람 2시간 전까지2026.08.01(토) 17:00",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/P0004763-01.jpg"
-    ],
-    "lastEnriched": "2026-07-15T19:21:35.928Z"
-  },
-  {
-    "id": "perf_Summer_with_Cellos",
-    "title": "Summer with Cellos",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010377_p.gif",
-    "date": "2026.07.28 ~ 2026.08.01",
-    "venue": "갤러리 루하 아키텍츠 컬렉션",
-    "link": "https://tickets.interpark.com/goods/26010377",
-    "region": "seoul",
-    "genre": "classic",
-    "runningTime": "100분(인터미션 15분 포함)",
-    "performanceTime": "2026.7.28.화요일. 오후 7:30분 2026.8.1.토요일. 오후 5:00시",
-    "ageRating": "만 5세 이상",
-    "price": "전석 30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026.7.28.화요일. 오후 7:30분\n2026.8.1.토요일. 오후 5:00시",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026.7.28.화요일. 오후 7:30분\n2026.8.1.토요일. 오후 5:00시",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-15T19:19:54.451Z"
-  },
-  {
     "id": "perf_2차_얼리버드_뱅크시_Still_Here",
     "title": "［2차 얼리버드］ 뱅크시 : Still Here",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26008579_p.gif",
@@ -4360,42 +4269,6 @@
     "lastEnriched": "2026-07-13T04:31:29.957Z"
   },
   {
-    "id": "perf_뮤지컬_왕자대전_수원",
-    "title": "뮤지컬 〈왕자대전〉 - 수원",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010255_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "경기아트센터 소극장",
-    "link": "https://tickets.interpark.com/goods/26010255",
-    "region": "gyeonggi",
-    "genre": "musical",
-    "runningTime": "110분",
-    "performanceTime": "- 2026. 8. 1.(토) (총 1일 2회) 14:00 / 18:00",
-    "ageRating": "만 7세 이상",
-    "price": "R석 20,000원\nS석 10,000원",
-    "originalPrice": "20,000원",
-    "discount": "75%",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "20,000원"
-      },
-      {
-        "label": "S석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 관람 2시간 전까지",
-    "synopsis": "예매가능시간: 관람 2시간 전까지- 2026. 8. 1.(토) (총 1일 2회) 14:00 / 18:00",
-    "description": "예매가능시간: 관람 2시간 전까지- 2026. 8. 1.(토) (총 1일 2회) 14:00 / 18:00",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26010255-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26010255-02.jpg"
-    ],
-    "lastEnriched": "2026-07-15T19:21:41.617Z"
-  },
-  {
     "id": "perf_용인어린이상상의숲_환경_퍼포먼스_싸운드써커스",
     "title": "용인어린이상상의숲 환경 퍼포먼스〈싸운드써커스〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007640_p.gif",
@@ -4425,35 +4298,6 @@
       "https://ticketimage.interpark.com/Play/image/etc/26/26007640-06.jpg"
     ],
     "lastEnriched": "2026-06-18T00:11:10.860Z"
-  },
-  {
-    "id": "perf_음악극_이면_하고_싶었던_말_화성",
-    "title": "음악극 - 이면(裏面), 하고 싶었던 말 - 화성",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010290_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "모두누림센터 누림아트홀",
-    "link": "https://tickets.interpark.com/goods/26010290",
-    "region": "gyeonggi",
-    "genre": "classic",
-    "runningTime": "80분",
-    "performanceTime": "2026년 8월 1일(토) 17시 (1일 1회)",
-    "ageRating": "만 7세 이상",
-    "price": "전석 10,000원",
-    "originalPrice": "10,000원",
-    "discount": "50%",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 8월 1일(토) 17시 (1일 1회)",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 8월 1일(토) 17시 (1일 1회)",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-15T19:21:44.756Z"
   },
   {
     "id": "perf_동탄_2026년_7월_8월_어둠속의대화_DIALOGUE_IN_THE_DARK",
@@ -5423,16 +5267,6 @@
     "genre": "musical"
   },
   {
-    "id": "perf_오스트리아_이리저리_팔랑팔랑_아시테지",
-    "title": "［오스트리아］ 이리저리 팔랑팔랑 - 아시테지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008246_p.gif",
-    "date": "2026.07.30 ~ 2026.08.01",
-    "venue": "아르코예술극장 소극장",
-    "link": "https://tickets.interpark.com/goods/26008246",
-    "region": "seoul",
-    "genre": "play"
-  },
-  {
     "id": "perf_한국_걸리버_여행기_ZOOM_IN_OUT_아시테지",
     "title": "［한국］ 걸리버 여행기 : ZOOM IN OUT - 아시테지",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26008168_p.gif",
@@ -5613,26 +5447,6 @@
     "genre": "concert"
   },
   {
-    "id": "perf_대구시립무용단_제89회_정기공연",
-    "title": "대구시립무용단 제89회 정기공연",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008965_p.gif",
-    "date": "2026.07.31 ~ 2026.08.01",
-    "venue": "대구문화예술회관 팔공홀 (대극장)",
-    "link": "https://tickets.interpark.com/goods/26008965",
-    "region": "daegu",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_뮤지컬_북구이야기_리멤버_1919_부산",
-    "title": "뮤지컬 북구이야기 〈리멤버 1919〉 - 부산",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009544_p.gif",
-    "date": "2026.07.31 ~ 2026.08.01",
-    "venue": "부산북구문화예술회관",
-    "link": "https://tickets.interpark.com/goods/26009544",
-    "region": "busan",
-    "genre": "musical"
-  },
-  {
     "id": "perf_BOYNEXTDOOR_TOUR_KNOCK_ON_Vol_2_IN_BUSAN",
     "title": "BOYNEXTDOOR TOUR ‘KNOCK ON Vol.2’ IN BUSAN",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26008566_p.gif",
@@ -5675,16 +5489,6 @@
     "genre": "musical"
   },
   {
-    "id": "perf_도깨비_방망이",
-    "title": "도깨비 방망이",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009234_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "노원구민의전당 (구.노원구민회관)",
-    "link": "https://tickets.interpark.com/goods/26009234",
-    "region": "seoul",
-    "genre": "musical"
-  },
-  {
     "id": "perf_창작뮤지컬_고래의_아이",
     "title": "창작뮤지컬 「고래의 아이」",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26009638_p.gif",
@@ -5705,86 +5509,12 @@
     "genre": "musical"
   },
   {
-    "id": "perf_2026_레떼아모르_팬콘서트_띵캉스_Thing_Cance",
-    "title": "2026 레떼아모르 팬콘서트 〈띵캉스 : Thing-Cance〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010640_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "푸르지오아트홀",
-    "link": "https://tickets.interpark.com/goods/26010640",
-    "region": "seoul",
-    "genre": "concert",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-25T19:27:15.086Z"
-  },
-  {
-    "id": "perf_2026_MJ_FANMEETING_The_Hangout",
-    "title": "2026 MJ FANMEETING 〈The Hangout〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009055_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "성수아트홀",
-    "link": "https://tickets.interpark.com/goods/26009055",
-    "region": "seoul",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_홍경민_콘서트_8월의_매달리스트_콘서트",
-    "title": "홍경민 콘서트 - 8월의 매달리스트 콘서트",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009309_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "구름아래소극장",
-    "link": "https://tickets.interpark.com/goods/26009309",
-    "region": "seoul",
-    "genre": "concert"
-  },
-  {
     "id": "perf_Best_Friends_십란_MINTPAPER_20th_SPECIAL_LIVE",
     "title": "Best Friends 십란 : MINTPAPER 20th SPECIAL LIVE",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26009158_p.gif",
     "date": "2026.08.01 ~ 2026.08.02",
     "venue": "연세대학교 대강당",
     "link": "https://tickets.interpark.com/goods/26009158",
-    "region": "seoul",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_next_2026_Han_Yo_Han_Concert",
-    "title": "next : 2026 Han Yo Han Concert",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010370_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "블루스퀘어 우리WON뱅킹홀",
-    "link": "https://tickets.interpark.com/goods/26010370",
-    "region": "seoul",
-    "genre": "concert",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-21T19:52:12.059Z"
-  },
-  {
-    "id": "perf_SSUM_타는_콘서트_수고했어_오늘도",
-    "title": "SSUM 타는 콘서트〈수고했어,오늘도〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009945_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "반포심산아트홀",
-    "link": "https://tickets.interpark.com/goods/26009945",
     "region": "seoul",
     "genre": "concert"
   },
@@ -5863,92 +5593,12 @@
     "lastEnriched": "2026-07-25T19:27:28.855Z"
   },
   {
-    "id": "perf_명화해설음악회_도슨트와_함께_음악으로_잠시_쉬어가다",
-    "title": "［명화해설음악회］ 도슨트와 함께, 음악으로 잠시 쉬어가다.",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008127_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "구로창의아트홀",
-    "link": "https://tickets.interpark.com/goods/26008127",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_8월_월간연주자_피아니스트_이준병",
-    "title": "8월, 월간연주자 피아니스트 이준병",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007785_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "갤러리 디아르테",
-    "link": "https://tickets.interpark.com/goods/26007785",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_고전에서_낭만으로_변주의_극치",
-    "title": "고전에서 낭만으로, 변주의 극치",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010275_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "콘서트홀 나누",
-    "link": "https://tickets.interpark.com/goods/26010275",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_금호영아티스트콘서트_도연수_피아노_독주회",
-    "title": "금호영아티스트콘서트 - 도연수 피아노 독주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007203_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "금호아트홀 연세",
-    "link": "https://tickets.interpark.com/goods/26007203",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_금호영아티스트콘서트_최세린_오보에_독주회",
-    "title": "금호영아티스트콘서트 - 최세린 오보에 독주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007049_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "금호아트홀 연세",
-    "link": "https://tickets.interpark.com/goods/26007049",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_서승연_초청_바이올린_독주회",
-    "title": "서승연 초청 바이올린 독주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009820_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "세라믹팔레스홀",
-    "link": "https://tickets.interpark.com/goods/26009820",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
     "id": "perf_우리_아기의_첫_오페라_오르페오의_포근",
     "title": "우리 아기의 첫 오페라 〈오르페오의 포근〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26009325_p.gif",
     "date": "2026.08.01 ~ 2026.08.02",
     "venue": "강북문화예술회관 강북소나무홀",
     "link": "https://tickets.interpark.com/goods/26009325",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_이준영_피아노_독주회",
-    "title": "이준영 피아노 독주회",
-    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004725_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "세종문화회관 체임버홀",
-    "link": "https://tickets.interpark.com/goods/P0004725",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_한스_짐머_영화음악_콘서트_2026_서울_롯데콘서트홀",
-    "title": "한스 짐머 영화음악 콘서트 2026_서울(롯데콘서트홀)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006775_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "롯데콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26006775",
     "region": "seoul",
     "genre": "classic"
   },
@@ -5961,16 +5611,6 @@
     "link": "https://tickets.interpark.com/goods/26009028",
     "region": "seoul",
     "genre": "classic"
-  },
-  {
-    "id": "perf_구름도사와_송이도사_빨간_괴물의_습격_구리",
-    "title": "〈구름도사와 송이도사: 빨간 괴물의 습격〉 - 구리",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008936_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "구리아트홀 코스모스 대극장",
-    "link": "https://tickets.interpark.com/goods/26008936",
-    "region": "gyeonggi",
-    "genre": "musical"
   },
   {
     "id": "perf_2026_가족_라이브_뮤지컬_라푼젤_수원",
@@ -5989,16 +5629,6 @@
     "date": "2026.08.01 ~ 2026.08.02",
     "venue": "안산문화예술의전당 달맞이극장",
     "link": "https://tickets.interpark.com/goods/26008562",
-    "region": "gyeonggi",
-    "genre": "musical"
-  },
-  {
-    "id": "perf_2026_가족뮤지컬_인어공주_오산",
-    "title": "2026. 가족뮤지컬 〈인어공주〉 - 오산",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008487_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "오산문화예술회관 대공연장",
-    "link": "https://tickets.interpark.com/goods/26008487",
     "region": "gyeonggi",
     "genre": "musical"
   },
@@ -6023,32 +5653,12 @@
     "genre": "musical"
   },
   {
-    "id": "perf_가족뮤지컬_누가_내_머리에_똥_쌌어_안산",
-    "title": "가족뮤지컬 누가 내 머리에 똥 쌌어？ - 안산",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008754_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "안산올림픽기념관 대공연장",
-    "link": "https://tickets.interpark.com/goods/26008754",
-    "region": "gyeonggi",
-    "genre": "musical"
-  },
-  {
     "id": "perf_뮤지컬_멜로우TV_Run_it_up_팀_나빠_고양",
     "title": "뮤지컬 멜로우TV 〈Run it up, 팀 나빠〉 - 고양",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26006708_p.gif",
     "date": "2026.08.01 ~ 2026.08.02",
     "venue": "고양어울림누리 어울림극장",
     "link": "https://tickets.interpark.com/goods/26006708",
-    "region": "gyeonggi",
-    "genre": "musical"
-  },
-  {
-    "id": "perf_연희놀이극_한글먹고_얌얌_안성",
-    "title": "연희놀이극 〈한글먹고 얌얌〉 - 안성",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009591_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "안성맞춤아트홀 소공연장",
-    "link": "https://tickets.interpark.com/goods/26009591",
     "region": "gyeonggi",
     "genre": "musical"
   },
@@ -6061,26 +5671,6 @@
     "link": "https://tickets.interpark.com/goods/26008014",
     "region": "gyeonggi",
     "genre": "musical"
-  },
-  {
-    "id": "perf_처인홀_여름방학공연_아프리카_리듬과_열정을_Anya_Fo_시즌2_용인",
-    "title": "처인홀 여름방학공연 〈아프리카 리듬과 열정을 Anya-Fo! 시즌2〉 - 용인",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009385_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "용인시문예회관 처인홀",
-    "link": "https://tickets.interpark.com/goods/26009385",
-    "region": "gyeonggi",
-    "genre": "musical"
-  },
-  {
-    "id": "perf_2026_재즈로_푸른_밤_Jazz_Dance_Vol_2_New_Orleans_과천",
-    "title": "2026 재즈로 푸른 밤 〈Jazz＆Dance〉 Vol.2 - New Orleans - 과천",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008672_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "과천시민회관 소극장",
-    "link": "https://tickets.interpark.com/goods/26008672",
-    "region": "gyeonggi",
-    "genre": "concert"
   },
   {
     "id": "perf_싸이흠뻑쇼_SUMMERSWAG2026_수원",
@@ -6113,86 +5703,6 @@
     "genre": "play"
   },
   {
-    "id": "perf_합_경기_광주",
-    "title": "합!？ - 경기 광주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009205_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "광주시문화예술의전당 맹사성홀",
-    "link": "https://tickets.interpark.com/goods/26009205",
-    "region": "gyeonggi",
-    "genre": "play"
-  },
-  {
-    "id": "perf_이야기로_만나는_정재_춤의_정원_김포",
-    "title": "〈이야기로 만나는 정재, 춤의 정원〉 - 김포",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009682_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "김포아트홀",
-    "link": "https://tickets.interpark.com/goods/26009682",
-    "region": "gyeonggi",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_몽글몽글꿈공장_판타지_무용컬_인천",
-    "title": "몽글몽글꿈공장(판타지 무용컬)-인천",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008805_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "계양문화회관 대공연장",
-    "link": "https://tickets.interpark.com/goods/26008805",
-    "region": "incheon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_사물놀이_느닷_양평아리랑_쇼케이스_양평",
-    "title": "사물놀이 느닷 〈양평아리랑〉 쇼케이스 - 양평",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010153_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "씨어터양평",
-    "link": "https://tickets.interpark.com/goods/26010153",
-    "region": "gyeonggi",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_판타지_발레_구미호_화성",
-    "title": "판타지 발레 〈구미호〉 - 화성",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008125_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "유앤아이센터 화성아트홀",
-    "link": "https://tickets.interpark.com/goods/26008125",
-    "region": "gyeonggi",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_뮤지컬_최고다_호기심딱지_시즌4_우리_몸은_우리가_지킨다_춘천",
-    "title": "뮤지컬 최고다 호기심딱지 시즌4 〈우리 몸은 우리가 지킨다!〉 - 춘천",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006752_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "춘천문화예술회관",
-    "link": "https://tickets.interpark.com/goods/26006752",
-    "region": "gangwon",
-    "genre": "musical"
-  },
-  {
-    "id": "perf_2026_평창대관령음악제_Concert_16_열정에서_태어난_두_목소리",
-    "title": "2026 평창대관령음악제 Concert ＃16 ‘열정에서 태어난 두 목소리’",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005763_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "알펜시아 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26005763",
-    "region": "gangwon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_평창대관령음악제_Concert_17_고요한_성찰",
-    "title": "2026 평창대관령음악제 Concert ＃17 ‘고요한 성찰’",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005762_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "알펜시아 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26005762",
-    "region": "gangwon",
-    "genre": "classic"
-  },
-  {
     "id": "perf_강릉_처음처럼_새로_브랜드체험관_8월",
     "title": "강릉 처음처럼＆새로 브랜드체험관 (8월)",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26008981_p.gif",
@@ -6203,16 +5713,6 @@
     "genre": "exhibition"
   },
   {
-    "id": "perf_2026_가족뮤지컬_인어공주_당진",
-    "title": "2026 가족뮤지컬 〈인어공주〉 - 당진",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008342_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "당진문예의전당 소공연장",
-    "link": "https://tickets.interpark.com/goods/26008342",
-    "region": "chungnam",
-    "genre": "musical"
-  },
-  {
     "id": "perf_쇼뮤지컬_프린세스_캐치_티니핑_대전",
     "title": "쇼뮤지컬 〈프린세스 캐치! 티니핑〉 - 대전",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26008072_p.gif",
@@ -6221,86 +5721,6 @@
     "link": "https://tickets.interpark.com/goods/26008072",
     "region": "daejeon",
     "genre": "musical"
-  },
-  {
-    "id": "perf_2026_무명전설_전국투어_콘서트_대전",
-    "title": "2026 무명전설 전국투어 콘서트 - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006558_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "DCC대전컨벤션센터 제2전시장",
-    "link": "https://tickets.interpark.com/goods/26006558",
-    "region": "daejeon",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_2026_PEPPERTONES_CLUB_TOUR_대전",
-    "title": "2026 PEPPERTONES CLUB TOUR - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006151_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "대전음악창작소",
-    "link": "https://tickets.interpark.com/goods/26006151",
-    "region": "daejeon",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_금난새의_유쾌한_클래식_대전국제음악제_대전",
-    "title": "〈금난새의 유쾌한 클래식〉 대전국제음악제 - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009859_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "대전예술의전당 아트홀",
-    "link": "https://tickets.interpark.com/goods/26009859",
-    "region": "daejeon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_소프라노_목지영_리사이틀_Resonance_대전",
-    "title": "소프라노 목지영 리사이틀 Resonance - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010116_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "대전예술의전당 앙상블홀",
-    "link": "https://tickets.interpark.com/goods/26010116",
-    "region": "daejeon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_지브리_디즈니_영화음악_오케스트라_콘서트_2026_당진_OPEN",
-    "title": "지브리＆디즈니 영화음악 오케스트라 콘서트 - 2026 당진 OPEN",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007162_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "당진문예의전당 대공연장",
-    "link": "https://tickets.interpark.com/goods/26007162",
-    "region": "chungnam",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_톤베르크_앙상블_제3회_정기연주회_대전",
-    "title": "톤베르크 앙상블 제3회 정기연주회 - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008230_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "KIMIN HALL (김인홀)",
-    "link": "https://tickets.interpark.com/goods/26008230",
-    "region": "daejeon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_팀_모티브_Vol_I_Motive_On_Question_and_Answer_대전",
-    "title": "팀 모티브 Vol. I - “Motive On (Question and Answer)” - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010103_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "대전시립연정국악원 작은마당",
-    "link": "https://tickets.interpark.com/goods/26010103",
-    "region": "daejeon",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_해설이_있는_발레_백조의_호수_공주",
-    "title": "해설이 있는 발레 〈백조의 호수〉 - 공주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017943_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "공주문예회관 대공연장",
-    "link": "https://tickets.interpark.com/goods/25017943",
-    "region": "chungnam",
-    "genre": "classic"
   },
   {
     "id": "perf_8월_백제문화전당_무릉공방_체험_프로그램",
@@ -6335,36 +5755,6 @@
     "lastEnriched": "2026-07-25T19:27:42.625Z"
   },
   {
-    "id": "perf_2026_김종서_전국투어_콘서트_모두의_김종서_대구",
-    "title": "2026 김종서 전국투어 콘서트 : 모두의 김종서 - 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008447_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "어울아트센터 함지홀",
-    "link": "https://tickets.interpark.com/goods/26008447",
-    "region": "daegu",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_조영남_전국투어_콘서트_조영남이_죽기_전에_하고_싶은_이야기_대구",
-    "title": "조영남 전국투어 콘서트 : 조영남이 죽기 전에 하고 싶은 이야기 - 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008449_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "어울아트센터 함지홀",
-    "link": "https://tickets.interpark.com/goods/26008449",
-    "region": "daegu",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_블루홀_속으로_통영",
-    "title": "블루홀 속으로 - 통영",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009262_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "통영시민문화회관 대극장",
-    "link": "https://tickets.interpark.com/goods/26009262",
-    "region": "gyeongnam",
-    "genre": "musical"
-  },
-  {
     "id": "perf_어린이뮤지컬_렛잇고_부산",
     "title": "어린이뮤지컬 〈렛잇고〉 - 부산",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26007484_p.gif",
@@ -6395,46 +5785,6 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-07-21T19:52:25.853Z"
-  },
-  {
-    "id": "perf_2026_BCC_필름_뮤직_페스티벌_무성영화_필름콘서트_로봇_드림_부산",
-    "title": "2026 BCC 필름 뮤직 페스티벌 : 무성영화 〈필름콘서트 Ⅲ. 로봇 드림〉 - 부산",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008172_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "영화의전당 하늘연극장",
-    "link": "https://tickets.interpark.com/goods/26008172",
-    "region": "busan",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_뮤지컬_한왕_바람_노래가_되다",
-    "title": "뮤지컬_한왕! 바람, 노래가 되다",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009584_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "한국소리문화의전당 연지홀",
-    "link": "https://tickets.interpark.com/goods/26009584",
-    "region": "jeonbuk",
-    "genre": "musical"
-  },
-  {
-    "id": "perf_2026_김장훈_전국투어_콘서트_원맨쇼_광주",
-    "title": "2026 김장훈 전국투어 콘서트 : 원맨쇼 - 광주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008705_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "광주 빛고을시민문화관",
-    "link": "https://tickets.interpark.com/goods/26008705",
-    "region": "gwangju",
-    "genre": "concert"
-  },
-  {
-    "id": "perf_너드커넥션_클럽_투어_파도의_고점_광주",
-    "title": "너드커넥션 클럽 투어 ［파도의 고점］ - 광주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009222_p.gif",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "광주 보헤미안",
-    "link": "https://tickets.interpark.com/goods/26009222",
-    "region": "gwangju",
-    "genre": "concert"
   },
   {
     "id": "perf_미묘하게_열린_어둠안에서_이타미_준",
@@ -11578,32 +10928,6 @@
     "link": "https://tickets.interpark.com/goods/26007334",
     "region": "gwangju",
     "genre": "musical"
-  },
-  {
-    "id": "perf_정류장_두_개의_이야기_인천",
-    "title": "정류장 - 두 개의 이야기 - 인천",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010440_p.gif",
-    "date": "2026.07.30 ~ 2026.08.01",
-    "venue": "문학시어터",
-    "link": "https://tickets.interpark.com/goods/26010440",
-    "region": "문학시어터(자세히)",
-    "genre": "play",
-    "runningTime": "90분",
-    "performanceTime": "2026년 7월 30일(목) 19:30 2026년 7월 31일(금) 19:30 2026년 8월 1일 (토) 14시,18시",
-    "ageRating": "12세 이상",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "문학시어터(자세히)",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 7월 30일(목) 19:30\n2026년 7월 31일(금) 19:30\n2026년 8월 1일 (토) 14시,18시",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지2026년 7월 30일(목) 19:30\n2026년 7월 31일(금) 19:30\n2026년 8월 1일 (토) 14시,18시",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/image/etc/26/26010440-01.jpg"
-    ],
-    "lastEnriched": "2026-07-15T19:21:16.113Z"
   },
   {
     "id": "perf_만원의행복_2026가족뮤지컬_백설공주_서울_노원",
@@ -24166,28 +23490,6 @@
     "genre": "play"
   },
   {
-    "id": "perf_국립극단_공동기획_갈매기",
-    "title": "국립극단 ［공동기획］ 갈매기",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008637_p.gif",
-    "date": "2026.07.24 ~ 2026.08.01",
-    "venue": "국립극단 명동예술극장",
-    "link": "https://tickets.interpark.com/goods/26008637",
-    "region": "seoul",
-    "genre": "play",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-26T19:30:39.959Z"
-  },
-  {
     "id": "perf_국립극단_안트로폴리스_스페셜_패키지",
     "title": "국립극단 ［안트로폴리스］ 스페셜 패키지",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26010549_p.gif",
@@ -24314,28 +23616,6 @@
     "link": "https://tickets.interpark.com/goods/25018150",
     "region": "seoul",
     "genre": "play"
-  },
-  {
-    "id": "perf_연극_광기의_빵",
-    "title": "연극 〈광기의 빵〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008575_p.gif",
-    "date": "2026.07.24 ~ 2026.08.01",
-    "venue": "창작플랫폼 경험과 상상",
-    "link": "https://tickets.interpark.com/goods/26008575",
-    "region": "seoul",
-    "genre": "play",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-26T19:31:07.620Z"
   },
   {
     "id": "perf_연극_더_헬멧",
@@ -24946,16 +24226,6 @@
     "genre": "exhibition"
   },
   {
-    "id": "perf_모더니즘과_도전",
-    "title": "모더니즘과 도전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005603_p.gif",
-    "date": "2026.04.21 ~ 2026.08.01",
-    "venue": "글로벌세아 아트스페이스",
-    "link": "https://tickets.interpark.com/goods/26005603",
-    "region": "seoul",
-    "genre": "exhibition"
-  },
-  {
     "id": "perf_브레드이발소_여름방학_특별전_in_한남",
     "title": "브레드이발소 : 여름방학 특별전 in 한남",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26008900_p.gif",
@@ -25108,16 +24378,6 @@
     "link": "https://tickets.interpark.com/goods/25000704",
     "region": "gyeonggi",
     "genre": "musical"
-  },
-  {
-    "id": "perf_2026_재즈로_푸른_밤_Jazz_Dance_패키지_과천",
-    "title": "2026 재즈로 푸른 밤 〈Jazz＆Dance〉 패키지 - 과천",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008205_p.gif",
-    "date": "2026.07.04 ~ 2026.08.01",
-    "venue": "과천시민회관 소극장",
-    "link": "https://tickets.interpark.com/goods/26008205",
-    "region": "gyeonggi",
-    "genre": "concert"
   },
   {
     "id": "perf_마술집_송도",
@@ -35086,28 +34346,6 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-07-27T19:53:32.838Z"
-  },
-  {
-    "id": "perf_GLOBAL_CALLING_MOVE_YOUR_BODY",
-    "title": "GLOBAL CALLING : MOVE YOUR BODY",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010997_p.gif",
-    "date": "2026.07.31 ~ 2026.08.01",
-    "venue": "LION SUPER CLUB",
-    "link": "https://tickets.interpark.com/goods/26010997",
-    "region": "seoul",
-    "genre": "concert",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-27T19:53:46.648Z"
   },
   {
     "id": "perf_뮤지컬_웁스_Oops_부산",

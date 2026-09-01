@@ -608,57 +608,6 @@
     "dataCollectedAt": "2026-05-21T13:32:42.028Z"
   },
   {
-    "id": "yes24_58482",
-    "title": "뮤지컬 [헬스키친] (Musical Hell’s Kitchen) - YES24DAY",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58482.jpg/dims/quality/70/",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "GS아트센터",
-    "link": "https://ticket.yes24.com/Perf/58482",
-    "genre": "musical",
-    "region": "seoul",
-    "price": "OP석 170,000원, VIP석 170,000원, R석 150,000원, S석 110,000원, A석 80,000원",
-    "priceList": [
-      {
-        "label": "OP석",
-        "price": "170,000원"
-      },
-      {
-        "label": "VIP석",
-        "price": "170,000원"
-      },
-      {
-        "label": "R석",
-        "price": "150,000원"
-      },
-      {
-        "label": "S석",
-        "price": "110,000원"
-      },
-      {
-        "label": "A석",
-        "price": "80,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 64,000원 ~ 최고가 136,000원",
-    "ageRating": "8세 이상 관람가 (2019년 포함 이전 출생자)",
-    "runningTime": "160분 (인터미션 20분 포함)",
-    "performanceTime": "2026년 8월 1일(토) 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "헬스키친문화산업전문회사, 클립서비스",
-    "organizer": "",
-    "contact": "",
-    "description": "※ 원활한 예매를 위해 5/20(수) 오후 4시부터 5/31(일) 오후 11시59분까지 무통장 입금 결제가 일시적으로 제한됩니다.",
-    "dataCollectedAt": "2026-05-21T13:32:46.444Z",
-    "image": "/images/posters/musical/yes24_뮤지컬_헬스키친_Musical_Hell_s_Kitchen_YES24DAY.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58482.jpg/dims/quality/70/",
-    "category": "독점공연",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58477_n.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260520/58482_dc.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/58477_2.jpg"
-    ]
-  },
-  {
     "id": "yes24_58440",
     "title": "[부산] 판타와 지노의 공룡탐험 展 IN BUSAN",
     "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260512/20260512-58440.jpg/dims/quality/70/",
@@ -1175,57 +1124,6 @@
       "https://tkfile.yes24.com/Upload2/Board/202605/20260512/58401_2.jpg"
     ],
     "dataCollectedAt": "2026-05-21T13:32:42.028Z"
-  },
-  {
-    "id": "yes24_58482",
-    "title": "뮤지컬 [헬스키친] (Musical Hell’s Kitchen) - YES24DAY",
-    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58482.jpg/dims/quality/70/",
-    "date": "2026.08.01 ~ 2026.08.01",
-    "venue": "GS아트센터",
-    "link": "https://ticket.yes24.com/Perf/58482",
-    "genre": "musical",
-    "region": "seoul",
-    "price": "OP석 170,000원, VIP석 170,000원, R석 150,000원, S석 110,000원, A석 80,000원",
-    "priceList": [
-      {
-        "label": "OP석",
-        "price": "170,000원"
-      },
-      {
-        "label": "VIP석",
-        "price": "170,000원"
-      },
-      {
-        "label": "R석",
-        "price": "150,000원"
-      },
-      {
-        "label": "S석",
-        "price": "110,000원"
-      },
-      {
-        "label": "A석",
-        "price": "80,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 64,000원 ~ 최고가 136,000원",
-    "ageRating": "8세 이상 관람가 (2019년 포함 이전 출생자)",
-    "runningTime": "160분 (인터미션 20분 포함)",
-    "performanceTime": "2026년 8월 1일(토) 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "헬스키친문화산업전문회사, 클립서비스",
-    "organizer": "",
-    "contact": "",
-    "description": "※ 원활한 예매를 위해 5/20(수) 오후 4시부터 5/31(일) 오후 11시59분까지 무통장 입금 결제가 일시적으로 제한됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260518/58477_n.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260520/58482_dc.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202605/20260519/58477_2.jpg"
-    ],
-    "dataCollectedAt": "2026-05-21T13:32:46.444Z",
-    "image": "/images/posters/musical/yes24_뮤지컬_헬스키친_Musical_Hell_s_Kitchen_YES24DAY.webp",
-    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202605/20260518/20260518-58482.jpg/dims/quality/70/",
-    "category": "독점공연"
   },
   {
     "id": "yes24_58440",

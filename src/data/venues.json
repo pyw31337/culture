@@ -1813,9 +1813,9 @@
     "theaterCount": "1",
     "openedAt": "2005",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "성균소극장": {
     "name": "성균소극장",
@@ -1904,9 +1904,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "초록씨어터": {
     "name": "초록씨어터",
@@ -1963,9 +1963,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 편의시설: 카페"
   },
   "소극장 혜화당": {
     "name": "정극장",
@@ -2154,7 +2154,7 @@
     "lng": 127.00349,
     "district": "종로구",
     "facilityType": "민간(대학로)",
-    "seatScale": "50",
+    "seatScale": "234",
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
@@ -2238,9 +2238,9 @@
     "theaterCount": "1",
     "openedAt": "2018",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "관악아트홀": {
     "name": "관악아트홀",
@@ -4640,9 +4640,9 @@
     "theaterCount": "3",
     "openedAt": "2003",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "트라이보울": {
     "name": "트라이보울",
@@ -5837,9 +5837,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "한국민속촌": {
     "name": "한국민속촌",
@@ -6085,9 +6085,9 @@
     "theaterCount": "1",
     "openedAt": "2003",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "올래홀": {
     "name": "올래홀",
@@ -60789,9 +60789,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대백프라자": {
     "name": "대백프라자",
@@ -61658,9 +61658,9 @@
     "theaterCount": "3",
     "openedAt": "2007",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "entry55 [성수]": {
     "name": "entry55 [성수]",
@@ -62382,9 +62382,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "우리소극장 [대학로]": {
     "name": "우리소극장 [대학로]",
@@ -62399,9 +62399,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "명보아트홀": {
     "name": "명보아트홀",
@@ -62639,9 +62639,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "미리내 마술극단 [송도]": {
     "name": "미리내 마술극단 [송도]",
@@ -66278,9 +66278,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "청라복합문화센터 블루노바홀": {
     "name": "청라복합문화센터 블루노바홀",
@@ -81452,9 +81452,9 @@
     "theaterCount": "1",
     "openedAt": "1995",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "대구보건대 인당아트홀": {
     "name": "대구보건대 인당아트홀",
@@ -103581,9 +103581,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "조이마루아트홀": {
     "name": "조이마루아트홀",
@@ -110011,7 +110011,22 @@
     "address": "서울 종로구 동숭길 133",
     "district": "종로구",
     "lat": 37.583359352573,
-    "lng": 127.002739817504
+    "lng": 127.002739817504,
+    "phone": "02-2075-2173",
+    "homepage": "https://www.smu.ac.kr/smarts/index.do",
+    "facilityType": "민간(대학로)",
+    "seatScale": "270",
+    "theaterCount": "2",
+    "openedAt": "2001",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "JTN 아트홀 3관": {
     "name": "JTN 아트홀 3관",
