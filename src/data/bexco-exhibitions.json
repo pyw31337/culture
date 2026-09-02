@@ -21,28 +21,5 @@
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
     "dataCollectedAt": "2026-07-09T23:58:57.176Z"
-  },
-  {
-    "id": "bexco_16233",
-    "title": "일러스타 페스 12",
-    "venue": "벡스코 제2전시장 4홀",
-    "venueKey": "벡스코 제2전시장 4홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.08.01 ~ 2026.08.02",
-    "image": "/images/posters/bexco/bexco_16233.webp",
-    "poster": "/images/posters/bexco/bexco_16233.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16233.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16233",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-07-09T23:59:05.389Z"
   }
 ]

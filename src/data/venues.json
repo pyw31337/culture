@@ -13089,7 +13089,7 @@
   },
   "GS칼텍스 예울마루": {
     "name": "GS칼텍스 예울마루",
-    "address": "전라남도 여수시 예울마루로 100 (시전동)",
+    "address": "전남광주통합특별시 여수시 예울마루로 100 (시전동)",
     "lat": 34.7498095,
     "lng": 127.66498990000002,
     "district": "",
@@ -67586,7 +67586,7 @@
     "homepage": "http://chuncheon.sangsangmadang.com/",
     "facilityType": "민간(대학로 외)",
     "seatScale": "1700",
-    "theaterCount": "5",
+    "theaterCount": "6",
     "openedAt": "2014",
     "amenities": [],
     "parking": "주차장: Y",
@@ -71848,9 +71848,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "경기대학교 [서울]": {
     "name": "경기대학교 [서울]",
@@ -82027,7 +82027,7 @@
   },
   "목포문화예술회관": {
     "name": "목포문화예술회관",
-    "address": "전라남도 목포시 남농로 102 (용해동)",
+    "address": "전남광주통합특별시 목포시 남농로 102 (용해동)",
     "lat": 34.7913967,
     "lng": 126.41699100000005,
     "district": "",
@@ -85477,10 +85477,20 @@
   },
   "울진문화예술회관": {
     "name": "울진문화예술회관",
-    "address": "경북 울진군 후포면 후포삼율로 194-14",
+    "address": "경상북도 울진군 후포면 후포삼율로 194-14",
+    "lat": 36.6871849,
+    "lng": 129.44381250000004,
     "district": "",
-    "lat": 36.6872362196369,
-    "lng": 129.44389901191
+    "phone": "054-789-5453",
+    "homepage": "http://www.uljin.go.kr/index.sko?menuCd=AB13000000000",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "492",
+    "theaterCount": "1",
+    "openedAt": "2007",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "아트스페이스유": {
     "name": "아트스페이스유",
@@ -104025,9 +104035,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "대한성공회 서울주교좌성당": {
     "name": "대한성공회 서울주교좌성당",
@@ -114248,7 +114258,20 @@
     "address": "전남광주통합특별시 고흥군 고흥읍 고흥로 1892-67",
     "district": "",
     "lat": 34.612522957008,
-    "lng": 127.297621294533
+    "lng": 127.297621294533,
+    "phone": "061-830-6712",
+    "homepage": "https://www.goheung.go.kr/culture/contentsView.do?pageId=culture2",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "754",
+    "theaterCount": "2",
+    "openedAt": "1999",
+    "amenities": [
+      "식당",
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 식당"
   },
   "서울 중랑구 봉우재로 113 (상봉동, 세림빌딩) 아오 연습실": {
     "name": "서울 중랑구 봉우재로 113 (상봉동, 세림빌딩) 아오 연습실",
@@ -115345,7 +115368,7 @@
   },
   "고흥문화회관": {
     "name": "고흥문화회관",
-    "address": "전라남도 고흥군 고흥읍 고흥로 1892-67",
+    "address": "전남광주통합특별시 고흥군 고흥읍 고흥로 1892-67",
     "lat": 34.6128268,
     "lng": 127.29753310000001,
     "district": "",
@@ -118147,5 +118170,22 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "청송문화예술회관": {
+    "name": "청송문화예술회관",
+    "address": "경상북도 청송군 청송읍 금월로 244-30",
+    "lat": 36.4295305,
+    "lng": 129.05953249999993,
+    "district": "",
+    "phone": "054-870-6070",
+    "homepage": "https://www.cs.go.kr/countyOffice/culture/00003360.web",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "416",
+    "theaterCount": "3",
+    "openedAt": "2013",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   }
 }

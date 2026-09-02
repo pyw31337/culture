@@ -1,28 +1,5 @@
 [
   {
-    "id": "setec_2288",
-    "title": "2026 가낳지모 캣페어 SUMMER",
-    "venue": "세텍 제1전시실, 제2전시실, 제3전시실",
-    "venueKey": "세텍 제1전시실, 제2전시실, 제3전시실",
-    "address": "서울 강남구 남부순환로 3104",
-    "lat": 37.4968,
-    "lng": 127.0628,
-    "region": "seoul",
-    "date": "2026.07.31 ~ 2026.08.02",
-    "image": "/images/posters/setec/setec_2288.webp",
-    "poster": "/images/posters/setec/setec_2288.webp",
-    "backupPoster": "/images/posters/setec/setec_2288.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2288",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-2222-3811",
-    "website": "https://www.setec.or.kr/",
-    "source": "setec",
-    "dataCollectedAt": "2026-07-09T23:59:05.436Z"
-  },
-  {
     "id": "setec_2251",
     "title": "디에이치 방배 입주박람회",
     "venue": "세텍 제1전시실, 제2전시실, 제3전시실",
