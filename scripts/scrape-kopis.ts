@@ -38,6 +38,7 @@ interface KopisPerformance {
     lat?: number;
     lng?: number;
     address?: string;
+    district?: string;
     source: 'kopis';
     isFestival?: boolean;
     backupPoster?: string;
@@ -473,6 +474,16 @@ async function scrapeKopis() {
                                 parking: currentVenue?.parking,
                                 restrooms: currentVenue?.restrooms,
                                 facilities: currentVenue?.facilities,
+                                // currentVenue (the venues.json cache, keyed by fcltynm) has
+                                // carried address/lat/lng/district for every venue this scraper
+                                // has ever enriched, but nothing copied those onto the performance
+                                // item itself -- every field above this one was, so 4021 KOPIS
+                                // items were shipping with no address/coordinates even when the
+                                // exact same run's venue enrichment step had just fetched them.
+                                address: currentVenue?.address,
+                                lat: currentVenue?.lat,
+                                lng: currentVenue?.lng,
+                                district: currentVenue?.district,
                                 synopsis: !isUseless(db.sty) ? db.sty : undefined,
                                 description: !isUseless(db.sty) ? db.sty : undefined,
                                 synopsisImages,
