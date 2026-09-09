@@ -63,3 +63,13 @@ status 페이지 또는 운영 알림에서 이 파일을 소비하세요.
 - 실패한 스크래퍼가 빈 배열로 **성공 파일을 덮어쓰지 않기** (체크포인트 복구 유지)
 - 디버그 HTML/PNG를 저장소에 커밋하지 않기
 - CI에서 Kakao API 등 IP 제한 API 호출하지 않기 (`DISABLE_KAKAO_API=1`)
+
+## Interpark / NOL list sources (2026-09)
+
+- Legacy `TPRegionReserve.asp` region pages now redirect into the NOL ticket shell and no longer yield `.obj`/`.content` listings.
+- `scrape-interpark.ts` therefore merges:
+  1. legacy ASP (best-effort),
+  2. NOL `contents/api/ranking` across genres/periods,
+  3. NOL genre/upcoming HTML product-id harvest + `api-ticketfront` goods summary hydration,
+  4. carry-forward of previously collected goods codes so regional long-tail shows (e.g. 구로 오류아트홀) are not dropped when absent from ranking HTML.
+- Search for genre-prefixed titles like `가족뮤지컬 콧구멍…` also requires Hangul token boundaries to treat whitespace/punctuation as separators (`src/lib/search-match.ts`).
