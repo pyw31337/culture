@@ -34,11 +34,18 @@ export function processAndMergePerformances(items: any[]): any[] {
             mergeCategory = 'live';
         }
 
-        let key = `${mergeCategory}_${safeTitle}`;
+        const safeVenue = slugify(String(p.venue || ''));
+        const dateOnly = p.date?.split(' ')[0].replace(/[-.]/g, '') || '00000000';
+
+        // Live/touring shows: title alone collapses regional stops (e.g. 콧구멍 구로 vs 과천).
+        // Keep venue (+ start date) in the merge key so KOPIS coverage stays complete;
+        // Interpark may still enrich the matching venue/date row via richness merge.
+        let key = mergeCategory === 'live'
+            ? `${mergeCategory}_${safeTitle}_${safeVenue}_${dateOnly}`
+            : `${mergeCategory}_${safeTitle}`;
 
         // Exception for Sports: Include Date in key to allow same teams playing on different days
         if (SPORTS_GENRES.includes(p.genre)) {
-            const dateOnly = p.date?.split(' ')[0].replace(/[-.]/g, '') || '00000000';
             key = `${p.genre}_${dateOnly}_${safeTitle}`;
         }
 
@@ -70,10 +77,15 @@ export function processAndMergePerformances(items: any[]): any[] {
         };
 
         const prefix = prefixMap[category] || category;
+        const safeVenue = slugify(String(p.venue || ''));
+        const dateOnly = p.date?.split(' ')[0].replace(/[-.]/g, '') || '00000000';
         let stableId = `${prefix}_${safeTitle}`;
 
+        if (['musical', 'play', 'classic', 'classic_tradition', 'opera', 'concert', 'exhibition', 'dance'].includes(category)) {
+            stableId = `${prefix}_${safeTitle}_${safeVenue}_${dateOnly}`;
+        }
+
         if (SPORTS_GENRES.includes(category)) {
-            const dateOnly = p.date?.split(' ')[0].replace(/[-.]/g, '') || '00000000';
             stableId = `${category}_${dateOnly}_${safeTitle}`;
         }
 

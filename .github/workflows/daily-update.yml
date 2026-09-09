@@ -127,11 +127,11 @@ jobs:
           INTERPARK_SELECTOR_TIMEOUT_MS: '12000'
           INTERPARK_POST_LOAD_DELAY_MS: '1500'
           INTERPARK_PROTOCOL_TIMEOUT_MS: '45000'
-          # KOPIS checkpoints and exits cleanly before the outer timeout. The
-          # local midnight run still performs the unrestricted deep refresh.
-          KOPIS_DETAIL_LIMIT: '80'
+          # KOPIS always upserts full list stubs first (search completeness), then
+          # enriches details within this budget. Local midnight still does deep refresh.
+          KOPIS_DETAIL_LIMIT: '120'
           KOPIS_VENUE_LIMIT: '40'
-          KOPIS_RUN_BUDGET_SECONDS: '420'
+          KOPIS_RUN_BUDGET_SECONDS: '480'
           KOPIS_LOOKBACK_DAYS: '45'
           KOPIS_REQUEST_RETRIES: '2'
           KOPIS_REQUEST_TIMEOUT_MS: '10000'

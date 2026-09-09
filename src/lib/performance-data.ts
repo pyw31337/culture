@@ -618,6 +618,14 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
                 if (!p.address) p.address = p.venue || '관광지';
                 if (!p.lat) p.lat = 37.5665;
                 if (!p.lng) p.lng = 126.9780;
+            } else if (p.source === 'kopis' || p.source === 'interpark' || p.source === 'yes24-exclusive' || p.source === 'timeticket') {
+                // KOPIS-first completeness: never drop catalog/ticket rows solely because
+                // venue geo enrichment lagged. Region + venue keep them searchable;
+                // Interpark/Yes24 can later enrich booking fields.
+                if (!p.address) {
+                    const regionLabel = (p.region || '').toString().trim();
+                    p.address = [regionLabel, p.venue].filter(Boolean).join(' ') || p.venue || '주소 확인 필요';
+                }
             } else {
                 return false;
             }
