@@ -357,18 +357,70 @@ async function scrapeKopis() {
     futureLimit.setFullYear(futureLimit.getFullYear() + 1);
     const eddate = futureLimit.toISOString().split('T')[0].replace(/-/g, '');
 
-    const fetchList = async (endpoint: string, isFestival = false): Promise<boolean> => {
-        let detailFetchCount = 0;
-        const states = isFestival ? ['01', '02', '03', '04'] : ['02', '01']; 
+    const upsertItem = (perf: KopisPerformance) => {
+        allItems = allItems.filter(it => it.id !== perf.id);
+        allItems.push(perf);
+    };
+
+    const findItem = (fullId: string) => allItems.find(it => it.id === fullId);
+
+    const buildListStub = (item: any, isFestival: boolean): KopisPerformance => {
+        const mt20id = String(item.mt20id || '');
+        const venueName = firstUseful(item.fcltynm);
+        const currentVenue = venueName ? venues[venueName] : undefined;
+        const poster = normalizeImageUrl(firstUseful(item.poster));
+        const from = firstUseful(item.prfpdfrom);
+        const to = firstUseful(item.prfpdto);
+        const date = from && to ? `${from} ~ ${to}` : (from || to || '');
+        return {
+            id: `kopis_${mt20id}`,
+            title: firstUseful(item.prfnm) || mt20id,
+            image: poster,
+            backupPoster: poster || undefined,
+            date,
+            venue: venueName || '장소 확인 필요',
+            venueId: firstUseful(item.mt10id) || undefined,
+            link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
+            genre: firstUseful(item.genrenm) || '공연',
+            price: '정보없음',
+            region: firstUseful(item.area) || undefined,
+            source: 'kopis',
+            isFestival,
+            performanceState: firstUseful(item.prfstate) || undefined,
+            dataCollectedAt: new Date().toISOString(),
+            address: currentVenue?.address,
+            lat: currentVenue?.lat,
+            lng: currentVenue?.lng,
+            district: currentVenue?.district,
+            venuePhone: currentVenue?.phone,
+            venueHomepage: currentVenue?.homepage,
+            venueFacilityType: currentVenue?.facilityType,
+            venueSeatScale: currentVenue?.seatScale,
+            venueTheaterCount: currentVenue?.theaterCount,
+            venueAmenities: currentVenue?.amenities,
+            parking: currentVenue?.parking,
+            restrooms: currentVenue?.restrooms,
+            facilities: currentVenue?.facilities,
+        };
+    };
+
+    // KOPIS-first completeness: list every upcoming/active row as a stub even when
+    // DETAIL_LIMIT / run budget blocks detail enrichment. Interpark can enrich
+    // tickets later; missing list rows are permanent search gaps.
+    const collectListStubs = async (endpoint: string, isFestival = false): Promise<{ completed: boolean; idsNeedingDetail: string[] }> => {
+        const idsNeedingDetail: string[] = [];
+        // Prefer upcoming (01) before currently-running (02) so shallow CI budgets
+        // still cover the searchable future catalog first.
+        const states = isFestival ? ['01', '02', '03', '04'] : ['01', '02'];
         for (const state of states) {
             let page = 1;
             let hasMore = true;
             while (hasMore) {
                 if (isBudgetExceeded()) {
                     safeWrite(OUTPUT_FILE, allItems);
-                    return false;
+                    return { completed: false, idsNeedingDetail };
                 }
-                console.log(`Fetching ${isFestival ? 'Festival' : 'Performance'} State ${state} Page ${page}...`);
+                console.log(`Listing ${isFestival ? 'Festival' : 'Performance'} State ${state} Page ${page}...`);
                 const xmlData = await fetchWithRetry(`${BASE_URL}/${endpoint}`, {
                     service: API_KEY,
                     stdate: isFestival ? stdate : performanceStdate,
@@ -384,125 +436,185 @@ async function scrapeKopis() {
 
                 const list = Array.isArray(dbs) ? dbs : [dbs];
                 for (const item of list) {
-                    if (isBudgetExceeded()) {
-                        safeWrite(OUTPUT_FILE, allItems);
-                        return false;
-                    }
                     const mt20id = item.mt20id;
+                    if (!mt20id) continue;
                     const fullId = `kopis_${mt20id}`;
-                    
-                    const existing = existingItems.find(it => it.id === fullId);
-                    if (existing && hasRichKopisDetails(existing) && process.env.KOPIS_FORCE_DETAIL_REFRESH !== '1') {
+                    const existing = findItem(fullId);
+                    const stub = buildListStub(item, isFestival);
+
+                    if (!existing) {
+                        upsertItem(stub);
+                        process.stdout.write(`+`);
+                    } else if (!hasRichKopisDetails(existing)) {
+                        // Keep any partial detail already present; refresh list identity fields.
+                        upsertItem({
+                            ...existing,
+                            title: stub.title || existing.title,
+                            date: stub.date || existing.date,
+                            venue: stub.venue !== '장소 확인 필요' ? stub.venue : existing.venue,
+                            genre: stub.genre || existing.genre,
+                            region: stub.region || existing.region,
+                            performanceState: stub.performanceState || existing.performanceState,
+                            image: existing.image || stub.image,
+                            backupPoster: existing.backupPoster || stub.backupPoster,
+                            link: existing.link || stub.link,
+                            address: existing.address || stub.address,
+                            lat: existing.lat || stub.lat,
+                            lng: existing.lng || stub.lng,
+                            district: existing.district || stub.district,
+                            venueId: existing.venueId || stub.venueId,
+                            source: 'kopis',
+                            isFestival: existing.isFestival ?? stub.isFestival,
+                            dataCollectedAt: existing.dataCollectedAt || stub.dataCollectedAt,
+                        });
+                        process.stdout.write(`u`);
+                    } else {
+                        // Keep rich row, but refresh state/date/venue from the live list.
+                        existing.date = stub.date || existing.date;
+                        existing.venue = stub.venue || existing.venue;
+                        existing.region = stub.region || existing.region;
+                        existing.performanceState = stub.performanceState || existing.performanceState;
+                        existing.genre = stub.genre || existing.genre;
+                        if (stub.address && !existing.address) existing.address = stub.address;
+                        if (stub.lat && !existing.lat) existing.lat = stub.lat;
+                        if (stub.lng && !existing.lng) existing.lng = stub.lng;
                         process.stdout.write(`s`);
-                        continue;
                     }
 
-                    try {
-                        if (DETAIL_LIMIT > 0 && detailFetchCount >= DETAIL_LIMIT) {
-                            console.log(`\n⏸️ Detail enrichment limit reached (${DETAIL_LIMIT}). Remaining performances will continue next run.`);
-                            safeWrite(OUTPUT_FILE, allItems);
-                            return true;
-                        }
-                        detailFetchCount++;
-                        process.stdout.write(`.`);
-                        await delay(RATE_LIMIT_DELAY);
-                        const detailXml = await fetchWithRetry(`${BASE_URL}/pblprfr/${mt20id}`, { service: API_KEY });
-                        const db = parser.parse(detailXml).dbs?.db;
-
-                        if (db) {
-                            const cleanPrice = (s: string) => {
-                                if (isUseless(s)) return '정보없음';
-                                let res = s.replace(/[\uff0c\u3001\n\r\t]/g, ',').replace(/\s+/g, ' ');
-                                return res.split(/(?<=원)\s*,\s*/).map(p => p.trim()).filter(p => p).join('\n');
-                            };
-                            const cast = splitPeople(db.prfcast);
-                            const crew = splitPeople(db.prfcrew);
-                            const producer = firstUseful(db.entrpsnmP, db.producer);
-                            const planner = firstUseful(db.entrpsnmA, db.planner);
-                            const host = firstUseful(db.entrpsnmH, db.host);
-                            const organizer = firstUseful(db.entrpsnmS, db.organizer);
-                            const sponsor = firstUseful(db.sponsor, db.entrpsnmSponsor);
-                            const runtime = firstUseful(db.prfruntime, db.runtime);
-                            const age = firstUseful(db.prfage, db.age);
-                            const performanceState = firstUseful(db.prfstate, item.prfstate);
-                            const priceList = parsePriceList(db.pcseguidance);
-                            const currentVenue = venues[db.fcltynm] || venues[item.fcltynm];
-                            const poster = normalizeImageUrl(firstUseful(db.poster));
-                            const synopsisImages = db.styurls?.styurl
-                                ? (Array.isArray(db.styurls.styurl) ? db.styurls.styurl : [db.styurls.styurl])
-                                    .map((url: unknown) => normalizeImageUrl(firstUseful(url)))
-                                    .filter(Boolean)
-                                : undefined;
-
-                            const perf: KopisPerformance = {
-                                id: fullId,
-                                title: db.prfnm,
-                                image: poster,
-                                backupPoster: poster,
-                                date: `${db.prfpdfrom} ~ ${db.prfpdto}`,
-                                venue: db.fcltynm,
-                                venueId: db.mt10id,
-                                link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
-                                genre: db.genrenm,
-                                price: cleanPrice(db.pcseguidance),
-                                time: db.dtguidance,
-                                region: db.area,
-                                source: 'kopis',
-                                isFestival,
-                                cast,
-                                crew,
-                                runtime,
-                                age,
-                                production: producer || planner || host || organizer,
-                                host,
-                                organizer,
-                                planner,
-                                producer,
-                                sponsor,
-                                priceList,
-                                ageDetail: age,
-                                openRun: firstUseful(db.openrun).toUpperCase() === 'Y',
-                                performanceState,
-                                lastModifiedAt: firstUseful(db.updatedate, db.modifydate),
-                                dataCollectedAt: new Date().toISOString(),
-                                venuePhone: currentVenue?.phone,
-                                venueHomepage: currentVenue?.homepage,
-                                venueFacilityType: currentVenue?.facilityType,
-                                venueSeatScale: currentVenue?.seatScale,
-                                venueTheaterCount: currentVenue?.theaterCount,
-                                venueAmenities: currentVenue?.amenities,
-                                parking: currentVenue?.parking,
-                                restrooms: currentVenue?.restrooms,
-                                facilities: currentVenue?.facilities,
-                                // currentVenue (the venues.json cache, keyed by fcltynm) has
-                                // carried address/lat/lng/district for every venue this scraper
-                                // has ever enriched, but nothing copied those onto the performance
-                                // item itself -- every field above this one was, so 4021 KOPIS
-                                // items were shipping with no address/coordinates even when the
-                                // exact same run's venue enrichment step had just fetched them.
-                                address: currentVenue?.address,
-                                lat: currentVenue?.lat,
-                                lng: currentVenue?.lng,
-                                district: currentVenue?.district,
-                                synopsis: !isUseless(db.sty) ? db.sty : undefined,
-                                description: !isUseless(db.sty) ? db.sty : undefined,
-                                synopsisImages,
-                            };
-                            allItems = allItems.filter(it => it.id !== fullId);
-                            allItems.push(perf);
-                            if (db.mt10id) uniqueVenueIds.add(db.mt10id);
-                        }
-                    } catch (e) {
-                        process.stdout.write(`X`);
+                    const current = findItem(fullId);
+                    if (!current || !hasRichKopisDetails(current) || process.env.KOPIS_FORCE_DETAIL_REFRESH === '1') {
+                        idsNeedingDetail.push(fullId);
                     }
+                    if (stub.venueId) uniqueVenueIds.add(stub.venueId);
                 }
-                console.log(`\nPage ${page} done. Total: ${allItems.length}`);
+                console.log(`\nList page ${page} done. Total stubs: ${allItems.length}`);
                 if (list.length < 100) hasMore = false;
                 else page++;
                 safeWrite(OUTPUT_FILE, allItems);
             }
         }
+        return { completed: true, idsNeedingDetail: [...new Set(idsNeedingDetail)] };
+    };
+
+    const enrichDetails = async (idsNeedingDetail: string[]): Promise<boolean> => {
+        let detailFetchCount = 0;
+        for (const fullId of idsNeedingDetail) {
+            if (isBudgetExceeded()) {
+                safeWrite(OUTPUT_FILE, allItems);
+                return false;
+            }
+            if (DETAIL_LIMIT > 0 && detailFetchCount >= DETAIL_LIMIT) {
+                console.log(`\n⏸️ Detail enrichment limit reached (${DETAIL_LIMIT}). List stubs retained; remaining details continue next run.`);
+                safeWrite(OUTPUT_FILE, allItems);
+                return true;
+            }
+
+            const mt20id = fullId.replace(/^kopis_/, '');
+            const existing = findItem(fullId);
+            if (existing && hasRichKopisDetails(existing) && process.env.KOPIS_FORCE_DETAIL_REFRESH !== '1') {
+                continue;
+            }
+
+            try {
+                detailFetchCount++;
+                process.stdout.write(`.`);
+                await delay(RATE_LIMIT_DELAY);
+                const detailXml = await fetchWithRetry(`${BASE_URL}/pblprfr/${mt20id}`, { service: API_KEY });
+                const db = parser.parse(detailXml).dbs?.db;
+
+                if (db) {
+                    const cleanPrice = (s: string) => {
+                        if (isUseless(s)) return '정보없음';
+                        let res = s.replace(/[\uff0c\u3001\n\r\t]/g, ',').replace(/\s+/g, ' ');
+                        return res.split(/(?<=원)\s*,\s*/).map(p => p.trim()).filter(p => p).join('\n');
+                    };
+                    const cast = splitPeople(db.prfcast);
+                    const crew = splitPeople(db.prfcrew);
+                    const producer = firstUseful(db.entrpsnmP, db.producer);
+                    const planner = firstUseful(db.entrpsnmA, db.planner);
+                    const host = firstUseful(db.entrpsnmH, db.host);
+                    const organizer = firstUseful(db.entrpsnmS, db.organizer);
+                    const sponsor = firstUseful(db.sponsor, db.entrpsnmSponsor);
+                    const runtime = firstUseful(db.prfruntime, db.runtime);
+                    const age = firstUseful(db.prfage, db.age);
+                    const performanceState = firstUseful(db.prfstate, existing?.performanceState);
+                    const priceList = parsePriceList(db.pcseguidance);
+                    const currentVenue = venues[db.fcltynm] || (existing?.venue ? venues[existing.venue] : undefined);
+                    const poster = normalizeImageUrl(firstUseful(db.poster));
+                    const synopsisImages = db.styurls?.styurl
+                        ? (Array.isArray(db.styurls.styurl) ? db.styurls.styurl : [db.styurls.styurl])
+                            .map((url: unknown) => normalizeImageUrl(firstUseful(url)))
+                            .filter(Boolean)
+                        : undefined;
+
+                    const perf: KopisPerformance = {
+                        id: fullId,
+                        title: db.prfnm,
+                        image: poster,
+                        backupPoster: poster,
+                        date: `${db.prfpdfrom} ~ ${db.prfpdto}`,
+                        venue: db.fcltynm,
+                        venueId: db.mt10id,
+                        link: `https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=${mt20id}`,
+                        genre: db.genrenm,
+                        price: cleanPrice(db.pcseguidance),
+                        time: db.dtguidance,
+                        region: db.area,
+                        source: 'kopis',
+                        isFestival: existing?.isFestival,
+                        cast,
+                        crew,
+                        runtime,
+                        age,
+                        production: producer || planner || host || organizer,
+                        host,
+                        organizer,
+                        planner,
+                        producer,
+                        sponsor,
+                        priceList,
+                        ageDetail: age,
+                        openRun: firstUseful(db.openrun).toUpperCase() === 'Y',
+                        performanceState,
+                        lastModifiedAt: firstUseful(db.updatedate, db.modifydate),
+                        dataCollectedAt: new Date().toISOString(),
+                        venuePhone: currentVenue?.phone,
+                        venueHomepage: currentVenue?.homepage,
+                        venueFacilityType: currentVenue?.facilityType,
+                        venueSeatScale: currentVenue?.seatScale,
+                        venueTheaterCount: currentVenue?.theaterCount,
+                        venueAmenities: currentVenue?.amenities,
+                        parking: currentVenue?.parking,
+                        restrooms: currentVenue?.restrooms,
+                        facilities: currentVenue?.facilities,
+                        address: currentVenue?.address,
+                        lat: currentVenue?.lat,
+                        lng: currentVenue?.lng,
+                        district: currentVenue?.district,
+                        synopsis: !isUseless(db.sty) ? db.sty : undefined,
+                        description: !isUseless(db.sty) ? db.sty : undefined,
+                        synopsisImages,
+                    };
+                    upsertItem(perf);
+                    if (db.mt10id) uniqueVenueIds.add(db.mt10id);
+                }
+            } catch {
+                process.stdout.write(`X`);
+            }
+
+            if (detailFetchCount % 20 === 0) {
+                safeWrite(OUTPUT_FILE, allItems);
+            }
+        }
+        safeWrite(OUTPUT_FILE, allItems);
         return true;
+    };
+
+    const fetchList = async (endpoint: string, isFestival = false): Promise<boolean> => {
+        const { completed, idsNeedingDetail } = await collectListStubs(endpoint, isFestival);
+        console.log(`\n📋 ${isFestival ? 'Festival' : 'Performance'} list stubs ready. Need detail: ${idsNeedingDetail.length}`);
+        if (!completed || isBudgetExceeded()) return false;
+        return enrichDetails(idsNeedingDetail);
     };
 
     const performancePassCompleted = await fetchList('pblprfr', false);
