@@ -8,7 +8,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import crypto from 'crypto';
 import cliProgress from 'cli-progress';
-import { atomicWriteJson } from './utils/scraper-utils';
+import { atomicWriteJson, atomicWriteJsonPreserve } from './utils/scraper-utils';
 
 puppeteer.use(StealthPlugin());
 
@@ -230,6 +230,365 @@ async function fetchPerformances(regionCode: string, regionName: string): Promis
         return [];
     }
 }
+
+
+const NOL_API_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Origin': 'https://tickets.interpark.com',
+    'Referer': 'https://tickets.interpark.com/',
+    'Accept': 'application/json, text/plain, */*',
+};
+
+const NOL_RANKING_GENRES = ['MUSICAL', 'DRAMA', 'KIDS', 'CLASSIC', 'CONCERT', 'EXHIBIT', 'LEISURE', 'SPORTS', 'ALL'];
+const NOL_RANKING_PERIODS = ['D', 'W', 'M'];
+const NOL_GENRE_PAGES = ['musical', 'play', 'family', 'classic', 'concert', 'sports', 'leisure'];
+const NOL_UPCOMING_GENRES = ['musical', 'play', 'kids', 'classic', 'concert', 'sports', 'exhibit', 'family'];
+
+const GENRE_CODE_MAP: Record<string, string> = {
+    '01011': 'musical',
+    '01003': 'concert',
+    '01005': 'play',
+    '01009': 'classic',
+    '01007': 'classic',
+    '01013': 'exhibition',
+    '01015': 'leisure',
+    '01017': 'leisure',
+    musical: 'musical',
+    concert: 'concert',
+    drama: 'play',
+    play: 'play',
+    classic: 'classic',
+    kids: 'leisure',
+    exhibit: 'exhibition',
+    leisure: 'leisure',
+    sports: 'etc',
+};
+
+function mapGenre(raw?: string | null): string {
+    if (!raw) return 'etc';
+    const key = String(raw).trim().toLowerCase();
+    if (GENRE_CODE_MAP[key]) return GENRE_CODE_MAP[key];
+    if (key.includes('musical') || key.includes('뮤지컬')) return 'musical';
+    if (key.includes('concert') || key.includes('콘서트')) return 'concert';
+    if (key.includes('drama') || key.includes('play') || key.includes('연극')) return 'play';
+    if (key.includes('classic') || key.includes('클래식') || key.includes('무용')) return 'classic';
+    if (key.includes('exhibit') || key.includes('전시')) return 'exhibition';
+    if (key.includes('kid') || key.includes('family') || key.includes('아동') || key.includes('가족') || key.includes('leisure')) return 'leisure';
+    return 'etc';
+}
+
+function formatPlayDate(start?: string | null, end?: string | null): string {
+    const fmt = (value?: string | null) => {
+        if (!value || !/^\d{8}$/.test(value)) return '';
+        return `${value.slice(0, 4)}.${value.slice(4, 6)}.${value.slice(6, 8)}`;
+    };
+    const s = fmt(start);
+    const e = fmt(end) || s;
+    if (!s) return '';
+    return `${s} ~ ${e}`;
+}
+
+function inferRegionFromText(...parts: Array<string | undefined | null>): string {
+    const text = parts.filter(Boolean).join(' ');
+    const rules: Array<[RegExp, string]> = [
+        [/서울|구로|강남|강동|마포|송파|용산|종로|영등포/, '서울'],
+        [/경기|과천|성남|수원|고양|부천|용인|안양|화성/, '경기'],
+        [/인천/, '인천'],
+        [/부산/, '부산'],
+        [/대구/, '대구'],
+        [/광주/, '광주'],
+        [/대전/, '대전'],
+        [/울산/, '울산'],
+        [/세종/, '세종'],
+        [/강원/, '강원'],
+        [/충북|충청북/, '충북'],
+        [/충남|충청남/, '충남'],
+        [/전북|전라북/, '전북'],
+        [/전남|전라남|목포/, '전남'],
+        [/경북|경상북/, '경북'],
+        [/경남|경상남|김해/, '경남'],
+        [/제주/, '제주'],
+    ];
+    for (const [re, name] of rules) {
+        if (re.test(text)) return name;
+    }
+    return '기타';
+}
+
+function performanceFromGoods(input: {
+    goodsCode: string;
+    title: string;
+    venue?: string;
+    image?: string;
+    date?: string;
+    region?: string;
+    genre?: string;
+}): Performance | null {
+    const goodsCode = String(input.goodsCode || '').trim();
+    const title = String(input.title || '').trim();
+    if (!goodsCode || !title) return null;
+    const venue = String(input.venue || '').trim() || '미상';
+    return {
+        id: `perf_${slugify(title)}`,
+        title,
+        image: input.image || '',
+        date: input.date || '',
+        venue,
+        link: `https://tickets.interpark.com/goods/${goodsCode}`,
+        region: input.region || inferRegionFromText(title, venue),
+        genre: mapGenre(input.genre),
+    };
+}
+
+function extractGoodsCode(linkOrId?: string | null): string | null {
+    if (!linkOrId) return null;
+    const fromLink = String(linkOrId).match(/\/goods\/([A-Za-z0-9]+)/);
+    if (fromLink) return fromLink[1];
+    if (/^[A-Za-z0-9]{5,}$/.test(String(linkOrId))) return String(linkOrId);
+    return null;
+}
+
+async function fetchGoodsSummary(goodsCode: string): Promise<any | null> {
+    try {
+        const { data } = await axios.get(`https://api-ticketfront.interpark.com/v1/goods/${goodsCode}/summary`, {
+            headers: NOL_API_HEADERS,
+            timeout: 15000,
+        });
+        return data?.data || null;
+    } catch {
+        return null;
+    }
+}
+
+async function hydrateGoodsCode(goodsCode: string, seed?: Partial<Performance>): Promise<Performance | null> {
+    const summary = await fetchGoodsSummary(goodsCode);
+    if (summary?.goodsName) {
+        const image = summary.goodsLargeImageUrl || summary.goodsSmallImageUrl || seed?.image || '';
+        const normalizedImage = String(image).startsWith('//') ? `https:${image}` : image;
+        return performanceFromGoods({
+            goodsCode,
+            title: summary.goodsName,
+            venue: summary.placeName || seed?.venue,
+            image: normalizedImage,
+            date: formatPlayDate(summary.playStartDate, summary.playEndDate) || seed?.date,
+            region: inferRegionFromText(summary.goodsName, summary.placeName, seed?.region),
+            genre: summary.genreCode || summary.genreName || summary.genreSubName || seed?.genre,
+        });
+    }
+    if (seed?.title) {
+        return performanceFromGoods({
+            goodsCode,
+            title: seed.title,
+            venue: seed.venue,
+            image: seed.image,
+            date: seed.date,
+            region: seed.region,
+            genre: seed.genre,
+        });
+    }
+    return null;
+}
+
+async function collectFromAspRegions(): Promise<Performance[]> {
+    const regions = await getRegions();
+    const allItems: Performance[] = [];
+    let successfulRegions = 0;
+
+    for (const r of regions) {
+        console.log(`Scanning ASP region ${r.name}...`);
+        const items = await fetchPerformances(r.code, r.name);
+        if (items.length > 0) successfulRegions += 1;
+        allItems.push(...items);
+        await new Promise(resolve => setTimeout(resolve, 200));
+    }
+
+    console.log(`ASP region collect: ${successfulRegions}/${regions.length} regions, ${allItems.length} items`);
+    return allItems;
+}
+
+async function collectFromNolRanking(): Promise<Performance[]> {
+    const items: Performance[] = [];
+    const seen = new Set<string>();
+
+    for (const period of NOL_RANKING_PERIODS) {
+        for (const genre of NOL_RANKING_GENRES) {
+            try {
+                const url = `https://tickets.interpark.com/contents/api/ranking?genre=${genre}&page=1&pageSize=100&period=${period}`;
+                const { data } = await axios.get(url, { headers: NOL_API_HEADERS, timeout: 20000 });
+                for (const arr of Object.values(data || {})) {
+                    if (!Array.isArray(arr)) continue;
+                    for (const row of arr) {
+                        const goodsCode = String(row?.goodsCode || '');
+                        if (!goodsCode || seen.has(goodsCode)) continue;
+                        seen.add(goodsCode);
+                        const item = performanceFromGoods({
+                            goodsCode,
+                            title: row.goodsName,
+                            venue: row.placeName,
+                            image: row.imageUrl,
+                            date: formatPlayDate(row.playStartDate || row.sDate, row.playEndDate || row.eDate),
+                            region: inferRegionFromText(row.goodsName, row.placeName),
+                            genre: row.genre || row.genreCode || genre,
+                        });
+                        if (item) items.push(item);
+                    }
+                }
+            } catch (error) {
+                console.warn(`NOL ranking failed genre=${genre} period=${period}:`, (error as Error)?.message || error);
+            }
+            await new Promise(resolve => setTimeout(resolve, 120));
+        }
+    }
+
+    console.log(`NOL ranking collect: ${items.length} items`);
+    return items;
+}
+
+async function collectGoodsCodesFromNolHtml(): Promise<string[]> {
+    const codes = new Set<string>();
+    const pages = [
+        ...NOL_GENRE_PAGES.map(g => `https://nol.yanolja.com/ticket/genre/${g}`),
+        ...NOL_UPCOMING_GENRES.map(g => `https://nol.yanolja.com/ticket/display/upcoming?genre=${g}`),
+    ];
+
+    for (const url of pages) {
+        try {
+            const { data } = await axios.get(url, {
+                headers: {
+                    'User-Agent': NOL_API_HEADERS['User-Agent'],
+                    'Accept': 'text/html,application/xhtml+xml',
+                },
+                timeout: 25000,
+                responseType: 'text',
+                // axios may follow redirects to NOL genre pages
+                maxRedirects: 5,
+            });
+            const html = String(data || '');
+            for (const match of html.matchAll(/\/(?:ticket\/(?:places\/[^/]+\/)?products|goods)\/([A-Za-z0-9]+)/g)) {
+                if (match[1] && !match[1].startsWith('L')) codes.add(match[1]);
+            }
+            for (const match of html.matchAll(/productId["']?\s*[:=]\s*["']?([0-9]{5,})/g)) {
+                codes.add(match[1]);
+            }
+        } catch (error) {
+            console.warn(`NOL HTML harvest failed ${url}:`, (error as Error)?.message || error);
+        }
+        await new Promise(resolve => setTimeout(resolve, 150));
+    }
+
+    console.log(`NOL HTML harvest: ${codes.size} goods codes`);
+    return Array.from(codes);
+}
+
+async function collectFromNolCatalog(_existingCodes: Set<string>): Promise<Performance[]> {
+    const rankingItems = await collectFromNolRanking();
+    const htmlCodes = await collectGoodsCodesFromNolHtml();
+    // Hydrate only newly discovered NOL codes. Existing long-tail goods are
+    // carried forward separately so daily runs do not hammer summary for 3k+ SKUs.
+    const codeSet = new Set<string>([
+        ...rankingItems.map(i => extractGoodsCode(i.link)).filter(Boolean) as string[],
+        ...htmlCodes,
+    ]);
+
+    console.log(`Hydrating ${codeSet.size} NOL-discovered goods via summary API...`);
+    const hydrated: Performance[] = [];
+    const rankingByCode = new Map<string, Performance>();
+    for (const item of rankingItems) {
+        const code = extractGoodsCode(item.link);
+        if (code) rankingByCode.set(code, item);
+    }
+
+    const codes = Array.from(codeSet);
+    const concurrency = Number(process.env.INTERPARK_SUMMARY_CONCURRENCY || 4);
+    for (let i = 0; i < codes.length; i += concurrency) {
+        const batch = codes.slice(i, i + concurrency);
+        const results = await Promise.all(batch.map(async (code) => {
+            const seed = rankingByCode.get(code);
+            return hydrateGoodsCode(code, seed);
+        }));
+        for (const item of results) {
+            if (item) hydrated.push(item);
+        }
+        if ((i / concurrency) % 10 === 0) {
+            console.log(`  summary progress ${Math.min(i + concurrency, codes.length)}/${codes.length}`);
+        }
+        await new Promise(resolve => setTimeout(resolve, 80));
+    }
+
+    console.log(`NOL catalog hydrated: ${hydrated.length} items`);
+    return hydrated;
+}
+
+function mergePerformanceLists(...lists: Performance[][]): Performance[] {
+    const byGoods = new Map<string, Performance>();
+    const byId = new Map<string, Performance>();
+
+    const prefer = (a: Performance, b: Performance) => {
+        const score = (p: Performance) => (
+            (p.venue && p.venue !== '미상' ? 2 : 0) +
+            (p.date ? 2 : 0) +
+            (p.image ? 1 : 0) +
+            (p.region && p.region !== '기타' ? 1 : 0) +
+            (p.genre && p.genre !== 'etc' ? 1 : 0)
+        );
+        return score(b) > score(a) ? b : a;
+    };
+
+    for (const list of lists) {
+        for (const item of list) {
+            const goods = extractGoodsCode(item.link);
+            if (goods) {
+                const prev = byGoods.get(goods);
+                byGoods.set(goods, prev ? prefer(prev, item) : item);
+            } else {
+                const prev = byId.get(item.id);
+                byId.set(item.id, prev ? prefer(prev, item) : item);
+            }
+        }
+    }
+
+    const merged = [...byGoods.values(), ...byId.values()];
+    // Final stable id dedupe
+    const finalMap = new Map<string, Performance>();
+    for (const item of merged) {
+        const prev = finalMap.get(item.id);
+        finalMap.set(item.id, prev ? prefer(prev, item) : item);
+    }
+    return Array.from(finalMap.values());
+}
+
+async function collectAllInterparkPerformances(existingMap: Map<string, Performance>): Promise<Performance[]> {
+    const existingCodes = new Set<string>();
+    for (const item of existingMap.values()) {
+        const code = extractGoodsCode(item.link);
+        if (code) existingCodes.add(code);
+    }
+
+    const aspItems = await collectFromAspRegions();
+    const nolItems = await collectFromNolCatalog(existingCodes);
+
+    // Keep not-yet-expired existing rows even if summary temporarily fails,
+    // so regional long-tail goods (e.g. 구로 오류아트홀) are not dropped.
+    const carriedExisting: Performance[] = [];
+    const coveredCodes = new Set(
+        [...aspItems, ...nolItems]
+            .map(i => extractGoodsCode(i.link))
+            .filter(Boolean) as string[]
+    );
+    for (const item of existingMap.values()) {
+        const code = extractGoodsCode(item.link);
+        if (!code || coveredCodes.has(code)) continue;
+        carriedExisting.push(item);
+    }
+
+    const merged = mergePerformanceLists(aspItems, nolItems, carriedExisting);
+    console.log(`Combined Interpark list: ASP=${aspItems.length}, NOL=${nolItems.length}, carried=${carriedExisting.length}, merged=${merged.length}`);
+    if (merged.length === 0) {
+        throw new Error('Interpark list collection returned no items; existing data was preserved.');
+    }
+    return merged;
+}
+
 
 async function scrapeDetails(browser: any, items: Performance[], existingEnriched: Map<string, Performance>) {
     const targetGenres = ['musical', 'play', 'concert', 'classic', 'leisure', 'exhibition', 'etc'];
@@ -988,21 +1347,10 @@ const runScraper = async () => {
         } catch (e) { console.log('No existing data or parse error.'); }
     }
 
-    // 1. Fetch Regions & List
-    const regions = await getRegions();
-    let allItems: Performance[] = [];
-
-    for (const r of regions) {
-        console.log(`Scanning ${r.name}...`);
-        const items = await fetchPerformances(r.code, r.name);
-        allItems.push(...items);
-        await new Promise(r => setTimeout(r, 200));
-    }
-
-    // Dedupe
-    const itemMap = new Map<string, Performance>();
-    allItems.forEach(i => itemMap.set(i.id, i));
-    const uniqueItems = Array.from(itemMap.values());
+    // 1. Collect list from legacy ASP regions (if alive) + NOL ranking/genre catalog
+    //    + carry-forward of existing goods codes. Old TPRegionReserve.asp now 301s to NOL,
+    //    so regional/family long-tail shows would otherwise disappear from future crawls.
+    const uniqueItems = await collectAllInterparkPerformances(existingMap);
     console.log(`Found ${uniqueItems.length} total items. Enriching Items...`);
 
     // 2. Enrich Details
@@ -1016,7 +1364,7 @@ const runScraper = async () => {
         const finalItems = await scrapeDetails(browser, uniqueItems, existingMap);
 
         // 3. Final Save
-        atomicWriteJson(outputPath, finalItems);
+        atomicWriteJsonPreserve(outputPath, finalItems, { allowEmpty: process.env.SCRAPE_ALLOW_EMPTY === '1', label: 'interpark.json' });
         console.log(`Saved ${finalItems.length} items to ${outputPath}`);
 
     } finally {

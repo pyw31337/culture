@@ -50,6 +50,17 @@ if (!includesSearchTerm('싸이흠뻑쇼', '싸이') || includesSearchTerm('업�
     errors.push('[search][싸이] 한글 토큰 경계 검증에 실패했습니다.');
 }
 
+// Genre-prefixed Interpark titles must remain searchable after whitespace collapse.
+if (!includesSearchTerm('가족뮤지컬 콧구멍을 후비면 - 서울 구로', '콧구멍')) {
+    errors.push('[search][콧구멍] 공백/장르접두 제목 매칭에 실패했습니다 (오류아트홀/구로 케이스).');
+}
+if (!includesSearchTerm('어린이뮤지컬 콧구멍을 후비면 - 대구', '콧구멍')) {
+    errors.push('[search][콧구멍] 공백 구분 어린이뮤지컬 제목 매칭에 실패했습니다.');
+}
+if (!includesSearchTerm('어린이뮤지컬 〈콧구멍을 후비면〉 - 인천', '콧구멍')) {
+    errors.push('[search][콧구멍] 괄호 제목 매칭에 실패했습니다.');
+}
+
 
 for (const check of CHECKS) {
     const globalMatches = allItems.filter((item) => item.genre === check.genreSlug && matchesKeyword(item, check.query));
