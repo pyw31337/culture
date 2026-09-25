@@ -14,6 +14,13 @@ import path from 'path';
 import axios from 'axios';
 import sharp from 'sharp';
 import * as cheerio from 'cheerio';
+import {
+    collectFestivalImageCandidates,
+    encodePosterWebp,
+    fetchBestPoster,
+    rankPoster,
+    readImageSize,
+} from './lib/festival-poster';
 
 // --- Image Processor Utility (Inlined) ---
 const DOWNLOAD_DOMAINS = ['namu.wiki', 'i.namu.wiki', 'pstatic.net', 'naver.com', 'kakaocdn.net', 'daumcdn.net', 'justwatch.com', 'images.justwatch.com', 'kfescdn.visitkorea.or.kr', 'tong.visitkorea.or.kr', 'cdn.visitkorea.or.kr'];
@@ -94,7 +101,7 @@ async function processImage(url: string, filenameBase: string, subDir: string = 
         });
 
         await sharp(response.data)
-            .resize({ width: 600, withoutEnlargement: true }) // Reasonable max width for posters
+            .resize({ width: 900, height: 1300, fit: 'inside', withoutEnlargement: true }) // was a 600px width cap
             .webp({ quality: 80 })
             .toFile(absolutePath);
 
@@ -393,6 +400,32 @@ async function scrapeListPage(page: Page, pageNum: number): Promise<ListItem[]> 
     }
 }
 
+/**
+ * Saves the best poster of a festival to /images/posters/festivals/<id>.webp and returns that
+ * path, or '' when no candidate could be fetched. Unlike processImage (skip if the file exists),
+ * an existing cached poster is replaced when the new pick ranks higher -- that is how the small
+ * landscape thumbnails saved by earlier runs get upgraded.
+ */
+async function saveBestFestivalPoster(html: string, festivalId: string, hints: Array<string | null | undefined>): Promise<string> {
+    const urls = collectFestivalImageCandidates(html, festivalId, hints);
+    if (urls.length === 0) return '';
+    const best = await fetchBestPoster(urls);
+    if (!best) return '';
+    const safeFilename = festivalId.replace(/[^a-z0-9가-힣]/gi, '_').substring(0, 100);
+    const relativePath = `/images/posters/festivals/${safeFilename}.webp`;
+    const absolutePath = path.join(PUBLIC_DIR, 'images', 'posters', 'festivals', `${safeFilename}.webp`);
+    const current = await readImageSize(absolutePath);
+    const output = await encodePosterWebp(best.buffer);
+    const next = await sharp(output).metadata();
+    if (current && rankPoster(current.width, current.height) >= rankPoster(next.width || 0, next.height || 0)) {
+        return relativePath; // cached poster is already as good
+    }
+    ensureDir(path.dirname(absolutePath));
+    fs.writeFileSync(absolutePath, output);
+    console.log(`[Image] festival poster ${festivalId}: ${best.width}x${best.height} (${best.url})`);
+    return relativePath;
+}
+
 async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalItem | null> {
     // Navigate to detail page to get high-quality poster/cover
     let url = `${DETAIL_BASE_URL}?fstvlCntntsId=${item.id}`;
@@ -556,8 +589,14 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
 
         // Regex Fallback if DOM extraction failed
         let finalImage = detailData.image || null;
+        const detailHtml = await page.content();
+
+        // Best poster among every image of this festival on the page (portrait poster first,
+        // then the largest) -- see scripts/lib/festival-poster.ts. Falls through to the single
+        // DOM/regex pick below only if none of them could be downloaded.
+        const bestPosterPath = await saveBestFestivalPoster(detailHtml, item.id, [finalImage, item.thumbnailImage]);
         if (!finalImage) {
-            const html = await page.content();
+            const html = detailHtml;
             // Look for common content image patterns if specific selectors failed
             // Example: https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/...
             const urlMatch = html.match(/https:\/\/kfescdn\.visitkorea\.or\.kr\/kfes\/upload\/contents\/db\/[^"'\s)]+/);
@@ -567,10 +606,10 @@ async function scrapeDetailPage(page: Page, item: ListItem): Promise<FestivalIte
         }
 
         // Use thumbnail if detail scrape failed
-        let imageUrl = finalImage || item.thumbnailImage;
+        let imageUrl = bestPosterPath || finalImage || item.thumbnailImage;
 
         // LOCALIZATION: Download Image
-        if (imageUrl) {
+        if (imageUrl && !bestPosterPath) {
             // Use ID as filename to ensure uniqueness and easy cleanup
             const localPath = await processImage(imageUrl, item.id, 'posters/festivals');
             if (localPath) {
