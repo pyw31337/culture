@@ -25,7 +25,8 @@ import { buildVenueCanonicalizationReport } from './utils/venue-canonicalization
 import { buildVenueMaster } from './utils/venue-master';
 import { applyVenuePlaceCache, buildVenuePlaceMatchingReport, type VenuePlaceCache, type VenuePlaceProvider } from './utils/venue-place-matching';
 import { isCompatibleVenueDisplayName } from './utils/venue-name-quality';
-import { normalizeRegionId } from '../src/lib/region-normalize';
+import { normalizeRegionId, regionIdFromAddress, REGION_CANONICAL } from '../src/lib/region-normalize';
+import { decodeItemText } from './lib/text-clean';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -376,7 +377,20 @@ function buildCalendarPayloadItem(performance: PrunedPerformance) {
 }
 
 
+const CANONICAL_REGION_IDS = new Set(REGION_CANONICAL.map((entry) => entry.id));
+function isCanonicalRegionId(id?: string) {
+    return !!id && CANONICAL_REGION_IDS.has(id);
+}
+
 function applyCanonicalRegion<T extends { region?: string; address?: string; venue?: string }>(item: T): T {
+    // An unresolved region ('etc'/'unknown') used to be glued in front of the address below, so
+    // "etc 세종특별자치시 ..." never prefix-matched and the item stayed 'etc' (invisible under every
+    // region filter). Resolve from the address -- or a "[부산 서구]" venue tag -- first.
+    if (!isCanonicalRegionId(normalizeRegionId(item.region || ''))) {
+        const tag = String(item.venue || '').match(/\[([^\]]+)\]/);
+        const resolved = regionIdFromAddress(item.address) || (tag ? regionIdFromAddress(tag[1]) : '');
+        if (isCanonicalRegionId(resolved)) return { ...item, region: resolved };
+    }
     const fromFields = [item.region, item.address, item.venue].filter(Boolean).join(' ');
     const id = normalizeRegionId(fromFields || item.region || '');
     if (id && id !== 'etc') {
@@ -555,6 +569,12 @@ function hasDetailedAddress(value?: string) {
 
 function normalizeAddressRegionWords(value?: string) {
     return compactText(value)
+        // 2026 전남·광주 통합: KOPIS now writes "전남광주통합특별시 <구/시/군> ...". The former
+        // 광주광역시 districts stay 광주, everything else is 전남 -- without this the whole province
+        // fell through to region 'etc' (hidden under every region filter).
+        .replace(/전남광주통합특별시\s*(동구|서구|남구|북구|광산구)(?=\s|$)/g, '광주 $1')
+        .replace(/전남광주통합특별시/g, '전남')
+        .replace(/세종특별자치시|세종시/g, '세종')
         .replace(/서울특별시|서울시/g, '서울')
         .replace(/부산광역시|부산시/g, '부산')
         .replace(/대구광역시|대구시/g, '대구')
@@ -2002,6 +2022,10 @@ async function generate() {
         );
 
         applyVenuePlaceContextToPerformances(sorted as Performance[], venueMasterBuild);
+
+        // Every output below (full feed, pages, map, calendar, categories) is built from `sorted`.
+        const TEXT_FIELDS = ['title', 'venue', 'address', 'description', 'synopsis', 'price', 'priceDetail', 'organizer', 'host', 'tagline'];
+        for (const performance of sorted) decodeItemText(performance as unknown as Record<string, unknown>, TEXT_FIELDS);
 
         // [New: Data Pruning for payload optimization]
         const pruned: PrunedPerformance[] = sorted.map((p) => {

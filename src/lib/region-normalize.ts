@@ -82,8 +82,13 @@ export function normalizeRegionLabel(region?: string | null): string {
  */
 export function regionIdFromAddress(address?: string | null): string {
   if (!address) return '';
-  const text = address.trim();
+  const text = address.trim().replace(/^etc\s+/i, '');
   if (!text) return '';
+
+  // 2026 전남·광주 통합: "전남광주통합특별시 <구/시/군> ..." -- the former 광주광역시 districts
+  // are 광주, the rest of the province 전남.
+  const unified = text.match(/^전남광주통합특별시\s*(\S+)/);
+  if (unified) return /^(동구|서구|남구|북구|광산구)$/.test(unified[1]) ? 'gwangju' : 'jeonnam';
 
   for (const entry of REGION_CANONICAL) {
     for (const alias of [entry.label, ...entry.aliases]) {
