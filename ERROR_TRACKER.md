@@ -858,3 +858,11 @@
   - interpark
   - festival
 
+### 🚨 CI Action Runtime Failure
+- **Date**: 2026-09-27 21:43:46 UTC
+- **GitHub Run ID**: [36350588111](https://github.com/pyw31337/culture/actions/runs/36350588111)
+- **Note**: The 03:00 KST fallback data update failed during validation/processing. Retaining last successful data commit.
+- **Failed Scrapers**:
+  - interpark
+  - festival
+
