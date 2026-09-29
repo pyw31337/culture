@@ -293,7 +293,7 @@ jobs:
         if: steps.freshness.outputs.should_run == 'true'
         env:
           UMCLASS_MISSING_GEO_CRITICAL_THRESHOLD: '1000'
-          POSTER_CACHE_MAX_NEW_DOWNLOADS: '2500'
+          POSTER_CACHE_MAX_NEW_DOWNLOADS: '3500'
           POSTER_CACHE_INCLUDE_ALL_REMOTE: '1'
           POSTER_CACHE_CONCURRENCY: '6'
         run: |
@@ -328,7 +328,7 @@ jobs:
           fi
 
           if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Stabilize Poster Image Cache" bash -c "npm run cache:posters && npm run generate:thumbs" || PIPELINE_SUCCESS=false
+            run_step "Stabilize Poster Image Cache" bash -c "npm run cache:posters && npm run validate:posters && npm run generate:thumbs" || PIPELINE_SUCCESS=false
           fi
 
           if [ "$PIPELINE_SUCCESS" = "true" ]; then

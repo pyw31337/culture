@@ -106,6 +106,11 @@ export type PerformanceMedia = {
   backupPoster?: string;
   posterUrl?: string;
   poster?: string;
+  /** Poster pipeline state. Pending/unavailable records are excluded from cards. */
+  posterStatus?: 'verified' | 'unavailable' | 'pending';
+  posterCheckedAt?: string;
+  /** Original candidates retained for a future cache retry, never rendered directly. */
+  posterSourceUrls?: string[];
   gradeIcon?: string;
   platforms?: string[];
   tagline?: string;

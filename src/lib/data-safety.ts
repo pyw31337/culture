@@ -42,6 +42,11 @@ function safePriceList(value: any): Performance['priceList'] {
 export function safePerformance(data: any): Performance | null {
     if (!data || typeof data !== 'object') return null;
 
+    // The poster pipeline deliberately removes records whose source image
+    // could not be verified. Do not let an unloaded page or a stale client
+    // cache turn that policy back into a "포스터 없음" card.
+    if (data.posterStatus === 'unavailable' || data.posterStatus === 'pending') return null;
+
     // Critical fields - if missing, drop the item
     if (!data.title || typeof data.title !== 'string') return null;
 
@@ -105,6 +110,9 @@ export function safePerformance(data: any): Performance | null {
             ? data.backupPoster
             : (typeof data.posterUrl === 'string' ? data.posterUrl : undefined),
         posterUrl: typeof data.posterUrl === 'string' ? data.posterUrl : undefined,
+        posterStatus: data.posterStatus === 'verified' ? data.posterStatus : undefined,
+        posterCheckedAt: typeof data.posterCheckedAt === 'string' ? data.posterCheckedAt : undefined,
+        posterSourceUrls: safeStringArray(data.posterSourceUrls),
         category: typeof data.category === 'string' ? data.category : undefined,
 
         // Ranking & Enhanced Date

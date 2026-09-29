@@ -70,6 +70,11 @@ jobs:
         run: |
           npm run validate:content
           npm run validate:locations
+          if [ -f public/data/poster-integrity-report.json ]; then
+            npm run validate:posters
+          else
+            echo "::warning::Poster integrity report is not available yet; the next data refresh will create it."
+          fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             npm run validate:details
             npm run validate:search

@@ -1,6 +1,7 @@
 import { startTransition, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Performance } from '@/types';
 import type { CinemaData, VenueData } from '@/lib/performance-data';
+import { safePerformanceList } from '@/lib/data-safety';
 
 type PerformanceLoadPolicy = 'full' | 'initial-only' | 'paged';
 type BackgroundLoadPriority = 'immediate' | 'deferred';
@@ -100,6 +101,7 @@ function getPage(path: string): Promise<Performance[]> {
     if (existing) return existing;
 
     const promise = fetchJson<Performance[]>(path, [])
+        .then((data) => safePerformanceList(data))
         .then((page) => {
             pageCacheByPath.set(path, page);
             return page;
@@ -136,7 +138,7 @@ function loadPerformances(
                 }
                 return merged;
             })
-        : fetchJson<Performance[]>(path, []))
+        : fetchJson<Performance[]>(path, []).then((data) => safePerformanceList(data)))
         .then((data) => {
             performancesCacheByPath.set(path, data);
             if (path === '/data/performances.json') {
