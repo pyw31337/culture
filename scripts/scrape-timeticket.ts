@@ -525,7 +525,9 @@ async function scrapeTimeTicket() {
                 continue;
             }
 
-            // Use LIST image but upgrade quality (remove /thn/ and thn_)
+            // List thumbs (…-255x357.jpg, legacy *_wonbon_*) 404 after TimeTicket
+            // replaces the file. The product document's og:image is the file that
+            // still loads. Never synthesize a URL that was not on the page.
             let finalImage = item.image;
             if (finalImage) {
                 // Example: /upload/product/thn/thn_20240101_12345.jpg -> /upload/product/20240101_12345.jpg
@@ -536,7 +538,8 @@ async function scrapeTimeTicket() {
             const detailImages = Array.isArray(detailData.synopsisImages)
                 ? detailData.synopsisImages.filter(isUsefulTimeTicketImage)
                 : [];
-            const primaryImage = finalImage || detailData.ogImage || detailImages[0] || item.image;
+            const ogImage = isUsefulTimeTicketImage(detailData.ogImage) ? detailData.ogImage : '';
+            const primaryImage = ogImage || finalImage || detailImages[0] || item.image;
             const finalDate = detailData.date && detailData.date !== 'OPEN RUN'
                 ? detailData.date
                 : (detailHints.date || detailData.date);
@@ -569,7 +572,7 @@ async function scrapeTimeTicket() {
                 ].filter(Boolean).join('\n'),
                 synopsisImages: detailImages.slice(0, 8),
                 stillImages: Array.isArray(detailData.stillImages) ? detailData.stillImages.filter(isUsefulTimeTicketImage) : detailImages.slice(1, 5),
-                backupPoster: finalImage || item.image,
+                backupPoster: ogImage || finalImage || item.image,
                 website: detailData.website || item.link,
                 sourceUpdatedAt: detailData.sourceUpdatedAt || new Date().toISOString(),
             });
