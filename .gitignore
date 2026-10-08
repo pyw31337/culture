@@ -120,3 +120,10 @@ scrape_recovered_failures.txt
 *~
 install-improvements.mjs
 src/data/_scraper-health-session.json
+
+# local AI-tool / PDCA state (never commit)
+docs/.pdca-snapshots/
+docs/.bkit-memory.json
+docs/.pdca-status.json
+venue_report 2.*
+server.log
