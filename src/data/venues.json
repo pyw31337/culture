@@ -61673,9 +61673,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "entry55 [사당]": {
     "name": "entry55 [사당]",
@@ -63811,16 +63811,16 @@
     "homepage": "http://nodeul.org/",
     "facilityType": "공공(기타)",
     "seatScale": "1072",
-    "theaterCount": "5",
+    "theaterCount": "7",
     "openedAt": "",
     "amenities": [
       "식당",
       "카페",
       "편의점"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 식당, 카페, 편의점"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "대구어린이회관 꾀꼬리극장": {
     "name": "대구어린이회관 꾀꼬리극장",
@@ -68464,9 +68464,9 @@
     "theaterCount": "4",
     "openedAt": "2003",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "현대백화점 문화홀 [킨텍스]": {
     "name": "현대백화점 문화홀 [킨텍스]",
@@ -68720,9 +68720,9 @@
     "theaterCount": "1",
     "openedAt": "2024",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "라이브클럽 협동조합": {
     "name": "라이브클럽 협동조합",
@@ -70947,9 +70947,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "이화여자대학교 대학원관 중강당": {
     "name": "이화여자대학교 대학원관 중강당",
@@ -72600,9 +72600,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "크리에이터스 홀": {
     "name": "크리에이터스 홀",
@@ -108803,7 +108803,24 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5512621,
-    "lng": 127.15761910000003
+    "lng": 127.15761910000003,
+    "phone": "02-440-0500",
+    "homepage": "https://www.gangdongarts.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "3240",
+    "theaterCount": "5",
+    "openedAt": "2011",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
   },
   "문화비축기지 T4, T5 전시장": {
     "name": "문화비축기지 T4, T5 전시장",
@@ -109834,7 +109851,23 @@
     "address": "정보 없음",
     "district": "",
     "lat": 35.1467193,
-    "lng": 126.92025420000004
+    "lng": 126.92025420000004,
+    "phone": "00-1899-5566",
+    "homepage": "https://www.acc.go.kr/",
+    "facilityType": "국립",
+    "seatScale": "4274",
+    "theaterCount": "19",
+    "openedAt": "2015",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "놀이방",
+      "수유실"
+    ],
+    "parking": "주차장: Y",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 국립 · 편의시설: 식당, 카페, 편의점, 놀이방"
   },
   "국립아시아문화전당 뉴스뮤지엄 ACC": {
     "name": "국립아시아문화전당 뉴스뮤지엄 ACC",
@@ -118654,6 +118687,90 @@
   "평택북부문예회관 소공연장": {
     "name": "평택북부문예회관 소공연장",
     "address": "정보 없음",
+    "district": ""
+  },
+  "만천명월예술인가": {
+    "name": "만천명월예술인가",
+    "address": "서울특별시 금천구 은행나무로 44 (시흥동)",
+    "lat": 37.4506977,
+    "lng": 126.9074454,
+    "district": "금천구",
+    "phone": "02-6953-3490",
+    "homepage": "https://www.mcmw.art/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "80",
+    "theaterCount": "4",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "충북혁신도시 복합혁신센터": {
+    "name": "충북혁신도시 복합혁신센터",
+    "address": "충청북도 진천군 덕산읍 대하로 203",
+    "lat": 36.90842,
+    "lng": 127.538018,
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "365",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "스케네웨이": {
+    "name": "스케네웨이",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "라운지 스튜디오": {
+    "name": "라운지 스튜디오",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "대학로 한성아트홀 2관": {
+    "name": "대학로 한성아트홀 2관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "여수진남체육관": {
+    "name": "여수진남체육관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "영남대학교 천마아트센터": {
+    "name": "영남대학교 천마아트센터",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "웰니스 워크샵": {
+    "name": "웰니스 워크샵",
+    "address": "서울",
+    "district": ""
+  },
+  "분당": {
+    "name": "분당",
+    "address": "서울",
+    "district": ""
+  },
+  "충청북도 · 충주시 · 염밭로": {
+    "name": "충청북도 · 충주시 · 염밭로",
+    "address": "충청북도 · 충주시 · 염밭로",
+    "district": ""
+  },
+  "민빌딩 1층 목공방 슈퍼블룸": {
+    "name": "민빌딩 1층 목공방 슈퍼블룸",
+    "address": "서울특별시 중랑구 용마산로 615 정민빌딩 1층 목공방 슈퍼블룸",
+    "district": "중랑구",
+    "lat": 37.6066,
+    "lng": 127.0924
+  },
+  "초보자도 부담 없이 참여하고 완성의 즐거움을 느낄 수 있도록 개인별 속도와 작품 상태에 맞춘 세심한 수업을 진행합니다.": {
+    "name": "초보자도 부담 없이 참여하고 완성의 즐거움을 느낄 수 있도록 개인별 속도와 작품 상태에 맞춘 세심한 수업을 진행합니다.",
+    "address": "초보자도 부담 없이 참여하고 완성의 즐거움을 느낄 수 있도록 개인별 속도와 작품 상태에 맞춘 세심한 수업을 진행합니다.",
     "district": ""
   }
 }

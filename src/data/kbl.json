@@ -1,19 +1,5 @@
 [
   {
-    "id": "kbl_20261008_원주_DB_vs_창원_LG",
-    "title": "원주 DB vs 창원 LG",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-08 19:00",
-    "venue": "원주DB프로미아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "원주 DB",
-    "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
-  },
-  {
     "id": "kbl_20261009_수원_KT_vs_고양_소노",
     "title": "수원 KT vs 고양 소노",
     "image": "/images/kbl_poster.png",
