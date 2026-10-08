@@ -11131,7 +11131,7 @@
     "address": "강원도 춘천시 효자상길5번길 13 (효자동)",
     "lat": 37.8727557,
     "lng": 127.72918819999995,
-    "district": "춘천시",
+    "district": "",
     "phone": "033-259-5841",
     "homepage": "http://www.cccf.or.kr/designer/skin/cafacility/cahallfacility.html",
     "facilityType": "공공(문예회관)",
@@ -11594,7 +11594,7 @@
     "address": "대구광역시 수성구 무학로 180 (지산동)",
     "lat": 35.8295426,
     "lng": 128.62841500000002,
-    "district": "수성구",
+    "district": "",
     "phone": "053-666-3300",
     "homepage": "http://www.ssartpia.kr",
     "facilityType": "공공(문예회관)",
@@ -12561,7 +12561,7 @@
     "address": "부산광역시 남구 유엔평화로76번길 1 (대연동)",
     "lat": 35.127275,
     "lng": 129.09361390000004,
-    "district": "남구",
+    "district": "",
     "phone": "051-607-6000",
     "homepage": "http://culture.busan.go.kr/Main.bs",
     "facilityType": "공공(문예회관)",
@@ -54771,7 +54771,7 @@
     "address": "제주특별자치도 제주시 서광로 182-6 (삼도일동)",
     "lat": 33.4991191,
     "lng": 126.51603879999993,
-    "district": "제주시",
+    "district": "",
     "phone": "064-744-8911",
     "homepage": "https://sayre21.tistory.com",
     "facilityType": "민간(대학로 외)",
@@ -61099,7 +61099,7 @@
     "address": "경상남도 창원시 마산회원구 합성옛길 142 (합성동)",
     "lat": 35.237854,
     "lng": 128.583553,
-    "district": "창원시",
+    "district": "",
     "facilityType": "민간(대학로 외)",
     "seatScale": "20",
     "theaterCount": "1",
@@ -63827,7 +63827,7 @@
     "address": "대구광역시 수성구 동대구로 176 (황금동)",
     "lat": 35.845223,
     "lng": 128.62448199999994,
-    "district": "수성구",
+    "district": "",
     "phone": "053-803-7944",
     "homepage": "http://www.daegu.go.kr/Childhall/",
     "facilityType": "공공(기타)",
@@ -65009,7 +65009,7 @@
     "address": "전남광주통합특별시 무안군 삼향읍 남악로 222",
     "lat": 34.8048793,
     "lng": 126.46175319999998,
-    "district": "무안군",
+    "district": "",
     "phone": "061-981-6688",
     "homepage": "http://namdosori.or.kr/",
     "facilityType": "공공(문예회관)",
@@ -65175,7 +65175,7 @@
     "address": "부산광역시 해운대구 수영강변대로 120 (우동)",
     "lat": 35.1711778,
     "lng": 129.12719560000005,
-    "district": "해운대구",
+    "district": "",
     "phone": "051-780-6000",
     "homepage": "http://www.dureraum.org/bcc/main/main.do?rbsIdx=1",
     "facilityType": "공공(문예회관)",
@@ -65381,7 +65381,7 @@
     "address": "제주특별자치도 제주시 선덕로8길 12 (연동)",
     "lat": 33.4844207,
     "lng": 126.50059499999998,
-    "district": "제주시",
+    "district": "",
     "phone": "064-710-4202",
     "homepage": "http://swcenter.jeju.go.kr/",
     "facilityType": "공공(기타)",
@@ -65691,7 +65691,7 @@
     "address": "전라북도 남원시 양림길 54 - 0 국립민속국악원",
     "lat": 35.4018262,
     "lng": 127.39142549999997,
-    "district": "남원시",
+    "district": "",
     "phone": "063-620-2324",
     "homepage": "https://namwon.gugak.go.kr/site/main/main.do",
     "facilityType": "국립",
@@ -66368,7 +66368,7 @@
     "address": "경상남도 진주시 동진로 33(칠암동)",
     "lat": 35.1792659,
     "lng": 128.0920809,
-    "district": "진주시",
+    "district": "",
     "phone": "055-751-3114",
     "facilityType": "공공(기타)",
     "seatScale": "400",
@@ -66502,9 +66502,9 @@
     "amenities": [
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "상주문화회관": {
     "name": "상주문화회관",
@@ -67357,7 +67357,7 @@
     "address": "전남광주통합특별시 나주시 전력로 55 (빛가람동)",
     "lat": 35.026607,
     "lng": 126.784615,
-    "district": "나주시",
+    "district": "",
     "facilityType": "공공(기타)",
     "seatScale": "1000",
     "theaterCount": "1",
@@ -67802,7 +67802,7 @@
     "address": "경상남도 양산시 중앙로 39-1 (남부동)",
     "lat": 35.3336224,
     "lng": 129.03692249999995,
-    "district": "양산시",
+    "district": "",
     "phone": "055-379-8550",
     "homepage": "http://www.yangsanart.net/",
     "facilityType": "공공(문예회관)",
@@ -68385,7 +68385,7 @@
     "address": "강원특별자치도 원주시 지정면 신평로 132",
     "lat": 37.381811,
     "lng": 127.880927,
-    "district": "원주시",
+    "district": "",
     "homepage": "https://www.pieplans.kr/playlist",
     "facilityType": "기타(비공연장)",
     "seatScale": "0",
@@ -68511,9 +68511,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "경상남도문화예술회관": {
     "name": "경상남도문화예술회관",
@@ -69252,9 +69252,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "경동교회": {
     "name": "경동교회",
@@ -72432,7 +72432,7 @@
     "address": "대구광역시 남구 현충로 265 (대명동)",
     "lat": 35.8559041,
     "lng": 128.5825921,
-    "district": "남구",
+    "district": "",
     "phone": "053-424-8340",
     "homepage": "http://www.actorstory.net/",
     "facilityType": "민간(대학로 외)",
@@ -84445,10 +84445,27 @@
   },
   "평촌아트홀": {
     "name": "평촌아트홀",
-    "address": "경기 안양시 동안구 평촌대로 76",
+    "address": "경기도 안양시 동안구 평촌대로 76 (호계동)",
+    "lat": 37.3801134,
+    "lng": 126.96406060000004,
     "district": "안양시",
-    "lat": 37.3799781649692,
-    "lng": 126.963981982121
+    "phone": "031-687-0500",
+    "homepage": "http://www.ayac.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "638",
+    "theaterCount": "1",
+    "openedAt": "2004",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
   },
   "신촌문화발전소 소극장": {
     "name": "신촌문화발전소 소극장",
@@ -108786,24 +108803,7 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5512621,
-    "lng": 127.15761910000003,
-    "phone": "02-440-0500",
-    "homepage": "https://www.gangdongarts.or.kr/",
-    "facilityType": "공공(문예회관)",
-    "seatScale": "3240",
-    "theaterCount": "5",
-    "openedAt": "2011",
-    "amenities": [
-      "카페",
-      "놀이방",
-      "장애인 주차",
-      "장애인 화장실",
-      "장애인 경사로",
-      "엘리베이터"
-    ],
-    "parking": "주차장: Y / 장애인 주차구역 제공",
-    "restrooms": "장애인 화장실 완비",
-    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
+    "lng": 127.15761910000003
   },
   "문화비축기지 T4, T5 전시장": {
     "name": "문화비축기지 T4, T5 전시장",
@@ -109015,23 +109015,7 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.2711919,
-    "lng": 127.43434869999999,
-    "phone": "031-644-2100",
-    "homepage": "https://art.icheon.go.kr/files/intro_02_01.php",
-    "facilityType": "공공(문예회관)",
-    "seatScale": "1651",
-    "theaterCount": "3",
-    "openedAt": "2009",
-    "amenities": [
-      "놀이방",
-      "장애인 주차",
-      "장애인 화장실",
-      "장애인 경사로",
-      "엘리베이터"
-    ],
-    "parking": "주차장: Y / 장애인 주차구역 제공",
-    "restrooms": "장애인 화장실 완비",
-    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 놀이방"
+    "lng": 127.43434869999999
   },
   "부평구청소년수련관 공연장": {
     "name": "부평구청소년수련관 공연장",
@@ -109850,23 +109834,7 @@
     "address": "정보 없음",
     "district": "",
     "lat": 35.1467193,
-    "lng": 126.92025420000004,
-    "phone": "00-1899-5566",
-    "homepage": "https://www.acc.go.kr/",
-    "facilityType": "국립",
-    "seatScale": "4274",
-    "theaterCount": "19",
-    "openedAt": "2015",
-    "amenities": [
-      "식당",
-      "카페",
-      "편의점",
-      "놀이방",
-      "수유실"
-    ],
-    "parking": "주차장: Y",
-    "restrooms": "수유실 보유",
-    "facilities": "시설 특성: 국립 · 편의시설: 식당, 카페, 편의점, 놀이방"
+    "lng": 126.92025420000004
   },
   "국립아시아문화전당 뉴스뮤지엄 ACC": {
     "name": "국립아시아문화전당 뉴스뮤지엄 ACC",
@@ -115834,7 +115802,7 @@
     "address": "전남광주통합특별시 북구 북문대로 60 (운암동)",
     "lat": 35.1777124,
     "lng": 126.88170230000003,
-    "district": "북구",
+    "district": "",
     "phone": "062-613-8333",
     "homepage": "https://gjart.gwangju.go.kr/intro.jsp",
     "facilityType": "공공(문예회관)",
@@ -118245,5 +118213,447 @@
     "parking": "주차장: Y",
     "restrooms": "",
     "facilities": "시설 특성: 공공(문예회관)"
+  },
+  "시흥아트센터": {
+    "name": "시흥아트센터",
+    "address": "경기도 시흥시 서울대학로 255 (배곧동)",
+    "lat": 37.369613,
+    "lng": 126.72345,
+    "district": "시흥시",
+    "homepage": "https://www.siheung.go.kr/sac/main.do",
+    "facilityType": "민간(대학로)",
+    "seatScale": "1011",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
+  },
+  "서리풀 아트홀": {
+    "name": "서리풀 아트홀",
+    "address": "서울특별시 서초구 반포대로9길 30(서초동)",
+    "lat": 37.4831234,
+    "lng": 127.0099787,
+    "district": "서초구",
+    "phone": "010-9671-0700",
+    "homepage": "https://www.instagram.com/seoripul_art_hall/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "피크닉": {
+    "name": "피크닉",
+    "address": "서울특별시 중구 퇴계로6가길 30 (남창동)",
+    "lat": 37.5569654,
+    "lng": 126.978139,
+    "district": "중구",
+    "phone": "02-318-3233",
+    "homepage": "http://piknic.kr/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [
+      "식당",
+      "카페",
+      "장애인 주차",
+      "장애인 화장실"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 식당, 카페"
+  },
+  "진해아트홀": {
+    "name": "진해아트홀",
+    "address": "경상남도 창원시 진해구 충장로 653 (풍호동)",
+    "lat": 35.131368,
+    "lng": 128.704735,
+    "district": "",
+    "homepage": "https://www.cwcf.or.kr/facility/facility_jharthall.asp",
+    "facilityType": "공공(기타)",
+    "seatScale": "600",
+    "theaterCount": "1",
+    "openedAt": "2026",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
+  },
+  "남해문화센터 (구. 남해군문화체육센터)": {
+    "name": "남해문화센터 (구. 남해군문화체육센터)",
+    "address": "경상남도 남해군 남해읍 선소로 12",
+    "lat": 34.8451335,
+    "lng": 127.8995602,
+    "district": "",
+    "phone": "055-860-8624",
+    "homepage": "https://www.namhae.go.kr/sports/Index.do?c=EE0201040000",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "910",
+    "theaterCount": "1",
+    "openedAt": "2000",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
+  },
+  "복합문화공간 모나밸리(특별 공연장)": {
+    "name": "복합문화공간 모나밸리(특별 공연장)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "3.15아트홀 대극장": {
+    "name": "3.15아트홀 대극장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "광양시 문화예술회관": {
+    "name": "광양시 문화예술회관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "킨텍스 제1전시장 3홀": {
+    "name": "킨텍스 제1전시장 3홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "전남광주통합특별시예술의전당": {
+    "name": "전남광주통합특별시예술의전당",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "전남광주통합특별시 광주미술관": {
+    "name": "전남광주통합특별시 광주미술관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "잠실야구장": {
+    "name": "잠실야구장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "세종예술의전당(세종특별자치시)": {
+    "name": "세종예술의전당(세종특별자치시)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "세종문화예술회관(조치원)": {
+    "name": "세종문화예술회관(조치원)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "수원 서호 잔디광장": {
+    "name": "수원 서호 잔디광장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "경주엑스포대공원 문화센터 문무홀": {
+    "name": "경주엑스포대공원 문화센터 문무홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "광화문 세종로공원": {
+    "name": "광화문 세종로공원",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "NOL 씨어터 합정 ABL생명홀": {
+    "name": "NOL 씨어터 합정 ABL생명홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "한강 예빛섬": {
+    "name": "한강 예빛섬",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "시흥아트센터 대공연장": {
+    "name": "시흥아트센터 대공연장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "H1 CLUB": {
+    "name": "H1 CLUB",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "이화뱅곳민들레연극마을 사랑채극장": {
+    "name": "이화뱅곳민들레연극마을 사랑채극장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "PWS STUDIO": {
+    "name": "PWS STUDIO",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "김대중컨벤션센터A.B.C홀": {
+    "name": "김대중컨벤션센터A.B.C홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "시흥아트센터 소공연장": {
+    "name": "시흥아트센터 소공연장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "티켓링크 1975 씨어터": {
+    "name": "티켓링크 1975 씨어터",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "함평엑스포공원": {
+    "name": "함평엑스포공원",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "CJ Azit 광흥창": {
+    "name": "CJ Azit 광흥창",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "용인 스피드웨이": {
+    "name": "용인 스피드웨이",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "대학로 스카이씨어터 2관": {
+    "name": "대학로 스카이씨어터 2관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "올림픽공원 테니스장": {
+    "name": "올림픽공원 테니스장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "청주 예술의전당 대공연장": {
+    "name": "청주 예술의전당 대공연장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "공간서론": {
+    "name": "공간서론",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "세종중앙공원 도시축제마당(예정)": {
+    "name": "세종중앙공원 도시축제마당(예정)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "양평군도서관 물빛극장": {
+    "name": "양평군도서관 물빛극장",
+    "address": "정보 없음",
+    "district": "양평군"
+  },
+  "중앙선 1942 안동역 뒷편 특설무대": {
+    "name": "중앙선 1942 안동역 뒷편 특설무대",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "클럽72CC": {
+    "name": "클럽72CC",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "대전컨벤션센터 1전시장": {
+    "name": "대전컨벤션센터 1전시장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "가톨릭관동대학교 세바스티아노스포츠센터": {
+    "name": "가톨릭관동대학교 세바스티아노스포츠센터",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "엑스코 5층 컨벤션홀": {
+    "name": "엑스코 5층 컨벤션홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "킨텍스 제1전시장 4,5홀": {
+    "name": "킨텍스 제1전시장 4,5홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "엑스코 오디토리움": {
+    "name": "엑스코 오디토리움",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "KBS 아레나": {
+    "name": "KBS 아레나",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "송도컨벤시아 4홀": {
+    "name": "송도컨벤시아 4홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "부산 광안리해수욕장": {
+    "name": "부산 광안리해수욕장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "아트조선스페이스 (ACS: Art Chosun Space)": {
+    "name": "아트조선스페이스 (ACS: Art Chosun Space)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "신사하우스": {
+    "name": "신사하우스",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "그라운드시소 용산": {
+    "name": "그라운드시소 용산",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "ACC 국립아시아문화전당": {
+    "name": "ACC 국립아시아문화전당",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "SETEC 제 3전시관": {
+    "name": "SETEC 제 3전시관",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "코엑스 A홀": {
+    "name": "코엑스 A홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "부산현대미술관 외 2곳": {
+    "name": "부산현대미술관 외 2곳",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울옥션 강남센터": {
+    "name": "서울옥션 강남센터",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "윤형근의 집": {
+    "name": "윤형근의 집",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "아모레성수": {
+    "name": "아모레성수",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "송도컨벤시아 2,3,4홀": {
+    "name": "송도컨벤시아 2,3,4홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "코엑스 컨퍼런스룸 3, 4층": {
+    "name": "코엑스 컨퍼런스룸 3, 4층",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "제물포구문화체육센터 공연장": {
+    "name": "제물포구문화체육센터 공연장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "고양 킨텍스 PBA 전용경기장": {
+    "name": "고양 킨텍스 PBA 전용경기장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "에버랜드 스피드웨이": {
+    "name": "에버랜드 스피드웨이",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "제주 한라아트홀 대극장": {
+    "name": "제주 한라아트홀 대극장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "충주 탄금공원 잔디광장": {
+    "name": "충주 탄금공원 잔디광장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "본다빈치뮤지엄 능동": {
+    "name": "본다빈치뮤지엄 능동",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "올림픽공원 올림픽 홀": {
+    "name": "올림픽공원 올림픽 홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "한국만화박물관 일대": {
+    "name": "한국만화박물관 일대",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "커먼그라운드": {
+    "name": "커먼그라운드",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "남구 소금공원(용호만매립부두)": {
+    "name": "남구 소금공원(용호만매립부두)",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "구덕종합운동장": {
+    "name": "구덕종합운동장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "상암 SOOP 콜로세움": {
+    "name": "상암 SOOP 콜로세움",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "잠실 DN 콜로세움": {
+    "name": "잠실 DN 콜로세움",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "중구구민회관": {
+    "name": "중구구민회관",
+    "address": "정보 없음",
+    "district": "중구",
+    "lat": 37.5637,
+    "lng": 126.9975
+  },
+  "파주 NFC 청운구장": {
+    "name": "파주 NFC 청운구장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "하늘문화센터": {
+    "name": "하늘문화센터",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "평택북부문예회관 소공연장": {
+    "name": "평택북부문예회관 소공연장",
+    "address": "정보 없음",
+    "district": ""
   }
 }
