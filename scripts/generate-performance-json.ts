@@ -27,6 +27,8 @@ import { applyVenuePlaceCache, buildVenuePlaceMatchingReport, type VenuePlaceCac
 import { isCompatibleVenueDisplayName } from './utils/venue-name-quality';
 import { normalizeRegionId, regionIdFromAddress, REGION_CANONICAL } from '../src/lib/region-normalize';
 import { decodeItemText } from './lib/text-clean';
+import { buildSessionsPayload } from './utils/session-payload';
+import { mergeCinemaRelayIds, type CinemaRelayMapping, type CinemaRow } from './utils/cinema-relay-ids';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -2230,6 +2232,16 @@ async function generate() {
 
                     fs.writeFileSync(destPath, JSON.stringify(prunedVenues));
                     console.log(`Optimized venues.json to ${destPath} (Kept ${Object.keys(prunedVenues).length}/${Object.keys(venues).length} used venues)`);
+                } else if (filename === 'cinemas.json') {
+                    const cinemas = JSON.parse(fs.readFileSync(srcPath, 'utf8')) as CinemaRow[];
+                    const relayPath = path.join(dataDir, 'cinema-relay-ids.json');
+                    const relayMapping = fs.existsSync(relayPath)
+                        ? (JSON.parse(fs.readFileSync(relayPath, 'utf8')).items || {}) as Record<string, CinemaRelayMapping>
+                        : {};
+                    const merged = mergeCinemaRelayIds(cinemas, relayMapping);
+                    fs.writeFileSync(destPath, JSON.stringify(merged, null, 2));
+                    const mappedCount = merged.filter((cinema) => cinema.relayTheaterId).length;
+                    console.log(`Synced cinemas.json to ${destPath} (${mappedCount}/${merged.length} with timetable relay ids)`);
                 } else {
                     fs.copyFileSync(srcPath, destPath);
                     console.log(`Synced ${filename} to ${destPath}`);
@@ -2238,6 +2250,18 @@ async function generate() {
                 console.warn(`Warning: ${filename} not found in src/data, skipping sync.`);
             }
         });
+
+        // Upcoming sessions (회차) for the detail-page calendar, lazy-loaded by the client.
+        const interparkRawPath = path.join(dataDir, 'interpark.json');
+        const interparkRaw = fs.existsSync(interparkRawPath)
+            ? JSON.parse(fs.readFileSync(interparkRawPath, 'utf8'))
+            : [];
+        const sessionsPayload = buildSessionsPayload(
+            pruned as Array<{ id: string; link?: string; website?: string }>,
+            Array.isArray(interparkRaw) ? interparkRaw : [],
+        );
+        fs.writeFileSync(path.join(dir, 'sessions.json'), JSON.stringify(sessionsPayload));
+        console.log(`Generated sessions.json (${Object.keys(sessionsPayload.items).length} performances with upcoming sessions)`);
 
     } catch (error: unknown) {
         console.error('Error generating performance data:', error);

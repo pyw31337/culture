@@ -124,6 +124,7 @@ function mergeItems(a: any, b: any): any {
     if (!hasNonEmptyArray(merged.keywords) && hasNonEmptyArray(loser.keywords)) merged.keywords = loser.keywords;
     if (!hasNonEmptyArray(merged.synopsisImages) && hasNonEmptyArray(loser.synopsisImages)) merged.synopsisImages = loser.synopsisImages;
     if (!hasNonEmptyArray(merged.priceList) && hasNonEmptyArray(loser.priceList)) merged.priceList = loser.priceList;
+    if (!hasNonEmptyArray(merged.bookingLinks) && hasNonEmptyArray(loser.bookingLinks)) merged.bookingLinks = loser.bookingLinks;
     if (!hasNonEmptyArray(merged.venueAmenities) && hasNonEmptyArray(loser.venueAmenities)) merged.venueAmenities = loser.venueAmenities;
 
     // Metadata (Cast, Director, Runtime, etc.)

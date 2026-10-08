@@ -72,7 +72,7 @@ export function isPerformanceRecord(value: unknown): value is PosterRecord {
  */
 export function isPosterAuditedDataFile(relativePath: string): boolean {
   const relPath = relativePath.replace(/\\/g, '/');
-  return !/(^build-info\.json$|^operations-summary\.json$|^poster-integrity-report\.json$|report\.json$|manifest\.json$|opportunities\.json$)/.test(relPath);
+  return !/(^build-info\.json$|^operations-summary\.json$|^poster-integrity-report\.json$|report\.json$|manifest\.json$|opportunities\.json$|^sessions\.json$|^heritage-events\.json$)/.test(relPath);
 }
 
 export function isPosterExcluded(record: PosterRecord): boolean {

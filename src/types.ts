@@ -80,6 +80,8 @@ export type PerformancePricing = {
   reservationInfo?: string;
   bookingNotice?: string;
   reservationRate?: string;
+  /** Official booking sites (KOPIS relates/relate). */
+  bookingLinks?: { name: string; url: string }[];
 };
 
 /** Creative / production credits */
