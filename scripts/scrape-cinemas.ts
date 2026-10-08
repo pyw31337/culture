@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { atomicWriteJson } from './utils/scraper-utils';
+import { requireKakaoRestKey } from './utils/env';
 
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/cinemas.json');
 const KAKAO_API_DISABLED = process.env.DISABLE_KAKAO_API === '1';
 
@@ -14,12 +14,35 @@ interface Cinema {
     brand: string;
 }
 
-async function fetchCinemasByKeyword(keyword: string, brand: string): Promise<Cinema[]> {
+/**
+ * Kakao category-based filter (k-skill religious/place docs: trust Kakao `category_name`
+ * rather than name heuristics). Cinemas are "문화,예술 > 영화,영화관 > ...".
+ */
+function isCinemaPlace(doc: { place_name?: string; category_name?: string }): boolean {
+    const name = doc.place_name || '';
+    const category = doc.category_name || '';
+    if (!category.includes('영화관')) return false;
+    // Sub-facilities that Kakao files under the cinema category.
+    const invalidKeywords = ['주차장', '화장실', '매표소', '매점', '본사', '고객센터', '사무실', '물류', '엘리베이터', '출입구', '정문', '후문'];
+    return !invalidKeywords.some((keyword) => name.includes(keyword));
+}
+
+function detectCinemaBrand(name = '', category = ''): string | null {
+    const text = `${category} ${name}`.toLowerCase();
+    if (/cgv/.test(text)) return 'CGV';
+    if (/롯데\s?시네마|lotte\s?cinema/.test(text)) return '롯데시네마';
+    if (/메가박스|megabox/.test(text)) return '메가박스';
+    if (/씨네q|씨네큐(?!브)/.test(text)) return '씨네Q';
+    return null;
+}
+
+async function fetchCinemasByKeyword(keyword: string, label: string): Promise<Cinema[]> {
+    const KAKAO_API_KEY = requireKakaoRestKey();
     let allResults: Cinema[] = [];
     let page = 1;
     let isEnd = false;
 
-    console.log(`Searching for ${brand} (${keyword})...`);
+    console.log(`Searching for ${label} (${keyword})...`);
 
     while (!isEnd && page <= 15) { // Max 15 pages for Kakao API
         try {
@@ -37,31 +60,15 @@ async function fetchCinemasByKeyword(keyword: string, brand: string): Promise<Ci
             const data = await res.json();
             if (data.documents) {
                 const mapped = data.documents
-                    .filter((doc: any) => {
-                        // 1. Exclude non-cinema facilities by keyword
-                        const invalidKeywords = ['주차장', '화장실', '매표소', '매점', '본사', '고객센터', '오피스', '사무실', '물류', '엘리베이터', '타워'];
-                        if (invalidKeywords.some(kw => doc.place_name.includes(kw))) return false;
-                        if (doc.category_name && (doc.category_name.includes('주차장') || doc.category_name.includes('화장실'))) return false;
-
-                        // 2. Category-based filter: Kakao categories for cinemas typically include '영화관' or '문화시설'
-                        // Exclude obvious non-cinema categories
-                        const nonCinemaCategories = ['음식점', '카페', '편의점', '주유소', '통신', '은행', '미용', '세탁', '약국', '학원', '부동산', '숙박', '주차', '자동차', '골프', '노래', '치킨', '피자', '버거', '족발', '감자탕', '네일'];
-                        if (doc.category_name && nonCinemaCategories.some(cat => doc.category_name.includes(cat))) return false;
-
-                        // 3. Name-prefix filter: Real cinemas start with cinema brand names
-                        const name = doc.place_name || '';
-                        const cinemaPrefixes = ['CGV', 'cgv', '메가박스', 'MEGABOX', '롯데시네마', '롯데 시네마', 'LOTTE', '씨네', '시네마', '극장', '영화', '필름', '아트하우스', '인디스페이스', '에무시네마', '오오극장', '브로드웨이'];
-                        const startsWithCinema = cinemaPrefixes.some(prefix => name.toLowerCase().startsWith(prefix.toLowerCase()));
-                        if (!startsWithCinema) return false;
-
-                        return true;
-                    })
+                    .filter((doc: any) => isCinemaPlace(doc))
                     .map((doc: any) => ({
                         name: doc.place_name,
                         address: doc.road_address_name || doc.address_name,
                         lat: parseFloat(doc.y),
                         lng: parseFloat(doc.x),
-                        brand
+                        // Brand comes from the place itself, not from the search query
+                        // (e.g. "광주극장" also returns CGV/롯데시네마 branches in 광주).
+                        brand: detectCinemaBrand(doc.place_name, doc.category_name) || '독립영화관',
                     }));
                 allResults.push(...mapped);
             }
@@ -116,7 +123,9 @@ async function main() {
 
     // Fetch independent ones separately
     for (const kw of independentKeywords) {
-        const results = await fetchCinemasByKeyword(kw, '독립영화관');
+        const results = (await fetchCinemasByKeyword(kw, '독립영화관'))
+            // Keep only real independents; chain branches near the keyword are collected above.
+            .filter((cinema) => cinema.brand === '독립영화관');
         results.forEach(c => {
             allCinemas[c.name] = c;
         });

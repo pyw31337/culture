@@ -21,6 +21,20 @@ function safeStringArray(value: any): string[] | undefined {
     return filtered.length > 0 ? filtered : undefined;
 }
 
+function safeBookingLinks(value: unknown): Performance['bookingLinks'] {
+    if (!Array.isArray(value)) return undefined;
+    const links = value.reduce<NonNullable<Performance['bookingLinks']>>((acc, item: unknown) => {
+        if (!item || typeof item !== 'object') return acc;
+        const { name: rawName, url: rawUrl } = item as { name?: unknown; url?: unknown };
+        const name = typeof rawName === 'string' ? rawName.trim() : '';
+        const url = typeof rawUrl === 'string' ? rawUrl.trim() : '';
+        if (!name || !/^https?:\/\//i.test(url)) return acc;
+        acc.push({ name, url });
+        return acc;
+    }, []);
+    return links.length > 0 ? links.slice(0, 8) : undefined;
+}
+
 function safePriceList(value: any): Performance['priceList'] {
     if (!Array.isArray(value)) return undefined;
     const filtered = value.reduce<NonNullable<Performance['priceList']>>((acc, item) => {
@@ -93,6 +107,7 @@ export function safePerformance(data: any): Performance | null {
         cast: safeStringArray(data.cast) || [],
         crew: safeStringArray(data.crew),
         priceList: safePriceList(data.priceList),
+        bookingLinks: safeBookingLinks(data.bookingLinks),
         synopsisImages: safeStringArray(data.synopsisImages),
         venueAmenities: safeStringArray(data.venueAmenities),
         platforms: safeStringArray(data.platforms),

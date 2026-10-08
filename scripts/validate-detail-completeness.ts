@@ -35,8 +35,10 @@ const RULES: CompletenessRule[] = [
         label: 'KOPIS 공연',
         genres: LIVE_GENRES,
         sampleLimit: envInt('KOPIS_DETAIL_COMPLETENESS_SAMPLE', 120),
-        maxMissingPrice: envInt('KOPIS_DETAIL_MAX_MISSING_PRICE', 0),
-        maxMissingAge: envInt('KOPIS_DETAIL_MAX_MISSING_AGE', 5),
+        // KOPIS leaves pcseguidance/prfage empty for a few percent of new
+        // registrations. A zero tolerance failed every fallback run (9/120).
+        maxMissingPrice: envInt('KOPIS_DETAIL_MAX_MISSING_PRICE', 12),
+        maxMissingAge: envInt('KOPIS_DETAIL_MAX_MISSING_AGE', 12),
         maxMissingRunningTime: envInt('KOPIS_DETAIL_MAX_MISSING_RUNTIME', 20),
     },
 ];

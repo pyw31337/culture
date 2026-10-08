@@ -1,0 +1,2304 @@
+{
+  "generatedAt": "2026-10-08T02:04:54.237Z",
+  "source": "https://mcp.aka.page/api/{cgv|megabox|lottecinema}/theaters",
+  "items": {
+    "롯데시네마::롯데시네마 가산디지털": {
+      "brand": "롯데시네마",
+      "theaterId": "1013",
+      "theaterName": "가산디지털",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 가양": {
+      "brand": "롯데시네마",
+      "theaterId": "9094",
+      "theaterName": "가양",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 강동": {
+      "brand": "롯데시네마",
+      "theaterId": "9010",
+      "theaterName": "강동",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 강릉": {
+      "brand": "롯데시네마",
+      "theaterId": "9118",
+      "theaterName": "강릉",
+      "distanceKm": 0.21
+    },
+    "롯데시네마::롯데시네마 거창": {
+      "brand": "롯데시네마",
+      "theaterId": "9122",
+      "theaterName": "거창",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 건대입구": {
+      "brand": "롯데시네마",
+      "theaterId": "1004",
+      "theaterName": "건대입구",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 건대입구 오픈스튜디오": {
+      "brand": "롯데시네마",
+      "theaterId": "1004",
+      "theaterName": "건대입구",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 경주황성": {
+      "brand": "롯데시네마",
+      "theaterId": "9120",
+      "theaterName": "경주황성",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 광교": {
+      "brand": "롯데시네마",
+      "theaterId": "3030",
+      "theaterName": "광교",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 광명아울렛": {
+      "brand": "롯데시네마",
+      "theaterId": "3025",
+      "theaterName": "광명아울렛",
+      "distanceKm": 0.13
+    },
+    "롯데시네마::롯데시네마 광복": {
+      "brand": "롯데시네마",
+      "theaterId": "2009",
+      "theaterName": "광복",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 광주": {
+      "brand": "롯데시네마",
+      "theaterId": "6001",
+      "theaterName": "광주(백화점)",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 광주광산": {
+      "brand": "롯데시네마",
+      "theaterId": "9065",
+      "theaterName": "광주광산",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 광주첨단": {
+      "brand": "롯데시네마",
+      "theaterId": "9117",
+      "theaterName": "광주첨단",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 구리아울렛": {
+      "brand": "롯데시네마",
+      "theaterId": "3026",
+      "theaterName": "구리아울렛",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 구미공단": {
+      "brand": "롯데시네마",
+      "theaterId": "5013",
+      "theaterName": "구미공단",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 군산나운": {
+      "brand": "롯데시네마",
+      "theaterId": "6007",
+      "theaterName": "군산나운",
+      "distanceKm": 0.07
+    },
+    "롯데시네마::롯데시네마 군산몰": {
+      "brand": "롯데시네마",
+      "theaterId": "6009",
+      "theaterName": "군산몰",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 김포공항": {
+      "brand": "롯데시네마",
+      "theaterId": "1009",
+      "theaterName": "김포공항",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 김해부원": {
+      "brand": "롯데시네마",
+      "theaterId": "5015",
+      "theaterName": "김해부원",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 김해아울렛": {
+      "brand": "롯데시네마",
+      "theaterId": "5011",
+      "theaterName": "김해아울렛(장유)",
+      "distanceKm": 0.15
+    },
+    "롯데시네마::롯데시네마 남원주": {
+      "brand": "롯데시네마",
+      "theaterId": "9108",
+      "theaterName": "남원주",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 노원": {
+      "brand": "롯데시네마",
+      "theaterId": "1003",
+      "theaterName": "노원",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 당진": {
+      "brand": "롯데시네마",
+      "theaterId": "9085",
+      "theaterName": "당진",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 대구광장": {
+      "brand": "롯데시네마",
+      "theaterId": "5012",
+      "theaterName": "대구광장",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 대구율하": {
+      "brand": "롯데시네마",
+      "theaterId": "5006",
+      "theaterName": "대구율하",
+      "distanceKm": 0.07
+    },
+    "롯데시네마::롯데시네마 대구현풍": {
+      "brand": "롯데시네마",
+      "theaterId": "9121",
+      "theaterName": "대구현풍",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 대전": {
+      "brand": "롯데시네마",
+      "theaterId": "4002",
+      "theaterName": "대전(백화점)",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 대전관저": {
+      "brand": "롯데시네마",
+      "theaterId": "4009",
+      "theaterName": "대전관저",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 대전센트럴": {
+      "brand": "롯데시네마",
+      "theaterId": "4008",
+      "theaterName": "대전센트럴",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 도곡": {
+      "brand": "롯데시네마",
+      "theaterId": "1023",
+      "theaterName": "도곡",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 독산": {
+      "brand": "롯데시네마",
+      "theaterId": "1017",
+      "theaterName": "독산",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 동래": {
+      "brand": "롯데시네마",
+      "theaterId": "2007",
+      "theaterName": "동래",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 동부산아울렛": {
+      "brand": "롯데시네마",
+      "theaterId": "2010",
+      "theaterName": "동부산아울렛",
+      "distanceKm": 0.13
+    },
+    "롯데시네마::롯데시네마 동성로": {
+      "brand": "롯데시네마",
+      "theaterId": "5005",
+      "theaterName": "동성로",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 동탄": {
+      "brand": "롯데시네마",
+      "theaterId": "3048",
+      "theaterName": "동탄",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 동해": {
+      "brand": "롯데시네마",
+      "theaterId": "7002",
+      "theaterName": "동해",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 라페스타": {
+      "brand": "롯데시네마",
+      "theaterId": "9095",
+      "theaterName": "라페스타",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 마산": {
+      "brand": "롯데시네마",
+      "theaterId": "9042",
+      "theaterName": "마산(합성동)",
+      "distanceKm": 0.06
+    },
+    "롯데시네마::롯데시네마 별내": {
+      "brand": "롯데시네마",
+      "theaterId": "3046",
+      "theaterName": "별내",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 병점": {
+      "brand": "롯데시네마",
+      "theaterId": "3017",
+      "theaterName": "병점",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 부산명지": {
+      "brand": "롯데시네마",
+      "theaterId": "9092",
+      "theaterName": "부산명지",
+      "distanceKm": 0.17
+    },
+    "롯데시네마::롯데시네마 부산본점": {
+      "brand": "롯데시네마",
+      "theaterId": "2004",
+      "theaterName": "부산본점",
+      "distanceKm": 0.07
+    },
+    "롯데시네마::롯데시네마 부산장림": {
+      "brand": "롯데시네마",
+      "theaterId": "9115",
+      "theaterName": "부산장림",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 부천": {
+      "brand": "롯데시네마",
+      "theaterId": "3011",
+      "theaterName": "부천(신중동역)",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 부평": {
+      "brand": "롯데시네마",
+      "theaterId": "3008",
+      "theaterName": "부평역사",
+      "distanceKm": 0.51
+    },
+    "롯데시네마::롯데시네마 부평갈산": {
+      "brand": "롯데시네마",
+      "theaterId": "3050",
+      "theaterName": "부평갈산",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 부평역사": {
+      "brand": "롯데시네마",
+      "theaterId": "3008",
+      "theaterName": "부평역사",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 북수원": {
+      "brand": "롯데시네마",
+      "theaterId": "3045",
+      "theaterName": "(종료)북수원(사용불가)",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 사천": {
+      "brand": "롯데시네마",
+      "theaterId": "9084",
+      "theaterName": "사천",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 산본피트인": {
+      "brand": "롯데시네마",
+      "theaterId": "3031",
+      "theaterName": "산본피트인",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 상인": {
+      "brand": "롯데시네마",
+      "theaterId": "5016",
+      "theaterName": "상인",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 상주": {
+      "brand": "롯데시네마",
+      "theaterId": "9080",
+      "theaterName": "상주",
+      "distanceKm": 0.04
+    },
+    "롯데시네마::롯데시네마 서귀포": {
+      "brand": "롯데시네마",
+      "theaterId": "9013",
+      "theaterName": "서귀포",
+      "distanceKm": 0.08
+    },
+    "롯데시네마::롯데시네마 서산": {
+      "brand": "롯데시네마",
+      "theaterId": "9044",
+      "theaterName": "서산",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 서수원": {
+      "brand": "롯데시네마",
+      "theaterId": "3043",
+      "theaterName": "서수원",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 서울대입구": {
+      "brand": "롯데시네마",
+      "theaterId": "1012",
+      "theaterName": "서울대입구",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 서청주": {
+      "brand": "롯데시네마",
+      "theaterId": "4004",
+      "theaterName": "서청주(아울렛)",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 성남중앙": {
+      "brand": "롯데시네마",
+      "theaterId": "3041",
+      "theaterName": "성남중앙(신흥역)",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 성서": {
+      "brand": "롯데시네마",
+      "theaterId": "9127",
+      "theaterName": "성서",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 센텀시티": {
+      "brand": "롯데시네마",
+      "theaterId": "2006",
+      "theaterName": "센텀시티",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 센트럴락": {
+      "brand": "롯데시네마",
+      "theaterId": "3012",
+      "theaterName": "센트럴락",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 송탄": {
+      "brand": "롯데시네마",
+      "theaterId": "3029",
+      "theaterName": "송탄",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 수완": {
+      "brand": "롯데시네마",
+      "theaterId": "6004",
+      "theaterName": "수완(아울렛)",
+      "distanceKm": 0.14
+    },
+    "롯데시네마::롯데시네마 수원": {
+      "brand": "롯데시네마",
+      "theaterId": "3024",
+      "theaterName": "수원(수원역)",
+      "distanceKm": 0.05
+    },
+    "롯데시네마::롯데시네마 수유": {
+      "brand": "롯데시네마",
+      "theaterId": "9104",
+      "theaterName": "수유",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 수지": {
+      "brand": "롯데시네마",
+      "theaterId": "3044",
+      "theaterName": "수지",
+      "distanceKm": 0.13
+    },
+    "롯데시네마::롯데시네마 시화": {
+      "brand": "롯데시네마",
+      "theaterId": "9088",
+      "theaterName": "시화(정왕역)",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 시흥장현": {
+      "brand": "롯데시네마",
+      "theaterId": "3049",
+      "theaterName": "시흥장현",
+      "distanceKm": 0.07
+    },
+    "롯데시네마::롯데시네마 신대방": {
+      "brand": "롯데시네마",
+      "theaterId": "1024",
+      "theaterName": "신대방(구로디지털역)",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 신도림": {
+      "brand": "롯데시네마",
+      "theaterId": "1015",
+      "theaterName": "신도림",
+      "distanceKm": 0.04
+    },
+    "롯데시네마::롯데시네마 신림": {
+      "brand": "롯데시네마",
+      "theaterId": "1007",
+      "theaterName": "신림",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 아산터미널": {
+      "brand": "롯데시네마",
+      "theaterId": "9128",
+      "theaterName": "아산터미널",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 안산": {
+      "brand": "롯데시네마",
+      "theaterId": "3004",
+      "theaterName": "안산",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 안산고잔": {
+      "brand": "롯데시네마",
+      "theaterId": "3028",
+      "theaterName": "안산고잔",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 안성": {
+      "brand": "롯데시네마",
+      "theaterId": "9106",
+      "theaterName": "안성",
+      "distanceKm": 0.07
+    },
+    "롯데시네마::롯데시네마 안양일번가": {
+      "brand": "롯데시네마",
+      "theaterId": "3032",
+      "theaterName": "안양일번가",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 양산물금": {
+      "brand": "롯데시네마",
+      "theaterId": "9103",
+      "theaterName": "양산물금",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 에비뉴엘": {
+      "brand": "롯데시네마",
+      "theaterId": "1001",
+      "theaterName": "에비뉴엘(명동)",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 엠비씨네": {
+      "brand": "롯데시네마",
+      "theaterId": "9105",
+      "theaterName": "엠비씨네(진주)",
+      "distanceKm": 0.04
+    },
+    "롯데시네마::롯데시네마 영등포": {
+      "brand": "롯데시네마",
+      "theaterId": "1002",
+      "theaterName": "영등포",
+      "distanceKm": 0.14
+    },
+    "롯데시네마::롯데시네마 영주": {
+      "brand": "롯데시네마",
+      "theaterId": "9064",
+      "theaterName": "영주",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 영천": {
+      "brand": "롯데시네마",
+      "theaterId": "9098",
+      "theaterName": "영천",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 오송점": {
+      "brand": "롯데시네마",
+      "theaterId": "9119",
+      "theaterName": "오송",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 오투": {
+      "brand": "롯데시네마",
+      "theaterId": "2011",
+      "theaterName": "오투(부산대)",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 용산": {
+      "brand": "롯데시네마",
+      "theaterId": "1014",
+      "theaterName": "용산",
+      "distanceKm": 0.04
+    },
+    "롯데시네마::롯데시네마 용인기흥": {
+      "brand": "롯데시네마",
+      "theaterId": "3039",
+      "theaterName": "용인기흥",
+      "distanceKm": 0.06
+    },
+    "롯데시네마::롯데시네마 용인역북": {
+      "brand": "롯데시네마",
+      "theaterId": "3040",
+      "theaterName": "용인역북",
+      "distanceKm": 0.08
+    },
+    "롯데시네마::롯데시네마 울산": {
+      "brand": "롯데시네마",
+      "theaterId": "5001",
+      "theaterName": "울산(백화점)",
+      "distanceKm": 0.04
+    },
+    "롯데시네마::롯데시네마 울산성남": {
+      "brand": "롯데시네마",
+      "theaterId": "9116",
+      "theaterName": "울산성남",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 원주무실": {
+      "brand": "롯데시네마",
+      "theaterId": "7003",
+      "theaterName": "원주무실",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 위례": {
+      "brand": "롯데시네마",
+      "theaterId": "3037",
+      "theaterName": "위례",
+      "distanceKm": 0.13
+    },
+    "롯데시네마::롯데시네마 은평": {
+      "brand": "롯데시네마",
+      "theaterId": "1021",
+      "theaterName": "은평(롯데몰)",
+      "distanceKm": 0.12
+    },
+    "롯데시네마::롯데시네마 의정부민락": {
+      "brand": "롯데시네마",
+      "theaterId": "3033",
+      "theaterName": "의정부민락",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 익산모현": {
+      "brand": "롯데시네마",
+      "theaterId": "9070",
+      "theaterName": "익산모현",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 인천아시아드": {
+      "brand": "롯데시네마",
+      "theaterId": "3035",
+      "theaterName": "인천아시아드",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 인천터미널": {
+      "brand": "롯데시네마",
+      "theaterId": "3038",
+      "theaterName": "인천터미널",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 전주": {
+      "brand": "롯데시네마",
+      "theaterId": "6002",
+      "theaterName": "전주(백화점)",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 전주송천": {
+      "brand": "롯데시네마",
+      "theaterId": "9102",
+      "theaterName": "전주송천",
+      "distanceKm": 0.04
+    },
+    "롯데시네마::롯데시네마 전주평화": {
+      "brand": "롯데시네마",
+      "theaterId": "6006",
+      "theaterName": "전주평화",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 제주연동": {
+      "brand": "롯데시네마",
+      "theaterId": "6010",
+      "theaterName": "제주연동",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 중랑": {
+      "brand": "롯데시네마",
+      "theaterId": "9083",
+      "theaterName": "중랑",
+      "distanceKm": 0
+    },
+    "롯데시네마::롯데시네마 진접": {
+      "brand": "롯데시네마",
+      "theaterId": "3010",
+      "theaterName": "진접",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 진주혁신": {
+      "brand": "롯데시네마",
+      "theaterId": "5017",
+      "theaterName": "진주혁신(롯데몰)",
+      "distanceKm": 0.07
+    },
+    "롯데시네마::롯데시네마 진해": {
+      "brand": "롯데시네마",
+      "theaterId": "5009",
+      "theaterName": "진해",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 창원": {
+      "brand": "롯데시네마",
+      "theaterId": "5002",
+      "theaterName": "창원",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 천안불당": {
+      "brand": "롯데시네마",
+      "theaterId": "9101",
+      "theaterName": "천안불당",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 천안청당점": {
+      "brand": "롯데시네마",
+      "theaterId": "9125",
+      "theaterName": "천안청당",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 청량리": {
+      "brand": "롯데시네마",
+      "theaterId": "1008",
+      "theaterName": "청량리",
+      "distanceKm": 0.08
+    },
+    "롯데시네마::롯데시네마 청주용암": {
+      "brand": "롯데시네마",
+      "theaterId": "4007",
+      "theaterName": "청주용암",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 춘천": {
+      "brand": "롯데시네마",
+      "theaterId": "9123",
+      "theaterName": "춘천",
+      "distanceKm": 0.08
+    },
+    "롯데시네마::롯데시네마 충장로": {
+      "brand": "롯데시네마",
+      "theaterId": "9047",
+      "theaterName": "충장로",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 충주관": {
+      "brand": "롯데시네마",
+      "theaterId": "9078",
+      "theaterName": "충주(모다아울렛)",
+      "distanceKm": 0.06
+    },
+    "롯데시네마::롯데시네마 통영": {
+      "brand": "롯데시네마",
+      "theaterId": "9036",
+      "theaterName": "통영",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 파주롯데아울렛": {
+      "brand": "롯데시네마",
+      "theaterId": "9113",
+      "theaterName": "파주롯데아울렛",
+      "distanceKm": 0.04
+    },
+    "롯데시네마::롯데시네마 파주야당": {
+      "brand": "롯데시네마",
+      "theaterId": "9126",
+      "theaterName": "파주야당",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 파주운정": {
+      "brand": "롯데시네마",
+      "theaterId": "3034",
+      "theaterName": "파주운정",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 판교": {
+      "brand": "롯데시네마",
+      "theaterId": "3047",
+      "theaterName": "판교(창조경제밸리)",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 평촌": {
+      "brand": "롯데시네마",
+      "theaterId": "3018",
+      "theaterName": "평촌(범계역)",
+      "distanceKm": 0.06
+    },
+    "롯데시네마::롯데시네마 포항": {
+      "brand": "롯데시네마",
+      "theaterId": "9097",
+      "theaterName": "포항",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 프리미엄경남대": {
+      "brand": "롯데시네마",
+      "theaterId": "9072",
+      "theaterName": "프리미엄경남대",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 프리미엄구미센트럴": {
+      "brand": "롯데시네마",
+      "theaterId": "9067",
+      "theaterName": "프리미엄구미센트럴",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 프리미엄안동": {
+      "brand": "롯데시네마",
+      "theaterId": "9074",
+      "theaterName": "프리미엄안동",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 프리미엄칠곡": {
+      "brand": "롯데시네마",
+      "theaterId": "9057",
+      "theaterName": "프리미엄칠곡",
+      "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 프리미엄해운대": {
+      "brand": "롯데시네마",
+      "theaterId": "9059",
+      "theaterName": "프리미엄해운대(장산역)",
+      "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 하남미사": {
+      "brand": "롯데시네마",
+      "theaterId": "9129",
+      "theaterName": "하남미사",
+      "distanceKm": 0.1
+    },
+    "롯데시네마::롯데시네마 합정": {
+      "brand": "롯데시네마",
+      "theaterId": "1010",
+      "theaterName": "합정(종료)",
+      "distanceKm": 0.11
+    },
+    "롯데시네마::롯데시네마 향남": {
+      "brand": "롯데시네마",
+      "theaterId": "3036",
+      "theaterName": "향남",
+      "distanceKm": 0.03
+    },
+    "롯데시네마::롯데시네마 홍대입구": {
+      "brand": "롯데시네마",
+      "theaterId": "1005",
+      "theaterName": "홍대입구",
+      "distanceKm": 0.05
+    },
+    "메가박스::메가박스 강남": {
+      "brand": "메가박스",
+      "theaterId": "1372",
+      "theaterName": "강남",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 강동점": {
+      "brand": "메가박스",
+      "theaterId": "1341",
+      "theaterName": "강동",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 검단": {
+      "brand": "메가박스",
+      "theaterId": "4041",
+      "theaterName": "검단",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 경북도청": {
+      "brand": "메가박스",
+      "theaterId": "0040",
+      "theaterName": "경북도청",
+      "distanceKm": 0.09
+    },
+    "메가박스::메가박스 고양스타필드": {
+      "brand": "메가박스",
+      "theaterId": "4121",
+      "theaterName": "고양스타필드",
+      "distanceKm": 0.09
+    },
+    "메가박스::메가박스 공주": {
+      "brand": "메가박스",
+      "theaterId": "3141",
+      "theaterName": "공주",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 광명소하": {
+      "brand": "메가박스",
+      "theaterId": "0053",
+      "theaterName": "광명소하",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 광명AK플라자": {
+      "brand": "메가박스",
+      "theaterId": "0029",
+      "theaterName": "광명AK플라자",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 광주상무": {
+      "brand": "메가박스",
+      "theaterId": "5021",
+      "theaterName": "광주상무",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 광주상무 별관": {
+      "brand": "메가박스",
+      "theaterId": "5021",
+      "theaterName": "광주상무",
+      "distanceKm": 0.08
+    },
+    "메가박스::메가박스 광주하남점": {
+      "brand": "메가박스",
+      "theaterId": "5061",
+      "theaterName": "광주하남",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 구미강동": {
+      "brand": "메가박스",
+      "theaterId": "7303",
+      "theaterName": "구미강동",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 구의이스트폴": {
+      "brand": "메가박스",
+      "theaterId": "0090",
+      "theaterName": "구의이스트폴",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 군자": {
+      "brand": "메가박스",
+      "theaterId": "1431",
+      "theaterName": "군자",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 금정AK플라자": {
+      "brand": "메가박스",
+      "theaterId": "0035",
+      "theaterName": "금정AK플라자",
+      "distanceKm": 0.08
+    },
+    "메가박스::메가박스 김천": {
+      "brand": "메가박스",
+      "theaterId": "7401",
+      "theaterName": "김천",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 김포한강신도시": {
+      "brand": "메가박스",
+      "theaterId": "4152",
+      "theaterName": "김포한강신도시",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 남양주": {
+      "brand": "메가박스",
+      "theaterId": "0039",
+      "theaterName": "평내호평역(구.남양주)",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 남양주현대아울렛 스페이스원": {
+      "brand": "메가박스",
+      "theaterId": "0019",
+      "theaterName": "남양주현대아울렛스페이스원",
+      "distanceKm": 0.31
+    },
+    "메가박스::메가박스 남춘천": {
+      "brand": "메가박스",
+      "theaterId": "2001",
+      "theaterName": "남춘천",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 논산": {
+      "brand": "메가박스",
+      "theaterId": "0018",
+      "theaterName": "논산",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 대구세븐밸리": {
+      "brand": "메가박스",
+      "theaterId": "0067",
+      "theaterName": "대구세븐밸리(칠곡)",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 대구신세계": {
+      "brand": "메가박스",
+      "theaterId": "7011",
+      "theaterName": "대구신세계(동대구)",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 대구이시아": {
+      "brand": "메가박스",
+      "theaterId": "0022",
+      "theaterName": "대구이시아",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 대구프리미엄만경관": {
+      "brand": "메가박스",
+      "theaterId": "0072",
+      "theaterName": "대구프리미엄만경관",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 대전신세계아트앤사이언스": {
+      "brand": "메가박스",
+      "theaterId": "0028",
+      "theaterName": "대전신세계아트앤사이언스",
+      "distanceKm": 0.12
+    },
+    "메가박스::메가박스 대전유성": {
+      "brand": "메가박스",
+      "theaterId": "0009",
+      "theaterName": "대전유성",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 대전중앙로": {
+      "brand": "메가박스",
+      "theaterId": "3011",
+      "theaterName": "대전중앙로",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 더부티크 목동현대백화점": {
+      "brand": "메가박스",
+      "theaterId": "0041",
+      "theaterName": "더부티크목동현대백화점",
+      "distanceKm": 0.08
+    },
+    "메가박스::메가박스 덕천": {
+      "brand": "메가박스",
+      "theaterId": "6161",
+      "theaterName": "덕천",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 동탄": {
+      "brand": "메가박스",
+      "theaterId": "4451",
+      "theaterName": "동탄",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 동탄역점": {
+      "brand": "메가박스",
+      "theaterId": "0089",
+      "theaterName": "동탄역",
+      "distanceKm": 0.05
+    },
+    "메가박스::메가박스 마곡": {
+      "brand": "메가박스",
+      "theaterId": "1572",
+      "theaterName": "마곡",
+      "distanceKm": 0.05
+    },
+    "메가박스::메가박스 마산 경남대": {
+      "brand": "메가박스",
+      "theaterId": "0076",
+      "theaterName": "마산(경남대)",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 목동": {
+      "brand": "메가박스",
+      "theaterId": "1581",
+      "theaterName": "목동",
+      "distanceKm": 0.06
+    },
+    "메가박스::메가박스 목포하당 포르모": {
+      "brand": "메가박스",
+      "theaterId": "5302",
+      "theaterName": "목포하당(포르모)",
+      "distanceKm": 0.59
+    },
+    "메가박스::메가박스 미사강변": {
+      "brand": "메가박스",
+      "theaterId": "0084",
+      "theaterName": "미사강변(하남종합운동장)",
+      "distanceKm": 0.05
+    },
+    "메가박스::메가박스 백석벨라시타": {
+      "brand": "메가박스",
+      "theaterId": "4104",
+      "theaterName": "백석벨라시타",
+      "distanceKm": 0.18
+    },
+    "메가박스::메가박스 별내": {
+      "brand": "메가박스",
+      "theaterId": "4722",
+      "theaterName": "별내",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 부산극장": {
+      "brand": "메가박스",
+      "theaterId": "6001",
+      "theaterName": "부산극장",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 부산대": {
+      "brand": "메가박스",
+      "theaterId": "0061",
+      "theaterName": "부산대",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 부천스타필드시티": {
+      "brand": "메가박스",
+      "theaterId": "4221",
+      "theaterName": "부천스타필드시티",
+      "distanceKm": 0.07
+    },
+    "메가박스::메가박스 북대구": {
+      "brand": "메가박스",
+      "theaterId": "0025",
+      "theaterName": "북대구(칠곡)",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 분당": {
+      "brand": "메가박스",
+      "theaterId": "4631",
+      "theaterName": "분당",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 사상": {
+      "brand": "메가박스",
+      "theaterId": "0032",
+      "theaterName": "사상",
+      "distanceKm": 0.06
+    },
+    "메가박스::메가박스 상봉": {
+      "brand": "메가박스",
+      "theaterId": "1311",
+      "theaterName": "상봉",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 상암월드컵경기장점": {
+      "brand": "메가박스",
+      "theaterId": "1211",
+      "theaterName": "상암월드컵경기장",
+      "distanceKm": 0.06
+    },
+    "메가박스::메가박스 서면대한": {
+      "brand": "메가박스",
+      "theaterId": "0082",
+      "theaterName": "서면대한",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 세종 조치원": {
+      "brand": "메가박스",
+      "theaterId": "3391",
+      "theaterName": "세종(조치원)",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 세종나성": {
+      "brand": "메가박스",
+      "theaterId": "3392",
+      "theaterName": "세종나성",
+      "distanceKm": 0.09
+    },
+    "메가박스::메가박스 센트럴": {
+      "brand": "메가박스",
+      "theaterId": "1371",
+      "theaterName": "센트럴",
+      "distanceKm": 0.08
+    },
+    "메가박스::메가박스 수원남문": {
+      "brand": "메가박스",
+      "theaterId": "0042",
+      "theaterName": "수원남문",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 수원스타필드": {
+      "brand": "메가박스",
+      "theaterId": "0062",
+      "theaterName": "수원스타필드",
+      "distanceKm": 0.07
+    },
+    "메가박스::메가박스 수원인계": {
+      "brand": "메가박스",
+      "theaterId": "0060",
+      "theaterName": "수원인계",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 수원호매실 (휴업중)": {
+      "brand": "메가박스",
+      "theaterId": "0036",
+      "theaterName": "수원호매실(휴관)",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 수원AK플라자 수원역": {
+      "brand": "메가박스",
+      "theaterId": "0052",
+      "theaterName": "수원AK플라자(수원역)",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 순천": {
+      "brand": "메가박스",
+      "theaterId": "5401",
+      "theaterName": "순천",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 시흥배곧": {
+      "brand": "메가박스",
+      "theaterId": "4291",
+      "theaterName": "시흥배곧",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 시흥정왕": {
+      "brand": "메가박스",
+      "theaterId": "0088",
+      "theaterName": "시흥정왕",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 안산중앙": {
+      "brand": "메가박스",
+      "theaterId": "4253",
+      "theaterName": "안산중앙",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 안성스타필드": {
+      "brand": "메가박스",
+      "theaterId": "0020",
+      "theaterName": "안성스타필드",
+      "distanceKm": 0.07
+    },
+    "메가박스::메가박스 양산": {
+      "brand": "메가박스",
+      "theaterId": "0097",
+      "theaterName": "양산",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 양산증산": {
+      "brand": "메가박스",
+      "theaterId": "6262",
+      "theaterName": "양산증산",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 여수웅천": {
+      "brand": "메가박스",
+      "theaterId": "5552",
+      "theaterName": "여수웅천",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 영종하늘도시": {
+      "brand": "메가박스",
+      "theaterId": "0080",
+      "theaterName": "영종하늘도시",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 오창": {
+      "brand": "메가박스",
+      "theaterId": "3631",
+      "theaterName": "오창",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 용인테크노밸리": {
+      "brand": "메가박스",
+      "theaterId": "4462",
+      "theaterName": "용인테크노밸리",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 울산": {
+      "brand": "메가박스",
+      "theaterId": "0057",
+      "theaterName": "울산",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 원주혁신": {
+      "brand": "메가박스",
+      "theaterId": "2202",
+      "theaterName": "원주혁신",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 의정부민락": {
+      "brand": "메가박스",
+      "theaterId": "0070",
+      "theaterName": "의정부민락",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 이수": {
+      "brand": "메가박스",
+      "theaterId": "0099",
+      "theaterName": "이수",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 인천논현": {
+      "brand": "메가박스",
+      "theaterId": "4051",
+      "theaterName": "인천논현",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 인천학익": {
+      "brand": "메가박스",
+      "theaterId": "0085",
+      "theaterName": "인천학익(시티오씨엘)",
+      "distanceKm": 0.07
+    },
+    "메가박스::메가박스 전대 광주": {
+      "brand": "메가박스",
+      "theaterId": "0010",
+      "theaterName": "전대(광주)",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 전주객사": {
+      "brand": "메가박스",
+      "theaterId": "0050",
+      "theaterName": "전주객사",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 전주혁신": {
+      "brand": "메가박스",
+      "theaterId": "0021",
+      "theaterName": "전주혁신",
+      "distanceKm": 0.19
+    },
+    "메가박스::메가박스 제주삼화": {
+      "brand": "메가박스",
+      "theaterId": "0059",
+      "theaterName": "제주삼화",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 제주서귀포": {
+      "brand": "메가박스",
+      "theaterId": "0054",
+      "theaterName": "제주서귀포",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 제주아라": {
+      "brand": "메가박스",
+      "theaterId": "0066",
+      "theaterName": "제주아라",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 진주 중안": {
+      "brand": "메가박스",
+      "theaterId": "0045",
+      "theaterName": "진주(중안)",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 진천": {
+      "brand": "메가박스",
+      "theaterId": "3651",
+      "theaterName": "진천",
+      "distanceKm": 0.1
+    },
+    "메가박스::메가박스 창원": {
+      "brand": "메가박스",
+      "theaterId": "0048",
+      "theaterName": "창원",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 천안": {
+      "brand": "메가박스",
+      "theaterId": "0056",
+      "theaterName": "천안",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 첨단": {
+      "brand": "메가박스",
+      "theaterId": "5064",
+      "theaterName": "첨단",
+      "distanceKm": 0.03
+    },
+    "메가박스::메가박스 청라지젤": {
+      "brand": "메가박스",
+      "theaterId": "0027",
+      "theaterName": "청라지젤(휴관)",
+      "distanceKm": 0.06
+    },
+    "메가박스::메가박스 청주성안길": {
+      "brand": "메가박스",
+      "theaterId": "0069",
+      "theaterName": "청주성안길",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 코엑스": {
+      "brand": "메가박스",
+      "theaterId": "1351",
+      "theaterName": "코엑스",
+      "distanceKm": 0.02
+    },
+    "메가박스::메가박스 킨텍스": {
+      "brand": "메가박스",
+      "theaterId": "4112",
+      "theaterName": "킨텍스",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 해운대 장산": {
+      "brand": "메가박스",
+      "theaterId": "0079",
+      "theaterName": "해운대(장산)",
+      "distanceKm": 0
+    },
+    "CGV::CGV 강남": {
+      "brand": "CGV",
+      "theaterId": "0056",
+      "theaterName": "강남",
+      "distanceKm": 0
+    },
+    "CGV::CGV 강릉": {
+      "brand": "CGV",
+      "theaterId": "0139",
+      "theaterName": "강릉",
+      "distanceKm": 0
+    },
+    "CGV::CGV 강변": {
+      "brand": "CGV",
+      "theaterId": "0001",
+      "theaterName": "강변",
+      "distanceKm": 0
+    },
+    "CGV::CGV 거제": {
+      "brand": "CGV",
+      "theaterId": "0263",
+      "theaterName": "거제",
+      "distanceKm": 0
+    },
+    "CGV::CGV 건대입구": {
+      "brand": "CGV",
+      "theaterId": "0229",
+      "theaterName": "건대입구",
+      "distanceKm": 0
+    },
+    "CGV::CGV 경기광주": {
+      "brand": "CGV",
+      "theaterId": "0260",
+      "theaterName": "경기광주",
+      "distanceKm": 0
+    },
+    "CGV::CGV 계양": {
+      "brand": "CGV",
+      "theaterId": "0043",
+      "theaterName": "계양",
+      "distanceKm": 0
+    },
+    "CGV::CGV 고성": {
+      "brand": "CGV",
+      "theaterId": "0323",
+      "theaterName": "고성",
+      "distanceKm": 0
+    },
+    "CGV::CGV 고양백석": {
+      "brand": "CGV",
+      "theaterId": "0270",
+      "theaterName": "고양백석",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광교": {
+      "brand": "CGV",
+      "theaterId": "0257",
+      "theaterName": "광교",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광교상현": {
+      "brand": "CGV",
+      "theaterId": "0266",
+      "theaterName": "광교상현",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광명역": {
+      "brand": "CGV",
+      "theaterId": "0348",
+      "theaterName": "광명역",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광양": {
+      "brand": "CGV",
+      "theaterId": "0220",
+      "theaterName": "광양",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광양엘에프스퀘어": {
+      "brand": "CGV",
+      "theaterId": "0221",
+      "theaterName": "광양 엘에프스퀘어",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광주금남로": {
+      "brand": "CGV",
+      "theaterId": "0295",
+      "theaterName": "광주금남로",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광주상무": {
+      "brand": "CGV",
+      "theaterId": "0193",
+      "theaterName": "광주상무",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광주용봉": {
+      "brand": "CGV",
+      "theaterId": "0210",
+      "theaterName": "광주용봉",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광주첨단": {
+      "brand": "CGV",
+      "theaterId": "0218",
+      "theaterName": "광주첨단",
+      "distanceKm": 0
+    },
+    "CGV::CGV 광주충장로": {
+      "brand": "CGV",
+      "theaterId": "0244",
+      "theaterName": "광주충장로",
+      "distanceKm": 0.04
+    },
+    "CGV::CGV 광주하남": {
+      "brand": "CGV",
+      "theaterId": "0215",
+      "theaterName": "광주하남",
+      "distanceKm": 0
+    },
+    "CGV::CGV 구로": {
+      "brand": "CGV",
+      "theaterId": "0010",
+      "theaterName": "구로",
+      "distanceKm": 0
+    },
+    "CGV::CGV 구리": {
+      "brand": "CGV",
+      "theaterId": "0232",
+      "theaterName": "구리",
+      "distanceKm": 0
+    },
+    "CGV::CGV 구리갈매": {
+      "brand": "CGV",
+      "theaterId": "0358",
+      "theaterName": "구리갈매",
+      "distanceKm": 0
+    },
+    "CGV::CGV 구미": {
+      "brand": "CGV",
+      "theaterId": "0053",
+      "theaterName": "구미",
+      "distanceKm": 0
+    },
+    "CGV::CGV 기린": {
+      "brand": "CGV",
+      "theaterId": "0355",
+      "theaterName": "기린",
+      "distanceKm": 0
+    },
+    "CGV::CGV 김천율곡": {
+      "brand": "CGV",
+      "theaterId": "0240",
+      "theaterName": "김천율곡",
+      "distanceKm": 0
+    },
+    "CGV::CGV 김포": {
+      "brand": "CGV",
+      "theaterId": "0278",
+      "theaterName": "김포",
+      "distanceKm": 0
+    },
+    "CGV::CGV 김포운양": {
+      "brand": "CGV",
+      "theaterId": "0188",
+      "theaterName": "김포운양",
+      "distanceKm": 0
+    },
+    "CGV::CGV 김포한강": {
+      "brand": "CGV",
+      "theaterId": "0298",
+      "theaterName": "김포한강",
+      "distanceKm": 0
+    },
+    "CGV::CGV 김해": {
+      "brand": "CGV",
+      "theaterId": "0028",
+      "theaterName": "김해",
+      "distanceKm": 0
+    },
+    "CGV::CGV 김해율하": {
+      "brand": "CGV",
+      "theaterId": "0311",
+      "theaterName": "김해율하",
+      "distanceKm": 0
+    },
+    "CGV::CGV 김해장유": {
+      "brand": "CGV",
+      "theaterId": "0239",
+      "theaterName": "김해장유",
+      "distanceKm": 0
+    },
+    "CGV::CGV 나주": {
+      "brand": "CGV",
+      "theaterId": "0237",
+      "theaterName": "나주",
+      "distanceKm": 0
+    },
+    "CGV::CGV 논산": {
+      "brand": "CGV",
+      "theaterId": "0370",
+      "theaterName": "논산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 다산": {
+      "brand": "CGV",
+      "theaterId": "0351",
+      "theaterName": "다산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 당진": {
+      "brand": "CGV",
+      "theaterId": "0207",
+      "theaterName": "당진",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구": {
+      "brand": "CGV",
+      "theaterId": "0345",
+      "theaterName": "대구",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구수성 (2026년 6월 예정)": {
+      "brand": "CGV",
+      "theaterId": "0375",
+      "theaterName": "대구수성",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구스타디움": {
+      "brand": "CGV",
+      "theaterId": "0108",
+      "theaterName": "대구스타디움",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구연경": {
+      "brand": "CGV",
+      "theaterId": "0343",
+      "theaterName": "대구연경",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구월성": {
+      "brand": "CGV",
+      "theaterId": "0216",
+      "theaterName": "대구월성",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구죽전": {
+      "brand": "CGV",
+      "theaterId": "0256",
+      "theaterName": "대구죽전",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구한일": {
+      "brand": "CGV",
+      "theaterId": "0147",
+      "theaterName": "대구한일",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구현대": {
+      "brand": "CGV",
+      "theaterId": "0109",
+      "theaterName": "대구현대",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대연": {
+      "brand": "CGV",
+      "theaterId": "0061",
+      "theaterName": "대연",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대전": {
+      "brand": "CGV",
+      "theaterId": "0007",
+      "theaterName": "대전",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대전가수원": {
+      "brand": "CGV",
+      "theaterId": "0286",
+      "theaterName": "대전가수원",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대전가오": {
+      "brand": "CGV",
+      "theaterId": "0154",
+      "theaterName": "대전가오",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대전탄방": {
+      "brand": "CGV",
+      "theaterId": "0202",
+      "theaterName": "대전탄방",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대전터미널": {
+      "brand": "CGV",
+      "theaterId": "0127",
+      "theaterName": "대전터미널",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대학로": {
+      "brand": "CGV",
+      "theaterId": "0063",
+      "theaterName": "대학로",
+      "distanceKm": 0
+    },
+    "CGV::CGV 동대문": {
+      "brand": "CGV",
+      "theaterId": "0252",
+      "theaterName": "동대문",
+      "distanceKm": 0
+    },
+    "CGV::CGV 동래": {
+      "brand": "CGV",
+      "theaterId": "0042",
+      "theaterName": "동래",
+      "distanceKm": 0
+    },
+    "CGV::CGV 동백": {
+      "brand": "CGV",
+      "theaterId": "0124",
+      "theaterName": "동백",
+      "distanceKm": 0
+    },
+    "CGV::CGV 동수원": {
+      "brand": "CGV",
+      "theaterId": "0041",
+      "theaterName": "동수원",
+      "distanceKm": 0
+    },
+    "CGV::CGV 동탄": {
+      "brand": "CGV",
+      "theaterId": "0106",
+      "theaterName": "동탄",
+      "distanceKm": 0
+    },
+    "CGV::CGV 동탄역": {
+      "brand": "CGV",
+      "theaterId": "0265",
+      "theaterName": "동탄역",
+      "distanceKm": 0
+    },
+    "CGV::CGV 동탄호수공원": {
+      "brand": "CGV",
+      "theaterId": "0233",
+      "theaterName": "동탄호수공원",
+      "distanceKm": 0
+    },
+    "CGV::CGV 등촌": {
+      "brand": "CGV",
+      "theaterId": "0230",
+      "theaterName": "등촌",
+      "distanceKm": 0
+    },
+    "CGV::CGV 마산": {
+      "brand": "CGV",
+      "theaterId": "0033",
+      "theaterName": "마산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 명동": {
+      "brand": "CGV",
+      "theaterId": "0009",
+      "theaterName": "명동",
+      "distanceKm": 0
+    },
+    "CGV::CGV 목포평화광장": {
+      "brand": "CGV",
+      "theaterId": "0280",
+      "theaterName": "목포평화광장",
+      "distanceKm": 0
+    },
+    "CGV::CGV 미아": {
+      "brand": "CGV",
+      "theaterId": "0057",
+      "theaterName": "미아",
+      "distanceKm": 0
+    },
+    "CGV::CGV 방학": {
+      "brand": "CGV",
+      "theaterId": "0288",
+      "theaterName": "방학",
+      "distanceKm": 0
+    },
+    "CGV::CGV 배곧": {
+      "brand": "CGV",
+      "theaterId": "0226",
+      "theaterName": "배곧",
+      "distanceKm": 0
+    },
+    "CGV::CGV 범계": {
+      "brand": "CGV",
+      "theaterId": "0155",
+      "theaterName": "범계",
+      "distanceKm": 0
+    },
+    "CGV::CGV 부산명지": {
+      "brand": "CGV",
+      "theaterId": "0337",
+      "theaterName": "부산명지",
+      "distanceKm": 0
+    },
+    "CGV::CGV 부천": {
+      "brand": "CGV",
+      "theaterId": "0015",
+      "theaterName": "부천",
+      "distanceKm": 0.14
+    },
+    "CGV::CGV 부천역": {
+      "brand": "CGV",
+      "theaterId": "0194",
+      "theaterName": "부천역",
+      "distanceKm": 0
+    },
+    "CGV::CGV 부평": {
+      "brand": "CGV",
+      "theaterId": "0021",
+      "theaterName": "부평",
+      "distanceKm": 0
+    },
+    "CGV::CGV 북포항": {
+      "brand": "CGV",
+      "theaterId": "0097",
+      "theaterName": "북포항",
+      "distanceKm": 0
+    },
+    "CGV::CGV 불광": {
+      "brand": "CGV",
+      "theaterId": "0030",
+      "theaterName": "불광",
+      "distanceKm": 0
+    },
+    "CGV::CGV 산본": {
+      "brand": "CGV",
+      "theaterId": "0242",
+      "theaterName": "산본",
+      "distanceKm": 0
+    },
+    "CGV::CGV 상봉": {
+      "brand": "CGV",
+      "theaterId": "0046",
+      "theaterName": "상봉",
+      "distanceKm": 0
+    },
+    "CGV::CGV 서면": {
+      "brand": "CGV",
+      "theaterId": "0005",
+      "theaterName": "서면",
+      "distanceKm": 0
+    },
+    "CGV::CGV 서면상상마당": {
+      "brand": "CGV",
+      "theaterId": "0303",
+      "theaterName": "서면상상마당",
+      "distanceKm": 0
+    },
+    "CGV::CGV 서산": {
+      "brand": "CGV",
+      "theaterId": "0091",
+      "theaterName": "서산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 서전주": {
+      "brand": "CGV",
+      "theaterId": "0225",
+      "theaterName": "서전주",
+      "distanceKm": 0
+    },
+    "CGV::CGV 서현": {
+      "brand": "CGV",
+      "theaterId": "0196",
+      "theaterName": "서현",
+      "distanceKm": 0
+    },
+    "CGV::CGV 성신여대입구": {
+      "brand": "CGV",
+      "theaterId": "0300",
+      "theaterName": "성신여대입구",
+      "distanceKm": 0
+    },
+    "CGV::CGV 세종": {
+      "brand": "CGV",
+      "theaterId": "0219",
+      "theaterName": "세종",
+      "distanceKm": 0
+    },
+    "CGV::CGV 센텀시티": {
+      "brand": "CGV",
+      "theaterId": "0089",
+      "theaterName": "센텀시티",
+      "distanceKm": 0
+    },
+    "CGV::CGV 소풍": {
+      "brand": "CGV",
+      "theaterId": "0143",
+      "theaterName": "소풍",
+      "distanceKm": 0
+    },
+    "CGV::CGV 송도타임스페이스": {
+      "brand": "CGV",
+      "theaterId": "0325",
+      "theaterName": "송도타임스페이스",
+      "distanceKm": 0
+    },
+    "CGV::CGV 수유": {
+      "brand": "CGV",
+      "theaterId": "0276",
+      "theaterName": "수유",
+      "distanceKm": 0
+    },
+    "CGV::CGV 순천신대": {
+      "brand": "CGV",
+      "theaterId": "0268",
+      "theaterName": "순천신대",
+      "distanceKm": 0
+    },
+    "CGV::CGV 스타필드시티위례": {
+      "brand": "CGV",
+      "theaterId": "0274",
+      "theaterName": "스타필드시티위례",
+      "distanceKm": 0
+    },
+    "CGV::CGV 신세계경기": {
+      "brand": "CGV",
+      "theaterId": "0055",
+      "theaterName": "신세계경기",
+      "distanceKm": 0
+    },
+    "CGV::CGV 신촌아트레온": {
+      "brand": "CGV",
+      "theaterId": "0150",
+      "theaterName": "신촌아트레온",
+      "distanceKm": 0
+    },
+    "CGV::CGV 씨네드쉐프 센텀": {
+      "brand": "CGV",
+      "theaterId": "P004",
+      "theaterName": "씨네드쉐프 센텀",
+      "distanceKm": 0
+    },
+    "CGV::CGV 씨네드쉐프 용산아이파크몰": {
+      "brand": "CGV",
+      "theaterId": "P013",
+      "theaterName": "씨네드쉐프 용산",
+      "distanceKm": 0.07
+    },
+    "CGV::CGV 아산": {
+      "brand": "CGV",
+      "theaterId": "0356",
+      "theaterName": "아산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 아시아드": {
+      "brand": "CGV",
+      "theaterId": "0160",
+      "theaterName": "아시아드",
+      "distanceKm": 0
+    },
+    "CGV::CGV 안동": {
+      "brand": "CGV",
+      "theaterId": "0272",
+      "theaterName": "안동",
+      "distanceKm": 0
+    },
+    "CGV::CGV 안산": {
+      "brand": "CGV",
+      "theaterId": "0211",
+      "theaterName": "안산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 안성": {
+      "brand": "CGV",
+      "theaterId": "0279",
+      "theaterName": "안성",
+      "distanceKm": 0
+    },
+    "CGV::CGV 압구정": {
+      "brand": "CGV",
+      "theaterId": "0040",
+      "theaterName": "압구정",
+      "distanceKm": 0
+    },
+    "CGV::CGV 압구정 본관": {
+      "brand": "CGV",
+      "theaterId": "P001",
+      "theaterName": "씨네드쉐프 압구정",
+      "distanceKm": 0.06
+    },
+    "CGV::CGV 야탑": {
+      "brand": "CGV",
+      "theaterId": "0003",
+      "theaterName": "야탑",
+      "distanceKm": 0
+    },
+    "CGV::CGV 양산삼호": {
+      "brand": "CGV",
+      "theaterId": "0234",
+      "theaterName": "양산삼호",
+      "distanceKm": 0
+    },
+    "CGV::CGV 양주옥정": {
+      "brand": "CGV",
+      "theaterId": "0262",
+      "theaterName": "양주옥정",
+      "distanceKm": 0
+    },
+    "CGV::CGV 여수웅천": {
+      "brand": "CGV",
+      "theaterId": "0315",
+      "theaterName": "여수웅천",
+      "distanceKm": 0
+    },
+    "CGV::CGV 여의도": {
+      "brand": "CGV",
+      "theaterId": "0112",
+      "theaterName": "여의도",
+      "distanceKm": 0
+    },
+    "CGV::CGV 역곡": {
+      "brand": "CGV",
+      "theaterId": "0338",
+      "theaterName": "역곡",
+      "distanceKm": 0
+    },
+    "CGV::CGV 연남": {
+      "brand": "CGV",
+      "theaterId": "0292",
+      "theaterName": "연남",
+      "distanceKm": 0
+    },
+    "CGV::CGV 영등포타임스퀘어": {
+      "brand": "CGV",
+      "theaterId": "0059",
+      "theaterName": "영등포타임스퀘어",
+      "distanceKm": 0
+    },
+    "CGV::CGV 오리": {
+      "brand": "CGV",
+      "theaterId": "0004",
+      "theaterName": "오리",
+      "distanceKm": 0
+    },
+    "CGV::CGV 오산중앙": {
+      "brand": "CGV",
+      "theaterId": "0307",
+      "theaterName": "오산중앙",
+      "distanceKm": 0
+    },
+    "CGV::CGV 왕십리": {
+      "brand": "CGV",
+      "theaterId": "0074",
+      "theaterName": "왕십리",
+      "distanceKm": 0
+    },
+    "CGV::CGV 용산아이파크몰": {
+      "brand": "CGV",
+      "theaterId": "P013",
+      "theaterName": "씨네드쉐프 용산",
+      "distanceKm": 0.05
+    },
+    "CGV::CGV 용인": {
+      "brand": "CGV",
+      "theaterId": "0271",
+      "theaterName": "용인",
+      "distanceKm": 0
+    },
+    "CGV::CGV 울산동구": {
+      "brand": "CGV",
+      "theaterId": "0335",
+      "theaterName": "울산동구",
+      "distanceKm": 0
+    },
+    "CGV::CGV 울산삼산": {
+      "brand": "CGV",
+      "theaterId": "0128",
+      "theaterName": "울산삼산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 울산성남": {
+      "brand": "CGV",
+      "theaterId": "0333",
+      "theaterName": "울산성남",
+      "distanceKm": 0
+    },
+    "CGV::CGV 울산신천": {
+      "brand": "CGV",
+      "theaterId": "0264",
+      "theaterName": "울산신천",
+      "distanceKm": 0
+    },
+    "CGV::CGV 울산진장": {
+      "brand": "CGV",
+      "theaterId": "0246",
+      "theaterName": "울산진장",
+      "distanceKm": 0
+    },
+    "CGV::CGV 원통": {
+      "brand": "CGV",
+      "theaterId": "0354",
+      "theaterName": "원통",
+      "distanceKm": 0
+    },
+    "CGV::CGV 유성노은": {
+      "brand": "CGV",
+      "theaterId": "0206",
+      "theaterName": "유성노은",
+      "distanceKm": 0
+    },
+    "CGV::CGV 의정부": {
+      "brand": "CGV",
+      "theaterId": "0113",
+      "theaterName": "의정부",
+      "distanceKm": 0
+    },
+    "CGV::CGV 이천": {
+      "brand": "CGV",
+      "theaterId": "0205",
+      "theaterName": "이천",
+      "distanceKm": 0
+    },
+    "CGV::CGV 익산": {
+      "brand": "CGV",
+      "theaterId": "0020",
+      "theaterName": "익산",
+      "distanceKm": 0.01
+    },
+    "CGV::CGV 인제": {
+      "brand": "CGV",
+      "theaterId": "0281",
+      "theaterName": "인제",
+      "distanceKm": 0
+    },
+    "CGV::CGV 인천": {
+      "brand": "CGV",
+      "theaterId": "0002",
+      "theaterName": "인천",
+      "distanceKm": 0
+    },
+    "CGV::CGV 인천가정": {
+      "brand": "CGV",
+      "theaterId": "0296",
+      "theaterName": "인천가정",
+      "distanceKm": 0.07
+    },
+    "CGV::CGV 인천도화": {
+      "brand": "CGV",
+      "theaterId": "0340",
+      "theaterName": "인천도화",
+      "distanceKm": 0
+    },
+    "CGV::CGV 인천시민공원": {
+      "brand": "CGV",
+      "theaterId": "0352",
+      "theaterName": "인천시민공원",
+      "distanceKm": 0
+    },
+    "CGV::CGV 인천연수": {
+      "brand": "CGV",
+      "theaterId": "0258",
+      "theaterName": "인천연수",
+      "distanceKm": 0
+    },
+    "CGV::CGV 인천학익": {
+      "brand": "CGV",
+      "theaterId": "0269",
+      "theaterName": "인천학익",
+      "distanceKm": 0
+    },
+    "CGV::CGV 일산": {
+      "brand": "CGV",
+      "theaterId": "0054",
+      "theaterName": "일산",
+      "distanceKm": 0
+    },
+    "CGV::CGV 전주고사": {
+      "brand": "CGV",
+      "theaterId": "0213",
+      "theaterName": "전주고사",
+      "distanceKm": 0
+    },
+    "CGV::CGV 전주에코시티": {
+      "brand": "CGV",
+      "theaterId": "0336",
+      "theaterName": "전주에코시티",
+      "distanceKm": 0
+    },
+    "CGV::CGV 전주효자": {
+      "brand": "CGV",
+      "theaterId": "0179",
+      "theaterName": "전주효자",
+      "distanceKm": 0
+    },
+    "CGV::CGV 정관": {
+      "brand": "CGV",
+      "theaterId": "0306",
+      "theaterName": "정관",
+      "distanceKm": 0
+    },
+    "CGV::CGV 정읍": {
+      "brand": "CGV",
+      "theaterId": "0186",
+      "theaterName": "정읍",
+      "distanceKm": 0
+    },
+    "CGV::CGV 제주": {
+      "brand": "CGV",
+      "theaterId": "0302",
+      "theaterName": "제주",
+      "distanceKm": 0
+    },
+    "CGV::CGV 제주노형": {
+      "brand": "CGV",
+      "theaterId": "0259",
+      "theaterName": "제주노형",
+      "distanceKm": 0
+    },
+    "CGV::CGV 주안역": {
+      "brand": "CGV",
+      "theaterId": "0308",
+      "theaterName": "주안역",
+      "distanceKm": 0
+    },
+    "CGV::CGV 중계": {
+      "brand": "CGV",
+      "theaterId": "0131",
+      "theaterName": "중계",
+      "distanceKm": 0
+    },
+    "CGV::CGV 진주혁신": {
+      "brand": "CGV",
+      "theaterId": "0324",
+      "theaterName": "진주혁신",
+      "distanceKm": 0
+    },
+    "CGV::CGV 창원더시티": {
+      "brand": "CGV",
+      "theaterId": "0079",
+      "theaterName": "창원더시티",
+      "distanceKm": 0
+    },
+    "CGV::CGV 창원상남": {
+      "brand": "CGV",
+      "theaterId": "0283",
+      "theaterName": "창원상남",
+      "distanceKm": 0
+    },
+    "CGV::CGV 천안": {
+      "brand": "CGV",
+      "theaterId": "0369",
+      "theaterName": "천안",
+      "distanceKm": 0
+    },
+    "CGV::CGV 천안터미널": {
+      "brand": "CGV",
+      "theaterId": "0293",
+      "theaterName": "천안터미널",
+      "distanceKm": 0
+    },
+    "CGV::CGV 천안펜타포트": {
+      "brand": "CGV",
+      "theaterId": "0110",
+      "theaterName": "천안펜타포트",
+      "distanceKm": 0
+    },
+    "CGV::CGV 천호": {
+      "brand": "CGV",
+      "theaterId": "0199",
+      "theaterName": "천호",
+      "distanceKm": 0
+    },
+    "CGV::CGV 청담씨네시티": {
+      "brand": "CGV",
+      "theaterId": "0107",
+      "theaterName": "청담씨네시티",
+      "distanceKm": 0
+    },
+    "CGV::CGV 청라": {
+      "brand": "CGV",
+      "theaterId": "0235",
+      "theaterName": "청라",
+      "distanceKm": 0
+    },
+    "CGV::CGV 청주지웰시티": {
+      "brand": "CGV",
+      "theaterId": "0142",
+      "theaterName": "청주지웰시티",
+      "distanceKm": 0
+    },
+    "CGV::CGV 청주터미널": {
+      "brand": "CGV",
+      "theaterId": "0319",
+      "theaterName": "청주터미널",
+      "distanceKm": 0
+    },
+    "CGV::CGV 춘천": {
+      "brand": "CGV",
+      "theaterId": "0070",
+      "theaterName": "춘천",
+      "distanceKm": 0
+    },
+    "CGV::CGV 충주교현": {
+      "brand": "CGV",
+      "theaterId": "0328",
+      "theaterName": "충주교현",
+      "distanceKm": 0
+    },
+    "CGV::CGV 파주운정": {
+      "brand": "CGV",
+      "theaterId": "0371",
+      "theaterName": "파주운정",
+      "distanceKm": 0.02
+    },
+    "CGV::CGV 평촌": {
+      "brand": "CGV",
+      "theaterId": "0195",
+      "theaterName": "평촌",
+      "distanceKm": 0
+    },
+    "CGV::CGV 평택": {
+      "brand": "CGV",
+      "theaterId": "0052",
+      "theaterName": "평택",
+      "distanceKm": 0
+    },
+    "CGV::CGV 평택고덕": {
+      "brand": "CGV",
+      "theaterId": "0334",
+      "theaterName": "평택고덕",
+      "distanceKm": 0
+    },
+    "CGV::CGV 평택소사": {
+      "brand": "CGV",
+      "theaterId": "0214",
+      "theaterName": "평택소사",
+      "distanceKm": 0
+    },
+    "CGV::CGV 피카디리1958": {
+      "brand": "CGV",
+      "theaterId": "0223",
+      "theaterName": "피카디리1958",
+      "distanceKm": 0
+    },
+    "CGV::CGV 하단아트몰링": {
+      "brand": "CGV",
+      "theaterId": "0245",
+      "theaterName": "하단아트몰링",
+      "distanceKm": 0
+    },
+    "CGV::CGV 해운대": {
+      "brand": "CGV",
+      "theaterId": "0318",
+      "theaterName": "해운대",
+      "distanceKm": 0
+    },
+    "CGV::CGV 홍대": {
+      "brand": "CGV",
+      "theaterId": "0191",
+      "theaterName": "홍대",
+      "distanceKm": 0
+    },
+    "CGV::CGV 홍성": {
+      "brand": "CGV",
+      "theaterId": "0377",
+      "theaterName": "홍성",
+      "distanceKm": 0
+    },
+    "CGV::CGV 화성봉담": {
+      "brand": "CGV",
+      "theaterId": "0301",
+      "theaterName": "화성봉담",
+      "distanceKm": 0
+    },
+    "CGV::CGV 화정": {
+      "brand": "CGV",
+      "theaterId": "0145",
+      "theaterName": "화정",
+      "distanceKm": 0
+    },
+    "CGV::CGV DRIVE IN 영도": {
+      "brand": "CGV",
+      "theaterId": "0367",
+      "theaterName": "Drive In 영도",
+      "distanceKm": 0
+    },
+    "CGV::CGV씨네드쉐프 압구정": {
+      "brand": "CGV",
+      "theaterId": "P001",
+      "theaterName": "씨네드쉐프 압구정",
+      "distanceKm": 0
+    }
+  }
+}

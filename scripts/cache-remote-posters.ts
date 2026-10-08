@@ -8,6 +8,7 @@ import {
   collectPosterUrls,
   isLocalPosterUrl,
   isPerformanceRecord,
+  isPosterAuditedDataFile,
   normalizeRemotePosterUrl,
   type PosterRecord,
 } from './lib/poster-integrity';
@@ -145,8 +146,7 @@ function collectFiles(dir: string): string[] {
 }
 
 function shouldRewriteDataFile(file: string) {
-  const relPath = path.relative(DATA_DIR, file).replace(/\\/g, '/');
-  return !/(^build-info\.json$|^operations-summary\.json$|^poster-integrity-report\.json$|report\.json$|manifest\.json$)/.test(relPath);
+  return isPosterAuditedDataFile(path.relative(DATA_DIR, file));
 }
 
 function walk(value: JsonValue, visitor: (object: JsonObject) => void) {

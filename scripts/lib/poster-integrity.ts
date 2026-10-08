@@ -65,6 +65,16 @@ export function isPerformanceRecord(value: unknown): value is PosterRecord {
     && typeof record.genre === 'string';
 }
 
+/**
+ * Data files whose records are rewritten by cache-remote-posters (and therefore
+ * must carry a posterStatus). Diagnostic/report files only embed sample rows and
+ * are skipped by both the cache step and the validator.
+ */
+export function isPosterAuditedDataFile(relativePath: string): boolean {
+  const relPath = relativePath.replace(/\\/g, '/');
+  return !/(^build-info\.json$|^operations-summary\.json$|^poster-integrity-report\.json$|report\.json$|manifest\.json$|opportunities\.json$|^sessions\.json$|^heritage-events\.json$)/.test(relPath);
+}
+
 export function isPosterExcluded(record: PosterRecord): boolean {
   return typeof record.posterStatus === 'string' && POSTER_UNAVAILABLE_STATUSES.has(record.posterStatus);
 }

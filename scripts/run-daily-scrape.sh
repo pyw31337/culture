@@ -1,23 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# CultureFlow daily scrape (cron entry point).
+#
+# Deprecated wrapper: the old version hard-coded a personal iCloud path and
+# called scripts/scrape-ott.ts, which no longer exists. The maintained local
+# pipeline is scripts/run-local-data-update.sh (loads .env.local, runs the
+# local scraper plan, validates, commits and pushes).
+set -euo pipefail
 
-# CultureFlow Daily Scrape Script
-# This script is designed to be run via cron
+# Make node available for cron/launchd shells that do not load a profile.
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+# shellcheck disable=SC1091
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# Source nvm if present to ensure node is available
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# Navigate to project directory
-PROJECT_DIR="/Users/pyw31337/Library/Mobile Documents/com~apple~CloudDocs/Antigravity/CultureFlow"
-cd "$PROJECT_DIR" || exit 1
-
-# Log file
-LOG_FILE="$PROJECT_DIR/logs/scrape-ott-$(date +%Y-%m-%d).log"
-mkdir -p "$PROJECT_DIR/logs"
-
-echo "Starting Scrape at $(date)" >> "$LOG_FILE"
-
-# Run Scraper
-/usr/bin/env npx tsx scripts/scrape-ott.ts >> "$LOG_FILE" 2>&1
-
-echo "Finished Scrape at $(date)" >> "$LOG_FILE"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec "$SCRIPT_DIR/run-local-data-update.sh" "$@"

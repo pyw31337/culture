@@ -1,9 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
+import { requireKakaoRestKey } from './utils/env';
 
 const VENUES_FILE = path.join(process.cwd(), 'src/data/venues.json');
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
+const KAKAO_API_KEY = requireKakaoRestKey();
 
 interface VenueData {
     name: string;

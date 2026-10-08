@@ -24,6 +24,7 @@ import Portal from './ui/Portal';
 import ImageWithFallback from './ImageWithFallback';
 import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
 import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
+import CinemaTimetablePanel from './CinemaTimetablePanel';
 
 // Weather interface
 interface DailyWeather {
@@ -43,6 +44,7 @@ interface Cinema {
     lat: number;
     lng: number;
     brand: string;
+    relayTheaterId?: string;
 }
 interface Venue {
     name?: string;
@@ -67,6 +69,7 @@ type VenueGroup = Venue & {
     lat: number;
     lng: number;
     brand?: string;
+    relayTheaterId?: string;
     type: 'performance' | 'cinema';
     performances: Performance[];
     kakaoLatLng: KakaoLatLng | null;
@@ -78,6 +81,14 @@ type MapVenueGroupPayload = Omit<VenueGroup, 'kakaoLatLng' | 'performances'> & {
 };
 
 type GenreStyle = (typeof GENRE_STYLES)[keyof typeof GENRE_STYLES];
+
+function getCinemaMarkerLabel(brand?: string) {
+    if (!brand) return '영';
+    if (/cgv/i.test(brand)) return 'C';
+    if (/롯데/.test(brand)) return 'L';
+    if (/메가박스/.test(brand)) return 'M';
+    return '영';
+}
 
 interface KakaoLatLng {
     getLat(): number;
@@ -578,9 +589,8 @@ export default function MapView({
         }
 
         if (isMovieMode || isAllMode) {
-            const moviePerformances = performances.filter(p => p.genre === 'movie');
-            const topMovies = moviePerformances.slice(0, 10);
-
+            // Cinemas no longer pretend every branch screens the box-office top 10;
+            // the popup loads that branch's real timetable from the relay instead.
             for (let i = 0; i < cinemas.length; i++) {
                 const cinema = cinemas[i];
                 if (!groupsMap.has(cinema.name)) {
@@ -592,8 +602,9 @@ export default function MapView({
                         lat: cinema.lat,
                         lng: cinema.lng,
                         brand: cinema.brand,
+                        relayTheaterId: cinema.relayTheaterId,
                         type: 'cinema',
-                        performances: topMovies,
+                        performances: [],
                         kakaoLatLng: null,
                         firstAppearanceIndex: i
                     });
@@ -1029,7 +1040,7 @@ export default function MapView({
             const primaryGenre = venue.performances[0]?.genre || selectedMapGenre || 'all';
             const style = getGenreStyle(primaryGenre);
             const color = venue.type === 'cinema' ? '#4f46e5' : (style.hex || '#4b5563');
-            const text = venue.performances.length.toString();
+            const text = venue.type === 'cinema' ? getCinemaMarkerLabel(venue.brand) : venue.performances.length.toString();
             const isSelected = selectedVenueRef.current === venue.groupKey;
 
             const normalIcon = createMarkerImage(text, color, false);
@@ -1567,12 +1578,16 @@ export default function MapView({
                                     </div>
 
                                     {selectedVenueData.type === 'cinema' ? (
-                                        <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
-                                            <a href={`https://search.naver.com/search.naver?query=${encodeURIComponent(selectedVenueData.venueName)}`}
-                                                target="_blank" rel="noopener noreferrer"
-                                                className="flex items-center justify-center gap-1.5 w-full py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold rounded-lg transition-colors shadow-sm">
-                                                <RotateCw size={12} /> 실시간 상영시간표 확인하기
-                                            </a>
+                                        <div className="max-h-[300px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 border-b border-indigo-100 dark:border-indigo-800">
+                                            <CinemaTimetablePanel
+                                                target={{
+                                                    name: selectedVenueData.venueName,
+                                                    brand: selectedVenueData.brand,
+                                                    lat: selectedVenueData.lat,
+                                                    lng: selectedVenueData.lng,
+                                                    relayTheaterId: selectedVenueData.relayTheaterId,
+                                                }}
+                                            />
                                         </div>
                                     ) : selectedVenueData.lat && selectedVenueData.lng ? (
                                         <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 border-b border-indigo-100 dark:border-indigo-800">
@@ -1595,6 +1610,7 @@ export default function MapView({
                                         </div>
                                     ) : null}
 
+                                    {selectedVenueData.performances.length > 0 && (
                                     <div className="max-h-[240px] overflow-y-auto custom-scrollbar bg-white dark:bg-gray-900 p-2 space-y-2" onScroll={handlePerfScroll}>
                                         {selectedVenueData.performances.slice(0, perfVisibleCount).map((p) => (
                                             <a key={p.id} href={getExternalContentLink(p)} target="_blank" rel="noopener noreferrer"
@@ -1630,6 +1646,7 @@ export default function MapView({
                                             </a>
                                         ))}
                                     </div>
+                                    )}
                                 </div>
                                 <div className="w-4 h-4 bg-white dark:bg-gray-900 border-r border-b border-gray-200 dark:border-gray-700 transform rotate-45 -mt-2 z-0 relative shadow-sm"></div>
                             </div>
@@ -1748,7 +1765,7 @@ export default function MapView({
                                         <span className={clsx("text-[10px] truncate", isSelected ? "text-white/80" : "text-gray-500 dark:text-gray-400")}>{v.address}</span>
                                         <div className="mt-auto flex items-center justify-between text-xs">
                                             <span className={clsx("font-bold shrink-0", isSelected ? "text-white" : "text-emerald-600 dark:text-emerald-400")}>
-                                                {v.performances.length}개 컨텐츠
+                                                {isCinemaObj ? '상영시간표 보기' : `${v.performances.length}개 컨텐츠`}
                                             </span>
                                         </div>
                                     </div>

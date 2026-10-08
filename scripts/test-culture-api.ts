@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { XMLParser } from 'fast-xml-parser';
+import { requireEnv } from './utils/env';
 
 async function testAPI() {
-    const key = 'da895f03-f155-420f-a63d-ab4e21782334';
+    const key = requireEnv('KCISA_API_KEY');
     // Let's try the standard culture portal performace API list
     const url = `http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period`;
     

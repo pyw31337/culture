@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { requireEnv } from './utils/env';
 
 async function testKobisOpenApi() {
-    const key = 'f5eef3421c60206eb5ce7fd92cf3ce49'; // Standard public key
+    const key = requireEnv('KOBIS_API_KEY');
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${key}&itemPerPage=50&openStartDt=20260301&openEndDt=20261231`;
 
     try {

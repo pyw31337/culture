@@ -2,6 +2,7 @@ import { startTransition, useCallback, useEffect, useMemo, useRef, useState } fr
 import { Performance } from '@/types';
 import type { CinemaData, VenueData } from '@/lib/performance-data';
 import { safePerformanceList } from '@/lib/data-safety';
+import { dropEndedPerformances } from '@/lib/event-dates';
 
 type PerformanceLoadPolicy = 'full' | 'initial-only' | 'paged';
 type BackgroundLoadPriority = 'immediate' | 'deferred';
@@ -101,7 +102,7 @@ function getPage(path: string): Promise<Performance[]> {
     if (existing) return existing;
 
     const promise = fetchJson<Performance[]>(path, [])
-        .then((data) => safePerformanceList(data))
+        .then((data) => dropEndedPerformances(safePerformanceList(data)))
         .then((page) => {
             pageCacheByPath.set(path, page);
             return page;
@@ -138,7 +139,7 @@ function loadPerformances(
                 }
                 return merged;
             })
-        : fetchJson<Performance[]>(path, []).then((data) => safePerformanceList(data)))
+        : fetchJson<Performance[]>(path, []).then((data) => dropEndedPerformances(safePerformanceList(data))))
         .then((data) => {
             performancesCacheByPath.set(path, data);
             if (path === '/data/performances.json') {
@@ -226,6 +227,13 @@ export function usePerformanceData({
         }
         return initialPerformances;
     });
+    // The static export can be older than today (e.g. a failed deploy); hide events
+    // that already ended once we are on the client (after hydration).
+    useEffect(() => {
+        // One-shot post-hydration correction; must not run during SSR/hydration.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setAllPerformances((current) => dropEndedPerformances(current));
+    }, []);
     const [cinemas, setCinemas] = useState<CinemaData[]>(() => shouldLoadCinemas && cinemasCache ? cinemasCache : []);
     const [venues, setVenues] = useState<Record<string, VenueData>>(() => shouldLoadVenues && venuesCache ? venuesCache : {});
     const [pagedManifest, setPagedManifest] = useState<PerformancePageManifest | null>(() => manifestCacheByPath.get(effectivePerformanceDataPath) || null);

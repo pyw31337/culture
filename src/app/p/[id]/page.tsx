@@ -3,61 +3,14 @@ import ShareRedirect from '@/components/ShareRedirect';
 import { Metadata } from 'next';
 import ContentDetailView from '@/components/ContentDetailView';
 import RainbowBackground from '@/components/ui/RainbowBackground';
-import type { Performance } from '@/types';
+import { pickDetailPageExportCandidates } from '@/lib/detail-page-export';
+import { buildStructuredData } from '@/lib/event-structured-data';
 
 interface PageProps {
     params: Promise<{ id: string }>;
 }
 
 export const dynamicParams = false;
-
-const DETAIL_PAGE_EXPORT_LIMIT = Number(process.env.DETAIL_PAGE_EXPORT_LIMIT || 400);
-const ONE_DAY = 24 * 60 * 60 * 1000;
-
-function parseFirstEventDate(performance: Performance) {
-    const source = `${performance.dateRaw || ''} ${performance.date || ''}`;
-    const match = source.match(/(20\d{2})[.\-/년\s]+(\d{1,2})[.\-/월\s]+(\d{1,2})/);
-    if (!match) return null;
-
-    const [, year, month, day] = match;
-    const parsed = new Date(Number(year), Number(month) - 1, Number(day));
-    return Number.isNaN(parsed.getTime()) ? null : parsed;
-}
-
-function scoreDetailPagePriority(performance: Performance, now = new Date()) {
-    let score = 0;
-    const start = parseFirstEventDate(performance);
-    const daysUntil = start ? Math.floor((start.getTime() - now.getTime()) / ONE_DAY) : null;
-
-    if (performance.image || performance.poster || performance.backupPoster || performance.posterUrl) score += 60;
-    if (performance.description || performance.synopsis) score += 16;
-    if (performance.link || performance.website) score += 8;
-    if (performance.lat && performance.lng) score += 6;
-    if (performance.genre === 'movie') score += 18;
-    if (performance.genre === 'musical' || performance.genre === 'concert' || performance.genre === 'play') score += 14;
-
-    if (daysUntil !== null) {
-        if (daysUntil >= -7 && daysUntil <= 45) score += 80 - Math.abs(daysUntil);
-        else if (daysUntil > 45 && daysUntil <= 120) score += 24;
-        else if (daysUntil < -30) score -= 40;
-    }
-
-    return score;
-}
-
-function pickDetailPageExportCandidates(performances: Performance[]) {
-    if (!Number.isFinite(DETAIL_PAGE_EXPORT_LIMIT) || DETAIL_PAGE_EXPORT_LIMIT <= 0) {
-        return [];
-    }
-
-    if (performances.length <= DETAIL_PAGE_EXPORT_LIMIT) {
-        return performances;
-    }
-
-    return [...performances]
-        .sort((a, b) => scoreDetailPagePriority(b) - scoreDetailPagePriority(a) || a.id.localeCompare(b.id))
-        .slice(0, DETAIL_PAGE_EXPORT_LIMIT);
-}
 
 export async function generateStaticParams() {
     const performances = await getAllPerformances();
@@ -173,32 +126,7 @@ export default async function PerformanceSharePage({ params }: PageProps) {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'Event',
-                        'name': p.title,
-                        'startDate': p.date,
-                        'eventStatus': 'https://schema.org/EventScheduled',
-                        'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
-                        'location': {
-                            '@type': 'Place',
-                            'name': p.venue,
-                            'address': {
-                                '@type': 'PostalAddress',
-                                'streetAddress': p.venue,
-                                'addressLocality': 'Seoul',
-                                'addressCountry': 'KR'
-                            }
-                        },
-                        'image': [p.image || p.poster || ''],
-                        'description': p.description || p.title,
-                        'offers': {
-                            '@type': 'Offer',
-                            'price': p.price === '무료' ? '0' : undefined,
-                            'priceCurrency': 'KRW',
-                            'url': `https://pyw31337.github.io/culture/p/${id}/`
-                        }
-                    })
+                    __html: JSON.stringify(buildStructuredData(p, `https://pyw31337.github.io/culture/p/${id}/`)).replace(/</g, '\\u003c'),
                 }}
             />
         </main>

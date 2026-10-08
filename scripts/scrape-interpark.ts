@@ -9,6 +9,7 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import crypto from 'crypto';
 import cliProgress from 'cli-progress';
 import { atomicWriteJson, atomicWriteJsonPreserve } from './utils/scraper-utils';
+import { fetchInterparkApiEnrichment, type InterparkSession } from './utils/interpark-api';
 
 puppeteer.use(StealthPlugin());
 
@@ -43,6 +44,10 @@ interface Performance {
     description?: string;
     synopsisImages?: string[];
     lastEnriched?: string; // ISO Date string
+    /** Upcoming performance sessions from the public playSeq API (schedule only). */
+    sessions?: InterparkSession[];
+    sessionsCheckedAt?: string;
+    lastApiEnriched?: string;
 }
 
 const outputPath = path.resolve(process.cwd(), 'src/data/interpark.json');
@@ -54,6 +59,47 @@ const INTERPARK_NAVIGATION_TIMEOUT_MS = Number(process.env.INTERPARK_NAVIGATION_
 const INTERPARK_SELECTOR_TIMEOUT_MS = Number(process.env.INTERPARK_SELECTOR_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 3000 : 5000));
 const INTERPARK_PROTOCOL_TIMEOUT_MS = Number(process.env.INTERPARK_PROTOCOL_TIMEOUT_MS || (INTERPARK_FAST_MODE ? 25000 : 60000));
 const INTERPARK_POST_LOAD_DELAY_MS = Number(process.env.INTERPARK_POST_LOAD_DELAY_MS || (INTERPARK_FAST_MODE ? 800 : 1500));
+// Hard wall-clock budget for the whole scraper. When it is reached the browser
+// enrich loop stops starting new pages and the run saves and exits 0, instead of
+// being killed by the workflow `timeout` (exit 143), which discarded the freshly
+// collected list (the cause of every GitHub fallback failure since 2026-09-09).
+const INTERPARK_RUN_BUDGET_SECONDS = Number(process.env.INTERPARK_RUN_BUDGET_SECONDS || 0);
+const INTERPARK_ITEM_TIMEOUT_MS = Number(process.env.INTERPARK_ITEM_TIMEOUT_MS || 90000);
+// Public JSON API enrichment (summary/prices/playSeq): fast, CI-safe, no browser.
+const INTERPARK_API_ENRICH_LIMIT = Number(process.env.INTERPARK_API_ENRICH_LIMIT ?? 300);
+const INTERPARK_SESSION_LIMIT = Number(process.env.INTERPARK_SESSION_LIMIT ?? 200);
+const INTERPARK_SESSION_WINDOW_DAYS = Number(process.env.INTERPARK_SESSION_WINDOW_DAYS ?? 60);
+const INTERPARK_SESSION_LOOKAHEAD_DAYS = Number(process.env.INTERPARK_SESSION_LOOKAHEAD_DAYS ?? 120);
+const INTERPARK_API_DELAY_MS = Math.max(300, Number(process.env.INTERPARK_API_DELAY_MS ?? 350));
+const INTERPARK_API_CONCURRENCY = Math.max(1, Math.min(3, Number(process.env.INTERPARK_API_CONCURRENCY ?? 2)));
+const RUN_STARTED_AT = Date.now();
+
+function isRunBudgetExhausted(reserveMs = 0) {
+    if (!INTERPARK_RUN_BUDGET_SECONDS || INTERPARK_RUN_BUDGET_SECONDS <= 0) return false;
+    return Date.now() + reserveMs >= RUN_STARTED_AT + INTERPARK_RUN_BUDGET_SECONDS * 1000;
+}
+
+function withTimeout<T>(promise: Promise<T>, ms: number, onTimeout: () => T): Promise<T> {
+    return new Promise((resolve) => {
+        let settled = false;
+        const timer = setTimeout(() => {
+            if (settled) return;
+            settled = true;
+            resolve(onTimeout());
+        }, ms);
+        promise.then((value) => {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            resolve(value);
+        }, () => {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            resolve(onTimeout());
+        });
+    });
+}
 
 const REGIONS = {
     seoul: '42001',
@@ -629,14 +675,19 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
         if (!existing?.synopsis) score += 5;
 
         const startDate = parseStartDate(item.date || existing?.date);
+        const endMatch = [...String(item.date || existing?.date || '').matchAll(/(\d{4})[.-](\d{2})[.-](\d{2})/g)].pop();
+        const endDate = endMatch ? new Date(Number(endMatch[1]), Number(endMatch[2]) - 1, Number(endMatch[3])) : null;
+        const isOngoing = Boolean(endDate && endDate.getTime() >= new Date().setHours(0, 0, 0, 0));
         if (startDate) {
             const today = new Date();
             today.setHours(0, 0, 0, 0);
             const daysFromToday = Math.floor((startDate.getTime() - today.getTime()) / 86400000);
             if (daysFromToday >= -2 && daysFromToday <= 30) {
                 score += 100 - Math.max(0, daysFromToday) * 2;
-            } else if (daysFromToday < -2) {
+            } else if (daysFromToday < -2 && !isOngoing) {
                 score -= 40;
+            } else if (isOngoing) {
+                score += 40;
             }
         }
 
@@ -684,9 +735,26 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
 
     const CONCURRENCY = Math.max(1, INTERPARK_CONCURRENCY);
     for (let i = 0; i < enrichQueue.length; i += CONCURRENCY) {
+        if (!browser || isRunBudgetExhausted(INTERPARK_ITEM_TIMEOUT_MS + 15000)) {
+            const remaining = enrichQueue.slice(i).map((item) => {
+                const existing = existingEnriched.get(item.id);
+                return existing ? { ...existing, ...item } : item;
+            });
+            if (browser) {
+                console.warn(`[interpark] run budget ${INTERPARK_RUN_BUDGET_SECONDS}s reached; deferring ${remaining.length} browser enrich item(s) to the next run.`);
+            }
+            enrichedResult.push(...remaining);
+            break;
+        }
         const chunk = enrichQueue.slice(i, i + CONCURRENCY);
 
-        const promises = chunk.map(async (item) => {
+        const promises = chunk.map((item) => withTimeout(enrichOne(item), INTERPARK_ITEM_TIMEOUT_MS, () => {
+            console.warn(`[interpark] enrich timed out after ${INTERPARK_ITEM_TIMEOUT_MS}ms: ${item.id}`);
+            const existing = existingEnriched.get(item.id);
+            return existing ? { ...existing, ...item } : item;
+        }));
+
+        async function enrichOne(item: Performance): Promise<Performance> {
             const page = await browser.newPage();
             try {
                 await page.evaluateOnNewDocument(BROWSER_EVAL_BOOTSTRAP);
@@ -1309,7 +1377,7 @@ async function scrapeDetails(browser: any, items: Performance[], existingEnriche
             } finally {
                 await page.close().catch(() => undefined);
             }
-        });
+        }
 
         const results = await Promise.all(promises);
         enrichedResult.push(...results);
@@ -1353,24 +1421,169 @@ const runScraper = async () => {
     const uniqueItems = await collectAllInterparkPerformances(existingMap);
     console.log(`Found ${uniqueItems.length} total items. Enriching Items...`);
 
-    // 2. Enrich Details
-    const browser = await puppeteer.launch({
-        headless: true,
-        protocolTimeout: INTERPARK_PROTOCOL_TIMEOUT_MS,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
+    // 2a. Fast JSON API enrichment (price/age/runtime + session schedule).
+    await enrichViaInterparkApi(uniqueItems, existingMap);
+    // Persist list + API enrichment right away so a later browser hang cannot lose it.
+    atomicWriteJsonPreserve(outputPath, uniqueItems.map((item) => mergeWithExisting(item, existingMap)), {
+        allowEmpty: process.env.SCRAPE_ALLOW_EMPTY === '1',
+        label: 'interpark.json',
     });
 
+    // 2b. Browser enrichment (synopsis/cast/etc). Skipped when INTERPARK_ENRICH_LIMIT=0.
+    const useBrowser = INTERPARK_ENRICH_LIMIT > 0 && !isRunBudgetExhausted(60000);
+    const browser = useBrowser
+        ? await puppeteer.launch({
+            headless: true,
+            protocolTimeout: INTERPARK_PROTOCOL_TIMEOUT_MS,
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
+        })
+        : null;
+    if (!useBrowser) console.log('[interpark] browser enrichment skipped (limit 0 or run budget reached).');
+
     try {
-        const finalItems = await scrapeDetails(browser, uniqueItems, existingMap);
+        const finalItems = (await scrapeDetails(browser, uniqueItems, existingMap))
+            .map((item) => reapplyApiFields(item, existingMap));
 
         // 3. Final Save
         atomicWriteJsonPreserve(outputPath, finalItems, { allowEmpty: process.env.SCRAPE_ALLOW_EMPTY === '1', label: 'interpark.json' });
         console.log(`Saved ${finalItems.length} items to ${outputPath}`);
 
     } finally {
-        await browser.close();
+        if (browser) await browser.close();
     }
 };
+
+function mergeWithExisting(item: Performance, existingMap: Map<string, Performance>): Performance {
+    const existing = existingMap.get(item.id);
+    return existing ? { ...existing, ...item } : item;
+}
+
+function hasUsefulPriceValue(item: Partial<Performance>) {
+    if (Array.isArray(item.priceList) && item.priceList.length > 0) return true;
+    return Boolean(item.price && /[0-9]/.test(item.price) && !['무료/이벤트', '이벤트', '가격정보없음'].includes(item.price));
+}
+
+/** Browser results are built from the list item; carry API-only fields over. */
+function reapplyApiFields(item: Performance, existingMap: Map<string, Performance>): Performance {
+    const existing = existingMap.get(item.id);
+    if (!existing) return item;
+    const next: Performance = { ...item };
+    if (existing.sessions) {
+        next.sessions = existing.sessions;
+        next.sessionsCheckedAt = existing.sessionsCheckedAt;
+    }
+    if (!hasUsefulPriceValue(next) && hasUsefulPriceValue(existing)) {
+        next.price = existing.price;
+        next.priceList = existing.priceList;
+    }
+    if (!next.ageRating && existing.ageRating) next.ageRating = existing.ageRating;
+    if (!next.runningTime && existing.runningTime) next.runningTime = existing.runningTime;
+    if (!next.performanceTime && existing.performanceTime) next.performanceTime = existing.performanceTime;
+    if (existing.lastApiEnriched) next.lastApiEnriched = existing.lastApiEnriched;
+    return next;
+}
+
+function kstMidnight(offsetDays = 0) {
+    const ymd = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+    return new Date(`${ymd}T00:00:00+09:00`).getTime() + offsetDays * 86400000;
+}
+
+function parseDateWindow(date?: string) {
+    const matches = [...String(date || '').matchAll(/(20\d{2})[.-](\d{1,2})[.-](\d{1,2})/g)];
+    if (matches.length === 0) return { start: null as number | null, end: null as number | null };
+    const toTs = (m: RegExpMatchArray) => new Date(`${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}T00:00:00+09:00`).getTime();
+    return { start: toTs(matches[0]), end: toTs(matches[matches.length - 1]) };
+}
+
+function extendDateRangeToSessions(date: string | undefined, sessions: InterparkSession[]): string | null {
+    if (!date || sessions.length === 0) return null;
+    const matches = [...date.matchAll(/(20\d{2})[.-](\d{1,2})[.-](\d{1,2})/g)];
+    if (matches.length === 0) return null;
+    const last = matches[matches.length - 1];
+    const currentEnd = `${last[1]}-${last[2].padStart(2, '0')}-${last[3].padStart(2, '0')}`;
+    const lastSession = sessions[sessions.length - 1].date;
+    if (!lastSession || lastSession <= currentEnd) return null;
+    const startText = matches[0][0];
+    return `${startText.replace(/-/g, '.')} ~ ${lastSession.replace(/-/g, '.')}`;
+}
+
+async function enrichViaInterparkApi(items: Performance[], existingMap: Map<string, Performance>) {
+    if (INTERPARK_API_ENRICH_LIMIT <= 0 && INTERPARK_SESSION_LIMIT <= 0) return;
+    const today = kstMidnight();
+    const sessionHorizon = kstMidnight(INTERPARK_SESSION_WINDOW_DAYS);
+    const liveGenres = new Set(['musical', 'play', 'concert', 'classic', 'leisure', 'exhibition', 'etc']);
+    const hoursSince = (iso?: string) => (iso ? (Date.now() - new Date(iso).getTime()) / 36e5 : Infinity);
+
+    type Candidate = { item: Performance; code: string; start: number; merged: Performance };
+    const candidates: Candidate[] = [];
+    for (const item of items) {
+        const code = extractGoodsCode(item.link);
+        if (!code || !liveGenres.has(item.genre)) continue;
+        const merged = mergeWithExisting(item, existingMap);
+        const { start, end } = parseDateWindow(merged.date);
+        if (end !== null && end < today) continue; // already finished
+        candidates.push({ item, code, start: start ?? Number.MAX_SAFE_INTEGER, merged });
+    }
+    candidates.sort((a, b) => a.start - b.start);
+
+    const needsDetails = (c: Candidate) => (
+        (!hasUsefulPriceValue(c.merged) || !c.merged.ageRating || !c.merged.runningTime)
+        && hoursSince(c.merged.lastApiEnriched) > 72
+    );
+    const needsSessions = (c: Candidate) => c.start <= sessionHorizon && hoursSince(c.merged.sessionsCheckedAt) > 18;
+
+    const detailIds = new Set(candidates.filter(needsDetails).slice(0, Math.max(0, INTERPARK_API_ENRICH_LIMIT)).map((c) => c.item.id));
+    const sessionIds = new Set(candidates.filter(needsSessions).slice(0, Math.max(0, INTERPARK_SESSION_LIMIT)).map((c) => c.item.id));
+    const queue = candidates.filter((c) => detailIds.has(c.item.id) || sessionIds.has(c.item.id));
+    console.log(`[interpark-api] candidates=${candidates.length} details=${detailIds.size} sessions=${sessionIds.size} (delay ${INTERPARK_API_DELAY_MS}ms, concurrency ${INTERPARK_API_CONCURRENCY})`);
+
+    let cursor = 0;
+    let done = 0;
+    let filled = 0;
+    let sessionHits = 0;
+    const worker = async () => {
+        while (cursor < queue.length) {
+            if (isRunBudgetExhausted(30000)) return;
+            const c = queue[cursor++];
+            const wantDetails = detailIds.has(c.item.id);
+            const wantSessions = sessionIds.has(c.item.id);
+            const api = await fetchInterparkApiEnrichment(c.code, {
+                details: wantDetails,
+                sessions: wantSessions,
+                delayMs: INTERPARK_API_DELAY_MS,
+                lookaheadDays: INTERPARK_SESSION_LOOKAHEAD_DAYS,
+            });
+            const base = existingMap.get(c.item.id) || { ...c.item };
+            const next: Performance = { ...base };
+            if (wantDetails) {
+                if (!hasUsefulPriceValue(next) && api.priceList?.length) {
+                    next.price = api.price;
+                    next.priceList = api.priceList;
+                }
+                if (!next.ageRating && api.ageRating) next.ageRating = api.ageRating;
+                if (!next.runningTime && api.runningTime) next.runningTime = api.runningTime;
+                if (!next.performanceTime && api.performanceTime) next.performanceTime = api.performanceTime;
+                next.lastApiEnriched = new Date().toISOString();
+                if (api.priceList?.length || api.ageRating || api.runningTime) filled += 1;
+            }
+            if (wantSessions && api.sessions) {
+                next.sessions = api.sessions;
+                next.sessionsCheckedAt = api.sessionsCheckedAt;
+                if (api.sessions.length > 0) sessionHits += 1;
+                // Open-run shows are often extended after the listing date was
+                // scraped; trust the official session schedule for the end date.
+                const extendedDate = extendDateRangeToSessions(next.date, api.sessions);
+                if (extendedDate) next.date = extendedDate;
+            }
+            existingMap.set(c.item.id, next);
+            done += 1;
+            if (done % 50 === 0) console.log(`[interpark-api] progress ${done}/${queue.length}`);
+            await new Promise((resolve) => setTimeout(resolve, INTERPARK_API_DELAY_MS));
+        }
+    };
+    await Promise.all(Array.from({ length: INTERPARK_API_CONCURRENCY }, () => worker()));
+    console.log(`[interpark-api] processed ${done}/${queue.length}; detail fields filled for ${filled}, sessions found for ${sessionHits}`);
+}
 
 runScraper().then(() => {
     process.exit(0);

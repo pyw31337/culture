@@ -22,6 +22,7 @@ function positiveInt(value: string | undefined, fallback: number) {
 }
 
 const CLASS_GEO_CRITICAL_THRESHOLD = positiveInt(process.env.UMCLASS_MISSING_GEO_CRITICAL_THRESHOLD, 300);
+const MOVIE_TOP10_MISSING_IMAGE_THRESHOLD = positiveInt(process.env.MOVIE_TOP10_MISSING_IMAGE_THRESHOLD, 3);
 
 async function validate() {
     const dataDir = DATA_DIR;
@@ -133,8 +134,14 @@ async function validate() {
                         return isInvalid && item.rank && item.rank <= 10;
                     });
                     
-                    if (top10Invalid.length > 0) {
-                        errors.push(`❌ [${target.name}] Top 10 필수 이미지 누락: ${top10Invalid.length}건 (총 ${invalidImageCount}건 오류)`);
+                    // One box-office title without a poster (e.g. a re-release or a
+                    // brand-new KOBIS entry TMDB hasn't indexed yet) used to block the
+                    // entire daily publish. Only treat it as critical when the gap is
+                    // systemic (TMDB/KOBIS enrichment broken), otherwise warn.
+                    if (top10Invalid.length > MOVIE_TOP10_MISSING_IMAGE_THRESHOLD) {
+                        errors.push(`❌ [${target.name}] Top 10 필수 이미지 누락: ${top10Invalid.length}건 (임계값 ${MOVIE_TOP10_MISSING_IMAGE_THRESHOLD}건 초과, 총 ${invalidImageCount}건 오류)`);
+                    } else if (top10Invalid.length > 0) {
+                        warnings.push(`⚠️ [${target.name}] Top 10 이미지 누락: ${top10Invalid.length}건 (${top10Invalid.map((item: { title?: string }) => item.title).join(', ')}) — 임계값 ${MOVIE_TOP10_MISSING_IMAGE_THRESHOLD}건 이하라 경고로 처리`);
                     } else {
                         warnings.push(`⚠️ [${target.name}] 일반 영화 이미지 누락: ${invalidImageCount}건 ${stats}`);
                     }

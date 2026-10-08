@@ -23,6 +23,8 @@ export type VenueMasterEntry = {
         naver?: string;
         kopisVenueIds?: string[];
     };
+    /** Raw Kakao/Naver category_name of the matched place, when known. */
+    placeCategory?: string;
 };
 
 export type VenueMasterReport = {

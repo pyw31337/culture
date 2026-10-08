@@ -864,6 +864,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         producer,
         sponsor,
         priceList,
+        bookingLinks: Array.isArray(raw.bookingLinks) && raw.bookingLinks.length > 0 ? raw.bookingLinks : undefined,
         ageDetail,
         bookingNotice,
         website,

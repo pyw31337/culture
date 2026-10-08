@@ -14,6 +14,7 @@ import { getSourceLabel, getSourceOfficialUrl } from '@/lib/source-registry';
 import { buildSportsContext, isRedundantSportsDescription } from '@/lib/sports-context';
 import { getSportsTicketingInfo } from '@/lib/sports-ticketing';
 import SportsTeamLogoOverlay from './performance/SportsTeamLogoOverlay';
+import SessionCalendar from './performance/SessionCalendar';
 
 interface ContentDetailViewProps {
     performance: Performance;
@@ -286,12 +287,23 @@ export default function ContentDetailView({ performance: p, allPerformances = []
     const sportsTicketingInfo = useMemo(() => getSportsTicketingInfo(p), [p]);
     
     // Unified Booking Link Logic with Fallback for Missing Data
+    const officialBookingLinks = useMemo(
+        () => (Array.isArray(p.bookingLinks) ? p.bookingLinks.filter((link) => link?.url && link?.name) : []),
+        [p.bookingLinks],
+    );
+
     const bookingUrl = useMemo(() => {
         if (sportsTicketingInfo?.bookingUrl) {
             return isMobile ? toMobileUrl(sportsTicketingInfo.bookingUrl) : sportsTicketingInfo.bookingUrl;
         }
-        return getExternalContentLink(p, { mobile: isMobile });
-    }, [p, isMobile, sportsTicketingInfo]);
+        const external = getExternalContentLink(p, { mobile: isMobile });
+        // KOPIS rows link to the KOPIS database page; prefer the first official booking site.
+        if (officialBookingLinks.length > 0 && (!external || /kopis\.or\.kr/i.test(external))) {
+            const first = officialBookingLinks[0].url;
+            return isMobile ? toMobileUrl(first) : first;
+        }
+        return external;
+    }, [p, isMobile, sportsTicketingInfo, officialBookingLinks]);
 
     const [shareStatus, setShareStatus] = useState<'idle' | 'copied' | 'shared' | 'error'>('idle');
     const shareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -735,6 +747,10 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                         infoItems.push({ icon: Layers, label: '주요시설', text: p.facilities, color: 'text-teal-400' });
                                     }
 
+                                    if (p.venueFacilityType) {
+                                        infoItems.push({ icon: Building2, label: '시설유형', text: p.venueFacilityType, color: 'text-slate-400' });
+                                    }
+
                                     if (p.venueSeatScale) {
                                         const seatText = String(p.venueSeatScale).includes('석') ? String(p.venueSeatScale) : `${p.venueSeatScale}석`;
                                         infoItems.push({ icon: Building2, label: '객석', text: seatText, color: 'text-slate-400' });
@@ -813,6 +829,36 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                                     <span className="text-gray-900 dark:text-white font-extrabold">{item.price}</span>
                                                 </div>
                                             </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Upcoming sessions (회차) — Interpark public schedule, read-only */}
+                            <SessionCalendar performanceId={p.id} bookingUrl={bookingUrl} />
+
+                            {/* Official booking sites from KOPIS (relates) */}
+                            {officialBookingLinks.length > 0 && (
+                                <div className="mt-4 rounded-xl border border-black/5 bg-gray-50 p-4 dark:border-white/5 dark:bg-white/5">
+                                    <h4 className="mb-2 flex items-center gap-1.5 text-[13px] font-bold text-gray-700 dark:text-gray-300">
+                                        <Ticket className="h-4 w-4 text-rose-400" />
+                                        공식 예매처
+                                        <span className="text-[11px] font-medium text-gray-400">(KOPIS 등록 정보)</span>
+                                    </h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {officialBookingLinks.map((link) => (
+                                            <a
+                                                key={link.url}
+                                                href={isMobile ? toMobileUrl(link.url) : link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={(event) => event.stopPropagation()}
+                                                className="inline-flex items-center gap-1 rounded-full border border-black/10 bg-white px-3 py-1.5 text-[12.5px] font-bold text-gray-700 transition-colors hover:bg-gray-100 dark:border-white/10 dark:bg-white/10 dark:text-gray-200 dark:hover:bg-white/15"
+                                                title={`${link.name} 새창열기`}
+                                            >
+                                                {link.name}
+                                                <ExternalLink className="h-3 w-3" />
+                                            </a>
                                         ))}
                                     </div>
                                 </div>

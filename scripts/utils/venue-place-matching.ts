@@ -486,6 +486,7 @@ export function applyVenuePlaceCache(entries: VenueMasterEntry[], cache: VenuePl
                 ...entry.placeIds,
                 [cached.provider || 'kakao']: cached.providerPlaceId,
             },
+            placeCategory: cached.categoryName || entry.placeCategory,
         };
     });
 }
