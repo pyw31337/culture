@@ -36,9 +36,10 @@ const RULES: CompletenessRule[] = [
         genres: LIVE_GENRES,
         sampleLimit: envInt('KOPIS_DETAIL_COMPLETENESS_SAMPLE', 120),
         // KOPIS leaves pcseguidance/prfage empty for a few percent of new
-        // registrations. A zero tolerance failed every fallback run (9/120).
-        maxMissingPrice: envInt('KOPIS_DETAIL_MAX_MISSING_PRICE', 12),
-        maxMissingAge: envInt('KOPIS_DETAIL_MAX_MISSING_AGE', 12),
+        // registrations, and some detail calls return sporadic 400s.
+        // Observed 9-15/120 on fallback runs; 20 (~17%) still catches outages.
+        maxMissingPrice: envInt('KOPIS_DETAIL_MAX_MISSING_PRICE', 20),
+        maxMissingAge: envInt('KOPIS_DETAIL_MAX_MISSING_AGE', 20),
         maxMissingRunningTime: envInt('KOPIS_DETAIL_MAX_MISSING_RUNTIME', 20),
     },
 ];
@@ -73,6 +74,15 @@ function readPerformances() {
 
 const performances = readPerformances();
 const errors: string[] = [];
+const warnings: string[] = [];
+// Sources whose shortfall should be reported but not block publishing, e.g. on
+// GitHub-hosted runners where the Interpark detail API is not reachable.
+const WARN_ONLY_SOURCES = new Set(
+    String(process.env.DETAIL_COMPLETENESS_WARN_SOURCES || '')
+        .split(',')
+        .map((value) => value.trim())
+        .filter(Boolean),
+);
 
 for (const rule of RULES) {
     const sourceItems = performances
@@ -86,6 +96,7 @@ for (const rule of RULES) {
         continue;
     }
 
+    const sink = WARN_ONLY_SOURCES.has(rule.source) ? warnings : errors;
     const missingPrice = sample.filter((item) => !hasUsefulPrice(item)).length;
     const missingAge = sample.filter((item) => !hasUsefulText(item.ageRating || item.age)).length;
     const missingRunningTime = sample.filter((item) => !hasUsefulText(item.runningTime)).length;
@@ -93,15 +104,20 @@ for (const rule of RULES) {
     console.log(`[detail][${rule.label}] sample=${sample.length} missingPrice=${missingPrice}/${rule.maxMissingPrice} missingAge=${missingAge}/${rule.maxMissingAge} missingRuntime=${missingRunningTime}/${rule.maxMissingRunningTime}`);
 
     if (missingPrice > rule.maxMissingPrice) {
-        errors.push(`[detail][${rule.label}] 가격 누락 ${missingPrice}건이 임계값 ${rule.maxMissingPrice}건을 초과했습니다.`);
+        sink.push(`[detail][${rule.label}] 가격 누락 ${missingPrice}건이 임계값 ${rule.maxMissingPrice}건을 초과했습니다.`);
     }
     if (missingAge > rule.maxMissingAge) {
-        errors.push(`[detail][${rule.label}] 관람연령 누락 ${missingAge}건이 임계값 ${rule.maxMissingAge}건을 초과했습니다.`);
+        sink.push(`[detail][${rule.label}] 관람연령 누락 ${missingAge}건이 임계값 ${rule.maxMissingAge}건을 초과했습니다.`);
     }
     if (missingRunningTime > rule.maxMissingRunningTime) {
-        errors.push(`[detail][${rule.label}] 관람시간 누락 ${missingRunningTime}건이 임계값 ${rule.maxMissingRunningTime}건을 초과했습니다.`);
+        sink.push(`[detail][${rule.label}] 관람시간 누락 ${missingRunningTime}건이 임계값 ${rule.maxMissingRunningTime}건을 초과했습니다.`);
     }
 }
+
+warnings.forEach((warning) => {
+    console.warn(`${warning} (경고만, 배포 차단 안 함)`);
+    if (process.env.GITHUB_ACTIONS === 'true') console.log(`::warning title=Detail completeness::${warning}`);
+});
 
 if (errors.length > 0) {
     errors.forEach((error) => console.error(error));

@@ -67,6 +67,10 @@ jobs:
           npm ci --prefer-offline --no-audit --fund=false
 
       - name: Validate Prebuilt Data Artifacts
+        env:
+          # GitHub-hosted runners get no data from the Interpark detail API, so
+          # report its coverage as a warning here; the local pipeline stays strict.
+          DETAIL_COMPLETENESS_WARN_SOURCES: interpark
         run: |
           npm run validate:content
           npm run validate:locations
