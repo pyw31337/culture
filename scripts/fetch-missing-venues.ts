@@ -3,10 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
 import cliProgress from 'cli-progress';
+import { requireKakaoRestKey } from './utils/env';
 
 // Configuration
 const VENUES_PATH = path.join(process.cwd(), 'src/data/venues.json');
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71'; // Using REST API Key from fix-venues.ts
+const KAKAO_API_KEY = requireKakaoRestKey();
 
 interface Venue {
     name: string;

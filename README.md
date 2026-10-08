@@ -56,12 +56,41 @@ npx tsx scripts/scrape-kbo.ts
 
 ---
 
+## API 키 / 시크릿 설정
+
+코드에는 API 키를 두지 않습니다. 모든 스크래퍼는 `scripts/utils/env.ts`의 `requireEnv()`로 환경변수를 읽고,
+값이 없으면 어떤 키가 필요한지 알려주는 오류로 멈춥니다.
+
+| 환경변수 | 용도 | 로컬 `.env.local` | GitHub Actions secret |
+|----------|------|:---:|:---:|
+| `KOPIS_API_KEY` | KOPIS 공연 목록/상세 (`scrape-kopis.ts`) | 필수 | 필수 |
+| `KOBIS_API_KEY` | 박스오피스/영화 정보 (`scrape-movies.ts`) | 필수 | 필수 |
+| `TMDB_API_KEY` | 영화 포스터·메타데이터 (`scrape-movies.ts`) | 필수 | 필수 |
+| `KCISA_API_KEY` | 문화포털 행사 (`scrape-culture-portal.ts`) | 필수 | 필수 |
+| `KAKAO_REST_API_KEY` | 장소 검색·좌표 보정 (`scrape-cinemas.ts`, `enrich-venue-places.ts` 등) | 필수 | 선택 (CI는 Kakao 호출 안 함) |
+| `NEXT_PUBLIC_KAKAO_JS_KEY` | 지도 SDK (빌드 시) | 선택 | 필수 |
+| `NAVER_SEARCH_CLIENT_ID` / `NAVER_SEARCH_CLIENT_SECRET` | 장소 매칭 보조 | 선택 | 선택 |
+
+```bash
+cp .env.example .env.local   # 값 입력 후 사용 (.env.local은 커밋되지 않음)
+```
+
+키가 git 기록에 노출된 적이 있다면 발급처에서 **재발급** 후 새 값만 env/secret에 넣으세요.
+
+### 키 없이 쓰는 외부 공개 API
+
+- 영화관 실시간 상영시간표·잔여석: `https://mcp.aka.page` (daiso-mcp 공개 중계, 브라우저에서 직접 호출, 실패 시 공식/네이버 링크로 대체)
+- 인터파크 회차 일정: `api-ticketfront.interpark.com/v1/goods/{id}/playSeq` (조회 전용, 빌드 시 수집)
+- 국가유산청 행사: `www.khs.go.kr/cha/openapi/selectEventListOpenapi.do` (해외 IP 차단 → 로컬 Mac mini 전용)
+
+---
+
 ## 데이터 갱신 구조
 
 1. **Primary**: 로컬 `launchd` / `npm run local:update-data` (자정 KST 권장)
 2. **Fallback**: `.github/workflows/daily-update.yml` (로컬 데이터가 신선하면 스킵)
 3. 스크래퍼 실패 시 기존 `src/data` 체크포인트 유지 → validation이 게시 가능 여부 판단
-4. 실패 내역은 `ERROR_TRACKER.md`에 누적
+4. GitHub fallback이 실패하면 job이 실패(빨간 X)로 끝나고 `pipeline-failure` 라벨 이슈가 열립니다(복구되면 자동으로 닫힘). 과거 기록은 `ERROR_TRACKER.md`
 
 상세 복구 절차: [REMEDIATION.md](./REMEDIATION.md)
 

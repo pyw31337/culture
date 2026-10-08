@@ -3,8 +3,9 @@ import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
 import pLimit from 'p-limit';
+import { requireKakaoRestKey } from './utils/env';
 
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
+const KAKAO_API_KEY = requireKakaoRestKey();
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const VENUES_PATH = path.join(DATA_DIR, 'venues.json');
 

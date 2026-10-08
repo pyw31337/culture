@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { atomicWriteJson } from './utils/scraper-utils';
+import { requireKakaoRestKey } from './utils/env';
 
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
 const OUTPUT_PATH = path.resolve(process.cwd(), 'src/data/cinemas.json');
 const KAKAO_API_DISABLED = process.env.DISABLE_KAKAO_API === '1';
 
@@ -15,6 +15,7 @@ interface Cinema {
 }
 
 async function fetchCinemasByKeyword(keyword: string, brand: string): Promise<Cinema[]> {
+    const KAKAO_API_KEY = requireKakaoRestKey();
     let allResults: Cinema[] = [];
     let page = 1;
     let isEnd = false;

@@ -1,8 +1,9 @@
 
 import fs from 'fs';
 import path from 'path';
+import { requireKakaoRestKey } from './utils/env';
 
-const KAKAO_API_KEY = 'e18ee199818819d830c3fe479aa1ca71';
+const KAKAO_API_KEY = requireKakaoRestKey();
 const VENUES_PATH = path.join(process.cwd(), 'src/data/venues.json');
 const venues = JSON.parse(fs.readFileSync(VENUES_PATH, 'utf-8'));
 
