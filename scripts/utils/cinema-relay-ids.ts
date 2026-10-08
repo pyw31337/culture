@@ -22,11 +22,25 @@ export function cinemaRelayKey(cinema: Pick<CinemaRow, 'name' | 'brand'>): strin
     return `${cinema.brand || ''}::${cinema.name}`;
 }
 
+/**
+ * Older cinemas.json rows took the brand from the search keyword, so e.g. "CGV 광주상무"
+ * found via the "광주극장" query was labelled 독립영화관. Re-derive chain brands by name.
+ */
+export function normalizeCinemaBrand(cinema: CinemaRow): CinemaRow {
+    const name = String(cinema.name || '').toLowerCase();
+    let brand = cinema.brand;
+    if (/^cgv/.test(name)) brand = 'CGV';
+    else if (/^롯데\s?시네마/.test(name)) brand = '롯데시네마';
+    else if (/^메가박스/.test(name)) brand = '메가박스';
+    else if (/^씨네q|^씨네큐(?!브)/.test(name)) brand = '씨네Q';
+    return brand === cinema.brand ? cinema : { ...cinema, brand };
+}
+
 export function mergeCinemaRelayIds(
     cinemas: CinemaRow[],
     mapping: Record<string, CinemaRelayMapping>,
 ): CinemaRow[] {
-    return cinemas.map((cinema) => {
+    return cinemas.map(normalizeCinemaBrand).map((cinema) => {
         const relay = mapping[cinemaRelayKey(cinema)];
         if (!relay?.theaterId) return cinema;
         return { ...cinema, relayTheaterId: relay.theaterId, relayTheaterName: relay.theaterName };

@@ -747,6 +747,10 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                         infoItems.push({ icon: Layers, label: '주요시설', text: p.facilities, color: 'text-teal-400' });
                                     }
 
+                                    if (p.venueFacilityType) {
+                                        infoItems.push({ icon: Building2, label: '시설유형', text: p.venueFacilityType, color: 'text-slate-400' });
+                                    }
+
                                     if (p.venueSeatScale) {
                                         const seatText = String(p.venueSeatScale).includes('석') ? String(p.venueSeatScale) : `${p.venueSeatScale}석`;
                                         infoItems.push({ icon: Building2, label: '객석', text: seatText, color: 'text-slate-400' });

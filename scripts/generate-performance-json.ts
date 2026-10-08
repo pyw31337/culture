@@ -28,6 +28,7 @@ import { isCompatibleVenueDisplayName } from './utils/venue-name-quality';
 import { normalizeRegionId, regionIdFromAddress, REGION_CANONICAL } from '../src/lib/region-normalize';
 import { decodeItemText } from './lib/text-clean';
 import { buildSessionsPayload } from './utils/session-payload';
+import { deriveVenueFacilityType } from './utils/venue-facility-type';
 import { mergeCinemaRelayIds, type CinemaRelayMapping, type CinemaRow } from './utils/cinema-relay-ids';
 
 type PrunablePerformance = Performance & {
@@ -1034,6 +1035,14 @@ function applyVenuePlaceContextToPerformances(items: Performance[], venueMasterB
         if (provider && providerPlaceId) {
             performance.placeProvider = provider;
             performance.placeId = providerPlaceId;
+        }
+        if (entry.placeCategory) {
+            performance.placeCategory = entry.placeCategory;
+            // Category-based facility type (e.g. 종교시설(천주교)); source-provided values win.
+            const derivedFacilityType = deriveVenueFacilityType(entry.placeCategory);
+            if (!performance.venueFacilityType && derivedFacilityType) {
+                performance.venueFacilityType = derivedFacilityType;
+            }
         }
         const sourceVenueName = compactText(performance.venueKey || performance.venue);
         const entryDisplayName = compactText(entry.displayName);
