@@ -52,6 +52,16 @@ async function findTheater(chainPath: string, cinema: CinemaRow): Promise<RelayT
     return null;
 }
 
+function save(items: Record<string, CinemaRelayMapping>) {
+    const sorted = Object.fromEntries(Object.entries(items).sort(([a], [b]) => a.localeCompare(b, 'ko')));
+    fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify({
+        generatedAt: new Date().toISOString(),
+        source: `${RELAY_BASE}/api/{cgv|megabox|lottecinema}/theaters`,
+        items: sorted,
+    }, null, 2)}\n`);
+    return Object.keys(sorted).length;
+}
+
 async function main() {
     const cinemas = (JSON.parse(fs.readFileSync(CINEMAS_PATH, 'utf8')) as CinemaRow[]).map(normalizeCinemaBrand);
     const previous = fs.existsSync(OUTPUT_PATH)
@@ -93,15 +103,12 @@ async function main() {
             distanceKm: best.distanceKm,
         };
         mapped++;
+        // Checkpoint so an interrupted run keeps its progress.
+        if (mapped % 25 === 0) save(items);
     }
 
-    const sorted = Object.fromEntries(Object.entries(items).sort(([a], [b]) => a.localeCompare(b, 'ko')));
-    fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify({
-        generatedAt: new Date().toISOString(),
-        source: `${RELAY_BASE}/api/{cgv|megabox|lottecinema}/theaters`,
-        items: sorted,
-    }, null, 2)}\n`);
-    console.log(`[cinema-relay] mapped ${mapped} new, kept ${skipped}, failed ${failed}; total ${Object.keys(sorted).length} → ${OUTPUT_PATH}`);
+    const total = save(items);
+    console.log(`[cinema-relay] mapped ${mapped} new, kept ${skipped}, failed ${failed}; total ${total} → ${OUTPUT_PATH}`);
 }
 
 main().catch((error) => {

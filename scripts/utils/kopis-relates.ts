@@ -7,10 +7,12 @@ export interface KopisBookingLink {
  * Parses KOPIS `pblprfr/{mt20id}` detail `<relates><relate><relatenm/><relateurl/></relate></relates>`
  * (official booking sites) as produced by fast-xml-parser (object for one entry, array for many).
  */
-export function parseKopisRelates(relates: any): KopisBookingLink[] {
-    const raw = relates?.relate;
-    if (!raw) return [];
-    const list = Array.isArray(raw) ? raw : [raw];
+type KopisRelateEntry = { relatenm?: unknown; relateurl?: unknown };
+
+export function parseKopisRelates(relates: unknown): KopisBookingLink[] {
+    const raw = (relates as { relate?: KopisRelateEntry | KopisRelateEntry[] } | null | undefined)?.relate;
+    if (!raw || typeof raw !== 'object') return [];
+    const list: KopisRelateEntry[] = Array.isArray(raw) ? raw : [raw];
     const seen = new Set<string>();
     const links: KopisBookingLink[] = [];
     for (const entry of list) {

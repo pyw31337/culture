@@ -141,7 +141,7 @@ async function validate() {
                     if (top10Invalid.length > MOVIE_TOP10_MISSING_IMAGE_THRESHOLD) {
                         errors.push(`❌ [${target.name}] Top 10 필수 이미지 누락: ${top10Invalid.length}건 (임계값 ${MOVIE_TOP10_MISSING_IMAGE_THRESHOLD}건 초과, 총 ${invalidImageCount}건 오류)`);
                     } else if (top10Invalid.length > 0) {
-                        warnings.push(`⚠️ [${target.name}] Top 10 이미지 누락: ${top10Invalid.length}건 (${top10Invalid.map((item: any) => item.title).join(', ')}) — 임계값 ${MOVIE_TOP10_MISSING_IMAGE_THRESHOLD}건 이하라 경고로 처리`);
+                        warnings.push(`⚠️ [${target.name}] Top 10 이미지 누락: ${top10Invalid.length}건 (${top10Invalid.map((item: { title?: string }) => item.title).join(', ')}) — 임계값 ${MOVIE_TOP10_MISSING_IMAGE_THRESHOLD}건 이하라 경고로 처리`);
                     } else {
                         warnings.push(`⚠️ [${target.name}] 일반 영화 이미지 누락: ${invalidImageCount}건 ${stats}`);
                     }

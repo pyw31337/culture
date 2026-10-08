@@ -201,7 +201,8 @@ const isBudgetExceeded = () => {
     return exceeded;
 };
 
-async function fetchWithRetry(url: string, params: any, retries = REQUEST_RETRIES): Promise<any> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- axios XML payload, parsed by fast-xml-parser
+async function fetchWithRetry(url: string, params: Record<string, unknown>, retries = REQUEST_RETRIES): Promise<any> {
     const legacyUrl = url.startsWith(BASE_URL) && BASE_URL !== LEGACY_BASE_URL
         ? `${LEGACY_BASE_URL}${url.slice(BASE_URL.length)}`
         : null;
@@ -218,7 +219,8 @@ async function fetchWithRetry(url: string, params: any, retries = REQUEST_RETRIE
     }
 }
 
-async function fetchWithRetryOnce(url: string, params: any, retries = REQUEST_RETRIES): Promise<any> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- axios XML payload, parsed by fast-xml-parser
+async function fetchWithRetryOnce(url: string, params: Record<string, unknown>, retries = REQUEST_RETRIES): Promise<any> {
     for (let i = 0; i < retries; i++) {
         if (isBudgetExceeded()) throw new Error('KOPIS_RUN_BUDGET_EXCEEDED');
         try {

@@ -230,6 +230,8 @@ export function usePerformanceData({
     // The static export can be older than today (e.g. a failed deploy); hide events
     // that already ended once we are on the client (after hydration).
     useEffect(() => {
+        // One-shot post-hydration correction; must not run during SSR/hydration.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setAllPerformances((current) => dropEndedPerformances(current));
     }, []);
     const [cinemas, setCinemas] = useState<CinemaData[]>(() => shouldLoadCinemas && cinemasCache ? cinemasCache : []);

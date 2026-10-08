@@ -40,33 +40,23 @@ function kstTodayKey(): string {
  * because the static payload can be up to a day old.
  */
 export function usePerformanceSessions(performanceId: string | undefined) {
-    const [entry, setEntry] = useState<PerformanceSessionEntry | null>(null);
-    const [loading, setLoading] = useState(Boolean(performanceId));
+    const [result, setResult] = useState<{ id: string; entry: PerformanceSessionEntry | null } | null>(null);
 
     useEffect(() => {
+        if (!performanceId) return undefined;
         let cancelled = false;
-        if (!performanceId) {
-            setEntry(null);
-            setLoading(false);
-            return undefined;
-        }
-        setLoading(true);
         loadSessions().then((payload) => {
             if (cancelled) return;
             const found = payload?.items?.[performanceId];
-            if (!found) {
-                setEntry(null);
-            } else {
-                const today = kstTodayKey();
-                const upcoming = found.sessions.filter(([date]) => date >= today);
-                setEntry(upcoming.length > 0 ? { ...found, sessions: upcoming } : null);
-            }
-            setLoading(false);
+            const today = kstTodayKey();
+            const upcoming = found ? found.sessions.filter(([date]) => date >= today) : [];
+            setResult({ id: performanceId, entry: found && upcoming.length > 0 ? { ...found, sessions: upcoming } : null });
         });
         return () => {
             cancelled = true;
         };
     }, [performanceId]);
 
-    return { entry, loading };
+    const isCurrent = Boolean(performanceId) && result?.id === performanceId;
+    return { entry: isCurrent ? result!.entry : null, loading: Boolean(performanceId) && !isCurrent };
 }

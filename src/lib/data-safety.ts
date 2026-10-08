@@ -21,12 +21,13 @@ function safeStringArray(value: any): string[] | undefined {
     return filtered.length > 0 ? filtered : undefined;
 }
 
-function safeBookingLinks(value: any): Performance['bookingLinks'] {
+function safeBookingLinks(value: unknown): Performance['bookingLinks'] {
     if (!Array.isArray(value)) return undefined;
-    const links = value.reduce<NonNullable<Performance['bookingLinks']>>((acc, item) => {
+    const links = value.reduce<NonNullable<Performance['bookingLinks']>>((acc, item: unknown) => {
         if (!item || typeof item !== 'object') return acc;
-        const name = typeof item.name === 'string' ? item.name.trim() : '';
-        const url = typeof item.url === 'string' ? item.url.trim() : '';
+        const { name: rawName, url: rawUrl } = item as { name?: unknown; url?: unknown };
+        const name = typeof rawName === 'string' ? rawName.trim() : '';
+        const url = typeof rawUrl === 'string' ? rawUrl.trim() : '';
         if (!name || !/^https?:\/\//i.test(url)) return acc;
         acc.push({ name, url });
         return acc;
