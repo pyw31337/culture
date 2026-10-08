@@ -2,7 +2,7 @@ name: Daily Data Update
 
 on:
   schedule:
-    - cron: '0 18 * * *' # 03:00 KST fallback. Local launchd owns the 00:00 KST primary update.
+    - cron: '0 18 * * *' # 03:00 KST fallback. The Mac mini scheduler (weekdays 18:00-08:00, weekends all day) is primary; it stays out of 02:40-04:45 KST.
   workflow_dispatch:
 
 concurrency:
@@ -61,7 +61,9 @@ jobs:
           const generatedDate = generatedAt ? new Date(generatedAt) : null;
           const now = new Date();
           const ageHours = generatedDate ? (now.getTime() - generatedDate.getTime()) / 36e5 : Infinity;
-          const freshToday = generatedDate && kstDate(generatedDate) === kstDate(now) && ageHours >= 0 && ageHours <= 20;
+          // Fresh = generated today (KST) within 20h, or by any local run in the last 6h.
+          const freshToday = generatedDate && ageHours >= 0
+            && ((kstDate(generatedDate) === kstDate(now) && ageHours <= 20) || ageHours <= 6);
 
           if (freshToday) {
             writeOutput('should_run', 'false');
@@ -126,7 +128,7 @@ jobs:
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           # GitHub Actions is only the 03:00 KST fallback. Keep it shallow, but
           # still enrich the nearest Interpark items so visible cards do not lose
-          # price, age, and runtime when the local midnight job is stale.
+          # price, age, and runtime when the Mac mini scheduler is stale.
           # Browser (Puppeteer) detail pages hang on the hosted runner
           # (Runtime.callFunctionOn timed out) and the job was killed at 480s,
           # discarding the whole Interpark refresh every day since 2026-09-09.
@@ -280,6 +282,14 @@ jobs:
           fi
 
           exit 0
+
+      # Local-only sources (YES24, timeticket, myrealtrip, 국가유산청, cinema relay ids)
+      # are not in the github plan, so CI never rewrites them. Shared sources that
+      # are blocked here (Interpark API sessions/prices, Kakao) must not shrink
+      # either: restore the committed file when a run comes back suspiciously short.
+      - name: Keep last good local-only data
+        if: steps.freshness.outputs.should_run == 'true'
+        run: node scripts/guard-retained-data.mjs
 
       - name: Scraper Failure Summary
         if: steps.freshness.outputs.should_run == 'true' && env.SCRAPER_FAILURES == 'true'

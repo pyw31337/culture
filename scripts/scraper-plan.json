@@ -65,5 +65,27 @@
     { "name": "hotdeals", "priority": "optional", "command": "npx tsx scripts/scrape-hotdeals.ts" },
     { "name": "heritage-events", "priority": "optional", "command": "npx tsx scripts/scrape-heritage-events.ts" },
     { "name": "cinema-relay-ids", "priority": "optional", "command": "npx tsx scripts/map-cinema-relay-ids.ts" }
+  ],
+  "local-light": [
+    { "name": "interpark", "priority": "critical", "command": "npx tsx scripts/scrape-interpark.ts" },
+    { "name": "yes24-exclusive", "priority": "optional", "command": "npx tsx scripts/scrape-yes24-exclusive.ts" },
+    { "name": "timeticket", "priority": "optional", "command": "npx tsx scripts/scrape-timeticket.ts" },
+    { "name": "heritage-events", "priority": "optional", "command": "npx tsx scripts/scrape-heritage-events.ts" },
+    { "name": "cinemas", "priority": "optional", "command": "npx tsx scripts/scrape-cinemas.ts" },
+    { "name": "cinema-relay-ids", "priority": "optional", "command": "npx tsx scripts/map-cinema-relay-ids.ts" },
+    { "name": "build-venues", "priority": "critical", "command": "npx tsx scripts/build-venues.ts" },
+    { "name": "venue-places", "priority": "optional", "command": "npx tsx scripts/enrich-venue-places.ts" }
+  ],
+  "retainGuard": [
+    { "file": "src/data/interpark.json", "minRatio": 0.7, "fields": ["sessions", "priceList"] },
+    { "file": "src/data/kopis-performances.json", "minRatio": 0.7 },
+    { "file": "src/data/yes24-exclusive.json", "minRatio": 0.5 },
+    { "file": "src/data/timeticket.json", "minRatio": 0.5 },
+    { "file": "src/data/myrealtrip-kids.json", "minRatio": 0.5 },
+    { "file": "src/data/heritage-events.json", "minRatio": 0.3 },
+    { "file": "src/data/cinemas.json", "minRatio": 0.8 },
+    { "file": "src/data/cinema-relay-ids.json", "minRatio": 0.8, "countKey": "items" },
+    { "file": "src/data/venues.json", "minRatio": 0.9 },
+    { "file": "src/data/venue-place-cache.json", "minRatio": 0.9 }
   ]
 }

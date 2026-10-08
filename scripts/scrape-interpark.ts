@@ -1571,7 +1571,10 @@ async function enrichViaInterparkApi(items: Performance[], existingMap: Map<stri
                 if (!next.ageRating && api.ageRating) next.ageRating = api.ageRating;
                 if (!next.runningTime && api.runningTime) next.runningTime = api.runningTime;
                 if (!next.performanceTime && api.performanceTime) next.performanceTime = api.performanceTime;
-                next.lastApiEnriched = new Date().toISOString();
+                // Only mark the item as checked when the API really answered.
+                // A blocked network (e.g. GitHub-hosted runners get 403) must not
+                // push the item out of the next local run's 72h retry window.
+                if (api.detailsReachable || api.priceList?.length) next.lastApiEnriched = new Date().toISOString();
                 if (api.priceList?.length || api.ageRating || api.runningTime) filled += 1;
             }
             if (wantSessions && api.sessions) {
