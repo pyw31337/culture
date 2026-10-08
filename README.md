@@ -67,7 +67,7 @@ npx tsx scripts/scrape-kbo.ts
 | `KOBIS_API_KEY` | 박스오피스/영화 정보 (`scrape-movies.ts`) | 필수 | 필수 |
 | `TMDB_API_KEY` | 영화 포스터·메타데이터 (`scrape-movies.ts`) | 필수 | 필수 |
 | `KCISA_API_KEY` | 문화포털 행사 (`scrape-culture-portal.ts`) | 필수 | 필수 |
-| `KAKAO_REST_API_KEY` | 장소 검색·좌표 보정 (`scrape-cinemas.ts`, `enrich-venue-places.ts` 등) | 필수 | 선택 (CI는 Kakao 호출 안 함) |
+| `KAKAO_REST_API_KEY` | 장소 검색·좌표 보정 (`scrape-cinemas.ts`, `enrich-venue-places.ts` 등) | 필수 | 선택 (CI는 `DISABLE_KAKAO_API=1`로 호출 안 함) |
 | `NEXT_PUBLIC_KAKAO_JS_KEY` | 지도 SDK (빌드 시) | 선택 | 필수 |
 | `NAVER_SEARCH_CLIENT_ID` / `NAVER_SEARCH_CLIENT_SECRET` | 장소 매칭 보조 | 선택 | 선택 |
 

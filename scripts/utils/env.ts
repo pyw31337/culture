@@ -38,7 +38,7 @@ export const SECRET_ENV_DOCS: Record<string, string> = {
     KOBIS_API_KEY: 'KOBIS 영화진흥위원회 OpenAPI 키 (https://www.kobis.or.kr/kobisopenapi/)',
     TMDB_API_KEY: 'TMDB API v3 키 (https://www.themoviedb.org/settings/api)',
     KCISA_API_KEY: '문화포털(KCISA) 문화정보 OpenAPI 서비스키 (https://www.culture.go.kr/data/)',
-    KAKAO_REST_API_KEY: 'Kakao Developers REST API 키 (로컬 Mac mini 전용, IP 제한)',
+    KAKAO_REST_API_KEY: 'Kakao Developers REST API 키 (https://developers.kakao.com)',
 };
 
 /** Returns the first non-empty value among `name` and its aliases. */
