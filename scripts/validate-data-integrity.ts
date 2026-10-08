@@ -23,6 +23,11 @@ function positiveInt(value: string | undefined, fallback: number) {
 
 const CLASS_GEO_CRITICAL_THRESHOLD = positiveInt(process.env.UMCLASS_MISSING_GEO_CRITICAL_THRESHOLD, 300);
 const MOVIE_TOP10_MISSING_IMAGE_THRESHOLD = positiveInt(process.env.MOVIE_TOP10_MISSING_IMAGE_THRESHOLD, 3);
+// A handful of listings without an image (the UI shows a placeholder) used to
+// block the whole publish, e.g. 17/1233 모카클래스 items on 2026-10-08. Treat it
+// as critical only when the gap looks systemic.
+const IMAGE_INVALID_CRITICAL_RATIO = Number.parseFloat(process.env.IMAGE_INVALID_CRITICAL_RATIO || '') || 0.05;
+const IMAGE_INVALID_CRITICAL_MIN = positiveInt(process.env.IMAGE_INVALID_CRITICAL_MIN, 10);
 
 async function validate() {
     const dataDir = DATA_DIR;
@@ -146,7 +151,12 @@ async function validate() {
                         warnings.push(`⚠️ [${target.name}] 일반 영화 이미지 누락: ${invalidImageCount}건 ${stats}`);
                     }
                 } else {
-                    errors.push(msg);
+                    const limit = Math.max(IMAGE_INVALID_CRITICAL_MIN, Math.floor(data.length * IMAGE_INVALID_CRITICAL_RATIO));
+                    if (invalidImageCount > limit) {
+                        errors.push(`${msg} (임계값 ${limit}건 초과)`);
+                    } else {
+                        warnings.push(`⚠️ [${target.name}] 이미지 누락: ${invalidImageCount}건 ${stats} — 임계값 ${limit}건 이하라 경고로 처리`);
+                    }
                 }
             }
 
