@@ -4,10 +4,14 @@ import fs from 'fs';
 import path from 'path';
 import { normalizeImageUrl } from '../src/lib/utils';
 import { requireEnv } from './utils/env';
+import { parseKopisRelates } from './utils/kopis-relates';
 
 // --- Configuration ---
 const API_KEY = requireEnv('KOPIS_API_KEY');
-const BASE_URL = 'http://www.kopis.or.kr/openApi/restful';
+// k-skill: canonical host is kopis.or.kr — the www redirect blocks some requests.
+const BASE_URL = (process.env.KOPIS_BASE_URL || 'https://kopis.or.kr/openApi/restful').replace(/\/$/, '');
+const LEGACY_BASE_URL = 'http://www.kopis.or.kr/openApi/restful';
+let useLegacyBaseUrl = false;
 const DATA_DIR = path.join(process.cwd(), 'src/data');
 const VENUE_FILE = path.join(DATA_DIR, 'venues.json');
 const OUTPUT_FILE = path.join(DATA_DIR, 'kopis-performances.json');
@@ -15,6 +19,7 @@ const RATE_LIMIT_DELAY = 150; // ms between requests
 const DETAIL_LIMIT = Number.parseInt(process.env.KOPIS_DETAIL_LIMIT || '0', 10);
 const VENUE_LIMIT = Number.parseInt(process.env.KOPIS_VENUE_LIMIT || '0', 10);
 const RUN_BUDGET_SECONDS = Number.parseInt(process.env.KOPIS_RUN_BUDGET_SECONDS || '0', 10);
+const BOOKING_BACKFILL_LIMIT = Number.parseInt(process.env.KOPIS_BOOKING_BACKFILL_LIMIT || '80', 10);
 const LOOKBACK_DAYS = Number.parseInt(process.env.KOPIS_LOOKBACK_DAYS || '0', 10);
 const REQUEST_RETRIES = Number.parseInt(process.env.KOPIS_REQUEST_RETRIES || '3', 10);
 const REQUEST_TIMEOUT_MS = Number.parseInt(process.env.KOPIS_REQUEST_TIMEOUT_MS || '15000', 10);
@@ -56,6 +61,8 @@ interface KopisPerformance {
     priceList?: { label: string; price: string; discount?: string }[];
     ageDetail?: string;
     bookingNotice?: string;
+    /** Official booking sites from KOPIS `relates/relate` (relatenm, relateurl). */
+    bookingLinks?: { name: string; url: string }[];
     synopsis?: string;
     description?: string;
     synopsisImages?: string[];
@@ -195,6 +202,23 @@ const isBudgetExceeded = () => {
 };
 
 async function fetchWithRetry(url: string, params: any, retries = REQUEST_RETRIES): Promise<any> {
+    const legacyUrl = url.startsWith(BASE_URL) && BASE_URL !== LEGACY_BASE_URL
+        ? `${LEGACY_BASE_URL}${url.slice(BASE_URL.length)}`
+        : null;
+    if (useLegacyBaseUrl && legacyUrl) return fetchWithRetryOnce(legacyUrl, params, retries);
+    try {
+        return await fetchWithRetryOnce(url, params, retries);
+    } catch (error) {
+        if (!legacyUrl || isBudgetExceeded()) throw error;
+        // Fall back to the historical host once; keep using it if it works.
+        const data = await fetchWithRetryOnce(legacyUrl, params, 1);
+        if (!useLegacyBaseUrl) console.warn(`\n[kopis] ${BASE_URL} failed; switching to legacy host ${LEGACY_BASE_URL}`);
+        useLegacyBaseUrl = true;
+        return data;
+    }
+}
+
+async function fetchWithRetryOnce(url: string, params: any, retries = REQUEST_RETRIES): Promise<any> {
     for (let i = 0; i < retries; i++) {
         if (isBudgetExceeded()) throw new Error('KOPIS_RUN_BUDGET_EXCEEDED');
         try {
@@ -548,6 +572,8 @@ async function scrapeKopis() {
                             .filter(Boolean)
                         : undefined;
 
+                    const bookingLinks = parseKopisRelates(db.relates);
+
                     const perf: KopisPerformance = {
                         id: fullId,
                         title: db.prfnm,
@@ -595,6 +621,8 @@ async function scrapeKopis() {
                         synopsis: !isUseless(db.sty) ? db.sty : undefined,
                         description: !isUseless(db.sty) ? db.sty : undefined,
                         synopsisImages,
+                        // [] marks "checked, none listed" so the backfill pass skips it.
+                        bookingLinks: bookingLinks.length > 0 ? bookingLinks : (existing?.bookingLinks ?? []),
                     };
                     upsertItem(perf);
                     if (db.mt10id) uniqueVenueIds.add(db.mt10id);
@@ -611,6 +639,33 @@ async function scrapeKopis() {
         return true;
     };
 
+    const backfillBookingLinks = async () => {
+        if (BOOKING_BACKFILL_LIMIT <= 0) return;
+        const todayKey = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '.');
+        const endOf = (item: KopisPerformance) => (item.date || '').split('~').pop()?.trim() || '';
+        const targets = allItems
+            .filter((item) => item.bookingLinks === undefined && hasRichKopisDetails(item) && endOf(item) >= todayKey)
+            .sort((a, b) => (a.date || '').localeCompare(b.date || ''))
+            .slice(0, BOOKING_BACKFILL_LIMIT);
+        if (targets.length === 0) return;
+        let found = 0;
+        for (const item of targets) {
+            if (isBudgetExceeded()) break;
+            try {
+                await delay(RATE_LIMIT_DELAY);
+                const detailXml = await fetchWithRetry(`${BASE_URL}/pblprfr/${item.id.replace(/^kopis_/, '')}`, { service: API_KEY });
+                const db = parser.parse(detailXml).dbs?.db;
+                if (!db) continue;
+                item.bookingLinks = parseKopisRelates(db.relates);
+                if (item.bookingLinks.length > 0) found++;
+            } catch {
+                process.stdout.write('X');
+            }
+        }
+        console.log(`\n🎟️ Booking links backfilled: ${found}/${targets.length}`);
+        safeWrite(OUTPUT_FILE, allItems);
+    };
+
     const fetchList = async (endpoint: string, isFestival = false): Promise<boolean> => {
         const { completed, idsNeedingDetail } = await collectListStubs(endpoint, isFestival);
         console.log(`\n📋 ${isFestival ? 'Festival' : 'Performance'} list stubs ready. Need detail: ${idsNeedingDetail.length}`);
@@ -622,6 +677,10 @@ async function scrapeKopis() {
     if (performancePassCompleted && !isBudgetExceeded()) {
         await fetchList('prffest', true);
     }
+
+    // Phase 2b: backfill official booking sites (relates) for rich rows that
+    // were enriched before bookingLinks existed. Upcoming/ongoing first.
+    if (!isBudgetExceeded()) await backfillBookingLinks();
 
     // Phase 3: Final Venue Sweep
     if (!isBudgetExceeded()) await enrichVenues();
