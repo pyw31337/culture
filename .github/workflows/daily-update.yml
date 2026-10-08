@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 70
     permissions:
       contents: write
+      issues: write
     outputs:
       data_changed: ${{ steps.commit_changes.outputs.data_changed || 'false' }}
       deployed_sha: ${{ steps.commit_changes.outputs.deployed_sha || '' }}
@@ -117,10 +118,23 @@ jobs:
           DISABLE_KAKAO_API: '1'
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
+          # Public-data API keys come from repository secrets only (never from code).
+          KOPIS_API_KEY: ${{ secrets.KOPIS_API_KEY }}
+          KOBIS_API_KEY: ${{ secrets.KOBIS_API_KEY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          KCISA_API_KEY: ${{ secrets.KCISA_API_KEY }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           # GitHub Actions is only the 03:00 KST fallback. Keep it shallow, but
           # still enrich the nearest Interpark items so visible cards do not lose
           # price, age, and runtime when the local midnight job is stale.
-          INTERPARK_ENRICH_LIMIT: '80'
+          # Browser (Puppeteer) detail pages hang on the hosted runner
+          # (Runtime.callFunctionOn timed out) and the job was killed at 480s,
+          # discarding the whole Interpark refresh every day since 2026-09-09.
+          # The fallback now uses the public JSON API instead and a hard budget.
+          INTERPARK_ENRICH_LIMIT: '0'
+          INTERPARK_API_ENRICH_LIMIT: '250'
+          INTERPARK_SESSION_LIMIT: '150'
+          INTERPARK_RUN_BUDGET_SECONDS: '400'
           INTERPARK_FAST_MODE: '1'
           INTERPARK_CONCURRENCY: '2'
           INTERPARK_NAVIGATION_TIMEOUT_MS: '25000'
@@ -289,7 +303,8 @@ jobs:
             sed 's/^/- /' scrape_recovered_failures.txt
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Run Data Processing, Validation, and Commit (Consolidated)
+      - name: Run Data Processing, Validation, and Commit
+        id: commit_changes
         if: steps.freshness.outputs.should_run == 'true'
         env:
           UMCLASS_MISSING_GEO_CRITICAL_THRESHOLD: '1000'
@@ -297,116 +312,105 @@ jobs:
           POSTER_CACHE_INCLUDE_ALL_REMOTE: '1'
           POSTER_CACHE_CONCURRENCY: '6'
         run: |
-          # Consolidate all validation and generation steps into a single step.
-          # If any step fails, we log it to ERROR_TRACKER.md and commit it,
-          # but we exit 0 so that GitHub Actions marks this as a success and does not email the user.
-          set -e
+          # Every step below must succeed. A failure now fails the job (red run +
+          # GitHub notification + tracking issue) instead of being swallowed with
+          # `exit 0`, which hid a frozen live site from 2026-09-09 to 2026-10-08.
+          set -euo pipefail
 
           run_step() {
             local step_name="$1"
             shift
-            echo "::group::Running step: $step_name"
+            echo "::group::${step_name}"
             if ! "$@"; then
-              echo "Error: $step_name failed!"
               echo "::endgroup::"
+              echo "::error title=Daily data update::${step_name} failed"
+              echo "${step_name}" > "$RUNNER_TEMP/failed-step.txt"
               return 1
             fi
             echo "::endgroup::"
-            return 0
           }
 
-          PIPELINE_SUCCESS=true
+          run_step "Validate Data Integrity" npx tsx scripts/validate-data-integrity.ts
+          run_step "Prune Stale Data" bash -c "npx tsx scripts/prune-expired-data.ts && npx tsx scripts/prune-data.ts"
+          run_step "Generate Public Data Artifacts" npm run generate-data
+          run_step "Stabilize Poster Image Cache" bash -c "npm run cache:posters && npm run validate:posters && npm run generate:thumbs"
+          run_step "Validate Content Quality" npm run validate:content
+          run_step "Validate Detail Completeness" npm run validate:details
+          run_step "Validate Search Consistency" npm run validate:search
+          run_step "Validate Location Search Contract" npm run validate:location-search
+          run_step "Validate Location Integrity" npm run validate:locations
+          run_step "Validate Display Integrity" npm run validate:display
 
-          run_step "Validate Data Integrity" npx tsx scripts/validate-data-integrity.ts || PIPELINE_SUCCESS=false
+          echo "::group::Commit and Push changes"
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add src/data public/data public/version.txt public/images/posters public/images/thumbs
 
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Prune Stale Data" bash -c "npx tsx scripts/prune-expired-data.ts && npx tsx scripts/prune-data.ts" || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Generate Public Data Artifacts" npm run generate-data || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Stabilize Poster Image Cache" bash -c "npm run cache:posters && npm run validate:posters && npm run generate:thumbs" || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Validate Content Quality" npm run validate:content || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Validate Detail Completeness" npm run validate:details || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Validate Search Consistency" npm run validate:search || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Validate Location Search Contract" npm run validate:location-search || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Validate Location Integrity" npm run validate:locations || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            run_step "Validate Display Integrity" npm run validate:display || PIPELINE_SUCCESS=false
-          fi
-
-          if [ "$PIPELINE_SUCCESS" = "true" ]; then
-            echo "::group::Commit and Push changes"
-            git config --global user.name 'GitHub Actions Bot'
-            git config --global user.email 'actions@github.com'
-            git add src/data
-            git add public/data
-            git add public/version.txt
-            git add public/images/posters
-            git add public/images/thumbs
-
-            if git diff --quiet && git diff --staged --quiet; then
-              echo "data_changed=false" >> "$GITHUB_OUTPUT"
-              echo "deployed_sha=" >> "$GITHUB_OUTPUT"
-              echo "No data changes to commit."
-            else
-              git commit -m "chore: fallback daily data update"
-              git push || {
-                git pull --rebase --autostash origin main
-                git push
-              }
-              echo "data_changed=true" >> "$GITHUB_OUTPUT"
-              echo "deployed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-            fi
-            echo "::endgroup::"
-          else
-            echo "Pipeline step failed. Logging to ERROR_TRACKER.md..."
-            {
-              echo "### 🚨 CI Action Runtime Failure"
-              echo "- **Date**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-              echo "- **GitHub Run ID**: [${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
-              echo "- **Note**: The 03:00 KST fallback data update failed during validation/processing. Retaining last successful data commit."
-            } >> ERROR_TRACKER.md
-            if [ -f scrape_failures.txt ] && [ -s scrape_failures.txt ]; then
-              echo "- **Failed Scrapers**:" >> ERROR_TRACKER.md
-              sed 's/^/  - /' scrape_failures.txt >> ERROR_TRACKER.md
-            fi
-            echo "" >> ERROR_TRACKER.md
-
-            git config --global user.name 'GitHub Actions Bot'
-            git config --global user.email 'actions@github.com'
-            git add ERROR_TRACKER.md
-            if ! git diff --quiet || ! git diff --staged --quiet; then
-              git commit -m "chore: Log CI failure to ERROR_TRACKER [skip ci]"
-              git push || {
-                git pull --rebase --autostash origin main
-                git push
-              }
-            fi
-            
+          if git diff --staged --quiet; then
             echo "data_changed=false" >> "$GITHUB_OUTPUT"
             echo "deployed_sha=" >> "$GITHUB_OUTPUT"
+            echo "No data changes to commit."
+          else
+            git commit -m "chore: fallback daily data update"
+            git push || {
+              git pull --rebase --autostash origin main
+              git push
+            }
+            echo "data_changed=true" >> "$GITHUB_OUTPUT"
+            echo "deployed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+          echo "::endgroup::"
+
+      - name: Report failure to tracking issue
+        if: failure() && steps.freshness.outputs.should_run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          failed_step="$(cat "$RUNNER_TEMP/failed-step.txt" 2>/dev/null || echo 'unknown step (see run log)')"
+          {
+            echo "### $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo ""
+            echo "- Run: ${RUN_URL}"
+            echo "- Failed step: **${failed_step}**"
+            echo "- Live data stays on the last successful data commit."
+            if [ -s scrape_failures.txt ]; then
+              echo ""
+              echo "Scraper warnings:"
+              sed 's/^/- /' scrape_failures.txt
+            fi
+          } > "$RUNNER_TEMP/issue-body.md"
+          title="Daily data update is failing"
+          gh label create pipeline-failure --color B60205 --description 'Automated daily data pipeline failure' 2>/dev/null || true
+          existing="$(gh issue list --label pipeline-failure --state open --json number --jq '.[0].number' || true)"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file "$RUNNER_TEMP/issue-body.md"
+          else
+            gh issue create --title "$title" --label pipeline-failure --body-file "$RUNNER_TEMP/issue-body.md"
           fi
 
-          # Always exit 0 to prevent GitHub Action run failure emails for routine scraper / validation falls.
-          exit 0
+      - name: Close tracking issue after recovery
+        if: success() && steps.freshness.outputs.should_run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          for number in $(gh issue list --label pipeline-failure --state open --json number --jq '.[].number' 2>/dev/null || true); do
+            gh issue close "$number" --comment "Recovered in $RUN_URL"
+          done
+
+  # Commits pushed with GITHUB_TOKEN do not trigger deploy.yml's push trigger,
+  # so fallback data commits never reached GitHub Pages on their own.
+  deploy:
+    needs: update-data
+    if: needs.update-data.outputs.data_changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+    with:
+      checkout-sha: ${{ needs.update-data.outputs.deployed_sha }}
+      prebuilt-data: true
+    secrets:
+      NEXT_PUBLIC_KAKAO_JS_KEY: ${{ secrets.NEXT_PUBLIC_KAKAO_JS_KEY }}
