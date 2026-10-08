@@ -33,6 +33,9 @@ export interface CinemaData {
     lat: number;
     lng: number;
     brand: string;
+    /** Theater id for the mcp.aka.page timetable relay (CGV theaterCode / 메가박스·롯데 theaterId). */
+    relayTheaterId?: string;
+    relayTheaterName?: string;
 }
 
 export interface VenueData {
