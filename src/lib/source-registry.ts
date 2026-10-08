@@ -40,6 +40,8 @@ export const SOURCE_REGISTRY: SourceRegistryEntry[] = [
     { key: 'templestay', file: 'templestays.json', label: '템플스테이', homepage: 'https://www.templestay.com/', freshDays: 7, staleDays: 60 },
     { key: 'popup-store', file: 'popup-stores.json', label: '트렌디 팝업스토어', homepage: 'https://popply.co.kr/', freshDays: 7, staleDays: 45 },
     { key: 'klook-deal', file: 'klook-deals.json', label: '레저/투어 핫딜', homepage: 'https://www.klook.com/', freshDays: 7, staleDays: 45 },
+    // 국가유산청 활용 행사 (local pipeline only: khs.go.kr blocks many foreign IPs)
+    { key: 'heritage', file: 'heritage-events.json', label: '국가유산청 행사', homepage: 'https://www.khs.go.kr/', freshDays: 14, staleDays: 60 },
 ];
 
 export const SOURCE_REGISTRY_BY_KEY = SOURCE_REGISTRY.reduce<Record<string, SourceRegistryEntry>>((acc, entry) => {
