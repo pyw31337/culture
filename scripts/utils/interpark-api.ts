@@ -61,6 +61,16 @@ type PlaySeqEntry = {
     playTime?: string;
 };
 
+const responseStats: Record<string, number> = {};
+function countResponse(key: string) {
+    responseStats[key] = (responseStats[key] || 0) + 1;
+}
+
+/** HTTP outcome counts (e.g. {"200": 10, "403": 5, "error": 1}) for run diagnostics. */
+export function getInterparkApiStats() {
+    return { ...responseStats };
+}
+
 async function getJson<T>(url: string, params?: Record<string, string>): Promise<T | null> {
     try {
         const response = await axios.get(url, {
@@ -69,12 +79,14 @@ async function getJson<T>(url: string, params?: Record<string, string>): Promise
             timeout: TIMEOUT_MS,
             validateStatus: () => true,
         });
+        countResponse(String(response.status));
         if (response.status !== 200) return null;
         const contentType = String(response.headers['content-type'] || '');
         // Unknown paths fall through to the SPA HTML shell with 200.
         if (!contentType.includes('json') && typeof response.data !== 'object') return null;
         return response.data as T;
     } catch {
+        countResponse('error');
         return null;
     }
 }

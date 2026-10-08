@@ -9,7 +9,7 @@ import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import crypto from 'crypto';
 import cliProgress from 'cli-progress';
 import { atomicWriteJson, atomicWriteJsonPreserve } from './utils/scraper-utils';
-import { fetchInterparkApiEnrichment, type InterparkSession } from './utils/interpark-api';
+import { fetchInterparkApiEnrichment, getInterparkApiStats, type InterparkSession } from './utils/interpark-api';
 
 puppeteer.use(StealthPlugin());
 
@@ -1541,9 +1541,17 @@ async function enrichViaInterparkApi(items: Performance[], existingMap: Map<stri
     let done = 0;
     let filled = 0;
     let sessionHits = 0;
+    let apiUnavailable = false;
     const worker = async () => {
         while (cursor < queue.length) {
             if (isRunBudgetExhausted(30000)) return;
+            // If the API refuses this network outright (seen on GitHub-hosted runners),
+            // stop early instead of spending minutes on guaranteed failures.
+            if (done >= 30 && !(getInterparkApiStats()['200'] > 0)) {
+                if (!apiUnavailable) console.warn(`[interpark-api] no successful responses after ${done} item(s); stopping API enrichment for this run. stats=${JSON.stringify(getInterparkApiStats())}`);
+                apiUnavailable = true;
+                return;
+            }
             const c = queue[cursor++];
             const wantDetails = detailIds.has(c.item.id);
             const wantSessions = sessionIds.has(c.item.id);
@@ -1582,7 +1590,7 @@ async function enrichViaInterparkApi(items: Performance[], existingMap: Map<stri
         }
     };
     await Promise.all(Array.from({ length: INTERPARK_API_CONCURRENCY }, () => worker()));
-    console.log(`[interpark-api] processed ${done}/${queue.length}; detail fields filled for ${filled}, sessions found for ${sessionHits}`);
+    console.log(`[interpark-api] processed ${done}/${queue.length}; detail fields filled for ${filled}, sessions found for ${sessionHits}; http=${JSON.stringify(getInterparkApiStats())}`);
 }
 
 runScraper().then(() => {

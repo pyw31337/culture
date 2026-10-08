@@ -311,6 +311,9 @@ jobs:
           POSTER_CACHE_MAX_NEW_DOWNLOADS: '3500'
           POSTER_CACHE_INCLUDE_ALL_REMOTE: '1'
           POSTER_CACHE_CONCURRENCY: '6'
+          # The Interpark detail API returned nothing for GitHub-hosted runners
+          # (0/268 on 2026-10-08), so its coverage is a warning in CI only.
+          DETAIL_COMPLETENESS_WARN_SOURCES: interpark
         run: |
           # Every step below must succeed. A failure now fails the job (red run +
           # GitHub notification + tracking issue) instead of being swallowed with
