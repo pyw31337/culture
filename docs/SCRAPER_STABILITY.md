@@ -10,7 +10,7 @@
 
 | 환경 | 역할 | 깊이 |
 |------|------|------|
-| 로컬 Mac mini (자정) | Primary full refresh | 상세 enrichment 제한 완화 |
+| 로컬 Mac mini (평일 18~08시, 주말 상시) | Primary: light(차단 소스) 수시 + full 1일 1회 | 상세 enrichment 제한 완화 |
 | GitHub Actions 03:00 KST | Fallback (로컬 신선하면 스킵) | shallow (`INTERPARK_FAST_MODE` 등) |
 
 `scripts/scraper-plan.json` 의 `local` / `github` 플랜이 소스 목록과 priority를 정의합니다.

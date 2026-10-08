@@ -15,7 +15,7 @@
 - 데이터: `src/data/*.json` → `npm run generate-data` → `public/data/*.json`
 - 수집: TypeScript/Node 스크래퍼 (Playwright / Puppeteer / HTTP API)
 - 배포: GitHub Pages (`basePath: /culture`)
-- 갱신: 로컬 Mac mini 자정 잡(primary) + GitHub Actions 03:00 KST 폴백
+- 갱신: 로컬 Mac mini 시간대 스케줄러(평일 18:00~익일 08:00, 주말 상시, primary) + GitHub Actions 03:00 KST 폴백
 
 ---
 
@@ -87,7 +87,7 @@ cp .env.example .env.local   # 값 입력 후 사용 (.env.local은 커밋되지
 
 ## 데이터 갱신 구조
 
-1. **Primary**: 로컬 `launchd` / `npm run local:update-data` (자정 KST 권장)
+1. **Primary**: 로컬 `launchd` `com.cultureflow.local-scheduler` → `scripts/local-scheduler.sh` (평일 18:37·21:47·01:17·05:17, 주말 약 4시간 간격). GitHub에서 막히는 인터파크 API·국가유산청·YES24·카카오는 여기서만 수집. 자세한 내용: [docs/local-data-update.md](./docs/local-data-update.md)
 2. **Fallback**: `.github/workflows/daily-update.yml` (로컬 데이터가 신선하면 스킵)
 3. 스크래퍼 실패 시 기존 `src/data` 체크포인트 유지 → validation이 게시 가능 여부 판단
 4. GitHub fallback이 실패하면 job이 실패(빨간 X)로 끝나고 `pipeline-failure` 라벨 이슈가 열립니다(복구되면 자동으로 닫힘). 과거 기록은 `ERROR_TRACKER.md`

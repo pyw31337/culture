@@ -38,6 +38,8 @@ export type InterparkApiEnrichment = {
     priceList?: { label: string; price: string }[];
     sessions?: InterparkSession[];
     sessionsCheckedAt?: string;
+    /** True only when the summary endpoint actually answered (HTTP 200 JSON). */
+    detailsReachable?: boolean;
 };
 
 type SummaryData = {
@@ -181,7 +183,11 @@ export async function fetchInterparkApiEnrichment(
 ): Promise<InterparkApiEnrichment> {
     const result: InterparkApiEnrichment = {};
     if (options.details) {
-        const summary = await fetchInterparkSummary(goodsCode);
+        // Read the raw body so a blocked network (403/timeout) can be told apart
+        // from a show that simply has no summary fields.
+        const summaryBody = await getJson<{ data?: SummaryData }>(`${API_BASE}/v1/goods/${goodsCode}/summary`);
+        result.detailsReachable = summaryBody !== null;
+        const summary = summaryBody?.data || null;
         if (summary) {
             const runningTime = formatRunningTime(summary.runningTime, summary.interMissionTime);
             if (runningTime) result.runningTime = runningTime;

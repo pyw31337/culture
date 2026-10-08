@@ -20,7 +20,10 @@ const EVENT_URL = process.env.HERITAGE_EVENT_URL || 'https://www.khs.go.kr/cha/o
 const OFFICIAL_LIST_URL = 'https://www.khs.go.kr/main.html';
 const OUTPUT_PATH = path.join(process.cwd(), 'src/data/heritage-events.json');
 const MONTHS_AHEAD = Math.max(1, Math.min(3, Number(process.env.HERITAGE_MONTHS || 2)));
-const TIMEOUT_MS = Number(process.env.HERITAGE_TIMEOUT_MS || 20000);
+// khs.go.kr answers slowly even from Korea (~19s observed from the Mac mini on
+// 2026-10-08), so the old 20s timeout was right at the edge.
+const TIMEOUT_MS = Number(process.env.HERITAGE_TIMEOUT_MS || 60000);
+const MONTH_ATTEMPTS = Math.max(1, Number(process.env.HERITAGE_MONTH_ATTEMPTS || 3));
 const USER_AGENT = 'Mozilla/5.0 (compatible; CultureFlowBot/1.0; +https://pyw31337.github.io/culture/)';
 
 const parser = new XMLParser({ ignoreAttributes: true, parseTagValue: false, trimValues: true });
@@ -67,6 +70,22 @@ function kstYearMonth(offset: number) {
     const now = new Date(Date.now() + 9 * 3600 * 1000);
     const date = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + offset, 1));
     return { year: date.getUTCFullYear(), month: date.getUTCMonth() + 1 };
+}
+
+async function fetchMonthWithRetry(year: number, month: number): Promise<Record<string, unknown>[]> {
+    let lastError: unknown;
+    for (let attempt = 1; attempt <= MONTH_ATTEMPTS; attempt++) {
+        try {
+            return await fetchMonth(year, month);
+        } catch (error) {
+            lastError = error;
+            if (attempt < MONTH_ATTEMPTS) {
+                console.warn(`[heritage] ${year}-${month} attempt ${attempt} failed; retrying`);
+                await new Promise((resolve) => setTimeout(resolve, 3000 * attempt));
+            }
+        }
+    }
+    throw lastError;
 }
 
 async function fetchMonth(year: number, month: number): Promise<Record<string, unknown>[]> {
@@ -134,7 +153,7 @@ async function main() {
     for (let offset = 0; offset < MONTHS_AHEAD; offset++) {
         const { year, month } = kstYearMonth(offset);
         try {
-            const items = await fetchMonth(year, month);
+            const items = await fetchMonthWithRetry(year, month);
             fetchedMonths++;
             items.forEach((item) => {
                 const record = toRecord(item, collectedAt);
@@ -150,6 +169,11 @@ async function main() {
     if (fetchedMonths === 0) {
         // Keep the previous file (atomicWriteJsonPreserve also refuses empty overwrites).
         console.error('[heritage] khs.go.kr unreachable (foreign IPs are often blocked). Previous data retained.');
+        process.exit(1);
+    }
+    if (fetchedMonths < MONTHS_AHEAD) {
+        // A partial pull would silently drop a whole month; keep the previous file.
+        console.error(`[heritage] only ${fetchedMonths}/${MONTHS_AHEAD} month(s) fetched. Previous data retained.`);
         process.exit(1);
     }
 

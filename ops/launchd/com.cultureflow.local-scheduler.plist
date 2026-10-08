@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  CultureFlow local scheduler (Mac mini). Installed by scripts/install-local-data-update.sh.
+  Allowed windows (KST): weekdays 18:00 → next day 08:00, weekends all day.
+  scripts/local-scheduler.sh enforces the window, picks light/full, and holds a lock,
+  so an extra or late start (e.g. after wake) is always safe.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.cultureflow.local-scheduler</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__PROJECT_DIR__/scripts/local-scheduler.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__PROJECT_DIR__</string>
+
+  <key>StartCalendarInterval</key>
+  <array>
+    <!-- every day: 01:17 light (finishes before the 03:00 GitHub slot), 05:17 light, 21:47 (full on weekdays) -->
+    <dict><key>Hour</key><integer>1</integer><key>Minute</key><integer>17</integer></dict>
+    <dict><key>Hour</key><integer>5</integer><key>Minute</key><integer>17</integer></dict>
+    <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>47</integer></dict>
+    <!-- Mon-Fri evening: 18:37 light -->
+    <dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>18</integer><key>Minute</key><integer>37</integer></dict>
+    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>18</integer><key>Minute</key><integer>37</integer></dict>
+    <dict><key>Weekday</key><integer>3</integer><key>Hour</key><integer>18</integer><key>Minute</key><integer>37</integer></dict>
+    <dict><key>Weekday</key><integer>4</integer><key>Hour</key><integer>18</integer><key>Minute</key><integer>37</integer></dict>
+    <dict><key>Weekday</key><integer>5</integer><key>Hour</key><integer>18</integer><key>Minute</key><integer>37</integer></dict>
+    <!-- Sat/Sun daytime: 09:13 light, 13:07 full, 17:19 light (weekends are open all day) -->
+    <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>13</integer></dict>
+    <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>13</integer><key>Minute</key><integer>7</integer></dict>
+    <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>17</integer><key>Minute</key><integer>19</integer></dict>
+    <dict><key>Weekday</key><integer>0</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>13</integer></dict>
+    <dict><key>Weekday</key><integer>0</integer><key>Hour</key><integer>13</integer><key>Minute</key><integer>7</integer></dict>
+    <dict><key>Weekday</key><integer>0</integer><key>Hour</key><integer>17</integer><key>Minute</key><integer>19</integer></dict>
+  </array>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>CULTUREFLOW_PROJECT_DIR</key>
+    <string>__PROJECT_DIR__</string>
+    <key>TZ</key>
+    <string>Asia/Seoul</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>__PROJECT_DIR__/logs/launchd-local-scheduler.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__PROJECT_DIR__/logs/launchd-local-scheduler.err.log</string>
+</dict>
+</plist>

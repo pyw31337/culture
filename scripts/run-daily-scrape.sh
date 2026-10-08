@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-# CultureFlow daily scrape (cron entry point).
+# CultureFlow daily scrape (legacy cron entry point).
 #
-# Deprecated wrapper: the old version hard-coded a personal iCloud path and
-# called scripts/scrape-ott.ts, which no longer exists. The maintained local
-# pipeline is scripts/run-local-data-update.sh (loads .env.local, runs the
-# local scraper plan, validates, commits and pushes).
+# Deprecated wrapper kept for old cron lines. The maintained entry point is
+# scripts/local-scheduler.sh (launchd: time-window guard, lock, light/full
+# profiles), which calls scripts/run-local-data-update.sh.
 set -euo pipefail
 
 # Make node available for cron/launchd shells that do not load a profile.
@@ -13,4 +12,4 @@ export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-exec "$SCRIPT_DIR/run-local-data-update.sh" "$@"
+exec "$SCRIPT_DIR/local-scheduler.sh" "$@"

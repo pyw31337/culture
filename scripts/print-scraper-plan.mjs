@@ -2,13 +2,16 @@ import fs from 'fs';
 import path from 'path';
 
 const mode = process.argv[2];
-if (!mode || !['github', 'local'].includes(mode)) {
-  console.error('Usage: node scripts/print-scraper-plan.mjs <github|local>');
+const planPath = path.join(process.cwd(), 'scripts', 'scraper-plan.json');
+const plan = JSON.parse(fs.readFileSync(planPath, 'utf8'));
+// Runnable plans: github (CI fallback), local (full Mac run), local-light
+// (sources GitHub-hosted runners cannot reach). retainGuard is config, not a plan.
+const runnable = Object.keys(plan).filter((key) => key !== 'retainGuard');
+if (!mode || !runnable.includes(mode)) {
+  console.error(`Usage: node scripts/print-scraper-plan.mjs <${runnable.join('|')}>`);
   process.exit(1);
 }
 
-const planPath = path.join(process.cwd(), 'scripts', 'scraper-plan.json');
-const plan = JSON.parse(fs.readFileSync(planPath, 'utf8'));
 const entries = plan[mode];
 
 if (!Array.isArray(entries)) {
