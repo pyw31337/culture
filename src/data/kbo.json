@@ -25712,5 +25712,47 @@
     "awayTeam": "LG",
     "homeTeamLogo": "/images/logos/kbo/kia.svg",
     "awayTeamLogo": "/images/logos/kbo/lg.svg"
+  },
+  {
+    "id": "kbo_20261009_LG1_vs_9롯데",
+    "title": "LG1 vs 9롯데",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-10-09 14:00",
+    "venue": "부산사직종합운동장사직야구장",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "busan",
+    "genre": "baseball",
+    "homeTeam": "9롯데",
+    "awayTeam": "LG1",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20261009_삼성1_vs_3SSG",
+    "title": "삼성1 vs 3SSG",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-10-09 14:00",
+    "venue": "인천SSG 랜더스필드",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "incheon",
+    "genre": "baseball",
+    "homeTeam": "3SSG",
+    "awayTeam": "삼성1",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20261009_KIA7_vs_2NC",
+    "title": "KIA7 vs 2NC",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-10-09 14:00",
+    "venue": "창원NC파크",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "busan",
+    "genre": "baseball",
+    "homeTeam": "2NC",
+    "awayTeam": "KIA7",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]

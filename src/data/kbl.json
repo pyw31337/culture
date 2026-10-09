@@ -1,33 +1,5 @@
 [
   {
-    "id": "kbl_20261009_수원_KT_vs_고양_소노",
-    "title": "수원 KT vs 고양 소노",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-09 14:00",
-    "venue": "수원 KT 소닉붐 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "수원 KT",
-    "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
-  },
-  {
-    "id": "kbl_20261009_서울_삼성_vs_안양_정관장",
-    "title": "서울 삼성 vs 안양 정관장",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-09 16:30",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 삼성",
-    "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
-  },
-  {
     "id": "kbl_20261010_부산_KCC_vs_원주_DB",
     "title": "부산 KCC vs 원주 DB",
     "image": "/images/kbl_poster.png",

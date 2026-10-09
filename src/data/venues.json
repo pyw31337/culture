@@ -1614,9 +1614,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "파랑새극장": {
     "name": "시윤아트홀",
@@ -12903,7 +12903,7 @@
     "lng": 127.130056,
     "district": "",
     "phone": "063-270-2089",
-    "homepage": "https://cnucc.jbnu.ac.kr/",
+    "homepage": "https://ssac.jbnu.ac.kr/main/",
     "facilityType": "공공(기타)",
     "seatScale": "1717",
     "theaterCount": "2",
@@ -12915,9 +12915,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 식당, 카페, 편의점, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "익산 솜리문화예술회관 중공연장": {
     "name": "익산 솜리문화예술회관 중공연장",
@@ -33806,9 +33806,9 @@
     "theaterCount": "1",
     "openedAt": "2018",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "문화비축기지": {
     "name": "문화비축기지",
@@ -63205,9 +63205,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "인천서구문화회관": {
     "name": "인천서구문화회관",
@@ -63544,7 +63544,7 @@
   },
   "해남문화예술회관": {
     "name": "해남문화예술회관",
-    "address": "전라남도 해남군 해남읍 군청길 4(성내리 4)",
+    "address": "전남광주통합특별시 해남군 해남읍 군청길 4",
     "lat": 34.5735147,
     "lng": 126.59949159999996,
     "district": "",
@@ -63558,9 +63558,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "한화리조트 [설악 쏘라노]": {
     "name": "한화리조트 [설악 쏘라노]",
@@ -65244,8 +65244,8 @@
     "phone": "053-601-5000",
     "homepage": "https://www.exco.co.kr/kor/index.html",
     "facilityType": "민간(대학로 외)",
-    "seatScale": "52214",
-    "theaterCount": "11",
+    "seatScale": "53214",
+    "theaterCount": "12",
     "openedAt": "2001",
     "amenities": [
       "식당",
@@ -66155,9 +66155,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치"
   },
   "인천아시아드주경기장": {
     "name": "인천아시아드주경기장",
@@ -104749,9 +104749,9 @@
       "식당",
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "하남종합운동장": {
     "name": "하남종합운동장",
@@ -111592,7 +111592,24 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5660139,
-    "lng": 127.01481309999997
+    "lng": 127.01481309999997,
+    "phone": "02-2230-6601",
+    "homepage": "www.caci.or.kr",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "2045",
+    "theaterCount": "5",
+    "openedAt": "2005",
+    "amenities": [
+      "식당",
+      "카페",
+      "놀이방",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 놀이방"
   },
   "대원콘텐츠라이브": {
     "name": "대원콘텐츠라이브",
@@ -114775,7 +114792,19 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.4687771,
-    "lng": 126.8944749
+    "lng": 126.8944749,
+    "phone": "02-2627-2183",
+    "homepage": "https://www.instagram.com/gcmc.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "197",
+    "theaterCount": "2",
+    "openedAt": "2021",
+    "amenities": [
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치"
   },
   "대학로 SH아트홀": {
     "name": "대학로 SH아트홀",
@@ -117607,15 +117636,15 @@
   },
   "북구문화센터": {
     "name": "북구문화센터",
-    "address": "광주광역시 북구 하서로 299 (양산동)",
+    "address": "전남광주통합특별시 북구 하서로 299 (양산동)",
     "lat": 35.2013855,
     "lng": 126.8738526,
     "district": "",
     "phone": "062-574-0293",
     "homepage": "https://bukgu.gwangju.kr/bcc/",
     "facilityType": "공공(기타)",
-    "seatScale": "360",
-    "theaterCount": "1",
+    "seatScale": "660",
+    "theaterCount": "2",
     "openedAt": "2021",
     "amenities": [
       "카페",
@@ -118470,7 +118499,9 @@
   "올림픽공원 테니스장": {
     "name": "올림픽공원 테니스장",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.52112,
+    "lng": 127.12836360000006
   },
   "청주 예술의전당 대공연장": {
     "name": "청주 예술의전당 대공연장",
@@ -118635,7 +118666,9 @@
   "올림픽공원 올림픽 홀": {
     "name": "올림픽공원 올림픽 홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.52112,
+    "lng": 127.12836360000006
   },
   "한국만화박물관 일대": {
     "name": "한국만화박물관 일대",
@@ -118771,6 +118804,69 @@
   "초보자도 부담 없이 참여하고 완성의 즐거움을 느낄 수 있도록 개인별 속도와 작품 상태에 맞춘 세심한 수업을 진행합니다.": {
     "name": "초보자도 부담 없이 참여하고 완성의 즐거움을 느낄 수 있도록 개인별 속도와 작품 상태에 맞춘 세심한 수업을 진행합니다.",
     "address": "초보자도 부담 없이 참여하고 완성의 즐거움을 느낄 수 있도록 개인별 속도와 작품 상태에 맞춘 세심한 수업을 진행합니다.",
+    "district": ""
+  },
+  "까페 비미": {
+    "name": "까페 비미",
+    "address": "전북특별자치도 전주시 완산구 전라감영5길 12 (경원동1가)",
+    "lat": 35.816767,
+    "lng": 127.146586,
+    "district": "",
+    "homepage": "https://pf.kakao.com/_eGljn",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "케이크샵(Cakeshop)": {
+    "name": "케이크샵(Cakeshop)",
+    "address": "서울특별시 용산구 이태원로 134 (이태원동)",
+    "lat": 37.533901,
+    "lng": 126.988785,
+    "district": "용산구",
+    "homepage": "https://www.instagram.com/CAKESHOPSEOUL/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "정관에듀파크": {
+    "name": "정관에듀파크",
+    "address": "부산광역시 기장군 정관읍 모전로 11",
+    "lat": 35.340381,
+    "lng": 129.164337,
+    "district": "",
+    "homepage": "https://jglib.gijang.go.kr/edupark/main.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "626",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
+  },
+  "PUBG 성수 1F 서바이벌홀": {
+    "name": "PUBG 성수 1F 서바이벌홀",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "양평물빛극장": {
+    "name": "양평물빛극장",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "모카클래스 (이시)": {
+    "name": "모카클래스 (이시)",
+    "address": "이시은",
     "district": ""
   }
 }
