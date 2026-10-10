@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-09T22:48:53.462Z",
+  "checkedAt": "2026-10-10T21:47:34.329Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10189,
-  "verified": 9256,
-  "unavailable": 933,
+  "total": 10138,
+  "verified": 9203,
+  "unavailable": 935,
   "pending": 0,
   "recoveredFromAlternate": 3,
   "unavailableSamples": [
@@ -43,49 +43,485 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_기업출강가능_720b_크리스마스_리스_원데이클래스",
-      "title": "기업출강가능 / 720b 크리스마스 리스 원데이클래스",
+      "id": "class_딸기품은찹쌀모찌_이",
+      "title": "딸기품은찹쌀모찌~~~이",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/caf6a24cb01846d5b31fe3df13bff13f.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1e65d5fece394d70809e720d18ee369c.jpg"
       ],
       "failure": "http-403"
     },
     {
-      "id": "class_계절꽃을_활용한_꽃꽂이_수업",
-      "title": "계절꽃을 활용한 꽃꽂이 수업",
+      "id": "class_스페셜티_커피_테이스팅_클래스",
+      "title": "스페셜티 커피 테이스팅 클래스",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3e8a44df9b9e4f568bef244945bf59b7.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/53a62e1c12734a2c85cf3fe1fca47cc0.jpg"
       ],
       "failure": "http-403"
     },
     {
-      "id": "class_멜팅쿠키3종_만들기_원데이_클래스_서울_이색_체험",
-      "title": "멜팅쿠키3종 만들기 원데이 클래스 서울 이색 체험",
+      "id": "class_감성_테라리움_추억만들기",
+      "title": "감성 테라리움 추억만들기",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5abb3ffbd088460d8c1e4e7303e4f803.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6fe7701aa45e4243bb4e79ac4c28898b.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ed9b5c1d2bfc496a83af4cf058d2c092.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0a29312fc8ea4e4e8b47ec4ae01b0ad5.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2307d9b64fcd4062ad2aa286657a83f0.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7af15de34bc44cc0b9c8e7bb63da8fa8.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d5c047145231490b94babce146383ca1.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b652f8dc7fb742c09a45e430d275023e.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/63c74a29b34b4215869017c3c6ddce4d.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_개인PT_원데이_클래스",
+      "title": "개인PT 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/21594fa74d544ee78f436ff2eb38179c.png"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_헬스장_1일_체험권",
+      "title": "헬스장 1일 체험권",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/53040ab02cf644e8856e0a54a93403df.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/da7a3d938d8e45d0b39c032ff5baae18.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_보자기아트_10가지_다양하고_아름다운_실용_보자기_포장",
+      "title": "보자기아트, 10가지 다양하고 아름다운 실용 보자기 포장",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/330672e5ad9e4a8ea7e48efc10a36a8a.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/76b36008cdcb4ee0a05b6342e34d10e5.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/593ab989bc2244fda2f37b399c460ea5.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/593724213ed14228ad1c6555325b8e02.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0d00abf669fe48ff989e750f64b96ffa.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d464a200285f4f9a85a8302131cf752c.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/046a7d90f19d413d9d7a2cc294bd7f24.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7dbcf86d280949e99ebe1477521036f4.jpg"
       ],
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_부산_해동검도_수련",
-      "title": "부산 해동검도 수련",
+      "id": "class_내_목소리_더_좋게_만드려면_어떻게_해야할까",
+      "title": "내 목소리 더 좋게 만드려면 어떻게 해야할까?",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f422f8bc071441dea2db8cd9232f7b85.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4e9f8c16478444e689bca37bf5f42c7a.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2acc991874c144daa1229fe2729296d1.gif"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ef9634c621264389b4901b695cd3a19f.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/325465be0f564319a790041413ab2f4f.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_마크라메_풍선_강아지_키링_원데이클래스",
+      "title": "마크라메 풍선 강아지 키링 원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/76e40e4d41e64b35bba5a78b60eb5e60.JPG"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_폴댄스_입문_무료체험",
+      "title": "폴댄스 입문 무료체험",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/65090d4974444d8b8d43754db2b62d99.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_부산전포_바나나쌀푸딩",
+      "title": "부산전포)바나나쌀푸딩~~♡♡",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7cbe84cfb48c4d17ad62078f8507c03e.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_8회_탄탄크루_그룹PT_수강권",
+      "title": "8회 탄탄크루 그룹PT 수강권",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4addcda05fa64ea78dbf1bb162becafb.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_드럼_원데이_클래스",
+      "title": "드럼 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d182fa15eb0f41f0a47767e549b2ce9d.PNG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/304efbc9310e40f398e673f80912a8a2.PNG"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_여름의_향수클래스_30ml",
+      "title": "여름의 향수클래스 30ml",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/fee64aef2ee846e5bb9833ad4dd7222f.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_세상에서_하나뿐인_향수만들기_원데이_클래스",
+      "title": "세상에서 하나뿐인 향수만들기 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f4a5b738a6da4a98bb5d7b62f0c9859a.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/44ddbcc9aad54a0bbc24de1ab23eaa62.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b6a78f5bc619401999424844ac59d746.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5a471568aee9457a8ede277d4b89501f.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e96c98781aff46e092ebc6fbdd212664.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1c4ffd5b98bb4991bda0d0442ed5187d.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ab116fd8c4634c2c99a99bcc9553cce8.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/349d21c2b4b6409a9672abc2c92962f2.jpg"
       ],
       "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_나도_피아니스트_논현동_피아노레슨_원데이_체험",
+      "title": "나도 피아니스트 ! 논현동 피아노레슨 원데이 체험",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2c23d1c167bd4306bb8feeb3b80620f8.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_무전력_우드스피커_만들기_원데이_클래스_1구_원목",
+      "title": "무전력 우드스피커 만들기 원데이 클래스 / 1구 원목",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/462dc625b74f41b6b3524661b65baafc.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_술술_풀리는_궁궐따라_조선_탐험_경복궁_창덕궁_창경궁_덕수궁",
+      "title": "술술 풀리는 궁궐따라 조선 탐험(경복궁, 창덕궁, 창경궁, 덕수궁)",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_취미반시원한_바다캔들만들기_클래스_5가지_작품_2회",
+      "title": "취미반시원한 바다캔들만들기 클래스 (5가지 작품, 2회)",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/395497a5c77a4ef9b9754cf3a5cda37d.JPG"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_1_1_개인레슨",
+      "title": "1:1 개인레슨",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2fc1e882bbfd408e82f7eaf4ef97685c.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9c96283fd9ac413ea02e1024f74afd7b.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_공기정화_모스이끼_led액자_만들기",
+      "title": "공기정화 모스이끼 led액자 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/09425226755d4de5ba571bd91f546cbd.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_취미반_맛있는_디저트캔들_만들기_2회",
+      "title": "취미반 맛있는 디저트캔들 만들기(2회)",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8dccd8985dd641bfa735207326fcd500.png"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_국립중앙박물관_삼국시대_초등고학년_Premium_역사탐험대_Season3",
+      "title": "국립중앙박물관 삼국시대 초등고학년 \"Premium\" 역사탐험대 Season3",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_국립중앙박물관_선사시대_미취학_Premium_역사탐험대_Season3",
+      "title": "국립중앙박물관 선사시대 미취학 \"Premium\" 역사탐험대 Season3",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_이것은_개념미술이_아니_다_서울_국립현대미술관_서울관_20260619",
+      "title": "이것은 개념미술이 (아니)다",
+      "source": "remote",
+      "candidates": [
+        "https://www.culture.go.kr/upload/rdf/26/01/rdf_2026010821244317847.jpg"
+      ],
+      "failure": "Input buffer contains unsupported image format"
+    },
+    {
+      "id": "class_키즈_원형or캐릭터_마카롱_원데이_클래스",
+      "title": "키즈 / 원형or캐릭터 마카롱 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/825ac2e93e90464cb517930ccd4c0095.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3c029d9c9e8e42d08a1636b3ff8cb0ff.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "museum_국립중앙박물관_이슬람_미술_특별전",
+      "title": "국립중앙박물관 이슬람 미술 특별전",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6800/6854/6854-01-260119b3-700x700.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_유아_목공_원데이_클래스",
+      "title": "유아 목공 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/72e180efd34441ce8490bc37d211fc95.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_PT_원포인트레슨",
+      "title": "PT 원포인트레슨",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/894836e70007497a8e0612167044cfe6.png"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_고스또소_요가_원데이클래스",
+      "title": "고스또소 요가 원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ecbdd7c0d7bc400f99a2ec734b022232.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d1f6c787f02d4a8a9430fa3b5106534e.png"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_원목도마_나만의_각인까지",
+      "title": "원목도마, 나만의 각인까지!",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/66fd894a5ab74b90b6c6f876876a9c04.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d02ce8598e514da8b56ccda6bd4efbaf.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6740484be49e4f17b6d2810ac1956b79.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1b7a624a405746b5a2130b6a0221ab8d.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5f2af633bd4f43eb8014b955a9d71434.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/88e4ff79c04e441db2693e33d9d60c53.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0a83ddc2c9a447f388cbff6f6fe95223.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5f4c6dd0b3774f2f91381aab5f33509c.jpeg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_꼼작_핸드드립_커피_원데이_클래스",
+      "title": "꼼작 핸드드립 커피 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/66d665b575f74cefb9b4a3582c8a50f5.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ad8dfbfcbf794a14924af822f8e28f69.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d9b74ae107e241009768af768f0a541a.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b95679862a1b4fe593b2b243e7ea51fd.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/36a61bf01c8d4623b6798e92d5b01c84.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b757430eeffd4dd1b286d96c83fc938b.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1d415304f30d4a6cbeabea148a30f070.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4bb3042cf66d4f6ea82e0e81560f66c5.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_대구_수채화_초급반_1개월",
+      "title": "대구 수채화 초급반 [1개월]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5efc4e2b18854c87a7f97086aa16ac4b.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_플룻_레슨_1개월_50분",
+      "title": "플룻 레슨 [1개월 - 50분]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/adc6e50ec9344655a0d7abf02939221b.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_향수_디퓨저50_할인클래스_이색_체험_클래스",
+      "title": "향수+디퓨저50%할인클래스 이색 체험 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/84f1326ab1fa40c48a5be5a9314bf0a0.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_미니_점토_도넛_키링_마그넷_책갈피_3종_만들기",
+      "title": "미니 점토 도넛+키링/마그넷/책갈피 3종 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b2b7db1121184d38bc78ff0a50a012f9.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_반짝반짝_향기가득_보석방향제_만들기",
+      "title": "반짝반짝 향기가득 보석방향제 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f2ea839d29254838ae0182e2ebd6ba30.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7b3a2b2dbc084114b238175eae146815.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "museum_국립중앙박물관_선사시대_초등고학년_Premium_역사탐험대_Season3",
+      "title": "국립중앙박물관 선사시대 초등고학년 \"Premium\" 역사탐험대 Season3",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_가죽공예_카드지갑_만들기",
+      "title": "가죽공예 카드지갑 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0c66e619200a41e9953d02b142f64236.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_경복궁_인문학산책",
+      "title": "경복궁 인문학산책",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6300/6365/6365-01-26062108-700x700.jpg",
+        "https://timeticket.co.kr/wys2/user_review/6365/img_1528673.jpg",
+        "https://timeticket.co.kr/wys2/user_review/6365/img_1508234.jpg",
+        "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/23/1750666381-28-0_wonbon_N_7_600x600_70_2.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_한글_페인팅_에코백_만들기_원데이_클래스",
+      "title": "한글 페인팅 에코백 만들기 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/615daec2a3c24ba78a471393b9aa961c.jpeg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_헤이리_93뮤지엄_에로틱_성박물관",
+      "title": "헤이리 93뮤지엄 에로틱 성박물관",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/7000/7000/7011/7011-01-260330c6-700x700.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_꽃으로_만드는_젤캔들홀더_클래스_티라이트와_홀더만들기",
+      "title": "꽃으로 만드는 젤캔들홀더 클래스 티라이트와 홀더만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0f9b199bdcf94b2c9730d447f4d01579.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e13b1ab4760e4a19a4b92f8049191dc7.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6a8587e1727f4645820d21ada2e2cfd7.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/058fcb86d67e4639894518a4e8eb2423.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c1b76426af5449a39fecced04275247c.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/612aa434be9e419d83bfb3f3f9d42d72.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7b3a2b2dbc084114b238175eae146815.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f62dc0bd02734716858a111ba21e30a9.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "museum_국립중앙박물관_원데이_도슨트_투어",
+      "title": "국립중앙박물관 원데이 도슨트 투어",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_초등_수원화성_역사탐험대_수원화성_보고_나만의_성_설계하기_8_13세",
+      "title": "초등 수원화성 역사탐험대 - 수원화성 보고 나만의 성 설계하기 (8-13세)",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_글라스아트_정규클래스_취미반",
+      "title": "글라스아트 정규클래스 - 취미반",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_국립중앙박물관_투어",
+      "title": "국립중앙박물관 투어",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6513/6513-01-25090218-700x700.jpg",
+        "https://timeticket.co.kr/wys2/user_review/6513/img_1469759.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_레진아티스트의_작업실에서_배우는_문트레이_만들기_원데이클래스",
+      "title": "레진아티스트의 작업실에서 배우는 '문트레이' 만들기 원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7ffec9bab17248d4bf2e0555243056ff.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9c415d7bac0544d6998a96f955be01ea.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/081086498ed8488b8b141319a61b50af.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5cedafb9946d4fc48715c758201d0b2d.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/32b00f4fce5948cab94a41ac9c8f559a.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/24be6279b50b4c8d9788481271db416e.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b87af8756bf94bc7b64f404fb2b3dbc9.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ebcd27c1ba6b4c8b994711b44e5e0d90.png"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_꿈가득_도자기_테이블작업_초등반",
+      "title": "꿈가득 도자기 [테이블작업 초등반]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/95eec9de21d84d678d0f347047739eef.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_정동투어",
+      "title": "정동투어",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5200/5258/5258-01-2606211b-700x700.jpg",
+        "https://timeticket.co.kr/wys2/file_attach_thumb/2023/09/19/1695084615-65-0_wonbon_N_7_600x600_70_2.jpg"
+      ],
+      "failure": "http-403, http-403"
     },
     {
       "id": "class_핸드빌드_클래스_도자기_소주잔_세트_만들기",
@@ -104,103 +540,78 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_나도_가수다_논현동_보컬레슨_원데이_체험",
-      "title": "나도 가수다 ! 논현동 보컬레슨 원데이 체험",
+      "id": "class_르블루아뜰리에_도자기_베이직_원데이클래스",
+      "title": "르블루아뜰리에 도자기 베이직 원데이클래스",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/46496e633f6a431889e28496965cb5e1.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c58f068a9bd940f79a37fae8ac3ea50b.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1256a4b9386a47df92c358ee0b1e045e.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/56560d9d84374bd58ac742602a27fbf9.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e94a61698a4c4bc48fb8085b888a1432.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0983fd06615b4df3a7bd2fe5e66a77e5.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4bd8b3b2417840ddb6a87396d6ed7049.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8278afc8e7cf43588bfd5c5713482276.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4fc566f77c9441b68c7429d31a78a2aa.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_내_마음을_알고_싶어요_MMPI_2",
+      "title": "내 마음을 알고 싶어요(MMPI-2)",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c0f9fdd0e79d4cd388aafbc4c458a3ea.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5038126e2a5d4e26ba207e0a7d416b0d.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a63b5702fc57479e84a481b9c57a52d5.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5cf8a22e23bc4bcfae9f9eab58091b56.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a466b36b71434353a9ed3f78a8a51475.jpg"
       ],
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_모루동물인형만들기",
-      "title": "모루동물인형만들기",
+      "id": "museum_화성박물관_화성행궁_어린이_역사투어",
+      "title": "화성박물관&화성행궁 어린이 역사투어",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_국대와_함께_체스_마스터하기",
-      "title": "국대와 함께 체스 마스터하기!",
+      "id": "class_대구_아크릴화_원데이_클래스",
+      "title": "*[대구]아크릴화 원데이 클래스",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f4ac289210f240959a227f482f82217f.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_플루이드아트_원데이_클래스",
-      "title": "플루이드아트 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d2143c2b910247cd81d6693bd27ab58b.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d503f27c5be54513b092e7bbcc84b7e1.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/786a9b2991234b39ac4dd1ac6618d8e8.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ddb5d6b30dbd42f3b7fd58dd5221d137.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d0c7b49cd3c14b0abc77193f0976dd32.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d74b46dce5274fddb5c34c54c5549614.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3b1a579049c7424f9fb22d7ba7779e00.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f43c7a07aa7c447fa45e64cdff217d48.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "class_통기타_우쿨렐레_개인레슨_초보_대환영",
-      "title": "통기타 / 우쿨렐레 개인레슨!! 초보 대환영!!",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a465f454aff649659cf31501ac7c1e47.jpeg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_풍경화_원데이_클래스",
-      "title": "풍경화 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/adc37b29933b47b998896348ed1eb733.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d74b46dce5274fddb5c34c54c5549614.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0e5cf21485fb44968c8d0751d07f8d03.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/05a4e4999c474b2eb6849c8424155f43.jpg"
       ],
       "failure": "http-403, http-403"
     },
     {
-      "id": "class_공기정화_모스이끼_led액자_만들기",
-      "title": "공기정화 모스이끼 led액자 만들기",
+      "id": "museum_낙산_이화마을_야행",
+      "title": "낙산 이화마을 야행",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/09425226755d4de5ba571bd91f546cbd.jpg"
+        "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4400/4486/4486-01-260621e6-700x700.jpg",
+        "https://timeticket.co.kr/wys2/user_review/4486/img_892177.jpeg",
+        "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621550769-45-0_wonbon_N_7_600x600_70_2.jpg"
       ],
-      "failure": "http-403"
+      "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_나만의_모루팟_만들기",
-      "title": "나만의 모루팟 만들기",
+      "id": "museum_경복궁으로_떠나는_조선_한국사_초등_역사체험",
+      "title": "경복궁으로 떠나는 조선 한국사 초등 역사체험",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_룩스필라테스_성남은행점_그룹레슨_원데이_클래스",
-      "title": "룩스필라테스 성남은행점 그룹레슨 원데이 클래스",
+      "id": "class_귀염뽀짝_모루인형키링만들기_2개완성",
+      "title": "귀염뽀짝 모루인형키링만들기(2개완성)",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/86298c42923e4a6892e1bc62f086d274.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7c6b58986c2442e587891d84a8abc5bb.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0e8ba69587da4039bd7c842a1641830c.JPG"
       ],
-      "failure": "http-403"
+      "failure": "http-403, http-403"
     },
     {
-      "id": "perf_이것은_개념미술이_아니_다_서울_국립현대미술관_서울관_20260619",
-      "title": "이것은 개념미술이 (아니)다",
+      "id": "perf_과천관_40주년_프로젝트_빛의_상상들_경기_국립현대미술관_과천관_20260721",
+      "title": "과천관 40주년 프로젝트: 빛의 상상들",
       "source": "remote",
       "candidates": [
-        "https://www.culture.go.kr/upload/rdf/26/01/rdf_2026010821244317847.jpg"
+        "https://www.culture.go.kr/upload/rdf/26/01/rdf_2026010821244330374.jpg"
       ],
       "failure": "Input buffer contains unsupported image format"
     },
@@ -212,17 +623,144 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_탄산_바스붐_입욕제_만들기",
-      "title": "탄산 바스붐 입욕제 만들기",
+      "id": "class_투포켓_지갑_원데이클래스",
+      "title": "투포켓 지갑 원데이클래스",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a2888a1d2e324454b6a9cc64baddaf10.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a96328de4c78454eb22cc903b7fcf6be.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6e4dd91d527b473b8a4c93f0e9a47ebc.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2674437a3b2649848e23961f1a3b59ea.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4310bdee29c34f15a32eddffc574658b.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/dfa9c3416f0d484abf60fe1efea77918.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5363bae0951e482ab53e6c4e7204739a.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/06d664b4e3524571a197154f9edf1601.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e7553bb07daa4cb0a43ad7782e86bd34.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_부산성인피아노_부산피아노_사상피아노_주례피아노_사상음악학원_주례음악학원_1개월",
+      "title": "부산성인피아노/부산피아노/사상피아노/주례피아노/사상음악학원/주례음악학원 [1개월]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f45db64e3f1f4b13b8ab4f982ed87b60.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/88b3a629551f49e281a0090577a574db.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6e425b156a9240d3ab7138298805bfa9.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7eb936a14332422f8d7b12051455c0bf.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7e14e58a6c6e4634a307a7ed38863d01.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4b25caf6af0041a7b16d683ec7145b4a.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0c14420ead19417fb2807e8256771728.jpeg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "museum_저학년_전용_고려시대_보물찾기_역사탐험대_국립중앙박물관",
+      "title": "저학년 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_국립중앙박물관_삼국시대_초등저학년_Premium_역사탐험대_Season3",
+      "title": "국립중앙박물관 삼국시대 초등저학년 \"Premium\" 역사탐험대 Season3",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_국립중앙박물관_인문학산책1",
+      "title": "국립중앙박물관 인문학산책1",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6300/6361/6361-01-2606210f-700x700.jpg",
+        "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/23/1750663064-73-0_wonbon_N_7_600x600_70_2.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "museum_국립중앙박물관_인문학산책2",
+      "title": "국립중앙박물관 인문학산책2",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6300/6362/6362-01-26062127-700x700.jpg",
+        "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/23/1750663499-51-0_wonbon_N_7_600x600_70_2.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_도자기_1개월과정",
+      "title": "도자기 - 1개월과정",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e615b54e5b574b32860991c26344aaaa.jpg"
       ],
       "failure": "http-403"
     },
     {
-      "id": "museum_미취학_전용_고려시대_보물찾기_역사탐험대_국립중앙박물관",
-      "title": "미취학 전용! 고려시대 보물찾기 역사탐험대 - 국립중앙박물관",
+      "id": "museum_그리스로마_신화와_별자리를_한번에_알아보는_시간_8_10세",
+      "title": "그리스로마 신화와 별자리를 한번에 알아보는 시간! - (8 -10세)",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_6_8세_추천_대한독립만세_우리도_함께_외쳐봐요_서대문형무소역사관",
+      "title": "6-8세 추천! 대한독립만세! 우리도 함께 외쳐봐요! - 서대문형무소역사관",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_도자기_체험_핸드페인딩_접시_또는_컵_만들기_원데이_클래스",
+      "title": "도자기 체험 핸드페인딩 접시 또는 컵 만들기 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f97ed542757440f08920e6c7c7c3e922.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/05cff25583fa413baa76afbce1802219.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7027260959c444579de1043d639eaf6c.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e399fbcc20b84a18b8f12fbc541da874.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c1669d300cff48528a8538d445ad20a3.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/508fc0ecfb594d1c96ae761d460e77eb.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9d5c4ea758b14aaaabff2aa431bc68f1.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8f1aad44c5cf4f35a5625da9fbc825b5.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_감성_비누공방_CP_디자인_천연비누_원데이클래스",
+      "title": "감성 비누공방 CP 디자인 천연비누 원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/599a2be962b64c81b7f41ed4c6a9d014.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_플랜트_레터랙_만들기",
+      "title": "플랜트 레터랙 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/54eccb83841a42cb9c81fc82eb9a8fb8.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3fd3b1ebc4b1417ea80af96586c36913.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/39d95608849c469b8bfc862c0fb9d350.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5a955d28328b41ab90db5f6092304a6c.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/139fda3f6cdf4164b404a88d2d1d0fb1.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/47a9227c6652410b8209d4a36f857cdd.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/24f8c954d049478099229ad315ade7c8.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/caf6cafea1984524ab44ec4c1580b41f.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "museum_초등_고학년_전용_대한민국_근현대사_보물찾기_역사탐험대_대한민국역사박물관",
+      "title": "초등 고학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_경복궁_역사탐험대_초등_Premium_Season_2_8_13세",
+      "title": "경복궁 역사탐험대 초등 \"Premium\" Season 2 (8-13세)",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -244,533 +782,48 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_꾸덕꾸덕_유화_원데이_클래스_인스타_예약_인기폭발",
-      "title": "꾸덕꾸덕 유화 원데이 클래스 (인스타 예약 인기폭발!)",
+      "id": "class_가드닝_클래스_나만의_반려식물_키우기",
+      "title": "가드닝 클래스 - 나만의 반려식물 키우기",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/776ecdbb40b54e97b6f3d13eeed1f453.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2ff817dbdafb4133b749283deeaa7532.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c686d63b751c49cb9a0b45e772617689.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/022e2f64bc754973b8b539e30e4edcc9.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/cfa2f57b4f2d4b899ad5128a493bcd14.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1ef0c1a690754912b13755693c41e965.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c02485836bc6470bbf90eb60e98a37f1.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6ef2603a7488415181f80808dac14deb.jpeg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9989599500bf4a84a7e55c7b5ab55ae4.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/01f135d3ce42489f99b17c631f123990.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_멜팅쿠키3종_만들기_원데이_클래스_서울_이색_체험",
+      "title": "멜팅쿠키3종 만들기 원데이 클래스 서울 이색 체험",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5abb3ffbd088460d8c1e4e7303e4f803.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6fe7701aa45e4243bb4e79ac4c28898b.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ed9b5c1d2bfc496a83af4cf058d2c092.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0a29312fc8ea4e4e8b47ec4ae01b0ad5.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2307d9b64fcd4062ad2aa286657a83f0.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7af15de34bc44cc0b9c8e7bb63da8fa8.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d5c047145231490b94babce146383ca1.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b652f8dc7fb742c09a45e430d275023e.jpg"
       ],
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "museum_국립중앙박물관_인문학산책2",
-      "title": "국립중앙박물관 인문학산책2",
+      "id": "class_보컬핏_스튜디오_발성훈련_보컬스타일",
+      "title": "보컬핏 스튜디오 (발성훈련,보컬스타일)",
       "source": "remote",
       "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6300/6362/6362-01-26062127-700x700.jpg",
-        "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/23/1750663499-51-0_wonbon_N_7_600x600_70_2.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_드럼정규클래스",
-      "title": "드럼정규클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/50bd5be2fa4740fdbd42e968228a7a01.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a2bfdad8e4ec44e7bceba1cf2235af9c.jpeg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_국립중앙박물관_인문학산책1",
-      "title": "국립중앙박물관 인문학산책1",
-      "source": "remote",
-      "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6300/6361/6361-01-2606210f-700x700.jpg",
-        "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/23/1750663064-73-0_wonbon_N_7_600x600_70_2.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_3단_고급형_카드지갑_원데이클래스",
-      "title": "3단 고급형 카드지갑 원데이클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b6a22e63b255402a8de4b6b3200ee3e0.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e7553bb07daa4cb0a43ad7782e86bd34.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_드럼_원데이_클래스",
-      "title": "드럼 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d182fa15eb0f41f0a47767e549b2ce9d.PNG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/304efbc9310e40f398e673f80912a8a2.PNG"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_에코백_만들기_원데이_클래스",
-      "title": "에코백 만들기 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/28bc1ce731924987a4a1f7fe3ee86239.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d74b46dce5274fddb5c34c54c5549614.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_초등_수원화성_역사탐험대_수원화성_보고_나만의_성_설계하기_8_13세",
-      "title": "초등 수원화성 역사탐험대 - 수원화성 보고 나만의 성 설계하기 (8-13세)",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_반짝반짝_향기가득_보석방향제_만들기",
-      "title": "반짝반짝 향기가득 보석방향제 만들기",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f2ea839d29254838ae0182e2ebd6ba30.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7b3a2b2dbc084114b238175eae146815.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_국립중앙박물관_이슬람_미술_특별전",
-      "title": "국립중앙박물관 이슬람 미술 특별전",
-      "source": "remote",
-      "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6800/6854/6854-01-260119b3-700x700.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1ec8f321982d4ba49948c041e9ebecf8.jpeg"
       ],
       "failure": "http-403"
     },
     {
-      "id": "class_실생활에_필요한_전통보자기_포장_이색_원데이_클래스",
-      "title": "실생활에 필요한 전통보자기 포장 이색 원데이 클래스",
+      "id": "class_비건베이킹_1개월",
+      "title": "비건베이킹 [1개월]",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/bfcf1d7704dd492792b3fcb16e6cea9f.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6a4feb324d2d4dc8b6ace256e38c3b86.jpg"
       ],
       "failure": "http-403"
-    },
-    {
-      "id": "museum_경복궁_역사탐험대_초등_Premium_Season_2_8_13세",
-      "title": "경복궁 역사탐험대 초등 \"Premium\" Season 2 (8-13세)",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_보니따필라테스_그룹레슨_원데이_클래스",
-      "title": "보니따필라테스 그룹레슨 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/77022767b7d0487eb61bbe62cb04595f.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_6천원으로_만드는_선물용_아이스박스_케이크",
-      "title": "6천원으로 만드는 선물용 아이스박스 케이크!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_비즈_악세사리_원데이클래스",
-      "title": "비즈 악세사리 원데이클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3a7547cd79134991affea49dadee5d5c.png"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_나도_피아니스트_논현동_피아노레슨_원데이_체험",
-      "title": "나도 피아니스트 ! 논현동 피아노레슨 원데이 체험",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2c23d1c167bd4306bb8feeb3b80620f8.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_축가_취미반_전문가반_보컬개인레슨",
-      "title": "축가.취미반,전문가반 보컬개인레슨",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c999acbd2a72456291abee761ba757d0.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/819aa4e9994d41d19ab6a952e18d9d08.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_국립중앙박물관_원데이_도슨트_투어",
-      "title": "국립중앙박물관 원데이 도슨트 투어",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_헬스장_1일_체험권",
-      "title": "헬스장 1일 체험권",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/53040ab02cf644e8856e0a54a93403df.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/da7a3d938d8e45d0b39c032ff5baae18.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_귀염뽀짝_캔들_만들기_원데이_클래스",
-      "title": "귀염뽀짝 캔들 만들기 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/dffc0fe0428c490ab9c12da89d2213c8.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/52a4c596639047478baf0dbbd00d8d02.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0dc52b10f7374fe5add9b441a0fd9d24.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/af7863a76af04796be554851005d21a9.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d34cdbaf49dd495796a0f504618c4975.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d72c5ccf3c814800b21edec638be2e60.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e6ba471d9c9543adb8336dc7c3bd6b3a.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/19a195cb076d4e9a8a3f642983e65f06.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_국립중앙박물관_초등_한국사_4회_특강_역사_도슨트_체험_짱짱하게",
-      "title": "국립중앙박물관 초등 한국사 4회 특강 역사 도슨트 체험 짱짱하게!!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_기초탄탄_첼로클래스",
-      "title": "기초탄탄 첼로클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/60c6d390657b4bbc8ecb599ce4ac3d86.png"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_대기구_필라테스_자유수강권",
-      "title": "대기구 필라테스 자유수강권",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d6ee5a5dba244c86bbfc1e1fb5e7ab96.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/afce9ec8428c4c66a6ba41ab7a0e59f2.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ff69bbd82c354f0d83b954ecbcc4d3ad.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a08d39755dba40ec955a455758184020.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5bf7288e5ab140e1a3e79357530e151e.png",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/84aad1f2d7fe45e18f8f5fd50c973f0e.png",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/efc24b7c175b4aad81efeb9ca7fc7659.png",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2a5d7a5df73e4c5885b05370eafaccae.png"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "class_무전력_우드스피커_만들기_원데이_클래스_2구_원목",
-      "title": "무전력 우드스피커 만들기 원데이 클래스 / 2구 원목",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2d89563883f444e085d2092f0fecf152.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_플라워떡케이크_앙금플라워_떡케이크",
-      "title": "플라워떡케이크(앙금플라워,떡케이크)",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/654ff0580f7145f7b559ef129e784447.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_감성을_담은_프렌치_플라워_햇박스_만들기_클래스_이색_데이트",
-      "title": "감성을 담은 프렌치 플라워 햇박스 만들기 클래스 이색 데이트",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3a19229fdb7643dc9211bfbb10594302.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d520a2f27ab64c2ab56020d5e15c9f3a.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/98b036b600bc46ceb2c6ee2165ee99f5.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6b71b59a853e4748b52d63daf4ddb2c2.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/509cf86f37d84b75a1ee48b760bcf431.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/008200cd367c4afd828285b127685d6e.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e0b2613772184c03bcc93f44ee673a39.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d995929dd497485688133464acfcd539.jpeg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_항공과학탐험대_초등_국립항공박물관에서_항공기의_원리를_탐험해요",
-      "title": "항공과학탐험대 초등! 국립항공박물관에서 항공기의 원리를 탐험해요!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_국립민속박물관_세시풍속_초등저학년_역사탐험대_교과서_속_옛날_생활_이야기",
-      "title": "국립민속박물관 세시풍속 초등저학년 역사탐험대! 교과서 속 옛날 생활 이야기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_딸기품은찹쌀모찌_이",
-      "title": "딸기품은찹쌀모찌~~~이",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1e65d5fece394d70809e720d18ee369c.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_도자기_물레그릇_또는_오브제_물레2_소품2",
-      "title": "도자기, 물레그릇 또는 오브제(물레2+소품2)",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/664b4bcc6c364d7bab6530149e9fc04d.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c1669d300cff48528a8538d445ad20a3.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_정동투어",
-      "title": "정동투어",
-      "source": "remote",
-      "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/5000/5200/5258/5258-01-2606211b-700x700.jpg",
-        "https://timeticket.co.kr/wys2/file_attach_thumb/2023/09/19/1695084615-65-0_wonbon_N_7_600x600_70_2.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_초등_저학년_전용_대한민국_근현대사_보물찾기_역사탐험대_대한민국역사박물관",
-      "title": "초등 저학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_오산_원동_쿠나블라폴댄스",
-      "title": "오산 원동 쿠나블라폴댄스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/61287b5028c348e5b2b5dc2960a61177.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7a869c21249f415cb59b0428629632e3.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/59368ed9194b452faae8c7ac296bf8fa.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/80e428efddf44846beb8efaf5a330a5d.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c95ab0f806a24a9c9e64c60701f39b8f.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5602095e706046fca2cfcc123be51eed.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/46ebc32cd0ff467385733bb9f90d13dc.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2cb43cebcef84a7fbd5689fb61e2c4c9.jpeg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "class_부산_서면_전포사잇길_쌀머핀_콩가루세서미쌀머핀_단호박크림치즈쌀머핀",
-      "title": "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/affac80eacdc42549329b03a07a85dd6.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "perf_과천관_40주년_프로젝트_빛의_상상들_경기_국립현대미술관_과천관_20260721",
-      "title": "과천관 40주년 프로젝트: 빛의 상상들",
-      "source": "remote",
-      "candidates": [
-        "https://www.culture.go.kr/upload/rdf/26/01/rdf_2026010821244330374.jpg"
-      ],
-      "failure": "Input buffer contains unsupported image format"
-    },
-    {
-      "id": "museum_독립운동의_역사_자유를_위한_여정",
-      "title": "독립운동의 역사, 자유를 위한 여정",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_부산_플라워클래스원데이",
-      "title": "부산 플라워클래스원데이",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2297bdab10984321b80fa3748020df34.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_프라이빗_댄스_배우기_개인_그룹_단체",
-      "title": "프라이빗 / 댄스 배우기 (개인,그룹,단체)",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9c136cbcd58f426c9cfad91c68e27449.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/08b7f0d4791e4d92bc68225be53e57ea.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ba405f9280064061abbae08c96a1d598.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f1d09e23083c49f1bb3476f1e68de075.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/df415e31e81c4c83a29f32e545d9c6fd.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/76c35fb531a941d0bd0206d9723aef1a.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0ef2781876c14d7aadae17a4d0e0db09.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c15142b339bd4c06a2062532282449fb.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "class_강릉에서_4시간만에_뚝_딱_레진공예자격증_원데이클래스",
-      "title": "강릉에서 4시간만에 뚝!딱! 레진공예자격증 원데이클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e3b83b66dc3244bf87b2ab97807e8b82.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d5d19eeeb4044ee086ffd84927a4be2e.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_꽃다발_만들기_플라워_클래스",
-      "title": "꽃다발 만들기 플라워 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7c5cec21effb40578ee68542ee1901cd.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/66df5abd3b3348e39176ffb920843714.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_부산_쌀코코넛칩쿠키_2종_80개",
-      "title": "부산 쌀코코넛칩쿠키 2종-80개",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/93804b042e21477aab0742ddb5962fbf.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4bc82b1c9e154efb80741985424624c5.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/56a007ccecb0408cb571ed9ae6ecae5c.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d6c3c4042ed24f18938f850ec80caa88.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/03fbe02724254027a9152fbeeede03e2.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d5f68d2cc3874476af144037151e4936.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/bb8dc834fa4d460398dabddc080e73d9.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_화폐박물관_시즌2_미취학_경제탐험대_화폐경제로_배우는_수감각",
-      "title": "화폐박물관 시즌2 미취학 경제탐험대 - 화폐경제로 배우는 수감각",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_마크라메_월행어_만들기",
-      "title": "마크라메 월행어 만들기",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/caf6cafea1984524ab44ec4c1580b41f.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "museum_국립항공박물관_도슨트_투어",
-      "title": "국립항공박물관 도슨트 투어",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_나만의_악세사리_레진공예_원데이클래스",
-      "title": "나만의 악세사리 레진공예 원데이클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2366c9f0a0e94d0fa9483615ac312af0.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d5d19eeeb4044ee086ffd84927a4be2e.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_수채화_원데이_초급반",
-      "title": "수채화 원데이 초급반",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/06f6fbd9a1d94d98b3804f4c732a109f.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "museum_서울역사박물관_인문학산책",
-      "title": "서울역사박물관 인문학산책",
-      "source": "remote",
-      "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6300/6364/6364-01-26062146-700x700.jpg",
-        "https://timeticket.co.kr/wys2/file_attach_thumb/2025/06/23/1750664066-84-0_wonbon_N_7_600x600_70_2.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_화폐박물관_시즌2_초등_화폐경제탐험대_경제원리_알고_용돈_똑똑하게_쓰자",
-      "title": "화폐박물관 시즌2 초등 화폐경제탐험대 - 경제원리 알고, 용돈 똑똑하게 쓰자",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_2026년_1학년을_위한_쉬운_한국사_국립중앙박물관_역사_도슨트_투어",
-      "title": "2026년 1학년을 위한 쉬운 한국사, 국립중앙박물관 역사 도슨트 투어",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_부산_서면_전포동_플라워_취미반_1개월",
-      "title": "부산 / 서면 / 전포동 플라워 취미반 [1개월]",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e8112015209b4440b6b47ca8ebca398a.jpeg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "class_우유크림_카스테라_만들기_원데이_클래스",
-      "title": "우유크림 카스테라 만들기 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1d70d9fe7701454dac38e4ea33817663.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1675eff6f5a548a6971e67b6a8d46ee8.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/fad9fdb3e6a14fc58cb70d1ea7e2428e.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/19fcd7d91ddc48fb88967cdc33cfa832.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/35747bf3afb3494da1900c6277137c01.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/43b5273451444525a8d00bd0946b318d.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a491e4ecff204033b4fdfc2f1433b4e9.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_해지고_걷는_달빛_속_아이와함께_창경궁_투어",
-      "title": "해지고 걷는 달빛 속 아이와함께 창경궁 투어",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_곰돌이_마들렌_컵케이크",
-      "title": "곰돌이 마들렌 컵케이크",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_라라별찌_케이크_마카롱_캔들_클래스_이색_체험",
-      "title": "라라별찌 케이크+마카롱 캔들 클래스 이색 체험",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8dc22ccbf0574411aabc9ae96371a047.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8976baff9c114228a5035892eb876568.jpeg"
-      ],
-      "failure": "http-403, http-403"
     },
     {
       "id": "museum_핵심을_콕콕_집어주는_전쟁기념관_6_25_전쟁",
@@ -780,139 +833,68 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_감성_비누공방_CP_디자인_천연비누_원데이클래스",
-      "title": "감성 비누공방 CP 디자인 천연비누 원데이클래스",
+      "id": "class_3개월_소수정예_6_1_심박계_그룹PT",
+      "title": "3개월 소수정예 6:1 심박계 그룹PT",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/599a2be962b64c81b7f41ed4c6a9d014.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7ea12f9c75f248aaa9eabc3d88f869de.jpg"
       ],
       "failure": "http-403"
     },
     {
-      "id": "class_도자기_체험_핸드페인딩_접시_또는_컵_만들기_원데이_클래스",
-      "title": "도자기 체험 핸드페인딩 접시 또는 컵 만들기 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f97ed542757440f08920e6c7c7c3e922.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/05cff25583fa413baa76afbce1802219.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7027260959c444579de1043d639eaf6c.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e399fbcc20b84a18b8f12fbc541da874.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c1669d300cff48528a8538d445ad20a3.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/508fc0ecfb594d1c96ae761d460e77eb.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9d5c4ea758b14aaaabff2aa431bc68f1.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8f1aad44c5cf4f35a5625da9fbc825b5.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_국립중앙박물관_도슨트_투어_초등_고학년_성인",
-      "title": "국립중앙박물관 도슨트 투어(초등 고학년~성인)",
+      "id": "museum_정조와_함께_걷는_수원_화성_야간_성곽길_투어",
+      "title": "정조와 함께 걷는 수원 화성 야간 성곽길 투어",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_귀염뽀짝_모루인형키링만들기_2개완성",
-      "title": "귀염뽀짝 모루인형키링만들기(2개완성)",
+      "id": "class_파우치형_지갑_원데이클래스",
+      "title": "파우치형 지갑 원데이클래스",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7c6b58986c2442e587891d84a8abc5bb.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0e8ba69587da4039bd7c842a1641830c.JPG"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/18a922ad06e74794a5bce4fa68d30264.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e7553bb07daa4cb0a43ad7782e86bd34.jpg"
       ],
       "failure": "http-403, http-403"
     },
     {
-      "id": "class_내방의_작은바_칵테일캔들_딸기캔들만들기_원데이_클래스",
-      "title": "내방의 작은바 칵테일캔들,딸기캔들만들기 원데이 클래스",
+      "id": "class_1_1_기구필라테스_체험레슨",
+      "title": "1:1 기구필라테스 체험레슨",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2c1b847a03174769b483f78b565351f1.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f0a35773e133436b93dc9e392657d4dc.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/cdf8109c83ca49d6987613d3b8640e49.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/dabbfc3e7cdc43e182d093a8bb7961fc.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9cf4e283fbb24780a38fd0de433dc07a.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0e8ba69587da4039bd7c842a1641830c.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e895436a75e041f0b4bb14ec78702175.JPG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/aaeeb9b2ca344161a76c98e87dfca243.JPG"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/39830472776e4347bdd8e4d882b83c07.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0262ef1e63d74b6495baa822d85f6f48.jpg"
       ],
-      "failure": "http-403, http-403, http-403"
+      "failure": "http-403, http-403"
     },
     {
-      "id": "museum_예술인의_마을_서촌",
-      "title": "예술인의 마을 서촌",
+      "id": "class_벽걸이_버선만들기_원데이클래스",
+      "title": "벽걸이 버선만들기 원데이클래스:)",
       "source": "remote",
       "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4400/4490/4490-01-260621d3-700x700.jpg",
-        "https://timeticket.co.kr/wys2/user_review/4490/img_1309591.jpg",
-        "https://timeticket.co.kr/wys2/user_review/4490/img_773640.jpeg",
-        "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621550853-27-0_wonbon_N_7_600x600_70_2.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_작가탐험대_초등_책속에_풍덩_빠져보고_나만의_글도_써보는_시간",
-      "title": "작가탐험대 초등! 책속에 풍덩 빠져보고 나만의 글도 써보는 시간",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_당일수령_은점토로_조물조물_탄생석_반지_만들어요",
-      "title": "당일수령 은점토로 조물조물 탄생석 반지 만들어요!",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/37830379294149bdad15bfbadebbf6ed.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/816fea2c50c04d118db8f34c04305a8e.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/03040cf4ae734cb58f27eb5a48834cae.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e9a79658d46847698c3584bee7b3f289.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1dae062c354044cc8cfe8f6f33ca69d4.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e779e74e63724a1e978d5687e5c4098c.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b34ffaf83a524b018fc9cfa501a234e7.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/af0243531a2e43ce9e4f3bba108cd1fa.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_가족과_함께_그리스_로마전_도슨트_투어",
-      "title": "가족과 함께! 그리스 로마전 도슨트 투어",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_쌀스콘_2종_만들기_원데이_클래스",
-      "title": "쌀스콘 2종 만들기 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/250855f107b84a97ad87c28254ce2f73.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/67870003a7b44f2faec1a5b783889b91.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/154c922d126f47cea175f0762220bf35.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/51bc05008619486596e8dcc943051153.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/88432d9ac5cf4a7badf23f9ba0e3f214.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d1dc2a579089423fa05041ce5f61e2b5.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2be421e5d7784c8f86f81d9aefddee1b.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4559ff6ce96c42dfa5a59171566014fa.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "class_아메리카요가_석계점_플라잉_요가_일일_체험권",
-      "title": "아메리카요가 석계점 플라잉 요가 일일 체험권",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/463b05d840ec4ea9b2ac2a7dc8a58e9a.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/72664d770c1e43158141b17771cec292.jpeg"
       ],
       "failure": "http-403"
     },
     {
-      "id": "class_촉촉한_건강식_수제오란다_원데이클래스",
-      "title": "촉촉한 건강식 수제오란다 원데이클래스",
+      "id": "class_찰떡_스퀘어_설날_선물_원데이_이색_취미_데이트",
+      "title": "찰떡 스퀘어 설날 선물 원데이 이색 취미 데이트",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0b2459610883425d9354edc4e4fc5ce4.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a5ee7c45dc5841cb8609a53a08ae58a4.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13e00b1f232d4b0ca1844c1beb764f80.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg"
       ],
       "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_나만의_감성소품_라탄_동물_트레이_만들기",
+      "title": "나만의 감성소품, 라탄 동물 트레이 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1754a80c931e44148330efa88c58e300.jpg"
+      ],
+      "failure": "http-403"
     },
     {
       "id": "museum_국립중앙박물관_그리스_로마_특별전",
@@ -924,106 +906,97 @@
       "failure": "http-403"
     },
     {
-      "id": "museum_창경궁_여행",
-      "title": "창경궁 여행",
+      "id": "class_귀여운_미니_사각티_케이크_만들기_수업_이색_취미",
+      "title": "귀여운 미니 사각티 케이크 만들기 수업 이색 취미",
       "source": "remote",
       "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4700/4795/4795-01-2606219c-700x700.jpg",
-        "https://timeticket.co.kr/wys2/user_review/4795/img_1508294.jpg",
-        "https://timeticket.co.kr/wys2/user_review/4795/img_1307202.jpg",
-        "https://timeticket.co.kr/wys2/file_attach_thumb/2022/12/19/1671410240-73-0_wonbon_N_7_600x600_70_2.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/087ed6968ff340229957e66b5787cc55.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_댄스_개인레슨_그룹_레슨",
+      "title": "댄스 개인레슨 / 그룹 레슨",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0c6d56ebe4744267be66ff63e7a0063c.jpeg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_국가대표궁궐_경복궁",
+      "title": "국가대표궁궐 경복궁",
+      "source": "remote",
+      "candidates": [
+        "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4400/4487/4487-01-26062179-700x700.jpg",
+        "https://timeticket.co.kr/wys2/user_review/4487/img_1491395.jpg",
+        "https://timeticket.co.kr/wys2/user_review/4487/img_1362692.jpg",
+        "https://timeticket.co.kr/wys2/file_attach_thumb/2022/05/25/1653455629-98-0_wonbon_N_7_600x600_70_2.jpg"
       ],
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_앙금플라워케이크_한식디저트_원데이_초급반",
-      "title": "앙금플라워케이크[한식디저트] 원데이 초급반",
+      "id": "class_풍경화_원데이_클래스",
+      "title": "풍경화 원데이 클래스",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6e15efd5796f4dc8b500ef291634f641.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/dff54bd9557646d8b893f84dd2a7ec89.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/adc37b29933b47b998896348ed1eb733.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d74b46dce5274fddb5c34c54c5549614.jpg"
       ],
       "failure": "http-403, http-403"
     },
     {
-      "id": "museum_허준박물관_의학탐험대_미취학_전용_밥이_왜_보약이_되는지_알아보러가요",
-      "title": "허준박물관 의학탐험대 미취학 전용! 밥이 왜 보약이 되는지 알아보러가요!",
+      "id": "museum_초등_고학년_전용_조선시대_보물찾기_역사탐험대_국립중앙박물관",
+      "title": "초등 고학년 전용! 조선시대 보물찾기 역사탐험대 - 국립중앙박물관",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_국립중앙박물관_투어",
-      "title": "국립중앙박물관 투어",
+      "id": "class_인천_보컬_1_1_원데이클래스_선학역",
+      "title": "인천 보컬 1:1 원데이클래스 (선학역)",
       "source": "remote",
       "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/6000/6500/6513/6513-01-25090218-700x700.jpg",
-        "https://timeticket.co.kr/wys2/user_review/6513/img_1469759.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_오일_파스텔화와_여유_한잔_드로잉_클래스",
-      "title": "오일 파스텔화와 여유 한잔 드로잉 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9c9854b201954aea9f5f24fbb9542868.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/239698ffaf24412584e2fc8a3a7bd9d0.jpg"
       ],
       "failure": "http-403"
     },
     {
-      "id": "class_레진아트_창업반_수료증과정",
-      "title": "레진아트 창업반 수료증과정",
+      "id": "class_일산_화정_퍼퓸클래스_Perfume_Class",
+      "title": "일산.화정)퍼퓸클래스 ( Perfume Class)",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/49a10af73b1a4e10a7889cf4a78c9602.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ab79b662e90b40bda3b03024fe98ca57.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/05e84ac4790f4c2da38041a2091974a8.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/cec4c2263ced45f4bc654160684a7ef5.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5b491d0d24274f31855f0e2c4aa73d5d.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/964ce7c19d4748ae92f3874c6ad9f2cc.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/009f94a5a36c4a8199dec56c5a6e69eb.jpeg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_낙산_이화마을_야행",
-      "title": "낙산 이화마을 야행",
-      "source": "remote",
-      "candidates": [
-        "https://timeticket.co.kr/wys2/file_attach_thumb/4000/4400/4486/4486-01-260621e6-700x700.jpg",
-        "https://timeticket.co.kr/wys2/user_review/4486/img_892177.jpeg",
-        "https://timeticket.co.kr/wys2/file_attach_thumb/2021/05/21/1621550769-45-0_wonbon_N_7_600x600_70_2.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "perf_서도호_서울_국립현대미술관_서울관_20260828",
-      "title": "서도호",
-      "source": "remote",
-      "candidates": [
-        "https://www.culture.go.kr/upload/rdf/26/01/rdf_2026012221251390555.jpg"
-      ],
-      "failure": "Input buffer contains unsupported image format"
-    },
-    {
-      "id": "class_보이즈인더후드_4회_레슨권",
-      "title": "보이즈인더후드 4회 레슨권",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d59478622a834138aaae4a33b3d33720.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a7943a22b3c744128bce980382f3779b.jpeg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a0abd708f7324bf6a27fc2a49f558ebc.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/fa8e248c98e2447eb3c822a2c08055bd.jpg"
       ],
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_MMCA_LG_OLED_시리즈_2026_서울_국립현대미술관_서울관_20260731",
-      "title": "MMCA×LG OLED 시리즈 2026",
+      "id": "class_비기너_대환영_KPOP_걸스힙합_2시간만에_뽀개기",
+      "title": "♥비기너 대환영♥ KPOP,걸스힙합 2시간만에 뽀개기☆",
       "source": "remote",
       "candidates": [
-        "https://www.culture.go.kr/upload/rdf/26/01/rdf_2026010821244340808.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3ed81eb0300e45e8a1296039dd0bc609.jpg"
       ],
-      "failure": "Input buffer contains unsupported image format"
+      "failure": "http-403"
+    },
+    {
+      "id": "class_돼지떡바_트리앙금쿠키만들기",
+      "title": "돼지떡바+트리앙금쿠키만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/005f7379ba4e48af871814d575db2125.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_커플_폴댄스_원데이_클래스",
+      "title": "커플 폴댄스(원데이 클래스)",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e6205008806a497faae54317846530d3.jpg"
+      ],
+      "failure": "http-403"
     }
   ],
   "pendingSamples": []

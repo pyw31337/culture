@@ -65451,9 +65451,9 @@
     "theaterCount": "1",
     "openedAt": "1997",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "진해문화센터 (진해구민회관)": {
     "name": "진해문화센터 (진해구민회관)",
@@ -67272,7 +67272,7 @@
     "lng": 129.1151526,
     "district": "",
     "phone": "033-530-2115",
-    "homepage": "http://www.dh.go.kr/pages/sub.htm?nav_code=dh1479357774",
+    "homepage": "https://dh.go.kr/www/selectWebSchdulListCal.do?key=1712",
     "facilityType": "공공(문예회관)",
     "seatScale": "1753",
     "theaterCount": "3",
@@ -67281,9 +67281,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "5.18기념문화센터": {
     "name": "5.18기념문화센터",
@@ -80827,7 +80827,7 @@
   },
   "보성군문화예술회관": {
     "name": "보성군문화예술회관",
-    "address": "전라남도 보성군 보성읍 송재로 281-9",
+    "address": "전남광주통합특별시 보성군 보성읍 송재로 281-9",
     "lat": 34.7778023,
     "lng": 127.08806579999998,
     "district": "",
@@ -105642,9 +105642,9 @@
     "lng": 128.74785610000004,
     "district": "",
     "phone": "053-804-7243",
-    "homepage": "http://www.gyeongsan.go.kr/special/civic/index.do",
+    "homepage": "https://gsctf.or.kr/user/foundation/facility_view/1",
     "facilityType": "공공(문예회관)",
-    "seatScale": "730",
+    "seatScale": "646",
     "theaterCount": "1",
     "openedAt": "1996",
     "amenities": [
@@ -118867,6 +118867,86 @@
   "모카클래스 (이시)": {
     "name": "모카클래스 (이시)",
     "address": "이시은",
+    "district": ""
+  },
+  "모이장": {
+    "name": "모이장",
+    "address": "전북특별자치도 전주시 완산구 풍남문1길 9-5 (전동)",
+    "lat": 35.811938,
+    "lng": 127.147864,
+    "district": "",
+    "facilityType": "공공(기타)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
+  },
+  "탐즈커피 [천안]": {
+    "name": "탐즈커피 [천안]",
+    "address": "충청남도 천안시 동남구 대흥로 339 (신부동)",
+    "lat": 36.818088,
+    "lng": 127.151408,
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "이리기쁨의교회": {
+    "name": "이리기쁨의교회",
+    "address": "전북특별자치도 익산시 선화로6길 39 (모현동1가)",
+    "lat": 35.947604,
+    "lng": 126.935635,
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "1200",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "클럽 에반스": {
+    "name": "클럽 에반스",
+    "address": "서울특별시 마포구 와우산로 63 (서교동)",
+    "lat": 37.550267,
+    "lng": 126.922889,
+    "district": "마포구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "20",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "어썸그라운드 재즈바": {
+    "name": "어썸그라운드 재즈바",
+    "address": "서울특별시 용산구 한강대로 258 (남영동)",
+    "lat": 37.541433,
+    "lng": 126.973245,
+    "district": "용산구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "KYOCERA DOME OSAKA": {
+    "name": "KYOCERA DOME OSAKA",
+    "address": "정보 없음",
     "district": ""
   }
 }
