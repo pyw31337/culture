@@ -25796,5 +25796,33 @@
     "awayTeam": "NC9",
     "homeTeamLogo": "",
     "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20261011_KT12_vs_3삼성",
+    "title": "KT12 vs 3삼성",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-10-11 14:00",
+    "venue": "대구삼성라이온즈파크",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "daegu",
+    "genre": "baseball",
+    "homeTeam": "3삼성",
+    "awayTeam": "KT12",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
+  },
+  {
+    "id": "kbo_20261011_롯데4_vs_1KIA",
+    "title": "롯데4 vs 1KIA",
+    "image": "/images/kbo-thumbnail.png",
+    "date": "2026-10-11 14:00",
+    "venue": "광주기아챔피언스필드",
+    "link": "https://www.koreabaseball.com/Schedule/Schedule.aspx",
+    "region": "gwangju",
+    "genre": "baseball",
+    "homeTeam": "1KIA",
+    "awayTeam": "롯데4",
+    "homeTeamLogo": "",
+    "awayTeamLogo": ""
   }
 ]
