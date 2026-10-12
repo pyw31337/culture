@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-08-26T01:18:05.231Z",
-  "itemCount": 8157,
+  "checkedAt": "2026-10-12T08:20:59.464Z",
+  "itemCount": 9831,
   "status": "warn",
   "metrics": {
     "missingLocalImageCount": 0,
-    "placeholderImageCount": 785,
-    "placeholderImageRate": 0.0962,
+    "placeholderImageCount": 1013,
+    "placeholderImageRate": 0.103,
     "duplicatedDescriptionCount": 93,
     "missingSourceDateCount": 0,
     "suspiciousVenueAddressCount": 0,
@@ -16,266 +16,266 @@
     "missingLocalImages": [],
     "placeholderImages": [
       {
-        "id": "baseball_20260826_한화_vs_SSG",
-        "title": "한화 vs SSG",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260826_롯데_vs_KIA",
-        "title": "롯데 vs KIA",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "basketball_20260924_대구_한국가스공사_vs_울산_현대모비스",
-        "title": "대구 한국가스공사 vs 울산 현대모비스",
-        "genre": "basketball",
-        "source": "basketball",
-        "image": ""
-      },
-      {
-        "id": "basketball_20260924_원주_DB_vs_서울_삼성",
-        "title": "원주 DB vs 서울 삼성",
-        "genre": "basketball",
-        "source": "basketball",
-        "image": ""
-      },
-      {
-        "id": "basketball_20260924_고양_소노_vs_서울_SK",
-        "title": "고양 소노 vs 서울 SK",
-        "genre": "basketball",
-        "source": "basketball",
-        "image": ""
-      },
-      {
-        "id": "volleyball_20261031_점보스_vs_스카이워커스",
-        "title": "점보스 vs 스카이워커스",
-        "genre": "volleyball",
-        "source": "volleyball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260826_두산_vs_KT",
-        "title": "두산 vs KT",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260826_NC_vs_LG",
-        "title": "NC vs LG",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260826_삼성_vs_키움",
-        "title": "삼성 vs 키움",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "movie_47년_7개월_어느_여교수의_외출",
-        "title": "47년 7개월 어느 여교수의 외출",
-        "genre": "movie",
-        "source": "movie",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260827_NC_vs_LG",
-        "title": "NC vs LG",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260827_삼성_vs_키움",
-        "title": "삼성 vs 키움",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260827_롯데_vs_KIA",
-        "title": "롯데 vs KIA",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260827_한화_vs_SSG",
-        "title": "한화 vs SSG",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "baseball_20260827_두산_vs_KT",
-        "title": "두산 vs KT",
-        "genre": "baseball",
-        "source": "baseball",
-        "image": ""
-      },
-      {
-        "id": "perf_동대문구_맥주축제",
-        "title": "동대문구 맥주축제",
+        "id": "perf_흥미진진_사자를_만나다_청호동_아바이마을_20261012",
+        "title": "흥미진진! 사자를 만나다",
         "genre": "exhibition",
-        "source": "festival",
+        "source": "heritage",
         "image": ""
       },
       {
-        "id": "perf_장항_맥문동_꽃_축제",
-        "title": "장항 맥문동 꽃 축제",
+        "id": "museum_도시농부학교",
+        "title": "도시농부학교",
+        "genre": "museum",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_미션_명성황후를_지켜라_양주매곡리고택_20261014",
+        "title": "미션, 명성황후를 지켜라",
         "genre": "exhibition",
-        "source": "festival",
+        "source": "heritage",
         "image": ""
       },
       {
-        "id": "perf_국토정중앙_청춘양구_배꼽축제",
-        "title": "국토정중앙 청춘양구 배꼽축제",
+        "id": "museum_소년_위정척사_스카우트",
+        "title": "소년 위정척사(衛正斥邪) 스카우트",
+        "genre": "museum",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "museum_양천로드_도슨트",
+        "title": "양천로드 도슨트",
+        "genre": "museum",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_스토리텔링으로_되살아나는_서창_국가유산_축제_서창나루_일원_20261015",
+        "title": "스토리텔링으로 되살아나는 서창 “국가유산 축제”",
         "genre": "exhibition",
-        "source": "festival",
+        "source": "heritage",
         "image": ""
       },
       {
-        "id": "perf_유성재즈_맥주페스타",
-        "title": "유성재즈&맥주페스타",
+        "id": "perf_칠장사에서_보물찾기_칠장사_20261012",
+        "title": "칠장사에서 보물찾기",
         "genre": "exhibition",
-        "source": "festival",
+        "source": "heritage",
         "image": ""
       },
       {
-        "id": "baseball_20260828_NC_vs_한화",
-        "title": "NC vs 한화",
-        "genre": "baseball",
-        "source": "baseball",
+        "id": "perf_인의예지_놀이마당_나주향교_일대_20261012",
+        "title": "인의예지 놀이마당",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261012",
+        "title": "전통을 잇고 인성을 키우다",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_으랏차차서원마을_신항서원_20261012",
+        "title": "으랏차차서원마을",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_나의_고택_나의_이야기_3D_미니터처_만들기_창평장전이씨고택_20261012",
+        "title": "나의 고택, 나의 이야기:3D 미니터처 만들기",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_세종대왕의_비밀기지_광흥사_20261012",
+        "title": "세종대왕의 비밀기지",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_사람다운_사람_자연과_함께하는_인성예절학교_청주향교_20261013",
+        "title": "사람다운 사람, 자연과 함께하는 인성예절학교",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_다함께_인문학당_사천향교_20261013",
+        "title": "다함께, 인문학당",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_주심포_공포_결구로_짓다_수덕사_근역성보관_20261013",
+        "title": "주심포 공포, 결구로 짓다",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_구급_퀴즈_미션_충청북도_음성군_20261013",
+        "title": "구급! 퀴즈 미션!",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261013",
+        "title": "빛, 생명을 처방하다",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_성지로드_숨은_김대건을_찾아라_당진_솔뫼성지_일원_20261013",
+        "title": "성지로드, 숨은 김대건을 찾아라!",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_향교로_마실가자_정선향교_20261013",
+        "title": "향교로 마실가자",
+        "genre": "exhibition",
+        "source": "heritage",
+        "image": ""
+      },
+      {
+        "id": "perf_간송매듭_종부의_손길로_마음을_맺다_간송옛집_20261013",
+        "title": "간송매듭, 종부의 손길로 마음을 맺다!",
+        "genre": "exhibition",
+        "source": "heritage",
         "image": ""
       }
     ],
     "duplicatedDescriptions": [
       {
-        "id": "perf_2026_시그니처대전_콘서트_오페라_피가로의_결혼_대전",
-        "title": "2026 시그니처대전_콘서트 오페라 ［피가로의 결혼］-대전",
-        "genre": "classic_tradition",
+        "id": "perf_연극_식당_매일이_크리스마스_남극장_20261014",
+        "title": "연극 식당 : 매일이 크리스마스",
+        "genre": "play",
+        "similarity": 0.5
+      },
+      {
+        "id": "perf_안애순_컴퍼니_춤이_말하다_문소리_리아킴_꿈빛극장_20261016",
+        "title": "안애순 컴퍼니〈춤이 말하다: 문소리×리아킴〉",
+        "genre": "concert",
         "similarity": 0.49
       },
       {
-        "id": "perf_2026_어린이_베스트셀러_뮤지컬_사과가쿵_고양",
-        "title": "2026 어린이 베스트셀러 뮤지컬 〈사과가쿵!〉 - 고양",
+        "id": "perf_송승환의_가족뮤지컬_더_스토리_오브_언더더씨_평택_평택아트센터_대공연장_20261017",
+        "title": "송승환의 가족뮤지컬 〈더 스토리 오브 언더더씨〉 - 평택",
         "genre": "musical",
-        "similarity": 0.52
+        "similarity": 0.45
       },
       {
-        "id": "perf_2026_김종서_전국투어_콘서트_모두의_김종서_광주",
-        "title": "2026 김종서 전국투어 콘서트 : 모두의 김종서 - 광주",
+        "id": "perf_뮤지컬_싯다르타_Musical_Siddhartha_대구_계명아트센터_20261017",
+        "title": "뮤지컬 싯다르타(Musical Siddhartha) - 대구",
+        "genre": "musical",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_얼리버드_스페인_미술_거장전_피카소_미로_달리_고양시립_아람미술관_20261021",
+        "title": "［얼리버드］ 스페인 미술 거장전 - 피카소, 미로, 달리",
+        "genre": "exhibition",
+        "similarity": 0.53
+      },
+      {
+        "id": "perf_가족뮤지컬_뽀로로와_타요_올스타_어드벤처_수원_경기아트센터_대극장_20261024",
+        "title": "가족뮤지컬 〈뽀로로와 타요 : 올스타 어드벤처〉 - 수원",
+        "genre": "musical",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_NEXZ_1ST_ASIA_TOUR_SAUCIN_THE_WORLD_올림픽공원_올림픽홀_20261017",
+        "title": "NEXZ 1ST ASIA TOUR 〈SAUCIN’ THE WORLD〉",
         "genre": "concert",
         "similarity": 0.47
       },
       {
-        "id": "perf_김시라의_품바_Original_광주",
-        "title": "［김시라의 품바 : Original］ - 광주",
-        "genre": "play",
-        "similarity": 0.45
-      },
-      {
-        "id": "perf_조영남_전국투어_콘서트_조영남이_죽기_전에_하고_싶은_이야기_광주",
-        "title": "조영남 전국투어 콘서트 : 조영남이 죽기 전에 하고 싶은 이야기 - 광주",
+        "id": "perf_2026_소수빈_단독공연_늘_그래왔던_것처럼_앞으로도_올림픽공원_올림픽홀_20261024",
+        "title": "2026 소수빈 단독공연 〈늘 그래왔던 것처럼 앞으로도〉",
         "genre": "concert",
-        "similarity": 0.46
+        "similarity": 0.47
       },
       {
-        "id": "perf_연극_럭키_전당포_2026_심야N연극제_광주",
-        "title": "연극 〈럭키! 전당포〉 2026 심야N연극제 - 광주",
+        "id": "perf_연극_사막에도_가끔_비가_내립니다_근데_이제_줌바를_곁들인_예그린씨어터_20261002",
+        "title": "연극 〈사막에도 가끔 비가 내립니다(근데 이제 줌바를 곁들인)〉",
+        "genre": "play",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_코믹추리극_범인의_조건_북극곰_소극장_20261001",
+        "title": "코믹추리극 〈범인의 조건〉",
         "genre": "play",
         "similarity": 0.47
       },
       {
-        "id": "perf_입장권_2026_송도맥주축제_환상의_나라_비어랜드_일자지정",
-        "title": "［입장권］ 2026 송도맥주축제: 환상의 나라 비어랜드(일자지정)",
-        "genre": "exhibition",
-        "similarity": 0.47
-      },
-      {
-        "id": "perf_VIP_2026_송도맥주축제_환상의_나라_비어랜드",
-        "title": "［VIP］ 2026 송도맥주축제: 환상의 나라 비어랜드",
-        "genre": "exhibition",
-        "similarity": 0.47
-      },
-      {
-        "id": "perf_관객_20만돌파기념_슈퍼위크_베베핀_뮤지컬_두근두근_새친구_극장_용",
-        "title": "［관객 20만돌파기념 슈퍼위크］ 베베핀 뮤지컬 〈두근두근 새친구〉 - 극장 용",
+        "id": "perf_2026뮤지컬_미드나잇_액터뮤지션_THE_CHOICE_비지정석_NOL_유니플렉스_3관_20260813",
+        "title": "2026뮤지컬 〈미드나잇:액터뮤지션〉 - THE CHOICE 비지정석",
         "genre": "musical",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_뮤지컬_드라큘라_Dracula_The_Musical_대구_계명아트센터_20261027",
+        "title": "뮤지컬 드라큘라 (Dracula：The Musical) - 대구",
+        "genre": "musical",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_뱅크시특별전_뱅크시_Still_Here_더현대서울_6층_ALT_1_20260722",
+        "title": "［뱅크시특별전］ 뱅크시 : Still Here",
+        "genre": "exhibition",
         "similarity": 0.48
       },
       {
-        "id": "perf_경주가볼만한곳_라원_미디어아트_복합문화정원",
-        "title": "［경주가볼만한곳］ 라원 미디어아트 복합문화정원",
+        "id": "perf_유영국_산은_내_안에_있다_한정판_굿즈_오디오_가이드_선공개_서울시립미술관_서소문본관_1층_20260519",
+        "title": "《유영국: 산은 내 안에 있다》한정판 굿즈 ＋ 오디오 가이드 선공개",
         "genre": "exhibition",
-        "similarity": 0.51
+        "similarity": 0.48
       },
       {
-        "id": "perf_2026_가족_라이브_뮤지컬_신데렐라_고양",
-        "title": "2026 가족 라이브 뮤지컬 〈신데렐라〉 - 고양",
+        "id": "perf_2026_베스트셀러_어린이_뮤지컬_사과가_쿵_세종시_BOK아트센터_20261030",
+        "title": "2026 베스트셀러 어린이 뮤지컬〈사과가 쿵〉 - 세종시",
         "genre": "musical",
-        "similarity": 0.49
+        "similarity": 0.53
       },
       {
-        "id": "perf_뮤지컬_최고다_호기심딱지_시즌4_우리_몸은_우리가_지킨다_용인",
-        "title": "뮤지컬 최고다 호기심딱지 시즌4 〈우리 몸은 우리가 지킨다!〉 - 용인",
+        "id": "perf_2026_도담도담누리_패키지",
+        "title": "2026 도담도담누리 패키지",
+        "genre": "activity",
+        "similarity": 0.45
+      },
+      {
+        "id": "perf_2026_박창근_소극장_콘서트_이_계절에_스미다_흰물결아트센터_화이트홀_20261030",
+        "title": "〈2026 박창근 소극장 콘서트 - 이 계절에 스미다〉",
+        "genre": "concert",
+        "similarity": 0.48
+      },
+      {
+        "id": "perf_2026_양파_오케스트라_콘서트_동행_연세대학교_백주년기념관_콘서트홀_20261031",
+        "title": "2026 양파 오케스트라 콘서트 〈동행(同行)〉",
+        "genre": "concert",
+        "similarity": 0.47
+      },
+      {
+        "id": "perf_아산_까블랑_키즈카페_이용권",
+        "title": "［아산］ 까블랑 키즈카페 이용권",
+        "genre": "activity",
+        "similarity": 0.5
+      },
+      {
+        "id": "perf_뮤지컬_김종욱_찾기_대학로_틴틴홀_20260307",
+        "title": "뮤지컬 〈김종욱 찾기〉",
         "genre": "musical",
         "similarity": 0.46
-      },
-      {
-        "id": "perf_2026_라이브_가족뮤지컬_알라딘_서울_영등포",
-        "title": "2026 라이브 가족뮤지컬 〈알라딘〉 - 서울(영등포)",
-        "genre": "musical",
-        "similarity": 0.45
-      },
-      {
-        "id": "perf_상시_키자니아_서울점_8월_이용권_유효기간_8_1_8_31",
-        "title": "［상시］ 키자니아 서울점 8월 이용권 (유효기간 : 8/1~8/31)",
-        "genre": "activity",
-        "similarity": 0.45
-      },
-      {
-        "id": "perf_경기_시흥_웨이브파크_서프존_7_4_8_30",
-        "title": "［경기 시흥］ 웨이브파크 서프존 (7/4~8/30)",
-        "genre": "activity",
-        "similarity": 0.51
-      },
-      {
-        "id": "perf_안성팜랜드_입장권_6_8_8_31",
-        "title": "안성팜랜드 입장권(6/8~8/31)",
-        "genre": "activity",
-        "similarity": 0.49
-      },
-      {
-        "id": "perf_안성팜랜드_입장권_승마_패키지_6_8_8_31_이용_가능",
-        "title": "안성팜랜드 입장권 + 승마 패키지(6/8~8/31 이용 가능)",
-        "genre": "activity",
-        "similarity": 0.52
-      },
-      {
-        "id": "perf_대전_오월드_자유이용권",
-        "title": "［대전］ 오월드 자유이용권",
-        "genre": "activity",
-        "similarity": 0.48
-      },
-      {
-        "id": "perf_경주_동궁원",
-        "title": "［경주］ 동궁원",
-        "genre": "activity",
-        "similarity": 0.47
-      },
-      {
-        "id": "perf_이머시브_뮤지컬_좀비",
-        "title": "이머시브 뮤지컬 〈좀비〉",
-        "genre": "musical",
-        "similarity": 0.48
       }
     ],
     "missingSourceDates": [],

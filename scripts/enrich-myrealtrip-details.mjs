@@ -185,9 +185,10 @@ async function worker(items, indexRef, stats) {
             const detail = await fetchDetail(item.link);
             const existingImages = Array.isArray(item.synopsisImages) ? item.synopsisImages : [];
             const mergedImages = unique([...(detail.synopsisImages || []), ...existingImages]).slice(0, 12);
+            const resolvedImage = detail.image || item.image || '';
             Object.assign(item, {
-                image: detail.image || item.image,
-                backupPoster: item.backupPoster || item.image,
+                image: resolvedImage,
+                backupPoster: item.backupPoster || resolvedImage,
                 synopsisImages: mergedImages,
                 description: detail.description || item.description,
                 bookingNotice: detail.bookingNotice || item.bookingNotice,

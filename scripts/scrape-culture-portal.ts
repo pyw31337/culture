@@ -210,6 +210,33 @@ async function enrichDetails(item: CulturePerformance): Promise<CulturePerforman
             item.bookingLink = goLinkStr;
         }
 
+        // 5. Poster / Detail Image
+        if (!item.image || item.image.trim() === '' || /fallback|\.svg/i.test(item.image)) {
+            const ogImage = $('meta[property="og:image"], meta[name="og:image"]').attr('content');
+            if (ogImage && /^https?:\/\//i.test(ogImage) && !/logo|icon|blank/i.test(ogImage)) {
+                item.image = ogImage;
+            } else {
+                const imgCandidates = $('img[src*="/attachFiles/"], .view_img img, .board_view img, .view_con img, .view-detail img')
+                    .map((_, el) => $(el).attr('src') || $(el).attr('data-src'))
+                    .get()
+                    .filter((src): src is string => Boolean(src && !/logo|icon|share|footer|btn|arrow|wa_mark/i.test(src)));
+                
+                if (imgCandidates.length > 0) {
+                    const firstImg = imgCandidates[0];
+                    if (firstImg.startsWith('http')) {
+                        item.image = firstImg;
+                    } else if (firstImg.startsWith('/') && item.link) {
+                        try {
+                            const baseUrl = new URL(item.link);
+                            item.image = `${baseUrl.origin}${firstImg}`;
+                        } catch {
+                            item.image = `https://www.mcst.go.kr${firstImg}`;
+                        }
+                    }
+                }
+            }
+        }
+
     } catch (e: any) {
         console.warn(`[WARN] Failed to enrich details for ${item.link}: ${e.message}`);
     }
@@ -305,11 +332,12 @@ async function scrapeCulturePortal() {
 
                 let perf = existingMap.get(sourceKey);
 
+                const apiImage = item.imageObject || item.thumbnail || item.imgUrl || item.referenceIdentifier || item.fileUrl || '';
                 if (!perf) {
                     perf = {
                         id: stableId(title, normalizedDate, item.url || ''),
                         title: title,
-                        image: item.imageObject || '',
+                        image: apiImage,
                         date: normalizedDate,
                         venue: rawVenue,
                         link: item.url || '',
@@ -322,7 +350,7 @@ async function scrapeCulturePortal() {
                     perf = {
                         ...perf,
                         title,
-                        image: item.imageObject || perf.image || '',
+                        image: apiImage || perf.image || '',
                         date: normalizedDate,
                         venue: rawVenue || perf.venue,
                         link: item.url || perf.link || '',

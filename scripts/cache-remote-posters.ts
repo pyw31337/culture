@@ -7,6 +7,7 @@ import pLimit from 'p-limit';
 import {
   collectPosterUrls,
   isLocalPosterUrl,
+  isRemotePosterUrl,
   isPerformanceRecord,
   isPosterAuditedDataFile,
   normalizeRemotePosterUrl,
@@ -356,20 +357,20 @@ function applyPosterOutcome(record: PosterRecord, outcome: PosterOutcome, checke
   next.posterStatus = outcome.status;
   next.posterCheckedAt = checkedAt;
 
+  const remoteCandidate = outcome.sourceUrls.find(u => isRemotePosterUrl(u)) || '';
+
   if (outcome.status === 'verified' && outcome.localUrl) {
-    // A verified local copy is canonical. Replacing every display fallback
-    // prevents the client from reviving a stale remote URL later.
     next.image = outcome.localUrl;
     next.poster = outcome.localUrl;
     next.posterUrl = outcome.localUrl;
-    next.backupPoster = outcome.localUrl;
+    // Retain original remote URL in backupPoster so builds/clients without local assets can always resolve the image
+    next.backupPoster = remoteCandidate || outcome.localUrl;
   } else {
-    // Keep source candidates for the next retry, but never expose a known-
-    // broken remote URL to the browser.
-    next.image = '';
-    next.poster = '';
-    next.posterUrl = '';
-    next.backupPoster = '';
+    // Preserve remote candidate rather than wiping out posters when caching is deferred or pending
+    next.image = remoteCandidate;
+    next.poster = remoteCandidate;
+    next.posterUrl = remoteCandidate;
+    next.backupPoster = remoteCandidate;
   }
 
   return JSON.stringify(record) !== previous;

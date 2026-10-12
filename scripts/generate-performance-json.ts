@@ -708,13 +708,40 @@ function isBrokenLocalAssetPath(assetPath?: string) {
 }
 
 function getRemoteImageCandidate(performance: Performance) {
-    const candidates = [performance.backupPoster, performance.posterUrl, performance.image];
-    return candidates.find((candidate) => typeof candidate === 'string' && candidate.startsWith('http'));
+    const posterSources = Array.isArray((performance as any).posterSourceUrls) ? (performance as any).posterSourceUrls : [];
+    const synopsis = Array.isArray((performance as any).synopsisImages) ? (performance as any).synopsisImages : [];
+    const stills = Array.isArray((performance as any).stillImages) ? (performance as any).stillImages : [];
+    const candidates = [
+        performance.backupPoster,
+        performance.posterUrl,
+        performance.image,
+        ...posterSources,
+        ...synopsis,
+        ...stills
+    ];
+    const valid = candidates.find((candidate) => (
+        typeof candidate === 'string' &&
+        candidate.startsWith('http') &&
+        !/fallbacks\/|\.svg$/i.test(candidate) &&
+        !/placeholder|default[-_ ]?poster|no[-_ ]?image|no[-_ ]?img|no_poster|empty[-_ ]?image|blank\.gif|none\.png/i.test(candidate) &&
+        !/https_p\.gif|\/large\/ht\//i.test(candidate)
+    ));
+    if (valid) return valid;
+
+    // Direct recovery for Interpark items via goodsCode in link or website
+    const linkStr = String(performance.link || performance.website || '');
+    const match = linkStr.match(/(?:\/goods\/|[?&]goodscode=)([A-Za-z0-9]{6,12})(?=[/?&#\s]|$)/i);
+    if (match && match[1]) {
+        const code = match[1];
+        return `https://ticketimage.interpark.com/Play/image/large/${code.slice(0, 2)}/${code}_p.gif`;
+    }
+
+    return undefined;
 }
 
 function normalizeImageFields(items: Performance[]) {
     items.forEach((performance) => {
-const normalizedImage = normalizeImageUrl(performance.image);
+        const normalizedImage = normalizeImageUrl(performance.image);
         const normalizedBackup = normalizeImageUrl(performance.backupPoster);
         const normalizedPosterUrl = normalizeImageUrl(performance.posterUrl);
         const normalizedPoster = normalizeImageUrl(performance.poster);
@@ -725,8 +752,11 @@ const normalizedImage = normalizeImageUrl(performance.image);
         if (normalizedPoster) performance.poster = normalizedPoster;
 
         const remoteCandidate = getRemoteImageCandidate(performance);
-        if ((!performance.image || isMovieFallbackImage(performance.image)) && remoteCandidate) {
+        if ((!performance.image || isMovieFallbackImage(performance.image) || /fallbacks\/|\.svg$/i.test(performance.image)) && remoteCandidate) {
             performance.image = remoteCandidate;
+        }
+        if (remoteCandidate && (!performance.backupPoster || !performance.backupPoster.startsWith('http'))) {
+            performance.backupPoster = remoteCandidate;
         }
         if (performance.image?.startsWith('http') && !performance.backupPoster) {
             performance.backupPoster = performance.image;
@@ -929,22 +959,25 @@ function enrichFromSiblingItems(items: Performance[]) {
 
 function repairBrokenLocalImages(items: Performance[]) {
     items.forEach((performance) => {
-        if (performance.genre === 'movie' && isMovieFallbackImage(performance.image)) {
+        const isLocal = Boolean(performance.image && performance.image.startsWith('/'));
+        const isBrokenLocal = isLocal && !hasLocalAsset(performance.image);
+        const isFallback = isMovieFallbackImage(performance.image) || Boolean(performance.image && /fallbacks\/|\.svg$/i.test(performance.image));
+        const isEmpty = !performance.image || performance.image.trim() === '';
+
+        if (isBrokenLocal || isFallback || isEmpty) {
             const remoteCandidate = getRemoteImageCandidate(performance);
-            performance.image = remoteCandidate || FALLBACK_IMAGES.movie;
-            return;
+            if (remoteCandidate) {
+                performance.image = remoteCandidate;
+                if (!performance.backupPoster || !performance.backupPoster.startsWith('http')) {
+                    performance.backupPoster = remoteCandidate;
+                }
+                return;
+            }
         }
 
-        if (!performance.image || !performance.image.startsWith('/')) return;
-        if (hasLocalAsset(performance.image)) return;
-
-        const remoteCandidate = getRemoteImageCandidate(performance);
-        if (remoteCandidate) {
-            performance.image = remoteCandidate;
-            return;
+        if (isBrokenLocal) {
+            performance.image = FALLBACK_IMAGES[performance.genre] || FALLBACK_IMAGES.default;
         }
-
-        performance.image = FALLBACK_IMAGES[performance.genre] || FALLBACK_IMAGES.default;
     });
 }
 

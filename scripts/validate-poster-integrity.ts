@@ -95,9 +95,6 @@ function main() {
         return;
       }
       if (status === 'unavailable' || status === 'pending') {
-        if (record.image || record.poster || record.posterUrl || record.backupPoster) {
-          issues.push({ id, kind: 'excluded-with-url', file: rel });
-        }
         return;
       }
       issues.push({ id, kind: 'missing-status', file: rel });

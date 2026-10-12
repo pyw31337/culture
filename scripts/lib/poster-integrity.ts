@@ -18,18 +18,23 @@ const POSTER_FIELDS = [
 
 const POSTER_ARRAY_FIELDS = ['stillImages', 'synopsisImages', 'images', 'posterSourceUrls'] as const;
 
-const PLACEHOLDER_URL_PATTERN = /(?:no[-_ ]?image|placeholder|default[-_ ]?poster|image[-_ ]?not[-_ ]?found)/i;
+const PLACEHOLDER_URL_PATTERN = /(?:no[-_ ]?image|placeholder|default[-_ ]?poster|image[-_ ]?not[-_ ]?found|no[-_ ]?img|no_poster|empty[-_ ]?image|blank\.gif|none\.png)/i;
 
 export function normalizeRemotePosterUrl(value: string): string {
   return value.trim().replace(/^http:\/\//i, 'https://');
 }
 
 export function isRemotePosterUrl(value: unknown): value is string {
-  return typeof value === 'string' && /^https?:\/\//i.test(value.trim()) && !PLACEHOLDER_URL_PATTERN.test(value);
+  return typeof value === 'string'
+    && /^https?:\/\//i.test(value.trim())
+    && !PLACEHOLDER_URL_PATTERN.test(value)
+    && !/https_p\.gif|\/large\/ht\//i.test(value);
 }
 
 export function isLocalPosterUrl(value: unknown): value is string {
-  return typeof value === 'string' && value.startsWith('/images/');
+  if (typeof value !== 'string') return false;
+  if (!value.startsWith('/images/')) return false;
+  return !/fallbacks\/|\.svg$/i.test(value) && !PLACEHOLDER_URL_PATTERN.test(value);
 }
 
 /**
@@ -53,6 +58,14 @@ export function collectPosterUrls(record: PosterRecord): string[] {
     const values = record[field];
     if (Array.isArray(values)) values.forEach(add);
   });
+
+  // Direct recovery for Interpark goods code from link or website
+  const linkStr = String(record.link || record.website || '').trim();
+  const interparkMatch = linkStr.match(/(?:\/goods\/|[?&]goodscode=)([A-Za-z0-9]{6,12})(?=[/?&#\s]|$)/i);
+  if (interparkMatch) {
+    const code = interparkMatch[1];
+    add(`https://ticketimage.interpark.com/Play/image/large/${code.slice(0, 2)}/${code}_p.gif`);
+  }
 
   return urls;
 }
