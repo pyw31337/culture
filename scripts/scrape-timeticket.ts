@@ -86,12 +86,19 @@ function compactText(text?: string) {
 function extractTimeTicketDetailHints(text?: string) {
     const compact = compactText(text);
     const periodMatch = compact.match(/진행기간\s*((?:20\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2})(?:\s*~\s*(?:20\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}))?|OPEN\s*RUN|오픈런)/i);
-    const venueMatch = compact.match(/(?:장소|공연장)\s+(.+?)(?:\s+주소|\s+주차|\s+좌석|\s+문의|$)/);
+    const placeSectionMatch = compact.match(/장소안내\s+(?:장소|공연장)\s+(.+?)(?:\s+주소|\s+주차|\s+좌석|\s+문의|$)/);
+    const metaPipeMatch = compact.match(/\|\s*([^|]{2,40}?)\s*\|\s*(?:20\d{2}[.\-/]|오픈런|OPEN\s*RUN)/i);
+    const fallbackVenueMatch = compact.match(/(?:장소|공연장)\s+([^\n]{2,50}?)(?:\s+주소|\s+주차|\s+좌석|\s+문의|$)/);
+    const rawCandidate = placeSectionMatch?.[1] || metaPipeMatch?.[1] || fallbackVenueMatch?.[1] || '';
+    const isCorruptedVenue = /매표소에서|티켓\s*배부|예매하신|이용정보|유의사항|환불|취소|시작\s*\d+분|^및\s*시간/u.test(rawCandidate);
+    const cleanVenue = isCorruptedVenue
+        ? compactText(metaPipeMatch?.[1] || '')
+        : compactText(rawCandidate)
+            .replace(/\s+(?:주소|주차|좌석|문의)\s+.*$/u, '')
+            .replace(/\s*\/\s*총.*$/u, '')
+            .replace(/\s*총\s*\d+석.*$/u, '')
+            .trim();
     const addressMatch = compact.match(/주소\s+(.+?)(?:\s+주차|\s+좌석|\s+문의|\s+자주묻는질문|$)/);
-    const cleanVenue = compactText(venueMatch?.[1])
-        .replace(/\s*\/\s*총.*$/u, '')
-        .replace(/\s*총\s*\d+석.*$/u, '')
-        .trim();
 
     return {
         date: compactText(periodMatch?.[1]).replace(/\s+/g, ' '),
@@ -103,7 +110,7 @@ function extractTimeTicketDetailHints(text?: string) {
 function isUsefulTimeTicketImage(url?: string) {
     return Boolean(url)
         && /^https?:\/\//i.test(url || '')
-        && !/logo|icon|blank|loading|spacer|sprite|daumcdn|kakao|map|tile|roadview/i.test(url || '');
+        && !/logo|icon|blank|loading|spacer|sprite|daumcdn|kakao|map|tile|roadview|_wonbon_|-255x357\.|\/user_review\//i.test(url || '');
 }
 
 function saveData(data: Performance[]) {

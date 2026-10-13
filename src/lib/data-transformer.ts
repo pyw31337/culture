@@ -527,6 +527,34 @@ function isDurationOnly(value?: string) {
     return Boolean(text && /^\d{1,3}(?:시간)?(?:\d{1,2})?분$|^\d{1,2}시간(?:\d{1,2}분)?$/.test(text));
 }
 
+function isBrokenTimeTicketImageUrl(url?: string) {
+    return Boolean(url && /timeticket\.co\.kr\/.*(?:_wonbon_|-255x357\.|\/user_review\/)/i.test(url));
+}
+
+function sanitizeTimeTicketVenue(rawVenue: string, description?: string, address?: string): string {
+    const trimmed = compactDetailText(rawVenue);
+    const compactDesc = compactDetailText(description);
+    const metaPipeMatch = compactDesc.match(/\|\s*([^|]{2,45}?)\s*\|\s*(?:20\d{2}[.\-/]|오픈런|OPEN\s*RUN)/i);
+    const placeSectionMatch = compactDesc.match(/장소안내\s+(?:장소|공연장)\s+(.+?)(?:\s+주소|\s+주차|\s+좌석|\s+문의|$)/);
+    const stripped = trimmed
+        .replace(/\s+(?:주소|주차|좌석|문의)\s+.*$/u, '')
+        .replace(/\s*\/\s*총.*$/u, '')
+        .replace(/\s*총\s*\d+석.*$/u, '')
+        .trim();
+    const isCorrupted = !stripped
+        || stripped.length > 42
+        || /매표소에서|티켓\s*배부|예매하신|이용정보|유의사항|환불|취소|시작\s*\d+분|^및\s*시간|좌석배정|입장\s*가능/u.test(stripped);
+    if (isCorrupted) {
+        const recovered = compactDetailText(placeSectionMatch?.[1] || metaPipeMatch?.[1] || '')
+            .replace(/\s+(?:주소|주차|좌석|문의)\s+.*$/u, '')
+            .replace(/\s*\/\s*총.*$/u, '')
+            .replace(/\s*총\s*\d+석.*$/u, '')
+            .trim();
+        if (recovered && recovered.length <= 45) return recovered;
+    }
+    return stripped || trimmed;
+}
+
 function pickBestImageFromRaw(raw: RawPerformance, genre: string) {
     const candidates = [
         raw.image,
@@ -540,11 +568,11 @@ function pickBestImageFromRaw(raw: RawPerformance, genre: string) {
         raw.photoUrl,
         raw.imageUrl,
         Array.isArray(raw.images) ? raw.images[0] : undefined,
-        Array.isArray(raw.synopsisImages) ? raw.synopsisImages[0] : undefined,
-        Array.isArray(raw.stillImages) ? raw.stillImages[0] : undefined,
+        Array.isArray(raw.synopsisImages) ? raw.synopsisImages.find((u) => !isBrokenTimeTicketImageUrl(u)) : undefined,
+        Array.isArray(raw.stillImages) ? raw.stillImages.find((u) => !isBrokenTimeTicketImageUrl(u)) : undefined,
     ]
         .map((value) => typeof value === 'string' ? value.trim() : '')
-        .filter(Boolean);
+        .filter((value) => Boolean(value) && !isBrokenTimeTicketImageUrl(value));
 
     const fallback = GENRE_FALLBACKS[genre] || GENRE_FALLBACKS.default;
     return candidates.find((candidate) => !/정보\s*없음|placeholder|no[-_ ]?image|noimage/i.test(candidate)) || fallback;
@@ -587,6 +615,9 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     // 1. Source-specific field normalization (Explicit String Casts for Runtime Safety)
     let title = String(raw.title || '');
     let rawVenue = String(raw.venue || raw.place || raw.title || '');
+    if (source === 'timeticket' || /timeticket\.co\.kr/i.test(String(raw.link || raw.website || ''))) {
+        rawVenue = sanitizeTimeTicketVenue(rawVenue, String(raw.description || raw.feesAndPrograms || ''), String(raw.address || ''));
+    }
     let price = String(raw.price || raw.cost || '');
     let date = String(raw.date || '');
     let performanceTime = String(raw.time || raw.performanceTime || '');
@@ -669,8 +700,12 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     let placeUrl = raw.placeUrl || '';
     let placeCategory = raw.placeCategory || '';
     let platforms = raw.platforms;
-    let stillImages = raw.stillImages;
-    let synopsisImages = raw.synopsisImages;
+    let stillImages = Array.isArray(raw.stillImages)
+        ? raw.stillImages.filter((u) => typeof u === 'string' && !isBrokenTimeTicketImageUrl(u))
+        : raw.stillImages;
+    let synopsisImages = Array.isArray(raw.synopsisImages)
+        ? raw.synopsisImages.filter((u) => typeof u === 'string' && !isBrokenTimeTicketImageUrl(u))
+        : raw.synopsisImages;
     let keywords = raw.keywords;
     let tagline = raw.tagline || '';
     let voteAverage = raw.voteAverage;
@@ -680,10 +715,13 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         (typeof raw.statsCollectedAt === 'string' && raw.statsCollectedAt.trim())
             ? raw.statsCollectedAt
             : (typeof raw.lastCollected === 'string' && raw.lastCollected.trim() ? raw.lastCollected : undefined);
-    let backupPoster = raw.backupPoster
-        || raw.posterUrl
-        || raw.poster
-        || (typeof raw.image === 'string' && raw.image.startsWith('http') ? raw.image : undefined);
+    const rawBackupCandidates = [
+        raw.backupPoster,
+        raw.posterUrl,
+        raw.poster,
+        typeof raw.image === 'string' && raw.image.startsWith('http') ? raw.image : undefined,
+    ].filter((u): u is string => typeof u === 'string' && Boolean(u.trim()) && !isBrokenTimeTicketImageUrl(u));
+    let backupPoster = rawBackupCandidates[0];
 
     // Specific Source Overrides
     if (source === 'seoul') {

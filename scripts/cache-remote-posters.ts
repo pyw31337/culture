@@ -119,7 +119,8 @@ function getReferer(url: string) {
 
 function cachePathFor(candidate: PosterCandidate) {
   const sourceDir = slug(candidate.source || candidate.genre || 'remote');
-  const fileBase = slug(`${candidate.id || candidate.title}_${hash(candidate.imageUrl)}`);
+  const idPrefix = slug(candidate.id || candidate.title).slice(0, 60).replace(/_+$/g, '') || 'poster';
+  const fileBase = `${idPrefix}_${hash(candidate.imageUrl)}`;
   const rel = `/images/posters/remote-cache/${sourceDir}/${fileBase}.webp`;
   return { rel, abs: path.join(PUBLIC_DIR, rel) };
 }
@@ -245,7 +246,9 @@ function collectPosterGroups(visibleIds: Map<string, number>) {
           imageUrl,
         };
         group.candidates.push(candidate);
-        if (HIGH_RISK_HOSTS.has(getHost(imageUrl))) group.priority = Math.min(group.priority, 2);
+        const host = getHost(imageUrl);
+        if (host.includes('timeticket.co.kr')) group.priority = 0;
+        else if (HIGH_RISK_HOSTS.has(host)) group.priority = Math.min(group.priority, 2);
       }
     });
   }

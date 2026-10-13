@@ -28,7 +28,8 @@ export function isRemotePosterUrl(value: unknown): value is string {
   return typeof value === 'string'
     && /^https?:\/\//i.test(value.trim())
     && !PLACEHOLDER_URL_PATTERN.test(value)
-    && !/https_p\.gif|\/large\/ht\//i.test(value);
+    && !/https_p\.gif|\/large\/ht\//i.test(value)
+    && !/timeticket\.co\.kr\/.*(?:_wonbon_|-255x357\.|\/user_review\/)/i.test(value);
 }
 
 export function isLocalPosterUrl(value: unknown): value is string {

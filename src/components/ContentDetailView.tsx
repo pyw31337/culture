@@ -3,7 +3,7 @@
 import { Performance } from '@/types';
 import { GENRES, GENRE_STYLES } from '@/lib/constants';
 import { ExternalLink, MapPin, Calendar, Clock, Users, Star, Tag, Ticket, Share2, Check, Sparkles, Film, X, Play, BarChart3, Presentation, Phone, AlertCircle, Info, Coins, Globe, ParkingCircle, Wallet, Layers, Bath, Building2, AtSign, type LucideIcon } from 'lucide-react';
-import { Fragment, useState, useMemo, useRef } from 'react';
+import { Fragment, useState, useEffect, useMemo, useRef } from 'react';
 import Portal from './ui/Portal';
 import { getOptimizedUrl, formatUnifiedDate, toMobileUrl, decodePunycodeUrl } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
@@ -257,6 +257,9 @@ export default function ContentDetailView({ performance: p, allPerformances = []
     const hasCast = castMembers.length > 0;
     const rawImg = p.image || p.poster || p.backupPoster || p.posterUrl || '';
     const [imgSrc, setImgSrc] = useState(rawImg ? getDetailHeroImageUrl(rawImg) : '');
+    useEffect(() => {
+        setImgSrc(rawImg ? getDetailHeroImageUrl(rawImg) : '');
+    }, [rawImg]);
     const fallbackImg = p.backupPoster || p.posterUrl || p.poster || '';
     const fallbackImgSrc = fallbackImg ? getDetailHeroImageUrl(fallbackImg) : '';
     const isMomMomSource = (p.source || '').startsWith('mommom');
@@ -1081,6 +1084,9 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                                 alt={`${p.title} 장면 이미지`}
                                                 loading="lazy"
                                                 referrerPolicy="no-referrer"
+                                                onError={(e) => {
+                                                    e.currentTarget.style.display = 'none';
+                                                }}
                                                 className="aspect-video w-full rounded-xl object-cover border border-black/5 dark:border-white/10"
                                             />
                                         ))}
@@ -1112,6 +1118,11 @@ export default function ContentDetailView({ performance: p, allPerformances = []
                                                     alt={`${p.title} ${galleryLabel}`}
                                                     loading="lazy"
                                                     referrerPolicy="no-referrer"
+                                                    onError={(e) => {
+                                                        const anchor = e.currentTarget.closest('a');
+                                                        if (anchor) anchor.style.display = 'none';
+                                                        else e.currentTarget.style.display = 'none';
+                                                    }}
                                                     className={`${galleryImageClass} transition-transform duration-300 group-hover:scale-[1.03]`}
                                                 />
                                             </a>
