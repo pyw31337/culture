@@ -1270,7 +1270,24 @@ function applyTitleScheduleMetadata(items: Performance[], referenceDate: Date) {
     });
 }
 
+// 공연장 이름 표기 차이("서대문 전용관 NH아트홀" vs 사전 "서대문 전용관(NH아트홀)")로 정확 일치가 실패하면
+// 좌표·주소를 못 받고 "seoul 서대문 전용관 NH아트홀" 같은 자리표시 주소로 나간다(2026-10-22 모여라캠핑 주변 행사 오류).
+// 공백·괄호·기호·[지역 태그]를 뺀 이름이 사전에서 한 곳에만 맞으면 그 기록을 쓴다(여러 곳이면 쓰지 않는다).
+function compactVenueName(value?: string) {
+    return compactComparable(String(value ?? '').replace(/\[[^\]]*\]/g, ' '));
+}
+function buildCompactVenueIndex(venues: Record<string, VenueRecord>) {
+    const index = new Map<string, string | null>();
+    for (const key of Object.keys(venues)) {
+        const compact = compactVenueName(key);
+        if (!compact || compact.length < 3) continue;
+        index.set(compact, index.has(compact) ? null : key);
+    }
+    return index;
+}
+
 function repairBranchVenueAssignments(items: Performance[], venues: Record<string, VenueRecord>) {
+    const compactIndex = buildCompactVenueIndex(venues);
     items.forEach((performance) => {
         const haystack = compactComparable([performance.title, performance.venue].filter(Boolean).join(' '));
         const rule = KNOWN_BRANCH_VENUE_RULES.find((candidate) => (
@@ -1283,8 +1300,15 @@ function repairBranchVenueAssignments(items: Performance[], venues: Record<strin
             return;
         }
 
-        const exactRecord = venues[performance.venue];
-        if (!exactRecord) return;
+        let exactKey = venues[performance.venue] ? performance.venue : null;
+        if (!exactKey) {
+            const fuzzyKey = compactIndex.get(compactVenueName(performance.venue));
+            const fuzzyRecord = fuzzyKey ? venues[fuzzyKey] : null;
+            // 좌표가 있는 사전 기록만 쓴다(주소 '정보 없음'뿐인 기록으로 덮지 않음)
+            if (fuzzyKey && fuzzyRecord && parseCoordinate(fuzzyRecord.lat ?? fuzzyRecord.latitude) != null) exactKey = fuzzyKey;
+        }
+        const exactRecord = exactKey ? venues[exactKey] : null;
+        if (!exactKey || !exactRecord) return;
 
         const shouldHydrateFromDictionary =
             isKnownSellerAddress(performance.address) ||
@@ -1293,7 +1317,7 @@ function repairBranchVenueAssignments(items: Performance[], venues: Record<strin
             compactComparable(performance.address) === compactComparable(performance.venue);
 
         if (shouldHydrateFromDictionary) {
-            applyVenueRecordToPerformance(performance, performance.venue, exactRecord);
+            applyVenueRecordToPerformance(performance, exactKey, exactRecord);
         }
     });
 }
