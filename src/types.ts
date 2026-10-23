@@ -82,6 +82,10 @@ export type PerformancePricing = {
   reservationRate?: string;
   /** Official booking sites (KOPIS relates/relate). */
   bookingLinks?: { name: string; url: string }[];
+  /** Ids of rows from other sources merged into this card (old share links still resolve). */
+  aliasIds?: string[];
+  /** Sources merged into this card, surviving source first. */
+  mergedSources?: string[];
 };
 
 /** Creative / production credits */

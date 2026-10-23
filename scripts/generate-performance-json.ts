@@ -2323,7 +2323,7 @@ async function generate() {
             ? JSON.parse(fs.readFileSync(interparkRawPath, 'utf8'))
             : [];
         const sessionsPayload = buildSessionsPayload(
-            pruned as Array<{ id: string; link?: string; website?: string }>,
+            pruned as Array<{ id: string; link?: string; website?: string; bookingLinks?: { url?: string }[] }>,
             Array.isArray(interparkRaw) ? interparkRaw : [],
         );
         fs.writeFileSync(path.join(dir, 'sessions.json'), JSON.stringify(sessionsPayload));
