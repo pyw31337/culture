@@ -28,6 +28,9 @@ IP-restricted). Those run on the Mac mini inside the allowed windows:
   cinema-relay-ids, build-venues, venue-places (Kakao category). Enrichment is incremental
   (`lastApiEnriched`, `sessionsCheckedAt`, venue-place cache), so every run resumes where the
   previous one stopped and heavy work is spread across runs.
+- Both plans end with `ai-dedupe-judge` (optional): a local Ollama model judges gray-zone duplicate
+  pairs into `src/data/ai-dedupe-judgments.json`. Skipped when Ollama is not running. See
+  [AI_DATA_REFINEMENT.md](./AI_DATA_REFINEMENT.md).
 - **full** = plan `local`: every source with deep caps. Also forced when the last successful
   full run is older than 36h (e.g. the Mac was off).
 - A lock (`logs/data-update/scheduler/run.lock`) prevents overlapping runs.
