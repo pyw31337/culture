@@ -244,10 +244,10 @@ export default function VersionUpdateBanner({
                                     </span>
                                 )}
                                 <Link
-                                    href="/status/"
+                                    href="/admin/"
                                     className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 transition hover:border-sky-300/40 hover:text-white light:border-slate-200 light:bg-slate-100 light:hover:border-sky-300 light:hover:text-sky-700"
                                 >
-                                    상태 페이지 보기
+                                    관리자 페이지 보기
                                 </Link>
                             </div>
                         </div>

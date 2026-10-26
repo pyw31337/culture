@@ -57,6 +57,10 @@ function SportsTeamLogoOverlay({
                 loading="lazy"
                 decoding="async"
                 draggable={false}
+                onError={(event) => {
+                    // A stale data payload must not leave a broken-image icon over the card.
+                    event.currentTarget.style.visibility = 'hidden';
+                }}
             />
         );
 

@@ -179,11 +179,11 @@ export default function ServiceStatusStrip({
                                     소스별 마지막 수집 시각, 비시즌 처리, 품질 보강 상태까지 상세하게 정리해 두었습니다.
                                 </p>
                                 <Link
-                                    href="/status/"
+                                    href="/admin/"
                                     onClick={() => setIsOpen(false)}
                                     className="mt-3 inline-flex items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-sm font-black text-white transition hover:bg-sky-400"
                                 >
-                                    상태 페이지로 이동
+                                    관리자 페이지로 이동
                                     <ArrowUpRight className="h-4 w-4" />
                                 </Link>
                             </div>
