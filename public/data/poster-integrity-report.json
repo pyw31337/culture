@@ -1,30 +1,233 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-13T00:45:42.487Z",
+  "checkedAt": "2026-10-26T22:50:53.846Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10630,
-  "verified": 8435,
-  "unavailable": 87,
-  "pending": 2108,
+  "total": 10193,
+  "verified": 8968,
+  "unavailable": 1225,
+  "pending": 0,
   "recoveredFromAlternate": 5,
   "unavailableSamples": [
     {
-      "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261013",
+      "id": "perf_주심포_공포_결구로_짓다_수덕사_근역성보관_20261027",
+      "title": "주심포 공포, 결구로 짓다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_간송컬렉션_탐방기",
+      "title": "간송컬렉션 탐방기",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_영은사_역사의_시간",
+      "title": "영은사 역사의 시간",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_승병향기_보석_보석사_20261028",
+      "title": "승병향기 보석路",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261028",
+      "title": "양주향교와 함께하는 시간여행",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_쓰담_역사탐험대",
+      "title": "쓰담 역사탐험대",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_으랏차차서원마을_신항서원_20261027",
+      "title": "으랏차차서원마을",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261027",
       "title": "전통을 잇고 인성을 키우다",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_도시농부학교",
-      "title": "도시농부학교",
+      "id": "perf_독서당_홍범식_고가_청년창작소_오롯_20261027",
+      "title": "독서당",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_칠장사에서_보물찾기_칠장사_20261014",
-      "title": "칠장사에서 보물찾기",
+      "id": "perf_유학IN세종_연기향교_20261027",
+      "title": "유학IN세종",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_사람다운_사람_자연과_함께하는_인성예절학교_청주향교_20261027",
+      "title": "사람다운 사람, 자연과 함께하는 인성예절학교",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_다함께_인문학당_사천향교_20261027",
+      "title": "다함께, 인문학당",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_구급_처방_컬러링_충청북도_음성군_20261027",
+      "title": "구급 처방 컬러링",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_우리들의_축제_장흥향교_20261027",
+      "title": "우리들의 축제",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261027",
+      "title": "빛, 생명을 처방하다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261027",
+      "title": "만해생가, 가볼 만해",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_향교로_마실가자_정선향교_20261027",
+      "title": "향교로 마실가자",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_구급_퀴즈_미션_충청북도_음성군_20261027",
+      "title": "구급! 퀴즈 미션!",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_측백와락_아이와락_도동커뮤니센타_20261027",
+      "title": "측백와락 아이와락",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_한라산_품은_선덕사_빛으로_그리다_선덕사_20261027",
+      "title": "한라산 품은 선덕사, 빛으로 그리다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_유생들의_지구력_지구를_지키는_힘_구강서원_20261027",
+      "title": "유생들의 지구력-지구를 지키는 힘",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_추사_왔서예",
+      "title": "추사 왔서예",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261028",
+      "title": "전통을 잇고 인성을 키우다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_다시_카페_월봉서원_이안당_20261028",
+      "title": "다시茶時 카페",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_다함께_인문학당_사천향교_20261028",
+      "title": "다함께, 인문학당",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_인의예지_놀이마당_나주향교_일대_20261028",
+      "title": "인의예지 놀이마당",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_동헌_돌아볼_고_울산동헌및내아_20261028",
+      "title": "동헌 돌아볼 고(顧)",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_비움과_채움이_만나다_보석사_20261028",
+      "title": "비움과 채움이 만나다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_개항장으로_Go_듣Go_걷Go_줍Go_인천_제물포구_개항장_일대_20261028",
+      "title": "개항장으로 Go!, 듣Go, 걷Go, 줍Go",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_향교로_마실가자_정선향교_20261028",
+      "title": "향교로 마실가자",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_생생풍년마을_서마지기농악대_지신밟기_소풍_함안_내_각_마을_20261028",
+      "title": "생생풍년마을 – “서마지기농악대 지신밟기 소풍”",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_점필재_종갓집_유치원_소풍_마당_점필재종택_도연재_20261028",
+      "title": "점필재 종갓집 유치원 소풍 마당",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -37,277 +240,16 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_타임슬립_역사탐방_시간여행자의_고백_Go_Back",
-      "title": "타임슬립 역사탐방 \"시간여행자의 고백(Go-Back)\"",
+      "id": "class_라틴댄스_바차타_신규체험_만원이벤트_1일",
+      "title": "라틴댄스 바차타 신규체험 만원이벤트 [1일]",
       "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_벽화고분_미술학교_영주_순흥벽화고분_일원_20261013",
-      "title": "벽화고분 미술학교",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_독서당_홍범식_고가_청년창작소_오롯_20261013",
-      "title": "독서당",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_유학IN세종_연기향교_20261013",
-      "title": "유학IN세종",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_사람다운_사람_자연과_함께하는_인성예절학교_청주향교_20261013",
-      "title": "사람다운 사람, 자연과 함께하는 인성예절학교",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_향교로_마실가자_정선향교_20261013",
-      "title": "향교로 마실가자",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_다함께_인문학당_사천향교_20261013",
-      "title": "다함께, 인문학당",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_간송매듭_종부의_손길로_마음을_맺다_간송옛집_20261013",
-      "title": "간송매듭, 종부의 손길로 마음을 맺다!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_요모조모_이하복고택_이하복_고택_20261013",
-      "title": "요모조모 이하복고택",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_선비의_품격_인격_성격_체격_언양향교_20261013",
-      "title": "선비의 품격(인격,성격, 체격)",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261013",
-      "title": "빛, 생명을 처방하다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261013",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_주심포_공포_결구로_짓다_수덕사_근역성보관_20261013",
-      "title": "주심포 공포, 결구로 짓다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_유생들의_지구력_지구를_지키는_힘_구강서원_20261013",
-      "title": "유생들의 지구력-지구를 지키는 힘",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_한라산_품은_선덕사_빛으로_그리다_선덕사_20261013",
-      "title": "한라산 품은 선덕사, 빛으로 그리다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_구급_처방_컬러링_충청북도_음성군_20261013",
-      "title": "구급 처방 컬러링",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_구급_퀴즈_미션_충청북도_음성군_20261013",
-      "title": "구급! 퀴즈 미션!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_성지로드_숨은_김대건을_찾아라_당진_솔뫼성지_일원_20261013",
-      "title": "성지로드, 숨은 김대건을 찾아라!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261014",
-      "title": "전통을 잇고 인성을 키우다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_벽화고분_미술학교_영주_순흥벽화고분_일원_20261014",
-      "title": "벽화고분 미술학교",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_향교로_마실가자_정선향교_20261014",
-      "title": "향교로 마실가자",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_개항장으로_Go_듣Go_걷Go_줍Go_인천_제물포구_개항장_일대_20261014",
-      "title": "개항장으로 Go!, 듣Go, 걷Go, 줍Go",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_남원_몽심을_느끼다_몽심재_죽산박씨_종가_20261014",
-      "title": "남원, 몽심을 느끼다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_다함께_인문학당_사천향교_20261014",
-      "title": "다함께, 인문학당",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_용화사_칠존석불을_만나다_용화사_경내_20261014",
-      "title": "용화사 칠존석불을 만나다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261014",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_선비문화탐험대_옥산서원_독락당_20261014",
-      "title": "선비문화탐험대",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_미션_명성황후를_지켜라_양주매곡리고택_20261014",
-      "title": "미션, 명성황후를 지켜라",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261014",
-      "title": "양주향교와 함께하는 시간여행",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_숲향_명상_측백나무일원_20261014",
-      "title": "숲향&명상",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_함평_선비_지혜길_함평_향교리_느티나무_팽나무_개서어나무_숲_일원_20261014",
-      "title": "함평 선비 지혜길",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_대한제국_마지막_원찰_칠존석불에_소원을_빌다_용화사_경내_20261014",
-      "title": "대한제국 마지막 원찰 칠존석불에 소원을 빌다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_동헌_돌아볼_고_울산동헌및내아_20261014",
-      "title": "동헌 돌아볼 고(顧)",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_추사고택탐구생활_추사김정희선생고택_20261014",
-      "title": "추사고택탐구생활",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_다시_카페_월봉서원_이안당_20261014",
-      "title": "다시茶時 카페",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_꼬마선비들의_서원_나들이_동락서원_금오서원_20261014",
-      "title": "꼬마선비들의 서원 나들이",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_성지로드_숨은_김대건을_찾아라_당진_솔뫼성지_일원_20261014",
-      "title": "성지로드, 숨은 김대건을 찾아라!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_진안향교에서_배우는_조선왕조_리더십_진안향교_마이산_20261014",
-      "title": "진안향교에서 배우는 조선왕조 리더십",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_양천로드_도슨트",
-      "title": "양천로드 도슨트",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7218f42560e242f7bf9273a2601d2f63.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/bb7ef8948ebd4dc395647e7553a76fa8.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c4fbfc2a86aa4566bc9894b613c48b86.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f4fccc0f693d4348b52adb138bf5b15b.jpeg"
+      ],
+      "failure": "http-403, http-403, http-403"
     },
     {
       "id": "class_오픈이벤트_조화_테라리움만들기",
@@ -323,18 +265,6 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "class_라틴댄스_바차타_신규체험_만원이벤트_1일",
-      "title": "라틴댄스 바차타 신규체험 만원이벤트 [1일]",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7218f42560e242f7bf9273a2601d2f63.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/bb7ef8948ebd4dc395647e7553a76fa8.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c4fbfc2a86aa4566bc9894b613c48b86.jpeg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f4fccc0f693d4348b52adb138bf5b15b.jpeg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
       "id": "class_아르헨티나_탱고_원데이_클래스_오픈",
       "title": "아르헨티나 탱고 원데이 클래스 오픈",
       "source": "remote",
@@ -344,160 +274,8 @@
       "failure": "http-403"
     },
     {
-      "id": "museum_굴_가마_일은_협동이어라",
-      "title": "굴(가마)일은 협동이어라!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_나만의_향수_만들기_원데이_클래스",
-      "title": "나만의 향수 만들기 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f0b067e1e8024b1d98c102d65aaea2ed.JPEG",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9c29404742a2488fa5bf33a5f68b16e2.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b3541304a39742d4a91a4e31fc97a7cd.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9f381c154dd74194b689454d2fe99d9a.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6a3b6592989d4b23a62182fadfde2015.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a302a220eb4d43c8b75ff8518d2cd2e7.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8c0e7a30dde14950a0aa954332cc7876.jpg"
-      ],
-      "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "museum_면천읍성_360도_투어",
-      "title": "면천읍성 360도 투어",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_간송컬렉션_탐방기",
-      "title": "간송컬렉션 탐방기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "museum_목포_국가유산_야행",
       "title": "목포 국가유산 야행",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_모던보이_김소월의_정동_상경기",
-      "title": "모던보이, 김소월의 정동 상경기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_은행나무_휴",
-      "title": "은행나무 휴(休)",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_대동운부군옥_풀어파일러",
-      "title": "대동운부군옥, 풀어파일러!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_재즈화성학_1개월_90분",
-      "title": "재즈화성학 [1개월 - 90분]",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/dacc022c7e9340189f9c1ac8b37fcd4b.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "museum_문화유산의_봉인을_해제하라",
-      "title": "문화유산의 봉인을 해제하라!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_면암_선생님과_함께하는_하루",
-      "title": "면암 선생님과 함께하는 하루",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_독립_영웅_별에_보내는_마음",
-      "title": "독립 영웅 별에 보내는 마음",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_이어_잇다_안산_시간여행",
-      "title": "이어-잇다, 안산 시간여행",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_효창공원의_기억_이봉창_의사와_울림",
-      "title": "효창공원의 기억, 이봉창 의사와 울림",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_극락정토_안양_에서_울리는_천상의_소리",
-      "title": "극락정토(안양)에서 울리는 천상의 소리",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_무전력_우드스피커_만들기_원데이_클래스_1구_기본",
-      "title": "무전력 우드스피커 만들기 원데이 클래스 / 1구 기본",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3716ba50b53d4ada89ca05109302738f.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "museum_의병이여_영원하라",
-      "title": "의병이여, 영원하라",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_고양_국가유산_야행",
-      "title": "고양 국가유산 야행",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_청춘_뉴트로감성_솜리골목기행",
-      "title": "청춘! 뉴트로감성 솜리골목기행",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_다시_이어지는_제주옹기_그리고_사람들",
-      "title": "다시 이어지는 제주옹기, 그리고 사람들",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_정동연회",
-      "title": "정동연회",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -510,66 +288,27 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_뉴트로_이리열차_타고_익산행",
-      "title": "뉴트로 이리열차 타고 익산행",
+      "id": "museum_칠곡에_있다_55일간의_교전지_탐방",
+      "title": "칠곡에 있다:55일간의 교전지 탐방",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_효창공원_감각_아카이브_나만의_국가유산_다큐",
-      "title": "효창공원 감각 아카이브 – 나만의 국가유산 다큐",
+      "id": "museum_모던보이_김소월의_정동_상경기",
+      "title": "모던보이, 김소월의 정동 상경기",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_서울_티소믈리에_티클래스",
-      "title": "서울 티소믈리에 티클래스",
+      "id": "class_마크라메_풍선_강아지_키링_원데이클래스",
+      "title": "마크라메 풍선 강아지 키링 원데이클래스",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d8354912d27947e7852c111e906c9d14.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/52ce4fe7c0f74bd09ee030dde212cd0d.jpg"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/76e40e4d41e64b35bba5a78b60eb5e60.JPG"
       ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_사라진_금강역사를_찾아서",
-      "title": "사라진 금강역사를 찾아서",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_강매_석교_이음의_역사",
-      "title": "강매 석교, 이음의 역사",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_영은사_역사의_시간",
-      "title": "영은사 역사의 시간",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_쓰담_역사탐험대",
-      "title": "쓰담 역사탐험대",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_비건이_왔어요_얼려먹는_비건맘모스쌀빵_3종_베이킹",
-      "title": "비건이 왔어요 얼려먹는 비건맘모스쌀빵 3종 베이킹",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a80fd11a6feb4661938852ccdc92c1c8.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg"
-      ],
-      "failure": "http-403, http-403"
+      "failure": "http-403"
     },
     {
       "id": "museum_출동_개항장_역사탐험대",
@@ -579,21 +318,22 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_추상화_원데이_클래스",
-      "title": "추상화 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b3dfc541709d4692a08d43851d371695.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d74b46dce5274fddb5c34c54c5549614.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_칠곡에_있다_55일간의_교전지_탐방",
-      "title": "칠곡에 있다:55일간의 교전지 탐방",
+      "id": "museum_뉴트로_이리열차_타고_익산행",
+      "title": "뉴트로 이리열차 타고 익산행",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_프랑스어_수업_1대1_2개월_총_16회",
+      "title": "프랑스어 수업 1대1 [2개월 / 총 16회]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/00e91cc203254677a982abf5bdf36eb1.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a4f23c28a1584c1aafc786409b364d24.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c4475c34edab42e8b53a3c01e9bd410e.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
     },
     {
       "id": "museum_은행나무_천년의_꿈",
@@ -610,34 +350,45 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_걸어서_생생독락",
-      "title": "걸어서 생생독락",
+      "id": "class_바삭쫀득꼬끄_부드러운_크림_마카롱원데이클래스",
+      "title": "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/eebb27be9db244e787b3b1d4efe2e971.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5122f0fbaa1248ac8672704991f6c0e3.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/186689463af346789d5fc771ac26c5ce.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f8527e91591147d69378b50e2c443c11.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/317e7ed4cb7045069716d2c8cf0da7fa.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c34d4c757e0545889b7292248dfb47f3.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/281b0c17825c40f693abbc1b2f22af87.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7b7a14ec5f9f471ba4c5bdeac7a02f35.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "museum_청춘_뉴트로감성_솜리골목기행",
+      "title": "청춘! 뉴트로감성 솜리골목기행",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_1_1_집밥영어_영어회화_편안하게_왕초보_초보",
-      "title": "1:1 집밥영어: 영어회화 편안하게(왕초보/초보)",
+      "id": "museum_면천읍성_360도_투어",
+      "title": "면천읍성 360도 투어",
       "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/818c9ca96c27492ba599108139d64851.jpg"
-      ],
-      "failure": "http-403"
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
-      "id": "class_제로웨이스트_미세플라스틱_없는_삼베샤워타월_만들기",
-      "title": "제로웨이스트!미세플라스틱 없는 삼베샤워타월 만들기",
+      "id": "museum_선비의_서재_기록에서_길을_찾다",
+      "title": "선비의 서재, 기록에서 길을 찾다",
       "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9651f2745b4b456e9a8611a193ae5ec1.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6eb8988ae18746be95775ece36083719.jpeg"
-      ],
-      "failure": "http-403, http-403"
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261015",
-      "title": "전통을 잇고 인성을 키우다",
+      "id": "museum_오래된_지구로_떠나는_스토리투어",
+      "title": "오래된 지구로 떠나는 스토리투어",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -650,513 +401,398 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_동헌_스며들_고_울산동헌및내아_20261015",
+      "id": "museum_걸어서_생생독락",
+      "title": "걸어서 생생독락",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_belly_dance_성인반_1개월",
+      "title": "belly dance 성인반 [1개월]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/100d98bf8a794b9694b4f796e8120b2d.jpeg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_의병이여_영원하라",
+      "title": "의병이여, 영원하라",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_면암_선생님과_함께하는_하루",
+      "title": "면암 선생님과 함께하는 하루",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_강매_석교_이음의_역사",
+      "title": "강매 석교, 이음의 역사",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_부산_보자기아트_원데이_클래스",
+      "title": "부산 보자기아트 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a7d3fdd7e7324a218b314ee135dc5a90.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_DEEPLY_MUSIC_쉽고_재밌는_기타레슨",
+      "title": "DEEPLY MUSIC _ 쉽고 재밌는 기타레슨",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/48bf6087c1584a38913e315360376454.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_캘리그라피_수업",
+      "title": "캘리그라피 수업",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2d921a4c42e841c7a093fdc1d9ddc680.jpeg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "museum_예산향교는_이런_유학_저런_유학_한다",
+      "title": "예산향교는 이런 유학(遊學)저런 유학(儒學)한다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_다쿠아즈_원데이클래스",
+      "title": "다쿠아즈 원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/915a7577031f42bd94acfbff4fc9ea9a.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0e51e68b69a64a5b9d9b26487c0b7ccd.jpeg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "museum_서포터즈와_함께하는_진위현_역사기행_플로깅",
+      "title": "서포터즈와 함께하는 진위현 역사기행&플로깅",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_진짜배기_전주향교_20261029",
+      "title": "진짜배기 儒",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_평화가_꽃피는_마을_비중리_안정라씨_삼세충효문_20261029",
+      "title": "평화가 꽃피는 마을-비중리",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_동헌_스며들_고_울산동헌및내아_20261029",
       "title": "동헌, 스며들 고(皷)",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_으랏차차서원마을_신항서원_20261029",
+      "title": "으랏차차서원마을",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_다_같이_초간정주행",
+      "title": "다 같이 초간정주행",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_문익점_생생로드_목면시배유지_20261029",
+      "title": "문익점 생생로드",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_내추럴_핸드타이드_꽃다발_만들기_플라워_클래스",
+      "title": "내추럴 핸드타이드 꽃다발 만들기 플라워 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/edd07cae9d4e47fb981b7b1cb2c734d5.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7edd7ba647234312bdc05acb88ae25e7.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8e109f00c3df4fbeb7d6e498eb599c8a.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/09ad753bc7f34df182c6133e61c25b95.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13d959a1a83a456fb119342fa50b73bf.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/fdcb3f11a521455891acc84b2244a492.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/66df5abd3b3348e39176ffb920843714.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c703c2d9409849a1aa47c326f4a6f726.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_사람다운_사람_자연과_함께하는_인성예절학교_청주향교_20261029",
+      "title": "사람다운 사람, 자연과 함께하는 인성예절학교",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_몽심을_배우다_곡성제호정_몽심재_죽산박씨_종가_20261029",
+      "title": "몽심을 배우다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_전통의례_민속문화_체험행사_상주향교_20261029",
+      "title": "전통의례, 민속문화 체험행사",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_선교사의_눈으로_본_공주풍경_공주_황새바위_천주교_순교유적_20261029",
+      "title": "선교사의 눈으로 본 공주풍경",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261029",
+      "title": "만해생가, 가볼 만해",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261029",
+      "title": "충주향교 꼬마선비의 선비풍류",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_특명_비밀결사의_단원이_되어라",
+      "title": "특명! 비밀결사의 단원이 되어라",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_선비들의_문화_나들이_구강서원_20261029",
+      "title": "선비들의 문화 나들이",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_한개만_먹어도_세상_든든한_건강하고_맛있는_스콘_만들기",
+      "title": "한개만 먹어도 세상 든든한 건강하고 맛있는 스콘 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4f094b634449446ba41132c471818bf5.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "perf_목화_이야기_목면시배유지_20261029",
+      "title": "목화(花桃花)이야기",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_무전력_우드스피커_만들기_원데이_클래스_원형_1구",
+      "title": "무전력 우드스피커 만들기 원데이 클래스 / 원형 1구",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ae4b535cdddb4cbcaff79ec98afa7942.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f50e257a6d0d4afda58b33264c5f3bd4.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c51e78dbc90e4c54b5b7a3826bf783fc.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/81cd6bdef81c4704bb21a24046315e35.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/687c17adf7054733a37423795b07a029.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1564d09d4b1c4697953cd12ba785ac4d.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3716ba50b53d4ada89ca05109302738f.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c3a820769bdf4dcc821fd775aec4084a.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_간송보감_문화로_지켜낸_오늘_간송옛집_20261030",
+      "title": "간송보감, 문화로 지켜낸 오늘",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_스피드_요리교실_4주과정_2시간에_5가지메뉴_만들고_포장해서_갑니다",
+      "title": "스피드 요리교실(4주과정) 2시간에 5가지메뉴 만들고 포장해서 갑니다",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ffcdc88b6051457c9b23f33f06d003a7.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a089bf70658949c2b3131f273572bbe5.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "perf_자미원_별그림_학교_가족_1일_캠프_송곡서원_서산류방택천문기상과학관_20261030",
+      "title": "자미원 별그림 학교 가족 1일 캠프",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_원데이_키즈_클래스_키즈_팔찌_만들기",
+      "title": "원데이 키즈 클래스/키즈 팔찌 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a5c3d5b7e51a4f2fbaa3634172d759e3.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/77d122a8befa4436a795a64b78a5b6dd.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a37e11f9d27d4cdea567a0afa67eb3c5.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/34eaf4718ffb4c71ac390ecd308dad0f.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5c04e7014f184d92ac9ec85fc62a76a8.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/be85934af35d402cb9f7cd0f820bc109.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/823c575196c44e1aab252599d01d7577.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a1531e132de049128d7ee7a7222af294.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_몽심에서_놀다_몽심재_죽산박씨_종가_20261030",
+      "title": "몽심에서 놀다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_으랏차차서원마을_신항서원_20261030",
+      "title": "으랏차차서원마을",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_개항장_1919_조선을_수호하라_인천_제물포구_개항장_일대_20261030",
+      "title": "개항장 1919, 조선을 수호하라!",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_계절꽃을_활용한_꽃꽂이_수업",
+      "title": "계절꽃을 활용한 꽃꽂이 수업",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3e8a44df9b9e4f568bef244945bf59b7.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "perf_경주부윤_읍성_나들이_경주읍성_일원_20261030",
+      "title": "경주부윤 읍성 나들이",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_달빛풍류_손병순_고가_20261030",
+      "title": "달빛풍류",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261030",
+      "title": "전통을 잇고 인성을 키우다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_달빛아래_구암서원_구암서원_20261030",
+      "title": "달빛아래 구암서원",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_바레_1회_정규_쿠폰",
+      "title": "바레 1회 정규 쿠폰",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/de2078dd4738422ebad9b006c6d5e6f4.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b642638f61f34c02b24d2edb069689d8.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/cc24b755caef40f6a8c00f9f3baba33d.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a08d39755dba40ec955a455758184020.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5bf7288e5ab140e1a3e79357530e151e.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/84aad1f2d7fe45e18f8f5fd50c973f0e.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/efc24b7c175b4aad81efeb9ca7fc7659.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/2a5d7a5df73e4c5885b05370eafaccae.png"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_인의예지_놀이마당_나주향교_일대_20261030",
+      "title": "인의예지 놀이마당",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_간송의_밤_옛소리로_흐르다_간송옛집_20261030",
+      "title": "간송의 밤, 옛소리로 흐르다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_설날_선물_쌀전병_원데이_클래스",
+      "title": "설날 선물 쌀전병 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ae0a2703255b47c5a32bd6e8c5bb8650.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "perf_정동_국가유산_야행_정동_일대_20261030",
+      "title": "정동 국가유산 야행",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_선비의_우주_선율_담헌달빛관_홍대용선생생가지_천안홍대용과학관_20261030",
+      "title": "선비의 우주 선율",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_고택에서_하룻밤_손대식_손병순_고가_20261030",
+      "title": "고택에서 하룻밤",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     }
   ],
-  "pendingSamples": [
-    {
-      "id": "museum_오래된_지구로_떠나는_스토리투어",
-      "title": "오래된 지구로 떠나는 스토리투어",
-      "source": "remote"
-    },
-    {
-      "id": "class_미술_원데이_클래스_드로잉_수채화_아크릴_펜화_팝아트_백드롭",
-      "title": "미술 원데이 클래스 (드로잉 수채화 아크릴 펜화 팝아트 백드롭)",
-      "source": "remote"
-    },
-    {
-      "id": "museum_선비의_서재_기록에서_길을_찾다",
-      "title": "선비의 서재, 기록에서 길을 찾다",
-      "source": "remote"
-    },
-    {
-      "id": "class_천연_입욕제_케이크_입욕제_캐릭터_아이스크림_입욕제_만들기",
-      "title": "천연 입욕제_케이크 입욕제 / 캐릭터&아이스크림 입욕제 만들기",
-      "source": "remote"
-    },
-    {
-      "id": "perf_사람다운_사람_자연과_함께하는_인성예절학교_청주향교_20261015",
-      "title": "사람다운 사람, 자연과 함께하는 인성예절학교",
-      "source": "remote"
-    },
-    {
-      "id": "class_온라인_MBTI_form_Q검사_및_해석상담",
-      "title": "온라인 MBTI form Q검사 및 해석상담",
-      "source": "remote"
-    },
-    {
-      "id": "museum_예산향교는_이런_유학_저런_유학_한다",
-      "title": "예산향교는 이런 유학(遊學)저런 유학(儒學)한다",
-      "source": "remote"
-    },
-    {
-      "id": "perf_정읍_국가유산_야행_피향정_태인동헌_태인향교_일원_20261015",
-      "title": "정읍 국가유산 야행",
-      "source": "remote"
-    },
-    {
-      "id": "class_아크릴화_1개월_총4회",
-      "title": "아크릴화[1개월/총4회]",
-      "source": "remote"
-    },
-    {
-      "id": "museum_추사_왔서예",
-      "title": "추사 왔서예",
-      "source": "remote"
-    },
-    {
-      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261015",
-      "title": "만해생가, 가볼 만해",
-      "source": "remote"
-    },
-    {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261015",
-      "title": "선비의 사계",
-      "source": "remote"
-    },
-    {
-      "id": "perf_선비들의_문화_나들이_구강서원_20261015",
-      "title": "선비들의 문화 나들이",
-      "source": "remote"
-    },
-    {
-      "id": "perf_귤림_사락사락_야외_20261015",
-      "title": "귤림 사락사락",
-      "source": "remote"
-    },
-    {
-      "id": "class_팝아트_페인팅_원데이_클래스",
-      "title": "팝아트 페인팅 원데이 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "museum_서포터즈와_함께하는_진위현_역사기행_플로깅",
-      "title": "서포터즈와 함께하는 진위현 역사기행&플로깅",
-      "source": "remote"
-    },
-    {
-      "id": "perf_목화_이야기_목면시배유지_20261015",
-      "title": "목화(花桃花)이야기",
-      "source": "remote"
-    },
-    {
-      "id": "museum_다_같이_초간정주행",
-      "title": "다 같이 초간정주행",
-      "source": "remote"
-    },
-    {
-      "id": "museum_특명_비밀결사의_단원이_되어라",
-      "title": "특명! 비밀결사의 단원이 되어라",
-      "source": "remote"
-    },
-    {
-      "id": "class_스마트키링만들기",
-      "title": "스마트키링만들기",
-      "source": "remote"
-    },
-    {
-      "id": "perf_그림자에_비춰진_나를_찾아_금당사_20261015",
-      "title": "그림자에 비춰진 나를 찾아",
-      "source": "remote"
-    },
-    {
-      "id": "class_애플워치_갤럭시워치_가죽_스트랩_만들기_가죽공예_원데이클래스",
-      "title": "애플워치, 갤럭시워치 가죽 스트랩 만들기 가죽공예 원데이클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_으랏차차서원마을_신항서원_20261015",
-      "title": "으랏차차서원마을",
-      "source": "remote"
-    },
-    {
-      "id": "perf_선비의_바느질_청주향교_20261015",
-      "title": "선비의 바느질",
-      "source": "remote"
-    },
-    {
-      "id": "perf_꼬마선비들의_서원_나들이_동락서원_금오서원_20261015",
-      "title": "꼬마선비들의 서원 나들이",
-      "source": "remote"
-    },
-    {
-      "id": "perf_토끼야_향교에_벼슬가자_장흥향교_20261015",
-      "title": "토끼야 향교에 벼슬가자",
-      "source": "remote"
-    },
-    {
-      "id": "perf_스토리텔링으로_되살아나는_서창_국가유산_축제_서창나루_일원_20261015",
-      "title": "스토리텔링으로 되살아나는 서창 “국가유산 축제”",
-      "source": "remote"
-    },
-    {
-      "id": "perf_진짜배기_전주향교_20261015",
-      "title": "진짜배기 儒",
-      "source": "remote"
-    },
-    {
-      "id": "perf_전통을_잇고_인성을_키우다_구암서원_20261016",
-      "title": "전통을 잇고 인성을 키우다",
-      "source": "remote"
-    },
-    {
-      "id": "perf_알록달록_백들_전_만복사지_20261016",
-      "title": "알록달록 백들 전(展)",
-      "source": "remote"
-    },
-    {
-      "id": "class_특별_한정_보컬_원데이클래스_체험",
-      "title": "특별 한정 보컬 원데이클래스 체험!!",
-      "source": "remote"
-    },
-    {
-      "id": "class_부산_보자기아트_원데이_클래스",
-      "title": "부산 보자기아트 원데이 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_장수가야_에피소드_공작소_장수노인복지관_20261016",
-      "title": "장수가야 에피소드 공작소",
-      "source": "remote"
-    },
-    {
-      "id": "perf_남한강_무쌍신식_단양_조덕수_고택_1박2일_단양조덕수고택_20261016",
-      "title": "남한강 무쌍신식, 단양 조덕수 고택 1박2일",
-      "source": "remote"
-    },
-    {
-      "id": "class_오일파스텔을_나이프로_뭉개뭉개_버터리_오일파스텔",
-      "title": "오일파스텔을 나이프로??!! 뭉개뭉개 버터리 오일파스텔",
-      "source": "remote"
-    },
-    {
-      "id": "perf_함평이야기_콘서트_함평향교_일원_20261016",
-      "title": "함평이야기 콘서트",
-      "source": "remote"
-    },
-    {
-      "id": "perf_남한강_무쌍신식_조덕수_고택_단양의_식탁_단양조덕수고택_20261016",
-      "title": "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
-      "source": "remote"
-    },
-    {
-      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261016",
-      "title": "만해생가, 가볼 만해",
-      "source": "remote"
-    },
-    {
-      "id": "class_광주광역시_꽃화병_클래스",
-      "title": "광주광역시 꽃화병 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_올곧음_전주향교_20261016",
-      "title": "올곧음 游",
-      "source": "remote"
-    },
-    {
-      "id": "perf_종가_부엌에서의_따뜻한_초대_나주_남파고택_20261016",
-      "title": "종가 부엌에서의 따뜻한 초대",
-      "source": "remote"
-    },
-    {
-      "id": "perf_정선_국가유산_야행_정선읍_골목전역_20261016",
-      "title": "정선 국가유산 야행",
-      "source": "remote"
-    },
-    {
-      "id": "class_명작모작_원데이_클래스",
-      "title": "명작모작 원데이 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_1박2일_5곡_첨성대_별관찰_체험_화양서원_화양구곡_20261016",
-      "title": "1박2일 5곡 첨성대 별관찰 체험",
-      "source": "remote"
-    },
-    {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261016",
-      "title": "선비의 사계",
-      "source": "remote"
-    },
-    {
-      "id": "perf_보령_국가유산_야행_망루의_소리_보령의_밤을_깨우다_충남_보령시_원도심_일원_대천로_33_20261016",
-      "title": "보령 국가유산 야행(망루의 소리, 보령의 밤을 깨우다)",
-      "source": "remote"
-    },
-    {
-      "id": "class_부케_캔들_one_day_class",
-      "title": "부케 캔들 one-day class",
-      "source": "remote"
-    },
-    {
-      "id": "museum_항공과학탐험대_초등_국립항공박물관에서_항공기의_원리를_탐험해요",
-      "title": "항공과학탐험대 초등! 국립항공박물관에서 항공기의 원리를 탐험해요!",
-      "source": "remote"
-    },
-    {
-      "id": "perf_김해_국가유산_야행_수로왕릉_봉리단길_일대_등_20261016",
-      "title": "김해 국가유산 야행",
-      "source": "remote"
-    },
-    {
-      "id": "perf_칠백의_종_히스토리_플로깅_칠백의총_전시관_종용사_순의비_등_20261016",
-      "title": "칠백의 종 히스토리 플로깅",
-      "source": "remote"
-    },
-    {
-      "id": "class_나를_돌아보는_컬러테라피_원석악세사리_이색_클래스",
-      "title": "나를 돌아보는 컬러테라피+원석악세사리 이색 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "museum_아이와함께_서대문형무소_투어로_만나는_일제강점기_이야기",
-      "title": "아이와함께 - 서대문형무소 투어로 만나는 일제강점기 이야기",
-      "source": "remote"
-    },
-    {
-      "id": "class_무전력_우드스피커_만들기_원데이_클래스_1구_기본_가죽",
-      "title": "무전력 우드스피커 만들기 원데이 클래스 / 1구 기본 + 가죽",
-      "source": "remote"
-    },
-    {
-      "id": "class_전통배냇저고리_원데이",
-      "title": "전통배냇저고리 원데이",
-      "source": "remote"
-    },
-    {
-      "id": "class_미니캔버스_페인팅_원데이_클래스",
-      "title": "미니캔버스 페인팅 원데이 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_대구_국가유산_야행_근대골목_일원_청라언덕_계산예가_약령시_20261016",
-      "title": "대구 국가유산 야행",
-      "source": "remote"
-    },
-    {
-      "id": "museum_국립민속박물관_세시풍속_초등저학년_역사탐험대_교과서_속_옛날_생활_이야기",
-      "title": "국립민속박물관 세시풍속 초등저학년 역사탐험대! 교과서 속 옛날 생활 이야기",
-      "source": "remote"
-    },
-    {
-      "id": "perf_행미탐방_step_2_함께해_보현_보현사_20261016",
-      "title": "행미탐방 step 2. 함께해, 보현!",
-      "source": "remote"
-    },
-    {
-      "id": "class_나만의_레진_키캡_만들기",
-      "title": "나만의 레진 키캡 만들기",
-      "source": "remote"
-    },
-    {
-      "id": "perf_대구_국가유산_야행_청라언덕_및_근대골목_일원_국가유산_문화시설_20261016",
-      "title": "대구 국가유산 야행",
-      "source": "remote"
-    },
-    {
-      "id": "class_토핑_휘낭시에_12p_베이킹_원데이클래스",
-      "title": "토핑 휘낭시에 12p 베이킹 원데이클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_김해_국가유산_야행_수로의_시간을_걷는_밤_대성동고분군_수로왕릉_수릉원_20261016",
-      "title": "김해 국가유산 야행(수로의 시간을 걷는 밤)",
-      "source": "remote"
-    },
-    {
-      "id": "perf_비단골_수락_하다_금산향교_20261016",
-      "title": "비단골 수락(秀樂)하다",
-      "source": "remote"
-    },
-    {
-      "id": "perf_간송보감_문화로_지켜낸_오늘_간송옛집_20261016",
-      "title": "간송보감, 문화로 지켜낸 오늘",
-      "source": "remote"
-    },
-    {
-      "id": "class_꾸덕꾸덕_유화_원데이_클래스_인스타_예약_인기폭발",
-      "title": "꾸덕꾸덕 유화 원데이 클래스 (인스타 예약 인기폭발!)",
-      "source": "remote"
-    },
-    {
-      "id": "museum_초등_저학년_전용_대한민국_근현대사_보물찾기_역사탐험대_대한민국역사박물관",
-      "title": "초등 저학년 전용! 대한민국 근현대사 보물찾기 역사탐험대 -대한민국역사박물관",
-      "source": "remote"
-    },
-    {
-      "id": "perf_보령_국가유산_야행_망루_일원_20261016",
-      "title": "보령 국가유산 야행",
-      "source": "remote"
-    },
-    {
-      "id": "class_더위_이기는_타이요리",
-      "title": "더위 이기는 타이요리",
-      "source": "remote"
-    },
-    {
-      "id": "museum_프리미엄_어린이_역사_체험_학습_국립경주박물관_신라_금관_만들기",
-      "title": "프리미엄 어린이 역사 체험 학습: 국립경주박물관&신라 금관 만들기",
-      "source": "remote"
-    },
-    {
-      "id": "museum_덕수궁_Premium_미취학_역사탐험대_6_8세",
-      "title": "덕수궁 \"Premium\" 미취학 역사탐험대! (6-8세)",
-      "source": "remote"
-    },
-    {
-      "id": "perf_수덕사의_문화유산을_담다_예산_수덕사_일원_수덕사_근역성보관_20261016",
-      "title": "수덕사의 문화유산을 담다",
-      "source": "remote"
-    },
-    {
-      "id": "class_원데이_음성_발성_검사_클래스",
-      "title": "원데이 음성(발성)검사 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_스토리텔링으로_되살아나는_서창_국가유산_축제_서창나루_일원_20261016",
-      "title": "스토리텔링으로 되살아나는 서창 “국가유산 축제”",
-      "source": "remote"
-    },
-    {
-      "id": "perf_정읍_국가유산_야행_선비의_향기_독립으로_피어나다_정읍시_태인면_피향정_태인동헌_태인향교_등_20261016",
-      "title": "정읍 국가유산 야행(선비의 향기 독립으로 피어나다)",
-      "source": "remote"
-    },
-    {
-      "id": "class_나이프페인팅_원데이클래스",
-      "title": "나이프페인팅 원데이클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_칠장사에서_보물찾기_칠장사_20261017",
-      "title": "칠장사에서 보물찾기",
-      "source": "remote"
-    },
-    {
-      "id": "class_라탄_모빌_만들기_원데이_클래스",
-      "title": "라탄 모빌 만들기 원데이 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_점필재_종갓집_참살이_점필재종택_도연재_20261017",
-      "title": "점필재 종갓집 참살이",
-      "source": "remote"
-    },
-    {
-      "id": "class_친환경_소재_제스모나이트_오브제_원데이_클래스_당일_수령",
-      "title": "친환경 소재 제스모나이트 오브제 원데이 클래스(당일 수령)",
-      "source": "remote"
-    },
-    {
-      "id": "class_키링_클래스",
-      "title": "키링 클래스",
-      "source": "remote"
-    },
-    {
-      "id": "perf_웰컴_투_선비_아카데미_영주_의산서원_20261017",
-      "title": "웰컴 투 선비 아카데미",
-      "source": "remote"
-    },
-    {
-      "id": "perf_가람_모꼬지_보석사_20261017",
-      "title": "가람(伽藍) 모꼬지",
-      "source": "remote"
-    },
-    {
-      "id": "perf_범인의_암호_코드_신광면행정복지센터_일원_20261017",
-      "title": "범인의 암호 코드",
-      "source": "remote"
-    },
-    {
-      "id": "perf_회연서원_자연찬가_콘서트_회연서원_20261017",
-      "title": "회연서원 자연찬가 콘서트",
-      "source": "remote"
-    },
-    {
-      "id": "perf_1박2일_힐링캠프_증도면일대_20261017",
-      "title": "1박2일 힐링캠프",
-      "source": "remote"
-    },
-    {
-      "id": "perf_달빛_아래_문화유산_풍류_만휴정_만휴정_20261017",
-      "title": "달빛 아래 문화유산, 풍류 만휴정",
-      "source": "remote"
-    },
-    {
-      "id": "perf_종가이야기_따라_걷는_시간여행_조종수_가옥_구림대동계사_회사정_등_20261017",
-      "title": "종가이야기 따라 걷는 시간여행",
-      "source": "remote"
-    },
-    {
-      "id": "perf_선지식과_함께_하는_승탑순례_실상사_승탑_순례길_선재집_20261017",
-      "title": "선지식과 함께 하는 승탑순례",
-      "source": "remote"
-    },
-    {
-      "id": "perf_3교시_회재_과거급제길과_아들_이전인의_뮤지컬_독락_독락당_20261024",
-      "title": "〈3교시〉 회재 과거급제길과 아들 이전인의 孝 뮤지컬 독락",
-      "source": "remote"
-    },
-    {
-      "id": "perf_수랏간_궁녀의_조청_고추장을_잇다_창평장전이씨고택_20261017",
-      "title": "수랏간 궁녀의 조청, 고추장을 잇다",
-      "source": "remote"
-    },
-    {
-      "id": "class_여권지갑_여권케이스_만들기_가죽공예_원데이클래스",
-      "title": "여권지갑 여권케이스 만들기 가죽공예 원데이클래스",
-      "source": "remote"
-    },
-    {
-      "id": "museum_국립중앙박물관_삼국시대_미취학_Premium_역사탐험대_Season3",
-      "title": "국립중앙박물관 삼국시대 미취학 \"Premium\" 역사탐험대 Season3",
-      "source": "remote"
-    },
-    {
-      "id": "class_성악_보컬_레슨_1개월_50분",
-      "title": "성악/보컬 레슨[1개월 - 50분]",
-      "source": "remote"
-    },
-    {
-      "id": "perf_양주매곡리에서_만나는_6가지_생활문화체험_양주매곡리_20261017",
-      "title": "양주매곡리에서 만나는 6가지 생활문화체험",
-      "source": "remote"
-    },
-    {
-      "id": "museum_8_10세_추천_유관순부터_8_15광복까지_서대문형무소역사관",
-      "title": "8-10세 추천! 유관순부터 8.15광복까지 - 서대문형무소역사관",
-      "source": "remote"
-    },
-    {
-      "id": "perf_선덕사_문화유산을_담다_선덕사_20261017",
-      "title": "선덕사 문화유산을 담다",
-      "source": "remote"
-    },
-    {
-      "id": "perf_조선의_색_청렴을_그리다_오리이원익_종택_및_관감당_20261017",
-      "title": "조선의 색, 청렴을 그리다",
-      "source": "remote"
-    },
-    {
-      "id": "perf_다함께_인문학당_사천향교_20261017",
-      "title": "다함께, 인문학당",
-      "source": "remote"
-    },
-    {
-      "id": "perf_시간을_걷는_지혜_온양민속박물과_상설전시실_야외정원_20261017",
-      "title": "시간을 걷는 지혜",
-      "source": "remote"
-    },
-    {
-      "id": "class_꽃으로_힐링하는_4회_플라워_클래스",
-      "title": "꽃으로 힐링하는 4회 플라워 클래스",
-      "source": "remote"
-    }
-  ]
+  "pendingSamples": []
 }
