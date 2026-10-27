@@ -31,6 +31,20 @@ function findMappedTeamLogo(team: string) {
     return key ? FUTURES_TEAM_LOGOS[key] : undefined;
 }
 
+const KBL_OFFICIAL_LOGOS: Record<string, string> = {
+    SK: '/images/logos/kbl/sk_official.svg',
+    KCC: '/images/logos/kbl/kcc_official.svg',
+    DB: '/images/logos/kbl/db_official.svg',
+    현대모비스: '/images/logos/kbl/mobis_official.svg',
+    한국가스공사: '/images/logos/kbl/kogas_official.svg',
+    소노: '/images/logos/kbl/sono_official.svg',
+    LG: '/images/logos/kbl/lg_official.svg',
+    삼성: '/images/logos/kbl/samsung_official.svg',
+    KT: '/images/logos/kbl/kt_official.svg',
+    정관장: '/images/logos/kbl/kgc_official.svg',
+    KGC: '/images/logos/kbl/kgc_official.svg',
+};
+
 function getBasePath() {
     if (typeof window !== 'undefined' && window.location.pathname.startsWith('/culture')) {
         return '/culture';
@@ -69,6 +83,25 @@ export function getSportsTeamLogo(performance: SportsTeamLogoInput, side: 'home'
     }
 
     return '';
+}
+
+export function getSportsTeamLogoCandidates(performance: SportsTeamLogoInput, side: 'home' | 'away') {
+    const primary = getSportsTeamLogo(performance, side);
+    const team = side === 'home' ? performance.homeTeam : performance.awayTeam;
+    const candidates = primary ? [primary] : [];
+
+    if (performance.genre === 'basketball' && team) {
+        const normalizedTeam = normalizeTeamName(team);
+        const officialKey = Object.keys(KBL_OFFICIAL_LOGOS).find((key) => {
+            const normalizedKey = normalizeTeamName(key);
+            return normalizedTeam === normalizedKey || normalizedTeam.includes(normalizedKey);
+        });
+        if (officialKey) {
+            candidates.push(normalizeLogoSrc(KBL_OFFICIAL_LOGOS[officialKey]));
+        }
+    }
+
+    return [...new Set(candidates)];
 }
 
 export function shouldShowSportsTeamLogoOverlay(performance: SportsTeamLogoInput) {

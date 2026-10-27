@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import { clsx } from 'clsx';
 import { getGenreIcon } from '../GenreIcons';
-import { getSportsTeamLogo, SPORTS_TEAM_LOGO_GENRES, type SportsTeamLogoInput } from '@/lib/sports-team-logos';
+import { getSportsTeamLogoCandidates, SPORTS_TEAM_LOGO_GENRES, type SportsTeamLogoInput } from '@/lib/sports-team-logos';
 
 interface SportsTeamLogoOverlayProps {
     performance: SportsTeamLogoInput;
@@ -29,8 +29,10 @@ function SportsTeamLogoOverlay({
     showTeamNames = false,
     teamNameClassName,
 }: SportsTeamLogoOverlayProps) {
-    const homeLogo = getSportsTeamLogo(performance, 'home');
-    const awayLogo = getSportsTeamLogo(performance, 'away');
+    const homeCandidates = getSportsTeamLogoCandidates(performance, 'home');
+    const awayCandidates = getSportsTeamLogoCandidates(performance, 'away');
+    const homeLogo = homeCandidates[0] || '';
+    const awayLogo = awayCandidates[0] || '';
     const backgroundIcon = showBackgroundIcon ? getGenreIcon(performance.genre || '', backgroundIconSize) : null;
 
     if (
@@ -46,7 +48,8 @@ function SportsTeamLogoOverlay({
 
     const renderLogo = (side: 'home' | 'away') => {
         const team = side === 'home' ? performance.homeTeam : performance.awayTeam;
-        const logo = side === 'home' ? homeLogo : awayLogo;
+        const candidates = side === 'home' ? homeCandidates : awayCandidates;
+        const logo = candidates[0];
         const image = (
             <img
                 src={logo}
@@ -58,8 +61,16 @@ function SportsTeamLogoOverlay({
                 decoding="async"
                 draggable={false}
                 onError={(event) => {
-                    // A stale data payload must not leave a broken-image icon over the card.
-                    event.currentTarget.style.visibility = 'hidden';
+                    const current = event.currentTarget;
+                    const nextIndex = Number(current.dataset.logoCandidateIndex || '0') + 1;
+                    const nextLogo = candidates[nextIndex];
+                    if (nextLogo) {
+                        current.dataset.logoCandidateIndex = String(nextIndex);
+                        current.src = nextLogo;
+                        return;
+                    }
+                    // A stale payload must never leave a broken-image icon over the card.
+                    current.style.display = 'none';
                 }}
             />
         );

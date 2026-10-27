@@ -6,7 +6,6 @@ import { getPerformanceLocationLabel } from '@/lib/location-display';
 import { cleanTitle } from '@/lib/utils';
 import { useUserActivity } from '@/hooks/useUserActivity';
 import { clsx } from 'clsx';
-import SectionInfoPopover from './SectionInfoPopover';
 import SportsTeamLogoOverlay from './SportsTeamLogoOverlay';
 import { useHorizontalDragScroll } from '@/hooks/useHorizontalDragScroll';
 import type { Performance } from '@/types';
@@ -69,6 +68,7 @@ export default function RecommendedSection({
     void onToggleLike;
     void likedIds;
     void onDetailPrepare;
+    void subtitle;
 
     const { ref: containerRef, isDragging, hasDragged, elasticStyle, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
@@ -187,10 +187,6 @@ export default function RecommendedSection({
                         <h2 className={clsx("text-xl sm:text-2xl font-black tracking-tight transition-colors text-transparent bg-clip-text bg-gradient-to-r", searchMode === 'location' ? "from-[#55df99] to-[#0090f5]" : "from-purple-400 to-pink-500")}>
                             {title}
                         </h2>
-                        <SectionInfoPopover
-                            title={title}
-                            description={subtitle}
-                        />
                     </div>
                 </div>
             </div>

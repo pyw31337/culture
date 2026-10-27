@@ -18,6 +18,13 @@ function fixPaths() {
             // Fix Key Missing in some files (id, etc) - Generic Path Fix
             ['homeTeamLogo', 'awayTeamLogo'].forEach(key => {
                 if (item[key]) {
+                    const kblLogoCode = item[key].match(/kbl\.or\.kr\/assets\/img\/ico\/logo\/ic-([^/?#]+)\.svg/i)?.[1]?.toLowerCase();
+                    const localKblLogo = kblLogoCode ? path.join(process.cwd(), 'public', 'images', 'logos', 'kbl', `${kblLogoCode}.svg`) : '';
+                    if (localKblLogo && fs.existsSync(localKblLogo)) {
+                        item[key] = `/culture/images/logos/kbl/${kblLogoCode}.svg`;
+                        changed = true;
+                    }
+
                     // 1. Prepend /culture if missing and starts with /images
                     if (item[key].startsWith('/images/')) {
                         item[key] = `/culture${item[key]}`;

@@ -800,7 +800,7 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
         image = GENRE_FALLBACKS[genre] || GENRE_FALLBACKS.default;
     }
 
-    // 5. Sports Logos — RESPECT data-supplied logos; only fallback to FUTURES_TEAM_LOGOS
+    // 5. Sports Logos — keep every KBL logo on our own server.
     let homeLogo = raw.homeTeamLogo;
     let awayLogo = raw.awayTeamLogo;
     if (['baseball', 'basketball', 'volleyball', 'soccer', 'handball'].includes(genre)) {
@@ -816,6 +816,15 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
             awayLogo = FUTURES_TEAM_LOGOS[aTeam];
         }
     }
+
+    const localizeKblLogo = (logo: string | undefined): string | undefined => {
+        if (!logo || !/kbl\.or\.kr\/assets\/img\/ico\/logo\/ic-[^/?#]+\.svg/i.test(logo)) return logo;
+        const code = logo.match(/\/ic-([^/?#]+)\.svg/i)?.[1]?.toLowerCase();
+        const localCodes = new Set(['at', 'tfb', 'tps', 'ryu', 'chiba', 'new', 'mer', 'asia', 'rookie', 'gong', 'mong', 'sgb', 'tgh', 'nv', 'mhc', 'db', 'kcc', 'sk', 'kgc', 'mobis', 'kogas', 'sono', 'lg', 'samsung', 'kt']);
+        return code && localCodes.has(code) ? `/images/logos/kbl/${code}.svg` : logo;
+    };
+    homeLogo = localizeKblLogo(homeLogo);
+    awayLogo = localizeKblLogo(awayLogo);
 
     // 6. Add BASE_PATH prefix to local image/logo paths missing it
     const addBP = (p: string | undefined): string | undefined => {
