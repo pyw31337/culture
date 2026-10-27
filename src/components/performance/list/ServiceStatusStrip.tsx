@@ -2,9 +2,8 @@
 
 import type { ReactNode } from 'react';
 import { useEffect, useMemo, useState } from 'react';
-import Link from 'next/link';
 import { clsx } from 'clsx';
-import { Activity, ArrowUpRight, Clock3, Database, Info, LayoutGrid, ShieldAlert, ShieldCheck, X } from 'lucide-react';
+import { Activity, Clock3, Database, Info, LayoutGrid, ShieldAlert, ShieldCheck, X } from 'lucide-react';
 import Portal from '@/components/ui/Portal';
 import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
 import { getQualityIssueCount, getQualityStatusLabel, getSourceHealthStatusLabel } from '@/lib/build-info';
@@ -173,19 +172,11 @@ export default function ServiceStatusStrip({
                             <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 light:border-slate-200 light:bg-slate-50">
                                 <div className="flex items-center gap-2 text-sm font-bold text-white light:text-slate-900">
                                     <LayoutGrid className="h-4 w-4 text-sky-300 light:text-sky-700" />
-                                    더 자세한 운영 상태는 별도 페이지에서 확인할 수 있습니다.
+                                    데이터 수집 및 품질 상태 안내
                                 </div>
                                 <p className="mt-1 text-xs leading-5 text-slate-300 light:text-slate-600">
-                                    소스별 마지막 수집 시각, 비시즌 처리, 품질 보강 상태까지 상세하게 정리해 두었습니다.
+                                    소스별 마지막 수집 시각, 비시즌 처리, 품질 보강 상태까지 체계적으로 관리되고 있습니다.
                                 </p>
-                                <Link
-                                    href="/admin/"
-                                    onClick={() => setIsOpen(false)}
-                                    className="mt-3 inline-flex items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-sm font-black text-white transition hover:bg-sky-400"
-                                >
-                                    관리자 페이지로 이동
-                                    <ArrowUpRight className="h-4 w-4" />
-                                </Link>
                             </div>
                         </div>
                     </div>

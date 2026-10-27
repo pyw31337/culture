@@ -22,7 +22,6 @@ import { getExternalContentLink } from '@/lib/performance-links';
 import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
 import Portal from './ui/Portal';
 import ImageWithFallback from './ImageWithFallback';
-import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
 import { loadKakaoMapSdk } from '@/lib/kakao-map-sdk';
 import CinemaTimetablePanel from './CinemaTimetablePanel';
 
@@ -1331,15 +1330,6 @@ export default function MapView({
                         )} title="날씨 확인">
                         <CloudSun className="w-5 h-5" />
                     </button>
-                    <ServiceStatusStrip
-                        lastUpdated={lastUpdated}
-                        totalItemCount={totalItemCount}
-                        availableGenreCount={availableGenreCount}
-                        qualitySummary={buildInfo?.qualitySummary}
-                        sourceHealthSummary={buildInfo?.sourceHealthSummary}
-                        className="self-end"
-                        buttonClassName="h-10 w-10 border-gray-200 bg-white/80 text-gray-900 shadow-md hover:bg-white dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
-                    />
                 </div>
 
                 {/* Search Here Button relocated to bottom for better mobile UX */}

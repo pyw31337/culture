@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { BellRing, RefreshCcw, X } from 'lucide-react';
 import { formatKoreanDateTime } from '@/lib/build-info';
@@ -237,19 +236,13 @@ export default function VersionUpdateBanner({
                             <p className="mt-1 text-sm text-sky-100/80 light:text-slate-600">
                                 {updateLabel} 기준 운영 상태로 바뀌었습니다. 새로고침하면 최신 카테고리와 데이터를 바로 볼 수 있습니다.
                             </p>
-                            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-semibold text-sky-100/75 light:text-slate-500">
-                                {pendingUpdate.version && (
+                            {pendingUpdate.version && (
+                                <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-semibold text-sky-100/75 light:text-slate-500">
                                     <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 light:border-slate-200 light:bg-slate-100">
                                         버전 {pendingUpdate.version}
                                     </span>
-                                )}
-                                <Link
-                                    href="/admin/"
-                                    className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 transition hover:border-sky-300/40 hover:text-white light:border-slate-200 light:bg-slate-100 light:hover:border-sky-300 light:hover:text-sky-700"
-                                >
-                                    관리자 페이지 보기
-                                </Link>
-                            </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                     <button
