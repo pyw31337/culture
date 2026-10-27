@@ -370,10 +370,12 @@ function applyPosterOutcome(record: PosterRecord, outcome: PosterOutcome, checke
     next.backupPoster = remoteCandidate || outcome.localUrl;
   } else {
     // Preserve remote candidate rather than wiping out posters when caching is deferred or pending
-    next.image = remoteCandidate;
-    next.poster = remoteCandidate;
-    next.posterUrl = remoteCandidate;
-    next.backupPoster = remoteCandidate;
+    const currentImage = typeof record.image === 'string' ? record.image : '';
+    const fallbackImage = remoteCandidate || (currentImage.startsWith('/images/') ? currentImage : '');
+    next.image = fallbackImage;
+    next.poster = fallbackImage;
+    next.posterUrl = fallbackImage;
+    next.backupPoster = remoteCandidate || fallbackImage;
   }
 
   return JSON.stringify(record) !== previous;
@@ -448,7 +450,9 @@ async function main() {
   for (const group of groups) {
     const existing = findExistingPoster(group, cacheIndex);
     if (existing) outcomes.set(group.id, existing);
-    else unresolved.push(group);
+    else if (group.candidates.length === 0) {
+      outcomes.set(group.id, { status: 'unavailable', sourceUrls: [], failure: 'no-poster-candidate' });
+    } else unresolved.push(group);
   }
 
   const toDownload = unresolved.slice(0, MAX_NEW_DOWNLOADS);

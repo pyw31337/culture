@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-26T22:50:53.846Z",
+  "checkedAt": "2026-10-27T05:46:38.016Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10193,
-  "verified": 8968,
-  "unavailable": 1225,
+  "total": 10177,
+  "verified": 8955,
+  "unavailable": 1222,
   "pending": 0,
   "recoveredFromAlternate": 5,
   "unavailableSamples": [
