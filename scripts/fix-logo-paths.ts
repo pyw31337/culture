@@ -24,6 +24,10 @@ function fixPaths() {
                         item[key] = `/culture/images/logos/kbl/${kblLogoCode}.svg`;
                         changed = true;
                     }
+                    if (['at', 'tfb', 'tps', 'ryu', 'chiba', 'new', 'mer', 'asia', 'rookie', 'gong', 'mong'].includes(kblLogoCode || '')) {
+                        item[key] = '/culture/images/logos/kbl/international.svg';
+                        changed = true;
+                    }
 
                     // 1. Prepend /culture if missing and starts with /images
                     if (item[key].startsWith('/images/')) {

@@ -1,19 +1,35 @@
 {
-  "checkedAt": "2026-10-27T02:32:51.456Z",
+  "checkedAt": "2026-10-26T22:50:49.229Z",
   "status": "warn",
-  "venueCount": 4097,
+  "venueCount": 4100,
   "matchedCount": 828,
   "highConfidenceMatchCount": 602,
   "needsReviewCount": 20,
   "notFoundCount": 231,
-  "pendingLookupCount": 2450,
-  "insufficientIdentityCount": 322,
-  "lookupReady": true,
-  "providersConfigured": [
-    "kakao",
-    "naver"
-  ],
+  "pendingLookupCount": 2453,
+  "insufficientIdentityCount": 323,
+  "lookupReady": false,
+  "providersConfigured": [],
   "queue": [
+    {
+      "venueId": "venue_신항서원_4ictgq",
+      "officialName": "신항서원",
+      "address": "충청북도 청주시",
+      "query": "신항서원 충청북도 청주시",
+      "priority": 1004,
+      "performanceCount": 13,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "으랏차차서원마을",
+        "으랏차차서원마을",
+        "으랏차차서원마을"
+      ]
+    },
     {
       "venueId": "venue_구강서원_m053qe",
       "officialName": "구강서원",
@@ -31,25 +47,6 @@
         "유생들의 지구력-지구를 지키는 힘",
         "선비들의 문화 나들이",
         "유학길로 떠나는 소풍"
-      ]
-    },
-    {
-      "venueId": "venue_신항서원_4ictgq",
-      "officialName": "신항서원",
-      "address": "충청북도 청주시",
-      "query": "신항서원 충청북도 청주시",
-      "priority": 996,
-      "performanceCount": 12,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "으랏차차서원마을",
-        "으랏차차서원마을",
-        "으랏차차서원마을"
       ]
     },
     {
@@ -547,6 +544,25 @@
       ]
     },
     {
+      "venueId": "venue_예산향교_1letdzk",
+      "officialName": "예산향교",
+      "address": "충청남도 예산향교",
+      "query": "예산향교 충청남도 예산향교",
+      "priority": 932,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "YES 예산의 향교와 함께",
+        "YES 예산의 향교와 함께",
+        "YES 예산의 향교와 함께"
+      ]
+    },
+    {
       "venueId": "venue_이하복고택_1oxodar",
       "officialName": "이하복 고택",
       "address": "충청남도 서천군",
@@ -737,25 +753,6 @@
       ]
     },
     {
-      "venueId": "venue_예산향교_1letdzk",
-      "officialName": "예산향교",
-      "address": "충청남도 예산향교",
-      "query": "예산향교 충청남도 예산향교",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께"
-      ]
-    },
-    {
       "venueId": "venue_용와종택호고와종택_1pzzxgo",
       "officialName": "용와종택, 호고와종택",
       "address": "경상북도 구미시",
@@ -921,6 +918,24 @@
       "sampleTitles": [
         "강화유수의 하루",
         "강화유수의 하루"
+      ]
+    },
+    {
+      "venueId": "venue_공주황새바위천주교순교유적_rf586w",
+      "officialName": "공주 황새바위 천주교 순교유적",
+      "address": "충청남도 공주시",
+      "query": "공주 황새바위 천주교 순교유적 충청남도 공주시",
+      "priority": 916,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "선교사의 눈으로 본 공주풍경",
+        "황새바위에서 만나는 국제교류"
       ]
     },
     {
@@ -1805,23 +1820,6 @@
       ]
     },
     {
-      "venueId": "venue_공주황새바위천주교순교유적_rf586w",
-      "officialName": "공주 황새바위 천주교 순교유적",
-      "address": "충청남도 공주시",
-      "query": "공주 황새바위 천주교 순교유적 충청남도 공주시",
-      "priority": 908,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "선교사의 눈으로 본 공주풍경"
-      ]
-    },
-    {
       "venueId": "venue_근재공고택석계서원그린나래태화강생태관힐링빌리지등_18580n4",
       "officialName": "근재공 고택, 석계서원, 그린나래 , 태화강 생태관, 힐링빌리지 등",
       "address": "울산광역시 울주군",
@@ -2218,6 +2216,26 @@
       ]
     },
     {
+      "venueId": "venue_신항서원_4ictgq",
+      "officialName": "신항서원",
+      "address": "충청북도 청주시",
+      "query": "신항서원 충청북도 청주시",
+      "priority": 104,
+      "performanceCount": 13,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "으랏차차서원마을",
+        "으랏차차서원마을",
+        "으랏차차서원마을"
+      ]
+    },
+    {
       "venueId": "venue_경기양주시_2yl2ej",
       "officialName": "경기 양주시",
       "address": "경기 양주시",
@@ -2254,26 +2272,6 @@
         "유생들의 지구력-지구를 지키는 힘",
         "선비들의 문화 나들이",
         "유학길로 떠나는 소풍"
-      ]
-    },
-    {
-      "venueId": "venue_신항서원_4ictgq",
-      "officialName": "신항서원",
-      "address": "충청북도 청주시",
-      "query": "신항서원 충청북도 청주시",
-      "priority": 96,
-      "performanceCount": 12,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "으랏차차서원마을",
-        "으랏차차서원마을",
-        "으랏차차서원마을"
       ]
     },
     {
@@ -2984,6 +2982,26 @@
       ]
     },
     {
+      "venueId": "venue_예산향교_1letdzk",
+      "officialName": "예산향교",
+      "address": "충청남도 예산향교",
+      "query": "예산향교 충청남도 예산향교",
+      "priority": 32,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "YES 예산의 향교와 함께",
+        "YES 예산의 향교와 함께",
+        "YES 예산의 향교와 함께"
+      ]
+    },
+    {
       "venueId": "venue_이하복고택_1oxodar",
       "officialName": "이하복 고택",
       "address": "충청남도 서천군",
@@ -3331,26 +3349,6 @@
       ]
     },
     {
-      "venueId": "venue_예산향교_1letdzk",
-      "officialName": "예산향교",
-      "address": "충청남도 예산향교",
-      "query": "예산향교 충청남도 예산향교",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께"
-      ]
-    },
-    {
       "venueId": "venue_용와종택호고와종택_1pzzxgo",
       "officialName": "용와종택, 호고와종택",
       "address": "경상북도 구미시",
@@ -3616,6 +3614,25 @@
       "sampleTitles": [
         "걷기 좋은 날, 만세길에서 만나!",
         "청금 유생 in 남양향교"
+      ]
+    },
+    {
+      "venueId": "venue_공주황새바위천주교순교유적_rf586w",
+      "officialName": "공주 황새바위 천주교 순교유적",
+      "address": "충청남도 공주시",
+      "query": "공주 황새바위 천주교 순교유적 충청남도 공주시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "선교사의 눈으로 본 공주풍경",
+        "황새바위에서 만나는 국제교류"
       ]
     },
     {
@@ -4446,25 +4463,6 @@
         "2천년 구림에 울리는 김창조의 가야금 선율소리",
         "2천년 구림에 울리는 김창조의 가야금 선율소리"
       ]
-    },
-    {
-      "venueId": "venue_횡성회다지소리문화체험관_1jg18f",
-      "officialName": "횡성회다지소리문화체험관",
-      "address": "강원특별자치도 횡성군",
-      "query": "횡성회다지소리문화체험관 강원 횡성군",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "가족과 함께하는 무형유산산책 [회다지환경예술캠프]",
-        "가족과 함께하는 무형유산산책 [회다지환경예술캠프]"
-      ]
     }
   ],
   "staleCacheCount": 0,
@@ -4810,22 +4808,38 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-10-27T02:32:51.456Z",
+    "checkedAt": "2026-10-26T22:50:49.229Z",
     "status": "warn",
-    "venueCount": 4097,
+    "venueCount": 4100,
     "matchedCount": 828,
     "highConfidenceMatchCount": 602,
     "needsReviewCount": 20,
     "notFoundCount": 231,
-    "pendingLookupCount": 2450,
-    "insufficientIdentityCount": 322,
-    "lookupReady": true,
-    "providersConfigured": [
-      "kakao",
-      "naver"
-    ],
+    "pendingLookupCount": 2453,
+    "insufficientIdentityCount": 323,
+    "lookupReady": false,
+    "providersConfigured": [],
     "staleCacheCount": 0,
     "topQueue": [
+      {
+        "venueId": "venue_신항서원_4ictgq",
+        "officialName": "신항서원",
+        "address": "충청북도 청주시",
+        "query": "신항서원 충청북도 청주시",
+        "priority": 1004,
+        "performanceCount": 13,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "으랏차차서원마을",
+          "으랏차차서원마을",
+          "으랏차차서원마을"
+        ]
+      },
       {
         "venueId": "venue_구강서원_m053qe",
         "officialName": "구강서원",
@@ -4843,25 +4857,6 @@
           "유생들의 지구력-지구를 지키는 힘",
           "선비들의 문화 나들이",
           "유학길로 떠나는 소풍"
-        ]
-      },
-      {
-        "venueId": "venue_신항서원_4ictgq",
-        "officialName": "신항서원",
-        "address": "충청북도 청주시",
-        "query": "신항서원 충청북도 청주시",
-        "priority": 996,
-        "performanceCount": 12,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "으랏차차서원마을",
-          "으랏차차서원마을",
-          "으랏차차서원마을"
         ]
       },
       {
@@ -5057,6 +5052,26 @@
         ]
       },
       {
+        "venueId": "venue_신항서원_4ictgq",
+        "officialName": "신항서원",
+        "address": "충청북도 청주시",
+        "query": "신항서원 충청북도 청주시",
+        "priority": 104,
+        "performanceCount": 13,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "으랏차차서원마을",
+          "으랏차차서원마을",
+          "으랏차차서원마을"
+        ]
+      },
+      {
         "venueId": "venue_경기양주시_2yl2ej",
         "officialName": "경기 양주시",
         "address": "경기 양주시",
@@ -5093,26 +5108,6 @@
           "유생들의 지구력-지구를 지키는 힘",
           "선비들의 문화 나들이",
           "유학길로 떠나는 소풍"
-        ]
-      },
-      {
-        "venueId": "venue_신항서원_4ictgq",
-        "officialName": "신항서원",
-        "address": "충청북도 청주시",
-        "query": "신항서원 충청북도 청주시",
-        "priority": 96,
-        "performanceCount": 12,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "으랏차차서원마을",
-          "으랏차차서원마을",
-          "으랏차차서원마을"
         ]
       },
       {

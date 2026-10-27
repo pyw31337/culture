@@ -820,7 +820,10 @@ export function transformPerformance(raw: RawPerformance, source?: string): Perf
     const localizeKblLogo = (logo: string | undefined): string | undefined => {
         if (!logo || !/kbl\.or\.kr\/assets\/img\/ico\/logo\/ic-[^/?#]+\.svg/i.test(logo)) return logo;
         const code = logo.match(/\/ic-([^/?#]+)\.svg/i)?.[1]?.toLowerCase();
-        const localCodes = new Set(['at', 'tfb', 'tps', 'ryu', 'chiba', 'new', 'mer', 'asia', 'rookie', 'gong', 'mong', 'sgb', 'tgh', 'nv', 'mhc', 'db', 'kcc', 'sk', 'kgc', 'mobis', 'kogas', 'sono', 'lg', 'samsung', 'kt']);
+        const localCodes = new Set(['kcc', 'sono', 'sgb', 'tgh', 'nv', 'mhc', 'db', 'sk', 'kgc', 'mobis', 'kogas', 'lg', 'samsung', 'kt']);
+        if (code === 'at' || code === 'tfb' || code === 'tps' || code === 'ryu' || code === 'chiba' || code === 'new' || code === 'mer' || code === 'asia' || code === 'rookie' || code === 'gong' || code === 'mong') {
+            return '/images/logos/kbl/international.svg';
+        }
         return code && localCodes.has(code) ? `/images/logos/kbl/${code}.svg` : logo;
     };
     homeLogo = localizeKblLogo(homeLogo);
