@@ -1,1499 +1,19 @@
 {
-  "checkedAt": "2026-10-26T22:50:49.229Z",
+  "checkedAt": "2026-10-27T05:26:03.224Z",
   "status": "warn",
-  "venueCount": 4100,
-  "matchedCount": 828,
-  "highConfidenceMatchCount": 602,
+  "venueCount": 4097,
+  "matchedCount": 868,
+  "highConfidenceMatchCount": 601,
   "needsReviewCount": 20,
-  "notFoundCount": 231,
-  "pendingLookupCount": 2453,
-  "insufficientIdentityCount": 323,
-  "lookupReady": false,
-  "providersConfigured": [],
+  "notFoundCount": 264,
+  "pendingLookupCount": 2371,
+  "insufficientIdentityCount": 242,
+  "lookupReady": true,
+  "providersConfigured": [
+    "kakao",
+    "naver"
+  ],
   "queue": [
-    {
-      "venueId": "venue_신항서원_4ictgq",
-      "officialName": "신항서원",
-      "address": "충청북도 청주시",
-      "query": "신항서원 충청북도 청주시",
-      "priority": 1004,
-      "performanceCount": 13,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "으랏차차서원마을",
-        "으랏차차서원마을",
-        "으랏차차서원마을"
-      ]
-    },
-    {
-      "venueId": "venue_구강서원_m053qe",
-      "officialName": "구강서원",
-      "address": "울산광역시 중구",
-      "query": "구강서원 울산 중구",
-      "priority": 996,
-      "performanceCount": 12,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "유생들의 지구력-지구를 지키는 힘",
-        "선비들의 문화 나들이",
-        "유학길로 떠나는 소풍"
-      ]
-    },
-    {
-      "venueId": "venue_구암서원_1uiybft",
-      "officialName": "구암서원",
-      "address": "대구광역시 북구",
-      "query": "구암서원 대구 북구",
-      "priority": 980,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전통을 잇고 인성을 키우다",
-        "전통을 잇고 인성을 키우다",
-        "전통을 잇고 인성을 키우다"
-      ]
-    },
-    {
-      "venueId": "venue_영암군국가유산도갑사왕인박사유적지등_10qlelu",
-      "officialName": "영암군 국가유산 도갑사, 왕인박사유적지 등",
-      "address": "전라남도 영암군",
-      "query": "영암군 국가유산 도갑사, 왕인박사유적지 등 전남 영암군",
-      "priority": 980,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영암 국가유산을 찾아라",
-        "영암 국가유산을 찾아라",
-        "영암 국가유산을 찾아라"
-      ]
-    },
-    {
-      "venueId": "venue_정선향교_dgk5zh",
-      "officialName": "정선향교",
-      "address": "강원도 정선군",
-      "query": "정선향교 강원 정선군",
-      "priority": 980,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "향교로 마실가자",
-        "향교로 마실가자",
-        "향교로 마실가자"
-      ]
-    },
-    {
-      "venueId": "venue_조종수가옥구림대동계사회사정등_14h19ea",
-      "officialName": "조종수 가옥, 구림대동계사, 회사정 등",
-      "address": "전라남도 영암군",
-      "query": "조종수 가옥, 구림대동계사, 회사정 등 전남 영암군",
-      "priority": 980,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "종가이야기 따라 걷는 시간여행",
-        "종가이야기 따라 걷는 시간여행",
-        "종가이야기 따라 걷는 시간여행"
-      ]
-    },
-    {
-      "venueId": "venue_경주최부자댁_1ahxk5f",
-      "officialName": "경주최부자댁",
-      "address": "경상북도 경주시",
-      "query": "경주최부자댁 경북 경주시",
-      "priority": 972,
-      "performanceCount": 9,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "과객을 후하게 대접하라.",
-        "나눔의 곳간을 열다.",
-        "나눔의 곳간을 열다."
-      ]
-    },
-    {
-      "venueId": "venue_연기향교_ra4igo",
-      "officialName": "연기향교",
-      "address": "세종특별자치시 0",
-      "query": "연기향교 세종특별자치시 0",
-      "priority": 964,
-      "performanceCount": 8,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "유학IN세종",
-        "연기향교 은행나무 학당",
-        "유학IN세종"
-      ]
-    },
-    {
-      "venueId": "venue_영광매간당고택_1y5j797",
-      "officialName": "영광 매간당 고택",
-      "address": "전라남도 영광군",
-      "query": "영광 매간당 고택 전남 영광군",
-      "priority": 964,
-      "performanceCount": 8,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
-        "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
-        "매간당 고택 주역괘로 풀어본 효자 가문의 비밀"
-      ]
-    },
-    {
-      "venueId": "venue_영광군에위치한국가유산일대_qhhl3w",
-      "officialName": "영광군에 위치한 국가유산 일대",
-      "address": "전남광주통합특별시 영광군",
-      "query": "영광군에 위치한 국가유산 일대 전남광주통합특별시 영광군",
-      "priority": 964,
-      "performanceCount": 8,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영광의 문화유산을 알아보자",
-        "영광의 문화유산을 알아보자",
-        "영광의 문화유산을 알아보자"
-      ]
-    },
-    {
-      "venueId": "venue_인천제물포구개항장일대_1wtjmn",
-      "officialName": "인천 제물포구 개항장 일대",
-      "address": "인천광역시 중구",
-      "query": "인천 제물포구 개항장 일대 인천 중구",
-      "priority": 956,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "개항장으로 Go!, 듣Go, 걷Go, 줍Go",
-        "개항장 1919, 조선을 수호하라!",
-        "개항장 1919, 조선을 수호하라!"
-      ]
-    },
-    {
-      "venueId": "venue_추사유배지_4hgt31",
-      "officialName": "추사 유배지",
-      "address": "제주특별자치도 -",
-      "query": "추사 유배지 제주 -",
-      "priority": 956,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "추사, 몽연",
-        "추사의 사색",
-        "추사를 만나다"
-      ]
-    },
-    {
-      "venueId": "venue_충주향교_143bt7p",
-      "officialName": "충주향교",
-      "address": "충청북도 충주시",
-      "query": "충주향교 충청북도 충주시",
-      "priority": 956,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "충주향교 꼬마선비의 선비풍류",
-        "충주향교 꼬마선비의 선비풍류",
-        "충주향교 꼬마선비의 선비풍류"
-      ]
-    },
-    {
-      "venueId": "venue_고성오광대전수교육관_wol8hy",
-      "officialName": "고성오광대 전수교육관",
-      "address": "경상남도 고성군",
-      "query": "고성오광대 전수교육관 경남 고성군",
-      "priority": 948,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "잠자는 말뚝이를 깨워라. 생생!!!",
-        "잠자는 말뚝이를 깨워라. 생생!!!",
-        "잠자는 말뚝이를 깨워라. 생생!!!"
-      ]
-    },
-    {
-      "venueId": "venue_독락당_1yebd0a",
-      "officialName": "독락당",
-      "address": "경상북도 경주시",
-      "query": "독락당 경북 경주시",
-      "priority": 948,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "〈3교시〉 회재 과거급제길과 아들 이전인의 孝 뮤지컬 독락",
-        "〈2교시〉 동방오현 조선 성리학 인싸 이언적 문화체험",
-        "〈1교시〉 회재 18세 종손과의 생생인터뷰 독락당 회재학당"
-      ]
-    },
-    {
-      "venueId": "venue_사천향교_103c7s0",
-      "officialName": "사천향교",
-      "address": "경상남도 사천시",
-      "query": "사천향교 경남 사천시",
-      "priority": 948,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "다함께, 인문학당",
-        "다함께, 인문학당",
-        "1박2일 전통 문화 체험 캠프"
-      ]
-    },
-    {
-      "venueId": "venue_수덕사근역성보관_1jj1guo",
-      "officialName": "수덕사 근역성보관",
-      "address": "충청남도 예산군",
-      "query": "수덕사 근역성보관 충청남도 예산군",
-      "priority": 948,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "주심포 공포, 결구로 짓다",
-        "주심포 공포, 결구로 짓다",
-        "주심포 공포, 결구로 짓다"
-      ]
-    },
-    {
-      "venueId": "venue_언양향교_15lasy7",
-      "officialName": "언양향교",
-      "address": "울산광역시 울주군",
-      "query": "언양향교 울산 울주군",
-      "priority": 948,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "나도이제 어른-갓쓰고 비녀꽂고",
-        "나도이제 어른-갓쓰고 비녀꽂고",
-        "나도이제 어른-갓쓰고 비녀꽂고"
-      ]
-    },
-    {
-      "venueId": "venue_한용운선생생가지_15uhwm8",
-      "officialName": "한용운선생생가지",
-      "address": "충청남도 홍성군",
-      "query": "한용운선생생가지 충청남도 홍성군",
-      "priority": 948,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "만해생가, 가볼 만해",
-        "만해생가, 가볼 만해",
-        "만해생가, 가볼 만해"
-      ]
-    },
-    {
-      "venueId": "venue_낭주최씨종가_16clft1",
-      "officialName": "낭주최씨 종가",
-      "address": "전라남도 영암군",
-      "query": "낭주최씨 종가 전남 영암군",
-      "priority": 940,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "400년 씨간장의 향기로 만든 “영암 전통어란”",
-        "400년 씨간장의 향기로 만든 “영암 전통어란”",
-        "400년 씨간장의 향기로 만든 “영암 전통어란”"
-      ]
-    },
-    {
-      "venueId": "venue_동락서원_1ya2xq7",
-      "officialName": "동락서원",
-      "address": "경상북도 구미시",
-      "query": "동락서원 경북 구미시",
-      "priority": 940,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "주말엔 서원에서 놀자",
-        "주말엔 서원에서 놀자",
-        "주말엔 서원에서 놀자"
-      ]
-    },
-    {
-      "venueId": "venue_보석사_uktcle",
-      "officialName": "보석사",
-      "address": "충청남도 금산군",
-      "query": "보석사 충청남도 금산군",
-      "priority": 940,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "승병향기 보석路",
-        "비움과 채움이 만나다",
-        "가람(伽藍) 모꼬지"
-      ]
-    },
-    {
-      "venueId": "venue_월봉서원이안당_129e69l",
-      "officialName": "월봉서원 이안당",
-      "address": "광주광역시 광산구",
-      "query": "월봉서원 이안당 광주 광산구",
-      "priority": 940,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "다시茶時 카페",
-        "다시茶時 카페",
-        "다시茶時 카페"
-      ]
-    },
-    {
-      "venueId": "venue_금산향교_4ihxjk",
-      "officialName": "금산향교",
-      "address": "충청남도 금산군",
-      "query": "금산향교 충청남도 금산군",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "Hello! 다례휴림(茶禮休林)",
-        "세시풍속 락(樂)하다",
-        "Hello! 다례휴림(茶禮休林)"
-      ]
-    },
-    {
-      "venueId": "venue_분옥정_14mgi2d",
-      "officialName": "분옥정",
-      "address": "경상북도 포항시",
-      "query": "분옥정 경북 포항시",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "분옥정 고택 달빛음악회",
-        "분옥정 정자에서 전통 화전놀이",
-        "분옥정 선비달빛트레킹"
-      ]
-    },
-    {
-      "venueId": "venue_상주향교_6i4fql",
-      "officialName": "상주향교",
-      "address": "경상북도 상주시",
-      "query": "상주향교 경북 상주시",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "전통의례, 민속문화 체험행사",
-        "전통의례, 민속문화 체험행사",
-        "행단음악회"
-      ]
-    },
-    {
-      "venueId": "venue_아산공세곶고지아산공세리성당_v8yd5b",
-      "officialName": "아산공세곶고지, 아산공세리성당",
-      "address": "충청남도 아산시",
-      "query": "아산공세곶고지, 아산공세리성당 충청남도 아산시",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "공세리 티 살롱",
-        "공세리 티 살롱",
-        "성당 너머 푸른 길"
-      ]
-    },
-    {
-      "venueId": "venue_영주순흥벽화고분일원_m3vvra",
-      "officialName": "영주 순흥벽화고분 일원",
-      "address": "경상북도 영주시",
-      "query": "영주 순흥벽화고분 일원 경북 영주시",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "벽화고분의 비밀을 풀어라!",
-        "벽화고분의 비밀을 풀어라!",
-        "벽화고분의 비밀을 풀어라!"
-      ]
-    },
-    {
-      "venueId": "venue_예산향교_1letdzk",
-      "officialName": "예산향교",
-      "address": "충청남도 예산향교",
-      "query": "예산향교 충청남도 예산향교",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께"
-      ]
-    },
-    {
-      "venueId": "venue_이하복고택_1oxodar",
-      "officialName": "이하복 고택",
-      "address": "충청남도 서천군",
-      "query": "이하복 고택 충청남도 서천군",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "서천 이하복 고택 스테이",
-        "요모조모 이하복고택",
-        "서천 이하복 고택 스테이"
-      ]
-    },
-    {
-      "venueId": "venue_인천중구개항장일대_509l1w",
-      "officialName": "인천 중구 개항장 일대",
-      "address": "인천광역시 중구",
-      "query": "인천 중구 개항장 일대 인천 중구",
-      "priority": 932,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "개항장으로 Go!, 듣Go, 걷Go, 줍Go",
-        "개항장 1919, 조선을 수호하라!",
-        "개항장 1919, 조선을 수호하라!"
-      ]
-    },
-    {
-      "venueId": "venue_경주읍성일원_1x9l2bi",
-      "officialName": "경주읍성 일원",
-      "address": "경상북도 경주시",
-      "query": "경주읍성 일원 경북 경주시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "쓰담 역사탐험대",
-        "경주부윤 읍성 나들이",
-        "경주읍성 포졸체험"
-      ]
-    },
-    {
-      "venueId": "venue_김제동헌근민헌피금각내아_1wgfxjp",
-      "officialName": "김제 동헌 근민헌, 피금각, 내아",
-      "address": "전라북도 김제시",
-      "query": "김제 동헌 근민헌, 피금각, 내아 전북 김제시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "김제동헌 회화나무여행",
-        "김제동헌 회화나무여행",
-        "동헌마루 생생스쿨"
-      ]
-    },
-    {
-      "venueId": "venue_단양조덕수고택_10ioma4",
-      "officialName": "단양조덕수고택",
-      "address": "충청북도 단양군",
-      "query": "단양조덕수고택 충청북도 단양군",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
-        "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
-        "남한강 무쌍신식, 단양 조덕수 고택 1박2일"
-      ]
-    },
-    {
-      "venueId": "venue_당진필경사_1nh957x",
-      "officialName": "당진필경사",
-      "address": "충청남도 당진시",
-      "query": "당진필경사 충청남도 당진시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "상록수, 그 날의 식탁",
-        "희망찾기 RPG, '그 날이 오면'",
-        "희망찾기 RPG, '그 날이 오면'"
-      ]
-    },
-    {
-      "venueId": "venue_마산향교학습당명륜당유림회관풍화루대성전_ml6jtr",
-      "officialName": "마산향교 학습당, 명륜당, 유림회관, 풍화루, 대성전",
-      "address": "경상남도 창원시",
-      "query": "마산향교 학습당, 명륜당, 유림회관, 풍화루, 대성전 경남 창원시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "선비의 사계",
-        "선비의 사계",
-        "선비의 사계"
-      ]
-    },
-    {
-      "venueId": "venue_밀양혜산서원지역교류_1ka8ttx",
-      "officialName": "밀양혜산서원 지역교류",
-      "address": "경상남도 창원시",
-      "query": "밀양혜산서원 지역교류 경남 창원시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "선비의 사계",
-        "선비의 사계",
-        "선비의 사계"
-      ]
-    },
-    {
-      "venueId": "venue_송곡서원_1c1p81f",
-      "officialName": "송곡서원",
-      "address": "충청남도 서산시",
-      "query": "송곡서원 충청남도 서산시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "선비의 배움터, 송곡서원",
-        "국가유산주간_선비의 배움터, 송곡서원",
-        "선비의 배움터, 송곡서원"
-      ]
-    },
-    {
-      "venueId": "venue_안정라씨삼세충효문_imq2yx",
-      "officialName": "안정라씨 삼세충효문",
-      "address": "충청북도 청주시",
-      "query": "안정라씨 삼세충효문 충청북도 청주시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "평화가 꽃피는 마을-비중리",
-        "평화가 꽃피는 마을-비중리",
-        "평화가 꽃피는 마을-비중리"
-      ]
-    },
-    {
-      "venueId": "venue_용와종택호고와종택_1pzzxgo",
-      "officialName": "용와종택, 호고와종택",
-      "address": "경상북도 구미시",
-      "query": "용와종택, 호고와종택 경북 구미시",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "카페 호고와 종갓집 로컬&슬로우 푸드 카페",
-        "카페 호고와 종갓집 로컬&슬로우 푸드 카페",
-        "우리는 종갓집 장독대 공동체"
-      ]
-    },
-    {
-      "venueId": "venue_울산동헌및내아_1r3iez9",
-      "officialName": "울산동헌및내아",
-      "address": "울산광역시 중구",
-      "query": "울산동헌및내아 울산 중구",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "동헌 돌아볼 고(顧)",
-        "동헌, 스며들 고(皷)",
-        "동헌 돌아볼 고(顧)"
-      ]
-    },
-    {
-      "venueId": "venue_장수당_1vxwsn7",
-      "officialName": "장수당",
-      "address": "제주특별자치도 0",
-      "query": "장수당 제주 0",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "귤림 사락사락",
-        "귤림 사락사락",
-        "귤림 사락사락"
-      ]
-    },
-    {
-      "venueId": "venue_장흥향교_evmtkq",
-      "officialName": "장흥향교",
-      "address": "전라남도 장흥군",
-      "query": "장흥향교 전남 장흥군",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "우리들의 축제",
-        "우리들의 축제",
-        "우리들의 축제"
-      ]
-    },
-    {
-      "venueId": "venue_점필재종택도연재_wthqet",
-      "officialName": "점필재종택 , 도연재",
-      "address": "경상북도 고령군",
-      "query": "점필재종택 , 도연재 경북 고령군",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "점필재 종갓집 유치원 소풍 마당",
-        "멋쟁이 점필재 납시오",
-        "종갓집 별미의 품격, 맛과 멋 체험"
-      ]
-    },
-    {
-      "venueId": "venue_홍범식고가청년창작소오롯_iul6zj",
-      "officialName": "홍범식 고가, 청년창작소 오롯",
-      "address": "충청북도 괴산군",
-      "query": "홍범식 고가, 청년창작소 오롯 충청북도 괴산군",
-      "priority": 924,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "독서당",
-        "독서당",
-        "독서당"
-      ]
-    },
-    {
-      "venueId": "venue_ak플라자_pt0ayn",
-      "officialName": "AK플라자",
-      "address": "etc AK플라자",
-      "query": "AK플라자 etc ak플라자",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "피터팬 [수원]",
-        "호두까기 인형 [수원]"
-      ]
-    },
-    {
-      "venueId": "venue_간송옛집_lcdicy",
-      "officialName": "간송옛집",
-      "address": "서울특별시 도봉구",
-      "query": "간송옛집 서울 도봉구",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "간송보감, 문화로 지켜낸 오늘",
-        "간송의 밤, 옛소리로 흐르다"
-      ]
-    },
-    {
-      "venueId": "venue_강화유수부관아고려궁지등_1va20cy",
-      "officialName": "강화유수부 관아 고려궁지 등",
-      "address": "인천광역시 강화군",
-      "query": "강화유수부 관아 고려궁지 등 인천 강화군",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "강화유수의 하루",
-        "강화유수의 하루"
-      ]
-    },
-    {
-      "venueId": "venue_공주황새바위천주교순교유적_rf586w",
-      "officialName": "공주 황새바위 천주교 순교유적",
-      "address": "충청남도 공주시",
-      "query": "공주 황새바위 천주교 순교유적 충청남도 공주시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "선교사의 눈으로 본 공주풍경",
-        "황새바위에서 만나는 국제교류"
-      ]
-    },
-    {
-      "venueId": "venue_나성독락정_1bw1ug7",
-      "officialName": "나성독락정",
-      "address": "세종특별자치시 -",
-      "query": "나성독락정 세종특별자치시 -",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "걸어서 생생독락",
-        "걸어서 생생독락"
-      ]
-    },
-    {
-      "venueId": "venue_나주향교일대_sl6adc",
-      "officialName": "나주향교 일대",
-      "address": "전남광주통합특별시 나주시",
-      "query": "나주향교 일대 전남광주통합특별시 나주시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "인의예지 놀이마당",
-        "인의예지 놀이마당"
-      ]
-    },
-    {
-      "venueId": "venue_내장사일원_1u98gky",
-      "officialName": "내장사 일원",
-      "address": "전라북도 정읍시",
-      "query": "내장사 일원 전북 정읍시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "환경보호 작은실천 조선동종만들기",
-        "환경보호 작은실천 조선동종만들기"
-      ]
-    },
-    {
-      "venueId": "venue_대전중구문화원_1k6ca5c",
-      "officialName": "대전중구문화원",
-      "address": "etc 대전중구문화원",
-      "query": "대전중구문화원 etc 대전중구문화원",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "러브액츄얼리",
-        "어린이 벌룬쇼: 상상풍선마술단"
-      ]
-    },
-    {
-      "venueId": "venue_로드아트센터_rzbngl",
-      "officialName": "로드아트센터",
-      "address": "etc 로드아트센터(2F)",
-      "query": "로드아트센터 etc 로드아트센터(2f)",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "로드 기획연주, 노예진 피아노 리사이틀",
-        "로드 기획연주, 임홍균 바이올린 리사이틀"
-      ]
-    },
-    {
-      "venueId": "venue_만휴정_14cysjs",
-      "officialName": "만휴정",
-      "address": "경상북도 안동시",
-      "query": "만휴정 경북 안동시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "달빛 아래 문화유산, 풍류 만휴정",
-        "달빛 아래 문화유산, 풍류 만휴정"
-      ]
-    },
-    {
-      "venueId": "venue_묵계서원_rtuwnk",
-      "officialName": "묵계서원",
-      "address": "경상북도 안동시",
-      "query": "묵계서원 경북 안동시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "정기프로그램 - 사계절 놀이터",
-        "정기프로그램 - 사계절 놀이터"
-      ]
-    },
-    {
-      "venueId": "venue_밀양향교_1nvsklz",
-      "officialName": "밀양향교",
-      "address": "경상남도 밀양시",
-      "query": "밀양향교 경남 밀양시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "선비학당",
-        "향음주례"
-      ]
-    },
-    {
-      "venueId": "venue_백양사일원_1d5mmif",
-      "officialName": "백양사 일원",
-      "address": "전남광주통합특별시 장성군",
-      "query": "백양사 일원 전남광주통합특별시 장성군",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "건축 문화유산 한마당",
-        "백양사 국가유산 탐험학교"
-      ]
-    },
-    {
-      "venueId": "venue_벽진서원_1cwl47c",
-      "officialName": "벽진서원",
-      "address": "전남광주통합특별시 서구",
-      "query": "벽진서원 전남광주통합특별시 서구",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "벽진에서 회재를 만나다",
-        "벽진에서 회재를 만나다"
-      ]
-    },
-    {
-      "venueId": "venue_보령향교_r4o7yr",
-      "officialName": "보령향교",
-      "address": "충청남도 보령시",
-      "query": "보령향교 충청남도 보령시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "문화공감 보령향교N",
-        "문화공감 보령향교N"
-      ]
-    },
-    {
-      "venueId": "venue_봉화기헌고택_fq12n7",
-      "officialName": "봉화 기헌고택",
-      "address": "경상북도 봉화군",
-      "query": "봉화 기헌고택 경북 봉화군",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "간 밤에 용꿈 꾸셨소?",
-        "간 밤에 용꿈 꾸셨소?"
-      ]
-    },
-    {
-      "venueId": "venue_불회사_foinjr",
-      "officialName": "불회사",
-      "address": "전남광주통합특별시 나주시",
-      "query": "불회사 전남광주통합특별시 나주시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "이야기여행 '범과 함께'",
-        "춘추비로다회"
-      ]
-    },
-    {
-      "venueId": "venue_세종임난수은행나무역사공원_13bhcz3",
-      "officialName": "세종임난수은행나무 역사공원",
-      "address": "세종특별자치시 -",
-      "query": "세종임난수은행나무 역사공원 세종특별자치시 -",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "은행나무,천년의 꿈",
-        "걸어서 생생독락"
-      ]
-    },
-    {
-      "venueId": "venue_손대식손병순고가_ivfs8r",
-      "officialName": "손대식,손병순 고가",
-      "address": "경상남도 밀양시",
-      "query": "손대식,손병순 고가 경남 밀양시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고택에서 하룻밤",
-        "고택에서 하룻밤"
-      ]
-    },
-    {
-      "venueId": "venue_송곡서원서산류방택천문기상과학관_b4kgql",
-      "officialName": "송곡서원, 서산류방택천문기상과학관",
-      "address": "충청남도 서산시",
-      "query": "송곡서원, 서산류방택천문기상과학관 충청남도 서산시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "자미원 별그림 학교 가족 1일 캠프",
-        "자미원 별그림 학교 가족 1일 캠프"
-      ]
-    },
-    {
-      "venueId": "venue_양천향교_1btiorh",
-      "officialName": "양천향교",
-      "address": "서울특별시 강서구",
-      "query": "양천향교 서울 강서구",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "양천향교 유생다움",
-        "양천향교 유생다움"
-      ]
-    },
-    {
-      "venueId": "venue_양평물빛극장_fmbv54",
-      "officialName": "양평물빛극장",
-      "address": "정보 없음",
-      "query": "양평물빛극장 정보 없음",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "사물놀이 느닷, 양평 아리랑 [양평]",
-        "사물놀이 느닷 〈양평아리랑〉 (양평)"
-      ]
-    },
-    {
-      "venueId": "venue_여수진남체육관_3t500a",
-      "officialName": "여수진남체육관",
-      "address": "etc 여수진남체육관",
-      "query": "여수진남체육관 etc 여수진남체육관",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "2026 여수 빅터 코리아오픈 배드민턴선수권대회 - 비지정",
-        "2026 여수 빅터 코리아오픈 배드민턴선수권대회"
-      ]
-    },
-    {
-      "venueId": "venue_영평사삼명선원_1sgslwg",
-      "officialName": "영평사 삼명선원",
-      "address": "세종특별자치시 -",
-      "query": "영평사 삼명선원 세종특별자치시 -",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "영평사 오색실 엮어 복장물 만들기",
-        "영평사 오색실 엮어 복장물 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_옥천옥주사마소_1akal5b",
-      "officialName": "옥천 옥주사마소",
-      "address": "충청북도 옥천군",
-      "query": "옥천 옥주사마소 충청북도 옥천군",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "우암 옥주공작소",
-        "우암 옥주공작소"
-      ]
-    },
-    {
-      "venueId": "venue_용담향교_uqaktp",
-      "officialName": "용담향교",
-      "address": "전라북도 진안군",
-      "query": "용담향교 전북 진안군",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "용이 된고려향교",
-        "용이 된고려향교"
-      ]
-    },
-    {
-      "venueId": "venue_용산서원_123izow",
-      "officialName": "용산서원",
-      "address": "강원도 동해시",
-      "query": "용산서원 강원 동해시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "황화고지 안해 드니",
-        "황화고지 안해 드니"
-      ]
-    },
-    {
-      "venueId": "venue_우란2경_1pol600",
-      "officialName": "우란2경",
-      "address": "etc 우란2경",
-      "query": "우란2경 etc 우란2경",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가락프로젝트 여섯 번째 시리즈: 소리의 진법 (The Order of Sound)",
-        "점프x컷"
-      ]
-    },
-    {
-      "venueId": "venue_월봉서원_igjzqa",
-      "officialName": "월봉서원",
-      "address": "광주광역시 광산구",
-      "query": "월봉서원 광주 광산구",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "살롱 드 월봉",
-        "살롱 드 월봉"
-      ]
-    },
-    {
-      "venueId": "venue_유림회관_elgmpp",
-      "officialName": "유림회관",
-      "address": "경상남도 창원시",
-      "query": "유림회관 경남 창원시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "기후변화 대응 노력: 아픈 지구를 위하여",
-        "기후변화 대응 노력: 아픈 지구를 위하여"
-      ]
-    },
-    {
-      "venueId": "venue_이병기생가가람문학관_fpiwty",
-      "officialName": "이병기생가,가람문학관",
-      "address": "전라북도 익산시",
-      "query": "이병기생가,가람문학관 전북 익산시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "가람에 살어리랏다",
-        "가람에 살어리랏다"
-      ]
-    },
-    {
-      "venueId": "venue_전주향교_1cxzzew",
-      "officialName": "전주향교",
-      "address": "전라북도 전주시",
-      "query": "전주향교 전북 전주시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "진짜배기 儒",
-        "진짜배기 儒"
-      ]
-    },
-    {
-      "venueId": "venue_정읍김명관고택_19yyh8l",
-      "officialName": "정읍 김명관 고택",
-      "address": "전라북도 정읍시",
-      "query": "정읍 김명관 고택 전북 정읍시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "고캉스, 안 해본 사람 누구?",
-        "타임 인 조선, 고택의 노비와 양반이 되다"
-      ]
-    },
-    {
-      "venueId": "venue_청주향교_3hnayp",
-      "officialName": "청주향교",
-      "address": "충청북도 청주시",
-      "query": "청주향교 충청북도 청주시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "사람다운 사람, 자연과 함께하는 인성예절학교",
-        "사람다운 사람, 자연과 함께하는 인성예절학교"
-      ]
-    },
-    {
-      "venueId": "venue_청호동아바이마을_181z82r",
-      "officialName": "청호동 아바이마을",
-      "address": "강원특별자치도 속초시",
-      "query": "청호동 아바이마을 강원 속초시",
-      "priority": 916,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "흥미진진! 사자를 만나다",
-        "흥미진진! 사자를 만나다"
-      ]
-    },
     {
       "venueId": "venue_칠불암일원_1k3a5f1",
       "officialName": "칠불암 일원",
@@ -2174,6 +694,1358 @@
       "sampleTitles": [
         "목포 국가유산 야행"
       ]
+    },
+    {
+      "venueId": "venue_몽골문화촌_1n5ars8",
+      "officialName": "몽골문화촌",
+      "address": "etc 몽골문화촌",
+      "query": "몽골문화촌 etc 몽골문화촌",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "우리동네 문화나들이: 북치GO! 춤추GO! [남양주]"
+      ]
+    },
+    {
+      "venueId": "venue_몽심재죽산박씨종가_9uhrk1",
+      "officialName": "몽심재, 죽산박씨 종가",
+      "address": "전라북도 남원시",
+      "query": "몽심재, 죽산박씨 종가 전북 남원시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "몽심에서 놀다"
+      ]
+    },
+    {
+      "venueId": "venue_무양서원_17jwt56",
+      "officialName": "무양서원",
+      "address": "광주광역시 광산구",
+      "query": "무양서원 광주 광산구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "무양에서 만난 어의-思全약방문"
+      ]
+    },
+    {
+      "venueId": "venue_배재학당역사박물관및정동일대_zlxbbm",
+      "officialName": "배재학당역사박물관 및 정동일대",
+      "address": "서울특별시 중구",
+      "query": "배재학당역사박물관 및 정동일대 서울 중구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "모던보이, 김소월의 정동 상경기"
+      ]
+    },
+    {
+      "venueId": "venue_백제문화체험박물관및관련유적지_1fb77rb",
+      "officialName": "백제문화체험박물관 및 관련 유적지",
+      "address": "충청남도 청양군",
+      "query": "백제문화체험박물관 및 관련 유적지 충청남도 청양군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "소년 위정척사(衛正斥邪) 스카우트"
+      ]
+    },
+    {
+      "venueId": "venue_베타레저_1ew6hpp",
+      "officialName": "베타레저",
+      "address": "seoul 베타레저",
+      "query": "베타레저 seoul 베타레저",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "［서울］ (한강) 카약패들보드윈드서핑"
+      ]
+    },
+    {
+      "venueId": "venue_보성여관_14dpx6y",
+      "officialName": "보성여관",
+      "address": "전라남도 보성군",
+      "query": "보성여관 전남 보성군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "보성문화 이음"
+      ]
+    },
+    {
+      "venueId": "venue_보은향교_1bava0c",
+      "officialName": "보은향교",
+      "address": "충청북도 보은군",
+      "query": "보은향교 충청북도 보은군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "보은향교, 품격을 더하다."
+      ]
+    },
+    {
+      "venueId": "venue_부석사_uoi7y6",
+      "officialName": "부석사",
+      "address": "충청남도 서산시",
+      "query": "부석사 충청남도 서산시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "마음의 종을 울려라"
+      ]
+    },
+    {
+      "venueId": "venue_부석사소수서원_tqs5we",
+      "officialName": "부석사,소수서원",
+      "address": "경상남도 밀양시",
+      "query": "부석사,소수서원 경남 밀양시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "선비문화탐험대"
+      ]
+    },
+    {
+      "venueId": "venue_분황사_mcf6x2",
+      "officialName": "분황사",
+      "address": "분황사",
+      "query": "분황사 분황사",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "공쌤과 국립경주박물관, 분황사 나들이 갈 사람 손!"
+      ]
+    },
+    {
+      "venueId": "venue_브릭홀_138z7cm",
+      "officialName": "브릭홀",
+      "address": "etc 브릭홀",
+      "query": "브릭홀 etc 브릭홀",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "도비비 전국투어: 광광"
+      ]
+    },
+    {
+      "venueId": "venue_서울코엑스_191ya1s",
+      "officialName": "서울 코엑스",
+      "address": "서울 코엑스",
+      "query": "서울 코엑스 서울 코엑스",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 서울카페쇼"
+      ]
+    },
+    {
+      "venueId": "venue_서울효창공원백범김구기념관_1buyq9o",
+      "officialName": "서울 효창공원, 백범김구 기념관",
+      "address": "서울특별시 용산구",
+      "query": "서울 효창공원, 백범김구 기념관 서울 용산구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "도전! 21세기 한인애국단"
+      ]
+    },
+    {
+      "venueId": "venue_서울체임버홀_1ugpbn9",
+      "officialName": "서울체임버홀",
+      "address": "etc 서울체임버홀",
+      "query": "서울체임버홀 etc 서울체임버홀",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "제4회 김지현 작곡발표회: 꿈의 세계"
+      ]
+    },
+    {
+      "venueId": "venue_서울특별시교육청지정공방_1ifp46r",
+      "officialName": "서울특별시교육청 지정공방",
+      "address": "서울특별시교육청 지정공방",
+      "query": "서울특별시교육청 지정공방 서울교육청 지정공방",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "반려동물 강아지/고양이 도자기 물그릇"
+      ]
+    },
+    {
+      "venueId": "venue_선덕사_o7oqwm",
+      "officialName": "선덕사",
+      "address": "서울특별시 서귀포시",
+      "query": "선덕사 서울 서귀포시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "한라산 품은 선덕사, 빛으로 그리다"
+      ]
+    },
+    {
+      "venueId": "venue_성주향교_w08wf1",
+      "officialName": "성주향교",
+      "address": "경상북도 성주군",
+      "query": "성주향교 경북 성주군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "성주향교 가족사랑[愛]캠프1박2일"
+      ]
+    },
+    {
+      "venueId": "venue_세종대왕자태실생명문화공원한개마을성밖숲등_19hubiu",
+      "officialName": "세종대왕자 태실, 생명문화공원, 한개마을, 성밖숲 등",
+      "address": "경상북도 성주군",
+      "query": "세종대왕자 태실, 생명문화공원, 한개마을, 성밖숲 등 경북 성주군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "태실의 고장 성주, 태교 여행 1박2일(기후변화대응프로그램)"
+      ]
+    },
+    {
+      "venueId": "venue_손병순고가_i1zd3a",
+      "officialName": "손병순 고가",
+      "address": "경상남도 밀양시",
+      "query": "손병순 고가 경남 밀양시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "달빛풍류"
+      ]
+    },
+    {
+      "venueId": "venue_수로왕릉_1rngatr",
+      "officialName": "수로왕릉",
+      "address": "경상남도 김해시",
+      "query": "수로왕릉 경남 김해시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "오-감으로 만나는 금관가야"
+      ]
+    },
+    {
+      "venueId": "venue_수승대및거창일원_18zqhjm",
+      "officialName": "수승대 및 거창일원",
+      "address": "경상남도 거창군",
+      "query": "수승대 및 거창일원 경남 거창군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수승대에서의 1박 2일"
+      ]
+    },
+    {
+      "venueId": "venue_스케네웨이_1w5mpnf",
+      "officialName": "스케네웨이",
+      "address": "etc 스케네웨이",
+      "query": "스케네웨이 etc 스케네웨이",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "뮤지컬 〈네가 나를 사랑하느냐〉"
+      ]
+    },
+    {
+      "venueId": "venue_신도봉중학교_1wl67zm",
+      "officialName": "신도봉중학교",
+      "address": "서울특별시 도봉구",
+      "query": "신도봉중학교 서울 도봉구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "간송동행(同幸), 청소년과 함께 행복한 미래를 꿈꾸다!"
+      ]
+    },
+    {
+      "venueId": "venue_신사하우스_rvnvsn",
+      "officialName": "신사하우스",
+      "address": "seoul 신사하우스",
+      "query": "신사하우스 seoul 신사하우스",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "가우디: 서울에서 다시 태어나다"
+      ]
+    },
+    {
+      "venueId": "venue_실크테라카페_15hhyq1",
+      "officialName": "실크테라카페",
+      "address": "etc 실크테라카페",
+      "query": "실크테라카페 etc 실크테라카페",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "제9회 진주 국제 재즈페스티벌 (12.02)"
+      ]
+    },
+    {
+      "venueId": "venue_아모레성수_1fhb0rm",
+      "officialName": "아모레성수",
+      "address": "etc 아모레성수",
+      "query": "아모레성수 etc 아모레성수",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "뷰티 서바이벌 살인 사건"
+      ]
+    },
+    {
+      "venueId": "venue_아산맹씨행단고불맹사성기념관_1k1uo9f",
+      "officialName": "아산 맹씨행단, 고불맹사성기념관",
+      "address": "충청남도 아산시",
+      "query": "아산 맹씨행단, 고불맹사성기념관 충청남도 아산시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "고택마당, 지혜와 흥의 어울림"
+      ]
+    },
+    {
+      "venueId": "venue_양주문화체육센터_1bz5izb",
+      "officialName": "양주문화체육센터",
+      "address": "etc 양주문화체육센터",
+      "query": "양주문화체육센터 etc 양주문화체육센터",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "겨울 이야기 [양산]"
+      ]
+    },
+    {
+      "venueId": "venue_연일향교_jwpz4s",
+      "officialName": "연일향교",
+      "address": "경상북도 포항시",
+      "query": "연일향교 경북 포항시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "장원급제 한마당"
+      ]
+    },
+    {
+      "venueId": "venue_영은사_3tcavs",
+      "officialName": "영은사",
+      "address": "충청남도 공주시",
+      "query": "영은사 충청남도 공주시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "영은사 쉼의 시간"
+      ]
+    },
+    {
+      "venueId": "venue_예산향교와연계하여충청남도문화유산역사알아가기_1206v15",
+      "officialName": "예산향교와 연계하여 충청남도 문화유산 역사 알아가기",
+      "address": "충청남도 예산향교",
+      "query": "예산향교와 연계하여 충청남도 문화유산 역사 알아가기 충청남도 예산향교",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "예산향교는 이런 유학(遊學)저런 유학(儒學)한다"
+      ]
+    },
+    {
+      "venueId": "venue_예천박물관외예천권씨초간공파종택예천초간정예천초간정원림금당실마_42ysbq",
+      "officialName": "예천박물관 외 예천권씨초간공파 종택, 예천 초간정, 예천초간정원림, 금당실마을",
+      "address": "경상북도 예천군",
+      "query": "예천박물관 외 예천권씨초간공파 종택, 예천 초간정, 예천초간정원림, 금당실마을 경북 예천군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "다 같이 초간정주행"
+      ]
+    },
+    {
+      "venueId": "venue_옥천이지당_u6cntv",
+      "officialName": "옥천 이지당",
+      "address": "충청북도 옥천군",
+      "query": "옥천 이지당 충청북도 옥천군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "빚고 빚는 이지당"
+      ]
+    },
+    {
+      "venueId": "venue_용화사경내_1ypm2px",
+      "officialName": "용화사 경내",
+      "address": "충청북도 청주시",
+      "query": "용화사 경내 충청북도 청주시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "용화사 칠존석불 인문학 강좌"
+      ]
+    },
+    {
+      "venueId": "venue_울산읍성길일대_1yll7sv",
+      "officialName": "울산읍성길 일대",
+      "address": "울산광역시 중구",
+      "query": "울산읍성길 일대 울산 중구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "동헌, 거닐 고(告)"
+      ]
+    },
+    {
+      "venueId": "venue_원주매지농악전수교육관_dkkanc",
+      "officialName": "원주매지농악전수교육관",
+      "address": "강원특별자치도 원주시",
+      "query": "원주매지농악전수교육관 강원 원주시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "생생장날"
+      ]
+    },
+    {
+      "venueId": "venue_원효사_n0doff",
+      "officialName": "원효사",
+      "address": "광주광역시 북구",
+      "query": "원효사 광주 북구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "처음이와 밝음이의 무등산 산책"
+      ]
+    },
+    {
+      "venueId": "venue_위봉산성_170d9sh",
+      "officialName": "위봉산성",
+      "address": "전라북도 완주군",
+      "query": "위봉산성 전북 완주군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "위봉산성~ 내가 청진기다!"
+      ]
+    },
+    {
+      "venueId": "venue_의령향교_cr823r",
+      "officialName": "의령향교",
+      "address": "경상남도 의령군",
+      "query": "의령향교 경남 의령군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "의령현의 멋을 빚어낸 의령향교"
+      ]
+    },
+    {
+      "venueId": "venue_이병기생가가람문학관여산동헌여산초등학교함라삼부자고택가옥등_1stfuik",
+      "officialName": "이병기생가,가람문학관,여산동헌,여산초등학교,함라삼부자고택가옥 등",
+      "address": "전라북도 익산시",
+      "query": "이병기생가,가람문학관,여산동헌,여산초등학교,함라삼부자고택가옥 등 전북 익산시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "가람의 발자취"
+      ]
+    },
+    {
+      "venueId": "venue_이상재선생생가지_st00cy",
+      "officialName": "이상재 선생 생가지",
+      "address": "충청남도 서천군",
+      "query": "이상재 선생 생가지 충청남도 서천군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "이상재역사탐정단"
+      ]
+    },
+    {
+      "venueId": "venue_익산구삼산의원일원익산솜리근대역사문화공간익산구춘포역사_1cd1a25",
+      "officialName": "익산 구삼산의원 일원, 익산솜리근대역사문화공간, 익산 구 춘포역사",
+      "address": "전라북도 익산시",
+      "query": "익산 구삼산의원 일원, 익산솜리근대역사문화공간, 익산 구 춘포역사 전북 익산시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "뉴트로 이리열차 타고 익산행"
+      ]
+    },
+    {
+      "venueId": "venue_임당유적전시관임당동조영동고분군_z1v5w6",
+      "officialName": "임당유적전시관, 임당동·조영동 고분군",
+      "address": "경상북도 경산시",
+      "query": "임당유적전시관, 임당동·조영동 고분군 경북 경산시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "찾아라! 임당 고분 속 신성한 유물"
+      ]
+    },
+    {
+      "venueId": "venue_장성향교_1lwvqsm",
+      "officialName": "장성향교",
+      "address": "전남광주통합특별시 장성군",
+      "query": "장성향교 전남광주통합특별시 장성군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "문불여장성의 1박2일 선비문화 체험 여행"
+      ]
+    },
+    {
+      "venueId": "venue_장수당야외_iz7o8h",
+      "officialName": "장수당,야외",
+      "address": "제주특별자치도 0",
+      "query": "장수당,야외 제주 0",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "귤림문화제"
+      ]
+    },
+    {
+      "venueId": "venue_정동일대_1xazg2d",
+      "officialName": "정동 일대",
+      "address": "서울특별시 중구",
+      "query": "정동 일대 서울 중구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "정동 국가유산 야행"
+      ]
+    },
+    {
+      "venueId": "venue_정약용도서관_10x8fau",
+      "officialName": "정약용도서관",
+      "address": "etc 정약용도서관",
+      "query": "정약용도서관 etc 정약용도서관",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "우리동네 문화나들이, Korea Virtuoso: 비발디 & 귀도의 사계 [남양주]"
+      ]
+    },
+    {
+      "venueId": "venue_진안향교영모정수선루쌍계루운서정_cju882",
+      "officialName": "진안향교, 영모정, 수선루, 쌍계루, 운서정",
+      "address": "전라북도 진안군",
+      "query": "진안향교, 영모정, 수선루, 쌍계루, 운서정 전북 진안군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "진안, 천하절경 구경가세"
+      ]
+    },
+    {
+      "venueId": "venue_진안향교충효관_114ym1v",
+      "officialName": "진안향교, 충효관",
+      "address": "전라북도 진안군",
+      "query": "진안향교, 충효관 전북 진안군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "향교에서 신한류 체험"
+      ]
+    },
+    {
+      "venueId": "venue_창원지역국가유산플로깅_luf67p",
+      "officialName": "창원지역국가유산플로깅",
+      "address": "경상남도 창원시",
+      "query": "창원지역국가유산플로깅 경남 창원시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "기후변화 대응 노력: 아픈 지구를 위하여"
+      ]
+    },
+    {
+      "venueId": "venue_천년동안도_aj4cqw",
+      "officialName": "천년동안도",
+      "address": "etc 천년동안도",
+      "query": "천년동안도 etc 천년동안도",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "잭킹콩 가을 재즈 공연, Golden Days [천년동안도]"
+      ]
+    },
+    {
+      "venueId": "venue_철도관사마을익산구삼산의원일원구춘포역사_1qgj2fd",
+      "officialName": "철도관사마을, 익산 구 삼산의원 일원, 구 춘포역사",
+      "address": "전라북도 익산시",
+      "query": "철도관사마을, 익산 구 삼산의원 일원, 구 춘포역사 전북 익산시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "청춘! 뉴트로감성 솜리골목기행"
+      ]
+    },
+    {
+      "venueId": "venue_촐파크_ni2ya7",
+      "officialName": "촐파크",
+      "address": "jeju 촐파크",
+      "query": "촐파크 jeju 촐파크",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "［제주］ 촐파크 / 테마파크 관광지 수국 유채"
+      ]
+    },
+    {
+      "venueId": "venue_추사김정희선생고택_193jws6",
+      "officialName": "추사김정희선생고택",
+      "address": "충청남도 예산군",
+      "query": "추사김정희선생고택 충청남도 예산군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "옛집, 추사를 펼치다"
+      ]
+    },
+    {
+      "venueId": "venue_축제_1ujuutg",
+      "officialName": "축제",
+      "address": "etc 축제",
+      "query": "축제 etc 축제",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "라라라온 [서울 축제]"
+      ]
+    },
+    {
+      "venueId": "venue_칠곡왜관철교일대_1xifkh6",
+      "officialName": "칠곡 왜관철교 일대",
+      "address": "경상북도 칠곡군",
+      "query": "칠곡 왜관철교 일대 경북 칠곡군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "칠곡을 잇다:RAIL WAY, 내일로 나아가는 길"
+      ]
+    },
+    {
+      "venueId": "venue_칠곡왜관철교애국동산호국평화지겟길다부동전적기념관_1p27a41",
+      "officialName": "칠곡 왜관철교, 애국동산, 호국평화 지겟길, 다부동전적기념관",
+      "address": "경상북도 칠곡군",
+      "query": "칠곡 왜관철교, 애국동산, 호국평화 지겟길, 다부동전적기념관 경북 칠곡군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "칠곡에 있다:55일간의 교전지 탐방"
+      ]
+    },
+    {
+      "venueId": "venue_코다_0k142t",
+      "officialName": "코다",
+      "address": "etc 코다",
+      "query": "코다 etc 코다",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "싸비의 락만시대 시즌4: 나를 살게한 노래 [원주]"
+      ]
+    },
+    {
+      "venueId": "venue_크루즈메이트_1htlj5d",
+      "officialName": "크루즈메이트",
+      "address": "busan 크루즈메이트",
+      "query": "크루즈메이트 busan 크루즈메이트",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "［부산］ 팬스타크루즈 그레이스호 불꽃쇼 (초대형 메가요트 야경 투어 광안리 해운대)"
+      ]
+    },
+    {
+      "venueId": "venue_태종무열왕릉_1uu97zs",
+      "officialName": "태종 무열왕릉",
+      "address": "경상북도 경주시",
+      "query": "태종 무열왕릉 경북 경주시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "화랑의 나라"
+      ]
+    },
+    {
+      "venueId": "venue_평내도서관_1xzu1ts",
+      "officialName": "평내도서관",
+      "address": "etc 평내도서관",
+      "query": "평내도서관 etc 평내도서관",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "우리동네 문화나들이, 남양주 윈드오케스트라와 함께 떠나는 춤곡 나들이 [남양주]"
+      ]
+    },
+    {
+      "venueId": "venue_하도더메타_1raeqaj",
+      "officialName": "하도더메타",
+      "address": "gwangju 하도더메타",
+      "query": "하도더메타 gwangju 하도더메타",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "［전남 광주］ 공 없이 즐기는 AR피구! 신개념 미래형 스포츠 HADO 입장권"
+      ]
+    },
+    {
+      "venueId": "venue_하동중평리장구섬백악기화석산지_7h73k0",
+      "officialName": "하동 중평리 장구섬 백악기 화석산지",
+      "address": "경상남도 하동군",
+      "query": "하동 중평리 장구섬 백악기 화석산지 경남 하동군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "오래된 지구로 떠나는 스토리투어"
+      ]
+    },
+    {
+      "venueId": "venue_한국종이접기협회지도사범자격증취득_1vezfxq",
+      "officialName": "한국종이접기협회지도사범자격증 취득",
+      "address": "한국종이접기협회지도사범자격증 취득",
+      "query": "한국종이접기협회지도사범자격증 취득 한국종이접기협회지도사범자격증 취득",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "제스모나이트 원데이클래스"
+      ]
+    },
+    {
+      "venueId": "venue_함안내각마을_rdpajq",
+      "officialName": "함안 내 각 마을",
+      "address": "경상남도 함안군",
+      "query": "함안 내 각 마을 경남 함안군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "생생풍년마을 – “서마지기농악대 지신밟기 소풍”"
+      ]
+    },
+    {
+      "venueId": "venue_함안화천농악전수교육관_o3duzc",
+      "officialName": "함안화천농악전수교육관",
+      "address": "경상남도 함안군",
+      "query": "함안화천농악전수교육관 경남 함안군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "소원을 빌어봐 함안화천농악 농(農)STAY"
+      ]
+    },
+    {
+      "venueId": "venue_함평엑스포공원_1jhlynw",
+      "officialName": "함평엑스포공원",
+      "address": "daejeon 함평엑스포공원",
+      "query": "함평엑스포공원 daejeon 함평엑스포공원",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 함평 대한민국 국향대전"
+      ]
+    },
+    {
+      "venueId": "venue_허밋_1vbslkk",
+      "officialName": "허밋",
+      "address": "etc 허밋",
+      "query": "허밋 etc 허밋",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "라라라온 [서울 허밋]"
+      ]
+    },
+    {
+      "venueId": "venue_허선구고가_o9oqb7",
+      "officialName": "허선구고가",
+      "address": "경상남도 진주시",
+      "query": "허선구고가 경남 진주시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "허선구 고가에서 나누는 특별한 하루"
+      ]
+    },
+    {
+      "venueId": "venue_현대자동차_1enppre",
+      "officialName": "현대자동차",
+      "address": "울산광역시 북구",
+      "query": "현대자동차 울산 북구",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "쇠부리터를 지켜라-달천철장지킴이단 운영"
+      ]
+    },
+    {
+      "venueId": "venue_홍대우주정거장_1sig1e4",
+      "officialName": "홍대우주정거장",
+      "address": "etc 홍대우주정거장",
+      "query": "홍대우주정거장 etc 홍대우주정거장",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "라라라온 [우주정거장]"
+      ]
+    },
+    {
+      "venueId": "venue_황간향교_1l3r6yl",
+      "officialName": "황간향교",
+      "address": "충청북도 영동군",
+      "query": "황간향교 충청북도 영동군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "유쾌한 황간향교"
+      ]
+    },
+    {
+      "venueId": "venue_회연서원_1lsiuvp",
+      "officialName": "회연서원",
+      "address": "경상북도 성주군",
+      "query": "회연서원 경북 성주군",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "회연서원 자연찬가 콘서트"
+      ]
+    },
+    {
+      "venueId": "venue_흥국사_ouafcx",
+      "officialName": "흥국사",
+      "address": "전라남도 여수시",
+      "query": "흥국사 전남 여수시",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "에코 향교 어울림"
+      ]
+    },
+    {
+      "venueId": "venue_부산부산진구서전로68번길104이담_h4w242",
+      "officialName": "부산 부산진구 서전로68번길 104 이담",
+      "address": "부산진구 서전로68번길 104 (전포동) 이담",
+      "query": "이담 부산진구 서전로68번길",
+      "priority": 716,
+      "performanceCount": 17,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "부산/전포/ 맛있는 쌀로 만드는 찰꿀빵 만들기",
+        "부산 바삭바삭 누룽지빵 클래스 -완전jmt 추천",
+        "수제 카네이션 떡케이크 만들기 원데이 이색 선물"
+      ]
+    },
+    {
+      "venueId": "venue_부산부산진구서전로68번길104전포동_이담_전포역6번출구부근_1uolo3i",
+      "officialName": "부산 부산진구 서전로68번길 104 전포동) 이담(전포역 6번출구 부근",
+      "address": "부산진구 서전로68번길 104 (전포동) 이담(전포역 6번출구 부근)",
+      "query": "이담 부산진구 서전로68번길",
+      "priority": 716,
+      "performanceCount": 17,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "딸기 디저트 딸기 보틀 만들기 원데이 클래스",
+        "꾸덕 푸딩 만들기 원데이 클래스",
+        "앙금플라워쿠키+쁘띠너트 타르트 2종 만들기 원데이 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_부산부산진구서전로68번길104전포동_백설공주이야기2층_전포_9i9t6h",
+      "officialName": "부산 부산진구 서전로68번길 104 전포동) 백설공주이야기 2층(전포역 6번출구 부근",
+      "address": "부산진구 서전로68번길 104 (전포동) 백설공주이야기 2층(전포역 6번출구 부근)",
+      "query": "백설공주이야기 2층 부산진구 서전로68번길",
+      "priority": 644,
+      "performanceCount": 8,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "설날 선물 쌀전병 원데이 클래스",
+        "불고기베이크 만들기 원데이 클래스",
+        "바도 매직 초코바 만들기 원데이 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_세종예술의전당세종특별자치시_9ojhud",
+      "officialName": "세종예술의전당 세종특별자치시",
+      "address": "sejong 세종예술의전당 세종특별자치시",
+      "query": "세종예술의전당 세종특별자치시 sejong 세종예술의전당",
+      "priority": 628,
+      "performanceCount": 6,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국립심포니콘서트오케스트라와 함께하는 11시 여민락콘서트 - 세종시",
+        "국립심포니콘서트오케스트라 〈드보르자크, 교향곡 9번 ‘신세계로부터’〉 - 세종",
+        "국립심포니콘서트오케스트라 〈베토벤, 교향곡 9번 ‘합창’〉 - 세종"
+      ]
+    },
+    {
+      "venueId": "venue_숲세권라이브카인드스퀘어점_1esre7b",
+      "officialName": "숲세권 라이브 카인드스퀘어점",
+      "address": "etc 숲세권 라이브 카인드스퀘어점",
+      "query": "숲세권 라이브 카인드스퀘어점 etc 숲세권",
+      "priority": 628,
+      "performanceCount": 6,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "숲세권 라이브, 박준일 단독 공연: 은방울꽃",
+        "숲세권 라이브, 한성일 단독 공연: 들꽃",
+        "숲세권 라이브, 한희 with 채화린 & 휘나: LILAC"
+      ]
     }
   ],
   "insufficientIdentityQueue": [
@@ -2216,26 +2088,6 @@
       ]
     },
     {
-      "venueId": "venue_신항서원_4ictgq",
-      "officialName": "신항서원",
-      "address": "충청북도 청주시",
-      "query": "신항서원 충청북도 청주시",
-      "priority": 104,
-      "performanceCount": 13,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "으랏차차서원마을",
-        "으랏차차서원마을",
-        "으랏차차서원마을"
-      ]
-    },
-    {
       "venueId": "venue_경기양주시_2yl2ej",
       "officialName": "경기 양주시",
       "address": "경기 양주시",
@@ -2255,26 +2107,6 @@
       ]
     },
     {
-      "venueId": "venue_구강서원_m053qe",
-      "officialName": "구강서원",
-      "address": "울산광역시 중구",
-      "query": "구강서원 울산 중구",
-      "priority": 96,
-      "performanceCount": 12,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "유생들의 지구력-지구를 지키는 힘",
-        "선비들의 문화 나들이",
-        "유학길로 떠나는 소풍"
-      ]
-    },
-    {
       "venueId": "venue_충북_p1hbce",
       "officialName": "충북 ·",
       "address": "충북 ·",
@@ -2291,166 +2123,6 @@
         "보자기아트 자격증취득반/ 정규반클래스",
         "K-아트,민화 정규반/지도자자격증반",
         "K아트-전통을탐하고 창의적으로 재현하는 민화"
-      ]
-    },
-    {
-      "venueId": "venue_구암서원_1uiybft",
-      "officialName": "구암서원",
-      "address": "대구광역시 북구",
-      "query": "구암서원 대구 북구",
-      "priority": 80,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "전통을 잇고 인성을 키우다",
-        "전통을 잇고 인성을 키우다",
-        "전통을 잇고 인성을 키우다"
-      ]
-    },
-    {
-      "venueId": "venue_영암군국가유산도갑사왕인박사유적지등_10qlelu",
-      "officialName": "영암군 국가유산 도갑사, 왕인박사유적지 등",
-      "address": "전라남도 영암군",
-      "query": "영암군 국가유산 도갑사, 왕인박사유적지 등 전남 영암군",
-      "priority": 80,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "영암 국가유산을 찾아라",
-        "영암 국가유산을 찾아라",
-        "영암 국가유산을 찾아라"
-      ]
-    },
-    {
-      "venueId": "venue_정선향교_dgk5zh",
-      "officialName": "정선향교",
-      "address": "강원도 정선군",
-      "query": "정선향교 강원 정선군",
-      "priority": 80,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "향교로 마실가자",
-        "향교로 마실가자",
-        "향교로 마실가자"
-      ]
-    },
-    {
-      "venueId": "venue_조종수가옥구림대동계사회사정등_14h19ea",
-      "officialName": "조종수 가옥, 구림대동계사, 회사정 등",
-      "address": "전라남도 영암군",
-      "query": "조종수 가옥, 구림대동계사, 회사정 등 전남 영암군",
-      "priority": 80,
-      "performanceCount": 10,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "종가이야기 따라 걷는 시간여행",
-        "종가이야기 따라 걷는 시간여행",
-        "종가이야기 따라 걷는 시간여행"
-      ]
-    },
-    {
-      "venueId": "venue_경주최부자댁_1ahxk5f",
-      "officialName": "경주최부자댁",
-      "address": "경상북도 경주시",
-      "query": "경주최부자댁 경북 경주시",
-      "priority": 72,
-      "performanceCount": 9,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "과객을 후하게 대접하라.",
-        "나눔의 곳간을 열다.",
-        "나눔의 곳간을 열다."
-      ]
-    },
-    {
-      "venueId": "venue_연기향교_ra4igo",
-      "officialName": "연기향교",
-      "address": "세종특별자치시 0",
-      "query": "연기향교 세종특별자치시 0",
-      "priority": 64,
-      "performanceCount": 8,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "유학IN세종",
-        "연기향교 은행나무 학당",
-        "유학IN세종"
-      ]
-    },
-    {
-      "venueId": "venue_영광매간당고택_1y5j797",
-      "officialName": "영광 매간당 고택",
-      "address": "전라남도 영광군",
-      "query": "영광 매간당 고택 전남 영광군",
-      "priority": 64,
-      "performanceCount": 8,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
-        "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
-        "매간당 고택 주역괘로 풀어본 효자 가문의 비밀"
-      ]
-    },
-    {
-      "venueId": "venue_영광군에위치한국가유산일대_qhhl3w",
-      "officialName": "영광군에 위치한 국가유산 일대",
-      "address": "전남광주통합특별시 영광군",
-      "query": "영광군에 위치한 국가유산 일대 전남광주통합특별시 영광군",
-      "priority": 64,
-      "performanceCount": 8,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "영광의 문화유산을 알아보자",
-        "영광의 문화유산을 알아보자",
-        "영광의 문화유산을 알아보자"
       ]
     },
     {
@@ -2511,126 +2183,6 @@
       ]
     },
     {
-      "venueId": "venue_인천제물포구개항장일대_1wtjmn",
-      "officialName": "인천 제물포구 개항장 일대",
-      "address": "인천광역시 중구",
-      "query": "인천 제물포구 개항장 일대 인천 중구",
-      "priority": 56,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "개항장으로 Go!, 듣Go, 걷Go, 줍Go",
-        "개항장 1919, 조선을 수호하라!",
-        "개항장 1919, 조선을 수호하라!"
-      ]
-    },
-    {
-      "venueId": "venue_추사유배지_4hgt31",
-      "officialName": "추사 유배지",
-      "address": "제주특별자치도 -",
-      "query": "추사 유배지 제주 -",
-      "priority": 56,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "추사, 몽연",
-        "추사의 사색",
-        "추사를 만나다"
-      ]
-    },
-    {
-      "venueId": "venue_충주향교_143bt7p",
-      "officialName": "충주향교",
-      "address": "충청북도 충주시",
-      "query": "충주향교 충청북도 충주시",
-      "priority": 56,
-      "performanceCount": 7,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "충주향교 꼬마선비의 선비풍류",
-        "충주향교 꼬마선비의 선비풍류",
-        "충주향교 꼬마선비의 선비풍류"
-      ]
-    },
-    {
-      "venueId": "venue_고성오광대전수교육관_wol8hy",
-      "officialName": "고성오광대 전수교육관",
-      "address": "경상남도 고성군",
-      "query": "고성오광대 전수교육관 경남 고성군",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "잠자는 말뚝이를 깨워라. 생생!!!",
-        "잠자는 말뚝이를 깨워라. 생생!!!",
-        "잠자는 말뚝이를 깨워라. 생생!!!"
-      ]
-    },
-    {
-      "venueId": "venue_독락당_1yebd0a",
-      "officialName": "독락당",
-      "address": "경상북도 경주시",
-      "query": "독락당 경북 경주시",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "〈3교시〉 회재 과거급제길과 아들 이전인의 孝 뮤지컬 독락",
-        "〈2교시〉 동방오현 조선 성리학 인싸 이언적 문화체험",
-        "〈1교시〉 회재 18세 종손과의 생생인터뷰 독락당 회재학당"
-      ]
-    },
-    {
-      "venueId": "venue_사천향교_103c7s0",
-      "officialName": "사천향교",
-      "address": "경상남도 사천시",
-      "query": "사천향교 경남 사천시",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "다함께, 인문학당",
-        "다함께, 인문학당",
-        "1박2일 전통 문화 체험 캠프"
-      ]
-    },
-    {
       "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_unp5jo",
       "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
       "address": "서울 강남구 강남대로110길 38",
@@ -2645,66 +2197,6 @@
         "원데이 키즈 클래스/키즈 팔찌 만들기",
         "우리만의 팔찌 만들기 (원데이 커플/우정 클래스)",
         "원데이 반려동물 목걸이 펫 클래스"
-      ]
-    },
-    {
-      "venueId": "venue_수덕사근역성보관_1jj1guo",
-      "officialName": "수덕사 근역성보관",
-      "address": "충청남도 예산군",
-      "query": "수덕사 근역성보관 충청남도 예산군",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "주심포 공포, 결구로 짓다",
-        "주심포 공포, 결구로 짓다",
-        "주심포 공포, 결구로 짓다"
-      ]
-    },
-    {
-      "venueId": "venue_언양향교_15lasy7",
-      "officialName": "언양향교",
-      "address": "울산광역시 울주군",
-      "query": "언양향교 울산 울주군",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "나도이제 어른-갓쓰고 비녀꽂고",
-        "나도이제 어른-갓쓰고 비녀꽂고",
-        "나도이제 어른-갓쓰고 비녀꽂고"
-      ]
-    },
-    {
-      "venueId": "venue_한용운선생생가지_15uhwm8",
-      "officialName": "한용운선생생가지",
-      "address": "충청남도 홍성군",
-      "query": "한용운선생생가지 충청남도 홍성군",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "만해생가, 가볼 만해",
-        "만해생가, 가볼 만해",
-        "만해생가, 가볼 만해"
       ]
     },
     {
@@ -2746,86 +2238,6 @@
       ]
     },
     {
-      "venueId": "venue_낭주최씨종가_16clft1",
-      "officialName": "낭주최씨 종가",
-      "address": "전라남도 영암군",
-      "query": "낭주최씨 종가 전남 영암군",
-      "priority": 40,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "400년 씨간장의 향기로 만든 “영암 전통어란”",
-        "400년 씨간장의 향기로 만든 “영암 전통어란”",
-        "400년 씨간장의 향기로 만든 “영암 전통어란”"
-      ]
-    },
-    {
-      "venueId": "venue_동락서원_1ya2xq7",
-      "officialName": "동락서원",
-      "address": "경상북도 구미시",
-      "query": "동락서원 경북 구미시",
-      "priority": 40,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "주말엔 서원에서 놀자",
-        "주말엔 서원에서 놀자",
-        "주말엔 서원에서 놀자"
-      ]
-    },
-    {
-      "venueId": "venue_보석사_uktcle",
-      "officialName": "보석사",
-      "address": "충청남도 금산군",
-      "query": "보석사 충청남도 금산군",
-      "priority": 40,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "승병향기 보석路",
-        "비움과 채움이 만나다",
-        "가람(伽藍) 모꼬지"
-      ]
-    },
-    {
-      "venueId": "venue_월봉서원이안당_129e69l",
-      "officialName": "월봉서원 이안당",
-      "address": "광주광역시 광산구",
-      "query": "월봉서원 이안당 광주 광산구",
-      "priority": 40,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "다시茶時 카페",
-        "다시茶時 카페",
-        "다시茶時 카페"
-      ]
-    },
-    {
       "venueId": "venue_제주_pb0fqw",
       "officialName": "제주 ·",
       "address": "제주 ·",
@@ -2842,26 +2254,6 @@
         "미니테라리움클래스",
         "나만의 특별한 향 만들기, 스튜디오 유랑 향수 원데이 클래스",
         "마크라메 파인애플 화분 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_금산향교_4ihxjk",
-      "officialName": "금산향교",
-      "address": "충청남도 금산군",
-      "query": "금산향교 충청남도 금산군",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "Hello! 다례휴림(茶禮休林)",
-        "세시풍속 락(樂)하다",
-        "Hello! 다례휴림(茶禮休林)"
       ]
     },
     {
@@ -2899,146 +2291,6 @@
         "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
         "악마의에그타르트 원데이클래스(겉빠속촉)",
         "앙금플라워케이크정규반모집 [1개월]"
-      ]
-    },
-    {
-      "venueId": "venue_분옥정_14mgi2d",
-      "officialName": "분옥정",
-      "address": "경상북도 포항시",
-      "query": "분옥정 경북 포항시",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "분옥정 고택 달빛음악회",
-        "분옥정 정자에서 전통 화전놀이",
-        "분옥정 선비달빛트레킹"
-      ]
-    },
-    {
-      "venueId": "venue_상주향교_6i4fql",
-      "officialName": "상주향교",
-      "address": "경상북도 상주시",
-      "query": "상주향교 경북 상주시",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "전통의례, 민속문화 체험행사",
-        "전통의례, 민속문화 체험행사",
-        "행단음악회"
-      ]
-    },
-    {
-      "venueId": "venue_아산공세곶고지아산공세리성당_v8yd5b",
-      "officialName": "아산공세곶고지, 아산공세리성당",
-      "address": "충청남도 아산시",
-      "query": "아산공세곶고지, 아산공세리성당 충청남도 아산시",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "공세리 티 살롱",
-        "공세리 티 살롱",
-        "성당 너머 푸른 길"
-      ]
-    },
-    {
-      "venueId": "venue_영주순흥벽화고분일원_m3vvra",
-      "officialName": "영주 순흥벽화고분 일원",
-      "address": "경상북도 영주시",
-      "query": "영주 순흥벽화고분 일원 경북 영주시",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "벽화고분의 비밀을 풀어라!",
-        "벽화고분의 비밀을 풀어라!",
-        "벽화고분의 비밀을 풀어라!"
-      ]
-    },
-    {
-      "venueId": "venue_예산향교_1letdzk",
-      "officialName": "예산향교",
-      "address": "충청남도 예산향교",
-      "query": "예산향교 충청남도 예산향교",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께",
-        "YES 예산의 향교와 함께"
-      ]
-    },
-    {
-      "venueId": "venue_이하복고택_1oxodar",
-      "officialName": "이하복 고택",
-      "address": "충청남도 서천군",
-      "query": "이하복 고택 충청남도 서천군",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "서천 이하복 고택 스테이",
-        "요모조모 이하복고택",
-        "서천 이하복 고택 스테이"
-      ]
-    },
-    {
-      "venueId": "venue_인천중구개항장일대_509l1w",
-      "officialName": "인천 중구 개항장 일대",
-      "address": "인천광역시 중구",
-      "query": "인천 중구 개항장 일대 인천 중구",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "개항장으로 Go!, 듣Go, 걷Go, 줍Go",
-        "개항장 1919, 조선을 수호하라!",
-        "개항장 1919, 조선을 수호하라!"
       ]
     },
     {
@@ -3118,126 +2370,6 @@
       ]
     },
     {
-      "venueId": "venue_경주읍성일원_1x9l2bi",
-      "officialName": "경주읍성 일원",
-      "address": "경상북도 경주시",
-      "query": "경주읍성 일원 경북 경주시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "쓰담 역사탐험대",
-        "경주부윤 읍성 나들이",
-        "경주읍성 포졸체험"
-      ]
-    },
-    {
-      "venueId": "venue_김제동헌근민헌피금각내아_1wgfxjp",
-      "officialName": "김제 동헌 근민헌, 피금각, 내아",
-      "address": "전라북도 김제시",
-      "query": "김제 동헌 근민헌, 피금각, 내아 전북 김제시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "김제동헌 회화나무여행",
-        "김제동헌 회화나무여행",
-        "동헌마루 생생스쿨"
-      ]
-    },
-    {
-      "venueId": "venue_단양조덕수고택_10ioma4",
-      "officialName": "단양조덕수고택",
-      "address": "충청북도 단양군",
-      "query": "단양조덕수고택 충청북도 단양군",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
-        "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
-        "남한강 무쌍신식, 단양 조덕수 고택 1박2일"
-      ]
-    },
-    {
-      "venueId": "venue_당진필경사_1nh957x",
-      "officialName": "당진필경사",
-      "address": "충청남도 당진시",
-      "query": "당진필경사 충청남도 당진시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "상록수, 그 날의 식탁",
-        "희망찾기 RPG, '그 날이 오면'",
-        "희망찾기 RPG, '그 날이 오면'"
-      ]
-    },
-    {
-      "venueId": "venue_마산향교학습당명륜당유림회관풍화루대성전_ml6jtr",
-      "officialName": "마산향교 학습당, 명륜당, 유림회관, 풍화루, 대성전",
-      "address": "경상남도 창원시",
-      "query": "마산향교 학습당, 명륜당, 유림회관, 풍화루, 대성전 경남 창원시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "선비의 사계",
-        "선비의 사계",
-        "선비의 사계"
-      ]
-    },
-    {
-      "venueId": "venue_밀양혜산서원지역교류_1ka8ttx",
-      "officialName": "밀양혜산서원 지역교류",
-      "address": "경상남도 창원시",
-      "query": "밀양혜산서원 지역교류 경남 창원시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "선비의 사계",
-        "선비의 사계",
-        "선비의 사계"
-      ]
-    },
-    {
       "venueId": "venue_서울강남구논현로332_a8v7ey",
       "officialName": "서울 강남구 논현로 332",
       "address": "서울 강남구 논현로 332",
@@ -3309,66 +2441,6 @@
       ]
     },
     {
-      "venueId": "venue_송곡서원_1c1p81f",
-      "officialName": "송곡서원",
-      "address": "충청남도 서산시",
-      "query": "송곡서원 충청남도 서산시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "선비의 배움터, 송곡서원",
-        "국가유산주간_선비의 배움터, 송곡서원",
-        "선비의 배움터, 송곡서원"
-      ]
-    },
-    {
-      "venueId": "venue_안정라씨삼세충효문_imq2yx",
-      "officialName": "안정라씨 삼세충효문",
-      "address": "충청북도 청주시",
-      "query": "안정라씨 삼세충효문 충청북도 청주시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "평화가 꽃피는 마을-비중리",
-        "평화가 꽃피는 마을-비중리",
-        "평화가 꽃피는 마을-비중리"
-      ]
-    },
-    {
-      "venueId": "venue_용와종택호고와종택_1pzzxgo",
-      "officialName": "용와종택, 호고와종택",
-      "address": "경상북도 구미시",
-      "query": "용와종택, 호고와종택 경북 구미시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "카페 호고와 종갓집 로컬&슬로우 푸드 카페",
-        "카페 호고와 종갓집 로컬&슬로우 푸드 카페",
-        "우리는 종갓집 장독대 공동체"
-      ]
-    },
-    {
       "venueId": "venue_울산북구_dhzfua",
       "officialName": "울산 북구",
       "address": "울산 북구",
@@ -3388,106 +2460,6 @@
       ]
     },
     {
-      "venueId": "venue_울산동헌및내아_1r3iez9",
-      "officialName": "울산동헌및내아",
-      "address": "울산광역시 중구",
-      "query": "울산동헌및내아 울산 중구",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "동헌 돌아볼 고(顧)",
-        "동헌, 스며들 고(皷)",
-        "동헌 돌아볼 고(顧)"
-      ]
-    },
-    {
-      "venueId": "venue_장수당_1vxwsn7",
-      "officialName": "장수당",
-      "address": "제주특별자치도 0",
-      "query": "장수당 제주 0",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "귤림 사락사락",
-        "귤림 사락사락",
-        "귤림 사락사락"
-      ]
-    },
-    {
-      "venueId": "venue_장흥향교_evmtkq",
-      "officialName": "장흥향교",
-      "address": "전라남도 장흥군",
-      "query": "장흥향교 전남 장흥군",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "우리들의 축제",
-        "우리들의 축제",
-        "우리들의 축제"
-      ]
-    },
-    {
-      "venueId": "venue_점필재종택도연재_wthqet",
-      "officialName": "점필재종택 , 도연재",
-      "address": "경상북도 고령군",
-      "query": "점필재종택 , 도연재 경북 고령군",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "점필재 종갓집 유치원 소풍 마당",
-        "멋쟁이 점필재 납시오",
-        "종갓집 별미의 품격, 맛과 멋 체험"
-      ]
-    },
-    {
-      "venueId": "venue_홍범식고가청년창작소오롯_iul6zj",
-      "officialName": "홍범식 고가, 청년창작소 오롯",
-      "address": "충청북도 괴산군",
-      "query": "홍범식 고가, 청년창작소 오롯 충청북도 괴산군",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "독서당",
-        "독서당",
-        "독서당"
-      ]
-    },
-    {
       "venueId": "venue_옥포중앙로_1h6jggd",
       "officialName": "· 옥포중앙로",
       "address": "경상남도 · 거제시 · 옥포중앙로",
@@ -3503,63 +2475,6 @@
       "sampleTitles": [
         "소망컬러 소잉클래스",
         "소망컬러 소잉클래스(단체클래스)"
-      ]
-    },
-    {
-      "venueId": "venue_ak플라자_pt0ayn",
-      "officialName": "AK플라자",
-      "address": "etc AK플라자",
-      "query": "AK플라자 etc ak플라자",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "피터팬 [수원]",
-        "호두까기 인형 [수원]"
-      ]
-    },
-    {
-      "venueId": "venue_간송옛집_lcdicy",
-      "officialName": "간송옛집",
-      "address": "서울특별시 도봉구",
-      "query": "간송옛집 서울 도봉구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "간송보감, 문화로 지켜낸 오늘",
-        "간송의 밤, 옛소리로 흐르다"
-      ]
-    },
-    {
-      "venueId": "venue_강화유수부관아고려궁지등_1va20cy",
-      "officialName": "강화유수부 관아 고려궁지 등",
-      "address": "인천광역시 강화군",
-      "query": "강화유수부 관아 고려궁지 등 인천 강화군",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "강화유수의 하루",
-        "강화유수의 하루"
       ]
     },
     {
@@ -3617,82 +2532,6 @@
       ]
     },
     {
-      "venueId": "venue_공주황새바위천주교순교유적_rf586w",
-      "officialName": "공주 황새바위 천주교 순교유적",
-      "address": "충청남도 공주시",
-      "query": "공주 황새바위 천주교 순교유적 충청남도 공주시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "선교사의 눈으로 본 공주풍경",
-        "황새바위에서 만나는 국제교류"
-      ]
-    },
-    {
-      "venueId": "venue_나성독락정_1bw1ug7",
-      "officialName": "나성독락정",
-      "address": "세종특별자치시 -",
-      "query": "나성독락정 세종특별자치시 -",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "걸어서 생생독락",
-        "걸어서 생생독락"
-      ]
-    },
-    {
-      "venueId": "venue_나주향교일대_sl6adc",
-      "officialName": "나주향교 일대",
-      "address": "전남광주통합특별시 나주시",
-      "query": "나주향교 일대 전남광주통합특별시 나주시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "인의예지 놀이마당",
-        "인의예지 놀이마당"
-      ]
-    },
-    {
-      "venueId": "venue_내장사일원_1u98gky",
-      "officialName": "내장사 일원",
-      "address": "전라북도 정읍시",
-      "query": "내장사 일원 전북 정읍시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "환경보호 작은실천 조선동종만들기",
-        "환경보호 작은실천 조선동종만들기"
-      ]
-    },
-    {
       "venueId": "venue_대구중구_14xafqe",
       "officialName": "대구 중구",
       "address": "대구 중구",
@@ -3708,82 +2547,6 @@
       "sampleTitles": [
         "가죽공예 키링 만들기",
         "나만의 카드지갑만들기"
-      ]
-    },
-    {
-      "venueId": "venue_대전중구문화원_1k6ca5c",
-      "officialName": "대전중구문화원",
-      "address": "etc 대전중구문화원",
-      "query": "대전중구문화원 etc 대전중구문화원",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "러브액츄얼리",
-        "어린이 벌룬쇼: 상상풍선마술단"
-      ]
-    },
-    {
-      "venueId": "venue_로드아트센터_rzbngl",
-      "officialName": "로드아트센터",
-      "address": "etc 로드아트센터(2F)",
-      "query": "로드아트센터 etc 로드아트센터(2f)",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "로드 기획연주, 노예진 피아노 리사이틀",
-        "로드 기획연주, 임홍균 바이올린 리사이틀"
-      ]
-    },
-    {
-      "venueId": "venue_만휴정_14cysjs",
-      "officialName": "만휴정",
-      "address": "경상북도 안동시",
-      "query": "만휴정 경북 안동시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "달빛 아래 문화유산, 풍류 만휴정",
-        "달빛 아래 문화유산, 풍류 만휴정"
-      ]
-    },
-    {
-      "venueId": "venue_묵계서원_rtuwnk",
-      "officialName": "묵계서원",
-      "address": "경상북도 안동시",
-      "query": "묵계서원 경북 안동시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "정기프로그램 - 사계절 놀이터",
-        "정기프로그램 - 사계절 놀이터"
       ]
     },
     {
@@ -3803,120 +2566,6 @@
       "sampleTitles": [
         "문산관에 왜 왔니 왜 왔니?",
         "문산관에 왜 왔니 왜 왔니?"
-      ]
-    },
-    {
-      "venueId": "venue_밀양향교_1nvsklz",
-      "officialName": "밀양향교",
-      "address": "경상남도 밀양시",
-      "query": "밀양향교 경남 밀양시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "선비학당",
-        "향음주례"
-      ]
-    },
-    {
-      "venueId": "venue_백양사일원_1d5mmif",
-      "officialName": "백양사 일원",
-      "address": "전남광주통합특별시 장성군",
-      "query": "백양사 일원 전남광주통합특별시 장성군",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "건축 문화유산 한마당",
-        "백양사 국가유산 탐험학교"
-      ]
-    },
-    {
-      "venueId": "venue_벽진서원_1cwl47c",
-      "officialName": "벽진서원",
-      "address": "전남광주통합특별시 서구",
-      "query": "벽진서원 전남광주통합특별시 서구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "벽진에서 회재를 만나다",
-        "벽진에서 회재를 만나다"
-      ]
-    },
-    {
-      "venueId": "venue_보령향교_r4o7yr",
-      "officialName": "보령향교",
-      "address": "충청남도 보령시",
-      "query": "보령향교 충청남도 보령시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "문화공감 보령향교N",
-        "문화공감 보령향교N"
-      ]
-    },
-    {
-      "venueId": "venue_봉화기헌고택_fq12n7",
-      "officialName": "봉화 기헌고택",
-      "address": "경상북도 봉화군",
-      "query": "봉화 기헌고택 경북 봉화군",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "간 밤에 용꿈 꾸셨소?",
-        "간 밤에 용꿈 꾸셨소?"
-      ]
-    },
-    {
-      "venueId": "venue_불회사_foinjr",
-      "officialName": "불회사",
-      "address": "전남광주통합특별시 나주시",
-      "query": "불회사 전남광주통합특별시 나주시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "이야기여행 '범과 함께'",
-        "춘추비로다회"
       ]
     },
     {
@@ -4016,270 +2665,6 @@
       ]
     },
     {
-      "venueId": "venue_세종임난수은행나무역사공원_13bhcz3",
-      "officialName": "세종임난수은행나무 역사공원",
-      "address": "세종특별자치시 -",
-      "query": "세종임난수은행나무 역사공원 세종특별자치시 -",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "은행나무,천년의 꿈",
-        "걸어서 생생독락"
-      ]
-    },
-    {
-      "venueId": "venue_손대식손병순고가_ivfs8r",
-      "officialName": "손대식,손병순 고가",
-      "address": "경상남도 밀양시",
-      "query": "손대식,손병순 고가 경남 밀양시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "고택에서 하룻밤",
-        "고택에서 하룻밤"
-      ]
-    },
-    {
-      "venueId": "venue_송곡서원서산류방택천문기상과학관_b4kgql",
-      "officialName": "송곡서원, 서산류방택천문기상과학관",
-      "address": "충청남도 서산시",
-      "query": "송곡서원, 서산류방택천문기상과학관 충청남도 서산시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "자미원 별그림 학교 가족 1일 캠프",
-        "자미원 별그림 학교 가족 1일 캠프"
-      ]
-    },
-    {
-      "venueId": "venue_양천향교_1btiorh",
-      "officialName": "양천향교",
-      "address": "서울특별시 강서구",
-      "query": "양천향교 서울 강서구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "양천향교 유생다움",
-        "양천향교 유생다움"
-      ]
-    },
-    {
-      "venueId": "venue_양평물빛극장_fmbv54",
-      "officialName": "양평물빛극장",
-      "address": "정보 없음",
-      "query": "양평물빛극장 정보 없음",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "사물놀이 느닷, 양평 아리랑 [양평]",
-        "사물놀이 느닷 〈양평아리랑〉 (양평)"
-      ]
-    },
-    {
-      "venueId": "venue_여수진남체육관_3t500a",
-      "officialName": "여수진남체육관",
-      "address": "etc 여수진남체육관",
-      "query": "여수진남체육관 etc 여수진남체육관",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "2026 여수 빅터 코리아오픈 배드민턴선수권대회 - 비지정",
-        "2026 여수 빅터 코리아오픈 배드민턴선수권대회"
-      ]
-    },
-    {
-      "venueId": "venue_영평사삼명선원_1sgslwg",
-      "officialName": "영평사 삼명선원",
-      "address": "세종특별자치시 -",
-      "query": "영평사 삼명선원 세종특별자치시 -",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "영평사 오색실 엮어 복장물 만들기",
-        "영평사 오색실 엮어 복장물 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_옥천옥주사마소_1akal5b",
-      "officialName": "옥천 옥주사마소",
-      "address": "충청북도 옥천군",
-      "query": "옥천 옥주사마소 충청북도 옥천군",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "우암 옥주공작소",
-        "우암 옥주공작소"
-      ]
-    },
-    {
-      "venueId": "venue_용담향교_uqaktp",
-      "officialName": "용담향교",
-      "address": "전라북도 진안군",
-      "query": "용담향교 전북 진안군",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "용이 된고려향교",
-        "용이 된고려향교"
-      ]
-    },
-    {
-      "venueId": "venue_용산서원_123izow",
-      "officialName": "용산서원",
-      "address": "강원도 동해시",
-      "query": "용산서원 강원 동해시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "황화고지 안해 드니",
-        "황화고지 안해 드니"
-      ]
-    },
-    {
-      "venueId": "venue_우란2경_1pol600",
-      "officialName": "우란2경",
-      "address": "etc 우란2경",
-      "query": "우란2경 etc 우란2경",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "가락프로젝트 여섯 번째 시리즈: 소리의 진법 (The Order of Sound)",
-        "점프x컷"
-      ]
-    },
-    {
-      "venueId": "venue_월봉서원_igjzqa",
-      "officialName": "월봉서원",
-      "address": "광주광역시 광산구",
-      "query": "월봉서원 광주 광산구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "살롱 드 월봉",
-        "살롱 드 월봉"
-      ]
-    },
-    {
-      "venueId": "venue_유림회관_elgmpp",
-      "officialName": "유림회관",
-      "address": "경상남도 창원시",
-      "query": "유림회관 경남 창원시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "기후변화 대응 노력: 아픈 지구를 위하여",
-        "기후변화 대응 노력: 아픈 지구를 위하여"
-      ]
-    },
-    {
-      "venueId": "venue_이병기생가가람문학관_fpiwty",
-      "officialName": "이병기생가,가람문학관",
-      "address": "전라북도 익산시",
-      "query": "이병기생가,가람문학관 전북 익산시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "가람에 살어리랏다",
-        "가람에 살어리랏다"
-      ]
-    },
-    {
       "venueId": "venue_전남여수시_40xi6l",
       "officialName": "전남 여수시",
       "address": "전남 여수시 돌산읍 돌산로 3600-1",
@@ -4293,82 +2678,6 @@
       "sampleTitles": [
         "2026 여수세계섬박람회 전기간권",
         "2026 여수세계섬박람회 보통권/가족권"
-      ]
-    },
-    {
-      "venueId": "venue_전주향교_1cxzzew",
-      "officialName": "전주향교",
-      "address": "전라북도 전주시",
-      "query": "전주향교 전북 전주시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "진짜배기 儒",
-        "진짜배기 儒"
-      ]
-    },
-    {
-      "venueId": "venue_정읍김명관고택_19yyh8l",
-      "officialName": "정읍 김명관 고택",
-      "address": "전라북도 정읍시",
-      "query": "정읍 김명관 고택 전북 정읍시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "고캉스, 안 해본 사람 누구?",
-        "타임 인 조선, 고택의 노비와 양반이 되다"
-      ]
-    },
-    {
-      "venueId": "venue_청주향교_3hnayp",
-      "officialName": "청주향교",
-      "address": "충청북도 청주시",
-      "query": "청주향교 충청북도 청주시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "사람다운 사람, 자연과 함께하는 인성예절학교",
-        "사람다운 사람, 자연과 함께하는 인성예절학교"
-      ]
-    },
-    {
-      "venueId": "venue_청호동아바이마을_181z82r",
-      "officialName": "청호동 아바이마을",
-      "address": "강원특별자치도 속초시",
-      "query": "청호동 아바이마을 강원 속초시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "흥미진진! 사자를 만나다",
-        "흥미진진! 사자를 만나다"
       ]
     },
     {
@@ -4462,6 +2771,1350 @@
       "sampleTitles": [
         "2천년 구림에 울리는 김창조의 가야금 선율소리",
         "2천년 구림에 울리는 김창조의 가야금 선율소리"
+      ]
+    },
+    {
+      "venueId": "venue_횡성회다지소리문화체험관_1jg18f",
+      "officialName": "횡성회다지소리문화체험관",
+      "address": "강원특별자치도 횡성군",
+      "query": "횡성회다지소리문화체험관 강원 횡성군",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "가족과 함께하는 무형유산산책 [회다지환경예술캠프]",
+        "가족과 함께하는 무형유산산책 [회다지환경예술캠프]"
+      ]
+    },
+    {
+      "venueId": "venue_01_8etl8m",
+      "officialName": "01",
+      "address": "서울특별시 서초구 강남대로2길 92 201",
+      "query": "01 서울 서초구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "탄탄히 배우는 힐링 플라워레슨"
+      ]
+    },
+    {
+      "venueId": "venue_1967호서극장_167jeb6",
+      "officialName": "1967호서극장",
+      "address": "etc 1967호서극장",
+      "query": "1967호서극장 etc 1967호서극장",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "하숙집 칼국수 [공주]"
+      ]
+    },
+    {
+      "venueId": "venue_2층서울형키즈카페시립서울상상나라점_1jffdyp",
+      "officialName": "2층 서울형 키즈카페 시립 서울상상나라점",
+      "address": "서울 광진구 능동로 216",
+      "query": "2층 서울형 키즈카페 시립 서울상상나라점 서울 광진구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "2F 기획전시 [사랑하는 모양이야]"
+      ]
+    },
+    {
+      "venueId": "venue_4층향기로운그대공동작업장_5isr5h",
+      "officialName": "4층 향기로운그대 공동작업장",
+      "address": "서울특별시 강남구 학동로43길 17 논현2동주민센터, 4층 향기로운그대 공동작업장",
+      "query": "4층 향기로운그대 공동작업장 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "한복방향제 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_65_lthjwx",
+      "officialName": "65",
+      "address": "인천광역시 부평구 부흥북로57번길 32-17 12-65",
+      "query": "65 인천 부평구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "앙금플라워 쿠키"
+      ]
+    },
+    {
+      "venueId": "venue_ncs산업현장교수_ta9hlr",
+      "officialName": "NCS 산업현장교수,",
+      "address": "NCS 산업현장교수,",
+      "query": "NCS 산업현장교수, ncs 산업현장교수,",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "쉽고 재미있는 위스키 원데이 클래스(수료증 발급)"
+      ]
+    },
+    {
+      "venueId": "venue_가톨릭관동대학교_1g2y1gg",
+      "officialName": "가톨릭관동대학교",
+      "address": "etc 가톨릭관동대학교",
+      "query": "가톨릭관동대학교 etc 가톨릭관동대학교",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "무명전설 전국투어 콘서트 [강릉]"
+      ]
+    },
+    {
+      "venueId": "venue_갑사_155vygg",
+      "officialName": "갑사",
+      "address": "충청남도 공주시",
+      "query": "갑사 충청남도 공주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "천강에 달이 떠오르다"
+      ]
+    },
+    {
+      "venueId": "venue_강서호박나이트_4vofz9",
+      "officialName": "강서호박나이트",
+      "address": "etc 강서호박나이트",
+      "query": "강서호박나이트 etc 강서호박나이트",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "BABO AND THE NIGHT"
+      ]
+    },
+    {
+      "venueId": "venue_경기고양시_p1z383",
+      "officialName": "경기 고양시",
+      "address": "경기도 고양시 덕양구 원당로 16 (주교동)",
+      "query": "경기 고양시 경기 고양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "고양행주한우 숯불구이축제"
+      ]
+    },
+    {
+      "venueId": "venue_경기고양시_an8smx",
+      "officialName": "경기 고양시",
+      "address": "경기도 고양시 일산서구 킨텍스로 217-60 킨텍스 제2전시장 6홀",
+      "query": "경기 고양시 경기 고양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> 원피스 이모션(~ 26/05/27)"
+      ]
+    },
+    {
+      "venueId": "venue_경기과천시_1aqedr9",
+      "officialName": "경기 과천시",
+      "address": "경기도 과천시 대공원광장로 80 종합안내소",
+      "query": "경기 과천시 경기 과천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<행사> 핑크퐁 레인보우 미션(~ 26/07/05)"
+      ]
+    },
+    {
+      "venueId": "venue_경기광명시_1bwvrfm",
+      "officialName": "경기 광명시",
+      "address": "경기 광명시",
+      "query": "경기 광명시 경기 광명시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "종택에서 즐기는 청렴의 선율"
+      ]
+    },
+    {
+      "venueId": "venue_경기군포시_1r1ut0z",
+      "officialName": "경기 군포시",
+      "address": "경기 군포시 대야1로11번길",
+      "query": "경기 군포시 경기 군포시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "건강 강의와 요리를 한 번에 1+1 원데이/정규 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_경기군포시_wkx1j9",
+      "officialName": "경기 군포시",
+      "address": "경기 군포시 군포로735번길",
+      "query": "경기 군포시 경기 군포시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "마크라메 카네이션 월행잉 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_경기군포시_1ced3je",
+      "officialName": "경기 군포시",
+      "address": "경기 군포시 산본로323번길",
+      "query": "경기 군포시 경기 군포시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "제스모나이트+캔들/레진아트 2가지를 한번에 배울수 있다?"
+      ]
+    },
+    {
+      "venueId": "venue_경기김포시_5k9vu8",
+      "officialName": "경기 김포시",
+      "address": "경기 김포시",
+      "query": "경기 김포시 경기 김포시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "김포 북캉스 ‘우저’"
+      ]
+    },
+    {
+      "venueId": "venue_경기수원시_18zs0cv",
+      "officialName": "경기 수원시",
+      "address": "경기도 수원시 장안구 송정로 19 수원시미술전시관",
+      "query": "경기 수원시 경기 수원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> 그린그린 뮤지엄 : 별가루 신비정원 (~ 26/07/24)"
+      ]
+    },
+    {
+      "venueId": "venue_경기양주시_54ati1",
+      "officialName": "경기 양주시",
+      "address": "경기도 양주시 부흥로1399번길 47 양주별산대놀이마당",
+      "query": "경기 양주시 경기 양주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "2026 무형유산 상설공연 '별소굿' (~ 26/06/30)"
+      ]
+    },
+    {
+      "venueId": "venue_경기양평군_zypqbq",
+      "officialName": "경기 양평군",
+      "address": "경기도 양평군 양서면 양수로 93",
+      "query": "경기 양평군 경기 양평군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "세미원 수련문화제"
+      ]
+    },
+    {
+      "venueId": "venue_경기여주시_h8vln0",
+      "officialName": "경기 여주시",
+      "address": "경기도 여주시 산북면 금품1로 36 산북체육공원",
+      "query": "경기 여주시 경기 여주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "산북AI김장문화축제"
+      ]
+    },
+    {
+      "venueId": "venue_경기용인시_q65mtx",
+      "officialName": "경기 용인시",
+      "address": "경기도 용인시 기흥구 동백3로 79 용인시박물관 용인시박물관",
+      "query": "경기 용인시 경기 용인시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> 함께 킥오프: 우리들의 축구 도시 용인 (~26/12/06)"
+      ]
+    },
+    {
+      "venueId": "venue_경기이천시_hpv8t8",
+      "officialName": "경기 이천시",
+      "address": "경기 이천시",
+      "query": "경기 이천시 경기 이천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "［경기 이천］ 파밀리에 승마장 승마체험(입장권/승마체험/레슨/재활)"
+      ]
+    },
+    {
+      "venueId": "venue_경기파주시_okxir8",
+      "officialName": "경기 파주시",
+      "address": "경기 파주시",
+      "query": "경기 파주시 경기 파주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "구도장원공의 지혜"
+      ]
+    },
+    {
+      "venueId": "venue_경기파주시_13sff7f",
+      "officialName": "경기 파주시",
+      "address": "경기도 파주시 탄현면 헤이리로 30",
+      "query": "경기 파주시 경기 파주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> 위시캣 매직카드가 왔다냥 (26/05/05 ~ 28/12/31)"
+      ]
+    },
+    {
+      "venueId": "venue_경기파주시_1q59h0w",
+      "officialName": "경기 파주시",
+      "address": "경기 파주시 탄현면 헤이리마을길 59-58",
+      "query": "경기 파주시 경기 파주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "헤이리 93뮤지엄 에로틱 성박물관"
+      ]
+    },
+    {
+      "venueId": "venue_경기평택시_1w2tsc0",
+      "officialName": "경기 평택시",
+      "address": "경기도 평택시 팽성읍 안정쇼핑로 11 안정리예술인광장",
+      "query": "경기 평택시 경기 평택시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "마토예술제"
+      ]
+    },
+    {
+      "venueId": "venue_경기포천시_6ugpob",
+      "officialName": "경기 포천시",
+      "address": "경기도 포천시 관인면 창동로 832",
+      "query": "경기 포천시 경기 포천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "포천 한탄강 가든페스타"
+      ]
+    },
+    {
+      "venueId": "venue_경기포천시_o9ljga",
+      "officialName": "경기 포천시",
+      "address": "경기도 포천시 관인면 창동로 832 포천 한탄강 생태경관단지",
+      "query": "경기 포천시 경기 포천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "2026 포천 한탄강 봄 가든페스타(~ 26/06/07)"
+      ]
+    },
+    {
+      "venueId": "venue_경기하남시_ggo4ut",
+      "officialName": "경기 하남시",
+      "address": "경기 하남시 미사강변대로226번길",
+      "query": "경기 하남시 경기 하남시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "카네이션 미니바구니 세트"
+      ]
+    },
+    {
+      "venueId": "venue_경기화성시_1orxg53",
+      "officialName": "경기 화성시",
+      "address": "경기도 화성시 동탄구 동탄대로5길 21 라크몽B동 3층",
+      "query": "경기 화성시 경기 화성시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> Earth? Us! - 복수의 존재(~ 26/06/27)"
+      ]
+    },
+    {
+      "venueId": "venue_경기예술고등학교_1kqtj22",
+      "officialName": "경기예술고등학교",
+      "address": "etc 경기예술고등학교",
+      "query": "경기예술고등학교 etc 경기예술고등학교",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "제1회 디아트리움 심포니 오케스트라 창단연주회 [부천]"
+      ]
+    },
+    {
+      "venueId": "venue_경남진주시_8kplek",
+      "officialName": "경남 진주시",
+      "address": "경상남도 진주시 문산읍 월아산로 994 진주실크박물관",
+      "query": "경남 진주시 경남 진주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> 금기숙작품전 – 비움을 엮다(~ 26/09/27)"
+      ]
+    },
+    {
+      "venueId": "venue_경주나정_zzol2b",
+      "officialName": "경주 나정",
+      "address": "경상북도 경주시",
+      "query": "경주 나정 경북 경주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "신라의 탄생 '화백'"
+      ]
+    },
+    {
+      "venueId": "venue_경주나정포석정지일원_1nwao6n",
+      "officialName": "경주 나정, 포석정지 일원",
+      "address": "경상북도 경주시",
+      "query": "경주 나정, 포석정지 일원 경북 경주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "이야기 전달자"
+      ]
+    },
+    {
+      "venueId": "venue_고산향교_hcw2nc",
+      "officialName": "고산향교",
+      "address": "전라북도 완주군",
+      "query": "고산향교 전북 완주군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "고산향교 난로회"
+      ]
+    },
+    {
+      "venueId": "venue_곡성도림사_1u2ukzn",
+      "officialName": "곡성 도림사",
+      "address": "전라남도 곡성군",
+      "query": "곡성 도림사 전남 곡성군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "도림마중(유료프로그램)"
+      ]
+    },
+    {
+      "venueId": "venue_곡성제호정몽심재죽산박씨종가_ktozyq",
+      "officialName": "곡성제호정, 몽심재, 죽산박씨 종가",
+      "address": "전라북도 남원시",
+      "query": "곡성제호정, 몽심재, 죽산박씨 종가 전북 남원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "몽심을 배우다"
+      ]
+    },
+    {
+      "venueId": "venue_골굴사일원_xfo6nv",
+      "officialName": "골굴사일원",
+      "address": "경상북도 경주시",
+      "query": "골굴사일원 경북 경주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "대표프로그램 돌에 새긴 숨결,예술로피어나다1"
+      ]
+    },
+    {
+      "venueId": "venue_공간서론_hgfxvk",
+      "officialName": "공간서론",
+      "address": "etc 공간서론",
+      "query": "공간서론 etc 공간서론",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "진짜 친구"
+      ]
+    },
+    {
+      "venueId": "venue_공주영은사_av9vbv",
+      "officialName": "공주 영은사",
+      "address": "충청남도 공주시",
+      "query": "공주 영은사 충청남도 공주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "영은사 역사의 시간"
+      ]
+    },
+    {
+      "venueId": "venue_광진구_1jffdyp",
+      "officialName": "광진구",
+      "address": "서울 광진구 능동로 216",
+      "query": "광진구 서울 광진구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "감성 민화 - 원데이 판넬 드로잉 클래스"
+      ]
+    },
+    {
+      "venueId": "venue_근재공고택석계서원그린나래태화강생태관힐링빌리지등_18580n4",
+      "officialName": "근재공 고택, 석계서원, 그린나래 , 태화강 생태관, 힐링빌리지 등",
+      "address": "울산광역시 울주군",
+      "query": "근재공 고택, 석계서원, 그린나래 , 태화강 생태관, 힐링빌리지 등 울산 울주군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "휴(休) 무궁화Road (1박2일 숙박체류형 프로그램 / 고택 힐링&휴식형, 연계형)"
+      ]
+    },
+    {
+      "venueId": "venue_김봉호가옥_ttunz1",
+      "officialName": "김봉호가옥",
+      "address": "전남광주통합특별시 광산구",
+      "query": "김봉호가옥 전남광주통합특별시 광산구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "농가의 사계"
+      ]
+    },
+    {
+      "venueId": "venue_나주향교내삼문_1qs2on0",
+      "officialName": "나주향교 내삼문",
+      "address": "전라남도 나주시",
+      "query": "나주향교 내삼문 전남 나주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "선비는 향교로"
+      ]
+    },
+    {
+      "venueId": "venue_나주향교충효관_rx3v0f",
+      "officialName": "나주향교 충효관",
+      "address": "전라남도 나주시",
+      "query": "나주향교 충효관 전남 나주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "궁상각치우 아해"
+      ]
+    },
+    {
+      "venueId": "venue_남포향교_1614zys",
+      "officialName": "남포향교",
+      "address": "충청남도 보령시",
+      "query": "남포향교 충청남도 보령시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "남포현감 최양필이 오동나무를?"
+      ]
+    },
+    {
+      "venueId": "venue_녹터널2049스튜디오_8htypx",
+      "officialName": "녹터널2049스튜디오",
+      "address": "etc 녹터널2049스튜디오",
+      "query": "녹터널2049스튜디오 etc 녹터널2049스튜디오",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "프로젝트 1인실, 작업 1일차: 통과의례"
+      ]
+    },
+    {
+      "venueId": "venue_단재신채호생가지_721edq",
+      "officialName": "단재신채호생가지",
+      "address": "대전광역시 중구",
+      "query": "단재신채호생가지 대전 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "그날의 단재, 오늘의 나"
+      ]
+    },
+    {
+      "venueId": "venue_당진솔뫼성지합덕성당신리성지버그내순례길등_1htw3t3",
+      "officialName": "당진 솔뫼성지, 합덕성당, 신리성지,버그내 순례길 등",
+      "address": "충청남도 당진시",
+      "query": "당진 솔뫼성지, 합덕성당, 신리성지,버그내 순례길 등 충청남도 당진시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "순례의 여정, 당진을 걷다"
+      ]
+    },
+    {
+      "venueId": "venue_대구달서구_1qfh7nw",
+      "officialName": "대구 달서구",
+      "address": "대구광역시 달서구 두류공원로 200",
+      "query": "대구 달서구 대구 달서구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "글로우사파리 대구(~ 26/12/31)"
+      ]
+    },
+    {
+      "venueId": "venue_대구mh컨벤션_1lbr2f4",
+      "officialName": "대구MH컨벤션",
+      "address": "etc 대구MH컨벤션",
+      "query": "대구MH컨벤션 etc 대구mh컨벤션",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "이은하 런치 앤 디너쇼"
+      ]
+    },
+    {
+      "venueId": "venue_대구메트로아트센터_1sf4wn7",
+      "officialName": "대구메트로아트센터",
+      "address": "etc 대구메트로아트센터",
+      "query": "대구메트로아트센터 etc 대구메트로아트센터",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "도란도란 이야기보따리"
+      ]
+    },
+    {
+      "venueId": "venue_대전서구_68f0zt",
+      "officialName": "대전 서구",
+      "address": "대전광역시 서구 둔산대로 155 대전시립미술관",
+      "query": "대전 서구 대전 서구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> 앤디 워홀: 예술을 팔다(~ 26/06/21)"
+      ]
+    },
+    {
+      "venueId": "venue_대전소대헌호연재고택_1ryc7ml",
+      "officialName": "대전 소대헌·호연재 고택",
+      "address": "대전광역시 대덕구",
+      "query": "대전 소대헌·호연재 고택 대전 대덕구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "진지한 진지, 주식시의 Ⅲ"
+      ]
+    },
+    {
+      "venueId": "venue_대전대학교_1294ne2",
+      "officialName": "대전대학교",
+      "address": "etc 대전대학교",
+      "query": "대전대학교 etc 대전대학교",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "더 보컬"
+      ]
+    },
+    {
+      "venueId": "venue_더퍼포머씨어터_snkref",
+      "officialName": "더퍼포머씨어터",
+      "address": "etc 더퍼포머씨어터",
+      "query": "더퍼포머씨어터 etc 더퍼포머씨어터",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "할로윈 매직쇼 [화성]"
+      ]
+    },
+    {
+      "venueId": "venue_도동커뮤니센타_gt0jou",
+      "officialName": "도동커뮤니센타",
+      "address": "대구광역시 동구",
+      "query": "도동커뮤니센타 대구 동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "측백와락 아이와락"
+      ]
+    },
+    {
+      "venueId": "venue_로얄앵커_1mx4dg",
+      "officialName": "로얄앵커",
+      "address": "etc 로얄앵커",
+      "query": "로얄앵커 etc 로얄앵커",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "라라라온 [울산 로얄앵커]"
+      ]
+    },
+    {
+      "venueId": "venue_리버스펀랜드_n8wf9d",
+      "officialName": "리버스펀랜드",
+      "address": "jeju 리버스펀랜드",
+      "query": "리버스펀랜드 jeju 리버스펀랜드",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "［제주］ 리버스펀랜드 / 사계절 썰매장 에어바운스"
+      ]
+    },
+    {
+      "venueId": "venue_리베포레스트_9yo6xl",
+      "officialName": "리베포레스트",
+      "address": "etc 리베포레스트",
+      "query": "리베포레스트 etc 리베포레스트",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "SOYO 소리 & 요가 살롱, SOYO 가야금과 요가로 돌아보는 나의 2026년"
+      ]
+    },
+    {
+      "venueId": "venue_마산향교공자위패매안지비석유림회관체험부스_ohj642",
+      "officialName": "마산향교 공자위패 매안지비석, 유림회관 체험부스",
+      "address": "경상남도 창원시",
+      "query": "마산향교 공자위패 매안지비석, 유림회관 체험부스 경남 창원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "100년을 지켜온 정신, 매안지"
+      ]
+    },
+    {
+      "venueId": "venue_망우역사문화공원_1lpweq8",
+      "officialName": "망우역사문화공원",
+      "address": "서울특별시 중랑구",
+      "query": "망우역사문화공원 서울 중랑구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "특명! 비밀결사의 단원이 되어라"
+      ]
+    },
+    {
+      "venueId": "venue_면천읍성일원_wtdtfh",
+      "officialName": "면천읍성 일원",
+      "address": "충청남도 당진시",
+      "query": "면천읍성 일원 충청남도 당진시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "면천읍성 360도 투어"
+      ]
+    },
+    {
+      "venueId": "venue_목포근대역사문화공간목포진지경동성당_4lx40x",
+      "officialName": "목포근대역사문화공간, 목포진지, 경동성당",
+      "address": "전라남도 목포시",
+      "query": "목포근대역사문화공간, 목포진지, 경동성당 전남 목포시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "목포 국가유산 야행"
+      ]
+    },
+    {
+      "venueId": "venue_몽골문화촌_1n5ars8",
+      "officialName": "몽골문화촌",
+      "address": "etc 몽골문화촌",
+      "query": "몽골문화촌 etc 몽골문화촌",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "우리동네 문화나들이: 북치GO! 춤추GO! [남양주]"
+      ]
+    },
+    {
+      "venueId": "venue_몽심재죽산박씨종가_9uhrk1",
+      "officialName": "몽심재, 죽산박씨 종가",
+      "address": "전라북도 남원시",
+      "query": "몽심재, 죽산박씨 종가 전북 남원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "몽심에서 놀다"
+      ]
+    },
+    {
+      "venueId": "venue_무양서원_17jwt56",
+      "officialName": "무양서원",
+      "address": "광주광역시 광산구",
+      "query": "무양서원 광주 광산구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "무양에서 만난 어의-思全약방문"
+      ]
+    },
+    {
+      "venueId": "venue_방탈출미로_oa2w3l",
+      "officialName": "방탈출미로",
+      "address": "서울특별시 은평구 연서로29길 16, 3층 방탈출미로",
+      "query": "방탈출미로 서울 은평구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "방탈출미로(은평)"
+      ]
+    },
+    {
+      "venueId": "venue_방탈출미로_5lz442",
+      "officialName": "방탈출미로",
+      "address": "서울 은평구 연서로29길 16",
+      "query": "방탈출미로 서울 은평구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "［서울 은평구］ 방탈출 카페 : 방탈출 미로(평일한정특가)"
+      ]
+    },
+    {
+      "venueId": "venue_배재학당역사박물관및정동일대_zlxbbm",
+      "officialName": "배재학당역사박물관 및 정동일대",
+      "address": "서울특별시 중구",
+      "query": "배재학당역사박물관 및 정동일대 서울 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "모던보이, 김소월의 정동 상경기"
+      ]
+    },
+    {
+      "venueId": "venue_백수해안도로_moy72o",
+      "officialName": "백수해안도로",
+      "address": "전라남도 영광군 백수읍 해안로 957",
+      "query": "백수해안도로 전남 영광군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "백수해안도로"
+      ]
+    },
+    {
+      "venueId": "venue_백제문화체험박물관및관련유적지_1fb77rb",
+      "officialName": "백제문화체험박물관 및 관련 유적지",
+      "address": "충청남도 청양군",
+      "query": "백제문화체험박물관 및 관련 유적지 충청남도 청양군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "소년 위정척사(衛正斥邪) 스카우트"
+      ]
+    },
+    {
+      "venueId": "venue_베타레저_1ew6hpp",
+      "officialName": "베타레저",
+      "address": "seoul 베타레저",
+      "query": "베타레저 seoul 베타레저",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "［서울］ (한강) 카약패들보드윈드서핑"
+      ]
+    },
+    {
+      "venueId": "venue_보성여관_14dpx6y",
+      "officialName": "보성여관",
+      "address": "전라남도 보성군",
+      "query": "보성여관 전남 보성군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "보성문화 이음"
+      ]
+    },
+    {
+      "venueId": "venue_보은향교_1bava0c",
+      "officialName": "보은향교",
+      "address": "충청북도 보은군",
+      "query": "보은향교 충청북도 보은군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "보은향교, 품격을 더하다."
+      ]
+    },
+    {
+      "venueId": "venue_부산기장군_pb47gx",
+      "officialName": "부산 기장군",
+      "address": "부산광역시 기장군 기장읍 기장해안로 267-7 빌라쥬 드 아난티 엘.피. 크리스탈 1F",
+      "query": "부산 기장군 부산 기장군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<전시> 푸룻푸룻프렌즈 : 빠씨를 찾아서 - 부산 (~ 26/05/05)"
+      ]
+    },
+    {
+      "venueId": "venue_부산수영구과정로79번길331층은하초코기사단_1ow3sr8",
+      "officialName": "부산 수영구 과정로79번길 33 1층 은하초코기사단",
+      "address": "부산 수영구 과정로79번길 33 (망미동) 1층 은하초코기사단",
+      "query": "1층 은하초코기사단 부산 수영구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "수제초콜릿 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_부산영도구_11ftll6",
+      "officialName": "부산 영도구",
+      "address": "부산 영도구",
+      "query": "부산 영도구 부산 영도구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "［가을 맞이 특가 ~25%］ 울트라백화점 부산 : 텍스트 쇼핑 클럽"
       ]
     }
   ],
@@ -4808,140 +4461,29 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-10-26T22:50:49.229Z",
+    "checkedAt": "2026-10-27T05:26:03.224Z",
     "status": "warn",
-    "venueCount": 4100,
-    "matchedCount": 828,
-    "highConfidenceMatchCount": 602,
+    "venueCount": 4097,
+    "matchedCount": 868,
+    "highConfidenceMatchCount": 601,
     "needsReviewCount": 20,
-    "notFoundCount": 231,
-    "pendingLookupCount": 2453,
-    "insufficientIdentityCount": 323,
-    "lookupReady": false,
-    "providersConfigured": [],
+    "notFoundCount": 264,
+    "pendingLookupCount": 2371,
+    "insufficientIdentityCount": 242,
+    "lookupReady": true,
+    "providersConfigured": [
+      "kakao",
+      "naver"
+    ],
     "staleCacheCount": 0,
     "topQueue": [
       {
-        "venueId": "venue_신항서원_4ictgq",
-        "officialName": "신항서원",
-        "address": "충청북도 청주시",
-        "query": "신항서원 충청북도 청주시",
-        "priority": 1004,
-        "performanceCount": 13,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "으랏차차서원마을",
-          "으랏차차서원마을",
-          "으랏차차서원마을"
-        ]
-      },
-      {
-        "venueId": "venue_구강서원_m053qe",
-        "officialName": "구강서원",
-        "address": "울산광역시 중구",
-        "query": "구강서원 울산 중구",
-        "priority": 996,
-        "performanceCount": 12,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "유생들의 지구력-지구를 지키는 힘",
-          "선비들의 문화 나들이",
-          "유학길로 떠나는 소풍"
-        ]
-      },
-      {
-        "venueId": "venue_구암서원_1uiybft",
-        "officialName": "구암서원",
-        "address": "대구광역시 북구",
-        "query": "구암서원 대구 북구",
-        "priority": 980,
-        "performanceCount": 10,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "전통을 잇고 인성을 키우다",
-          "전통을 잇고 인성을 키우다",
-          "전통을 잇고 인성을 키우다"
-        ]
-      },
-      {
-        "venueId": "venue_영암군국가유산도갑사왕인박사유적지등_10qlelu",
-        "officialName": "영암군 국가유산 도갑사, 왕인박사유적지 등",
-        "address": "전라남도 영암군",
-        "query": "영암군 국가유산 도갑사, 왕인박사유적지 등 전남 영암군",
-        "priority": 980,
-        "performanceCount": 10,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "영암 국가유산을 찾아라",
-          "영암 국가유산을 찾아라",
-          "영암 국가유산을 찾아라"
-        ]
-      },
-      {
-        "venueId": "venue_정선향교_dgk5zh",
-        "officialName": "정선향교",
-        "address": "강원도 정선군",
-        "query": "정선향교 강원 정선군",
-        "priority": 980,
-        "performanceCount": 10,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "향교로 마실가자",
-          "향교로 마실가자",
-          "향교로 마실가자"
-        ]
-      },
-      {
-        "venueId": "venue_조종수가옥구림대동계사회사정등_14h19ea",
-        "officialName": "조종수 가옥, 구림대동계사, 회사정 등",
-        "address": "전라남도 영암군",
-        "query": "조종수 가옥, 구림대동계사, 회사정 등 전남 영암군",
-        "priority": 980,
-        "performanceCount": 10,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "종가이야기 따라 걷는 시간여행",
-          "종가이야기 따라 걷는 시간여행",
-          "종가이야기 따라 걷는 시간여행"
-        ]
-      },
-      {
-        "venueId": "venue_경주최부자댁_1ahxk5f",
-        "officialName": "경주최부자댁",
+        "venueId": "venue_칠불암일원_1k3a5f1",
+        "officialName": "칠불암 일원",
         "address": "경상북도 경주시",
-        "query": "경주최부자댁 경북 경주시",
-        "priority": 972,
-        "performanceCount": 9,
+        "query": "칠불암 일원 경북 경주시",
+        "priority": 916,
+        "performanceCount": 2,
         "reviewFlags": [
           "alias_merge_candidate",
           "invalid_coordinate",
@@ -4949,37 +4491,34 @@
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "과객을 후하게 대접하라.",
-          "나눔의 곳간을 열다.",
-          "나눔의 곳간을 열다."
+          "AR+칠불암",
+          "AR+칠불암"
         ]
       },
       {
-        "venueId": "venue_연기향교_ra4igo",
-        "officialName": "연기향교",
-        "address": "세종특별자치시 0",
-        "query": "연기향교 세종특별자치시 0",
-        "priority": 964,
-        "performanceCount": 8,
+        "venueId": "venue_클럽72cc_1otd62d",
+        "officialName": "클럽72CC",
+        "address": "etc 클럽72CC",
+        "query": "클럽72CC etc 클럽72cc",
+        "priority": 916,
+        "performanceCount": 2,
         "reviewFlags": [
-          "alias_merge_candidate",
           "invalid_coordinate",
           "missing_detailed_address",
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "유학IN세종",
-          "연기향교 은행나무 학당",
-          "유학IN세종"
+          "2026 렉서스 마스터즈 - 렉서스 오너 할인",
+          "2026 렉서스 마스터즈"
         ]
       },
       {
-        "venueId": "venue_영광매간당고택_1y5j797",
-        "officialName": "영광 매간당 고택",
-        "address": "전라남도 영광군",
-        "query": "영광 매간당 고택 전남 영광군",
-        "priority": 964,
-        "performanceCount": 8,
+        "venueId": "venue_해학이기생가및대석마을학성서원_i2jfsx",
+        "officialName": "해학 이기 생가 및 대석마을. 학성서원",
+        "address": "전라북도 김제시",
+        "query": "해학 이기 생가 및 대석마을. 학성서원 전북 김제시",
+        "priority": 916,
+        "performanceCount": 2,
         "reviewFlags": [
           "alias_merge_candidate",
           "invalid_coordinate",
@@ -4987,18 +4526,17 @@
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
-          "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
-          "매간당 고택 주역괘로 풀어본 효자 가문의 비밀"
+          "의(義), 염(廉)의 선비정신 배우기 (學)",
+          "초가에서 ‘문화예술’을 두드리며 어울리기(鼓)"
         ]
       },
       {
-        "venueId": "venue_영광군에위치한국가유산일대_qhhl3w",
-        "officialName": "영광군에 위치한 국가유산 일대",
-        "address": "전남광주통합특별시 영광군",
-        "query": "영광군에 위치한 국가유산 일대 전남광주통합특별시 영광군",
-        "priority": 964,
-        "performanceCount": 8,
+        "venueId": "venue_회사정_1ys33ao",
+        "officialName": "회사정",
+        "address": "전라남도 영암군",
+        "query": "회사정 전남 영암군",
+        "priority": 916,
+        "performanceCount": 2,
         "reviewFlags": [
           "alias_merge_candidate",
           "invalid_coordinate",
@@ -5006,9 +4544,110 @@
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "영광의 문화유산을 알아보자",
-          "영광의 문화유산을 알아보자",
-          "영광의 문화유산을 알아보자"
+          "2천년 구림에 울리는 김창조의 가야금 선율소리",
+          "2천년 구림에 울리는 김창조의 가야금 선율소리"
+        ]
+      },
+      {
+        "venueId": "venue_횡성회다지소리문화체험관_1jg18f",
+        "officialName": "횡성회다지소리문화체험관",
+        "address": "강원특별자치도 횡성군",
+        "query": "횡성회다지소리문화체험관 강원 횡성군",
+        "priority": 916,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "가족과 함께하는 무형유산산책 [회다지환경예술캠프]",
+          "가족과 함께하는 무형유산산책 [회다지환경예술캠프]"
+        ]
+      },
+      {
+        "venueId": "venue_1967호서극장_167jeb6",
+        "officialName": "1967호서극장",
+        "address": "etc 1967호서극장",
+        "query": "1967호서극장 etc 1967호서극장",
+        "priority": 908,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "하숙집 칼국수 [공주]"
+        ]
+      },
+      {
+        "venueId": "venue_ncs산업현장교수_ta9hlr",
+        "officialName": "NCS 산업현장교수,",
+        "address": "NCS 산업현장교수,",
+        "query": "NCS 산업현장교수, ncs 산업현장교수,",
+        "priority": 908,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "쉽고 재미있는 위스키 원데이 클래스(수료증 발급)"
+        ]
+      },
+      {
+        "venueId": "venue_가톨릭관동대학교_1g2y1gg",
+        "officialName": "가톨릭관동대학교",
+        "address": "etc 가톨릭관동대학교",
+        "query": "가톨릭관동대학교 etc 가톨릭관동대학교",
+        "priority": 908,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "무명전설 전국투어 콘서트 [강릉]"
+        ]
+      },
+      {
+        "venueId": "venue_갑사_155vygg",
+        "officialName": "갑사",
+        "address": "충청남도 공주시",
+        "query": "갑사 충청남도 공주시",
+        "priority": 908,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "천강에 달이 떠오르다"
+        ]
+      },
+      {
+        "venueId": "venue_강서호박나이트_4vofz9",
+        "officialName": "강서호박나이트",
+        "address": "etc 강서호박나이트",
+        "query": "강서호박나이트 etc 강서호박나이트",
+        "priority": 908,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "BABO AND THE NIGHT"
         ]
       }
     ],
@@ -5052,26 +4691,6 @@
         ]
       },
       {
-        "venueId": "venue_신항서원_4ictgq",
-        "officialName": "신항서원",
-        "address": "충청북도 청주시",
-        "query": "신항서원 충청북도 청주시",
-        "priority": 104,
-        "performanceCount": 13,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "으랏차차서원마을",
-          "으랏차차서원마을",
-          "으랏차차서원마을"
-        ]
-      },
-      {
         "venueId": "venue_경기양주시_2yl2ej",
         "officialName": "경기 양주시",
         "address": "경기 양주시",
@@ -5088,26 +4707,6 @@
           "양주향교와 함께하는 시간여행",
           "양주향교와 함께하는 시간여행",
           "텐트밖은 매곡리고택"
-        ]
-      },
-      {
-        "venueId": "venue_구강서원_m053qe",
-        "officialName": "구강서원",
-        "address": "울산광역시 중구",
-        "query": "구강서원 울산 중구",
-        "priority": 96,
-        "performanceCount": 12,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "invalid_coordinate",
-          "missing_detailed_address",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "유생들의 지구력-지구를 지키는 힘",
-          "선비들의 문화 나들이",
-          "유학길로 떠나는 소풍"
         ]
       },
       {
@@ -5130,83 +4729,115 @@
         ]
       },
       {
-        "venueId": "venue_구암서원_1uiybft",
-        "officialName": "구암서원",
-        "address": "대구광역시 북구",
-        "query": "구암서원 대구 북구",
-        "priority": 80,
-        "performanceCount": 10,
+        "venueId": "venue_충남_19x3n7l",
+        "officialName": "충남 ·",
+        "address": "충남 ·",
+        "query": "충남 · 충남 ·",
+        "priority": 64,
+        "performanceCount": 8,
         "reviewFlags": [
-          "alias_merge_candidate",
           "invalid_coordinate",
           "missing_detailed_address",
           "needs_official_place_lookup",
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "전통을 잇고 인성을 키우다",
-          "전통을 잇고 인성을 키우다",
-          "전통을 잇고 인성을 키우다"
+          "크리스마스이미지 와인잔에 프린팅하기(실크스크린기법)",
+          "나만의 특별한 아이템 레진아트 원데이 클래스",
+          "커피 드립백 클래스"
         ]
       },
       {
-        "venueId": "venue_영암군국가유산도갑사왕인박사유적지등_10qlelu",
-        "officialName": "영암군 국가유산 도갑사, 왕인박사유적지 등",
-        "address": "전라남도 영암군",
-        "query": "영암군 국가유산 도갑사, 왕인박사유적지 등 전남 영암군",
-        "priority": 80,
-        "performanceCount": 10,
+        "venueId": "venue_경기용인시_1lrww93",
+        "officialName": "경기 용인시",
+        "address": "경기 용인시",
+        "query": "경기 용인시 경기 용인시",
+        "priority": 56,
+        "performanceCount": 7,
         "reviewFlags": [
-          "alias_merge_candidate",
           "invalid_coordinate",
           "missing_detailed_address",
           "needs_official_place_lookup",
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "영암 국가유산을 찾아라",
-          "영암 국가유산을 찾아라",
-          "영암 국가유산을 찾아라"
+          "1232년, 승리의 함성",
+          "처인성을 사수하라",
+          "달애울 월하담소(月下談笑)"
         ]
       },
       {
-        "venueId": "venue_정선향교_dgk5zh",
-        "officialName": "정선향교",
-        "address": "강원도 정선군",
-        "query": "정선향교 강원 정선군",
-        "priority": 80,
-        "performanceCount": 10,
+        "venueId": "venue_경남_10xwab9",
+        "officialName": "경남 ·",
+        "address": "경남 ·",
+        "query": "경남 · 경남 ·",
+        "priority": 56,
+        "performanceCount": 7,
         "reviewFlags": [
-          "alias_merge_candidate",
           "invalid_coordinate",
           "missing_detailed_address",
           "needs_official_place_lookup",
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "향교로 마실가자",
-          "향교로 마실가자",
-          "향교로 마실가자"
+          "향과 온기로 회복하는 태국 허브볼 &아로마 롤온 워크샵",
+          "틴 케이스 거울 만들기",
+          "키링만들기"
         ]
       },
       {
-        "venueId": "venue_조종수가옥구림대동계사회사정등_14h19ea",
-        "officialName": "조종수 가옥, 구림대동계사, 회사정 등",
-        "address": "전라남도 영암군",
-        "query": "조종수 가옥, 구림대동계사, 회사정 등 전남 영암군",
-        "priority": 80,
-        "performanceCount": 10,
+        "venueId": "venue_서울강남구강남대로110길381층프랑꼬아트랩_unp5jo",
+        "officialName": "서울 강남구 강남대로110길 38 1층 프랑꼬아트랩",
+        "address": "서울 강남구 강남대로110길 38",
+        "query": "1층 프랑꼬아트랩 서울 강남구",
+        "priority": 48,
+        "performanceCount": 6,
         "reviewFlags": [
-          "alias_merge_candidate",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "원데이 키즈 클래스/키즈 팔찌 만들기",
+          "우리만의 팔찌 만들기 (원데이 커플/우정 클래스)",
+          "원데이 반려동물 목걸이 펫 클래스"
+        ]
+      },
+      {
+        "venueId": "venue_경기의왕시_1hkj1op",
+        "officialName": "경기 의왕시",
+        "address": "경기 의왕시",
+        "query": "경기 의왕시 경기 의왕시",
+        "priority": 40,
+        "performanceCount": 5,
+        "reviewFlags": [
           "invalid_coordinate",
           "missing_detailed_address",
           "needs_official_place_lookup",
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "종가이야기 따라 걷는 시간여행",
-          "종가이야기 따라 걷는 시간여행",
-          "종가이야기 따라 걷는 시간여행"
+          "청계사 경판학교",
+          "청계사 경판학교",
+          "청계사 경판학교"
+        ]
+      },
+      {
+        "venueId": "venue_경북_1gzqc36",
+        "officialName": "경북 ·",
+        "address": "경북 ·",
+        "query": "경북 · 경북 ·",
+        "priority": 40,
+        "performanceCount": 5,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "펫푸드자격증 / 반려동물 베이커리지도사",
+          "강아지 노오븐 수제간식 취미반",
+          "시한드로잉모임"
         ]
       }
     ],

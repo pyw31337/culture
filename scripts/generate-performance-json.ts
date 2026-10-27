@@ -80,7 +80,9 @@ const FALLBACK_IMAGES: Record<string, string> = {
     museum: '/images/fallbacks/museum.jpg',
     exhibition: '/images/fallbacks/exhibition.jpg',
     classic_tradition: '/images/fallbacks/classic.jpg',
-    activity: '/images/fallbacks/tourism-template.svg',
+    activity: '/images/fallbacks/activity.jpg',
+    class: '/images/fallbacks/class-workshop.webp',
+    tourism: '/images/fallbacks/tourism-template.svg',
     movie: '/images/fallbacks/movie.svg',
     default: '/images/fallbacks/tourism-template.svg'
 };
@@ -975,7 +977,7 @@ function repairBrokenLocalImages(items: Performance[]) {
             }
         }
 
-        if (isBrokenLocal) {
+        if (isBrokenLocal || isEmpty) {
             performance.image = FALLBACK_IMAGES[performance.genre] || FALLBACK_IMAGES.default;
         }
     });
@@ -1610,10 +1612,19 @@ function buildSourceSummaries(sourceCounts: Record<string, number>): {
 }
 
 function hasReliablePrice(performance: Performance) {
-    const text = compactText([performance.price, performance.priceDetail, performance.feesAndPrograms].filter(Boolean).join(' '));
-    if (!text) return false;
-    if (/정보\s*없음|미정|문의|예매처\s*확인/i.test(text)) return false;
-    return Boolean(extractFirstPrice(text));
+    const priceField = (performance.price || '').trim();
+    if (priceField && !/정보\s*없음|미정|문의|예매처\s*확인/i.test(priceField) && Boolean(extractFirstPrice(priceField))) {
+        return true;
+    }
+    const detailField = (performance.priceDetail || '').trim();
+    if (detailField && !/정보\s*없음|미정/i.test(detailField) && Boolean(extractFirstPrice(detailField))) {
+        return true;
+    }
+    const fallbackText = (performance.feesAndPrograms || '').trim();
+    if (fallbackText && !/가격\s*문의|전화\s*문의|문의\s*요망/i.test(fallbackText) && Boolean(extractFirstPrice(fallbackText))) {
+        return true;
+    }
+    return false;
 }
 
 function buildPriceCoverageSummary(items: Performance[], checkedAt = new Date().toISOString()): PriceCoverageSummary {
@@ -1667,7 +1678,8 @@ function buildPriceCoverageSummary(items: Performance[], checkedAt = new Date().
 function buildOperationsSummary(checkedAt = new Date().toISOString()): OperationsSummary {
     const logDir = path.join(process.cwd(), 'logs', 'data-update');
     const failurePath = path.join(logDir, 'last-scrape-failures.txt');
-    const schedulerPlistPath = path.join(process.env.HOME || '', 'Library', 'LaunchAgents', 'com.cultureflow.daily-update.plist');
+    const schedulerPlistPath = path.join(process.env.HOME || '', 'Library', 'LaunchAgents', 'com.cultureflow.local-scheduler.plist');
+    const legacySchedulerPlistPath = path.join(process.env.HOME || '', 'Library', 'LaunchAgents', 'com.cultureflow.daily-update.plist');
     const localLogs = fs.existsSync(logDir)
         ? fs.readdirSync(logDir)
             .filter((file) => /^local-data-update-.*\.log$/.test(file))
@@ -1726,7 +1738,7 @@ function buildOperationsSummary(checkedAt = new Date().toISOString()): Operation
         lastFailureAgeHours,
         lastFailureCount: lastFailures.length,
         lastFailures: lastFailures.slice(0, 12),
-        schedulerConfigured: fs.existsSync(schedulerPlistPath),
+        schedulerConfigured: fs.existsSync(schedulerPlistPath) || fs.existsSync(legacySchedulerPlistPath),
     };
 }
 
