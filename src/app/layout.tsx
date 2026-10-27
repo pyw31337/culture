@@ -59,7 +59,10 @@ export const metadata: Metadata = {
     images: ["/images/og-image.jpg"],
   },
   icons: {
-    icon: '/culture/favicon.png',
+    icon: [
+      { url: '/culture/favicon.png', type: 'image/png' },
+      { url: '/culture/favicon.ico', sizes: 'any' },
+    ],
     apple: '/culture/icon.png',
   },
   manifest: '/culture/manifest.json',
