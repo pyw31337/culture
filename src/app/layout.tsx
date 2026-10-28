@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       {
         url: "/images/og-image.jpg",
         width: 1200,
-        height: 600,
+        height: 630,
         alt: "Culture Flow Preview",
       },
     ],
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       { url: '/culture/favicon.png', type: 'image/png' },
       { url: '/culture/favicon.ico', sizes: 'any' },
     ],
-    apple: '/culture/icon.png',
+    apple: '/culture/apple-touch-icon.png',
   },
   manifest: '/culture/manifest.json',
   appleWebApp: {

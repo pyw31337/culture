@@ -3,7 +3,8 @@ import path from 'path';
 import sharp from 'sharp';
 
 const ROOT = process.cwd();
-const SOURCE_IMAGE = '/Users/pyw31337/.gemini/antigravity/brain/83027dfd-7695-4f79-851a-42a62620364c/cultureflow_3d_ticket_star_icon_1793081361553.jpg';
+const SOURCE_IMAGE = path.join(ROOT, 'public', 'images', 'cultureflow-app-icon.png');
+const CUTOUT_IMAGE = path.join(ROOT, 'public', 'images', 'cultureflow-app-icon-cutout.png');
 
 async function generateAppIcons() {
   console.log('[brand-assets] Generating app icons from:', SOURCE_IMAGE);
@@ -26,7 +27,7 @@ async function generateAppIcons() {
 
   // 3. Apple Touch Icon (180x180)
   const appleTouchPath = path.join(ROOT, 'public', 'apple-touch-icon.png');
-  await sharp(SOURCE_IMAGE)
+  await sharp(CUTOUT_IMAGE)
     .resize(180, 180, { kernel: 'lanczos3' })
     .png({ compressionLevel: 9 })
     .toFile(appleTouchPath);
@@ -34,15 +35,15 @@ async function generateAppIcons() {
 
   // 4. Favicon PNG (64x64, crisp for retina)
   const faviconPngPath = path.join(ROOT, 'public', 'favicon.png');
-  await sharp(SOURCE_IMAGE)
+  await sharp(CUTOUT_IMAGE)
     .resize(64, 64, { kernel: 'lanczos3' })
     .png({ compressionLevel: 9 })
     .toFile(faviconPngPath);
   console.log('✓ Created', faviconPngPath);
 
   // 5. Favicon ICO (multi-size ICO container with 32x32 & 16x16 PNGs)
-  const png32 = await sharp(SOURCE_IMAGE).resize(32, 32, { kernel: 'lanczos3' }).png().toBuffer();
-  const png16 = await sharp(SOURCE_IMAGE).resize(16, 16, { kernel: 'lanczos3' }).png().toBuffer();
+  const png32 = await sharp(CUTOUT_IMAGE).resize(32, 32, { kernel: 'lanczos3' }).png().toBuffer();
+  const png16 = await sharp(CUTOUT_IMAGE).resize(16, 16, { kernel: 'lanczos3' }).png().toBuffer();
   const icoBuffer = createIco([
     { size: 32, buffer: png32 },
     { size: 16, buffer: png16 },
@@ -53,11 +54,10 @@ async function generateAppIcons() {
 }
 
 function createIco(images) {
-  // ICO header: 6 bytes
   const header = Buffer.alloc(6);
-  header.writeUInt16LE(0, 0); // Reserved
-  header.writeUInt16LE(1, 2); // 1 = ICO
-  header.writeUInt16LE(images.length, 4); // Number of images
+  header.writeUInt16LE(0, 0);
+  header.writeUInt16LE(1, 2);
+  header.writeUInt16LE(images.length, 4);
 
   let offset = 6 + 16 * images.length;
   const entries = [];
@@ -65,14 +65,14 @@ function createIco(images) {
 
   for (const img of images) {
     const entry = Buffer.alloc(16);
-    entry.writeUInt8(img.size === 256 ? 0 : img.size, 0); // Width
-    entry.writeUInt8(img.size === 256 ? 0 : img.size, 1); // Height
-    entry.writeUInt8(0, 2); // Color palette
-    entry.writeUInt8(0, 3); // Reserved
-    entry.writeUInt16LE(1, 4); // Color planes
-    entry.writeUInt16LE(32, 6); // Bits per pixel
-    entry.writeUInt32LE(img.buffer.length, 8); // Image size in bytes
-    entry.writeUInt32LE(offset, 12); // Image data offset
+    entry.writeUInt8(img.size === 256 ? 0 : img.size, 0);
+    entry.writeUInt8(img.size === 256 ? 0 : img.size, 1);
+    entry.writeUInt8(0, 2);
+    entry.writeUInt8(0, 3);
+    entry.writeUInt16LE(1, 4);
+    entry.writeUInt16LE(32, 6);
+    entry.writeUInt32LE(img.buffer.length, 8);
+    entry.writeUInt32LE(offset, 12);
 
     entries.push(entry);
     buffers.push(img.buffer);
@@ -83,109 +83,89 @@ function createIco(images) {
 }
 
 async function generateOgImage() {
-  console.log('[brand-assets] Generating OpenGraph image (1200x630)...');
+  console.log('[brand-assets] Generating paper OpenGraph image (1200x630)...');
   const width = 1200;
   const height = 630;
-  const iconSize = 340;
-
-  // Render centered 3D ticket icon with smooth feathered edges to blend seamlessly
-  const featherMask = Buffer.from(`
-    <svg width="${iconSize}" height="${iconSize}">
-      <defs>
-        <radialGradient id="feather" cx="50%" cy="50%" r="50%">
-          <stop offset="65%" stop-color="#fff" stop-opacity="1" />
-          <stop offset="98%" stop-color="#fff" stop-opacity="0" />
-        </radialGradient>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#feather)" />
-    </svg>
-  `);
-
-  const featheredIcon = await sharp(SOURCE_IMAGE)
-    .resize(iconSize, iconSize, { kernel: 'lanczos3' })
-    .composite([{ input: featherMask, blend: 'dest-in' }])
-    .png()
-    .toBuffer();
+  const iconSize = 230;
+  const iconLeft = 545;
+  const iconTop = 200;
 
   const svgOverlay = Buffer.from(`
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
-          <stop offset="0%" stop-color="#1e1338" stop-opacity="0.9" />
-          <stop offset="45%" stop-color="#0f0c22" stop-opacity="0.95" />
-          <stop offset="100%" stop-color="#06070d" stop-opacity="1" />
-        </radialGradient>
-        <radialGradient id="neonCenter" cx="50%" cy="38%" r="35%">
-          <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.35" />
-          <stop offset="50%" stop-color="#A855F7" stop-opacity="0.15" />
-          <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-        </radialGradient>
-        <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="65%" stop-color="#EDE9FE" />
-          <stop offset="100%" stop-color="#C4B5FD" />
-        </linearGradient>
-        <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#A78BFA" />
-          <stop offset="50%" stop-color="#F472B6" />
-          <stop offset="100%" stop-color="#38BDF8" />
-        </linearGradient>
+        <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070617"/><stop offset=".58" stop-color="#110827"/><stop offset="1" stop-color="#050611"/></linearGradient>
+        <radialGradient id="pink" cx="12%" cy="72%" r="48%"><stop stop-color="#f0008c" stop-opacity=".85"/><stop offset="1" stop-color="#f0008c" stop-opacity="0"/></radialGradient>
+        <radialGradient id="cyan" cx="92%" cy="12%" r="48%"><stop stop-color="#00c6f7" stop-opacity=".82"/><stop offset="1" stop-color="#00c6f7" stop-opacity="0"/></radialGradient>
+        <radialGradient id="violet" cx="52%" cy="100%" r="44%"><stop stop-color="#8a16ec" stop-opacity=".72"/><stop offset="1" stop-color="#8a16ec" stop-opacity="0"/></radialGradient>
       </defs>
-
-      <!-- Background -->
-      <rect width="100%" height="100%" fill="url(#bgGlow)" />
-      <rect width="100%" height="100%" fill="url(#neonCenter)" />
-
-      <!-- Subtle Grid / Tech Lines -->
-      <line x1="100" y1="520" x2="1100" y2="520" stroke="#a78bfa" stroke-opacity="0.15" stroke-width="1" />
-
-      <!-- Typography -->
-      <!-- Title -->
-      <text x="600" y="445" 
-            font-family="-apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" 
-            font-size="64" 
-            font-weight="900" 
-            letter-spacing="-1.5" 
-            fill="url(#titleGrad)" 
-            text-anchor="middle">Culture Flow</text>
-
-      <!-- Subtitle -->
-      <text x="600" y="492" 
-            font-family="-apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" 
-            font-size="24" 
-            font-weight="600" 
-            letter-spacing="0.5" 
-            fill="#DDD6FE" 
-            text-anchor="middle">전국 통합 맞춤형 문화생활 큐레이션</text>
-
-      <!-- Category Badges -->
-      <text x="600" y="565" 
-            font-family="-apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" 
-            font-size="17" 
-            font-weight="700" 
-            letter-spacing="4" 
-            fill="url(#accentGrad)" 
-            text-anchor="middle">공연 · 전시 · 뮤지컬 · 페스티벌 · 스포츠</text>
+      <rect width="100%" height="100%" fill="url(#night)" />
+      <rect width="100%" height="100%" fill="url(#pink)" />
+      <rect width="100%" height="100%" fill="url(#cyan)" />
+      <rect width="100%" height="100%" fill="url(#violet)" />
+      <text x="520" y="350" font-family="Arial, sans-serif" font-size="108" font-weight="800" letter-spacing="-4" fill="#fff7ff" text-anchor="end">Culture</text>
+      <text x="800" y="350" font-family="Arial, sans-serif" font-size="108" font-weight="800" letter-spacing="-4" fill="#ff66c7">Flow</text>
     </svg>
   `);
 
-  const iconTop = 45;
-  const iconLeft = Math.round((width - iconSize) / 2);
-
   const ogPath = path.join(ROOT, 'public', 'images', 'og-image.jpg');
+  const icon = await sharp(CUTOUT_IMAGE).resize(iconSize, iconSize, { fit: 'contain' }).png().toBuffer();
   await sharp(svgOverlay)
-    .composite([
-      { input: featheredIcon, top: iconTop, left: iconLeft },
-    ])
+    .composite([{ input: icon, top: iconTop, left: iconLeft }])
     .jpeg({ quality: 92 })
     .toFile(ogPath);
+  fs.copyFileSync(ogPath, path.join(ROOT, 'public', 'images', 'og_image.jpg'));
 
   console.log('✓ Created', ogPath);
+}
+
+async function generateOgCalligraphyVariants() {
+  const width = 1200;
+  const height = 630;
+  const iconTop = 200;
+  const variants = [
+    { name: 'signpainter', family: 'SignPainter', size: 104, weight: 400, iconSize: 230, stroke: 0 },
+    { name: 'snell-roundhand', family: 'Snell Roundhand', size: 118, weight: 700, iconSize: 250, stroke: 1.35 },
+    { name: 'kimjungchul-script', family: 'Kim jung chul Script', size: 104, weight: 400, iconSize: 230, stroke: 0 },
+  ];
+
+  for (const variant of variants) {
+    const iconLeft = variant.iconSize === 250 ? 535 : 545;
+    const icon = await sharp(CUTOUT_IMAGE)
+      .resize(variant.iconSize, variant.iconSize, { fit: 'contain' })
+      .png()
+      .toBuffer();
+    const svgOverlay = Buffer.from(`
+      <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070617"/><stop offset=".58" stop-color="#110827"/><stop offset="1" stop-color="#050611"/></linearGradient>
+          <radialGradient id="pink" cx="12%" cy="72%" r="48%"><stop stop-color="#f0008c" stop-opacity=".85"/><stop offset="1" stop-color="#f0008c" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cyan" cx="92%" cy="12%" r="48%"><stop stop-color="#00c6f7" stop-opacity=".82"/><stop offset="1" stop-color="#00c6f7" stop-opacity="0"/></radialGradient>
+          <radialGradient id="violet" cx="52%" cy="100%" r="44%"><stop stop-color="#8a16ec" stop-opacity=".72"/><stop offset="1" stop-color="#8a16ec" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#night)" />
+        <rect width="100%" height="100%" fill="url(#pink)" />
+        <rect width="100%" height="100%" fill="url(#cyan)" />
+        <rect width="100%" height="100%" fill="url(#violet)" />
+        <text x="520" y="350" font-family="${variant.family}" font-size="${variant.size}" font-weight="${variant.weight}" fill="#fff7ff" stroke="#fff7ff" stroke-width="${variant.stroke}" paint-order="stroke" text-anchor="end">Culture</text>
+        <text x="800" y="350" font-family="${variant.family}" font-size="${variant.size}" font-weight="${variant.weight}" fill="#ff66c7" stroke="#ff66c7" stroke-width="${variant.stroke}" paint-order="stroke">Flow</text>
+      </svg>
+    `);
+    const output = path.join(ROOT, 'public', 'images', `og-image-${variant.name}.jpg`);
+    await sharp(svgOverlay)
+      .composite([{ input: icon, top: iconTop, left: iconLeft }])
+      .jpeg({ quality: 92 })
+      .toFile(output);
+    console.log('✓ Created', output);
+  }
 }
 
 async function main() {
   await generateAppIcons();
   await generateOgImage();
+  await generateOgCalligraphyVariants();
+  const selectedOg = path.join(ROOT, 'public', 'images', 'og-image-snell-roundhand.jpg');
+  fs.copyFileSync(selectedOg, path.join(ROOT, 'public', 'images', 'og-image.jpg'));
+  fs.copyFileSync(selectedOg, path.join(ROOT, 'public', 'images', 'og_image.jpg'));
   console.log('[brand-assets] All brand assets successfully generated!');
 }
 
