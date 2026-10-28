@@ -743,7 +743,7 @@ export default function PerformanceList({
                         }}
                     >
                         <div className="relative w-10 h-10 transition-transform group-hover:scale-110">
-                            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/ticket_icon.png`} alt="Icon" fill className="object-cover" loading="lazy" />
+                            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/cultureflow-app-icon-cutout.png?v=20261028`} alt="Culture Flow icon" fill className="object-contain" priority />
                         </div>
                         <h1 className="text-[1.5rem] md:text-3xl font-black tracking-tight group-hover:text-[#a78bfa] transition-colors leading-[0.9]">
                             Culture Flow
