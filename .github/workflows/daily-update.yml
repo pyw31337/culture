@@ -11,7 +11,9 @@ concurrency:
 
 jobs:
   update-data:
-    runs-on: ubuntu-latest
+    # Playwright currently supports Ubuntu 24.04, not the Ubuntu 26 image
+    # behind ubuntu-latest after GitHub's runner migration.
+    runs-on: ubuntu-24.04
     timeout-minutes: 70
     permissions:
       contents: write
