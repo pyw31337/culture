@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: ['/_next/', '/api/'],
+            disallow: ['/_next/', '/api/', '/admin/'],
         },
         sitemap: 'https://pyw31337.github.io/culture/sitemap.xml',
     };

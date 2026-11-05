@@ -3,7 +3,6 @@ import { MapPin, Search, RotateCcw, ChevronDown } from 'lucide-react';
 import { GENRES, RADIUS_OPTIONS } from '@/lib/constants';
 import { getGenreIcon } from '@/components/GenreIcons';
 import type { DataQualitySummary, DataSourceHealthSummary } from '@/lib/build-info';
-import ServiceStatusStrip from './ServiceStatusStrip';
 import FilterChipBar from './FilterChipBar';
 import type { DiscoveryContextDefinition } from '@/lib/discovery';
 import type { DiscoveryContextId } from '@/types';
@@ -203,14 +202,6 @@ export const ResultsHeader = ({
                                         {filterTitleLabel}
                                     </span>
                                 )}
-                                <ServiceStatusStrip
-                                    lastUpdated={lastUpdated}
-                                    totalItemCount={totalItemCount}
-                                    availableGenreCount={availableGenreCount}
-                                    qualitySummary={qualitySummary}
-                                    sourceHealthSummary={sourceHealthSummary}
-                                    className="shrink-0"
-                                />
                             </div>
                             {shouldShowUnifiedFilters && activeDiscoveryContext && onDiscoveryContextChange && onDateFilterChange && onPriceTierChange && (
                                 <div className="flex w-full min-w-0 items-center justify-start gap-2 xl:ml-auto xl:w-auto xl:justify-end">

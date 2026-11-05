@@ -1,355 +1,5 @@
 [
   {
-    "id": "kbl_20261012_울산_현대모비스_vs_원주_DB",
-    "title": "울산 현대모비스 vs 원주 DB",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-12 19:00",
-    "venue": "울산동천",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "울산 현대모비스",
-    "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
-  },
-  {
-    "id": "kbl_20261013_안양_정관장_vs_고양_소노",
-    "title": "안양 정관장 vs 고양 소노",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-13 19:00",
-    "venue": "안양 정관장 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "안양 정관장",
-    "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
-  },
-  {
-    "id": "kbl_20261014_대구_한국가스공사_vs_수원_KT",
-    "title": "대구 한국가스공사 vs 수원 KT",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-14 19:00",
-    "venue": "대구실내체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "대구 한국가스공사",
-    "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
-  },
-  {
-    "id": "kbl_20261014_나가사키_벨카_vs_부산KCC",
-    "title": "나가사키 벨카 vs 부산KCC",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-14 19:10",
-    "venue": "해피니스 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "나가사키 벨카",
-    "awayTeam": "부산KCC",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-nv.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
-  },
-  {
-    "id": "kbl_20261015_서울_삼성_vs_창원_LG",
-    "title": "서울 삼성 vs 창원 LG",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-15 19:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 삼성",
-    "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
-  },
-  {
-    "id": "kbl_20261016_고양_소노_vs_울산_현대모비스",
-    "title": "고양 소노 vs 울산 현대모비스",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-16 19:00",
-    "venue": "고양소노아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "고양 소노",
-    "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
-  },
-  {
-    "id": "kbl_20261017_안양_정관장_vs_수원_KT",
-    "title": "안양 정관장 vs 수원 KT",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-17 14:00",
-    "venue": "안양 정관장 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "안양 정관장",
-    "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
-  },
-  {
-    "id": "kbl_20261017_원주_DB_vs_서울_삼성",
-    "title": "원주 DB vs 서울 삼성",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-17 14:00",
-    "venue": "원주DB프로미아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "원주 DB",
-    "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
-  },
-  {
-    "id": "kbl_20261017_대구_한국가스공사_vs_창원_LG",
-    "title": "대구 한국가스공사 vs 창원 LG",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-17 16:30",
-    "venue": "대구실내체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "대구 한국가스공사",
-    "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
-  },
-  {
-    "id": "kbl_20261018_서울_SK_vs_고양_소노",
-    "title": "서울 SK vs 고양 소노",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-18 14:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 SK",
-    "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
-  },
-  {
-    "id": "kbl_20261018_수원_KT_vs_울산_현대모비스",
-    "title": "수원 KT vs 울산 현대모비스",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-18 14:00",
-    "venue": "수원 KT 소닉붐 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "수원 KT",
-    "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
-  },
-  {
-    "id": "kbl_20261018_안양_정관장_vs_부산_KCC",
-    "title": "안양 정관장 vs 부산 KCC",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-18 16:30",
-    "venue": "안양 정관장 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "안양 정관장",
-    "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
-  },
-  {
-    "id": "kbl_20261019_원주_DB_vs_대구_한국가스공사",
-    "title": "원주 DB vs 대구 한국가스공사",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-19 19:00",
-    "venue": "원주DB프로미아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "원주 DB",
-    "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
-  },
-  {
-    "id": "kbl_20261020_서울_SK_vs_안양_정관장",
-    "title": "서울 SK vs 안양 정관장",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-20 19:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 SK",
-    "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
-  },
-  {
-    "id": "kbl_20261021_서울_삼성_vs_부산_KCC",
-    "title": "서울 삼성 vs 부산 KCC",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-21 19:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 삼성",
-    "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
-  },
-  {
-    "id": "kbl_20261021_TSG_고스트호크스_vs_고양소노",
-    "title": "TSG 고스트호크스 vs 고양소노",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-21 20:10",
-    "venue": "펑산 체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "TSG 고스트호크스",
-    "awayTeam": "고양소노",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-tgh.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
-  },
-  {
-    "id": "kbl_20261022_울산_현대모비스_vs_창원_LG",
-    "title": "울산 현대모비스 vs 창원 LG",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-22 19:00",
-    "venue": "울산동천",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "울산 현대모비스",
-    "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
-  },
-  {
-    "id": "kbl_20261023_수원_KT_vs_원주_DB",
-    "title": "수원 KT vs 원주 DB",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-23 19:00",
-    "venue": "수원 KT 소닉붐 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "수원 KT",
-    "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
-  },
-  {
-    "id": "kbl_20261024_서울_SK_vs_창원_LG",
-    "title": "서울 SK vs 창원 LG",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-24 14:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 SK",
-    "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
-  },
-  {
-    "id": "kbl_20261024_울산_현대모비스_vs_서울_삼성",
-    "title": "울산 현대모비스 vs 서울 삼성",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-24 16:30",
-    "venue": "울산동천",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "울산 현대모비스",
-    "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
-  },
-  {
-    "id": "kbl_20261024_고양_소노_vs_부산_KCC",
-    "title": "고양 소노 vs 부산 KCC",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-24 16:30",
-    "venue": "고양소노아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "고양 소노",
-    "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
-  },
-  {
-    "id": "kbl_20261025_서울_SK_vs_수원_KT",
-    "title": "서울 SK vs 수원 KT",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-25 14:00",
-    "venue": "잠실학생",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "seoul",
-    "genre": "basketball",
-    "homeTeam": "서울 SK",
-    "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
-  },
-  {
-    "id": "kbl_20261025_안양_정관장_vs_원주_DB",
-    "title": "안양 정관장 vs 원주 DB",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-25 14:00",
-    "venue": "안양 정관장 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "안양 정관장",
-    "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
-  },
-  {
-    "id": "kbl_20261025_대구_한국가스공사_vs_서울_삼성",
-    "title": "대구 한국가스공사 vs 서울 삼성",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-25 16:30",
-    "venue": "대구실내체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "대구 한국가스공사",
-    "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
-  },
-  {
-    "id": "kbl_20261026_고양_소노_vs_창원_LG",
-    "title": "고양 소노 vs 창원 LG",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-10-26 19:00",
-    "venue": "고양소노아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "고양 소노",
-    "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
-  },
-  {
     "id": "kbl_20261027_서울_SK_vs_부산_KCC",
     "title": "서울 SK vs 부산 KCC",
     "image": "/images/kbl_poster.png",
@@ -360,8 +10,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261028_대구_한국가스공사_vs_원주_DB",
@@ -374,8 +24,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261029_울산_현대모비스_vs_부산_KCC",
@@ -388,8 +38,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261030_고양_소노_vs_서울_삼성",
@@ -402,8 +52,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261031_부산_KCC_vs_원주_DB",
@@ -416,8 +66,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261031_안양_정관장_vs_수원_KT",
@@ -430,8 +80,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261031_대구_한국가스공사_vs_울산_현대모비스",
@@ -444,8 +94,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261101_고양_소노_vs_수원_KT",
@@ -458,8 +108,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261101_창원_LG_vs_원주_DB",
@@ -472,8 +122,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261101_서울_삼성_vs_서울_SK",
@@ -486,8 +136,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261102_대구_한국가스공사_vs_안양_정관장",
@@ -500,8 +150,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261103_부산_KCC_vs_고양_소노",
@@ -514,8 +164,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261104_서울_SK_vs_대구_한국가스공사",
@@ -528,8 +178,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261105_울산_현대모비스_vs_서울_삼성",
@@ -542,8 +192,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261105_부산KCC_vs_마카오_호우촌",
@@ -556,7 +206,7 @@
     "genre": "basketball",
     "homeTeam": "부산KCC",
     "awayTeam": "마카오 호우촌",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-mhc.svg"
   },
   {
@@ -570,8 +220,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261107_창원_LG_vs_고양_소노",
@@ -584,8 +234,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261107_원주_DB_vs_서울_삼성",
@@ -598,8 +248,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261107_수원_KT_vs_대구_한국가스공사",
@@ -612,8 +262,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261108_서울_SK_vs_원주_DB",
@@ -626,8 +276,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261108_울산_현대모비스_vs_안양_정관장",
@@ -640,8 +290,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261108_창원_LG_vs_부산_KCC",
@@ -654,8 +304,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261109_서울_삼성_vs_수원_KT",
@@ -668,8 +318,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261110_울산_현대모비스_vs_고양_소노",
@@ -682,8 +332,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261111_창원_LG_vs_서울_SK",
@@ -696,8 +346,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261111_부산KCC_vs_타이베이_푸본_브레이브스",
@@ -710,8 +360,8 @@
     "genre": "basketball",
     "homeTeam": "부산KCC",
     "awayTeam": "타이베이 푸본 브레이브스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-tfb.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/tfb.svg"
   },
   {
     "id": "kbl_20261112_대구_한국가스공사_vs_고양_소노",
@@ -724,8 +374,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261113_원주_DB_vs_수원_KT",
@@ -738,8 +388,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261114_부산_KCC_vs_서울_SK",
@@ -752,8 +402,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261114_창원_LG_vs_울산_현대모비스",
@@ -766,8 +416,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261114_서울_삼성_vs_안양_정관장",
@@ -780,8 +430,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261115_고양_소노_vs_원주_DB",
@@ -794,22 +444,22 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261115_창원_LG_vs_수원_KT",
     "title": "창원 LG vs 수원 KT",
     "image": "/images/kbl_poster.png",
-    "date": "2026-11-15 14:00",
+    "date": "2026-11-15 16:30",
     "venue": "창원체육관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261115_부산_KCC_vs_대구_한국가스공사",
@@ -822,8 +472,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261116_서울_SK_vs_울산_현대모비스",
@@ -836,8 +486,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261117_원주_DB_vs_안양_정관장",
@@ -850,8 +500,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261118_서울_삼성_vs_창원_LG",
@@ -864,8 +514,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20261118_고양소노_vs_사우스_고비_브롱코스",
@@ -878,7 +528,7 @@
     "genre": "basketball",
     "homeTeam": "고양소노",
     "awayTeam": "사우스 고비 브롱코스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/sono.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sgb.svg"
   },
   {
@@ -892,8 +542,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261119_수원_KT_vs_서울_SK",
@@ -906,92 +556,92 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
-    "id": "kbl_20261127_소노_vs_현대모비스",
-    "title": "소노 vs 현대모비스",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-27 12:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "소노",
-    "awayTeam": "현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
-  },
-  {
-    "id": "kbl_20261127_DB_vs_KCC",
-    "title": "DB vs KCC",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-27 14:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "DB",
-    "awayTeam": "KCC",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
-  },
-  {
-    "id": "kbl_20261127_상무_vs_정관장",
-    "title": "상무 vs 정관장",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-27 16:00",
-    "venue": "경희대 선승관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "상무",
-    "awayTeam": "정관장",
-    "homeTeamLogo": "/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
-  },
-  {
-    "id": "kbl_20261128_한국가스공사_vs_현대모비스",
+    "id": "kbl_20261125_한국가스공사_vs_현대모비스",
     "title": "한국가스공사 vs 현대모비스",
     "image": "/images/kbl_poster.png",
-    "date": "2026-11-28 12:00",
+    "date": "2026-11-25 12:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
-    "id": "kbl_20261128_KCC_vs_소노",
+    "id": "kbl_20261125_KCC_vs_소노",
     "title": "KCC vs 소노",
     "image": "/images/kbl_poster.png",
-    "date": "2026-11-28 14:00",
+    "date": "2026-11-25 14:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "소노",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
-    "id": "kbl_20261128_DB_vs_삼성",
+    "id": "kbl_20261125_DB_vs_삼성",
     "title": "DB vs 삼성",
     "image": "/images/kbl_poster.png",
-    "date": "2026-11-28 16:00",
+    "date": "2026-11-25 16:00",
     "venue": "경희대 선승관",
     "link": "https://www.kbl.or.kr/match/schedule",
     "region": "etc",
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "삼성",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
+  },
+  {
+    "id": "kbl_20261127_소노_vs_현대모비스",
+    "title": "소노 vs 현대모비스",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-11-27 11:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "소노",
+    "awayTeam": "현대모비스",
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
+  },
+  {
+    "id": "kbl_20261127_DB_vs_KCC",
+    "title": "DB vs KCC",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-11-27 13:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "DB",
+    "awayTeam": "KCC",
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
+  },
+  {
+    "id": "kbl_20261127_상무_vs_정관장",
+    "title": "상무 vs 정관장",
+    "image": "/images/kbl_poster.png",
+    "date": "2026-11-27 15:00",
+    "venue": "경희대 선승관",
+    "link": "https://www.kbl.or.kr/match/schedule",
+    "region": "etc",
+    "genre": "basketball",
+    "homeTeam": "상무",
+    "awayTeam": "정관장",
+    "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261130_소노_vs_정관장",
@@ -1004,8 +654,8 @@
     "genre": "basketball",
     "homeTeam": "소노",
     "awayTeam": "정관장",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261130_KCC_vs_한국가스공사",
@@ -1018,8 +668,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261130_SK_vs_LG",
@@ -1032,8 +682,8 @@
     "genre": "basketball",
     "homeTeam": "SK",
     "awayTeam": "LG",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20261201_DB_vs_소노",
@@ -1046,8 +696,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "소노",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261201_정관장_vs_상무",
@@ -1060,8 +710,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "상무",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20261201_LG_vs_SK",
@@ -1074,8 +724,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "SK",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261202_현대모비스_vs_한국가스공사",
@@ -1088,8 +738,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261202_KCC_vs_KT",
@@ -1102,8 +752,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "KT",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261202_DB_vs_상무",
@@ -1116,8 +766,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "상무",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20261203_고양_소노_vs_서울_SK",
@@ -1130,8 +780,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261203_창원_LG_vs_안양_정관장",
@@ -1144,8 +794,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261204_부산_KCC_vs_서울_삼성",
@@ -1158,8 +808,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261204_수원_KT_vs_울산_현대모비스",
@@ -1172,8 +822,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261205_고양_소노_vs_안양_정관장",
@@ -1186,8 +836,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261205_창원_LG_vs_대구_한국가스공사",
@@ -1200,8 +850,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261205_원주_DB_vs_서울_SK",
@@ -1214,8 +864,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261206_수원_KT_vs_부산_KCC",
@@ -1228,8 +878,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261206_대구_한국가스공사_vs_서울_삼성",
@@ -1242,8 +892,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261206_원주_DB_vs_울산_현대모비스",
@@ -1256,8 +906,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261207_창원_LG_vs_서울_SK",
@@ -1270,8 +920,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261208_KCC_vs_상무",
@@ -1284,8 +934,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "상무",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20261208_KT_vs_한국가스공사",
@@ -1298,8 +948,8 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261208_안양_정관장_vs_울산_현대모비스",
@@ -1312,8 +962,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261209_SK_vs_상무",
@@ -1326,8 +976,8 @@
     "genre": "basketball",
     "homeTeam": "SK",
     "awayTeam": "상무",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20261209_LG_vs_KT",
@@ -1340,8 +990,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "KT",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261209_서울_삼성_vs_부산_KCC",
@@ -1354,8 +1004,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261209_고양소노_vs_알바크_도쿄",
@@ -1368,8 +1018,8 @@
     "genre": "basketball",
     "homeTeam": "고양소노",
     "awayTeam": "알바크 도쿄",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-at.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/at.svg"
   },
   {
     "id": "kbl_20261210_대구_한국가스공사_vs_원주_DB",
@@ -1382,8 +1032,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261211_서울_SK_vs_부산_KCC",
@@ -1396,8 +1046,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261212_창원_LG_vs_울산_현대모비스",
@@ -1410,8 +1060,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261212_안양_정관장_vs_고양_소노",
@@ -1424,8 +1074,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261212_서울_삼성_vs_원주_DB",
@@ -1438,8 +1088,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261213_서울_SK_vs_안양_정관장",
@@ -1452,8 +1102,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261213_울산_현대모비스_vs_수원_KT",
@@ -1466,8 +1116,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261213_부산_KCC_vs_대구_한국가스공사",
@@ -1480,8 +1130,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261214_창원_LG_vs_서울_삼성",
@@ -1494,8 +1144,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261215_상무_vs_한국가스공사",
@@ -1508,8 +1158,8 @@
     "genre": "basketball",
     "homeTeam": "상무",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261215_현대모비스_vs_DB",
@@ -1522,8 +1172,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "DB",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261215_서울_SK_vs_수원_KT",
@@ -1536,8 +1186,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261215_고양소노_vs_TSG_고스트호크스",
@@ -1550,7 +1200,7 @@
     "genre": "basketball",
     "homeTeam": "고양소노",
     "awayTeam": "TSG 고스트호크스",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/sono.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-tgh.svg"
   },
   {
@@ -1564,8 +1214,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "상무",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20261216_삼성_vs_한국가스공사",
@@ -1578,8 +1228,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261216_부산_KCC_vs_안양_정관장",
@@ -1592,8 +1242,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261217_울산_현대모비스_vs_원주_DB",
@@ -1606,8 +1256,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261218_서울_삼성_vs_고양_소노",
@@ -1620,8 +1270,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261219_부산_KCC_vs_울산_현대모비스",
@@ -1634,8 +1284,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261219_서울_SK_vs_원주_DB",
@@ -1648,8 +1298,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261219_수원_KT_vs_창원_LG",
@@ -1662,8 +1312,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20261220_안양_정관장_vs_대구_한국가스공사",
@@ -1676,8 +1326,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261220_고양_소노_vs_서울_SK",
@@ -1690,8 +1340,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261220_서울_삼성_vs_수원_KT",
@@ -1704,8 +1354,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261221_부산_KCC_vs_창원_LG",
@@ -1718,8 +1368,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20261222_KT_vs_SK",
@@ -1732,8 +1382,8 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "SK",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20261222_DB_vs_정관장",
@@ -1746,8 +1396,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "정관장",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261222_서울_삼성_vs_울산_현대모비스",
@@ -1760,8 +1410,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261223_고양_소노_vs_대구_한국가스공사",
@@ -1774,8 +1424,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261224_부산_KCC_vs_원주_DB",
@@ -1788,8 +1438,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261224_수원_KT_vs_안양_정관장",
@@ -1802,8 +1452,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261225_고양_소노_vs_울산_현대모비스",
@@ -1816,8 +1466,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261225_창원_LG_vs_대구_한국가스공사",
@@ -1830,8 +1480,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261225_서울_SK_vs_서울_삼성",
@@ -1844,8 +1494,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261226_원주_DB_vs_안양_정관장",
@@ -1858,8 +1508,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20261226_수원_KT_vs_부산_KCC",
@@ -1872,8 +1522,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20261227_서울_SK_vs_울산_현대모비스",
@@ -1886,8 +1536,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20261227_대구_한국가스공사_vs_서울_삼성",
@@ -1900,8 +1550,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261227_창원_LG_vs_고양_소노",
@@ -1914,8 +1564,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261228_원주_DB_vs_수원_KT",
@@ -1928,8 +1578,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20261229_안양_정관장_vs_창원_LG",
@@ -1942,8 +1592,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20261229_마카오_호우촌_vs_부산KCC",
@@ -1957,7 +1607,7 @@
     "homeTeam": "마카오 호우촌",
     "awayTeam": "부산KCC",
     "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-mhc.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc.svg"
   },
   {
     "id": "kbl_20261230_소노_vs_삼성",
@@ -1970,8 +1620,8 @@
     "genre": "basketball",
     "homeTeam": "소노",
     "awayTeam": "삼성",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20261230_SK_vs_DB",
@@ -1984,8 +1634,8 @@
     "genre": "basketball",
     "homeTeam": "SK",
     "awayTeam": "DB",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20261230_울산_현대모비스_vs_대구_한국가스공사",
@@ -1998,8 +1648,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20261231_수원_KT_vs_고양_소노",
@@ -2012,8 +1662,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20261231_안양_정관장_vs_서울_삼성",
@@ -2026,8 +1676,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270101_원주_DB_vs_창원_LG",
@@ -2040,8 +1690,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270101_울산_현대모비스_vs_서울_SK",
@@ -2054,8 +1704,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270102_고양_소노_vs_부산_KCC",
@@ -2068,8 +1718,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270102_대구_한국가스공사_vs_수원_KT",
@@ -2082,8 +1732,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270103_원주_DB_vs_고양_소노",
@@ -2096,8 +1746,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270103_대구_한국가스공사_vs_서울_SK",
@@ -2110,8 +1760,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270103_울산_현대모비스_vs_창원_LG",
@@ -2124,8 +1774,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270104_부산_KCC_vs_안양_정관장",
@@ -2138,8 +1788,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270105_고양_소노_vs_서울_삼성",
@@ -2152,8 +1802,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270106_대구_한국가스공사_vs_서울_SK",
@@ -2166,8 +1816,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270107_서울_삼성_vs_원주_DB",
@@ -2180,8 +1830,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270108_부산_KCC_vs_창원_LG",
@@ -2194,8 +1844,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270109_수원_KT_vs_서울_SK",
@@ -2208,8 +1858,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270109_대구_한국가스공사_vs_고양_소노",
@@ -2222,8 +1872,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270109_서울_삼성_vs_울산_현대모비스",
@@ -2236,8 +1886,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270110_안양_정관장_vs_원주_DB",
@@ -2250,8 +1900,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270110_서울_SK_vs_창원_LG",
@@ -2264,8 +1914,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270110_부산_KCC_vs_고양_소노",
@@ -2278,8 +1928,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270111_수원_KT_vs_대구_한국가스공사",
@@ -2292,8 +1942,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270112_LG_vs_소노",
@@ -2306,8 +1956,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "소노",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270112_삼성_vs_SK",
@@ -2320,8 +1970,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "SK",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270112_원주_DB_vs_울산_현대모비스",
@@ -2334,8 +1984,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270113_정관장_vs_한국가스공사",
@@ -2348,8 +1998,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270113_삼성_vs_LG",
@@ -2362,8 +2012,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "LG",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270113_고양_소노_vs_수원_KT",
@@ -2376,8 +2026,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270113_부산KCC_vs_나가사키_벨카",
@@ -2390,7 +2040,7 @@
     "genre": "basketball",
     "homeTeam": "부산KCC",
     "awayTeam": "나가사키 벨카",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg",
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc.svg",
     "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-nv.svg"
   },
   {
@@ -2404,8 +2054,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270115_삼성_vs_현대모비스",
@@ -2418,8 +2068,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270115_소노_vs_상무",
@@ -2432,8 +2082,8 @@
     "genre": "basketball",
     "homeTeam": "소노",
     "awayTeam": "상무",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sangmu.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sangmu.svg"
   },
   {
     "id": "kbl_20270115_대구_한국가스공사_vs_부산_KCC",
@@ -2446,8 +2096,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270116_창원_LG_vs_안양_정관장",
@@ -2460,8 +2110,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270116_수원_KT_vs_울산_현대모비스",
@@ -2474,8 +2124,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270117_고양_소노_vs_원주_DB",
@@ -2488,8 +2138,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270117_서울_SK_vs_대구_한국가스공사",
@@ -2502,8 +2152,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270117_부산_KCC_vs_서울_삼성",
@@ -2516,8 +2166,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270118_창원_LG_vs_수원_KT",
@@ -2530,8 +2180,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270119_서울_SK_vs_원주_DB",
@@ -2544,8 +2194,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270120_한국가스공사_vs_LG",
@@ -2558,8 +2208,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "LG",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270120_KT_vs_삼성",
@@ -2572,8 +2222,8 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "삼성",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270120_울산_현대모비스_vs_부산_KCC",
@@ -2586,8 +2236,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270120_알바크_도쿄_vs_고양소노",
@@ -2600,8 +2250,8 @@
     "genre": "basketball",
     "homeTeam": "알바크 도쿄",
     "awayTeam": "고양소노",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-at.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/at.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono.svg"
   },
   {
     "id": "kbl_20270121_DB_vs_SK",
@@ -2614,8 +2264,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "SK",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270121_상무_vs_삼성",
@@ -2628,8 +2278,8 @@
     "genre": "basketball",
     "homeTeam": "상무",
     "awayTeam": "삼성",
-    "homeTeamLogo": "/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270121_안양_정관장_vs_대구_한국가스공사",
@@ -2642,8 +2292,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270122_LG_vs_DB",
@@ -2656,8 +2306,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "DB",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270122_상무_vs_KT",
@@ -2670,8 +2320,8 @@
     "genre": "basketball",
     "homeTeam": "상무",
     "awayTeam": "KT",
-    "homeTeamLogo": "/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270122_서울_SK_vs_부산_KCC",
@@ -2684,8 +2334,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270123_고양_소노_vs_안양_정관장",
@@ -2698,8 +2348,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270123_대구_한국가스공사_vs_울산_현대모비스",
@@ -2712,8 +2362,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270123_서울_삼성_vs_창원_LG",
@@ -2726,8 +2376,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270124_수원_KT_vs_안양_정관장",
@@ -2740,8 +2390,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270124_원주_DB_vs_부산_KCC",
@@ -2754,8 +2404,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270124_서울_삼성_vs_서울_SK",
@@ -2768,8 +2418,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270125_창원_LG_vs_대구_한국가스공사",
@@ -2782,8 +2432,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270125_울산_현대모비스_vs_고양_소노",
@@ -2796,8 +2446,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270126_안양_정관장_vs_서울_삼성",
@@ -2810,8 +2460,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270126_원주_DB_vs_수원_KT",
@@ -2824,8 +2474,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270127_창원_LG_vs_고양_소노",
@@ -2838,8 +2488,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270127_울산_현대모비스_vs_서울_SK",
@@ -2852,8 +2502,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270127_타이베이_푸본_브레이브스_vs_부산KCC",
@@ -2866,8 +2516,8 @@
     "genre": "basketball",
     "homeTeam": "타이베이 푸본 브레이브스",
     "awayTeam": "부산KCC",
-    "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-tfb.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-kcc.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/tfb.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc.svg"
   },
   {
     "id": "kbl_20270128_원주_DB_vs_대구_한국가스공사",
@@ -2880,8 +2530,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270128_수원_KT_vs_서울_삼성",
@@ -2894,8 +2544,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270129_현대모비스_vs_정관장",
@@ -2908,8 +2558,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "정관장",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270129_소노_vs_SK",
@@ -2922,8 +2572,8 @@
     "genre": "basketball",
     "homeTeam": "소노",
     "awayTeam": "SK",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270201_정관장_vs_KCC",
@@ -2936,8 +2586,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "KCC",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270201_KT_vs_현대모비스",
@@ -2950,8 +2600,8 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270201_한국가스공사_vs_삼성",
@@ -2964,8 +2614,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "삼성",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270202_SK_vs_정관장",
@@ -2978,8 +2628,8 @@
     "genre": "basketball",
     "homeTeam": "SK",
     "awayTeam": "정관장",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270202_KCC_vs_현대모비스",
@@ -2992,8 +2642,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270203_창원_LG_vs_원주_DB",
@@ -3006,8 +2656,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270203_서울_삼성_vs_대구_한국가스공사",
@@ -3020,8 +2670,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270203_사우스_고비_브롱코스_vs_고양소노",
@@ -3035,7 +2685,7 @@
     "homeTeam": "사우스 고비 브롱코스",
     "awayTeam": "고양소노",
     "homeTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sgb.svg",
-    "awayTeamLogo": "https://www.kbl.or.kr/assets/img/ico/logo/ic-sono.svg"
+    "awayTeamLogo": "/culture/images/logos/kbl/sono.svg"
   },
   {
     "id": "kbl_20270204_부산_KCC_vs_수원_KT",
@@ -3048,8 +2698,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270204_울산_현대모비스_vs_안양_정관장",
@@ -3062,8 +2712,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270205_창원_LG_vs_서울_SK",
@@ -3076,8 +2726,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270206_대구_한국가스공사_vs_부산_KCC",
@@ -3090,8 +2740,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270206_원주_DB_vs_안양_정관장",
@@ -3104,8 +2754,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270206_고양_소노_vs_수원_KT",
@@ -3118,8 +2768,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270207_울산_현대모비스_vs_대구_한국가스공사",
@@ -3132,8 +2782,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270207_창원_LG_vs_부산_KCC",
@@ -3146,8 +2796,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270207_서울_삼성_vs_서울_SK",
@@ -3160,8 +2810,8 @@
     "genre": "basketball",
     "homeTeam": "서울 삼성",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270208_안양_정관장_vs_고양_소노",
@@ -3174,8 +2824,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270208_수원_KT_vs_원주_DB",
@@ -3188,8 +2838,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270209_부산_KCC_vs_울산_현대모비스",
@@ -3202,8 +2852,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270209_서울_SK_vs_서울_삼성",
@@ -3216,8 +2866,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270210_대구_한국가스공사_vs_원주_DB",
@@ -3230,8 +2880,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270211_SK_vs_KCC",
@@ -3244,8 +2894,8 @@
     "genre": "basketball",
     "homeTeam": "SK",
     "awayTeam": "KCC",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270211_정관장_vs_KT",
@@ -3258,8 +2908,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "KT",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270211_울산_현대모비스_vs_고양_소노",
@@ -3272,8 +2922,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270212_창원_LG_vs_서울_삼성",
@@ -3286,8 +2936,8 @@
     "genre": "basketball",
     "homeTeam": "창원 LG",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270213_부산_KCC_vs_고양_소노",
@@ -3300,8 +2950,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "고양 소노",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270213_안양_정관장_vs_수원_KT",
@@ -3314,8 +2964,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270213_대구_한국가스공사_vs_서울_SK",
@@ -3328,8 +2978,8 @@
     "genre": "basketball",
     "homeTeam": "대구 한국가스공사",
     "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270214_수원_KT_vs_창원_LG",
@@ -3342,8 +2992,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270214_울산_현대모비스_vs_원주_DB",
@@ -3356,8 +3006,8 @@
     "genre": "basketball",
     "homeTeam": "울산 현대모비스",
     "awayTeam": "원주 DB",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270214_부산_KCC_vs_서울_삼성",
@@ -3370,8 +3020,8 @@
     "genre": "basketball",
     "homeTeam": "부산 KCC",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270215_서울_SK_vs_안양_정관장",
@@ -3384,8 +3034,8 @@
     "genre": "basketball",
     "homeTeam": "서울 SK",
     "awayTeam": "안양 정관장",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270216_고양_소노_vs_대구_한국가스공사",
@@ -3398,8 +3048,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "대구 한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270217_안양_정관장_vs_울산_현대모비스",
@@ -3412,8 +3062,8 @@
     "genre": "basketball",
     "homeTeam": "안양 정관장",
     "awayTeam": "울산 현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270217_수원_KT_vs_부산_KCC",
@@ -3426,8 +3076,8 @@
     "genre": "basketball",
     "homeTeam": "수원 KT",
     "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270218_고양_소노_vs_서울_삼성",
@@ -3440,8 +3090,8 @@
     "genre": "basketball",
     "homeTeam": "고양 소노",
     "awayTeam": "서울 삼성",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270218_원주_DB_vs_창원_LG",
@@ -3454,8 +3104,8 @@
     "genre": "basketball",
     "homeTeam": "원주 DB",
     "awayTeam": "창원 LG",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270222_현대모비스_vs_삼성",
@@ -3468,8 +3118,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "삼성",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/samsung_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/samsung_official.svg"
   },
   {
     "id": "kbl_20270222_소노_vs_한국가스공사",
@@ -3482,8 +3132,8 @@
     "genre": "basketball",
     "homeTeam": "소노",
     "awayTeam": "한국가스공사",
-    "homeTeamLogo": "/images/logos/kbl/sono_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kogas_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sono_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kogas_official.svg"
   },
   {
     "id": "kbl_20270222_KCC_vs_LG",
@@ -3496,8 +3146,8 @@
     "genre": "basketball",
     "homeTeam": "KCC",
     "awayTeam": "LG",
-    "homeTeamLogo": "/images/logos/kbl/kcc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kcc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270223_삼성_vs_KT",
@@ -3510,8 +3160,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "KT",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270223_한국가스공사_vs_DB",
@@ -3524,8 +3174,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "DB",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270223_LG_vs_정관장",
@@ -3538,8 +3188,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "정관장",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kgc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kgc_official.svg"
   },
   {
     "id": "kbl_20270224_KT_vs_KCC",
@@ -3552,8 +3202,8 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "KCC",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270224_SK_vs_현대모비스",
@@ -3566,8 +3216,8 @@
     "genre": "basketball",
     "homeTeam": "SK",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/sk_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sk_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270224_정관장_vs_소노",
@@ -3580,8 +3230,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "소노",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270225_DB_vs_LG",
@@ -3594,8 +3244,8 @@
     "genre": "basketball",
     "homeTeam": "DB",
     "awayTeam": "LG",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/lg_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/db_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/lg_official.svg"
   },
   {
     "id": "kbl_20270225_한국가스공사_vs_SK",
@@ -3608,8 +3258,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "SK",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sk_official.svg"
   },
   {
     "id": "kbl_20270225_현대모비스_vs_KCC",
@@ -3622,8 +3272,8 @@
     "genre": "basketball",
     "homeTeam": "현대모비스",
     "awayTeam": "KCC",
-    "homeTeamLogo": "/images/logos/kbl/mobis_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/mobis_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270226_정관장_vs_DB",
@@ -3636,8 +3286,8 @@
     "genre": "basketball",
     "homeTeam": "정관장",
     "awayTeam": "DB",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/db_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kgc_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/db_official.svg"
   },
   {
     "id": "kbl_20270226_상무_vs_소노",
@@ -3650,8 +3300,8 @@
     "genre": "basketball",
     "homeTeam": "상무",
     "awayTeam": "소노",
-    "homeTeamLogo": "/images/logos/kbl/sangmu.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/sangmu.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   },
   {
     "id": "kbl_20270226_한국가스공사_vs_KT",
@@ -3664,8 +3314,8 @@
     "genre": "basketball",
     "homeTeam": "한국가스공사",
     "awayTeam": "KT",
-    "homeTeamLogo": "/images/logos/kbl/kogas_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kogas_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kt_official.svg"
   },
   {
     "id": "kbl_20270227_삼성_vs_KCC",
@@ -3678,8 +3328,8 @@
     "genre": "basketball",
     "homeTeam": "삼성",
     "awayTeam": "KCC",
-    "homeTeamLogo": "/images/logos/kbl/samsung_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/samsung_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/kcc_official.svg"
   },
   {
     "id": "kbl_20270227_LG_vs_현대모비스",
@@ -3692,8 +3342,8 @@
     "genre": "basketball",
     "homeTeam": "LG",
     "awayTeam": "현대모비스",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/mobis_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/lg_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/mobis_official.svg"
   },
   {
     "id": "kbl_20270227_KT_vs_소노",
@@ -3706,7 +3356,7 @@
     "genre": "basketball",
     "homeTeam": "KT",
     "awayTeam": "소노",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sono_official.svg"
+    "homeTeamLogo": "/culture/images/logos/kbl/kt_official.svg",
+    "awayTeamLogo": "/culture/images/logos/kbl/sono_official.svg"
   }
 ]

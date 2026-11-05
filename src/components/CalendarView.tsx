@@ -21,7 +21,6 @@ const EMPTY_SEARCH_PARAMS = new URLSearchParams();
 import { usePerformanceData } from '@/hooks/usePerformanceData';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import ImageWithFallback from './ImageWithFallback';
-import ServiceStatusStrip from './performance/list/ServiceStatusStrip';
 import { LocationSelector } from './LocationSelector';
 import { getRegionSelectionLabel, parseDistrictSelection, parseRegionSelection, persistRegionSelection, readPersistedRegionSelection, REGION_SELECTION_EVENT } from '@/lib/region-selection';
 
@@ -546,16 +545,6 @@ export default function CalendarView({
                             else if (calendarView === 'weekly') setCurrentMonth(addWeeks(currentMonth, 1));
                             else setCurrentMonth(addDays(currentMonth, 1));
                         }} className="p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition shrink-0"><ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" /></button>
-
-                        <ServiceStatusStrip
-                            lastUpdated={lastUpdated}
-                            totalItemCount={totalItemCount}
-                            availableGenreCount={availableGenreCount}
-                            qualitySummary={buildInfo?.qualitySummary}
-                            sourceHealthSummary={buildInfo?.sourceHealthSummary}
-                            className="ml-1 shrink-0"
-                            buttonClassName="h-8 w-8 sm:h-9 sm:w-9 border-gray-200 bg-gray-100 text-gray-500 hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-300"
-                        />
                     </h2>
                     <div className="relative z-[130] flex min-w-0 items-center gap-1 sm:gap-2 shrink-0">
                         <div className="relative shrink-0">

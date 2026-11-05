@@ -146,9 +146,21 @@ function isWeakDescription(item: Performance) {
 function hasReliablePrice(item: Performance) {
     if (item.genre === MOVIE_GENRE) return true;
 
-    const text = compactText([item.price, item.priceDetail, item.feesAndPrograms].filter(Boolean).join(' '));
+    const priceField = (item.price || '').trim();
+    if (priceField && !/정보\s*없음|미정|문의|예매처\s*확인|가격\s*확인/i.test(priceField)) {
+        if (/무료|free/i.test(priceField)) return true;
+        if (/\d[\d,]*(?:\s*원|₩|만원|천원)?/i.test(priceField)) return true;
+    }
+
+    const detailField = (item.priceDetail || '').trim();
+    if (detailField && !/정보\s*없음|미정/i.test(detailField)) {
+        if (/무료|free/i.test(detailField)) return true;
+        if (/\d[\d,]*(?:\s*원|₩|만원|천원)?/i.test(detailField)) return true;
+    }
+
+    const text = compactText(item.feesAndPrograms);
     if (!text) return false;
-    if (/정보\s*없음|미정|문의|예매처\s*확인|가격\s*확인/i.test(text)) return false;
+    if (/정보\s*없음|미정|가격\s*문의|전화\s*문의|문의\s*요망/i.test(text)) return false;
     if (/무료|free/i.test(text)) return true;
     return /\d[\d,]*(?:\s*원|₩|만원|천원)?/i.test(text);
 }

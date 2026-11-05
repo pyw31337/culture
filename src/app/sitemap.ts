@@ -42,12 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'daily' as const,
             priority: 0.7,
         },
-        {
-            url: `${BASE_URL}/status/`,
-            lastModified,
-            changeFrequency: 'daily' as const,
-            priority: 0.6,
-        },
     ];
 
     // Only the detail pages that are actually exported (same picker as /p/[id]).

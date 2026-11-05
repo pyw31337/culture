@@ -140,8 +140,8 @@ async function scrapeKbl() {
             if (process.env.SCRAPE_KEEP_PAST_SPORTS !== '1' && !isUpcomingOrToday(`${dateStr} ${timeStr}`)) continue;
             seenIds.add(id);
 
-            const homeLogoUrl = KBL_LOGOS[match.tnameH] || (match.logoH ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoH}.svg` : '');
-            const awayLogoUrl = KBL_LOGOS[match.tnameA] || (match.logoA ? `https://www.kbl.or.kr/assets/img/ico/logo/ic-${match.logoA}.svg` : '');
+            const homeLogoUrl = KBL_LOGOS[match.tnameH] || (match.logoH ? `/images/logos/kbl/${String(match.logoH).toLowerCase()}.svg` : '');
+            const awayLogoUrl = KBL_LOGOS[match.tnameA] || (match.logoA ? `/images/logos/kbl/${String(match.logoA).toLowerCase()}.svg` : '');
 
             allPerformances.push({
                 id,

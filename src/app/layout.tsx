@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     description: "전국 모든 문화 정보를 한눈에 확인하세요.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.jpg?v=20261028",
         width: 1200,
-        height: 600,
+        height: 630,
         alt: "Culture Flow Preview",
       },
     ],
@@ -56,11 +56,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Culture Flow",
     description: "전국 모든 문화 정보를 한눈에 확인하세요.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.jpg?v=20261028"],
   },
   icons: {
-    icon: '/culture/favicon.png',
-    apple: '/culture/icon.png',
+    icon: [
+      { url: '/culture/favicon.png?v=20261028', type: 'image/png' },
+      { url: '/culture/favicon.ico?v=20261028', sizes: 'any' },
+    ],
+    apple: '/culture/apple-touch-icon.png?v=20261028',
   },
   manifest: '/culture/manifest.json',
   appleWebApp: {

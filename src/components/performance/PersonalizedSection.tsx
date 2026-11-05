@@ -5,7 +5,6 @@ import type { Performance } from '@/types';
 import { GENRES } from '@/lib/constants';
 import { cleanTitle } from '@/lib/utils';
 import ImageWithFallback from '../ImageWithFallback';
-import SectionInfoPopover from './SectionInfoPopover';
 import { useHorizontalDragScroll } from '@/hooks/useHorizontalDragScroll';
 
 
@@ -44,6 +43,7 @@ export default function PersonalizedSection({
     searchMode = 'keyword',
     subtitle,
 }: PersonalizedSectionProps) {
+    void subtitle;
     const { ref: containerRef, isDragging, hasDragged, elasticStyle, dragHandlers } = useHorizontalDragScroll<HTMLDivElement>();
     const contentRef = useRef<HTMLDivElement>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -105,10 +105,6 @@ export default function PersonalizedSection({
                         <h2 className="text-xl sm:text-2xl font-black text-white light:text-black tracking-tight transition-colors">
                             당신을 위한 <span className={clsx('text-transparent bg-clip-text bg-gradient-to-r', searchMode === 'location' ? 'from-[#55df99] to-[#0090f5]' : 'from-purple-400 to-pink-500')}>추천</span>
                         </h2>
-                        <SectionInfoPopover
-                            title="당신을 위한 추천"
-                            description={subtitle || '좋아요, 저장 키워드, 자주 본 장르, 찜한 공연장을 함께 보고 첫 화면을 조금 더 나답게 정리했어요.'}
-                        />
                     </div>
                 </div>
             </div>
