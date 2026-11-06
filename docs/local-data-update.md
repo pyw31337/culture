@@ -31,6 +31,9 @@ IP-restricted). Those run on the Mac mini inside the allowed windows:
 - Both plans end with `ai-dedupe-judge` (optional): a local Ollama model judges gray-zone duplicate
   pairs into `src/data/ai-dedupe-judgments.json`. Skipped when Ollama is not running. See
   [AI_DATA_REFINEMENT.md](./AI_DATA_REFINEMENT.md).
+- Then `ai-intro-images` (optional): Apple Vision reads intro images and Ollama extracts cast, running
+  time, age, seat prices and a short summary into `src/data/ai-detail-extractions.json`. Needs macOS,
+  `swiftc` (Xcode command line tools) and Ollama; skipped otherwise.
 - **full** = plan `local`: every source with deep caps. Also forced when the last successful
   full run is older than 36h (e.g. the Mac was off).
 - A lock (`logs/data-update/scheduler/run.lock`) prevents overlapping runs.

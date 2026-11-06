@@ -65,7 +65,8 @@
     { "name": "hotdeals", "priority": "optional", "command": "npx tsx scripts/scrape-hotdeals.ts" },
     { "name": "heritage-events", "priority": "optional", "command": "npx tsx scripts/scrape-heritage-events.ts" },
     { "name": "cinema-relay-ids", "priority": "optional", "command": "npx tsx scripts/map-cinema-relay-ids.ts" },
-    { "name": "ai-dedupe-judge", "priority": "optional", "command": "npx tsx scripts/ai/judge-duplicates-ollama.ts" }
+    { "name": "ai-dedupe-judge", "priority": "optional", "command": "npx tsx scripts/ai/judge-duplicates-ollama.ts" },
+    { "name": "ai-intro-images", "priority": "optional", "command": "npx tsx scripts/ai/extract-intro-images.ts" }
   ],
   "local-light": [
     { "name": "interpark", "priority": "critical", "command": "npx tsx scripts/scrape-interpark.ts" },
@@ -76,7 +77,8 @@
     { "name": "cinema-relay-ids", "priority": "optional", "command": "npx tsx scripts/map-cinema-relay-ids.ts" },
     { "name": "build-venues", "priority": "critical", "command": "npx tsx scripts/build-venues.ts" },
     { "name": "venue-places", "priority": "optional", "command": "npx tsx scripts/enrich-venue-places.ts" },
-    { "name": "ai-dedupe-judge", "priority": "optional", "command": "npx tsx scripts/ai/judge-duplicates-ollama.ts" }
+    { "name": "ai-dedupe-judge", "priority": "optional", "command": "npx tsx scripts/ai/judge-duplicates-ollama.ts" },
+    { "name": "ai-intro-images", "priority": "optional", "command": "npx tsx scripts/ai/extract-intro-images.ts" }
   ],
   "retainGuard": [
     { "file": "src/data/interpark.json", "minRatio": 0.7, "fields": ["sessions", "priceList"] },

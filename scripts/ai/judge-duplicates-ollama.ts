@@ -8,8 +8,7 @@
  * src/data/ai-dedupe-judgments.json. The next generate-data run merges pairs judged
  * `same` with confidence ≥ 0.8. GitHub Actions never runs the model; it only reads the file.
  *
- *   OLLAMA_HOST   default http://127.0.0.1:11434
- *   OLLAMA_MODEL  default qwen2.5:7b   (exaone3.5:7.8b and gemma3:12b also read Korean well)
+ *   OLLAMA_HOST / OLLAMA_MODEL  see scripts/ai/ollama.ts
  *   AI_JUDGE_MAX_PAIRS    default 80   pairs per run
  *   AI_JUDGE_MAX_SECONDS  default 900  time budget per run
  *
@@ -18,12 +17,11 @@
 import fs from 'fs';
 import path from 'path';
 import { dedupeCrossSourcePerformances, type DedupeJudgment, type DedupePair } from '../../src/lib/cross-source-dedupe';
+import { OLLAMA_MODEL as MODEL, ollamaJson, ollamaReady } from './ollama';
 
 const ROOT = process.cwd();
 const PUBLIC_PERFORMANCES = path.join(ROOT, 'public', 'data', 'performances.json');
 const JUDGMENTS_PATH = path.join(ROOT, 'src', 'data', 'ai-dedupe-judgments.json');
-const HOST = (process.env.OLLAMA_HOST || 'http://127.0.0.1:11434').replace(/\/+$/, '');
-const MODEL = process.env.OLLAMA_MODEL || 'qwen2.5:7b';
 const MAX_PAIRS = Number(process.env.AI_JUDGE_MAX_PAIRS || 80);
 const MAX_SECONDS = Number(process.env.AI_JUDGE_MAX_SECONDS || 900);
 const KEEP_DAYS = 120;
@@ -57,49 +55,20 @@ function describe(item: Record<string, unknown>) {
     ].filter(Boolean).join('\n');
 }
 
-async function ollamaReachable() {
-    try {
-        const response = await fetch(`${HOST}/api/tags`, { signal: AbortSignal.timeout(3000) });
-        if (!response.ok) return false;
-        const body = await response.json() as { models?: { name: string }[] };
-        const names = (body.models || []).map((m) => m.name);
-        if (!names.some((name) => name === MODEL || name.startsWith(`${MODEL}:`) || name.split(':')[0] === MODEL)) {
-            console.log(`[ai-dedupe] model ${MODEL} is not pulled (have: ${names.join(', ') || 'none'}). Run: ollama pull ${MODEL}`);
-            return false;
-        }
-        return true;
-    } catch {
-        return false;
-    }
-}
-
 async function judge(pair: DedupePair): Promise<DedupeJudgment | null> {
-    const response = await fetch(`${HOST}/api/chat`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(120_000),
-        body: JSON.stringify({
-            model: MODEL,
-            stream: false,
-            options: { temperature: 0 },
-            format: {
-                type: 'object',
-                properties: {
-                    same: { type: 'boolean' },
-                    confidence: { type: 'number' },
-                    reason: { type: 'string' },
-                },
-                required: ['same', 'confidence', 'reason'],
+    const parsed = await ollamaJson<Partial<DedupeJudgment>>(
+        SYSTEM_PROMPT,
+        `[항목 A]\n${describe(pair.a)}\n\n[항목 B]\n${describe(pair.b)}`,
+        {
+            type: 'object',
+            properties: {
+                same: { type: 'boolean' },
+                confidence: { type: 'number' },
+                reason: { type: 'string' },
             },
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                { role: 'user', content: `[항목 A]\n${describe(pair.a)}\n\n[항목 B]\n${describe(pair.b)}` },
-            ],
-        }),
-    });
-    if (!response.ok) throw new Error(`ollama ${response.status}`);
-    const body = await response.json() as { message?: { content?: string } };
-    const parsed = JSON.parse(body.message?.content || '{}') as Partial<DedupeJudgment>;
+            required: ['same', 'confidence', 'reason'],
+        },
+    );
     if (typeof parsed.same !== 'boolean' || typeof parsed.confidence !== 'number') return null;
     return {
         same: parsed.same,
@@ -124,10 +93,7 @@ async function main() {
         console.log('[ai-dedupe] public/data/performances.json not found; nothing to judge');
         return;
     }
-    if (!(await ollamaReachable())) {
-        console.log(`[ai-dedupe] Ollama not reachable at ${HOST}; skipped (optional step)`);
-        return;
-    }
+    if (!(await ollamaReady('ai-dedupe'))) return;
 
     const file = loadJudgments();
     const performances = JSON.parse(fs.readFileSync(PUBLIC_PERFORMANCES, 'utf8'));
