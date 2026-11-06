@@ -4,12 +4,14 @@
  * The Mac mini must stay usable while these run (an unbounded 7B run once froze it), so:
  *   - the model is picked by installed memory unless OLLAMA_MODEL is set,
  *   - every call caps the context window, output length and CPU threads,
- *   - jobs check memory pressure before each unit of work and stop early when it is high,
+ *   - jobs check macOS memory pressure before each unit of work and stop once it leaves "normal",
  *   - the model is unloaded from memory when a job ends.
  *
  *   OLLAMA_HOST          default http://127.0.0.1:11434
  *   OLLAMA_MODEL         default qwen2.5:7b with ≥ 16GB memory, qwen2.5:3b below that
- *   AI_MIN_FREE_PERCENT  default 30   stop when macOS reports less free memory than this
+ *   AI_MIN_FREE_PERCENT  default 12   also stop when macOS reports less free memory than this
+ *                        (8GB Macs idle around 20–30% because macOS keeps the rest as cache,
+ *                        so the pressure level is the main signal, not this number)
  */
 import { execFileSync } from 'child_process';
 import os from 'os';
@@ -20,27 +22,44 @@ export const OLLAMA_HOST = (process.env.OLLAMA_HOST || 'http://127.0.0.1:11434')
 export const OLLAMA_MODEL = process.env.OLLAMA_MODEL || (os.totalmem() >= 15 * GB ? 'qwen2.5:7b' : 'qwen2.5:3b');
 
 const MIN_TOTAL_MEMORY = 7.5 * GB;
-const MIN_FREE_PERCENT = Number(process.env.AI_MIN_FREE_PERCENT || 30);
+const MIN_FREE_PERCENT = Number(process.env.AI_MIN_FREE_PERCENT || 12);
 // Small context = small KV cache. Prompts are trimmed to fit (see MAX_OCR_CHARS in extract-intro-images).
 const NUM_CTX = 4096;
 const NUM_PREDICT = 600;
 const NUM_THREAD = Math.max(2, Math.floor(os.cpus().length / 2));
 
-/** Percent of memory macOS considers available (kern.memorystatus_level); null when unknown. */
-function freeMemoryPercent(): number | null {
+function sysctlNumber(name: string): number | null {
     if (process.platform !== 'darwin') return null;
     try {
-        const value = Number(execFileSync('sysctl', ['-n', 'kern.memorystatus_level'], { encoding: 'utf8' }).trim());
+        const value = Number(execFileSync('sysctl', ['-n', name], { encoding: 'utf8' }).trim());
         return Number.isFinite(value) ? value : null;
     } catch {
         return null;
     }
 }
 
+/** Percent of memory macOS considers available; null when unknown. */
+const freeMemoryPercent = () => sysctlNumber('kern.memorystatus_level');
+/** macOS memory pressure: 1 normal, 2 warning, 4 critical (Activity Monitor's green/yellow/red); null when unknown. */
+const memoryPressureLevel = () => sysctlNumber('kern.memorystatus_vm_pressure_level');
+const PRESSURE_LABEL: Record<number, string> = { 1: 'normal', 2: 'warning', 4: 'critical' };
+
+/** One line for the log: what the job sees before it starts. */
+export function describeMemory() {
+    const pressure = memoryPressureLevel();
+    const free = freeMemoryPercent();
+    return `memory ${(os.totalmem() / GB).toFixed(0)}GB, free ${free ?? '?'}%, pressure ${pressure === null ? '?' : PRESSURE_LABEL[pressure] || pressure}, model ${OLLAMA_MODEL}`;
+}
+
 /** False (with a log line) when starting or continuing model work could push the Mac into swap. */
 export function memoryAllowsWork(tag: string): boolean {
     if (os.totalmem() < MIN_TOTAL_MEMORY) {
         console.log(`[${tag}] only ${(os.totalmem() / GB).toFixed(1)}GB memory; local AI skipped to keep the Mac responsive`);
+        return false;
+    }
+    const pressure = memoryPressureLevel();
+    if (pressure !== null && pressure > 1) {
+        console.log(`[${tag}] macOS memory pressure is ${PRESSURE_LABEL[pressure] || pressure}; stopping for now (the next run continues)`);
         return false;
     }
     const free = freeMemoryPercent();
@@ -53,6 +72,7 @@ export function memoryAllowsWork(tag: string): boolean {
 
 /** True when the server answers and the chosen model is pulled; logs why not otherwise. */
 export async function ollamaReady(tag: string): Promise<boolean> {
+    console.log(`[${tag}] ${describeMemory()}`);
     if (!memoryAllowsWork(tag)) return false;
     try {
         const response = await fetch(`${OLLAMA_HOST}/api/tags`, { signal: AbortSignal.timeout(3000) });
