@@ -72,9 +72,19 @@ npx tsx scripts/ai/judge-duplicates-ollama.ts   # 바로 한 번 돌려 보기
 5. 결과는 `src/data/ai-detail-extractions.json`(공연 id별, 이미지 묶음 해시 포함)에 공연마다 바로 저장됩니다.
    다음 `generate-data`가 **원본에 없는 칸만** 채우고, 틀 문장 설명만 소개문으로 바꿉니다. 합쳐진 카드는 옛 id(`aliasIds`)의 결과도 씁니다.
 6. 한 번 읽은 공연은 이미지가 바뀌기 전까지 다시 읽지 않고, 쓸 값이 없던 공연은 30일 뒤 다시 읽습니다.
-   1회 최대 60건·20분이며 공연마다 저장하므로 시간이 끊겨도 다음 실행이 이어서 합니다.
+   1회 최대 30건·20분이며 공연마다 저장하므로 시간이 끊겨도 다음 실행이 이어서 합니다.
 
-환경변수: `AI_EXTRACT_MAX_ITEMS`, `AI_EXTRACT_MAX_SECONDS`, `AI_EXTRACT_MAX_IMAGES`, `VISION_OCR_BIN`, `OLLAMA_HOST`, `OLLAMA_MODEL`.
+대상은 무대 공연 장르(뮤지컬·연극·콘서트·클래식/국악·오페라·무용)만이며, 타임티켓의 정사각 포스터 썸네일(`file_attach_thumb`, `-700x700`)처럼
+글자가 없는 이미지는 건너뜁니다. 글자가 많은 KOPIS 소개 이미지를 먼저 읽습니다.
+
+### 맥미니가 멈추지 않게 (2026-11-06 첫 시험에서 먹통 → 보완)
+- 모델은 설치된 메모리로 고릅니다: 16GB 이상 `qwen2.5:7b`, 그보다 작으면 `qwen2.5:3b`(약 2GB). 7.5GB 미만이면 AI 단계를 건너뜁니다.
+- 매 호출의 작업 메모리를 고정합니다: 문맥 4,096토큰, 답 600토큰, CPU 스레드는 코어의 절반. 모델에 넘기는 OCR 글은 3,000자까지.
+- 공연 하나를 읽기 전마다 macOS 남은 메모리(`kern.memorystatus_level`)를 보고 30% 미만이면 그 자리에서 멈춥니다(다음 실행이 이어서 함).
+- 글자 인식은 낮은 우선순위(`nice 15`)로, 이미지당 최대 8조각만 읽고, 공연 사이에 1.5초 쉽니다.
+- 끝나면 모델을 메모리에서 바로 내립니다(`keep_alive: 0`). 1회 기본 30건·20분.
+
+환경변수: `AI_EXTRACT_MAX_ITEMS`, `AI_EXTRACT_MAX_SECONDS`, `AI_EXTRACT_MAX_IMAGES`, `VISION_OCR_BIN`, `OLLAMA_HOST`, `OLLAMA_MODEL`, `AI_MIN_FREE_PERCENT`.
 macOS가 아니거나 `swiftc`(Xcode 명령줄 도구: `xcode-select --install`)·Ollama가 없으면 아무것도 바꾸지 않고 넘어갑니다.
 
 바로 한 번 돌려 보기(맥미니):

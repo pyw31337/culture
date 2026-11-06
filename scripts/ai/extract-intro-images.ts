@@ -12,11 +12,11 @@
  * Candidates come from the last build (public/data/performances.json): ticketed performances
  * with intro images and at least one empty field or a template description.
  *
- *   AI_EXTRACT_MAX_ITEMS     default 60     performances per run
+ *   AI_EXTRACT_MAX_ITEMS     default 30     performances per run
  *   AI_EXTRACT_MAX_SECONDS   default 1200   time budget per run (progress is saved per item)
  *   AI_EXTRACT_MAX_IMAGES    default 4      images per performance
  *   VISION_OCR_BIN           prebuilt OCR binary (default .cache/ai/vision-ocr, built with swiftc)
- *   OLLAMA_HOST / OLLAMA_MODEL  see scripts/ai/ollama.ts
+ *   OLLAMA_HOST / OLLAMA_MODEL / AI_MIN_FREE_PERCENT  see scripts/ai/ollama.ts (memory and CPU limits)
  *
  * Skips without changes when it is not on macOS, swiftc or Ollama is missing, so the scheduler
  * can treat it as optional. GitHub Actions never runs it.
@@ -28,7 +28,7 @@ import os from 'os';
 import path from 'path';
 import { promisify } from 'util';
 import { isTemplateDescription, type AiDetailEntry, type AiDetailFields } from '../../src/lib/ai-detail-fill';
-import { OLLAMA_MODEL, ollamaJson, ollamaReady } from './ollama';
+import { OLLAMA_MODEL, breather, memoryAllowsWork, ollamaJson, ollamaReady, ollamaUnload } from './ollama';
 
 const execFileAsync = promisify(execFile);
 
@@ -37,17 +37,22 @@ const PUBLIC_PERFORMANCES = path.join(ROOT, 'public', 'data', 'performances.json
 const OUTPUT_PATH = path.join(ROOT, 'src', 'data', 'ai-detail-extractions.json');
 const SWIFT_SOURCE = path.join(ROOT, 'scripts', 'ai', 'vision-ocr.swift');
 const OCR_BIN = process.env.VISION_OCR_BIN || path.join(ROOT, '.cache', 'ai', 'vision-ocr');
-const MAX_ITEMS = Number(process.env.AI_EXTRACT_MAX_ITEMS || 60);
+const MAX_ITEMS = Number(process.env.AI_EXTRACT_MAX_ITEMS || 30);
 const MAX_SECONDS = Number(process.env.AI_EXTRACT_MAX_SECONDS || 1200);
 const MAX_IMAGES = Number(process.env.AI_EXTRACT_MAX_IMAGES || 4);
-const MAX_TILES_PER_IMAGE = 14;
+const MAX_TILES_PER_IMAGE = 8;
 const MAX_IMAGE_BYTES = 20 * 1024 * 1024;
-const MAX_OCR_CHARS = 7000;
+// Keeps the prompt inside the 4096-token context set in ollama.ts.
+const MAX_OCR_CHARS = 3000;
 const RETRY_EMPTY_DAYS = 30;
 const DROP_GONE_DAYS = 60;
 const TAG = 'ai-intro';
 
 const PERFORMANCE_SOURCES = new Set(['kopis', 'interpark', 'timeticket', 'seoul', 'culture-portal', 'yes24', 'yes24-exclusive']);
+// Stage shows only: museum/activity listings carry product photos, not intro text.
+const PERFORMANCE_GENRES = new Set(['musical', 'play', 'concert', 'classic_tradition', 'classic', 'opera', 'dance']);
+// Square poster thumbnails (timeticket "700x700") have no intro text to read.
+const THUMBNAIL_URL = /file_attach_thumb|-\d{2,4}x\d{2,4}\.(jpe?g|png|webp)$/i;
 
 type Item = Record<string, unknown> & { id: string; title: string; source?: string };
 
@@ -118,7 +123,7 @@ function missingFields(item: Item) {
 function introImages(item: Item) {
     const images = Array.isArray(item.synopsisImages) ? item.synopsisImages : [];
     return images
-        .filter((url): url is string => typeof url === 'string' && /^https?:\/\//i.test(url))
+        .filter((url): url is string => typeof url === 'string' && /^https?:\/\//i.test(url) && !THUMBNAIL_URL.test(url))
         .slice(0, MAX_IMAGES);
 }
 
@@ -233,7 +238,7 @@ async function readImages(urls: string[]) {
         for (const [index, url] of urls.entries()) {
             try {
                 const file = await download(url, dir, index);
-                const { stdout } = await execFileAsync(OCR_BIN, [file, String(MAX_TILES_PER_IMAGE)], { timeout: 120_000, maxBuffer: 8 * 1024 * 1024 });
+                const { stdout } = await execFileAsync('nice', ['-n', '15', OCR_BIN, file, String(MAX_TILES_PER_IMAGE)], { timeout: 120_000, maxBuffer: 8 * 1024 * 1024 });
                 const rows = (JSON.parse(stdout) as { rows?: unknown[] }).rows || [];
                 rows.forEach((row) => {
                     const text = String(row || '').trim();
@@ -292,7 +297,7 @@ async function main() {
     const now = Date.now();
 
     const candidates = performances
-        .filter((item) => PERFORMANCE_SOURCES.has(String(item.source || '')))
+        .filter((item) => PERFORMANCE_SOURCES.has(String(item.source || '')) && PERFORMANCE_GENRES.has(String(item.genre || '')))
         .map((item) => ({ item, urls: introImages(item), missing: missingFields(item) }))
         .filter(({ urls, missing }) => urls.length > 0 && missing.length > 0)
         .filter(({ item, urls }) => {
@@ -301,7 +306,10 @@ async function main() {
             const empty = Object.keys(previous.fields || {}).length === 0;
             return empty && now - Date.parse(previous.checkedAt) > RETRY_EMPTY_DAYS * 86_400_000;
         })
-        .sort((a, b) => b.missing.length - a.missing.length || startDate(a.item).localeCompare(startDate(b.item)))
+        // KOPIS intro images are text-heavy detail pages; read them first.
+        .sort((a, b) => Number(b.item.source === 'kopis') - Number(a.item.source === 'kopis')
+            || b.missing.length - a.missing.length
+            || startDate(a.item).localeCompare(startDate(b.item)))
         .slice(0, MAX_ITEMS);
     console.log(`[${TAG}] performances to read: ${candidates.length} (model ${OLLAMA_MODEL})`);
 
@@ -312,6 +320,8 @@ async function main() {
             console.log(`[${TAG}] time budget used; the rest waits for the next run`);
             break;
         }
+        if (!memoryAllowsWork(TAG)) break;
+        console.log(`[${TAG}] reading ${item.title} (${urls.length} image${urls.length > 1 ? 's' : ''})`);
         const entry: AiDetailEntry = { imagesKey: imagesKey(urls), checkedAt: new Date().toISOString(), model: OLLAMA_MODEL, fields: {} };
         try {
             const text = await readImages(urls);
@@ -336,6 +346,7 @@ async function main() {
         } catch (error) {
             // Ollama or the network failed: leave no entry so the next run tries again.
             console.warn(`[${TAG}] ${item.title}: ${error instanceof Error ? error.message : String(error)}`);
+            await breather();
             continue;
         }
         file.items[item.id] = entry;
@@ -343,7 +354,9 @@ async function main() {
         if (Object.keys(entry.fields).length > 0) counts.withFields += 1;
         console.log(`[${TAG}] ${item.title}: ${Object.keys(entry.fields).join(', ') || 'nothing usable'} (${entry.ocrChars ?? 0} chars)`);
         saveOutput(file);
+        await breather();
     }
+    await ollamaUnload();
 
     for (const [id, entry] of Object.entries(file.items)) {
         if (!liveIds.has(id) && now - Date.parse(entry.checkedAt) > DROP_GONE_DAYS * 86_400_000) delete file.items[id];

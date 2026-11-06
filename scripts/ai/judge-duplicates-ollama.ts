@@ -8,7 +8,7 @@
  * src/data/ai-dedupe-judgments.json. The next generate-data run merges pairs judged
  * `same` with confidence ≥ 0.8. GitHub Actions never runs the model; it only reads the file.
  *
- *   OLLAMA_HOST / OLLAMA_MODEL  see scripts/ai/ollama.ts
+ *   OLLAMA_HOST / OLLAMA_MODEL / AI_MIN_FREE_PERCENT  see scripts/ai/ollama.ts (memory and CPU limits)
  *   AI_JUDGE_MAX_PAIRS    default 80   pairs per run
  *   AI_JUDGE_MAX_SECONDS  default 900  time budget per run
  *
@@ -17,7 +17,7 @@
 import fs from 'fs';
 import path from 'path';
 import { dedupeCrossSourcePerformances, type DedupeJudgment, type DedupePair } from '../../src/lib/cross-source-dedupe';
-import { OLLAMA_MODEL as MODEL, ollamaJson, ollamaReady } from './ollama';
+import { OLLAMA_MODEL as MODEL, breather, memoryAllowsWork, ollamaJson, ollamaReady, ollamaUnload } from './ollama';
 
 const ROOT = process.cwd();
 const PUBLIC_PERFORMANCES = path.join(ROOT, 'public', 'data', 'performances.json');
@@ -112,6 +112,7 @@ async function main() {
             console.log('[ai-dedupe] time budget used; the rest waits for the next run');
             break;
         }
+        if (!memoryAllowsWork('ai-dedupe')) break;
         try {
             const verdict = await judge(pair);
             if (!verdict) continue;
@@ -122,7 +123,9 @@ async function main() {
         } catch (error) {
             console.warn(`[ai-dedupe] failed: ${pair.key}: ${error instanceof Error ? error.message : String(error)}`);
         }
+        await breather();
     }
+    await ollamaUnload();
 
     const cutoff = Date.now() - KEEP_DAYS * 86_400_000;
     for (const [key, verdict] of Object.entries(file.judgments)) {
