@@ -41,7 +41,7 @@ function kstToday(now = new Date()): string {
 }
 
 export function buildSessionsPayload(
-    publicItems: Array<{ id: string; link?: string; website?: string }>,
+    publicItems: Array<{ id: string; link?: string; website?: string; bookingLinks?: { url?: string }[] }>,
     interparkRaw: Array<{ link?: string; sessions?: RawSession[]; sessionsCheckedAt?: string }>,
     now = new Date(),
 ): PublicSessionsPayload {
@@ -61,7 +61,11 @@ export function buildSessionsPayload(
 
     const items: Record<string, PublicSessionEntry> = {};
     for (const item of publicItems) {
-        const code = extractInterparkGoodsCode(item.link) || extractInterparkGoodsCode(item.website);
+        // KOPIS cards that absorbed an Interpark row carry its goods code in bookingLinks.
+        const code = extractInterparkGoodsCode(item.link)
+            || extractInterparkGoodsCode(item.website)
+            || (item.bookingLinks || []).map((link) => extractInterparkGoodsCode(link?.url)).find(Boolean)
+            || null;
         if (!code) continue;
         const entry = byCode.get(code);
         if (!entry) continue;

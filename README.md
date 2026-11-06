@@ -94,6 +94,8 @@ cp .env.example .env.local   # 값 입력 후 사용 (.env.local은 커밋되지
 
 상세 복구 절차: [REMEDIATION.md](./REMEDIATION.md)
 
+출처 간 중복 제거(KOPIS·문화포털 카드를 남기고 판매처는 예매처 링크로 합침)와 맥미니 로컬 AI(Ollama·Apple Vision) 활용 계획: [docs/AI_DATA_REFINEMENT.md](./docs/AI_DATA_REFINEMENT.md)
+
 ---
 
 ## 디렉터리 개요

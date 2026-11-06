@@ -110,6 +110,8 @@ export function safePerformance(data: any): Performance | null {
         crew: safeStringArray(data.crew),
         priceList: safePriceList(data.priceList),
         bookingLinks: safeBookingLinks(data.bookingLinks),
+        aliasIds: safeStringArray(data.aliasIds),
+        mergedSources: safeStringArray(data.mergedSources),
         synopsisImages: safeStringArray(data.synopsisImages),
         venueAmenities: safeStringArray(data.venueAmenities),
         platforms: safeStringArray(data.platforms),

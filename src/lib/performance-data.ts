@@ -18,6 +18,8 @@ import type {
 import { formatKoreanDateTime } from '@/lib/build-info';
 import { buildPerformanceLocationKey, getPerformanceVenueKey, resolveVenueInfoForPerformance } from '@/lib/location-display';
 import { processAndMergePerformances } from '@/lib/performance-merger';
+import { dedupeCrossSourcePerformances, type DedupeJudgments } from '@/lib/cross-source-dedupe';
+import { applyAiDetailExtractions, type AiDetailExtractions } from '@/lib/ai-detail-fill';
 import { transformPerformance, type RawPerformance } from '@/lib/data-transformer';
 import { SOURCE_REGISTRY } from '@/lib/source-registry';
 
@@ -649,7 +651,14 @@ export function getAllPerformances(options: { preferPublicData?: boolean } = {})
     console.log(`[DEBUG] Source breakdown after filter:`, sourceCounts);
 
     // 4. Deduplication & Stable ID Logic (Unified via Utility)
-    const stablePerformances = hydrateLocationIdentity(processAndMergePerformances(filtered), venues);
+    // Then fold the same show listed by KOPIS/문화포털 and ticket sellers into the catalog row.
+    const judgments = loadSourceJSON('ai-dedupe-judgments.json', {}) as DedupeJudgments;
+    const crossSource = dedupeCrossSourcePerformances(processAndMergePerformances(filtered), judgments);
+    console.log(`[DEBUG] Cross-source duplicates merged: ${crossSource.merged}`, crossSource.bySourcePair, `(gray zone left for AI review: ${crossSource.grayZone.length})`);
+    // Fill fields the sources left empty from text read off intro images on the Mac mini.
+    const aiDetails = applyAiDetailExtractions(crossSource.items, loadSourceJSON('ai-detail-extractions.json', {}) as AiDetailExtractions);
+    if (aiDetails.stats.items > 0) console.log('[DEBUG] Intro-image fields filled:', aiDetails.stats);
+    const stablePerformances = hydrateLocationIdentity(aiDetails.items as Performance[], venues);
 
     // 5. Custom Movie Sorting
     // Current Rule: Top 10 Ranked first, then Upcoming releases by date, then others.

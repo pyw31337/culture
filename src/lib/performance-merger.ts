@@ -97,7 +97,7 @@ export function processAndMergePerformances(items: any[]): any[] {
     });
 }
 
-function mergeItems(a: any, b: any): any {
+export function mergeItems(a: any, b: any): any {
     const scoreA = getRichnessScore(a);
     const scoreB = getRichnessScore(b);
 

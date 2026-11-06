@@ -127,3 +127,6 @@ docs/.bkit-memory.json
 docs/.pdca-status.json
 venue_report 2.*
 server.log
+
+# Local AI build outputs (scripts/ai/vision-ocr.swift binary)
+.cache/ai/

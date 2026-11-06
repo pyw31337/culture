@@ -652,7 +652,7 @@ export default function PerformanceList({
         const match = hash.match(/^#p=(.+)$/);
         if (match && match[1]) {
             const id = decodeURIComponent(match[1]);
-            const perf = scopedPerformances.find(p => p.id === id);
+            const perf = scopedPerformances.find(p => p.id === id || p.aliasIds?.includes(id));
             if (perf) {
                 setSharedPerf(perf);
                 deepLinkHandled.current = true;
@@ -672,7 +672,7 @@ export default function PerformanceList({
             }
 
             const id = decodeURIComponent(match[1]);
-            const perf = scopedPerformances.find((item) => item.id === id);
+            const perf = scopedPerformances.find((item) => item.id === id || item.aliasIds?.includes(id));
             modalReturnScrollY.current = window.scrollY;
             setSharedPerf(perf || null);
         };
