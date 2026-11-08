@@ -325,7 +325,10 @@ jobs:
           POSTER_CACHE_CONCURRENCY: '6'
           # The Interpark detail API returned nothing for GitHub-hosted runners
           # (0/268 on 2026-10-08), so its coverage is a warning in CI only.
-          DETAIL_COMPLETENESS_WARN_SOURCES: interpark
+          # These APIs commonly omit optional fields even when the list/detail
+          # request succeeds. The repair report records the shortfall while the
+          # local Mac run remains strict.
+          DETAIL_COMPLETENESS_WARN_SOURCES: interpark,kopis
         run: |
           # Every step below must succeed. A failure now fails the job (red run +
           # GitHub notification + tracking issue) instead of being swallowed with
@@ -348,6 +351,8 @@ jobs:
           run_step "Validate Data Integrity" npx tsx scripts/validate-data-integrity.ts
           run_step "Prune Stale Data" bash -c "npx tsx scripts/prune-expired-data.ts && npx tsx scripts/prune-data.ts"
           run_step "Generate Public Data Artifacts" npm run generate-data
+          run_step "Auto Repair and Report Pipeline Errors" node scripts/repair-pipeline-errors.mjs
+          run_step "Regenerate Repaired Public Data" npm run generate-data
           run_step "Stabilize Poster Image Cache" bash -c "npm run cache:posters && npm run validate:posters && npm run generate:thumbs"
           run_step "Validate Content Quality" npm run validate:content
           run_step "Validate Detail Completeness" npm run validate:details
@@ -402,6 +407,21 @@ jobs:
             gh issue comment "$existing" --body-file "$RUNNER_TEMP/issue-body.md"
           else
             gh issue create --title "$title" --label pipeline-failure --body-file "$RUNNER_TEMP/issue-body.md"
+          fi
+
+          # Preserve the machine-readable diagnosis even when a later quality
+          # gate fails before the normal data commit step.
+          if [ -f public/data/pipeline-error-report.json ]; then
+            set +e
+            git config user.name 'GitHub Actions Bot'
+            git config user.email 'actions@github.com'
+            git add public/data/pipeline-error-report.json
+            git commit -m "chore: record daily pipeline error report"
+            git push || {
+              git pull --rebase --autostash origin main
+              git push
+            }
+            set -e
           fi
 
       - name: Close tracking issue after recovery

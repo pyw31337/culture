@@ -26,6 +26,7 @@
     "validate:posters": "npx tsx scripts/validate-poster-integrity.ts",
     "validate:content": "npx tsx scripts/validate-content-quality.ts",
     "validate:details": "npx tsx scripts/validate-detail-completeness.ts",
+    "repair:pipeline": "node scripts/repair-pipeline-errors.mjs",
     "validate:search": "npx tsx scripts/validate-search-consistency.ts",
     "validate:location-search": "npx tsx scripts/validate-location-search-contract.ts",
     "validate:locations": "npx tsx scripts/validate-location-integrity.ts",

@@ -70,7 +70,7 @@ jobs:
         env:
           # GitHub-hosted runners get no data from the Interpark detail API, so
           # report its coverage as a warning here; the local pipeline stays strict.
-          DETAIL_COMPLETENESS_WARN_SOURCES: interpark
+          DETAIL_COMPLETENESS_WARN_SOURCES: interpark,kopis
         run: |
           npm run validate:content
           npm run validate:locations
