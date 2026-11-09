@@ -1,0 +1,1545 @@
+{
+  "generatedAt": "2026-11-09T00:08:44.134Z",
+  "runId": "42536756956",
+  "commit": "94ef66237ca1ffb99ceb462b15321168aeb874be",
+  "failures": [],
+  "repairs": {
+    "attempted": true,
+    "changedRecords": 55,
+    "changedFields": 216,
+    "details": [
+      {
+        "id": "kopis_PF285965",
+        "source": "kopis",
+        "field": "runningTime",
+        "fromSource": "interpark.json",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_리턴_Return",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_리턴_Return",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_리턴_Return",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_리턴_Return",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_카운터테너_최성훈_리사이틀_Avec_The_Baroque",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "synopsis",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "description",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Tiffany_Co_와_함께하는_필라델피아_오케스트라_마린_알솝_with_임윤찬",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Sounds_of_Autumn",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Sounds_of_Autumn",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Sounds_of_Autumn",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Sounds_of_Autumn",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Sounds_of_Autumn",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Sounds_of_Autumn",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_Sounds_of_Autumn",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_위대한_베토벤",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_지브리_디즈니_오케스트라_콘서트_11_15",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제시_골드_JESSE_GOLD_내한공연",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "synopsis",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "description",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_나는_태어나지_않기로_했다",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_말콤_토드_첫_내한공연",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서리풀_고음악_시리즈_바로크_노엘",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀_춘천",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_길병민_리사이틀_나의_행복",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬퍼할_시간이_없다",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬퍼할_시간이_없다",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬퍼할_시간이_없다",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬퍼할_시간이_없다",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬퍼할_시간이_없다",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬퍼할_시간이_없다",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬퍼할_시간이_없다",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_무화과2",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_무화과2",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_무화과2",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_무화과2",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_무화과2",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_무화과2",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_무화과2",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_풍경역_오래된_기적",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제1회_스텝UP_페스티벌",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제1회_스텝UP_페스티벌",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제1회_스텝UP_페스티벌",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제1회_스텝UP_페스티벌",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제1회_스텝UP_페스티벌",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제1회_스텝UP_페스티벌",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제1회_스텝UP_페스티벌",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_연극_식당_매일이_크리스마스",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_슬립노모어_서울_Sleep_No_More_Seoul",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_웨이브투어스_서울_단독_콘서트",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_웨이브투어스_서울_단독_콘서트",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_웨이브투어스_서울_단독_콘서트",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_웨이브투어스_서울_단독_콘서트",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_웨이브투어스_서울_단독_콘서트",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_웨이브투어스_서울_단독_콘서트",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진진경_첫_서울_콘서트_첫눈에",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_니콜라이_루간스키_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_니콜라이_루간스키_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_니콜라이_루간스키_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_니콜라이_루간스키_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_니콜라이_루간스키_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_니콜라이_루간스키_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시에나_스파이로_첫_내한공연",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시에나_스파이로_첫_내한공연",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시에나_스파이로_첫_내한공연",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시에나_스파이로_첫_내한공연",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시에나_스파이로_첫_내한공연",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌2_전주",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시간을_파는_상점",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시간을_파는_상점",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시간을_파는_상점",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시간을_파는_상점",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시간을_파는_상점",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시간을_파는_상점",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_시간을_파는_상점",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_김솔아_콰르텟_Falling_in_Jazz_Guest_이진아",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_영등포아트홀_기획공연_가을밤_낭만발레",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_함신익과_심포니_송_마스터즈_시리즈_VI_차이코프스키_스페셜",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_함신익과_심포니_송_마스터즈_시리즈_VI_차이코프스키_스페셜",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_함신익과_심포니_송_마스터즈_시리즈_VI_차이코프스키_스페셜",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_함신익과_심포니_송_마스터즈_시리즈_VI_차이코프스키_스페셜",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_함신익과_심포니_송_마스터즈_시리즈_VI_차이코프스키_스페셜",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_함신익과_심포니_송_마스터즈_시리즈_VI_차이코프스키_스페셜",
+        "source": "interpark.json",
+        "field": "synopsis",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_함신익과_심포니_송_마스터즈_시리즈_VI_차이코프스키_스페셜",
+        "source": "interpark.json",
+        "field": "description",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_낭만주의_거장_차이코프스키_라흐마니노프_신세계로부터",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_스미노_하야토_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_스미노_하야토_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_스미노_하야토_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_스미노_하야토_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_스미노_하야토_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_스미노_하야토_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_스미노_하야토_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_사물놀이_느닷_양평아리랑_양평",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_한수진_x_잉글리시_체임버_오케스트라",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_한수진_x_잉글리시_체임버_오케스트라",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_한수진_x_잉글리시_체임버_오케스트라",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_한수진_x_잉글리시_체임버_오케스트라",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_한수진_x_잉글리시_체임버_오케스트라",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_한수진_x_잉글리시_체임버_오케스트라",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_한수진_x_잉글리시_체임버_오케스트라",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "synopsis",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "description",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서울대학교_개교_80주년_기념_SNU_Symphony_Orchestra_정기연주회",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_수상한_PT샵_The_Hot_Edition",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_수상한_PT샵_The_Hot_Edition",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_수상한_PT샵_The_Hot_Edition",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_수상한_PT샵_The_Hot_Edition",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_수상한_PT샵_The_Hot_Edition",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_수상한_PT샵_The_Hot_Edition",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_수상한_PT샵_The_Hot_Edition",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_NEW_오_나의_귀신님",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_NEW_오_나의_귀신님",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_NEW_오_나의_귀신님",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_NEW_오_나의_귀신님",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_NEW_오_나의_귀신님",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_NEW_오_나의_귀신님",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_NEW_오_나의_귀신님",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_세종_이도의_꿈",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_세종_이도의_꿈",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_세종_이도의_꿈",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_세종_이도의_꿈",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_세종_이도의_꿈",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_세종_이도의_꿈",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_세종_이도의_꿈",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_정의의_사람들",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_닫힌_방",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_춘천",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_춘천",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_춘천",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_춘천",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_춘천",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_춘천",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_춘천",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_쇼팔로비치_유랑극단",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_구원자들",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_문이_닫혔을_때",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_태국GL드라마가_한_퀴어_여성에게_미치는_영향",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오성주_성가합창곡_연주회",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오성주_성가합창곡_연주회",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오성주_성가합창곡_연주회",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오성주_성가합창곡_연주회",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오성주_성가합창곡_연주회",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오성주_성가합창곡_연주회",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오성주_성가합창곡_연주회",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_유카페카_사라스테_헬싱키_필하모닉_오케스트라",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_연극_식당_매일이_크리스마스_프리뷰",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오함마백씨행장_완판본",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오함마백씨행장_완판본",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오함마백씨행장_완판본",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오함마백씨행장_완판본",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오함마백씨행장_완판본",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오함마백씨행장_완판본",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오함마백씨행장_완판본",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_벚꽃동산",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_벚꽃동산",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_벚꽃동산",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_벚꽃동산",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_벚꽃동산",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_벚꽃동산",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_벚꽃동산",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진짜_친구",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_강릉",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_강릉",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_강릉",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_강릉",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_강릉",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_강릉",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌1_강릉",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_두들팝",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_두들팝",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_두들팝",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_두들팝",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_두들팝",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_두들팝",
+        "source": "interpark.json",
+        "field": "backupPoster",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_두들팝",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      }
+    ]
+  },
+  "detailCoverage": [
+    {
+      "source": "kopis",
+      "sample": 120,
+      "missingPrice": 24,
+      "missingAge": 24,
+      "missingRuntime": 25,
+      "policy": "warn-and-report-in-github-fallback"
+    },
+    {
+      "source": "interpark",
+      "sample": 120,
+      "missingPrice": 115,
+      "missingAge": 114,
+      "missingRuntime": 114,
+      "policy": "warn-and-report"
+    }
+  ],
+  "retainedDataPolicy": "Failed optional sources never replace the last known-good source file.",
+  "dryRun": false
+}

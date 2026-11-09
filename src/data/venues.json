@@ -962,9 +962,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "무하아트센터": {
     "name": "H씨어터",
@@ -2911,7 +2911,13 @@
     "district": "종로구",
     "lat": 37.5728655343894,
     "lng": 126.985653068571,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "homepage": "https://www.instagram.com/jinyeon_korea/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "20",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "DDP 뮤지엄 전시": {
     "name": "DDP 뮤지엄 전시",
@@ -6101,9 +6107,9 @@
     "theaterCount": "1",
     "openedAt": "2005",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "세우아트센터": {
     "name": "세우아트센터",
@@ -12012,9 +12018,9 @@
     "theaterCount": "1",
     "openedAt": "2017",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대백레오문화홀": {
     "name": "대백레오문화홀",
@@ -32607,9 +32613,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립 · 식당, 카페, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 국립 · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페"
   },
   "KT&G 상상마당 대치아트홀": {
     "name": "KT&G 상상마당 대치아트홀",
@@ -62109,9 +62115,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "광림아트센터": {
     "name": "광림아트센터",
@@ -71165,9 +71171,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "스페이스 아텔 (space Artel)": {
     "name": "스페이스 아텔 (space Artel)",
@@ -72086,7 +72092,7 @@
   },
   "광주아트홀": {
     "name": "광주아트홀",
-    "address": "광주광역시 동구 중앙로160번길 22 (황금동)",
+    "address": "전남광주통합특별시 동구 중앙로160번길 22 (황금동)",
     "lat": 35.146874,
     "lng": 126.91517539999995,
     "district": "동구",
@@ -83478,7 +83484,21 @@
     "lat": 35.8658299433885,
     "lng": 128.461026104806,
     "phone": "053-659-4200",
-    "homepage": "http://dsculture.or.kr/"
+    "homepage": "http://dsculture.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "302",
+    "theaterCount": "1",
+    "openedAt": "2011",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "지리산소극장": {
     "name": "지리산소극장",
@@ -102171,7 +102191,21 @@
     "lng": 128.46079140000006,
     "district": "",
     "phone": "053-659-4200",
-    "homepage": "http://dsculture.or.kr/"
+    "homepage": "http://dsculture.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "302",
+    "theaterCount": "1",
+    "openedAt": "2011",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "영주문화예술회관": {
     "name": "영주문화예술회관",
@@ -119158,5 +119192,58 @@
     "district": "중구",
     "lat": 37.5637,
     "lng": 126.9975
+  },
+  "진연": {
+    "name": "진연",
+    "address": "서울특별시 종로구 인사동5길 10 (인사동)",
+    "lat": 37.572865,
+    "lng": 126.985653,
+    "district": "종로구",
+    "homepage": "https://www.instagram.com/jinyeon_korea/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "20",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "죽도피아노살롱": {
+    "name": "죽도피아노살롱",
+    "address": "경상북도 포항시 북구 중흥로322번길 7-6 (죽도동)",
+    "lat": 36.030561,
+    "lng": 129.365387,
+    "district": "",
+    "homepage": "https://blog.naver.com/jukdo_salons",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "서울특별시 강남구 역삼동 796-29 218호": {
+    "name": "서울특별시 강남구 역삼동 796-29 218호",
+    "address": "정보 없음",
+    "district": "강남구",
+    "lat": 37.5172,
+    "lng": 127.0473
+  },
+  "서울특별시 은평구 갈현동 508-1 1층": {
+    "name": "서울특별시 은평구 갈현동 508-1 1층",
+    "address": "정보 없음",
+    "district": "은평구",
+    "lat": 37.6027,
+    "lng": 126.9291
+  },
+  "서울특별시 마포구 매봉산로 18 마포창업복지관 6층 603-29호 (임지네닷컴)": {
+    "name": "서울특별시 마포구 매봉산로 18 마포창업복지관 6층 603-29호 (임지네닷컴)",
+    "address": "정보 없음",
+    "district": "마포구",
+    "lat": 37.5665,
+    "lng": 126.9018
   }
 }
