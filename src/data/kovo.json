@@ -1,37 +1,5 @@
 [
   {
-    "id": "kovo_20261110_블루팡스_vs_VIXTORM",
-    "title": "[배구] 블루팡스 vs VIXTORM",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-10 19:00",
-    "venue": "대전충무체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "daejeon",
-    "genre": "volleyball",
-    "homeTeam": "블루팡스",
-    "awayTeam": "VIXTORM",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=1&league=201&round=1&homeTeam=1002&awayTeam=1006",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=17&season=023&league=201&gender=1"
-  },
-  {
-    "id": "kovo_20261110_SOOP_SOOPers_vs_알토스",
-    "title": "[배구] SOOP SOOPers vs 알토스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-10 19:00",
-    "venue": "숲 스타디움",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "etc",
-    "genre": "volleyball",
-    "homeTeam": "SOOP SOOPers",
-    "awayTeam": "알토스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/soopers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=2&league=201&round=1&homeTeam=2008&awayTeam=2006",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=18&season=023&league=201&gender=2"
-  },
-  {
     "id": "kovo_20261111_우리WON_vs_점보스",
     "title": "[배구] 우리WON vs 점보스",
     "image": "/images/volleyball_poster.png",

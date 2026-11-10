@@ -52230,9 +52230,9 @@
     "theaterCount": "1",
     "openedAt": "1993",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "여행자극장": {
     "name": "여행자극장",
@@ -62332,7 +62332,15 @@
     "lng": 127.02955880000002,
     "district": "강남구",
     "phone": "02-541-3929",
-    "homepage": "http://www.mpot.co.kr/"
+    "homepage": "http://www.mpot.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "150",
+    "theaterCount": "2",
+    "openedAt": "1995",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "런던스테이지 [대전 중구]": {
     "name": "런던스테이지 [대전 중구]",
@@ -63543,11 +63551,12 @@
     "facilityType": "기타(비공연장)",
     "seatScale": "0",
     "theaterCount": "1",
-    "openedAt": "",
+    "openedAt": "2026",
     "amenities": [],
     "parking": "주차장: N",
     "restrooms": "",
-    "facilities": "시설 특성: 기타(비공연장)"
+    "facilities": "시설 특성: 기타(비공연장)",
+    "homepage": "https://forrestlive.com/"
   },
   "안산문화예술의전당": {
     "name": "안산문화예술의전당",
@@ -68479,9 +68488,9 @@
     "theaterCount": "1",
     "openedAt": "2021",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "고양종합운동장": {
     "name": "고양종합운동장",
@@ -69034,9 +69043,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "성미산마을극장 향": {
     "name": "성미산마을극장 향",
@@ -75072,9 +75081,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로) · 휠체어 경사로 설치"
   },
   "전라남도 광양시": {
     "name": "전라남도 광양시",
@@ -101167,7 +101176,13 @@
     "lat": 37.51400667834185,
     "lng": 127.0297187188414,
     "phone": "02-541-3929",
-    "homepage": "http://www.mpot.co.kr/"
+    "homepage": "http://www.mpot.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "150",
+    "theaterCount": "2",
+    "openedAt": "1995",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "런던스테이지 [대전 중구] (런던스테이지(2F))": {
     "name": "런던스테이지 [대전 중구] (런던스테이지(2F))",
@@ -118608,7 +118623,9 @@
   "대학로 스카이씨어터 2관": {
     "name": "대학로 스카이씨어터 2관",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5829439,
+    "lng": 127.00262709999993
   },
   "올림픽공원 테니스장": {
     "name": "올림픽공원 테니스장",
@@ -119310,5 +119327,37 @@
     "parking": "주차장: Y / 장애인 주차구역 제공",
     "restrooms": "",
     "facilities": "시설 특성: 공공(기타)"
+  },
+  "감마홀 [홍대]": {
+    "name": "감마홀 [홍대]",
+    "address": "서울특별시 마포구 와우산로21길 19-11 (서교동)",
+    "lat": 37.551855,
+    "lng": 126.922929,
+    "district": "마포구",
+    "homepage": "https://www.instagram.com/gammahall.live",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "숲세권 라이브 카인드스퀘어점": {
+    "name": "숲세권 라이브 카인드스퀘어점",
+    "address": "서울특별시 종로구 사직로 8 (교북동)",
+    "lat": 37.57212,
+    "lng": 126.961099,
+    "district": "종로구",
+    "homepage": "https://forrestlive.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "120",
+    "theaterCount": "1",
+    "openedAt": "2026",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }

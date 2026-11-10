@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-10T01:50:28.970Z",
-  "runId": "42735095684",
-  "commit": "2c735b32611df28319c18846756d3b32086ddd67",
+  "generatedAt": "2026-11-10T23:27:15.058Z",
+  "runId": "42919708632",
+  "commit": "e79cfaf02c67d2afc238a46ab0b424f7043c8369",
   "failures": [
     {
       "source": "umclass",
@@ -24,9 +24,17 @@
   ],
   "repairs": {
     "attempted": true,
-    "changedRecords": 0,
-    "changedFields": 0,
-    "details": []
+    "changedRecords": 1,
+    "changedFields": 1,
+    "details": [
+      {
+        "id": "perf_웨이브투어스_서울_단독_콘서트",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      }
+    ]
   },
   "detailCoverage": [
     {
