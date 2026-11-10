@@ -2076,24 +2076,23 @@
     "mapped_region_id": "seoul"
   },
   "북극곰소극장": {
-    "name": "H씨어터",
-    "address": "서울 종로구 이화장1길 24",
+    "name": "북극곰소극장",
+    "address": "서울특별시 종로구 이화장1길 24 (이화동)",
+    "lat": 37.5773694,
+    "lng": 127.00575709999998,
     "district": "종로구",
-    "lat": 37.5773874578338,
-    "lng": 127.005737308302,
-    "mapped_region_id": "seoul",
     "phone": "010-4293-5155",
-    "homepage": "https://bookbear23.modoo.at/",
+    "homepage": "www.bookbeararts.com",
     "facilityType": "민간(대학로)",
-    "seatScale": "37",
+    "seatScale": "50",
     "theaterCount": "1",
     "openedAt": "2019",
     "amenities": [
       "장애인 화장실"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로) · 장애인 화장실"
+    "parking": "주차장: N",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "대학로 소극장 혜화당": {
     "name": "정극장",
@@ -6123,9 +6122,9 @@
     "theaterCount": "2",
     "openedAt": "2002",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "예스24 아트원": {
     "name": "예스24 아트원",
@@ -64134,9 +64133,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "무신사 개러지 (구. 왓챠홀)": {
     "name": "무신사 개러지 (구. 왓챠홀)",
@@ -64331,9 +64330,9 @@
       "카페",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 식당, 카페, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페"
   },
   "소월아트홀 (성동문화회관)": {
     "name": "소월아트홀 (성동문화회관)",
@@ -66754,9 +66753,9 @@
     "theaterCount": "1",
     "openedAt": "1988",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "업스테이지 (UP Stage)": {
     "name": "업스테이지 (UP Stage)",
@@ -67683,9 +67682,9 @@
     "theaterCount": "1",
     "openedAt": "1976",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 국립"
   },
   "신세계 문화홀 [센텀시티]": {
     "name": "신세계 문화홀 [센텀시티]",
@@ -68702,7 +68701,15 @@
     "lat": 38.201489,
     "lng": 128.569022,
     "district": "",
-    "homepage": "https://www.instagram.com/art_venue_chosok/"
+    "homepage": "https://www.instagram.com/art_venue_chosok/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "문엔트리": {
     "name": "문엔트리",
@@ -69063,9 +69070,9 @@
     "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "NC문화재단 홀": {
     "name": "NC문화재단 홀",
@@ -99595,7 +99602,12 @@
     "district": "",
     "lat": 38.2014773915271,
     "lng": 128.56901682333,
-    "homepage": "https://www.instagram.com/art_venue_chosok/"
+    "homepage": "https://www.instagram.com/art_venue_chosok/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "문엔트리 (문엔트리)": {
     "name": "문엔트리 (문엔트리)",
@@ -105206,9 +105218,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 카페, 편의점"
   },
   "IAM센터": {
     "name": "IAM센터",
@@ -107171,9 +107183,9 @@
       "편의점",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장) · 식당, 카페, 편의점, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 식당, 카페, 편의점"
   },
   "남극장(NAM THEATER)": {
     "name": "남극장(NAM THEATER)",
@@ -117605,7 +117617,25 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5954358,
-    "lng": 127.12996380000004
+    "lng": 127.12996380000004,
+    "phone": "031-580-7900",
+    "homepage": "https://www.guriart.or.kr/PageLink.do",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1030",
+    "theaterCount": "4",
+    "openedAt": "2013",
+    "amenities": [
+      "카페",
+      "놀이방",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페, 놀이방"
   },
   "통영 용호도": {
     "name": "통영 용호도",
@@ -119245,5 +119275,40 @@
     "district": "마포구",
     "lat": 37.5665,
     "lng": 126.9018
+  },
+  "갤러리 컬러미배드": {
+    "name": "갤러리 컬러미배드",
+    "address": "서울특별시 용산구 소월로20길 67 (용산동2가)",
+    "lat": 37.543723,
+    "lng": 126.984361,
+    "district": "용산구",
+    "homepage": "https://www.instagram.com/cmbgallery",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "안동실내체육관": {
+    "name": "안동실내체육관",
+    "address": "경상북도 안동시 육사로 205 (운흥동)",
+    "lat": 36.559892,
+    "lng": 128.7284671,
+    "district": "",
+    "phone": "054-840-6537",
+    "homepage": "https://www.andongsisul.or.kr:452/coding/sub3/sub2.asp",
+    "facilityType": "공공(기타)",
+    "seatScale": "6209",
+    "theaterCount": "1",
+    "openedAt": "2002",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   }
 }
