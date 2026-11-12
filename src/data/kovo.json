@@ -1,37 +1,5 @@
 [
   {
-    "id": "kovo_20261112_레드스파크스_vs_하이패스",
-    "title": "[배구] 레드스파크스 vs 하이패스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-12 19:00",
-    "venue": "대전충무체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "daejeon",
-    "genre": "volleyball",
-    "homeTeam": "레드스파크스",
-    "awayTeam": "하이패스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=2&league=201&round=1&homeTeam=2003&awayTeam=2002",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=22&season=023&league=201&gender=2"
-  },
-  {
-    "id": "kovo_20261112_읏맨_vs_스카이워커스",
-    "title": "[배구] 읏맨 vs 스카이워커스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-12 19:00",
-    "venue": "부산강서체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "busan",
-    "genre": "volleyball",
-    "homeTeam": "읏맨",
-    "awayTeam": "스카이워커스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=1&league=201&round=1&homeTeam=1008&awayTeam=1005",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=21&season=023&league=201&gender=1"
-  },
-  {
     "id": "kovo_20261113_VIXTORM_vs_스타즈",
     "title": "[배구] VIXTORM vs 스타즈",
     "image": "/images/volleyball_poster.png",

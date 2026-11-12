@@ -63145,7 +63145,7 @@
     "homepage": "http://www.kintex.com/",
     "facilityType": "공공(기타)",
     "seatScale": "2800",
-    "theaterCount": "12",
+    "theaterCount": "13",
     "openedAt": "2005",
     "amenities": [
       "식당",
@@ -105991,9 +105991,9 @@
     "theaterCount": "3",
     "openedAt": "2001",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "BUNKER1 (벙커1)": {
     "name": "BUNKER1 (벙커1)",
@@ -111795,7 +111795,23 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.6693071,
-    "lng": 126.74568449999992
+    "lng": 126.74568449999992,
+    "phone": "031-995-8036",
+    "homepage": "http://www.kintex.com/",
+    "facilityType": "공공(기타)",
+    "seatScale": "2800",
+    "theaterCount": "13",
+    "openedAt": "2005",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "부천실내체육관": {
     "name": "부천실내체육관",
@@ -118516,7 +118532,25 @@
   "킨텍스 제1전시장 3홀": {
     "name": "킨텍스 제1전시장 3홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "phone": "031-995-8036",
+    "homepage": "http://www.kintex.com/",
+    "lat": 37.6693071,
+    "lng": 126.74568449999992,
+    "facilityType": "공공(기타)",
+    "seatScale": "2800",
+    "theaterCount": "13",
+    "openedAt": "2005",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "전남광주통합특별시예술의전당": {
     "name": "전남광주통합특별시예술의전당",
@@ -118682,7 +118716,9 @@
   "킨텍스 제1전시장 4,5홀": {
     "name": "킨텍스 제1전시장 4,5홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.6693071,
+    "lng": 126.74568449999992
   },
   "엑스코 오디토리움": {
     "name": "엑스코 오디토리움",
@@ -118803,7 +118839,20 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.52112,
-    "lng": 127.12836360000006
+    "lng": 127.12836360000006,
+    "phone": "02-410-1114",
+    "homepage": "http://www.olympicpark.co.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "41376",
+    "theaterCount": "12",
+    "openedAt": "1986",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점"
+    ],
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
   },
   "한국만화박물관 일대": {
     "name": "한국만화박물관 일대",
@@ -119394,5 +119443,20 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "아트파이 라이브하우스": {
+    "name": "아트파이 라이브하우스",
+    "address": "서울특별시 관악구 조원로 123 (신림동)",
+    "lat": 37.4853,
+    "lng": 126.9159,
+    "district": "관악구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }

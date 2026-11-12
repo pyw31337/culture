@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-12T00:42:08.954Z",
-  "runId": "43126212884",
-  "commit": "4c614c418b5299c6cd440e1d76a598ead87e44bd",
+  "generatedAt": "2026-11-12T23:48:36.296Z",
+  "runId": "43328300982",
+  "commit": "d97857857db14590603cc4bd04587cc5ca53608e",
   "failures": [
     {
       "source": "umclass",
@@ -24,69 +24,13 @@
   ],
   "repairs": {
     "attempted": true,
-    "changedRecords": 3,
-    "changedFields": 9,
+    "changedRecords": 1,
+    "changedFields": 1,
     "details": [
       {
-        "id": "perf_지브리_디즈니_영화음악_FESTA_11_13",
-        "source": "interpark.json",
-        "field": "price",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_지브리_디즈니_영화음악_FESTA_11_13",
-        "source": "interpark.json",
-        "field": "priceList",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_지브리_디즈니_영화음악_FESTA_11_13",
-        "source": "interpark.json",
-        "field": "age",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_지브리_디즈니_영화음악_FESTA_11_13",
-        "source": "interpark.json",
-        "field": "ageDetail",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_지브리_디즈니_영화음악_FESTA_11_13",
-        "source": "interpark.json",
-        "field": "runtime",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_지브리_디즈니_영화음악_FESTA_11_13",
+        "id": "perf_맥주_한잔_하실래요",
         "source": "interpark.json",
         "field": "backupPoster",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_지브리_디즈니_영화음악_FESTA_11_13",
-        "source": "interpark.json",
-        "field": "bookingLinks",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_니콜라이_루간스키_피아노_리사이틀",
-        "source": "interpark.json",
-        "field": "bookingLinks",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      },
-      {
-        "id": "perf_시에나_스파이로_첫_내한공연",
-        "source": "interpark.json",
-        "field": "bookingLinks",
         "fromSource": "kopis",
         "reason": "same-title-venue-overlapping-date"
       }
@@ -96,9 +40,9 @@
     {
       "source": "kopis",
       "sample": 120,
-      "missingPrice": 21,
-      "missingAge": 22,
-      "missingRuntime": 23,
+      "missingPrice": 23,
+      "missingAge": 24,
+      "missingRuntime": 25,
       "policy": "warn-and-report-in-github-fallback"
     },
     {
