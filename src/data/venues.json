@@ -1503,9 +1503,9 @@
       "카페",
       "놀이방"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 놀이방"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페, 놀이방"
   },
   "강남씨어터": {
     "name": "강남씨어터",
@@ -4316,9 +4316,9 @@
       "수유실",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페, 편의점"
   },
   "김포아트홀": {
     "name": "김포아트홀",
@@ -6891,9 +6891,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "독립기념관": {
     "name": "독립기념관",
@@ -13003,9 +13003,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행"
   },
   "김영오아트센터": {
     "name": "김영오아트센터",
@@ -61233,7 +61233,7 @@
     "homepage": "https://www.dreamtheatre.co.kr/",
     "facilityType": "민간(대학로 외)",
     "seatScale": "1727",
-    "theaterCount": "2",
+    "theaterCount": "1",
     "openedAt": "2019",
     "amenities": [
       "카페",
@@ -61241,9 +61241,9 @@
       "장애인 화장실",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 장애인 주차, 장애인 화장실, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "서울주문화센터": {
     "name": "서울주문화센터",
@@ -64530,9 +64530,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "경기섬유종합지원센터": {
     "name": "경기섬유종합지원센터",
@@ -64796,9 +64796,9 @@
       "식당",
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "금산다락원 생명의집": {
     "name": "금산다락원 생명의집",
@@ -69151,9 +69151,9 @@
     "theaterCount": "1",
     "openedAt": "2009",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "대전청소년위캔센터": {
     "name": "대전청소년위캔센터",
@@ -118697,7 +118697,9 @@
   "송도컨벤시아 4홀": {
     "name": "송도컨벤시아 4홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.3881764,
+    "lng": 126.6462177
   },
   "부산 광안리해수욕장": {
     "name": "부산 광안리해수욕장",
@@ -118757,7 +118759,9 @@
   "송도컨벤시아 2,3,4홀": {
     "name": "송도컨벤시아 2,3,4홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.3881764,
+    "lng": 126.6462177
   },
   "코엑스 컨퍼런스룸 3, 4층": {
     "name": "코엑스 컨퍼런스룸 3, 4층",
@@ -119359,5 +119363,36 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "클럽 벨포스": {
+    "name": "클럽 벨포스",
+    "address": "부산광역시 부산진구 서전로10번길 61 (부전동)",
+    "lat": 35.155107,
+    "lng": 129.060353,
+    "district": "",
+    "homepage": "https://www.instagram.com/belpos_official",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "인혜야": {
+    "name": "인혜야",
+    "address": "서울특별시 성북구 동소문로2길 31 (동소문동2가)",
+    "lat": 37.587954,
+    "lng": 127.008054,
+    "district": "성북구",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   }
 }

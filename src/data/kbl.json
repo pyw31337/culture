@@ -1,33 +1,5 @@
 [
   {
-    "id": "kbl_20261111_창원_LG_vs_서울_SK",
-    "title": "창원 LG vs 서울 SK",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-11 19:00",
-    "venue": "창원체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "창원 LG",
-    "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/lg_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
-  },
-  {
-    "id": "kbl_20261111_부산KCC_vs_타이베이_푸본_브레이브스",
-    "title": "부산KCC vs 타이베이 푸본 브레이브스",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-11 19:10",
-    "venue": "부산 사직실내체육관",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "busan",
-    "genre": "basketball",
-    "homeTeam": "부산KCC",
-    "awayTeam": "타이베이 푸본 브레이브스",
-    "homeTeamLogo": "/images/logos/kbl/kcc.svg",
-    "awayTeamLogo": "/images/logos/kbl/tfb.svg"
-  },
-  {
     "id": "kbl_20261112_대구_한국가스공사_vs_고양_소노",
     "title": "대구 한국가스공사 vs 고양 소노",
     "image": "/images/kbl_poster.png",
