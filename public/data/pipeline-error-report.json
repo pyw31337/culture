@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-12T23:48:36.296Z",
-  "runId": "43328300982",
-  "commit": "d97857857db14590603cc4bd04587cc5ca53608e",
+  "generatedAt": "2026-11-13T23:49:14.592Z",
+  "runId": "43526841944",
+  "commit": "a412242285f96907c00e07334a66bf0d3c54672d",
   "failures": [
     {
       "source": "umclass",
@@ -24,17 +24,9 @@
   ],
   "repairs": {
     "attempted": true,
-    "changedRecords": 1,
-    "changedFields": 1,
-    "details": [
-      {
-        "id": "perf_맥주_한잔_하실래요",
-        "source": "interpark.json",
-        "field": "backupPoster",
-        "fromSource": "kopis",
-        "reason": "same-title-venue-overlapping-date"
-      }
-    ]
+    "changedRecords": 0,
+    "changedFields": 0,
+    "details": []
   },
   "detailCoverage": [
     {
@@ -48,9 +40,9 @@
     {
       "source": "interpark",
       "sample": 120,
-      "missingPrice": 113,
-      "missingAge": 112,
-      "missingRuntime": 112,
+      "missingPrice": 112,
+      "missingAge": 111,
+      "missingRuntime": 111,
       "policy": "warn-and-report"
     }
   ],

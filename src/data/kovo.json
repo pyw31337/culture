@@ -1,37 +1,5 @@
 [
   {
-    "id": "kovo_20261113_VIXTORM_vs_스타즈",
-    "title": "[배구] VIXTORM vs 스타즈",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-13 19:00",
-    "venue": "수원체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "gyeonggi",
-    "genre": "volleyball",
-    "homeTeam": "VIXTORM",
-    "awayTeam": "스타즈",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=1&league=201&round=1&homeTeam=1006&awayTeam=1004",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=23&season=023&league=201&gender=1"
-  },
-  {
-    "id": "kovo_20261113_알토스_vs_핑크스파이더스",
-    "title": "[배구] 알토스 vs 핑크스파이더스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-13 19:00",
-    "venue": "화성종합실내체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "gyeonggi",
-    "genre": "volleyball",
-    "homeTeam": "알토스",
-    "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=2&league=201&round=1&homeTeam=2006&awayTeam=2004",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=24&season=023&league=201&gender=2"
-  },
-  {
     "id": "kovo_20261114_점보스_vs_블루팡스",
     "title": "[배구] 점보스 vs 블루팡스",
     "image": "/images/volleyball_poster.png",

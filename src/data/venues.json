@@ -244,9 +244,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페, 편의점"
   },
   "예술의전당": {
     "name": "예술의전당",
@@ -1172,7 +1172,21 @@
     "lng": 126.888832,
     "mapped_region_id": "seoul",
     "phone": "02-2029-1700",
-    "homepage": "http://www.guroartsvalley.or.kr/"
+    "homepage": "http://www.guroartsvalley.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1124",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: N / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "브이씨어터": {
     "name": "브이씨어터",
@@ -52628,7 +52642,21 @@
     "name": "구로아트밸리예술극장",
     "district": "구로구",
     "phone": "02-2029-1700",
-    "homepage": "http://www.guroartsvalley.or.kr/"
+    "homepage": "http://www.guroartsvalley.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1124",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: N / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "충청남도 홍성군": {
     "address": "충남 홍성군 홍북읍 상하리 산 1-2",
@@ -53087,7 +53115,17 @@
     "lng": 127.04299979999996,
     "district": "강남구",
     "phone": "02-543-0826",
-    "homepage": "http://www.saart.co/kr/main.php"
+    "homepage": "http://www.saart.co/kr/main.php",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "187",
+    "theaterCount": "1",
+    "openedAt": "2023",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: N / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "강북문화예술회관 강북진달래홀": {
     "name": "강북문화예술회관 강북진달래홀",
@@ -64273,12 +64311,12 @@
     "homepage": "https://stccenter.or.kr/",
     "facilityType": "공공(기타)",
     "seatScale": "352",
-    "theaterCount": "2",
+    "theaterCount": "3",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "강동문화복지회관": {
     "name": "강동문화복지회관",
@@ -64760,9 +64798,9 @@
       "장애인 주차",
       "장애인 화장실"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "부안예술회관": {
     "name": "부안예술회관",
@@ -68662,7 +68700,21 @@
     "lng": 126.88896820000002,
     "district": "구로구",
     "phone": "02-2029-1700",
-    "homepage": "http://www.guroartsvalley.or.kr/"
+    "homepage": "http://www.guroartsvalley.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1124",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: N / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "통영국제음악당": {
     "name": "통영국제음악당",
@@ -72869,7 +72921,7 @@
   },
   "민들레소극장 [광주]": {
     "name": "민들레소극장 [광주]",
-    "address": "광주광역시 동구 동계천로 111 (동명동)",
+    "address": "전남광주통합특별시 동구 동계천로 111 (동명동)",
     "lat": 35.1508402,
     "lng": 126.9227601,
     "district": "동구",
@@ -80027,9 +80079,9 @@
       "카페",
       "편의점"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페, 편의점"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페, 편의점"
   },
   "국립민속박물관 파주": {
     "name": "국립민속박물관 파주",
@@ -93361,7 +93413,16 @@
     "lat": 37.5111482004149,
     "lng": 127.043023426255,
     "phone": "02-543-0826",
-    "homepage": "http://www.saart.co/kr/main.php"
+    "homepage": "http://www.saart.co/kr/main.php",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "187",
+    "theaterCount": "1",
+    "openedAt": "2023",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: N / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "장충체육관 (장충체육관)": {
     "name": "장충체육관 (장충체육관)",
@@ -99484,7 +99545,21 @@
     "lat": 37.4966705283723,
     "lng": 126.888837855958,
     "phone": "02-2029-1700",
-    "homepage": "http://www.guroartsvalley.or.kr/"
+    "homepage": "http://www.guroartsvalley.or.kr/",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "1124",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "카페",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "엘리베이터"
+    ],
+    "parking": "주차장: N / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(문예회관) · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "통영국제음악당 (콘서트홀)": {
     "name": "통영국제음악당 (콘서트홀)",
@@ -119458,5 +119533,40 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "가평문화예술회관": {
+    "name": "가평문화예술회관",
+    "address": "경기도 가평군 가평읍 문화로 131",
+    "lat": 37.825131,
+    "lng": 127.50623270000006,
+    "district": "가평군",
+    "phone": "031-8078-8076",
+    "homepage": "https://www.gpfmc.or.kr/sub2/sub2_1-1.php",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "891",
+    "theaterCount": "2",
+    "openedAt": "1998",
+    "amenities": [
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
+  },
+  "부전교회": {
+    "name": "부전교회",
+    "address": "부산광역시 동래구 중앙대로 1276 (사직동)",
+    "lat": 35.200076,
+    "lng": 129.078527,
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   }
 }

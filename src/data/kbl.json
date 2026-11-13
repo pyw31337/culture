@@ -1,19 +1,5 @@
 [
   {
-    "id": "kbl_20261113_원주_DB_vs_수원_KT",
-    "title": "원주 DB vs 수원 KT",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-13 19:00",
-    "venue": "원주DB프로미아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "etc",
-    "genre": "basketball",
-    "homeTeam": "원주 DB",
-    "awayTeam": "수원 KT",
-    "homeTeamLogo": "/images/logos/kbl/db_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kt_official.svg"
-  },
-  {
     "id": "kbl_20261114_부산_KCC_vs_서울_SK",
     "title": "부산 KCC vs 서울 SK",
     "image": "/images/kbl_poster.png",
