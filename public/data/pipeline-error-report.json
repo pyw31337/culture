@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-13T23:49:14.592Z",
-  "runId": "43526841944",
-  "commit": "a412242285f96907c00e07334a66bf0d3c54672d",
+  "generatedAt": "2026-11-14T22:34:21.225Z",
+  "runId": "43646539482",
+  "commit": "0cd547de564bafc715034e86b38ceea715239ded",
   "failures": [
     {
       "source": "umclass",
@@ -40,9 +40,9 @@
     {
       "source": "interpark",
       "sample": 120,
-      "missingPrice": 112,
-      "missingAge": 111,
-      "missingRuntime": 111,
+      "missingPrice": 113,
+      "missingAge": 112,
+      "missingRuntime": 112,
       "policy": "warn-and-report"
     }
   ],

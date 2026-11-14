@@ -984,11 +984,19 @@
   },
   "북촌나래홀": {
     "name": "북촌나래홀",
-    "address": "서울 종로구 창덕궁길 29",
+    "address": "서울특별시 종로구 창덕궁길 29 - 38",
+    "lat": 37.5788502465793,
+    "lng": 126.988448176969,
     "district": "종로구",
-    "lat": 37.5788394333206,
-    "lng": 126.988434593589,
-    "mapped_region_id": "seoul"
+    "phone": "02-988-2258",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "200",
+    "theaterCount": "1",
+    "openedAt": "2010",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "뮤지컬펍 스폿라이트": {
     "name": "뮤지컬펍 스폿라이트",
@@ -61834,9 +61842,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "성산아트홀": {
     "name": "성산아트홀",
@@ -62966,9 +62974,9 @@
   },
   "용산아트홀": {
     "name": "용산아트홀",
-    "address": "서울 용산구 녹사평대로 150",
-    "lat": 37.5324522944579,
-    "lng": 126.990478820837,
+    "address": "서울특별시 용산구 녹사평대로 150(이태원동 34-87)",
+    "lat": 37.5324850802063,
+    "lng": 126.990347010138,
     "district": "용산구",
     "phone": "02-2199-7260",
     "homepage": "http://art.yongsan.go.kr",
@@ -62982,9 +62990,9 @@
       "놀이방",
       "장애인 주차"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 편의점, 놀이방, 장애인 주차"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 카페, 편의점, 놀이방"
   },
   "GB가빈아트홀": {
     "name": "GB가빈아트홀",
@@ -78763,9 +78771,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "예술의전당(한가람미술관 제3전시실)": {
     "name": "예술의전당(한가람미술관 제3전시실)",
@@ -107301,8 +107309,8 @@
     "district": "",
     "homepage": "https://www.jinculture.or.kr/sub.php?code=77",
     "facilityType": "공공(문예회관)",
-    "seatScale": "499",
-    "theaterCount": "1",
+    "seatScale": "649",
+    "theaterCount": "2",
     "openedAt": "",
     "amenities": [],
     "parking": "주차장: N",
@@ -119568,5 +119576,44 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "화성시어린이문화센터 아이누리극장": {
+    "name": "화성시어린이문화센터 아이누리극장",
+    "address": "경기도 화성시 봉담읍 동화길 146",
+    "lat": 37.2123698,
+    "lng": 126.9607136,
+    "district": "화성시",
+    "phone": "031-5183-3200",
+    "homepage": "https://childrenjob.hscity.go.kr/performance/performance_list.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "224",
+    "theaterCount": "1",
+    "openedAt": "2019",
+    "amenities": [
+      "식당",
+      "카페",
+      "놀이방",
+      "수유실",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 놀이방"
+  },
+  "홍천종합체육관": {
+    "name": "홍천종합체육관",
+    "address": "강원특별자치도 홍천군 홍천읍 태학여내길 22",
+    "lat": 37.708693,
+    "lng": 127.908122,
+    "district": "",
+    "homepage": "https://www.hongcheon.go.kr/www/contents.do?key=399",
+    "facilityType": "공공(기타)",
+    "seatScale": "1360",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   }
 }
