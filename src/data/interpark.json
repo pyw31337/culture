@@ -1267,61 +1267,6 @@
     "lastEnriched": "2026-07-13T04:31:22.012Z"
   },
   {
-    "id": "perf_2026_부천문화재단_기획공연_매직댄스컬_도씨네공방",
-    "title": "2026 부천문화재단 기획공연 - 매직댄스컬 〈도씨네공방〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012972_p.gif",
-    "date": "2026.11.12 ~ 2026.11.14",
-    "venue": "부천시민회관 소공연장",
-    "link": "https://tickets.interpark.com/goods/26012972",
-    "region": "경기",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-10T23:04:15.085Z"
-  },
-  {
-    "id": "perf_사이먼_래틀_경_바이에른_방송교향악단_11_12",
-    "title": "사이먼 래틀 경 ＆ 바이에른 방송교향악단 (11/12)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26006932_p.gif",
-    "date": "2026.11.12 ~ 2026.11.12",
-    "venue": "예술의전당 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26006932",
-    "region": "기타",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-10T23:04:15.087Z"
-  },
-  {
-    "id": "perf_금호아트홀_아름다운_목요일_프란츠_슈베르트_X_문지영_Piano",
-    "title": "금호아트홀 아름다운 목요일 - 프란츠 슈베르트 X 문지영 Piano",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016306_p.gif",
-    "date": "2026.11.12 ~ 2026.11.12",
-    "venue": "금호아트홀 연세",
-    "link": "https://tickets.interpark.com/goods/25016306",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-10T23:04:16.152Z"
-  },
-  {
-    "id": "perf_2026_브런치클래식_가을_그_쓸쓸함에_대하여_군포",
-    "title": "2026 브런치클래식 Ⅵ. 가을 그 쓸쓸함에 대하여 - 군포",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010989_p.gif",
-    "date": "2026.11.12 ~ 2026.11.12",
-    "venue": "군포문화예술회관 수리홀",
-    "link": "https://tickets.interpark.com/goods/26010989",
-    "region": "gyeonggi",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-10T23:04:16.153Z"
-  },
-  {
-    "id": "perf_ACIx인천시향_공동기획_조조_클래식",
-    "title": "ACIx인천시향 공동기획 〈조조早朝 클래식〉 Ⅳ",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26001012_p.gif",
-    "date": "2026.11.12 ~ 2026.11.12",
-    "venue": "아트센터인천 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26001012",
-    "region": "incheon",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-10T23:04:17.220Z"
-  },
-  {
     "id": "perf_뮤지컬_사의_찬미_춘천",
     "title": "뮤지컬 〈사의 찬미〉 - 춘천",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013855_p.gif",
@@ -1885,6 +1830,39 @@
     "lastApiEnriched": "2026-11-14T22:12:17.125Z"
   },
   {
+    "id": "perf_Venna_내한공연_Venna_Live_in_Seoul",
+    "title": "Venna 내한공연 ［Venna Live in Seoul］",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013922_p.gif",
+    "date": "2026.11.17 ~ 2026.11.17",
+    "venue": "KT＆G 상상마당 라이브홀",
+    "link": "https://tickets.interpark.com/goods/26013922",
+    "region": "기타",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-14T22:12:18.135Z"
+  },
+  {
+    "id": "perf_2026_이달의_공연_사운드트립_11월_앰비규어스댄스컴퍼니",
+    "title": "2026 이달의 공연 ＇사운드트립＇_11월 앰비규어스댄스컴퍼니",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013832_p.gif",
+    "date": "2026.11.17 ~ 2026.11.17",
+    "venue": "구로아트밸리 예술극장",
+    "link": "https://tickets.interpark.com/goods/26013832",
+    "region": "서울",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-14T22:12:18.137Z"
+  },
+  {
+    "id": "perf_세상의_모든_플레이리스트_조성현_with_문정재_황호규_김종국",
+    "title": "세상의 모든 플레이리스트 - 조성현 with 문정재, 황호규, 김종국",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006316_p.gif",
+    "date": "2026.11.17 ~ 2026.11.17",
+    "venue": "카페 플레이리스트",
+    "link": "https://tickets.interpark.com/goods/26006316",
+    "region": "gangwon",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-14T22:12:19.146Z"
+  },
+  {
     "id": "perf_2026_10번째_구로꿈나무인형극제_덕구야_장터가자",
     "title": "2026 10번째 구로꿈나무인형극제 〈덕구야 장터가자〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013901_p.gif",
@@ -2026,39 +2004,6 @@
     "region": "경기",
     "genre": "leisure",
     "lastApiEnriched": "2026-11-10T23:04:46.028Z"
-  },
-  {
-    "id": "perf_Venna_내한공연_Venna_Live_in_Seoul",
-    "title": "Venna 내한공연 ［Venna Live in Seoul］",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013922_p.gif",
-    "date": "2026.11.17 ~ 2026.11.17",
-    "venue": "KT＆G 상상마당 라이브홀",
-    "link": "https://tickets.interpark.com/goods/26013922",
-    "region": "기타",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-14T22:12:18.135Z"
-  },
-  {
-    "id": "perf_2026_이달의_공연_사운드트립_11월_앰비규어스댄스컴퍼니",
-    "title": "2026 이달의 공연 ＇사운드트립＇_11월 앰비규어스댄스컴퍼니",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013832_p.gif",
-    "date": "2026.11.17 ~ 2026.11.17",
-    "venue": "구로아트밸리 예술극장",
-    "link": "https://tickets.interpark.com/goods/26013832",
-    "region": "서울",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-14T22:12:18.137Z"
-  },
-  {
-    "id": "perf_세상의_모든_플레이리스트_조성현_with_문정재_황호규_김종국",
-    "title": "세상의 모든 플레이리스트 - 조성현 with 문정재, 황호규, 김종국",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006316_p.gif",
-    "date": "2026.11.17 ~ 2026.11.17",
-    "venue": "카페 플레이리스트",
-    "link": "https://tickets.interpark.com/goods/26006316",
-    "region": "gangwon",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-14T22:12:19.146Z"
   },
   {
     "id": "perf_2026_커피콘서트_뮤지컬_라흐마니노프_인천",
@@ -4766,6 +4711,106 @@
     "lastApiEnriched": "2026-11-14T22:12:21.164Z"
   },
   {
+    "id": "perf_유성호_피아노_리사이틀_코리안_영_아티스트_시리즈",
+    "title": "유성호 피아노 리사이틀 - 코리안 영 아티스트 시리즈 Ⅵ",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010937_p.gif",
+    "date": "2026.12.14 ~ 2026.12.14",
+    "venue": "명동대성당 내 파밀리아 채플",
+    "link": "https://tickets.interpark.com/goods/26010937",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-12T23:26:12.977Z"
+  },
+  {
+    "id": "perf_서울_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
+    "title": "［서울］ 가족뮤지컬 〈로보카폴리 - 브룸스타운의 에너지를 지켜라!〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013178_p.gif",
+    "date": "2026.12.12 ~ 2026.12.13",
+    "venue": "영등포아트홀",
+    "link": "https://tickets.interpark.com/goods/26013178",
+    "region": "서울",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-12T23:26:03.560Z"
+  },
+  {
+    "id": "perf_오리지널_과학마술콘서트_시즌2_전주",
+    "title": "오리지널 과학마술콘서트 시즌2 (전주)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012705_p.gif",
+    "date": "2026.12.12 ~ 2026.12.13",
+    "venue": "덕진예술회관",
+    "link": "https://tickets.interpark.com/goods/26012705",
+    "region": "기타",
+    "genre": "leisure",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301006_260915_145751.gif",
+    "lastApiEnriched": "2026-11-12T23:26:04.609Z"
+  },
+  {
+    "id": "perf_뮤지컬_소맥거핀_찰칵_세계여행_서울어린이대공원",
+    "title": "뮤지컬 〈소맥거핀 : 찰칵! 세계여행〉 - 서울어린이대공원",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013954_p.gif",
+    "date": "2026.12.12 ~ 2027.03.01",
+    "venue": "서울어린이대공원 아트센터",
+    "link": "https://tickets.interpark.com/goods/26013954",
+    "region": "서울",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-12T23:26:04.607Z"
+  },
+  {
+    "id": "perf_쇼뮤지컬_시크릿쥬쥬_별의보석_잃어버린_빛을_찾아서_대구",
+    "title": "쇼뮤지컬 〈시크릿쥬쥬 : 별의보석〉 - 잃어버린 빛을 찾아서 - 대구",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013316_p.gif",
+    "date": "2026.12.12 ~ 2026.12.13",
+    "venue": "대구어린이세상 꾀꼬리극장",
+    "link": "https://tickets.interpark.com/goods/26013316",
+    "region": "대구",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-12T23:26:05.654Z"
+  },
+  {
+    "id": "perf_뮤지컬_헬로카봇_카봇크루가_되어줘_광주",
+    "title": "뮤지컬 헬로카봇 〈카봇크루가 되어줘!〉 - 광주",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013196_p.gif",
+    "date": "2026.12.12 ~ 2026.12.13",
+    "venue": "광주5.18기념문화센터 민주홀",
+    "link": "https://tickets.interpark.com/goods/26013196",
+    "region": "광주",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-12T23:26:05.653Z"
+  },
+  {
+    "id": "perf_2026_가족뮤지컬_겨울이야기_서울_양천",
+    "title": "2026. 가족뮤지컬 〈겨울이야기〉 - 서울 양천",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26008881_p.gif",
+    "date": "2026.12.12 ~ 2026.12.13",
+    "venue": "양천문화회관 대극장",
+    "link": "https://tickets.interpark.com/goods/26008881",
+    "region": "서울",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-12T23:26:06.700Z"
+  },
+  {
+    "id": "perf_제주_라이브_시트콤_뮤지컬_인싸가족",
+    "title": "［제주］ 라이브 시트콤 뮤지컬 〈인싸가족〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013239_p.gif",
+    "date": "2026.12.12 ~ 2026.12.13",
+    "venue": "제주 한라아트홀 대극장",
+    "link": "https://tickets.interpark.com/goods/26013239",
+    "region": "제주",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-12T23:26:06.700Z"
+  },
+  {
+    "id": "perf_판소리음악극_긴긴밤_고양",
+    "title": "판소리음악극 〈긴긴밤〉 - 고양",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26014104_p.gif",
+    "date": "2026.12.12 ~ 2026.12.13",
+    "venue": "고양어울림누리 별모래극장",
+    "link": "https://tickets.interpark.com/goods/26014104",
+    "region": "경기",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-12T23:26:07.745Z"
+  },
+  {
     "id": "perf_뮤지컬_두_도시_이야기",
     "title": "뮤지컬 〈두 도시 이야기〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013098_p.gif",
@@ -4777,17 +4822,6 @@
     "lastApiEnriched": "2026-11-14T22:11:59.954Z"
   },
   {
-    "id": "perf_2026_서울카페쇼",
-    "title": "2026 서울카페쇼",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010190_p.gif",
-    "date": "2026.11.11 ~ 2026.11.14",
-    "venue": "서울 코엑스 전관",
-    "link": "https://tickets.interpark.com/goods/26010190",
-    "region": "서울",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-10T23:04:11.884Z"
-  },
-  {
     "id": "perf_2026_AUCTION_SHOW",
     "title": "2026 AUCTION SHOW",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26014019_p.gif",
@@ -4797,17 +4831,6 @@
     "region": "서울",
     "genre": "exhibition",
     "lastApiEnriched": "2026-11-14T22:11:59.955Z"
-  },
-  {
-    "id": "perf_제15회_월드커피포럼",
-    "title": "제15회 월드커피포럼",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26011281_p.gif",
-    "date": "2026.11.11 ~ 2026.11.14",
-    "venue": "코엑스 컨퍼런스룸 3, 4층",
-    "link": "https://tickets.interpark.com/goods/26011281",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-10T23:04:12.952Z"
   },
   {
     "id": "perf_뮤지컬_사춘기",
@@ -4852,17 +4875,6 @@
     "region": "기타",
     "genre": "musical",
     "lastApiEnriched": "2026-11-14T22:11:55.916Z"
-  },
-  {
-    "id": "perf_2026_집에_사는_몬스터",
-    "title": "2026 집에 사는 몬스터",
-    "image": "//ticketimage.interpark.com/Play/image/large/L0/L0000151_p.gif",
-    "date": "2026.11.07 ~ 2026.11.14",
-    "venue": "LG아트센터 서울 U+ 스테이지",
-    "link": "https://tickets.interpark.com/goods/L0000151",
-    "region": "서울",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-10T23:04:06.548Z"
   },
   {
     "id": "perf_연극_보잉보잉_수원",
@@ -4929,17 +4941,6 @@
     "region": "기타",
     "genre": "play",
     "lastApiEnriched": "2026-11-14T22:11:49.857Z"
-  },
-  {
-    "id": "perf_연극_에너미",
-    "title": "연극〈에너미〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/P0/P0004845_p.gif",
-    "date": "2026.10.26 ~ 2026.11.14",
-    "venue": "세종문화회관 M씨어터",
-    "link": "https://tickets.interpark.com/goods/P0004845",
-    "region": "세종",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-10T23:04:00.146Z"
   },
   {
     "id": "perf_빈자리_없음",
@@ -5095,17 +5096,6 @@
     "region": "경기",
     "genre": "exhibition",
     "lastApiEnriched": "2026-11-14T22:11:47.838Z"
-  },
-  {
-    "id": "perf_뮤지컬_남벌",
-    "title": "뮤지컬 〈남벌〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012901_p.gif",
-    "date": "2026.10.23 ~ 2026.11.14",
-    "venue": "티켓링크 1975 씨어터",
-    "link": "https://tickets.interpark.com/goods/26012901",
-    "region": "기타",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-10T23:03:56.946Z"
   },
   {
     "id": "perf_연극_오_럭키데이_부산",
@@ -5325,7 +5315,7 @@
     "link": "https://tickets.interpark.com/goods/25003978",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:22:50.433Z"
+    "lastApiEnriched": "2026-11-15T22:43:43.476Z"
   },
   {
     "id": "perf_난타_NANTA_명동공연",
@@ -5336,7 +5326,7 @@
     "link": "https://tickets.interpark.com/goods/22006637",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:20:10.653Z"
+    "lastApiEnriched": "2026-11-15T22:41:02.548Z"
   },
   {
     "id": "perf_이은결_30주년_ONE_OF_ONE_성남",
@@ -5391,7 +5381,7 @@
     "link": "https://tickets.interpark.com/goods/24014659",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:22:29.067Z"
+    "lastApiEnriched": "2026-11-15T22:43:21.953Z"
   },
   {
     "id": "perf_뮤지컬_광화문연가_수원",
@@ -5457,7 +5447,7 @@
     "link": "https://tickets.interpark.com/goods/25002567",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:22:42.956Z"
+    "lastApiEnriched": "2026-11-15T22:43:35.942Z"
   },
   {
     "id": "perf_브루노_마스_내한공연",
@@ -5699,7 +5689,7 @@
     "link": "https://tickets.interpark.com/goods/25005387",
     "region": "기타",
     "genre": "play",
-    "lastApiEnriched": "2026-11-12T00:22:51.502Z"
+    "lastApiEnriched": "2026-11-15T22:43:44.551Z"
   },
   {
     "id": "perf_뮤직드라마_불편한_편의점_김호연_작가의_밀리언셀러_소설이_공연으로_재탄생_서울",
@@ -5710,7 +5700,7 @@
     "link": "https://tickets.interpark.com/goods/26002626",
     "region": "서울",
     "genre": "play",
-    "lastApiEnriched": "2026-11-12T00:20:26.686Z"
+    "lastApiEnriched": "2026-11-15T22:41:18.698Z"
   },
   {
     "id": "perf_코믹추리스릴러_연극_행오버_12년째_공연_중",
@@ -5721,7 +5711,7 @@
     "link": "https://tickets.interpark.com/goods/26002148",
     "region": "기타",
     "genre": "play",
-    "lastApiEnriched": "2026-11-12T00:20:01.026Z"
+    "lastApiEnriched": "2026-11-15T22:40:52.857Z"
   },
   {
     "id": "perf_연극_내가_하면_로맨스",
@@ -5743,7 +5733,7 @@
     "link": "https://tickets.interpark.com/goods/22001159",
     "region": "기타",
     "genre": "play",
-    "lastApiEnriched": "2026-11-12T00:20:09.048Z"
+    "lastApiEnriched": "2026-11-15T22:41:00.934Z"
   },
   {
     "id": "perf_국민연극_라이어_상명아트홀_1관",
@@ -5754,7 +5744,7 @@
     "link": "https://tickets.interpark.com/goods/24017527",
     "region": "기타",
     "genre": "play",
-    "lastApiEnriched": "2026-11-12T00:22:34.407Z"
+    "lastApiEnriched": "2026-11-15T22:43:27.333Z"
   },
   {
     "id": "perf_피지컬_시어터_네이처_오브_포겟팅_연극열전10_열_번째_작품",
@@ -6029,7 +6019,7 @@
     "link": "https://tickets.interpark.com/goods/25005022",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:46.161Z"
+    "lastApiEnriched": "2026-11-15T22:43:39.171Z"
   },
   {
     "id": "perf_제16회_광주비엔날레",
@@ -6062,7 +6052,7 @@
     "link": "https://tickets.interpark.com/goods/26010687",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:07.444Z"
+    "lastApiEnriched": "2026-11-15T22:40:59.321Z"
   },
   {
     "id": "perf_브래드_월스_사진전",
@@ -6172,7 +6162,7 @@
     "link": "https://tickets.interpark.com/goods/25000747",
     "region": "경기",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:40.818Z"
+    "lastApiEnriched": "2026-11-15T22:43:33.790Z"
   },
   {
     "id": "perf_현대회화_하이라이트_시대의_초상",
@@ -6239,7 +6229,7 @@
     "link": "https://tickets.interpark.com/goods/25005034",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:46.161Z"
+    "lastApiEnriched": "2026-11-15T22:43:39.171Z"
   },
   {
     "id": "perf_국립중앙박물관_그리스_로마_특별전",
@@ -6261,7 +6251,7 @@
     "link": "https://tickets.interpark.com/goods/22006119",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:09.582Z"
+    "lastApiEnriched": "2026-11-15T22:41:01.472Z"
   },
   {
     "id": "perf_난타_NANTA_홍대공연",
@@ -6272,7 +6262,7 @@
     "link": "https://tickets.interpark.com/goods/23012005",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:21:34.562Z"
+    "lastApiEnriched": "2026-11-15T22:42:27.056Z"
   },
   {
     "id": "perf_코믹_마샬아츠_퍼포먼스_점프_JUMP",
@@ -6283,7 +6273,7 @@
     "link": "https://tickets.interpark.com/goods/24015236",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:22:28.000Z"
+    "lastApiEnriched": "2026-11-15T22:43:20.877Z"
   },
   {
     "id": "perf_선물_빈예서_연말_콘서트",
@@ -6372,7 +6362,7 @@
     "link": "https://tickets.interpark.com/goods/24018594",
     "region": "기타",
     "genre": "classic",
-    "lastApiEnriched": "2026-11-12T00:22:41.887Z"
+    "lastApiEnriched": "2026-11-15T22:43:34.867Z"
   },
   {
     "id": "perf_관람일_지정_할인_30_대구미술관_입장권",
@@ -6450,7 +6440,7 @@
     "link": "https://tickets.interpark.com/goods/23017010",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:19.595Z"
+    "lastApiEnriched": "2026-11-15T22:42:11.980Z"
   },
   {
     "id": "perf_백제문화전당_상설전시_빛으로_잇는_시간_백제",
@@ -6495,7 +6485,7 @@
     "link": "https://tickets.interpark.com/goods/22009178",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:11.189Z"
+    "lastApiEnriched": "2026-11-15T22:41:03.086Z"
   },
   {
     "id": "perf_경주_루지월드_레이저_아레나_이용권_패키지",
@@ -6616,7 +6606,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002052",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:45.793Z"
+    "lastApiEnriched": "2026-11-15T22:42:38.359Z"
   },
   {
     "id": "perf_브릭캠퍼스_부산",
@@ -6627,7 +6617,7 @@
     "link": "https://tickets.interpark.com/goods/25001827",
     "region": "부산",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:37.615Z"
+    "lastApiEnriched": "2026-11-15T22:43:30.563Z"
   },
   {
     "id": "perf_크리스마스_영화음악_캐롤_FESTA_대전",
@@ -6649,7 +6639,7 @@
     "link": "https://tickets.interpark.com/goods/21009108",
     "region": "제주",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:07.978Z"
+    "lastApiEnriched": "2026-11-15T22:40:59.859Z"
   },
   {
     "id": "perf_2026_V_O_S_전국투어_콘서트_제_2회_동창회_대구_경산",
@@ -6671,7 +6661,7 @@
     "link": "https://tickets.interpark.com/goods/24013886",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:22:26.930Z"
+    "lastApiEnriched": "2026-11-15T22:43:19.800Z"
   },
   {
     "id": "perf_2026_V_O_S_전국투어_콘서트_제_2회_동창회_천안",
@@ -6715,7 +6705,7 @@
     "link": "https://tickets.interpark.com/goods/22014959",
     "region": "기타",
     "genre": "musical",
-    "lastApiEnriched": "2026-11-12T00:20:12.258Z"
+    "lastApiEnriched": "2026-11-15T22:41:04.162Z"
   },
   {
     "id": "perf_첫사랑_레시피_대전",
@@ -6748,7 +6738,7 @@
     "link": "https://tickets.interpark.com/goods/24017212",
     "region": "기타",
     "genre": "concert",
-    "lastApiEnriched": "2026-11-12T00:22:35.477Z"
+    "lastApiEnriched": "2026-11-15T22:43:28.409Z"
   },
   {
     "id": "perf_니콜라이_루간스키_피아노_리사이틀_통영",
@@ -6770,7 +6760,7 @@
     "link": "https://tickets.interpark.com/goods/23017472",
     "region": "기타",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:46.861Z"
+    "lastApiEnriched": "2026-11-15T22:42:39.437Z"
   },
   {
     "id": "perf_미묘하게_열린_어둠안에서_이타미_준",
@@ -6895,17 +6885,6 @@
     "lastApiEnriched": "2026-11-12T23:26:28.669Z"
   },
   {
-    "id": "perf_유성호_피아노_리사이틀_코리안_영_아티스트_시리즈",
-    "title": "유성호 피아노 리사이틀 - 코리안 영 아티스트 시리즈 Ⅵ",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010937_p.gif",
-    "date": "2026.12.14 ~ 2026.12.14",
-    "venue": "명동대성당 내 파밀리아 채플",
-    "link": "https://tickets.interpark.com/goods/26010937",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-12T23:26:12.977Z"
-  },
-  {
     "id": "perf_KBS교향악단_제833회_정기연주회",
     "title": "KBS교향악단 제833회 정기연주회",
     "image": "https://ticketimage.interpark.com/Play/image/large/25/25017207_p.gif",
@@ -6992,17 +6971,6 @@
     "region": "gyeonggi",
     "genre": "concert",
     "lastApiEnriched": "2026-11-12T23:26:29.714Z"
-  },
-  {
-    "id": "perf_2026_브런치_콘서트_하반기_용인",
-    "title": "2026 브런치 콘서트 (하반기) - 용인",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009116_p.gif",
-    "date": "2026.09.12 ~ 2026.11.14",
-    "venue": "용인시 평생학습관 큰어울마당",
-    "link": "https://tickets.interpark.com/goods/26009116",
-    "region": "gyeonggi",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-13T23:28:42.419Z"
   },
   {
     "id": "perf_2026_키즈_마티네_콘서트_12월_김포",
@@ -7277,7 +7245,7 @@
     "link": "https://tickets.interpark.com/goods/23000654",
     "region": "seoul",
     "genre": "classic",
-    "lastApiEnriched": "2026-11-12T00:20:14.398Z"
+    "lastApiEnriched": "2026-11-15T22:41:06.316Z"
   },
   {
     "id": "perf_소풍_창경궁_야경투어",
@@ -7288,7 +7256,7 @@
     "link": "https://tickets.interpark.com/goods/23008852",
     "region": "seoul",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:50.739Z"
+    "lastApiEnriched": "2026-11-15T22:41:42.915Z"
   },
   {
     "id": "perf_경희궁_인문학산책",
@@ -7299,7 +7267,7 @@
     "link": "https://tickets.interpark.com/goods/24005471",
     "region": "seoul",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:10.902Z"
+    "lastApiEnriched": "2026-11-15T22:43:03.653Z"
   },
   {
     "id": "perf_국립_고궁박물관_인문학산책",
@@ -7310,7 +7278,7 @@
     "link": "https://tickets.interpark.com/goods/22017409",
     "region": "seoul",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:12.793Z"
+    "lastApiEnriched": "2026-11-15T22:41:04.699Z"
   },
   {
     "id": "perf_국립중앙박물관_이슬람_미술_특별전",
@@ -7332,7 +7300,7 @@
     "link": "https://tickets.interpark.com/goods/23017278",
     "region": "seoul",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:54.875Z"
+    "lastApiEnriched": "2026-11-15T22:42:47.510Z"
   },
   {
     "id": "perf_서울역사박물관_인문학산책",
@@ -7343,7 +7311,7 @@
     "link": "https://tickets.interpark.com/goods/23017412",
     "region": "seoul",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:47.395Z"
+    "lastApiEnriched": "2026-11-15T22:42:39.976Z"
   },
   {
     "id": "perf_마술집_송도",
@@ -7398,7 +7366,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001381",
     "region": "gyeonggi",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:00.893Z"
+    "lastApiEnriched": "2026-11-15T22:41:53.143Z"
   },
   {
     "id": "perf_한국공예박물관_공예체험",
@@ -7465,7 +7433,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001507",
     "region": "chungnam",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:26.932Z"
+    "lastApiEnriched": "2026-11-15T22:43:19.802Z"
   },
   {
     "id": "perf_우리가_사랑한_한국_영화_OST_콘서트_2026_대구",
@@ -7509,7 +7477,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001676",
     "region": "busan",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:30.135Z"
+    "lastApiEnriched": "2026-11-15T22:43:23.030Z"
   },
   {
     "id": "perf_전북_단독상품_고창_세계유산_고인돌박물관",
@@ -7520,7 +7488,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001827",
     "region": "jeonbuk",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:32.423Z"
+    "lastApiEnriched": "2026-11-15T22:42:24.903Z"
   },
   {
     "id": "perf_전남_딜라이트_담양_담양의_아름다움을_담은_미디어아트",
@@ -7542,7 +7510,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000516",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:47.229Z"
+    "lastApiEnriched": "2026-11-15T22:43:40.248Z"
   },
   {
     "id": "perf_제주_고흐의정원",
@@ -7553,7 +7521,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000379",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:07.696Z"
+    "lastApiEnriched": "2026-11-15T22:43:00.425Z"
   },
   {
     "id": "perf_제주_노형수퍼마켙",
@@ -7564,7 +7532,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000778",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:17.069Z"
+    "lastApiEnriched": "2026-11-15T22:41:09.009Z"
   },
   {
     "id": "perf_제주_노형수퍼마켙_자연인족욕체험_증정",
@@ -7586,7 +7554,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000131",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:36.548Z"
+    "lastApiEnriched": "2026-11-15T22:43:29.486Z"
   },
   {
     "id": "perf_제주_더마파크_세계자동차_피아노박물관",
@@ -7597,7 +7565,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001226",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:16.928Z"
+    "lastApiEnriched": "2026-11-15T22:42:09.288Z"
   },
   {
     "id": "perf_제주_러브랜드_더_케이쇼_공연",
@@ -7608,7 +7576,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001146",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:15.323Z"
+    "lastApiEnriched": "2026-11-15T22:42:07.673Z"
   },
   {
     "id": "perf_제주_박살2_K_아일랜드제주",
@@ -7630,7 +7598,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000555",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:20:41.119Z"
+    "lastApiEnriched": "2026-11-15T22:41:33.227Z"
   },
   {
     "id": "perf_제주_아트서커스_혜택_4종_증정",
@@ -7685,7 +7653,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001824",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:21:32.957Z"
+    "lastApiEnriched": "2026-11-15T22:42:25.441Z"
   },
   {
     "id": "perf_제주_헬로키티아일랜드_혜택_4종_증정",
@@ -7696,7 +7664,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001002",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:19.451Z"
+    "lastApiEnriched": "2026-11-15T22:43:12.262Z"
   },
   {
     "id": "perf_특가_노형수퍼마켙_심쿵혜택_입장권_입장권_음료_입장권_음료_간식",
@@ -7729,7 +7697,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000353",
     "region": "jeju",
     "genre": "exhibition",
-    "lastApiEnriched": "2026-11-12T00:22:09.834Z"
+    "lastApiEnriched": "2026-11-15T22:43:02.575Z"
   },
   {
     "id": "perf_뮤지컬_웁스_Oops_부산",
@@ -7799,95 +7767,6 @@
     "synopsisImages": [],
     "lastEnriched": "2026-07-27T19:57:03.729Z",
     "lastApiEnriched": "2026-11-13T23:28:29.698Z"
-  },
-  {
-    "id": "perf_서울_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
-    "title": "［서울］ 가족뮤지컬 〈로보카폴리 - 브룸스타운의 에너지를 지켜라!〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013178_p.gif",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "venue": "영등포아트홀",
-    "link": "https://tickets.interpark.com/goods/26013178",
-    "region": "서울",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T23:26:03.560Z"
-  },
-  {
-    "id": "perf_오리지널_과학마술콘서트_시즌2_전주",
-    "title": "오리지널 과학마술콘서트 시즌2 (전주)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012705_p.gif",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "venue": "덕진예술회관",
-    "link": "https://tickets.interpark.com/goods/26012705",
-    "region": "기타",
-    "genre": "leisure",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301006_260915_145751.gif",
-    "lastApiEnriched": "2026-11-12T23:26:04.609Z"
-  },
-  {
-    "id": "perf_뮤지컬_소맥거핀_찰칵_세계여행_서울어린이대공원",
-    "title": "뮤지컬 〈소맥거핀 : 찰칵! 세계여행〉 - 서울어린이대공원",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013954_p.gif",
-    "date": "2026.12.12 ~ 2027.03.01",
-    "venue": "서울어린이대공원 아트센터",
-    "link": "https://tickets.interpark.com/goods/26013954",
-    "region": "서울",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T23:26:04.607Z"
-  },
-  {
-    "id": "perf_쇼뮤지컬_시크릿쥬쥬_별의보석_잃어버린_빛을_찾아서_대구",
-    "title": "쇼뮤지컬 〈시크릿쥬쥬 : 별의보석〉 - 잃어버린 빛을 찾아서 - 대구",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013316_p.gif",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "venue": "대구어린이세상 꾀꼬리극장",
-    "link": "https://tickets.interpark.com/goods/26013316",
-    "region": "대구",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T23:26:05.654Z"
-  },
-  {
-    "id": "perf_뮤지컬_헬로카봇_카봇크루가_되어줘_광주",
-    "title": "뮤지컬 헬로카봇 〈카봇크루가 되어줘!〉 - 광주",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013196_p.gif",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "venue": "광주5.18기념문화센터 민주홀",
-    "link": "https://tickets.interpark.com/goods/26013196",
-    "region": "광주",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T23:26:05.653Z"
-  },
-  {
-    "id": "perf_2026_가족뮤지컬_겨울이야기_서울_양천",
-    "title": "2026. 가족뮤지컬 〈겨울이야기〉 - 서울 양천",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26008881_p.gif",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "venue": "양천문화회관 대극장",
-    "link": "https://tickets.interpark.com/goods/26008881",
-    "region": "서울",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T23:26:06.700Z"
-  },
-  {
-    "id": "perf_제주_라이브_시트콤_뮤지컬_인싸가족",
-    "title": "［제주］ 라이브 시트콤 뮤지컬 〈인싸가족〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013239_p.gif",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "venue": "제주 한라아트홀 대극장",
-    "link": "https://tickets.interpark.com/goods/26013239",
-    "region": "제주",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T23:26:06.700Z"
-  },
-  {
-    "id": "perf_판소리음악극_긴긴밤_고양",
-    "title": "판소리음악극 〈긴긴밤〉 - 고양",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26014104_p.gif",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "venue": "고양어울림누리 별모래극장",
-    "link": "https://tickets.interpark.com/goods/26014104",
-    "region": "경기",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T23:26:07.745Z"
   },
   {
     "id": "perf_어린이뮤지컬_사과가쿵_부천",
@@ -8129,7 +8008,7 @@
     "link": "https://tickets.interpark.com/goods/24009893",
     "region": "기타",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:19.451Z"
+    "lastApiEnriched": "2026-11-15T22:43:12.263Z"
   },
   {
     "id": "perf_어린이_참여_소통_뮤지컬_피노키오야_노올자",
@@ -8140,7 +8019,7 @@
     "link": "https://tickets.interpark.com/goods/24002315",
     "region": "기타",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:09.834Z"
+    "lastApiEnriched": "2026-11-15T22:43:02.576Z"
   },
   {
     "id": "perf_뮤지컬_집사TV_시즌_2_Part_2_대저택_끝_없는_문_포항",
@@ -8217,7 +8096,7 @@
     "link": "https://tickets.interpark.com/goods/24002719",
     "region": "기타",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:08.765Z"
+    "lastApiEnriched": "2026-11-15T22:43:01.501Z"
   },
   {
     "id": "perf_뮤지컬_AI세계에서_살아남기_서울숲",
@@ -8306,7 +8185,7 @@
     "link": "https://tickets.interpark.com/goods/25000704",
     "region": "경기",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:40.821Z"
+    "lastApiEnriched": "2026-11-15T22:43:33.790Z"
   },
   {
     "id": "perf_가족뮤지컬_읽으면서_바로_써먹는_어린이_감정표현_성동",
@@ -8339,7 +8218,7 @@
     "link": "https://tickets.interpark.com/goods/18000670",
     "region": "세종",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:01.026Z"
+    "lastApiEnriched": "2026-11-15T22:40:52.856Z"
   },
   {
     "id": "perf_2026_방과후_공연놀이터_장르체험권",
@@ -8383,7 +8262,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000334",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:28.823Z"
+    "lastApiEnriched": "2026-11-15T22:41:20.851Z"
   },
   {
     "id": "perf_건대_반지만들기_카페_데이트_코스",
@@ -8405,7 +8284,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001491",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:56.086Z"
+    "lastApiEnriched": "2026-11-15T22:41:48.297Z"
   },
   {
     "id": "perf_궁궐사랑_경복궁여행",
@@ -8416,7 +8295,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000049",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:05.558Z"
+    "lastApiEnriched": "2026-11-15T22:42:58.272Z"
   },
   {
     "id": "perf_궁궐사랑_덕수궁_주간_야간_투어",
@@ -8438,7 +8317,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000051",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:06.625Z"
+    "lastApiEnriched": "2026-11-15T22:42:59.349Z"
   },
   {
     "id": "perf_궁궐사랑_정동투어",
@@ -8449,7 +8328,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000050",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:06.625Z"
+    "lastApiEnriched": "2026-11-15T22:42:59.348Z"
   },
   {
     "id": "perf_궁궐사랑_창경궁_주간_야간_투어",
@@ -8460,7 +8339,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002168",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:01.284Z"
+    "lastApiEnriched": "2026-11-15T22:42:53.968Z"
   },
   {
     "id": "perf_서울_구로_아늑_시그니처_도심_속_웰니스_순환_루프_사우나",
@@ -8494,7 +8373,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000318",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:20.274Z"
+    "lastApiEnriched": "2026-11-15T22:41:12.239Z"
   },
   {
     "id": "perf_서울_마포_홍대_반지_카페_커플링_제작부터_각인까지_신촌_데이트",
@@ -8516,7 +8395,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001404",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:20.811Z"
+    "lastApiEnriched": "2026-11-15T22:41:12.777Z"
   },
   {
     "id": "perf_서울_서초_서래마을_휴리재",
@@ -8527,7 +8406,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002101",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:51.668Z"
+    "lastApiEnriched": "2026-11-15T22:42:44.281Z"
   },
   {
     "id": "perf_서울_성대_리얼샷_사격양궁장",
@@ -8538,7 +8417,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001428",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:57.689Z"
+    "lastApiEnriched": "2026-11-15T22:41:49.912Z"
   },
   {
     "id": "perf_서울_영등포_방탈출_카페_탈출_브라더스_영등포점_평일한정특가",
@@ -8549,7 +8428,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000322",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:15.465Z"
+    "lastApiEnriched": "2026-11-15T22:41:07.393Z"
   },
   {
     "id": "perf_서울_영등포_세일링파라다이스_요트투어_세일링_피크닉_파티_프로포즈",
@@ -8571,7 +8450,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001407",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:07.309Z"
+    "lastApiEnriched": "2026-11-15T22:41:59.599Z"
   },
   {
     "id": "perf_서울_종로_리얼샷_사격양궁장",
@@ -8582,7 +8461,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001477",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:02.496Z"
+    "lastApiEnriched": "2026-11-15T22:41:54.759Z"
   },
   {
     "id": "perf_서울_혜화_리얼샷_사격양궁장",
@@ -8593,7 +8472,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001493",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:03.567Z"
+    "lastApiEnriched": "2026-11-15T22:41:55.833Z"
   },
   {
     "id": "perf_서울_홍대_비밀의_숲_방탈출_홍대점_야외방탈출_평일한정특가",
@@ -8604,7 +8483,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000323",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:13.862Z"
+    "lastApiEnriched": "2026-11-15T22:41:05.777Z"
   },
   {
     "id": "perf_서울_서초_양재스포타임_골프_실외타석이용권_1회권",
@@ -8615,7 +8494,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001560",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:28.000Z"
+    "lastApiEnriched": "2026-11-15T22:43:20.877Z"
   },
   {
     "id": "perf_서울_강남서초_피슐랭_9개지점_전화예약필수",
@@ -8648,7 +8527,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002169",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:01.285Z"
+    "lastApiEnriched": "2026-11-15T22:42:53.969Z"
   },
   {
     "id": "perf_서울_제니스_스포츠클럽_아이스링크",
@@ -8670,7 +8549,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000314",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:28.289Z"
+    "lastApiEnriched": "2026-11-15T22:41:20.313Z"
   },
   {
     "id": "perf_신림동_실감반동_리얼샷_사격양궁장",
@@ -8703,7 +8582,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000244",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:24.016Z"
+    "lastApiEnriched": "2026-11-15T22:41:16.005Z"
   },
   {
     "id": "perf_익선_리얼샷_사격양궁장",
@@ -8714,7 +8593,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001472",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:59.291Z"
+    "lastApiEnriched": "2026-11-15T22:41:51.527Z"
   },
   {
     "id": "perf_전국_캘리클럽_키즈카페_실내_스포츠_테마파크_12개점_8_12월",
@@ -8748,7 +8627,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002090",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:51.668Z"
+    "lastApiEnriched": "2026-11-15T22:42:44.281Z"
   },
   {
     "id": "perf_종로_창덕궁_한복대여_한복남",
@@ -8759,7 +8638,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001782",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:29.749Z"
+    "lastApiEnriched": "2026-11-15T22:42:22.210Z"
   },
   {
     "id": "perf_종로_한복남_북촌한옥마을점_한복대여",
@@ -8770,7 +8649,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000848",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:17.312Z"
+    "lastApiEnriched": "2026-11-15T22:43:10.111Z"
   },
   {
     "id": "perf_홍대_사격_양궁_이색데이트_K_TOP_GUN",
@@ -8792,7 +8671,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001849",
     "region": "seoul",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:36.844Z"
+    "lastApiEnriched": "2026-11-15T22:41:28.921Z"
   },
   {
     "id": "perf_롯데월드_아이스링크",
@@ -8814,7 +8693,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001376",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:45.931Z"
+    "lastApiEnriched": "2026-11-15T22:41:38.072Z"
   },
   {
     "id": "perf_경기_수원_놀숲_수원역점_프리미엄_만화카페",
@@ -8825,7 +8704,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001390",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:53.945Z"
+    "lastApiEnriched": "2026-11-15T22:41:46.143Z"
   },
   {
     "id": "perf_경기_수원_하늘에서_만나는_수원_화성_플라잉수원",
@@ -8847,7 +8726,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001457",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:01.963Z"
+    "lastApiEnriched": "2026-11-15T22:41:54.220Z"
   },
   {
     "id": "perf_경기_이천_파밀리에_승마장_승마체험_입장권_승마체험_레슨_재활",
@@ -8858,7 +8737,7 @@
     "link": "https://tickets.interpark.com/goods/Y6000722",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:08.911Z"
+    "lastApiEnriched": "2026-11-15T22:42:01.214Z"
   },
   {
     "id": "perf_경기_용인_다일락스포렉스_골프연습장_실외타석이용권_10회권",
@@ -8869,7 +8748,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001224",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:22.656Z"
+    "lastApiEnriched": "2026-11-15T22:43:15.501Z"
   },
   {
     "id": "perf_경기_용인_다일락스포렉스_골프연습장_실외타석이용권_1회권",
@@ -8880,7 +8759,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001223",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:22.657Z"
+    "lastApiEnriched": "2026-11-15T22:43:15.492Z"
   },
   {
     "id": "perf_경기_용인_조일프라자골프클럽_실외타석이용권_1회권",
@@ -8891,7 +8770,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001328",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:24.793Z"
+    "lastApiEnriched": "2026-11-15T22:43:17.652Z"
   },
   {
     "id": "perf_경기_용인_조일프라자골프클럽_파3골프장_1회권",
@@ -8902,7 +8781,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001332",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:25.863Z"
+    "lastApiEnriched": "2026-11-15T22:43:18.722Z"
   },
   {
     "id": "perf_경기_가평_베고니아_새정원_입장권",
@@ -8946,7 +8825,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001087",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:20.519Z"
+    "lastApiEnriched": "2026-11-15T22:43:13.338Z"
   },
   {
     "id": "perf_경기_허브아일랜드_입장권_포천가볼만한곳",
@@ -8979,7 +8858,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001862",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:34.028Z"
+    "lastApiEnriched": "2026-11-15T22:42:26.517Z"
   },
   {
     "id": "perf_김포_구래_아이존팝_보물찾기_이용권",
@@ -8990,7 +8869,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001164",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:21.588Z"
+    "lastApiEnriched": "2026-11-15T22:43:14.415Z"
   },
   {
     "id": "perf_김포_오키드_키즈카페_방문_1시간_전_구매필수",
@@ -9001,7 +8880,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002121",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:55.943Z"
+    "lastApiEnriched": "2026-11-15T22:42:48.587Z"
   },
   {
     "id": "perf_김포_한지체험장_한지이야기",
@@ -9012,7 +8891,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000524",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:48.298Z"
+    "lastApiEnriched": "2026-11-15T22:43:41.324Z"
   },
   {
     "id": "perf_김포가볼만한곳_몬스터리움_쥬라기파크_패키지_이용권",
@@ -9034,7 +8913,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002089",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:52.736Z"
+    "lastApiEnriched": "2026-11-15T22:42:45.357Z"
   },
   {
     "id": "perf_동탄_디아쿠아_아쿠아카페_이용권",
@@ -9056,7 +8935,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001297",
     "region": "incheon",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:24.795Z"
+    "lastApiEnriched": "2026-11-15T22:43:17.646Z"
   },
   {
     "id": "perf_안산_극동조이키즈파크_이용권",
@@ -9122,7 +9001,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001426",
     "region": "incheon",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:05.706Z"
+    "lastApiEnriched": "2026-11-15T22:41:57.984Z"
   },
   {
     "id": "perf_인천_부평구_방탈출_카페_방탈출고_평일한정특가",
@@ -9133,7 +9012,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001405",
     "region": "incheon",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:08.378Z"
+    "lastApiEnriched": "2026-11-15T22:42:00.674Z"
   },
   {
     "id": "perf_인천_실내_동물원_쥬벅스",
@@ -9166,7 +9045,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000654",
     "region": "gyeonggi",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:14.107Z"
+    "lastApiEnriched": "2026-11-15T22:43:06.882Z"
   },
   {
     "id": "perf_파주_홍삼스파_참숯가마사우나",
@@ -9232,7 +9111,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001847",
     "region": "gangwon",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:39.518Z"
+    "lastApiEnriched": "2026-11-15T22:41:31.612Z"
   },
   {
     "id": "perf_강월_영월_동강_통나무래프팅_레포츠_패키지_서바이벌_ATV_패러글라이딩",
@@ -9243,7 +9122,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001400",
     "region": "gangwon",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:36.312Z"
+    "lastApiEnriched": "2026-11-15T22:41:28.382Z"
   },
   {
     "id": "perf_강월_영월_동강_한마음래프팅_어라연코스와_풀패키지_서바이벌_ATV_패러글라이딩",
@@ -9254,7 +9133,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001377",
     "region": "gangwon",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:34.705Z"
+    "lastApiEnriched": "2026-11-15T22:41:26.769Z"
   },
   {
     "id": "perf_단양_패러글라이딩_패러이야기",
@@ -9276,7 +9155,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000888",
     "region": "chungbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:52.343Z"
+    "lastApiEnriched": "2026-11-15T22:41:44.530Z"
   },
   {
     "id": "perf_충북_단양_단양_미라클_서커스",
@@ -9309,7 +9188,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000536",
     "region": "chungbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:49.365Z"
+    "lastApiEnriched": "2026-11-15T22:43:42.401Z"
   },
   {
     "id": "perf_충북_벨포레_목장",
@@ -9331,7 +9210,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000035",
     "region": "chungbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:05.556Z"
+    "lastApiEnriched": "2026-11-15T22:42:58.272Z"
   },
   {
     "id": "perf_벨포레_모토아레나",
@@ -9397,7 +9276,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000938",
     "region": "chungnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:00.359Z"
+    "lastApiEnriched": "2026-11-15T22:41:52.604Z"
   },
   {
     "id": "perf_안면_꽃지카트장_ATV_고카트",
@@ -9408,7 +9287,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001446",
     "region": "chungnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:04.099Z"
+    "lastApiEnriched": "2026-11-15T22:41:56.371Z"
   },
   {
     "id": "perf_천안_상록리조트_상록랜드",
@@ -9441,7 +9320,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002206",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:02.352Z"
+    "lastApiEnriched": "2026-11-15T22:42:55.045Z"
   },
   {
     "id": "perf_경북_청도_한국코미디타운_코미디공연",
@@ -9452,7 +9331,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000058",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:23.478Z"
+    "lastApiEnriched": "2026-11-15T22:41:15.469Z"
   },
   {
     "id": "perf_경북_포항_요트투어_요트데이_요트투어_퍼블릭_프라이빗_커플_프로포즈",
@@ -9463,7 +9342,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000891",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:52.876Z"
+    "lastApiEnriched": "2026-11-15T22:41:45.068Z"
   },
   {
     "id": "perf_경주_보문투어_대여_전기자전거_전동킥보드",
@@ -9474,7 +9353,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001603",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:24.407Z"
+    "lastApiEnriched": "2026-11-15T22:42:16.827Z"
   },
   {
     "id": "perf_경주_야외_방탈출_경주월드_비밀자들",
@@ -9496,7 +9375,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001030",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:10.512Z"
+    "lastApiEnriched": "2026-11-15T22:42:02.828Z"
   },
   {
     "id": "perf_경주_야외_방탈출_추리게임_잔상일지_시간이_쌓인_경주에서의_단상",
@@ -9507,7 +9386,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000580",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:17.607Z"
+    "lastApiEnriched": "2026-11-15T22:41:09.548Z"
   },
   {
     "id": "perf_구미_송정동_큐토피아_키즈카페",
@@ -9518,7 +9397,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002153",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:00.216Z"
+    "lastApiEnriched": "2026-11-15T22:42:52.892Z"
   },
   {
     "id": "perf_구미_쥬쥬동산_우리아이_생태학습_체험장",
@@ -9529,7 +9408,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002091",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:52.736Z"
+    "lastApiEnriched": "2026-11-15T22:42:45.357Z"
   },
   {
     "id": "perf_군위_삼국유사테마파크_입장권",
@@ -9562,7 +9441,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002182",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:02.352Z"
+    "lastApiEnriched": "2026-11-15T22:42:55.044Z"
   },
   {
     "id": "perf_태백_야외_방탈출_추리게임_수호신_잠든_신을_깨워라",
@@ -9573,7 +9452,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000579",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:15.999Z"
+    "lastApiEnriched": "2026-11-15T22:41:07.933Z"
   },
   {
     "id": "perf_포항_박선장_요트투어_퍼블릭_커플_프라이빗",
@@ -9595,7 +9474,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001027",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:11.581Z"
+    "lastApiEnriched": "2026-11-15T22:42:03.904Z"
   },
   {
     "id": "perf_포항_야외_방탈출_추리게임_별의_기억1",
@@ -9606,7 +9485,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001029",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:12.116Z"
+    "lastApiEnriched": "2026-11-15T22:42:04.443Z"
   },
   {
     "id": "perf_포항_야외_방탈출_추리게임_잔상일지_시간여행자_포항_장기유배촌의_비밀",
@@ -9617,7 +9496,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000582",
     "region": "gyeongbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:25.617Z"
+    "lastApiEnriched": "2026-11-15T22:41:17.621Z"
   },
   {
     "id": "perf_경남_하동_하동_케이블카_탑승권",
@@ -9651,7 +9530,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000245",
     "region": "gyeongnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:25.081Z"
+    "lastApiEnriched": "2026-11-15T22:41:17.082Z"
   },
   {
     "id": "perf_부산_해운대_도심_속_웰니스_순환_루프_사우나",
@@ -9685,7 +9564,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000653",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:37.914Z"
+    "lastApiEnriched": "2026-11-15T22:41:29.997Z"
   },
   {
     "id": "perf_부산_해운대_부산_요트투어_부산요트블랑_프라이빗_투어",
@@ -9696,7 +9575,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001421",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:44.861Z"
+    "lastApiEnriched": "2026-11-15T22:41:36.995Z"
   },
   {
     "id": "perf_부산_해운대_부산_요트투어_아이러브유요트_퍼블릭_투어_프라이빗투어",
@@ -9707,7 +9586,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001424",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:40.046Z"
+    "lastApiEnriched": "2026-11-15T22:41:32.150Z"
   },
   {
     "id": "perf_부산_해운대_부산_요트투어_요트가이_폭죽_폴라로이드_광안리",
@@ -9718,7 +9597,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000341",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:29.892Z"
+    "lastApiEnriched": "2026-11-15T22:41:21.928Z"
   },
   {
     "id": "perf_부산_해운대_부산_요트투어_요트와_특가",
@@ -9729,7 +9608,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000660",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:38.443Z"
+    "lastApiEnriched": "2026-11-15T22:41:30.534Z"
   },
   {
     "id": "perf_부산_해운대_부산_요트투어_요트타자_퍼블릭_투어",
@@ -9740,7 +9619,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001416",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:13.184Z"
+    "lastApiEnriched": "2026-11-15T22:42:05.520Z"
   },
   {
     "id": "perf_부산_해운대_부산_요트투어_위드요트",
@@ -9751,7 +9630,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001417",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:33.636Z"
+    "lastApiEnriched": "2026-11-15T22:41:25.694Z"
   },
   {
     "id": "perf_부산_해운대_부산_요트투어_카카오요트_광안리_더베이101",
@@ -9762,7 +9641,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000756",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:49.136Z"
+    "lastApiEnriched": "2026-11-15T22:41:41.301Z"
   },
   {
     "id": "perf_부산_해운대_부산요트투어_사랑해요트투어",
@@ -9773,7 +9652,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001423",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:05.171Z"
+    "lastApiEnriched": "2026-11-15T22:41:57.448Z"
   },
   {
     "id": "perf_부산_해운대_부산요트투어_요트야",
@@ -9784,7 +9663,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000498",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:32.031Z"
+    "lastApiEnriched": "2026-11-15T22:41:24.080Z"
   },
   {
     "id": "perf_부산_해운대_브레이크_아웃_이스케이프_방탈출",
@@ -9795,7 +9674,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001842",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:49.671Z"
+    "lastApiEnriched": "2026-11-15T22:41:41.838Z"
   },
   {
     "id": "perf_부산_남포동_쿵스_게임랜드",
@@ -9806,7 +9685,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001301",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:18.530Z"
+    "lastApiEnriched": "2026-11-15T22:42:10.904Z"
   },
   {
     "id": "perf_부산_남포동_쿵스_롤러스케이트장",
@@ -9850,7 +9729,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001485",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:09.980Z"
+    "lastApiEnriched": "2026-11-15T22:42:02.289Z"
   },
   {
     "id": "perf_부산_오션뷰_종합_힐링센터_요가_얼굴관리_전신관리_SMB웰니스센터",
@@ -9861,7 +9740,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000630",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:13.038Z"
+    "lastApiEnriched": "2026-11-15T22:43:05.806Z"
   },
   {
     "id": "perf_부산_키위키즈랜드",
@@ -9872,7 +9751,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001264",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:23.726Z"
+    "lastApiEnriched": "2026-11-15T22:43:16.569Z"
   },
   {
     "id": "perf_부산_팬스타크루즈_그레이스호_불꽃쇼_초대형_메가요트_야경_투어_광안리_해운대",
@@ -9894,7 +9773,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001943",
     "region": "busan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:36.166Z"
+    "lastApiEnriched": "2026-11-15T22:42:28.671Z"
   },
   {
     "id": "perf_울산_동물의_정원_동물생태관_및_야외동물원",
@@ -9916,7 +9795,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001123",
     "region": "ulsan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:20.519Z"
+    "lastApiEnriched": "2026-11-15T22:43:13.339Z"
   },
   {
     "id": "perf_울산_야외_방탈출_추리게임_잔상일지_울산골목의_신비한_시간_여행",
@@ -9927,7 +9806,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000581",
     "region": "ulsan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:18.671Z"
+    "lastApiEnriched": "2026-11-15T22:41:10.625Z"
   },
   {
     "id": "perf_울산_양떼목장_울산가볼만한곳",
@@ -9949,7 +9828,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000137",
     "region": "ulsan",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:36.549Z"
+    "lastApiEnriched": "2026-11-15T22:43:29.487Z"
   },
   {
     "id": "perf_김해가야테마파크_야간개장_입장권_PKG_메가익스트림_앤_체험",
@@ -9971,7 +9850,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001672",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:26.011Z"
+    "lastApiEnriched": "2026-11-15T22:42:18.443Z"
   },
   {
     "id": "perf_전북_군산_패러글라이딩_사진촬영코스_체험_이용권_예약_당일_사용",
@@ -9982,7 +9861,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001389",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:54.480Z"
+    "lastApiEnriched": "2026-11-15T22:41:46.683Z"
   },
   {
     "id": "perf_전북투어패스_남원춘향여행권",
@@ -9993,7 +9872,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002117",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:55.943Z"
+    "lastApiEnriched": "2026-11-15T22:42:48.587Z"
   },
   {
     "id": "perf_전북투어패스_무주_머루와인동굴_단독상품",
@@ -10004,7 +9883,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002118",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:57.011Z"
+    "lastApiEnriched": "2026-11-15T22:42:49.663Z"
   },
   {
     "id": "perf_전북투어패스_무주반디여행권_36시간권",
@@ -10015,7 +9894,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001995",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:38.841Z"
+    "lastApiEnriched": "2026-11-15T22:42:31.362Z"
   },
   {
     "id": "perf_전북투어패스_전주한옥마을_패키지권",
@@ -10026,7 +9905,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001699",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:26.544Z"
+    "lastApiEnriched": "2026-11-15T22:42:18.981Z"
   },
   {
     "id": "perf_전북투어패스_통합이용권",
@@ -10037,7 +9916,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001686",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:27.613Z"
+    "lastApiEnriched": "2026-11-15T22:42:20.058Z"
   },
   {
     "id": "perf_전주_전주한옥마을_한복길_한복대여",
@@ -10048,7 +9927,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002113",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:57.011Z"
+    "lastApiEnriched": "2026-11-15T22:42:49.665Z"
   },
   {
     "id": "perf_전주_전주한옥마을_한복대여_한복남",
@@ -10059,7 +9938,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002087",
     "region": "jeonbuk",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:53.807Z"
+    "lastApiEnriched": "2026-11-15T22:42:46.433Z"
   },
   {
     "id": "perf_광양_섬진강_별빛_스카이_짚와이어",
@@ -10070,7 +9949,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000040",
     "region": "jeonnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:34.416Z"
+    "lastApiEnriched": "2026-11-15T22:43:27.333Z"
   },
   {
     "id": "perf_광주_쿵스_게임랜드_이용권",
@@ -10081,7 +9960,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002224",
     "region": "gwangju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:04.490Z"
+    "lastApiEnriched": "2026-11-15T22:42:57.197Z"
   },
   {
     "id": "perf_담양_대규모_복합예술단지_소아르떼",
@@ -10092,7 +9971,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000931",
     "region": "jeonnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:58.757Z"
+    "lastApiEnriched": "2026-11-15T22:41:50.989Z"
   },
   {
     "id": "perf_전남_곡성_기차마을_패러글라이딩",
@@ -10103,7 +9982,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001388",
     "region": "jeonnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:55.551Z"
+    "lastApiEnriched": "2026-11-15T22:41:47.759Z"
   },
   {
     "id": "perf_전남_광주_공_없이_즐기는_AR피구_신개념_미래형_스포츠_HADO_입장권",
@@ -10125,7 +10004,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001671",
     "region": "jeonnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:31.202Z"
+    "lastApiEnriched": "2026-11-15T22:43:24.106Z"
   },
   {
     "id": "perf_전남_완도_청해포구_촬영장",
@@ -10136,7 +10015,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001459",
     "region": "jeonnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:06.774Z"
+    "lastApiEnriched": "2026-11-15T22:41:59.061Z"
   },
   {
     "id": "perf_전남_담양리조트_온천사우나_이용권",
@@ -10147,7 +10026,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002107",
     "region": "jeonnam",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:58.079Z"
+    "lastApiEnriched": "2026-11-15T22:42:50.739Z"
   },
   {
     "id": "perf_제주_서귀포_테디베어뮤지엄",
@@ -10158,7 +10037,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001278",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:23.725Z"
+    "lastApiEnriched": "2026-11-15T22:43:16.576Z"
   },
   {
     "id": "perf_제주_애월_애월_배낚시_성안호",
@@ -10169,7 +10048,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002126",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:58.079Z"
+    "lastApiEnriched": "2026-11-15T22:42:50.740Z"
   },
   {
     "id": "perf_제주_포니밸리_낙타트래킹_증정_서귀포유람선",
@@ -10180,7 +10059,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000513",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:48.298Z"
+    "lastApiEnriched": "2026-11-15T22:43:41.325Z"
   },
   {
     "id": "perf_제주_포니밸리_낙타트래킹_증정_서귀포잠수함",
@@ -10191,7 +10070,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000746",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:15.175Z"
+    "lastApiEnriched": "2026-11-15T22:43:07.958Z"
   },
   {
     "id": "perf_제주_포니밸리_낙타트래킹_증정_선녀와나무꾼_입장권",
@@ -10213,7 +10092,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000537",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:10.902Z"
+    "lastApiEnriched": "2026-11-15T22:43:03.652Z"
   },
   {
     "id": "perf_제주_포니밸리_낙타트래킹_증정_제주요트투어",
@@ -10246,7 +10125,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001706",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:28.148Z"
+    "lastApiEnriched": "2026-11-15T22:42:20.597Z"
   },
   {
     "id": "perf_제주_고스트타운_유령의집",
@@ -10257,7 +10136,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001955",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:37.236Z"
+    "lastApiEnriched": "2026-11-15T22:42:29.747Z"
   },
   {
     "id": "perf_제주_그랑블루요트_럭셔리투어",
@@ -10268,7 +10147,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000723",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:47.533Z"
+    "lastApiEnriched": "2026-11-15T22:41:39.686Z"
   },
   {
     "id": "perf_제주_그랑블루요트_선셋투어",
@@ -10279,7 +10158,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000725",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:48.067Z"
+    "lastApiEnriched": "2026-11-15T22:41:40.225Z"
   },
   {
     "id": "perf_제주_그림카페_1만원_이용권",
@@ -10312,7 +10191,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002093",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:53.805Z"
+    "lastApiEnriched": "2026-11-15T22:42:46.433Z"
   },
   {
     "id": "perf_제주_김녕미로공원",
@@ -10334,7 +10213,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000686",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:43.256Z"
+    "lastApiEnriched": "2026-11-15T22:41:35.379Z"
   },
   {
     "id": "perf_제주_낙타트래킹_먹이주기체험",
@@ -10356,7 +10235,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002005",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:40.445Z"
+    "lastApiEnriched": "2026-11-15T22:42:32.975Z"
   },
   {
     "id": "perf_제주_다이나믹메이즈_이용권_족욕_체험_증정",
@@ -10378,7 +10257,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001706",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:31.202Z"
+    "lastApiEnriched": "2026-11-15T22:43:24.106Z"
   },
   {
     "id": "perf_제주_대유ATV수렵사격랜드",
@@ -10389,7 +10268,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000469",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:44.024Z"
+    "lastApiEnriched": "2026-11-15T22:43:37.019Z"
   },
   {
     "id": "perf_제주_댕냥별_입장권",
@@ -10411,7 +10290,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000711",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:46.463Z"
+    "lastApiEnriched": "2026-11-15T22:41:38.610Z"
   },
   {
     "id": "perf_제주_더_숲_아로마_앤_테라피",
@@ -10422,7 +10301,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002006",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:40.979Z"
+    "lastApiEnriched": "2026-11-15T22:42:33.519Z"
   },
   {
     "id": "perf_제주_더_힐링타임_족욕체험",
@@ -10433,7 +10312,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002046",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:48.464Z"
+    "lastApiEnriched": "2026-11-15T22:42:41.052Z"
   },
   {
     "id": "perf_제주_더마파크_공연",
@@ -10444,7 +10323,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000013",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:32.271Z"
+    "lastApiEnriched": "2026-11-15T22:43:25.182Z"
   },
   {
     "id": "perf_제주_더마파크_승마",
@@ -10455,7 +10334,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000022",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:33.340Z"
+    "lastApiEnriched": "2026-11-15T22:43:26.259Z"
   },
   {
     "id": "perf_제주_더마파크_카트",
@@ -10466,7 +10345,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000017",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:33.348Z"
+    "lastApiEnriched": "2026-11-15T22:43:26.257Z"
   },
   {
     "id": "perf_제주_더마파크_불빛정원",
@@ -10477,7 +10356,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001223",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:17.993Z"
+    "lastApiEnriched": "2026-11-15T22:42:10.365Z"
   },
   {
     "id": "perf_제주_더시에나리조트_라스투베_레스토랑_양식_다이닝_코스",
@@ -10510,7 +10389,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000054",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:21.876Z"
+    "lastApiEnriched": "2026-11-15T22:41:13.854Z"
   },
   {
     "id": "perf_제주_더케이쇼_다이나믹메이즈",
@@ -10521,7 +10400,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000057",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:22.416Z"
+    "lastApiEnriched": "2026-11-15T22:41:14.392Z"
   },
   {
     "id": "perf_제주_도치돌_알파카_목장",
@@ -10532,7 +10411,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000699",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:19.209Z"
+    "lastApiEnriched": "2026-11-15T22:41:11.162Z"
   },
   {
     "id": "perf_제주_돌문화공원_입장권",
@@ -10565,7 +10444,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002048",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:48.997Z"
+    "lastApiEnriched": "2026-11-15T22:42:41.591Z"
   },
   {
     "id": "perf_제주_드르쿰다_제주_성산점",
@@ -10587,7 +10466,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002049",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:50.065Z"
+    "lastApiEnriched": "2026-11-15T22:42:42.668Z"
   },
   {
     "id": "perf_제주_러브랜드_입장권",
@@ -10598,7 +10477,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000880",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:51.274Z"
+    "lastApiEnriched": "2026-11-15T22:41:43.452Z"
   },
   {
     "id": "perf_제주_러브랜드_불빛정원",
@@ -10609,7 +10488,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001145",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:14.788Z"
+    "lastApiEnriched": "2026-11-15T22:42:07.139Z"
   },
   {
     "id": "perf_제주_러브랜드_제주민속촌",
@@ -10620,7 +10499,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001152",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:16.391Z"
+    "lastApiEnriched": "2026-11-15T22:42:08.751Z"
   },
   {
     "id": "perf_제주_레이저아레나엑스_제주점",
@@ -10631,7 +10510,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000503",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:47.229Z"
+    "lastApiEnriched": "2026-11-15T22:43:40.249Z"
   },
   {
     "id": "perf_제주_레일바이크",
@@ -10664,7 +10543,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000988",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:18.381Z"
+    "lastApiEnriched": "2026-11-15T22:43:11.188Z"
   },
   {
     "id": "perf_제주_메이즈랜드",
@@ -10675,7 +10554,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000590",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:11.970Z"
+    "lastApiEnriched": "2026-11-15T22:43:04.729Z"
   },
   {
     "id": "perf_제주_모모쥬_동물원_제주신화월드점",
@@ -10697,7 +10576,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002002",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:39.376Z"
+    "lastApiEnriched": "2026-11-15T22:42:31.905Z"
   },
   {
     "id": "perf_제주_무지개요트",
@@ -10708,7 +10587,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001004",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:18.381Z"
+    "lastApiEnriched": "2026-11-15T22:43:11.187Z"
   },
   {
     "id": "perf_제주_민속촌_입장권",
@@ -10719,7 +10598,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001579",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:21.199Z"
+    "lastApiEnriched": "2026-11-15T22:42:13.597Z"
   },
   {
     "id": "perf_제주_불빛정원_인생사진관_이용권",
@@ -10730,7 +10609,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002020",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:42.050Z"
+    "lastApiEnriched": "2026-11-15T22:42:34.591Z"
   },
   {
     "id": "perf_제주_블랙홀엑시트",
@@ -10752,7 +10631,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001586",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:22.803Z"
+    "lastApiEnriched": "2026-11-15T22:42:15.213Z"
   },
   {
     "id": "perf_제주_사려니_ATV",
@@ -10763,7 +10642,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001640",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:30.135Z"
+    "lastApiEnriched": "2026-11-15T22:43:23.030Z"
   },
   {
     "id": "perf_제주_산굼부리",
@@ -10785,7 +10664,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002125",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:59.147Z"
+    "lastApiEnriched": "2026-11-15T22:42:51.817Z"
   },
   {
     "id": "perf_제주_산방산유람선_심쿵혜택",
@@ -10851,7 +10730,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000675",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:51.502Z"
+    "lastApiEnriched": "2026-11-15T22:43:44.552Z"
   },
   {
     "id": "perf_제주_서귀포잠수함",
@@ -10862,7 +10741,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000048",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:35.483Z"
+    "lastApiEnriched": "2026-11-15T22:43:28.410Z"
   },
   {
     "id": "perf_제주_서귀포잠수함_심쿵혜택",
@@ -10873,7 +10752,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000165",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:37.615Z"
+    "lastApiEnriched": "2026-11-15T22:43:30.562Z"
   },
   {
     "id": "perf_제주_서프라이즈_테마파크",
@@ -10884,7 +10763,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000537",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:41.650Z"
+    "lastApiEnriched": "2026-11-15T22:41:33.764Z"
   },
   {
     "id": "perf_제주_서핑도_체험권",
@@ -10895,7 +10774,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001605",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:24.942Z"
+    "lastApiEnriched": "2026-11-15T22:42:17.366Z"
   },
   {
     "id": "perf_제주_석예원_본초족욕_성산",
@@ -10906,7 +10785,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000682",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:44.327Z"
+    "lastApiEnriched": "2026-11-15T22:41:36.456Z"
   },
   {
     "id": "perf_제주_선녀와나무꾼",
@@ -10917,7 +10796,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000770",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:15.175Z"
+    "lastApiEnriched": "2026-11-15T22:43:07.959Z"
   },
   {
     "id": "perf_제주_섭지코지_깡통열차",
@@ -10939,7 +10818,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002078",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:50.601Z"
+    "lastApiEnriched": "2026-11-15T22:42:43.205Z"
   },
   {
     "id": "perf_제주_성산포유람선",
@@ -10961,7 +10840,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002135",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:59.148Z"
+    "lastApiEnriched": "2026-11-15T22:42:51.817Z"
   },
   {
     "id": "perf_제주_세계자동차_피아노박물관",
@@ -10972,7 +10851,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000472",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:45.093Z"
+    "lastApiEnriched": "2026-11-15T22:43:38.096Z"
   },
   {
     "id": "perf_제주_소랑_ATV_승마",
@@ -10983,7 +10862,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001627",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:29.067Z"
+    "lastApiEnriched": "2026-11-15T22:43:21.955Z"
   },
   {
     "id": "perf_제주_소인국테마파크",
@@ -10994,7 +10873,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000540",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:50.433Z"
+    "lastApiEnriched": "2026-11-15T22:43:43.476Z"
   },
   {
     "id": "perf_제주_송악카트_이용권",
@@ -11005,7 +10884,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002197",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:03.420Z"
+    "lastApiEnriched": "2026-11-15T22:42:56.121Z"
   },
   {
     "id": "perf_제주_쇠소깍산물관광농원_감귤체험",
@@ -11049,7 +10928,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000162",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:38.682Z"
+    "lastApiEnriched": "2026-11-15T22:43:31.638Z"
   },
   {
     "id": "perf_제주_실탄사격장",
@@ -11060,7 +10939,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002019",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:42.585Z"
+    "lastApiEnriched": "2026-11-15T22:42:35.131Z"
   },
   {
     "id": "perf_제주_씨에스_호텔_앤_리조트_다이닝",
@@ -11082,7 +10961,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002245",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:00.215Z"
+    "lastApiEnriched": "2026-11-15T22:42:52.892Z"
   },
   {
     "id": "perf_제주_아쿠아플라넷_혜택_4종_증정",
@@ -11126,7 +11005,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002022",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:43.654Z"
+    "lastApiEnriched": "2026-11-15T22:42:36.209Z"
   },
   {
     "id": "perf_제주_액트몬_중문",
@@ -11159,7 +11038,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000544",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:42.722Z"
+    "lastApiEnriched": "2026-11-15T22:41:34.841Z"
   },
   {
     "id": "perf_제주_오늘은_카트레이싱_카트_체험",
@@ -11170,7 +11049,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002016",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:44.189Z"
+    "lastApiEnriched": "2026-11-15T22:42:36.747Z"
   },
   {
     "id": "perf_제주_오름승마랜드",
@@ -11181,7 +11060,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002199",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:03.420Z"
+    "lastApiEnriched": "2026-11-15T22:42:56.121Z"
   },
   {
     "id": "perf_제주_오름ATV_이용권",
@@ -11192,7 +11071,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001904",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:35.631Z"
+    "lastApiEnriched": "2026-11-15T22:42:28.131Z"
   },
   {
     "id": "perf_제주_오설록_제주_말차_소프트_아이스크림",
@@ -11225,7 +11104,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000319",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:42.956Z"
+    "lastApiEnriched": "2026-11-15T22:43:35.943Z"
   },
   {
     "id": "perf_제주_우도정원_훈데르트바서파크_입장권",
@@ -11247,7 +11126,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000531",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:49.365Z"
+    "lastApiEnriched": "2026-11-15T22:43:42.401Z"
   },
   {
     "id": "perf_제주_윈드_1947_카트_심쿵혜택",
@@ -11258,7 +11137,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000697",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:53.640Z"
+    "lastApiEnriched": "2026-11-15T22:43:46.707Z"
   },
   {
     "id": "perf_제주_윈드1947_카트_이용권",
@@ -11269,7 +11148,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002208",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:04.488Z"
+    "lastApiEnriched": "2026-11-15T22:42:57.198Z"
   },
   {
     "id": "perf_제주_유리바닥보트",
@@ -11280,7 +11159,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001805",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:30.819Z"
+    "lastApiEnriched": "2026-11-15T22:42:23.287Z"
   },
   {
     "id": "perf_제주_일출랜드_심쿵혜택",
@@ -11291,7 +11170,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000173",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:38.684Z"
+    "lastApiEnriched": "2026-11-15T22:43:31.639Z"
   },
   {
     "id": "perf_제주_자연인_제주족욕",
@@ -11302,7 +11181,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001770",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:32.272Z"
+    "lastApiEnriched": "2026-11-15T22:43:25.182Z"
   },
   {
     "id": "perf_제주_점보빌리지_입장권",
@@ -11313,7 +11192,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000371",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:07.696Z"
+    "lastApiEnriched": "2026-11-15T22:43:00.425Z"
   },
   {
     "id": "perf_제주_점보빌리지_세계자동차_피아노박물관_입장권",
@@ -11346,7 +11225,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000926",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:45.093Z"
+    "lastApiEnriched": "2026-11-15T22:43:38.095Z"
   },
   {
     "id": "perf_제주_제주_런닝맨",
@@ -11368,7 +11247,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000235",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:41.889Z"
+    "lastApiEnriched": "2026-11-15T22:43:34.867Z"
   },
   {
     "id": "perf_제주_제주_액티브파크_카트_심쿵혜택",
@@ -11379,7 +11258,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000175",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:39.750Z"
+    "lastApiEnriched": "2026-11-15T22:43:32.714Z"
   },
   {
     "id": "perf_제주_제주_액티브파크_클립앤클라임_심쿵혜택",
@@ -11390,7 +11269,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000172",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:39.753Z"
+    "lastApiEnriched": "2026-11-15T22:43:32.713Z"
   },
   {
     "id": "perf_제주_제주_크리스마스박물관",
@@ -11401,7 +11280,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001758",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:29.216Z"
+    "lastApiEnriched": "2026-11-15T22:42:21.672Z"
   },
   {
     "id": "perf_제주_제주라프_짚라인_풋테라피",
@@ -11423,7 +11302,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001564",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:20.131Z"
+    "lastApiEnriched": "2026-11-15T22:42:12.520Z"
   },
   {
     "id": "perf_제주_제주바다하늘_패러글라이딩_힐링코스",
@@ -11434,7 +11313,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001637",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:23.337Z"
+    "lastApiEnriched": "2026-11-15T22:42:15.751Z"
   },
   {
     "id": "perf_제주_제주신화월드_신화테마파크_신화워터파크",
@@ -11456,7 +11335,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001463",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:17.312Z"
+    "lastApiEnriched": "2026-11-15T22:43:10.111Z"
   },
   {
     "id": "perf_제주_제주이야기_행원점",
@@ -11467,7 +11346,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002141",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:21.589Z"
+    "lastApiEnriched": "2026-11-15T22:43:14.415Z"
   },
   {
     "id": "perf_제주_제주투어패스_타임형_자유_이용권",
@@ -11478,7 +11357,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001142",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:13.720Z"
+    "lastApiEnriched": "2026-11-15T22:42:06.057Z"
   },
   {
     "id": "perf_제주_제주홀릭뮤지엄",
@@ -11545,7 +11424,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002096",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:54.875Z"
+    "lastApiEnriched": "2026-11-15T22:42:47.511Z"
   },
   {
     "id": "perf_제주_차귀도달래배낚시",
@@ -11578,7 +11457,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000917",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:57.156Z"
+    "lastApiEnriched": "2026-11-15T22:41:49.373Z"
   },
   {
     "id": "perf_제주_촐파크_테마파크_관광지_수국_유채",
@@ -11622,7 +11501,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000501",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:33.100Z"
+    "lastApiEnriched": "2026-11-15T22:41:25.156Z"
   },
   {
     "id": "perf_제주_테디베어하우스_테지움",
@@ -11633,7 +11512,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000527",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:35.240Z"
+    "lastApiEnriched": "2026-11-15T22:41:27.307Z"
   },
   {
     "id": "perf_제주_테디베어하우스_테지움_포니밸리_낙타트래킹_증정",
@@ -11666,7 +11545,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000828",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:16.244Z"
+    "lastApiEnriched": "2026-11-15T22:43:09.034Z"
   },
   {
     "id": "perf_제주_팰롱팰롱_빛나는",
@@ -11677,7 +11556,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001581",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:21.734Z"
+    "lastApiEnriched": "2026-11-15T22:42:14.136Z"
   },
   {
     "id": "perf_제주_편백포레스트_체험목장_이용권",
@@ -11688,7 +11567,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001791",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:31.353Z"
+    "lastApiEnriched": "2026-11-15T22:42:23.825Z"
   },
   {
     "id": "perf_제주_포레스트공룡사파리_입장권",
@@ -11699,7 +11578,7 @@
     "link": "https://tickets.interpark.com/goods/Y3002023",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:45.256Z"
+    "lastApiEnriched": "2026-11-15T22:42:37.822Z"
   },
   {
     "id": "perf_제주_피규어뮤지엄",
@@ -11710,7 +11589,7 @@
     "link": "https://tickets.interpark.com/goods/Y4001296",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:25.865Z"
+    "lastApiEnriched": "2026-11-15T22:43:18.727Z"
   },
   {
     "id": "perf_제주_하모해양레저_씨워킹_패들보드",
@@ -11721,7 +11600,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000814",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:16.244Z"
+    "lastApiEnriched": "2026-11-15T22:43:09.034Z"
   },
   {
     "id": "perf_제주_한림공원_심쿵혜택",
@@ -11787,7 +11666,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000642",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:14.106Z"
+    "lastApiEnriched": "2026-11-15T22:43:06.882Z"
   },
   {
     "id": "perf_제주_허브동산_혜택_4종_증정",
@@ -11842,7 +11721,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000318",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:44.025Z"
+    "lastApiEnriched": "2026-11-15T22:43:37.019Z"
   },
   {
     "id": "perf_제주_휴애리_입장권",
@@ -11853,7 +11732,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000230",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:31.497Z"
+    "lastApiEnriched": "2026-11-15T22:41:23.541Z"
   },
   {
     "id": "perf_제주_The_K_SHOW",
@@ -11864,7 +11743,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000269",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:27.220Z"
+    "lastApiEnriched": "2026-11-15T22:41:19.237Z"
   },
   {
     "id": "perf_제주_WE호텔_웰니스_수영장_이용권",
@@ -11875,7 +11754,7 @@
     "link": "https://tickets.interpark.com/goods/Y3001953",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:21:37.771Z"
+    "lastApiEnriched": "2026-11-15T22:42:30.286Z"
   },
   {
     "id": "perf_제주_레포츠랜드",
@@ -11886,7 +11765,7 @@
     "link": "https://tickets.interpark.com/goods/Y3000365",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:20:30.426Z"
+    "lastApiEnriched": "2026-11-15T22:41:22.467Z"
   },
   {
     "id": "perf_제주_빅볼랜드",
@@ -11930,7 +11809,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000555",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:11.970Z"
+    "lastApiEnriched": "2026-11-15T22:43:04.730Z"
   },
   {
     "id": "perf_제주_에코랜드테마파크",
@@ -11952,7 +11831,7 @@
     "link": "https://tickets.interpark.com/goods/Y4000623",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:13.038Z"
+    "lastApiEnriched": "2026-11-15T22:43:05.805Z"
   },
   {
     "id": "perf_제주투어패스_버스투어_BUS투어_일일여행_패키지_관광",
@@ -11985,7 +11864,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000677",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:52.571Z"
+    "lastApiEnriched": "2026-11-15T22:43:45.629Z"
   },
   {
     "id": "perf_해저와인과함께하는_우도잠수함_우도도항선",
@@ -11996,7 +11875,7 @@
     "link": "https://tickets.interpark.com/goods/Y5000676",
     "region": "jeju",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:52.572Z"
+    "lastApiEnriched": "2026-11-15T22:43:45.629Z"
   },
   {
     "id": "perf_제주_리버스펀랜드_사계절_썰매장_에어바운스",
@@ -12079,7 +11958,7 @@
     "ageRating": "전체관람가",
     "performanceTime": "",
     "lastEnriched": "2026-07-13T04:31:38.049Z",
-    "lastApiEnriched": "2026-11-12T00:20:05.304Z"
+    "lastApiEnriched": "2026-11-15T22:40:57.165Z"
   },
   {
     "id": "perf_뮤지컬_겨울왕국_한국_초연_FROZEN_The_Musical",
@@ -12356,7 +12235,7 @@
     "link": "https://tickets.interpark.com/goods/24002778",
     "region": "기타",
     "genre": "leisure",
-    "lastApiEnriched": "2026-11-12T00:22:08.765Z",
+    "lastApiEnriched": "2026-11-15T22:43:01.500Z",
     "price": "전석 45,000원",
     "priceList": [
       {
@@ -12402,6 +12281,127 @@
         "url": "http://ticket.hanatour.com/Pages/Perf/Detail/Detail.aspx?IdPerf=32806"
       }
     ]
+  },
+  {
+    "id": "perf_2026_부천문화재단_기획공연_매직댄스컬_도씨네공방",
+    "title": "2026 부천문화재단 기획공연 - 매직댄스컬 〈도씨네공방〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012972_p.gif",
+    "date": "2026.11.12 ~ 2026.11.14",
+    "venue": "부천시민회관 소공연장",
+    "link": "https://tickets.interpark.com/goods/26012972",
+    "region": "경기",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-10T23:04:15.085Z"
+  },
+  {
+    "id": "perf_사이먼_래틀_경_바이에른_방송교향악단_11_12",
+    "title": "사이먼 래틀 경 ＆ 바이에른 방송교향악단 (11/12)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26006932_p.gif",
+    "date": "2026.11.12 ~ 2026.11.12",
+    "venue": "예술의전당 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/26006932",
+    "region": "기타",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-10T23:04:15.087Z"
+  },
+  {
+    "id": "perf_금호아트홀_아름다운_목요일_프란츠_슈베르트_X_문지영_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 프란츠 슈베르트 X 문지영 Piano",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016306_p.gif",
+    "date": "2026.11.12 ~ 2026.11.12",
+    "venue": "금호아트홀 연세",
+    "link": "https://tickets.interpark.com/goods/25016306",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-10T23:04:16.152Z"
+  },
+  {
+    "id": "perf_2026_브런치클래식_가을_그_쓸쓸함에_대하여_군포",
+    "title": "2026 브런치클래식 Ⅵ. 가을 그 쓸쓸함에 대하여 - 군포",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010989_p.gif",
+    "date": "2026.11.12 ~ 2026.11.12",
+    "venue": "군포문화예술회관 수리홀",
+    "link": "https://tickets.interpark.com/goods/26010989",
+    "region": "gyeonggi",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-10T23:04:16.153Z"
+  },
+  {
+    "id": "perf_ACIx인천시향_공동기획_조조_클래식",
+    "title": "ACIx인천시향 공동기획 〈조조早朝 클래식〉 Ⅳ",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26001012_p.gif",
+    "date": "2026.11.12 ~ 2026.11.12",
+    "venue": "아트센터인천 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/26001012",
+    "region": "incheon",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-10T23:04:17.220Z"
+  },
+  {
+    "id": "perf_2026_서울카페쇼",
+    "title": "2026 서울카페쇼",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26010190_p.gif",
+    "date": "2026.11.11 ~ 2026.11.14",
+    "venue": "서울 코엑스 전관",
+    "link": "https://tickets.interpark.com/goods/26010190",
+    "region": "서울",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-10T23:04:11.884Z"
+  },
+  {
+    "id": "perf_제15회_월드커피포럼",
+    "title": "제15회 월드커피포럼",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26011281_p.gif",
+    "date": "2026.11.11 ~ 2026.11.14",
+    "venue": "코엑스 컨퍼런스룸 3, 4층",
+    "link": "https://tickets.interpark.com/goods/26011281",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-10T23:04:12.952Z"
+  },
+  {
+    "id": "perf_2026_집에_사는_몬스터",
+    "title": "2026 집에 사는 몬스터",
+    "image": "//ticketimage.interpark.com/Play/image/large/L0/L0000151_p.gif",
+    "date": "2026.11.07 ~ 2026.11.14",
+    "venue": "LG아트센터 서울 U+ 스테이지",
+    "link": "https://tickets.interpark.com/goods/L0000151",
+    "region": "서울",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-10T23:04:06.548Z"
+  },
+  {
+    "id": "perf_연극_에너미",
+    "title": "연극〈에너미〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/P0/P0004845_p.gif",
+    "date": "2026.10.26 ~ 2026.11.14",
+    "venue": "세종문화회관 M씨어터",
+    "link": "https://tickets.interpark.com/goods/P0004845",
+    "region": "세종",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-10T23:04:00.146Z"
+  },
+  {
+    "id": "perf_뮤지컬_남벌",
+    "title": "뮤지컬 〈남벌〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012901_p.gif",
+    "date": "2026.10.23 ~ 2026.11.14",
+    "venue": "티켓링크 1975 씨어터",
+    "link": "https://tickets.interpark.com/goods/26012901",
+    "region": "기타",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-10T23:03:56.946Z"
+  },
+  {
+    "id": "perf_2026_브런치_콘서트_하반기_용인",
+    "title": "2026 브런치 콘서트 (하반기) - 용인",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009116_p.gif",
+    "date": "2026.09.12 ~ 2026.11.14",
+    "venue": "용인시 평생학습관 큰어울마당",
+    "link": "https://tickets.interpark.com/goods/26009116",
+    "region": "gyeonggi",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-13T23:28:42.419Z"
   },
   {
     "id": "perf_Morgenshtern_Alisher_World_Tour_Part_2_Seoul",
@@ -15264,46 +15264,6 @@
     "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301804_260928_142151.gif"
   },
   {
-    "id": "perf_지역_아티스트와_함께하는_K_클래식_콘서트6_문화예술컴퍼니_아레나_천안",
-    "title": "지역 아티스트와 함께하는 K-클래식 콘서트6 〈문화예술컴퍼니 아레나〉 - 천안",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26008984_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "천안예술의전당 소공연장",
-    "link": "https://tickets.interpark.com/goods/26008984",
-    "region": "기타",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_브런치클래식_낭만_가객_바리톤_최현수_군포",
-    "title": "2026 브런치클래식 Ⅴ. 낭만 가객 바리톤 최현수 - 군포",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010991_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "군포문화예술회관 수리홀",
-    "link": "https://tickets.interpark.com/goods/26010991",
-    "region": "기타",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_제천달빛아레_콘서트_제천_10월_공연",
-    "title": "2026 제천달빛아레 콘서트_제천 10월 공연",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012432_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "제천예술의전당",
-    "link": "https://tickets.interpark.com/goods/26012432",
-    "region": "기타",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_일리야_라쉬코프스키_라흐마니노프_3개의_피아노_협주곡_세종",
-    "title": "일리야 라쉬코프스키, 라흐마니노프 3개의 피아노 협주곡 - 세종",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26008745_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "세종예술의전당(세종특별자치시)",
-    "link": "https://tickets.interpark.com/goods/26008745",
-    "region": "세종",
-    "genre": "classic"
-  },
-  {
     "id": "perf_여기에는_생각보다_뭐가_많다",
     "title": "여기에는 생각보다 뭐가 많다",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26014354_p.gif",
@@ -15312,26 +15272,6 @@
     "link": "https://tickets.interpark.com/goods/26014354",
     "region": "기타",
     "genre": "play"
-  },
-  {
-    "id": "perf_2026_서울국제음악제_이안_보스트리지_슈만_시인의_사랑",
-    "title": "2026 서울국제음악제 ‘이안 보스트리지 : 슈만 시인의 사랑’",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26011944_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "예술의전당 IBK기업은행챔버홀",
-    "link": "https://tickets.interpark.com/goods/26011944",
-    "region": "서울",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_금호아트홀_상주음악가_바리톤_김태한_페르소나_IV_고독",
-    "title": "2026 금호아트홀 상주음악가 바리톤 김태한, 페르소나 IV. 고독",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016359_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "금호아트홀 연세",
-    "link": "https://tickets.interpark.com/goods/25016359",
-    "region": "seoul",
-    "genre": "classic"
   },
   {
     "id": "perf_다비드_바뱅_아드리앙_몽도_피아노_피아노",
@@ -15344,36 +15284,6 @@
     "genre": "classic"
   },
   {
-    "id": "perf_영등포아트홀_기획공연_마티네콘서트_금난새_3_베버",
-    "title": "영등포아트홀 기획공연 ［마티네콘서트 금난새］＃3.베버",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26001492_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "영등포아트홀",
-    "link": "https://tickets.interpark.com/goods/26001492",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_제_4회_한국_바로크_음악제_건반_음악의_이정표를_찾아_시리즈",
-    "title": "제 4회 한국 바로크 음악제 ＇건반 음악의 이정표를 찾아＇ 시리즈Ⅱ",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26011089_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "일신홀",
-    "link": "https://tickets.interpark.com/goods/26011089",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_정오의_음악회_10월",
-    "title": "2026 〈정오의 음악회〉 10월",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010198_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "국립극장 해오름극장",
-    "link": "https://tickets.interpark.com/goods/26010198",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
     "id": "perf_2026_부천문화재단_기획공연_연극_세_개의_숨",
     "title": "2026 부천문화재단 기획공연 - 연극 〈세 개의 숨〉",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26010849_p.gif",
@@ -15382,16 +15292,6 @@
     "link": "https://tickets.interpark.com/goods/26010849",
     "region": "gyeonggi",
     "genre": "play"
-  },
-  {
-    "id": "perf_부천시립예술단_1234_콘서트_부천필하모닉오케스트라_가을_그리고_전설_Autumn_and_Legends",
-    "title": "부천시립예술단 1234 콘서트 Ⅲ - 부천필하모닉오케스트라 ‘가을, 그리고 전설 Autumn, and  Legends’",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017082_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "부천아트센터 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/25017082",
-    "region": "gyeonggi",
-    "genre": "classic"
   },
   {
     "id": "perf_뮤지컬_그날들_부산",
@@ -16646,16 +16546,6 @@
     "genre": "classic"
   },
   {
-    "id": "perf_창작ing_뮤지컬_돌쇠전",
-    "title": "창작ing 뮤지컬 〈돌쇠전〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012659_p.gif",
-    "date": "2026.10.02 ~ 2026.10.15",
-    "venue": "국립정동극장 세실",
-    "link": "https://tickets.interpark.com/goods/26012659",
-    "region": "기타",
-    "genre": "musical"
-  },
-  {
     "id": "perf_뮤지컬_소년의_초상",
     "title": "뮤지컬 〈소년의 초상〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26008698_p.gif",
@@ -16889,16 +16779,6 @@
     "genre": "play"
   },
   {
-    "id": "perf_미드위크_뮤지엄_이강소_일어나고_사라지는",
-    "title": "［미드위크 뮤지엄］ 이강소 : 일어나고 사라지는",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013260_p.gif",
-    "date": "2026.09.17 ~ 2026.10.15",
-    "venue": "롯데뮤지엄",
-    "link": "https://tickets.interpark.com/goods/26013260",
-    "region": "기타",
-    "genre": "exhibition"
-  },
-  {
     "id": "perf_2026년_전주브랜드공연_마당창극_별향단젼이라",
     "title": "2026년 전주브랜드공연(마당창극) ＇별향단젼이라＇",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26006947_p.gif",
@@ -16989,28 +16869,6 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-07-25T19:31:23.024Z"
-  },
-  {
-    "id": "perf_제23회_DIOF_패밀리_오페라_패키지",
-    "title": "제23회 DIOF 패밀리 오페라 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010625_p.gif",
-    "date": "2026.07.21 ~ 2026.10.15",
-    "venue": "해당공연 공연장－대구",
-    "link": "https://tickets.interpark.com/goods/26010625",
-    "region": "daegu",
-    "genre": "classic",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-07-21T19:47:17.880Z"
   },
   {
     "id": "perf_지브리_하우스_콘서트_그_여름날의_계곡_대구",
@@ -17784,16 +17642,6 @@
     "link": "https://tickets.interpark.com/goods/26011411",
     "region": "기타",
     "genre": "leisure"
-  },
-  {
-    "id": "perf_ACL2_강원FC_vs_프놈펜_크라운_10_15",
-    "title": "［ACL2］강원FC vs 프놈펜 크라운 (10.15)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012741_p.gif",
-    "date": "2026.10.15 ~ 2026.10.15",
-    "venue": "강릉종합운동장",
-    "link": "https://tickets.interpark.com/goods/26012741",
-    "region": "강원",
-    "genre": "etc"
   },
   {
     "id": "perf_일일권_아이스버그골프_서울신문_오픈",

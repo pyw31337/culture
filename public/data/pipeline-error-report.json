@@ -1,23 +1,11 @@
 {
-  "generatedAt": "2026-11-14T22:34:21.225Z",
-  "runId": "43646539482",
-  "commit": "0cd547de564bafc715034e86b38ceea715239ded",
+  "generatedAt": "2026-11-15T23:01:27.556Z",
+  "runId": "43770420964",
+  "commit": "1bee070ffac6d95535917fbe4e9f77dd87f270f8",
   "failures": [
     {
       "source": "umclass",
       "kind": "access-or-structure",
-      "action": "retained-last-good-data",
-      "blocking": false
-    },
-    {
-      "source": "mochaclass",
-      "kind": "access-or-structure",
-      "action": "retained-last-good-data",
-      "blocking": false
-    },
-    {
-      "source": "museum",
-      "kind": "timeout",
       "action": "retained-last-good-data",
       "blocking": false
     }
@@ -40,9 +28,9 @@
     {
       "source": "interpark",
       "sample": 120,
-      "missingPrice": 113,
-      "missingAge": 112,
-      "missingRuntime": 112,
+      "missingPrice": 114,
+      "missingAge": 113,
+      "missingRuntime": 113,
       "policy": "warn-and-report"
     }
   ],

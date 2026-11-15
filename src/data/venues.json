@@ -683,7 +683,8 @@
     ],
     "parking": "Y",
     "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로",
+    "phone": "02-6000-0114"
   },
   "블루스퀘어 신한카드홀": {
     "name": "블루스퀘어",
@@ -2515,9 +2516,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "우리소극장": {
     "name": "우리소극장",
@@ -3139,7 +3140,25 @@
     "district": "강남구",
     "lat": 37.5112971004715,
     "lng": 127.059147996025,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "고궁박물관": {
     "name": "고궁박물관",
@@ -3212,7 +3231,25 @@
     "district": "강남구",
     "lat": 37.5112971004715,
     "lng": 127.059147996025,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "토탈미술관": {
     "name": "토탈미술관",
@@ -22282,7 +22319,25 @@
     "district": "강남구",
     "lat": 37.5113206,
     "lng": 127.0591399,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "서울대공원": {
     "name": "서울대공원",
@@ -33096,14 +33151,14 @@
     "district": "성북구",
     "phone": "010-3385-4155",
     "homepage": "http://sbtheater.modoo.at/",
-    "facilityType": "민간(대학로)",
+    "facilityType": "민간(대학로 외)",
     "seatScale": "68",
     "theaterCount": "1",
     "openedAt": "2015",
     "amenities": [],
     "parking": "주차장: N",
     "restrooms": "",
-    "facilities": "시설 특성: 민간(대학로)"
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "연세대학교 백주년기념관 콘서트홀": {
     "name": "연세대학교 백주년기념관 콘서트홀",
@@ -36991,7 +37046,25 @@
     "district": "강남구",
     "lat": 37.513409385014874,
     "lng": 127.05848344600409,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "충청남도 당진시 합덕읍 합덕성당2길 10 합덕제 생태관광체험센터": {
     "name": "충청남도 당진시 합덕읍 합덕성당2길 10 합덕제 생태관광체험센터",
@@ -53028,7 +53101,25 @@
     "lat": 37.510192859355016,
     "lng": 127.06015941426635,
     "name": "코엑스 별마당 도서관",
-    "district": "강남구"
+    "district": "강남구",
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "보자르갤러리": {
     "address": "서울 강남구 도산대로99길 50-2",
@@ -63357,7 +63448,15 @@
     "lng": 128.5804197,
     "district": "",
     "phone": "00-1600-8325",
-    "homepage": "http://www.kkumter.co.kr"
+    "homepage": "http://www.kkumter.co.kr",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "120",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "벨로주 [홍대] (구. 왓에버)": {
     "name": "벨로주 [홍대] (구. 왓에버)",
@@ -65169,7 +65268,15 @@
     "lng": 126.8889847,
     "district": "마포구",
     "phone": "02-515-0915",
-    "homepage": "https://showkingkpopcenter.modoo.at/"
+    "homepage": "https://showkingkpopcenter.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "3",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "안성맞춤아트홀": {
     "name": "안성맞춤아트홀",
@@ -66141,7 +66248,17 @@
     "lng": 126.8840596,
     "district": "구로구",
     "phone": "02-1661-5054",
-    "homepage": "https://cafe.naver.com/purifycompany"
+    "homepage": "https://cafe.naver.com/purifycompany",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "232",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "복사골문화센터": {
     "name": "복사골문화센터",
@@ -68641,7 +68758,8 @@
     ],
     "parking": "Y",
     "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로",
+    "phone": "02-6000-0114"
   },
   "쌍벽루아트홀": {
     "name": "쌍벽루아트홀",
@@ -69051,14 +69169,15 @@
   },
   "코엑스": {
     "name": "코엑스",
-    "address": "서울특별시 강남구 영동대로 513",
+    "address": "서울특별시 강남구 영동대로 513 (삼성동)",
     "lat": 37.5116833,
     "lng": 127.05910799999992,
     "district": "강남구",
-    "homepage": "https://www.coexartium.co.kr/",
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
     "facilityType": "민간(대학로 외)",
-    "seatScale": "1004",
-    "theaterCount": "1",
+    "seatScale": "13325",
+    "theaterCount": "10",
     "openedAt": "2009",
     "amenities": [
       "식당",
@@ -69069,9 +69188,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "모두의 예술 스튜디오": {
     "name": "모두의 예술 스튜디오",
@@ -88503,7 +88622,13 @@
     "lat": 35.8461538185571,
     "lng": 128.580427881099,
     "phone": "00-1600-8325",
-    "homepage": "http://www.kkumter.co.kr"
+    "homepage": "http://www.kkumter.co.kr",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "120",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "벨로주 (구. 왓에버) (벨로주 (구. 왓에버))": {
     "name": "벨로주 (구. 왓에버) (벨로주 (구. 왓에버))",
@@ -92294,7 +92419,12 @@
     "lat": 37.5820926405598,
     "lng": 126.88898268227,
     "phone": "02-515-0915",
-    "homepage": "https://showkingkpopcenter.modoo.at/"
+    "homepage": "https://showkingkpopcenter.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "3",
+    "parking": "주차장: Y",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "한국만화박물관 (만화영화상영관)": {
     "name": "한국만화박물관 (만화영화상영관)",
@@ -94481,7 +94611,16 @@
     "lat": 37.5000826217182,
     "lng": 126.884132790487,
     "phone": "02-1661-5054",
-    "homepage": "https://cafe.naver.com/purifycompany"
+    "homepage": "https://cafe.naver.com/purifycompany",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "232",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "복사골문화센터 (아트홀)": {
     "name": "복사골문화센터 (아트홀)",
@@ -99213,7 +99352,8 @@
     ],
     "parking": "Y",
     "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "facilities": "민간(대학로 외) · 식당, 카페, 편의점, 수유실, 장애인 주차, 장애인 화장실, 장애인 경사로",
+    "phone": "02-6000-0114"
   },
   "과천시민회관 (소극장)": {
     "name": "과천시민회관 (소극장)",
@@ -104620,7 +104760,25 @@
     "address": "서울 강남구 삼성동 159-9",
     "district": "강남구",
     "lat": 37.5099913651309,
-    "lng": 127.061268809434
+    "lng": 127.061268809434,
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "NOL 유니플렉스 2관": {
     "name": "NOL 유니플렉스 2관",
@@ -108954,7 +109112,25 @@
     "address": "서울 강서구 마곡중앙로 143",
     "district": "강서구",
     "lat": 37.56628382605159,
-    "lng": 126.82625380079358
+    "lng": 126.82625380079358,
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "글로벌세아 아트스페이스": {
     "name": "글로벌세아 아트스페이스",
@@ -108975,7 +109151,25 @@
     "address": "서울 강남구 영동대로 513",
     "district": "강남구",
     "lat": 37.511297100471545,
-    "lng": 127.05914799602495
+    "lng": 127.05914799602495,
+    "phone": "02-6000-0114",
+    "homepage": "http://www.coex.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "13325",
+    "theaterCount": "10",
+    "openedAt": "2009",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
   },
   "남극장": {
     "name": "남극장",
@@ -117392,7 +117586,20 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.5457838,
-    "lng": 127.0424798
+    "lng": 127.0424798,
+    "phone": "02-516-2513",
+    "homepage": "http://www.seouliteum.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "800",
+    "theaterCount": "2",
+    "openedAt": "2017",
+    "amenities": [
+      "식당",
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "목동 JS 아트홀 (양천구 등촌로 36)": {
     "name": "목동 JS 아트홀 (양천구 등촌로 36)",
@@ -118853,7 +119060,9 @@
   "코엑스 A홀": {
     "name": "코엑스 A홀",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5116833,
+    "lng": 127.05910799999992
   },
   "부산현대미술관 외 2곳": {
     "name": "부산현대미술관 외 2곳",
@@ -118885,7 +119094,9 @@
   "코엑스 컨퍼런스룸 3, 4층": {
     "name": "코엑스 컨퍼런스룸 3, 4층",
     "address": "정보 없음",
-    "district": ""
+    "district": "",
+    "lat": 37.5116833,
+    "lng": 127.05910799999992
   },
   "제물포구문화체육센터 공연장": {
     "name": "제물포구문화체육센터 공연장",
