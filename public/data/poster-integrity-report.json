@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-16T11:23:49.783Z",
+  "checkedAt": "2026-11-16T14:20:00.011Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10324,
-  "verified": 9519,
-  "unavailable": 805,
+  "total": 10328,
+  "verified": 9518,
+  "unavailable": 810,
   "pending": 0,
   "recoveredFromAlternate": 1,
   "unavailableSamples": [
@@ -390,6 +390,13 @@
       "failure": "http-403"
     },
     {
+      "id": "perf_SMART_HOME_INTERIOR_2026_실내건축의_새로운_패러다임_코엑스_컨퍼런스룸_남_4F_20261119",
+      "title": "SMART HOME INTERIOR 2026: 실내건축의 새로운 패러다임",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "class_귀염뽀짝_캔들_만들기_원데이_클래스",
       "title": "귀염뽀짝 캔들 만들기 원데이 클래스",
       "source": "remote",
@@ -406,8 +413,8 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_SMART_HOME_INTERIOR_2026_실내건축의_새로운_패러다임_코엑스_컨퍼런스룸_남_4F_20261119",
-      "title": "SMART HOME INTERIOR 2026: 실내건축의 새로운 패러다임",
+      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261119",
+      "title": "나도이제 어른-갓쓰고 비녀꽂고",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -429,8 +436,15 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261119",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
+      "id": "perf_잠자는_말뚝이를_깨워라_생생_고성오광대_전수교육관_20261119",
+      "title": "잠자는 말뚝이를 깨워라. 생생!!!",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_귤림_사락사락_장수당_20261119",
+      "title": "귤림 사락사락",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -447,20 +461,6 @@
     {
       "id": "movie_비스트헌터_배틀정글",
       "title": "비스트헌터: 배틀정글",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_잠자는_말뚝이를_깨워라_생생_고성오광대_전수교육관_20261119",
-      "title": "잠자는 말뚝이를 깨워라. 생생!!!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_귤림_사락사락_장수당_20261119",
-      "title": "귤림 사락사락",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -485,6 +485,13 @@
       "failure": "http-403"
     },
     {
+      "id": "perf_남한강_무쌍신식_단양_조덕수_고택_1박2일_단양조덕수고택_20261120",
+      "title": "남한강 무쌍신식, 단양 조덕수 고택 1박2일",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "class_반짝반짝_향기가득_보석방향제_만들기",
       "title": "반짝반짝 향기가득 보석방향제 만들기",
       "source": "remote",
@@ -505,15 +512,15 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_남한강_무쌍신식_단양_조덕수_고택_1박2일_단양조덕수고택_20261120",
-      "title": "남한강 무쌍신식, 단양 조덕수 고택 1박2일",
+      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261120",
+      "title": "만해생가, 가볼 만해",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261120",
-      "title": "만해생가, 가볼 만해",
+      "id": "perf_살롱_드_월봉_월봉서원_20261120",
+      "title": "살롱 드 월봉",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -529,8 +536,8 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_살롱_드_월봉_월봉서원_20261120",
-      "title": "살롱 드 월봉",
+      "id": "perf_YES_예산의_향교와_함께_예산향교_20261120",
+      "title": "YES 예산의 향교와 함께",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -545,8 +552,15 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_YES_예산의_향교와_함께_예산향교_20261120",
-      "title": "YES 예산의 향교와 함께",
+      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261120",
+      "title": "충주향교 꼬마선비의 선비풍류",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_남한강_무쌍신식_조덕수_고택_단양의_식탁_단양조덕수고택_20261120",
+      "title": "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -559,13 +573,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/009f94a5a36c4a8199dec56c5a6e69eb.jpeg"
       ],
       "failure": "http-403"
-    },
-    {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261120",
-      "title": "충주향교 꼬마선비의 선비풍류",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
     },
     {
       "id": "movie_철권_최후의_결투",
@@ -591,13 +598,6 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_남한강_무쌍신식_조덕수_고택_단양의_식탁_단양조덕수고택_20261120",
-      "title": "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_광주플룻원데이클래스",
       "title": "광주플룻원데이클래스",
       "source": "remote",
@@ -606,15 +606,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0b1b1ff6bbcd4fafb7dcafcb692058f8.jpg"
       ],
       "failure": "http-403, http-403"
-    },
-    {
-      "id": "class_SDCA_캔들_창업_자격증반_1개월",
-      "title": "SDCA 캔들 창업 자격증반 [1개월]",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e30d45894bbb4414ba6898d601a5d31f.png"
-      ],
-      "failure": "http-403"
     },
     {
       "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261124",
@@ -631,6 +622,29 @@
       "failure": "no-poster-candidate"
     },
     {
+      "id": "class_SDCA_캔들_창업_자격증반_1개월",
+      "title": "SDCA 캔들 창업 자격증반 [1개월]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e30d45894bbb4414ba6898d601a5d31f.png"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261124",
+      "title": "빛, 생명을 처방하다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_향교로_마실가자_정선향교_20261124",
+      "title": "향교로 마실가자",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "class_나만의_컵_만들기_전사지_원데이_클래스",
       "title": "나만의 컵 만들기/전사지 원데이 클래스",
       "source": "remote",
@@ -640,8 +654,8 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261124",
-      "title": "빛, 생명을 처방하다",
+      "id": "perf_구급_처방_컬러링_충청북도_음성군_20261124",
+      "title": "구급 처방 컬러링",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -661,20 +675,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c5c79a250c65434d8836ef2c33730276.JPG"
       ],
       "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "perf_향교로_마실가자_정선향교_20261124",
-      "title": "향교로 마실가자",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_구급_처방_컬러링_충청북도_음성군_20261124",
-      "title": "구급 처방 컬러링",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
     },
     {
       "id": "perf_독서당_홍범식_고가_청년창작소_오롯_20261124",
@@ -726,6 +726,20 @@
       "failure": "no-poster-candidate"
     },
     {
+      "id": "perf_영평사_오색실_엮어_복장물_만들기_영평사_삼명선원_20261125",
+      "title": "영평사 오색실 엮어 복장물 만들기",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_기후변화_대응_노력_아픈_지구를_위하여_유림회관_20261125",
+      "title": "기후변화 대응 노력: 아픈 지구를 위하여",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "class_나만의_향으로_쉬어가는_REAL_사운드배스",
       "title": "나만의 향으로 쉬어가는 REAL 사운드배스",
       "source": "remote",
@@ -733,8 +747,8 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_영평사_오색실_엮어_복장물_만들기_영평사_삼명선원_20261125",
-      "title": "영평사 오색실 엮어 복장물 만들기",
+      "id": "perf_다시_카페_월봉서원_이안당_20261125",
+      "title": "다시茶時 카페",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -756,8 +770,8 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_기후변화_대응_노력_아픈_지구를_위하여_유림회관_20261125",
-      "title": "기후변화 대응 노력: 아픈 지구를 위하여",
+      "id": "perf_향교로_마실가자_정선향교_20261125",
+      "title": "향교로 마실가자",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -772,15 +786,8 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_다시_카페_월봉서원_이안당_20261125",
-      "title": "다시茶時 카페",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_향교로_마실가자_정선향교_20261125",
-      "title": "향교로 마실가자",
+      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261125",
+      "title": "나도이제 어른-갓쓰고 비녀꽂고",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -804,13 +811,6 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261125",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_한지공예_한지_하트_조명만들기",
       "title": "한지공예 한지 하트 조명만들기",
       "source": "remote",
@@ -818,6 +818,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/743817feba6c4141a81fce5d1e7ff6e7.jpg"
       ],
       "failure": "http-403"
+    },
+    {
+      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261125",
+      "title": "양주향교와 함께하는 시간여행",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "class_DEEPLY_MUSIC_쉽고_재밌는_기타레슨",
@@ -829,8 +836,8 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261125",
-      "title": "양주향교와 함께하는 시간여행",
+      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261126",
+      "title": "선비의 사계",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -850,13 +857,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/82d0b5abafc740babca2f8dbce119089.jpg"
       ],
       "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261126",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
     }
   ],
   "pendingSamples": []

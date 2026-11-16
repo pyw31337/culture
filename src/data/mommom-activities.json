@@ -19,7 +19,7 @@
     "source": "mommom-activity",
     "description": "서울랜드에서 제공하는 맘맘 핫딜 상품입니다.",
     "priceDetail": "정상가: 52,000원\n상품 할인: -34,000원\n판매가: 18,000원",
-    "feesAndPrograms": "판매/이용 기간: 2026.06.01 ~ 2027.03.31\n상품 유형: DEFAULT\n잔여 재고: 29,437개\n관심: 167명",
+    "feesAndPrograms": "판매/이용 기간: 2026.06.01 ~ 2027.03.31\n상품 유형: DEFAULT\n잔여 재고: 29,436개\n관심: 167명",
     "bookingNotice": "판매/이용 기간: 2026.06.01 ~ 2027.03.31",
     "reservationInfo": "",
     "sourceUpdatedAt": "2026.06.01",
@@ -33,7 +33,7 @@
     "sellerAddress": "",
     "rawVenue": "서울랜드",
     "tags": [],
-    "stockInfo": "29,437개",
+    "stockInfo": "29,436개",
     "reviewCount": 0,
     "likeCount": 167,
     "discountAmount": 34000
