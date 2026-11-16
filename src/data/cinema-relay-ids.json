@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T02:04:54.237Z",
+  "generatedAt": "2026-11-16T11:23:29.317Z",
   "source": "https://mcp.aka.page/api/{cgv|megabox|lottecinema}/theaters",
   "items": {
     "롯데시네마::롯데시네마 가산디지털": {
@@ -43,6 +43,12 @@
       "theaterId": "1004",
       "theaterName": "건대입구",
       "distanceKm": 0.02
+    },
+    "롯데시네마::롯데시네마 검단아라": {
+      "brand": "롯데시네마",
+      "theaterId": "3051",
+      "theaterName": "검단아라",
+      "distanceKm": 0.01
     },
     "롯데시네마::롯데시네마 경주황성": {
       "brand": "롯데시네마",
@@ -374,6 +380,12 @@
       "theaterName": "센트럴락",
       "distanceKm": 0
     },
+    "롯데시네마::롯데시네마 속초": {
+      "brand": "롯데시네마",
+      "theaterId": "9131",
+      "theaterName": "속초",
+      "distanceKm": 0.02
+    },
     "롯데시네마::롯데시네마 송탄": {
       "brand": "롯데시네마",
       "theaterId": "3029",
@@ -547,6 +559,12 @@
       "theaterId": "7003",
       "theaterName": "원주무실",
       "distanceKm": 0.01
+    },
+    "롯데시네마::롯데시네마 월드타워": {
+      "brand": "롯데시네마",
+      "theaterId": "1016",
+      "theaterName": "월드타워",
+      "distanceKm": 0.03
     },
     "롯데시네마::롯데시네마 위례": {
       "brand": "롯데시네마",
@@ -896,6 +914,12 @@
       "theaterName": "남춘천",
       "distanceKm": 0
     },
+    "메가박스::메가박스 남포항": {
+      "brand": "메가박스",
+      "theaterId": "0074",
+      "theaterName": "남포항",
+      "distanceKm": 0.02
+    },
     "메가박스::메가박스 논산": {
       "brand": "메가박스",
       "theaterId": "0018",
@@ -1046,7 +1070,19 @@
       "theaterName": "사상",
       "distanceKm": 0.06
     },
+    "메가박스::메가박스 삼천포": {
+      "brand": "메가박스",
+      "theaterId": "6642",
+      "theaterName": "삼천포",
+      "distanceKm": 0.03
+    },
     "메가박스::메가박스 상봉": {
+      "brand": "메가박스",
+      "theaterId": "1311",
+      "theaterName": "상봉",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 상봉지점": {
       "brand": "메가박스",
       "theaterId": "1311",
       "theaterName": "상봉",
@@ -1063,6 +1099,18 @@
       "theaterId": "0082",
       "theaterName": "서면대한",
       "distanceKm": 0.01
+    },
+    "메가박스::메가박스 서면대한점": {
+      "brand": "메가박스",
+      "theaterId": "0082",
+      "theaterName": "서면대한",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 성남모란": {
+      "brand": "메가박스",
+      "theaterId": "0086",
+      "theaterName": "성남모란",
+      "distanceKm": 0
     },
     "메가박스::메가박스 세종 조치원": {
       "brand": "메가박스",
@@ -1081,6 +1129,30 @@
       "theaterId": "1371",
       "theaterName": "센트럴",
       "distanceKm": 0.08
+    },
+    "메가박스::메가박스 속초": {
+      "brand": "메가박스",
+      "theaterId": "2171",
+      "theaterName": "속초",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 송도": {
+      "brand": "메가박스",
+      "theaterId": "4062",
+      "theaterName": "송도(트리플스트리트)",
+      "distanceKm": 0.06
+    },
+    "메가박스::메가박스 송파파크하비오": {
+      "brand": "메가박스",
+      "theaterId": "1381",
+      "theaterName": "송파파크하비오",
+      "distanceKm": 0.04
+    },
+    "메가박스::메가박스 수원": {
+      "brand": "메가박스",
+      "theaterId": "0051",
+      "theaterName": "수원",
+      "distanceKm": 0.13
     },
     "메가박스::메가박스 수원남문": {
       "brand": "메가박스",
@@ -1286,11 +1358,35 @@
       "theaterName": "청라지젤(휴관)",
       "distanceKm": 0.06
     },
+    "메가박스::메가박스 청주사창": {
+      "brand": "메가박스",
+      "theaterId": "0049",
+      "theaterName": "청주사창",
+      "distanceKm": 0.01
+    },
     "메가박스::메가박스 청주성안길": {
       "brand": "메가박스",
       "theaterId": "0069",
       "theaterName": "청주성안길",
       "distanceKm": 0.01
+    },
+    "메가박스::메가박스 청주터미널점": {
+      "brand": "메가박스",
+      "theaterId": "0094",
+      "theaterName": "청주터미널",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 춘천 석사지점": {
+      "brand": "메가박스",
+      "theaterId": "0037",
+      "theaterName": "춘천석사",
+      "distanceKm": 0.05
+    },
+    "메가박스::메가박스 충주연수": {
+      "brand": "메가박스",
+      "theaterId": "0068",
+      "theaterName": "충주연수",
+      "distanceKm": 0
     },
     "메가박스::메가박스 코엑스": {
       "brand": "메가박스",
@@ -1304,11 +1400,59 @@
       "theaterName": "킨텍스",
       "distanceKm": 0.04
     },
+    "메가박스::메가박스 파주금촌": {
+      "brand": "메가박스",
+      "theaterId": "4132",
+      "theaterName": "파주금촌",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 파주운정": {
+      "brand": "메가박스",
+      "theaterId": "4115",
+      "theaterName": "파주운정",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 평택비전": {
+      "brand": "메가박스",
+      "theaterId": "0064",
+      "theaterName": "평택비전",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 하남스타필드": {
+      "brand": "메가박스",
+      "theaterId": "4651",
+      "theaterName": "하남스타필드",
+      "distanceKm": 0.14
+    },
     "메가박스::메가박스 해운대 장산": {
       "brand": "메가박스",
       "theaterId": "0079",
       "theaterName": "해운대(장산)",
       "distanceKm": 0
+    },
+    "메가박스::메가박스 홍대": {
+      "brand": "메가박스",
+      "theaterId": "1212",
+      "theaterName": "홍대(아니메)",
+      "distanceKm": 0.01
+    },
+    "메가박스::메가박스 홍성내포": {
+      "brand": "메가박스",
+      "theaterId": "3501",
+      "theaterName": "홍성내포",
+      "distanceKm": 0
+    },
+    "메가박스::메가박스 화곡": {
+      "brand": "메가박스",
+      "theaterId": "0083",
+      "theaterName": "화곡",
+      "distanceKm": 0.06
+    },
+    "메가박스::메가박스 화명": {
+      "brand": "메가박스",
+      "theaterId": "0087",
+      "theaterName": "화명",
+      "distanceKm": 0.01
     },
     "CGV::CGV 강남": {
       "brand": "CGV",
@@ -1362,6 +1506,12 @@
       "brand": "CGV",
       "theaterId": "0270",
       "theaterName": "고양백석",
+      "distanceKm": 0
+    },
+    "CGV::CGV 고양행신": {
+      "brand": "CGV",
+      "theaterId": "0374",
+      "theaterName": "고양행신",
       "distanceKm": 0
     },
     "CGV::CGV 광교": {
@@ -1530,6 +1680,12 @@
       "brand": "CGV",
       "theaterId": "0345",
       "theaterName": "대구",
+      "distanceKm": 0
+    },
+    "CGV::CGV 대구수성": {
+      "brand": "CGV",
+      "theaterId": "0375",
+      "theaterName": "대구수성",
       "distanceKm": 0
     },
     "CGV::CGV 대구수성 (2026년 6월 예정)": {
@@ -1758,6 +1914,12 @@
       "brand": "CGV",
       "theaterId": "0005",
       "theaterName": "서면",
+      "distanceKm": 0
+    },
+    "CGV::CGV 서면삼정타워": {
+      "brand": "CGV",
+      "theaterId": "0285",
+      "theaterName": "서면삼정타워",
       "distanceKm": 0
     },
     "CGV::CGV 서면상상마당": {
@@ -2244,6 +2406,12 @@
       "brand": "CGV",
       "theaterId": "0214",
       "theaterName": "평택소사",
+      "distanceKm": 0
+    },
+    "CGV::CGV 포천": {
+      "brand": "CGV",
+      "theaterId": "0309",
+      "theaterName": "포천",
       "distanceKm": 0
     },
     "CGV::CGV 피카디리1958": {

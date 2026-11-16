@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-15T23:01:41.936Z",
+  "checkedAt": "2026-11-16T11:23:49.783Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 9476,
-  "verified": 8569,
-  "unavailable": 907,
+  "total": 10324,
+  "verified": 9519,
+  "unavailable": 805,
   "pending": 0,
-  "recoveredFromAlternate": 4,
+  "recoveredFromAlternate": 1,
   "unavailableSamples": [
     {
       "id": "perf_남양주_궁집_강사심화과정_남양주_궁집_20261116",
@@ -25,20 +25,6 @@
     {
       "id": "museum_추사_왔서예",
       "title": "추사 왔서예",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261118",
-      "title": "만해생가, 가볼 만해",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_다_같이_초간정주행",
-      "title": "다 같이 초간정주행",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -149,6 +135,20 @@
       "failure": "no-poster-candidate"
     },
     {
+      "id": "museum_간송컬렉션_탐방기",
+      "title": "간송컬렉션 탐방기",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261118",
+      "title": "만해생가, 가볼 만해",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "perf_향교로_마실가자_정선향교_20261118",
       "title": "향교로 마실가자",
       "source": "remote",
@@ -219,27 +219,6 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261119",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_잠자는_말뚝이를_깨워라_생생_고성오광대_전수교육관_20261119",
-      "title": "잠자는 말뚝이를 깨워라. 생생!!!",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_귤림_사락사락_장수당_20261119",
-      "title": "귤림 사락사락",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_아르헨티나_탱고_원데이_클래스_오픈",
       "title": "아르헨티나 탱고 원데이 클래스 오픈",
       "source": "remote",
@@ -262,13 +241,6 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "museum_뉴트로_이리열차_타고_익산행",
-      "title": "뉴트로 이리열차 타고 익산행",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_라틴댄스_바차타_신규체험_만원이벤트_1일",
       "title": "라틴댄스 바차타 신규체험 만원이벤트 [1일]",
       "source": "remote",
@@ -281,15 +253,22 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "museum_이상재역사탐정단",
-      "title": "이상재역사탐정단",
+      "id": "museum_다_같이_초간정주행",
+      "title": "다 같이 초간정주행",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_특명_비밀결사의_단원이_되어라",
-      "title": "특명! 비밀결사의 단원이 되어라",
+      "id": "museum_뉴트로_이리열차_타고_익산행",
+      "title": "뉴트로 이리열차 타고 익산행",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_이상재역사탐정단",
+      "title": "이상재역사탐정단",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -309,6 +288,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d5f68d2cc3874476af144037151e4936.jpg"
       ],
       "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "museum_특명_비밀결사의_단원이_되어라",
+      "title": "특명! 비밀결사의 단원이 되어라",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "class_떡케이크_컵설기_앙금플라워_클래스",
@@ -404,41 +390,6 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_남한강_무쌍신식_단양_조덕수_고택_1박2일_단양조덕수고택_20261120",
-      "title": "남한강 무쌍신식, 단양 조덕수 고택 1박2일",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261120",
-      "title": "만해생가, 가볼 만해",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_살롱_드_월봉_월봉서원_20261120",
-      "title": "살롱 드 월봉",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_YES_예산의_향교와_함께_예산향교_20261120",
-      "title": "YES 예산의 향교와 함께",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261120",
-      "title": "충주향교 꼬마선비의 선비풍류",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_귀염뽀짝_캔들_만들기_원데이_클래스",
       "title": "귀염뽀짝 캔들 만들기 원데이 클래스",
       "source": "remote",
@@ -455,15 +406,15 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_남한강_무쌍신식_조덕수_고택_단양의_식탁_단양조덕수고택_20261120",
-      "title": "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
+      "id": "perf_SMART_HOME_INTERIOR_2026_실내건축의_새로운_패러다임_코엑스_컨퍼런스룸_남_4F_20261119",
+      "title": "SMART HOME INTERIOR 2026: 실내건축의 새로운 패러다임",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261124",
-      "title": "선비의 사계",
+      "id": "movie_극장판_사랑과_전쟁_첼로마크",
+      "title": "극장판 사랑과 전쟁: 첼로마크",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -478,22 +429,8 @@
       "failure": "http-403"
     },
     {
-      "id": "movie_비스트헌터_배틀정글",
-      "title": "비스트헌터: 배틀정글",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_정기프로그램_사계절_놀이터_묵계서원_20261124",
-      "title": "정기프로그램 - 사계절 놀이터",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261124",
-      "title": "빛, 생명을 처방하다",
+      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261119",
+      "title": "나도이제 어른-갓쓰고 비녀꽂고",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -508,15 +445,226 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_향교로_마실가자_정선향교_20261124",
-      "title": "향교로 마실가자",
+      "id": "movie_비스트헌터_배틀정글",
+      "title": "비스트헌터: 배틀정글",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_국립중앙박물관_도슨트_이슬람실_어린이_역사체험_투어_초등_세계사",
-      "title": "국립중앙박물관 도슨트 이슬람실 어린이 역사체험 투어 초등 세계사",
+      "id": "perf_잠자는_말뚝이를_깨워라_생생_고성오광대_전수교육관_20261119",
+      "title": "잠자는 말뚝이를 깨워라. 생생!!!",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_귤림_사락사락_장수당_20261119",
+      "title": "귤림 사락사락",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_마음을_달래주는_소리_차르르_자개모빌_만들기",
+      "title": "마음을 달래주는 소리, 차르르 자개모빌 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5ce03ea544f94776b8c9683eaad57667.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6eb8988ae18746be95775ece36083719.jpeg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_커플_폴댄스_원데이_클래스",
+      "title": "커플 폴댄스(원데이 클래스)",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e6205008806a497faae54317846530d3.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_반짝반짝_향기가득_보석방향제_만들기",
+      "title": "반짝반짝 향기가득 보석방향제 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f2ea839d29254838ae0182e2ebd6ba30.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7b3a2b2dbc084114b238175eae146815.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_하루_한_곡으로_우쿨렐레_마스터_하기_초급",
+      "title": "하루 한 곡으로 우쿨렐레 마스터 하기(초급)",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a5824c6195234531ac5868bcc55d87e2.png",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/31dad0cda4a443cf94ad36628cd4e329.png"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "perf_남한강_무쌍신식_단양_조덕수_고택_1박2일_단양조덕수고택_20261120",
+      "title": "남한강 무쌍신식, 단양 조덕수 고택 1박2일",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_만해생가_가볼_만해_한용운선생생가지_20261120",
+      "title": "만해생가, 가볼 만해",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_부산_찹쌀_모나카_원데이_클래스",
+      "title": "부산 찹쌀 모나카 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/35007078362249aba523e41d255b27c3.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "perf_살롱_드_월봉_월봉서원_20261120",
+      "title": "살롱 드 월봉",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_강아지_넥스카프_만들기_원데이클래스_이색_클래스",
+      "title": "강아지 넥스카프 만들기 원데이클래스 이색 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ab8a1811079e430cbdc2c3ac517e69cd.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "perf_YES_예산의_향교와_함께_예산향교_20261120",
+      "title": "YES 예산의 향교와 함께",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_인천_글라스아트_원데이클래스_썬캐쳐_도어벨_휴지케이스_타원거울",
+      "title": "인천 글라스아트 원데이클래스 썬캐쳐 도어벨 휴지케이스 타원거울",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/009f94a5a36c4a8199dec56c5a6e69eb.jpeg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261120",
+      "title": "충주향교 꼬마선비의 선비풍류",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "movie_철권_최후의_결투",
+      "title": "철권: 최후의 결투",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_커플_데이트로_강추_상상_쿠키클레이_만들기",
+      "title": "커플 데이트로 강추! 상상 쿠키클레이 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/649c76338de1402d8030c022f0a76a8b.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/78f72047f3d348a58c581ffbf7667871.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9f1a3ce673844ee1af15460233836592.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3ee347c9aff64f3a8cd1b1a6490c8095.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0ca0ea1eacf349d4a66b3f140bf26e8d.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f99012bafb0c48a1a27c7b6e528a5ab8.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9d2fd145c02040919933fe1b715e82ec.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/bfae716a20aa4884bfee393961953216.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_남한강_무쌍신식_조덕수_고택_단양의_식탁_단양조덕수고택_20261120",
+      "title": "\"남한강 무쌍신식, 조덕수 고택 단양의 식탁\"",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_광주플룻원데이클래스",
+      "title": "광주플룻원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/032377f3dce341ffa365bbdb895f232c.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0b1b1ff6bbcd4fafb7dcafcb692058f8.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "class_SDCA_캔들_창업_자격증반_1개월",
+      "title": "SDCA 캔들 창업 자격증반 [1개월]",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e30d45894bbb4414ba6898d601a5d31f.png"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261124",
+      "title": "선비의 사계",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_정기프로그램_사계절_놀이터_묵계서원_20261124",
+      "title": "정기프로그램 - 사계절 놀이터",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_나만의_컵_만들기_전사지_원데이_클래스",
+      "title": "나만의 컵 만들기/전사지 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/169fb7b774b649dc9d1b8f0271935785.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261124",
+      "title": "빛, 생명을 처방하다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_명함_카드지갑_원데이클래스",
+      "title": "명함 카드지갑 원데이클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c540234475594d0d910ba0777721d177.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ff7818cbb42846bf8502f8d127a9ded7.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0d2e5ea47933441dae73996aef52e84e.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f7171460d8834221849512c7a9bbddd0.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1400b4071a6b4948a1f0339f0dca5c77.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e7553bb07daa4cb0a43ad7782e86bd34.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/81063fecc6c34d9086300ccf13549bef.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c5c79a250c65434d8836ef2c33730276.JPG"
+      ],
+      "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_향교로_마실가자_정선향교_20261124",
+      "title": "향교로 마실가자",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -557,28 +705,11 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_국립중앙박물관_그리스로마전_어린이_체험학습_역사_도슨트",
-      "title": "국립중앙박물관 그리스로마전 어린이 체험학습 역사 도슨트",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "perf_유학IN세종_연기향교_20261124",
       "title": "유학IN세종",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_마음을_달래주는_소리_차르르_자개모빌_만들기",
-      "title": "마음을 달래주는 소리, 차르르 자개모빌 만들기",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5ce03ea544f94776b8c9683eaad57667.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/6eb8988ae18746be95775ece36083719.jpeg"
-      ],
-      "failure": "http-403, http-403"
     },
     {
       "id": "perf_주심포_공포_결구로_짓다_수덕사_근역성보관_20261124",
@@ -588,15 +719,6 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_커플_폴댄스_원데이_클래스",
-      "title": "커플 폴댄스(원데이 클래스)",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e6205008806a497faae54317846530d3.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
       "id": "perf_선비의_사계_밀양혜산서원_지역교류_20261124",
       "title": "선비의 사계",
       "source": "remote",
@@ -604,14 +726,11 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_반짝반짝_향기가득_보석방향제_만들기",
-      "title": "반짝반짝 향기가득 보석방향제 만들기",
+      "id": "class_나만의_향으로_쉬어가는_REAL_사운드배스",
+      "title": "나만의 향으로 쉬어가는 REAL 사운드배스",
       "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/f2ea839d29254838ae0182e2ebd6ba30.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/7b3a2b2dbc084114b238175eae146815.jpg"
-      ],
-      "failure": "http-403, http-403"
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "perf_영평사_오색실_엮어_복장물_만들기_영평사_삼명선원_20261125",
@@ -621,21 +740,20 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "class_하루_한_곡으로_우쿨렐레_마스터_하기_초급",
-      "title": "하루 한 곡으로 우쿨렐레 마스터 하기(초급)",
+      "id": "class_99_9_순은_silver_반지대학_커플링_만들기",
+      "title": "99.9% 순은(silver) 반지대학 커플링 만들기",
       "source": "remote",
       "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/a5824c6195234531ac5868bcc55d87e2.png",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/31dad0cda4a443cf94ad36628cd4e329.png"
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3a64cbeab9154aaab5521d4884f48bf8.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/baeebd3481614002993d8c59a48ed7be.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/aaa0a392f502481886ee53a08640be33.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8bd83a08c5df43688e66d05a54b5e707.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ed0fd3ee664746a48b295fa43f0d0ef5.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/83947f2ce7264818a6fb72c3d4ff570e.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/43e4349cefd6471c9598e6bf35f797ba.JPG",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/41c4e547aaa641338ff082c8d0d07f3f.jpg"
       ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "museum_술술풀리는_교과원정대_시즌1_과학관_서울역사박물관_세종충무공이야기",
-      "title": "술술풀리는 교과원정대 시즌1 과학관, 서울역사박물관, 세종충무공이야기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
+      "failure": "http-403, http-403, http-403"
     },
     {
       "id": "perf_기후변화_대응_노력_아픈_지구를_위하여_유림회관_20261125",
@@ -643,6 +761,15 @@
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_감정카드와_강점카드로_나의_긍정의_마음_회복하기",
+      "title": "감정카드와 강점카드로 나의 긍정의 마음 회복하기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0d5852a724e94e1a961b8c9d52d1dd8b.png"
+      ],
+      "failure": "http-403"
     },
     {
       "id": "perf_다시_카페_월봉서원_이안당_20261125",
@@ -659,6 +786,24 @@
       "failure": "no-poster-candidate"
     },
     {
+      "id": "class_마크라메_월행어_만들기",
+      "title": "마크라메 월행어 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/caf6cafea1984524ab44ec4c1580b41f.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_미니_점토_케이크_오르골_만들기",
+      "title": "미니 점토 케이크+오르골 만들기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d59d8b4a41aa4462b3963da6b2e8ccb5.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
       "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261125",
       "title": "나도이제 어른-갓쓰고 비녀꽂고",
       "source": "remote",
@@ -666,11 +811,22 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_작가탐험대_초등_책속에_풍덩_빠져보고_나만의_글도_써보는_시간",
-      "title": "작가탐험대 초등! 책속에 풍덩 빠져보고 나만의 글도 써보는 시간",
+      "id": "class_한지공예_한지_하트_조명만들기",
+      "title": "한지공예 한지 하트 조명만들기",
       "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/743817feba6c4141a81fce5d1e7ff6e7.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_DEEPLY_MUSIC_쉽고_재밌는_기타레슨",
+      "title": "DEEPLY MUSIC _ 쉽고 재밌는 기타레슨",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/48bf6087c1584a38913e315360376454.jpg"
+      ],
+      "failure": "http-403"
     },
     {
       "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261125",
@@ -680,127 +836,24 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "museum_유럽_문명의_시작_국립중앙박물관_그리스로마_도슨트_어린이_투어_역사체험",
-      "title": "유럽 문명의 시작! 국립중앙박물관 그리스로마 도슨트 어린이 투어 역사체험",
+      "id": "class_프로크리에이트_사용법_그림_그리기_전에_일단_친해지기",
+      "title": "프로크리에이트 사용법!! - 그림 그리기 전에 일단 친해지기!!",
       "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b089b71afe2f440193fa5b3c233a33ef.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/70fe2ed2b9ab40958326ca64eba88616.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/3939b6950b9143fa872243c374f6c627.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c5ae6e1635d44a298b95a1112df9bdb0.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ae38c7b293164542a81f4b075cf827d2.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/bd2930ec50e544bc93c35652a1ee5b5f.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/732bb1e99e334192ac58aa197b176b8e.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/82d0b5abafc740babca2f8dbce119089.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
     },
     {
       "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261126",
       "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_목화_이야기_목면시배유지_20261126",
-      "title": "목화(花桃花)이야기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_부산_찹쌀_모나카_원데이_클래스",
-      "title": "부산 찹쌀 모나카 원데이 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/35007078362249aba523e41d255b27c3.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg"
-      ],
-      "failure": "http-403, http-403"
-    },
-    {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261126",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_덕수궁_Premium_미취학_역사탐험대_6_8세",
-      "title": "덕수궁 \"Premium\" 미취학 역사탐험대! (6-8세)",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261126",
-      "title": "충주향교 꼬마선비의 선비풍류",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_강아지_넥스카프_만들기_원데이클래스_이색_클래스",
-      "title": "강아지 넥스카프 만들기 원데이클래스 이색 클래스",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ab8a1811079e430cbdc2c3ac517e69cd.jpg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "perf_선비의_사계_밀양혜산서원_지역교류_20261126",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261127",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_국립중앙박물관_레벨업_한국사_초등_역사_체험",
-      "title": "국립중앙박물관-레벨업 한국사 초등 역사 체험",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_고산향교_난로회_고산향교_20261127",
-      "title": "고산향교 난로회",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "movie_철권_최후의_결투",
-      "title": "철권: 최후의 결투",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261127",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261127",
-      "title": "충주향교 꼬마선비의 선비풍류",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "class_인천_글라스아트_원데이클래스_썬캐쳐_도어벨_휴지케이스_타원거울",
-      "title": "인천 글라스아트 원데이클래스 썬캐쳐 도어벨 휴지케이스 타원거울",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/009f94a5a36c4a8199dec56c5a6e69eb.jpeg"
-      ],
-      "failure": "http-403"
-    },
-    {
-      "id": "perf_달빛아래_구암서원_구암서원_20261127",
-      "title": "달빛아래 구암서원",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"

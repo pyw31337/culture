@@ -5,7 +5,6 @@
     "lat": 35.06228688953221,
     "lng": 129.08342850751177,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0367",
     "relayTheaterName": "Drive In 영도"
   },
@@ -15,7 +14,6 @@
     "lat": 37.5016573944824,
     "lng": 127.026391177132,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0056",
     "relayTheaterName": "강남"
   },
@@ -25,7 +23,6 @@
     "lat": 37.7556240222687,
     "lng": 128.898238047982,
     "brand": "CGV",
-    "region": "gangwon",
     "relayTheaterId": "0139",
     "relayTheaterName": "강릉"
   },
@@ -35,7 +32,6 @@
     "lat": 37.5354056214823,
     "lng": 127.095655661312,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0001",
     "relayTheaterName": "강변"
   },
@@ -45,19 +41,8 @@
     "lat": 34.8913327108487,
     "lng": 128.616257360369,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0263",
     "relayTheaterName": "거제"
-  },
-  {
-    "name": "CGV 건대입구",
-    "address": "서울 광진구 아차산로30길 26",
-    "lat": 37.53969788896453,
-    "lng": 127.06701734324294,
-    "brand": "CGV",
-    "region": "seoul",
-    "relayTheaterId": "0229",
-    "relayTheaterName": "건대입구"
   },
   {
     "name": "CGV 경기광주",
@@ -65,17 +50,8 @@
     "lat": 37.40763278448652,
     "lng": 127.25848730078769,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0260",
     "relayTheaterName": "경기광주"
-  },
-  {
-    "name": "CGV 경산",
-    "address": "경북 경산시 대학로28길 6-5",
-    "lat": 35.83306434734083,
-    "lng": 128.73666956716002,
-    "brand": "CGV",
-    "region": "gyeongbuk"
   },
   {
     "name": "CGV 계양",
@@ -83,7 +59,6 @@
     "lat": 37.53388480323595,
     "lng": 126.73462857694774,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0043",
     "relayTheaterName": "계양"
   },
@@ -92,8 +67,7 @@
     "address": "서울 강동구 고덕비즈밸리로 51",
     "lat": 37.5664459112706,
     "lng": 127.15776982500432,
-    "brand": "CGV",
-    "region": "seoul"
+    "brand": "CGV"
   },
   {
     "name": "CGV 고성",
@@ -101,7 +75,6 @@
     "lat": 34.97705011739182,
     "lng": 128.31597352834083,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0323",
     "relayTheaterName": "고성"
   },
@@ -111,9 +84,17 @@
     "lat": 37.64361565686452,
     "lng": 126.78968648963917,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0270",
     "relayTheaterName": "고양백석"
+  },
+  {
+    "name": "CGV 고양행신",
+    "address": "경기 고양시 덕양구 충장로 8",
+    "lat": 37.61360673530944,
+    "lng": 126.83450244308372,
+    "brand": "CGV",
+    "relayTheaterId": "0374",
+    "relayTheaterName": "고양행신"
   },
   {
     "name": "CGV 광교",
@@ -121,7 +102,6 @@
     "lat": 37.2854244483569,
     "lng": 127.05746079228076,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0257",
     "relayTheaterName": "광교"
   },
@@ -131,7 +111,6 @@
     "lat": 37.296818783059095,
     "lng": 127.06801934059507,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0266",
     "relayTheaterName": "광교상현"
   },
@@ -141,87 +120,78 @@
     "lat": 37.4227713467612,
     "lng": 126.886945306216,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0348",
     "relayTheaterName": "광명역"
   },
   {
     "name": "CGV 광양",
-    "address": "전남 광양시 금호로 26",
+    "address": "전남광주통합특별시 광양시 금호로 26",
     "lat": 34.93551874125205,
     "lng": 127.72300339732493,
     "brand": "CGV",
-    "region": "jeonnam",
     "relayTheaterId": "0220",
     "relayTheaterName": "광양"
   },
   {
     "name": "CGV 광양엘에프스퀘어",
-    "address": "전남 광양시 광양읍 순광로 466",
+    "address": "전남광주통합특별시 광양시 광양읍 순광로 466",
     "lat": 34.96313117250758,
     "lng": 127.56665300953563,
     "brand": "CGV",
-    "region": "jeonnam",
     "relayTheaterId": "0221",
     "relayTheaterName": "광양 엘에프스퀘어"
   },
   {
     "name": "CGV 광주금남로",
-    "address": "광주 동구 중앙로160번길 16-7",
+    "address": "전남광주통합특별시 동구 중앙로160번길 16-7",
     "lat": 35.14683886437138,
     "lng": 126.91468623352131,
     "brand": "CGV",
-    "region": "gwangju",
     "relayTheaterId": "0295",
     "relayTheaterName": "광주금남로"
   },
   {
     "name": "CGV 광주상무",
-    "address": "광주 서구 시청로 67",
+    "address": "전남광주통합특별시 서구 시청로 67",
     "lat": 35.1542946477166,
     "lng": 126.851012735522,
     "brand": "CGV",
-    "region": "gwangju",
     "relayTheaterId": "0193",
     "relayTheaterName": "광주상무"
   },
   {
     "name": "CGV 광주용봉",
-    "address": "광주 북구 문화소통로 170",
+    "address": "전남광주통합특별시 북구 문화소통로 170",
     "lat": 35.18266772109964,
     "lng": 126.9119612057254,
     "brand": "CGV",
-    "region": "gwangju",
     "relayTheaterId": "0210",
     "relayTheaterName": "광주용봉"
   },
   {
     "name": "CGV 광주첨단",
-    "address": "광주 광산구 임방울대로826번길 29-31",
+    "address": "전남광주통합특별시 광산구 임방울대로826번길 29-31",
     "lat": 35.216298385383084,
     "lng": 126.85063812647967,
     "brand": "CGV",
-    "region": "gwangju",
     "relayTheaterId": "0218",
     "relayTheaterName": "광주첨단"
   },
   {
     "name": "CGV 광주충장로",
-    "address": "광주 동구 중앙로 163",
-    "lat": 35.148997490659,
-    "lng": 126.913228795379,
+    "address": "전남광주통합특별시 동구 중앙로 163",
+    "lat": 35.14860635367205,
+    "lng": 126.91330383510417,
     "brand": "CGV",
-    "region": "gwangju",
     "relayTheaterId": "0244",
     "relayTheaterName": "광주충장로"
   },
   {
     "name": "CGV 광주하남",
-    "address": "광주 광산구 용아로400번길 30",
+    "address": "전남광주통합특별시 광산구 용아로400번길 30",
     "lat": 35.17808609989086,
     "lng": 126.80646943382449,
     "brand": "CGV",
-    "region": "gwangju",
     "relayTheaterId": "0215",
     "relayTheaterName": "광주하남"
   },
@@ -231,7 +201,6 @@
     "lat": 37.501457454683,
     "lng": 126.882208106149,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0010",
     "relayTheaterName": "구로"
   },
@@ -241,7 +210,6 @@
     "lat": 37.60173965197465,
     "lng": 127.14211482618416,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0232",
     "relayTheaterName": "구리"
   },
@@ -251,7 +219,6 @@
     "lat": 37.63576885103721,
     "lng": 127.1230384228229,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0358",
     "relayTheaterName": "구리갈매"
   },
@@ -261,7 +228,6 @@
     "lat": 36.1301186984353,
     "lng": 128.327683824186,
     "brand": "CGV",
-    "region": "gyeongbuk",
     "relayTheaterId": "0053",
     "relayTheaterName": "구미"
   },
@@ -271,7 +237,6 @@
     "lat": 37.965199433120496,
     "lng": 128.31931911365112,
     "brand": "CGV",
-    "region": "gangwon",
     "relayTheaterId": "0355",
     "relayTheaterName": "기린"
   },
@@ -281,7 +246,6 @@
     "lat": 36.1149635993364,
     "lng": 128.183389312089,
     "brand": "CGV",
-    "region": "gyeongbuk",
     "relayTheaterId": "0240",
     "relayTheaterName": "김천율곡"
   },
@@ -291,7 +255,6 @@
     "lat": 37.606780124306,
     "lng": 126.72307871730789,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0278",
     "relayTheaterName": "김포"
   },
@@ -301,7 +264,6 @@
     "lat": 37.654712776603,
     "lng": 126.68412604991,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0188",
     "relayTheaterName": "김포운양"
   },
@@ -311,7 +273,6 @@
     "lat": 37.6322198817679,
     "lng": 126.707214470821,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0298",
     "relayTheaterName": "김포한강"
   },
@@ -321,7 +282,6 @@
     "lat": 35.24210134153335,
     "lng": 128.868574929057,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0028",
     "relayTheaterName": "김해"
   },
@@ -331,7 +291,6 @@
     "lat": 35.1700143292643,
     "lng": 128.813496656646,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0311",
     "relayTheaterName": "김해율하"
   },
@@ -341,17 +300,15 @@
     "lat": 35.1919058648171,
     "lng": 128.802063043899,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0239",
     "relayTheaterName": "김해장유"
   },
   {
     "name": "CGV 나주",
-    "address": "전남 나주시 상야4길 16-16",
+    "address": "전남광주통합특별시 나주시 상야4길 16-16",
     "lat": 35.02398669508209,
     "lng": 126.79337418956125,
     "brand": "CGV",
-    "region": "jeonnam",
     "relayTheaterId": "0237",
     "relayTheaterName": "나주"
   },
@@ -361,7 +318,6 @@
     "lat": 36.182866778734606,
     "lng": 127.09769875931985,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0370",
     "relayTheaterName": "논산"
   },
@@ -371,7 +327,6 @@
     "lat": 37.6125801175584,
     "lng": 127.151711567679,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0351",
     "relayTheaterName": "다산"
   },
@@ -381,7 +336,6 @@
     "lat": 36.9019828613395,
     "lng": 126.630199821504,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0207",
     "relayTheaterName": "당진"
   },
@@ -391,17 +345,15 @@
     "lat": 35.88523645774041,
     "lng": 128.5897840332514,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0345",
     "relayTheaterName": "대구"
   },
   {
-    "name": "CGV 대구수성 (2026년 6월 예정)",
+    "name": "CGV 대구수성",
     "address": "대구 수성구 지범로 191",
     "lat": 35.82107317991414,
     "lng": 128.64066188272335,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0375",
     "relayTheaterName": "대구수성"
   },
@@ -411,7 +363,6 @@
     "lat": 35.831408461933066,
     "lng": 128.6867983576696,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0108",
     "relayTheaterName": "대구스타디움"
   },
@@ -421,7 +372,6 @@
     "lat": 35.941454447405484,
     "lng": 128.6228681865681,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0343",
     "relayTheaterName": "대구연경"
   },
@@ -431,7 +381,6 @@
     "lat": 35.8245670294031,
     "lng": 128.52680714189017,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0216",
     "relayTheaterName": "대구월성"
   },
@@ -441,7 +390,6 @@
     "lat": 35.85057582188606,
     "lng": 128.5364507656275,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0256",
     "relayTheaterName": "대구죽전"
   },
@@ -451,7 +399,6 @@
     "lat": 35.8706343384139,
     "lng": 128.595289276938,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0147",
     "relayTheaterName": "대구한일"
   },
@@ -461,7 +408,6 @@
     "lat": 35.866728762973345,
     "lng": 128.59114681941602,
     "brand": "CGV",
-    "region": "daegu",
     "relayTheaterId": "0109",
     "relayTheaterName": "대구현대"
   },
@@ -471,7 +417,6 @@
     "lat": 35.13734403111797,
     "lng": 129.09903606988343,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0061",
     "relayTheaterName": "대연"
   },
@@ -481,7 +426,6 @@
     "lat": 36.32061362411971,
     "lng": 127.4084298628586,
     "brand": "CGV",
-    "region": "daejeon",
     "relayTheaterId": "0007",
     "relayTheaterName": "대전"
   },
@@ -491,7 +435,6 @@
     "lat": 36.30552013310163,
     "lng": 127.35069165147829,
     "brand": "CGV",
-    "region": "daejeon",
     "relayTheaterId": "0286",
     "relayTheaterName": "대전가수원"
   },
@@ -501,7 +444,6 @@
     "lat": 36.3070243467936,
     "lng": 127.45802625059,
     "brand": "CGV",
-    "region": "daejeon",
     "relayTheaterId": "0154",
     "relayTheaterName": "대전가오"
   },
@@ -511,7 +453,6 @@
     "lat": 36.347011898312125,
     "lng": 127.38867188555845,
     "brand": "CGV",
-    "region": "daejeon",
     "relayTheaterId": "0202",
     "relayTheaterName": "대전탄방"
   },
@@ -521,7 +462,6 @@
     "lat": 36.3510642371679,
     "lng": 127.43749160282,
     "brand": "CGV",
-    "region": "daejeon",
     "relayTheaterId": "0127",
     "relayTheaterName": "대전터미널"
   },
@@ -531,7 +471,6 @@
     "lat": 37.583458493533186,
     "lng": 126.99984149795074,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0063",
     "relayTheaterName": "대학로"
   },
@@ -541,7 +480,6 @@
     "lat": 37.56872428046827,
     "lng": 127.00768809872345,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0252",
     "relayTheaterName": "동대문"
   },
@@ -551,7 +489,6 @@
     "lat": 35.22144319873245,
     "lng": 129.08553282565583,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0042",
     "relayTheaterName": "동래"
   },
@@ -561,7 +498,6 @@
     "lat": 37.27839408928229,
     "lng": 127.1517711937968,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0124",
     "relayTheaterName": "동백"
   },
@@ -571,7 +507,6 @@
     "lat": 37.26390632559984,
     "lng": 127.03231003231717,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0041",
     "relayTheaterName": "동수원"
   },
@@ -581,7 +516,6 @@
     "lat": 37.20530434391312,
     "lng": 127.06941394511011,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0106",
     "relayTheaterName": "동탄"
   },
@@ -591,7 +525,6 @@
     "lat": 37.2020815853181,
     "lng": 127.098270280686,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0265",
     "relayTheaterName": "동탄역"
   },
@@ -601,7 +534,6 @@
     "lat": 37.17163720416343,
     "lng": 127.106144254764,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0233",
     "relayTheaterName": "동탄호수공원"
   },
@@ -611,7 +543,6 @@
     "lat": 37.557863496086156,
     "lng": 126.85599360789234,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0230",
     "relayTheaterName": "등촌"
   },
@@ -621,7 +552,6 @@
     "lat": 35.23755815631559,
     "lng": 128.58236879444814,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0033",
     "relayTheaterName": "마산"
   },
@@ -631,17 +561,15 @@
     "lat": 37.5634929642429,
     "lng": 126.982583010911,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0009",
     "relayTheaterName": "명동"
   },
   {
     "name": "CGV 목포평화광장",
-    "address": "전남 목포시 원형동로 53",
+    "address": "전남광주통합특별시 목포시 원형동로 53",
     "lat": 34.79923710013929,
     "lng": 126.4332955256649,
     "brand": "CGV",
-    "region": "jeonnam",
     "relayTheaterId": "0280",
     "relayTheaterName": "목포평화광장"
   },
@@ -651,7 +579,6 @@
     "lat": 37.6120573620072,
     "lng": 127.030715864901,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0057",
     "relayTheaterName": "미아"
   },
@@ -661,7 +588,6 @@
     "lat": 37.6653861881832,
     "lng": 127.043635927027,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0288",
     "relayTheaterName": "방학"
   },
@@ -671,7 +597,6 @@
     "lat": 37.3680568124489,
     "lng": 126.73042039927753,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0226",
     "relayTheaterName": "배곧"
   },
@@ -681,7 +606,6 @@
     "lat": 37.3893911733673,
     "lng": 126.951424930235,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0155",
     "relayTheaterName": "범계"
   },
@@ -691,17 +615,15 @@
     "lat": 35.09441466204187,
     "lng": 128.90347463269617,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0337",
     "relayTheaterName": "부산명지"
   },
   {
     "name": "CGV 부천",
-    "address": "경기 부천시 원미구 길주로 172",
-    "lat": 37.50436023009365,
-    "lng": 126.7604963638765,
+    "address": "경기 부천시 원미구 길주로 180",
+    "lat": 37.504316584643284,
+    "lng": 126.76208323843778,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0015",
     "relayTheaterName": "부천"
   },
@@ -711,7 +633,6 @@
     "lat": 37.48585717523398,
     "lng": 126.78091334936622,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0194",
     "relayTheaterName": "부천역"
   },
@@ -721,7 +642,6 @@
     "lat": 37.5219833057045,
     "lng": 126.703844870675,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0021",
     "relayTheaterName": "부평"
   },
@@ -731,7 +651,6 @@
     "lat": 36.0406864058558,
     "lng": 129.368169234898,
     "brand": "CGV",
-    "region": "gyeongbuk",
     "relayTheaterId": "0097",
     "relayTheaterName": "북포항"
   },
@@ -741,19 +660,8 @@
     "lat": 37.60947048970448,
     "lng": 126.92918154846974,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0030",
     "relayTheaterName": "불광"
-  },
-  {
-    "name": "CGV 산본",
-    "address": "경기 군포시 번영로 505",
-    "lat": 37.35866439665991,
-    "lng": 126.93296222767664,
-    "brand": "CGV",
-    "region": "gyeonggi",
-    "relayTheaterId": "0242",
-    "relayTheaterName": "산본"
   },
   {
     "name": "CGV 상봉",
@@ -761,7 +669,6 @@
     "lat": 37.59748249443501,
     "lng": 127.09216357979345,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0046",
     "relayTheaterName": "상봉"
   },
@@ -771,9 +678,17 @@
     "lat": 35.1492841347715,
     "lng": 129.063546082192,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0005",
     "relayTheaterName": "서면"
+  },
+  {
+    "name": "CGV 서면삼정타워",
+    "address": "부산 부산진구 중앙대로 672",
+    "lat": 35.1530135123952,
+    "lng": 129.059606833427,
+    "brand": "CGV",
+    "relayTheaterId": "0285",
+    "relayTheaterName": "서면삼정타워"
   },
   {
     "name": "CGV 서면상상마당",
@@ -781,7 +696,6 @@
     "lat": 35.1542730826014,
     "lng": 129.057501136005,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0303",
     "relayTheaterName": "서면상상마당"
   },
@@ -791,7 +705,6 @@
     "lat": 36.7782112379584,
     "lng": 126.456502242576,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0091",
     "relayTheaterName": "서산"
   },
@@ -801,7 +714,6 @@
     "lat": 35.81682250666464,
     "lng": 127.10644918999733,
     "brand": "CGV",
-    "region": "jeonbuk",
     "relayTheaterId": "0225",
     "relayTheaterName": "서전주"
   },
@@ -811,7 +723,6 @@
     "lat": 37.38710590761828,
     "lng": 127.1224615381544,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0196",
     "relayTheaterName": "서현"
   },
@@ -821,7 +732,6 @@
     "lat": 37.59255995612785,
     "lng": 127.01729015005344,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0300",
     "relayTheaterName": "성신여대입구"
   },
@@ -831,7 +741,6 @@
     "lat": 36.50248731568627,
     "lng": 127.24761041031788,
     "brand": "CGV",
-    "region": "sejong",
     "relayTheaterId": "0219",
     "relayTheaterName": "세종"
   },
@@ -841,7 +750,6 @@
     "lat": 35.16911725993332,
     "lng": 129.1303395527455,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0089",
     "relayTheaterName": "센텀시티"
   },
@@ -851,7 +759,6 @@
     "lat": 37.5047074291607,
     "lng": 126.75711932541553,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0143",
     "relayTheaterName": "소풍"
   },
@@ -861,7 +768,6 @@
     "lat": 37.38312354252111,
     "lng": 126.64235724101351,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0325",
     "relayTheaterName": "송도타임스페이스"
   },
@@ -871,17 +777,15 @@
     "lat": 37.64238839946736,
     "lng": 127.0298445691386,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0276",
     "relayTheaterName": "수유"
   },
   {
     "name": "CGV 순천신대",
-    "address": "전남 순천시 해룡면 해광로 199",
+    "address": "전남광주통합특별시 순천시 해룡면 해광로 199",
     "lat": 34.9259799955308,
     "lng": 127.552373454347,
     "brand": "CGV",
-    "region": "jeonnam",
     "relayTheaterId": "0268",
     "relayTheaterName": "순천신대"
   },
@@ -891,7 +795,6 @@
     "lat": 37.48003667615236,
     "lng": 127.14839737157858,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0274",
     "relayTheaterName": "스타필드시티위례"
   },
@@ -901,7 +804,6 @@
     "lat": 37.3253825313089,
     "lng": 127.107948735813,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0055",
     "relayTheaterName": "신세계경기"
   },
@@ -911,19 +813,8 @@
     "lat": 37.55651712691753,
     "lng": 126.94024927380556,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0150",
     "relayTheaterName": "신촌아트레온"
-  },
-  {
-    "name": "CGV 씨네드쉐프 센텀",
-    "address": "부산 해운대구 센텀남대로 35",
-    "lat": 35.1688180253412,
-    "lng": 129.129522935807,
-    "brand": "CGV",
-    "region": "busan",
-    "relayTheaterId": "P004",
-    "relayTheaterName": "씨네드쉐프 센텀"
   },
   {
     "name": "CGV 씨네드쉐프 용산아이파크몰",
@@ -931,7 +822,6 @@
     "lat": 37.529708488847525,
     "lng": 126.96393839180219,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "P013",
     "relayTheaterName": "씨네드쉐프 용산"
   },
@@ -941,7 +831,6 @@
     "lat": 36.780233741504794,
     "lng": 127.00844655246328,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0356",
     "relayTheaterName": "아산"
   },
@@ -951,7 +840,6 @@
     "lat": 35.19108874651817,
     "lng": 129.06371600203155,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0160",
     "relayTheaterName": "아시아드"
   },
@@ -961,7 +849,6 @@
     "lat": 36.56112615838721,
     "lng": 128.74936067178717,
     "brand": "CGV",
-    "region": "gyeongbuk",
     "relayTheaterId": "0272",
     "relayTheaterName": "안동"
   },
@@ -971,7 +858,6 @@
     "lat": 37.3130964120603,
     "lng": 126.830809058377,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0211",
     "relayTheaterName": "안산"
   },
@@ -981,7 +867,6 @@
     "lat": 37.01210942357348,
     "lng": 127.25736413559626,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0279",
     "relayTheaterName": "안성"
   },
@@ -991,7 +876,6 @@
     "lat": 37.5243493730171,
     "lng": 127.029401542158,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0040",
     "relayTheaterName": "압구정"
   },
@@ -1001,7 +885,6 @@
     "lat": 37.524534257049396,
     "lng": 127.02867534167731,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "P001",
     "relayTheaterName": "씨네드쉐프 압구정"
   },
@@ -1011,7 +894,6 @@
     "lat": 37.4134867375652,
     "lng": 127.127720936437,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0003",
     "relayTheaterName": "야탑"
   },
@@ -1021,7 +903,6 @@
     "lat": 35.4138256354959,
     "lng": 129.16775400575,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0234",
     "relayTheaterName": "양산삼호"
   },
@@ -1031,17 +912,15 @@
     "lat": 37.81935188902225,
     "lng": 127.09208666843612,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0262",
     "relayTheaterName": "양주옥정"
   },
   {
     "name": "CGV 여수웅천",
-    "address": "전남 여수시 웅천로 19-35",
+    "address": "전남광주통합특별시 여수시 웅천로 19-35",
     "lat": 34.7487547036681,
     "lng": 127.678754854585,
     "brand": "CGV",
-    "region": "jeonnam",
     "relayTheaterId": "0315",
     "relayTheaterName": "여수웅천"
   },
@@ -1051,7 +930,6 @@
     "lat": 37.5256928036018,
     "lng": 126.92558188499092,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0112",
     "relayTheaterName": "여의도"
   },
@@ -1061,7 +939,6 @@
     "lat": 37.4842964396909,
     "lng": 126.811066891584,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0338",
     "relayTheaterName": "역곡"
   },
@@ -1071,7 +948,6 @@
     "lat": 37.55767576550851,
     "lng": 126.92586924777187,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0292",
     "relayTheaterName": "연남"
   },
@@ -1081,7 +957,6 @@
     "lat": 37.5175176380239,
     "lng": 126.902756404631,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0059",
     "relayTheaterName": "영등포타임스퀘어"
   },
@@ -1091,7 +966,6 @@
     "lat": 37.34079033035717,
     "lng": 127.10677344222958,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0004",
     "relayTheaterName": "오리"
   },
@@ -1101,7 +975,6 @@
     "lat": 37.14211510926184,
     "lng": 127.07092967780551,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0307",
     "relayTheaterName": "오산중앙"
   },
@@ -1111,17 +984,15 @@
     "lat": 37.561783464237266,
     "lng": 127.0379502399087,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0074",
     "relayTheaterName": "왕십리"
   },
   {
     "name": "CGV 용산아이파크몰",
     "address": "서울 용산구 한강대로23길 55",
-    "lat": 37.529654519920584,
-    "lng": 126.96423822386969,
+    "lat": 37.52977180147899,
+    "lng": 126.9647416166194,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "P013",
     "relayTheaterName": "씨네드쉐프 용산"
   },
@@ -1131,7 +1002,6 @@
     "lat": 37.2350878982088,
     "lng": 127.205695627139,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0271",
     "relayTheaterName": "용인"
   },
@@ -1140,8 +1010,7 @@
     "address": "경기 용인시 기흥구 기흥로 58",
     "lat": 37.28059964056819,
     "lng": 127.11792832010876,
-    "brand": "CGV",
-    "region": "gyeonggi"
+    "brand": "CGV"
   },
   {
     "name": "CGV 울산동구",
@@ -1149,7 +1018,6 @@
     "lat": 35.48982790644419,
     "lng": 129.43106709817926,
     "brand": "CGV",
-    "region": "ulsan",
     "relayTheaterId": "0335",
     "relayTheaterName": "울산동구"
   },
@@ -1159,7 +1027,6 @@
     "lat": 35.5412348457262,
     "lng": 129.338911787136,
     "brand": "CGV",
-    "region": "ulsan",
     "relayTheaterId": "0128",
     "relayTheaterName": "울산삼산"
   },
@@ -1169,7 +1036,6 @@
     "lat": 35.55622874245462,
     "lng": 129.3213268939242,
     "brand": "CGV",
-    "region": "ulsan",
     "relayTheaterId": "0333",
     "relayTheaterName": "울산성남"
   },
@@ -1179,7 +1045,6 @@
     "lat": 35.634998630668406,
     "lng": 129.35576074504803,
     "brand": "CGV",
-    "region": "ulsan",
     "relayTheaterId": "0264",
     "relayTheaterName": "울산신천"
   },
@@ -1189,7 +1054,6 @@
     "lat": 35.57584630163453,
     "lng": 129.35592357630358,
     "brand": "CGV",
-    "region": "ulsan",
     "relayTheaterId": "0246",
     "relayTheaterName": "울산진장"
   },
@@ -1199,7 +1063,6 @@
     "lat": 38.120186660266945,
     "lng": 128.20656313767458,
     "brand": "CGV",
-    "region": "gangwon",
     "relayTheaterId": "0354",
     "relayTheaterName": "원통"
   },
@@ -1209,7 +1072,6 @@
     "lat": 36.37253644408374,
     "lng": 127.3184252503807,
     "brand": "CGV",
-    "region": "daejeon",
     "relayTheaterId": "0206",
     "relayTheaterName": "유성노은"
   },
@@ -1219,7 +1081,6 @@
     "lat": 37.738069765117615,
     "lng": 127.04573087874962,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0113",
     "relayTheaterName": "의정부"
   },
@@ -1229,17 +1090,15 @@
     "lat": 37.2796440130034,
     "lng": 127.444156906119,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0205",
     "relayTheaterName": "이천"
   },
   {
     "name": "CGV 익산",
     "address": "전북특별자치도 익산시 무왕로 1052",
-    "lat": 35.9580404868306,
-    "lng": 126.973768289991,
+    "lat": 35.958127905868544,
+    "lng": 126.97376271854397,
     "brand": "CGV",
-    "region": "jeonbuk",
     "relayTheaterId": "0020",
     "relayTheaterName": "익산"
   },
@@ -1249,7 +1108,6 @@
     "lat": 38.06139716045514,
     "lng": 128.16475097641708,
     "brand": "CGV",
-    "region": "gangwon",
     "relayTheaterId": "0281",
     "relayTheaterName": "인제"
   },
@@ -1259,17 +1117,15 @@
     "lat": 37.4514120781238,
     "lng": 126.702048352406,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0002",
     "relayTheaterName": "인천"
   },
   {
     "name": "CGV 인천가정",
-    "address": "인천 서구 가정로 406",
-    "lat": 37.52207761529034,
-    "lng": 126.67364644646146,
+    "address": "인천 서해구 가정로 406",
+    "lat": 37.52146307768358,
+    "lng": 126.67395228887575,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0296",
     "relayTheaterName": "인천가정"
   },
@@ -1279,7 +1135,6 @@
     "lat": 37.46953716665976,
     "lng": 126.66454328242662,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0340",
     "relayTheaterName": "인천도화"
   },
@@ -1289,7 +1144,6 @@
     "lat": 37.458005291406025,
     "lng": 126.6811869977628,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0352",
     "relayTheaterName": "인천시민공원"
   },
@@ -1299,7 +1153,6 @@
     "lat": 37.4063553399105,
     "lng": 126.683088911013,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0258",
     "relayTheaterName": "인천연수"
   },
@@ -1309,7 +1162,6 @@
     "lat": 37.445614644438166,
     "lng": 126.65182380654828,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0269",
     "relayTheaterName": "인천학익"
   },
@@ -1319,7 +1171,6 @@
     "lat": 37.65501199407606,
     "lng": 126.77259227529372,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0054",
     "relayTheaterName": "일산"
   },
@@ -1329,7 +1180,6 @@
     "lat": 35.820385451413,
     "lng": 127.141957755984,
     "brand": "CGV",
-    "region": "jeonbuk",
     "relayTheaterId": "0213",
     "relayTheaterName": "전주고사"
   },
@@ -1339,7 +1189,6 @@
     "lat": 35.87325972337774,
     "lng": 127.12464045427252,
     "brand": "CGV",
-    "region": "jeonbuk",
     "relayTheaterId": "0336",
     "relayTheaterName": "전주에코시티"
   },
@@ -1349,7 +1198,6 @@
     "lat": 35.80681867900588,
     "lng": 127.11600067786372,
     "brand": "CGV",
-    "region": "jeonbuk",
     "relayTheaterId": "0179",
     "relayTheaterName": "전주효자"
   },
@@ -1359,7 +1207,6 @@
     "lat": 35.32141439118125,
     "lng": 129.1783894302213,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0306",
     "relayTheaterName": "정관"
   },
@@ -1369,7 +1216,6 @@
     "lat": 35.56985217719955,
     "lng": 126.84959869526924,
     "brand": "CGV",
-    "region": "jeonbuk",
     "relayTheaterId": "0186",
     "relayTheaterName": "정읍"
   },
@@ -1379,7 +1225,6 @@
     "lat": 33.50008571867441,
     "lng": 126.52729611982268,
     "brand": "CGV",
-    "region": "jeju",
     "relayTheaterId": "0302",
     "relayTheaterName": "제주"
   },
@@ -1389,7 +1234,6 @@
     "lat": 33.4858351583049,
     "lng": 126.478311291333,
     "brand": "CGV",
-    "region": "jeju",
     "relayTheaterId": "0259",
     "relayTheaterName": "제주노형"
   },
@@ -1399,7 +1243,6 @@
     "lat": 37.4655521122736,
     "lng": 126.680510641618,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0308",
     "relayTheaterName": "주안역"
   },
@@ -1409,7 +1252,6 @@
     "lat": 37.6396655720199,
     "lng": 127.068773695534,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0131",
     "relayTheaterName": "중계"
   },
@@ -1419,7 +1261,6 @@
     "lat": 35.180687649684586,
     "lng": 128.14380322972704,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0324",
     "relayTheaterName": "진주혁신"
   },
@@ -1429,7 +1270,6 @@
     "lat": 35.24025824946378,
     "lng": 128.65308152579726,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0079",
     "relayTheaterName": "창원더시티"
   },
@@ -1439,7 +1279,6 @@
     "lat": 35.2227883889483,
     "lng": 128.68118961076755,
     "brand": "CGV",
-    "region": "gyeongnam",
     "relayTheaterId": "0283",
     "relayTheaterName": "창원상남"
   },
@@ -1449,7 +1288,6 @@
     "lat": 36.80765878466955,
     "lng": 127.1483828113485,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0369",
     "relayTheaterName": "천안"
   },
@@ -1459,7 +1297,6 @@
     "lat": 36.81942296501052,
     "lng": 127.15529060596018,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0293",
     "relayTheaterName": "천안터미널"
   },
@@ -1469,7 +1306,6 @@
     "lat": 36.79855251548843,
     "lng": 127.10176371662668,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0110",
     "relayTheaterName": "천안펜타포트"
   },
@@ -1479,7 +1315,6 @@
     "lat": 37.5459183335957,
     "lng": 127.142304133234,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0199",
     "relayTheaterName": "천호"
   },
@@ -1489,17 +1324,15 @@
     "lat": 37.5229506730658,
     "lng": 127.037032355109,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0107",
     "relayTheaterName": "청담씨네시티"
   },
   {
     "name": "CGV 청라",
-    "address": "인천 서구 청라루비로 76",
+    "address": "인천 서해구 청라루비로 76",
     "lat": 37.53246613991757,
     "lng": 126.6416396725857,
     "brand": "CGV",
-    "region": "incheon",
     "relayTheaterId": "0235",
     "relayTheaterName": "청라"
   },
@@ -1508,8 +1341,7 @@
     "address": "충북 청주시 상당구 상당로81번길 63",
     "lat": 36.6350846947032,
     "lng": 127.486960764084,
-    "brand": "CGV",
-    "region": "chungbuk"
+    "brand": "CGV"
   },
   {
     "name": "CGV 청주지웰시티",
@@ -1517,7 +1349,6 @@
     "lat": 36.643447195237584,
     "lng": 127.42780716417849,
     "brand": "CGV",
-    "region": "chungbuk",
     "relayTheaterId": "0142",
     "relayTheaterName": "청주지웰시티"
   },
@@ -1527,7 +1358,6 @@
     "lat": 36.626214642781036,
     "lng": 127.43112177730455,
     "brand": "CGV",
-    "region": "chungbuk",
     "relayTheaterId": "0319",
     "relayTheaterName": "청주터미널"
   },
@@ -1537,7 +1367,6 @@
     "lat": 37.85055452462416,
     "lng": 127.74376481096778,
     "brand": "CGV",
-    "region": "gangwon",
     "relayTheaterId": "0070",
     "relayTheaterName": "춘천"
   },
@@ -1546,8 +1375,7 @@
     "address": "충북 음성군 맹동면 대하1길 10",
     "lat": 36.90803986526801,
     "lng": 127.54057981939249,
-    "brand": "CGV",
-    "region": "chungbuk"
+    "brand": "CGV"
   },
   {
     "name": "CGV 충주교현",
@@ -1555,27 +1383,17 @@
     "lat": 36.98101470172994,
     "lng": 127.92794865212102,
     "brand": "CGV",
-    "region": "chungbuk",
     "relayTheaterId": "0328",
     "relayTheaterName": "충주교현"
   },
   {
     "name": "CGV 파주운정",
     "address": "경기 파주시 와석순환로515번길 70",
-    "lat": 37.7282188001993,
-    "lng": 126.764728723299,
+    "lat": 37.72836466799796,
+    "lng": 126.76468402189185,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0371",
     "relayTheaterName": "파주운정"
-  },
-  {
-    "name": "CGV 판교",
-    "address": "경기 성남시 분당구 판교역로146번길 20",
-    "lat": 37.39341233412869,
-    "lng": 127.11230477800055,
-    "brand": "CGV",
-    "region": "gyeonggi"
   },
   {
     "name": "CGV 평촌",
@@ -1583,7 +1401,6 @@
     "lat": 37.39305418239436,
     "lng": 126.96226485597738,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0195",
     "relayTheaterName": "평촌"
   },
@@ -1593,7 +1410,6 @@
     "lat": 36.9904922577609,
     "lng": 127.085164735225,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0052",
     "relayTheaterName": "평택"
   },
@@ -1603,7 +1419,6 @@
     "lat": 37.033671457658365,
     "lng": 127.06943725392019,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0334",
     "relayTheaterName": "평택고덕"
   },
@@ -1613,9 +1428,17 @@
     "lat": 37.00041664854384,
     "lng": 127.11144103004528,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0214",
     "relayTheaterName": "평택소사"
+  },
+  {
+    "name": "CGV 포천",
+    "address": "경기 포천시 소흘읍 호국로 689",
+    "lat": 37.829426620740385,
+    "lng": 127.1497690644674,
+    "brand": "CGV",
+    "relayTheaterId": "0309",
+    "relayTheaterName": "포천"
   },
   {
     "name": "CGV 피카디리1958",
@@ -1623,7 +1446,6 @@
     "lat": 37.570993818720254,
     "lng": 126.99131327152529,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0223",
     "relayTheaterName": "피카디리1958"
   },
@@ -1633,7 +1455,6 @@
     "lat": 35.106542058591174,
     "lng": 128.96635518623725,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0245",
     "relayTheaterName": "하단아트몰링"
   },
@@ -1642,8 +1463,7 @@
     "address": "경남 함양군 함양읍 필봉산길 55",
     "lat": 35.52490144836812,
     "lng": 127.72239728028443,
-    "brand": "CGV",
-    "region": "gyeongnam"
+    "brand": "CGV"
   },
   {
     "name": "CGV 해운대",
@@ -1651,7 +1471,6 @@
     "lat": 35.1628492113007,
     "lng": 129.15841084816,
     "brand": "CGV",
-    "region": "busan",
     "relayTheaterId": "0318",
     "relayTheaterName": "해운대"
   },
@@ -1661,7 +1480,6 @@
     "lat": 37.5565023873948,
     "lng": 126.922624553201,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "0191",
     "relayTheaterName": "홍대"
   },
@@ -1671,7 +1489,6 @@
     "lat": 36.601343717291,
     "lng": 126.676600045049,
     "brand": "CGV",
-    "region": "chungnam",
     "relayTheaterId": "0377",
     "relayTheaterName": "홍성"
   },
@@ -1681,7 +1498,6 @@
     "lat": 37.2190609462742,
     "lng": 126.95551833442,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0301",
     "relayTheaterName": "화성봉담"
   },
@@ -1691,7 +1507,6 @@
     "lat": 37.6357727278651,
     "lng": 126.833175325726,
     "brand": "CGV",
-    "region": "gyeonggi",
     "relayTheaterId": "0145",
     "relayTheaterName": "화정"
   },
@@ -1701,9 +1516,36 @@
     "lat": 37.5243205724172,
     "lng": 127.02927482937886,
     "brand": "CGV",
-    "region": "seoul",
     "relayTheaterId": "P001",
     "relayTheaterName": "씨네드쉐프 압구정"
+  },
+  {
+    "name": "광주극장",
+    "address": "전남광주통합특별시 동구 충장로46번길 10",
+    "lat": 35.1499270370528,
+    "lng": 126.912314740831,
+    "brand": "독립영화관"
+  },
+  {
+    "name": "광주독립영화관",
+    "address": "전남광주통합특별시 동구 제봉로 96",
+    "lat": 35.146922387138716,
+    "lng": 126.9222735489829,
+    "brand": "독립영화관"
+  },
+  {
+    "name": "광주자동차극장",
+    "address": "전남광주통합특별시 북구 생용동 90",
+    "lat": 35.2239640722571,
+    "lng": 126.901399130841,
+    "brand": "독립영화관"
+  },
+  {
+    "name": "더숲아트시네마",
+    "address": "서울 노원구 노해로 480",
+    "lat": 37.6541610382725,
+    "lng": 127.061439199647,
+    "brand": "독립영화관"
   },
   {
     "name": "롯데시네마 가산디지털",
@@ -1711,7 +1553,6 @@
     "lat": 37.478019960086,
     "lng": 126.889145868138,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1013",
     "relayTheaterName": "가산디지털"
   },
@@ -1721,7 +1562,6 @@
     "lat": 37.56156337799074,
     "lng": 126.8533832890494,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "9094",
     "relayTheaterName": "가양"
   },
@@ -1731,7 +1571,6 @@
     "lat": 37.5366212294337,
     "lng": 127.125337370172,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "9010",
     "relayTheaterName": "강동"
   },
@@ -1741,7 +1580,6 @@
     "lat": 37.75117397924417,
     "lng": 128.8951529315957,
     "brand": "롯데시네마",
-    "region": "gangwon",
     "relayTheaterId": "9118",
     "relayTheaterName": "강릉"
   },
@@ -1751,7 +1589,6 @@
     "lat": 35.6873862515004,
     "lng": 127.913133282418,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "9122",
     "relayTheaterName": "거창"
   },
@@ -1761,19 +1598,17 @@
     "lat": 37.53860688301305,
     "lng": 127.07292268612835,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1004",
     "relayTheaterName": "건대입구"
   },
   {
-    "name": "롯데시네마 건대입구 오픈스튜디오",
-    "address": "서울 광진구 아차산로 272",
-    "lat": 37.5385599814042,
-    "lng": 127.073002975397,
+    "name": "롯데시네마 검단아라",
+    "address": "인천 검단구 이음4로 35",
+    "lat": 37.5917821424084,
+    "lng": 126.713956036844,
     "brand": "롯데시네마",
-    "region": "seoul",
-    "relayTheaterId": "1004",
-    "relayTheaterName": "건대입구"
+    "relayTheaterId": "3051",
+    "relayTheaterName": "검단아라"
   },
   {
     "name": "롯데시네마 경주황성",
@@ -1781,7 +1616,6 @@
     "lat": 35.88083038700232,
     "lng": 129.21810745416258,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "9120",
     "relayTheaterName": "경주황성"
   },
@@ -1791,7 +1625,6 @@
     "lat": 37.2866632112275,
     "lng": 127.055924685094,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3030",
     "relayTheaterName": "광교"
   },
@@ -1800,8 +1633,7 @@
     "address": "경기 광명시 오리로 970",
     "lat": 37.47944883645935,
     "lng": 126.85565807037314,
-    "brand": "롯데시네마",
-    "region": "gyeonggi"
+    "brand": "롯데시네마"
   },
   {
     "name": "롯데시네마 광명아울렛",
@@ -1809,7 +1641,6 @@
     "lat": 37.42488874457603,
     "lng": 126.88416064133736,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3025",
     "relayTheaterName": "광명아울렛"
   },
@@ -1819,37 +1650,33 @@
     "lat": 35.09791148743922,
     "lng": 129.03631364483445,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "2009",
     "relayTheaterName": "광복"
   },
   {
     "name": "롯데시네마 광주",
-    "address": "광주 동구 독립로 268",
+    "address": "전남광주통합특별시 동구 독립로 268",
     "lat": 35.1545905578491,
     "lng": 126.91215169752114,
     "brand": "롯데시네마",
-    "region": "gwangju",
     "relayTheaterId": "6001",
     "relayTheaterName": "광주(백화점)"
   },
   {
     "name": "롯데시네마 광주광산",
-    "address": "광주 광산구 무진대로 272-8",
+    "address": "전남광주통합특별시 광산구 무진대로 272-8",
     "lat": 35.159998188436866,
     "lng": 126.80963706974129,
     "brand": "롯데시네마",
-    "region": "gwangju",
     "relayTheaterId": "9065",
     "relayTheaterName": "광주광산"
   },
   {
     "name": "롯데시네마 광주첨단",
-    "address": "광주 광산구 첨단중앙로182번길 8",
+    "address": "전남광주통합특별시 광산구 첨단중앙로182번길 8",
     "lat": 35.221165670239806,
     "lng": 126.84211116022182,
     "brand": "롯데시네마",
-    "region": "gwangju",
     "relayTheaterId": "9117",
     "relayTheaterName": "광주첨단"
   },
@@ -1859,7 +1686,6 @@
     "lat": 37.61221566630606,
     "lng": 127.14043020746239,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3026",
     "relayTheaterName": "구리아울렛"
   },
@@ -1869,7 +1695,6 @@
     "lat": 36.104414144781785,
     "lng": 128.38502408916116,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "5013",
     "relayTheaterName": "구미공단"
   },
@@ -1879,7 +1704,6 @@
     "lat": 35.9616315005643,
     "lng": 126.704871439923,
     "brand": "롯데시네마",
-    "region": "jeonbuk",
     "relayTheaterId": "6007",
     "relayTheaterName": "군산나운"
   },
@@ -1889,7 +1713,6 @@
     "lat": 35.9761472649229,
     "lng": 126.73849255011,
     "brand": "롯데시네마",
-    "region": "jeonbuk",
     "relayTheaterId": "6009",
     "relayTheaterName": "군산몰"
   },
@@ -1899,7 +1722,6 @@
     "lat": 37.5637133658076,
     "lng": 126.803871637376,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1009",
     "relayTheaterName": "김포공항"
   },
@@ -1909,7 +1731,6 @@
     "lat": 35.22592667385766,
     "lng": 128.8841616571308,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "5015",
     "relayTheaterName": "김해부원"
   },
@@ -1919,7 +1740,6 @@
     "lat": 35.18521003384799,
     "lng": 128.8271299195581,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "5011",
     "relayTheaterName": "김해아울렛(장유)"
   },
@@ -1929,7 +1749,6 @@
     "lat": 37.3308754378453,
     "lng": 127.94881189134682,
     "brand": "롯데시네마",
-    "region": "gangwon",
     "relayTheaterId": "9108",
     "relayTheaterName": "남원주"
   },
@@ -1939,7 +1758,6 @@
     "lat": 37.655019837734514,
     "lng": 127.06112486570564,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1003",
     "relayTheaterName": "노원"
   },
@@ -1949,7 +1767,6 @@
     "lat": 36.88716675206879,
     "lng": 126.6466740534002,
     "brand": "롯데시네마",
-    "region": "chungnam",
     "relayTheaterId": "9085",
     "relayTheaterName": "당진"
   },
@@ -1959,7 +1776,6 @@
     "lat": 35.85570044812638,
     "lng": 128.55070538170642,
     "brand": "롯데시네마",
-    "region": "daegu",
     "relayTheaterId": "5012",
     "relayTheaterName": "대구광장"
   },
@@ -1969,7 +1785,6 @@
     "lat": 35.8687699659134,
     "lng": 128.692780159755,
     "brand": "롯데시네마",
-    "region": "daegu",
     "relayTheaterId": "5006",
     "relayTheaterName": "대구율하"
   },
@@ -1979,7 +1794,6 @@
     "lat": 35.6931191865839,
     "lng": 128.45633889321,
     "brand": "롯데시네마",
-    "region": "daegu",
     "relayTheaterId": "9121",
     "relayTheaterName": "대구현풍"
   },
@@ -1989,7 +1803,6 @@
     "lat": 36.3409753886784,
     "lng": 127.389359241044,
     "brand": "롯데시네마",
-    "region": "daejeon",
     "relayTheaterId": "4002",
     "relayTheaterName": "대전(백화점)"
   },
@@ -1999,7 +1812,6 @@
     "lat": 36.3025443444665,
     "lng": 127.333718575402,
     "brand": "롯데시네마",
-    "region": "daejeon",
     "relayTheaterId": "4009",
     "relayTheaterName": "대전관저"
   },
@@ -2009,7 +1821,6 @@
     "lat": 36.35196179392484,
     "lng": 127.37949994237754,
     "brand": "롯데시네마",
-    "region": "daejeon",
     "relayTheaterId": "4008",
     "relayTheaterName": "대전센트럴"
   },
@@ -2019,7 +1830,6 @@
     "lat": 37.4874745085255,
     "lng": 127.047105267661,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1023",
     "relayTheaterName": "도곡"
   },
@@ -2029,7 +1839,6 @@
     "lat": 37.46941422510262,
     "lng": 126.89689640341986,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1017",
     "relayTheaterName": "독산"
   },
@@ -2039,7 +1848,6 @@
     "lat": 35.2119264071584,
     "lng": 129.077186974597,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "2007",
     "relayTheaterName": "동래"
   },
@@ -2049,7 +1857,6 @@
     "lat": 35.19226345029666,
     "lng": 129.2112753649879,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "2010",
     "relayTheaterName": "동부산아울렛"
   },
@@ -2059,17 +1866,15 @@
     "lat": 35.870251388489265,
     "lng": 128.59677846197562,
     "brand": "롯데시네마",
-    "region": "daegu",
     "relayTheaterId": "5005",
     "relayTheaterName": "동성로"
   },
   {
     "name": "롯데시네마 동탄",
-    "address": "경기 화성시 동탄구 여울동 1089",
-    "lat": 37.20062304033607,
-    "lng": 127.09795975241377,
+    "address": "경기 화성시 동탄구 동탄역로 160",
+    "lat": 37.20061664723448,
+    "lng": 127.09806337423784,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3048",
     "relayTheaterName": "동탄"
   },
@@ -2079,7 +1884,6 @@
     "lat": 37.5222306828663,
     "lng": 129.115264430964,
     "brand": "롯데시네마",
-    "region": "gangwon",
     "relayTheaterId": "7002",
     "relayTheaterName": "동해"
   },
@@ -2089,7 +1893,6 @@
     "lat": 37.661194598643654,
     "lng": 126.76892407927542,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "9095",
     "relayTheaterName": "라페스타"
   },
@@ -2099,17 +1902,8 @@
     "lat": 35.23855192514614,
     "lng": 128.58328666459906,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "9042",
     "relayTheaterName": "마산(합성동)"
-  },
-  {
-    "name": "롯데시네마 마석",
-    "address": "경기 남양주시 화도읍 경춘로 1992",
-    "lat": 37.650347579788,
-    "lng": 127.309396403879,
-    "brand": "롯데시네마",
-    "region": "gyeonggi"
   },
   {
     "name": "롯데시네마 별내",
@@ -2117,7 +1911,6 @@
     "lat": 37.6443264904451,
     "lng": 127.12719960931832,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3046",
     "relayTheaterName": "별내"
   },
@@ -2127,7 +1920,6 @@
     "lat": 37.21408694028169,
     "lng": 127.04261194496534,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3017",
     "relayTheaterName": "병점"
   },
@@ -2137,7 +1929,6 @@
     "lat": 35.09292586956437,
     "lng": 128.91097822541363,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "9092",
     "relayTheaterName": "부산명지"
   },
@@ -2147,7 +1938,6 @@
     "lat": 35.156809095509566,
     "lng": 129.05669705689388,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "2004",
     "relayTheaterName": "부산본점"
   },
@@ -2157,7 +1947,6 @@
     "lat": 35.0809534504827,
     "lng": 128.975738931366,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "9115",
     "relayTheaterName": "부산장림"
   },
@@ -2167,19 +1956,8 @@
     "lat": 37.502772467096776,
     "lng": 126.77317922365057,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3011",
     "relayTheaterName": "부천(신중동역)"
-  },
-  {
-    "name": "롯데시네마 부평",
-    "address": "인천 부평구 대정로 66",
-    "lat": 37.4935269725412,
-    "lng": 126.726650062467,
-    "brand": "롯데시네마",
-    "region": "incheon",
-    "relayTheaterId": "3008",
-    "relayTheaterName": "부평역사"
   },
   {
     "name": "롯데시네마 부평갈산",
@@ -2187,7 +1965,6 @@
     "lat": 37.51494221488857,
     "lng": 126.72712961413177,
     "brand": "롯데시네마",
-    "region": "incheon",
     "relayTheaterId": "3050",
     "relayTheaterName": "부평갈산"
   },
@@ -2197,7 +1974,6 @@
     "lat": 37.48975484739911,
     "lng": 126.7233303921519,
     "brand": "롯데시네마",
-    "region": "incheon",
     "relayTheaterId": "3008",
     "relayTheaterName": "부평역사"
   },
@@ -2207,7 +1983,6 @@
     "lat": 37.30058826018479,
     "lng": 126.98397812914982,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3045",
     "relayTheaterName": "(종료)북수원(사용불가)"
   },
@@ -2217,7 +1992,6 @@
     "lat": 35.081048569481,
     "lng": 128.082343028133,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "9084",
     "relayTheaterName": "사천"
   },
@@ -2227,7 +2001,6 @@
     "lat": 37.358053890797144,
     "lng": 126.93051674175572,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3031",
     "relayTheaterName": "산본피트인"
   },
@@ -2237,7 +2010,6 @@
     "lat": 35.816485615446695,
     "lng": 128.53922671489406,
     "brand": "롯데시네마",
-    "region": "daegu",
     "relayTheaterId": "5016",
     "relayTheaterName": "상인"
   },
@@ -2247,7 +2019,6 @@
     "lat": 36.416068237518566,
     "lng": 128.1543825684047,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "9080",
     "relayTheaterName": "상주"
   },
@@ -2257,7 +2028,6 @@
     "lat": 33.2465433679189,
     "lng": 126.508121307649,
     "brand": "롯데시네마",
-    "region": "jeju",
     "relayTheaterId": "9013",
     "relayTheaterName": "서귀포"
   },
@@ -2267,7 +2037,6 @@
     "lat": 36.7787428529279,
     "lng": 126.465643773874,
     "brand": "롯데시네마",
-    "region": "chungnam",
     "relayTheaterId": "9044",
     "relayTheaterName": "서산"
   },
@@ -2277,7 +2046,6 @@
     "lat": 37.27498644164401,
     "lng": 126.9540873239049,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3043",
     "relayTheaterName": "서수원"
   },
@@ -2287,7 +2055,6 @@
     "lat": 37.480973433386254,
     "lng": 126.95215035036244,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1012",
     "relayTheaterName": "서울대입구"
   },
@@ -2297,7 +2064,6 @@
     "lat": 36.6451741139348,
     "lng": 127.421641657989,
     "brand": "롯데시네마",
-    "region": "chungbuk",
     "relayTheaterId": "4004",
     "relayTheaterName": "서청주(아울렛)"
   },
@@ -2307,7 +2073,6 @@
     "lat": 37.441076512158304,
     "lng": 127.14657792726382,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3041",
     "relayTheaterName": "성남중앙(신흥역)"
   },
@@ -2317,7 +2082,6 @@
     "lat": 35.85437755145073,
     "lng": 128.50773597871708,
     "brand": "롯데시네마",
-    "region": "daegu",
     "relayTheaterId": "9127",
     "relayTheaterName": "성서"
   },
@@ -2327,7 +2091,6 @@
     "lat": 35.1700886998078,
     "lng": 129.131056295592,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "2006",
     "relayTheaterName": "센텀시티"
   },
@@ -2337,9 +2100,17 @@
     "lat": 37.3185703947236,
     "lng": 126.838039647069,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3012",
     "relayTheaterName": "센트럴락"
+  },
+  {
+    "name": "롯데시네마 속초",
+    "address": "강원특별자치도 속초시 중앙로121번길 28",
+    "lat": 38.2030603607447,
+    "lng": 128.588888103288,
+    "brand": "롯데시네마",
+    "relayTheaterId": "9131",
+    "relayTheaterName": "속초"
   },
   {
     "name": "롯데시네마 송탄",
@@ -2347,17 +2118,15 @@
     "lat": 37.067254683117916,
     "lng": 127.06091424687743,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3029",
     "relayTheaterName": "송탄"
   },
   {
     "name": "롯데시네마 수완",
-    "address": "광주 광산구 장신로 98",
+    "address": "전남광주통합특별시 광산구 장신로 98",
     "lat": 35.18882589953514,
     "lng": 126.81941305754681,
     "brand": "롯데시네마",
-    "region": "gwangju",
     "relayTheaterId": "6004",
     "relayTheaterName": "수완(아울렛)"
   },
@@ -2367,7 +2136,6 @@
     "lat": 37.264343185930606,
     "lng": 126.99660776517145,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3024",
     "relayTheaterName": "수원(수원역)"
   },
@@ -2377,7 +2145,6 @@
     "lat": 37.6356972554135,
     "lng": 127.0238146009,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "9104",
     "relayTheaterName": "수유"
   },
@@ -2387,7 +2154,6 @@
     "lat": 37.31230218719451,
     "lng": 127.0822075919447,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3044",
     "relayTheaterName": "수지"
   },
@@ -2397,7 +2163,6 @@
     "lat": 37.35139081810299,
     "lng": 126.74184899674304,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "9088",
     "relayTheaterName": "시화(정왕역)"
   },
@@ -2407,7 +2172,6 @@
     "lat": 37.37119370379513,
     "lng": 126.80659799056328,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3049",
     "relayTheaterName": "시흥장현"
   },
@@ -2417,7 +2181,6 @@
     "lat": 37.48653388706543,
     "lng": 126.90500256135137,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1024",
     "relayTheaterName": "신대방(구로디지털역)"
   },
@@ -2427,7 +2190,6 @@
     "lat": 37.5089531254915,
     "lng": 126.888937271598,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1015",
     "relayTheaterName": "신도림"
   },
@@ -2437,7 +2199,6 @@
     "lat": 37.4837168847,
     "lng": 126.930193627803,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1007",
     "relayTheaterName": "신림"
   },
@@ -2447,7 +2208,6 @@
     "lat": 36.784927773482956,
     "lng": 127.01602478178496,
     "brand": "롯데시네마",
-    "region": "chungnam",
     "relayTheaterId": "9128",
     "relayTheaterName": "아산터미널"
   },
@@ -2457,7 +2217,6 @@
     "lat": 37.3181881375663,
     "lng": 126.845973726405,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3004",
     "relayTheaterName": "안산"
   },
@@ -2467,7 +2226,6 @@
     "lat": 37.3088658672853,
     "lng": 126.828797115822,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3028",
     "relayTheaterName": "안산고잔"
   },
@@ -2477,7 +2235,6 @@
     "lat": 37.00811391970844,
     "lng": 127.19935448244276,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "9106",
     "relayTheaterName": "안성"
   },
@@ -2487,7 +2244,6 @@
     "lat": 37.39968735150838,
     "lng": 126.92024268892102,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3032",
     "relayTheaterName": "안양일번가"
   },
@@ -2497,7 +2253,6 @@
     "lat": 35.3180108325095,
     "lng": 129.00189650214,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "9103",
     "relayTheaterName": "양산물금"
   },
@@ -2507,7 +2262,6 @@
     "lat": 37.5642965417763,
     "lng": 126.981844846266,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1001",
     "relayTheaterName": "에비뉴엘(명동)"
   },
@@ -2517,17 +2271,15 @@
     "lat": 35.163950421322866,
     "lng": 128.1077424579916,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "9105",
     "relayTheaterName": "엠비씨네(진주)"
   },
   {
     "name": "롯데시네마 영등포",
     "address": "서울 영등포구 경인로 846",
-    "lat": 37.516265720069164,
-    "lng": 126.90784590233508,
+    "lat": 37.51611355294214,
+    "lng": 126.9079773015688,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1002",
     "relayTheaterName": "영등포"
   },
@@ -2537,7 +2289,6 @@
     "lat": 36.82724644778176,
     "lng": 128.61777022299339,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "9064",
     "relayTheaterName": "영주"
   },
@@ -2547,7 +2298,6 @@
     "lat": 35.9628547740986,
     "lng": 128.94093088935477,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "9098",
     "relayTheaterName": "영천"
   },
@@ -2557,7 +2307,6 @@
     "lat": 36.6186889671618,
     "lng": 127.316630924701,
     "brand": "롯데시네마",
-    "region": "chungbuk",
     "relayTheaterId": "9119",
     "relayTheaterName": "오송"
   },
@@ -2567,7 +2316,6 @@
     "lat": 35.22832659264218,
     "lng": 129.08979120899696,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "2011",
     "relayTheaterName": "오투(부산대)"
   },
@@ -2577,7 +2325,6 @@
     "lat": 37.5329472681101,
     "lng": 126.960138744633,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1014",
     "relayTheaterName": "용산"
   },
@@ -2587,7 +2334,6 @@
     "lat": 37.27416583217765,
     "lng": 127.11649762274598,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3039",
     "relayTheaterName": "용인기흥"
   },
@@ -2597,7 +2343,6 @@
     "lat": 37.23524532275668,
     "lng": 127.18796046785319,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3040",
     "relayTheaterName": "용인역북"
   },
@@ -2607,7 +2352,6 @@
     "lat": 35.538039961084095,
     "lng": 129.3382479440755,
     "brand": "롯데시네마",
-    "region": "ulsan",
     "relayTheaterId": "5001",
     "relayTheaterName": "울산(백화점)"
   },
@@ -2617,7 +2361,6 @@
     "lat": 35.553200873697335,
     "lng": 129.32050080833818,
     "brand": "롯데시네마",
-    "region": "ulsan",
     "relayTheaterId": "9116",
     "relayTheaterName": "울산성남"
   },
@@ -2627,9 +2370,17 @@
     "lat": 37.3349057584974,
     "lng": 127.93015129028674,
     "brand": "롯데시네마",
-    "region": "gangwon",
     "relayTheaterId": "7003",
     "relayTheaterName": "원주무실"
+  },
+  {
+    "name": "롯데시네마 월드타워",
+    "address": "서울 송파구 올림픽로 300",
+    "lat": 37.51391518913642,
+    "lng": 127.10489198216071,
+    "brand": "롯데시네마",
+    "relayTheaterId": "1016",
+    "relayTheaterName": "월드타워"
   },
   {
     "name": "롯데시네마 위례",
@@ -2637,7 +2388,6 @@
     "lat": 37.47271112661407,
     "lng": 127.14133092828207,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3037",
     "relayTheaterName": "위례"
   },
@@ -2647,7 +2397,6 @@
     "lat": 37.6365855404838,
     "lng": 126.91782279395142,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1021",
     "relayTheaterName": "은평(롯데몰)"
   },
@@ -2657,7 +2406,6 @@
     "lat": 37.74418460400176,
     "lng": 127.0965500169035,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3033",
     "relayTheaterName": "의정부민락"
   },
@@ -2667,17 +2415,15 @@
     "lat": 35.949677496146855,
     "lng": 126.94007156240598,
     "brand": "롯데시네마",
-    "region": "jeonbuk",
     "relayTheaterId": "9070",
     "relayTheaterName": "익산모현"
   },
   {
     "name": "롯데시네마 인천아시아드",
-    "address": "인천 서구 봉수대로 806",
+    "address": "인천 서해구 봉수대로 806",
     "lat": 37.54656112926333,
     "lng": 126.66744610263714,
     "brand": "롯데시네마",
-    "region": "incheon",
     "relayTheaterId": "3035",
     "relayTheaterName": "인천아시아드"
   },
@@ -2687,7 +2433,6 @@
     "lat": 37.44211316710403,
     "lng": 126.70185922366734,
     "brand": "롯데시네마",
-    "region": "incheon",
     "relayTheaterId": "3038",
     "relayTheaterName": "인천터미널"
   },
@@ -2697,7 +2442,6 @@
     "lat": 35.83444556570581,
     "lng": 127.12181275902316,
     "brand": "롯데시네마",
-    "region": "jeonbuk",
     "relayTheaterId": "6002",
     "relayTheaterName": "전주(백화점)"
   },
@@ -2707,7 +2451,6 @@
     "lat": 35.867067367559066,
     "lng": 127.12096579959443,
     "brand": "롯데시네마",
-    "region": "jeonbuk",
     "relayTheaterId": "9102",
     "relayTheaterName": "전주송천"
   },
@@ -2717,7 +2460,6 @@
     "lat": 35.79622961041377,
     "lng": 127.13268419152298,
     "brand": "롯데시네마",
-    "region": "jeonbuk",
     "relayTheaterId": "6006",
     "relayTheaterName": "전주평화"
   },
@@ -2727,7 +2469,6 @@
     "lat": 33.4807442976278,
     "lng": 126.494736524528,
     "brand": "롯데시네마",
-    "region": "jeju",
     "relayTheaterId": "6010",
     "relayTheaterName": "제주연동"
   },
@@ -2737,7 +2478,6 @@
     "lat": 37.6151128766676,
     "lng": 127.075977300625,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "9083",
     "relayTheaterName": "중랑"
   },
@@ -2747,7 +2487,6 @@
     "lat": 37.712034247452856,
     "lng": 127.1866632233379,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3010",
     "relayTheaterName": "진접"
   },
@@ -2757,7 +2496,6 @@
     "lat": 35.1805626607867,
     "lng": 128.140235904071,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "5017",
     "relayTheaterName": "진주혁신(롯데몰)"
   },
@@ -2767,7 +2505,6 @@
     "lat": 35.1589494474222,
     "lng": 128.697334312136,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "5009",
     "relayTheaterName": "진해"
   },
@@ -2777,7 +2514,6 @@
     "lat": 35.22435765955833,
     "lng": 128.68201494271278,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "5002",
     "relayTheaterName": "창원"
   },
@@ -2787,7 +2523,6 @@
     "lat": 36.8132889418771,
     "lng": 127.108283356154,
     "brand": "롯데시네마",
-    "region": "chungnam",
     "relayTheaterId": "9101",
     "relayTheaterName": "천안불당"
   },
@@ -2797,7 +2532,6 @@
     "lat": 36.7830953982837,
     "lng": 127.156094452986,
     "brand": "롯데시네마",
-    "region": "chungnam",
     "relayTheaterId": "9125",
     "relayTheaterName": "천안청당"
   },
@@ -2807,7 +2541,6 @@
     "lat": 37.58044047556045,
     "lng": 127.04760869583595,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1008",
     "relayTheaterName": "청량리"
   },
@@ -2817,7 +2550,6 @@
     "lat": 36.6070286793421,
     "lng": 127.503067137745,
     "brand": "롯데시네마",
-    "region": "chungbuk",
     "relayTheaterId": "4007",
     "relayTheaterName": "청주용암"
   },
@@ -2827,17 +2559,15 @@
     "lat": 37.87787503558496,
     "lng": 127.72867568989184,
     "brand": "롯데시네마",
-    "region": "gangwon",
     "relayTheaterId": "9123",
     "relayTheaterName": "춘천"
   },
   {
     "name": "롯데시네마 충장로",
-    "address": "광주 동구 충장로안길 12",
+    "address": "전남광주통합특별시 동구 충장로안길 12",
     "lat": 35.14820177705357,
     "lng": 126.91476382494136,
     "brand": "롯데시네마",
-    "region": "gwangju",
     "relayTheaterId": "9047",
     "relayTheaterName": "충장로"
   },
@@ -2847,7 +2577,6 @@
     "lat": 36.96148189060103,
     "lng": 127.89815609314844,
     "brand": "롯데시네마",
-    "region": "chungbuk",
     "relayTheaterId": "9078",
     "relayTheaterName": "충주(모다아울렛)"
   },
@@ -2857,7 +2586,6 @@
     "lat": 34.858966627712235,
     "lng": 128.4302447462004,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "9036",
     "relayTheaterName": "통영"
   },
@@ -2867,7 +2595,6 @@
     "lat": 37.71783077681146,
     "lng": 126.69309286862281,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "9113",
     "relayTheaterName": "파주롯데아울렛"
   },
@@ -2877,7 +2604,6 @@
     "lat": 37.71315563512663,
     "lng": 126.75989168073684,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "9126",
     "relayTheaterName": "파주야당"
   },
@@ -2887,7 +2613,6 @@
     "lat": 37.729879971846614,
     "lng": 126.73651710311523,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3034",
     "relayTheaterName": "파주운정"
   },
@@ -2897,7 +2622,6 @@
     "lat": 37.41315414941647,
     "lng": 127.09866396198699,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3047",
     "relayTheaterName": "판교(창조경제밸리)"
   },
@@ -2907,7 +2631,6 @@
     "lat": 37.3906883656554,
     "lng": 126.950746542073,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3018",
     "relayTheaterName": "평촌(범계역)"
   },
@@ -2917,7 +2640,6 @@
     "lat": 36.0365375277721,
     "lng": 129.362911049493,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "9097",
     "relayTheaterName": "포항"
   },
@@ -2927,7 +2649,6 @@
     "lat": 35.180677894763434,
     "lng": 128.55969532102577,
     "brand": "롯데시네마",
-    "region": "gyeongnam",
     "relayTheaterId": "9072",
     "relayTheaterName": "프리미엄경남대"
   },
@@ -2937,7 +2658,6 @@
     "lat": 36.1289996676429,
     "lng": 128.334858048949,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "9067",
     "relayTheaterName": "프리미엄구미센트럴"
   },
@@ -2947,7 +2667,6 @@
     "lat": 36.566323100904604,
     "lng": 128.69955189323304,
     "brand": "롯데시네마",
-    "region": "gyeongbuk",
     "relayTheaterId": "9074",
     "relayTheaterName": "프리미엄안동"
   },
@@ -2957,7 +2676,6 @@
     "lat": 35.94209429454404,
     "lng": 128.56381688427527,
     "brand": "롯데시네마",
-    "region": "daegu",
     "relayTheaterId": "9057",
     "relayTheaterName": "프리미엄칠곡"
   },
@@ -2967,7 +2685,6 @@
     "lat": 35.1692602223522,
     "lng": 129.176617701041,
     "brand": "롯데시네마",
-    "region": "busan",
     "relayTheaterId": "9059",
     "relayTheaterName": "프리미엄해운대(장산역)"
   },
@@ -2977,19 +2694,8 @@
     "lat": 37.558143624412665,
     "lng": 127.20450019783692,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "9129",
     "relayTheaterName": "하남미사"
-  },
-  {
-    "name": "롯데시네마 합정",
-    "address": "서울 마포구 양화로 45",
-    "lat": 37.5514575965918,
-    "lng": 126.913390790739,
-    "brand": "롯데시네마",
-    "region": "seoul",
-    "relayTheaterId": "1010",
-    "relayTheaterName": "합정(종료)"
   },
   {
     "name": "롯데시네마 향남",
@@ -2997,7 +2703,6 @@
     "lat": 37.115156845242645,
     "lng": 126.91248043118019,
     "brand": "롯데시네마",
-    "region": "gyeonggi",
     "relayTheaterId": "3036",
     "relayTheaterName": "향남"
   },
@@ -3007,7 +2712,6 @@
     "lat": 37.55707507803642,
     "lng": 126.92488294990305,
     "brand": "롯데시네마",
-    "region": "seoul",
     "relayTheaterId": "1005",
     "relayTheaterName": "홍대입구"
   },
@@ -3017,7 +2721,6 @@
     "lat": 37.4979560555237,
     "lng": 127.026417015264,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1372",
     "relayTheaterName": "강남"
   },
@@ -3027,17 +2730,15 @@
     "lat": 37.528476277802625,
     "lng": 127.12524907326281,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1341",
     "relayTheaterName": "강동"
   },
   {
     "name": "메가박스 검단",
-    "address": "인천 서구 서곶로 788",
+    "address": "인천 검단구 서곶로 788",
     "lat": 37.5879514265749,
     "lng": 126.675404972284,
     "brand": "메가박스",
-    "region": "incheon",
     "relayTheaterId": "4041",
     "relayTheaterName": "검단"
   },
@@ -3047,7 +2748,6 @@
     "lat": 36.575170373792076,
     "lng": 128.49308902672533,
     "brand": "메가박스",
-    "region": "gyeongbuk",
     "relayTheaterId": "0040",
     "relayTheaterName": "경북도청"
   },
@@ -3056,8 +2756,7 @@
     "address": "경북 경산시 하양읍 대경로 765",
     "lat": 35.913635266943636,
     "lng": 128.82321965430015,
-    "brand": "메가박스",
-    "region": "gyeongbuk"
+    "brand": "메가박스"
   },
   {
     "name": "메가박스 고양스타필드",
@@ -3065,7 +2764,6 @@
     "lat": 37.646791523587744,
     "lng": 126.8926857986271,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4121",
     "relayTheaterName": "고양스타필드"
   },
@@ -3075,7 +2773,6 @@
     "lat": 36.473555086343666,
     "lng": 127.13888060981482,
     "brand": "메가박스",
-    "region": "chungnam",
     "relayTheaterId": "3141",
     "relayTheaterName": "공주"
   },
@@ -3085,7 +2782,6 @@
     "lat": 37.4188721840159,
     "lng": 126.88277363142022,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0029",
     "relayTheaterName": "광명AK플라자"
   },
@@ -3095,37 +2791,33 @@
     "lat": 37.44589495847006,
     "lng": 126.89368196485685,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0053",
     "relayTheaterName": "광명소하"
   },
   {
     "name": "메가박스 광주상무",
-    "address": "광주 서구 시청로60번길 21-6",
+    "address": "전남광주통합특별시 서구 시청로60번길 21-6",
     "lat": 35.15419510098355,
     "lng": 126.85439319777181,
     "brand": "메가박스",
-    "region": "gwangju",
     "relayTheaterId": "5021",
     "relayTheaterName": "광주상무"
   },
   {
     "name": "메가박스 광주상무 별관",
-    "address": "광주 서구 시청로60번길 21-9",
+    "address": "전남광주통합특별시 서구 시청로60번길 21-9",
     "lat": 35.15487238686724,
     "lng": 126.85394750240691,
     "brand": "메가박스",
-    "region": "gwangju",
     "relayTheaterId": "5021",
     "relayTheaterName": "광주상무"
   },
   {
     "name": "메가박스 광주하남점",
-    "address": "광주 광산구 풍영철길로 15",
+    "address": "전남광주통합특별시 광산구 풍영철길로 15",
     "lat": 35.16273322070714,
     "lng": 126.81156687715828,
     "brand": "메가박스",
-    "region": "gwangju",
     "relayTheaterId": "5061",
     "relayTheaterName": "광주하남"
   },
@@ -3135,7 +2827,6 @@
     "lat": 36.1071765439437,
     "lng": 128.417878870048,
     "brand": "메가박스",
-    "region": "gyeongbuk",
     "relayTheaterId": "7303",
     "relayTheaterName": "구미강동"
   },
@@ -3145,7 +2836,6 @@
     "lat": 37.5366109156758,
     "lng": 127.087852469231,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "0090",
     "relayTheaterName": "구의이스트폴"
   },
@@ -3155,7 +2845,6 @@
     "lat": 37.55566202563303,
     "lng": 127.07833429050628,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1431",
     "relayTheaterName": "군자"
   },
@@ -3165,7 +2854,6 @@
     "lat": 37.37276949213815,
     "lng": 126.944194351075,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0035",
     "relayTheaterName": "금정AK플라자"
   },
@@ -3175,7 +2863,6 @@
     "lat": 36.12529586458748,
     "lng": 128.11078795781953,
     "brand": "메가박스",
-    "region": "gyeongbuk",
     "relayTheaterId": "7401",
     "relayTheaterName": "김천"
   },
@@ -3185,7 +2872,6 @@
     "lat": 37.64507689092461,
     "lng": 126.62450530867432,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4152",
     "relayTheaterName": "김포한강신도시"
   },
@@ -3195,7 +2881,6 @@
     "lat": 37.6548218456356,
     "lng": 127.24410880166,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0039",
     "relayTheaterName": "평내호평역(구.남양주)"
   },
@@ -3205,7 +2890,6 @@
     "lat": 37.61672017434639,
     "lng": 127.15099507616142,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0019",
     "relayTheaterName": "남양주현대아울렛스페이스원"
   },
@@ -3215,7 +2899,6 @@
     "lat": 37.8665315374263,
     "lng": 127.720015575537,
     "brand": "메가박스",
-    "region": "gangwon",
     "relayTheaterId": "2001",
     "relayTheaterName": "남춘천"
   },
@@ -3225,7 +2908,8 @@
     "lat": 35.9744935727759,
     "lng": 129.403428399387,
     "brand": "메가박스",
-    "region": "gyeongbuk"
+    "relayTheaterId": "0074",
+    "relayTheaterName": "남포항"
   },
   {
     "name": "메가박스 논산",
@@ -3233,7 +2917,6 @@
     "lat": 36.189767910128694,
     "lng": 127.09915818117626,
     "brand": "메가박스",
-    "region": "chungnam",
     "relayTheaterId": "0018",
     "relayTheaterName": "논산"
   },
@@ -3243,7 +2926,6 @@
     "lat": 35.944157981777,
     "lng": 128.560349042774,
     "brand": "메가박스",
-    "region": "daegu",
     "relayTheaterId": "0067",
     "relayTheaterName": "대구세븐밸리(칠곡)"
   },
@@ -3253,7 +2935,6 @@
     "lat": 35.8777273803805,
     "lng": 128.629707500549,
     "brand": "메가박스",
-    "region": "daegu",
     "relayTheaterId": "7011",
     "relayTheaterName": "대구신세계(동대구)"
   },
@@ -3263,7 +2944,6 @@
     "lat": 35.92052642817447,
     "lng": 128.6356270818311,
     "brand": "메가박스",
-    "region": "daegu",
     "relayTheaterId": "0022",
     "relayTheaterName": "대구이시아"
   },
@@ -3273,7 +2953,6 @@
     "lat": 35.87088822082138,
     "lng": 128.59041512804245,
     "brand": "메가박스",
-    "region": "daegu",
     "relayTheaterId": "0072",
     "relayTheaterName": "대구프리미엄만경관"
   },
@@ -3283,7 +2962,6 @@
     "lat": 36.375382706067946,
     "lng": 127.38250553005706,
     "brand": "메가박스",
-    "region": "daejeon",
     "relayTheaterId": "0028",
     "relayTheaterName": "대전신세계아트앤사이언스"
   },
@@ -3293,7 +2971,6 @@
     "lat": 36.3522839359633,
     "lng": 127.344558913244,
     "brand": "메가박스",
-    "region": "daejeon",
     "relayTheaterId": "0009",
     "relayTheaterName": "대전유성"
   },
@@ -3303,7 +2980,6 @@
     "lat": 36.327535701175115,
     "lng": 127.42417595959552,
     "brand": "메가박스",
-    "region": "daejeon",
     "relayTheaterId": "3011",
     "relayTheaterName": "대전중앙로"
   },
@@ -3312,8 +2988,7 @@
     "address": "대전 유성구 테크노중앙로 123",
     "lat": 36.42327281544626,
     "lng": 127.39975633873473,
-    "brand": "메가박스",
-    "region": "daejeon"
+    "brand": "메가박스"
   },
   {
     "name": "메가박스 더부티크 목동현대백화점",
@@ -3321,7 +2996,6 @@
     "lat": 37.52695179034791,
     "lng": 126.87560987143218,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "0041",
     "relayTheaterName": "더부티크목동현대백화점"
   },
@@ -3331,17 +3005,8 @@
     "lat": 35.211107524034105,
     "lng": 129.0075908781937,
     "brand": "메가박스",
-    "region": "busan",
     "relayTheaterId": "6161",
     "relayTheaterName": "덕천"
-  },
-  {
-    "name": "메가박스 동대문",
-    "address": "서울 중구 장충단로 247",
-    "lat": 37.5667763337993,
-    "lng": 127.00759281850102,
-    "brand": "메가박스",
-    "region": "seoul"
   },
   {
     "name": "메가박스 동탄",
@@ -3349,7 +3014,6 @@
     "lat": 37.2045184071222,
     "lng": 127.0727836300783,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4451",
     "relayTheaterName": "동탄"
   },
@@ -3359,7 +3023,6 @@
     "lat": 37.19865045238312,
     "lng": 127.09142867718404,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0089",
     "relayTheaterName": "동탄역"
   },
@@ -3369,7 +3032,6 @@
     "lat": 37.5593139908802,
     "lng": 126.835238296528,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1572",
     "relayTheaterName": "마곡"
   },
@@ -3379,7 +3041,6 @@
     "lat": 35.181474262901645,
     "lng": 128.56405313168756,
     "brand": "메가박스",
-    "region": "gyeongnam",
     "relayTheaterId": "0076",
     "relayTheaterName": "마산(경남대)"
   },
@@ -3389,17 +3050,15 @@
     "lat": 37.5288308612468,
     "lng": 126.876069465384,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1581",
     "relayTheaterName": "목동"
   },
   {
     "name": "메가박스 목포하당 포르모",
-    "address": "전남 목포시 옥암로 95",
+    "address": "전남광주통합특별시 목포시 옥암로 95",
     "lat": 34.8074564870764,
     "lng": 126.426216006362,
     "brand": "메가박스",
-    "region": "jeonnam",
     "relayTheaterId": "5302",
     "relayTheaterName": "목포하당(포르모)"
   },
@@ -3409,7 +3068,6 @@
     "lat": 37.56623221200717,
     "lng": 127.18971712137547,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0084",
     "relayTheaterName": "미사강변(하남종합운동장)"
   },
@@ -3419,7 +3077,6 @@
     "lat": 37.64205297845609,
     "lng": 126.79150603200168,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4104",
     "relayTheaterName": "백석벨라시타"
   },
@@ -3429,7 +3086,6 @@
     "lat": 37.655909061491,
     "lng": 127.1267909949099,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4722",
     "relayTheaterName": "별내"
   },
@@ -3439,7 +3095,6 @@
     "lat": 35.098615932864455,
     "lng": 129.02869943089325,
     "brand": "메가박스",
-    "region": "busan",
     "relayTheaterId": "6001",
     "relayTheaterName": "부산극장"
   },
@@ -3449,7 +3104,6 @@
     "lat": 35.2301073652934,
     "lng": 129.088114804872,
     "brand": "메가박스",
-    "region": "busan",
     "relayTheaterId": "0061",
     "relayTheaterName": "부산대"
   },
@@ -3459,7 +3113,6 @@
     "lat": 37.46124428354941,
     "lng": 126.81400719952143,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4221",
     "relayTheaterName": "부천스타필드시티"
   },
@@ -3469,7 +3122,6 @@
     "lat": 35.94408149473025,
     "lng": 128.56172611845992,
     "brand": "메가박스",
-    "region": "daegu",
     "relayTheaterId": "0025",
     "relayTheaterName": "북대구(칠곡)"
   },
@@ -3479,7 +3131,6 @@
     "lat": 37.3856003125001,
     "lng": 127.122447797715,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4631",
     "relayTheaterName": "분당"
   },
@@ -3489,7 +3140,6 @@
     "lat": 35.16295130693137,
     "lng": 128.9837782340367,
     "brand": "메가박스",
-    "region": "busan",
     "relayTheaterId": "0032",
     "relayTheaterName": "사상"
   },
@@ -3499,15 +3149,15 @@
     "lat": 34.94926960905209,
     "lng": 128.03780007196661,
     "brand": "메가박스",
-    "region": "gyeongnam"
+    "relayTheaterId": "6642",
+    "relayTheaterName": "삼천포"
   },
   {
-    "name": "메가박스 상봉",
+    "name": "메가박스 상봉지점",
     "address": "서울 중랑구 망우로30길 3",
     "lat": 37.593039388039465,
     "lng": 127.07477725968386,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1311",
     "relayTheaterName": "상봉"
   },
@@ -3517,17 +3167,15 @@
     "lat": 37.569187914348674,
     "lng": 126.89821583795988,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1211",
     "relayTheaterName": "상암월드컵경기장"
   },
   {
-    "name": "메가박스 서면대한",
+    "name": "메가박스 서면대한점",
     "address": "부산 부산진구 중앙대로692번길 16",
     "lat": 35.1542168115447,
     "lng": 129.060122157186,
     "brand": "메가박스",
-    "region": "busan",
     "relayTheaterId": "0082",
     "relayTheaterName": "서면대한"
   },
@@ -3537,7 +3185,8 @@
     "lat": 37.4313138278264,
     "lng": 127.129779320066,
     "brand": "메가박스",
-    "region": "gyeonggi"
+    "relayTheaterId": "0086",
+    "relayTheaterName": "성남모란"
   },
   {
     "name": "메가박스 세종 조치원",
@@ -3545,7 +3194,6 @@
     "lat": 36.602876648856196,
     "lng": 127.2981361104199,
     "brand": "메가박스",
-    "region": "sejong",
     "relayTheaterId": "3391",
     "relayTheaterName": "세종(조치원)"
   },
@@ -3555,17 +3203,15 @@
     "lat": 36.48351969165692,
     "lng": 127.26363077296222,
     "brand": "메가박스",
-    "region": "sejong",
     "relayTheaterId": "3392",
     "relayTheaterName": "세종나성"
   },
   {
     "name": "메가박스 센트럴",
     "address": "서울 서초구 신반포로 176",
-    "lat": 37.504864280151715,
-    "lng": 127.00300837909059,
+    "lat": 37.50464262718682,
+    "lng": 127.0032221228157,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1371",
     "relayTheaterName": "센트럴"
   },
@@ -3575,7 +3221,8 @@
     "lat": 38.1890839482441,
     "lng": 128.58590786330328,
     "brand": "메가박스",
-    "region": "gangwon"
+    "relayTheaterId": "2171",
+    "relayTheaterName": "속초"
   },
   {
     "name": "메가박스 송도",
@@ -3583,7 +3230,8 @@
     "lat": 37.379145028947,
     "lng": 126.66241493059,
     "brand": "메가박스",
-    "region": "incheon"
+    "relayTheaterId": "4062",
+    "relayTheaterName": "송도(트리플스트리트)"
   },
   {
     "name": "메가박스 송파파크하비오",
@@ -3591,7 +3239,8 @@
     "lat": 37.4820976521034,
     "lng": 127.123830694097,
     "brand": "메가박스",
-    "region": "seoul"
+    "relayTheaterId": "1381",
+    "relayTheaterName": "송파파크하비오"
   },
   {
     "name": "메가박스 수원",
@@ -3599,7 +3248,8 @@
     "lat": 37.2513322917954,
     "lng": 127.019959908066,
     "brand": "메가박스",
-    "region": "gyeonggi"
+    "relayTheaterId": "0051",
+    "relayTheaterName": "수원"
   },
   {
     "name": "메가박스 수원AK플라자 수원역",
@@ -3607,7 +3257,6 @@
     "lat": 37.2665525892817,
     "lng": 127.000169109369,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0052",
     "relayTheaterName": "수원AK플라자(수원역)"
   },
@@ -3617,7 +3266,6 @@
     "lat": 37.27644494626134,
     "lng": 127.01594346221653,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0042",
     "relayTheaterName": "수원남문"
   },
@@ -3627,7 +3275,6 @@
     "lat": 37.287353635951966,
     "lng": 126.99067387097668,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0062",
     "relayTheaterName": "수원스타필드"
   },
@@ -3637,7 +3284,6 @@
     "lat": 37.2610202499309,
     "lng": 127.032445204367,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0060",
     "relayTheaterName": "수원인계"
   },
@@ -3647,17 +3293,15 @@
     "lat": 37.25874959648229,
     "lng": 126.9643328776692,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0036",
     "relayTheaterName": "수원호매실(휴관)"
   },
   {
     "name": "메가박스 순천",
-    "address": "전남 순천시 충효로 15",
+    "address": "전남광주통합특별시 순천시 충효로 15",
     "lat": 34.9412398788129,
     "lng": 127.510870917487,
     "brand": "메가박스",
-    "region": "jeonnam",
     "relayTheaterId": "5401",
     "relayTheaterName": "순천"
   },
@@ -3666,8 +3310,7 @@
     "address": "경남 창원시 의창구 중동 792",
     "lat": 35.2539742851185,
     "lng": 128.622834098952,
-    "brand": "메가박스",
-    "region": "gyeongnam"
+    "brand": "메가박스"
   },
   {
     "name": "메가박스 시흥배곧",
@@ -3675,7 +3318,6 @@
     "lat": 37.36969807472688,
     "lng": 126.73063918460956,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4291",
     "relayTheaterName": "시흥배곧"
   },
@@ -3685,17 +3327,8 @@
     "lat": 37.346003220878586,
     "lng": 126.73677980614649,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0088",
     "relayTheaterName": "시흥정왕"
-  },
-  {
-    "name": "메가박스 신촌",
-    "address": "서울 서대문구 신촌역로 30",
-    "lat": 37.559570517501,
-    "lng": 126.94187662155964,
-    "brand": "메가박스",
-    "region": "seoul"
   },
   {
     "name": "메가박스 안산중앙",
@@ -3703,7 +3336,6 @@
     "lat": 37.31804339161138,
     "lng": 126.83550015440109,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4253",
     "relayTheaterName": "안산중앙"
   },
@@ -3713,7 +3345,6 @@
     "lat": 36.99469984559835,
     "lng": 127.14584261646326,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0020",
     "relayTheaterName": "안성스타필드"
   },
@@ -3723,7 +3354,6 @@
     "lat": 35.33827346791238,
     "lng": 129.0269097796005,
     "brand": "메가박스",
-    "region": "gyeongnam",
     "relayTheaterId": "0097",
     "relayTheaterName": "양산"
   },
@@ -3733,35 +3363,24 @@
     "lat": 35.30987629474474,
     "lng": 129.0093816715281,
     "brand": "메가박스",
-    "region": "gyeongnam",
     "relayTheaterId": "6262",
     "relayTheaterName": "양산증산"
   },
   {
     "name": "메가박스 여수웅천",
-    "address": "전남 여수시 신월로 96",
+    "address": "전남광주통합특별시 여수시 신월로 96",
     "lat": 34.74912328010293,
     "lng": 127.67893369519251,
     "brand": "메가박스",
-    "region": "jeonnam",
     "relayTheaterId": "5552",
     "relayTheaterName": "여수웅천"
   },
   {
-    "name": "메가박스 영종",
-    "address": "인천 중구 영종대로 184",
-    "lat": 37.49226635962365,
-    "lng": 126.49877230693686,
-    "brand": "메가박스",
-    "region": "incheon"
-  },
-  {
     "name": "메가박스 영종하늘도시",
-    "address": "인천 중구 하늘중앙로195번길 15",
+    "address": "인천 영종구 하늘중앙로195번길 15",
     "lat": 37.489704123426,
     "lng": 126.561339205895,
     "brand": "메가박스",
-    "region": "incheon",
     "relayTheaterId": "0080",
     "relayTheaterName": "영종하늘도시"
   },
@@ -3771,7 +3390,6 @@
     "lat": 36.71241937264132,
     "lng": 127.42851941544403,
     "brand": "메가박스",
-    "region": "chungbuk",
     "relayTheaterId": "3631",
     "relayTheaterName": "오창"
   },
@@ -3781,7 +3399,6 @@
     "lat": 37.2912799496271,
     "lng": 127.148125075785,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4462",
     "relayTheaterName": "용인테크노밸리"
   },
@@ -3791,7 +3408,6 @@
     "lat": 35.5543600679399,
     "lng": 129.32108664817,
     "brand": "메가박스",
-    "region": "ulsan",
     "relayTheaterId": "0057",
     "relayTheaterName": "울산"
   },
@@ -3801,7 +3417,6 @@
     "lat": 37.327961253179424,
     "lng": 127.98620558857209,
     "brand": "메가박스",
-    "region": "gangwon",
     "relayTheaterId": "2202",
     "relayTheaterName": "원주혁신"
   },
@@ -3811,19 +3426,8 @@
     "lat": 37.74569512834103,
     "lng": 127.09593587837935,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "0070",
     "relayTheaterName": "의정부민락"
-  },
-  {
-    "name": "메가박스 이수",
-    "address": "서울 동작구 동작대로 89",
-    "lat": 37.484613666261986,
-    "lng": 126.98166627919223,
-    "brand": "메가박스",
-    "region": "seoul",
-    "relayTheaterId": "0099",
-    "relayTheaterName": "이수"
   },
   {
     "name": "메가박스 인천논현",
@@ -3831,7 +3435,6 @@
     "lat": 37.3974051999439,
     "lng": 126.727415146976,
     "brand": "메가박스",
-    "region": "incheon",
     "relayTheaterId": "4051",
     "relayTheaterName": "인천논현"
   },
@@ -3841,17 +3444,15 @@
     "lat": 37.4417894646977,
     "lng": 126.648646981544,
     "brand": "메가박스",
-    "region": "incheon",
     "relayTheaterId": "0085",
     "relayTheaterName": "인천학익(시티오씨엘)"
   },
   {
     "name": "메가박스 전대 광주",
-    "address": "광주 북구 우치로 60",
+    "address": "전남광주통합특별시 북구 우치로 60",
     "lat": 35.172575584621015,
     "lng": 126.91244960370666,
     "brand": "메가박스",
-    "region": "gwangju",
     "relayTheaterId": "0010",
     "relayTheaterName": "전대(광주)"
   },
@@ -3861,7 +3462,6 @@
     "lat": 35.8208844521117,
     "lng": 127.143724771485,
     "brand": "메가박스",
-    "region": "jeonbuk",
     "relayTheaterId": "0050",
     "relayTheaterName": "전주객사"
   },
@@ -3871,7 +3471,6 @@
     "lat": 35.83932626774768,
     "lng": 127.05898973125528,
     "brand": "메가박스",
-    "region": "jeonbuk",
     "relayTheaterId": "0021",
     "relayTheaterName": "전주혁신"
   },
@@ -3880,8 +3479,7 @@
     "address": "부산 기장군 정관읍 정관6로 39",
     "lat": 35.319438877769,
     "lng": 129.1783540136777,
-    "brand": "메가박스",
-    "region": "busan"
+    "brand": "메가박스"
   },
   {
     "name": "메가박스 제주삼화",
@@ -3889,7 +3487,6 @@
     "lat": 33.5204896371434,
     "lng": 126.588154957525,
     "brand": "메가박스",
-    "region": "jeju",
     "relayTheaterId": "0059",
     "relayTheaterName": "제주삼화"
   },
@@ -3899,7 +3496,6 @@
     "lat": 33.26166312950497,
     "lng": 126.56276431719525,
     "brand": "메가박스",
-    "region": "jeju",
     "relayTheaterId": "0054",
     "relayTheaterName": "제주서귀포"
   },
@@ -3909,7 +3505,6 @@
     "lat": 33.4838282919914,
     "lng": 126.535912436504,
     "brand": "메가박스",
-    "region": "jeju",
     "relayTheaterId": "0066",
     "relayTheaterName": "제주아라"
   },
@@ -3919,7 +3514,6 @@
     "lat": 35.1927551061125,
     "lng": 128.082624788866,
     "brand": "메가박스",
-    "region": "gyeongnam",
     "relayTheaterId": "0045",
     "relayTheaterName": "진주(중안)"
   },
@@ -3929,7 +3523,6 @@
     "lat": 36.859626080942,
     "lng": 127.43841746399437,
     "brand": "메가박스",
-    "region": "chungbuk",
     "relayTheaterId": "3651",
     "relayTheaterName": "진천"
   },
@@ -3939,17 +3532,8 @@
     "lat": 35.22126753697762,
     "lng": 128.67583178296732,
     "brand": "메가박스",
-    "region": "gyeongnam",
     "relayTheaterId": "0048",
     "relayTheaterName": "창원"
-  },
-  {
-    "name": "메가박스 창원내서",
-    "address": "경남 창원시 마산회원구 내서읍 광려천서로 81",
-    "lat": 35.24897321958479,
-    "lng": 128.510656329108,
-    "brand": "메가박스",
-    "region": "gyeongnam"
   },
   {
     "name": "메가박스 천안",
@@ -3957,29 +3541,17 @@
     "lat": 36.83236775991623,
     "lng": 127.14792607304153,
     "brand": "메가박스",
-    "region": "chungnam",
     "relayTheaterId": "0056",
     "relayTheaterName": "천안"
   },
   {
     "name": "메가박스 첨단",
-    "address": "광주 광산구 앰코로 35",
+    "address": "전남광주통합특별시 광산구 앰코로 35",
     "lat": 35.221421091121144,
     "lng": 126.85238068630491,
     "brand": "메가박스",
-    "region": "gwangju",
     "relayTheaterId": "5064",
     "relayTheaterName": "첨단"
-  },
-  {
-    "name": "메가박스 청라지젤",
-    "address": "인천 서구 청라에메랄드로 99",
-    "lat": 37.53342185062802,
-    "lng": 126.6561022494387,
-    "brand": "메가박스",
-    "region": "incheon",
-    "relayTheaterId": "0027",
-    "relayTheaterName": "청라지젤(휴관)"
   },
   {
     "name": "메가박스 청주사창",
@@ -3987,7 +3559,8 @@
     "lat": 36.6326416197546,
     "lng": 127.460473700328,
     "brand": "메가박스",
-    "region": "chungbuk"
+    "relayTheaterId": "0049",
+    "relayTheaterName": "청주사창"
   },
   {
     "name": "메가박스 청주성안길",
@@ -3995,25 +3568,26 @@
     "lat": 36.6352898981793,
     "lng": 127.488123780866,
     "brand": "메가박스",
-    "region": "chungbuk",
     "relayTheaterId": "0069",
     "relayTheaterName": "청주성안길"
   },
   {
     "name": "메가박스 청주터미널점",
-    "address": "충북 청주시 흥덕구 가경동 1416",
-    "lat": 36.6269448683164,
-    "lng": 127.431036404269,
+    "address": "충북 청주시 흥덕구 2순환로 1225",
+    "lat": 36.62696402263358,
+    "lng": 127.43072347061931,
     "brand": "메가박스",
-    "region": "chungbuk"
+    "relayTheaterId": "0094",
+    "relayTheaterName": "청주터미널"
   },
   {
-    "name": "메가박스 춘천석사",
+    "name": "메가박스 춘천 석사지점",
     "address": "강원특별자치도 춘천시 후석로 120",
-    "lat": 37.86296322599243,
-    "lng": 127.74786461875385,
+    "lat": 37.86335207354713,
+    "lng": 127.74834583710107,
     "brand": "메가박스",
-    "region": "gangwon"
+    "relayTheaterId": "0037",
+    "relayTheaterName": "춘천석사"
   },
   {
     "name": "메가박스 충주연수",
@@ -4021,7 +3595,8 @@
     "lat": 36.9875056720827,
     "lng": 127.941136629184,
     "brand": "메가박스",
-    "region": "chungbuk"
+    "relayTheaterId": "0068",
+    "relayTheaterName": "충주연수"
   },
   {
     "name": "메가박스 코엑스",
@@ -4029,7 +3604,6 @@
     "lat": 37.5127460688163,
     "lng": 127.05884035234267,
     "brand": "메가박스",
-    "region": "seoul",
     "relayTheaterId": "1351",
     "relayTheaterName": "코엑스"
   },
@@ -4039,7 +3613,6 @@
     "lat": 37.66793792051387,
     "lng": 126.75182227831553,
     "brand": "메가박스",
-    "region": "gyeonggi",
     "relayTheaterId": "4112",
     "relayTheaterName": "킨텍스"
   },
@@ -4049,7 +3622,8 @@
     "lat": 37.76488408358352,
     "lng": 126.77464186840186,
     "brand": "메가박스",
-    "region": "gyeonggi"
+    "relayTheaterId": "4132",
+    "relayTheaterName": "파주금촌"
   },
   {
     "name": "메가박스 파주운정",
@@ -4057,7 +3631,8 @@
     "lat": 37.70572925064641,
     "lng": 126.75872832950384,
     "brand": "메가박스",
-    "region": "gyeonggi"
+    "relayTheaterId": "4115",
+    "relayTheaterName": "파주운정"
   },
   {
     "name": "메가박스 평택비전",
@@ -4065,23 +3640,8 @@
     "lat": 36.995549809845,
     "lng": 127.112495524219,
     "brand": "메가박스",
-    "region": "gyeonggi"
-  },
-  {
-    "name": "메가박스 포항",
-    "address": "경북 포항시 남구 중흥로 77",
-    "lat": 36.01250871632132,
-    "lng": 129.34949327747958,
-    "brand": "메가박스",
-    "region": "gyeongbuk"
-  },
-  {
-    "name": "메가박스 픽쳐하우스",
-    "address": "서울 강남구 압구정로10길 9",
-    "lat": 37.5229877623683,
-    "lng": 127.022024171767,
-    "brand": "메가박스",
-    "region": "seoul"
+    "relayTheaterId": "0064",
+    "relayTheaterName": "평택비전"
   },
   {
     "name": "메가박스 하남스타필드",
@@ -4089,7 +3649,8 @@
     "lat": 37.54474430552735,
     "lng": 127.22513397420279,
     "brand": "메가박스",
-    "region": "gyeonggi"
+    "relayTheaterId": "4651",
+    "relayTheaterName": "하남스타필드"
   },
   {
     "name": "메가박스 해운대 장산",
@@ -4097,7 +3658,6 @@
     "lat": 35.1705356884182,
     "lng": 129.177048982455,
     "brand": "메가박스",
-    "region": "busan",
     "relayTheaterId": "0079",
     "relayTheaterName": "해운대(장산)"
   },
@@ -4107,7 +3667,8 @@
     "lat": 37.55604249793133,
     "lng": 126.92204557664462,
     "brand": "메가박스",
-    "region": "seoul"
+    "relayTheaterId": "1212",
+    "relayTheaterName": "홍대(아니메)"
   },
   {
     "name": "메가박스 홍성내포",
@@ -4115,7 +3676,8 @@
     "lat": 36.6593796140786,
     "lng": 126.678983630387,
     "brand": "메가박스",
-    "region": "chungnam"
+    "relayTheaterId": "3501",
+    "relayTheaterName": "홍성내포"
   },
   {
     "name": "메가박스 화곡",
@@ -4123,7 +3685,8 @@
     "lat": 37.54058097265443,
     "lng": 126.8375663037943,
     "brand": "메가박스",
-    "region": "seoul"
+    "relayTheaterId": "0083",
+    "relayTheaterName": "화곡"
   },
   {
     "name": "메가박스 화명",
@@ -4131,126 +3694,126 @@
     "lat": 35.2347357680192,
     "lng": 129.009886537236,
     "brand": "메가박스",
-    "region": "busan"
+    "relayTheaterId": "0087",
+    "relayTheaterName": "화명"
   },
   {
-    "name": "메가박스PC존",
-    "address": "광주 서구 상무대로 918-1",
-    "lat": 35.1508398336338,
-    "lng": 126.862533465648,
-    "brand": "메가박스",
-    "region": "gwangju"
-  },
-  {
-    "name": "메가박스편의점",
-    "address": "부산 사하구 을숙도대로 760",
-    "lat": 35.0846727107382,
-    "lng": 128.990937281693,
-    "brand": "메가박스",
-    "region": "busan"
+    "name": "목포극장1926",
+    "address": "전남광주통합특별시 목포시 영산로59번길 30",
+    "lat": 34.79057821783086,
+    "lng": 126.38388298020413,
+    "brand": "독립영화관"
   },
   {
     "name": "씨네Q 경주보문",
     "address": "경북 경주시 보문로 465-67",
     "lat": 35.83950507608273,
     "lng": 129.29078716542327,
-    "brand": "씨네Q",
-    "region": "gyeongbuk"
+    "brand": "씨네Q"
+  },
+  {
+    "name": "씨네Q 광교상현점",
+    "address": "경기 용인시 수지구 광교중앙로295번길 9",
+    "lat": 37.2968511957259,
+    "lng": 127.068062227989,
+    "brand": "씨네Q"
   },
   {
     "name": "씨네Q 구미봉곡",
     "address": "경북 구미시 야은로 296",
     "lat": 36.138622995648,
     "lng": 128.315166715833,
-    "brand": "씨네Q",
-    "region": "gyeongbuk"
+    "brand": "씨네Q"
+  },
+  {
+    "name": "씨네Q 대구경산",
+    "address": "경북 경산시 대학로28길 6-5",
+    "lat": 35.8330600989281,
+    "lng": 128.73665176887,
+    "brand": "씨네Q"
   },
   {
     "name": "씨네Q 보은영화관",
     "address": "충북 보은군 보은읍 뱃들로 68-22",
     "lat": 36.48748505561251,
     "lng": 127.72332032694162,
-    "brand": "씨네Q",
-    "region": "chungbuk"
+    "brand": "씨네Q"
   },
   {
     "name": "씨네Q 신도림",
     "address": "서울 구로구 새말로 97",
     "lat": 37.507516152916054,
     "lng": 126.89003874131905,
-    "brand": "씨네Q",
-    "region": "seoul"
+    "brand": "씨네Q"
   },
   {
     "name": "씨네Q 영덕예주점",
     "address": "경북 영덕군 영해면 318만세길 36",
     "lat": 36.52952594885516,
     "lng": 129.40509646011512,
-    "brand": "씨네Q",
-    "region": "gyeongbuk"
+    "brand": "씨네Q"
   },
   {
     "name": "씨네Q 청라",
-    "address": "인천 서구 중봉대로 610",
+    "address": "인천 서해구 중봉대로 610",
     "lat": 37.5338903298084,
     "lng": 126.650259799273,
-    "brand": "씨네Q",
-    "region": "incheon"
+    "brand": "씨네Q"
   },
   {
     "name": "씨네Q 칠곡호이점",
     "address": "경북 칠곡군 석적읍 석적로 646",
     "lat": 36.05140609355376,
     "lng": 128.40939833400162,
-    "brand": "씨네Q",
-    "region": "gyeongbuk"
+    "brand": "씨네Q"
   },
   {
     "name": "씨네큐 남양주다산",
     "address": "경기 남양주시 경춘로 490",
     "lat": 37.610293300276844,
     "lng": 127.1671324306719,
-    "brand": "씨네Q",
-    "region": "gyeonggi"
+    "brand": "씨네Q"
   },
   {
     "name": "씨네큐브 광화문",
     "address": "서울 종로구 새문안로 68",
     "lat": 37.5696501678756,
     "lng": 126.972131429357,
-    "brand": "독립영화관",
-    "region": "seoul"
+    "brand": "독립영화관"
+  },
+  {
+    "name": "아트나인",
+    "address": "서울 동작구 동작대로 89",
+    "lat": 37.4846217805965,
+    "lng": 126.98170019714026,
+    "brand": "독립영화관"
   },
   {
     "name": "에무시네마",
     "address": "서울 종로구 경희궁1가길 7",
     "lat": 37.5720658580513,
     "lng": 126.969006250711,
-    "brand": "독립영화관",
-    "region": "seoul"
+    "brand": "독립영화관"
   },
   {
     "name": "오오극장",
     "address": "대구 중구 국채보상로 537",
     "lat": 35.8706649167601,
     "lng": 128.589448547683,
-    "brand": "독립영화관",
-    "region": "daegu"
+    "brand": "독립영화관"
   },
   {
     "name": "인디스페이스",
-    "address": "경기 파주시 조리읍 능안로 221-4",
-    "lat": 37.7356190816133,
-    "lng": 126.787345892011,
-    "brand": "독립영화관",
-    "region": "gyeonggi"
+    "address": "서울 마포구 양화로 176",
+    "lat": 37.55724272960245,
+    "lng": 126.92498690357512,
+    "brand": "독립영화관"
   },
   {
     "name": "필름포럼",
     "address": "서울 서대문구 성산로 527",
     "lat": 37.56376571506,
     "lng": 126.944068037521,
-    "brand": "독립영화관",
-    "region": "seoul"
+    "brand": "독립영화관"
   }
 ]
