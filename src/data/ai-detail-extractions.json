@@ -1,0 +1,5 @@
+{
+  "note": "맥미니 로컬 AI(Apple Vision OCR + Ollama)가 공연 소개 이미지에서 읽은 값. 이미지 글자에서 확인된 값만 저장하며, generate-data는 원본에 없는 칸만 채웁니다.",
+  "updatedAt": "",
+  "items": {}
+}
