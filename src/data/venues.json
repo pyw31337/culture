@@ -9326,7 +9326,18 @@
     "lng": 127.1273942,
     "district": "성남시",
     "phone": "031-779-1500",
-    "homepage": "http://www.tliart.co.kr/"
+    "homepage": "http://www.tliart.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "244",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "라콤카페": {
     "name": "라콤카페",
@@ -70019,9 +70030,9 @@
     "amenities": [
       "식당"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 편의시설: 식당"
   },
   "재즈소사이어티 서울(서울브루어리 성수 5층)": {
     "name": "재즈소사이어티 서울(서울브루어리 성수 5층)",
@@ -97405,7 +97416,17 @@
     "lat": 37.418024467721814,
     "lng": 127.12753434024322,
     "phone": "031-779-1500",
-    "homepage": "http://www.tliart.co.kr/"
+    "homepage": "http://www.tliart.co.kr/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "244",
+    "theaterCount": "1",
+    "openedAt": "2013",
+    "amenities": [
+      "카페",
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "후암씨어터(콘텐츠룸) (후암씨어터(콘텐츠룸))": {
     "name": "후암씨어터(콘텐츠룸) (후암씨어터(콘텐츠룸))",
@@ -105800,9 +105821,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "고성군문화복지센터": {
     "name": "고성군문화복지센터",
@@ -123708,5 +123729,36 @@
     "name": "라라쥬 실내동물원",
     "address": "정보 없음",
     "district": ""
+  },
+  "국립한국교통대학교": {
+    "name": "국립한국교통대학교",
+    "address": "충청북도 충주시 대소원면 대학로 50",
+    "lat": 36.970049,
+    "lng": 127.872522,
+    "district": "",
+    "facilityType": "공공(기타)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
+  },
+  "춘천 꿈꾸는 예술터": {
+    "name": "춘천 꿈꾸는 예술터",
+    "address": "강원특별자치도 춘천시 춘천로145번길 18 (약사동)",
+    "lat": 37.877109,
+    "lng": 127.72935,
+    "district": "",
+    "homepage": "https://ccartedu.or.kr/main",
+    "facilityType": "공공(기타)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   }
 }

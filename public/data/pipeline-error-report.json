@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-15T23:01:27.556Z",
-  "runId": "43770420964",
-  "commit": "1bee070ffac6d95535917fbe4e9f77dd87f270f8",
+  "generatedAt": "2026-11-18T01:08:25.601Z",
+  "runId": "44210539637",
+  "commit": "c7b4cf70618d4778f197f7d15b00e911cdec1557",
   "failures": [
     {
       "source": "umclass",
@@ -12,25 +12,544 @@
   ],
   "repairs": {
     "attempted": true,
-    "changedRecords": 0,
-    "changedFields": 0,
-    "details": []
+    "changedRecords": 31,
+    "changedFields": 74,
+    "details": [
+      {
+        "id": "kopis_PF298556",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF302723",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF302125",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304500",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304494",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF303783",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF305820",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF305795",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304957",
+        "source": "kopis",
+        "field": "price",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304957",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF299987",
+        "source": "kopis",
+        "field": "price",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF299987",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304745",
+        "source": "kopis",
+        "field": "price",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304745",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF303737",
+        "source": "kopis",
+        "field": "price",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF303737",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF303269",
+        "source": "kopis",
+        "field": "price",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF303269",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304490",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF296900",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304750",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF304566",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "kopis_PF303399",
+        "source": "kopis",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제시_골드_JESSE_GOLD_내한공연",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제시_골드_JESSE_GOLD_내한공연",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제시_골드_JESSE_GOLD_내한공연",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제시_골드_JESSE_GOLD_내한공연",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제시_골드_JESSE_GOLD_내한공연",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_제시_골드_JESSE_GOLD_내한공연",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_17",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_테오도르_쿠렌치스_유토피아_오케스트라_11_18",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진진경_첫_서울_콘서트_첫눈에",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진진경_첫_서울_콘서트_첫눈에",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진진경_첫_서울_콘서트_첫눈에",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진진경_첫_서울_콘서트_첫눈에",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진진경_첫_서울_콘서트_첫눈에",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_진진경_첫_서울_콘서트_첫눈에",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_맥주_한잔_하실래요",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_맥주_한잔_하실래요",
+        "source": "interpark.json",
+        "field": "priceList",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_맥주_한잔_하실래요",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_맥주_한잔_하실래요",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_맥주_한잔_하실래요",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_맥주_한잔_하실래요",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_말콤_토드_첫_내한공연",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_말콤_토드_첫_내한공연",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_말콤_토드_첫_내한공연",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서리풀_고음악_시리즈_바로크_노엘",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서리풀_고음악_시리즈_바로크_노엘",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서리풀_고음악_시리즈_바로크_노엘",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_서리풀_고음악_시리즈_바로크_노엘",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀_춘천",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀_춘천",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀_춘천",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀_춘천",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_알버트_카노_스미트_피아노_리사이틀",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌2_전주",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌2_전주",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌2_전주",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_오리지널_과학마술콘서트_시즌2_전주",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_연극_식당_매일이_크리스마스",
+        "source": "interpark.json",
+        "field": "age",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_연극_식당_매일이_크리스마스",
+        "source": "interpark.json",
+        "field": "ageDetail",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_연극_식당_매일이_크리스마스",
+        "source": "interpark.json",
+        "field": "runtime",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_연극_식당_매일이_크리스마스",
+        "source": "interpark.json",
+        "field": "bookingLinks",
+        "fromSource": "kopis",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_2026_천안예술의전당_조선화방_의",
+        "source": "interpark.json",
+        "field": "price",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      },
+      {
+        "id": "perf_2026_천안예술의전당_조선화방_의",
+        "source": "interpark.json",
+        "field": "description",
+        "fromSource": "culture-portal",
+        "reason": "same-title-venue-overlapping-date"
+      }
+    ]
   },
   "detailCoverage": [
     {
       "source": "kopis",
       "sample": 120,
-      "missingPrice": 23,
-      "missingAge": 24,
-      "missingRuntime": 25,
+      "missingPrice": 0,
+      "missingAge": 1,
+      "missingRuntime": 3,
       "policy": "warn-and-report-in-github-fallback"
     },
     {
       "source": "interpark",
       "sample": 120,
-      "missingPrice": 114,
-      "missingAge": 113,
-      "missingRuntime": 113,
+      "missingPrice": 49,
+      "missingAge": 112,
+      "missingRuntime": 112,
       "policy": "warn-and-report"
     }
   ],
