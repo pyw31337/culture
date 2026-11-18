@@ -314,7 +314,19 @@ async function scrapeMochaClass() {
     console.log(`  Total unique classes found: ${pendingItems.length}`);
     await page.close();
     if (pendingItems.length === 0) {
-        throw new Error('MochaClass list scrape found 0 items.');
+        // The list page is client-rendered and its class names can change without
+        // notice. Never discard a known-good dataset or fail the whole local
+        // update just because the listing selector missed a page. Keep the last
+        // successful snapshot and let the next scheduled run retry the source.
+        const retained = Array.from(existingMap.values());
+        if (retained.length > 0) {
+            console.warn(`MochaClass list scrape found 0 items; retaining ${retained.length} existing items for the next retry.`);
+            saveData(retained);
+            await browser.close();
+            return;
+        }
+        await browser.close();
+        throw new Error('MochaClass list scrape found 0 items and no existing dataset is available.');
     }
 
     // Phase 2: Details
