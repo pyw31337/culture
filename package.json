@@ -8,7 +8,8 @@
     "generate:thumbs": "node scripts/generate-local-thumbnails.mjs",
     "generate:brand-assets": "node scripts/generate-brand-assets.mjs",
     "prune:posters": "npx tsx scripts/prune-unused-posters.ts",
-    "build:site": "node -e \"if(process.env.SKIP_PRUNE==='1'){process.exit(0)}else{process.exit(1)}\" || npm run prune:posters; next build --webpack",
+    "normalize:ids": "npx tsx scripts/normalize-performance-ids.ts",
+    "build:site": "npm run normalize:ids && (node -e \"if(process.env.SKIP_PRUNE==='1'){process.exit(0)}else{process.exit(1)}\" || npm run prune:posters) && next build --webpack",
     "build": "npm run generate-data && POSTER_CACHE_INCLUDE_ALL_REMOTE=1 POSTER_CACHE_MAX_NEW_DOWNLOADS=8000 npm run cache:posters && npm run validate:posters && npm run generate:thumbs && npm run validate:content && npm run validate:location-search && npm run validate:locations && npm run validate:display && npm run audit:stability && next build --webpack",
     "start": "next start",
     "lint": "NODE_OPTIONS=--max-old-space-size=4096 eslint",
@@ -48,7 +49,7 @@
     "fix:regions": "npx tsx scripts/fix-region-mismatches.ts",
     "fix:regions:write": "npx tsx scripts/fix-region-mismatches.ts --write",
     "cleanup:junk": "bash scripts/cleanup-repo-junk.sh",
-    "build:site:ci": "next build --webpack"
+    "build:site:ci": "npm run normalize:ids && next build --webpack"
   },
   "dependencies": {
     "@types/sharp": "^0.31.1",

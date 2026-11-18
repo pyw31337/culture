@@ -1,3 +1,5 @@
+import { normalizePerformanceId } from './performance-id';
+
 function slugify(text: string): string {
     return text
         .replace(/[^a-zA-Z0-9가-힣]/g, '_')
@@ -91,7 +93,10 @@ export function processAndMergePerformances(items: any[]): any[] {
 
         return {
             ...p,
-            id: stableId,
+            // Long Korean slugs overflow the 255 byte path component limit when Next.js
+            // exports /p/[id], so every generated id is capped here as well as at the
+            // final payload write.
+            id: normalizePerformanceId(stableId),
             originalId: p.id // Keep original for reference
         };
     });

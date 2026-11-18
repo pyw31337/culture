@@ -30,6 +30,7 @@ import { decodeItemText } from './lib/text-clean';
 import { buildSessionsPayload } from './utils/session-payload';
 import { deriveVenueFacilityType } from './utils/venue-facility-type';
 import { mergeCinemaRelayIds, type CinemaRelayMapping, type CinemaRow } from './utils/cinema-relay-ids';
+import { MAX_PERFORMANCE_ID_BYTES, normalizeIdList } from '../src/lib/performance-id';
 
 type PrunablePerformance = Performance & {
     platforms?: string[];
@@ -2117,6 +2118,14 @@ async function generate() {
             rest.source = p.source; // Keep the source for statistics
             return rest as PrunedPerformance;
         });
+
+        // Every id written below becomes a /p/[id] directory name during static export.
+        // Long title-derived Korean slugs overflow Linux' 255 byte path component limit
+        // (ENAMETOOLONG), so normalize once here, before any payload is written.
+        const renamedIds = normalizeIdList(pruned);
+        if (renamedIds.size > 0) {
+            console.log(`Normalized ${renamedIds.size} over-long performance ids to ${MAX_PERFORMANCE_ID_BYTES} bytes or less`);
+        }
 
         const outputPath = path.join(process.cwd(), 'public', 'data', 'performances.json');
 
