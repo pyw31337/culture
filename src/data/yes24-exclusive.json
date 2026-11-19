@@ -64,42 +64,19 @@
     "link": "https://ticket.yes24.com/Perf/60840",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩석 176,000원, 지정석 VIP석 176,000원, 지정석 R석 165,000원, 플로어 R석 165,000원, 지정석 S석 154,000원",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "176,000원"
-      },
-      {
-        "label": "지정석 VIP석",
-        "price": "176,000원"
-      },
-      {
-        "label": "지정석 R석",
-        "price": "165,000원"
-      },
-      {
-        "label": "플로어 R석",
-        "price": "165,000원"
-      },
-      {
-        "label": "지정석 S석",
-        "price": "154,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가(스탠딩석 만 12세 이상)",
-    "runningTime": "총 150분",
-    "performanceTime": "2027년 1월 2일(토) 오후 5시\n2027년 1월 3일(일) 오후 4시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 12월 08일부터 순차 배송됩니다.",
-    "host": "/주관: 영감의샘터, 타입커뮤니케이션",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매(팬클럽 매수 포함)\n※ 일괄배송 : 12월 8일(화)\n※ 기존 공지에 안내된 좌석배치도가 변경되었으니, 예매 전 반드시 변경된 좌석배치도 및 좌석별 유의사항을 확인하신 후 예매해 주시기 바랍니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.※ 지원이 중단된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/60840KK.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:02.075Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:25:35.382Z",
     "image": "/images/posters/concert/yes24_2026_AKMU_CONCERT_소문의_낙원_Paradise_of_Rumors_ENCORE.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261106/20261106-60840_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -113,36 +90,19 @@
     "link": "https://ticket.yes24.com/Perf/61039",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩VIP석 165,000원, 스탠딩R석 143,000원, 스탠딩S석 132,000원",
-    "priceList": [
-      {
-        "label": "스탠딩VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "스탠딩R석",
-        "price": "143,000원"
-      },
-      {
-        "label": "스탠딩S석",
-        "price": "132,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "150분",
-    "performanceTime": "2026년 12월 19일(토) 오후 1시, 6시 30분",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 11월 26일부터 순차 배송됩니다.",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
     "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인 4매\n※ 일괄배송: 11월 26일(목)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/61039_01_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/61039_02_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/61039_03_1.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:19:04.787Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:29:24.389Z",
     "image": "/images/posters/concert/yes24_2026_WAVE_of_ECLIPSE.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261106/20261106-61039.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1134,28 +1094,19 @@
     "link": "https://ticket.yes24.com/Perf/61032",
     "genre": "concert",
     "region": "서울",
-    "price": "전석 99,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "99,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "미취학 아동 입장 불가",
-    "runningTime": "90분",
-    "performanceTime": "2026년 12월 13일(일) 오후 3시",
-    "reservationInfo": "모바일 티켓",
-    "host": "㈜뉴웨이즈컴퍼니",
-    "organizer": "㈜에버라인",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 1매\n※ 본 공연은 예매 시 무통장입금 선택이 불가합니다.\n※ 판매/취소마감시간 : 12월 10일(목) 17:00\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/610321_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/610321_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/610321_03.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:56.335Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:29:08.530Z",
     "image": "/images/posters/concert/yes24_2026_ASC2NT_FANMEETING_PARTY_S_ON.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261106/20261106-61032.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1169,35 +1120,19 @@
     "link": "https://ticket.yes24.com/Perf/61033",
     "genre": "concert",
     "region": "서울",
-    "price": "2층 지정석 110,000원, 스탠딩석 110,000원, 1층 지정석 99,000원",
-    "priceList": [
-      {
-        "label": "2층 지정석",
-        "price": "110,000원"
-      },
-      {
-        "label": "스탠딩석",
-        "price": "110,000원"
-      },
-      {
-        "label": "1층 지정석",
-        "price": "99,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "12세 이상",
-    "runningTime": "160분",
-    "performanceTime": "2026년 12월 26일(토) 오후 6시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 12월 03일부터 순차 배송됩니다.",
-    "host": "㈜티오피미디어",
-    "organizer": "㈜발코",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 선예매 1인 1매 / 일반예매 1인 4매 (선예매 매수 포함)\n※ 일괄배송: 12월 3일(목)\n※ 본 공연의 예매/취소는 12/24(목) 17시 까지 가능합니다. 예매/취소 마감 후에는 티켓의 취소, 환불이 불가합니다.\n※ 일반예매 오픈 준비로 인해 11/16(월) 오후 5시 ~ 7시 59분까지 취소가 불가합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/61033_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/61033_02.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:05.054Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:25:37.996Z",
     "image": "/images/posters/concert/yes24_DEVIL_YOUTH_CLUB_MCND_2026_CONCERT_IN_SEOUL.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261106/20261106-61033.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1244,26 +1179,19 @@
     "link": "https://ticket.yes24.com/Perf/61104",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩석 66,000원",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "66,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "120분",
-    "performanceTime": "2026년 12월 5일(토) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: KT&G 상상마당 춘천",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261112/[상세이미지]%20브로큰발렌타인_1205%20(1).png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:07.350Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:25:40.321Z",
     "image": "/images/posters/concert/yes24_Valentine_s_Day_CHUNCHEON.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261111/20261111-61104.png/dims/quality/70/",
     "category": "독점공연"
@@ -1433,35 +1361,19 @@
     "link": "https://ticket.yes24.com/Perf/60021",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩석 176,000원, VIP석 176,000원, R석 165,000원",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "176,000원"
-      },
-      {
-        "label": "VIP석",
-        "price": "176,000원"
-      },
-      {
-        "label": "R석",
-        "price": "165,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가(스탠딩석 만 12세 이상)",
-    "runningTime": "총 150분",
-    "performanceTime": "2026년 12월 25일(금) 오후 4시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 12월 01일부터 순차 배송됩니다.",
-    "host": "/주관: 영감의샘터, 타입커뮤니케이션",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매(팬클럽 매수 포함)\n※ 일괄배송 : 12월 1일(화)\n※ 일반예매 오픈 준비로 인해 9월 14일(월) 오후 5시부터 7시 59분까지 취소불가합니다.\n※ MD 판매 및 물품보관소 운영 관련 상세 내용은 추후 별도 안내될 예정입니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261030/akmu_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260910/60021K.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:13.454Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:25:43.947Z",
     "image": "/images/posters/concert/yes24_광주_2026_AKMU_CONCERT_소문의_낙원_Paradise_of_Rumors.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260909/20260909-60021_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1553,36 +1465,19 @@
     "link": "https://ticket.yes24.com/Perf/60018",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩석 176,000원, VIP석 176,000원, R석 165,000원",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "176,000원"
-      },
-      {
-        "label": "VIP석",
-        "price": "176,000원"
-      },
-      {
-        "label": "R석",
-        "price": "165,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가(스탠딩석 만 12세 이상)",
-    "runningTime": "총 150분",
-    "performanceTime": "2026년 11월 21일(토) 오후 5시\n2026년 11월 22일(일) 오후 4시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: 영감의샘터, 타입커뮤니케이션",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매(팬클럽 매수 포함)\n※ 일괄배송 : 10월 27일(화)\n※ MD 판매 및 물품보관소 운영 관련 상세 내용은 추후 별도 안내될 예정입니다.\n※티켓 교환 부스 운영시간\n-2026년 11월 21일(토) 오후 5시 : 오후 1시부터 - 오후 5시 30분\n-2026년 11월 22일(일) 오후 4시 : 오후 12시부터 - 오후 4시 30분\n※좌석 등급 변경에 따른 차액 환불 대상자는 티켓 교환 시 교환 부스에서 차액을 환불받으실 수 있습니다.\n※좌석 재설계에 따라 사전 안내를 받으신 예매자께서는 원활한 입장을 위해 공연 시작 전 기존 티켓을 지참하시어 현장 교환 부스에서 변경된 좌석의 티켓 교환 및 차액 환불을 완료해 주시기 바랍니다.\n※예매자 본인의 신분증과 예매내역 확인 후 티켓 수령이 이루어집니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261117/60018.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/60018.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/60018k.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:21.128Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:25:42.169Z",
     "image": "/images/posters/concert/yes24_대구_2026_AKMU_CONCERT_소문의_낙원_Paradise_of_Rumors.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260909/20260909-60018_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1596,39 +1491,19 @@
     "link": "https://ticket.yes24.com/Perf/60019",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩석 176,000원, VIP석 176,000원, R석 165,000원, 시야제한석 154,000원",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "176,000원"
-      },
-      {
-        "label": "VIP석",
-        "price": "176,000원"
-      },
-      {
-        "label": "R석",
-        "price": "165,000원"
-      },
-      {
-        "label": "시야제한석",
-        "price": "154,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가(스탠딩석 만 12세 이상)",
-    "runningTime": "총 150분",
-    "performanceTime": "2026년 12월 5일(토) 오후 5시\n2026년 12월 6일(일) 오후 4시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: 영감의샘터, 타입커뮤니케이션",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매(팬클럽 매수 포함)\n※ 일괄배송 : 11월 16일(월)\n※ MD 판매 및 물품보관소 운영 관련 상세 내용은 추후 별도 안내될 예정입니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261030/akmu_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261119/60019k.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:23.683Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:25:47.544Z",
     "image": "/images/posters/concert/yes24_대전_2026_AKMU_CONCERT_소문의_낙원_Paradise_of_Rumors.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260909/20260909-60019_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1669,7 +1544,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261113/WEB-상세페이지(대전).jpg"
     ],
-    "dataCollectedAt": "2026-11-19T10:16:51.110Z",
+    "dataCollectedAt": "2026-11-19T13:24:54.877Z",
     "image": "/images/posters/concert/yes24_대전_2026_27_FORESTELLA_CONCERT_BEYOND_EDGE_OF_LIGHT_in_Daejeon.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61128.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1683,35 +1558,19 @@
     "link": "https://ticket.yes24.com/Perf/60020",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩석 176,000원, VIP석 176,000원, R석 165,000원",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "176,000원"
-      },
-      {
-        "label": "VIP석",
-        "price": "176,000원"
-      },
-      {
-        "label": "R석",
-        "price": "165,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가(스탠딩석 만 12세 이상)",
-    "runningTime": "총 150분",
-    "performanceTime": "2026년 12월 19일(토) 오후 5시\n2026년 12월 20일(일) 오후 4시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 11월 25일부터 순차 배송됩니다.",
-    "host": "/주관: 영감의샘터, 타입커뮤니케이션",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 선예매 회차별 1인 2매 / 일반예매 회차별 1인 4매(팬클럽 매수 포함)\n※ 일괄배송 : 11월 25일(수)\n※ 일반예매 오픈 준비로 인해 9월 14일(월) 오후 5시부터 6시 59분까지 취소불가합니다.\n※ MD 판매 및 물품보관소 운영 관련 상세 내용은 추후 별도 안내될 예정입니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261030/akmu_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261119/60020k.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:26.196Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:26:09.422Z",
     "image": "/images/posters/concert/yes24_부산_2026_AKMU_CONCERT_소문의_낙원_Paradise_of_Rumors.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260909/20260909-60020_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1871,34 +1730,19 @@
     "link": "https://ticket.yes24.com/Perf/60713",
     "genre": "concert",
     "region": "서울",
-    "price": "VIP석 200,000원, R석 150,000원, S석 120,000원",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "200,000원"
-      },
-      {
-        "label": "R석",
-        "price": "150,000원"
-      },
-      {
-        "label": "S석",
-        "price": "120,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "70분 (인터미션 없음)",
-    "performanceTime": "2026년 12월 21일(월) 오후 8시\n2026년 12월 22일(화) 오후 8시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "빛의 시어터, ㈜엔플러그 공동주최",
-    "organizer": "빛의 시어터, ㈜엔플러그 공동주관",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n[안내]\n※ 23열~25열은 단차가 있는 계단식 좌석입니다.\n해당 구역은 단차 위에 의자가 설치되는 형태로 운영되오니, 예매 시 참고해 주시기 바랍니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261020/나윤선x보얀지%20상세이미지%20(3).jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:28.448Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:26:17.540Z",
     "image": "/images/posters/concert/yes24_서울_나윤선_보얀_지_크리스마스_인_라이트_재즈_리턴즈_빛의_시어터.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261020/20261020-60713.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1939,7 +1783,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261113/일산k.jpg"
     ],
-    "dataCollectedAt": "2026-11-19T10:16:47.958Z",
+    "dataCollectedAt": "2026-11-19T13:24:48.801Z",
     "image": "/images/posters/concert/yes24_일산_2026_27_FORESTELLA_CONCERT_BEYOND_EDGE_OF_LIGHT_in_Ilsan.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61127.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -2052,41 +1896,19 @@
     "link": "https://ticket.yes24.com/Perf/60870",
     "genre": "concert",
     "region": "서울",
-    "price": "1. Starrrrrrr TEE 45,000원, 2. TOWEL 23,000원, 3. RUBBER BAND 6,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "1. Starrrrrrr TEE",
-        "price": "45,000원"
-      },
-      {
-        "label": "2. TOWEL",
-        "price": "23,000원"
-      },
-      {
-        "label": "3. RUBBER BAND",
-        "price": "6,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Alex_Starrrrrrr%20TEE_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Alex_Starrrrrrr%20TEE_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Alex-4_TOWEL.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Alex-5_RUBBER%20BAND.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:32.766Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:26:30.674Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_Alexandros_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60870.png/dims/quality/70/",
     "category": "독점공연"
@@ -2103,19 +1925,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/ama-1_Music%20Bears%20Life%20T-shirt%20Type%20A.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/ama-2_Music%20bears%20Life%20Rubber%20Band_Black.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:36.017Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:26:36.574Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_amazarashi_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60871.png/dims/quality/70/",
     "category": "독점공연"
@@ -2132,20 +1951,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/BS-1_BUTTERFLY%20BIG%20T-Shirts.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/BS-2_Cracked%20Tour%20Towel%20’26.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/BS-3_BRANDY’S%20PAISLEY%20BANDANNA.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:38.095Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:26:43.177Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_BRANDY_SENKI_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60872.png/dims/quality/70/",
     "category": "독점공연"
@@ -2159,40 +1974,19 @@
     "link": "https://ticket.yes24.com/Perf/60873",
     "genre": "concert",
     "region": "서울",
-    "price": "10. CANDY TUNE OSHI API UNIFORM/CT ver. 72,000원, 11. CANDY TUNE OFFICIAL FAN LIGHT 63,000원, 12. CANDY TUNE Random Clear Trading Card Ver.2 6,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "10. CANDY TUNE OSHI API UNIFORM/CT ver.",
-        "price": "72,000원"
-      },
-      {
-        "label": "11. CANDY TUNE OFFICIAL FAN LIGHT",
-        "price": "63,000원"
-      },
-      {
-        "label": "12. CANDY TUNE Random Clear Trading Card Ver.2",
-        "price": "6,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CT-1_CANDY%20TUNE%20OSHI%20API%20UNIFORM_CT%20ver..jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CT-2_CANDY%20TUNE%20OFFICIAL%20FAN%20LIGHT.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CT-3_CANDY%20TUNE%20Random%20Clear%20Trading%20Card%20Ver.2%20(21%20Types).png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:40.004Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:26:50.951Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_CANDY_TUNE_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60873.png/dims/quality/70/",
     "category": "독점공연"
@@ -2206,35 +2000,19 @@
     "link": "https://ticket.yes24.com/Perf/60874",
     "genre": "concert",
     "region": "서울",
-    "price": "13. OBSERVER T SHIRTS 60,000원, 14. MEMBER ILLUSTRATION TOWEL 35,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "13. OBSERVER T SHIRTS",
-        "price": "60,000원"
-      },
-      {
-        "label": "14. MEMBER ILLUSTRATION TOWEL",
-        "price": "35,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Cv-1_OBSERVER%20T-SHIRTS.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Cv-3_MEMBER%20ILLUSTRATION%20TOWEL.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:43.879Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:26:56.803Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_Chevon_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60874.png/dims/quality/70/",
     "category": "독점공연"
@@ -2251,20 +2029,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
     "host": "",
     "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CHi-1_CHiCO%20with%20HoneyWorks%20Muffler%20Towel.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CHi-2_CHiCO%20with%20HoneyWorks%20Clear%20Sacoche.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CHi-3_CHiCO%20with%20HoneyWorks%20CHiCO-chan%20Hairband.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:47.296Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:27:04.280Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_CHiCO_with_HoneyWorks_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60875.png/dims/quality/70/",
     "category": "독점공연"
@@ -2281,20 +2055,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CQ-1_CLAN%20QUEEN%20UNIFORM%20SHIRT.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CQ-2_Hooded%20Towel%202026.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/CQ-3_Face%20Towel%202026SS.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:17:51.402Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:27:09.621Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_CLAN_QUEEN_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60876.png/dims/quality/70/",
     "category": "독점공연"
@@ -2308,36 +2078,19 @@
     "link": "https://ticket.yes24.com/Perf/60877",
     "genre": "concert",
     "region": "서울",
-    "price": "23. Simple Warp LOGO T Shirts 42,000원, 24. Conton Candy mocomoco LOGO T Shirts 42,000원, 25. Mix Logo Towel 25,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "23. Simple Warp LOGO T Shirts",
-        "price": "42,000원"
-      },
-      {
-        "label": "24. Conton Candy mocomoco LOGO T Shirts",
-        "price": "42,000원"
-      },
-      {
-        "label": "25. Mix Logo Towel",
-        "price": "25,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
+    "description": "",
     "synopsisImages": [],
-    "dataCollectedAt": "2026-11-19T10:17:56.293Z",
+    "dataCollectedAt": "2026-11-19T13:27:14.487Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_Conton_Candy_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60877.png/dims/quality/70/",
     "category": "독점공연"
@@ -2354,19 +2107,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/eill-1_eill%20Face%20Towel(WHITE).jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/eill-3_2nd%20Album《my%20dream%20box》(KiT%20Ver.).jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:00.675Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:27:19.464Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_eill_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60878.png/dims/quality/70/",
     "category": "독점공연"
@@ -2380,41 +2130,19 @@
     "link": "https://ticket.yes24.com/Perf/60879",
     "genre": "concert",
     "region": "서울",
-    "price": "29. FRDC1234 T Shirt 〈Vanilla White〉 37,000원, 30. FRDC1234 Scarf Towel 20,000원, 31. FRDC1234 Clear PVC Multi Case 18,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "29. FRDC1234 T Shirt 〈Vanilla White〉",
-        "price": "37,000원"
-      },
-      {
-        "label": "30. FRDC1234 Scarf Towel",
-        "price": "20,000원"
-      },
-      {
-        "label": "31. FRDC1234 Clear PVC Multi Case",
-        "price": "18,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/FRE-1_FRDC1234%20T-Shirt%20＜Vanilla%20White＞_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/FRE-1_FRDC1234%20T-Shirt%20＜Vanilla%20White＞_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/FRE-2_FRDC1234%20Scarf%20Towel.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/FRE-3_FRDC1234%20Clear%20PVC%20Multi-Case.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:02.807Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:27:22.948Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_FREDERIC_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60879.png/dims/quality/70/",
     "category": "독점공연"
@@ -2431,23 +2159,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261105/IMG_9516.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Sui-34_SHORT%20SLEEVE%20TEE.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Sui-5_SLOGAN%20TOWEL.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Sui-6_METAL%20KEY%20CHAIN.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Sui-7_STICKER%20SET.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/Sui-8_PIN%20BADGE%20SET(8EA).png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:05.412Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:27:42.252Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_Hoshimachi_Suisei_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60880.png/dims/quality/70/",
     "category": "독점공연"
@@ -2461,36 +2182,19 @@
     "link": "https://ticket.yes24.com/Perf/60881",
     "genre": "concert",
     "region": "서울",
-    "price": "38. Logo T Shirt 65,000원, 39. Logo Towel 40,000원, 40. Logo Rubber Key Holder 20,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "38. Logo T Shirt",
-        "price": "65,000원"
-      },
-      {
-        "label": "39. Logo Towel",
-        "price": "40,000원"
-      },
-      {
-        "label": "40. Logo Rubber Key Holder",
-        "price": "20,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
+    "description": "",
     "synopsisImages": [],
-    "dataCollectedAt": "2026-11-19T10:18:08.223Z",
+    "dataCollectedAt": "2026-11-19T13:27:48.924Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_HUMBREADERS_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60881.png/dims/quality/70/",
     "category": "독점공연"
@@ -2507,18 +2211,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\nWONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/ilE-3_NoEl%20Stuffed%20Keychain.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:12.551Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:27:55.472Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_indigo_la_End_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60882.png/dims/quality/70/",
     "category": "독점공연"
@@ -2532,39 +2234,19 @@
     "link": "https://ticket.yes24.com/Perf/60883",
     "genre": "concert",
     "region": "서울",
-    "price": "44. “YOAKEMAE” T shirt 40,000원, 45. “NATSUYASUMI” T shirt 40,000원, 46. Logo Face Towel 25,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "44. “YOAKEMAE” T shirt",
-        "price": "40,000원"
-      },
-      {
-        "label": "45. “NATSUYASUMI” T shirt",
-        "price": "40,000원"
-      },
-      {
-        "label": "46. Logo Face Towel",
-        "price": "25,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/jj-1_YOAKEMAE%20T-shirt.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/jj-2_NATSUYASUMI%20T-shirt.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:15.613Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:03.267Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_jo0ji_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60883.png/dims/quality/70/",
     "category": "독점공연"
@@ -2581,20 +2263,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/KPP-1_KyaryPamyuPamyu%20Towel.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/KPP-2_Ame%20Butterfly%20T-Shirt.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/KPP-3_KY%20Baseball%20Cap.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:18.809Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:08.950Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_Kyary_Pamyu_Pamyu_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60884.png/dims/quality/70/",
     "category": "독점공연"
@@ -2611,23 +2289,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/MGO-1_MGO%20BIG%20SILHOUETTE%20T-SHIRT.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/MGO-2_MGO%20MISSION%20PARKER%2001.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/MGO-2_MGO%20MISSION%20PARKER%2002.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/MGO-2_MGO%20MISSION%20PARKER%2003.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/MGO-2_MGO%20MISSION%20PARKER%2004.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/MGO-3_MGO%20MISSION%20TOWEL.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:23.842Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:17.321Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_Midnight_Grand_Orchestra_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60885.png/dims/quality/70/",
     "category": "독점공연"
@@ -2644,20 +2315,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/nt-1_natori%20Key%20Chain.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/nt-2_PVC%20Bangle.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/nt-3_”March”%20Face%20Towel.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:30.512Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:20.611Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_natori_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60886.png/dims/quality/70/",
     "category": "독점공연"
@@ -2674,18 +2341,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/[WL26]-Original.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:32.882Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:24.153Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_Official_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60868.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -2699,36 +2364,19 @@
     "link": "https://ticket.yes24.com/Perf/60887",
     "genre": "concert",
     "region": "서울",
-    "price": "56. SBM 2026AW T SHIRT 45,000원, 57. Everyone wins towel 23,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "56. SBM 2026AW T SHIRT",
-        "price": "45,000원"
-      },
-      {
-        "label": "57. Everyone wins towel",
-        "price": "23,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 MD 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- MD 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/sambo-12_SBM%202026AW%20T-SHIRT_01.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/sambo-12_SBM%202026AW%20T-SHIRT_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/sambo-3_Everyone%20wins%20towel.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:35.842Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:29.677Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_SAMBOMASTER_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60887.png/dims/quality/70/",
     "category": "독점공연"
@@ -2742,38 +2390,19 @@
     "link": "https://ticket.yes24.com/Perf/60888",
     "genre": "concert",
     "region": "서울",
-    "price": "58. POPMAN’S CARNIVAL vol.3 Towel 30,000원, 59. Logo Keyholder (Blue) 13,000원, 60. Logo Keyholder (Purple) 13,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "58. POPMAN’S CARNIVAL vol.3 Towel",
-        "price": "30,000원"
-      },
-      {
-        "label": "59. Logo Keyholder (Blue)",
-        "price": "13,000원"
-      },
-      {
-        "label": "60. Logo Keyholder (Purple)",
-        "price": "13,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/SKM-1_POPMAN_S%20CARNIVAL%20vol.3%20Towel.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:38.988Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:33.531Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_SUKIMASWITCH_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60888.png/dims/quality/70/",
     "category": "독점공연"
@@ -2787,40 +2416,19 @@
     "link": "https://ticket.yes24.com/Perf/60889",
     "genre": "concert",
     "region": "서울",
-    "price": "61. SWEET STEADY OSHI API UNIFORM SSver. 72,000원, 62. SWEET STEADY OFFICIAL FAN LIGHT 63,000원, 63. SWEET STEADY Random Clear Trading Card Ver.1 6,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "61. SWEET STEADY OSHI API UNIFORM SSver.",
-        "price": "72,000원"
-      },
-      {
-        "label": "62. SWEET STEADY OFFICIAL FAN LIGHT",
-        "price": "63,000원"
-      },
-      {
-        "label": "63. SWEET STEADY Random Clear Trading Card Ver.1",
-        "price": "6,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/SS-1_SWEET%20STEADY%20OSHI%20API%20UNIFORM%20SSver..png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/SS-2_SWEET%20STEADY%20OFFICIAL%20FAN%20LIGHT.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/SS-3_SWEET%20STEADY%20Clear%20Trading%20Card%20Ver.1%20(21%20Types).png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:42.642Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:41.482Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_SWEET_STEADY_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60889.png/dims/quality/70/",
     "category": "독점공연"
@@ -2834,37 +2442,19 @@
     "link": "https://ticket.yes24.com/Perf/60890",
     "genre": "concert",
     "region": "서울",
-    "price": "64. Original BKW Sports T Shirt 2027 50,000원, 65. Grunge style muffler towel 2027 20,000원, 0. 봉투 200원",
-    "priceList": [
-      {
-        "label": "64. Original BKW Sports T Shirt 2027",
-        "price": "50,000원"
-      },
-      {
-        "label": "65. Grunge style muffler towel 2027",
-        "price": "20,000원"
-      },
-      {
-        "label": "0. 봉투",
-        "price": "200원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/TOC-12_Original%20BKW%20Sports%20T-Shirt%202026%204_01.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/TOC-12_Original%20BKW%20Sports%20T-Shirt%202026%204_02.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/TOC-12_Original%20BKW%20Sports%20T-Shirt%202026%204_01,02.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/TOC-3_Grunge-style%20muffler%20towel.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:44.595Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:45.063Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_THE_ORAL_CIGARETTES_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60890.png/dims/quality/70/",
     "category": "독점공연"
@@ -2881,20 +2471,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "2026년 11월 20일(금) ~ 11월 22일(일)\n부스 운영 시간 : 11:30 ~ 21:00",
+    "performanceTime": "",
     "reservationInfo": "",
-    "host": "LIVET",
-    "organizer": "WONDERLOCH",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "WONDERLIVET 2026 GOODS 구매 및 수령 유의사항\n1. 상품 구매 및 수령 안내\n- 본 상품은 배송되지 않으며, WONDERLIVET 2026 행사 현장에서 직접 수령하는 상품입니다.\n- GOODS 수령은 해당 날짜의 공연 입장 티켓을 소지하신 분에 한해 가능합니다.\n- 예약 구매 상품은 구매 시 지정하신 날짜에 수령해 주시기 바랍니다. 구매 전 입장 티켓 날짜와 상품 수령일을 꼭 확인해 주세요.\n- 상품별 구매 가능 수량이 상이하므로, 구매 전 각 상품의 수량 제한을 확인해 주시기 바랍니다.\n2. 한정 수량 판매 안내\n- 모든 상품은 한정 수량으로 준비되어 있으며, 준비된 수량이 소진될 경우 판매가 조기 종료될 수 있습니다.\n- 사전예약 판매 현황에 따라 일부 상품은 현장 판매가 진행되지 않을 수 있는 점 양해 부탁드립니다.\n3. 봉투 구매 안내\n- 봉투는 유상으로 제공되며, 상품 주문 시 함께 구매하실 수 있습니다.\n- 봉투는 수령 당일 현장에서 별도 구매가 어려우므로, 필요하신 경우 반드시 상품 주문 시 함께 선택해 주세요.\n4. 상품 확인 및 교환·환불 안내\n- 상품 수령 시 반드시 수령 카운터에서 상품 상태 및 불량 여부를 확인해 주시기 바랍니다.\n- 수령 카운터 이탈 후에는 상품 상태 확인 및 교환·환불 처리가 어려울 수 있으므로, 반드시 현장에서 확인 부탁드립니다.\n- 상품 불량이 확인된 경우, 현장 재고가 있는 경우에 한해 동일 상품으로 교환해 드립니다.\n- 교환 가능한 재고가 없는 경우에는 환불로 처리되는 점 양해 부탁드립니다.\n5. 구매 취소 및 환불 안내\n- 구매 기간: 2026년 11월 5일(목) 18:00 ~ 11월 11일(수) 23:59\n- 구매 취소 및 환불은 별도 안내된 기준에 따라 진행되므로, 구매 전 관련 내용을 확인해 주시기 바랍니다.\n원활한 현장 운영과 정확한 상품 수령을 위한 안내이오니, 구매 전 유의사항을 꼭 확인해 주시기 바랍니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/ym-1_yama%20Embroidered%20Tie-dye%20T-shirts.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/ym-2_Mintgreen%20Muffler%20Towel.png",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/ym-3_yama%20Dress-Up%20Plush%20Toy.png"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:48.404Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:50.180Z",
     "image": "/images/posters/concert/yes24_WONDERLIVET_2026_yama_GOODS.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261104/20261104-60891.png/dims/quality/70/",
     "category": "독점공연"
@@ -2945,33 +2531,19 @@
     "link": "https://ticket.yes24.com/Perf/60796",
     "genre": "concert",
     "region": "서울",
-    "price": "스탠딩석 88,000원, 지정석 88,000원",
-    "priceList": [
-      {
-        "label": "스탠딩석",
-        "price": "88,000원"
-      },
-      {
-        "label": "지정석",
-        "price": "88,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "120분",
-    "performanceTime": "2026년 11월 28일(토) 오후 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "주식회사 오드삼삼",
-    "organizer": "주식회사 오드삼삼",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 2매\n※ 일괄배송: 11월 5일(목)\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60796_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60796_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60796_03.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60796_04.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:53.176Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:28:58.284Z",
     "image": "/images/posters/concert/yes24_2026_이츠_IT_S_단독공연_영원_01_YOUNGONE_01.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261023/20261023-60796.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -2985,26 +2557,19 @@
     "link": "https://ticket.yes24.com/Perf/60597",
     "genre": "concert",
     "region": "서울",
-    "price": "전석 77,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "77,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상(미취학아동 관람 불가)",
-    "runningTime": "--",
-    "performanceTime": "2026년 11월 26일 (목) 오후 8시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "주 최 : SM ENTERTAINMENT",
-    "organizer": "주 관 : 플러드 프로덕션",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 1인 1매(팬클럽 선예매 매수 포함)\n※ 일반 예매 오픈 준비로 인해 10월 27일(화) 오후 4시 30분부터 7시 59분까지 취소 불가합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261019/60597K.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:58.130Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:29:11.601Z",
     "image": "/images/posters/concert/yes24_2026_CHANYEOL_B_day_PARTY_B_side.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261019/20261019-60597.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3018,26 +2583,19 @@
     "link": "https://ticket.yes24.com/Perf/60596",
     "genre": "concert",
     "region": "서울",
-    "price": "전석 77,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "77,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상(미취학아동 관람 불가)",
-    "runningTime": "--",
-    "performanceTime": "2026년 11월 24일 (화) 오후 8시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "주 최: SM Entertainment",
-    "organizer": "주 관 : 플러드 프로덕션",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 1인 1매(팬클럽 매수 포함)\n※ 일반 예매 오픈 준비로 인해 10월 28일(수) 오후 4시 30분부터 7시 59분까지 취소 불가 합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60596k.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:18:59.859Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:29:14.654Z",
     "image": "/images/posters/concert/yes24_2026_CHENLE_B_day_PARTY_Lele_s_Show_2.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261023/20261023-60596.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3074,7 +2632,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261116/JK.jpg"
     ],
-    "dataCollectedAt": "2026-11-19T10:16:55.537Z",
+    "dataCollectedAt": "2026-11-19T13:25:06.404Z",
     "image": "/images/posters/concert/yes24_2026_JANG_HANEUM_FAN_CON_Haneum_s_Birthday_Dream.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261116/20261116-61179.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3088,32 +2646,19 @@
     "link": "https://ticket.yes24.com/Perf/61014",
     "genre": "concert",
     "region": "서울",
-    "price": "1층 지정석 121,000원, 2층 지정석 110,000원",
-    "priceList": [
-      {
-        "label": "1층 지정석",
-        "price": "121,000원"
-      },
-      {
-        "label": "2층 지정석",
-        "price": "110,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 100분 (인터미션 없음)",
-    "performanceTime": "2026년 12월 13일(일) 오후 6시",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 11월 20일부터 순차 배송됩니다.",
-    "host": "(재)마포문화재단, 주식회사 롤링홀",
-    "organizer": "주식회사 롤링홀",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 팬클럽 선예매 1인 1매 / 일반예매 1인 4매 (선예매 매수 포함)\n※ 일괄배송: 11월 20일(금)\n※ 본 공연은 팬클럽 선예매 시 무통장 입금 선택이 불가합니다.\n※ 일반예매 오픈 준비로 인해 11/11(수) 오후 5시 ~ 7시 59분까지 취소가 불가합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/610142_01_1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/610142_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/610142_03.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:19:02.190Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:29:19.168Z",
     "image": "/images/posters/concert/yes24_2026_KIM_JONGHYEON_FAN_CONCERT_HAPPY_CEREMONY_2026_Mapo_Winter_Edition.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261110/20261110-61014.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3196,28 +2741,19 @@
     "link": "https://ticket.yes24.com/Perf/60795",
     "genre": "concert",
     "region": "서울",
-    "price": "전석 50,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "50,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "7세 이상",
-    "runningTime": "120분",
-    "performanceTime": "2026년 12월 11일(금) 오후 7시 30분",
-    "reservationInfo": "현장 수령 또는 배송(등기우편)",
-    "host": "꽃다지",
-    "organizer": "원더로크",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 10매\n※ 본 공연의 예매/취소는 관람 전일 오전 11시까지 가능합니다. 예매/취소 마감 후에는 티켓의 취소, 환불이 불가합니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60795_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60795_02.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261023/60795_03.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:19:10.126Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:29:29.656Z",
     "image": "/images/posters/concert/yes24_꽃다지_콘서트_Vol_01_정혜윤.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261023/20261023-60795.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3269,44 +2805,19 @@
     "link": "https://ticket.yes24.com/Perf/60484",
     "genre": "musical",
     "region": "서울",
-    "price": "OP석 120,000원, VIP석 120,000원, R석 90,000원, S석 60,000원",
-    "priceList": [
-      {
-        "label": "OP석",
-        "price": "120,000원"
-      },
-      {
-        "label": "VIP석",
-        "price": "120,000원"
-      },
-      {
-        "label": "R석",
-        "price": "90,000원"
-      },
-      {
-        "label": "S석",
-        "price": "60,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 30,000원 ~ 최고가 108,000원",
-    "ageRating": "14세 이상",
-    "runningTime": "총 80분 (인터미션 없음)",
-    "performanceTime": "화,수,목 20:00 / 금,토 17:00, 20:30 / 일 15:00 (월 공연 없음)\n* 12/24(목) 17:00, 20:30\n* 12/31(목) 17:00, 1/8(금) 17:00 공연있음\n* 1/1(금) 17:00 1회 공연",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "㈜아이엠컬처",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "번호: 오픈리뷰 1588-5212",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/60484_b.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261117/60484_ja.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261117/60484_su.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261117/60484_dr.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/60484_dc1118.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/60484_2_01.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/60484_2_02.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:19:27.242Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:30:01.464Z",
     "image": "/images/posters/musical/yes24_식스_더_뮤지컬_SIX_THE_MUSICAL.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261002/20261002-60484_2.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3399,35 +2910,19 @@
     "link": "https://ticket.yes24.com/Perf/61106",
     "genre": "musical",
     "region": "서울",
-    "price": "R석 70,000원, S석 50,000원, A석 20,000원",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "70,000원"
-      },
-      {
-        "label": "S석",
-        "price": "50,000원"
-      },
-      {
-        "label": "A석",
-        "price": "20,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 10,000원 ~ 최고가 49,000원",
-    "ageRating": "7세 이상 관람가",
-    "runningTime": "140분, (인터미션 20분 포함)",
-    "performanceTime": "2026년 12월 12일 (토) - 26 (토)\n평일 7시30분 토요일 2시, 7시30분 일요일 2시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "용산문화재단,㈜유니원커뮤니케이션즈",
-    "organizer": "용산문화재단, UCG플레이그라운드",
-    "contact": "번호: 070-4210-0822",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61106_dcdc.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61106_2222.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:19:34.156Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:30:06.934Z",
     "image": "/images/posters/musical/yes24_용산문화재단_출범기념_뮤지컬_크리스마스_캐롤.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261112/20261112-61106.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3554,26 +3049,19 @@
     "link": "https://ticket.yes24.com/Perf/61010",
     "genre": "musical",
     "region": "서울",
-    "price": "전석 55,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "55,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "7세 이상 ※ 2019.12.31. 이전 출생자",
-    "runningTime": "총 100분 (인터미션 없음)",
-    "performanceTime": "2026년 12월 19일(토) 오후 2시, 6시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "정다예",
-    "organizer": "정다예",
-    "contact": "번호: 공식 인스타그램 DM(@jdy_10th)",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한: 회차별 1인4매\n※ 판매마감: 12/18 23:59",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/61010_2.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:19:38.160Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:30:14.089Z",
     "image": "/images/posters/musical/yes24_다예쁜_다예뿐_뮤지컬배우_정다예_10주년_콘서트.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261106/20261106-61010.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3831,30 +3319,19 @@
     "link": "https://ticket.yes24.com/Perf/60674",
     "genre": "play",
     "region": "서울",
-    "price": "1층 77,000원, 2층 55,000원",
-    "priceList": [
-      {
-        "label": "1층",
-        "price": "77,000원"
-      },
-      {
-        "label": "2층",
-        "price": "55,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 27,500원 ~ 최고가 73,150원",
-    "ageRating": "7세 이상",
-    "runningTime": "110분",
-    "performanceTime": "2026년 11월 21일(토)\n14:00/18:00",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(재)창원문화재단",
-    "organizer": "진해아트홀",
-    "contact": "055-719-7800",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261015/2026101521.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:20:06.802Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:30:44.967Z",
     "image": "/images/posters/play/yes24_창원_2026_연극_친정엄마와_2박3일.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261015/20261015-60674.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3868,32 +3345,19 @@
     "link": "https://ticket.yes24.com/Perf/60468",
     "genre": "play",
     "region": "서울",
-    "price": "R석 66,000원, S석 55,000원",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "66,000원"
-      },
-      {
-        "label": "S석",
-        "price": "55,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 38,500원 ~ 최고가 59,400원",
-    "ageRating": "만 12세이상 관람가",
-    "runningTime": "총 100분 (인터미션 없음)",
-    "performanceTime": "2026년 12월 19일 토요일 18:00\n2026년 12월 20일 일요일 14:00, 18:00",
-    "reservationInfo": "현장 수령 또는 배송(등기우편)",
-    "host": "즐거운사람들",
-    "organizer": "퓨어브릿지컬쳐",
-    "contact": "1551-7122",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261001/2026100105.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261001/2026100106.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261001/2026100107.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:20:15.253Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:30:52.584Z",
     "image": "/images/posters/play/yes24_전주_2026_연극_늘근도둑이야기.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261001/20261001-60468.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -4930,35 +4394,19 @@
     "link": "https://ticket.yes24.com/Perf/60629",
     "genre": "classic",
     "region": "서울",
-    "price": "R석 77,000원, S석 55,000원, A석 33,000원",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "77,000원"
-      },
-      {
-        "label": "S석",
-        "price": "55,000원"
-      },
-      {
-        "label": "A석",
-        "price": "33,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 16,500원 ~ 최고가 53,900원\n할인정보\n※ 구민 할인 50% (1인 4매)\n※ 조기예매 할인 30% (1인 6매) / ~10/29 까지\n※ 예술인패스 30% (1인 2매)\n※ 청소년 할인 30% (본인)\n※ 경로 할인 40% (본인)\n* 할인 선택 예매 시 증빙서류 지참. 미지참 시 차액지불",
-    "ageRating": "전체관람가",
-    "runningTime": "100분(인터미션 포함)",
-    "performanceTime": "2026년 11월 20일(금) 오후 7시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)용산문화재단",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261102/60629.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261027/60629.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:20:47.306Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:14.365Z",
     "image": "/images/posters/classic/yes24_이태리_만토바_체임버_오케스트라_with_테너_임형주.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261014/20261014-60629.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5234,26 +4682,19 @@
     "link": "https://ticket.yes24.com/Perf/61051",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 30,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 13세 이상",
-    "runningTime": "총 100분",
-    "performanceTime": "2026년 12월 5일(토) 오후 5시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "문화재단1963",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/61051.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:20:53.765Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:30.638Z",
     "image": "/images/posters/classic/yes24_부산_2026_앙상블_부산_현의_물결_시리즈_Winter_Story.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261110/20261110-61051.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5298,26 +4739,19 @@
     "link": "https://ticket.yes24.com/Perf/60906",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 30,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 13세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "2026년 11월 27일(금) 오후 7시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "문화재단1963",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261112/60906.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:20:40.885Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:20.048Z",
     "image": "/images/posters/classic/yes24_부산_영원의_정원을_걷다_Walking_in_the_Eternal_Garden.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261029/20261029-60906.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5499,27 +4933,19 @@
     "link": "https://ticket.yes24.com/Perf/60726",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 30,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 13세 이상",
-    "runningTime": "총 100분",
-    "performanceTime": "2026년 11월 22일(일) 오후 5시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "문화재단1963",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/607261.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/607262.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:20:56.188Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:24.839Z",
     "image": "/images/posters/classic/yes24_부산_The_Finds_Rising.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261019/20261019-60726.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5566,26 +4992,19 @@
     "link": "https://ticket.yes24.com/Perf/60289",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 0원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "0원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "총 120분 (인터미션 10분)",
-    "performanceTime": "2026년 11월 21일(토) 오후 3시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)평택시문화재단",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "031-669-0915",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260921/26092104.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:05.133Z",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:34.349Z",
     "image": "/images/posters/classic/yes24_평택_2026_시조_전국명인_초대전.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260921/20260921-60289.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5599,26 +5018,19 @@
     "link": "https://ticket.yes24.com/Perf/61138",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 무료 0원",
-    "priceList": [
-      {
-        "label": "전석 무료",
-        "price": "0원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가",
-    "runningTime": "총 100분",
-    "performanceTime": "2026년 12월 16일(수) 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: 서초문화원",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 1인 2매",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61138.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:07.568Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:39.917Z",
     "image": "/images/posters/classic/yes24_2026_서초문화원_송년음악회_크로스오버_콘서트.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61138_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5704,30 +5116,19 @@
     "link": "https://ticket.yes24.com/Perf/60078",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 11:00 ~ 22:50(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:22.497Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:52.763Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_도전_무릉도장.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60078.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5741,30 +5142,19 @@
     "link": "https://ticket.yes24.com/Perf/60082",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 10:50 ~ 22:40(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:29.057Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:54.917Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_뒤죽박죽_루디브리엄.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60082.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5778,30 +5168,19 @@
     "link": "https://ticket.yes24.com/Perf/60081",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 10:35 ~ 22:25(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:34.792Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:56.957Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_에델슈타인_더_비기닝.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60081.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5815,30 +5194,19 @@
     "link": "https://ticket.yes24.com/Perf/60007",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(2인기준) 58,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(2인기준)",
-        "price": "58,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 10:40 ~ 22:30(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:37.734Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:31:59.779Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_커닝시티_사라진_사람들.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60007.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5852,30 +5220,19 @@
     "link": "https://ticket.yes24.com/Perf/60080",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 11:10 ~ 23:00(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:40.436Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:32:01.468Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_헌티드_맨션으로_초대합니다.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60080.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5892,19 +5249,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 18세 이상",
-    "runningTime": "총 270분",
-    "performanceTime": "2026년 12월 6일(일)\n오전 7시 30분",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 11월 23일부터 순차 배송됩니다.",
-    "host": "부산광역시, KNN, 대한육상연맹",
-    "organizer": "KNN, 부산육상연맹",
-    "contact": "번호: 070-4111-5620",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 원활한 예매를 위해 무통장 입금 예매가 제한됩니다.\n※ 매수제한: 1인1매\n※ 판매/취소마감시간: 10/8 18:00\n※ 추가오픈 판매/취소마감시간: 10/30 18:00",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202608/20260810/59670_2.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202608/20260824/59670_220.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:42.422Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:32:03.515Z",
     "image": "/images/posters/exhibition/yes24_부산브릿지마라톤_2026.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202608/20260810/20260810-59670_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5918,26 +5272,19 @@
     "link": "https://ticket.yes24.com/Perf/60758",
     "genre": "exhibition",
     "region": "서울",
-    "price": "입장료 11,900원",
-    "priceList": [
-      {
-        "label": "입장료",
-        "price": "11,900원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
-    "runningTime": "-",
-    "performanceTime": "2026년 10월29일(목) - 11월 28일(토)\n평일 오후 2시 - 오후 9시\n주말 오후 12시 - 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "부크럼",
-    "organizer": "프라이빗 플레이스 휘",
-    "contact": "번호: 010-2427-2342",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 판매마감: 11/28(토) 오후 3시",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/60758_2.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:45.353Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:32:06.365Z",
     "image": "/images/posters/exhibition/yes24_정영욱_전시_나의_구원에게.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261028/20261028-60758.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5951,38 +5298,19 @@
     "link": "https://ticket.yes24.com/Perf/60679",
     "genre": "exhibition",
     "region": "서울",
-    "price": "[크리스마스 시즌] 14,900원, [주말 야간] 7,900원, [주말 주간] 5,900원, [평일] 5,900원",
-    "priceList": [
-      {
-        "label": "[크리스마스 시즌]",
-        "price": "14,900원"
-      },
-      {
-        "label": "[주말 야간]",
-        "price": "7,900원"
-      },
-      {
-        "label": "[주말 주간]",
-        "price": "5,900원"
-      },
-      {
-        "label": "[평일]",
-        "price": "5,900원"
-      }
-    ],
-    "priceDetail": "할인정보\n※ 1차 얼리버드 10/19 ~10/25까지 (마감)\n※ 2차 얼리버드 10/26 ~11/01까지\n※ 본 판매 일정 11/02 ~",
-    "ageRating": "전 연령",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "평일 16:00~22:00\n주말 주간 11:00~22:00\n주말 야간 16:00~22:00\n크리스마스 시즌 11:00~22:00",
-    "reservationInfo": "모바일 티켓",
-    "host": "(주)푸드트래블, (재)영화의전당",
-    "organizer": "마켓창고",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 매수제한: 공연별 1인 10매 / 회차별 1인 4매\n※ 모바일 티켓 전달하기 불가\n※ 판매마감시간: 하루 전 23:59\n※ 온라인 정규티켓 셋팅을 위한 작업으로 10/30(금) 15:00 ~11/2(월) 15:00 기존 예매건 취소가 불가합니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/60679_21113.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:21:49.486Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:32:09.255Z",
     "image": "/images/posters/exhibition/yes24_크리스마스_빌리지_부산_2026.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261016/20261016-60679.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -7563,29 +6891,19 @@
     "link": "https://ticket.yes24.com/Perf/61144",
     "genre": "kids",
     "region": "서울",
-    "price": "전석 40,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 13,000원 ~ 최고가 18,000원\n할인정보\n※ 기본할인 18,000원 / 상시할인\n※ 카톡채널추가할인 15,000원 / 카톡검색창에 부산조이 검색후 \"조이컬쳐(부산)\" 채널추가 증빙시 할인(당일 현장 증빙필)-미증빙시 차액결제\n※ 조이컬쳐 인스타 팔로우할인 15,000원 / 인스타 팔로우 현장증빙\n※ 신세계신용카드 및 백화점어플 소지자 할인 15,000원/신세계백화점 제휴 카드 및 백화점 어플 소지자 할인\n※ 맘맘회원할인 15,000원/당일티켓 수령시 맘맘회원 확인 미증빙시 차액결제\n※ 카톡채널추가 조기예매할인 13,000원 / ~1월3일까지\n* 할인 선택 예매 시 증빙서류 지참. 미지참시 차액지불",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2027년 1월 16일(토)\n11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관 : ㈜조이컬처",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "070-4045-2302",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144N.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144DC.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144DC1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:22:06.265Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:32:41.156Z",
     "image": "/images/posters/kids/yes24_부산센텀_2027_명작동화_가족뮤지컬_백설공주.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261116/20261116-61144.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -7599,28 +6917,19 @@
     "link": "https://ticket.yes24.com/Perf/61129",
     "genre": "kids",
     "region": "서울",
-    "price": "전석 40,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 13,000원 ~ 최고가 18,000원\n할인정보\n※ 기본할인 18,000원 / 상시할인\n※ 카톡채널추가할인 15,000원 / 카톡검색창에 부산조이 검색후 \"조이컬쳐(부산)\" 채널추가 증빙시 할인(당일 현장 증빙필)-미증빙시 차액결제\n※ 조이컬쳐 인스타 팔로우할인 15,000원 / 인스타 팔로우 현장증빙\n※ 신세계신용카드 및 백화점어플 소지자 할인 15,000원/신세계백화점 제휴 카드 및 백화점 어플 소지자 할인\n※ 맘맘회원할인 15,000원/당일티켓 수령시 맘맘회원 확인 미증빙시 차액결제\n※ 카톡채널추가 조기예매할인 13,000원 / ~12월20일까지",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2027년 1월 2일(토)~3일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관 : ㈜조이컬처",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "070-4045-2302",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/61129n.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/61129dc.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/61129.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:22:08.743Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:32:50.756Z",
     "image": "/images/posters/kids/yes24_부산센텀_2027_명작동화_가족뮤지컬_빨간모자.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61129.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8099,26 +7408,19 @@
     "link": "https://ticket.yes24.com/Perf/60659",
     "genre": "kids",
     "region": "서울",
-    "price": "전석 0원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "0원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "48개월 이상 관람가",
-    "runningTime": "70분 관람 (인터미션 없음)",
-    "performanceTime": "2026년 11월 21일(토) 오후 5시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)창원문화재단",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "055-719-7800~1",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261109/(yes24)%20상세%20이미지.jpg"
-    ],
-    "dataCollectedAt": "2026-11-19T10:22:10.700Z",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-19T13:33:14.636Z",
     "image": "/images/posters/kids/yes24_창원_꿈의_오케스트라_창원_제15회_정기연주회.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261015/20261015-60659.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8372,7 +7674,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261117/상세이미지-2am.jpg"
     ],
-    "dataCollectedAt": "2026-11-19T10:16:57.777Z",
+    "dataCollectedAt": "2026-11-19T13:25:12.814Z",
     "image": "/images/posters/concert/yes24_2026_2am_콘서트_다시_오늘.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261117/20261117-61207.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8457,24 +7759,19 @@
     "link": "https://ticket.yes24.com/Perf/61237",
     "genre": "concert",
     "region": "서울",
-    "price": "전석 20,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "20,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가",
-    "runningTime": "총 90분",
-    "performanceTime": "2026년 12월 8일(화) 오후 6시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "김민제색소폰앙상블",
-    "organizer": "이즈기획",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
+    "description": "",
     "synopsisImages": [],
-    "dataCollectedAt": "2026-11-19T10:18:50.950Z",
+    "dataCollectedAt": "2026-11-19T13:28:53.627Z",
     "image": "/images/posters/concert/yes24_올해도_수고하셨습니다_기웅아재와_김민제색소폰앙상블이_함께하는_2026_송년음악_토크콘서트.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261118/20261118-61237.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8663,6 +7960,45 @@
     "dataCollectedAt": "2026-11-19T10:21:00.226Z",
     "image": "/images/posters/classic/yes24_창원_2027_김선욱_베토벤_피아노_소나타_리사이틀.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261119/20261119-61242.jpg/dims/quality/70/",
+    "category": "독점공연"
+  },
+  {
+    "id": "yes24_61236",
+    "title": "HIPHOPPLAYA SHOW VOL.66",
+    "poster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261118/20261118-61236.jpg/dims/quality/70/",
+    "date": "2026.12.04 ~ 2026.12.04",
+    "venue": "예스24 원더로크홀",
+    "link": "https://ticket.yes24.com/Perf/61236",
+    "genre": "concert",
+    "region": "서울",
+    "price": "스탠딩석 49,000원, 지정석 49,000원",
+    "priceList": [
+      {
+        "label": "스탠딩석",
+        "price": "49,000원"
+      },
+      {
+        "label": "지정석",
+        "price": "49,000원"
+      }
+    ],
+    "priceDetail": "",
+    "ageRating": "13세 이상",
+    "runningTime": "총 120분",
+    "performanceTime": "2026년 12월 4일(금) 오후 8시",
+    "reservationInfo": "모바일 티켓",
+    "host": "hiphopplaya",
+    "organizer": "원더로크",
+    "contact": "",
+    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24 공연에서 진행하는 할인쿠폰 이벤트 대상에서 제외됩니다.\n※ 매수제한: 1인 4매\n※ 본 공연의 예매는 관람 당일 오전 11시, 취소는 관람 전일 오전 11시까지 가능합니다. 취소 마감 후에는 티켓의 취소, 환불이 불가합니다.\n※ 실물 티켓의 분실/훼손 시 재발권 및 관람이 절대 불가하니 보관에 유의해주시기 바랍니다.\n※ 공연 예매 전 반드시 팝업 차단을 해제해 주세요.\n※ 지원이 중단 된 IE(Internet Explorer) 브라우저 또는 다수의 브라우저로 동시 예매 진행 시 원활하지 않을 수 있습니다.",
+    "synopsisImages": [
+      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/Artboard-1.jpg",
+      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/Artboard-2.jpg",
+      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/Artboard-3.jpg"
+    ],
+    "dataCollectedAt": "2026-11-19T13:25:29.823Z",
+    "image": "/images/posters/concert/yes24_HIPHOPPLAYA_SHOW_VOL_66.webp",
+    "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261118/20261118-61236.jpg/dims/quality/70/",
     "category": "독점공연"
   }
 ]
