@@ -20807,7 +20807,25 @@
     "district": "",
     "lat": 36.7867273,
     "lng": 127.163216,
-    "mapped_region_id": "chungnam"
+    "mapped_region_id": "chungnam",
+    "phone": "041-521-2891",
+    "homepage": "http://www.cheonan.go.kr/museum.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "328",
+    "theaterCount": "2",
+    "openedAt": "2008",
+    "amenities": [
+      "식당",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 편의점"
   },
   "경북 영천시 금호읍 창산길 100-29": {
     "name": "경북 영천시 금호읍 창산길 100-29",
@@ -50598,7 +50616,25 @@
     "address": "충청남도 천안시 동남구 천안삼거리길 27",
     "lat": 36.78669474,
     "lng": 127.1633299,
-    "district": ""
+    "district": "",
+    "phone": "041-521-2891",
+    "homepage": "http://www.cheonan.go.kr/museum.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "328",
+    "theaterCount": "2",
+    "openedAt": "2008",
+    "amenities": [
+      "식당",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 편의점"
   },
   "인천 한중문화관": {
     "name": "인천 한중문화관",
@@ -71383,10 +71419,20 @@
   },
   "떼아뜨르 다락 소극장": {
     "name": "떼아뜨르 다락 소극장",
-    "address": "인천광역시 중구 신포로27번길 3",
+    "address": "인천광역시 중구 신포로27번길 3 (중앙동4가)",
     "lat": 37.4714118,
     "lng": 126.62473279999995,
-    "district": "중구"
+    "district": "중구",
+    "phone": "032-777-1959",
+    "homepage": "http://cafe.daum.net/theatre-dalak",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "90",
+    "theaterCount": "1",
+    "openedAt": "2011",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "김천시립율곡도서관": {
     "name": "김천시립율곡도서관",
@@ -84915,10 +84961,28 @@
   },
   "천안박물관": {
     "name": "천안박물관",
-    "address": "충남 천안시 동남구 천안삼거리길 27",
+    "address": "충청남도 천안시 동남구 천안대로 429-13 (삼룡동)",
+    "lat": 36.7870224,
+    "lng": 127.1628647,
     "district": "",
-    "lat": 36.786760408169656,
-    "lng": 127.16334367496806
+    "phone": "041-521-2891",
+    "homepage": "http://www.cheonan.go.kr/museum.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "328",
+    "theaterCount": "2",
+    "openedAt": "2008",
+    "amenities": [
+      "식당",
+      "편의점",
+      "수유실",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비, 수유실 보유",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 식당, 편의점"
   },
   "전일빌딩245": {
     "name": "전일빌딩245",
@@ -105842,9 +105906,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치"
   },
   "빛고을아트스페이스": {
     "name": "빛고을아트스페이스",
@@ -106283,9 +106347,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "큐브컨벤션센터(CCC)": {
     "name": "큐브컨벤션센터(CCC)",
@@ -123760,5 +123824,20 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 공공(기타)"
+  },
+  "CAFE 비온디앤": {
+    "name": "CAFE 비온디앤",
+    "address": "서울특별시 중구 세종대로18길 28 (북창동)",
+    "lat": 37.563693,
+    "lng": 126.978619,
+    "district": "중구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "30",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }
