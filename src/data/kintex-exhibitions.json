@@ -1,18 +1,18 @@
 [
   {
-    "id": "kintex_26101302",
-    "title": "자활사업 30주년 박람회",
-    "venue": "킨텍스 전시홀 5",
-    "venueKey": "킨텍스 전시홀 5",
+    "id": "kintex_26042204",
+    "title": "2026 메가주 일산 시즌2",
+    "venue": "킨텍스 전시홀 2 , 전시홀 3 , 전시홀 4 , 전시홀 5",
+    "venueKey": "킨텍스 전시홀 2 , 전시홀 3 , 전시홀 4 , 전시홀 5",
     "address": "경기 고양시 일산서구 킨텍스로 217-60",
     "lat": 37.6698,
     "lng": 126.7471,
     "region": "gyeonggi",
-    "date": "2026.11.17 ~ 2026.11.17",
-    "image": "/images/posters/kintex/kintex_26101302.webp",
-    "poster": "/images/posters/kintex/kintex_26101302.webp",
-    "backupPoster": "/images/posters/kintex/kintex_26101302.webp",
-    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26101302",
+    "date": "2026.11.20 ~ 2026.11.22",
+    "image": "/images/posters/kintex/kintex_26042204.webp",
+    "poster": "/images/posters/kintex/kintex_26042204.webp",
+    "backupPoster": "/images/posters/kintex/kintex_26042204.webp",
+    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26042204",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -20,7 +20,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.555Z"
+    "dataCollectedAt": "2026-11-19T10:59:10.929Z"
   },
   {
     "id": "kintex_26062904",
@@ -43,30 +43,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.556Z"
-  },
-  {
-    "id": "kintex_26042204",
-    "title": "2026 메가주 일산 시즌2",
-    "venue": "킨텍스 전시홀 2 , 전시홀 3 , 전시홀 4 , 전시홀 5",
-    "venueKey": "킨텍스 전시홀 2 , 전시홀 3 , 전시홀 4 , 전시홀 5",
-    "address": "경기 고양시 일산서구 킨텍스로 217-60",
-    "lat": 37.6698,
-    "lng": 126.7471,
-    "region": "gyeonggi",
-    "date": "2026.11.20 ~ 2026.11.22",
-    "image": "/images/posters/kintex/kintex_26042204.webp",
-    "poster": "/images/posters/kintex/kintex_26042204.webp",
-    "backupPoster": "/images/posters/kintex/kintex_26042204.webp",
-    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26042204",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "031-810-8114",
-    "website": "https://www.kintex.com/",
-    "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.556Z"
+    "dataCollectedAt": "2026-11-19T10:59:10.941Z"
   },
   {
     "id": "kintex_26060815",
@@ -89,7 +66,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.556Z"
+    "dataCollectedAt": "2026-11-19T10:59:10.941Z"
   },
   {
     "id": "kintex_26071604",
@@ -112,30 +89,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.557Z"
-  },
-  {
-    "id": "kintex_26091701",
-    "title": "제55회 맘앤베이비엑스포",
-    "venue": "킨텍스 전시홀 10",
-    "venueKey": "킨텍스 전시홀 10",
-    "address": "경기 고양시 일산서구 킨텍스로 217-60",
-    "lat": 37.6698,
-    "lng": 126.7471,
-    "region": "gyeonggi",
-    "date": "2026.11.26 ~ 2026.11.29",
-    "image": "/images/posters/kintex/kintex_26091701.webp",
-    "poster": "/images/posters/kintex/kintex_26091701.webp",
-    "backupPoster": "/images/posters/kintex/kintex_26091701.webp",
-    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26091701",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "031-810-8114",
-    "website": "https://www.kintex.com/",
-    "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.557Z"
+    "dataCollectedAt": "2026-11-19T10:59:10.942Z"
   },
   {
     "id": "kintex_26080707",
@@ -158,22 +112,22 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.557Z"
+    "dataCollectedAt": "2026-11-19T10:59:10.942Z"
   },
   {
-    "id": "kintex_26090101",
-    "title": "제8회 대한민국 사회연대경제박람회 및 국제컨퍼런스",
-    "venue": "킨텍스 전시홀 5A , 전시홀 5B",
-    "venueKey": "킨텍스 전시홀 5A , 전시홀 5B",
+    "id": "kintex_26091701",
+    "title": "제55회 맘앤베이비엑스포",
+    "venue": "킨텍스 전시홀 10",
+    "venueKey": "킨텍스 전시홀 10",
     "address": "경기 고양시 일산서구 킨텍스로 217-60",
     "lat": 37.6698,
     "lng": 126.7471,
     "region": "gyeonggi",
-    "date": "2026.11.27 ~ 2026.11.29",
-    "image": "/images/posters/kintex/kintex_26090101.webp",
-    "poster": "/images/posters/kintex/kintex_26090101.webp",
-    "backupPoster": "/images/posters/kintex/kintex_26090101.webp",
-    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26090101",
+    "date": "2026.11.26 ~ 2026.11.29",
+    "image": "/images/posters/kintex/kintex_26091701.webp",
+    "poster": "/images/posters/kintex/kintex_26091701.webp",
+    "backupPoster": "/images/posters/kintex/kintex_26091701.webp",
+    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26091701",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -181,30 +135,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.557Z"
-  },
-  {
-    "id": "kintex_26110408",
-    "title": "코리아 라면페스타",
-    "venue": "킨텍스 전시홀 8B",
-    "venueKey": "킨텍스 전시홀 8B",
-    "address": "경기 고양시 일산서구 킨텍스로 217-60",
-    "lat": 37.6698,
-    "lng": 126.7471,
-    "region": "gyeonggi",
-    "date": "2026.11.27 ~ 2026.11.29",
-    "image": "/images/posters/kintex/kintex_26110408.webp",
-    "poster": "/images/posters/kintex/kintex_26110408.webp",
-    "backupPoster": "/images/posters/kintex/kintex_26110408.webp",
-    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26110408",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "031-810-8114",
-    "website": "https://www.kintex.com/",
-    "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.557Z"
+    "dataCollectedAt": "2026-11-19T10:59:10.942Z"
   },
   {
     "id": "kintex_26043007",
@@ -227,22 +158,22 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.557Z"
+    "dataCollectedAt": "2026-11-19T10:59:10.944Z"
   },
   {
-    "id": "kintex_26082806",
-    "title": "새해 준비상점 N.27",
-    "venue": "킨텍스 전시홀 6",
-    "venueKey": "킨텍스 전시홀 6",
+    "id": "kintex_26070806",
+    "title": "2026 우리쌀·우리술 K-라이스 페스타",
+    "venue": "킨텍스 전시홀 2",
+    "venueKey": "킨텍스 전시홀 2",
     "address": "경기 고양시 일산서구 킨텍스로 217-60",
     "lat": 37.6698,
     "lng": 126.7471,
     "region": "gyeonggi",
-    "date": "2026.12.04 ~ 2026.12.06",
-    "image": "/images/posters/kintex/kintex_26082806.webp",
-    "poster": "/images/posters/kintex/kintex_26082806.webp",
-    "backupPoster": "/images/posters/kintex/kintex_26082806.webp",
-    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26082806",
+    "date": "2026.11.27 ~ 2026.11.29",
+    "image": "/images/posters/kintex/kintex_26070806.webp",
+    "poster": "/images/posters/kintex/kintex_26070806.webp",
+    "backupPoster": "/images/posters/kintex/kintex_26070806.webp",
+    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26070806",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -250,7 +181,53 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.557Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.074Z"
+  },
+  {
+    "id": "kintex_26110408",
+    "title": "코리아 라면페스타",
+    "venue": "킨텍스 전시홀 8B",
+    "venueKey": "킨텍스 전시홀 8B",
+    "address": "경기 고양시 일산서구 킨텍스로 217-60",
+    "lat": 37.6698,
+    "lng": 126.7471,
+    "region": "gyeonggi",
+    "date": "2026.11.27 ~ 2026.11.29",
+    "image": "/images/posters/kintex/kintex_26110408.webp",
+    "poster": "/images/posters/kintex/kintex_26110408.webp",
+    "backupPoster": "/images/posters/kintex/kintex_26110408.webp",
+    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26110408",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "031-810-8114",
+    "website": "https://www.kintex.com/",
+    "source": "kintex",
+    "dataCollectedAt": "2026-11-19T10:59:11.075Z"
+  },
+  {
+    "id": "kintex_26090101",
+    "title": "제8회 대한민국 사회연대경제박람회 및 국제컨퍼런스",
+    "venue": "킨텍스 전시홀 5A , 전시홀 5B",
+    "venueKey": "킨텍스 전시홀 5A , 전시홀 5B",
+    "address": "경기 고양시 일산서구 킨텍스로 217-60",
+    "lat": 37.6698,
+    "lng": 126.7471,
+    "region": "gyeonggi",
+    "date": "2026.11.27 ~ 2026.11.29",
+    "image": "/images/posters/kintex/kintex_26090101.webp",
+    "poster": "/images/posters/kintex/kintex_26090101.webp",
+    "backupPoster": "/images/posters/kintex/kintex_26090101.webp",
+    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26090101",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "031-810-8114",
+    "website": "https://www.kintex.com/",
+    "source": "kintex",
+    "dataCollectedAt": "2026-11-19T10:59:11.075Z"
   },
   {
     "id": "kintex_26042205",
@@ -273,7 +250,30 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.558Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.075Z"
+  },
+  {
+    "id": "kintex_26082806",
+    "title": "새해 준비상점 N.27",
+    "venue": "킨텍스 전시홀 6A , 전시홀 6B , 전시홀 6C",
+    "venueKey": "킨텍스 전시홀 6A , 전시홀 6B , 전시홀 6C",
+    "address": "경기 고양시 일산서구 킨텍스로 217-60",
+    "lat": 37.6698,
+    "lng": 126.7471,
+    "region": "gyeonggi",
+    "date": "2026.12.04 ~ 2026.12.06",
+    "image": "/images/posters/kintex/kintex_26082806.webp",
+    "poster": "/images/posters/kintex/kintex_26082806.webp",
+    "backupPoster": "/images/posters/kintex/kintex_26082806.webp",
+    "link": "https://www.kintex.com/web/ko/event/view.do?seq=26082806",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "031-810-8114",
+    "website": "https://www.kintex.com/",
+    "source": "kintex",
+    "dataCollectedAt": "2026-11-19T10:59:11.075Z"
   },
   {
     "id": "kintex_26101402",
@@ -296,7 +296,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.558Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.076Z"
   },
   {
     "id": "kintex_26102307",
@@ -319,7 +319,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.558Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.076Z"
   },
   {
     "id": "kintex_26102811",
@@ -342,7 +342,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.558Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.076Z"
   },
   {
     "id": "kintex_26080613",
@@ -365,7 +365,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.558Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.076Z"
   },
   {
     "id": "kintex_26101305",
@@ -388,7 +388,7 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.558Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.076Z"
   },
   {
     "id": "kintex_26091610",
@@ -411,6 +411,6 @@
     "contact": "031-810-8114",
     "website": "https://www.kintex.com/",
     "source": "kintex",
-    "dataCollectedAt": "2026-11-16T14:18:25.558Z"
+    "dataCollectedAt": "2026-11-19T10:59:11.076Z"
   }
 ]
