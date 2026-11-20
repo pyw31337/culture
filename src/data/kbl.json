@@ -1,33 +1,5 @@
 [
   {
-    "id": "kbl_20261119_안양_정관장_vs_부산_KCC",
-    "title": "안양 정관장 vs 부산 KCC",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-19 19:00",
-    "venue": "안양 정관장 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "안양 정관장",
-    "awayTeam": "부산 KCC",
-    "homeTeamLogo": "/images/logos/kbl/kgc_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/kcc_official.svg"
-  },
-  {
-    "id": "kbl_20261119_수원_KT_vs_서울_SK",
-    "title": "수원 KT vs 서울 SK",
-    "image": "/images/kbl_poster.png",
-    "date": "2026-11-19 19:00",
-    "venue": "수원 KT 소닉붐 아레나",
-    "link": "https://www.kbl.or.kr/match/schedule",
-    "region": "gyeonggi",
-    "genre": "basketball",
-    "homeTeam": "수원 KT",
-    "awayTeam": "서울 SK",
-    "homeTeamLogo": "/images/logos/kbl/kt_official.svg",
-    "awayTeamLogo": "/images/logos/kbl/sk_official.svg"
-  },
-  {
     "id": "kbl_20261125_한국가스공사_vs_현대모비스",
     "title": "한국가스공사 vs 현대모비스",
     "image": "/images/kbl_poster.png",

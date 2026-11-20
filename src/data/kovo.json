@@ -1,37 +1,5 @@
 [
   {
-    "id": "kovo_20261119_스타즈_vs_점보스",
-    "title": "[배구] 스타즈 vs 점보스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-19 19:00",
-    "venue": "평택이충문화체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "etc",
-    "genre": "volleyball",
-    "homeTeam": "스타즈",
-    "awayTeam": "점보스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=1&league=201&round=1&homeTeam=1004&awayTeam=1001",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=33&season=023&league=201&gender=1"
-  },
-  {
-    "id": "kovo_20261119_핑크스파이더스_vs_GS칼텍스",
-    "title": "[배구] 핑크스파이더스 vs GS칼텍스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-19 19:00",
-    "venue": "인천삼산월드체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "incheon",
-    "genre": "volleyball",
-    "homeTeam": "핑크스파이더스",
-    "awayTeam": "GS칼텍스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=2&league=201&round=1&homeTeam=2004&awayTeam=2005",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=34&season=023&league=201&gender=2"
-  },
-  {
     "id": "kovo_20261120_스카이워커스_vs_VIXTORM",
     "title": "[배구] 스카이워커스 vs VIXTORM",
     "image": "/images/volleyball_poster.png",
