@@ -1185,949 +1185,6 @@
     "lastEnriched": "2026-07-13T04:31:22.012Z"
   },
   {
-    "id": "perf_2026_키즈_마티네_콘서트_11월_김포",
-    "title": "2026 키즈 마티네 콘서트 11월 - 김포",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000775_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "김포아트홀",
-    "link": "https://tickets.interpark.com/goods/26000775",
-    "region": "gyeonggi",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:00.656Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:17:41.175Z"
-  },
-  {
-    "id": "perf_조나_마레_잭_헤론_잭_에이버리_내한공연_Why_Can_t_We",
-    "title": "조나 마레 · 잭 헤론 · 잭 에이버리 내한공연 - Why Can’t We？",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013045_p.gif",
-    "date": "2026.11.19 ~ 2026.11.21",
-    "venue": "가빈아트홀",
-    "link": "https://tickets.interpark.com/goods/26013045",
-    "region": "기타",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:33.743Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "260,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T20:22:02.439Z"
-  },
-  {
-    "id": "perf_한화생명과_함께하는_예술의전당_11시_콘서트_11월",
-    "title": "한화생명과 함께하는 예술의전당 11시 콘서트(11월)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26011673_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "예술의전당 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26011673",
-    "region": "기타",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:33.743Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "일반석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:17:35.410Z"
-  },
-  {
-    "id": "perf_2026_어서옵SHOW_자우림_경기_광주",
-    "title": "2026 어서옵SHOW 〈자우림〉 - 경기 광주",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013843_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "광주시문화예술의전당 남한산성홀",
-    "link": "https://tickets.interpark.com/goods/26013843",
-    "region": "경기",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:34.818Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 70,000원\nS석 50,000원\nA석 30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "70,000원"
-      },
-      {
-        "label": "S석",
-        "price": "50,000원"
-      },
-      {
-        "label": "A석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:01.238Z"
-  },
-  {
-    "id": "perf_2026_서울시향_한누_린투의_프로코피예프_로미오와_줄리엣",
-    "title": "2026 서울시향 한누 린투의 프로코피예프 ‘로미오와 줄리엣’",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25013703_p.gif",
-    "date": "2026.11.19 ~ 2026.11.20",
-    "venue": "롯데콘서트홀",
-    "link": "https://tickets.interpark.com/goods/25013703",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:34.821Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 100,000원\nS석 80,000원\nA석 50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "100,000원"
-      },
-      {
-        "label": "S석",
-        "price": "80,000원"
-      },
-      {
-        "label": "A석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:01.078Z"
-  },
-  {
-    "id": "perf_금호아트홀_아름다운_목요일_스티븐_허프_Piano",
-    "title": "금호아트홀 아름다운 목요일 - 스티븐 허프  Piano",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016285_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "금호아트홀 연세",
-    "link": "https://tickets.interpark.com/goods/25016285",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:35.889Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 80,000원\nS석 70,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "80,000원"
-      },
-      {
-        "label": "S석",
-        "price": "70,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:00.771Z"
-  },
-  {
-    "id": "perf_트리플_빌_올_포_한스_판_마넨",
-    "title": "트리플 빌 〈올 포 한스 판 마넨〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004466_p.gif",
-    "date": "2026.11.19 ~ 2026.11.22",
-    "venue": "세종문화회관 M씨어터",
-    "link": "https://tickets.interpark.com/goods/P0004466",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:35.891Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 70,000원\nS석 50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "70,000원"
-      },
-      {
-        "label": "S석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:18:58.799Z"
-  },
-  {
-    "id": "perf_부천시립예술단_1234_콘서트_IV_부천시립합창단_오르간과_합창음악",
-    "title": "부천시립예술단 1234 콘서트 IV - 부천시립합창단 ＇오르간과 합창음악＇",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017085_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "부천아트센터 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/25017085",
-    "region": "gyeonggi",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:36.966Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:18:53.985Z"
-  },
-  {
-    "id": "perf_경기시나위오케스트라_기획공연_젊은_명인_Young_Virtuoso",
-    "title": "경기시나위오케스트라 기획공연 〈젊은 명인: Young Virtuoso〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002646_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "경기국악원 국악당",
-    "link": "https://tickets.interpark.com/goods/26002646",
-    "region": "gyeonggi",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:36.966Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:20.872Z"
-  },
-  {
-    "id": "perf_2026_시즌공연_명품_국악_컬렉션_조성재_정광윤_대전",
-    "title": "2026 시즌공연 명품 국악 컬렉션 - 조성재, 정광윤 - 대전",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26001432_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "대전시립연정국악원 작은마당",
-    "link": "https://tickets.interpark.com/goods/26001432",
-    "region": "daejeon",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:38.041Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 20,000원\nS석 10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "20,000원"
-      },
-      {
-        "label": "S석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:22:46.038Z"
-  },
-  {
-    "id": "perf_더_마스터즈_소프라노_한경성_리사이틀_대구",
-    "title": "더 마스터즈：소프라노 한경성 리사이틀 - 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009368_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "대구콘서트하우스 챔버홀",
-    "link": "https://tickets.interpark.com/goods/26009368",
-    "region": "daegu",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:38.041Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "20,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "20,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:22:45.739Z"
-  },
-  {
-    "id": "perf_2026_서가콘서트_참을_수_없는_존재의_가벼움_수원",
-    "title": "2026 서가콘서트: 참을 수 없는 존재의 가벼움 - 수원",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013781_p.gif",
-    "date": "2026.11.20 ~ 2026.11.20",
-    "venue": "경기아트센터 소극장",
-    "link": "https://tickets.interpark.com/goods/26013781",
-    "region": "경기",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:40.196Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 35,000원\nS석 25,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "35,000원"
-      },
-      {
-        "label": "S석",
-        "price": "25,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:23:54.157Z"
-  },
-  {
-    "id": "perf_국립극단_스카팽_화성",
-    "title": "국립극단 〈스카팽〉 - 화성",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26007546_p.gif",
-    "date": "2026.11.20 ~ 2026.11.22",
-    "venue": "화성예술의전당 동탄아트홀",
-    "link": "https://tickets.interpark.com/goods/26007546",
-    "region": "경기",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-19T09:39:40.197Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 40,000원\nS석 30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "40,000원"
-      },
-      {
-        "label": "S석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:23:53.829Z"
-  },
-  {
-    "id": "perf_1차_얼리버드_이상한_나라의_앨리스_크리스티나_마키바",
-    "title": "［1차 얼리버드］이상한 나라의 앨리스: 크리스티나 마키바",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013511_p.gif",
-    "date": "2026.11.20 ~ 2027.01.31",
-    "venue": "띠아트뮤지엄 홍대",
-    "link": "https://tickets.interpark.com/goods/26013511",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-19T09:39:41.272Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "20,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:23:53.759Z"
-  },
-  {
-    "id": "perf_연극_어느날_갑자기_용인",
-    "title": "연극 〈어느날 갑자기〉 - 용인",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013631_p.gif",
-    "date": "2026.11.20 ~ 2026.11.21",
-    "venue": "용인시 평생학습관 큰어울마당",
-    "link": "https://tickets.interpark.com/goods/26013631",
-    "region": "경기",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-19T09:39:41.273Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:23:53.833Z"
-  },
-  {
-    "id": "perf_오페라_안드레아_쉐니에_전주",
-    "title": "오페라 ［안드레아 쉐니에］ - 전주",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013777_p.gif",
-    "date": "2026.11.20 ~ 2026.11.21",
-    "venue": "한국소리문화의전당 모악당",
-    "link": "https://tickets.interpark.com/goods/26013777",
-    "region": "기타",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:42.359Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 120,000원\nR석 80,000원\nS석 50,000원\nA석 30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "120,000원"
-      },
-      {
-        "label": "R석",
-        "price": "80,000원"
-      },
-      {
-        "label": "S석",
-        "price": "50,000원"
-      },
-      {
-        "label": "A석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:23:53.796Z"
-  },
-  {
-    "id": "perf_연극_더_드레서_진주",
-    "title": "연극 〈더 드레서〉 - 진주",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26009845_p.gif",
-    "date": "2026.11.20 ~ 2026.11.21",
-    "venue": "경상남도문화예술회관 대공연장",
-    "link": "https://tickets.interpark.com/goods/26009845",
-    "region": "경남",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-19T09:39:42.359Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 60,000원\nS석 40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "60,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:01.625Z"
-  },
-  {
-    "id": "perf_인천시립교향악단_제449회_정기연주회_인천시향과_크리스토프_포펜",
-    "title": "인천시립교향악단 제449회 정기연주회 〈인천시향과 크리스토프 포펜〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018262_p.gif",
-    "date": "2026.11.20 ~ 2026.11.20",
-    "venue": "아트센터인천 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/25018262",
-    "region": "incheon",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:43.435Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:01.594Z"
-  },
-  {
-    "id": "perf_세상의_모든_플레이리스트_박지훈의_음악회_원주",
-    "title": "세상의 모든 플레이리스트 - 박지훈의 음악회 - 원주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006315_p.gif",
-    "date": "2026.11.20 ~ 2026.11.20",
-    "venue": "카페 플레이리스트",
-    "link": "https://tickets.interpark.com/goods/26006315",
-    "region": "gangwon",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:43.434Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "일반석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:01.594Z"
-  },
-  {
-    "id": "perf_연극_노맨틱코미디_청주_소명아트홀",
-    "title": "연극 〈노맨틱코미디〉 - 청주 소명아트홀",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010288_p.gif",
-    "date": "2026.11.20 ~ 2027.01.03",
-    "venue": "소명아트홀",
-    "link": "https://tickets.interpark.com/goods/26010288",
-    "region": "chungbuk",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-19T09:39:44.513Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:01.580Z"
-  },
-  {
-    "id": "perf_공주_안동_자매도시_교류음악회_환희의_송가_공주",
-    "title": "공주, 안동 자매도시 교류음악회 〈환희의 송가〉 - 공주",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017944_p.gif",
-    "date": "2026.11.20 ~ 2026.11.20",
-    "venue": "공주문예회관 대공연장",
-    "link": "https://tickets.interpark.com/goods/25017944",
-    "region": "chungnam",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:44.514Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 30,000원\nS석 20,000원\nA석 10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "30,000원"
-      },
-      {
-        "label": "S석",
-        "price": "20,000원"
-      },
-      {
-        "label": "A석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:01.456Z"
-  },
-  {
-    "id": "perf_나는_태어나지_않기로_했다",
-    "title": "나는 태어나지 않기로 했다",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013893_p.gif",
-    "date": "2026.11.20 ~ 2026.11.28",
-    "venue": "모두예술극장",
-    "link": "https://tickets.interpark.com/goods/26013893",
-    "region": "기타",
-    "genre": "play",
-    "price": "30,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "age": "만 11세 이상",
-    "ageDetail": "",
-    "runtime": "1시간 40분",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302587_261006_160041.jpg",
-    "bookingLinks": [
-      {
-        "name": "모두예술극장",
-        "url": "https://www.moduarttheater.or.kr/product/ko/performance/253031"
-      }
-    ],
-    "lastApiEnriched": "2026-11-19T09:39:45.590Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:10.907Z"
-  },
-  {
-    "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
-    "title": "AKASAKI - 1st WORLD TOUR ＂ONIGIRI＂",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010590_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "명화라이브홀",
-    "link": "https://tickets.interpark.com/goods/26010590",
-    "region": "seoul",
-    "genre": "concert",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF297380_260731_130159.gif",
-    "lastApiEnriched": "2026-11-19T09:39:49.904Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "전석 110,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "110,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:10.193Z",
-    "age": "만 8세 이상",
-    "runtime": "1시간 30분",
-    "bookingLinks": [
-      {
-        "name": "놀유니버스",
-        "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010590"
-      }
-    ]
-  },
-  {
-    "id": "perf_2026_27_허각_전국투어_콘서트_공연각_사이_in_부산",
-    "title": "2026-27 허각 전국투어 콘서트 〈공연각: 사이〉 in 부산",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012560_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "소향씨어터 우리은행홀",
-    "link": "https://tickets.interpark.com/goods/26012560",
-    "region": "부산",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:49.900Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 154,000원\nR석 143,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "154,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:10.041Z"
-  },
-  {
-    "id": "perf_뮤지컬_광화문연가_부산",
-    "title": "뮤지컬 〈광화문연가〉 - 부산",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013001_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "부산 드림씨어터",
-    "link": "https://tickets.interpark.com/goods/26013001",
-    "region": "부산",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-19T09:39:50.976Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 160,000원\nR석 140,000원\nS석 110,000원\nA석 80,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "160,000원"
-      },
-      {
-        "label": "R석",
-        "price": "140,000원"
-      },
-      {
-        "label": "S석",
-        "price": "110,000원"
-      },
-      {
-        "label": "A석",
-        "price": "80,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:09.901Z"
-  },
-  {
-    "id": "perf_최현우_19_I_수원",
-    "title": "최현우 19+I - 수원",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26006955_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "경기아트센터 대극장",
-    "link": "https://tickets.interpark.com/goods/26006955",
-    "region": "경기",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-19T09:39:50.978Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 99,000원\nS석 77,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "99,000원"
-      },
-      {
-        "label": "S석",
-        "price": "77,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T08:24:09.393Z"
-  },
-  {
-    "id": "perf_더_마스터즈_박수예_바이올린_리사이틀_대구",
-    "title": "더 마스터즈：박수예 바이올린 리사이틀 - 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009182_p.gif",
-    "date": "2026.12.17 ~ 2026.12.17",
-    "venue": "대구콘서트하우스 챔버홀",
-    "link": "https://tickets.interpark.com/goods/26009182",
-    "region": "daegu",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:41:44.066Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:20.795Z"
-  },
-  {
-    "id": "perf_KDO_코리안_닥터스_오케스트라_제5회_정기연주회",
-    "title": "KDO 코리안 닥터스 오케스트라 제5회 정기연주회",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013863_p.gif",
-    "date": "2026.11.22 ~ 2026.11.22",
-    "venue": "부천아트센터 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26013863",
-    "region": "경기",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:06.047Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 50,000원\nS석 30,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:20.768Z"
-  },
-  {
-    "id": "perf_국립심포니오케스트라_실내악_시리즈_lll",
-    "title": "국립심포니오케스트라〈실내악 시리즈 lll〉",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017428_p.gif",
-    "date": "2026.11.22 ~ 2026.11.22",
-    "venue": "예술의전당 IBK기업은행챔버홀",
-    "link": "https://tickets.interpark.com/goods/25017428",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:07.125Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 40,000원\nS석 20,000원\nA석 10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "40,000원"
-      },
-      {
-        "label": "S석",
-        "price": "20,000원"
-      },
-      {
-        "label": "A석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:20.670Z"
-  },
-  {
-    "id": "perf_2026_카즈미_타테이시_트리오_내한공연_지브리_재즈를_만나다_수원",
-    "title": "2026 카즈미 타테이시 트리오 내한공연-지브리, 재즈를 만나다-(수원)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009224_p.gif",
-    "date": "2026.11.22 ~ 2026.11.22",
-    "venue": "경기아트센터 소극장",
-    "link": "https://tickets.interpark.com/goods/26009224",
-    "region": "gyeonggi",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:40:07.127Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 88,000원\nR석 77,000원\nS석 66,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "88,000원"
-      },
-      {
-        "label": "R석",
-        "price": "77,000원"
-      },
-      {
-        "label": "S석",
-        "price": "66,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:19.805Z"
-  },
-  {
     "id": "perf_댄싱_클래식_콘서트_인천",
     "title": "댄싱 클래식 콘서트 - 인천",
     "image": "https://ticketimage.interpark.com/Play/image/large/26/26010927_p.gif",
@@ -2154,6 +1211,650 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-21T04:19:31.276Z"
+  },
+  {
+    "id": "perf_뮤지컬_팬레터_인천",
+    "title": "뮤지컬 〈팬레터〉 - 인천",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26011840_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "인천문화예술회관 대공연장",
+    "link": "https://tickets.interpark.com/goods/26011840",
+    "region": "인천",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-19T09:39:52.051Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 110,000원\nS석 99,000원\nA석 77,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "110,000원"
+      },
+      {
+        "label": "S석",
+        "price": "99,000원"
+      },
+      {
+        "label": "A석",
+        "price": "77,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:50:46.316Z"
+  },
+  {
+    "id": "perf_스트릿_월드_파이터_디렉터스_워_ON_THE_STAGE_Tour_서울",
+    "title": "스트릿 월드 파이터 : 디렉터스 워 ［ON THE STAGE ］ Tour - 서울",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013985_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "고려대학교 화정체육관",
+    "link": "https://tickets.interpark.com/goods/26013985",
+    "region": "서울",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:52.050Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 154,000원\nS석 132,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "154,000원"
+      },
+      {
+        "label": "S석",
+        "price": "132,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:50:46.249Z"
+  },
+  {
+    "id": "perf_2026_MONSTA_X_WORLD_TOUR_THE_X_NEXUS_ENCORE",
+    "title": "2026 MONSTA X WORLD TOUR ［THE X : NEXUS］ - ENCORE",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013132_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "인스파이어 아레나",
+    "link": "https://tickets.interpark.com/goods/26013132",
+    "region": "기타",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:53.125Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "154,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "198,000원"
+      },
+      {
+        "label": "일반석",
+        "price": "154,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:51:54.704Z"
+  },
+  {
+    "id": "perf_GUMMY_Tour_Concert_2026_LOVE_성남",
+    "title": "GUMMY Tour Concert 2026 〈LOVE〉-성남",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013512_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "성남아트센터 오페라하우스",
+    "link": "https://tickets.interpark.com/goods/26013512",
+    "region": "경기",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:53.125Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 165,000원\nR석 143,000원\nS석 121,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "165,000원"
+      },
+      {
+        "label": "R석",
+        "price": "143,000원"
+      },
+      {
+        "label": "S석",
+        "price": "121,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:51:54.801Z"
+  },
+  {
+    "id": "perf_2026_무명전설_전국투어_콘서트_대구앵콜",
+    "title": "2026 무명전설 전국투어 콘서트 - 대구앵콜",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26010589_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "엑스코 5층 컨벤션홀",
+    "link": "https://tickets.interpark.com/goods/26010589",
+    "region": "대구",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:54.205Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 154,000원\nS석 143,000원\nA석 121,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "154,000원"
+      },
+      {
+        "label": "S석",
+        "price": "143,000원"
+      },
+      {
+        "label": "A석",
+        "price": "121,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:51:54.683Z"
+  },
+  {
+    "id": "perf_예술의전당_토요콘서트_프리뷰_베토벤_11월",
+    "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(11월)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012174_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "예술의전당 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/26012174",
+    "region": "기타",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:54.205Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "40,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "일반석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:51:54.650Z"
+  },
+  {
+    "id": "perf_헐리우드_블록버스터_디즈니_픽사_OST_오케스트라_콘서트_대전_앙코르",
+    "title": "헐리우드 블록버스터＆디즈니 픽사 OST 오케스트라 콘서트 - 대전 앙코르",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26008647_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "대전예술의전당 아트홀",
+    "link": "https://tickets.interpark.com/goods/26008647",
+    "region": "대전",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:55.279Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 100,000원\nS석 80,000원\nA석 60,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "100,000원"
+      },
+      {
+        "label": "S석",
+        "price": "80,000원"
+      },
+      {
+        "label": "A석",
+        "price": "60,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:51:54.574Z"
+  },
+  {
+    "id": "perf_캐스크_카니발_2026",
+    "title": "캐스크 카니발 2026",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012544_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "SETEC 제 3전시관",
+    "link": "https://tickets.interpark.com/goods/26012544",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-19T09:39:55.280Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "60,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:02.155Z"
+  },
+  {
+    "id": "perf_불편한_편의점_의정부",
+    "title": "불편한 편의점 - 의정부",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013302_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "의정부예술의전당 대극장",
+    "link": "https://tickets.interpark.com/goods/26013302",
+    "region": "기타",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-19T09:39:56.354Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "40,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:02.155Z"
+  },
+  {
+    "id": "perf_PEACH_PIT_25주년_기념_특별전_사인회_패키지_A",
+    "title": "PEACH-PIT 25주년 기념 특별전 사인회 - 패키지 A",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012719_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "대원뮤지엄 팝콘D스퀘어",
+    "link": "https://tickets.interpark.com/goods/26012719",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-19T09:39:56.354Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "90,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:02.134Z"
+  },
+  {
+    "id": "perf_세상에서_가장_아름다운_오페라_라보엠_화성",
+    "title": "세상에서 가장 아름다운 오페라 〈라보엠〉 - 화성",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013565_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "유앤아이센터 화성아트홀",
+    "link": "https://tickets.interpark.com/goods/26013565",
+    "region": "경기",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:57.433Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 40,000원\nS석 30,000원\nA석 20,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "40,000원"
+      },
+      {
+        "label": "S석",
+        "price": "30,000원"
+      },
+      {
+        "label": "A석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:02.112Z"
+  },
+  {
+    "id": "perf_대구국제방송교향악단_2026월드오케스트라페스티벌_대구",
+    "title": "대구국제방송교향악단 : 2026월드오케스트라페스티벌 - 대구",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012006_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "대구콘서트하우스 그랜드홀",
+    "link": "https://tickets.interpark.com/goods/26012006",
+    "region": "대구",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:57.433Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "20,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:02.020Z"
+  },
+  {
+    "id": "perf_2026_박수영발레단_발레콘서트_대전",
+    "title": "2026 박수영발레단 발레콘서트 - 대전",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013712_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "대전 평송청소년문화센터 대극장",
+    "link": "https://tickets.interpark.com/goods/26013712",
+    "region": "대전",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:58.507Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "S석 30,000원\nA석 20,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "S석",
+        "price": "30,000원"
+      },
+      {
+        "label": "A석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:09.456Z"
+  },
+  {
+    "id": "perf_2026_손승연_Fan_Concert_HIGHLIGHT",
+    "title": "2026 손승연 Fan Concert ＇HIGHLIGHT＇",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013668_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "성신여대 운정그린캠퍼스 대강당",
+    "link": "https://tickets.interpark.com/goods/26013668",
+    "region": "기타",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:58.510Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 121,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "121,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:09.565Z"
+  },
+  {
+    "id": "perf_2026_서울시향_체임버_클래식스_VI_대한민국",
+    "title": "2026 서울시향 체임버 클래식스 VI: 대한민국",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25013737_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "세종문화회관 체임버홀",
+    "link": "https://tickets.interpark.com/goods/25013737",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:59.582Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 70,000원\nS석 40,000원\nA석 10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "70,000원"
+      },
+      {
+        "label": "S석",
+        "price": "40,000원"
+      },
+      {
+        "label": "A석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:09.491Z"
+  },
+  {
+    "id": "perf_2026_우수작품시리즈III_클래시칸_앙상블",
+    "title": "2026 우수작품시리즈III - 클래시칸 앙상블",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008301_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "전주한벽문화관 한벽공연장",
+    "link": "https://tickets.interpark.com/goods/26008301",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:59.583Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:09.410Z"
+  },
+  {
+    "id": "perf_서울아트센터_도암_토요콘서트_11월",
+    "title": "서울아트센터 도암 토요콘서트(11월)",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005695_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "서울아트센터 도암 3F",
+    "link": "https://tickets.interpark.com/goods/26005695",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:00.656Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 50,000원\nS석 30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "50,000원"
+      },
+      {
+        "label": "S석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:52:09.382Z"
+  },
+  {
+    "id": "perf_Global_2026_LE_SSERAFIM_TOUR_PUREFLOW_IN_KYOCERA_DOME_OSAKA",
+    "title": "［Global］ 2026 LE SSERAFIM TOUR ＇PUREFLOW＇ IN KYOCERA DOME OSAKA",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26014089_p.gif",
+    "date": "2026.12.19 ~ 2026.12.20",
+    "venue": "KYOCERA DOME OSAKA",
+    "link": "https://tickets.interpark.com/goods/26014089",
+    "region": "기타",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:41:49.797Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:51.596Z"
+  },
+  {
+    "id": "perf_스트릿_월드_파이터_디렉터스_워_ON_THE_STAGE_Tour_대구",
+    "title": "스트릿 월드 파이터 : 디렉터스 워 ［ON THE STAGE］ Tour - 대구",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26014036_p.gif",
+    "date": "2026.12.19 ~ 2026.12.19",
+    "venue": "엑스코 동관",
+    "link": "https://tickets.interpark.com/goods/26014036",
+    "region": "대구",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:41:54.824Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:51.383Z"
+  },
+  {
+    "id": "perf_뮤지컬_레베카",
+    "title": "뮤지컬 〈레베카〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013993_p.gif",
+    "date": "2026.11.24 ~ 2027.03.14",
+    "venue": "충무아트센터 대극장",
+    "link": "https://tickets.interpark.com/goods/26013993",
+    "region": "기타",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-19T09:40:09.363Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 180,000원\nR석 150,000원\nS석 120,000원\nA석 90,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "180,000원"
+      },
+      {
+        "label": "R석",
+        "price": "150,000원"
+      },
+      {
+        "label": "S석",
+        "price": "120,000원"
+      },
+      {
+        "label": "A석",
+        "price": "90,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:50.878Z"
+  },
+  {
+    "id": "perf_클래식_온_작곡가_강한뫼_작품_발표회_바람은_부는_것이_아니라_닿는_것입니다_대구",
+    "title": "클래식 온：작곡가 강한뫼 작품 발표회 - “바람은 부는 것이 아니라, 닿는 것입니다” - 대구",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008674_p.gif",
+    "date": "2026.11.24 ~ 2026.11.24",
+    "venue": "대구콘서트하우스 챔버홀",
+    "link": "https://tickets.interpark.com/goods/26008674",
+    "region": "daegu",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:09.365Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:49.362Z"
   },
   {
     "id": "perf_만x만한_연극_시리즈3_동백당_빵집의_사람들_천안",
@@ -2442,120 +2143,6 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-21T04:19:51.755Z"
-  },
-  {
-    "id": "perf_Global_2026_LE_SSERAFIM_TOUR_PUREFLOW_IN_KYOCERA_DOME_OSAKA",
-    "title": "［Global］ 2026 LE SSERAFIM TOUR ＇PUREFLOW＇ IN KYOCERA DOME OSAKA",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26014089_p.gif",
-    "date": "2026.12.19 ~ 2026.12.20",
-    "venue": "KYOCERA DOME OSAKA",
-    "link": "https://tickets.interpark.com/goods/26014089",
-    "region": "기타",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:41:49.797Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:51.596Z"
-  },
-  {
-    "id": "perf_스트릿_월드_파이터_디렉터스_워_ON_THE_STAGE_Tour_대구",
-    "title": "스트릿 월드 파이터 : 디렉터스 워 ［ON THE STAGE］ Tour - 대구",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26014036_p.gif",
-    "date": "2026.12.19 ~ 2026.12.19",
-    "venue": "엑스코 동관",
-    "link": "https://tickets.interpark.com/goods/26014036",
-    "region": "대구",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:41:54.824Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:51.383Z"
-  },
-  {
-    "id": "perf_뮤지컬_레베카",
-    "title": "뮤지컬 〈레베카〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013993_p.gif",
-    "date": "2026.11.24 ~ 2027.03.14",
-    "venue": "충무아트센터 대극장",
-    "link": "https://tickets.interpark.com/goods/26013993",
-    "region": "기타",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-19T09:40:09.363Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 180,000원\nR석 150,000원\nS석 120,000원\nA석 90,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "180,000원"
-      },
-      {
-        "label": "R석",
-        "price": "150,000원"
-      },
-      {
-        "label": "S석",
-        "price": "120,000원"
-      },
-      {
-        "label": "A석",
-        "price": "90,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:50.878Z"
-  },
-  {
-    "id": "perf_클래식_온_작곡가_강한뫼_작품_발표회_바람은_부는_것이_아니라_닿는_것입니다_대구",
-    "title": "클래식 온：작곡가 강한뫼 작품 발표회 - “바람은 부는 것이 아니라, 닿는 것입니다” - 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008674_p.gif",
-    "date": "2026.11.24 ~ 2026.11.24",
-    "venue": "대구콘서트하우스 챔버홀",
-    "link": "https://tickets.interpark.com/goods/26008674",
-    "region": "daegu",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:09.365Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:19:49.362Z"
   },
   {
     "id": "perf_국립국악관현악단_관현악시리즈_2026_디스커버리",
@@ -2864,6 +2451,165 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-21T04:20:13.719Z"
+  },
+  {
+    "id": "perf_국립창극단_오이디푸스",
+    "title": "국립창극단 〈오이디푸스〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26010041_p.gif",
+    "date": "2026.11.26 ~ 2026.12.05",
+    "venue": "국립극장 달오름극장",
+    "link": "https://tickets.interpark.com/goods/26010041",
+    "region": "기타",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-19T09:40:17.968Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 50,000원\nS석 35,000원\nA석 20,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "50,000원"
+      },
+      {
+        "label": "S석",
+        "price": "35,000원"
+      },
+      {
+        "label": "A석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:28:27.356Z"
+  },
+  {
+    "id": "perf_한화클래식_2026_르_포엠_아르모니크_태양왕의_음악_서울",
+    "title": "한화클래식 2026: 르 포엠 아르모니크, 태양왕의 음악 - 서울",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013689_p.gif",
+    "date": "2026.11.26 ~ 2026.11.26",
+    "venue": "예술의전당 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/26013689",
+    "region": "서울",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:17.970Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "일반석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:29:03.322Z"
+  },
+  {
+    "id": "perf_2026_서울시향_얍_판_츠베덴의_말러_교향곡_4번",
+    "title": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25013766_p.gif",
+    "date": "2026.11.26 ~ 2026.11.27",
+    "venue": "롯데콘서트홀",
+    "link": "https://tickets.interpark.com/goods/25013766",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:19.046Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 150,000원\nS석 120,000원\nA석 80,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "150,000원"
+      },
+      {
+        "label": "S석",
+        "price": "120,000원"
+      },
+      {
+        "label": "A석",
+        "price": "80,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:29:01.966Z"
+  },
+  {
+    "id": "perf_부천필하모닉오케스트라_제341회_정기연주회_A_Portrait_in_Contrast_대조_속의_초상",
+    "title": "부천필하모닉오케스트라 제341회 정기연주회 - A Portrait in Contrast 대조 속의 초상",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017086_p.gif",
+    "date": "2026.11.26 ~ 2026.11.26",
+    "venue": "부천아트센터 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/25017086",
+    "region": "gyeonggi",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:19.045Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 30,000원\nS석 20,000원\nA석 10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "30,000원"
+      },
+      {
+        "label": "S석",
+        "price": "20,000원"
+      },
+      {
+        "label": "A석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:29:01.486Z"
+  },
+  {
+    "id": "perf_뮤지컬_집사TV_시즌_2_Part_2_대저택_끝_없는_문_포항",
+    "title": "뮤지컬 집사TV 시즌 2 Part.2 : 〈대저택 끝 없는 문〉 - 포항",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26014473_p.gif",
+    "date": "2026.12.19 ~ 2026.12.20",
+    "venue": "포항문화예술회관 대공연장",
+    "link": "https://tickets.interpark.com/goods/26014473",
+    "region": "기타",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:41:56.968Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:28:58.940Z"
   },
   {
     "id": "perf_2026_순천만국가정원_1년회원권_타지역",
@@ -4142,17 +3888,6 @@
     "lastEnriched": "2026-11-21T04:24:24.830Z"
   },
   {
-    "id": "perf_국립극단_안트로폴리스_이오카스테",
-    "title": "국립극단 ［안트로폴리스Ⅳ］ 이오카스테",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26009960_p.gif",
-    "date": "2026.10.28 ~ 2026.11.21",
-    "venue": "국립극단 명동예술극장",
-    "link": "https://tickets.interpark.com/goods/26009960",
-    "region": "기타",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-21T04:10:46.203Z"
-  },
-  {
     "id": "perf_강릉_처음처럼_새로_브랜드체험관_11월",
     "title": "강릉 처음처럼＆새로 브랜드체험관 (11월)",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013597_p.gif",
@@ -4520,165 +4255,6 @@
     "lastEnriched": "2026-11-21T04:28:28.049Z"
   },
   {
-    "id": "perf_국립창극단_오이디푸스",
-    "title": "국립창극단 〈오이디푸스〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010041_p.gif",
-    "date": "2026.11.26 ~ 2026.12.05",
-    "venue": "국립극장 달오름극장",
-    "link": "https://tickets.interpark.com/goods/26010041",
-    "region": "기타",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-19T09:40:17.968Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 50,000원\nS석 35,000원\nA석 20,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "50,000원"
-      },
-      {
-        "label": "S석",
-        "price": "35,000원"
-      },
-      {
-        "label": "A석",
-        "price": "20,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:28:27.356Z"
-  },
-  {
-    "id": "perf_한화클래식_2026_르_포엠_아르모니크_태양왕의_음악_서울",
-    "title": "한화클래식 2026: 르 포엠 아르모니크, 태양왕의 음악 - 서울",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013689_p.gif",
-    "date": "2026.11.26 ~ 2026.11.26",
-    "venue": "예술의전당 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26013689",
-    "region": "서울",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:17.970Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "일반석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:29:03.322Z"
-  },
-  {
-    "id": "perf_2026_서울시향_얍_판_츠베덴의_말러_교향곡_4번",
-    "title": "2026 서울시향 얍 판 츠베덴의 말러 교향곡 4번",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25013766_p.gif",
-    "date": "2026.11.26 ~ 2026.11.27",
-    "venue": "롯데콘서트홀",
-    "link": "https://tickets.interpark.com/goods/25013766",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:19.046Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 150,000원\nS석 120,000원\nA석 80,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "150,000원"
-      },
-      {
-        "label": "S석",
-        "price": "120,000원"
-      },
-      {
-        "label": "A석",
-        "price": "80,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:29:01.966Z"
-  },
-  {
-    "id": "perf_부천필하모닉오케스트라_제341회_정기연주회_A_Portrait_in_Contrast_대조_속의_초상",
-    "title": "부천필하모닉오케스트라 제341회 정기연주회 - A Portrait in Contrast 대조 속의 초상",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017086_p.gif",
-    "date": "2026.11.26 ~ 2026.11.26",
-    "venue": "부천아트센터 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/25017086",
-    "region": "gyeonggi",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:19.045Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 30,000원\nS석 20,000원\nA석 10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "30,000원"
-      },
-      {
-        "label": "S석",
-        "price": "20,000원"
-      },
-      {
-        "label": "A석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:29:01.486Z"
-  },
-  {
-    "id": "perf_뮤지컬_집사TV_시즌_2_Part_2_대저택_끝_없는_문_포항",
-    "title": "뮤지컬 집사TV 시즌 2 Part.2 : 〈대저택 끝 없는 문〉 - 포항",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26014473_p.gif",
-    "date": "2026.12.19 ~ 2026.12.20",
-    "venue": "포항문화예술회관 대공연장",
-    "link": "https://tickets.interpark.com/goods/26014473",
-    "region": "기타",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:41:56.968Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T04:28:58.940Z"
-  },
-  {
     "id": "perf_국립극장_마당놀이_춘풍처도_온다",
     "title": "국립극장 마당놀이 〈춘풍처도 온다〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26009842_p.gif",
@@ -4985,6 +4561,29 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-21T04:29:31.490Z"
+  },
+  {
+    "id": "perf_인천아트쇼2026",
+    "title": "인천아트쇼2026",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013634_p.gif",
+    "date": "2026.11.19 ~ 2026.11.22",
+    "venue": "송도컨벤시아 2,3,4홀",
+    "link": "https://tickets.interpark.com/goods/26013634",
+    "region": "인천",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-19T09:39:32.668Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T12:49:17.374Z"
   },
   {
     "id": "perf_최현우_30주년_기념_공연_LEGACY",
@@ -5485,6 +5084,154 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-21T04:30:06.550Z"
+  },
+  {
+    "id": "perf_김시라의_품바_Original_목포",
+    "title": "［김시라의 품바 : Original］ - 목포",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013438_p.gif",
+    "date": "2026.11.29 ~ 2026.11.29",
+    "venue": "목포시민문화체육센터 대공연장",
+    "link": "https://tickets.interpark.com/goods/26013438",
+    "region": "전남",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-19T09:40:37.355Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 55,000원\nS석 44,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "55,000원"
+      },
+      {
+        "label": "S석",
+        "price": "44,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T09:58:01.862Z"
+  },
+  {
+    "id": "perf_프랑켄슈타인_더_뮤지컬_콘서트_부산",
+    "title": "〈프랑켄슈타인 : 더 뮤지컬 콘서트〉 - 부산",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012628_p.gif",
+    "date": "2026.11.29 ~ 2026.11.29",
+    "venue": "부산시민회관 대극장",
+    "link": "https://tickets.interpark.com/goods/26012628",
+    "region": "부산",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-19T09:40:37.355Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 110,000원\nR석 90,000원\nS석 60,000원\nA석 40,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "110,000원"
+      },
+      {
+        "label": "R석",
+        "price": "90,000원"
+      },
+      {
+        "label": "S석",
+        "price": "60,000원"
+      },
+      {
+        "label": "A석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T09:58:02.055Z"
+  },
+  {
+    "id": "perf_춤추는_발레_FESTA_백조의호수_호두까기인형_대전",
+    "title": "춤추는 발레 FESTA 〈백조의호수〉＆〈호두까기인형〉 - 대전",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26008679_p.gif",
+    "date": "2026.11.29 ~ 2026.11.29",
+    "venue": "대전예술의전당 아트홀",
+    "link": "https://tickets.interpark.com/goods/26008679",
+    "region": "대전",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:38.431Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 100,000원\nS석 80,000원\nA석 60,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "100,000원"
+      },
+      {
+        "label": "S석",
+        "price": "80,000원"
+      },
+      {
+        "label": "A석",
+        "price": "60,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T09:58:03.551Z"
+  },
+  {
+    "id": "perf_위대한_베토벤_부산",
+    "title": "위대한 베토벤 - 부산",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010569_p.gif",
+    "date": "2026.11.29 ~ 2026.11.29",
+    "venue": "부산콘서트홀 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/26010569",
+    "region": "busan",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:38.431Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 120,000원\nR석 90,000원\nS석 70,000원\nA석 50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "120,000원"
+      },
+      {
+        "label": "R석",
+        "price": "90,000원"
+      },
+      {
+        "label": "S석",
+        "price": "70,000원"
+      },
+      {
+        "label": "A석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T09:58:00.782Z"
   },
   {
     "id": "perf_전북투어패스_무주_머루와인동굴_단독상품",
@@ -10219,154 +9966,6 @@
     "lastEnriched": "2026-11-21T04:31:53.662Z"
   },
   {
-    "id": "perf_김시라의_품바_Original_목포",
-    "title": "［김시라의 품바 : Original］ - 목포",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013438_p.gif",
-    "date": "2026.11.29 ~ 2026.11.29",
-    "venue": "목포시민문화체육센터 대공연장",
-    "link": "https://tickets.interpark.com/goods/26013438",
-    "region": "전남",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-19T09:40:37.355Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 55,000원\nS석 44,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "55,000원"
-      },
-      {
-        "label": "S석",
-        "price": "44,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T09:58:01.862Z"
-  },
-  {
-    "id": "perf_프랑켄슈타인_더_뮤지컬_콘서트_부산",
-    "title": "〈프랑켄슈타인 : 더 뮤지컬 콘서트〉 - 부산",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012628_p.gif",
-    "date": "2026.11.29 ~ 2026.11.29",
-    "venue": "부산시민회관 대극장",
-    "link": "https://tickets.interpark.com/goods/26012628",
-    "region": "부산",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-19T09:40:37.355Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 110,000원\nR석 90,000원\nS석 60,000원\nA석 40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "110,000원"
-      },
-      {
-        "label": "R석",
-        "price": "90,000원"
-      },
-      {
-        "label": "S석",
-        "price": "60,000원"
-      },
-      {
-        "label": "A석",
-        "price": "40,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T09:58:02.055Z"
-  },
-  {
-    "id": "perf_춤추는_발레_FESTA_백조의호수_호두까기인형_대전",
-    "title": "춤추는 발레 FESTA 〈백조의호수〉＆〈호두까기인형〉 - 대전",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26008679_p.gif",
-    "date": "2026.11.29 ~ 2026.11.29",
-    "venue": "대전예술의전당 아트홀",
-    "link": "https://tickets.interpark.com/goods/26008679",
-    "region": "대전",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:38.431Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 100,000원\nS석 80,000원\nA석 60,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "100,000원"
-      },
-      {
-        "label": "S석",
-        "price": "80,000원"
-      },
-      {
-        "label": "A석",
-        "price": "60,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T09:58:03.551Z"
-  },
-  {
-    "id": "perf_위대한_베토벤_부산",
-    "title": "위대한 베토벤 - 부산",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010569_p.gif",
-    "date": "2026.11.29 ~ 2026.11.29",
-    "venue": "부산콘서트홀 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26010569",
-    "region": "busan",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:38.431Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 120,000원\nR석 90,000원\nS석 70,000원\nA석 50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "120,000원"
-      },
-      {
-        "label": "R석",
-        "price": "90,000원"
-      },
-      {
-        "label": "S석",
-        "price": "70,000원"
-      },
-      {
-        "label": "A석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T09:58:00.782Z"
-  },
-  {
     "id": "perf_2026_10번째_구로꿈나무인형극제_환상공간",
     "title": "2026 10번째 구로꿈나무인형극제 〈환상공간〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013899_p.gif",
@@ -11031,241 +10630,6 @@
     "lastEnriched": "2026-11-16T09:58:44.449Z"
   },
   {
-    "id": "perf_표기식_사진전_빛은_어떻게_떨어졌길래_모두_다르게_반짝여서",
-    "title": "표기식 사진전: 빛은 어떻게 떨어졌길래 모두 다르게 반짝여서",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012317_p.gif",
-    "date": "2026.09.23 ~ 2027.03.01",
-    "venue": "그라운드시소 센트럴",
-    "link": "https://tickets.interpark.com/goods/26012317",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-21T04:10:37.293Z",
-    "runningTime": ": 오전 10시~오후 7시(입장 및 매표소 마감 6시)",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T13:16:15.357Z"
-  },
-  {
-    "id": "perf_성률_기획전_여름을_닮은_우리",
-    "title": "성률 기획전 여름을 닮은 우리",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26006321_p.gif",
-    "date": "2026.04.30 ~ 2026.11.22",
-    "venue": "그라운드시소 한남",
-    "link": "https://tickets.interpark.com/goods/26006321",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-21T04:09:38.584Z",
-    "runningTime": ": 오전 10시~오후 7시 (입장 및 매표소 마감 6시)",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T13:16:23.764Z"
-  },
-  {
-    "id": "perf_최대_44_할인_조은_원화전_오늘의_정원",
-    "title": "［최대 44% 할인］ 조은 원화전: 오늘의 정원",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010388_p.gif",
-    "date": "2026.07.17 ~ 2026.11.29",
-    "venue": "그라운드시소 이스트",
-    "link": "https://tickets.interpark.com/goods/26010388",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-21T04:10:07.359Z",
-    "runningTime": ": 오전 10시~오후 7시(입장 및 매표소 마감 6시)",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T13:16:23.607Z"
-  },
-  {
-    "id": "perf_워너_브롱크호스트_부산전",
-    "title": "워너 브롱크호스트 부산전",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26007456_p.gif",
-    "date": "2026.05.22 ~ 2027.01.03",
-    "venue": "그랜드 조선 부산",
-    "link": "https://tickets.interpark.com/goods/26007456",
-    "region": "부산",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-21T04:09:43.685Z",
-    "runningTime": ": 오전 10시 ~ 오후 7시 (입장 마감: 오후 6시)",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T13:16:23.448Z"
-  },
-  {
-    "id": "perf_생명의_기원_사라진_세계들",
-    "title": "생명의 기원: 사라진 세계들",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26009265_p.gif",
-    "date": "2026.07.17 ~ 2027.07.17",
-    "venue": "이머시브 뮤지엄 잠실",
-    "link": "https://tickets.interpark.com/goods/26009265",
-    "region": "기타",
-    "genre": "exhibition",
-    "runningTime": "10:00 - 19:00 ( 18:00 입장 마감 )",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T09:49:49.466Z",
-    "lastApiEnriched": "2026-11-21T04:10:07.394Z"
-  },
-  {
-    "id": "perf_최대_44_할인_이기훈_원화전_내일의_낙원",
-    "title": "［최대 44% 할인］ 이기훈 원화전: 내일의 낙원",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010356_p.gif",
-    "date": "2026.07.17 ~ 2026.11.29",
-    "venue": "그라운드시소 이스트",
-    "link": "https://tickets.interpark.com/goods/26010356",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-21T04:10:08.531Z",
-    "runningTime": ": 오전 10시~오후 7시(입장 및 매표소 마감 6시)",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T09:49:48.780Z"
-  },
-  {
-    "id": "perf_라스트_얼리버드_스페인_미술_500년_빛과_어둠의_연대기",
-    "title": "［라스트 얼리버드］ 스페인 미술 500년: 빛과 어둠의 연대기",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010709_p.gif",
-    "date": "2026.09.22 ~ 2026.11.29",
-    "venue": "예술의전당 한가람디자인미술관",
-    "link": "https://tickets.interpark.com/goods/26010709",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-21T04:10:33.625Z",
-    "runningTime": ": 화-일 10:00 - 19:00 (입장마감 18:00)",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T09:50:46.030Z"
-  },
-  {
-    "id": "perf_그랜드마스터클래스_2027",
-    "title": "그랜드마스터클래스 2027",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005837_p.gif",
-    "date": "2027.03.05 ~ 2027.03.07",
-    "venue": "코엑스 마곡",
-    "link": "https://tickets.interpark.com/goods/26005837",
-    "region": "seoul",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-19T09:42:40.754Z",
-    "runningTime": "11:00- 19:00 예정",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T09:51:32.915Z"
-  },
-  {
-    "id": "perf_김택화_제주의_풍경",
-    "title": "김택화 : 제주의 풍경展",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000546_p.gif",
-    "date": "2026.01.19 ~ 2026.12.31",
-    "venue": "김택화미술관",
-    "link": "https://tickets.interpark.com/goods/26000546",
-    "region": "jeju",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-21T04:09:04.540Z",
-    "runningTime": ") 10:00 ~ 18:00 (전시장 입장마감 17:30)",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T09:54:07.682Z"
-  },
-  {
-    "id": "perf_제물포구문화체육센터_연극_운빨로맨스_인천",
-    "title": "제물포구문화체육센터 연극 〈운빨로맨스〉 - 인천",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013346_p.gif",
-    "date": "2026.11.20 ~ 2026.11.21",
-    "venue": "제물포구문화체육센터 공연장",
-    "link": "https://tickets.interpark.com/goods/26013346",
-    "region": "인천",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-19T09:39:46.669Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "이상",
-    "price": "20,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "20,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T09:53:07.514Z"
-  },
-  {
     "id": "perf_이은결_30주년_ONE_OF_ONE_인천",
     "title": "이은결 30주년 〈ONE OF ONE〉- 인천",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26012101_p.gif",
@@ -11528,6 +10892,241 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-16T09:58:52.152Z"
+  },
+  {
+    "id": "perf_표기식_사진전_빛은_어떻게_떨어졌길래_모두_다르게_반짝여서",
+    "title": "표기식 사진전: 빛은 어떻게 떨어졌길래 모두 다르게 반짝여서",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012317_p.gif",
+    "date": "2026.09.23 ~ 2027.03.01",
+    "venue": "그라운드시소 센트럴",
+    "link": "https://tickets.interpark.com/goods/26012317",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-21T04:10:37.293Z",
+    "runningTime": ": 오전 10시~오후 7시(입장 및 매표소 마감 6시)",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T13:16:15.357Z"
+  },
+  {
+    "id": "perf_성률_기획전_여름을_닮은_우리",
+    "title": "성률 기획전 여름을 닮은 우리",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26006321_p.gif",
+    "date": "2026.04.30 ~ 2026.11.22",
+    "venue": "그라운드시소 한남",
+    "link": "https://tickets.interpark.com/goods/26006321",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-21T04:09:38.584Z",
+    "runningTime": ": 오전 10시~오후 7시 (입장 및 매표소 마감 6시)",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T13:16:23.764Z"
+  },
+  {
+    "id": "perf_최대_44_할인_조은_원화전_오늘의_정원",
+    "title": "［최대 44% 할인］ 조은 원화전: 오늘의 정원",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26010388_p.gif",
+    "date": "2026.07.17 ~ 2026.11.29",
+    "venue": "그라운드시소 이스트",
+    "link": "https://tickets.interpark.com/goods/26010388",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-21T04:10:07.359Z",
+    "runningTime": ": 오전 10시~오후 7시(입장 및 매표소 마감 6시)",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T13:16:23.607Z"
+  },
+  {
+    "id": "perf_워너_브롱크호스트_부산전",
+    "title": "워너 브롱크호스트 부산전",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26007456_p.gif",
+    "date": "2026.05.22 ~ 2027.01.03",
+    "venue": "그랜드 조선 부산",
+    "link": "https://tickets.interpark.com/goods/26007456",
+    "region": "부산",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-21T04:09:43.685Z",
+    "runningTime": ": 오전 10시 ~ 오후 7시 (입장 마감: 오후 6시)",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T13:16:23.448Z"
+  },
+  {
+    "id": "perf_생명의_기원_사라진_세계들",
+    "title": "생명의 기원: 사라진 세계들",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26009265_p.gif",
+    "date": "2026.07.17 ~ 2027.07.17",
+    "venue": "이머시브 뮤지엄 잠실",
+    "link": "https://tickets.interpark.com/goods/26009265",
+    "region": "기타",
+    "genre": "exhibition",
+    "runningTime": "10:00 - 19:00 ( 18:00 입장 마감 )",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T09:49:49.466Z",
+    "lastApiEnriched": "2026-11-21T04:10:07.394Z"
+  },
+  {
+    "id": "perf_최대_44_할인_이기훈_원화전_내일의_낙원",
+    "title": "［최대 44% 할인］ 이기훈 원화전: 내일의 낙원",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26010356_p.gif",
+    "date": "2026.07.17 ~ 2026.11.29",
+    "venue": "그라운드시소 이스트",
+    "link": "https://tickets.interpark.com/goods/26010356",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-21T04:10:08.531Z",
+    "runningTime": ": 오전 10시~오후 7시(입장 및 매표소 마감 6시)",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T09:49:48.780Z"
+  },
+  {
+    "id": "perf_라스트_얼리버드_스페인_미술_500년_빛과_어둠의_연대기",
+    "title": "［라스트 얼리버드］ 스페인 미술 500년: 빛과 어둠의 연대기",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26010709_p.gif",
+    "date": "2026.09.22 ~ 2026.11.29",
+    "venue": "예술의전당 한가람디자인미술관",
+    "link": "https://tickets.interpark.com/goods/26010709",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-21T04:10:33.625Z",
+    "runningTime": ": 화-일 10:00 - 19:00 (입장마감 18:00)",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T09:50:46.030Z"
+  },
+  {
+    "id": "perf_그랜드마스터클래스_2027",
+    "title": "그랜드마스터클래스 2027",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005837_p.gif",
+    "date": "2027.03.05 ~ 2027.03.07",
+    "venue": "코엑스 마곡",
+    "link": "https://tickets.interpark.com/goods/26005837",
+    "region": "seoul",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-19T09:42:40.754Z",
+    "runningTime": "11:00- 19:00 예정",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T09:51:32.915Z"
+  },
+  {
+    "id": "perf_김택화_제주의_풍경",
+    "title": "김택화 : 제주의 풍경展",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000546_p.gif",
+    "date": "2026.01.19 ~ 2026.12.31",
+    "venue": "김택화미술관",
+    "link": "https://tickets.interpark.com/goods/26000546",
+    "region": "jeju",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-21T04:09:04.540Z",
+    "runningTime": ") 10:00 ~ 18:00 (전시장 입장마감 17:30)",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T09:54:07.682Z"
+  },
+  {
+    "id": "perf_제물포구문화체육센터_연극_운빨로맨스_인천",
+    "title": "제물포구문화체육센터 연극 〈운빨로맨스〉 - 인천",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013346_p.gif",
+    "date": "2026.11.20 ~ 2026.11.21",
+    "venue": "제물포구문화체육센터 공연장",
+    "link": "https://tickets.interpark.com/goods/26013346",
+    "region": "인천",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-19T09:39:46.669Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "이상",
+    "price": "20,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T09:53:07.514Z"
   },
   {
     "id": "perf_호두까기_인형_성남",
@@ -12219,34 +11818,6 @@
     "lastEnriched": "2026-11-16T09:57:45.589Z"
   },
   {
-    "id": "perf_2026_라이브_가족_뮤지컬_백설공주_서울강북",
-    "title": "2026 라이브 가족 뮤지컬 〈백설공주〉 - 서울강북",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012982_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "꿈의숲 아트센터 퍼포먼스홀",
-    "link": "https://tickets.interpark.com/goods/26012982",
-    "region": "서울",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:40:06.045Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "미숙지로 인한 환불및취소는 불가합니다.",
-    "price": "40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T09:55:27.926Z"
-  },
-  {
     "id": "perf_2025_26_김창옥_토크콘서트_시즌5_수원",
     "title": "2025-26 김창옥 토크콘서트 시즌5 - 수원",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013821_p.gif",
@@ -12538,6 +12109,34 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-16T09:59:49.488Z"
+  },
+  {
+    "id": "perf_2026_라이브_가족_뮤지컬_백설공주_서울강북",
+    "title": "2026 라이브 가족 뮤지컬 〈백설공주〉 - 서울강북",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012982_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "꿈의숲 아트센터 퍼포먼스홀",
+    "link": "https://tickets.interpark.com/goods/26012982",
+    "region": "서울",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:40:06.045Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "미숙지로 인한 환불및취소는 불가합니다.",
+    "price": "40,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T09:55:27.926Z"
   },
   {
     "id": "perf_대구_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
@@ -13916,6 +13515,34 @@
     "lastEnriched": "2026-11-16T13:07:21.295Z"
   },
   {
+    "id": "perf_유성호_피아노_리사이틀_코리안_영_아티스트_시리즈",
+    "title": "유성호 피아노 리사이틀 - 코리안 영 아티스트 시리즈 Ⅵ",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010937_p.gif",
+    "date": "2026.12.14 ~ 2026.12.14",
+    "venue": "명동대성당 내 파밀리아 채플",
+    "link": "https://tickets.interpark.com/goods/26010937",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:41:38.683Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "20,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T13:07:29.459Z"
+  },
+  {
     "id": "perf_소인국테마파크",
     "title": "소인국테마파크",
     "image": "https://ticketimage.interpark.com/Play/image/large/19/19005801_p.gif",
@@ -13944,34 +13571,6 @@
     "performanceTime": "",
     "lastEnriched": "2026-07-13T04:31:38.049Z",
     "lastApiEnriched": "2026-11-19T00:15:15.682Z"
-  },
-  {
-    "id": "perf_유성호_피아노_리사이틀_코리안_영_아티스트_시리즈",
-    "title": "유성호 피아노 리사이틀 - 코리안 영 아티스트 시리즈 Ⅵ",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010937_p.gif",
-    "date": "2026.12.14 ~ 2026.12.14",
-    "venue": "명동대성당 내 파밀리아 채플",
-    "link": "https://tickets.interpark.com/goods/26010937",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:41:38.683Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "20,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "20,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T13:07:29.459Z"
   },
   {
     "id": "perf_서울_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
@@ -14754,65 +14353,6 @@
     "lastEnriched": "2026-11-19T09:49:24.305Z"
   },
   {
-    "id": "perf_뮤지컬_겨울왕국_한국_초연_FROZEN_The_Musical",
-    "title": "뮤지컬 〈겨울왕국〉 한국 초연 (FROZEN The Musical)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26007416_p.gif",
-    "date": "2026.08.13 ~ 2027.03.01",
-    "venue": "샤롯데씨어터",
-    "link": "https://tickets.interpark.com/goods/26007416",
-    "region": "기타",
-    "genre": "musical",
-    "runningTime": "135분(인터미션 20분 포함)",
-    "performanceTime": "화,수,목 오후 7시 30분 / 금 오후 2시 30분, 7시 30분 / 토 오후 2시, 7시 / 일 오후 3시 (월 공연 없음) *8/17(월) 오후 3시(1회 공연)",
-    "ageRating": "8세 이상 관람가능",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "※예매자는 본페이지의 모든 내용을 숙지/동의한 것으로 간주합니다.\n-예매 티켓 수령/할인/증빙(차액), 관람 연령, 공연 장소, 교통/주차, 좌석에 따른 안내 미숙지는 관람자 본인에게 책임이 있으며, 해당 사유로 인한 예매 티켓의 취소/환불/변경은 불가합니다.",
-    "bookingNotice": "※예매자는 본페이지의 모든 내용을 숙지/동의한 것으로 간주합니다.\n-예매 티켓 수령/할인/증빙(차액), 관람 연령, 공연 장소, 교통/주차, 좌석에 따른 안내 미숙지는 관람자 본인에게 책임이 있으며, 해당 사유로 인한 예매 티켓의 취소/환불/변경은 불가합니다.\n\n[공연 장소 안내]\n※본 공연은 샤롯데씨어터(서울 송파구 올림픽로 240)에서 진행되는 공연입니다.",
-    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지화,수,목 오후 7시 30분 / 금 오후 2시 30분, 7시 30분 / 토 오후 2시, 7시 / 일 오후 3시 (월 공연 없음) \n*8/17(월) 오후 3시(1회 공연)",
-    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지화,수,목 오후 7시 30분 / 금 오후 2시 30분, 7시 30분 / 토 오후 2시, 7시 / 일 오후 3시 (월 공연 없음) \n*8/17(월) 오후 3시(1회 공연)",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026052115445804.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026052115450366.jpg",
-      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026052115451212.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26007416-01.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26007416-02.jpg"
-    ],
-    "lastEnriched": "2026-05-22T00:33:47.395Z",
-    "lastApiEnriched": "2026-11-21T04:10:16.320Z"
-  },
-  {
-    "id": "perf_3차_얼리버드_10_할인_스튜디오_지브리_in_Jeju",
-    "title": "［3차 얼리버드 10% 할인］ 스튜디오 지브리展 in Jeju",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007290_p.gif",
-    "date": "2026.07.11 ~ 2027.02.28",
-    "venue": "제주 동화마을 아트센터",
-    "link": "https://tickets.interpark.com/goods/26007290",
-    "region": "jeju",
-    "genre": "exhibition",
-    "runningTime": "90분",
-    "performanceTime": "※ 개막일(2026.07.11(토))는 오후 2시 부터 입장 가능합니다. - 관람시간: 09:00 ~ 19:00 ※ 매표 및 입장은 관람 종료 1시간 전 마감됩니다. (18:00) - 얼리버드 티켓 사용기간: ~ 2027.02.28 까지",
-    "ageRating": "전체관람가",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "제주특별자치도 제주시 구좌읍 비자림로 1183 제주 동화마을 동화 아트센터",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsis": "※ 개막일(2026.07.11(토))는 오후 2시 부터 입장 가능합니다. \n\n- 관람시간: 09:00 ~ 19:00\n  ※ 매표 및 입장은 관람 종료 1시간 전 마감됩니다. (18:00)\n\n- 얼리버드 티켓 사용기간: ~ 2027.02.28 까지",
-    "description": "※ 개막일(2026.07.11(토))는 오후 2시 부터 입장 가능합니다. \n\n- 관람시간: 09:00 ~ 19:00\n  ※ 매표 및 입장은 관람 종료 1시간 전 마감됩니다. (18:00)\n\n- 얼리버드 티켓 사용기간: ~ 2027.02.28 까지",
-    "synopsisImages": [
-      "https://ticketimage.interpark.com/260072902026/06/19/bbaf7f8c.jpg",
-      "https://ticketimage.interpark.com/Play/image/etc/26/26007290-06.jpg"
-    ],
-    "lastEnriched": "2026-07-12T19:14:51.807Z",
-    "lastApiEnriched": "2026-11-21T04:10:06.278Z"
-  },
-  {
     "id": "perf_진진경_첫_서울_콘서트_첫눈에",
     "title": "진진경 첫 서울 콘서트 〈첫눈에〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26014242_p.gif",
@@ -15325,6 +14865,65 @@
     "lastEnriched": "2026-11-19T09:52:57.738Z"
   },
   {
+    "id": "perf_뮤지컬_겨울왕국_한국_초연_FROZEN_The_Musical",
+    "title": "뮤지컬 〈겨울왕국〉 한국 초연 (FROZEN The Musical)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26007416_p.gif",
+    "date": "2026.08.13 ~ 2027.03.01",
+    "venue": "샤롯데씨어터",
+    "link": "https://tickets.interpark.com/goods/26007416",
+    "region": "기타",
+    "genre": "musical",
+    "runningTime": "135분(인터미션 20분 포함)",
+    "performanceTime": "화,수,목 오후 7시 30분 / 금 오후 2시 30분, 7시 30분 / 토 오후 2시, 7시 / 일 오후 3시 (월 공연 없음) *8/17(월) 오후 3시(1회 공연)",
+    "ageRating": "8세 이상 관람가능",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "※예매자는 본페이지의 모든 내용을 숙지/동의한 것으로 간주합니다.\n-예매 티켓 수령/할인/증빙(차액), 관람 연령, 공연 장소, 교통/주차, 좌석에 따른 안내 미숙지는 관람자 본인에게 책임이 있으며, 해당 사유로 인한 예매 티켓의 취소/환불/변경은 불가합니다.",
+    "bookingNotice": "※예매자는 본페이지의 모든 내용을 숙지/동의한 것으로 간주합니다.\n-예매 티켓 수령/할인/증빙(차액), 관람 연령, 공연 장소, 교통/주차, 좌석에 따른 안내 미숙지는 관람자 본인에게 책임이 있으며, 해당 사유로 인한 예매 티켓의 취소/환불/변경은 불가합니다.\n\n[공연 장소 안내]\n※본 공연은 샤롯데씨어터(서울 송파구 올림픽로 240)에서 진행되는 공연입니다.",
+    "synopsis": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지화,수,목 오후 7시 30분 / 금 오후 2시 30분, 7시 30분 / 토 오후 2시, 7시 / 일 오후 3시 (월 공연 없음) \n*8/17(월) 오후 3시(1회 공연)",
+    "description": "예매가능시간: 전일17시(월~토 관람 시)까지/전일 11시(일요일 관람 시)까지화,수,목 오후 7시 30분 / 금 오후 2시 30분, 7시 30분 / 토 오후 2시, 7시 / 일 오후 3시 (월 공연 없음) \n*8/17(월) 오후 3시(1회 공연)",
+    "synopsisImages": [
+      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026052115445804.jpg",
+      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026052115450366.jpg",
+      "https://ticketimage.interpark.com/Play/ITM/Data/Modify/2026/5/2026052115451212.jpg",
+      "https://ticketimage.interpark.com/Play/image/etc/26/26007416-01.jpg",
+      "https://ticketimage.interpark.com/Play/image/etc/26/26007416-02.jpg"
+    ],
+    "lastEnriched": "2026-05-22T00:33:47.395Z",
+    "lastApiEnriched": "2026-11-21T04:10:16.320Z"
+  },
+  {
+    "id": "perf_3차_얼리버드_10_할인_스튜디오_지브리_in_Jeju",
+    "title": "［3차 얼리버드 10% 할인］ 스튜디오 지브리展 in Jeju",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26007290_p.gif",
+    "date": "2026.07.11 ~ 2027.02.28",
+    "venue": "제주 동화마을 아트센터",
+    "link": "https://tickets.interpark.com/goods/26007290",
+    "region": "jeju",
+    "genre": "exhibition",
+    "runningTime": "90분",
+    "performanceTime": "※ 개막일(2026.07.11(토))는 오후 2시 부터 입장 가능합니다. - 관람시간: 09:00 ~ 19:00 ※ 매표 및 입장은 관람 종료 1시간 전 마감됩니다. (18:00) - 얼리버드 티켓 사용기간: ~ 2027.02.28 까지",
+    "ageRating": "전체관람가",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "제주특별자치도 제주시 구좌읍 비자림로 1183 제주 동화마을 동화 아트센터",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsis": "※ 개막일(2026.07.11(토))는 오후 2시 부터 입장 가능합니다. \n\n- 관람시간: 09:00 ~ 19:00\n  ※ 매표 및 입장은 관람 종료 1시간 전 마감됩니다. (18:00)\n\n- 얼리버드 티켓 사용기간: ~ 2027.02.28 까지",
+    "description": "※ 개막일(2026.07.11(토))는 오후 2시 부터 입장 가능합니다. \n\n- 관람시간: 09:00 ~ 19:00\n  ※ 매표 및 입장은 관람 종료 1시간 전 마감됩니다. (18:00)\n\n- 얼리버드 티켓 사용기간: ~ 2027.02.28 까지",
+    "synopsisImages": [
+      "https://ticketimage.interpark.com/260072902026/06/19/bbaf7f8c.jpg",
+      "https://ticketimage.interpark.com/Play/image/etc/26/26007290-06.jpg"
+    ],
+    "lastEnriched": "2026-07-12T19:14:51.807Z",
+    "lastApiEnriched": "2026-11-21T04:10:06.278Z"
+  },
+  {
     "id": "perf_2026_카즈미_타테이시_트리오_내한공연_크리스마스_재즈를_만나다_성남",
     "title": "2026 카즈미 타테이시 트리오 내한공연-크리스마스, 재즈를 만나다-(성남)",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26009563_p.gif",
@@ -15495,6 +15094,178 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-16T09:59:57.452Z"
+  },
+  {
+    "id": "perf_2026_크리스마스_뮤지컬_루돌프의_크리스마스선물_서울_성동",
+    "title": "2026 크리스마스 뮤지컬 〈루돌프의 크리스마스선물〉 - 서울(성동)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013775_p.gif",
+    "date": "2026.12.19 ~ 2026.12.20",
+    "venue": "성수아트홀",
+    "link": "https://tickets.interpark.com/goods/26013775",
+    "region": "서울",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:41:55.176Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 45,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "45,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T13:02:56.242Z"
+  },
+  {
+    "id": "perf_2026_겨울특집_가족매직쇼_버블J의_스노우버블쇼_고양",
+    "title": "2026 겨울특집 가족매직쇼 〈버블J의 스노우버블쇼〉 - 고양",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013789_p.gif",
+    "date": "2026.12.19 ~ 2026.12.20",
+    "venue": "고양어울림누리 별모래극장",
+    "link": "https://tickets.interpark.com/goods/26013789",
+    "region": "경기",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:41:55.897Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T13:02:56.419Z"
+  },
+  {
+    "id": "perf_뮤지컬_멜로우TV_Run_it_up_팀_나빠_성남",
+    "title": "뮤지컬 멜로우TV 〈 Run it up, 팀 나빠 〉 - 성남",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012873_p.gif",
+    "date": "2026.12.19 ~ 2026.12.20",
+    "venue": "성남아트리움 대극장",
+    "link": "https://tickets.interpark.com/goods/26012873",
+    "region": "경기",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:41:56.253Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 70,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "70,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T13:03:03.789Z"
+  },
+  {
+    "id": "perf_대전_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
+    "title": "［대전］가족뮤지컬 〈로보카폴리 - 브룸스타운의 에너지를 지켜라!〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013094_p.gif",
+    "date": "2026.12.19 ~ 2026.12.20",
+    "venue": "대전 평송청소년문화센터 대극장",
+    "link": "https://tickets.interpark.com/goods/26013094",
+    "region": "대전",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:41:57.333Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "66,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "66,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T13:03:18.819Z"
+  },
+  {
+    "id": "perf_오리지널_과학마술콘서트_시즌2_김해",
+    "title": "오리지널 과학마술콘서트 시즌2 (김해)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012507_p.gif",
+    "date": "2026.12.19 ~ 2026.12.20",
+    "venue": "김해문화의전당 누리홀",
+    "link": "https://tickets.interpark.com/goods/26012507",
+    "region": "경남",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:41:58.411Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "40,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T13:03:33.944Z"
+  },
+  {
+    "id": "perf_트리플_빌_올_포_한스_판_마넨",
+    "title": "트리플 빌 〈올 포 한스 판 마넨〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/P0/P0004466_p.gif",
+    "date": "2026.11.19 ~ 2026.11.22",
+    "venue": "세종문화회관 M씨어터",
+    "link": "https://tickets.interpark.com/goods/P0004466",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:35.891Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 70,000원\nS석 50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "70,000원"
+      },
+      {
+        "label": "S석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:18:58.799Z"
   },
   {
     "id": "perf_맥주_한잔_하실래요",
@@ -15710,42 +15481,6 @@
       }
     ],
     "lastApiEnriched": "2026-11-19T09:42:36.807Z"
-  },
-  {
-    "id": "perf_창작가무극_백범",
-    "title": "창작가무극 〈백범〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013711_p.gif",
-    "date": "2026.11.14 ~ 2026.11.21",
-    "venue": "국립극장 해오름극장",
-    "link": "https://tickets.interpark.com/goods/26013711",
-    "region": "기타",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-19T09:39:30.516Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 110,000원\nS석 80,000원\nA석 50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "110,000원"
-      },
-      {
-        "label": "S석",
-        "price": "80,000원"
-      },
-      {
-        "label": "A석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-16T13:05:32.973Z"
   },
   {
     "id": "perf_쿼드_연극의_질문들_이성열_화염",
@@ -19471,146 +19206,6 @@
     "lastEnriched": "2026-11-19T09:56:40.943Z"
   },
   {
-    "id": "perf_2026_크리스마스_뮤지컬_루돌프의_크리스마스선물_서울_성동",
-    "title": "2026 크리스마스 뮤지컬 〈루돌프의 크리스마스선물〉 - 서울(성동)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013775_p.gif",
-    "date": "2026.12.19 ~ 2026.12.20",
-    "venue": "성수아트홀",
-    "link": "https://tickets.interpark.com/goods/26013775",
-    "region": "서울",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:41:55.176Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 45,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "45,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T13:02:56.242Z"
-  },
-  {
-    "id": "perf_2026_겨울특집_가족매직쇼_버블J의_스노우버블쇼_고양",
-    "title": "2026 겨울특집 가족매직쇼 〈버블J의 스노우버블쇼〉 - 고양",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013789_p.gif",
-    "date": "2026.12.19 ~ 2026.12.20",
-    "venue": "고양어울림누리 별모래극장",
-    "link": "https://tickets.interpark.com/goods/26013789",
-    "region": "경기",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:41:55.897Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "50,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "50,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T13:02:56.419Z"
-  },
-  {
-    "id": "perf_뮤지컬_멜로우TV_Run_it_up_팀_나빠_성남",
-    "title": "뮤지컬 멜로우TV 〈 Run it up, 팀 나빠 〉 - 성남",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012873_p.gif",
-    "date": "2026.12.19 ~ 2026.12.20",
-    "venue": "성남아트리움 대극장",
-    "link": "https://tickets.interpark.com/goods/26012873",
-    "region": "경기",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:41:56.253Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 70,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "70,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T13:03:03.789Z"
-  },
-  {
-    "id": "perf_대전_가족뮤지컬_로보카폴리_브룸스타운의_에너지를_지켜라",
-    "title": "［대전］가족뮤지컬 〈로보카폴리 - 브룸스타운의 에너지를 지켜라!〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013094_p.gif",
-    "date": "2026.12.19 ~ 2026.12.20",
-    "venue": "대전 평송청소년문화센터 대극장",
-    "link": "https://tickets.interpark.com/goods/26013094",
-    "region": "대전",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:41:57.333Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "66,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "66,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T13:03:18.819Z"
-  },
-  {
-    "id": "perf_오리지널_과학마술콘서트_시즌2_김해",
-    "title": "오리지널 과학마술콘서트 시즌2 (김해)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012507_p.gif",
-    "date": "2026.12.19 ~ 2026.12.20",
-    "venue": "김해문화의전당 누리홀",
-    "link": "https://tickets.interpark.com/goods/26012507",
-    "region": "경남",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:41:58.411Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-19T13:03:33.944Z"
-  },
-  {
     "id": "perf_시간을_파는_상점",
     "title": "시간을 파는 상점",
     "image": "//ticketimage.interpark.com/Play/image/large/24/24002778_p.gif",
@@ -20594,6 +20189,17 @@
     "bookingNotice": "",
     "synopsisImages": [],
     "lastEnriched": "2026-11-19T13:03:33.968Z"
+  },
+  {
+    "id": "perf_국립극단_안트로폴리스_이오카스테",
+    "title": "국립극단 ［안트로폴리스Ⅳ］ 이오카스테",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26009960_p.gif",
+    "date": "2026.10.28 ~ 2026.11.21",
+    "venue": "국립극단 명동예술극장",
+    "link": "https://tickets.interpark.com/goods/26009960",
+    "region": "기타",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-21T04:10:46.203Z"
   },
   {
     "id": "perf_뮤지컬_사의_찬미_춘천",
@@ -23699,16 +23305,6 @@
     "genre": "musical"
   },
   {
-    "id": "perf_2026_리_바운드_축제_1457_소년_잠들다",
-    "title": "［2026 리:바운드 축제］1457, 소년 잠들다",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012344_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "서일대 배양관 예다움홀",
-    "link": "https://tickets.interpark.com/goods/26012344",
-    "region": "기타",
-    "genre": "musical"
-  },
-  {
     "id": "perf_쇼팔로비치_유랑극단",
     "title": "쇼팔로비치 유랑극단",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013763_p.gif",
@@ -23762,16 +23358,6 @@
     "genre": "concert"
   },
   {
-    "id": "perf_2026_SPAF_살롱넥스트_최현비_복제인간_시_X_정찬동_번개와_천둥",
-    "title": "［2026 SPAF］ 살롱넥스트 - 최현비 〈복제인간 시〉 X 정찬동 〈번개와 천둥〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26014386_p.gif",
-    "date": "2026.10.21 ~ 2026.10.22",
-    "venue": "대학로예술극장 소극장",
-    "link": "https://tickets.interpark.com/goods/26014386",
-    "region": "기타",
-    "genre": "play"
-  },
-  {
     "id": "perf_뮤지컬_긴긴밤",
     "title": "뮤지컬 〈긴긴밤〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26014351_p.gif",
@@ -23782,36 +23368,6 @@
     "genre": "musical"
   },
   {
-    "id": "perf_왕세자_실종사건",
-    "title": "왕세자 실종사건",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013096_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "강북문화예술회관 강북소나무홀",
-    "link": "https://tickets.interpark.com/goods/26013096",
-    "region": "기타",
-    "genre": "musical"
-  },
-  {
-    "id": "perf_피아니스트_임동혁과_함께하는_차이코프스키",
-    "title": "피아니스트 임동혁과 함께하는 차이코프스키",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012258_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "예술의전당 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26012258",
-    "region": "기타",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_2026_천안예술의전당_회원음악회_손민수_피아노_리사이틀_바흐_평균율_클라비어_1권_음반발매기념",
-    "title": "2026 천안예술의전당 회원음악회 〈손민수 피아노 리사이틀 - 바흐 평균율 클라비어 1권 음반발매기념〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010393_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "천안예술의전당 대공연장",
-    "link": "https://tickets.interpark.com/goods/26010393",
-    "region": "기타",
-    "genre": "classic"
-  },
-  {
     "id": "perf_제17회_광주국제아트페어_아트광주_입장권",
     "title": "제17회 광주국제아트페어 아트광주 입장권",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26012813_p.gif",
@@ -23820,77 +23376,6 @@
     "link": "https://tickets.interpark.com/goods/26012813",
     "region": "광주",
     "genre": "exhibition"
-  },
-  {
-    "id": "perf_마티네콘서트_클래식_아틀리에_시흥",
-    "title": "마티네콘서트 : 클래식 아틀리에 - 시흥",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013588_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "시흥아트센터 소공연장",
-    "link": "https://tickets.interpark.com/goods/26013588",
-    "region": "기타",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_강남문화재단_제1022회_목요예술무대_페이크북",
-    "title": "강남문화재단 제1022회 목요예술무대 〈페이크북〉",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013834_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "강남씨어터",
-    "link": "https://tickets.interpark.com/goods/26013834",
-    "region": "서울",
-    "genre": "musical"
-  },
-  {
-    "id": "perf_금호아트홀_아름다운_목요일_모차르트_플러스_II_폴_루이스_Piano",
-    "title": "금호아트홀 아름다운 목요일 - 모차르트 플러스 II - 폴 루이스 Piano",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016346_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "금호아트홀 연세",
-    "link": "https://tickets.interpark.com/goods/25016346",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_김도현x이수빈_듀오_리사이틀",
-    "title": "김도현x이수빈 듀오 리사이틀",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009690_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "마포아트센터 아트홀맥",
-    "link": "https://tickets.interpark.com/goods/26009690",
-    "region": "seoul",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_유카페카_사라스테_헬싱키_필하모닉_오케스트라",
-    "title": "유카페카 사라스테 ＆ 헬싱키 필하모닉 오케스트라",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008398_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "롯데콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26008398",
-    "region": "seoul",
-    "genre": "classic",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF294503_260626_141649.jpg"
-  },
-  {
-    "id": "perf_더_마스터즈_강승민_첼로_리사이틀_대구",
-    "title": "더 마스터즈：강승민 첼로 리사이틀 - 대구",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009192_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "대구콘서트하우스 챔버홀",
-    "link": "https://tickets.interpark.com/goods/26009192",
-    "region": "daegu",
-    "genre": "classic"
-  },
-  {
-    "id": "perf_가을밤에_만나는_소프라노_박현진과_재즈피아니스트_허성우_부산",
-    "title": "가을밤에 만나는 소프라노 박현진과 재즈피아니스트 허성우 - 부산",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010915_p.gif",
-    "date": "2026.10.22 ~ 2026.10.22",
-    "venue": "부산문화회관 중극장",
-    "link": "https://tickets.interpark.com/goods/26010915",
-    "region": "busan",
-    "genre": "classic"
   },
   {
     "id": "perf_2026_이승기_콘서트_기승전",
@@ -25149,6 +24634,28 @@
     "lastEnriched": "2026-11-20T12:50:23.300Z"
   },
   {
+    "id": "perf_2026_5_Seconds_Of_Summer_내한공연",
+    "title": "2026 5 Seconds Of Summer 내한공연",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26006756_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "일산 킨텍스 제1전시장 1홀",
+    "link": "https://tickets.interpark.com/goods/26006756",
+    "region": "기타",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:31.594Z"
+  },
+  {
+    "id": "perf_2026_5_Seconds_Of_Summer_내한공연_업그레이드_패키지",
+    "title": "2026 5 Seconds Of Summer 내한공연 - 업그레이드 패키지",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006757_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "일산 킨텍스 제1전시장 1홀",
+    "link": "https://tickets.interpark.com/goods/26006757",
+    "region": "gyeonggi",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:32.667Z"
+  },
+  {
     "id": "perf_2026_10번째_구로꿈나무인형극제_덕구야_장터가자",
     "title": "2026 10번째 구로꿈나무인형극제 〈덕구야 장터가자〉",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013901_p.gif",
@@ -25925,16 +25432,6 @@
     "genre": "leisure"
   },
   {
-    "id": "perf_2026_리_바운드_축제_피노기오",
-    "title": "［2026 리:바운드 축제］피노기오",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26011917_p.gif",
-    "date": "2026.10.21 ~ 2026.10.22",
-    "venue": "예술의전당 자유소극장",
-    "link": "https://tickets.interpark.com/goods/26011917",
-    "region": "기타",
-    "genre": "leisure"
-  },
-  {
     "id": "perf_연극_유원_인천",
     "title": "연극 〈유원〉 - 인천",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26010543_p.gif",
@@ -26429,6 +25926,313 @@
       "https://ticketimage.interpark.com/Play/image/etc/26/26010176-03.jpg"
     ],
     "lastEnriched": "2026-07-12T19:13:18.276Z"
+  },
+  {
+    "id": "perf_조나_마레_잭_헤론_잭_에이버리_내한공연_Why_Can_t_We",
+    "title": "조나 마레 · 잭 헤론 · 잭 에이버리 내한공연 - Why Can’t We？",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013045_p.gif",
+    "date": "2026.11.19 ~ 2026.11.21",
+    "venue": "가빈아트홀",
+    "link": "https://tickets.interpark.com/goods/26013045",
+    "region": "기타",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:33.743Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "260,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-19T20:22:02.439Z"
+  },
+  {
+    "id": "perf_한화생명과_함께하는_예술의전당_11시_콘서트_11월",
+    "title": "한화생명과 함께하는 예술의전당 11시 콘서트(11월)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26011673_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "예술의전당 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/26011673",
+    "region": "기타",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:33.743Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "일반석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:17:35.410Z"
+  },
+  {
+    "id": "perf_2026_어서옵SHOW_자우림_경기_광주",
+    "title": "2026 어서옵SHOW 〈자우림〉 - 경기 광주",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013843_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "광주시문화예술의전당 남한산성홀",
+    "link": "https://tickets.interpark.com/goods/26013843",
+    "region": "경기",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:34.818Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 70,000원\nS석 50,000원\nA석 30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "70,000원"
+      },
+      {
+        "label": "S석",
+        "price": "50,000원"
+      },
+      {
+        "label": "A석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:01.238Z"
+  },
+  {
+    "id": "perf_2026_서울시향_한누_린투의_프로코피예프_로미오와_줄리엣",
+    "title": "2026 서울시향 한누 린투의 프로코피예프 ‘로미오와 줄리엣’",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25013703_p.gif",
+    "date": "2026.11.19 ~ 2026.11.20",
+    "venue": "롯데콘서트홀",
+    "link": "https://tickets.interpark.com/goods/25013703",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:34.821Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 100,000원\nS석 80,000원\nA석 50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "100,000원"
+      },
+      {
+        "label": "S석",
+        "price": "80,000원"
+      },
+      {
+        "label": "A석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:01.078Z"
+  },
+  {
+    "id": "perf_금호아트홀_아름다운_목요일_스티븐_허프_Piano",
+    "title": "금호아트홀 아름다운 목요일 - 스티븐 허프  Piano",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25016285_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "금호아트홀 연세",
+    "link": "https://tickets.interpark.com/goods/25016285",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:35.889Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 80,000원\nS석 70,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "80,000원"
+      },
+      {
+        "label": "S석",
+        "price": "70,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:00.771Z"
+  },
+  {
+    "id": "perf_부천시립예술단_1234_콘서트_IV_부천시립합창단_오르간과_합창음악",
+    "title": "부천시립예술단 1234 콘서트 IV - 부천시립합창단 ＇오르간과 합창음악＇",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017085_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "부천아트센터 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/25017085",
+    "region": "gyeonggi",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:36.966Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:18:53.985Z"
+  },
+  {
+    "id": "perf_경기시나위오케스트라_기획공연_젊은_명인_Young_Virtuoso",
+    "title": "경기시나위오케스트라 기획공연 〈젊은 명인: Young Virtuoso〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26002646_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "경기국악원 국악당",
+    "link": "https://tickets.interpark.com/goods/26002646",
+    "region": "gyeonggi",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:36.966Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T04:19:20.872Z"
+  },
+  {
+    "id": "perf_2026_시즌공연_명품_국악_컬렉션_조성재_정광윤_대전",
+    "title": "2026 시즌공연 명품 국악 컬렉션 - 조성재, 정광윤 - 대전",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26001432_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "대전시립연정국악원 작은마당",
+    "link": "https://tickets.interpark.com/goods/26001432",
+    "region": "daejeon",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:38.041Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 20,000원\nS석 10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "20,000원"
+      },
+      {
+        "label": "S석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T08:22:46.038Z"
+  },
+  {
+    "id": "perf_더_마스터즈_소프라노_한경성_리사이틀_대구",
+    "title": "더 마스터즈：소프라노 한경성 리사이틀 - 대구",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009368_p.gif",
+    "date": "2026.11.19 ~ 2026.11.19",
+    "venue": "대구콘서트하우스 챔버홀",
+    "link": "https://tickets.interpark.com/goods/26009368",
+    "region": "daegu",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:38.041Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "20,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "20,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T08:22:45.739Z"
+  },
+  {
+    "id": "perf_창작가무극_백범",
+    "title": "창작가무극 〈백범〉",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013711_p.gif",
+    "date": "2026.11.14 ~ 2026.11.21",
+    "venue": "국립극장 해오름극장",
+    "link": "https://tickets.interpark.com/goods/26013711",
+    "region": "기타",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-19T09:39:30.516Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 110,000원\nS석 80,000원\nA석 50,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "110,000원"
+      },
+      {
+        "label": "S석",
+        "price": "80,000원"
+      },
+      {
+        "label": "A석",
+        "price": "50,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-16T13:05:32.973Z"
   },
   {
     "id": "perf_제시_골드_JESSE_GOLD_내한공연",
@@ -27299,51 +27103,6 @@
     "lastEnriched": "2026-11-16T13:07:29.619Z"
   },
   {
-    "id": "perf_2026_5_Seconds_Of_Summer_내한공연",
-    "title": "2026 5 Seconds Of Summer 내한공연",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26006756_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "일산 킨텍스 제1전시장 1홀",
-    "link": "https://tickets.interpark.com/goods/26006756",
-    "region": "기타",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:31.594Z"
-  },
-  {
-    "id": "perf_인천아트쇼2026",
-    "title": "인천아트쇼2026",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013634_p.gif",
-    "date": "2026.11.19 ~ 2026.11.22",
-    "venue": "송도컨벤시아 2,3,4홀",
-    "link": "https://tickets.interpark.com/goods/26013634",
-    "region": "인천",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-19T09:39:32.668Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:49:17.374Z"
-  },
-  {
-    "id": "perf_2026_5_Seconds_Of_Summer_내한공연_업그레이드_패키지",
-    "title": "2026 5 Seconds Of Summer 내한공연 - 업그레이드 패키지",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006757_p.gif",
-    "date": "2026.11.19 ~ 2026.11.19",
-    "venue": "일산 킨텍스 제1전시장 1홀",
-    "link": "https://tickets.interpark.com/goods/26006757",
-    "region": "gyeonggi",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:32.667Z"
-  },
-  {
     "id": "perf_2026_27_로이킴_LIVE_TOUR_R_O_Y_in_SEOUL",
     "title": "2026-27 로이킴 LIVE TOUR ［R:O:Y］ in SEOUL",
     "image": "//ticketimage.interpark.com/Play/image/large/26/26013078_p.gif",
@@ -27375,7 +27134,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:49:16.441Z"
+    "lastEnriched": "2026-11-21T16:21:21.480Z"
   },
   {
     "id": "perf_2026_수험생콘서트_자이언티x소코도모_세종시",
@@ -27398,53 +27157,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:24.413Z"
-  },
-  {
-    "id": "perf_뮤지컬_장수탕_선녀님_부산",
-    "title": "뮤지컬 〈장수탕 선녀님〉 - 부산",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26007774_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "부산시민회관 대극장",
-    "link": "https://tickets.interpark.com/goods/26007774",
-    "region": "부산",
-    "genre": "leisure",
-    "lastApiEnriched": "2026-11-19T09:39:47.746Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:24.564Z"
-  },
-  {
-    "id": "perf_평택_Next_Step_PWS_공식_사인회_11_21",
-    "title": "평택 Next Step + PWS 공식 사인회 (11.21)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26014115_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "PWS STUDIO",
-    "link": "https://tickets.interpark.com/goods/26014115",
-    "region": "기타",
-    "genre": "etc",
-    "lastApiEnriched": "2026-11-19T09:39:48.824Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:24.155Z"
+    "lastEnriched": "2026-11-21T16:21:25.330Z"
   },
   {
     "id": "perf_한화클래식_2026_르_포엠_아르모니크_태양왕의_음악_거제",
@@ -27467,7 +27180,53 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:24.391Z"
+    "lastEnriched": "2026-11-21T16:21:23.807Z"
+  },
+  {
+    "id": "perf_뮤지컬_장수탕_선녀님_부산",
+    "title": "뮤지컬 〈장수탕 선녀님〉 - 부산",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26007774_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "부산시민회관 대극장",
+    "link": "https://tickets.interpark.com/goods/26007774",
+    "region": "부산",
+    "genre": "leisure",
+    "lastApiEnriched": "2026-11-19T09:39:47.746Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:21:20.060Z"
+  },
+  {
+    "id": "perf_평택_Next_Step_PWS_공식_사인회_11_21",
+    "title": "평택 Next Step + PWS 공식 사인회 (11.21)",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26014115_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "PWS STUDIO",
+    "link": "https://tickets.interpark.com/goods/26014115",
+    "region": "기타",
+    "genre": "etc",
+    "lastApiEnriched": "2026-11-19T09:39:48.824Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:22:38.499Z"
   },
   {
     "id": "perf_용인필하모닉오케스트라_마스터피스_비제스페셜_아를르의_여인_카르멘_하반기_기획공연",
@@ -27490,7 +27249,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:24.251Z"
+    "lastEnriched": "2026-11-21T16:22:38.422Z"
   },
   {
     "id": "perf_2026_서울디자인페스티벌_슈퍼_얼리버드_티켓",
@@ -27513,7 +27272,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:31.903Z"
+    "lastEnriched": "2026-11-21T16:22:38.178Z"
   },
   {
     "id": "perf_금호아트홀_아름다운_목요일_김재영_Violin_문태국_Cello_박재홍_Piano",
@@ -27536,7 +27295,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:31.864Z"
+    "lastEnriched": "2026-11-21T16:22:37.876Z"
   },
   {
     "id": "perf_ASAC_청소년_연극_유원_안산",
@@ -27559,7 +27318,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:31.917Z"
+    "lastEnriched": "2026-11-21T16:22:37.140Z"
   },
   {
     "id": "perf_스트릿_월드_파이터_디렉터스_워_ON_THE_STAGE_Tour_광주",
@@ -27582,7 +27341,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:31.871Z"
+    "lastEnriched": "2026-11-21T16:22:51.563Z"
   },
   {
     "id": "perf_얼리버드_조르조_모란디_GIORGIO_MORANDI",
@@ -27605,7 +27364,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:31.776Z"
+    "lastEnriched": "2026-11-21T16:22:51.525Z"
   },
   {
     "id": "perf_평택_메인쇼_PWS_공식_사인회_11_28",
@@ -27628,7 +27387,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:39.029Z"
+    "lastEnriched": "2026-11-21T16:22:51.041Z"
   },
   {
     "id": "perf_스트릿_월드_파이터_디렉터스_워_ON_THE_STAGE_Tour_부산",
@@ -27651,7 +27410,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:39.107Z"
+    "lastEnriched": "2026-11-21T16:22:50.618Z"
   },
   {
     "id": "perf_칼리드_내한공연",
@@ -27674,7 +27433,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:39.222Z"
+    "lastEnriched": "2026-11-21T16:22:48.288Z"
   },
   {
     "id": "perf_Play_Stay_YUURI_LIVE_2026_IN_SEOUL_Hotels",
@@ -27697,7 +27456,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:39.231Z"
+    "lastEnriched": "2026-11-21T16:23:05.353Z"
   },
   {
     "id": "perf_FKJ_내한공연",
@@ -27720,7 +27479,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:38.933Z"
+    "lastEnriched": "2026-11-21T16:23:05.351Z"
   },
   {
     "id": "perf_경기필_마스터피스_시리즈_VI_무소륵스키_전람회의_그림_수원",
@@ -27754,7 +27513,7 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:46.614Z"
+    "lastEnriched": "2026-11-21T16:23:01.925Z"
   },
   {
     "id": "perf_뮤지컬_소맥거핀_찰칵_세계여행_서울어린이대공원",
@@ -27777,332 +27536,82 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:46.252Z"
+    "lastEnriched": "2026-11-21T16:23:01.105Z"
   },
   {
-    "id": "perf_뮤지컬_팬레터_인천",
-    "title": "뮤지컬 〈팬레터〉 - 인천",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26011840_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "인천문화예술회관 대공연장",
-    "link": "https://tickets.interpark.com/goods/26011840",
-    "region": "인천",
-    "genre": "musical",
-    "lastApiEnriched": "2026-11-19T09:39:52.051Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 110,000원\nS석 99,000원\nA석 77,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "110,000원"
-      },
-      {
-        "label": "S석",
-        "price": "99,000원"
-      },
-      {
-        "label": "A석",
-        "price": "77,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:46.316Z"
-  },
-  {
-    "id": "perf_스트릿_월드_파이터_디렉터스_워_ON_THE_STAGE_Tour_서울",
-    "title": "스트릿 월드 파이터 : 디렉터스 워 ［ON THE STAGE ］ Tour - 서울",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013985_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "고려대학교 화정체육관",
-    "link": "https://tickets.interpark.com/goods/26013985",
-    "region": "서울",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:52.050Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 154,000원\nS석 132,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "154,000원"
-      },
-      {
-        "label": "S석",
-        "price": "132,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:50:46.249Z"
-  },
-  {
-    "id": "perf_2026_MONSTA_X_WORLD_TOUR_THE_X_NEXUS_ENCORE",
-    "title": "2026 MONSTA X WORLD TOUR ［THE X : NEXUS］ - ENCORE",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013132_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "인스파이어 아레나",
-    "link": "https://tickets.interpark.com/goods/26013132",
-    "region": "기타",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:53.125Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "154,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "198,000원"
-      },
-      {
-        "label": "일반석",
-        "price": "154,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:51:54.704Z"
-  },
-  {
-    "id": "perf_GUMMY_Tour_Concert_2026_LOVE_성남",
-    "title": "GUMMY Tour Concert 2026 〈LOVE〉-성남",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013512_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "성남아트센터 오페라하우스",
-    "link": "https://tickets.interpark.com/goods/26013512",
-    "region": "경기",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:53.125Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "VIP석 165,000원\nR석 143,000원\nS석 121,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "VIP석",
-        "price": "165,000원"
-      },
-      {
-        "label": "R석",
-        "price": "143,000원"
-      },
-      {
-        "label": "S석",
-        "price": "121,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:51:54.801Z"
-  },
-  {
-    "id": "perf_2026_무명전설_전국투어_콘서트_대구앵콜",
-    "title": "2026 무명전설 전국투어 콘서트 - 대구앵콜",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26010589_p.gif",
+    "id": "perf_2026_키즈_마티네_콘서트_11월_김포",
+    "title": "2026 키즈 마티네 콘서트 11월 - 김포",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26000775_p.gif",
     "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "엑스코 5층 컨벤션홀",
-    "link": "https://tickets.interpark.com/goods/26010589",
-    "region": "대구",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:54.205Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 154,000원\nS석 143,000원\nA석 121,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "154,000원"
-      },
-      {
-        "label": "S석",
-        "price": "143,000원"
-      },
-      {
-        "label": "A석",
-        "price": "121,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:51:54.683Z"
-  },
-  {
-    "id": "perf_예술의전당_토요콘서트_프리뷰_베토벤_11월",
-    "title": "예술의전당 토요콘서트 - 프리뷰 베토벤(11월)",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012174_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "예술의전당 콘서트홀",
-    "link": "https://tickets.interpark.com/goods/26012174",
-    "region": "기타",
+    "venue": "김포아트홀",
+    "link": "https://tickets.interpark.com/goods/26000775",
+    "region": "gyeonggi",
     "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:54.205Z",
+    "lastApiEnriched": "2026-11-19T09:40:00.656Z",
     "runningTime": "",
     "performanceTime": "",
     "ageRating": "",
-    "price": "40,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "일반석",
-        "price": "40,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:51:54.650Z"
-  },
-  {
-    "id": "perf_헐리우드_블록버스터_디즈니_픽사_OST_오케스트라_콘서트_대전_앙코르",
-    "title": "헐리우드 블록버스터＆디즈니 픽사 OST 오케스트라 콘서트 - 대전 앙코르",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26008647_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "대전예술의전당 아트홀",
-    "link": "https://tickets.interpark.com/goods/26008647",
-    "region": "대전",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:55.279Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 100,000원\nS석 80,000원\nA석 60,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "100,000원"
-      },
-      {
-        "label": "S석",
-        "price": "80,000원"
-      },
-      {
-        "label": "A석",
-        "price": "60,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:51:54.574Z"
-  },
-  {
-    "id": "perf_캐스크_카니발_2026",
-    "title": "캐스크 카니발 2026",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012544_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "SETEC 제 3전시관",
-    "link": "https://tickets.interpark.com/goods/26012544",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-19T09:39:55.280Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "60,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:02.155Z"
-  },
-  {
-    "id": "perf_불편한_편의점_의정부",
-    "title": "불편한 편의점 - 의정부",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013302_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "의정부예술의전당 대극장",
-    "link": "https://tickets.interpark.com/goods/26013302",
-    "region": "기타",
-    "genre": "play",
-    "lastApiEnriched": "2026-11-19T09:39:56.354Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "40,000원",
+    "price": "10,000원",
     "originalPrice": "",
     "discount": "",
     "address": "",
     "priceList": [
       {
         "label": "전석",
-        "price": "40,000원"
+        "price": "10,000원"
       }
     ],
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:02.155Z"
+    "lastEnriched": "2026-11-21T16:24:27.873Z"
   },
   {
-    "id": "perf_PEACH_PIT_25주년_기념_특별전_사인회_패키지_A",
-    "title": "PEACH-PIT 25주년 기념 특별전 사인회 - 패키지 A",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012719_p.gif",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "venue": "대원뮤지엄 팝콘D스퀘어",
-    "link": "https://tickets.interpark.com/goods/26012719",
-    "region": "기타",
-    "genre": "exhibition",
-    "lastApiEnriched": "2026-11-19T09:39:56.354Z",
+    "id": "perf_2026_서가콘서트_참을_수_없는_존재의_가벼움_수원",
+    "title": "2026 서가콘서트: 참을 수 없는 존재의 가벼움 - 수원",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013781_p.gif",
+    "date": "2026.11.20 ~ 2026.11.20",
+    "venue": "경기아트센터 소극장",
+    "link": "https://tickets.interpark.com/goods/26013781",
+    "region": "경기",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:40.196Z",
     "runningTime": "",
     "performanceTime": "",
     "ageRating": "",
-    "price": "90,000원",
+    "price": "R석 35,000원\nS석 25,000원",
     "originalPrice": "",
     "discount": "",
     "address": "",
-    "priceList": [],
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "35,000원"
+      },
+      {
+        "label": "S석",
+        "price": "25,000원"
+      }
+    ],
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:02.134Z"
+    "lastEnriched": "2026-11-21T16:24:27.657Z"
   },
   {
-    "id": "perf_세상에서_가장_아름다운_오페라_라보엠_화성",
-    "title": "세상에서 가장 아름다운 오페라 〈라보엠〉 - 화성",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013565_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "유앤아이센터 화성아트홀",
-    "link": "https://tickets.interpark.com/goods/26013565",
+    "id": "perf_국립극단_스카팽_화성",
+    "title": "국립극단 〈스카팽〉 - 화성",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26007546_p.gif",
+    "date": "2026.11.20 ~ 2026.11.22",
+    "venue": "화성예술의전당 동탄아트홀",
+    "link": "https://tickets.interpark.com/goods/26007546",
     "region": "경기",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:57.433Z",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-19T09:39:40.197Z",
     "runningTime": "",
     "performanceTime": "",
     "ageRating": "",
-    "price": "R석 40,000원\nS석 30,000원\nA석 20,000원",
+    "price": "R석 40,000원\nS석 30,000원",
     "originalPrice": "",
     "discount": "",
     "address": "",
@@ -28114,27 +27623,23 @@
       {
         "label": "S석",
         "price": "30,000원"
-      },
-      {
-        "label": "A석",
-        "price": "20,000원"
       }
     ],
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:02.112Z"
+    "lastEnriched": "2026-11-21T16:24:27.397Z"
   },
   {
-    "id": "perf_대구국제방송교향악단_2026월드오케스트라페스티벌_대구",
-    "title": "대구국제방송교향악단 : 2026월드오케스트라페스티벌 - 대구",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26012006_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "대구콘서트하우스 그랜드홀",
-    "link": "https://tickets.interpark.com/goods/26012006",
-    "region": "대구",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:57.433Z",
+    "id": "perf_1차_얼리버드_이상한_나라의_앨리스_크리스티나_마키바",
+    "title": "［1차 얼리버드］이상한 나라의 앨리스: 크리스티나 마키바",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013511_p.gif",
+    "date": "2026.11.20 ~ 2027.01.31",
+    "venue": "띠아트뮤지엄 홍대",
+    "link": "https://tickets.interpark.com/goods/26013511",
+    "region": "기타",
+    "genre": "exhibition",
+    "lastApiEnriched": "2026-11-19T09:39:41.272Z",
     "runningTime": "",
     "performanceTime": "",
     "ageRating": "",
@@ -28142,123 +27647,22 @@
     "originalPrice": "",
     "discount": "",
     "address": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "20,000원"
-      }
-    ],
+    "priceList": [],
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:02.020Z"
+    "lastEnriched": "2026-11-21T16:24:26.707Z"
   },
   {
-    "id": "perf_2026_박수영발레단_발레콘서트_대전",
-    "title": "2026 박수영발레단 발레콘서트 - 대전",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013712_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "대전 평송청소년문화센터 대극장",
-    "link": "https://tickets.interpark.com/goods/26013712",
-    "region": "대전",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:58.507Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "S석 30,000원\nA석 20,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "S석",
-        "price": "30,000원"
-      },
-      {
-        "label": "A석",
-        "price": "20,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:09.456Z"
-  },
-  {
-    "id": "perf_2026_손승연_Fan_Concert_HIGHLIGHT",
-    "title": "2026 손승연 Fan Concert ＇HIGHLIGHT＇",
-    "image": "//ticketimage.interpark.com/Play/image/large/26/26013668_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "성신여대 운정그린캠퍼스 대강당",
-    "link": "https://tickets.interpark.com/goods/26013668",
-    "region": "기타",
-    "genre": "concert",
-    "lastApiEnriched": "2026-11-19T09:39:58.510Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 121,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "121,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:09.565Z"
-  },
-  {
-    "id": "perf_2026_서울시향_체임버_클래식스_VI_대한민국",
-    "title": "2026 서울시향 체임버 클래식스 VI: 대한민국",
-    "image": "https://ticketimage.interpark.com/Play/image/large/25/25013737_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "세종문화회관 체임버홀",
-    "link": "https://tickets.interpark.com/goods/25013737",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:59.582Z",
-    "runningTime": "",
-    "performanceTime": "",
-    "ageRating": "",
-    "price": "R석 70,000원\nS석 40,000원\nA석 10,000원",
-    "originalPrice": "",
-    "discount": "",
-    "address": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "70,000원"
-      },
-      {
-        "label": "S석",
-        "price": "40,000원"
-      },
-      {
-        "label": "A석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "",
-    "bookingNotice": "",
-    "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:09.491Z"
-  },
-  {
-    "id": "perf_2026_우수작품시리즈III_클래시칸_앙상블",
-    "title": "2026 우수작품시리즈III - 클래시칸 앙상블",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26008301_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "전주한벽문화관 한벽공연장",
-    "link": "https://tickets.interpark.com/goods/26008301",
-    "region": "seoul",
-    "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:39:59.583Z",
+    "id": "perf_연극_어느날_갑자기_용인",
+    "title": "연극 〈어느날 갑자기〉 - 용인",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013631_p.gif",
+    "date": "2026.11.20 ~ 2026.11.21",
+    "venue": "용인시 평생학습관 큰어울마당",
+    "link": "https://tickets.interpark.com/goods/26013631",
+    "region": "경기",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-19T09:39:41.273Z",
     "runningTime": "",
     "performanceTime": "",
     "ageRating": "",
@@ -28275,18 +27679,411 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:09.410Z"
+    "lastEnriched": "2026-11-21T16:24:26.244Z"
   },
   {
-    "id": "perf_서울아트센터_도암_토요콘서트_11월",
-    "title": "서울아트센터 도암 토요콘서트(11월)",
-    "image": "https://ticketimage.interpark.com/Play/image/large/26/26005695_p.gif",
-    "date": "2026.11.21 ~ 2026.11.21",
-    "venue": "서울아트센터 도암 3F",
-    "link": "https://tickets.interpark.com/goods/26005695",
-    "region": "seoul",
+    "id": "perf_오페라_안드레아_쉐니에_전주",
+    "title": "오페라 ［안드레아 쉐니에］ - 전주",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013777_p.gif",
+    "date": "2026.11.20 ~ 2026.11.21",
+    "venue": "한국소리문화의전당 모악당",
+    "link": "https://tickets.interpark.com/goods/26013777",
+    "region": "기타",
     "genre": "classic",
-    "lastApiEnriched": "2026-11-19T09:40:00.656Z",
+    "lastApiEnriched": "2026-11-19T09:39:42.359Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 120,000원\nR석 80,000원\nS석 50,000원\nA석 30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "120,000원"
+      },
+      {
+        "label": "R석",
+        "price": "80,000원"
+      },
+      {
+        "label": "S석",
+        "price": "50,000원"
+      },
+      {
+        "label": "A석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:24:48.965Z"
+  },
+  {
+    "id": "perf_연극_더_드레서_진주",
+    "title": "연극 〈더 드레서〉 - 진주",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26009845_p.gif",
+    "date": "2026.11.20 ~ 2026.11.21",
+    "venue": "경상남도문화예술회관 대공연장",
+    "link": "https://tickets.interpark.com/goods/26009845",
+    "region": "경남",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-19T09:39:42.359Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 60,000원\nS석 40,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "60,000원"
+      },
+      {
+        "label": "S석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:24:48.865Z"
+  },
+  {
+    "id": "perf_인천시립교향악단_제449회_정기연주회_인천시향과_크리스토프_포펜",
+    "title": "인천시립교향악단 제449회 정기연주회 〈인천시향과 크리스토프 포펜〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25018262_p.gif",
+    "date": "2026.11.20 ~ 2026.11.20",
+    "venue": "아트센터인천 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/25018262",
+    "region": "incheon",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:43.435Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:24:48.736Z"
+  },
+  {
+    "id": "perf_세상의_모든_플레이리스트_박지훈의_음악회_원주",
+    "title": "세상의 모든 플레이리스트 - 박지훈의 음악회 - 원주",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26006315_p.gif",
+    "date": "2026.11.20 ~ 2026.11.20",
+    "venue": "카페 플레이리스트",
+    "link": "https://tickets.interpark.com/goods/26006315",
+    "region": "gangwon",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:43.434Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "30,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "일반석",
+        "price": "30,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:24:48.523Z"
+  },
+  {
+    "id": "perf_연극_노맨틱코미디_청주_소명아트홀",
+    "title": "연극 〈노맨틱코미디〉 - 청주 소명아트홀",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010288_p.gif",
+    "date": "2026.11.20 ~ 2027.01.03",
+    "venue": "소명아트홀",
+    "link": "https://tickets.interpark.com/goods/26010288",
+    "region": "chungbuk",
+    "genre": "play",
+    "lastApiEnriched": "2026-11-19T09:39:44.513Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "40,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "40,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:24:47.360Z"
+  },
+  {
+    "id": "perf_공주_안동_자매도시_교류음악회_환희의_송가_공주",
+    "title": "공주, 안동 자매도시 교류음악회 〈환희의 송가〉 - 공주",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017944_p.gif",
+    "date": "2026.11.20 ~ 2026.11.20",
+    "venue": "공주문예회관 대공연장",
+    "link": "https://tickets.interpark.com/goods/25017944",
+    "region": "chungnam",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:39:44.514Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 30,000원\nS석 20,000원\nA석 10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "30,000원"
+      },
+      {
+        "label": "S석",
+        "price": "20,000원"
+      },
+      {
+        "label": "A석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:00.968Z"
+  },
+  {
+    "id": "perf_나는_태어나지_않기로_했다",
+    "title": "나는 태어나지 않기로 했다",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013893_p.gif",
+    "date": "2026.11.20 ~ 2026.11.28",
+    "venue": "모두예술극장",
+    "link": "https://tickets.interpark.com/goods/26013893",
+    "region": "기타",
+    "genre": "play",
+    "price": "30,000원",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "30,000원"
+      }
+    ],
+    "age": "만 11세 이상",
+    "ageDetail": "",
+    "runtime": "1시간 40분",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302587_261006_160041.jpg",
+    "bookingLinks": [
+      {
+        "name": "모두예술극장",
+        "url": "https://www.moduarttheater.or.kr/product/ko/performance/253031"
+      }
+    ],
+    "lastApiEnriched": "2026-11-19T09:39:45.590Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:00.873Z"
+  },
+  {
+    "id": "perf_AKASAKI_1st_WORLD_TOUR_ONIGIRI",
+    "title": "AKASAKI - 1st WORLD TOUR ＂ONIGIRI＂",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26010590_p.gif",
+    "date": "2026.11.21 ~ 2026.11.21",
+    "venue": "명화라이브홀",
+    "link": "https://tickets.interpark.com/goods/26010590",
+    "region": "seoul",
+    "genre": "concert",
+    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF297380_260731_130159.gif",
+    "lastApiEnriched": "2026-11-19T09:39:49.904Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "전석 110,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "전석",
+        "price": "110,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:01.005Z",
+    "age": "만 8세 이상",
+    "runtime": "1시간 30분",
+    "bookingLinks": [
+      {
+        "name": "놀유니버스",
+        "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26010590"
+      }
+    ]
+  },
+  {
+    "id": "perf_2026_27_허각_전국투어_콘서트_공연각_사이_in_부산",
+    "title": "2026-27 허각 전국투어 콘서트 〈공연각: 사이〉 in 부산",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26012560_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "소향씨어터 우리은행홀",
+    "link": "https://tickets.interpark.com/goods/26012560",
+    "region": "부산",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:39:49.900Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 154,000원\nR석 143,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "154,000원"
+      },
+      {
+        "label": "R석",
+        "price": "143,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:00.804Z"
+  },
+  {
+    "id": "perf_뮤지컬_광화문연가_부산",
+    "title": "뮤지컬 〈광화문연가〉 - 부산",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013001_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "부산 드림씨어터",
+    "link": "https://tickets.interpark.com/goods/26013001",
+    "region": "부산",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-19T09:39:50.976Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 160,000원\nR석 140,000원\nS석 110,000원\nA석 80,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "160,000원"
+      },
+      {
+        "label": "R석",
+        "price": "140,000원"
+      },
+      {
+        "label": "S석",
+        "price": "110,000원"
+      },
+      {
+        "label": "A석",
+        "price": "80,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:24:59.657Z"
+  },
+  {
+    "id": "perf_최현우_19_I_수원",
+    "title": "최현우 19+I - 수원",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26006955_p.gif",
+    "date": "2026.11.21 ~ 2026.11.22",
+    "venue": "경기아트센터 대극장",
+    "link": "https://tickets.interpark.com/goods/26006955",
+    "region": "경기",
+    "genre": "musical",
+    "lastApiEnriched": "2026-11-19T09:39:50.978Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 99,000원\nS석 77,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "99,000원"
+      },
+      {
+        "label": "S석",
+        "price": "77,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:17.941Z"
+  },
+  {
+    "id": "perf_더_마스터즈_박수예_바이올린_리사이틀_대구",
+    "title": "더 마스터즈：박수예 바이올린 리사이틀 - 대구",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009182_p.gif",
+    "date": "2026.12.17 ~ 2026.12.17",
+    "venue": "대구콘서트하우스 챔버홀",
+    "link": "https://tickets.interpark.com/goods/26009182",
+    "region": "daegu",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:41:44.066Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:17.784Z"
+  },
+  {
+    "id": "perf_KDO_코리안_닥터스_오케스트라_제5회_정기연주회",
+    "title": "KDO 코리안 닥터스 오케스트라 제5회 정기연주회",
+    "image": "//ticketimage.interpark.com/Play/image/large/26/26013863_p.gif",
+    "date": "2026.11.22 ~ 2026.11.22",
+    "venue": "부천아트센터 콘서트홀",
+    "link": "https://tickets.interpark.com/goods/26013863",
+    "region": "경기",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:06.047Z",
     "runningTime": "",
     "performanceTime": "",
     "ageRating": "",
@@ -28307,6 +28104,78 @@
     "ageDetail": "",
     "bookingNotice": "",
     "synopsisImages": [],
-    "lastEnriched": "2026-11-21T12:52:09.382Z"
+    "lastEnriched": "2026-11-21T16:25:17.377Z"
+  },
+  {
+    "id": "perf_국립심포니오케스트라_실내악_시리즈_lll",
+    "title": "국립심포니오케스트라〈실내악 시리즈 lll〉",
+    "image": "https://ticketimage.interpark.com/Play/image/large/25/25017428_p.gif",
+    "date": "2026.11.22 ~ 2026.11.22",
+    "venue": "예술의전당 IBK기업은행챔버홀",
+    "link": "https://tickets.interpark.com/goods/25017428",
+    "region": "seoul",
+    "genre": "classic",
+    "lastApiEnriched": "2026-11-19T09:40:07.125Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "R석 40,000원\nS석 20,000원\nA석 10,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "R석",
+        "price": "40,000원"
+      },
+      {
+        "label": "S석",
+        "price": "20,000원"
+      },
+      {
+        "label": "A석",
+        "price": "10,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:16.201Z"
+  },
+  {
+    "id": "perf_2026_카즈미_타테이시_트리오_내한공연_지브리_재즈를_만나다_수원",
+    "title": "2026 카즈미 타테이시 트리오 내한공연-지브리, 재즈를 만나다-(수원)",
+    "image": "https://ticketimage.interpark.com/Play/image/large/26/26009224_p.gif",
+    "date": "2026.11.22 ~ 2026.11.22",
+    "venue": "경기아트센터 소극장",
+    "link": "https://tickets.interpark.com/goods/26009224",
+    "region": "gyeonggi",
+    "genre": "concert",
+    "lastApiEnriched": "2026-11-19T09:40:07.127Z",
+    "runningTime": "",
+    "performanceTime": "",
+    "ageRating": "",
+    "price": "VIP석 88,000원\nR석 77,000원\nS석 66,000원",
+    "originalPrice": "",
+    "discount": "",
+    "address": "",
+    "priceList": [
+      {
+        "label": "VIP석",
+        "price": "88,000원"
+      },
+      {
+        "label": "R석",
+        "price": "77,000원"
+      },
+      {
+        "label": "S석",
+        "price": "66,000원"
+      }
+    ],
+    "ageDetail": "",
+    "bookingNotice": "",
+    "synopsisImages": [],
+    "lastEnriched": "2026-11-21T16:25:14.373Z"
   }
 ]

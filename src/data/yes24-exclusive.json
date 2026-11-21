@@ -1454,7 +1454,7 @@
       "https://tkfile.yes24.com/Upload2/Board/202610/20261030/akmu_1.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202609/20260910/60021K.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:42.960Z",
+    "dataCollectedAt": "2026-11-21T16:26:23.580Z",
     "image": "/images/posters/concert/yes24_광주_2026_AKMU_CONCERT_소문의_낙원_Paradise_of_Rumors.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260909/20260909-60021_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1575,7 +1575,7 @@
       "https://tkfile.yes24.com/Upload2/Board/202611/20261118/60018.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202611/20261118/60018k.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:38.878Z",
+    "dataCollectedAt": "2026-11-21T16:26:20.231Z",
     "image": "/images/posters/concert/yes24_대구_2026_AKMU_CONCERT_소문의_낙원_Paradise_of_Rumors.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260909/20260909-60018_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1662,7 +1662,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261113/WEB-상세페이지(대전).jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:28.768Z",
+    "dataCollectedAt": "2026-11-21T16:26:02.678Z",
     "image": "/images/posters/concert/yes24_대전_2026_27_FORESTELLA_CONCERT_BEYOND_EDGE_OF_LIGHT_in_Daejeon.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61128.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -1932,7 +1932,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261113/일산k.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:26.129Z",
+    "dataCollectedAt": "2026-11-21T16:25:57.136Z",
     "image": "/images/posters/concert/yes24_일산_2026_27_FORESTELLA_CONCERT_BEYOND_EDGE_OF_LIGHT_in_Ilsan.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61127.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3067,7 +3067,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261116/JK.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:30.755Z",
+    "dataCollectedAt": "2026-11-21T16:26:05.917Z",
     "image": "/images/posters/concert/yes24_2026_JANG_HANEUM_FAN_CON_Haneum_s_Birthday_Dream.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261116/20261116-61179.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3297,7 +3297,7 @@
       "https://tkfile.yes24.com/Upload2/Board/202611/20261113/60484_2_01.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202611/20261113/60484_2_02.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:54:11.033Z",
+    "dataCollectedAt": "2026-11-21T16:26:39.611Z",
     "image": "/images/posters/musical/yes24_식스_더_뮤지컬_SIX_THE_MUSICAL.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261002/20261002-60484_2.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3418,7 +3418,7 @@
       "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61106_dcdc.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61106_2222.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:54:12.581Z",
+    "dataCollectedAt": "2026-11-21T16:26:45.390Z",
     "image": "/images/posters/musical/yes24_용산문화재단_출범기념_뮤지컬_크리스마스_캐롤.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261112/20261112-61106.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3564,7 +3564,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261106/61010_2.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:54:15.986Z",
+    "dataCollectedAt": "2026-11-21T16:26:48.657Z",
     "image": "/images/posters/musical/yes24_다예쁜_다예뿐_뮤지컬배우_정다예_10주년_콘서트.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261106/20261106-61010.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3822,17 +3822,8 @@
     "link": "https://ticket.yes24.com/Perf/60674",
     "genre": "play",
     "region": "서울",
-    "price": "1층 77,000원, 2층 55,000원",
-    "priceList": [
-      {
-        "label": "1층",
-        "price": "77,000원"
-      },
-      {
-        "label": "2층",
-        "price": "55,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
     "ageRating": "7세 이상",
     "runningTime": "110분",
@@ -3845,7 +3836,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202610/20261015/2026101521.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:54:28.436Z",
+    "dataCollectedAt": "2026-11-21T16:27:31.249Z",
     "image": "/images/posters/play/yes24_창원_2026_연극_친정엄마와_2박3일.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261015/20261015-60674.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -3884,7 +3875,7 @@
       "https://tkfile.yes24.com/Upload2/Board/202610/20261001/2026100106.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202610/20261001/2026100107.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:54:29.992Z",
+    "dataCollectedAt": "2026-11-21T16:27:34.501Z",
     "image": "/images/posters/play/yes24_전주_2026_연극_늘근도둑이야기.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261001/20261001-60468.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5212,26 +5203,19 @@
     "link": "https://ticket.yes24.com/Perf/61051",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 30,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 13세 이상",
-    "runningTime": "총 100분",
-    "performanceTime": "2026년 12월 5일(토) 오후 5시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "문화재단1963",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261110/61051.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:54:49.357Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:03.699Z",
     "image": "/images/posters/classic/yes24_부산_2026_앙상블_부산_현의_물결_시리즈_Winter_Story.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261110/20261110-61051.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5276,26 +5260,19 @@
     "link": "https://ticket.yes24.com/Perf/60906",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 30,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 13세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "2026년 11월 27일(금) 오후 7시 30분",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "문화재단1963",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261112/60906.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:54:44.531Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:27:58.490Z",
     "image": "/images/posters/classic/yes24_부산_영원의_정원을_걷다_Walking_in_the_Eternal_Garden.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261029/20261029-60906.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5477,27 +5454,19 @@
     "link": "https://ticket.yes24.com/Perf/60726",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 30,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 13세 이상",
-    "runningTime": "총 100분",
-    "performanceTime": "2026년 11월 22일(일) 오후 5시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "문화재단1963",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/607261.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261118/607262.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:54:46.816Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:00.624Z",
     "image": "/images/posters/classic/yes24_부산_The_Finds_Rising.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261019/20261019-60726.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5544,26 +5513,19 @@
     "link": "https://ticket.yes24.com/Perf/60289",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 0원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "0원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "8세 이상",
-    "runningTime": "총 120분 (인터미션 10분)",
-    "performanceTime": "2026년 11월 21일(토) 오후 3시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)평택시문화재단",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "031-669-0915",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260921/26092104.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:54:52.227Z",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:06.957Z",
     "image": "/images/posters/classic/yes24_평택_2026_시조_전국명인_초대전.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260921/20260921-60289.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5577,26 +5539,19 @@
     "link": "https://ticket.yes24.com/Perf/61138",
     "genre": "classic",
     "region": "서울",
-    "price": "전석 무료 0원",
-    "priceList": [
-      {
-        "label": "전석 무료",
-        "price": "0원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "전체관람가",
-    "runningTime": "총 100분",
-    "performanceTime": "2026년 12월 16일(수) 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: 서초문화원",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 매수제한 : 1인 2매",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61138.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:54:54.031Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:08.722Z",
     "image": "/images/posters/classic/yes24_2026_서초문화원_송년음악회_크로스오버_콘서트.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61138_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5682,30 +5637,19 @@
     "link": "https://ticket.yes24.com/Perf/60078",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 11:00 ~ 22:50(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:07.106Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:22.903Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_도전_무릉도장.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60078.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5719,30 +5663,19 @@
     "link": "https://ticket.yes24.com/Perf/60082",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 10:50 ~ 22:40(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:09.632Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:25.643Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_뒤죽박죽_루디브리엄.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60082.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5756,30 +5689,19 @@
     "link": "https://ticket.yes24.com/Perf/60081",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 10:35 ~ 22:25(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:12.273Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:28.193Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_에델슈타인_더_비기닝.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60081.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5793,30 +5715,19 @@
     "link": "https://ticket.yes24.com/Perf/60007",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(2인기준) 58,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(2인기준)",
-        "price": "58,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 10:40 ~ 22:30(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:14.239Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:32.552Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_커닝시티_사라진_사람들.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60007.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5830,30 +5741,19 @@
     "link": "https://ticket.yes24.com/Perf/60080",
     "genre": "exhibition",
     "region": "서울",
-    "price": "테마 이용권(3인기준) 87,000원",
-    "priceList": [
-      {
-        "label": "테마 이용권(3인기준)",
-        "price": "87,000원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 7세 이상",
-    "runningTime": "총 60분",
-    "performanceTime": "월,화,수,목,금,토,일 11:10 ~ 23:00(60분단위)",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "(주)이상크리에이티브",
-    "organizer": "(주)핫웍스, (주)우니꼬코리아",
-    "contact": "info@maplestoryescape.com",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_21.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202609/20260916/i_22.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_31.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_32.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202610/20261007/60007_4.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:15.891Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:36.202Z",
     "image": "/images/posters/exhibition/yes24_메이플스토리_이스케이프_헌티드_맨션으로_초대합니다.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202609/20260916/20260916-60080.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5870,19 +5770,16 @@
     "price": "",
     "priceList": [],
     "priceDetail": "",
-    "ageRating": "만 18세 이상",
-    "runningTime": "총 270분",
-    "performanceTime": "2026년 12월 6일(일)\n오전 7시 30분",
-    "reservationInfo": "본 상품은 일괄배송 상품으로 2026년 11월 23일부터 순차 배송됩니다.",
-    "host": "부산광역시, KNN, 대한육상연맹",
-    "organizer": "KNN, 부산육상연맹",
-    "contact": "번호: 070-4111-5620",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본 공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.\n※ 원활한 예매를 위해 무통장 입금 예매가 제한됩니다.\n※ 매수제한: 1인1매\n※ 판매/취소마감시간: 10/8 18:00\n※ 추가오픈 판매/취소마감시간: 10/30 18:00",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202608/20260810/59670_2.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202608/20260824/59670_220.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:18.598Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:38.204Z",
     "image": "/images/posters/exhibition/yes24_부산브릿지마라톤_2026.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202608/20260810/20260810-59670_1.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5896,26 +5793,19 @@
     "link": "https://ticket.yes24.com/Perf/60758",
     "genre": "exhibition",
     "region": "서울",
-    "price": "입장료 11,900원",
-    "priceList": [
-      {
-        "label": "입장료",
-        "price": "11,900원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "-",
-    "runningTime": "-",
-    "performanceTime": "2026년 10월29일(목) - 11월 28일(토)\n평일 오후 2시 - 오후 9시\n주말 오후 12시 - 오후 7시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "부크럼",
-    "organizer": "프라이빗 플레이스 휘",
-    "contact": "번호: 010-2427-2342",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 판매마감: 11/28(토) 오후 3시",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261106/60758_2.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:21.396Z",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:40.269Z",
     "image": "/images/posters/exhibition/yes24_정영욱_전시_나의_구원에게.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261028/20261028-60758.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -5929,38 +5819,19 @@
     "link": "https://ticket.yes24.com/Perf/60679",
     "genre": "exhibition",
     "region": "서울",
-    "price": "[크리스마스 시즌] 14,900원, [주말 야간] 7,900원, [주말 주간] 5,900원, [평일] 5,900원",
-    "priceList": [
-      {
-        "label": "[크리스마스 시즌]",
-        "price": "14,900원"
-      },
-      {
-        "label": "[주말 야간]",
-        "price": "7,900원"
-      },
-      {
-        "label": "[주말 주간]",
-        "price": "5,900원"
-      },
-      {
-        "label": "[평일]",
-        "price": "5,900원"
-      }
-    ],
-    "priceDetail": "할인정보\n※ 1차 얼리버드 10/19 ~10/25까지 (마감)\n※ 2차 얼리버드 10/26 ~11/01까지\n※ 본 판매 일정 11/02 ~",
-    "ageRating": "전 연령",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
     "runningTime": "",
-    "performanceTime": "평일 16:00~22:00\n주말 주간 11:00~22:00\n주말 야간 16:00~22:00\n크리스마스 시즌 11:00~22:00",
-    "reservationInfo": "모바일 티켓",
-    "host": "(주)푸드트래블, (재)영화의전당",
-    "organizer": "마켓창고",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
+    "organizer": "",
     "contact": "",
-    "description": "※ 본 상품은 문화비 소득공제 제외 상품입니다.\n※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 매수제한: 공연별 1인 10매 / 회차별 1인 4매\n※ 모바일 티켓 전달하기 불가\n※ 판매마감시간: 하루 전 23:59\n※ 온라인 정규티켓 셋팅을 위한 작업으로 10/30(금) 15:00 ~11/2(월) 15:00 기존 예매건 취소가 불가합니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/60679_21113.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:24.369Z",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:28:42.508Z",
     "image": "/images/posters/exhibition/yes24_크리스마스_빌리지_부산_2026.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261016/20261016-60679.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -7541,29 +7412,19 @@
     "link": "https://ticket.yes24.com/Perf/61144",
     "genre": "kids",
     "region": "서울",
-    "price": "전석 40,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 13,000원 ~ 최고가 18,000원\n할인정보\n※ 기본할인 18,000원 / 상시할인\n※ 카톡채널추가할인 15,000원 / 카톡검색창에 부산조이 검색후 \"조이컬쳐(부산)\" 채널추가 증빙시 할인(당일 현장 증빙필)-미증빙시 차액결제\n※ 조이컬쳐 인스타 팔로우할인 15,000원 / 인스타 팔로우 현장증빙\n※ 신세계신용카드 및 백화점어플 소지자 할인 15,000원/신세계백화점 제휴 카드 및 백화점 어플 소지자 할인\n※ 맘맘회원할인 15,000원/당일티켓 수령시 맘맘회원 확인 미증빙시 차액결제\n※ 카톡채널추가 조기예매할인 13,000원 / ~1월3일까지\n* 할인 선택 예매 시 증빙서류 지참. 미지참시 차액지불",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2027년 1월 16일(토)\n11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관 : ㈜조이컬처",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "070-4045-2302",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144N.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144DC.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144DC1.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261116/61144.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:41.151Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:29:01.241Z",
     "image": "/images/posters/kids/yes24_부산센텀_2027_명작동화_가족뮤지컬_백설공주.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261116/20261116-61144.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -7577,28 +7438,19 @@
     "link": "https://ticket.yes24.com/Perf/61129",
     "genre": "kids",
     "region": "서울",
-    "price": "전석 40,000원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "priceDetail": "할인 적용 시 최저가 13,000원 ~ 최고가 18,000원\n할인정보\n※ 기본할인 18,000원 / 상시할인\n※ 카톡채널추가할인 15,000원 / 카톡검색창에 부산조이 검색후 \"조이컬쳐(부산)\" 채널추가 증빙시 할인(당일 현장 증빙필)-미증빙시 차액결제\n※ 조이컬쳐 인스타 팔로우할인 15,000원 / 인스타 팔로우 현장증빙\n※ 신세계신용카드 및 백화점어플 소지자 할인 15,000원/신세계백화점 제휴 카드 및 백화점 어플 소지자 할인\n※ 맘맘회원할인 15,000원/당일티켓 수령시 맘맘회원 확인 미증빙시 차액결제\n※ 카톡채널추가 조기예매할인 13,000원 / ~12월20일까지",
-    "ageRating": "24개월 이상",
-    "runningTime": "총 55분 (인터미션 없음)",
-    "performanceTime": "2027년 1월 2일(토)~3일(일)\n토/일 11시, 14시, 16시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관 : ㈜조이컬처",
+    "price": "",
+    "priceList": [],
+    "priceDetail": "",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "070-4045-2302",
+    "contact": "",
     "description": "",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/61129n.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/61129dc.jpg",
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261113/61129.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:44.366Z",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:29:04.688Z",
     "image": "/images/posters/kids/yes24_부산센텀_2027_명작동화_가족뮤지컬_빨간모자.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261113/20261113-61129.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8077,26 +7929,19 @@
     "link": "https://ticket.yes24.com/Perf/60659",
     "genre": "kids",
     "region": "서울",
-    "price": "전석 0원",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "0원"
-      }
-    ],
+    "price": "",
+    "priceList": [],
     "priceDetail": "",
-    "ageRating": "48개월 이상 관람가",
-    "runningTime": "70분 관람 (인터미션 없음)",
-    "performanceTime": "2026년 11월 21일(토) 오후 5시",
-    "reservationInfo": "현장 수령만 가능",
-    "host": "/주관: (재)창원문화재단",
+    "ageRating": "",
+    "runningTime": "",
+    "performanceTime": "",
+    "reservationInfo": "",
+    "host": "",
     "organizer": "",
-    "contact": "055-719-7800~1",
-    "description": "※ 본 상품은 네이버 쿠폰이 적용되지 않습니다.\n※ 본공연은 YES24공연에서 진행하는 할인쿠폰이벤트 대상에서 제외됩니다.",
-    "synopsisImages": [
-      "https://tkfile.yes24.com/Upload2/Board/202611/20261109/(yes24)%20상세%20이미지.jpg"
-    ],
-    "dataCollectedAt": "2026-11-21T12:55:45.914Z",
+    "contact": "",
+    "description": "",
+    "synopsisImages": [],
+    "dataCollectedAt": "2026-11-21T16:29:07.466Z",
     "image": "/images/posters/kids/yes24_창원_꿈의_오케스트라_창원_제15회_정기연주회.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202610/20261015/20261015-60659.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8350,7 +8195,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261117/상세이미지-2am.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:34.142Z",
+    "dataCollectedAt": "2026-11-21T16:26:13.481Z",
     "image": "/images/posters/concert/yes24_2026_2am_콘서트_다시_오늘.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261117/20261117-61207.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8677,7 +8522,7 @@
       "https://tkfile.yes24.com/Upload2/Board/202611/20261118/Artboard-2.jpg",
       "https://tkfile.yes24.com/Upload2/Board/202611/20261118/Artboard-3.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:36.731Z",
+    "dataCollectedAt": "2026-11-21T16:26:17.310Z",
     "image": "/images/posters/concert/yes24_HIPHOPPLAYA_SHOW_VOL_66.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261118/20261118-61236.jpg/dims/quality/70/",
     "category": "독점공연"
@@ -8809,7 +8654,7 @@
     "synopsisImages": [
       "https://tkfile.yes24.com/Upload2/Board/202611/20261117/문별_생일%20팬미팅_상세페이지-국문.jpg"
     ],
-    "dataCollectedAt": "2026-11-21T12:52:32.600Z",
+    "dataCollectedAt": "2026-11-21T16:26:08.859Z",
     "image": "/images/posters/concert/yes24_Moon_Byul_Fan_Meeting_BDAY_OFF_THE_RECORD_1222.webp",
     "backupPoster": "https://tkfile.yes24.com/upload2/PerfBlog/202611/20261117/20261117-61142.jpg/dims/quality/70/",
     "category": "독점공연"
