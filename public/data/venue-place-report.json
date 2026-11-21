@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-11-21T16:35:47.747Z",
+  "checkedAt": "2026-11-21T20:29:12.749Z",
   "status": "warn",
   "venueCount": 4243,
-  "matchedCount": 2323,
-  "highConfidenceMatchCount": 1774,
+  "matchedCount": 2328,
+  "highConfidenceMatchCount": 1779,
   "needsReviewCount": 20,
   "notFoundCount": 809,
-  "pendingLookupCount": 7,
+  "pendingLookupCount": 2,
   "insufficientIdentityCount": 292,
   "lookupReady": true,
   "providersConfigured": [
@@ -42,86 +42,6 @@
       ],
       "sampleTitles": [
         "스테인드글라스 썬캐쳐 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_국립중앙박물관_175iv6w",
-      "officialName": "국립중앙박물관",
-      "address": "서울 용산구 서빙고로 137",
-      "query": "국립중앙박물관 서울 용산구",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립중앙박물관 도슨트 수업으로 하루에 정리하는 삼국~조선 한국사",
-        "케이팝 뮤지컬 〈조선 마법사관 진준〉",
-        "그리스가 로마에게, 로마가 그리스에게"
-      ]
-    },
-    {
-      "venueId": "venue_성남아트센터오페라하우스_3zh347",
-      "officialName": "성남아트센터 오페라하우스",
-      "address": "경기 성남시 분당구 성남대로 808",
-      "query": "성남아트센터 오페라하우스 경기 성남시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "GUMMY Tour Concert 2026 〈LOVE〉-성남",
-        "이은결 30주년 〈ONE OF ONE〉- 성남",
-        "크리스마스 발레 〈호두까기 인형〉"
-      ]
-    },
-    {
-      "venueId": "venue_춘천인형극장_1tk2s3j",
-      "officialName": "춘천인형극장",
-      "address": "강원도 춘천시 영서로 3017 (사농동)",
-      "query": "춘천인형극장 강원 춘천시",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "살아있는 박물관 속 고인돌 [춘천]",
-        "거진, 야호! [춘천]",
-        "오리지널 과학마술콘서트 시즌2 [춘천]"
-      ]
-    },
-    {
-      "venueId": "venue_성남아트센터앙상블시어터_3zh347",
-      "officialName": "성남아트센터 앙상블시어터",
-      "address": "경기 성남시 분당구 성남대로 808",
-      "query": "성남아트센터 앙상블시어터 경기 성남시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "2026 성남아트센터 오후의 콘서트 - 12월 〈Viva Italia! 오페라 갈라 콘서트〉",
-        "2026 성남아트센터 오후의 콘서트 시즌권"
-      ]
-    },
-    {
-      "venueId": "venue_성남성남아트센터_3zh347",
-      "officialName": "성남 성남아트센터",
-      "address": "경기 성남시 분당구 성남대로 808",
-      "query": "성남 성남아트센터 경기 성남시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "성남아트센터"
       ]
     }
   ],
@@ -2071,7 +1991,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-21T16:35:15.160Z",
+      "checkedAt": "2026-11-21T20:28:53.915Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2080,7 +2000,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-21T16:35:15.160Z",
+      "checkedAt": "2026-11-21T20:28:53.915Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2412,14 +2332,14 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-21T16:35:47.747Z",
+    "checkedAt": "2026-11-21T20:29:12.749Z",
     "status": "warn",
     "venueCount": 4243,
-    "matchedCount": 2323,
-    "highConfidenceMatchCount": 1774,
+    "matchedCount": 2328,
+    "highConfidenceMatchCount": 1779,
     "needsReviewCount": 20,
     "notFoundCount": 809,
-    "pendingLookupCount": 7,
+    "pendingLookupCount": 2,
     "insufficientIdentityCount": 292,
     "lookupReady": true,
     "providersConfigured": [
@@ -2456,86 +2376,6 @@
         ],
         "sampleTitles": [
           "스테인드글라스 썬캐쳐 만들기"
-        ]
-      },
-      {
-        "venueId": "venue_국립중앙박물관_175iv6w",
-        "officialName": "국립중앙박물관",
-        "address": "서울 용산구 서빙고로 137",
-        "query": "국립중앙박물관 서울 용산구",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "국립중앙박물관 도슨트 수업으로 하루에 정리하는 삼국~조선 한국사",
-          "케이팝 뮤지컬 〈조선 마법사관 진준〉",
-          "그리스가 로마에게, 로마가 그리스에게"
-        ]
-      },
-      {
-        "venueId": "venue_성남아트센터오페라하우스_3zh347",
-        "officialName": "성남아트센터 오페라하우스",
-        "address": "경기 성남시 분당구 성남대로 808",
-        "query": "성남아트센터 오페라하우스 경기 성남시",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "GUMMY Tour Concert 2026 〈LOVE〉-성남",
-          "이은결 30주년 〈ONE OF ONE〉- 성남",
-          "크리스마스 발레 〈호두까기 인형〉"
-        ]
-      },
-      {
-        "venueId": "venue_춘천인형극장_1tk2s3j",
-        "officialName": "춘천인형극장",
-        "address": "강원도 춘천시 영서로 3017 (사농동)",
-        "query": "춘천인형극장 강원 춘천시",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "살아있는 박물관 속 고인돌 [춘천]",
-          "거진, 야호! [춘천]",
-          "오리지널 과학마술콘서트 시즌2 [춘천]"
-        ]
-      },
-      {
-        "venueId": "venue_성남아트센터앙상블시어터_3zh347",
-        "officialName": "성남아트센터 앙상블시어터",
-        "address": "경기 성남시 분당구 성남대로 808",
-        "query": "성남아트센터 앙상블시어터 경기 성남시",
-        "priority": 16,
-        "performanceCount": 2,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "2026 성남아트센터 오후의 콘서트 - 12월 〈Viva Italia! 오페라 갈라 콘서트〉",
-          "2026 성남아트센터 오후의 콘서트 시즌권"
-        ]
-      },
-      {
-        "venueId": "venue_성남성남아트센터_3zh347",
-        "officialName": "성남 성남아트센터",
-        "address": "경기 성남시 분당구 성남대로 808",
-        "query": "성남 성남아트센터 경기 성남시",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "성남아트센터"
         ]
       }
     ],
