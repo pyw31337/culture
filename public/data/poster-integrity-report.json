@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-21T00:27:14.419Z",
+  "checkedAt": "2026-11-21T06:03:09.928Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10635,
-  "verified": 9857,
-  "unavailable": 778,
+  "total": 10642,
+  "verified": 9846,
+  "unavailable": 796,
   "pending": 0,
   "recoveredFromAlternate": 1,
   "unavailableSamples": [
@@ -408,6 +408,13 @@
       "failure": "http-403"
     },
     {
+      "id": "movie_비스트헌터_배틀정글",
+      "title": "비스트헌터: 배틀정글",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "perf_영광의_문화유산을_알아보자_영광군에_위치한_국가유산_일대_20261122",
       "title": "영광의 문화유산을 알아보자",
       "source": "remote",
@@ -424,13 +431,6 @@
       "failure": "http-403"
     },
     {
-      "id": "movie_비스트헌터_배틀정글",
-      "title": "비스트헌터: 배틀정글",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "perf_매간당_고택_주역괘로_풀어본_효자_가문의_비밀_영광_매간당_고택_20261122",
       "title": "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
       "source": "remote",
@@ -438,15 +438,15 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_연기향교_은행나무_학당_연기향교_20261122",
-      "title": "연기향교 은행나무 학당",
+      "id": "movie_극장판_약사의_혼잣말_망비의_비보",
+      "title": "극장판 약사의 혼잣말: 망비의 비보",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "movie_극장판_약사의_혼잣말_망비의_비보",
-      "title": "극장판 약사의 혼잣말: 망비의 비보",
+      "id": "perf_연기향교_은행나무_학당_연기향교_20261122",
+      "title": "연기향교 은행나무 학당",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -517,6 +517,13 @@
     {
       "id": "movie_임영웅_아임_히어로_더_스타디움_2",
       "title": "임영웅ㅣ아임 히어로 더 스타디움 2",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "museum_서대문형무소역사관_초등_한국사_어린이_역사체험",
+      "title": "서대문형무소역사관 초등 한국사 어린이 역사체험",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -851,16 +858,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/5f8ae6ec2d68484694620908869acaa0.jpg"
       ],
       "failure": "http-403"
-    },
-    {
-      "id": "class_1_1_기구필라테스_체험레슨",
-      "title": "1:1 기구필라테스 체험레슨",
-      "source": "remote",
-      "candidates": [
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/39830472776e4347bdd8e4d882b83c07.jpg",
-        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/0262ef1e63d74b6495baa822d85f6f48.jpg"
-      ],
-      "failure": "http-403, http-403"
     }
   ],
   "pendingSamples": []
