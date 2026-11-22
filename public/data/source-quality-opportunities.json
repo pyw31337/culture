@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-22T05:36:07.580Z",
+  "checkedAt": "2026-11-22T08:31:32.518Z",
   "status": "pass",
   "itemCount": 9285,
   "sourceCount": 28,
@@ -243,5 +243,5 @@
   "missingAddressCount": 328,
   "unknownPriceCount": 1235,
   "weakDescriptionCount": 3771,
-  "duplicateSignatureCount": 64
+  "duplicateSignatureCount": 66
 }
