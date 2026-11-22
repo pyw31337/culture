@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-11-22T16:28:22.558Z",
+  "checkedAt": "2026-11-22T20:28:37.235Z",
   "status": "warn",
-  "venueCount": 4189,
-  "matchedCount": 2302,
-  "highConfidenceMatchCount": 1759,
+  "venueCount": 4192,
+  "matchedCount": 2305,
+  "highConfidenceMatchCount": 1762,
   "needsReviewCount": 20,
   "notFoundCount": 795,
-  "pendingLookupCount": 7,
+  "pendingLookupCount": 6,
   "insufficientIdentityCount": 280,
   "lookupReady": true,
   "providersConfigured": [
@@ -14,6 +14,21 @@
     "naver"
   ],
   "queue": [
+    {
+      "venueId": "venue_kt_g상상마당홍대라이브홀_1w3xrxx",
+      "officialName": "KT&G 상상마당 홍대 라이브홀",
+      "address": "seoul KT&G 상상마당 홍대 라이브홀",
+      "query": "KT&G 상상마당 홍대 라이브홀 seoul kt&g",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "Aosaka: kurayamisaka & parannoul"
+      ]
+    },
     {
       "venueId": "venue_남부의부산조용한서쪽동네에자리잡은고양이두마리강아지한마리예술쟁_02m1dm",
       "officialName": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다.",
@@ -45,82 +60,49 @@
       ]
     },
     {
-      "venueId": "venue_북극곰소극장_1zket8",
-      "officialName": "북극곰소극장",
-      "address": "서울특별시 종로구 이화장1길 24 (이화동)",
-      "query": "북극곰소극장 서울 종로구",
-      "priority": 24,
-      "performanceCount": 3,
+      "venueId": "venue_스페이스브릭_1ygly3p",
+      "officialName": "스페이스 브릭",
+      "address": "서울 마포구 잔다리로 31",
+      "query": "스페이스 브릭 서울 마포구",
+      "priority": 32,
+      "performanceCount": 4,
       "reviewFlags": [
+        "alias_merge_candidate",
         "high_confidence_similarity_merge",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "단막극 낭독공연, 시선: Eleven Ways of Believing [대학로]",
-        "강아지 똥 [대학로]",
-        "북극곰 예술여행"
+        "baby selects “2slimey” Live in Seoul",
+        "NGERNOAT 1ST Fanmeeting in Korea",
+        "baby selects, 2slimey Live in Seoul"
       ]
     },
     {
-      "venueId": "venue_국립과천과학관_1b8d60t",
-      "officialName": "국립과천과학관",
-      "address": "경기도 과천시 상하벌로 110 (과천동)",
-      "query": "국립과천과학관 경기 과천시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "초등 한국과학탐험대! 한국사 속 숨겨진 과학 기술을 찾아! - 국립과천과학관",
-        "타키포오, 몬스터 전쟁의 서막: 더 좀비 [과천]"
-      ]
-    },
-    {
-      "venueId": "venue_파주시민회관_1s2mnhk",
-      "officialName": "파주시민회관",
-      "address": "경기도 파주시 시민회관길 33 (금촌동)",
-      "query": "파주시민회관 경기 파주시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "파주시민회관",
-        "호두까기 인형 [파주]"
-      ]
-    },
-    {
-      "venueId": "venue_남산골한옥마을옥인동가옥_1984hlb",
-      "officialName": "남산골한옥마을 옥인동 가옥",
-      "address": "서울특별시 중구 퇴계로34길 28",
-      "query": "남산골한옥마을 옥인동 가옥 서울 중구",
+      "venueId": "venue_cj아지트광흥창_dmv9q9",
+      "officialName": "CJ아지트 광흥창",
+      "address": "서울특별시 마포구 창전로 14 (신정동) CJ아지트",
+      "query": "CJ아지트 광흥창 서울 마포구",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "2026 남산골 야간 특별 프로그램 [가배옥]"
+        "off the menu : Soundwork II"
       ]
     },
     {
-      "venueId": "venue_킨텍스전시홀2_1y52slt",
-      "officialName": "킨텍스 전시홀 2",
-      "address": "경기 고양시 일산서구 킨텍스로 217-60",
-      "query": "킨텍스 전시홀 2 경기 고양시",
+      "venueId": "venue_홍대프리즘홀_14dbnh5",
+      "officialName": "홍대 프리즘홀",
+      "address": "서울 마포구 양화로12길 6",
+      "query": "홍대 프리즘홀 서울 마포구",
       "priority": 8,
       "performanceCount": 1,
       "reviewFlags": [
-        "alias_merge_candidate",
         "needs_official_place_lookup"
       ],
       "sampleTitles": [
-        "2026 우리쌀·우리술 K-라이스 페스타"
+        "KOLAVO & TONARI 합동공연 ‘ㅅㅏㄹㅁ’"
       ]
     }
   ],
@@ -2060,7 +2042,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T16:28:08.457Z",
+      "checkedAt": "2026-11-22T20:28:17.464Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2069,7 +2051,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T16:28:08.457Z",
+      "checkedAt": "2026-11-22T20:28:17.464Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2399,14 +2381,14 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-22T16:28:22.558Z",
+    "checkedAt": "2026-11-22T20:28:37.235Z",
     "status": "warn",
-    "venueCount": 4189,
-    "matchedCount": 2302,
-    "highConfidenceMatchCount": 1759,
+    "venueCount": 4192,
+    "matchedCount": 2305,
+    "highConfidenceMatchCount": 1762,
     "needsReviewCount": 20,
     "notFoundCount": 795,
-    "pendingLookupCount": 7,
+    "pendingLookupCount": 6,
     "insufficientIdentityCount": 280,
     "lookupReady": true,
     "providersConfigured": [
@@ -2415,6 +2397,21 @@
     ],
     "staleCacheCount": 0,
     "topQueue": [
+      {
+        "venueId": "venue_kt_g상상마당홍대라이브홀_1w3xrxx",
+        "officialName": "KT&G 상상마당 홍대 라이브홀",
+        "address": "seoul KT&G 상상마당 홍대 라이브홀",
+        "query": "KT&G 상상마당 홍대 라이브홀 seoul kt&g",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "Aosaka: kurayamisaka & parannoul"
+        ]
+      },
       {
         "venueId": "venue_남부의부산조용한서쪽동네에자리잡은고양이두마리강아지한마리예술쟁_02m1dm",
         "officialName": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다.",
@@ -2446,82 +2443,49 @@
         ]
       },
       {
-        "venueId": "venue_북극곰소극장_1zket8",
-        "officialName": "북극곰소극장",
-        "address": "서울특별시 종로구 이화장1길 24 (이화동)",
-        "query": "북극곰소극장 서울 종로구",
-        "priority": 24,
-        "performanceCount": 3,
+        "venueId": "venue_스페이스브릭_1ygly3p",
+        "officialName": "스페이스 브릭",
+        "address": "서울 마포구 잔다리로 31",
+        "query": "스페이스 브릭 서울 마포구",
+        "priority": 32,
+        "performanceCount": 4,
         "reviewFlags": [
+          "alias_merge_candidate",
           "high_confidence_similarity_merge",
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "단막극 낭독공연, 시선: Eleven Ways of Believing [대학로]",
-          "강아지 똥 [대학로]",
-          "북극곰 예술여행"
+          "baby selects “2slimey” Live in Seoul",
+          "NGERNOAT 1ST Fanmeeting in Korea",
+          "baby selects, 2slimey Live in Seoul"
         ]
       },
       {
-        "venueId": "venue_국립과천과학관_1b8d60t",
-        "officialName": "국립과천과학관",
-        "address": "경기도 과천시 상하벌로 110 (과천동)",
-        "query": "국립과천과학관 경기 과천시",
-        "priority": 16,
-        "performanceCount": 2,
-        "reviewFlags": [
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "초등 한국과학탐험대! 한국사 속 숨겨진 과학 기술을 찾아! - 국립과천과학관",
-          "타키포오, 몬스터 전쟁의 서막: 더 좀비 [과천]"
-        ]
-      },
-      {
-        "venueId": "venue_파주시민회관_1s2mnhk",
-        "officialName": "파주시민회관",
-        "address": "경기도 파주시 시민회관길 33 (금촌동)",
-        "query": "파주시민회관 경기 파주시",
-        "priority": 16,
-        "performanceCount": 2,
-        "reviewFlags": [
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "파주시민회관",
-          "호두까기 인형 [파주]"
-        ]
-      },
-      {
-        "venueId": "venue_남산골한옥마을옥인동가옥_1984hlb",
-        "officialName": "남산골한옥마을 옥인동 가옥",
-        "address": "서울특별시 중구 퇴계로34길 28",
-        "query": "남산골한옥마을 옥인동 가옥 서울 중구",
+        "venueId": "venue_cj아지트광흥창_dmv9q9",
+        "officialName": "CJ아지트 광흥창",
+        "address": "서울특별시 마포구 창전로 14 (신정동) CJ아지트",
+        "query": "CJ아지트 광흥창 서울 마포구",
         "priority": 8,
         "performanceCount": 1,
         "reviewFlags": [
-          "alias_merge_candidate",
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "2026 남산골 야간 특별 프로그램 [가배옥]"
+          "off the menu : Soundwork II"
         ]
       },
       {
-        "venueId": "venue_킨텍스전시홀2_1y52slt",
-        "officialName": "킨텍스 전시홀 2",
-        "address": "경기 고양시 일산서구 킨텍스로 217-60",
-        "query": "킨텍스 전시홀 2 경기 고양시",
+        "venueId": "venue_홍대프리즘홀_14dbnh5",
+        "officialName": "홍대 프리즘홀",
+        "address": "서울 마포구 양화로12길 6",
+        "query": "홍대 프리즘홀 서울 마포구",
         "priority": 8,
         "performanceCount": 1,
         "reviewFlags": [
-          "alias_merge_candidate",
           "needs_official_place_lookup"
         ],
         "sampleTitles": [
-          "2026 우리쌀·우리술 K-라이스 페스타"
+          "KOLAVO & TONARI 합동공연 ‘ㅅㅏㄹㅁ’"
         ]
       }
     ],

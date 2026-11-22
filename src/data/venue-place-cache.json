@@ -5378,23 +5378,6 @@
     "query": "마포아트센터 서울 마포구",
     "reason": "name=0.60, address=0.88, distance=7m"
   },
-  "venue_목동종합운동장_1soyf9a": {
-    "venueId": "venue_목동종합운동장_1soyf9a",
-    "status": "matched",
-    "provider": "naver",
-    "providerPlaceId": "<b>목동종합운동장</b>:서울특별시 양천구 안양천로 939",
-    "officialName": "목동종합운동장",
-    "roadAddressName": "서울특별시 양천구 안양천로 939",
-    "addressName": "서울특별시 양천구 목동 914",
-    "lat": 37.530093,
-    "lng": 126.8818961,
-    "categoryName": "스포츠,오락>종합운동장",
-    "confidence": 1,
-    "matchedAt": "2026-05-14T00:08:23.381Z",
-    "checkedAt": "2026-05-14T00:08:23.381Z",
-    "query": "목동 종합 운동장 서울 양천구",
-    "reason": "name=1.00, address=1.00, distance=71m"
-  },
   "venue_의정부예술의전당_g6rtvx": {
     "venueId": "venue_의정부예술의전당_g6rtvx",
     "status": "needs_review",
@@ -5430,24 +5413,6 @@
     "checkedAt": "2026-05-14T00:08:23.381Z",
     "query": "이순신 종합운동장 충남 아산시",
     "reason": "name=1.00, address=0.00, distance=397m"
-  },
-  "venue_대구im뱅크park_1bbn447": {
-    "venueId": "venue_대구im뱅크park_1bbn447",
-    "status": "matched",
-    "provider": "naver",
-    "providerPlaceId": "https://www.daegufc.co.kr",
-    "officialName": "대구iM뱅크PARK",
-    "roadAddressName": "대구광역시 북구 고성로 191 대구iM뱅크PARK",
-    "addressName": "대구광역시 북구 고성동3가 2 대구iM뱅크PARK",
-    "lat": 35.8813234,
-    "lng": 128.5882585,
-    "url": "https://www.daegufc.co.kr",
-    "categoryName": "스포츠,오락>축구장",
-    "confidence": 0.8425,
-    "matchedAt": "2026-05-14T00:08:23.381Z",
-    "checkedAt": "2026-05-14T00:08:23.381Z",
-    "query": "대구iM뱅크PARK 대구 북구",
-    "reason": "name=1.00, address=0.55, distance=5m"
   },
   "venue_jcc아트센터_bmah3c": {
     "venueId": "venue_jcc아트센터_bmah3c",
@@ -5638,25 +5603,6 @@
     "query": "천안 종합 운동장 충남 천안시",
     "reason": "name=1.00, address=1.00, distance=552m"
   },
-  "venue_파주스타디움_80vh2j": {
-    "venueId": "venue_파주스타디움_80vh2j",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "19544210",
-    "officialName": "파주스타디움",
-    "roadAddressName": "경기 파주시 중앙로 160",
-    "addressName": "경기 파주시 금릉동 186-5",
-    "lat": 37.7561525640414,
-    "lng": 126.785603115115,
-    "phone": "031-950-5235",
-    "url": "http://place.map.kakao.com/19544210",
-    "categoryName": "스포츠,레저 > 스포츠시설 > 운동장 > 종합운동장",
-    "confidence": 0.9175,
-    "matchedAt": "2026-05-14T01:03:57.672Z",
-    "checkedAt": "2026-05-14T01:03:57.672Z",
-    "query": "파주 스타디움 경기 파주시",
-    "reason": "name=1.00, address=1.00, distance=527m"
-  },
   "venue_평택아트센터_ff2wq0": {
     "venueId": "venue_평택아트센터_ff2wq0",
     "status": "matched",
@@ -5721,24 +5667,6 @@
     "checkedAt": "2026-05-14T01:03:57.672Z",
     "query": "경복궁 서울 종로구",
     "reason": "name=1.00, address=1.00, distance=239m"
-  },
-  "venue_김천종합운동장_1k4yaes": {
-    "venueId": "venue_김천종합운동장_1k4yaes",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "8193014",
-    "officialName": "김천종합운동장",
-    "roadAddressName": "경북 김천시 운동장길 1",
-    "addressName": "경북 김천시 삼락동 488-1",
-    "lat": 36.1396766159308,
-    "lng": 128.086424362976,
-    "url": "http://place.map.kakao.com/8193014",
-    "categoryName": "스포츠,레저 > 스포츠시설 > 운동장 > 종합운동장",
-    "confidence": 0.9175,
-    "matchedAt": "2026-05-14T01:03:57.672Z",
-    "checkedAt": "2026-05-14T01:03:57.672Z",
-    "query": "김천 종합 운동장 경북 김천시",
-    "reason": "name=1.00, address=1.00, distance=381m"
   },
   "venue_부산_6iub32": {
     "venueId": "venue_부산_6iub32",
@@ -7595,15 +7523,6 @@
     "checkedAt": "2026-05-14T01:29:35.060Z",
     "query": "오방가르드 부산 남구",
     "reason": "name=1.00, address=0.88, distance=0m"
-  },
-  "venue_용인어린이상상의숲공연놀이터_97gsfo": {
-    "venueId": "venue_용인어린이상상의숲공연놀이터_97gsfo",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-05-14T01:29:35.060Z",
-    "query": "용인어린이상상의숲 공연놀이터 경기 용인시",
-    "reason": "no candidates returned"
   },
   "venue_우도잠수함_m4wnjy": {
     "venueId": "venue_우도잠수함_m4wnjy",
@@ -16694,7 +16613,7 @@
     "status": "needs_review",
     "confidence": 0,
     "matchedAt": "",
-    "checkedAt": "2026-11-22T16:28:08.457Z",
+    "checkedAt": "2026-11-22T20:28:17.464Z",
     "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
     "reason": "Kakao local search failed: 400 Bad Request"
   },
@@ -16820,7 +16739,7 @@
     "status": "needs_review",
     "confidence": 0,
     "matchedAt": "",
-    "checkedAt": "2026-11-22T16:28:08.457Z",
+    "checkedAt": "2026-11-22T20:28:17.464Z",
     "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
     "reason": "Kakao local search failed: 400 Bad Request"
   },
@@ -18495,15 +18414,6 @@
     "query": "밀양혜산서원 지역교류 경남 창원시",
     "reason": "no candidates returned"
   },
-  "venue_점필재종택도연재_wthqet": {
-    "venueId": "venue_점필재종택도연재_wthqet",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-10-27T05:21:57.108Z",
-    "query": "점필재종택 , 도연재 경북 고령군",
-    "reason": "no candidates returned"
-  },
   "venue_홍범식고가청년창작소오롯_iul6zj": {
     "venueId": "venue_홍범식고가청년창작소오롯_iul6zj",
     "status": "not_found",
@@ -18602,24 +18512,6 @@
     "checkedAt": "2026-10-27T05:21:57.108Z",
     "query": "이병기생가,가람문학관 전북 익산시",
     "reason": "no candidates returned"
-  },
-  "venue_정읍김명관고택_19yyh8l": {
-    "venueId": "venue_정읍김명관고택_19yyh8l",
-    "status": "needs_review",
-    "provider": "kakao",
-    "providerPlaceId": "10218605",
-    "officialName": "김명관고택",
-    "roadAddressName": "전북특별자치도 정읍시 산외면 공동길 66",
-    "addressName": "전북특별자치도 정읍시 산외면 오공리 814",
-    "lat": 35.61621413787044,
-    "lng": 127.01984469443606,
-    "url": "http://place.map.kakao.com/10218605",
-    "categoryName": "여행 > 관광,명소 > 문화유적 > 생가,고택",
-    "confidence": 0.6651,
-    "matchedAt": "",
-    "checkedAt": "2026-10-27T05:21:57.108Z",
-    "query": "정읍 김명관 고택 전북 정읍시",
-    "reason": "name=0.71, address=0.88, distance=unknown"
   },
   "venue_ncs산업현장교수_ta9hlr": {
     "venueId": "venue_ncs산업현장교수_ta9hlr",
@@ -18728,15 +18620,6 @@
     "checkedAt": "2026-11-16T11:16:50.796Z",
     "query": "이상재 선생 생가지 충청남도 서천군",
     "reason": "name=0.88, address=0.00, distance=unknown"
-  },
-  "venue_익산구삼산의원일원익산솜리근대역사문화공간익산구춘포역사_1cd1a25": {
-    "venueId": "venue_익산구삼산의원일원익산솜리근대역사문화공간익산구춘포역사_1cd1a25",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-16T11:16:50.796Z",
-    "query": "익산 구삼산의원 일원, 익산솜리근대역사문화공간, 익산 구 춘포역사 전북 익산시",
-    "reason": "no candidates returned"
   },
   "venue_촐파크_ni2ya7": {
     "venueId": "venue_촐파크_ni2ya7",
@@ -19010,15 +18893,6 @@
     "matchedAt": "",
     "checkedAt": "2026-11-16T11:16:50.796Z",
     "query": "NOL 씨어터 합정 ABL생명홀 etc nol",
-    "reason": "no candidates returned"
-  },
-  "venue_setec제3전시관_t4qff8": {
-    "venueId": "venue_setec제3전시관_t4qff8",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-16T11:16:50.796Z",
-    "query": "SETEC 제 3전시관 etc setec",
     "reason": "no candidates returned"
   },
   "venue_가202호_1bo1b0q": {
@@ -19910,15 +19784,6 @@
     "checkedAt": "2026-11-16T11:16:50.796Z",
     "query": "어댑터씨어터 어댑터씨어터 1관",
     "reason": "name=0.75, address=0.00, distance=0m"
-  },
-  "venue_송도컨벤시아234홀_13q9v57": {
-    "venueId": "venue_송도컨벤시아234홀_13q9v57",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-16T11:16:50.796Z",
-    "query": "송도컨벤시아 2,3,4홀 송도컨벤시아 2,3,4홀",
-    "reason": "no candidates returned"
   },
   "venue_송도컨벤시아4홀_13q9v57": {
     "venueId": "venue_송도컨벤시아4홀_13q9v57",
@@ -22290,25 +22155,6 @@
     "query": "서울새활용플라자 1층 새활용하우스 서울 성동구",
     "reason": "no candidates returned"
   },
-  "venue_md_jny02c": {
-    "venueId": "venue_md_jny02c",
-    "status": "needs_review",
-    "provider": "kakao",
-    "providerPlaceId": "2024399193",
-    "officialName": "허준원MD피부과의원",
-    "roadAddressName": "서울 강남구 언주로174길 26",
-    "addressName": "서울 강남구 신사동 640-1",
-    "lat": 37.52796781691092,
-    "lng": 127.03585373898547,
-    "phone": "02-518-0382",
-    "url": "http://place.map.kakao.com/2024399193",
-    "categoryName": "의료,건강 > 병원 > 피부과",
-    "confidence": 0.1,
-    "matchedAt": "",
-    "checkedAt": "2026-11-16T14:14:05.100Z",
-    "query": "MD seoul md",
-    "reason": "name=0.20, address=0.00, distance=unknown"
-  },
   "venue_apec기념공원_br3d65": {
     "venueId": "venue_apec기념공원_br3d65",
     "status": "needs_review",
@@ -23337,15 +23183,6 @@
     "query": "파주운정행복센터 seoul 파주운정행복센터",
     "reason": "no candidates returned"
   },
-  "venue_dcc대전컨벤션센터제2전시장_traz8k": {
-    "venueId": "venue_dcc대전컨벤션센터제2전시장_traz8k",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-16T14:14:05.100Z",
-    "query": "DCC 대전컨벤션센터 제2전시장 seoul dcc",
-    "reason": "no candidates returned"
-  },
   "venue_dcc대전컨벤션센터제2전시장34홀_zbge9r": {
     "venueId": "venue_dcc대전컨벤션센터제2전시장34홀_zbge9r",
     "status": "not_found",
@@ -23516,15 +23353,6 @@
     "matchedAt": "",
     "checkedAt": "2026-11-16T14:14:05.100Z",
     "query": "오죽헌 정문 입구 매표소 오죽헌 정문",
-    "reason": "no candidates returned"
-  },
-  "venue_용인문예회관처인홀_qc5xx4": {
-    "venueId": "venue_용인문예회관처인홀_qc5xx4",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-16T14:14:05.100Z",
-    "query": "용인문예회관 처인홀 seoul 용인문예회관",
     "reason": "no candidates returned"
   },
   "venue_이호갤러리_na22yd": {
@@ -24790,25 +24618,6 @@
     "query": "김해 장유문화센터 경남 김해시",
     "reason": "name=0.75, address=0.55, distance=3020m"
   },
-  "venue_남산골한옥마을_1984hlb": {
-    "venueId": "venue_남산골한옥마을_1984hlb",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "8246127",
-    "officialName": "남산골한옥마을",
-    "roadAddressName": "서울 중구 퇴계로34길 28",
-    "addressName": "서울 중구 필동2가 84-1",
-    "lat": 37.55954236008625,
-    "lng": 126.99473828260912,
-    "phone": "02-6358-5533",
-    "url": "http://place.map.kakao.com/8246127",
-    "categoryName": "여행 > 관광,명소",
-    "confidence": 1,
-    "matchedAt": "2026-11-16T14:14:05.100Z",
-    "checkedAt": "2026-11-16T14:14:05.100Z",
-    "query": "남산골한옥마을 서울 중구",
-    "reason": "name=1.00, address=1.00, distance=37m"
-  },
   "venue_라율아트홀_1gkwq50": {
     "venueId": "venue_라율아트홀_1gkwq50",
     "status": "matched",
@@ -24882,24 +24691,6 @@
     "checkedAt": "2026-11-16T14:14:05.100Z",
     "query": "베리어스 재즈클럽 대구 수성구",
     "reason": "name=1.00, address=0.88, distance=4m"
-  },
-  "venue_북극곰소극장_1b0jmhq": {
-    "venueId": "venue_북극곰소극장_1b0jmhq",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "2029791167",
-    "officialName": "북극곰소극장",
-    "roadAddressName": "서울 종로구 이화장1길 24",
-    "addressName": "서울 종로구 이화동 28-18",
-    "lat": 37.5773874578338,
-    "lng": 127.005737308302,
-    "url": "http://place.map.kakao.com/2029791167",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 1,
-    "matchedAt": "2026-11-16T14:14:05.100Z",
-    "checkedAt": "2026-11-16T14:14:05.100Z",
-    "query": "북극곰소극장 서울 종로구",
-    "reason": "name=1.00, address=1.00, distance=0m"
   },
   "venue_서울갤러리지하1층공연장_xq5dqd": {
     "venueId": "venue_서울갤러리지하1층공연장_xq5dqd",
@@ -27013,24 +26804,6 @@
     "query": "킨텍스 전시홀 7 , 전시홀 8 경기 고양시",
     "reason": "no candidates returned"
   },
-  "venue_파주시민회관_gdv2mm": {
-    "venueId": "venue_파주시민회관_gdv2mm",
-    "status": "matched",
-    "provider": "naver",
-    "providerPlaceId": "https://www.pajucf.or.kr/",
-    "officialName": "파주시민회관",
-    "roadAddressName": "경기도 파주시 시민회관길 33",
-    "addressName": "경기도 파주시 금촌동 927",
-    "lat": 37.7592754,
-    "lng": 126.7806727,
-    "url": "https://www.pajucf.or.kr/",
-    "categoryName": "공공,사회기관>시민회관",
-    "confidence": 1,
-    "matchedAt": "2026-11-16T14:14:05.100Z",
-    "checkedAt": "2026-11-16T14:14:05.100Z",
-    "query": "파주시민회관 경기 파주시",
-    "reason": "name=1.00, address=1.00, distance=29m"
-  },
   "venue_평택남부문화예술회관_hd3a2s": {
     "venueId": "venue_평택남부문화예술회관_hd3a2s",
     "status": "matched",
@@ -27828,25 +27601,6 @@
     "checkedAt": "2026-11-16T16:31:39.780Z",
     "query": "피오레아트앤엔터 피오레움 서울 서초구",
     "reason": "no candidates returned"
-  },
-  "venue_국립과천과학관_wel45n": {
-    "venueId": "venue_국립과천과학관_wel45n",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "11374610",
-    "officialName": "국립과천과학관",
-    "roadAddressName": "경기 과천시 상하벌로 110",
-    "addressName": "경기 과천시 과천동 758",
-    "lat": 37.4380767714393,
-    "lng": 127.00584756243433,
-    "phone": "02-3677-1500",
-    "url": "http://place.map.kakao.com/11374610",
-    "categoryName": "문화,예술 > 문화시설 > 과학관",
-    "confidence": 0.967,
-    "matchedAt": "2026-11-16T16:31:39.780Z",
-    "checkedAt": "2026-11-16T16:31:39.780Z",
-    "query": "국립과천과학관 경기 과천시",
-    "reason": "name=1.00, address=1.00, distance=110m"
   },
   "venue_군포문화예술회관_1uh12rx": {
     "venueId": "venue_군포문화예술회관_1uh12rx",
@@ -35624,25 +35378,6 @@
     "query": "계룡산국립공원박물관 대전 유성구",
     "reason": "name=1.00, address=1.00, distance=1m"
   },
-  "venue_계양문화회관_18uzmb9": {
-    "venueId": "venue_계양문화회관_18uzmb9",
-    "status": "needs_review",
-    "provider": "kakao",
-    "providerPlaceId": "10169429",
-    "officialName": "계양문화회관",
-    "roadAddressName": "인천 계양구 계양산로35번길 11",
-    "addressName": "인천 계양구 계산동 724",
-    "lat": 37.54609118725516,
-    "lng": 126.71815464374623,
-    "phone": "032-551-6602",
-    "url": "http://place.map.kakao.com/10169429",
-    "categoryName": "문화,예술 > 문화시설",
-    "confidence": 0.5,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T10:54:49.202Z",
-    "query": "계양문화회관 인천 서구",
-    "reason": "name=1.00, address=0.00, distance=4749m"
-  },
   "venue_고남패총박물관_fsbsao": {
     "venueId": "venue_고남패총박물관_fsbsao",
     "status": "matched",
@@ -36112,25 +35847,6 @@
     "checkedAt": "2026-11-19T10:54:49.202Z",
     "query": "광야아트센터 서울 강남구",
     "reason": "name=1.00, address=1.00, distance=0m"
-  },
-  "venue_광운대학교동해문화예술관_r9husn": {
-    "venueId": "venue_광운대학교동해문화예술관_r9husn",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "17564275",
-    "officialName": "광운대학교 동해문화예술관",
-    "roadAddressName": "서울 노원구 광운로 21",
-    "addressName": "서울 노원구 월계동 466",
-    "lat": 37.6198462676801,
-    "lng": 127.057577863828,
-    "phone": "02-940-8614",
-    "url": "http://place.map.kakao.com/17564275",
-    "categoryName": "교육,학문 > 학교부속시설",
-    "confidence": 1,
-    "matchedAt": "2026-11-19T10:54:49.202Z",
-    "checkedAt": "2026-11-19T10:54:49.202Z",
-    "query": "광운대학교 동해문화예술관 서울 노원구",
-    "reason": "name=1.00, address=1.00, distance=2m"
   },
   "venue_광주아쿠아시티_0iukqt": {
     "venueId": "venue_광주아쿠아시티_0iukqt",
@@ -37552,24 +37268,6 @@
     "query": "Baby Doll 베이비돌) 서울 서대문구",
     "reason": "name=0.31, address=0.88, distance=0m"
   },
-  "venue_cn갤러리_bp7ia8": {
-    "venueId": "venue_cn갤러리_bp7ia8",
-    "status": "matched",
-    "provider": "naver",
-    "providerPlaceId": "http://cngallery.kr",
-    "officialName": "CN갤러리",
-    "roadAddressName": "서울특별시 종로구 북촌로5길 56-7 CN갤러리",
-    "addressName": "서울특별시 종로구 소격동 117-1 CN갤러리",
-    "lat": 37.5800398,
-    "lng": 126.9820064,
-    "url": "http://cngallery.kr",
-    "categoryName": "문화,예술>갤러리,화랑",
-    "confidence": 1,
-    "matchedAt": "2026-11-19T14:22:00.795Z",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "CN갤러리 서울 종로구",
-    "reason": "name=1.00, address=1.00, distance=6m"
-  },
   "venue_hall1_p0qycv": {
     "venueId": "venue_hall1_p0qycv",
     "status": "matched",
@@ -37800,25 +37498,6 @@
     "checkedAt": "2026-11-19T14:22:00.795Z",
     "query": "그라운드시소 센트럴 서울 중구",
     "reason": "name=1.00, address=0.55, distance=19m"
-  },
-  "venue_그라운드시소한남_ph34pc": {
-    "venueId": "venue_그라운드시소한남_ph34pc",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "1587008231",
-    "officialName": "그라운드시소 한남",
-    "roadAddressName": "서울 용산구 한남대로 91",
-    "addressName": "서울 용산구 한남동 829",
-    "lat": 37.536282184787105,
-    "lng": 127.00504058254334,
-    "phone": "02-1522-1796",
-    "url": "http://place.map.kakao.com/1587008231",
-    "categoryName": "문화,예술 > 문화시설 > 전시관",
-    "confidence": 1,
-    "matchedAt": "2026-11-19T14:22:00.795Z",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "그라운드시소 한남 서울 용산구",
-    "reason": "name=1.00, address=1.00, distance=3m"
   },
   "venue_그랜드워커힐서울비스타워커힐서울_1picd3": {
     "venueId": "venue_그랜드워커힐서울비스타워커힐서울_1picd3",
@@ -38219,15 +37898,6 @@
     "query": "기지시줄다리기박물관 충청남도 당진시",
     "reason": "name=0.77, address=0.88, distance=33m"
   },
-  "venue_김근태기념도서관3층기억곳3_14yl7uo": {
-    "venueId": "venue_김근태기념도서관3층기억곳3_14yl7uo",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "김근태기념도서관 3층 기억곳3 서울 도봉구",
-    "reason": "no candidates returned"
-  },
   "venue_김녕미로공원_1snf1cc": {
     "venueId": "venue_김녕미로공원_1snf1cc",
     "status": "matched",
@@ -38514,25 +38184,6 @@
     "checkedAt": "2026-11-19T14:22:00.795Z",
     "query": "김해성냥전시관 경남 김해시",
     "reason": "name=1.00, address=0.88, distance=3m"
-  },
-  "venue_까페비미_wiefjf": {
-    "venueId": "venue_까페비미_wiefjf",
-    "status": "needs_review",
-    "provider": "kakao",
-    "providerPlaceId": "530433572",
-    "officialName": "비미",
-    "roadAddressName": "전북특별자치도 전주시 완산구 전라감영5길 12",
-    "addressName": "전북특별자치도 전주시 완산구 경원동1가 104-21",
-    "lat": 35.8167676450932,
-    "lng": 127.14658660637,
-    "phone": "070-8666-7787",
-    "url": "http://place.map.kakao.com/530433572",
-    "categoryName": "음식점 > 카페",
-    "confidence": 0.708,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "까페 비미 전북 전주시",
-    "reason": "name=0.50, address=0.88, distance=0m"
   },
   "venue_꿀벌나라테마공원_1vv93uw": {
     "venueId": "venue_꿀벌나라테마공원_1vv93uw",
@@ -42187,25 +41838,6 @@
     "query": "문기타, 문씨어터 경남 진주시",
     "reason": "name=0.86, address=0.88, distance=11m"
   },
-  "venue_문래예술공장m30_f5k904": {
-    "venueId": "venue_문래예술공장m30_f5k904",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "1966730465",
-    "officialName": "문래예술공장 갤러리M30",
-    "roadAddressName": "서울 영등포구 경인로88길 5-4",
-    "addressName": "서울 영등포구 문래동1가 30",
-    "lat": 37.5132167552833,
-    "lng": 126.900125402224,
-    "phone": "02-2676-4300",
-    "url": "http://place.map.kakao.com/1966730465",
-    "categoryName": "문화,예술 > 문화시설",
-    "confidence": 0.875,
-    "matchedAt": "2026-11-19T14:22:00.795Z",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "문래예술공장 M30 서울 영등포구",
-    "reason": "name=0.75, address=1.00, distance=0m"
-  },
   "venue_문래창작소극장_1hre0vs": {
     "venueId": "venue_문래창작소극장_1hre0vs",
     "status": "matched",
@@ -43146,15 +42778,6 @@
     "query": "베토벤하우스 인천 영종구",
     "reason": "name=1.00, address=0.55, distance=25m"
   },
-  "venue_벡스코벡스코전관_lxnn06": {
-    "venueId": "venue_벡스코벡스코전관_lxnn06",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "벡스코 벡스코 전관 부산 해운대구",
-    "reason": "no candidates returned"
-  },
   "venue_벡스코상상체험키즈월드_1ji31c3": {
     "venueId": "venue_벡스코상상체험키즈월드_1ji31c3",
     "status": "matched",
@@ -43577,25 +43200,6 @@
     "checkedAt": "2026-11-19T16:29:33.864Z",
     "query": "봉수산 곤충생태관 충청남도 예산군",
     "reason": "name=0.80, address=0.00, distance=116m"
-  },
-  "venue_봉화산옹기문화마당_glqn73": {
-    "venueId": "venue_봉화산옹기문화마당_glqn73",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "308389318",
-    "officialName": "봉화산옹기문화마당",
-    "roadAddressName": "서울 중랑구 신내로21길 115-1",
-    "addressName": "서울 중랑구 신내동 779-6",
-    "lat": 37.61274736976604,
-    "lng": 127.08942226638506,
-    "phone": "02-3407-6546",
-    "url": "http://place.map.kakao.com/308389318",
-    "categoryName": "여행 > 관광,명소 > 테마파크",
-    "confidence": 0.78,
-    "matchedAt": "2026-11-19T16:29:33.864Z",
-    "checkedAt": "2026-11-19T16:29:33.864Z",
-    "query": "봉화산 옹기문화마당 서울 중랑구",
-    "reason": "name=1.00, address=0.55, distance=1615m"
   },
   "venue_부산강서구명지오션시티10로114114동108gh2층비이스튜_1tutmxw": {
     "venueId": "venue_부산강서구명지오션시티10로114114동108gh2층비이스튜_1tutmxw",
@@ -44338,24 +43942,6 @@
     "checkedAt": "2026-11-19T16:29:33.864Z",
     "query": "북촌 3호선 안국역 4번 출구 앞 집결 서울 종로구",
     "reason": "no candidates returned"
-  },
-  "venue_북촌나래홀_4dxpne": {
-    "venueId": "venue_북촌나래홀_4dxpne",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "534290752",
-    "officialName": "북촌나래홀",
-    "roadAddressName": "서울 종로구 창덕궁길 29-38",
-    "addressName": "서울 종로구 원서동 174",
-    "lat": 37.5788394333206,
-    "lng": 126.988434593589,
-    "url": "http://place.map.kakao.com/534290752",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-19T16:29:33.864Z",
-    "checkedAt": "2026-11-19T16:29:33.864Z",
-    "query": "북촌나래홀 서울 종로구",
-    "reason": "name=1.00, address=0.88, distance=0m"
   },
   "venue_북촌동양문화박물관_1fcui96": {
     "venueId": "venue_북촌동양문화박물관_1fcui96",
@@ -45978,24 +45564,6 @@
     "query": "서울기록원 2층 제2전시실 서울 은평구",
     "reason": "no candidates returned"
   },
-  "venue_서울대학교미술관23층_6haa66": {
-    "venueId": "venue_서울대학교미술관23층_6haa66",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T16:29:33.864Z",
-    "query": "서울대학교미술관 2-3층 서울 관악구",
-    "reason": "no candidates returned"
-  },
-  "venue_서울대학교미술관코어라운지렉처홀_6haa66": {
-    "venueId": "venue_서울대학교미술관코어라운지렉처홀_6haa66",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T16:29:33.864Z",
-    "query": "서울대학교미술관 코어라운지 렉처홀 서울 관악구",
-    "reason": "no candidates returned"
-  },
   "venue_서울대학교병원의학박물관_1eoxozb": {
     "venueId": "venue_서울대학교병원의학박물관_1eoxozb",
     "status": "matched",
@@ -46561,15 +46129,6 @@
     "matchedAt": "",
     "checkedAt": "2026-11-19T20:29:53.626Z",
     "query": "서울우리소리박물관 기획전시실 서울 종로구",
-    "reason": "no candidates returned"
-  },
-  "venue_서울우리소리박물관누마루_1i9dcmm": {
-    "venueId": "venue_서울우리소리박물관누마루_1i9dcmm",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T20:29:53.626Z",
-    "query": "서울우리소리박물관 누마루 서울 종로구",
     "reason": "no candidates returned"
   },
   "venue_서울창포원일대_1wcgzgg": {
@@ -47889,25 +47448,6 @@
     "query": "성남아트리움 경기 성남시",
     "reason": "name=1.00, address=0.88, distance=52m"
   },
-  "venue_성동구립도서관_11ev9rq": {
-    "venueId": "venue_성동구립도서관_11ev9rq",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "7948270",
-    "officialName": "성동구립도서관",
-    "roadAddressName": "서울 성동구 고산자로10길 9",
-    "addressName": "서울 성동구 행당동 142-4",
-    "lat": 37.55918951636491,
-    "lng": 127.03496099832289,
-    "phone": "02-2204-6420",
-    "url": "http://place.map.kakao.com/7948270",
-    "categoryName": "교육,학문 > 학습시설 > 도서관 > 국공립도서관",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-19T20:29:53.626Z",
-    "checkedAt": "2026-11-19T20:29:53.626Z",
-    "query": "성동구립도서관 서울 성동구",
-    "reason": "name=1.00, address=0.88, distance=1m"
-  },
   "venue_성북근현대문학관_10jz78i": {
     "venueId": "venue_성북근현대문학관_10jz78i",
     "status": "matched",
@@ -47926,24 +47466,6 @@
     "checkedAt": "2026-11-19T20:29:53.626Z",
     "query": "성북근현대문학관 서울 성북구",
     "reason": "name=1.00, address=1.00, distance=1m"
-  },
-  "venue_성북마을극장_zds0u6": {
-    "venueId": "venue_성북마을극장_zds0u6",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "26923931",
-    "officialName": "성북마을극장",
-    "roadAddressName": "서울 성북구 동소문로20다길 10",
-    "addressName": "서울 성북구 동선동1가 4-7",
-    "lat": 37.59164724225847,
-    "lng": 127.01735108210106,
-    "url": "http://place.map.kakao.com/26923931",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-19T20:29:53.626Z",
-    "checkedAt": "2026-11-19T20:29:53.626Z",
-    "query": "성북마을극장 서울 성북구",
-    "reason": "name=1.00, address=0.88, distance=0m"
   },
   "venue_성북어린이미술관꿈자람_isgy02": {
     "venueId": "venue_성북어린이미술관꿈자람_isgy02",
@@ -48305,25 +47827,6 @@
     "query": "센터 왕십리점 서울 성동구",
     "reason": "name=0.50, address=0.55, distance=213m"
   },
-  "venue_소극장고도_5375s0": {
-    "venueId": "venue_소극장고도_5375s0",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "1958286689",
-    "officialName": "소극장고도",
-    "roadAddressName": "대전 중구 중앙로112번길 13",
-    "addressName": "대전 중구 대흥동 490",
-    "lat": 36.3268444494996,
-    "lng": 127.422918188493,
-    "phone": "042-226-3861",
-    "url": "http://place.map.kakao.com/1958286689",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 1,
-    "matchedAt": "2026-11-19T20:29:53.626Z",
-    "checkedAt": "2026-11-19T20:29:53.626Z",
-    "query": "소극장 고도 대전 중구",
-    "reason": "name=1.00, address=1.00, distance=0m"
-  },
   "venue_소극장도어_1vqjyfa": {
     "venueId": "venue_소극장도어_1vqjyfa",
     "status": "matched",
@@ -48644,25 +48147,6 @@
     "checkedAt": "2026-11-19T20:29:53.626Z",
     "query": "소창체험관 인천 강화군",
     "reason": "name=1.00, address=1.00, distance=24m"
-  },
-  "venue_소태산홀_xmgl36": {
-    "venueId": "venue_소태산홀_xmgl36",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "805399069",
-    "officialName": "원불교 소태산홀",
-    "roadAddressName": "서울 동작구 현충로 75",
-    "addressName": "서울 동작구 흑석동 1-3",
-    "lat": 37.5097602546083,
-    "lng": 126.963851852025,
-    "phone": "02-815-3460",
-    "url": "http://place.map.kakao.com/805399069",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.7437,
-    "matchedAt": "2026-11-19T20:29:53.626Z",
-    "checkedAt": "2026-11-19T20:29:53.626Z",
-    "query": "소태산홀 서울 동작구",
-    "reason": "name=0.57, address=0.88, distance=1m"
   },
   "venue_속초시립박물관_1ywi3an": {
     "venueId": "venue_속초시립박물관_1ywi3an",
@@ -49264,15 +48748,6 @@
     "query": "스노우밸리 경기 성남시",
     "reason": "name=1.00, address=1.00, distance=0m"
   },
-  "venue_스몰프라이smallfry_1xfhbc4": {
-    "venueId": "venue_스몰프라이smallfry_1xfhbc4",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T09:53:15.188Z",
-    "query": "스몰프라이 SMALL FRY 서울 중구",
-    "reason": "no candidates returned"
-  },
   "venue_스미스평화관_mm1co1": {
     "venueId": "venue_스미스평화관_mm1co1",
     "status": "matched",
@@ -49366,15 +48841,6 @@
     "checkedAt": "2026-11-20T09:53:15.188Z",
     "query": "스퀘어 2층 52호 서울 서대문구",
     "reason": "name=0.00, address=0.00, distance=4253m"
-  },
-  "venue_스튜디오qda구춤공장_1j9qte4": {
-    "venueId": "venue_스튜디오qda구춤공장_1j9qte4",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T09:53:15.188Z",
-    "query": "스튜디오 QDA 구. 춤공장 서울 영등포구",
-    "reason": "no candidates returned"
   },
   "venue_스튜디오엔텐바흐studioentenbach_sp938t": {
     "venueId": "venue_스튜디오엔텐바흐studioentenbach_sp938t",
@@ -50325,25 +49791,6 @@
     "query": "아이올레인포레스트 제주시 구좌읍",
     "reason": "name=1.00, address=0.88, distance=2m"
   },
-  "venue_아이와함께크는나무어린이서점_18mbl6n": {
-    "venueId": "venue_아이와함께크는나무어린이서점_18mbl6n",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "2090243246",
-    "officialName": "아이와 함께 크는 나무 어린이서점",
-    "roadAddressName": "서울 강동구 양재대로89길 16",
-    "addressName": "서울 강동구 성내동 428-2",
-    "lat": 37.52688282322556,
-    "lng": 127.13469503633071,
-    "phone": "010-4567-4959",
-    "url": "http://place.map.kakao.com/2090243246",
-    "categoryName": "문화,예술 > 도서 > 서점",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-20T09:53:15.188Z",
-    "checkedAt": "2026-11-20T09:53:15.188Z",
-    "query": "아이와 함께 크는 나무 어린이 서점 서울 강동구",
-    "reason": "name=1.00, address=0.88, distance=0m"
-  },
   "venue_아이존팝_ms7760": {
     "venueId": "venue_아이존팝_ms7760",
     "status": "matched",
@@ -50557,23 +50004,6 @@
     "checkedAt": "2026-11-20T09:53:15.188Z",
     "query": "안내해 드려요~ 서울 관악구",
     "reason": "no candidates returned"
-  },
-  "venue_안단테음악학원_1locfoo": {
-    "venueId": "venue_안단테음악학원_1locfoo",
-    "status": "matched",
-    "provider": "naver",
-    "providerPlaceId": "<b>안단테음악학원</b>:충청북도 청주시 흥덕구 송화로108번길 30 202호",
-    "officialName": "안단테음악학원",
-    "roadAddressName": "충청북도 청주시 흥덕구 송화로108번길 30 202호",
-    "addressName": "충청북도 청주시 흥덕구 송절동 320-1 202호",
-    "lat": 36.6617405,
-    "lng": 127.4492674,
-    "categoryName": "학원 등 교습시설>음악교육",
-    "confidence": 0.8425,
-    "matchedAt": "2026-11-20T09:53:15.188Z",
-    "checkedAt": "2026-11-20T09:53:15.188Z",
-    "query": "안단테음악학원 충청북도 청주시",
-    "reason": "name=1.00, address=0.55, distance=13m"
   },
   "venue_안데르센극장_1ig1upp": {
     "venueId": "venue_안데르센극장_1ig1upp",
@@ -52142,25 +51572,6 @@
     "query": "영종역사관 인천 중구",
     "reason": "name=1.00, address=0.00, distance=0m"
   },
-  "venue_영주시민회관_1emill6": {
-    "venueId": "venue_영주시민회관_1emill6",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "8492869",
-    "officialName": "영주시민회관",
-    "roadAddressName": "경북 영주시 선비로 213",
-    "addressName": "경북 영주시 영주동 470-62",
-    "lat": 36.8231905584686,
-    "lng": 128.616942896572,
-    "phone": "054-634-3124",
-    "url": "http://place.map.kakao.com/8492869",
-    "categoryName": "사회,공공기관 > 지방행정기관 > 시,군,구민회관",
-    "confidence": 1,
-    "matchedAt": "2026-11-20T09:53:15.188Z",
-    "checkedAt": "2026-11-20T09:53:15.188Z",
-    "query": "영주시민회관 경북 영주시",
-    "reason": "name=1.00, address=1.00, distance=0m"
-  },
   "venue_영천메타버스체험관_qrahz7": {
     "venueId": "venue_영천메타버스체험관_qrahz7",
     "status": "matched",
@@ -52259,24 +51670,6 @@
     "checkedAt": "2026-11-20T09:53:15.188Z",
     "query": "예술나무씨어터 구. 상상나눔씨어터 서울 구로구",
     "reason": "no candidates returned"
-  },
-  "venue_예술마을그리다_16oowjd": {
-    "venueId": "venue_예술마을그리다_16oowjd",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "2046978346",
-    "officialName": "예술마을그리다",
-    "roadAddressName": "경기 남양주시 다산지금로 202",
-    "addressName": "경기 남양주시 다산동 6250",
-    "lat": 37.5956025029345,
-    "lng": 127.172260774428,
-    "url": "http://place.map.kakao.com/2046978346",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-20T09:53:15.188Z",
-    "checkedAt": "2026-11-20T09:53:15.188Z",
-    "query": "예술마을 그리다 경기 남양주시",
-    "reason": "name=1.00, address=0.88, distance=42m"
   },
   "venue_예술의전당ibk기업은행홀_1b2mfqb": {
     "venueId": "venue_예술의전당ibk기업은행홀_1b2mfqb",
@@ -52857,25 +52250,6 @@
     "query": "와부도서관 경기 남양주시",
     "reason": "name=1.00, address=1.00, distance=0m"
   },
-  "venue_와부읍주민자치센터_7ewlgu": {
-    "venueId": "venue_와부읍주민자치센터_7ewlgu",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "26443508",
-    "officialName": "와부읍주민자치센터",
-    "roadAddressName": "경기 남양주시 와부읍 월문천로 35",
-    "addressName": "경기 남양주시 와부읍 덕소리 117-1",
-    "lat": 37.5854662571142,
-    "lng": 127.217112746463,
-    "phone": "031-521-6801",
-    "url": "http://place.map.kakao.com/26443508",
-    "categoryName": "사회,공공기관 > 지방행정기관 > 행정복지센터 > 읍행정복지센터",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-20T14:15:52.441Z",
-    "checkedAt": "2026-11-20T14:15:52.441Z",
-    "query": "와부읍주민자치센터 경기 남양주시",
-    "reason": "name=1.00, address=0.88, distance=13m"
-  },
   "venue_와이아트갤러리_1s03kv3": {
     "venueId": "venue_와이아트갤러리_1s03kv3",
     "status": "matched",
@@ -53231,40 +52605,6 @@
     "checkedAt": "2026-11-20T14:15:52.441Z",
     "query": "우표박물관 서울 중구",
     "reason": "name=1.00, address=0.88, distance=28m"
-  },
-  "venue_운현궁기획전시실_1iiwv2k": {
-    "venueId": "venue_운현궁기획전시실_1iiwv2k",
-    "status": "needs_review",
-    "provider": "naver",
-    "providerPlaceId": "<b>운현궁기획전시실</b>장애인용화장실:서울특별시 종로구 운니동",
-    "officialName": "운현궁기획전시실장애인용화장실",
-    "addressName": "서울특별시 종로구 운니동",
-    "lat": 37.5762404,
-    "lng": 126.9866956,
-    "categoryName": "장애인편의시설",
-    "confidence": 0.6092,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T14:15:52.441Z",
-    "query": "운현궁 기획전시실 서울 종로구",
-    "reason": "name=0.53, address=0.55, distance=39m"
-  },
-  "venue_운현궁노락당_1iiwv2k": {
-    "venueId": "venue_운현궁노락당_1iiwv2k",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "8252251",
-    "officialName": "운현궁 노락당",
-    "roadAddressName": "서울 종로구 삼일대로 464",
-    "addressName": "서울 종로구 운니동 114-10",
-    "lat": 37.5760606599131,
-    "lng": 126.987389013347,
-    "url": "http://place.map.kakao.com/8252251",
-    "categoryName": "여행 > 관광,명소 > 문화유적",
-    "confidence": 1,
-    "matchedAt": "2026-11-20T14:15:52.441Z",
-    "checkedAt": "2026-11-20T14:15:52.441Z",
-    "query": "운현궁 노락당 서울 종로구",
-    "reason": "name=1.00, address=1.00, distance=27m"
   },
   "venue_운현궁일원_1iiwv2k": {
     "venueId": "venue_운현궁일원_1iiwv2k",
@@ -55230,25 +54570,6 @@
     "query": "전기박물관 서울 서초구",
     "reason": "name=1.00, address=1.00, distance=50m"
   },
-  "venue_전남광주통합특별시무안군_1n6ac50": {
-    "venueId": "venue_전남광주통합특별시무안군_1n6ac50",
-    "status": "needs_review",
-    "provider": "kakao",
-    "providerPlaceId": "15191202",
-    "officialName": "전남광주통합특별시 전남도서관",
-    "roadAddressName": "전남광주통합특별시 무안군 삼향읍 남악로 210",
-    "addressName": "전남광주통합특별시 무안군 삼향읍 남악리 2548",
-    "lat": 34.8049819194452,
-    "lng": 126.461470288977,
-    "phone": "061-288-5200",
-    "url": "http://place.map.kakao.com/15191202",
-    "categoryName": "교육,학문 > 학습시설 > 도서관 > 국공립도서관",
-    "confidence": 0.56,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T14:15:52.441Z",
-    "query": "전남광주통합특별시 무안군 전남광주통합특별시 무안군",
-    "reason": "name=0.60, address=0.55, distance=696m"
-  },
   "venue_전남광주통합특별시함평군_ezo7u0": {
     "venueId": "venue_전남광주통합특별시함평군_ezo7u0",
     "status": "needs_review",
@@ -55285,24 +54606,6 @@
     "checkedAt": "2026-11-20T14:15:52.441Z",
     "query": "전북예술회관 공연장 전북 전주시",
     "reason": "name=0.67, address=0.88, distance=11m"
-  },
-  "venue_전북특별자치도순창군_1er1rxh": {
-    "venueId": "venue_전북특별자치도순창군_1er1rxh",
-    "status": "needs_review",
-    "provider": "naver",
-    "providerPlaceId": "http://sftp.or.kr/",
-    "officialName": "순창발효테마파크",
-    "roadAddressName": "전북특별자치도 순창군 순창읍 장류로 55",
-    "addressName": "전북특별자치도 순창군 순창읍 백산리 1001",
-    "lat": 35.3678134,
-    "lng": 127.1123322,
-    "url": "http://sftp.or.kr/",
-    "categoryName": "여행,명소>테마파크",
-    "confidence": 0.4964,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T14:15:52.441Z",
-    "query": "전북특별자치도 순창군 전북 순창군",
-    "reason": "name=0.14, address=0.88, distance=105m"
   },
   "venue_전쟁과여성인권박물관_1sutyuk": {
     "venueId": "venue_전쟁과여성인권박물관_1sutyuk",
@@ -57608,15 +56911,6 @@
     "query": "청양목재문화자연사체험관 충남 청양군",
     "reason": "name=0.92, address=1.00, distance=5m"
   },
-  "venue_청와대사랑채2층_100hgx1": {
-    "venueId": "venue_청와대사랑채2층_100hgx1",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T14:15:52.441Z",
-    "query": "청와대 사랑채 2층 서울 종로구",
-    "reason": "no candidates returned"
-  },
   "venue_청주고인쇄박물관_1w6x7r4": {
     "venueId": "venue_청주고인쇄박물관_1w6x7r4",
     "status": "matched",
@@ -59056,24 +58350,6 @@
     "query": "서울 송파구 올림픽로 지하 265 서울 송파구",
     "reason": "name=0.21, address=0.55, distance=189m"
   },
-  "venue_서울송파구올림픽로지하265_신천동잠실역_1e7zm92": {
-    "venueId": "venue_서울송파구올림픽로지하265_신천동잠실역_1e7zm92",
-    "status": "needs_review",
-    "provider": "naver",
-    "providerPlaceId": "http://www.paris.co.kr/",
-    "officialName": "파리바게뜨 잠실역지하쇼핑센터점",
-    "roadAddressName": "서울특별시 송파구 올림픽로 265 잠실역지하쇼핑센터 C-13,14",
-    "addressName": "서울특별시 송파구 신천동 8 잠실역지하쇼핑센터 C-13,14",
-    "lat": 37.5134029,
-    "lng": 127.0999121,
-    "url": "http://www.paris.co.kr/",
-    "categoryName": "카페,디저트>베이커리",
-    "confidence": 0.3671,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T16:29:35.872Z",
-    "query": "서울 송파구 올림픽로 지하 265 서울 송파구",
-    "reason": "name=0.21, address=0.55, distance=389m"
-  },
   "venue_성동구성수이로_vt6ibf": {
     "venueId": "venue_성동구성수이로_vt6ibf",
     "status": "needs_review",
@@ -59091,25 +58367,6 @@
     "checkedAt": "2026-11-20T16:29:35.872Z",
     "query": "성동구 성수이로 서울 성동구",
     "reason": "name=0.23, address=0.55, distance=12m"
-  },
-  "venue_성동구연무장15길_x3kbgw": {
-    "venueId": "venue_성동구연무장15길_x3kbgw",
-    "status": "needs_review",
-    "provider": "kakao",
-    "providerPlaceId": "1983011078",
-    "officialName": "서울웹툰아카데미",
-    "roadAddressName": "서울 성동구 연무장15길 11",
-    "addressName": "서울 성동구 성수동2가 273-13",
-    "lat": 37.54273114130233,
-    "lng": 127.05937197153285,
-    "phone": "02-467-4040",
-    "url": "http://place.map.kakao.com/1983011078",
-    "categoryName": "교육,학문 > 교육단체 > 평생교육원,사회교육원",
-    "confidence": 0.5,
-    "matchedAt": "",
-    "checkedAt": "2026-11-20T16:29:35.872Z",
-    "query": "성동구 연무장15길 서울 성동구",
-    "reason": "name=0.00, address=1.00, distance=42m"
   },
   "venue_세실아트홀_sc39t7": {
     "venueId": "venue_세실아트홀_sc39t7",
@@ -59229,25 +58486,6 @@
     "checkedAt": "2026-11-20T16:29:35.872Z",
     "query": "일터 부산 동구",
     "reason": "name=0.40, address=0.88, distance=5m"
-  },
-  "venue_조이마루아트홀_ruxmpu": {
-    "venueId": "venue_조이마루아트홀_ruxmpu",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "1666667777",
-    "officialName": "골프존조이마루 아트홀",
-    "roadAddressName": "대전 유성구 엑스포로97번길 40",
-    "addressName": "대전 유성구 도룡동 4-20",
-    "lat": 36.3763437348149,
-    "lng": 127.39046597513,
-    "phone": "1544-1455",
-    "url": "http://place.map.kakao.com/1666667777",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.808,
-    "matchedAt": "2026-11-20T16:29:35.872Z",
-    "checkedAt": "2026-11-20T16:29:35.872Z",
-    "query": "조이마루아트홀 대전 유성구",
-    "reason": "name=0.70, address=0.88, distance=51m"
   },
   "venue_중구명동길_bq3tkx": {
     "venueId": "venue_중구명동길_bq3tkx",
@@ -60206,25 +59444,6 @@
     "checkedAt": "2026-11-20T16:29:35.872Z",
     "query": "편백포레스트 체험목장 제주 서귀포시",
     "reason": "name=0.60, address=0.88, distance=0m"
-  },
-  "venue_평내도서관_keupx8": {
-    "venueId": "venue_평내도서관_keupx8",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "12363474",
-    "officialName": "평내도서관",
-    "roadAddressName": "경기 남양주시 의안로 134",
-    "addressName": "경기 남양주시 평내동 605-1",
-    "lat": 37.6417970193425,
-    "lng": 127.238944836522,
-    "phone": "031-590-8562",
-    "url": "http://place.map.kakao.com/12363474",
-    "categoryName": "교육,학문 > 학습시설 > 도서관 > 국공립도서관",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-20T16:29:35.872Z",
-    "checkedAt": "2026-11-20T16:29:35.872Z",
-    "query": "평내도서관 경기 남양주시",
-    "reason": "name=1.00, address=0.88, distance=7m"
   },
   "venue_평창동일번지아트하우스_0atrzs": {
     "venueId": "venue_평창동일번지아트하우스_0atrzs",
@@ -62252,25 +61471,6 @@
     "query": "행복공방 제주 서귀포시",
     "reason": "name=1.00, address=1.00, distance=0m"
   },
-  "venue_허밋_1b6qo29": {
-    "venueId": "venue_허밋_1b6qo29",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "1333049180",
-    "officialName": "허밋",
-    "roadAddressName": "서울 마포구 양화로6길 27",
-    "addressName": "서울 마포구 서교동 394-19",
-    "lat": 37.5491743192572,
-    "lng": 126.915675947384,
-    "phone": "010-854-3541",
-    "url": "http://place.map.kakao.com/1333049180",
-    "categoryName": "음식점 > 술집 > 칵테일바",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-20T20:28:58.587Z",
-    "checkedAt": "2026-11-20T20:28:58.587Z",
-    "query": "허밋 서울 마포구",
-    "reason": "name=1.00, address=0.88, distance=0m"
-  },
   "venue_허준박물관_17qc59k": {
     "venueId": "venue_허준박물관_17qc59k",
     "status": "matched",
@@ -63324,25 +62524,6 @@
     "query": "철원군 화강문화센터 강원 철원군",
     "reason": "name=0.67, address=1.00, distance=87m"
   },
-  "venue_국립중앙박물관_175iv6w": {
-    "venueId": "venue_국립중앙박물관_175iv6w",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "8830150",
-    "officialName": "국립중앙박물관",
-    "roadAddressName": "서울 용산구 서빙고로 137",
-    "addressName": "서울 용산구 용산동6가 168-6",
-    "lat": 37.52392249364415,
-    "lng": 126.98018716127058,
-    "phone": "02-2077-9000",
-    "url": "http://place.map.kakao.com/8830150",
-    "categoryName": "문화,예술 > 문화시설 > 박물관",
-    "confidence": 1,
-    "matchedAt": "2026-11-21T20:28:53.915Z",
-    "checkedAt": "2026-11-21T20:28:53.915Z",
-    "query": "국립중앙박물관 서울 용산구",
-    "reason": "name=1.00, address=1.00, distance=25m"
-  },
   "venue_성남아트센터오페라하우스_3zh347": {
     "venueId": "venue_성남아트센터오페라하우스_3zh347",
     "status": "matched",
@@ -63447,44 +62628,6 @@
     "query": "서울 | 대학로단막극장 서울 종로구",
     "reason": "no candidates returned"
   },
-  "venue_서울소극장성북오름_ks2czs": {
-    "venueId": "venue_서울소극장성북오름_ks2czs",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "812715459",
-    "officialName": "소극장 성북오름",
-    "roadAddressName": "서울 성북구 동소문로13길 96",
-    "addressName": "서울 성북구 동소문동6가 28-1",
-    "lat": 37.5947119918852,
-    "lng": 127.013734005855,
-    "phone": "010-5081-7781",
-    "url": "http://place.map.kakao.com/812715459",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.8425,
-    "matchedAt": "2026-11-22T08:31:05.870Z",
-    "checkedAt": "2026-11-22T08:31:05.870Z",
-    "query": "소극장 성북오름 서울 성북구",
-    "reason": "name=1.00, address=0.55, distance=2m"
-  },
-  "venue_대구소극장함세상_f8vtsj": {
-    "venueId": "venue_대구소극장함세상_f8vtsj",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "147370404",
-    "officialName": "소극장 함세상",
-    "roadAddressName": "대구 남구 명덕로 98-2",
-    "addressName": "대구 남구 대명동 2133-60",
-    "lat": 35.856801883675594,
-    "lng": 128.58083075198962,
-    "phone": "053-625-8251",
-    "url": "http://place.map.kakao.com/147370404",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.8425,
-    "matchedAt": "2026-11-22T08:31:05.870Z",
-    "checkedAt": "2026-11-22T08:31:05.870Z",
-    "query": "소극장 함세상 대구 남구",
-    "reason": "name=1.00, address=0.55, distance=20m"
-  },
   "venue_아쿠아플라넷광교_17of4gb": {
     "venueId": "venue_아쿠아플라넷광교_17of4gb",
     "status": "matched",
@@ -63541,24 +62684,6 @@
     "checkedAt": "2026-11-22T08:31:05.870Z",
     "query": "강원 | 강릉아트센터 사임당홀 강원 강릉시",
     "reason": "name=0.71, address=1.00, distance=66m"
-  },
-  "venue_경기반석아트홀동탄복합문화센터_1wxr8jb": {
-    "venueId": "venue_경기반석아트홀동탄복합문화센터_1wxr8jb",
-    "status": "matched",
-    "provider": "naver",
-    "providerPlaceId": "http://art.hcf.or.kr/",
-    "officialName": "동탄복합문화센터반석아트홀",
-    "roadAddressName": "경기도 화성시 동탄구 노작로 134",
-    "addressName": "경기도 화성시 동탄구 반송동 108",
-    "lat": 37.2010131,
-    "lng": 127.0753342,
-    "url": "http://art.hcf.or.kr/",
-    "categoryName": "문화,예술>공연장",
-    "confidence": 1,
-    "matchedAt": "2026-11-22T08:31:05.870Z",
-    "checkedAt": "2026-11-22T08:31:05.870Z",
-    "query": "경기 | 반석아트홀 동탄복합문화센터 경기 화성시",
-    "reason": "name=1.00, address=1.00, distance=39m"
   },
   "venue_광주기분좋은극장_1wuilt2": {
     "venueId": "venue_광주기분좋은극장_1wuilt2",
@@ -63650,24 +62775,6 @@
     "query": "서울 | 명동대성당 파밀리아 채플 서울 중구",
     "reason": "name=1.00, address=1.00, distance=8m"
   },
-  "venue_서울북촌나래홀_1owtdb4": {
-    "venueId": "venue_서울북촌나래홀_1owtdb4",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "534290752",
-    "officialName": "북촌나래홀",
-    "roadAddressName": "서울 종로구 창덕궁길 29-38",
-    "addressName": "서울 종로구 원서동 174",
-    "lat": 37.5788394333206,
-    "lng": 126.988434593589,
-    "url": "http://place.map.kakao.com/534290752",
-    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
-    "confidence": 0.8425,
-    "matchedAt": "2026-11-22T08:31:05.870Z",
-    "checkedAt": "2026-11-22T08:31:05.870Z",
-    "query": "서울 | 북촌나래홀 서울 종로구",
-    "reason": "name=1.00, address=0.55, distance=2m"
-  },
   "venue_서울서강대메리홀_19qr97m": {
     "venueId": "venue_서울서강대메리홀_19qr97m",
     "status": "matched",
@@ -63705,5 +62812,94 @@
     "checkedAt": "2026-11-22T08:31:05.870Z",
     "query": "청주예술의전당 충북 청주예술의전당",
     "reason": "name=1.00, address=0.00, distance=41m"
+  },
+  "venue_북극곰소극장_1zket8": {
+    "venueId": "venue_북극곰소극장_1zket8",
+    "status": "matched",
+    "provider": "kakao",
+    "providerPlaceId": "2029791167",
+    "officialName": "북극곰소극장",
+    "roadAddressName": "서울 종로구 이화장1길 24",
+    "addressName": "서울 종로구 이화동 28-18",
+    "lat": 37.5773874578338,
+    "lng": 127.005737308302,
+    "url": "http://place.map.kakao.com/2029791167",
+    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
+    "confidence": 0.958,
+    "matchedAt": "2026-11-22T20:28:17.464Z",
+    "checkedAt": "2026-11-22T20:28:17.464Z",
+    "query": "북극곰소극장 서울 종로구",
+    "reason": "name=1.00, address=0.88, distance=3m"
+  },
+  "venue_국립과천과학관_1b8d60t": {
+    "venueId": "venue_국립과천과학관_1b8d60t",
+    "status": "matched",
+    "provider": "kakao",
+    "providerPlaceId": "11374610",
+    "officialName": "국립과천과학관",
+    "roadAddressName": "경기 과천시 상하벌로 110",
+    "addressName": "경기 과천시 과천동 758",
+    "lat": 37.4380767714393,
+    "lng": 127.00584756243433,
+    "phone": "02-3677-1500",
+    "url": "http://place.map.kakao.com/11374610",
+    "categoryName": "문화,예술 > 문화시설 > 과학관",
+    "confidence": 0.958,
+    "matchedAt": "2026-11-22T20:28:17.464Z",
+    "checkedAt": "2026-11-22T20:28:17.464Z",
+    "query": "국립과천과학관 경기 과천시",
+    "reason": "name=1.00, address=0.88, distance=20m"
+  },
+  "venue_파주시민회관_1s2mnhk": {
+    "venueId": "venue_파주시민회관_1s2mnhk",
+    "status": "matched",
+    "provider": "naver",
+    "providerPlaceId": "https://www.pajucf.or.kr/",
+    "officialName": "파주시민회관",
+    "roadAddressName": "경기도 파주시 시민회관길 33",
+    "addressName": "경기도 파주시 금촌동 927",
+    "lat": 37.7592754,
+    "lng": 126.7806727,
+    "url": "https://www.pajucf.or.kr/",
+    "categoryName": "공공,사회기관>시민회관",
+    "confidence": 0.958,
+    "matchedAt": "2026-11-22T20:28:17.464Z",
+    "checkedAt": "2026-11-22T20:28:17.464Z",
+    "query": "파주시민회관 경기 파주시",
+    "reason": "name=1.00, address=0.88, distance=35m"
+  },
+  "venue_남산골한옥마을옥인동가옥_1984hlb": {
+    "venueId": "venue_남산골한옥마을옥인동가옥_1984hlb",
+    "status": "needs_review",
+    "provider": "naver",
+    "providerPlaceId": "<b>옥인동</b> 윤씨<b>가옥</b>:서울특별시 중구 퇴계로34길 28",
+    "officialName": "옥인동 윤씨가옥",
+    "roadAddressName": "서울특별시 중구 퇴계로34길 28",
+    "addressName": "서울특별시 중구 필동2가 84-1",
+    "lat": 37.5595066,
+    "lng": 126.9943521,
+    "categoryName": "여행,명소>기념관,생가",
+    "confidence": 0.6667,
+    "matchedAt": "",
+    "checkedAt": "2026-11-22T20:28:17.464Z",
+    "query": "남산골한옥마을 옥인동 가옥 서울 중구",
+    "reason": "name=0.33, address=1.00, distance=24m"
+  },
+  "venue_킨텍스전시홀2_1y52slt": {
+    "venueId": "venue_킨텍스전시홀2_1y52slt",
+    "status": "needs_review",
+    "provider": "naver",
+    "providerPlaceId": "<b>킨텍스</b>제2<b>전시</b>장7홀:경기도 고양시 일산서구 킨텍스로 217-59",
+    "officialName": "킨텍스제2전시장7홀",
+    "roadAddressName": "경기도 고양시 일산서구 킨텍스로 217-59",
+    "addressName": "경기도 고양시 일산서구 대화동 2700",
+    "lat": 37.664575,
+    "lng": 126.7429749,
+    "categoryName": "문화시설>부속시설",
+    "confidence": 0.61,
+    "matchedAt": "",
+    "checkedAt": "2026-11-22T20:28:17.464Z",
+    "query": "킨텍스 전시홀 2 경기 고양시",
+    "reason": "name=0.70, address=0.55, distance=685m"
   }
 }
