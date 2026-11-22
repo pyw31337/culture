@@ -1,37 +1,5 @@
 [
   {
-    "id": "kovo_20261121_블루팡스_vs_읏맨",
-    "title": "[배구] 블루팡스 vs 읏맨",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-21 14:00",
-    "venue": "대전충무체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "daejeon",
-    "genre": "volleyball",
-    "homeTeam": "블루팡스",
-    "awayTeam": "읏맨",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=1&league=201&round=1&homeTeam=1002&awayTeam=1008",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=37&season=023&league=201&gender=1"
-  },
-  {
-    "id": "kovo_20261121_SOOP_SOOPers_vs_레드스파크스",
-    "title": "[배구] SOOP SOOPers vs 레드스파크스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-21 16:00",
-    "venue": "숲 스타디움",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "etc",
-    "genre": "volleyball",
-    "homeTeam": "SOOP SOOPers",
-    "awayTeam": "레드스파크스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/soopers.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=2&league=201&round=1&homeTeam=2008&awayTeam=2003",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=38&season=023&league=201&gender=2"
-  },
-  {
     "id": "kovo_20261122_우리WON_vs_스타즈",
     "title": "[배구] 우리WON vs 스타즈",
     "image": "/images/volleyball_poster.png",

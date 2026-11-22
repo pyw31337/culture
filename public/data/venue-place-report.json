@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-11-22T00:30:40.506Z",
+  "checkedAt": "2026-11-22T05:36:05.808Z",
   "status": "warn",
-  "venueCount": 4243,
-  "matchedCount": 2328,
-  "highConfidenceMatchCount": 1779,
+  "venueCount": 4250,
+  "matchedCount": 2323,
+  "highConfidenceMatchCount": 1776,
   "needsReviewCount": 20,
-  "notFoundCount": 809,
-  "pendingLookupCount": 2,
-  "insufficientIdentityCount": 292,
+  "notFoundCount": 807,
+  "pendingLookupCount": 19,
+  "insufficientIdentityCount": 290,
   "lookupReady": true,
   "providersConfigured": [
     "kakao",
@@ -42,6 +42,274 @@
       ],
       "sampleTitles": [
         "스테인드글라스 썬캐쳐 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_세텍제1전시실_1an6vwa",
+      "officialName": "세텍 제1전시실",
+      "address": "서울 강남구 남부순환로 3104",
+      "query": "세텍 제1전시실 서울 강남구",
+      "priority": 64,
+      "performanceCount": 8,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "솜프리마켓",
+        "FWI 세계프로복싱 랭킹전",
+        "2027 대한민국 재테크박람회"
+      ]
+    },
+    {
+      "venueId": "venue_서울대학로단막극장_12ntwix",
+      "officialName": "서울 | 대학로단막극장",
+      "address": "서울 종로구 동숭4길 14",
+      "query": "서울 | 대학로단막극장 서울 종로구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "THE CELL: 더 셀",
+        "THE CELL: 더 셀 [대학로]"
+      ]
+    },
+    {
+      "venueId": "venue_서울소극장성북오름_ks2czs",
+      "officialName": "소극장 성북오름",
+      "address": "서울특별시 성북구 동소문로15길 49 (동소문동6가)",
+      "query": "소극장 성북오름 서울 성북구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "레이디 맥베스",
+        "레이디 맥베스"
+      ]
+    },
+    {
+      "venueId": "venue_대구소극장함세상_f8vtsj",
+      "officialName": "소극장 함세상",
+      "address": "대구광역시 남구 명덕로 98 - 2",
+      "query": "소극장 함세상 대구 남구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "가두극장 하차",
+        "가두극장 하차"
+      ]
+    },
+    {
+      "venueId": "venue_아쿠아플라넷광교_17of4gb",
+      "officialName": "아쿠아플라넷 광교",
+      "address": "경기 수원시 영통구 광교호수공원로 300",
+      "query": "아쿠아플라넷 광교 경기 수원시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "아쿠아플라넷 입장권(11/1~11/30)",
+        "아쿠아플라넷(광교)"
+      ]
+    },
+    {
+      "venueId": "venue_서울유니버설아트센터_13cu06f",
+      "officialName": "유니버설아트센터",
+      "address": "서울특별시 광진구 천호대로 664 (능동)",
+      "query": "유니버설아트센터 서울 광진구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "리틀엔젤스예술단 정기공연: HARMONY (하모니)",
+        "리틀엔젤스예술단 정기공연: HARMONY (하모니)"
+      ]
+    },
+    {
+      "venueId": "venue_강원강릉아트센터사임당홀_1nn67oi",
+      "officialName": "강원 | 강릉아트센터 사임당홀",
+      "address": "강원특별자치도 강릉시 종합운동장길 84",
+      "query": "강원 | 강릉아트센터 사임당홀 강원 강릉시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "임윤찬 피아노 리사이틀"
+      ]
+    },
+    {
+      "venueId": "venue_경기반석아트홀동탄복합문화센터_1wxr8jb",
+      "officialName": "경기 | 반석아트홀 동탄복합문화센터",
+      "address": "경기 화성시 동탄구 노작로 134",
+      "query": "경기 | 반석아트홀 동탄복합문화센터 경기 화성시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 꿈의 무용단 화성 정기공연: 춤의 정원"
+      ]
+    },
+    {
+      "venueId": "venue_광주기분좋은극장_1wuilt2",
+      "officialName": "광주 | 기분좋은극장",
+      "address": "전남광주통합특별시 서구 상무중앙로 90 (치평동)",
+      "query": "광주 | 기분좋은극장 전남광주통합특별시 서구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "어쩌다보니"
+      ]
+    },
+    {
+      "venueId": "venue_벡스코제1회의장213호_lxnn06",
+      "officialName": "벡스코 제1회의장 213호",
+      "address": "부산 해운대구 APEC로 55",
+      "query": "벡스코 제1회의장 213호 부산 해운대구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 iTEF 유학박람회"
+      ]
+    },
+    {
+      "venueId": "venue_복합문화지구누에_9gunuw",
+      "officialName": "복합문화지구 누에",
+      "address": "전북 복합문화지구 누에",
+      "query": "복합문화지구 누에 전북 복합문화지구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "김정윤 개인전 《연못의 모서리를 늘리는 방법》"
+      ]
+    },
+    {
+      "venueId": "venue_서울갤러리jj_rhwvle",
+      "officialName": "서울 | 갤러리JJ",
+      "address": "서울 강남구 압구정로30길 63",
+      "query": "서울 | 갤러리JJ 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수자 라인하르트: More Familiar and Much Stranger"
+      ]
+    },
+    {
+      "venueId": "venue_서울더서울라이티움g층전용관_b1oay2",
+      "officialName": "서울 | 더 서울라이티움 G층 전용관",
+      "address": "서울 성동구 서울숲2길 32-14",
+      "query": "서울 | 더 서울라이티움 G층 전용관 서울 성동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "아주아주 배고픈 애벌레 쇼"
+      ]
+    },
+    {
+      "venueId": "venue_서울명동대성당파밀리아채플_1c2u2g8",
+      "officialName": "서울 | 명동대성당 파밀리아 채플",
+      "address": "서울 중구 명동길 66",
+      "query": "서울 | 명동대성당 파밀리아 채플 서울 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "코리안 영 아티스트 시리즈 Ⅵ, 이재리 첼로 리사이틀"
+      ]
+    },
+    {
+      "venueId": "venue_서울북촌나래홀_1owtdb4",
+      "officialName": "서울 | 북촌나래홀",
+      "address": "서울특별시 종로구 창덕궁길 29 - 38",
+      "query": "서울 | 북촌나래홀 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "운명"
+      ]
+    },
+    {
+      "venueId": "venue_서울서강대메리홀_19qr97m",
+      "officialName": "서울 | 서강대 메리홀",
+      "address": "서울 마포구 백범로 35",
+      "query": "서울 | 서강대 메리홀 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "메테오"
+      ]
+    },
+    {
+      "venueId": "venue_청주예술의전당_1w0aatd",
+      "officialName": "청주예술의전당",
+      "address": "충북 청주예술의전당 대공연장",
+      "query": "청주예술의전당 충북 청주예술의전당",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "청주시립교향악단 <송년음악회-Finale 2026>"
       ]
     }
   ],
@@ -463,6 +731,23 @@
       ]
     },
     {
+      "venueId": "venue_광주서구_e869qk",
+      "officialName": "광주 서구",
+      "address": "광주광역시 서구 쌍촌동 1268 (내방동 152)",
+      "query": "광주 서구 광주 서구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 바다탐험대 옥토넛 시즌4 : 숨겨진 보물을 찾아라! - 광주 (26/11/21 ~ 26/11/22)",
+        "<뮤지컬> 카봇크루가 되어줘! - 광주 (26/12/12 ~ 26/12/13)",
+        "<연극> 라이어 3탄 - 광주 (26/12/22 ~ 26/12/27)"
+      ]
+    },
+    {
       "venueId": "venue_대구수성구_11hsvit",
       "officialName": "대구 수성구",
       "address": "대구광역시 수성구 동대구로 176(황금동) 대구어린이세상",
@@ -791,22 +1076,6 @@
       "sampleTitles": [
         "<축제> 운정호수공원 불꽃축제 (26/10/31 ~ 26/12/31)",
         "운정호수공원 불꽃축제"
-      ]
-    },
-    {
-      "venueId": "venue_광주서구_e869qk",
-      "officialName": "광주 서구",
-      "address": "광주광역시 서구 쌍촌동 1268 (내방동 152)",
-      "query": "광주 서구 광주 서구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 바다탐험대 옥토넛 시즌4 : 숨겨진 보물을 찾아라! - 광주 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> 카봇크루가 되어줘! - 광주 (26/12/12 ~ 26/12/13)"
       ]
     },
     {
@@ -1224,21 +1493,6 @@
       ],
       "sampleTitles": [
         "<뮤지컬> 슈퍼거북, 슈퍼 토끼 - 영월 (26/12/05)"
-      ]
-    },
-    {
-      "venueId": "venue_강원원주시_184ptp7",
-      "officialName": "강원 원주시",
-      "address": "강원특별자치도 원주시 혁신로 60",
-      "query": "강원 원주시 강원 원주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<행사> 2026 원주 미리 크리스마스(26/11/20 ~ 11/21)"
       ]
     },
     {
@@ -1769,21 +2023,6 @@
       ]
     },
     {
-      "venueId": "venue_경기오산시_1vt2d5l",
-      "officialName": "경기 오산시",
-      "address": "경기도 오산시 성호대로 141",
-      "query": "경기 오산시 경기 오산시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<행사> 2026 오산 겨울빛 누리마켓(26/11/20 ~ 11/21)"
-      ]
-    },
-    {
       "venueId": "venue_경기용인시_q65mtx",
       "officialName": "경기 용인시",
       "address": "경기도 용인시 기흥구 동백3로 79 용인시박물관 용인시박물관",
@@ -1982,6 +2221,36 @@
       "sampleTitles": [
         "<뮤지컬> 아기돼지삼형제 - 늑대숲 또옹돼지 원정대 - 평택 (26/12/12 ~ 26/12/13)"
       ]
+    },
+    {
+      "venueId": "venue_경기평택시_1pnmk75",
+      "officialName": "경기 평택시",
+      "address": "경기도 평택시 안중읍 서동대로 1531 평택서부문화예술회관 대공연장",
+      "query": "경기 평택시 경기 평택시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 엄마까투리 - 유치원도,도시도 처음이야! - 평택 (26/12/19 ~ 26/12/20)"
+      ]
+    },
+    {
+      "venueId": "venue_경기포천시_xynnlk",
+      "officialName": "경기 포천시",
+      "address": "경기도 포천시 신북면 아트밸리로 234 포천 아트밸리",
+      "query": "경기 포천시 경기 포천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "포천펫스타"
+      ]
     }
   ],
   "staleCacheCount": 0,
@@ -1991,7 +2260,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T00:30:19.237Z",
+      "checkedAt": "2026-11-22T05:34:08.098Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2000,7 +2269,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T00:30:19.237Z",
+      "checkedAt": "2026-11-22T05:34:08.098Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2332,15 +2601,15 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-22T00:30:40.506Z",
+    "checkedAt": "2026-11-22T05:36:05.808Z",
     "status": "warn",
-    "venueCount": 4243,
-    "matchedCount": 2328,
-    "highConfidenceMatchCount": 1779,
+    "venueCount": 4250,
+    "matchedCount": 2323,
+    "highConfidenceMatchCount": 1776,
     "needsReviewCount": 20,
-    "notFoundCount": 809,
-    "pendingLookupCount": 2,
-    "insufficientIdentityCount": 292,
+    "notFoundCount": 807,
+    "pendingLookupCount": 19,
+    "insufficientIdentityCount": 290,
     "lookupReady": true,
     "providersConfigured": [
       "kakao",
@@ -2376,6 +2645,139 @@
         ],
         "sampleTitles": [
           "스테인드글라스 썬캐쳐 만들기"
+        ]
+      },
+      {
+        "venueId": "venue_세텍제1전시실_1an6vwa",
+        "officialName": "세텍 제1전시실",
+        "address": "서울 강남구 남부순환로 3104",
+        "query": "세텍 제1전시실 서울 강남구",
+        "priority": 64,
+        "performanceCount": 8,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "솜프리마켓",
+          "FWI 세계프로복싱 랭킹전",
+          "2027 대한민국 재테크박람회"
+        ]
+      },
+      {
+        "venueId": "venue_서울대학로단막극장_12ntwix",
+        "officialName": "서울 | 대학로단막극장",
+        "address": "서울 종로구 동숭4길 14",
+        "query": "서울 | 대학로단막극장 서울 종로구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "THE CELL: 더 셀",
+          "THE CELL: 더 셀 [대학로]"
+        ]
+      },
+      {
+        "venueId": "venue_서울소극장성북오름_ks2czs",
+        "officialName": "소극장 성북오름",
+        "address": "서울특별시 성북구 동소문로15길 49 (동소문동6가)",
+        "query": "소극장 성북오름 서울 성북구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "레이디 맥베스",
+          "레이디 맥베스"
+        ]
+      },
+      {
+        "venueId": "venue_대구소극장함세상_f8vtsj",
+        "officialName": "소극장 함세상",
+        "address": "대구광역시 남구 명덕로 98 - 2",
+        "query": "소극장 함세상 대구 남구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "가두극장 하차",
+          "가두극장 하차"
+        ]
+      },
+      {
+        "venueId": "venue_아쿠아플라넷광교_17of4gb",
+        "officialName": "아쿠아플라넷 광교",
+        "address": "경기 수원시 영통구 광교호수공원로 300",
+        "query": "아쿠아플라넷 광교 경기 수원시",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "아쿠아플라넷 입장권(11/1~11/30)",
+          "아쿠아플라넷(광교)"
+        ]
+      },
+      {
+        "venueId": "venue_서울유니버설아트센터_13cu06f",
+        "officialName": "유니버설아트센터",
+        "address": "서울특별시 광진구 천호대로 664 (능동)",
+        "query": "유니버설아트센터 서울 광진구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "리틀엔젤스예술단 정기공연: HARMONY (하모니)",
+          "리틀엔젤스예술단 정기공연: HARMONY (하모니)"
+        ]
+      },
+      {
+        "venueId": "venue_강원강릉아트센터사임당홀_1nn67oi",
+        "officialName": "강원 | 강릉아트센터 사임당홀",
+        "address": "강원특별자치도 강릉시 종합운동장길 84",
+        "query": "강원 | 강릉아트센터 사임당홀 강원 강릉시",
+        "priority": 8,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "임윤찬 피아노 리사이틀"
+        ]
+      },
+      {
+        "venueId": "venue_경기반석아트홀동탄복합문화센터_1wxr8jb",
+        "officialName": "경기 | 반석아트홀 동탄복합문화센터",
+        "address": "경기 화성시 동탄구 노작로 134",
+        "query": "경기 | 반석아트홀 동탄복합문화센터 경기 화성시",
+        "priority": 8,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "2026 꿈의 무용단 화성 정기공연: 춤의 정원"
         ]
       }
     ],

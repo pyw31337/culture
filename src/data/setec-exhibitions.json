@@ -1,51 +1,5 @@
 [
   {
-    "id": "setec_2311",
-    "title": "2026 보드게임페스타",
-    "venue": "세텍 제1전시실, 제2전시실",
-    "venueKey": "세텍 제1전시실, 제2전시실",
-    "address": "서울 강남구 남부순환로 3104",
-    "lat": 37.4968,
-    "lng": 127.0628,
-    "region": "seoul",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "image": "/images/posters/setec/setec_2311.webp",
-    "poster": "/images/posters/setec/setec_2311.webp",
-    "backupPoster": "/images/posters/setec/setec_2311.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2311",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-2222-3811",
-    "website": "https://www.setec.or.kr/",
-    "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.198Z"
-  },
-  {
-    "id": "setec_2273",
-    "title": "캐스크 카니발 2026",
-    "venue": "세텍 제3전시실",
-    "venueKey": "세텍 제3전시실",
-    "address": "서울 강남구 남부순환로 3104",
-    "lat": 37.4968,
-    "lng": 127.0628,
-    "region": "seoul",
-    "date": "2026.11.21 ~ 2026.11.22",
-    "image": "/images/posters/setec/setec_2273.webp",
-    "poster": "/images/posters/setec/setec_2273.webp",
-    "backupPoster": "/images/posters/setec/setec_2273.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2273",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-2222-3811",
-    "website": "https://www.setec.or.kr/",
-    "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.199Z"
-  },
-  {
     "id": "setec_2315",
     "title": "서울시 미용예술경연대회",
     "venue": "세텍 제3전시실",
@@ -66,7 +20,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.199Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.878Z"
   },
   {
     "id": "setec_2256",
@@ -89,7 +43,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.199Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.879Z"
   },
   {
     "id": "setec_2305",
@@ -112,7 +66,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.200Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.880Z"
   },
   {
     "id": "setec_2313",
@@ -135,7 +89,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.200Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.880Z"
   },
   {
     "id": "setec_2312",
@@ -158,7 +112,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.200Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.881Z"
   },
   {
     "id": "setec_2307",
@@ -181,7 +135,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.200Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.881Z"
   },
   {
     "id": "setec_2308",
@@ -204,7 +158,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.201Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.881Z"
   },
   {
     "id": "setec_2294",
@@ -227,7 +181,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.201Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.882Z"
   },
   {
     "id": "setec_2264",
@@ -250,7 +204,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.201Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.882Z"
   },
   {
     "id": "setec_2309",
@@ -273,6 +227,52 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-21T06:01:49.202Z"
+    "dataCollectedAt": "2026-11-22T05:34:38.882Z"
+  },
+  {
+    "id": "setec_2323",
+    "title": "FWI 세계프로복싱 랭킹전",
+    "venue": "세텍 제1전시실",
+    "venueKey": "세텍 제1전시실",
+    "address": "서울 강남구 남부순환로 3104",
+    "lat": 37.4968,
+    "lng": 127.0628,
+    "region": "seoul",
+    "date": "2026.12.25 ~ 2026.12.25",
+    "image": "/images/posters/setec/setec_2323.webp",
+    "poster": "/images/posters/setec/setec_2323.webp",
+    "backupPoster": "/images/posters/setec/setec_2323.webp",
+    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2323",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "02-2222-3811",
+    "website": "https://www.setec.or.kr/",
+    "source": "setec",
+    "dataCollectedAt": "2026-11-22T05:34:38.963Z"
+  },
+  {
+    "id": "setec_2297",
+    "title": "제2회 서울 가구·인테리어 박람회",
+    "venue": "세텍 제2전시실, 제3전시실",
+    "venueKey": "세텍 제2전시실, 제3전시실",
+    "address": "서울 강남구 남부순환로 3104",
+    "lat": 37.4968,
+    "lng": 127.0628,
+    "region": "seoul",
+    "date": "2026.12.26 ~ 2026.12.29",
+    "image": "/images/posters/setec/setec_2297.webp",
+    "poster": "/images/posters/setec/setec_2297.webp",
+    "backupPoster": "/images/posters/setec/setec_2297.webp",
+    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2297",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "02-2222-3811",
+    "website": "https://www.setec.or.kr/",
+    "source": "setec",
+    "dataCollectedAt": "2026-11-22T05:34:39.013Z"
   }
 ]

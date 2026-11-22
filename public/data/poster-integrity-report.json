@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-22T00:30:49.397Z",
+  "checkedAt": "2026-11-22T05:36:09.565Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10323,
-  "verified": 9548,
-  "unavailable": 775,
+  "total": 10368,
+  "verified": 9575,
+  "unavailable": 793,
   "pending": 0,
   "recoveredFromAlternate": 1,
   "unavailableSamples": [
@@ -278,13 +278,6 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_영평사_오색실_엮어_복장물_만들기_영평사_삼명선원_20261125",
-      "title": "영평사 오색실 엮어 복장물 만들기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_1_1_자이로토닉_1회_체험레슨",
       "title": "1:1 자이로토닉 1회 체험레슨",
       "source": "remote",
@@ -295,15 +288,15 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261125",
-      "title": "양주향교와 함께하는 시간여행",
+      "id": "perf_영평사_오색실_엮어_복장물_만들기_영평사_삼명선원_20261125",
+      "title": "영평사 오색실 엮어 복장물 만들기",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261125",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
+      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261125",
+      "title": "양주향교와 함께하는 시간여행",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -318,6 +311,13 @@
       "failure": "http-403"
     },
     {
+      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261125",
+      "title": "나도이제 어른-갓쓰고 비녀꽂고",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "perf_다시_카페_월봉서원_이안당_20261125",
       "title": "다시茶時 카페",
       "source": "remote",
@@ -327,13 +327,6 @@
     {
       "id": "perf_향교로_마실가자_정선향교_20261125",
       "title": "향교로 마실가자",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261126",
-      "title": "충주향교 꼬마선비의 선비풍류",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -353,6 +346,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/82d0b5abafc740babca2f8dbce119089.jpg"
       ],
       "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261126",
+      "title": "충주향교 꼬마선비의 선비풍류",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261126",
@@ -443,20 +443,6 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_선비의_사계_밀양혜산서원_지역교류_20261126",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "museum_서대문형무소역사관_초등_한국사_어린이_역사체험",
-      "title": "서대문형무소역사관 초등 한국사 어린이 역사체험",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_베이킹_클래스",
       "title": "베이킹 클래스",
       "source": "remote",
@@ -471,6 +457,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e3858391ab7c46bd972c58eb830e863f.jpg"
       ],
       "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "perf_선비의_사계_밀양혜산서원_지역교류_20261126",
+      "title": "선비의 사계",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "class_석고방향제만들기_원데이_클래스150g_약3개완성",
@@ -496,6 +489,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/576fd16d42c14f549bdcead475ea6944.jpg"
       ],
       "failure": "http-403"
+    },
+    {
+      "id": "museum_아이와_함께_궁궐투어_달빛궁궐_창경궁",
+      "title": "아이와 함께 궁궐투어 달빛궁궐 창경궁",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "perf_타임_인_조선_고택의_노비와_양반이_되다_정읍_김명관_고택_20261121",
@@ -581,13 +581,6 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_다시_카페_월봉서원_이안당_20261118",
-      "title": "다시茶時 카페",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_보울_면기_만들기",
       "title": "보울/면기 만들기",
       "source": "remote",
@@ -602,13 +595,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/05cf849933bd4b299a34e64b57d8cfa1.jpg"
       ],
       "failure": "http-403, http-403, http-403"
-    },
-    {
-      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261117",
-      "title": "빛, 생명을 처방하다",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
     },
     {
       "id": "class_무전력_우드스피커_만들기_원데이_클래스_1구_기본",
@@ -627,6 +613,20 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/e343e86fafd9423a951ad3374bd916be.jpg"
       ],
       "failure": "http-403"
+    },
+    {
+      "id": "perf_다시_카페_월봉서원_이안당_20261118",
+      "title": "다시茶時 카페",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_빛_생명을_처방하다_충청북도_음성군_20261117",
+      "title": "빛, 생명을 처방하다",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "perf_구급_처방_컬러링_충청북도_음성군_20261117",
@@ -682,6 +682,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9599fe1081984b48955625e808f4eafa.jpg"
       ],
       "failure": "http-403"
+    },
+    {
+      "id": "museum_국립중앙박물관_그리스로마전_어린이_체험학습_역사_도슨트",
+      "title": "국립중앙박물관 그리스로마전 어린이 체험학습 역사 도슨트",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "class_원데이클래스_캔들만들기",
@@ -770,13 +777,6 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_향음주례_밀양향교_20261130",
-      "title": "향음주례",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_부산_서면_전포사잇길_쌀머핀_콩가루세서미쌀머핀_단호박크림치즈쌀머핀",
       "title": "부산/서면/전포사잇길☆쌀머핀 ♡콩가루세서미쌀머핀/단호박크림치즈쌀머핀♡",
       "source": "remote",
@@ -785,27 +785,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/13188c9cb4ed46249d168050de8f5e8b.jpg"
       ],
       "failure": "http-403, http-403"
-    },
-    {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261127",
-      "title": "충주향교 꼬마선비의 선비풍류",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_고산향교_난로회_고산향교_20261127",
-      "title": "고산향교 난로회",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261127",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
     },
     {
       "id": "class_원_앤_온리_특별한_목걸이_만들기",
@@ -834,15 +813,15 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "class_플라워_센터피스_만들기_꽃꽂이_클래스_S",
-      "title": "플라워 센터피스 만들기 꽃꽂이 클래스 S",
+      "id": "perf_향음주례_밀양향교_20261130",
+      "title": "향음주례",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261127",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
+      "id": "class_플라워_센터피스_만들기_꽃꽂이_클래스_S",
+      "title": "플라워 센터피스 만들기 꽃꽂이 클래스 S",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -855,27 +834,6 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/360486ff203445939a85c5a21afcba5d.jpg"
       ],
       "failure": "http-403"
-    },
-    {
-      "id": "museum_6_8세_추천_대한독립만세_우리도_함께_외쳐봐요_서대문형무소역사관",
-      "title": "6-8세 추천! 대한독립만세! 우리도 함께 외쳐봐요! - 서대문형무소역사관",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_환경보호_작은실천_조선동종만들기_내장사_일원_20261127",
-      "title": "환경보호 작은실천 조선동종만들기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_선비의_사계_밀양혜산서원_지역교류_20261127",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
     },
     {
       "id": "class_라탄_원형_트레이_원데이_클래스",
@@ -891,6 +849,56 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/33b743384e9d4286b9bf16509d9b73a4.jpeg"
       ],
       "failure": "http-403, http-403, http-403"
+    },
+    {
+      "id": "class_도자기_물레그릇_또는_오브제_물레2_소품2",
+      "title": "도자기, 물레그릇 또는 오브제(물레2+소품2)",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/664b4bcc6c364d7bab6530149e9fc04d.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/c1669d300cff48528a8538d445ad20a3.jpg"
+      ],
+      "failure": "http-403, http-403"
+    },
+    {
+      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261127",
+      "title": "충주향교 꼬마선비의 선비풍류",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_고산향교_난로회_고산향교_20261127",
+      "title": "고산향교 난로회",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261127",
+      "title": "선비의 사계",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "class_팝아트_페인팅_원데이_클래스",
+      "title": "팝아트 페인팅 원데이 클래스",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b52b9163e6f84b7ea4d9a161241e5607.jpg"
+      ],
+      "failure": "http-403"
+    },
+    {
+      "id": "class_최고의_장비로_분석을_통한_목소리의_문제점_발성_해결",
+      "title": "최고의 장비로 분석을 통한 목소리의 문제점, 발성 해결!",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/4ed938db07734f1d88a09380db7e1a5e.jpeg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d28a262424dd40c1a5f4872fb1cb3424.jpg"
+      ],
+      "failure": "http-403, http-403"
     }
   ],
   "pendingSamples": []

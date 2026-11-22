@@ -119888,7 +119888,13 @@
     "address": "정보 없음",
     "district": "",
     "lat": 37.369613,
-    "lng": 126.72345
+    "lng": 126.72345,
+    "homepage": "https://www.siheung.go.kr/sac/main.do",
+    "facilityType": "공공(기타)",
+    "seatScale": "1014",
+    "theaterCount": "2",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "티켓링크 1975 씨어터": {
     "name": "티켓링크 1975 씨어터",
