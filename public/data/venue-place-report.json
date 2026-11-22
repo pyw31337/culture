@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-11-22T13:01:17.377Z",
+  "checkedAt": "2026-11-22T16:28:22.558Z",
   "status": "warn",
-  "venueCount": 4250,
-  "matchedCount": 2334,
-  "highConfidenceMatchCount": 1783,
+  "venueCount": 4189,
+  "matchedCount": 2302,
+  "highConfidenceMatchCount": 1759,
   "needsReviewCount": 20,
-  "notFoundCount": 810,
-  "pendingLookupCount": 2,
-  "insufficientIdentityCount": 290,
+  "notFoundCount": 795,
+  "pendingLookupCount": 7,
+  "insufficientIdentityCount": 280,
   "lookupReady": true,
   "providersConfigured": [
     "kakao",
@@ -43,6 +43,85 @@
       "sampleTitles": [
         "스테인드글라스 썬캐쳐 만들기"
       ]
+    },
+    {
+      "venueId": "venue_북극곰소극장_1zket8",
+      "officialName": "북극곰소극장",
+      "address": "서울특별시 종로구 이화장1길 24 (이화동)",
+      "query": "북극곰소극장 서울 종로구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "단막극 낭독공연, 시선: Eleven Ways of Believing [대학로]",
+        "강아지 똥 [대학로]",
+        "북극곰 예술여행"
+      ]
+    },
+    {
+      "venueId": "venue_국립과천과학관_1b8d60t",
+      "officialName": "국립과천과학관",
+      "address": "경기도 과천시 상하벌로 110 (과천동)",
+      "query": "국립과천과학관 경기 과천시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "초등 한국과학탐험대! 한국사 속 숨겨진 과학 기술을 찾아! - 국립과천과학관",
+        "타키포오, 몬스터 전쟁의 서막: 더 좀비 [과천]"
+      ]
+    },
+    {
+      "venueId": "venue_파주시민회관_1s2mnhk",
+      "officialName": "파주시민회관",
+      "address": "경기도 파주시 시민회관길 33 (금촌동)",
+      "query": "파주시민회관 경기 파주시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "파주시민회관",
+        "호두까기 인형 [파주]"
+      ]
+    },
+    {
+      "venueId": "venue_남산골한옥마을옥인동가옥_1984hlb",
+      "officialName": "남산골한옥마을 옥인동 가옥",
+      "address": "서울특별시 중구 퇴계로34길 28",
+      "query": "남산골한옥마을 옥인동 가옥 서울 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 남산골 야간 특별 프로그램 [가배옥]"
+      ]
+    },
+    {
+      "venueId": "venue_킨텍스전시홀2_1y52slt",
+      "officialName": "킨텍스 전시홀 2",
+      "address": "경기 고양시 일산서구 킨텍스로 217-60",
+      "query": "킨텍스 전시홀 2 경기 고양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 우리쌀·우리술 K-라이스 페스타"
+      ]
     }
   ],
   "insufficientIdentityQueue": [
@@ -61,8 +140,8 @@
       ],
       "sampleTitles": [
         "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)",
-        "화폐박물관 시즌2 초등 화폐경제탐험대 - 경제원리 알고, 용돈 똑똑하게 쓰자",
-        "역사숲체험 역사체험과 숲체험을 동시에~!"
+        "달마다 새롭게 10회 과정! 한국사 역사체험 탐험대",
+        "화성박물관&화성행궁 어린이 역사투어"
       ]
     },
     {
@@ -80,8 +159,8 @@
       ],
       "sampleTitles": [
         "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
-        "테라조비누&입욕제(베쓰밤) 만들기 클래스",
-        "나전칠기, 자개공예 악세사리소품 만들기"
+        "슈가 플라워 리스 케익 원데이 클래스",
+        "MBTI 향수 만들기 클래스"
       ]
     },
     {
@@ -98,9 +177,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "Wish Violin 위시바이올린",
+        "발포세라믹으로 만드는 미니어처 바다 풍경",
         "보자기선물포장취미반클래스",
-        "사업자창업포장클래스"
+        "Wish Violin 위시바이올린"
       ]
     },
     {
@@ -117,9 +196,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "향기 따라 흐르는 물줄기, 브루잉(핸드드립) 클래스",
-        "감각적인 시그니처 향수 제작, 뤼미에르 퍼퓸 A Class",
-        "초보도 완전 쉽게! 미리캔버스 디자인"
+        "커피 드립백 클래스",
+        "초보도 완전 쉽게! 미리캔버스 디자인",
+        "나만의 특별한 아이템 레진아트 원데이 클래스"
       ]
     },
     {
@@ -136,9 +215,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
+        "향과 온기로 회복하는 태국 허브볼 &아로마 롤온 워크샵",
         "무드등만들기",
-        "틴 케이스 거울 만들기",
-        "200여가지 향수 셀프체험 클래스"
+        "키링만들기"
       ]
     },
     {
@@ -153,9 +232,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
+        "<뮤지컬> 미녀와야수 - 대전 (26/11/28 ~ 26/11/29)",
         "<뮤지컬> 타키포오 몬스터 전쟁의 서막 ; 더 좀비 - 대전 (26/12/05 ~ 26/12/06)",
-        "<뮤지컬> 산타클로스와 브레멘음악대 - 대전 (26/12/06)",
-        "<뮤지컬> 미녀와야수 - 대전 (26/11/28 ~ 26/11/29)"
+        "<뮤지컬> 산타클로스와 브레멘음악대 - 대전 (26/12/06)"
       ]
     },
     {
@@ -171,27 +250,8 @@
       ],
       "sampleTitles": [
         "원 앤 온리 특별한 목걸이 만들기",
-        "우리만의 팔찌 만들기 (원데이 커플/우정 클래스)",
-        "순은 99.9% 은점토로 나만의 반지/목걸이 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_서울마포구_fycqsh",
-      "officialName": "서울 마포구",
-      "address": "서울 마포구 양화로 188",
-      "query": "서울 마포구 서울 마포구",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<팝업> 아스토믹 팝업 - UNBOXING:최애 집합소 (26/11/02 ~ 26/11/22)",
-        "<팝업> 퍼펫순순 팝업 홍대 (26/11/27 ~ 26/12/10)",
-        "<팝업> 연도문구 팝업 - 우주정거장점 (26/09/11 ~ 26/12/06)"
+        "순은 99.9% 은점토로 나만의 반지/목걸이 만들기",
+        "원데이 이색 악세사리 클래스"
       ]
     },
     {
@@ -209,31 +269,33 @@
       ],
       "sampleTitles": [
         "펫푸드 자격증 / 반려동물 푸드지도사",
-        "시한드로잉모임",
-        "피크닉 준비 강아지 파스타 (바질파스타, 로제파스타)"
+        "피크닉 준비 강아지 파스타 (바질파스타, 로제파스타)",
+        "시한드로잉모임"
       ]
     },
     {
-      "venueId": "venue_서울용산구_1wtij3s",
-      "officialName": "서울 용산구",
-      "address": "서울 용산구 한강대로23길 55",
-      "query": "서울 용산구 서울 용산구",
+      "venueId": "venue_서울마포구양화로10012_fycqsh",
+      "officialName": "서울 마포구",
+      "address": "서울 마포구 양화로 188",
+      "query": "서울 마포구 서울 마포구",
       "priority": 40,
       "performanceCount": 5,
       "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "<팝업> 페이지앤코 팝업스토어 (26/11/12 ~ 26/11/25)",
-        "<팝업> 산리오 냥냥 클럽 팝업 (26/10/30 ~ 26/11/22)",
-        "<팝업> 용산아이파크 (26/10/09 ~ 26/12/31)"
+        "마시떡 X 헤비베어 팝업",
+        "맹수상점 X 밀키하트 mini 팝업",
+        "언어더컬러 팝업"
       ]
     },
     {
       "venueId": "venue_서울중구_ritslf",
       "officialName": "서울 중구",
-      "address": "서울특별시 중구 을지로 281",
+      "address": "서울 중구 을지로 281",
       "query": "서울 중구 서울 중구",
       "priority": 40,
       "performanceCount": 5,
@@ -242,26 +304,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "DDP 루프탑투어 2026",
         "<전시> 파인캐릭터 2026 (26/11/27 ~ 26/11/29)",
+        "DDP 루프탑투어 2026",
         "<행사> 서울라이트 DDP 2026 겨울(26/12/11 ~ 27/01/31)"
-      ]
-    },
-    {
-      "venueId": "venue_울산북구_vy14yz",
-      "officialName": "울산 북구",
-      "address": "울산 북구 산업로 1010 (연암동, 북구청)",
-      "query": "울산 북구 울산 북구",
-      "priority": 40,
-      "performanceCount": 5,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 프린세스공주 - 울산 (26/11/22)",
-        "<뮤지컬> 루돌프와 산타클로스 - 울산 (26/12/06)",
-        "<뮤지컬> 산타와 루돌프 - 울산 (26/12/13)"
       ]
     },
     {
@@ -278,62 +323,9 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "나만의 특별한 향 만들기, 스튜디오 유랑 향수 원데이 클래스",
         "<여행의 기억, 선물이 되는 시간> 작은선물만들기 원데이클래스 _재봉틀",
-        "마크라메 파인애플 화분 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_경기고양시_cr6aie",
-      "officialName": "경기 고양시",
-      "address": "경기도 고양시 덕양구 어울림로 33(성사동) 별모래극장",
-      "query": "경기 고양시 경기 고양시",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 누가 내 머리에 똥쌌어？ - 고양 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> 로보카폴리 - 브룸스타운의 에너지를 지켜라! (26/11/28 ~ 26/11/29)",
-        "<연극> 긴긴밤 - 고양 (26/12/12 ~ 26/12/13)"
-      ]
-    },
-    {
-      "venueId": "venue_경기용인시_1og5ip8",
-      "officialName": "경기 용인시",
-      "address": "경기 용인시 처인구 중부대로1392번길 15 (김량장동, 용인시문예회관)",
-      "query": "경기 용인시 경기 용인시",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 호두까기 인형 - 용인 (26/11/22)",
-        "<뮤지컬> 메리크리스마스 산타할아버지 - 용인 (26/12/05 ~ 26/12/06)",
-        "<뮤지컬> 바다탐험대 옥토넛 시즌4 : 숨겨진 보물을 찾아라! - 용인 (26/12/12 ~ 26/12/13)"
-      ]
-    },
-    {
-      "venueId": "venue_경기용인시_1ezky8g",
-      "officialName": "경기 용인시",
-      "address": "경기도 용인시 수지구 문정로7번길 15(풍덕천동) 큰어울마당",
-      "query": "경기 용인시 경기 용인시",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 사과가 쿵 - 용인 (26/11/22)",
-        "<뮤지컬> 대저택 끝 없는 문 - 용인 (26/11/28 ~ 26/11/29)",
-        "<뮤지컬> 집사TV 시즌2, Part.2: 대저택 끝 없는 문 (26/11/28 ~ 26/11/29)"
+        "마크라메 파인애플 화분 만들기",
+        "라탄 원데이클래스"
       ]
     },
     {
@@ -368,16 +360,16 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
+        "앙금플라워케이크정규반모집 [1개월]",
         "바삭쫀득꼬끄 + 부드러운 크림 마카롱원데이클래스",
-        "촉촉한 건강식 수제오란다 원데이클래스",
-        "앙금플라워케이크정규반모집 [1개월]"
+        "악마의에그타르트 원데이클래스(겉빠속촉)"
       ]
     },
     {
-      "venueId": "venue_서울강북구_mghlyk",
-      "officialName": "서울 강북구",
-      "address": "서울특별시 강북구 월계로 173 (번동)",
-      "query": "서울 강북구 서울 강북구",
+      "venueId": "venue_서울용산구_1wtij3s",
+      "officialName": "서울 용산구",
+      "address": "서울 용산구 한강대로23길 55",
+      "query": "서울 용산구 서울 용산구",
       "priority": 32,
       "performanceCount": 4,
       "reviewFlags": [
@@ -385,9 +377,26 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "<뮤지컬> 백설공주 - 서울강북 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> 겨울특집 라이브 가족 뮤지컬 산타와루돌프의 크리스마스 기적 - 서울강북 (26/12/05 ~ 26/12/06)",
-        "<뮤지컬> 겨울이야기 - 서울강북 (26/11/28)"
+        "<팝업> 페이지앤코 팝업스토어 (26/11/12 ~ 26/11/25)",
+        "<팝업> 용산아이파크 (26/10/09 ~ 26/12/31)",
+        "<행사> 용산 아이파크몰 산리오캐릭터즈 크리스마스 'THE CHRISTMAS GIFT SHOP'(26/11/13 ~ 12/27)"
+      ]
+    },
+    {
+      "venueId": "venue_울산북구_vy14yz",
+      "officialName": "울산 북구",
+      "address": "울산 북구 산업로 1010 (연암동, 북구청)",
+      "query": "울산 북구 울산 북구",
+      "priority": 32,
+      "performanceCount": 4,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 루돌프와 산타클로스 - 울산 (26/12/06)",
+        "<뮤지컬> 호두까기인형 - 울산 (26/11/29)",
+        "<뮤지컬> 산타와 루돌프 - 울산 (26/12/13)"
       ]
     },
     {
@@ -404,9 +413,26 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "오가닉으로 건강한 샴푸바 올인원바 만들기",
         "전주 힙팟클래스",
+        "향기테라피 커스텀 키링 만들기",
         "시그니처 오가닉 천연향수 원데이클래스"
+      ]
+    },
+    {
+      "venueId": "venue_경기고양시_cr6aie",
+      "officialName": "경기 고양시",
+      "address": "경기도 고양시 덕양구 어울림로 33(성사동) 별모래극장",
+      "query": "경기 고양시 경기 고양시",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 로보카폴리 - 브룸스타운의 에너지를 지켜라! (26/11/28 ~ 26/11/29)",
+        "<연극> 긴긴밤 - 고양 (26/12/12 ~ 26/12/13)",
+        "<뮤지컬> 버블J의 스노우버블쇼 - 고양 (26/12/19 ~ 26/12/20)"
       ]
     },
     {
@@ -446,37 +472,39 @@
       ]
     },
     {
-      "venueId": "venue_경북포항시_1bocf2z",
-      "officialName": "경북 포항시",
-      "address": "경상북도 포항시 남구 대도동 303-1",
-      "query": "경북 포항시 경북 포항시",
+      "venueId": "venue_경기용인시_1d4r1rq",
+      "officialName": "경기 용인시",
+      "address": "경기도 용인시 처인구 중부대로1392번길 15 (김량장동) 용인시문예회관",
+      "query": "경기 용인시 경기 용인시",
       "priority": 24,
       "performanceCount": 3,
       "reviewFlags": [
+        "high_confidence_similarity_merge",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "<뮤지컬> 두근두근 새친구 - 포항 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> 피사총사: 우리 몸은 우리가 지킨다! - 포항 (26/12/05)",
-        "<뮤지컬> 대저택 끝 없는 문 - 포항 (26/12/19 ~ 26/12/20)"
+        "<뮤지컬> 바다탐험대 옥토넛 시즌4 : 숨겨진 보물을 찾아라! - 용인 (26/12/12 ~ 26/12/13)",
+        "<뮤지컬> 메리크리스마스 산타할아버지 - 용인 (26/12/05 ~ 26/12/06)",
+        "<공연> 우주매직쇼 - 용인 (26/12/19 ~ 26/12/20)"
       ]
     },
     {
-      "venueId": "venue_광주서구_e869qk",
-      "officialName": "광주 서구",
-      "address": "광주광역시 서구 쌍촌동 1268 (내방동 152)",
-      "query": "광주 서구 광주 서구",
+      "venueId": "venue_경기용인시_1ef850g",
+      "officialName": "경기 용인시",
+      "address": "경기 용인시 수지구 문정로7번길 15 (풍덕천동, 용인시 평생학습관)",
+      "query": "경기 용인시 경기 용인시",
       "priority": 24,
       "performanceCount": 3,
       "reviewFlags": [
+        "high_confidence_similarity_merge",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "<뮤지컬> 바다탐험대 옥토넛 시즌4 : 숨겨진 보물을 찾아라! - 광주 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> 카봇크루가 되어줘! - 광주 (26/12/12 ~ 26/12/13)",
-        "<연극> 라이어 3탄 - 광주 (26/12/22 ~ 26/12/27)"
+        "<뮤지컬> 산타클로스와 브레멘음악대 - 용인 (26/12/25)",
+        "<뮤지컬> 대저택 끝 없는 문 - 용인 (26/11/28 ~ 26/11/29)",
+        "<뮤지컬> 집사TV 시즌2, Part.2: 대저택 끝 없는 문 (26/11/28 ~ 26/11/29)"
       ]
     },
     {
@@ -508,8 +536,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "<뮤지컬> 타키포오 - 대전 (26/12/05 ~ 26/12/06)",
         "<뮤지컬> 카봇크루가 되어줘! - 대전 (26/11/28 ~ 26/11/29)",
+        "<뮤지컬> 타키포오 - 대전 (26/12/05 ~ 26/12/06)",
         "<뮤지컬> 로보카폴리 - 브룸스타운의 에너지를 지켜라! (26/12/19 ~ 26/12/20)"
       ]
     },
@@ -525,9 +553,26 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "나만의 오브제 그릇 만들기 (핸드빌딩) 이색 체험",
         "나만의 캐릭터 그릇 만들기 (핸드빌딩) 이색 체험",
+        "나만의 오브제 그릇 만들기 (핸드빌딩) 이색 체험",
         "나만의 오브제 그릇 만들기 (물레) 이색 체험 데이트"
+      ]
+    },
+    {
+      "venueId": "venue_서울강북구_mghlyk",
+      "officialName": "서울 강북구",
+      "address": "서울특별시 강북구 월계로 173 (번동)",
+      "query": "서울 강북구 서울 강북구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 겨울이야기 - 서울강북 (26/11/28)",
+        "<뮤지컬> 겨울특집 라이브 가족 뮤지컬 산타와루돌프의 크리스마스 기적 - 서울강북 (26/12/05 ~ 26/12/06)",
+        "<뮤지컬> 스크루지의 크리스마스 캐롤 - 서울강북 (26/12/12 ~ 26/12/13)"
       ]
     },
     {
@@ -555,13 +600,15 @@
       "priority": 24,
       "performanceCount": 3,
       "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
         "needs_official_place_lookup",
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "<팝업> 피크민 in 잠실 팝업 (26/11/13 ~ 26/11/22)",
         "<팝업> T1 X 서울스카이 전시 (26/09/11 ~ 26/11/30)",
-        "<행사> 롯데타운 크리스마스 마켓 2026(26/11/19 ~ 27/01/03)"
+        "<행사> 롯데타운 크리스마스 마켓 2026(26/11/19 ~ 27/01/03)",
+        "마리떼 키즈 홀리데이 빌리지 팝업"
       ]
     },
     {
@@ -579,23 +626,6 @@
         "<팝업> 치이카와 클리닉 팝업 (26/11/27 ~ 27/01/10)",
         "<팝업> 다마고치 30주년 팝업 - 생일 파티로 놀러 와! (26/11/20 ~ 26/12/03)",
         "<팝업> 2026 더현대 서울 크리스마스 빌리지(26/11/10 ~ 12/31)"
-      ]
-    },
-    {
-      "venueId": "venue_서울중구_rebon3",
-      "officialName": "서울 중구",
-      "address": "서울특별시 중구 덕수궁길 61",
-      "query": "서울 중구 서울 중구",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "가나아트컬렉션 《기술의 저변: 경계에 선 장면들》",
-        "2026 SeMA 11월 외국어 전시해설",
-        "송수련컬렉션 기증기획전 《관조―추상》"
       ]
     },
     {
@@ -631,54 +661,6 @@
       "sampleTitles": [
         "<축제> 제38회 춘천인형극제 (26/07/31 ~ 26/12/26)",
         "<뮤지컬> 오리지널 과학마술콘서트 시즌2 (춘천) (26/11/28 ~ 26/11/29)"
-      ]
-    },
-    {
-      "venueId": "venue_경기고양시_13enwqt",
-      "officialName": "경기 고양시",
-      "address": "경기 고양시 일산서구 호수로 817 (대화동)",
-      "query": "경기 고양시 경기 고양시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 빨간모자 - 고양 (26/11/22)",
-        "<뮤지컬> 어린이 캣프렌즈 - 고양 (26/11/28 ~ 26/11/29)"
-      ]
-    },
-    {
-      "venueId": "venue_경기고양시_csfbyv",
-      "officialName": "경기 고양시",
-      "address": "경기 고양시 덕양구 어울림로 33 (성사동, 고양어울림누리)",
-      "query": "경기 고양시 경기 고양시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 누가 내 머리에 똥 쌌어? - 고양 (26/11/21 ~ 26/11/22)",
-        "<공연> 버블J의 스노우버블쇼 - 고양 (26/12/19 ~ 26/12/20)"
-      ]
-    },
-    {
-      "venueId": "venue_경기고양시_gdzhl0",
-      "officialName": "경기 고양시",
-      "address": "경기도 고양시 덕양구 성사동 777",
-      "query": "경기 고양시 경기 고양시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 더 스토리 오브 언더더씨 - 고양 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> 메탈카드봇W - 고양 (26/11/28 ~ 26/11/29)"
       ]
     },
     {
@@ -811,6 +793,22 @@
       ]
     },
     {
+      "venueId": "venue_경북포항시_1bocf2z",
+      "officialName": "경북 포항시",
+      "address": "경상북도 포항시 남구 대도동 303-1",
+      "query": "경북 포항시 경북 포항시",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 피사총사: 우리 몸은 우리가 지킨다! - 포항 (26/12/05)",
+        "<뮤지컬> 대저택 끝 없는 문 - 포항 (26/12/19 ~ 26/12/20)"
+      ]
+    },
+    {
       "venueId": "venue_광주서구_qedb0s",
       "officialName": "광주 서구",
       "address": "광주 서구 내방로 152 (쌍촌동, 5.18 기념문화관)",
@@ -824,6 +822,22 @@
       "sampleTitles": [
         "<공연> 버블J의 스노우버블쇼 - 광주 (26/12/06)",
         "<뮤지컬> 루돌프와 산타클로스 - 광주 (26/12/19 ~ 26/12/20)"
+      ]
+    },
+    {
+      "venueId": "venue_광주서구_e869qk",
+      "officialName": "광주 서구",
+      "address": "광주광역시 서구 쌍촌동 1268 (내방동 152)",
+      "query": "광주 서구 광주 서구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 카봇크루가 되어줘! - 광주 (26/12/12 ~ 26/12/13)",
+        "<연극> 라이어 3탄 - 광주 (26/12/22 ~ 26/12/27)"
       ]
     },
     {
@@ -893,40 +907,6 @@
       ]
     },
     {
-      "venueId": "venue_부산해운대구_a6cd8i",
-      "officialName": "부산 해운대구",
-      "address": "부산 해운대구 센텀남대로 35 (우동, 신세계백화점센텀시티점)",
-      "query": "부산 해운대구 부산 해운대구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 알라딘 - 부산 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> 산타클로스와 브레멘음악대 - 부산 (26/12/12 ~ 26/12/13)"
-      ]
-    },
-    {
-      "venueId": "venue_부산해운대구_ddqf5r",
-      "officialName": "부산 해운대구",
-      "address": "부산광역시 해운대구 APEC로 30 (우동) 1층",
-      "query": "부산 해운대구 부산 해운대구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<축제> 게임문화축제 (26/11/19 ~ 26/11/22)",
-        "게임문화축제"
-      ]
-    },
-    {
       "venueId": "venue_서울강남구_vntjf9",
       "officialName": "서울 강남구",
       "address": "서울 강남구 선릉로100길 1",
@@ -986,8 +966,8 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "소마틱 필라테스 Somatics 1:1 월8회권",
-        "소마틱 필라테스 Somatics 1:1 체험수업"
+        "소마틱 필라테스 Somatics 1:1 체험수업",
+        "소마틱 필라테스 Somatics 1:1 월8회권"
       ]
     },
     {
@@ -1072,6 +1052,22 @@
       ]
     },
     {
+      "venueId": "venue_서울중구_rebon3",
+      "officialName": "서울 중구",
+      "address": "서울특별시 중구 덕수궁길 61",
+      "query": "서울 중구 서울 중구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "2026 SeMA 11월 외국어 전시해설",
+        "송수련컬렉션 기증기획전 《관조―추상》"
+      ]
+    },
+    {
       "venueId": "venue_서울중랑구_glqn73",
       "officialName": "서울 중랑구",
       "address": "서울특별시 중랑구 망우로 353 이노시티 C동 B2F",
@@ -1101,22 +1097,6 @@
       "sampleTitles": [
         "<뮤지컬> 루돌프의 크리스마스 선물 - 인천 (26/12/12 ~ 26/12/13)",
         "<뮤지컬> 호두까기 인형 - 인천 (26/12/19)"
-      ]
-    },
-    {
-      "venueId": "venue_전남여수시_1ouh954",
-      "officialName": "전남 여수시",
-      "address": "전라남도 여수시 광무동 42-4",
-      "query": "전남 여수시 전남 여수시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<연극> 2026 어린이 참여공연 아빠와 난 초등1학년 - 여수 (26/11/21 ~ 26/11/22)",
-        "<뮤지컬> (2026년성탄가족 뮤지컬) 빨간코 루돌프와산타클로스 - 여수 (26/12/13)"
       ]
     },
     {
@@ -1228,21 +1208,6 @@
       ]
     },
     {
-      "venueId": "venue_강원춘천시_lj5wns",
-      "officialName": "강원 춘천시",
-      "address": "강원도 춘천시 공지로 121-1 (석사동 310-5 )",
-      "query": "강원 춘천시 강원 춘천시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<연극> 창작인형극으로 만나는 작가 김유정, 봄봄 - 춘천 (26/12/05 ~ 26/12/06)"
-      ]
-    },
-    {
       "venueId": "venue_강원춘천시_1yjia18",
       "officialName": "강원 춘천시",
       "address": "강원도 춘천시 한림대학길 1(옥천동) 일송아트홀",
@@ -1255,6 +1220,21 @@
       ],
       "sampleTitles": [
         "<뮤지컬> 가족매직쇼 “공룡 애니멀 쇼 시즌2” - 춘천 (26/11/28)"
+      ]
+    },
+    {
+      "venueId": "venue_강원춘천시_lj5wns",
+      "officialName": "강원 춘천시",
+      "address": "강원도 춘천시 공지로 121-1 (석사동 310-5 )",
+      "query": "강원 춘천시 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<연극> 창작인형극으로 만나는 작가 김유정, 봄봄 - 춘천 (26/12/05 ~ 26/12/06)"
       ]
     },
     {
@@ -1273,6 +1253,51 @@
       ]
     },
     {
+      "venueId": "venue_경기고양시_13enwqt",
+      "officialName": "경기 고양시",
+      "address": "경기 고양시 일산서구 호수로 817 (대화동)",
+      "query": "경기 고양시 경기 고양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 어린이 캣프렌즈 - 고양 (26/11/28 ~ 26/11/29)"
+      ]
+    },
+    {
+      "venueId": "venue_경기고양시_gdzhl0",
+      "officialName": "경기 고양시",
+      "address": "경기도 고양시 덕양구 성사동 777",
+      "query": "경기 고양시 경기 고양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 메탈카드봇W - 고양 (26/11/28 ~ 26/11/29)"
+      ]
+    },
+    {
+      "venueId": "venue_경기고양시_csfbyv",
+      "officialName": "경기 고양시",
+      "address": "경기 고양시 덕양구 어울림로 33 (성사동, 고양어울림누리)",
+      "query": "경기 고양시 경기 고양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<공연> 버블J의 스노우버블쇼 - 고양 (26/12/19 ~ 26/12/20)"
+      ]
+    },
+    {
       "venueId": "venue_경기고양시_17ivp82",
       "officialName": "경기 고양시",
       "address": "경기 고양시 덕양구 고양대로 1955",
@@ -1285,21 +1310,6 @@
       ],
       "sampleTitles": [
         "<행사> 스타필드 고양 크리스마스 '별빛 소원숲'(26/11/13 ~ 12/27)"
-      ]
-    },
-    {
-      "venueId": "venue_경기과천시_arvmbo",
-      "officialName": "경기 과천시",
-      "address": "경기 과천시 상하벌로 110 (과천동, 국립과천과학관)",
-      "query": "경기 과천시 경기 과천시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 미녀와야수 - 과천 (26/11/21 ~ 26/11/22)"
       ]
     },
     {
@@ -1318,21 +1328,6 @@
       ]
     },
     {
-      "venueId": "venue_경기과천시_19ffgla",
-      "officialName": "경기 과천시",
-      "address": "경기 과천시 광명로 181",
-      "query": "경기 과천시 경기 과천시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<행사> 서울랜드 크리스마스 마켓(26/10/17 ~)"
-      ]
-    },
-    {
       "venueId": "venue_경기과천시_afkybf",
       "officialName": "경기 과천시",
       "address": "경기도 과천시 광명로 313 국립현대미술관 어린이미술관",
@@ -1345,6 +1340,21 @@
       ],
       "sampleTitles": [
         "<전시> 오~감각미술관(~ 27/02/21)"
+      ]
+    },
+    {
+      "venueId": "venue_경기과천시_19ffgla",
+      "officialName": "경기 과천시",
+      "address": "경기 과천시 광명로 181",
+      "query": "경기 과천시 경기 과천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<행사> 서울랜드 크리스마스 마켓(26/10/17 ~)"
       ]
     },
     {
@@ -1423,9 +1433,9 @@
       ]
     },
     {
-      "venueId": "venue_경기군포시_wkx1j9",
+      "venueId": "venue_경기군포시_1ced3je",
       "officialName": "경기 군포시",
-      "address": "경기 군포시 군포로735번길",
+      "address": "경기 군포시 산본로323번길",
       "query": "경기 군포시 경기 군포시",
       "priority": 8,
       "performanceCount": 1,
@@ -1434,7 +1444,7 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "마크라메 카네이션 월행잉 클래스"
+        "제스모나이트+캔들/레진아트 2가지를 한번에 배울수 있다?"
       ]
     },
     {
@@ -1453,9 +1463,9 @@
       ]
     },
     {
-      "venueId": "venue_경기군포시_1ced3je",
+      "venueId": "venue_경기군포시_wkx1j9",
       "officialName": "경기 군포시",
-      "address": "경기 군포시 산본로323번길",
+      "address": "경기 군포시 군포로735번길",
       "query": "경기 군포시 경기 군포시",
       "priority": 8,
       "performanceCount": 1,
@@ -1464,7 +1474,7 @@
         "insufficient_place_identity"
       ],
       "sampleTitles": [
-        "제스모나이트+캔들/레진아트 2가지를 한번에 배울수 있다?"
+        "마크라메 카네이션 월행잉 클래스"
       ]
     },
     {
@@ -1555,38 +1565,6 @@
       ],
       "sampleTitles": [
         "<뮤지컬> 크리스마스대소동(부천) (26/12/14 ~ 26/12/27)"
-      ]
-    },
-    {
-      "venueId": "venue_경기성남시_1gc3ein",
-      "officialName": "경기 성남시",
-      "address": "경기 성남시",
-      "query": "경기 성남시 경기 성남시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "missing_detailed_address",
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "봉국사를 거닐다"
-      ]
-    },
-    {
-      "venueId": "venue_경기성남시_vjkfsd",
-      "officialName": "경기 성남시",
-      "address": "경기 성남시 분당구 성남대로 808 (야탑동, 성남아트센터)",
-      "query": "경기 성남시 경기 성남시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<뮤지컬> 사과가 쿵 - 성남 (26/11/21 ~ 26/11/22)"
       ]
     },
     {
@@ -1864,21 +1842,6 @@
       ]
     },
     {
-      "venueId": "venue_경기파주시_4kj1gs",
-      "officialName": "경기 파주시",
-      "address": "경기도 파주시 시민회관길 33(금촌동)",
-      "query": "경기 파주시 경기 파주시",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<연극> 용궁에 간 토끼 (파주) (26/11/22)"
-      ]
-    },
-    {
       "venueId": "venue_경기파주시_1hryhb",
       "officialName": "경기 파주시",
       "address": "경기도 파주시 탄현면 헤이리로 16",
@@ -1983,6 +1946,111 @@
       "sampleTitles": [
         "포천펫스타"
       ]
+    },
+    {
+      "venueId": "venue_경기하남시_ggo4ut",
+      "officialName": "경기 하남시",
+      "address": "경기 하남시 미사강변대로226번길",
+      "query": "경기 하남시 경기 하남시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "카네이션 미니바구니 세트"
+      ]
+    },
+    {
+      "venueId": "venue_경기화성시_100trmk",
+      "officialName": "경기 화성시",
+      "address": "경기도 화성시 태안로 145 (병점동 734번지)",
+      "query": "경기 화성시 경기 화성시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 두근두근 새친구 - 화성 (26/12/12)"
+      ]
+    },
+    {
+      "venueId": "venue_경남거창군_1nnfjmz",
+      "officialName": "경남 거창군",
+      "address": "경상남도 거창군 거창읍 중앙로 103",
+      "query": "경남 거창군 경남 거창군",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<축제> 제14회 거창크리스마스트리문화축제(26/12/13 ~ 12/25)"
+      ]
+    },
+    {
+      "venueId": "venue_경남김해시_skvgdy",
+      "officialName": "경남 김해시",
+      "address": "경상남도 김해시 김해대로 2060 (내동)",
+      "query": "경남 김해시 경남 김해시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> 오리지널 과학마술콘서트 시즌2 (김해) (26/12/19 ~ 26/12/20)"
+      ]
+    },
+    {
+      "venueId": "venue_경남사천시_7o9nvl",
+      "officialName": "경남 사천시",
+      "address": "경남 사천시 노을길 146",
+      "query": "경남 사천시 경남 사천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<공연> 사천 세계아트서커스 (25/01/01 ~ 26/11/30)"
+      ]
+    },
+    {
+      "venueId": "venue_경남양산시_1pvhqsw",
+      "officialName": "경남 양산시",
+      "address": "경상남도 양산시 신기강변로 26(신기동) 쌍벽루아트홀",
+      "query": "경남 양산시 경남 양산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<연극> 2026 ’ 어린이 참여공연 아빠와 난 초등1학년 - 양산 (26/11/27 ~ 26/11/28)"
+      ]
+    },
+    {
+      "venueId": "venue_경남양산시_1kavfzb",
+      "officialName": "경남 양산시",
+      "address": "경상남도 양산시 중앙로 39-1(남부동) 대공연장",
+      "query": "경남 양산시 경남 양산시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<뮤지컬> (2026년성탄가족 뮤지컬) 빨간코 루돌프와산타클로스 - 양산 (26/12/19)"
+      ]
     }
   ],
   "staleCacheCount": 0,
@@ -1992,7 +2060,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T13:01:03.781Z",
+      "checkedAt": "2026-11-22T16:28:08.457Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2001,7 +2069,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T13:01:03.781Z",
+      "checkedAt": "2026-11-22T16:28:08.457Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2189,25 +2257,6 @@
       "reason": "name=0.15, address=0.00, distance=unknown"
     },
     {
-      "venueId": "venue_md_jny02c",
-      "status": "needs_review",
-      "provider": "kakao",
-      "providerPlaceId": "2024399193",
-      "officialName": "허준원MD피부과의원",
-      "roadAddressName": "서울 강남구 언주로174길 26",
-      "addressName": "서울 강남구 신사동 640-1",
-      "lat": 37.52796781691092,
-      "lng": 127.03585373898547,
-      "phone": "02-518-0382",
-      "url": "http://place.map.kakao.com/2024399193",
-      "categoryName": "의료,건강 > 병원 > 피부과",
-      "confidence": 0.1,
-      "matchedAt": "",
-      "checkedAt": "2026-11-16T14:14:05.100Z",
-      "query": "MD seoul md",
-      "reason": "name=0.20, address=0.00, distance=unknown"
-    },
-    {
       "venueId": "venue_부산영화의전당_c8qk2h",
       "status": "needs_review",
       "provider": "kakao",
@@ -2330,18 +2379,35 @@
       "checkedAt": "2026-05-13T09:33:48.090Z",
       "query": "성남 성남문화원 성남 성남문화원",
       "reason": "name=0.30, address=0.00, distance=6040m"
+    },
+    {
+      "venueId": "venue_안산구봉도_smpvk0",
+      "status": "needs_review",
+      "provider": "naver",
+      "providerPlaceId": "빈솔트:경기도 안산시 단원구 구봉타운길 45",
+      "officialName": "빈솔트",
+      "roadAddressName": "경기도 안산시 단원구 구봉타운길 45",
+      "addressName": "경기도 안산시 단원구 대부북동 1870-78",
+      "lat": 37.2811675,
+      "lng": 126.5520813,
+      "categoryName": "음식점>카페,디저트",
+      "confidence": 0.15,
+      "matchedAt": "",
+      "checkedAt": "2026-05-13T09:33:48.090Z",
+      "query": "안산 구봉도 안산 구봉도",
+      "reason": "name=0.00, address=0.00, distance=77m"
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-22T13:01:17.377Z",
+    "checkedAt": "2026-11-22T16:28:22.558Z",
     "status": "warn",
-    "venueCount": 4250,
-    "matchedCount": 2334,
-    "highConfidenceMatchCount": 1783,
+    "venueCount": 4189,
+    "matchedCount": 2302,
+    "highConfidenceMatchCount": 1759,
     "needsReviewCount": 20,
-    "notFoundCount": 810,
-    "pendingLookupCount": 2,
-    "insufficientIdentityCount": 290,
+    "notFoundCount": 795,
+    "pendingLookupCount": 7,
+    "insufficientIdentityCount": 280,
     "lookupReady": true,
     "providersConfigured": [
       "kakao",
@@ -2378,6 +2444,85 @@
         "sampleTitles": [
           "스테인드글라스 썬캐쳐 만들기"
         ]
+      },
+      {
+        "venueId": "venue_북극곰소극장_1zket8",
+        "officialName": "북극곰소극장",
+        "address": "서울특별시 종로구 이화장1길 24 (이화동)",
+        "query": "북극곰소극장 서울 종로구",
+        "priority": 24,
+        "performanceCount": 3,
+        "reviewFlags": [
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "단막극 낭독공연, 시선: Eleven Ways of Believing [대학로]",
+          "강아지 똥 [대학로]",
+          "북극곰 예술여행"
+        ]
+      },
+      {
+        "venueId": "venue_국립과천과학관_1b8d60t",
+        "officialName": "국립과천과학관",
+        "address": "경기도 과천시 상하벌로 110 (과천동)",
+        "query": "국립과천과학관 경기 과천시",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "초등 한국과학탐험대! 한국사 속 숨겨진 과학 기술을 찾아! - 국립과천과학관",
+          "타키포오, 몬스터 전쟁의 서막: 더 좀비 [과천]"
+        ]
+      },
+      {
+        "venueId": "venue_파주시민회관_1s2mnhk",
+        "officialName": "파주시민회관",
+        "address": "경기도 파주시 시민회관길 33 (금촌동)",
+        "query": "파주시민회관 경기 파주시",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "파주시민회관",
+          "호두까기 인형 [파주]"
+        ]
+      },
+      {
+        "venueId": "venue_남산골한옥마을옥인동가옥_1984hlb",
+        "officialName": "남산골한옥마을 옥인동 가옥",
+        "address": "서울특별시 중구 퇴계로34길 28",
+        "query": "남산골한옥마을 옥인동 가옥 서울 중구",
+        "priority": 8,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "2026 남산골 야간 특별 프로그램 [가배옥]"
+        ]
+      },
+      {
+        "venueId": "venue_킨텍스전시홀2_1y52slt",
+        "officialName": "킨텍스 전시홀 2",
+        "address": "경기 고양시 일산서구 킨텍스로 217-60",
+        "query": "킨텍스 전시홀 2 경기 고양시",
+        "priority": 8,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "2026 우리쌀·우리술 K-라이스 페스타"
+        ]
       }
     ],
     "topInsufficientIdentityQueue": [
@@ -2396,8 +2541,8 @@
         ],
         "sampleTitles": [
           "Bright Dreamer 서울 근교 문화 현장체험 · 기행문 수업(코스4)",
-          "화폐박물관 시즌2 초등 화폐경제탐험대 - 경제원리 알고, 용돈 똑똑하게 쓰자",
-          "역사숲체험 역사체험과 숲체험을 동시에~!"
+          "달마다 새롭게 10회 과정! 한국사 역사체험 탐험대",
+          "화성박물관&화성행궁 어린이 역사투어"
         ]
       },
       {
@@ -2415,8 +2560,8 @@
         ],
         "sampleTitles": [
           "딱딱한쿠키는가라! 촉촉한브라우니쿠키 원데이클래스 오픈!",
-          "테라조비누&입욕제(베쓰밤) 만들기 클래스",
-          "나전칠기, 자개공예 악세사리소품 만들기"
+          "슈가 플라워 리스 케익 원데이 클래스",
+          "MBTI 향수 만들기 클래스"
         ]
       },
       {
@@ -2433,9 +2578,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "Wish Violin 위시바이올린",
+          "발포세라믹으로 만드는 미니어처 바다 풍경",
           "보자기선물포장취미반클래스",
-          "사업자창업포장클래스"
+          "Wish Violin 위시바이올린"
         ]
       },
       {
@@ -2452,9 +2597,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "향기 따라 흐르는 물줄기, 브루잉(핸드드립) 클래스",
-          "감각적인 시그니처 향수 제작, 뤼미에르 퍼퓸 A Class",
-          "초보도 완전 쉽게! 미리캔버스 디자인"
+          "커피 드립백 클래스",
+          "초보도 완전 쉽게! 미리캔버스 디자인",
+          "나만의 특별한 아이템 레진아트 원데이 클래스"
         ]
       },
       {
@@ -2471,9 +2616,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
+          "향과 온기로 회복하는 태국 허브볼 &아로마 롤온 워크샵",
           "무드등만들기",
-          "틴 케이스 거울 만들기",
-          "200여가지 향수 셀프체험 클래스"
+          "키링만들기"
         ]
       },
       {
@@ -2488,9 +2633,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
+          "<뮤지컬> 미녀와야수 - 대전 (26/11/28 ~ 26/11/29)",
           "<뮤지컬> 타키포오 몬스터 전쟁의 서막 ; 더 좀비 - 대전 (26/12/05 ~ 26/12/06)",
-          "<뮤지컬> 산타클로스와 브레멘음악대 - 대전 (26/12/06)",
-          "<뮤지컬> 미녀와야수 - 대전 (26/11/28 ~ 26/11/29)"
+          "<뮤지컬> 산타클로스와 브레멘음악대 - 대전 (26/12/06)"
         ]
       },
       {
@@ -2506,27 +2651,8 @@
         ],
         "sampleTitles": [
           "원 앤 온리 특별한 목걸이 만들기",
-          "우리만의 팔찌 만들기 (원데이 커플/우정 클래스)",
-          "순은 99.9% 은점토로 나만의 반지/목걸이 만들기"
-        ]
-      },
-      {
-        "venueId": "venue_서울마포구_fycqsh",
-        "officialName": "서울 마포구",
-        "address": "서울 마포구 양화로 188",
-        "query": "서울 마포구 서울 마포구",
-        "priority": 48,
-        "performanceCount": 6,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup",
-          "insufficient_place_identity"
-        ],
-        "sampleTitles": [
-          "<팝업> 아스토믹 팝업 - UNBOXING:최애 집합소 (26/11/02 ~ 26/11/22)",
-          "<팝업> 퍼펫순순 팝업 홍대 (26/11/27 ~ 26/12/10)",
-          "<팝업> 연도문구 팝업 - 우주정거장점 (26/09/11 ~ 26/12/06)"
+          "순은 99.9% 은점토로 나만의 반지/목걸이 만들기",
+          "원데이 이색 악세사리 클래스"
         ]
       },
       {
@@ -2544,15 +2670,34 @@
         ],
         "sampleTitles": [
           "펫푸드 자격증 / 반려동물 푸드지도사",
-          "시한드로잉모임",
-          "피크닉 준비 강아지 파스타 (바질파스타, 로제파스타)"
+          "피크닉 준비 강아지 파스타 (바질파스타, 로제파스타)",
+          "시한드로잉모임"
         ]
       },
       {
-        "venueId": "venue_서울용산구_1wtij3s",
-        "officialName": "서울 용산구",
-        "address": "서울 용산구 한강대로23길 55",
-        "query": "서울 용산구 서울 용산구",
+        "venueId": "venue_서울마포구양화로10012_fycqsh",
+        "officialName": "서울 마포구",
+        "address": "서울 마포구 양화로 188",
+        "query": "서울 마포구 서울 마포구",
+        "priority": 40,
+        "performanceCount": 5,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup",
+          "insufficient_place_identity"
+        ],
+        "sampleTitles": [
+          "마시떡 X 헤비베어 팝업",
+          "맹수상점 X 밀키하트 mini 팝업",
+          "언어더컬러 팝업"
+        ]
+      },
+      {
+        "venueId": "venue_서울중구_ritslf",
+        "officialName": "서울 중구",
+        "address": "서울 중구 을지로 281",
+        "query": "서울 중구 서울 중구",
         "priority": 40,
         "performanceCount": 5,
         "reviewFlags": [
@@ -2560,9 +2705,9 @@
           "insufficient_place_identity"
         ],
         "sampleTitles": [
-          "<팝업> 페이지앤코 팝업스토어 (26/11/12 ~ 26/11/25)",
-          "<팝업> 산리오 냥냥 클럽 팝업 (26/10/30 ~ 26/11/22)",
-          "<팝업> 용산아이파크 (26/10/09 ~ 26/12/31)"
+          "<전시> 파인캐릭터 2026 (26/11/27 ~ 26/11/29)",
+          "DDP 루프탑투어 2026",
+          "<행사> 서울라이트 DDP 2026 겨울(26/12/11 ~ 27/01/31)"
         ]
       }
     ],
