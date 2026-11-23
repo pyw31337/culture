@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-11-22T20:28:37.235Z",
+  "checkedAt": "2026-11-23T09:54:23.399Z",
   "status": "warn",
-  "venueCount": 4192,
-  "matchedCount": 2305,
-  "highConfidenceMatchCount": 1762,
+  "venueCount": 4194,
+  "matchedCount": 2308,
+  "highConfidenceMatchCount": 1764,
   "needsReviewCount": 20,
-  "notFoundCount": 795,
-  "pendingLookupCount": 6,
+  "notFoundCount": 796,
+  "pendingLookupCount": 4,
   "insufficientIdentityCount": 280,
   "lookupReady": true,
   "providersConfigured": [
@@ -14,21 +14,6 @@
     "naver"
   ],
   "queue": [
-    {
-      "venueId": "venue_kt_g상상마당홍대라이브홀_1w3xrxx",
-      "officialName": "KT&G 상상마당 홍대 라이브홀",
-      "address": "seoul KT&G 상상마당 홍대 라이브홀",
-      "query": "KT&G 상상마당 홍대 라이브홀 seoul kt&g",
-      "priority": 588,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "invalid_coordinate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "Aosaka: kurayamisaka & parannoul"
-      ]
-    },
     {
       "venueId": "venue_남부의부산조용한서쪽동네에자리잡은고양이두마리강아지한마리예술쟁_02m1dm",
       "officialName": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다.",
@@ -45,6 +30,38 @@
       ]
     },
     {
+      "venueId": "venue_대백프라자10f프라임홀_fwfqht",
+      "officialName": "대백프라자 10F 프라임홀",
+      "address": "seoul 대백프라자 10F 프라임홀",
+      "query": "대백프라자 10F 프라임홀 seoul 대백프라자",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2027 라이브 가족뮤지컬 [백설공주]"
+      ]
+    },
+    {
+      "venueId": "venue_부산소향씨어터우리은행홀_czn02d",
+      "officialName": "부산 소향씨어터 우리은행홀",
+      "address": "seoul 부산 소향씨어터 우리은행홀",
+      "query": "부산 소향씨어터 우리은행홀 seoul 부산",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026-2027 마이진 콘서트 〈ORIGIN〉"
+      ]
+    },
+    {
       "venueId": "venue_혹시원하시는도안이있으신가요_선캐쳐는본인이생각하는가장예쁜디자_f4krtj",
       "officialName": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
       "address": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
@@ -57,52 +74,6 @@
       ],
       "sampleTitles": [
         "스테인드글라스 썬캐쳐 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_스페이스브릭_1ygly3p",
-      "officialName": "스페이스 브릭",
-      "address": "서울 마포구 잔다리로 31",
-      "query": "스페이스 브릭 서울 마포구",
-      "priority": 32,
-      "performanceCount": 4,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "baby selects “2slimey” Live in Seoul",
-        "NGERNOAT 1ST Fanmeeting in Korea",
-        "baby selects, 2slimey Live in Seoul"
-      ]
-    },
-    {
-      "venueId": "venue_cj아지트광흥창_dmv9q9",
-      "officialName": "CJ아지트 광흥창",
-      "address": "서울특별시 마포구 창전로 14 (신정동) CJ아지트",
-      "query": "CJ아지트 광흥창 서울 마포구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "off the menu : Soundwork II"
-      ]
-    },
-    {
-      "venueId": "venue_홍대프리즘홀_14dbnh5",
-      "officialName": "홍대 프리즘홀",
-      "address": "서울 마포구 양화로12길 6",
-      "query": "홍대 프리즘홀 서울 마포구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "KOLAVO & TONARI 합동공연 ‘ㅅㅏㄹㅁ’"
       ]
     }
   ],
@@ -2042,7 +2013,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T20:28:17.464Z",
+      "checkedAt": "2026-11-23T09:53:44.568Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2051,7 +2022,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-22T20:28:17.464Z",
+      "checkedAt": "2026-11-23T09:53:44.568Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2381,14 +2352,14 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-22T20:28:37.235Z",
+    "checkedAt": "2026-11-23T09:54:23.399Z",
     "status": "warn",
-    "venueCount": 4192,
-    "matchedCount": 2305,
-    "highConfidenceMatchCount": 1762,
+    "venueCount": 4194,
+    "matchedCount": 2308,
+    "highConfidenceMatchCount": 1764,
     "needsReviewCount": 20,
-    "notFoundCount": 795,
-    "pendingLookupCount": 6,
+    "notFoundCount": 796,
+    "pendingLookupCount": 4,
     "insufficientIdentityCount": 280,
     "lookupReady": true,
     "providersConfigured": [
@@ -2397,21 +2368,6 @@
     ],
     "staleCacheCount": 0,
     "topQueue": [
-      {
-        "venueId": "venue_kt_g상상마당홍대라이브홀_1w3xrxx",
-        "officialName": "KT&G 상상마당 홍대 라이브홀",
-        "address": "seoul KT&G 상상마당 홍대 라이브홀",
-        "query": "KT&G 상상마당 홍대 라이브홀 seoul kt&g",
-        "priority": 588,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "invalid_coordinate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "Aosaka: kurayamisaka & parannoul"
-        ]
-      },
       {
         "venueId": "venue_남부의부산조용한서쪽동네에자리잡은고양이두마리강아지한마리예술쟁_02m1dm",
         "officialName": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다.",
@@ -2428,6 +2384,38 @@
         ]
       },
       {
+        "venueId": "venue_대백프라자10f프라임홀_fwfqht",
+        "officialName": "대백프라자 10F 프라임홀",
+        "address": "seoul 대백프라자 10F 프라임홀",
+        "query": "대백프라자 10F 프라임홀 seoul 대백프라자",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "2027 라이브 가족뮤지컬 [백설공주]"
+        ]
+      },
+      {
+        "venueId": "venue_부산소향씨어터우리은행홀_czn02d",
+        "officialName": "부산 소향씨어터 우리은행홀",
+        "address": "seoul 부산 소향씨어터 우리은행홀",
+        "query": "부산 소향씨어터 우리은행홀 seoul 부산",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "2026-2027 마이진 콘서트 〈ORIGIN〉"
+        ]
+      },
+      {
         "venueId": "venue_혹시원하시는도안이있으신가요_선캐쳐는본인이생각하는가장예쁜디자_f4krtj",
         "officialName": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
         "address": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
@@ -2440,52 +2428,6 @@
         ],
         "sampleTitles": [
           "스테인드글라스 썬캐쳐 만들기"
-        ]
-      },
-      {
-        "venueId": "venue_스페이스브릭_1ygly3p",
-        "officialName": "스페이스 브릭",
-        "address": "서울 마포구 잔다리로 31",
-        "query": "스페이스 브릭 서울 마포구",
-        "priority": 32,
-        "performanceCount": 4,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "baby selects “2slimey” Live in Seoul",
-          "NGERNOAT 1ST Fanmeeting in Korea",
-          "baby selects, 2slimey Live in Seoul"
-        ]
-      },
-      {
-        "venueId": "venue_cj아지트광흥창_dmv9q9",
-        "officialName": "CJ아지트 광흥창",
-        "address": "서울특별시 마포구 창전로 14 (신정동) CJ아지트",
-        "query": "CJ아지트 광흥창 서울 마포구",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "off the menu : Soundwork II"
-        ]
-      },
-      {
-        "venueId": "venue_홍대프리즘홀_14dbnh5",
-        "officialName": "홍대 프리즘홀",
-        "address": "서울 마포구 양화로12길 6",
-        "query": "홍대 프리즘홀 서울 마포구",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "KOLAVO & TONARI 합동공연 ‘ㅅㅏㄹㅁ’"
         ]
       }
     ],
