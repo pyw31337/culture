@@ -1,28 +1,5 @@
 [
   {
-    "id": "bexco_15794",
-    "title": "국제게임전시회 지스타 2026",
-    "venue": "벡스코 벡스코 전관",
-    "venueKey": "벡스코 벡스코 전관",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.11.19 ~ 2026.11.22",
-    "image": "/images/posters/bexco/bexco_15794.webp",
-    "poster": "/images/posters/bexco/bexco_15794.webp",
-    "backupPoster": "/images/posters/bexco/bexco_15794.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=1&&event_seq=15794",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:22.461Z"
-  },
-  {
     "id": "bexco_16845",
     "title": "2026 부산 직업·평생교육(B-LiFE) 박람회",
     "venue": "벡스코 제2전시장 4B홀",
@@ -43,7 +20,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:23.187Z"
+    "dataCollectedAt": "2026-11-23T13:54:27.937Z"
   },
   {
     "id": "bexco_16842",
@@ -66,7 +43,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:23.958Z"
+    "dataCollectedAt": "2026-11-23T13:54:28.627Z"
   },
   {
     "id": "bexco_16603",
@@ -89,7 +66,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:24.619Z"
+    "dataCollectedAt": "2026-11-23T13:54:29.323Z"
   },
   {
     "id": "bexco_16381",
@@ -112,7 +89,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:25.304Z"
+    "dataCollectedAt": "2026-11-23T13:54:29.994Z"
   },
   {
     "id": "bexco_16602",
@@ -135,7 +112,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:26.107Z"
+    "dataCollectedAt": "2026-11-23T13:54:30.704Z"
   },
   {
     "id": "bexco_16920",
@@ -158,7 +135,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:26.790Z"
+    "dataCollectedAt": "2026-11-23T13:54:31.414Z"
   },
   {
     "id": "bexco_16926",
@@ -181,7 +158,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:28.839Z"
+    "dataCollectedAt": "2026-11-23T13:54:33.420Z"
   },
   {
     "id": "bexco_16384",
@@ -204,7 +181,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:29.526Z"
+    "dataCollectedAt": "2026-11-23T13:54:34.202Z"
   },
   {
     "id": "bexco_16776",
@@ -227,7 +204,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:30.173Z"
+    "dataCollectedAt": "2026-11-23T13:54:34.904Z"
   },
   {
     "id": "bexco_15795",
@@ -250,7 +227,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:30.939Z"
+    "dataCollectedAt": "2026-11-23T13:54:35.631Z"
   },
   {
     "id": "bexco_15798",
@@ -273,11 +250,11 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:31.602Z"
+    "dataCollectedAt": "2026-11-23T13:54:36.295Z"
   },
   {
     "id": "bexco_16385",
-    "title": "파충류동반자 전시 파충류동반자",
+    "title": "파충류동반자",
     "venue": "벡스코 제2전시장 4(A,B)홀",
     "venueKey": "벡스코 제2전시장 4(A,B)홀",
     "address": "부산 해운대구 APEC로 55",
@@ -296,7 +273,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:32.287Z"
+    "dataCollectedAt": "2026-11-23T13:54:36.980Z"
   },
   {
     "id": "bexco_16897",
@@ -319,7 +296,30 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:33.077Z"
+    "dataCollectedAt": "2026-11-23T13:54:37.703Z"
+  },
+  {
+    "id": "bexco_16933",
+    "title": "벡스코 상상체험 키즈월드",
+    "venue": "벡스코 제2전시장 5(B-E)홀",
+    "venueKey": "벡스코 제2전시장 5(B-E)홀",
+    "address": "부산 해운대구 APEC로 55",
+    "lat": 35.1695,
+    "lng": 129.1357,
+    "region": "busan",
+    "date": "2026.12.05 ~ 2027.09.19",
+    "image": "/images/posters/bexco/bexco_16933.webp",
+    "poster": "/images/posters/bexco/bexco_16933.webp",
+    "backupPoster": "/images/posters/bexco/bexco_16933.webp",
+    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16933",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "051-740-7300",
+    "website": "https://www.bexco.co.kr/",
+    "source": "bexco",
+    "dataCollectedAt": "2026-11-23T13:54:38.548Z"
   },
   {
     "id": "bexco_16382",
@@ -342,7 +342,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:33.735Z"
+    "dataCollectedAt": "2026-11-23T13:54:39.299Z"
   },
   {
     "id": "bexco_16387",
@@ -365,7 +365,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:34.370Z"
+    "dataCollectedAt": "2026-11-23T13:54:39.973Z"
   },
   {
     "id": "bexco_15800",
@@ -388,7 +388,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:35.061Z"
+    "dataCollectedAt": "2026-11-23T13:54:40.632Z"
   },
   {
     "id": "bexco_15801",
@@ -411,7 +411,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:35.743Z"
+    "dataCollectedAt": "2026-11-23T13:54:41.421Z"
   },
   {
     "id": "bexco_15802",
@@ -434,7 +434,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:36.448Z"
+    "dataCollectedAt": "2026-11-23T13:54:42.093Z"
   },
   {
     "id": "bexco_16386",
@@ -457,29 +457,6 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:37.065Z"
-  },
-  {
-    "id": "bexco_16895",
-    "title": "2026 iTEF 유학박람회",
-    "venue": "벡스코 제1회의장 213호",
-    "venueKey": "벡스코 제1회의장 213호",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.12 ~ 2026.12.12",
-    "image": "/images/posters/bexco/bexco_16895.webp",
-    "poster": "/images/posters/bexco/bexco_16895.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16895.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16895",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-22T05:34:37.738Z"
+    "dataCollectedAt": "2026-11-23T13:54:42.789Z"
   }
 ]

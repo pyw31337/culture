@@ -8567,7 +8567,12 @@
     "district": "종로구",
     "lat": 37.5834839,
     "lng": 127.0038293,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "facilityType": "민간(대학로)",
+    "seatScale": "40",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "드림시어터": {
     "name": "나인진홀",
@@ -10173,9 +10178,9 @@
     "theaterCount": "1",
     "openedAt": "1991",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관)"
   },
   "킨텍스 제 1전시장 1홀": {
     "name": "킨텍스 캠핑장",
@@ -32209,10 +32214,18 @@
   },
   "홍해성 소극장": {
     "name": "홍해성 소극장",
-    "address": "서울특별시 종로구 동숭길 64",
+    "address": "서울특별시 종로구 동숭길 64 (동숭동)",
     "lat": 37.5811149,
     "lng": 127.004334,
-    "district": "종로구"
+    "district": "종로구",
+    "facilityType": "민간(대학로)",
+    "seatScale": "40",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "대학로 TOM(티오엠) 2관": {
     "name": "대학로 TOM(티오엠) 2관",
@@ -67753,9 +67766,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 편의시설: 카페"
   },
   "플렉스라운지 (구. 스테이라운지, 구. 인디팍)": {
     "name": "플렉스라운지 (구. 스테이라운지, 구. 인디팍)",
@@ -69852,9 +69865,9 @@
       "놀이방",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 놀이방, 엘리베이터"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행 · 편의시설: 놀이방"
   },
   "ASSA 아트홀": {
     "name": "ASSA 아트홀",
@@ -71370,9 +71383,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "제주아트센터": {
     "name": "제주아트센터",
@@ -72875,9 +72888,9 @@
     "theaterCount": "2",
     "openedAt": "2001",
     "amenities": [],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "카페 언엔드": {
     "name": "카페 언엔드",
@@ -73233,10 +73246,22 @@
   },
   "반쥴": {
     "name": "반쥴",
-    "address": "서울특별시 종로구 삼일대로17길 23",
+    "address": "서울특별시 종로구 삼일대로17길 23 (관철동)",
     "lat": 37.5690724,
     "lng": 126.9861858,
-    "district": "종로구"
+    "district": "종로구",
+    "phone": "02-735-5437",
+    "homepage": "http://www.banjul.co.kr/",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "70",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [
+      "카페"
+    ],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장) · 편의시설: 카페"
   },
   "경성대학교 예노소극장": {
     "name": "경성대학교 예노소극장",
@@ -78905,7 +78930,12 @@
     "address": "서울 종로구 동숭길 64",
     "district": "종로구",
     "lat": 37.5810698801653,
-    "lng": 127.004334892548
+    "lng": 127.004334892548,
+    "facilityType": "민간(대학로)",
+    "seatScale": "40",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "구미시문화예술회관 대공연장": {
     "name": "구미시문화예술회관 대공연장",
@@ -83905,7 +83935,7 @@
     "phone": "054-650-6422",
     "homepage": "http://www.ycg.kr/open.content/culture/center/facilities/",
     "facilityType": "공공(문예회관)",
-    "seatScale": "711",
+    "seatScale": "604",
     "theaterCount": "1",
     "openedAt": "1995",
     "amenities": [
@@ -85442,10 +85472,20 @@
   },
   "블라인드아트홀": {
     "name": "블라인드아트홀",
-    "address": "서울 광진구 아차산로 331-1",
+    "address": "서울특별시 광진구 아차산로 331-1 (자양동)",
+    "lat": 37.5376806,
+    "lng": 127.0799086,
     "district": "광진구",
-    "lat": 37.53766983815087,
-    "lng": 127.07989272699841
+    "phone": "070-8254-2182",
+    "homepage": "http://blindarthall.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "70",
+    "theaterCount": "1",
+    "openedAt": "2019",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "홍티아트센터": {
     "name": "홍티아트센터",
@@ -124331,6 +124371,91 @@
   },
   "삼방가 딸기랜드": {
     "name": "삼방가 딸기랜드",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "플렉스홀 3호점": {
+    "name": "플렉스홀 3호점",
+    "address": "서울특별시 마포구 독막로 68 (상수동)",
+    "lat": 37.5475998,
+    "lng": 126.9208586,
+    "district": "마포구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "꿈꾸는예술터 탄광사택 누리큐브": {
+    "name": "꿈꾸는예술터 탄광사택 누리큐브",
+    "address": "강원특별자치도 태백시 태백산로 4833 (소도동)",
+    "lat": 37.131932,
+    "lng": 128.967486,
+    "district": "",
+    "homepage": "https://www.instagram.com/gotbcf",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "카야스테이지": {
+    "name": "카야스테이지",
+    "address": "서울특별시 강남구 논현로34길 11 (도곡동)",
+    "lat": 37.484652,
+    "lng": 127.042851,
+    "district": "강남구",
+    "homepage": "https://www.mule.co.kr/m/club/66647798",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "리틀매직룸": {
+    "name": "리틀매직룸",
+    "address": "대구광역시 중구 동성로2길 18-9 (삼덕동1가)",
+    "lat": 35.866731,
+    "lng": 128.59676,
+    "district": "중구",
+    "homepage": "https://www.instagram.com/littlemagicroom_aboutmagic/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "한국족보박물관": {
+    "name": "한국족보박물관",
+    "address": "대전광역시 중구 침산동 산33 한국족보박물관",
+    "district": "중구",
+    "lat": 36.2843412,
+    "lng": 127.3861707
+  },
+  "군산 오션팔레트": {
+    "name": "군산 오션팔레트",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "바래봉 눈썰매축제": {
+    "name": "바래봉 눈썰매축제",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "크레이지라이더": {
+    "name": "크레이지라이더",
     "address": "정보 없음",
     "district": ""
   }

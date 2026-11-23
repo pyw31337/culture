@@ -21,7 +21,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "롯데월드 아이스링크 - 스페셜 할인 핫딜 상품! 할인율: 9%.",
-    "dataCollectedAt": "2026-11-22T05:35:11.509Z"
+    "dataCollectedAt": "2026-11-23T13:55:12.106Z"
   },
   {
     "id": "klook_deal_10198660",
@@ -45,7 +45,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울랜드 종일 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 36%.",
-    "dataCollectedAt": "2026-11-22T05:35:11.510Z"
+    "dataCollectedAt": "2026-11-23T13:55:12.107Z"
   },
   {
     "id": "klook_deal_10085134",
@@ -69,31 +69,31 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울랜드 AFTER4 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 40%.",
-    "dataCollectedAt": "2026-11-22T05:35:11.510Z"
+    "dataCollectedAt": "2026-11-23T13:55:12.107Z"
   },
   {
-    "id": "klook_deal_10332119",
-    "title": "[핫딜] 서울대공원 동물원 입장권 (당일사용불가)",
-    "venue": "레저 및 체험 전용관",
-    "venueKey": "레저 및 체험 전용관",
-    "address": "SEOUL 관광 명소",
-    "lat": 37.5665,
-    "lng": 126.978,
-    "region": "seoul",
+    "id": "klook_deal_10069817",
+    "title": "[핫딜] 서울랜드 어린이 종일 파크이용권",
+    "venue": "서울랜드",
+    "venueKey": "서울랜드",
+    "address": "경기 과천시 광명로 181",
+    "lat": 37.4363,
+    "lng": 127.021,
+    "region": "gyeonggi",
     "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/hotdeals/klook_deal_10332119.webp",
-    "poster": "/images/posters/hotdeals/klook_deal_10332119.webp",
-    "backupPoster": "/images/posters/hotdeals/klook_deal_10332119.webp",
-    "link": "https://leisure-web.yanolja.com/leisure/10332119",
+    "image": "/images/posters/hotdeals/klook_deal_10069817.webp",
+    "poster": "/images/posters/hotdeals/klook_deal_10069817.webp",
+    "backupPoster": "/images/posters/hotdeals/klook_deal_10069817.webp",
+    "link": "https://leisure-web.yanolja.com/leisure/10069817",
     "genre": "tourism",
     "category": "여행",
-    "price": "1,600원~",
-    "priceDetail": "1,600원~ (20% 할인 핫딜)",
+    "price": "26,900원~",
+    "priceDetail": "26,900원~ (37% 할인 핫딜)",
     "contact": "1544-6663",
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
-    "description": "서울대공원 동물원 입장권 (당일사용불가) - 스페셜 할인 핫딜 상품! 할인율: 20%.",
-    "dataCollectedAt": "2026-11-22T05:35:11.510Z"
+    "description": "서울랜드 어린이 종일 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 37%.",
+    "dataCollectedAt": "2026-11-23T13:55:12.107Z"
   },
   {
     "id": "klook_deal_10185624",
@@ -117,6 +117,6 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울대공원 리프트PKG (동물원/테마가든/과천과학관 등) - 스페셜 할인 핫딜 상품! 할인율: 12%.",
-    "dataCollectedAt": "2026-11-22T05:35:11.510Z"
+    "dataCollectedAt": "2026-11-23T13:55:12.107Z"
   }
 ]

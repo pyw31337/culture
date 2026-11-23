@@ -1,37 +1,5 @@
 [
   {
-    "id": "kovo_20261122_우리WON_vs_스타즈",
-    "title": "[배구] 우리WON vs 스타즈",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-22 14:00",
-    "venue": "서울장충체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "seoul",
-    "genre": "volleyball",
-    "homeTeam": "우리WON",
-    "awayTeam": "스타즈",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=1&league=201&round=1&homeTeam=1009&awayTeam=1004",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=39&season=023&league=201&gender=1"
-  },
-  {
-    "id": "kovo_20261122_힐스테이트_vs_핑크스파이더스",
-    "title": "[배구] 힐스테이트 vs 핑크스파이더스",
-    "image": "/images/volleyball_poster.png",
-    "date": "2026-11-22 14:00",
-    "venue": "수원체육관",
-    "link": "https://kovo.co.kr/games/v-leagues/schedules?season=022&gender=all&league=201&round=all",
-    "region": "gyeonggi",
-    "genre": "volleyball",
-    "homeTeam": "힐스테이트",
-    "awayTeam": "핑크스파이더스",
-    "homeTeamLogo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-    "awayTeamLogo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-    "versusLink": "https://kovo.co.kr/games/v-leagues/versus?season=023&gender=2&league=201&round=1&homeTeam=2001&awayTeam=2004",
-    "highlightsLink": "https://kovo.co.kr/games/v-leagues/result/highlights?gameNo=40&season=023&league=201&gender=2"
-  },
-  {
     "id": "kovo_20261124_읏맨_vs_점보스",
     "title": "[배구] 읏맨 vs 점보스",
     "image": "/images/volleyball_poster.png",
