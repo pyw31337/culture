@@ -16604,7 +16604,7 @@
     "status": "needs_review",
     "confidence": 0,
     "matchedAt": "",
-    "checkedAt": "2026-11-23T16:28:35.832Z",
+    "checkedAt": "2026-11-23T20:30:12.221Z",
     "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
     "reason": "Kakao local search failed: 400 Bad Request"
   },
@@ -16730,7 +16730,7 @@
     "status": "needs_review",
     "confidence": 0,
     "matchedAt": "",
-    "checkedAt": "2026-11-23T16:28:35.832Z",
+    "checkedAt": "2026-11-23T20:30:12.221Z",
     "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
     "reason": "Kakao local search failed: 400 Bad Request"
   },
@@ -32546,15 +32546,6 @@
     "query": "진주남강유등전시관 경남 진주시",
     "reason": "name=1.00, address=0.88, distance=1m"
   },
-  "venue_창덕궁집결지확인필수_1gvfc5r": {
-    "venueId": "venue_창덕궁집결지확인필수_1gvfc5r",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T10:54:49.202Z",
-    "query": "창덕궁 집결지 확인 필수 서울 종로구",
-    "reason": "no candidates returned"
-  },
   "venue_창작공간bbb_qwrvyl": {
     "venueId": "venue_창작공간bbb_qwrvyl",
     "status": "matched",
@@ -34351,25 +34342,6 @@
     "checkedAt": "2026-11-19T10:54:49.202Z",
     "query": "감정서가 서울 용산구",
     "reason": "no candidates returned"
-  },
-  "venue_강남구1인가구커뮤니티센터_1n1qmg7": {
-    "venueId": "venue_강남구1인가구커뮤니티센터_1n1qmg7",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "2096197047",
-    "officialName": "강남구1인가구커뮤니티센터",
-    "roadAddressName": "서울 강남구 테헤란로8길 36",
-    "addressName": "서울 강남구 역삼동 827-63",
-    "lat": 37.4963761238079,
-    "lng": 127.03195532052911,
-    "phone": "02-552-1101",
-    "url": "http://place.map.kakao.com/2096197047",
-    "categoryName": "사회,공공기관 > 단체,협회 > 사회복지시설",
-    "confidence": 1,
-    "matchedAt": "2026-11-19T10:54:49.202Z",
-    "checkedAt": "2026-11-19T10:54:49.202Z",
-    "query": "강남구 1인가구 커뮤니티센터 서울 강남구",
-    "reason": "name=1.00, address=1.00, distance=15m"
   },
   "venue_강남구민회관_yea21x": {
     "venueId": "venue_강남구민회관_yea21x",
@@ -37220,24 +37192,6 @@
     "checkedAt": "2026-11-19T14:22:00.795Z",
     "query": "Baby Doll 베이비돌) 서울 서대문구",
     "reason": "name=0.31, address=0.88, distance=0m"
-  },
-  "venue_hall1_p0qycv": {
-    "venueId": "venue_hall1_p0qycv",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "815097238",
-    "officialName": "Hall1",
-    "roadAddressName": "서울 영등포구 양평로22마길 8",
-    "addressName": "서울 영등포구 양평동5가 107-12",
-    "lat": 37.54015468760792,
-    "lng": 126.89469108640166,
-    "url": "http://place.map.kakao.com/815097238",
-    "categoryName": "문화,예술 > 문화시설 > 전시관",
-    "confidence": 1,
-    "matchedAt": "2026-11-19T14:22:00.795Z",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "Hall 1 서울 영등포구",
-    "reason": "name=1.00, address=1.00, distance=1m"
   },
   "venue_각학급별로진행_7lui6m": {
     "venueId": "venue_각학급별로진행_7lui6m",
@@ -40273,15 +40227,6 @@
     "checkedAt": "2026-11-19T14:22:00.795Z",
     "query": "동궁원 경북 경주시",
     "reason": "name=0.60, address=0.55, distance=1393m"
-  },
-  "venue_동대문디자인플라자디자인랩1층ddp쇼룸_ritslf": {
-    "venueId": "venue_동대문디자인플라자디자인랩1층ddp쇼룸_ritslf",
-    "status": "not_found",
-    "confidence": 0,
-    "matchedAt": "",
-    "checkedAt": "2026-11-19T14:22:00.795Z",
-    "query": "동대문디자인플라자 디자인랩1층 DDP쇼룸 서울 중구",
-    "reason": "no candidates returned"
   },
   "venue_동대문디자인플라자뮤지엄3층둘레길갤러리_ritslf": {
     "venueId": "venue_동대문디자인플라자뮤지엄3층둘레길갤러리_ritslf",
@@ -50553,25 +50498,6 @@
     "query": "앳모스피어 뮤직홀 경기 남양주시",
     "reason": "name=1.00, address=1.00, distance=1238m"
   },
-  "venue_야기스튜디오_dt09zm": {
-    "venueId": "venue_야기스튜디오_dt09zm",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "1811237048",
-    "officialName": "야기스튜디오",
-    "roadAddressName": "서울 강남구 헌릉로569길 37",
-    "addressName": "서울 강남구 세곡동 599",
-    "lat": 37.466792454277595,
-    "lng": 127.09759836176222,
-    "phone": "02-554-0171",
-    "url": "http://place.map.kakao.com/1811237048",
-    "categoryName": "문화,예술 > 음악 > 녹음실",
-    "confidence": 0.958,
-    "matchedAt": "2026-11-20T09:53:15.188Z",
-    "checkedAt": "2026-11-20T09:53:15.188Z",
-    "query": "야기스튜디오 서울 강남구",
-    "reason": "name=1.00, address=0.88, distance=3m"
-  },
   "venue_양구백자박물관_4kgxwt": {
     "venueId": "venue_양구백자박물관_4kgxwt",
     "status": "matched",
@@ -52183,25 +52109,6 @@
     "checkedAt": "2026-11-20T14:15:52.441Z",
     "query": "와부도서관 경기 남양주시",
     "reason": "name=1.00, address=1.00, distance=0m"
-  },
-  "venue_와이아트갤러리_1s03kv3": {
-    "venueId": "venue_와이아트갤러리_1s03kv3",
-    "status": "matched",
-    "provider": "kakao",
-    "providerPlaceId": "1064285404",
-    "officialName": "와이아트갤러리",
-    "roadAddressName": "서울 중구 퇴계로27길 28",
-    "addressName": "서울 중구 충무로3가 57-8",
-    "lat": 37.5623929373323,
-    "lng": 126.991669667578,
-    "phone": "02-579-6881",
-    "url": "http://place.map.kakao.com/1064285404",
-    "categoryName": "문화,예술 > 미술,공예 > 화랑",
-    "confidence": 1,
-    "matchedAt": "2026-11-20T14:15:52.441Z",
-    "checkedAt": "2026-11-20T14:15:52.441Z",
-    "query": "와이아트 갤러리 서울 중구",
-    "reason": "name=1.00, address=1.00, distance=3m"
   },
   "venue_와일드벅스곤충탐험대_cm955n": {
     "venueId": "venue_와일드벅스곤충탐험대_cm955n",
@@ -63547,5 +63454,24 @@
     "checkedAt": "2026-11-23T16:28:35.832Z",
     "query": "후용공연예술센터 교실극장 강원 원주시",
     "reason": "name=1.00, address=1.00, distance=4492m"
+  },
+  "venue_고양아람누리새라새극장_jyjbn5": {
+    "venueId": "venue_고양아람누리새라새극장_jyjbn5",
+    "status": "matched",
+    "provider": "kakao",
+    "providerPlaceId": "17571790",
+    "officialName": "고양아람누리 새라새극장",
+    "roadAddressName": "경기 고양시 일산동구 중앙로 1286",
+    "addressName": "경기 고양시 일산동구 마두동 816",
+    "lat": 37.661564151734524,
+    "lng": 126.77364896286143,
+    "phone": "1577-7766",
+    "url": "http://place.map.kakao.com/17571790",
+    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
+    "confidence": 1,
+    "matchedAt": "2026-11-23T20:30:12.221Z",
+    "checkedAt": "2026-11-23T20:30:12.221Z",
+    "query": "고양아람누리 새라새극장 경기 고양시",
+    "reason": "name=1.00, address=1.00, distance=0m"
   }
 }
