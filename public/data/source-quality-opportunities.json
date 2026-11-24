@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-23T20:30:36.309Z",
+  "checkedAt": "2026-11-24T10:10:46.323Z",
   "status": "pass",
-  "itemCount": 9131,
+  "itemCount": 9134,
   "sourceCount": 28,
   "highOpportunitySourceCount": 0,
   "topSourceOpportunities": [
@@ -238,10 +238,10 @@
   ],
   "missingImageCount": 5,
   "weakImageCount": 75,
-  "missingDetailImageCount": 3937,
-  "missingCoordinateCount": 936,
+  "missingDetailImageCount": 3956,
+  "missingCoordinateCount": 937,
   "missingAddressCount": 328,
-  "unknownPriceCount": 1216,
-  "weakDescriptionCount": 3676,
+  "unknownPriceCount": 1234,
+  "weakDescriptionCount": 3692,
   "duplicateSignatureCount": 42
 }
