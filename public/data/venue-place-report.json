@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-11-24T10:10:40.647Z",
+  "checkedAt": "2026-11-24T13:52:43.533Z",
   "status": "warn",
-  "venueCount": 4225,
-  "matchedCount": 2332,
-  "highConfidenceMatchCount": 1780,
+  "venueCount": 4247,
+  "matchedCount": 2319,
+  "highConfidenceMatchCount": 1771,
   "needsReviewCount": 20,
-  "notFoundCount": 801,
-  "pendingLookupCount": 2,
-  "insufficientIdentityCount": 281,
+  "notFoundCount": 795,
+  "pendingLookupCount": 50,
+  "insufficientIdentityCount": 283,
   "lookupReady": true,
   "providersConfigured": [
     "kakao",
@@ -30,6 +30,38 @@
       ]
     },
     {
+      "venueId": "venue_서울여자대학교대강당_13szoou",
+      "officialName": "서울여자대학교 대강당",
+      "address": "etc 서울여자대학교 대강당",
+      "query": "서울여자대학교 대강당 etc 서울여자대학교",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "W24 단독 공연: NEXT CHAPTER: BEST CHAPTER / Section 12. Love always the answer"
+      ]
+    },
+    {
+      "venueId": "venue_우리동네mg갤러리_13abhmp",
+      "officialName": "우리동네 MG갤러리",
+      "address": "전북특별자치도 MG정읍새마을금고 본점 우리동네 MG갤러리",
+      "query": "우리동네 MG갤러리 전북 mg정읍새마을금고",
+      "priority": 588,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "오미숙 작가 《마음과 마음을 - 이음》"
+      ]
+    },
+    {
       "venueId": "venue_혹시원하시는도안이있으신가요_선캐쳐는본인이생각하는가장예쁜디자_f4krtj",
       "officialName": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
       "address": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
@@ -42,6 +74,694 @@
       ],
       "sampleTitles": [
         "스테인드글라스 썬캐쳐 만들기"
+      ]
+    },
+    {
+      "venueId": "venue_세텍제1전시실제2전시실_1an6vwa",
+      "officialName": "세텍 제1전시실, 제2전시실",
+      "address": "서울 강남구 남부순환로 3104",
+      "query": "세텍 제1전시실, 제2전시실 서울 강남구",
+      "priority": 72,
+      "performanceCount": 9,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2027 대한민국 재테크박람회",
+        "Beaver Rocks 인디게임 & 컬처 페스티벌",
+        "2027 구정 명절 선물 박람회"
+      ]
+    },
+    {
+      "venueId": "venue_올림픽공원티켓링크라이브아레나_cqh8wb",
+      "officialName": "올림픽공원 티켓링크 라이브 아레나",
+      "address": "서울 송파구 양재대로71길 2-7",
+      "query": "올림픽공원 티켓링크 라이브 아레나 서울 송파구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "XIA Musical Concert with Orchestra Vol.9",
+        "CRUSH CONCERT: CRUSH H♥UR",
+        "CRUSH CONCERT: CRUSH H♥UR"
+      ]
+    },
+    {
+      "venueId": "venue_광주광주예술의전당_1d62rog",
+      "officialName": "광주예술의전당",
+      "address": "광주 북구 북문대로 60",
+      "query": "광주예술의전당 광주 북구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "전남광주통합특별시립오페라단 제23회 정기공연 푸치니 오페라: 라 보엠",
+        "GUMMY Tour Concert 2026 〈LOVE〉-광주"
+      ]
+    },
+    {
+      "venueId": "venue_레저및체험전용관_133on61",
+      "officialName": "레저 및 체험 전용관",
+      "address": "JEJU 관광 명소",
+      "query": "레저 및 체험 전용관 jeju 관광",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "오레브 핫 스프링&스파",
+        "아쿠아플라넷 제주 입장권 & 늦은오후권 (26.11월)"
+      ]
+    },
+    {
+      "venueId": "venue_서울남산국악당크라운해태홀_1984hlb",
+      "officialName": "서울남산국악당 크라운해태홀",
+      "address": "서울 중구 퇴계로34길 28",
+      "query": "서울남산국악당 크라운해태홀 서울 중구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "영재한음(국악)회",
+        "국가무형유산 승전무 <통영 가무악 남산에서 춤추다>"
+      ]
+    },
+    {
+      "venueId": "venue_인천인천아트플랫폼_kbgklz",
+      "officialName": "인천 | 인천아트플랫폼",
+      "address": "인천광역시 중구 제물량로218번길 3 - 0 인천아트플랫폼",
+      "query": "인천 | 인천아트플랫폼 인천 중구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 인천아트플랫폼 지역연계 프로젝트 <IAP 아트랩> 개항장 공예마을 《개항장을 잇다》",
+        "2026 인천아트플랫폼 지역연계 프로젝트 <IAP 아트랩> 문아트랩 《찍는 상점: 도시산수 》"
+      ]
+    },
+    {
+      "venueId": "venue_부산창조문화활력센터소극장624_c8lqw7",
+      "officialName": "창조문화활력센터 소극장 624",
+      "address": "부산광역시 북구 백양대로 1167 (구포동)",
+      "query": "창조문화활력센터 소극장 624 부산 북구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "연극 나비",
+        "나비"
+      ]
+    },
+    {
+      "venueId": "venue_서울큐씨어터구수상한흥신소전용관_1apermz",
+      "officialName": "큐씨어터 구. 수상한흥신소전용관",
+      "address": "서울특별시 종로구 대학로8가길 79 (동숭동)",
+      "query": "큐씨어터 구. 수상한흥신소전용관 서울 종로구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "설강화",
+        "설강화 [대학로]"
+      ]
+    },
+    {
+      "venueId": "venue_서울후암스테이지_1ial8oe",
+      "officialName": "후암스테이지",
+      "address": "서울특별시 종로구 대학로11길 23 (명륜4가)",
+      "query": "후암스테이지 서울 종로구",
+      "priority": 16,
+      "performanceCount": 2,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "붓다, 세상의 길을 묻다",
+        "붓다, 세상의 길을 묻다 [대학로]"
+      ]
+    },
+    {
+      "venueId": "venue_entry55_1fot4dk",
+      "officialName": "entry55",
+      "address": "서울특별시 동작구 동작대로1길 18(사당동)",
+      "query": "entry55 서울 동작구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "The entry to JAZZ [서울 사당]"
+      ]
+    },
+    {
+      "venueId": "venue_redpoint_cbythr",
+      "officialName": "RED POINT",
+      "address": "서울특별시 중구 퇴계로88가길 8 (신당동)",
+      "query": "RED POINT 서울 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "LEEHANGYUL Birtday party [Present BOX : XXX]"
+      ]
+    },
+    {
+      "venueId": "venue_가회당_96mzvd",
+      "officialName": "가회당",
+      "address": "경기도 수원시 팔달구 행궁로 33 (남창동)",
+      "query": "가회당 경기 수원시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "12인의 성난 사람들 [수원]"
+      ]
+    },
+    {
+      "venueId": "venue_강원애니메이션박물관_0vdfbi",
+      "officialName": "강원 | 애니메이션박물관",
+      "address": "강원특별자치도 춘천시 서면 박사로 854",
+      "query": "강원 | 애니메이션박물관 강원 춘천시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "예본교회-한국독립교회 선교단체연합회KAICAM <첫사랑>"
+      ]
+    },
+    {
+      "venueId": "venue_공간울림연주홀_msbvg0",
+      "officialName": "공간울림연주홀",
+      "address": "대구광역시 수성구 범안로64길 18-9 (삼덕동)",
+      "query": "공간울림연주홀 대구 수성구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "청년예술담 Ep.3: 김채은, 변진솔, 배찬미, 허찬영"
+      ]
+    },
+    {
+      "venueId": "venue_광주dm홀_1s3trhv",
+      "officialName": "광주DM홀",
+      "address": "전남광주통합특별시 동구 중앙로148번길 11-27 (호남동)",
+      "query": "광주DM홀 전남광주통합특별시 동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "열한 번째 소리의 풍경: 소프라노 신은선 독창회"
+      ]
+    },
+    {
+      "venueId": "venue_구리아트홀유채꽃소극장_yci9zg",
+      "officialName": "구리아트홀 유채꽃소극장",
+      "address": "경기 구리시 아차산로 453",
+      "query": "구리아트홀 유채꽃소극장 경기 구리시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "돼지책 [구리]"
+      ]
+    },
+    {
+      "venueId": "venue_노원문화예술회관_19jn1jl",
+      "officialName": "노원문화예술회관",
+      "address": "서울특별시 노원구 중계로 181 (중계동)",
+      "query": "노원문화예술회관 서울 노원구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "서울시티발레단, 호두까기 인형 [서울 노원]"
+      ]
+    },
+    {
+      "venueId": "venue_단막극장구대학로단막극장_12ntwix",
+      "officialName": "단막극장 구.대학로단막극장",
+      "address": "서울 종로구 동숭4길 14",
+      "query": "단막극장 구.대학로단막극장 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "THE CELL: 더 셀 [대학로]"
+      ]
+    },
+    {
+      "venueId": "venue_두백_7lv7wo",
+      "officialName": "두백",
+      "address": "경기도 고양시 일산동구 고봉로770번길 30-30 (설문동)",
+      "query": "두백 경기 고양시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "포스트 컨템포러리 써커스 쑈, 쑈쑈쑈: 이태 [고양]"
+      ]
+    },
+    {
+      "venueId": "venue_레드포인트공연장_1wjbesi",
+      "officialName": "레드포인트 공연장",
+      "address": "대구 북구 팔달북로8길 67",
+      "query": "레드포인트 공연장 대구 북구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "나이트 템포: 쇼와그루브 투어"
+      ]
+    },
+    {
+      "venueId": "venue_마포구와우산로21길_0k9qz7",
+      "officialName": "마포구 와우산로21길",
+      "address": "서울 마포구 와우산로21길 29",
+      "query": "마포구 와우산로21길 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "A2O SOUL 팝업 - SUPERSTAR 발매 기념"
+      ]
+    },
+    {
+      "venueId": "venue_베슬스_1jvh2t9",
+      "officialName": "베슬스",
+      "address": "서울특별시 영등포구 경인로77가길 7 (문래동2가)",
+      "query": "베슬스 서울 영등포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "Motion on the Vessls Vol.1"
+      ]
+    },
+    {
+      "venueId": "venue_서대문구홍연길_1h2dqhu",
+      "officialName": "서대문구 홍연길",
+      "address": "서울 서대문구 홍연길 82",
+      "query": "서대문구 홍연길 서울 서대문구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "실로암 경양식 팝업 at 심두"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구강남대로124길36_1vsv1ej",
+      "officialName": "서울 강남구 강남대로124길 3-6",
+      "address": "서울 강남구 강남대로 426",
+      "query": "강남대로124길 3-6 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "리사 다큐멘터리 상영회 - ALWAYS LALISA"
+      ]
+    },
+    {
+      "venueId": "venue_서울강남구언주로168길69영빌딩_17vjaqt",
+      "officialName": "서울 강남구 언주로168길 6-9 영빌딩",
+      "address": "서울 강남구 언주로168길 24",
+      "query": "영빌딩 서울 강남구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "웰던 X 듄 팝업"
+      ]
+    },
+    {
+      "venueId": "venue_서울마포구와우산로37길9예약시사전안내문자드립니다_2l6mbu",
+      "officialName": "서울 마포구 와우산로37길 9 예약 시 사전 안내 문자 드립니다",
+      "address": "서울 마포구 와우산로37길 30",
+      "query": "예약 시 사전 안내 문자 드립니다 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 문학나눔 팝업"
+      ]
+    },
+    {
+      "venueId": "venue_서울송파구올림픽로지하265_신천동잠실역_cg8mvp",
+      "officialName": "서울 송파구 올림픽로 지하 265 (신천동, 잠실역",
+      "address": "서울 송파구 올림픽로 240",
+      "query": "서울 송파구 올림픽로 지하 265 서울 송파구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "쿠키런 X 롯데월드 : 스위트 윈터 어드벤처"
+      ]
+    },
+    {
+      "venueId": "venue_서울남산국악당크라운해태홀_1i52gry",
+      "officialName": "서울남산국악당 크라운해태홀",
+      "address": "서울특별시 중구 퇴계로34길 28 서울남산국악당",
+      "query": "서울남산국악당 크라운해태홀 서울 중구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "국가무형유산 승전무 [통영 가무악 남산에서 춤추다]"
+      ]
+    },
+    {
+      "venueId": "venue_서울대학교제1파워플랜트_6haa66",
+      "officialName": "서울대학교 제1파워플랜트",
+      "address": "서울특별시 관악구 관악로 1",
+      "query": "서울대학교 제1파워플랜트 서울 관악구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "BBUREKA: NOISE CITY"
+      ]
+    },
+    {
+      "venueId": "venue_서울특별시서대문구연세로501_z2ruod",
+      "officialName": "서울특별시 서대문구 연세로 50-1",
+      "address": "서울 서대문구 연세로 13",
+      "query": "서울특별시 서대문구 연세로 50-1 서울 서대문구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "당신이라면 여유롭게 안을 수 있어요 콜라보 카페"
+      ]
+    },
+    {
+      "venueId": "venue_성동구뚝섬로_bjnygt",
+      "officialName": "성동구 뚝섬로",
+      "address": "서울 성동구 뚝섬로 47-7",
+      "query": "성동구 뚝섬로 서울 성동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "테팔 팝업 - 얌스토랑"
+      ]
+    },
+    {
+      "venueId": "venue_성동구연무장15길_x3kbgw",
+      "officialName": "성동구 연무장15길",
+      "address": "서울 성동구 연무장15길 11",
+      "query": "성동구 연무장15길 서울 성동구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "헌터 팝업"
+      ]
+    },
+    {
+      "venueId": "venue_세토리라이브홀공연장_10tm3e3",
+      "officialName": "세토리 라이브홀 공연장",
+      "address": "서울특별시 마포구 신촌로2안길 30 (동교동)",
+      "query": "세토리 라이브홀 공연장 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "MiX: ON VOL.3"
+      ]
+    },
+    {
+      "venueId": "venue_센텀아트홀_1cn12oa",
+      "officialName": "센텀아트홀",
+      "address": "부산광역시 해운대구 센텀중앙로 97 (재송동)",
+      "query": "센텀아트홀 부산 해운대구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "센텀아트홀 기획공연, Nocturne of Scenes: 장면의 야상곡"
+      ]
+    },
+    {
+      "venueId": "venue_스누피가든_prdqoh",
+      "officialName": "스누피가든",
+      "address": "제주 제주시 구좌읍 금백조로 930",
+      "query": "스누피가든 제주 제주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "스누피가든, 자연속에서 즐기는 스누피와의 힐링타임"
+      ]
+    },
+    {
+      "venueId": "venue_스트레인지프룻_1vjdt6g",
+      "officialName": "스트레인지 프룻",
+      "address": "서울 마포구 와우산로29길 64",
+      "query": "스트레인지 프룻 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "전기뱀장어 연말공연: 풀카운트"
+      ]
+    },
+    {
+      "venueId": "venue_신촌201p_1g2g4t3",
+      "officialName": "신촌 201P",
+      "address": "서울특별시 서대문구 연세로7안길 17 (창천동)",
+      "query": "신촌 201P 서울 서대문구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "오직목소리 연말공연: 목소리만"
+      ]
+    },
+    {
+      "venueId": "venue_오디오가이스튜디오_pmbp6m",
+      "officialName": "오디오가이스튜디오",
+      "address": "서울특별시 종로구 효자로23 (통의동)",
+      "query": "오디오가이스튜디오 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "Meet the Artist #01, 카운터테너 이동규: Embraceable You"
+      ]
+    },
+    {
+      "venueId": "venue_위치대한민국대구광역시수성구지산2동12724_1oo8og7",
+      "officialName": "위치대한민국 대구광역시 수성구 지산2동 1272-4",
+      "address": "대구광역시 수성구 무학로 112 (두산동) 수성못",
+      "query": "위치대한민국 대구광역시 수성구 지산2동 1272-4 대구 수성구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "수성빛예술제"
+      ]
+    },
+    {
+      "venueId": "venue_제물포구문화회관구인천중구문화회관_mqjoi3",
+      "officialName": "제물포구 문화회관 구.인천중구문화회관)",
+      "address": "인천광역시 제물포구 축항대로296번길 81 (신흥동3가)",
+      "query": "제물포구 문화회관 구.인천중구문화회관) 인천 제물포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "로제타 홀: 빛의 일기"
+      ]
+    },
+    {
+      "venueId": "venue_충북cgv청주갤러리원1층_1ftfrq3",
+      "officialName": "충북 | CGV청주 갤러리원 1층",
+      "address": "충북 청주시 상당구 상당로81번길 33",
+      "query": "충북 | CGV청주 갤러리원 1층 충북 청주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "A관 이소윤 기획전 \" 틈.틈틈,\""
+      ]
+    },
+    {
+      "venueId": "venue_충북우민아트센터_1w0onpi",
+      "officialName": "충북 | 우민아트센터",
+      "address": "충북 청주시 상당구 사북로 164",
+      "query": "충북 | 우민아트센터 충북 청주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "2026 프로젝트스페이스 우민 구윤지 《ONYX》"
+      ]
+    },
+    {
+      "venueId": "venue_통의동클래식hall_1ufd8mg",
+      "officialName": "통의동클래식 Hall",
+      "address": "서울 종로구 자하문로10길 16",
+      "query": "통의동클래식 Hall 서울 종로구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "앙상블 헤어츠와 함께하는 동화 쏙! 클래식, 스크루지"
+      ]
+    },
+    {
+      "venueId": "venue_플렉스홀3호점_nxabzc",
+      "officialName": "플렉스홀 3호점",
+      "address": "서울특별시 마포구 독막로 68 (상수동)",
+      "query": "플렉스홀 3호점 서울 마포구",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "轟音祭: 연말 합주 대소동"
+      ]
+    },
+    {
+      "venueId": "venue_한국공예관문화제조창_ztn0ll",
+      "officialName": "한국공예관 문화제조창",
+      "address": "충북 청주시 청원구 상당로 314",
+      "query": "한국공예관 문화제조창 충북 청주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "러브액츄얼리 첫번째 사연: 크리스마스 특별공연 [청주]"
+      ]
+    },
+    {
+      "venueId": "venue_후용공연예술센터_54gqrb",
+      "officialName": "후용공연예술센터",
+      "address": "강원도 원주시 문막읍 비야동길 11",
+      "query": "후용공연예술센터 강원 원주시",
+      "priority": 8,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "극단 노뜰 교실그림책극장, 망태 할아버지가 온다 [원주]"
       ]
     }
   ],
@@ -495,6 +1215,25 @@
       ]
     },
     {
+      "venueId": "venue_서울마포구_fycqsh",
+      "officialName": "서울 마포구",
+      "address": "서울 마포구 양화로 188",
+      "query": "서울 마포구 서울 마포구",
+      "priority": 24,
+      "performanceCount": 3,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "high_confidence_similarity_merge",
+        "needs_official_place_lookup",
+        "insufficient_place_identity"
+      ],
+      "sampleTitles": [
+        "<팝업> 퍼펫순순 팝업 홍대 (26/11/27 ~ 26/12/10)",
+        "<팝업> 연도문구 팝업 - 우주정거장점 (26/09/11 ~ 26/12/06)",
+        "휴그 카메라 팝업"
+      ]
+    },
+    {
       "venueId": "venue_서울영등포구_4k72no",
       "officialName": "서울 영등포구",
       "address": "서울 영등포구 여의대로 108",
@@ -883,22 +1622,6 @@
       "sampleTitles": [
         "<연극> 2026 방과후 공연놀이터(장르체험권) (26/09/16 ~ 26/12/09)",
         "<연극> 2026 방과후 공연놀이터(전회차패스권) (26/09/16 ~ 26/12/09)"
-      ]
-    },
-    {
-      "venueId": "venue_서울마포구_fycqsh",
-      "officialName": "서울 마포구",
-      "address": "서울 마포구 양화로 188",
-      "query": "서울 마포구 서울 마포구",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup",
-        "insufficient_place_identity"
-      ],
-      "sampleTitles": [
-        "<팝업> 퍼펫순순 팝업 홍대 (26/11/27 ~ 26/12/10)",
-        "<팝업> 연도문구 팝업 - 우주정거장점 (26/09/11 ~ 26/12/06)"
       ]
     },
     {
@@ -1975,7 +2698,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-24T10:10:07.916Z",
+      "checkedAt": "2026-11-24T13:51:12.060Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -1984,7 +2707,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-24T10:10:07.916Z",
+      "checkedAt": "2026-11-24T13:51:12.060Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2314,15 +3037,15 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-24T10:10:40.647Z",
+    "checkedAt": "2026-11-24T13:52:43.533Z",
     "status": "warn",
-    "venueCount": 4225,
-    "matchedCount": 2332,
-    "highConfidenceMatchCount": 1780,
+    "venueCount": 4247,
+    "matchedCount": 2319,
+    "highConfidenceMatchCount": 1771,
     "needsReviewCount": 20,
-    "notFoundCount": 801,
-    "pendingLookupCount": 2,
-    "insufficientIdentityCount": 281,
+    "notFoundCount": 795,
+    "pendingLookupCount": 50,
+    "insufficientIdentityCount": 283,
     "lookupReady": true,
     "providersConfigured": [
       "kakao",
@@ -2346,6 +3069,38 @@
         ]
       },
       {
+        "venueId": "venue_서울여자대학교대강당_13szoou",
+        "officialName": "서울여자대학교 대강당",
+        "address": "etc 서울여자대학교 대강당",
+        "query": "서울여자대학교 대강당 etc 서울여자대학교",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "W24 단독 공연: NEXT CHAPTER: BEST CHAPTER / Section 12. Love always the answer"
+        ]
+      },
+      {
+        "venueId": "venue_우리동네mg갤러리_13abhmp",
+        "officialName": "우리동네 MG갤러리",
+        "address": "전북특별자치도 MG정읍새마을금고 본점 우리동네 MG갤러리",
+        "query": "우리동네 MG갤러리 전북 mg정읍새마을금고",
+        "priority": 588,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "오미숙 작가 《마음과 마음을 - 이음》"
+        ]
+      },
+      {
         "venueId": "venue_혹시원하시는도안이있으신가요_선캐쳐는본인이생각하는가장예쁜디자_f4krtj",
         "officialName": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
         "address": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요",
@@ -2358,6 +3113,108 @@
         ],
         "sampleTitles": [
           "스테인드글라스 썬캐쳐 만들기"
+        ]
+      },
+      {
+        "venueId": "venue_세텍제1전시실제2전시실_1an6vwa",
+        "officialName": "세텍 제1전시실, 제2전시실",
+        "address": "서울 강남구 남부순환로 3104",
+        "query": "세텍 제1전시실, 제2전시실 서울 강남구",
+        "priority": 72,
+        "performanceCount": 9,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "2027 대한민국 재테크박람회",
+          "Beaver Rocks 인디게임 & 컬처 페스티벌",
+          "2027 구정 명절 선물 박람회"
+        ]
+      },
+      {
+        "venueId": "venue_올림픽공원티켓링크라이브아레나_cqh8wb",
+        "officialName": "올림픽공원 티켓링크 라이브 아레나",
+        "address": "서울 송파구 양재대로71길 2-7",
+        "query": "올림픽공원 티켓링크 라이브 아레나 서울 송파구",
+        "priority": 24,
+        "performanceCount": 3,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "XIA Musical Concert with Orchestra Vol.9",
+          "CRUSH CONCERT: CRUSH H♥UR",
+          "CRUSH CONCERT: CRUSH H♥UR"
+        ]
+      },
+      {
+        "venueId": "venue_광주광주예술의전당_1d62rog",
+        "officialName": "광주예술의전당",
+        "address": "광주 북구 북문대로 60",
+        "query": "광주예술의전당 광주 북구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "전남광주통합특별시립오페라단 제23회 정기공연 푸치니 오페라: 라 보엠",
+          "GUMMY Tour Concert 2026 〈LOVE〉-광주"
+        ]
+      },
+      {
+        "venueId": "venue_레저및체험전용관_133on61",
+        "officialName": "레저 및 체험 전용관",
+        "address": "JEJU 관광 명소",
+        "query": "레저 및 체험 전용관 jeju 관광",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "오레브 핫 스프링&스파",
+          "아쿠아플라넷 제주 입장권 & 늦은오후권 (26.11월)"
+        ]
+      },
+      {
+        "venueId": "venue_서울남산국악당크라운해태홀_1984hlb",
+        "officialName": "서울남산국악당 크라운해태홀",
+        "address": "서울 중구 퇴계로34길 28",
+        "query": "서울남산국악당 크라운해태홀 서울 중구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "high_confidence_similarity_merge",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "영재한음(국악)회",
+          "국가무형유산 승전무 <통영 가무악 남산에서 춤추다>"
+        ]
+      },
+      {
+        "venueId": "venue_인천인천아트플랫폼_kbgklz",
+        "officialName": "인천 | 인천아트플랫폼",
+        "address": "인천광역시 중구 제물량로218번길 3 - 0 인천아트플랫폼",
+        "query": "인천 | 인천아트플랫폼 인천 중구",
+        "priority": 16,
+        "performanceCount": 2,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "2026 인천아트플랫폼 지역연계 프로젝트 <IAP 아트랩> 개항장 공예마을 《개항장을 잇다》",
+          "2026 인천아트플랫폼 지역연계 프로젝트 <IAP 아트랩> 문아트랩 《찍는 상점: 도시산수 》"
         ]
       }
     ],

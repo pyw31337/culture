@@ -22320,7 +22320,16 @@
     "district": "관악구",
     "lat": 37.4664469,
     "lng": 126.9496873,
-    "mapped_region_id": "seoul"
+    "mapped_region_id": "seoul",
+    "phone": "02-880-5114",
+    "facilityType": "공공(기타)",
+    "seatScale": "115",
+    "theaterCount": "4",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "더서울라이티움": {
     "name": "서울숲씨어터",
@@ -50444,7 +50453,16 @@
     "address": "서울특별시 종로구 대학로 101",
     "lat": 37.58045239,
     "lng": 126.9971964,
-    "district": "종로구"
+    "district": "종로구",
+    "phone": "02-880-5114",
+    "facilityType": "공공(기타)",
+    "seatScale": "115",
+    "theaterCount": "4",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "국립민속박물관 파주 어린이체험실": {
     "name": "국립민속박물관 파주 어린이체험실",
@@ -50458,7 +50476,16 @@
     "address": "서울특별시 종로구 대학로 101",
     "lat": 37.58045239,
     "lng": 126.9971964,
-    "district": "종로구"
+    "district": "종로구",
+    "phone": "02-880-5114",
+    "facilityType": "공공(기타)",
+    "seatScale": "115",
+    "theaterCount": "4",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "제주융합과학연구원 제주과학탐구체험관": {
     "name": "제주융합과학연구원 제주과학탐구체험관",
@@ -62030,9 +62057,9 @@
       "식당",
       "카페"
     ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 식당, 카페"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 식당, 카페"
   },
   "로라뮤직-바인홀": {
     "name": "로라뮤직-바인홀",
@@ -67006,9 +67033,9 @@
       "장애인 주차",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 카페, 장애인 주차, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 카페"
   },
   "창녕문화예술회관": {
     "name": "창녕문화예술회관",
@@ -68633,9 +68660,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "기타(비공연장)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "채널 1969": {
     "name": "채널 1969",
@@ -72251,10 +72278,21 @@
   },
   "서울대학교": {
     "name": "서울대학교",
-    "address": "서울특별시 관악구 관악로 1",
+    "address": "서울특별시 관악구 관악로 1 (신림동)",
     "lat": 37.459362,
     "lng": 126.950572,
-    "district": "관악구"
+    "district": "관악구",
+    "phone": "02-880-5114",
+    "facilityType": "공공(기타)",
+    "seatScale": "115",
+    "theaterCount": "4",
+    "openedAt": "",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "대전예술가의집": {
     "name": "대전예술가의집",
@@ -79433,7 +79471,12 @@
     "address": "대구 북구 팔달북로8길 67",
     "district": "",
     "lat": 35.896778046272,
-    "lng": 128.566282895176
+    "lng": 128.566282895176,
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "180",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "세종문화회관 세종M시어터": {
     "name": "세종문화회관 세종M시어터",
@@ -80185,7 +80228,15 @@
     "address": "서울 종로구 자하문로10길 16",
     "district": "종로구",
     "lat": 37.579215180415,
-    "lng": 126.972355415425
+    "lng": 126.972355415425,
+    "phone": "010-4113-4768",
+    "homepage": "https://classic9119.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "40",
+    "theaterCount": "1",
+    "openedAt": "2019",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "한국예술종합학교": {
     "name": "한국예술종합학교",
@@ -85581,9 +85632,9 @@
       "장애인 주차",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 장애인 엘리베이터 운행"
   },
   "제주돌문화공원": {
     "name": "제주돌문화공원",
@@ -113787,7 +113838,16 @@
     "address": "서울 관악구 관악로 1",
     "district": "관악구",
     "lat": 37.4662872666604,
-    "lng": 126.94815644252
+    "lng": 126.94815644252,
+    "phone": "02-880-5114",
+    "facilityType": "공공(기타)",
+    "seatScale": "115",
+    "theaterCount": "4",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "하도 아레나": {
     "name": "하도 아레나",
@@ -115284,7 +115344,16 @@
     "address": "서울 관악구 관악로 1",
     "district": "관악구",
     "lat": 37.4662745310032,
-    "lng": 126.95488847648
+    "lng": 126.95488847648,
+    "phone": "02-880-5114",
+    "facilityType": "공공(기타)",
+    "seatScale": "115",
+    "theaterCount": "4",
+    "amenities": [
+      "장애인 주차"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "facilities": "시설 특성: 공공(기타)"
   },
   "아르떼서울 아르떼홀": {
     "name": "아르떼서울 아르떼홀",
@@ -124458,5 +124527,135 @@
     "name": "크레이지라이더",
     "address": "정보 없음",
     "district": ""
+  },
+  "광주DM홀": {
+    "name": "광주DM홀",
+    "address": "전남광주통합특별시 동구 중앙로148번길 11-27 (호남동)",
+    "lat": 35.147367,
+    "lng": 126.913313,
+    "district": "동구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "가회당": {
+    "name": "가회당",
+    "address": "경기도 수원시 팔달구 행궁로 33 (남창동)",
+    "lat": 37.2795433,
+    "lng": 127.0150575,
+    "district": "수원시",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "51",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "신촌 201P": {
+    "name": "신촌 201P",
+    "address": "서울특별시 서대문구 연세로7안길 17 (창천동)",
+    "lat": 37.558024,
+    "lng": 126.935882,
+    "district": "서대문구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "베슬스": {
+    "name": "베슬스",
+    "address": "서울특별시 영등포구 경인로77가길 7 (문래동2가)",
+    "lat": 37.511983,
+    "lng": 126.892775,
+    "district": "영등포구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "50",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "통의동클래식": {
+    "name": "통의동클래식",
+    "address": "서울특별시 종로구 자하문로10길 16 (통의동)",
+    "lat": 37.5792188,
+    "lng": 126.9723498,
+    "district": "종로구",
+    "phone": "010-4113-4768",
+    "homepage": "https://classic9119.modoo.at/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "40",
+    "theaterCount": "1",
+    "openedAt": "2019",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "두백": {
+    "name": "두백",
+    "address": "경기도 고양시 일산동구 고봉로770번길 30-30 (설문동)",
+    "lat": 37.72213,
+    "lng": 126.792765,
+    "district": "고양시",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "130",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "서울여자대학교": {
+    "name": "서울여자대학교",
+    "address": "서울특별시 노원구 화랑로 621(공릉동)",
+    "lat": 37.6287827,
+    "lng": 127.0889915,
+    "district": "노원구",
+    "phone": "02-970-5114",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "1136",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [
+      "식당",
+      "카페",
+      "편의점",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 편의시설: 식당, 카페, 편의점"
+  },
+  "레드포인트": {
+    "name": "레드포인트",
+    "address": "서울특별시 중구 퇴계로88가길 8 (신당동)",
+    "lat": 37.563333,
+    "lng": 127.020631,
+    "district": "중구",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "180",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   }
 }

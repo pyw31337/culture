@@ -1,28 +1,5 @@
 [
   {
-    "id": "setec_2315",
-    "title": "서울시 미용예술경연대회",
-    "venue": "세텍 제3전시실",
-    "venueKey": "세텍 제3전시실",
-    "address": "서울 강남구 남부순환로 3104",
-    "lat": 37.4968,
-    "lng": 127.0628,
-    "region": "seoul",
-    "date": "2026.11.24 ~ 2026.11.24",
-    "image": "/images/posters/setec/setec_2315.webp",
-    "poster": "/images/posters/setec/setec_2315.webp",
-    "backupPoster": "/images/posters/setec/setec_2315.webp",
-    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2315",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "02-2222-3811",
-    "website": "https://www.setec.or.kr/",
-    "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.887Z"
-  },
-  {
     "id": "setec_2256",
     "title": "2027 대한민국 재테크박람회",
     "venue": "세텍 제1전시실, 제2전시실",
@@ -43,7 +20,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.888Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.295Z"
   },
   {
     "id": "setec_2305",
@@ -66,7 +43,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.888Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.296Z"
   },
   {
     "id": "setec_2313",
@@ -89,7 +66,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.888Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.296Z"
   },
   {
     "id": "setec_2312",
@@ -112,7 +89,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.888Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.296Z"
   },
   {
     "id": "setec_2307",
@@ -135,7 +112,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.888Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.297Z"
   },
   {
     "id": "setec_2308",
@@ -158,7 +135,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.888Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.297Z"
   },
   {
     "id": "setec_2294",
@@ -181,7 +158,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.888Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.298Z"
   },
   {
     "id": "setec_2264",
@@ -204,7 +181,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.889Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.299Z"
   },
   {
     "id": "setec_2309",
@@ -227,7 +204,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.889Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.299Z"
   },
   {
     "id": "setec_2323",
@@ -250,7 +227,7 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.889Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.299Z"
   },
   {
     "id": "setec_2297",
@@ -273,6 +250,29 @@
     "contact": "02-2222-3811",
     "website": "https://www.setec.or.kr/",
     "source": "setec",
-    "dataCollectedAt": "2026-11-23T13:54:42.889Z"
+    "dataCollectedAt": "2026-11-24T13:51:41.299Z"
+  },
+  {
+    "id": "setec_2296",
+    "title": "2027 구정 명절 선물 박람회",
+    "venue": "세텍 제1전시실, 제2전시실",
+    "venueKey": "세텍 제1전시실, 제2전시실",
+    "address": "서울 강남구 남부순환로 3104",
+    "lat": 37.4968,
+    "lng": 127.0628,
+    "region": "seoul",
+    "date": "2026.12.27 ~ 2026.12.29",
+    "image": "/images/posters/setec/setec_2296.webp",
+    "poster": "/images/posters/setec/setec_2296.webp",
+    "backupPoster": "/images/posters/setec/setec_2296.webp",
+    "link": "https://www.setec.or.kr/front/schedule/view.do?sIdx=2296",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "02-2222-3811",
+    "website": "https://www.setec.or.kr/",
+    "source": "setec",
+    "dataCollectedAt": "2026-11-24T13:51:41.373Z"
   }
 ]
