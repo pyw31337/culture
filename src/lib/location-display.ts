@@ -159,11 +159,54 @@ function isGenericAddressEcho(value?: string, venue?: string) {
     return cleaned === venueName;
 }
 
+const PROVINCE_SUFFIX_PATTERN = /(특별자치도|특별자치시|특별시|광역시|도)$/;
+const PROVINCE_NAMES = new Set([
+    '서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종',
+    '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주',
+]);
+
+function isProvinceToken(token?: string) {
+    if (!token) return false;
+    return PROVINCE_NAMES.has(token) || PROVINCE_SUFFIX_PATTERN.test(token);
+}
+
+/**
+ * Two addresses name the same place when they only differ by a leading province name.
+ * `제주특별자치도 제주시 청사로 11` and `제주시 청사로 11` are one address, and so are
+ * `강원특별자치도 춘천시 중앙로 1` and `춘천시 중앙로 1`.
+ *
+ * The relaxed comparison only applies while one side carries the province, so two
+ * addresses that each name a province still have to name the same one: `서울 강남구 ...`
+ * against `부산 해운대구 ...` stays a real mismatch.
+ */
+function areEquivalentAddressTokens(leftTokens: string[], rightTokens: string[]) {
+    if (!leftTokens.length || !rightTokens.length) return false;
+    if (leftTokens.join(' ') === rightTokens.join(' ')) return true;
+
+    const leftHasProvince = isProvinceToken(leftTokens[0]);
+    const rightHasProvince = isProvinceToken(rightTokens[0]);
+    if (leftHasProvince && rightHasProvince) return false;
+
+    if (leftHasProvince && leftTokens.length > 1 && leftTokens.slice(1).join(' ') === rightTokens.join(' ')) {
+        return true;
+    }
+    if (rightHasProvince && rightTokens.length > 1 && rightTokens.slice(1).join(' ') === leftTokens.join(' ')) {
+        return true;
+    }
+
+    return false;
+}
+
 export function isSevereAddressMismatch(left?: string, right?: string) {
     if (!hasUsableAddress(left) || !hasUsableAddress(right)) return false;
 
-    const [leftRegion, leftDistrict] = extractAddressTokens(left);
-    const [rightRegion, rightDistrict] = extractAddressTokens(right);
+    const leftTokens = extractAddressTokens(left);
+    const rightTokens = extractAddressTokens(right);
+
+    if (areEquivalentAddressTokens(leftTokens, rightTokens)) return false;
+
+    const [leftRegion, leftDistrict] = leftTokens;
+    const [rightRegion, rightDistrict] = rightTokens;
 
     if (!leftRegion || !rightRegion) return false;
     if (leftRegion !== rightRegion) return true;

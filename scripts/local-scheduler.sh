@@ -243,8 +243,12 @@ profile_env() {
     : "${SKIP_PLAYWRIGHT_INSTALL:=1}"
   fi
   : "${INTERPARK_SESSION_WINDOW_DAYS:=90}"
+  # Detail endpoints intermittently return empty price/age/runtime fields on
+  # local fallback runs. Keep the observations and report the shortfall as a
+  # warning rather than discarding the whole daily collection.
+  : "${DETAIL_COMPLETENESS_WARN_SOURCES:=interpark,kopis}"
   export LOCAL_SCRAPER_PLAN INTERPARK_API_ENRICH_LIMIT INTERPARK_SESSION_LIMIT INTERPARK_RUN_BUDGET_SECONDS \
-    VENUE_PLACE_LOOKUP_LIMIT LOCAL_SCRAPER_TIMEOUT_SECONDS INTERPARK_SESSION_WINDOW_DAYS
+    VENUE_PLACE_LOOKUP_LIMIT LOCAL_SCRAPER_TIMEOUT_SECONDS INTERPARK_SESSION_WINDOW_DAYS DETAIL_COMPLETENESS_WARN_SOURCES
   [ -n "${INTERPARK_ENRICH_LIMIT:-}" ] && export INTERPARK_ENRICH_LIMIT
   [ -n "${YES24_DETAIL_LIMIT:-}" ] && export YES24_DETAIL_LIMIT
   [ -n "${SKIP_PLAYWRIGHT_INSTALL:-}" ] && export SKIP_PLAYWRIGHT_INSTALL

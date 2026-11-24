@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-11-19T00:34:42.533Z",
+  "runId": "44425955808",
+  "commit": "f9b0c90d92bdf758cf0d724992f78ae7d0283c86",
+  "failures": [],
+  "repairs": {
+    "attempted": true,
+    "changedRecords": 0,
+    "changedFields": 0,
+    "details": []
+  },
+  "detailCoverage": [
+    {
+      "source": "kopis",
+      "sample": 120,
+      "missingPrice": 0,
+      "missingAge": 1,
+      "missingRuntime": 3,
+      "policy": "warn-and-report-in-github-fallback"
+    },
+    {
+      "source": "interpark",
+      "sample": 120,
+      "missingPrice": 47,
+      "missingAge": 110,
+      "missingRuntime": 110,
+      "policy": "warn-and-report"
+    }
+  ],
+  "retainedDataPolicy": "Failed optional sources never replace the last known-good source file.",
+  "dryRun": false
+}
