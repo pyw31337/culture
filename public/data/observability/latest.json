@@ -1,13 +1,13 @@
 {
   "schema": "lets_observability_v1",
-  "run_id": "culture-20261123T051439Z",
-  "observed_at": "2026-11-23T05:14:39.430050+00:00",
+  "run_id": "culture-20261124T035921Z",
+  "observed_at": "2026-11-24T03:59:21.437360+00:00",
   "service_id": "culture",
   "source": "persisted_culture_calendar",
   "stages": {
     "collect": {
       "status": "success",
-      "ok": 9486,
+      "ok": 9131,
       "artifact": true
     },
     "analyze": {
@@ -24,10 +24,10 @@
     }
   },
   "counts": {
-    "records": 9486
+    "records": 9131
   },
   "artifacts": {
-    "calendar": "daf8ff7ac4773b505d1a266a3d5c5c9ca5a3921ef2671adceaff2d9c8d98bdb4"
+    "calendar": "fb5d44c794fee4a6d660d163594c099bf1de671daff291e08235730c7d5bac2e"
   },
   "note": "Persisted CultureFlow calendar snapshot."
 }
