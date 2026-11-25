@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-24T20:27:59.828Z",
+  "checkedAt": "2026-11-25T09:50:13.292Z",
   "status": "pass",
-  "itemCount": 9189,
+  "itemCount": 9196,
   "sourceCount": 28,
   "highOpportunitySourceCount": 0,
   "topSourceOpportunities": [
@@ -239,7 +239,7 @@
   "missingImageCount": 6,
   "weakImageCount": 67,
   "missingDetailImageCount": 3944,
-  "missingCoordinateCount": 931,
+  "missingCoordinateCount": 934,
   "missingAddressCount": 328,
   "unknownPriceCount": 1213,
   "weakDescriptionCount": 3729,

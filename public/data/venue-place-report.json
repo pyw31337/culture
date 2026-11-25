@@ -1,19 +1,36 @@
 {
-  "checkedAt": "2026-11-24T20:27:57.878Z",
+  "checkedAt": "2026-11-25T09:50:09.726Z",
   "status": "warn",
-  "venueCount": 4229,
+  "venueCount": 4230,
   "matchedCount": 2326,
   "highConfidenceMatchCount": 1770,
   "needsReviewCount": 20,
   "notFoundCount": 806,
-  "pendingLookupCount": 2,
-  "insufficientIdentityCount": 281,
+  "pendingLookupCount": 3,
+  "insufficientIdentityCount": 282,
   "lookupReady": true,
   "providersConfigured": [
     "kakao",
     "naver"
   ],
   "queue": [
+    {
+      "venueId": "venue_대원콘텐츠라이브공연장_1mcn6hn",
+      "officialName": "대원콘텐츠라이브공연장",
+      "address": "seoul 대원콘텐츠라이브공연장",
+      "query": "대원콘텐츠라이브공연장 seoul 대원콘텐츠라이브공연장",
+      "priority": 908,
+      "performanceCount": 1,
+      "reviewFlags": [
+        "alias_merge_candidate",
+        "invalid_coordinate",
+        "missing_detailed_address",
+        "needs_official_place_lookup"
+      ],
+      "sampleTitles": [
+        "내가 바로 정의다"
+      ]
+    },
     {
       "venueId": "venue_남부의부산조용한서쪽동네에자리잡은고양이두마리강아지한마리예술쟁_02m1dm",
       "officialName": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다.",
@@ -1978,7 +1995,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-24T20:27:44.384Z",
+      "checkedAt": "2026-11-25T09:49:51.521Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -1987,7 +2004,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-24T20:27:44.384Z",
+      "checkedAt": "2026-11-25T09:49:51.521Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2317,15 +2334,15 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-24T20:27:57.878Z",
+    "checkedAt": "2026-11-25T09:50:09.726Z",
     "status": "warn",
-    "venueCount": 4229,
+    "venueCount": 4230,
     "matchedCount": 2326,
     "highConfidenceMatchCount": 1770,
     "needsReviewCount": 20,
     "notFoundCount": 806,
-    "pendingLookupCount": 2,
-    "insufficientIdentityCount": 281,
+    "pendingLookupCount": 3,
+    "insufficientIdentityCount": 282,
     "lookupReady": true,
     "providersConfigured": [
       "kakao",
@@ -2333,6 +2350,23 @@
     ],
     "staleCacheCount": 0,
     "topQueue": [
+      {
+        "venueId": "venue_대원콘텐츠라이브공연장_1mcn6hn",
+        "officialName": "대원콘텐츠라이브공연장",
+        "address": "seoul 대원콘텐츠라이브공연장",
+        "query": "대원콘텐츠라이브공연장 seoul 대원콘텐츠라이브공연장",
+        "priority": 908,
+        "performanceCount": 1,
+        "reviewFlags": [
+          "alias_merge_candidate",
+          "invalid_coordinate",
+          "missing_detailed_address",
+          "needs_official_place_lookup"
+        ],
+        "sampleTitles": [
+          "내가 바로 정의다"
+        ]
+      },
       {
         "venueId": "venue_남부의부산조용한서쪽동네에자리잡은고양이두마리강아지한마리예술쟁_02m1dm",
         "officialName": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다.",
