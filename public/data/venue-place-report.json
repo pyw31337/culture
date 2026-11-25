@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-11-25T16:30:23.099Z",
+  "checkedAt": "2026-11-25T20:28:13.851Z",
   "status": "warn",
   "venueCount": 4250,
-  "matchedCount": 2318,
-  "highConfidenceMatchCount": 1767,
+  "matchedCount": 2321,
+  "highConfidenceMatchCount": 1770,
   "needsReviewCount": 20,
   "notFoundCount": 807,
-  "pendingLookupCount": 5,
+  "pendingLookupCount": 2,
   "insufficientIdentityCount": 303,
   "lookupReady": true,
   "providersConfigured": [
@@ -42,57 +42,6 @@
       ],
       "sampleTitles": [
         "스테인드글라스 썬캐쳐 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_구립증산도서관_11tnniw",
-      "officialName": "구립증산도서관",
-      "address": "서울특별시 은평구 증산로5길 6",
-      "query": "구립증산도서관 서울 은평구",
-      "priority": 48,
-      "performanceCount": 6,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "온라인 북큐레이션 [어른이를 위한 그림책] 11월 : 메멘토 모리",
-        "유아 미술 책놀이 [냠냠 그림책 미술놀이]",
-        "2026년 11월 북인사이트 : SF"
-      ]
-    },
-    {
-      "venueId": "venue_국립중앙박물관_175iv6w",
-      "officialName": "국립중앙박물관",
-      "address": "서울 용산구 서빙고로 137",
-      "query": "국립중앙박물관 서울 용산구",
-      "priority": 24,
-      "performanceCount": 3,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "high_confidence_similarity_merge",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "국립중앙박물관 도슨트 수업으로 하루에 정리하는 삼국~조선 한국사",
-        "케이팝 뮤지컬 〈조선 마법사관 진준〉",
-        "그리스가 로마에게, 로마가 그리스에게"
-      ]
-    },
-    {
-      "venueId": "venue_고양아람누리새라새극장_jyjbn5",
-      "officialName": "고양아람누리 새라새극장",
-      "address": "경기 고양시 일산동구 중앙로 1286",
-      "query": "고양아람누리 새라새극장 경기 고양시",
-      "priority": 16,
-      "performanceCount": 2,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "제작연극 <당진, 겨울나무 손 잡고 봄 꽃.>",
-        "김가현의 Fusione Ⅰ: 푸시오네"
       ]
     }
   ],
@@ -2039,7 +1988,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-25T16:29:33.167Z",
+      "checkedAt": "2026-11-25T20:27:58.398Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2048,7 +1997,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-25T16:29:33.167Z",
+      "checkedAt": "2026-11-25T20:27:58.398Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2378,14 +2327,14 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-25T16:30:23.099Z",
+    "checkedAt": "2026-11-25T20:28:13.851Z",
     "status": "warn",
     "venueCount": 4250,
-    "matchedCount": 2318,
-    "highConfidenceMatchCount": 1767,
+    "matchedCount": 2321,
+    "highConfidenceMatchCount": 1770,
     "needsReviewCount": 20,
     "notFoundCount": 807,
-    "pendingLookupCount": 5,
+    "pendingLookupCount": 2,
     "insufficientIdentityCount": 303,
     "lookupReady": true,
     "providersConfigured": [
@@ -2422,57 +2371,6 @@
         ],
         "sampleTitles": [
           "스테인드글라스 썬캐쳐 만들기"
-        ]
-      },
-      {
-        "venueId": "venue_구립증산도서관_11tnniw",
-        "officialName": "구립증산도서관",
-        "address": "서울특별시 은평구 증산로5길 6",
-        "query": "구립증산도서관 서울 은평구",
-        "priority": 48,
-        "performanceCount": 6,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "온라인 북큐레이션 [어른이를 위한 그림책] 11월 : 메멘토 모리",
-          "유아 미술 책놀이 [냠냠 그림책 미술놀이]",
-          "2026년 11월 북인사이트 : SF"
-        ]
-      },
-      {
-        "venueId": "venue_국립중앙박물관_175iv6w",
-        "officialName": "국립중앙박물관",
-        "address": "서울 용산구 서빙고로 137",
-        "query": "국립중앙박물관 서울 용산구",
-        "priority": 24,
-        "performanceCount": 3,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "high_confidence_similarity_merge",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "국립중앙박물관 도슨트 수업으로 하루에 정리하는 삼국~조선 한국사",
-          "케이팝 뮤지컬 〈조선 마법사관 진준〉",
-          "그리스가 로마에게, 로마가 그리스에게"
-        ]
-      },
-      {
-        "venueId": "venue_고양아람누리새라새극장_jyjbn5",
-        "officialName": "고양아람누리 새라새극장",
-        "address": "경기 고양시 일산동구 중앙로 1286",
-        "query": "고양아람누리 새라새극장 경기 고양시",
-        "priority": 16,
-        "performanceCount": 2,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "제작연극 <당진, 겨울나무 손 잡고 봄 꽃.>",
-          "김가현의 Fusione Ⅰ: 푸시오네"
         ]
       }
     ],
