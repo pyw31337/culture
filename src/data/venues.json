@@ -9125,11 +9125,18 @@
   },
   "P&F 씨어터": {
     "name": "P&F 씨어터",
-    "address": "인천 중구 차이나타운로52번길 3",
+    "address": "인천광역시 중구 차이나타운로52번길 3(선린동)",
+    "lat": 37.4749371,
+    "lng": 126.6184396,
     "district": "중구",
-    "lat": 37.475065,
-    "lng": 126.6181152,
-    "mapped_region_id": "incheon"
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "스튜디오D": {
     "name": "스튜디오D",
@@ -13476,9 +13483,9 @@
     "amenities": [
       "카페"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 카페"
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
   },
   "더현대서울 6층 ALT.1": {
     "name": "더현대 서울 ALT.",
@@ -44058,7 +44065,21 @@
     "lat": 36.8611038,
     "lng": 127.4395014,
     "district": "",
-    "phone": "043-539-3237"
+    "phone": "043-539-3237",
+    "facilityType": "공공(기타)",
+    "seatScale": "288",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "대전 평송청소년문화센터 대극장": {
     "name": "대전 평송청소년문화센터 대극장",
@@ -70395,9 +70416,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "학산소극장": {
     "name": "학산소극장",
@@ -81340,10 +81361,19 @@
   },
   "음악이주는선물": {
     "name": "음악이주는선물",
-    "address": "경기 성남시 중원구 둔촌대로280번길 8",
-    "district": "성남시",
-    "lat": 37.4284543018931,
-    "lng": 127.149366561606
+    "address": "경상남도 김해시 강동로 81 (강동)",
+    "lat": 35.2184195,
+    "lng": 128.8765276,
+    "district": "",
+    "homepage": "https://booking.naver.com/booking/10/bizes/1146902?area=plt&map-search=1",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "송파어린이문화회관 아이소리홀": {
     "name": "송파어린이문화회관 아이소리홀",
@@ -95217,7 +95247,21 @@
     "district": "",
     "lat": 36.8611641634026,
     "lng": 127.439417570643,
-    "phone": "043-539-3237"
+    "phone": "043-539-3237",
+    "facilityType": "공공(기타)",
+    "seatScale": "288",
+    "theaterCount": "1",
+    "openedAt": "2008",
+    "amenities": [
+      "카페",
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페"
   },
   "시윤아트홀 (시윤아트홀 (B1) )": {
     "name": "시윤아트홀 (시윤아트홀 (B1) )",
@@ -106166,9 +106210,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "아트센터소극장 (시네라마 아트센터)": {
     "name": "아트센터소극장 (시네라마 아트센터)",
@@ -107291,9 +107335,9 @@
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "락왕": {
     "name": "락왕",
@@ -124651,6 +124695,53 @@
     "district": "중구",
     "facilityType": "민간(대학로 외)",
     "seatScale": "180",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "공간다락": {
+    "name": "공간다락",
+    "address": "경기도 이천시 사음로 28 (사음동)",
+    "lat": 37.296805,
+    "lng": 127.416896,
+    "district": "이천시",
+    "homepage": "https://www.instagram.com/space_darak",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "우주파 [제주]": {
+    "name": "우주파 [제주]",
+    "address": "제주특별자치도 제주시 탑동로 81 (삼도이동)",
+    "lat": 33.517688,
+    "lng": 126.51673,
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "100",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "월드케이팝센터": {
+    "name": "월드케이팝센터",
+    "address": "서울특별시 중구 장충단로 72(장충동2가)",
+    "lat": 37.5516384,
+    "lng": 127.0025232,
+    "district": "중구",
+    "homepage": "http://w-kpop.com/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
     "theaterCount": "1",
     "openedAt": "",
     "amenities": [],

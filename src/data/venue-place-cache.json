@@ -16604,7 +16604,7 @@
     "status": "needs_review",
     "confidence": 0,
     "matchedAt": "",
-    "checkedAt": "2026-11-25T09:49:51.521Z",
+    "checkedAt": "2026-11-25T13:49:03.170Z",
     "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
     "reason": "Kakao local search failed: 400 Bad Request"
   },
@@ -16730,7 +16730,7 @@
     "status": "needs_review",
     "confidence": 0,
     "matchedAt": "",
-    "checkedAt": "2026-11-25T09:49:51.521Z",
+    "checkedAt": "2026-11-25T13:49:03.170Z",
     "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
     "reason": "Kakao local search failed: 400 Bad Request"
   },
@@ -63480,5 +63480,24 @@
     "checkedAt": "2026-11-24T20:27:44.384Z",
     "query": "KSPO DOME 서울 송파구",
     "reason": "name=1.00, address=1.00, distance=10m"
+  },
+  "venue_대원콘텐츠라이브공연장_1mcn6hn": {
+    "venueId": "venue_대원콘텐츠라이브공연장_1mcn6hn",
+    "status": "needs_review",
+    "provider": "kakao",
+    "providerPlaceId": "2138867352",
+    "officialName": "대원콘텐츠라이브",
+    "roadAddressName": "서울 용산구 한강대로23길 55",
+    "addressName": "서울 용산구 한강로3가 40-999",
+    "lat": 37.5288725468212,
+    "lng": 126.964557632794,
+    "phone": "02-6373-3364",
+    "url": "http://place.map.kakao.com/2138867352",
+    "categoryName": "문화,예술 > 문화시설 > 공연장,연극극장",
+    "confidence": 0.3636,
+    "matchedAt": "",
+    "checkedAt": "2026-11-25T13:49:03.170Z",
+    "query": "대원콘텐츠라이브공연장 seoul 대원콘텐츠라이브공연장",
+    "reason": "name=0.73, address=0.00, distance=unknown"
   }
 }

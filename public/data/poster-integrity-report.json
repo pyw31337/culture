@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-25T09:50:17.366Z",
+  "checkedAt": "2026-11-25T13:51:01.124Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10292,
-  "verified": 9555,
-  "unavailable": 737,
+  "total": 10428,
+  "verified": 9693,
+  "unavailable": 735,
   "pending": 0,
-  "recoveredFromAlternate": 1,
+  "recoveredFromAlternate": 2,
   "unavailableSamples": [
     {
       "id": "perf_목화_이야기_목면시배유지_20261126",
@@ -67,13 +67,6 @@
     {
       "id": "perf_영평사_오색실_엮어_복장물_만들기_영평사_삼명선원_20261125",
       "title": "영평사 오색실 엮어 복장물 만들기",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261126",
-      "title": "충주향교 꼬마선비의 선비풍류",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -162,6 +155,13 @@
       "failure": "http-403"
     },
     {
+      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261126",
+      "title": "충주향교 꼬마선비의 선비풍류",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "class_미니_점토_도넛_키링_마그넷_책갈피_3종_만들기",
       "title": "미니 점토 도넛+키링/마그넷/책갈피 3종 만들기",
       "source": "remote",
@@ -188,13 +188,6 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261126",
-      "title": "선비의 사계",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_나만의_미니_바스켓_제작하기_이색_취미",
       "title": "나만의 미니 바스켓 제작하기 이색 취미",
       "source": "remote",
@@ -214,15 +207,15 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_선비의_사계_밀양혜산서원_지역교류_20261126",
+      "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261126",
       "title": "선비의 사계",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261127",
-      "title": "충주향교 꼬마선비의 선비풍류",
+      "id": "perf_선비의_사계_밀양혜산서원_지역교류_20261126",
+      "title": "선비의 사계",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -269,15 +262,8 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261127",
-      "title": "나도이제 어른-갓쓰고 비녀꽂고",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_달빛아래_구암서원_구암서원_20261127",
-      "title": "달빛아래 구암서원",
+      "id": "perf_충주향교_꼬마선비의_선비풍류_충주향교_20261127",
+      "title": "충주향교 꼬마선비의 선비풍류",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -301,8 +287,15 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_환경보호_작은실천_조선동종만들기_내장사_일원_20261127",
-      "title": "환경보호 작은실천 조선동종만들기",
+      "id": "perf_나도이제_어른_갓쓰고_비녀꽂고_언양향교_20261127",
+      "title": "나도이제 어른-갓쓰고 비녀꽂고",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_달빛아래_구암서원_구암서원_20261127",
+      "title": "달빛아래 구암서원",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -324,6 +317,13 @@
       "failure": "http-403, http-403, http-403"
     },
     {
+      "id": "perf_환경보호_작은실천_조선동종만들기_내장사_일원_20261127",
+      "title": "환경보호 작은실천 조선동종만들기",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "perf_선비의_사계_마산향교_학습당_명륜당_유림회관_풍화루_대성전_20261127",
       "title": "선비의 사계",
       "source": "remote",
@@ -340,13 +340,6 @@
       "failure": "http-403"
     },
     {
-      "id": "movie_비스트헌터_배틀정글",
-      "title": "비스트헌터: 배틀정글",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "perf_고산향교_난로회_고산향교_20261127",
       "title": "고산향교 난로회",
       "source": "remote",
@@ -354,8 +347,8 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "movie_극장판_약사의_혼잣말_망비의_비보",
-      "title": "극장판 약사의 혼잣말: 망비의 비보",
+      "id": "movie_비스트헌터_배틀정글",
+      "title": "비스트헌터: 배틀정글",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -384,22 +377,15 @@
       "failure": "http-403, http-403, http-403"
     },
     {
+      "id": "movie_극장판_약사의_혼잣말_망비의_비보",
+      "title": "극장판 약사의 혼잣말: 망비의 비보",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "movie_극장판_사랑과_전쟁_첼로마크",
       "title": "극장판 사랑과 전쟁: 첼로마크",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_영암_국가유산을_찾아라_영암군_국가유산_도갑사_왕인박사유적지_등_20261128",
-      "title": "영암 국가유산을 찾아라",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_분옥정_선비달빛트레킹_분옥정_20261128",
-      "title": "분옥정 선비달빛트레킹",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -414,8 +400,8 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_400년_씨간장의_향기로_만든_영암_전통어란_낭주최씨_종가_20261128",
-      "title": "400년 씨간장의 향기로 만든 “영암 전통어란”",
+      "id": "perf_영암_국가유산을_찾아라_영암군_국가유산_도갑사_왕인박사유적지_등_20261128",
+      "title": "영암 국가유산을 찾아라",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -430,6 +416,13 @@
       "failure": "http-403"
     },
     {
+      "id": "perf_분옥정_선비달빛트레킹_분옥정_20261128",
+      "title": "분옥정 선비달빛트레킹",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
       "id": "class_가죽공예원데이",
       "title": "가죽공예원데이",
       "source": "remote",
@@ -439,15 +432,8 @@
       "failure": "http-403"
     },
     {
-      "id": "movie_임영웅_아임_히어로_더_스타디움_2",
-      "title": "임영웅ㅣ아임 히어로 더 스타디움 2",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_영광의_문화유산을_알아보자_영광군에_위치한_국가유산_일대_20261128",
-      "title": "영광의 문화유산을 알아보자",
+      "id": "perf_400년_씨간장의_향기로_만든_영암_전통어란_낭주최씨_종가_20261128",
+      "title": "400년 씨간장의 향기로 만든 “영암 전통어란”",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -471,15 +457,22 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_매간당_고택_주역괘로_풀어본_효자_가문의_비밀_영광_매간당_고택_20261128",
-      "title": "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
+      "id": "perf_영광의_문화유산을_알아보자_영광군에_위치한_국가유산_일대_20261128",
+      "title": "영광의 문화유산을 알아보자",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_문산관에_왜_왔니_왜_왔니_문의문화유산단지_저잣거리_문산관_노현리고_bbcfa8be",
-      "title": "문산관에 왜 왔니 왜 왔니?",
+      "id": "movie_임영웅_아임_히어로_더_스타디움_2",
+      "title": "임영웅ㅣ아임 히어로 더 스타디움 2",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_매간당_고택_주역괘로_풀어본_효자_가문의_비밀_영광_매간당_고택_20261128",
+      "title": "매간당 고택 주역괘로 풀어본 효자 가문의 비밀",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -501,8 +494,8 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_청계사_경판학교_청계사_선불장_20261128",
-      "title": "청계사 경판학교",
+      "id": "perf_문산관에_왜_왔니_왜_왔니_문의문화유산단지_저잣거리_문산관_노현리고_bbcfa8be",
+      "title": "문산관에 왜 왔니 왜 왔니?",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -524,8 +517,8 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_유학길로_떠나는_소풍_구강서원_20261128",
-      "title": "유학길로 떠나는 소풍",
+      "id": "perf_청계사_경판학교_청계사_선불장_20261128",
+      "title": "청계사 경판학교",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -540,8 +533,8 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_종가이야기_따라_걷는_시간여행_조종수_가옥_구림대동계사_회사정_등_20261128",
-      "title": "종가이야기 따라 걷는 시간여행",
+      "id": "perf_유학길로_떠나는_소풍_구강서원_20261128",
+      "title": "유학길로 떠나는 소풍",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -556,15 +549,8 @@
       "failure": "http-403"
     },
     {
-      "id": "perf_과객을_후하게_대접하라_경주최부자댁_20261128",
-      "title": "과객을 후하게 대접하라.",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_차이나는_신항스테이_신항서원_20261128",
-      "title": "차이나는 신항스테이",
+      "id": "perf_종가이야기_따라_걷는_시간여행_조종수_가옥_구림대동계사_회사정_등_20261128",
+      "title": "종가이야기 따라 걷는 시간여행",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -586,8 +572,15 @@
       "failure": "http-403, http-403, http-403"
     },
     {
-      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261128",
-      "title": "양주향교와 함께하는 시간여행",
+      "id": "perf_과객을_후하게_대접하라_경주최부자댁_20261128",
+      "title": "과객을 후하게 대접하라.",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_차이나는_신항스테이_신항서원_20261128",
+      "title": "차이나는 신항스테이",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -601,6 +594,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/36a61bf01c8d4623b6798e92d5b01c84.png"
       ],
       "failure": "http-403, http-403"
+    },
+    {
+      "id": "perf_양주향교와_함께하는_시간여행_양주향교_별산대놀이_천주교성지등_20261128",
+      "title": "양주향교와 함께하는 시간여행",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "perf_주말엔_서원에서_놀자_동락서원_20261128",
@@ -624,13 +624,6 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "perf_영암_국가유산을_찾아라_영암군_국가유산_도갑사_왕인박사유적지_등_20261129",
-      "title": "영암 국가유산을 찾아라",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_조향사와_함께_나만의_디퓨저_만들기_클래스200ml",
       "title": "조향사와 함께 나만의 디퓨저 만들기 클래스200ml",
       "source": "remote",
@@ -639,6 +632,13 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/ccd96db973d24e56bd2bfa82b86a16d7.jpg"
       ],
       "failure": "http-403, http-403"
+    },
+    {
+      "id": "perf_영암_국가유산을_찾아라_영암군_국가유산_도갑사_왕인박사유적지_등_20261129",
+      "title": "영암 국가유산을 찾아라",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
     },
     {
       "id": "perf_영광의_문화유산을_알아보자_영광군에_위치한_국가유산_일대_20261129",
@@ -655,20 +655,6 @@
       "failure": "no-poster-candidate"
     },
     {
-      "id": "movie_철권_최후의_결투",
-      "title": "철권: 최후의 결투",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
-      "id": "perf_종가이야기_따라_걷는_시간여행_조종수_가옥_구림대동계사_회사정_등_20261129",
-      "title": "종가이야기 따라 걷는 시간여행",
-      "source": "remote",
-      "candidates": [],
-      "failure": "no-poster-candidate"
-    },
-    {
       "id": "class_부드러운_달콤함_아이스크림_얼그레이쿠키",
       "title": "부드러운 달콤함~ 아이스크림&얼그레이쿠키",
       "source": "remote",
@@ -679,15 +665,22 @@
       "failure": "http-403, http-403"
     },
     {
-      "id": "perf_구급_퀴즈_미션_충청북도_음성군_20261124",
-      "title": "구급! 퀴즈 미션!",
+      "id": "perf_종가이야기_따라_걷는_시간여행_조종수_가옥_구림대동계사_회사정_등_20261129",
+      "title": "종가이야기 따라 걷는 시간여행",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
     },
     {
-      "id": "movie_야한_옷_입는_아래층_노처녀",
-      "title": "야한 옷 입는 아래층 노처녀",
+      "id": "movie_철권_최후의_결투",
+      "title": "철권: 최후의 결투",
+      "source": "remote",
+      "candidates": [],
+      "failure": "no-poster-candidate"
+    },
+    {
+      "id": "perf_구급_퀴즈_미션_충청북도_음성군_20261124",
+      "title": "구급! 퀴즈 미션!",
       "source": "remote",
       "candidates": [],
       "failure": "no-poster-candidate"
@@ -906,6 +899,21 @@
         "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/1e65d5fece394d70809e720d18ee369c.jpg"
       ],
       "failure": "http-403"
+    },
+    {
+      "id": "class_우디쌤과_함께하는_유행댄스_릴스_틱톡_댄스배우기",
+      "title": "우디쌤과 함께하는 유행댄스(릴스.틱톡)댄스배우기",
+      "source": "remote",
+      "candidates": [
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/9beecdb29c7f4114b997ed862e691219.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/008c45b53a474faca87978cda4abeb8b.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/b0a7d32e07074f0eb6bbf726d92064b4.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/cd085af5c2ac48938c304dbbe2e29f1e.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/d82e657f459846d7aad25480cfbcabad.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/426cb297dedf4d578d0b57aa193b38a2.jpg",
+        "https://s3.ap-northeast-2.amazonaws.com/umclassuploadboardimg/8bdfdb1dbb984b42972f8ea494039fbc.jpg"
+      ],
+      "failure": "http-403, http-403, http-403"
     }
   ],
   "pendingSamples": []
