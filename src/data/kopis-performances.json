@@ -20193,69 +20193,6 @@
     ]
   },
   {
-    "id": "kopis_PF296524",
-    "title": "벤슨 분 내한공연",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF296524_260721_112323.gif",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF296524_260721_112323.gif",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "킨텍스",
-    "venueId": "FC001910",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF296524",
-    "genre": "대중음악",
-    "price": "스탠딩 145,000원\n지정석 178,000원",
-    "time": "월요일(20:00)",
-    "region": "경기도",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "벤슨 제임스 분"
-    ],
-    "runtime": "",
-    "age": "전체 관람가",
-    "production": "(주)라이브네이션코리아",
-    "host": "(주)라이브네이션코리아",
-    "organizer": "(주)라이브네이션코리아",
-    "planner": "(주)라이브네이션코리아",
-    "producer": "",
-    "sponsor": "",
-    "priceList": [
-      {
-        "label": "스탠딩",
-        "price": "145,000원"
-      },
-      {
-        "label": "지정석",
-        "price": "178,000원"
-      }
-    ],
-    "ageDetail": "전체 관람가",
-    "openRun": false,
-    "performanceState": "공연예정",
-    "lastModifiedAt": "2026-07-21 15:00:02.062544",
-    "dataCollectedAt": "2026-07-21T19:55:26.979Z",
-    "venuePhone": "031-995-8036",
-    "venueHomepage": "http://www.kintex.com/",
-    "venueFacilityType": "공공(기타)",
-    "venueSeatScale": "2800",
-    "venueTheaterCount": "12",
-    "venueAmenities": [
-      "식당",
-      "카페",
-      "편의점",
-      "수유실",
-      "장애인 주차"
-    ],
-    "parking": "주차장: Y / 장애인 주차구역 제공",
-    "restrooms": "수유실 보유",
-    "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점",
-    "synopsisImages": [
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF296524_202607211123234980.jpg"
-    ],
-    "address": "경기도 고양시 일산서구 킨텍스로 217-60 (대화동)",
-    "lat": 37.6693071,
-    "lng": 126.74568449999992
-  },
-  {
     "id": "kopis_PF296523",
     "title": "니콜라이 루간스키 피아노 리사이틀 [통영]",
     "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF296523_260721_112145.gif",
@@ -27181,86 +27118,6 @@
         "url": "https://ticket.yes24.com/Perf/59379"
       }
     ]
-  },
-  {
-    "id": "kopis_PF297826",
-    "title": "빈 필하모닉 내한공연, 투간 소키에프 & 조성진 [부산]",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF297826_260806_110229.png",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF297826_260806_110229.png",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "부산콘서트홀",
-    "venueId": "FC004296",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF297826",
-    "genre": "서양음악(클래식)",
-    "price": "R석 500,000원\nS석 400,000원\nA석 300,000원\nB석 200,000원\nC석 100,000원\n시야제한석 100,000원",
-    "time": "월요일(19:30)",
-    "region": "부산광역시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "투간 소키에프",
-      "조성진"
-    ],
-    "runtime": "2시간",
-    "age": "만 7세 이상",
-    "production": "클래식부산",
-    "host": "클래식부산",
-    "organizer": "",
-    "planner": "",
-    "producer": "",
-    "sponsor": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "500,000원"
-      },
-      {
-        "label": "S석",
-        "price": "400,000원"
-      },
-      {
-        "label": "A석",
-        "price": "300,000원"
-      },
-      {
-        "label": "B석",
-        "price": "200,000원"
-      },
-      {
-        "label": "C석",
-        "price": "100,000원"
-      },
-      {
-        "label": "시야제한석",
-        "price": "100,000원"
-      }
-    ],
-    "ageDetail": "만 7세 이상",
-    "openRun": false,
-    "performanceState": "공연예정",
-    "lastModifiedAt": "2026-08-07 14:06:02",
-    "dataCollectedAt": "2026-08-09T19:06:07.585Z",
-    "venuePhone": "051-640-8888",
-    "venueHomepage": "https://classicbusan.busan.go.kr/",
-    "venueFacilityType": "공공(문예회관)",
-    "venueSeatScale": "2411",
-    "venueTheaterCount": "2",
-    "venueAmenities": [
-      "장애인 주차",
-      "장애인 화장실"
-    ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 장애인 주차, 장애인 화장실",
-    "synopsisImages": [
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF297826_202608061100100503.png",
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF297826_202608061100100412.png",
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF297826_202608061100100261.png",
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF297826_202608061100100090.png"
-    ],
-    "address": "부산광역시 부산진구 동평로 250 (연지동)",
-    "lat": 35.1693728,
-    "lng": 129.0542532
   },
   {
     "id": "kopis_PF297811",
@@ -52513,60 +52370,6 @@
     ]
   },
   {
-    "id": "kopis_PF302623",
-    "title": "미친마을",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302623_261006_171320.png",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302623_261006_171320.png",
-    "date": "2026.10.22 ~ 2026.10.26",
-    "venue": "미친마을",
-    "venueId": "FC005109",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF302623",
-    "genre": "연극",
-    "price": "전석 33,000원",
-    "time": "월요일(20:00), 목요일 ~ 금요일(20:00), 토요일 ~ 일요일(15:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "고유선",
-      "황지우",
-      "박성인"
-    ],
-    "crew": [
-      "전아영",
-      "유태희",
-      "배현아"
-    ],
-    "runtime": "2시간",
-    "age": "전체 관람가",
-    "production": "미친존재감 프로젝트",
-    "host": "미친존재감 프로젝트",
-    "organizer": "미친존재감 프로젝트",
-    "planner": "",
-    "producer": "",
-    "sponsor": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "33,000원"
-      }
-    ],
-    "ageDetail": "전체 관람가",
-    "openRun": false,
-    "performanceState": "공연예정",
-    "lastModifiedAt": "2026-10-06 18:00:00.093519",
-    "dataCollectedAt": "2026-10-08T03:29:24.282Z",
-    "synopsisImages": [
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF302623_202610060513204290.jpg"
-    ],
-    "bookingLinks": [
-      {
-        "name": "네이버N예약",
-        "url": "https://booking.naver.com/booking/12/bizes/1748244"
-      }
-    ]
-  },
-  {
     "id": "kopis_PF302622",
     "title": "박재정 콘서트: 기록",
     "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302622_261006_171208.gif",
@@ -61128,59 +60931,6 @@
     ]
   },
   {
-    "id": "kopis_PF302034",
-    "title": "제2회 부암공연예술제, 유익액터스: 음모론자들",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302034_261008_175211.gif",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302034_261008_175211.gif",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "부암아트홀",
-    "venueId": "FC000738",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF302034",
-    "genre": "연극",
-    "price": "전석 30,000원",
-    "time": "월요일(19:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "crew": [
-      "장석용",
-      "김다경",
-      "정유진"
-    ],
-    "runtime": "30분",
-    "age": "전체 관람가",
-    "production": "유익액터스",
-    "host": "부암아트홀",
-    "organizer": "부암공연예술제 조직위원회",
-    "planner": "(유)티지앤컴퍼니",
-    "producer": "유익액터스",
-    "sponsor": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "전체 관람가",
-    "openRun": false,
-    "performanceState": "공연완료",
-    "lastModifiedAt": "2026-10-08 18:00:00.030021",
-    "dataCollectedAt": "2026-10-08T23:12:21.842Z",
-    "address": "서울특별시 종로구 자하문로 242",
-    "lat": 37.595711,
-    "lng": 126.9640743,
-    "district": "종로구",
-    "synopsisImages": [
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF302034_202610080552120000.png"
-    ],
-    "bookingLinks": [
-      {
-        "name": "놀유니버스",
-        "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26013846"
-      }
-    ]
-  },
-  {
     "id": "kopis_PF300678",
     "title": "SICF 서울 국제 안무 페스티벌, Room 7 & 흔들리는 땅 & Missing",
     "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF300678_260911_114535.jpg",
@@ -67220,71 +66970,6 @@
     ]
   },
   {
-    "id": "kopis_PF302367",
-    "title": "제1200회 하우스콘서트, 듀오 얌니크 Duo Jamník",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302367_261002_140154.jpg",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302367_261002_140154.jpg",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "예술가의 집",
-    "venueId": "FC002634",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF302367",
-    "genre": "서양음악(클래식)",
-    "price": "전석 40,000원",
-    "time": "월요일(20:00)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "토마스 얌니크",
-      "에바 얌니코바"
-    ],
-    "runtime": "",
-    "age": "만 7세 이상",
-    "production": "더하우스콘서트",
-    "host": "더하우스콘서트",
-    "organizer": "",
-    "planner": "더하우스콘서트",
-    "producer": "",
-    "sponsor": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "40,000원"
-      }
-    ],
-    "ageDetail": "만 7세 이상",
-    "openRun": false,
-    "performanceState": "공연예정",
-    "lastModifiedAt": "2026-10-02 15:00:00.089503",
-    "dataCollectedAt": "2026-10-09T22:31:43.896Z",
-    "venuePhone": "02-760-4715",
-    "venueHomepage": "https://arko.or.kr/infra/pm1_01/m2_07/m3_03.do",
-    "venueFacilityType": "국립",
-    "venueSeatScale": "110",
-    "venueTheaterCount": "3",
-    "venueAmenities": [
-      "카페"
-    ],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "국립 · 카페",
-    "address": "서울 종로구 동숭길 3",
-    "lat": 37.5799644026339,
-    "lng": 127.002984227686,
-    "district": "종로구",
-    "synopsis": "[PROGRAM]\n\nJohann Sebastian Bach (1685-1750) \nInventions (performed on Violin and Cello)\nNo. 1 C major, BWV 772\nNo. 9 F minor , BWV 780\nNo. 6 E major, BWV 777\nNo. 8 F major, BWV 779\n\nJiří Teml (b.1935)\nFour Moods for Violin and Cello\n1. Vivace drammatico \n2. Allegretto giocoso\n3. Andantino\n4. Prestissimo\n\nErvín Schulhoff (1894-1942)\nDuo for Violin and Cello\n1. Moderato\n2. Zingresca: Allegro giocoso\n3. Andantino\n\nMarko Ivanović (b.1976)\nThree Triviatures\n1. Allegro\n2.\n3.\n\nBohuslav Martinů (1890-1959)\nDuo No. 2 for Violin and Cello, H.371\n1.Allegretto\n2.Adagio\n3. Poco allegro\n\n※프로그램은 연주자의 사정에 의해 변경될 수 있습니다.",
-    "description": "[PROGRAM]\n\nJohann Sebastian Bach (1685-1750) \nInventions (performed on Violin and Cello)\nNo. 1 C major, BWV 772\nNo. 9 F minor , BWV 780\nNo. 6 E major, BWV 777\nNo. 8 F major, BWV 779\n\nJiří Teml (b.1935)\nFour Moods for Violin and Cello\n1. Vivace drammatico \n2. Allegretto giocoso\n3. Andantino\n4. Prestissimo\n\nErvín Schulhoff (1894-1942)\nDuo for Violin and Cello\n1. Moderato\n2. Zingresca: Allegro giocoso\n3. Andantino\n\nMarko Ivanović (b.1976)\nThree Triviatures\n1. Allegro\n2.\n3.\n\nBohuslav Martinů (1890-1959)\nDuo No. 2 for Violin and Cello, H.371\n1.Allegretto\n2.Adagio\n3. Poco allegro\n\n※프로그램은 연주자의 사정에 의해 변경될 수 있습니다.",
-    "synopsisImages": [
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF302367_202610020201540410.jpg"
-    ],
-    "bookingLinks": [
-      {
-        "name": "더하우스콘서트",
-        "url": "https://thehouseconcert.com/sub/concert/schedule_view.php?idx=1509"
-      }
-    ]
-  },
-  {
     "id": "kopis_PF302364",
     "title": "큰들 42주년 정기공연 [진주]",
     "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302364_261002_140127.jpg",
@@ -70272,79 +69957,6 @@
     ]
   },
   {
-    "id": "kopis_PF302251",
-    "title": "제36회 아주여성합창단 & 제24회 아주남성합창단 정기연주회: 지금 여기, 그대로 빛나",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302251_261001_140712.png",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302251_261001_140712.png",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "롯데콘서트홀",
-    "venueId": "FC001513",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF302251",
-    "genre": "서양음악(클래식)",
-    "price": "R석 20,000원\nS석 10,000원",
-    "time": "월요일(19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "임명운",
-      "임유진",
-      "고지은",
-      "이정미",
-      "최연주"
-    ],
-    "runtime": "2시간",
-    "age": "만 7세 이상",
-    "production": "아주남성합창단, 아주여성합창단",
-    "host": "아주남성합창단, 아주여성합창단",
-    "organizer": "아주남성합창단, 아주여성합창단",
-    "planner": "",
-    "producer": "",
-    "sponsor": "",
-    "priceList": [
-      {
-        "label": "R석",
-        "price": "20,000원"
-      },
-      {
-        "label": "S석",
-        "price": "10,000원"
-      }
-    ],
-    "ageDetail": "만 7세 이상",
-    "openRun": false,
-    "performanceState": "공연예정",
-    "lastModifiedAt": "2026-10-01 15:00:00.102987",
-    "dataCollectedAt": "2026-10-10T21:27:26.025Z",
-    "venuePhone": "00-1544-7744",
-    "venueHomepage": "http://www.lotteconcerthall.com/",
-    "venueFacilityType": "민간(대학로 외)",
-    "venueSeatScale": "2036",
-    "venueTheaterCount": "1",
-    "venueAmenities": [
-      "장애인 주차",
-      "장애인 화장실",
-      "장애인 경사로",
-      "엘리베이터"
-    ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터",
-    "address": "서울 송파구 올림픽로 300",
-    "lat": 37.513989875871125,
-    "lng": 127.10500067293846,
-    "district": "송파구",
-    "synopsisImages": [
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF302251_202610010207123350.jpg"
-    ],
-    "bookingLinks": [
-      {
-        "name": "롯데콘서트홀",
-        "url": "https://www.lotteconcerthall.com/product/performance/261221"
-      }
-    ]
-  },
-  {
     "id": "kopis_PF302250",
     "title": "미녀와 야수 [고양]",
     "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302250_261001_140402.jpg",
@@ -72685,28 +72297,6 @@
     ]
   },
   {
-    "id": "kopis_PF301717",
-    "title": "클래식이 사랑을 말하는 법 출간기념 북콘서트",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301717_260928_102508.gif",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301717_260928_102508.gif",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "엠팟홀 (구. 삼익아트홀)",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF301717",
-    "genre": "복합",
-    "price": "정보없음",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "performanceState": "공연예정",
-    "dataCollectedAt": "2026-10-08T03:28:21.557Z",
-    "address": "서울특별시 강남구 학동로 171 (논현동) 삼익악기빌딩 3층",
-    "lat": 37.5139927,
-    "lng": 127.02955880000002,
-    "district": "강남구",
-    "venuePhone": "02-541-3929",
-    "venueHomepage": "http://www.mpot.co.kr/"
-  },
-  {
     "id": "kopis_PF301206",
     "title": "FRankly 단독 공연: The Ghost Days [생기 스튜디오]",
     "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301206_260917_134941.png",
@@ -72736,38 +72326,6 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외) · 편의시설: 카페"
-  },
-  {
-    "id": "kopis_PF301065",
-    "title": "앙상블 공간 프로젝트 열 일곱 번째 이야기: 여행과 이방인",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301065_260916_134955.png",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF301065_260916_134955.png",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "세종문화회관",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF301065",
-    "genre": "서양음악(클래식)",
-    "price": "정보없음",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "performanceState": "공연예정",
-    "dataCollectedAt": "2026-10-08T03:28:23.956Z",
-    "address": "서울특별시 종로구 세종대로 175 (세종로)",
-    "lat": 37.5725254,
-    "lng": 126.97564290000003,
-    "district": "종로구",
-    "venuePhone": "02-399-1000",
-    "venueHomepage": "http://www.sejongpac.or.kr/",
-    "venueFacilityType": "공공(문예회관)",
-    "venueSeatScale": "5372",
-    "venueTheaterCount": "8",
-    "venueAmenities": [
-      "장애인 주차",
-      "장애인 화장실"
-    ],
-    "parking": "주차장: Y / 장애인 주차구역 제공",
-    "restrooms": "장애인 화장실 완비",
-    "facilities": "시설 특성: 공공(문예회관)"
   },
   {
     "id": "kopis_PF300972",
@@ -72801,35 +72359,6 @@
     "parking": "주차장: Y",
     "restrooms": "",
     "facilities": "시설 특성: 공공(기타) · 편의시설: 식당, 카페, 편의점"
-  },
-  {
-    "id": "kopis_PF300742",
-    "title": "피아니스트 한가야 추모 음악회 Ⅱ",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF300742_260911_161329.jpg",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF300742_260911_161329.jpg",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "금호아트홀 연세",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF300742",
-    "genre": "서양음악(클래식)",
-    "price": "정보없음",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "performanceState": "공연예정",
-    "dataCollectedAt": "2026-10-08T03:28:24.494Z",
-    "address": "서울특별시 서대문구 연세로 50 (신촌동) 연세대학교 백양누리 B1 금호아트홀 연세",
-    "lat": 37.564089,
-    "lng": 126.93898089999993,
-    "district": "서대문구",
-    "venuePhone": "02-6303-1977",
-    "venueHomepage": "http://www.kumhoarthall.com/",
-    "venueFacilityType": "민간(대학로 외)",
-    "venueSeatScale": "390",
-    "venueTheaterCount": "1",
-    "venueAmenities": [],
-    "parking": "주차장: Y",
-    "restrooms": "",
-    "facilities": "시설 특성: 민간(대학로 외)"
   },
   {
     "id": "kopis_PF300668",
@@ -74357,80 +73886,6 @@
       {
         "name": "예스24",
         "url": "https://ticket.yes24.com/Perf/60350"
-      }
-    ]
-  },
-  {
-    "id": "kopis_PF302133",
-    "title": "제39회 소정성악회 정기연주회",
-    "image": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302133_260930_141435.gif",
-    "backupPoster": "https://www.kopis.or.kr/upload/pfmPoster/PF_PF302133_260930_141435.gif",
-    "date": "2026.10.26 ~ 2026.10.26",
-    "venue": "세라믹팔레스홀 (세라믹팔레스홀)",
-    "venueId": "FC000047",
-    "link": "https://www.kopis.or.kr/por/db/pblprfr/pblprfrView.do?menuId=MNU_00020&mt20Id=PF302133",
-    "genre": "서양음악(클래식)",
-    "price": "전석 30,000원",
-    "time": "월요일(19:30)",
-    "region": "서울특별시",
-    "source": "kopis",
-    "isFestival": false,
-    "cast": [
-      "윤서현",
-      "손영아",
-      "임무성",
-      "김기령",
-      "임수주",
-      "이문선",
-      "이미경"
-    ],
-    "runtime": "1시간 40분",
-    "age": "만 7세 이상",
-    "production": "UNICO(유니코 예술기획)",
-    "host": "소정성악회",
-    "organizer": "UNICO(유니코 예술기획)",
-    "planner": "UNICO(유니코 예술기획)",
-    "producer": "",
-    "sponsor": "",
-    "priceList": [
-      {
-        "label": "전석",
-        "price": "30,000원"
-      }
-    ],
-    "ageDetail": "만 7세 이상",
-    "openRun": false,
-    "performanceState": "공연예정",
-    "lastModifiedAt": "2026-09-30 15:00:00.099302",
-    "dataCollectedAt": "2026-10-11T21:45:07.365Z",
-    "venuePhone": "02-3411-4668",
-    "venueHomepage": "http://www.cphall.org/",
-    "venueFacilityType": "민간(대학로 외)",
-    "venueSeatScale": "401",
-    "venueTheaterCount": "1",
-    "venueAmenities": [
-      "카페",
-      "장애인 주차",
-      "장애인 화장실",
-      "장애인 경사로",
-      "엘리베이터"
-    ],
-    "parking": "주차장: Y / 장애인 주차구역 제공",
-    "restrooms": "장애인 화장실 완비",
-    "facilities": "시설 특성: 민간(대학로 외) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행 · 편의시설: 카페",
-    "address": "서울특별시 강남구 일원로 90 (일원동)",
-    "lat": 37.4859079,
-    "lng": 127.08221000000003,
-    "district": "강남구",
-    "synopsis": "[Program]\n\nSop. 윤서현\nC. Schumann (1819-1896)\nLiebst du um Schönheit, Op. 12, No. 2 (아름다움을 사랑 하시나요)\nEr ist gekommen in Sturm und Regen, Op. 12, No. 1 (그는 폭풍과 비를 뚫고 오네요)\n\nSop. 손영아\nF. Mendelssohn (1809-1847)\nNeue Liebe, Op. 19a, No. 4 (새로운 사랑)\nAuf Flügeln des Gesanges, Op. 34, No. 2 (노래의 날개위에)\n\nTen. 임무성\nF. Schubert (1797-1828)\nWasserflut, D. 911 (홍수)\nHalt, D. 795 (멈춰라)\n\nSop. 김기령\nF. Schubert (1797-1828)\nDie Liebe “Klärchens Lied”, D. 210 (사랑 “클레르헨의 노래”)\nRastlose Liebe, D. 183 (끊임없는 사랑)\n\nSop. 임수주\nR. Schumann (1810-1856)\nIhre Stimme, Op. 96, No. 3 (당신의 목소리)\nEr ist's, Op. 79, No. 23 (봄이다)\n\nSop. 이문선\nR. Strauss (1864-1949)\nAch Lieb, ich muß nun scheiden, Op. 21, No. 3 (아 사랑, 나는 이제 떠나야 하네)\nIch trage meine Minne, Op. 32, No. 1 (나는 나의 사랑을 지니고)\n\nSop. 이미경\nJ. Brahms (1833-1897)\nLiebestreu, Op. 3, No. 1(진실한 사랑)\nVon ewiger Liebe, Op. 43, No. 1 (영원한 사랑)\n\nPAUSE\n\nSop. 김경희\nE. Grieg (1843-1907)\nSolvejgs Lied, Op. 23, No. 19 (솔베이그의 노래)\nIch liebe dich, Op. 5, No. 3 (그대를 사랑하오)\n\nTen. 이성훈\nL. van Beethoven (1770-1827)\nAndenken, WoO 136 (생각)\nIch liebe dich, WoO 123 (나는 그대를 사랑하오)\n\nSop. 이세진\nR. Schumann (1810-1856)\nWidmung, Op. 25, No. 1 (헌정)\nMeine Rose, Op. 90, No. 2 (나의 장미)\n\nSop. 이재은\nH. Wolf (1860-1903)\nVerborgenheit, Mörike 12 (은둔)\nNimmersatte Liebe, Mörike 9 (만족없는 사랑)\n\nM.Sop. 나윤경\nR. Strauss (1864-1949)\nAllerseelen, Op. 10, No. 8 (위령제)\nZueignung, Op. 10, No. 1 (헌정)\n\nSop. 이현정\nF. Schubert (1797-1828)\nIm Abendrot, D. 799 (저녁노을에)\nDie junge Nonne, D. 828 (젊은수녀)\n\nPf. 정영하",
-    "description": "[Program]\n\nSop. 윤서현\nC. Schumann (1819-1896)\nLiebst du um Schönheit, Op. 12, No. 2 (아름다움을 사랑 하시나요)\nEr ist gekommen in Sturm und Regen, Op. 12, No. 1 (그는 폭풍과 비를 뚫고 오네요)\n\nSop. 손영아\nF. Mendelssohn (1809-1847)\nNeue Liebe, Op. 19a, No. 4 (새로운 사랑)\nAuf Flügeln des Gesanges, Op. 34, No. 2 (노래의 날개위에)\n\nTen. 임무성\nF. Schubert (1797-1828)\nWasserflut, D. 911 (홍수)\nHalt, D. 795 (멈춰라)\n\nSop. 김기령\nF. Schubert (1797-1828)\nDie Liebe “Klärchens Lied”, D. 210 (사랑 “클레르헨의 노래”)\nRastlose Liebe, D. 183 (끊임없는 사랑)\n\nSop. 임수주\nR. Schumann (1810-1856)\nIhre Stimme, Op. 96, No. 3 (당신의 목소리)\nEr ist's, Op. 79, No. 23 (봄이다)\n\nSop. 이문선\nR. Strauss (1864-1949)\nAch Lieb, ich muß nun scheiden, Op. 21, No. 3 (아 사랑, 나는 이제 떠나야 하네)\nIch trage meine Minne, Op. 32, No. 1 (나는 나의 사랑을 지니고)\n\nSop. 이미경\nJ. Brahms (1833-1897)\nLiebestreu, Op. 3, No. 1(진실한 사랑)\nVon ewiger Liebe, Op. 43, No. 1 (영원한 사랑)\n\nPAUSE\n\nSop. 김경희\nE. Grieg (1843-1907)\nSolvejgs Lied, Op. 23, No. 19 (솔베이그의 노래)\nIch liebe dich, Op. 5, No. 3 (그대를 사랑하오)\n\nTen. 이성훈\nL. van Beethoven (1770-1827)\nAndenken, WoO 136 (생각)\nIch liebe dich, WoO 123 (나는 그대를 사랑하오)\n\nSop. 이세진\nR. Schumann (1810-1856)\nWidmung, Op. 25, No. 1 (헌정)\nMeine Rose, Op. 90, No. 2 (나의 장미)\n\nSop. 이재은\nH. Wolf (1860-1903)\nVerborgenheit, Mörike 12 (은둔)\nNimmersatte Liebe, Mörike 9 (만족없는 사랑)\n\nM.Sop. 나윤경\nR. Strauss (1864-1949)\nAllerseelen, Op. 10, No. 8 (위령제)\nZueignung, Op. 10, No. 1 (헌정)\n\nSop. 이현정\nF. Schubert (1797-1828)\nIm Abendrot, D. 799 (저녁노을에)\nDie junge Nonne, D. 828 (젊은수녀)\n\nPf. 정영하",
-    "synopsisImages": [
-      "https://www.kopis.or.kr/upload/pfmIntroImage/PF_PF302133_202609300214359540.jpg"
-    ],
-    "bookingLinks": [
-      {
-        "name": "놀유니버스",
-        "url": "http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GoodsCode=26013883"
       }
     ]
   },
