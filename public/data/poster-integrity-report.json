@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-25T20:28:18.398Z",
+  "checkedAt": "2026-11-26T09:49:54.249Z",
   "policy": "verified-local-poster-or-exclude",
-  "total": 10323,
-  "verified": 9593,
+  "total": 10327,
+  "verified": 9597,
   "unavailable": 730,
   "pending": 0,
   "recoveredFromAlternate": 2,
