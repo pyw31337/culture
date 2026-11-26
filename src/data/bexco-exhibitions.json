@@ -1,28 +1,5 @@
 [
   {
-    "id": "bexco_16845",
-    "title": "2026 부산 직업·평생교육(B-LiFE) 박람회",
-    "venue": "벡스코 제2전시장 4B홀",
-    "venueKey": "벡스코 제2전시장 4B홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.11.25 ~ 2026.11.25",
-    "image": "/images/posters/bexco/bexco_16845.webp",
-    "poster": "/images/posters/bexco/bexco_16845.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16845.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=1&&event_seq=16845",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:17.724Z"
-  },
-  {
     "id": "bexco_16842",
     "title": "2026 부산식품박람회 & 2026 부산 유기농.친환경.귀농귀촌박람회",
     "venue": "벡스코 제1전시장 1홀",
@@ -43,7 +20,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:18.526Z"
+    "dataCollectedAt": "2026-11-26T13:52:41.201Z"
   },
   {
     "id": "bexco_16603",
@@ -66,7 +43,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:19.208Z"
+    "dataCollectedAt": "2026-11-26T13:52:41.842Z"
   },
   {
     "id": "bexco_16381",
@@ -89,7 +66,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:19.980Z"
+    "dataCollectedAt": "2026-11-26T13:52:42.436Z"
   },
   {
     "id": "bexco_16602",
@@ -112,7 +89,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:20.658Z"
+    "dataCollectedAt": "2026-11-26T13:52:43.132Z"
   },
   {
     "id": "bexco_16920",
@@ -135,7 +112,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:21.327Z"
+    "dataCollectedAt": "2026-11-26T13:52:43.831Z"
   },
   {
     "id": "bexco_16926",
@@ -150,7 +127,7 @@
     "image": "/images/posters/bexco/bexco_16926.webp",
     "poster": "/images/posters/bexco/bexco_16926.webp",
     "backupPoster": "/images/posters/bexco/bexco_16926.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16926",
+    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=1&&event_seq=16926",
     "genre": "exhibition",
     "category": "전시",
     "price": "상세페이지 참고",
@@ -158,7 +135,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:23.319Z"
+    "dataCollectedAt": "2026-11-26T13:52:44.487Z"
   },
   {
     "id": "bexco_16384",
@@ -181,7 +158,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:24.000Z"
+    "dataCollectedAt": "2026-11-26T13:52:46.502Z"
   },
   {
     "id": "bexco_16935",
@@ -204,7 +181,30 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:24.637Z"
+    "dataCollectedAt": "2026-11-26T13:52:47.165Z"
+  },
+  {
+    "id": "bexco_16952",
+    "title": "부산대 80주년 기부자의 밤 이벤트 부산대 80주년 기부자의 밤",
+    "venue": "벡스코 누리마루",
+    "venueKey": "벡스코 누리마루",
+    "address": "부산 해운대구 APEC로 55",
+    "lat": 35.1695,
+    "lng": 129.1357,
+    "region": "busan",
+    "date": "2026.12.02 ~ 2026.12.02",
+    "image": "/images/posters/bexco/bexco_16952.webp",
+    "poster": "/images/posters/bexco/bexco_16952.webp",
+    "backupPoster": "/images/posters/bexco/bexco_16952.webp",
+    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16952",
+    "genre": "exhibition",
+    "category": "전시",
+    "price": "상세페이지 참고",
+    "priceDetail": "상세페이지 참고",
+    "contact": "051-740-7300",
+    "website": "https://www.bexco.co.kr/",
+    "source": "bexco",
+    "dataCollectedAt": "2026-11-26T13:52:47.814Z"
   },
   {
     "id": "bexco_16776",
@@ -227,7 +227,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:25.309Z"
+    "dataCollectedAt": "2026-11-26T13:52:48.485Z"
   },
   {
     "id": "bexco_15795",
@@ -250,7 +250,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:25.939Z"
+    "dataCollectedAt": "2026-11-26T13:52:49.180Z"
   },
   {
     "id": "bexco_15798",
@@ -273,7 +273,7 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:27.301Z"
+    "dataCollectedAt": "2026-11-26T13:52:49.849Z"
   },
   {
     "id": "bexco_16385",
@@ -296,190 +296,6 @@
     "contact": "051-740-7300",
     "website": "https://www.bexco.co.kr/",
     "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:28.052Z"
-  },
-  {
-    "id": "bexco_16897",
-    "title": "2026 NAM WOOHYUN 10th ANNIVERSARY CONCERT <식목일VI - EVER GREEN> IN BUSAN",
-    "venue": "벡스코 오디토리움",
-    "venueKey": "벡스코 오디토리움",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.05 ~ 2026.12.06",
-    "image": "/images/posters/bexco/bexco_16897.webp",
-    "poster": "/images/posters/bexco/bexco_16897.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16897.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16897",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:28.732Z"
-  },
-  {
-    "id": "bexco_16933",
-    "title": "벡스코 상상체험 키즈월드",
-    "venue": "벡스코 제2전시장 5(B-E)홀",
-    "venueKey": "벡스코 제2전시장 5(B-E)홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.05 ~ 2027.09.19",
-    "image": "/images/posters/bexco/bexco_16933.webp",
-    "poster": "/images/posters/bexco/bexco_16933.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16933.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16933",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:29.401Z"
-  },
-  {
-    "id": "bexco_16382",
-    "title": "2026 부산브릿지마라톤",
-    "venue": "벡스코 제1전시장 3홀, 옥외전시장",
-    "venueKey": "벡스코 제1전시장 3홀, 옥외전시장",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.06 ~ 2026.12.06",
-    "image": "/images/posters/bexco/bexco_16382.webp",
-    "poster": "/images/posters/bexco/bexco_16382.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16382.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16382",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:30.078Z"
-  },
-  {
-    "id": "bexco_16387",
-    "title": "2026 비더블류씨 웨딩박람회",
-    "venue": "벡스코 제2전시장 5A홀",
-    "venueKey": "벡스코 제2전시장 5A홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.11 ~ 2026.12.13",
-    "image": "/images/posters/bexco/bexco_16387.webp",
-    "poster": "/images/posters/bexco/bexco_16387.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16387.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16387",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:30.875Z"
-  },
-  {
-    "id": "bexco_15800",
-    "title": "2026 부산 핸드메이드페어 윈터 전시 2026 부산 핸드메이드페어 윈터",
-    "venue": "벡스코 제1전시장 2B홀",
-    "venueKey": "벡스코 제1전시장 2B홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.11 ~ 2026.12.13",
-    "image": "/images/posters/bexco/bexco_15800.webp",
-    "poster": "/images/posters/bexco/bexco_15800.webp",
-    "backupPoster": "/images/posters/bexco/bexco_15800.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15800",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:31.503Z"
-  },
-  {
-    "id": "bexco_15801",
-    "title": "2026 부산국제주류&와인박람회",
-    "venue": "벡스코 제1전시장 3홀",
-    "venueKey": "벡스코 제1전시장 3홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.11 ~ 2026.12.13",
-    "image": "/images/posters/bexco/bexco_15801.webp",
-    "poster": "/images/posters/bexco/bexco_15801.webp",
-    "backupPoster": "/images/posters/bexco/bexco_15801.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15801",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:32.207Z"
-  },
-  {
-    "id": "bexco_15802",
-    "title": "2026 케이펫페어 부산 시즌 ２",
-    "venue": "벡스코 제2전시장 4홀",
-    "venueKey": "벡스코 제2전시장 4홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.11 ~ 2026.12.13",
-    "image": "/images/posters/bexco/bexco_15802.webp",
-    "poster": "/images/posters/bexco/bexco_15802.webp",
-    "backupPoster": "/images/posters/bexco/bexco_15802.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15802",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:32.870Z"
-  },
-  {
-    "id": "bexco_16386",
-    "title": "2026 조용필 & 위대한탄생 콘서트",
-    "venue": "벡스코 제1전시장 1홀",
-    "venueKey": "벡스코 제1전시장 1홀",
-    "address": "부산 해운대구 APEC로 55",
-    "lat": 35.1695,
-    "lng": 129.1357,
-    "region": "busan",
-    "date": "2026.12.12 ~ 2026.12.13",
-    "image": "/images/posters/bexco/bexco_16386.webp",
-    "poster": "/images/posters/bexco/bexco_16386.webp",
-    "backupPoster": "/images/posters/bexco/bexco_16386.webp",
-    "link": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16386",
-    "genre": "exhibition",
-    "category": "전시",
-    "price": "상세페이지 참고",
-    "priceDetail": "상세페이지 참고",
-    "contact": "051-740-7300",
-    "website": "https://www.bexco.co.kr/",
-    "source": "bexco",
-    "dataCollectedAt": "2026-11-25T13:49:33.547Z"
+    "dataCollectedAt": "2026-11-26T13:52:50.561Z"
   }
 ]

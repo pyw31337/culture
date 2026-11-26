@@ -1,5 +1,29 @@
 [
   {
+    "id": "templestay_29871",
+    "title": "[템플스테이] \"메리~붓다! 소리로 마음을 빚다\"",
+    "venue": "수덕사",
+    "venueKey": "수덕사",
+    "address": "충청남도 예산군 덕산면 수덕사안길 79",
+    "lat": 36.6617,
+    "lng": 126.6214,
+    "region": "chungnam",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/templestay/templestay_29871.webp",
+    "poster": "/images/posters/templestay/templestay_29871.webp",
+    "backupPoster": "/images/posters/templestay/templestay_29871.webp",
+    "link": "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templestaySeq=29871&templeBookMarkId=Sudeoksa",
+    "genre": "activity",
+    "category": "액티비티",
+    "price": "홈페이지 참고",
+    "priceDetail": "홈페이지 참고",
+    "contact": "041-330-7789(9시~17시)",
+    "website": "https://www.templestay.com/",
+    "source": "templestay",
+    "description": "1년간 복잡한 일상을 살아 온 당신에게 꼭 필요한 시간을 선물하세요~ 산사에서 머물며 힐링의 시간을 갖기 바랍니다. 수덕사 템플스테이에서는 바이노럴비트(Binatural B...",
+    "dataCollectedAt": "2026-11-26T13:53:16.252Z"
+  },
+  {
     "id": "templestay_29836",
     "title": "[템플스테이] [휴식형] \"마곡의 곳곳, 마음에 꼭꼭\"",
     "venue": "마곡사",
@@ -21,7 +45,31 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "",
-    "dataCollectedAt": "2026-11-25T13:49:50.041Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.253Z"
+  },
+  {
+    "id": "templestay_29754",
+    "title": "[템플스테이] 2027 새해맞이: 내 마음에 선함",
+    "venue": "국제선센터",
+    "venueKey": "국제선센터",
+    "address": "서울특별시 양천구 목동동로 167",
+    "lat": 37.5255,
+    "lng": 126.8732,
+    "region": "seoul",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/templestay/templestay_29754.webp",
+    "poster": "/images/posters/templestay/templestay_29754.webp",
+    "backupPoster": "/images/posters/templestay/templestay_29754.webp",
+    "link": "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templestaySeq=29754&templeBookMarkId=InternationalSeonCenter",
+    "genre": "activity",
+    "category": "액티비티",
+    "price": "홈페이지 참고",
+    "priceDetail": "홈페이지 참고",
+    "contact": "010-6728-2242",
+    "website": "https://www.templestay.com/",
+    "source": "templestay",
+    "description": "2026년 한 해 동안 수고한 스스로를 격려하며, 2027년 새해에 새로울 스스로를 맞이하는 시간을 국제선센터에서 함께 보내요. 선명상: INNER PEACE ★ 생각에 ...",
+    "dataCollectedAt": "2026-11-26T13:53:16.463Z"
   },
   {
     "id": "templestay_29733",
@@ -45,7 +93,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "겨울의 문턱, 지리산 화엄사에서 따뜻한 나눔의 시간을 마련합니다. 고요한 산사에서 하룻밤을 머물고, 이튿날 아침 스님들과 함께 김장 속을 버무리며 전통 김장문화에 담긴 정성과 나...",
-    "dataCollectedAt": "2026-11-25T13:49:50.042Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.464Z"
   },
   {
     "id": "templestay_29703",
@@ -69,7 +117,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "일상에서 참된 쉼을 되찾는 여행, 금선사 템플스테이에 오신 것을 환영합니다. 북한산의 자연과 솔내음이 가득한 아름다운 사찰 금선사는, 도심 가까운 곳에서 도시생활에 지친 이들에게 ...",
-    "dataCollectedAt": "2026-11-25T13:49:50.042Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.464Z"
   },
   {
     "id": "templestay_29686",
@@ -93,7 +141,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "해당 프로그램은 대한불교조계종 제6교구 본.말사 신도분에 한해서 신청이 가능합니다. 솔로남녀 만 25세 - 만47세 이하 2026년 11월 06일...",
-    "dataCollectedAt": "2026-11-25T13:49:50.043Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.465Z"
   },
   {
     "id": "templestay_29660",
@@ -117,7 +165,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "여러분들의 그동안의 노력을 응원하는 의미에서 결과가 어떻든 지금 이순간 만큼은 결과에 상관없이, 잘 견디고 노력한 자신에게 선물해주고 토닥토닥 참 잘했다 인정과 위로가 필요한 시...",
-    "dataCollectedAt": "2026-11-25T13:49:50.043Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.579Z"
   },
   {
     "id": "templestay_29551",
@@ -141,7 +189,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "2027년 새해가 시작됩니다. 올 한해 힘차게 도약하는 한해가 되시기를 바라며 마곡사에서 2026년을 마무리하고, 2027년 첫 일출을 맞이하며 새해의 계획과 희망을 그려보는 시간...",
-    "dataCollectedAt": "2026-11-25T13:49:50.043Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.579Z"
   },
   {
     "id": "templestay_29477",
@@ -165,7 +213,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "계절이 쉬어가는 자리(미황사 가을*겨울 템플스티이) 가을단풍과 마주하고, 겨울이 찾아오는 시간, 천년고찰 미황사에서 세상의 분주함을 잠시 내려놓습니다. 계절이 바뀌는 동안 나를...",
-    "dataCollectedAt": "2026-11-25T13:49:50.155Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.580Z"
   },
   {
     "id": "templestay_29132",
@@ -189,7 +237,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "예산 수덕사 문화유산 템플스테이~ 수덕사 템플스테이에서는 산사에서 머물며 체험도 하고,예산 고장을 탐방하는 프로그램을 기획했습니다. - (답사) 숲길 명상과 정혜사(능인선원...",
-    "dataCollectedAt": "2026-11-25T13:49:50.157Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.580Z"
   },
   {
     "id": "templestay_28224",
@@ -213,7 +261,7 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "서울 한복판, 당신에게 필요한건 차 한잔의 시간입니다. 가장 가까운 곳에서 만나는 가장 깊은 휴식, 당신의 지친 일상에 따뜻한 차 한잔을 건넵니다. 외국인 대상의 인기...",
-    "dataCollectedAt": "2026-11-25T13:49:50.157Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.581Z"
   },
   {
     "id": "templestay_28197",
@@ -237,54 +285,6 @@
     "website": "https://www.templestay.com/",
     "source": "templestay",
     "description": "(1987년부터 2007년생 청년분들을 대상으로 하는 프로그램입니다) 고요하고 편안하되, 명료한 상태 도심 속 쉼의 공간. 국제선센터 템플스테이에서 보이는 것, 들리는...",
-    "dataCollectedAt": "2026-11-25T13:49:50.157Z"
-  },
-  {
-    "id": "templestay_28179",
-    "title": "[템플스테이] 행복명상요가 템플스테이",
-    "venue": "조계사",
-    "venueKey": "조계사",
-    "address": "서울특별시 종로구 우정국로 55",
-    "lat": 37.5736,
-    "lng": 126.9823,
-    "region": "seoul",
-    "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/templestay/templestay_28179.webp",
-    "poster": "/images/posters/templestay/templestay_28179.webp",
-    "backupPoster": "/images/posters/templestay/templestay_28179.webp",
-    "link": "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templestaySeq=28179&templeBookMarkId=Jogyesa",
-    "genre": "activity",
-    "category": "액티비티",
-    "price": "홈페이지 참고",
-    "priceDetail": "홈페이지 참고",
-    "contact": "02-768-8523",
-    "website": "https://www.templestay.com/",
-    "source": "templestay",
-    "description": "숨 가쁘게 돌아가는 서울의 중심, 그 안에서 고요한 평화를 만날 수 있다는 사실을 아시나요? 멀리 떠날 시간조차 부족한 현대인들을 위해 조계사에서 특별한 쉼을 준비했습니다. ...",
-    "dataCollectedAt": "2026-11-25T13:49:50.158Z"
-  },
-  {
-    "id": "templestay_27600",
-    "title": "[템플스테이] '해인삼매 선명상' 내 마음을 찾아서( 목,금,토 2박3일)",
-    "venue": "해인사",
-    "venueKey": "해인사",
-    "address": "경상남도 합천군 가야면 해인사길 122",
-    "lat": 35.7904,
-    "lng": 128.0983,
-    "region": "gyeongnam",
-    "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/templestay/templestay_27600.webp",
-    "poster": "/images/posters/templestay/templestay_27600.webp",
-    "backupPoster": "/images/posters/templestay/templestay_27600.webp",
-    "link": "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templestaySeq=27600&templeBookMarkId=Haeinsa",
-    "genre": "activity",
-    "category": "액티비티",
-    "price": "홈페이지 참고",
-    "priceDetail": "홈페이지 참고",
-    "contact": "010-4763-3161",
-    "website": "https://www.templestay.com/",
-    "source": "templestay",
-    "description": "고요히 눈을 감고 마음속으로 깊이 생각하는 시간이 필요하신가요? 편안하고 아늑한 공기가 몸을 감싸는 시간 더함도 덜함도 없이 있는 그대로 지금 여기에 존재하는 나를 찾아가...",
-    "dataCollectedAt": "2026-11-25T13:49:50.158Z"
+    "dataCollectedAt": "2026-11-26T13:53:16.581Z"
   }
 ]

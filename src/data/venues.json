@@ -1040,12 +1040,19 @@
     "mapped_region_id": "seoul"
   },
   "뮤지컬펍 커튼콜": {
-    "name": "공간아울",
-    "address": "서울 종로구 대학로12길 22",
+    "name": "뮤지컬펍 커튼콜",
+    "address": "서울특별시 종로구 대학로12길 22 (동숭동)",
+    "lat": 37.582494,
+    "lng": 127.003088,
     "district": "종로구",
-    "lat": 37.5824907861105,
-    "lng": 127.003095278525,
-    "mapped_region_id": "seoul"
+    "facilityType": "민간(대학로)",
+    "seatScale": "30",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로)"
   },
   "연세대학교 백주년기념관": {
     "name": "연세대학교 백주년기념관",
@@ -22364,7 +22371,7 @@
     "homepage": "http://www.mapoartcenter.or.kr/",
     "facilityType": "공공(문예회관)",
     "seatScale": "1475",
-    "theaterCount": "3",
+    "theaterCount": "4",
     "openedAt": "2002",
     "amenities": [
       "장애인 주차",
@@ -62095,9 +62102,9 @@
     "theaterCount": "1",
     "openedAt": "2020",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "KBS 수원아트홀": {
     "name": "KBS 수원아트홀",
@@ -63391,7 +63398,7 @@
     "homepage": "https://www.sfac.or.kr/site/SFAC_KOR/09/10911010000002021111611.jsp",
     "facilityType": "공공(기타)",
     "seatScale": "462",
-    "theaterCount": "4",
+    "theaterCount": "5",
     "openedAt": "2022",
     "amenities": [
       "카페",
@@ -71993,9 +72000,9 @@
       "장애인 경사로",
       "엘리베이터"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(기타) · 장애인 주차, 장애인 화장실, 장애인 경사로, 엘리베이터"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
   },
   "클래식고택 디토 (구.선인재)": {
     "name": "클래식고택 디토 (구.선인재)",
@@ -124748,5 +124755,116 @@
     "parking": "주차장: N",
     "restrooms": "",
     "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "엘림아트홀 성악연구소": {
+    "name": "엘림아트홀 성악연구소",
+    "address": "부산광역시 수영구 광남로 121 (광안동)",
+    "lat": 35.152527,
+    "lng": 129.116005,
+    "district": "",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "영광예술의전당": {
+    "name": "영광예술의전당",
+    "address": "전남광주통합특별시 영광군 영광읍 천년로13길 2-34",
+    "lat": 35.2742799,
+    "lng": 126.50738230000002,
+    "district": "",
+    "phone": "061-350-5691",
+    "homepage": "https://www.yeonggwang.go.kr/subpage/?site=headquarter_new&mn=9210",
+    "facilityType": "공공(문예회관)",
+    "seatScale": "728",
+    "theaterCount": "2",
+    "openedAt": "2014",
+    "amenities": [
+      "장애인 주차",
+      "장애인 화장실",
+      "장애인 경사로",
+      "엘리베이터"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 장애인 엘리베이터 운행"
+  },
+  "갤러리 지노(ZINO)": {
+    "name": "갤러리 지노(ZINO)",
+    "address": "경기도 파주시 탄현면 새오리로 211-17",
+    "lat": 37.800908,
+    "lng": 126.686714,
+    "district": "파주시",
+    "homepage": "https://www.instagram.com/paju_zino",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "(재)구리시청소년수련관": {
+    "name": "(재)구리시청소년수련관",
+    "address": "경기도 구리시 건원대로34번길 32-10 (인창동)",
+    "lat": 37.603757,
+    "lng": 127.14178449999997,
+    "district": "구리시",
+    "phone": "031-553-7101",
+    "homepage": "http://www.guriyouth.or.kr/",
+    "facilityType": "공공(기타)",
+    "seatScale": "286",
+    "theaterCount": "1",
+    "openedAt": "2003",
+    "amenities": [
+      "장애인 주차",
+      "장애인 경사로"
+    ],
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "",
+    "facilities": "시설 특성: 공공(기타) · 휠체어 경사로 설치"
+  },
+  "드림홀": {
+    "name": "드림홀",
+    "address": "서울특별시 마포구 양화로 64 (서교동)",
+    "lat": 37.5503019,
+    "lng": 126.9159023,
+    "district": "마포구",
+    "phone": "010-6213-0001",
+    "homepage": "https://cafe.naver.com/dreamlivehall",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "150",
+    "theaterCount": "1",
+    "openedAt": "2014",
+    "amenities": [],
+    "parking": "주차장: Y",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "극발전소301": {
+    "name": "극발전소301",
+    "address": "서울특별시 성북구 동소문로23길 48 (동선동5가)",
+    "lat": 37.595401,
+    "lng": 127.016527,
+    "district": "성북구",
+    "homepage": "https://www.instagram.com/301theater",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "0",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
+  },
+  "코스믹리조트": {
+    "name": "코스믹리조트",
+    "address": "정보 없음",
+    "district": ""
   }
 }

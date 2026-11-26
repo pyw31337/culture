@@ -21,7 +21,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "롯데월드 아이스링크 - 스페셜 할인 핫딜 상품! 할인율: 9%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.823Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.678Z"
   },
   {
     "id": "klook_deal_10198660",
@@ -45,7 +45,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울랜드 종일 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 36%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.823Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.679Z"
   },
   {
     "id": "klook_deal_10085134",
@@ -69,7 +69,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울랜드 AFTER4 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 40%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.823Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.679Z"
   },
   {
     "id": "klook_deal_10332119",
@@ -93,11 +93,11 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울대공원 동물원 입장권 (당일사용불가) - 스페셜 할인 핫딜 상품! 할인율: 20%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.824Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.679Z"
   },
   {
-    "id": "klook_deal_10309766",
-    "title": "[핫딜] 서울랜드 AFTER6 파크이용권",
+    "id": "klook_deal_10069817",
+    "title": "[핫딜] 서울랜드 어린이 종일 파크이용권",
     "venue": "서울랜드",
     "venueKey": "서울랜드",
     "address": "경기 과천시 광명로 181",
@@ -105,19 +105,19 @@
     "lng": 127.021,
     "region": "gyeonggi",
     "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/hotdeals/klook_deal_10309766.webp",
-    "poster": "/images/posters/hotdeals/klook_deal_10309766.webp",
-    "backupPoster": "/images/posters/hotdeals/klook_deal_10309766.webp",
-    "link": "https://leisure-web.yanolja.com/leisure/10309766",
+    "image": "/images/posters/hotdeals/klook_deal_10069817.webp",
+    "poster": "/images/posters/hotdeals/klook_deal_10069817.webp",
+    "backupPoster": "/images/posters/hotdeals/klook_deal_10069817.webp",
+    "link": "https://leisure-web.yanolja.com/leisure/10069817",
     "genre": "tourism",
     "category": "여행",
-    "price": "14,900원~",
-    "priceDetail": "14,900원~ (66% 할인 핫딜)",
+    "price": "26,900원~",
+    "priceDetail": "26,900원~ (37% 할인 핫딜)",
     "contact": "1544-6663",
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
-    "description": "서울랜드 AFTER6 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 66%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.888Z"
+    "description": "서울랜드 어린이 종일 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 37%.",
+    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
   },
   {
     "id": "klook_deal_10381366",
@@ -141,17 +141,17 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "레저 핫딜 상품 - 스페셜 할인 핫딜 상품! 할인율: 43%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
   },
   {
     "id": "klook_deal_10386489",
-    "title": "[핫딜] [NOL라이브] 26/27 휘닉스파크 리프트권/렌탈PKG/스노우빌리지/객실PKG",
-    "venue": "휘닉스파크",
-    "venueKey": "휘닉스파크",
-    "address": "강원 평창군 봉평면 태기로 174",
-    "lat": 37.5818,
-    "lng": 128.3275,
-    "region": "gangwon",
+    "title": "[핫딜] 레저 핫딜 상품",
+    "venue": "레저 및 체험 전용관",
+    "venueKey": "레저 및 체험 전용관",
+    "address": "SEOUL 관광 명소",
+    "lat": 37.5665,
+    "lng": 126.978,
+    "region": "seoul",
     "date": "2026.01.01 ~ 2026.12.31",
     "image": "/images/posters/hotdeals/klook_deal_10386489.webp",
     "poster": "/images/posters/hotdeals/klook_deal_10386489.webp",
@@ -164,8 +164,8 @@
     "contact": "1544-6663",
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
-    "description": "[NOL라이브] 26/27 휘닉스파크 리프트권/렌탈PKG/스노우빌리지/객실PKG - 스페셜 할인 핫딜 상품! 할인율: 34%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "description": "레저 핫딜 상품 - 스페셜 할인 핫딜 상품! 할인율: 34%.",
+    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
   },
   {
     "id": "klook_deal_10387386",
@@ -189,11 +189,11 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "[오픈특가] 비발디파크 리프트권/렌탈PKG/스노위랜드/오션월드 입장권 - 스페셜 할인 핫딜 상품! 할인율: 34%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
   },
   {
-    "id": "klook_deal_10385687",
-    "title": "[핫딜] 26/27 비발디파크 스키 시즌패스",
+    "id": "klook_deal_10388760",
+    "title": "[핫딜] 레저 핫딜 상품",
     "venue": "레저 및 체험 전용관",
     "venueKey": "레저 및 체험 전용관",
     "address": "SEOUL 관광 명소",
@@ -201,19 +201,19 @@
     "lng": 126.978,
     "region": "seoul",
     "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/hotdeals/klook_deal_10385687.webp",
-    "poster": "/images/posters/hotdeals/klook_deal_10385687.webp",
-    "backupPoster": "/images/posters/hotdeals/klook_deal_10385687.webp",
-    "link": "https://leisure-web.yanolja.com/leisure/10385687",
+    "image": "/images/posters/hotdeals/klook_deal_10388760.webp",
+    "poster": "/images/posters/hotdeals/klook_deal_10388760.webp",
+    "backupPoster": "/images/posters/hotdeals/klook_deal_10388760.webp",
+    "link": "https://leisure-web.yanolja.com/leisure/10388760",
     "genre": "tourism",
     "category": "여행",
-    "price": "560,000원~",
-    "priceDetail": "560,000원~",
+    "price": "26,900원~",
+    "priceDetail": "26,900원~ (51% 할인 핫딜)",
     "contact": "1544-6663",
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
-    "description": "26/27 비발디파크 스키 시즌패스 - 스페셜 할인 핫딜 상품! 할인율: 특가.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "description": "레저 핫딜 상품 - 스페셜 할인 핫딜 상품! 할인율: 51%.",
+    "dataCollectedAt": "2026-11-26T13:53:24.837Z"
   },
   {
     "id": "klook_deal_10381008",
@@ -237,7 +237,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "아쿠아플라넷 제주 입장권 & 늦은오후권 (26.11월) - 스페셜 할인 핫딜 상품! 할인율: 7%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.837Z"
   },
   {
     "id": "klook_deal_10348487",
@@ -261,7 +261,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "[제주] 오레브 핫 스프링&스파 - 스페셜 할인 핫딜 상품! 할인율: 77%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.838Z"
   },
   {
     "id": "klook_deal_10177758",
@@ -285,7 +285,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "스누피가든, 자연속에서 즐기는 스누피와의 힐링타임 - 스페셜 할인 핫딜 상품! 할인율: 10%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.838Z"
   },
   {
     "id": "klook_deal_10319970",
@@ -309,6 +309,6 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "에코랜드 테마파크 - 스페셜 할인 핫딜 상품! 할인율: 22%.",
-    "dataCollectedAt": "2026-11-25T13:50:00.889Z"
+    "dataCollectedAt": "2026-11-26T13:53:24.838Z"
   }
 ]
