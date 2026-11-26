@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-26T16:28:45.864Z",
+  "checkedAt": "2026-11-26T20:29:14.732Z",
   "status": "pass",
   "itemCount": 9321,
   "sourceCount": 28,
@@ -238,10 +238,10 @@
   ],
   "missingImageCount": 6,
   "weakImageCount": 56,
-  "missingDetailImageCount": 3932,
+  "missingDetailImageCount": 3949,
   "missingCoordinateCount": 937,
   "missingAddressCount": 328,
-  "unknownPriceCount": 1195,
-  "weakDescriptionCount": 3786,
+  "unknownPriceCount": 1211,
+  "weakDescriptionCount": 3800,
   "duplicateSignatureCount": 46
 }

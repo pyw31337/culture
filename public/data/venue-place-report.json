@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-11-26T16:28:43.705Z",
+  "checkedAt": "2026-11-26T20:29:12.517Z",
   "status": "warn",
   "venueCount": 4301,
-  "matchedCount": 2339,
+  "matchedCount": 2341,
   "highConfidenceMatchCount": 1785,
   "needsReviewCount": 20,
   "notFoundCount": 810,
-  "pendingLookupCount": 5,
+  "pendingLookupCount": 2,
   "insufficientIdentityCount": 329,
   "lookupReady": true,
   "providersConfigured": [
@@ -42,50 +42,6 @@
       ],
       "sampleTitles": [
         "스테인드글라스 썬캐쳐 만들기"
-      ]
-    },
-    {
-      "venueId": "venue_광주예술의전당_1d62rog",
-      "officialName": "광주예술의전당",
-      "address": "광주광역시 북구 북문대로 60",
-      "query": "광주예술의전당 광주 북구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "GUMMY Tour Concert 2026 〈LOVE〉-광주"
-      ]
-    },
-    {
-      "venueId": "venue_대학로열린극장_yuxvxq",
-      "officialName": "대학로 열린극장",
-      "address": "서울 종로구 창경궁로 258-12",
-      "query": "대학로 열린극장 서울 종로구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "연모 [대학로]"
-      ]
-    },
-    {
-      "venueId": "venue_북서울꿈의숲아트센터퍼포먼스홀_dpavwi",
-      "officialName": "북서울꿈의숲아트센터 퍼포먼스홀",
-      "address": "서울특별시 강북구 월계로 173",
-      "query": "북서울꿈의숲아트센터 퍼포먼스홀 서울 강북구",
-      "priority": 8,
-      "performanceCount": 1,
-      "reviewFlags": [
-        "alias_merge_candidate",
-        "needs_official_place_lookup"
-      ],
-      "sampleTitles": [
-        "2026 꿈의숲 시즌콘서트 : Winter Blossom_신인류"
       ]
     }
   ],
@@ -2038,7 +1994,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-26T16:27:42.359Z",
+      "checkedAt": "2026-11-26T20:28:57.496Z",
       "query": "남부의 부산, 조용한 서쪽동네에 자리 잡은 고양이 두마리, 강아지 한마리, 예술쟁이 한명. 그리고 예술을 즐기는 사람들이 오고 가며 다르고 소소한 이야기들로 일상을 가득 채우는, 작고 따뜻한 예술작업실 온다름입니다. 틀리다- 없이 따뜻한 다름으로 가득한 온다름에서의 시간이 여러분의 삶 작은 변화가 시작되는 계기가 되기를 바랍니다. 남부의 부산,",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2047,7 +2003,7 @@
       "status": "needs_review",
       "confidence": 0,
       "matchedAt": "",
-      "checkedAt": "2026-11-26T16:27:42.359Z",
+      "checkedAt": "2026-11-26T20:28:57.496Z",
       "query": "혹시 원하시는 도안이 있으신가요? 선캐쳐는 본인이 생각하는 가장 예쁜 디자인을 집의 곳곳에 장식으로 걸어두는 것이기 때문에 취향에 맞는 디자인을 선택하는 것 또한 중요하다고 할 수 있습니다. 완성되어 있는 여러가지 시안을 보고 자신이 가장 예쁘게 만들 수 있을 것 같다고 생각되는 디자인으로 작품을 완성시켜 보세요 혹시 원하시는",
       "reason": "Kakao local search failed: 400 Bad Request"
     },
@@ -2377,14 +2333,14 @@
     }
   ],
   "summary": {
-    "checkedAt": "2026-11-26T16:28:43.705Z",
+    "checkedAt": "2026-11-26T20:29:12.517Z",
     "status": "warn",
     "venueCount": 4301,
-    "matchedCount": 2339,
+    "matchedCount": 2341,
     "highConfidenceMatchCount": 1785,
     "needsReviewCount": 20,
     "notFoundCount": 810,
-    "pendingLookupCount": 5,
+    "pendingLookupCount": 2,
     "insufficientIdentityCount": 329,
     "lookupReady": true,
     "providersConfigured": [
@@ -2421,50 +2377,6 @@
         ],
         "sampleTitles": [
           "스테인드글라스 썬캐쳐 만들기"
-        ]
-      },
-      {
-        "venueId": "venue_광주예술의전당_1d62rog",
-        "officialName": "광주예술의전당",
-        "address": "광주광역시 북구 북문대로 60",
-        "query": "광주예술의전당 광주 북구",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "GUMMY Tour Concert 2026 〈LOVE〉-광주"
-        ]
-      },
-      {
-        "venueId": "venue_대학로열린극장_yuxvxq",
-        "officialName": "대학로 열린극장",
-        "address": "서울 종로구 창경궁로 258-12",
-        "query": "대학로 열린극장 서울 종로구",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "연모 [대학로]"
-        ]
-      },
-      {
-        "venueId": "venue_북서울꿈의숲아트센터퍼포먼스홀_dpavwi",
-        "officialName": "북서울꿈의숲아트센터 퍼포먼스홀",
-        "address": "서울특별시 강북구 월계로 173",
-        "query": "북서울꿈의숲아트센터 퍼포먼스홀 서울 강북구",
-        "priority": 8,
-        "performanceCount": 1,
-        "reviewFlags": [
-          "alias_merge_candidate",
-          "needs_official_place_lookup"
-        ],
-        "sampleTitles": [
-          "2026 꿈의숲 시즌콘서트 : Winter Blossom_신인류"
         ]
       }
     ],
