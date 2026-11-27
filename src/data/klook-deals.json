@@ -1,5 +1,77 @@
 [
   {
+    "id": "klook_deal_10062403",
+    "title": "[핫딜] 여수 아르떼뮤지엄",
+    "venue": "아르떼뮤지엄",
+    "venueKey": "아르떼뮤지엄",
+    "address": "제주 제주시 애월읍 어림비로 478",
+    "lat": 33.3968,
+    "lng": 126.3572,
+    "region": "jeju",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/hotdeals/klook_deal_10062403.webp",
+    "poster": "/images/posters/hotdeals/klook_deal_10062403.webp",
+    "backupPoster": "/images/posters/hotdeals/klook_deal_10062403.webp",
+    "link": "https://leisure-web.yanolja.com/leisure/10062403",
+    "genre": "tourism",
+    "category": "여행",
+    "price": "12,000원~",
+    "priceDetail": "12,000원~",
+    "contact": "1544-6663",
+    "website": "https://www.dailyhotel.com/",
+    "source": "klook-deal",
+    "description": "여수 아르떼뮤지엄 - 스페셜 할인 핫딜 상품! 할인율: 특가.",
+    "dataCollectedAt": "2026-11-27T13:48:29.507Z"
+  },
+  {
+    "id": "klook_deal_10055973",
+    "title": "[핫딜] 강릉 아르떼뮤지엄",
+    "venue": "아르떼뮤지엄",
+    "venueKey": "아르떼뮤지엄",
+    "address": "제주 제주시 애월읍 어림비로 478",
+    "lat": 33.3968,
+    "lng": 126.3572,
+    "region": "jeju",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/hotdeals/klook_deal_10055973.webp",
+    "poster": "/images/posters/hotdeals/klook_deal_10055973.webp",
+    "backupPoster": "/images/posters/hotdeals/klook_deal_10055973.webp",
+    "link": "https://leisure-web.yanolja.com/leisure/10055973",
+    "genre": "tourism",
+    "category": "여행",
+    "price": "15,000원~",
+    "priceDetail": "15,000원~",
+    "contact": "1544-6663",
+    "website": "https://www.dailyhotel.com/",
+    "source": "klook-deal",
+    "description": "강릉 아르떼뮤지엄 - 스페셜 할인 핫딜 상품! 할인율: 특가.",
+    "dataCollectedAt": "2026-11-27T13:48:29.508Z"
+  },
+  {
+    "id": "klook_deal_10164466",
+    "title": "[핫딜] 부산 아르떼뮤지엄 입장권",
+    "venue": "아르떼뮤지엄",
+    "venueKey": "아르떼뮤지엄",
+    "address": "제주 제주시 애월읍 어림비로 478",
+    "lat": 33.3968,
+    "lng": 126.3572,
+    "region": "jeju",
+    "date": "2026.01.01 ~ 2026.12.31",
+    "image": "/images/posters/hotdeals/klook_deal_10164466.webp",
+    "poster": "/images/posters/hotdeals/klook_deal_10164466.webp",
+    "backupPoster": "/images/posters/hotdeals/klook_deal_10164466.webp",
+    "link": "https://leisure-web.yanolja.com/leisure/10164466",
+    "genre": "tourism",
+    "category": "여행",
+    "price": "12,000원~",
+    "priceDetail": "12,000원~ (20% 할인 핫딜)",
+    "contact": "1544-6663",
+    "website": "https://www.dailyhotel.com/",
+    "source": "klook-deal",
+    "description": "부산 아르떼뮤지엄 입장권 - 스페셜 할인 핫딜 상품! 할인율: 20%.",
+    "dataCollectedAt": "2026-11-27T13:48:29.586Z"
+  },
+  {
     "id": "klook_deal_10298420",
     "title": "[핫딜] 롯데월드 아이스링크",
     "venue": "롯데월드",
@@ -21,7 +93,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "롯데월드 아이스링크 - 스페셜 할인 핫딜 상품! 할인율: 9%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.678Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.586Z"
   },
   {
     "id": "klook_deal_10198660",
@@ -45,7 +117,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울랜드 종일 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 36%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.679Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.586Z"
   },
   {
     "id": "klook_deal_10085134",
@@ -69,7 +141,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울랜드 AFTER4 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 40%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.679Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10332119",
@@ -93,31 +165,31 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "서울대공원 동물원 입장권 (당일사용불가) - 스페셜 할인 핫딜 상품! 할인율: 20%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.679Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
-    "id": "klook_deal_10069817",
-    "title": "[핫딜] 서울랜드 어린이 종일 파크이용권",
-    "venue": "서울랜드",
-    "venueKey": "서울랜드",
-    "address": "경기 과천시 광명로 181",
-    "lat": 37.4363,
-    "lng": 127.021,
-    "region": "gyeonggi",
+    "id": "klook_deal_10185624",
+    "title": "[핫딜] 서울대공원 리프트PKG (동물원/테마가든/과천과학관 등)",
+    "venue": "레저 및 체험 전용관",
+    "venueKey": "레저 및 체험 전용관",
+    "address": "SEOUL 관광 명소",
+    "lat": 37.5665,
+    "lng": 126.978,
+    "region": "seoul",
     "date": "2026.01.01 ~ 2026.12.31",
-    "image": "/images/posters/hotdeals/klook_deal_10069817.webp",
-    "poster": "/images/posters/hotdeals/klook_deal_10069817.webp",
-    "backupPoster": "/images/posters/hotdeals/klook_deal_10069817.webp",
-    "link": "https://leisure-web.yanolja.com/leisure/10069817",
+    "image": "/images/posters/hotdeals/klook_deal_10185624.webp",
+    "poster": "/images/posters/hotdeals/klook_deal_10185624.webp",
+    "backupPoster": "/images/posters/hotdeals/klook_deal_10185624.webp",
+    "link": "https://leisure-web.yanolja.com/leisure/10185624",
     "genre": "tourism",
     "category": "여행",
-    "price": "26,900원~",
-    "priceDetail": "26,900원~ (37% 할인 핫딜)",
+    "price": "7,000원~",
+    "priceDetail": "7,000원~ (12% 할인 핫딜)",
     "contact": "1544-6663",
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
-    "description": "서울랜드 어린이 종일 파크이용권 - 스페셜 할인 핫딜 상품! 할인율: 37%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
+    "description": "서울대공원 리프트PKG (동물원/테마가든/과천과학관 등) - 스페셜 할인 핫딜 상품! 할인율: 12%.",
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10381366",
@@ -141,7 +213,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "레저 핫딜 상품 - 스페셜 할인 핫딜 상품! 할인율: 43%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10386489",
@@ -165,7 +237,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "레저 핫딜 상품 - 스페셜 할인 핫딜 상품! 할인율: 34%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10387386",
@@ -189,7 +261,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "[오픈특가] 비발디파크 리프트권/렌탈PKG/스노위랜드/오션월드 입장권 - 스페셜 할인 핫딜 상품! 할인율: 34%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.681Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10388760",
@@ -213,7 +285,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "레저 핫딜 상품 - 스페셜 할인 핫딜 상품! 할인율: 51%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.837Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10381008",
@@ -237,7 +309,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "아쿠아플라넷 제주 입장권 & 늦은오후권 (26.11월) - 스페셜 할인 핫딜 상품! 할인율: 7%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.837Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10348487",
@@ -261,7 +333,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "[제주] 오레브 핫 스프링&스파 - 스페셜 할인 핫딜 상품! 할인율: 77%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.838Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10177758",
@@ -285,7 +357,7 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "스누피가든, 자연속에서 즐기는 스누피와의 힐링타임 - 스페셜 할인 핫딜 상품! 할인율: 10%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.838Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   },
   {
     "id": "klook_deal_10319970",
@@ -309,6 +381,6 @@
     "website": "https://www.dailyhotel.com/",
     "source": "klook-deal",
     "description": "에코랜드 테마파크 - 스페셜 할인 핫딜 상품! 할인율: 22%.",
-    "dataCollectedAt": "2026-11-26T13:53:24.838Z"
+    "dataCollectedAt": "2026-11-27T13:48:29.587Z"
   }
 ]

@@ -67685,7 +67685,15 @@
     "address": "부산광역시 동래구 금강공원로20번길 23 (온천동)",
     "lat": 35.2211381,
     "lng": 129.0826864,
-    "district": ""
+    "district": "",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "110",
+    "theaterCount": "2",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "평택시북부문예회관": {
     "name": "평택시북부문예회관",
@@ -97509,7 +97517,12 @@
     "address": "부산 동래구 금강공원로20번길 23",
     "district": "",
     "lat": 35.2202523390207,
-    "lng": 129.082261741882
+    "lng": 129.082261741882,
+    "facilityType": "기타(비공연장)",
+    "seatScale": "110",
+    "theaterCount": "2",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "M극장 (M극장)": {
     "name": "M극장 (M극장)",
@@ -105141,9 +105154,9 @@
       "장애인 화장실",
       "장애인 경사로"
     ],
-    "parking": "Y",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "공공(문예회관) · 식당, 장애인 주차, 장애인 화장실, 장애인 경사로"
+    "parking": "주차장: Y / 장애인 주차구역 제공",
+    "restrooms": "장애인 화장실 완비",
+    "facilities": "시설 특성: 공공(문예회관) · 휠체어 경사로 설치 · 편의시설: 식당"
   },
   "아트센터 림": {
     "name": "아트센터 림",
@@ -112830,9 +112843,9 @@
     "theaterCount": "1",
     "openedAt": "2021",
     "amenities": [],
-    "parking": "N",
-    "restrooms": "장애인 화장실, 수유실",
-    "facilities": "민간(대학로 외)"
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
   },
   "성북구민회관 대강당": {
     "name": "성북구민회관 대강당",
@@ -118718,7 +118731,14 @@
     "address": "정보 없음",
     "district": "",
     "lat": 35.1583946,
-    "lng": 129.0642014
+    "lng": 129.0642014,
+    "phone": "010-6607-3313",
+    "homepage": "https://www.spacecloud.kr/space/34797",
+    "facilityType": "기타(비공연장)",
+    "seatScale": "40",
+    "theaterCount": "1",
+    "parking": "주차장: N",
+    "facilities": "시설 특성: 기타(비공연장)"
   },
   "신라불교초전지 전시가옥 야외무대": {
     "name": "신라불교초전지 전시가옥 야외무대",
@@ -124864,6 +124884,54 @@
   },
   "코스믹리조트": {
     "name": "코스믹리조트",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "오비오 스튜디오": {
+    "name": "오비오 스튜디오",
+    "address": "서울특별시 송파구 올림픽로10길 50 (잠실동)",
+    "lat": 37.507233,
+    "lng": 127.08143,
+    "district": "송파구",
+    "homepage": "https://www.instagram.com/obvio.site/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "40",
+    "theaterCount": "1",
+    "openedAt": "",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "문화공간 새벽 (구. 연극창고 새벽)": {
+    "name": "문화공간 새벽 (구. 연극창고 새벽)",
+    "address": "충청북도 청주시 서원구 수곡로 28 (수곡동)",
+    "lat": 36.6148911,
+    "lng": 127.4745811,
+    "district": "",
+    "phone": "043-286-7979",
+    "homepage": "http://cafe.daum.net/sabyuk/",
+    "facilityType": "민간(대학로 외)",
+    "seatScale": "108",
+    "theaterCount": "1",
+    "openedAt": "2007",
+    "amenities": [],
+    "parking": "주차장: N",
+    "restrooms": "",
+    "facilities": "시설 특성: 민간(대학로 외)"
+  },
+  "예술의전당 서울서예박물관": {
+    "name": "예술의전당 서울서예박물관",
+    "address": "예술의전당 서울서예박물관",
+    "district": ""
+  },
+  "로라바운스": {
+    "name": "로라바운스",
+    "address": "정보 없음",
+    "district": ""
+  },
+  "서울레저파크": {
+    "name": "서울레저파크",
     "address": "정보 없음",
     "district": ""
   }
