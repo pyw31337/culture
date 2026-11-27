@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-26T20:29:14.732Z",
+  "checkedAt": "2026-11-27T09:46:56.860Z",
   "status": "pass",
-  "itemCount": 9321,
+  "itemCount": 9325,
   "sourceCount": 28,
   "highOpportunitySourceCount": 0,
   "topSourceOpportunities": [
@@ -238,10 +238,10 @@
   ],
   "missingImageCount": 6,
   "weakImageCount": 56,
-  "missingDetailImageCount": 3949,
+  "missingDetailImageCount": 3933,
   "missingCoordinateCount": 937,
   "missingAddressCount": 328,
-  "unknownPriceCount": 1211,
-  "weakDescriptionCount": 3800,
+  "unknownPriceCount": 1195,
+  "weakDescriptionCount": 3786,
   "duplicateSignatureCount": 46
 }
