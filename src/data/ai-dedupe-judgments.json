@@ -1,0 +1,5 @@
+{
+  "note": "로컬 AI(Ollama) 중복 판정 캐시. key = 두 공연 id 정렬 후 \"|\"로 연결. same && confidence ≥ 0.8 이면 generate-data가 합칩니다.",
+  "updatedAt": "",
+  "judgments": {}
+}
